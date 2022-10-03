@@ -9,23 +9,13 @@ import { Location } from "@reach/router";
 
 
 
-const Integrations = () => {
+const Integrations = ({ theme }) => {
   return (
     <IntegrationsWrapper>
       <section className="heading">
-        <Location>
-          {({ location }) => {
-            if (location.pathname !== "/") return <>
-              <h1>Built-In Integrations</h1>
-              <h2>Support for your Cloud Native Infrastructure and Apps</h2>
-            </>;
-            return <>
-              <h2>Built-In Integrations</h2>
-              <h3>Support for your Cloud Native Infrastructure and Apps</h3>
-            </>;
-          }}
-        </Location>
-        <IntegrationsGrid />
+        <h1>Built-In Integrations</h1>
+        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
+        <IntegrationsGrid theme={theme}/>
         <Location>
           {({ location }) => {
             if (location.pathname !== "/") return <>

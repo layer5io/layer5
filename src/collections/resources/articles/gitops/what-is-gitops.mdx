@@ -18,38 +18,75 @@ import { ResourcesWrapper } from "../../Resources.style.js";
 
 <ResourcesWrapper>
 <p>
-    GitOps revolves around the central notion that infrastructure can be treated as code. Like code, not only can you store your infrastructure configuration in a source code version system, but you can also take your infrastructure configurtion and any changes to its configuration through the same change management process that you do when updating your applications and services. In part, GitOps is about change management, and consquently, it is about risk reduction and risk management. When you automated a process and classify the manner in which you systemize the process, risk is reduced through the consistency and series of processes and reviews changes go through.
+    GitOps revolves around the central notion that infrastructure can be treated as code. It is an operational framework that incorporates DevOps best practices for infrastructure automation, including version control, collaboration, compliance, and CI/CD tooling, which are often used for application development. Like code, not only can you store your infrastructure configuration in a source code version system, but you can also take your infrastructure configuration and any changes to its configuration through the same change management process that you do when updating your applications and services. In part, GitOps is about change management, and consequently, it is about risk reduction and risk management. When you automate a process and classify the manner in which you systemize the process, risk is reduced through the consistency and series of processes and reviews changes go through.
 </p>
 <p> 
-    GitOps is the acknowledgement that declarative systems that everything is (or should be) defined as code. With all code in a source code system, that system becomes the source of truth and in the system of record for how your infrastructure is running. Well, that is, assumign that your infrastructure configuraiton hasn't drifted from its desired stated defined in your source code system. If Git is the source of truth, you cannot run operations manually by executing random commands. Doing so would mean that Git would stop being the only source of truth. Instead, the only goal of humans (operations) is to define the desired state as code and store it in git. Then, let the machines synchronize that with the actual state. Such synchronization must be continuous so that the two states are (almost) always in sync. In other words, GitOps is about defining everything as code, storing that code in Git, and letting the machines detect the drift between the desired and the actual state – and making sure that drifts are resolved as soon as possible, hence resulting in the two states being almost always in sync.
+   GitOps is the acknowledgement that declarative systems that everything is (or should be) defined as code. With all code in a source code system, that system becomes the source of truth and in the system of record for how your infrastructure is running. Well, that is, assuming that your infrastructure configuration hasn't drifted from its desired state defined in your source code system. If Git is the source of truth, you cannot run operations manually by executing random commands. Doing so would mean that Git would stop being the only source of truth. Instead, the only goal of operations is to define the desired state as code and store it in git. Then, let the machines synchronize that with the actual state. Such synchronization must be continuous so that the two states are (almost) always in sync. In other words, GitOps is about defining everything as code, storing that code in Git, and letting the machines detect the drift between the desired and the actual state – and making sure that drifts are resolved as soon as possible, hence resulting in the two states being almost always in sync.
 </p>
 
-## Principles of GitOps
-The principles of the OpenGitOps initiative identify the following four signifant characteristics of GitOps:
+<h2> Principles of GitOps</h2>
  
-### 1) Declarative
-A system managed by GitOps must have its desired state expressed declaratively.
+<h3> 1) Declarative</h3>
 
-### 2) Versioned and Immutable
-Desired state is stored in a way that enforces immutability, versioning and retains a complete version history.
+ <p> According to this principle, the entire system should have a declarative description. Let us first understand what a system description is. What is committed to your Git repository is called the System Description. One or more files that define each system component and its state will be included in the system description. According to GitOps, the way in which we store those definitions is crucial, and we must do so declaratively. That implies that the description of our system will be saved as data. 
+</p>
+ 
+ <p> In the declarative approach, we specify how we want the system to look not how we can achieve that state. If we want to make any changes, we change the description instead of the series of steps to get there. Declarative configuration is critical for GitOps because it provides a description of the system that an automated agent can understand and utilize to take action. 
+ </p>
 
-### 3) Pulled Automatically
-Software agents automatically pull the desired state declarations from the source.
+<h3> 2) Single Source of Truth</h3>
 
-### 4) Continuously Reconciled
-Software agents continuously observe actual system state and attempt to apply the desired state.
+ <p> The second principle mandates that we keep that system description inside of Git. Therefore, we decide to maintain the official blueprints, which outline the ideal system state version in Git. A git commit is required if we wish to modify the blueprint. The blueprint can also be called the desired state. This helps developers, testers, operations, security, and automations to have a single reference and keep uniformity in everyone’s vision. 
+ </p>
+ 
+ <p> GitOps also improves a system's ability to recover from failure because it's simple to roll back an unsuccessful change or restore the entire system from the repository.
+</p>
 
-OpenGitOps is a set of open-source standards, best practices, and community-focused education to help organizations adopt a structured, standardized approach to implementing GitOps.
+<h3> 3) Automated Change Delivery</h3>
 
-If you are new to GitOps, it builds and iterates on ideas drawn from DevOps and Infrastructure as Code that started with Martin Fowler’s comprehensive Continuous Integration overview and provides the freedom to choose the tools that you need for your specific use cases.
+ <p> Only automation allows us to apply modifications made to the blueprint to systems already in operation. Delivery of changes is entirely automatic. GitOps doesn't allow manual editing. Because standard workflows only need GitHub, which is such a well-known platform, automation enables changes to be delivered through simpler for developers to use workflows. Additionally, automation standardizes your delivery processes, improving the predictability and consistency of system operations. 
+ </p>
 
-Individuals, teams, and organizations who implement GitOps experience many benefits, including:
+<h3> 4) Automated State Control</h3>
 
-- Increased Developer & Operational Productivity
-- Enhanced Developer Experience
-- Improved Stability
-- Higher Reliability
-- Consistency and Standardization
-- Stronger Security Guarantees
+ <p> The fourth principle uses automation to keep our operating system in alignment with the desired state. Drift is the deviation of the runtime state of our system from the desired state. The system's blueprints and what is actually operating in the system don't match. Therefore, if the operating system drifts from what we have specified in Git, an operator will restore it by bringing it back to the intended condition. 
+</p>
+
+<h2> Benefits of GitOps</h2>
+
+<h3> 1) Improves compliance and security:</h3>
+
+ <p> Since teams use a single platform for infrastructure management, a streamlined toolchain reduces attack surfaces. Teams can use the version control system to roll back to a desired state in the event of an assault. GitOps lessens outages and downtime as a result, allowing teams to continue working on projects in a secure environment.
+ </p>
+ 
+ <h3> 2) Boosts productivity and cooperation:</h3>
+
+ <p> GitOps includes CI/CD pipelines, Git workflows, and infrastructure as code best practices for software development. These prerequisite tools, knowledge, and skill sets are already present in operations teams, thus adopting GitOps won't need a steep learning curve. GitOps workflows streamline procedures in order to improve visibility, establish a single source of truth, and have a small number of tools on hand.
+</p>
+
+ <h3> 3) Automation enhances developer efficiency and lowers costs:</h3>
+
+<p> Productivity rises with CI/CD tooling and continuous deployment since teams can concentrate on development rather than laboriously manual processes thanks to automation. Since team members can use any language and tools they like before pushing updates to GitHub, GitOps workflows enhance the developer experience. Infrastructure automation increases output and decreases downtime while enabling better cloud resource management, which can also save costs.
+</p>
+ 
+ <h3> 4) Increases stability and reliability:</h3>
+
+ <p> Human mistake is decreased through infrastructure that is codified and repeatable. Code reviews and collaboration are made easier by merge requests, which also assist teams in finding and fixing issues before they are released to the public. Additionally, there is less risk because all infrastructure changes are tracked through merge requests and may be undone if an iteration is unsuccessful. By allowing rollbacks to a more stable state and providing distributed backup copies in the event of a significant outage, Git processes speed up recovery time. GitOps gives teams the freedom to iterate more quickly and release new features without worrying about creating an unstable environment.
+</p>
+ 
+ <h3> 5) Faster development and deployment:</h3>
+
+ <p> GitOps provides quicker and more frequent deployments, making it easier for teams to make a minimum viable change. Teams can ship many times per day and roll back changes if there is a problem by utilizing GitOps best practices. Team members can offer business and customer value more quickly thanks to high velocity deployments. Teams are more flexible and able to react to customer needs more quickly with continuous integration.
+ </p>
+ 
+ <h2> Key Components of a GitOps workflow</h2>
+
+ <p> To summarize, the following are the four components we require to a GitOps workflow:</p>
+   <ol>
+      <li> Git repository: The code and configuration of the application are verified there. </li>
+      <li> CD pipeline: It is responsible for building, testing, and deploying the application. </li>
+      <li> Application deployment tool: It is employed to manage the target environment's application resources. </li>
+      <li> Monitoring system: It keeps tabs on the performance of the application and gives the development team feedback. </li>
+   </ol>
 
 </ResourcesWrapper>

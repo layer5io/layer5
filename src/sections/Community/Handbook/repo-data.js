@@ -251,7 +251,7 @@ export const repo_data = [
       },
       {
         project: "Wrk2",
-        image:meshery,
+        image: meshery,
         language: "C",
         description:
           "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
@@ -282,7 +282,7 @@ export const repo_data = [
       },
       {
         project: "Meshery-Perf",
-        image:meshery,
+        image: meshery,
         language: "Golang",
         description: "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf"
@@ -404,8 +404,8 @@ export const repo_data = [
       {
         project: "MeshKit",
         image: meshery,
-        language: "Golang",
-        descriptionp: "Toolkit for Layer5's microservices.",
+        language: "Golang,Cuelang",
+        description: "Toolkit for Layer5's microservices.",
         repository: "https://github.com/layer5io/meshkit",
       },
       {
