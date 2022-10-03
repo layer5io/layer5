@@ -156,6 +156,7 @@ const IntegrationsGrid = ({ category, theme }) => {
                     alt={item.frontmatter.title}
                     height={70}
                     width={70}
+                    style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
                   />
                 </Hexagon>
               </Link>

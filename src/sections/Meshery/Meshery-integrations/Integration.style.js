@@ -8,6 +8,8 @@ export const HoneycombGrid = styled.div`
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
+
+
     
     :hover {
       transition: all 0.25s ease-in;  
