@@ -25,7 +25,7 @@ const LandscapeGridPage = () => {
             Consul, Kuma, Citrix and VMware Tanzu Service Mesh. What is the best service mesh? What's the difference between Istio and Envoy?"
           image="/images/landscape.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <LandscapeGrid />
+        <LandscapeGrid theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>

@@ -1,4 +1,5 @@
 import Vulcand from "../../assets/images/service-mesh-icons/vulcan.svg";
+import VulcandDark from "../../assets/images/service-mesh-icons/vulcan-darkmode.svg";
 import Linkerd from "../../assets/images/service-mesh-icons/linkerd.svg";
 import Consul from "../../assets/images/service-mesh-icons/consul.svg";
 import Cilium from "../../assets/images/service-mesh-icons/cilium.svg";
@@ -31,7 +32,8 @@ export const non_functional = [{
   commercial: "N/A",
   category: "Service Mesh",
   timeline_order: 1,
-  icon: Vulcand
+  icon: Vulcand,
+  darkIcon: VulcandDark,
 }, {
   name: "Linkerd 1.x",
   opensource: "Yes",
