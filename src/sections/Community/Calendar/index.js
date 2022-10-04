@@ -116,7 +116,7 @@ const Calendar = () => {
                   addToCalendar: {
                     text: "Add To Your Calendar",
                     click: function () {
-                      window.open("https://bit.ly/2SbrRhe", "_blank");
+                      window.open("https://bit.ly/3fz1Vfs", "_blank");
                     }
                   }
                 }}
