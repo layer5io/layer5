@@ -1,8 +1,8 @@
 <p style="text-align:center;" align="center">
    <picture align="center">
-      <source media="(prefers-color-scheme: dark)" srcset="./src/assets/images/layer5/layer5-only/png/layer5-light-bg.png" width="45%" align="center" style="margin-bottom:20px;">
-      <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg" width="45%" align="center" style="margin-bottom:20px;">
-      <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%" style="margin-bottom:20px;"/>
+      <source media="(prefers-color-scheme: dark)" srcset="./src/assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg">
+      <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg">
+      <img align="center" src="./.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%"/>
    </picture>
 </p>
 
