@@ -9,10 +9,11 @@ const PageHeaderWrapper = styled.div`
             text-align: center;
             position: relative;
             height: auto;
+            margin: 3rem auto;
             padding: 0 1rem 0;
             z-index: 99;
             h1 {
-                padding-top: 1rem;
+                padding-top: 1.5rem;
                 img{
                     padding-left: 1rem;
                     width: 3rem;
@@ -23,6 +24,8 @@ const PageHeaderWrapper = styled.div`
         }
         
         .feature-image{
+            margin: 2rem auto;
+            object-fit: contain;
             justify-content: center; 
             
             img{
