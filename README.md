@@ -1,5 +1,9 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" alt="Layer5-logo" width="45%" />
+   <picture align="center">
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/images/layer5/layer5-light-no-trim.svg">
+      <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg">
+      <img align="center" src="./.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%"/>
+   </picture>
 </p>
 
 <p align="center">
@@ -27,7 +31,7 @@
  <img src=".github/assets/images/meshery/meshery-logo.svg" style="margin:10px;" width="125px" alt="Meshery - Cloud Native Management Plane" align="left" />
 </a>
 <a href="https://meshery.io">Meshery</a> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
-<br /><br /><br />
+<br /><br /><br/>
 </p>
 <br />
 
