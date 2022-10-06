@@ -4,6 +4,7 @@ export const LandscapePageWrapper = styled.div`
 	h2.landscape-section-heading {
 		margin-bottom: 2rem;
 		margin-top: 3rem;
+		padding-top: 5rem;
 		width: 100%;
 		font-weight: 600;
 		text-align: center;
