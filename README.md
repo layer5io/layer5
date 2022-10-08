@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-   <a href="https://layer5.io/meshery">
+   <a href="https://github.com/layer5io/layer5">
       <picture align="center">
          <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/images/layer5/layer5-light-no-trim.svg">
          <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg">
