@@ -4,7 +4,6 @@ const SocialLinksWrapper = styled.div`
 
     .social_icons {
         justify-content: flex-end;
-        margin-top: 0.4rem;
 
         a {
             margin: 0 0.3rem;
