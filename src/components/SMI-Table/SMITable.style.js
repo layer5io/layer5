@@ -23,6 +23,10 @@ overflow-x: auto;
 	line-height: 1.5rem;
 }
 
+.tooltip-div{
+	display: inline-block;
+}
+
 table {
     border-spacing: 0;
     width: 100%;

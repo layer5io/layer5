@@ -83,20 +83,20 @@ const Table = ({ columns, data, spec }) => {
                   {row.original.more_details.map(spec => {
                     if (spec["capability"] === "FULL"){
                       return <td>
-                        <div className="tooltip">
-                          <span data-for="react-tooltip" data-tip={`${spec["result"]}`}><StaticImage className="smiMark" src={passingMark} alt="Pass Mark" /></span>
+                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["result"]}`}>
+                          <StaticImage className="smiMark" src={passingMark} alt="Pass Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "HALF"){
                       return <td>
-                        <div className="tooltip">
-                          <span data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}><StaticImage className="smiMark" src={halfMark} alt="Half Mark" /></span>
+                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
+                          <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "NONE") {
                       return <td >
-                        <div>
-                          <span data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}><StaticImage className="smiMark" src={failingMark} alt="Fail Mark" /></span>
+                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
+                          <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
                         </div>
                       </td>;
                     } else {
