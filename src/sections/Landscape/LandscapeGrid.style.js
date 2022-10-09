@@ -440,6 +440,9 @@ export const LandscapePageWrapper = styled.div`
 		color: ${props => props.theme.textRevert};
 		font-weight: 600;
 	}
+	.react-tabs__tab:focus:after{
+		content: none;
+	}
 	.card-content {
 		border-right: none;
 	}
