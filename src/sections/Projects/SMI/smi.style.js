@@ -206,6 +206,9 @@ const SMIWrapper = styled.section`
 			border-top-right-radius: .5rem;
 		}
 	}
+    .react-tabs__tab:focus:after{
+		content: none;
+	}
 	.react-tabs__tab-list {
 		margin: 0px;
 		padding: 0px;
