@@ -56,10 +56,10 @@ const Table = ({ columns, data, spec }) => {
                     {
                       (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
                         <>
-                          <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
+                          <img data-for="react-tooltip" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
                           <ReactTooltip
-                            id="mesh-icon"
-                            place="left"
+                            id="react-tooltip"
+                            place="bottom"
                             effect="solid"
                             multiline
                             backgroundColor="rgb(60,73,79)"
@@ -67,10 +67,10 @@ const Table = ({ columns, data, spec }) => {
                           />
                         </>
                         : <>
-                          <StaticImage  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
+                          <StaticImage  data-for="react-tooltip" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
                           <ReactTooltip
-                            id="mesh-icon"
-                            place="left"
+                            id="react-tooltip"
+                            place="bottom"
                             effect="solid"
                             multiline
                             backgroundColor="rgb(60,73,79)"
@@ -84,45 +84,19 @@ const Table = ({ columns, data, spec }) => {
                     if (spec["capability"] === "FULL"){
                       return <td>
                         <div className="tooltip">
-                          <StaticImage data-for="capablity" data-tip={`${spec["result"]}`} className="smiMark" src={passingMark} alt="Pass Mark" />
-                          <ReactTooltip
-                            id="capablity"
-                            place="bottom"
-                            effect="solid"
-                            multiline
-                            backgroundColor="rgb(60,73,79)"
-                            className="smi-tooltip"
-                          />
-                        </div>
-                      </td>;
-                    } else if (spec["capability"] === "NONE") {
-                      return <td >
-                        <div >
-                          <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={failingMark} alt="Fail Mark" />
-                          <ReactTooltip
-                            id="capablity"
-                            place="bottom"
-                            effect="solid"
-                            multiline
-                            wrapper="span"
-
-                            backgroundColor="rgb(60,73,79)"
-                            className="smi-tooltip"
-                          />
+                          <span data-for="react-tooltip" data-tip={`${spec["result"]}`}><StaticImage className="smiMark" src={passingMark} alt="Pass Mark" /></span>
                         </div>
                       </td>;
                     } else if (spec["capability"] === "HALF"){
                       return <td>
                         <div className="tooltip">
-                          <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} alt="Half Mark" />
-                          <ReactTooltip
-                            id="capablity"
-                            place="bottom"
-                            effect="solid"
-                            multiline
-                            backgroundColor="rgb(60,73,79)"
-                            className="smi-tooltip"
-                          />
+                          <span data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}><StaticImage className="smiMark" src={halfMark} alt="Half Mark" /></span>
+                        </div>
+                      </td>;
+                    } else if (spec["capability"] === "NONE") {
+                      return <td >
+                        <div>
+                          <span data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}><StaticImage className="smiMark" src={failingMark} alt="Fail Mark" /></span>
                         </div>
                       </td>;
                     } else {
