@@ -25,6 +25,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fisch0920/use-dark-mode": "^2.4.0",
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/google-calendar": "^5.10.1",
     "@fullcalendar/interaction": "^5.11.0",
@@ -57,6 +58,7 @@
     "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-plugin-sitemap": "^5.19.0",
     "gatsby-plugin-styled-components": "^5.19.0",
+    "gatsby-plugin-use-dark-mode": "^1.5.0",
     "gatsby-redirect-from": "^0.5.0",
     "gatsby-source-filesystem": "^4.19.0",
     "gatsby-transformer-sharp": "^4.19.0",

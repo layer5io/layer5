@@ -19,7 +19,9 @@ import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
 import "./navigation.style.css";
-const Navigation = ({ theme, themeSetter }) => {
+import useDarkMode from "@fisch0920/use-dark-mode";
+
+const Navigation = ({ theme }) => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
@@ -158,32 +160,12 @@ const Navigation = ({ theme, themeSetter }) => {
       }
     ]
   };
+  const darkMode = useDarkMode(false);
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [themeToggle, setthemeToggle] = useState(false);
   const defaultTheme = "light";
-  const handle = () => {
-    theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
-    localStorage.setItem("Theme", theme);
 
-  };
-
-  useLayoutEffect(() => {
-    if (localStorage.getItem("Theme") === null) {
-      themeSetter(defaultTheme);
-    } else {
-      themeSetter(localStorage.getItem("Theme"));
-    }
-
-  }, []);
-
-  useLayoutEffect(() => {
-    handle();
-  }, [theme]);
-  const themeToggler = () => {
-    theme === "light" ? themeSetter("dark") : themeSetter("light");
-  };
 
   const dropDownRef = useRef();
   useEffect(() => {
@@ -206,13 +188,13 @@ const Navigation = ({ theme, themeSetter }) => {
 
   return (
 
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+    <ThemeProvider theme={darkMode.value === true ? darktheme : lighttheme}>
       <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
           <div className="navbar-wrap">
             <Link to="/" className="logo">
-              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
+              <img src={darkMode.value === true ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
             </Link>
             <nav className="nav">
               {expand ?
@@ -276,8 +258,15 @@ const Navigation = ({ theme, themeSetter }) => {
           </div>
           <div className="meshery-cta">
             <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
-            <div className="dark-theme-toggle">
-              <input id="toggle" className="toggle" type="checkbox" onChange={themeToggler} checked={!themeToggle} />
+            <div className="dark-mode-toggle">
+              <div className="dark-mode-toggle">
+
+                {/* <C checked={darkMode.value} onChange={darkMode.toggle} /> */}
+                <div className="dark-theme-toggle">
+                  <input id="toggle" className="toggle" type="checkbox" onChange={darkMode.enable} checked={darkMode.value} />
+                </div>
+
+              </div>
             </div>
           </div>
 
