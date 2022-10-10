@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
-overflow-y: hidden;
-overflow-x: auto;
+overflow: hidden;
 
 .smiMark {
 	height: 70%;
@@ -21,6 +20,10 @@ overflow-x: auto;
 	box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
 	border-radius: .75rem;
 	line-height: 1.5rem;
+}
+
+.tooltip-div{
+	display: inline-block;
 }
 
 table {
