@@ -49,7 +49,7 @@ const Integrations = ({ data }) => {
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <IndividualIntegrations data={data} />
+        <IndividualIntegrations theme={theme} data={data} />
         <Footer />
       </Layout>
     </ThemeProvider>
