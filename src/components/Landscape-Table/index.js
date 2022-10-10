@@ -101,6 +101,7 @@ const Table = ({ columns, data, placeHolder }) => {
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
+          {rows.length == 0 && <tr><td colSpan={headerGroups[0].headers.length}>No results found</td></tr>}
           {rows.map((row, i) => {
             prepareRow(row);
             return (
