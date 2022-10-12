@@ -111,7 +111,7 @@ export const LandscapePageWrapper = styled.div`
 		margin-right: -4rem;
 	}
 	.meshtitle-img-0 img, .meshtitle-img-1 img {
-		width: 4.75rem;
+		width: 8rem;
 		height: 4.75rem;
 	}
 	.title-0, .title-1, .subtitle-0, .subtitle-1 {
