@@ -191,7 +191,7 @@ const HowIntegrationWorksWrapper = styled.section`
 `;
 
 
-const HowIntegrationWorks = ({ name, slides }) => {
+const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
 
   const settings = {
     customPaging: (i) => {
@@ -221,10 +221,9 @@ const HowIntegrationWorks = ({ name, slides }) => {
         <div className="integration-section">
           <Row className="integration-section-row">
             <Col xs={12} xl={4} className="integration-section-data">
-              <h3>The Performance Yardstick</h3>
+              <h3>{howitworks}</h3>
               <p>
-                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
-                application across different service meshes. Compare and manage service mesh overhead.
+                {howitworksdetails}
               </p>
             </Col>
             <Col xs={12} xl={8} className="integration-section-caraousel">
