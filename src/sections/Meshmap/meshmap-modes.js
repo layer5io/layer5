@@ -40,7 +40,7 @@ const MeshmapModesWrapper = styled.div`
     position: relative;
     border-left: 1.5px solid #fff;
     width: 50%;
-    height: 50vh;
+    height: 40rem;
     min-height: 600px;
     color: #fff;
     overflow: hidden;
@@ -259,7 +259,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Discover and model your cloud native deployments</h1>
-            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={designerEnlarged ? "big" : "small"} />
+            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
             <p>
               Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.
             </p>
