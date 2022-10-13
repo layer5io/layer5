@@ -40,7 +40,7 @@ const MeshmapModesWrapper = styled.div`
     position: relative;
     border-left: 1.5px solid #fff;
     width: 50%;
-    height: 50vh;
+    height: 40rem;
     min-height: 600px;
     color: #fff;
     overflow: hidden;
