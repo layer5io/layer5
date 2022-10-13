@@ -176,7 +176,7 @@ const MeshmapModesWrapper = styled.div`
     position: relative;
     z-index: 1;
     text-align: center;
-    margin: 0 1.618em;
+    margin: 0 1.14em;
     top: 23%;
     opacity: 0;
   
