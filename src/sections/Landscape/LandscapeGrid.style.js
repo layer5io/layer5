@@ -111,8 +111,12 @@ export const LandscapePageWrapper = styled.div`
 		margin-right: -4rem;
 	}
 	.meshtitle-img-0 img, .meshtitle-img-1 img {
-		width: 8rem;
+		width: 4.75rem;
 		height: 4.75rem;
+	}
+	.meshtitle-img-1 .Vulcand.Vulcand{
+  		width: 6rem;
+  		hight: 6rem;
 	}
 	.title-0, .title-1, .subtitle-0, .subtitle-1 {
 		position: relative;
