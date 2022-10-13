@@ -80,7 +80,7 @@ const FeaturesSection = () => {
           <div>
             <h4>One step to managing your microservices</h4>
             <h1>Cloud Native Application Management</h1>
-            <p>Confidentally take full advantage of all that your infrastructure offers.</p>
+            <p>Confidently take full advantage of all that your infrastructure offers.</p>
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>
