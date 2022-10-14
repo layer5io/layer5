@@ -12,6 +12,7 @@ const FooterWrapper = styled.section`
 	}
 	
 	.footer-head {
+		align-items: center;
 		margin: 0px 1.5rem 1.5rem -0.75rem;
 		.footer_logo-icons{
 			padding: 0rem;

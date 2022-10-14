@@ -32,14 +32,14 @@ const LearnInfo = ({ courses, chapters, meshes }) => {
         <Col xs={12} sm={6} lg={4}>
           <h2>{coursesCount} {coursesCount === 1 ? "course" : "courses"}</h2>
           <p>
-            Learning the service mesh the right way. From the best learing paths
+            Learning the service mesh the right way. From the best learning paths
             by the experts at Layer5 and learn how to mesh.
           </p>
         </Col>
         <Col xs={12} sm={6} lg={4}>
           <h2>{chaptersCount} {chaptersCount === 1 ? "chapter" : "chapters"}</h2>
           <p>
-            Learning the service mesh the right way. From the best learing paths
+            Learning the service mesh the right way. From the best learning paths
             by the experts at Layer5 and learn how to mesh.
           </p>
         </Col>
