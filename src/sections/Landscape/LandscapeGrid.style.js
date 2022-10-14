@@ -114,7 +114,7 @@ export const LandscapePageWrapper = styled.div`
 		width: 4.75rem;
 		height: 4.75rem;
 	}
-	.meshtitle-img-1 .vulcan-img.vulcan-img{
+	.meshtitle-img-1 .vulcan-img{
   		width: 6rem;
   		hight: 6rem;
 	}
