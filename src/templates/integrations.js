@@ -16,6 +16,8 @@ export const query = graphql`
       frontmatter {
         title
         subtitle
+        howItWorks
+        howItWorksDetails
         integrationIcon {
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
