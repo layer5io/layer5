@@ -42,7 +42,7 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 3, name: "Service Mesh", isSelected: false },
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
-    { id: 6, name: "Telemetry", isSelected: false },
+    { id: 6, name: "Monitoring", isSelected: false },
     { id: 7, name: "Continuous Integration & Delivery", isSelected: false },
     { id: 8, name: "Key Management", isSelected: false },
     { id: 9, name: "Cloud Native Network", isSelected: false },
