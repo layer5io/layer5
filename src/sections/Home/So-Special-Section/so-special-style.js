@@ -24,7 +24,9 @@ const SoSpecialWrapper = styled.div`
     
     .slick-arrow::before{
         color: black;
-        font-size: 22px;
+        font-size: 4rem;
+        display: inline-block;
+        height: 2rem;
         filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
     }
     .slick-slider{
@@ -151,7 +153,7 @@ const SoSpecialWrapper = styled.div`
             text-align:center;  
         }
          .slick-prev{
-            left:-20px;
+            left:-60px;
         }
         .slick-next{
             right:-20px;
