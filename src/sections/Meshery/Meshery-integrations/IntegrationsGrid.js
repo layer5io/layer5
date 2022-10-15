@@ -46,6 +46,7 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 7, name: "Continuous Integration & Delivery", isSelected: false },
     { id: 8, name: "Key Management", isSelected: false },
     { id: 9, name: "Cloud Native Network", isSelected: false },
+    { id: 10, name: "Cloud Native Storage", isSelected: false },
   ]);
 
   useEffect(() => setCategory(), []);
