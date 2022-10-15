@@ -32,7 +32,7 @@ const Meshmap = () => {
                 {
                   title: "Designer Mode",
                   description:
-                    "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
+                    "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
                     <img
                       src={designerImage}
@@ -44,7 +44,7 @@ const Meshmap = () => {
                 {
                   title: "Visualizer Mode",
                   description:
-                    "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
+                    "Visualizer offers an interactive topology of your Kubernetes clusters with live terminal sessions, log streaming and performance testing of your applications. Designs created in Designer mode can be deployed and viewed as running in your environment using Visualizer.",
                   content: (
                     <img
                       src={visualizerImage}
@@ -74,9 +74,9 @@ const Meshmap = () => {
                   <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
                   <div className="draft-logo">
                     <p>Help choose the best logo for MeshMap:</p>
-                    <a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">
+                    <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
                       <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
-                    <p><a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">Vote for your favorite design</a></p>
+                    <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p>
                   </div>
                 </Col>
 
@@ -85,8 +85,8 @@ const Meshmap = () => {
                     title="Join the Beta Program"
                     form="meshmap"
                     account_desc="Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account."
-                    submit_title = "Thank you for your interest in Layer5 MeshMap!"
-                    submit_body = "You are now signed up for the Layer5 MeshMap beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program. We are working through a growing waitlist"
+                    submit_title="Thank you for your interest in Layer5 MeshMap!"
+                    submit_body="You are now signed up for the Layer5 MeshMap beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program. We are working through a growing waitlist"
                   />
                 </Col>
               </Row>

@@ -66,7 +66,7 @@ const NavigationWrap = styled.header`
     border-radius: 50px;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 120%;
     display: block;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .18s forwards;
@@ -143,10 +143,13 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
-      padding-top: 3em;
+      padding-top: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      @media screen and (max-width: 992px) and (min-width: 912px) {
+         padding: .5em;
+       }
     }
   }
   @keyframes nav-bar-anim {
@@ -431,7 +434,10 @@ const NavigationWrap = styled.header`
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
+    padding: 1rem 1rem 0rem 1rem;
     &:hover{
+      box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.25);
+      border-radius: 1rem;
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
           svg{
@@ -480,7 +486,7 @@ const NavigationWrap = styled.header`
     justify-content: space-between;
     border-radius: 0 0 3px 3px;
     position: relative;
-    padding: 20px 35px;
+    padding: 20px 0px;
   }
   .post-title{
     font-size: 16px;

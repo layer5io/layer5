@@ -5,16 +5,18 @@ export const HoneycombGrid = styled.div`
   .container-active{
     display: flex;
     height: 95%;
-    background: white;
+    background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
 
+
+    
     :hover {
       transition: all 0.25s ease-in;  
       background: #00d3a9;
         ::after{
           content: "";
-          background: white;
+          background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
           margin: 0px 0px 0 4px;
           clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
           height: 95%;

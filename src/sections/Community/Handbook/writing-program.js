@@ -15,7 +15,6 @@ import talks from "./images/talks.svg";
 import videos from "./images/videos.svg";
 import workshop from "./images/workshop.svg";
 import resources from "./images/resources.svg";
-import c_icon from "./images/checkmark-box_green.svg";
 
 
 const Writers = () => {

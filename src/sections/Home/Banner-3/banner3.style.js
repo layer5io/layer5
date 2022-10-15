@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import HeroCubes from "./assets/images/mesh_cubes.svg";
 import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const Banner3SectionWrapper = styled.section`

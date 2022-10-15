@@ -5,8 +5,10 @@ import { Field, Formik, Form } from "formik";
 import { Container } from "../../../reusecore/Layout";
 import QuizComponent from "./quiz-component";
 
-const QuizModal = ({ TOCData, chapterData, location }) => {
+const QuizModal = () => {
+  /* eslint-disable no-unused-vars */
   const [userData, setUserData] = useState({});
+  /* eslint-enable no-unused-vars */
   const [isLogin, setIsLogin] = useState(false);
 
   if (isLogin){

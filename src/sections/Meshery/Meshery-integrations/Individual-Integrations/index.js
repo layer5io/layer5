@@ -8,13 +8,14 @@ import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
 
-const IndividualIntegrations = ({ data }) => {
+const IndividualIntegrations = ({ theme, data }) => {
   const { frontmatter, body } = data.mdx;
+
   console.log(frontmatter.category);
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...frontmatter.integrationIcon} alt={frontmatter.title}/>
+        <Image {...frontmatter.integrationIcon} alt={frontmatter.title} />
         <h2>
           {frontmatter.title} with {" "}<span className="hero-header">Meshery</span>
         </h2>
@@ -43,10 +44,10 @@ const IndividualIntegrations = ({ data }) => {
           </section>
         </div>
       </section>
-      <HowIntegrationWorks name={frontmatter.title} slides={frontmatter.workingSlides} />
+      <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={frontmatter.workingSlides} />
       <section className="integration-collection">
         <h2>Related Integrations</h2>
-        <RelatedIntegration category={frontmatter.category} />
+        <RelatedIntegration theme={theme} category={frontmatter.category} />
       </section>
       <CTA_Book />
     </IntegrationPageWrapper>

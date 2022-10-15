@@ -1,4 +1,5 @@
 import Vulcand from "../../assets/images/service-mesh-icons/vulcan.svg";
+import VulcandDark from "../../assets/images/service-mesh-icons/vulcan-darkmode.svg";
 import Linkerd from "../../assets/images/service-mesh-icons/linkerd.svg";
 import Consul from "../../assets/images/service-mesh-icons/consul.svg";
 import Cilium from "../../assets/images/service-mesh-icons/cilium.svg";
@@ -13,6 +14,7 @@ import Octarine from "../../assets/images/service-mesh-icons/octarine.svg";
 import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
 import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
+import KumaDark from "../../assets/images/service-mesh-icons/kuma-white.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
@@ -31,7 +33,8 @@ export const non_functional = [{
   commercial: "N/A",
   category: "Service Mesh",
   timeline_order: 1,
-  icon: Vulcand
+  icon: Vulcand,
+  darkIcon: VulcandDark,
 }, {
   name: "Linkerd 1.x",
   opensource: "Yes",
@@ -262,7 +265,8 @@ export const non_functional = [{
   commercial: "Kuma",
   category: "Service Mesh",
   timeline_order: 20,
-  icon: Kuma
+  icon: Kuma,
+  darkIcon: KumaDark
 },
 {
   name: "Citrix Service Mesh",

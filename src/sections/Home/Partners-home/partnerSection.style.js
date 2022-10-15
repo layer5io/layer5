@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import redhat from "../../../assets/images/partners/redhat_black.svg";
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
     margin: 0rem 0rem 5rem 0rem;
@@ -40,11 +39,14 @@ const PartnerItemWrapper = styled.section`
         width:100%;
         opacity: 0.7;
         max-height:100px;
+        @media(max-width: 800px){
+                min-width:5.5rem;
+            }
     }
     @supports (-webkit-hyphens:none) { 
         img { 
             min-width: 8rem; 
-        }
+          }
         @media only screen and (max-width: 992px) {
             img { 
                 min-width: 5.625rem; 

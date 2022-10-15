@@ -4,14 +4,10 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 
-import HowMesheryWorks from "../../../sections/Meshery/How-meshery-works";
 import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
-import HowMesheryWorksSpecs from "../../../sections/Meshery/How-meshery-works/specs";
 import Navigation from "../../../sections/General/Navigation";
-import Footer from "../../../sections/General/Footer";
-
 import { GlobalStyle } from "../../../sections/app.style";
-
+import Footer from "../../../sections/General/Footer";
 import SMILogo from "../../../sections/Meshery/How-meshery-works/images/servicemeshinterface-icon-color.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/visual-topology.svg";
@@ -20,10 +16,13 @@ import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
 import dark_githubLogo from "../../../assets/images/socialIcons/github_black.svg";
-import light_githubLogo from "../../../assets/images/socialIcons/github-light.svg";
 
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
+import loadable from "@loadable/component";
+
+const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-meshery-works"));
+const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
 
 
 

@@ -26,7 +26,6 @@ const ConductWrapper = styled.div`
           }
       }
       img{
-          padding-top:5rem;
           height: auto;
           width: 23rem;
           display: block;
@@ -36,6 +35,9 @@ const ConductWrapper = styled.div`
       Button{
           margin: 1.25rem 0px;
           color: white;
+      }
+      #col2 {
+        align-self: center
       }
   }
   @media only screen and (max-width: 750px){

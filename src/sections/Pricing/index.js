@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
@@ -10,7 +10,7 @@ import FeatureDetails from "./collapsible-details";
 
 const Pricing = () => {
 
-  const [monthly, setMonthly] = useState(false);
+  // const [monthly, setMonthly] = useState(false);
 
   return (
     <PricingWrapper>

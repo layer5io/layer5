@@ -80,7 +80,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             </Row>
           </div>
           <p>
-          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud navtive and multi-cloud through engineering-empowered automation.
+          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
           </p>
 
         </Container>

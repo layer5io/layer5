@@ -205,7 +205,7 @@ const data = {
       question: "How do I land an internship with Layer5?",
       category: "internships",
       answer: [
-        "To best position your candidancy for an internship with Layer5, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.",
+        "To best position your candidacy for an internship with Layer5, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.",
         "Understand that internships are assigned as a recognition of work that you are already performing. They are not assigned in the hopes of you becoming a good contributor, but are awarded to support and reinforce efforts that you are already giving. Engage and make an impact on an area of a project. Show your passion for helping move the project forward, willingness to work hard, and capacity to learn.",
         "Recognize that there are many hundreds of contributors and relatively few maintainers and MeshMates. If you don't get an immediate response, don't lose heart. Be tenacious and find a piece of one of the projects to be engaged with and advance.",
       ],
@@ -225,7 +225,7 @@ const data = {
       question: "What are characteristics of successful interns?",
       category: "internships",
       answer: [
-        "Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are futhered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
+        "Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are furthered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
         "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers.",
         "Successful interns internalize the fact that the real value of engaging and contributing to projects is the experience gained. They understand that the experience is theirs for the taking and that project maintainers and Layer5 employees want you to seize the opportunity. We consider your success our success and embrace the concept that your meaningful engagement is to all our benefits.",
       ],

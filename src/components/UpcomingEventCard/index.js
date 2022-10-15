@@ -4,8 +4,10 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel } from "swiper";
+import { Link } from "gatsby";
 import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
+import slugify from "../../utils/slugify";
 
 
 const UpcomingEvents = ({ data }) => {
@@ -25,7 +27,9 @@ const UpcomingEvents = ({ data }) => {
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
+                      <Link to={slugify(item.frontmatter.title)}>
+                        <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
+                      </Link>
                     </div>
                     <div className="blog-slider_content">
                       <h3 className="blog-slider_title">{item.frontmatter.title}</h3>

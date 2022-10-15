@@ -34,9 +34,7 @@ function SMI_Compatibility() {
     []
   );
 
-  // const data = React.useMemo(() => smi_data);
   const [smiData, setSmiData] = useState(0);
-  const [smiTests, setSmiTests] = useState([]);
 
   useEffect(() => {
     fetch("https://meshery.layer5.io/smi/results/public")
@@ -82,7 +80,6 @@ function SMI_Compatibility() {
         });
 
         setSmiData(data);
-        setSmiTests(Object.keys(data));
       });
 
   }, []);

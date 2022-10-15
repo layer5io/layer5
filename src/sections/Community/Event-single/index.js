@@ -7,7 +7,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
 import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
-import CommonForm from "../../../components/CommonForm";
+import EventForm from "../../../components/CommonForm/events";
 
 const checkSpeaker = (speaker) => {
 
@@ -66,7 +66,7 @@ const EventSingle = ({ data }) => {
             <div className="tags">
 
               { frontmatter.register &&
-                  <CommonForm
+                  <EventForm
                     title="Register Today!"
                     form="event"
                     account_desc="Please provide at least one account."

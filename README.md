@@ -1,19 +1,25 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" alt="Layer5-logo" width="45%" />
+      <picture align="center">
+         <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/images/layer5/layer5-light-no-trim.svg">
+         <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg">
+         <img align="center" src="./.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%"/>
+      </picture>
 </p>
 
 <p align="center">
 <a href="https://github.com/layer5io/layer5" alt="GitHub contributors">
 <img src="https://img.shields.io/github/contributors/layer5io/layer5.svg" /></a>
-<a href="https://github.com/layer5io/layer5" alt="GitHub issues by-label">
+<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Alayer5labs+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
 <img src="https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00" /></a>
 <a href="https://slack.layer5.io" alt="Slack">
 <img src="https://img.shields.io/badge/Slack-@layer5.svg?logo=slack" /></a>
 <a href="https://twitter.com/layer5" alt="Twitter Follow">
-<img src="https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social" /></a>
+<img src="https://img.shields.io/twitter/follow/layer5.svg?label=Follow+Layer5&style=social" /></a>
 <a href="https://github.com/layer5io/layer5" alt="License">
 <img src="https://img.shields.io/github/license/layer5io/layer5.svg" /></a>
 </p>
+
+<h5><p align="center"><i>If you’re using Layer5 products or if you like the project, please <a href="https://github.com/layer5io/layer5/stargazers">★</a> this repository to show your support! 🤩</i></p></h5>
 
 # About Layer5
 
@@ -27,7 +33,7 @@
  <img src=".github/assets/images/meshery/meshery-logo.svg" style="margin:10px;" width="125px" alt="Meshery - Cloud Native Management Plane" align="left" />
 </a>
 <a href="https://meshery.io">Meshery</a> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
-<br /><br /><br />
+<br /><br /><br/>
 </p>
 <br />
 
@@ -36,7 +42,7 @@
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
 <a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
 </a>
-<a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
+<a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh, or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
 </p>
 <br />
@@ -60,7 +66,7 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" />
 </a>
-The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service / application details, and bundling of statistical analysis of results.
+The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service/application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
 <br />
@@ -147,7 +153,7 @@ alt="Nighthawk" align="left" />
 </div>
 <br />
 <ul>
-  <li>Find us on Twitter: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>.</li>
+  <li>Find us on Twitter: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a>, and <a href="https://twitter.com/smp_spec">@smp_spec</a>.</li>
   <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/meshery/">Meshery</a>, and <a href="https://www.linkedin.com/showcase/service-mesh-performance">Service Mesh Performance</a>.</li>
   <li>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>.</li>
 </ul>
