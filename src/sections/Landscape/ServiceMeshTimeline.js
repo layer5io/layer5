@@ -22,7 +22,7 @@ for (let i = 0; i < meshes.length; i++){
     remainingMeshes.push(meshes[i]);
 }
 
-const ServiceMeshTimeline = ( { theme } ) => {
+const ServiceMeshTimeline = ( { theme } ) => { 
   const [elements, setElements] = useState(initialMeshes);
   const [loadedAll, showIcon] = useState(false);
 
