@@ -51,7 +51,7 @@ export const LandscapePageWrapper = styled.div`
 					line-height: 1.5rem;
 					color: ${props => props.theme.white};
 				}
-				.pad-top {
+				.pad-top { 
 					margin-top: 10px;
 				}
 			}
