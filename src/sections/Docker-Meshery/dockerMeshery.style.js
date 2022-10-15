@@ -92,4 +92,8 @@ export const DockerMesheryWrapper = styled.div`
       padding: 5%;
       border-radius: 1rem;
     }
+    .jFTZLO {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
 `;
