@@ -153,7 +153,7 @@ const SoSpecialWrapper = styled.div`
             text-align:center;  
         }
          .slick-prev{
-            left:-60px;
+            left:-58px;
         }
         .slick-next{
             right:-20px;
