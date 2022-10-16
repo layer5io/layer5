@@ -80,7 +80,7 @@ table {
 	
 	th, tr{
 		&:hover{
-			box-shadow: 0px 0px 15px -10px ${props => props.theme.DarkTheme ? "#737373" : props.theme.text};
+			box-shadow: 0px 0px 15px -10px ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.text};
 			transform: translateY(0px);
 		}
 	}
