@@ -49,7 +49,7 @@ const Integrations = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon?.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <IndividualIntegrations theme={theme} data={data} />
         <Footer />

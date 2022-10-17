@@ -10,7 +10,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
       </div>
     );
   } else {
-    return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
+    return <GatsbyImage image={childImageSharp?.gatsbyImageData} {...rest} alt={alt} />;
   }
 };
 
