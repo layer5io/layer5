@@ -5,11 +5,9 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
 import Button from "../../../reusecore/Button";
-import VintageBox from "../../../reusecore/VintageBox";
 
 const projectsIcon = "./images/projects.svg";
 
-const projectImage1 = "../../../assets/images/app/projects/landscape.png";
 const projectImage2 = "../../../assets/images/app/projects/smp.png";
 const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
 const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
@@ -53,7 +51,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/service-mesh-management/meshery">
+              <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage src={projectImage3} alt="Meshery Logo" height={40} />
                   <h5>Meshery</h5>

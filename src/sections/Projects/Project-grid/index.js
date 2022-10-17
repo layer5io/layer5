@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
+import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 
 import { ProjectWrapper } from "./projectGrid.style";
 import MeshMapCTA from "../../meshmap-cta";
@@ -38,7 +39,7 @@ const ProjectPage = () => {
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/service-mesh-management/meshery" className="project__card two">
+            <Link to="/cloud-native-management/meshery" className="project__card two">
               <div className="project__card-container project__card-container_meshery">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
@@ -107,10 +108,10 @@ const ProjectPage = () => {
               </div>
             </Link>
           </div>
-
           <MeshMapCTA />
         </Container>
       </div>
+      <ProudMaintainers />
     </ProjectWrapper>
   );
 };

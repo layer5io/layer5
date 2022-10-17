@@ -2,11 +2,6 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import Categories from "./categories";
-import NonFunctional from "./non-functional";
-import Functional from "./functional";
-import SMI_Compatibility from "./smi";
-import Tools from "./tools";
 import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -21,10 +16,15 @@ import halfMark from "../../assets/images/landscape/half.svg";
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
+import Categories from "./categories";
+import NonFunctional from "./non-functional";
+import Functional from "./functional";
+import SMI_Compatibility from "./smi";
+import Tools from "./tools";
 
 const isBrowser = typeof window !== "undefined";
 
-const LandscapeGrid = () => {
+const LandscapeGrid = ( { theme } ) => {
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -84,7 +84,7 @@ const LandscapeGrid = () => {
               <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
               </h2>
-              <ServiceMeshTimeline />
+              <ServiceMeshTimeline theme={theme} />
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>

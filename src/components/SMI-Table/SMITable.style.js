@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
-overflow-y: hidden;
-overflow-x: auto;
+overflow: hidden;
 
 .smiMark {
 	height: 70%;
@@ -23,6 +22,10 @@ overflow-x: auto;
 	line-height: 1.5rem;
 }
 
+.tooltip-div{
+	display: inline-block;
+}
+
 table {
     border-spacing: 0;
     width: 100%;
@@ -37,7 +40,7 @@ table {
         border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "efefef"};
     }
     th {
-        background: #1E2117;
+        background: ${props => props.theme.DarkTheme ? "#404040" : "#1E2117"} ;
         color: #ffffff;
 		height: 4rem;
 		font-size: 1rem;
@@ -77,7 +80,7 @@ table {
 	
 	th, tr{
 		&:hover{
-			box-shadow: 0px 2px 15px -10px ${props => props.theme.text};
+			box-shadow: 0px 0px 15px -10px ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.text};
 			transform: translateY(0px);
 		}
 	}

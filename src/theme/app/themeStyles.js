@@ -74,6 +74,9 @@ const lighttheme = {
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#FFFFFF",
 
+  //selection color(used when text is selected)
+  selectionColor: "#3c494f",
+
   //DarkTheme
   DarkTheme: false,
 
@@ -153,6 +156,12 @@ export const darktheme = {
 
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#212121",
+
+  //selection color(used when text is selected)
+  selectionColor: "#3c494f",
+
+  //Active color (when a button is active)
+  activeColor: "#3c494f",
 
   //DarkTheme
   DarkTheme: true,

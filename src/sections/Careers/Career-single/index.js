@@ -8,7 +8,6 @@ import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
 import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
-import { StaticImage } from "gatsby-plugin-image";
 import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Layer5_LightIcon from "../../../assets/images/layer5/layer5-only/png/layer5-light-bg.png";
 

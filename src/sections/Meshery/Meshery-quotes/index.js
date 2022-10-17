@@ -12,46 +12,46 @@ const MesheryQuotesWrapper = styled.div`
     }
 `;
 
-const quotes_data = [
-  {
-    name: "Yogi Porla",
-    position: "Principal Engineer, HPE",
-    quote: "Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools."
-  },
-  {
-    name: "Jason S.",
-    position: "Site Reliability Engineer",
-    quote: "Huge fan of MeshMap. It doesn't get any more intuitive than this."
-  },
-  {
-    name: "Shane W.",
-    position: "DevOps Architect",
-    quote: "...the ability to benchmark Istio in MY cluster with MY workloads is just what I was looking for. I threw out my test scripts."
-  },
-];
+// const quotes_data = [
+//   {
+//     name: "Yogi Porla",
+//     position: "Principal Engineer, HPE",
+//     quote: "Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools."
+//   },
+//   {
+//     name: "Jason S.",
+//     position: "Site Reliability Engineer",
+//     quote: "Huge fan of MeshMap. It doesn't get any more intuitive than this."
+//   },
+//   {
+//     name: "Shane W.",
+//     position: "DevOps Architect",
+//     quote: "...the ability to benchmark Istio in MY cluster with MY workloads is just what I was looking for. I threw out my test scripts."
+//   },
+// ];
 
 
 const MesheryQuotes = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 8000,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    cssEase: "linear",
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-    ]
-  };
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 8000,
+  //   autoplaySpeed: 2000,
+  //   pauseOnHover: true,
+  //   cssEase: "linear",
+  //   responsive: [
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       }
+  //     },
+  //   ]
+  // };
   return (
     <MesheryQuotesWrapper>
       <Container>

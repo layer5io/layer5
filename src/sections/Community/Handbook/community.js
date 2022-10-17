@@ -59,7 +59,7 @@ const CommunityGuide = () => {
               help you get started:
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>For Easy Identification -</strong> When setting up your
               slack workspace, your display name should be the same as your
               GitHub username for easy identification, engage freely, and in
@@ -68,7 +68,7 @@ const CommunityGuide = () => {
               warmly received.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Familiarize with the community -</strong> As you get to
               familiarize yourself with the community, know that there are
               multiple initiatives for you to explore. Some initiatives have
@@ -80,7 +80,7 @@ const CommunityGuide = () => {
               members over Slack, the mailing list, and so on.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Familiarize with the projects -</strong> The following is
               a sample of the many active, ongoing community projects. One way
               of doing so is to review the{" "}
@@ -94,7 +94,7 @@ const CommunityGuide = () => {
               on GitHub!
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Be friendly and open-minded -</strong> We encourage you to
               be welcoming to new collaborators and those just getting started.
               Other contributors might not have the same degree of experience or
@@ -102,14 +102,14 @@ const CommunityGuide = () => {
               ideas.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Be honest -</strong> “A half-truth is a whole lie.” Being
               truthful allows you to reach a better agreement. As a result, be
               open and honest about who you are, what you do, and how you want
               to accomplish it.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Be respectful and inclusive -</strong> We are a diverse
               group of people with diverse backgrounds and opinions. We expect
               everyone to be civil and professional in their activities.
@@ -118,14 +118,14 @@ const CommunityGuide = () => {
               reasonable person.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Collaborate and Contribute -</strong> Members are expected
               to attend community and workgroup meetings, find ways to help,
               check up on our Github page regularly etc. Within the community
               and outside, we encourage teamwork.
             </p>
             <p>
-              <img className="logo" src={Point} />
+              <img className="logo" src={Point} alt="Point" />
               <strong>Resources -</strong> Be sure to access the resources in
               the{" "}
               <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
@@ -140,35 +140,18 @@ const CommunityGuide = () => {
               .
             </p>
             <p>
-              <img className="logo" src={Point} />
-              <strong>We do not allow:</strong>
-              <ul>
-                <li>Threats of violence</li>
-                <li>Sexually obscene content</li>
-                <li>Bullying</li>
-                <li>Harassment</li>
-                <li>Invasion of privacy </li>
-                <li>Misinformation</li>
-                <li>
-                  Please refer to the{" "}
-                  <Link to="/community/handbook/code-of-conduct">
-                    Code of Conduct
-                  </Link>{" "}
-                  for more details.
-                </li>
-              </ul>
+              Please refer to the{" "}
+              <Link to="/community/handbook/code-of-conduct">
+                   Code of Conduct
+              </Link>{" "}
+              for more details.
             </p>
             <a id="Recognitions">
-              <h3 style={recognitionsstyle}>Recognitions</h3>
+              <h3 style={recognitionsstyle}>Recognition</h3>
             </a>
             <h4>Badges</h4>
             <p>
-              As you continue your contributions to this community, you stand a
-              chance to receive a badge in acknowledgement of your engagement
-              within and/or contribution to the representative project or
-              (sub-)community. A variety of badges exist so that community
-              members and their efforts may be affiliated with a particular
-              project or community initiative.
+              Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
             </p>
             <ul style={badgeListStyle}>
               <li>

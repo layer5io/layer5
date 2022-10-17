@@ -5,12 +5,13 @@ import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
+import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { Link } from "gatsby";
 
 const contents = [
   {
@@ -26,6 +27,8 @@ const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
+
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -122,6 +125,7 @@ const Repository = () => {
                         <th className="linkscol">Site</th>
                         <th>Project</th>
                         <th>Framework</th>
+                        <th>Maintainers</th>
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
@@ -130,26 +134,37 @@ const Repository = () => {
                         project,
                         language,
                         repository,
+                        maintainers_name,
                         site,
                         image,
+                        link,
                       } = subdata;
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} />
+                                <img className="site-icon" src={image} alt="site-icon" />
                               </a>
                             </td>
                             <td>{project}</td>
                             <td>{language}</td>
+                            <td>
+                              {maintainers_name.map((mname, index) => {
+                                return (
+                                  <Link to={link[index]} key={index}>
+                                    <span>{index > 0 ? ", " : ""}</span>{mname}
+                                  </Link>
+                                );
+                              })}
+                            </td>
                             <td>
                               <a
                                 href={repository}
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <img className="github-icon" src={github} alt="github-icon" />
                               </a>
                             </td>
                           </tr>
@@ -160,7 +175,6 @@ const Repository = () => {
                 </div>
               );
             })}
-
             <a id="Backend Projects">
               <h2>Backend Projects</h2>
             </a>
@@ -184,7 +198,7 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                              <img className="site-icon inline" src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -193,7 +207,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <img className="github-icon" src={github} alt="github-icon" />
                               </a>
                             </td>
                           </tr>

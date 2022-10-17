@@ -60,8 +60,8 @@ const Maintainer = () => {
 
               Its service mesh community represents the largest collection of
               service Mesh projects.Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”.
+              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
+              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -112,7 +112,7 @@ const Maintainer = () => {
               <a id="Meshery">
                 {" "}
                 <h3>
-                  <a href="https://layer5.io/service-mesh-management/meshery">
+                  <a href="https://layer5.io/cloud-native-management/meshery">
                     <img className="project-title-icon" src={meshery} alt="Meshery" />
                     &nbsp; Meshery
                   </a>
@@ -122,12 +122,12 @@ const Maintainer = () => {
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} />
+              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
+              <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
               <ul>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/service-mesh-management/meshery">
+                    <a href="https://layer5.io/cloud-native-management/meshery">
                       Meshery
                     </a>
                   </h4>{" "}
@@ -151,7 +151,7 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/service-mesh-management/meshery/meshery-operator">
+                    <a href="https://layer5.io/cloud-native-management/meshery/meshery-operator">
                       Meshery-operator :
                     </a>
                   </h4>{" "}

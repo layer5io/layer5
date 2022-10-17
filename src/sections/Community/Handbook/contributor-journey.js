@@ -34,13 +34,13 @@ const Intro = () => {
             <p>
               Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
               maintainer of
-              <Link to="../blog/announcements/a-standard-interface-for-service-meshes">
+              <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
                 {" "}
                 service mesh standards{" "}
               </Link>
               and also the maker of <Link to="/meshery">Meshery </Link>,
               the
-              <Link to="/service-mesh-management/meshery">
+              <Link to="/cloud-native-management/meshery">
                 {" "}
                 Cloud Native Management Plane{" "}
               </Link>
@@ -106,7 +106,7 @@ const Intro = () => {
                 <h2>Contributor's Journey</h2>
                 <div className="heading-start">
                   <h5>Start Here</h5>
-                  <img className="heading-start__arrow" src={longArrow} />
+                  <img className="heading-start__arrow" src={longArrow} alt="longArrow" />
                 </div>
               </Col>
               <Col sm={12} lg={6}>

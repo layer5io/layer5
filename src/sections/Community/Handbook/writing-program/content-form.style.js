@@ -29,7 +29,11 @@ const ContentFormWrapper = styled.section`
         font-size: .9rem;
         margin: 0 1rem 1rem;
         padding: 1rem;
-        
+        overflow: auto;
+        height: 600px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
     
           label {
             display: block;

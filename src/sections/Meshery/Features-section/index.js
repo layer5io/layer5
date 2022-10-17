@@ -80,14 +80,14 @@ const FeaturesSection = () => {
           <div>
             <h4>One step to managing your microservices</h4>
             <h1>Cloud Native Application Management</h1>
-            <p>Confidentally take full advantage of all that your infrastructure offers.</p>
+            <p>Confidently take full advantage of all that your infrastructure offers.</p>
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Install" url="/service-mesh-management/meshery/getting-started" />
+              <Button secondary className="mgmt_button" title="Install" url="/cloud-native-management/meshery/getting-started" />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Manage" url="/service-mesh-management/meshery/operating-service-meshes" />
+              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-service-meshes" />
             </Col>
             <Col xs={12} sm={6} md={4}>
               <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />

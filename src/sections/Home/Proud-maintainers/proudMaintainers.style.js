@@ -1,6 +1,22 @@
 import styled from "styled-components";
 const ProjectItemWrapper = styled.section`
+	.left-col {
+		text-align: left;
+		align-self: flex-start;
+		margin: -5.5rem auto auto 0;
+		max-width: 60rem;
+		padding: 0rem;
+		@media screen and (max-width: 1600px) {
+			margin: -4rem auto auto 0;
+			max-width: 45rem
+		}
+		@media screen and (max-width: 1200px) {
+			margin: 2rem auto auto 0;
+			max-width: none;
+		}
+	}
 	margin: 5rem 0rem;
+	
 	path.clss-1{
 		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
@@ -52,7 +68,7 @@ const ProjectItemWrapper = styled.section`
 	}
 	.project-title {
 		text-align: center;
-		padding: 0 2rem;
+		align-self: flex-start;
 		margin: auto;
 
 		h4 {
@@ -162,7 +178,7 @@ const ProjectItemWrapper = styled.section`
 	   }
       }
 	  @media screen and (max-width: 768px) {
-		
+
 		.proj_icon_1 {
 			padding: 1rem;
 		}

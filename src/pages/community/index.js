@@ -26,7 +26,7 @@ const CommunityIndex = () => {
         <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
           description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
            Join the award-winning open source community - the warmest and most welcoming open source community around."
-          image="/images/layer5-tag-community-dark-bg.png" />
+        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Community theme={theme} />
         <Footer />

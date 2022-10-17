@@ -11,6 +11,7 @@ import { meet_links_data } from "./meetLinksData";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import Button from "../../../reusecore/Button";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
+import { Link } from "gatsby";
 
 const Calendar = () => {
 
@@ -115,7 +116,7 @@ const Calendar = () => {
                   addToCalendar: {
                     text: "Add To Your Calendar",
                     click: function () {
-                      window.open("https://bit.ly/2SbrRhe", "_blank");
+                      window.open("https://bit.ly/3fz1Vfs", "_blank");
                     }
                   }
                 }}
@@ -143,7 +144,7 @@ const Calendar = () => {
               <h1>Newcomers Welcome!</h1>
               <h3>Are you new to the community?</h3>
               <p className="invitation">
-                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map </a>
+                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                 and engage in the community and projects.
               </p>
               <Button primary title="See All Newcomers Resources" url="/community/newcomers">

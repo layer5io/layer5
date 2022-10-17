@@ -6,7 +6,7 @@ import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-
+import github from "../../../assets/images/socialIcons/github.svg";
 import istioLogo from "../../../assets/images/service-mesh-icons/istio.svg";
 import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";
 import consulLogo from "../../../assets/images/service-mesh-icons/consul.svg";
@@ -18,17 +18,18 @@ import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-inte
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
-import brew from "../../Meshery/Meshery-platforms/supported-icons/homebrew.svg";
 
 export const repo_data = [
   {
     category: "Frontend",
     subdata: [
       {
-        project: "Layer5",
+        project: "Layer5.io",
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee","Gaurav Chadha", "Nikhil Ladha", "Aditya Chatterjee"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -36,6 +37,8 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.io",
         language: "Jekyll",
+        maintainers_name: ["Aditya Chatterjee"],
+        link: ["https://layer5.io/community/members/aditya-chatterjee"],
         repository: "https://github.com/meshery/meshery",
       },
       {
@@ -43,6 +46,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Jekyll",
+        maintainers_name: ["Adithya Krishna"],
+        link: ["https://layer5.io/community/members/adithya-krishna"],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
@@ -50,7 +55,28 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
+        maintainers_name: ["Gaurav Chadha","Nithish Karthik"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nithish-karthik"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
+      },
+      {
+        project: "Service Mesh Performance",
+        image: smp,
+        site: "https://smp-spec.io",
+        language: "Jekyll",
+        maintainers_name: ["Aaditya Subedy"],
+        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
+        repository:
+          "https://github.com/service-mesh-performance/service-mesh-performance",
+      },
+      {
+        project: "Nighthawk",
+        image: gnh,
+        site: "https://getnighthawk.dev",
+        language: "Jekyll",
+        maintainers_name: ["Aaditya Subedy"],
+        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
+        repository: "https://github.com/layer5io/getnighthawk",
       },
       {
         project: "MeshMap",
@@ -58,21 +84,18 @@ export const repo_data = [
         site:
           "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
+        maintainers_name: ["Nithish-Karthik"],
+        link: ["https://layer5.io/community/members/nithish-karthik"],
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
         repository: "https://github.com/meshery/meshery",
       },
       {
-        project: "Nighthawk",
-        image: gnh,
-        site: "https://getnighthawk.dev",
-        language: "Jekyll",
-        repository: "https://github.com/layer5io/nighthawk",
-      },
-      {
-        project: "Service Mesh Discussion",
+        project: "Discuss Layer5.io",
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
+        maintainers_name: ["Leonard Nwobodo"],
+        link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
         repository: " https://discuss.layer5.io",
       },
       {
@@ -80,15 +103,9 @@ export const repo_data = [
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
-      },
-      {
-        project: "Service Mesh Performance",
-        image: smp,
-        site: "https://smp-spec.io",
-        language: "Jekyll",
-        repository:
-          "https://github.com/service-mesh-performance/service-mesh-performance",
       },
     ],
   },
@@ -190,7 +207,7 @@ export const repo_data = [
         image: five,
         language: "Golang, Kuttl",
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
-        repository: "https://github.com/layer5io/smi-conformance",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       // {
       //   project: "MeshMonkey",
@@ -234,6 +251,7 @@ export const repo_data = [
       },
       {
         project: "Wrk2",
+        image: meshery,
         language: "C",
         description:
           "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
@@ -257,12 +275,14 @@ export const repo_data = [
       },
       {
         project: "SMP Action",
+        image: github,
         language: "shell",
         description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-smp-action"
       },
       {
         project: "Meshery-Perf",
+        image: meshery,
         language: "Golang",
         description: "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf"
@@ -284,6 +304,7 @@ export const repo_data = [
       },
       {
         project: "Service Mesh Patterns Action",
+        image: patterns,
         language: "shell",
         description: "GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
@@ -383,8 +404,8 @@ export const repo_data = [
       {
         project: "MeshKit",
         image: meshery,
-        language: "Golang",
-        descriptionp: "Toolkit for Layer5's microservices.",
+        language: "Golang,Cuelang",
+        description: "Toolkit for Layer5's microservices.",
         repository: "https://github.com/layer5io/meshkit",
       },
       {
@@ -404,23 +425,6 @@ export const repo_data = [
     ],
   },
 
-  {
-    category: "Installers Repos",
-    subdata: [
-      {
-        project: "Scoop Bucket",
-        language: "",
-        description: "Windows-compatible package management for `mesheryctl`",
-        repository: "https://github.com/layer5io/scoop-bucket",
-      },
-      {
-        project: "Homebrew Tap",
-        image: brew,
-        language: "Ruby",
-        description: "MacOS-compatible package management for `mesheryctl`",
-        repository: "https://github.com/layer5io/homebrew-tap",
-      },
-    ],
-  },
-
 ];
+
+

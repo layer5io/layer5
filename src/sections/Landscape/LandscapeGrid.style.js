@@ -370,7 +370,7 @@ export const LandscapePageWrapper = styled.div`
 	.landscape-table {
 		width: 100%;
 		margin: 2rem 0;
-		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+		box-shadow: ${props => props.theme.DarkTheme ? "0px 2px 16px rgba(163, 163, 163, 0.2)" : "0px 2px 16px rgba(0, 0, 0, 0.2)"};
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 
@@ -387,8 +387,8 @@ export const LandscapePageWrapper = styled.div`
 		font-size: 1.05rem;
 		padding: 0.75rem;
 		font-weight: 600;
-		color: ${props => props.theme.textRevert};
-		background: ${props => props.theme.tertiaryColor};
+		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
+		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
 	}
 	ul.category {
 		margin: 0;
@@ -409,14 +409,15 @@ export const LandscapePageWrapper = styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.DarkTheme ? "#121212" : "#3C494F"};
-		border: 1px solid ${props => props.theme.shadowLightColor};
+		background-color: ${props => props.theme.DarkTheme ? "#262626" : "#3C494F"};
+		border-right: 1px solid ${props => props.theme.shadowLightColor};
+		border-bottom: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
 			border-top-left-radius: .5rem;
 		}
 		&:hover {
-			background-color: ${props => props.theme.tertiaryColor};
-			color: ${props => props.theme.textRevert};
+			background-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+			color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
 			&:nth-child(1){
 				border-top-left-radius: .5rem;
 			}
@@ -431,14 +432,19 @@ export const LandscapePageWrapper = styled.div`
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 		color: #ffffff;
-		background: #00B39F;
+		background: ${props => props.theme.DarkTheme ? "#009a89" : "#00B39F"};
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.tertiaryColor};
-		border-color: ${props => props.theme.tertiaryColor};
+		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		border-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		border-right: 1px solid ${props => props.theme.shadowLightColor};
 		border-radius:0;
-		color: ${props => props.theme.textRevert};
+		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
 		font-weight: 600;
+		// border-bottom: 0px;
+	}
+	.react-tabs__tab:focus:after{
+		content: none;
 	}
 	.card-content {
 		border-right: none;

@@ -50,7 +50,7 @@ export const TableWrapper = styled.div`
 				}
 			}
 			/* Highlight Community Calendar */
-			:nth-child(7) {
+			:nth-child(4) {
 				background: ${props => props.theme.saffronLightColor};
 			}
 			&:hover {

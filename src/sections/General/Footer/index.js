@@ -150,7 +150,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-management/meshery"
+                      to="/cloud-native-management/meshery"
                     >
                       Meshery
                     </Link>

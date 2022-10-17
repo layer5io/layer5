@@ -3,17 +3,19 @@ import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
 import MesheryBrand from "./Brand-components/meshery";
-import MeshSyncBrand from "./Brand-components/meshsync";
-import MesheryOperatorBrand from "./Brand-components/meshery-operator";
-import ImageHubBrand from "./Brand-components/imagehub";
-import SMPBrand from "./Brand-components/smp";
-import CommunityBrand from "./Brand-components/community";
-import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import NightHawk from "./Brand-components/nighthawk";
-import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
-import MeshMasterBrand from "./Brand-components/meshmaster";
-import MeshMarkBrand from "./Brand-components/meshmark";
+import loadable from "@loadable/component";
+
+const MeshSyncBrand = loadable(() => import ("./Brand-components/meshsync"));
+const MesheryOperatorBrand = loadable(() => import ("./Brand-components/meshery-operator"));
+const ImageHubBrand = loadable(() => import ("./Brand-components/imagehub"));
+const SMPBrand = loadable(() => import ("./Brand-components/smp"));
+const CommunityBrand = loadable(() => import ("./Brand-components/community"));
+const Button = loadable(() => import ("../../../reusecore/Button"));
+const NightHawk = loadable(() => import ("./Brand-components/nighthawk"));
+const ServiceMeshPatterns = loadable(() => import ("./Brand-components/servicemeshpatterns"));
+const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
+const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -117,7 +119,7 @@ const Brand = () => {
       const { height: headerHeight } = getDimensions(headerRef.current);
       const scrollPosition = window.scrollY + headerHeight;
 
-      const selected = sectionRefs.find(({ section, ref }) => {
+      const selected = sectionRefs.find(({ ref }) => {
         const ele = ref.current;
         if (ele) {
           const { offsetBottom, offsetTop } = getDimensions(ele);

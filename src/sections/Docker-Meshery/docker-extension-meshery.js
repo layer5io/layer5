@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import CommonForm from "../../components/CommonForm";
 
 const Kubernetes = "./kubernetes-logo.svg";
-import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
 const dockercompose_logo =
@@ -39,7 +37,7 @@ const DockerExtensionMeshery = () => {
               src={dockerDesktop}
               alt="Meshery Docker Extension"
             />
-            <p>Install Meshery Docker Extension and get:</p>
+            <p>Install Meshery Docker Extension from <a href="https://hub.docker.com/extensions/meshery/docker-extension-meshery">Docker Hub</a> and get:</p>
 
             <Row>
               <Col className="docker-extension-meshery" lg={2}>
@@ -58,7 +56,7 @@ const DockerExtensionMeshery = () => {
                 </i>
               </Col>
             </Row>
-            <Row className="extension-feature">
+            <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
@@ -95,7 +93,7 @@ const DockerExtensionMeshery = () => {
                 </i>
               </Col>
             </Row>
-            <Row className="extension-feature">
+            <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
                 <div className="feature-title">Detection of Kubernetes environments</div> {" "}
                 <i>

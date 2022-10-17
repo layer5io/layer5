@@ -58,7 +58,7 @@ kubectl api-versions | grep admissionregistration
 
 If your environment **does NOT** supports either of these two APIs, then you may use [manual sidecar injection](#manual-sidecar-inj) to deploy the sample app.
 
-As part of Istio deployment in [Previous chapter](/learn/learning-paths/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/getting-started), you have deployed the sidecar injector.
+As part of Istio deployment in [Previous chapter](../getting-started), you have deployed the sidecar injector.
 
 <br />
 <h2 class="chapter-sub-heading">
@@ -164,7 +164,7 @@ kube-system    Active    1h
 <h4 class="chapter-alt-heading"> Deploy BookInfo</h4>
 <br />
 
-Applying this yaml file included in the Istio package you collected in [Getting Started](/learn/learning-paths/mastering-meshery-istio/introduction-to-service-meshes/istio/getting-started#1) will deploy the BookInfo app in you cluster.
+Applying this yaml file included in the Istio package you collected in [Getting Started](../getting-started) will deploy the BookInfo app in you cluster.
 
 ```sh
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml

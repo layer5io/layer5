@@ -2,12 +2,10 @@ import React from "react";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Slider from "react-slick";
 import styled from "styled-components";
-import Image from "../../../../components/image";
-import SMPImage from "../../images/meshery_multi_mesh.png";
 
 const HowIntegrationWorksWrapper = styled.section`
 
-  background: #F7F7F7;
+  background-color: ${props => props.theme.DarkTheme ? "#101010" : "#F7F7F7"};
 	padding-bottom: 2rem;
 
 	.section-data {
@@ -43,7 +41,7 @@ const HowIntegrationWorksWrapper = styled.section`
 			}
 		.integration-section-data {
 			h1, h3, p {
-				text-align: start; color: black;
+				text-align: start; color: ${props => props.theme.primaryColor};
 			}
 		}
 
@@ -193,7 +191,7 @@ const HowIntegrationWorksWrapper = styled.section`
 `;
 
 
-const HowIntegrationWorks = ({ name, slides }) => {
+const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
 
   const settings = {
     customPaging: (i) => {
@@ -223,10 +221,9 @@ const HowIntegrationWorks = ({ name, slides }) => {
         <div className="integration-section">
           <Row className="integration-section-row">
             <Col xs={12} xl={4} className="integration-section-data">
-              <h3>The Performance Yardstick</h3>
+              <h3>{howitworks != null ? howitworks : "The Performance Yardstick" }</h3>
               <p>
-                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
-                application across different service meshes. Compare and manage service mesh overhead.
+                {howitworksdetails != null ? howitworksdetails : "Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your application across different service meshes. Compare and manage service mesh overhead."}
               </p>
             </Col>
             <Col xs={12} xl={8} className="integration-section-caraousel">

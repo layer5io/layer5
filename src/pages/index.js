@@ -3,21 +3,18 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
-import Banner from "../sections/Home/Banner";
-// import Faq from "../sections/General/Faq";
-import Integrations from "../sections/Home/Projects-home";
-import Statement from "../sections/Home/Layer5-statement";
-import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
-import ProudMaintainers from "../sections/Home/Proud-maintainers";
-/*import ContactCard from "../components/ContactCard";*/
 import Partners from "../sections/Home/Partners-home";
+import Integrations from "../sections/Home/Projects-home";
+import Banner from "../sections/Home/Banner";
+import CloudNativeManagement from "../sections/Home/CloudNativeManagement";
 import Footer from "../sections/General/Footer";
-import ServiceMeshManagement from "../sections/Home/service-mesh-management";
+import loadable from "@loadable/component";
+const SubscribeSection = loadable(() => import ("../sections/subscribe/subscribe"));
+const ServiceMeshFocussed = loadable(() => import ("../sections/Home/Service-mesh-focussed"));
+const CloudNativeLeaders = loadable(() => import ("../sections/Company/Cloud-Native"));
+const SoSpecial = loadable(() => import ("../sections/Home/So-Special-Section"));
+const MesheryIntegration = loadable(() => import ("../sections/Meshery/Meshery-integrations"));
 import { GlobalStyle } from "../sections/app.style";
-import SubscribeSection from "../sections/subscribe/subscribe";
-import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
-import CloudNativeLeaders from "../sections/Home/Cloud-Native";
-import SoSpecial from "../sections/Home/So-Special-Section";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
@@ -51,19 +48,19 @@ const IndexPage = () => {
         <Integrations />
         <Partners />
         {/* <Features /> */}
-        <ServiceMeshManagement />
-        <Statement />
-        <ProudMaintainers />
+        {/* <ServiceMeshManagement /> */}
+        <CloudNativeManagement />
+        <MesheryIntegration theme={theme}/>
+        {/* <Statement /> */}
         {/* <AppScreens /> */}
         {/* <Pricing /> */}
         {/* <Testimonial /> */}
-        <CloudNativeLeaders />
-        <StewardsOfIndustry />
         {/* <Getapp /> */}
         {/* <News /> */}
         {/* <Faq category = "all"/> */}
         {/*<ContactCard />*/}
         <SoSpecial theme={theme} />
+        <CloudNativeLeaders />
         <ServiceMeshFocussed />
         {/* <EngineerEnabler /> */}
         <SubscribeSection />
