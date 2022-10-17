@@ -51,6 +51,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     { id: 9, name: "Continuous Integration & Delivery", isSelected: false },
     { id: 10, name: "Application Definition & Image Build", isSelected: false },
     { id: 11, name: "Key Management", isSelected: false },
+<<<<<<< HEAD
     { id: 13, name: "Service Proxy", isSelected: false },
     { id: 14, name: "Scheduling & Orchestration", isSelected: false },
     { id: 15, name: "Security & Compliance", isSelected: false },
@@ -65,6 +66,24 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     { id: 25, name: "Remote Procedure Call", isSelected: false },
     { id: 26, name: "Kubernetes", isSelected: false },
     { id: 27, name: "Serverless", isSelected: false },
+=======
+    { id: 12, name: "Service Proxy", isSelected: false },
+    { id: 13, name: "Scheduling & Orchestration", isSelected: false },
+    { id: 14, name: "Security & Compliance", isSelected: false },
+    { id: 15, name: "Chaos Engineering", isSelected: false },
+    { id: 16, name: "Streaming & Messaging", isSelected: false },
+    { id: 17, name: "Container Runtime", isSelected: false },
+    { id: 18, name: "Coordination & Service Discovery", isSelected: false },
+    { id: 19, name: "Monitoring", isSelected: false },
+    { id: 20, name: "Cloud Native Storage", isSelected: false },
+    { id: 21, name: "Framework", isSelected: false },
+    { id: 22, name: "Container Registry", isSelected: false },
+    { id: 23, name: "Logging", isSelected: false },
+    { id: 24, name: "Remote Procedure Call", isSelected: false },
+    { id: 25, name: "Tracing", isSelected: false },
+    { id: 26, name: "Certified Kubernetes - Distribution", isSelected: false },
+    { id: 27, name: "Installable Platform", isSelected: false },
+>>>>>>> 063a16eee (more integrations)
     { id: 28, name: "Database", isSelected: false },
     { id: 29, name: "Tools", isSelected: false },
   ]);
