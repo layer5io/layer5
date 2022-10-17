@@ -24,7 +24,7 @@ const DockerExtensionMeshery = () => {
           <h2 className="sectionTitle">
             Develop service mesh-ready apps using Docker Desktop and Meshery
           </h2>
-          <p>
+          <p className="sectionContent">
             The Docker Extension for Meshery extends Docker Desktop’s position
             as the cloud native developer’s go-to Kubernetes environment with
             easy access to the next layer of cloud native infrastructure:
