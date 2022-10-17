@@ -153,7 +153,7 @@ const IntegrationsGrid = ({ category, theme }) => {
         items={IntegrationList}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
-          const integrationIcon = item.frontmatter.integrationIcon.publicURL;
+          const integrationIcon = item.frontmatter.integrationIcon ? item.frontmatter.integrationIcon.publicURL : "";
           const darkModeIntegrationIcon = item.frontmatter.darkModeIntegrationIcon;
           if (status) {
             return (
