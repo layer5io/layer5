@@ -31,7 +31,7 @@ table {
 		}
     }
     th {
-        background: #1E2117;
+        background: ${props => props.theme.DarkTheme ? "#404040" : "#1E2117"} ;
         color: #ffffff;
         height: 4rem;
 		font-weight: 600;
