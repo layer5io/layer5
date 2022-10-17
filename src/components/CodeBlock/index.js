@@ -30,12 +30,12 @@ export const LineNo = styled.span`
 
 const CopyCode = styled.button`
   position: absolute;
+  opacity: 0.5;
   right: 0;
   z-index: 1;
   border: 0;
   border-radius: 3px;
   margin-right: 2em;
-  opacity: 0.5;
   top: 25%;
   &:hover {
     opacity: 1;
