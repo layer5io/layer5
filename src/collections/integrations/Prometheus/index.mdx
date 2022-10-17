@@ -1,20 +1,24 @@
 ---
-title: Prometheus
+title: Prometheus  
 subtitle: Discover and connect to your Prometheus servers and Operators
-integrationIcon: ../../../assets/images/service-mesh-icons/prometheus.svg
-docURL: https://docs.meshery.io/installation/platforms/prometheus
-category: Telemetry
+integrationIcon: icon/color/prometheus-icon-color.svg
+darkModeIntegrationIcon: icon/white/prometheus-icon-white.svg
+docURL: https://docs.meshery.io/guides/meshery-metrics
+category: Monitoring
 featureList: [
-    "Native support for PromQLn",
+    "Native support for PromQL",
     "Create custom charts with your own Prometheus queries",
     "Keep charts in-sync with Meshery's panel viewer"]
 workingSlides: [
-    ./slide2.png,
-    ./slide2.png]
+    ./images/slide2.png
+]
+howItWorks: Connect and use metrics in Meshery
+howItWorksDetails: Meshery provides performance reports, including performance test results, node resource metrics etc. so that operators may easily understand the overhead of their service mesh’s control plane and data plane in context of the overhead incurred on nodes running within the cluster. In order to generate performance test reports of service meshes and their workloads, Meshery uses Grafana and/or Prometheus as visualization and metrics systems, respectively. This guide outlines the requirements necessary for Meshery to connect to these systems. The steps may vary depending upon the service mesh and its configuration.
 published: true
 ---
-
 <p>
-    Connect Meshery with Prometheus to see real-time metrics about the health of yor Kubernetes clusters, your microservices, and traffic reqquest statistics. Design, test, and manage configuration of all your cloud infrastructure and containerized applications as a visual topology. Choose from hundreds of ready-made design patterns by importing templates from Meshery Catalog or use our low code designer, MeshMap, create and deploy your own cloud native infrastructure designs.
+    Connect any number of Prometheus monitoring servers and time-series database to Meshery with Prometheus to see real-time metrics about the health of yor Kubernetes clusters, your microservices, and traffic request statistics.
 </p>
-
+<p>
+     Design, test, and manage configuration of all your cloud infrastructure and containerized applications as a visual topology. Choose from hundreds of ready-made design patterns by importing templates from Meshery Catalog or use our low code designer, MeshMap, create and deploy your own cloud native infrastructure designs.
+</p>
