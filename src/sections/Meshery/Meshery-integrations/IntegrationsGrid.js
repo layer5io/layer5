@@ -5,8 +5,10 @@ import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 
 const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
-  query {
-    allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
+  query{
+    allMdx(
+      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true}}}
+    ) {
       nodes {
         frontmatter {
           title
@@ -33,7 +35,7 @@ const IntegrationsGrid = ({ category, theme }) => {
       }
     }
   }  
-   `);
+  `);
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList, setCategoryList] = useState([
@@ -48,29 +50,29 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 9, name: "Continuous Integration & Delivery", isSelected: false },
     { id: 10, name: "Application Definition & Image Build", isSelected: false },
     { id: 11, name: "Key Management", isSelected: false },
-    { id: 12, name: "Service Proxy", isSelected: false },
-    { id: 13, name: "Scheduling & Orchestration", isSelected: false },
-    { id: 14, name: "Security & Compliance", isSelected: false },
-    { id: 15, name: "Chaos Engineering", isSelected: false },
-    { id: 16, name: "Streaming & Messaging", isSelected: false },
-    { id: 17, name: "Runtime", isSelected: false },
-    { id: 18, name: "Coordination & Service Discovery", isSelected: false },
-    { id: 19, name: "Monitoring", isSelected: false },
-    { id: 20, name: "Cloud Native Storage", isSelected: false },
-    { id: 21, name: "Framework", isSelected: false },
-    { id: 22, name: "Container Registry", isSelected: false },
-    { id: 23, name: "Logging", isSelected: false },
-    { id: 24, name: "Remote Procedure Call", isSelected: false },
-    { id: 25, name: "Tracing", isSelected: false },
-    { id: 26, name: "Certified Kubernetes - Distribution", isSelected: false },
-    { id: 27, name: "Installable Platform", isSelected: false },
+    { id: 13, name: "Service Proxy", isSelected: false },
+    { id: 14, name: "Scheduling & Orchestration", isSelected: false },
+    { id: 15, name: "Security & Compliance", isSelected: false },
+    { id: 16, name: "Chaos Engineering", isSelected: false },
+    { id: 17, name: "Streaming & Messaging", isSelected: false },
+    { id: 18, name: "Container Runtime", isSelected: false },
+    { id: 19, name: "Coordination & Service Discovery", isSelected: false },
+    { id: 20, name: "Monitoring", isSelected: false },
+    { id: 21, name: "Cloud Native Storage", isSelected: false },
+    { id: 22, name: "Framework", isSelected: false },
+    { id: 23, name: "Container Registry", isSelected: false },
+    { id: 25, name: "Remote Procedure Call", isSelected: false },
+    { id: 26, name: "Kubernetes", isSelected: false },
+    { id: 27, name: "Serverless", isSelected: false },
     { id: 28, name: "Database", isSelected: false },
     { id: 29, name: "Tools", isSelected: false },
   ]);
 
+
   useEffect(() => setCategory(), []);
 
   const setCategory = () => {
+
     if (category !== undefined) {
       categoryList.forEach((item) => {
         if (item.name === category) {
@@ -86,7 +88,8 @@ const IntegrationsGrid = ({ category, theme }) => {
 
   const setFilter = (event) => {
     let count = 0;
-    const selectedCategory = event.target.innerHTML;
+    const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+
     if (selectedCategory == "All") {
       categoryList.forEach(item => {
         if (item.isSelected & item.name != "All") {
