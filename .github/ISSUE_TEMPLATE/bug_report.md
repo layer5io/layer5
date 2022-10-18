@@ -8,6 +8,9 @@ assignees: ''
 #### Description
 <!-- A brief description of the issue. -->
 
+#### Link
+<!-- Link to the page, where you are facing the bug -->
+
 #### Expected Behavior
 <!-- A brief description of what you expected to happen. -->
 
