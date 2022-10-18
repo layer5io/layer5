@@ -61,13 +61,11 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 21, name: "Cloud Native Storage", isSelected: false },
     { id: 22, name: "Framework", isSelected: false },
     { id: 23, name: "Container Registry", isSelected: false },
-    { id: 24, name: "Logging", isSelected: false },
     { id: 25, name: "Remote Procedure Call", isSelected: false },
-    { id: 26, name: "Tracing", isSelected: false },
-    { id: 27, name: "Certified Kubernetes - Distribution", isSelected: false },
-    { id: 28, name: "Installable Platform", isSelected: false },
-    { id: 29, name: "Database", isSelected: false },
-    { id: 30, name: "Tools", isSelected: false },
+    { id: 26, name: "Kubernetes", isSelected: false },
+    { id: 27, name: "Serverless", isSelected: false },
+    { id: 28, name: "Database", isSelected: false },
+    { id: 29, name: "Tools", isSelected: false },
   ]);
 
 
