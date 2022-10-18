@@ -48,7 +48,6 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 9, name: "Continuous Integration & Delivery", isSelected: false },
     { id: 10, name: "Application Definition & Image Build", isSelected: false },
     { id: 11, name: "Key Management", isSelected: false },
-    { id: 12, name: "Service Mesh", isSelected: false },
     { id: 13, name: "Service Proxy", isSelected: false },
     { id: 14, name: "Scheduling & Orchestration", isSelected: false },
     { id: 15, name: "Security & Compliance", isSelected: false },
@@ -87,7 +86,8 @@ const IntegrationsGrid = ({ category, theme }) => {
 
   const setFilter = (event) => {
     let count = 0;
-    const selectedCategory = event.target.innerHTML;
+    const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+
     if (selectedCategory == "All") {
       categoryList.forEach(item => {
         if (item.isSelected & item.name != "All") {
