@@ -5,8 +5,10 @@ import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 
 const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
-  query {
-    allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
+  query{
+    allMdx(
+      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true}}}
+    ) {
       nodes {
         frontmatter {
           title
@@ -33,7 +35,7 @@ const IntegrationsGrid = ({ category, theme }) => {
       }
     }
   }  
-   `);
+  `);
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList, setCategoryList] = useState([
@@ -68,9 +70,11 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 30, name: "Tools", isSelected: false },
   ]);
 
+
   useEffect(() => setCategory(), []);
 
   const setCategory = () => {
+
     if (category !== undefined) {
       categoryList.forEach((item) => {
         if (item.name === category) {
