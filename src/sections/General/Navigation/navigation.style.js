@@ -423,6 +423,9 @@ const NavigationWrap = styled.header`
       padding-left: 10px;
     }
   }
+  .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
+  }
   
   .anchor:before {
     content: none;
