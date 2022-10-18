@@ -53,7 +53,7 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 14, name: "Security & Compliance", isSelected: false },
     { id: 15, name: "Chaos Engineering", isSelected: false },
     { id: 16, name: "Streaming & Messaging", isSelected: false },
-    { id: 17, name: "Container Runtime", isSelected: false },
+    { id: 17, name: "Runtime", isSelected: false },
     { id: 18, name: "Coordination & Service Discovery", isSelected: false },
     { id: 19, name: "Monitoring", isSelected: false },
     { id: 20, name: "Cloud Native Storage", isSelected: false },
