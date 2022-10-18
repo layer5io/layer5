@@ -37,10 +37,12 @@ const IndividualIntegrations = ({ theme, data }) => {
           <MDXRenderer>{body}</MDXRenderer>
           <section className="external-btns">
             <Button primary className="get-started" title="Get Started" url="../../getting-started" />
-            <span className="doc-link">
-              <a href={frontmatter.docURL}>See Documentation</a>
-              <FaArrowRight />
-            </span>
+            {(frontmatter.docURL != null) &&
+              (<span className="doc-link">
+                <a href={frontmatter.docURL}>See Documentation</a>
+                <FaArrowRight />
+              </span>)
+            }
           </section>
         </div>
       </section>
