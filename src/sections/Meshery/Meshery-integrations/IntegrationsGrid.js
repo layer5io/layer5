@@ -39,8 +39,8 @@ const IntegrationsGrid = ({ category, theme }) => {
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList, setCategoryList] = useState([
-    // some ID's have been commented out as no integrations are available under those categories.
-    // If you are adding new integrations under those categories, make sure to uncomment those
+    // some categories have been commented out as no integrations are available under those categories.
+    // If you are adding new integrations under those categories, make sure to uncomment the respective categories
     { id: 1, name: "All", isSelected: false },
     { id: 2, name: "Platforms", isSelected: false },
     { id: 3, name: "Service Mesh", isSelected: false },
