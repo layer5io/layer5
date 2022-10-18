@@ -20,7 +20,7 @@ const DockerExtensionMeshery = () => {
   return (
     <DockerMesheryWrapper>
       <Container>
-        <Row>
+        <Row className="dockerMesherySection">
           <h2 className="sectionTitle">
             Develop service mesh-ready apps using Docker Desktop and Meshery
           </h2>
