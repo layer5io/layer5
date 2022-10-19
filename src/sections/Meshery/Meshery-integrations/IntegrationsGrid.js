@@ -7,7 +7,7 @@ const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
   query{
     allMdx(
-      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true}}}
+      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true} }}
     ) {
       nodes {
         frontmatter {
@@ -37,52 +37,44 @@ const IntegrationsGrid = ({ category, theme }) => {
   }  
   `);
 
-  const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
-  let [categoryList, setCategoryList] = useState([
-    { id: 1, name: "All", isSelected: false },
-    { id: 2, name: "Platforms", isSelected: false },
-    { id: 3, name: "Service Mesh", isSelected: false },
-    { id: 4, name: "Operating System", isSelected: false },
-    { id: 5, name: "Collaboration", isSelected: false },
-    { id: 6, name: "Automation & Configuration", isSelected: false },
-    { id: 7, name: "Cloud Native Network", isSelected: false },
-    { id: 8, name: "API Gateway", isSelected: false },
-    { id: 9, name: "Continuous Integration & Delivery", isSelected: false },
-    { id: 10, name: "Application Definition & Image Build", isSelected: false },
-    { id: 11, name: "Key Management", isSelected: false },
-    { id: 13, name: "Service Proxy", isSelected: false },
-    { id: 14, name: "Scheduling & Orchestration", isSelected: false },
-    { id: 15, name: "Security & Compliance", isSelected: false },
-    { id: 16, name: "Chaos Engineering", isSelected: false },
-    { id: 17, name: "Streaming & Messaging", isSelected: false },
-    { id: 18, name: "Container Runtime", isSelected: false },
-    { id: 19, name: "Coordination & Service Discovery", isSelected: false },
-    { id: 20, name: "Monitoring", isSelected: false },
-    { id: 21, name: "Cloud Native Storage", isSelected: false },
-    { id: 22, name: "Framework", isSelected: false },
-    { id: 23, name: "Container Registry", isSelected: false },
-    { id: 25, name: "Remote Procedure Call", isSelected: false },
-    { id: 26, name: "Kubernetes", isSelected: false },
-    { id: 27, name: "Serverless", isSelected: false },
-    { id: 28, name: "Database", isSelected: false },
-    { id: 29, name: "Tools", isSelected: false },
-  ]);
 
+  const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+
+  // fetch all the category names from IntegrationList and remove the duplicate category names
+  const categoryNames = [
+    ...new Set(
+      IntegrationList.map((integration) => integration.frontmatter.category)
+    ),
+  ];
+
+  let [categoryNameList ,setcategoryNameList] = useState(
+    categoryNames.map((categoryName) => {
+      if (categoryName === categoryNames[0]) {
+        return { id: -1,
+          name: "All",
+          isSelected: true, };
+      }
+      return {
+        id: categoryName,
+        name: categoryName,
+        isSelected: false,
+      };
+    })
+  );
 
   useEffect(() => setCategory(), []);
-
   const setCategory = () => {
 
     if (category !== undefined) {
-      categoryList.forEach((item) => {
+      categoryNameList.forEach((item) => {
         if (item.name === category) {
           item.isSelected = true;
         }
       });
     } else {
-      categoryList[0].isSelected = true;
+      categoryNameList[0].isSelected = true;
     }
-    setCategoryList(categoryList);
+    setcategoryNameList(categoryNameList);
     setIntegrationCollection();
   };
 
@@ -91,14 +83,14 @@ const IntegrationsGrid = ({ category, theme }) => {
     const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
 
     if (selectedCategory == "All") {
-      categoryList.forEach(item => {
+      categoryNameList.forEach(item => {
         if (item.isSelected & item.name != "All") {
           item.isSelected = false;
         }
       }
       );
     }
-    categoryList.forEach(item => {
+    categoryNameList.forEach(item => {
       if (item.name == selectedCategory) {
         item.isSelected = !item.isSelected;
       }
@@ -108,22 +100,22 @@ const IntegrationsGrid = ({ category, theme }) => {
     });
 
     if (count === 0) {
-      categoryList[0].isSelected = true;
+      categoryNameList[0].isSelected = true;
     } else {
-      categoryList[0].isSelected = false;
+      categoryNameList[0].isSelected = false;
     }
 
-    setCategoryList(categoryList);
+    setcategoryNameList(categoryNameList);
     setIntegrationCollection();
   };
 
   const setIntegrationCollection = () => {
-    if (categoryList[0].isSelected) {
+    if (categoryNameList[0].isSelected) {
       setIntegrationList(data.allMdx.nodes);
       return;
     }
     let tempIntegrationCollection = [];
-    categoryList.forEach(item => {
+    categoryNameList.forEach(item => {
       if (item.isSelected) {
         data.allMdx.nodes.forEach(integration => {
           if (integration.frontmatter.category == item.name) {
@@ -138,7 +130,7 @@ const IntegrationsGrid = ({ category, theme }) => {
   return (
     <HoneycombGrid>
       <section className="category">
-        {categoryList.map((item) => {
+        {categoryNameList.map((item) => {
           return (
             <p
               key={item.id}
