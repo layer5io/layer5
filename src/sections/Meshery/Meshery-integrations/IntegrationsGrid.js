@@ -39,7 +39,7 @@ const IntegrationsGrid = ({ category, theme }) => {
 
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
-  
+
   // fetch all the category names from IntegrationList and remove the duplicate category names
   const categoryNames = [
     ...new Set(
