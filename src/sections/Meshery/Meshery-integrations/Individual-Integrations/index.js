@@ -39,9 +39,9 @@ const IndividualIntegrations = ({ theme, data }) => {
             <Button primary className="get-started" title="Get Started" url="../../getting-started" />
             {(frontmatter.docURL != null) &&
               (<span className="doc-link">
-              <a href={frontmatter.docURL}>See Documentation</a>
-              <FaArrowRight />
-            </span>)
+                <a href={frontmatter.docURL}>See Documentation</a>
+                <FaArrowRight />
+              </span>)
             }
           </section>
         </div>
