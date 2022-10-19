@@ -65,7 +65,7 @@ const IntegrationsGrid = ({ category, theme }) => {
   );
 
   console.log(categoryNameList);
-
+  useEffect(() => setCategory(), []);
   const setCategory = () => {
 
     if (category !== undefined) {
@@ -80,7 +80,7 @@ const IntegrationsGrid = ({ category, theme }) => {
     setcategoryNameList(categoryNameList);
     setIntegrationCollection();
   };
-
+  
   const setFilter = (event) => {
     let count = 0;
     const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
