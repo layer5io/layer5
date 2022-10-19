@@ -7,7 +7,7 @@ const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
   query{
     allMdx(
-      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true} , category: {ne: null}}}
+      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true} }}
     ) {
       nodes {
         frontmatter {
@@ -40,7 +40,6 @@ const IntegrationsGrid = ({ category, theme }) => {
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
-  console.log(IntegrationList);
 
   // fetch all the category names from IntegrationList and remove the duplicate category names
   const categoryNames = [
@@ -54,7 +53,7 @@ const IntegrationsGrid = ({ category, theme }) => {
       if (categoryName === categoryNames[0]) {
         return { id: -1,
           name: "All",
-          isSelected: false, };
+          isSelected: true, };
       }
       return {
         id: categoryName,
@@ -64,7 +63,6 @@ const IntegrationsGrid = ({ category, theme }) => {
     })
   );
 
-  console.log(categoryNameList);
   useEffect(() => setCategory(), []);
   const setCategory = () => {
 
@@ -80,7 +78,7 @@ const IntegrationsGrid = ({ category, theme }) => {
     setcategoryNameList(categoryNameList);
     setIntegrationCollection();
   };
-  
+
   const setFilter = (event) => {
     let count = 0;
     const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
