@@ -37,8 +37,6 @@ const IntegrationsGrid = ({ category, theme }) => {
   }  
   `);
 
-<<<<<<< HEAD
-=======
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList, setCategoryList] = useState([
     { id: 1, name: "All", isSelected: false },
@@ -69,7 +67,6 @@ const IntegrationsGrid = ({ category, theme }) => {
     { id: 28, name: "Database", isSelected: false },
     { id: 29, name: "Tools", isSelected: false },
   ]);
->>>>>>> 4d95f3867 (cat updates)
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
