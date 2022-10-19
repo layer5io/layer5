@@ -12,17 +12,17 @@ const Integrations = ({ theme }) => {
 
       <Location>
         {({ location }) => {
-          if (location.pathname !== "/"){
+          if (location.pathname !== "/") {
             return (
               <>
-                <IntegrationsGrid theme={theme} count={"All"}/>
+                <IntegrationsGrid theme={theme} count={"All"} />
                 <Card /><FAQ category={["Meshery Integrations"]} />
               </>
             );
           } else {
             return (
               <>
-                <IntegrationsGrid theme={theme} count={28}/>
+                <IntegrationsGrid theme={theme} count={14} />
                 <Button primary title={"See All"} url="/cloud-native-management/meshery/integrations/" />
               </>
             );
