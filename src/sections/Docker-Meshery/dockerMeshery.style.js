@@ -82,6 +82,9 @@ export const DockerMesheryWrapper = styled.div`
       justify-content: center;
       align-items: center;
     }
+    .dockerMesherySection {
+      margin: auto;
+    }
     div.feature-title {
       background-color: ${(props) => props.theme.saffronLightColor};
       padding: .4rem;
