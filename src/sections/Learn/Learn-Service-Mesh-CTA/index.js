@@ -17,6 +17,7 @@ const LearnServiceMeshCTAWrapper = styled.div`
     .section-wrapper{
       @media (max-width: 767px){
           flex-direction: column-reverse;
+          margin-top: -4rem;
       }
       .content{
           @media (max-width: 767px){
@@ -27,6 +28,12 @@ const LearnServiceMeshCTAWrapper = styled.div`
             font-weight: 700;
         }
       }
+      .image{
+        @media (max-width: 767px){
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+        }
       img{
         max-height: 16rem; 
       }
@@ -42,7 +49,7 @@ const LearnServiceMeshCTA = () => {
             <h2>Learn to service mesh with interactive labs</h2>
             <Button secondary title="Let's Learn" url="/learn/service-mesh-labs" />
           </Col>
-          <Col sm={12} md={6} lg={6}>
+          <Col className="image" sm={12} md={6} lg={6}>
             <StaticImage src={ServiceMeshImage} alt="Learn how to Service Mesh" objectFit="contain" />
           </Col>
         </Row>
