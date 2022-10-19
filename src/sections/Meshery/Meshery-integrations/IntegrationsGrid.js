@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 
-const IntegrationsGrid = ({ category, theme }) => {
+const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
   query{
     allMdx(
@@ -37,6 +37,7 @@ const IntegrationsGrid = ({ category, theme }) => {
   }  
   `);
 
+<<<<<<< HEAD
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList, setCategoryList] = useState([
     { id: 1, name: "All", isSelected: false },
@@ -71,6 +72,12 @@ const IntegrationsGrid = ({ category, theme }) => {
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
 
+=======
+  const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+
+
+
+>>>>>>> 332670b77 (This commit limits the number of integration to be shown on the homepage.)
   // fetch all the category names from IntegrationList and remove the duplicate category names
   const categoryNames = [
     ...new Set(
@@ -160,6 +167,10 @@ const IntegrationsGrid = ({ category, theme }) => {
 
   return (
     <HoneycombGrid>
+      <section className="heading">
+        <h1>{data.allMdx.nodes.length}+ Built-In Integrations</h1>
+        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
+      </section>
       <section className="category">
         {categoryNameList.map((item) => {
           return (
@@ -175,7 +186,7 @@ const IntegrationsGrid = ({ category, theme }) => {
       </section>
       <ResponsiveHoneycomb
         size={90}
-        items={IntegrationList}
+        items={count == "All" ? IntegrationList : IntegrationList.slice(0,count)}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
           const integrationIcon = item.frontmatter.integrationIcon.publicURL;
