@@ -7,14 +7,14 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const addAllClasses = [""];
 
   const [state, setState] = useState({
-    active: menuItems[0]
+    active: menuItems[0],
   });
 
   const wrapRef = useRef(null);
 
   const handleMouseOver = (index) => {
     setState({
-      active: menuItems[index]
+      active: menuItems[index],
     });
   };
 
@@ -38,7 +38,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const blogData = props.blogData;
 
   return (
-    <ul className={addAllClasses.join(" ")} onMouseOver={wrapDisplay} onMouseOut={wrapNone}>
+    <ul
+      className={addAllClasses.join(" ")}
+      onMouseOver={wrapDisplay}
+      onMouseOut={wrapNone}
+    >
       {menuItems.map((menu, index) => (
         <li
           key={index}
@@ -47,10 +51,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           }
           onMouseOver={() => handleMouseOver(index)}
         >
-          <Link to={menu.path} className="menu-link" activeClassName="nav-link-active">
-            <span>
-              {menu.name}
-            </span>
+          <Link
+            to={menu.path}
+            className="menu-link"
+            activeClassName="nav-link-active"
+          >
+            <span>{menu.name}</span>
           </Link>
         </li>
       ))}
@@ -59,41 +65,76 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
+<<<<<<< HEAD
                 <Link className="section" to={active.path} activeClassName="nav-link-active">{active.name}
+=======
+                <Link className="section" to={active.path}>
+                  {active.name}
+>>>>>>> parent of 1defddd0c (enhanced nav link active style)
                 </Link>
                 {active.subItems.map((subItem, i) => (
                   <li key={i}>
-                    { subItem.name === "Forum" ?
-                      <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
+                    {subItem.name === "Forum" ? (
+                      <a
+                        href={subItem.path}
+                        target="_blank"
+                        className="sub-item"
+                        rel="noreferrer"
+                      >
                         {subItem.name}
                       </a>
+<<<<<<< HEAD
                       : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+=======
+                    ) : (
+                      <Link
+                        to={subItem.path}
+                        partiallyActive={true}
+                        className={subItem.sepLine && "sub-item"}
+                      >
+>>>>>>> parent of 1defddd0c (enhanced nav link active style)
                         {subItem.name}
                       </Link>
-                    }
+                    )}
                   </li>
                 ))}
                 <div className="action-items">
-                  {active.actionItems.map((actionItem, i) => (
-                    ( actionItem.actionName === "Join the discussion" ?
-                      <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                  {active.actionItems.map((actionItem, i) =>
+                    actionItem.actionName === "Join the discussion" ? (
+                      <a
+                        href={actionItem.actionLink}
+                        target="_blank"
+                        className="action-link"
+                        rel="noreferrer"
+                      >
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
                       </a>
-                      : (<Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
+                    ) : (
+                      <Link
+                        key={i}
+                        to={actionItem.actionLink}
+                        partiallyActive={true}
+                        className="action-link"
+                      >
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
                       </Link>
-                      )
                     )
-                  ))}
+                  )}
                 </div>
               </div>
               <div className="nav-display">
-                <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}/>
-                <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields}/>
+                <Card
+                  frontmatter={blogData[active.name].nodes[0].frontmatter}
+                  fields={blogData[active.name].nodes[0].fields}
+                />
+                <Card
+                  frontmatter={blogData[active.name].nodes[1].frontmatter}
+                  fields={blogData[active.name].nodes[1].fields}
+                />
               </div>
             </div>
           </ul>
