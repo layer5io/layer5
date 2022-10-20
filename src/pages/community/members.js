@@ -108,6 +108,14 @@ const options = [
     className: "allOptions",
   },
   {
+    label: "UI/UX'er",
+    value: "ui-ux",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: null,
+    className: "allOptions",
+  },
+  {
     label: "STATUS",
     value: "",
     color: theme.linkColor,
