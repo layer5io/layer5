@@ -242,7 +242,6 @@ const NavigationWrap = styled.header`
       li {
         padding-top: 5px;
         a {
-          color: ${props => props.theme.menuColor};
           display: block;
           &:hover {
             color: ${props => props.theme.menuHoverColor}; !important;
@@ -427,14 +426,8 @@ const NavigationWrap = styled.header`
     }
   }
 
-  .nav-link-active-mobile {
-    color: ${(props) => props.theme.menuHoverColor};
-  }
-  
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
-    border-bottom: 1px solid ${(props) => props.theme.menuHoverColor};
-    transition: border-bottom 0.5s ease-in-out;
   }
 
   .anchor:before {
