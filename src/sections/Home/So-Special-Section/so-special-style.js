@@ -22,12 +22,32 @@ const SoSpecialWrapper = styled.div`
         margin-bottom: 3rem;
     }
     
-    .slick-arrow::before{
-        color: black;
-        font-size: 4rem;
+    .slick-next{
+        right: -38px;
+    }
+    .slick-list{
+        padding-top: 2px;
+        text-align: center;
+    }
+    @media screen and (max-width: 992px) {
+        .slick-list{
+            margin: 0;	
+        }
+    }
+
+    .slick-arrow{
+        width: 4.8rem;	
+        height: 5rem;
+    }	
+    .slick-arrow:before{	
+        color: ${props => props.theme.primaryColor};
+        font-size: 6rem;
         display: inline-block;
         height: 2rem;
         filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+    }
+    .slick-arrow:hover:before{	
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -40,6 +60,33 @@ const SoSpecialWrapper = styled.div`
         div{
             height:100%;
         }    
+    }
+
+    .slick-prev:before{	
+        content: "‹";	
+        line-height: 0;
+        opacity: 1;
+        color: ${props => props.theme.primaryColor};
+        margin-left: -3rem;
+    }
+    .slick-next:before{	
+        content: "›";
+        line-height: 0;
+        opacity: 1;
+        margin-left: 2rem;
+        color: ${props => props.theme.primaryColor};
+    }
+    .slick-disabled{	
+        visibility: hidden;
+    }
+    .slick-dots li button:before {
+        font-size: 0.6rem;
+        color: ${props => props.theme.secondaryColor};
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: ${props => props.theme.secondaryColor};
+    }
     }
     .so-special-head{
         padding:2rem;
@@ -92,7 +139,7 @@ const SoSpecialWrapper = styled.div`
     .special-cont_btn{
         background-color:${(props) => props.theme.body};
         color:black;
-        height:100%;
+        height: 2rem;
         outline:none;
         border:none;   
     }
@@ -151,12 +198,6 @@ const SoSpecialWrapper = styled.div`
         .so-special-head{
             padding:1rem;
             text-align:center;  
-        }
-         .slick-prev{
-            left:-58px;
-        }
-        .slick-next{
-            right:-20px;
         }
         .special-cont_para{
             padding:1rem 0;
