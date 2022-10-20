@@ -423,6 +423,10 @@ const NavigationWrap = styled.header`
       padding-left: 10px;
     }
   }
+
+  .nav-link-active-mobile {
+    color: ${(props) => props.theme.menuHoverColor};
+  }
   
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
@@ -430,10 +434,6 @@ const NavigationWrap = styled.header`
     transition: border-bottom 0.5s ease-in-out;
   }
 
-  .nav-link-active-mobile {
-    color: ${(props) => props.theme.menuHoverColor};
-  }
-  
   .anchor:before {
     content: none;
   }
