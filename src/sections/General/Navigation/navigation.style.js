@@ -11,6 +11,9 @@ const NavigationWrap = styled.header`
 
   .nav-container {
     display: flex;
+    @media (min-width:912px) and (max-width:992px){
+      max-width:850px;
+    }
   }
   .meshery-cta {
     position: relative;
