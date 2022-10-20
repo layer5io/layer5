@@ -139,7 +139,7 @@ const SoSpecialWrapper = styled.div`
     .special-cont_btn{
         background-color:${(props) => props.theme.body};
         color:black;
-        height: 2rem;
+        height: 30rem;
         outline:none;
         border:none;   
     }
