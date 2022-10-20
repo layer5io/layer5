@@ -425,18 +425,11 @@ const NavigationWrap = styled.header`
       padding-left: 10px;
     }
   }
-<<<<<<< HEAD
 
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
   }
 
-=======
-  .nav-link-active {
-    color: ${(props) => props.theme.menuHoverColor};
-  }
-  
->>>>>>> parent of 1defddd0c (enhanced nav link active style)
   .anchor:before {
     content: none;
   }

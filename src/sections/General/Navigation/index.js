@@ -252,9 +252,7 @@ const Navigation = ({ theme, themeSetter }) => {
                           menu.subItems !== undefined
                             ? "mobile-nav-item has-dropdown"
                             : "mobile-nav-item"
-                        }
-                      >
-<<<<<<< HEAD
+                        }>
                         <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                         <ul>
                           {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
@@ -270,41 +268,6 @@ const Navigation = ({ theme, themeSetter }) => {
                               }
                             </li>
                           ))}
-=======
-                        <Link
-                          to={menu.path}
-                          onClick={changeDropdownState}
-                          className="menu-item"
-                          activeClassName="nav-link-active"
-                        >
-                          {menu.name}
-                        </Link>
-                        <ul>
-                          {menu.subItems !== undefined &&
-                            menu.subItems.map((subItems, index) => (
-                              <li key={index} className="mobile-nav-subitem">
-                                {subItems.name === "Forum" ? (
-                                  <a
-                                    href={subItems.path}
-                                    target="_blank"
-                                    onClick={changeDropdownState}
-                                    className="sub-menu-item"
-                                    rel="noreferrer"
-                                  >
-                                    {subItems.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={subItems.path}
-                                    onClick={changeDropdownState}
-                                    className="sub-menu-item"
-                                  >
-                                    {subItems.name}
-                                  </Link>
-                                )}
-                              </li>
-                            ))}
->>>>>>> parent of 1defddd0c (enhanced nav link active style)
                         </ul>
                       </li>
                     ))}
@@ -312,17 +275,7 @@ const Navigation = ({ theme, themeSetter }) => {
                   <div>
                     <ul>
                       <li className="mobile-nav-item">
-<<<<<<< HEAD
                         <Link to="/cloud-native-management/meshmap" className="menu-item" activeClassName="nav-link-active">MeshMap</Link>
-=======
-                        <Link
-                          to="/cloud-native-management/meshmap"
-                          className="menu-item"
-                          activeClassName="nav-link-active"
-                        >
-                          MeshMap
-                        </Link>
->>>>>>> parent of 1defddd0c (enhanced nav link active style)
                       </li>
                     </ul>
                   </div>
