@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2155px"
+   height="2155px"
+   viewBox="0 0 2155 2155"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="akri-icon-white.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata33">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>icon</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     id="namedview31"
+     showgrid="false"
+     inkscape:zoom="0.46774942"
+     inkscape:cx="1077.5"
+     inkscape:cy="820.95238"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Cube-Main" />
+  <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">icon</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs8">
+    <polygon
+       id="path-1"
+       points="736.510909 1260.07374 0.216278296 834.666207 0.216278296 0.874579505 736.510909 431.494059" />
+    <polygon
+       id="path-3"
+       points="735.083211 0.0979766184 1470.32355 430.848978 735.083211 861.59998 0.624745058 431.276045" />
+    <mask
+       id="mask-2"
+       fill="white">
+      <use
+         xlink:href="#path-1"
+         id="use10" />
+    </mask>
+    <mask
+       id="mask-4"
+       fill="white">
+      <use
+         xlink:href="#path-3"
+         id="use16" />
+    </mask>
+  </defs>
+  <g
+     id="icon"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="Cube-Main"
+       transform="translate(1082.718465, 1066.562500) scale(-1, -1) translate(-1082.718465, -1066.562500) translate(346.718465, 220.562500)">
+      <polygon
+         id="Path-6"
+         fill="#3e446f"
+         fill-rule="nonzero"
+         mask="url(#mask-2)"
+         points="-11.704997,256.21897 -11.704997,704.8342 -0.40616936,709.67795 115.39852,781.08616 115.39852,896.48264 115.39852,938.33616 252.8536,1000.676 252.8536,704.8342 113.54012,617.86448 113.54012,485.94162 375.11532,640.91623 375.11532,1067.0754 754.40828,1286.1584 754.40828,416.34397 -4.5428881,-18.665798 -4.5428881,131.84787 -0.40616936,139.54319 614.49227,501.85373 614.49227,1040.1057 502.22274,976.00998 502.22274,562.00022 "
+         transform="translate(733.1969,0.031032)"
+         style="fill:#ffffff;fill-opacity:1" />
+      <polygon
+         id="Path-4"
+         fill="#3e446f"
+         fill-rule="nonzero"
+         mask="url(#mask-4)"
+         points="0.53441303,431.18767 131.84227,353.50139 735.04931,706.6049 1353.2651,345.78264 997.75145,141.30315 986.93895,147.44182 735.30028,286.66838 597.9995,202.89103 478.89794,272.33244 735.30028,419.59611 985.93895,278.28752 1123.0503,359.43791 736.30028,578.13518 235.24169,290.16447 630.19677,60.049239 737.30028,126.559 900.71239,38.422285 1510.4643,380.13908 1469.5112,430.61076 735.30028,861.52385 "
+         transform="translate(0.168183,829.29256)"
+         style="fill:#ffffff;fill-opacity:1" />
+      <polygon
+         id="Path-2"
+         fill="#524886"
+         points="505.51143,532.66797 505.51143,671.39453 239.34347,821.28516 239.34347,1120.1484 372.82003,1042.082 372.82003,897.03516 625.31612,750.74219 625.31612,319.70312 1.1303032,677.33128 0.71846517,1259.8047 131.65206,1183.0342 131.65206,744.34766 "
+         style="fill-rule:nonzero;fill:#ffffff;fill-opacity:1"
+         transform="translate(0,1)" />
+      <polygon
+         id="Path-7"
+         fill="#524886"
+         points="0.63289388,565.77942 0.0055745443,433.40039 734.04073,0.0625 734.04073,138.31836 "
+         style="fill-rule:nonzero;fill:#ffffff;fill-opacity:1"
+         transform="translate(0,1)" />
+    </g>
+  </g>
+</svg>
