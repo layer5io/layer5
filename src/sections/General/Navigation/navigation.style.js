@@ -423,7 +423,14 @@ const NavigationWrap = styled.header`
       padding-left: 10px;
     }
   }
+  
   .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
+    border-bottom: 1px solid ${(props) => props.theme.menuHoverColor};
+    transition: border-bottom 0.5s ease-in-out;
+  }
+
+  .nav-link-active-mobile {
     color: ${(props) => props.theme.menuHoverColor};
   }
   

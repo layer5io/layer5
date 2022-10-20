@@ -21,152 +21,142 @@ import { useLayoutEffect } from "react";
 
 const Navigation = ({ theme, themeSetter }) => {
   let data = useStaticQuery(
-    graphql`
-      {
-        Learn: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { fields: { collection: { eq: "service-mesh-books" } } }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
+    graphql`{
+  Learn: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-books"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
           }
-        }
-        Community: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "events" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Blog: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { featured: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Home: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "projects" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
-          }
+          publicURL
         }
       }
-    `
+      fields {
+        slug
+      }
+    }
+  }
+  Community: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Blog: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Home: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   data["Projects"] = {
     nodes: [
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
+            img: meshery
           },
-          title: "Meshery, the Cloud Native Manager",
+          title: "Meshery, the Cloud Native Manager"
         },
         fields: {
-          slug: "/cloud-native-management/meshery",
-        },
+          slug: "/cloud-native-management/meshery"
+        }
       },
       {
         frontmatter: {
           thumbnail: {
-            img: theme === "dark" ? smp_light_text : smp_dark_text,
+            img: theme === "dark" ? smp_light_text : smp_dark_text
           },
-          title: "Service Mesh Performance",
+          title: "Service Mesh Performance"
         },
         fields: {
-          slug: "/projects/service-mesh-performance",
-        },
-      },
-    ],
+          slug: "/projects/service-mesh-performance"
+        }
+      }
+    ]
   };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -176,6 +166,7 @@ const Navigation = ({ theme, themeSetter }) => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
     localStorage.setItem("Theme", theme);
+
   };
 
   useLayoutEffect(() => {
@@ -184,6 +175,7 @@ const Navigation = ({ theme, themeSetter }) => {
     } else {
       themeSetter(localStorage.getItem("Theme"));
     }
+
   }, []);
 
   useLayoutEffect(() => {
@@ -213,35 +205,29 @@ const Navigation = ({ theme, themeSetter }) => {
   };
 
   return (
+
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
           <div className="navbar-wrap">
             <Link to="/" className="logo">
-              <img
-                src={theme === "dark" ? layer5dark_logo : layer5_logo}
-                alt="Layer5 logo"
-              />
+              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
             </Link>
             <nav className="nav">
-              {expand ? (
+              {expand ?
                 <IoMdClose
                   className="mobile-menu-icon open"
                   onClick={function () {
-                    setExpand(!expand);
-                    closeDropDown();
+                    setExpand(!expand); closeDropDown();
                   }}
-                />
-              ) : (
-                <FaBars
+                /> : <FaBars
                   className="mobile-menu-icon"
                   onClick={function () {
-                    setExpand(!expand);
-                    openDropDown();
+                    setExpand(!expand); openDropDown();
                   }}
                 />
-              )}
+              }
               <div className="mobile-dropdown-container" ref={dropDownRef}>
                 <div className="mobile-dropdown">
                   <ul className="mobile-collapsed">
@@ -249,44 +235,24 @@ const Navigation = ({ theme, themeSetter }) => {
                       <li
                         key={index}
                         className={
-                          menu.subItems !== undefined
-                            ? "mobile-nav-item has-dropdown"
-                            : "mobile-nav-item"
+                          menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
                         }
                       >
-                        <Link
-                          to={menu.path}
-                          onClick={changeDropdownState}
-                          className="menu-item"
-                          activeClassName="nav-link-active"
-                        >
-                          {menu.name}
-                        </Link>
+                        <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active-mobile">{menu.name}</Link>
                         <ul>
-                          {menu.subItems !== undefined &&
-                            menu.subItems.map((subItems, index) => (
-                              <li key={index} className="mobile-nav-subitem">
-                                {subItems.name === "Forum" ? (
-                                  <a
-                                    href={subItems.path}
-                                    target="_blank"
-                                    onClick={changeDropdownState}
-                                    className="sub-menu-item"
-                                    rel="noreferrer"
-                                  >
-                                    {subItems.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={subItems.path}
-                                    onClick={changeDropdownState}
-                                    className="sub-menu-item"
-                                  >
-                                    {subItems.name}
-                                  </Link>
-                                )}
-                              </li>
-                            ))}
+                          {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
+                            <li
+                              key={index}
+                              className="mobile-nav-subitem"
+                            >
+                              {subItems.name === "Forum" ?
+                                <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
+                                  {subItems.name}
+                                </a>
+                                : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                              }
+                            </li>
+                          ))}
                         </ul>
                       </li>
                     ))}
@@ -294,13 +260,7 @@ const Navigation = ({ theme, themeSetter }) => {
                   <div>
                     <ul>
                       <li className="mobile-nav-item">
-                        <Link
-                          to="/cloud-native-management/meshmap"
-                          className="menu-item"
-                          activeClassName="nav-link-active"
-                        >
-                          MeshMap
-                        </Link>
+                        <Link to="/cloud-native-management/meshmap" className="menu-item" activeClassName="nav-link-active-mobile">MeshMap</Link>
                       </li>
                     </ul>
                   </div>
@@ -312,25 +272,17 @@ const Navigation = ({ theme, themeSetter }) => {
                 blogData={data}
               />
             </nav>
+
           </div>
           <div className="meshery-cta">
-            <Button
-              secondary
-              className="banner-btn two"
-              title="Goodbye, YAML"
-              url="/cloud-native-management/meshmap"
-            />
+            <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
             <div className="dark-theme-toggle">
-              <input
-                id="toggle"
-                className="toggle"
-                type="checkbox"
-                onChange={themeToggler}
-                checked={!themeToggle}
-              />
+              <input id="toggle" className="toggle" type="checkbox" onChange={themeToggler} checked={!themeToggle} />
             </div>
           </div>
+
         </Container>
+
       </NavigationWrap>
     </ThemeProvider>
   );
