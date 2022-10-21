@@ -36,7 +36,7 @@ export const HoneycombGrid = styled.div`
         align-items: center;
         .title{
           line-height: 22px;
-          color:black;
+          color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
           margin-bottom: 10px;
           font-weight: 600;
         }
