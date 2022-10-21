@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 import Button from "../../../reusecore/Button";
