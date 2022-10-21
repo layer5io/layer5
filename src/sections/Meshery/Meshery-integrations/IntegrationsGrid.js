@@ -48,19 +48,16 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ),
   ];
 
-  let [categoryNameList ,setcategoryNameList] = useState(
-    categoryNames.map((categoryName) => {
-      if (categoryName === categoryNames[0]) {
-        return { id: -1,
-          name: "All",
-          isSelected: true, };
-      }
-      return {
-        id: categoryName,
-        name: categoryName,
-        isSelected: false,
-      };
-    })
+  let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
+    name: "All",
+    isSelected: true, },
+  ...categoryNames.map((categoryName) => {
+    return {
+      id: categoryName,
+      name: categoryName,
+      isSelected: false,
+    };
+  })]
   );
 
   useEffect(() => setCategory(), []);
