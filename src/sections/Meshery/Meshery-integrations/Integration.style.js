@@ -19,7 +19,7 @@ export const HoneycombGrid = styled.div`
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem;
 
     .integration-container{
       display: flex;
@@ -35,15 +35,15 @@ export const HoneycombGrid = styled.div`
         text-align: center;
         align-items: center;
         .title{
-          line-height: 22px;
+          line-height: 1.375rem;
           color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
-          margin-bottom: 10px;
+          margin-bottom: 0.625rem;
           font-weight: 600;
         }
         .learnMoreBtn{
           padding: 5px 10px;
           color: white;
-          font-size: 14px;
+          font-size: 0.875rem;
           min-width:unset;
           box-shadow: none;
         }
@@ -54,11 +54,12 @@ export const HoneycombGrid = styled.div`
       .integration-container{
         height: max-content;
         img{
-          transition: all 0.75s ease-in-out;
+          transition: height 0.5s linear;
           height: 0px;
+          visibility: hidden;
         }
         .integration-content{
-          transition: all 0.75s ease-in-out;
+          transition: all 0.5s linear;
           opacity: 1;
           .learnMoreBtn{
             &:hover{
