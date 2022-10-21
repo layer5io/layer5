@@ -12,11 +12,15 @@ const contents = [
   { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
   { id: 2, link: "#Commit your changes", text: "Commit your changes" },
   { id: 3, link: "#Push changes to Github", text: "Push changes to Github" },
-  { id: 4, link: "#Sign-off commits", text: "Sign-off commits" },
+  { id: 4, link: "#Create a pull request", text: "Create a pull request" },
+  { id: 5, link: "#Sign-off commits", text: "Sign-off commits" },
 ];
 
 const contributingGuide = () => {
   const Signoff = "../../../../.github/assets/images/git-signoff-vscode.png";
+  const compareAndPR = "../../../../.github/assets/images/compare-and-pr.png";
+  const createPR = "../../../../.github/assets/images/create-pr.png";
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -135,7 +139,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Push changes to Github">  <h3>Push changes to Github and submit a pull request (PR)</h3> </a>
+            <a id="Push changes to Github">  <h3>Push changes to Github</h3> </a>
             <ul>
               <li>
                 <span>
@@ -144,6 +148,30 @@ const contributingGuide = () => {
                     <Code codeString="git push origin your_branch_name" />
                   </div>
                 </span>
+              </li>
+            </ul>
+            <a id="Create a pull request">  <h3>Create a pull request (PR)</h3> </a>
+            <ul>
+              <li>
+                <span>
+                  Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
+                </span>
+                <div>
+                  <br />
+                  <StaticImage src={ compareAndPR }  alt="Compare and pull request" />
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span>
+                  Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
+                </span>
+                <div>
+                  <br />
+                  <StaticImage src={ createPR }  alt="create pr" />
+                  <br />
+                </div>
               </li>
             </ul>
           </div>
