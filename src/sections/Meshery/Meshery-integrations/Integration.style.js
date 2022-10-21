@@ -8,11 +8,54 @@ export const HoneycombGrid = styled.div`
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
+    padding: 10px;
 
-
+    .integration-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 70px;
+      overflow: hidden;
+      .integration-icon{
+        flex-shrink: 0;
+      }
+      .integration-content{
+        opacity: 0;
+        text-align: center;
+        align-items: center;
+        .title{
+          line-height: 22px;
+          color:black;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+        .learnMoreBtn{
+          padding: 5px 10px;
+          color: white;
+          font-size: 14px;
+          min-width:unset;
+          box-shadow: none;
+        }
+      }
+    }
     
     :hover {
-      transition: all 0.25s ease-in;  
+      .integration-container{
+        height: max-content;
+        img{
+          transition: all 0.75s ease-in-out;
+          height: 0px;
+        }
+        .integration-content{
+          transition: all 0.75s ease-in-out;
+          opacity: 1;
+          .learnMoreBtn{
+            &:hover{
+              background-color: #009b8a;
+            }
+          }
+        }
+      }
       background: #00d3a9;
         ::after{
           content: "";

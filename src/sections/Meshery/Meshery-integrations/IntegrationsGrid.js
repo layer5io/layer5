@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
+import Button from "../../../reusecore/Button";
 
 const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
@@ -162,19 +163,27 @@ const IntegrationsGrid = ({ category, theme }) => {
             );
           } else {
             return (
-              <Link
-                to={`/cloud-native-management/meshery${item.fields.slug}`}
-              >
-                <Hexagon className="container-active">
+              <Hexagon className="container-active">
+                <span className="integration-container">
                   <img
+                    className="integration-icon"
                     src={(theme === "dark" && darkModeIntegrationIcon !== null) ? darkModeIntegrationIcon.publicURL : integrationIcon}
                     alt={item.frontmatter.title}
                     height={70}
                     width={70}
                     style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
                   />
-                </Hexagon>
-              </Link>
+                  <div className="integration-content">
+                    <div className="title">{item.frontmatter.title}</div>
+                    <Button
+                      secondary
+                      title="Learn More"
+                      url={`/cloud-native-management/meshery${item.fields.slug}`}
+                      className="learnMoreBtn"
+                    />
+                  </div>
+                </span>
+              </Hexagon>
             );
           }
 
