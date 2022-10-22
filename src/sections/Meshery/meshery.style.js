@@ -100,7 +100,7 @@ const MesheryWrapper = styled.section`
         }
     }
 
-    @media only screen and (max-width: 568px) {
+    @media only screen and (max-width: 991px) {
         .info{
             .description {
                 padding: 0;
