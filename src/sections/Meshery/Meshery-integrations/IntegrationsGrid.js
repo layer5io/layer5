@@ -48,9 +48,10 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ),
   ];
 
-  let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
+  let [categoryNameList ,setcategoryNameList] = useState([{ 
+    id: -1,
     name: "All",
-    isSelected: true, },
+    isSelected: false, },
   ...categoryNames.map((categoryName) => {
     return {
       id: categoryName,
