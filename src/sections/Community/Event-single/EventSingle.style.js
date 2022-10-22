@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const EventSinglePageWrapper = styled.div`
     .feature-image{
-    margin-bottom: -3.8rem
+    margin-bottom: -3.8rem;
+    margin-top: -4rem;
 }
     .single-event-wrapper{
         padding: 3rem 0 5rem;
