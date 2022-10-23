@@ -32,6 +32,7 @@ export const IntegrationPageWrapper = styled.section`
 		margin: 2rem;
 		gap: 5rem;
 		justify-content: center;
+		flex-basis: 70%;
 		@media (max-width: 700px) {
 			flex-direction: column-reverse;
 		};
@@ -40,6 +41,7 @@ export const IntegrationPageWrapper = styled.section`
 	.feature{
 		display: flex;
 		flex-direction: column;
+		flex-basis: 30%;
 		h3 {
 			padding-bottom: 1rem;
 		}
