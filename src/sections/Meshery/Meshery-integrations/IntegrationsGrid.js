@@ -48,19 +48,16 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ),
   ];
 
-  let [categoryNameList ,setcategoryNameList] = useState(
-    categoryNames.map((categoryName) => {
-      if (categoryName === categoryNames[0]) {
-        return { id: -1,
-          name: "All",
-          isSelected: true, };
-      }
-      return {
-        id: categoryName,
-        name: categoryName,
-        isSelected: false,
-      };
-    })
+  let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
+    name: "All",
+    isSelected: true, },
+  ...categoryNames.map((categoryName) => {
+    return {
+      id: categoryName,
+      name: categoryName,
+      isSelected: false,
+    };
+  })]
   );
 
   useEffect(() => setCategory(), []);
@@ -131,7 +128,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   return (
     <HoneycombGrid>
       <section className="heading">
-        <h1>{data.allMdx.nodes.length}+ Built-In Integrations</h1>
+        <h1>{Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
       <section className="category">
