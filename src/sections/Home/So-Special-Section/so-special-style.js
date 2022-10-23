@@ -23,12 +23,9 @@ const SoSpecialWrapper = styled.div`
     }
     
     .slick-next{
-        right: -1.25rem;
+        right: -2.5rem;
     }
-    .slick-list{
-        padding-top: 2px;
-        text-align: center;
-    }
+
     @media screen and (max-width: 992px) {
         .slick-list{
             margin: 0;	
@@ -61,19 +58,15 @@ const SoSpecialWrapper = styled.div`
             height:100%;
         }    
     }
-    .slick-prev { 
-        left: -2.5rem;
-        position: relative;
-        top: 14.90rem;
-    }
+    
     .slick-prev:before{	
-        content: "‹";	
+        content: "‹";
+        line-height: 0;	
     }
     .slick-next:before{	
         content: "›";
         line-height: 0;
         opacity: 1;
-        margin-left: 2rem;
     }
     .slick-dots li button:before {
         font-size: 0.6rem;
