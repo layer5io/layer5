@@ -23,7 +23,7 @@ const SoSpecialWrapper = styled.div`
     }
     
     .slick-next{
-        right: -38px;
+        right: -1.25rem;
     }
     .slick-list{
         padding-top: 2px;
@@ -62,7 +62,9 @@ const SoSpecialWrapper = styled.div`
         }    
     }
     .slick-prev { 
-        left: -30px;
+        left: -2.5rem;
+        position: relative;
+        top: 14.90rem;
     }
     .slick-prev:before{	
         content: "‹";	
