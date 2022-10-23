@@ -36,14 +36,14 @@ const SoSpecialWrapper = styled.div`
     }
 
     .slick-arrow{
-        width: 4.8rem;	
-        height: 5rem;
+        width: 2rem;
+        height: 3rem;
     }	
     .slick-arrow:before{	
         color: ${props => props.theme.primaryColor};
         font-size: 6rem;
         display: inline-block;
-        height: 2rem;
+        height: 3rem;
         filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
     }
     .slick-arrow:hover:before{	
@@ -61,23 +61,17 @@ const SoSpecialWrapper = styled.div`
             height:100%;
         }    
     }
-
+    .slick-prev { 
+        left: -30px;
+    }
     .slick-prev:before{	
         content: "‹";	
-        line-height: 0;
-        opacity: 1;
-        color: ${props => props.theme.primaryColor};
-        margin-left: -3rem;
     }
     .slick-next:before{	
         content: "›";
         line-height: 0;
         opacity: 1;
         margin-left: 2rem;
-        color: ${props => props.theme.primaryColor};
-    }
-    .slick-disabled{	
-        visibility: hidden;
     }
     .slick-dots li button:before {
         font-size: 0.6rem;
