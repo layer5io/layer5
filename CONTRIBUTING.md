@@ -11,6 +11,14 @@ We are beyond excited to see that you want to contribute! We would love to accep
       - [Signing-off on Commits](#signing-off-on-commits)
 
 
+⚠️ Cloning this repository ⚠️
+
+Cloning the repo with all its history results in a ~6 GB download. If you don't need the whole history you can use the depth parameter to significantly reduce download size.
+
+```bash
+git clone --depth=1 https://github.com/layer5io/layer5.git
+```
+
 # Before You Get Started
 
 ## Code of Conduct
@@ -37,7 +45,7 @@ Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landsc
 
 Please follow these steps and note these guidelines to begin contributing:
 
-1. First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
+1. First step is to set up the local development environment.
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
 1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
 1. We regularly discuss new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any issue or any idea that you may have.
