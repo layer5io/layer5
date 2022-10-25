@@ -1,7 +1,18 @@
 import styled from "styled-components";
 
 export const HoneycombGrid = styled.div`
-  
+    .heading {
+    text-align: center;
+
+    h1 {
+      line-height: 3.75rem;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+  }
+
   .container-active{
     display: flex;
     height: 95%;
@@ -72,19 +83,7 @@ export const HoneycombGrid = styled.div`
 export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
   margin: 5.1875rem auto;
-
-  .heading {
-    text-align: center;
-
-    h1 {
-      line-height: 3.75rem;
-    }
-
-    h2 {
-      font-weight: normal;
-    }
-  }
-
+  text-align: center;
 `;
 
 

@@ -11,6 +11,9 @@ const NavigationWrap = styled.header`
 
   .nav-container {
     display: flex;
+    @media (min-width:912px) and (max-width:992px){
+      max-width:850px;
+    }
   }
   .meshery-cta {
     position: relative;
@@ -239,7 +242,6 @@ const NavigationWrap = styled.header`
       li {
         padding-top: 5px;
         a {
-          color: ${props => props.theme.menuColor};
           display: block;
           &:hover {
             color: ${props => props.theme.menuHoverColor}; !important;
@@ -422,6 +424,10 @@ const NavigationWrap = styled.header`
     .mobile-nav-subitem {
       padding-left: 10px;
     }
+  }
+  
+  .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
   }
   
   .anchor:before {
