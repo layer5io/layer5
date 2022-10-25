@@ -205,6 +205,9 @@ const contributingGuide = () => {
                 <span>
                   Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
                 </span>
+                <span>
+                  Note: Please ensure that the right branch is selected for the PR.
+                </span>
                 <div>
                   <br />
                   <StaticImage src={compareAndPR} alt="Compare and pull request" />
