@@ -9,41 +9,54 @@ published: true
 upcoming: true
 register: false
 ---
-Join us as we host project office hours. Don't be shy with your questions! Project maintainers are happy to receive your questions and will be available to share about current project activities, discuss current features as well as planned future project roadmap.
-<ul>
-<li>
-Meshery Project Office Hours: 
-  
-Kubernetes, any service mesh, and their workloads may all be used, operated, and managed with the help of Meshery, an open source, cloud-native manager. Hundreds of integrations are enabled for any workload or infrastructure component by Meshery, a multi-cluster Kubernetes manager.
-  
-  Date: October 26, 2022
-  
-  Time: 12:00 - 12:45 pm ET
-  
-  <a href="https://community.cncf.io/events/details/cncf-cncf-project-office-hours-presents-meshery-project-office-hour-1200-1245-pm-et/">​RSVP for the event here!/</a>
-</li>    
-<li>
-Service Mesh Performance Project Office Hours: 
-  
-Service Mesh Performance is a CNCF-hosted project that has received support from Layer5, Intel, RedHat, and HashiCorp. By leveraging SMP, MeshMark provides a global performance index that allows you to assess how well your mesh deployment stacks up against those of other businesses.
-  
-  Date: October 27, 2022
-  
-  Time: 12:00 - 12.45 pm ET
-  
-  <a href="https://community.cncf.io/events/details/cncf-cncf-project-office-hours-presents-service-mesh-performance-project-office-hour-1200-1245-pm-et/">RSVP for the event here!</a>
-</li>
-<li>
-TAG-Network Talk: 
-  
-  Join CNCF Technical Advisory Group co-chair and Layer5's founder, Lee Calcote as he discusses the many projects of TAG Network and its working groups. NATs, Network Service Mesh, BFE, Contour, Kuma, Service Mesh Interface, Chaos Mesh, Open Service Mesh, Emissary, k8gb, Service Mesh Performance, Submariner, Cilium, Meshery, Fab Edge, Istio, Nighthawk, Aeraki, and FabEdge are just a few of the many terms used to describe cloud native networking.
-  
-  Date: October 27, 2022
-  
-  Time: 4:30 - 5:05 pm ET
-  
-  <a href="https://sched.co/1BZJl">RSVP for the event here!</a>
-</li>
-</ul>
 
-<p> Learn more about <Link to="/blog/events/layer5-at-kubecon-cloudnativecon-north-america">Layer5 at KubeCon NA 2022</Link> at KubeCon + CloudNativeCon NA 2022 and other <Link to="/community/events">events</Link>!</p>
+import { EventWrapper } from "../Event.style.js";
+import { Button } from "../../../reusecore/Button";
+import { Link } from "gatsby";
+
+<EventWrapper>
+
+Join <Link to="/blog/events/layer5-at-kubecon-cloudnativecon-north-america">Layer5 is at KubeCon NA 2022</Link> as we host project office hours. Don't be shy with your questions! Project maintainers are happy to receive your questions and will be available to share about current project activities, discuss current features as well as planned future project roadmap.
+
+### Meshery Project Office Hours
+  
+<p> Kubernetes, any service mesh, and their workloads may all be used, operated, and managed with the help of Meshery, an open source, cloud-native manager. Hundreds of integrations are enabled for any workload or infrastructure component by Meshery, a multi-cluster Kubernetes manager. </p>
+
+<div className="flex-row">
+  <p>
+    Day: October 26, 2022 <br />
+    Time: 12:00 - 12:45 pm ET
+  </p>
+
+  <Button secondary title="Register" url="https://community.cncf.io/events/details/cncf-cncf-project-office-hours-presents-meshery-project-office-hour-1200-1245-pm-et/" external="true" />
+</div>
+
+### Service Mesh Performance Project Office Hours
+  
+<p>
+  Service Mesh Performance is a CNCF-hosted project that has received support from Layer5, Intel, RedHat, and HashiCorp. By leveraging SMP, MeshMark provides a global performance index that allows you to assess how well your mesh deployment stacks up against those of other businesses. 
+</p>
+<div className="flex-row">
+  <p>
+    Date: October 27, 2022<br/>  
+    Time: 12:00 - 12.45 pm ET
+  </p>
+  <Button secondary title="Register" url="https://community.cncf.io/events/details/cncf-cncf-project-office-hours-presents-service-mesh-performance-project-office-hour-1200-1245-pm-et/" external="true" />
+</div>
+
+### The State of the Cloud Native Network: Deep-dive from CNCF TAG Network
+
+<p>
+  Join CNCF Technical Advisory Group co-chair and Layer5's founder, <Link to="/community/members/lee-calcote">Lee Calcote</Link> as he discusses the many projects of TAG Network and its working groups. NATs, Network Service Mesh, BFE, Contour, Kuma, Service Mesh Interface, Chaos Mesh, Open Service Mesh, Emissary, k8gb, Service Mesh Performance, Submariner, Cilium, Meshery, Fab Edge, Istio, Nighthawk, Aeraki, and FabEdge are just a few of the many terms used to describe cloud native networking. Learn more by <Link to="/service-mesh-landscape">comparing service meshes</Link>.
+</p>
+
+<div class="flex-row">
+  <p>
+    Date: October 27, 2022<br />
+    Time: 4:30 - 5:05 pm ET
+  </p>
+
+  <Button secondary title="Register" url="https://sched.co/1BZJl" external="true" />
+</div>
+
+</EventWrapper>
