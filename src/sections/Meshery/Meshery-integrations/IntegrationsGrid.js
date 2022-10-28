@@ -11,10 +11,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         fields: {collection: {eq: "integrations"}}, 
         frontmatter: {published: {eq: true} }}
     ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
       nodes {
         frontmatter {
           title
