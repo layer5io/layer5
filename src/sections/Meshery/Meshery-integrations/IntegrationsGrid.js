@@ -7,7 +7,9 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
   query{
     allMdx(
-      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true} }}
+      filter: {
+        fields: {collection: {eq: "integrations"}}, 
+        frontmatter: {published: {eq: true} }}
     ) {
       nodes {
         frontmatter {
