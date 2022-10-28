@@ -50,12 +50,13 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
     name: "All",
-    isSelected: true, },
+    isSelected: true, count: 0, },
   ...categoryNames.map((categoryName) => {
     return {
       id: categoryName,
       name: categoryName,
       isSelected: false,
+      count: 0,
     };
   })]
   );
@@ -139,7 +140,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               className={item.isSelected ? "items selected" : "items"}
               onClick={setFilter}
             >
-              {item.name} (0)
+              <span>{item.name}</span>
+              <em>({item.count})</em>
             </p>
           );
         })}
