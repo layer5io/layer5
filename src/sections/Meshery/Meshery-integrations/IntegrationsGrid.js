@@ -11,7 +11,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         fields: {collection: {eq: "integrations"}}, 
         frontmatter: {published: {eq: true} }
       }
-    ) nodes {
+    ) {
+      nodes {
         frontmatter {
           title
           status
