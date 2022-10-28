@@ -42,7 +42,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
 
-
   // fetch all the category names from IntegrationList and remove the duplicate category names
   const categoryNames = [
     ...new Set(
@@ -58,10 +57,20 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       id: categoryName,
       name: categoryName,
       isSelected: false,
-      count: 0,
+      count: categoryCount(categoryName),
     };
   })]
   );
+
+  function categoryCount(categoryName) {
+    let k = 0;
+    IntegrationList.map((integration) => {
+      if (integration.frontmatter.category === categoryName){
+        k++;
+      }
+    });
+    return k;
+  }
 
   useEffect(() => setCategory(), []);
   const setCategory = () => {
