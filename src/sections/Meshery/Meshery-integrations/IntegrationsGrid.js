@@ -151,7 +151,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               className={item.isSelected ? "items selected" : "items"}
               onClick={setFilter}
             >
-              {item.name} ({item.count})
+              <span>{item.name}</span>
+              <em> ({item.count}) </em>
             </p>
           );
         })}
