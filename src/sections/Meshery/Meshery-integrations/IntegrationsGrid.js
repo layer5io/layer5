@@ -152,7 +152,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               onClick={setFilter}
             >
               <span>{item.name}</span>
-              <em> ({item.count}) </em>
+              <span> ({item.count}) </span>
             </p>
           );
         })}
