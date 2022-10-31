@@ -11,12 +11,16 @@ const contents = [
   { id: 0, link: "#Clone your fork", text: "Clone your fork" },
   { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
   { id: 2, link: "#Commit your changes", text: "Commit your changes" },
-  { id: 3, link: "#Push changes to Github", text: "Push changes to Github" },
-  { id: 4, link: "#Sign-off commits", text: "Sign-off commits" },
+  { id: 3, link: "#Sign-off commits", text: "Sign-off commits" },
+  { id: 4, link: "#Push changes to Github", text: "Push changes to Github" },
+  { id: 5, link: "#Create a pull request", text: "Create a pull request" },
 ];
 
 const contributingGuide = () => {
   const Signoff = "../../../../.github/assets/images/git-signoff-vscode.png";
+  const compareAndPR = "../../../../.github/assets/images/compare-and-pr.png";
+  const createPR = "../../../../.github/assets/images/create-pr.png";
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -38,7 +42,7 @@ const contributingGuide = () => {
                 <span>
                   Go to your GitHub account, open the forked repository, click
                   on the code button and then click the “copy to clipboard” icon
-                  if you intend to use a command-line tool.{ " " }
+                  if you intend to use a command-line tool.{" "}
                 </span>
               </li>
               <li>
@@ -95,7 +99,7 @@ const contributingGuide = () => {
                   For example,
                   <div className="codes">
                     <Code codeString="git checkout -b feature" />
-                  </div>{ " " }
+                  </div>{" "}
                   (feature being a branch name)
                 </span>
               </li>
@@ -113,7 +117,7 @@ const contributingGuide = () => {
               </li>
               <li>
                 <span>
-                  { " " }
+                  {" "}
                   If you add multiple file changes to the branch, you simply
                   use:
                   <div className="codes">
@@ -135,7 +139,56 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Push changes to Github">  <h3>Push changes to Github and submit a pull request (PR)</h3> </a>
+            <a id="Sign-off commits"> <h3>
+                Make sure to{" "}
+              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
+                  Sign-off
+              </a>{" "}
+                on your Commits (Developer Certificate of Origin)
+            </h3>
+            </a>
+            <p>
+              To contribute to this project, you must agree to the Developer
+              Certificate of Origin (DCO) for each commit you make. The DCO is a
+              simple statement that you, as a contributor, have the legal right to
+              contribute.{" "}
+            </p>
+            <p>
+              To signify that you agree to the DCO for contributions, you simply
+              add a line to each of your git commit messages:
+            </p>
+            <div className="codes">
+              <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
+            </div>
+            <p>
+              In most cases, you can add this signoff to your commit automatically
+              with the -s or --signoff flag to git commit. You must use your real
+              name and a reachable email address (sorry, no pseudonyms or
+              anonymous contributions). An example of signing off on a commit:
+            </p>
+            <div className="codes">
+              <Code codeString="$ commit -s -m “my commit message w/signoff”" />
+            </div>
+            <p>
+              To ensure all your commits are signed, you may choose to add this
+              alias to your global .gitconfig:
+            </p>
+            <div className="codes">
+              <Code
+                codeString="[alias]
+  amend = commit -s --amend
+  cm = commit -s -m
+  commit = commit -s
+"
+              />
+            </div>
+            <p>
+              Or you may configure your IDE, for example, Visual Studio Code to
+              automatically sign-off commits for you:
+            </p>
+            <StaticImage src={Signoff} id="sign-off" alt="Signoff" />
+
+            <a id="Push changes to Github">  <h3>Push changes to Github</h3> </a>
             <ul>
               <li>
                 <span>
@@ -146,59 +199,39 @@ const contributingGuide = () => {
                 </span>
               </li>
             </ul>
+            <a id="Create a pull request">  <h3>Create a pull request (PR)</h3> </a>
+            <ul>
+              <li>
+                <span>
+                  Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
+                </span>
+                <br/>
+                <span>
+                  Note: Please ensure that the right branch is selected for the PR.
+                </span>
+                <div>
+                  <br />
+                  <StaticImage src={compareAndPR} alt="Compare and pull request" />
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span>
+                  Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
+                </span>
+                <div>
+                  <br />
+                  <StaticImage src={createPR} alt="create pr" />
+                  <br />
+                </div>
+              </li>
+            </ul>
           </div>
-          <a id="Sign-off commits"> <h2>
-            Make sure to{ " " }
-            <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
-              Sign-off
-            </a>{ " " }
-            on your Commits (Developer Certificate of Origin)
-          </h2>
-          </a>
-          <p>
-            To contribute to this project, you must agree to the Developer
-            Certificate of Origin (DCO) for each commit you make. The DCO is a
-            simple statement that you, as a contributor, have the legal right to
-            contribute.{ " " }
-          </p>
-          <p>
-            To signify that you agree to the DCO for contributions, you simply
-            add a line to each of your git commit messages:
-          </p>
-          <div className="codes">
-            <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
-          </div>
-          <p>
-            In most cases, you can add this signoff to your commit automatically
-            with the -s or --signoff flag to git commit. You must use your real
-            name and a reachable email address (sorry, no pseudonyms or
-            anonymous contributions). An example of signing off on a commit:
-          </p>
-          <div className="codes">
-            <Code codeString="$ commit -s -m “my commit message w/signoff”" />
-          </div>
-          <p>
-            To ensure all your commits are signed, you may choose to add this
-            alias to your global .gitconfig:
-          </p>
-          <div className="codes">
-            <Code
-              codeString="[alias]
-  amend = commit -s --amend
-  cm = commit -s -m
-  commit = commit -s
-"
-            />
-          </div>
-          <p>
-            Or you may configure your IDE, for example, Visual Studio Code to
-            automatically sign-off commits for you:
-          </p>
-          <StaticImage src={ Signoff }  id="sign-off" alt="Signoff" />
           <TocPagination />
         </Container>
 
-        <IntraPage contents={ contents } />
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );

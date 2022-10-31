@@ -22,7 +22,7 @@ for (let i = 0; i < meshes.length; i++){
     remainingMeshes.push(meshes[i]);
 }
 
-const ServiceMeshTimeline = ( { theme } ) => {
+const ServiceMeshTimeline = ( { theme } ) => { 
   const [elements, setElements] = useState(initialMeshes);
   const [loadedAll, showIcon] = useState(false);
 
@@ -43,7 +43,7 @@ const ServiceMeshTimeline = ( { theme } ) => {
       >
         {mesh.icon ?
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon } alt={mesh.name} />
+            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon } alt={mesh.name} className={mesh.name==="Vulcand" ? "vulcan-img" : ""} />
           </div>
           :   <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />

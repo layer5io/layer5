@@ -51,7 +51,7 @@ export const LandscapePageWrapper = styled.div`
 					line-height: 1.5rem;
 					color: ${props => props.theme.white};
 				}
-				.pad-top {
+				.pad-top { 
 					margin-top: 10px;
 				}
 			}
@@ -113,6 +113,10 @@ export const LandscapePageWrapper = styled.div`
 	.meshtitle-img-0 img, .meshtitle-img-1 img {
 		width: 4.75rem;
 		height: 4.75rem;
+	}
+	.meshtitle-img-1 .vulcan-img{
+  		width: 6rem;
+  		hight: 6rem;
 	}
 	.title-0, .title-1, .subtitle-0, .subtitle-1 {
 		position: relative;

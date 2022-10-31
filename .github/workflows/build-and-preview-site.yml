@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@master
         with:
           persist-credentials: false
+          fetch-depth: 1
 
       - name: Install and Build 🔧 
         run: |
@@ -23,7 +24,7 @@ jobs:
         run: bash ./script.sh
 
       - name: Upload files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           name: public-dir
           path: ./public-dir.zip
