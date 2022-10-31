@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@master
+        with:
+          fetch-depth: 1
 
       - name: Install and Build 🔧 
         run: |
