@@ -17,7 +17,7 @@ const LearnServiceMeshCTAWrapper = styled.div`
     .section-wrapper{
       @media (max-width: 767px){
           flex-direction: column-reverse;
-          margin-top: -4rem;
+          margin-top: -6rem;
       }
       .content{
           @media (max-width: 767px){
