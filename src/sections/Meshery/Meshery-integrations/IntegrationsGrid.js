@@ -50,13 +50,12 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   ];
 
   const categoryCount = (categoryName) => {
-    let k = 0;
-    IntegrationList.map((integration) => {
+    return IntegrationList.reduce((count, integration) => {
       if (integration.frontmatter.category === categoryName){
-        k++;
+        count += 1;
       }
-    });
-    return k;
+      return count;
+    }, 0);
   };
 
   let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
