@@ -49,6 +49,16 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ),
   ];
 
+  const categoryCount = (categoryName) => {
+    let k = 0;
+    IntegrationList.map((integration) => {
+      if (integration.frontmatter.category === categoryName){
+        k++;
+      }
+    });
+    return k;
+  };
+
   let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
     name: "All",
     isSelected: true, count: IntegrationList.length, },
@@ -61,16 +71,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     };
   })]
   );
-
-  function categoryCount(categoryName) {
-    let k = 0;
-    IntegrationList.map((integration) => {
-      if (integration.frontmatter.category === categoryName){
-        k++;
-      }
-    });
-    return k;
-  }
 
   useEffect(() => setCategory(), []);
   const setCategory = () => {
