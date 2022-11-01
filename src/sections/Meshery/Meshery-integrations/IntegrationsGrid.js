@@ -39,18 +39,18 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   }  
   `);
 
-  const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+  const [activeIntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
-
-  // fetch all the category names from IntegrationList and remove the duplicate category names
-  const categoryNames = [
-    ...new Set(
-      IntegrationList.map((integration) => integration.frontmatter.category)
-    ),
-  ];
+  // fetch all the category names from activeIntegrationList and remove the duplicate category names
+  const categoryNames = activeIntegrationList.reduce((initCategory, integration) => {
+    if (!initCategory.includes(integration.frontmatter.category)) {
+      initCategory.push(integration.frontmatter.category);
+    }
+    return initCategory;
+  }, []);
 
   const categoryCount = (categoryName) => {
-    return IntegrationList.reduce((count, integration) => {
+    return activeIntegrationList.reduce((count, integration) => {
       if (integration.frontmatter.category === categoryName){
         count += 1;
       }
@@ -58,49 +58,55 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     }, 0);
   };
 
-  let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
-    name: "All",
-    isSelected: true, count: IntegrationList.length, },
-  ...categoryNames.map((categoryName) => {
-    return {
-      id: categoryName,
-      name: categoryName,
-      isSelected: false,
-      count: categoryCount(categoryName),
-    };
-  })]
+  let [categoryNameList ,setcategoryNameList] = useState(
+    [
+      {
+        id: -1,
+        name: "All",
+        isSelected: true,
+        count: activeIntegrationList.length
+      },
+      ...categoryNames.map((categoryName) => {
+        return {
+          id: categoryName,
+          name: categoryName,
+          isSelected: false,
+          count: categoryCount(categoryName),
+        };
+      })]
   );
 
   useEffect(() => setCategory(), []);
-  const setCategory = () => {
 
+  const setCategory = () => {
+    let tempCategoryList = [...categoryNameList];
     if (category !== undefined) {
-      categoryNameList.forEach((item) => {
+      tempCategoryList.forEach((item) => {
         if (item.name === category) {
           item.isSelected = true;
         }
       });
     } else {
-      categoryNameList[0].isSelected = true;
+      tempCategoryList[0].isSelected = true;
     }
-    setcategoryNameList(categoryNameList);
+    setcategoryNameList([...tempCategoryList]);
     setIntegrationCollection();
   };
 
   const setFilter = (event) => {
     let count = 0;
+    let tempCategoryList = [...categoryNameList];
     let selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
     selectedCategory = selectedCategory.split("(")[0].trim();
 
     if (selectedCategory == "All") {
-      categoryNameList.forEach(item => {
+      tempCategoryList.forEach(item => {
         if (item.isSelected & item.name != "All") {
           item.isSelected = false;
         }
-      }
-      );
+      });
     }
-    categoryNameList.forEach(item => {
+    tempCategoryList.forEach(item => {
       if (item.name == selectedCategory) {
         item.isSelected = !item.isSelected;
       }
@@ -110,18 +116,18 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     });
 
     if (count === 0) {
-      categoryNameList[0].isSelected = true;
+      tempCategoryList[0].isSelected = true;
     } else {
-      categoryNameList[0].isSelected = false;
+      tempCategoryList[0].isSelected = false;
     }
 
-    setcategoryNameList(categoryNameList);
+    setcategoryNameList([...tempCategoryList]);
     setIntegrationCollection();
   };
 
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
-      setIntegrationList(data.allMdx.nodes);
+      setIntegrationList([...data.allMdx.nodes]);
       return;
     }
     let tempIntegrationCollection = [];
@@ -134,7 +140,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         });
       }
     });
-    setIntegrationList(tempIntegrationCollection);
+    setIntegrationList([...tempIntegrationCollection]);
   };
 
   return (
@@ -158,7 +164,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       </section>
       <ResponsiveHoneycomb
         size={90}
-        items={count == "All" ? IntegrationList : IntegrationList.slice(0,count)}
+        items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0,count)}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
           const integrationIcon = item.frontmatter.integrationIcon.publicURL;
