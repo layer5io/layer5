@@ -7,7 +7,9 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
   query{
     allMdx(
-      filter: {fields: {collection: {eq: "integrations"}}, frontmatter: {published: {eq: true} }}
+      filter: {
+        fields: {collection: {eq: "integrations"}}, 
+        frontmatter: {published: {eq: true} }}
     ) {
       nodes {
         frontmatter {
@@ -40,7 +42,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
 
 
-
   // fetch all the category names from IntegrationList and remove the duplicate category names
   const categoryNames = [
     ...new Set(
@@ -48,14 +49,24 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ),
   ];
 
+  const categoryCount = (categoryName) => {
+    return IntegrationList.reduce((count, integration) => {
+      if (integration.frontmatter.category === categoryName){
+        count += 1;
+      }
+      return count;
+    }, 0);
+  };
+
   let [categoryNameList ,setcategoryNameList] = useState([{ id: -1,
     name: "All",
-    isSelected: true, },
+    isSelected: true, count: IntegrationList.length, },
   ...categoryNames.map((categoryName) => {
     return {
       id: categoryName,
       name: categoryName,
       isSelected: false,
+      count: categoryCount(categoryName),
     };
   })]
   );
@@ -78,7 +89,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const setFilter = (event) => {
     let count = 0;
-    const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+    let selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+    selectedCategory = selectedCategory.split("(")[0].trim();
 
     if (selectedCategory == "All") {
       categoryNameList.forEach(item => {
@@ -139,7 +151,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               className={item.isSelected ? "items selected" : "items"}
               onClick={setFilter}
             >
-              {item.name}
+              {`${item.name} (${item.count})`}
             </p>
           );
         })}
