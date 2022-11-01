@@ -89,7 +89,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const setFilter = (event) => {
     let count = 0;
-    const selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+    let selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
+    selectedCategory = selectedCategory.split("(")[0].trim();
 
     if (selectedCategory == "All") {
       categoryNameList.forEach(item => {
@@ -150,8 +151,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               className={item.isSelected ? "items selected" : "items"}
               onClick={setFilter}
             >
-              <span>{item.name}</span>
-              <span> ({item.count}) </span>
+              {`${item.name} (${item.count})`}
             </p>
           );
         })}
