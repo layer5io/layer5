@@ -92,7 +92,7 @@
     "react-visibility-sensor": "^5.1.1",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.6",
     "swiper": "^8.4.2"
   },
   "devDependencies": {
