@@ -52,14 +52,14 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const categoryCount = (categoryName) => {
     return activeIntegrationList.reduce((count, integration) => {
-      if (integration.frontmatter.category === categoryName){
+      if (integration.frontmatter.category === categoryName) {
         count += 1;
       }
       return count;
     }, 0);
   };
 
-  let [categoryNameList ,setcategoryNameList] = useState(
+  let [categoryNameList, setcategoryNameList] = useState(
     [
       {
         id: -1,
@@ -165,7 +165,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       </section>
       <ResponsiveHoneycomb
         size={90}
-        items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0,count)}
+        items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0, count)}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
           const integrationIcon = item.frontmatter.integrationIcon.publicURL;
@@ -183,7 +183,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                   <div className="integration-content">
-                    <div className="title" style={{ marginBottom: 0 , }}>{item.frontmatter.title}</div>
+                    <div className="title" style={{ marginBottom: 0, }}>{item.frontmatter.title}</div>
                   </div>
                 </span>
               </Hexagon>
@@ -205,11 +205,11 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                     />
                     <div className="integration-content">
                       <div className="title">{item.frontmatter.title}</div>
-                      <Button
+                      {/* <Button
                         secondary
                         title="Learn More"
                         className="learnMoreBtn"
-                      />
+                      /> */}
                     </div>
                   </span>
                 </Hexagon>
