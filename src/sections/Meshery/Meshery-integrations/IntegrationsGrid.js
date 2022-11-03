@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 import Button from "../../../reusecore/Button";
@@ -173,20 +173,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
           if (status) {
             return (
               <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
-                <img
-                  src={integrationIcon}
-                  alt={item.frontmatter.title}
-                  style={{
-                    filter: "brightness(0) invert(1)",
-                  }}
-                  height={70}
-                  width={70}
-                />
-              </Hexagon>
-            );
-          } else {
-            return (
-              <Hexagon className="container-active">
                 <span className="integration-container">
                   <img
                     className="integration-icon"
@@ -194,19 +180,40 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                     alt={item.frontmatter.title}
                     height={70}
                     width={70}
-                    style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
+                    style={{ filter: "brightness(0) invert(1)" }}
                   />
                   <div className="integration-content">
-                    <div className="title">{item.frontmatter.title}</div>
-                    <Button
-                      secondary
-                      title="Learn More"
-                      url={`/cloud-native-management/meshery${item.fields.slug}`}
-                      className="learnMoreBtn"
-                    />
+                    <div className="title" style={{ marginBottom: 0 , }}>{item.frontmatter.title}</div>
                   </div>
                 </span>
               </Hexagon>
+            );
+          } else {
+            return (
+              <Link
+                to={`/cloud-native-management/meshery${item.fields.slug}`}
+              >
+                <Hexagon className="container-active">
+                  <span className="integration-container">
+                    <img
+                      className="integration-icon"
+                      src={(theme === "dark" && darkModeIntegrationIcon !== null) ? darkModeIntegrationIcon.publicURL : integrationIcon}
+                      alt={item.frontmatter.title}
+                      height={70}
+                      width={70}
+                      style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
+                    />
+                    <div className="integration-content">
+                      <div className="title">{item.frontmatter.title}</div>
+                      <Button
+                        secondary
+                        title="Learn More"
+                        className="learnMoreBtn"
+                      />
+                    </div>
+                  </span>
+                </Hexagon>
+              </Link>
             );
           }
 

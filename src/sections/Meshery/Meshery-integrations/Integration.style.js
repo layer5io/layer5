@@ -13,7 +13,7 @@ export const HoneycombGrid = styled.div`
     }
   }
 
-  .container-active{
+  .container-active, .container-inactive{
     display: flex;
     height: 95%;
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
@@ -25,8 +25,9 @@ export const HoneycombGrid = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 70px;
+      height: 100%;
       overflow: hidden;
+      justify-content: center;
       .integration-icon{
         flex-shrink: 0;
       }
@@ -34,6 +35,10 @@ export const HoneycombGrid = styled.div`
         opacity: 0;
         text-align: center;
         align-items: center;
+        height:0;
+        display: flex;
+        flex-direction: column;
+        justify-content : center;
         .title{
           line-height: 1.375rem;
           color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
@@ -49,18 +54,18 @@ export const HoneycombGrid = styled.div`
         }
       }
     }
-    
+
     :hover {
       .integration-container{
-        height: max-content;
         img{
-          transition: height 0.5s linear;
+          transition: all 1s linear;
           height: 0px;
-          visibility: hidden;
+          opacity:0;
         }
         .integration-content{
-          transition: all 0.5s linear;
+          transition: all 1s linear;
           opacity: 1;
+          height:100%;
           .learnMoreBtn{
             &:hover{
               background-color: #009b8a;
@@ -82,6 +87,11 @@ export const HoneycombGrid = styled.div`
       }
     }    
   }
+  
+  .container-inactive:hover::after{
+       background-color: #A0AAAA;
+  }
+    
 
   .container-inactive{
     display: flex;
