@@ -13,17 +13,83 @@ export const HoneycombGrid = styled.div`
     }
   }
 
-  .container-active{
+  .container-active, .container-inactive{
     display: flex;
     height: 95%;
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
+    padding: 0.625rem;
 
+    .integration-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      overflow: hidden;
+      justify-content: center;
+      img {
+          transition: all 1s cubic-bezier(1, 0.82, 0.165, 1);
+          height: 100%;
+          opacity: 100%;
+        }
+      .integration-icon {
+        flex-shrink: 0;
+      }
+      .integration-content {
+        opacity: 0;
+        text-align: center;
+        align-items: center;
+        height:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        transition: all 1s linear;
+        opacity: 1;
+        height:100%;
+        .title {
+          line-height: 1.375rem;
+          color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+          transition: all .5s cubic-bezier(1, 0.82, 0.165, 1);
+          margin-bottom: -2.7rem;
+          font-size: 0.675rem;
+          opacity: .2;
+          font-weight: 600;
+        }
+        .learnMoreBtn {
+          padding: 5px 10px;
+          color: white;
+          font-size: 0.875rem;
+          min-width:unset;
+          box-shadow: none;
+        }
+      }
+    }
 
-    
     :hover {
-      transition: all 0.25s ease-in;  
+      .integration-container {
+        img {
+          transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+          height: 20%;
+          opacity: 0%;
+        }
+        .integration-content {
+          transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          opacity: 1;
+          height:100%;
+          .title {
+            margin-top: -50%;
+            font-size: 1.2rem;
+            opacity: 1;
+          }
+          .learnMoreBtn {
+            &:hover {
+              background-color: #009b8a;
+            }
+          }
+        }
+      }
       background: #00d3a9;
         ::after{
           content: "";
@@ -38,6 +104,11 @@ export const HoneycombGrid = styled.div`
       }
     }    
   }
+  
+  .container-inactive:hover::after{
+       background-color: #A0AAAA;
+  }
+    
 
   .container-inactive{
     display: flex;
