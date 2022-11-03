@@ -18,7 +18,7 @@ const NewcomersPage = () => {
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="Layer5 Community Member Form" description="Layer5 newcomers form for contributors, users and visitors" image="/images/community.png" />
+      <SEO title="Layer5 Community Member Form" description="New member form for Layer5 community members: contributors, users and visitors" image="/images/layer5-community-sign.png" />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
         <WebBasedForm />
