@@ -221,9 +221,9 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
         <div className="integration-section">
           <Row className="integration-section-row">
             <Col xs={12} xl={4} className="integration-section-data">
-              <h3>{howitworks != null ? howitworks : "The Performance Yardstick" }</h3>
+              <h3>{howitworks != null ? howitworks : "Docker with Meshery" }</h3>
               <p>
-                {howitworksdetails != null ? howitworksdetails : "Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your application across different service meshes. Compare and manage service mesh overhead."}
+                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
             <Col xs={12} xl={8} className="integration-section-caraousel">

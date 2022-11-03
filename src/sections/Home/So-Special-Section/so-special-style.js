@@ -22,10 +22,29 @@ const SoSpecialWrapper = styled.div`
         margin-bottom: 3rem;
     }
     
-    .slick-arrow::before{
-        color: black;
-        font-size: 22px;
+    .slick-next{
+        right: -2.5rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        .slick-list{
+            margin: 0;	
+        }
+    }
+
+    .slick-arrow{
+        width: 2rem;
+        height: 3rem;
+    }	
+    .slick-arrow:before{	
+        color: ${props => props.theme.primaryColor};
+        font-size: 6rem;
+        display: inline-block;
+        height: 3rem;
         filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+    }
+    .slick-arrow:hover:before{	
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -38,6 +57,25 @@ const SoSpecialWrapper = styled.div`
         div{
             height:100%;
         }    
+    }
+    
+    .slick-prev:before{	
+        content: "‹";
+        line-height: 0;	
+    }
+    .slick-next:before{	
+        content: "›";
+        line-height: 0;
+        opacity: 1;
+    }
+    .slick-dots li button:before {
+        font-size: 0.6rem;
+        color: ${props => props.theme.secondaryColor};
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: ${props => props.theme.secondaryColor};
+    }
     }
     .so-special-head{
         padding:2rem;
@@ -90,7 +128,7 @@ const SoSpecialWrapper = styled.div`
     .special-cont_btn{
         background-color:${(props) => props.theme.body};
         color:black;
-        height:100%;
+        height: 30rem;
         outline:none;
         border:none;   
     }
@@ -149,12 +187,6 @@ const SoSpecialWrapper = styled.div`
         .so-special-head{
             padding:1rem;
             text-align:center;  
-        }
-         .slick-prev{
-            left:-20px;
-        }
-        .slick-next{
-            right:-20px;
         }
         .special-cont_para{
             padding:1rem 0;
