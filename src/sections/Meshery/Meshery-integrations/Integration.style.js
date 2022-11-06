@@ -79,7 +79,7 @@ export const HoneycombGrid = styled.div`
           opacity: 1;
           height:100%;
           .title {
-            margin-bottom: +2.7rem;
+            margin-bottom: +2.2rem;
             font-size: 1.2rem;
             opacity: 1;
           }
