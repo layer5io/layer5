@@ -12,6 +12,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   {
@@ -101,7 +102,7 @@ const Repository = () => {
 
               <li>
                 <a href="https://github.com/service-mesh-patterns">
-                  <img
+                  <StaticImage
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
                     alt="service mesh patterns icon"
                   />

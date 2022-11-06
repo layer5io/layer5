@@ -7,7 +7,6 @@ import TOC from "../../../components/handbook-navigation/index";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import longArrow from "../Newcomers-guide/long-arrow.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
-import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   { id: 0, link: "#About Layer5", text: "About Layer5" },
@@ -107,7 +106,7 @@ const Intro = () => {
                 <h2>Contributor's Journey</h2>
                 <div className="heading-start">
                   <h5>Start Here</h5>
-                  <StaticImage className="heading-start__arrow" src={longArrow} alt="longArrow" />
+                  <img className="heading-start__arrow" src={longArrow} alt="longArrow" />
                 </div>
               </Col>
               <Col sm={12} lg={6}>
