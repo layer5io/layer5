@@ -11,7 +11,7 @@ const SearchBox = ({
   currentPage
 }) => {
   const handleChange = (e) => {
-    if (e.target.value.length > 0 && currentPage != 1) paginate(1);
+    // if (e.target.value.length > 0 && currentPage != 1) paginate(1);
     searchData(e);
   };
   return (

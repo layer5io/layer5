@@ -3,6 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 import Button from "../../../reusecore/Button";
+import useDataList from "../../../utils/usedataList";
+import SearchBox from "../../../reusecore/Search";
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -40,7 +42,15 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   }  
   `);
 
-  const [activeIntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { queryResults, searchData,setDataList } = useDataList(
+    data.allMdx.nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    ["frontmatter", "title"]
+  );
+  const activeIntegrationList = queryResults ? queryResults : data.allMdx.nodes;
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
   const categoryNames = activeIntegrationList.reduce((initCategory, integration) => {
@@ -128,7 +138,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
-      setIntegrationList([...data.allMdx.nodes]);
+      setDataList([...data.allMdx.nodes]);
       return;
     }
     let tempIntegrationCollection = [];
@@ -141,7 +151,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         });
       }
     });
-    setIntegrationList([...tempIntegrationCollection]);
+    setDataList([...tempIntegrationCollection]);
   };
 
   return (
@@ -150,6 +160,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         <h1>{Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
+      <SearchBox searchQuery={searchQuery} searchData={searchData} />
       <section className="category">
         {categoryNameList.map((item) => {
           return (

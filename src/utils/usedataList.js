@@ -14,7 +14,11 @@ const useDataList = (
   const queryResults = searchQuery ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
-  }, [queryResults]);
+  }, [dataList]);
+
+  useEffect(() => {
+    rebuildIndex();
+  }, []);
 
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search(paramSearch);
@@ -34,7 +38,7 @@ const useDataList = (
     setSearchResults(queryResult);
   };
 
-  return { queryResults, searchData };
+  return { queryResults, searchData, setDataList };
 };
 
 export default useDataList;
