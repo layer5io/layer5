@@ -1,0 +1,147 @@
+---
+title: "Getting Started with Kubernetes"
+date: 2022-11-02 10:30:05 -0530
+author: Tolulope Ola-David
+thumbnail: ../../../../assets/images/service-mesh-icons/consul.svg
+darkthumbnail: ../../../../assets/images/service-mesh-icons/consul.svg
+description: Introduction to Kubernetes
+type: Article
+published: true
+category: Kubernetes
+tags:
+ - Kubernetes
+resource: true
+---
+import { ResourcesWrapper } from "../../Resources.style.js";
+import serviceMesh from "./consul-service-mesh.png";
+import agent from "./consul-agent-architecture.png";
+import datacenter from "./datacenter-architecture.png";
+import proxy from "./service-proxy-architecture.png";
+
+<ResourcesWrapper>
+  
+  <p> Kubernetes, an open-source container orchestration platform, is growing in popularity for deploying and managing cloud-native applications. Kubernetes was created by Google in 2014, and it is now used by many major companies, including IBM, Microsoft, Red Hat, and Amazon.
+In this article, we'll talk about Kubernetes, its benefits, and the best ways for your organization to use it.
+ </p>
+  
+  <h3> What is Kubernetes? </h3>
+  
+  <p> Kubernetes offers fully managed and adapted architecture services that optimize your cloud-native application. Kubernetes is a platform that hides virtual machines, shows the infrastructure as an infrastructure-as-a-service (IAAS), network, and load balancer, and offers data storage and operations that are consistent across containers.
+</p>
+  
+  <p> For example, Kubernetes nodes work as Kubernetes containers, such as an application, an application server, and control processes in Docker containers. Kubernetes components such as Kubernetes nodes and Kubernetes containers can be defined or modified via configuration files or can be specified subsequently. Individual Kubernetes components can be scaled according to elasticity needs to optimize performance.</p>
+  
+  <p> Kubernetes optimizes a Kubernetes environment in the cloud, Docker containers on a system for development or testing, and the master or control plane of its cloud cluster management infrastructure.</p>
+  
+  <h3> What's the Difference between Kubernetes and Docker? </h3>
+  
+  <p> Over the past few years, containers have become increasingly popular within the software development community, and they have now evolved into two major platforms — Docker and Kubernetes. Both are incredibly powerful tools that allow developers to containerize their applications, but they are also slightly different in a number of ways, with more differences on the horizon as Docker announces its new focus on Kubernetes and containers orchestration. How do you decide which one to use? What does the future hold for each? Here’s what you need to know about the difference between Docker and Kubernetes.
+</p>
+  
+  <p> Docker is an open-source platform designed to help developers and IT professionals create, deploy, and run applications. This containerization technology is often used in conjunction with orchestration software such as Kubernetes. However, these two technologies are not interchangeable; they serve different purposes. </p>
+  
+  <h3> Why Should You Care About Kubernetes? </h3>
+  
+  <p> Kubernetes was first made available for Google's internal use for DNS hosting. Open-source software projects were not able to use it. </p>
+  
+  <p> Today, Kubernetes is in use by large-scale companies that use container orchestration. And in January 2019, The New Stack reported that a survey conducted in that month, which included the Kubernetes user group, discovered that Kubernetes reached more than 40,000 users and 200 companies were working on Kubernetes at that point. In addition, Gartner indicated that Kubernetes Inc. would make some $8.5 billion in 2019. </p> 
+  
+  <h3> What does Kubernetes Do? </h3>
+  
+  <p> In contrast to an overall infrastructure, Kubernetes is a dynamic layer-oriented computing infrastructure. The essence of Kubernetes is how an entire infrastructure hops! Kubernetes is a container orchestration and management platform that has built-in features for self-replication, elasticity, and scalability. Through these and more features, Kubernetes "promovi-is" for container orchestrators for both production and lab environments. </p>
+  
+  <h3> Kubernetes Architecture </h3>
+  
+  <p> Even though Kubernetes is a software platform that lets organizations manage their application workloads in containers, a traditional Kubernetes cluster may not be the best solution for a number of business needs. </p>
+  
+  <p> A cluster of virtual computing resources is only one option, and it has its drawbacks. What happens when you lose disk space (which can happen if you don't add new containers, users, or workloads to a cluster)? Do you have another cluster for redundancy, and how do you integrate the two together? </p>
+
+  <p> Hyperconverged infrastructures like Red Hat OpenShift are an alternative that combine several technologies into a single virtual machine or physical machine. </p> 
+  
+  <h3> Best Practices for Kubernetes </h3>
+  
+  <p> Kubernetes is a container orchestration platform created by Google in 2014. It provides a way for companies to build fully self-sufficient, scalable, multi-container applications every time they need to deploy and manage their own containers. It's aimed at pretty much the same audience as Docker and other container orchestration platforms—that is, organizations that run containerized applications and want to deploy scalable, repeatable deployments.
+</p>
+  
+  <p> At the most basic and most simplistic level, a group of containers (usually 16) is cross-linked together in a cluster, based on Docker. Containers run inside a cluster of virtual machines (Kubernetes VM) as a single Linux file system. Kubernetes organizes the creation, deletion, and management of containers into container concepts that provide fault tolerance, availability, scaling, permission management, and secure containers that should be able to run together and share resources. Each host runs one or more containers, providing the abstraction of which containers can run on which hosts.
+</p>
+  
+  <p> Since Kubernetes services are usually very easy to use, the user experience is very similar to that of centralized solutions. </p>
+  
+  <p> With Kubernetes, businesses can make data repositories and containers, federate their resources in an efficient way, manage billing, certify capacity, quota, access rights, and more. </p>
+  
+  <p> It can scale to many nodes simultaneously, so when their machines scale up, then their containers could scale up too. </p>
+  
+  <h3> Kubernetes Concepts and Terminology </h3>
+  
+  <p> Kubernetes was developed in 2014 as a Google container orchestrator, a container scheduler and more. Kubernetes was created to manage distributed applications, including Docker containers. According to SUSE, Kubernetes is simple to learn, easy to manage, and supports an on-premise, private, public, or hybrid architecture. Kubernetes is flexible enough to be split up over many servers in your data center. </p>
+  
+  <p> This simplificator, one example of many, allows one to scale independent containers. </p>
+  
+  <p> Let's understand better what Kubernetes is: </p>
+  
+  <p> In an application ecosystem of operating system Docker containers, Kubernetes acts as a centralized management guided by distributed logic. Kubernetes can be used to deliver web traffic, graphics work, or IP traffic from IoT devices. The main benefit is that clusters can be easily expanded to a huge size with all functions. </p>
+  
+  <p> What are pods? Pods are Docker instances that you can use to deploy your containers in environments like Kubernetes, which can be private, public, or a mix of the two.
+</p>
+  
+  <p> Environments may be private services or public clouds. </p>
+  
+  <p> Kubernetes can be used to manage containers because they are easy to use and make it easy to scale your containers. </p>
+  
+  <p> Installation tutorials are sometimes yoinked without ever reading the help. </p>
+  
+  <h3> RBAC and Firewall Security </h3>
+  
+  <p> Today, everything is hackable, and so is your Kubernetes cluster. Hackers often try to find vulnerabilities in the system in order to exploit them and gain access. So, keeping your Kubernetes cluster secure should be a high priority. The first thing to do is make sure you are using RBAC in Kubernetes. RBAC is role-based access control. Assign roles to each user in your cluster and to each service account running in your cluster. Roles in RBAC contain several permissions that a user or service account can perform. You can assign the same role to multiple people, and each role can have multiple permissions.
+</p>
+  
+  <p> RBAC settings can also be applied to namespaces, so if you assign roles to a user allowed in one namespace, they will not have access to other namespaces in the cluster. Kubernetes provides RBAC properties such as role and cluster role to define security policies. </p>
+  
+  <p> You can create a firewall for your API server to prevent attackers from sending connection requests to your API server from the Internet. To do this, you can either use regular firewalling rules or port firewalling rules. If you are using something like GKE, you can use a master authorized network feature in order to limit the IP addresses that can access the API server. </p>
+  
+  <h3> Kubernetes Manages Kubernetes Clusters </h3>
+  
+  <p> Kubernetes is a project that lets you create and manage individual containers or a container cluster on a mainframe. Clusters may consist of physical, virtual, or cloud-based computing resources.
+</p>
+  
+  <p> The Kubernetes projects auto-deploy container clusters anywhere there is a pluggable environment and an open-source base that includes system-config service, service account manager, and kubelet. So, developers and system administrators can easily put containers on a single machine or on nodes of machines in any scalable cluster to save money and time.
+</p>
+  
+  <p> Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. Kubernetes was made by Google, and the Cloud Native Computing Foundation now takes care of it.
+</p>
+  
+  <h3> Set Resource Requests & Limits</h3>
+  
+  <p> Occasionally, deploying an application to a production cluster can fail due to the limited resources available on that cluster. This is a common challenge when working with a Kubernetes cluster, and it’s caused when resource requests and limits are not set. Without resource requests and limits, pods in a cluster can start utilizing more resources than required. If the pod starts consuming more CPU or memory on the node, then the scheduler may not be able to place new pods, and even the node itself may crash. Resource requests specify the minimum amount of resources a container can use. </p>
+  
+  <p> For both requests and limits, it’s typical to define CPU in millicores and memory in megabytes or mebibytes. Containers in a pod do not run if the request for resources made is higher than the limit you set.
+</p>
+  
+  <p> In this example, we have set the limit of the CPU to 800 millicores and the memory to 256 mebibytes. The maximum request which the container can make at a time is 400 millicores of CPU and 128 mebibyte of memory.
+</p>
+  
+  <h3> Guide to Containers </h3>
+  
+  <p> Containers have been around for a while, but it wasn’t until Docker came along that they really took off. In its early days, developers were using it to build their applications in containers. Now companies like Walmart are using containers to deploy their entire infrastructure.
+</p>
+  
+  <p> Containers are lighter-weight than virtual machines because they don't need to emulate an entire operating system. This is why containers are typically faster to start up and use less resources. However, containers cannot be moved between hosts like virtual machines can, so a more robust solution may be needed for this use case.
+</p>
+  
+  <p> Because they're so lightweight and take up less space than VMs do, containers are great for running lots of them at once! If your application needs more computing power or memory than your machine can provide on its own, using multiple containers in parallel will help balance out any resource shortages without having to invest in additional physical hardware like you would with traditional VM-based deployments.
+</p>
+  
+  <p> As they're isolated from each other, containers are great for running multiple apps at once without worrying about them stepping all over each other's toes! This makes them perfect for things like hosting websites or email services where you want lots of different people to be able to use it at the same time without slowing down or crashing because there's not enough resources available for everyone. </p>
+  
+  <p> What's more, since they're so easy to spin up and take down, they're also great for testing out new ideas quickly without having to worry about making permanent changes to your system (or losing any data along the way!). So if you want to try out a new CMS but don't want to go through the trouble of installing it on your machine first, just fire up a container with it inside and see how it goes! </p>
+  
+  <p> One downside to using containers is that they can't easily be moved between hosts like virtual machines can, so a more robust solution may be needed for this use case. Fortunately, there are some great open source projects out there that help solve this problem!
+</p>
+  
+  <h3> Conclusion </h3>
+  
+  <p> Kubernetes is a popular containerization solution that continues to see increasing adoption rates. That being said, using it successfully requires thorough consideration of your workflows and departmental best practices. </p>
+  
+  
+</ResourcesWrapper>
