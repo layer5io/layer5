@@ -5,6 +5,7 @@ import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 import Button from "../../../reusecore/Button";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
+import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -50,7 +51,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ["frontmatter", "title"],
     ["frontmatter", "title"]
   );
-  const activeIntegrationList = queryResults ? queryResults : data.allMdx.nodes;
+  const [activeIntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+  const [hideFilter, setHideFilter] = useState(false);
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
   const categoryNames = activeIntegrationList.reduce((initCategory, integration) => {
@@ -78,6 +80,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         count: activeIntegrationList.length
       },
       ...categoryNames.map((categoryName) => {
+        console.log(categoryName);
         return {
           id: categoryName,
           name: categoryName,
@@ -88,6 +91,12 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   );
 
   useEffect(() => setCategory(), []);
+  useEffect(() => {
+    if (queryResults.length > 0) {
+      setIntegrationList(queryResults);
+    }
+  },[queryResults]);
+
 
   const setCategory = () => {
     let tempCategoryList = [...categoryNameList];
@@ -109,6 +118,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     let tempCategoryList = [...categoryNameList];
     let selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
     selectedCategory = selectedCategory.split("(")[0].trim();
+    console.log(selectedCategory,"selected");
 
     if (selectedCategory == "All") {
       tempCategoryList.forEach(item => {
@@ -138,7 +148,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
-      setDataList([...data.allMdx.nodes]);
+      setIntegrationList([...data.allMdx.nodes]);
       return;
     }
     let tempIntegrationCollection = [];
@@ -151,7 +161,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         });
       }
     });
-    setDataList([...tempIntegrationCollection]);
+    setIntegrationList([...tempIntegrationCollection]);
   };
 
   return (
@@ -160,9 +170,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         <h1>{Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
-      <SearchBox searchQuery={searchQuery} searchData={searchData} />
       <section className="category">
-        {categoryNameList.map((item) => {
+        {!hideFilter && categoryNameList.map((item) => {
           return (
             <p
               key={item.id}
@@ -174,37 +183,18 @@ const IntegrationsGrid = ({ category, theme, count }) => {
           );
         })}
       </section>
-      <ResponsiveHoneycomb
-        size={90}
-        items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0, count)}
-        renderItem={(item) => {
-          const status = item.frontmatter.status === "InProgress" ? true : false;
-          const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-          const darkModeIntegrationIcon = item.frontmatter.darkModeIntegrationIcon;
-          if (status) {
-            return (
-              <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
-                <span className="integration-container">
-                  <img
-                    className="integration-icon"
-                    src={(theme === "dark" && darkModeIntegrationIcon !== null) ? darkModeIntegrationIcon.publicURL : integrationIcon}
-                    alt={item.frontmatter.title}
-                    height={70}
-                    width={70}
-                    style={{ filter: "brightness(0) invert(1)" }}
-                  />
-                  <div className="integration-content">
-                    <div className="title" style={{ marginBottom: 0, }}>{item.frontmatter.title}</div>
-                  </div>
-                </span>
-              </Hexagon>
-            );
-          } else {
-            return (
-              <Link
-                to={`/cloud-native-management/meshery${item.fields.slug}`}
-              >
-                <Hexagon className="container-active">
+      <SearchBox searchQuery={searchQuery} searchData={searchData} hideFilter={hideFilter} setHideFilter={setHideFilter} classnames={["integration-search"]} />
+      {
+        searchQuery.length > 0 && queryResults.length < 1 ? <EmptyResources errorMessage={"No matching Integrations"} errorSubtitle={"Try another search query."} /> : <ResponsiveHoneycomb
+          size={90}
+          items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0, count)}
+          renderItem={(item) => {
+            const status = item.frontmatter.status === "InProgress" ? true : false;
+            const integrationIcon = item.frontmatter.integrationIcon.publicURL;
+            const darkModeIntegrationIcon = item.frontmatter.darkModeIntegrationIcon;
+            if (status) {
+              return (
+                <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
                   <span className="integration-container">
                     <img
                       className="integration-icon"
@@ -212,24 +202,45 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                       alt={item.frontmatter.title}
                       height={70}
                       width={70}
-                      style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
+                      style={{ filter: "brightness(0) invert(1)" }}
                     />
                     <div className="integration-content">
-                      <div className="title">{item.frontmatter.title}</div>
-                      {/* <Button
+                      <div className="title" style={{ marginBottom: 0, }}>{item.frontmatter.title}</div>
+                    </div>
+                  </span>
+                </Hexagon>
+              );
+            } else {
+              return (
+                <Link
+                  to={`/cloud-native-management/meshery${item.fields.slug}`}
+                >
+                  <Hexagon className="container-active">
+                    <span className="integration-container">
+                      <img
+                        className="integration-icon"
+                        src={(theme === "dark" && darkModeIntegrationIcon !== null) ? darkModeIntegrationIcon.publicURL : integrationIcon}
+                        alt={item.frontmatter.title}
+                        height={70}
+                        width={70}
+                        style={{ filter: (theme === "dark" && darkModeIntegrationIcon == null) ? "brightness(0) invert(1)" : "none" }}
+                      />
+                      <div className="integration-content">
+                        <div className="title">{item.frontmatter.title}</div>
+                        {/* <Button
                         secondary
                         title="Learn More"
                         className="learnMoreBtn"
                       /> */}
-                    </div>
-                  </span>
-                </Hexagon>
-              </Link>
-            );
-          }
+                      </div>
+                    </span>
+                  </Hexagon>
+                </Link>
+              );
+            }
 
-        }}
-      />
+          }}
+        />}
     </HoneycombGrid>
   );
 };
