@@ -26,4 +26,21 @@ export const SearchWrapper = styled.div`
       color: ${(props) => props.theme.headingColor};
     }
   }
+  .integration-search{
+    margin-bottom: 2.5rem;
+    @media screen and (min-width: 768px) {    
+      width: 80vh;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+   input{
+    border:none;
+    outline: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   }
+   input:focus{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   }
+  }
 `;
