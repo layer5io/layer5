@@ -38,7 +38,7 @@ const useDataList = (
     setSearchResults(queryResult);
   };
 
-  return { queryResults, searchData, setDataList };
+  return { queryResults, searchData, setDataList,dataList };
 };
 
 export default useDataList;
