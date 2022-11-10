@@ -32,7 +32,7 @@ const SearchBox = ({
   };
   return (
     <SearchWrapper>
-      <div className={`search-box ${classnames.join(" ")}`}>
+      <div className={`search-box ${classnames && classnames.join(" ")}`}>
         <DebounceInput
           type="text"
           value={searchQuery}

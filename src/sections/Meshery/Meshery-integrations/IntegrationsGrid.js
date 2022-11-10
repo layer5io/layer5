@@ -80,7 +80,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         count: activeIntegrationList.length
       },
       ...categoryNames.map((categoryName) => {
-        console.log(categoryName);
         return {
           id: categoryName,
           name: categoryName,
@@ -118,7 +117,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     let tempCategoryList = [...categoryNameList];
     let selectedCategory = event.target.innerHTML.includes("&amp;") ? event.target.innerHTML.replace("&amp;", "&") : event.target.innerHTML;
     selectedCategory = selectedCategory.split("(")[0].trim();
-    console.log(selectedCategory,"selected");
 
     if (selectedCategory == "All") {
       tempCategoryList.forEach(item => {
