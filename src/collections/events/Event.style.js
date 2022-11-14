@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const EventWrapper = styled.div`
-  color: #000;
+  color: ${(props) => props.theme.text};
   .sub-heading {
     color: gray;
     position: relative;
