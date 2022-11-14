@@ -84,7 +84,7 @@ const Meshmap = () => {
                   <CommonForm
                     title="Join the Beta Program"
                     form="meshmap"
-                    account_desc="Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account."
+                    account_desc="Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled."
                     submit_title="Thank you for your interest in Layer5 MeshMap!"
                     submit_body="You are now signed up for the Layer5 MeshMap beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program. We are working through a growing waitlist"
                   />
