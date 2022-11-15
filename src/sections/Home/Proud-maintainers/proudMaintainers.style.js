@@ -1,4 +1,14 @@
 import styled from "styled-components";
+import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-white-text.svg";
+import Envoy2 from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
+import OSM1 from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/white/openservicemesh-stacked-white2.png";
+import OSM2 from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-color.svg";
+import SMI1 from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/white/servicemeshinterface-horizontal-stackedtext-white2.png";
+import SMI2 from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/color/servicemeshinterface-horizontal-stackedtext-color.svg";
+import OAM1 from "../../../assets/images/partners/oam.svg";
+
+
+
 const ProjectItemWrapper = styled.section`
 	.left-col {
 		text-align: left;
@@ -16,7 +26,7 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 	margin: 5rem 0rem;
-	
+
 	path.clss-1{
 		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
@@ -147,7 +157,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		@media screen and (max-width: 768px) {
 			height: 4.5rem;
-			
+
 		}
 		@media screen and (max-width: 480px) {
 			height: 4.5rem;
@@ -156,8 +166,22 @@ const ProjectItemWrapper = styled.section`
 
 	.proj_icon_1 {
 		padding: 1rem;
+
 	}
 
+	#envoy-dark{
+      content: url( ${props => props.theme.DarkTheme ? Envoy : Envoy2})
+
+	}
+
+	#Osm-dark{
+		content: url( ${props => props.theme.DarkTheme ? OSM1 : OSM2})
+
+	}
+	#Smi-dark{
+		content: url( ${props => props.theme.DarkTheme ? SMI1 : SMI2})
+
+	}
 	.proj_icon_2 {
 		img {
 			padding: 1.5rem 1rem;
@@ -196,7 +220,8 @@ const ProjectItemWrapper = styled.section`
         }
       }
 	}
-  
+
+
 `;
 
 export default ProjectItemWrapper;
