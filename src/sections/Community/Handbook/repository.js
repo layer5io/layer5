@@ -13,7 +13,6 @@ import servicemeshpattern from "../../../assets/images/service-mesh-patterns/ser
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   {
