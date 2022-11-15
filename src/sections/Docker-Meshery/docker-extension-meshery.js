@@ -132,7 +132,7 @@ const DockerExtensionMeshery = () => {
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
-              account_desc="Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension."
+              account_desc="Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account."
               submit_title = "Thank you for your interest in Meshery Docker Extension!"
               submit_body = "You will soon receive detailed guidance on the all of the extension's features."
             />
