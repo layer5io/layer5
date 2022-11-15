@@ -59,7 +59,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
         form: form,
       }}
       onSubmit={values => {
-        if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
+        if (values.role && values.email) {
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
@@ -70,11 +70,11 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           } else {
             setValidateRole(false);
           }
-          if (!(values.google || values.github || values.twitter || values.linkedin)) {
-            setValidateAccounts(true);
-          } else {
-            setValidateAccounts(false);
-          }
+          // if (!(values.google || values.github || values.twitter || values.linkedin)) {
+          //   setValidateAccounts(true);
+          // } else {
+          //   setValidateAccounts(false);
+          // }
           setFirstName(values.firstname);
           setEmail(values.email);
           setLastName(values.lastname);
@@ -100,23 +100,23 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
         <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="org" name="org" />
 
-        <div className="accounts">
-          <label className="form-name">Account(s) to Connect</label>
-          <p>
-            {account_desc}
-          </p>
-          {/* {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>} */}
-          {/* <div className="accounts_group">
-            <label htmlFor="google" className="form-name">Google</label>
-            <Field type="email" className="text-field" id="google" name="google" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
-            <label htmlFor="github" className="form-name">GitHub</label>
-            <Field type="text" className="text-field" id="github" name="github" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
-            <label htmlFor="twitter" className="form-name">Twitter</label>
-            <Field type="text" className="text-field" id="twitter" pattern="[a-zA-Z0-9._.-]{1,32}" name="twitter" placeholder="Username"/>
-            <label htmlFor="linkedin" className="form-name">Linkedin</label>
-            <Field type="text" className="text-field" id="linkedin" name="linkedin" placeholder="email" />
-          </div> */}
-        </div>
+        {/* <div className="accounts">
+           <label className="form-name">Account(s) to Connect</label>
+           <p>
+             {account_desc}
+           </p>
+            {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
+            <div className="accounts_group">
+             <label htmlFor="google" className="form-name">Google</label>
+             <Field type="email" className="text-field" id="google" name="google" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+             <label htmlFor="github" className="form-name">GitHub</label>
+             <Field type="text" className="text-field" id="github" name="github" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
+             <label htmlFor="twitter" className="form-name">Twitter</label>
+             <Field type="text" className="text-field" id="twitter" pattern="[a-zA-Z0-9._.-]{1,32}" name="twitter" placeholder="Username"/>
+             <label htmlFor="linkedin" className="form-name">Linkedin</label>
+             <Field type="text" className="text-field" id="linkedin" name="linkedin" placeholder="email" />
+            </div>
+         </div> */}
 
         <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
         {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
