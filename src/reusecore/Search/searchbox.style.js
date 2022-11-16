@@ -4,12 +4,13 @@ export const SearchWrapper = styled.div`
   .search-box {
     position: relative;
     display: flex;
+    
     input {
       flex-basis: 100%;
       padding: 15px;
       border-radius: 5px;
       border: 1px solid ${(props) => props.theme.headingColor};
-
+      background-color: ${(props) => props.theme.shadowLightColor};
       &:focus {
         /* border-color: ${(props) => props.theme.primaryColor}; */
         border-color: #fff;
@@ -46,10 +47,11 @@ export const SearchWrapper = styled.div`
    input{
     border:none;
     outline: none;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 9px 0px;
+    
    }
    input:focus{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 9px;
    }
   }
 `;

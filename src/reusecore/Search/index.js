@@ -39,7 +39,7 @@ const SearchBox = ({
           minLength={1}
           debounceTimeout={500}
           onChange={(e) => handleChange(e)}
-          placeholder="Search here..."
+          placeholder="Search..."
         />
         <Button>
           <FaSearch />

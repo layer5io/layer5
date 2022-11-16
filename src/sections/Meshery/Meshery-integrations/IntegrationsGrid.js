@@ -223,8 +223,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
         <EmptyResources
-          errorMessage={"No matching Integrations"}
-          errorSubtitle={"Try another search query."}
+          errorMessage={"No matching integrations"}
+          errorSubtitle={"Try searching again."}
         />
       ) : (
         <ResponsiveHoneycomb
