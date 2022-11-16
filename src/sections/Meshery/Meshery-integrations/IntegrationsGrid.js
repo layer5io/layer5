@@ -53,7 +53,9 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ["frontmatter", "title"],
     ["frontmatter", "title"]
   );
-  const [activeIntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
+  const [activeIntegrationList, setIntegrationList] = useState(
+    data.allMdx.nodes
+  );
   const [hideFilter, setHideFilter] = useState(false);
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
@@ -99,10 +101,9 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     if (queryResults) {
       setIntegrationList([...queryResults]);
     }
-    if (searchQuery.length == 0){
+    if (searchQuery.length == 0) {
       clearFilter();
     }
-
   }, [queryResults]);
 
   const clearFilter = () => {
@@ -198,21 +199,13 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         </h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
-              <Location>
-                {({ location }) => {
-                  if (location.pathname !== "/") {
-                    return (
-                      <SearchBox
-                        searchQuery={searchQuery}
-                        searchData={searchData}
-                        hideFilter={hideFilter}
-                        setHideFilter={setHideFilter}
-                        classnames={["integration-search"]}
-                      />
-                    );
-                  }
-                }}
-              </Location>
+      <SearchBox
+        searchQuery={searchQuery}
+        searchData={searchData}
+        hideFilter={hideFilter}
+        setHideFilter={setHideFilter}
+        classnames={["integration-search"]}
+      />
       <section className="category">
         {!hideFilter &&
           categoryNameList.map((item) => {
