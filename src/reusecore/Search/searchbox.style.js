@@ -11,23 +11,31 @@ export const SearchWrapper = styled.div`
       border: 1px solid ${(props) => props.theme.headingColor};
 
       &:focus {
-        border-color: ${(props) => props.theme.primaryColor};
+        /* border-color: ${(props) => props.theme.primaryColor}; */
+        border-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
       }
     }
     button {
       position: absolute;
       right: 0px;
       top: 0;
+      cursor: none;
       height: 100%;
       min-width: 20px;
       border-radius: 5px;
       background: transparent;
       font-size: 22px;
       color: ${(props) => props.theme.headingColor};
+
+      &:hover{
+        box-shadow: none;
+      }
     }
   }
   .integration-search{
     margin-bottom: 2.5rem;
+    margin-top: 2.5rem;;
     @media screen and (min-width: 768px) {    
       width: 80vh;
       margin-left: auto;

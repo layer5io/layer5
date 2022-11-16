@@ -46,7 +46,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   `);
 
   const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData, setDataList } = useDataList(
+  const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
     setSearchQuery,
     searchQuery,
@@ -149,6 +149,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         }
       });
     }
+
     tempCategoryList.forEach((item) => {
       if (item.name == selectedCategory) {
         item.isSelected = !item.isSelected;
@@ -197,6 +198,21 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         </h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
+              <Location>
+                {({ location }) => {
+                  if (location.pathname !== "/") {
+                    return (
+                      <SearchBox
+                        searchQuery={searchQuery}
+                        searchData={searchData}
+                        hideFilter={hideFilter}
+                        setHideFilter={setHideFilter}
+                        classnames={["integration-search"]}
+                      />
+                    );
+                  }
+                }}
+              </Location>
       <section className="category">
         {!hideFilter &&
           categoryNameList.map((item) => {
@@ -211,21 +227,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
             );
           })}
       </section>
-      <Location>
-        {({ location }) => {
-          if (location.pathname !== "/") {
-            return (
-              <SearchBox
-                searchQuery={searchQuery}
-                searchData={searchData}
-                // hideFilter={hideFilter}
-                // setHideFilter={setHideFilter}
-                classnames={["integration-search"]}
-              />
-            );
-          }
-        }}
-      </Location>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
         <EmptyResources
