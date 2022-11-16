@@ -9,6 +9,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import { Link } from "gatsby";
@@ -102,7 +103,7 @@ const Repository = () => {
               <li>
                 <a href="https://github.com/service-mesh-patterns">
                   <img
-                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                    src={servicemeshpattern}
                     alt="service mesh patterns icon"
                   />
                   &nbsp; Service Mesh Patterns
