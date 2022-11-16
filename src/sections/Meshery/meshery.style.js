@@ -95,8 +95,28 @@ const MesheryWrapper = styled.section`
                     text-align: center;
                     padding: 1rem 1rem 1rem 1rem;
                 }
+
+                .desc-text {
+                    .banner-btn {
+                        margin: 0.5rem 0;
+                    }
+                }
             }
             
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .info {
+            .description {
+                flex-direction: column-reverse;
+
+                .desc-text {
+                    .banner-btn {
+                        margin: 0 0.75rem 0 0;
+                    }
+                }
+            }
         }
     }
 
@@ -104,7 +124,6 @@ const MesheryWrapper = styled.section`
         .info{
             .description {
                 padding: 0;
-                flex-direction: column-reverse;
                 .meshery-hero-img {
                     text-align: center;
                     padding: 0;
