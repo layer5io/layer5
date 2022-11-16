@@ -35,11 +35,12 @@ export const SearchWrapper = styled.div`
   }
   .integration-search{
     margin-bottom: 2.5rem;
-    margin-top: 2.5rem;;
-    @media screen and (min-width: 768px) {    
-      width: 80vh;
-      margin-left: auto;
+    margin-top: 2.5rem;
+    width: 80vw;
+    margin-left: auto;
       margin-right: auto;
+    @media screen and (min-width: 768px) {    
+      width: 50vw;
     }
 
    input{
