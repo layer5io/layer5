@@ -47,12 +47,12 @@ export const HoneycombGrid = styled.div`
         
         transition: all 1s linear;
         opacity: 1;
-        height:100%;
+        overflow: hidden;
         .title {
           line-height: 1.375rem;
           color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
           transition: all .5s cubic-bezier(1, 0.82, 0.165, 1);
-          margin-bottom: -2.7rem;
+          // margin-bottom: -2.7rem;
           font-size: 0.675rem;
           opacity: .2;
           font-weight: 600;
@@ -71,7 +71,7 @@ export const HoneycombGrid = styled.div`
       .integration-container {
         img {
           transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-          height: 20%;
+          height: 0%;
           opacity: 0%;
         }
         .integration-content {
@@ -79,7 +79,7 @@ export const HoneycombGrid = styled.div`
           opacity: 1;
           height:100%;
           .title {
-            margin-top: -50%;
+            // margin-top: -50%;
             font-size: 1.2rem;
             opacity: 1;
           }

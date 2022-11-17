@@ -7,23 +7,39 @@ import { DebounceInput } from "react-debounce-input";
 const SearchBox = ({
   searchQuery,
   searchData,
+  hideFilter,
+  setHideFilter,
   paginate,
-  currentPage
+  currentPage,
+  classnames
 }) => {
   const handleChange = (e) => {
-    if (e.target.value.length > 0 && currentPage != 1) paginate(1);
+    if (hideFilter != undefined && setHideFilter != undefined) {
+      if (e.target.value.length > 0) {
+        setHideFilter(true);
+      } else {
+        setHideFilter(false);
+      }
+    }
+    if (
+      e.target.value.length > 0 &&
+      paginate != undefined &&
+      currentPage != undefined &&
+      currentPage != 1
+    )
+      paginate(1);
     searchData(e);
   };
   return (
     <SearchWrapper>
-      <div className="search-box">
+      <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
         <DebounceInput
           type="text"
           value={searchQuery}
           minLength={1}
           debounceTimeout={500}
-          onChange={handleChange}
-          placeholder="Search here..."
+          onChange={(e) => handleChange(e)}
+          placeholder="Search..."
         />
         <Button>
           <FaSearch />
