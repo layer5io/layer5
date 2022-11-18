@@ -34,16 +34,30 @@ const CTA_FullWidthWrapper = styled.div`
         align-items: center;
         height: 100%;
 
+        div {
+          flex: 0 0 75%;
+        }
+
         p {
-            flex: 0 0 75%;
+            margin-top: 0.5rem;
         }
         a {
             flex: 0 0 25%;
         }
     }
 
+    @media screen and (max-width: 1200px) {
+      .cta-content {
+        div {
+            flex: 0 0 65%;
+        }
+        a {
+            flex: 0 0 35%;
+        }
+      }
+    }
+
     @media screen and (max-width: 992px) and (min-width: 699px) {
-      height: auto;
         button {
             min-width: 6.5rem;
         }
@@ -60,7 +74,7 @@ const CTA_FullWidthWrapper = styled.div`
             width: 18rem;
             height: 18rem;
             position: absolute;
-            opacity: 0.5;
+            opacity: 0.35;
             border-radius: 0.25rem;
         }
 
@@ -83,9 +97,9 @@ const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading }) => {
+export const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
-    <CTA_FullWidthWrapper>
+    <CTA_FullWidthWrapper {...props}>
       { category ? (
         <>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
