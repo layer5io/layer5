@@ -32,7 +32,7 @@ const ResourceGrid = (props) => {
           </div>
         </div>
         <Row>
-          {props.data.length < 1 && <EmptyResources />}
+          {props.data.length < 1 && <EmptyResources errorMessage={"No matching resources"} errorSubtitle={"Try removing one or more filters to broaden your results."} />}
 
           {searchedResource.map(({ id, frontmatter, fields }) => (
             <Col key={id} xs={12} sm={6} xl={4}>

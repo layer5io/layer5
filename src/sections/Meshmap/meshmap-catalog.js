@@ -204,7 +204,7 @@ h3.containerCaption {
     transform: rotateY(336deg) translateZ(260px);
     }
   }
-  @media screen and (max-width: 572px) {
+  @media screen and (max-width: 680px) {
     
     .svg-cont{
       margin: 0 auto;
