@@ -128,7 +128,7 @@ export const HoneycombGrid = styled.div`
   .category {
     display: flex;
     flex-wrap: wrap;
-    margin: 2.5625rem 0;
+    margin: 2.5625rem 1.2rem;
     gap: 0.625rem;
     justify-content: center;
   }

@@ -4,7 +4,7 @@ import serviceMesh from "../../../assets/images/service-mesh-icons/service-mesh.
 
 import { ResourcePageWrapper } from "../Resources-grid/resourceGrid.style";
 
-const NoResources = () => {
+const NoResources = ({ errorMessage,errorSubtitle }) => {
   return (
     <ResourcePageWrapper>
       <div className="no-resources-page">
@@ -15,8 +15,8 @@ const NoResources = () => {
             </Col>
             <Col sm={12} lg={8}>
               <div className="error-text">
-                <h1 className="errorMessage"> No matching resources </h1>
-                <h3 className="errorSubtitle">Try removing one or more filters to broaden your results.</h3>
+                <h1 className="errorMessage"> {errorMessage} </h1>
+                <h3 className="errorSubtitle">{errorSubtitle}</h3>
               </div>
             </Col>
           </Row>
