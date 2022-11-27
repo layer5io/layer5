@@ -5,14 +5,14 @@ import ProjectItemWrapper from "./proudMaintainers.style";
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import CNCF from "../../../assets/images/partners/cncf/horizontal/color/cncf-color.svg"
-import CNCF_dark from "../../../assets/images/partners/cncf/horizontal/white/cncf-white2.svg"
+import CNCF from "../../../assets/images/partners/cncf/horizontal/color/cncf-color.svg";
+import CNCF_dark from "../../../assets/images/partners/cncf/horizontal/white/cncf-white2.svg";
 import OAM_dark from "../../../assets/images/partners/oamWhite.svg";
 import OAM from "../../../assets/images/partners/oam.svg";
-import Linkerd_dark from "../../../assets/images/service-mesh-icons/linkerd/horizontal/white/linkerd-horizontal-white2.svg"
-import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg"
-import Meshery_dark from "../../../assets/images/meshery/meshery-logo-white-side.svg"
-import Meshery from "../../../assets/images/meshery/meshery-logo-dark-text.svg"
+import Linkerd_dark from "../../../assets/images/service-mesh-icons/linkerd/horizontal/white/linkerd-horizontal-white2.svg";
+import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg";
+import Meshery_dark from "../../../assets/images/meshery/meshery-logo-white-side.svg";
+import Meshery from "../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.svg";
 import Envoy_dark from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-white-text.svg";
 import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
 import OSM_dark from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/white/openservicemesh-stacked-white2.svg";
@@ -65,8 +65,8 @@ const ProudMaintainers = ({ theme }) => {
         </Col> */}
         <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
-          <img src={theme === "dark" ? Meshery_dark : Meshery} alt="Meshery" />
-            </div>
+            <img src={theme === "dark" ? Meshery_dark : Meshery} alt="Meshery" />
+          </div>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
