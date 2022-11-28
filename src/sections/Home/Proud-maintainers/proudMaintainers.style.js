@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 const ProjectItemWrapper = styled.section`
 	.left-col {
 		text-align: left;
@@ -16,56 +17,7 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 	margin: 5rem 0rem;
-	
-	path.clss-1{
-		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
-	}
-	path.clss-2{
-		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
-	}
-	path.clss-3{
-		fill:#647881
-	}
-	path.clss-4{
-		fill:#00b39f
-	}
-	path.clss-5{
-		fill:#00d3a9
-	}
-	path.clss-6{
-		fill:#477e96
-	}
-	path.cls-1{
-		fill:#00d3a9
-	}
-	path.cls-2{
-		fill:#00b39f
-	}
-	path.cls-3{
-		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
-	}
-	path.st2 {
-		fill: #2beda7;
-	}
-	polygon.cls-1{
-		fill:#00d3a9
-	}
-	polygon.cls-2{
-		fill:#00b39f
-	}
-	polygon.cls-3{
-		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 
-	}
-	path.st2 {
-		fill: #2beda7;
-	}
-	path.LinkerdText {
-		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
-	}
-	path.CNCFText {
-		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
-	}
 	.project-title {
 		text-align: center;
 		align-self: flex-start;
@@ -147,7 +99,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		@media screen and (max-width: 768px) {
 			height: 4.5rem;
-			
+
 		}
 		@media screen and (max-width: 480px) {
 			height: 4.5rem;
@@ -156,8 +108,8 @@ const ProjectItemWrapper = styled.section`
 
 	.proj_icon_1 {
 		padding: 1rem;
-	}
 
+	}
 	.proj_icon_2 {
 		img {
 			padding: 1.5rem 1rem;
@@ -196,7 +148,8 @@ const ProjectItemWrapper = styled.section`
         }
       }
 	}
-  
+
+
 `;
 
 export default ProjectItemWrapper;
