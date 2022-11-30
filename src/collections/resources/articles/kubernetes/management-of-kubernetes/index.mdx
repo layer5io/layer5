@@ -13,6 +13,10 @@ tags:
 resource: true
 ---
 import { ResourcesWrapper } from "../../../Resources.style.js";
+import picture1 from "./management-with-meshery.png"; 
+import picture2 from "./management-with-meshery-2.png"; 
+import picture3 from "./management-with-meshery-3.png"; 
+import ClusterImg from "./multi-cluster-kubernetes-management-with-meshery.png";
 
 <ResourcesWrapper>
   
@@ -59,6 +63,17 @@ import { ResourcesWrapper } from "../../../Resources.style.js";
   running containers with new versions, etc. If your IT team was spending 10 hours per week on manual operations before adopting Kubernetes, they'll spend only 2 
   hours after switching over! </p>
   
+  </p>
+<CTA_FullWidth 
+  image={ClusterImg}
+  alt="Multi-Cluster Kubernetes Management with Meshery"
+  content="Multi-Cluster Kubernetes Management with Meshery"
+  button_text="Read blog post"
+  url="/blog/meshery/multi-cluster-kubernetes-management-with-meshery"
+  external_link={false}
+  className="get-start-kubernetes-resource"
+/>
+  
   <h3> The challenges of Kubernetes management </h3>
   
   <p> Kubernetes management can seem like a difficult endeavour. Between determining how to automate deployment and scaling and comprehending the fundamentals of 
@@ -81,6 +96,8 @@ import { ResourcesWrapper } from "../../../Resources.style.js";
   
   <p> Meshery is the only cloud-native manager in the world that supports more adapters than any other project or product. </p>
   
+  <img src = {picture1} class="image-center" alt="Management of Kubernetes with Meshery" />
+  
   <p> Meshery has been designed for the world of many service meshes and many Kubernetes clusters. As such, great attention was made to guarantee that it is an 
   extensible management platform, able to handle a diverse range of infrastructure and new use cases quickly through its plugin mechanism. Meshery Server acts as an 
   operation delegator, determining which Meshery Adapter has registered its capacity for the given operation. The operation is then sent to the appropriate component 
@@ -93,9 +110,13 @@ import { ResourcesWrapper } from "../../../Resources.style.js";
   
   <p> From the settings page, users can do things related to clusters, like add more clusters, remove data from existing clusters, or delete existing clusters. </p>
   
+  <img src = {picture2} class="image-center" alt="Management of Kubernetes with Meshery" />
+  
   <p> Meshery also deploys Meshery operators throughout the cluster it is about to manage. This operator is in charge of the Meshery broker and the MeshSync 
   lifecycle. MeshSync is responsible for monitoring various types of resources by establishing a watch stream over each of them. MeshSync then sends the data to the 
   NATS server, of which the Meshery server is a client. Meshery server then receives all necessary data relating to cluster activity. </p>
+  
+  <img src = {picture3} class="image-center" alt="Management of Kubernetes with Meshery" />
   
   <p> Meshery, by default, wants to be as aware of your infrastructure as possible in order to deliver value. As such, it deploys its operator across each identified 
   cluster. However, you can fine-tune this configuration by going over each one. </p>
