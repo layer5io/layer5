@@ -10,20 +10,21 @@ const PartnerItemWrapper = styled.section`
             margin-top: .5rem;
         }
     }
-    .row{
+    .partner-slider{
+        display: flex;
+        justify-content: center;
         flex-wrap: nowrap;
         @media(max-width: 1400px){
             flex-wrap: wrap;
         }
-
-        .col{
-              flex: 0 0 12%;
-              margin-left:0.5rem;
-              margin-right:0.5rem;
-        }
     }
-   
     a.partner-card {
+        @media(max-width: 1400px){
+            flex: 0 0 12%;
+            margin-left:0.5rem;
+            margin-right:0.5rem;
+        }
+
         &:hover {
              img  {
                 opacity: 1;
