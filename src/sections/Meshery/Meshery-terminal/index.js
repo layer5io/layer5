@@ -55,10 +55,10 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                          Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
+                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
                   </p>
                   <p>
-                          With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
+                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
                   </p>
                   <p>
                     <code>mesheryctl</code> provides support for all of Meshery's features and many platforms.
@@ -84,7 +84,7 @@ const MesheryTerminal = () => {
                 },
                 {
                   url: EKS,
-                  alt: "AWS Elastic Kuberentes Service",
+                  alt: "AWS Elastic Kubernetes Service",
                 },
                 {
                   url: Helm,
@@ -120,7 +120,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 4,
                     code:
-                            "Archive:  /Users/layer5/meshery.zip",
+                      "Archive:  /Users/layer5/meshery.zip",
                     color: "gray",
                   },
                   {
@@ -230,13 +230,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                          Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
+                    Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
                   </p>
                   <p>
-                          Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
+                    Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
                   </p>
                   <p>
-                          With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                    With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
@@ -267,7 +267,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 5,
                     code:
-                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,
@@ -327,14 +327,14 @@ const MesheryTerminal = () => {
                   {
                     frames: 2,
                     code:
-                            "\nYour cloud native application pattern deployment was successful!",
+                      "\nYour cloud native application pattern deployment was successful!",
                     color: "gray",
                   },
                   { code: "" },
                   {
                     frames: 1,
                     code:
-                            "\nDeployment URL: https://meshery.local/patterns",
+                      "\nDeployment URL: https://meshery.local/patterns",
                     color: "green",
                   },
                 ],
@@ -345,13 +345,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                          Meshery provides service mesh and application performance measurement and management.
+                    Meshery provides service mesh and application performance measurement and management.
                   </p>
                   <p>
-                          Meshery natively supports the <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) specification.
+                    Meshery natively supports the <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) specification.
                   </p>
                   <p>
-                          Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
+                    Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
                   </p>
                 </>
               ),
@@ -378,7 +378,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 2,
                     code:
-                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,
