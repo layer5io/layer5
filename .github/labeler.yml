@@ -1,0 +1,39 @@
+area/docs:
+  - "readme.md"
+  - "contributing.md"
+area/ci:
+  - ".github/**/*"
+  - ".husky/**/*"
+area/blog:
+  - "src/collections/blog/**/*"
+  - "src/pages/blog/**/*"
+area/careers:
+  - "src/collections/careers/**/*"
+  - "src/collections/programs/**/*"
+area/community:
+  - "src/collections/members/**/*"
+  - "src/pages/community/**/*"
+area/events:
+  - "src/collections/events/**/*"
+area/handbook:
+  - "src/components/HandbookCard/**/*"
+  - "src/components/Handbook-navigation/**/*"
+area/landscape:
+  - "src/sections/Landscape/**/*"
+  - "src/components/Landscape-Table/**/*"
+  - "src/collections/landscape/**/*"
+area/learn:
+  - "content-learn"
+  - "src/components/Learn-Components/**/*"
+  - "src/collections/service-mesh-books/**/*"
+  - "src/collections/service-mesh-learn/**/*"
+  - "src/collections/service-mesh-workshops/**/*"
+area/news:
+  - "src/collections/news/**/*"
+area/partners:
+  - "src/collections/partners/**/*"
+area/resources:
+  - "src/collections/resources/**/*"
+area/projects:
+  - "src/collections/projects/**/*"
+  - "src/pages/projects/**/*"
