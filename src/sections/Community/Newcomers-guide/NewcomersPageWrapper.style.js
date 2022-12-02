@@ -90,6 +90,7 @@ export const NewcomersGuideWrapper = styled.section`
         margin: 0 auto;
         width: 21.875rem;
         text-align: center; 
+        margin-top:1rem;
       }
     }
     .community-collage {

@@ -47,7 +47,7 @@ const ProjectGridPage = ({ data }) => {
           description="Layer5, empowerer of engineers. Layer5 is the maker of Meshery, Service Mesh Performance, Service Mesh Interface, and Nighthawk. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration."
           image="/images/layer5-projects.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <ProjectPage data={data} />
+        <ProjectPage data={data} theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>

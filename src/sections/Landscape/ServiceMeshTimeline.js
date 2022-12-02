@@ -15,7 +15,7 @@ non_functional.reverse().map(mesh => (
     : ""
 ));
 
-for (let i = 0; i < meshes.length; i++){
+for (let i = 0; i < meshes.length; i++) {
   if (i < 5)
     initialMeshes.push(meshes[i]);
   else
@@ -43,9 +43,9 @@ const ServiceMeshTimeline = ({ theme }) => {
       >
         {mesh.icon ?
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon } alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
+            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
           </div>
-          :   <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
+          : <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />
           </div>
         }
@@ -59,15 +59,15 @@ const ServiceMeshTimeline = ({ theme }) => {
     <VerticalTimeline
       className="timeline"
     >
-      { loadedAll && getElements()}
-      { !(loadedAll) && getElements()}
+      {loadedAll && getElements()}
+      {!(loadedAll) && getElements()}
       <VerticalTimelineElement
         className={loadedAll ? "hideIcon" : ""}
         iconOnClick={loadMore}
         iconClassName="moreIcon"
         iconStyle={{ width: "60px", height: "60px" }}
         icon={!(loadedAll) ?
-          <MdExpandMore className="showMoreIcon"/>
+          <MdExpandMore className="showMoreIcon" />
           : <></>
         }
       />
