@@ -17,7 +17,10 @@ export const BookWrapper = styled.div`
         }
 
     }
-
+    div.center {
+        text-align:center;
+        margin: 1rem 0rem;
+    }
     .card{
         position: relative;
         margin: 0.5rem 0 1rem 0;
