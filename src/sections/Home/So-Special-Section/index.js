@@ -100,12 +100,12 @@ const SoSpecial = ({ theme }) => {
     <SoSpecialWrapper>
       <div className="so-special-head">
         <h4>LAYER5 IN THE NEWS</h4>
-        <h1>We're making a mesh of things</h1>
+        <h1>We're making a splash</h1>
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
           {
-            data.allMdx.nodes.map(({ id,frontmatter,fields }) => (
+            data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
@@ -127,7 +127,7 @@ const SoSpecial = ({ theme }) => {
       <div className="so-special-foot">
         <h5>Layer5 provides cloud native management for monoliths and</h5>
         <h5>microservices alike.</h5>
-        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects"/>
+        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects" />
       </div>
     </SoSpecialWrapper>
   );
