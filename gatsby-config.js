@@ -517,7 +517,6 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
-    "gatsby-plugin-use-dark-mode",
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
 
