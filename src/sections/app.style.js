@@ -267,6 +267,15 @@ section{
   }
 }
 
+.slick-prev::before, .slick-next::before{
+  color:black !important;
+}
+
+.slick-slide {
+  width: auto !important;
+}
+
+/* Modal CSS Ends */
 `;
 
 export { GlobalStyle };
