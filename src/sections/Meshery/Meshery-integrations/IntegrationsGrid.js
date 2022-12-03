@@ -8,6 +8,8 @@ import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 // import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import Slider from 'react-slick';
+// import { Location } from "@reach/router";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
