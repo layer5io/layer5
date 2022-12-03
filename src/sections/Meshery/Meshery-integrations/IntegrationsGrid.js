@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
+import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
+// import Button from "../../../reusecore/Button";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
-import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
+// import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -203,7 +208,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
       />
-      <section className="category">
+      <Slider slidesToShow={3} slidesToScroll={3} autoplay={true} dots={true} autoplaySpeed={3000} infinite={true} className="category">
         {!hideFilter &&
           categoryNameList.map((item) => {
             return (
@@ -216,7 +221,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               </p>
             );
           })}
-      </section>
+      </Slider>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
         <EmptyResources
