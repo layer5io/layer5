@@ -7,7 +7,7 @@ import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 // import { Location } from "@reach/router";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
