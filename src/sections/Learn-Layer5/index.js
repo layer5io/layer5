@@ -8,6 +8,7 @@ import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
 import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
 import JoinCommunity from "../Community/Join-community";
+import Button from "../../reusecore/Button";
 
 
 const LearnPathsPage = () => {
@@ -115,13 +116,20 @@ const LearnPathsPage = () => {
           chapters={data.chaptersCount.edges}
           meshes={data.meshesCount.edges}
         />
+        <div className="service-mesh-patterns">
+          <div className="service-mesh-patterns_text-and_button">
+            <h1>Use Service Mesh Patterns</h1>
+            <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
+            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external="true" />
+          </div>
+        </div>
         <JoinCommunity
           image={Book_Giveaway}
           header={"Don't Learn Alone"}
           text={"Check Out the Layer5 community, join us on Slack and learn with the community"}
-          btn_primary={true}/>
+          btn_primary={true} />
       </Container>
-    </LearnLayer5GridWrapper>
+    </LearnLayer5GridWrapper >
   );
 };
 

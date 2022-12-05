@@ -16,35 +16,34 @@ export const LearnLayer5GridWrapper = styled.div`
         justify-content: center;
         padding: 6rem 0;
     }
-    // .join-community{
-    //     max-width: 70rem;
-    //     display: flex;
-    //     margin: auto;
-    //     padding: 3rem 4rem;
-    //     align-items: center;
+    .service-mesh-patterns{
+         display: flex;
+         margin: auto;
+         padding: 3rem;
+         align-items: center;
         
-    //     button{
-    //         margin-top: 1.5rem;
-    //     }
-    // }
-    // .join-community_text-and_button{
-    //     h1{
-    //         margin-bottom: 1rem;
-    //     }
-    //     p{
-    //         margin: auto;
-    //         max-width: 42rem;
-    //     }
-    // }
-    // @media(max-width: 768px)
-    // {
-    //     .join-community{
-    //         flex-direction: column;
-    //         justify-content: center;
-    //         padding: 3rem 1rem;
-    //         text-align: center;
-    //     }
-    // }
+         button{
+             margin-top: 1.25rem;
+         }
+     }
+     .service-mesh-patterns_text-and_button{
+         h1{
+             margin-bottom: 1rem;
+         }
+         p{
+             margin: auto;
+             max-width: 42rem;
+         }
+     }
+     @media(max-width: 768px)
+     {
+         .service-mesh-patterns{
+             flex-direction: column;
+             justify-content: center;
+             padding: 3rem 1rem;
+             text-align: center;
+         }
+     }
     @media(max-width:500px){
         .learning-path-cards{
             padding: 6rem 2rem;
