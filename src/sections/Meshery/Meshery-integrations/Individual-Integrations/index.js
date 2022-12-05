@@ -11,7 +11,6 @@ import RelatedIntegration from "../IntegrationsGrid";
 const IndividualIntegrations = ({ theme, data }) => {
   const { frontmatter, body } = data.mdx;
 
-  console.log(frontmatter.category);
   return (
     <IntegrationPageWrapper>
       <section className="herosection">

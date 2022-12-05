@@ -22,6 +22,45 @@ export const BlogWrapper = styled.div`
       font-style: normal;
     }
   }
+  div.tip {
+    position: relative;
+    float: right;
+    max-width: 50%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    font-style: italic;
+    font-size: 0.8rem;
+    border-top: 1px solid ${(props) => props.theme.secondaryColor};
+    border-bottom: 1px solid ${(props) => props.theme.secondaryColor};
+    border-left: 1px dashed ${(props) => props.theme.secondaryColor};
+    border-right: 1px dashed ${(props) => props.theme.secondaryColor};
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: ${(props) => props.theme.secondaryLightColorTwo};
+    span {
+      font-style: normal;
+    }
+    h3 {
+      margin-bottom: .5rem;
+    }
+    table, td {
+      text-align: center;
+      border-top: 1px dotted #3c494f;
+      th { 
+        background-color: #3c494f;
+        color: #eee;
+        padding: 0rem .5rem;
+      }
+    }
+    @media (max-width: 990px){
+        max-width: 100%;
+      } 
+    @media (max-width: 699px) {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+  }
   .to-uppercase {
     text-transform: uppercase;
   }
