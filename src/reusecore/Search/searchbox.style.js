@@ -7,6 +7,7 @@ export const SearchWrapper = styled.div`
     
     input {
       flex-basis: 100%;
+      font-size: inherit;
       padding: 15px;
       border-radius: 5px;
       border: 1px solid ${(props) => props.theme.headingColor};
@@ -26,7 +27,7 @@ export const SearchWrapper = styled.div`
       min-width: 20px;
       border-radius: 5px;
       background: transparent;
-      font-size: 22px;
+      font-size: 1.5rem;
       color: ${(props) => props.theme.headingColor};
 
       &:hover{
@@ -39,7 +40,7 @@ export const SearchWrapper = styled.div`
     margin-top: 2.5rem;
     width: 80vw;
     margin-left: auto;
-      margin-right: auto;
+    margin-right: auto;
     @media screen and (min-width: 768px) {    
       width: 50vw;
     }

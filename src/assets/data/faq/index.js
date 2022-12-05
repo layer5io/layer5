@@ -39,7 +39,7 @@ const data = {
     {
       question: "I am not a coder. Can I contribute, too?",
       category: "Layer5",
-      answer: ["Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
+      answer: ["Yes! Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
       ],
       link: "https://slack.layer5.io",
       linktext: "Layer5 Slack",
@@ -150,10 +150,10 @@ const data = {
       linktext: "Factors When considering how strongly you need a service mesh",
     },
     {
-      question: "Does Meshery manage service meshes?",
+      question: "Is Meshery a service mesh?",
       category: "Meshery",
       answer: [
-        "Yes, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes.",
+        "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
       ],
       link: "/cloud-native-management/meshery",
       linktext: "Run Meshery",
@@ -344,12 +344,13 @@ const data = {
       ],
     },
     {
-      question: "Does Meshery manage service meshes?",
+      question: "How does Meshery infused GitOps practices into cloud native managemement?",
       category: "Meshery Integrations",
       link: "https://layer5.io/cloud-native-management/meshery",
       linktext: "Run Meshery",
       answer: [
-        "Yes, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes.",
+        "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
+        "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
       ],
     },
   ],
