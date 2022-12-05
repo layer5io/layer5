@@ -104,11 +104,23 @@ Kubernetes has supported OpenAPI v3 as a beta since version 1.24, providing user
 
 As part of the Kubernetes API lifecycle, there are some deprecations and removals in the upcoming release. It is strongly suggested to check whether you are using the following APIs and flags before there are breaking changes.
 
-Removal of the flowcontrol.apiserver.k8s.io/v1beta1 API group for FlowSchema and PriorityLevelConfiguration requires a migration to the v1beta2 API version.
-Removal of the autoscaling/v2beta2 API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version.
-Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
-Removal of in-tree CSI integration for OpenStack—namely, the cinder volume type—requires a migration to use the CSI driver for OpenStack. 
-Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
+<ul>
+<li>
+  Removal of the `flowcontrol.apiserver.k8s.io/v1beta1` API group for FlowSchema and PriorityLevelConfiguration requires a migration to the v1beta2 API version.
+</li>
+<li>
+  Removal of the autoscaling/v2beta2 API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version. 
+</li>
+<li>
+  Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
+</li>
+<li>
+  Removal of in-tree CSI integration for OpenStack—namely, the cinder volume type—requires a migration to use the CSI driver for OpenStack. 
+</li>
+<li>
+  Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
+</li>
+</ul>
 
 ## Summary
 
@@ -116,14 +128,4 @@ Thanks to these enhancements and API changes, Kubernetes is more secure, scalabl
 
 On behalf of the Meshery contributors, thank you to everyone who participated in this Kubernetes release, and congratulations!
 
-
-
-
-
-
-
-
-
-
-<Button class="image-right-no-shadow"secondary title="See All Projects" url="/projects" external="false" />Be sure to join Layer5 at KubeCon NA 2022 and find us at other <Link to="/community/events/">events</Link>, too. Learn more about each of our <Link to="/projects">open source projects</Link> and try one (or all of them) today! 
 </BlogWrapper>
