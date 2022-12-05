@@ -1,0 +1,37 @@
+---
+title: Structured logging in Kubernetes 1.26 with Klog
+subtitle: Structured logging in Kubernetes 1.26 with Klog
+date: 2022-12-06 08:00:00 -0530
+author: Lee Calcote
+thumbnail: ../kubernetes-logo.svg
+darkthumbnail: ./kubernetes-logo.svg
+description: "Structured logging in Kubernetes 1.26 with Klog"
+type: Blog
+category: Kubernetes
+tags:
+  - Kubernetes
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+
+
+<BlogWrapper>
+Kubernetes is an open-source container-orchestration system used to manage and deploy applications in clusters. It provides a platform for developers and system administrators to easily deploy and manage applications in a distributed environment. One of the key components of Kubernetes is its logging and instrumentation capabilities.
+
+[Klog](https://github.com/kubernetes/klog) is a Kubernetes logging library that provides an API for developers and system administrators to instrument their applications for logging and tracing. It provides a comprehensive set of features, including log levels, structured logging and logging context.
+
+Klog Deprecations in Kubernetes 1.26
+Kubernetes has recently announced that it intends to deprecate certain flags related to Klog in its components. This means that Klog-specific flags, such as `--klog-verbosity`, `--klog-vmodule` and `--klog-stderrthreshold` will no longer be supported. This is due to the fact that Klog has been largely superseded by the more comprehensive OpenTelemetry project, which provides a more complete solution for logging and instrumentation.
+
+The deprecation of Klog-specific flags is a positive step forward for Kubernetes as it moves to OpenTelemetry. This move will ensure that Kubernetes is using the industry-standard logging and instrumentation solution. It will also provide developers and system administrators with a more comprehensive, reliable and consistent experience when instrumenting their applications.
+
+The deprecation of Klog-specific flags is part of a larger effort to transition Kubernetes to a more modern and comprehensive logging and instrumentation solution. This will provide Kubernetes users with a more reliable, secure and consistent experience when instrumenting and monitoring their applications.
+
+Kubernetes will continue to provide support for Klog-specific flags for the foreseeable future. However, it is recommended that developers and system administrators begin transitioning their applications to the OpenTelemetry framework. This will ensure that their applications are using the industry-standard solution for logging and instrumentation.
+
+Overall, the deprecation of Klog-specific flags is a positive step forward for Kubernetes. It will ensure that Kubernetes users have access to the most reliable and comprehensive solution for logging and instrumentation. It will also help ensure that Kubernetes is using the industry-standard solution and will provide developers and system administrators with a more reliable and consistent experience when instrumenting their applications.
+</BlogWrapper>
