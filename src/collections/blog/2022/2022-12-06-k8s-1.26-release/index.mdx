@@ -106,25 +106,25 @@ As part of the Kubernetes API lifecycle, there are some deprecations and removal
 
 <ul>
 <li>
-  Removal of the `flowcontrol.apiserver.k8s.io/v1beta1` API group for FlowSchema and PriorityLevelConfiguration requires a migration to the v1beta2 API version.
+  Removal of the `flowcontrol.apiserver.k8s.io/v1beta1` API group for `FlowSchema` and `PriorityLevelConfiguration` requires a migration to the v1beta2 API version.
 </li>
 <li>
-  Removal of the autoscaling/v2beta2 API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version. 
+  Removal of the `autoscaling/v2beta2` API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version. 
 </li>
 <li>
   Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
 </li>
 <li>
-  Removal of in-tree CSI integration for OpenStack—namely, the cinder volume type—requires a migration to use the CSI driver for OpenStack. 
+  Removal of in-tree CSI integration for OpenStack—namely, the `cinder` volume type—requires a migration to use the CSI driver for OpenStack. 
 </li>
 <li>
   Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
 </li>
 </ul>
 
-## Summary
+## Last Kubernetes release of 2022
 
-Thanks to these enhancements and API changes, Kubernetes is more secure, scalable, and flexible with the 1.26 release. You can check the Kubernetes release notes to learn more about deprecation, removals, and the latest changes.
+Thanks to these enhancements and API changes, Kubernetes is more secure, scalable, and flexible with the 1.26 release. You can check the Kubernetes [release notes](https://relnotes.k8s.io/) to learn more about deprecation, removals, and the latest changes.
 
 On behalf of the Meshery contributors, thank you to everyone who participated in this Kubernetes release, and congratulations!
 
