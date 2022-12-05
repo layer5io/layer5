@@ -22,12 +22,49 @@ import Button from "../../../../reusecore/Button";
 <BlogWrapper>
 Kubernetes is an open-source container-orchestration system used to manage and deploy applications in clusters. It provides a platform for developers and system administrators to easily deploy and manage applications in a distributed environment. One of the key components of Kubernetes is its logging and instrumentation capabilities.
 
-[Klog](https://github.com/kubernetes/klog) is a Kubernetes logging library that provides an API for developers and system administrators to instrument their applications for logging and tracing. It provides a comprehensive set of features, including log levels, structured logging and logging context.
+## Kubernetes System Log
 
-Klog Deprecations in Kubernetes 1.26
+System component logs record events happening in K8s clusters. More than metrics or traces, logs are the telemetric signal often found to be most useful for debugging. You can configure K8s log verbosity to see more or less detail. Logs can be as coarse-grained as showing errors within a component, or as fine-grained as showing step-by-step traces of events (like HTTP access logs, pod state changes, controller actions, or scheduler decisions).
+
+## Klog
+
+[klog](https://github.com/kubernetes/klog) is a Kubernetes logging library that provides an API for developers and system administrators to instrument their applications for logging and tracing. klog generates log messages for the Kubernetes system components. It provides a comprehensive set of features, including log levels, structured logging and logging context.
+
+## Klog Deprecations in Kubernetes 1.26
+
 Kubernetes has recently announced that it intends to deprecate certain flags related to Klog in its components. This means that Klog-specific flags, such as `--klog-verbosity`, `--klog-vmodule` and `--klog-stderrthreshold` will no longer be supported. This is due to the fact that Klog has been largely superseded by the more comprehensive OpenTelemetry project, which provides a more complete solution for logging and instrumentation.
 
 The deprecation of Klog-specific flags is a positive step forward for Kubernetes as it moves to OpenTelemetry. This move will ensure that Kubernetes is using the industry-standard logging and instrumentation solution. It will also provide developers and system administrators with a more comprehensive, reliable and consistent experience when instrumenting their applications.
+A goal of this deprecation is one of unblocking development of alternative logging formats. Why does Kubnernetes need another logging format? One reason is performance. Klog performance is much worse than alternatives, for example 7-8x than JSON format:
+
+
+#### Logger implementation performance
+
+Proof of concept implementation of new logging formats were completed to assess the potentional gains of using an alternative format. Results measured on 30s benchmark for passing 2 arguments to format function.
+
+|logger                 |time [ns/op]|bytes[B/op]|allocations[alloc/op]|
+|-----------------------|------------|-----------|---------------------|
+|Text Infof             |2252        |248        |3                    |
+|Text InfoS             |2455        |280        |3                    |
+|JSON Infof             |1406        |19         |1                    |
+|JSON InfoS             |319         |67         |1                    |
+
+<div style="background-color:#666">
+<h3>Tip</h3>
+Interestingly Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
+
+Log a message and 10 fields:
+
+| Package             |    Time     | Time % to zap | Objects Allocated |
+| :------------------ | :---------: | :-----------: | :---------------: |
+| :zap: zap           | 2900 ns/op  |      +0%      |    5 allocs/op    |
+| :zap: zap (sugared) | 3475 ns/op  |     +20%      |   10 allocs/op    |
+| zerolog             | 10639 ns/op |     +267%     |   32 allocs/op    |
+| go-kit              | 14434 ns/op |     +398%     |   59 allocs/op    |
+| logrus              | 17104 ns/op |     +490%     |   81 allocs/op    |
+| apex/log            | 32424 ns/op |    +1018%     |   66 allocs/op    |
+| log15               | 33579 ns/op |    +1058%     |   76 allocs/op    |
+</div>
 
 The deprecation of Klog-specific flags is part of a larger effort to transition Kubernetes to a more modern and comprehensive logging and instrumentation solution. This will provide Kubernetes users with a more reliable, secure and consistent experience when instrumenting and monitoring their applications.
 
