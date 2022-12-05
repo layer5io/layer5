@@ -15,8 +15,7 @@ export const Pre = styled.pre`
   border-radius: 3px;
   & .token-line {
     line-height: 1.3em;
-    height: 2em;
-    margin-top: 1em;
+    height: 1.3em;
   }
   font-family: "Courier New", Courier, monospace;
 `;
@@ -35,8 +34,8 @@ const CopyCode = styled.button`
   z-index: 1;
   border: 0;
   border-radius: 3px;
-  margin-right: 2em;
-  top: 25%;
+  margin-right: 1.5em;
+  top: 2rem;
   &:hover {
     opacity: 1;
     cursor: pointer;
