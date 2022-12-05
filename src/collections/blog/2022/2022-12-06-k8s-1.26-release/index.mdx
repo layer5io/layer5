@@ -1,23 +1,22 @@
 ---
-title: Kubernetes 1.26 Features, Highlights, Deprecations
+title: Kubernetes 1.26 Highlights, Features, and Deprecations
 subtitle: 
 date: 2022-12-06 08:00:00 -0530
 author: Lee Calcote
-thumbnail: ./kubernetes-logo.svg
-darkthumbnail: ./kubernetes-logo.svg
-description: "What changed in Kubernetes 1.26?"
+thumbnail: ./kubernetes-new.png
+darkthumbnail: ./kubernetes-new-dark.png
+description: "Release Notes: What changed in Kubernetes 1.26?"
 type: Blog
 category: Kubernetes
 tags:
   - Kubernetes
 featured: false
-published: false
+published: true
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
-
 
 <BlogWrapper>
 <p>
@@ -65,39 +64,39 @@ spec:
     app: dns-server
 ```
 
-### kubelet Credential Provider [Stable]
+### [kubelet Credential Provider](https://github.com/kubernetes/enhancements/issues/2133) [Stable]
 
 The kubelet agent has a built-in credential provider mechanism to retrieve credentials for container image registries. It natively supports Azure, Google Cloud, and AWS container image registries for dynamically retrieving their credentials. The new stable enhancement in v1.26 offers a replacement for the in-tree implementations, and creates an API for extensible plugins in the future. 
 
 Explore Meshery, an end-to-end, open-source, multi-cluster Kuberentes management platform.
 
-### SignedSigning Release Artifacts [Beta]
+### [SignedSigning Release Artifacts](https://github.com/kubernetes/enhancements/issues/3031) [Beta]
 
 Every Kubernetes release produces a set of artifacts such as binaries, container images, documentation, and metadata. Since the 1.24 release, the artifacts have been signed as an alpha feature. In the 1.26 release, artifact signing graduates to beta to increase software supply chain security for the Kubernetes release process and mitigate man-in-the-middle attacks.
 
-### Non-Graceful Node Shutdown for StatefulSet Pods [Beta]
+### [Non-Graceful Node Shutdown for StatefulSet Pods](https://github.com/kubernetes/enhancements/issues/2268) [Beta]
 
 Kubernetes is a battle-tested platform that makes itself resistant to disaster in the data center. Graceful node shutdown is already part of kubelet, to detect and move workloads afterward. However, when the shutdown is not detected by the kubelet, the pods of a StatefulSet are stuck as Terminating and not transferred to a healthy node. This happens due to a conflict in the Kubernetes machinery: The kubelet on the down node will not delete its pods from Kubernetes API, and the StatefulSet controller will not create new pods with the same name. With this enhancement, moving to beta, the pods will be forcefully deleted with their volume attachments, and new pods will be created on the healthy nodes.
 
-### Reduction of Secret-Based Service Account Tokens [Beta]
+### [Reduction of Secret-Based Service Account Tokens](https://github.com/kubernetes/enhancements/issues/2799) [Beta]
 
 BoundServiceAccountTokenVolume has been GA since version 1.22: Service account tokens for pods are obtained via the TokenRequest API and stored as a projected volume. The new enhancement, in beta, eliminates the need to auto-generate secret-based service account tokens. In addition, Kubernetes will warn about using auto-created secret-based service account tokens, and purge the unused ones.
 
-### Windows Privileged Containers [Stable] and Host Networking [Alpha] 
+### [Windows Privileged Containers](https://github.com/kubernetes/enhancements/issues/1981) [Stable] and [Host Networking](https://github.com/kubernetes/enhancements/issues/3503) [Alpha] 
 
 Privileged containers are the ones that have similar access and capabilities to the host processes running on the servers. In Linux environments, they are used heavily in Kubernetes for storage, networking, and management. In this release, support for privileged containers for the Windows environment graduates to stable. Management of processes is heavily different from the operating system standpoint in Linux and Windows. Therefore, privileged containers will also work differently in two environments, but they will ensure the same level of security and operational experience.
 
 In addition, there is a new alpha-level enhancement in this release to support host networking for Windows pods. Currently, Windows has all the functionality to make containers use the networking namespace of the nodes. The new alpha enhancement enables this functionality from the Kubernetes side, increasing the parity between Linux and Windows containers.
 
-### Self-User Attribute and Authentication API [Alpha] 
+### [Self-User Attribute and Authentication API](https://github.com/kubernetes/enhancements/issues/33250) [Alpha] 
 
 Kubernetes has no resources to identify and manage users as part of its API. Instead, it uses authenticators to get user attributes from tokens, certificates, OIDC providers, or webhooks. The new alpha feature adds a new API endpoint to see what attributes the current users have. The new API is under authentication.k8s.io with the name SelfSubjectReview, and there is a new corresponding command as well: kubectl auth who-am-i. The new feature will reduce the obscurity of complex authentication and help users debug the authentication stack. 
 
-### Pod Scheduling Readiness [Alpha]
+### [Pod Scheduling Readiness](https://github.com/kubernetes/enhancements/issues/3521) [Alpha]
 
 Currently, pods are considered ready for scheduling as soon as they are created. However, not every pod requires a node, resource allocation, and the start of all its containers immediately after its creation. The new alpha enhancement adds an API to mark pods with their scheduling status: paused and ready. Pods with the .spec.schedulingGates field will be parked in the scheduler and only be assigned to nodes when they are ready to be scheduled.
 
-### OpenAPI v3 for kubectl explain [Alpha]
+### [OpenAPI v3 for kubectl explain](https://github.com/kubernetes/enhancements/issues/3515) [Alpha]
 
 Kubernetes has supported OpenAPI v3 as a beta since version 1.24, providing users with a richer representation of the fields in the Kubernetes API. With the new alpha enhancement, the kubectl explain command will use the rich type information specified by OpenAPI v3 instead of OpenAPI v2.
 
@@ -105,26 +104,28 @@ Kubernetes has supported OpenAPI v3 as a beta since version 1.24, providing user
 
 As part of the Kubernetes API lifecycle, there are some deprecations and removals in the upcoming release. It is strongly suggested to check whether you are using the following APIs and flags before there are breaking changes.
 
-Removal of the flowcontrol.apiserver.k8s.io/v1beta1 API group for FlowSchema and PriorityLevelConfiguration requires a migration to the v1beta2 API version.
-Removal of the autoscaling/v2beta2 API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version.
-Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
-Removal of in-tree CSI integration for OpenStack—namely, the cinder volume type—requires a migration to use the CSI driver for OpenStack. 
-Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
+<ul>
+<li>
+  Removal of the `flowcontrol.apiserver.k8s.io/v1beta1` API group for `FlowSchema` and `PriorityLevelConfiguration` requires a migration to the v1beta2 API version.
+</li>
+<li>
+  Removal of the `autoscaling/v2beta2` API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version. 
+</li>
+<li>
+  Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
+</li>
+<li>
+  Removal of in-tree CSI integration for OpenStack—namely, the `cinder` volume type—requires a migration to use the CSI driver for OpenStack. 
+</li>
+<li>
+  Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
+</li>
+</ul>
 
-## Summary
+## Last Kubernetes release of 2022
 
-Thanks to these enhancements and API changes, Kubernetes is more secure, scalable, and flexible with the 1.26 release. You can check the Kubernetes release notes to learn more about deprecation, removals, and the latest changes.
+Thanks to these enhancements and API changes, Kubernetes is more secure, scalable, and flexible with the 1.26 release. You can check the Kubernetes [release notes](https://relnotes.k8s.io/) to learn more about deprecation, removals, and the latest changes.
 
 On behalf of the Meshery contributors, thank you to everyone who participated in this Kubernetes release, and congratulations!
 
-
-
-
-
-
-
-
-
-
-<Button class="image-right-no-shadow"secondary title="See All Projects" url="/projects" external="false" />Be sure to join Layer5 at KubeCon NA 2022 and find us at other <Link to="/community/events/">events</Link>, too. Learn more about each of our <Link to="/projects">open source projects</Link> and try one (or all of them) today! 
 </BlogWrapper>
