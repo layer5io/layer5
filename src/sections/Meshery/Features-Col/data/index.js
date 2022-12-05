@@ -106,42 +106,42 @@ const performanceFeatureData = {
   },
 };
 
-const collaborationFeatureData = {
-  name: "Performance",
-  description: "Assess the performance of your service mesh",
-  link: "#",
-  btnText: "Get Started",
-  services: [
-    {
-      content:
-        "Distributed performance analysis supporting 3 different types of load generators",
-      className: "--on",
-    },
-    {
-      content: "Built-in statistical analysis of service latency quartiles",
-      className: "--on",
-    },
-    {
-      content: "Integration with Prometheus and Grafana",
-      className: "--on",
-    },
-    {
-      content: "Baseline and track deltas of workload performance.",
-      className: "--on",
-    },
-  ],
-  count: {
-    value: 0,
-    description: "performance tests run",
-  },
-};
+// const collaborationFeatureData = {
+//   name: "Performance",
+//   description: "Assess the performance of your service mesh",
+//   link: "#",
+//   btnText: "Get Started",
+//   services: [
+//     {
+//       content:
+//         "Distributed performance analysis supporting 3 different types of load generators",
+//       className: "--on",
+//     },
+//     {
+//       content: "Built-in statistical analysis of service latency quartiles",
+//       className: "--on",
+//     },
+//     {
+//       content: "Integration with Prometheus and Grafana",
+//       className: "--on",
+//     },
+//     {
+//       content: "Baseline and track deltas of workload performance.",
+//       className: "--on",
+//     },
+//   ],
+//   count: {
+//     value: 0,
+//     description: "performance tests run",
+//   },
+// };
 
 const data = {
   features: [
     lifecycleFeatureData,
     configurationFeatureData,
     performanceFeatureData,
-    collaborationFeatureData,
+    // collaborationFeatureData,
   ],
 };
 
