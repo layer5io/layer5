@@ -62,13 +62,15 @@ const Banner1 = () => {
               </span>
             </Container>
           </Col>
-          <Col sm={4} lg={6} className="section-title-wrapper video-col">
-            <Link to="/cloud-native-management/meshmap">
-              <video autoPlay muted loop preload="metadata" className="meshmapVideo">
-                <source src={meshmapVideo} type="video/mp4"></source>
-              </video>
-            </Link>
-          </Col>
+          {typeof window != "undefined" && window.innerWidth > 760 && (
+            <Col sm={4} lg={6} className="section-title-wrapper video-col">
+              <Link to="/cloud-native-management/meshmap">
+                <video autoPlay muted loop preload="metadata" className="meshmapVideo">
+                  <source src={meshmapVideo} type="video/mp4"></source>
+                </video>
+              </Link>
+            </Col>
+          )}
         </Row>
       </BgImage>
     </Banner1SectionWrapper>
