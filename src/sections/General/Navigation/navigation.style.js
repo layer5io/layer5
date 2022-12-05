@@ -374,6 +374,17 @@ const NavigationWrap = styled.header`
       max-height: 400px;
       overflow-y: scroll;
     }
+    .mobile-dropdown::-webkit-scrollbar{
+      border-radius: 3px;
+      width: 6px;
+	  }
+    .mobile-dropdown::-webkit-scrollbar-track{
+      background-color: #cbced1;
+    }
+    .mobile-dropdown::-webkit-scrollbar-thumb{
+      background-color: #868e96;
+      border-radius: 3px;
+    }
     .expand {
       visibility: visible;
       opacity: 1;
