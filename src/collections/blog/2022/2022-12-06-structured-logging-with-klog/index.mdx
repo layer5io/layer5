@@ -37,17 +37,14 @@ Kubernetes has recently announced that it intends to deprecate certain flags rel
 The deprecation of Klog-specific flags is a positive step forward for Kubernetes as it moves to OpenTelemetry. This move will ensure that Kubernetes is using the industry-standard logging and instrumentation solution. It will also provide developers and system administrators with a more comprehensive, reliable and consistent experience when instrumenting their applications.
 A goal of this deprecation is one of unblocking development of alternative logging formats. Why does Kubnernetes need another logging format? One reason is performance. Klog performance is much worse than alternatives, for example 7-8x than JSON format:
 
-
-#### Logger implementation performance
-
-Proof of concept implementation of new logging formats were completed to assess the potentional gains of using an alternative format. Results measured on 30s benchmark for passing 2 arguments to format function.
-
 |logger                 |time [ns/op]|bytes[B/op]|allocations[alloc/op]|
 |-----------------------|------------|-----------|---------------------|
 |Text Infof             |2252        |248        |3                    |
 |Text InfoS             |2455        |280        |3                    |
 |JSON Infof             |1406        |19         |1                    |
 |JSON InfoS             |319         |67         |1                    |
+
+Proof of concept implementation of new logging formats were completed to assess the potentional gains of using an alternative format. Results measured on 30s benchmark for passing 2 arguments to format function.
 
 <div style="background-color:#666">
 <h3>Tip</h3>
