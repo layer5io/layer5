@@ -1,23 +1,22 @@
 ---
-title: Kubernetes 1.26 Features, Highlights, Deprecations
+title: Kubernetes 1.26 Highlights, Features, and Deprecations
 subtitle: 
 date: 2022-12-06 08:00:00 -0530
 author: Lee Calcote
-thumbnail: ./kubernetes-logo.svg
-darkthumbnail: ./kubernetes-logo.svg
-description: "What changed in Kubernetes 1.26?"
+thumbnail: ./kubernetes-new.png
+darkthumbnail: ./kubernetes-new-dark.png
+description: "Release Notes: What changed in Kubernetes 1.26?"
 type: Blog
 category: Kubernetes
 tags:
   - Kubernetes
 featured: false
-published: false
+published: true
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
-
 
 <BlogWrapper>
 <p>
@@ -65,39 +64,39 @@ spec:
     app: dns-server
 ```
 
-### kubelet Credential Provider [Stable]
+### [kubelet Credential Provider](https://github.com/kubernetes/enhancements/issues/2133) [Stable]
 
 The kubelet agent has a built-in credential provider mechanism to retrieve credentials for container image registries. It natively supports Azure, Google Cloud, and AWS container image registries for dynamically retrieving their credentials. The new stable enhancement in v1.26 offers a replacement for the in-tree implementations, and creates an API for extensible plugins in the future. 
 
 Explore Meshery, an end-to-end, open-source, multi-cluster Kuberentes management platform.
 
-### SignedSigning Release Artifacts [Beta]
+### [SignedSigning Release Artifacts](https://github.com/kubernetes/enhancements/issues/3031) [Beta]
 
 Every Kubernetes release produces a set of artifacts such as binaries, container images, documentation, and metadata. Since the 1.24 release, the artifacts have been signed as an alpha feature. In the 1.26 release, artifact signing graduates to beta to increase software supply chain security for the Kubernetes release process and mitigate man-in-the-middle attacks.
 
-### Non-Graceful Node Shutdown for StatefulSet Pods [Beta]
+### [Non-Graceful Node Shutdown for StatefulSet Pods](https://github.com/kubernetes/enhancements/issues/2268) [Beta]
 
 Kubernetes is a battle-tested platform that makes itself resistant to disaster in the data center. Graceful node shutdown is already part of kubelet, to detect and move workloads afterward. However, when the shutdown is not detected by the kubelet, the pods of a StatefulSet are stuck as Terminating and not transferred to a healthy node. This happens due to a conflict in the Kubernetes machinery: The kubelet on the down node will not delete its pods from Kubernetes API, and the StatefulSet controller will not create new pods with the same name. With this enhancement, moving to beta, the pods will be forcefully deleted with their volume attachments, and new pods will be created on the healthy nodes.
 
-### Reduction of Secret-Based Service Account Tokens [Beta]
+### [Reduction of Secret-Based Service Account Tokens](https://github.com/kubernetes/enhancements/issues/2799) [Beta]
 
 BoundServiceAccountTokenVolume has been GA since version 1.22: Service account tokens for pods are obtained via the TokenRequest API and stored as a projected volume. The new enhancement, in beta, eliminates the need to auto-generate secret-based service account tokens. In addition, Kubernetes will warn about using auto-created secret-based service account tokens, and purge the unused ones.
 
-### Windows Privileged Containers [Stable] and Host Networking [Alpha] 
+### [Windows Privileged Containers](https://github.com/kubernetes/enhancements/issues/1981) [Stable] and [Host Networking](https://github.com/kubernetes/enhancements/issues/3503) [Alpha] 
 
 Privileged containers are the ones that have similar access and capabilities to the host processes running on the servers. In Linux environments, they are used heavily in Kubernetes for storage, networking, and management. In this release, support for privileged containers for the Windows environment graduates to stable. Management of processes is heavily different from the operating system standpoint in Linux and Windows. Therefore, privileged containers will also work differently in two environments, but they will ensure the same level of security and operational experience.
 
 In addition, there is a new alpha-level enhancement in this release to support host networking for Windows pods. Currently, Windows has all the functionality to make containers use the networking namespace of the nodes. The new alpha enhancement enables this functionality from the Kubernetes side, increasing the parity between Linux and Windows containers.
 
-### Self-User Attribute and Authentication API [Alpha] 
+### [Self-User Attribute and Authentication API](https://github.com/kubernetes/enhancements/issues/33250) [Alpha] 
 
 Kubernetes has no resources to identify and manage users as part of its API. Instead, it uses authenticators to get user attributes from tokens, certificates, OIDC providers, or webhooks. The new alpha feature adds a new API endpoint to see what attributes the current users have. The new API is under authentication.k8s.io with the name SelfSubjectReview, and there is a new corresponding command as well: kubectl auth who-am-i. The new feature will reduce the obscurity of complex authentication and help users debug the authentication stack. 
 
-### Pod Scheduling Readiness [Alpha]
+### [Pod Scheduling Readiness](https://github.com/kubernetes/enhancements/issues/3521) [Alpha]
 
 Currently, pods are considered ready for scheduling as soon as they are created. However, not every pod requires a node, resource allocation, and the start of all its containers immediately after its creation. The new alpha enhancement adds an API to mark pods with their scheduling status: paused and ready. Pods with the .spec.schedulingGates field will be parked in the scheduler and only be assigned to nodes when they are ready to be scheduled.
 
-### OpenAPI v3 for kubectl explain [Alpha]
+### [OpenAPI v3 for kubectl explain](https://github.com/kubernetes/enhancements/issues/3515) [Alpha]
 
 Kubernetes has supported OpenAPI v3 as a beta since version 1.24, providing users with a richer representation of the fields in the Kubernetes API. With the new alpha enhancement, the kubectl explain command will use the rich type information specified by OpenAPI v3 instead of OpenAPI v2.
 
