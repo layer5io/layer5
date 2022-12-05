@@ -3,7 +3,7 @@ title: Structured logging in Kubernetes 1.26 with Klog
 subtitle: Structured logging in Kubernetes 1.26 with Klog
 date: 2022-12-06 08:00:00 -0530
 author: Lee Calcote
-thumbnail: ../kubernetes-logo.svg
+thumbnail: ./kubernetes-logo.svg
 darkthumbnail: ./kubernetes-logo.svg
 description: "Structured logging in Kubernetes 1.26 with Klog"
 type: Blog
@@ -20,7 +20,7 @@ import Button from "../../../../reusecore/Button";
 
 
 <BlogWrapper>
-Kubernetes is an open-source container-orchestration system used to manage and deploy applications in clusters. It provides a platform for developers and system administrators to easily deploy and manage applications in a distributed environment. One of the key components of Kubernetes is its logging and instrumentation capabilities.
+As a platform for developers and system administrators to easily deploy and manage applications in a distributed environment, Kubernetes clusters generate logs and lots of them. One of the key components of Kubernetes is its logging and instrumentation capabilities. The upcoming Kubernetes 1.26 release has a handful of noteworthy changes to its system component logger, Klog. 
 
 ## Kubernetes System Log
 
@@ -48,7 +48,7 @@ Proof of concept implementation of new logging formats were completed to assess 
 
 <div style="background-color:#666">
 <h3>Tip</h3>
-Interestingly Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
+Interestingly, Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
 
 Log a message and 10 fields:
 
@@ -62,6 +62,8 @@ Log a message and 10 fields:
 | apex/log            | 32424 ns/op |    +1018%     |   66 allocs/op    |
 | log15               | 33579 ns/op |    +1058%     |   76 allocs/op    |
 </div>
+
+Output will always be written to stderr, regardless of the output format. Output redirection is expected to be handled by the component which invokes a Kubernetes component. This can be a POSIX shell or a tool like systemd.
 
 The deprecation of Klog-specific flags is part of a larger effort to transition Kubernetes to a more modern and comprehensive logging and instrumentation solution. This will provide Kubernetes users with a more reliable, secure and consistent experience when instrumenting and monitoring their applications.
 
