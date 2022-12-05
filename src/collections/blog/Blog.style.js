@@ -51,9 +51,14 @@ export const BlogWrapper = styled.div`
         background-color: #3c494f;
         color: #eee;
         padding: 0rem .5rem;
-
       }
-      
+    }
+    @media (max-width: 990px){
+        max-width: 100%;
+      } 
+    @media (max-width: 699px) {
+      margin-left: 0rem;
+      margin-right: 0rem;
     }
   }
   .to-uppercase {
