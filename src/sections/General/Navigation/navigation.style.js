@@ -370,7 +370,7 @@ const NavigationWrap = styled.header`
       display: block;
       background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       border-radius: 10px;
-      box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
       max-height: 400px;
       overflow-y: scroll;
       scrollbar-width: thin;
