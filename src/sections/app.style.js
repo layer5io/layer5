@@ -203,6 +203,9 @@ section{
     border: none;
     overflow: hidden;
 }
+
+/* Modal CSS Ends */
+
 .ball {
   width: 20px;
   height: 20px;
@@ -239,7 +242,31 @@ section{
     }
 }
 
-/* Modal CSS Ends */
+// Banner Display
+.banner1 {
+  .banner1 {
+    display: block !important;
+  }
+}
+
+.banner2 {
+  .banner2 {
+    display: block !important;
+  }
+}
+
+.banner3 {
+  .banner3 {
+    display: block !important;
+  }
+}
+
+.banner4 {
+  .banner4 {
+    display: block !important;
+  }
+}
+
 `;
 
 export { GlobalStyle };

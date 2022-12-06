@@ -10,9 +10,9 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 
 import Banner2SectionWrapper from "./banner2.style";
 
-const Banner2 = () => {
+const Banner2 = (props) => {
   return (
-    <Banner2SectionWrapper>
+    <Banner2SectionWrapper {...props}>
       <Container fullWidthSM>
         <Row>
           <Col sm={8} lg={8} className="section-title-wrapper">

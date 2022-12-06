@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
+    display: none;
     top: 3.2rem;
     padding-bottom: 2rem;
     .section-bgimage {
