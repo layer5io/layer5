@@ -20,19 +20,20 @@ const Layout = ({ children }) => {
         <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
+          rel="preload"
           href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
-          rel="stylesheet"
+          as="style"
+          onLoad="this.onload=null;this.rel='stylesheet'"
         />
-        {/* <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        /> */}
+        <noscript>
+          {`${
+          <link
+            href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
+            rel="stylesheet"
+            type="text/css"
+          />
+          }`}
+        </noscript>
       </Helmet>
       {children}
       <ScrollToTopBtn />
