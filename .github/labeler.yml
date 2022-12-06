@@ -23,6 +23,7 @@ area/events:
 area/handbook:
   - "src/components/HandbookCard/**/*"
   - "src/components/Handbook-navigation/**/*"
+  - "src/sections/Community/Handbook/**/*"
 area/landscape:
   - "src/sections/Landscape/**/*"
   - "src/components/Landscape-Table/**/*"
