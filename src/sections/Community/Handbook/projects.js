@@ -160,6 +160,16 @@ const Maintainer = () => {
                   Meshery Operator is the multi-service mesh operator and
                   implementation of MeshSync. <br />
                 </p>
+                <li>
+                  <h4>
+                    <a href="https://layer5.io/docker-extension-meshery">
+                      Meshery-docker-extension :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
+                </p>
               </ul>
             </p>
 

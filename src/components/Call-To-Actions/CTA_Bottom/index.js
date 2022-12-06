@@ -32,9 +32,12 @@ const CTA_BottomWrapper = styled.div`
         align-items: center;
         height: 100%;
 
+        div {
+            flex: 0 0 75%;
+        }
+
         p {
             margin-top: 0.5rem;
-            flex: 0 0 75%;
         }
         a {
             text-align: center;
@@ -65,7 +68,7 @@ const CTA_BottomWrapper = styled.div`
             width: 18rem;
             height: 18rem;
             position: absolute;
-            opacity: 0.5;
+            opacity: 0.35;
             border-radius: 0.25rem;
         }
 
@@ -94,9 +97,9 @@ const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading }) => {
+export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
-    <CTA_BottomWrapper>
+    <CTA_BottomWrapper {...props}>
       { category ? (
         <>
           <div className="cta-content">

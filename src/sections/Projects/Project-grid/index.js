@@ -18,7 +18,7 @@ import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg"
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 
 
-const ProjectPage = () => {
+const ProjectPage = ({ theme }) => {
   return (
     <ProjectWrapper>
       <PageHeader
@@ -111,7 +111,7 @@ const ProjectPage = () => {
           <MeshMapCTA />
         </Container>
       </div>
-      <ProudMaintainers />
+      <ProudMaintainers theme={theme} />
     </ProjectWrapper>
   );
 };

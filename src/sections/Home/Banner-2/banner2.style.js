@@ -4,8 +4,8 @@ import Ellipse from "./assets/images/Group.svg";
 import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Banner2SectionWrapper = styled.section`
+    display: none;
     padding: 7rem 0;
-   
     background-image: url(${Layer5Icon}), url(${Ellipse});
     background-repeat: no-repeat, no-repeat;
     background-size: 25%, 23%;
