@@ -11,9 +11,9 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Backgroundsvg from "./assets/images/background.svg";
 import Banner1SectionWrapper from "./banner1.style";
 
-const Banner1 = () => {
+const Banner1 = (props) => {
   return (
-    <Banner1SectionWrapper>
+    <Banner1SectionWrapper {...props} >
       <Container fullWidthSM>
         <img src={Backgroundsvg} className="background-svg" />
         <Row>

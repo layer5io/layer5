@@ -10,9 +10,9 @@ import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Banner3SectionWrapper from "./banner3.style";
 
-const Banner3 = () => {
+const Banner3 = (props) => {
   return (
-    <Banner3SectionWrapper>
+    <Banner3SectionWrapper {...props}>
       <Container fullWidthSM>
         <Row>
           <Col sm={8} lg={8} className="section-title-wrapper">
