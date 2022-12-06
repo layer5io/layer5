@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
+    display: none;
     padding: 7rem 0;
     background-color: ${props => props.theme.body};
     .background-svg {

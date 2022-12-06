@@ -15,7 +15,6 @@ import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
 import NavigationWrap from "./navigation.style";
-import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
 
@@ -207,7 +206,6 @@ const Navigation = ({ theme, themeSetter }) => {
   return (
 
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
           <div className="navbar-wrap">

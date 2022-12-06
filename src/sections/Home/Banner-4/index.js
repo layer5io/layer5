@@ -15,7 +15,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-const Banner1 = () => {
+const Banner1 = (props) => {
 
   const { backgroundImage123 } = useStaticQuery(
     graphql`
@@ -38,7 +38,7 @@ const Banner1 = () => {
   const pluginImage = getImage(backgroundImage123);
 
   return (
-    <Banner1SectionWrapper>
+    <Banner1SectionWrapper {...props}>
       <BgImage image={pluginImage} className="section-bgimage">
         <Row>
           <Col sm={4} lg={6} className="section-title-wrapper text-col">

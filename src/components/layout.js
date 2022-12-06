@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
         <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
-          rel="preload"
+          rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
+          media="print"
+          onLoad="this.media='all'"
         />
         <noscript>
           {`${
