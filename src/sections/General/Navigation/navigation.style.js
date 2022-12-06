@@ -373,6 +373,7 @@ const NavigationWrap = styled.header`
       box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
       max-height: 400px;
       overflow-y: scroll;
+      scrollbar-width: thin;
     }
     .mobile-dropdown::-webkit-scrollbar{
       border-radius: 3px;
@@ -380,6 +381,7 @@ const NavigationWrap = styled.header`
 	  }
     .mobile-dropdown::-webkit-scrollbar-track{
       background-color: #cbced1;
+      border-radius: 3px;
     }
     .mobile-dropdown::-webkit-scrollbar-thumb{
       background-color: #868e96;
