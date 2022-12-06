@@ -19,7 +19,7 @@ export const HoneycombGrid = styled.div`
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
-    padding: 0.625rem;
+    padding: 40px;
 
     .integration-container {
       display: flex;
