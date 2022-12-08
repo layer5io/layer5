@@ -23,7 +23,7 @@ const ContactPage = () => {
           title={"Get In Touch"}
           subtitle={"Let us know how we can help you."}
         />
-        <Row>
+        <Row className="cards-container">
           <CardOutline
             link="/careers"
             img={Jobs_Icon}

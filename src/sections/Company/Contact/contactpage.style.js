@@ -9,6 +9,12 @@ const ContactPageWrapper = styled.section`
     }
   }
 
+  .cards-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+
   .contact-form-row {
     padding: 0 2rem;
 
@@ -47,6 +53,10 @@ const ContactPageWrapper = styled.section`
       .form {
         width: 100%;
       }
+    }
+
+    .cards-container {
+      padding: 0 2rem 0 2rem;
     }
   }
 `;
