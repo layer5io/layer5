@@ -1,5 +1,6 @@
 import React from "react";
-import IntegrationsGrid from "./IntegrationsGrid";
+import loadable from "@loadable/component";
+const IntegrationsGrid = loadable(() => import("./IntegrationsGrid"));
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
 import Card from "./Card";

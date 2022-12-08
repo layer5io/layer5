@@ -28,6 +28,7 @@ const Banner1 = (props) => {
               width: 2000
               quality: 50
               webpOptions: { quality: 70 }
+              breakpoints: [760]
             )
           }
         }
