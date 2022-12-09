@@ -11,7 +11,7 @@ export const LandscapePageWrapper = styled.div`
 		color:${props => props.theme.text};
 	}
 	#service-mesh-comparison-strength {
-            margin: 0.5rem 1.2rem 5rem;
+            margin: -2.5rem 1rem 5rem;
 	}
 	.subsequent-heading {
 		padding-top: 6rem;
