@@ -80,9 +80,9 @@ const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
         </Container>
         <div className="join-community">
           <div className="join-community_text-and_button">
-            <h1>Don't Learn Alone</h1>
-            <p>Join other learners and cloud native engineers in the Layer5 community. Join us on Slack and learn with us.</p>
-            <Button primary title="Join Our Community" url="http://slack.layer5.io/" />
+            <h1>Use Service Mesh Patterns</h1>
+            <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
+            <Button primary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external="true" />
           </div>
         </div>
       </div>

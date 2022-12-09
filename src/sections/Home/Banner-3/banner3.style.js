@@ -3,8 +3,8 @@ import styled from "styled-components";
 import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const Banner3SectionWrapper = styled.section`
+    display: none;
     padding: 7rem 0;
-
     background: url(${HeroCubesBlack}) no-repeat;
     background-size: 50%;
     background-color: ${props => props.theme.secondaryLightColorTwo};

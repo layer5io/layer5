@@ -1,0 +1,80 @@
+---
+title: Structured logging in Kubernetes with Klog
+subtitle: Deprecating Klog flags in Kubernetes 1.26
+date: 2022-12-05 15:00:00 -0530
+author: Lee Calcote
+thumbnail: ./kubernetes-logs.png
+darkthumbnail: ./kubernetes-logs-dark.png
+description: "Structured logging in Kubernetes 1.26 with Klog"
+type: Blog
+category: Kubernetes
+tags:
+  - Kubernetes
+  - OpenTelemetry
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+
+
+<BlogWrapper>
+<p>As a platform for developers and system administrators to easily deploy and manage applications in a distributed environment, Kubernetes clusters generate logs and lots of them. One of the key components of Kubernetes is its logging and instrumentation capabilities. The upcoming Kubernetes 1.26 release has a handful of noteworthy changes to its system component logger, <code>klog</code>.</p>
+
+## Kubernetes System Log
+
+System component logs record events happening in K8s clusters. More than metrics or traces, logs are the telemetric signal often found to be most useful for debugging. You can configure K8s log verbosity to see more or less detail. Logs can be as coarse-grained as showing errors within a component, or as fine-grained as showing step-by-step traces of events (like HTTP access logs, pod state changes, controller actions, or scheduler decisions).
+
+## Klog
+
+[klog](https://github.com/kubernetes/klog) is a Kubernetes logging library that provides an API for developers and system administrators to instrument their applications for logging and tracing. klog generates log messages for the Kubernetes system components. It provides a comprehensive set of features, including log levels, structured logging and logging context.
+
+Kubernetes 1.23 introduced structured logging (in beta) in `klog`. Structured logging is a uniform structure in log messages allowing for programmatic extraction of information. Structured logs can be stored and processed with less effort and cost. The code which generates a log message determines whether it uses the traditional unstructured `klog` output or structured logging.
+
+As a dependency to structured logging (gated behind `StructuredLogging` feature gate), Kubernetes 1.24 introducted contextual logging (in alpha) in `klog`. Contextual logging builds on top of structured logging. It is primarily about how developers use logging calls: code based on that concept is more flexible and supports additional use cases which will be the topic of a future blog post. 
+
+### Klog Deprecations in Kubernetes 1.26
+
+Kubernetes has recently announced that it intends to deprecate certain flags related to Klog in its components. This means that Klog-specific flags, such as `--klog-verbosity`, `--klog-vmodule` and `--klog-stderrthreshold` will no longer be supported. This is due to the fact that Klog has been largely superseded by the more comprehensive OpenTelemetry project, which provides a more complete solution for logging and instrumentation.
+
+The deprecation of Klog-specific flags is a positive step forward for Kubernetes as it moves to OpenTelemetry. This move will ensure that Kubernetes is using the industry-standard logging and instrumentation solution. It will also provide developers and system administrators with a more comprehensive, reliable and consistent experience when instrumenting their applications.
+A goal of this deprecation is one of unblocking development of alternative logging formats. Why does Kubnernetes need another logging format? One reason is performance. Klog performance is much worse than alternatives, for example 7-8x than JSON format:
+
+|logger                 |time [ns/op]|bytes[B/op]|allocations[alloc/op]|
+|-----------------------|------------|-----------|---------------------|
+|Text Infof             |2252        |248        |3                    |
+|Text InfoS             |2455        |280        |3                    |
+|JSON Infof             |1406        |19         |1                    |
+|JSON InfoS             |319         |67         |1                    |
+
+Proof of concept implementation of new logging formats were completed to assess the potentional gains of using an alternative format. Results measured on 30s benchmark for passing 2 arguments to format function.
+
+<div className="tip">
+<h3>Tip: Logger Performance Comparison</h3>
+
+Interestingly, Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
+
+
+<p>Log a message and 10 fields:</p>
+
+| Package             |    Time     | Time % to zap | Objects Allocated |
+| :------------------ | :---------: | :-----------: | :---------------: |
+| zap                 | 2900 ns/op  |      +0%      |    5 allocs/op    |
+| zap (sugared)       | 3475 ns/op  |     +20%      |   10 allocs/op    |
+| zerolog             | 10639 ns/op |     +267%     |   32 allocs/op    |
+| go-kit              | 14434 ns/op |     +398%     |   59 allocs/op    |
+| logrus              | 17104 ns/op |     +490%     |   81 allocs/op    |
+| apex/log            | 32424 ns/op |    +1018%     |   66 allocs/op    |
+| log15               | 33579 ns/op |    +1058%     |   76 allocs/op    |
+</div>
+
+Output will always be written to stderr, regardless of the output format. Output redirection is expected to be handled by the component which invokes a Kubernetes component. This can be a POSIX shell or a tool like systemd.
+
+The deprecation of Klog-specific flags is part of a larger effort to transition Kubernetes to a more modern and comprehensive logging and instrumentation solution. This will provide Kubernetes users with a more reliable, secure and consistent experience when instrumenting and monitoring their applications.
+
+Kubernetes will continue to provide support for Klog-specific flags for the foreseeable future. However, it is recommended that developers and system administrators begin transitioning their applications to the OpenTelemetry framework. This will ensure that their applications are using the industry-standard solution for logging and instrumentation.
+
+Overall, the deprecation of Klog-specific flags is a positive step forward for Kubernetes. It will ensure that Kubernetes users have access to the most reliable and comprehensive solution for logging and instrumentation. It will also help ensure that Kubernetes is using the industry-standard solution and will provide developers and system administrators with a more reliable and consistent experience when instrumenting their applications.
+</BlogWrapper>
