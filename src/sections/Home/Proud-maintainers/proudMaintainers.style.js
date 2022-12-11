@@ -110,7 +110,6 @@ const ProjectItemWrapper = styled.section`
 
 	.proj_icon_1 {
 		padding: 1rem;
-
 	}
 	.proj_icon_2 {
 		img {
