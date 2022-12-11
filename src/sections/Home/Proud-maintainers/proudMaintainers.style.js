@@ -107,7 +107,7 @@ const ProjectItemWrapper = styled.section`
 			height: 4.5rem;
 		}
 	}
-
+    
 	.proj_icon_1 {
 		padding: 1rem;
 	}
@@ -118,7 +118,7 @@ const ProjectItemWrapper = styled.section`
 		}
       @media screen and (max-width: 550px) {
           img {
-            padding: 1.65rem 0;
+            padding: 1.2rem;
           }
           h4 {
             font-size: 0.7rem;
@@ -131,18 +131,15 @@ const ProjectItemWrapper = styled.section`
 	   }
       }
 	  @media screen and (max-width: 768px) {
-
 		.proj_icon_1 {
 			padding: 1rem;
 		}
-
 		.proj_icon_2 {
 			img {
 				padding: 1rem 1rem;
 				max-height: 125px;
 			}
 	}
-
       @media screen and (max-width: 460px){
         h4 {
           margin-left: 0px;
