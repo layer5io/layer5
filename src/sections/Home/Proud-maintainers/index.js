@@ -42,72 +42,66 @@ const ProudMaintainers = ({ theme }) => {
 
         </Row>
       </Container>
-      <Row className="row">
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+      <div className="row">
+
+        <div xs={3} sm={3} md={3} lg={3} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? CNCF_dark : CNCF} alt="CNCF" />  </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={3} className="proj_row">
           <div className="proj_icon_1 ">
             <img src={theme === "dark" ? Envoy_dark : Envoy} alt="Envoy" />
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={3} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? Linkerd_dark : Linkerd} alt="Linkerd" />
           </div>
-        </Col>
-        {/* <Col xs={3} sm={3} md={3} lg={2}>
-          <div className="proj_icon_2">
-            <img src={ServiceMesh} alt="Service Mesh" />
-            <h4>Service Mesh</h4>
-          </div>
-        </Col> */}
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={3} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? Meshery_dark : Meshery} alt="Meshery" />
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={3} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? OAM_dark : OAM} alt="OAM" />
           </div>
-        </Col>
-      </Row>
-      <Row className="row row_2">
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_2">
             <img src={Istio} alt="Istio" />
             <h4>Istio</h4>
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? OSM_dark : OSM} alt="OSM" />
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? SMP_dark : SMP} alt="SMP" /></div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_2">
             <img src={ImageHub} alt="ImageHub" />
             <h4>Image Hub</h4>
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_1">
             <img src={theme === "dark" ? SMI_dark : SMI} alt="SMI" />
           </div>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        </div>
+        <div xs={3} sm={3} md={3} lg={2} className="proj_row">
           <div className="proj_icon_2">
             <img src={Traefik} alt="Traefik" />
             <h4>Traefik Mesh</h4>
           </div>
-        </Col>
-      </Row>
+        </div>
+
+      </div>
     </ProjectItemWrapper>
   );
 };

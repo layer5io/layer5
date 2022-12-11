@@ -41,31 +41,33 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 
-	.row, .row_2 {
+	.row {
 		justify-content: center;
 		margin: 1rem 0;
-		flex-wrap: nowrap;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: stretch;
+		flex-wrap: wrap;
 		overflow: hidden;
 	}
 
-	.proj_row_1_col, .proj_row_2_col {
-		flex: 0 0 25%;
-		max-width: 20%;
+	.proj_row {
+		padding: 20px;
+		width: 15%;
 
 		@media screen and (max-width: 1600px) {
-			max-width: 22%;
+			width: 22%;
 		}
 		@media screen and (max-width: 992px) {
-			max-width: 24%;
+			width: 24%;
 		}
 		@media screen and (max-width: 768px) {
-			flex: 0 0 25%;
-			max-width: 25%;
+			width: 33%;
 
 		}
 		@media screen and (max-width: 550px) {
-			flex: 0 0 35%;
-			max-width: 35%;
+			width: 45%;
 		}
 	}
 
