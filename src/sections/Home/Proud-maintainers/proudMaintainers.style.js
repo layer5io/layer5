@@ -67,7 +67,7 @@ const ProjectItemWrapper = styled.section`
 
 		}
 		@media screen and (max-width: 550px) {
-			width: 45%;
+			width: 47.5%;
 		}
 	}
 
