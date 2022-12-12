@@ -1,7 +1,6 @@
 import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
     
-    margin-top: -2rem;
     h1{
         color: ${props => props.theme.text};
 
