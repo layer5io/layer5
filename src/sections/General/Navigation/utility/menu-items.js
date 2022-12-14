@@ -196,7 +196,7 @@ const Data = {
       },
       div2: {
         src: communityGreen,
-        descr: "Join the service mesh community",
+        descr: "Join the cloud native community",
         path: "/community"
       }
     },

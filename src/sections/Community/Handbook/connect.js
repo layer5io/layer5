@@ -185,7 +185,7 @@ const Connect = () => {
               <h2>Discussion Forum</h2>{" "}
             </a>
             <p>
-              Join us on our service mesh community's{" "}
+              Join us on our cloud native community's{" "}
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
             <a id="Social Media">
