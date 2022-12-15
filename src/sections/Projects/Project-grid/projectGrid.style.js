@@ -74,7 +74,8 @@ export const ProjectWrapper = styled.div`
         width: 12rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -84,12 +85,6 @@ export const ProjectWrapper = styled.div`
             text-align: center;
         }
         
-    }
-    .project__card-container_meshery{
-        height: 13rem;
-    }
-    .project__card-container_one{
-        height: 8rem;
     }
     
     // Landscape
@@ -198,29 +193,6 @@ export const ProjectWrapper = styled.div`
             }
         }
     }
-    .project__card-container-seven{
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img{
-            align-self: center;
-            max-width: 100%;
-            max-height: 100%;
-
-        }
-        h5{
-            top: 0;
-            font-weight: 600;
-            text-align: center;
-            
-        }
-        @media only screen and (min-width: 741px) {
-            width: 80%;
-            place-content: center;
-        }
-        
-    }
     .project__card.eight{
         grid-column: 6/8;
         grid-row: 7/8;
@@ -239,28 +211,6 @@ export const ProjectWrapper = styled.div`
                 align-self: flex-end;
             }
         }
-    }
-    .project__card-container-eight{
-        max-width: 100%;
-        height: 10rem;
-        width: 12rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img{
-            max-width: 100%;
-            max-height: 100%;
-        }
-        h5{
-            font-weight: 600;
-            text-align: center;
-            
-        }
-        @media only screen and (min-width: 741px) {
-            width: 80%;
-            place-content: center;
-        }
-        
     }
     @media only screen and (max-width: 1200px) {
        .project__card.six {
@@ -316,15 +266,6 @@ export const ProjectWrapper = styled.div`
             align-items: center;
             justify-content: center;
         }
-        .project__card-container_meshery{
-            height: 10rem;
-        }
-        .project__card-container_one{
-            height: 10rem;
-            img{
-                margin-top: 1.5rem;
-            }
-        }
         .project__card {
             h5{ 
                 width: 100%;
@@ -335,27 +276,8 @@ export const ProjectWrapper = styled.div`
             img{
                 width: auto;
                 height: 80px;
-                padding-top: 10px;
+                padding-top: 1.5rem;
             }
-        }
-        .project__card.two{
-            img{
-                align-self: center;
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
-            h5{ 
-                font-size: 13px;
-                font-weight: 600;
-                margin-top: 10px;
-            }
-        }
-        .project__card.three h5{
-            margin-bottom: 0;
-        }
-        .project__card.four img{
-            margin-top: 0px;
-            margin-bottom: 0px;
         }
         .project__card.six{
             img{
@@ -366,26 +288,6 @@ export const ProjectWrapper = styled.div`
                 width: 100%;
             }
         }
-        .project__card.seven{
-            img{
-                margin-top: 15px;
-                width: 150%;
-            }
-            h5{ 
-                margin-top:30px;
-            }
-        }
-        .project__card.eight{
-            img{
-                margin-top: 10px;
-            }
-            h5{ 
-                margin-top:35px;
-            }
-        }
-         
-        
-        
     }
     @media only screen and (max-width: 568px) {
         margin-left: 5%;
