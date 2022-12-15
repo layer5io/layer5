@@ -46,14 +46,13 @@ const ProjectItemWrapper = styled.section`
 		margin: 1rem 0;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		-webkit-box-pack: center;
 		align-items: stretch;
 		flex-wrap: wrap;
-		overflow: hidden;
 	}
 
 	.proj_row {
-		padding: 20px;
+		padding: 15px;
 		width: 15%;
 
 		@media screen and (max-width: 1600px) {
