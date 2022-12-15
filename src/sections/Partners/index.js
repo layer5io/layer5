@@ -49,13 +49,13 @@ const Partner = ({ theme }) => {
         <div className="academic-container">
           <div className="acad-container-body">
             <h1 className="heading">Academic Partners</h1>
-            <p>Layer5, the service mesh community, established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
+            <p>Layer5 established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
           </div>
         </div>
         {
-          academic_partners.map((partner,index) => (
+          academic_partners.map((partner, index) => (
             <div key={index} className="acc-cont">
-              <Row  className={ (index) % 2 === 1 ? "cont-row-reverse" : "cont-row" } >
+              <Row className={(index) % 2 === 1 ? "cont-row-reverse" : "cont-row"} >
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
@@ -102,9 +102,9 @@ const Partner = ({ theme }) => {
         }
         <h1 className="heading">Our Technology Partners</h1>
         {
-          technology_partners.map((partner,index) => (
+          technology_partners.map((partner, index) => (
             <div key={index + len_acad_part} className="acc-cont">
-              <Row  className={ ((len_acad_part + index) % 2 == 1 ) ? "cont-row-reverse" : "cont-row" }>
+              <Row className={((len_acad_part + index) % 2 == 1) ? "cont-row-reverse" : "cont-row"}>
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
