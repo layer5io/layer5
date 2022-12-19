@@ -388,8 +388,6 @@ export const ProjectWrapper = styled.div`
         
     }
     @media only screen and (max-width: 568px) {
-        margin-left: 5%;
-        margin-right: 5%;
         padding: 0 0 40px 0;
         h3{
             font-size: 1.25rem;
