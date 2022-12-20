@@ -1,20 +1,27 @@
 ---
-title: aks-appgw-fe
+title: Azure Application Gateway   
 subtitle: Collaborative and visual infrastructure as code for aks-appgw-fe
-integrationIcon: 
-darkModeIntegrationIcon: 
+integrationIcon: icon/color/aks-appgw-fe-color.svg
+darkModeIntegrationIcon: icon/white/aks-appgw-fe-white.svg
 docURL: 
-category: 
-subcategory: 
-featureList: [,,]
+category: Cloud Native Network
+subcategory: Service Proxy
+featureList: ["URL routing and cookie-based affinity
+",
+"Support for public, private, and hybrid web sites and 
+integrated web application firewall",
+"Secure Sockets Layer (SSL) termination and End-to-end SSL"
+]
 workingSlides: [
-				../_images/meshmap-visualizer.png,
-				../_images/meshmap-designer.png]
-howItWorks: Collaborative Infrastructure as Code
-howItWorksDetails: 
-published: FALSE
+    ../_images/meshmap-visualizer.png,
+    ../_images/meshmap-designer.png]
+howItWorks: "Collaborative Infrastructure as Code"
+howItWorksDetails: "Application Gateway Ingress Controller runs in its own pod on the customer’s AKS. Ingress Controller monitors a subset of Kubernetes’ resources for changes. The state of the AKS cluster is translated to Application Gateway specific configuration and applied to the Azure Resource Manager. The continuous re-configuration of Application Gateway ensures uninterrupted flow of traffic to AKS’ services. The diagram below illustrates the flow of state and configuration changes from the Kubernetes API, via Application Gateway Ingress Controller, to Resource Manager and then Application Gateway."
+published: true
 ---
-A Terraform Registry Module for creating a generic frontend web application in AKS with SSL termination at an Application Gateway
+<p>
+    Create generic frontend web application in AKS with SSL termination on an Application Gateway
+</p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.
 </p>
