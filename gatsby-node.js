@@ -702,7 +702,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        video: String,
        community_manager: String,
        docURL: String, 
-       howItWorksDetails: String, 
+
      }
    `;
   createTypes(typeDefs);
