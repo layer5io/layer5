@@ -27,6 +27,7 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
@@ -112,7 +113,7 @@ const options = [
     value: "ui-ux",
     color: theme.linkColor,
     isFixed: true,
-    icon: null,
+    icon: uiuxrIcon,
     className: "allOptions",
   },
   {
