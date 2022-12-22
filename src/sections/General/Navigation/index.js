@@ -15,7 +15,6 @@ import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
 import NavigationWrap from "./navigation.style";
-import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
 
@@ -207,7 +206,6 @@ const Navigation = ({ theme, themeSetter }) => {
   return (
 
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
           <div className="navbar-wrap">
@@ -238,7 +236,7 @@ const Navigation = ({ theme, themeSetter }) => {
                           menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
                         }
                       >
-                        <Link to={menu.path} onClick={changeDropdownState} className="menu-item">{menu.name}</Link>
+                        <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                         <ul>
                           {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
                             <li
@@ -249,7 +247,7 @@ const Navigation = ({ theme, themeSetter }) => {
                                 <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
                                   {subItems.name}
                                 </a>
-                                : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                                : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
                               }
                             </li>
                           ))}
@@ -260,7 +258,7 @@ const Navigation = ({ theme, themeSetter }) => {
                   <div>
                     <ul>
                       <li className="mobile-nav-item">
-                        <Link to="/cloud-native-management/meshmap" className="menu-item">MeshMap</Link>
+                        <Link to="/cloud-native-management/meshmap" className="menu-item" activeClassName="nav-link-active">MeshMap</Link>
                       </li>
                     </ul>
                   </div>

@@ -289,4 +289,26 @@ iframe{
 .Tutorial-btn{
   text-align: center;
 }
+
+.get-start-kubernetes-resource {
+  img {
+    width: 25rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    img {
+      width: 18rem;
+    }
+  }
+  @media screen and (max-width: 699px) {
+    img {
+      filter: brightness(0.5);
+    }
+    .cta-content {
+      p {
+        color: black;
+      }
+    }
+  }
+}
 `;

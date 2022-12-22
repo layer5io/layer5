@@ -1,18 +1,95 @@
 import styled from "styled-components";
 
 export const HoneycombGrid = styled.div`
-  
-  .container-active{
+    .heading {
+    text-align: center;
+
+    h1 {
+      line-height: 3.75rem;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+  }
+
+  .container-active, .container-inactive{
     display: flex;
     height: 95%;
     background: ${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
     justify-content: center;
     align-items: center;
+    padding: 0.625rem;
 
+    .integration-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      overflow: hidden;
+      justify-content: center;
+      img {
+          transition: all 1s cubic-bezier(1, 0.82, 0.165, 1);
+          height: 100%;
+          opacity: 100%;
+        }
+      .integration-icon {
+        flex-shrink: 0;
+      }
+      .integration-content {
+        opacity: 0;
+        text-align: center;
+        align-items: center;
+        height:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        transition: all 1s linear;
+        opacity: 1;
+        overflow: hidden;
+        .title {
+          line-height: 1.375rem;
+          color:${props => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+          transition: all .5s cubic-bezier(1, 0.82, 0.165, 1);
+          // margin-bottom: -2.7rem;
+          font-size: 0.675rem;
+          opacity: .2;
+          font-weight: 600;
+        }
+        .learnMoreBtn {
+          padding: 5px 10px;
+          color: white;
+          font-size: 0.875rem;
+          min-width:unset;
+          box-shadow: none;
+        }
+      }
+    }
 
-    
     :hover {
-      transition: all 0.25s ease-in;  
+      .integration-container {
+        img {
+          transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+          height: 0%;
+          opacity: 0%;
+        }
+        .integration-content {
+          transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          opacity: 1;
+          height:100%;
+          .title {
+            // margin-top: -50%;
+            font-size: 1.2rem;
+            opacity: 1;
+          }
+          .learnMoreBtn {
+            &:hover {
+              background-color: #009b8a;
+            }
+          }
+        }
+      }
       background: #00d3a9;
         ::after{
           content: "";
@@ -27,6 +104,11 @@ export const HoneycombGrid = styled.div`
       }
     }    
   }
+  
+  .container-inactive:hover::after{
+       background-color: #A0AAAA;
+  }
+    
 
   .container-inactive{
     display: flex;
@@ -46,7 +128,7 @@ export const HoneycombGrid = styled.div`
   .category {
     display: flex;
     flex-wrap: wrap;
-    margin: 2.5625rem 0;
+    margin: 2.5625rem 1.2rem;
     gap: 0.625rem;
     justify-content: center;
   }
@@ -72,19 +154,7 @@ export const HoneycombGrid = styled.div`
 export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
   margin: 5.1875rem auto;
-
-  .heading {
-    text-align: center;
-
-    h1 {
-      line-height: 3.75rem;
-    }
-
-    h2 {
-      font-weight: normal;
-    }
-  }
-
+  text-align: center;
 `;
 
 

@@ -11,6 +11,14 @@ We are beyond excited to see that you want to contribute! We would love to accep
       - [Signing-off on Commits](#signing-off-on-commits)
 
 
+⚠️ Cloning this repository ⚠️
+
+Cloning the repo with all its history results in a ~6 GB download. If you don't need the whole history you can use the depth parameter to significantly reduce download size.
+
+```bash
+git clone --depth=1 https://github.com/layer5io/layer5.git
+```
+
 # Before You Get Started
 
 ## Code of Conduct
@@ -37,14 +45,41 @@ Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landsc
 
 Please follow these steps and note these guidelines to begin contributing:
 
-1. First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
+1. First step is to set up the local development environment.
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
 1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
 1. We regularly discuss new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any issue or any idea that you may have.
 
-# Contributing to Layer5's Blogs
+# Contributing to Layer5's Blogs Section
 
 If you'd like to contribute a post to layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
+
+## Things to keep in mind
+  1. We use inbuilt components called Call to Action(CTAs), prominently in our MarkDown(.mdx) files. Check out our [guide to CTAs](https://github.com/layer5io/layer5/blob/master/src/components/Call-To-Actions/README.md).
+
+## Adding a Blog Post
+
+  1. In order to contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.
+  2. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
+  3. Follow the instructions included in the blog template and name the new file after the title of the blog article.
+  4. Entries will be listed in chronological order automatically.
+
+## Adding a Resource
+
+  1. In order to contribute a resource, fork this repository, clone it, create a new branch and navigate to the `src/collections/resources` directory.
+  2. Create a copy of the [resource template](https://github.com/layer5io/layer5/tree/master/src/collections/resources/resources-template).
+  3. Follow the instructions included in the resource template and name the new file after the title of the resource.
+  4. Please note that different types of resources like `article`,`tutorial`, `webinars` are organized into separate folders inside the `/resource` collection. Add your entries in the respective folders.
+  5. To qualify any post as a resource, the field `resource: true` must be added. This applies for `/news`, `/blog`, `/events` as well.
+  6. Each resource can be associated with 4 additional fields: `type`, `mesh`, `technology` and `product`. The current list of values can be found from these [options](https://github.com/layer5io/layer5/blob/master/src/sections/Resources/Resources-grid/options.js).
+   
+## Adding News
+
+  1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
+  2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/news-template/0000-00-00-news-title).
+  3. Follow the instructions included in the news template and name the new file after the title of the news article.
+  4. Entries will be listed in chronological order automatically.
+
 
 # Common Types of Site Contributions
 
@@ -129,28 +164,7 @@ Procedure of changing the image for the gatsby-image is the same as we change fo
   2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site. This performs automatic image optimization, thereby improving site performance.
   3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder. 
 
-## Adding a Blog Post
 
-  1. In order to contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.
-  2. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
-  3. Follow the instructions included in the blog template and name the new file after the title of the blog article.
-  4. Entries will be listed in chronological order automatically.
-
-## Adding News
-
-  1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
-  2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/news-template/0000-00-00-news-title).
-  3. Follow the instructions included in the news template and name the new file after the title of the news article.
-  4. Entries will be listed in chronological order automatically.
-
-## Adding a Resource
-
-  1. In order to contribute a resource, fork this repository, clone it, create a new branch and navigate to the `src/collections/resources` directory.
-  2. Create a copy of the [resource template](https://github.com/layer5io/layer5/tree/master/src/collections/resources/resources-template).
-  3. Follow the instructions included in the resource template and name the new file after the title of the resource.
-  4. Please note that different types of resources like `article`,`tutorial`, `webinars` are organized into separate folders inside the `/resource` collection. Add your entries in the respective folders.
-  5. To qualify any post as a resource, the field `resource: true` must be added. This applies for `/news`, `/blog`, `/events` as well.
-  6. Each resource can be associated with 4 additional fields: `type`, `mesh`, `technology` and `product`. The current list of values can be found from these [options](https://github.com/layer5io/layer5/blob/master/src/sections/Resources/Resources-grid/options.js).
 
 ## Updating/Creating a Community Member Profile 
 

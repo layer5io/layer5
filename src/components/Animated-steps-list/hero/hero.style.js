@@ -48,14 +48,30 @@ export const HeroWrapper = styled.div`
       }
     }
 
-     .code{
-       pre{
-         width: inherit;
-       }
-       .token-line > span:first-of-type{
-         display: none;
-       }
-     }
+    .code{
+      pre{
+        width: inherit;
+        margin: auto;
+
+        button {
+          top: 1rem;
+        }
+
+        pre {
+          display: flex;
+          height: 6rem;
+          align-items: center;
+          padding: 1rem 0.5rem 0.5rem;
+
+          @media screen and (max-width: 850px) {
+            height: 4.5rem;
+          }
+        }
+      }
+      .token-line > span:first-of-type{
+        display: none;
+      }
+    }
   }
     p.enddescr {
       margin-top: 1rem;

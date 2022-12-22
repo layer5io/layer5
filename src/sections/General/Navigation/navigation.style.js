@@ -11,6 +11,9 @@ const NavigationWrap = styled.header`
 
   .nav-container {
     display: flex;
+    @media (min-width:912px) and (max-width:992px){
+      max-width:850px;
+    }
   }
   .meshery-cta {
     position: relative;
@@ -239,7 +242,6 @@ const NavigationWrap = styled.header`
       li {
         padding-top: 5px;
         a {
-          color: ${props => props.theme.menuColor};
           display: block;
           &:hover {
             color: ${props => props.theme.menuHoverColor}; !important;
@@ -368,9 +370,22 @@ const NavigationWrap = styled.header`
       display: block;
       background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       border-radius: 10px;
-      box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
       max-height: 400px;
       overflow-y: scroll;
+      scrollbar-width: thin;
+    }
+    .mobile-dropdown::-webkit-scrollbar{
+      border-radius: 3px;
+      width: 6px;
+	  }
+    .mobile-dropdown::-webkit-scrollbar-track{
+      background-color: #cbced1;
+      border-radius: 3px;
+    }
+    .mobile-dropdown::-webkit-scrollbar-thumb{
+      background-color: #868e96;
+      border-radius: 3px;
     }
     .expand {
       visibility: visible;
@@ -422,6 +437,10 @@ const NavigationWrap = styled.header`
     .mobile-nav-subitem {
       padding-left: 10px;
     }
+  }
+  
+  .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
   }
   
   .anchor:before {

@@ -58,8 +58,8 @@ const Maintainer = () => {
             </p>
             <p>
 
-              Its service mesh community represents the largest collection of
-              service Mesh projects.Emerging projects like Nighthawk{" "}
+              Its cloud nativecommunity represents the largest collection of
+              service Mesh projects. Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
               <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
               <br />
@@ -159,6 +159,16 @@ const Maintainer = () => {
                 <p>
                   Meshery Operator is the multi-service mesh operator and
                   implementation of MeshSync. <br />
+                </p>
+                <li>
+                  <h4>
+                    <a href="https://layer5.io/docker-extension-meshery">
+                      Meshery-docker-extension :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
                 </p>
               </ul>
             </p>

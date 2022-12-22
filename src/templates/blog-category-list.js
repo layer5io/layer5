@@ -60,7 +60,7 @@ const BlogListPage = ({ pageContext, data }) => {
         <GlobalStyle />
         <SEO
           title="Blog"
-          description="Articles how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news."
+          description="Articles on how to develop and operatate cloud native infrastucture and microservices."
           canonical="https://layer5.io/blog"
         />
         <Navigation theme={theme} themeSetter={themeSetter} />

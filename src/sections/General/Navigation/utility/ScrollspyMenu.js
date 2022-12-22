@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
@@ -48,11 +47,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           }
           onMouseOver={() => handleMouseOver(index)}
         >
-          <AnchorLink to={menu.path} className="menu-link">
+          <Link to={menu.path} className="menu-link" activeClassName="nav-link-active">
             <span>
               {menu.name}
             </span>
-          </AnchorLink>
+          </Link>
         </li>
       ))}
       {active.subItems !== undefined && (
@@ -60,7 +59,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
-                <Link className="section" to={active.path}  >{active.name}
+                <Link className="section" to={active.path} activeClassName="nav-link-active">{active.name}
                 </Link>
                 {active.subItems.map((subItem, i) => (
                   <li key={i}>
@@ -68,7 +67,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
                         {subItem.name}
                       </a>
-                      : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>
+                      : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
                         {subItem.name}
                       </Link>
                     }

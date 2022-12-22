@@ -1,17 +1,22 @@
 const lifecycleFeatureData = {
   name: "Lifecycle",
-  description: "Manage any service mesh",
+  description: "Manage all your cloud native infrastructure",
   link: "#",
-  btnText: "Get Started",
+  btnText: "Discover your clusters",
   services: [
     {
       content:
-        "AWS App Mesh, Cilium Service Mesh, Citrix Service Mesh, Consul, Istio, Kuma, Linkerd, Network Service Mesh, NGINX Service Mesh, Open Service Mesh, Traefik Mesh",
+        "Discover, configure, visualize, validate and troubleshoot your existing Kubernetes clusters",
       className: "--on",
     },
     {
       content:
-        "Use sample applications, patterns, and filters to explore service mesh functionality",
+        "Deploy and operate any service mesh",
+      className: "--on",
+    },
+    {
+      content:
+        "Use known cloud native ",
       className: "--on",
     },
     {
@@ -58,7 +63,7 @@ const configurationFeatureData = {
     },
   ],
   count: {
-    value: 100,
+    value: 1500,
     description: "components",
   },
 };
@@ -79,13 +84,21 @@ const performanceFeatureData = {
       className: "--on",
     },
     {
-      content: "Integration with Prometheus and Grafana",
+      content: "Import your existing Grafana dashboards. Ingest any metric from Prometheus",
       className: "--on",
     },
     {
-      content: "Baseline and track deltas of workload performance.",
+      content: "Create and share performance profiles and test results with team members.",
       className: "--on",
     },
+    {
+      content: "Identify the MeshMark of a specific network function",
+      className: "--on",
+    },
+    {
+      content: "Baseline and track deltas of your workload performance",
+      className: "--on",
+    }
   ],
   count: {
     value: 0,
@@ -93,11 +106,42 @@ const performanceFeatureData = {
   },
 };
 
+// const collaborationFeatureData = {
+//   name: "Performance",
+//   description: "Assess the performance of your service mesh",
+//   link: "#",
+//   btnText: "Get Started",
+//   services: [
+//     {
+//       content:
+//         "Distributed performance analysis supporting 3 different types of load generators",
+//       className: "--on",
+//     },
+//     {
+//       content: "Built-in statistical analysis of service latency quartiles",
+//       className: "--on",
+//     },
+//     {
+//       content: "Integration with Prometheus and Grafana",
+//       className: "--on",
+//     },
+//     {
+//       content: "Baseline and track deltas of workload performance.",
+//       className: "--on",
+//     },
+//   ],
+//   count: {
+//     value: 0,
+//     description: "performance tests run",
+//   },
+// };
+
 const data = {
   features: [
     lifecycleFeatureData,
     configurationFeatureData,
     performanceFeatureData,
+    // collaborationFeatureData,
   ],
 };
 

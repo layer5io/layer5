@@ -119,8 +119,10 @@ h5.section-title {
       font-size: 1.1rem;
     }
 }
-
-p {
+input {
+  font-family: 'Qanelas Soft', 'Open Sans', sans-serif;
+}
+p { 
     margin: 0 0 1rem 0;
     font-size: 1.125rem;
     font-weight: 400;
@@ -201,6 +203,9 @@ section{
     border: none;
     overflow: hidden;
 }
+
+/* Modal CSS Ends */
+
 .ball {
   width: 20px;
   height: 20px;
@@ -237,7 +242,31 @@ section{
     }
 }
 
-/* Modal CSS Ends */
+// Banner Display
+.banner1 {
+  .banner1 {
+    display: block !important;
+  }
+}
+
+.banner2 {
+  .banner2 {
+    display: block !important;
+  }
+}
+
+.banner3 {
+  .banner3 {
+    display: block !important;
+  }
+}
+
+.banner4 {
+  .banner4 {
+    display: block !important;
+  }
+}
+
 `;
 
 export { GlobalStyle };

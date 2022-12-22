@@ -37,7 +37,7 @@ const Table = () => {
                   className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
                   <div {...column.getSortByToggleProps()}>
                     {column.render("Header")}
-                    {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
+                    {(column.Header == "Service Mesh Pattern") ?
                       <span>
                         {column.isSorted
                           ? column.isSortedDesc

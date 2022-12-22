@@ -1,29 +1,35 @@
 import React from "react";
-import IntegrationsGrid from "./IntegrationsGrid";
+import loadable from "@loadable/component";
+const IntegrationsGrid = loadable(() => import("./IntegrationsGrid"));
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
 import Card from "./Card";
 import { Location } from "@reach/router";
-
-
-
-
+import Button from "../../../reusecore/Button";
 
 const Integrations = ({ theme }) => {
   return (
     <IntegrationsWrapper>
-      <section className="heading">
-        <h1>Built-In Integrations</h1>
-        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
-        <IntegrationsGrid theme={theme}/>
-        <Location>
-          {({ location }) => {
-            if (location.pathname !== "/") return <>
-              <Card /><FAQ category={["Meshery Integrations"]} />
-            </>;
-          }}
-        </Location>
-      </section>
+
+      <Location>
+        {({ location }) => {
+          if (location.pathname !== "/") {
+            return (
+              <>
+                <IntegrationsGrid theme={theme} count={"All"} />
+                <Card /><FAQ category={["Meshery Integrations"]} />
+              </>
+            );
+          } else {
+            return (
+              <>
+                <IntegrationsGrid theme={theme} count={14} />
+                <Button primary title={"See All"} url="/cloud-native-management/meshery/integrations/" />
+              </>
+            );
+          }
+        }}
+      </Location>
     </IntegrationsWrapper>
   );
 };

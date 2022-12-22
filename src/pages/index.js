@@ -6,14 +6,14 @@ import Navigation from "../sections/General/Navigation";
 import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
-import CloudNativeManagement from "../sections/Home/CloudNativeManagement";
-import Footer from "../sections/General/Footer";
 import loadable from "@loadable/component";
-const SubscribeSection = loadable(() => import ("../sections/subscribe/subscribe"));
-const ServiceMeshFocussed = loadable(() => import ("../sections/Home/Service-mesh-focussed"));
-const CloudNativeLeaders = loadable(() => import ("../sections/Company/Cloud-Native"));
-const SoSpecial = loadable(() => import ("../sections/Home/So-Special-Section"));
-const MesheryIntegration = loadable(() => import ("../sections/Meshery/Meshery-integrations"));
+const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
+const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
+const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
+const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Native"));
+const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
+const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
+const Footer = loadable(() => import("../sections/General/Footer"));
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
@@ -29,7 +29,7 @@ const IndexPage = () => {
     "@type": "Corporation",
     "name": "Layer5",
     "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-tag-dark-bg.png",
+    "logo": "https://layer5.io/images/layer5-gradient.png",
     "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
@@ -50,7 +50,7 @@ const IndexPage = () => {
         {/* <Features /> */}
         {/* <ServiceMeshManagement /> */}
         <CloudNativeManagement />
-        <MesheryIntegration theme={theme}/>
+        <MesheryIntegration theme={theme} />
         {/* <Statement /> */}
         {/* <AppScreens /> */}
         {/* <Pricing /> */}

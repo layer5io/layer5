@@ -49,7 +49,9 @@ function SelectColumnFilter({
   const options = React.useMemo(() => {
     const option = new Set();
     preFilteredRows.forEach(row => {
-      option.add(row.values[id]);
+      if (row.values[id] !== undefined){
+        option.add(row.values[id]);
+      }
     });
     return [...option.values()];
   }, [id, preFilteredRows]);

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const InfoWrapper = styled.div`
 
-  margin: 2rem auto 7.5rem;
+  margin: 2rem auto 1rem;
 
   .info-row {
     margin: auto;
