@@ -2,16 +2,45 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
-// import Button from "../../../reusecore/Button";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 // import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import Slider from 'react-slick';
-// import { Location } from "@reach/router";
 import Slider from "react-slick";
+import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+const IntegrationSlider = styled(Slider)`
+.slick-prev::before, .slick-next::before{
+    color:#00b39f !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .slick-prev:hover, .slick-next:hover{
+    box-shadow: 0 2px 10px rgba(249, 243, 243, 0.4);
+  }
+
+  .slick-slide {
+    width: auto !important;
+    margin: 0 .5rem;
+  }
+
+  .slick-prev::before {
+    content:'<';
+    padding:0 0 0 .5em
+  }
+
+  .slick-next::before {
+    content:'>';
+  }
+
+  .slick-list {
+    margin:1.3em 1em 0;
+  }
+
+  `;
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -49,6 +78,15 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       }
     }
   `);
+
+  const settings = {
+    className: "category",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    initialSlide: -1,
+    centerMode: true
+  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
@@ -210,7 +248,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
       />
-      <Slider slidesToShow={3} slidesToScroll={3} autoplay={true} dots={true} autoplaySpeed={3000} infinite={true} className="category">
+      <IntegrationSlider {...settings}>
         {!hideFilter &&
           categoryNameList.map((item) => {
             return (
@@ -223,7 +261,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
               </p>
             );
           })}
-      </Slider>
+      </IntegrationSlider>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
         <EmptyResources
