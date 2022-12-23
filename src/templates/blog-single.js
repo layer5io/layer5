@@ -32,6 +32,13 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
         extension
         publicURL
       }
+      darkthumbnail {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+        extension
+        publicURL
+      }
     }
     fields {
       slug
@@ -53,7 +60,7 @@ const BlogSinglePage = ({ data }) => {
         <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
-          <BlogSingle data={data} />
+          <BlogSingle theme={theme} data={data} />
         </SimpleReactLightbox>
         <Footer />
       </Layout>
