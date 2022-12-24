@@ -6,6 +6,7 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
+    height: calc(${(props) => props.height}px + 46px);
     li {
       width: 150px;
       margin: 3px;
@@ -20,7 +21,7 @@ export const HoneycombGrid = styled.div`
       content: "";
       width: calc(150px / 2 + 3px);
       float: left;
-      height: 150%;
+      height: 100%;
       shape-outside: repeating-linear-gradient(
         #0000 0 calc(calc(1.732 * 150px + 4 * 3px - 1px) - 3px),
         #000 0 calc(1.732 * 150px + 4 * 3px - 1px)

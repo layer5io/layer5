@@ -24,11 +24,13 @@ const Integrations = ({ theme }) => {
             return (
               <>
                 <IntegrationsGrid theme={theme} count={13} />
-                <Button
-                  primary
-                  title={"See All"}
-                  url="/cloud-native-management/meshery/integrations/"
-                />
+                <div style={{ marginTop: "20px" }}>
+                  <Button
+                    primary
+                    title={"See All"}
+                    url="/cloud-native-management/meshery/integrations/"
+                  />
+                </div>
               </>
             );
           }
