@@ -8,7 +8,6 @@ import MeshmapModes from "./meshmap-modes";
 import Catalog from "./meshmap-catalog";
 import Platform from "./meshmap-platform";
 import MeshmapBanner from "./meshmap_banner";
-import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 import MeshMapDrafts from "./images/meshmap-draft-logos.png";
@@ -71,7 +70,6 @@ const Meshmap = () => {
                   <p className="desc-p">
                     Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
-                  <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
                   <div className="draft-logo">
                     <p>Help choose the best logo for MeshMap:</p>
                     <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
