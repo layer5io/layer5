@@ -42,7 +42,7 @@ const Honeycomb = (props) => {
     return () => {
       window.removeEventListener("resize", setHoneycombHeight);
     };
-  }, []);
+  }, [items]);
 
   return (
     <div>
