@@ -1,24 +1,26 @@
 ---
-title: karpenter  
+title: AW Karpenter  
 subtitle: Collaborative and visual infrastructure as code for karpenter
 integrationIcon: icon/color/karpenter-color.svg
 darkModeIntegrationIcon: icon/white/karpenter-white.svg
 docURL: 
-category: 
-subcategory: 
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+category: Provisioning
+subcategory: Automation & Configuration
+featureList: ["Watching for pods that the Kubernetes scheduler has marked as unschedulable",
+"Evaluating scheduling constraints (resource requests, nodeselectors, affinities, tolerations, and topology spread constraints) requested by the pods",
+"Provisioning nodes that meet the requirements of the pods"
 ]
 workingSlides: [
     ../_images/meshmap-visualizer.png,
     ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
+howItWorks: "Using Meshery and Karpenter, once your Kubernetes cluster and the Karpenter controller are up and running"
+howItWorksDetails: "Set up provisioners: By applying a provisioner to Karpenter, you can configure constraints on node provisioning and set timeout values for node expiry or Kubelet configuration values. 
+
+Deploy workloads: When deploying workloads, you can request that scheduling constraints be met to direct which nodes Karpenter provisions for those workloads. "
 published: true
 ---
 <p>
-    
+    Karpenter is an open-source node provisioning project built for Kubernetes. Adding Karpenter to a Kubernetes cluster can dramatically improve the efficiency and cost of running workloads on that cluster.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.
