@@ -1,0 +1,37 @@
+name: 'Tweet issue or pr'
+
+on:
+  issues:
+    types: labeled
+  pull_request:
+    types: labeled 
+
+    
+permissions:
+  contents: read
+  issues: write
+  
+jobs:
+  tweet:
+    if: ${{ github.event.label.name == 'bug' }}
+    runs-on: ubuntu-latest
+    steps:
+        - if: ${{ github.event_name != 'pull_request' }}
+          name: send a tweet for issue
+          uses: ethomson/send-tweet-action@v1
+          with:
+            status: "Hey everyone, checkout this issue - ${{ github.event.issue.title }} here at : ${{ github.event.issue.html_url }}"
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+            
+        - if: ${{ github.event_name == 'pull_request' }}
+          name: send a tweet for pull request
+          uses: ethomson/send-tweet-action@v1
+          with:
+            status: "Hey everyone, checkout this pull request - ${{ github.event.pull_request.title }} here at : ${{ github.event.pull_request.html_url }}"
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
