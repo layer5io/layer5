@@ -60,6 +60,9 @@ export const Gnhwrapper = styled.section`
 
     .explain-2{
         padding: 25px 0px;
+        .align{
+        align-items: baseline;
+        }
         .text{
             padding: 1.25rem 1.25rem 0px 1.25rem;
             h2{
