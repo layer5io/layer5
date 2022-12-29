@@ -22,12 +22,12 @@ const authorField = (author, isSlugAvailable) => {
 
 const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date }) => {
   let isSlugAvailable = false;
-  if (author) {
+  if (author){
     const validMembers = useStaticQuery(
       graphql`
                 query validMemberss{
                     allMdx(
-                        filter:{
+                        filter:{ 
                             fields:{ collection:{eq:"members"} }
                         }
                     ) {
@@ -45,10 +45,10 @@ const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnai
   return (
     <PageHeaderWrapper>
       <div className="page-header">
-        {thumbnail && <div className="feature-image">
-          <Image {...thumbnail} imgStyle={{ objectFit: "contain" }} alt={title} />
+        { thumbnail && <div className="feature-image">
+          <Image {...thumbnail} imgStyle={{ objectFit: "contain" }} alt={title}/>
         </div>}
-        <h1 className="page-title" >{title}  <sup className="supscript">{superscript}</sup>{img && feedlink && (<a href={feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed" /> </a>)} </h1>
+        <h1 className="page-title" >{title}  <sup className="supscript">{superscript}</sup>{ img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) } </h1>
         {subtitle && (<h3>{subtitle}</h3>)}
         {category && (
           <div className="breadcrumbs">
