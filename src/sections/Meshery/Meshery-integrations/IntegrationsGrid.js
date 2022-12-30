@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
-import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
-import Button from "../../../reusecore/Button";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
-import { Location } from "@reach/router";
+import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -227,8 +225,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
           errorSubtitle={"Try searching again."}
         />
       ) : (
-        <ResponsiveHoneycomb
-          size={90}
+        <Honeycomb
           items={
             count == "All"
               ? activeIntegrationList
