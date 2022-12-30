@@ -1,4 +1,118 @@
-.41" y2="235.21"/>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" viewBox="0 0 216 256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Tux</title>
+	<defs id="tux_fx">
+		<linearGradient id="gradient_belly_shadow">
+			<stop offset="0" stop-color="#000000"/>
+			<stop offset="1" stop-color="#000000" stop-opacity="0.25"/>
+		</linearGradient>
+		<linearGradient id="gradient_wing_tip_right_shadow">
+			<stop offset="0"    stop-color="#110800"/>
+			<stop offset="0.59" stop-color="#a65a00" stop-opacity="0.8"/>
+			<stop offset="1"    stop-color="#ff921e" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_wing_tip_right_glare_1">
+			<stop offset="0" stop-color="#7c7c7c"/>
+			<stop offset="1" stop-color="#7c7c7c" stop-opacity="0.33"/>
+		</linearGradient>
+		<linearGradient id="gradient_wing_tip_right_glare_2">
+			<stop offset="0" stop-color="#7c7c7c"/>
+			<stop offset="1" stop-color="#7c7c7c" stop-opacity="0.33"/>
+		</linearGradient>
+		<linearGradient id="gradient_foot_left_layer_1">
+			<stop offset="0" stop-color="#b98309"/>
+			<stop offset="1" stop-color="#382605"/>
+		</linearGradient>
+		<linearGradient id="gradient_foot_left_glare">
+			<stop offset="0" stop-color="#ebc40c"/>
+			<stop offset="1" stop-color="#ebc40c" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_foot_right_shadow">
+			<stop offset="0" stop-color="#000000"/>
+			<stop offset="1" stop-color="#000000" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_foot_right_layer_1">
+			<stop offset="0" stop-color="#3e2a06"/>
+			<stop offset="1" stop-color="#ad780a"/>
+		</linearGradient>
+		<linearGradient id="gradient_foot_right_glare">
+			<stop offset="0" stop-color="#f3cd0c"/>
+			<stop offset="1" stop-color="#f3cd0c" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_eyeball">
+			<stop offset="0"    stop-color="#fefefc"/>
+			<stop offset="0.75" stop-color="#fefefc"/>
+			<stop offset="1"    stop-color="#d4d4d4"/>
+		</linearGradient>
+		<linearGradient id="gradient_pupil_left_glare">
+			<stop offset="0"    stop-color="#757574" stop-opacity="0"/>
+			<stop offset="0.25" stop-color="#757574"/>
+			<stop offset="0.5"  stop-color="#757574"/>
+			<stop offset="1"    stop-color="#757574" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_pupil_right_glare_2">
+			<stop offset="0"   stop-color="#949494" stop-opacity="0.39"/>
+			<stop offset="0.5" stop-color="#949494"/>
+			<stop offset="1"   stop-color="#949494" stop-opacity="0.39"/>
+		</linearGradient>
+		<linearGradient id="gradient_eyelid_left">
+			<stop offset="0" stop-color="#c8c8c8"/>
+			<stop offset="1" stop-color="#797978"/>
+		</linearGradient>
+		<linearGradient id="gradient_eyelid_right">
+			<stop offset="0"    stop-color="#747474"/>
+			<stop offset="0.13" stop-color="#8c8c8c"/>
+			<stop offset="0.25" stop-color="#a4a4a4"/>
+			<stop offset="0.5"  stop-color="#d4d4d4"/>
+			<stop offset="0.62" stop-color="#d4d4d4"/>
+			<stop offset="1"    stop-color="#7c7c7c"/>
+		</linearGradient>
+		<linearGradient id="gradient_eyebrow">
+			<stop offset="0"    stop-color="#646464" stop-opacity="0"/>
+			<stop offset="0.31" stop-color="#646464" stop-opacity="0.58"/>
+			<stop offset="0.47" stop-color="#646464"/>
+			<stop offset="0.73" stop-color="#646464" stop-opacity="0.26"/>
+			<stop offset="1"    stop-color="#646464" stop-opacity="0"/>
+		</linearGradient>
+		<linearGradient id="gradient_beak_base">
+			<stop offset="0"    stop-color="#020204"/>
+			<stop offset="0.73" stop-color="#020204"/>
+			<stop offset="1"    stop-color="#5c5c5c"/>
+		</linearGradient>
+		<linearGradient id="gradient_mandible_lower">
+			<stop offset="0"    stop-color="#d2940a"/>
+			<stop offset="0.75" stop-color="#d89c08"/>
+			<stop offset="0.87" stop-color="#b67e07"/>
+			<stop offset="1"    stop-color="#946106"/>
+		</linearGradient>
+		<linearGradient id="gradient_mandible_upper">
+			<stop offset="0"    stop-color="#ad780a"/>
+			<stop offset="0.12" stop-color="#d89e08"/>
+			<stop offset="0.25" stop-color="#edb80b"/>
+			<stop offset="0.39" stop-color="#ebc80d"/>
+			<stop offset="0.53" stop-color="#f5d838"/>
+			<stop offset="0.77" stop-color="#f6d811"/>
+			<stop offset="1"    stop-color="#f5cd31"/>
+		</linearGradient>
+		<linearGradient id="gradient_nares">
+			<stop offset="0"    stop-color="#3a2903"/>
+			<stop offset="0.55" stop-color="#735208"/>
+			<stop offset="1"    stop-color="#ac8c04"/>
+		</linearGradient>
+		<linearGradient id="gradient_beak_corner">
+			<stop offset="0" stop-color="#f5ce2d"/>
+			<stop offset="1" stop-color="#d79b08"/>
+		</linearGradient>
+		<radialGradient id="fill_belly_shadow_left" href="#gradient_belly_shadow" xlink:href="#gradient_belly_shadow"
+			gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(61.18,121.19) scale(19,18)"/>
+		<radialGradient id="fill_belly_shadow_right" href="#gradient_belly_shadow" xlink:href="#gradient_belly_shadow"
+			gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(125.74,131.6) scale(23.6,18)"/>
+		<radialGradient id="fill_belly_shadow_middle" href="#gradient_belly_shadow" xlink:href="#gradient_belly_shadow"
+			gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(94.21,127.47) scale(9.35,10)"/>
+		<linearGradient id="fill_foot_left_base" href="#gradient_foot_left_layer_1" xlink:href="#gradient_foot_left_layer_1"
+			gradientUnits="userSpaceOnUse" x1="23.18" y1="193.01" x2="64.31" y2="262.02"/>
+		<linearGradient id="fill_foot_left_glare" href="#gradient_foot_left_glare" xlink:href="#gradient_foot_left_glare"
+			gradientUnits="userSpaceOnUse" x1="64.47" y1="210.83" x2="77.41" y2="235.21"/>
 		<linearGradient id="fill_foot_right_shadow" href="#gradient_foot_right_shadow" xlink:href="#gradient_foot_right_shadow"
 			gradientUnits="userSpaceOnUse" x1="146.93" y1="211.96" x2="150.2" y2="235.73"/>
 		<linearGradient id="fill_foot_right_base" href="#gradient_foot_right_layer_1" xlink:href="#gradient_foot_right_layer_1"
