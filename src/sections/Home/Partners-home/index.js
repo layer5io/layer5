@@ -13,8 +13,8 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
+  centerMode: true,
+  variableWidth: true,
   autoplay: true,
   autoplaySpeed: 2000,
   className: "partner-slider",
@@ -39,16 +39,16 @@ const Projects = () => {
             <h4>ENGAGING AND COLLABORATING WITH</h4>
           </SectionTitle>
         </Row>
-        <Slider {...settings}>
-          {partners.map((partner, index) => (
-            <Link className="partner-card" to={partner.imageRoute} key={index}>
-              <div className={partner.innerDivStyle}>
-                <img src={partner.imageLink} alt={partner.name} width="100%" height="auto" />
-              </div>
-            </Link>
-          ))}
-        </Slider>
       </Container>
+      <Slider {...settings}>
+        {partners.map((partner, index) => (
+          <Link className="partner-card" to={partner.imageRoute} key={index}>
+            <div className={partner.innerDivStyle}>
+              <img src={partner.imageLink} alt={partner.name} width="100%" height="auto" />
+            </div>
+          </Link>
+        ))}
+      </Slider>
     </PartnerItemWrapper>
   );
 };
