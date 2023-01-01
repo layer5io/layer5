@@ -19,7 +19,6 @@ const Pricing = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Pricing" description="Layer5 Pricing" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <PricingPage />
         <Footer />
@@ -28,3 +27,7 @@ const Pricing = () => {
   );
 };
 export default Pricing;
+
+export const Head = () => {
+  return  <SEO title="Pricing" description="Layer5 Pricing" />;
+};

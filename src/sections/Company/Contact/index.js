@@ -7,7 +7,7 @@ import Partner_Icon from "../../../assets/images/contact/partner.svg";
 import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 import ContactForm from "../../../components/ContactForm";
 
 const ContactPage = () => {
@@ -66,9 +66,9 @@ const ContactPage = () => {
           </div>
         </Row>
       </Container>
-      <Helmet>
+      {/* <Helmet>
         <script src="https://v8hx52m354g0.statuspage.io/embed/script.js"></script>
-      </Helmet>
+      </Helmet> */}
     </ContactPageWrapper>
   );
 };

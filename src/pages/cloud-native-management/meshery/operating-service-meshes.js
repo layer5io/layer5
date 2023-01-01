@@ -37,9 +37,6 @@ const OperatingServiceMeshes = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Manage Meshery"
-          description="How the cloud native management plane, Meshery works"
-          image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <HowMesheryWorksHero theme={theme} />
         <HowMesheryWorks
@@ -136,3 +133,10 @@ const OperatingServiceMeshes = () => {
   );
 };
 export default OperatingServiceMeshes;
+
+
+export const Head = () => {
+  return  <SEO title="Manage Meshery"
+    description="How the cloud native management plane, Meshery works"
+    image="/images/meshery-logo-dark-text.png" />;
+};
