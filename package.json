@@ -108,6 +108,6 @@
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "rimraf": "^3.0.2",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^5.0.1"
   }
 }
