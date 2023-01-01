@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.11.3",
-    "@fullcalendar/google-calendar": "^5.11.3",
+    "@fullcalendar/google-calendar": "^6.0.2",
     "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^5.11.2",
     "@loadable/component": "^5.15.2",
