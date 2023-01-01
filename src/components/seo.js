@@ -56,11 +56,14 @@ const SEO = ({ canonical, description,image, meta, schemaMarkup, title }) => {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
+      <link rel="preconnect" href="https://fonts.gstatic.com/" />
       <link
-        rel="stylesheet"
+        rel="preload"
         href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
         media="print"
         onLoad="this.media='all'"
+        as="font"
+        crossOrigin
       />
       {canonical &&   <link rel="canonical" href={canonical} />}
       {schemaMarkup &&
