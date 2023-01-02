@@ -6,7 +6,8 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
-    height: calc(${(props) => props.height}px + 46px);
+    height: ${(props) =>
+  props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
     li {
       width: 150px;
       margin: 3px;
