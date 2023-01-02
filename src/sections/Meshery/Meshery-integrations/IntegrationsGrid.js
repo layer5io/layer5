@@ -106,7 +106,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const clearFilter = () => {
     let tempCategoryList = [...categoryNameList];
-    const selectedCategory = "All";
+    const selectedCategory = category ?? "All";
     tempCategoryList.forEach((item) => {
       if (item.name != selectedCategory) {
         item.isSelected = false;
