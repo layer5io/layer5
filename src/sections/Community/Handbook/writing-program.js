@@ -194,6 +194,7 @@ const Writers = () => {
             <ul>
               <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-blog-post">Contributing to Layer5 Blogs</a></li>
               <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-resource">Contributing to Layer5 Resources</a></li>
+              <li><a href="https://github.com/layer5io/layer5/labels/area%2Fblog">Contributing to Layer5 Github Issues</a></li>
               <li>Join the <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a></li>
               <li>Explore our <Link to="/resources">Resource Library</Link></li>
               <li><Link to="/learn">Free service mesh training</Link></li>
