@@ -62,46 +62,6 @@ To give an example of how these policy languages can be used, consider a scenari
 
 In CEL, we might define the policy as follows:
 
-```function isAuthorized(user: User) -> bool {
-  return user.role == "admin" || user.role == "moderator";
-}
-
-expression authorizedToAccessResource(user: User, resource: Resource) -> bool {
-  return isAuthorized(user) && user.hasPermission(resource);
-}```
-
-In Sentinel, we might define the policy as follows:
-
-```import "strings"
-
-authorization_roles = ["admin", "moderator"]
-
-is_authorized(user) {
-  user.role in authorization_roles
-}
-
-authorized_to_access_resource(user, resource) {
-  is_authorized(user) && user.has_permission(resource)
-}```
-
-In Rego, we might define the policy as follows:
-
-```
-package policy
-
-import data.users
-
-authorization_roles = ["admin", "moderator"]
-
-is_authorized(user) {
-  user.role in authorization_roles
-}
-
-authorized_to_access_resource(user, resource) {
-  is_authorized(user) && user.has_permission(resource)
-}
-```
-
 In each of these examples, we define a custom function (isAuthorized, is_authorized, and is_authorized respectively) that checks whether a user is authorized to access a resource based on their role. We then use this function in an expression (authorizedToAccessResource, authorized_to_access_resource, and authorized_to_access_resource respectively) to determine whether a user is allowed to access a particular resource.
 
 ## Summary
