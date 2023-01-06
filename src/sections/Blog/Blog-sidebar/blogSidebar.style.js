@@ -8,6 +8,9 @@ const BlogSideBarWrapper = styled.div`
 
     .widgets-title{
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         cursor: pointer;
         h3{
             display: inline-block;
@@ -226,7 +229,7 @@ const BlogSideBarWrapper = styled.div`
                 }
                 }
             }
-        }
+        
     }
     @media screen and (max-width: 992px) {      
         display: flex;

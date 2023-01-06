@@ -10,21 +10,27 @@ import Button from "../../../reusecore/Button";
 const Integrations = ({ theme }) => {
   return (
     <IntegrationsWrapper>
-
       <Location>
         {({ location }) => {
           if (location.pathname !== "/") {
             return (
               <>
                 <IntegrationsGrid theme={theme} count={"All"} />
-                <Card /><FAQ category={["Meshery Integrations"]} />
+                <Card />
+                <FAQ category={["Meshery Integrations"]} />
               </>
             );
           } else {
             return (
               <>
-                <IntegrationsGrid theme={theme} count={14} />
-                <Button primary title={"See All"} url="/cloud-native-management/meshery/integrations/" />
+                <IntegrationsGrid theme={theme} count={13} />
+                <div style={{ marginTop: "20px" }}>
+                  <Button
+                    primary
+                    title={"See All"}
+                    url="/cloud-native-management/meshery/integrations/"
+                  />
+                </div>
               </>
             );
           }
@@ -35,6 +41,3 @@ const Integrations = ({ theme }) => {
 };
 
 export default Integrations;
-
-
-
