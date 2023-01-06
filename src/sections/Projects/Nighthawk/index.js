@@ -77,7 +77,7 @@ const Projects = ({ theme }) => {
         </div>
 
         <div className="explain-2">
-          <Row>
+          <Row className="align">
             <Col lg={6} md={6} sm={12}>
               <div className="text">
                 <h2>Nighthawk and Meshery</h2>
@@ -91,7 +91,7 @@ const Projects = ({ theme }) => {
         </div>
 
         <div className="explain-2">
-          <Row>
+          <Row className="align">
             <Col lg={6} md={6} sm={12}>
               <StaticImage src={explain3} alt="explanation" />
             </Col>

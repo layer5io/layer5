@@ -35,10 +35,10 @@ const Table = () => {
               {headerGroup.headers.map((column, index) => (
                 <th key={index} {...column.getHeaderProps()}
                   className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
-                  <div {...column.getSortByToggleProps()}>
+                  <div  >
                     {column.render("Header")}
                     {(column.Header == "Service Mesh Pattern") ?
-                      <span>
+                      <span {...column.getSortByToggleProps()}>
                         {column.isSorted
                           ? column.isSortedDesc
                             ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
