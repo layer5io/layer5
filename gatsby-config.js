@@ -24,18 +24,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-svgr",
     {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: ["G-MDVP5FT6JY"],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-feed",
       options: {
         query: `

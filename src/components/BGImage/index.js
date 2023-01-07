@@ -5,7 +5,7 @@ import { BGWrapper, FakeBGImg, Content } from "./BGImage.styles";
 const BGImg = ({ image, title, className, children }) => {
   return (
     <BGWrapper>
-      <FakeBGImg image={image} title={title} />
+      <FakeBGImg loading="eager" placeholder="none" image={image} title={title} />
       <Content className={className}>{children}</Content>
     </BGWrapper>
   );
