@@ -62,14 +62,11 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/projects/service-mesh-performance">
-<img src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Performance Specification Index" align="left" 
-srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg @media (prefers-color-scheme: dark)" />
-<img src=".github/assets/images/smp-dark-text.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Performance Specification Index" align="left" 
-srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg @media (prefers-color-scheme: light)" />      
+<picture align="left">
+         <source media="(prefers-color-scheme: dark)" srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg">
+         <source media="(prefers-color-scheme: light)" srcset=".github/assets/images/smp-dark-text.svg">
+         <img align="left" src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg" alt="Shows a dark SMP logo in light mode and a white logo in dark mode" width="125px" style="float:left;margin:10px;" />
+</picture>
 </a>
 The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service/application details, and bundling of statistical analysis of results.
 <br /><br /><br />
