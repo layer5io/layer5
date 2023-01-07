@@ -62,7 +62,7 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/projects/service-mesh-performance">
-<img src=".github/assets/images/smp-dark-text.svg"
+<img src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" />
 </a>
