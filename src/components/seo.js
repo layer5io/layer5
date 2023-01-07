@@ -65,6 +65,16 @@ const SEO = ({ canonical, description,image, meta, schemaMarkup, title }) => {
         as="font"
         crossOrigin
       />
+      <noscript>
+        {`${
+          <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
+            as="font"
+            crossOrigin
+          />
+          }`}
+      </noscript>
       {canonical &&   <link rel="canonical" href={canonical} />}
       {schemaMarkup &&
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>}
