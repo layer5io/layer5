@@ -24,7 +24,6 @@ const FAQPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="FAQs" description="Frequently Asked Questions" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <FAQ category={["all"]} />
         <DiscussCallout />
@@ -35,3 +34,7 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
+
+export const Head = () => {
+  return <SEO title="FAQs" description="Frequently Asked Questions" />;
+};

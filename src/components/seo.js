@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql,Script } from "gatsby";
 import FavIcon from "../assets/images/favicon.png";
 
 
@@ -77,7 +77,7 @@ const SEO = ({ canonical, description,image, meta, schemaMarkup, title }) => {
       </noscript>
       {canonical &&   <link rel="canonical" href={canonical} />}
       {schemaMarkup &&
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>}
+        <Script type="application/ld+json">{JSON.stringify(schemaMarkup)}</Script>}
     </>
   );
 };

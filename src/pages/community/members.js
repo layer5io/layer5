@@ -198,10 +198,6 @@ const MembersPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title="Members"
-          description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Dropdown options={options} handleChange={handleChange} />
 
@@ -217,3 +213,10 @@ const MembersPage = () => {
 };
 
 export default MembersPage;
+
+export const Head = () => {
+  return <SEO
+    title="Members"
+    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+  />;
+};

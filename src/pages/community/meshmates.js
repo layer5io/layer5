@@ -20,10 +20,6 @@ const MeshmatePage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Meshmates"
-          description="MeshMates - the Layer5 contributor onboarding program.
-          MeshMates is a collection of cloud native mentors."
-          image={seoImage} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Meshmates theme={theme} />
         <Footer />
@@ -33,3 +29,11 @@ const MeshmatePage = () => {
 };
 
 export default MeshmatePage;
+
+
+export const Head = () => {
+  return  <SEO title="Meshmates"
+    description="MeshMates - the Layer5 contributor onboarding program.
+          MeshMates is a collection of cloud native mentors."
+    image={seoImage} />;
+};

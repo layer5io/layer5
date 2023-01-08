@@ -24,7 +24,6 @@ const Contact = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Contact" description="Contact Layer5 for help managing your cloud native infrastructre and apps. Layer5 is the maker of Meshery and service mesh standards." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ContactPage />
         <Footer />
@@ -33,3 +32,7 @@ const Contact = () => {
   );
 };
 export default Contact;
+
+export const Head = () => {
+  return <SEO title="Contact" description="Contact Layer5 for help managing your cloud native infrastructre and apps. Layer5 is the maker of Meshery and service mesh standards." />;
+};
