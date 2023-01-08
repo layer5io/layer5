@@ -25,7 +25,7 @@ export const useSiteMetadata = () => {
 };
 
 
-const SEO = ({ canonical, description,image, meta, schemaMarkup, title }) => {
+const SEO = ({ canonical, description,image, meta, schemaMarkup, title,children }) => {
   const { pathname } = useLocation();
   const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
   const seo = {
@@ -78,6 +78,7 @@ const SEO = ({ canonical, description,image, meta, schemaMarkup, title }) => {
       {canonical &&   <link rel="canonical" href={canonical} />}
       {schemaMarkup &&
         <Script type="application/ld+json">{JSON.stringify(schemaMarkup)}</Script>}
+      {children}
     </>
   );
 };
