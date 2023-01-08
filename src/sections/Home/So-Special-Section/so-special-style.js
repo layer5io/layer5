@@ -41,7 +41,6 @@ const SoSpecialWrapper = styled.div`
         font-size: 6rem;
         display: inline-block;
         height: 3rem;
-        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
     }
     .slick-arrow:hover:before{	
         color: ${props => props.theme.secondaryColor};

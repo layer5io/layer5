@@ -16,6 +16,7 @@ const BlogList = ({
   setGridView,
   pageContext,
   data,
+  theme
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
@@ -79,7 +80,7 @@ const BlogList = ({
                 {currentPosts.length > 0 &&
                   currentPosts.map(({ id, frontmatter, fields }) => (
                     <Col xs={12} key={id}>
-                      <Card frontmatter={frontmatter} fields={fields} />
+                      <Card theme={theme} frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                 <Col>
