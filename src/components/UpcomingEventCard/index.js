@@ -27,7 +27,7 @@ const UpcomingEvents = ({ data }) => {
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Link to={slugify(item.frontmatter.title)}>
+                      <Link to={`/community/events/${slugify(item.frontmatter.title)}`}>
                         <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
                       </Link>
                     </div>
