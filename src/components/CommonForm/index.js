@@ -30,18 +30,18 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
   const errorAccounts = "Please provide at least one account";
   const errorRole = "Please select role as applicable";
 
-  const confirmationMessageRef = useRef(null)  //set reference to confirmation message
+  const confirmationMessageRef = useRef(null);  //set reference to confirmation message
   const navBarOffset = 120;
 
   const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - offset;
-  
+
     window.scrollTo({
-         top: offsetPosition,
-         behavior: "smooth"
+      top: offsetPosition,
+      behavior: "smooth"
     });
-}
+  };
 
   useEffect(() => {
     if (submit) {
@@ -78,7 +78,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           setSubmit(true);
           // window.scrollTo(0,window.scrollY - 800);
           // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
-          scrollElementIntoView(confirmationMessageRef.current, navBarOffset)
+          scrollElementIntoView(confirmationMessageRef.current, navBarOffset);
         } else {
           if (!values.role) {
             setValidateRole(true);
