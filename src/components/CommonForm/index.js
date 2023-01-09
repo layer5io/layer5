@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, forwardRef } from "react";
 import Button from "../../reusecore/Button";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
@@ -29,6 +29,19 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
 
   const errorAccounts = "Please provide at least one account";
   const errorRole = "Please select role as applicable";
+
+  const confirmationMessageRef = useRef(null)  //set reference to confirmation message
+  const navBarOffset = 120;
+
+  const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - offset;
+  
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+}
 
   useEffect(() => {
     if (submit) {
@@ -63,7 +76,9 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
-          window.scrollTo(0,window.scrollY - 800);
+          // window.scrollTo(0,window.scrollY - 800);
+          // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
+          scrollElementIntoView(confirmationMessageRef.current, navBarOffset)
         } else {
           if (!values.role) {
             setValidateRole(true);
@@ -145,16 +160,16 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
       }
       {
         stepNumber === 1 &&
-                    <ThankYou title={submit_title} description={submit_body} />
+                    <ThankYou title={submit_title} description={submit_body} ref={confirmationMessageRef} />
       }
     </CommonFormWrapper>
   );
 };
 
-const ThankYou = ({ title, description }) => {
+const ThankYou = forwardRef(({ title, description }, ref) => {
   return (
     <Container>
-      <div className="thank-you-box">
+      <div className="thank-you-box" ref={ref}>
         <h2>{title}</h2>
         <p>{description}</p>
         <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
@@ -162,7 +177,7 @@ const ThankYou = ({ title, description }) => {
       </div>
     </Container>
   );
-};
+});
 
 
 export default CommonForm;
