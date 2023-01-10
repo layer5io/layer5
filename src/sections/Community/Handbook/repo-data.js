@@ -111,7 +111,7 @@ export const repo_data = [
         project: "Cloud Native Playground",
         image: meshery,
         site: "https://play.meshery.io",
-        language: "Meshery",
+        language: "React.js",
         maintainers_name: ["Nikhil Ladha"],
         link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/meshery/play",
