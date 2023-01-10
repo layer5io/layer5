@@ -22,7 +22,7 @@ jobs:
           with:
             username: ${{ github.actor }}
             team: 'Layer5'
-            GITHUB_TOKEN: ${{ github.token }}
+            GITHUB_TOKEN: ${{  secrets.GLOBAL_TOKEN }}
 
         - if: ${{ github.event_name != 'pull_request' }}
           if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
