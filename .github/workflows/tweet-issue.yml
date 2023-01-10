@@ -29,7 +29,7 @@ jobs:
           name: send a tweet for issue
           uses: ethomson/send-tweet-action@v1
           with:
-            status: "Hey everyone, we need some help with this issue - ${{ github.event.issue.title }} here at : ${{ github.event.issue.html_url }} #opensource"
+            status: 'Help wanted on this issue: "${{ github.event.issue.title }}" - ${{ github.event.issue.html_url }} \#opensource'
             consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
             consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
             access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
@@ -39,7 +39,7 @@ jobs:
           name: send a tweet for pull request
           uses: ethomson/send-tweet-action@v1
           with:
-            status: "Hey everyone, we need some help with this pull request - ${{ github.event.pull_request.title }} here at : ${{ github.event.pull_request.html_url }} #opensource"
+            status: 'Help wanted on this PR: "${{ github.event.pull_request.title }}" - ${{ github.event.pull_request.html_url }} \#opensource'
             consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
             consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
             access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
