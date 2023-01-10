@@ -15,6 +15,7 @@ import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 
 // Assets + Icons
 import theme from "../../theme/app/themeStyles";
+import writerIcon from "../../assets/images/writer/writer-badge.png";
 import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -49,6 +50,14 @@ const options = [
     color: theme.linkColor,
     isFixed: true,
     icon: communityIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Writer",
+    value: "writer",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: writerIcon,
     className: "allOptions",
   },
   {
@@ -206,7 +215,7 @@ const MembersPage = () => {
         <Dropdown options={options} handleChange={handleChange} />
 
         {!members ? (
-          <MultipleMembers members={[options[10]]} />
+          <MultipleMembers members={[options[11]]} />
         ) : (
           <MultipleMembers members={members} />
         )}
