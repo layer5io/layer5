@@ -64,7 +64,6 @@ export const HoneycombGrid = styled.div`
       position: absolute;
       img {
         transition: all 1s cubic-bezier(1, 0.82, 0.165, 1);
-        height: 100%;
         opacity: 100%;
       }
       .integration-icon {

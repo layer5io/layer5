@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import useDataList from "../../../utils/usedataList";
@@ -51,13 +51,12 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     ["frontmatter", "title"],
     ["frontmatter", "title"]
   );
-  const [activeIntegrationList, setIntegrationList] = useState(
-    data.allMdx.nodes
-  );
+  const [activeIntegrationList, setIntegrationList] = useState([]);
   const [hideFilter, setHideFilter] = useState(false);
+  const allIntegrations = useRef(data.allMdx.nodes);
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
-  const categoryNames = activeIntegrationList.reduce(
+  const categoryNames = allIntegrations.current.reduce(
     (initCategory, integration) => {
       if (!initCategory.includes(integration.frontmatter.category)) {
         initCategory.push(integration.frontmatter.category);
@@ -68,7 +67,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   );
 
   const categoryCount = (categoryName) => {
-    return activeIntegrationList.reduce((count, integration) => {
+    return allIntegrations.current.reduce((count, integration) => {
       if (integration.frontmatter.category === categoryName) {
         count += 1;
       }
@@ -80,8 +79,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
     {
       id: -1,
       name: "All",
-      isSelected: true,
-      count: activeIntegrationList.length,
+      isSelected: false,
+      count: allIntegrations.current.length,
     },
     ...categoryNames.map((categoryName) => {
       return {
@@ -106,7 +105,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
 
   const clearFilter = () => {
     let tempCategoryList = [...categoryNameList];
-    const selectedCategory = "All";
+    const selectedCategory = category ?? "All";
     tempCategoryList.forEach((item) => {
       if (item.name != selectedCategory) {
         item.isSelected = false;
