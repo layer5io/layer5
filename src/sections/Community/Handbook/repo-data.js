@@ -107,6 +107,15 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
+      {
+        project: "Cloud Native Playground",
+        image: meshery,
+        site: "https://play.meshery.io",
+        language: "React.js",
+        maintainers_name: ["Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/nikhil-ladha"],
+        repository: "https://github.com/meshery/play",
+      },
     ],
   },
 
