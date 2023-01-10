@@ -26,7 +26,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
 
         - if: ${{ github.event_name != 'pull_request' && steps.checkUserMember.outputs.isTeamMember == 'true' }}
-          name: send a tweet for issue
+          name: Check if it is issue
           uses: ethomson/send-tweet-action@v1
           with:
             status: 'Help wanted on this issue: "${{ github.event.issue.title }}" - ${{ github.event.issue.html_url }} \#opensource'
@@ -36,7 +36,7 @@ jobs:
             access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET_LAYER5 }}
             
         - if: ${{ github.event_name == 'pull_request' && steps.checkUserMember.outputs.isTeamMember == 'true' }}
-          name: send a tweet for pull request
+          name: Check if it is PR
           uses: ethomson/send-tweet-action@v1
           with:
             status: 'Help wanted on this PR: "${{ github.event.pull_request.title }}" - ${{ github.event.pull_request.html_url }} \#opensource'
