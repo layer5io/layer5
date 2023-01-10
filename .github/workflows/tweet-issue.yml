@@ -1,4 +1,4 @@
-name: 'Tweet issue or pr'
+name: "Tweet issue/pr when labeled"
 
 on:
   issues:
@@ -21,27 +21,26 @@ jobs:
           id: checkUserMember
           with:
             username: ${{ github.actor }}
-            team: 'Layer5'
-            GITHUB_TOKEN: ${{  secrets.GLOBAL_TOKEN }}
+            organization: "layer5"
+            team: "maintainers"
+            GITHUB_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
 
-        - if: ${{ github.event_name != 'pull_request' }}
-          if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+        - if: ${{ github.event_name != 'pull_request' && steps.checkUserMember.outputs.isTeamMember == 'true' }}
           name: send a tweet for issue
           uses: ethomson/send-tweet-action@v1
           with:
             status: "Hey everyone, we need some help with this issue - ${{ github.event.issue.title }} here at : ${{ github.event.issue.html_url }} #opensource"
-            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET_LAYER5 }}
             
-        - if: ${{ github.event_name == 'pull_request' }}
-          if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+        - if: ${{ github.event_name == 'pull_request' && steps.checkUserMember.outputs.isTeamMember == 'true' }}
           name: send a tweet for pull request
           uses: ethomson/send-tweet-action@v1
           with:
             status: "Hey everyone, we need some help with this pull request - ${{ github.event.pull_request.title }} here at : ${{ github.event.pull_request.html_url }} #opensource"
-            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET_LAYER5 }}
