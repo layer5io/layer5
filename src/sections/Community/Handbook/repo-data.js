@@ -110,7 +110,7 @@ export const repo_data = [
       {
         project: "Cloud Native Playground",
         image: meshery,
-        site: "http://play.meshery.io/",
+        site: "https://play.meshery.io",
         language: "Meshery",
         maintainers_name: ["Nikhil Ladha"],
         link: ["https://layer5.io/community/members/nikhil-ladha"],
