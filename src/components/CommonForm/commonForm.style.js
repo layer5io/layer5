@@ -8,6 +8,7 @@ const CommonFormWrapper = styled.section`
     background-color: ${props => props.theme.darkJungleGreenColor};
     border-radius: 2rem;
     min-height: 20rem;
+    animation: fade-in 0.8s;
     
     h2, h3 {
       color: white;
@@ -22,7 +23,14 @@ const CommonFormWrapper = styled.section`
     }
 }
 
-
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+}
 
 .form-body{
 box-shadow: 0px 5px 5px 2px ${props => props.theme.primaryLightColor};
