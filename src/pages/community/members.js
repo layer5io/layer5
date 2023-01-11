@@ -15,7 +15,7 @@ import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 
 // Assets + Icons
 import theme from "../../theme/app/themeStyles";
-import writerIcon from "../../assets/images/writer/writer-badge.png";
+import writerIcon from "../../assets/images/writer-program/writer-program-badge.svg";
 import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -191,11 +191,29 @@ const options = [
   icon: obj.icon && `url(${obj.icon})`,
 }));
 
+const allMember = {
+  label: "All Members",
+  value: "all",
+  color: theme.linkColor,
+  isFixed: true,
+  icon: null,
+  className: "allOptions",
+};
+
+const activeMember = {
+  label: "Active",
+  value: "active",
+  color: theme.linkColor,
+  isFixed: true,
+  icon: activeIcon,
+  className: "allOptions",
+};
+
 const MembersPage = () => {
   /**
    * state storing the currently selected categories.
    */
-  const [members, setMembers] = useState([options[11]]);
+  const [members, setMembers] = useState([activeMember]);
   const handleChange = (value) => setMembers(value);
 
   const [theme, setTheme] = useState();
@@ -215,7 +233,7 @@ const MembersPage = () => {
         <Dropdown options={options} handleChange={handleChange} />
 
         {!members ? (
-          <MultipleMembers members={[options[11]]} />
+          <MultipleMembers members={[allMember]} />
         ) : (
           <MultipleMembers members={members} />
         )}
