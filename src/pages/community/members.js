@@ -191,15 +191,6 @@ const options = [
   icon: obj.icon && `url(${obj.icon})`,
 }));
 
-const allMember = {
-  label: "All Members",
-  value: "all",
-  color: theme.linkColor,
-  isFixed: true,
-  icon: null,
-  className: "allOptions",
-};
-
 const activeMember = {
   label: "Active",
   value: "active",
@@ -231,12 +222,7 @@ const MembersPage = () => {
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Dropdown options={options} handleChange={handleChange} />
-
-        {!members ? (
-          <MultipleMembers members={[allMember]} />
-        ) : (
-          <MultipleMembers members={members} />
-        )}
+        <MultipleMembers members={members} />
         <Footer />
       </Layout>
     </ThemeProvider>
