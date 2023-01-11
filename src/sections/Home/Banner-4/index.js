@@ -74,7 +74,6 @@ const Banner1 = (props) => {
           )}
         </Row>
       </BGImg>
-      {/* </BgImage> */}
     </Banner1SectionWrapper>
   );
 };

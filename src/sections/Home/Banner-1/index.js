@@ -15,7 +15,7 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props} >
       <Container fullWidthSM>
-        <img alt="hero-image" src={Backgroundsvg} className="background-svg" />
+        <img loading="eager" alt="hero-image" src={Backgroundsvg} className="background-svg" />
         <Row>
           <Col sm={8} lg={8} className="section-title-wrapper">
 
