@@ -143,9 +143,6 @@ const SMPWrapper = styled.section`
     rect {
         fill:  ${props => props.theme.DarkTheme ? "#313131" : "#FFF7D8"};  
       }
-      path {
-        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#EBC017"};
-      }
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{
