@@ -183,6 +183,8 @@ Badges are a great way of highlighting the area of contribution by any given com
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-performance/stacked/smp-dark-text.svg" width="25px" height="25px"/> SMP
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg" width="25px" height="25px"/> Nighthawk
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-patterns/service-mesh-pattern.svg" width="25px" height="25px"/> Patterns
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/ux-design/ux-design.svg" width="25px" height="25px"/> UX Design
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/writer-program/writers-program.svg" width="25px" height="25px"/> Writer's program
 
 ## Updating the Service Mesh Landscape 
 
