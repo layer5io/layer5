@@ -34,12 +34,14 @@ export const query = graphql`
 const ProgramsPage = ({ data }) => {
   const [activeOption, setActiveOption] = useState(0);
   const programs = data.allMdx.nodes;
+
   const options = programs.map((program, index) => {
     let optionItem = new Object();
     optionItem.label = program.frontmatter.title;
     optionItem.value = index;
     return optionItem;
   });
+
   const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
@@ -50,7 +52,6 @@ const ProgramsPage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={programs[activeOption].frontmatter.program} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ProgramsSingle
           data={programs[activeOption]}
@@ -66,3 +67,9 @@ const ProgramsPage = ({ data }) => {
 
 export default ProgramsPage;
 
+
+// TODO
+export const Head = ({ data }) => {
+  const programs = data.allMdx.nodes;
+  return <SEO title={programs[0].frontmatter.program} />;
+};

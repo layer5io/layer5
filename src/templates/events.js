@@ -200,7 +200,6 @@ const Events = ({ data, pageContext }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Events" description="Join Layer5 at upcoming events." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Meetups theme={theme} data={data} pageContext={pageContext} />
         <Footer />
@@ -210,3 +209,7 @@ const Events = ({ data, pageContext }) => {
 };
 
 export default Events;
+
+export const Head = () => {
+  return <SEO title="Events" description="Join Layer5 at upcoming events." />;
+};
