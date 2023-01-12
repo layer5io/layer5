@@ -49,7 +49,7 @@ export const ProgramsPageWrapper = styled.div`
         padding: 5px;
         color: ${props => props.theme.text};
         margin: auto;
-        background: ${props => props.theme.DarkTheme ? "rgba(10, 10, 10, 1)" : "rgba(247, 247, 247, 1)"};
+        background: ${props => props.theme.DarkTheme ? "rgba(152, 152, 152, 1)" : "rgba(247, 247, 247, 1)"};
         justify-content: center;
         border-radius: 1rem;
         transition: all 0.2s;
