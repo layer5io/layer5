@@ -44,7 +44,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
-                  <img loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} />
+                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} />
                   <h5>MeshMap</h5>
                   <p>Visual Infrastructure Management</p>
                 </div>
@@ -92,8 +92,6 @@ const Projects = () => {
               </div>
               <p><span>We are enablers.</span> At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings.
               </p>
-              {/* <h4>ENABLING YOU TO</h4> */}
-
             </div>
           </Col>
         </Row>
