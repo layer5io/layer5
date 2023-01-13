@@ -146,7 +146,7 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
-                      {badges.includes("ui-ux") && (
+                      {badges.includes("patterns") && (
                         <li>
                           <Link to="/learn/service-mesh-books/service-mesh-patterns">
                             <img
@@ -157,7 +157,7 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
-                      {badges.includes("patterns") && (
+                      {badges.includes("ui-ux") && (
                         <li>
                           <img
                             className="profile-social-links"
