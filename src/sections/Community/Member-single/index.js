@@ -17,6 +17,7 @@ import patternsLogo from "../../../assets/images/service-mesh-patterns/service-m
 import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
+import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import Button from "../../../reusecore/Button";
 
 const MemberSingle = ({ frontmatter }) => {
@@ -145,7 +146,7 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
-                      {badges.includes("patterns") && (
+                      {badges.includes("ui-ux") && (
                         <li>
                           <Link to="/learn/service-mesh-books/service-mesh-patterns">
                             <img
@@ -154,6 +155,15 @@ const MemberSingle = ({ frontmatter }) => {
                               alt="Patterns Logo"
                             />
                           </Link>
+                        </li>
+                      )}
+                      {badges.includes("patterns") && (
+                        <li>
+                          <img
+                            className="profile-social-links"
+                            src={uiuxrLogo}
+                            alt="UI/UX'er Logo"
+                          />
                         </li>
                       )}
                     </ul>

@@ -20,7 +20,7 @@ import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 import AboutTheAuthor from "./author";
 
-const BlogSingle = ({ data }) => {
+const BlogSingle = ({ theme, data }) => {
   const location = useLocation();
   const { frontmatter, body, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
@@ -37,6 +37,13 @@ const BlogSingle = ({ data }) => {
             category
             tags
             thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            darkthumbnail {
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
@@ -75,7 +82,7 @@ const BlogSingle = ({ data }) => {
   );
 
   const posts = blogData.nodes;
-  const relatedPosts = new RelatedPostsFactory (
+  const relatedPosts = new RelatedPostsFactory(
     posts, fields.slug
   ).setMaxPosts(6)
     .setCategory(frontmatter.category)
@@ -106,8 +113,10 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={frontmatter.thumbnail}
+            thumbnail={(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
+            theme={theme}
           />
           <div className="single-post-wrapper">
             <SRLWrapper>
