@@ -23,6 +23,7 @@ const MesheryFeaturesWrapper = styled.div`
     .feature-expose {
     img {
       padding: 0 3rem 1rem;
+      height:20rem;
     }
   }
   .feature-expose-full {
