@@ -14,6 +14,7 @@ import ServiceMeshPerformance from "../../../assets/images/service-mesh-performa
 import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 
 const contents = [
   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
@@ -142,7 +143,7 @@ const CommunityGuide = () => {
             <p>
               Please refer to the{" "}
               <Link to="/community/handbook/code-of-conduct">
-                   Code of Conduct
+                Code of Conduct
               </Link>{" "}
               for more details.
             </p>
@@ -185,6 +186,10 @@ const CommunityGuide = () => {
               <li>
                 <img src={PatternsLogo} style={badgeStyle} />
                 Patterns
+              </li>
+              <li>
+                <img src={uiuxrLogo} style={badgeStyle} />
+                UI/UX'er
               </li>
             </ul>
             <a id="Membership">
