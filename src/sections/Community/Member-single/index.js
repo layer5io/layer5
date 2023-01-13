@@ -159,13 +159,11 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("patterns") && (
                         <li>
-                          <Link to="/learn/service-mesh-books/service-mesh-patterns">
-                            <img
-                              className="profile-social-links"
-                              src={uiuxrLogo}
-                              alt="UI/UX'er Logo"
-                            />
-                          </Link>
+                          <img
+                            className="profile-social-links"
+                            src={uiuxrLogo}
+                            alt="UI/UX'er Logo"
+                          />
                         </li>
                       )}
                     </ul>
