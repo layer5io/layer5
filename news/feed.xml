@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Jan 2023 18:18:37 GMT</lastBuildDate><item><title><![CDATA[The Ultimate List of Open Source Cloud-Native Tools]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Jan 2023 21:50:55 GMT</lastBuildDate><item><title><![CDATA[The Most Innovative Cloud Management Companies]]></title><description><![CDATA[var _excluded = ["components"];
+
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* @jsxRuntime classic */
+
+/* @jsx mdx */
+var _frontmatter = {
+  "title": "The Most Innovative Cloud Management Companies",
+  "subtitle": "",
+  "date": "2023-01-11 15:58:36 +0000",
+  "category": "Coverage",
+  "author": "Best Startup Texas",
+  "thumbnail": "./best-startup-texas.jpeg",
+  "darkthumbnail": "./best-startup-texas.jpeg",
+  "eurl": "https://beststartuptexas.com/101-texas-united-states-based-cloud-management-companies-the-most-innovative-cloud-management-companies/",
+  "published": true,
+  "type": "News"
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(NewsWrapper, {
+    mdxType: "NewsWrapper"
+  }, mdx("p", null, "Layer5 is featured as one of the most innovative cloud management companies by Best Startup Texas. Out of 100,000 Texas-based startups, Layer5 was selected based on oustanding marks in the following categories:"), mdx("ul", null, mdx("li", {
+    parentName: "ul"
+  }, "Company track record"), mdx("li", {
+    parentName: "ul"
+  }, "Executive leadership"), mdx("li", {
+    parentName: "ul"
+  }, "Market share"), mdx("li", {
+    parentName: "ul"
+  }, "Innovation"), mdx("li", {
+    parentName: "ul"
+  }, "ESG rating")), mdx("p", null, "Learn more about ", mdx(Link, {
+    to: "/about",
+    mdxType: "Link"
+  }, "Layer5"), ".")));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/the-most-innovative-cloud-management-companies</link><guid isPermaLink="false">https://layer5.io/company/news/the-most-innovative-cloud-management-companies</guid><dc:creator><![CDATA[Best Startup Texas]]></dc:creator><pubDate>Wed, 11 Jan 2023 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/bc8c3bab97b6d1c1577838cfae767899/best-startup-texas.jpeg" length="0" type="image/jpeg"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 TVDRO&quot;&gt;&lt;p&gt;Layer5 is featured as one of the most innovative cloud management companies by Best Startup Texas. Out of 100,000 Texas-based startups, Layer5 was selected based on oustanding marks in the following categories:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Company track record&lt;/li&gt;&lt;li&gt;Executive leadership&lt;/li&gt;&lt;li&gt;Market share&lt;/li&gt;&lt;li&gt;Innovation&lt;/li&gt;&lt;li&gt;ESG rating&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Learn more about &lt;a href=&quot;/about&quot;&gt;Layer5&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[The Ultimate List of Open Source Cloud-Native Tools]]></title><description><![CDATA[var _excluded = ["components"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1208,45 +1260,4 @@ return function MDXContent(_ref) {
   }), mdx("br", null), mdx("br", null), "Calcote notes how traffic management is seen as a key feature among the many different service mesh capabilities, but it\u2019s most useful to advanced users. Speaking about the use of traffic management functionalities, Calcote said: \u201CFolks tend to be a little more advanced as they get into that because they\u2019re at that point they\u2019re actually affecting traffic and then routing requests differently, as opposed to something like just purely observing or getting a \u2018read-only\u2019 view in their environment.\u201D", mdx("br", null), mdx("br", null)));
 }
 ;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today</link><guid isPermaLink="false">https://layer5.io/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today</guid><dc:creator><![CDATA[The New Stack]]></dc:creator><pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/9c88cbeb3204afc91a855b9bc32fb3e1/what-the-numbers-say-about-how-service-meshes-are-used-today.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 TVDRO&quot;&gt;Service mesh technologies have emerged as a reliable way to manage observability, security and traffic management in microservices environments, typically with the use of Kubernetes for container orchestration. Specific use cases and needs for service meshes also vary.&lt;br/&gt;&lt;br/&gt;The New Stack recently completed a survey about service mesh use cases. While one third of those surveyed said their organizations already use service meshes to control traffic between microservices and Kubernetes environments, adoption rates and use varied significantly among the respondents. Sixteen percent of respondents said that their organization broadly uses service mesh in production environments and 17% said service meshes have limited use in production environments, for example.&lt;br/&gt;&lt;br/&gt;In this latest episode of The New Stack Analysts podcast, &lt;a href=&quot;https://www.linkedin.com/in/leecalcote&quot;&gt;Lee Calcote&lt;/a&gt;, an analyst and founder of service mesh provider &lt;a href=&quot;https://layer5.io/&quot;&gt;Layer5&lt;/a&gt;, and &lt;a href=&quot;https://www.linkedin.com/in/brianredbeard/&quot;&gt;Brian “Redbeard” Harrington&lt;/a&gt;, a principal product manager for OpenShift service mesh at Red Hat, discussed the many nuances of what the survey numbers really mean.&lt;br/&gt;&lt;br/&gt;&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameBorder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774586579%3Fsecret_token%3Ds-es7L3&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;&lt;br/&gt;Calcote notes how traffic management is seen as a key feature among the many different service mesh capabilities, but it’s most useful to advanced users. Speaking about the use of traffic management functionalities, Calcote said: “Folks tend to be a little more advanced as they get into that because they’re at that point they’re actually affecting traffic and then routing requests differently, as opposed to something like just purely observing or getting a ‘read-only’ view in their environment.”&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Learn Cloud Native: Managing service meshes with Meshery]]></title><description><![CDATA[var _excluded = ["components"];
-
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-/* @jsxRuntime classic */
-
-/* @jsx mdx */
-var _frontmatter = {
-  "title": "Learn Cloud Native: Managing service meshes with Meshery",
-  "subtitle": "",
-  "date": "2020-03-12 12:00:00 +0000",
-  "author": "Learn Cloud Native",
-  "thumbnail": "./linkerd-emojivoto.png",
-  "darkthumbnail": "./linkerd-emojivoto.png",
-  "category": "Coverage",
-  "eurl": "https://www.learncloudnative.com/blog/2020-03-12-meshery-service-mesh-management-plane/",
-  "published": true,
-  "redirect_from": ["/news/managing-service-meshes-with-meshery/"]
-};
-var layoutProps = {
-  _frontmatter: _frontmatter
-};
-var MDXLayout = "wrapper";
-return function MDXContent(_ref) {
-  var components = _ref.components,
-      props = _objectWithoutProperties(_ref, _excluded);
-
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), mdx(NewsWrapper, {
-    mdxType: "NewsWrapper"
-  }, mdx("h3", {
-    align: "center"
-  }, "Learn Cloud Native: Managing service meshes with Meshery")));
-}
-;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/learn-cloud-native-managing-service-meshes-with-meshery</link><guid isPermaLink="false">https://layer5.io/company/news/learn-cloud-native-managing-service-meshes-with-meshery</guid><dc:creator><![CDATA[Learn Cloud Native]]></dc:creator><pubDate>Thu, 12 Mar 2020 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/34433b204ea21299d12cad43442c42d6/linkerd-emojivoto.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 TVDRO&quot;&gt;&lt;h3 align=&quot;center&quot;&gt;Learn Cloud Native: Managing service meshes with Meshery&lt;/h3&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today</link><guid isPermaLink="false">https://layer5.io/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today</guid><dc:creator><![CDATA[The New Stack]]></dc:creator><pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/9c88cbeb3204afc91a855b9bc32fb3e1/what-the-numbers-say-about-how-service-meshes-are-used-today.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 TVDRO&quot;&gt;Service mesh technologies have emerged as a reliable way to manage observability, security and traffic management in microservices environments, typically with the use of Kubernetes for container orchestration. Specific use cases and needs for service meshes also vary.&lt;br/&gt;&lt;br/&gt;The New Stack recently completed a survey about service mesh use cases. While one third of those surveyed said their organizations already use service meshes to control traffic between microservices and Kubernetes environments, adoption rates and use varied significantly among the respondents. Sixteen percent of respondents said that their organization broadly uses service mesh in production environments and 17% said service meshes have limited use in production environments, for example.&lt;br/&gt;&lt;br/&gt;In this latest episode of The New Stack Analysts podcast, &lt;a href=&quot;https://www.linkedin.com/in/leecalcote&quot;&gt;Lee Calcote&lt;/a&gt;, an analyst and founder of service mesh provider &lt;a href=&quot;https://layer5.io/&quot;&gt;Layer5&lt;/a&gt;, and &lt;a href=&quot;https://www.linkedin.com/in/brianredbeard/&quot;&gt;Brian “Redbeard” Harrington&lt;/a&gt;, a principal product manager for OpenShift service mesh at Red Hat, discussed the many nuances of what the survey numbers really mean.&lt;br/&gt;&lt;br/&gt;&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameBorder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774586579%3Fsecret_token%3Ds-es7L3&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;&lt;br/&gt;Calcote notes how traffic management is seen as a key feature among the many different service mesh capabilities, but it’s most useful to advanced users. Speaking about the use of traffic management functionalities, Calcote said: “Folks tend to be a little more advanced as they get into that because they’re at that point they’re actually affecting traffic and then routing requests differently, as opposed to something like just purely observing or getting a ‘read-only’ view in their environment.”&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
