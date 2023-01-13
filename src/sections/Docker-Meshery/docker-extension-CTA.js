@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../reusecore/Button";
 import { Container } from "../../reusecore/Layout";
-import { StaticImage } from "gatsby-plugin-image";
+import Dockerimage from "../../assets/images/docker-extension/Docker_animated.svg";
 
-const Dockerimage = "../../assets/images/docker-extension/Docker_animated.svg";
 
 const DockerExtensionCTAWrapper = styled.div`
 p {
@@ -49,7 +48,7 @@ const DockerExtensionCTA = () => {
     <DockerExtensionCTAWrapper>
       <Container>
         <div className="docker-callout">
-          <StaticImage src={Dockerimage} alt="Docker and Meshery" />
+          <img src={Dockerimage} alt="Docker and Meshery" />
           <div>
             <h2>Docker Extension for Meshery is now available!</h2>
             <p><i>Managing cloud native infrastructure has never been easier.</i></p>
