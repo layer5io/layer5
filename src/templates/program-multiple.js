@@ -68,7 +68,6 @@ const ProgramsPage = ({ data }) => {
 export default ProgramsPage;
 
 
-// TODO
 export const Head = ({ data }) => {
   const programs = data.allMdx.nodes;
   return <SEO title={programs[0].frontmatter.program} />;
