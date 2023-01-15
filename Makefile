@@ -35,7 +35,6 @@ build:
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
-	gatsby clean  
-	make site
+	gatsby clean && make site
 
 .PHONY: setup build site clean site-fast
