@@ -19,7 +19,6 @@ const ThankYouSection = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ThankYou />
         <Footer />
@@ -28,3 +27,7 @@ const ThankYouSection = () => {
   );
 };
 export default ThankYouSection;
+
+export const Head = () => {
+  return <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />;
+};

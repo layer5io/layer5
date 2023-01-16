@@ -47,7 +47,6 @@ const NewsSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <NewsSingle data={data} />
         <Footer />
@@ -58,3 +57,6 @@ const NewsSinglePage = ({ data }) => {
 
 export default NewsSinglePage;
 
+export const Head = ({ data }) => {
+  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+};

@@ -63,8 +63,6 @@ const NewsGridPage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="News" description="News and press about Layer5, the cloud native management company.
-    Layer5 the company behind industry-leading, open source software." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
           <NewsPage theme={theme} data={data} />
@@ -75,3 +73,8 @@ const NewsGridPage = ({ data }) => {
   );
 };
 export default NewsGridPage;
+
+export const Head = () => {
+  return <SEO title="News" description="News and press about Layer5, the cloud native management company.
+    Layer5 the company behind industry-leading, open source software." />;
+};

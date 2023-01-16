@@ -23,7 +23,6 @@ const CommunityConduct = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Code Of Conduct" description="Layer5 follows the CNCF Code of Conduct" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ConductPage />
         <Footer />
@@ -32,3 +31,7 @@ const CommunityConduct = () => {
   );
 };
 export default CommunityConduct;
+
+export const Head = () => {
+  return <SEO title="Code Of Conduct" description="Layer5 follows the CNCF Code of Conduct" />;
+};

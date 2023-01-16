@@ -38,7 +38,6 @@ const CareerSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <CareerSingle theme={theme} data={data} />
         <Footer />
@@ -49,3 +48,6 @@ const CareerSinglePage = ({ data }) => {
 
 export default CareerSinglePage;
 
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} />;
+};

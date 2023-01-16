@@ -36,7 +36,6 @@ const LabSingle = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <LabSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />
@@ -46,3 +45,7 @@ const LabSingle = ({ data }) => {
 };
 
 export default LabSingle;
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} />;
+};
