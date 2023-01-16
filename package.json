@@ -26,14 +26,14 @@
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.11.3",
-    "@fullcalendar/google-calendar": "^5.11.3",
-    "@fullcalendar/interaction": "^5.11.3",
+    "@fullcalendar/google-calendar": "^6.0.2",
+    "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^5.11.2",
     "@loadable/component": "^5.15.2",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@react-icons/all-files": "^4.1.0",
-    "axios": "^0.27.2",
+    "axios": "^1.2.2",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.22.0",
     "caniuse-lite": "^1.0.30001435",
@@ -46,7 +46,7 @@
     "gatsby-cli": "^4.19.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-feed": "^4.24.0",
-    "gatsby-plugin-google-gtag": "^4.19.0",
+    "gatsby-plugin-google-gtag": "^4.25.0",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-loadable-components-ssr": "^4.2.1",
     "gatsby-plugin-manifest": "^4.24.0",
@@ -78,8 +78,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-honeycomb": "^0.1.3",
-    "react-intersection-observer": "^9.3.5",
-    "react-is": "^18.2.0",
+    "react-intersection-observer": "^9.4.1",
     "react-loadable": "^5.5.0",
     "react-modal": "^3.16.1",
     "react-scroll": "^1.8.7",
@@ -88,14 +87,14 @@
     "react-slick": "^0.29.0",
     "react-table": "^7.8.0",
     "react-tabs": "^4.2.1",
-    "react-tooltip": "^4.2.21",
+    "react-tooltip": "^4.5.1",
     "react-tsparticles": "^2.1.4",
     "react-vertical-timeline-component": "^3.5.2",
     "react-visibility-sensor": "^5.1.1",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
-    "swiper": "^8.4.2"
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
@@ -106,10 +105,10 @@
     "cross-env": "^7.0.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.28.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "rimraf": "^3.0.2",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^5.0.1"
   }
 }
