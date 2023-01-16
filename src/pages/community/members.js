@@ -201,7 +201,11 @@ const options = [
 }));
 
 const activeMember = {
-  label: "Active",
+  label: (
+    <DropdownWrapper>
+      <div className="allOptions">Active</div>
+    </DropdownWrapper>
+  ),
   value: "active",
   color: theme.linkColor,
   isFixed: true,
@@ -230,7 +234,7 @@ const MembersPage = () => {
           description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Dropdown options={options} handleChange={handleChange} />
+        <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
         <MultipleMembers members={members} />
         <Footer />
       </Layout>
