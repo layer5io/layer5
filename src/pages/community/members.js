@@ -213,15 +213,6 @@ const activeMember = {
   className: "allOptions",
 };
 
-const allMembers = {
-  label: "All Members",
-  value: "all",
-  color: theme.linkColor,
-  isFixed: true,
-  icon: null,
-  className: "allOptions",
-};
-
 const MembersPage = () => {
   /**
    * state storing the currently selected categories.
@@ -243,7 +234,7 @@ const MembersPage = () => {
           description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Dropdown options={options} handleChange={handleChange} />
+        <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
         <MultipleMembers members={members} />
         <Footer />
       </Layout>
