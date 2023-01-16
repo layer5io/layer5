@@ -23,7 +23,7 @@ jobs:
             username: ${{ github.actor }}
             organization: "layer5"
             team: "maintainers"
-            GITHUB_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
         - if: ${{ github.event_name != 'pull_request' && steps.checkUserMember.outputs.isTeamMember == 'true' }}
           name: Check if it is issue
