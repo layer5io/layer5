@@ -27,7 +27,7 @@ const Dropdown = (props) => {
         >
           <Select
             name="Filter Members"
-            defaultValue={[props.activeMember]}
+            defaultValue={[props.allMembers]}
             isSearchable={false}
             styles={selectStyles}
             options={props.options}

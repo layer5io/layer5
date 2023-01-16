@@ -201,11 +201,24 @@ const options = [
 }));
 
 const activeMember = {
-  label: "Active",
+  label: (
+    <DropdownWrapper>
+      <div className="allOptions">Active</div>
+    </DropdownWrapper>
+  ),
   value: "active",
   color: theme.linkColor,
   isFixed: true,
   icon: activeIcon,
+  className: "allOptions",
+};
+
+const allMembers = {
+  label: "All Members",
+  value: "all",
+  color: theme.linkColor,
+  isFixed: true,
+  icon: null,
   className: "allOptions",
 };
 
