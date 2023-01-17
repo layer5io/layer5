@@ -21,7 +21,7 @@ jobs:
           id: checkUserMember
           with:
             username: ${{ github.actor }}
-            organization: "layer5"
+            organization: "layer5io"
             team: "maintainers"
             GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         # - if: github.ref == 'refs/heads/master'
