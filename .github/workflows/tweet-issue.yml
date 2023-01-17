@@ -16,14 +16,14 @@ jobs:
     if: ${{ github.event.label.name == 'issue/tweet' }}
     runs-on: ubuntu-latest
     steps:
-        # - name: Check if the workflow initiater is an organization member
-        #   uses: tspascoal/get-user-teams-membership@v2
-        #   id: checkUserMember
-        #   with:
-        #     username: ${{ github.actor }}
-        #     organization: "layer5"
-        #     team: "maintainers"
-        #     GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        - name: Check if the workflow initiater is an organization member
+          uses: tspascoal/get-user-teams-membership@v2
+          id: checkUserMember
+          with:
+            username: ${{ github.actor }}
+            organization: "layer5"
+            team: "maintainers"
+            GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         # - if: github.ref == 'refs/heads/master'
         - name: Check if it is issue
           uses: ethomson/send-tweet-action@v1
