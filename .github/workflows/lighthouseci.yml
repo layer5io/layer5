@@ -1,5 +1,14 @@
 name: lighthouseci
-on: [push, pull_request]
+on: 
+  push:
+    paths-ignore:
+      - "*.md"
+      - "*.github/**"
+  pull_request:
+    paths-ignore:
+      - "*.md"
+      - "*.github/**"
+      
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
