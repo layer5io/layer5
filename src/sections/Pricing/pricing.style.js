@@ -100,14 +100,12 @@ const PricingWrapper = styled.section`
   background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
-	padding: 2rem;
+	padding: 1.5rem;
 	border-radius: 4px;
 	transition: .3s;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     margin: 1.5rem 1rem;
-  }
-  @media (min-width: 768px) and (max-width: 992px){
-    margin: 1.5rem 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -137,8 +135,8 @@ const PricingWrapper = styled.section`
       width: fit-content;
       font-size: .75rem;
       font-weight: 500;
-      margin-top: -1rem;
-      margin-right: -1rem;
+      margin-top: 0rem;
+      margin-right: 0rem;
       margin-bottom: 1rem;
     }
 
