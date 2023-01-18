@@ -146,7 +146,8 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
-      padding-top: 1em;
+      padding-top: 15px;
+      padding-bottom: 15px;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
