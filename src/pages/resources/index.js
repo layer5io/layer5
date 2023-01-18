@@ -46,7 +46,6 @@ const MembersPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks." canonical="https://layer5.io/resources" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml" />
         <Container>
@@ -66,3 +65,8 @@ const MembersPage = () => {
 };
 
 export default MembersPage;
+
+
+export const Head = () => {
+  return <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks." canonical="https://layer5.io/resources" />;
+};

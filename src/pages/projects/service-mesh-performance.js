@@ -24,9 +24,6 @@ const SMP = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Performance (SMP)"
-          description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
-          image="/images/smp-dark.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SMPPage />
         <Footer />
@@ -35,3 +32,9 @@ const SMP = () => {
   );
 };
 export default SMP;
+
+export const Head = () => {
+  return <SEO title="Service Mesh Performance (SMP)"
+    description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
+    image="/images/smp-dark.png" />;
+};

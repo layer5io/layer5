@@ -21,9 +21,6 @@ const ImageHub = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Image Hub"
-          description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters."
-          image="/images/layer5-image-hub.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ImageHubPage />
         <Footer />
@@ -32,3 +29,10 @@ const ImageHub = () => {
   );
 };
 export default ImageHub;
+
+
+export const Head = () => {
+  return <SEO title="Image Hub"
+    description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters."
+    image="/images/layer5-image-hub.png" />;
+};

@@ -23,7 +23,6 @@ const Mentorship = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Mentorship Programs" description="As an open-source organization and a community, we participate in different mentorships programs." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MentorshipPage />
         <Footer />
@@ -32,3 +31,7 @@ const Mentorship = () => {
   );
 };
 export default Mentorship;
+
+export const Head = () => {
+  return <SEO title="Mentorship Programs" description="As an open-source organization and a community, we participate in different mentorships programs." />;
+};

@@ -23,7 +23,6 @@ const CommunityRepository = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Repository Overview" description="A brief introduction to all of the Github repositories of Layer5 organization." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <RepoPage />
         <Footer />
@@ -32,3 +31,7 @@ const CommunityRepository = () => {
   );
 };
 export default CommunityRepository;
+
+export const Head = () => {
+  return <SEO title="Repository Overview" description="A brief introduction to all of the Github repositories of Layer5 organization." />;
+};

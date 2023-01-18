@@ -37,9 +37,6 @@ const OperatingServiceMeshes = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Manage Meshery"
-          description="How the cloud native management plane, Meshery works"
-          image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <HowMesheryWorksHero theme={theme} />
         <HowMesheryWorks
@@ -73,8 +70,8 @@ const OperatingServiceMeshes = () => {
                 icon: VisualTopology,
                 description:
                   <div>
-                    <p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
-                      Designing and configuration your service mesh is as easy as dragging and dropping.</p>
+                    <p>MeshMap enables all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
+                      Designing and configuring your service mesh is as easy as dragging and dropping.</p>
                     <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p>
                   </div>,
               },
@@ -136,3 +133,10 @@ const OperatingServiceMeshes = () => {
   );
 };
 export default OperatingServiceMeshes;
+
+
+export const Head = () => {
+  return  <SEO title="Manage Meshery"
+    description="How the cloud native management plane, Meshery works"
+    image="/images/meshery-logo-dark-text.png" />;
+};

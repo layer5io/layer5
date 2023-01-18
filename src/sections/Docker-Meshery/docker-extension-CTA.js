@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../reusecore/Button";
-import Dockerimage from "../../assets/images/docker-extension/Docker_animated.svg";
 import { Container } from "../../reusecore/Layout";
+import Dockerimage from "../../assets/images/docker-extension/Docker_animated.svg";
+
 
 const DockerExtensionCTAWrapper = styled.div`
 p {

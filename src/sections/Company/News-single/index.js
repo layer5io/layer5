@@ -57,12 +57,12 @@ const NewsSingle = ({ data }) => {
         <Container>
           <div className="single-post-block">
             <Row>
-              <Col lg={10} md={9} xs={12}>
+              <Col lg={9} md={8} xs={12}>
                 <SRLWrapper>
                   <MDXRenderer>{body}</MDXRenderer>
                 </SRLWrapper>
               </Col>
-              <Col lg={2} md={3} xs={12}>
+              <Col lg={3} md={4} xs={12}>
                 <NewsSidebar kit={frontmatter.presskit} />
               </Col>
             </Row>

@@ -30,7 +30,7 @@ const HowMesheryWorksSpecs = () => {
         <Row className="cloud-native" Vcenter>
           <Col xs={12} lg={6}>
             <h3>Service meshes will be commonplace cloud native and edge infrastructure</h3>
-            <p>Today: Over 40% of the enterprises run cloud native technologies in production; Over 80% od those enterprises running Kubernetes</p>
+            <p>Today: Over 40% of the enterprises run cloud native technologies in production; Over 80% of those enterprises running Kubernetes</p>
           </Col>
           <Col xs={12} lg={6}>
             <img src={MesheryImage1} alt="Meshery Img" />

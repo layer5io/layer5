@@ -22,10 +22,6 @@ const CommunityProjects = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title="Projects"
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance and NightHawk"
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ProjectsPage theme={theme} />
         <Footer />
@@ -34,3 +30,10 @@ const CommunityProjects = () => {
   );
 };
 export default CommunityProjects;
+
+export const Head = () => {
+  return <SEO
+    title="Projects"
+    description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance and NightHawk"
+  />;
+};
