@@ -100,12 +100,11 @@ const PricingWrapper = styled.section`
   background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
-	padding: 1.5rem;
+	padding: 2rem;
 	border-radius: 4px;
 	transition: .3s;
-  @media (max-width: 1000px) {
+  @media (max-width: 992px) {
     margin: 1.5rem 1rem;
-    padding: 0.5rem;
   }
 }
 
@@ -135,8 +134,8 @@ const PricingWrapper = styled.section`
       width: fit-content;
       font-size: .75rem;
       font-weight: 500;
-      margin-top: 0rem;
-      margin-right: 0rem;
+      margin-top: -1rem;
+      margin-right: -1rem;
       margin-bottom: 1rem;
     }
 
@@ -161,6 +160,7 @@ const PricingWrapper = styled.section`
       margin: .5rem 0rem;
       h5{
         color: ${props => props.theme.DarkTheme ? "#AAAAAA" : "#7A848E"};
+        display: block;
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;
