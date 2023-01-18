@@ -16,12 +16,12 @@ const Faq = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>General FAQs:</h2><br/>
+            <h2>General FAQs:</h2><br />
             <h4>Q: Are Layer5’s solutions open source?</h4>
             <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
 
             <h4>Q: I am new to Open Source, where do I begin?</h4>
-            <p>A: You can start by going through the <a href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit#heading=h.rcr9t5pnt3bw">Newcomers’ Welcome Guide.</a></p>
+            <p>A: You can start by going through the <a href="https://layer5.io/community/newcomers">Newcomers’ Welcome Guide.</a></p>
 
             <h4>Q: What exactly is a MeshMate?</h4>
             <p>A:Layer5<Link to="/community/meshmates"> MeshMates </Link>are individuals committed to helping community members be successful contributors. Meshmates are there to guide and support the community members, helping them identify projects they can contribute to depending on their areas of interest, directing them on groups to join and helping them grow in their open-source and cloud native knowledge.</p>

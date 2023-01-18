@@ -19,7 +19,6 @@ const NewComers = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Newcomers" description="Contributions from Newcomers are actively encouraged in Layer5. Find a Meshmate and start contributing!" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <NewcomersGuide theme={theme}/>
         <Footer />
@@ -29,3 +28,7 @@ const NewComers = () => {
 };
 
 export default NewComers;
+
+export const Head = () => {
+  return <SEO title="Newcomers" description="Contributions from Newcomers are actively encouraged in Layer5. Find a Meshmate and start contributing!" />;
+};

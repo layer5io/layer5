@@ -20,7 +20,6 @@ const DeployServiceMeshPage = () => {
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
         <DeployServiceMesh />
@@ -30,3 +29,8 @@ const DeployServiceMeshPage = () => {
   );
 };
 export default DeployServiceMeshPage;
+
+
+export const Head = () => {
+  return <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />;
+};

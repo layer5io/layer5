@@ -52,7 +52,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" />
+            <StaticImage loading="lazy" className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" />
           </Col>
         </Row>
       </div>

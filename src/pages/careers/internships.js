@@ -23,8 +23,6 @@ const Internships = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Internship, Part-time, and Full-time Opportunities with Layer5" description="Engage, Learn, Share. Join the award-winning, Layer5 open source community and projects." />
-
         <Navigation theme={theme} themeSetter={themeSetter} />
         <InternshipPage />
         <Footer />
@@ -32,5 +30,8 @@ const Internships = () => {
     </ThemeProvider>
   );
 };
-
 export default Internships;
+
+export const Head = () => {
+  return  <SEO title="Internship, Part-time, and Full-time Opportunities with Layer5" description="Engage, Learn, Share. Join the award-winning, Layer5 open source community and projects." />;
+};
