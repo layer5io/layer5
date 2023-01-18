@@ -7,7 +7,6 @@ import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
 import FeatureDetails from "./collapsible-details";
-import { Autoplay } from "swiper";
 
 const Pricing = () => {
 
