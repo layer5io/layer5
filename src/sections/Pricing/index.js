@@ -7,6 +7,7 @@ import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
 import FeatureDetails from "./collapsible-details";
+import { Autoplay } from "swiper";
 
 const Pricing = () => {
 
@@ -48,7 +49,7 @@ const Pricing = () => {
               </div>
             </Col>
           </Row> */}
-          <Row>
+          <Row Hcenter={true}>
             {options.map((x) => (
               <Col lg={4} md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
