@@ -106,6 +106,9 @@ const PricingWrapper = styled.section`
   @media (max-width: 768px) {
     margin: 1.5rem 1rem;
   }
+  @media (min-width: 768px) and (max-width: 992px){
+    margin: 1.5rem 1rem;
+  }
 }
 
 .featured{

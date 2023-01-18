@@ -50,7 +50,7 @@ const Pricing = () => {
           </Row> */}
           <Row>
             {options.map((x) => (
-              <Col md={4} key={x.tier}>
+              <Col lg={4} md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                   {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
                   <h2>{x.tier}</h2>
