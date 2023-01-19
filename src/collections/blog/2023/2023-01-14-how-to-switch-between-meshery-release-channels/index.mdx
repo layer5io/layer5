@@ -1,0 +1,108 @@
+---
+title: How to switch between Meshery release channels
+subtitle: 
+date: 2023-01-14 08:00:00 -0530
+author: Tolulope Ola-David
+description: "How to switch between Meshery release channels"
+type: Blog
+category: Meshery
+tags:
+  - Meshery
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+
+<BlogWrapper>
+Meshery is an open source, cloud-native cloud native management platform that helps developers, operators, and architects understand, install, configure, and observe cloud native technology. 
+
+It provides a web-based interface that allows users to easily manage and monitor their cloud native and perform tasks such as installing and configuring cloud native software, managing the traffic routing between microservices, and observing the performance of the cloud native.
+
+One of the key features of Meshery is its ability to support multiple cloud native implementations, including Istio, Linkerd, Consul, and others. This allows users to easily switch between different cloud native technologies and compare their features and performance. 
+
+Additionally, Meshery includes a number of tools and features for monitoring and observing the cloud native, such as real-time traffic visualization and metrics gathering, which can help users understand how their microservices interact and identify any potential issues or bottlenecks. 
+
+As a self-service engineering platform, Meshery helps DevOps teams make infrastructure and application management less about finger-pointing and more about collaborating. Overall, Meshery provides a comprehensive, easy-to-use platform for managing and observing cloud native technology.
+
+Meshery is available for Linux, macOS, and Windows, and it is released in three channels: stable, beta, and edge. The stable channel is the most stable and recommended for production environments, while the beta and edge channels are for users who want to test new features and provide feedback to the development team.
+
+#### Beta:
+This channel contains the latest beta release of Meshery. Beta releases may contain new features.
+
+#### Edge:
+This channel contains the latest development builds of Meshery.
+
+### Advantages to using Meshery 
+
+Using Meshery offers several advantages. Some of these advantages include:
+
+<ol>
+    <li> Simplifies the process of installing and configuring cloud native software. Meshery provides a web-based interface that makes it easy to install and configure cloud native software without editing configuration files or running complex command-line commands manually. </li>
+    <li> Supports multiple cloud native implementations: Meshery supports multiple cloud native implementations, including Istio, Linkerd, and Consul, allowing users to easily switch between different technologies and compare their features and performance. </li>
+    <li> Provides tools for monitoring and observing the cloud native: Meshery includes a number of tools and features for monitoring and observing the cloud native, such as real-time traffic visualization and metrics gathering, which can help users understand how their microservices are interacting and identify any potential issues or bottlenecks. </li>
+    <li> Open source: Meshery is an open source project, which means it is freely available for anyone to use and contribute. This can make it a more cost-effective and flexible solution compared to proprietary cloud native management tools. </li>
+    <li> Cloud-native: Meshery is designed to be cloud-native, which means that it can be easily deployed and run on modern cloud platforms such as Kubernetes. This makes it well-suited for use in cloud-based microservice architectures. </li>
+</ol>
+
+### Switching between Meshery release channels
+
+To switch between release channels, you will need to follow these steps:
+
+#### Step 1:
+
+Download the latest version of Meshery for your operating system from the official website or GitHub repository by running the following command:
+
+```
+curl -sL https://raw.githubusercontent.com/layer5io/meshery/master/scripts/install.sh | bash
+```
+
+#### Step 2:
+
+Extract the downloaded archive file and navigate to the extracted directory.
+
+Run the following command to switch to the stable channel:
+
+```
+./mesheryctl channel set stable
+```
+
+#### Step 3: 
+
+Run the following command to switch to the beta channel:
+
+```
+./mesheryctl channel set beta
+```
+
+#### Step 4:
+
+Run the following command to switch to the edge channel:
+
+```
+./mesheryctl channel set edge
+```
+
+#### Step 5:
+
+After you switch channels, you'll need to update your Meshery installation to the latest version available on the channel you switched to. To update Meshery, run the following command:
+
+```
+mesheryctl update
+```
+
+That's it! You should now be on the release channel you selected. If you have any issues or questions, refer to the Meshery documentation or contact the Meshery community for help.
+
+#### Step 6: 
+
+To verify that you are on the desired release channel, you can run the following command:
+
+```
+./mesheryctl channel show
+```
+
+This will display the current release channel and the version of Meshery that you are using.
+
+</BlogWrapper>
