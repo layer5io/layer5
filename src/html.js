@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes}>
+    <html lang="en" {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -14,8 +14,9 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script dangerouslySetInnerHTML={{ __html:
-					`(function() {
+        <script dangerouslySetInnerHTML={{
+          __html:
+            `(function() {
 							try {
                 var banner = sessionStorage.getItem('banner');
                 if (banner === null)
@@ -25,7 +26,8 @@ export default function HTML(props) {
 							} catch (e) {
 								return;
 							}
-					})();`, }}
+					})();`,
+        }}
         />
         {props.preBodyComponents}
         <div
