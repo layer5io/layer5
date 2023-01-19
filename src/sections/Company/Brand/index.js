@@ -6,16 +6,21 @@ import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
 
-const MeshSyncBrand = loadable(() => import ("./Brand-components/meshsync"));
-const MesheryOperatorBrand = loadable(() => import ("./Brand-components/meshery-operator"));
-const ImageHubBrand = loadable(() => import ("./Brand-components/imagehub"));
-const SMPBrand = loadable(() => import ("./Brand-components/smp"));
-const CommunityBrand = loadable(() => import ("./Brand-components/community"));
-const Button = loadable(() => import ("../../../reusecore/Button"));
-const NightHawk = loadable(() => import ("./Brand-components/nighthawk"));
-const ServiceMeshPatterns = loadable(() => import ("./Brand-components/servicemeshpatterns"));
-const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
-const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
+const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
+const MesheryOperatorBrand = loadable(() =>
+  import("./Brand-components/meshery-operator")
+);
+const ImageHubBrand = loadable(() => import("./Brand-components/imagehub"));
+const SMPBrand = loadable(() => import("./Brand-components/smp"));
+const CommunityBrand = loadable(() => import("./Brand-components/community"));
+const Button = loadable(() => import("../../../reusecore/Button"));
+const NightHawk = loadable(() => import("./Brand-components/nighthawk"));
+const ServiceMeshPatterns = loadable(() =>
+  import("./Brand-components/servicemeshpatterns")
+);
+const MeshMasterBrand = loadable(() => import("./Brand-components/meshmaster"));
+const MeshMarkBrand = loadable(() => import("./Brand-components/meshmark"));
+const MeshMapBrand = loadable(() => import("./Brand-components/meshmap"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -99,6 +104,7 @@ const Brand = () => {
   const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
   const meshmarkRef = useRef(null);
+  const meshMapRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -112,6 +118,7 @@ const Brand = () => {
     { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
+    { section: "MeshMap", ref: meshMapRef },
   ];
 
   useEffect(() => {
@@ -192,6 +199,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={meshMasterRef}>
             <MeshMasterBrand />
+          </div>
+          <div className="section" ref={meshMapRef}>
+            <MeshMapBrand />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
@@ -305,6 +315,16 @@ const Brand = () => {
               }}
             >
               <span> MeshMaster </span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMap" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(meshMapRef.current);
+              }}
+            >
+              <span> MeshMap </span>
             </p>
           </nav>
         </Col>
