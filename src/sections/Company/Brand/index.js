@@ -6,21 +6,17 @@ import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
 
-const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
-const MesheryOperatorBrand = loadable(() =>
-  import("./Brand-components/meshery-operator")
-);
-const ImageHubBrand = loadable(() => import("./Brand-components/imagehub"));
-const SMPBrand = loadable(() => import("./Brand-components/smp"));
-const CommunityBrand = loadable(() => import("./Brand-components/community"));
-const Button = loadable(() => import("../../../reusecore/Button"));
-const NightHawk = loadable(() => import("./Brand-components/nighthawk"));
-const ServiceMeshPatterns = loadable(() =>
-  import("./Brand-components/servicemeshpatterns")
-);
-const MeshMasterBrand = loadable(() => import("./Brand-components/meshmaster"));
-const MeshMarkBrand = loadable(() => import("./Brand-components/meshmark"));
-const MeshMapBrand = loadable(() => import("./Brand-components/meshmap"));
+const MeshSyncBrand = loadable(() => import ("./Brand-components/meshsync"));
+const MesheryOperatorBrand = loadable(() => import ("./Brand-components/meshery-operator"));
+const ImageHubBrand = loadable(() => import ("./Brand-components/imagehub"));
+const SMPBrand = loadable(() => import ("./Brand-components/smp"));
+const CommunityBrand = loadable(() => import ("./Brand-components/community"));
+const Button = loadable(() => import ("../../../reusecore/Button"));
+const NightHawk = loadable(() => import ("./Brand-components/nighthawk"));
+const ServiceMeshPatterns = loadable(() => import ("./Brand-components/servicemeshpatterns"));
+const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
+const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
+const MeshMapBrand = loadable(() => import ("./Brand-components/meshmap"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
