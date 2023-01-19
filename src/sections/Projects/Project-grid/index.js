@@ -16,6 +16,7 @@ import smi from "../../../assets/images/app/projects/smi.svg";
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
+import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
 
 const ProjectPage = ({ theme }) => {
@@ -69,8 +70,14 @@ const ProjectPage = ({ theme }) => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
+            <Link to="/projects/nighthawk" className="project__card nine">
+              <div className="project__card-container project__card-container_meshmap">
+                <img src={meshmap} alt="MeshMap" />
+                <h5>MeshMap</h5>
+              </div>
+            </Link>
             <Link to="/projects/nighthawk" className="project__card six">
-              <div className="project__card-container">
+              <div className="project__card-container project__card-container_nighthawk">
                 <img src={nighthawk} alt="Nighthawk" />
                 <h5>NightHawk</h5>
               </div>
