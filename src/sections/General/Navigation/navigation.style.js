@@ -261,7 +261,7 @@ const NavigationWrap = styled.header`
       line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 0px 20px;
       cursor: pointer;
       &:before {
         content: "";
