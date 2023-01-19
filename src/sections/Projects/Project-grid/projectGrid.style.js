@@ -91,7 +91,34 @@ export const ProjectWrapper = styled.div`
     .project__card-container_one{
         height: 8rem;
     }
-    
+    .project__card-container_nighthawk{
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100px;
+            align-self: center;
+        }
+        h5{ 
+            align-self: center;
+            margin-left: 2rem;
+        }
+    }
+    //MeshMap
+    .project__card-container_meshmap{
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 100px;
+        }
+        h5{
+            margin-top: 10px;
+        }
+    }
+
     // Landscape
     .project__card.one{
         grid-column: 2/3;
@@ -157,17 +184,7 @@ export const ProjectWrapper = styled.div`
     // Distributed Performance Management of Service Meshes
     .project__card.six{
         grid-column: 1/3;
-        grid-row: 3/8;
-        img{
-            width: 180px;
-            margin-top: -35px;
-            align-self: center;
-        }
-        h5{ 
-            margin-top: 1rem;
-            align-self: center;
-            width: 150%;
-        }
+        grid-row: 5/8;
     }
     .image{
         margin: 0 auto;
@@ -181,7 +198,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card.seven{
         grid-column: 3/6;
-        grid-row: 7/8;
+        grid-row: 6/8;
         img{
             width: 6rem;
             align-self: center;
@@ -223,7 +240,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card.eight{
         grid-column: 6/8;
-        grid-row: 7/8;
+        grid-row: 6/8;
         img{
             width: 90px;
             align-self: center;
@@ -262,15 +279,19 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+    .project__card.nine{
+        grid-column: 1/3;
+        grid-row: 3/5;
+    }
     @media only screen and (max-width: 1200px) {
-       .project__card.six {
-            h5{
-                width: 100%;
-           }
+        .project__card-container_nighthawk{
             img{
-                width: 150px;
-           }
-       }
+                width: 80px;
+            }
+            h5{
+                margin-left: 1rem;
+            }
+        }
        .project__card.four h5{
         width: 100%;
        }
@@ -302,9 +323,6 @@ export const ProjectWrapper = styled.div`
             width: 100%;
             font-size: 12px;
         }
-        .project__card.six h5{ 
-            width: 100%;
-        }
         
      }
      @media only screen and (max-width: 740px) {
@@ -323,6 +341,20 @@ export const ProjectWrapper = styled.div`
             height: 10rem;
             img{
                 margin-top: 1.5rem;
+            }
+        }
+        .project__card-container_nighthawk{
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 100%;
+            height: 10rem;
+            width: 12rem;
+            img{
+                width: 130px;
+            }
+            h5{ 
+                width: 100%;
+                margin-left: 0;
             }
         }
         .project__card {
@@ -356,15 +388,6 @@ export const ProjectWrapper = styled.div`
         .project__card.four img{
             margin-top: 0px;
             margin-bottom: 0px;
-        }
-        .project__card.six{
-            img{
-                width: 130px;
-                margin-top: 10px;
-            }
-            h5{ 
-                width: 100%;
-            }
         }
         .project__card.seven{
             img{
