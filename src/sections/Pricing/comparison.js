@@ -106,6 +106,10 @@ h2, h5{
     background-color: ${props => props.theme.DarkTheme ? "#191919" : "#fafafa"};
     border: 0 none;
 }
+.price-table tr td h5{
+  display: block;
+}
+
 
 .category{
   display: inline-block;
