@@ -37,6 +37,7 @@ h2, h5{
     vertical-align: middle;
     h5{
       display: block;
+      text-align: left;
       padding-top: 1rem;
       font-size: 1.2rem;
     }
