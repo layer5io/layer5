@@ -14,8 +14,9 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script dangerouslySetInnerHTML={{ __html:
-					`(function() {
+        <script dangerouslySetInnerHTML={{
+          __html:
+            `(function() {
 							try {
                 var banner = sessionStorage.getItem('banner');
                 if (banner === null)
@@ -25,7 +26,8 @@ export default function HTML(props) {
 							} catch (e) {
 								return;
 							}
-					})();`, }}
+					})();`,
+        }}
         />
         {props.preBodyComponents}
         <div
