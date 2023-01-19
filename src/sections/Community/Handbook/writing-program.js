@@ -35,7 +35,7 @@ const Writers = () => {
           <div className="content writing_program">
             <h2>What is Layer5 Writing Program?</h2>
             <p>
-            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies. You can receive promotion of your byline and content to thousands of subscribers and followers on our email and social channels by writing about our projects.
+The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce high-quality content. We collaborate with authors and technologists from around the world to produce high-quality articles, blog posts, tutorials, and other cloud native resources on Meshery, Kubernetes, service meshes, Docker, and related technologies. You will receive promotion of your byline and content to thousands of subscribers and followers on our email and social channels by writing about our projects.
             </p>
 
             <h2>Why should you participate?</h2>
