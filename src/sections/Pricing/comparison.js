@@ -36,7 +36,7 @@ h2, h5{
     font-size: 1rem;
     vertical-align: middle;
     h5{
-      display: inline-block;
+      display: block;
       padding-top: 1rem;
       font-size: 1.2rem;
     }
@@ -143,6 +143,16 @@ h2, h5{
 }
 .category-icon{
   margin: 1rem auto 0;
+}
+.categories{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.categories > * {
+  margin-right: 1rem;
 }
 
 
