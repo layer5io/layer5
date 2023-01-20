@@ -70,7 +70,7 @@ const ProjectPage = ({ theme }) => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
-            <Link to="/projects/nighthawk" className="project__card nine">
+            <Link to="/cloud-native-management/meshmap" className="project__card nine">
               <div className="project__card-container project__card-container_meshmap">
                 <img src={meshmap} alt="MeshMap" />
                 <h5>MeshMap</h5>
