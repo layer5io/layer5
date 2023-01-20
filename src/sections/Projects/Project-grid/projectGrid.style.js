@@ -184,7 +184,7 @@ export const ProjectWrapper = styled.div`
     // Distributed Performance Management of Service Meshes
     .project__card.six{
         grid-column: 1/3;
-        grid-row: 5/8;
+        grid-row: 6/8;
     }
     .image{
         margin: 0 auto;
@@ -281,7 +281,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card.nine{
         grid-column: 1/3;
-        grid-row: 3/5;
+        grid-row: 3/6;
     }
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
