@@ -22,7 +22,6 @@ const Careers = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Careers" description="Careers at Layer5. Come work with the  the award-winning, Layer5 open source community and projects." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <CareersSection theme={theme} />
         <Footer />
@@ -31,3 +30,7 @@ const Careers = () => {
   );
 };
 export default Careers;
+
+export const Head = () => {
+  return <SEO title="Careers" description="Careers at Layer5. Come work with the  the award-winning, Layer5 open source community and projects." />;
+};

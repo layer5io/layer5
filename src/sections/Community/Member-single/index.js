@@ -17,6 +17,8 @@ import patternsLogo from "../../../assets/images/service-mesh-patterns/service-m
 import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
+import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
+import writerIcon from "../../../assets/images/writer-program/writer-program-badge.svg";
 import Button from "../../../reusecore/Button";
 
 const MemberSingle = ({ frontmatter }) => {
@@ -156,6 +158,26 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
+                      {badges.includes("ui-ux") && (
+                        <li>
+                          <img
+                            className="profile-social-links"
+                            src={uiuxrLogo}
+                            alt="UI/UX'er Logo"
+                          />
+                        </li>
+                      )}
+                      {badges.includes("writer") && (
+                        <li>
+                          <Link to="../../handbook/writing-program">
+                            <img
+                              className="profile-social-links"
+                              src={writerIcon}
+                              alt="Writer Program Logo"
+                            />
+                          </Link>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 )}
@@ -164,11 +186,11 @@ const MemberSingle = ({ frontmatter }) => {
               <div className="social-bg">
                 <ul className="profile-social-links">
                   {executive_bio &&
-                  <li>
-                    <Link to="bio">
-                      <FaUserTie className="bio" size={32}  />
-                    </Link>
-                  </li>
+                    <li>
+                      <Link to="bio">
+                        <FaUserTie className="bio" size={32} />
+                      </Link>
+                    </li>
                   }
                   {github && (
                     <li>

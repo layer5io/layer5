@@ -20,7 +20,6 @@ const NotFoundPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="What a mesh!" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <L404 />
         <Footer />
@@ -28,4 +27,11 @@ const NotFoundPage = () => {
     </ThemeProvider>
   );
 };
+
+
+export const Head = () => {
+  return <SEO title="What a mesh!" />;
+};
+
+
 export default NotFoundPage;

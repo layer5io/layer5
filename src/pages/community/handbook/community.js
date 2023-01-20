@@ -23,7 +23,6 @@ const Community = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Community" description="Community guidelines" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <CommunityPage theme={theme} />
         <Footer />
@@ -32,3 +31,8 @@ const Community = () => {
   );
 };
 export default Community;
+
+export const Head = () => {
+  return <SEO title="Community" description="Community guidelines" />;
+
+};

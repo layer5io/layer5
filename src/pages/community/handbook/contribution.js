@@ -21,7 +21,6 @@ const Contributing = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Contribution" description="A detailed contribution guide." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ContributingPage />
         <Footer />
@@ -30,3 +29,8 @@ const Contributing = () => {
   );
 };
 export default Contributing;
+
+
+export const Head = () => {
+  return <SEO title="Contribution" description="A detailed contribution guide." />;
+};

@@ -23,7 +23,6 @@ const Connect = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Connect With Us" description="We are a community of like-minded people with over a thousand members. Join our Slack Workspace and interact with people" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ConnectPage />
         <Footer />
@@ -32,3 +31,7 @@ const Connect = () => {
   );
 };
 export default Connect;
+
+export const Head = () => {
+  return <SEO title="Connect With Us" description="We are a community of like-minded people with over a thousand members. Join our Slack Workspace and interact with people" />;
+};
