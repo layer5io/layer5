@@ -209,7 +209,7 @@ const activeMember = {
   value: "active",
   color: theme.linkColor,
   isFixed: true,
-  icon: activeIcon,
+  icon: activeIcon && `url(${activeIcon})`,
   className: "allOptions",
 };
 
