@@ -3,8 +3,8 @@ import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMapIconStacked from "../../../../assets/images/meshmap/meshmap-color-stacked.png";
-import MeshMapIconHorizontal from "../../../../assets/images/meshmap/meshmap-color-horizontal.svg";
+import MeshMapIcon from "../../../../assets/images/meshmap/meshmap-color-icon.svg";
+import MeshMapIconHorizontal from "../../../../assets/images/meshmap/meshmap-white-horizontal.svg";
 import MeshMapText from "../../../../assets/images/meshmap/meshmap-color-text.png";
 
 const MeshMapBrand = () => {
@@ -42,11 +42,11 @@ const MeshMapBrand = () => {
         </Col>
         <SRLWrapper>
           <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
+            <Col xs={12} sm={4} className="logo">
               <img src={MeshMapIconHorizontal} alt="Meshmap Icon" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshMapIconStacked} alt="Meshmap Full Logo" />
+              <img src={MeshMapIcon} alt="Meshmap Full Logo" />
             </Col>
             <Col xs={12} sm={4}>
               <img src={MeshMapText} alt="Meshmap Text" />
