@@ -99,7 +99,7 @@ export const ProjectWrapper = styled.div`
         justify-content: center;
         align-items: center;
         img{
-            width: 100px;
+            width: 6.25rem;
             align-self: center;
         }
         h5{ 
@@ -112,10 +112,10 @@ export const ProjectWrapper = styled.div`
         justify-content: center;
         align-items: center;
         img{
-            height: 100px;
+            height: 6.25rem;
         }
         h5{
-            margin-top: 10px;
+            margin-top: .8rem;
         }
     }
 
@@ -286,7 +286,7 @@ export const ProjectWrapper = styled.div`
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
             img{
-                width: 80px;
+                width: 5rem;
             }
             h5{
                 margin-left: 1rem;
@@ -350,7 +350,7 @@ export const ProjectWrapper = styled.div`
             height: 10rem;
             width: 12rem;
             img{
-                width: 130px;
+                width: 8.12rem;
             }
             h5{ 
                 width: 100%;
