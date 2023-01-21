@@ -45,7 +45,6 @@ const BookSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <BookSingle data={data} />
         <DockerExtensionCTA />
@@ -57,3 +56,7 @@ const BookSinglePage = ({ data }) => {
 
 export default BookSinglePage;
 
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+};

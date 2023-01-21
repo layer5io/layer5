@@ -15,6 +15,7 @@ import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 
 // Assets + Icons
 import theme from "../../theme/app/themeStyles";
+import writerIcon from "../../assets/images/writer-program/writer-program-badge.svg";
 import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -27,6 +28,7 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
@@ -49,6 +51,14 @@ const options = [
     color: theme.linkColor,
     isFixed: true,
     icon: communityIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Writer",
+    value: "writer",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: writerIcon,
     className: "allOptions",
   },
   {
@@ -105,6 +115,14 @@ const options = [
     color: theme.linkColor,
     isFixed: true,
     icon: patternsIcon,
+    className: "allOptions",
+  },
+  {
+    label: "UI/UX'er",
+    value: "ui-ux",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: uiuxrIcon,
     className: "allOptions",
   },
   {
@@ -182,11 +200,24 @@ const options = [
   icon: obj.icon && `url(${obj.icon})`,
 }));
 
+const activeMember = {
+  label: (
+    <DropdownWrapper>
+      <div className="allOptions">Active</div>
+    </DropdownWrapper>
+  ),
+  value: "active",
+  color: theme.linkColor,
+  isFixed: true,
+  icon: activeIcon && `url(${activeIcon})`,
+  className: "allOptions",
+};
+
 const MembersPage = () => {
   /**
    * state storing the currently selected categories.
    */
-  const [members, setMembers] = useState([options[11]]);
+  const [members, setMembers] = useState([activeMember]);
   const handleChange = (value) => setMembers(value);
 
   const [theme, setTheme] = useState();
@@ -198,18 +229,9 @@ const MembersPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title="Members"
-          description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Dropdown options={options} handleChange={handleChange} />
-
-        {!members ? (
-          <MultipleMembers members={[options[10]]} />
-        ) : (
-          <MultipleMembers members={members} />
-        )}
+        <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
+        <MultipleMembers members={members} />
         <Footer />
       </Layout>
     </ThemeProvider>
@@ -217,3 +239,10 @@ const MembersPage = () => {
 };
 
 export default MembersPage;
+
+export const Head = () => {
+  return <SEO
+    title="Members"
+    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+  />;
+};

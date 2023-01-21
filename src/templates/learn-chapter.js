@@ -99,10 +99,6 @@ const SingleChapter = ({ data, location }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title={data.chapter.frontmatter.chapterTitle}
-          canonical="https://layer5.io/learn/learning-paths"
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
           <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} />
@@ -115,3 +111,9 @@ const SingleChapter = ({ data, location }) => {
 
 export default SingleChapter;
 
+export const Head = ({ data }) => {
+  return <SEO
+    title={data.chapter.frontmatter.chapterTitle}
+    canonical="https://layer5.io/learn/learning-paths"
+  />;
+};

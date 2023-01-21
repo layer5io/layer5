@@ -5,6 +5,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
+import BGImg from "../../../components/BGImage";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 
@@ -13,14 +14,13 @@ import Banner1SectionWrapper from "./banner4.style";
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-import { BgImage } from "gbimage-bridge";
 
 const Banner1 = (props) => {
 
-  const { backgroundImage123 } = useStaticQuery(
+  const { heroImage } = useStaticQuery(
     graphql`
       query {
-        backgroundImage123: file(
+        heroImage: file(
           relativePath: { eq: "poster.png" }
         ) {
           childImageSharp {
@@ -36,11 +36,11 @@ const Banner1 = (props) => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const pluginImage = getImage(heroImage);
 
   return (
     <Banner1SectionWrapper {...props}>
-      <BgImage image={pluginImage} className="section-bgimage">
+      <BGImg title="heroImage" image={pluginImage}>
         <Row>
           <Col sm={4} lg={6} className="section-title-wrapper text-col">
             <Container fullWidthSM>
@@ -73,7 +73,7 @@ const Banner1 = (props) => {
             </Col>
           )}
         </Row>
-      </BgImage>
+      </BGImg>
     </Banner1SectionWrapper>
   );
 };

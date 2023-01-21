@@ -22,26 +22,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-react-helmet-canonical-urls",
-      options: {
-        siteUrl: "https://layer5.io",
-        noQueryString: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: ["G-MDVP5FT6JY"],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-        },
-      },
-    },
+    "gatsby-plugin-svgr",
     {
       resolve: "gatsby-plugin-feed",
       options: {

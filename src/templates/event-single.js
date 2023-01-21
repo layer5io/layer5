@@ -55,7 +55,6 @@ const EventSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <EventSingle data={data} />
         <LearnServiceMeshCTA />
@@ -68,3 +67,7 @@ const EventSinglePage = ({ data }) => {
 
 export default EventSinglePage;
 
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+};
