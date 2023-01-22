@@ -66,7 +66,7 @@ const NavigationWrap = styled.header`
     background: ${props => props.theme.body};
     opacity: 0;
     border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};    
-    border-radius: 50px;
+    border-radius: 20px;
     top: 100%;
     left: 0;
     width: 120%;
