@@ -7,7 +7,7 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshMapIcon from "../../../../assets/images/meshmap/meshmap-color-icon.svg";
 import MeshMap from "../../../../assets/images/meshmap/meshmap-color-horizontal.svg";
-import MeshMapTitle from "../../../../assets/images/meshmap/meshmap-color-text.svg";
+import MeshMapTitle from "../../../../assets/images/meshmap/meshmap-color-text.png";
 
 const MeshMapWrapper = styled.section`
     .sub-project {
