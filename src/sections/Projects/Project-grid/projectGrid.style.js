@@ -51,7 +51,7 @@ export const ProjectWrapper = styled.div`
     .project__card{
         box-shadow: 0px 0px 10px ${props => props.theme.DarkTheme ? "#00d3a9" : "lightgrey"};
         background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-        border-radius: 11px;
+        border-radius: 0.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
