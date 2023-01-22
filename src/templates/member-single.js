@@ -49,7 +49,6 @@ const MemberSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MemberSingle
           frontmatter={data.mdx.frontmatter}
@@ -62,3 +61,6 @@ const MemberSinglePage = ({ data }) => {
 
 export default MemberSinglePage;
 
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} />;
+};

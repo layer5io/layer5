@@ -19,7 +19,6 @@ const Partners = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Partners" description="Partner Program" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Partner theme={theme} />
         <Footer />
@@ -28,3 +27,7 @@ const Partners = () => {
   );
 };
 export default Partners;
+
+export const Head = () => {
+  return <SEO title="Partners" description="Partner Program" />;
+};

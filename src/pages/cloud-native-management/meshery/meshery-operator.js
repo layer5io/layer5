@@ -23,9 +23,6 @@ const MesheryOperator = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Meshery Operator"
-          description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."
-          image="/images/meshery-operator.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryOperatorPage />
         <Footer />
@@ -34,3 +31,9 @@ const MesheryOperator = () => {
   );
 };
 export default MesheryOperator;
+
+export const Head = () => {
+  return <SEO title="Meshery Operator"
+    description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."
+    image="/images/meshery-operator.png" />;
+};

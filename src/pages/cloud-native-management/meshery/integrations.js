@@ -18,9 +18,6 @@ const Integrations = () => {
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="Meshery Integrations"
-        description="A collection of supported Meshery Integrations."
-      />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryIntegration theme={theme}/>
@@ -31,3 +28,10 @@ const Integrations = () => {
 };
 
 export default Integrations;
+
+
+export const Head = () => {
+  return <SEO title="Meshery Integrations"
+    description="A collection of supported Meshery Integrations."
+  />;
+};

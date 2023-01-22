@@ -22,7 +22,6 @@ const ContributorJourney = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <LeadershipPage />
         <Footer />
@@ -31,3 +30,7 @@ const ContributorJourney = () => {
   );
 };
 export default ContributorJourney;
+
+export const Head = () => {
+  return <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />;
+};

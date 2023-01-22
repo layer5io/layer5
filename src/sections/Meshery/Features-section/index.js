@@ -4,12 +4,16 @@ import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import slide1 from "../images/service mesh performance example.gif";
-import slide2 from "../images/meshery_benchmark_screen.png";
-import slide3 from "../images/meshery-configuration-management.png";
+import Slide1 from "../images/service mesh performance example.gif";
+import Slide2 from "../images/meshery_benchmark_screen.png";
+import Slide3 from "../images/meshery-configuration-management.png";
 import FeaturesSectionWrapper from "./features-section.style";
+import { StaticImage } from "gatsby-plugin-image";
 
-const slides_list = [slide1, slide2, slide3];
+const slide2Path = "../images/meshery_benchmark_screen.png";
+const slide3Path = "../images/meshery-configuration-management.png";
+
+const slides_list = [Slide1, Slide2, Slide3];
 
 const FeaturesSection = () => {
 
@@ -64,13 +68,13 @@ const FeaturesSection = () => {
             <Col xs={12} xl={8} className="smp-section-caraousel">
               <Slider {...settings}>
                 <div>
-                  <img src={slide1} alt="Slide 1" />
+                  <img src={Slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <img src={slide2} alt="Slide 2" />
+                  <StaticImage src={slide2Path} alt="Slide 2" />
                 </div>
                 <div>
-                  <img src={slide3} alt="Slide 3" />
+                  <StaticImage src={slide3Path} alt="Slide 3" />
                 </div>
               </Slider>
             </Col>

@@ -65,10 +65,6 @@ const CalendarPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title="Layer5 Events Calendar"
-          description="Join any or all of the Layer5 community meetings."
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <LoadableCalendar />
         <Footer />
@@ -78,3 +74,11 @@ const CalendarPage = () => {
 };
 
 export default CalendarPage;
+
+
+export const Head = () => {
+  return <SEO
+    title="Layer5 Events Calendar"
+    description="Join any or all of the Layer5 community meetings."
+  />;
+};

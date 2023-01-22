@@ -57,7 +57,6 @@ const BlogSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
           <BlogSingle theme={theme} data={data} />
@@ -70,3 +69,7 @@ const BlogSinglePage = ({ data }) => {
 
 export default BlogSinglePage;
 
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+};

@@ -20,9 +20,6 @@ const ManagersPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Community Managers"
-          description="Layer5 Community Managers have an innate drive to contribute to the community's prosperity and that of our individual contributors' prosperity."
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <CommunityManagers />
         <Footer />
@@ -32,3 +29,9 @@ const ManagersPage = () => {
 };
 
 export default ManagersPage;
+
+export const Head = () => {
+  return <SEO title="Community Managers"
+    description="Layer5 Community Managers have an innate drive to contribute to the community's prosperity and that of our individual contributors' prosperity."
+  />;
+};

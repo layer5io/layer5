@@ -22,7 +22,6 @@ const Handbook = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Community Handbook" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <HandbookPage />
         <Footer />
@@ -31,3 +30,8 @@ const Handbook = () => {
   );
 };
 export default Handbook;
+
+
+export const Head = () => {
+  return <SEO title="Community Handbook" description="The purpose of the handbook is to provide an overview of the Layer5 community" />;
+};

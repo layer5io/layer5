@@ -18,30 +18,18 @@ import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
+
 const IndexPage = () => {
   const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Corporation",
-    "name": "Layer5",
-    "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-gradient.png",
-    "sameAs": [
-      "https://twitter.com/layer5",
-      "https://www.linkedin.com/company/layer5/",
-      "https://github.com/layer5io",
-      "https://www.youtube.com/c/Layer5io?sub_confirmation=1"
-    ]
-  };
+
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
-        schemaMarkup={schema} />
+
       <Layout >
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Banner />
@@ -67,6 +55,26 @@ const IndexPage = () => {
         <Footer />
       </Layout>
     </ThemeProvider>
+  );
+};
+
+export const Head = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "Layer5",
+    "url": "https://layer5.io/",
+    "logo": "https://layer5.io/images/layer5-gradient.png",
+    "sameAs": [
+      "https://twitter.com/layer5",
+      "https://www.linkedin.com/company/layer5/",
+      "https://github.com/layer5io",
+      "https://www.youtube.com/c/Layer5io?sub_confirmation=1"
+    ]
+  };
+  return (
+    <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
+      schemaMarkup={schema} />
   );
 };
 
