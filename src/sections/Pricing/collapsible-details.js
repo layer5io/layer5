@@ -7,7 +7,7 @@ const FeatureDetailsWrapper = styled.div`
 display: inline;
 cursor: pointer;
 .open{
-    margin: 0rem;
+    margin: 0.75rem;
     list-style: none;
     height:auto !important;
     opacity:1 !important;
