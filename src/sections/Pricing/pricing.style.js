@@ -157,7 +157,7 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-features .feature {
-      margin: .5rem 0rem;
+      margin: .75rem 0rem;
       h5{
         color: ${props => props.theme.DarkTheme ? "#AAAAAA" : "#7A848E"};
         display: block;
