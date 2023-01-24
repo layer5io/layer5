@@ -13,7 +13,7 @@ const L404SectionWrapper = styled.section`
     h2.subtitle {      
         font-weight: 400;       
         font-size: 1.5rem;
-        color: black;
+        color: gray;
         font-style: italic;
         margin-top: 2.5rem;
     }
