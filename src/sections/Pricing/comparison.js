@@ -133,8 +133,6 @@ h2, h5{
   margin-top: 1rem;
 }
 .details{
-  display: flex;
-  margin: 0.5rem 0;
   p{
     color: #7A848E;
     margin-left: 1.1rem;
