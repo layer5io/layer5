@@ -25,10 +25,10 @@ const L404 = () => {
     <L404SectionWrapper>
       <Container>
         <h1 className="message"> {message} </h1>
-        <h3 className="subtitle">Page does not exist.</h3>
+        <h2 className="subtitle">Page does not exist.</h2>
         <div className="button-row">
           <img src={serviceMesh} alt="service meshed" className="mesh" />
-          <Button secondary url="/" external={false} >Return to Layer5</Button>
+          <Button id="return-layer5" secondary url="/" external={false} >Return to Layer5</Button>
         </div>
       </Container>
     </L404SectionWrapper>

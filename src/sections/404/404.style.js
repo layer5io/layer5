@@ -10,10 +10,10 @@ const L404SectionWrapper = styled.section`
         font-size: 2rem;
         line-height: 2rem;
     }
-    h3.subtitle {      
+    h2.subtitle {      
         font-weight: 400;       
         font-size: 1.5rem;
-        color: gray;
+        color: black;
         font-style: italic;
         margin-top: 2.5rem;
     }
