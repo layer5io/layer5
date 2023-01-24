@@ -7,7 +7,7 @@ const FeatureDetailsWrapper = styled.div`
 display: inline;
 cursor: pointer;
 .open{
-    margin: 0.75rem;
+    margin: 0rem;
     list-style: none;
     height:auto !important;
     opacity:1 !important;
@@ -70,7 +70,7 @@ const FeatureDetails = (props) => {
                 }}
               />
             )}
-          </div> : "" }
+          </div> : ""}
         <h5>{props.category}</h5>
         <div className="details">
           <p className={`closed ${expand ? "open" : ""}`}>
