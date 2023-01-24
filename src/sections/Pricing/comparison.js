@@ -133,25 +133,20 @@ h2, h5{
   margin-top: 1rem;
 }
 .details{
+  display: flex;
+  margin: 0.5rem 0;
   p{
     color: #7A848E;
     margin-left: 1.1rem;
   }
 }
 .category-icon{
-  margin: 1rem auto 0;
+  margin: 0rem auto;
 }
 .categories{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 1rem 0;
 }
-
-.categories > * {
-  margin-right: 1rem;
-}
-
 
 `;
 
