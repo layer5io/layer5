@@ -1,7 +1,7 @@
 ---
 title: "Google Petitions to Donate Istio Service Mesh to CNCF"
 subtitle: ""
-date:   2022-04-25 04:00:05 +0000
+date: 2022-04-25 04:00:05 +0000
 author: Container Journal
 category: Coverage
 thumbnail: istio-to-cncf.jpg
