@@ -9,6 +9,8 @@ import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-sch
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
 import William from "./reviews/william-morgan.png";
 import Ken from "./reviews/ken-owens.png";
+import Deepak from "./reviews/Deepak_Dinesh.png";
+import Kaur from "./reviews/Kaur_kallas.png";
 
 
 const settings = {
@@ -116,11 +118,25 @@ const Reviews = () => {
             image={Maxi}
           />
           <Customers
+            type="1"
+            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
+            person="Kaur Kallas"
+            title="Software Architect at Entigo"
+            image={Kaur}
+          />
+          <Customers
             type="3"
             quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any Service Mesh."
             person="Nic Jackson"
             title="Principal Developer Advocate at HashiCorp"
             image={Nic}
+          />
+          <Customers
+            type="1"
+            quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
+            person="Deepak Dinesh"
+            title="MeshMap User"
+            image={Deepak}
           />
         </Slider>
       </div>
