@@ -81,6 +81,11 @@ const handbookHome = () => {
           to="/community/handbook/code-of-conduct"
         />
         <HandbookCard
+          title="Security Vulnerabilities"
+          description="We are very grateful to the security researchers and users that report back Meshery security vulnerabilities. We investigate every report thoroughly."
+          to="/community/handbook/security-vulnerabilities"
+        />
+        <HandbookCard
           title="FAQs"
           description="General frequently asked questions (FAQ) about Layer5 and people who contribute through reporting issues, to submit pull requests or patches, and other activities."
           to="/community/handbook/faq"

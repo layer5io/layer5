@@ -10,5 +10,6 @@ export const content = [
   { id: 8, link: "/community/handbook/learn-layer5", text: "Learning" },
   { id: 9, link: "/community/handbook/connect-with-us", text: "Connect with us" },
   { id: 10, link: "/community/handbook/code-of-conduct", text: "Code of Conduct" },
-  { id: 11, link: "/community/handbook/faq", text: "FAQs" },
+  { id: 11, link: "/community/handbook/security-vulnerabilities", text: "Security Vulnerabiities" },
+  { id: 12, link: "/community/handbook/faq", text: "FAQs" },
 ];
