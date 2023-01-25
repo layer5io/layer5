@@ -3,13 +3,15 @@ import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
-import img1 from "./feature-images/meshery-configuration-management.png";
-import img2 from "./feature-images/meshery-wasm.png";
 import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import img4 from "./feature-images/meshery-and-grafana.png";
 import img5 from "./feature-images/meshsync.svg";
 import img6 from "./feature-images/meshery-extensibility.svg";
-import img7 from "../../../assets/images/docker-extension/docker-extension-meshery.png";
+import { StaticImage } from "gatsby-plugin-image";
+
+const img1 = "./feature-images/meshery-configuration-management.png";
+const img2 = "./feature-images/meshery-wasm.png";
+const img4 = "./feature-images/meshery-and-grafana.png";
+const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.png";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -31,7 +33,6 @@ const MesheryFeaturesWrapper = styled.div`
   }
 `;
 
-
 const MesheryFeatures = () => {
   return (
     <MesheryFeaturesWrapper>
@@ -43,7 +44,7 @@ const MesheryFeatures = () => {
               description:
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
               learnMoreLink: "/books/service-mesh-patterns",
-              content: <img src={img1} alt="Operational Best Practices" />,
+              content: <StaticImage src={img1} alt="Operational Best Practices" />,
             },
             {
               title: "Adaptive WebAssembly Filters for Envoy",
@@ -51,7 +52,7 @@ const MesheryFeatures = () => {
                 "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
-                <img src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
+                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
             },
             {
@@ -116,7 +117,7 @@ const MesheryFeatures = () => {
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <img src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" />
                   <p>
                     The Docker Extension for Meshery extends Docker Desktop’s
                     position as the cloud native developer’s go-to Kubernetes
@@ -151,7 +152,7 @@ const MesheryFeatures = () => {
               description: "",
               content: (
                 <div className="feature-expose-full">
-                  <img
+                  <StaticImage
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
                   />

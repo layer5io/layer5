@@ -62,7 +62,6 @@ const MemberBioSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.allMdx.nodes[0].frontmatter.name} image={data.allMdx.nodes[0].frontmatter.executive_image.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MemberBio
           frontmatter={data.allMdx.nodes[0].frontmatter}
@@ -76,3 +75,6 @@ const MemberBioSinglePage = ({ data }) => {
 
 export default MemberBioSinglePage;
 
+export const Head = ({ data }) => {
+  return <SEO title={data.allMdx.nodes[0].frontmatter.name} image={data.allMdx.nodes[0].frontmatter.executive_image.publicURL} />;
+};

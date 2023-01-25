@@ -1,44 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { HoneycombGrid } from "./Integration.style";
-import Slider from "react-slick";
-import styled from "styled-components";
+import { HoneycombGrid, IntegrationSlider } from "./Integration.style";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
-
-const IntegrationSlider = styled(Slider)`
-.slick-prev::before, .slick-next::before{
-    color:#00b39f !important;
-    font-size: 1.5rem !important;
-  }
-  
-  .slick-prev:hover, .slick-next:hover{
-    box-shadow: 0 2px 10px rgba(249, 243, 243, 0.4);
-  }
-
-  .slick-slide {
-    width: auto !important;
-    margin: 0 .5rem;
-  }
-
-  .slick-prev::before {
-    content:'<';
-    padding:0 0 0 .5em
-  }
-
-  .slick-next::before {
-    content:'>';
-  }
-
-  .slick-list {
-    margin:1.3em 1em 0;
-  }
-
-  `;
 
 const IntegrationsGrid = ({ category, theme, count }) => {
   const data = useStaticQuery(graphql`
@@ -78,12 +46,21 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   `);
 
   const settings = {
-    className: "category",
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: true,
     initialSlide: -1,
-    centerMode: true
+    infinite: true,
+    slidesToShow: 4,
+    swipeToSlide: true,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          dots: true,
+          arrows: false,
+        }
+      }
+    ]
   };
 
   const [searchQuery, setSearchQuery] = useState("");

@@ -36,7 +36,8 @@ h2, h5{
     font-size: 1rem;
     vertical-align: middle;
     h5{
-      display: inline-block;
+      display: block;
+      text-align: left;
       padding-top: 1rem;
       font-size: 1.2rem;
     }
@@ -138,9 +139,13 @@ h2, h5{
   }
 }
 .category-icon{
-  margin: 1rem auto 0;
+  margin: 0rem auto;
 }
-
+.categories{
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
 
 `;
 
@@ -178,7 +183,7 @@ const Comparison = () => {
                   </tr>
                   {x.features.map((f) => (
                     <tr key={f.feature}>
-                      <td><FeatureDetails category={f.feature} description={f.description}/></td>
+                      <td><FeatureDetails category={f.feature} description={f.description} /></td>
                       <td>{f.free}</td>
                       <td>{f.team}</td>
                       <td>{f.enterprise}</td>

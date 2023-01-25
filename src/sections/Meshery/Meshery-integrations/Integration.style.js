@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Slider from "react-slick";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -37,7 +38,7 @@ export const HoneycombGrid = styled.div`
   }
 
   ul {
-    margin: 0;
+    margin: 2.5rem 0 0 0;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -191,3 +192,66 @@ export const IntegrationCard = styled.div`
     }
   }
 `;
+
+export const IntegrationSlider = styled(Slider)`
+  .slick-prev:hover, .slick-next:hover{
+    box-shadow: none;
+    outline:none;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #00b39f;
+  }
+
+  .slick-dots li button:before{
+    font-size:.7rem;
+    color: #00b39f;
+  }
+
+  .slick-dots li button:hover {
+    box-shadow:none;
+    outline:none;
+  }
+
+  .slick-arrow {
+    margin:1rem 0 0 -.7rem;
+  }
+
+  .slick-slider {
+    margin-bottom: 1rem;
+  }
+
+  .slick-slide {
+    width: auto !important;
+    margin: 0 .5rem;
+  }
+
+  .slick-prev::before {
+    content:"\u2039";
+    font-size:5rem;
+    line-height: 0;	
+    margin-left:-.5rem;
+    color:#00b39f
+  }
+
+  .slick-next::before {
+    content:"\u203A";
+    font-size:5rem;
+    line-height: 0;	
+    color:#00b39f
+  }
+
+  .slick-prev, .slick-next {
+    top:0
+  }
+
+  @media screen and (max-width: 400px){
+    .slick-dots{
+      bottom: -1rem;
+    }
+    .slick-list {
+      margin:0 1rem;
+    }
+  }
+
+  `;

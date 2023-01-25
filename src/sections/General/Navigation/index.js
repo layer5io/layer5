@@ -273,9 +273,9 @@ const Navigation = ({ theme, themeSetter }) => {
 
           </div>
           <div className="meshery-cta">
-            <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
+            <Button id="goodbye-yaml" secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
             <div className="dark-theme-toggle">
-              <input id="toggle" className="toggle" type="checkbox" onChange={themeToggler} checked={!themeToggle} />
+              <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!themeToggle} />
             </div>
           </div>
 
