@@ -42,7 +42,7 @@ const NewsSingle = ({ data }) => {
   }
 }
 `
-);
+  );
   const posts = newsData.allMdx.nodes;
   const relatedPosts = posts.filter(
     (post) => post.fields.slug !== fields.slug
