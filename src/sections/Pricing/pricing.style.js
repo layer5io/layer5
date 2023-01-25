@@ -103,7 +103,7 @@ const PricingWrapper = styled.section`
 	padding: 2rem;
 	border-radius: 4px;
 	transition: .3s;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     margin: 1.5rem 1rem;
   }
 }
@@ -157,9 +157,14 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-features .feature {
-      margin: .5rem 0rem;
+      margin: .75rem 0rem;
+      .details{
+        display: flex;
+        margin: 0.5rem 0;
+      }
       h5{
         color: ${props => props.theme.DarkTheme ? "#AAAAAA" : "#7A848E"};
+        display: block;
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;
