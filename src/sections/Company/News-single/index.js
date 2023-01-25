@@ -10,7 +10,7 @@ import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
 
 const NewsSingle = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, body, fields } = data.mdx;
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
@@ -42,7 +42,12 @@ const NewsSingle = ({ data }) => {
   }
 }
 `
+);
+  const posts = newsData.allMdx.nodes;
+  const relatedPosts = posts.filter(
+    (post) => post.fields.slug !== fields.slug
   );
+
   return (
     <NewsPageWrapper>
       <PageHeader
@@ -78,7 +83,7 @@ const NewsSingle = ({ data }) => {
           }
           <RelatedPosts
             postType="news"
-            relatedPosts={newsData.allMdx.nodes}
+            relatedPosts={relatedPosts}
             mainHead="Latest News"
             lastCardHead="All News"
             linkToAllItems="/company/news"
