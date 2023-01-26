@@ -13,7 +13,7 @@ export const FakeBGImg = styled(GatsbyImage)`
   top: 0;
   left: 0;
   width: 100%;
-  max-height: 450px;
+  max-height: 32rem;
   z-index: 0;
   border-radius: 10px;
   opacity:1;
