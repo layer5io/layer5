@@ -16,7 +16,7 @@ const SecurityVulnerabilitiesPage = () => {
         <Container>
           <div className="content">
             <h2>Reporting a vulnerability</h2><br />
-            <p>We are very grateful to the security researchers and users that report back Meshery security vulnerabilities. We investigate every report thoroughly.</p>
+            <p>We are very grateful to the security researchers and users that report security vulnerabilities. We investigate each report thoroughly.</p>
             <p>To make a report, send an email to the private <a href="mailto: security@meshery.dev">security@meshery.dev</a>  mailing list with the vulnerability details. For normal product bugs unrelated to latent security vulnerabilities, please head to the appropriate repository and submit a <a href="https://github.com/meshery/meshery/issues/new/choose">new issue</a> .</p>
 
             <h3>When to report a security vulnerability?</h3>
