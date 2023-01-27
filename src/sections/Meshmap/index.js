@@ -14,6 +14,8 @@ import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import MesheryAction from "./meshery-action";
 import CommonForm from "../../components/CommonForm";
 import MeshmapFeatures from "./meshmap_features";
+import Reviews from "../Pricing/review-slider";
+
 
 
 const Meshmap = () => {
@@ -94,6 +96,7 @@ const Meshmap = () => {
           {/* <Platform /> */}
         </Container >
       </div >
+      <Reviews/>
     </MeshmapWrapper>
   );
 };
