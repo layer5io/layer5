@@ -9,8 +9,8 @@ import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-sch
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
 import William from "./reviews/william-morgan.png";
 import Ken from "./reviews/ken-owens.png";
-import Deepak from "./reviews/Deepak_Dinesh.jpg";
-import Kaur from "./reviews/Kaur_kallas.jpg";
+import Deepak from "./reviews/deepak-dinesh.jpg";
+import Kaur from "./reviews/kaur-kallas.jpg";
 
 
 const settings = {
