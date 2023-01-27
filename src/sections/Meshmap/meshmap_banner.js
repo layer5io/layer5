@@ -1,34 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapIcon from "./meshmap-icon.svg";
+import MeshmapIcon from "./meshmap-newicon.svg";
 
 const BannerSectionWrapper = styled.div`
 
-    background: #000000;
-    border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
-    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33); 
-    box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
-        
+    background: linear-gradient(180deg, #EEEEEE 0%, rgba(251, 251, 251, 0) 100%);
     padding: 8rem 6rem 3rem 6rem;
     margin-bottom: 3rem;
-    min-height: 25rem;
+    min-height: 35rem;
 
     h1 {
         /* background-color: ${props => props.theme.black}; */
         font-weight: 500;
         font-size: 60px;
-        color: ${props => props.theme.white};
-        
+        color: #444444;
+        position: absolute;
+        margin-top: 3rem;
+        left: 10rem;
         line-height: 4.3rem;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
         span {
-            font-size: 70px;
+            font-size: 60px;
             width: fit-content;
             border-radius: .25rem;
             /* padding: .5rem; */
             /* background-color: ${props => props.theme.saffronLightColor};     */
             font-weight: 700;
-            color: ${props => props.theme.caribbeanGreenColor};
+            color: #444444;
         }
         @media screen and (max-width: 380px) {
             font-size: 38px;
@@ -83,17 +81,76 @@ const BannerSectionWrapper = styled.div`
     }
 
     .meshmap-logo {
-        width: 14rem;
+        width: 35rem;
         overflow: hidden;
         margin-top: -7rem;
         position: absolute;
-        right: 25%;
+        right: 1rem;
+    }
+    .line {
+        position: absolute;
+        width: 30.2vw;
+        height: 0px;
+        left: 9.9rem;
+        top: 21.7rem;
+        border: 2px solid rgba(0,0,0,0.07);
+    }
+    .tagline {
+        position: absolute;
+        width: 36vw;
+        height: 0px;
+        left: 10rem;
+        top: 21.7rem;
+        font-family: 'Qanelas Soft DEMO';
+        font-style: normal;
+        font-weight: 100;
+        font-size: 35px;
+        line-height: 61px;
+        color: #000000;
+    }
+
+    .desc {
+        position: absolute;
+        width: 30.2vw;
+        height: 87px;
+        left: 10rem;
+        top: 27.7rem;
+
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: -0.025em;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .get-started {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 19px 33px;
+        gap: 10px;
+        position: absolute;
+        width: 160px;
+        height: 55px;
+        left: 10rem;
+        top: 37rem;
+        background: #00B39F;
+        border-radius: 5px;
+        color: #ffffff;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-size: 17px;
+        font-weight:400;
+        border-color: #ffffff
     }
     div.accent-bubble {
         width: 50%;
         height: 100%;
         background-position: right 20%;
-        
+
         border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%;
         background: linear-gradient(90deg, hsla(168, 100%, 41%, 1) 57%, hsla(48, 84%, 51%, 1) 100%);
 
@@ -106,9 +163,9 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 1700px) {
         .meshmap-logo {
-            width: 12rem;
-            right: 12rem;
-            margin-top: -5rem;
+            width: 37rem;
+            right: 10rem;
+            margin-top: 0.7rem;
         }
         .para {
             margin-top: -3rem;
@@ -116,16 +173,16 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 1150px) {
         .meshmap-logo {
-            width: 12rem;
-            right: 8rem;
+            width: 30rem;
+            right: 1rem;
             margin-top: -5rem;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
     @media screen and (max-width: 992px) {
         .meshmap-logo {
-            width: 8rem;
-            right: 3rem;
+            width: 30rem;
+            right: 1rem;
             margin-top: -2rem;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
@@ -138,35 +195,22 @@ const BannerSectionWrapper = styled.div`
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-
-`;
+    `;
 
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
       <div className="meshmap-logo">
         <img src={MeshmapIcon} alt="Meshery Logo" />
-        {/* <div className="accent-bubble">asdf</div> */}
-
       </div>
       <div>
-        {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
-        <h2>Step aside, YAML</h2>
-        <h1><span>MeshMap</span> is here</h1>
-        {/* <h3>the world's only visual designer for cloud native infrastructure.</h3> */}
-        {/* <h3>
-                    Application reigns King. Context is his Queen.
-                </h3> */}
-        <h3>
-                    Friends don't let friends GitOps alone.
-        </h3>
-        {/* <h4>Discover and Visualize</h4>
-                <h4><span>Collaborate and Design</span></h4>
-                any and all your cloud native infra and apps */}
+        <h1><span>MeshMap</span></h1>
+        <div className="line"></div>
+        <div className="tagline">Your visual navigator</div>
+        <div className="desc">Say goodbye to YAML. MeshMap allows you to get the best out of your infrastructure, in the easiest way possible.</div>
+        <button className="get-started">Get Started</button>
       </div>
-      {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
-
   );
 };
 
