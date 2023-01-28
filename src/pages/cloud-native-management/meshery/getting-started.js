@@ -27,9 +27,6 @@ const MesheryMainPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Meshery Getting Started"
-          description="How to get started with cloud native management. Adopting and operating your cloud native infrastructure."
-          image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryTerminal />
         <MesheryPlatforms />
@@ -41,3 +38,10 @@ const MesheryMainPage = () => {
   );
 };
 export default MesheryMainPage;
+
+
+export const Head = () => {
+  return <SEO title="Meshery Getting Started"
+    description="How to get started with cloud native management. Adopting and operating your cloud native infrastructure."
+    image="/images/meshery-logo-dark-text.png" />;
+};

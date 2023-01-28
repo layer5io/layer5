@@ -97,10 +97,6 @@ const CourseOverviewTemplate = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
-          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
           <CourseOverview
@@ -117,3 +113,10 @@ const CourseOverviewTemplate = ({ data }) => {
 };
 
 export default CourseOverviewTemplate;
+
+export const Head = ({ data }) => {
+  return <SEO
+    title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
+    description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
+  />;
+};

@@ -23,10 +23,6 @@ const CommunityIndex = () => {
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
-          description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
-           Join the award-winning open source community - the warmest and most welcoming open source community around."
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Community theme={theme} />
         <Footer />
@@ -35,3 +31,10 @@ const CommunityIndex = () => {
   );
 };
 export default CommunityIndex;
+
+export const Head = () => {
+  return  <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
+    description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
+           Join the award-winning open source community - the warmest and most welcoming open source community around."
+  />;
+};

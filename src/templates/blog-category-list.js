@@ -58,11 +58,6 @@ const BlogListPage = ({ pageContext, data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO
-          title="Blog"
-          description="Articles on how to develop and operatate cloud native infrastucture and microservices."
-          canonical="https://layer5.io/blog"
-        />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <BlogList data={data} pageContext={pageContext} />
         <Footer />
@@ -71,3 +66,11 @@ const BlogListPage = ({ pageContext, data }) => {
   );
 };
 export default BlogListPage;
+
+export const Head = () => {
+  return  <SEO
+    title="Blog"
+    description="Articles on how to develop and operatate cloud native infrastucture and microservices."
+    canonical="https://layer5.io/blog"
+  />;
+};

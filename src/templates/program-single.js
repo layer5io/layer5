@@ -36,7 +36,6 @@ const ProgramSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <ProgramsSingle data={data.mdx} />
         <Footer />
@@ -46,3 +45,7 @@ const ProgramSinglePage = ({ data }) => {
 };
 
 export default ProgramSinglePage;
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} />;
+};
