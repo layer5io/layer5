@@ -32,7 +32,7 @@ function GlobalFilter({
         }}
         placeholder={searchPlaceHolder}
         style={{
-          font: "400 1rem Open Sans",
+          font: "400 1rem Qanelas Soft",
           border: "1.5px solid white",
           borderRadius: "4px",
           width: "20rem"
