@@ -65,24 +65,20 @@ const Connect = () => {
             <ul>
 
               <li><a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a></li>
-              <li><a href="mailto:discuss-admins@layer5.io">Administrators of discuss.layer5.io</a></li>
-              <li><a href="mailto:discuss-moderators@layer5.io">Moderators of discuss.layer5.io</a></li>
+              <li><a href="mailto:discuss-moderators@layer5.io">Moderators of Discussion Forum</a></li>
               <li><a href="mailto:dev-group@meshery.io">Meshery Developers</a></li>
               <li><a href="mailto:user-group@meshery.io">Meshery Users</a></li>
               <li><a href="http://meshery-dev@meshery.dev">Meshery Contributors</a></li>
               <li><a href="mailto:maintainers@meshery.io">Meshery Maintainers</a></li>
               <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
               <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
-              <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
               <li><a href="https://groups.google.com/a/getnighthawk.dev/g/developers">Nighthawk Developers</a></li>
               <li><a href="https://groups.google.com/u/2/a/getnighthawk.dev/g/maintainers">Nighthawk Maintainers</a></li>
               <li><a href="https://groups.google.com/a/getnighthawk.dev/g/users">Nighthawk Users</a></li>
               <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
               <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
               <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
-              <li><a href="mailto:community@layer5.io">Layer5 Community</a></li>
               <li><a href="mailto:community-members@layer5.io">Layer5 Community Members</a></li>
-
             </ul>
             <a id="Calendar">
               {" "}
@@ -193,10 +189,9 @@ const Connect = () => {
               <h2>Social Media</h2>{" "}
             </a>
             <p>
-              Layer5 is dedicated to providing the most efficient Service mesh
-              management tool while growing a healthy open-source community. To
-              know more about layer5 and connect with the community, follow and
-              engage with us on our social media accounts.
+              Layer5 is dedicated to empowering engineers and supporting the open source community that create them.
+              Learn more about Layer5 and connect with the community by following and
+              engaging with us on our social media accounts.
             </p>
             <div className="channels-list">
               <p className="channels-para">

@@ -16,6 +16,7 @@ const NightHawk = loadable(() => import ("./Brand-components/nighthawk"));
 const ServiceMeshPatterns = loadable(() => import ("./Brand-components/servicemeshpatterns"));
 const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
 const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
+const MeshMapBrand = loadable(() => import ("./Brand-components/meshmap"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -99,6 +100,7 @@ const Brand = () => {
   const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
   const meshmarkRef = useRef(null);
+  const meshmapRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -112,6 +114,7 @@ const Brand = () => {
     { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
+    { section: "MeshMap", ref: meshmapRef },
   ];
 
   useEffect(() => {
@@ -192,6 +195,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={meshMasterRef}>
             <MeshMasterBrand />
+          </div>
+          <div className="section" ref={meshmapRef}>
+            <MeshMapBrand />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
@@ -305,6 +311,16 @@ const Brand = () => {
               }}
             >
               <span> MeshMaster </span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMap" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(meshmapRef.current);
+              }}
+            >
+              <span> MeshMap </span>
             </p>
           </nav>
         </Col>

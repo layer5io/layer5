@@ -147,6 +147,7 @@ const NavigationWrap = styled.header`
     .nav-display {
       border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
       padding-top: 1em;
+      padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -260,7 +261,7 @@ const NavigationWrap = styled.header`
       line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 0px 20px;
       cursor: pointer;
       &:before {
         content: "";

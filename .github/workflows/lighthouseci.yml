@@ -1,9 +1,5 @@
 name: lighthouseci
 on: 
-  push:
-    paths-ignore:
-      - "*.md"
-      - "*.github/**"
   pull_request:
     paths-ignore:
       - "*.md"
