@@ -78,7 +78,7 @@ const BlogSideBarWrapper = styled.div`
                     color: ${props => props.theme.DarkTheme ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)"};
                     display: flex;
                     justify-content: space-between;
-                    font: 400 16px/35px "Open Sans", sans-serif;
+                    font: 400 16px/35px "Qanelas Soft", sans-serif;
                     em{font-style: normal;}
                     span{
                         border-bottom: 1px solid transparent;
@@ -115,7 +115,7 @@ const BlogSideBarWrapper = styled.div`
                     padding: 6px 18px;
                     border-radius: 3px;
                     background: ${props => props.theme.DarkTheme ? "#212121" : "#F0F0F0"};
-                    font: 400 13px/26px "Open Sans", sans-serif; 
+                    font: 400 13px/26px "Qanelas Soft", sans-serif; 
                     transition: all 0.3s linear;
                     &:hover{
                         background: ${props => props.theme.secondaryColor};
