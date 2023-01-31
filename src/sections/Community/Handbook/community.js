@@ -15,6 +15,7 @@ import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
+import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
 
 const contents = [
   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
@@ -190,6 +191,10 @@ const CommunityGuide = () => {
               <li>
                 <img src={uiuxrLogo} style={badgeStyle} />
                 UI/UX'er
+              </li>
+              <li>
+                <img src={writersLogo} style={badgeStyle} />
+                Writer
               </li>
             </ul>
             <a id="Membership">
