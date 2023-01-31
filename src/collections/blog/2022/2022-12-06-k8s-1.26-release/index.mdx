@@ -92,15 +92,15 @@ Kubernetes has no resources to identify and manage users as part of its API. Ins
 
 ### [Non-Graceful Node Shutdown for StatefulSet Pods](https://github.com/kubernetes/enhancements/issues/2268) [Beta]
 
-Kubernetes is a battle-tested platform that makes itself resistant to disaster in the data center. Graceful node shutdown is already part of kubelet, to detect and move workloads afterward. However, when the shutdown is not detected by the kubelet, the pods of a `StatefulSet` are stuck as `Terminating` and not transferred to a healthy node. This happens due to a conflict in the Kubernetes machinery: The kubelet on the down node will not delete its pods from Kubernetes API, and the StatefulSet controller will not create new pods with the same name. With this enhancement, moving to beta, the pods will be forcefully deleted with their volume attachments, and new pods will be created on the healthy nodes.
+As a platform Kubernetes is hardened and has been deploy by thousands and thousands of users. Hardening of Kubernetes makes itself resistant to disasters. The kubelet agent that runs on each node in a Kubernetes cluster already uses graceful node shutdown to detect and offboard workloads to other nodes. However, when the shutdown is not detected by the kubelet, the pods of a `StatefulSet` are stuck as `Terminating` and not transferred to a healthy node. The kubelet on the downed node will not delete its pods from Kubernetes API, and the StatefulSet controller will not create new pods with the same name. This happens due to a conflict in the Kubernetes machinery. With this enhancement moving into beta, though, pods will be forcefully deleted along with their volume attachments and new pods will be migrated (created) on healthy nodes.
 
 ### [Pod Scheduling Readiness](https://github.com/kubernetes/enhancements/issues/3521) [Alpha]
 
 Currently, pods are considered ready for scheduling as soon as they are created. However, not every pod requires a node, resource allocation, and the start of all its containers immediately after its creation. The new alpha enhancement adds an API to mark pods with their scheduling status: paused and ready. Pods with the .spec.schedulingGates field will be parked in the scheduler and only be assigned to nodes when they are ready to be scheduled.
 
-### [OpenAPI v3 for kubectl explain](https://github.com/kubernetes/enhancements/issues/3515) [Alpha]
+### [kubectl explain to use OpenAPI v3 for ](https://github.com/kubernetes/enhancements/issues/3515) [Alpha]
 
-Kubernetes has supported OpenAPI v3 as a beta since version 1.24, providing users with a richer representation of the fields in the Kubernetes API. With the new alpha enhancement, the kubectl explain command will use the rich type information specified by OpenAPI v3 instead of OpenAPI v2.
+Use of OpenAPI v3 means supporting rich type information in `kubectl explan`. Kubernetes has supported OpenAPI v3 as a beta since version 1.24. This richer representation of the fields in the Kubernetes API, means that users can use the `kubectl explain` command to get information that is only detailed in  OpenAPI v3, and not the subset defined OpenAPI v2.
 
 ## Deprecations and Removals
 
