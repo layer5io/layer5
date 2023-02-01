@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../../reusecore/Button";
 import MeshmapIcon from "./meshmap-newicon.svg";
 
 const BannerSectionWrapper = styled.div`
@@ -101,7 +102,7 @@ const BannerSectionWrapper = styled.div`
         height: 0px;
         left: 10rem;
         top: 21.7rem;
-        font-family: 'Qanelas Soft DEMO';
+        font-family: 'Qanelas Soft';
         font-style: normal;
         font-weight: 100;
         font-size: 35px;
@@ -115,36 +116,20 @@ const BannerSectionWrapper = styled.div`
         height: 87px;
         left: 10rem;
         top: 27.7rem;
-
-        font-family: 'Open Sans';
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 19px;
         line-height: 29px;
         letter-spacing: -0.025em;
         color: rgba(0, 0, 0, 0.6);
     }
 
     .get-started {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 19px 33px;
-        gap: 10px;
-        position: absolute;
-        width: 160px;
-        height: 55px;
-        left: 10rem;
-        top: 37rem;
-        background: #00B39F;
-        border-radius: 5px;
-        color: #ffffff;
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-size: 17px;
-        font-weight:400;
-        border-color: #ffffff
+        position: relative;
+        top: 21rem;
+        left: 4rem;
+
     }
     div.accent-bubble {
         width: 50%;
@@ -208,7 +193,8 @@ const BannerSection = () => {
         <div className="line"></div>
         <div className="tagline">Your visual navigator</div>
         <div className="desc">Say goodbye to YAML. MeshMap allows you to get the best out of your infrastructure, in the easiest way possible.</div>
-        <button className="get-started">Get Started</button>
+        {/* <button className="banner-btn two">Get Started</button> */}
+        <Button secondary className="get-started" title="Get Started"/>
       </div>
     </BannerSectionWrapper>
   );
