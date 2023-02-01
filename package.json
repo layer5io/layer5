@@ -39,7 +39,7 @@
     "babel-preset-gatsby": "^2.22.0",
     "caniuse-lite": "^1.0.30001435",
     "dedent": "^0.7.0",
-    "deepmerge": "^4.2.2",
+    "deepmerge": "^4.3.0",
     "formik": "^2.2.9",
     "gatsby": "^4.20.0",
     "gatsby-awesome-pagination": "^0.3.8",
