@@ -13,7 +13,7 @@ const DoYouNeedWrapper = styled.div`
     background-color: #000000;
 
     *{
-        font-family: "Qanelas Soft","Open Sans", sans-serif;
+        font-family: "Qanelas Soft","Qanelas Soft", "Open Sans", sans-serif;
         color: #ffffff;
     }
 
