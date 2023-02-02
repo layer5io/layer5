@@ -258,7 +258,14 @@ const Navigation = ({ theme, themeSetter }) => {
                   <div>
                     <ul>
                       <li className="mobile-nav-item">
-                        <Link to="/cloud-native-management/meshmap" className="menu-item" activeClassName="nav-link-active">MeshMap</Link>
+                        <Link to="https://meshery.layer5.io/registration" className="menu-item" activeClassName="nav-link-active">Get Started</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li className="mobile-nav-item">
+                        <Link to="https://meshery.layer5.io/login" className="menu-item" activeClassName="nav-link-active">Login</Link>
                       </li>
                     </ul>
                   </div>
@@ -273,7 +280,8 @@ const Navigation = ({ theme, themeSetter }) => {
 
           </div>
           <div className="meshery-cta">
-            <Button id="goodbye-yaml" secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
+            <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" />
+            <a href="https://meshery.layer5.io/login">Login</a>
             <div className="dark-theme-toggle">
               <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!themeToggle} />
             </div>
