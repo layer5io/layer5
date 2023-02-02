@@ -14,7 +14,9 @@ import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import MesheryAction from "./meshery-action";
 import CommonForm from "../../components/CommonForm";
-import MeshmapFeatures from "./meshmap_features";
+import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
+import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
+import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import Reviews from "../Pricing/review-slider";
 
 
@@ -60,64 +62,63 @@ const Meshmap = () => {
             />
           </div>
           <MeshmapModes />
-          <MeshmapFeatures
+          <DesignerFeatures
             title="MeshMap Features"
             // description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
             features={
               [
                 {
-                  title: "Design",
                   description: <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.</p>
                 },
                 {
-                  title: "",
                   description:
                     <p>Visually modify your infrastructure requirements with an intuitive interface.</p>,
                 },
                 {
-                  title: "",
                   description:
-                    <div><p>Substitute your YAML files with powerful configurations.</p>
-                    </div>,
+                    <p>Substitute your YAML files with powerful configurations.</p>
+
+                },
+
+              ]} />
+
+          <VisualizerFeatures
+            features={
+              [
+                {
+                  description:
+                    <p>Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. </p>
                 },
                 {
-                  title: "Visualize",
                   description:
-                    <div>
-                      <p>Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. </p>
-                    </div>,
-                },
-                {
-                  title: "",
-                  description: <div>
                     <p>Interactively connect to terminal sessions or initiate and search log streams from your containers.</p>
-                  </div>
                 },
                 {
-                  title: "",
                   description:
                     <p>Manage your infrastructure in the best way possible.</p>,
                 },
+              ]} />
+
+          <CollaboratorFeatures
+            features={
+              [
                 {
-                  title: "Collaborate",
                   description:
                     <p>Collaborate with other engineers to achieve the best infrastructure desings.</p>,
                 },
 
                 {
-                  title: "",
                   description:
                     <p>Save and resume your sessions without losing any ideas.</p>,
                 },
                 {
-                  title: "",
                   description:
                     <p>Friends don't let friends GitOps alone.</p>,
                 },
 
               ]} />
 
-          {/* <Catalog /> */}
+          <Catalog />
           {/* <MesheryAction /> */}
 
           <div className="banner-background">

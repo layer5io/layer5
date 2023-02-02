@@ -8,41 +8,21 @@ import { useEffect } from "react";
 import { triggerDateSelect } from "@fullcalendar/react";
 
 export default function Feature({
-  title,
   description,
-  icon,
-  logos,
   onInViewStatusChanged,
 }) {
-  const [ref, inView] = useInView({ threshold: 0.8 });
+  const [ref, inView] = useInView({ threshold: 0.9 });
   const [inViewStatus, setInViewStatus] = useState(false);
-  const [fix, setFix] = useState(false);
   if (inView !== inViewStatus) {
     setInViewStatus(inView);
     onInViewStatusChanged(inView);
   }
 
-
-  useEffect(() => {
-    const setFixed = () => {
-      if (window.scrollY >= 1660)
-        setFix(true);
-      else
-        setFix(false);
-    };
-    window.addEventListener("scroll", setFixed);
-  }, []);
-
-
-
   return (
     <FeatureWrapper>
-      <div className="root" ref={ref}>
-        <div className="text">{
-          (title != "") &&
-          <h4 className={fix ? "fixed" : ""}> {title}</h4>}
+      <div className="root">
+        <div ref={ref} className="text" id = {inView ? "inView" : "notInView"}>
           {description}
-          {logos ? <LogoList logos={logos} /> : null}
         </div>
       </div>
     </FeatureWrapper>

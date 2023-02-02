@@ -273,7 +273,8 @@ const Navigation = ({ theme, themeSetter }) => {
 
           </div>
           <div className="meshery-cta">
-            <Button id="goodbye-yaml" secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
+            <Button id="signup" secondary className="banner-btn two" title="Sign up" url="https://meshery.layer5.io/registration" />
+            <Button id="login" secondary className="banner-btn two" title="Login" url="https://meshery.layer5.io/login" />
             <div className="dark-theme-toggle">
               <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!themeToggle} />
             </div>

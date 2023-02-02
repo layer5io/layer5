@@ -23,6 +23,10 @@ const NavigationWrap = styled.header`
     top: 1.5rem;
     max-height: 50px;
 
+    #signup {
+      margin-right: 10px;
+    }
+
     a {
       display: flex;
     }
@@ -34,9 +38,36 @@ const NavigationWrap = styled.header`
     }
     @media screen and (max-width: 1275px) {
       right: -1.95rem;
+      #signup {
+        min-width: 115px;
+      }
+      #login {
+        min-width: 115px;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+    }
+    @media screen and (max-width: 1215px) {
+      right: -1.5rem;
+      #signup {
+        min-width: 115px;
+      }
+      #login {
+        min-width: 115px;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
     }
     @media screen and (max-width: 992px) {
       right: -1rem;
+      #signup {
+        min-width: 95px;
+      }
+      #login {
+        min-width: 95px;
+      }
     }
     @media screen and (max-width: 912px) {
       a {
@@ -46,7 +77,7 @@ const NavigationWrap = styled.header`
         margin-left: 0.5em;
         margin-bottom: 2.5em;
       }
- 
+
     }
   }
   .navbar-wrap {
@@ -65,7 +96,7 @@ const NavigationWrap = styled.header`
     position: absolute;
     background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};    
+    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -82,7 +113,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     height: 350px;
-    margin-top: -2rem; 
+    margin-top: -2rem;
     visibility: visible;
   }
   .mobile-dropdown {
@@ -145,7 +176,7 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
+      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"};
       padding-top: 1em;
       padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
@@ -310,7 +341,7 @@ const NavigationWrap = styled.header`
       width: 125px;
     }
   }
-  &.scrolled {    
+  &.scrolled {
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
     .nav {
       .nav-item{
@@ -439,11 +470,11 @@ const NavigationWrap = styled.header`
       padding-left: 10px;
     }
   }
-  
+
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
   }
-  
+
   .anchor:before {
     content: none;
   }
@@ -481,7 +512,7 @@ const NavigationWrap = styled.header`
 
   .post-thumb-block{
     overflow: hidden;
-    border-radius: 10px;  
+    border-radius: 10px;
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
@@ -525,7 +556,7 @@ const NavigationWrap = styled.header`
 
 
     }
-    
+
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -587,7 +618,7 @@ const NavigationWrap = styled.header`
   .toggle:checked~.title {
     --color: #fa0;
   }
-  
+
 `;
 
 export default NavigationWrap;

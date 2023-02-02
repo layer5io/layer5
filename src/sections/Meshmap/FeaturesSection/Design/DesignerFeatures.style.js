@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-const MeshmapFeaturesWrapper = styled.section`
+const DesignerFeaturesWrapper = styled.section`
+margin-bottom: 15rem;
+
+
 // ul li:last-child {
 //     padding-bottom: 120px;
 //   }
@@ -39,9 +42,12 @@ const MeshmapFeaturesWrapper = styled.section`
 
   .contentContainer {
     display: flex;
-    justify-content: space-between;
     position: relative;
-    min-width: 76rem;
+    min-width: 67rem;
+
+    @media (max-width: 1200px) {
+      min-width: 60rem;
+    }
 
     @media (max-width: 767px) {
       flex-direction: column;
@@ -49,8 +55,8 @@ const MeshmapFeaturesWrapper = styled.section`
 
     & > ul {
       max-width: 470px;
-      margin-left: 50px;
       padding-bottom: 50px;
+      padding-left: 0;
 
       @media (max-width: 1120px) {
         margin-left: 64px;
@@ -72,6 +78,7 @@ const MeshmapFeaturesWrapper = styled.section`
   .diagram {
     width: 591px;
     max-width: 100%;
+    min-width: 40rem;
     position: sticky;
     top: calc(50vh - 249px);
     @media (max-width: 767px) {
@@ -79,8 +86,17 @@ const MeshmapFeaturesWrapper = styled.section`
       }
   }
 
+  #featureHeading {
+    z-index: 1;
+    & h3 {
+      text-align: center;
+      font-size: 80px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
   .features {
-
+    z-index: 0;
     & > li {
       list-style: none;
 
@@ -117,7 +133,16 @@ const MeshmapFeaturesWrapper = styled.section`
     }
   }
 
+  .fixed {
+  position: sticky;
+  top: 5.9rem;
+  font-weight: 300;
+  color: white;
+  background-color: #00b39f;
+  box-shadow: -50px 50px 60px #fff;
+  transition: .3s ease-in-out;
+}
 
 `;
 
-export default MeshmapFeaturesWrapper;
+export default DesignerFeaturesWrapper;

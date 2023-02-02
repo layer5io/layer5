@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const FeatureWrapper = styled.section`
+
+
+
 .root {
   display:flex;
   .icon{
@@ -12,23 +15,35 @@ const FeatureWrapper = styled.section`
     }
   }
   & > .text {
-  h4 {
-    font-family: 'Qanelas Soft';
-    font-size: 55px;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    font-weight: 200;
-    align-items: center;
-  }
+    opacity:0;
 
   & > p {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
     font-weight: 400;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15rem;
+    margin-bottom: 10rem;
+
+    @media (max-width: 1200px) {
+      font-size: 17px;
+        }
 
   }
 }
+
+@media (max-width: 1200px) {
+          max-width: 80%;
+        }
+}
+
+#inView {
+  opacity: 1;
+  transition: opacity .6s ease;
+}
+
+#notInView {
+  opacity: 0;
+  transition: opacity .6s ease;
 }
 
 .fixed {
@@ -40,14 +55,6 @@ const FeatureWrapper = styled.section`
   transition: .3s ease-in-out;
 }
 
-.line {
-        position: relative;
-        width: 30.2vw;
-        height: 0px;
-        border: 2px solid;
-        color: #eeeeee;
-
-    }
 `;
 
 

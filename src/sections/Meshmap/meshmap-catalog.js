@@ -27,12 +27,12 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 8rem 0 8rem;
+margin: 20rem 0 16rem;
 min-height: fit-content;
 
-.powerups {
-  min-height: fit-content;
-  margin-bottom: 4rem;
+.patterns {
+  max-height: 30rem;
+  padding-bottom: 2rem;
 }
 
 .catalog-wrapper {
@@ -46,12 +46,12 @@ p.caption {
     position: relative;
     width: 23rem;
     height: 11rem;
-    left: 10.4rem;
+    left: 8.3rem;
     margin: 0rem 0rem 2.5rem 0rem;
-    font-family: 'Open Sans';
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 25px;
     text-align: right;
   }
@@ -80,7 +80,7 @@ h2.heading {
   position: relative;
   width: 40rem;
   height: 11rem;
-  left: -21rem;
+  right: 23rem;
 
   font-family: 'Qanelas Soft';
   font-style: normal;
@@ -104,13 +104,19 @@ h3.containerCaption {
 }
 .vertical-line
 {
-    position: absolute;
-    top: 105rem;
-    left: 49rem;
+    position: relative;
+    bottom: 30rem;
+    left: 35rem;
     height: 24rem;
     width: 0px;
     border: 1.5px solid rgba(0, 0, 0, 0.3);
 
+}
+
+.logos {
+  position: relative;
+  bottom: 159rem;
+  right: 14rem;
 }
 
 .row-1{
@@ -347,16 +353,16 @@ const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <div className="powerups">
+        <div className="patterns">
           <h2 className="heading">Save time with design patterns</h2>
           <p className="caption">Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b></p>
           <div className="vertical-line"></div>
-          <div className="powerups">
+          <div className="logos">
             <Row className="row-1">
               <Col md={6} xs={12}>
                 <section className="svg-cont">
                   <div>
-                    <img className="patterns" src={Patterns} />
+                    <img src={Patterns} />
                     <p>Service Patterns</p>
                   </div>
                   <div>
