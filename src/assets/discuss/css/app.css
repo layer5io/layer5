@@ -1,7 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/5173256ffa3e08c4cbed8986369258a6?family=Qanelas+Soft);
 
 @font-face {
-  font-family: 'Qanelas Soft';
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
   src: url('Qanelas-Soft.eot'); /* IE9 Compat Modes */
   src: url('Qanelas-Soft?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('Qanelas-Soft.woff2') format('woff2'), /* Super Modern Browsers */
@@ -10,8 +10,8 @@
 }
 
 body {
-    font-family: "Qanelas Soft", sans-serif;
-    --heading-font-family: "Qanelas Soft", sans-serif; 
+    font-family: "Qanelas Soft", "Open Sans", sans-serif;
+    --heading-font-family: "Qanelas Soft", "Open Sans", sans-serif; 
 }
 
 /* Header Styles */
