@@ -3,7 +3,7 @@ import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
 import Feature from "../../features";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 export default function VisualizerFeatures({ features }) {
@@ -45,11 +45,11 @@ export default function VisualizerFeatures({ features }) {
     <VisualizerFeaturesWrapper>
       <Container>
         <div className="root">
-          <div id = "featureHeading" className={fix ? "fixed" : ""} >
+          <div id="featureHeading" className={fix ? "fixed" : ""} >
             <h3 className={fix ? "fixed" : ""} >Visualize</h3>
           </div>
           <div className="g-grid-container contentContainer">
-          <div className="diagram scroll">
+            <div className="diagram scroll">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="features">
@@ -65,7 +65,7 @@ export default function VisualizerFeatures({ features }) {
                       // our new activeExampleIndex. If it's been updated
                       // notify the subscriber.
                       const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+                      if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
                         setActiveExampleIndex(newExampleIndex);
                       }
                     }}
