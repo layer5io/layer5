@@ -80,7 +80,7 @@ const FooterWrapper = styled.section`
 	}
 
 	.subscribe {
-		font-family: 'Qanelas Soft', sans-serif;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		margin: 0 2.5rem 2rem 0;
 		justify-content: flex-end;
 

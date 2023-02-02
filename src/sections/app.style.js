@@ -39,7 +39,7 @@ body {
 
   color: ${(props) => props.theme.text};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  font-family: 'Qanelas Soft', sans-serif;
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
