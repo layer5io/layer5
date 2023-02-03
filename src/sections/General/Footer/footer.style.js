@@ -27,7 +27,7 @@ const FooterWrapper = styled.section`
 		color: #ccc;
 		padding-right: 2.25rem;
 		font-style: italic;
-		font-weight: 200;
+		font-weight: 300;
 		font-size: 1rem;
 	}
 
