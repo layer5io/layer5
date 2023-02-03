@@ -24,6 +24,10 @@ const ButtonStyle = styled.button`
         background: ${props => props.theme.activeColor}; 
         box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
     }
+    &:active{
+        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+        transform: scale(0.98);
+    }
     .icon-left{
         margin-right: 8px;
     }
@@ -40,16 +44,25 @@ const ButtonStyle = styled.button`
             background: ${props.theme.highlightColor}; 
             box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
         }
+        &:active{
+            background: ${props => props.theme.saffronColor};
+            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+            transform: scale(0.98);
+        }
         
     `}
     ${props => props.secondary && css`
         color: black; 
-        background: #00b39f; 
-
+        background: ${props.theme.secondaryColor}; 
         &:hover{
-            color: #111111; 
-            background: #00b39f; 
+            background: ${props.theme.caribbeanGreenColor};
             box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+        }
+        &:active{
+            color: #326d62;
+            background: ${props.theme.secondaryColor};
+            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+            transform: scale(0.98);
         }
     `}
 `;
