@@ -249,6 +249,7 @@ const Footer = () => {
                     secondary
                     title="Subscribe"
                     id="mc-embedded-subscribe"
+                    aria-label="subscribe-us"
                   />
                 </div>
               </form>
