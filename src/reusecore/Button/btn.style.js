@@ -43,7 +43,7 @@ const ButtonStyle = styled.button`
         
     `}
     ${props => props.secondary && css`
-        color: white; 
+        color: black; 
         background: #00b39f; 
 
         &:hover{

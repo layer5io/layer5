@@ -102,6 +102,7 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
+			color: black;
 		}
 	}
 
@@ -173,6 +174,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
+				color: black;
 			}
 		}
 	}
@@ -220,6 +222,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
+				color: black;
 			}
 		}
 	}
