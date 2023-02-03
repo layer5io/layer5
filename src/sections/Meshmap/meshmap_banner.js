@@ -62,8 +62,9 @@ const BannerSectionWrapper = styled.div`
     h3 {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
-        font-weight: 300;
+        font-weight: 400;
         font-style: italic;
+        font-family: "Qanelas Soft";
         span {
             color: ${props => props.theme.saffronColor};
         }

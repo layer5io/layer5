@@ -135,7 +135,7 @@ export const LandscapePageWrapper = styled.div`
 	}
 	.subtitle-0, .subtitle-1 {
 		font-size: 1rem;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		font-weight: 400;
 		color: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" : "rgb(160, 160, 160)"};
 	}
