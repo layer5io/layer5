@@ -45,6 +45,9 @@ min-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: end;
+  @media (max-width: 1200px) {
+    right: 2rem;
+}
   @media (max-width: 768px) {
     right: 2rem;
 }
@@ -64,14 +67,17 @@ p.caption {
     font-weight: 300;
     font-size: 20px;
     line-height: 25px;
+    width: 80%;
     text-align: right;
     @media (max-width: 1050px) {
     font-size: 15px;
-    width: 70%;
 }
     @media (max-width: 992px) {
     font-size: 15px;
-    width: 60%;
+    width: 70%;
+}
+@media (max-width: 680px) {
+  font-size: 12px;
 }
 }
   }
@@ -112,7 +118,14 @@ h2.heading {
     font-size: 45px;
 }
   @media (max-width: 768px) {
+    font-size: 38px;
+    width: 90%;
+    margin-right: 0;
+}
+  @media (max-width: 680px) {
+    width: 80%;
     font-size: 30px;
+    line-height: 3rem;
 }
 }
 h3.containerCaption {
@@ -133,6 +146,9 @@ h3.containerCaption {
     height: 24rem;
     width: 0px;
     border: 1.5px solid ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+    @media (max-width :680px) {
+      height: 18rem;
+    }
 }
 
 
