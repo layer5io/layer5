@@ -127,6 +127,12 @@ h2.heading {
     font-size: 30px;
     line-height: 3rem;
 }
+  @media (max-width: 438px) {
+    width: 70%;
+    font-size: 23px;
+    line-height: 2rem;
+}
+}
 }
 h3.containerCaption {
     color: ${props => props.theme.saffronColor};
