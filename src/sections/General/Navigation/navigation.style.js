@@ -23,10 +23,31 @@ const NavigationWrap = styled.header`
     top: 1.5rem;
     max-height: 50px;
 
-    #get-started {
+    .banner-btn {
       margin-right: 15px;
-    }
+      white-space: nowrap;
+      padding: .6rem .7rem;
+      min-width: 0rem;
+      font-weight: 600;
+    }    
 
+    .banner-btn.login{
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      color: ${props => props.theme.secondaryColor};
+      background-color: transparent;
+        &:hover{
+          border: 1px solid ${props => props.theme.secondaryColor};
+          background: ${props => props.theme.highlightColor}; 
+          background-color: transparent;
+        }
+        &:active {
+          /* color: #326d62; */
+          color: ${props => props.theme.keppelColor};
+          border: 1px solid ${props => props.theme.keppelColor};
+          background-color: transparent;
+        }
+    }    
     a {
       display: flex;
     }
@@ -38,27 +59,18 @@ const NavigationWrap = styled.header`
     }
     @media screen and (max-width: 1275px) {
       right: -1.95rem;
-      #get-started {
-        min-width: 115px;
-      }
       .dark-theme-toggle {
         margin-left: 0.5em;
       }
     }
     @media screen and (max-width: 1215px) {
       right: -1.5rem;
-      #get-started {
-        min-width: 115px;
-      }
       .dark-theme-toggle {
         margin-left: 0.5em;
       }
     }
     @media screen and (max-width: 992px) {
       right: -1rem;
-      #get-started {
-        min-width: 95px;
-      }
     }
     @media screen and (max-width: 912px) {
       a {
@@ -66,7 +78,7 @@ const NavigationWrap = styled.header`
       }
       .dark-theme-toggle {
         margin-left: 0.5em;
-        margin-bottom: 2.5em;
+        margin-bottom: 3em;
       }
 
     }
@@ -449,6 +461,8 @@ const NavigationWrap = styled.header`
       .menu-item {
         font-size: 16px;
         font-weight: 600;
+        line-height: 2rem;
+        font-size: 1.25rem;
       }
       a:before {
         content: none;
@@ -459,6 +473,10 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-subitem {
       padding-left: 10px;
+      padding-top: .4rem;
+    }
+    .mobile-sub-menu-item {
+      font-size: 1.1rem;
     }
   }
 
@@ -570,10 +588,7 @@ const NavigationWrap = styled.header`
     }
   }
   .dark-theme-toggle {
-
-    margin-left: 2em;
-
-
+    /* margin-left: 2rem; */
   }
 
   .toggle {
@@ -587,6 +602,7 @@ const NavigationWrap = styled.header`
     border-radius: 999px;
     color: #00B39F;
     transition: all 500ms;
+    vertical-align: middle;
   }
 
   .toggle:checked {
