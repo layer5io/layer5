@@ -69,7 +69,9 @@ const Banner1SectionWrapper = styled.section`
         &:hover {
              background: ${props => props.theme.highlightLightColor}; 
         }
-        
+        &:active{
+            background: ${props => props.theme.saffronColor}; 
+        }
     }
     .banner-btn.two{
         
