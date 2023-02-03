@@ -105,7 +105,6 @@ h2.heading {
   text-align: right;
   margin-bottom: 4rem;
 
-  color: #444444;
   @media (max-width: 1200px) {
     font-size: 55px;
 }
@@ -133,12 +132,12 @@ h3.containerCaption {
     margin: auto;
     height: 24rem;
     width: 0px;
-    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    border: 1.5px solid ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
 }
 
 
 .services {
-  width: 48%;
+  width: 50%;
   position: relative;
   margin: auto;
   display: flex;
