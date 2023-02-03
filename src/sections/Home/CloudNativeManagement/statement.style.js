@@ -26,13 +26,13 @@ const BannerSectionWrapper = styled.section`
         max-width: 49%;
     }
     h2.statement {
-        color: #FAFAFA;
+        color: ${props => props.theme.offWhiteColor};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
     }
     h3.statement {
-        color: #FAFAFA;
+        color: ${props => props.theme.offWhiteColor};
         margin-left: 0rem;
         /* text-indent: -3.5rem; */
         margin-bottom: 2rem;
