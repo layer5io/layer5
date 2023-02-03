@@ -27,7 +27,7 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 20rem 0 16rem;
+margin: 7rem 0 7rem;
 min-height: fit-content;
 
 .patterns {
@@ -45,6 +45,10 @@ min-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: end;
+  @media (max-width: 768px) {
+    right: 2rem;
+}
+
 }
 
 .catalog-wrapper {
@@ -56,7 +60,7 @@ min-height: fit-content;
 }
 p.caption {
     font-style: normal;
-    font-family: 'Qanelas Soft';
+    font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
     font-size: 20px;
     line-height: 25px;
@@ -93,10 +97,9 @@ h2{
 	margin: 5% auto 1%;
 }
 h2.heading {
-
-  font-family: 'Qanelas Soft';
+  font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
   font-style: normal;
-  font-weight: 250;
+  font-weight: 50;
   font-size: 70px;
   line-height: 88px;
   text-align: right;
@@ -110,7 +113,7 @@ h2.heading {
     font-size: 45px;
 }
   @media (max-width: 768px) {
-    font-size: 25px;
+    font-size: 30px;
 }
 }
 h3.containerCaption {
@@ -143,11 +146,7 @@ h3.containerCaption {
 }
 
 .row-1 {
-
   margin-bottom: 3rem;
-  /* @media (max-width: 1200px){
-    width: 50rem;
-  } */
 }
 
 .col-1 {
