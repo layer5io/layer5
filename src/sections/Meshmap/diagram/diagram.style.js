@@ -25,6 +25,7 @@ const DiagramStyles = styled.section`
     position: sticky;
     top: calc(50vh - 249px);
 .root {
+  display: flex;
     min-height: 40rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -37,10 +38,8 @@ const DiagramStyles = styled.section`
   }
 
   #designer {
-    position: relative;
-    top: 12rem;
     max-width: 100%;
-
+    z-index: 0;
     @media (max-width: 1200px) {
      top: 15rem;
     }
@@ -48,8 +47,9 @@ const DiagramStyles = styled.section`
 
   #visualizer {
     position: relative;
-    top: -5rem;
     max-width: 100%;
+    right: 30rem;
+    z-index: 1;
 
     @media (max-width: 1200px) {
      top: -1rem;
@@ -59,6 +59,7 @@ const DiagramStyles = styled.section`
   #collaborator {
     position: relative;
     max-width: 100%;
+    right: 60rem;
   }
 `;
 
