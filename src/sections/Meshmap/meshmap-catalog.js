@@ -27,12 +27,31 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 20rem 0 16rem;
+margin: 7rem 0 7rem;
 min-height: fit-content;
 
 .patterns {
   max-height: 30rem;
   padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  display:flex;
+
+}
+
+.text {
+  width: 50%;
+  position: relative;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  @media (max-width: 1200px) {
+    right: 2rem;
+}
+  @media (max-width: 768px) {
+    right: 2rem;
+}
+
 }
 
 .catalog-wrapper {
@@ -43,17 +62,8 @@ min-height: fit-content;
   margin-bottom: 0rem;
 }
 p.caption {
-    position: relative;
-    width: 23rem;
-    height: 11rem;
-    left: 8.3rem;
     margin: 0rem 0rem 2.5rem 0rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 25px;
-    text-align: right;
+    font-style: normal ;
   }
 
 .svg-cont{
@@ -77,19 +87,7 @@ h2{
 	margin: 5% auto 1%;
 }
 h2.heading {
-  position: relative;
-  width: 40rem;
-  height: 11rem;
-  right: 23rem;
-
-  font-family: 'Qanelas Soft';
-  font-style: normal;
-  font-weight: 250;
-  font-size: 74px;
-  line-height: 88px;
-  text-align: right;
-
-  color: #444444; ;
+  text-transform: uppercase ;
 }
 h3.containerCaption {
     color: ${props => props.theme.saffronColor};
@@ -102,37 +100,6 @@ h3.containerCaption {
         color: ${props => props.theme.saffronColor};
     }
 }
-.vertical-line
-{
-    position: relative;
-    bottom: 30rem;
-    left: 35rem;
-    height: 24rem;
-    width: 0px;
-    border: 1.5px solid rgba(0, 0, 0, 0.3);
-
-}
-
-.logos {
-  position: relative;
-  bottom: 159rem;
-  right: 14rem;
-}
-
-.row-1{
-  position: absolute;
-  left: 50rem;
-  top: 108rem;
-  width: 72rem;
-}
-
-.row-2{
-  position: absolute;
-  left: 50rem;
-  top: 118rem;
-  width: 72rem;
-}
-
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -353,42 +320,35 @@ const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <div className="patterns">
-          <h2 className="heading">Save time with design patterns</h2>
-          <p className="caption">Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b></p>
-          <div className="vertical-line"></div>
-          <div className="logos">
-            <Row className="row-1">
-              <Col md={6} xs={12}>
-                <section className="svg-cont">
-                  <div>
-                    <img src={Patterns} />
-                    <p>Service Patterns</p>
-                  </div>
-                  <div>
-                    <img src={Ebpf} />
-                    <p className="ebpf-text">eBPF Programs</p>
-                  </div>
-                </section>
-              </Col>
-            </Row>
-            <Row className="row-2">
-              <Col md={6} xs={12}>
-                <section className="svg-cont">
-                  <div>
-                    <img src={Wasm} />
-                    <p>WASM Filters</p>
-                  </div>
-                  <div>
-                    <img src={Opa} />
-                    <p>OPA Policies</p>
-                  </div>
-                </section>
-              </Col>
-            </Row>
-          </div>
-        </div>
-        <div className="catalog-wrapper ">
+        <h2 className="heading">Choose Your Power-ups</h2>
+        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
+        <Row>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div>
+                <img className="patterns" src={Patterns} />
+                <p>Service Patterns</p>
+              </div>
+              <div>
+                <img src={Ebpf} />
+                <p className="ebpf-text">eBPF Programs</p>
+              </div>
+            </section>
+          </Col>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div>
+                <img src={Wasm} />
+                <p>WASM Filters</p>
+              </div>
+              <div>
+                <img src={Opa} />
+                <p>OPA Policies</p>
+              </div>
+            </section>
+          </Col>
+        </Row>
+        <section className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
               <div className="slide one">
