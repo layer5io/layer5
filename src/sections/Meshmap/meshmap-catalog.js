@@ -62,8 +62,24 @@ min-height: fit-content;
   margin-bottom: 0rem;
 }
 p.caption {
-    margin: 0rem 0rem 2.5rem 0rem;
-    font-style: normal ;
+    font-style: normal;
+    font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    width: 80%;
+    text-align: right;
+    @media (max-width: 1050px) {
+    font-size: 15px;
+}
+    @media (max-width: 992px) {
+    font-size: 15px;
+    width: 70%;
+}
+@media (max-width: 680px) {
+  font-size: 12px;
+}
+}
   }
 
 .svg-cont{
@@ -87,8 +103,37 @@ h2{
 	margin: 5% auto 1%;
 }
 h2.heading {
-  text-transform: uppercase ;
+  font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
+  font-style: normal;
+  font-weight: 50;
+  font-size: 70px;
+  line-height: 88px;
+  text-align: right;
+  margin-bottom: 4rem;
+
+  @media (max-width: 1200px) {
+    font-size: 55px;
 }
+  @media (max-width: 1050px) {
+    font-size: 45px;
+}
+  @media (max-width: 768px) {
+    font-size: 38px;
+    width: 90%;
+    margin-right: 0;
+}
+  @media (max-width: 680px) {
+    width: 80%;
+    font-size: 30px;
+    line-height: 3rem;
+}
+  @media (max-width: 438px) {
+    width: 70%;
+    font-size: 23px;
+    line-height: 2rem;
+}
+}
+
 h3.containerCaption {
     color: ${props => props.theme.saffronColor};
     padding-top: .25rem;
@@ -100,6 +145,45 @@ h3.containerCaption {
         color: ${props => props.theme.saffronColor};
     }
 }
+.vertical-line
+{
+    position: relative;
+    margin: auto;
+    height: 24rem;
+    width: 0px;
+    border: 1.5px solid ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+    @media (max-width :680px) {
+      height: 18rem;
+    }
+}
+
+
+.services {
+  width: 50%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-1 {
+  margin-bottom: 3rem;
+}
+
+.col-1 {
+  @media (min-width: 768px) {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+}
+.col-2 {
+  @media (min-width: 768px) {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+}
+
+
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -320,35 +404,44 @@ const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <h2 className="heading">Choose Your Power-ups</h2>
-        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
-        <Row>
-          <Col md={6} xs={12}>
-            <section className="svg-cont">
-              <div>
-                <img className="patterns" src={Patterns} />
-                <p>Service Patterns</p>
-              </div>
-              <div>
-                <img src={Ebpf} />
-                <p className="ebpf-text">eBPF Programs</p>
-              </div>
-            </section>
-          </Col>
-          <Col md={6} xs={12}>
-            <section className="svg-cont">
-              <div>
-                <img src={Wasm} />
-                <p>WASM Filters</p>
-              </div>
-              <div>
-                <img src={Opa} />
-                <p>OPA Policies</p>
-              </div>
-            </section>
-          </Col>
-        </Row>
-        <section className="catalog-wrapper ">
+        <div className="patterns">
+          <div className="text">
+            <h2 className="heading">Save time with design patterns</h2>
+            <p className="caption">Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b></p>
+          </div>
+          <div className="vertical-line"></div>
+          <div className="services">
+            <Row className="row-1">
+              <Col md={6} xs={12} className="col-1">
+                <section className="svg-cont">
+                  <div>
+                    <img src={Patterns} />
+                    <p>Service Patterns</p>
+                  </div>
+                  <div>
+                    <img src={Ebpf} />
+                    <p className="ebpf-text">eBPF Programs</p>
+                  </div>
+                </section>
+              </Col>
+            </Row>
+            <Row className="row-2">
+              <Col md={6} xs={12} className="col-2">
+                <section className="svg-cont">
+                  <div>
+                    <img src={Wasm} />
+                    <p>WASM Filters</p>
+                  </div>
+                  <div>
+                    <img src={Opa} />
+                    <p>OPA Policies</p>
+                  </div>
+                </section>
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
               <div className="slide one">
@@ -400,11 +493,10 @@ const Catalog = () => {
           </div>
           <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
-        </section>
+        </div>
       </Container>
     </CatalogWrapper >
   );
 };
 
 export default Catalog;
-
