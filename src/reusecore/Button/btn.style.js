@@ -52,7 +52,7 @@ const ButtonStyle = styled.button`
         
     `}
     ${props => props.secondary && css`
-        color: black; 
+        color: white; 
         background: ${props.theme.secondaryColor}; 
         &:hover{
             background: ${props.theme.caribbeanGreenColor};
