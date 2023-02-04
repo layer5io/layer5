@@ -400,7 +400,7 @@ const Catalog = () => {
           </div>
           <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
-        </div>
+        </section>
       </Container>
     </CatalogWrapper >
   );

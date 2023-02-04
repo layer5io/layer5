@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from "react";
-import LogoList from "../../../components/Logo-List";
 import FeatureWrapper from "./features.style";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -11,7 +10,7 @@ export default function Feature({
   description,
   onInViewStatusChanged,
 }) {
-  const [ref, inView] = useInView({ threshold: 0.9 });
+  const [ref, inView] = useInView({ threshold: 0.6 });
   const [inViewStatus, setInViewStatus] = useState(false);
   if (inView !== inViewStatus) {
     setInViewStatus(inView);

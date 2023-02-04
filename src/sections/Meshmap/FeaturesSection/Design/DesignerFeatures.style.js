@@ -82,7 +82,7 @@ margin-bottom: 15rem;
     position: sticky;
     top: calc(50vh - 249px);
     @media (max-width: 767px) {
-        display: none;
+
       }
   }
 
@@ -137,9 +137,7 @@ margin-bottom: 15rem;
   position: sticky;
   top: 5.9rem;
   font-weight: 300;
-  color: white;
-  background-color: #00b39f;
-  box-shadow: -50px 50px 60px #fff;
+  border-bottom: 1px solid #00b39f;
   transition: .3s ease-in-out;
 }
 

@@ -52,7 +52,7 @@ const DiagramStyles = styled.section`
     z-index: 1;
 
     @media (max-width: 1200px) {
-     top: -1rem;
+     
     }
   }
 
