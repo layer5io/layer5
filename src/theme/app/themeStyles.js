@@ -2,6 +2,7 @@
 const lighttheme = {
   black: "#000000",
   white: "#ffffff",
+  offWhiteColor: "#FAFAFA",
   navigatorColor: "#FFFFFF",
   text: "#000000",
   textRevert: "#FFFFFF",
@@ -84,6 +85,7 @@ const lighttheme = {
 export const darktheme = {
   black: "#000000",
   white: "#ffffff",
+  offWhiteColor: "#FAFAFA",
   navigatorColor: "#000000",
   body: "#121212",
   textRevert: "#000000",
