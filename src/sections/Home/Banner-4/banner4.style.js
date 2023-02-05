@@ -42,7 +42,7 @@ const Banner1SectionWrapper = styled.section`
             margin: 0 0 20px 0;
             color: ${props => props.theme.text};
             span {
-                color: ${props => props.theme.secondaryColor};
+                color: #006156;
             }
         }
     }

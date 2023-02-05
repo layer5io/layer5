@@ -26,13 +26,13 @@ const BannerSectionWrapper = styled.section`
         max-width: 49%;
     }
     h2.statement {
-        color: ${props => props.theme.offWhiteColor};
+        color: black;
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
     }
     h3.statement {
-        color: ${props => props.theme.offWhiteColor};
+        color: black;
         margin-left: 0rem;
         /* text-indent: -3.5rem; */
         margin-bottom: 2rem;
@@ -51,14 +51,14 @@ const BannerSectionWrapper = styled.section`
     h4.statement {
         font-weight: bold;
         display: flex; 
-        color: rgba(255, 255, 255, 0.7);
+        color: #121212;
     }
     .description a {
-        color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
+        color: ${props => props.theme.DarkTheme ? props.theme.white : "#121212"};
         font-style: italic;
         :hover {
             cursor: hand;
-            color: #111111;
+            color: #F0F047;
 
         }
     }

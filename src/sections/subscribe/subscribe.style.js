@@ -12,7 +12,7 @@ const SubscribeWrapper = styled.div`
 
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:#005C50;
     }
     
     input{
@@ -33,9 +33,10 @@ const SubscribeWrapper = styled.div`
     }
     #mc-embedded-subscribe{
         margin: 1.5rem 0.3125rem 0;
+        color:black;
     }
     #mc-embedded-subscribe:hover{
-        color:black;
+        color:white;
         box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
     @media only screen and (max-width: 1050px) {

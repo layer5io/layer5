@@ -65,7 +65,7 @@ const ProjectItemWrapper = styled.section`
         h5{
             margin: auto;
             font-weight: 700;
-            color: ${props => props.theme.secondaryColor}
+            color: #006156
         }
         p{
             font-weight: 300;
@@ -92,6 +92,9 @@ const ProjectItemWrapper = styled.section`
         background: ${props => props.theme.secondaryLightColor};
         .button {
             margin: auto;
+            .banner-btn {
+                color: black;
+            }
         }
         p {
             display: inline;
@@ -100,7 +103,7 @@ const ProjectItemWrapper = styled.section`
             font-size: 1rem;
             padding: 0 4rem;
             margin: 0rem;
-            color: #737373;
+            color: #575757;
             span {
                 font-weight: 600;
             }

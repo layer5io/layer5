@@ -21,7 +21,7 @@ const Banner2SectionWrapper = styled.section`
         width: 70%;
     }
     h4 {
-        color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
+        color: ${props => props.theme.DarkTheme ? "#737373" : "#3B3B3B"};
         text-transform: uppercase;
     }
     .section-title{
@@ -51,7 +51,7 @@ const Banner2SectionWrapper = styled.section`
     .banner-btn.two{
         
         background: ${props => props.theme.secondaryColor};
-        color: #fff;
+        color: black;
         &:hover{
             background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;

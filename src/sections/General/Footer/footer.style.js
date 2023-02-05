@@ -102,6 +102,7 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
+			color: black;
 		}
 	}
 

@@ -63,7 +63,7 @@ const Banner1SectionWrapper = styled.section`
     .banner-btn.two{
         
         background: ${props => props.theme.secondaryColor};
-        color: #fff;
+        color: black;
         &:hover{
             background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
