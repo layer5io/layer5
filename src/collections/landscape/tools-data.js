@@ -113,7 +113,7 @@ export const tools_data = [
   },
   {
     tool: "Nighthawk",
-    link: "https://github.com/layer5io/nighthawk",
+    link: "https://github.com/layer5io/getnighthawk",
     language: "C++",
     written_for: "L7 (HTTP/HTTPS/HTTP2) performance characterization tool",
     supported_by: "Envoy, CNCF",
