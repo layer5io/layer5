@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import FeatureWrapper from "./features.style";
 import { useInView } from "react-intersection-observer";

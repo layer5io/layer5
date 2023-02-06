@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import MeshmapWrapper from "./meshmap.style";
 import { ThemeProvider } from "styled-components";
