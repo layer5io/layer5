@@ -199,12 +199,16 @@ export const IntegrationSlider = styled(Slider)`
     outline:none;
   }
 
+  .slick-dots{
+    bottom: -1rem;
+  }
+
   .slick-dots li.slick-active button:before {
     color: #00b39f;
   }
 
   .slick-dots li button:before{
-    font-size:.7rem;
+    font-size:.5rem;
     color: #00b39f;
   }
 
@@ -218,7 +222,7 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-slider {
-    margin-bottom: 1rem;
+    margin-bottom:1rem;
   }
 
   .slick-slide {
@@ -245,13 +249,24 @@ export const IntegrationSlider = styled(Slider)`
     top:0
   }
 
-  @media screen and (max-width: 400px){
-    .slick-dots{
-      bottom: -1rem;
-    }
+  @media screen and (max-width: 500px){
     .slick-list {
       margin:0 1rem;
     }
+
+    .slick-track {
+      display:flex;
+    }
+
+    .slick-slide {
+      width:30rem !important;
+      margin-bottom:2rem
+    }
   }
 
+  @media screen and (max-width: 810px){
+    .slick-list {
+      margin: 0 2rem;
+    }
+  }
   `;

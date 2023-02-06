@@ -46,18 +46,32 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   `);
 
   const settings = {
-    initialSlide: -1,
+    initialSlide: -2,
     infinite: true,
     slidesToShow: 4,
     swipeToSlide: true,
     slidesToScroll: 1,
+    // useTransform: false,
 
     responsive: [
       {
-        breakpoint: 400,
+        breakpoint: 900,
         settings: {
+          initialSlide: -2,
+          infinite: false,
+          dots: true,
+          arrows: true,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          initialSlide: -2,
           dots: true,
           arrows: false,
+          infinite: false,
+          slidesToShow: 1.25
         }
       }
     ]
