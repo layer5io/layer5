@@ -80,12 +80,35 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   `);
 
   const settings = {
-    className: "category",
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    initialSlide: -2,
     infinite: true,
-    initialSlide: -1,
-    centerMode: true
+    slidesToShow: 4,
+    swipeToSlide: true,
+    slidesToScroll: 1,
+    // useTransform: false,
+
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          initialSlide: -2,
+          infinite: false,
+          dots: true,
+          arrows: true,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          initialSlide: -2,
+          dots: true,
+          arrows: false,
+          infinite: false,
+          slidesToShow: 1.25
+        }
+      }
+    ]
   };
 
   const [searchQuery, setSearchQuery] = useState("");
