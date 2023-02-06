@@ -11,27 +11,12 @@ export default function DesignerFeatures({ title, features }) {
     new Array(features.length).fill(false)
   );
 
-  const myRef = useRef();
+  const headingRef = useRef();
   const [fix, setFix] = useState(false);
-  // const myRef = useRef();
-
-
-  // useEffect(() => {
-  //   const getPos = () => {
-  //     // const windowTop = window.scrollTop();
-  //     const pos = myRef.current.offset().top;
-  //     // console.log(windowTop);
-  //     console.log(pos);
-
-  //   };
-  //   window.addEventListener("scroll", getPos);
-
-  // }, [])
 
   useEffect(() => {
     const setFixed = () => {
-
-      if (window.scrollY >= 1400 && !fix)
+      if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
         setFix(true);
       else
         setFix(false);
@@ -43,11 +28,8 @@ export default function DesignerFeatures({ title, features }) {
     <DesignerFeaturesWrapper>
       <Container>
         <div className="root">
-          <div className="g-grid-container headerWrapper">
-            <h2 className="g-type-display-2">{title}</h2>
-          </div>
-          <div id="featureHeading" ref={myRef} className={fix ? "fixed" : ""} >
-            <h3 className={fix ? "fixed" : ""} >Design</h3>
+          <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
+            <h3>Design</h3>
           </div>
           <div className="g-grid-container contentContainer">
             <ul className="features">

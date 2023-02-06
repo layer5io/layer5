@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CollaboratorFeaturesWrapper = styled.section`
-margin-bottom: 15rem;
+margin-top: 1.5rem;
 
 
 // ul li:last-child {
@@ -13,64 +13,27 @@ margin-bottom: 15rem;
     position: sticky;
     top: calc(50vh - 249px);
 }
-.root {
-    padding: 0 0;
-
-    & .headerWrapper {
-      & h2 {
-        position: sticky;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 32px;
-        font-size: 48px;
-        font-weight: 300;
-        font-family: 'Qanelas Soft';
-        margin-top: 6rem;
-        @media (max-width: 767px) {
-          margin-bottom: 0;
-        }
-      }
-
-      & p {
-        max-width: 818px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  }
 
   .contentContainer {
     display: flex;
     position: relative;
-    min-width: 67rem;
-
-    @media (max-width: 1200px) {
-      min-width: 55rem;
-    }
 
     @media (max-width: 767px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
-
     & > ul {
+      position: relative;
       max-width: 470px;
       padding-bottom: 50px;
       padding-left: 0;
 
-      @media (max-width: 1120px) {
-        margin-left: 64px;
-      }
-
-      @media (max-width: 1024px) {
-        margin-left: 40px;
-      }
-
       @media (max-width: 767px) {
-        margin-left: 0;
+        margin-left: 6rem;
+        text-align: left;
       }
       @media (max-width: 500px) {
         padding-left: 0;
+        margin-left: 0;
       }
     }
   }
@@ -81,9 +44,21 @@ margin-bottom: 15rem;
     min-width: 40rem;
     position: sticky;
     top: calc(50vh - 249px);
+    z-index: -1;
+
+    @media (max-width: 1200px) {
+      min-width: 38rem;
+    }
+    @media (max-width: 992px) {
+      min-width: 30rem;
+    }
     @media (max-width: 767px) {
-        display: none;
-      }
+      min-width: 25rem;
+      opacity: 0.4;
+    }
+    @media (max-width: 670px) {
+      width: 20rem;
+    }
   }
 
   #featureHeading {
@@ -94,6 +69,9 @@ margin-bottom: 15rem;
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
+    @media (max-width: 767px) {
+        font-size: 60px;
+      }
   }
   .features {
     z-index: 0;
@@ -135,12 +113,11 @@ margin-bottom: 15rem;
 
   .fixed {
   position: sticky;
-  top: 5.9rem;
+  top: 5rem;
   font-weight: 300;
-  color: white;
-  background-color: #00b39f;
-  box-shadow: -50px 50px 60px #fff;
+  border-bottom: 2px solid #00b39f;
   transition: .3s ease-in-out;
+  background: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
 }
 
 `;

@@ -3,7 +3,7 @@ import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
 import Feature from "../../features";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 
 export default function VisualizerFeatures({ features }) {
@@ -12,27 +12,11 @@ export default function VisualizerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
+  const headingRef = useRef();
   const [fix, setFix] = useState(false);
-  // const visRef = useRef();
-
-
-  // useEffect(() => {
-  //   const getPos = () => {
-  //     const pos = visRef.current.getBoundingClientRect().top;
-  //     console.log(pos);
-  //     // if(pos < 80)
-  //     // setFix(true);
-  //     // else
-  //     // setFix(false);
-  //   };
-  //   window.addEventListener("scroll", getPos);
-  // }, []);
-
-
-
   useEffect(() => {
     const setFixed = () => {
-      if (window.scrollY >= 3320 && !fix)
+      if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
         setFix(true);
       else
         setFix(false);
@@ -45,8 +29,8 @@ export default function VisualizerFeatures({ features }) {
     <VisualizerFeaturesWrapper>
       <Container>
         <div className="root">
-          <div id="featureHeading" className={fix ? "fixed" : ""} >
-            <h3 className={fix ? "fixed" : ""} >Visualize</h3>
+          <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
+            <h3>Visualize</h3>
           </div>
           <div className="g-grid-container contentContainer">
             <div className="diagram scroll">

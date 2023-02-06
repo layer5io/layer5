@@ -11,12 +11,10 @@ import Platform from "./meshmap-platform";
 import MeshmapBanner from "./meshmap_banner";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import MeshMapDrafts from "./images/meshmap-draft-logos.png";
-import MesheryAction from "./meshery-action";
 import CommonForm from "../../components/CommonForm";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
-import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
+import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import Reviews from "../Pricing/review-slider";
 
 
@@ -63,8 +61,6 @@ const Meshmap = () => {
           </div>
           <MeshmapModes />
           <DesignerFeatures
-            title="MeshMap Features"
-            // description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
             features={
               [
                 {
@@ -103,17 +99,16 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description:
-                    <p>Collaborate with other engineers to achieve the best infrastructure desings.</p>,
+                  description: <p>Collaborate with other engineers to achieve the best infrastructure desings.</p>
                 },
-
                 {
                   description:
                     <p>Save and resume your sessions without losing any ideas.</p>,
                 },
                 {
                   description:
-                    <p>Friends don't let friends GitOps alone.</p>,
+                    <p>Friends don't let friends GitOps alone.</p>
+
                 },
 
               ]} />

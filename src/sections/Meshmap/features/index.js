@@ -3,8 +3,6 @@ import React from "react";
 import FeatureWrapper from "./features.style";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import { useEffect } from "react";
-import { triggerDateSelect } from "@fullcalendar/react";
 
 export default function Feature({
   description,

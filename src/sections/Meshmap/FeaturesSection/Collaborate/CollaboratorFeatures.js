@@ -3,21 +3,20 @@ import { Container } from "../../../../reusecore/Layout";
 import CollaboratorFeaturesWrapper from "./CollaboratorFeatures.style";
 import CollaboratorFeaturesDiagram from "./CollaboratorFeatures_diagram";
 import Feature from "../../features";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
-export default function CollaboratorFeatures({ features }) {
+export default function CollaboratorFeatures({ title, features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
 
+  const headingRef = useRef();
   const [fix, setFix] = useState(false);
-
 
   useEffect(() => {
     const setFixed = () => {
-      if (window.scrollY >= 5220 && !fix)
+      if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
         setFix(true);
       else
         setFix(false);
@@ -29,8 +28,11 @@ export default function CollaboratorFeatures({ features }) {
     <CollaboratorFeaturesWrapper>
       <Container>
         <div className="root">
-          <div id = "featureHeading" className={fix ? "fixed" : ""} >
-            <h3 className={fix ? "fixed" : ""} >Collaborate</h3>
+          <div className="g-grid-container headerWrapper">
+            <h2 className="g-type-display-2">{title}</h2>
+          </div>
+          <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
+            <h3>Collaborate</h3>
           </div>
           <div className="g-grid-container contentContainer">
             <ul className="features">
@@ -46,7 +48,7 @@ export default function CollaboratorFeatures({ features }) {
                       // our new activeExampleIndex. If it's been updated
                       // notify the subscriber.
                       const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+                      if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
                         setActiveExampleIndex(newExampleIndex);
                       }
                     }}

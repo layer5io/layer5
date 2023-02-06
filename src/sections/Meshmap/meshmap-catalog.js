@@ -27,7 +27,7 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 7rem 0 7rem;
+margin: 3rem 0 7rem;
 min-height: fit-content;
 
 .patterns {

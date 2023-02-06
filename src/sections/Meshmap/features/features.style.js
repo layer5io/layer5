@@ -3,37 +3,36 @@ import styled from "styled-components";
 const FeatureWrapper = styled.section`
 
 
-
 .root {
   display:flex;
-  .icon{
-    flex-shrink: 0;
-    margin-top: 7px;
-    margin-right: 1.2rem;
-    img{
-      width: 3rem;
-    }
-  }
+
   & > .text {
     opacity:0;
 
   & > p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    z-index: 0;
+    font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     margin-top: 15rem;
-    margin-bottom: 10rem;
+    margin-bottom: 25rem;
+    line-height: 2rem;
+    color: ${props => props.theme.DarkTheme ? "#dddddd" : "#333333"};
 
     @media (max-width: 1200px) {
       font-size: 17px;
-        }
+    }
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+    @media (max-width: 670px) {
+      font-size: 15px;
+      max-width: 80%;
+    }
 
   }
 }
 
-@media (max-width: 1200px) {
-          max-width: 80%;
-        }
 }
 
 #inView {
