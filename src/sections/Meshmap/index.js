@@ -63,15 +63,25 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.</p>
+                  description: <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps?
+                    <br /><br />
+                    Integrate advanced performance analysis into your pipeline.</p>
                 },
                 {
                   description:
-                    <p>Visually modify your infrastructure requirements with an intuitive interface.</p>,
+                    <p>Visually modify your infrastructure requirements with an intuitive interface.
+                      <br /><br />
+                      Import Docker Compose apps, Helm Charts, or Kubernetes Manifests for visual configuration
+                    </p>,
                 },
                 {
                   description:
-                    <p>Substitute your YAML files with powerful configurations.</p>
+                    <p>Substitute your YAML files with powerful configurations.
+                      <br /><br />
+                      Hundreds of versioned components to choose from.
+                      <br /><br />
+                      Compose designs. Reuse designs as patterns.
+                    </p>
 
                 },
 
@@ -82,15 +92,23 @@ const Meshmap = () => {
               [
                 {
                   description:
-                    <p>Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. </p>
+                    <p>Deploy designs, apply patterns, manage and operate your deployments in real-time.
+                      <br /><br />
+                      Bring all your Kubernetes clusters under a common point of management. </p>
                 },
                 {
                   description:
-                    <p>Interactively connect to terminal sessions or initiate and search log streams from your containers.</p>
+                    <p>Interactively connect to terminal sessions or initiate and search log streams from your containers.
+                      <br /><br />
+                      Continuous visibility across all of your clusters and workloads.
+                    </p>
                 },
                 {
                   description:
-                    <p>Manage your infrastructure in the best way possible.</p>,
+                    <p>Manage your infrastructure in the best way possible.
+                      <br /><br />
+                      Import your existing Kubernetes, Helm, or Docker Compose applications.
+                    </p>,
                 },
               ]} />
 
@@ -98,15 +116,23 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p>Collaborate with other engineers to achieve the best infrastructure desings.</p>
+                  description: <p>Collaborate with other engineers to achieve the best infrastructure desings.
+                    <br /><br />
+                    Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design that control – including making changes and releasing new versions.
+                  </p>
                 },
                 {
                   description:
-                    <p>Save and resume your sessions without losing any ideas.</p>,
+                    <p>Save and resume your sessions without losing any ideas.
+                      <br /><br />
+                      Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.
+                    </p>,
                 },
                 {
                   description:
-                    <p>Friends don't let friends GitOps alone.</p>
+                    <p>Message in real-time, unattached to a specific design. Control who can participate in the discussion.
+                      <br /><br />
+                      Friends don't let friends GitOps alone.</p>
 
                 },
 
