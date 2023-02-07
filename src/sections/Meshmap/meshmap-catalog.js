@@ -26,33 +26,31 @@ import Opa from "../../assets/images/meshmap/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
+  margin: 7rem 0 7rem;
+  min-height: fit-content;
 
-margin: 7rem 0 7rem;
-min-height: fit-content;
+  .patterns {
+    max-height: 30rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    display:flex;
 
-.patterns {
-  max-height: 30rem;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
-  display:flex;
+  }
 
-}
-
-.text {
-  width: 50%;
-  position: relative;
-  right: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  @media (max-width: 1200px) {
-    right: 2rem;
-}
-  @media (max-width: 768px) {
-    right: 2rem;
-}
-
-}
+  .text {
+      width: 50%;
+      position: relative;
+      right: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      @media (max-width: 1200px) {
+        right: 2rem;
+    }
+      @media (max-width: 768px) {
+        right: 2rem;
+    }
+  }
 
 .catalog-wrapper {
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
@@ -80,7 +78,6 @@ p.caption {
   font-size: 12px;
 }
 }
-  }
 
 .svg-cont{
   display:flex;
@@ -131,7 +128,6 @@ h2.heading {
     width: 70%;
     font-size: 23px;
     line-height: 2rem;
-}
 }
 }
 h3.containerCaption {
@@ -319,6 +315,8 @@ h3.containerCaption {
       margin: 0 auto;
       justify-content:space-evenly;
       align-items:center;
+      gap: 0.5em;
+    margin-left: 1em;
 
       img{
         width:2.4rem
