@@ -65,6 +65,10 @@ const Meshmap = () => {
                 {
                   description: <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps?
                     <br /><br />
+                    Integrate advanced performance analysis into your pipeline.
+                    <br /><br />
+                  Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps?
+                    <br /><br />
                     Integrate advanced performance analysis into your pipeline.</p>
                 },
                 {

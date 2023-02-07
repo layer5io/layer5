@@ -46,7 +46,7 @@ margin-bottom: 1.5rem;
     min-width: 40rem;
     position: sticky;
     top: calc(50vh - 249px);
-    z-index: -1;
+    z-index: 0;
 
     @media (max-width: 1200px) {
       min-width: 38rem;
@@ -67,7 +67,9 @@ margin-bottom: 1.5rem;
     z-index: 1;
     & h3 {
       text-align: center;
-      font-size: 80px;
+      font-size: 45px;
+      font-weight: 600;
+      text-transform: uppercase;
       padding-top: 1rem;
       padding-bottom: 1rem;
       @media (max-width: 767px) {
@@ -115,9 +117,9 @@ margin-bottom: 1.5rem;
 
   .fixed {
   position: sticky;
-  top: 5rem;
+  top: 6rem;
   font-weight: 300;
-  border-bottom: 2px solid #00b39f;
+  border-bottom: 3px solid #00b39f;
   transition: .3s ease-in-out;
   background: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
 }
