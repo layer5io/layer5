@@ -64,21 +64,16 @@ margin-bottom: 1.5rem;
   }
 
   #featureHeading {
-    z-index: 1;
-    & h3 {
+    z-index: 2;
+    & h2 {
       text-align: center;
-      font-size: 45px;
       font-weight: 600;
-      text-transform: uppercase;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      @media (max-width: 767px) {
-        font-size: 60px;
-      }
     }
   }
   .features {
-    z-index: 0;
+    z-index: 1;
     & > li {
       list-style: none;
 

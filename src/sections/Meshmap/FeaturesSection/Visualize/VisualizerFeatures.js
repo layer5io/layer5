@@ -30,7 +30,7 @@ export default function VisualizerFeatures({ features }) {
       <Container>
         <div className="root">
           <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
-            <h3>Visualize</h3>
+            <h2>Visualize</h2>
           </div>
           <div className="g-grid-container contentContainer">
             <div className="diagram scroll">

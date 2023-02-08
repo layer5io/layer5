@@ -29,7 +29,7 @@ export default function DesignerFeatures({ title, features }) {
       <Container>
         <div className="root">
           <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
-            <h3>Design</h3>
+            <h2>Design</h2>
           </div>
           <div className="g-grid-container contentContainer">
             <ul className="features">

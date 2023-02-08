@@ -1,8 +1,8 @@
 import React from "react";
 import DiagramStyles from "../../diagram/diagram.style";
-import VisualizerIcon from "../../images/designer-context.svg";
-import DesignerIcon from "../../images/designer-base.svg";
-import CollaboratorIcon from "../../images/designer-base.svg";
+import VisualizerIcon from "../../images/designer-context2.svg";
+import DesignerIcon from "../../images/designer-base2.svg";
+import CollaboratorIcon from "../../images/designer-3.svg";
 
 const DesignerFeaturesDiagram = ({ activeExampleIndex }) => {
   return (

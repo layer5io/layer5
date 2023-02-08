@@ -12,7 +12,6 @@ const FeatureWrapper = styled.section`
   & > p {
     z-index: 0;
     font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
-    font-size: 18px;
     font-weight: 500;
     margin-top: 15rem;
     margin-bottom: 25rem;
