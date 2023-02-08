@@ -15,6 +15,8 @@ const ContactCard = () => {
       <div className="parentcard">
         <form id="mc-unsubscribe-form" action="https://layer5.us15.list-manage.com/unsubscribe/post" method="POST">
           <SectionTitle className="section-title" UniWidth="100%">
+            <input type="hidden" name="u" value="6b50be5aea3dfe1fd4c041d80" />
+            <input type="hidden" name="id" value="6bb65defeb" />
             <h3><span>Unsubscribe</span></h3>
           </SectionTitle>
           <Row>
@@ -24,7 +26,7 @@ const ContactCard = () => {
                 <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
                 <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" name="EMAIL" id="email-address" required /></Col>
               </Row>
-              <Button title="Unsubscribe" id="mc-embedded-subscribe" />
+              <Button title="Unsubscribe" type="submit" value="Unsubscribe" id="mc-embedded-subscribe" />
             </Col>
           </Row>
         </form>
