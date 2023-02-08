@@ -14,7 +14,7 @@ const ContactCard = () => {
       <div className="parentcard">
         <form name="contactform" method="post" action="https://hook.us1.make.com/vdgxvbnugbgiwrb8j9uiukrg1yto8rii">
           <SectionTitle className="section-title" UniWidth="100%">
-            <h3><span>Layer5 Newsletter</span></h3>
+            <h3><span>Unsubscribe from Layer5 Newsletters</span></h3>
           </SectionTitle>
           <Row>
             <Col md={3}><StaticImage src={service_mesh_img} alt="Service Mesh Icon" /></Col>
