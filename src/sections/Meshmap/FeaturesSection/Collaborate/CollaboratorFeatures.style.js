@@ -64,6 +64,7 @@ margin-top: 1.5rem;
   #featureHeading {
     z-index: 2;
     & h2 {
+      text-transform: uppercase;
       text-align: center;
       padding-top: 1rem;
       padding-bottom: 1rem;
@@ -113,7 +114,10 @@ margin-top: 1.5rem;
   font-weight: 300;
   border-bottom: 2px solid #00b39f;
   transition: .3s ease-in-out;
-  background: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+  background: #00b39f;
+   & > h2 {
+    color: #ffffff;
+   }
 }
 
 `;

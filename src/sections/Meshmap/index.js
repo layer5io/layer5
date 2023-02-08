@@ -181,7 +181,7 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
-          {/* <Platform /> */}
+          <Platform />
         </Container >
       </div >
       <Reviews />
