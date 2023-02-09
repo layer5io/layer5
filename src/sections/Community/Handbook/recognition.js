@@ -24,7 +24,7 @@ const contents = [
   {
     id: 3,
     link: "#Community_member_profile",
-    text: "Community member profile",
+    text: "Community Member Profile",
   },
 ];
 
