@@ -7,6 +7,7 @@ import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
 import Catalog from "./meshmap-catalog";
 import Platform from "./meshmap-platform";
+import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import MeshmapBanner from "./meshmap_banner";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
@@ -63,28 +64,28 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using GitOps?
+                  description: <p><b>Design your deployments the way you want.</b>
                     <br /><br />
-                    <hr style={{ "border": "1px solid #666666" }} />
+                    <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
                     <br />
-                    Integrate advanced performance analysis into your pipeline.</p>
+                    Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
                 },
                 {
                   description:
-                    <p>Visually modify your infrastructure requirements with an intuitive interface.
+                    <p><b>Manage your applications visually an intuitive interface.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
+                      <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
                       <br />
-                      Import Docker Compose apps, Helm Charts, or Kubernetes Manifests for visual configuration
+                      Play with powerful features including context-aware designs and namespace configurations to easily manage all services.
                     </p>,
                 },
                 {
                   description:
-                    <p>Substitute your YAML files with powerful configurations.
+                    <p><b>Say goodbye to YAML configurations.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
+                      <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
                       <br />
-                      Hundreds of versioned components to choose from.
+                      Build your designs from scratch using a vast variety of components and services.
                     </p>
 
                 },
@@ -96,25 +97,25 @@ const Meshmap = () => {
               [
                 {
                   description:
-                    <p>Deploy designs, apply patterns, manage and operate your deployments in real-time.
+                    <p><b>All your Kubernetes clusters under a common management.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Bring all your Kubernetes clusters under a common point of management. </p>
+                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
+                      <br />Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
                 },
                 {
                   description:
-                    <p>Interactively connect to terminal sessions or initiate and search log streams from your containers.
+                    <p><b>Continuous visibility across all of your clusters and workloads.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Continuous visibility across all of your clusters and workloads.
+                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
+                      <br />Interactively connect to terminal sessions or initiate and search log streams from your containers.
                     </p>
                 },
                 {
                   description:
-                    <p>Manage your infrastructure in the best way possible.
+                    <p><b>Import your existing Kubernetes, Helm, or Docker Compose applications.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Import your existing Kubernetes, Helm, or Docker Compose applications.
+                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
+                      <br />Timeline (DVR) Playback service transactions. Scrub over the history of changes to your deployments.
                     </p>,
                 },
               ]} />
@@ -123,26 +124,26 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p>Collaboratively design your infrastructure in the community.
+                  description: <p><b>Collaboratively design your infrastructure in the community.</b>
                     <br /><br />
-                    <hr style={{ "border": "1px solid #666666" }} />
+                    <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
                     <br />Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions.
                   </p>
                 },
                 {
                   description:
-                    <p>Combine ideas and knowledge with a selected group of engineers to enhance your management.
+                    <p><b>Design privately with proven security standards.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Share any design privately with proven security standards and failproof development environment.
+                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
+                      <br />Combine ideas and knowledge with a selected group of engineers to enhance your management.
                     </p>,
                 },
                 {
                   description:
-                    <p>Work together in real time to create the most efficient and optmised infrastructure.
+                    <p><b> Jump into real-time collaborations.</b>
                       <br /><br />
-                      <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Extensively use hundereds of versioned components to build and manage your deployments.</p>
+                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
+                      <br />Extensively use thousands of operational components to build and manage your deployments and efficiency of your infrastructure.</p>
 
                 },
 
@@ -161,12 +162,12 @@ const Meshmap = () => {
                   <p className="desc-p">
                     Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
-                  {/* <div className="draft-logo">
+                  <div className="draft-logo">
                     <p>Help choose the best logo for MeshMap:</p>
                     <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
                       <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
                     <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p>
-                  </div> */}
+                  </div>
                 </Col>
 
                 <Col lg={5} md={6} sm={12}>

@@ -1,7 +1,7 @@
 import React from "react";
 import DiagramStyles from "../../diagram/diagram.style";
-import Design1 from "../../images/design-2.svg";
-import Design2 from "../../images/design-1.svg";
+import Design1 from "../../images/design-1.svg";
+import Design2 from "../../images/design-2.svg";
 import Design3 from "../../images/design-3.svg";
 
 const DesignerFeaturesDiagram = ({ activeExampleIndex }) => {
