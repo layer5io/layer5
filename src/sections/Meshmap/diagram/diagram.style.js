@@ -44,7 +44,7 @@ const DiagramStyles = styled.section`
     }
 }
 
-  #designer {
+  #image1 {
     position: relative;
     max-width: 100%;
     z-index: 0;
@@ -56,7 +56,7 @@ const DiagramStyles = styled.section`
   }
   }
 
-  #visualizer {
+  #image2 {
     position: relative;
     max-width: 100%;
     right: 35rem;
@@ -82,7 +82,7 @@ const DiagramStyles = styled.section`
     }
   }
 
-  #collaborator {
+  #image3 {
     position: relative;
     max-width: 100%;
     right: 70rem;

@@ -116,7 +116,7 @@ margin-bottom: 1.5rem;
   top: 6rem;
   font-weight: 300;
   border-bottom: 3px solid #00b39f;
-  transition: .3s ease-in-out;
+  transition: .4s ease-in-out;
   background: #00b39f;
    & > h2 {
     color: #ffffff;

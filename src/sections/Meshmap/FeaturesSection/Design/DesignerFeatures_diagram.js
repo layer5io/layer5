@@ -1,16 +1,16 @@
 import React from "react";
 import DiagramStyles from "../../diagram/diagram.style";
-import VisualizerIcon from "../../images/designer-context2.svg";
-import DesignerIcon from "../../images/designer-base2.svg";
-import CollaboratorIcon from "../../images/designer-3.svg";
+import Design1 from "../../images/design-2.svg";
+import Design2 from "../../images/design-1.svg";
+import Design3 from "../../images/design-3.svg";
 
 const DesignerFeaturesDiagram = ({ activeExampleIndex }) => {
   return (
     <DiagramStyles>
       <div className="root">
-        <img id="designer" className="show" src={DesignerIcon} alt="" />
-        <img id="visualizer" className={(activeExampleIndex >= 1) ? "show" : "render"} src={VisualizerIcon} alt="" />
-        <img id="collaborator" className={activeExampleIndex >= 2 ? "show" : "render"} src={CollaboratorIcon} alt="" />
+        <img id="image1" className="show" src={Design1} alt="" />
+        <img id="image2" className={(activeExampleIndex >= 1) ? "show" : "render"} src={Design2} alt="" />
+        <img id="image3" className={activeExampleIndex >= 2 ? "show" : "render"} src={Design3} alt="" />
       </div>
     </DiagramStyles>
   );

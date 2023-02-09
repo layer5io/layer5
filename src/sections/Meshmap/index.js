@@ -123,26 +123,26 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p>Collaborate with other engineers to achieve the best infrastructure desings.
+                  description: <p>Collaboratively design your infrastructure in the community.
                     <br /><br />
                     <hr style={{ "border": "1px solid #666666" }} />
-                    <br />Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design that control – including making changes and releasing new versions.
+                    <br />Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions.
                   </p>
                 },
                 {
                   description:
-                    <p>Save and resume your sessions without losing any ideas.
+                    <p>Combine ideas and knowledge with a selected group of engineers to enhance your management.
                       <br /><br />
                       <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.
+                      <br />Share any design privately with proven security standards and failproof development environment.
                     </p>,
                 },
                 {
                   description:
-                    <p>Message in real-time, unattached to a specific design. Control who can participate in the discussion.
+                    <p>Work together in real time to create the most efficient and optmised infrastructure.
                       <br /><br />
                       <hr style={{ "border": "1px solid #666666" }} />
-                      <br />Friends don't let friends GitOps alone.</p>
+                      <br />Extensively use hundereds of versioned components to build and manage your deployments.</p>
 
                 },
 
