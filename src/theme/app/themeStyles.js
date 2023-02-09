@@ -8,7 +8,7 @@ const lighttheme = {
   textRevert: "#FFFFFF",
   bodyRevert: "#000000",
   body: "#FFFFFF",
-
+  backgroundColor: "#eeeeee",
   // charcoal
   primaryColor: "#3c494f",
 
@@ -93,6 +93,7 @@ export const darktheme = {
   bodyRevert: "#ffffff",
   toggleBorder: "#6B8096",
   background: "#999",
+  backgroundColor: "rgb(33,33,33)",
 
   // white
   primaryColor: "#FFFFFF",
