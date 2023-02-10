@@ -33,11 +33,12 @@ const PartnerItemWrapper = styled.section`
         flex-shrink: 3;
     }
     img {
+        width: 2rem;
+        margin-left:0.5rem;
+        margin-right:0.5rem;
         max-width: 100%;
         min-width: 7rem;
-        margin: auto;
         height:auto;
-        width:100%;
         opacity: 0.7;
         max-height:100px;
         @media(max-width: 800px){

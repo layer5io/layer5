@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "../../../reusecore/Layout";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
 import { Link } from "gatsby";
