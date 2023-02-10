@@ -14,7 +14,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
   const [submit, setSubmit] = useState(false);
 
   // Form values
-  const [validateAccounts, setValidateAccounts] = useState(false);
+  // const [validateAccounts, setValidateAccounts] = useState(false);
   const [validateRole, setValidateRole] = useState(false);
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
