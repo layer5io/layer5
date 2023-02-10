@@ -27,7 +27,7 @@ const Writers = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Layer5 Writing Program</h1>
+        <h1>Write with Layer5!</h1>
       </div>
       <TOC />
       <div className="page-section">
@@ -37,7 +37,6 @@ const Writers = () => {
             <p>
             The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies.
             </p>
-
             <h2>Why should you participate?</h2>
             <div className="list">
               <Row>
@@ -51,15 +50,15 @@ const Writers = () => {
                         Improve your writing and  <br />
                         communication skills
                           </h4>
-                      Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics clearly, and iterate to improve results.                    </td>
+                      Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics clearly, and iterate to improve results. Become a better technical writer by collaborating with an accomplished team of technical writers and editors.</td>
                       </tr>
                       <tr>
                         <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
-                      Give back
+                        Build your technical profile
                           </h4>
-                      Open source contributions are not always about pull requests and GitHub issues. While this may sound to be a more exciting way make a contribution, it's certainly not the only way to give back to the programming community. Documenting the problems you solved or a new feature you implemented will serve as a perpetual guide to others in the community.
+                          Share your knowledge with a worldwide developer community. Build your GitHub profile with assigned issues and merged pull requests. Articles, posts, project documetation written by you will be drafted, put into a pull request, reviewed and merged like any other code-centric contribution. Documenting the problems you solved or a new feature you implemented will serve as a perpetual guide to others in the community.
                         </td>
                       </tr>
                     </table>
@@ -72,7 +71,7 @@ const Writers = () => {
                         <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
-                        Establish your voice
+                          Establish your voice and personal brand
                           </h4>
                       Sharing your knowledge not only demonstrates your technical expertise, it highlights your ability to teach others, and establishes you as an authority on the topic. Your technical write-ups are empirical evidence of your ability to learn and teach.
                         </td>
