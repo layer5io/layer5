@@ -153,7 +153,7 @@ h3.containerCaption {
     margin: auto;
     height: 20rem;
     width: 0px;
-    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor: props.theme.primaryLightColor};
+    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
 
     @media (max-width: 468px) {
       display: none;
