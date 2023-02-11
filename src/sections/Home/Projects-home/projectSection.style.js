@@ -62,7 +62,7 @@ const ProjectItemWrapper = styled.section`
         border-radius: 4%;
         text-align: center;
         justify-content: center;
-        h5{
+        h3{
             margin: auto;
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}

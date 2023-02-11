@@ -4,17 +4,8 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
 import Point from "./images/bullet.svg";
-import CommunityLogo from "../../../assets/images/community/community-green.svg";
-import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 
 const contents = [
   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
@@ -26,19 +17,6 @@ const contents = [
     text: "Community member profile",
   },
 ];
-
-const badgeStyle = {
-  height: "25px",
-  width: "25px",
-  marginRight: "5px",
-};
-const badgeListStyle = {
-  listStyleType: "none",
-};
-
-const recognitionsstyle = {
-  marginBottom: "0.5rem",
-};
 
 const CommunityGuide = () => {
   return (
@@ -146,73 +124,6 @@ const CommunityGuide = () => {
                 Code of Conduct
               </Link>{" "}
               for more details.
-            </p>
-            <a id="Recognitions">
-              <h3 style={recognitionsstyle}>Recognition</h3>
-            </a>
-            <h4>Badges</h4>
-            <p>
-              Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
-            </p>
-            <ul style={badgeListStyle}>
-              <li>
-                <img src={CommunityLogo} style={badgeStyle} />
-                Community
-              </li>
-              <li>
-                <img src={LandscapeGreen} style={badgeStyle} />
-                Landscape
-              </li>
-              <li>
-                <img src={ImageHubLogo} style={badgeStyle} />
-                Image Hub
-              </li>
-              <li>
-                <img src={MesheryLogo} style={badgeStyle} />
-                Meshery
-              </li>
-              <li>
-                <img src={MesheryOperator} style={badgeStyle} />
-                Meshery Operator
-              </li>
-              <li>
-                <img src={ServiceMeshPerformance} style={badgeStyle} />
-                Service Mesh Performance
-              </li>
-              <li>
-                <img src={NightHawkLogo} style={badgeStyle} />
-                Nighthawk
-              </li>
-              <li>
-                <img src={PatternsLogo} style={badgeStyle} />
-                Patterns
-              </li>
-              <li>
-                <img src={uiuxrLogo} style={badgeStyle} />
-                UI/UX'er
-              </li>
-            </ul>
-            <a id="Membership">
-              <h3>Membership to the github orgs</h3>
-            </a>
-            <p>
-              As you continue making your contributions to Layer5 projects, you
-              will be given an invite to the github org for the project you have
-              been diligently contributing to. This invitation can be from all
-              four github orgs of Layer5 depending on the number of
-              contributions you make.
-            </p>
-            <a id="Community_member_profile">
-              <h3>
-                <Link to="/community/members">Community member profile</Link>
-              </h3>
-            </a>
-            <p>
-              Once a contributor joins the Layer5 community by filling in the
-              community member form, they are automatically classified as
-              members of Layer5. Although, you earn a member profile after
-              consistent contributions to the community for and projects. You
-              can find out more about the Members profile on the Layer5 website.
             </p>
           </div>
           <TocPagination />

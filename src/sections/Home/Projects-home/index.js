@@ -45,7 +45,7 @@ const Projects = () => {
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} />
-                  <h5>MeshMap</h5>
+                  <h3>MeshMap</h3>
                   <p>Visual Infrastructure Management</p>
                 </div>
               </Link>
@@ -54,7 +54,7 @@ const Projects = () => {
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo"  width={80} height={80} />
-                  <h5>Meshery</h5>
+                  <h3>Meshery</h3>
                   <p>Cloud Native Management</p>
                 </div>
               </Link>
@@ -63,7 +63,7 @@ const Projects = () => {
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} />
-                  <h5>Service Mesh Performance</h5>
+                  <h3>Service Mesh Performance</h3>
                   <p>The Measurement Standard</p>
                 </div>
               </Link>
@@ -72,7 +72,7 @@ const Projects = () => {
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80}/>
-                  <h5>Nighthawk</h5>
+                  <h3>Nighthawk</h3>
                   <p>Distributed Performance Management</p>
                 </div>
               </Link>

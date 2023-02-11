@@ -15,6 +15,7 @@ const ScrollToTopBtn = () => {
       {shouldRender && (
         <BackToTopButton
           isMounted={isMounted}
+          aria-label="back-to-top"
           delay={delay}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
