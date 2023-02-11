@@ -79,7 +79,7 @@ const MeshMapBrand = () => {
           <Row className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
-            <ColorBox name="Outer Space" R="60" G="73" B="79" colorCode="#3C494F" />
+            <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
           </Row>
         </Row>
       </div>

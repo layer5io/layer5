@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const UnsubscribedWrapper = styled.div`
+const UnsubscribeWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
@@ -18,7 +18,7 @@ const UnsubscribedWrapper = styled.div`
     }
     a.highlight {
     color: ${(props) => props.theme.primaryColor};
-    background-color: ${(props) => props.theme.backgroundColor};
+    background-color: #eeeeee;
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -121,4 +121,4 @@ const UnsubscribedWrapper = styled.div`
     }
 `;
 
-export default UnsubscribedWrapper;
+export default UnsubscribeWrapper;
