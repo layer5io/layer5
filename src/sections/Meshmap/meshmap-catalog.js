@@ -29,9 +29,9 @@ margin: 7rem 0 7rem;
 min-height: fit-content;
 
 .patterns {
+  display: flex;
+  margin-bottom: 1rem;
   padding-bottom: 5rem;
-  display:flex;
-  align-items: center;
   @media (max-width: 468px) {
     flex-direction : column;
   }
@@ -39,7 +39,8 @@ min-height: fit-content;
 
 .text {
   flex: 1;
-  padding: 0.5rem;
+  padding: 1em 1.5em 1em 1em;
+  width: 100%;
 }
 
 .catalog-wrapper {
@@ -55,7 +56,7 @@ min-height: fit-content;
     font-weight: 300;
     font-size: 1.5rem;
     line-height: 2rem;
-
+    text-align: right;
     @media (max-width: 992px) {
         font-size: 1.275rem;
     }
@@ -64,16 +65,21 @@ min-height: fit-content;
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
+
+    @media (max-width: 468px) {
+      text-align: center;
+    }
   }
 }
 
 .svg-cont{
   display:grid;
-  place-items:center;
+  place-items: center start;
+  height: 100%;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5em;
-  padding: 0.5em;
-  width: 100%;
+  padding: 1em;
   img{
     max-width:5.6rem;
     display:block;
@@ -84,6 +90,15 @@ min-height: fit-content;
     margin-top: 1em;
     font-weight:600;
 
+  }
+  div {
+    text-align-center;
+    max-width: 135px;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 468px) {
+    place-items: center;
   }
 }
 
@@ -96,20 +111,28 @@ h2.heading {
   font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
   font-style: normal;
   font-weight: 50;
-  font-size: 3rem;
+  font-size: 3.75rem;
   margin-bottom: 4rem;
+  text-align: right;
+  
+  @media (max-width: 1200px) {
+    font-size: 3.25rem;
+  }
 
   @media (max-width: 1050px) {
-    font-size: 2.8125rem;
+    font-size: 3rem;
+  }
+  @media (max-width: 992px) {
+    font-size: 2.5rem;
   }
   @media (max-width: 768px) {
     font-size: 2.375rem;
   }
   @media (max-width: 680px) {
-    font-size: 2.125rem;
-  }
-  @media (max-width: 438px) {
     font-size: 2rem;
+  }
+  @media (max-width: 468px) {
+    text-align: center;
   }
 }
 }
@@ -128,12 +151,10 @@ h3.containerCaption {
 {
     position: relative;
     margin: auto;
-    height: 24rem;
+    height: 20rem;
     width: 0px;
-    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
-    @media (max-width :680px) {
-      height: 18rem;
-    }
+    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor: props.theme.primaryLightColor};
+
     @media (max-width: 468px) {
       display: none;
     }
