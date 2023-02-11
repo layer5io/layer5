@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import Mutual_tls from "../../assets/images/meshmap/catalog-card-images/mutual-tls.svg";
 import Retries from "../../assets/images/meshmap/catalog-card-images/retries.svg";
 import Traces from "../../assets/images/meshmap/catalog-card-images/traces.svg";
@@ -55,7 +54,7 @@ min-height: fit-content;
     font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.125rem;
     text-align: right;
     @media (max-width: 992px) {
         font-size: 1.275rem;
@@ -78,7 +77,7 @@ min-height: fit-content;
   height: 100%;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.5em;
+  grid-gap: 2em 0.5em;
   padding: 1em;
   img{
     max-width:5.6rem;
@@ -382,6 +381,7 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <div className="patterns">
+          {/* Left Section */}
           <div className="text">
             <h2 className="heading">Save time with design patterns</h2>
             <p className="caption">
@@ -392,27 +392,28 @@ const Catalog = () => {
             </p>
           </div>
           <div className="vertical-line"></div>
-          <div className="services">
-            <section className="svg-cont">
-              <div>
-                <img src={Patterns} />
-                <p>Service Patterns</p>
-              </div>
-              <div>
-                <img src={Ebpf} />
-                <p className="ebpf-text">eBPF Programs</p>
-              </div>
-              <div>
-                <img src={Wasm} />
-                <p>WASM Filters</p>
-              </div>
-              <div>
-                <img src={Opa} />
-                <p>OPA Policies</p>
-              </div>
-            </section>
-          </div>
+          {/* Right Section */}
+          <section className="services svg-cont">
+            <div>
+              <img src={Patterns} />
+              <p>Service Patterns</p>
+            </div>
+            <div>
+              <img src={Ebpf} />
+              <p className="ebpf-text">eBPF Programs</p>
+            </div>
+            <div>
+              <img src={Wasm} />
+              <p>WASM Filters</p>
+            </div>
+            <div>
+              <img src={Opa} />
+              <p>OPA Policies</p>
+            </div>
+          </section>
         </div>
+
+        {/* 3d Spinning */}
         <div className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
