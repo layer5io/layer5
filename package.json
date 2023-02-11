@@ -90,6 +90,7 @@
     "react-tsparticles": "^2.1.4",
     "react-vertical-timeline-component": "^3.5.2",
     "react-visibility-sensor": "^5.1.1",
+    "sharp": "^0.31.3",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
