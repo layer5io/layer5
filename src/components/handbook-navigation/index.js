@@ -14,7 +14,7 @@ const TOC = () => {
       <div className="go-back">
         <Link to="/community/handbook">
           <HiOutlineChevronLeft />
-          <h4>Table of Content</h4>
+          <h4>Table of Contents</h4>
         </Link>
         <div className="toc-toggle-btn">
           {expand ? (
