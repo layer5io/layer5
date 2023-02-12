@@ -62,6 +62,15 @@ const BannerSectionWrapper = styled.section`
 
         }
     }
+    .demo {
+        color:${props => props.theme.offWhiteColor};
+        margin-bottom: 1rem;
+        font-size: clamp(12px, 20px + .8vw, 50px);
+        line-height: clamp(14px, 22px + .8vw, 50px);
+    }
+    .demo span {
+        font-weight: 600;
+    }
     .hero {
         margin: auto;
         object-fit: cover;

@@ -30,6 +30,11 @@ const CloudNativeWrapper = styled.div`
         width:100%;
         
     }
+    .col-1 p{
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0px 0px 0.5rem;
+    }
     .col-2 p{
         width:85%;
         font-size:1.3rem;

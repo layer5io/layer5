@@ -47,7 +47,7 @@ export const HoneycombGrid = styled.div`
     display: flex;
     height: 100%;
     background: ${(props) =>
-  props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
+  props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
