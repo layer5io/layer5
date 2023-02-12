@@ -246,7 +246,7 @@ const MeshmapModes = () => {
 
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">Choose Your Mode</h2>
+      <h1 className="heading">Choose Your Mode</h1>
       <p className="caption">
         {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
         Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.

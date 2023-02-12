@@ -64,59 +64,24 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p><b>Design your deployments the way you want.</b>
-                    <br /><br />
-                    <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
-                    <br />
-                    Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
+                  title: "Design your deployments the way you want.",
+                  description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations."
                 },
                 {
-                  description:
-                    <p><b>Manage your applications visually an intuitive interface.</b>
-                      <br /><br />
-                      <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
-                      <br />
-                      Play with powerful features including context-aware designs and namespace configurations to easily manage all services.
-                    </p>,
-                },
-                {
-                  description:
-                    <p><b>Say goodbye to YAML configurations.</b>
-                      <br /><br />
-                      <hr style={{ "width": "80%", "marginLeft": "0", "border": "1px solid #666666" }} />
-                      <br />
-                      Build your designs from scratch using a vast variety of components and services.
-                    </p>
-
-                },
-
+                  title: "Manage your applications visually an intuitive interface.",description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services."
+                }
               ]} />
 
           <VisualizerFeatures
             features={
               [
                 {
-                  description:
-                    <p><b>All your Kubernetes clusters under a common management.</b>
-                      <br /><br />
-                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                      <br />Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
+                  title: "All your Kubernetes clusters under a common management",
+                  description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time."
                 },
                 {
-                  description:
-                    <p><b>Continuous visibility across all of your clusters and workloads.</b>
-                      <br /><br />
-                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                      <br />Interactively connect to terminal sessions or initiate and search log streams from your containers.
-                    </p>
-                },
-                {
-                  description:
-                    <p><b>Import your existing Kubernetes, Helm, or Docker Compose applications.</b>
-                      <br /><br />
-                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                      <br />Timeline (DVR) Playback service transactions. Scrub over the history of changes to your deployments.
-                    </p>,
+                  title: "Continuous visibility across all of your clusters and workloads.",
+                  description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers."
                 },
               ]} />
 
@@ -124,29 +89,13 @@ const Meshmap = () => {
             features={
               [
                 {
-                  description: <p><b>Collaboratively design your infrastructure in the community.</b>
-                    <br /><br />
-                    <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                    <br />Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions.
-                  </p>
+                  title: "Collaboratively design your infrastructure in the community.",
+                  description: "Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
                 },
                 {
-                  description:
-                    <p><b>Design privately with proven security standards.</b>
-                      <br /><br />
-                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                      <br />Combine ideas and knowledge with a selected group of engineers to enhance your management.
-                    </p>,
+                  title: "Jump into real-time collaborations.",
+                  description: "Combine ideas and knowledge with a selected group of engineers to enhance your management. Extensively use thousands of operational components to improve efficiency of your infrastructure."
                 },
-                {
-                  description:
-                    <p><b> Jump into real-time collaborations.</b>
-                      <br /><br />
-                      <hr style={{"width": "80%", "marginLeft" : "0", "border": "1px solid #666666" }} />
-                      <br />Extensively use thousands of operational components to build and manage your deployments and efficiency of your infrastructure.</p>
-
-                },
-
               ]} />
 
           <Catalog />

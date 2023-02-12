@@ -18,21 +18,22 @@ margin-bottom: 1.5rem;
   .contentContainer {
     display: flex;
     position: relative;
+    max-height: 1600px;
 
     @media (max-width: 767px) {
       flex-direction: column;
+      align-items: center;
     }
     & > ul {
       position: relative;
       max-width: 470px;
-      padding-bottom: 50px;
       padding-left: 0;
-      padding-right: 0;
+      padding-right: 2rem;
 
       @media (max-width: 767px) {
-        margin-left: 6rem;
-        text-align: left;
+        padding-right: 0;
       }
+
       @media (max-width: 500px) {
         padding-left: 0;
         margin-left: 0;
@@ -41,37 +42,38 @@ margin-bottom: 1.5rem;
   }
 
   .diagram {
-    padding-right: 5rem;
     width: 591px;
-    max-width: 100%;
     min-width: 40rem;
     position: sticky;
     top: calc(50vh - 249px);
     z-index: -1;
 
     @media (max-width: 1200px) {
-      min-width: 38rem;
+      min-width: 32rem;
     }
     @media (max-width: 992px) {
-      min-width: 30rem;
+      min-width: 24rem;
     }
     @media (max-width: 767px) {
+      max-height: 400px;
       padding-right: 0;
       min-width: 25rem;
       opacity: 0.4;
-    }
-    @media (max-width: 670px) {
-      width: 20rem;
     }
   }
 
   #featureHeading {
     z-index: 2;
-    & h2 {
+    & h1 {
       text-transform: uppercase;
       text-align: center;
+      font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
+
+      @media (max-width: 767px) {
+      font-size: 1.75rem;
+    }
     }
   }
   .features {
@@ -116,12 +118,22 @@ margin-bottom: 1.5rem;
   position: sticky;
   top: 6rem;
   font-weight: 300;
-  border-bottom: 2px solid #00b39f;
   transition: .3s ease-in-out;
   background: #00b39f;
-   & > h2 {
+  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+   & > h1 {
     color: #ffffff;
    }
+   @media (max-width: 912px) {
+    top: 5rem;
+   }
+}
+#add-border {
+  border-color: #00b39f;
+  border-style: solid;
+  border-width: 0px 2px 2px 2px;
+  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+  transition: ease-in-out;
 }
 
 `;

@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 export default function Feature({
+  title,
   description,
   onInViewStatusChanged,
 }) {
@@ -18,7 +19,9 @@ export default function Feature({
     <FeatureWrapper>
       <div className="root">
         <div ref={ref} className="text" id = {inView ? "inView" : "notInView"}>
-          {description}
+          <h3>{title}</h3>
+          <hr />
+          <p>{description}</p>
         </div>
       </div>
     </FeatureWrapper>

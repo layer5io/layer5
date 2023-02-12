@@ -29,9 +29,9 @@ export default function DesignerFeatures({ title, features }) {
       <Container>
         <div className="root">
           <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
-            <h2>Design</h2>
+            <h1>Design</h1>
           </div>
-          <div className="g-grid-container contentContainer">
+          <div className="g-grid-container contentContainer" id={fix ? "add-border" : ""}>
             <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>

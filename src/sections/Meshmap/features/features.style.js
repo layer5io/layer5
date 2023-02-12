@@ -7,31 +7,39 @@ const FeatureWrapper = styled.section`
   display:flex;
 
   & > .text {
+    font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
     opacity:0;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    line-height: 2rem;
+
+    @media (max-width: 670px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+  & > h3 {
+    margin-bottom: 2rem;
+    @media (max-width: 767px) {
+      font-size: 1.25rem;
+    }
+  }
 
   & > p {
+    margin-top: 1.5rem;
     z-index: 0;
-    font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 500;
-    margin-top: 15rem;
-    margin-bottom: 25rem;
-    line-height: 2rem;
     color: ${props => props.theme.DarkTheme ? "#dddddd" : "#333333"};
 
-    @media (max-width: 1200px) {
-      font-size: 17px;
-    }
-    @media (max-width: 767px) {
+    /* @media (max-width: 767px) {
       font-size: 20px;
-    }
+    } */
     @media (max-width: 670px) {
-      font-size: 15px;
       max-width: 80%;
     }
 
   }
 }
-
 }
 
 #inView {
@@ -43,17 +51,6 @@ const FeatureWrapper = styled.section`
   opacity: 0;
   transition: opacity .6s ease;
 }
-
-.fixed {
-  position: sticky;
-  top: 5.9rem;
-  font-weight: 300;
-  color: white;
-  background-color: #00b39f;
-  transition: .3s ease-in-out;
-}
-
 `;
-
 
 export default FeatureWrapper;

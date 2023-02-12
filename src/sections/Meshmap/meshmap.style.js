@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
-  
+
   .heading{
       text-align: center;
       padding: 1rem 0;
@@ -26,7 +26,7 @@ const MeshmapWrapper = styled.div`
             color: ${props => props.theme.secondaryColor};
         }
         .desc-p {
-            font-size: 1.25rem;   
+            
             margin: 1.875rem 0 2.5rem 0;
         }
       }

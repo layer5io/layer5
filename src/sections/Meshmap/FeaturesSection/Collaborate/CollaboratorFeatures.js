@@ -32,9 +32,9 @@ export default function CollaboratorFeatures({ title, features }) {
             <h2 className="g-type-display-2">{title}</h2>
           </div>
           <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
-            <h2>Collaborate</h2>
+            <h1>Collaborate</h1>
           </div>
-          <div className="g-grid-container contentContainer">
+          <div className="g-grid-container contentContainer" id={fix ? "add-border" : ""}>
             <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>
