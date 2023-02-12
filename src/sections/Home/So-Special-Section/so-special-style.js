@@ -25,6 +25,10 @@ const SoSpecialWrapper = styled.div`
     .slick-next{
         right: -2.5rem;
     }
+    
+    .slick-prev{
+        left: -3rem;
+    }
 
     @media screen and (max-width: 992px) {
         .slick-list{
