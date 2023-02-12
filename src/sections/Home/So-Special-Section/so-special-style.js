@@ -42,9 +42,9 @@ const SoSpecialWrapper = styled.div`
     }	
     .slick-arrow:before{	
         color: ${props => props.theme.primaryColor};
-        font-size: 6rem;
+        font-size: 5rem;
         display: inline-block;
-        height: 3rem;
+        height: 2rem;
     }
     .slick-arrow:hover:before{	
         color: ${props => props.theme.secondaryColor};
