@@ -1,8 +1,9 @@
 export const content = [
   { id: 0, link: "/community/handbook/contributor-journey", text: "About" },
-  { id: 1, link: "/community/handbook/community", text: "Community" },
-  { id: 2, link: "/community/handbook/community-roles", text: "Community Roles" },
+  { id: 1, link: "/community/handbook/community", text: "Guidelines" },
+  { id: 2, link: "/community/handbook/community-roles", text: "Roles" },
   { id: 3, link: "/community/handbook/contribution", text: "Contribution" },
+  { id: 4, link: "/community/handbook/recogition", text: "Recognition" },
   { id: 4, link: "/community/handbook/repository-overview", text: "Repository Overview" },
   { id: 5, link: "/community/handbook/projects", text: "Projects" },
   { id: 6, link: "/community/handbook/mentorship-programs", text: "Mentorship Programs" },

@@ -23,7 +23,7 @@ We can easily inject application failures by using the Traffic Split API of the 
 
 We will do this first by deploying a new service which only return errored responses. We will be using a simple NGINX service which has configured to only return HTTP 500 responses.
 
-We will hten create a traffic split which would redirect the service mesh to send a sample percentage of traffic to the error service instead, let's say 20% of service's traffic to error, then we would have injected an artificial 20% error rate in service.
+We will then create a traffic split which would redirect the service mesh to send a sample percentage of traffic to the error service instead, let's say 20% of service's traffic to error, then we would have injected an artificial 20% error rate in service.
 
 <h3 class="chapter-sub-heading">Deploy Linkerd Books Application</h3>
 

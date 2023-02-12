@@ -66,32 +66,37 @@ const Data = {
           path: "/projects/nighthawk",
           sepLine: true
         },
-        // {
-        //   name: "Service Mesh Landscape",
-        //   path: "/landscape",
-        //   sepLine: true
-        // },
         {
-          name: "Service Mesh Patterns",
+          name: "Service Mesh",
+          path: "/landscape",
+          sepLine: true
+        },
+        {
+          name: "Patterns",
           path: "/learn/service-mesh-books/service-mesh-patterns",
-          sepLine: true
         },
         {
-          name: "Service Mesh Interface",
+          name: "Interface",
           path: "/projects/service-mesh-interface-conformance",
-          sepLine: true
         },
         {
-          name: "Service Mesh Performance",
+          name: "Landscape",
+          path: "/landscape",
+        },
+        {
+          name: "Performance",
           path: "/projects/service-mesh-performance",
-          sepLine: true
         },
       ],
       actionItems: [
         {
           actionName: "All projects",
           actionLink: "/projects",
-        }
+        },
+        {
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
       ],
       // div1: {
       //   src: meshery,

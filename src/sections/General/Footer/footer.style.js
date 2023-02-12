@@ -27,7 +27,7 @@ const FooterWrapper = styled.section`
 		color: #ccc;
 		padding-right: 2.25rem;
 		font-style: italic;
-		font-weight: 200;
+		font-weight: 300;
 		font-size: 1rem;
 	}
 
@@ -80,7 +80,7 @@ const FooterWrapper = styled.section`
 	}
 
 	.subscribe {
-		font-family: 'Qanelas Soft', sans-serif;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		margin: 0 2.5rem 2rem 0;
 		justify-content: flex-end;
 
@@ -145,7 +145,7 @@ const FooterWrapper = styled.section`
 			margin-top: -7rem;
 		}
 	}
-	media only screen and (max-width:704px) and (min-width: 662px){
+	@media only screen and (max-width:767px) and (min-width: 729px){
 		.subscribe {
 			margin-top: 10px;
 		}

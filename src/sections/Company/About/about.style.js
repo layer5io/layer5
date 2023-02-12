@@ -74,7 +74,7 @@ const AboutSectionWrapper = styled.section`
     }
     h4{
         margin-bottom: 1.7vw;
-        font-family:"Open Sans";
+        font-family:"Qanelas Soft";
         color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "rgba(0, 0, 0, 0.7)"};  
       }
   }

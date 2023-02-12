@@ -22,9 +22,21 @@ const handbookHome = () => {
         />
 
         <HandbookCard
+          title="Code of Conduct"
+          description="At Layer5 We follow the CNCF Code of Conduct. We pledge to respect all people who contribute through reporting issues, to submit pull requests or patches, and other activities."
+          to="/community/handbook/code-of-conduct"
+        />
+
+        <HandbookCard
           title="Community"
           description="A MeshMate is an experienced Layer5 community member, who will be available to guide you as you explore the various projects and find your areas of interest."
           to="/community/handbook/community"
+        />
+
+        <HandbookCard
+          title="Connect with Us"
+          description="We are a community of like-minded people with over a thousand members. Join our Slack Workspace and interact with people"
+          to="/community/handbook/connect-with-us"
         />
 
         <HandbookCard
@@ -40,15 +52,9 @@ const handbookHome = () => {
         />
 
         <HandbookCard
-          title="Repository Overview"
-          description="This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective)."
-          to="/community/handbook/repository-overview"
-        />
-
-        <HandbookCard
-          title="Projects"
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk"
-          to="/community/handbook/projects"
+          title="Learning"
+          description="As a community, we have put together good learning materials and resources to guide you through learning about cloud native infrastucture."
+          to="/community/handbook/learn-layer5"
         />
 
         <HandbookCard
@@ -58,9 +64,21 @@ const handbookHome = () => {
         />
 
         <HandbookCard
-          title="Learning"
-          description="As a community, we have put together good learning materials and resources to guide you through learning about cloud native infrastucture."
-          to="/community/handbook/learn-layer5"
+          title="Projects"
+          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk"
+          to="/community/handbook/projects"
+        />
+
+        <HandbookCard
+          title="Recognition"
+          description="Layer5 readily recognizes and publicly appreciates its community members."
+          to="/community/handbook/recognition"
+        />
+
+        <HandbookCard
+          title="Repository Overview"
+          description="This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective)."
+          to="/community/handbook/repository-overview"
         />
 
         <HandbookCard

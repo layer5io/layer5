@@ -13,6 +13,7 @@ import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import MesheryAction from "./meshery-action";
 import CommonForm from "../../components/CommonForm";
+import Reviews from "../Pricing/review-slider";
 
 
 const Meshmap = () => {
@@ -93,6 +94,7 @@ const Meshmap = () => {
           <Platform />
         </Container >
       </div >
+      <Reviews/>
     </MeshmapWrapper>
   );
 };

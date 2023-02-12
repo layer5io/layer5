@@ -41,7 +41,7 @@ const SearchBox = ({
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
         />
-        <Button>
+        <Button aria-label="search icon">
           <FaSearch />
         </Button>
       </div>

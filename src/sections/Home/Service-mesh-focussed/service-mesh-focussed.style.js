@@ -24,6 +24,7 @@ const MeshFocusWrapper = styled.div`
     .quote {
         margin-bottom: 4rem;
         font-size: 20px;
+        font-style: italic;
     }
     .book {
         object-fit: contain;
@@ -48,8 +49,15 @@ const MeshFocusWrapper = styled.div`
     .book-col {
         padding: 4rem;
     }
-    p {
-        font-style: italic;
+    .epic {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin: 0px
+    }
+    .epic2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0px;
     }
     .book_btn{
        padding-right: 3rem;
