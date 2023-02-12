@@ -517,6 +517,7 @@ const NavigationWrap = styled.header`
   .readmore-btn-wrapper{
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
   }
 
   .post-thumb-block{
@@ -543,6 +544,7 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    text-align: center;
     justify-content: space-between;
     border-radius: 0 0 3px 3px;
     position: relative;
