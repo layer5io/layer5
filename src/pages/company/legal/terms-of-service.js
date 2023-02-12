@@ -21,9 +21,6 @@ const TermsOfService = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Terms of Service" description="Layer5's cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.
-  Layer5 is the makers of Meshery and service mesh standards.
-" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Terms />
         <Footer />
@@ -32,3 +29,9 @@ const TermsOfService = () => {
   );
 };
 export default TermsOfService;
+
+export const Head = () => {
+  return <SEO title="Terms of Service" description="Layer5's cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.
+  Layer5 is the makers of Meshery and service mesh standards.
+" />;
+};

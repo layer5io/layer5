@@ -23,9 +23,6 @@ const BooksGridPage = ({ hide_path }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Books" description="Learn how to service mesh with books written by Layer5 authors.
-  Layer5 is the makers of Meshery and service mesh standards.
-  We are the largest collection of service mesh projects and their maintainers in the world." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <BooksPage hide_path={hide_path} />
         <LearnServiceMeshCTA />
@@ -35,3 +32,10 @@ const BooksGridPage = ({ hide_path }) => {
   );
 };
 export default BooksGridPage;
+
+
+export const Head = () => {
+  return  <SEO title="Service Mesh Books" description="Learn how to service mesh with books written by Layer5 authors.
+  Layer5 is the makers of Meshery and service mesh standards.
+  We are the largest collection of service mesh projects and their maintainers in the world." />;
+};

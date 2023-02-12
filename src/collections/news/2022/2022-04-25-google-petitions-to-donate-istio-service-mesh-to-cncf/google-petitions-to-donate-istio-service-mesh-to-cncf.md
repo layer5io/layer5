@@ -1,7 +1,7 @@
 ---
 title: "Google Petitions to Donate Istio Service Mesh to CNCF"
 subtitle: ""
-date:   2022-04-25 04:00:05 +0000
+date: 2022-04-25 04:00:05 +0000
 author: Container Journal
 category: Coverage
 thumbnail: istio-to-cncf.jpg
@@ -25,7 +25,7 @@ Louis Ryan, a principal engineer for Google, says since then, the Istio project 
 
 The decision to apply to become an incubation project comes on the heels of the donation of Knative, an open source middleware for connecting Kubernetes clusters to serverless computing frameworks—also originally created by Google—to the CNCF. Assuming the CNCF accepts the Istio contribution, the three major cloud-native initiatives led by Google would all be governed under the auspices of a CNCF consortium that requires organizations to give up control over the trademarks attached to any open source project.
 
-Ryan says IT organizations should expect to see ongoing innovation in the months ahead as competition between various service mesh platforms intensifies. At the same time, there may be opportunities to share advances across multiple service meshes being governed by the CNCF. Those service meshes currently include Linkerd, originally developed by Bouyant, and Kuma, originally developed by Kong, Inc. The CNCF is also home to a Meshery framework for managing service meshes created by Layer5 and a Service Mesh Interface (SMI) project originally created by Microsoft.
+Ryan says IT organizations should expect to see ongoing innovation in the months ahead as competition between various service mesh platforms intensifies. At the same time, there may be opportunities to share advances across multiple service meshes being governed by the CNCF. Those service meshes currently include Linkerd, originally developed by Buoyant, and Kuma, originally developed by Kong, Inc. The CNCF is also home to a Meshery framework for managing service meshes created by Layer5 and a Service Mesh Interface (SMI) project originally created by Microsoft.
 
 Service meshes initially emerged as a way to manage APIs at scale instead of relying on proxy software or an API gateway alone. More recently, IT organizations have started to appreciate the programmable layer of abstraction that a service mesh creates above lower-level networking and security interfaces. That layer of abstraction makes those underlying services more accessible to developers.
 

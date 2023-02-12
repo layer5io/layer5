@@ -48,7 +48,6 @@ const WorkshopSingle = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />
@@ -58,3 +57,7 @@ const WorkshopSingle = ({ data }) => {
 };
 
 export default WorkshopSingle;
+
+export const Head = ({ data }) => {
+  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+};

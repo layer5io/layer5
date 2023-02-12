@@ -6,14 +6,14 @@ import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
 import Button from "../../../reusecore/Button";
 
-const projectsIcon = "./images/projects.svg";
-
-const projectImage2 = "../../../assets/images/app/projects/smp.png";
-const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
-const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
-const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
-
 const Projects = () => {
+  const projectsIcon = "./images/projects.svg";
+
+  const projectImage2 = "../../../assets/images/app/projects/smp.png";
+  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
+  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
+  const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+
   return (
     <ProjectItemWrapper id="projects">
       <Container>
@@ -44,8 +44,8 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
-                  <StaticImage src={meshmapLogo} alt="MeshMap Logo" height={40} />
-                  <h5>MeshMap</h5>
+                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} />
+                  <h3>MeshMap</h3>
                   <p>Visual Infrastructure Management</p>
                 </div>
               </Link>
@@ -53,8 +53,8 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
-                  <StaticImage src={projectImage3} alt="Meshery Logo" height={40} />
-                  <h5>Meshery</h5>
+                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo"  width={80} height={80} />
+                  <h3>Meshery</h3>
                   <p>Cloud Native Management</p>
                 </div>
               </Link>
@@ -62,8 +62,8 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
-                  <StaticImage src={projectImage2} alt="SMP Logo" height={60} />
-                  <h5>Service Mesh Performance</h5>
+                  <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} />
+                  <h3>Service Mesh Performance</h3>
                   <p>The Measurement Standard</p>
                 </div>
               </Link>
@@ -71,8 +71,8 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <StaticImage src={projectImage4} alt="Nighthawk Logo" />
-                  <h5>Nighthawk</h5>
+                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80}/>
+                  <h3>Nighthawk</h3>
                   <p>Distributed Performance Management</p>
                 </div>
               </Link>
@@ -87,13 +87,11 @@ const Projects = () => {
             <div className="description">
               <div className="button">
                 <Button secondary className="banner-btn" title="All Projects" url="/projects">
-                  <StaticImage src={projectsIcon} alt="All Layer5 Projects" height={18} />&nbsp;
+                  <StaticImage loading="lazy" src={projectsIcon} alt="All Layer5 Projects" height={18} />&nbsp;
                 </Button>
               </div>
               <p><span>We are enablers.</span> At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings.
               </p>
-              {/* <h4>ENABLING YOU TO</h4> */}
-
             </div>
           </Col>
         </Row>

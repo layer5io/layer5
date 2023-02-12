@@ -27,7 +27,32 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 6rem 0 9rem;
+margin: 7rem 0 7rem;
+min-height: fit-content;
+
+.patterns {
+  max-height: 30rem;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  display:flex;
+
+}
+
+.text {
+  width: 50%;
+  position: relative;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  @media (max-width: 1200px) {
+    right: 2rem;
+}
+  @media (max-width: 768px) {
+    right: 2rem;
+}
+
+}
 
 .catalog-wrapper {
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
@@ -37,18 +62,34 @@ margin: 6rem 0 9rem;
   margin-bottom: 0rem;
 }
 p.caption {
-    margin: 0rem 0rem 2.5rem 0rem;
-    font-style: normal ;
+    font-style: normal;
+    font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    width: 80%;
+    text-align: right;
+    @media (max-width: 1050px) {
+    font-size: 15px;
+}
+    @media (max-width: 992px) {
+    font-size: 15px;
+    width: 70%;
+}
+@media (max-width: 680px) {
+  font-size: 12px;
+}
+}
   }
 
 .svg-cont{
   display:flex;
-  justify-content: space-around; 
-  align-items:center; 
+  justify-content: space-around;
+  align-items:center;
   img{
-    max-width:3.6rem;
+    max-width:5.6rem;
     display:block;
-    margin: 0 auto  ;
+    margin: 0 auto;
   }
   p{
     margin: 0 auto  ;
@@ -62,7 +103,36 @@ h2{
 	margin: 5% auto 1%;
 }
 h2.heading {
-  text-transform: uppercase ;
+  font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
+  font-style: normal;
+  font-weight: 50;
+  font-size: 70px;
+  line-height: 88px;
+  text-align: right;
+  margin-bottom: 4rem;
+
+  @media (max-width: 1200px) {
+    font-size: 55px;
+}
+  @media (max-width: 1050px) {
+    font-size: 45px;
+}
+  @media (max-width: 768px) {
+    font-size: 38px;
+    width: 90%;
+    margin-right: 0;
+}
+  @media (max-width: 680px) {
+    width: 80%;
+    font-size: 30px;
+    line-height: 3rem;
+}
+  @media (max-width: 438px) {
+    width: 70%;
+    font-size: 23px;
+    line-height: 2rem;
+}
+}
 }
 h3.containerCaption {
     color: ${props => props.theme.saffronColor};
@@ -75,6 +145,45 @@ h3.containerCaption {
         color: ${props => props.theme.saffronColor};
     }
 }
+.vertical-line
+{
+    position: relative;
+    margin: auto;
+    height: 24rem;
+    width: 0px;
+    border: 1.5px solid ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+    @media (max-width :680px) {
+      height: 18rem;
+    }
+}
+
+
+.services {
+  width: 50%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-1 {
+  margin-bottom: 3rem;
+}
+
+.col-1 {
+  @media (min-width: 768px) {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+}
+.col-2 {
+  @media (min-width: 768px) {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+}
+
+
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -88,7 +197,7 @@ h3.containerCaption {
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
-	animation: swirl 40s steps(10000, end) infinite; 
+	animation: swirl 40s steps(10000, end) infinite;
 }
 #carousel:hover{
 	animation-play-state: paused;
@@ -99,13 +208,13 @@ h3.containerCaption {
     transition: all .5s ease;
   }
 }
-  
+
   .slide {
 	position: absolute;
 	top: 10px;
 	left: 10px;
   }
-  
+
   .slide.one {
 	transform: rotateY(0deg) translateZ(382px);
   }
@@ -151,13 +260,13 @@ h3.containerCaption {
   .slide.fifteen {
 	transform: rotateY(336deg) translateZ(382px);
   }
-  
+
   @media screen and (max-width: 992px) {
 
    .container {
 	width: 90px;
 
-   } 
+   }
   .slide.one {
     transform: rotateY(0deg) translateZ(260px);
     }
@@ -205,7 +314,7 @@ h3.containerCaption {
     }
   }
   @media screen and (max-width: 680px) {
-    
+
     .svg-cont{
       margin: 0 auto;
       justify-content:space-evenly;
@@ -215,14 +324,14 @@ h3.containerCaption {
         width:2.4rem
       }
       p{
-        width:100%; 
+        width:100%;
         font-size:1rem;
         line-height:1.2;
         padding-top:.3rem;
         text-align: center;
       }
     }
- 
+
     .catalog-wrapper{
       padding: 2rem;
     }
@@ -231,8 +340,8 @@ h3.containerCaption {
 	  width: 65px;
 	  margin: 1.5rem auto 0rem;
 
-  
-   } 
+
+   }
   .slide.one {
     transform: rotateY(0deg) translateZ(160px);
     }
@@ -280,50 +389,59 @@ h3.containerCaption {
     }
   }
 
-  @keyframes swirl {   
+  @keyframes swirl {
 	from {
 	  transform: rotateY(-360deg);
 	}
 	to {
 	  transform: rotateY(0deg);
 	}
-  } 
-  
+  }
+
 `;
 
 const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <h2 className="heading">Choose Your Power-ups</h2>
-        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
-        <Row>
-          <Col md={6} xs={12}>
-            <section className="svg-cont">
-              <div>
-                <img className="patterns" src={Patterns} />
-                <p>Service Patterns</p>
-              </div>
-              <div>
-                <img src={Ebpf} />
-                <p className="ebpf-text">eBPF Programs</p>
-              </div>
-            </section>
-          </Col>
-          <Col md={6} xs={12}>
-            <section className="svg-cont">
-              <div>
-                <img src={Wasm} />
-                <p>WASM Filters</p>
-              </div>
-              <div>
-                <img src={Opa} />
-                <p>OPA Policies</p>
-              </div>
-            </section>
-          </Col>
-        </Row>
-        <section className="catalog-wrapper ">
+        <div className="patterns">
+          <div className="text">
+            <h2 className="heading">Save time with design patterns</h2>
+            <p className="caption">Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b></p>
+          </div>
+          <div className="vertical-line"></div>
+          <div className="services">
+            <Row className="row-1">
+              <Col md={6} xs={12} className="col-1">
+                <section className="svg-cont">
+                  <div>
+                    <img src={Patterns} />
+                    <p>Service Patterns</p>
+                  </div>
+                  <div>
+                    <img src={Ebpf} />
+                    <p className="ebpf-text">eBPF Programs</p>
+                  </div>
+                </section>
+              </Col>
+            </Row>
+            <Row className="row-2">
+              <Col md={6} xs={12} className="col-2">
+                <section className="svg-cont">
+                  <div>
+                    <img src={Wasm} />
+                    <p>WASM Filters</p>
+                  </div>
+                  <div>
+                    <img src={Opa} />
+                    <p>OPA Policies</p>
+                  </div>
+                </section>
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
               <div className="slide one">
@@ -375,8 +493,7 @@ const Catalog = () => {
           </div>
           <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
-        </section>
-
+        </div>
       </Container>
     </CatalogWrapper >
   );

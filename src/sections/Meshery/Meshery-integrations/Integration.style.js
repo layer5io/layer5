@@ -47,7 +47,7 @@ export const HoneycombGrid = styled.div`
     display: flex;
     height: 100%;
     background: ${(props) =>
-  props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
+  props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -64,7 +64,6 @@ export const HoneycombGrid = styled.div`
       position: absolute;
       img {
         transition: all 1s cubic-bezier(1, 0.82, 0.165, 1);
-        height: 100%;
         opacity: 100%;
       }
       .integration-icon {

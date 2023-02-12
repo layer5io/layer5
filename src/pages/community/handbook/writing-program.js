@@ -23,7 +23,6 @@ const Faq = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, modern application management, Kubernetes, service meshes and related technologies." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Writers />
         <Footer />
@@ -32,3 +31,7 @@ const Faq = () => {
   );
 };
 export default Faq;
+
+export const Head = () => {
+  return  <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, infrastructure as code, modern application management, Kubernetes, service meshes and related technologies." />;
+};

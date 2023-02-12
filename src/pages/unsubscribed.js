@@ -20,7 +20,7 @@ const UnsubscribedSection = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />
+        <SEO title="Cloud Native Newsletter" description="The Layer5 Newsletter" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Unsubscribed />
         <Footer />

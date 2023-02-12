@@ -22,7 +22,6 @@ const Faq = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="FAQ" description="Frequently Asked Questions" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Faqs />
         <Footer />
@@ -31,3 +30,7 @@ const Faq = () => {
   );
 };
 export default Faq;
+
+export const Head = () => {
+  return <SEO title="FAQ" description="Frequently Asked Questions" />;
+};

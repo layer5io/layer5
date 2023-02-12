@@ -8,6 +8,9 @@ const BlogSideBarWrapper = styled.div`
 
     .widgets-title{
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         cursor: pointer;
         h3{
             display: inline-block;
@@ -75,7 +78,7 @@ const BlogSideBarWrapper = styled.div`
                     color: ${props => props.theme.DarkTheme ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)"};
                     display: flex;
                     justify-content: space-between;
-                    font: 400 16px/35px "Open Sans", sans-serif;
+                    font: 400 16px/35px "Qanelas Soft", "Open Sans", sans-serif;
                     em{font-style: normal;}
                     span{
                         border-bottom: 1px solid transparent;
@@ -112,7 +115,7 @@ const BlogSideBarWrapper = styled.div`
                     padding: 6px 18px;
                     border-radius: 3px;
                     background: ${props => props.theme.DarkTheme ? "#212121" : "#F0F0F0"};
-                    font: 400 13px/26px "Open Sans", sans-serif; 
+                    font: 400 13px/26px "Qanelas Soft", "Open Sans", sans-serif; 
                     transition: all 0.3s linear;
                     &:hover{
                         background: ${props => props.theme.secondaryColor};
@@ -126,7 +129,7 @@ const BlogSideBarWrapper = styled.div`
     }
 
     .subscribe {
-		font-family: 'Qanelas Soft', sans-serif;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
         padding: 0 1rem;
         margin: 1rem auto auto;
         display:flex;
@@ -226,7 +229,7 @@ const BlogSideBarWrapper = styled.div`
                 }
                 }
             }
-        }
+        
     }
     @media screen and (max-width: 992px) {      
         display: flex;

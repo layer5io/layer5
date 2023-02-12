@@ -23,6 +23,31 @@ const NavigationWrap = styled.header`
     top: 1.5rem;
     max-height: 50px;
 
+    .banner-btn {
+      margin-right: 15px;
+      white-space: nowrap;
+      padding: .6rem .7rem;
+      min-width: 0rem;
+      font-weight: 600;
+    }    
+
+    .banner-btn.login{
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      color: ${props => props.theme.secondaryColor};
+      background-color: transparent;
+        &:hover{
+          border: 1px solid ${props => props.theme.secondaryColor};
+          background: ${props => props.theme.highlightColor}; 
+          background-color: transparent;
+        }
+        &:active {
+          /* color: #326d62; */
+          color: ${props => props.theme.keppelColor};
+          border: 1px solid ${props => props.theme.keppelColor};
+          background-color: transparent;
+        }
+    }    
     a {
       display: flex;
     }
@@ -34,6 +59,15 @@ const NavigationWrap = styled.header`
     }
     @media screen and (max-width: 1275px) {
       right: -1.95rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+    }
+    @media screen and (max-width: 1215px) {
+      right: -1.5rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
     }
     @media screen and (max-width: 992px) {
       right: -1rem;
@@ -44,9 +78,9 @@ const NavigationWrap = styled.header`
       }
       .dark-theme-toggle {
         margin-left: 0.5em;
-        margin-bottom: 2.5em;
+        margin-bottom: 3em;
       }
- 
+
     }
   }
   .navbar-wrap {
@@ -65,7 +99,7 @@ const NavigationWrap = styled.header`
     position: absolute;
     background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};    
+    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -82,7 +116,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     height: 350px;
-    margin-top: -2rem; 
+    margin-top: -2rem;
     visibility: visible;
   }
   .mobile-dropdown {
@@ -145,8 +179,9 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
+      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"};
       padding-top: 1em;
+      padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -260,7 +295,7 @@ const NavigationWrap = styled.header`
       line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 0px 20px;
       cursor: pointer;
       &:before {
         content: "";
@@ -309,7 +344,7 @@ const NavigationWrap = styled.header`
       width: 125px;
     }
   }
-  &.scrolled {    
+  &.scrolled {
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
     .nav {
       .nav-item{
@@ -426,6 +461,8 @@ const NavigationWrap = styled.header`
       .menu-item {
         font-size: 16px;
         font-weight: 600;
+        line-height: 2rem;
+        font-size: 1.25rem;
       }
       a:before {
         content: none;
@@ -436,13 +473,17 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-subitem {
       padding-left: 10px;
+      padding-top: .4rem;
+    }
+    .mobile-sub-menu-item {
+      font-size: 1.1rem;
     }
   }
-  
+
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
   }
-  
+
   .anchor:before {
     content: none;
   }
@@ -480,7 +521,7 @@ const NavigationWrap = styled.header`
 
   .post-thumb-block{
     overflow: hidden;
-    border-radius: 10px;  
+    border-radius: 10px;
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
@@ -524,7 +565,7 @@ const NavigationWrap = styled.header`
 
 
     }
-    
+
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -547,10 +588,7 @@ const NavigationWrap = styled.header`
     }
   }
   .dark-theme-toggle {
-
-    margin-left: 2em;
-
-
+    /* margin-left: 2rem; */
   }
 
   .toggle {
@@ -564,6 +602,7 @@ const NavigationWrap = styled.header`
     border-radius: 999px;
     color: #00B39F;
     transition: all 500ms;
+    vertical-align: middle;
   }
 
   .toggle:checked {
@@ -586,7 +625,7 @@ const NavigationWrap = styled.header`
   .toggle:checked~.title {
     --color: #fa0;
   }
-  
+
 `;
 
 export default NavigationWrap;
