@@ -21,7 +21,7 @@ import JaegerUI from "../../../../src/assets/images/learn-layer5/linkerd/linkerd
 
 Linkerd's telemetry and monitoring features function automatically, without requiring any work on the part of the developer.
 
-We have already looked at Linkerd Telemetry, not by name but by concept. Using stat, top and tap is one of the major and characterstic feature which Linkerd offers out of the box. All of this metrics are also accessible through Grafana Dashboard which Linkerd provides.
+We have already looked at Linkerd Telemetry, not by name but by concept. Using stat, top and tap is one of the major and characteristic feature which Linkerd offers out of the box. All of this metrics are also accessible through Grafana Dashboard which Linkerd provides.
 
 Expose Grafana dashboard:
 
@@ -34,7 +34,7 @@ linkerd dashboard &
 
 <h3 class="chapter-sub-heading">Distributed tracing with Linkerd</h3>
 
-Linkerd added support for Distributed Tracing, which means that if your application has enabled tracing based on B3 Propagation, Linkerd proxies would automatically recognize that (as the trace-id is propogated through http headers) and send their spans, provided that the proxies are configured regarding the meshed trace collector endpoint.
+Linkerd added support for Distributed Tracing, which means that if your application has enabled tracing based on B3 Propagation, Linkerd proxies would automatically recognize that (as the trace-id is propagated through http headers) and send their spans, provided that the proxies are configured regarding the meshed trace collector endpoint.
 
 To enable tracing onto your cluster :
 

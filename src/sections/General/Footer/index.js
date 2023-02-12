@@ -240,7 +240,7 @@ const Footer = () => {
                     type="email"
                     placeholder="Email Address"
                     name="EMAIL"
-                    id="mce-EMAIL"
+                    id="mce-EMAIL-2"
                     onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
                     onInput={e => e.target.setCustomValidity("")}
                     required
@@ -248,8 +248,8 @@ const Footer = () => {
                   <Button
                     secondary
                     title="Subscribe"
-                    id="mc-embedded-subscribe"
                     aria-label="subscribe-us"
+                    id="mc-embedded-subscribe-2"
                   />
                 </div>
               </form>
