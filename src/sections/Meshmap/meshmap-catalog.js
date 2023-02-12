@@ -95,6 +95,9 @@ min-height: fit-content;
     max-width: 135px;
     width: 100%;
     height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   @media (max-width: 468px) {
     place-items: center;
