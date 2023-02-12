@@ -92,7 +92,7 @@ const MeshmapModesWrapper = styled.div`
 
       .mode-name{
           top: 15%;
-          transition: all 1.5s ease 0.75s;
+          transition: all 0.75s ease 0.75s;
       }
 
       .content {
