@@ -39,7 +39,7 @@ body {
 
   color: ${(props) => props.theme.text};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', 'Open Sans', sans-serif;
+    font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
     color: ${(props) => props.theme.tertiaryColor};
     margin: 0;
     line-height: normal;
@@ -120,7 +120,7 @@ h5.section-title {
     }
 }
 input {
-  font-family: 'Qanelas Soft', 'Open Sans', sans-serif;
+  font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
 }
 p { 
     margin: 0 0 1rem 0;

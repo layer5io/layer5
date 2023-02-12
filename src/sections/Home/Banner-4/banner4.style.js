@@ -69,7 +69,9 @@ const Banner1SectionWrapper = styled.section`
         &:hover {
              background: ${props => props.theme.highlightLightColor}; 
         }
-        
+        &:active{
+            background: ${props => props.theme.saffronColor}; 
+        }
     }
     .banner-btn.two{
         
@@ -96,7 +98,7 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 992px) {
-        padding: 3rem 0;
+        padding: 1.5rem 0;
         top: 1rem;
         .section-title { 
             h1 {
@@ -191,7 +193,7 @@ const Banner1SectionWrapper = styled.section`
         }
 	}
     @media only screen and (max-width: 430px) {
-        padding: 2rem 0;
+        padding: 1rem 0;
         .section-title { 
             h1 { 
                 margin: 0rem;

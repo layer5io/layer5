@@ -46,21 +46,21 @@ export const details = [
     features: [
       {
         feature: "Collaborators for public designs",
-        description: "Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design that control – including making changes and releasing new versions.",
+        description: "Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design that you control – including making changes and releasing new versions.",
         free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "Collaborators for private designs",
-        description: "Invite any Meshery Cloud user to work with you on a private design that control – including making changes and releasing new versions.",
+        description: "Invite any Meshery Cloud user to work with you on a private design that you control – including making changes and releasing new versions.",
         free: <MdClose className="no-icon" />,
         team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "Team Chat",
-        description: "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
+        description: "Message in real-time, unattached to a specific design. Control who can participate in the discussion.",
         free: <MdClose className="no-icon" />,
         team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
@@ -88,7 +88,7 @@ export const details = [
       },
       {
         feature: "Add-ons",
-        description: "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+        description: "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Meshery Cloud.",
         free: <MdClose className="no-icon" />,
         team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
@@ -383,4 +383,3 @@ export const options = [
       { id: 5, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone." }]
   },
 ];
-

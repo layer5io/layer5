@@ -48,7 +48,7 @@ export const WorkshopPageWrapper = styled.div`
 		color: #eee;
 		background-color: ${props => props.theme.secondaryColor};
 		border: none;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		border-radius: 0.9375rem;
 		outline: none;
 	}
@@ -115,7 +115,7 @@ export const WorkshopPageWrapper = styled.div`
 		display: none;
 		width: 100%;
 		height: 100%;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 	}
 
 	.active {

@@ -28,9 +28,9 @@ const BannerDefault = () => {
                   UniWidth="100%"
                 >
                   <h4 className="statement">Meshery is</h4>
-                  <h2 className="statement">
+                  <div className="demo">
                     The <span>cloud native management platform</span>
-                  </h2>
+                  </div>
                   <h3 className="statement">
                     <div className="side">
                       {/* <div className="side-text">

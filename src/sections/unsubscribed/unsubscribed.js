@@ -9,7 +9,7 @@ const UnsuscribedSection = () => {
       <div className="parentcard">
         <h2>Unsubscription Successful</h2>
         <h4>Say it ain't so.</h4>
-        <h5>While you ponder whether to <Link className="highlight"  to="/subscribe">resubscribe</Link>, have an interactive lab on us.</h5>
+        <h5>While you ponder whether to <Link className="highlight" to="/subscribe">resubscribe</Link>, have an <Link to="/learn/service-mesh-labs">interactive lab</Link> on us.</h5>
       </div>
       <LearnServiceMeshCTA />
     </UnsuscribedWrapper>

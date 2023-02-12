@@ -1,9 +1,6 @@
 name: lighthouseci
 on: 
-  push:
-    paths-ignore:
-      - "*.md"
-      - "*.github/**"
+  workflow_dispatch:
   pull_request:
     paths-ignore:
       - "*.md"

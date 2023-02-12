@@ -8,7 +8,7 @@ const CloudNativeLeaders = () => {
     <CloudNativeWrapper className="arrow">
       <div className="cloud-cont">
         <div className="col-1">
-          <h4>We are</h4>
+          <p>We are</p>
           <h1>Cloud Native</h1>
           <h1>Leaders</h1>
         </div>

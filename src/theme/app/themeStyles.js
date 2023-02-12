@@ -2,12 +2,13 @@
 const lighttheme = {
   black: "#000000",
   white: "#ffffff",
+  offWhiteColor: "#FAFAFA",
   navigatorColor: "#FFFFFF",
   text: "#000000",
   textRevert: "#FFFFFF",
   bodyRevert: "#000000",
   body: "#FFFFFF",
-
+  backgroundColor: "#eeeeee",
   // charcoal
   primaryColor: "#3c494f",
 
@@ -84,6 +85,7 @@ const lighttheme = {
 export const darktheme = {
   black: "#000000",
   white: "#ffffff",
+  offWhiteColor: "#FAFAFA",
   navigatorColor: "#000000",
   body: "#121212",
   textRevert: "#000000",
@@ -91,6 +93,7 @@ export const darktheme = {
   bodyRevert: "#ffffff",
   toggleBorder: "#6B8096",
   background: "#999",
+  backgroundColor: "rgb(33,33,33)",
 
   // white
   primaryColor: "#FFFFFF",

@@ -32,6 +32,9 @@ export const query = graphql`query NewsBySlug($slug: String!) {
         publicURL
       }
     }
+    fields {
+      slug
+    }
   }
 }
 `;
