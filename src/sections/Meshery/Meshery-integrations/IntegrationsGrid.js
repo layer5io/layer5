@@ -123,7 +123,6 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       };
     }),
   ]);
-  console.log(categoryNameList)
 
   useEffect(() => setCategory(), []);
 
@@ -236,8 +235,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
       />
-      <section style={{"margin":"0 2.6rem"}}>
 
+      <section style={{ "margin": "0 2.6rem" }}>
         <IntegrationSlider {...settings}>
           {!hideFilter &&
             categoryNameList.map((item) => {
