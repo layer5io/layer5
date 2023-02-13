@@ -81,8 +81,6 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 992px) {
-        // padding: 1.5rem 0;
-        // top: 1rem;
         .section-title { 
             h1 {
                 font-size: 2.7rem;
