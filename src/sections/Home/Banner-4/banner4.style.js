@@ -2,21 +2,6 @@ import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
     display: none;
-    top: 3.2rem;
-    padding-bottom: 2rem;
-    .section-bgimage {
-        &::before, &::after {
-            content: none !important;
-        }
-    }
-    .background-svg {
-        overflow: visible;
-        position: absolute;
-        right: 0px;
-        top: -10%;
-        width: 25%;
-        min-height: 150%;
-    }
     p {
         font-size: 21px;
         font-weight: 300;
@@ -48,7 +33,6 @@ const Banner1SectionWrapper = styled.section`
     }
     .meshmapVideo {
         position: relative;
-        top: -3.625rem;
         min-width:25%;
         max-width:100%;
         object-fit: cover;
@@ -74,7 +58,6 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     .banner-btn.two{
-        
         background: ${props => props.theme.secondaryColor};
         color: #fff;
         &:hover{
@@ -98,8 +81,8 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 992px) {
-        padding: 1.5rem 0;
-        top: 1rem;
+        // padding: 1.5rem 0;
+        // top: 1rem;
         .section-title { 
             h1 {
                 font-size: 2.7rem;
@@ -117,7 +100,6 @@ const Banner1SectionWrapper = styled.section`
         p {
             width: 100%;
         }
-        
         .section-title {
             h1 {
                 font-size: 2.45rem;
@@ -142,19 +124,7 @@ const Banner1SectionWrapper = styled.section`
             margin-left: 15px;
         } 
     }
-    @media only screen and (max-width: 760px) {
-        .section-bgimage {
-            &::before, &::after {
-                content: '' !important;
-            }
-            padding: 5rem 0;
-            margin: -3rem auto;
-            opacity: 1 !important;
-
-            > div {
-                margin: auto 0;
-            }
-        }
+    @media only screen and (max-width: 767px) {
         .section-title-wrapper {
             min-width: 100%;
         }

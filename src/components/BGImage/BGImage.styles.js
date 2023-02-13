@@ -19,16 +19,18 @@ export const FakeBGImg = styled(GatsbyImage)`
   opacity:1;
   @media (min-width: 768px){
     opacity:0;
+    display: none !important;
   } 
 `;
 
 export const Content = styled.div`
-  position: absolute;
-  top:0;
-  height: 100%;
+  position: relative;
   width: 100%;
+  height: 100%;
   z-index: 2;
-  @media (max-width: 992px){
-    top: 35%;
+  @media (max-width: 767px){
+    position: absolute;
+    display: flex;
+    justify-content: center;
   } 
 `;
