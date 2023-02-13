@@ -23,7 +23,7 @@ const SoSpecialWrapper = styled.div`
     }
     
     .slick-next{
-        right: -2rem;
+        right: -2.5rem;
     }
 
     .slick-prev{
