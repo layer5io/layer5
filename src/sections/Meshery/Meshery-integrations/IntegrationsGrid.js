@@ -80,8 +80,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   `);
 
   const settings = {
-    initialSlide: -2,
-    infinite: true,
+    initialSlide: 0,
+    infinite: false,
     slidesToShow: 4,
     swipeToSlide: true,
     slidesToScroll: 1,
@@ -91,9 +91,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       {
         breakpoint: 900,
         settings: {
-          initialSlide: -2,
+          initialSlide: 0,
           infinite: false,
-          dots: true,
           arrows: true,
           slidesToShow: 3,
         }
@@ -101,9 +100,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       {
         breakpoint: 500,
         settings: {
-          initialSlide: -2,
-          dots: true,
-          arrows: false,
+          initialSlide: 0,
+          arrows: true,
           infinite: false,
           slidesToShow: 1.25
         }
@@ -159,6 +157,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       };
     }),
   ]);
+  console.log(categoryNameList)
 
   useEffect(() => setCategory(), []);
 
@@ -271,20 +270,23 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
       />
-      <IntegrationSlider {...settings}>
-        {!hideFilter &&
-          categoryNameList.map((item) => {
-            return (
-              <p
-                key={item.id}
-                className={item.isSelected ? "items selected" : "items"}
-                onClick={setFilter}
-              >
-                {`${item.name} (${item.count})`}
-              </p>
-            );
-          })}
-      </IntegrationSlider>
+      <section style={{"margin":"0 2.6rem"}}>
+
+        <IntegrationSlider {...settings}>
+          {!hideFilter &&
+            categoryNameList.map((item) => {
+              return (
+                <p
+                  key={item.id}
+                  className={item.isSelected ? "items selected" : "items"}
+                  onClick={setFilter}
+                >
+                  {`${item.name} (${item.count})`}
+                </p>
+              );
+            })}
+        </IntegrationSlider>
+      </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
         <EmptyResources
