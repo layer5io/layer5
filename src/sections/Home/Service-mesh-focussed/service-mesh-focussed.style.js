@@ -62,6 +62,7 @@ const MeshFocusWrapper = styled.div`
     .book_btn{
        padding-right: 3rem;
        text-align: center;
+       color: black;
     }
     .icon-right{
         position: relative;

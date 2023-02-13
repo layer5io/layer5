@@ -57,10 +57,10 @@ const CloudNativeWrapper = styled.div`
 
     }
     .btn-cont button{
-        color:${props => props.theme.DarkTheme ? "black" : "white"};
+        color:${props => props.theme.DarkTheme ? "black" : "black"};
     }
     .btn-cont button:hover{
-        color:${props => props.theme.DarkTheme ? "white" : "black"};
+        color:${props => props.theme.DarkTheme ? "white" : "white"};
         box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
     

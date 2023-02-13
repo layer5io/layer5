@@ -80,7 +80,7 @@ const SoSpecialWrapper = styled.div`
         padding:2rem;
         text-align:center; 
         p{
-            color:#b3b3b3;
+            color: #5A5A5A;
             padding:2rem 0;
             font-size: 1.5rem;
         }
@@ -141,10 +141,10 @@ const SoSpecialWrapper = styled.div`
         }
         .so-special-foot-btn
         {
-            color:${props => props.theme.DarkTheme ? "black" : "white"};
+            color:${props => props.theme.DarkTheme ? "black" : "black"};
             margin:2rem;
             :hover{
-                color:${props => props.theme.DarkTheme ? "white" : "black"};
+                color:${props => props.theme.DarkTheme ? "white" : "white"};
             }
         }
     }

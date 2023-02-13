@@ -65,7 +65,7 @@ const ProjectItemWrapper = styled.section`
         h3{
             margin: auto;
             font-weight: 700;
-            color: ${props => props.theme.secondaryColor}
+            color: #01A794
         }
         p{
             font-weight: 300;

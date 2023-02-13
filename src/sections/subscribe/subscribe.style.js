@@ -12,7 +12,7 @@ const SubscribeWrapper = styled.div`
 
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:#01A794;
     }
     
     input{
