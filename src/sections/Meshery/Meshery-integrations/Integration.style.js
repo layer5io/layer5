@@ -199,22 +199,8 @@ export const IntegrationSlider = styled(Slider)`
     outline:none;
   }
 
-  .slick-dots{
-    bottom: -1rem;
-  }
-
-  .slick-dots li.slick-active button:before {
-    color: #00b39f;
-  }
-
-  .slick-dots li button:before{
-    font-size:.5rem;
-    color: #00b39f;
-  }
-
-  .slick-dots li button:hover {
-    box-shadow:none;
-    outline:none;
+  .slick-arrow:hover:before {
+    color:#00b39f;
   }
 
   .slick-arrow {
@@ -231,7 +217,7 @@ export const IntegrationSlider = styled(Slider)`
     font-size:5rem;
     line-height: 0;	
     margin-left:-.5rem;
-    color:#00b39f
+    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
   .slick-track {
@@ -242,17 +228,10 @@ export const IntegrationSlider = styled(Slider)`
     content:"\u203A";
     font-size:5rem;
     line-height: 0;	
-    color:#00b39f
+    color:${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
   .slick-prev, .slick-next {
     top:0
-  }
-
-  @media screen and (max-width: 500px){
-    .slick-slide {
-      width:30rem !important;
-      margin-bottom:2rem
-    }
   }
   `;
