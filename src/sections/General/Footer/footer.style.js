@@ -102,6 +102,7 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
+			color: black;
 		}
 	}
 
@@ -145,7 +146,7 @@ const FooterWrapper = styled.section`
 			margin-top: -7rem;
 		}
 	}
-	media only screen and (max-width:704px) and (min-width: 662px){
+	@media only screen and (max-width:767px) and (min-width: 729px){
 		.subscribe {
 			margin-top: 10px;
 		}
@@ -173,6 +174,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
+				color: black;
 			}
 		}
 	}
@@ -220,6 +222,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
+				color: black;
 			}
 		}
 	}

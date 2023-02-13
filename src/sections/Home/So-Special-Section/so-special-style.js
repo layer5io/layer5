@@ -26,6 +26,10 @@ const SoSpecialWrapper = styled.div`
         right: -2.5rem;
     }
 
+    .slick-prev{
+        left: -2.5rem;
+    }
+
     @media screen and (max-width: 992px) {
         .slick-list{
             margin: 0;	
@@ -38,9 +42,12 @@ const SoSpecialWrapper = styled.div`
     }	
     .slick-arrow:before{	
         color: ${props => props.theme.primaryColor};
-        font-size: 6rem;
+        font-size: 4.5rem;
         display: inline-block;
-        height: 3rem;
+        height: 2rem;
+    }
+    .slick-disabled {
+        pointer-events:none;
     }
     .slick-arrow:hover:before{	
         color: ${props => props.theme.secondaryColor};
@@ -79,9 +86,10 @@ const SoSpecialWrapper = styled.div`
     .so-special-head{
         padding:2rem;
         text-align:center; 
-        h4{
+        p{
             color:#b3b3b3;
             padding:2rem 0;
+            font-size: 1.5rem;
         }
     }
     #special-cont{
@@ -134,6 +142,10 @@ const SoSpecialWrapper = styled.div`
 
     .so-special-foot{
         text-align:center;
+        p{
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
         .so-special-foot-btn
         {
             color:${props => props.theme.DarkTheme ? "black" : "white"};

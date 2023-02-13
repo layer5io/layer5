@@ -14,10 +14,10 @@ const ServiceMeshFocused = () => {
       <Container>
         <Row className="heading">
           <Col>
-            <h5>Cloud native focused.</h5>
+            <p className="epic">Cloud native focused.</p>
             {/* <h1>Service mesh focused.</h1> */}
             <h1>Service mesh neutral</h1>
-            <h4>Dedicated to empowering you to expect more from your infrastructure.</h4>
+            <p className="epic2"> Dedicated to empowering you to expect more from your infrastructure.</p>
           </Col>
         </Row>
         <Row Vcenter >

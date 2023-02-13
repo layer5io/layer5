@@ -136,7 +136,7 @@ const Sidebar = ({ pageContext }) => {
               }
               onInput={(e) => e.target.setCustomValidity("")}
             />
-            <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+            <Button secondary title="Subscribe" aria-label="subscribe-us" id="mc-embedded-subscribe" />
           </div>
         </form>
       </div>
