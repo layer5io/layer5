@@ -23,11 +23,11 @@ const SoSpecialWrapper = styled.div`
     }
     
     .slick-next{
-        right: -2.5rem;
+        right: -2rem;
     }
-    
+
     .slick-prev{
-        left: -3rem;
+        left: -2.5rem;
     }
 
     @media screen and (max-width: 992px) {
@@ -42,9 +42,12 @@ const SoSpecialWrapper = styled.div`
     }	
     .slick-arrow:before{	
         color: ${props => props.theme.primaryColor};
-        font-size: 5rem;
+        font-size: 4.5rem;
         display: inline-block;
         height: 2rem;
+    }
+    .slick-disabled {
+        pointer-events:none;
     }
     .slick-arrow:hover:before{	
         color: ${props => props.theme.secondaryColor};
