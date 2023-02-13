@@ -11,6 +11,9 @@ import William from "./reviews/william-morgan.png";
 import Ken from "./reviews/ken-owens.png";
 import Deepak from "./reviews/deepak-dinesh.jpg";
 import Kaur from "./reviews/kaur-kallas.jpg";
+import Mrittika from "./reviews/mrittika-ganguli.jpeg";
+import Liz from "./reviews/liz-rice.jpeg";
+import Lee from "../../collections/members/lee-calcote/lee-calcote.jpg";
 
 
 const settings = {
@@ -139,53 +142,25 @@ const Reviews = () => {
             image={Deepak}
           />
           <Customers
-            type="2"
-            quote="Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need."
-            person="Ken Owens"
-            title="Vice President Cyber Cloud Security Engineering at Fiserv"
-            // image={}
-          />
-          <Customers
             type="1"
             quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
             person="Liz Rice"
             title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC"
-            // image={}
-          />
-          <Customers
-            type="2"
-            quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
-            person="William Morgan"
-            title="CEO of Buoyant and one of the creators of Linkerd"
-            // image={}
-          />
-          <Customers
-            type="1"
-            quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
-            person="Otto van der Schaaf"
-            title="Principal Engineer at Red Hat"
-            // image={}
-          />
-          <Customers
-            type="1"
-            quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
-            person="Otto van der Schaaf"
-            title="Principal Engineer at Red Hat"
-            // image={}
+            image={Liz}
           />
           <Customers
             type="1"
             quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
             person="Mrittika Ganguli"
             title="Principal Engineer & Director Cloud Native Network Pathfinding"
-            // image={""}
+            image={Mrittika}
           />
           <Customers
             type="3"
             quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
             person="Lee Calcote"
             title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
-            // image={""}
+            image={Lee}
           />
         </Slider>
       </div>
