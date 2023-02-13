@@ -19,11 +19,12 @@ export const FakeBGImg = styled(GatsbyImage)`
   opacity:1;
   @media (min-width: 768px){
     opacity:0;
+    display: none !important;
   } 
 `;
 
 export const Content = styled.div`
-  position: absolute;
+  position: relative;
   top:0;
   height: 100%;
   width: 100%;
