@@ -48,7 +48,7 @@ export const partners = [
     desc: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
     //link: "/careers/internships",
     type: "academic",
-    imageLink: partner1,
+    imageLink: partner3,
     darkimageLink: partner3,
     partnerId: "uem",
     //imageRoute: "https://uem.edu.in/blog/what-is-open-source/",

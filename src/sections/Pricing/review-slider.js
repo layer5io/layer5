@@ -55,6 +55,7 @@ const settings = {
 
 const ReviewsWrapper = styled.div`
 .slider{
+  overflow: hidden;
   padding: 2rem 0 0.5rem;
   background: ${props => props.theme.secondaryLightColor};
   h2{

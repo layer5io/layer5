@@ -8,7 +8,6 @@ import { Container } from "../../../reusecore/Layout";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
-import meshmap_light from "../../../assets/images/meshmap/icon-only/meshmap-icon-white.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -149,7 +148,7 @@ const Navigation = ({ theme, themeSetter }) => {
       {
         frontmatter: {
           thumbnail: {
-            img: theme === "dark" ? meshmap_light : meshmap_dark
+            img: meshmap_dark
           },
           title: "MeshMap, collaborative infrastructure management"
         },
