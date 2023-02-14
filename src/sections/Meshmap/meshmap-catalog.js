@@ -49,12 +49,6 @@ min-height: fit-content;
     padding: 0em 1.5em 1em 0em;
 
   }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 680px) {
-  }
-  @media (max-width: 468px) {
-  }
 }
 
 .catalog-wrapper {
