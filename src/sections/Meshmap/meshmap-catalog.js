@@ -38,8 +38,23 @@ min-height: fit-content;
 
 .text {
   flex: 1;
-  padding: 1em 1.5em 1em 1em;
+  padding: 0em 3em 1em 0em;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    padding: 0em 2.5em 1em 0em;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0em 1.5em 1em 0em;
+
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 680px) {
+  }
+  @media (max-width: 468px) {
+  }
 }
 
 .catalog-wrapper {
@@ -73,12 +88,12 @@ min-height: fit-content;
 
 .svg-cont{
   display:grid;
-  place-items: center start;
+  place-items: center;
   height: 100%;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2em 0.5em;
-  padding: 1em;
+  grid-gap: 1em;
+  padding: 0.5em;
   img{
     max-width:5.6rem;
     display:block;
@@ -92,15 +107,13 @@ min-height: fit-content;
   }
   div {
     text-align-center;
-    max-width: 135px;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  @media (max-width: 468px) {
-    place-items: center;
+    padding: 7px;
   }
 }
 
@@ -114,8 +127,8 @@ h2.heading {
   font-style: normal;
   font-weight: 50;
   font-size: 3.75rem;
-  margin-bottom: 4rem;
   text-align: right;
+  margin: 0 0 4rem 0;
   
   @media (max-width: 1200px) {
     font-size: 3.25rem;
