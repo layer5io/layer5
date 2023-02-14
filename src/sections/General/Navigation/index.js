@@ -8,7 +8,6 @@ import { Container } from "../../../reusecore/Layout";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
-import meshmap_light from "../../../assets/images/meshmap/icon-only/meshmap-icon-white.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -149,7 +148,7 @@ const Navigation = ({ theme, themeSetter }) => {
       {
         frontmatter: {
           thumbnail: {
-            img: theme === "dark" ? meshmap_light : meshmap_dark
+            img: meshmap_dark
           },
           title: "MeshMap, collaborative infrastructure management"
         },
@@ -282,8 +281,8 @@ const Navigation = ({ theme, themeSetter }) => {
 
           </div>
           <div className="meshery-cta">
-            <Button id="get-started-2" secondary className="banner-btn two" external="true" title="Get Started" alt="Signup for Layer5 Cloud"  url="https://meshery.layer5.io/registration" />
-            <Button id="login" secondary className="banner-btn login" external="true" title="Login" alt="Login for Layer5 Cloud"  url="https://meshery.layer5.io/login" />
+            <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud"  url="https://meshery.layer5.io/registration" />
+            <Button id="login" aria-label="Login to Layer5 Cloud" secondary className="banner-btn login" external={true} title="Login" alt="Login for Layer5 Cloud"  url="https://meshery.layer5.io/login" />
             <div className="dark-theme-toggle">
               <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!themeToggle} />
             </div>
