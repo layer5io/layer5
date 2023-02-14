@@ -248,6 +248,7 @@ const Footer = () => {
                   <Button
                     secondary
                     title="Subscribe"
+                    aria-label="subscribe-us"
                     id="mc-embedded-subscribe-2"
                   />
                 </div>
