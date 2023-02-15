@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 const CollaboratorFeaturesWrapper = styled.section`
-margin-top: 1.5rem;
-
+margin-top: 1rem;
 
 // ul li:last-child {
 //     padding-bottom: 120px;
 //   }
-  ul li:first-child {
-  }
+
+.collaborate-container {
+  padding: 0;
+}
+
 .scroll{
     position: sticky;
     top: calc(50vh - 249px);

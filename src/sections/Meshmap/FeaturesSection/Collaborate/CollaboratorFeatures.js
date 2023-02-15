@@ -26,7 +26,7 @@ export default function CollaboratorFeatures({ title, features }) {
 
   return (
     <CollaboratorFeaturesWrapper>
-      <Container>
+      <Container className="collaborate-container">
         <div className="root">
           <div className="g-grid-container headerWrapper">
             <h2 className="g-type-display-2">{title}</h2>

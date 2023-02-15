@@ -246,11 +246,11 @@ const MeshmapModes = () => {
 
   return (
     <MeshmapModesWrapper>
-      <h1 className="heading">Choose Your Mode</h1>
-      <p className="caption">
-        {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
-        Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.
-      </p>
+      {/* <h1 className="heading">Choose Your Mode</h1> */}
+      {/* <p className="caption"> */}
+      {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
+      {/* Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. */}
+      {/* </p> */}
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
         <div className="mode">

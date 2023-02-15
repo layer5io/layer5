@@ -27,7 +27,7 @@ export default function VisualizerFeatures({ features }) {
 
   return (
     <VisualizerFeaturesWrapper>
-      <Container>
+      <Container className="visualizer-container">
         <div className="root">
           <div id="featureHeading" className="fixed">
             <h1>Visualize</h1>

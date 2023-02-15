@@ -27,8 +27,18 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 3rem 0 7rem;
+margin: 1rem 0 7rem;
 min-height: fit-content;
+border-color: #00b39f;
+border-style: solid;
+padding: 2rem 0 0;
+border-width: 2px 2px 2px 2px;
+box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+
+.catalog-container {
+  padding: 0;
+}
+
 
 .patterns {
   max-height: 30rem;
@@ -403,7 +413,7 @@ h3.containerCaption {
 const Catalog = () => {
   return (
     <CatalogWrapper>
-      <Container>
+      <Container className="catalog-container">
         <div className="patterns">
           <div className="text">
             <h2 className="heading">Save time with design patterns</h2>

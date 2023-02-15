@@ -10,7 +10,8 @@ const BannerSectionWrapper = styled.div`
     box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
 
     padding: 8rem 6rem 3rem 6rem;
-    margin-bottom: 3rem;
+    width: 1140px;
+    margin: auto;
     min-height: 25rem;
 
     h1 {

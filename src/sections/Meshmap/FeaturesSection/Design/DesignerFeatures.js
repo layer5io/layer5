@@ -26,12 +26,12 @@ export default function DesignerFeatures({ title, features }) {
 
   return (
     <DesignerFeaturesWrapper>
-      <Container>
+      <Container className="designer-container">
         <div className="root">
           <div id="featureHeading" className="fixed">
             <h1>Design</h1>
           </div>
-          <div className="g-grid-container contentContainer" id="add-border">
+          <div className="g-grid-container contentContainer" id="add-border" >
             <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>

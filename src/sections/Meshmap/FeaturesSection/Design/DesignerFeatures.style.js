@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 const DesignerFeaturesWrapper = styled.section`
-margin-top: 3rem;
-margin-bottom: 1.5rem;
+margin-top: 1rem;
 
 
 // ul li:last-child {
 //     padding-bottom: 120px;
 //   }
-  ul li:first-child {
-  }
+
+.designer-container {
+  padding: 0;
+
+}
+
 .scroll{
     position: sticky;
     top: calc(50vh - 249px);
@@ -19,7 +22,11 @@ margin-bottom: 1.5rem;
   .contentContainer {
     display: flex;
     position: relative;
-    max-height: 1600px;
+    max-height: 600px;
+    overflow: scroll;
+    ::-webkit-scrollbar{
+    display: none;
+  }
 
     @media (max-width: 767px) {
       flex-direction: column-reverse;
@@ -45,7 +52,7 @@ margin-bottom: 1.5rem;
     width: 591px;
     min-width: 40rem;
     position: sticky;
-    top: calc(50vh - 249px);
+    top: 0;
     z-index: 0;
 
     @media (max-width: 1200px) {
@@ -76,6 +83,8 @@ margin-bottom: 1.5rem;
     }
   }
   .features {
+    position: sticky;
+    top: 5rem;
     z-index: 1;
     & > li {
       list-style: none;
@@ -123,7 +132,6 @@ margin-bottom: 1.5rem;
    & > h1 {
     color: #ffffff;
    }
-
    @media (max-width: 912px) {
     top: 5rem;
    }
