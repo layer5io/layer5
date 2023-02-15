@@ -1,4 +1,4 @@
-# Cache static resources for 1 hour
+# Cache static resources for 1 month
 /*.js
 /*.css
 /*.woff2
@@ -7,10 +7,11 @@
 /*.png
 /*.gif
 /*.svg
-  Cache-Control: public, max-age=3600000
+  Cache-Control: public, max-age=2592000
 
-# Cache HTML files for 5 minutes
+# Cache HTML files for 1 week
 /*.html
-  Cache-Control: public, max-age=3000000
+  Cache-Control: public, max-age=604800
+
 
 
