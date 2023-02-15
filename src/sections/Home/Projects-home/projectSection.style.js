@@ -78,8 +78,7 @@ const ProjectItemWrapper = styled.section`
             width: auto ;
         }
         .gatsby-image-wrapper{
-            margin: 10px auto;
-            min-height: 40px;
+            margin: 10px auto; 
         }
     }
     .description {
