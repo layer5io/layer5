@@ -11,18 +11,18 @@ export default function CollaboratorFeatures({ title, features }) {
     new Array(features.length).fill(false)
   );
 
-  const headingRef = useRef();
-  const [fix, setFix] = useState(false);
+  // const headingRef = useRef();
+  // const [fix, setFix] = useState(false);
 
-  useEffect(() => {
-    const setFixed = () => {
-      if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
-        setFix(true);
-      else
-        setFix(false);
-    };
-    window.addEventListener("scroll", setFixed);
-  }, []);
+  // useEffect(() => {
+  //   const setFixed = () => {
+  //     if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
+  //       setFix(true);
+  //     else
+  //       setFix(false);
+  //   };
+  //   window.addEventListener("scroll", setFixed);
+  // }, []);
 
   return (
     <CollaboratorFeaturesWrapper>
@@ -31,10 +31,10 @@ export default function CollaboratorFeatures({ title, features }) {
           <div className="g-grid-container headerWrapper">
             <h2 className="g-type-display-2">{title}</h2>
           </div>
-          <div id="featureHeading" ref={headingRef} className={fix ? "fixed" : ""} >
+          <div id="featureHeading" className="fixed">
             <h1>Collaborate</h1>
           </div>
-          <div className="g-grid-container contentContainer" id={fix ? "add-border" : ""}>
+          <div className="g-grid-container contentContainer" id="add-border">
             <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>
