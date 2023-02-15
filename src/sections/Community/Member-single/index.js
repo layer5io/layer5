@@ -120,7 +120,7 @@ const MemberSingle = ({ frontmatter }) => {
                             <img
                               className="profile-social-links"
                               src={communityLogo}
-                              alt="Service Mesh Community logo"
+                              alt="Community logo"
                             />
                           </Link>
                         </li>
