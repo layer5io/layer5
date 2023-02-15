@@ -11,6 +11,9 @@ import William from "./reviews/william-morgan.png";
 import Ken from "./reviews/ken-owens.png";
 import Deepak from "./reviews/deepak-dinesh.jpg";
 import Kaur from "./reviews/kaur-kallas.jpg";
+import Mrittika from "./reviews/mrittika-ganguli.jpeg";
+import Liz from "./reviews/liz-rice.jpeg";
+import Lee from "../../collections/members/lee-calcote/lee-calcote.jpg";
 
 
 const settings = {
@@ -138,6 +141,27 @@ const Reviews = () => {
             person="Deepak Dinesh"
             title="MeshMap User"
             image={Deepak}
+          />
+          <Customers
+            type="1"
+            quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
+            person="Liz Rice"
+            title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC"
+            image={Liz}
+          />
+          <Customers
+            type="1"
+            quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
+            person="Mrittika Ganguli"
+            title="Principal Engineer & Director Cloud Native Network Pathfinding"
+            image={Mrittika}
+          />
+          <Customers
+            type="3"
+            quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
+            person="Lee Calcote"
+            title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
+            image={Lee}
           />
         </Slider>
       </div>
