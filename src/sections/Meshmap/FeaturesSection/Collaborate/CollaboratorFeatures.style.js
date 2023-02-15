@@ -19,7 +19,11 @@ margin-top: 1rem;
   .contentContainer {
     display: flex;
     position: relative;
-    max-height: 1600px;
+    max-height: 600px;
+    overflow: scroll;
+    ::-webkit-scrollbar{
+    display: none;
+  }
 
     @media (max-width: 767px) {
       flex-direction: column-reverse;
@@ -45,7 +49,7 @@ margin-top: 1rem;
     width: 591px;
     min-width: 40rem;
     position: sticky;
-    top: calc(50vh - 249px);
+    top: -2rem;
     z-index: -1;
 
     @media (max-width: 1200px) {

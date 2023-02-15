@@ -4,6 +4,7 @@ import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
 const MeshmapModesWrapper = styled.div`
+  margin-top: 0.1rem;
 
   p.caption {
     margin: 0rem 0rem 2rem 0rem;

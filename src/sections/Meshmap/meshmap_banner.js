@@ -4,6 +4,7 @@ import MeshmapIcon from "./meshmap-icon.svg";
 
 const BannerSectionWrapper = styled.div`
 
+    display: flex;
     background: #000000;
     border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
     -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33);
@@ -13,6 +14,13 @@ const BannerSectionWrapper = styled.div`
     width: 1140px;
     margin: auto;
     min-height: 25rem;
+
+    @media screen and (max-width: 1198px) {
+      width: 930px;
+    }
+    @media screen and (max-width: 991px) {
+      width: 690px;
+    }
 
     h1 {
         /* background-color: ${props => props.theme.black}; */
@@ -88,8 +96,8 @@ const BannerSectionWrapper = styled.div`
         width: 14rem;
         overflow: hidden;
         margin-top: -7rem;
-        position: absolute;
-        right: 15%;
+        position: relative;
+        /* left: 50%; */
     }
     div.accent-bubble {
         width: 50%;
@@ -109,8 +117,8 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 1700px) {
         .meshmap-logo {
             width: 12rem;
-            right: 12rem;
-            margin-top: -5rem;
+            /* right: 12rem; */
+            /* margin-top: -5rem; */
         }
         .para {
             margin-top: -3rem;
@@ -119,15 +127,15 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 1150px) {
         .meshmap-logo {
             width: 12rem;
-            right: 8rem;
-            margin-top: -5rem;
+            /* right: 8rem;
+            margin-top: -5rem; */
         }
-        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
+        /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
     @media screen and (max-width: 992px) {
         .meshmap-logo {
             width: 8rem;
-            right: 3rem;
+            /* right: 3rem; */
             margin-top: -2rem;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
@@ -146,11 +154,6 @@ const BannerSectionWrapper = styled.div`
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div className="meshmap-logo">
-        <img src={MeshmapIcon} alt="Meshery Logo" />
-        {/* <div className="accent-bubble">asdf</div> */}
-
-      </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
@@ -165,6 +168,10 @@ const BannerSection = () => {
         {/* <h4>Discover and Visualize</h4>
                 <h4><span>Collaborate and Design</span></h4>
                 any and all your cloud native infra and apps */}
+      </div>
+      <div className="meshmap-logo">
+        <img src={MeshmapIcon} alt="Meshery Logo" />
+        {/* <div className="accent-bubble">asdf</div> */}
       </div>
       {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>

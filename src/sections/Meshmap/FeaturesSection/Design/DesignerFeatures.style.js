@@ -3,7 +3,6 @@ import styled from "styled-components";
 const DesignerFeaturesWrapper = styled.section`
 margin-top: 1rem;
 
-
 // ul li:last-child {
 //     padding-bottom: 120px;
 //   }
@@ -83,8 +82,6 @@ margin-top: 1rem;
     }
   }
   .features {
-    position: sticky;
-    top: 5rem;
     z-index: 1;
     & > li {
       list-style: none;
