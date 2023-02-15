@@ -156,13 +156,13 @@ const Reviews = () => {
             title="Principal Engineer & Director Cloud Native Network Pathfinding"
             image={Mrittika}
           />
-          <Customers
+          {/* <Customers
             type="3"
             quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
             person="Lee Calcote"
             title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
             image={Lee}
-          />
+          /> */}
         </Slider>
       </div>
     </ReviewsWrapper>
