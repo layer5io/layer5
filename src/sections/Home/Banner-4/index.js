@@ -51,7 +51,7 @@ const Banner1 = (props) => {
               >
                 <h1>Take the blinders off</h1>
                 <h2>
-                  cloud native management with <span>MeshMap</span>
+                  cloud native management
                 </h2>
               </SectionTitle>
               <span className="vintage-box-container">

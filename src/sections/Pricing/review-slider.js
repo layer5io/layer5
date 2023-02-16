@@ -58,6 +58,7 @@ const settings = {
 
 const ReviewsWrapper = styled.div`
 .slider{
+  overflow: hidden;
   padding: 2rem 0 0.5rem;
   background: ${props => props.theme.secondaryLightColor};
   h2{
@@ -100,7 +101,7 @@ const Reviews = () => {
             image={Nic}
           />
           <Customers
-            type="1"
+            type="3"
             quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
             person="William Morgan"
             title="CEO of Buoyant and one of the creators of Linkerd"
@@ -115,25 +116,20 @@ const Reviews = () => {
           />
           <Customers
             type="1"
-            quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery Docker Extension to deploy their service mesh of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
-            person="Maximiliano Churichi"
-            title="Software Engineer at HPE"
-            image={Maxi}
+            quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
+            person="Liz Rice"
+            title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC"
+            image={Liz}
           />
+
           <Customers
-            type="1"
+            type="3"
             quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
             person="Kaur Kallas"
             title="Software Architect at Entigo"
             image={Kaur}
           />
-          <Customers
-            type="3"
-            quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any Service Mesh."
-            person="Nic Jackson"
-            title="Principal Developer Advocate at HashiCorp"
-            image={Nic}
-          />
+
           <Customers
             type="1"
             quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
@@ -143,24 +139,31 @@ const Reviews = () => {
           />
           <Customers
             type="1"
-            quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
-            person="Liz Rice"
-            title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC"
-            image={Liz}
-          />
-          <Customers
-            type="1"
             quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
             person="Mrittika Ganguli"
             title="Principal Engineer & Director Cloud Native Network Pathfinding"
             image={Mrittika}
           />
           <Customers
+            type="2"
+            quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery Docker Extension to deploy their service mesh of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
+            person="Maximiliano Churichi"
+            title="Software Engineer at HPE"
+            image={Maxi}
+          />
+          {/* <Customers
             type="3"
             quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
             person="Lee Calcote"
             title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
             image={Lee}
+          /> */}
+          <Customers
+            type="3"
+            quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any service mesh."
+            person="Nic Jackson"
+            title="Principal Developer Advocate at HashiCorp"
+            image={Nic}
           />
         </Slider>
       </div>
