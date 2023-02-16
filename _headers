@@ -1,0 +1,17 @@
+# Cache static resources for 10 months
+/*.js
+/*.css
+/*.woff2
+/*.jpg
+/*.jpeg
+/*.png
+/*.gif
+/*.svg
+  Cache-Control: public, max-age=25920000
+
+# Cache HTML files for 10 months
+/*.html
+  Cache-Control: public, max-age=25920000
+
+
+
