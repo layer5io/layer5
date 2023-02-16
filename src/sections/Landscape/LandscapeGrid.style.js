@@ -149,7 +149,7 @@ export const LandscapePageWrapper = styled.div`
 		margin: 2.5em 0;
 	}
 	.vertical-timeline::before {
-		background: #fff;
+		background: ${props => props.theme.text};
 		border-radius: 4rem;
 		width: 0.5rem;
 	}
@@ -166,7 +166,7 @@ export const LandscapePageWrapper = styled.div`
 	.meshBubble {
 		background: #00B39F;
 		margin-top: 5rem;
-		border: 8px solid #fff;
+		border: 8px solid #1E2117;
 	}
 	.hideIcon {
 		display: none;
