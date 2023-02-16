@@ -122,7 +122,7 @@ h2.heading {
   font-weight: 50;
   font-size: 3.75rem;
   text-align: right;
-  margin: 0 0 4rem 0;
+  margin: 2rem 0 4rem;
   
   @media (max-width: 1200px) {
     font-size: 3.25rem;
