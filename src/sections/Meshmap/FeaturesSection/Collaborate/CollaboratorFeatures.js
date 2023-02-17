@@ -35,6 +35,9 @@ export default function CollaboratorFeatures({ title, features }) {
             <h1>Collaborate</h1>
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
+            <div className="diagram scroll">
+              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+            </div>
             <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>
@@ -56,9 +59,6 @@ export default function CollaboratorFeatures({ title, features }) {
                 </li>
               ))}
             </ul>
-            <div className="diagram scroll">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
-            </div>
           </div>
         </div>
       </Container>

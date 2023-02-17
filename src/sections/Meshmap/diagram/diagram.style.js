@@ -144,7 +144,7 @@ const DiagramStyles = styled.section`
       max-width: 40%;
     }
     @media (max-width: 460px) {
-      top: 18rem;
+      /* top: 18rem; */
     }
   }
 
@@ -166,7 +166,7 @@ const DiagramStyles = styled.section`
       max-width: 40%;
     }
     @media (max-width: 460px) {
-      top: 18rem;
+      /* top: 18rem; */
     }
   }
 `;

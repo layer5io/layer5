@@ -18,6 +18,7 @@ margin-top: 1rem;
 
   .contentContainer {
     display: flex;
+    flex-direction: row-reverse;
     position: relative;
     max-height: 600px;
     overflow: scroll;
@@ -26,7 +27,7 @@ margin-top: 1rem;
   }
 
     @media (max-width: 767px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
     }
     & > ul {
@@ -59,22 +60,10 @@ margin-top: 1rem;
       min-width: 25rem;
     }
     @media (max-width: 767px) {
-      top: -136rem;
+      /* top: -136rem; */
       max-height: 550px;
       min-width: 25rem;
       opacity: 0.4;
-    }
-    @media (max-width: 670px) {
-      top: -144rem;
-    }
-    @media (max-width: 460px) {
-      top: -150rem;
-    }
-    @media (max-width: 422px) {
-      top: -158rem;
-    }
-    @media (max-width: 380px) {
-      top: -165rem;
     }
 
   }
