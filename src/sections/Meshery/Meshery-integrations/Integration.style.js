@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -204,7 +206,13 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow {
-    margin:1rem 0 0 -.7rem;
+    margin-top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .slick-arrow:before {
+    font-size: 4.5rem
   }
 
   .slick-slide {
@@ -212,11 +220,10 @@ export const IntegrationSlider = styled(Slider)`
     margin: 0 .5rem;
   }
 
-  .slick-prev::before {
-    content:"\u2039";
-    font-size:5rem;
-    line-height: 0;	
-    margin-left:-.5rem;
+  .slick-prev:before {
+    content:"‹";
+    line-height: 0;
+    margin-left:-.5rem;	
     color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
@@ -224,10 +231,10 @@ export const IntegrationSlider = styled(Slider)`
     display:flex;
   }
 
-  .slick-next::before {
-    content:"\u203A";
-    font-size:5rem;
-    line-height: 0;	
+  .slick-next:before {
+    content:"›";
+    line-height: 0;
+    margin-left: .5rem;	
     color:${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
