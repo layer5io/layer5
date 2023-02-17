@@ -1,5 +1,5 @@
 import React from "react";
-import DiagramStyles fro  m "../../diagram/diagram.style";
+import DiagramStyles from "../../diagram/diagram.style";
 import Visualize1 from "./images/design1.svg";
 import Visualize2 from "./images/design2.svg";
 import { useInView } from "react-intersection-observer";
