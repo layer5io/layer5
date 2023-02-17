@@ -45,8 +45,9 @@ export const MeetupStyle = styled.div`
 
     @media (max-width: 560px){
         .filterBtns{
+            overflow: hidden;
             button{
-                margin-right: 10px;
+                padding: 0.5rem 1.5rem;
                 font-size: 18px;
             }
         }

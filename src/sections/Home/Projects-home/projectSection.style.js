@@ -65,6 +65,7 @@ const ProjectItemWrapper = styled.section`
         h3{
             margin: auto;
             font-weight: 700;
+            font-size: 1.3rem;
             color: ${props => props.theme.secondaryColor}
         }
         p{
@@ -132,7 +133,7 @@ const ProjectItemWrapper = styled.section`
             margin: 20px;
             padding: 8%;
 
-            h5{
+            h3{
                 margin-bottom: 0px;
             }
         }
