@@ -42,8 +42,8 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
 .patterns {
   max-height: 30rem;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   display:flex;
 
 }
@@ -426,7 +426,7 @@ const Catalog = () => {
                 <section className="svg-cont">
                   <div>
                     <img src={Patterns} />
-                    <p>Service Patterns</p>
+                    <p>Cloud Native Patterns</p>
                   </div>
                   <div>
                     <img src={Ebpf} />

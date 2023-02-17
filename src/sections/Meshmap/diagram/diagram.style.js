@@ -13,7 +13,7 @@ const DiagramStyles = styled.section`
   opacity: 1;
   transition: all 0.7s ease-in;
 }
-.render-arrow {
+/* .render-arrow {
   visibility: hidden;
   opacity: 0;
 }
@@ -21,7 +21,7 @@ const DiagramStyles = styled.section`
 .show-arrow {
   visibility: visible;
   opacity: 1;
-}
+} */
     position: sticky;
     top: calc(50vh - 249px);
 .root {
@@ -38,10 +38,12 @@ const DiagramStyles = styled.section`
      padding-left: 0;
 
     }
-  @media (max-width: 500px) {
-
-    }
 }
+
+  .inView {
+    opacity: 1;
+    transition: opacity .6s ease;
+  }
 
   #design-image1 {
     position: relative;
@@ -104,7 +106,7 @@ const DiagramStyles = styled.section`
     max-width: 90%;
     z-index: 1;
     bottom: 6rem;
-    
+
     @media (max-width: 1200px) {
       bottom: 3rem;
     }

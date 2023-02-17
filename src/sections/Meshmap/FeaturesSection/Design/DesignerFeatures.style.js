@@ -9,7 +9,6 @@ margin-top: 1rem;
 
 .designer-container {
   padding: 0;
-
 }
 
 .scroll{
@@ -23,6 +22,7 @@ margin-top: 1rem;
     position: relative;
     max-height: 600px;
     overflow: scroll;
+    overflow-x: hidden;
     ::-webkit-scrollbar{
     display: none;
   }
@@ -51,6 +51,7 @@ margin-top: 1rem;
     width: 591px;
     min-width: 40rem;
     position: sticky;
+    /* top: calc(50vh - 249px); */
     top: 0;
     z-index: 0;
 
@@ -61,10 +62,24 @@ margin-top: 1rem;
       min-width: 24rem;
     }
     @media (max-width: 767px) {
+      top: -106rem;
       max-height: 400px;
       min-width: 25rem;
       opacity: 0.4;
     }
+    @media (max-width: 670px) {
+      top: -114rem;
+    }
+    @media (max-width: 446px) {
+      top: -120rem;
+    }
+    @media (max-width: 429px) {
+      top: -125rem;
+    }
+    @media (max-width: 360px) {
+      top: -129rem;
+    }
+
   }
 
   #featureHeading {
@@ -117,6 +132,11 @@ margin-top: 1rem;
         }
       }
     }
+  }
+
+  #inViewFix {
+    position: sticky;
+    top: 10rem;
   }
 
   .fixed {

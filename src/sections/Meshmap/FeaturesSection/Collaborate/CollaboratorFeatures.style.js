@@ -59,9 +59,22 @@ margin-top: 1rem;
       min-width: 25rem;
     }
     @media (max-width: 767px) {
+      top: -136rem;
       max-height: 550px;
       min-width: 25rem;
       opacity: 0.4;
+    }
+    @media (max-width: 670px) {
+      top: -144rem;
+    }
+    @media (max-width: 460px) {
+      top: -150rem;
+    }
+    @media (max-width: 422px) {
+      top: -158rem;
+    }
+    @media (max-width: 380px) {
+      top: -165rem;
     }
 
   }

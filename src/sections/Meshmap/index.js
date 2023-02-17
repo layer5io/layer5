@@ -114,10 +114,10 @@ const Meshmap = () => {
                   title: "Where your teams share the same language",
                   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
                 },
-                {
-                  title: "Where your teams share the same language",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
-                },
+                // {
+                //   title: "Where your teams share the same language",
+                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                // },
                 {
                   title: "Inclusive collaboration from start to finish",
                   description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together."

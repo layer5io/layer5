@@ -15,7 +15,7 @@ const BannerSectionWrapper = styled.div`
     margin: auto;
     min-height: 25rem;
 
-    @media screen and (max-width: 1198px) {
+    @media screen and (max-width: 1200px) {
       width: 930px;
     }
     @media screen and (max-width: 991px) {
@@ -97,7 +97,8 @@ const BannerSectionWrapper = styled.div`
         overflow: hidden;
         margin-top: -7rem;
         position: relative;
-        /* left: 50%; */
+        left: 30%;
+        
     }
     div.accent-bubble {
         width: 50%;
@@ -124,11 +125,12 @@ const BannerSectionWrapper = styled.div`
             margin-top: -3rem;
         }
     }
-    @media screen and (max-width: 1150px) {
+    @media screen and (max-width: 1200px) {
         .meshmap-logo {
-            width: 12rem;
-            /* right: 8rem;
-            margin-top: -5rem; */
+            left: 20%;
+            width: 10rem;
+            /* right: 8rem; */
+            margin-top: -5rem;
         }
         /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
