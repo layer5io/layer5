@@ -68,8 +68,13 @@ const Meshmap = () => {
                   description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations."
                 },
                 {
-                  title: "Manage your applications visually an intuitive interface.",description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services."
-                }
+                  title: "Manage your applications visually an intuitive interface.",
+                  description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services."
+                },
+                {
+                  title: "Where all your design assets call home",
+                  description: ""
+                },
               ]} />
 
           <VisualizerFeatures
@@ -83,22 +88,82 @@ const Meshmap = () => {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers."
                 },
+                {
+                  title: "Build the bridge",
+                  description: "Go from developer handoffs to ongoing conversations with a shared language between design and development."
+                },
               ]} />
 
           <CollaboratorFeatures
             features={
               [
                 {
-                  title: "Collaboratively design your infrastructure in the community.",
-                  description: "Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+                  title: "Bring those ideas to life",
+                  description: "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place."
+                  // Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
                 },
                 {
-                  title: "Jump into real-time collaborations.",
-                  description: "Combine ideas and knowledge with a selected group of engineers to enhance your management. Extensively use thousands of operational components to improve efficiency of your infrastructure."
+                  title: "Nothing great is made alone.",
+                  description: "MeshMap connects everyone in the DevOps process so teams can deliver better products, faster."
+                },
+                {
+                  title: "Create. Iterate. Repeat.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                },
+                {
+                  title: "Where your teams share the same language",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                },
+                {
+                  title: "Where your teams share the same language",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                },
+                {
+                  title: "Inclusive collaboration from start to finish",
+                  description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together."
+                }
+              ]} />
+          {/* <CollaboratorFeatures
+            features={
+              [
+                {
+                  title: "Stop finger-pointing",
+                  description: "Make infrastructure and application management less about finger-pointing and more about collaborating."
+                },
+                {
+                  title: "Self-service empowerment for all of your teams",
+                  description: "As a self-service engineering platform, Layer5 helps DevOps teams make infrastructure and application management less about finger-pointing and more about collaborating."
+                },
+                {
+                  title: "Empower developers to change how they write applications",
+                  description: "We , support operators in rethinking how they run modern infra, supercharge security engineers with code-level insight, enable service owners to regain control over their products."
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
                 },
               ]} />
-
-          <Catalog />
+          <Catalog /> */}
           {/* <MesheryAction /> */}
 
           <div className="banner-background">
