@@ -4,6 +4,9 @@ export const SearchWrapper = styled.div`
   .search-box {
     position: relative;
     display: flex;
+    @media screen and (min-width: 768px) {    
+      width: 30vw;
+    }
     
     input {
       flex-basis: 100%;
