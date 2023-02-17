@@ -88,18 +88,18 @@ const MeshmapModesWrapper = styled.div`
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1.5s ease, transform 1.5s ease 0.75s;
+        transition: opacity 0.5s ease, transform 0.5s ease 0.5s;
       }
 
       .mode-name{
           top: 15%;
-          transition: all 0.75s ease 0.75s;
+          transition: all 0.5s ease 0.5s;
       }
 
       .content {
         opacity: 1;
         transform: translateY(0);
-        transition: all 1.5s ease 0.75s;
+        transition: all 0.75s ease 0.5s;
       }
     }
   }

@@ -27,7 +27,7 @@ export const ProgramsPageWrapper = styled.div`
     .icon{
         height: 12rem;
         width: 12rem;
-        margin: 0 auto 1.5rem auto;
+        margin: 0.7rem auto 1.5rem auto;
         position: relative;
         
         img{
@@ -49,7 +49,7 @@ export const ProgramsPageWrapper = styled.div`
         padding: 5px;
         color: ${props => props.theme.text};
         margin: auto;
-        background: ${props => props.theme.DarkTheme ? "rgba(10, 10, 10, 1)" : "rgba(247, 247, 247, 1)"};
+        background: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.1)" : "rgba(240, 240, 240, 1)"};
         justify-content: center;
         border-radius: 1rem;
         transition: all 0.2s;

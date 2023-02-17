@@ -26,7 +26,7 @@ const CareerPrograms = () => {
       <Layout>
         <GlobalStyle />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <ProgramsGrid />
+        <ProgramsGrid theme={theme} />
         <FAQ category={["internships"]} />
         <Footer />
       </Layout>
