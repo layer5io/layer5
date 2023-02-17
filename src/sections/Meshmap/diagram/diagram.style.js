@@ -126,12 +126,13 @@ const DiagramStyles = styled.section`
     }
   }
 
-
-  #collaborate-image1 {
+  #collaborate-image1, #collaborate-image2, #collaborate-image3, #collaborate-image4 {
     position: relative;
+    max-width: 100%;
+    top: 8rem;
+  }
+  #collaborate-image1 {
     z-index: 0;
-    max-width:70%;
-    top:8rem;
 
     @media (max-width: 767px) {
         top: 6rem;
@@ -149,11 +150,7 @@ const DiagramStyles = styled.section`
   }
 
   #collaborate-image2 {
-    position: relative;
     z-index: 1;
-    max-width: 70%;
-    top: 8rem;
-    left: 2rem;
 
     @media (max-width: 767px) {
       top: 6rem;
@@ -168,6 +165,12 @@ const DiagramStyles = styled.section`
     @media (max-width: 460px) {
       /* top: 18rem; */
     }
+  }
+  #collaborate-image3 {
+    z-index: 2;
+  }
+  #collaborate-image4 {
+    z-index: 3;
   }
 `;
 
