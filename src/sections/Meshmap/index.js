@@ -162,8 +162,8 @@ const Meshmap = () => {
                   title: "",
                   description: ""
                 },
-              ]} />
-          <Catalog /> */}
+              ]} />*/}
+          <Catalog />
           {/* <MesheryAction /> */}
 
           <div className="banner-background">
