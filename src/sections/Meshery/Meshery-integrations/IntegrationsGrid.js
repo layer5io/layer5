@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { HoneycombGrid } from "./Integration.style";
-import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
+import { HoneycombGrid, IntegrationSlider } from "./Integration.style";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
