@@ -6,7 +6,7 @@ import Image from "../../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 
-const ProgramsGrid = ({ hide_path, sub_section }) => {
+const ProgramsGrid = ({ hide_path, sub_section, theme }) => {
   const data = useStaticQuery(
     graphql`query allPrograms {
   allMdx(
@@ -25,6 +25,13 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           }
           extension
           publicURL
+        }
+        darkthumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            extension
+            publicURL
         }
       }
       fields {
@@ -67,7 +74,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
-                          {...frontmatter.thumbnail}
+                          {...(frontmatter.darkthumbnail !== null && theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                           imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />
