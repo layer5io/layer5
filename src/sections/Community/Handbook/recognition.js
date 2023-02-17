@@ -26,6 +26,7 @@ const contents = [
     link: "#Community_member_profile",
     text: "Community Member Profile",
   },
+  { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
 ];
 
 const badgeStyle = {
@@ -140,6 +141,12 @@ const RecognitionPage = () => {
                 <b>Writer's Program</b> - awarded community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.
               </li>
             </ul>
+            <a id="SocialMedia">
+              <h3>Recognition on Social Media Platforms</h3>
+            </a>
+            <p>
+            We highly encourage you to share your engagement and contributions to the Layer5 community on social media like LinkedIn and Twitter. We support every contribution by liking your posts and retweeting them. Your contributions and engagement in different ways are what make us a successful and collaborative open-source community. We love celebrating your every accomplishment with Layer5 publicly and encourage you in every way we can.
+            </p>
           </div>
           <TocPagination />
         </Container>
