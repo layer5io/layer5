@@ -147,7 +147,6 @@ const SoSpecialWrapper = styled.div`
         }
         .so-special-foot-btn
         {
-            color:${(props) => (props.theme.DarkTheme ? "black" : "white")};
             margin:2rem;
              color: ${(props) => props.theme.black};
         background: ${(props) => props.theme.highlightColor};
