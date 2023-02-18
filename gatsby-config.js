@@ -24,6 +24,20 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-svgr",
     {
+      resolve: "gatsby-plugin-csp",
+      options: {
+        disableOnDev: true,
+        reportOnly: false,
+        mergeScriptHashes: false,
+        mergeStyleHashes: false,
+        mergeDefaultDirectives: true,
+        directives: {
+          "default-src": "'self'",  // a fallback for the other CSP directives
+          "script-src": "'self' www.meshery.layer5.io 'unsafe-inline'"
+        }
+      }
+    },
+    {
       resolve: "gatsby-plugin-feed",
       options: {
         query: `

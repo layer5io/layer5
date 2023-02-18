@@ -47,6 +47,7 @@
     "gatsby-background-image": "^1.6.0",
     "gatsby-cli": "^5.5.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-csp": "^1.1.4",
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-loadable-components-ssr": "^4.2.1",
