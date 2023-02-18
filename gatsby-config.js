@@ -33,7 +33,9 @@ module.exports = {
         mergeDefaultDirectives: true,
         directives: {
           "default-src": "'self'",  // a fallback for the other CSP directives
-          "script-src": "'self' www.meshery.layer5.io 'unsafe-inline'"
+          "script-src": "'self' www.meshery.layer5.io https://www.google-analytics.com 'unsafe-inline'",
+          "font-src": "'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com",
         }
       }
     },
