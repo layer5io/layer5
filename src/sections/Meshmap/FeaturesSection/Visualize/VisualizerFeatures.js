@@ -12,19 +12,6 @@ export default function VisualizerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
-  // const headingRef = useRef();
-  // const [fix, setFix] = useState(false);
-  // useEffect(() => {
-  //   const setFixed = () => {
-  //     if (headingRef.current.getBoundingClientRect().top <= 98 && !fix)
-  //       setFix(true);
-  //     else
-  //       setFix(false);
-  //   };
-  //   window.addEventListener("scroll", setFixed);
-  // }, []);
-
-
   return (
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-container">

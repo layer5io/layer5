@@ -3,10 +3,6 @@ import styled from "styled-components";
 const CollaboratorFeaturesWrapper = styled.section`
 margin-top: 1rem;
 
-// ul li:last-child {
-//     padding-bottom: 120px;
-//   }
-
 .collaborate-container {
   padding: 0;
 }
@@ -50,7 +46,7 @@ margin-top: 1rem;
     width: 591px;
     min-width: 40rem;
     position: sticky;
-    top: -2rem;
+    top: 0;
     z-index: -1;
 
     @media (max-width: 1200px) {
@@ -60,10 +56,8 @@ margin-top: 1rem;
       min-width: 25rem;
     }
     @media (max-width: 767px) {
-      /* top: -136rem; */
       max-height: 550px;
       min-width: 25rem;
-      opacity: 0.4;
     }
 
   }

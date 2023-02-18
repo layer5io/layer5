@@ -40,7 +40,6 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 .patterns {
   display: flex;
   margin-bottom: 1rem;
-  padding-bottom: 5rem;
   @media (max-width: 468px) {
     flex-direction : column;
   }
@@ -88,7 +87,6 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
       text-align: center;
     }
   }
-}
 
 .svg-cont{
   display:grid;
@@ -133,7 +131,7 @@ h2.heading {
   font-size: 3.75rem;
   text-align: right;
   margin: 2rem 0 4rem;
-  
+
   @media (max-width: 1200px) {
     font-size: 3.25rem;
   }

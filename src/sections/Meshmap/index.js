@@ -75,6 +75,10 @@ const Meshmap = () => {
                   title: "Where all your design assets call home",
                   description: ""
                 },
+                {
+                  title: "Where all your design assets call home",
+                  description: ""
+                },
               ]} />
 
           <VisualizerFeatures

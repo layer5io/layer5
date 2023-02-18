@@ -3,10 +3,6 @@ import styled from "styled-components";
 const DesignerFeaturesWrapper = styled.section`
 margin-top: 1rem;
 
-// ul li:last-child {
-//     padding-bottom: 120px;
-//   }
-
 .designer-container {
   padding: 0;
 }
@@ -15,7 +11,6 @@ margin-top: 1rem;
     position: sticky;
     top: calc(50vh - 249px);
 }
-
 
   .contentContainer {
     display: flex;
@@ -52,7 +47,6 @@ margin-top: 1rem;
     width: 591px;
     min-width: 40rem;
     position: sticky;
-    /* top: calc(50vh - 249px); */
     top: 0;
     z-index: 0;
 
@@ -61,12 +55,6 @@ margin-top: 1rem;
     }
     @media (max-width: 992px) {
       min-width: 24rem;
-    }
-    @media (max-width: 767px) {
-      /* top: -106rem; */
-      max-height: 400px;
-      min-width: 25rem;
-      opacity: 0.4;
     }
 
   }
@@ -121,11 +109,6 @@ margin-top: 1rem;
         }
       }
     }
-  }
-
-  #inViewFix {
-    position: sticky;
-    top: 10rem;
   }
 
   .fixed {
