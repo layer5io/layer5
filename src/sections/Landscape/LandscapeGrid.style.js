@@ -10,12 +10,15 @@ export const LandscapePageWrapper = styled.div`
 		font-style:unset;
 		color:${props => props.theme.text};
 	}
+
 	#service-mesh-comparison-strength {
             margin: -2.5rem 1rem 5rem;
 	}
+
 	.subsequent-heading {
 		padding-top: 6rem;
 	}
+	
 	.landscape-section-sub-heading {
 		text-align: center;
 		width: 100%;
