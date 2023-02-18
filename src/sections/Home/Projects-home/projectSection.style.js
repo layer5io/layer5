@@ -75,7 +75,6 @@ const ProjectItemWrapper = styled.section`
 
         img{
             height: 40px ; 
-            width: auto ;
         }
         .gatsby-image-wrapper{
             margin: 10px auto; 
