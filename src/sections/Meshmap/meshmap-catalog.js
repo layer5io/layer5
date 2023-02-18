@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "../../reusecore/Layout";
-
 import Mutual_tls from "../../assets/images/meshmap/catalog-card-images/mutual-tls.svg";
 import Retries from "../../assets/images/meshmap/catalog-card-images/retries.svg";
 import Traces from "../../assets/images/meshmap/catalog-card-images/traces.svg";
@@ -17,7 +15,6 @@ import Singleton from "../../assets/images/meshmap/catalog-card-images/singleton
 import Jwt_transformer from "../../assets/images/meshmap/catalog-card-images/jwt.svg";
 import Multicluster from "../../assets/images/meshmap/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.svg";
-
 
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
@@ -41,69 +38,86 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
 
 .patterns {
-  max-height: 30rem;
-  padding-bottom: 1rem;
+  display: flex;
   margin-bottom: 1rem;
-  display:flex;
-
+  padding-bottom: 5rem;
+  @media (max-width: 468px) {
+    flex-direction : column;
+  }
 }
 
 .text {
-  width: 50%;
-  position: relative;
-  right: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  @media (max-width: 1200px) {
-    right: 2rem;
-}
-  @media (max-width: 768px) {
-    right: 2rem;
-}
+  flex: 1;
+  padding: 0em 3em 1em 0em;
+  width: 100%;
 
+  @media (max-width: 1200px) {
+    padding: 0em 2.5em 1em 0em;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0em 1.5em 1em 0em;
+
+  }
 }
 
 .catalog-wrapper {
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
   padding: 4rem;
-  background-color: ${props => props.theme.secondaryColor};
+  background-color: ${(props) => props.theme.secondaryColor};
   background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
   margin-bottom: 0rem;
 }
-p.caption {
+  p.caption {
     font-style: normal;
     font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
-    font-size: 20px;
-    line-height: 25px;
-    width: 80%;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
     text-align: right;
-    @media (max-width: 1050px) {
-    font-size: 15px;
-}
     @media (max-width: 992px) {
-    font-size: 15px;
-    width: 70%;
-}
-@media (max-width: 680px) {
-  font-size: 12px;
-}
-}
+        font-size: 1.275rem;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    @media (max-width: 468px) {
+      text-align: center;
+    }
   }
+}
 
 .svg-cont{
-  display:flex;
-  justify-content: space-around;
-  align-items:center;
+  display:grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  padding: 0.5em;
   img{
     max-width:5.6rem;
     display:block;
     margin: 0 auto;
   }
   p{
-    margin: 0 auto  ;
+    text-align:center;
+    margin-top: 1em;
     font-weight:600;
+
+  }
+  div {
+    text-align-center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px;
   }
 }
 
@@ -116,81 +130,59 @@ h2.heading {
   font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
   font-style: normal;
   font-weight: 50;
-  font-size: 70px;
-  line-height: 88px;
+  font-size: 3.75rem;
   text-align: right;
-  margin-bottom: 4rem;
-
+  margin: 2rem 0 4rem;
+  
   @media (max-width: 1200px) {
-    font-size: 55px;
-}
+    font-size: 3.25rem;
+  }
+
   @media (max-width: 1050px) {
-    font-size: 45px;
-}
+    font-size: 3rem;
+  }
+  @media (max-width: 992px) {
+    font-size: 2.5rem;
+  }
   @media (max-width: 768px) {
-    font-size: 38px;
-    width: 90%;
-    margin-right: 0;
-}
+    font-size: 2.375rem;
+  }
   @media (max-width: 680px) {
-    width: 80%;
-    font-size: 30px;
-    line-height: 3rem;
-}
-  @media (max-width: 438px) {
-    width: 70%;
-    font-size: 23px;
-    line-height: 2rem;
-}
+    font-size: 2rem;
+  }
+  @media (max-width: 468px) {
+    text-align: center;
+  }
 }
 
 h3.containerCaption {
-    color: ${props => props.theme.saffronColor};
+    color: ${(props) => props.theme.saffronColor};
     padding-top: .25rem;
     margin-bottom: -.5rem;
     font-size: 1.44rem;
     font-weight: normal;
     text-align: center;
     span {
-        color: ${props => props.theme.saffronColor};
+        color: ${(props) => props.theme.saffronColor};
     }
 }
 .vertical-line
 {
     position: relative;
     margin: auto;
-    height: 24rem;
+    height: 20rem;
     width: 0px;
-    border: 1.5px solid ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
-    @media (max-width :680px) {
-      height: 18rem;
+    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+
+    @media (max-width: 468px) {
+      display: none;
     }
 }
 
 
 .services {
-  width: 50%;
-  position: relative;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.row-1 {
-  margin-bottom: 3rem;
-}
-
-.col-1 {
-  @media (min-width: 768px) {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-}
-.col-2 {
-  @media (min-width: 768px) {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
+  flex: 1;
+  width: 100%;
 }
 
 
@@ -326,18 +318,12 @@ h3.containerCaption {
   @media screen and (max-width: 680px) {
 
     .svg-cont{
-      margin: 0 auto;
-      justify-content:space-evenly;
-      align-items:center;
-
-      img{
-        width:2.4rem
+      img {
+        width: 4rem;
       }
       p{
-        width:100%;
         font-size:1rem;
         line-height:1.2;
-        padding-top:.3rem;
         text-align: center;
       }
     }
@@ -415,42 +401,39 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container className="catalog-container">
         <div className="patterns">
+          {/* Left Section */}
           <div className="text">
             <h2 className="heading">Save time with design patterns</h2>
-            <p className="caption">Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b></p>
+            <p className="caption">
+              Turbo-charge your infrastructure with power-ups from the{" "}
+              <b>
+                <a href="https://meshery.io/catalog">cloud native catalog</a>
+              </b>
+            </p>
           </div>
           <div className="vertical-line"></div>
-          <div className="services">
-            <Row className="row-1">
-              <Col md={6} xs={12} className="col-1">
-                <section className="svg-cont">
-                  <div>
-                    <img src={Patterns} />
-                    <p>Cloud Native Patterns</p>
-                  </div>
-                  <div>
-                    <img src={Ebpf} />
-                    <p className="ebpf-text">eBPF Programs</p>
-                  </div>
-                </section>
-              </Col>
-            </Row>
-            <Row className="row-2">
-              <Col md={6} xs={12} className="col-2">
-                <section className="svg-cont">
-                  <div>
-                    <img src={Wasm} />
-                    <p>WASM Filters</p>
-                  </div>
-                  <div>
-                    <img src={Opa} />
-                    <p>OPA Policies</p>
-                  </div>
-                </section>
-              </Col>
-            </Row>
-          </div>
+          {/* Right Section */}
+          <section className="services svg-cont">
+            <div>
+              <img src={Patterns} />
+              <p>Service Patterns</p>
+            </div>
+            <div>
+              <img src={Ebpf} />
+              <p className="ebpf-text">eBPF Programs</p>
+            </div>
+            <div>
+              <img src={Wasm} />
+              <p>WASM Filters</p>
+            </div>
+            <div>
+              <img src={Opa} />
+              <p>OPA Policies</p>
+            </div>
+          </section>
         </div>
+
+        {/* 3d Spinning */}
         <div className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
@@ -501,11 +484,12 @@ const Catalog = () => {
               </div>
             </div>
           </div>
-          <h3 className="containerCaption">Discover best practices. Publish design patterns.
+          <h3 className="containerCaption">
+            Discover best practices. Publish design patterns.
           </h3>
         </div>
       </Container>
-    </CatalogWrapper >
+    </CatalogWrapper>
   );
 };
 
