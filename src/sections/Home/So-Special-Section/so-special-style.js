@@ -41,7 +41,7 @@ const SoSpecialWrapper = styled.div`
         height: 3rem;
     }	
     .slick-arrow:before{	
-        color: ${props => props.theme.primaryColor};
+        color: ${(props) => props.theme.primaryColor};
         font-size: 4.5rem;
         display: inline-block;
         height: 2rem;
@@ -50,7 +50,7 @@ const SoSpecialWrapper = styled.div`
         pointer-events:none;
     }
     .slick-arrow:hover:before{	
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -76,11 +76,11 @@ const SoSpecialWrapper = styled.div`
     }
     .slick-dots li button:before {
         font-size: 0.6rem;
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     .slick-dots li.slick-active button:before {
         opacity: 1;
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     }
     .so-special-head{
@@ -98,9 +98,8 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-
-        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)"};
+        background-color: ${(props) => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => (props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)")};
         color:${(props) => props.theme.text};
     }
     #special-cont_img{
@@ -148,11 +147,13 @@ const SoSpecialWrapper = styled.div`
         }
         .so-special-foot-btn
         {
-            color:${props => props.theme.DarkTheme ? "black" : "white"};
+            color:${(props) => (props.theme.DarkTheme ? "black" : "white")};
             margin:2rem;
-            :hover{
-                color:${props => props.theme.DarkTheme ? "white" : "black"};
-            }
+             color: ${(props) => props.theme.black};
+        background: ${(props) => props.theme.highlightColor};
+
+        &:hover{
+            box-shadow: 0 2px 10px ${(props) => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
         }
     }
     @media screen and (max-width: 1400px){
