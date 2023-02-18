@@ -26,7 +26,7 @@ top: calc(50vh - 249px);
 .avatars {
     display: grid;
     grid-template: 1fr / 1fr;
-    place-items: center;
+    place-items: end;
     width: 70%;
     @media (max-width: 1200px) {
       width: 50%;
