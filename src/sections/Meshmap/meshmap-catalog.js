@@ -24,13 +24,22 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 7rem 0 7rem;
+margin: 1rem 0 7rem;
 min-height: fit-content;
+border-color: #00b39f;
+border-style: solid;
+padding: 2rem 0 0;
+border-width: 2px 2px 2px 2px;
+box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+
+.catalog-container {
+  padding: 0;
+}
+
 
 .patterns {
   display: flex;
   margin-bottom: 1rem;
-  padding-bottom: 5rem;
   @media (max-width: 468px) {
     flex-direction : column;
   }
@@ -78,7 +87,6 @@ min-height: fit-content;
       text-align: center;
     }
   }
-}
 
 .svg-cont{
   display:grid;
@@ -123,7 +131,7 @@ h2.heading {
   font-size: 3.75rem;
   text-align: right;
   margin: 2rem 0 4rem;
-  
+
   @media (max-width: 1200px) {
     font-size: 3.25rem;
   }
@@ -144,7 +152,7 @@ h2.heading {
     text-align: center;
   }
 }
-}
+
 h3.containerCaption {
     color: ${(props) => props.theme.saffronColor};
     padding-top: .25rem;
@@ -389,7 +397,7 @@ h3.containerCaption {
 const Catalog = () => {
   return (
     <CatalogWrapper>
-      <Container>
+      <Container className="catalog-container">
         <div className="patterns">
           {/* Left Section */}
           <div className="text">
