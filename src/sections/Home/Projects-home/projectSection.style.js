@@ -75,10 +75,11 @@ const ProjectItemWrapper = styled.section`
         }
 
         img{
-            height: 40px; 
+            height: 40px ; 
+            width: auto ;
         }
         .gatsby-image-wrapper{
-            margin: 10px auto; 
+            margin: 10px auto;
             min-height: 40px;
         }
     }
