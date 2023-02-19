@@ -15,54 +15,74 @@ export const partners = [
     name: "Redhat",
     imageLink: redhat,
     imageRoute: "/partners#redhat",
-    innerDivStyle: "partner__block__inner horizontal"
+    innerDivStyle: "partner__block__inner horizontal",
+    imageHeight: 90,
+    imageWidth: 382
   }, {
     name: "Intel",
     imageLink: intel,
     imageRoute: "/partners#intel",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 533,
+    imageWidth: 809
 
   }, {
     name: "University of Texas at Austin partnership with Layer5",
     imageLink: utaustin,
     imageRoute: "/partners#utaustin",
-    innerDivStyle: "partner__block__inner horizontal"
+    innerDivStyle: "partner__block__inner horizontal",
+    imageHeight: 78,
+    imageWidth: 278
   }, {
     name: "Citrix",
     imageLink: citrix,
     imageRoute: "/partners#Citrix",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 144,
+    imageWidth: 144
   }, {
     name: "Hashicorp partnership with Layer5",
     imageLink: hashicorp,
     imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 113,
+    imageWidth: 113
   }, {
     name: "Hewlett-Packard Enterprise",
     imageLink: hpe,
     imageRoute: "/partners#hpe",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 69,
+    imageWidth: 178
   }, {
     name: "National Institute of Technology Karnataka",
     imageLink: nitk,
     imageRoute: "/partners#nitk",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 433,
+    imageWidth: 409
   }, {
     name: "Rackspace Technology",
     imageLink: rackspace,
     imageRoute: "/partners#rackspace",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 124,
+    imageWidth: 400
 
   }, {
     name: "UEM",
     imageLink: uem,
     imageRoute: "/partners#uem",
-    innerDivStyle: "partner__block__inner"
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 164,
+    imageWidth: 302
   }, {
     name: "VMware",
     imageLink: vmware,
     imageRoute: "/partners#VMware",
     innerDivStyle: "partner__block__inner",
+    imageHeight: 31,
+    imageWidth: 190
   }
 
 ];
