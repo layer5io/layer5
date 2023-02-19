@@ -23,7 +23,7 @@ const Projects = () => {
             <Col sm={2} md={2} lg={2} key={index}>
               <Link className="partner-card" to={partner.imageRoute}>
                 <div className={partner.innerDivStyle}>
-                  <img loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
+                  <img loading="lazy" src={partner.imageLink} alt={partner.name} width="100%" height="auto" />
                 </div>
               </Link>
             </Col>

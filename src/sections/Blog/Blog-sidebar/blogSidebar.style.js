@@ -183,10 +183,11 @@ const BlogSideBarWrapper = styled.div`
     .explain-1 {
         padding-top: 0rem;
         text-align: center;
+      
         .cards {
             margin: 0.15rem auto 2.5rem ;
             max-width: 50rem;
-            padding: 1.5rem 2.7rem 0rem 1rem;
+            padding: 0rem 2.7rem 0rem 1rem;
             background-color: none;
             border-radius: 25px;
             @media only screen and (max-width: 1200px) {
