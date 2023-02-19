@@ -225,10 +225,7 @@ const Navigation = ({ theme, themeSetter }) => {
         <Container className="nav-container">
           <div className="navbar-wrap">
             <Link to="/" className="logo">
-              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo"
-                onClick={function () {
-                  setExpand(false); closeDropDown();
-                }}/>
+              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
             </Link>
             <nav className="nav">
               {expand ?
