@@ -24,10 +24,10 @@ const Meshmap = () => {
   return (
     <MeshmapWrapper>
       <div >
-        <ThemeProvider theme={theme}>
-          <MeshmapBanner />
-        </ThemeProvider>
         <Container>
+          <ThemeProvider theme={theme}>
+            <MeshmapBanner />
+          </ThemeProvider>
           <div className="mobile-modes">
             <Features
               heading="MeshMap Modes"
