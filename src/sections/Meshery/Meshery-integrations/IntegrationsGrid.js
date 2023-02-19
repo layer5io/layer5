@@ -67,7 +67,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
           initialSlide: 0,
           arrows: true,
           infinite: false,
-          slidesToShow: 1.25
+          slidesToShow: 1.5
         }
       }
     ]

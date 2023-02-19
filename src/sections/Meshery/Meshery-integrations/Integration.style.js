@@ -50,7 +50,7 @@ export const HoneycombGrid = styled.div`
     display: flex;
     height: 100%;
     background: ${(props) =>
-  props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
+    props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -130,9 +130,9 @@ export const HoneycombGrid = styled.div`
       ::after {
         content: "";
         background: ${(props) =>
-      props.theme.DarkTheme
-        ? props.theme.elevationColor
-        : props.theme.white};
+    props.theme.DarkTheme
+      ? props.theme.elevationColor
+      : props.theme.white};
         margin: 0px 0px 0 4px;
         clip-path: polygon(
           50% 0%,
@@ -201,10 +201,6 @@ export const IntegrationSlider = styled(Slider)`
     outline:none;
   }
 
-  .slick-arrow:hover:before {
-    color:#00b39f;
-  }
-
   .slick-arrow {
     margin-top: 1.5rem;
     width: 2rem;
@@ -212,7 +208,13 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow:before {
-    font-size: 4.5rem
+    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+    font-size: 4.5rem;
+    display: inline-block;
+  }
+
+  .slick-arrow:hover:before {
+    color:#00b39f;
   }
 
   .slick-slide {
@@ -220,11 +222,17 @@ export const IntegrationSlider = styled(Slider)`
     margin: 0 .5rem;
   }
 
+  .slick-next{
+    right: -2.5rem;
+  }
+
+  .slick-prev{
+    left: -2.5rem;
+  }
+
   .slick-prev:before {
     content:"‹";
     line-height: 0;
-    margin-left:-.5rem;	
-    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
   .slick-track {
@@ -234,8 +242,6 @@ export const IntegrationSlider = styled(Slider)`
   .slick-next:before {
     content:"›";
     line-height: 0;
-    margin-left: .5rem;	
-    color:${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black}
   }
 
   .slick-prev, .slick-next {
