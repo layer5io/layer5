@@ -4,6 +4,7 @@ import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
 const MeshmapModesWrapper = styled.div`
+  margin-top: 0.1rem;
 
   p.caption {
     margin: 0rem 0rem 2rem 0rem;
@@ -246,11 +247,11 @@ const MeshmapModes = () => {
 
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">Choose Your Mode</h2>
-      <p className="caption">
-        {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
-        Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.
-      </p>
+      {/* <h1 className="heading">Choose Your Mode</h1> */}
+      {/* <p className="caption"> */}
+      {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
+      {/* Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. */}
+      {/* </p> */}
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
         <div className="mode">

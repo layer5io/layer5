@@ -88,3 +88,6 @@ default.profraw
 
 #Husky configuration
 .husky/_/
+
+# Lighthouse CI
+.lighthouseci/
