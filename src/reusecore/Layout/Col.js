@@ -254,6 +254,10 @@ const ColWrapper = styled.div`
     : `${Dimensions[0]}`}
 
     } /*  @media (min-width: 1200px)  */
+
+    @media (max-width: 991px) and (min-width: 913px) {
+        margin-bottom: 40px;
+    }
 `;
 
 const Col = ({ children, ...props }) => {
