@@ -26,7 +26,7 @@ const BannerDefault = () => {
                   leftAlign={true}
                   UniWidth="100%"
                 >
-                  <h4 className="statement">We make cloud native manageable by </h4>
+                  <p className="statement">We make cloud native manageable by </p>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span>

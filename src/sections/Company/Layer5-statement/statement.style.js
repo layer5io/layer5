@@ -23,6 +23,16 @@ const BannerSectionWrapper = styled.section`
         padding-left: 0px;
         padding-right: 0px;
     }
+    p.statement {
+        font-size: 20px;
+        font-weight: bold;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        line-height: normal;
+        color: white;
+    }
     h2.statement {
         color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
