@@ -12,7 +12,7 @@ const ContactForm = () => {
   useEffect(() => {
     if (submit) {
       // Webhook to handle all event forms and all signup forms, except for the community member form.
-      axios.post("https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y", {
+      axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
         memberFormOne,
       });
       window.scrollTo(0, 700);
