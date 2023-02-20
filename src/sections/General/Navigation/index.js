@@ -186,6 +186,20 @@ const Navigation = ({ theme, themeSetter }) => {
   };
 
   const dropDownRef = useRef();
+  const navWrapRef = useRef();
+
+  useEffect(() => {
+    const outsideClickHandler = (e) => {
+      if (expand && navWrapRef.current && !navWrapRef.current.contains(e.target)){
+        setExpand(false);
+        closeDropDown();
+      }
+    };
+    expand && document.addEventListener("click", outsideClickHandler);
+    return () => {
+      document.removeEventListener("click", outsideClickHandler);
+    };
+  }, [expand]);
   useEffect(() => {
     window.addEventListener("scroll", () =>
       window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
@@ -207,7 +221,7 @@ const Navigation = ({ theme, themeSetter }) => {
   return (
 
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
+      <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`} ref={navWrapRef}>
         <Container className="nav-container">
           <div className="navbar-wrap">
             <Link to="/" className="logo">
