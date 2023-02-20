@@ -1,7 +1,5 @@
 import React from "react";
 import MeshmapWrapper from "./meshmap.style";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme/app/themeStyles";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
@@ -19,15 +17,12 @@ import Reviews from "../Pricing/review-slider";
 
 
 
-const Meshmap = () => {
-
+const Meshmap = ({ theme }) => {
   return (
     <MeshmapWrapper>
       <div >
         <Container>
-          <ThemeProvider theme={theme}>
-            <MeshmapBanner />
-          </ThemeProvider>
+          <MeshmapBanner />
           <div className="mobile-modes">
             <Features
               heading="MeshMap Modes"
@@ -79,7 +74,7 @@ const Meshmap = () => {
                   title: "Stop finger-pointing",
                   description: "Make infrastructure and application management less about finger-pointing and more about collaborating."
                 },
-              ]} />
+              ]} theme={theme} />
 
           <VisualizerFeatures
             features={
@@ -92,7 +87,7 @@ const Meshmap = () => {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers."
                 },
-              ]} />
+              ]} theme={theme} />
 
           <CollaboratorFeatures
             features={
@@ -122,7 +117,7 @@ const Meshmap = () => {
                   title: "Inclusive collaboration from start to finish",
                   description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together."
                 }
-              ]} />
+              ]} theme={theme} />
           {/* <CollaboratorFeatures
             features={
               [
