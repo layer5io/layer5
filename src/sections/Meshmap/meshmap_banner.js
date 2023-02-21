@@ -11,16 +11,10 @@ const BannerSectionWrapper = styled.div`
     box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
 
     padding: 8rem 6rem 3rem 6rem;
-    width: 1140px;
+    max-width: 1140px;
+    width: 100%;
     margin: auto;
     min-height: 25rem;
-
-    @media screen and (max-width: 1200px) {
-      width: 930px;
-    }
-    @media screen and (max-width: 991px) {
-      width: 690px;
-    }
 
     h1 {
         /* background-color: ${props => props.theme.black}; */
@@ -98,7 +92,7 @@ const BannerSectionWrapper = styled.div`
         margin-top: -7rem;
         position: relative;
         left: 30%;
-        
+
     }
     div.accent-bubble {
         width: 50%;

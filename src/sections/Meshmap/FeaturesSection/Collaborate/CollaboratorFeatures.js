@@ -5,7 +5,7 @@ import CollaboratorFeaturesDiagram from "./CollaboratorFeatures_diagram";
 import Feature from "../../features";
 import { useRef, useState, useEffect } from "react";
 
-export default function CollaboratorFeatures({ title, features }) {
+export default function CollaboratorFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -15,15 +15,12 @@ export default function CollaboratorFeatures({ title, features }) {
     <CollaboratorFeaturesWrapper>
       <Container className="collaborate-container">
         <div className="root">
-          <div className="g-grid-container headerWrapper">
-            <h2 className="g-type-display-2">{title}</h2>
-          </div>
           <div id="featureHeading" className="fixed">
             <h1>Collaborate</h1>
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features">
               {features.map((feature, index) => (
