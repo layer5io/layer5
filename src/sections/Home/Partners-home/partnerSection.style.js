@@ -10,6 +10,10 @@ const PartnerItemWrapper = styled.section`
             margin-top: .5rem;
         }
     }
+    .partner-image{
+        margin-left:1.5rem;
+        margin-right:1.5rem;
+    }
     .partner-slider{
         display: flex;
         justify-content: center;
