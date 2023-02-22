@@ -169,7 +169,7 @@ export const LandscapePageWrapper = styled.div`
 	.meshBubble {
 		background: #00B39F;
 		margin-top: 5rem;
-		border: 8px solid ${props => props.theme.body};
+		border: 8px solid ${props => props.theme.text};
 	}
 	.hideIcon {
 		display: none;
