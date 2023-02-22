@@ -23,13 +23,17 @@ const NavigationWrap = styled.header`
     top: 1.5rem;
     max-height: 50px;
 
+    #signup {
+      margin-right: 10px;
+    }
+
     .banner-btn {
       margin-right: 15px;
       white-space: nowrap;
       padding: .6rem .7rem;
       min-width: 0rem;
       font-weight: 600;
-    }    
+    }
 
     .banner-btn.login{
       border: 1px solid transparent;
@@ -38,7 +42,7 @@ const NavigationWrap = styled.header`
       background-color: transparent;
         &:hover{
           border: 1px solid ${props => props.theme.secondaryColor};
-          background: ${props => props.theme.highlightColor}; 
+          background: ${props => props.theme.highlightColor};
           background-color: transparent;
         }
         &:active {
@@ -47,7 +51,7 @@ const NavigationWrap = styled.header`
           border: 1px solid ${props => props.theme.keppelColor};
           background-color: transparent;
         }
-    }    
+    }
     a {
       display: flex;
     }
@@ -71,6 +75,12 @@ const NavigationWrap = styled.header`
     }
     @media screen and (max-width: 992px) {
       right: -1rem;
+      #signup {
+        min-width: 95px;
+      }
+      #login {
+        min-width: 95px;
+      }
     }
     @media screen and (max-width: 912px) {
       a {
@@ -496,7 +506,7 @@ const NavigationWrap = styled.header`
     margin: 0 auto;
     padding: 1rem 1rem 0rem 1rem;
     &:hover{
-      box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.25);
+      box-shadow: ${props => props.theme.DarkTheme ? "0px 0px 8px -2px #bababa" : "0px 0px 8px -2px rgba(0, 0, 0, 0.25)"};
       border-radius: 1rem;
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
@@ -543,7 +553,7 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;

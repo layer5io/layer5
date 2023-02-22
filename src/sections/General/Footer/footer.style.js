@@ -102,6 +102,7 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
+			color: black;
 		}
 	}
 
@@ -173,6 +174,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
+				color: black;
 			}
 		}
 	}
@@ -220,6 +222,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
+				color: black;
 			}
 		}
 	}
@@ -233,11 +236,23 @@ const FooterWrapper = styled.section`
 		.footer-bottom{
 			.policies {
 				text-align: center;
+				li {
+					padding: 0.125rem
+				}
 			}
 
 			li + li {
 				margin-left: 0 !important;
 				text-align: center;
+			}
+		}
+		.section-categories {
+			li {
+				margin-left: 0 !important;
+				text-align: center;
+				padding: 0.31rem 0; /* add vertical padding */
+				line-height: 1.5; /* increase the line-height */
+				text-align: left
 			}
 		}
 	}

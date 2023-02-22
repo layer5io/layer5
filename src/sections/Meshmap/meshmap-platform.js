@@ -107,7 +107,7 @@ p.caption {
     display: none;
   }
 }
- 
+
 `;
 
 const Platform = () => {
@@ -124,7 +124,7 @@ const Platform = () => {
             {
               title: "Self-hosted",
               description:
-                    "Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.",
+                "Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.",
               content: (
                 <img
                   src={SelfHosted}
@@ -136,7 +136,7 @@ const Platform = () => {
             {
               title: "Cloud",
               description:
-                    "Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
+                "Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
               content: (
                 <img
                   src={CloudHosted}
@@ -161,7 +161,7 @@ const Platform = () => {
           <h1>Cloud</h1>
           <img src={CloudHosted} alt="MeshMap Cloud" />
           <p>
-              Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
+            Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
           </p>
         </div>
       </div>

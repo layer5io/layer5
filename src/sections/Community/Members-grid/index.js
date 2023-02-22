@@ -35,7 +35,7 @@ const MembersGrid = (props) => {
           <div className="AboutCommunity">
             <div>
               <h3 className="sectionTitle">Community Membership</h3>
-              <img src={communityImg} alt="Layer5 Service Mesh Community" />
+              <img src={communityImg} alt="Layer5 Community" />
             </div>
             <div className="detailsCommunity">
               <p>

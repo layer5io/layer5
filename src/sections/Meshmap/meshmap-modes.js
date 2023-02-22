@@ -4,6 +4,7 @@ import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
 const MeshmapModesWrapper = styled.div`
+  margin-top: 0.1rem;
 
   p.caption {
     margin: 0rem 0rem 2rem 0rem;
@@ -20,7 +21,7 @@ const MeshmapModesWrapper = styled.div`
       padding: 1rem 0;
       text-transform: uppercase;
   }
-  
+
   .modes-wrapper {
     box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
     display: flex;
@@ -34,7 +35,7 @@ const MeshmapModesWrapper = styled.div`
       }
     }
   }
-  
+
   .mode {
     transform: translate3d(0, 0, 0);
     position: relative;
@@ -45,7 +46,7 @@ const MeshmapModesWrapper = styled.div`
     color: #fff;
     overflow: hidden;
     transition: width 0.5s ease;
-  
+
     &:first-of-type {border-left: 0px;}
     &:before,
     &:after {
@@ -57,13 +58,13 @@ const MeshmapModesWrapper = styled.div`
       width: 100%;
       height: 100%;
     }
-  
+
     &:after {
       background: transparentize(#e0251b, 0.15);
       opacity: 1;
       transition: opacity 0.5s ease;
     }
-  
+
     &:before {
       background: linear-gradient(
         to bottom,
@@ -75,35 +76,35 @@ const MeshmapModesWrapper = styled.div`
       transform: translate3d(0, 0, 0) translateY(50%);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
-  
+
     &:hover {
       width: 80% !important;
       cursor: default;
-  
+
       &:after {
         opacity: 0;
       }
-  
+
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1.5s ease, transform 1.5s ease 0.75s;
+        transition: opacity 0.5s ease, transform 0.5s ease 0.5s;
       }
 
       .mode-name{
           top: 15%;
-          transition: all 1.5s ease 0.75s;
+          transition: all 0.5s ease 0.5s;
       }
-  
+
       .content {
         opacity: 1;
         transform: translateY(0);
-        transition: all 1.5s ease 0.75s;
+        transition: all 0.75s ease 0.5s;
       }
     }
   }
 
-  .mode-catalog { 
+  .mode-catalog {
     transform: translate3d(0, 0, 0);
     position: relative;
     border-top: 1.5px solid #fff;
@@ -124,12 +125,12 @@ const MeshmapModesWrapper = styled.div`
       width: 100%;
       height: 100%;
     }
-  
+
     &:after {
       opacity: 1;
       transition: opacity 0.5s ease;
     }
-  
+
     &:before {
       background: linear-gradient(
         to bottom,
@@ -145,13 +146,13 @@ const MeshmapModesWrapper = styled.div`
     &:hover {
       width: 100% !important;
       cursor: default;
-  
+
       &:after {
         opacity: 0;
-        ttransition: opacity 0.5s ease, transform 0.5s ease;
+        transition: opacity 0.5s ease, transform 0.5s ease;
 
       }
-  
+
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
@@ -162,7 +163,7 @@ const MeshmapModesWrapper = styled.div`
           top: 15%;
           transition: all 1.1s ease 0.55s;
       }
-  
+
       .content {
         opacity: 1;
         transform: translateY(0);
@@ -170,7 +171,7 @@ const MeshmapModesWrapper = styled.div`
       }
     }
   }
-  
+
   .content {
     transform: translate3d(0, 0, 0) translateY(95px);
     position: relative;
@@ -179,7 +180,7 @@ const MeshmapModesWrapper = styled.div`
     margin: 0 1.618em;
     top: 23%;
     opacity: 0;
-  
+
     h1 {
       margin: 0.5rem;
       text-transform: uppercase;
@@ -201,7 +202,7 @@ const MeshmapModesWrapper = styled.div`
 
   .flip {
     background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
-  }    
+  }
 
   .mode-name {
     position: absolute;
@@ -211,14 +212,14 @@ const MeshmapModesWrapper = styled.div`
     z-index: 1;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
-  
+
     p {
       font-size: 1.728rem;
       line-height: 2;
       margin-bottom: 0;
     }
   }
-  
+
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -246,11 +247,11 @@ const MeshmapModes = () => {
 
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">Choose Your Mode</h2>
-      <p className="caption">
-        {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
-        Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.
-      </p>
+      {/* <h1 className="heading">Choose Your Mode</h1> */}
+      {/* <p className="caption"> */}
+      {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
+      {/* Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. */}
+      {/* </p> */}
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
         <div className="mode">

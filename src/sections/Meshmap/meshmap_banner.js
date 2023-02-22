@@ -4,13 +4,16 @@ import MeshmapIcon from "./meshmap-icon.svg";
 
 const BannerSectionWrapper = styled.div`
 
+    display: flex;
     background: #000000;
     border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
-    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33); 
+    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33);
     box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
-        
+
     padding: 8rem 6rem 3rem 6rem;
-    margin-bottom: 3rem;
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
     min-height: 25rem;
 
     h1 {
@@ -18,9 +21,9 @@ const BannerSectionWrapper = styled.div`
         font-weight: 500;
         font-size: 60px;
         color: ${props => props.theme.white};
-        
+
         line-height: 4.3rem;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
         span {
             font-size: 70px;
             width: fit-content;
@@ -87,14 +90,15 @@ const BannerSectionWrapper = styled.div`
         width: 14rem;
         overflow: hidden;
         margin-top: -7rem;
-        position: absolute;
-        right: 25%;
+        position: relative;
+        left: 30%;
+
     }
     div.accent-bubble {
         width: 50%;
         height: 100%;
         background-position: right 20%;
-        
+
         border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%;
         background: linear-gradient(90deg, hsla(168, 100%, 41%, 1) 57%, hsla(48, 84%, 51%, 1) 100%);
 
@@ -108,25 +112,26 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 1700px) {
         .meshmap-logo {
             width: 12rem;
-            right: 12rem;
-            margin-top: -5rem;
+            /* right: 12rem; */
+            /* margin-top: -5rem; */
         }
         .para {
             margin-top: -3rem;
         }
     }
-    @media screen and (max-width: 1150px) {
+    @media screen and (max-width: 1200px) {
         .meshmap-logo {
-            width: 12rem;
-            right: 8rem;
+            left: 20%;
+            width: 10rem;
+            /* right: 8rem; */
             margin-top: -5rem;
         }
-        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
+        /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
     @media screen and (max-width: 992px) {
         .meshmap-logo {
             width: 8rem;
-            right: 3rem;
+            /* right: 3rem; */
             margin-top: -2rem;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
@@ -145,11 +150,6 @@ const BannerSectionWrapper = styled.div`
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div className="meshmap-logo">
-        <img src={MeshmapIcon} alt="Meshery Logo" />
-        {/* <div className="accent-bubble">asdf</div> */}
-
-      </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
@@ -164,6 +164,10 @@ const BannerSection = () => {
         {/* <h4>Discover and Visualize</h4>
                 <h4><span>Collaborate and Design</span></h4>
                 any and all your cloud native infra and apps */}
+      </div>
+      <div className="meshmap-logo">
+        <img src={MeshmapIcon} alt="Meshery Logo" />
+        {/* <div className="accent-bubble">asdf</div> */}
       </div>
       {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
