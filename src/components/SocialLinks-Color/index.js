@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "../../reusecore/Layout";
+import forum_icon from "../../assets/images/socialIcons/forum.svg";
 import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
 import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
@@ -15,6 +16,13 @@ const SocialLinksColor = () => {
       <Col xs={12}>
         <Row className="social_icons">
           <a
+            href="https://discuss.layer5.io"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img height="30px" src={forum_icon} alt="forum" />
+          </a>
+          <a
             className="mail_icon"
             href="mailto:community@layer5.io"
             target="_blank"
@@ -22,7 +30,7 @@ const SocialLinksColor = () => {
           >
             <img height="30px" src={mail_icon} alt="mail" />
           </a>
-          <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
+          <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
           <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">

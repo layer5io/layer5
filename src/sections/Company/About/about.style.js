@@ -50,7 +50,7 @@ const AboutSectionWrapper = styled.section`
   }
 
   .about-text.text-two {
-    color: ${props => props.theme.headingColor};
+    color: ${props => props.theme.sideTextColor};
     font-weight: 400;
     margin-bottom: 28px;
   }
@@ -58,8 +58,8 @@ const AboutSectionWrapper = styled.section`
     
     h2 {
       display: block;
-      font-weight: 400;     
-      margin-bottom: 1rem;
+      font-weight: 500;     
+      font-size: 3.2rem;
       line-height: 1rem;
     }
   }
@@ -70,12 +70,12 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color:black;
+      color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,1.0)" : "rgba(0, 0, 0, 1.0)"};  
     }
     h4{
         margin-bottom: 1.7vw;
-        font-family:"Open Sans";
-        color:rgba(0, 0, 0, 0.7);
+        font-family:"Qanelas Soft";
+        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "rgba(0, 0, 0, 0.7)"};  
       }
   }
   .section-bottom {
@@ -113,6 +113,14 @@ const AboutSectionWrapper = styled.section`
         color:black;
       }
     }
+  }
+  #mapBack {
+    filter: invert(${(props) => props.theme.mapBackground});
+
+  }
+  .caption {
+    font-size: .9rem;
+    font-style: italic;
   }
   
   @media only screen and (max-width: 1400px) {

@@ -5,7 +5,10 @@ const SoSpecialWrapper = styled.div`
     flex-direction:column;
     justify-content: space-around;
     align-items:center;
-    padding:0rem 3rem 2rem 3rem;
+    padding:0 3rem 2rem 3rem;
+    Button:hover{
+        box-shadow: none;
+    }
     .slick-list .slick-track{
         width:5000px;
     }
@@ -19,9 +22,35 @@ const SoSpecialWrapper = styled.div`
         margin-bottom: 3rem;
     }
     
-    .slick-arrow::before{
-        color:black;
-        font-size:22px;
+    .slick-next{
+        right: -2.5rem;
+    }
+
+    .slick-prev{
+        left: -2.5rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        .slick-list{
+            margin: 0;	
+        }
+    }
+
+    .slick-arrow{
+        width: 2rem;
+        height: 3rem;
+    }	
+    .slick-arrow:before{	
+        color: ${props => props.theme.primaryColor};
+        font-size: 4.5rem;
+        display: inline-block;
+        height: 2rem;
+    }
+    .slick-disabled {
+        pointer-events:none;
+    }
+    .slick-arrow:hover:before{	
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -30,17 +59,37 @@ const SoSpecialWrapper = styled.div`
     }
     .slick-slide{
         height:30rem;
-        margin:1rem 0rem;
+        margin:1rem 0;
         div{
             height:100%;
         }    
     }
+    
+    .slick-prev:before{	
+        content: "‹";
+        line-height: 0;	
+    }
+    .slick-next:before{	
+        content: "›";
+        line-height: 0;
+        opacity: 1;
+    }
+    .slick-dots li button:before {
+        font-size: 0.6rem;
+        color: ${props => props.theme.secondaryColor};
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: ${props => props.theme.secondaryColor};
+    }
+    }
     .so-special-head{
         padding:2rem;
         text-align:center; 
-        h4{
+        p{
             color:#b3b3b3;
-            padding:2rem 0rem;
+            padding:2rem 0;
+            font-size: 1.5rem;
         }
     }
     #special-cont{
@@ -49,58 +98,60 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)"};
+        color:${(props) => props.theme.text};
     }
     #special-cont_img{
-            height:70%;
-            width:100%;
-            display:flex;  
-            justify-content:center;
-            align-items:center;
-            overflow:hidden;
-            img{
-                width:100%;
-                height:100%;
-                border:none;
-                border-top-left-radius:1rem;
-                border-top-right-radius:1rem;
-            }
-        }
+        height:70%;
+        width:100%;
+        overflow:hidden;
+          .gatsby-image-wrapper, .old-gatsby-image-wrapper{
+              height:100%;
+          }
+          img{
+            height: inherit;
+            display: block;
+            text-align: center;
+            margin: auto;
+          }
+    }
     .slick-dots{
         display:none;
     }
     #special-cont_content{
         padding-top:1rem;
         text-align: center;
-        postion:absolute;
         bottom:0;
         height:30%;
         .special-cont_para{
             font-weight:bold;
             font-size:1rem;
-            margin:0rem;
+            margin:0;
             padding:1rem;
         }
     }
     .special-cont_btn{
-        background-color:white;
+        background-color:${(props) => props.theme.body};
         color:black;
-        height:100%;
+        height: 30rem;
         outline:none;
         border:none;   
     }
-    .special-cont_btn:hover{
-        background-color:white;
-        color:black;
-    }
+
     .so-special-foot{
         text-align:center;
+        p{
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
         .so-special-foot-btn
         {
-            color:white;
+            color:${props => props.theme.DarkTheme ? "black" : "white"};
             margin:2rem;
             :hover{
-                color:black;
+                color:${props => props.theme.DarkTheme ? "white" : "black"};
             }
         }
     }
@@ -148,14 +199,8 @@ const SoSpecialWrapper = styled.div`
             padding:1rem;
             text-align:center;  
         }
-         .slick-prev{
-            left:-20px;
-        }
-        .slick-next{
-            right:-20px;
-        }
         .special-cont_para{
-            padding:1rem 0rem;
+            padding:1rem 0;
             word-wrap:break-word;
         }
     }
@@ -174,13 +219,13 @@ const SoSpecialWrapper = styled.div`
             height: 65%;
         }
         .so-special-head{
-            padding: 0.5rem 0rem;
+            padding: 0.5rem 0;
         }   
     }
     @media screen and (max-width: 300px){
         .slick-slide{
             height:25rem;
-            margin:0rem;
+            margin:0;
         }
         #special-cont_img{
             height: 60%;
@@ -188,7 +233,7 @@ const SoSpecialWrapper = styled.div`
         #special-cont_content{
             .special-cont_para
             {
-                padding:0rem;
+                padding:0;
             }
         }
     }

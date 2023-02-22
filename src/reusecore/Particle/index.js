@@ -1,11 +1,6 @@
 import React from "react";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 
-// import particle1 from "../../assets/images/app/particle/01.png";
-// import particle2 from "../../assets/images/app/particle/02.png";
-// import particle3 from "../../assets/images/app/particle/03.png";
-// import particle4 from "../../assets/images/app/particle/04.png";
-// import particle5 from "../../assets/images/app/particle/05.png";
 import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
 import smp from "../../assets/images/app/projects/smp.png";
 import imagehub from "../../assets/images/app/projects/layer5-image-hub.png";

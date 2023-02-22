@@ -10,9 +10,12 @@ const theme = {
 
   // keppel (dark green)
   primaryLightColorTwo: "#00d3a9",
+  keppelColor: "#00d3a9",
 
   // caribbean green (light green)
   secondaryColor: "#00b39f",
+  caribbeanGreenColor: "#00d3a9",
+  secondaryLightColorTwo: "#F3FFFD",
 
   // lavender blush (light pink)
   secondaryLightColor: "#FFEBEC",
@@ -40,7 +43,8 @@ const theme = {
   highlightColor: "#EBC017",
 
   // flax (light yellow)
-  highlightLightColor: "#EAD07D"
+  highlightLightColor: "#EAD07D",
+  saffronLightColor: "#EAD07D",
 };
 export default theme;
 

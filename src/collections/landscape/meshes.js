@@ -1,5 +1,5 @@
 
-export const meshes=[
+export const meshes = [
   {
     name: "A10 Secure Service Mesh",
     desc: "A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.",
@@ -13,7 +13,9 @@ export const meshes=[
     prometheus: "No, Replaced by Harmony Controller",
     tracing: "Yes",
     encryption: "Yes",
-    multi_tenant_score: 10
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "App Mesh",
@@ -28,7 +30,26 @@ export const meshes=[
     prometheus: "No",
     tracing: "Yes",
     encryption: "Yes",
-    multi_tenant_score: 6
+    multi_tenant_score: 6,
+    spiffe: "Not supported today, but in development",
+    spire: "Not supported today, but in development"
+  },
+  {
+    name: "Alibaba Cloud Service Mesh (ASM)",
+    desc: "Alibaba Cloud Service Mesh (ASM) - a fully managed control plane offering that is compatible with Istio.",
+    link: "https://www.alibabacloud.com/product/servicemesh",
+    autoinject: "Yes",
+    tcp_web: "Yes",
+    grpc: "Yes",
+    h2: "Yes",
+    multi_cluster: "Yes",
+    multi_tenant: "Yes",
+    prometheus: "Yes",
+    tracing: "Yes",
+    encryption: "Yes",
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Aspen Mesh",
@@ -44,7 +65,9 @@ export const meshes=[
     tracing: "Jaeger",
     encryption: "Yes",
     multi_tenant_score: 10,
-    netdev_persona_score: 6
+    netdev_persona_score: 6,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Cilium",
@@ -60,7 +83,9 @@ export const meshes=[
     tracing: "?",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 4
+    netdev_persona_score: 4,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Citrix Service Mesh",
@@ -76,7 +101,9 @@ export const meshes=[
     tracing: "?",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 9
+    netdev_persona_score: 9,
+    spiffe: "Partial",
+    spire: "No"
   },
   {
     name: "Consul",
@@ -101,22 +128,9 @@ export const meshes=[
     tsplit: "No",
     tsplitlink: "",
     tspec: "No",
-    tspeclink: ""
-  },
-  {
-    name: "Grey Matter",
-    desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices.",
-    link: "https://greymatter.io",
-    autoinject: "Yes",
-    tcp_web: "Yes",
-    grpc: "Yes",
-    h2: "Yes",
-    multi_cluster: "Yes",
-    multi_tenant: "Yes",
-    prometheus: "Yes",
-    tracing: "OpenTracing compatible",
-    encryption: "Yes",
-    multi_tenant_score: 1
+    tspeclink: "",
+    spiffe: "Partial",
+    spire: "No"
   },
   {
     name: "Istio",
@@ -141,7 +155,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/deislabs/smi-adapter-istio",
     tspec: "Yes",
-    tspeclink: "https://github.com/deislabs/smi-adapter-istio"
+    tspeclink: "https://github.com/deislabs/smi-adapter-istio",
+    spiffe: "Istio has partial SPIFFE support, but doesn't support the Workload API or Federation API currently, and thus is not interoperable with other SPIFFE implementations.",
+    spire: "Istio does not use SPIRE by default"
   },
   {
     name: "Kuma",
@@ -157,7 +173,9 @@ export const meshes=[
     tracing: "Yes",
     encryption: "Yes",
     multi_tenant_score: 8,
-    netdev_persona_score: 2
+    netdev_persona_score: 2,
+    spiffe: "Yes",
+    spire: "No"
   },
   {
     name: "Linkerd 1.x",
@@ -173,11 +191,13 @@ export const meshes=[
     tracing: "Zipkin",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 5
+    netdev_persona_score: 5,
+    spiffe: "SPIFFE IDs are not supported in Linkerd",
+    spire: "No"
   },
   {
     name: "Linkerd 2.x(Conduit)",
-    desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go.",
+    desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup. Open Source. From Buoyant. Written in Rust and Go.",
     link: "https://linkerd.io",
     autoinject: "Yes",
     h2: "Yes",
@@ -198,7 +218,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://linkerd.io/2/features/traffic-split/",
     tspec: "No",
-    tspeclink: ""
+    tspeclink: "",
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "NGINX Service Mesh",
@@ -224,6 +246,8 @@ export const meshes=[
     tsplitlink: "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/",
     tspec: "Yes",
     tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/",
+    spiffe: "Yes",
+    spire: "Yes"
   },
   {
     name: "Traefik Mesh",
@@ -248,7 +272,26 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/traefik/mesh",
     tspec: "Yes",
-    tspeclink: "https://github.com/traefik/mesh"
+    tspeclink: "https://github.com/traefik/mesh",
+    spiffe: "No",
+    spire: "No"
+  },
+  {
+    name: "Tencent Cloud Mesh (TCM)",
+    desc: "a fully managed control plane integrates with Tencent Cloud infrastructure which is fully compatible with Istio.",
+    link: "https://cloud.tencent.com/product/tcm",
+    autoinject: "Yes",
+    tcp_web: "Yes",
+    grpc: "Yes",
+    h2: "Yes",
+    multi_cluster: "Yes",
+    multi_tenant: "Yes",
+    prometheus: "Yes",
+    tracing: "Yes",
+    encryption: "Yes",
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Maistra",
@@ -263,7 +306,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "Jaeger/Grafana",
     encryption: "Yes",
-    multi_tenant_score: 10
+    multi_tenant_score: 10,
+    spiffe: "Partial",
+    spire: "No"
   },
   {
     name: "Mesher",
@@ -278,13 +323,15 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 8
+    multi_tenant_score: 8,
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "SOFAMesh",
     desc: "A solution for large-scale Service Mesh based on Istio.",
     link: "https://github.com/alipay/sofa-mesh",
-    autoinject: "Project shutdown",
+    autoinject: "Project Shutdown",
     tmp_link: "https://github.com/sofastack/sofa-mesh/blob/master/README.md",
     tcp_web: "Project Shutdown",
     multi_cluster: "Project Shutdown",
@@ -293,12 +340,15 @@ export const meshes=[
     tracing: "Project Shutdown",
     encryption: "Project Shutdown",
     multi_tenant_score: 8,
-    netdev_persona_score: 7
+    netdev_persona_score: 7,
+    spiffe: "Partial",
+    spire: "No"
   },
   {
     name: "Octarine",
     desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh",
     link: "https://www.octarinesec.com/",
+    autoinject: "Project Shutdown",
     h2: "Yes",
     grpc: "Yes",
     tcp_web: "Yes",
@@ -308,19 +358,22 @@ export const meshes=[
     tracing: "No",
     encryption: "Yes",
     multi_tenant_score: 10,
-    netdev_persona_score: 8
+    netdev_persona_score: 8,
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Open Service Mesh",
     desc: "Open Service Mesh (OSM) is a lightweight and extensible cloud native service mesh.",
     link: "https://openservicemesh.io/",
+    autoinject: "Yes",
     h2: "Yes",
     grpc: "Yes",
     tcp_web: "Yes",
     multi_cluster: "No",
     multi_tenant: "No",
     prometheus: "Yes",
-    tracing: "No",
+    tracing: "pluggable",
     encryption: "Yes",
     multi_tenant_score: 1,
     netdev_persona_score: 5,
@@ -332,22 +385,26 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/openservicemesh/osm#smi-specification-support",
     tspec: "Yes",
-    tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support"
+    tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support",
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Rotor",
     link: "https://github.com/turbinelabs/",
-    autoinject: "Project shutdown",
+    autoinject: "Project Shutdown",
     tmp_link: "https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c",
-    tcp_web: "Project shutdown",
-    grpc: "Project shutdown",
-    h2: "Project shutdown",
-    multi_cluster: "Project shutdown",
-    multi_tenant: "Project shutdown",
+    tcp_web: "Project Shutdown",
+    grpc: "Project Shutdown",
+    h2: "Project Shutdown",
+    multi_cluster: "Project Shutdown",
+    multi_tenant: "Project Shutdown",
     desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown.",
-    prometheus: "Project shutdown",
-    tracing: "Project shutdown",
-    encryption: "Project shutdown",
+    prometheus: "Project Shutdown",
+    tracing: "Project Shutdown",
+    encryption: "Project Shutdown",
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Yggdrasil",
@@ -362,7 +419,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "Pluggable",
     encryption: "Yes",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Zuul",
@@ -377,7 +436,9 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Vulcand",
@@ -392,7 +453,9 @@ export const meshes=[
     prometheus: "No",
     tracing: "No",
     encryption: "Yes",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire: "No"
   },
   {
     name: "Network Service Mesh",
@@ -407,6 +470,8 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "Yes",
+    spire: "Yes"
   }
 ];

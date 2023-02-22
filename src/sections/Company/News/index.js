@@ -4,7 +4,8 @@ import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 
-import { TiMessageTyping, TiHeartOutline } from "react-icons/ti";
+import { TiMessageTyping } from "@react-icons/all-files/ti/TiMessageTyping";
+import { TiHeartOutline } from "@react-icons/all-files/ti/TiHeartOutline";
 
 import imgNews1 from "../../../assets/images/app/news/news-thumb-1.png";
 import imgNews2 from "../../../assets/images/app/news/news-thumb-2.png";

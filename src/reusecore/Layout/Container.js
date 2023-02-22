@@ -1,5 +1,5 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 const ContainerWrapper = styled.div`
 
@@ -23,10 +23,34 @@ const ContainerWrapper = styled.div`
     ${props => props.fluid && css`
         max-width: 100%; 
     `}
+    a.mute {
+    text-decoration: none;
+    color: ${(props) => props.theme.tertiaryColor};
+    &:hover {
+      color: ${(props) => props.theme.keppelColor};
+    }
+  }
+  a.highlight {
+    color: ${(props) => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &:hover {
+      color: ${(props) => props.theme.keppelColor};
+    }
+  }
+  .highlight {
+    color: ${(props) => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
-const Container = ({children}, props) => {
-  return(
+const Container = ({ children, ...props }) => {
+  return (
     <ContainerWrapper {...props}>
       {children}
     </ContainerWrapper>

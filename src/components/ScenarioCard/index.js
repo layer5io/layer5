@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import { ScenarioCardWrapper } from "./ScenarioCard.style";
-import { BsArrowDown } from "react-icons/bs";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "@react-icons/all-files/bs/BsArrowDown";
+import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
 import { Link } from "gatsby";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 
@@ -55,7 +55,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
+          <Col xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
                 <div id="katacoda-scenario"
@@ -66,8 +66,8 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
                   data-katacoda-secondary="#00b39f"
                   data-katacoda-background="#fff"
                   data-katacoda-hideprogress="true"
-                  data-katacoda-font="Open Sans"
-                  data-katacoda-fontheader="Open Sans" style={{ minHeight: "37rem" }}>
+                  data-katacoda-font="Qanelas Soft"
+                  data-katacoda-fontheader="Qanelas Soft" style={{ minHeight: "37rem" }}>
                 </div>
               </div>
             </div>

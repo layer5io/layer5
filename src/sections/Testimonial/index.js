@@ -4,20 +4,20 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 
-import { FaQuoteLeft } from "react-icons/fa";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-
+import { FaQuoteLeft } from "@react-icons/all-files/fa/FaQuoteLeft";
+import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
+import  { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import data from "../../assets/data/testimonial";
 
 import TestimonialWrapper from "./testimonial.style";
 
 const Testimonial = () => {
-  const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowLeft = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-prev-icon">
       <IoIosArrowRoundBack />
     </button>
   );
-  const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowRight = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-next-icon">
       <IoIosArrowRoundForward />
     </button>

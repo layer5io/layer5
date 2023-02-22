@@ -1,18 +1,13 @@
 import React from "react";
-
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-// import VintageBox from "../../../reusecore/VintageBox";
-// import ParticleComponent from "../../../reusecore/Particle";
-
-// import { FaMapMarkedAlt, FaPlay } from "react-icons/fa";
-// import { FiDownloadCloud } from "react-icons/fi";
-import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
-// import Layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
-import svgBackground from "./images/background.svg";
-
+import svgBackground from "../../../assets/images/homePage-images/background.svg";
 import BannerSectionWrapper from "./statement.style";
+import { StaticImage } from "gatsby-plugin-image";
+
+const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
+// const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const BannerDefault = () => {
   return (
@@ -23,7 +18,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} />
+                  <img src={svgBackground} alt="background" />
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -34,7 +29,7 @@ const BannerDefault = () => {
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span>
-                      exploiting the unique position service meshes have in changing how developers write applications and how operators run modern infrastructure.
+                      harnessing the unique position service meshes have in changing how developers write applications and how operators run modern infrastructure.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
@@ -43,14 +38,14 @@ const BannerDefault = () => {
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="See Layer5's cloud native projects" url="/projects" />
+                    <Button primary className="join-community-button" title="our projects" url="/projects" />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <img className="hero" src={imgHero} />
+            <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" />
           </Col>
         </Row>
       </div>

@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable, useSortBy, useFilters } from "react-table";
-import {Data} from "../../collections/service-mesh-books/service-mesh-patterns/tableData";
-import {Columns} from "../../collections/service-mesh-books/service-mesh-patterns/bookColumns";
+import { Data } from "../../collections/service-mesh-books/service-mesh-patterns/tableData";
+import { Columns } from "../../collections/service-mesh-books/service-mesh-patterns/bookColumns";
 import { TableWrapper } from "./table.style";
 import alphaicon from "./sort_by_alpha.svg";
 import upicon from "./expand_more.svg";
@@ -35,10 +35,10 @@ const Table = () => {
               {headerGroup.headers.map((column, index) => (
                 <th key={index} {...column.getHeaderProps()}
                   className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
-                  <div {...column.getSortByToggleProps()}>
+                  <div  >
                     {column.render("Header")}
-                    {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
-                      <span>
+                    {(column.Header == "Service Mesh Pattern") ?
+                      <span {...column.getSortByToggleProps()}>
                         {column.isSorted
                           ? column.isSortedDesc
                             ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
@@ -63,13 +63,13 @@ const Table = () => {
             return (
               <tr key={i} {...row.getRowProps()}>
                 {row.cells.map((cell, index) => {
-                  if(row["original"]["subheading"] === "bold"){
+                  if (row["original"]["subheading"] === "bold"){
                     return (
                       <th key={index} {...cell.getCellProps()} className="bold area-header">
                         {cell.render("Cell")}
                       </th>
                     );
-                  } else{
+                  } else {
                     return (
                       <td key={index} {...cell.getCellProps()}>
                         {cell.render("Cell")}

@@ -1,0 +1,100 @@
+---
+title: "Evolution of the Meshery CLI Command Reference"
+date: 2022-06-09 01:15:00 -0600
+author: Aadhitya Amarendiran
+description: Autogeneration of Meshery CLI command reference
+thumbnail: ./mesheryctl.png
+darkthumbnail: ./mesheryctl.png
+category: "Meshery"
+tags:
+ - Projects
+ - Meshery
+ - mesheryctl
+published: true
+resource: true
+type: Blog
+product: Meshery
+featured: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
+
+import oldDesign from "./initial-design.png";
+import newDesign from "./mesheryctl-docs.png";
+
+<BlogWrapper>
+
+<div class="intro">
+<p>Documentation plays a major role in any project. Even if the project is small or too big, the creator or the team behind the project needs to curate the documentation very well such that it'll be useful for new end users to refer and learn to use the project, troubleshoot the problems occurred and lot more. Thus, we, Layer5 have curated the documentation for Meshery to meet such purposes. Not to mention, <code>mesheryctl</code>, the CLI client of Meshery needs a curated documentation as well. This blog describes about the evolution of <code>mesheryctl</code> command reference page. </p>
+</div>
+
+<h3>Initial Command Reference Design</h3>
+<p>The initial design of <code>mesheryctl</code> command reference page is all made using pure markdown and the functionality is handled using Jekyll, the main framework used for Meshery Docs. This handled great at initial stage but had many limitations, such as:
+    <ul>
+        <li>Updation of YAML for data is often required</li>
+        <li>Design was obselete at initial stage</li>
+        <li>No separate pages for each command and subcommand</li>
+    </ul>
+    Thus, the idea for redesigning the <code>mesheryctl</code> reference page was desperately needed.</p>
+    <p><a href="https://docs.meshery.io" alt="Meshery Documentation" target="_parent">
+    <img src = {oldDesign} className="image-center-shadow" alt="Initial design of mesheryctl command reference" /></a></p>
+
+<h3>Updated Command Reference Design</h3>
+<p>To tackle the shortcomings of the previous design, I was tasked to redesign the <code>mesheryctl</code> command reference page entirely. This was a big task at first glance to me, as I was a new contributor back then. Eventually after manipulating the reference section with help of great folks, I was able to pull off the task and the design was updated. </p> 
+<p>
+    <a href="https://docs.meshery.io" alt="Meshery Documentation">
+<img src={newDesign} className="image-center-shadow" alt="Meshery CLI command reference" /></a>
+</p>
+<p>The redesign work was done with help of HTML in markdown and with optimization in YAML code. A sample is given below.</p>
+
+```
+    <!-- Copy this template to create individual doc pages for each mesheryctl commands -->
+
+    <!-- Name of the command -->
+    # mesheryctl mesh
+
+    <!-- Description of the command. Preferably a paragraph -->
+    ## Description
+
+    {% assign name = site.data.mesheryctlcommands.cmds[page.command] %}
+    {{ name.description }}
+
+    <!-- Basic usage of the command -->
+    <pre class="codeblock-pre">
+    <div class="codeblock">
+    mesheryctl mesh [flags] 
+    </div>
+    </pre>
+    ...........
+```
+
+<h3>Adding auto generation feature in reference</h3>
+<p>As time passed, we realized that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!</p>
+
+```
+var startCmd = &cobra.Command {
+	Use:   "start",
+	Short: "Start Meshery",
+	Long:  `Start Meshery and each of its service mesh components.`,
+	Args:  cobra.NoArgs,
+	Example: `
+// Start meshery
+mesheryctl system start
+// To create a new context for in-cluster Kubernetes deployments and set the new context as your current-context
+mesheryctl system context create k8s -p kubernetes -s
+// (optional) skip checking for new updates available in Meshery.
+mesheryctl system start --skip-update
+// Reset Meshery's configuration file to default settings.
+mesheryctl system start --reset
+// Silently create Meshery's configuration file with default settings
+mesheryctl system start --yes
+.....
+}
+	`,
+```
+
+<p>Using this information provided above in each golang file, the markdown page is generated using Cobra CLI library and thus reducing the workload on the developer by automating via <a href="https://github.com/meshery/meshery/blob/master/.github/workflows/mesheryctl-ci.yml#L73">GitHub Actions</a>.</p>
+<br />
+<p>This is so far on how the <code>mesheryctl</code> command reference is evolved for now. And I hope that it'll continue to evolve in the field of documentation to serve the users to use Meshery in best way possible.</p>
+</BlogWrapper>

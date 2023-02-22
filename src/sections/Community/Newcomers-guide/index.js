@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import CommunityImage1 from "./community-image1.png";
-import CommunityImage2 from "./community-image2.png";
-import CommunityImage3 from "./community-image3.png";
+import CommunityImage1 from "../../../assets/images/newcomers-page-images/contributor-chest.svg";
+import CommunityWhiteImage1 from "../../../assets/images/newcomers-page-images/contributor-chest-white.svg";
 import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
+import { StaticImage } from "gatsby-plugin-image";
 
-const NewcomersGuide = () => {
+const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.png";
+const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.png";
+
+const NewcomersGuide = ({ theme }) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -22,15 +26,13 @@ const NewcomersGuide = () => {
         <div className="newcomers-welcome">
           <p>
             Whether you are a first time contributor or an open source
-            veteran,you are welcome to contribute to and actively engage in the
+            veteran, you are welcome to contribute to and actively engage in the
             development of projects at Layer5. Here are some instructions to get
             you started and if you haven’t joined yet, join the{" "}
-            <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
-              Slack workspace
-            </a>{" "}
-            to collaborate with the community. Also, you can check the
-            quick-links below for jumping straight into things.
-          </p>
+            <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
+              Slack workspace</a>{" "}
+            to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
+            quick-links below for jumping straight into things.</p>
           <Row className="newcomers-journey">
             <Col
               className="heading"
@@ -41,7 +43,7 @@ const NewcomersGuide = () => {
             >
               <h2>Contributor's Journey</h2>
               <div className="heading-start">
-                <h5>Start Here</h5>
+                <h4>Start Here</h4>
                 <img className="heading-start__arrow" src={longArrow} />
               </div>
             </Col>
@@ -51,19 +53,20 @@ const NewcomersGuide = () => {
           </Row>
           <Row className="how-to-contribute">
             <h3>How to Contribute?</h3>
+          </Row>
+          <Row className="how-to-contribute">
             <p>
-              The following set of steps outlines the process by which you can
+              These steps outline the process by which you can
               openly engage, learn, and participate in the broad set of open
               source projects at Layer5. If at any time you get stuck, please
               seek help in the{" "}
               <a
-                href="https://layer5io.slack.com/archives/C019426UBNY"
+                href="https://discuss.layer5.io"
                 target="_blank"
                 rel="noreferrer"
               >
-                #newcomers
-              </a>{" "}
-              channel in the Layer5 (joining instructions below). Our{" "}
+                community forum</a>{""}.
+              Our{" "}
               <Link to="/community/meshmates">MeshMates</Link> and community
               members are here to help!
             </p>
@@ -72,7 +75,14 @@ const NewcomersGuide = () => {
         <div className="instructions">
           <Row className="step">
             <Col sm={12} lg={6}>
-              <img src={CommunityImage1} alt="Community Image" />
+              <h3>Fill in the Community Member Form</h3>
+              <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
+            </Col>
+            <Col sm={12} lg={6}>
+              <Button primary className="newcomers-form" title="Submit a Member Form" url="/newcomer" external={false} />
+            </Col>
+            <Col sm={12} lg={6}>
+              <img src={theme === "dark" ? CommunityWhiteImage1 : CommunityImage1} className="finding-an-issue" alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
@@ -88,19 +98,19 @@ const NewcomersGuide = () => {
                   </a>{" "}
                   issues bearing the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22good+first+issue%22+"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
                     target="_blank"
                     rel="noreferrer"
                   >
                     good first issue
                   </a>
                   ” label, “
-                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22first-timers-only%22+">
+                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22first-timers-only%22+">
                     first timers only
                   </a>
                   ” or the “
                   <a
-                    href="https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -111,14 +121,9 @@ const NewcomersGuide = () => {
                 <li>
                   Alternatively, find an area of interest by reviewing/browsing
                   the{" "}
-                  <a
-                    href="https://drive.google.com/a/layer5.io/open?id=1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
-                  </a>{" "}
-                  document.
+                  </Link>.
                 </li>
                 <li>
                   After identifying the issue you wish to work on, check whether
@@ -158,42 +163,47 @@ const NewcomersGuide = () => {
                 </li>
                 <li>Contributions of all sizes are welcome.</li>
                 <li>
-                  If you need some additional help, please join Layer5 Slack
-                  workspace at{" "}
+                  If you need some additional help, please join Layer5{" "}
                   <a
-                    href="http://slack.layer5.io/"
+                    href="https://discuss.layer5.io/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    http://slack.layer5.io
+                    discussion forum
                   </a>{" "}
-                  and find your way to the{" "}
+                  or find your way to the{" "}
                   <a
-                    href="https://layer5io.slack.com/archives/C019426UBNY"
+                    href="https://slack.layer5.io"
                     target="_blank"
                     rel="noreferrer"
                   >
                     #newcomers
                   </a>{" "}
-                  channel. Feel free to ask questions.
+                  channel in our Slack workspace. Introduce yourself and ask questions.
                 </li>
               </ol>
             </Col>
-            <Col sm={12} lg={6}>
-              <img src={CommunityImage2} alt="Community Image" />
+            <Col sm={12} lg={6} className="community-img">
+              <StaticImage src={CommunityImage2} alt="Community Image" />
             </Col>
           </Row>
           <Row className="step">
-            <Col sm={12} lg={6}>
-              <img src={CommunityImage3} alt="Community Image" />
+            <Col sm={12} lg={6} className="community-collage">
+              <StaticImage src={CommunityImage3} alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
-              <h3>While Your Issue is under Review</h3>
+              <h3>While Your Issue is Under Review</h3>
               <p>
                 Be patient. There are a large number of contributors and only a
                 small number of maintainers/reviewers. All contributors are
                 equally important to us, and we'll be sure to get to you as soon
-                as possible. In the meanwhile, you are welcome to join our{" "}
+                as possible. In the meanwhile, you are welcome to engage in the Layer5{" "}
+                <a
+                  href="https://discuss.layer5.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                > discussion forum
+                </a>, join our{" "}
                 <a
                   href="http://slack.layer5.io/"
                   target="_blank"
@@ -201,7 +211,7 @@ const NewcomersGuide = () => {
                 >
                   Slack workspace
                 </a>{" "}
-                and take a look at all our projects.
+                and take a look at all our <Link to="/projects">projects</Link>.
               </p>
             </Col>
           </Row>

@@ -1,4 +1,3 @@
-import meshery from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
 import meshmateLogo from "../../../../assets/images/community/meshmate-stack.svg";
 import communityGreen from "../../../../assets/images/community/community-green.svg";
 
@@ -44,47 +43,60 @@ const Data = {
       name: "Projects",
       path: "/projects",
       subItems: [
-        {
-          name: "Distributed Performance",
-          path: "/projects/distributed-performance-management",
-          sepLine: true
-        },
-        {
-          name: "Image Hub",
-          path: "/projects/image-hub",
-          sepLine: true
-        },
-        {
-          name: "Meshery",
-          path: "/meshery",
-          sepLine: true
-        },
         // {
-        //   name: "Service Mesh Landscape",
-        //   path: "/landscape",
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
         //   sepLine: true
         // },
         {
-          name: "Service Mesh Interface",
+          name: "Meshery",
+          path: "/cloud-native-management/meshery",
+          sepLine: true
+        },
+        {
+          name: "Docker Extension",
+          path: "/docker-extension-meshery",
+        },
+        {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+        },
+        {
+          name: "Nighthawk",
+          path: "/projects/nighthawk",
+          sepLine: true
+        },
+        {
+          name: "Service Mesh",
+          path: "/landscape",
+          sepLine: true
+        },
+        {
+          name: "Patterns",
+          path: "/learn/service-mesh-books/service-mesh-patterns",
+        },
+        {
+          name: "Interface",
           path: "/projects/service-mesh-interface-conformance",
-          sepLine: true
         },
         {
-          name: "Service Mesh Performance",
+          name: "Landscape",
+          path: "/landscape",
+        },
+        {
+          name: "Performance",
           path: "/projects/service-mesh-performance",
-          sepLine: true
         },
-        {
-          name: "GetNighthawk",
-          path: "/projects/getnighthawk",
-          sepLine: true
-        }
       ],
       actionItems: [
         {
           actionName: "All projects",
           actionLink: "/projects",
-        }
+        },
+        {
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
       ],
       // div1: {
       //   src: meshery,
@@ -105,17 +117,31 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Forum",
+          path: "https://discuss.layer5.io",
+          sepLine: true
+        },
+        {
           name: "Workshops",
           path: "/learn/service-mesh-workshops",
           sepLine: true
         },
         {
-          name: "Service Mesh Labs",
+          name: "Learning Paths",
+          path: "/learn/learning-paths",
+          sepLine: true
+        },
+        {
+          name: "Interactive Labs",
           path: "/learn/service-mesh-labs",
           sepLine: true
-        }
+        },
       ],
       actionItems: [
+        {
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
+        },
         {
           actionName: "Free service mesh training",
           actionLink: "/learn",
@@ -135,8 +161,8 @@ const Data = {
       path: "/community",
       subItems: [
         {
-          name: "Calendar",
-          path: "/community/calendar",
+          name: "Handbook",
+          path: "/community/handbook",
           sepLine: true
         },
         {
@@ -147,29 +173,24 @@ const Data = {
         {
           name: "MeshMates",
           path: "/community/meshmates",
-          sepLine: true
         },
-        // {
-        //     name: "MeshMasters",
-        //     path: "/community/meshmasters"
-        // },
-        // {
-        //     name: "Newcomers",
-        //     path: "/community/newcomers"
-        // },
         {
           name: "Events",
           path: "/community/events",
           sepLine: true
         },
+        {
+          name: "Calendar",
+          path: "/community/calendar",
+        },
       ],
       actionItems: [
         {
-          actionName: "Join the community",
+          actionName: "Newcomer's journey",
           actionLink: "/community/newcomers",
         },
         {
-          actionName: "Open source internship programs",
+          actionName: "Open source internships",
           actionLink: "/careers/programs",
         }
       ],
@@ -180,7 +201,7 @@ const Data = {
       },
       div2: {
         src: communityGreen,
-        descr: "Join the service mesh community",
+        descr: "Join the cloud native community",
         path: "/community"
       }
     },
@@ -189,8 +210,8 @@ const Data = {
       path: "/blog",
       subItems: [
         {
-          name: "Blog",
-          path: "/blog",
+          name: "Resources",
+          path: "/resources",
           sepLine: true
         },
         {
@@ -200,6 +221,10 @@ const Data = {
         }
       ],
       actionItems: [
+        {
+          actionName: "Explore resource library",
+          actionLink: "/resources",
+        },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",

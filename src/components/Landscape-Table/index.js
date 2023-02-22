@@ -1,12 +1,15 @@
 import React from "react";
 import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
 import ReactTooltip from "react-tooltip";
-import { IoMdHelpCircle } from "react-icons/io";
-import { IconContext } from "react-icons";
+import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
+import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./LandscapeTable.style";
-import passingMark from "../../assets/images/landscape/passing.svg";
-import failingMark from "../../assets/images/landscape/failing.svg";
-import { AiOutlineCaretUp, AiOutlineCaretDown } from "react-icons/ai";
+import { AiOutlineCaretUp } from "@react-icons/all-files/ai/AiOutlineCaretUp";
+import { AiOutlineCaretDown } from "@react-icons/all-files/ai/AiOutlineCaretDown";
+import { StaticImage } from "gatsby-plugin-image";
+
+const passingMark = "../../assets/images/landscape/passing.svg";
+const failingMark = "../../assets/images/landscape/failing.svg";
 
 function GlobalFilter({
   globalFilter,
@@ -29,7 +32,7 @@ function GlobalFilter({
         }}
         placeholder={searchPlaceHolder}
         style={{
-          font: "400 1rem Open Sans",
+          font: "400 1rem Qanelas Soft",
           border: "1.5px solid white",
           borderRadius: "4px",
           width: "20rem"
@@ -59,7 +62,7 @@ const Table = ({ columns, data, placeHolder }) => {
     useGlobalFilter,
     useSortBy
   );
-  
+
   // Render the UI for the table
   return (
     <TableWrapper>
@@ -98,17 +101,19 @@ const Table = ({ columns, data, placeHolder }) => {
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
+          {rows.length == 0 && <tr><td colSpan={headerGroups[0].headers.length}>No results found</td></tr>}
           {rows.map((row, i) => {
             prepareRow(row);
             return (
               <tr key={`row${i}`} {...row.getRowProps()}>
                 {row.cells.map(cell => {
-                  if( cell["column"]["id"] === "name" ){
+                  if ( cell["column"]["id"] === "name" ){
                     return (
                       row["original"]["desc"] ?
                         <td {...cell.getCellProps()}>
-                          <a 
+                          <a
                             href={row["original"]["link"]}
+                            rel="nofollow"
                             data-tip={row["original"]["desc"]}
                             data-for="mesh-name"
                           >
@@ -123,34 +128,34 @@ const Table = ({ columns, data, placeHolder }) => {
                           />
                         </td>
                         :   <td {...cell.getCellProps()}>
-                          <a href={row["original"]["link"]}>
+                          <a href={row["original"]["link"]} rel="nofollow">
                             {cell.render("Cell")}
                           </a>
                         </td>
                     );
-                  } else if(cell["column"]["id"] === "tool"){
+                  } else if (cell["column"]["id"] === "tool"){
                     return <td {...cell.getCellProps()}>
-                      <a href={row["original"]["link"]}>
+                      <a href={row["original"]["link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;
-                  } else if(cell["value"] === "Project shutdown"){
+                  } else if (cell["value"] === "Project shutdown"){
                     return <td {...cell.getCellProps()}>
-                      <a href={row["original"]["tmp_link"]}>
+                      <a href={row["original"]["tmp_link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;
-                  } else if(cell["value"] === "Yes" || cell["value"] === "Full"){
+                  } else if (cell["value"] === "Yes" || cell["value"] === "Full"){
                     return <td {...cell.getCellProps()}>
-                      <img className="Mark" src={passingMark} /> 
+                      <StaticImage className="Mark" src={passingMark} alt="Passing Mark" />
                     </td>;
-                  } else if(cell["value"] === "No" || cell["value"] === "None"){
+                  } else if (cell["value"] === "No" || cell["value"] === "None"){
                     return <td {...cell.getCellProps()}>
-                      <img className="Mark" src={failingMark} /> 
+                      <StaticImage className="Mark" src={failingMark} alt="Failing Mark" />
                     </td>;
-                  } else if(cell["value"] === "?"){
+                  } else if (cell["value"] === "?"){
                     return <td {...cell.getCellProps()}>
-                      <IconContext.Provider value={{color: "gray", size: "70%" }}>
+                      <IconContext.Provider value={{ color: "gray", size: "70%" }}>
                         <IoMdHelpCircle className="Mark"/>
                       </IconContext.Provider>
                     </td>;

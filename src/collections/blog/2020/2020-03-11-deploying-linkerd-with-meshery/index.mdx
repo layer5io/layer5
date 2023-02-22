@@ -1,0 +1,152 @@
+---
+title: "Deploying Linkerd with Meshery"
+subtitle: ""
+date: 2020-03-11 08:15:05 +0000
+author: Anton Weiss
+thumbnail: ./Linkerd-with-Meshery.png
+darkthumbnail: ./Linkerd-with-Meshery.png
+category: Meshery
+tags:
+ - Linkerd
+ - Meshery
+published: true
+type: Blog
+mesh: Linkerd
+product: Meshery
+resource: true
+redirect_from:
+ - /blog/deploying-linkerd-with-meshery/
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import awsappmesh from '../../../../assets/images/service-mesh-icons/aws-app-mesh.png';
+import consul from '../../../../assets/images/service-mesh-icons/consul.svg';
+import istio from '../../../../assets/images/service-mesh-icons/istio.svg';
+import linkerd from '../../../../assets/images/service-mesh-icons/linkerd.svg';
+import maesh from '../../../../assets/images/service-mesh-icons/maesh.png';
+import nsm from '../../../../assets/images/service-mesh-icons/nsm.svg';
+import octarine from '../../../../assets/images/service-mesh-icons/octarine.svg';
+import kuma from '../../../../assets/images/service-mesh-icons/kuma.svg';
+import {Link} from "gatsby"
+
+<BlogWrapper>
+
+<span class="starting-letter">I</span>t’s no secret that service mesh tech is boiling hot. Microservice architectures brought on as many challenges as they have advantages. With operational complexity being one of the most acute pains. Service meshes do offer solutions to a number of these operational concerns. Including but not limited to: resilience, improved observability, security and advanced service discovery.
+<div>
+  <div>
+
+<iframe width="100%" src="https://www.youtube.com/embed/MXQV-i-Hkf8" loading="lazy" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    style="min-height: 315px; min-width: 280px;
+    "></iframe>
+</div>
+But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created <Link to="/cloud-native-management/meshery">Meshery</Link>, the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
+
+ Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
+</div>
+<div>
+<h5>Meshery Adapters</h5>
+    <table class="table-adapters">
+        <thead class="hidden">
+            <th>Status</th>
+            <th>Adapter</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="7" class="stable-adapters">stable</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-istio">
+                <img src={istio} alt='Istio Service Mesh adapter' className="adapter-logo" />Meshery adapter for Istio</a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-linkerd">
+                <img src={linkerd} alt='Linkerd' className="adapter-logo" />Meshery adapter for Linkerd</a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-consul">
+                <img src={consul} alt='Consul Connect' className="adapter-logo" />Meshery adapter for Consul</a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-octarine">
+                <img src={octarine} alt='Octarine Service Mesh' className="adapter-logo" />Meshery adapter for Octarine</a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-nsm">
+                <img src={nsm} alt='Network Mesh' className="adapter-logo" />Meshery adapter for Network Service Mesh</a>
+            </td>
+        </tr>
+        <tr><td className="stable-adapters"/></tr>
+        <tr>
+            <td rowspan="2" className="beta-adapters">beta</td>
+            <td><a href="https://github.com/layer5io/meshery-cpx">
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksHj15DkID308qQw3cmkQrRULPxyzbVquSZVev-9dj1L6sPs-rQ&s' alt='Citrix CPX Service Mesh' className="adapter-logo" />Meshery adapter for Citrix CPX</a>
+            </td>
+        </tr>
+        <tr><td className="beta-adapters"/></tr>
+        <tr>
+            <td rowspan="6" class="alpha-adapters">alpha</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-maesh">
+                <img src={maesh} alt='Maesh Service Mesh' className="adapter-logo" />Meshery adapter for Maesh</a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-app-mesh">
+                <img src={awsappmesh} alt='AWS App Mesh Service Mesh' className="adapter-logo" />Meshery adapter for App Mesh </a>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/layer5io/meshery-kuma">
+                <img src={kuma} alt='Kuma Service Mesh' className="adapter-logo" />Meshery adapter for Kuma</a>
+            </td>
+        </tr><tr>
+        </tr>
+        <tr><td className="alpha-adapters"/></tr>
+        </tbody>
+    </table>
+</div>
+
+Some things that Linkerd is known for:
+
+<li>Purpose-built for Kubernetes</li>
+<li>Featuring custom-built, highly performant proxies written in Rust</li>
+<li>Zero-config option (works out-of-the-box)</li>
+<li>Network telemetry built-in (includes a pre-configured, optimised Prometheus instance)</li>
+<li>Low-overhead control-plane</li>
+<li>Operational simplicity (when compared to Istio, for example, even though Istio is getting better in this regard)</li>
+
+So what is covered in the video? More or less the following:
+
+<li>What service mesh tech allows us to do</li>
+<li>What a typical service mesh architecture looks like</li>
+<li>What Layer5 is about (<i>Lookout - it may surprise you!</i> 😯)</li>
+<li>What Meshery is. What Linkerd is.</li>
+<li>How easy it is to install Meshery on your PC (be it Linux, Mac or Windows)</li>
+<ul><li>All it takes is:
+
+```sh
+$ curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
+```
+
+</li></ul>
+<li>How Meshery connects to your Kubernetes cluster (nothing to be done if it’s in your <code>kubectl config current-context</code>)</li>
+<li>How to correctly install and remove Linkerd on your Kubernetes cluster using Meshery</li>
+<li>How to install one of included Linkerd sample applications and verify the installation</li>
+
+That’s quite a lot of content for a 20 minute clip. In the follow-up videos, we’ll dive deeper into many of these concepts. And also show how to use Meshery with other service mesh providers.
+
+This video is also the opening shot of Layer5's [Learn to Service Mesh](https://www.youtube.com/playlist?list=PL3A-A6hPO2IN_HSU0pSfijBboiHggs5mC) playlist, which is specifically dedicated to tutorials and webinars. If service mesh tech interests you and you’re willing to learn more about it, then make sure to [subscribe to the channel](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1) and watch for updates.
+
+And let us know if there’s any specific content you want us to create. Or maybe anything you’ve created yourself and would like to share? Layer5 is all about knowledge sharing and we want to talk to you, so please [join the cloud native community](http://slack.layer5.io)!
+
+Happy meshing!
+<br />
+
+
+</BlogWrapper>

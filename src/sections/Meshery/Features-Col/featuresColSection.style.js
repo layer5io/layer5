@@ -1,116 +1,119 @@
 import styled from "styled-components";
 
-const FeaturesColSectionWrapper = styled.section`
-    padding: 0rem 0rem 5rem 0rem;
-    overflow: hidden;
-    position: relative;
-    .title{
-        width: 100%;
-        margin: auto;
-        margin-bottom: 2rem;
-        text-align: center;
-        .light {
-            font-weight: 500;
-        }
-    }
-    .features-block{
-        padding: 2.5rem 1rem;
-        border-radius: 1.25rem;
-        box-shadow: 2px 4px 2.5rem 0.5rem ${props => props.theme.shadowColor};
-        position: relative;
-        text-align: center;
-        height: 42rem;
-        transition: all 0.3s ease-in;
-        
-        .feature-block{
-            text-align: center;
-            margin: 0 0 0.3rem 0;
-            font-size: .9rem;
-            color: darkgray;
-            h3{
-                font-size: 2rem;
-                font-weight: 600;
-                margin: 0 0 0.625rem 0;
-                color: ${props => props.theme.black};
-            }
-            p{
-                font-size: 18px;
-                color: ${props => props.theme.primaryColor};
-            text-align: center;
-            }
-        }
-        p {
-            font-weight: 300;
-        }
-        .details-block{
-            text-align: left;
-            .table{
-                .icon{
-                    object-fit: cover;
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    vertical-align: top;
-                }
-                .service{
-                    color: ${props => props.theme.black};
-                    font-size: 16px;
-                    padding: 0 0 1.25rem 1.875rem;
-                }
-            }
-        }
-        .count-block{
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0rem;
-            .count{
-                font-weight: 700;
-                margin-bottom: 0.625rem;
-                color: ${props => props.theme.black};
-            }
-            .count-desc{
-                font-size: 0.94rem;
-                color: ${props => props.theme.primaryColor};
-            }
-        }
-    }
-    
-    @media only screen and (max-width: 1200px) {
-        .features-block{
-            height: 48.5rem
-        }
-    }
-    @media only screen and (max-width: 992px) {
-        .features-row {
-            justify-content: center;
-        }
-        .features-block{
-            margin-bottom: 2rem;
-            height: 42rem;
-        }
-    }
-    @media only screen and (max-width: 700px) {
-        .features-block{
-            height: 46rem;
-        }
-    }
-    @media only screen and (max-width: 625px) {
-        .title{
-            width: 100%;
-        }
-        .features-col {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        .features-block{
-            padding: 1.5rem 1rem;
-            height: auto;
-            .count-block{
-                position: relative;
-                bottom: -0.5rem;
-            }
-        }
-    }
+export const FeaturesSectionWrapper = styled.section`
+  margin-bottom: 60px;
+  overflow: hidden;
 `;
 
-export default FeaturesColSectionWrapper;
+export const FeaturesSectionContainer = styled.div`
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 22rem);
+  grid-auto-rows: 1fr;
+  justify-content: space-evenly;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  rect {
+    fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+  }
+  path {
+    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+  }
+  @media (max-width: 1198px) {
+    grid-template-columns: repeat(auto-fill, 17rem);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+    justify-content: center;
+
+    .feature-col {
+      grid-column-end: span 2;
+    }
+
+    .feature-col:last-child {
+      grid-column-start: 2;
+    }
+  }
+
+  @media (max-width: 610px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const FeatureBlockContainer = styled.div`
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.05)"};
+  background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  border-radius: 1.25rem;
+  transition: all 0.3s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+`;
+
+export const TitleContainer = styled.div`
+  text-align: center;
+  padding: 10px;
+
+  .light {
+    font-weight: 500;
+  }
+`;
+
+export const FeatureTitleInfoContainer = styled.div`
+  text-align: center;
+  height: 130px;
+
+  .feature-block {
+    font-size: 0.9rem;
+    color: darkgray;
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 0.625rem 0;
+      padding-top: 15px;
+      color: ${(props) => props.theme.text};
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+    text-align: center;
+    font-weight: 300;
+  }
+`;
+
+export const FeatureInfoContainer = styled.div`
+  flex-grow: 1;
+  .table {
+    .icon {
+      object-fit: cover;
+      height: 2.5rem;
+      width: 2.5rem;
+      vertical-align: top;
+    }
+    .service {
+      color: ${(props) => props.theme.text};
+      font-size: 16px;
+      padding: 0 0 1.25rem 1.875rem;
+    }
+  }
+`;
+
+export const CountBlockContainer = styled.div`
+  text-align: center;
+  .count {
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+    color: ${(props) => props.theme.text};
+  }
+  .count-desc {
+    font-size: 0.94rem;
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+  }
+`;

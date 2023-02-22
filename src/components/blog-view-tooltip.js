@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "../reusecore/Layout";
-import { TiThList } from "react-icons/ti";
-import { BsGrid3X3GapFill } from "react-icons/bs";
+import { TiThList } from "@react-icons/all-files/ti/TiThList";
+import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
@@ -18,9 +18,9 @@ export const ToolTipWrapper = styled.div`
 
     a {
         padding: 5px;
-        color: ${props => props.theme.primaryLightColorTwo};
-        background-color: white;
-        border: 1.5px solid ${props => props.theme.primaryLightColorTwo};
+        color: ${props => props.theme.keppletColor};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        border: 1.5px solid ${props => props.theme.keppletColor};
         &:hover{
             background-color: ${props => props.theme.primaryColor};
             color: ${props => props.theme.primaryLightColorTwo};

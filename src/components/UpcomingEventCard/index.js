@@ -3,11 +3,11 @@ import Image from "../image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Mousewheel } from "swiper";
-import "swiper/swiper-bundle.css";
+import { Pagination, Mousewheel } from "swiper";
+import { Link } from "gatsby";
+import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
-
-SwiperCore.use([Pagination, Mousewheel]);
+import slugify from "../../utils/slugify";
 
 
 const UpcomingEvents = ({ data }) => {
@@ -19,25 +19,28 @@ const UpcomingEvents = ({ data }) => {
           <Swiper
             spaceBetween={100}
             slidesPerView={1}
-            mousewheel
+            modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
           >
             {data.nodes.map(item => {
-              return(
+              return (
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Image {...item.frontmatter.thumbnail} alt={item.frontmatter.title} />
+                      <Link to={`/community/events/${slugify(item.frontmatter.title)}`}>
+                        <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
+                      </Link>
                     </div>
                     <div className="blog-slider_content">
                       <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
                       <p className="blog-slider_date">{item.frontmatter.date}</p>
+                      <p className="blog-slider_description">{item.frontmatter.abstract}</p>
                       <div className="blog-slider_text">
                         <MDXRenderer>
                           {item.body}
                         </MDXRenderer>
                       </div>
-                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" />
+                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" external={true} />
                     </div>
                   </div>
                 </SwiperSlide>

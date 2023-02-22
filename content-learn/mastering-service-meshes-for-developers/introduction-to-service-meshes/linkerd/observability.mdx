@@ -1,0 +1,130 @@
+---
+docType: "Chapter"
+chapterTitle: "Observability"
+description: "Meshery is the cloud native management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+videos: 4
+lectures: 12
+order: 6
+---
+
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import Tracing from "../../../../src/assets/images/learn-layer5/linkerd/emojivoto-tracing.png";
+import JaegerUI from "../../../../src/assets/images/learn-layer5/linkerd/linkerd-jaeger-ui.png";
+
+<ChapterStyle>
+
+<h2 class="chapter-sub-heading">Linkerd Telemetry and Distributed Tracing</h2>
+
+<br />
+
+<h3 class="chapter-sub-heading">Linkerd Telemetry</h3>
+
+Linkerd's telemetry and monitoring features function automatically, without requiring any work on the part of the developer.
+
+We have already looked at Linkerd Telemetry, not by name but by concept. Using stat, top and tap is one of the major and characteristic feature which Linkerd offers out of the box. All of this metrics are also accessible through Grafana Dashboard which Linkerd provides.
+
+Expose Grafana dashboard:
+
+```sh
+linkerd dashboard &
+```
+
+- Start `linkerd dashboard` &amp; navigate over the service you would want to see Grafana Dashboard for.
+- In the last column, click of the `Grafana Icon` to access the metrics dashboard for the following deployment.
+
+<h3 class="chapter-sub-heading">Distributed tracing with Linkerd</h3>
+
+Linkerd added support for Distributed Tracing, which means that if your application has enabled tracing based on B3 Propagation, Linkerd proxies would automatically recognize that (as the trace-id is propagated through http headers) and send their spans, provided that the proxies are configured regarding the meshed trace collector endpoint.
+
+To enable tracing onto your cluster :
+
+```sh
+cat >> config.yaml << EOF
+tracing:
+  enabled: true
+EOF
+```
+
+This configuration file can also be used to apply Add-On configuration (not just specific to tracing Add-On).
+
+Let us apply that configuration to the linkerd upgrade command using the --addon-config flag and pipe that output to kubectl apply.
+
+```sh
+linkerd upgrade --addon-config config.yaml | kubectl apply -f -
+```
+
+Before moving onto the next step, make sure everything is up and running with kubectl:
+
+```sh
+kubectl -n linkerd rollout status deploy/linkerd-collector
+kubectl -n linkerd rollout status deploy/linkerd-jaeger
+```
+
+<h4 class="chapter-sub-heading">Configure your sample application</h4>
+
+Apply the tracing configuration to the `emojivoto application`:
+
+```sh
+kubectl -n emojivoto patch -f https://run.linkerd.io/emojivoto.yml -p '
+spec:
+  template:
+    metadata:
+      annotations:
+        config.linkerd.io/trace-collector: linkerd-collector.linkerd:55678
+        config.alpha.linkerd.io/trace-collector-service-account: linkerd-collector
+'
+```
+
+Before moving onto the next step, make sure everything is up and running with kubectl:
+
+```sh
+kubectl -n emojivoto rollout status deploy/web
+```
+
+The above command enables tracing in the linkerd proxies but the application containers still don’t have it enabled. Tracing can be enabled in the sample application can be enabled by
+
+To enable tracing in emojivoto, run:
+
+```sh
+ kubectl -n emojivoto set env --all deploy OC_AGENT_HOST=linkerd-collector.linkerd:55678
+```
+
+<h3 class="chapter-sub-heading">Explore Jaeger</h3>
+
+Now, you can port-forward the `linkerd-jaeger` service to checkout the traces.
+
+```sh
+kubectl -n linkerd port-forward svc/linkerd-jaeger 16686:16686
+```
+
+Now let's explore traces of the `vote-bot` endpoint:
+
+<a href={Tracing}>
+  <img src={Tracing} width="100%" align="center" />
+</a>
+
+So, As you can see there are spans of the linkerd-proxy. For each request between two meshed components, you can see there are four linkerd-proxy spans.
+
+The first two spans would be the spans sent from the proxy of the client component and will be marked as outbound. Again, in these two spans, the first one is the span of the application -> proxy, and the second one is the proxy->otherside. They are differentiated by the server and client tags respectively.
+
+<br />
+
+<h3 class="chapter-sub-heading"> Jaeger and Linkerd</h3>
+<br />
+In Linkerd, as told above Grafana Integration is present in the `linkerd-web` ui
+through which which you can directly jump onto the dashboards of any workload
+like deployment, pod, etc.
+
+Linkerd has done similar thing with Jaeger, if you have `tracing` enabled, if you navigate the Linkerd Dashboard, you should see a Jaeger icon on the right.
+
+<a href={JaegerUI}>
+  <img src={JaegerUI} width="100%" align="center" />
+</a>
+
+<h3 class="chapter-sub-heading">Cleanup the tracing components</h3>
+
+```sh
+kubectl delete ns tracing emojivoto
+```
+
+</ChapterStyle>

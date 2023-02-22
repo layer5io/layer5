@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaEnvelope,
-  FaPinterestP,
-  FaInstagram
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaLinkedinIn,
+//   FaEnvelope,
+//   FaPinterestP,
+//   FaInstagram
+// } from "react-icons/fa";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
@@ -35,7 +35,7 @@ const FooterClassic = () => {
               <form className="subscribe-form">
                 <input type="text" placeholder="Search here..." />
                 <Button>
-                  <FaEnvelope />
+                  {/* <FaEnvelope /> */}
                 </Button>
               </form>
             </div>
@@ -84,27 +84,27 @@ const FooterClassic = () => {
               <ul className="social">
                 <li>
                   <Link to="#">
-                    <FaFacebookF />
+                    {/* <FaFacebookF /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaTwitter />
+                    {/* <FaTwitter /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaInstagram />
+                    {/* <FaInstagram /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaLinkedinIn />
+                    {/* <FaLinkedinIn /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaPinterestP />
+                    {/* <FaPinterestP /> */}
                   </Link>
                 </li>
               </ul>

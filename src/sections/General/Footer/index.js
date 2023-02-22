@@ -8,9 +8,14 @@ import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
+  var currentYear = new Date().getFullYear();
   return (
     <FooterWrapper>
-      <img className="section__particle" src={bubblesElement} alt="Layer5, the service mesh company" />
+      <img
+        className="section__particle"
+        src={bubblesElement}
+        alt="Layer5, the cloud native management company"
+      />
       <Container>
         <Row className="footer-head">
           <Col className="footer_logo-icons" sm={3}>
@@ -25,38 +30,61 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
-              Creator and maintainer of service mesh standards.
-              Maker of Meshery, the service mesh management plane.
+              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure.
+              Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
             <Row>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/learn">
-                      RESOURCES
+                  <Link className="title-link" to="/resources">
+                    RESOURCES
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
-                      Service Mesh Feature Comparison
+                    <Link
+                      className="category-link"
+                      to="/learn/learning-paths"
+                    >Learning Paths
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
-                      Service Mesh Strength Comparison
+                    <Link className="category-link" to="/resources">
+                      Resource Library
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/learn/service-mesh-books">
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-books"
+                    >
                       Service Mesh Books
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/learn/service-mesh-workshops">
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-workshops"
+                    >
                       Service Mesh Workshops
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/service-mesh-landscape"
+                    >
+                      Service Mesh Comparison
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-labs"
+                    >
+                      Service Mesh Interactive Labs
                     </Link>
                   </li>
                 </ul>
@@ -79,8 +107,26 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    <a
+                      className="category-link"
+                      href="https://discuss.layer5.io"
+                    >
+                      Forum
+                    </a>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/company/faq">
+                      FAQs
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/careers/programs">
-                      Programs
+                      Internship Programs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/community/handbook/writing-program">
+                      Writing Program
                     </Link>
                   </li>
                 </ul>
@@ -88,30 +134,57 @@ const Footer = () => {
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/projects">
-                    PROJECTS
+                    SOLUTIONS
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/service-mesh-management/meshery">
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/meshmap"
+                    >
+                      MeshMap
+                      <span className="new-label">NEW</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/meshery"
+                    >
                       Meshery
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape">
-                      Service Mesh Landscape
+                    <Link className="category-link" to="/projects/nighthawk">
+                      Nighthawk
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/service-mesh-interface-conformance">
+                    <Link
+                      className="category-link"
+                      to="/docker-extension-meshery"
+                    >
+                      Docker Extension
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/projects/service-mesh-interface-conformance"
+                    >
                       Service Mesh Interface
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/service-mesh-performance">
-                      Service Mesh Performace
+                    <Link
+                      className="category-link"
+                      to="/projects/service-mesh-performance"
+                    >
+                      Service Mesh Performance
                     </Link>
                   </li>
+
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -129,6 +202,11 @@ const Footer = () => {
                   <li>
                     <Link className="category-link" to="/company/brand">
                       Brand
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/pricing">
+                      Pricing
                     </Link>
                   </li>
                   <li>
@@ -150,13 +228,29 @@ const Footer = () => {
               </div>
             </Row>
             <Row className="subscribe">
-              <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+              <form
+                name="contactform"
+                method="post"
+                action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
+              >
                 <div>
-                  <span>
-                    Subscribe to our Newsletter
-                  </span>
-                  <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
-                  <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+                  <span>Subscribe to our Newsletter</span>
+                  <input
+                    className="inputrow subscribe-email"
+                    type="email"
+                    placeholder="Email Address"
+                    name="EMAIL"
+                    id="mce-EMAIL-2"
+                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
+                    onInput={e => e.target.setCustomValidity("")}
+                    required
+                  />
+                  <Button
+                    secondary
+                    title="Subscribe"
+                    aria-label="subscribe-us"
+                    id="mc-embedded-subscribe-2"
+                  />
                 </div>
               </form>
             </Row>
@@ -165,16 +259,29 @@ const Footer = () => {
         <Row>
           <div className="footer-bottom">
             <p className="copyright-text">
-              2021 Copyright ©Layer5, Inc | All Rights Reserved
+              {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
             <ul className="policies">
               <li>
-                <a href="https://meshery.layer5.io/privacy-policy.html" target="_blank" rel="noreferrer">
+                <a
+                  href="https://layer5.statuspage.io"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Status
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/company/legal/privacy"
+                >
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="https://meshery.layer5.io/terms-of-service.html" target="_blank" rel="noreferrer">
+                <a
+                  href="/company/legal/terms-of-service"
+                >
                   Terms
                 </a>
               </li>

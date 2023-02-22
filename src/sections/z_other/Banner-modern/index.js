@@ -6,7 +6,7 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import ParticleComponent from "../../../reusecore/Particle";
 
-import { FaPlay, FaDownload } from "react-icons/fa";
+// import { FaPlay, FaDownload } from "react-icons/fa";
 
 import BannerSectionWrapper from "./banner.style";
 import imgHero from "../../../assets/images/app/hero/mobile-screen.png";
@@ -34,10 +34,10 @@ const BannerModern = () => {
             </p>
             <VintageBox right={true} vintageOne={true}>
               <Button className="banner-btn one" title="Run Meshery">
-                <FaDownload className="icon-left" />
+                {/* <FaDownload className="icon-left" /> */}
               </Button>
               <Button className="banner-btn two" title="Watch Now">
-                <FaPlay className="icon-left" />
+                {/* <FaPlay className="icon-left" /> */}
               </Button>
             </VintageBox>
           </Col>

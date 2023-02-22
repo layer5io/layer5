@@ -1,0 +1,187 @@
+---
+title: "Debug Envoy Proxy"
+subtitle: ""
+description: "An open index for measuring performance of cloud native infrastructure in context of the value provided to your business."
+date: 2022-05-27 09:10:00 +0000
+author: Layer5 Team
+thumbnail: ./debug-envoy-proxy.svg
+darkthumbnail: ./debug-envoy-proxy.svg
+category: Envoy
+tags:
+  - Envoy
+  - Troubleshooting
+published: true
+resource: true
+type: Blog
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import bugEnvoy from "./debug-envoy-proxy.svg";
+import DockerExtensionCTA from "../../../../sections/Docker-Meshery/docker-extension-CTA";
+import Code from "../../../../components/CodeBlock";
+
+<BlogWrapper>
+<p>
+    Trying to figure out what's happening with your request traffic? Not sure why your Envoy configuration isn't working? If you're using Istio as your gateway and need to troubleshoot your ingress traffic requests, here are a few tips for debugging Envoy proxy.
+</p>
+<h2>Enable Envoy Debug Logging</h2>
+<p>
+  By default Envoy system logs are sent to <code>/dev/stderr</code>. This location be overridden using <code>--log-path</code>. Logging to <code>/dev/stderr</code>  for system logs and to <code>/dev/stdout</code> for access logs can be useful when running Envoy inside a container. In this way, these two individual logstreams can be separated, and using this approach, logging requires no additional files or directories to be mounted.
+</p>
+<div class="intro">
+<p>
+  We recommend setting the Envoy proxy’s log level to debug in a pre-production environment. Debug logs can help you identify issues before you graduate the associated configuration to your production environment.
+</p>
+</div>
+<h3>Using envoy CLI</h3>
+<p>
+  The envoy command has a <code>--log-level</code> flag that can be useful for debugging. By default, it’s set to info. To change it to debug, edit the envoy DaemonSet in the istio-system namespace and replace the <code>--log-level info</code> flag with <code>--log-level debug</code>. Setting the Envoy log level to debug can be particilarly useful for debugging TLS connection failures.
+</p>
+<h3>Using container image</h3>
+<p>
+  If you’re using the Envoy image, you can set the log level to debug through the <code>ENVOY_LOG_LEVEL</code> environment variable. The log level for Envoy system logs can be set using the <code>-l</code> or <code>--log-level</code> option.
+</p>
+
+The available log levels are:
+
+<ul>
+  <li className="highlight" style="width: fit-content;">trace</li>
+  <li className="highlight" style="width: fit-content;">debug</li>
+  <li className="highlight" style="width: fit-content;">info</li>
+  <li className="highlight" style="width: fit-content;">warning/warn</li>
+  <li className="highlight" style="width: fit-content;">error</li>
+  <li className="highlight" style="width: fit-content;">critical</li>
+  <li className="highlight" style="width: fit-content;">off</li>
+</ul>
+
+The default is <span className="highlight">info</span>.
+
+<h3>Setting Envoy logs in the Helm configuration</h3>
+
+<p>
+  The Consul helm chart uses <code>envoyExtraArgs:</code> to leverage Envoy command line options. One of the helpful options is <code>--component-log-level</code>. This provides granular control over setting log levels for Envoy components. In the example below, the components upstream, http, router and config are set to the debug log level. These four components are vital when debugging issues with requests between your services(sidecar proxies).
+</p>
+
+<div>
+  <pre>
+    <code>connectInject:
+  enabled: true
+  envoyExtraArgs: "--component-log-level upstream:debug,http:debug,router:debug,config:debug"</code>
+  </pre>
+</div>
+
+<p>
+  If you haven't set envoyExtraArgs: in consul-values.yaml just yet, you can set the log levels on the fly by using the following kubectl command:
+</p>
+
+<div>
+  <pre>
+    <code>$ kubectl exec pod/pod-name -c container-name -- curl -X POST http://localhost:19000/logging?config=debug</code>
+  </pre>
+</div>
+
+<p>Example:</p>
+
+<div>
+  <pre>
+    <code>$ kubectl exec pod/static-client-5bf4575d9c-zr2b -c static-client -- curl -X POST  http://localhost:19000/logging?config=debug</code>
+  </pre>
+</div>
+
+<p>
+  You will execute the kubectl command for each component. Make sure to append the correct component at the end of the curl command, i.e. <code>logging? component = debug</code>.
+</p>
+
+<p>
+  If curl is not able to be used in your pod, you can alternatively use <code>kubectl port-forward pod-name 19000</code> to make the Envoy admin accessible. From another terminal window, you can then curl to change the log levels. The output you receive in the terminal will show the modified component log levels.
+</p>
+
+<div>
+  <pre>
+    <code>$ curl -X POST http://localhost:19000/logging? component = debug</code>
+  </pre>
+</div>
+<h3>Access Envoy logs in Kubernetes</h3>
+
+<p>Accessing Envoy logs via pods can be done with the following command:</p>
+
+<div>
+  <pre>
+    <code>$ kubectl logs --follow pod/ pod-name -c envoy-sidecar</code>
+  </pre>
+</div>
+
+<p>The --follow flag provides a real time observation into Envoy logs. </p>
+
+<h3>Setting and Accessing Envoy logs when not using Helm.</h3>
+
+<p>The following command will start an envoy side car proxy, set the log level to debug with -l debug and capture Envoy logs in envoy_logs.txt. The .txt file will need to be created before executing this command.</p>
+
+<div>
+  <pre>
+    <code>$ consul connect envoy -sidecar-for counting-1 -- -l debug --log-path envoy_logs.txt</code>
+  </pre>
+</div>
+
+<p>To have granular control over the Envoy components that is needed to be debugged, use the following command:</p>
+
+<div>
+  <pre>
+    <code>$ consul connect envoy -sidecar-for counting-1 -- --log-path envoy_logs.txt --component-log-level upstream:debug,http:debug,router:debug,config:debug</code>
+  </pre>
+</div>
+
+<h2>Find your Istio Ingress Gateway</h2>
+<p>
+  With Istio as your gateway, you should first look at <code>VirtualService</code> objects. These can show if the hosts are registered to the gateway correctly.
+</p>
+
+<div>
+  <pre>
+    <code>$ kubectl get virtualservice -o=yaml</code>
+  </pre>
+</div>
+
+<p>
+  However, sometimes, the <a  className="highlight" href="https://envoyproxy.io">Envoy</a> inside the gateway container is not properly configured (likely due to a bug). You can dump Envoy configuration to debug this further.
+</p>
+
+<div>
+  <pre>
+    <code># find istio ingress gateway pod \
+      $ kubectl get pods -n istio-system -l app=istio-ingressgateway</code>
+  </pre>
+</div>
+
+<p>
+  Let's use <code>istio-ingressgateway-a93019f9dfw-l39xd</code> as an example pod name.
+</p>
+
+<div>
+  <pre>
+    <code>
+      # enable debugging on envoy \
+      $ kubectl exec --namespace=istio-system \
+      istio-ingressgateway-a93019f9dfw-l39xd \
+      -c istio-proxy -- curl -X POST \
+      http://localhost:15000/logging?level=debug
+    </code>
+  </pre>
+</div>
+<p>
+  Then, use <code>istioctl</code> tool to dump route configuration (this will show the output from the <a href="https://www.envoyproxy.io/docs/envoy/latest/operations/admin#operations-admin-interface-config-dump"><code>/config_dump</code> admin endpoint</a> on Envoy):
+</p>
+<div>
+  <pre>
+    <code>
+    $ istioctl proxy-config routes -n istio-system -o=json \
+      istio-ingressgateway-a93019f9dfw-l39xd
+    </code>
+  </pre>
+</div>
+<p>
+  We hope these steps are useful to you. If you're still having trouble configuring Envoy proxy, open up a new thread on the <a href="https://discuss.layer5.io" className="highlight">community discussion forum</a> or subscribe to the <Link to="/subscribe" className="highlight">Layer5 newletter</Link> for tips and tricks.
+</p>
+
+</BlogWrapper>

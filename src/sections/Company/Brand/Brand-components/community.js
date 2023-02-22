@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.png";
 import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.png";
 

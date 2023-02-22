@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 ::selection {
-    background: ${(props) => props.theme.primaryColor};
+    background: ${(props) => props.theme.selectionColor};
     color: #ffffff;
 }
 
@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
+    background: ${(props) => props.theme.body};
 }
 
 body,html {
@@ -35,8 +36,10 @@ body {
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Open Sans', sans-serif;
-  color: ${(props) => props.theme.textColor};
+
+  color: ${(props) => props.theme.text};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
@@ -51,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', 'Open Sans', sans-serif;
+    font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
     color: ${(props) => props.theme.tertiaryColor};
     margin: 0;
     line-height: normal;
@@ -109,7 +112,17 @@ h2.sub-heading, h3.sub-heading {
     margin-bottom: 1.25rem;
 }
 
-p {
+h5.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    @media (max-width: 62rem) {
+      font-size: 1.1rem;
+    }
+}
+input {
+  font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
+}
+p { 
     margin: 0 0 1rem 0;
     font-size: 1.125rem;
     font-weight: 400;
@@ -117,7 +130,9 @@ p {
       font-size: 1rem;
     }
 }
-
+Button:hover {
+  box-shadow: 0 2px 10px  ${(props) => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+}
 a {
     text-decoration: none;
     color: ${(props) => props.theme.linkColor};
@@ -140,13 +155,15 @@ section{
     position: absolute;
     inset: 50% auto auto 50%;
     border: 1px solid rgb(204, 204, 204);
-    background: rgb(255, 255, 255);
-    overflow: hidden;
+    background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
     outline: none;
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    max-width: 50rem;
+    max-height: 40rem;
+    overflow-y: hidden;
 
     .close-modal-btn {
         min-width: 2rem;
@@ -159,7 +176,6 @@ section{
         svg {
             font-size: 2rem;
             width: 1.75rem;
-
         }
     }
 
@@ -174,6 +190,7 @@ section{
     inset: 0px;
     background-color: rgba(255, 255, 255, 0.75);
     z-index: 9999;
+    overflowY: auto;
 }
 
 .contact-form {
@@ -187,6 +204,31 @@ section{
     overflow: hidden;
 }
 
+/* Modal CSS Ends */
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;
@@ -200,7 +242,31 @@ section{
     }
 }
 
-/* Modal CSS Ends */
+// Banner Display
+.banner1 {
+  .banner1 {
+    display: block !important;
+  }
+}
+
+.banner2 {
+  .banner2 {
+    display: block !important;
+  }
+}
+
+.banner3 {
+  .banner3 {
+    display: block !important;
+  }
+}
+
+.banner4 {
+  .banner4 {
+    display: block !important;
+  }
+}
+
 `;
 
 export { GlobalStyle };

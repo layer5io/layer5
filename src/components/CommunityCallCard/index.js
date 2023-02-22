@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Row, Col} from "../../reusecore/Layout";
+import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import hero from "./hero.png";
 
@@ -51,20 +51,20 @@ const CommunityCallCardWrapper = styled.div`
     }
 `;
 
-const CommunityCallCard = ({hero_image}) => {
+const CommunityCallCard = ({ hero_image }) => {
 
-  return(
+  return (
     <CommunityCallCardWrapper>
       <img className="card-img" alt="community" src={hero_image ? hero_image : hero} />
       <div className="card-text">
-        <h4> Community Call </h4>
-        <p> Layer5 hosts official monthly community calls where users and contributors can discuss about any topic and demonstrate  use-cases. </p>
+        <h4> Community Meeting </h4>
+        <p> Layer5 hosts weekly community calls where users and contributors discuss cloud native topics and demonstrate advancements of its open source projects. </p>
         <h4 className="highlight"> Interested? </h4>
-        <p> You can register below for the next Community Call. </p>
+        <p> You can register below for the next Layer5 community meeting. </p>
         <Row>
           <form name="registerform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
             <Col xs={7}>
-              <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+              <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required  onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             </Col>
             <Col xs={3}>
               <Button secondary title="Subscribe" id="mc-embedded-subscribe" />

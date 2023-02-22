@@ -6,7 +6,7 @@ const EngineerEnabler = () => {
 
   return (
     <EngineerWrapper>
-      <h5>Learn more about how Layer5 is a service mesh leader</h5>  
+      <h5>Learn more about how Layer5 is a service mesh leader</h5>
       <div className="head-cont">
         <h1 className="resp">
           <span>Enabler of Engineers. </span>

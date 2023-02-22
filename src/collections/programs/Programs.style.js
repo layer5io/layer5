@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const ProgramsWrapper = styled.div`
+    a {        color: ${props => props.theme.keppelColor};
+}
     img{
         width: 19vw;
         float: right;
         margin-left: 40px;
         margin-bottom: 30px;
         &.hacktoberfest-img {
-            width: 22vw;
+            width: 50%;
 
             @media only screen and (max-width: 768px) {
                 width: 27vw;
@@ -52,6 +54,9 @@ export const ProgramsWrapper = styled.div`
         text-align: center;
         vertical-align: bottom;
     }
+    .gsod-table-container{
+        overflow-x: auto;
+    }
     .tutorials-table {
         border-spacing: 0;
         th {
@@ -66,7 +71,7 @@ export const ProgramsWrapper = styled.div`
         tbody tr {
             transition: .2s ease;
             :hover {
-                background-color: #f5f5f5;
+                ${props => props.theme.DarkTheme ? "background-color: #3c494f" : "background-color: #f5f5f5" };
             }
 
         }

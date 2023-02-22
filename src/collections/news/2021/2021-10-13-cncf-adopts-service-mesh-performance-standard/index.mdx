@@ -1,0 +1,68 @@
+---
+title: "CNCF Adopts Service Mesh Performance Standard Established by Layer5 "
+subtitle: "5,000 service mesh performance tests under analysis"
+date: 2021-10-13 04:00:05 +0000
+author: The Newsroom
+category: "Press Release"
+thumbnail: "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png"
+darkthumbnail: "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png"
+presskit: "/press/kits/CNCF-Adopts-SMP-press-kit.zip"
+# eurl: https://docs.google.com/document/d/1F52wKEX1AixH8C4jqTGelP6TUcDvnsB47DDDCEJdJ44/edit?pli=1#
+published: true
+type: News
+product: Service Mesh Performance
+resource: true
+---
+
+import { NewsWrapper } from "../../News.style.js";
+import smpMeshery from "./smp-meshery.png";
+
+<NewsWrapper>
+
+LOS ANGELES, Oct. 13, 2021 - ServiceMeshCon/KubeCon + CloudNativeCon: Layer5 today announced Service Mesh Performance, an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.
+
+“We donated the Service Mesh Performance specification and body of research surrounding it offers a much-needed vendor-neutral home for providing (often contentious) insights to the popular performance and efficiency questions facing service mesh vendors and more broadly cloud native infrastructure”, said Layer5 Founder and CEO Lee Calcote. “Service Mesh Performance provides a unified framework to define standardized benchmarking practices, performance test configurations, homogenous measurements, and ultimately, MeshMark, a new performance measurement index to measure the efficiency of  service meshes and their workloads both in and outside of Kubernetes.”
+
+<h3>Standardizing Service Mesh Value Measurement</h3>
+
+<a href="https://smp-spec.io">Service Mesh Performance</a> is a vendor neutral, cloud native performance measurement standard for capturing and characterizing application and infrastructure efficiency, including details of infrastructure capacity, service mesh configuration, and workload metadata.
+<ol>
+    <li>the ability to reason over the efficiency by which cloud native infrastructure is run, specifically in context of a service mesh and its network functions, including custom filters and/or protocol translators using WebAssembly or other.</li>
+    <li>standard benchmarks of service mesh performance</li>
+    <li>common vernacular and measurement for exchange of performance information from system-to-system and mesh-to-mesh</li>
+    <li>apples-to-apples performance comparisons of service mesh deployments and tooling to trend workload performance.</li>
+    <li>a universal performance index to gauge a service mesh’s efficiency against deployments in other organizations’ environments.</li>
+</ol>
+
+<p>"A common language and understanding when dealing with system performance measurements is incredibly important when comparing benchmarks from different systems or historical data from a single system; a slight variation in the measurement approach completely invalidates the comparison.”, said Nic Jackson, SMP Maintainer and Principal Developer Advocate at HashiCorp. “SMP attempts to solve these problems, bringing together a community of incredibly knowledgeable practitioners passionate about improving system performance measurements."
+</p>
+
+<img src={smpMeshery} alt="SMP in Meshery"/>
+
+<h3>CNCF Adopts the Service Mesh Performance project</h3>
+
+With multiple academic institutions and many vendors involved in the project, the CNCF provides a neutral place for publication of this research and encourages participation from each service mesh vendor under the promise of unbiased analysis, which will help all involved to collectively improve their service mesh implementations and end users to improve operations of their deployments.
+
+“As communication networks evolve toward cloud native 5G and Edge computing, service mesh forms the basis of underlying infrastructure and application networking”, said Sunku Raganath, SMP Maintainer and Solutions Architect at Intel. “Studying service mesh performance across the multitude of deployment scenarios enables us to understand its impact on latency and throughput, in turn, enabling application developers and infrastructure providers to customize and control service mesh behavior within these latency constrained environments”. Service Mesh Performance is squarely focused on critical scenarios of performance management across 5G and Edge computing environments. “An efficient service mesh performance for the given combination of resources for a particular KPI will determine whether the current hardware and software scheduling environment is optimal or needs a change“, said Mrittika Ganguli, Director and PE, cloud native solutions, NEXG, Intel.
+
+
+<h3>Partnership with University of Texas at Austin, Intel, HashiCorp, and Red Hat engineers</h3>
+
+“More than performance, in collaboration with our maintainers from Layer5, Intel, Red Hat, and HashiCorp, we are actively standardizing service mesh value measurement in the form of a new index to be announced early next year”, said Calcote. “As a foundation for this research, 5,000 service mesh performance tests donated by users of Meshery have been donated and are under analysis.” 
+
+Performance tests are run by Meshery, the open source, multi-mesh manager. Meshery is the canonical implementation of Service Mesh Performance (SMP) and the conformance tool of Service Mesh Interface (SMI). Meshery implements and helps users adopt and vendors uphold these specifications. A jointly authored paper on service mesh performance methodologies will be published by the IEEE later this month, which explores how to model your service mesh topology and optimize for your ideal configuration in context of how much operators value properties of resiliency, performance, throughput, and latency.
+
+<h3>Service Mesh Performance Resources</h3>
+<ul>
+    <li><a href="https://smp-spec.io/subscribe">Community Newsletter</a></li>
+    <li><a href="https://discuss.layer5.io">Service Mesh Discussion Forum</a></li>
+    <li><a href="https://twitter.com/smp_spec">Service Mesh Performance Twitter</a></li>
+    <li><a href="https://www.linkedin.com/showcase/service-mesh-performance">Service Mesh Performance LinkedIn</a></li>
+    <li><a href="https://www.youtube.com/watch?v=_yrncjtPpg4&list=PL3A-A6hPO2INwi8A3NNClvdCxDoHa9NOU">Service Mesh Performance YouTube</a></li>
+    <li><a href="https://smp-spec.io">Service Mesh Performance Website</a></li>
+</ul>
+
+<h3>About Layer5</h3>
+Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. Layer5’s MeshMap delivers the world’s only universal service mesh designer. Layer5’s leadership stewards the Network and Service Mesh groups in the CNCF.
+
+</NewsWrapper>

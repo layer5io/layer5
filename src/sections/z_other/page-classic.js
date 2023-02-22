@@ -25,7 +25,6 @@ const ClassicPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Layout>
-      <SEO title="Layer5 | The Service Mesh Company" />
       <Navigation />
       <BannerClassic />
       <AboutClassic />
@@ -43,3 +42,7 @@ const ClassicPage = () => (
   </ThemeProvider>
 );
 export default ClassicPage;
+
+export const Head = () => {
+  return <SEO />;
+};

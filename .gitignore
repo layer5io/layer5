@@ -4,6 +4,7 @@ _site
 .jekyll-cache
 .idea
 
+
 # Logs
 logs
 *.log
@@ -69,8 +70,14 @@ public
 
 # Yarn
 yarn-error.log
+yarn.lock
 .pnp/
 .pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/
+
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -78,3 +85,9 @@ yarn-error.log
 .vscode
 
 default.profraw
+
+#Husky configuration
+.husky/_/
+
+# Lighthouse CI
+.lighthouseci/

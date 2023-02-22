@@ -13,9 +13,13 @@ const ImageHubWrapper = styled.section`
             }
             h4{
                 border: 1px solid gray;
-                padding: 0 0.625rem 0 0.625rem;
-                width: 17.19rem;
+                padding: 0.2rem 0.625rem 0.2rem 0.625rem;
+                font-size: 1.325rem;
+                width: 15rem;
+                font-weight: 600;
                 color: ${props => props.theme.white};
+                margin:0.5rem 0;
+                text-align:center;
             }
         }
         .logo{
@@ -29,7 +33,7 @@ const ImageHubWrapper = styled.section`
             color: ${props => props.theme.white};
         }
         .iframe-div{
-            height: 400px;
+            height: 450px;
             aspect-ratio: 2;
             display: block;
             margin: 3.125rem auto;
@@ -46,7 +50,7 @@ const ImageHubWrapper = styled.section`
             }	
             .slick-arrow:before{	
                 color: ${props => props.theme.primaryColor};
-                font-size: 2.5rem;
+                font-size: 3rem;
                 display: inline-block;
             }
             .slick-arrow:hover:before{	
@@ -117,4 +121,4 @@ const ImageHubWrapper = styled.section`
     }
 `;
 
-export default ImageHubWrapper; 
+export default ImageHubWrapper;

@@ -4,12 +4,13 @@ export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
         border-radius: 0.5rem;
-        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+        background-Color:${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
             .post-thumb-block{
-                .gatsby-image-wrapper{
+                .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
                 }
             }
@@ -22,7 +23,10 @@ export const CardWrapper = styled.div`
             }
         } 
     }
+    .readmore-btn{
+        color: ${props => props.theme.secondaryColor};
 
+    }
     @media screen and (max-width:776px){
 		.post-block{
 			width: auto;
@@ -36,7 +40,7 @@ export const CardWrapper = styled.div`
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
 
-        .gatsby-image-wrapper{
+        .gatsby-image-wrapper, .old-gatsby-image-wrapper{
             height:100%;
             transition: all 0.3s ease-in;
         }
@@ -57,16 +61,21 @@ export const CardWrapper = styled.div`
     @media screen and (max-width: 1200px) and (min-width: 992px){
         .post-thumb-block{
             height: 12rem;
+            
         }
-
+       
         .post-content-block{
             height: 10rem;
         }
+           
+
     }
+   
 
     @media screen and (max-width: 670px) and (min-width: 560px){
         .post-content-block{
             height: 10rem;
+            
         }
     }
 
@@ -79,7 +88,6 @@ export const CardWrapper = styled.div`
     .post-title{
         font-size: 1.4rem;
         font-weight: 400;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -93,10 +101,15 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: rgba(0, 0, 0, 0.4);
+            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
+        }
+        .type{
+            text-align: end;
+            font-size: 1rem;
+            font-weight: 400;
         }
     }
 
@@ -114,9 +127,8 @@ export const CardWrapper = styled.div`
         right: 0;
         bottom: 0;
     }
-
     .readmore-btn, .external-link-btn{
-       color: rgba(0,0,0,0.4);
+       color: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
        display: flex;
        flex: auto;
        align-items: center;

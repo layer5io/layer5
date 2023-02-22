@@ -6,6 +6,7 @@ const BlockquoteStyle = styled.div`
     display: flex;
     /* height: 100vh; */
     padding: 0 10px;
+    margin-bottom: 1rem;
     }
 
     /* Blockquote main style */
@@ -46,7 +47,7 @@ const BlockquoteStyle = styled.div`
         content:"";
         position: absolute;
         width: 80px;
-        border: 6px solid #fff;
+        border: 6px solid ${props => props.theme.body};
         bottom: -3px;
         left: 50px;
         z-index: 2;

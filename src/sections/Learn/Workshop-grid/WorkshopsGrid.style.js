@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const WorkshopPageWrapper = styled.div`
+	Button:hover {
+	box-shadow: none;
+	}
 	.btn-and-status {
 		display: flex;
 		width: 97%;
@@ -17,6 +20,7 @@ export const WorkshopPageWrapper = styled.div`
 	}
     h2.sub-heading {
         font-weight: 400;
+		margin: -0.5rem auto 5rem;
     }
 	.btn-and-status-open {
 		display: flex;
@@ -44,7 +48,7 @@ export const WorkshopPageWrapper = styled.div`
 		color: #eee;
 		background-color: ${props => props.theme.secondaryColor};
 		border: none;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		border-radius: 0.9375rem;
 		outline: none;
 	}
@@ -67,6 +71,7 @@ export const WorkshopPageWrapper = styled.div`
 
 	button.readmeBtn {
 		display: flex;
+		color: ${props => props.theme.text};
 		background: transparent;
 		border: none;
 		justify-content: center;
@@ -76,7 +81,7 @@ export const WorkshopPageWrapper = styled.div`
 		transition: 0.2s ease-in all;
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.linkColor};
 		}
 	}
 
@@ -91,11 +96,11 @@ export const WorkshopPageWrapper = styled.div`
 
 	a.siteLink {
 		padding: 0.5rem 0.25rem 0rem;
-		filter: grayscale(100%) brightness(0.5);
+		filter: grayscale(100%) brightness(${props => props.theme.siteLinkBrightness});
 		transition: 0.2s ease-in-out all;
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.keppelColor};
 			filter: none;
 		}
 	}
@@ -110,7 +115,7 @@ export const WorkshopPageWrapper = styled.div`
 		display: none;
 		width: 100%;
 		height: 100%;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 	}
 
 	.active {
@@ -157,7 +162,10 @@ export const WorkshopPageWrapper = styled.div`
 		padding-bottom: 3.75rem;
 	}
 
+	
+
 	.workshop-grid-card {
+		background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		width: 100%;
 		display: block;
 		height: auto;
@@ -199,6 +207,7 @@ export const WorkshopPageWrapper = styled.div`
 	}
 
 	.para {
+		color: ${props => props.theme.text};
 		text-align: center;
 		font-weight: 500;
 	}
@@ -210,7 +219,9 @@ export const WorkshopPageWrapper = styled.div`
 			margin: auto;
 			display: block;
 		}
-		
+		Button:hover {
+			box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+		}
 		a {
 			margin: auto;
 		}

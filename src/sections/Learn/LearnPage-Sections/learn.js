@@ -1,8 +1,11 @@
 import React from "react";
-import { Col } from "../../../reusecore/Layout";
+import { Link } from "gatsby";
+import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import {FaArrowRight} from "react-icons/fa";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Meshery_Logo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import OReillyLogo from "./OReilly_logo_rgb.svg";
+import { data } from "../Service-Mesh-Labs/courseData";
 import styled from "styled-components";
 
 const LearnSectionWrapper = styled.div`
@@ -69,6 +72,21 @@ const LearnSectionWrapper = styled.div`
     .learn-buttons-section {
         text-align: center;
         margin: 4rem 0 2rem;
+        &.labs{
+          button{
+            max-width: 20rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+          }
+          
+          img{
+            margin-top: 3rem;
+            opacity: 0.5;
+          }
+        }
     }
 
     .learn-cards-section {
@@ -166,33 +184,40 @@ const LearnSection = () => {
       </div>
       <div>
         <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
+        <Container>
+          <Row Hcenter className="learn-buttons-section labs">
+            <Col xs={12} lg={6}>
+              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 0 }}>
+                <Button secondary title="Getting started with any service mesh"/>
+              </Link>
+            </Col>
+            <Col xs={12} lg={6}>
+              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 1 }}>
+                <Button secondary title="Managing the performance of your service mesh"/>
+              </Link>
+            </Col>
+            <img src={OReillyLogo} alt="OReilly Logo"/>
+          </Row>
+        </Container>
         <div className="learn-cards-section">
           <h2>Learn to Service Mesh through interactive labs</h2>
           <div className="cards-row">
-            <Col xs={12} sm={6}>
-              <a className="link" href="https://www.katacoda.com/layer5/courses/meshery-adapters/istio-meshery-adapter" target="_blank" rel="noreferrer">
-                <div className="learn-card">
-                  <h2>Working with Meshery and Istio</h2>
-                  <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
-                  <div className="card-link">
-                    <h5>Start Scenario</h5>
-                    <FaArrowRight />
-                  </div>
-                </div>
-              </a>
-            </Col>
-            <Col xs={12} sm={6}>
-              <a className="link" href="https://www.katacoda.com/layer5/courses/performance-testing-with-meshery/running-performance-tests" target="_blank" rel="noreferrer">
-                <div className="learn-card">
-                  <h2>Running performance tests using Meshery</h2>
-                  <p>Learn how to do performance testing with Meshery</p>
-                  <div className="card-link">
-                    <h5>Start Scenario</h5>
-                    <FaArrowRight />
-                  </div>
-                </div>
-              </a>
-            </Col>
+            {data[0].scenarios.map(({ subId, title, info, link }, index) => (
+              index < 4 && (
+                <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
+                  <Link className="link" to={link}>
+                    <div className="learn-card">
+                      <h2>{title}</h2>
+                      <p>{info}</p>
+                      <div className="card-link">
+                        <h5>Start Scenario</h5>
+                        <FaArrowRight />
+                      </div>
+                    </div>
+                  </Link>
+                </Col>
+              )
+            ))}
           </div>
         </div>
       </div>

@@ -4,6 +4,21 @@ import Hero from "../../../components/Animated-steps-list/hero";
 import AnimatedStepsList from "../../../components/Animated-steps-list";
 import MesheryWrapper from "../meshery.style";
 import { Link } from "gatsby";
+import Homebrew from "../Meshery-platforms/supported-icons/homebrew.svg";
+import Kubernetes from "../Meshery-platforms/supported-icons/kubernetes.svg";
+import KinD from "../Meshery-platforms/supported-icons/kind.svg";
+import Minikube from "../Meshery-platforms/supported-icons/minikube.svg";
+import EKS from "../Meshery-platforms/supported-icons/eks.svg";
+import Helm from "../Meshery-platforms/supported-icons/helm-icon-color.png";
+import WSL2 from "../Meshery-platforms/supported-icons/wsl2.svg";
+import GKE from "../Meshery-platforms/supported-icons/gke.svg";
+import Docker from "../Meshery-platforms/supported-icons/docker.svg";
+import OAM from "../../../assets/images/partners/oam.svg";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+
+
+
 
 
 const MesheryTerminal = () => {
@@ -20,7 +35,7 @@ const MesheryTerminal = () => {
           //     external: false,
           //   },
           // ]}
-          code="$ curl -L https://git.io/meshery | bash -"
+          code="curl -L https://meshery.io/install | PLATFORM=kubernetes bash -"
           enddescription="Lightning fast time to cloud native management."
         />
         <AnimatedStepsList
@@ -30,7 +45,7 @@ const MesheryTerminal = () => {
             lines: [
               {
                 frames: 5,
-                code: ["$ curl -L https://git.io/meshery | bash -", "$ curl -L https://git.io/meshery | bash -|"],
+                code: ["curl -L https://meshery.io/install | PLATFORM=kubernetes bash -", "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -|"],
               },
             ],
           }}
@@ -52,39 +67,39 @@ const MesheryTerminal = () => {
               ),
               logos: [
                 {
-                  url: require("../Meshery-platforms/supported-icons/homebrew.svg"),
+                  url: Homebrew,
                   alt: "Homebrew",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/kubernetes.svg"),
+                  url: Kubernetes,
                   alt: "Kubernetes",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/kind.svg"),
+                  url: KinD,
                   alt: "KinD",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/minikube.svg"),
+                  url: Minikube,
                   alt: "Minikube",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/eks.svg"),
-                  alt: "AWS Elastic Kuberentes Service",
+                  url: EKS,
+                  alt: "AWS Elastic Kubernetes Service",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/helm-icon-color.png"),
+                  url: Helm,
                   alt: "Meshery Helm Chart",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/wsl2.svg"),
+                  url: WSL2,
                   alt: "WSL2",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/gke.svg"),
+                  url: GKE,
                   alt: "GKE",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/docker.svg"),
+                  url: Docker,
                   alt: "Docker",
                 },
               ],
@@ -140,135 +155,64 @@ const MesheryTerminal = () => {
                   {
                     frames: 8,
                     code: [
-                      "Removing installation files and starting Meshery",
-                      "Removing installation files and starting Meshery.",
-                      "Removing installation files and starting Meshery..",
-                      "Removing installation files and starting Meshery...",
-                      "Removing installation files and starting Meshery....",
-                      "Removing installation files and starting Meshery.....",
-                      "Removing installation files and starting Meshery......",
-                      "Removing installation files and starting Meshery.......",
+                      "downloading manifest files from https://github.com/meshery/meshery/tree/v0.6.0/install/deployment_yamls/k8s",
                     ],
                     color: "navy",
                   },
                   {
                     frames: 8,
                     code: [
-                      "Pulling meshery",
-                      "Pulling meshery           .",
-                      "Pulling meshery           ..",
-                      "Pulling meshery           ...",
-                      "Pulling meshery           ... download complete",
+                      "Starting meshery",
+                      "Starting meshery           .",
+                      "Starting meshery           ..",
+                      "Starting meshery           ...",
+                      "Starting meshery           ...",
                     ],
                     short: true,
                     color: "gray",
                   },
                   {
-                    frames: 5,
+                    frames: 6,
+                    color: "gray",
                     code: [
-                      "Pulling meshery-istio",
-                      "Pulling meshery-istio     .",
-                      "Pulling meshery-istio     ..",
-                      "Pulling meshery-istio     ...",
-                      "Pulling meshery-istio     ... done",
+                      "⠋ Deploying Meshery on Kubernetes",
+                      "⠙ Deploying Meshery on Kubernetes",
+                      "⠹ Deploying Meshery on Kubernetes",
+                      "⠸ Deploying Meshery on Kubernetes",
+                      "⠼ Deploying Meshery on Kubernetes",
+                      "⠴ Deploying Meshery on Kubernetes",
+                      "⠦ Deploying Meshery on Kubernetes",
+                      "⠧ Deploying Meshery on Kubernetes",
+                      "⠇ Deploying Meshery on Kubernetes",
+                      "⠏ Deploying Meshery on Kubernetes",
+                      "⠋ Deploying Meshery on Kubernetes",
+                      "⠙ Deploying Meshery on Kubernetes",
+                      "⠹ Deploying Meshery on Kubernetes",
+                      "⠸ Deploying Meshery on Kubernetes",
+                      "⠼ Deploying Meshery on Kubernetes",
+                      "⠴ Deploying Meshery on Kubernetes",
+                      "⠦ Deploying Meshery on Kubernetes",
+                      "⠧ Deploying Meshery on Kubernetes",
+                      "⠇ Deploying Meshery on Kubernetes",
+                      "⠏ Deploying Meshery on Kubernetes",
+                      "✓ Meshery deployed on Kubernetes",
+                    ],
+                  },
+                  {
+                    frames: 4,
+                    code: [
+                      "Some Meshery pods have not come up yet.",
+                      "Some Meshery pods have not come up yet..",
+                      "Some Meshery pods have not come up yet...",
+                      "Pods are online!",
                     ],
                     short: true,
                     color: "gray",
                   },
                   {
-                    frames: 5,
+                    frames: 3,
                     code: [
-                      "Pulling meshery-kuma",
-                      "Pulling meshery-kuma      .",
-                      "Pulling meshery-kuma      ..",
-                      "Pulling meshery-kuma      ...",
-                      "Pulling meshery-kuma      ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-consul",
-                      "Pulling meshery-consul    .",
-                      "Pulling meshery-consul    ..",
-                      "Pulling meshery-consul    ...",
-                      "Pulling meshery-consul    ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-linkerd",
-                      "Pulling meshery-linkerd   .",
-                      "Pulling meshery-linkerd   ..",
-                      "Pulling meshery-linkerd   ...",
-                      "Pulling meshery-linkerd   ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-tanzu-sm",
-                      "Pulling meshery-tanzu-sm  .",
-                      "Pulling meshery-tanzu-sm  ..",
-                      "Pulling meshery-tanzu-sm  ...",
-                      "Pulling meshery-tanzu-sm  ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-nsm",
-                      "Pulling meshery-nsm       .",
-                      "Pulling meshery-nsm       ..",
-                      "Pulling meshery-nsm       ...",
-                      "Pulling meshery-nsm       ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-nginx-sm",
-                      "Pulling meshery-nginx-sm  .",
-                      "Pulling meshery-nginx-sm  ..",
-                      "Pulling meshery-nginx-sm  ...",
-                      "Pulling meshery-nginx-sm  ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-citrix-sm",
-                      "Pulling meshery-citrix-sm .",
-                      "Pulling meshery-citrix-sm ..",
-                      "Pulling meshery-citrix-sm ...",
-                      "Pulling meshery-citrix-sm ... done",
-                    ],
-                    short: true,
-                    color: "gray",
-                  },
-
-                  {
-                    frames: 5,
-                    code: [
-                      "Pulling meshery-osm",
-                      "Pulling meshery-osm       .",
-                      "Pulling meshery-osm       ..",
-                      "Pulling meshery-osm       ...",
-                      "Pulling meshery-osm       ... done",
+                      "Opening Meshery (https://localhost:9081) on your browser...",
                     ],
                     short: true,
                     color: "gray",
@@ -298,37 +242,13 @@ const MesheryTerminal = () => {
               ),
               logos: [
                 {
-                  url: require("../../../assets/images/partners/oam.svg"),
+                  url: OAM,
                   alt: "Open Application Model",
                 },
                 {
-                  url: require("../../../assets/images/image-hub/layer5-image-hub.svg"),
+                  url: ImageHub,
                   alt: "Image Hub",
-                },
-                // {
-                //     url: require('./img/step-logos/netlify.svg'),
-                //     alt: 'Netlify',
-                // },
-                // {
-                //     url: require('./img/step-logos/amazon-ecs.svg'),
-                //     alt: 'Amazon ECS',
-                // },
-                // {
-                //     url: require('./img/step-logos/azure-container-service.svg'),
-                //     alt: 'Azure Container Service',
-                // },
-                // {
-                //     url: require('./img/step-logos/docker.svg'),
-                //     alt: 'Docker',
-                // },
-                // {
-                //     url: require('./img/step-logos/cloud-run.svg'),
-                //     alt: 'Google Cloud Run',
-                // },
-                // {
-                //     url: require('./img/step-logos/and-more.svg'),
-                //     alt: 'and More',
-                // },
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -354,25 +274,25 @@ const MesheryTerminal = () => {
                     color: "gray",
                     code: [
                       "⠋ Preparing pattern deployment",
-                      "⠙ Preparing pattner deployment",
-                      "⠹ Preparing pattner deployment",
-                      "⠸ Preparing pattner deployment",
-                      "⠼ Preparing pattner deployment",
-                      "⠴ Preparing pattner deployment",
-                      "⠦ Preparing pattner deployment",
-                      "⠧ Preparing pattner deployment",
-                      "⠇ Preparing pattner deployment",
-                      "⠏ Preparing pattner deployment",
-                      "⠋ Preparing pattner deployment",
-                      "⠙ Preparing pattner deployment",
-                      "⠹ Preparing pattner deployment",
-                      "⠸ Preparing pattner deployment",
-                      "⠼ Preparing pattner deployment",
-                      "⠴ Preparing pattner deployment",
-                      "⠦ Preparing pattner deployment",
-                      "⠧ Preparing pattner deployment",
-                      "⠇ Preparing pattner deployment",
-                      "⠏ Preparing pattner deployment",
+                      "⠙ Preparing pattern deployment",
+                      "⠹ Preparing pattern deployment",
+                      "⠸ Preparing pattern deployment",
+                      "⠼ Preparing pattern deployment",
+                      "⠴ Preparing pattern deployment",
+                      "⠦ Preparing pattern deployment",
+                      "⠧ Preparing pattern deployment",
+                      "⠇ Preparing pattern deployment",
+                      "⠏ Preparing pattern deployment",
+                      "⠋ Preparing pattern deployment",
+                      "⠙ Preparing pattern deployment",
+                      "⠹ Preparing pattern deployment",
+                      "⠸ Preparing pattern deployment",
+                      "⠼ Preparing pattern deployment",
+                      "⠴ Preparing pattern deployment",
+                      "⠦ Preparing pattern deployment",
+                      "⠧ Preparing pattern deployment",
+                      "⠇ Preparing pattern deployment",
+                      "⠏ Preparing pattern deployment",
                       "✓ Pattern deployed",
                     ],
                   },
@@ -437,37 +357,9 @@ const MesheryTerminal = () => {
               ),
               logos: [
                 {
-                  url: require("../../../assets/images/service-mesh-performance/icon/smp-dark.svg"),
-                  alt: "ÎService Mesh Performance",
-                },
-                // {
-                //     url: require('./img/step-logos/azure.svg'),
-                //     alt: 'Microsoft Azure',
-                // },
-                // {
-                //     url: require('./img/step-logos/gcp.svg'),
-                //     alt: 'Google Cloud Platform',
-                // },
-                // {
-                //     url: require('./img/step-logos/terraform.svg'),
-                //     alt: 'Terraform',
-                // },
-                // {
-                //     url: require('./img/step-logos/circleci.svg'),
-                //     alt: 'CircleCI',
-                // },
-                // {
-                //     url: require('./img/step-logos/slack.svg'),
-                //     alt: 'Slack',
-                // },
-                // {
-                //     url: require('./img/step-logos/github.svg'),
-                //     alt: 'Github',
-                // },
-                // {
-                //     url: require('./img/step-logos/and-more.svg'),
-                //     alt: 'and More',
-                // },
+                  url: SMP,
+                  alt: "Service Mesh Performance",
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -554,4 +446,3 @@ const MesheryTerminal = () => {
 };
 
 export default MesheryTerminal;
-

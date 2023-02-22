@@ -70,9 +70,64 @@ const data = [
             {
                 link: "/community/members/tanuj-agarwal",
                 name: "Tanuj Agarwal"
+            },
+        ],
+    },
+    {
+        date: "Nov. 4 2020",
+        topic: "Functional Testing with Cypress in Meshery UI",
+        resources: {
+            slides: "https://layer5.io/blog/meshery/functional-testing-with-cypress-in-meshery-ui",
+            recording: "https://youtu.be/pIFSI7xtwFs",
+        },
+        presenters: [
+            {
+                link: "/community/members/rodolfo-martinez-vega",
+                name: "Rodolfo Martinez Vega",
             }
         ]
     },
+    
+    {
+        date: "Jan. 28 2021",
+        topic: "Beginner's guide to contributing to Meshery and mesheryctl",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1oUzWQpFeFbpIs_sejtOPbF9J4nigj9ziEAzoWxmm6ig/edit",
+            recording: "https://youtu.be/hh_kFLZx3G4",
+        },
+        presenters: [
+            {
+                name: "Navendu Pottekkat",
+            }
+        ]
+    },
+    {
+        date: "Jul. 27 2021",
+        topic: "Contributing to Meshery API Swagger Documentation" ,
+        resources: {
+            recording: "https://www.youtube.com/watch?v=NAvt6B5kNIQ"
+        },
+        presenters: [
+            {
+                link: "/community/members/piyush-singariya",
+                name: "Piyush Singariya",
+            }
+        ] 
+    },
+    {
+        date: "Oct. 7 2021",
+        topic: "Working with Meshery Docs and Jekyll",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1GhJH3YF5mBeYX7I7ItEd-EbUmk1cnn3BdK1X230kwII/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=PBq7mIPnPhM"
+        },
+        presenters: [
+            {
+                link: "/community/members/aadhitya-amarendiran",
+                name: "Aadhitya Amarendiran",
+            }
+        ]
+    },     
 ];
 
 export default data;

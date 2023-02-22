@@ -1,0 +1,119 @@
+---
+docType: "Chapter"
+chapterTitle: "Exposing services through Linkerd Ingress"
+description: "Meshery is the cloud native management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+videos: 4
+lectures: 12
+order: 3
+---
+
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
+<ChapterStyle>
+
+<h2 class="chapter-sub-heading">Ingressing and Egressing with Linkerd</h2>
+
+Linkerd's control plane does not include ingress or egress gateways. Linkerd allows you choice of your preferred ingress (and egress) controller.
+
+<h2 class="chapter-sub-heading">How to use Ingress with Linkerd</h2>
+
+In case you're anticipating infusing Linkerd into your ingress controller's pods there is some setup required. Linkerd discovers
+services dependent on the `:authority` or `Host` header. This permits Linkerd to comprehend what service a request is bound for without
+being subject to DNS or IPs.
+
+In this workshop, you will use the NGINX Ingress Controller with Linkerd.
+
+<h3 class="chapter-sub-heading"> Installing NGINX Ingress Controller</h3>
+
+Using Meshery, select the Linkerd from the Management menu, and:
+
+1. Enter ingress-nginx into the namespace field.
+1. Click the (+) icon on the Apply Service Mesh Configuration card and select NGINX Ingress Controller to install the latest version of KIC.
+
+<h3>Alternative: Manual installation</h3>
+Follow this if the above steps did not work for you
+
+<br />
+<br />
+
+<h4 class="chapter-alt-heading"> Installing NGINX Ingress Controller</h4>
+
+Install ingress controller using Docker Desktop
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.40.2/deploy/static/provider/cloud/deploy.yaml
+```
+
+Install the ingress controller using Minikube
+
+```sh
+minikube addons enable ingress
+```
+
+<h3 class="chapter-sub-heading">
+  {" "}
+  Setting up Ingress controller with the sample application deployed
+</h3>
+
+Using Meshery, click the ➡️ icon on the `Apply Custom Configuration` card and apply the following manifest to your cluster:
+
+```sh
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web-ingress
+  namespace: emojivoto
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_set_header l5d-dst-override $service_name.$namespace.svc.cluster.local:$service_port;
+      grpc_set_header l5d-dst-override $service_name.$namespace.svc.cluster.local:$service_port;
+
+spec:
+  rules:
+    - host: example.com
+      http:
+        paths:
+          - backend:
+              serviceName: web-svc
+              servicePort: 80
+```
+
+Nginx ingress will include the `l5d-dst-override` header to tell Linkerd where to direct the request.
+You'll need to include both the Kubernetes administration FQDN (web-svc.emojivoto.svc.cluster.local) and the destination servicePort.
+
+To test this, you need to get the external IP of your controller.
+
+<h4 class="chapter-sub-heading"> Docker Desktop</h4>
+
+You may use http://localhost or <span>http://</span>kubernetes.docker.internal or your host's IP address.
+
+<h4 class="chapter-sub-heading"> Minikube</h4>
+
+Expose your Kubernetes's cluster services to your localhost network:
+
+```sh
+minikube tunnel
+```
+
+You may use http://localhost or You may use http://localhost: provided by the output of `minikube tunnel`.
+
+<h4 class="chapter-sub-heading">Hosted Kubernetes</h4>
+
+Retrieve the external IP address by running:
+
+```sh
+kubectl get svc --all-namespaces \
+  -l app=nginx-ingress,component=controller \
+  -o=custom-columns=EXTERNAL-IP:.status.loadBalancer.ingress[0].ip
+```
+
+You can now curl to your service without using port-forward, like this:
+
+```sh
+curl -H "Host: example.com" http://{external-ip}
+```
+
+<br />
+
+</ChapterStyle>

@@ -1,4 +1,4 @@
-export const tools_data= [
+export const tools_data = [
   {
     tool: "fortio",
     link: "https://github.com/istio/fortio/",
@@ -19,7 +19,7 @@ export const tools_data= [
     tool: "Meshery",
     link: "https://github.com/layer5io/meshery",
     language: "Golang",
-    written_for: "Istio, Linkerd, Consul, Octarine, Network Service Mesh, App Mesh",
+    written_for: "Istio, Linkerd, Consul, Cilium Service Mesh, Network Service Mesh, App Mesh",
     supported_by: "Layer5",
     desc: "A service mesh playground to facilitate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.",
   },
@@ -113,10 +113,10 @@ export const tools_data= [
   },
   {
     tool: "Nighthawk",
-    link: "https://github.com/envoyproxy/nighthawk",
+    link: "https://getnighthawk.dev/",
     language: "C++",
     written_for: "L7 (HTTP/HTTPS/HTTP2) performance characterization tool",
     supported_by: "Envoy, CNCF",
-    desc: "A L7 (HTTP/HTTPS/HTTP2) performance characterization tool. Its design focuses on exact request release timing and aims to provide its users with the ability to dynamically customize the request headers and content during an experiment.",
+    desc: "Nighthawk provides Service Mesh Performance-compatible access to the L7 (HTTP/HTTPS/HTTP2) performance characterization tool, Nighthawk. Nighthawk’s design focuses on exact request release timing and aims to provide its users with the ability to dynamically customize the request headers and content during an experiment.",
   },
 ];

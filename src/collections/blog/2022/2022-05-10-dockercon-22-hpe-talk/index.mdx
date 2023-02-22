@@ -1,0 +1,131 @@
+---
+title: "Extending Docker with Meshery, SPIRE, and Istio"
+date: 2022-05-10 10:30:05 -0530
+author: Gaurav Chadha
+thumbnail: ./dc22-hpe-talk.png
+darkthumbnail: ./dc22-hpe-talk.png
+description: "DockerCon 2022 talk with HPE and Meshery Docker Extension Demo"
+category: "Docker"
+tags:
+ - Docker
+ - Meshery
+published: true
+resource: true
+type: Blog
+technology: Docker
+product: Docker Extension
+featured: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
+import { Link } from "gatsby";
+import CloudNative from './cloud-native-management.png';
+import CloudNativeIdentity from './cloud-native-identity.png';
+import dde from './dde.png';
+import designer  from './Designer.png';
+import visualizer from './Visualizer.png';
+import meshmapInDocker from './meshmap-docker-extension-for-meshery.png';
+
+<BlogWrapper>
+
+<div className="intro">
+<p>
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> and <Link to="/community/members/maximiliano-churichi">Maximiliano Churichi</Link> gave a presentation entitled <i>Extending Docker with Meshery, SPIRE, and Istio</i> at DockerCon 2022.
+</p>
+</div>
+
+<p style="margin-left:10px;font-style:italics;">
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> is an innovative product and technology leader, passionate about empowering engineers and enabling organizations. As the founder and CEO of Layer5, he is at the forefront of the cloud native movement.
+</p>
+
+<p style="margin-left:10px;font-style:italics;">
+    <Link to="/community/members/maximiliano-churichi">Maximiliano Churichi</Link> is a Software Engineer at Hewlett Packard Enterprise, working in the Security Engineering team, and fully engaged in open source technologies, passionate about service mesh and cloud-native security.
+</p>
+
+<div>
+    <h3>
+        Cloud Native Management
+        <img src={CloudNative} alt="Meshery Docker Extension" style="width:50%;float:right;" />
+    </h3>
+    <p>
+        Lee Calcote introduces Meshery as a Cloud Native Management Plane, stating, "Meshery does Lifecycle and Performance Management of 10 different service meshes more than that it helps with configuration management with Kubernetes and with the Meshery Docker Extension it does same for the Docker Compose application."
+    </p>
+</div>                                                                        
+                                                                           
+<p>
+    "As a <Link to="https://www.docker.com/blog/docker-captain-take-5-lee-calcote/">Docker Captain</Link>, Lee have always been a proponent of Docker, and in particular its enablement of developer workflows", "Now, Docker Extensions bring an integrated experience with ecosystem tooling, like Meshery - a critical tool for developers, who are configuring and managing cloud native applications."
+</p>
+
+<div>
+    <h3>
+        Cloud Native Identity
+    </h3>
+    <p>
+        Maximiliano Churichi briefly explains about Cloud Native Identity and HPE's open source Project Mithril, "<Link to="https://spiffe.io">SPIFFE</Link> (Secure Production Identity Framework For Everyone) is a <Link to="https://www.cncf.io/projects/">CNCF-incubated</Link> project that defines a set of standards for identifying and securing communications between application services. The <Link to="https://spiffe.io/docs/latest/spire-about">SPIRE</Link> project (another CNCF project), the SPIFFE Runtime Environment, is a production-ready reference implementaion of the SPIFFE principles, and additionally it also implements a set of APIs for controlling attestation policies, and coordinate certificate issuance and rotation."
+    </p>
+    <img src={CloudNativeIdentity} alt="Meshery Docker Extension" style="width:50%;float:right;" />
+    <p>
+        Maximiliano also tells how HPE's Project Mithril integrates SPIRE and Istio to strengthen service identity in the data plane. <strong>Project Mithril leverages the service management capabilities of Istio and the strong identity by attestation principles of SPIFFE and SPIRE to deliver robust and flexible attestation beyond Kubernetes namespaces and service accounts</strong>, and provide end-to-end secure attestation of workloads based on zero trust principles regardless of the location of such workloads. The improvements introduced by Project Mithril were already upstreamed into Istio, and are expected to be released in the upcoming Istio 1.14. Starting from this release, Istio users will be able to leverage SPIRE for SPIFFE identities management, and stronger identity attestation mechanisms.
+    </p>
+</div>
+
+<p>
+    <h3>How "Docker Extension for Meshery" helps to deploy with the click of a button?</h3>
+    <p>
+    <img src={dde} alt="Meshery Extension Meshery" style="width:50%;float:left;padding-right:2rem" />
+    The new Meshery Docker Extension brings <Link to="/meshmap">Layer5 MeshMap</Link>, the world's only visual designer for Kubernetes and service mesh deployments, to the desktop of millions of developers. Developers and operators alike can visually configure and operate their cloud native infrastructure and applications using MeshMap's low code visual designer.
+    </p>
+</p>    
+<p>
+    Maximiliano Churichi, Software Engineer at HPE says how conveniently Meshery integrates different services into Docker.
+</p>
+<ul>
+<li><strong>Kubernetes and service mesh support for your Docker Compose apps</strong> - Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</li>
+
+<li><strong>Visual design of Kubernetes applications</strong> - Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</li>
+
+<li><strong>Single-click deployment of any service mesh</strong> - Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
+
+<li><strong>Detection of Kubernetes environments -</strong> Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.</li> 
+</ul>
+
+<p>
+  <h3>Maximiliano demonstrates MeshMap</h3>
+</p>
+
+<img src={meshmapInDocker} alt="Layer5 MeshMap in Meshery Docker Extension" />
+
+<div style="  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;">
+  <div style="  padding: 20px;
+  text-align: center;">
+  <p style="padding-bottom: 1.6rem;">
+    <h5>Designer Mode</h5>
+    Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.
+</p>
+    <img src={designer} alt="Meshery Docker Extension" align="center" alt="MeshMap Designer" />
+
+  </div>
+  <div style="  padding: 20px;
+  text-align: center;">
+  <p>
+    <h5>Visualizer Mode</h5>
+    Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers. 
+</p>
+    <img src={visualizer} alt="Meshery Docker Extension" align="center" alt="MeshMap Visualizer" />
+  </div>
+</div>
+
+
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/SazEJizK4xQ" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+</div>  
+
+<p><strong>Lee Calcote and Maximiliano Churichi packed a great deal of information in this talk. Find the recording below. The Meshery Extension is now out! Try now, and Share your Experience </strong>
+<Link to="/meshmap">Apply for MeshMap Beta Program</Link>
+</p>
+
+
+</BlogWrapper>

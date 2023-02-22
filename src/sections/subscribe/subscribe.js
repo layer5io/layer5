@@ -4,7 +4,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const subscribe= () => {
+const subscribe = () => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">
@@ -18,7 +18,7 @@ const subscribe= () => {
             <Col md={6}>
               <Row className="email-cont">
                 <Col md={6} xs={12} >
-                  <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+                  <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
                 </Col>
                 <div>
                   <Button secondary title="Subscribe" id="mc-embedded-subscribe" />

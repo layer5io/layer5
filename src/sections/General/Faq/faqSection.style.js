@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  margin: 2.5rem auto 5rem;
+  margin: 2.5rem auto;
   position: relative;
   overflow: hidden;
+
+  .category_name {
+    margin: 2rem 0 0.5rem;
+    font-style: italic;
+    text-transform: capitalize;
+  }
   .accordion__item + .accordion__item {
     border-color: transparent;
   }
@@ -32,6 +38,7 @@ const FaqSectionWrapper = styled.section`
       p {
         font-size: 16px;
         font-weight: 300;
+        text-align: initial;
         margin: 0;
       }
     }
@@ -71,7 +78,7 @@ const FaqSectionWrapper = styled.section`
       margin-bottom: 2rem;
     }
     button {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
   @media only screen and (max-width: 912px) {

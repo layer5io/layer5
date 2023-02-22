@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -6,21 +6,37 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
+import FAQ from "../../sections/General/Faq";
 import ProgramsGrid from "../../sections/Careers/Careers-Programs-grid";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
 
-const programs = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Open Source Internship Programs" description="The Service Mesh Community at Layer5 - Learn, Share, Engage. Join the largest collection of service mesh projects and their maintainers in the world." />
-      <Navigation />
-      <ProgramsGrid />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 
-export default programs;
+const CareerPrograms = () => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <ProgramsGrid theme={theme} />
+        <FAQ category={["internships"]} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
+
+export default CareerPrograms;
+
+
+export const Head = () => {
+  return <SEO title="Open Source Internship Programs" description="Engage, Learn, Share. Join the award-winning, Layer5 open source community and projects." />;
+};

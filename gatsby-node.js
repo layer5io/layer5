@@ -9,6 +9,8 @@
 const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
+const { createFilePath } = require("gatsby-source-filesystem");
+const config = require("./gatsby-config");
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
@@ -33,7 +35,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery/operating-service-meshes", toPath: "/cloud-native-management/meshery/operating-service-meshes", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery/getting-started", toPath: "/cloud-native-management/meshery/getting-started", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
@@ -41,6 +46,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/brand", toPath: "/company/brand", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/contact", toPath: "/company/contact", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-meshes", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+
+  //****
+  // External Resoruce Redirects
+  //****
+
+  // New Community Member (Google Form)
+  createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
@@ -52,9 +70,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
   const blogTagListTemplate = path.resolve(
     "src/templates/blog-tag-list.js"
-  );
-  const blogViewTemplate = path.resolve(
-    "src/templates/blog.js"
   );
 
   const EventsTemplate = path.resolve(
@@ -69,16 +84,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/news-single.js"
   );
 
-  const ProjectPostTemplate = path.resolve(
-    "src/templates/project-single.js"
-  );
-
   const BookPostTemplate = path.resolve(
     "src/templates/book-single.js"
   );
 
   const ProgramPostTemplate = path.resolve(
     "src/templates/program-single.js"
+  );
+
+  const MultiProgramPostTemplate = path.resolve(
+    "src/templates/program-multiple.js"
   );
 
   const CareerPostTemplate = path.resolve(
@@ -89,6 +104,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/member-single.js"
   );
 
+  const MemberBioTemplate = path.resolve(
+    "src/templates/executive-bio.js"
+  );
+
   const WorkshopTemplate = path.resolve(
     "src/templates/workshop-single.js"
   );
@@ -97,12 +116,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/lab-single.js"
   );
 
+  const resourcePostTemplate = path.resolve(
+    "src/templates/resource-single.js"
+  );
+  const integrationTemplate = path.resolve(
+    "src/templates/integrations.js"
+  );
+
   const res = await graphql(`
     {
       allPosts:  allMdx(
         filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
+          frontmatter{
+            program
+            programSlug
+          }
           fields {
             collection
             slug
@@ -129,15 +159,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             fieldValue
           }
       }
-      allCollections: allMdx(
-        filter: {fields: {collection: {eq: "events"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
+      memberBio: allMdx(
+        filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, executive_bio: { eq: true } } }
+        ){
+          nodes{
+            frontmatter{
+              name
+            }
+            fields{
+              slug
+              collection
+            }
           }
-        }
       }
       singleWorkshop: allMdx(
         filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
@@ -159,6 +192,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      learncontent: allMdx(
+        filter: {fields: {collection: {eq: "content-learn"}}}
+      ){
+        nodes{
+          fields{
+            learnpath
+            slug
+            course
+            section
+            chapter
+            pageType
+            collection
+          }
+        }
+      }
     }
   `);
 
@@ -174,12 +222,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "blog"
   );
 
-  const news = allNodes.filter(
-    node => node.fields.collection === "news"
+  const resources = allNodes.filter(
+    node => node.fields.collection === "resources"
   );
 
-  const projects = allNodes.filter(
-    node => node.fields.collection === "projects"
+  const news = allNodes.filter(
+    node => node.fields.collection === "news"
   );
 
   const books = allNodes.filter(
@@ -202,17 +250,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "members"
   );
 
+  const integrations = allNodes.filter(
+    nodes => nodes.fields.collection === "integrations"
+  );
+
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
-  // const events = res.data.allCollections.nodes;
-
-  paginate({
-    createPage,
-    items: blogs,
-    itemsPerPage: 8,
-    pathPrefix: "/blog",
-    component: blogViewTemplate
-  });
 
   paginate({
     createPage,
@@ -231,13 +274,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
-    paginate({
-      createPage,
-      items: category.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+    createPage({
+      path: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
         category: category.fieldValue,
@@ -247,14 +288,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    paginate({
-      createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+    createPage({
+      path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
       context: {
         tag: tag.fieldValue,
+      },
+    });
+  });
+
+  resources.forEach(resource => {
+    createPage({
+      path: resource.fields.slug,
+      component: resourcePostTemplate,
+      context: {
+        slug: resource.fields.slug,
       },
     });
   });
@@ -265,16 +313,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
-      },
-    });
-  });
-
-  projects.forEach(project => {
-    createPage({
-      path: project.fields.slug,
-      component: ProjectPostTemplate,
-      context: {
-        slug: project.fields.slug,
       },
     });
   });
@@ -329,6 +367,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const MemberBio = res.data.memberBio.nodes;
+  MemberBio.forEach(memberbio => {
+    createPage({
+      path: `${memberbio.fields.slug}/bio`,
+      component: MemberBioTemplate,
+      context: {
+        member: memberbio.frontmatter.name,
+      },
+    });
+  });
+
   singleWorkshop.forEach(workshop => {
     createPage({
       path: workshop.fields.slug,
@@ -348,6 +397,117 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  integrations.forEach((integration) => {
+    createPage({
+      path: `/cloud-native-management/meshery${integration.fields.slug}`,
+      component: integrationTemplate,
+      context: {
+        slug: integration.fields.slug,
+      },
+    });
+  });
+
+
+  let programsArray = [];
+  programs.forEach(program => {
+    if (
+      programsArray.indexOf(program.frontmatter.program) >= 0 &&
+      program.frontmatter.program === "Layer5"
+    ) {
+      return false;
+    } else {
+      programsArray.push(program.frontmatter.program);
+      createPage({
+        path: `/programs/${program.frontmatter.programSlug}`,
+        component: MultiProgramPostTemplate,
+        context: {
+          program: program.frontmatter.program,
+        },
+      });
+    }
+  });
+
+  const learnNodes = res.data.learncontent.nodes;
+
+  learnNodes.forEach((node) => {
+    if (node.fields) {
+      const { pageType } = node.fields;
+
+      if (pageType === "learnpath") {
+        createCoursesListPage({ createPage, node });
+        return;
+      }
+
+      if (pageType === "course") {
+        createCourseOverviewPage({ createPage, node });
+        return;
+      }
+
+      if (pageType === "chapter") {
+        createChapterPage({ createPage, node });
+        return;
+      }
+
+      if (pageType === "section") {
+        createSectionPage({ createPage, node });
+        return;
+      }
+    }
+  });
+};
+
+// slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+const getSlugParts = slug => slug.split("/").filter(p => !!p);
+
+const onCreatePathNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [learnpath] = parts;
+
+  createNodeField({ node, name: "learnpath", value: learnpath });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "pageType", value: "learnpath" });
+};
+
+const onCreateCourseNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [learnpath, course] = parts;
+
+  createNodeField({ node, name: "learnpath", value: learnpath });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "pageType", value: "course" });
+};
+
+const onCreateSectionNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [learnpath, course, section] = parts;
+
+  createNodeField({ node, name: "learnpath", value: learnpath });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "section", value: section });
+  createNodeField({ node, name: "pageType", value: "section" });
+};
+
+const onCreateChapterNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [learnpath, course, section, chapter] = parts;
+
+  createNodeField({ node, name: "learnpath", value: learnpath });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "chapter", value: chapter });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "section", value: section });
+  createNodeField({ node, name: "pageType", value: "chapter" });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -359,64 +519,191 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: collection
     });
-    let slug = "";
-    if (node.frontmatter.permalink) {
-      slug = `/${collection}/${node.frontmatter.permalink}`;
+    if (collection !== "content-learn") {
+      let slug = "";
+      if (node.frontmatter.permalink) {
+        slug = `/${collection}/${node.frontmatter.permalink}`;
+      } else {
+        switch (collection) {
+          case "blog":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "news":
+            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "service-mesh-books":
+          case "service-mesh-workshops":
+          case "service-mesh-labs":
+            slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "members":
+            if (node.frontmatter.published)
+              slug = `/community/members/${slugify(node.frontmatter.name)}`;
+            break;
+          case "events":
+            if (node.frontmatter.title)
+              slug = `/community/events/${slugify(node.frontmatter.title)}`;
+            break;
+          default:
+            slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+        }
+      }
+      createNodeField({
+        name: "slug",
+        node,
+        value: slug,
+      });
     } else {
-      switch (collection) {
-        case "blog":
-          slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "news":
-          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "service-mesh-books":
-        case "service-mesh-workshops":
-        case "service-mesh-labs":
-          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "members":
-          if (node.frontmatter.published)
-            slug = `/community/members/${slugify(node.frontmatter.name)}`;
-          break;
-        case "events":
-          if (node.frontmatter.title)
-            slug = `/community/events/${slugify(node.frontmatter.title)}`;
-          break;
-        default:
-          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      const slug = createFilePath({
+        node,
+        getNode,
+        basePath: "content-learn"
+      });
+
+      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+      const parts = slug.split("/").filter(p => !!p);
+
+      if (parts.length === 1) {
+        onCreatePathNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 2) {
+        onCreateCourseNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 3) {
+        onCreateSectionNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 4) {
+        onCreateChapterNode({ actions, node, slug });
+        return;
       }
     }
-    createNodeField({
-      name: "slug",
-      node,
-      value: slug,
-    });
   }
+};
+
+const createCoursesListPage = ({ createPage, node }) => {
+  const { learnpath, slug, pageType, permalink } = node.fields;
+
+  createPage({
+    path: `${slug}`,
+    component: path.resolve("src/templates/courses-list.js"),
+    context: {
+      // Data passed to context is available in page queries as GraphQL variables.
+      learnpath,
+      slug,
+      permalink,
+      pageType,
+    },
+  });
+};
+
+const createCourseOverviewPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    pageType,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `${slug}`,
+    component: path.resolve("src/templates/course-overview.js"),
+    context: {
+      learnpath,
+      slug,
+      course,
+      pageType,
+      permalink,
+    },
+  });
+};
+
+const createChapterPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    section,
+    chapter,
+    pageType,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `${slug}`,
+    component: path.resolve("src/templates/learn-chapter.js"),
+    context: {
+      learnpath,
+      slug,
+      course,
+      section,
+      chapter,
+      pageType,
+      permalink,
+    },
+  });
+};
+
+const createSectionPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    section,
+    pageType,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
+    context: {
+      learnpath,
+      slug,
+      course,
+      section,
+      pageType,
+      permalink,
+    },
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-    type Mdx implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter {
-      subtitle: String,
-      abstract: String,
-      eurl: String,
-      twitter: String,
-      github: String,
-      meshmate: String,
-      maintainer:String,
-      emeritus: String,
-      link: String,
-      labs: String,
-      slides: String,
-      slack: String,
-      status: String,
-      video: String,
-    }
-  `;
+     type Mdx implements Node {
+       frontmatter: Frontmatter
+     }
+     type Frontmatter {
+       subtitle: String,
+       abstract: String,
+       eurl: String,
+       twitter: String,
+       github: String,
+       meshmate: String,
+       maintainer:String,
+       emeritus: String,
+       link: String,
+       labs: String,
+       slides: String,
+       slack: String,
+       status: String,
+       video: String,
+       community_manager: String,
+       docURL: String, 
+
+     }
+   `;
   createTypes(typeDefs);
 };

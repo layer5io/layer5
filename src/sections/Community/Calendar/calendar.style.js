@@ -4,6 +4,9 @@ const CalendarStyleWrapper = styled.div`
     position: relative;
     overflow: hidden;
     text-align: center;
+    .page-header {
+        margin: 3rem auto 6rem;
+    }
     .calendar-wrapper {
         margin-bottom: 5rem;
     }
@@ -26,7 +29,7 @@ const CalendarStyleWrapper = styled.div`
         border-bottom-left-radius: 0px;
     }
     .fc .fc-button-group > .fc-button {
-        background: ${props => props.theme.tertiaryColor};
+        background:  ${props => props.theme.DarkTheme ? "#222222" : props.theme.tertiaryColor};    
         padding: 1rem;
         margin: 0px;
         min-width: 2.5rem;
@@ -34,23 +37,23 @@ const CalendarStyleWrapper = styled.div`
 
     }
     .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
-        background: ${props => props.theme.secondaryColor};
+        background: ${props => props.theme.keppelColor};
         min-width: 7.5rem;
         padding: 1rem;
         &:hover{
-            color: ${props => props.theme.headingColor};
+            color: ${props => props.theme.text};
             background: ${props => props.theme.primaryLightColorTwo}; 
         }
 
     }
     .fc .fc-button-primary,
-    .fc .fc-button-primary:disabled {
-        cursor: pointer;
+    .fc .fc-button-primary:disabled{
+        cursor: pointer; 
         font-family: inherit;
         text-decoration: none;
         text-transform: capitalize; 
         border: 0; 
-        
+        opacity: 1;
         padding: 1rem;
         border-radius: 5px;
         -webkit-transition: 450ms all;
@@ -71,10 +74,28 @@ const CalendarStyleWrapper = styled.div`
         min-height: auto;
         font-size: 14px;
         background: ${props => props.theme.secondaryColor};
+
+        .fc-daygrid-event-harness {
+            background: ${props => props.theme.secondaryColor};
+        }
     }
     @media only screen and (max-width: 57rem) {
         .fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
             width: 57rem;
+        }
+    }
+    .fc-daygrid-event {
+        color: white;
+        font-weight: bold;
+        background: ${props => props.theme.secondaryColor};
+        border-color: ${props => props.theme.secondaryColor};
+
+        &:hover {
+            background: rgba( 0, 0, 0, 0.1);
+        }
+
+        .fc-daygrid-event-dot {
+            border: calc(var(--fc-daygrid-event-dot-width, 8px) / 3) solid var(--fc-event-border-color, #ffffff)
         }
     }
 `;

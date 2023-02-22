@@ -5,7 +5,6 @@ export const FeaturesWrapper = styled.div`
       @media (min-width: 768px) {
         display: none;
       }
-      
       .main-heading{
         margin-bottom: 2rem;
       }
@@ -32,8 +31,9 @@ export const FeaturesWrapper = styled.div`
           outline: none !important;
         }
       }
-    
+
       & .pagingDots {
+        top: 2rem !important;
         & :global(.paging-item:not(.active) > button) {
           opacity: 1 !important;
           fill: var(--gray-6) !important;
@@ -56,7 +56,7 @@ export const FeaturesWrapper = styled.div`
     
     .feature {
       border-left: 2px solid;
-      border-color: ${props => props.theme.headingColor};
+      border-color: ${props => props.theme.bodyRevert};
       padding-left: 44px;
       margin: 28px 0;
       min-height: auto;
@@ -68,12 +68,13 @@ export const FeaturesWrapper = styled.div`
     }
     
     .active-feature {
-      border-color: ${props => props.theme.secondaryColor};
-      padding: 3rem 2.75rem 2rem 2.75rem;
+      border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+      padding-top: 0;
       @media (min-width: 768px){
-        border-color: ${props => props.theme.black};
-        background-color: ${props => props.theme.black};
+        border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
         border-radius: 20px;
+        padding: 3rem 2.75rem 2rem 2.75rem;
       }
       
       & .body {
@@ -114,16 +115,16 @@ export const FeaturesWrapper = styled.div`
       border: none;
       padding: 0;
       font-size: 20px;
-      line-height: 28px;
       font-weight: 600;
-      color: ${props => props.theme.headingColor};
+      box-shadow: none;
+      color: ${props => props.theme.text};
       cursor: pointer;
     }
     
     .terminal-wrapper {
       & > div {
         max-width: 100%;
-        height: 660px;
+        height: 430px;
       }
     
       & > img {

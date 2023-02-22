@@ -1,13 +1,98 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  background-color: #F3FFFD;
+
+  background-color:  ${props => props.theme.body};
   position: sticky;
   width: 100%;
-  padding-top: 1rem;
   z-index: 9999;
   top: 0;
-  transition: all 0.3s ease 0s;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  .nav-container {
+    display: flex;
+    @media (min-width:912px) and (max-width:992px){
+      max-width:850px;
+    }
+  }
+  .meshery-cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    right: -4.5rem;
+    top: 1.5rem;
+    max-height: 50px;
+
+    #signup {
+      margin-right: 10px;
+    }
+
+    .banner-btn {
+      margin-right: 15px;
+      white-space: nowrap;
+      padding: .6rem .7rem;
+      min-width: 0rem;
+      font-weight: 600;
+    }
+
+    .banner-btn.login{
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      color: ${props => props.theme.secondaryColor};
+      background-color: transparent;
+        &:hover{
+          border: 1px solid ${props => props.theme.secondaryColor};
+          background: ${props => props.theme.highlightColor};
+          background-color: transparent;
+        }
+        &:active {
+          /* color: #326d62; */
+          color: ${props => props.theme.keppelColor};
+          border: 1px solid ${props => props.theme.keppelColor};
+          background-color: transparent;
+        }
+    }
+    a {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1550px) {
+      position: relative;
+      right: -4rem;
+      top: 1.5rem;
+    }
+    @media screen and (max-width: 1275px) {
+      right: -1.95rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+    }
+    @media screen and (max-width: 1215px) {
+      right: -1.5rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      right: -1rem;
+      #signup {
+        min-width: 95px;
+      }
+      #login {
+        min-width: 95px;
+      }
+    }
+    @media screen and (max-width: 912px) {
+      a {
+        display: none;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+        margin-bottom: 3em;
+      }
+
+    }
+  }
   .navbar-wrap {
     width: 100%;
     display: flex;
@@ -22,13 +107,13 @@ const NavigationWrap = styled.header`
   }
   .dropdown {
     position: absolute;
-    background: white;
+    background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid #f5f5f5;
+    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};
     border-radius: 50px;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 120%;
     display: block;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .18s forwards;
@@ -41,7 +126,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     height: 350px;
-    margin-top: -2rem; 
+    margin-top: -2rem;
     visibility: visible;
   }
   .mobile-dropdown {
@@ -60,17 +145,17 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 3em;
-      background: #fafafa;
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
       }
       .section {
-        color: black;
+        color: ${props => props.theme.text};
         font-size: 20px;
         font-weight: 600;
         margin-left:0px;
@@ -86,7 +171,7 @@ const NavigationWrap = styled.header`
           padding: 2px 0;
           display: block;
           .readmore-btn {
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
           }
           &:before {
             content: none;
@@ -104,12 +189,15 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid #f1f1f1;
-      background: #ffffff;
-      padding-top: 3em;
+      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"};
+      padding-top: 1em;
+      padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      @media screen and (max-width: 992px) and (min-width: 912px) {
+         padding: .5em;
+       }
     }
   }
   @keyframes nav-bar-anim {
@@ -199,7 +287,6 @@ const NavigationWrap = styled.header`
       li {
         padding-top: 5px;
         a {
-          color: ${props => props.theme.menuColor};
           display: block;
           &:hover {
             color: ${props => props.theme.menuHoverColor}; !important;
@@ -218,7 +305,7 @@ const NavigationWrap = styled.header`
       line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 0px 20px;
       cursor: pointer;
       &:before {
         content: "";
@@ -263,10 +350,12 @@ const NavigationWrap = styled.header`
     img {
       width: 155px;
     }
+    @media screen and (max-width: 992px) and (min-width: 912px) {
+      width: 125px;
+    }
   }
-  &.scrolled {    
+  &.scrolled {
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
-    background: white;
     .nav {
       .nav-item{
         a {
@@ -291,7 +380,7 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
     }
     &.scrolled {
-      padding: 8px 20px;
+      padding: 15px 20px;
     }
     ul.collapsed {
       display: none;
@@ -318,16 +407,30 @@ const NavigationWrap = styled.header`
       padding: 0 10px;
       visibility: hidden;
       opacity: 0;
+      transition: .3s;
     }
     .mobile-dropdown {
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: white;
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       border-radius: 10px;
-      box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
       max-height: 400px;
       overflow-y: scroll;
+      scrollbar-width: thin;
+    }
+    .mobile-dropdown::-webkit-scrollbar{
+      border-radius: 3px;
+      width: 6px;
+	  }
+    .mobile-dropdown::-webkit-scrollbar-track{
+      background-color: #cbced1;
+      border-radius: 3px;
+    }
+    .mobile-dropdown::-webkit-scrollbar-thumb{
+      background-color: #868e96;
+      border-radius: 3px;
     }
     .expand {
       visibility: visible;
@@ -346,11 +449,20 @@ const NavigationWrap = styled.header`
       display: inline-block;
       position: relative;
       cursor: pointer;
+      animation: open-icon 0.3s ease-in;
     }
     .mobile-menu-icon.open {
       animation: close-icon 0.3s ease-in;
     }
+    @keyframes open-icon {
+      from { opacity: 0; }
+      to { opacity: 1; }
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
     @keyframes close-icon {
+        from { opacity: 0; }
+        to { opacity: 1; }
         0% { transform: rotate(0deg); }
         100% { transform: rotate(180deg); }
     }
@@ -359,6 +471,8 @@ const NavigationWrap = styled.header`
       .menu-item {
         font-size: 16px;
         font-weight: 600;
+        line-height: 2rem;
+        font-size: 1.25rem;
       }
       a:before {
         content: none;
@@ -369,9 +483,17 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-subitem {
       padding-left: 10px;
+      padding-top: .4rem;
+    }
+    .mobile-sub-menu-item {
+      font-size: 1.1rem;
     }
   }
-  
+
+  .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
+  }
+
   .anchor:before {
     content: none;
   }
@@ -382,7 +504,10 @@ const NavigationWrap = styled.header`
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
+    padding: 1rem 1rem 0rem 1rem;
     &:hover{
+      box-shadow: ${props => props.theme.DarkTheme ? "0px 0px 8px -2px #bababa" : "0px 0px 8px -2px rgba(0, 0, 0, 0.25)"};
+      border-radius: 1rem;
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
           svg{
@@ -391,7 +516,7 @@ const NavigationWrap = styled.header`
           }
       }
       .post-title{
-          color: ${props => props.theme.menuHoverColor};
+          color: ${props => props.theme.text};
       }
     }
     a:before {
@@ -406,11 +531,11 @@ const NavigationWrap = styled.header`
 
   .post-thumb-block{
     overflow: hidden;
-    border-radius: 10px;  
+    border-radius: 10px;
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
-    .gatsby-image-wrapper{
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
         height:100%;
         transition: all 0.3s ease-in;
     }
@@ -428,16 +553,16 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 0 0 3px 3px;
     position: relative;
-    padding: 20px 35px;
+    padding: 20px 0px;
   }
   .post-title{
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-    color: black;
+    color: ${props => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
     white-space: nowrap;
@@ -445,7 +570,12 @@ const NavigationWrap = styled.header`
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
     transition: 450ms all;
-    
+    &:hover{
+      color: ${props => props.theme.highlightLightColor};
+
+
+    }
+
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -456,7 +586,7 @@ const NavigationWrap = styled.header`
     }
   }
   .readmore-btn {
-    color: rgba(0,0,0,0.35);
+    color: ${props => props.theme.lightTextColor};
     display: flex;
     align-items: center;
     transition: all 0.3s linear;
@@ -467,6 +597,45 @@ const NavigationWrap = styled.header`
       transition: all 0.3s linear;
     }
   }
+  .dark-theme-toggle {
+    /* margin-left: 2rem; */
+  }
+
+  .toggle {
+    --size: 1.5rem;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    border-radius: 999px;
+    color: #00B39F;
+    transition: all 500ms;
+    vertical-align: middle;
+  }
+
+  .toggle:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+    transform: scale(0.75);
+    color: #3c494f;
+    box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size), var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size), 0 var(--offset-orthogonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size), var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size), var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+  }
+
+  .toggle {
+    z-index: 1;
+  }
+
+  .toggle:checked~.background {
+    --bg: white;
+  }
+
+  .toggle:checked~.title {
+    --color: #fa0;
+  }
+
 `;
 
 export default NavigationWrap;

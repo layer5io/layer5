@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -6,21 +6,31 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
-import Careers from "../../sections/Careers";
+import CareersSection from "../../sections/Careers";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 
-const careers = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Careers" description="Careers at Layer5. Come work with the largest collection of service mesh projects and their maintainers in the world." />
-      <Navigation />
-      <Careers />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+const Careers = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
 
-export default careers;
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <CareersSection theme={theme} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
+export default Careers;
+
+export const Head = () => {
+  return <SEO title="Careers" description="Careers at Layer5. Come work with the  the award-winning, Layer5 open source community and projects." />;
+};

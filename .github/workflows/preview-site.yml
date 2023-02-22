@@ -1,48 +1,48 @@
-name: Deploy to Netlify
+name: Deploy Preview
 on:
   workflow_run:
     workflows:
-      - Preview Site Wrapper
+      - Build and Preview Site
     types:
       - completed
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v2.3.1
+
+      - name: Download Site dir
+        uses: dawidd6/action-download-artifact@v2
         with:
-          persist-credentials: false
+          github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+          workflow: build-and-preview-site.yml
+          run_id: ${{ github.event.workflow_run.id }}
+          name: public-dir
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - name: Unzip Site
+        run: |
+          rm -rf ./public
+          unzip public-dir.zip
+          rm -f public-dir.zip
+
+      - name: Deploy to Netlify
+        id: netlify
+        uses: nwtgck/actions-netlify@v1.1
         with:
-          node-version: 12
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Build project
-        run: npm run build
-
-      - name: Preview deploy to Netlify
-        id: deploy-netlify
-        uses: netlify/actions/cli@master
+          publish-dir: 'public'
+          production-deploy: false
+          github-token: ${{ secrets.GH_ACCESS_TOKEN }}
+          enable-commit-comment: false
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=public
 
-      - name: Netlify Preview URL
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
+      - name: Comment Deploy URL
+        uses: ./.github/actions/comment-preview-on-pr
         with:
-          msg: ${{ env.OUTPUT }}
-          check_for_duplicate_msg: false
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
+
+

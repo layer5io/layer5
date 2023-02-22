@@ -6,16 +6,23 @@ import Navigation from "../../sections/General/Navigation";
 import WorkshopsPage from "../../sections/Learn/Workshop-grid";
 import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { useState } from "react";
+import lighttheme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+
 
 
 const WorkshopsGridPage = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Workshops" description="Service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh" />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <WorkshopsPage />
         <Footer />
       </Layout>
@@ -23,3 +30,8 @@ const WorkshopsGridPage = () => {
   );
 };
 export default WorkshopsGridPage;
+
+
+export const Head = () => {
+  return <SEO title="Service Mesh Workshops" description="Service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh, Cilium, Kuma, NGINX" />;
+};

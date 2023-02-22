@@ -1,4 +1,4 @@
-export const smi_data=[
+export const smi_data = [
   {
     "id": "0dd368be-745f-4433-a356-f717aac40457",
     "date": "2020-10-14T20:14:48+05:30",
@@ -85,7 +85,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                 
+
     ],
   },
   {
@@ -129,7 +129,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   },
   {
@@ -173,7 +173,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   },
   {
@@ -218,7 +218,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   }
 

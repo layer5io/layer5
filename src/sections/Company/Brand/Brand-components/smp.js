@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.png";
 import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.png";
 import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.png";
@@ -36,51 +37,53 @@ const SMPBrand = () => {
           </Col>
           <Col>
             <p>
-                            The Service Mesh Performance mark includes SMP name & logo and any
-                            word, phrase, image, or other designation that identifies the
-                            source or origin of any Layer5 projects. PLease don't modify the
-                            marks or use them in a confusing way, including suggesting
-                            sponsorship or endorsement by Layer5 with another brand(including
-                            your own)
+              The Service Mesh Performance mark includes SMP name & logo and any
+              word, phrase, image, or other designation that identifies the
+              source or origin of any Layer5 projects. PLease don't modify the
+              marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5 with another brand(including
+              your own)
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
             <h2 className="layerH3 in">
-                            Logos
+              Logos
             </h2>
           </Col>
-          <Row className="ImgDiv smp-logo">
-            <Col xs={12} sm={4}>
-              <img src={SmpDark} alt="SmpDark Logo"/>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmpWhite} alt="SmpWhite Logo"/>
-              </div>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmpLight} alt="SmpLight Logo"/>
-              </div>
-            </Col>
-          </Row>
-          <Row className="ImgDiv smp-logo">
-            <Col xs={12} sm={4}>
-              <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
-              </div>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
-              </div>
-            </Col>
-          </Row>
+          <SRLWrapper>
+            <Row Vcenter className="ImgDiv smp-logo">
+              <Col xs={12} sm={4}>
+                <img src={SmpDark} alt="SmpDark Logo"/>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmpWhite} alt="SmpWhite Logo"/>
+                </div>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmpLight} alt="SmpLight Logo"/>
+                </div>
+              </Col>
+            </Row>
+            <Row Vcenter className="ImgDiv smp-logo">
+              <Col xs={12} sm={4}>
+                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
+                </div>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
+                </div>
+              </Col>
+            </Row>
+          </SRLWrapper>
         </Row>
         <Row>
           <Col>
@@ -90,7 +93,7 @@ const SMPBrand = () => {
           </Col>
           <Col>
             <p>
-                            The SMP color palette consists of gray, green and colors and
+                            The SMP color palette consists of gray, green and blue colors along with
                             additional shades. The SMP logo should be white or monochrome when
                             using project colors as the background.
             </p>

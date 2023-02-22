@@ -1,0 +1,61 @@
+---
+title: LFX Experience at Layer5 - Pranav Singh
+subtitle: An exquisite experience
+date: 2022-06-08 08:00:00 -0630
+author: Pranav Singh
+thumbnail: ./lfx-pranav.png
+darkthumbnail: ./lfx-pranav.png
+category: Community
+description: "Pranav Singh's experience as a LFX intern at Layer5"
+redirect_from:
+ - /blog/community/lfx-experience-layer5-pranav-singh
+tags:
+ - Community
+ - Experience
+ - Programs
+published: true
+type: Blog
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+
+<BlogWrapper>
+
+It all started with my curiosity to find an open-source project with open issues with DevOps and CI/CD labels on them. 
+While I was searching that on GitHub, I found <Link to="/cloud-native-management/meshery">Meshery</Link>, one of the projects at Layer5. I started going through the 
+[README](https://github.com/meshery/meshery#readme), and it just felt like that is it. 
+It integrates with all kinds of technologies that I ever wanted to learn and explore. Then I jumped onto their [slack](http://slack.layer5.io/) and got even 
+more excited by the enthusiasm and energy of each community members welcoming me in the newcomers channel. I started attending all the community meetings and 
+learned about the project through the demos/updates from fellow contributors. Slowly and gradually, I started contributing too, then delivering updates in the 
+community calls, and consequently started climbing the contributor ladder.
+
+When I realised that I would be working on [Meshery Cloud](https://meshery.layer5.io) and <Link to="/cloud-native-management/meshery">Meshery</Link> as an LFX intern at Layer5, then I couldn't control my excitement. 
+That excitement was to ship more impactful features for the Layer5 projects, work and engage more deeply with the engineering team at Layer5 and have an overall 
+upliftment of my development skills.  Throughout my internship I worked on several features. Few on the top of the list are as follows, expanding 
+[Meshery extension points](https://docs.meshery.io/extensibility), exposing node details of the K8s clusters on which Meshery runs <Link to="/projects/service-mesh-performance">performance tests</Link>, 
+supporting [Cilium service mesh adapter](https://github.com/meshery/meshery-cilium) with Meshery, persisting <Link to="/meshmap">MeshMap</Link> user preferences with 
+Meshery Cloud, migrating Meshery Cloud UI to NextJS, support for user profile on Meshery Cloud and exposing performance profiles 
+(generated from Meshery performance tests that run on CNCF hosted runners through [meshery-smp-action](https://github.com/layer5io/meshery-smp-action)) 
+through a public facing API.
+
+In terms of the learning curve, I learned so much that the knowledge I gained in the past three months overpowers the education I received in the last two years of college, 
+if we put in context the applicability of each of the learnings in the software industry. 
+I learned and applied the tech stack from Golang, GraphQL, and NextJS to Postgres, SQL, and GoBuffalo to GitHub actions. I got introduced to the topics like 
+performance engineering, service meshes, networking, and several cloud-native tool. While at the same time, I met several experienced developers who are very involved in 
+the communities which revolve around these realms.
+
+One of the major realizations I got through this internship was that it is okay to make mistakes. There were a few instances where I made mistakes. 
+For instance, once I forgot to add pagination in an SQL query which depressed the whole production instance of Meshery Cloud, which means no one would be able 
+to log into Meshery until that gets fixed. Or once I unknowingly used an incorrect default SSH port in a workflow that failed a GitHub action responsible for 
+pushing the latest Meshery Cloud image to Docker Hub and then updating the deployment in AWS VM. But that was okay, and no one got mad at me, but rather I have 
+always received constructive feedback. I did learn from each mistake and made sure that I dont repeat it because that is all that matters.
+
+I had a great time as an intern @ Layer5. Each day brought new challenges and a desire to raise PRs with great features. I not only learned how to fix bugs but also 
+learned how to avoid them in the first place. I not only learned hard skills but also learned soft skills. I not only learned the meaning of self-reliance but also learned 
+the true meaning of team spirit. All in all, that was one of the most exquisite experiences I have ever had and ofcourse, the best internship experience 
+(considering it was my first internship ever!). 
+
+I will be engaged in this community and will keep contributing to Layer5 projects as much as possible.
+
+</BlogWrapper>

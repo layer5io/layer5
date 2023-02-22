@@ -191,7 +191,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
         <path d="M260.94,201.87h0a6.74,6.74,0,0,1,4.85,1.93,7,7,0,0,1,1.94,5,10.75,10.75,0,0,1-8.62,10.11,9.35,9.35,0,0,1-1.48.13,6.76,6.76,0,0,1-4.86-1.93,7,7,0,0,1-1.94-5A10.76,10.76,0,0,1,259.47,202a8.19,8.19,0,0,1,1.47-.13m0-1a9.35,9.35,0,0,0-1.64.15,11.74,11.74,0,0,0-9.47,11.1,7.62,7.62,0,0,0,7.8,7.94,9.37,9.37,0,0,0,1.65-.15,11.76,11.76,0,0,0,9.45-11.09,7.61,7.61,0,0,0-7.79-7.95Z" />
         <a
           id="newcomers-guide"
-          href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit?usp=sharing"
+          href="https://layer5.io/community/handbook"
           target="_blank"
           rel="noreferrer"
         >
@@ -431,7 +431,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           </text>
         </Link>
         <a
-          href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit?usp=sharing"
+          href="https://layer5.io/community/handbook"
           target="_blank"
           rel="noreferrer"
         >
@@ -466,9 +466,8 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           style={{ fill: "#477e96" }}
         />
         <a
-          href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?usp=sharing"
-          target="_blank"
-          rel="noreferrer"
+          href="https://layer5.io/community/handbook/repository-overview"
+          target="_self"
         >
           <path d="M541.17,286.14a4.8,4.8,0,0,1-.91-.08l-64.83-11.43-5.67,8.82-5.67-10.82-65.32-11.51a6.62,6.62,0,0,1-5.31-6.25V231.38a4.13,4.13,0,0,1,4.23-4.3,4.73,4.73,0,0,1,.91.08l141.49,25a6.6,6.6,0,0,1,5.31,6.24v23.49a4.37,4.37,0,0,1-1.21,3.11,4.21,4.21,0,0,1-3,1.19Z" />
           <path d="M397.69,227.58a4.54,4.54,0,0,1,.82.07L540,252.6a6.11,6.11,0,0,1,4.9,5.75v23.49a3.6,3.6,0,0,1-3.73,3.8,4.62,4.62,0,0,1-.82-.07L475.84,274.2l-.65-.12-.36.56-5,7.82-5.15-9.84-.23-.44-.48-.08-65.08-11.48a6.09,6.09,0,0,1-4.9-5.75V231.38a3.6,3.6,0,0,1,3.73-3.8m0-1a4.62,4.62,0,0,0-4.73,4.8v23.49a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,5.95-9.26,64.5,11.38a5.77,5.77,0,0,0,1,.08,4.62,4.62,0,0,0,4.73-4.8V258.35a7.13,7.13,0,0,0-5.73-6.74L398.69,226.67a5.81,5.81,0,0,0-1-.09Z" />

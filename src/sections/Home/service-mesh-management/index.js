@@ -1,14 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import MeshSectionWrapper from "./ServiceMesh.style";
-import ServiceMeshAnimate from "./ServiceMeshAnimation.style";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import MesheryLogo from "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
-import ServiceMesh from "./images/animated-service-mesh.svg";
-import MeshMap from "./images/meshmap.png";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Link } from "gatsby";
-import AnimatedMesh from "./AnimateSVG";
+import { StaticImage } from "gatsby-plugin-image";
+
+const MeshMap = "../../../assets/images/homePage-images/meshmap.png";
 
 const ServiceMeshManagement = () => {
   return (
@@ -18,39 +16,33 @@ const ServiceMeshManagement = () => {
           <SectionTitle
             className="section-title"
             leftAlign={false}
-            UniWidth="65%"
+            UniWidth="75%"
           >
             <h4 className="title">Meshery is</h4>
             <h2 className="big-title">
-              The <span>service mesh management plane</span>
+              The <span>cloud native management platform</span>
+              {/* <span className="strikethrough">plane</span> */}
             </h2>
           </SectionTitle>
-          {/* <ServiceMeshAnimate className="active" >
-            <img className="active" src={ServiceMesh} />
-            <svg className="active"><use xlink={ServiceMesh}></use></svg>
-            <AnimatedMesh className="active" />
-          </ServiceMeshAnimate> */}
 
           <Col xs={12} sm={12} md={6}>
-            <Link to="/service-mesh-management/meshery">
-              <img className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
+            <Link to="/cloud-native-management/meshery">
+              <StaticImage className="mesh-image" alt="Meshery - the cloud native management plane" src={MeshMap} />
             </Link>
           </Col>
           <Col xs={12} sm={12} md={6}>
             <div className="side">
               <div className="side-text">
-                The <span>extensible</span> service mesh manager.
+                The <span>extensible</span> cloud native manager.
               </div>
               <div className="description">
-                <p>An extensible platform, Meshery, comes packed with integrations for Prometheus, Grafana, and support for WebAssembly filters for Envoy.</p>
+                <p>An extensible platform, Meshery comes packed with <Link to="/cloud-native-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, and support for WebAssembly filters for Envoy.</p>
                 <p>
-                  Not just a service mesh manager, Meshery comprises a set of microservices each one fitted with extension points. Users and integrators may extend Meshery by taking advantage of designated extension points.
+                  Meshery is your microservices manager. With extension points throughout, Meshery offers users and integrators the ability to extend and customize platform functionality.
                 </p>
               </div>
-
               <div className="backBtn">
-                <br />
-                <Link to="/service-mesh-management/meshery">
+                <Link to="/cloud-native-management/meshery">
                   <p>Learn More <span><IoIosArrowForward className="icon" /></span></p>
                 </Link>
               </div>

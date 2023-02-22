@@ -17,7 +17,7 @@ const SMIWrapper = styled.section`
             margin-bottom: 1.56rem;
         }
         p{
-            color: ${props => props.theme.tertiaryColor};;
+            color: ${props => props.theme.text};
             opacity: 70%;
             margin-bottom: 1.875rem;
             font-weight: 400;
@@ -32,7 +32,7 @@ const SMIWrapper = styled.section`
             margin-bottom: 2.5rem;
             p{
                 font-size: 21px;
-                color: black;
+                color: ${props => props.theme.text};
                 opacity: 70%;
             }
         }
@@ -40,6 +40,7 @@ const SMIWrapper = styled.section`
     .logo{
         position: absolute;
         top: -6.25rem;
+        filter: invert(${props => props.theme.meshInterfaceLogoFilter});
         left: -7.5rem;
     }
     .feature {
@@ -71,14 +72,14 @@ const SMIWrapper = styled.section`
     .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
-        box-shadow: 0 0 15px 5px ${props => props.theme.shadowColor};
+        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
         position: relative;
         transition: all 0.3s ease-in;
-        background-color: white;
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         z-index: 999;
         height: 100%;
         &:hover{
-            border-color: ${props => props.theme.primaryColor};
+            border-color: ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
             .thumb-block{
                 border-color: ${props => props.theme.primaryColor};
             }
@@ -90,19 +91,20 @@ const SMIWrapper = styled.section`
             font-size: 34px;
             font-weight: 700;
             margin: 0 0 3.125rem 0.625rem; 
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
         }
     }
     .section-3{
-        background-color: #FAFAFA;
+        background-color: ${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
         width: 100%;
+        padding:7rem 0rem;
     }
     .bg{
         height: 20rem;
         width: 90%;
         max-width: 73.75rem;
         margin: 20rem auto 0 auto;
-        background-color: #EBFCF8;
+        background-color: ${props => props.theme.DarkTheme ? "rgb(20 23 20)" : "#EBFCF8"};
         position: absolute;
         z-index: 1;
         left: 0;
@@ -146,11 +148,11 @@ const SMIWrapper = styled.section`
         }
     }
     .card{
-        background-color: white;
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         width: 70%;
         max-width: 62.5rem;
         margin: auto;
-        padding: 1.875rem 4.7rem 1.875rem 4.7rem;
+        padding: 2.5rem 4.7rem 2rem 4.7rem;
         border: 1px white;
         border-radius: 20px;
         h2{
@@ -199,10 +201,13 @@ const SMIWrapper = styled.section`
 		bottom: 0px;
 		padding: 1.25rem;
 		&:hover {
-			background-color: ${props => props.theme.tertiaryColor};
+			background-color: #1e2117;
 			border-top-left-radius: .5rem;
 			border-top-right-radius: .5rem;
 		}
+	}
+    .react-tabs__tab:focus:after{
+		content: none;
 	}
 	.react-tabs__tab-list {
 		margin: 0px;
@@ -216,8 +221,8 @@ const SMIWrapper = styled.section`
 		background: #00B39F;
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.tertiaryColor};
-		border-color: ${props => props.theme.tertiaryColor};
+		background: #1e2117;
+		border-color: #1e2117;
 		color: white;
 		font-weight: 600;
 	}

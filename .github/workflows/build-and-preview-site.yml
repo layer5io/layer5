@@ -1,0 +1,33 @@
+name: Build and Preview Site
+on:
+  pull_request:
+    branches: [ master ]
+    types: [opened, synchronize, reopened]
+
+
+jobs:
+  site-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Install and Build 🔧 
+        run: |
+          npm install
+          npm run noIndex
+
+      - name: Zip Site
+        run: bash ./script.sh
+
+      - name: Upload files
+        uses: actions/upload-artifact@master
+        with:
+          name: public-dir
+          path: ./public-dir.zip
+          retention-days: 1
+      - name: Triger Inner workflow
+        run: echo "trigering inner workflow"

@@ -1,0 +1,123 @@
+---
+title: "Extending the Docker Compose Experience to Service Mesh"
+date: 2022-05-10 10:30:05 -0530
+author: Gaurav Chadha
+thumbnail: ./DC22-talk-HashiCorp.png
+darkthumbnail: ./DC22-talk-HashiCorp.png
+description: "DockerCon 2022 talk with HashiCorp and MeshMap Demo"
+category: "Docker"
+tags:
+ - Docker
+ - Meshery
+published: true
+resource: true
+type: Blog
+technology: Docker
+product: Docker Extension
+featured: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
+import slidesTAG from "../../../events/kubecon-china-2021/cncf-tag-network-and-service-mesh-working-group-kubecon-china-2021-lee-calcote-ken-owens.pdf";
+import { Link } from "gatsby";
+import DDE from './docker-extension-meshery.png';
+import developer from './developers-need.png';
+import dashboard from './dashboard.png';
+import designer from './designer-1.png';
+import visualizer from './viz-1.png';
+
+<BlogWrapper>
+
+<div class="intro ">
+<p>
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> and <Link to="/community/members/nic-jackson">Nic Jackson</Link> gave a presentation entitled <i>Extending the Docker Compose Experience to Service Mesh</i> at DockerCon 2022.
+</p>
+</div>
+
+<p>
+    The <Link to="/docker-extension-meshery">Meshery Docker Extension</Link> extends Docker Desktop's position as the cloud native developer's go-to Kubernetes environment with easy access to the next
+    layer of cloud native infrastructure: service meshes. 
+</p>
+
+<p>
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> is an innovative product and technology leader, passionate about empowering engineers and enabling organizations. As the founder and CEO of Layer5, he is at the forefront of the cloud native movement. 
+    <Link to="/community/members/nic-jackson"> Nic Jackson </Link> is a developer advocate at HashiCorp, and the author of “Building Microservices in Go”, a book which examines the best patterns and practices for building microservices with the Go. Nic is also a coauthor of the Service Mesh Patterns book.
+</p>
+
+<p>
+    Nic Jackson has been using Docker Desktop from long time and tells how Docker Desktop provides feasibility to run Kubernetes for his local environment,
+    while Lee Calcote recalls how Docker Desktop has become a staple of his daily routine while building an extension for Meshery.
+    </p>
+
+<p>
+<h3>Discussing Developers need to access Service Mesh</h3>
+<img src={developer} alt="Developers need to access service mesh" style="width:50%;float:right;" />
+</p>
+
+<p>
+Moving forward with the introduction to Docker Extension for Meshery, Nic says, "When it comes to Service Mesh, should developers care about Service Mesh? And the answer is Yes because developers need service mesh because of the changing reliability patterns implementation rapidly, it provides a tight feedback loop for developing and deploying workloads onto your service mesh and makes the over developer experience smooth. With the help of service, mesh developers should be able to create environments without needing to be operational experts."
+</p>
+
+<p>
+    <h3>Meshery Extension offers an easy single click button to go from Docker comopose to Kubernetes to Service Mesh</h3>
+<img src={DDE} alt="Docker Desktop Extension Meshery" style="width:50%;float:right;" />
+</p>
+<p>
+    The Docker Extension for Meshery provides:
+</p>
+<ul>
+<li>Service mesh support for your Docker Compose apps - Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</li>
+<li>Visual designer for Docker Compose apps - Early access to the Docker Extension for Meshery that offers a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</li>
+<li>Single-click deployment of any service mesh - Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
+</ul>
+<p>
+    
+    <img src={dashboard} alt="Docker Desktop Extension Meshery Dashboard" style="width:50%;float:left; padding-right:30px;" />
+    </p>
+<p>
+    <ul>
+    <li>
+    While giving the demo Meshery Lee explained how with Docker Desktop running and Meshery extension installed we can see that Meshery has discovered
+    the installed service mesh automatically and it performs action with the adapter present. 
+    </li>
+    <li>
+    Meshery is a multi kubernetes cluster capable of performing lifecycle management of kubernetes as well as 10 different service meshes.
+     </li>  
+    <li>
+    We can configure different service mesh based on their configurations and performs actions such as deploy, design, and explore all of the capabilities of service mesh via a rich schema with a live preview.
+    </li> 
+    </ul>
+</p>
+
+<p>
+    <p>
+    <h3>Lee Calcote introduces MeshMap</h3>
+    </p>
+        <img src={designer} alt="MeshMap Designer" style="width:50%;float:right;" />
+MeshMap is the world's only visual designer for Kubernetes and service mesh deployments. Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments. As a plugin for Meshery, MeshMap supports 10+ service meshes. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's service mesh catalog.
+    It is a visual designer for developers to explore this same functionality.
+    Lee showed example of Consul Service Mesh and performs different actions on it. Discussnig about the 
+    <strong> Designer Mode</strong> It can design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.
+</p>
+       <p>
+       <img src={visualizer} alt="MeshMap Designer" style="width:50%;float:left;padding-right:30px;" />
+     The <strong>Visualizer Mode</strong> examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.
+       </p>
+
+<p>
+    To Lee's demo, Nic also added in the context of developer experience that MeshMap also makes it easy to do the job and with Meshery extension it makes it super easy to write and configure code without being worried for the developer environment.
+    </p>
+    <p>
+       These Docker Extensions are so powerful that it allows you to do multiple tasks without leaving Docker Desktop. 
+        </p>
+
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/3DPZafR8VWM" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+</div>
+
+<p><strong>Lee Calcote and Nic Jackson packed a great deal of information in this talk. Find the recording below. The Meshery Extension is now out! Try now, and Share your Experience </strong>
+<Link to="/meshmap">Apply for MeshMap Beta Program</Link>
+</p>
+
+</BlogWrapper>

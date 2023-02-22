@@ -11,6 +11,7 @@ export const BooksPageWrapper = styled.div`
     }
     h2.sub-heading {
         font-weight: 400;
+        margin: -1.25rem auto 2rem;
     }
     .slick-slide{
         filter: drop-shadow(0px 0px 8px gray) brightness(0.75);
@@ -32,7 +33,6 @@ export const BooksPageWrapper = styled.div`
         }
         .book_image{
             z-index: 1;
-            box-shadow: 0px 1px 52px 8px rgba(0,0,0,0.3);
             transform: scale(1.1);
         }
         a{
@@ -115,6 +115,7 @@ export const BooksPageWrapper = styled.div`
             li, img{
                 width: 3.5rem;
                 height: 5rem;
+                
             }
         }
     }

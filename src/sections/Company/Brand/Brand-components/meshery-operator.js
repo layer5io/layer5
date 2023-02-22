@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator-dark.png";
-import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator-white.png";
 
 const MesheryOperatorWrapper = styled.section`
     .sub-project {
@@ -20,7 +21,7 @@ const MesheryOperatorBrand = () => {
         <Row className="sub-project brand-section">
           <Col xs={12} sm={6}>
             <h2 className="layerH3">
-                            Meshery Operator
+            Meshery Operator
             </h2>
           </Col>
           <Col xs={12} sm={6} className="download-button">
@@ -32,41 +33,43 @@ const MesheryOperatorBrand = () => {
           </Col>
           <Col>
             <p>
-                            The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
-                            phrase, image, or other designation that identifies the source or
-                            origin of any Layer5 projects. Please don’t modify the marks or
-                            use them in a confusing way, including suggesting sponsorship or
-                            endorsement by Layer5, or in a way that confuses Layer5 with
-                            another brand (including your own).
+            The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
+            phrase, image, or other designation that identifies the source or
+            origin of any Layer5 projects. Please don’t modify the marks or
+            use them in a confusing way, including suggesting sponsorship or
+            endorsement by Layer5, or in a way that confuses Layer5 with
+            another brand (including your own).
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
             <h3 className="layerH3 in">
-                            Logos
+            Logos
             </h3>
           </Col>
-          <Row className="ImgDiv">
-            <Col xs={12} sm={4}>
-              <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
-            </Col>
-            <Col xs={12} sm={4} className="logo">
-              <img src={MesheryOperator} alt="MesheryOperator Logo"/>
-            </Col>
-          </Row>
+          <SRLWrapper>
+            <Row Vcenter className="ImgDiv">
+              <Col xs={12} sm={4}>
+                <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
+              </Col>
+              <Col xs={12} sm={4} className="logo">
+                <img src={MesheryOperator} alt="MesheryOperator Logo"/>
+              </Col>
+            </Row>
+          </SRLWrapper>
         </Row>
         <Row>
           <Col>
             <h3 className="layerH3 in">
-                            Colors
+              Colors
             </h3>
           </Col>
           <Col>
             <p>
-                            The Meshery Operator color palette consists of the primary Meshery Operator color
-                            and additional shades. The Meshery Operator logo should be white or
-                            monochrome tonal when using a color background.
+              The Meshery Operator color palette consists of the primary Meshery Operator color
+              and additional shades. The Meshery Operator logo should be white or
+              monochrome tonal when using a color background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

@@ -1,54 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { graphql } from "gatsby";
-
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
-
 import Navigation from "../../sections/General/Navigation";
 import ProjectPage from "../../sections/Projects/Project-grid";
 import Footer from "../../sections/General/Footer";
-
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
-import seoimage from "../../assets/images/app/projects/layer5-projects.png";
-
-export const query = graphql`
-    query allProjects {
-        allMdx(
-            filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
+import lighttheme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+export const query = graphql`query allProjects {
+  allMdx(
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
+      }
+      fields {
+        slug
+      }
     }
+  }
+}
 `;
 
-const ProjectGridPage = ({data}) => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Innovative Service Mesh Projects" description="Layer5 - The Service Mesh Company. Layer5 is the maker of Meshery and Service Mesh Performance (SMP) and maintainers of Service Mesh Interface (SMI). We are the largest collection of service mesh projects and their maintainers in the world. Contact Layer5 for help with operating a service mesh." image={seoimage} />
-      <Navigation />
-      <ProjectPage data={data} />
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+const ProjectGridPage = ({ data }) => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <ProjectPage data={data} theme={theme} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default ProjectGridPage;
+
+export const Head = () => {
+  return <SEO title="Innovative Cloud Native Projects"
+    description="Layer5, empowerer of engineers. Layer5 is the maker of Meshery, Service Mesh Performance, Service Mesh Interface, and Nighthawk. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration."
+    image="/images/layer5-projects.png" />;
+};

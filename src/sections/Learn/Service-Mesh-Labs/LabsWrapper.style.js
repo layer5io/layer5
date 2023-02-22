@@ -1,23 +1,10 @@
 import styled from "styled-components";
 
 export const LabsWrapper = styled.div`
-    .join-community {
-        margin: 5rem 0rem;
-    }
-    .join-community_text-and_button {
-		margin: 0 4rem; 
-        text-align: center;
-        h1{
-            margin-top: 1rem;
-        }
-        p{
-            margin: auto;
-            margin-top: 1rem;
-        }
-        button{
-            margin-top: 1.5rem;
-        }
-    }
+    
+	.page-header {
+		margin: 5rem auto;
+	}
 	.course-tabs {
 		display: flex;
 	}
@@ -39,7 +26,7 @@ export const LabsWrapper = styled.div`
 		transform: rotate(180deg);
 		transform-origin: center center;
 		list-style-type: none;
-		background: ${props => props.theme.menuHoverColor};
+		background: ${props => props.theme.secondaryColor};
 		cursor: pointer;
 		
 		&:hover {
@@ -68,4 +55,21 @@ export const LabsWrapper = styled.div`
 	.row-wrapper {
 		margin-left: 0px;
 	}
+	.join-community {
+        margin: 5rem 0rem;
+    }
+    .join-community_text-and_button {
+		margin: 0 4rem; 
+        text-align: center;
+        h1{
+            margin-top: 1rem;
+        }
+        p{
+            margin: auto;
+            margin-top: 1rem;
+        }
+        button{
+            margin-top: 1.5rem;
+        }
+    }
 `;

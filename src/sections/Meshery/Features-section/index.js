@@ -1,14 +1,19 @@
 import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import meshery_logo from "../../../assets/images/meshery/full-logo/meshery-logo-tag-light-white-text-side.png";
 import Slider from "react-slick";
-import slide1 from "../images/meshery_benchmark_screen.png";
-import slide2 from "../images/meshery-configuration-management.png";
-import slide3 from "../images/SMI-Conformance-in-Meshery.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slide1 from "../images/service mesh performance example.gif";
+import Slide2 from "../images/meshery_benchmark_screen.png";
+import Slide3 from "../images/meshery-configuration-management.png";
 import FeaturesSectionWrapper from "./features-section.style";
+import { StaticImage } from "gatsby-plugin-image";
 
-const slides_list = [slide1, slide2, slide3];
+const slide2Path = "../images/meshery_benchmark_screen.png";
+const slide3Path = "../images/meshery-configuration-management.png";
+
+const slides_list = [Slide1, Slide2, Slide3];
 
 const FeaturesSection = () => {
 
@@ -42,35 +47,34 @@ const FeaturesSection = () => {
           <img src={meshery_logo} alt="Meshery Logo" />
         </div> */}
         <div className="section-header">
-          <h2>It's meshy out there.</h2>
-          <h1>Get the <span>most out</span> of your service mesh</h1>
+          <h2>Distributed systems are hard.</h2>
+          <h1>Get the <span>most out</span> of yours</h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
           <p>
-            No matter what service mesh you choose, Meshery works.
+            No matter where you run your workloads, Meshery just works.
           </p>
         </div>
         <div className="smp-section">
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
-              <h3>The Performance Yardstick</h3>
+              <h3>The Performance Yardstick: MeshMark</h3>
               <p>
-                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
-                application across different service meshes. Compare and manage service mesh overhead.
+                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your          application across different service meshes. Compare and manage service mesh overhead.
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">
               <Slider {...settings}>
                 <div>
-                  <img src={slide1} alt="Slide 1" />
+                  <img src={Slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <img src={slide2} alt="Slide 2" />
+                  <StaticImage src={slide2Path} alt="Slide 2" />
                 </div>
                 <div>
-                  <img src={slide3} alt="Slide 3" />
+                  <StaticImage src={slide3Path} alt="Slide 3" />
                 </div>
               </Slider>
             </Col>
@@ -78,16 +82,16 @@ const FeaturesSection = () => {
         </div>
         <div className="mesh-mngmnt">
           <div>
-            <h4>One step to managing service meshes</h4>
+            <h4>One step to managing your microservices</h4>
             <h1>Cloud Native Application Management</h1>
-            <p>Confidentally take full advantage of all that a service mesh offers.</p>
+            <p>Confidently take full advantage of all that your infrastructure offers.</p>
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Install" url="/service-mesh-management/meshery/getting-started" />
+              <Button secondary className="mgmt_button" title="Install" url="/cloud-native-management/meshery/getting-started" />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Manage" url="/service-mesh-management/meshery/operating-service-meshes" />
+              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-service-meshes" />
             </Col>
             <Col xs={12} sm={6} md={4}>
               <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />

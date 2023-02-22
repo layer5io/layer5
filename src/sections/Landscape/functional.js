@@ -46,6 +46,14 @@ function Functional() {
         Header: "Encryption",
         accessor: "encryption",
       },
+      {
+        Header: "SPIFFE",
+        accessor: "spiffe",
+      },
+      {
+        Header: "SPIRE",
+        accessor: "spire",
+      }
     ],
     []
   );

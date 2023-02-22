@@ -39,7 +39,8 @@ export const MesheryPlatformsWrapper = styled.div`
           max-width: 12rem;
           border-radius: 1rem;
           margin-bottom: 2rem; 
-          background-color: ${props => props.theme.tertiaryColor};
+          background-color: ${props => props.theme.DarkTheme ? "#1e2117" : "#1e2117"};
+
           
           &:hover {
             background-color: ${props => props.theme.secondaryColor};
@@ -56,7 +57,7 @@ export const MesheryPlatformsWrapper = styled.div`
       }
       .installation-steps{
           flex-direction: column;
-          text-align: left;
+          text-align: center;
       }
       .step-2{
         margin: 0 auto;

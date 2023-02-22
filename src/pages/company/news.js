@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -10,49 +10,71 @@ import NewsPage from "../../sections/Company/News-grid";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 
-export const query = graphql`
-    query allNews {
-        allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    date(formatString: "MMMM Do, YYYY")
-                    author
-                    eurl
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
+import SimpleReactLightbox from "simple-react-lightbox";
+
+export const query = graphql`query allNews {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        author
+        category
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
     }
+  }
+}
 `;
 
-const NewsGridPage = ({data}) => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="News" description="News and Press about Layer5, the service mesh company. 
-    Layer5 the company behind the world's largest service mesh community." />
-      <Navigation />
-      <NewsPage data={data}/>
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+const NewsGridPage = ({ data }) => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <SimpleReactLightbox>
+          <NewsPage theme={theme} data={data} />
+        </SimpleReactLightbox>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default NewsGridPage;
+
+export const Head = () => {
+  return <SEO title="News" description="News and press about Layer5, the cloud native management company.
+    Layer5 the company behind industry-leading, open source software." />;
+};

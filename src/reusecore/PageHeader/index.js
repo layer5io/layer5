@@ -1,12 +1,13 @@
 import React from "react";
-import {Link, graphql, useStaticQuery} from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 import slugify from "../../utils/slugify";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
+import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 
 const authorField = (author, isSlugAvailable) => {
-  return(
+  return (
     <>
       {
         isSlugAvailable ?
@@ -19,9 +20,9 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
+const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date }) => {
   let isSlugAvailable = false;
-  if(author){
+  if (author){
     const validMembers = useStaticQuery(
       graphql`
                 query validMemberss{
@@ -45,21 +46,36 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
     <PageHeaderWrapper>
       <div className="page-header">
         { thumbnail && <div className="feature-image">
-          <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
+          <Image {...thumbnail} imgStyle={{ objectFit: "contain" }} alt={title}/>
         </div>}
-        <h1>{title}</h1>
+        <h1 className="page-title" >{title}  <sup className="supscript">{superscript}</sup>{ img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) } </h1>
         {subtitle && (<h3>{subtitle}</h3>)}
         {category && (
           <div className="breadcrumbs">
             <span>
               <h5>Category:</h5>
-              <p key={category}>{category}</p>
+              <p key={category}>
+                <Link to={`/blog/category/${slugify(category)}`}>
+                  <span>{category}</span>
+                </Link>
+              </p>
             </span>
             {author && (
               <>
                 <span>
                   <h5>By:</h5>
-                  <p>{authorField(author, isSlugAvailable)}</p>
+                  {author.name === "Layer5 Team"
+                    ? <p><img src={layer5_img} alt="Layer5" width="85" /> Team</p>
+                    : <p>{authorField(author, isSlugAvailable)}</p>
+                  }
+                </span>
+              </>
+            )}
+            {date && (
+              <>
+                <span>
+                  <h5>On:</h5>
+                  <p>{date}</p>
                 </span>
               </>
             )}
@@ -69,6 +85,12 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
           <div className="breadcrumbs post">
             <h5>By:</h5>
             <span>{authorField(author, isSlugAvailable)}</span>
+            {date && (
+              <span>
+                <h5>On:</h5>
+                <p>{date}</p>
+              </span>
+            )}
           </div>
         )}
         {/*{!author && path && (*/}

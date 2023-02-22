@@ -1,22 +1,26 @@
 import styled from "styled-components";
 
 const MeshSectionWrapper = styled.section`
-  margin: 0rem 0 5rem
+  margin: 0rem 0rem 2.25rem 0rem;
   position: relative;
   overflow: hidden;
   .title { 
     text-transform: uppercase;
     color: #A0AAAA;
   }
+  .big-title {
+    color: ${props => props.theme.text};
+  }
   .side-text {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 600;
     line-height: 2rem;
-    color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
+    color: ${props => props.theme.text};
     margin: 50px 0 24px 0;
     span {
-           font-weight: 600;
-            color: ${props => props.theme.keppelColor};
+           font-weight: 300;
+            /* color: ${props => props.theme.keppelColor}; */
+
         }
    }
    .side{
@@ -40,7 +44,13 @@ const MeshSectionWrapper = styled.section`
        font-size: 1rem;
        line-height: 27px;
    }
-
+   .strikethrough {
+    text-decoration: line-through;
+    font-weight: 400;
+   }
+   a:hover {
+    color: ${props => props.theme.text}
+   }
 
   @media only screen and (max-width: 780px) {
     .mesh-image{
@@ -49,7 +59,7 @@ const MeshSectionWrapper = styled.section`
         margin-right: auto;
     }
     .section-title{
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         /* padding-bottom: 1.5rem; */
         
     }
@@ -76,6 +86,9 @@ const MeshSectionWrapper = styled.section`
         padding-right: 20px;
         font-weight: 300;
         margin: 0;
+    }
+    .backBtn{
+        text-align: center;
     }
 
   }

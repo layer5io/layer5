@@ -10,8 +10,9 @@ const FooterWrapper = styled.section`
 		top: 22%;
 		width: 18rem;
 	}
-
+	
 	.footer-head {
+		align-items: center;
 		margin: 0px 1.5rem 1.5rem -0.75rem;
 		.footer_logo-icons{
 			padding: 0rem;
@@ -26,7 +27,7 @@ const FooterWrapper = styled.section`
 		color: #ccc;
 		padding-right: 2.25rem;
 		font-style: italic;
-		font-weight: 200;
+		font-weight: 300;
 		font-size: 1rem;
 	}
 
@@ -53,7 +54,7 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			list-style: none;
 			margin: 0;
-			font-size: 1.063rem;
+			font-size: .95rem;
 
 			.category-link {
 				color: #CCCCCC;
@@ -63,11 +64,23 @@ const FooterWrapper = styled.section`
 					color: ${props => props.theme.secondaryColor};
 				}
 			}
+
+			.new-label {
+				background-color: rgba(255, 255, 255, 0.25);
+				font-size: .5rem;
+				margin-left: .25rem;
+				padding: .2rem;
+				font-weight: 500;
+				border-radius: .25rem;
+				vertical-align: top;
+				text-transform: uppercase;
+				color: ${props => props.theme.saffronLightColor};
+			}
 		}
 	}
 
 	.subscribe {
-		font-family: 'Qanelas Soft', sans-serif;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		margin: 0 2.5rem 2rem 0;
 		justify-content: flex-end;
 
@@ -89,6 +102,7 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
+			color: black;
 		}
 	}
 
@@ -111,6 +125,9 @@ const FooterWrapper = styled.section`
 				a {
 					color: #CCCCCC;
 				}
+				a:hover {
+					color: ${props => props.theme.secondaryColor};
+				}
 			}
 			li + li {
 				margin-left: 1rem;
@@ -124,12 +141,16 @@ const FooterWrapper = styled.section`
 		}
 	}
 
-	@media only screen and (max-width: 1199px) and (min-width: 662px) {
+	@media only screen and (max-width: 1199px) and (min-width: 704px) {
 		.subscribe {
 			margin-top: -7rem;
 		}
 	}
-
+	@media only screen and (max-width:767px) and (min-width: 729px){
+		.subscribe {
+			margin-top: 10px;
+		}
+	}
 	@media only screen and (max-width: 661px) and (min-width: 470px) {
 		.sections_col{
 			padding: 0 1rem 0 3rem;
@@ -153,6 +174,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
+				color: black;
 			}
 		}
 	}
@@ -200,6 +222,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
+				color: black;
 			}
 		}
 	}
@@ -213,11 +236,23 @@ const FooterWrapper = styled.section`
 		.footer-bottom{
 			.policies {
 				text-align: center;
+				li {
+					padding: 0.125rem
+				}
 			}
 
 			li + li {
 				margin-left: 0 !important;
 				text-align: center;
+			}
+		}
+		.section-categories {
+			li {
+				margin-left: 0 !important;
+				text-align: center;
+				padding: 0.31rem 0; /* add vertical padding */
+				line-height: 1.5; /* increase the line-height */
+				text-align: left
 			}
 		}
 	}

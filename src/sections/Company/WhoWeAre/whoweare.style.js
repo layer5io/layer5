@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import collabMap from "./images/layer5-collaboration-map.svg";
 
 const AboutSectionWrapper = styled.section`
     background: linear-gradient(255.21deg, #477E96 20.89%, #01B29F 36.99%, #00B39F 59.78%, #3C494F 90.08%);
-    mix-blend-mode: darken; 
     color: white;
     text-align: center;
     padding:4rem;
@@ -51,7 +49,7 @@ const AboutSectionWrapper = styled.section`
 	.item {
     height: 100%;
     min-width: 150px;
-		background: ${props => props.theme.tertiaryColor};
+		background: ${props => props.theme.DarkTheme ? "#212121" : props.theme.tertiaryColor};    
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: left;

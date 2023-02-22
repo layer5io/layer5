@@ -33,12 +33,12 @@ function TestsTable() {
   return (
     <Tabs className="conformance-table">
       <TabList>
-        <Tab>Test Set v0.4.9</Tab>
+        <Tab>Spec v0.6.0</Tab>
       </TabList>
       <TabPanel>
         <Table
           columns={columns}
-          data={test_data["0.4.9"]}
+          data={test_data["0.6.0"]}
         />
       </TabPanel>
     </Tabs>

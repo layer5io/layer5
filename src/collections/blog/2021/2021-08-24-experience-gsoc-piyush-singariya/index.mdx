@@ -1,0 +1,109 @@
+---
+title: GSoC Experience @ Layer5 - Piyush Singariya
+subtitle: damn, it was good!
+date: 2021-08-25 10:30:05 -0530
+author: Piyush Singariya
+thumbnail: ./gsoc-wide.png
+darkthumbnail: ./gsoc-wide.png
+category: Programs
+tags:
+  - GSoC
+  - Programs
+  - Meshery
+  - Experience
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+
+import gsocLogo from "./gsoc.png";
+
+<BlogWrapper>
+<img src={gsocLogo} className="gsoc-image" align="right" alt="gsoc-image" />
+<p>
+  Hi, I am Piyush Singariya, a short description of me would be “another
+  software engineer watching anime”, in the longer version I am a 2021 graduate
+  from IIT Roorkee, who loves to watch anime and play video games all day. I
+  know both are exactly the same, but it is what it is.
+</p>
+<p>
+  It all started around 22 Feb when I jumped into slack, and after 10 whole days
+  messing around the project, I started to get a hold of it. I started
+  contributing to mesheryctl and I thought to apply for the GSoC 2021.
+</p>
+<h2 id="project">Project</h2>
+<p>
+  My project was to introduce multiple net new features and minor enhancements
+  in Meshery and mesheryctl (Meshery’s CLI).
+</p>
+<p>
+  Meshery is a multi-service mesh management plane that offers lifecycle,
+  configuration, and performance management of service meshes and applications
+  running on top of those meshes. Meshery uses the{" "}
+  <a href="https://smp-spec.io/">Service Mesh Performance</a> specification to
+  describe and capture performance benchmarks and characterize service mesh
+  behavior.
+</p>
+<p>
+  I integrated many new features in Meshery Some of them are mentioned here.
+</p>
+<h3 id="mesheryctl">mesheryctl</h3>
+<ul>
+  <li>
+    Adding a new command to meshery&#39;s cli, i.e. mesheryctl for performance
+    profiles and result management
+  </li>
+  <li>
+    Introduction of Unit Testing and Integration testing for Cobra commands of
+    cli, mesheryctl.
+    <ul>
+      <li>Reached 28% code-coverage in mesheryctl</li>
+    </ul>
+  </li>
+  <li>
+    Introducing health-checks for environment checking of pre/post-deployment of
+    meshery server
+  </li>
+  <li>
+    Adding a new command to meshery&#39;s cli, i.e. mesheryctl for managing
+    Webssembly filters
+  </li>
+</ul>
+<h3 id="meshery">Meshery</h3>
+<ul>
+  <li>Reworking and consolidation of API endpoint handlers</li>
+  <li>Swagger Spec definition and automatic publishing of documentation</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+  <li>
+    Documentation on writing Unit and Integration Tests and Contributing to
+    Meshery Server Documentation
+  </li>
+  <li>
+    CI workflow for Swagger Documentation and running Unit and Integration Tests
+    with calculating Code-coverage with CodeCov
+  </li>
+</ul>
+<p>
+  Refer here for{" "}
+  <a href="https://github.com/piyushsingariya/gsoc2021">GSoC Final Report</a>
+</p>
+<h2 id="what-did-i-learn-">What did I learn?</h2>
+<p>
+  During the whole season, as my work was mostly focused on Golang so I can say
+  I learned Golang, learned working around HTTP handlers, writing cobra
+  commands, setting up golang unit testing for Cobra Commands(damn, it was
+  tough), writing environment health-checks, writing GitHub-actions, Open-API
+  specification 2.0,
+</p>
+<h2 id="summary">Summary</h2>
+<p>
+  A quick summary of this experience would be that I had a really good time with
+  Layer5, I learned, I engaged with other folks in the community, and I believe
+  the environment here is truly best for any student to spend their time here,
+  to learn and engage with each other. The folks here are crazy for helping new
+  members get started with Layer5 projects.
+</p>
+
+</BlogWrapper>

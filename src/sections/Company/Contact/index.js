@@ -7,11 +7,10 @@ import Partner_Icon from "../../../assets/images/contact/partner.svg";
 import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
+import ContactForm from "../../../components/ContactForm";
 
 const ContactPage = () => {
-
   const expandForm = useRef();
-
   const toggleForm = () => {
     expandForm.current.classList.toggle("showForm");
   };
@@ -19,26 +18,26 @@ const ContactPage = () => {
   return (
     <ContactPageWrapper>
       <Container>
-        <PageHeader 
+        <PageHeader
           title={"Get In Touch"}
           subtitle={"Let us know how we can help you."}
         />
-        <Row>
-          <CardOutline 
+        <Row className="cards-container">
+          <CardOutline
             link="/careers"
             img={Jobs_Icon}
             alt="Job"
             title="Careers"
             content="I'm interested in career opportunities at Layer5"
           />
-          <CardOutline 
+          <CardOutline
             link="mailto:support@layer5.io"
             img={Support_Icon}
             alt="Support"
             title="Support"
             content="I need assistance managing my cloud native systems"
           />
-          <CardOutline 
+          <CardOutline
             link="/partners"
             img={Partner_Icon}
             alt="Partner"
@@ -46,13 +45,13 @@ const ContactPage = () => {
             content="I would like to establish a partnership with Layer5"
           />
         </Row>
-        <Row className="contact-form-row" >
+        <Row className="contact-form-row">
           <Row
-            onClick={function() {
-              toggleForm(); 
+            onClick={function () {
+              toggleForm();
             }}
           >
-            <CardOutline 
+            <CardOutline
               img={Contact_Icon}
               alt="Contact"
               title="Contact"
@@ -60,11 +59,9 @@ const ContactPage = () => {
             />
           </Row>
           <div className="contact-form" ref={expandForm}>
-            <iframe
-              scrolling="no"
-              src="https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"
-              className="form-frame"
-            />
+            <Container>
+              <ContactForm />
+            </Container>
           </div>
         </Row>
       </Container>

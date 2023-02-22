@@ -1,19 +1,15 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmark.png";
 
 const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
     .community-header{
         color: white;
-        height: 25rem;
+        height: 35rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: url(${BookmarkImage});
-        background-size: cover;
-        background-position: center;
         h1,h3{
             color: white;
         }
@@ -43,7 +39,8 @@ const CommunitySectionWrapper = styled.div`
     }
 
     .open-source-projects{
-        margin-top: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
         text-align: center;
 
         h2{
@@ -89,11 +86,12 @@ const CommunitySectionWrapper = styled.div`
                 margin: 2.5rem auto;
             }
             h3{
-                margin: 1.5rem auto 1.5rem auto;
+                margin: 0.5rem auto 0.5rem auto;
                 color: white;
             }
             h1{
                 color: white;
+                margin: 1rem auto 1rem auto;
             }
             button{
                 margin-top: 2.5rem;
@@ -108,15 +106,17 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 5rem;
         .content{
             h3{
-                margin: 1.5rem auto 1.5rem auto;
-
+                margin: 0.5rem auto 0.5rem auto;
+            }
+            h1{
+                margin: 1rem auto 1rem auto;
             }
             @media (max-width: 62rem) {
               text-align:center;
             }
         }
-        img{
-            max-height: 25rem;
+        .meshmate-img{
+            max-width: 25rem;
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
@@ -147,7 +147,7 @@ const CommunitySectionWrapper = styled.div`
               display: flex;
               margin: auto;
             }
-            
+
             @media (max-width: 36rem) {
                h3{
                   font-size: 18px;
@@ -168,20 +168,15 @@ const CommunitySectionWrapper = styled.div`
     }
 
     .newcomers-section {
-        background: ${props => props.theme.secondaryLightColor};
-        padding-top: 4rem;
         width:100%;
         margin: 5rem 0;
-        .map {
-            padding-top: 0rem;
-            margin-top:0rem;
-            max-width:40rem;
-            padding-bottom: 2rem;
+        padding: 2rem 0;
+        .text{
+            text-align: center;
         }
         h4{
             padding: 1rem auto;
         }
-        text-align:center;
 
         .newcomers-arrow {
             align-items: center;
@@ -196,6 +191,14 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .newcomers-section {
+            .text {
+                margin-top: 1.5rem;
+            }
         }
     }
 

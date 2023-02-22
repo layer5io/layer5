@@ -1,0 +1,135 @@
+---
+title: Kubernetes 1.26 Highlights, Features, and Deprecations
+subtitle: 
+date: 2022-12-06 08:00:00 -0530
+author: Lee Calcote
+thumbnail: ./kubernetes-new.png
+darkthumbnail: ./kubernetes-new-dark.png
+description: "Release Notes: What changed in Kubernetes 1.26?"
+type: Blog
+category: Kubernetes
+tags:
+  - Kubernetes
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+
+<BlogWrapper>
+<p>
+As the final Kubernetes release of 2022, Kubernetes 1.26 is an exciting new release of the popular container orchestration platform. It offers a number of new features and improvements that will help platform engineers and DevOps engineers manage their Kubernetes clusters more effectively. Here are some of the highlights of this release. 
+</p>
+<div class="intro">
+  <p>
+    As a longstanding CNCF member, Layer5 has donated two of its open source projects to the CNCF: <Link to="/cloud-native-management/meshery">Meshery</Link> and <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link>. As an end-to-end, open-source, multi-cluster Kuberentes management platform, Meshery makes Day 2 Kubernetes cluster management a breeze. Run Meshery to explore the behavorial changes of this Kubernetes release and what they really mean to you. 
+  </p>
+</div>
+
+While there are a number of enhancments tracked in this release (38), you need to be aware that there are also a number of features being deprecated (10) in 1.26. In this article, we will focus on some highlighted enhancements, important deprecations, and removals so that you can be confident before upgrading your clusters. 
+
+We'll breakdown new K8s features by category, starting with networking.
+
+## Networking in Kubernetes 1.26
+
+### [Service Internal Traffic Policy](https://github.com/kubernetes/enhancements/issues/2086) [Stable]
+
+When requests are made to a Kubernetes service, they are randomly distributed to all available endpoints. The new enhancement enriches the API of a service to use node-local and topology-aware routing for internal traffic. The new internalTrafficPolicy field has two options: Cluster (default) and Local. The Cluster option works like before and tries distributing requests to all available endpoints. On the other hand, the Local option only sends requests to node-local endpoints and drops the request if there is no available instance on the same node. The Local option is useful for sending metrics or logs to an agent running as a DaemonSet. 
+
+### [Reserve Service IP Ranges for Dynamic and Static IP Allocation](https://github.com/kubernetes/enhancements/issues/3070) [Stable]
+
+Kubernetes services are assigned a virtual ClusterIP to be reachable inside the cluster. The ClusterIP is either assigned dynamically from a configured Service IP range, or statically set while creating the service resource. There was no possibility of knowing whether another service in the cluster had already used the static ClusterIP before this new stable enhancement. With this change, the IP range is divided into two; this prevents conflicts between services implementing dynamic IP allocation and static IP assignment. The flag --service-cluster-ip-range, with CIDR notation, is part of the Kubernetes API server configuration and is ready to use with the 1.26 release. 
+
+### [Support of Mixed Protocols in Services with Type LoadBalancer](https://github.com/kubernetes/enhancements/issues/1435) [Stable]
+
+Kubernetes Services that use the LoadBalancer type have only supported a single Layer 4 protocol until now. With this enhancement going from graduating to stable in v1.26, it is possible to define a mix of protocols in the same service definition. In other words, this enhancement allows a LoadBalancer Service to serve different protocols (e.g. UDP, TCP) under the same port (e.g. 443). For example, serving both UDP and TCP requests for a DNS or SIP server on the same port. For instance, you can expose a DNS server with a single load balancer IP for both TCP and UDP requests, such as the following:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-protocol-dns-server
+spec:
+  type: LoadBalancer
+  ports:
+    - name: dns-udp
+      port: 53
+      protocol: UDP
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+  selector:
+    app: dns-server
+```
+
+## Security in Kubernetes 1.26
+
+### [kubelet Credential Provider](https://github.com/kubernetes/enhancements/issues/2133) [Stable]
+
+The kubelet agent has a built-in credential provider mechanism to retrieve credentials for container image registries. It natively supports Azure, Google Cloud, and AWS container image registries for dynamically retrieving their credentials. The new stable enhancement in v1.26 offers a replacement for the in-tree implementations, and creates an API for extensible plugins in the future. 
+
+### [SignedSigning Release Artifacts](https://github.com/kubernetes/enhancements/issues/3031) [Beta]
+
+Every Kubernetes release produces a set of artifacts such as binaries, container images, documentation, and metadata. Since the 1.24 release, the artifacts have been signed as an alpha feature. In the 1.26 release, artifact signing graduates to beta to increase software supply chain security for the Kubernetes release process and mitigate man-in-the-middle attacks.
+
+### [Reduction of Secret-Based Service Account Tokens](https://github.com/kubernetes/enhancements/issues/2799) [Beta]
+
+`BoundServiceAccountTokenVolume` has been GA since version 1.22: Service account tokens for pods are obtained via the TokenRequest API and stored as a projected volume. The new enhancement, in beta, eliminates the need to auto-generate secret-based service account tokens. In addition, Kubernetes will warn about using auto-created secret-based service account tokens, and purge the unused ones.
+
+### [Windows Privileged Containers](https://github.com/kubernetes/enhancements/issues/1981) [Stable] and [Host Networking](https://github.com/kubernetes/enhancements/issues/3503) [Alpha] 
+
+Privileged containers are the ones that have similar access and capabilities to the host processes running on the servers. In Linux environments, they are used heavily in Kubernetes for storage, networking, and management. In this release, support for privileged containers for the Windows environment graduates to stable. Management of processes is heavily different from the operating system standpoint in Linux and Windows. Therefore, privileged containers will also work differently in two environments, but they will ensure the same level of security and operational experience.
+
+In addition, there is a new alpha-level enhancement in this release to support host networking for Windows pods. Currently, Windows has all the functionality to make containers use the networking namespace of the nodes. The new alpha enhancement enables this functionality from the Kubernetes side, increasing the parity between Linux and Windows containers.
+
+### [Self-User Attribute and Authentication API](https://github.com/kubernetes/enhancements/issues/33250) [Alpha] 
+
+Kubernetes has no resources to identify and manage users as part of its API. Instead, it uses authenticators to get user attributes from tokens, certificates, OIDC providers, or webhooks. The new alpha feature adds a new API endpoint to see what attributes the current users have. The new API is under authentication.k8s.io with the name SelfSubjectReview, and there is a new corresponding command as well: kubectl auth who-am-i. The new feature will reduce the obscurity of complex authentication and help users debug the authentication stack. 
+
+## Scheduling in Kubernetes 1.26
+
+### [Non-Graceful Node Shutdown for StatefulSet Pods](https://github.com/kubernetes/enhancements/issues/2268) [Beta]
+
+As a platform Kubernetes is hardened and has been deploy by thousands and thousands of users. Hardening of Kubernetes makes itself resistant to disasters. The kubelet agent that runs on each node in a Kubernetes cluster already uses graceful node shutdown to detect and offboard workloads to other nodes. However, when the shutdown is not detected by the kubelet, the pods of a `StatefulSet` are stuck as `Terminating` and not transferred to a healthy node. The kubelet on the downed node will not delete its pods from Kubernetes API, and the StatefulSet controller will not create new pods with the same name. This happens due to a conflict in the Kubernetes machinery. With this enhancement moving into beta, though, pods will be forcefully deleted along with their volume attachments and new pods will be migrated (created) on healthy nodes.
+
+### [Pod Scheduling Readiness](https://github.com/kubernetes/enhancements/issues/3521) [Alpha]
+
+Currently, pods are considered ready for scheduling as soon as they are created. However, not every pod requires a node, resource allocation, and the start of all its containers immediately after its creation. The new alpha enhancement adds an API to mark pods with their scheduling status: paused and ready. Pods with the .spec.schedulingGates field will be parked in the scheduler and only be assigned to nodes when they are ready to be scheduled.
+
+### [kubectl explain to use OpenAPI v3 for ](https://github.com/kubernetes/enhancements/issues/3515) [Alpha]
+
+Use of OpenAPI v3 means supporting rich type information in `kubectl explan`. Kubernetes has supported OpenAPI v3 as a beta since version 1.24. This richer representation of the fields in the Kubernetes API, means that users can use the `kubectl explain` command to get information that is only detailed in  OpenAPI v3, and not the subset defined OpenAPI v2.
+
+## Deprecations and Removals
+
+Consistent to the Kubernetes API lifecycle is deprecations and removals of APIs in each release. It is strongly suggested to check whether you are using the following APIs and flags before there are breaking changes.
+
+<ul>
+<li>
+  Removal of the `flowcontrol.apiserver.k8s.io/v1beta1` API group for `FlowSchema` and `PriorityLevelConfiguration` requires a migration to the v1beta2 API version.
+</li>
+<li>
+  Removal of the `autoscaling/v2beta2` API version for HorizontalPodAutoscaler requires a migration to the autoscaling/v2 API version. 
+</li>
+<li>
+  Removal of legacy and vendor-specific authentication client-go and kubectl for Azure and Google Cloud requires migration to vendor-neutral authentication plugin mechanisms.
+</li>
+<li>
+  Removal of in-tree CSI integration for OpenStack—namely, the `cinder` volume type—requires a migration to use the CSI driver for OpenStack. 
+</li>
+<li>
+  Some unused options and flags for the kubectl run command are marked as deprecated in the 1.26 release, such as `--grace-period`, `--timeout`, and `--wait`.
+</li>
+</ul>
+
+## Last Kubernetes release of 2022
+
+Kubernetes is an ever-evolving platform. For those of you running workloads on Kubernetes taking detailed note of API changes and enhancements is an important activity as you endevour to keep your clusters upgraded with release releases. A more secure, scalable, and flexible Kubernetes is our collective goal. Dign into more details about deprecation, removals, and the latest changes in the 1.26 [release notes](https://relnotes.k8s.io/).
+
+On behalf of the Layer5 community and all of the CNCF projects that its contributors steward, thank you to everyone who participated in this Kubernetes release, and congratulations! 
+
+As an end-to-end, open-source, multi-cluster Kuberentes management platform, Meshery makes Day 2 Kubernetes cluster management a breeze. Run Meshery to explore the behavorial changes of this Kubernetes release and what they really mean to you. 
+
+</BlogWrapper>

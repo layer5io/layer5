@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import smp_bg from "./smp-hero.png";
-import callout from "./callout.png";
+import cncf from "../../../assets/images/smp-page/cncf-icon.png";
 
 const SMPWrapper = styled.section`
+    margin-bottom: 3.25rem;
     .smp-hero{
-        background-image: url(${smp_bg});
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        height: 34.4rem;
         .hero-text{
             padding: 9.375rem 0 6.25rem 0;
             h1{
@@ -21,6 +17,7 @@ const SMPWrapper = styled.section`
             .logo-img{
                 height: 240px;
                 width: auto;
+                marginRight: 100px;
             }
         }
     }
@@ -31,7 +28,10 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 6.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h3 {
+            margin-bottom: 4.25rem;
         }
         h1{
             margin-bottom: 1.875rem;
@@ -85,9 +85,15 @@ const SMPWrapper = styled.section`
             }
         }
     }
+    
     .smp-effects{
+        background-image: url("${cncf}");
+        background-repeat: no-repeat;
+        background-position:right top;
+        padding-top:3rem;
+        background-size:435px;
         .effects-title{
-            margin: 6.25rem auto 3.125rem auto;
+            margin: 3.25rem auto 3.25rem auto;
             text-align: center;
             h1{
                 margin-bottom: 1.25rem;
@@ -111,7 +117,32 @@ const SMPWrapper = styled.section`
     .join-community{
         width: 100%;
         margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
+    .join-community_text-and_button{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction:column;
+        top: 6.5rem;
+        h1{
+            color: white;
+        }
+        p{
+            margin: unset;
+            max-width: 20rem;
+            color: white;
+        }
+        button{
+            margin-top: 1.5rem;
+        }
+    }
+    rect {
+        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#FFF7D8"};  
+      }
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{
@@ -122,6 +153,14 @@ const SMPWrapper = styled.section`
             }
         }
         .smp-effects{
+            background-image: url("${cncf}");
+            background-repeat: no-repeat;
+            background-position:right top;
+            padding-top:1rem;
+            background-size:325px;
+            .effects-title{
+                margin: 3.25rem auto;
+            }
             .iframes{
                 padding: 0 1rem;
                 .iframe{
@@ -131,12 +170,27 @@ const SMPWrapper = styled.section`
             }
         }
     }
+    @media only screen and (min-width: 993px) and  (max-width: 1024px) {
+        .smp-effects{
+            background-image: url("${cncf}");
+            background-repeat: no-repeat;
+            background-position:right top;
+            padding-top:1rem;
+            background-size:385px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .smp-effects{
+            background-image: unset;
+            padding-top:0;
+        }
+    }
     @media only screen and (max-width: 480px) {
         .smp-hero{
             .hero-text{
                 padding: 3.125rem 0;
                 .logo-img{
-                    height: 80px;
+                    height: 120px;
                 }
             }
         }

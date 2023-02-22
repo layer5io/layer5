@@ -4,14 +4,19 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
+import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 
 export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
-
+	Button:hover {
+		box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+	  }
 	.workshops-col {
 			margin: auto;
 	}
@@ -23,20 +28,24 @@ export const WorkshopsListWrapper = styled.div`
 		background: rgba( 0, 179, 159, 0.1);
 	}
 	.workshop-thumbnails {
-		height: 13rem;
+		height: 14rem;
 
 		img {
-				height: 100%;
+			height: 100%;
 		}
+	}
+
+	.blockquoteImg {
+		position: absolute;
+		opacity: 0.04;
+		max-height: 11.5rem;
+		left: 0rem;
+		top: -0.75rem;
 	}
 
 	.feedback-section {
 		margin: 5rem auto;
-
-		img{
-			width:4rem;
-			height:3rem;
-		}
+		position: relative;
 		
 		.slick-slider {
 			max-width: 1500px;
@@ -75,13 +84,22 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots li button:before {
-        font-size: 0.6rem;
-        color: ${props => props.theme.secondaryColor};
+				font-size: 0.6rem;
+				color: ${props => props.theme.secondaryColor};
 			}
 
 			.slick-dots li.slick-active button:before {
 				opacity: 1;
 				color: ${props => props.theme.secondaryColor};
+			}
+
+			.feedbackCol {
+				padding: 5rem 3.5rem;
+			}
+
+			p {
+				font-size: 1.85rem;
+				color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
 			}
 		}
 	}
@@ -105,6 +123,9 @@ export const WorkshopsListWrapper = styled.div`
 	@media screen and (max-width: 1400px) {
 		.workshop-section-wrapper {
 				padding: 6rem 3.5rem;
+		}
+		.workshop-thumbnails {
+			height: 13rem;
 		}
 	}
 	@media screen and (max-width: 1100px) {
@@ -145,6 +166,10 @@ export const WorkshopsListWrapper = styled.div`
 		.feedback-section {
 			.slick-slider {
 				max-width: 100%;
+
+				.feedbackCol {
+					padding: 4rem 2.5rem;
+				}
 			}
 		}
 	}
@@ -162,31 +187,28 @@ export const WorkshopsListWrapper = styled.div`
 
 const WorkshopsSection = () => {
   const data = useStaticQuery(
-    graphql`
-            query workshopsList {
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-                ) {
-                    nodes {
-                        frontmatter {
-                            thumbnail {
-                                childImageSharp {
-                                    fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query workshopsList {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      frontmatter {
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   var settings = {
@@ -215,12 +237,12 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops" />
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+            {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
@@ -237,8 +259,8 @@ const WorkshopsSection = () => {
           {
             feedbackData.map((data, index) => {
               return (
-                <Col key={index}>
-                  <img src={BlockQouteImage} alt="Quote-left" />
+                <Col key={index} className="feedbackCol">
+                  <img className="blockquoteImg" src={BlockQouteImage} alt="Quote-Image" />
                   <p>{data.feedback}</p>
                   <h3>{data.workshop}</h3>
                   <h5>{data.studnt_name}</h5>

@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
   }
 
    .content {
-    max-width: 30rem;
+    max-width: 34rem;
 
     @media (max-width: 1119px) {
       max-width: 22rem;
@@ -47,14 +47,32 @@ export const HeroWrapper = styled.div`
         margin: 8px;
       }
     }
-  }
-  code {
 
-    background-color: #eee;
-    border-radius: 5px;
-    font-family: courier, monospace;
-    padding: 5px;
+    .code{
+      pre{
+        width: inherit;
+        margin: auto;
+
+        button {
+          top: 1rem;
+        }
+
+        pre {
+          display: flex;
+          height: 6rem;
+          align-items: center;
+          padding: 1rem 0.5rem 0.5rem;
+
+          @media screen and (max-width: 850px) {
+            height: 4.5rem;
+          }
+        }
+      }
+      .token-line > span:first-of-type{
+        display: none;
+      }
     }
+  }
     p.enddescr {
       margin-top: 1rem;
     }

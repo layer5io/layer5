@@ -1,35 +1,47 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container } from "../../../reusecore/Layout";
-
+import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
+import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 
 import { ProjectWrapper } from "./projectGrid.style";
+import MeshMapCTA from "../../meshmap-cta";
 
-import meshery from "../../../assets/images/app/projects/meshery-logo-light.png";
-import landscape from "../../../assets/images/app/projects/landscape.png";
-import smi from "../../../assets/images/app/projects/smi.svg";
-import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
+import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
+import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
-import ContactFormModal from "../../../components/Contact-Modal";
+import smi from "../../../assets/images/app/projects/smi.svg";
+import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
+import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
+import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
-const ProjectPage = () => {
+
+const ProjectPage = ({ theme }) => {
   return (
     <ProjectWrapper>
-      <PageHeader className="title" title="Cloud Native Management" path="/projects" />
-      <h3>for the fifth layer of distributed systems</h3>
+      <PageHeader
+        className="title"
+        title="Cloud Native Management"
+        path="/projects"
+      />
+      <h3>
+        for the <img src={L5gray} alt="Layer 5 icon" />
+        th layer of distributed systems
+      </h3>
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
-            <Link to="/landscape" className="project__card one">
-              <div className="project__card-container">
+            <Link to="/service-mesh-landscape" className="project__card one">
+              <div className="project__card-container project__card-container_one">
                 <img src={landscape} alt="Landscape" />
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/meshery" className="project__card two">
-              <div className="project__card-container">
+            <Link to="/cloud-native-management/meshery" className="project__card two">
+              <div className="project__card-container project__card-container_meshery">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
               </div>
@@ -49,29 +61,64 @@ const ProjectPage = () => {
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link>
-            <Link to="/projects/service-mesh-performance" className="project__card five">
+            <Link
+              to="/projects/service-mesh-performance"
+              className="project__card five"
+            >
               <div className="project__card-container">
                 <img src={smp} alt="Service Mesh Performance" />
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
+            <Link to="/cloud-native-management/meshmap" className="project__card nine">
+              <div className="project__card-container project__card-container_meshmap">
+                <img src={meshmap} alt="MeshMap" />
+                <h5>MeshMap</h5>
+              </div>
+            </Link>
+            <Link to="/projects/nighthawk" className="project__card six">
+              <div className="project__card-container project__card-container_nighthawk">
+                <img src={nighthawk} alt="Nighthawk" />
+                <h5>NightHawk</h5>
+              </div>
+            </Link>
             <Link
-              to="/projects/distributed-performance-management"
-              className="project__card six"
+              to="/docker-extension-meshery"
+              className="project__card seven"
             >
-              <div className="project__card-container">
-                <img
-                  src={distributedPerformance}
-                  alt="Distributed Performance Management of Service Meshes"
-                />
-                <h5>Distributed Performance Management of Service Meshes</h5>
+              <div className="project__card-container-seven">
+                <Row>
+                  <img
+                    src={extension}
+                    alt="Meshery Docker Extension"
+                  />
+                  <h5> Meshery Docker Extension </h5>
+                </Row>
+              </div>
+            </Link>
+            <Link
+              to="/learn/service-mesh-books/service-mesh-patterns"
+              className="project__card eight"
+            >
+              <div className="project__card-container-eight">
+                <Row>
+                  <Col lg={4} md={12} sm={12} className="image">
+                    <img
+                      src={patterns}
+                      alt="Service Mesh Patterns"
+                    />
+                  </Col>
+                  <Col lg={8} md={12} sm={12}>
+                    <h5> Service Mesh Patterns</h5>
+                  </Col>
+                </Row>
               </div>
             </Link>
           </div>
-
-          <ContactFormModal callout_text="Contact Us" form_header="Get In Touch" />
+          <MeshMapCTA />
         </Container>
       </div>
+      <ProudMaintainers theme={theme} />
     </ProjectWrapper>
   );
 };

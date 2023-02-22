@@ -3,6 +3,15 @@ import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
+import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import img5 from "./feature-images/meshsync.svg";
+import img6 from "./feature-images/meshery-extensibility.svg";
+import { StaticImage } from "gatsby-plugin-image";
+
+const img1 = "./feature-images/meshery-configuration-management.png";
+const img2 = "./feature-images/meshery-wasm.png";
+const img4 = "./feature-images/meshery-and-grafana.png";
+const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.png";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -10,9 +19,11 @@ const MesheryFeaturesWrapper = styled.div`
     @media (max-width: 32rem){
         margin-top: 10rem;
     }
+
     .feature-expose {
     img {
-      padding: 4rem;
+      padding: 0 3rem 1rem;
+      height:20rem;
     }
   }
   .feature-expose-full {
@@ -21,7 +32,6 @@ const MesheryFeaturesWrapper = styled.div`
     }
   }
 `;
-
 
 const MesheryFeatures = () => {
   return (
@@ -34,12 +44,7 @@ const MesheryFeatures = () => {
               description:
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
               learnMoreLink: "/books/service-mesh-patterns",
-              content: (
-                <img
-                  src={require("./feature-images/meshery-configuration-management.png")}
-                  alt="Operational Best Practices"
-                />
-              ),
+              content: <StaticImage src={img1} alt="Operational Best Practices" />,
             },
             {
               title: "Adaptive WebAssembly Filters for Envoy",
@@ -47,10 +52,7 @@ const MesheryFeatures = () => {
                 "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
-                <img
-                  src={require("./feature-images/meshery-wasm.png")}
-                  alt="Adaptive WebAssembly Filters for Envoy"
-                />
+                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
             },
             {
@@ -61,7 +63,10 @@ const MesheryFeatures = () => {
               content: (
                 <Terminal
                   lines={[
-                    { code: "$ mesheryctl pattern apply -f canary-v3.yaml", color: "white" },
+                    {
+                      code: "$ mesheryctl pattern apply -f canary-v3.yaml",
+                      color: "white",
+                    },
                     { code: "» Deploying...", color: "navy" },
                     {
                       code: "✓ Deployment successfully rolled out!",
@@ -107,34 +112,62 @@ const MesheryFeatures = () => {
               ),
             },
             {
-              title: "Meshery Operator",
+              title: "Docker Extension for Meshery",
               description:
-                "",
+                "Develop service mesh-ready apps using Docker Desktop and Meshery",
+              content: (
+                <div className="feature-expose-full">
+                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <p>
+                    The Docker Extension for Meshery extends Docker Desktop’s
+                    position as the cloud native developer’s go-to Kubernetes
+                    environment with easy access to the next layer of cloud
+                    native infrastructure: service meshes.
+                  </p>
+                </div>
+              ),
+              learnMoreLink: "/docker-extension-meshery",
+            },
+            {
+              title: "Meshery Operator",
+              description: "",
+              learnMoreLink:
+                "/cloud-native-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
-                  <img
-                    src={require("../../../assets/images/meshery-operator/meshery-operator-dark.svg")}
-                    alt="Kubernetes Operator for Meshery"
-                  />
-                  <p>Service meshes are dynamic. Changes to the service meshes and their workloads occur with great frequency. Meshery Operator helps Meshery stay in lockstep with these changes. Service mesh administrators might make updates to service mesh configuration directly with the service mesh. </p>
-                  <p>Meshery is continually cognizant of such changes. The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield service mesh deployments.</p>
-
+                  <img src={img3} alt="Kubernetes Operator for Meshery" />
+                  <p>
+                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
+                  </p>
+                  <p>
+                    Meshery is continually cognizant of such changes. The
+                    Kubernetes operator for Meshery, supports discovery and
+                    eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes... all of your Kubernetes-based infrastructure.
+                  </p>
                 </div>
               ),
             },
             {
               title: "Integration with Prometheus and Grafana",
-              description:
-                "",
+              description: "",
               content: (
-                <div className="feature-expose">
-                  <img
-                    src={require("./feature-images/meshery-and-grafana.png")}
+                <div className="feature-expose-full">
+                  <StaticImage
+                    src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
                   />
-                  <p>Key to the efficient operation of any service mesh is the measurement and management of it’s performance.</p>
-                  <p>Meshery provides performance test results alongside environment metrics, including service mesh control and data plane metrics as well as cluster node resource metrics, so that operators may easily understand the overhead of their service mesh’s control plane and data plane in context of the overhead incurred on nodes within the cluster.</p>
-
+                  <p>
+                    Key to the efficient operation of any service mesh is the
+                    measurement and management of it’s performance.
+                  </p>
+                  <p>
+                    Meshery provides performance test results alongside
+                    environment metrics, including service mesh control and data
+                    plane metrics as well as cluster node resource metrics, so
+                    that operators may easily understand the overhead of their
+                    service mesh’s control plane and data plane in context of
+                    the overhead incurred on nodes within the cluster.
+                  </p>
                 </div>
               ),
             },
@@ -200,20 +233,24 @@ const MesheryFeatures = () => {
             // },
             {
               title: "MeshSync",
-              description:
-                "Strict control of service mesh behavior.",
+              description: "Strict control of service mesh behavior.",
               //learnMoreLink: "/",
               content: (
                 <div className="feature-expose">
                   <img
-                    src={require("./feature-images/meshsync.svg")}
-                    alt="Meshery, the extensible service mesh manager"
+                    src={img5}
+                    alt="Meshery, the extensible cloud native manager"
                   />
                   <p>
-                    With MeshSync was designed from the ground up to perform tiered discovery of your Kubernetes enviroment by incorporating tiered discovery and a unique method of fingerprinting each running mesh and workload.
+                    With MeshSync was designed from the ground up to perform
+                    tiered discovery of your Kubernetes enviroment by
+                    incorporating tiered discovery and a unique method of
+                    fingerprinting each running mesh and workload.
                   </p>
                   <p>
-                    MeshSync's working snapshot of the state of each cluster and service mesh under management is stored in-memory and continuously refreshed.
+                    MeshSync's working snapshot of the state of each cluster and
+                    service mesh under management is stored in-memory and
+                    continuously refreshed.
                   </p>
                 </div>
               ),
@@ -224,14 +261,19 @@ const MesheryFeatures = () => {
                 "Plug in different service meshes, load generators and providers.",
               content: (
                 <div className="feature-expose-full">
-                  <a href={require("./feature-images/meshery-extensibility.svg")}>
-                    <img
-                      src={require("./feature-images/meshery-extensibility.svg")}
-                      alt="Meshery, the extensible service mesh manager"
-                    /></a>
+                  <img
+                    src={img6}
+                    alt="Meshery, the extensible cloud native manager"
+                  />
                   <p>
-                    Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points.</p>
-                  <p>Extension points come in various forms and are available through Meshery’s architecture.
+                    Meshery is not just an application. It is a set of
+                    microservices where the central component is itself called
+                    Meshery. Integrators may extend Meshery by taking advantage
+                    of designated Extension Points.
+                  </p>
+                  <p>
+                    Extension points come in various forms and are available
+                    through Meshery’s architecture.
                   </p>
                 </div>
               ),

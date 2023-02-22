@@ -1,5 +1,11 @@
 import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
+    
+    margin-top: -2rem;
+    h1{
+        color: ${props => props.theme.text};
+
+    }
     .programs-page-wrapper{
         margin: 4rem 0;
 
@@ -14,14 +20,14 @@ export const ProgramsPageWrapper = styled.div`
         h5{
             font-size: 1.1rem; 
             font-weight: 600;
-            color: black;
+            color: ${props => props.theme.text};
         }
     }
 
     .icon{
         height: 12rem;
         width: 12rem;
-        margin: 0 auto 1.5rem auto;
+        margin: 0.7rem auto 1.5rem auto;
         position: relative;
         
         img{
@@ -41,8 +47,9 @@ export const ProgramsPageWrapper = styled.div`
         height: 18rem;
         width: 20rem;
         padding: 5px;
+        color: ${props => props.theme.text};
         margin: auto;
-        background: rgba(247,247,247,1);
+        background: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.1)" : "rgba(240, 240, 240, 1)"};
         justify-content: center;
         border-radius: 1rem;
         transition: all 0.2s;

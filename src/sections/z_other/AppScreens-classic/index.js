@@ -4,7 +4,8 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import { SlickSlider, SliderItem } from "../../../reusecore/SlickSlider";
 
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
 import screen1 from "../../../assets/images/classic/screens/secreens-1.png";
 import screen2 from "../../../assets/images/classic/screens/secreens-2.png";
@@ -15,12 +16,12 @@ import screen5 from "../../../assets/images/classic/screens/secreens-5.png";
 import AppScreenSctionWrapper from "./appScreenSection.style";
 
 const AppScreensClassic = () => {
-  const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowLeft = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-prev-icon">
       <IoIosArrowRoundBack />
     </button>
   );
-  const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowRight = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-next-icon">
       <IoIosArrowRoundForward />
     </button>

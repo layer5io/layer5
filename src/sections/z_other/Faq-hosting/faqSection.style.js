@@ -44,6 +44,7 @@ const FaqSectionWrapper = styled.div`
       p {
         font-size: 16px;
         font-weight: 300;
+        text-align: initial;
         margin: 0;
       }
     }

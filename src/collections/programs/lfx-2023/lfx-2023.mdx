@@ -1,0 +1,145 @@
+---
+title: "Linux Foundation 2023"
+thumbnail: ./Linux_Foundation_logo.svg
+darkthumbnail: ./lfx-white.svg
+permalink: "lfx/2023"
+program: "Linux Foundation"
+programSlug: "lfx"
+published: true
+---
+
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import lfx_logo from "./Linux_Foundation_logo.svg";
+import { Link } from "gatsby";
+
+<ProgramsWrapper>
+
+<img src={lfx_logo} alt="lfx_logo" />
+<h3>Linux Foundation 2023 Program Timeline</h3>
+
+<div>
+<ul>
+  <li><strong>Full-Time Terms:</strong></li>
+  <ul>
+    <li>Spring Term: March 1st - May 31st</li>
+    <li>mentorships available on LFX Mentorship: Jan 15th, 2023</li>
+    <li>applications open: Jan 15th - Feb 12th (4 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: Feb 15th - Feb 26th</li>
+  </ul>
+</ul>
+<ul>
+  <li><strong>Summer Term: June 1st - August  31st</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: April 15th, 2023</li>
+    <li>applications open: April 15th - May 14th (4 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: May 17th - May 31st</li>
+  </ul>
+</ul>
+<ul>
+  <li><strong>Fall Term: September 1st - Nov 30th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: July 15th, 2023</li>
+    <li>applications open: July 15th - August 12th (4 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: August 12th - August 31st</li>
+  </ul>
+</ul>
+Part-time terms will start on the same schedule and last six versus three months.
+</div>
+
+<h3>About Layer5 and its projects</h3>
+
+<p>The Layer5 community embraces developer-defined infrastructure. We empower developers to change how they write applications, support operators in rethinking how they run modern infrastructure, and enable product owners to regain full-control over their product portfolio. Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
+
+<p>Our inclusive and diverse community stewards projects to provide learning environments, create and implement cloud native industry standards, deployment and operational best practices, benchmarks and abstractions, and more. Our pay-it-forward mentality with every contributor (mentee or not) is a shared commitment by all maintainers (and MeshMates - contributor onboarding buddies) to the open source spirit that pushes Layer5 projects like Meshery forward. New members are always welcome.</p>
+
+<h3>About Meshery</h3>
+
+<p>Meshery is the open source, service mesh management plane for enabling the adoption, operation, and management of any service mesh and their workloads. There are many service meshes available. Software-defined networking is difficult to understand. Meshery’s aim is to make the power of the network available to the rest of us.</p>
+
+<h3>About our Community</h3>
+ 
+Layer5 is all about <Link to="/community">its community</Link> of contributors. We have designed an onboarding program customized to <Link to="/community/newcomers">meet newcomers</Link> where they’re at and developed an onboarding buddy program, <Link to="/community/meshmates">MeshMates</Link> with individuals dedicated to assisting contributors. Layer5 and Meshery have been around for a year and half and have a healthy, growing community of 800+ contributors. The layer5.io website itself is open source and created by 400+ of our contributors.
+
+Technical writers and other contributors are what comprise Layer5 - an open organization, built for the community by the community. Many student contributors have been placed into new jobs with technology companies like Red Hat, Microsoft, and VMware to name a few of the larger organizations. Layer5 expects much from interns and in return, we put them on stage at DockerCon and KubeCon. We promote them and uplift their works. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites. A number of former interns are now project maintainers.
+
+
+## LFX Mentorship 2023 Spring Projects
+<br />
+
+### Meshery
+<br />
+
+#### Distributed workflow engine
+
+**Description**: Integrate a new architectural component into Meshery: a workflow engine. This project involves shifting Meshery off of bitcask and off of sqlite over to postgres using gorm (golang). Interns will familiarize with concepts of orchestration engines, including chaining workflows, and content lifecycle management.
+- Recommended Skills: Golang, Temporal, ReactJS
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/ashish-tiwari">Ashish Tiwari</Link>
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/73202d21-d4ca-4435-9a73-f326c9b3e796
+  
+#### Multi-user cloud native playground
+
+**Description**: Advance the cloud native playground in which any CNCF project can be explored. Meshery’s genesis is that of helping teach people about cloud native technology and enabling to operate various types of cloud native infrastructure confidently. The proposed project is aimed at furthering this mission by infusing multi-user collaboration as a pervasisve feature so that users can learn together in a running instance of Meshery.
+- Recommended Skills: ReactJS, CSS, Golang (nice-to-have)
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Issue: https://github.com/meshery/meshery/issues/7020
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/2ee7a912-e26e-4602-9dfc-4febe3842df3
+
+#### Distributed client-side policy evaluation in WASM and Rego
+
+**Description**: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI, so that a powerful, real-time user experience is possible.
+- Recommended Skills: Golang, Open Policy Agent, WebAssembly
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/ashish-tiwari">Ashish Tiwari</Link>
+- Issue: https://github.com/meshery/meshery/issues/7019
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/7e3382be-5d82-443e-b0bc-4dcd2194705d
+  
+
+### Service Mesh Performance
+<br />
+
+#### Adaptive Load Controller II
+
+**Description**: The adaptive load controller is to execute optimization routines recursivley to determine the maximum load a system can sustain. The maximum load is usually defined by the maximum requests per second (rps) the system can handle. The metrics (CPU usage, latency etc) collected from the system under test are the constraints we provide to judge whether a system under test (SUT) is sustaining the load.
+
+A use-case that fits very well is be the ability to use it to run performance tests on a schedule and track the maximum load a system can handle over time. This could give insights to performance improvements or degradations.
+- Recommended Skills: golang, grpc, docker, kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue (URL): https://github.com/service-mesh-performance/service-mesh-performance/issues/350
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/2597fc3d-eb2c-411f-b02d-940c8347328d
+
+### CNCF TAG Network
+<br />
+
+#### Representing Kubernetes ontology in MeshModel
+
+**Description**: Network topologies and graph databases go hand-in-hand. The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph. Deliverables (among other items):
+- MeshModel capabilities browser
+- Import/export of MeshModel models and components as OCI images
+- augmentation of cuelang-based component generator
+
+- Recommended Skills: cuelang, golang, OCI
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Issue: https://github.com/cncf/tag-network/issues/24
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/96080e3d-83e2-46ed-928c-b6e7f3154bf3
+
+## Additional information
+<br />
+
+### Previous experience with technical writers or documentation
+
+<p>Our mentors have managed teams of technical writers working on documenting enterprise-grade software at large technology companies (Cisco, Seagate, SolarWinds). During the span of time, he has worked with technical writers in DITA and post-DITA environments (from Word to FrameMaker, structured writing, online help, various CMSes, git). Our mentors have worked with technical writers on documentation strategy, creating document sets, covering the full spectrum of reader personas.</p>
+
+We interact daily over Slack, and have an open source project [meeting everyday](https://layer5.io/community/calendar), which are posted to the community [YouTube channel](https://www.youtube.com/c/Layer5io?sub_confirmation=1).
+
+<div className="apply-button">
+  <h3>
+    <Button
+      primary
+      title="Participate"
+      url="https://slack.layer5.io"
+      external="true"
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

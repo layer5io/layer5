@@ -5,8 +5,7 @@ import Button from "../../../reusecore/Button";
 
 const JoinCommunityWrapper = styled.div`
     .join-community{
-        width: 50rem;
-        max-width: 100%;
+        max-width: 70rem;
         height: 25rem;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props => props.image});
         background-size: cover;
@@ -16,6 +15,7 @@ const JoinCommunityWrapper = styled.div`
     .join-community_text-and_button{
         position: relative;
         top: 6.5rem;
+        height: 13rem;
         text-align: center;
         h1{
             color: white;
@@ -33,7 +33,7 @@ const JoinCommunityWrapper = styled.div`
 
 const JoinCommunity = (props) => {
 
-  return(
+  return (
     <JoinCommunityWrapper image={props.image}>
       <div className="join-community">
         <div className="join-community_text-and_button">

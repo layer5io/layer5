@@ -6,49 +6,50 @@ import Pager from "../../components/pager";
 import UpcomingEvents from "../../components/UpcomingEventCard";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
+import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 
-const Meetups = ({ data, pageContext }) => {
+const Meetups = ({ data, pageContext, theme }) => {
   const [active, setActive] = useState("all");
 
-  return(
+  return (
     <MeetupStyle>
-      <PageHeader title="Upcoming Events" path="Community/Events"/>
-      {/* <h3 className="event-subhead">Join us</h3> */}
+      <PageHeader title="Events" path="Community/Events" img={RssFeedIcon} feedlink="/events/feed.xml" />
+      <h2 className="event-subhead">Join Layer5 at these events</h2>
       <UpcomingEvents data={data.allUpcoming} />
       <Container>
         <div className="filterBtns">
           <Button className={active == "all" ? "active" : ""} onClick={() => setActive("all")} title="All" />
           <Button className={active == "events" ? "active" : ""} onClick={() => setActive("events")} title="Events" />
           <Button className={active == "workshops" ? "active" : ""} onClick={() => setActive("workshops")} title="Workshops" />
-          <Button className={active == "meetups" ? "active" : ""} onClick={() => setActive("meetups")}  title="MeetUps"/>
+          <Button className={active == "meetups" ? "active" : ""} onClick={() => setActive("meetups")} title="MeetUps" />
         </div>
         <div>
           <Row>
             {active == "all" ? data.allCategories.nodes.map(category => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={category.id}>
-                  <Card frontmatter={category.frontmatter} fields={false} />
+                  <Card theme={theme} frontmatter={category.frontmatter} fields={category.fields} />
                 </Col>
               );
-            }) : <></> }
+            }) : <></>}
             {active == "events" ? data.allEvents.nodes.map(event => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={event.id}>
-                  <Card frontmatter={event.frontmatter} fields={false} />
+                  <Card theme={theme} frontmatter={event.frontmatter} fields={event.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "workshops" ? data.allWorkshops.nodes.map(workshop => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={workshop.id}>
-                  <Card frontmatter={workshop.frontmatter} fields={false} />
+                  <Card theme={theme} frontmatter={workshop.frontmatter} fields={workshop.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "meetups" ? data.allMeetups.nodes.map(meetup => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={meetup.id}>
-                  <Card frontmatter={meetup.frontmatter} fields={false} />
+                  <Card theme={theme} frontmatter={meetup.frontmatter} fields={meetup.fields} />
                 </Col>
               );
             }) : <></>}

@@ -1,7 +1,7 @@
 ---
 title:  "Distributed Performance Management"
 thumbnail: ./distributed-performance_green.svg
-published: true
+published: false
 redirect_from: 
  - /distributed-performance
  - /projects/distributed-performance
@@ -57,7 +57,7 @@ Currently, Meshery which is a multi-service mesh management plane which can oper
 & adapt to various different service meshes only supports a single way load testing.
 Understanding the need to support a variety of performance testing scenarios, Meshery
 has been equipped with a load generator interface as a point of extensibility to
-support the use of different load generators (see <a href="https://meshery.layer5.io/docs/extensibility">
+support the use of different load generators (see <a href="https://docs.meshery.io/extensibility">
   Meshery Extensibility
 </a> documentation). Meshery Load Generation currently has been equipped with support
 for both wrk2 and fortio, neither of which support distributed load testing.
@@ -65,10 +65,6 @@ for both wrk2 and fortio, neither of which support distributed load testing.
 <h4>Why NightHawk</h4>
 
 Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate. It can be used both as a command-line utility and a library.
-
-<h4>Contributors</h4>
-
-This project is being developed by Kush Trivedi as a Google Summer of Code project with the CNCF and in collaboration with Layer5 and Google.
 
 <strong>
 <a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document which is under review for invoking distributed load generation & performance benchmarking using nighthawk.

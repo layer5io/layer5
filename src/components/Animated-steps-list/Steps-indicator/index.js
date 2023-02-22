@@ -1,5 +1,5 @@
 import React from "react";
-import {StepsIndicatorWrapper} from "./StepsIndicator.style";
+import { StepsIndicatorWrapper } from "./StepsIndicator.style";
 
 const StepsIndicator = ({ steps, activeIndex }) => {
   return (
