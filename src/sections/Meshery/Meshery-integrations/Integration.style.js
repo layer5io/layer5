@@ -49,8 +49,7 @@ export const HoneycombGrid = styled.div`
   .container-inactive {
     display: flex;
     height: 100%;
-    background: ${(props) =>
-    props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
+    background: ${(props) => props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -86,8 +85,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) =>
-    props.theme.DarkTheme ? props.theme.white : props.theme.black};
+          color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
           transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
@@ -129,10 +127,7 @@ export const HoneycombGrid = styled.div`
       background: #00d3a9;
       ::after {
         content: "";
-        background: ${(props) =>
-    props.theme.DarkTheme
-      ? props.theme.elevationColor
-      : props.theme.white};
+        background: ${(props) => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
         margin: 0px 0px 0 4px;
         clip-path: polygon(
           50% 0%,
@@ -202,9 +197,14 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow {
-    margin-top: 1.5rem;
+    margin-top: 1.4rem;
     width: 2rem;
-    height: 2rem;
+    height: 4rem;
+  }
+
+  .slick-disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   .slick-arrow:before {
@@ -214,7 +214,7 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow:hover:before {
-    color:#00b39f;
+    color: #00b39f;
   }
 
   .slick-slide {
@@ -233,15 +233,17 @@ export const IntegrationSlider = styled(Slider)`
   .slick-prev:before {
     content:"‹";
     line-height: 0;
+    opacity: 1;
   }
 
   .slick-track {
-    display:flex;
+    display: flex;
   }
 
   .slick-next:before {
-    content:"›";
+    content: "›";
     line-height: 0;
+    opacity: 1;
   }
 
   .slick-prev, .slick-next {
