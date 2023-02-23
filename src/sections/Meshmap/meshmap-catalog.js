@@ -26,9 +26,6 @@ const CatalogWrapper = styled.div`
 
 margin: 1rem 0 7rem;
 min-height: fit-content;
-border-color: #00b39f;
-border-style: solid;
-padding: 2rem 0 0;
 border-width: 2px 2px 2px 2px;
 box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
@@ -39,7 +36,10 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
 .patterns {
   display: flex;
-  margin-bottom: 1rem;
+  border-color: #00b39f;
+  border-style: solid;
+  border-width: 2px 2px 0 2px;
+  padding: 1rem 0;
   @media (max-width: 468px) {
     flex-direction : column;
   }
@@ -108,7 +108,7 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
   }
   div {
-    text-align-center;
+    text-align: center;
     width: 100%;
     height: 100%;
     margin: 0 auto;

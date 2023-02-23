@@ -72,6 +72,7 @@ const MeshmapWrapper = styled.div`
 
     @media only screen and (max-width: 768px) {
       .mobile-modes{
+        margin-top: 3rem;
         display: block;
       }
     }
