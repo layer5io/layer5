@@ -27,7 +27,9 @@ top: calc(50vh - 249px);
     display: grid;
     grid-template: 1fr / 1fr;
     place-items: end;
-    width: 70%;
+    align-self: flex-end;
+    margin-right: 5rem;
+    width: 50%;
     @media (max-width: 1200px) {
       width: 50%;
     }
@@ -46,6 +48,7 @@ top: calc(50vh - 249px);
   .avatars > * {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
+  width: 70%;
 }
 .root {
     display: grid;
