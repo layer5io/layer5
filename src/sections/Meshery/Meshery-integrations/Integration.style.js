@@ -197,7 +197,6 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow {
-    margin-top: 1.4rem;
     width: 2rem;
     height: 4rem;
   }
@@ -247,6 +246,6 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-prev, .slick-next {
-    top:0
+    top: 1.5rem;
   }
   `;
