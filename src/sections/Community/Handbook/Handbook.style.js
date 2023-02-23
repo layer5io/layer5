@@ -1,6 +1,10 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
+    .content > a:first-of-type > h2:first-of-type {
+      padding-top: 1rem;
+    }
+
     .highlight{
       font-weight: 600;
     }
@@ -231,6 +235,9 @@ export const HandbookWrapper = styled.div`
     }
 
     @media only screen and (max-width: 750px){
+      .content > a:first-of-type > h2:first-of-type {
+        padding-top: 7rem;
+      }
       .page-section{
         margin-top: -2rem;
         margin-left: 0;
