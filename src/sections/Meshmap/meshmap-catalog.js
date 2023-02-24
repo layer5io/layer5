@@ -117,6 +117,10 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     justify-content: space-between;
     padding: 7px;
   }
+
+  @media (max-width: 468px) {
+      max-height: 300px;
+    }
 }
 
 
