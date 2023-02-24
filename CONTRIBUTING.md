@@ -165,7 +165,7 @@ Procedure of changing the image for the gatsby-image is the same as we change fo
   3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder. 
 
 
-## ImprocvinSite performance
+## Site performance Tips
 
 1. Analyze page load metrics of mobile version in lighthouse report.
 2. While creating a new page make sure to use Gatsby Head API for SEO.
