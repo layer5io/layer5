@@ -47,16 +47,19 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
 .text {
   flex: 1;
-  padding: 0em 3em 1em 0em;
+  padding: 0 3rem 1rem 0;
   width: 100%;
 
   @media (max-width: 1200px) {
-    padding: 0em 2.5em 1em 0em;
+    padding: 0 2.5rem 1rem 0;
   }
 
   @media (max-width: 992px) {
-    padding: 0em 1.5em 1em 0em;
+    padding: 0 1.5rem 1rem 0;
+  }
 
+  @media (max-width: 468px) {
+    padding: 0.5rem;
   }
 }
 
