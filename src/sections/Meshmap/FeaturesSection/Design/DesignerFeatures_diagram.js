@@ -14,7 +14,7 @@ const DesignerFeaturesDiagram = ({ activeExampleIndex, theme }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
   return (
     <DiagramStyles>
-      <div className="root">
+      <div className="root" style={{ minHeight: "25rem" }}>
         <img id="design-image1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} src={theme === "dark" ? roleBind1_dark : roleBind1} alt="" />
         <img id="design-image2" className={(activeExampleIndex == 1) ? "show" : "render"} src={theme === "dark" ? roleBind2_dark : roleBind2} alt="" />
         <img id="design-image3" className={(activeExampleIndex == 2) ? "show" : "render"} src={theme === "dark" ? roleBind3_dark : roleBind3} alt="" />

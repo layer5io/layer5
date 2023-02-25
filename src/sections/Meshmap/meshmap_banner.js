@@ -33,7 +33,7 @@ const BannerSectionWrapper = styled.div`
             font-weight: 700;
             color: ${props => props.theme.caribbeanGreenColor};
         }
-        @media screen and (max-width: 380px) {
+        @media screen and (max-width: 448px) {
             font-size: 38px;
             span{
                 font-size: 48px;
@@ -137,13 +137,29 @@ const BannerSectionWrapper = styled.div`
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
 
-    @media screen and (max-width: 740px) {
+    @media screen and (max-width: 768px) {
         padding: 8rem 2rem 3rem;
         .meshmap-logo {
-            display: none;
+            margin-top: 10%;
+            left: 5%;
+            width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
+
+    @media screen and (max-width: 448px) {
+        .meshmap-logo {
+            margin-top: 4rem;
+            left: 5%;
+        }
+    }
+    @media screen and (max-width: 370px) {
+        .meshmap-logo {
+            margin-top: 7rem;
+            left: 5%;
+            width: 5rem;
+        }
+    }
 
 `;
 
