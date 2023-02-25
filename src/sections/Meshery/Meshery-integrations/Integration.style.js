@@ -198,7 +198,6 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-arrow {
     width: 2rem;
-    height: 4rem;
   }
 
   .slick-disabled {
@@ -246,6 +245,6 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-prev, .slick-next {
-    top: 1.5rem;
+    top: 1rem;
   }
   `;
