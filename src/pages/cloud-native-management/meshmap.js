@@ -22,7 +22,7 @@ const MeshmapPage = () => {
       <GlobalStyle />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Meshmap />
+        <Meshmap theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>

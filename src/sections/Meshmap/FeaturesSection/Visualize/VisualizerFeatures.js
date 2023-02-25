@@ -6,7 +6,7 @@ import Feature from "../../features";
 import { useRef, useState, useEffect } from "react";
 
 
-export default function VisualizerFeatures({ features }) {
+export default function VisualizerFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -21,7 +21,7 @@ export default function VisualizerFeatures({ features }) {
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll">
-              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features">
               {features.map((feature, index) => (

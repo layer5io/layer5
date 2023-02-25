@@ -1,25 +1,25 @@
 import styled from "styled-components";
 
 const VisualizerFeaturesWrapper = styled.section`
+  margin-top: 1rem;
 
-margin-top: 1rem;
+  .visualizer-container {
+    padding: 0;
+  }
 
-.visualizer-container {
-  padding: 0;
-}
-
-.scroll{
+  .scroll {
     position: sticky;
     top: calc(50vh - 249px);
-}
+  }
 
   .contentContainer {
     display: flex;
     position: relative;
     max-height: 600px;
     overflow: scroll;
-    ::-webkit-scrollbar{
-    display: none;
+    overflow-x: hidden;
+    ::-webkit-scrollbar {
+      display: none;
     }
 
     @media (max-width: 767px) {
@@ -73,8 +73,8 @@ margin-top: 1rem;
       padding-bottom: 1rem;
 
       @media (max-width: 767px) {
-      font-size: 1.75rem;
-    }
+        font-size: 1.75rem;
+      }
     }
   }
   .features {
@@ -107,7 +107,7 @@ margin-top: 1rem;
       &:first-child {
         & > div {
           padding-top: 108px;
-          @media (max-width:  1120px) {
+          @media (max-width: 1120px) {
             padding-top: 64px;
           }
         }
@@ -116,27 +116,26 @@ margin-top: 1rem;
   }
 
   .fixed {
-  position: sticky;
-  top: 6rem;
-  font-weight: 300;
-  transition: .3s ease-in-out;
-  background: #00b39f;
-  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-   & > h1 {
-    color: #ffffff;
-   }
-   @media (max-width: 912px) {
-    top: 5rem;
-   }
-}
-#add-border {
-  border-color: #00b39f;
-  border-style: solid;
-  border-width: 0px 2px 2px 2px;
-  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-  transition: ease-in-out;
-}
-
+    position: sticky;
+    top: 6rem;
+    font-weight: 300;
+    transition: 0.3s ease-in-out;
+    background: #00b39f;
+    box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+    & > h1 {
+      color: #ffffff;
+    }
+    @media (max-width: 912px) {
+      top: 5rem;
+    }
+  }
+  #add-border {
+    border-color: #00b39f;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+    transition: ease-in-out;
+  }
 `;
 
 export default VisualizerFeaturesWrapper;
