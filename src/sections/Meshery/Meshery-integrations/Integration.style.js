@@ -198,6 +198,7 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-arrow {
     width: 2rem;
+    height: 3rem;
   }
 
   .slick-disabled {
@@ -209,6 +210,7 @@ export const IntegrationSlider = styled(Slider)`
     color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
     font-size: 4.5rem;
     display: inline-block;
+    height: 2rem;
   }
 
   .slick-arrow:hover:before {
@@ -245,6 +247,6 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-prev, .slick-next {
-    top: 1rem;
+    top: 1.5rem;
   }
   `;
