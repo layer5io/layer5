@@ -18,7 +18,7 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 767px) {
         flex-direction: column-reverse;
-        align-items: center;
+        /* align-items: center; */
         margin-top: 0;
     }
 
@@ -157,11 +157,11 @@ const BannerSectionWrapper = styled.div`
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
 
-    .banner-text {
+    /* .banner-text {
         @media screen and (max-width: 767px) {
             text-align: center;
         }
-    }
+    } */
 
 `;
 
