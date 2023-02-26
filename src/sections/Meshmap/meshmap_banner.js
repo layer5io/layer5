@@ -16,6 +16,12 @@ const BannerSectionWrapper = styled.div`
     margin: auto;
     min-height: 25rem;
 
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 0;
+    }
+
     h1 {
         /* background-color: ${props => props.theme.black}; */
         font-weight: 500;
@@ -38,6 +44,10 @@ const BannerSectionWrapper = styled.div`
             span{
                 font-size: 48px;
             }
+        }
+        @media screen and (max-width: 418px) {
+            line-height: 3rem;
+            margin: 1.5rem 0;
         }
     }
     h2 {
@@ -140,24 +150,16 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 768px) {
         padding: 8rem 2rem 3rem;
         .meshmap-logo {
-            margin-top: 10%;
-            left: 5%;
+            margin-top: -5rem;
+            left: auto;
             width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
 
-    @media screen and (max-width: 448px) {
-        .meshmap-logo {
-            margin-top: 4rem;
-            left: 5%;
-        }
-    }
-    @media screen and (max-width: 370px) {
-        .meshmap-logo {
-            margin-top: 7rem;
-            left: 5%;
-            width: 5rem;
+    .banner-text {
+        @media screen and (max-width: 767px) {
+            text-align: center;
         }
     }
 
@@ -166,7 +168,7 @@ const BannerSectionWrapper = styled.div`
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div>
+      <div className="banner-text">
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
         <h1><span>MeshMap</span> is here</h1>
