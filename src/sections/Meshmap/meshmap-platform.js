@@ -16,7 +16,7 @@ const PlatformWrapper = styled.div`
   width: 50%;
   width: calc(60% + 2rem);
 }
-}
+
 .block--left {
   background-color: BLACK;
   clip-path: polygon(0 0, 100% 0, calc(100% - 3rem) 100%, 0% 100%);
