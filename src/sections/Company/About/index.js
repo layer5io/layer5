@@ -105,7 +105,7 @@ const About = ({ theme }) => {
               <h1>Collaborate</h1>
               <h4>Join the community and collaborate on our projects all around the world.</h4>
 
-              <img id="mapBack" height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+              <img id="mapBack" height="100%" width="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
             </SectionTitle>
           </Col>
         </Row>
