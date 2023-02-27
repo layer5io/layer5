@@ -3,7 +3,10 @@ import styled from "styled-components";
 const DiagramStyles = styled.section`
 
 position: sticky;
-top: calc(50vh - 249px);
+top: calc(39vh - 249px);
+@media (max-width: 1200px) {
+  top: calc(47vh - 249px);
+}
 
 .render {
   visibility: hidden;
@@ -27,7 +30,9 @@ top: calc(50vh - 249px);
     display: grid;
     grid-template: 1fr / 1fr;
     place-items: end;
-    width: 70%;
+    align-self: flex-end;
+    margin-right: 5rem;
+    width: 50%;
     @media (max-width: 1200px) {
       width: 50%;
     }
@@ -36,16 +41,24 @@ top: calc(50vh - 249px);
      padding-left: 0;
      max-height: 400px;
      opacity: 0.4;
-     margin: 1rem 5rem 0;
+     margin: 5rem 5rem 0;
     }
-  @media (max-width: 500px) {
+    @media (max-width: 600px) {
+     /* margin-top: 7rem; */
+    }
+  @media (max-width: 550px) {
      width: 30%;
-     margin: 2rem 9rem 0;
+     margin: 7rem 9rem 0;
+    }
+    @media (max-width: 330px) {
+     width: 20%;
+     margin: 7rem 11rem 0;
     }
   }
   .avatars > * {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
+  width: 70%;
 }
 .root {
     display: grid;
@@ -68,14 +81,28 @@ top: calc(50vh - 249px);
      padding-left: 0;
      max-height: 400px;
      opacity: 0.4;
-     margin: 0 5rem;
+     margin: 0;
+     max-width: 100%;
     }
   @media (max-width: 600px) {
-     width: 70%;
+     width: 90%;
+     margin: 0 2rem;
     }
-  @media (max-width: 500px) {
+  @media (max-width: 560px) {
+     width: 70%;
+     margin: 0 5.5rem;
+    }
+  @media (max-width: 450px) {
+     width: 60%;
+     margin: 0 7.5rem;
+    }
+  @media (max-width: 380px) {
      width: 50%;
      margin: 0 9rem;
+    }
+  @media (max-width: 330px) {
+     width: 40%;
+     margin: 0 11rem;
     }
 
   }

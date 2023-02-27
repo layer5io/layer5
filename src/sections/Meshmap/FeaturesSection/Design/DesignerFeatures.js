@@ -7,7 +7,7 @@ import Feature from "../../features";
 import { useRef, useState, useEffect } from "react";
 // import useScrollBlock from "../useScrollBlock";
 
-export default function DesignerFeatures({ title, features }) {
+export default function DesignerFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -22,7 +22,7 @@ export default function DesignerFeatures({ title, features }) {
           </div>
           <div className="g-grid-container contentContainer" id="add-border" >
             <div className="diagram scroll">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features">
               {features.map((feature, index) => (
