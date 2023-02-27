@@ -1,19 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapIcon from "./meshmap-icon.svg";
+import BannerImage from "./images/banner-image.svg";
 
 const BannerSectionWrapper = styled.div`
 
     display: flex;
-    background: #000000;
-    border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
-    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33);
-    box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
+    flex-direction: column;
+    background-color: #121212;
+    align-items: center;
 
-    padding: 8rem 6rem 3rem 6rem;
-    max-width: 1140px;
     width: 100%;
-    margin: auto;
     min-height: 25rem;
 
     h1 {
@@ -23,7 +19,7 @@ const BannerSectionWrapper = styled.div`
         color: ${props => props.theme.white};
 
         line-height: 4.3rem;
-        margin-bottom: 1rem;
+        margin: 4rem 0 0;
         span {
             font-size: 70px;
             width: fit-content;
@@ -63,14 +59,8 @@ const BannerSectionWrapper = styled.div`
         text-align: center;
     }
     h3 {
-        color: ${props => props.theme.saffronColor};
-        margin-bottom: .5rem;
-        font-weight: 400;
-        font-style: italic;
-        font-family: "Qanelas Soft";
-        span {
-            color: ${props => props.theme.saffronColor};
-        }
+        text-align: center;
+        color: ${props => props.theme.white};
     }
     p {
         color: ${props => props.theme.primaryLightColor};
@@ -86,12 +76,8 @@ const BannerSectionWrapper = styled.div`
         }
     }
 
-    .meshmap-logo {
-        width: 14rem;
-        overflow: hidden;
-        margin-top: -7rem;
-        position: relative;
-        left: 30%;
+    .banner-image {
+        margin: 4rem 2rem;
 
     }
     div.accent-bubble {
@@ -167,25 +153,12 @@ const BannerSection = () => {
   return (
     <BannerSectionWrapper>
       <div>
-        {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
-        <h2>Step aside, YAML</h2>
-        <h1><span>MeshMap</span> is here</h1>
-        {/* <h3>the world's only visual designer for cloud native infrastructure.</h3> */}
-        {/* <h3>
-                    Application reigns King. Context is his Queen.
-                </h3> */}
-        <h3>
-                    Friends don't let friends GitOps alone.
-        </h3>
-        {/* <h4>Discover and Visualize</h4>
-                <h4><span>Collaborate and Design</span></h4>
-                any and all your cloud native infra and apps */}
+        <h1><span>DESIGN</span></h1>
+        <h3>your infrastructure</h3>
       </div>
-      <div className="meshmap-logo">
-        <img src={MeshmapIcon} alt="Meshery Logo" />
-        {/* <div className="accent-bubble">asdf</div> */}
+      <div className="banner-image">
+        <img src={BannerImage} alt="" />
       </div>
-      {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
 
   );
