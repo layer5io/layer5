@@ -58,7 +58,7 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title {
         padding: 3rem 8rem;
-        background: linear-gradient(123deg, #00B39F 60%, #100C0C 100%);
+        background: linear-gradient(123deg, #00B39F 60%, #0F1212 100%);
     }
     .svg-background {
         position: absolute;
