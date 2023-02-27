@@ -59,7 +59,7 @@ const ProjectItemWrapper = styled.section`
         }
         padding: 12% 6% 12% 6%;
         height: 220px;
-        border-radius: 4%;
+        border-radius: 10px;
         text-align: center;
         justify-content: center;
         h3{
@@ -110,6 +110,9 @@ const ProjectItemWrapper = styled.section`
     @media only screen and (max-width: 992px) {
         .project__block__wrap:before {
             content: none;
+        }
+        .project__block__inner {
+            margin-bottom: 40px;
         }
     }
     @media only screen and (max-width: 992px) {
