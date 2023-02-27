@@ -28,7 +28,7 @@ const BannerSectionWrapper = styled.section`
         margin-bottom: 1rem;
     }
     h3.statement {
-        color: ${(props) => props.theme.secondaryLightColor};
+        color: ${(props) => props.theme.white};
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
