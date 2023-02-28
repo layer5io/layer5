@@ -14,6 +14,7 @@ import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import Reviews from "../Pricing/review-slider";
+import SignupForm from "./signup-form";
 
 
 
@@ -161,7 +162,7 @@ const Meshmap = ({ theme }) => {
           <Catalog />
           {/* <MesheryAction /> */}
 
-          <div className="banner-background">
+          {/* <div className="banner-background">
 
             <Container style={{ marginBottom: "4rem" }}>
               <Row className="description">
@@ -190,8 +191,9 @@ const Meshmap = ({ theme }) => {
                 </Col>
               </Row>
             </Container>
-          </div>
-          {/* <Platform /> */}
+          </div> */}
+          <SignupForm />
+          <Platform />
         </Container >
       </div >
       <Reviews />

@@ -31,7 +31,7 @@ const FeatureCards = () => {
         </Row>
         <Row>
           <div className="project__block__wrap">
-            <Col sm={12} md={6} lg={3}>
+            <Col sm={12} md={6} lg={3} className="project-col">
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "100%", height: "100%" }} />
@@ -40,7 +40,7 @@ const FeatureCards = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col sm={12} md={6} lg={3} className="project-col">
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo"  width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
@@ -49,7 +49,7 @@ const FeatureCards = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col sm={12} md={6} lg={3} className="project-col">
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }} />
@@ -58,7 +58,7 @@ const FeatureCards = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col sm={12} md={6} lg={3} className="project-col">
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }}/>

@@ -9,6 +9,7 @@ import FeatureCards from "../../../components/Feature-cards";
 import designerImage from "../../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../../assets/images/meshmap/MeshmapVisualizer.png";
 import CommonForm from "../../../components/CommonForm";
+import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 const MeshmapDesign = ({ theme }) => {
@@ -17,6 +18,7 @@ const MeshmapDesign = ({ theme }) => {
       <MeshmapDesignBanner />
       <DesignDefault />
       <FeatureCards/>
+      <SignupForm />
       <Reviews />
     </MeshmapDesignWrapper>
   );

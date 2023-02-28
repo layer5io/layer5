@@ -162,8 +162,8 @@ const BannerSection = () => {
         <h3>your infrastructure</h3>
       </div>
       <div className="banner-image">
-        <img style={{ position: "relative", bottom: "2rem" }} src={MeshmapLocator} alt="" />
-        <img style={{ position: "relative", bottom: "20rem" }} src={MeshmapImageBottom} alt="" />
+        <img style={{ position: "relative", bottom: "10%" }} src={MeshmapLocator} alt="" />
+        <img style={{ position: "relative", bottom: "100%" }} src={MeshmapImageBottom} alt="" />
       </div>
     </BannerSectionWrapper>
 
