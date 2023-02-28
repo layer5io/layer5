@@ -21,9 +21,9 @@ const BannerSectionWrapper = styled.div`
         font-weight: 500;
         font-size: 60px;
         color: ${props => props.theme.white};
-
         line-height: 4.3rem;
         margin-bottom: 1rem;
+        min-width: 18rem;
         span {
             font-size: 70px;
             width: fit-content;
@@ -38,6 +38,10 @@ const BannerSectionWrapper = styled.div`
             span{
                 font-size: 48px;
             }
+        }
+        @media screen and (max-width: 418px) {
+            line-height: 3rem;
+            margin: 1.5rem 0;
         }
     }
     h2 {
@@ -67,6 +71,7 @@ const BannerSectionWrapper = styled.div`
         margin-bottom: .5rem;
         font-weight: 400;
         font-style: italic;
+        min-width: 18rem;
         font-family: "Qanelas Soft";
         span {
             color: ${props => props.theme.saffronColor};
@@ -92,6 +97,7 @@ const BannerSectionWrapper = styled.div`
         margin-top: -7rem;
         position: relative;
         left: 30%;
+        z-index: 0;
 
     }
     div.accent-bubble {
@@ -131,8 +137,8 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 992px) {
         .meshmap-logo {
             width: 8rem;
-            /* right: 3rem; */
             margin-top: -2rem;
+            left: 15%;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
@@ -140,33 +146,38 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 768px) {
         padding: 8rem 2rem 3rem;
         .meshmap-logo {
-            margin-top: 10%;
-            left: 5%;
-            width: 5rem;
+            margin-top: -5rem;
+            margin-right: 2rem;
+            left: 7%;
+            min-width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-
-    @media screen and (max-width: 448px) {
+    @media screen and (max-width: 500px) {
         .meshmap-logo {
-            margin-top: 4rem;
-            left: 5%;
+            margin-top: -5rem;
+            margin-right: 2rem;
+            left: 0%;
+            min-width: 3rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-    }
-    @media screen and (max-width: 370px) {
+    @media screen and (max-width: 400px) {
         .meshmap-logo {
-            margin-top: 7rem;
-            left: 5%;
-            width: 5rem;
+            margin-top: -5rem;
+            margin-right: 0;
+            left: -20%;
+            min-width: 3rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-    }
 
 `;
 
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div>
+      <div className="banner-text">
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
         <h1><span>MeshMap</span> is here</h1>

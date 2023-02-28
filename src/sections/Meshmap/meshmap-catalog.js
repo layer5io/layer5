@@ -421,7 +421,7 @@ const Catalog = () => {
           <section className="services svg-cont">
             <div>
               <img src={Patterns} />
-              <p>Service Patterns</p>
+              <p>Cloud Native Patterns</p>
             </div>
             <div>
               <img src={Ebpf} />
