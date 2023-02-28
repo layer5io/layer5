@@ -102,7 +102,13 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
-			color: black;
+			color: white;
+			background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
+			font-weight: 510;
+			:hover{
+                color: white;
+                box-shadow: white 0px 2px 10px;
+			}
 		}
 	}
 

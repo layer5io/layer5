@@ -62,6 +62,12 @@ const BannerSectionWrapper = styled.section`
 
         }
     }
+    .join-community-button {
+        :hover{
+            color: white;
+            box-shadow:  rgb(0 0 0 / 60%) 0px 2px 10px;
+        }
+    }
     .demo {
         color:${props => props.theme.offWhiteColor};
         margin-bottom: 1rem;
@@ -82,7 +88,7 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title {
         padding: 3rem 8rem;
-        background: #00b39f;
+        background: linear-gradient(123deg, #00B39F 60%, #1f2424 100%);
     }
     .svg-background {
         position: absolute;

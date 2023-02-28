@@ -13,6 +13,7 @@ const SubscribeWrapper = styled.div`
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
+        background: ${props => props.theme.DarkTheme ? "#1D1D1D" : "linear-gradient(123deg, white 60%, white 100%)"};
     }
     
     input{
@@ -33,10 +34,11 @@ const SubscribeWrapper = styled.div`
     }
     #mc-embedded-subscribe{
         margin: 1.5rem 0.3125rem 0;
+        background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
+        font-weight: 510;
     }
     #mc-embedded-subscribe:hover{
-        color:black;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
     }
     @media only screen and (max-width: 1050px) {
         .email-cont{
