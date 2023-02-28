@@ -180,7 +180,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
-				color: black;
+				color: white;
 			}
 		}
 	}
@@ -228,7 +228,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
-				color: black;
+				color: white;
 			}
 		}
 	}
