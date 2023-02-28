@@ -203,14 +203,14 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-disabled {
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   .slick-arrow:before {
     color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
-    font-size: 4.5rem;
+    font-size: 4rem;
     display: inline-block;
-    height: 2rem;
+    height: 1rem;
   }
 
   .slick-arrow:hover:before {
