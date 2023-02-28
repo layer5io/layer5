@@ -88,7 +88,7 @@ const DesignDefaultWrapper = styled.section`
     .section-title {
         padding: 3rem 8rem;
         border-radius: 2rem 0 0 2rem;
-        background: linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 102%);
+        background: linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%);
     }
     .svg-background {
         position: absolute;
@@ -107,7 +107,7 @@ const DesignDefaultWrapper = styled.section`
     @media screen and (max-width: 1600px) {
 
         .section {
-            margin: 6em auto;
+            margin: 0 auto;
         }
 
         .left-col {

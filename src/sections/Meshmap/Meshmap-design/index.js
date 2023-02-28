@@ -5,6 +5,7 @@ import MeshMapDrafts from "./../images/meshmap-draft-logos.png";
 
 import MeshmapDesignBanner from "./meshmap-design-banner";
 import DesignDefault from "../../Home/MeshmapDesignHighlight";
+import FeatureCards from "../../../components/Feature-cards";
 import designerImage from "../../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../../assets/images/meshmap/MeshmapVisualizer.png";
 import CommonForm from "../../../components/CommonForm";
@@ -15,6 +16,7 @@ const MeshmapDesign = ({ theme }) => {
     <MeshmapDesignWrapper>
       <MeshmapDesignBanner />
       <DesignDefault />
+      <FeatureCards/>
       <Reviews />
     </MeshmapDesignWrapper>
   );

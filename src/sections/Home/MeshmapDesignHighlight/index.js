@@ -2,11 +2,9 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import svgBackground from "../../../assets/images/homePage-images/background.svg";
 import integrationsImage from "./cloud-integrations.svg";
 import DesignDefaultWrapper from "./highlight.style";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+
 
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 

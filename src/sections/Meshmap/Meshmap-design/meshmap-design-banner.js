@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import BannerImage from "./images/banner-image.svg";
+import MeshmapLocator from "./images/meshmap-locator.svg";
+import MeshmapImageBottom from "./images/meshmap-image-bottom.svg";
 
 const BannerSectionWrapper = styled.div`
 
@@ -77,6 +79,9 @@ const BannerSectionWrapper = styled.div`
     }
 
     .banner-image {
+        display: grid;
+        max-height: 38vh;
+        place-items: center;
         margin: 4rem 2rem;
 
     }
@@ -157,7 +162,8 @@ const BannerSection = () => {
         <h3>your infrastructure</h3>
       </div>
       <div className="banner-image">
-        <img src={BannerImage} alt="" />
+        <img style={{ position: "relative", bottom: "2rem" }} src={MeshmapLocator} alt="" />
+        <img style={{ position: "relative", bottom: "20rem" }} src={MeshmapImageBottom} alt="" />
       </div>
     </BannerSectionWrapper>
 
