@@ -16,20 +16,14 @@ const BannerSectionWrapper = styled.div`
     margin: auto;
     min-height: 25rem;
 
-    @media screen and (max-width: 767px) {
-        flex-direction: column-reverse;
-        /* align-items: center; */
-        margin-top: 0;
-    }
-
     h1 {
         /* background-color: ${props => props.theme.black}; */
         font-weight: 500;
         font-size: 60px;
         color: ${props => props.theme.white};
-
         line-height: 4.3rem;
         margin-bottom: 1rem;
+        min-width: 18rem;
         span {
             font-size: 70px;
             width: fit-content;
@@ -77,6 +71,7 @@ const BannerSectionWrapper = styled.div`
         margin-bottom: .5rem;
         font-weight: 400;
         font-style: italic;
+        min-width: 18rem;
         font-family: "Qanelas Soft";
         span {
             color: ${props => props.theme.saffronColor};
@@ -102,6 +97,7 @@ const BannerSectionWrapper = styled.div`
         margin-top: -7rem;
         position: relative;
         left: 30%;
+        z-index: 0;
 
     }
     div.accent-bubble {
@@ -141,8 +137,8 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 992px) {
         .meshmap-logo {
             width: 8rem;
-            /* right: 3rem; */
             margin-top: -2rem;
+            left: 15%;
         }
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
@@ -151,17 +147,30 @@ const BannerSectionWrapper = styled.div`
         padding: 8rem 2rem 3rem;
         .meshmap-logo {
             margin-top: -5rem;
-            left: auto;
-            width: 5rem;
+            margin-right: 2rem;
+            left: 7%;
+            min-width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-
-    /* .banner-text {
-        @media screen and (max-width: 767px) {
-            text-align: center;
+    @media screen and (max-width: 500px) {
+        .meshmap-logo {
+            margin-top: -5rem;
+            margin-right: 2rem;
+            left: 0%;
+            min-width: 3rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-    } */
+    @media screen and (max-width: 400px) {
+        .meshmap-logo {
+            margin-top: -5rem;
+            margin-right: 0;
+            left: -20%;
+            min-width: 3rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
 
 `;
 
