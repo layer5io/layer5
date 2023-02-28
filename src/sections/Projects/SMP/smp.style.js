@@ -3,6 +3,7 @@ import cncf from "../../../assets/images/smp-page/cncf-icon.png";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;
+    text-align: center;
     .smp-hero{
         height: 34.4rem;
         .hero-text{
