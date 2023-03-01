@@ -190,7 +190,7 @@ const Meshmap = ({ theme }) => {
                 </Col>
               </Row>
             </Container>
-          </div> */}
+          </div> */
           <SignupForm />
           <Platform />
         </Container >
