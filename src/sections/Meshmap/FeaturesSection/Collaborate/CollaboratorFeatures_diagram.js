@@ -14,7 +14,6 @@ import Avatar3 from "./images/avatar3.png";
 import { useInView } from "react-intersection-observer";
 
 const CollaboratorFeaturesDiagram = ({ activeExampleIndex, theme }) => {
-  console.log(theme);
   const [ref, inView] = useInView({ threshold: 0.4 });
   return (
     <DiagramStyles>
