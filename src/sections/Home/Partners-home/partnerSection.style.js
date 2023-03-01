@@ -10,20 +10,25 @@ const PartnerItemWrapper = styled.section`
             margin-top: .5rem;
         }
     }
-    .row{
+    .partner-image{
+        margin-left:1.5rem;
+        margin-right:1.5rem;
+    }
+    .partner-slider{
+        display: flex;
+        justify-content: center;
         flex-wrap: nowrap;
         @media(max-width: 1400px){
             flex-wrap: wrap;
         }
-
-        .col{
-              flex: 0 0 12%;
-              margin-left:0.5rem;
-              margin-right:0.5rem;
-        }
     }
-   
     a.partner-card {
+        @media(max-width: 1400px){
+            flex: 0 0 12%;
+            margin-left:0.5rem;
+            margin-right:0.5rem;
+        }
+
         &:hover {
              img  {
                 opacity: 1;
@@ -32,11 +37,12 @@ const PartnerItemWrapper = styled.section`
         flex-shrink: 3;
     }
     img {
+        width: 2rem;
+        margin-left:0.5rem;
+        margin-right:0.5rem;
         max-width: 100%;
         min-width: 7rem;
-        margin: auto;
         height:auto;
-        width:100%;
         opacity: 0.7;
         max-height:100px;
         @media(max-width: 800px){

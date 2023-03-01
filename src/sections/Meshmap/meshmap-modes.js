@@ -4,6 +4,7 @@ import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
 const MeshmapModesWrapper = styled.div`
+  margin-top: 0.1rem;
 
   p.caption {
     margin: 0rem 0rem 2rem 0rem;
@@ -87,18 +88,18 @@ const MeshmapModesWrapper = styled.div`
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1.5s ease, transform 1.5s ease 0.75s;
+        transition: opacity 0.5s ease, transform 0.5s ease 0.5s;
       }
 
       .mode-name{
           top: 15%;
-          transition: all 0.75s ease 0.75s;
+          transition: all 0.5s ease 0.5s;
       }
 
       .content {
         opacity: 1;
         transform: translateY(0);
-        transition: all 1.5s ease 0.75s;
+        transition: all 0.75s ease 0.5s;
       }
     }
   }
@@ -148,7 +149,7 @@ const MeshmapModesWrapper = styled.div`
 
       &:after {
         opacity: 0;
-        ttransition: opacity 0.5s ease, transform 0.5s ease;
+        transition: opacity 0.5s ease, transform 0.5s ease;
 
       }
 
@@ -246,11 +247,11 @@ const MeshmapModes = () => {
 
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">Choose Your Mode</h2>
-      <p className="caption">
-        {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
-        Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.
-      </p>
+      {/* <h1 className="heading">Choose Your Mode</h1> */}
+      {/* <p className="caption"> */}
+      {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
+      {/* Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. */}
+      {/* </p> */}
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
         <div className="mode">

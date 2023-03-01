@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
-  
+
+  display: flex;
+  flex-direction: column;
+
+  :div:first-child {
+    align-items: center;
+  }
+
   .heading{
       text-align: center;
       padding: 1rem 0;
@@ -14,7 +21,7 @@ const MeshmapWrapper = styled.div`
     margin-top: 3rem;
 
       .desc-text {
-        padding: 1.56rem;
+        padding: 0 1rem 0 1rem;
         h1{
             font-weight: 600;
         }
@@ -26,7 +33,7 @@ const MeshmapWrapper = styled.div`
             color: ${props => props.theme.secondaryColor};
         }
         .desc-p {
-            font-size: 1.25rem;   
+
             margin: 1.875rem 0 2.5rem 0;
         }
       }
@@ -65,6 +72,7 @@ const MeshmapWrapper = styled.div`
 
     @media only screen and (max-width: 768px) {
       .mobile-modes{
+        margin-top: 3rem;
         display: block;
       }
     }

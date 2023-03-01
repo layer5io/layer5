@@ -4,6 +4,27 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
 import { Link } from "gatsby";
 import { partners } from "./partners-home-data";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const settings = {
+  arrows: false,
+  dots: true,
+  infinite: true,
+  speed: 500,
+  centerMode: true,
+  variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  className: "partner-slider",
+  responsive: [
+    {
+      breakpoint: 1400,
+      settings: "unslick"
+    }
+  ]
+};
 
 const Projects = () => {
   return (
@@ -18,18 +39,16 @@ const Projects = () => {
             <h4>ENGAGING AND COLLABORATING WITH</h4>
           </SectionTitle>
         </Row>
-        <Row Hcenter className="row">
-          {partners.map((partner, index) => (
-            <Col sm={2} md={2} lg={2} key={index}>
-              <Link className="partner-card" to={partner.imageRoute}>
-                <div className={partner.innerDivStyle}>
-                  <img loading="lazy" src={partner.imageLink} alt={partner.name} width="100%" height="auto" />
-                </div>
-              </Link>
-            </Col>
-          ))}
-        </Row>
       </Container>
+      <Slider {...settings}>
+        {partners.map((partner, index) => (
+          <Link className="partner-card" to={partner.imageRoute} key={index}>
+            <div className={partner.innerDivStyle}>
+              <img className="partner-image" src={partner.imageLink} alt={partner.name} width="100%" height="auto" />
+            </div>
+          </Link>
+        ))}
+      </Slider>
     </PartnerItemWrapper>
   );
 };
