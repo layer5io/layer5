@@ -35,7 +35,6 @@ const SubscribeWrapper = styled.div`
     #mc-embedded-subscribe{
         margin: 1.5rem 0.3125rem 0;
         background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
-        font-weight: 510;
     }
     #mc-embedded-subscribe:hover{
         box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
