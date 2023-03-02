@@ -169,9 +169,11 @@ Procedure of changing the image for the gatsby-image is the same as we change fo
 
 1. Analyze page load metrics of mobile version in lighthouse report (see status of GitHub workflow on your open PR).
 2. While creating a new page make sure to use Gatsby Head API for SEO.
-3. Prefer using `loading="eager"` for Hero images to improve LCP and FCP.
+3. Prefer using `loading="eager"` for Hero images to improve LCP(Largest Contentful Paint) and FCP(First Contentful Paint).
 4. Optimise page by deferring loading of third party scripts. You can use [off-main-thread](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/#off-main-thread-strategy-experimental)  in Script API.
 5. Prefer Code Splitting using [loadable](https://github.com/gregberge/loadable-components) to lazy load heavy components which are not in the viewport.
+
+Note:- You can also refer to [Improving Site Performance](https://www.gatsbyjs.com/docs/how-to/performance/improving-site-performance/), [web.dev](https://web.dev/vitals/).
 
 ## Updating/Creating a Community Member Profile 
 
