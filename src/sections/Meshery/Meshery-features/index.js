@@ -31,6 +31,7 @@ const MesheryFeaturesWrapper = styled.div`
       padding: 0rem;
     }
   }
+  
 `;
 
 const MesheryFeatures = () => {
