@@ -228,7 +228,7 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: rgb(0, 179, 158, 0.3);
+      background: rgb(255, 243, 197, 1);
       color:  ${props => props.theme.secondaryColor};
     }
 
