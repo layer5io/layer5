@@ -19,7 +19,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" />
+                  <img src={svgBackground} alt="background" loading="lazy"/>
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -46,7 +46,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="hero image" />
+            <StaticImage loading="lazy" className="hero" src={imgHero} alt="hero image" />
           </Col>
         </Row>
       </div>
