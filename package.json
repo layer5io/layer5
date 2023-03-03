@@ -49,7 +49,7 @@
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-image": "^2.22.0",
-    "gatsby-plugin-loadable-components-ssr": "^4.2.1",
+    "gatsby-plugin-loadable-components-ssr": "^4.3.2",
     "gatsby-plugin-manifest": "^4.25.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
