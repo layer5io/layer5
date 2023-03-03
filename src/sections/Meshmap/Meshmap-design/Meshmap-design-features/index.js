@@ -5,13 +5,13 @@ import Terminal from "../../../../components/Terminal";
 import Features from "../../../../components/Features-carousel";
 import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "./../../FeaturesSection/Design/images/role-binding-1-dark.svg";
+const img1 = "./../../FeaturesSection/Design/images/role-binding-2-dark.svg";
 const img2 = "./../../FeaturesSection/Design/images/role-binding-2-dark.svg";
 const img3 = "./../../FeaturesSection/Design/images/role-binding-3-dark.svg";
 const img4 = "./../../FeaturesSection/Design/images/role-binding-4-dark.svg";
 
 const MeshmapDesignFeaturesWrapper = styled.div`
-    margin: auto;
+    /* margin: auto; */
     margin-top: 4rem;
     margin-bottom: 4rem;
     @media (max-width: 32rem){

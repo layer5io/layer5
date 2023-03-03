@@ -21,7 +21,7 @@ const DesignDefaultWrapper = styled.section`
         align-self: center;
     }
     .right-col {
-        padding-top: 3rem;
+        display: flex;
         padding-left: 0px;
         padding-right: 0px;
         flex: 0 0 30%;
@@ -140,13 +140,13 @@ const DesignDefaultWrapper = styled.section`
         }
 
         .left-col {
-            flex: 0 0 40%;
-            max-width: 40%;
+            flex: 0 0 70%;
+            max-width: 70%;
         }
 
         .right-col {
-            flex: 0 0 60%;
-            max-width: 60%;
+            flex: 0 0 30%;
+            max-width: 30%;
         }
 
         .hero {
