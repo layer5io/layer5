@@ -40,9 +40,9 @@ export const FeaturesWrapper = styled.div`
           fill: var(--gray-6) !important;
          
         }
-        }
-        
       }
+        
+    
     }
     
     .features {
