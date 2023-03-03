@@ -44,6 +44,7 @@ export const HoneycombGrid = styled.div`
 
   .container-active,
   .container-inactive {
+    -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
     background: ${(props) =>
