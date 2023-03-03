@@ -28,6 +28,9 @@ const PartnerItemWrapper = styled.section`
 		.slick-dots li.slick-active button:before {
 				color: ${props => props.theme.DarkTheme ? "white" : ""};
 		}
+		.slick-dots li button:hover{
+				box-shadow: none;
+		}
     a.partner-card {
         @media(max-width: 1400px){
             flex: 0 0 12%;
