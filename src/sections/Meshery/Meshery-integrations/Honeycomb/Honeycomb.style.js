@@ -9,6 +9,7 @@ export const HoneycombGrid = styled.div`
     height: ${(props) =>
   props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
     li {
+      will-change: shape-outside, filter, offset;
       width: 150px;
       margin: 3px;
       height: calc(150px * 1.1547);
