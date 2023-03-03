@@ -21,7 +21,7 @@ const MeshmapWrapper = styled.div`
     margin-top: 3rem;
 
       .desc-text {
-        padding: 1.56rem;
+        padding: 0 1rem 0 1rem;
         h1{
             font-weight: 600;
         }
