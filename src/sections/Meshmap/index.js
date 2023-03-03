@@ -162,8 +162,7 @@ const Meshmap = ({ theme }) => {
           {/* <MesheryAction /> */}
 
           <div className="banner-background">
-
-            <Container style={{ marginBottom: "4rem" }}>
+            <Container style={{ marginBottom: "4rem", padding: "0" }}>
               <Row className="description">
                 <Col lg={7} md={6} sm={12} className="desc-text">
                   <h1 className="heading-1">Signup for</h1>
@@ -179,7 +178,7 @@ const Meshmap = ({ theme }) => {
                   </div>
                 </Col>
 
-                <Col lg={5} md={6} sm={12}>
+                <Col lg={5} md={6} sm={12} style={{ padding: "0" }}>
                   <CommonForm
                     title="Join the Beta Program"
                     form="meshmap"

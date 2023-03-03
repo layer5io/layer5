@@ -42,7 +42,7 @@ const About = ({ theme }) => {
                 </div>
               </Col>
             </Row>
-            <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
+            <StaticImage loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
@@ -57,7 +57,7 @@ const About = ({ theme }) => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
+                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" loading="lazy" />
                 </div>
               </Col>
             </Row>
@@ -71,7 +71,7 @@ const About = ({ theme }) => {
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <StaticImage src={Community_meetup} alt="Community_meetup" />
+                  <StaticImage loading="lazy" src={Community_meetup} alt="Community_meetup" />
                   <figcaption className="caption">
                     Layer5 community members at Open Source Africa Community
                     conference, March 2022.
@@ -105,7 +105,7 @@ const About = ({ theme }) => {
               <h1>Collaborate</h1>
               <h4>Join the community and collaborate on our projects all around the world.</h4>
 
-              <img id="mapBack" height="100%" width="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+              <img id="mapBack" height="100%" width="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" loading="lazy" />
             </SectionTitle>
           </Col>
         </Row>
@@ -120,7 +120,7 @@ const About = ({ theme }) => {
                 <Col xs={12} sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
-                      <img src={location} className="location" alt="Layer5 locations" />
+                      <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
                     </a>
                     <div className="loc">
                       <h4>USA</h4>
@@ -139,7 +139,7 @@ const About = ({ theme }) => {
                 <Col xs={12} sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
-                      <img src={location} className="location" alt="Layer5 locations" />
+                      <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
                     </a>
                     <div className="loc">
                       <h4>Scotland</h4>
