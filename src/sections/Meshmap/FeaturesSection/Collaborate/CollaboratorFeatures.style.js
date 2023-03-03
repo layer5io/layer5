@@ -45,16 +45,16 @@ const CollaboratorFeaturesWrapper = styled.section`
 
   .diagram {
     width: 591px;
-    min-width: 40rem;
+    min-width: 47rem;
     position: sticky;
     top: 0;
     z-index: -1;
 
     @media (max-width: 1200px) {
-      min-width: 32rem;
+      min-width: 38rem;
     }
     @media (max-width: 992px) {
-      min-width: 25rem;
+      min-width: 27rem;
     }
     @media (max-width: 767px) {
       max-height: 550px;

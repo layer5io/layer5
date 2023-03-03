@@ -34,8 +34,12 @@ const BannerSectionWrapper = styled.section`
     padding: 0 20rem 1.5rem 20rem;
   }
   .section-button {
-    font-weight: 600;
-    color: ${props => props.theme.DarkTheme ? "black" : "white"};
+    background: ${props => props.theme.highlightColor}; 
+
+    &:hover {
+          background: ${props => props.theme.highlightLightColor}; 
+          box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+      }
     margin-bottom: -15rem;
   }
   @media only screen and (max-width: 1224px) {

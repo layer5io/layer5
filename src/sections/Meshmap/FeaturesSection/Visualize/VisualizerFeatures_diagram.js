@@ -10,7 +10,7 @@ const VisualizerFeaturesDiagram = ({ activeExampleIndex, theme }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
   return (
     <DiagramStyles>
-      <div className="root" style={{ paddingLeft: "0rem" }}>
+      <div className="root" style={{ paddingLeft: "0rem", minHeight: "25rem" }}>
         <img id="visualize-image1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} src={theme === "dark" ? Visualize1_dark : Visualize1} alt="" />
         <img id="visualize-image2" className={(activeExampleIndex >= 1) ? "show" : "render"} src={theme === "dark" ? Visualize2_dark : Visualize2} alt="" />
       </div>
