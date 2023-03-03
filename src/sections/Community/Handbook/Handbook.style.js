@@ -1,21 +1,12 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
-    .page-header-section {
-      height: 10rem;
-      text-align: center;
-      background: rgb(71,126,150);
-      background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
-      h1 {
-          line-height: 10rem;
-          color: white;
-      }
+    .content > a:first-of-type > h2:first-of-type {
+      padding-top: 1rem;
     }
 
-    .page-section{
-      margin-top: -42rem;
-      margin-left: 20rem;
-      display: flex;
+    .highlight{
+      font-weight: 600;
     }
 
     .content{
@@ -35,17 +26,23 @@ export const HandbookWrapper = styled.div`
       }
     }
 
-    .content > a:first-of-type > h2:first-of-type {
-      padding-top: 1rem;
-    }
-
-    .highlight{
-      font-weight: 600;
-    }
-
     h2 h3{
       margin: 0.5rem 0;
       color: ${(props) => props.theme.tertiaryColor};
+    }
+
+    .page-section{
+      h2{
+        padding-top: 7rem;
+        margin-top: -7rem;
+      }
+      h3{
+        padding-top: 7rem;
+        margin-top: -7rem;
+      }
+      margin-top: -36rem;
+      margin-left: 20rem;
+      display: flex;
     }
 
     .sidebar {
@@ -73,6 +70,17 @@ export const HandbookWrapper = styled.div`
     .sidebar a:hover:not(.active) {
         background-color:${(props) => props.theme.secondaryLightColor};
         color: white;
+    }
+
+    .page-header-section {
+      height: 10rem;
+      text-align: center;
+      background: rgb(71,126,150);
+      background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+      h1 {
+          line-height: 10rem;
+          color: white;
+      }
     }
 
     .community-home-subtitle {
@@ -175,11 +183,10 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${(props) => (props.theme.DarkTheme ? "#313131" : "#C9FCF6")};  
+      fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
     }
     path {
-      stroke: ${(props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
     }
     svg {
       color: "red";
@@ -418,7 +425,7 @@ width: 90%;
    }
   .text{
     p{
-      color: ${(props) => props.theme.tertiaryColor};
+      color: ${props => props.theme.tertiaryColor};
     }
   }
   .listed{
@@ -430,7 +437,7 @@ width: 90%;
               vertical-align: top;
           }
           .skill{
-              color: ${(props) => props.theme.tertiaryColor};
+              color: ${props => props.theme.tertiaryColor};
               font-size: 16px;
               padding: 0 0 1.25rem 1.8rem;
               h4{
@@ -450,11 +457,10 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${(props) => (props.theme.DarkTheme ? "#212121" : "#FFFFFF")};
-  box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize} ${(props) =>
-    props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
   &:hover{
-      box-shadow: 0px 0px 5px ${(props) => props.theme.primaryColor};
+      box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }
   padding: 12% 6% 12% 6%;
   height: 220px;
@@ -465,11 +471,11 @@ width: 90%;
       margin-bottom: auto; 
       margin-top: 0.5rem;
       font-weight: 700;
-      color: ${(props) => props.theme.secondaryColor}
+      color: ${props => props.theme.secondaryColor}
   }
   p{
       font-weight: 300;
-      color: ${(props) => props.theme.text};
+      color: ${props => props.theme.text};
   }
   img{
       height: 60px ; 
