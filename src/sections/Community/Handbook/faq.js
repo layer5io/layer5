@@ -44,7 +44,7 @@ const Faq = () => {
             <h4>Q: What if I can’t find an open issue to work on?</h4>
             <p>A: Check if any assigned issues are stale. ( Assigned some time back, but no discussions have happened or is not updated for a long time ). If you find such issues, comment to ask if you can help. Alternatively, Look to find the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted</a> issues.</p>
 
-            <h4>Q: Are developments meets arranged to discuss the Prs?”</h4>
+            <h4>Q: In addition to the routinely scheduled project development meetings, do project contributors ever meet separately to deep-dive on special topics?”</h4>
             <p>A: Yes, outside of the regularly scheduled meetings on the community calendar (meet.layer5.io), there are any number of other meetings that occur to facilitate deeper levels or more concentrated attention to particular bodies of work (e.g. a design spec review). On occasion, these one-off meetings are scheduled in advance and put onto the community calendar, while other other times they are simply self-organized by interested contributors. Often contributors will use Slack huddles or Zoom meetings to facilitate the discussion. This Zoom meeting room is open for all to use whenever you would like to use it for such collaboration: https://meet.layer5.io/meshery</p>
 
             {/* <p>Q: Why does the community use slack?</p>
