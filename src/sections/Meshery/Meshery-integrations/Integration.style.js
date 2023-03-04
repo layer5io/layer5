@@ -211,6 +211,7 @@ export const IntegrationSlider = styled(Slider)`
     font-size: 4rem;
     display: inline-block;
     height: 1rem;
+    -webkit-text-size-adjust: none;
   }
 
   .slick-arrow:hover:before {

@@ -287,6 +287,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                       height={70}
                       width={70}
                       style={{ filter: "brightness(0) invert(1)" }}
+                      loading="lazy"
                     />
                     <div className="integration-content">
                       <div className="title" style={{ marginBottom: 0 }}>
@@ -319,6 +320,7 @@ const IntegrationsGrid = ({ category, theme, count }) => {
                               ? "brightness(0) invert(1)"
                               : "none",
                         }}
+                        loading="lazy"
                       />
                       <div className="integration-content">
                         <div className="title">{item.frontmatter.title}</div>
