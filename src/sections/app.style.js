@@ -267,6 +267,7 @@ section{
   }
 }
 
+/* Modal CSS Ends */
 `;
 
 export { GlobalStyle };
