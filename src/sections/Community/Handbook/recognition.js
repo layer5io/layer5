@@ -54,7 +54,6 @@ const RecognitionPage = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            {" "}
             <a id="Community Guidelines">
               <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
             </a>
@@ -138,7 +137,7 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={writersLogo} style={badgeStyle} />
-                <b>Writer's Program</b> - awarded community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.
+                <b>Writer's Program</b> - awarded community members who make with two or more published writings whether in article, blog post, project documentation or other form in recognition and appreciation of their efforts.
               </li>
             </ul>
             <a id="SocialMedia">
