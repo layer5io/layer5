@@ -15,7 +15,6 @@ import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeat
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import MeshmapSignupForm from "./meshmap-signup-form";
 import Reviews from "../Pricing/review-slider";
-import SignupForm from "./signup-form";
 
 
 
