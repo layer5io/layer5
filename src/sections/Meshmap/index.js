@@ -13,6 +13,7 @@ import CommonForm from "../../components/CommonForm";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
+import MeshmapSignupForm from "./meshmap-signup-form";
 import Reviews from "../Pricing/review-slider";
 import SignupForm from "./signup-form";
 
@@ -161,7 +162,7 @@ const Meshmap = ({ theme }) => {
               ]} />*/}
           <Catalog />
           {/* <MesheryAction /> */}
-          <SignupForm />
+          <MeshmapSignupForm />
           <Platform />
         </Container >
       </div >
