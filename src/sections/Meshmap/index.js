@@ -15,9 +15,8 @@ import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeat
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import Reviews from "../Pricing/review-slider";
 
-
-
 const Meshmap = ({ theme }) => {
+
   return (
     <MeshmapWrapper>
       <div >
@@ -55,6 +54,7 @@ const Meshmap = ({ theme }) => {
             />
           </div>
           <MeshmapModes />
+
           <DesignerFeatures
             features={
               [
@@ -158,6 +158,7 @@ const Meshmap = ({ theme }) => {
                   description: ""
                 },
               ]} />*/}
+
           <Catalog />
           {/* <MesheryAction /> */}
 

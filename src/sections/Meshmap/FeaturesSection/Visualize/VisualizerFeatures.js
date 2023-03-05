@@ -3,8 +3,8 @@ import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
 import Feature from "../../features";
-import { useRef, useState, useEffect } from "react";
-
+import {  useState } from "react";
+import useGsapTimeline from "../useGsapTimeline";
 
 export default function VisualizerFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
@@ -12,10 +12,12 @@ export default function VisualizerFeatures({ features, theme }) {
     new Array(features.length).fill(false)
   );
 
+  useGsapTimeline({ trigger: ".test-container2",featureContainerName: ".visualizer-features" });
+
   return (
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-container">
-        <div className="root">
+        <div className="root test-container2">
           <div id="featureHeading" className="fixed">
             <h1>Visualize</h1>
           </div>
@@ -23,7 +25,7 @@ export default function VisualizerFeatures({ features, theme }) {
             <div className="diagram scroll">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
-            <ul className="features">
+            <ul className="features visualizer-features">
               {features.map((feature, index) => (
                 <li key={index}>
                   <Feature
