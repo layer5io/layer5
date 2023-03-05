@@ -197,6 +197,10 @@ const MeshmapModesWrapper = styled.div`
       box-shadow: 0px 0.25rem 0.5rem 0rem rgb(0, 0, 0, 0.75);
       margin: 1rem auto;
       border-radius: 0.35rem;
+
+      @media only screen and (max-width: 992px) {
+        width: 90%;
+      }
     }
   }
 
@@ -228,9 +232,6 @@ const MeshmapModesWrapper = styled.div`
     transform: scale(1.9);
     transition: transform 0.25s ease;
     @media only screen and (max-width: 1198px) {
-      transform: scale(1.5);
-    }
-    @media only screen and (max-width: 991px) {
       transform: scale(1.1);
     }
   }
