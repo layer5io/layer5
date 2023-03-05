@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { HoneycombGrid } from "./Integration.style";
+import { HoneycombGrid, IntegrationSlider } from "./Integration.style";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
@@ -42,6 +42,36 @@ const IntegrationsGrid = ({ category, theme, count }) => {
       }
     }
   `);
+
+  const settings = {
+    initialSlide: 0,
+    infinite: false,
+    slidesToShow: 5.25,
+    swipeToSlide: true,
+    slidesToScroll: 1,
+    // useTransform: false,
+
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          initialSlide: 0,
+          infinite: false,
+          arrows: true,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          initialSlide: 0,
+          arrows: true,
+          infinite: false,
+          slidesToShow: 1.5
+        }
+      }
+    ]
+  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
@@ -203,19 +233,22 @@ const IntegrationsGrid = ({ category, theme, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
       />
-      <section className="category">
-        {!hideFilter &&
-          categoryNameList.map((item) => {
-            return (
-              <p
-                key={item.id}
-                className={item.isSelected ? "items selected" : "items"}
-                onClick={setFilter}
-              >
-                {`${item.name} (${item.count})`}
-              </p>
-            );
-          })}
+
+      <section style={{ "margin": "0 2.6rem" }}>
+        <IntegrationSlider {...settings}>
+          {!hideFilter &&
+            categoryNameList.map((item) => {
+              return (
+                <p
+                  key={item.id}
+                  className={item.isSelected ? "items selected" : "items"}
+                  onClick={setFilter}
+                >
+                  {`${item.name} (${item.count})`}
+                </p>
+              );
+            })}
+        </IntegrationSlider>
       </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
