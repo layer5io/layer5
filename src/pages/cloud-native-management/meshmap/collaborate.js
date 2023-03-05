@@ -9,9 +9,9 @@ import Footer from "../../../sections/General/Footer";
 import { GlobalStyle } from "../../../sections/app.style";
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
-import Meshmap from "../../../sections/Meshmap/index";
+import MeshmapCollaborate from "../../../sections/Meshmap/Meshmap-collaborate";
 
-const MeshmapPage = () => {
+const MeshmapCollaboratePage = () => {
   const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
@@ -22,13 +22,13 @@ const MeshmapPage = () => {
       <GlobalStyle />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Meshmap theme={theme} />
+        <MeshmapCollaborate theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>
   );
 };
-export default MeshmapPage;
+export default MeshmapCollaboratePage;
 
 
 export const Head = () => {
