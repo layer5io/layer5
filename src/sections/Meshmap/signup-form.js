@@ -11,13 +11,13 @@ const SignupForm = () => {
   return (
     <SignupFormWrapper>
       <div className="banner-background">
-        <Container style={{ marginBottom: "4rem" }}>
+        <Container style={{ marginBottom: "4rem", padding: "0" }}>
           <Row className="description">
             <Col lg={7} md={6} sm={12} className="desc-text">
               <h1 className="heading-1">Signup for</h1>
               <h1 className="heading-2">MeshMap Beta</h1>
               <p className="desc-p">
-                                Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
+                Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
               </p>
               <div className="draft-logo">
                 <p>Help choose the best logo for MeshMap:</p>
@@ -27,7 +27,7 @@ const SignupForm = () => {
               </div>
             </Col>
 
-            <Col lg={5} md={6} sm={12}>
+            <Col lg={5} md={6} sm={12} style={{ padding: "0" }}>
               <CommonForm
                 title="Join the Beta Program"
                 form="meshmap"
