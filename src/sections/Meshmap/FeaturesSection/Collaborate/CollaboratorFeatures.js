@@ -11,7 +11,7 @@ export default function CollaboratorFeatures({ features, theme }) {
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
-  useGsapTimeline({ trigger: ".test-container3",featureContainerName: ".collaborator-features" });
+  useGsapTimeline({ trigger: ".test-container3",featureContainerName: ".collaborator-features", yPercent: -400 });
 
   return (
     <CollaboratorFeaturesWrapper>

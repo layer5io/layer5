@@ -12,7 +12,7 @@ export default function VisualizerFeatures({ features, theme }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".test-container2",featureContainerName: ".visualizer-features" });
+  useGsapTimeline({ trigger: ".test-container2",featureContainerName: ".visualizer-features",yPercent: -400 });
 
   return (
     <VisualizerFeaturesWrapper>

@@ -12,7 +12,7 @@ export default function DesignerFeatures({ features, theme }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".test-container",featureContainerName: ".design-features" });
+  useGsapTimeline({ trigger: ".test-container",featureContainerName: ".design-features",yPercent: -400 });
 
   return (
     <DesignerFeaturesWrapper>
