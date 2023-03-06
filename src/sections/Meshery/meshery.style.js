@@ -66,7 +66,7 @@ const MesheryWrapper = styled.section`
     .callout{
         margin: auto;
         margin-top: 5rem;
-        text-align: right;
+        text-align: center;
         width: 100%;
         h1{
             /* margin-bottom: 1.875rem; */
