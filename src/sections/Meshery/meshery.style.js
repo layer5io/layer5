@@ -91,12 +91,19 @@ const MesheryWrapper = styled.section`
             .description {
                 margin-top: 2rem;
 
+                
                 .meshery-hero-img {
+                    min-width:30rem;
                     text-align: center;
                     padding: 1rem 1rem 1rem 1rem;
                 }
-
+                .meshery-hero-img {
+                    text-align: center;
+                    padding: 0;
+                    min-width: 25rem;
+                }
                 .desc-text {
+                    min-width:70vw;
                     .banner-btn {
                         margin: 0.5rem 0;
                     }
@@ -110,7 +117,15 @@ const MesheryWrapper = styled.section`
         .info {
             .description {
                 flex-direction: column-reverse;
-
+               .heading-1{
+                   min-width:80vw;
+                   
+               }
+               .meshery-hero-img {
+                text-align: center;
+                padding: 0;
+                max-width: 30rem;
+            }
                 .desc-text {
                     .banner-btn {
                         margin: 0 0.75rem 0 0;
@@ -120,7 +135,7 @@ const MesheryWrapper = styled.section`
         }
     }
 
-    @media only screen and (max-width: 568px) {
+    @media only screen and (max-width: 575px) {
         .info{
             .description {
                 padding: 0;
