@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MeshmapLocator from "./images/meshmap-locator.svg";
 import MeshmapImageBottom from "./images/meshmap-image-bottom.svg";
-import { InView, useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
 const HeroSectionWrapper = styled.div`
@@ -13,34 +13,35 @@ const HeroSectionWrapper = styled.div`
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    padding: 6rem 2rem;
+    padding: 2% 5% 5%;
+    @media only screen and (max-width: 767px) {
+      text-align: center;
+      flex-direction: column-reverse;
+    }
 
     .hero-text {
         display: flex;
         flex-direction: column;
-        flex: 0 0 20%;
-        max-width: 20%;
-        /* margin-left: 5%; */
-        /* margin-bottom: 5%; */
-
+        flex: 0 0 30%;
+        max-width: 30%;
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
+        }
     }
 
     .hero-image {
         display: grid;
-        grid-template-rows: 2rem 2rem;
+        grid-template-rows: 5rem 5rem;
         place-items: center;
-        margin: 6rem 0;
+        margin: 5% 0;
         flex: 0 0 60%;
         max-width: 60%;
-        /* max-width: 56rem; */
-        /* min-width: 56rem; */
-
-        /* @media only screen and (max-width: 1600px) {
-            min-width: 40rem;
-        } */
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
+        }
 
         .locator-moving {
-            transform: translateY(2rem);
+            transform: translateY(5rem);
             transition: 1s;
             z-index: 1;
         }
@@ -65,8 +66,8 @@ const MeshmapHeroSection = () => {
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
-    // else if (!inView && imageInView)
-    // setimageInView(false);
+  // else if (!inView && imageInView)
+  // setimageInView(false);
 
   return (
     <HeroSectionWrapper>

@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
-
 const DesignDefaultWrapper = styled.section`
     .row {
         margin: 2rem;
+
+        @media only screen and (max-width: 767px) {
+          display: flex;
+          flex-direction: column;
+        }
 
     }
     .left-col {
@@ -28,13 +32,13 @@ const DesignDefaultWrapper = styled.section`
         max-width: 30%;
     }
     h2.statement {
-        color: ${props => props.theme.offWhiteColor};
+        color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
     }
     h3.statement {
-        color: ${props => props.theme.offWhiteColor};
+        color: ${props => props.theme.primaryColor};
         margin-left: 0rem;
         /* text-indent: -3.5rem; */
         margin-bottom: 2rem;
@@ -68,7 +72,7 @@ const DesignDefaultWrapper = styled.section`
         }
     }
     .demo {
-        color:${props => props.theme.offWhiteColor};
+        color: ${props => props.theme.primaryColor};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
@@ -136,7 +140,7 @@ const DesignDefaultWrapper = styled.section`
     @media screen and (max-width: 1200px) {
 
         .section {
-            margin: 6em auto 8rem;
+            margin: 6rem auto 8rem;
         }
 
         .left-col {
@@ -156,8 +160,15 @@ const DesignDefaultWrapper = styled.section`
     }
 
     @media only screen and (max-width: 767px) {
+        .section {
+            margin: 10% auto 5%;
+        }
+
         .right-col {
-            display: none;
+            /* display: none; */
+            justify-content: center;
+            margin-top: 10%;
+            max-width: 100%;
         }
         .join-community {
             text-align: center;

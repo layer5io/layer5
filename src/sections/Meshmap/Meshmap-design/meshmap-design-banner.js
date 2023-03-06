@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapLocator from "./images/meshmap-locator.svg";
-import MeshmapImageBottom from "./images/meshmap-image-bottom.svg";
 import DesignBannerImage from "./images/design-banner-image.svg";
 import CytoscapeDemoImage from "./images/cytoscape-demo.svg";
 
@@ -23,31 +21,46 @@ const DesignBannerWrapper = styled.div`
         max-width: 50%;
         text-align: left;
         padding-left: 10%;
-        padding-bottom: 5%;
+        padding-bottom: 10%;
         z-index: 1;
-        /* margin-left: 5%; */
-        /* margin-bottom: 5%; */
 
+        @media only screen and (max-width: 1100px) {
+            padding-left: 0;
+        }
+        @media only screen and (max-width: 950px) {
+            padding-bottom: 15%;
+        }
     }
 
     h1 {
-        span {
+        /* span {
             font-size: 7rem;
+        } */
+
+        @media only screen and (min-width: 500px) {
+            span {
+                font-size: 3.5rem;
+            }
         }
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (min-width: 767px) {
+            span {
+                font-size: 4rem;
+            }
+        }
+        @media only screen and (min-width: 950px) {
             span {
                 font-size: 5rem;
             }
         }
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (min-width: 1400px) {
             span {
-                /* font-size: 3rem; */
+                font-size: 7rem;
             }
         }
     }
 
-    h3 {
-        padding: 2rem 0;
+    h4 {
+        padding: 3rem 0;
     }
 
     p {
@@ -67,6 +80,10 @@ const DesignBannerWrapper = styled.div`
                 transform: scale(2);
                 transform-origin: 0rem 0rem;
             }
+
+            @media only screen and (max-width: 767px) {
+                top: 6rem;
+        }
     }
 
     .hero-image {
@@ -82,21 +99,6 @@ const DesignBannerWrapper = styled.div`
         /* @media only screen and (max-width: 1600px) {
             min-width: 40rem;
         } */
-
-        .locator-moving {
-            transform: translateY(5rem);
-            transition: 1s;
-            z-index: 1;
-        }
-
-        .map {
-            opacity: 0;
-            z-index: 0;
-        }
-        .map-visible {
-            opacity: 1;
-            transition: opacity 1s ease 0.5s;
-        }
 
     }
 
@@ -115,7 +117,7 @@ const MeshmapDesignBanner = () => {
       </div>
       <div className="hero-image">
         <img style={{ zIndex: 1 }} src={CytoscapeDemoImage} alt="" />
-        <h3>Experience context-aware design</h3>
+        <h4>Experience context-aware design</h4>
       </div>
     </DesignBannerWrapper>
 
