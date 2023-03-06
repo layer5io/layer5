@@ -14,6 +14,11 @@ const DesignBannerWrapper = styled.div`
     align-items: center;
     padding: 0 5%;
 
+    @media only screen and (max-width: 500px) {
+        max-height: 400px;
+    }
+
+
     .hero-text {
         display: flex;
         flex-direction: column;
@@ -29,6 +34,9 @@ const DesignBannerWrapper = styled.div`
         }
         @media only screen and (max-width: 950px) {
             padding-bottom: 15%;
+        }
+        @media only screen and (max-width: 550px) {
+            padding-bottom: 25%;
         }
     }
 
@@ -59,8 +67,8 @@ const DesignBannerWrapper = styled.div`
         }
     }
 
-    h4 {
-        padding: 3rem 0;
+    h5 {
+        padding: 2rem 0;
     }
 
     p {
@@ -81,8 +89,11 @@ const DesignBannerWrapper = styled.div`
                 transform-origin: 0rem 0rem;
             }
 
-            @media only screen and (max-width: 767px) {
-                top: 6rem;
+            @media only screen and (max-width: 700px) {
+                top: 5rem;
+        }
+            @media only screen and (max-width: 400px) {
+                top: 7rem;
         }
     }
 
@@ -117,7 +128,7 @@ const MeshmapDesignBanner = () => {
       </div>
       <div className="hero-image">
         <img style={{ zIndex: 1 }} src={CytoscapeDemoImage} alt="" />
-        <h4>Experience context-aware design</h4>
+        <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>
 

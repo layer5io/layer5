@@ -13,7 +13,7 @@ const HeroSectionWrapper = styled.div`
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2% 5% 5%;
+    padding: 2% 5% 8%;
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -62,7 +62,7 @@ const HeroSectionWrapper = styled.div`
 `;
 
 const MeshmapHeroSection = () => {
-  const [locatorRef, inView] = useInView({ threshold: 0.5 });
+  const [locatorRef, inView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
