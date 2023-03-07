@@ -1,5 +1,5 @@
-# [Choice] Node.js version: 14, 12, 10
-ARG VARIANT=14
+# [Choice] Node.js version: 18, 14, 12, 10
+ARG VARIANT=18
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.

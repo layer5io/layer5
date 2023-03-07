@@ -112,18 +112,17 @@ margin-top: 1rem;
   }
 
   .fixed {
-  position: sticky;
-  top: 6rem;
-  font-weight: 300;
-  transition: .4s ease-in-out;
-  background: #00b39f;
-  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-   & > h1 {
-    color: #ffffff;
-   }
-   @media (max-width: 912px) {
-    top: 5rem;
-   }
+    top: 6rem;
+    font-weight: 300;
+    transition: .4s ease-in-out;
+    background: #00b39f;
+    box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+    & > h1 {
+      color: #ffffff;
+    }
+    @media (max-width: 912px) {
+      top: 5rem;
+    }
 }
 
 #add-border {
