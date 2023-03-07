@@ -27,7 +27,7 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
           trigger,
           start: "top top+=96px",
           end: "bottom top",
-          markers: true,
+          // markers: true,
           scrub: true,
           pin: true
         },
