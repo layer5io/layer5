@@ -14,9 +14,8 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import MeshmapSignupForm from "./meshmap-signup-form";
 import Reviews from "../Pricing/review-slider";
 
-
-
 const Meshmap = ({ theme }) => {
+
   return (
     <MeshmapWrapper>
       <div >
@@ -54,6 +53,7 @@ const Meshmap = ({ theme }) => {
             />
           </div>
           <MeshmapModes />
+
           <DesignerFeatures
             features={
               [
@@ -157,6 +157,7 @@ const Meshmap = ({ theme }) => {
                   description: ""
                 },
               ]} />*/}
+
           <Catalog />
           {/* <MesheryAction /> */}
           <MeshmapSignupForm />
