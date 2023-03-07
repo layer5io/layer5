@@ -26,8 +26,8 @@ const lifecycleFeatureData = {
     },
   ],
   count: {
-    value: 10,
-    description: "service meshes supported",
+    value: 150,
+    description: "cloud native integrations",
   },
 };
 

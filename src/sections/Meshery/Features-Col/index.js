@@ -46,7 +46,7 @@ function getFeatureBlock(feature, index, performanceCount) {
             end={
               feature.count.value !== 0 ? feature.count.value : performanceCount
             }
-            suffix={feature.count.description == "components" ? "+" : ""}
+            suffix={(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
