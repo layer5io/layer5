@@ -20,6 +20,7 @@ import communityLogo from "../../../assets/images/community/community-green.svg"
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writerIcon from "../../../assets/images/writer-program/writer-program-badge.svg";
 import Button from "../../../reusecore/Button";
+import Badge from "../../../components/Badge";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -71,112 +72,34 @@ const MemberSingle = ({ frontmatter }) => {
                   <div className="social-bg">
                     <ul className="profile-social-links">
                       {badges.includes("meshery") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryLogo}
-                              alt="Meshery logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Meshery" to="/cloud-native-management/meshery" className="profile-social-links" src={mesheryLogo} alt="Meshery logo"/>
                       )}
                       {badges.includes("smp") && (
-                        <li>
-                          <Link to="/projects/service-mesh-performance">
-                            <img
-                              className="profile-social-links"
-                              src={smpLogo}
-                              alt="Service Mesh Peformance logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Service Mesh Performance" to="/projects/service-mesh-performance" className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo"/>
                       )}
                       {badges.includes("image-hub") && (
-                        <li>
-                          <Link to="/projects/image-hub">
-                            <img
-                              className="profile-social-links"
-                              src={imageHubLogo}
-                              alt="Image Hublogo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo"/>
                       )}
                       {badges.includes("landscape") && (
-                        <li>
-                          <Link to="/service-mesh-landscape">
-                            <img
-                              className="profile-social-links"
-                              src={landscapeLogo}
-                              alt="Service Mesh Landscape logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Landscape" to="/service-mesh-landscape" className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo"/>
                       )}
                       {badges.includes("community") && (
-                        <li>
-                          <Link to="/community/community-managers">
-                            <img
-                              className="profile-social-links"
-                              src={communityLogo}
-                              alt="Community logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Community" to="/community/community-managers" className="profile-social-links" src={communityLogo} alt="Community logo"/>
                       )}
                       {badges.includes("nighthawk") && (
-                        <li>
-                          <Link to="/projects/nighthawk">
-                            <img
-                              className="profile-social-links"
-                              src={NighthawkLogo}
-                              alt="Nighthawk logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="NightHawk" to="/projects/nighthawk" className="profile-social-links" src={NighthawkLogo} alt="Nighthawk logo"/>
                       )}
                       {badges.includes("meshery-operator") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery/meshery-operator">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryOperatorLogo}
-                              alt="Meshery Operator logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Meshery Operator" to="/cloud-native-management/meshery/meshery-operator" className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
                       )}
                       {badges.includes("patterns") && (
-                        <li>
-                          <Link to="/learn/service-mesh-books/service-mesh-patterns">
-                            <img
-                              className="profile-social-links"
-                              src={patternsLogo}
-                              alt="Patterns Logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Patterns" to="/learn/service-mesh-books/service-mesh-patterns" className="profile-social-links" src={patternsLogo} alt="Patterns Logo"/>
                       )}
                       {badges.includes("ui-ux") && (
-                        <li>
-                          <img
-                            className="profile-social-links"
-                            src={uiuxrLogo}
-                            alt="UI/UX'er Logo"
-                          />
-                        </li>
+                        <Badge name="UI/UX" to="#" className="profile-social-links" src={uiuxrLogo} alt="UI/UX'er Logo"/>
                       )}
                       {badges.includes("writer") && (
-                        <li>
-                          <Link to="../../handbook/writing-program">
-                            <img
-                              className="profile-social-links"
-                              src={writerIcon}
-                              alt="Writer Program Logo"
-                            />
-                          </Link>
-                        </li>
+                        <Badge name="Writer" to="../../handbook/writing-program" className="profile-social-links" src={writerIcon} alt="Writer Program Logo"/>
                       )}
                     </ul>
                   </div>
