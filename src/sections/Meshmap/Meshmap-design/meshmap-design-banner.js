@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import DesignBannerImage from "./images/design-banner-image.svg";
+import BannerImageDark from "./images/banner-image-dark.svg";
+import BannerImageLight from "./images/banner-image-light.svg";
 import CytoscapeDemoImage from "./images/cytoscape-demo.svg";
 
 const DesignBannerWrapper = styled.div`
@@ -112,15 +113,12 @@ const DesignBannerWrapper = styled.div`
         } */
 
     }
-
-
-
 `;
 
-const MeshmapDesignBanner = () => {
+const MeshmapDesignBanner = ({ theme }) => {
   return (
     <DesignBannerWrapper>
-      <img className="banner-image" src={DesignBannerImage} alt="" />
+      <img className="banner-image" src={theme === "dark" ? BannerImageDark : BannerImageLight} alt="" />
       <div className="hero-text">
         <h2 style={{ paddingLeft: "8px", color: "#00b39f" }}>MeshMap</h2>
         <h1><span>Designer</span></h1>

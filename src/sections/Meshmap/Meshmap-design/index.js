@@ -10,8 +10,8 @@ import Reviews from "../../Pricing/review-slider";
 const MeshmapDesign = ({ theme }) => {
   return (
     <MeshmapDesignWrapper>
-      <MeshmapDesignBanner />
-      <MeshmapHeroSection />
+      <MeshmapDesignBanner theme={theme} />
+      <MeshmapHeroSection theme={theme} />
       <DesignDefault />
       <MeshmapDesignFeatures />
       <SignupForm />

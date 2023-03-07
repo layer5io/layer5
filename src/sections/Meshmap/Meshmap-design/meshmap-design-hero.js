@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapLocator from "./images/meshmap-locator.svg";
-import MeshmapImageBottom from "./images/meshmap-image-bottom.svg";
+import MeshmapLocatorLight from "./images/meshmap-locator-light.svg";
+import MeshmapLocatorDark from "./images/meshmap-locator-dark.svg";
+import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
+import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
@@ -24,6 +26,7 @@ const HeroSectionWrapper = styled.div`
         flex-direction: column;
         flex: 0 0 30%;
         max-width: 30%;
+        padding-bottom: 3rem;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
         }
@@ -56,12 +59,9 @@ const HeroSectionWrapper = styled.div`
         }
 
     }
-
-
-
 `;
 
-const MeshmapHeroSection = () => {
+const MeshmapHeroSection = ({ theme }) => {
   const [locatorRef, inView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
@@ -72,8 +72,8 @@ const MeshmapHeroSection = () => {
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : ""} src={MeshmapLocator} alt="" ref={locatorRef} />
-        <img className={imageInView ? "map map-visible" : "map"} src={MeshmapImageBottom} alt="" />
+        <img className={imageInView ? "locator-moving" : ""} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
+        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" />
       </div>
       <div className="hero-text">
         <h2><span>Design your infrastructure</span></h2>
