@@ -12,7 +12,7 @@ const MeshmapDesign = ({ theme }) => {
     <MeshmapDesignWrapper>
       <MeshmapDesignBanner theme={theme} />
       <MeshmapHeroSection theme={theme} />
-      <DesignDefault />
+      <DesignDefault theme={theme} />
       <MeshmapDesignFeatures />
       <SignupForm />
       <Reviews />

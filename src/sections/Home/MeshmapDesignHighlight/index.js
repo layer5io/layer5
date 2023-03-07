@@ -2,13 +2,14 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import integrationsImage from "./cloud-integrations.svg";
+import integrationsImageLight from "./integration-image-light.svg";
+import integrationsImageDark from "./integration-image-dark.svg";
 import DesignDefaultWrapper from "./highlight.style";
 
 
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
-const DesignDefault = () => {
+const DesignDefault = ({ theme }) => {
   return (
     <DesignDefaultWrapper>
       <div className="section">
@@ -36,7 +37,7 @@ const DesignDefault = () => {
                       <div className="description">
                         <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p>
                         <p>
-                        Play with powerful features including context-aware designs and namespace configurations to easily manage all services.
+                          Play with powerful features including context-aware designs and namespace configurations to easily manage all services.
                         </p>
                       </div>
                     </div>
@@ -49,7 +50,7 @@ const DesignDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <img src={integrationsImage} alt="" />
+            <img src={theme === "dark" ? integrationsImageDark : integrationsImageLight} alt="" />
           </Col>
         </Row>
       </div>
