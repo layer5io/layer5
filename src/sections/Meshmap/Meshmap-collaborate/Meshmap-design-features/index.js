@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../../../../reusecore/Layout";
-import Terminal from "../../../../components/Terminal";
 import Features from "../../../../components/Features-carousel";
 import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "./../../FeaturesSection/Design/images/role-binding-2-dark.svg";
-const img2 = "./../../FeaturesSection/Design/images/role-binding-2-dark.svg";
-const img3 = "./../../FeaturesSection/Design/images/role-binding-3-dark.svg";
-const img4 = "./../../FeaturesSection/Design/images/role-binding-4-dark.svg";
+const img1 = "../../../assets/images/meshmap/MeshmapDesigner.png";
+const img2 = "../../../assets/images/meshmap/MeshmapDesigner.png";
+const img3 = "../../../assets/images/meshmap/MeshmapDesigner.png";
+const img4 = "../../../assets/images/meshmap/MeshmapDesigner.png";
 
 const MeshmapDesignFeaturesWrapper = styled.div`
-    /* margin: auto; */
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin: auto;
+    margin-top: 8% !important;
+    margin-bottom: 8%;
     @media (max-width: 32rem){
         margin-top: 10rem;
+    }
+    @media only screen and (max-width: 767px) {
+      max-width: 100vw;
     }
 
     .feature-expose {
