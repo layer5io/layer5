@@ -10,14 +10,14 @@ export const ToolTipWrapper = styled.div`
         display: none;
     }
     float:left;
-    margin: auto 1rem;
+    margin: auto 1.4rem;
 
     .border {
         line-height: 36.4px;
     }
 
     a {
-        align-items:center;
+        
         padding: 5px;
         color: ${props => props.theme.keppletColor};
         background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
