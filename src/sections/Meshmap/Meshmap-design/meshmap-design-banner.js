@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import BannerImageDark from "./images/banner-image-dark.svg";
 import BannerImageLight from "./images/banner-image-light.svg";
-import CytoscapeDemoImage from "./images/cytoscape-demo.svg";
+import CytoscapeDark from "./images/cytoscape-dark.svg";
+import CytoscapeLight from "./images/cytoscape-light.svg";
 
 const DesignBannerWrapper = styled.div`
 
@@ -125,7 +126,7 @@ const MeshmapDesignBanner = ({ theme }) => {
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
-        <img style={{ zIndex: 1 }} src={CytoscapeDemoImage} alt="" />
+        <img style={{ zIndex: 1 }} src={theme === "dark" ? CytoscapeDark : CytoscapeLight} alt="" />
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>
