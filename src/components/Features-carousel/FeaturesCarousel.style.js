@@ -88,7 +88,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .heading {
-
+        pointer-events: none;
         @media (min-width: 768px){
             color: ${props => props.theme.white};
         }
