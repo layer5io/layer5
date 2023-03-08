@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import BannerImageDark from "./images/banner-image-dark.svg";
 import BannerImageLight from "./images/banner-image-light.svg";
-import CytoscapeDemoImage from "./images/cytoscape-demo.svg";
 import CytoscapeDemo from "./cytoscape-demo";
 
 const DesignBannerWrapper = styled.div`
