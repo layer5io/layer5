@@ -89,21 +89,19 @@ const MesheryWrapper = styled.section`
     @media only screen and (max-width: 992px) {
         .info{
             .description {
+                flex-direction: column-reverse;
                 margin-top: 2rem;
 
                 
                 .meshery-hero-img {
                     min-width:30rem;
                     text-align: center;
-                    padding: 1rem 1rem 1rem 1rem;
+                    padding: 1rem;
                 }
-                .meshery-hero-img {
-                    text-align: center;
-                    padding: 0;
-                    min-width: 25rem;
-                }
+                
                 .desc-text {
-                    min-width:70vw;
+                    min-width:80vw;
+                    text-align:center;
                     .banner-btn {
                         margin: 0.5rem 0;
                     }
