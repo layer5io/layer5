@@ -232,6 +232,30 @@ const FooterWrapper = styled.section`
 			padding: 0 1rem;
 		}
 	}
+	
+	
+	@media (max-width: 445px) {
+           .terms{
+              position: relative;
+              top: -32px;
+              left: 30px;
+            }
+           }
+
+        @media (max-width: 62rem) {
+           .privacy{
+               position: relative;
+               left: -28px;
+             }
+           }
+
+        @media (max-width: 62rem) {
+           .status{
+              position: relative;
+              left: -28px;
+            }
+          }
+	
 	@media screen and (max-width: 445px){
 		.footer-bottom{
 			.policies {
