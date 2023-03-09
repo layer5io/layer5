@@ -267,6 +267,7 @@ const Footer = () => {
                   href="https://layer5.statuspage.io"
                   target="_blank"
                   rel="noreferrer"
+                  class="status"
                 >
                   Status
                 </a>
@@ -274,6 +275,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/company/legal/privacy"
+                  class="privacy"
                 >
                   Privacy
                 </a>
@@ -281,6 +283,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/company/legal/terms-of-service"
+                  class="terms"
                 >
                   Terms
                 </a>
