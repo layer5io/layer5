@@ -14,19 +14,25 @@ export const ToolTipWrapper = styled.div`
 
     .border {
         line-height: 36.4px;
+       
     }
-
+    
     a {
-        
-        padding: 5px;
+       
+        padding: 11.5px;
         color: ${props => props.theme.keppletColor};
         background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border: 1.5px solid ${props => props.theme.keppletColor};
+        display:flex;
+        align-items:center;
+        justify-content:center; 
         &:hover{
             background-color: ${props => props.theme.primaryColor};
             color: ${props => props.theme.primaryLightColorTwo};
             cursor: pointer;
             border: 1.5px solid ${props => props.theme.primaryColor};
+           
+  
         }             
     }
     .active {
