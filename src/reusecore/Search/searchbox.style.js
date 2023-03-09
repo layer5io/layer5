@@ -25,7 +25,7 @@ export const SearchWrapper = styled.div`
       position: absolute;
       right: 0px;
       top: 0;
-      cursor: pointer;
+      cursor: none;
       height: 100%;
       min-width: 20px;
       border-radius: 5px;
