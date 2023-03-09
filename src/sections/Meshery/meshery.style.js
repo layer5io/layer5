@@ -37,7 +37,7 @@ const MesheryWrapper = styled.section`
                     margin: 1.875rem 0 2.5rem 0;
                 }
                 .banner-btn {
-                    margin: 0rem 0.75rem 0 0;
+                    margin: 0rem 0.75rem 0 1rem;
                     color: ${props => props.theme.DarkTheme ? "rgba(0,0,0,1.0)" : "rgba(255, 255, 255, 1.0)"};  
                     .button-icon{
                         margin-right: 0.625rem;
@@ -100,10 +100,10 @@ const MesheryWrapper = styled.section`
                 }
                 
                 .desc-text {
-                    min-width:80vw;
+                    min-width:82vw;
                     text-align:center;
                     .banner-btn {
-                        margin: 0.5rem 0;
+                        margin: 0.5rem ;
                     }
                 }
             }
@@ -135,12 +135,13 @@ const MesheryWrapper = styled.section`
 
     @media only screen and (max-width: 575px) {
         .info{
+            
             .description {
                 padding: 0;
                 .meshery-hero-img {
                     text-align: center;
                     padding: 0;
-                    min-width: 15rem;
+                    
                 }
                 .desc-text{
                     text-align: center;
@@ -156,7 +157,33 @@ const MesheryWrapper = styled.section`
             }
         }
     }
-
+    @media only screen and (max-width: 560px) {
+        .info{
+            .meshery-video {
+                border-radius: 1rem;
+                width: 70%;
+              }
+            .description {
+                padding: 0;
+                .meshery-hero-img {
+                    text-align: center;
+                    padding: 0;
+                    min-width:80vw;
+                }
+                .desc-text{
+                    text-align: center;
+                    margin-bottom: .75rem;
+                    max-width:100%;
+                    .desc-p{
+                        margin: 1.875rem 0 1.5rem 0;
+                    }
+                    .banner-btn {
+                        margin: 0rem 0.75rem 0.5rem 0;  
+                    }
+                }
+            }
+        }
+    }
 
 `;
 
