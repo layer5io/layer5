@@ -82,12 +82,10 @@ const BannerSectionWrapper = styled.section`
     .vidHero {
         margin: auto;
         object-fit: cover;
-        width: inherit;
         position: relative;
         top: 50%;
         transform: translate(-1rem, -50%);
-        /* height: 100%; */
-        height: 36vw;
+        height: 44vw;
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
@@ -172,8 +170,8 @@ const BannerSectionWrapper = styled.section`
         .vidHero {
             height: 100%;
             width: 100%;
-            top: 10rem;
-            left: 50%;
+            
+            transform: translate(1vw, -55%);
         }
         .join-community {
             text-align: center;

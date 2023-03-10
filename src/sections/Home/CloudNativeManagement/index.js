@@ -11,7 +11,7 @@ import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
+import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const BannerDefault = () => {
@@ -58,8 +58,8 @@ const BannerDefault = () => {
             <ReactPlayer
               url="https://youtu.be/Do7htKrRzDA"
               playing
+              controls
               light={imgHero}
-              width="100%"
               style={{ margin: "auto" }}
               className="vidHero"
             />
