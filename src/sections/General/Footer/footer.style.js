@@ -233,6 +233,15 @@ const FooterWrapper = styled.section`
 		}
 	}
 	
+	.terms{
+	position: relative;
+	}
+	.privacy{
+	position: relative;
+	}
+	.status{
+	position: relative;
+	}
 	
 	@media screen and (max-width: 445px) {
            .terms{
@@ -240,21 +249,23 @@ const FooterWrapper = styled.section`
               top: -32px;
               left: 30px;
             }
-           }
-
-        @media screen and (max-width: 62rem) {
-           .privacy{
+	     .privacy{
                position: relative;
                left: -28px;
              }
-           }
-
-        @media screen and (max-width: 62rem) {
-           .status{
+	     .status{
               position: relative;
               left: -28px;
             }
-          }
+	     
+           }
+
+      @media screen and (min-width: 539px){
+      .policies{
+        position: relative;
+	left: -70px;
+        }
+      }
 	
 	@media screen and (max-width: 445px){
 		.footer-bottom{
