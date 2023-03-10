@@ -235,29 +235,7 @@ const FooterWrapper = styled.section`
 	
 	
 	
-	@media screen and (max-width: 445px) {
-           .terms{
-              position: relative;
-              top: -32px;
-              left: 30px;
-            }
-	     .privacy{
-               position: relative;
-               left: -28px;
-             }
-	     .status{
-              position: relative;
-              left: -28px;
-            }
-	     
-           }
-
-      @media screen and (min-width: 539px){
-      .policies{
-        position: relative;
-	left: -70px;
-        }
-      }
+	
 	
 	@media screen and (max-width: 445px){
 		.footer-bottom{
