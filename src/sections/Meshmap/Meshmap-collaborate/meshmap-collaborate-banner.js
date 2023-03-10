@@ -32,24 +32,26 @@ const DesignBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
+        padding-bottom: 2%;
     }
 
     h1 {
+        /* font-size: 4rem; */
         position: relative;
         display: inline-block;
         color: black;
 
         @media only screen and (min-width: 500px) {
-                font-size: 3.5rem;
+            font-size: 3.5rem;
         }
         @media only screen and (min-width: 767px) {
-                font-size: 4rem;
+            font-size: 4rem;
         }
         @media only screen and (min-width: 950px) {
-                font-size: 5rem;
+            font-size: 5rem;
         }
         @media only screen and (min-width: 1400px) {
-                font-size: 6rem;
+            font-size: 6rem;
         }
     }
 
@@ -68,14 +70,14 @@ const DesignBannerWrapper = styled.div`
         left: 0;
         transform-origin: right;
         transform: scaleX(0);
-        animation: text-animation-left 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
+        animation: text-animation-left 1s cubic-bezier(0.22, 0.61, 0.36, 1) 5s forwards;
     }
 
     h1::after {
         right: 0;
         transform-origin: left;
         transform: scaleX(0);
-        animation: text-animation-right 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
+        animation: text-animation-right 1s cubic-bezier(0.22, 0.61, 0.36, 1) 5s forwards;
     }
 
     @keyframes text-animation-left {
@@ -106,14 +108,19 @@ const DesignBannerWrapper = styled.div`
     }
 
     h2 {
-        color: #000;
+        color: #00b39f;
         width: fit-content;
         font-weight: 200;
         overflow: hidden; /* Hide text outside the h1 element */
         border-right: .1rem solid black; /* Add a blinking cursor */
         white-space: nowrap; /* Keep all text on one line */
         letter-spacing: .1rem; /* Add space between characters */
-        animation: typing 2.5s steps(25, end), blink-caret 0.7 step-end 2.5s forwards;
+        animation: typing 5s steps(25, end), blink-caret 0.7s step-end 5s forwards;
+
+        @media only screen and (max-width: 500px) {
+            font-size: 1rem;
+        }
+
     }
 
     @keyframes typing {
@@ -217,7 +224,7 @@ const MeshmapCollaborateBanner = () => {
       {/* <img className="banner-image" src={DesignBannerImage} alt="" /> */}
       <div className="banner-text">
         <div className="typing-text">
-          <h2 style={{ paddingLeft: "8px", color: "#00b39f" }}>Bring those ideas to life with</h2>
+          <h2>Bring those ideas to life with</h2>
         </div>
         <h1 className={imageInView ? "heading-transition heading" : "heading"}>Collaboration</h1>
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}

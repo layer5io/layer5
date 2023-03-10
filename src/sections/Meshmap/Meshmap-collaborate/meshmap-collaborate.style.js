@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MeshmapDesignWrapper = styled.div`
+const MeshmapCollaborateWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
@@ -39,4 +39,4 @@ const MeshmapDesignWrapper = styled.div`
 
 `;
 
-export default MeshmapDesignWrapper;
+export default MeshmapCollaborateWrapper;
