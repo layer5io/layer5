@@ -80,15 +80,11 @@ const BannerSectionWrapper = styled.section`
         border-bottom-left-radius: 0.5rem;
     }
     .vidHero {
-        margin: auto;
         object-fit: cover;
         position: relative;
         top: 50%;
-        transform: translate(-1rem, -50%);
-        height: 44vw;
+        transform: translate(0, -50%);
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
     }
     .section-title {
         padding: 3rem 8rem;
@@ -138,21 +134,17 @@ const BannerSectionWrapper = styled.section`
     }
 
     @media screen and (max-width: 1200px) {
-
         .section {
             margin: 6em auto 8rem;
         }
-
         .left-col {
             flex: 0 0 40%;
             max-width: 40%;
         }
-
         .right-col {
             flex: 0 0 60%;
             max-width: 60%;
         }
-
         .hero {
             height: 125%;
             margin-top: -4.5rem;
@@ -161,17 +153,12 @@ const BannerSectionWrapper = styled.section`
 
     @media only screen and (max-width: 767px) {
         .right-col {
-            /* display: none;
-             */
-            flex-direction: column;
-            text-align: center;
-            
+            flex: 0 0 100%;
+            max-width: 100%;
         }
         .vidHero {
-            height: 100%;
-            width: 100%;
-            
-            transform: translate(1vw, -55%);
+            height: 25rem !important;
+            transform: translate(0, -52%);
         }
         .join-community {
             text-align: center;
