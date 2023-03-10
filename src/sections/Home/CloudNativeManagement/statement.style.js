@@ -71,14 +71,27 @@ const BannerSectionWrapper = styled.section`
     .demo span {
         font-weight: 600;
     }
-    .hero {
+    .imgHero {
         margin: auto;
         object-fit: cover;
         width: inherit;
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
+    }
+    .vidHero {
+        margin: auto;
+        object-fit: cover;
+        width: inherit;
+        position: relative;
+        top: 50%;
+        transform: translate(-1rem, -50%);
+        vertical-align: middle;
+        height: 100%;
 
+        box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
     }
     .section-title {
         padding: 3rem 8rem;
