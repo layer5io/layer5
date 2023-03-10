@@ -1,11 +1,11 @@
 import styled, { keyframes } from "styled-components";
 
 export const BackToTopButton = styled.button`
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.3rem;
+    height: 2.3rem;
     position : fixed;
-    bottom: 1rem;
-    right : 1.5rem;
+    bottom: 6.2rem;
+    right : 0rem;
     outline : none;
     border-radius:  50%;
     border : none;
