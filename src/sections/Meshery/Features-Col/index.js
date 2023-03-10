@@ -67,6 +67,7 @@ const Features = () => {
       .then((resultcount) => setPerformanceCount(resultcount.total_runs));
   }, []);
 
+  const data = LifecycleFeature().features;
   return (
     <FeaturesSectionWrapper>
       <TitleContainer>
@@ -76,7 +77,7 @@ const Features = () => {
         </h1>
       </TitleContainer>
       <FeaturesSectionContainer>
-        {LifecycleFeature().features.map((feature, index) =>
+        {data.map((feature, index) =>
           getFeatureBlock(feature, index, performanceCount)
         )}
       </FeaturesSectionContainer>

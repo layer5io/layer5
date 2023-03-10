@@ -9,30 +9,7 @@ const LifecycleFeature = () => {
           frontmatter: { published: { eq: true } }
         }
       ) {
-        nodes {
-          frontmatter {
-            title
-            status
-            category
-            integrationIcon {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
-            darkModeIntegrationIcon {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
-          }
-          fields {
-            slug
-          }
-        }
+        totalCount
       }
     }
   `);
@@ -186,7 +163,7 @@ const LifecycleFeature = () => {
 
   // Count the total number of integrations
   const totalIntegrations =
-    Math.ceil(integrations.allMdx.nodes.length / 10) * 10;
+    Math.ceil(integrations.allMdx.totalCount / 10) * 10;
 
   // Update the count value in lifecycleFeatureData
   const lifecycleFeatureDataUpdated = {
