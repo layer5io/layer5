@@ -233,15 +233,7 @@ const FooterWrapper = styled.section`
 		}
 	}
 	
-	.terms{
-	position: relative;
-	}
-	.privacy{
-	position: relative;
-	}
-	.status{
-	position: relative;
-	}
+	
 	
 	@media screen and (max-width: 445px) {
            .terms{
