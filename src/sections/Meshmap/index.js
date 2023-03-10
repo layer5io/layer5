@@ -1,24 +1,21 @@
 import React from "react";
 import MeshmapWrapper from "./meshmap.style";
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
 import Catalog from "./meshmap-catalog";
 import Platform from "./meshmap-platform";
-import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import MeshmapBanner from "./meshmap_banner";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import CommonForm from "../../components/CommonForm";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import MeshmapSignupForm from "./meshmap-signup-form";
 import Reviews from "../Pricing/review-slider";
 
-
-
 const Meshmap = ({ theme }) => {
+
   return (
     <MeshmapWrapper>
       <div >
@@ -56,6 +53,7 @@ const Meshmap = ({ theme }) => {
             />
           </div>
           <MeshmapModes />
+
           <DesignerFeatures
             features={
               [
@@ -159,6 +157,7 @@ const Meshmap = ({ theme }) => {
                   description: ""
                 },
               ]} />*/}
+
           <Catalog />
           {/* <MesheryAction /> */}
           <MeshmapSignupForm />

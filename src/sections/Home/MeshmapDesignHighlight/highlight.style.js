@@ -60,7 +60,7 @@ const DesignDefaultWrapper = styled.section`
     h4.statement {
         font-weight: bold;
         display: flex;
-        color: rgba(255, 255, 255, 0.7);
+        color: ${props => props.theme.primaryColor};
     }
     .description a {
         color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
@@ -92,7 +92,7 @@ const DesignDefaultWrapper = styled.section`
     .section-title {
         padding: 3rem 8rem;
         border-radius: 2rem 0 0 2rem;
-        background: linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%);
+        background:${props => props.theme.DarkTheme ? "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)" : "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 102.34%)"};
     }
     .svg-background {
         position: absolute;
