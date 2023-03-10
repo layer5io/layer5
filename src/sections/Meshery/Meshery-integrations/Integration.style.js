@@ -29,11 +29,11 @@ export const HoneycombGrid = styled.div`
     color: #1e2117;
     font-size: 0.875rem;
     cursor: pointer;
+    transition: all .1s ease-in-out;
 
     &:hover {
       opacity: 0.8;
-      transition: all .2s ease-in-out;
-      box-shadow: 0px 0px 5px ${props => props.theme.DarkTheme ? "#FFFFFF" : "#3c494f"};
+      box-shadow: rgb(60 73 79) 0px 0px 6px -2px ${props => props.theme.DarkTheme ? "#FFFFFF" : "#3c494f"};
 }
   }
 
