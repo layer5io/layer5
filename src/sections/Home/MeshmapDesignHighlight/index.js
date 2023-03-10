@@ -4,12 +4,21 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import integrationsImageLight from "./integration-image-light.svg";
 import integrationsImageDark from "./integration-image-dark.svg";
-import DesignDefaultWrapper from "./highlight.style";
+import DesignDefaultWrapper from "./highlight.style";import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+
 
 
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const DesignDefault = ({ theme }) => {
+  const [diagramRef, inView] = useInView({ threshold: 0.6 });
+  const [imageInView, setimageInView] = useState(false);
+  if (inView && !imageInView)
+    setimageInView(true);
+  else if (imageInView && !inView)
+    setimageInView(false);
+
   return (
     <DesignDefaultWrapper>
       <div className="section">
@@ -50,7 +59,7 @@ const DesignDefault = ({ theme }) => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <img src={theme === "dark" ? integrationsImageDark : integrationsImageLight} alt="" />
+            <img className={imageInView ? "diagram-visible" : "diagram-hidden"} src={theme === "dark" ? integrationsImageDark : integrationsImageLight} alt="integrations-img" ref={diagramRef} />
           </Col>
         </Row>
       </div>
