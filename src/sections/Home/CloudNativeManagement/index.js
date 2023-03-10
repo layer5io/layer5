@@ -58,7 +58,6 @@ const BannerDefault = () => {
             <ReactPlayer
               url="https://youtu.be/Do7htKrRzDA"
               playing
-              controls
               light={imgHero}
               width="100%"
               style={{ margin: "auto" }}
