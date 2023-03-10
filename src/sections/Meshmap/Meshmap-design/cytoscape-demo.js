@@ -32,7 +32,7 @@ const style = [
   {
     selector: "node",
     style: {
-      "background-image": "./../../../collections/integrations/nginx-ingress/icon/color/nginx-ingress-color.svg",
+      "background-color": "#666",
       label: "data(id)"
     }
   },
