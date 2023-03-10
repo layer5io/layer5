@@ -86,6 +86,12 @@ const BannerSectionWrapper = styled.section`
         transform: translate(0, -50%);
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
     }
+    .meshmapVideo {
+        position: relative;
+        min-width:25%;
+        max-width:100%;
+        object-fit: contain;
+    }
     .section-title {
         padding: 3rem 8rem;
         background: #00b39f;

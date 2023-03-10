@@ -1,15 +1,19 @@
 import React from "react";
+import { Link } from "gatsby";
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
+import { StaticImage } from "gatsby-plugin-image";
 
-import ReactPlayer from "react-player/youtube";
+
+// import ReactPlayer from "react-player/youtube";
 
 import BannerSectionWrapper from "./statement.style";
-import { Link } from "gatsby";
+import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 
-import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
+
+// const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
 
 const BannerDefault = () => {
   return (
@@ -52,7 +56,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <ReactPlayer
+            {/* <ReactPlayer
               url="https://youtu.be/Do7htKrRzDA"
               playing
               controls
@@ -61,7 +65,13 @@ const BannerDefault = () => {
               height="100%"
               style={{ margin: "auto" }}
               className="vidHero"
-            />
+            /> */}
+            <Link to="/cloud-native-management/meshmap">
+              <video autoPlay muted loop preload="metadata" className="meshmapVideo">
+                <source src={meshmapVideo} type="video/mp4"></source>
+              </video>
+            </Link>
+            {/* <StaticImage loading="lazy" className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" /> */}
           </Col>
         </Row>
       </div>

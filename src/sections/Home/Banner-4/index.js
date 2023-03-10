@@ -6,12 +6,15 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
+import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
+import ReactPlayer from "react-player/youtube";
+
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 
 import Banner1SectionWrapper from "./banner4.style";
 
-import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
+// import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
@@ -65,11 +68,19 @@ const Banner1 = (props) => {
           </Col>
           {typeof window != "undefined" && window.innerWidth > 760 && (
             <Col sm={4} lg={6} className="section-title-wrapper video-col">
-              <Link to="/cloud-native-management/meshmap">
+              <ReactPlayer
+                url="https://youtu.be/Do7htKrRzDA"
+                playing
+                controls
+                light={imgHero}
+                style={{ margin: "auto" }}
+                className="vidHero"
+              />
+              {/* <Link to="/cloud-native-management/meshmap">
                 <video autoPlay muted loop preload="metadata" className="meshmapVideo">
                   <source src={meshmapVideo} type="video/mp4"></source>
                 </video>
-              </Link>
+              </Link> */}
             </Col>
           )}
         </Row>

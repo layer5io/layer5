@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
     display: none;
+    
+    .vidHero {
+        object-fit: contain;
+        box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
+    }
+    
     p {
         font-size: 21px;
         font-weight: 300;
