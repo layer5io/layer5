@@ -10,7 +10,7 @@ export const TableWrapper = styled.div`
         box-shadow:0px 2px 16px rgba(0,0,0,0.2);
         width: 100%;
         margin: auto;
-
+     
         td{
             padding:0.5rem;
             border-collapse:collapse;
@@ -61,7 +61,7 @@ export const TableWrapper = styled.div`
                 border-bottom:1px solid #e0e0e0;
 
                 &:hover{
-                    box-shadow: 0px 2px 15px -10px black;
+                    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
                     transform: translateY(0px);
                 }
             }
