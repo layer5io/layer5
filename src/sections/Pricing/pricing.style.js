@@ -243,6 +243,15 @@ const PricingWrapper = styled.section`
   }
 }
 
+.pricing_coming_soon{
+  width : 150px;
+  position : relative ;
+  float : right;
+  z-index:2;
+  margin-top:-2rem;
+  margin-right:-5.4rem;
+  -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
+}
 
 `;
 
