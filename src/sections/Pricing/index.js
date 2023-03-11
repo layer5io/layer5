@@ -53,13 +53,13 @@ const Pricing = () => {
               <Col lg={4} md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                   {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
-                  <div class="pricing_coming_soon">{x.pricing_coming_soon}</div>
+                  <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
                   <h2>{x.tier}</h2>
                   <h5 className="byline">{x.byline}</h5>
                   <div className="pricing-features">
                     {x.summary.map((t) => (
                       <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description} /></div>
-                      ))} 
+                    ))}
                   </div>
                   {/*
                   <div className="price-tag">
