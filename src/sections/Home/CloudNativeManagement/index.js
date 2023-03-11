@@ -56,7 +56,7 @@ const BannerDefault = () => {
               url="https://youtu.be/Do7htKrRzDA"
               playing
               controls
-              light={< img src={imgHero} loading="lazy" />}
+              light={< img src={imgHero} loading="lazy" alt="meshmap designer" />}
               width="auto"
               height="100%"
               style={{ margin: "auto" }}
