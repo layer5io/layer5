@@ -3,16 +3,13 @@ import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
-import mesheryPlayground from "./meshery-playground-meshmap.png";
 
 import ReactPlayer from "react-player/youtube";
 
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
-// const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const BannerDefault = () => {
   return (
@@ -60,10 +57,11 @@ const BannerDefault = () => {
               playing
               controls
               light={imgHero}
+              width="auto"
+              height="100%"
               style={{ margin: "auto" }}
               className="vidHero"
             />
-            {/* <StaticImage loading="lazy" className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" /> */}
           </Col>
         </Row>
       </div>
