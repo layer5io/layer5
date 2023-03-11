@@ -94,10 +94,7 @@ const MesheryWrapper = styled.section`
                 align-items:center;
                 justify-content:center;
                .desc-p{
-                  width:71vw;
-                  display:flex;
-                  align-items:center;
-                justify-content:center;
+                  width:69vw;
                }
                 .meshery-hero-img {
                     min-width:30rem;
@@ -128,8 +125,11 @@ const MesheryWrapper = styled.section`
                 max-width: 30rem;
             }
                 .desc-text {
+                    .desc-p{
+                        margin-left:1rem;
+                    }
                     .banner-btn {
-                        margin: 0 0.75rem 0 0;
+                        margin: 0 0.75rem 0 o.5rem;
                     }
                 }
             }
