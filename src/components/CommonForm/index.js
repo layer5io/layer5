@@ -105,9 +105,9 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
     >
       <Form className="form" method="post">
         <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+        <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+        <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
         <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
         <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
