@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const FeaturesWrapper = styled.div`
     .features-carousel {
       @media (min-width: 768px) {
-        display: none;
+       display:none;
+      }
+      img{
+        object-fit:contain;
       }
       .main-heading{
         margin-bottom: 2rem;
@@ -133,6 +136,7 @@ export const FeaturesWrapper = styled.div`
       & > img {
         width: 100%;
         height: auto;
+        object-fit:contain;
       }
     
       @media (min-width: 768px) {
@@ -172,6 +176,8 @@ export const FeaturesWrapper = styled.div`
         display: flex;
         align-items: center;
       }
+      
     }
+    
 
 `;
