@@ -14,8 +14,8 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
   const RECIPROCAL_GR = 1 / GOLDEN_RATIO;
   const DURATION = RECIPROCAL_GR;
 
-  useIsomorphicLayoutEffect(() => {
 
+  useIsomorphicLayoutEffect(() => {
     const context = gsap.context(() => {
       const _timeline = gsap.timeline({
         defaults: {
@@ -27,15 +27,16 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
           trigger,
           start: "top top+=96px",
           end: "bottom top",
-          // markers: true,
+          markers: true,
           scrub: true,
-          pin: true
+          pin: true,
+          toggleActions: "play pause resume reset"
         },
       });
 
       _timeline.to(featureContainerName,{
         yPercent,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
       });
     });
 

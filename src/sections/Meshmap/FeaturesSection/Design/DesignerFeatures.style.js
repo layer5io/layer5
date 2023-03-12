@@ -49,6 +49,9 @@ margin-top: 1rem;
     position: sticky;
     top: 0;
     z-index: 0;
+    margin-top:auto;
+    margin-bottom:auto;
+    height:100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
