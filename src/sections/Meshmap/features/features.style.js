@@ -5,7 +5,7 @@ const FeatureWrapper = styled.section`
 
 .root {
   display:flex;
-
+  
   & > .text {
     font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
     opacity:0;
