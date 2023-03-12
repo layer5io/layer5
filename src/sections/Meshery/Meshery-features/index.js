@@ -17,7 +17,7 @@ const MesheryFeaturesWrapper = styled.div`
     margin: auto;
     margin-top: 4rem;
     @media (max-width: 32rem){
-        margin-top: 10rem;
+        margin-top: 4rem;
     }
 
     .feature-expose {
