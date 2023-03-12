@@ -161,10 +161,19 @@ Procedure of changing the image for the gatsby-image is the same as we change fo
 ## Adding Images and Icons
 
   1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
-  2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site. This performs automatic image optimization, thereby improving site performance.
+  2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site **except for SVG images**. This performs automatic image optimization, thereby improving site performance.
   3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder. 
 
 
+## Site Performance Considerations
+
+1. Analyze page load metrics of mobile version in lighthouse report (see status of GitHub workflow on your open PR).
+2. While creating a new page make sure to use Gatsby Head API for SEO.
+3. Prefer using `loading="eager"` for Hero images to improve LCP(Largest Contentful Paint) and FCP(First Contentful Paint).
+4. Optimise page by deferring loading of third party scripts. You can use [off-main-thread](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/#off-main-thread-strategy-experimental)  in Script API.
+5. Prefer Code Splitting using [loadable](https://github.com/gregberge/loadable-components) to lazy load heavy components which are not in the viewport.
+
+Note:- You can also refer to [Improving Site Performance](https://www.gatsbyjs.com/docs/how-to/performance/improving-site-performance/), [web.dev](https://web.dev/vitals/).
 
 ## Updating/Creating a Community Member Profile 
 
@@ -240,7 +249,7 @@ Follow the following instructions to start contributing.
   **2.** Clone your forked copy of the project.
 
   ```
-  git clone https://github.com/<your-github-username>/layer5.git
+  git clone --depth=1 https://github.com/layer5io/layer5.git
   ```
 
   **3.** Navigate to the project directory.

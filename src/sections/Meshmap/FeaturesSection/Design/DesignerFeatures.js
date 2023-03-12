@@ -3,9 +3,8 @@ import { Container } from "../../../../reusecore/Layout";
 import DesignerFeaturesWrapper from "./DesignerFeatures.style";
 import DesignerFeaturesDiagram from "./DesignerFeatures_diagram";
 import Feature from "../../features";
-// import { useInView } from "react-intersection-observer";
-import { useRef, useState, useEffect } from "react";
-// import useScrollBlock from "../useScrollBlock";
+import { useState } from "react";
+import useGsapTimeline from "../useGsapTimeline";
 
 export default function DesignerFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
@@ -13,10 +12,12 @@ export default function DesignerFeatures({ features, theme }) {
     new Array(features.length).fill(false)
   );
 
+  useGsapTimeline({ trigger: ".test-container",featureContainerName: ".design-features",yPercent: -400 });
+
   return (
     <DesignerFeaturesWrapper>
       <Container className="designer-container">
-        <div className="root">
+        <div className="root test-container">
           <div id="featureHeading" className="fixed" >
             <h1>Design</h1>
           </div>
@@ -24,7 +25,7 @@ export default function DesignerFeatures({ features, theme }) {
             <div className="diagram scroll">
               <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
-            <ul className="features">
+            <ul  className="features design-features">
               {features.map((feature, index) => (
                 <li key={index}>
                   <Feature

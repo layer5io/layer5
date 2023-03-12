@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -37,17 +40,17 @@ export const HoneycombGrid = styled.div`
   }
 
   ul {
-    margin: 0;
+    margin: 2.5rem 0 0 0;
     padding-left: 50px;
     padding-right: 50px;
   }
 
   .container-active,
   .container-inactive {
+    -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) =>
-  props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
+    background: ${(props) => props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -83,8 +86,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) =>
-    props.theme.DarkTheme ? props.theme.white : props.theme.black};
+          color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
           transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
@@ -126,10 +128,7 @@ export const HoneycombGrid = styled.div`
       background: #00d3a9;
       ::after {
         content: "";
-        background: ${(props) =>
-      props.theme.DarkTheme
-        ? props.theme.elevationColor
-        : props.theme.white};
+        background: ${(props) => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
         margin: 0px 0px 0 4px;
         clip-path: polygon(
           50% 0%,
@@ -191,3 +190,65 @@ export const IntegrationCard = styled.div`
     }
   }
 `;
+
+export const IntegrationSlider = styled(Slider)`
+  .slick-prev:hover, .slick-next:hover{
+    box-shadow: none;
+    outline:none;
+  }
+
+  .slick-arrow {
+    width: 2rem;
+    height: 3rem;
+  }
+
+  .slick-disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  .slick-arrow:before {
+    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+    font-size: 4rem;
+    display: inline-block;
+    height: 1rem;
+    -webkit-text-size-adjust: none;
+  }
+
+  .slick-arrow:hover:before {
+    color: #00b39f;
+  }
+
+  .slick-slide {
+    width: auto !important;
+    margin: 0 .5rem;
+  }
+
+  .slick-next{
+    right: -2.5rem;
+  }
+
+  .slick-prev{
+    left: -2.5rem;
+  }
+
+  .slick-prev:before {
+    content:"‹";
+    line-height: 0;
+    opacity: 1;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-next:before {
+    content: "›";
+    line-height: 0;
+    opacity: 1;
+  }
+
+  .slick-prev, .slick-next {
+    top: 1.5rem;
+  }
+  `;

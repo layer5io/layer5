@@ -66,7 +66,7 @@ const MesheryWrapper = styled.section`
     .callout{
         margin: auto;
         margin-top: 5rem;
-        text-align: right;
+        text-align:right;
         width: 100%;
         h1{
             /* margin-bottom: 1.875rem; */
@@ -87,6 +87,8 @@ const MesheryWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 992px) {
+
+       
         .info{
             .description {
                 margin-top: 2rem;
@@ -95,7 +97,7 @@ const MesheryWrapper = styled.section`
                     text-align: center;
                     padding: 1rem 1rem 1rem 1rem;
                 }
-
+                
                 .desc-text {
                     .banner-btn {
                         margin: 0.5rem 0;
@@ -107,6 +109,9 @@ const MesheryWrapper = styled.section`
     }
 
     @media only screen and (max-width: 768px) {
+        .callout{
+            text-align:center;
+        }
         .info {
             .description {
                 flex-direction: column-reverse;

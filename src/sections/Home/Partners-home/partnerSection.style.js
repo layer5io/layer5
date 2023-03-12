@@ -22,6 +22,15 @@ const PartnerItemWrapper = styled.section`
             flex-wrap: wrap;
         }
     }
+		.slick-dots li button:before{
+			color: ${props => props.theme.DarkTheme ? "#939393" : ""}
+		}
+		.slick-dots li.slick-active button:before {
+				color: ${props => props.theme.DarkTheme ? "white" : ""};
+		}
+		.slick-dots li button:hover{
+				box-shadow: none;
+		}
     a.partner-card {
         @media(max-width: 1400px){
             flex: 0 0 12%;

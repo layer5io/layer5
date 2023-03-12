@@ -39,19 +39,14 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
+            <a id="top">
+              <h2>GitHub Organizations and Repositories</h2>
+            </a>
             <p>
               A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
             </p>
 
-            <a id="top">
-              <h2>GitHub Organizations and Repositories</h2>
-            </a>
-
             <p>
-              This overview serves as a resource to newcomers seeking a
-              perspective of the collective community efforts (from the limited
-              vantage point of a code-centric perspective).
-              <br />
               Note that the Layer5 community spans four GitHub
               organizations:
             </p>
