@@ -7,7 +7,10 @@ export const FeaturesWrapper = styled.div`
       }
       img{
         object-fit:contain;
+        margin-left:auto;
+        margin-right:auto;
       }
+     
       .main-heading{
         margin-bottom: 2rem;
       }
@@ -171,13 +174,11 @@ export const FeaturesWrapper = styled.div`
             transform: scale(1.2);
         }
       }
-    
-      @media (min-width: 768px) {
-        display: flex;
-        align-items: center;
-      }
-      
     }
-    
+   .feature-expose img{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+   }
 
 `;
