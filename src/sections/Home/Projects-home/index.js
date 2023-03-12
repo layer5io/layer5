@@ -44,7 +44,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "100%", height: "100%" }} />
+                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "35px", height: "56px" }} />
                   <h3>MeshMap</h3>
                   <p>Visual Infrastructure Management</p>
                 </div>

@@ -31,7 +31,20 @@ const AboutSectionWrapper = styled.section`
       margin: 2rem 5rem;
       display: flex;      
     }
-
+  .demo {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 2rem;
+  }
+  .demo-2{
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+  }
+  }
 	.col {
 		display: flex;
 		flex-flow: column wrap;
@@ -55,14 +68,15 @@ const AboutSectionWrapper = styled.section`
 		justify-content: left;
 		padding: 1rem;
     overflow-block: visible;
-		h4 {
+		p {
       padding-left: .5rem;
       padding-right: 1.5rem;
 			font-weight: 500;
 			text-align: left;
       font-size: 1.25rem;
       margin: auto 0rem;
-      color:white;
+      line-height: normal;
+      color: white;
 		}
     img {
       height: 1.5rem;
@@ -70,7 +84,7 @@ const AboutSectionWrapper = styled.section`
     }
 		@media screen and (max-width: 1200px) {
 			height: 6.5rem;
-        h4 {font-size: 1.1rem;
+        p {font-size: 1.1rem;
         padding-top: 0px;
         padding-bottom: 0px;
 		  }
@@ -78,7 +92,7 @@ const AboutSectionWrapper = styled.section`
     @media screen and (max-width: 1020px) {
 			height: 6.5rem;
       
-      h4 {font-size: 1rem;}
+      p {font-size: 1rem;}
     }
     @media screen and (max-width: 650px) {
 			height: 6.5rem;
