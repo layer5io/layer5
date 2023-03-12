@@ -98,6 +98,7 @@ const FooterWrapper = styled.section`
 			border: 1px solid #FFFFFF;
 			background-color: #000000;
 			border-radius: 0.25rem;
+			margin-bottom:14px;
 		}
 
 		button {
