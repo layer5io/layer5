@@ -115,7 +115,6 @@ const CollaboratorFeaturesWrapper = styled.section`
   }
 
   .fixed {
-    position: sticky;
     top: 6rem;
     font-weight: 300;
     transition: 0.3s ease-in-out;
