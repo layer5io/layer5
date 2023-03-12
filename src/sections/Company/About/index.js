@@ -70,7 +70,7 @@ const About = ({ theme }) => {
           <Col xs={12} sm={12}>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
-                <div className="head-images">
+                <div className="head-images-meet">
                   <StaticImage src={Community_meetup} alt="Community_meetup" />
                   <figcaption className="caption">
                     Layer5 community members at Open Source Africa Community

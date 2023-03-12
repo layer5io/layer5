@@ -59,6 +59,9 @@ const AboutSectionWrapper = styled.section`
       font-weight: 600;
       margin: 0rem;
   }
+  .head-images-meet {
+    text-align: center;
+  }
   .colab {
     font-size: 20px;
     font-weight: 500;
