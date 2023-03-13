@@ -3,7 +3,7 @@ import styled from "styled-components";
 const VisualizerFeaturesWrapper = styled.section`
   margin-top: 1rem;
 
-  .visualizer-container {
+  .visualizer-trigger-container{
     padding: 0;
   }
 
