@@ -1,6 +1,11 @@
 
 const data = {
   faqs: [
+
+    //
+    // LAYER5
+    //
+
     {
       question: "Are Layer5's solutions open source?",
       category: "Layer5",
@@ -45,6 +50,9 @@ const data = {
       linktext: "Layer5 Slack",
     },
 
+    //
+    // SERVICE MESH
+    //
 
     {
       question: "What value does a service mesh provide?",
@@ -149,6 +157,11 @@ const data = {
       link: "/deploy-service-mesh",
       linktext: "Factors When considering how strongly you need a service mesh",
     },
+
+    //
+    // MESHERY
+    //
+
     {
       question: "Is Meshery a service mesh?",
       category: "Meshery",
@@ -202,6 +215,35 @@ const data = {
       ],
     },
     {
+      question: "Can I deploy Meshery / MeshMap on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+      ],
+    },
+    {
+      question: "Can I deploy Meshery / MeshMap on-premises?",
+      category: "Meshery",
+      answer: [
+        "Meshery Cloud is hosted on AWS in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+    },
+    {
+      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, a one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+      ],
+    },
+    
+
+
+    //
+    // CAREERS / INTERNSHIPS
+    //
+
+    {
       question: "How do I land an internship with Layer5?",
       category: "internships",
       answer: [
@@ -240,6 +282,10 @@ const data = {
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
     },
+
+    //
+    // PRICING
+    //
 
     {
       question: "How can I upgrade, downgrade, or cancel my plan?",
@@ -282,9 +328,21 @@ const data = {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ",
+        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
       ],
     },
+    {
+      question: "Do you have special pricing for open source / non-profit projects?",
+      category: "Pricing",
+      answer: [
+        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+      ],
+    },
+
+    //
+    // BILLING
+    //
+
     {
       question: "What payment methods do you support?",
       category: "Billing",
@@ -324,6 +382,10 @@ const data = {
       ],
     },
 
+    //
+    // INTEGRATIONS
+    //
+
     {
       question: "How do Meshery Extension Points work?",
       category: "Meshery Integrations",
@@ -353,9 +415,12 @@ const data = {
         "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
       ],
     },
+
+    //
+    // OTHER
+    //
+
   ],
 };
 export default data;
-
-
 

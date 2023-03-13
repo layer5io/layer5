@@ -372,6 +372,7 @@ export const options = [
     featured: false,
     monthlyprice: 15.99,
     yearlyprice: 180,
+    pricing_coming_soon: <img src="https://user-images.githubusercontent.com/7570704/222531680-8f711edc-c4bd-4812-aa25-307fa78191ac.png"></img>,
     byline: "Everything in Team, plus:",
     button: ["Coming Soon", ""],
     summary: [

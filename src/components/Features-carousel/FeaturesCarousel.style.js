@@ -3,8 +3,14 @@ import styled from "styled-components";
 export const FeaturesWrapper = styled.div`
     .features-carousel {
       @media (min-width: 768px) {
-        display: none;
+       display:none;
       }
+      img{
+        object-fit:contain;
+        margin-left:auto;
+        margin-right:auto;
+      }
+     
       .main-heading{
         margin-bottom: 2rem;
       }
@@ -34,9 +40,12 @@ export const FeaturesWrapper = styled.div`
 
       & .pagingDots {
         top: 2rem !important;
-        & :global(.paging-item:not(.active) > button) {
-          opacity: 1 !important;
-          fill: var(--gray-6) !important;
+        & .paging-item > button:hover {
+          box-shadow:none;
+        }
+        & .paging-item > button > svg {
+          // opacity: 1 !important;
+          fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
         }
       }
     }
@@ -135,6 +144,7 @@ export const FeaturesWrapper = styled.div`
       & > img {
         width: 100%;
         height: auto;
+        object-fit:contain;
       }
 
       @media (min-width: 768px) {
@@ -169,11 +179,15 @@ export const FeaturesWrapper = styled.div`
             transform: scale(1.2);
         }
       }
-
       @media (min-width: 768px) {
         display: flex;
         align-items: center;
       }
     }
+   .feature-expose img{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+   }
 
 `;
