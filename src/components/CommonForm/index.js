@@ -56,7 +56,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
       {
         stepNumber === 0 &&
   <div className="form-body">
-    <h3 className="form-title">{title}</h3>
+    <h2 className="form-title">{title}</h2>
     <Formik
       initialValues={{
         firstname: firstname,
