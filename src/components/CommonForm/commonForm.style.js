@@ -41,6 +41,9 @@ margin: 1rem;
     text-align: center;
     background-color: ${props => props.theme.secondaryColor};
     color: white;
+    h2 {
+      
+    }
   }
 
 .form{
