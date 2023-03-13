@@ -12,15 +12,15 @@ const CollaborationFeatureWrapper = styled.div`
     max-width: 90%; */
     justify-content: center;
     /* align-items: center; */
-    /* padding: 2% 5% 8%;
-    @media only screen and (max-width: 767px) {
+     padding: 5% 5% 8%;
+    /* @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
     } */
 
     .hero-div {
       position: relative;
-      scale: 0.2;
+      transition: 0.5s;
       display: flex;
       flex-direction: row-reverse;
       background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
@@ -31,19 +31,6 @@ const CollaborationFeatureWrapper = styled.div`
       @media only screen and (max-width: 767px) {
         text-align: center;
         flex-direction: column-reverse;
-      }
-    }
-
-    .hero-div-big {
-      animation: slide-in 1s forwards;
-    }
-
-    @keyframes slide-in {
-      0% {
-        scale: 0.2;
-      }
-      100% {
-        scale: 1;
       }
     }
 
@@ -70,6 +57,7 @@ const CollaborationFeatureWrapper = styled.div`
 
     img {
       opacity: 0;
+      transition: opacity ease-out 0.5s;
     }
 
     .visible {
@@ -80,20 +68,22 @@ const CollaborationFeatureWrapper = styled.div`
 `;
 
 const CollaborationFeature1 = () => {
-  const [locatorRef, inView] = useInView({ threshold: 1.0 });
-  const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
+  const [locatorRef, inView] = useInView({ threshold: 0.5 });
+  // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
-  const [sectionInView, setSectionInView] = useState(false);
+  // const [sectionInView, setSectionInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
-  // else if (!inView && imageInView)
-  // setimageInView(false);
-  if (sectionView && !sectionInView)
-    setSectionInView(true);
+  else if (imageInView && !inView)
+    setimageInView(false);
+  // if (sectionView && !sectionInView)
+  //   setSectionInView(true);
+  // if (sectionInView && !sectionView)
+  //   setSectionInView(false);
 
   return (
     <CollaborationFeatureWrapper>
-      <div className={sectionInView ? "hero-div-big hero-div" : "hero-div"} ref={sectionRef}>
+      <div className="hero-div">
         <div className="hero-image">
           <img className={imageInView ? "visible" : ""} src={CollaborationImg} alt="" ref={locatorRef} />
         </div>

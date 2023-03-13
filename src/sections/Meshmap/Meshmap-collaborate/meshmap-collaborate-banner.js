@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../../../reusecore/Button";
 import IngressGatewayImage from "./images/banner-transitions/ingress-gateway-partial.svg";
 import KubernetesImage from "./images/banner-transitions/kubernetes-partial.svg";
 import PodImage from "./images/banner-transitions/pod-partial.svg";
@@ -17,17 +18,18 @@ const DesignBannerWrapper = styled.div`
     .banner {
         display: flex;
         flex-direction: column;
-        background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        background: linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%);
+        /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"}; */
         max-width: 1920px;
         width: 100%;
         justify-content: space-evenly;
         align-items: center;
-        padding: 0% 5% 6%;
+        padding: 4% 5% 6%;
         /* transform: rotateX(40deg); */
 
-        @media only screen and (max-width: 500px) {
+        /* @media only screen and (max-width: 500px) {
             max-height: 400px;
-        }
+        } */
     }
 
 
@@ -45,7 +47,7 @@ const DesignBannerWrapper = styled.div`
         position: relative;
         display: inline-block;
         color: black;
-
+/*
         @media only screen and (min-width: 500px) {
             font-size: 3.5rem;
         }
@@ -54,13 +56,13 @@ const DesignBannerWrapper = styled.div`
         }
         @media only screen and (min-width: 950px) {
             font-size: 5rem;
-        }
+        } */
         @media only screen and (min-width: 1400px) {
-            font-size: 5    rem;
+            font-size: 3.75rem;
         }
     }
 
-    h1::before,
+    /* h1::before,
     h1::after {
         content: "";
         position: absolute;
@@ -101,7 +103,7 @@ const DesignBannerWrapper = styled.div`
         100% {
             transform: scaleX(1);
         }
-    }
+    } */
 
     .heading {
         opacity: 0;
@@ -138,6 +140,14 @@ const DesignBannerWrapper = styled.div`
         from, to { border-color: transparent }
     }
 
+    h4 {
+        padding: 3% 0%;
+        color: #A0AAAA;
+        /* font-size: 20px; */
+        max-width: 40%;
+        font-weight: bold;
+    }
+
     h5 {
         padding: 2rem 0;
     }
@@ -147,7 +157,8 @@ const DesignBannerWrapper = styled.div`
     }
 
     .transition-container {
-        max-width: 55%;
+        margin: 10% 0% 0%;
+        max-width: 70%;
         position: relative;
     }
 
@@ -159,6 +170,7 @@ const DesignBannerWrapper = styled.div`
         left: 0%;
         scale: 0.7;
         opacity: 1;
+        transition: 1s;
     }
 
     .ingress-gateway-transition, .kubernetes-transition, .pod-transition, .prometheus-transition {
@@ -193,11 +205,11 @@ const DesignBannerWrapper = styled.div`
     }
 
     .pod {
-        translate: 50% 30%;
+        translate: 40% 30%;
     }
 
     .pod-transition {
-        transform: translateX(-50%) translateY(-30%);
+        transform: translateX(-40%) translateY(-30%);
     }
 
     .prometheus {
@@ -215,23 +227,20 @@ const DesignBannerWrapper = styled.div`
 `;
 
 const MeshmapCollaborateBanner = ({ theme }) => {
-  const [transitionRef, inView] = useInView({ threshold: 0.1 });
+  const [transitionRef, inView] = useInView({ threshold: 0.7 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
-    // else if (!inView && imageInView)
-    // setimageInView(false);
+  else if (imageInView && !inView)
+    setimageInView(false);
 
   return (
     <DesignBannerWrapper>
-      {/* <img className="banner-image" src={DesignBannerImage} alt="" /> */}
       <div className="banner">
         <div className="banner-text">
-          <div className="typing-text">
-            <h2>Bring those ideas to life with</h2>
-          </div>
-          <h1 className={imageInView ? "heading-transition heading" : "heading"}>Collaboration</h1>
-          {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
+          <h1>Collaborate with the team. <br /> Build solutions together. </h1>
+          <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
+          <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
         </div>
         <div className="transition-container" ref={transitionRef}>
           <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />

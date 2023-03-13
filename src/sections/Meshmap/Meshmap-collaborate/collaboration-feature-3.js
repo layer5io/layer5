@@ -31,8 +31,6 @@ const CollaborationFeatureWrapper = styled.div`
         flex: 0 0 40%;
         max-width: 40%;
         position: relative;
-        right: -100%;
-        scale: 0.1;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
         }
@@ -61,6 +59,7 @@ const CollaborationFeatureWrapper = styled.div`
       /* position: absolute; */
       /* top: 0%; */
       /* left: 0%; */
+      transition: opacity ease-out 0.5s;
     }
 
     .visible {
@@ -71,12 +70,12 @@ const CollaborationFeatureWrapper = styled.div`
 `;
 
 const CollaborationFeature3 = () => {
-  const [locatorRef, inView] = useInView({ threshold: 1.0 });
+  const [locatorRef, inView] = useInView({ threshold: 0.5 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
-  // else if (!inView && imageInView)
-  // setimageInView(false);
+  else if (imageInView && !inView)
+    setimageInView(false);
 
   return (
     <CollaborationFeatureWrapper>
@@ -90,7 +89,7 @@ const CollaborationFeature3 = () => {
         <img className={imageInView ? "visible" : ""} src={World6} alt="" ref={locatorRef} />
         <img className={imageInView ? "visible" : ""} src={World7} alt="" ref={locatorRef} /> */}
       </div>
-      <div className={imageInView ? "hero-text-visibe hero-text" : "hero-text"}>
+      <div className="hero-text">
         <h2><span>Work from Anywhere</span></h2>
         <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.</p>
       </div>
