@@ -8,14 +8,43 @@ const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
-    max-width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 5% 8%;
+    /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    max-width: 90%; */
+    justify-content: center;
+    /* align-items: center; */
+    /* padding: 2% 5% 8%;
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
+    } */
+
+    .hero-div {
+      position: relative;
+      scale: 0.2;
+      display: flex;
+      flex-direction: row-reverse;
+      background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+      max-width: 90%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2% 5% 8%;
+      @media only screen and (max-width: 767px) {
+        text-align: center;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .hero-div-big {
+      animation: slide-in 1s forwards;
+    }
+
+    @keyframes slide-in {
+      0% {
+        scale: 0.2;
+      }
+      100% {
+        scale: 1;
+      }
     }
 
     .hero-text {
@@ -52,23 +81,28 @@ const CollaborationFeatureWrapper = styled.div`
 
 const CollaborationFeature1 = () => {
   const [locatorRef, inView] = useInView({ threshold: 1.0 });
+  const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
+  const [sectionInView, setSectionInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
   // else if (!inView && imageInView)
   // setimageInView(false);
+  if (sectionView && !sectionInView)
+    setSectionInView(true);
 
   return (
     <CollaborationFeatureWrapper>
-      <div className="hero-image">
-        <img className={imageInView ? "visible" : ""} src={CollaborationImg} alt="" ref={locatorRef} />
-      </div>
-      <div className="hero-text">
-        <h2><span>Collaborate with your Team</span></h2>
-        <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.</p>
+      <div className={sectionInView ? "hero-div-big hero-div" : "hero-div"} ref={sectionRef}>
+        <div className="hero-image">
+          <img className={imageInView ? "visible" : ""} src={CollaborationImg} alt="" ref={locatorRef} />
+        </div>
+        <div className="hero-text">
+          <h2><span>Collaborate with your Team</span></h2>
+          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.</p>
+        </div>
       </div>
     </CollaborationFeatureWrapper>
-
   );
 };
 

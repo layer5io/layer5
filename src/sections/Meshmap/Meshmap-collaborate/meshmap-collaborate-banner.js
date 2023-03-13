@@ -1,28 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import FinalCollaborationImage from "./images/banner-transitions/final-collaboration-image.svg";
 import IngressGatewayImage from "./images/banner-transitions/ingress-gateway-partial.svg";
 import KubernetesImage from "./images/banner-transitions/kubernetes-partial.svg";
 import PodImage from "./images/banner-transitions/pod-partial.svg";
 import PrometheusImage from "./images/banner-transitions/prometheus-partial.svg";
 import ServiceIntefaceImage from "./images/banner-transitions/service-interface-partial.svg";
 import SupportingArrows from "./images/banner-transitions/supporting-arrows.svg";
+import CanvasImage from "./images/banner-transitions/canvas.svg";
+import EmptyLight from "./images/banner-transitions/empty-light.svg";
+import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 const DesignBannerWrapper = styled.div`
 
-    display: flex;
-    flex-direction: column;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};
-    max-width: 1920px;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2% 5%;
+    .banner {
+        display: flex;
+        flex-direction: column;
+        background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        max-width: 1920px;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0% 5% 6%;
+        /* transform: rotateX(40deg); */
 
-    @media only screen and (max-width: 500px) {
-        max-height: 400px;
+        @media only screen and (max-width: 500px) {
+            max-height: 400px;
+        }
     }
 
 
@@ -32,7 +37,7 @@ const DesignBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
-        padding-bottom: 2%;
+        padding-top: 5%;
     }
 
     h1 {
@@ -51,7 +56,7 @@ const DesignBannerWrapper = styled.div`
             font-size: 5rem;
         }
         @media only screen and (min-width: 1400px) {
-            font-size: 6rem;
+            font-size: 5    rem;
         }
     }
 
@@ -70,14 +75,14 @@ const DesignBannerWrapper = styled.div`
         left: 0;
         transform-origin: right;
         transform: scaleX(0);
-        animation: text-animation-left 1s cubic-bezier(0.22, 0.61, 0.36, 1) 5s forwards;
+        animation: text-animation-left 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
     }
 
     h1::after {
         right: 0;
         transform-origin: left;
         transform: scaleX(0);
-        animation: text-animation-right 1s cubic-bezier(0.22, 0.61, 0.36, 1) 5s forwards;
+        animation: text-animation-right 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
     }
 
     @keyframes text-animation-left {
@@ -115,7 +120,7 @@ const DesignBannerWrapper = styled.div`
         border-right: .1rem solid black; /* Add a blinking cursor */
         white-space: nowrap; /* Keep all text on one line */
         letter-spacing: .1rem; /* Add space between characters */
-        animation: typing 5s steps(25, end), blink-caret 0.7s step-end 5s forwards;
+        animation: typing 3s steps(25, end), blink-caret 0.5s step-end 3s forwards;
 
         @media only screen and (max-width: 500px) {
             font-size: 1rem;
@@ -142,77 +147,75 @@ const DesignBannerWrapper = styled.div`
     }
 
     .transition-container {
-        max-width: 60%;
+        max-width: 55%;
         position: relative;
     }
 
-    .ingress-gateway, .kubernetes, .pod, .prometheus, .supporting-arrows {
+
+    .ingress-gateway, .kubernetes, .pod, .prometheus, .supporting-arrows, .service-interface {
+        /* max-width: 70%; */
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0%;
+        left: 0%;
+        scale: 0.7;
+        opacity: 1;
+    }
+
+    .ingress-gateway-transition, .kubernetes-transition, .pod-transition, .prometheus-transition {
+        scale: 1;
+        transition: 1.5s;
     }
 
     .supporting-arrows {
         opacity: 0;
+        scale: 1;
     }
 
     .supporting-arrows-transition {
         opacity: 1;
-        transition: 0.5s ease-out 2s ;
+        transition: 0.5s ease-out 1.5s ;
     }
 
     .ingress-gateway {
         translate: -40% 0;
-        scale: 0.7;
     }
 
     .ingress-gateway-transition {
         transform: translateX(40%);
-        scale: 1;
-        transition: 2s;
     }
 
     .kubernetes {
         translate: 50% -30%;
-        scale: 0.7;
     }
 
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
-        scale: 1;
-        transition: 2s;
     }
 
     .pod {
         translate: 50% 30%;
-        scale: 0.7;
     }
 
     .pod-transition {
         transform: translateX(-50%) translateY(-30%);
-        scale: 1;
-        transition: 2s;
     }
 
     .prometheus {
         translate: -50% 30%;
-        scale: 0.7;
     }
 
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
-        scale: 1;
-        transition: 2s;
     }
 
     .service-interface {
-
+        scale: 1;
     }
 
 `;
 
-const MeshmapCollaborateBanner = () => {
-  const [transitionRef, inView] = useInView({ threshold: 1.0 });
+const MeshmapCollaborateBanner = ({ theme }) => {
+  const [transitionRef, inView] = useInView({ threshold: 0.1 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
@@ -222,23 +225,25 @@ const MeshmapCollaborateBanner = () => {
   return (
     <DesignBannerWrapper>
       {/* <img className="banner-image" src={DesignBannerImage} alt="" /> */}
-      <div className="banner-text">
-        <div className="typing-text">
-          <h2>Bring those ideas to life with</h2>
+      <div className="banner">
+        <div className="banner-text">
+          <div className="typing-text">
+            <h2>Bring those ideas to life with</h2>
+          </div>
+          <h1 className={imageInView ? "heading-transition heading" : "heading"}>Collaboration</h1>
+          {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
         </div>
-        <h1 className={imageInView ? "heading-transition heading" : "heading"}>Collaboration</h1>
-        {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
-      </div>
-      <div className="transition-container" ref={transitionRef}>
-        <img className="service-interface" src={ServiceIntefaceImage} alt="" />
-        <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={IngressGatewayImage} alt="" />
-        <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={KubernetesImage} alt="" />
-        <img className={imageInView ? "pod-transition pod" : "pod"} src={PodImage} alt="" />
-        <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={PrometheusImage} alt="" />
-        <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+        <div className="transition-container" ref={transitionRef}>
+          <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
+          <img className="service-interface" src={ServiceIntefaceImage} alt="" />
+          <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={IngressGatewayImage} alt="" />
+          <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={KubernetesImage} alt="" />
+          <img className={imageInView ? "pod-transition pod" : "pod"} src={PodImage} alt="" />
+          <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={PrometheusImage} alt="" />
+          <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+        </div>
       </div>
     </DesignBannerWrapper>
-
   );
 };
 

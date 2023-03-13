@@ -10,10 +10,10 @@ import Reviews from "../../Pricing/review-slider";
 const MeshmapDesign = ({ theme }) => {
   return (
     <MeshmapCollaborateWrapper>
-      <MeshmapCollaborateBanner />
+      <MeshmapCollaborateBanner theme={theme} />
       <CollaborationFeature1 />
       {/* <DesignDefault /> */}
-      <CollaborationFeature3/>
+      <CollaborationFeature3 />
       <MeshmapSignupForm />
       <Reviews />
     </MeshmapCollaborateWrapper>
