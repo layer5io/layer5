@@ -17,21 +17,21 @@ export const details = [
     icon: Configuration,
     features: [
       {
-        feature: "Cloud Native Design Patterns",
+        feature: "Cloud Native Designs",
         description: "Import and export your designs using your local filesystem or remote URL.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "Patterns",
-        description: "Connect your favorite git provider and version your designs",
+        feature: "Cloud Native Patterns",
+        description: "Combine designs into well-curated, reusable patterns imbued with your customized best practices.",
         free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "Dry-run",
+        feature: "Design Dry-run",
         description: "Test and verify configuration changes in a separate environment.",
         free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
@@ -164,17 +164,17 @@ export const details = [
     icon: Perforamance,
     features: [
       {
-        feature: "Load Generation",
+        feature: "Parallel Load Generation",
         description: "Single Load Generator: Support testing multiple endpoints simultaneously.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "Load Generation",
+        feature: "Distributed Load Generation",
         description: "Distributed Load Generator: Support multiple Meshery clients generating load, collecting and coalescing results into a single report.",
         free: <MdClose className="no-icon" />,
-        team: <GiCheckMark className="yes-icon" />,
+        team: <GiCheckMark className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
@@ -185,17 +185,24 @@ export const details = [
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "Performance Profiles",
-        description: "Share performance profiles and test results with individual users or teams.",
+        feature: "GitOps - Service Mesh Performance GitHub Action",
+        description: "Integrate performance analysis as a gate in your GitOps pipeline, using performance profiles to run repeatable tests and avoid regression issues before they start. Configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
         free: <MdClose className="no-icon" />,
+        team: <GiCheckMark className="yes-icon" />,
+        enterprise: <GiCheckMark className="yes-icon" />,
+      },
+      {
+        feature: "Service Mesh Interface Conformance GitHub Action",
+        description: "Using Meshery as the offical SMI Conformance validation tool, configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
+        free: <MdClose className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "MeshMark",
         description: "Identify the cost of a specific network function.",
-        free: <GiCheckMark className="yes-icon" />,
-        team: <GiCheckMark className="yes-icon" />,
+        free: <GiCheckMark className="no-icon" />,
+        team: <GiCheckMark className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
     ],
@@ -270,8 +277,15 @@ export const details = [
     features: [
       {
         feature: "Notification Center",
-        description: "Events: Reporting of asynchronous events.",
+        description: "Events: Reporting of Meshery provisioning aand managagement events.",
         free: <GiCheckMark className="yes-icon" />,
+        team: <GiCheckMark className="yes-icon" />,
+        enterprise: <GiCheckMark className="yes-icon" />,
+      },
+      {
+        feature: "Audit Trail",
+        description: "Detailed accounting of user activity. Historical record or each action taken.",
+        free: <GiCheckMark className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
@@ -291,7 +305,7 @@ export const details = [
     features: [
       {
         feature: "Community Support",
-        description: "Get help with most of your Meshery questions and issues in our Community Forum.",
+        description: "Get help with most of your Meshery questions and issues in our community discussion forum.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
