@@ -210,7 +210,7 @@ const data = {
       question: "Is Meshery open source?",
       category: "Meshery",
       answer: [
-        "Yes, all of Layer5's projects are licensed under Apache v2, including Meshery.",
+        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
         "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
       ],
     },
@@ -223,22 +223,38 @@ const data = {
       ],
     },
     {
-      question: "Can I deploy Meshery / MeshMap on-premises?",
+      question: "Where is Meshery Cloud hosted; where is my data stored?",
       category: "Meshery",
       answer: [
-        "Meshery Cloud is hosted on AWS in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
     },
     {
       question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, a one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+
       ],
     },
+    {
+      question: "What is the difference between MeshMap<sup>BETA</sup>&nbsp;and the Cloud Native Playground?",
+      category: "Meshery",
+      answer: [
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+      ],
+    },    
+    {
+      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
+      category: "Meshery",
+      answer: [
+        "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
+      ],
+    },    
     
-
-
     //
     // CAREERS / INTERNSHIPS
     //
