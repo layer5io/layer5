@@ -2,17 +2,27 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../../components/PopOutCardCarousel";
 
-const PROJECT_TITLES = [
-  "MeshMap",
-  "NightHawk",
-  "Meshery",
-  "Service Mesh Performance"
-];
-const desc = [
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, accusantium?",
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tenetur ipsam vero natus ad dolorum!",
-  "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, et ratione itaque voluptatem eos fugiat! Ex soluta sequi delectus assumenda!"
+const CONTENT = [
+  {
+    title: "Design your deployments the way you want",
+    description:
+      "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+  },
+  {
+    title: "Manage your applications visually and intuitively",
+    description:
+      "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
+  },
+  {
+    title: "Build the bridge",
+    description:
+      "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
+  },
+  {
+    title: "Stop finger-pointing",
+    description:
+      "Make infrastructure and application management less about finger-pointing and more about collaborating.",
+  },
 ];
 
 const DivWrapper = styled.div`
@@ -59,15 +69,15 @@ export default function MeshmapDesignFeatureCarousel() {
         </p>
       </div>
       <div className="right">
-        {PROJECT_TITLES.map((name, i) => (
+        {CONTENT.map((content, i) => (
           <PopOutCard
             key={i}
             index={i}
             active={i === activeCard}
             onClick={() => handleclick(i)}
           >
-            <h3>{name}</h3>
-            <p>{desc[i]}</p>
+            <h3>{content.title}</h3>
+            <p>{content.description}</p>
           </PopOutCard>
         ))}
       </div>
