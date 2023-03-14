@@ -62,7 +62,7 @@ const DivWrapper = styled.div`
       }
       50% {
         transform: translate(0, 15px);
-       }
+      }
       100% {
         transform: translate(0, -0px);
       }
@@ -71,10 +71,15 @@ const DivWrapper = styled.div`
 `;
 
 export default function MeshmapDesignFeatureCarousel() {
-  const [activeCard, setActiveCard] = useState(-1);
-  const handleclick = (i) => {
-    if (i === activeCard) setActiveCard(-1);
-    else setActiveCard(i);
+  const [activeCard, setActiveCard] = useState(0);
+  // const handleclick = (i) => {
+  //   if (i === activeCard) setActiveCard(-1);
+  //   else setActiveCard(i);
+  // };
+  const handleclick = () => {
+    const length = CONTENT.length;
+    if (activeCard === length - 1) setActiveCard(0);
+    else setActiveCard(activeCard + 1);
   };
   return (
     <DivWrapper isActive={activeCard !== -1}>
