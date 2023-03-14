@@ -71,18 +71,28 @@ const DivWrapper = styled.div`
 `;
 
 export default function MeshmapDesignFeatureCarousel() {
-  const [activeCard, setActiveCard] = useState(0);
+  const [cardIndices, setCardIndices] = useState([
+    ...Array(CONTENT.length).keys(),
+  ]);
   // const handleclick = (i) => {
   //   if (i === activeCard) setActiveCard(-1);
   //   else setActiveCard(i);
   // };
+  // const handleclick = () => {
+  //   const length = CONTENT.length;
+  //   if (activeCard === length - 1) setActiveCard(0);
+  //   else setActiveCard(activeCard + 1);
+  // };
   const handleclick = () => {
     const length = CONTENT.length;
-    if (activeCard === length - 1) setActiveCard(0);
-    else setActiveCard(activeCard + 1);
+    const newIndices = cardIndices.map((index) => {
+      if (index === 0) return length - 1;
+      else return index - 1;
+    });
+    setCardIndices(newIndices);
   };
   return (
-    <DivWrapper isActive={activeCard !== -1}>
+    <DivWrapper>
       <div className="left">
         <h1>Multi user real time collaboration</h1>
         <p>
@@ -94,8 +104,8 @@ export default function MeshmapDesignFeatureCarousel() {
         {CONTENT.map((content, i) => (
           <PopOutCard
             key={i}
-            index={i}
-            active={i === activeCard}
+            index={cardIndices[i]}
+            active={cardIndices[i] === 0}
             onClick={() => handleclick(i)}
           >
             <h3>{content.title}</h3>
