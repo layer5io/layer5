@@ -53,7 +53,7 @@ const PopOutCardWrapper = styled.div`
       cursor: pointer;
       // left: 50%;
       // transform: rotateZ(0deg) translateX(-50%);
-      transform: rotateZ(0deg) translate(-500px, 0);
+      transform: rotateZ(0deg) translate(-35vw, 0);
       h3 {
         opacity: 1;
       }
