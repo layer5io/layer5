@@ -7,6 +7,16 @@ const MeshmapVisualizeWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  .background-image {
+    position: absolute;
+    top: 0%;
+    scale: 1.4;
+    left: 10%;
+    z-index: 0;
+    transform: rotateZ(5deg);
+    opacity: 0.8;
+  }
+
   :div:first-child {
     align-items: center;
   }

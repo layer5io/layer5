@@ -1,22 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import BannerImage from "./images/banner-background.svg";
+import BannerImage from "./images/oval-blur-shape.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 const VisualizeBannerWrapper = styled.div`
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .banner {
+        margin: 5%;
+        position: relative;
+        z-index: 10;
         display: flex;
         flex-direction: column;
-        /* background: linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%); */
         background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        border-radius: 2rem;
         max-width: 1920px;
         width: 100%;
         justify-content: space-evenly;
         align-items: center;
         padding: 4% 5% 6%;
+        box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00b3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"};
         /* transform: rotateX(40deg); */
 
         /* @media only screen and (max-width: 500px) {
@@ -36,8 +43,10 @@ const VisualizeBannerWrapper = styled.div`
     }
 
     .banner-image {
+        z-index: 0;
         position: absolute;
         width: 100%;
+        scale: 1.2;
         top: -10%;
         left: 0%;
     }
@@ -91,10 +100,10 @@ const MeshmapVisualizeBanner = ({ theme }) => {
 
   return (
     <VisualizeBannerWrapper>
-      <div className="banner">
-        <div className="banner-image">
+      {/* <div className="banner-image">
           <img src={BannerImage} alt="banner-background" />
-        </div>
+        </div> */}
+      <div className="banner">
         <div className="banner-text">
           <h1>Visualize your infrastructure. <br /> See your designs in action. </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
