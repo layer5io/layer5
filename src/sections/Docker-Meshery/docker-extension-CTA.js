@@ -25,6 +25,7 @@ p {
     img {
       height: 18rem;
       margin-right: 2rem;
+      width: 23.75rem
     }
     h2{
       color: black;
@@ -48,7 +49,7 @@ const DockerExtensionCTA = () => {
     <DockerExtensionCTAWrapper>
       <Container>
         <div className="docker-callout">
-          <img src={Dockerimage} alt="Docker and Meshery" />
+          <img src={Dockerimage} alt="Docker and Meshery" width="3009px" height="2619px"/>
           <div>
             <h2>Docker Extension for Meshery is now available!</h2>
             <p><i>Managing cloud native infrastructure has never been easier.</i></p>
