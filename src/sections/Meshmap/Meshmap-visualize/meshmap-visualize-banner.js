@@ -109,10 +109,6 @@ const MeshmapVisualizeBanner = ({ theme }) => {
           <h1>Visualize your infrastructure. </h1>
           <h4>See your designs in action. Operate with best practices.</h4>
           <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
-          <h4>See your designs in action. Operate with best practices.</h4>
-          <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
-          <h4>See your designs in action. Operate with best practices.</h4>
-          <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
         </div>
         {/* <div className="transition-container" ref={transitionRef}>
           <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
