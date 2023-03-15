@@ -2,6 +2,7 @@ import React from "react";
 import MeshmapVisualizeWrapper from "./meshmap-visualize.style";
 import MeshmapVisualizeBanner from "./meshmap-visualize-banner";
 import MeshmapVisualizerFeatures from "./meshmap-visualize-features";
+import MeshmapVisualizerViews from "./meshmap-visualize-views";
 import MeshmapHeroSection from "./meshmap-visualize-features";
 import DesignDefault from "../../Home/MeshmapDesignHighlight";
 import BackgroundImage from "./images/oval-blur-shape.svg";
@@ -16,6 +17,7 @@ const MeshmapDesign = ({ theme }) => {
       </div>
       <MeshmapVisualizeBanner theme={theme} />
       <MeshmapVisualizerFeatures theme={theme} />
+      <MeshmapVisualizerViews theme={theme} />
       {/* <MeshmapHeroSection theme={theme} /> */}
       {/* <DesignDefault theme={theme} /> */}
       <SignupForm />

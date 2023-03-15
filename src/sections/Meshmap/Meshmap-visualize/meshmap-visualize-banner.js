@@ -11,15 +11,16 @@ const VisualizeBannerWrapper = styled.div`
     align-items: center;
     justify-content: center;
     .banner {
-        margin: 5%;
+        margin: 3%;
         position: relative;
         z-index: 10;
         display: flex;
         flex-direction: column;
         background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        /* opacity: 0.9; */
         border-radius: 2rem;
         max-width: 1920px;
-        width: 100%;
+        width: 90vw;
         justify-content: space-evenly;
         align-items: center;
         padding: 4% 5% 6%;
@@ -44,7 +45,7 @@ const VisualizeBannerWrapper = styled.div`
 
     .banner-image {
         z-index: 0;
-        position: absolute;
+        position: sticky;
         width: 100%;
         scale: 1.2;
         top: -10%;
@@ -76,7 +77,7 @@ const VisualizeBannerWrapper = styled.div`
         padding: 3% 0%;
         color: #A0AAAA;
         /* font-size: 20px; */
-        max-width: 40%;
+        max-width: 50%;
         font-weight: bold;
     }
 
@@ -105,8 +106,12 @@ const MeshmapVisualizeBanner = ({ theme }) => {
         </div> */}
       <div className="banner">
         <div className="banner-text">
-          <h1>Visualize your infrastructure. <br /> See your designs in action. </h1>
-          <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
+          <h1>Visualize your infrastructure. </h1>
+          <h4>See your designs in action. Operate with best practices.</h4>
+          <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
+          <h4>See your designs in action. Operate with best practices.</h4>
+          <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
+          <h4>See your designs in action. Operate with best practices.</h4>
           <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
         </div>
         {/* <div className="transition-container" ref={transitionRef}>
