@@ -71,7 +71,7 @@ export const FeatureTitleInfoContainer = styled.div`
   .feature-block {
     font-size: 0.9rem;
     color: darkgray;
-    h3 {
+    h2 {
       font-size: 2rem;
       font-weight: 600;
       margin: 0 0 0.625rem 0;
