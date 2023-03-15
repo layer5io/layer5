@@ -135,7 +135,8 @@ const MesheryFeatures = () => {
                 "/cloud-native-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
-                  <img src={img3} alt="Kubernetes Operator for Meshery" />
+                  <img src={img3} alt="Kubernetes Operator for Meshery" height="100%"
+                    width="100%" />
                   <p>
                     Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
                   </p>
@@ -155,6 +156,8 @@ const MesheryFeatures = () => {
                   <StaticImage
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
+                    height="100%"
+                    width="100%"
                   />
                   <p>
                     Key to the efficient operation of any service mesh is the
@@ -240,6 +243,8 @@ const MesheryFeatures = () => {
                   <img
                     src={img5}
                     alt="Meshery, the extensible cloud native manager"
+                    height="100%"
+                    width="100%"
                   />
                   <p>
                     With MeshSync was designed from the ground up to perform
@@ -264,6 +269,8 @@ const MesheryFeatures = () => {
                   <img
                     src={img6}
                     alt="Meshery, the extensible cloud native manager"
+                    height="100%"
+                    width="100%"
                   />
                   <p>
                     Meshery is not just an application. It is a set of
