@@ -67,7 +67,7 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
-const CollaborationFeature1 = () => {
+const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
@@ -96,4 +96,4 @@ const CollaborationFeature1 = () => {
   );
 };
 
-export default CollaborationFeature1;
+export default CollaborationFeatureTeam;

@@ -69,7 +69,7 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
-const CollaborationFeature3 = () => {
+const CollaborationFeatureWork = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
@@ -98,4 +98,4 @@ const CollaborationFeature3 = () => {
   );
 };
 
-export default CollaborationFeature3;
+export default CollaborationFeatureWork;

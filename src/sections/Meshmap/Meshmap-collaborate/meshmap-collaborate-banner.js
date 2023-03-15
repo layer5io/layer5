@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import IngressGatewayImage from "./images/banner-transitions/ingress-gateway-partial.svg";
+import IngressGatewayImageDark from "./images/banner-transitions/ingress-gateway-partial-dark.svg";
 import KubernetesImage from "./images/banner-transitions/kubernetes-partial.svg";
+import KubernetesImageDark from "./images/banner-transitions/kubernetes-partial-dark.svg";
 import PodImage from "./images/banner-transitions/pod-partial.svg";
+import PodImageDark from "./images/banner-transitions/pod-partial-dark.svg";
 import PrometheusImage from "./images/banner-transitions/prometheus-partial.svg";
+import PrometheusImageDark from "./images/banner-transitions/prometheus-partial-dark.svg";
 import ServiceIntefaceImage from "./images/banner-transitions/service-interface-partial.svg";
+import ServiceIntefaceImageDark from "./images/banner-transitions/service-interface-partial-dark.svg";
 import SupportingArrows from "./images/banner-transitions/supporting-arrows.svg";
 import CanvasImage from "./images/banner-transitions/canvas.svg";
 import EmptyLight from "./images/banner-transitions/empty-light.svg";
@@ -13,12 +18,12 @@ import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
-const DesignBannerWrapper = styled.div`
+const CollaborationBannerWrapper = styled.div`
 
     .banner {
         display: flex;
         flex-direction: column;
-        background: linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%);
+        background: ${props => props.theme.DarkTheme ? "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)" : "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)"};
         /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"}; */
         max-width: 1920px;
         width: 100%;
@@ -46,7 +51,7 @@ const DesignBannerWrapper = styled.div`
         /* font-size: 4rem; */
         position: relative;
         display: inline-block;
-        color: black;
+        color: ${props => props.theme.primaryColor};
 /*
         @media only screen and (min-width: 500px) {
             font-size: 3.5rem;
@@ -62,49 +67,6 @@ const DesignBannerWrapper = styled.div`
         }
     }
 
-    /* h1::before,
-    h1::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: 50%;
-        height: 4px;
-        background-color: #000;
-        transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
-    }
-
-    h1::before {
-        left: 0;
-        transform-origin: right;
-        transform: scaleX(0);
-        animation: text-animation-left 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
-    }
-
-    h1::after {
-        right: 0;
-        transform-origin: left;
-        transform: scaleX(0);
-        animation: text-animation-right 1s cubic-bezier(0.22, 0.61, 0.36, 1) 3s forwards;
-    }
-
-    @keyframes text-animation-left {
-        0% {
-            transform: scaleX(0);
-        }
-        100% {
-            transform: scaleX(1);
-        }
-    }
-
-    @keyframes text-animation-right {
-        0% {
-            transform: scaleX(0);
-        }
-        100% {
-            transform: scaleX(1);
-        }
-    } */
-
     .heading {
         opacity: 0;
     }
@@ -112,32 +74,6 @@ const DesignBannerWrapper = styled.div`
     .heading-transition {
         opacity: 1;
         transition: opacity 2.5s;
-    }
-
-    h2 {
-        color: #00b39f;
-        width: fit-content;
-        font-weight: 200;
-        overflow: hidden; /* Hide text outside the h1 element */
-        border-right: .1rem solid black; /* Add a blinking cursor */
-        white-space: nowrap; /* Keep all text on one line */
-        letter-spacing: .1rem; /* Add space between characters */
-        animation: typing 3s steps(25, end), blink-caret 0.5s step-end 3s forwards;
-
-        @media only screen and (max-width: 500px) {
-            font-size: 1rem;
-        }
-
-    }
-
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
-
-    /* Blinking cursor animation */
-     @keyframes blink-caret {
-        from, to { border-color: transparent }
     }
 
     h4 {
@@ -173,11 +109,6 @@ const DesignBannerWrapper = styled.div`
         transition: 1s;
     }
 
-    .ingress-gateway-transition, .kubernetes-transition, .pod-transition, .prometheus-transition {
-        scale: 1;
-        transition: 1.5s;
-    }
-
     .supporting-arrows {
         opacity: 0;
         scale: 1;
@@ -185,7 +116,7 @@ const DesignBannerWrapper = styled.div`
 
     .supporting-arrows-transition {
         opacity: 1;
-        transition: 0.5s ease-out 1.5s ;
+        transition: 0.5s ease-out 2s ;
     }
 
     .ingress-gateway {
@@ -194,6 +125,8 @@ const DesignBannerWrapper = styled.div`
 
     .ingress-gateway-transition {
         transform: translateX(40%);
+        scale: 1;
+        transition: 1.5s;
     }
 
     .kubernetes {
@@ -202,6 +135,8 @@ const DesignBannerWrapper = styled.div`
 
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
+        scale: 1;
+        transition: 1s;
     }
 
     .pod {
@@ -210,6 +145,8 @@ const DesignBannerWrapper = styled.div`
 
     .pod-transition {
         transform: translateX(-40%) translateY(-30%);
+        scale: 1;
+        transition: 1.5s;
     }
 
     .prometheus {
@@ -218,6 +155,8 @@ const DesignBannerWrapper = styled.div`
 
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
+        scale: 1;
+        transition: 2s;
     }
 
     .service-interface {
@@ -235,7 +174,7 @@ const MeshmapCollaborateBanner = ({ theme }) => {
     setimageInView(false);
 
   return (
-    <DesignBannerWrapper>
+    <CollaborationBannerWrapper>
       <div className="banner">
         <div className="banner-text">
           <h1>Collaborate with the team. <br /> Build solutions together. </h1>
@@ -244,15 +183,15 @@ const MeshmapCollaborateBanner = ({ theme }) => {
         </div>
         <div className="transition-container" ref={transitionRef}>
           <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
-          <img className="service-interface" src={ServiceIntefaceImage} alt="" />
-          <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={IngressGatewayImage} alt="" />
-          <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={KubernetesImage} alt="" />
-          <img className={imageInView ? "pod-transition pod" : "pod"} src={PodImage} alt="" />
-          <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={PrometheusImage} alt="" />
+          <img className="service-interface" src={theme == "dark" ? ServiceIntefaceImageDark : ServiceIntefaceImage} alt="" />
+          <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={theme == "dark" ? IngressGatewayImageDark : IngressGatewayImage} alt="" />
+          <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={theme == "dark" ? KubernetesImageDark : KubernetesImage} alt="" />
+          <img className={imageInView ? "pod-transition pod" : "pod"} src={theme == "dark" ? PodImageDark : PodImage} alt="" />
+          <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={theme == "dark" ? PrometheusImageDark : PrometheusImage} alt="" />
           <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
         </div>
       </div>
-    </DesignBannerWrapper>
+    </CollaborationBannerWrapper>
   );
 };
 
