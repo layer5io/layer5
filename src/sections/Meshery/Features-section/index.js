@@ -21,7 +21,7 @@ const FeaturesSection = () => {
     customPaging: function (i) {
       return (
         <a>
-          <img src={slides_list[i]} />
+          <img src={slides_list[i]} height="100%" width="100%" />
         </a>
       );
     },
@@ -71,10 +71,10 @@ const FeaturesSection = () => {
                   <img src={Slide1} alt="Slide 1" width="1918px" height="978px" />
                 </div>
                 <div>
-                  <StaticImage src={slide2Path} alt="Slide 2" />
+                  <StaticImage src={slide2Path} alt="Slide 2" imgStyle={{ height: "1348px" ,width: "2652px" }} />
                 </div>
                 <div>
-                  <StaticImage src={slide3Path} alt="Slide 3" />
+                  <StaticImage src={slide3Path} alt="Slide 3" imgStyle={{ width: "3164px", height: "2004px" }}  />
                 </div>
               </Slider>
             </Col>
