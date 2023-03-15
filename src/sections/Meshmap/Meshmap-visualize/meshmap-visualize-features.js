@@ -73,7 +73,7 @@ align-items: center;
       background: ${props => props.theme.DarkTheme ? "#121212" : "#ffffff"};
       /* scale:1.1; */
       /* transition: all 0.5s ease; */
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
     .feature-image {
