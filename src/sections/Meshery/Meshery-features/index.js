@@ -44,7 +44,7 @@ const MesheryFeatures = () => {
               description:
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
               learnMoreLink: "/books/service-mesh-patterns",
-              content: <StaticImage src={img1} alt="Operational Best Practices" />,
+              content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
             },
             {
               title: "Adaptive WebAssembly Filters for Envoy",
@@ -52,7 +52,7 @@ const MesheryFeatures = () => {
                 "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
-                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
+                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" loading="lazy" />
               ),
             },
             {
@@ -117,7 +117,7 @@ const MesheryFeatures = () => {
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
                   <p>
                     The Docker Extension for Meshery extends Docker Desktop’s
                     position as the cloud native developer’s go-to Kubernetes
@@ -135,7 +135,7 @@ const MesheryFeatures = () => {
                 "/cloud-native-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
-                  <img src={img3} alt="Kubernetes Operator for Meshery" />
+                  <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />
                   <p>
                     Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
                   </p>
@@ -155,6 +155,7 @@ const MesheryFeatures = () => {
                   <StaticImage
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
+                    loading="lazy"
                   />
                   <p>
                     Key to the efficient operation of any service mesh is the
@@ -240,6 +241,7 @@ const MesheryFeatures = () => {
                   <img
                     src={img5}
                     alt="Meshery, the extensible cloud native manager"
+                    loading="lazy"
                   />
                   <p>
                     With MeshSync was designed from the ground up to perform
@@ -264,6 +266,7 @@ const MesheryFeatures = () => {
                   <img
                     src={img6}
                     alt="Meshery, the extensible cloud native manager"
+                    loading="lazy"
                   />
                   <p>
                     Meshery is not just an application. It is a set of
