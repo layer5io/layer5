@@ -21,7 +21,7 @@ const FeaturesSection = () => {
     customPaging: function (i) {
       return (
         <a>
-          <img src={slides_list[i]} loading="lazy" />
+          <img src={slides_list[i]} loading="lazy" alt={"slide-img" + [i]}/>
         </a>
       );
     },

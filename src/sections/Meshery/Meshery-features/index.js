@@ -40,6 +40,7 @@ const MesheryFeatures = () => {
         <Features
           features={[
             {
+              id: "first" ,
               title: "Operational Best Practices",
               description:
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
@@ -47,6 +48,7 @@ const MesheryFeatures = () => {
               content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
             },
             {
+              id: "second" ,
               title: "Adaptive WebAssembly Filters for Envoy",
               description:
                 "Dynamically offload application infrastructure logic.",
@@ -56,6 +58,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "third" ,
               title: "Integration with ArgoCD",
               description:
                 "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
@@ -112,6 +115,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "fourth" ,
               title: "Docker Extension for Meshery",
               description:
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
@@ -129,6 +133,7 @@ const MesheryFeatures = () => {
               learnMoreLink: "/docker-extension-meshery",
             },
             {
+              id: "five" ,
               title: "Meshery Operator",
               description: "",
               learnMoreLink:
@@ -148,6 +153,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "six" ,
               title: "Integration with Prometheus and Grafana",
               description: "",
               content: (
@@ -233,6 +239,7 @@ const MesheryFeatures = () => {
             //   ),
             // },
             {
+              id: "seven" ,
               title: "MeshSync",
               description: "Strict control of service mesh behavior.",
               //learnMoreLink: "/",
@@ -258,6 +265,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "eight" ,
               title: "Extensible Management Plane",
               description:
                 "Plug in different service meshes, load generators and providers.",
