@@ -62,7 +62,7 @@ const FeaturesCarousel = ({ features, heading }) => {
         >
           {features.map((feature, stableIdx) => (
             <div key={stableIdx}>
-              <Feature Element="div" id={stableIdx} title={feature.title} active>
+              <Feature Element="div" id={feature.id} title={feature.title} active>
                 {feature.description}
               </Feature>
               <div className="terminal-wrapper">
