@@ -1,3 +1,2 @@
-import { wrapRootElement as wrap } from "./root-wrapper";
-
-export const wrapRootElement = wrap;
+export { onRenderBody } from "./onRenderBody";
+export { wrapPageElement } from "./page-wrapper";
