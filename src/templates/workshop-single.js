@@ -5,9 +5,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Footer from "../sections/General/Footer";
-
-
-
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {

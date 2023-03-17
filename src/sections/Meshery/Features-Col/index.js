@@ -11,9 +11,6 @@ import {
   FeatureInfoContainer,
   CountBlockContainer,
 } from "./featuresColSection.style.js";
-
-
-
 function getServiceFeature(service, index) {
   return (
     <table className="table" key={index}>

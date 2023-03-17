@@ -1,18 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import MemberSingle from "../sections/Community/Member-single";
 import Footer from "../sections/General/Footer";
-
-
-
-
-
 export const query = graphql`query MemberBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
     frontmatter {

@@ -1,19 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 
 import Chapters from "../sections/Learn-Layer5/Chapters";
 import Footer from "../sections/General/Footer";
-
-
-
-
-
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`

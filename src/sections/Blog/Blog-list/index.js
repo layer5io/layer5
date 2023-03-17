@@ -16,7 +16,6 @@ const BlogList = ({
   setGridView,
   pageContext,
   data,
-  theme
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);

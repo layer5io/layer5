@@ -7,9 +7,6 @@ import integrationsImageDark from "./integration-image-dark.svg";
 import DesignDefaultWrapper from "./highlight.style";import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
-
-
-
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const DesignDefault = () => {

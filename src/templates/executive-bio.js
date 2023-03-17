@@ -1,18 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import MemberBio from "../sections/Community/Member-single/executive_bio";
 import Footer from "../sections/General/Footer";
-
-
-
-
-
 export const query = graphql`query MemberBioBySlug($member: String!) {
   allMdx(
     filter: {

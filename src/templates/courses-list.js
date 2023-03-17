@@ -4,10 +4,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Footer from "../sections/General/Footer";
-
-
-
-
 import CoursesList from "../sections/Learn-Layer5/Courses-List";
 
 
