@@ -28,7 +28,6 @@ const CONTENT = [
 const DivWrapper = styled.div`
   // max-width: 80%;
   width: 100%;
-  // padding-block: 8%;
   margin: auto;
   padding-block: 8%;
   display: flex;
@@ -37,7 +36,7 @@ const DivWrapper = styled.div`
   position: relative;
   .left {
     max-width: 30rem;
-    margin-left: 12rem;
+    margin-left: 10%;
     flex: 1;
     h1 {
       margin-bottom: 1rem;
@@ -66,6 +65,27 @@ const DivWrapper = styled.div`
       100% {
         transform: translate(0, -0px);
       }
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .left {
+      max-width: 20rem;
+      h1 {
+        font-size: 34px;
+      }
+    }
+    .right {
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding-block: 6%;
+    .left {
+      margin-left: 5%;
     }
   }
 `;

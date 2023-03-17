@@ -7,8 +7,6 @@ const PopOutCardWrapper = styled.div`
   height: 320px;
   width: 350px;
   box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px;
-  // box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-  //   rgba(0, 0, 0, 0.22) 0px 15px 12px;
   background: linear-gradient(
     266.65deg,
     #00b39f 40.19%,
@@ -43,6 +41,7 @@ const PopOutCardWrapper = styled.div`
   ${(props) => css`
     z-index: ${100 - props.index};
     ${props.index % 2 ? "background: #00B39F;" : ""}
+    // ${props.index % 2 ? "" : "background: #00B39F;"}
     transform: rotateZ(${-4 - 6 * props.index}deg) translate(-${props.index *
     36}px, ${props.index * 5}px);
   `}
@@ -51,14 +50,16 @@ const PopOutCardWrapper = styled.div`
       props.active &&
     css`
       cursor: pointer;
-      // left: 50%;
-      // transform: rotateZ(0deg) translateX(-50%);
       transform: rotateZ(0deg) translate(-35vw, 0);
       h3 {
         opacity: 1;
       }
       p {
         opacity: 1;
+      }
+
+      @media only screen and (max-width: 1500px) {
+        transform: rotateZ(0deg) translate(-40vw, 0);
       }
     `}
 
@@ -70,6 +71,11 @@ const PopOutCardWrapper = styled.div`
           translate(-${props.index * 36}px, ${props.index * 5}px);
       }
     `}
+
+  @media only screen and (max-width: 1500px) {
+    height: 280px;
+    width: 320px;
+  }
 `;
 
 export default PopOutCardWrapper;
