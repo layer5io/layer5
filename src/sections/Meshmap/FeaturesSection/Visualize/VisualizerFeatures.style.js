@@ -81,7 +81,7 @@ const VisualizerFeaturesWrapper = styled.section`
       }
     }
   }
-  .features {
+  .visualizer-features {
     z-index: 1;
     & > li {
       list-style: none;
