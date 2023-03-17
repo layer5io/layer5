@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
 import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
+import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
+
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
@@ -14,47 +14,36 @@ const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Nati
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const Footer = loadable(() => import("../sections/General/Footer"));
-import { GlobalStyle } from "../sections/app.style";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
-
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <GlobalStyle />
-
-      <Layout >
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <Banner />
-        <Integrations />
-        <Partners />
-        {/* <Features /> */}
-        {/* <ServiceMeshManagement /> */}
-        <CloudNativeManagement />
-        <MesheryIntegration theme={theme} />
-        {/* <Statement /> */}
-        {/* <AppScreens /> */}
-        {/* <Pricing /> */}
-        {/* <Testimonial /> */}
-        {/* <Getapp /> */}
-        {/* <News /> */}
-        {/* <Faq category = "all"/> */}
-        {/*<ContactCard />*/}
-        <SoSpecial theme={theme} />
-        <CloudNativeLeaders />
-        <ServiceMeshFocussed />
-        {/* <EngineerEnabler /> */}
-        <SubscribeSection />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <Banner />
+      <Integrations />
+      <Partners />
+      {/* <Features /> */}
+      {/* <ServiceMeshManagement /> */}
+      <CloudNativeManagement />
+      <MesheryIntegration theme={theme} />
+      {/* <Statement /> */}
+      {/* <AppScreens /> */}
+      {/* <Pricing /> */}
+      {/* <Testimonial /> */}
+      {/* <Getapp /> */}
+      {/* <News /> */}
+      {/* <Faq category = "all"/> */}
+      {/*<ContactCard />*/}
+      <SoSpecial theme={theme} />
+      <CloudNativeLeaders />
+      <ServiceMeshFocussed />
+      {/* <EngineerEnabler /> */}
+      <SubscribeSection />
+      <Footer />
+    </Layout>
   );
 };
 
