@@ -40,11 +40,16 @@ export const FeaturesWrapper = styled.div`
 
       & .pagingDots {
         top: 2rem !important;
+        & .paging-item {
+          padding :5px;
+        }
         & .paging-item > button:hover {
           box-shadow:none;
         }
         & .paging-item > button > svg {
           // opacity: 1 !important;
+          height: 10px;
+          width: 10px;
           fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
         }
       }
