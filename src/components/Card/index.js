@@ -4,8 +4,13 @@ import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoun
 import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
 import { CardWrapper } from "./Card.style";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Card = ({ frontmatter, fields, theme }) => {
+const Card = ({ frontmatter, fields }) => {
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">

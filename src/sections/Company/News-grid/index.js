@@ -102,7 +102,7 @@ const NewsGrid = ({ data, theme }) => {
               )}
               {news.map(({ id, frontmatter, fields }) => (
                 <Col xs={12} sm={6} lg={4} key={id}>
-                  <Card theme={theme} frontmatter={frontmatter} fields={fields}/>
+                  <Card  frontmatter={frontmatter} fields={fields}/>
                 </Col>
               ))}
             </Row>

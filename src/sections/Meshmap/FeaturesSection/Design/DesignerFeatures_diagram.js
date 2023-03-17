@@ -9,9 +9,13 @@ import roleBind3_dark from "./images/role-binding-3-dark.svg";
 import roleBind4 from "./images/role-binding-4.svg";
 import roleBind4_dark from "./images/role-binding-4-dark.svg";
 import { useInView } from "react-intersection-observer";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
-const DesignerFeaturesDiagram = ({ activeExampleIndex, theme }) => {
+const DesignerFeaturesDiagram = ({ activeExampleIndex }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <DiagramStyles>
       <div className="root" style={{ minHeight: "25rem" }}>

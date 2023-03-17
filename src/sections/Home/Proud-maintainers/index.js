@@ -21,8 +21,13 @@ import SMP_dark from "../../../assets/images/service-mesh-performance/horizontal
 import SMP from "../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.svg";
 import SMI_dark from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/white/servicemeshinterface-horizontal-stackedtext-white2.svg";
 import SMI from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/color/servicemeshinterface-horizontal-stackedtext-color.svg";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const ProudMaintainers = ({ theme }) => {
+const ProudMaintainers = () => {
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <ProjectItemWrapper>
       <Container >

@@ -5,8 +5,10 @@ import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const IntegrationsGrid = ({ category, theme, count }) => {
+
+const IntegrationsGrid = ({ category, count }) => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
@@ -84,6 +86,8 @@ const IntegrationsGrid = ({ category, theme, count }) => {
   const [activeIntegrationList, setIntegrationList] = useState([]);
   const [hideFilter, setHideFilter] = useState(false);
   const allIntegrations = useRef(data.allMdx.nodes);
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
   const categoryNames = allIntegrations.current.reduce(

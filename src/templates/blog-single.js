@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import { ThemeProvider } from "styled-components";
+
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/General/Navigation";
+
 import BlogSingle from "../sections/Blog/Blog-single";
 import Footer from "../sections/General/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
+
 import SimpleReactLightbox from "simple-react-lightbox";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
+
+
 
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -48,22 +48,19 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 `;
 
 const BlogSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
+
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <SimpleReactLightbox>
-          <BlogSingle theme={theme} data={data} />
-        </SimpleReactLightbox>
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <Layout>
+
+
+      <SimpleReactLightbox>
+        <BlogSingle  data={data} />
+      </SimpleReactLightbox>
+      <Footer />
+    </Layout>
+
   );
 };
 

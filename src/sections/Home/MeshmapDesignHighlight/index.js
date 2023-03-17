@@ -6,14 +6,18 @@ import integrationsImageLight from "./integration-image-light.svg";
 import integrationsImageDark from "./integration-image-dark.svg";
 import DesignDefaultWrapper from "./highlight.style";import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 
 
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
-const DesignDefault = ({ theme }) => {
+const DesignDefault = () => {
   const [diagramRef, inView] = useInView({ threshold: 0.6 });
   const [imageInView, setimageInView] = useState(false);
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)

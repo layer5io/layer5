@@ -23,7 +23,7 @@ export default function VisualizerFeatures({ features, theme }) {
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll">
-              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
+              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
             </div>
             <ul className="features visualizer-features">
               {features.map((feature, index) => (

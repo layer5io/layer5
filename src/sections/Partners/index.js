@@ -4,11 +4,14 @@ import Button from "../../reusecore/Button";
 import { partners } from "./partners";
 import PartnerWrapper from "./partner.style";
 import Partner_Icon from "../../assets/images/contact/partner_white.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Partner = ({ theme }) => {
+const Partner = () => {
   let academic_partners = partners.filter(partner => partner.type === "academic");
   let technology_partners = partners.filter(partner => partner.type === "technology");
   let len_acad_part = academic_partners.length;
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
   // const [isOpen, setIsOpen] = useState(false);
   // const [ID, setID] = useState(-1);
 

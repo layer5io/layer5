@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import { ThemeProvider } from "styled-components";
+
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/General/Navigation";
+
 import ResourceSingle from "../sections/Resources/Resource-single";
 import Footer from "../sections/General/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
+
 import SimpleReactLightbox from "simple-react-lightbox";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
+
+
 
 
 export const query = graphql`query ResourcesBySlug($slug: String!) {
@@ -49,16 +49,16 @@ const ResourceSinglePage = ({ data }) => {
   };
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <SimpleReactLightbox>
-          <ResourceSingle data={data} />
-        </SimpleReactLightbox>
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <Layout>
+
+
+      <SimpleReactLightbox>
+        <ResourceSingle data={data} />
+      </SimpleReactLightbox>
+      <Footer />
+    </Layout>
+
   );
 };
 

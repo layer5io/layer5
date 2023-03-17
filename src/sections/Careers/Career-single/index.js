@@ -10,10 +10,13 @@ import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
 import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Layer5_LightIcon from "../../../assets/images/layer5/layer5-only/png/layer5-light-bg.png";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 
-const CareerSingle = ({ data, theme }) => {
+const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
     <CareerPageWrapper>

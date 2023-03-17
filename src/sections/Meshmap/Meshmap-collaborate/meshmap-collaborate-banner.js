@@ -17,6 +17,7 @@ import EmptyLight from "./images/banner-transitions/empty-light.svg";
 import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const CollaborationBannerWrapper = styled.div`
 
@@ -165,13 +166,16 @@ const CollaborationBannerWrapper = styled.div`
 
 `;
 
-const MeshmapCollaborateBanner = ({ theme }) => {
+const MeshmapCollaborateBanner = () => {
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)
     setimageInView(false);
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
     <CollaborationBannerWrapper>

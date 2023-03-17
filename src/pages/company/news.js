@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
-
+import React from "react";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import { graphql } from "gatsby";
-
-import Navigation from "../../sections/General/Navigation";
 import NewsPage from "../../sections/Company/News-grid";
 import Footer from "../../sections/General/Footer";
-
-import { GlobalStyle } from "../../sections/app.style";
-import { darktheme } from "../../theme/app/themeStyles";
-import lighttheme from "../../theme/app/themeStyles";
-
 import SimpleReactLightbox from "simple-react-lightbox";
-
 export const query = graphql`query allNews {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
@@ -51,29 +41,17 @@ export const query = graphql`query allNews {
   }
 }
 `;
-
 const NewsGridPage = ({ data }) => {
-  const [theme, setTheme] = useState();
-
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
-
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <SimpleReactLightbox>
-          <NewsPage theme={theme} data={data} />
-        </SimpleReactLightbox>
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <SimpleReactLightbox>
+        <NewsPage  data={data} />
+      </SimpleReactLightbox>
+      <Footer />
+    </Layout>
   );
 };
 export default NewsGridPage;
-
 export const Head = () => {
   return <SEO title="News" description="News and press about Layer5, the cloud native management company.
     Layer5 the company behind industry-leading, open source software." />;

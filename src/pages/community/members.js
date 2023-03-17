@@ -1,18 +1,12 @@
 import React, { useState } from "react";
-
 // Libraries
-import { ThemeProvider } from "styled-components";
-
 // Components
-import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
-import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
-
 // Assets + Icons
 import theme from "../../theme/app/themeStyles";
 import writerIcon from "../../assets/images/writer-program/writer-program-badge.svg";
@@ -29,9 +23,6 @@ import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
-
-import { darktheme } from "../../theme/app/themeStyles";
-import lighttheme from "../../theme/app/themeStyles";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -199,7 +190,6 @@ const options = [
   color: `${obj.color}`,
   icon: obj.icon && `url(${obj.icon})`,
 }));
-
 const activeMember = {
   label: (
     <DropdownWrapper>
@@ -212,34 +202,21 @@ const activeMember = {
   icon: activeIcon && `url(${activeIcon})`,
   className: "allOptions",
 };
-
 const MembersPage = () => {
   /**
    * state storing the currently selected categories.
    */
   const [members, setMembers] = useState([activeMember]);
   const handleChange = (value) => setMembers(value);
-
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
-
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
-        <MultipleMembers members={members} />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
+      <MultipleMembers members={members} />
+      <Footer />
+    </Layout>
   );
 };
-
 export default MembersPage;
-
 export const Head = () => {
   return <SEO
     title="Members"

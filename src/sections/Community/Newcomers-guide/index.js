@@ -12,12 +12,15 @@ import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.png";
 
-const NewcomersGuide = ({ theme }) => {
+const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
     <NewcomersGuideWrapper>
