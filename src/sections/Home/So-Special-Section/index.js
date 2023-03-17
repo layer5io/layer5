@@ -7,8 +7,9 @@ import SoSpecialWrapper from "./so-special-style";
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "../../../components/image";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const SoSpecial = ({ theme }) => {
+const SoSpecial = () => {
   const data = useStaticQuery(
     graphql`query newsList {
   allMdx(
@@ -96,6 +97,10 @@ const SoSpecial = ({ theme }) => {
       }
     ]
   };
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <SoSpecialWrapper>
       <div className="so-special-head">

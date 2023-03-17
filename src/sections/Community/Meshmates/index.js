@@ -10,8 +10,9 @@ import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.s
 import MeshmateStackLightImage from "../../../assets/images/meshmate/meshmate-stack-light.svg";
 import { Link } from "gatsby";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const Meshmates = ({ theme }) => {
+const Meshmates = () => {
   const data = useStaticQuery(
     graphql`query meshmates {
   allMdx(
@@ -47,6 +48,10 @@ const Meshmates = ({ theme }) => {
 }
 `
   );
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <MeshMatesWrapper>
       <Container>

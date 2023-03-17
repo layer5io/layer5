@@ -48,7 +48,7 @@ const IndividualIntegrations = ({ theme, data }) => {
       <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={frontmatter.workingSlides} />
       <section className="integration-collection">
         <h2>Related Integrations</h2>
-        <RelatedIntegration theme={theme} category={frontmatter.category} />
+        <RelatedIntegration  category={frontmatter.category} />
       </section>
       <CTA_Book />
     </IntegrationPageWrapper>

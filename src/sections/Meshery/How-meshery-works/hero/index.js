@@ -3,6 +3,7 @@ import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
 import HeroImage from "../images/meshery-operator-dark.svg";
 import HeroImageLight from "../images/meshery-operator-white.svg";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const HowMesheryWorksHeroWrapper = styled.div`
     
@@ -41,7 +42,10 @@ const HowMesheryWorksHeroWrapper = styled.div`
   
 `;
 
-const HowMesheryWorksHero = ({ theme }) => {
+const HowMesheryWorksHero = () => {
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <HowMesheryWorksHeroWrapper>
       <Container>

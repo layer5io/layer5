@@ -5,8 +5,6 @@ import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
-import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
-
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
@@ -14,12 +12,7 @@ const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Nati
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const Footer = loadable(() => import("../sections/General/Footer"));
-
 const IndexPage = () => {
-
-  const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
-
   return (
     <Layout>
       <Banner />
@@ -28,7 +21,7 @@ const IndexPage = () => {
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
-      <MesheryIntegration theme={theme} />
+      <MesheryIntegration  />
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -37,7 +30,7 @@ const IndexPage = () => {
       {/* <News /> */}
       {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
-      <SoSpecial theme={theme} />
+      <SoSpecial  />
       <CloudNativeLeaders />
       <ServiceMeshFocussed />
       {/* <EngineerEnabler /> */}
@@ -46,7 +39,6 @@ const IndexPage = () => {
     </Layout>
   );
 };
-
 export const Head = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -66,5 +58,4 @@ export const Head = () => {
       schemaMarkup={schema} />
   );
 };
-
 export default IndexPage;

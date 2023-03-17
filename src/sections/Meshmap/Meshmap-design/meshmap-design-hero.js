@@ -6,6 +6,7 @@ import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
 import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const HeroSectionWrapper = styled.div`
 
@@ -67,13 +68,16 @@ const HeroSectionWrapper = styled.div`
     }
 `;
 
-const MeshmapHeroSection = ({ theme }) => {
+const MeshmapHeroSection = () => {
   const [locatorRef, inView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)
     setimageInView(false);
+
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
     <HeroSectionWrapper>

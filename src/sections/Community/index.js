@@ -17,11 +17,12 @@ import lightMeshmateIcon from "../../assets/images/meshmate/meshmate-stack-light
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
 
-const CommunityPage = ({ theme }) => {
+const CommunityPage = () => {
 
   const { backgroundImage123 } = useStaticQuery(
     graphql`
@@ -42,6 +43,8 @@ const CommunityPage = ({ theme }) => {
   );
 
   const pluginImage = getImage(backgroundImage123);
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   return (
     <CommunitySectionWrapper>

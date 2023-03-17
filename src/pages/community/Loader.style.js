@@ -51,7 +51,6 @@ const Loader = styled.div`
             top:0;
             opacity:0.2;
         }
-
       @keyframes loader {
         0%{
             opacity: 0;

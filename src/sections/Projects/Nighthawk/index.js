@@ -11,6 +11,7 @@ import smpIcon from "./images/smp-dark-text.svg";
 import lightSmpIcon from "./images/smp-light-text.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const explain1 = "./images/Rectangle 479.png";
 const explain2 = "./images/optimizing-your-average-response-time.png";
@@ -21,8 +22,10 @@ import { Gnhwrapper, CardsContainer } from "./gnh.style";
 import { URL } from "../../Counters/index";
 import Counter from "../../../reusecore/Counter";
 
-const Projects = ({ theme }) => {
+const Projects = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   useEffect(() => {
     fetch(URL)

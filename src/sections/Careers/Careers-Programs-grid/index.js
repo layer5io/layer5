@@ -3,10 +3,10 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Image from "../../../components/image";
-
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const ProgramsGrid = ({ hide_path, sub_section, theme }) => {
+const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
     graphql`query allPrograms {
   allMdx(
@@ -45,6 +45,8 @@ const ProgramsGrid = ({ hide_path, sub_section, theme }) => {
 
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
 
   const programs = data.allMdx.nodes.filter((item) => {
     if (programsArray.indexOf(item.frontmatter.program) >= 0) {

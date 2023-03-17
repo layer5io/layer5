@@ -118,7 +118,7 @@ const ProjectPage = ({ theme }) => {
           <MeshMapCTA />
         </Container>
       </div>
-      <ProudMaintainers theme={theme} />
+      <ProudMaintainers  />
     </ProjectWrapper>
   );
 };

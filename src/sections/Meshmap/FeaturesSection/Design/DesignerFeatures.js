@@ -23,7 +23,7 @@ export default function DesignerFeatures({ features, theme }) {
           </div>
           <div className="g-grid-container contentContainer" id="add-border" >
             <div className="diagram scroll">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
+              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
             </div>
             <ul  className="features design-features">
               {features.map((feature, index) => (

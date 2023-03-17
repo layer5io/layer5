@@ -5,9 +5,13 @@ import Visualize1_dark from "./images/visualize-1-dark.svg";
 import Visualize2 from "./images/visualize-2.svg";
 import Visualize2_dark from "./images/visualize-2-dark.svg";
 import { useInView } from "react-intersection-observer";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
-const VisualizerFeaturesDiagram = ({ activeExampleIndex, theme }) => {
+const VisualizerFeaturesDiagram = ({ activeExampleIndex }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <DiagramStyles>
       <div className="root" style={{ paddingLeft: "0rem", minHeight: "25rem" }}>

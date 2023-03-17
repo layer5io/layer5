@@ -73,7 +73,7 @@ const Meshmap = ({ theme }) => {
                   title: "Stop finger-pointing",
                   description: "Make infrastructure and application management less about finger-pointing and more about collaborating."
                 },
-              ]} theme={theme} />
+              ]}  />
 
           <VisualizerFeatures
             features={
@@ -86,7 +86,7 @@ const Meshmap = ({ theme }) => {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers."
                 },
-              ]} theme={theme} />
+              ]}  />
 
           <CollaboratorFeatures
             features={
@@ -116,7 +116,7 @@ const Meshmap = ({ theme }) => {
                   title: "Inclusive collaboration from start to finish",
                   description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together."
                 }
-              ]} theme={theme} />
+              ]}  />
           {/* <CollaboratorFeatures
             features={
               [

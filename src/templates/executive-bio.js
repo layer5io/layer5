@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import { ThemeProvider } from "styled-components";
+
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
+
 import MemberBio from "../sections/Community/Member-single/executive_bio";
 import Footer from "../sections/General/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
+
+
+
 
 export const query = graphql`query MemberBioBySlug($member: String!) {
   allMdx(
@@ -59,17 +59,17 @@ const MemberBioSinglePage = ({ data }) => {
   };
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <MemberBio
-          frontmatter={data.allMdx.nodes[0].frontmatter}
-          body={data.allMdx.nodes[0].body}
-        />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <Layout>
+
+
+      <MemberBio
+        frontmatter={data.allMdx.nodes[0].frontmatter}
+        body={data.allMdx.nodes[0].body}
+      />
+      <Footer />
+    </Layout>
+
   );
 };
 

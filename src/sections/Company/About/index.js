@@ -12,12 +12,16 @@ import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import CNCFLightstackedlogo from "./images/cncf-light-stacked-color.svg";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 import { Link } from "gatsby";
 
-const About = ({ theme }) => {
+const About = () => {
   const Community_meetup = "./images/Community_meetup.png";
   const Layer5Projects = "./images/layer5-projects.svg";
+  const { isDark } = useStyledDarkMode();
+  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+
   return (
     <AboutSectionWrapper id="about">
 
