@@ -1,4 +1,6 @@
-//majority of code from https://github.com/gperl27/gatsby-styled-components-dark-mode
+//majority of code from https://www.joshwcomeau.com/react/dark-mode/ and https://github.com/gperl27/gatsby-styled-components-dark-mode
+
+//context provider for app to make accessible theme setting, toggle function, etc.
 
 import React, { createContext, useState } from "react";
 
