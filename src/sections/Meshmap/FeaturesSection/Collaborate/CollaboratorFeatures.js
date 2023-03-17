@@ -6,7 +6,7 @@ import Feature from "../../features";
 import { useState } from "react";
 import useGsapTimeline from "../useGsapTimeline";
 
-export default function CollaboratorFeatures({ features, theme }) {
+export default function CollaboratorFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)

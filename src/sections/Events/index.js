@@ -8,7 +8,7 @@ import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 
-const Meetups = ({ data, pageContext, theme }) => {
+const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
 
   return (

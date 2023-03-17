@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 
 import Layout from "../components/layout";
@@ -190,11 +190,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
 `;
 
 const Events = ({ data, pageContext }) => {
-  const [theme, setTheme] = useState();
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
 

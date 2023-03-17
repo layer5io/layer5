@@ -14,7 +14,7 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import MeshmapSignupForm from "./meshmap-signup-form";
 import Reviews from "../Pricing/review-slider";
 
-const Meshmap = ({ theme }) => {
+const Meshmap = () => {
 
   return (
     <MeshmapWrapper>

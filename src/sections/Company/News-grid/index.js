@@ -17,7 +17,7 @@ function colorchange(id) {
   let element = document.getElementById(id);
   element.classList.toggle("mystyle");
 }
-const NewsGrid = ({ data, theme }) => {
+const NewsGrid = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,

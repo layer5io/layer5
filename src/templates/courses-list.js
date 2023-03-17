@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -64,12 +64,9 @@ const CoursesListTemplate = ({ data, pageContext }) => {
     let secondOrder = second.frontmatter?.order ? second.frontmatter.order : 100;
     return firstOrder - secondOrder;
   });
-  const [theme, setTheme] = useState();
+
   const learnpath = getTitle(pageContext.learnpath);
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
 

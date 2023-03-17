@@ -24,7 +24,7 @@ import Tools from "./tools";
 
 const isBrowser = typeof window !== "undefined";
 
-const LandscapeGrid = ( { theme } ) => {
+const LandscapeGrid = () => {
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />

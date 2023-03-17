@@ -42,11 +42,7 @@ const ProgramsPage = ({ data }) => {
     return optionItem;
   });
 
-  const [theme, setTheme] = useState();
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
 

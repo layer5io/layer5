@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import IngressGatewayImage from "./images/banner-transitions/ingress-gateway-partial.svg";
@@ -16,7 +16,6 @@ import CanvasImage from "./images/banner-transitions/canvas.svg";
 import EmptyLight from "./images/banner-transitions/empty-light.svg";
 import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const CollaborationBannerWrapper = styled.div`

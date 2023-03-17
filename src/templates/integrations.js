@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
@@ -6,8 +6,6 @@ import SEO from "../components/seo";
 
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
 import Footer from "../sections/General/Footer";
-
-import lighttheme, { darktheme } from "../theme/app/themeStyles";
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!) {

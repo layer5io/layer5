@@ -8,7 +8,7 @@ import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
 
-const IndividualIntegrations = ({ theme, data }) => {
+const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
 
   return (
