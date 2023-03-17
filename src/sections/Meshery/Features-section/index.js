@@ -21,7 +21,7 @@ const FeaturesSection = () => {
     customPaging: function (i) {
       return (
         <a>
-          <img src={slides_list[i]} />
+          <img src={slides_list[i]} loading="lazy" alt={"slide-img" + [i]}/>
         </a>
       );
     },
@@ -68,13 +68,13 @@ const FeaturesSection = () => {
             <Col xs={12} xl={8} className="smp-section-caraousel">
               <Slider {...settings}>
                 <div>
-                  <img src={Slide1} alt="Slide 1" />
+                  <img src={Slide1} alt="Slide 1" loading="lazy" />
                 </div>
                 <div>
-                  <StaticImage src={slide2Path} alt="Slide 2" />
+                  <StaticImage src={slide2Path} alt="Slide 2" loading="lazy" />
                 </div>
                 <div>
-                  <StaticImage src={slide3Path} alt="Slide 3" />
+                  <StaticImage src={slide3Path} alt="Slide 3" loading="lazy" />
                 </div>
               </Slider>
             </Col>
