@@ -6,11 +6,6 @@ import SEO from "../components/seo";
 
 
 import Footer from "../sections/General/Footer";
-
-
-
-
-
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
 

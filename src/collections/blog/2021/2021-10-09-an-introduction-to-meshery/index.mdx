@@ -6,8 +6,8 @@ thumbnail: ./meshery-webinar.png
 darkthumbnail: ./meshery-webinar.png
 category: "Meshery"
 tags:
- - Projects
- - Meshery
+  - Projects
+  - Meshery
 published: true
 resource: true
 type: Blog
@@ -16,7 +16,6 @@ product: Meshery
 
 import { BlogWrapper } from "../../Blog.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
-
 
 import MeshManager from "./mesh-manager.png";
 import MesheryClients from "./meshery-clients.png";
@@ -31,117 +30,367 @@ import MesheryLogo from "../../../../assets/images/meshery/icon-only/meshery-log
 import NighthawkIcon from "../../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import PatternsLogo from "./patterns-logo.png";
 import { Link } from "gatsby";
-
-
-
-
-
 <BlogWrapper>
 
 <div class="intro ">
-<p>Meshery is the open-source, multi-service mesh management plane that can provision ten different service meshes, onboard your applications, manage WebAssembly filters, apply service mesh patterns, validate against best practices, and benchmarks the performance of your service mesh deployments. Let’s learn how to manage service meshes with confidence with the multi-mesh manager, Meshery. </p>
+  <p>
+    Meshery is the open-source, multi-service mesh management plane that can
+    provision ten different service meshes, onboard your applications, manage
+    WebAssembly filters, apply service mesh patterns, validate against best
+    practices, and benchmarks the performance of your service mesh deployments.
+    Let’s learn how to manage service meshes with confidence with the multi-mesh
+    manager, Meshery.{" "}
+  </p>
 </div>
 
 <h3>Network Planes</h3>
 <img src={Planes} className="slides-right" align="right" alt="network-planes" />
-<p>As we unfold what a management plane is, it would serve us well to talk about network planes in this regard. Architecturally, a service mesh consists of two planes. One of those is the data plane, while the other one is the control plane. A service mesh data plane is the collection of intelligent proxies that operate in unison under the coordination of the control plane. The control plane performs configuration management of these intelligent proxies.</p>
-<p>A management plane can do many things. Essentially, a management plane helps you integrate service meshes into your backend systems. A robust management plane allows you to take full advantage of the power of the network while integrating your service delivery processes seamlessly. Your management plane might federate different types of service meshes, help you instigate chaos through controlled experiments, or offer automated traffic splitting in order to execute different styles of canarying of your applications. Your management plane might offer deep insights into the performance of your applications and to the performance of your infrastructure or might deliver a  change in management framework.</p>
+<p>
+  As we unfold what a management plane is, it would serve us well to talk about
+  network planes in this regard. Architecturally, a service mesh consists of two
+  planes. One of those is the data plane, while the other one is the control
+  plane. A service mesh data plane is the collection of intelligent proxies that
+  operate in unison under the coordination of the control plane. The control
+  plane performs configuration management of these intelligent proxies.
+</p>
+<p>
+  A management plane can do many things. Essentially, a management plane helps
+  you integrate service meshes into your backend systems. A robust management
+  plane allows you to take full advantage of the power of the network while
+  integrating your service delivery processes seamlessly. Your management plane
+  might federate different types of service meshes, help you instigate chaos
+  through controlled experiments, or offer automated traffic splitting in order
+  to execute different styles of canarying of your applications. Your management
+  plane might offer deep insights into the performance of your applications and
+  to the performance of your infrastructure or might deliver a change in
+  management framework.
+</p>
 
-<h3><img src={MesheryLogo}  align="center" alt="meshery-logo" height="35rem" width="35rem" style="padding-bottom:5px;padding-top:auto;"/> Meshery</h3>
+<h3>
+  <img
+    src={MesheryLogo}
+    align="center"
+    alt="meshery-logo"
+    height="35rem"
+    width="35rem"
+    style="padding-bottom:5px;padding-top:auto;"
+  />{" "}
+  Meshery
+</h3>
 
-<img src={MeshManager} className="slides-left" align="right" alt="mesh-manager" />
-<p><Link to="/cloud-native-management/meshery">Meshery</Link> manages the lifecycle of service meshes. Meshery does workload management, helps you onboard or offboard your applications onto the mesh. It also lets you do performance management. <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>, a custom controller within <Link to="/cloud-native-management/meshery/meshery-operator">Meshery operator</Link>, performs discovery of existing service meshes and deep fingerprinting of the specific functions that version of your service mesh is capable of performing. Through MeshSync, Meshery supports brownfield deployments of your service meshes (Meshery discovers your existing service mesh deployment that is already running inside your cluster(s) whether those service meshes were deployed by Meshery or not) </p>
-<p>In order to facilitate such a deep level of understanding of each type of service mesh, <Link to="/cloud-native-management/meshery">Meshery</Link> has adapters that are specific to each service mesh (given that each service mesh has its own set of features). Consequently, in order to leverage the maximum functionality of each service mesh, Meshery has separate, dedicated adapter for each of the <a href="https://docs.meshery.io/getting-started/overview#meshery-is-for-any-service-mesh">supported service meshes</a>: </p>
+<img
+  src={MeshManager}
+  className="slides-left"
+  align="right"
+  alt="mesh-manager"
+/>
+<p>
+  <Link to="/cloud-native-management/meshery">Meshery</Link> manages the
+  lifecycle of service meshes. Meshery does workload management, helps you
+  onboard or offboard your applications onto the mesh. It also lets you do
+  performance management.{" "}
+  <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>,
+  a custom controller within{" "}
+  <Link to="/cloud-native-management/meshery/meshery-operator">
+    Meshery operator
+  </Link>
+  , performs discovery of existing service meshes and deep fingerprinting of the
+  specific functions that version of your service mesh is capable of performing.
+  Through MeshSync, Meshery supports brownfield deployments of your service
+  meshes (Meshery discovers your existing service mesh deployment that is
+  already running inside your cluster(s) whether those service meshes were
+  deployed by Meshery or not){" "}
+</p>
+<p>
+  In order to facilitate such a deep level of understanding of each type of
+  service mesh, <Link to="/cloud-native-management/meshery">Meshery</Link> has
+  adapters that are specific to each service mesh (given that each service mesh
+  has its own set of features). Consequently, in order to leverage the maximum
+  functionality of each service mesh, Meshery has separate, dedicated adapter
+  for each of the{" "}
+  <a href="https://docs.meshery.io/getting-started/overview#meshery-is-for-any-service-mesh">
+    supported service meshes
+  </a>
+  :{" "}
+</p>
 
 <table className="table-1" align="center">
-<thead>
+  <thead>
     <tr>
-    <th align="left">Service Mesh</th>
-    <th className="status">Status</th>
+      <th align="left">Service Mesh</th>
+      <th className="status">Status</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-    <td ><a href="https://docs.meshery.io/service-meshes/adapters/consul">Meshery Adapter for Consul</a></td>
-    <td className="status">stable</td>
-    </tr>
-    <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/istio">Meshery Adapter for Istio</a></td>
-    <td className="status">stable</td>
-    </tr>
-    <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/kuma">Meshery Adapter for Kuma</a></td>
-    <td className="status">stable</td>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/consul">
+          Meshery Adapter for Consul
+        </a>
+      </td>
+      <td className="status">stable</td>
     </tr>
     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/linkerd">Meshery Adapter for Linkerd</a> </td>
-    <td className="status">stable</td>
-    </tr>
-     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/nsm">Meshery Adapter for Network Service Mesh</a></td>
-    <td className="status">stable</td>
-    </tr>
-    <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/osm">Meshery Adapter for Open Service Mesh</a></td>
-    <td className="status">stable</td>
-    </tr>
-     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/traefik-mesh">Meshery Adapter for Traefik Mesh</a></td>
-    <td className="status">stable</td>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/istio">
+          Meshery Adapter for Istio
+        </a>
+      </td>
+      <td className="status">stable</td>
     </tr>
     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/cpx">Meshery Adapter for Citrix Service Mesh</a></td>
-    <td className="status">beta</td>
-    </tr>
-     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/nginx-sm">Meshery Adapter for NGINX Service Mesh</a></td>
-    <td className="status">beta</td>
-    </tr>
-    <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/app-mesh">Meshery Adapter for App Mesh</a></td>
-    <td className="status">alpha</td>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/kuma">
+          Meshery Adapter for Kuma
+        </a>
+      </td>
+      <td className="status">stable</td>
     </tr>
     <tr>
-    <td><a href="https://docs.meshery.io/service-meshes/adapters/tanzu-sm">Meshery Adapter for Tanzu Service Mesh</a></td>
-    <td className="status">alpha</td>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/linkerd">
+          Meshery Adapter for Linkerd
+        </a>{" "}
+      </td>
+      <td className="status">stable</td>
     </tr>
-</tbody>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/nsm">
+          Meshery Adapter for Network Service Mesh
+        </a>
+      </td>
+      <td className="status">stable</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/osm">
+          Meshery Adapter for Open Service Mesh
+        </a>
+      </td>
+      <td className="status">stable</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/traefik-mesh">
+          Meshery Adapter for Traefik Mesh
+        </a>
+      </td>
+      <td className="status">stable</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/cpx">
+          Meshery Adapter for Citrix Service Mesh
+        </a>
+      </td>
+      <td className="status">beta</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/nginx-sm">
+          Meshery Adapter for NGINX Service Mesh
+        </a>
+      </td>
+      <td className="status">beta</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/app-mesh">
+          Meshery Adapter for App Mesh
+        </a>
+      </td>
+      <td className="status">alpha</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://docs.meshery.io/service-meshes/adapters/tanzu-sm">
+          Meshery Adapter for Tanzu Service Mesh
+        </a>
+      </td>
+      <td className="status">alpha</td>
+    </tr>
+  </tbody>
 </table>
 
-<p><Link to="/cloud-native-management/meshery">Meshery</Link> also lets you integrate your Prometheus and Grafana add-ons so you can import your existing Grafana dashboards to Meshery. When you first start Meshery, we also have a configuration wizard, which basically walks you through the entire setup to get Meshery up and running. By the end of this, it will make sure that you have Meshery running on your cluster.</p>
-<img src={MesheryDeployments} className="slides-right" align="right" alt="meshery-deployment" />
-<p>If you want a more finer configuration, you can configure your environment through settings and you can configure service meshes, and you can configure the metrics, you can define your performance tests to be reused.</p>
-<p>For configuration management, <Link to="/cloud-native-management/meshery">Meshery</Link> will analyze your runtime environment for certain service meshes and tell you if you're doing things right or not. What you can do is you can upload your applications directly into Meshery, edit them in the Meshery UI itself and actually apply these applications or onboard these applications on your service mesh.</p>
+<p>
+  <Link to="/cloud-native-management/meshery">Meshery</Link> also lets you
+  integrate your Prometheus and Grafana add-ons so you can import your existing
+  Grafana dashboards to Meshery. When you first start Meshery, we also have a
+  configuration wizard, which basically walks you through the entire setup to
+  get Meshery up and running. By the end of this, it will make sure that you
+  have Meshery running on your cluster.
+</p>
+<img
+  src={MesheryDeployments}
+  className="slides-right"
+  align="right"
+  alt="meshery-deployment"
+/>
+<p>
+  If you want a more finer configuration, you can configure your environment
+  through settings and you can configure service meshes, and you can configure
+  the metrics, you can define your performance tests to be reused.
+</p>
+<p>
+  For configuration management,{" "}
+  <Link to="/cloud-native-management/meshery">Meshery</Link> will analyze your
+  runtime environment for certain service meshes and tell you if you're doing
+  things right or not. What you can do is you can upload your applications
+  directly into Meshery, edit them in the Meshery UI itself and actually apply
+  these applications or onboard these applications on your service mesh.
+</p>
 
-<h3><img src={Mesheryoperatoricon}  align="center" alt="meshery-operator-logo" height="32rem" width="32rem" style="padding-bottom:5px;padding-top:auto;"/> Meshery Operator</h3>
-<img src={Mesheryfeatures} className="slides-left" align="right" alt="Meshery-features" />
-<p><Link to="/cloud-native-management/meshery/meshery-operator">Meshery operator</Link> is a custom controller called MeshSync. MeshSync helps keep Meshery apprised of the various changes that are going on to the service meshes and various changes that are happening within Kubernetes itself. In this way Meshery supports not only greenfield deployments like deploying service meshes itself, it also supports connecting to existing service mesh deployments, that is, brownfield deployment. So it will discover your existing deployments as well.</p>
-<p>There's an extensible concept in Meshery called a <a href="https://docs.meshery.io/extensibility/providers">provider</a>. Providers can typically offer a layer of persistence so to the extent that users are running performance tests intensely or to the extent that users want to have a particular type of directory integrated to bring their own identity to Meshery and have a multi-user experience. The other area of extensibility is the notion that Meshery has a couple of APIs both – rest API and graphql API. It comes with a command-line interface as well as a user interface. </p>
+<h3>
+  <img
+    src={Mesheryoperatoricon}
+    align="center"
+    alt="meshery-operator-logo"
+    height="32rem"
+    width="32rem"
+    style="padding-bottom:5px;padding-top:auto;"
+  />{" "}
+  Meshery Operator
+</h3>
+<img
+  src={Mesheryfeatures}
+  className="slides-left"
+  align="right"
+  alt="Meshery-features"
+/>
+<p>
+  <Link to="/cloud-native-management/meshery/meshery-operator">
+    Meshery operator
+  </Link>{" "}
+  is a custom controller called MeshSync. MeshSync helps keep Meshery apprised
+  of the various changes that are going on to the service meshes and various
+  changes that are happening within Kubernetes itself. In this way Meshery
+  supports not only greenfield deployments like deploying service meshes itself,
+  it also supports connecting to existing service mesh deployments, that is,
+  brownfield deployment. So it will discover your existing deployments as well.
+</p>
+<p>
+  There's an extensible concept in Meshery called a{" "}
+  <a href="https://docs.meshery.io/extensibility/providers">provider</a>.
+  Providers can typically offer a layer of persistence so to the extent that
+  users are running performance tests intensely or to the extent that users want
+  to have a particular type of directory integrated to bring their own identity
+  to Meshery and have a multi-user experience. The other area of extensibility
+  is the notion that Meshery has a couple of APIs both – rest API and graphql
+  API. It comes with a command-line interface as well as a user interface.{" "}
+</p>
 
 <h3>Layer5 MeshMap</h3>
-<p>Another capability of Meshery that is going to be released in the upcoming version is visually configuring your service mesh using MeshMap. You can add filters, applications as well as make other configurations visually here and you can export it as patterns to make it reusable quite easily. It automatically figures out the sample application we have deployed, then generates a visual representation. It provides users the ability to design service meshes, service mesh configuration, and the applications that run on it.</p>
+<p>
+  Another capability of Meshery that is going to be released in the upcoming
+  version is visually configuring your service mesh using MeshMap. You can add
+  filters, applications as well as make other configurations visually here and
+  you can export it as patterns to make it reusable quite easily. It
+  automatically figures out the sample application we have deployed, then
+  generates a visual representation. It provides users the ability to design
+  service meshes, service mesh configuration, and the applications that run on
+  it.
+</p>
 
 <img src={Patterns} className="slides-left" align="right" alt="Patterns" />
-<h3><img src={PatternsLogo}  align="center" alt="patterns-logo" height="35rem" width="32rem" style="padding-bottom:5px;padding-top:auto;"/> Patterns</h3>
-<p> A pattern is capable of describing the deployment of any of the meshes that Meshery supports as well as the configuration of the mesh. It also notes ongoing behavior so if you wanted to run a canary you can describe that in a pattern. So, patterns are like a template, they're customizable and ingestible into Meshery itself.</p>
-<img src={ServiceMeshPatterns} className="slides-right" align="right" alt="Service-Mesh-Patterns" />
-<p>Meshery will take action based on what you've described in the pattern, things like generating or running a performance test, generating load, and then doing statistical analysis on that set of results. In the future, if you want to deploy a web assembly filter, you can describe that in a pattern as well and have Meshery apply it. The patterns are service mesh agnostic, they're reusable and the initial set of them is being stored in a public-facing repository. There are almost 60 patterns that have been identified. Ultimately, it will allow you to ingest these and measure then orchestrate and apply them to your infrastructure. You can also use Meshery to visually represent them and to visually design.</p>
+<h3>
+  <img
+    src={PatternsLogo}
+    align="center"
+    alt="patterns-logo"
+    height="35rem"
+    width="32rem"
+    style="padding-bottom:5px;padding-top:auto;"
+  />{" "}
+  Patterns
+</h3>
+<p>
+  {" "}
+  A pattern is capable of describing the deployment of any of the meshes that Meshery
+  supports as well as the configuration of the mesh. It also notes ongoing behavior
+  so if you wanted to run a canary you can describe that in a pattern. So, patterns
+  are like a template, they're customizable and ingestible into Meshery itself.
+</p>
+<img
+  src={ServiceMeshPatterns}
+  className="slides-right"
+  align="right"
+  alt="Service-Mesh-Patterns"
+/>
+<p>
+  Meshery will take action based on what you've described in the pattern, things
+  like generating or running a performance test, generating load, and then doing
+  statistical analysis on that set of results. In the future, if you want to
+  deploy a web assembly filter, you can describe that in a pattern as well and
+  have Meshery apply it. The patterns are service mesh agnostic, they're
+  reusable and the initial set of them is being stored in a public-facing
+  repository. There are almost 60 patterns that have been identified.
+  Ultimately, it will allow you to ingest these and measure then orchestrate and
+  apply them to your infrastructure. You can also use Meshery to visually
+  represent them and to visually design.
+</p>
 
-<h3><img src={NighthawkIcon}  align="center" alt="nighthawk-logo" height="35rem" width="35rem" style="padding-bottom:5px;padding-top:auto;"/> Nighthawk</h3>
-<p>There’s a project called <Link to="/projects/nighthawk">Nighthawk</Link> that helps advance the existing integration of nighthawk and Meshery. Nighthawk is a load generator that is an envoy project. It's written in c plus plus and has a couple of intriguing capabilities that are the ongoing study within Nighthawk. There is an ongoing effort to take advantage of nighthawk’s adaptive load controllers, add a couple of those in and expose them through Meshery to let people recursively evaluate what is ultimately an optimal configuration in your environment and the service mesh.</p>
+<h3>
+  <img
+    src={NighthawkIcon}
+    align="center"
+    alt="nighthawk-logo"
+    height="35rem"
+    width="35rem"
+    style="padding-bottom:5px;padding-top:auto;"
+  />{" "}
+  Nighthawk
+</h3>
+<p>
+  There’s a project called <Link to="/projects/nighthawk">Nighthawk</Link> that
+  helps advance the existing integration of nighthawk and Meshery. Nighthawk is
+  a load generator that is an envoy project. It's written in c plus plus and has
+  a couple of intriguing capabilities that are the ongoing study within
+  Nighthawk. There is an ongoing effort to take advantage of nighthawk’s
+  adaptive load controllers, add a couple of those in and expose them through
+  Meshery to let people recursively evaluate what is ultimately an optimal
+  configuration in your environment and the service mesh.
+</p>
 <img src={Nighthawk} className="slides-right" align="right" alt="Nighthawk" />
 
-<p>If you consider that you've got a certain SLO or a certain minimum latency requirement that you need to stick to that but you also want to at the same time maximize resiliency characteristics of your deployment, that can be a difficult thing to figure out particularly if any of your infrastructure changes:</p>
+<p>
+  If you consider that you've got a certain SLO or a certain minimum latency
+  requirement that you need to stick to that but you also want to at the same
+  time maximize resiliency characteristics of your deployment, that can be a
+  difficult thing to figure out particularly if any of your infrastructure
+  changes:
+</p>
 <ul>
-    <li>if you add another node to your environment, your clusters,</li>
-    <li>if you upgrade your service mesh,</li>
-    <li>if you change the configuration of your service mesh,</li>
-    <li>if you add another service to your set of workloads that you're running.</li>
+  <li>if you add another node to your environment, your clusters,</li>
+  <li>if you upgrade your service mesh,</li>
+  <li>if you change the configuration of your service mesh,</li>
+  <li>
+    if you add another service to your set of workloads that you're running.
+  </li>
 </ul>
-<p>If these factors change, so does the ability to run optimization routines. To help you identify the optimal configuration of your mesh but in accordance with your own constraints is again the study of <Link to="/projects/nighthawk">Nighthawk</Link>. </p>
+<p>
+  If these factors change, so does the ability to run optimization routines. To
+  help you identify the optimal configuration of your mesh but in accordance
+  with your own constraints is again the study of{" "}
+  <Link to="/projects/nighthawk">Nighthawk</Link>.{" "}
+</p>
 
-<h3>Check out the CNCF On-Demand Webinar: <Link to="/cloud-native-management/meshery">Meshery</Link> - The Cloud Native Manager to learn more!</h3>
+<h3>
+  Check out the CNCF On-Demand Webinar:{" "}
+  <Link to="/cloud-native-management/meshery">Meshery</Link> - The Cloud Native
+  Manager to learn more!
+</h3>
 <div class="iframe-container">
-<iframe width="460" height="215" src="https://www.youtube.com/embed/mU8qHUGYsk8" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <iframe
+    width="460"
+    height="215"
+    src="https://www.youtube.com/embed/mU8qHUGYsk8"
+    loading="lazy"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
 
 </BlogWrapper>

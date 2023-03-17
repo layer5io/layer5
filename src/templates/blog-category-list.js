@@ -10,9 +10,6 @@ import Footer from "../sections/General/Footer";
 
 
 import { graphql } from "gatsby";
-
-
-
 export const query = graphql`
   query BlogsByCategory($category: String!) {
     allMdx(

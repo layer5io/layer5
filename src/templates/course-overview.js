@@ -5,10 +5,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Footer from "../sections/General/Footer";
-
-
-
-
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`

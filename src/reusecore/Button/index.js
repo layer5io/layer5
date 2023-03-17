@@ -2,9 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import BtnStyle from "./btn.style";
 import { Link } from "gatsby";
-
-
-
 const Button = ({
   className,
   children,

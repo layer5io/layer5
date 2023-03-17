@@ -1,8 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
-
 import Layout from "../components/layout";
 
 
@@ -13,9 +10,6 @@ import Footer from "../sections/General/Footer";
 
 
 import SEO from "../components/seo";
-
-
-
 export const query = graphql`query BookBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
     body

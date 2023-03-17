@@ -1,19 +1,11 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-
-
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 import Footer from "../sections/General/Footer";
-
-
-
-
-
 export const query = graphql`
     query ProgramByName($program: String!) {
         allMdx(
@@ -41,9 +33,6 @@ const ProgramsPage = ({ data }) => {
     optionItem.value = index;
     return optionItem;
   });
-
-
-
   return (
 
     <Layout>

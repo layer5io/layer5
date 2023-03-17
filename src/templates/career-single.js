@@ -6,10 +6,6 @@ import SEO from "../components/seo";
 
 import CareerSingle from "../sections/Careers/Career-single";
 import Footer from "../sections/General/Footer";
-
-
-
-
 export const query = graphql`
     query CareerBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {

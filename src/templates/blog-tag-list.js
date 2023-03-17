@@ -7,13 +7,7 @@ import SEO from "../components/seo";
 
 import BlogList from "../sections/Blog/Blog-list";
 import Footer from "../sections/General/Footer";
-
-
-
 import { graphql } from "gatsby";
-
-
-
 export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}

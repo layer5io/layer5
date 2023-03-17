@@ -60,9 +60,6 @@ const ListItem = (props) => {
   );
 
 };
-
-
-
 const Timer = (props) => {
   const renderer = ({ minutes, seconds }) => {
     return <h3 className="timer__text">{minutes}:{seconds}</h3>;

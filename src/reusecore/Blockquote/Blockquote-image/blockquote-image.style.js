@@ -26,9 +26,6 @@ section.bq-section {
         color: ${props => props.theme.tertiaryColor};
     }
 }
-
-
-
 /* ========== Type One ========== */
 
 .type-one-quote {
@@ -131,12 +128,6 @@ section.bq-section {
         top: 45px;
     }
 }
-
-
-
-
-
-
 /* ========== Type Two ========== */
 
 .type-two-quote {
@@ -225,12 +216,6 @@ section.bq-section {
         padding-left: 30px;
     }
 }
-
-
-
-
-
-
 
 
 /* ========== Type Three ========== */

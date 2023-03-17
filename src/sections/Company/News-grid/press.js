@@ -59,9 +59,6 @@ img{
     margin: 0 0 0.5rem;
 }
 `;
-
-
-
 const Press = () => {
   return (
     <PressWrapper>

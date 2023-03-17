@@ -7,9 +7,6 @@ import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
-
 const RelatedPosts = props => {
 
   const { postType , relatedPosts , mainHead , lastCardHead , linkToAllItems } = props;
