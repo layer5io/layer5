@@ -86,8 +86,12 @@ const FeaturesSectionWrapper = styled.section`
 				color: white;
 			}
 		.smp-section-data {
-			h1, h3, p {
+			h1, h2, p {
 				text-align: start; color: white;
+			}
+			h2 {
+				font-size: 1.75rem;
+    			font-weight: 500;
 			}
 		}
 
@@ -238,9 +242,10 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	.mesh-mngmnt {
-		h4 {
+		h3 {
 			margin: 1rem 0;
 			color: rgba(255, 255, 255, 0.6);
+			font-size: 1.5rem;
 		}
 		p {
 			margin: 0.5rem 0;
