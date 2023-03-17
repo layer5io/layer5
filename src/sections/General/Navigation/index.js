@@ -162,7 +162,7 @@ const Navigation = () => {
   const [scroll, setScroll] = useState(false);
 
   const { isDark, toggleDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
   const themeToggler = () => toggleDark();
 
   const dropDownRef = useRef();

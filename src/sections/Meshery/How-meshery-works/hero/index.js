@@ -44,7 +44,7 @@ const HowMesheryWorksHeroWrapper = styled.div`
 
 const HowMesheryWorksHero = () => {
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <HowMesheryWorksHeroWrapper>

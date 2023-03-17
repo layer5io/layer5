@@ -2,7 +2,7 @@
 
 //context provider for app to make accessible theme setting, toggle function, etc.
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeSetting = {
   LIGHT: "light",
@@ -13,7 +13,7 @@ export const ThemeSetting = {
 export const DarkThemeKey = "theme";
 
 const defaultState = {
-  isDark: undefined,
+  isDark: false,
   didLoad: false,
   themeSetting: ThemeSetting.SYSTEM,
   toggleDark: () => undefined,
@@ -33,9 +33,9 @@ const isDarkModeActive = () => {
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = React.useState();
+  const [isDark, setIsDark] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const root = window.document.documentElement;
     const initialColorValue = root.style.getPropertyValue(
       "--initial-color-mode"

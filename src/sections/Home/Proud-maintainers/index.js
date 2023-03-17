@@ -26,7 +26,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const ProudMaintainers = () => {
 
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <ProjectItemWrapper>

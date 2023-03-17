@@ -11,7 +11,7 @@ const Partner = () => {
   let technology_partners = partners.filter(partner => partner.type === "technology");
   let len_acad_part = academic_partners.length;
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
   // const [isOpen, setIsOpen] = useState(false);
   // const [ID, setID] = useState(-1);
 

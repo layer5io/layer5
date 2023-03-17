@@ -20,7 +20,7 @@ const About = () => {
   const Community_meetup = "./images/Community_meetup.png";
   const Layer5Projects = "./images/layer5-projects.svg";
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <AboutSectionWrapper id="about">

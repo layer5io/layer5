@@ -120,7 +120,7 @@ const DesignBannerWrapper = styled.div`
 
 const MeshmapDesignBanner = () => {
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <DesignBannerWrapper>

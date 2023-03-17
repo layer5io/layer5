@@ -9,7 +9,7 @@ import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 const Card = ({ frontmatter, fields }) => {
 
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>

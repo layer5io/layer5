@@ -87,7 +87,7 @@ const IntegrationsGrid = ({ category, count }) => {
   const [hideFilter, setHideFilter] = useState(false);
   const allIntegrations = useRef(data.allMdx.nodes);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
   const categoryNames = allIntegrations.current.reduce(
