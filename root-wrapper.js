@@ -4,6 +4,7 @@ import Code from "./src/components/CodeBlock";
 import { CTA_ImageOnly } from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import { CTA_FullWidth } from "./src/components/Call-To-Actions/CTA_FullWidth";
 import { CTA_Bottom } from "./src/components/Call-To-Actions/CTA_Bottom";
+import { ContextWrapper } from "./context-wrapper";
 
 const components = {
   pre: ({ children: { props } }) => {
@@ -25,5 +26,9 @@ const components = {
 };
 
 export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
+  <ContextWrapper>
+    <MDXProvider components={components}>
+      {element}
+    </MDXProvider>
+  </ContextWrapper>
 );
