@@ -25,7 +25,7 @@ import Counter from "../../../reusecore/Counter";
 const Projects = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   useEffect(() => {
     fetch(URL)

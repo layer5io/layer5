@@ -27,7 +27,7 @@ const ServiceMeshTimeline = () => {
   const [elements, setElements] = useState(initialMeshes);
   const [loadedAll, showIcon] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   const loadMore = () => {
     setElements([...elements, ...remainingMeshes]);

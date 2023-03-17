@@ -20,7 +20,7 @@ const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <NewcomersGuideWrapper>

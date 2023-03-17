@@ -16,7 +16,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <CareerPageWrapper>

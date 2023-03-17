@@ -10,7 +10,7 @@ import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 const VisualizerFeaturesDiagram = ({ activeExampleIndex }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   return (
     <DiagramStyles>

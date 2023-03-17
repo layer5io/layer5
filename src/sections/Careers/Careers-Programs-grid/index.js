@@ -46,7 +46,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   const programs = data.allMdx.nodes.filter((item) => {
     if (programsArray.indexOf(item.frontmatter.program) >= 0) {

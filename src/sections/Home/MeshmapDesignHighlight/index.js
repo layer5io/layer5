@@ -13,7 +13,7 @@ const DesignDefault = () => {
   const [diagramRef, inView] = useInView({ threshold: 0.6 });
   const [imageInView, setimageInView] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   if (inView && !imageInView)
     setimageInView(true);

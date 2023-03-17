@@ -92,7 +92,7 @@ const BlogSingle = ({ data }) => {
 
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = (typeof isDark === "boolean" && isDark) ? "dark" : "light";
+  const theme = isDark ? "dark" : "light";
 
   useEffect(() => {
     if (copied) {
