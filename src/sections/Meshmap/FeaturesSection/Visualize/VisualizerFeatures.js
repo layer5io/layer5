@@ -25,8 +25,7 @@ export default function VisualizerFeatures({ features, theme }) {
             <div className="diagram scroll">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
-            <ul className="
-             visualizer-features">
+            <ul className="visualizer-features">
               {features.map((feature, index) => (
                 <li className="visualizer-feature-slide" key={index}>
                   <Feature
