@@ -41,15 +41,15 @@ export const FeaturesWrapper = styled.div`
       & .pagingDots {
         top: 2rem !important;
         & .paging-item {
-          padding :5px;
+          padding :0.25rem;
         }
         & .paging-item > button:hover {
           box-shadow:none;
         }
         & .paging-item > button > svg {
           // opacity: 1 !important;
-          height: 10px;
-          width: 10px;
+          height: 0.65rem;
+          width: 0.65rem;
           fill: ${props => props.theme.whiteToGreyB3B3B3};
         }
       }
