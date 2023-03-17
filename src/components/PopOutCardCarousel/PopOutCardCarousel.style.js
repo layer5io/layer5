@@ -61,6 +61,10 @@ const PopOutCardWrapper = styled.div`
       @media only screen and (max-width: 1500px) {
         transform: rotateZ(0deg) translate(-40vw, 0);
       }
+  
+      @media only screen and (max-width: 1200px) {
+        transform: rotateZ(0deg) translate(-46vw, 0);
+      }
     `}
 
   ${(props) =>
@@ -73,8 +77,13 @@ const PopOutCardWrapper = styled.div`
     `}
 
   @media only screen and (max-width: 1500px) {
+    right: -120px;
     height: 280px;
     width: 320px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    right: -160px;
   }
 `;
 
