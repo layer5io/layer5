@@ -91,11 +91,11 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
       ) : (
         <span className="heading">{title}</span>
       )}
-      <div className="body" id={`feature-${id}`} aria-hidden={!active}>
+      <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
         {learnMoreLink && (
           <Link className="learn-more-link" to={learnMoreLink}>
-            Learn more <IoIosArrowRoundForward />
+            Explore <IoIosArrowRoundForward />
           </Link>
         )}
       </div>
