@@ -125,7 +125,7 @@ const FeaturesSectionWrapper = styled.section`
 						margin: 1rem auto;
 						opacity: 0.6;
 
-						a {
+						p {
 							display: block;
 
 							img {
@@ -154,7 +154,7 @@ const FeaturesSectionWrapper = styled.section`
 				left: 40rem;
 				width: 6rem;
 
-				li a img {
+				li p img {
 					height: 4rem;
 				}
 			}
@@ -212,7 +212,7 @@ const FeaturesSectionWrapper = styled.section`
 					left: 90%;
 					width: 4rem;
 
-					li a img {
+					li p img {
 						height: 2.5rem;
 					}
 				}
