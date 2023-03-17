@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../../../../reusecore/Layout";
 import DesignerFeaturesWrapper from "./DesignerFeatures.style";
 import DesignerFeaturesDiagram from "./DesignerFeatures_diagram";
 import Feature from "../../features";
-import { useState } from "react";
 import useGsapTimeline from "../useGsapTimeline";
 
-export default function DesignerFeatures({ features, theme }) {
+export default function DesignerFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)

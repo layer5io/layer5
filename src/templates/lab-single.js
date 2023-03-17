@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
@@ -26,11 +26,7 @@ export const query = graphql`
 `;
 
 const LabSingle = ({ data }) => {
-  const [theme, setTheme] = useState();
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
 

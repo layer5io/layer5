@@ -7,7 +7,7 @@ import MeshmapDesignFeatures from "./Meshmap-design-features";
 import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
-const MeshmapDesign = ({ theme }) => {
+const MeshmapDesign = () => {
   return (
     <MeshmapDesignWrapper>
       <MeshmapDesignBanner  />

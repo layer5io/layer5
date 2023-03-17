@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
 
@@ -45,11 +45,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 `;
 
 const EventSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState();
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
 

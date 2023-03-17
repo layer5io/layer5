@@ -3,10 +3,10 @@ import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
 import Feature from "../../features";
-import {  useState } from "react";
+import { useState } from "react";
 import useGsapTimeline from "../useGsapTimeline";
 
-export default function VisualizerFeatures({ features, theme }) {
+export default function VisualizerFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)

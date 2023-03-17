@@ -7,7 +7,7 @@ import Card from "./Card";
 import { Location } from "@reach/router";
 import Button from "../../../reusecore/Button";
 
-const Integrations = ({ theme }) => {
+const Integrations = () => {
   return (
     <IntegrationsWrapper>
       <Location>
