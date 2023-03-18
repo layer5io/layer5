@@ -90,7 +90,9 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
       text-align: center;
     }
   }
-
+.toCatalog {
+  background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+}
 .svg-cont{
   display:grid;
   place-items: center;
@@ -189,7 +191,6 @@ h3.containerCaption {
   flex: 1;
   width: 100%;
 }
-
 
 .container{
 	margin: 4rem auto;
@@ -412,7 +413,7 @@ const Catalog = () => {
             <p className="caption">
               Turbo-charge your infrastructure with power-ups from the{" "}
               <b>
-                <a href="https://meshery.io/catalog">cloud native catalog</a>
+                <a className="toCatalog" href="https://meshery.io/catalog">cloud native catalog</a>
               </b>
             </p>
           </div>
