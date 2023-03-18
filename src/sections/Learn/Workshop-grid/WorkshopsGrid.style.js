@@ -165,7 +165,7 @@ export const WorkshopPageWrapper = styled.div`
 	
 
 	.workshop-grid-card {
-		background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background-color: ${props => props.theme.greyDarkToWhite};
 		width: 100%;
 		display: block;
 		height: auto;
@@ -220,7 +220,7 @@ export const WorkshopPageWrapper = styled.div`
 			display: block;
 		}
 		Button:hover {
-			box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+			box-shadow: 0 2px 10px ${props => props.theme.whiteToBlackFive};
 		}
 		a {
 			margin: auto;

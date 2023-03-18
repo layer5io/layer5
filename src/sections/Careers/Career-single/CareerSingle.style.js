@@ -32,7 +32,7 @@ const CareerPageWrapper = styled.div`
 
         p {
             margin-left: 2.25rem;
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+            color: ${props => props.theme.whiteToBlackFive};
 
         }
     }

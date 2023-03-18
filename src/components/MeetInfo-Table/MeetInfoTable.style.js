@@ -28,7 +28,7 @@ export const TableWrapper = styled.div`
 				}
 			}
 			:first-child {
-				background-color: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.1)" : "rgba(0,0,0,0.05)"};
+				background-color: ${props => props.theme.blackToWhiteOne};
 				font-weight: 600;
 			}
 		}

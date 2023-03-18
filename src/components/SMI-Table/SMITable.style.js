@@ -37,10 +37,10 @@ table {
         text-align: center;
         font-size: 0.9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "efefef"};
+        border-bottom: 1px solid ${props => props.theme.greyDarkToGreyTint};
     }
     th {
-        background: ${props => props.theme.DarkTheme ? "#404040" : "#1E2117"} ;
+        background: ${props => props.theme.greyDarkShades} ;
         color: #ffffff;
 		height: 4rem;
 		font-size: 1rem;

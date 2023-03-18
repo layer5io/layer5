@@ -11,7 +11,7 @@ export const ProfileCardWrapper = styled.div`
         width: 260px;
         border-radius: 2px;
         overflow: hidden;
-        box-shadow: 0 2px 2px 0 ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.20)" : "rgba(0, 0, 0, 0.20)"};
+        box-shadow: 0 2px 2px 0 ${props => props.theme.whiteToBlackOne};
         position: relative;
         margin: auto;
         margin-bottom: 2.5rem;

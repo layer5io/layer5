@@ -54,7 +54,7 @@ const BannerSectionWrapper = styled.section`
         color: rgba(255, 255, 255, 0.7);
     }
     .description a {
-        color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
+        color: #FFFFFF;
         font-style: italic;
         :hover {
             cursor: hand;

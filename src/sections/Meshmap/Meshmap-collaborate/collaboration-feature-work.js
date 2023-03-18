@@ -15,7 +15,7 @@ const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    background-color: ${props => props.theme.greyDarkToGreyTint};;
     max-width: 90%;
     justify-content: space-between;
     align-items: center;

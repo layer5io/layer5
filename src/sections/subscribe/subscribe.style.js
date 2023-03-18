@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SubscribeWrapper = styled.div`
-    background-color:${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
+    background-color:${props => props.theme.greyDarkToGreyTint};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
     h2{
@@ -37,7 +37,7 @@ const SubscribeWrapper = styled.div`
         background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
     }
     #mc-embedded-subscribe:hover{
-        box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+        box-shadow: ${props => props.theme.whiteToBlackFive} 0px 2px 10px;
     }
     @media only screen and (max-width: 1050px) {
         .email-cont{

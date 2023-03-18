@@ -39,11 +39,11 @@ const PricingWrapper = styled.section`
     margin-bottom: 4rem;
     text-align: center;
     h2 {
-      color: ${props => props.theme.DarkTheme ? "white" : "black"};
+      color: ${props => props.theme.whiteToBlack};
     }
     @media (min-width: 1400px) {
       h2{
-        color: ${props => props.theme.DarkTheme ? "white" : "black"};
+        color: ${props => props.theme.whiteToBlack};
       }
 
     }
@@ -97,7 +97,7 @@ const PricingWrapper = styled.section`
 
 
 .pricing-table {
-  background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  background-color: ${props => props.theme.greyDarkToWhite};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
@@ -110,7 +110,7 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
-      background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+      background-color: ${props => props.theme.greyDarkToWhite};
 
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
     }
