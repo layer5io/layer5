@@ -47,10 +47,10 @@ const Container = styled.div`
 //   width:50vw;
 // }
 @media (max-width:470px){
-  width:70vw;
+  width:73vw;
 }
 @media (max-width:560px){
-  width:62vw;
+  width:64vw;
 }
 
   border-radius:20px;
