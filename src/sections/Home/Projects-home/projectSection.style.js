@@ -31,11 +31,6 @@ const ProjectItemWrapper = styled.section`
             color: ${props => props.theme.black};
         }
     }
-    .project-text {
-        font-weight: 300;
-        margin-bottom: 80px;
-        margin-top: 0;
-    }
     .project__block__wrap{
         position: relative;
         width: 100%;
@@ -115,12 +110,6 @@ const ProjectItemWrapper = styled.section`
             margin-bottom: 40px;
         }
     }
-    @media only screen and (max-width: 992px) {
-        .project-text{
-            font-size: 7rem;
-            color:red;
-        }
-    }
     @media only screen and (max-width: 912px) {
          /* padding: 60px 0 0 0; */
          .project-title {
@@ -156,9 +145,6 @@ const ProjectItemWrapper = styled.section`
                     margin: 1rem auto;
                 }
               }
-        }
-        .project-text{
-            margin-bottom: 40px;
         }
      }
      @media only screen and (max-width: 760px) {
