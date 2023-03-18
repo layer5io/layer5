@@ -1,7 +1,3 @@
- /* eslint-disable */
-
-
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
@@ -100,7 +96,7 @@ export const MeshmapMobileSwiper = () => {
           Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one
           place.
         </h6>
-      <Swiper
+        <Swiper
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
@@ -127,4 +123,3 @@ export const MeshmapMobileSwiper = () => {
     </>
   );
 };
-/* eslint-disable-line */ 
