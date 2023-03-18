@@ -66,19 +66,19 @@ const BannerSectionWrapper = styled.div`
         font-size: 2.5rem;
         text-align: center;
     }
-    h3 {
+
+    }
+    .banner-text p {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
         font-weight: 400;
+        font-size: 1.75rem;
         font-style: italic;
         min-width: 18rem;
         font-family: "Qanelas Soft";
         span {
             color: ${props => props.theme.saffronColor};
         }
-    }
-    p {
-        color: ${props => props.theme.primaryLightColor};
     }
     h4 {
         text-transform: uppercase;
@@ -185,9 +185,9 @@ const BannerSection = () => {
         {/* <h3>
                     Application reigns King. Context is his Queen.
                 </h3> */}
-        <h3>
+        <p>
                     Friends don't let friends GitOps alone.
-        </h3>
+        </p>
         {/* <h4>Discover and Visualize</h4>
                 <h4><span>Collaborate and Design</span></h4>
                 any and all your cloud native infra and apps */}

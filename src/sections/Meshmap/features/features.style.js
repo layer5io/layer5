@@ -18,8 +18,10 @@ const FeatureWrapper = styled.section`
       padding-right: 1rem;
     }
 
-  & > h3 {
+  & > h2 {
     margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 500;
     @media (max-width: 767px) {
       font-size: 1.25rem;
     }
