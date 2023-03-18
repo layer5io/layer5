@@ -57,11 +57,11 @@ const CloudNativeWrapper = styled.div`
 
     }
     .btn-cont button{
-        color:${props => props.theme.DarkTheme ? "black" : "white"};
+        color:black;
     }
     .btn-cont button:hover{
-        color:${props => props.theme.DarkTheme ? "white" : "black"};
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        color:white;
+        box-shadow: rgb(255 255 255 / 40%) 0px 2px 10px;
     }
     
     @media only screen and (max-width:1220px)
