@@ -39,7 +39,7 @@ export const MesheryPlatformsWrapper = styled.div`
           max-width: 12rem;
           border-radius: 1rem;
           margin-bottom: 2rem; 
-          background-color: ${props => props.theme.DarkTheme ? "#1e2117" : "#1e2117"};
+          background-color: #404040;
 
           
           &:hover {

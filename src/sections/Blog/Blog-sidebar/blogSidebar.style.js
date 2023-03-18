@@ -75,7 +75,7 @@ const BlogSideBarWrapper = styled.div`
                     margin-top: 3px;
                 }
                 a{
-                    color: ${props => props.theme.DarkTheme ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)"};
+                    color: ${props => props.theme.whiteToBlack};
                     display: flex;
                     justify-content: space-between;
                     font: 400 16px/35px "Qanelas Soft", "Open Sans", sans-serif;
@@ -114,7 +114,7 @@ const BlogSideBarWrapper = styled.div`
                     display: block;
                     padding: 6px 18px;
                     border-radius: 3px;
-                    background: ${props => props.theme.DarkTheme ? "#212121" : "#F0F0F0"};
+                    background: ${props => props.theme.greyDarkToGreyTint};
                     font: 400 13px/26px "Qanelas Soft", "Open Sans", sans-serif; 
                     transition: all 0.3s linear;
                     &:hover{

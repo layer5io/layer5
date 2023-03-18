@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
         border-radius: 0.5rem;
-        background-Color:${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        background-Color:${props => props.theme.greyDarkToWhite};
         box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
         transition: all 0.3s ease-in;
         &:hover{
@@ -101,7 +101,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+            color: ${props => props.theme.whiteToBlackFive};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
@@ -128,7 +128,7 @@ export const CardWrapper = styled.div`
         bottom: 0;
     }
     .readmore-btn, .external-link-btn{
-       color: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+       color: ${props => props.theme.whiteToBlackFive};
        display: flex;
        flex: auto;
        align-items: center;

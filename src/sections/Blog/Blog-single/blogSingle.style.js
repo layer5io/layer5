@@ -57,7 +57,7 @@ const BlogPageWrapper = styled.div`
             display: inline-block;
             padding: 0.3rem 0.8rem;
             border-radius: 0.2rem;
-            background: ${props => props.theme.DarkTheme ? "#212121" : "#F0F0F0"};
+            background: ${props => props.theme.greyDarkToGreyTint};
             transition: all 0.3s linear;
             &:hover{
                 background: ${props => props.theme.secondaryColor};

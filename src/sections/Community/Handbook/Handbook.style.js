@@ -186,7 +186,7 @@ export const HandbookWrapper = styled.div`
       fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
     }
     path {
-      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+      stroke: ${props => props.theme.greenBrightToGreen};
     }
     svg {
       color: "red";
@@ -457,8 +457,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+  background: ${props => props.theme.greyDarkToWhite};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.greenBrightToGreyTint};
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }

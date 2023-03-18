@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const LearningPathsWrapper = styled.div`
     Button:hover {
-  box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+  box-shadow: 0 2px 10px ${props => props.theme.whiteToBlackFive};
     } 
     margin: 3rem 0 4rem;
 
