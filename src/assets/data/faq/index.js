@@ -1,6 +1,11 @@
 
 const data = {
   faqs: [
+
+    //
+    // LAYER5
+    //
+
     {
       question: "Are Layer5's solutions open source?",
       category: "Layer5",
@@ -45,6 +50,9 @@ const data = {
       linktext: "Layer5 Slack",
     },
 
+    //
+    // SERVICE MESH
+    //
 
     {
       question: "What value does a service mesh provide?",
@@ -149,6 +157,11 @@ const data = {
       link: "/deploy-service-mesh",
       linktext: "Factors When considering how strongly you need a service mesh",
     },
+
+    //
+    // MESHERY
+    //
+
     {
       question: "Is Meshery a service mesh?",
       category: "Meshery",
@@ -197,10 +210,55 @@ const data = {
       question: "Is Meshery open source?",
       category: "Meshery",
       answer: [
-        "Yes, all of Layer5's projects are licensed under Apache v2, including Meshery.",
+        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
         "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
       ],
     },
+    {
+      question: "Can I deploy Meshery / MeshMap on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+      ],
+    },
+    {
+      question: "Where is Meshery Cloud hosted; where is my data stored?",
+      category: "Meshery",
+      answer: [
+        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+    },
+    {
+      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+
+      ],
+    },
+    {
+      question: "What is the difference between MeshMap<sup>BETA</sup>&nbsp;and the Cloud Native Playground?",
+      category: "Meshery",
+      answer: [
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+      ],
+    },    
+    {
+      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
+      category: "Meshery",
+      answer: [
+        "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
+      ],
+    },    
+    
+    //
+    // CAREERS / INTERNSHIPS
+    //
+
     {
       question: "How do I land an internship with Layer5?",
       category: "internships",
@@ -240,6 +298,10 @@ const data = {
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
     },
+
+    //
+    // PRICING
+    //
 
     {
       question: "How can I upgrade, downgrade, or cancel my plan?",
@@ -282,9 +344,21 @@ const data = {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ",
+        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
       ],
     },
+    {
+      question: "Do you have special pricing for open source / non-profit projects?",
+      category: "Pricing",
+      answer: [
+        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+      ],
+    },
+
+    //
+    // BILLING
+    //
+
     {
       question: "What payment methods do you support?",
       category: "Billing",
@@ -324,6 +398,10 @@ const data = {
       ],
     },
 
+    //
+    // INTEGRATIONS
+    //
+
     {
       question: "How do Meshery Extension Points work?",
       category: "Meshery Integrations",
@@ -353,9 +431,12 @@ const data = {
         "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
       ],
     },
+
+    //
+    // OTHER
+    //
+
   ],
 };
 export default data;
-
-
 

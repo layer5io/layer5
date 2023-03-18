@@ -23,7 +23,7 @@ const SignupForm = () => {
                 <p>Help choose the best logo for MeshMap:</p>
                 <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
                   <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
-                <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p>
+                <p><b><a className="vote-design" target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></b></p>
               </div>
             </Col>
 
