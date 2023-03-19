@@ -3,7 +3,7 @@ import styled from "styled-components";
 const VisualizerFeaturesWrapper = styled.section`
   margin-top: 1rem;
 
-  .visualizer-container {
+  .visualizer-trigger-container{
     padding: 0;
   }
 
@@ -49,6 +49,9 @@ const VisualizerFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
+    margin-top:auto;
+    margin-bottom:auto;
+    height:100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -78,7 +81,7 @@ const VisualizerFeaturesWrapper = styled.section`
       }
     }
   }
-  .features {
+  .visualizer-features {
     z-index: 1;
     & > li {
       list-style: none;
