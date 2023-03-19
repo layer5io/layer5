@@ -21,7 +21,7 @@ const MeshmapWrapper = styled.div`
     margin-top: 3rem;
 
       .desc-text {
-        padding: 1.56rem;
+        padding: 0 1rem 0 1rem;
         h1{
             font-weight: 600;
         }
@@ -31,6 +31,7 @@ const MeshmapWrapper = styled.div`
         .heading-2 {
             font-weight: 700;
             color: ${props => props.theme.secondaryColor};
+            background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
         }
         .desc-p {
 
@@ -42,7 +43,9 @@ const MeshmapWrapper = styled.div`
   .para {
       padding-top: 6rem;
   }
-
+  .vote-design {
+    background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+  }
   .modes-image{
     margin: 0 0 2rem;
   }

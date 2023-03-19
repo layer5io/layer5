@@ -54,6 +54,25 @@ const AboutSectionWrapper = styled.section`
     font-weight: 400;
     margin-bottom: 28px;
   }
+  p.section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0rem;
+  }
+  .head-images-meet {
+    text-align: center;
+  }
+  .colab {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .country {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: normal;
+    margin: 0;
+  }
   .aboutus-title {
     
     h2 {
@@ -108,10 +127,12 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title{
     #contact{
-      color:white;
-      :hover{
-        color:black;
-      }
+      background: ${props => props.theme.highlightColor}; 
+
+      &:hover {
+            background: ${props => props.theme.highlightLightColor}; 
+            box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+        }
     }
   }
   #mapBack {

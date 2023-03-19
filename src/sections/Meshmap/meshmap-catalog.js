@@ -47,16 +47,19 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
 .text {
   flex: 1;
-  padding: 0em 3em 1em 0em;
+  padding: 0 3rem 1rem 0;
   width: 100%;
 
   @media (max-width: 1200px) {
-    padding: 0em 2.5em 1em 0em;
+    padding: 0 2.5rem 1rem 0;
   }
 
   @media (max-width: 992px) {
-    padding: 0em 1.5em 1em 0em;
+    padding: 0 1.5rem 1rem 0;
+  }
 
+  @media (max-width: 468px) {
+    padding: 0.5rem;
   }
 }
 
@@ -87,7 +90,9 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
       text-align: center;
     }
   }
-
+.toCatalog {
+  background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+}
 .svg-cont{
   display:grid;
   place-items: center;
@@ -117,6 +122,10 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     justify-content: space-between;
     padding: 7px;
   }
+
+  @media (max-width: 468px) {
+      max-height: 300px;
+    }
 }
 
 
@@ -182,7 +191,6 @@ h3.containerCaption {
   flex: 1;
   width: 100%;
 }
-
 
 .container{
 	margin: 4rem auto;
@@ -405,7 +413,7 @@ const Catalog = () => {
             <p className="caption">
               Turbo-charge your infrastructure with power-ups from the{" "}
               <b>
-                <a href="https://meshery.io/catalog">cloud native catalog</a>
+                <a className="toCatalog" href="https://meshery.io/catalog">cloud native catalog</a>
               </b>
             </p>
           </div>
@@ -414,7 +422,7 @@ const Catalog = () => {
           <section className="services svg-cont">
             <div>
               <img src={Patterns} />
-              <p>Service Patterns</p>
+              <p>Cloud Native Patterns</p>
             </div>
             <div>
               <img src={Ebpf} />

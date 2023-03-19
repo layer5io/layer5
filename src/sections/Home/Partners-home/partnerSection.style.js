@@ -5,7 +5,7 @@ const PartnerItemWrapper = styled.section`
     overflow: hidden;
     .section-title{
         h4{
-            color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
+            color: ${props => props.theme.DarkTheme ? "#737373" : "#4c4a4a"};
             text-align: center;
             margin-top: .5rem;
         }
@@ -22,6 +22,15 @@ const PartnerItemWrapper = styled.section`
             flex-wrap: wrap;
         }
     }
+		.slick-dots li button:before{
+			color: ${props => props.theme.DarkTheme ? "#939393" : ""}
+		}
+		.slick-dots li.slick-active button:before {
+				color: ${props => props.theme.DarkTheme ? "white" : ""};
+		}
+		.slick-dots li button:hover{
+				box-shadow: none;
+		}
     a.partner-card {
         @media(max-width: 1400px){
             flex: 0 0 12%;

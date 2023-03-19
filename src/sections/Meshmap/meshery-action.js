@@ -13,7 +13,6 @@ const MesheryWrapper = styled.div`
   width: 50%;
   width: calc(60% + 2rem);
 }
-}
 
 .block--left {
   background-color: BLACK;
