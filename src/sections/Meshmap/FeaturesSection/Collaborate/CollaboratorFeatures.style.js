@@ -16,13 +16,14 @@ const CollaboratorFeaturesWrapper = styled.section`
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    max-height: 600px;
     overflow: scroll;
     overflow-x: hidden;
     ::-webkit-scrollbar {
       display: none;
     }
-
+    @media (min-width: 799px) {
+        max-height: 600px;
+      }
     @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
@@ -139,6 +140,11 @@ const CollaboratorFeaturesWrapper = styled.section`
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: ease-in-out;
   }
+  .hideInMobile{
+    @media (max-width: 799px) {
+      display:none;
+    }
+}
 `;
 
 export default CollaboratorFeaturesWrapper;

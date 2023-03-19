@@ -16,34 +16,37 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
 
 
   useIsomorphicLayoutEffect(() => {
-    const context = gsap.context(() => {
-      const _timeline = gsap.timeline({
-        defaults: {
-          duration: DURATION,
-          ease: "sine.out",
-        },
-        paused: true,
-        scrollTrigger: {
-          trigger,
-          start: "top top+=96px",
-          end: "bottom top",
-          // markers: true,
-          scrub: true,
-          pin: true,
-          toggleActions: "play pause resume reset"
-        },
-      });
+    let mm = gsap.matchMedia();
 
-      _timeline.to(featureContainerName,{
-        yPercent,
-        ease: "power1.inOut",
+    mm.add("(min-width: 800px)", () => {
+      const context = gsap.context(() => {
+        const _timeline = gsap.timeline({
+          defaults: {
+            duration: DURATION,
+            ease: "sine.out",
+          },
+          paused: true,
+          scrollTrigger: {
+            trigger,
+            start: "top top+=96px",
+            end: "bottom top",
+            // markers: true,
+            scrub: true,
+            pin: true,
+            toggleActions: "play pause resume reset"
+          },
+        });
+
+        _timeline.to(featureContainerName,{
+          yPercent,
+          ease: "power1.inOut",
+        });
       });
+      return () => {
+        context.revert();
+      };
+
     });
-
-
-    return () => {
-      context.revert();
-    };
 
   },[]);
 

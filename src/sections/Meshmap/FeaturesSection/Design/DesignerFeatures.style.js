@@ -16,7 +16,6 @@ margin-top: 1rem;
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    max-height: 600px;
     overflow: scroll;
     overflow-x: hidden;
     ::-webkit-scrollbar{
@@ -40,6 +39,10 @@ margin-top: 1rem;
         padding-left: 0;
         margin-left: 0;
       }
+    }
+
+    @media (min-width: 799px) {
+      max-height: 600px;
     }
   }
 
@@ -135,6 +138,11 @@ margin-top: 1rem;
   border-width: 0px 2px 2px 2px;
   box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
   transition: .4s ease-in-out;
+}
+.hideInMobile{
+    @media (max-width: 799px) {
+      display:none;
+    }
 }
 
 `;
