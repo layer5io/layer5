@@ -15,7 +15,7 @@ export const TableWrapper = styled.div`
 			padding: 0.3rem;
 			height: 4rem;
 			color: ${props => props.theme.text};
-			background-color: ${props => props.theme.DarkTheme ? "rgb(21, 21, 21, 0.1)" : "rgb(255, 255, 255, 0.1)"};
+			background-color: ${props => props.theme.grey151515OneToWhiteOne};
 			text-align: center;
 			font-size: 0.9rem;
 			line-height: .9rem;
@@ -33,7 +33,7 @@ export const TableWrapper = styled.div`
 			}
 		}
 		th {
-			background-color: ${props => props.theme.DarkTheme ? "rgb(14 14 14)" : "#3c494f"};
+			background-color: ${props => props.theme.grey0E0E0EToGreen3C494F};
 			color: ${props => props.theme.white};
 			height: 4rem;
 			font-weight: 600;
@@ -54,7 +54,7 @@ export const TableWrapper = styled.div`
 				background: ${props => props.theme.saffronLightColor};
 			}
 			&:hover {
-				background-color: ${props => props.theme.DarkTheme ? "rgb(50 50 50)" : "#F3FFFD"};
+				background-color: ${props => props.theme.grey323232ToGreenF3FFFD};
 				border-color:  ${props => props.theme.shadowColor};
 			}
 		}

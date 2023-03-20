@@ -109,7 +109,7 @@ const NavigationWrap = styled.header`
     position: absolute;
     background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};
+    border: 1px solid ${props => props.theme.grey141414ToGreyF5F5F5};
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -145,7 +145,7 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
-      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
+      background: ${props => props.theme.grey141414ToGreyFAFAFA};
       display: flex;
       flex-direction: column;
       position: relative;
@@ -189,7 +189,7 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"};
+      border-left: 2px solid ${props => props.theme.grey3C3C3CToGreyF1F1F1};
       padding-top: 1em;
       padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
@@ -413,7 +413,7 @@ const NavigationWrap = styled.header`
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
+      background: ${props => props.theme.grey141414ToGreyFAFAFA};
       border-radius: 10px;
       box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
       max-height: 400px;

@@ -138,7 +138,7 @@ p{
   .partners-card {
     display: block;
     width: max-content;
-    background:  ${props => props.theme.DarkTheme ? "rgba(5, 5, 5, 1)" : "rgba(241, 242, 241, 1)"};
+    background:  ${props => props.theme.grey050505ToGreyF1F2F1};
 
     border-radius: 1rem;
     text-align: center;

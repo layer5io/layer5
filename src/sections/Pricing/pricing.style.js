@@ -141,13 +141,13 @@ const PricingWrapper = styled.section`
 
     h2 {
       margin-top: 1rem;
-      color: ${props => props.theme.DarkTheme ? "rgb(220, 220, 220)" : "#3b3b3b"};
+      color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
       font-size: 24px;
       font-weight: 500;
     }
 
     .byline {
-      color: ${props => props.theme.DarkTheme ? "rgb(200, 200, 200)" : props.theme.primaryLightColor};
+      color: ${props => props.theme.greyC8C8C8ToGreen3C494F};
       font-size: 16px;
       font-weight: 400;
     }

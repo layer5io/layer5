@@ -140,7 +140,7 @@ export const LandscapePageWrapper = styled.div`
 		font-size: 1rem;
 		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		font-weight: 400;
-		color: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" : "rgb(160, 160, 160)"};
+		color: ${props => props.theme.grey8C8C8CToGreyA0A0A0};
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
