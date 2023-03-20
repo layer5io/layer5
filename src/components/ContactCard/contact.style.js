@@ -18,9 +18,9 @@ const ContactWrapper = styled.section`
     }
     form{
         text-align: center;
-        background: ${props => props.theme.DarkTheme ? "rgb(33, 33, 33)" : "linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%)"};
+        background: ${props => props.theme.grey212121ToLinear};
         border-radius: 10px 10px 0px 0px;
-        box-shadow: ${props => props.theme.DarkTheme ? "rgb(0 211 169) 0px 0px 10px" : "rgba(0, 0, 0, 0.25) 0px 0px 10px"};
+        box-shadow: ${props => props.theme.boxShadowGreenBrightToBlackTwoFive};
         padding: 25px;
         border-radius: 10px;
     }

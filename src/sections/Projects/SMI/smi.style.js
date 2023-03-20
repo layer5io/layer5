@@ -104,7 +104,7 @@ const SMIWrapper = styled.section`
         width: 90%;
         max-width: 73.75rem;
         margin: 20rem auto 0 auto;
-        background-color: ${props => props.theme.DarkTheme ? "rgb(20 23 20)" : "#EBFCF8"};
+        background-color: ${props => props.theme.grey141714ToGreenEBFCF8};
         position: absolute;
         z-index: 1;
         left: 0;
