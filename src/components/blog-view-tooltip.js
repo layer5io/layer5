@@ -19,7 +19,7 @@ export const ToolTipWrapper = styled.div`
     a {
         padding: 5px;
         color: ${props => props.theme.keppletColor};
-        background-color: ${props => props.theme.greyDarkToWhite};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border: 1.5px solid ${props => props.theme.keppletColor};
         &:hover{
             background-color: ${props => props.theme.primaryColor};

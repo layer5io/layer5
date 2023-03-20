@@ -3,9 +3,9 @@ import styled from "styled-components";
 const ChapterCardWrapper = styled.div`
   padding: 1rem 1.25rem;
   margin: 2rem 0;
-  background-color: ${props => props.theme.greyDarkToGreyTint};
+  background-color: ${props => props.theme.DarkTheme ? "#111111" : "#fafafa"};
   display: flex;
-  border: 1px solid ${props => props.theme.whiteToBlackOne};
+  border: 1px solid ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.3)" : "rgba(0 ,0 ,0 ,0.1)"};
   justify-content: space-between;
   :hover {
     border: 1px solid ${props => props.theme.secondaryColor};;
@@ -21,7 +21,7 @@ const ChapterCardWrapper = styled.div`
     .chapter-number {
       font-size: 2rem;
       margin: 0 2rem 0 1rem;
-      color:  ${props => props.theme.whiteToBlackFive};
+      color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.6)" : "rgba(0 ,0 ,0 ,0.6)"};
       align-self: center;
     }
 
@@ -31,7 +31,7 @@ const ChapterCardWrapper = styled.div`
       }
       p {
           margin: 0.35rem 0;
-          color:  ${props => props.theme.whiteToBlackFive};
+          color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.6)" : "rgba(0 ,0 ,0 ,0.6)"};
       }
 
       @media screen and (max-width: 650px) {

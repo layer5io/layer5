@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const InternshipSectionWrapper = styled.div`
 p{
-  color: ${props => props.theme.whiteToBlack};
+  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
 
 }
   h1 {
@@ -46,7 +46,7 @@ p{
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
-    background:  ${props => props.theme.greyDarkToGreyTint};
+    background:  ${props => props.theme.DarkTheme ? "#212121" : "rgba(245, 245, 245, 1)"};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
     transition: all 0.2s;
@@ -65,7 +65,7 @@ p{
     }
     p {
       margin: 0.5rem 0;
-      color: ${props => props.theme.whiteToBlackSeven};
+      color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)"};
 
       transition: transform 0.7s ease-in-out;
     }

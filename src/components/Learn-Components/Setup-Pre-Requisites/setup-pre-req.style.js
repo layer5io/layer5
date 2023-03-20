@@ -16,7 +16,7 @@ const SetupPreReqWrapper = styled.div`
         }
         .card {
             padding: 2rem;
-            background: ${props => props.theme.greyDarkToGreyTint};
+            background: ${props => props.theme.DarkTheme ? "#212121" : "#eee"};
             max-width: 20rem;
             min-height: 21.5rem;
             .card-header {

@@ -1,3 +1,4 @@
+
 const lighttheme = {
   black: "#000000",
   white: "#ffffff",
@@ -40,7 +41,7 @@ const lighttheme = {
 
   // light slate gray (medium gray)
   textColor: "#000000",
-  shadowColor: "rgb(0 0 0 0.05)",
+  shadowColor: "rgba(0, 0, 0, 0.05)",
 
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
@@ -77,38 +78,6 @@ const lighttheme = {
   //selection color(used when text is selected)
   selectionColor: "#3c494f",
 
-  //color transition pairings for dark/light theme switch
-  //naming convention is darktheme color first and lighttheme color second
-  //example: if you want the color to go from white in darktheme to green in lighttheme, choose the color pairing "whiteToGreen" and it would go in your styled component as: "color: ${(props) => props.theme.whiteToGreen}"
-
-  blackToWhite: "#FFFFFF",
-  blackToWhiteFive: "rgb(255 255 255 0.5)",
-  blackToWhiteOne: "rgb(255 255 255 0.1)",
-  blackToWhiteSeven: "rgb(255 255 255 0.7)",
-  greenBrightToGreen: "#00B39F",
-  greenBrightToGreyTint: "#F0F0F0",
-  greenToBlack: "#000000",
-  greenToGreenDark: "#3C494F",
-  greenToGreenFive: "rgb(0 179 159 0.5)",
-  greyDarkShades: "#1E2117",
-  greyDarkToBlack: "#000000",
-  greyDarkToGreen: "#00B39F",
-  greyDarkToGreyLight: "#B3B3B3",
-  greyDarkToGreyTint: "#F0F0F0",
-  greyDarkToWhite: "#FFFFFF",
-  greyLightToGrey: "#737373",
-  greyTintToGreenDark: "#3C494F",
-  greyTintToGrey: "#737373",
-  greyToGreyDark: "#404040",
-  greyToGreyLight: "#B3B3B3",
-  whiteToBlack: "#000000",
-  whiteToBlackFive: "rgb(0 0 0 0.5)",
-  whiteToBlackOne: "rgb(0 0 0 0.1)",
-  whiteToBlackSeven: "rgb(0 0 0 0.7)",
-  whiteToGreenDark: "#3C494F",
-  whiteToGrey: "#737373",
-  whiteToGreyLight: "#B3B3B3",
-
   //DarkTheme
   DarkTheme: false,
 
@@ -118,7 +87,7 @@ export const darktheme = {
   white: "#ffffff",
   offWhiteColor: "#FAFAFA",
   navigatorColor: "#000000",
-  body: "#212121",
+  body: "#121212",
   textRevert: "#000000",
   text: "#ffffff",
   bodyRevert: "#ffffff",
@@ -139,7 +108,7 @@ export const darktheme = {
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
-  secondaryLightColorTwo: "#212121",
+  secondaryLightColorTwo: "#121212",
 
   // lighter gray
   secondaryLightColor: "#000000",
@@ -196,38 +165,6 @@ export const darktheme = {
 
   //Active color (when a button is active)
   activeColor: "#3c494f",
-
-  //color transition pairings for dark/light theme switch
-  //naming convention is darktheme color first and lighttheme color second
-  //example: if you want the color to go from white in darktheme to green in lighttheme, choose the color pairing "whiteToGreen" and it would go in your styled component as: "color: ${(props) => props.theme.whiteToGreen}"
-
-  blackToWhite: "#000000",
-  blackToWhiteFive: "rgb(0 0 0 0.5)",
-  blackToWhiteOne: "rgb(0 0 0 0.1)",
-  blackToWhiteSeven: "rgb(0 0 0 0.7)",
-  greenBrightToGreen: "#00D3A9",
-  greenBrightToGreyTint: "#00D3A9",
-  greenToBlack: "#00B39F",
-  greenToGreenDark: "#00B39F",
-  greenToGreenFive: "#00D3A9",
-  greyDarkShades: "#404040",
-  greyDarkToBlack: "#404040",
-  greyDarkToGreen: "#404040",
-  greyDarkToGreyLight: "#404040",
-  greyDarkToGreyTint: "#404040",
-  greyDarkToWhite: "#404040",
-  greyLightToGrey: "#B3B3B3",
-  greyTintToGreenDark: "#F0F0F0",
-  greyTintToGrey: "#F0F0F0",
-  greyToGreyDark: "#737373",
-  greyToGreyLight: "#737373",
-  whiteToBlack: "#FFFFFF",
-  whiteToBlackFive: "rgb(255 255 255 0.5)",
-  whiteToBlackOne: "rgb(255 255 255 0.1)",
-  whiteToBlackSeven: "rgb(255 255 255 0.7)",
-  whiteToGreenDark: "#FFFFFF",
-  whiteToGrey: "#FFFFFF",
-  whiteToGreyLight: "#FFFFFF",
 
   //DarkTheme
   DarkTheme: true,

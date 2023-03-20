@@ -53,7 +53,7 @@ const MesheryOperatorWrapper = styled.section`
             fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
           }
           path {
-            stroke: ${props => props.theme.greenBrightToGreen};
+            stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
           }
         .iframe-div{
             height: 450px;
@@ -169,7 +169,7 @@ const MesheryOperatorWrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background: ${props => props.theme.greyDarkToWhite};
+                background: ${props => props.theme.DarkTheme ? "#212121" : "white"};
                 border-radius: 25px;
                 p {
                     text-align: left;

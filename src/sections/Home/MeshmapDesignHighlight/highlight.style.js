@@ -64,7 +64,7 @@ const DesignDefaultWrapper = styled.section`
         color: ${props => props.theme.primaryColor};
     }
     .description a {
-        color: #FFFFFF;
+        color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
         font-style: italic;
         :hover {
             cursor: hand;
