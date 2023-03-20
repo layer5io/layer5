@@ -23,7 +23,7 @@ const ViewsSectionWrapper = styled.div`
     justify-content: space-evenly;
     align-items: center;
     padding: 4% 5% 3%;
-    box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00b3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"};
+    box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00d3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"};
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -37,6 +37,8 @@ const ViewsSectionWrapper = styled.div`
         padding-bottom: 3rem;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
+          justify-content: center;
+          text-align: center;
         }
     }
 
@@ -44,12 +46,17 @@ const ViewsSectionWrapper = styled.div`
         /* max-width: 90%; */
         padding-bottom: 5%;
         span {
+          @media only screen and (min-width: 1200px) {
             font-size: 4.5rem;
         }
+      }
     }
 
     h4 {
         max-width: 90%;
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
+          }
     }
 
     .hero-image {
