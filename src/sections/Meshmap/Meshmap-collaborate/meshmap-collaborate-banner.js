@@ -27,6 +27,7 @@ const CollaborationBannerWrapper = styled.div`
         /* background-color: ${props => props.theme.grey121212ToWhite}; */
         max-width: 1920px;
         width: 100%;
+        height: fit-content;
         justify-content: space-evenly;
         align-items: center;
         padding: 4% 5% 6%;
@@ -44,7 +45,7 @@ const CollaborationBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
-        padding-top: 5%;
+        padding-top: 2%;
     }
 
     h1 {
@@ -78,10 +79,17 @@ const CollaborationBannerWrapper = styled.div`
 
     h4 {
         padding: 3% 0%;
-        color: #A0AAAA;
+        color: ${props => props.theme.DarkTheme ? "#A0AAAA" : "#666666"};
         /* font-size: 20px; */
         max-width: 40%;
-        font-weight: bold;
+        /* font-weight: bold; */
+        @media only screen and (max-width: 500px) {
+            font-size: 1rem;
+            max-width: 100%;
+        }
+        @media only screen and (max-width: 767px) {
+            max-width: 100%;
+        }
     }
 
     h5 {
@@ -116,7 +124,7 @@ const CollaborationBannerWrapper = styled.div`
 
     .supporting-arrows-transition {
         opacity: 1;
-        transition: 0.5s ease-out 2s ;
+        transition: 0.5s ease-out 1s ;
     }
 
     .ingress-gateway {
@@ -126,7 +134,7 @@ const CollaborationBannerWrapper = styled.div`
     .ingress-gateway-transition {
         transform: translateX(40%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .kubernetes {
@@ -136,7 +144,7 @@ const CollaborationBannerWrapper = styled.div`
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
         scale: 1;
-        transition: 1s;
+        transition: 0.75s;
     }
 
     .pod {
@@ -146,7 +154,7 @@ const CollaborationBannerWrapper = styled.div`
     .pod-transition {
         transform: translateX(-40%) translateY(-30%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .prometheus {
@@ -156,7 +164,7 @@ const CollaborationBannerWrapper = styled.div`
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
         scale: 1;
-        transition: 2s;
+        transition: 1.25s;
     }
 
     .service-interface {

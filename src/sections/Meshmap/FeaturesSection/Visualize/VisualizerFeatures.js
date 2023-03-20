@@ -12,11 +12,11 @@ export default function VisualizerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".test-container2",featureContainerName: ".visualizer-features",yPercent: -400 });
+  useGsapTimeline({ trigger: ".visualizer-trigger-container",featureContainerName: ".visualizer-features",yPercent: -100 });
 
   return (
     <VisualizerFeaturesWrapper>
-      <Container className="visualizer-container">
+      <Container className="visualizer-trigger-container">
         <div className="root test-container2">
           <div id="featureHeading" className="fixed">
             <h1>Visualize</h1>
@@ -25,9 +25,9 @@ export default function VisualizerFeatures({ features }) {
             <div className="diagram scroll">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
             </div>
-            <ul className="features visualizer-features">
+            <ul className="visualizer-features">
               {features.map((feature, index) => (
-                <li key={index}>
+                <li className="visualizer-feature-slide" key={index}>
                   <Feature
                     {...feature}
                     onInViewStatusChanged={(state) => {
