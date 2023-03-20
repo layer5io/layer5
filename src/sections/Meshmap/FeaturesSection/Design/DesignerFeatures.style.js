@@ -49,6 +49,9 @@ margin-top: 1rem;
     position: sticky;
     top: 0;
     z-index: 0;
+    margin-top:auto;
+    margin-bottom:auto;
+    height:100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -67,6 +70,7 @@ margin-top: 1rem;
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
+      background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
 
       @media (max-width: 767px) {
       font-size: 1.75rem;

@@ -39,7 +39,7 @@ margin: 1rem;
 .form-title {
     padding: 1rem;
     text-align: center;
-    background-color: ${props => props.theme.secondaryColor};
+    background: linear-gradient(123deg, ${props => props.theme.secondaryColor} 60%, ${props => props.theme.secondaryColor} 100%);
     color: white;
   }
 
@@ -145,6 +145,8 @@ margin: 1rem;
         margin: 1.9rem auto;
         display: block;
         width: auto;
+        font-weight: 510;
+        background: linear-gradient(123deg, ${props => props.theme.secondaryColor} 60%, ${props => props.theme.secondaryColor} 100%);
       }
 
 }
