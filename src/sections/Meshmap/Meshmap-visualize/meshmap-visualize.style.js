@@ -10,7 +10,6 @@ const MeshmapVisualizeWrapper = styled.div`
   .background-image {
     position: absolute;
     top: 0%;
-    scale: 1.4;
     left: 10%;
     z-index: 0;
     transform: rotateZ(5deg);

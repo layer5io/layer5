@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import BannerImage from "./images/oval-blur-shape.svg";
+import BannerImage from "./images/banner-image.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
@@ -21,10 +21,11 @@ const VisualizeBannerWrapper = styled.div`
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;
-        justify-content: space-evenly;
+        max-height: 50rem;
+        /* justify-content: space-evenly; */
         align-items: center;
         padding: 4% 5% 6%;
-        box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00b3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"};
+        /* box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00b3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"}; */
         /* transform: rotateX(40deg); */
 
         /* @media only screen and (max-width: 500px) {
@@ -41,15 +42,6 @@ const VisualizeBannerWrapper = styled.div`
         align-items: center;
         z-index: 1;
         padding-top: 5%;
-    }
-
-    .banner-image {
-        z-index: 0;
-        position: sticky;
-        width: 100%;
-        scale: 1.2;
-        top: -10%;
-        left: 0%;
     }
 
     h1 {
@@ -79,6 +71,11 @@ const VisualizeBannerWrapper = styled.div`
         /* font-size: 20px; */
         max-width: 50%;
         font-weight: bold;
+
+        @media only screen and (max-width: 500px) {
+            font-size: 1.1rem;
+        }
+
     }
 
     h5 {
@@ -89,15 +86,26 @@ const VisualizeBannerWrapper = styled.div`
         padding-top: 2rem;
     }
 
+    .banner-image {
+      padding: 5%;
+    }
+    img {
+        position: relative;
+        z-index: 0;
+        opacity: 0.4;
+        filter: blur(1px);
+        box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 3rem #00d3a9" : "-0.25rem 0.25rem 3rem #00d3a9"};
+
+    }
 `;
 
 const MeshmapVisualizeBanner = ({ theme }) => {
-//   const [transitionRef, inView] = useInView({ threshold: 0.7 });
-//   const [imageInView, setimageInView] = useState(false);
-//   if (inView && !imageInView)
-//     setimageInView(true);
-//   else if (imageInView && !inView)
-//     setimageInView(false);
+  //   const [transitionRef, inView] = useInView({ threshold: 0.7 });
+  //   const [imageInView, setimageInView] = useState(false);
+  //   if (inView && !imageInView)
+  //     setimageInView(true);
+  //   else if (imageInView && !inView)
+  //     setimageInView(false);
 
   return (
     <VisualizeBannerWrapper>
@@ -110,15 +118,9 @@ const MeshmapVisualizeBanner = ({ theme }) => {
           <h4>See your designs in action. Operate with best practices.</h4>
           <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
         </div>
-        {/* <div className="transition-container" ref={transitionRef}>
-          <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
-          <img className="service-interface" src={ServiceIntefaceImage} alt="" />
-          <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={IngressGatewayImage} alt="" />
-          <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={KubernetesImage} alt="" />
-          <img className={imageInView ? "pod-transition pod" : "pod"} src={PodImage} alt="" />
-          <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={PrometheusImage} alt="" />
-          <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
-        </div> */}
+        <div className="banner-image">
+          <img src={BannerImage} alt="" />
+        </div>
       </div>
     </VisualizeBannerWrapper>
   );
