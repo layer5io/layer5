@@ -9,7 +9,7 @@ import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 
 import FeaturesTable from "./Features-Col";
 
-import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
+import mesheryDemo from "../../assets/video/meshery/meshery-demo.webm";
 import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 
 import MesheryWrapper from "./meshery.style";
@@ -39,7 +39,7 @@ const MesheryPage = () => {
               </Col>
               <Col lg={6} md={6} className="meshery-hero-img">
                 <video autoPlay muted loop controls className="meshery-video">
-                  <source src={mesheryDemo} type="video/mp4" />
+                  <source src={mesheryDemo} type="video/webm" />
                 </video>
                 {/* <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" /> */}
               </Col>
