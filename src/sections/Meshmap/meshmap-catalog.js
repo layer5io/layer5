@@ -177,7 +177,7 @@ h3.containerCaption {
     margin: auto;
     height: 20rem;
     width: 0px;
-    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+    border: 1.5px solid ${(props) => props.theme.green00B39FToGreyB3B3B3};
 
     @media (max-width: 468px) {
       display: none;
