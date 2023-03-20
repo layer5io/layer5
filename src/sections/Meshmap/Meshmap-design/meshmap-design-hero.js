@@ -43,6 +43,11 @@ const HeroSectionWrapper = styled.div`
           max-width: 100%;
         }
 
+        .locator {
+            /* transform: translateY(-5rem); */
+            transition: 1s;
+            z-index: 1;
+        }
         .locator-moving {
             transform: translateY(5rem);
             transition: 1s;
@@ -51,11 +56,12 @@ const HeroSectionWrapper = styled.div`
 
         .map {
             opacity: 0;
+            transition: opacity ease 0.5s;
             z-index: 0;
         }
         .map-visible {
             opacity: 1;
-            transition: opacity 1.5s ease 0.5s;
+            transition: opacity 1s ease 0.5s;
         }
 
     }
@@ -66,13 +72,13 @@ const MeshmapHeroSection = ({ theme }) => {
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
-  // else if (!inView && imageInView)
-  // setimageInView(false);
+  else if (imageInView && !inView)
+    setimageInView(false);
 
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : ""} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
+        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
         <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" />
       </div>
       <div className="hero-text">

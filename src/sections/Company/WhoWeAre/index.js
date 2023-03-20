@@ -16,10 +16,10 @@ const WhoWeAre = () => {
               leftAlign={false}
               UniWidth="100%"
             >
-              <h3>Who Are We?</h3>
+              <p className="demo-2">Who Are We?</p>
               <h1>Industry stewards</h1>
               {/* <h2>Open standards creators</h2> */}
-              <h4>Recognized Cloud Native leaders. Service mesh authorities.</h4>
+              <p className="demo">Recognized Cloud Native leaders. Service mesh authorities.</p>
             </SectionTitle>
           </Col>
         </Row>
@@ -29,25 +29,25 @@ const WhoWeAre = () => {
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Cloud Native Leaders" />
-            <h4>Cloud Native Leaders</h4>
+            <p>Cloud Native Leaders</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Meshery" />
-            <h4>CNCF TOC Contributors</h4>
+            <p>CNCF TOC Contributors</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Docker Captain" />
-            <h4>Docker Captains</h4>
+            <p>Docker Captains</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Linkerd" />
-            <h4>Cloud Native Ambassadors</h4>
+            <p>Cloud Native Ambassadors</p>
           </div>
         </Col>
       </Row>
@@ -55,7 +55,7 @@ const WhoWeAre = () => {
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Service Mesh Interface Maintainers" />
-            <h4>Service Mesh Interface Maintainers</h4>
+            <p>Service Mesh Interface Maintainers</p>
           </div>
         </Col>
         {/* </Row>
@@ -63,19 +63,19 @@ const WhoWeAre = () => {
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Service Mesh Performance Maintainers" />
-            <h4>Service Mesh Performance Maintainers</h4>
+            <p>Service Mesh Performance Maintainers</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Service Mesh Authors and Trainers" />
-            <h4>Service Mesh Authors</h4>
+            <p>Service Mesh Authors</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Meshery Creators" />
-            <h4>Meshery Creators</h4>
+            <p>Meshery Creators</p>
           </div>
         </Col>
       </Row>
@@ -83,19 +83,19 @@ const WhoWeAre = () => {
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="CNCF Service Mesh Working Group" />
-            <h4>CNCF Service Mesh Working Group Chairs</h4>
+            <p>CNCF Service Mesh Working Group Chairs</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Service Mesh Authors and Trainers" />
-            <h4>Service Mesh Trainers</h4>
+            <p>Service Mesh Trainers</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="CNCF Special Interest Group Network Chair" />
-            <h4>CNCF Special Interest Group Network Chairs</h4>
+            <p>CNCF Special Interest Group Network Chairs</p>
           </div>
         </Col>
       </Row>

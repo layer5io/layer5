@@ -53,6 +53,7 @@ const Pricing = () => {
               <Col lg={4} md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                   {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
+                  <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
                   <h2>{x.tier}</h2>
                   <h5 className="byline">{x.byline}</h5>
                   <div className="pricing-features">
@@ -66,7 +67,6 @@ const Pricing = () => {
                     <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>
                     <span className="after">/user{monthly? "/month" : "/year"}</span>
                   </div> */}
-
                   <Button primary className={x.button[0] === "Coming Soon" ? "price-button-disabled" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>

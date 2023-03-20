@@ -19,7 +19,7 @@ export default function Feature({
     <FeatureWrapper>
       <div className="root">
         <div ref={ref} className="text" id = {inView ? "inView" : "notInView"}>
-          <h3>{title}</h3>
+          <h2>{title}</h2>
           <hr />
           <p>{description}</p>
         </div>

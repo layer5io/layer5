@@ -12,12 +12,12 @@ export default function DesignerFeatures({ features, theme }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".test-container",featureContainerName: ".design-features",yPercent: -400 });
+  useGsapTimeline({ trigger: ".design-trigger-container",featureContainerName: ".design-features",yPercent: -300 });
 
   return (
     <DesignerFeaturesWrapper>
       <Container className="designer-container">
-        <div className="root test-container">
+        <div className="root design-trigger-container">
           <div id="featureHeading" className="fixed" >
             <h1>Design</h1>
           </div>
@@ -27,7 +27,7 @@ export default function DesignerFeatures({ features, theme }) {
             </div>
             <ul  className="features design-features">
               {features.map((feature, index) => (
-                <li key={index}>
+                <li className="design-feature-slide" key={index}>
                   <Feature
                     {...feature}
                     onInViewStatusChanged={(state) => {

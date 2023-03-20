@@ -54,6 +54,25 @@ const AboutSectionWrapper = styled.section`
     font-weight: 400;
     margin-bottom: 28px;
   }
+  p.section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0rem;
+  }
+  .head-images-meet {
+    text-align: center;
+  }
+  .colab {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .country {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: normal;
+    margin: 0;
+  }
   .aboutus-title {
     
     h2 {

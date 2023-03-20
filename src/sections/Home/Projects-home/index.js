@@ -46,7 +46,7 @@ const Projects = () => {
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "100%", height: "100%" }} />
                   <h3>MeshMap</h3>
-                  <p>Visual Infrastructure Management</p>
+                  <p>Collaborative Infrastructure Management</p>
                 </div>
               </Link>
             </Col>

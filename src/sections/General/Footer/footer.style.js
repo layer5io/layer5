@@ -102,7 +102,12 @@ const FooterWrapper = styled.section`
 
 		button {
 			height: 3.5rem;
-			color: black;
+			color: white;
+			background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
+			:hover{
+                color: white;
+                box-shadow: white 0px 2px 10px;
+			}
 		}
 	}
 
@@ -174,7 +179,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 8rem;
-				color: black;
+				color: white;
 			}
 		}
 	}
@@ -222,7 +227,7 @@ const FooterWrapper = styled.section`
 
 			button {
 				min-width: 6rem;
-				color: black;
+				color: white;
 			}
 		}
 	}
