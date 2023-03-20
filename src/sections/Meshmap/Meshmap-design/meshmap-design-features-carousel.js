@@ -26,10 +26,11 @@ const CONTENT = [
 ];
 
 const DivWrapper = styled.div`
-  // max-width: 80%;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
   margin: auto;
-  padding-block: 8%;
+  padding-block: 8% 12%;
   display: flex;
   font-size: 1.125rem;
   justify-content: space-between;

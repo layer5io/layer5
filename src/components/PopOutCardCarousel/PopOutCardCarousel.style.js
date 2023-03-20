@@ -40,7 +40,7 @@ const PopOutCardWrapper = styled.div`
   //dynamic css
   ${(props) => css`
     z-index: ${100 - props.index};
-    ${props.index % 2 ? "background: #00B39F;" : ""}
+    ${props.index % 2 ? "" : "background: #00B39F;"}
     // ${props.index % 2 ? "" : "background: #00B39F;"}
     transform: rotateZ(${-4 - 6 * props.index}deg) translate(-${props.index *
     36}px, ${props.index * 5}px);
