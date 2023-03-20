@@ -6,12 +6,15 @@ import CollaborationFeature3 from "./collaboration-feature-work";
 import DesignDefault from "../../Home/MeshmapDesignHighlight";
 import MeshmapSignupForm from "./../meshmap-signup-form";
 import Reviews from "../../Pricing/review-slider";
+import CollaborationFeatureCreate from "./collaboration-feature-create";
+
 
 const MeshmapDesign = ({ theme }) => {
   return (
     <MeshmapCollaborateWrapper>
       <MeshmapCollaborateBanner theme={theme} />
       <CollaborationFeature1 />
+      <CollaborationFeatureCreate/>
       <CollaborationFeature3 />
       <MeshmapSignupForm />
       <Reviews />
