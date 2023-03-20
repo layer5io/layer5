@@ -51,7 +51,7 @@ const FeaturesSectionWrapper = styled.section`
 		transform: skew(0deg, 6deg);
 		padding: 0 1rem 3rem;
 		text-align: center;
-		h1, h2, p {
+		h1, h2, h3, p {
 			color: white;
 		}
 	}
