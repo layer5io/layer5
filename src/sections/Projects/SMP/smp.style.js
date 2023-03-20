@@ -141,7 +141,7 @@ const SMPWrapper = styled.section`
         }
     }
     rect {
-        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#FFF7D8"};  
+        fill:  ${props => props.theme.grey313131ToYellowFFF7D8};  
       }
     @media only screen and (max-width: 1024px) {
         .smp-hero{

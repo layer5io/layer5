@@ -13,7 +13,7 @@ const SubscribeWrapper = styled.div`
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
-        background: ${props => props.theme.DarkTheme ? "#1D1D1D" : "linear-gradient(123deg, white 60%, white 100%)"};
+        background: ${props => props.theme.grey1D1D1DToLinear2};
     }
     
     input{

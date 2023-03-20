@@ -64,7 +64,7 @@ const MeshFocusWrapper = styled.div`
        text-align: center;
        :hover{
         color: white;
-        box-shadow: ${props => props.theme.DarkTheme ? " rgb(255 255 255 / 40%)" : " rgb(0 0 0 / 40%)"} 0px 2px 10px;
+        box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
     }
     .icon-right{
         position: relative;

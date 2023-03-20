@@ -506,7 +506,7 @@ const NavigationWrap = styled.header`
     margin: 0 auto;
     padding: 1rem 1rem 0rem 1rem;
     &:hover{
-      box-shadow: ${props => props.theme.DarkTheme ? "0px 0px 8px -2px #bababa" : "0px 0px 8px -2px rgba(0, 0, 0, 0.25)"};
+      box-shadow: ${props => props.theme.boxShadowGreyBABABAtoBlackTwoFive};
       border-radius: 1rem;
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};

@@ -5,7 +5,7 @@ export const CardWrapper = styled.div`
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         background-Color:${props => props.theme.grey212121ToWhite};
-        box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
         transition: all 0.3s ease-in;
         &:hover{
             box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};

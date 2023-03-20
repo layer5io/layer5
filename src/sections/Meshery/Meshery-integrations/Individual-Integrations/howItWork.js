@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const HowIntegrationWorksWrapper = styled.section`
 
-  background-color: ${props => props.theme.DarkTheme ? "#101010" : "#F7F7F7"};
+  background-color: ${props => props.theme.grey101010ToGreyF7F7F7};
 	padding-bottom: 2rem;
 
 	.section-data {

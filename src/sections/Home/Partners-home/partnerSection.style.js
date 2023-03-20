@@ -23,10 +23,10 @@ const PartnerItemWrapper = styled.section`
         }
     }
 		.slick-dots li button:before{
-			color: ${props => props.theme.DarkTheme ? "#939393" : ""}
+			color: ${props => props.theme.grey939393ToGrey4C4A4A}
 		}
 		.slick-dots li.slick-active button:before {
-				color: ${props => props.theme.DarkTheme ? "white" : ""};
+				color: ${props => props.theme.whiteToGrey4C4A4A};
 		}
 		.slick-dots li button:hover{
 				box-shadow: none;

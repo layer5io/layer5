@@ -45,7 +45,7 @@ export const FeaturesWrapper = styled.div`
         }
         & .paging-item > button > svg {
           // opacity: 1 !important;
-          fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
+          fill: ${props => props.theme.whiteToGreyB3B3B3};
         }
       }
     }
