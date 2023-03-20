@@ -47,7 +47,7 @@ const VisualizeBannerWrapper = styled.div`
     }
 
     h4 {
-        padding: 3% 0% 4%;
+        padding: 3% 0% 5%;
         color: #A0AAAA;
         /* max-width: 50%; */
         font-weight: bold;
@@ -96,7 +96,7 @@ const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
         <div className="banner-text">
           <h1>Visualize your infrastructure. </h1>
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
-          <Button primary className="join-community-button" title="Explore Visualizer" url="" onClick={handleClick} />
+          <Button primary className="join-community-button" title="Explore MeshMap Visualizer" url="" onClick={handleClick} />
         </div>
         <div className="banner-image">
           <img src={BannerImage} alt="" />
