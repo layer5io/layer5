@@ -7,10 +7,10 @@ import CommonForm from "../../components/CommonForm";
 const SignupFormWrapper = styled.div`
 
 `;
-const SignupForm = () => {
+const SignupForm = ({ targetRef }) => {
   return (
     <SignupFormWrapper>
-      <div className="banner-background">
+      <div className="banner-background" ref={targetRef}>
         <Container style={{ marginBottom: "4rem", padding: "0" }}>
           <Row className="description">
             <Col lg={7} md={6} sm={12} className="desc-text">
