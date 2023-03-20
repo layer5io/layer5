@@ -47,7 +47,7 @@ const Container = styled.div`
 //   width:50vw;
 // }
 @media (max-width:470px){
-  width:73vw;
+  width:74vw;
 }
 @media (max-width:560px){
   width:64vw;
