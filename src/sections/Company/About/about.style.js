@@ -89,12 +89,12 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color: ${props => props.theme.whiteToBlack};  
+      color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,1.0)" : "rgba(0, 0, 0, 1.0)"};  
     }
     h4{
         margin-bottom: 1.7vw;
         font-family:"Qanelas Soft";
-        color: ${props => props.theme.whiteToBlackSeven};  
+        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "rgba(0, 0, 0, 0.7)"};  
       }
   }
   .section-bottom {
@@ -131,7 +131,7 @@ const AboutSectionWrapper = styled.section`
 
       &:hover {
             background: ${props => props.theme.highlightLightColor}; 
-            box-shadow: ${props => props.theme.whiteToBlackFive} 0px 2px 10px;
+            box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
         }
     }
   }

@@ -12,7 +12,7 @@ const HeroSectionWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.greyDarkToGreyTint};;
+    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;

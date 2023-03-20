@@ -72,14 +72,14 @@ const SMIWrapper = styled.section`
     .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
-        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.greenBrightToGreyTint};
+        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
         position: relative;
         transition: all 0.3s ease-in;
-        background-color: ${props => props.theme.greyDarkToWhite};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         z-index: 999;
         height: 100%;
         &:hover{
-            border-color: ${props => props.theme.greenBrightToGreyTint};
+            border-color: ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
             .thumb-block{
                 border-color: ${props => props.theme.primaryColor};
             }
@@ -95,7 +95,7 @@ const SMIWrapper = styled.section`
         }
     }
     .section-3{
-        background-color: ${props => props.theme.greyDarkToGreyTint};
+        background-color: ${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
         width: 100%;
         padding:7rem 0rem;
     }
@@ -148,7 +148,7 @@ const SMIWrapper = styled.section`
         }
     }
     .card{
-        background-color: ${props => props.theme.greyDarkToWhite};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         width: 70%;
         max-width: 62.5rem;
         margin: auto;

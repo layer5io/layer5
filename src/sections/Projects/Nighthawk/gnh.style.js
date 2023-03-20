@@ -124,7 +124,7 @@ export const Gnhwrapper = styled.section`
         fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
       }
       path {
-        stroke: ${props => props.theme.greenBrightToGreen};
+        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
       }
     .distributedPerf {
         display: relative;
@@ -187,7 +187,7 @@ export const CardsContainer = styled.div`
       box-shadow: rgb(0 0 0 / 5%) 2px 4px 2.5rem 0.5rem;
         margin: 2px;
         padding: 1.5rem;
-        background-color: ${props => props.theme.greyDarkToWhite};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border-radius: 25px;
         p {
             text-align: left;

@@ -20,12 +20,12 @@ Button{
 }
 
 .media_block { 
-  background-color: ${props => props.theme.greyDarkToWhite};		
+  background-color: ${props => props.theme.DarkTheme ? "#212121" : "white"};		
   transition: 450ms all;
     margin-bottom: 1rem;
     border: 1px solid ${props => props.theme.shadowLightColor};
     &:hover{
-        box-shadow: 0 2px 10px ${props => props.theme.whiteToBlackFive};;
+        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)"};;
     }
     padding: 12% 6% 12% 6%;
     border-radius: 4%;

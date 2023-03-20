@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
 p {
-    color: ${props => props.theme.whiteToBlack};
+    color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
 
 }
     h1{
@@ -35,7 +35,7 @@ p {
     }
     .introText p {
         text-align: justify;
-        color: ${props => props.theme.whiteToBlack};
+        color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
 
     }
     .introVideo{

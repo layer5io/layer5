@@ -13,12 +13,12 @@ const Banner3SectionWrapper = styled.section`
     p {
         font-size: 21px;
         font-weight: 300; 
-        color: ${props => props.theme.greyTintToGreenDark};
+        color: ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
         margin: 0 0 70px 0;
         width: 70%;
     }
     h4 {
-        color: ${props => props.theme.greyToLightGrey};
+        color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
         text-transform: uppercase;
     }
     .section-title{

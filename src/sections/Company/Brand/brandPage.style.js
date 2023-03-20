@@ -52,7 +52,7 @@ const BrandPageWrapper = styled.section`
 		margin: 0;
 		position: relative;
 		width: fit-content;
-		color: ${props => props.theme.whiteToBlackFive};
+		color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.4)" : "rgba(0, 0, 0, 0.4)"};
 		font: 500 1.2rem/2.5rem 'Qanelas Soft', sans-serif;
 		transition: 0.2s border ease-in-out;
 

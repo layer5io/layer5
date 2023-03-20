@@ -86,7 +86,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.whiteToBlack};
+          color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
           transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
@@ -208,7 +208,7 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow:before {
-    color: ${(props) => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
     font-size: 4rem;
     display: inline-block;
     height: 1rem;

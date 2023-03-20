@@ -40,7 +40,7 @@ const AboutTheAuthorWrapper = styled.div`
         h4{
             font-weight: 500;
             font-size: 1.25rem;
-            border-bottom: 1px solid ${props => props.theme.greytoBlueFive};
+            border-bottom: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
             padding-bottom: .5rem;
             width: 80%;
             margin: 0 auto;
@@ -49,23 +49,23 @@ const AboutTheAuthorWrapper = styled.div`
             font-size: 1rem;
             line-height: 1.375rem;
             margin: 1.5rem 0;
-            color: ${props => props.theme.greyLightToBlue};  
+            color: ${props => props.theme.DarkTheme ? "#B1B6B8" : "#477E96"};  
         }
         .authors-info-meshery{
-            border-top: 1px solid ${props => props.theme.greytoBlueFive};
-            border-bottom: 1px solid ${props => props.theme.greytoBlueFive};
+            border-top: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
+            border-bottom: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
             padding: 1.5rem 0;
 
             h4{
                 font-weight: 500;
                 font-size: 1.25rem;
                 line-height: 2rem;
-                color: ${props => props.theme.greyLightToGreyDark};  
+                color: ${props => props.theme.DarkTheme ? "#D3D7DB" : "#1E2117"};  
             }
             p{
                 font-size: 1rem;
                 line-height: 1.375rem;
-                color: ${props => props.theme.greyLightToBlue};  
+                color: ${props => props.theme.DarkTheme ? "#B1B6B8" : "#477E96"};  
             }
             .cta-btn{
                     min-width: 100%;
@@ -76,7 +76,7 @@ const AboutTheAuthorWrapper = styled.div`
             
             h3{
                 font-size: 1.5rem;
-                color: ${props => props.theme.greyLightToGreyDark};  
+                color: ${props => props.theme.DarkTheme ? "#D3D7DB" : "#1E2117"};  
                 border-bottom: none;
                 margin-bottom: .5rem;
             }

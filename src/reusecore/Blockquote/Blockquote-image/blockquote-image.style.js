@@ -45,7 +45,7 @@ section.bq-section {
 
 .type-one-quote .type-one-quote-base {
     flex-basis: calc(100% - 80px);
-    background-color: ${props => props.theme.greyDarkToWhite};
+    background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
     padding: 40px 30px 50px 80px;
     font-size: 11pt;
     line-height: 1.62em;
@@ -79,13 +79,13 @@ section.bq-section {
 .type-one-quote .type-one-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.greyTintToGrey};
+    border-top: 2px dotted ${props => props.theme.DarkTheme ? "#EEEEEE" : "#777777"};
 
 }
 
 .type-one-quote .type-one-quote-meta .type-one-author,
 .type-one-quote .type-one-quote-meta .type-one-source {
-    color: ${props => props.theme.greyTintToGrey};
+    color: ${props => props.theme.DarkTheme ? "#EEEEEE" : "#777777"};
 
 }
 
@@ -174,7 +174,7 @@ section.bq-section {
 
 .type-two-quote .type-two-quote-base {
     flex-basis: calc(100% - 80px);
-    background-color: ${props => props.theme.greyDarkToWhite};
+    background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
     padding: 60px 30px 50px 100px;
     font-size: 11pt;
     line-height: 1.62em;
@@ -184,14 +184,14 @@ section.bq-section {
 .type-two-quote .type-two-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.greyTintToGrey};
+    border-top: 2px dotted ${props => props.theme.DarkTheme ? "#EEEEEE" : "#777777"};
 
     text-align: center;
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author,
 .type-two-quote .type-two-quote-meta .type-two-quote-source {
-    color: ${props => props.theme.greyTintToGrey};
+    color: ${props => props.theme.DarkTheme ? "#EEEEEE" : "#777777"};
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author {

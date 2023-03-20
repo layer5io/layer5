@@ -38,7 +38,7 @@ const BannerSectionWrapper = styled.section`
 
     &:hover {
           background: ${props => props.theme.highlightLightColor}; 
-          box-shadow: ${props => props.theme.whiteToBlackFive} 0px 2px 10px;
+          box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
       }
     margin-bottom: -15rem;
   }
