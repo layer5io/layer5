@@ -61,7 +61,7 @@ const FeaturesSection = () => {
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
-              <h4>The Performance Yardstick: MeshMark</h4>
+              <h2>The Performance Yardstick: MeshMark</h2>
               <p>
                 Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your          application across different service meshes. Compare and manage service mesh overhead.
               </p>
