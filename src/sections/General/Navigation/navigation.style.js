@@ -599,6 +599,7 @@ const NavigationWrap = styled.header`
   }
   .dark-theme-toggle {
     /* margin-left: 2rem; */
+    visibility: ${props => typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
