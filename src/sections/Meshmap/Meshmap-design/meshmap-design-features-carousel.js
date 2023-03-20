@@ -27,8 +27,7 @@ const CONTENT = [
 
 const DivWrapper = styled.div`
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   margin: auto;
   padding-block: 8% 12%;
   display: flex;
@@ -95,15 +94,6 @@ export default function MeshmapDesignFeatureCarousel() {
   const [cardIndices, setCardIndices] = useState([
     ...Array(CONTENT.length).keys(),
   ]);
-  // const handleclick = (i) => {
-  //   if (i === activeCard) setActiveCard(-1);
-  //   else setActiveCard(i);
-  // };
-  // const handleclick = () => {
-  //   const length = CONTENT.length;
-  //   if (activeCard === length - 1) setActiveCard(0);
-  //   else setActiveCard(activeCard + 1);
-  // };
   const handleclick = () => {
     const length = CONTENT.length;
     const newIndices = cardIndices.map((index) => {
