@@ -17,20 +17,12 @@ const VisualizeBannerWrapper = styled.div`
         display: flex;
         flex-direction: column;
         background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
-        /* opacity: 0.9; */
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;
         max-height: 50rem;
-        /* justify-content: space-evenly; */
         align-items: center;
         padding: 4% 5% 6%;
-        /* box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00b3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"}; */
-        /* transform: rotateX(40deg); */
-
-        /* @media only screen and (max-width: 500px) {
-            max-height: 400px;
-        } */
     }
 
 
@@ -41,7 +33,7 @@ const VisualizeBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
-        padding-top: 5%;
+        padding: 3% 0%;
     }
 
     h1 {
@@ -49,28 +41,20 @@ const VisualizeBannerWrapper = styled.div`
         /* color: ${props => props.theme.primaryColor}; */
         position: relative;
         display: inline-block;
-        /* color: black; */
-/*
-        @media only screen and (min-width: 500px) {
-            font-size: 3.5rem;
-        }
-        @media only screen and (min-width: 767px) {
-            font-size: 4rem;
-        }
-        @media only screen and (min-width: 950px) {
-            font-size: 5rem;
-        } */
         @media only screen and (min-width: 1400px) {
             font-size: 3.75rem;
         }
     }
 
     h4 {
-        padding: 3% 0%;
+        padding: 3% 0% 4%;
         color: #A0AAAA;
-        /* font-size: 20px; */
-        max-width: 50%;
+        /* max-width: 50%; */
         font-weight: bold;
+
+        span {
+          color: #00b39f;
+        }
 
         @media only screen and (max-width: 500px) {
             font-size: 1.1rem;
@@ -99,14 +83,10 @@ const VisualizeBannerWrapper = styled.div`
     }
 `;
 
-const MeshmapVisualizeBanner = ({ theme }) => {
-  //   const [transitionRef, inView] = useInView({ threshold: 0.7 });
-  //   const [imageInView, setimageInView] = useState(false);
-  //   if (inView && !imageInView)
-  //     setimageInView(true);
-  //   else if (imageInView && !inView)
-  //     setimageInView(false);
-
+const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
+  const handleClick = () => {
+    targetRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <VisualizeBannerWrapper>
       {/* <div className="banner-image">
@@ -115,8 +95,8 @@ const MeshmapVisualizeBanner = ({ theme }) => {
       <div className="banner">
         <div className="banner-text">
           <h1>Visualize your infrastructure. </h1>
-          <h4>See your designs in action. Operate with best practices.</h4>
-          <Button primary className="join-community-button" title="Explore Visualizer" url="/projects" />
+          <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
+          <Button primary className="join-community-button" title="Explore Visualizer" url="" onClick={handleClick} />
         </div>
         <div className="banner-image">
           <img src={BannerImage} alt="" />

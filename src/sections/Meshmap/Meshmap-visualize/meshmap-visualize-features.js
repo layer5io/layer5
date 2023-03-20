@@ -13,8 +13,9 @@ import ApplicationImportTruckDark from "./images/application-import-truck-dark.s
 import ApplicationImportTruckLight from "./images/application-import-truck-light.svg";
 import ApplicationImportBoxes from "./images/application-import-boxes.svg";
 import InteractiveTerminal from "./images/interactive-terminal.svg";
-import InteractiveTerminalCodeDark from "./images/interactive-terminal-code-dark.svg";
-import InteractiveTerminalCodeLight from "./images/interactive-terminal-code-light.svg";
+import InteractiveTerminalCode from "./images/interactive-terminal-code.svg";
+import LogStream from "./images/log-stream.svg";
+import LogStreamSearch from "./images/log-stream-search.svg";
 import { useState, useEffect } from "react";
 
 const VisualizerFeaturesWrapper = styled.div`
@@ -84,7 +85,7 @@ z-index: 10;
       background: ${props => props.theme.DarkTheme ? "#121212" : "#ffffff"};
       /* scale:1.1; */
       /* transition: all 0.5s ease; */
-      opacity: 0.7;
+      opacity: 0.85;
     }
 
     .feature-image {
@@ -152,8 +153,8 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute" }} />
-                <img src={theme == "dark" ? InteractiveTerminalCodeDark : InteractiveTerminalCodeLight} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} />
+                <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
+                <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
               </div>
               <h3>Interactive Terminal</h3>
               <p>Establish sessions with one or more pods at a time.</p>
@@ -181,6 +182,10 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           </Col>
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
+              <div className="feature-image">
+                <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
+                <img src={LogStreamSearch} alt="" className={hoveredFeature == "Feature6" ? "secondary-image-visible" : "secondary-image"} />
+              </div>
               <h3>Log Stream</h3>
               <p>Stream and filter through the logs using keywords for multiple Kubernetes Pods simultaneously.</p>
             </div>
