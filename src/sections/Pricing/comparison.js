@@ -104,7 +104,7 @@ h2, h5{
     font-weight: 700;
 }
 .price-table .price-blank {
-    background-color: ${props => props.theme.DarkTheme ? "#191919" : "#fafafa"};
+    background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
     border: 0 none;
 }
 

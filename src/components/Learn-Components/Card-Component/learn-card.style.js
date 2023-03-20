@@ -22,7 +22,7 @@ const CardWrapper = styled.div`
         position: relative;
     }
     .card-2{
-        background: ${props => props.theme.DarkTheme ? "#1D1817" : "#E6E6E6"};
+        background: ${props => props.theme.grey1D1817ToGreyE6E6E6};
 
     }
     .card-head{

@@ -49,7 +49,7 @@ export const ProjectWrapper = styled.div`
         grid-auto-flow: row;
     }
     .project__card{
-        box-shadow: 0px 0px 10px ${props => props.theme.DarkTheme ? "#00d3a9" : "lightgrey"};
+        box-shadow: 0px 0px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
         background-color: ${props => props.theme.grey212121ToWhite};
         border-radius: 0.5rem;
         display: flex;

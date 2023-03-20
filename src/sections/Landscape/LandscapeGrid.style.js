@@ -377,7 +377,7 @@ export const LandscapePageWrapper = styled.div`
 	.landscape-table {
 		width: 100%;
 		margin: 2rem 0;
-		box-shadow: ${props => props.theme.DarkTheme ? "0px 2px 16px rgba(163, 163, 163, 0.2)" : "0px 2px 16px rgba(0, 0, 0, 0.2)"};
+		box-shadow: ${props => props.theme.boxShadowGreyA3A3A3toBlackTwo};
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 
@@ -416,7 +416,7 @@ export const LandscapePageWrapper = styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.DarkTheme ? "#262626" : "#3C494F"};
+		background-color: ${props => props.theme.grey262626ToGreen3C494F};
 		border-right: 1px solid ${props => props.theme.shadowLightColor};
 		border-bottom: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
@@ -439,7 +439,7 @@ export const LandscapePageWrapper = styled.div`
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 		color: #ffffff;
-		background: ${props => props.theme.DarkTheme ? "#009a89" : "#00B39F"};
+		background: ${props => props.theme.green009A89ToGreen00B39F};
 	}
 	.react-tabs__tab--selected {
 		background: ${props => props.theme.grey404040ToGrey1E2117};

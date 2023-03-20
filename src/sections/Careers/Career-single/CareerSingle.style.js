@@ -25,7 +25,7 @@ const CareerPageWrapper = styled.div`
 
             svg {
                 vertical-align: top;
-                color: ${props => props.theme.DarkTheme ? "white" : props.theme.primaryLightColorTwo};
+                color: ${props => props.theme.whiteToGreen00D3A9};
                 width: 2rem;
             }
         }

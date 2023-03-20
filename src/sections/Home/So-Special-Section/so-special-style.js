@@ -100,7 +100,7 @@ const SoSpecialWrapper = styled.div`
         border-radius:1rem;
         background-color: ${props => props.theme.grey212121ToWhite};
 
-        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)"};
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.green00D3A9ToBlackFour};
         color:${(props) => props.theme.text};
     }
     #special-cont_img{
@@ -152,7 +152,7 @@ const SoSpecialWrapper = styled.div`
             margin:2rem;
             :hover{
                 color: white;
-                box-shadow: ${props => props.theme.DarkTheme ? " rgb(255 255 255 / 40%)" : " rgb(0 0 0 / 40%)"} 0px 2px 10px;
+                box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
             }
         }
     }

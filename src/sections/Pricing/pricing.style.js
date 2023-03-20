@@ -163,7 +163,7 @@ const PricingWrapper = styled.section`
         margin: 0.5rem 0;
       }
       h5{
-        color: ${props => props.theme.DarkTheme ? "#AAAAAA" : "#7A848E"};
+        color: ${props => props.theme.greyAAAAAAToGrey7A848E};
         display: block;
         font-size: 16px;
         font-weight: 400;

@@ -93,7 +93,7 @@ const DesignDefaultWrapper = styled.section`
     .section-title {
         padding: 3rem 4rem;
         border-radius: 2rem 0 0 2rem;
-        background:${props => props.theme.DarkTheme ? "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)" : "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 99.34%)"};
+        background:${props => props.theme.linearToLinear};
     }
     .svg-background {
         position: absolute;

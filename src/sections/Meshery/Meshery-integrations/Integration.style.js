@@ -50,7 +50,7 @@ export const HoneycombGrid = styled.div`
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) => props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
+    background: ${(props) => props.theme.linearToWhite};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
