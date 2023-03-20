@@ -75,7 +75,7 @@ const BlogSideBarWrapper = styled.div`
                     margin-top: 3px;
                 }
                 a{
-                    color: ${props => props.theme.DarkTheme ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)"};
+                    color: ${props => props.theme.whiteToBlack};
                     display: flex;
                     justify-content: space-between;
                     font: 400 16px/35px "Qanelas Soft", "Open Sans", sans-serif;

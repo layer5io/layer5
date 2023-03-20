@@ -8,7 +8,7 @@ export const CardWrapper = styled.div`
         box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 2px 15px 4px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
@@ -101,7 +101,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+            color: ${props => props.theme.whiteSevenToBlackSeven};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
@@ -128,7 +128,7 @@ export const CardWrapper = styled.div`
         bottom: 0;
     }
     .readmore-btn, .external-link-btn{
-       color: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+       color: ${props => props.theme.whiteFourToBlackFour};
        display: flex;
        flex: auto;
        align-items: center;

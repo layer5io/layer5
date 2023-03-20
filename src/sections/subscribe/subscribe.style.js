@@ -37,7 +37,7 @@ const SubscribeWrapper = styled.div`
         background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
     }
     #mc-embedded-subscribe:hover{
-        box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+        box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
     }
     @media only screen and (max-width: 1050px) {
         .email-cont{

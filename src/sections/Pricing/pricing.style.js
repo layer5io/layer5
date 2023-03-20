@@ -39,11 +39,11 @@ const PricingWrapper = styled.section`
     margin-bottom: 4rem;
     text-align: center;
     h2 {
-      color: ${props => props.theme.DarkTheme ? "white" : "black"};
+      color: ${props => props.theme.whiteToBlack};
     }
     @media (min-width: 1400px) {
       h2{
-        color: ${props => props.theme.DarkTheme ? "white" : "black"};
+        color: ${props => props.theme.whiteToBlack};
       }
 
     }
