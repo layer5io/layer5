@@ -17,7 +17,7 @@ table {
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        border-bottom: 1px solid ${props => props.theme.grey212121ToWhite};
 
     }
     th {
@@ -31,15 +31,15 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+			background: ${props => props.theme.grey212121ToWhite};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+				border-right: 1px solid ${props => props.theme.grey212121ToWhite};
 			}
 		}
 		:nth-child(even) {
-			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+			background: ${props => props.theme.grey121212ToGreyEFEFEF};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+				border-right: 1px solid ${props => props.theme.grey121212ToGreyEFEFEF};
 			}
 		}
 		:last-child {

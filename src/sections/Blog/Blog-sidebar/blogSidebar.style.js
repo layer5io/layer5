@@ -114,7 +114,7 @@ const BlogSideBarWrapper = styled.div`
                     display: block;
                     padding: 6px 18px;
                     border-radius: 3px;
-                    background: ${props => props.theme.DarkTheme ? "#212121" : "#F0F0F0"};
+                    background: ${props => props.theme.grey212121ToGreyF0F0F0};
                     font: 400 13px/26px "Qanelas Soft", "Open Sans", sans-serif; 
                     transition: all 0.3s linear;
                     &:hover{

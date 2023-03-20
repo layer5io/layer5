@@ -11,7 +11,7 @@ const CardWrapper = styled.div`
     }
 
     .card-parent{
-        background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        background: ${props => props.theme.grey212121ToWhite};
         border-top: 5px solid rgb(117, 232, 168);
         border-radius: 0.25rem;
         min-height: 16rem;

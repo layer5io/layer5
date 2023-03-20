@@ -14,7 +14,7 @@ export const FeaturesSectionContainer = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   rect {
-    fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+    fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
   }
   path {
     stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
@@ -46,7 +46,7 @@ export const FeaturesSectionContainer = styled.div`
 
 export const FeatureBlockContainer = styled.div`
   box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.blackFiveToWhiteFive};
-  background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  background-color:	${props => props.theme.grey212121ToWhite};
   border-radius: 1.25rem;
   transition: all 0.3s ease-in;
   display: flex;
@@ -82,7 +82,7 @@ export const FeatureTitleInfoContainer = styled.div`
 
   p {
     font-size: 18px;
-    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+    color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
     text-align: center;
     font-weight: 300;
   }
@@ -114,6 +114,6 @@ export const CountBlockContainer = styled.div`
   }
   .count-desc {
     font-size: 0.94rem;
-    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+    color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
   }
 `;

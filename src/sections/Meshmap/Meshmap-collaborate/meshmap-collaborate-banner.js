@@ -24,7 +24,7 @@ const CollaborationBannerWrapper = styled.div`
         display: flex;
         flex-direction: column;
         background: ${props => props.theme.DarkTheme ? "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)" : "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)"};
-        /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"}; */
+        /* background-color: ${props => props.theme.grey121212ToWhite}; */
         max-width: 1920px;
         width: 100%;
         justify-content: space-evenly;

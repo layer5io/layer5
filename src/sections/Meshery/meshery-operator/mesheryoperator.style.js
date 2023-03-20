@@ -50,7 +50,7 @@ const MesheryOperatorWrapper = styled.section`
             width: 96%;
         }
         rect {
-            fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+            fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
           }
           path {
             stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
@@ -169,7 +169,7 @@ const MesheryOperatorWrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background: ${props => props.theme.DarkTheme ? "#212121" : "white"};
+                background: ${props => props.theme.grey212121ToWhite};
                 border-radius: 25px;
                 p {
                     text-align: left;

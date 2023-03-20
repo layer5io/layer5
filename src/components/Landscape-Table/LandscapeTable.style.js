@@ -24,14 +24,14 @@ table {
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+        border-bottom: 1px solid ${props => props.theme.grey121212ToGreyEFEFEF};
 		height: 4rem;
 		.Mark {
 			height: 1.5rem;
 		}
     }
     th {
-        background: ${props => props.theme.DarkTheme ? "#404040" : "#1E2117"} ;
+        background: ${props => props.theme.grey404040ToGrey1E2117} ;
         color: #ffffff;
         height: 4rem;
 		font-weight: 600;
@@ -43,15 +43,15 @@ table {
 		height: 4rem;
 
 		:nth-child(odd) {
-			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+			background: ${props => props.theme.grey212121ToWhite};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+				border-right: 1px solid ${props => props.theme.grey212121ToWhite};
 			}
 		}
 		:nth-child(even) {
-			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+			background: ${props => props.theme.grey121212ToGreyEFEFEF};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+				border-right: 1px solid ${props => props.theme.grey121212ToGreyEFEFEF};
 			}
 		}
 		:last-child {

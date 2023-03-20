@@ -25,7 +25,7 @@ const ProjectItemWrapper = styled.section`
 
 		h4 {
 			margin-bottom: 0.5rem;
-			color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
+			color: ${props => props.theme.grey737373ToGreyB3B3B3};
 			text-transform: uppercase;
 		}
 		h2{
@@ -74,7 +74,7 @@ const ProjectItemWrapper = styled.section`
 	.proj_icon_1 {
 		max-width: 18rem;
 		height: 7rem;
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#F3F3F3"};
+		background: ${props => props.theme.grey212121ToGreyF3F3F3};
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: center;

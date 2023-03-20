@@ -121,7 +121,7 @@ export const Gnhwrapper = styled.section`
         }
     }
     rect {
-        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+        fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
       }
       path {
         stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
@@ -187,7 +187,7 @@ export const CardsContainer = styled.div`
       box-shadow: rgb(0 0 0 / 5%) 2px 4px 2.5rem 0.5rem;
         margin: 2px;
         padding: 1.5rem;
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        background-color: ${props => props.theme.grey212121ToWhite};
         border-radius: 25px;
         p {
             text-align: left;

@@ -11,7 +11,7 @@ const BookSinglePageWrapper = styled.div`
 		font-weight: 600;
 		a{
 			display: flex;
-		    color: ${props => props.theme.DarkTheme ? "#FFFFFF" : "3c494F"};
+		    color: ${props => props.theme.whiteToGreen3C494F};
 		    &:hover{
 		        color: ${props => props.theme.linkColor};
 			}

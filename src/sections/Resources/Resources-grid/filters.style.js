@@ -106,7 +106,7 @@ input[type="checkbox"] {
         
           .total{
             float: right;
-            color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
+            color: ${props => props.theme.grey737373ToGreyB3B3B3};
             &:hover{
                   color: ${props => props.theme.secondaryColor}; 
                   border-color: ${props => props.theme.secondaryColor}; 
