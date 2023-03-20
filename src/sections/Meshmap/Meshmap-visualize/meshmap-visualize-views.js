@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import VisualizerViews from "./images/visualizer-views.svg";
+import VisualizerViewsDark from "./images/visualizer-views-dark.svg";
+import VisualizerViewsLight from "./images/visualizer-views-light.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
@@ -23,7 +24,7 @@ const ViewsSectionWrapper = styled.div`
     justify-content: space-evenly;
     align-items: center;
     padding: 4% 5% 3%;
-    box-shadow: ${props => props.theme.DarkTheme ? "-0.25rem 0.25rem 1.25rem #00d3a9" : "-0.25rem 0.25rem 1.25rem rgb(0 0 0 / 25%)"};
+    box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 1.25rem #477e96" : "-0.25rem 0.25rem 1.25rem #477e96"};
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -112,7 +113,7 @@ const MeshmapVisualizerViews = ({ theme }) => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          <img className={imageInView ? "visible" : "not-visible"} src={VisualizerViews} alt="" style={{ position: "absolute", top: "0%" }}/>
+          <img className={imageInView ? "visible" : "not-visible"} src={theme == "dark" ? VisualizerViewsDark : VisualizerViewsLight} alt="" style={{ position: "absolute", top: "0%" }}/>
           <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
         </div>
         <div className="hero-text">
