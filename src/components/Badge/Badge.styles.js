@@ -6,8 +6,8 @@ export const TooltipWrapper = styled.div`
 `;
 
 export const TooltipText = styled.span`
-    visibility: visible;
-    width: 120px;
+    visibility: hidden;
+    width: 80px;
     font-size: 0.725rem;
     line-height: 1.2;
     background-color: #555;
@@ -17,9 +17,9 @@ export const TooltipText = styled.span`
     padding: 0.325rem 0;
     position: absolute;
     z-index: 1;
-    top: 125%;
-    left: 50%;
-    margin-left: -60px;
+    bottom: -1.5px;
+    left: 275%;
+    margin-left: -40px;
     opacity: 0;
     transition: opacity 0.3s;
     &::before {
@@ -28,9 +28,6 @@ export const TooltipText = styled.span`
         bottom: 100%;
         left: 50%;
         margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: transparent transparent #555 transparent;
     }
     ${TooltipWrapper}:hover & {
         visibility: visible;
