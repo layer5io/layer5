@@ -11,11 +11,11 @@ export default function CollaboratorFeatures({ features, theme }) {
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
-  useGsapTimeline({ trigger: ".test-container3",featureContainerName: ".collaborator-features", yPercent: -400 });
+  useGsapTimeline({ trigger: ".collaborator-trigger-container",featureContainerName: ".collaborator-features", yPercent: -300 });
 
   return (
     <CollaboratorFeaturesWrapper>
-      <Container className="collaborate-container test-container3">
+      <Container className="collaborate-container collaborator-trigger-container">
         <div className="root">
           <div id="featureHeading" className="fixed">
             <h1>Collaborate</h1>
@@ -26,7 +26,7 @@ export default function CollaboratorFeatures({ features, theme }) {
             </div>
             <ul className="features collaborator-features">
               {features.map((feature, index) => (
-                <li key={index}>
+                <li className="collaborator-feature-slide" key={index}>
                   <Feature
                     {...feature}
                     onInViewStatusChanged={(state) => {
