@@ -8,19 +8,21 @@ import DesignDefault from "../../Home/MeshmapDesignHighlight";
 import BackgroundImage from "./images/oval-blur-shape.svg";
 import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
+import { useRef } from "react";
 
 const MeshmapDesign = ({ theme }) => {
+  const targetRef = useRef(null);
   return (
     <MeshmapVisualizeWrapper>
       <div className="background-image">
         <img src={BackgroundImage} alt="" />
       </div>
-      <MeshmapVisualizeBanner theme={theme} />
+      <MeshmapVisualizeBanner theme={theme} targetRef={targetRef} />
       <MeshmapVisualizerFeatures theme={theme} />
       <MeshmapVisualizerViews theme={theme} />
       {/* <MeshmapHeroSection theme={theme} /> */}
       {/* <DesignDefault theme={theme} /> */}
-      <SignupForm />
+      <SignupForm targetRef={targetRef} />
       <Reviews />
     </MeshmapVisualizeWrapper>
   );
