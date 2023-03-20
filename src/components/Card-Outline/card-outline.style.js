@@ -34,7 +34,7 @@ const CardOutlineWrapper = styled.div`
         }
 
         .card-content {
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+            color: ${props => props.theme.whiteSevenToBlackSeven};
         }
 
         &:hover {

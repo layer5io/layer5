@@ -16,7 +16,7 @@ h2, h5{
 }
 
 .main {
-    box-shadow: 0 0 24px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.15)"};
+    box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
     overflow-x: scroll;
@@ -28,10 +28,10 @@ h2, h5{
     border: 0 none;
 }
 .price-table tr:not(:last-child) {
-    border-bottom: 1px solid ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.03)" : "rgba(0, 0, 0, 0.03)"};
+    border-bottom: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroThree};
 }
 .price-table tr td {
-    border-left: 1px solid ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.05)"};
+    border-left: 1px solid ${props => props.theme.whiteZeroFiveToBlackZeroFive};
     padding: 0rem 2rem;
     font-size: 1rem;
     vertical-align: middle;

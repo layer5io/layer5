@@ -65,7 +65,7 @@ const TOCWrapper = styled.div`
                     font-size: 1rem;
 
                     a {
-                        color: ${props => props.theme.DarkTheme ? "rgb(255, 255, 255, 0.65)" : "rgba(0, 0, 0, 0.65)"};
+                        color: ${props => props.theme.whiteSixFiveToBlackSixFive};
                     }
                 }
                 &:hover {

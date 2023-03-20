@@ -45,7 +45,7 @@ export const FeaturesSectionContainer = styled.div`
 `;
 
 export const FeatureBlockContainer = styled.div`
-  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.05)"};
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.blackFiveToWhiteFive};
   background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
   border-radius: 1.25rem;
   transition: all 0.3s ease-in;

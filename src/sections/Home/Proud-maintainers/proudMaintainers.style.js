@@ -36,7 +36,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		.project-text {
 			margin:0 auto 4rem auto;
-			color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+			color: ${props => props.theme.whiteSixToBlackSix};
 			max-width: 60%;
 		}
 	}

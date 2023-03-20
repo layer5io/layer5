@@ -40,7 +40,7 @@ const AboutTheAuthorWrapper = styled.div`
         h4{
             font-weight: 500;
             font-size: 1.25rem;
-            border-bottom: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
+            border-bottom: 1px solid ${props => props.theme.greyFiveToBlueFive};
             padding-bottom: .5rem;
             width: 80%;
             margin: 0 auto;
@@ -52,8 +52,8 @@ const AboutTheAuthorWrapper = styled.div`
             color: ${props => props.theme.DarkTheme ? "#B1B6B8" : "#477E96"};  
         }
         .authors-info-meshery{
-            border-top: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
-            border-bottom: 1px solid ${props => props.theme.DarkTheme ? "rgba(122,132,142, 0.5)" : "rgba(71, 126, 150, 0.5)"};
+            border-top: 1px solid ${props => props.theme.greyFiveToBlueFive};
+            border-bottom: 1px solid ${props => props.theme.greyFiveToBlueFive};
             padding: 1.5rem 0;
 
             h4{

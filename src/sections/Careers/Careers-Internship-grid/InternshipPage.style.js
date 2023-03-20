@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const InternshipSectionWrapper = styled.div`
 p{
-  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
+  color: ${props => props.theme.whiteEightToBlack};
 
 }
   h1 {
@@ -65,7 +65,7 @@ p{
     }
     p {
       margin: 0.5rem 0;
-      color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)"};
+      color: ${props => props.theme.whiteEightToBlackEight};
 
       transition: transform 0.7s ease-in-out;
     }

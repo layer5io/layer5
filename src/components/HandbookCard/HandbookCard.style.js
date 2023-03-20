@@ -46,7 +46,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card--para {
-	  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)"};
+	  color: ${props => props.theme.whiteSevenToBlackSeven};
 	  text-align: center;
 	  margin: 1.5rem;
 	  margin-bottom: 0rem;

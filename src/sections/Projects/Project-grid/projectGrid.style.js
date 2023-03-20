@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
     h3{
-        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.6)" : props.theme.primaryLightColor};  
+        color: ${props => props.theme.whiteSixToGreen3C494F};  
         margin: 0;
         padding: 0;
         font-weight: 500;

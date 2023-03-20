@@ -56,7 +56,7 @@ const Banner1SectionWrapper = styled.section`
 
         &:hover {
              background: ${props => props.theme.highlightLightColor}; 
-             box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+             box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
         
     }
@@ -67,7 +67,7 @@ const Banner1SectionWrapper = styled.section`
         &:hover{
             background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
-            box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+            box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
     @media only screen and (max-width: 1200px) {

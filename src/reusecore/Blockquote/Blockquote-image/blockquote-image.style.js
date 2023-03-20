@@ -33,7 +33,7 @@ section.bq-section {
     display: flex;
     flex-direction: row;
     min-height: 250px;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.1)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
 }
 
@@ -132,7 +132,7 @@ section.bq-section {
 
 .type-two-quote {
     position: relative;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.1)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
 }
 
@@ -224,7 +224,7 @@ section.bq-section {
     position: relative;
     min-height: 250px;
     border-radius: 10px;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.4)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteFourToGreyCECECE};
 }
 
 .type-three-quote .type-three-quote-base {

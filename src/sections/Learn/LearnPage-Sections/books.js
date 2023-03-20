@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+      box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
 
     }
     .book-heading {
@@ -56,7 +56,7 @@ const BooksListWrapper = styled.div`
             padding: 0 0.75rem;
         }
         &:hover{
-            box-shadow: 0px 0px 20px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
+            box-shadow: 0px 0px 20px ${props => props.theme.whiteNineToBlackOne};
             .arrow_icon{
                 left: 0.2rem;
                 color: white;
