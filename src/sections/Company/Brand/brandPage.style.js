@@ -7,7 +7,7 @@ const BrandPageWrapper = styled.section`
 
 	.brandHeader {
 		padding: 6rem 0;
-		background:${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.tertiaryColor};
+		background:${props => props.theme.grey212121ToGreen1E2117};
 		
 		text-align: center;
 		h1{

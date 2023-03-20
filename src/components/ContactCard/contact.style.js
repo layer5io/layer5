@@ -10,7 +10,7 @@ const ContactWrapper = styled.section`
         margin: auto;
     }
     .contact-icon {
-        color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryColor};
+        color: ${props => props.theme.green00B39FToGreen3C494F};
     }
     img {
         max-width: 100px;
@@ -66,7 +66,7 @@ const ContactWrapper = styled.section`
     .section-title{
         h3 {
             margin-bottom: 2rem;
-            color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryColor};
+            color: ${props => props.theme.green00B39FToGreen3C494F};
         }
     }
     @media only screen and (max-width: 912px) {

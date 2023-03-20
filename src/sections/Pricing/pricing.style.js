@@ -3,7 +3,7 @@ import styled from "styled-components";
 const PricingWrapper = styled.section`
 
 .headers {
-  background:${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.tertiaryColor};
+  background:${props => props.theme.grey212121ToGreen1E2117};
   background: linear-gradient(0deg, ${props => props.theme.DarkTheme ? "#121212" : "white"} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;

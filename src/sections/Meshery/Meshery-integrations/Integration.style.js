@@ -86,7 +86,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+          color: ${(props) => props.theme.whiteToBlack};
           transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
@@ -128,7 +128,7 @@ export const HoneycombGrid = styled.div`
       background: #00d3a9;
       ::after {
         content: "";
-        background: ${(props) => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
+        background: ${(props) => props.theme.grey212121ToWhite};
         margin: 0px 0px 0 4px;
         clip-path: polygon(
           50% 0%,
@@ -208,7 +208,7 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow:before {
-    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+    color: ${(props) => props.theme.whiteToBlack};
     font-size: 4rem;
     display: inline-block;
     height: 1rem;

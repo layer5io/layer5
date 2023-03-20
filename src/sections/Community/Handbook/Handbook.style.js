@@ -186,7 +186,7 @@ export const HandbookWrapper = styled.div`
       fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
     }
     path {
-      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+      stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
     }
     svg {
       color: "red";

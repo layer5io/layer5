@@ -33,7 +33,7 @@ const DesignDefaultWrapper = styled.section`
         max-width: 30%;
     }
     h2.statement {
-        color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+        color: ${props => props.theme.green00B39FToGreyB3B3B3};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
@@ -64,7 +64,7 @@ const DesignDefaultWrapper = styled.section`
         color: ${props => props.theme.primaryColor};
     }
     .description a {
-        color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
+        color: ${props => props.theme.white};
         font-style: italic;
         :hover {
             cursor: hand;
