@@ -10,6 +10,10 @@ const FeaturesSectionWrapper = styled.section`
 		position: relative;
 		top: -5rem;
 	}
+	.service-mesh-video {
+		text-align: center;
+        width: 100%;
+	}
 	.rect-1-left {
 		background: #C9FCF6;
 		border-radius: 0 2.125rem 0 0;
@@ -82,7 +86,7 @@ const FeaturesSectionWrapper = styled.section`
 			margin: 4rem 0;
 			align-items: center;
 		}
-		h2, h4 {
+		h2, h4, h3 {
 				color: white;
 			}
 		.smp-section-data {
@@ -242,7 +246,7 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	.mesh-mngmnt {
-		h3 {
+		h4 {
 			margin: 1rem 0;
 			color: rgba(255, 255, 255, 0.6);
 			font-size: 1.5rem;
