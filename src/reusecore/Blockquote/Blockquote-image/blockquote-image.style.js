@@ -85,7 +85,7 @@ section.bq-section {
 
 .type-one-quote .type-one-quote-meta .type-one-author,
 .type-one-quote .type-one-quote-meta .type-one-source {
-    color: ${props => props.theme.greyEEEEEEToGrey777777};
+   color: ${props => props.theme.greyEEEEEEToBlack};
 
 }
 
@@ -184,14 +184,13 @@ section.bq-section {
 .type-two-quote .type-two-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.greyEEEEEEToGrey777777};
-
+    border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
     text-align: center;
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author,
 .type-two-quote .type-two-quote-meta .type-two-quote-source {
-    color: ${props => props.theme.greyEEEEEEToGrey777777};
+    color: ${props => props.theme.greyEEEEEEToBlack};
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author {
