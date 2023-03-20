@@ -79,7 +79,7 @@ const CollaborationBannerWrapper = styled.div`
 
     h4 {
         padding: 3% 0%;
-        color: #A0AAAA;
+        color: ${props => props.theme.DarkTheme ? "#A0AAAA" : "#666666"};
         /* font-size: 20px; */
         max-width: 40%;
         /* font-weight: bold; */
