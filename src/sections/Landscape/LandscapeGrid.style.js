@@ -394,8 +394,8 @@ export const LandscapePageWrapper = styled.div`
 		font-size: 1.05rem;
 		padding: 0.75rem;
 		font-weight: 600;
-		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
-		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		color: ${props => props.theme.white};
+		background: ${props => props.theme.grey404040ToGrey1E2117};
 	}
 	ul.category {
 		margin: 0;
@@ -423,8 +423,8 @@ export const LandscapePageWrapper = styled.div`
 			border-top-left-radius: .5rem;
 		}
 		&:hover {
-			background-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
-			color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
+			background-color: ${props => props.theme.grey404040ToGrey1E2117};
+			color: ${props => props.theme.white};
 			&:nth-child(1){
 				border-top-left-radius: .5rem;
 			}
@@ -442,11 +442,11 @@ export const LandscapePageWrapper = styled.div`
 		background: ${props => props.theme.DarkTheme ? "#009a89" : "#00B39F"};
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
-		border-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		background: ${props => props.theme.grey404040ToGrey1E2117};
+		border-color: ${props => props.theme.grey404040ToGrey1E2117};
 		border-right: 1px solid ${props => props.theme.shadowLightColor};
 		border-radius:0;
-		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
+		color: ${props => props.theme.white};
 		font-weight: 600;
 		// border-bottom: 0px;
 	}
@@ -457,14 +457,14 @@ export const LandscapePageWrapper = styled.div`
 		border-right: none;
 	}
 	.odd-row {
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);

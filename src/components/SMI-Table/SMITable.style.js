@@ -37,10 +37,10 @@ table {
         text-align: center;
         font-size: 0.9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "efefef"};
+        border-bottom: 1px solid ${props => props.theme.grey212121ToGreyEFEFEF};
     }
     th {
-        background: ${props => props.theme.DarkTheme ? "#404040" : "#1E2117"} ;
+        background: ${props => props.theme.grey404040ToGrey1E2117} ;
         color: #ffffff;
 		height: 4rem;
 		font-size: 1rem;
@@ -80,7 +80,7 @@ table {
 	
 	th, tr{
 		&:hover{
-			box-shadow: 0px 0px 15px -10px ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.text};
+			box-shadow: 0px 0px 15px -10px ${props => props.theme.whiteToBlack};
 			transform: translateY(0px);
 		}
 	}

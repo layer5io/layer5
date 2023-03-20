@@ -165,7 +165,7 @@ export const WorkshopPageWrapper = styled.div`
 	
 
 	.workshop-grid-card {
-		background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background-color: ${props => props.theme.grey212121ToWhite};
 		width: 100%;
 		display: block;
 		height: auto;

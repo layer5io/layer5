@@ -183,7 +183,7 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
     }
     path {
       stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
@@ -457,8 +457,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+  background: ${props => props.theme.grey212121ToWhite};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }

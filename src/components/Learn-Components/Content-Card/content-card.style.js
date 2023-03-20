@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ContentCardWrapper = styled.div`
   padding: 2.5rem;
   margin: 2rem 0;
-  background-color: ${props => props.theme.DarkTheme ? "#111111" : "#fafafa"};
+  background-color: ${props => props.theme.grey111111ToGreyFAFAFA};
   display: flex;
   border: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroOne};
   justify-content: space-between;

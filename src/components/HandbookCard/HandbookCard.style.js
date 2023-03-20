@@ -9,7 +9,7 @@ export const HandbookCardWrapper = styled.div`
     .handbook__card {
 	  border-radius: 5px;
 	  width: 25rem;
-	  box-shadow: 0 5px 10px ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+	  box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
 	  overflow: hidden;
 	  height: 15rem;
 	  transition: all 0.3s;

@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
         border-radius: 0.5rem;
-        background-Color:${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        background-Color:${props => props.theme.grey212121ToWhite};
         box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
         transition: all 0.3s ease-in;
         &:hover{

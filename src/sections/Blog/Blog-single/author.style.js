@@ -49,7 +49,7 @@ const AboutTheAuthorWrapper = styled.div`
             font-size: 1rem;
             line-height: 1.375rem;
             margin: 1.5rem 0;
-            color: ${props => props.theme.DarkTheme ? "#B1B6B8" : "#477E96"};  
+            color: ${props => props.theme.greyB1B6B8ToBlue477E96};  
         }
         .authors-info-meshery{
             border-top: 1px solid ${props => props.theme.greyFiveToBlueFive};
@@ -60,12 +60,12 @@ const AboutTheAuthorWrapper = styled.div`
                 font-weight: 500;
                 font-size: 1.25rem;
                 line-height: 2rem;
-                color: ${props => props.theme.DarkTheme ? "#D3D7DB" : "#1E2117"};  
+                color: ${props => props.theme.greyD3D7DBToGreen1E2117};  
             }
             p{
                 font-size: 1rem;
                 line-height: 1.375rem;
-                color: ${props => props.theme.DarkTheme ? "#B1B6B8" : "#477E96"};  
+                color: ${props => props.theme.greyB1B6B8ToBlue477E96};  
             }
             .cta-btn{
                     min-width: 100%;
@@ -76,7 +76,7 @@ const AboutTheAuthorWrapper = styled.div`
             
             h3{
                 font-size: 1.5rem;
-                color: ${props => props.theme.DarkTheme ? "#D3D7DB" : "#1E2117"};  
+                color: ${props => props.theme.greyD3D7DBToGreen1E2117};  
                 border-bottom: none;
                 margin-bottom: .5rem;
             }

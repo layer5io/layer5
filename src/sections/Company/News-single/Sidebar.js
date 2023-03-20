@@ -20,7 +20,7 @@ Button{
 }
 
 .media_block { 
-  background-color: ${props => props.theme.DarkTheme ? "#212121" : "white"};		
+  background-color: ${props => props.theme.grey212121ToWhite};		
   transition: 450ms all;
     margin-bottom: 1rem;
     border: 1px solid ${props => props.theme.shadowLightColor};

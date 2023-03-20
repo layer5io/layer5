@@ -8,7 +8,7 @@ const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    /* background-color: ${props => props.theme.grey121212ToWhite};;
     max-width: 90%; */
     justify-content: center;
     /* align-items: center; */
@@ -23,7 +23,7 @@ const CollaborationFeatureWrapper = styled.div`
       transition: 0.5s;
       display: flex;
       flex-direction: row-reverse;
-      background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+      background-color: ${props => props.theme.grey121212ToWhite};;
       max-width: 90%;
       justify-content: space-between;
       align-items: center;

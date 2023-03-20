@@ -46,7 +46,7 @@ p{
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
-    background:  ${props => props.theme.DarkTheme ? "#212121" : "rgba(245, 245, 245, 1)"};
+    background:  ${props => props.theme.grey212121ToGreyF5F5F5};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
     transition: all 0.2s;

@@ -10,7 +10,7 @@ const DesignBannerWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};
+    background-color: ${props => props.theme.grey121212ToWhite};
     max-width: 1920px;
     width: 100%;
     justify-content: space-evenly;

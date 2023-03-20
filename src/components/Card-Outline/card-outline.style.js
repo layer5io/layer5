@@ -13,7 +13,7 @@ const CardOutlineWrapper = styled.div`
         padding: 1rem 2rem;
         text-align: center;
         position: relative;
-        background: ${props => props.theme.DarkTheme ? "#212121" : "rgba(255, 255, 255, 1)"};
+        background: ${props => props.theme.grey212121ToWhite};
 
         border: 1px solid ${props => props.theme.secondaryColor};
         transition: all 0.2s ease-in-out;

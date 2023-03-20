@@ -15,7 +15,7 @@ const Banner1SectionWrapper = styled.section`
     p {
         font-size: 21px;
         font-weight: 300;
-        color: ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+        color: ${props => props.theme.greyDEE3DEToGreen3C494F};
         margin: 0 0 70px 0;
         text-align: center;
     }
@@ -34,7 +34,7 @@ const Banner1SectionWrapper = styled.section`
             }
         }
         h2 {
-            color: ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+            color: ${props => props.theme.greyDEE3DEToGreen3C494F};
             margin: 0 0 20px 0;
             span {
                 color: ${props => props.theme.secondaryColor};

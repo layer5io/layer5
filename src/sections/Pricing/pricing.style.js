@@ -4,7 +4,7 @@ const PricingWrapper = styled.section`
 
 .headers {
   background:${props => props.theme.grey212121ToGreen1E2117};
-  background: linear-gradient(0deg, ${props => props.theme.DarkTheme ? "#121212" : "white"} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background: linear-gradient(0deg, ${props => props.theme.grey121212ToWhite} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -97,7 +97,7 @@ const PricingWrapper = styled.section`
 
 
 .pricing-table {
-  background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  background-color: ${props => props.theme.grey212121ToWhite};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
@@ -110,7 +110,7 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
-      background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+      background-color: ${props => props.theme.grey212121ToWhite};
 
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
     }

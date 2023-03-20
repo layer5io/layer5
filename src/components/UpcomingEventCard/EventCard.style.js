@@ -6,7 +6,7 @@ const UpcomingEventsWrapper = styled.div`
 		position: relative;
 		max-width: 50rem;
 		margin: auto;
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 		padding: 1rem;
 		border-radius: 0.5rem;
@@ -62,7 +62,7 @@ const UpcomingEventsWrapper = styled.div`
 	}
 
 	.swiper-pagination {
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
 		padding-top: 0.8rem;
     	margin-top: 1rem;
     	margin-bottom: -1.2rem;
