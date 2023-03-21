@@ -132,6 +132,7 @@ const MeshmapDesignBanner = () => {
       </div>
       <div className="hero-image">
         <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
+        {/* <CytoscapeDemo/> */}
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>
