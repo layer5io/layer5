@@ -2,18 +2,40 @@
   border-radius: 20px;
 }
 
-
-.card{
-    /* box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px; */
-    box-shadow: none;
+.card.light {
+  box-shadow: none;
  
   background: linear-gradient(
+    266.65deg,
+    #00b39f 40.19%,
+    #00B39F 74.31%,
+    #3c494f 92.89%
+  )
+}
+
+.card.dark {
+  background: linear-gradient(
+    266.65deg,
+    #00584e 40.19%,
+    #2e5363 74.31%,
+    #212529 92.89%
+  );
+}
+
+
+ .card{
+    /* box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px; */
+    /* box-shadow: none; */
+ 
+  /* background: linear-gradient(
     266.65deg,
     #00b39f 40.19%,
     #477e96 74.31%,
     #3c494f 92.89%
    
-  );
+  ); */ 
+
+  
   height:60vh;
   padding:2rem;
   border-radius: 20px;

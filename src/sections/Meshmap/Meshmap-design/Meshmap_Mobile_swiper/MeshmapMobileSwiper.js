@@ -101,9 +101,6 @@ export const MeshmapMobileSwiper = () => {
             delay: 2000,
             disableOnInteraction: false,
           }}
-          // pagination={{
-          //   type: "fraction",
-          // }}
           scrollbar={{
             draggable: true,
           }}
@@ -113,9 +110,11 @@ export const MeshmapMobileSwiper = () => {
           navigation={false}
           className="mySwiper"
         >
-          {CONTENT.map(({ title, description, img, readMoreLink }) => (
+          {CONTENT.map(({ title, description, img, readMoreLink }, index) => (
             <SwiperSlide key={title}>
-              <Card title={title} description={description} img={img} readMoreLink={readMoreLink}/>
+              <div className={`card ${index % 2 === 0 ? "dark" : "light"}`}>
+                <Card title={title} description={description} img={img} readMoreLink={readMoreLink}/>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -123,3 +122,4 @@ export const MeshmapMobileSwiper = () => {
     </>
   );
 };
+
