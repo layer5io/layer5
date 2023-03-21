@@ -9,10 +9,9 @@ const MeshmapVisualizeWrapper = styled.div`
 
   .background-image {
     position: absolute;
+    justify-content: center;
     top: 0%;
-    left: 10%;
-    z-index: 0;
-    transform: rotateZ(5deg);
+    /* transform: rotateZ(-10deg); */
     opacity: 0.8;
   }
 
