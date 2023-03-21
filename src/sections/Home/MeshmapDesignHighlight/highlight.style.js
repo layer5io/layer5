@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const DesignDefaultWrapper = styled.section`
+    max-width: 90%;
     .row {
         margin: 2rem;
 
@@ -72,7 +73,7 @@ const DesignDefaultWrapper = styled.section`
         }
     }
     .demo {
-        color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.DarkTheme ? "#fff" : "#000"};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
@@ -90,9 +91,9 @@ const DesignDefaultWrapper = styled.section`
 
     }
     .section-title {
-        padding: 3rem 8rem;
+        padding: 3rem 4rem;
         border-radius: 2rem 0 0 2rem;
-        background:${props => props.theme.DarkTheme ? "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)" : "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 102.34%)"};
+        background:${props => props.theme.DarkTheme ? "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)" : "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 99.34%)"};
     }
     .svg-background {
         position: absolute;
@@ -106,6 +107,15 @@ const DesignDefaultWrapper = styled.section`
             transform: scale(2);
             transform-origin: 0rem 0rem;
         }
+    }
+
+    .diagram-hidden {
+        opacity: 0;
+        transition: 0.5s ease-out;
+    }
+    .diagram-visible {
+        opacity: 1;
+        transition: 0.5s ease-in;
     }
 
     @media screen and (max-width: 1600px) {
