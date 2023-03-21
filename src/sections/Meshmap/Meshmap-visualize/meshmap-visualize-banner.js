@@ -85,7 +85,10 @@ const VisualizeBannerWrapper = styled.div`
 
 const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
   const handleClick = () => {
-    targetRef.current.scrollIntoView({ behavior: "smooth" });
+    const offset = 100;
+    const targetPos = targetRef.current.getBoundingClientRect().top + window.pageYOffset;
+    const finalpos = targetPos - offset;
+    window.scrollTo({ top: finalpos, behavior: "smooth" });
   };
   return (
     <VisualizeBannerWrapper>
@@ -98,9 +101,9 @@ const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
           <Button primary className="join-community-button" title="Explore MeshMap Visualizer" url="" onClick={handleClick} />
         </div>
-        <div className="banner-image">
+        {/* <div className="banner-image">
           <img src={BannerImage} alt="" />
-        </div>
+        </div> */}
       </div>
     </VisualizeBannerWrapper>
   );
