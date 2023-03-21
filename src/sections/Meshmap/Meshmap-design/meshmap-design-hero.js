@@ -82,8 +82,8 @@ const MeshmapHeroSection = () => {
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
-        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" />
+        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
       <div className="hero-text">
         <h2><span>Design your infrastructure</span></h2>
