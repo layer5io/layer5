@@ -120,7 +120,7 @@ const CommunityPage = ({ theme }) => {
               <img src={theme == "dark" ? lightMeshmateIcon : MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
-                <button className="icon">
+                <button className="icon" aria-label="mentorship-program">
                   <FaArrowRight />
                 </button>
               </Link>
