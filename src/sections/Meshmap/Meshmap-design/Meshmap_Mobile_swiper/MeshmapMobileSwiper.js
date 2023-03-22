@@ -43,13 +43,13 @@ const Container = styled.div`
 @media (min-width: 769px) {
   display: none;
 }
-// @media (max-width:625px){
-//   width:50vw;
-// }
+@media (max-width:716px){
+  width:65vw;
+}
 @media (max-width:470px){
   width:74vw;
 }
-@media (max-width:560px){
+@media (max-width:577px){
   width:64vw;
 }
 

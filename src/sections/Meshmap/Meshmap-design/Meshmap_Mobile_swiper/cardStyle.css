@@ -36,7 +36,7 @@
   ); */ 
 
   
-  height:60vh;
+  height:64vh;
   padding:2rem;
   border-radius: 20px;
   display: flex;
@@ -68,7 +68,7 @@
 }
 }
 
-@media (max-width:570px){
+@media (max-width:577px){
   
   h2{
       font-size: 1.4rem;
