@@ -5,7 +5,22 @@ import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import CommonForm from "../../components/CommonForm";
 
 const SignupFormWrapper = styled.div`
+.desc-text {
+  display: flex;
+  flex-direction: column;
+}
 
+.meshmap-video {
+  box-shadow: 0px 5px 5px 2px #b3b3b3;
+  height: 28rem;
+
+  @media screen and (max-width: 1200px) {
+    height: 26rem;
+  }
+  @media screen and (max-width: 992px) {
+    height: 23rem;
+  }
+}
 `;
 const SignupForm = ({ targetRef }) => {
   return (
@@ -19,11 +34,19 @@ const SignupForm = ({ targetRef }) => {
               <p className="desc-p">
                 Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
               </p>
-              <div className="draft-logo">
-                <p>Help choose the best logo for MeshMap:</p>
+              <div className="meshmap-video">
+                {/* <p>Help choose the best logo for MeshMap:</p>
                 <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
                   <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
-                <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p>
+                <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p> */}
+                <iframe
+                  src="https://www.youtube.com/embed/qaoYRP3oLok?modestbranding=1&rel=0"
+                  width="100%"
+                  height="100%"
+                  style={{ border: "0" }}
+                  allow="autoplay"
+                  allowFullScreen
+                />
               </div>
             </Col>
 

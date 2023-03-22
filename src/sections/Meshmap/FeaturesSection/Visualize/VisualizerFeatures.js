@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
 import Feature from "../../features";
-import { useState } from "react";
+import { Link } from "gatsby";
+import LinkArrow from "../../images/link-arrow.svg";
+import LinkArrowDark from "../../images/link-arrow-dark.svg";
 import useGsapTimeline from "../useGsapTimeline";
 
 export default function VisualizerFeatures({ features }) {
@@ -12,14 +14,29 @@ export default function VisualizerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".visualizer-trigger-container",featureContainerName: ".visualizer-features",yPercent: -100 });
+  useGsapTimeline({ trigger: ".visualizer-trigger-container", featureContainerName: ".visualizer-features", yPercent: -100 });
 
+  const [cursorOverArrow, setcursorOverArrow] = useState(false);
+  const handleEnter = () => {
+    if (!cursorOverArrow)
+      setcursorOverArrow(true);
+  };
+  const handleLeave = () => {
+    if (cursorOverArrow)
+      setcursorOverArrow(false);
+  };
   return (
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
-          <div id="featureHeading" className="fixed">
+          <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <h1>Visualize</h1>
+            <Link to="/cloud-native-management/meshmap/visualize">
+              <div className="learn-more">
+                <h6 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h6>
+                <img src={cursorOverArrow ? LinkArrowDark : LinkArrow} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
+              </div>
+            </Link>
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll">
