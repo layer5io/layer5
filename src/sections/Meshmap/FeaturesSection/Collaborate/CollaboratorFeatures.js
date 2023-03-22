@@ -5,20 +5,37 @@ import CollaboratorFeaturesDiagram from "./CollaboratorFeatures_diagram";
 import Feature from "../../features";
 import { useState } from "react";
 import useGsapTimeline from "../useGsapTimeline";
+import { Link } from "gatsby";
+import LinkArrow from "../../images/link-arrow.svg";
+import LinkArrowDark from "../../images/link-arrow-dark.svg";
 
 export default function CollaboratorFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
-  useGsapTimeline({ trigger: ".collaborator-trigger-container",featureContainerName: ".collaborator-features", yPercent: -300 });
-
+  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -300 });
+  const [cursorOverArrow, setcursorOverArrow] = useState(false);
+  const handleEnter = () => {
+    if (!cursorOverArrow)
+      setcursorOverArrow(true);
+  };
+  const handleLeave = () => {
+    if (cursorOverArrow)
+      setcursorOverArrow(false);
+  };
   return (
     <CollaboratorFeaturesWrapper>
       <Container className="collaborate-container collaborator-trigger-container">
         <div className="root">
-          <div id="featureHeading" className="fixed">
+          <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <h1>Collaborate</h1>
+            <Link to="/cloud-native-management/meshmap/collaborate">
+              <div className="learn-more">
+                <h6 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h6>
+                <img src={cursorOverArrow ? LinkArrowDark : LinkArrow} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
+              </div>
+            </Link>
           </div>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll">
