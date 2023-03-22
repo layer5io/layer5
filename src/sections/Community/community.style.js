@@ -208,6 +208,10 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+            a {
+                font-weight: 600;
+                background: linear-gradient(123deg, ${props => props.theme.DarkTheme ? "black" : "white"} 60%,${props => props.theme.DarkTheme ? "black" : "white"} 100%);
+            }
         }
     }
 
