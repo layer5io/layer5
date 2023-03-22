@@ -29,7 +29,7 @@ const DivWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   margin: auto;
-  padding-block: 8% 12%;
+  padding-block: 8% 12.4rem;
   display: flex;
   font-size: 1.125rem;
   justify-content: space-between;
@@ -69,6 +69,7 @@ const DivWrapper = styled.div`
   }
 
   @media only screen and (max-width: 1500px) {
+    padding-bottom: 11rem;
     .left {
       max-width: 20rem;
       h1 {
@@ -83,9 +84,20 @@ const DivWrapper = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    padding-block: 6%;
+    // padding-block: 6% 14%;
     .left {
       margin-left: 5%;
+    }
+  }
+  
+  @media only screen and (max-width: 999px) {
+    padding-block: 3rem;
+    .left {
+      display: none;      
+    }
+    .right {
+      top: 0px;
+      height: 380px;
     }
   }
 `;
