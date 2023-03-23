@@ -17,6 +17,7 @@ import InteractiveTerminalCode from "./images/interactive-terminal-code.svg";
 import LogStream from "./images/log-stream.svg";
 import LogStreamSearch from "./images/log-stream-search.svg";
 import { useState, useEffect } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const VisualizerFeaturesWrapper = styled.div`
 
@@ -42,10 +43,10 @@ z-index: 10;
     .project__block__inner {
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.DarkTheme ? "#212121" : "#ffffff"};
-        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#fff" : "#E6E6E6"};
+        background: ${props => props.theme.grey212121ToWhite};
+        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.whiteToGreyE6E6E6};
         &:hover{
-            box-shadow: 0px 0px 5px ${props => props.theme.DarkTheme ? "#00d3a9" : "#3c494f"};
+            box-shadow: 0px 0px 5px ${props => props.theme.green00D3A9ToGreen3C494F};
         }
         padding: 10% 8%;
         height: 25rem;
@@ -82,7 +83,7 @@ z-index: 10;
     }
 
     .darken {
-      background: ${props => props.theme.DarkTheme ? "#121212" : "#ffffff"};
+      background: ${props => props.theme.grey121212ToWhite};
       /* scale:1.1; */
       /* transition: all 0.5s ease; */
       opacity: 0.85;
@@ -112,9 +113,12 @@ z-index: 10;
     }
 `;
 
-const MeshmapVisualizerFeatures = ({ theme }) => {
+const MeshmapVisualizerFeatures = () => {
   const [isHovered, setisHovered] = useState(false);
   const [hoveredFeature, sethoveredFeature] = useState("");
+
+  const { isDark } = useStyledDarkMode();
+  const theme = isDark ? "dark" : "light";
 
   const handleMouseOver = (num) => {
     setisHovered(true);

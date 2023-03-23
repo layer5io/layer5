@@ -5,6 +5,7 @@ import VisualizerViewsLight from "./images/visualizer-views-light.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const ViewsSectionWrapper = styled.div`
 
@@ -16,7 +17,7 @@ const ViewsSectionWrapper = styled.div`
     position: relative;
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+    background-color: ${props => props.theme.grey121212ToWhite};
     margin: 3%;
     border-radius: 2rem;
     max-width: 1920px;
@@ -24,7 +25,7 @@ const ViewsSectionWrapper = styled.div`
     justify-content: space-evenly;
     align-items: center;
     padding: 4% 5% 3%;
-    box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 1.25rem #477e96" : "-0.25rem 0.25rem 1.25rem #477e96"};
+    box-shadow: ${props => props.theme.boxShadowBlue477E96};
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -101,9 +102,13 @@ const ViewsSectionWrapper = styled.div`
 
 `;
 
-const MeshmapVisualizerViews = ({ theme }) => {
+const MeshmapVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.4 });
   const [imageInView, setimageInView] = useState(false);
+
+  const { isDark } = useStyledDarkMode();
+  const theme = isDark ? "dark" : "light";
+
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)

@@ -31,7 +31,7 @@ const MeshmapWrapper = styled.div`
         .heading-2 {
             font-weight: 700;
             color: ${props => props.theme.secondaryColor};
-            background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+            background: ${(props) => props.theme.grey121212ToLinear};
         }
         .desc-p {
 
@@ -44,7 +44,7 @@ const MeshmapWrapper = styled.div`
       padding-top: 6rem;
   }
   .vote-design {
-    background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+    background: ${(props) => props.theme.grey121212ToLinear};
   }
   .modes-image{
     margin: 0 0 2rem;

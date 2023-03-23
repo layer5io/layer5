@@ -73,7 +73,7 @@ const DesignDefaultWrapper = styled.section`
         }
     }
     .demo {
-        color: ${props => props.theme.DarkTheme ? "#fff" : "#000"};
+        color: ${props => props.theme.whiteToBlack};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);

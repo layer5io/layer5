@@ -24,7 +24,7 @@ export const TableWrapper = styled.div`
 			a {
 				color: ${props => props.theme.text};
 				&:hover {
-					color: ${props => props.theme.DarkTheme ? "rgb(180, 180, 180)" : "rgb(80, 80, 80)"};
+					color: ${props => props.theme.greyB4B4B4ToGrey505050};
 				}
 			}
 			:first-child {
