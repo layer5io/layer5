@@ -31,6 +31,7 @@ const PartnerItemWrapper = styled.section`
 		.slick-dots li button:hover{
 				box-shadow: none;
 		}
+
     a.partner-card {
         @media(max-width: 1400px){
             flex: 0 0 12%;
@@ -38,12 +39,26 @@ const PartnerItemWrapper = styled.section`
             margin-right:0.5rem;
         }
 
-        &:hover {
-             img  {
+        &:hover
+        {
+            img{
                 opacity: 1;
             }
         }
+
+        #vm:hover
+        {
+        
+           filter:brightness(10%);
+        
+
+         }
+
         flex-shrink: 3;
+    
+
+       
+
     }
     img {
         width: 2rem;

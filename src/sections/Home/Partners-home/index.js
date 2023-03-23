@@ -44,7 +44,7 @@ const Projects = () => {
         {partners.map((partner, index) => (
           <Link className="partner-card" to={partner.imageRoute} key={index}>
             <div className={partner.innerDivStyle}>
-              <img className="partner-image" loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
+              <img className="partner-image" id={partner.id} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
             </div>
           </Link>
         ))}
