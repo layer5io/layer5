@@ -5,13 +5,13 @@ import PerformanceMetrics from "./images/performance-metrics-bars.svg";
 import PerformanceMetricsGraphDark from "./images/performance-metrics-graph-dark.svg";
 import PerformanceMetricsGraphLight from "./images/performance-metrics-graph-light.svg";
 import TimelineDVR from "./images/timeline-dvr.svg";
-import TimelineDVRBoxes from "./images/timeline-dvr-boxes.svg";
-import ServicePerformanceGear from "./images/service-performance-gear.svg";
+import TimelineDVRClock from "./images/timeline-dvr-clock.svg";
+import ServicePerformanceGearDark from "./images/service-performance-gear-dark.svg";
+import ServicePerformanceGearLight from "./images/service-performance-gear-light.svg";
 import ServicePerformanceMeterDark from "./images/service-performance-meter-dark.svg";
 import ServicePerformanceMeterLight from "./images/service-performance-meter-light.svg";
-import ApplicationImportTruckDark from "./images/application-import-truck-dark.svg";
-import ApplicationImportTruckLight from "./images/application-import-truck-light.svg";
 import ApplicationImportBoxes from "./images/application-import-boxes.svg";
+import ApplicationImportArrows from "./images/application-import-arrows.svg";
 import InteractiveTerminal from "./images/interactive-terminal.svg";
 import InteractiveTerminalCode from "./images/interactive-terminal-code.svg";
 import LogStream from "./images/log-stream.svg";
@@ -133,8 +133,8 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={theme == "dark" ? ApplicationImportTruckDark : ApplicationImportTruckLight} alt="Application Import" style={{ position: "absolute" }} />
-                <img src={ApplicationImportBoxes} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
+                <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
+                <img src={ApplicationImportArrows} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
               </div>
               <h3>Application Import</h3>
               <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
@@ -163,8 +163,8 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={TimelineDVR} alt="Timeline" style={{ position: "absolute", width: "80%" }} />
-                <img src={TimelineDVRBoxes} alt="" className={hoveredFeature == "Feature4" ? "secondary-image-visible" : "secondary-image"} style={{ width: "80%" }} />
+                <img src={TimelineDVRClock} alt="Timeline" style={{ position: "absolute", width: "80%" }} />
+                <img src={TimelineDVR} alt="" className={hoveredFeature == "Feature4" ? "secondary-image-visible" : "secondary-image"} style={{ width: "80%" }} />
               </div>
               <h3>Timeline (DVR)</h3>
               <p>Playback service transactions. Scrub over the history of changes to your deployments.</p>
@@ -173,7 +173,7 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={ServicePerformanceGear} alt="Timeline" style={{ position: "absolute", zIndex: "0" }} />
+                <img src={theme == "dark" ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
                 <img src={theme == "dark" ? ServicePerformanceMeterDark : ServicePerformanceMeterLight} alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"} style={{ position: "relative", zIndex: "10", transformOrigin: "center center" }} />
               </div>
               <h3>Service Performance</h3>
