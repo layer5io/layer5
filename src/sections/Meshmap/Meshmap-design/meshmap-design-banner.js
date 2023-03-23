@@ -38,8 +38,8 @@ const DesignBannerWrapper = styled.div`
         @media only screen and (max-width: 950px) {
             padding-bottom: 15%;
         }
-        @media only screen and (max-width: 550px) {
-            padding-bottom: 25%;
+        @media only screen and (max-width: 600px) {
+            padding-bottom: 30%;
         }
     }
 
@@ -129,6 +129,7 @@ const MeshmapDesignBanner = ({ theme }) => {
       </div>
       <div className="hero-image">
         <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
+        {/* <CytoscapeDemo/> */}
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>

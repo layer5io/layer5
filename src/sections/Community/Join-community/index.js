@@ -27,6 +27,7 @@ const JoinCommunityWrapper = styled.div`
         }
         button{
             margin-top: 1.5rem;
+            background: linear-gradient(123deg, ${props => props.theme.secondaryColor} 60%, ${props => props.theme.secondaryColor} 100%);
         }
     }
 `;

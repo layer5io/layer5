@@ -11,7 +11,7 @@ import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
-import MeshmapSignupForm from "./meshmap-signup-form";
+import SignupForm from "./signup-form";
 import Reviews from "../Pricing/review-slider";
 import roleBind1 from "./FeaturesSection/Design/images/role-binding-1.svg";
 import roleBind1_dark from "./FeaturesSection/Design/images/role-binding-1-dark.svg";
@@ -225,7 +225,7 @@ const Meshmap = ({ theme }) => {
 
           <Catalog />
           {/* <MesheryAction /> */}
-          <MeshmapSignupForm />
+          <SignupForm />
           <Platform />
         </Container >
       </div >
