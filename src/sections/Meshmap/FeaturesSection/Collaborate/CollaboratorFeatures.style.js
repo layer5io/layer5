@@ -101,7 +101,8 @@ const CollaboratorFeaturesWrapper = styled.section`
       justify-content: center;
     }
 
-    h6 {
+    h5 {
+      font-weight: 600;
       @media (max-width: 600px) {
         font-size: 0.7rem;
       }
@@ -175,8 +176,7 @@ const CollaboratorFeaturesWrapper = styled.section`
     transition: all 0.5s;
   }
   .arrow-enter {
-    fill: #000;
-    transform: translateX(1rem);
+    transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
 `;
