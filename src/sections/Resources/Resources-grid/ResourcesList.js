@@ -113,7 +113,6 @@ const ResourcesList = (props) => {
 
   return (
     <ResourcesGrid
-
       data={[...new Set(data)]}
       {...props}
       searchData={searchData}

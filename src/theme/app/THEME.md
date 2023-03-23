@@ -38,7 +38,6 @@ stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
 Procedure of changing the image for the gatsby-image is the same as we change for images, however, it is recommended to fetch two images, one for a dark theme and one for a light theme change it according to the theme state as did with images.
 
     Example (For Thumbnail)
-
         Fetching images through Graphql:
           Add this in graphql query in frontmatter
            darkthumbnail {
@@ -55,4 +54,3 @@ Procedure of changing the image for the gatsby-image is the same as we change fo
              imgStyle={{ objectFit: "contain" }}
              alt={frontmatter.title}
            />): ""
-
