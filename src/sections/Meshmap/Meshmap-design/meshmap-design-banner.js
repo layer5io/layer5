@@ -134,8 +134,8 @@ const MeshmapDesignBanner = ({ theme }) => {
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
-        <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
-        {/* <CytoscapeDemo/> */}
+        {/* <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" /> */}
+        <CytoscapeDemo/>
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>
