@@ -29,7 +29,7 @@ const DivWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   margin: auto;
-  padding-block: 8% 12.4rem;
+  padding-block: 12.4rem;
   display: flex;
   font-size: 1.125rem;
   justify-content: space-between;
@@ -50,26 +50,26 @@ const DivWrapper = styled.div`
     // right: 20px;
     top: -50px;
 
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    // animation-name: floating;
+    // animation-duration: 3s;
+    // animation-iteration-count: infinite;
+    // animation-timing-function: ease-in-out;
 
-    @keyframes floating {
-      0% {
-        transform: translate(0, 0px);
-      }
-      50% {
-        transform: translate(0, 15px);
-      }
-      100% {
-        transform: translate(0, -0px);
-      }
-    }
+    // @keyframes floating {
+    //   0% {
+    //     transform: translate(0, 0px);
+    //   }
+    //   50% {
+    //     transform: translate(0, 15px);
+    //   }
+    //   100% {
+    //     transform: translate(0, -0px);
+    //   }
+    // }
   }
 
   @media only screen and (max-width: 1500px) {
-    padding-bottom: 11rem;
+    padding-block: 11rem;
     .left {
       max-width: 20rem;
       h1 {
