@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../../components/PopOutCardCarousel";
+import { StaticImage } from "gatsby-plugin-image";
+
+const img1 = "../../../assets/images/meshmap/MeshmapDesigner.png";
 
 const CONTENT = [
   {
@@ -29,26 +32,33 @@ const DivWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   margin: auto;
-  padding-block: 12.4rem;
+  padding-block: 4%;
   display: flex;
+  flex-direction: column;
   font-size: 1.125rem;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: center;
   position: relative;
   .left {
-    max-width: 30rem;
-    margin-left: 10%;
+    // max-width: 30rem;
+    text-align: center;
+    // margin-left: 10%;
     flex: 1;
-    h1 {
-      margin-bottom: 1rem;
-    }
+    // h1 {
+    //   margin-bottom: 1rem;
+    // }
+    margin-bottom: 4rem;
+
   }
   .right {
     position: relative;
+    width: 100%;
+    height: 420px;
     display: flex;
     justify-content: center;
-    flex: 1;
+    // flex: 1;
     // right: 20px;
-    top: -50px;
+    // top: -50px;
 
     // animation-name: floating;
     // animation-duration: 3s;
@@ -68,37 +78,37 @@ const DivWrapper = styled.div`
     // }
   }
 
-  @media only screen and (max-width: 1500px) {
-    padding-block: 11rem;
-    .left {
-      max-width: 20rem;
-      h1 {
-        font-size: 34px;
-      }
-    }
-    .right {
-      h3 {
-        font-size: 24px;
-      }
-    }
+  // @media only screen and (max-width: 1500px) {
+  //   padding-block: 11rem;
+  //   .left {
+  //     max-width: 20rem;
+  //     h1 {
+  //       font-size: 34px;
+  //     }
+  //   }
+  //   .right {
+  //     h3 {
+  //       font-size: 24px;
+  //     }
+  //   }
   }
 
-  @media only screen and (max-width: 1200px) {
-    // padding-block: 6% 14%;
-    .left {
-      margin-left: 5%;
-    }
-  }
+  // @media only screen and (max-width: 1200px) {
+  //   // padding-block: 6% 14%;
+  //   .left {
+  //     margin-left: 5%;
+  //   }
+  // }
   
   @media only screen and (max-width: 999px) {
-    padding-block: 3rem;
+    // padding-block: 3rem;
     .left {
-      display: none;      
+      margin-bottom: 1rem;      
     }
-    .right {
-      top: 0px;
-      height: 380px;
-    }
+    // .right {
+    //   top: 0px;
+    //   height: 380px;
+    // }
   }
 `;
 
@@ -131,8 +141,13 @@ export default function MeshmapDesignFeatureCarousel() {
             active={cardIndices[i] === 0}
             onClick={() => handleclick(i)}
           >
-            <h3>{content.title}</h3>
-            <p>{content.description}</p>
+            <div>
+              <h3>{content.title}</h3>
+              <p>{content.description}</p>
+            </div>
+            <div className="img">
+              <StaticImage src={img1} alt="sample image" height={900} />
+            </div>
           </PopOutCard>
         ))}
       </div>

@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 const PopOutCardWrapper = styled.div`
   position: absolute;
+  display: flex;
+  // align-items: center;
   right: -80px;
   padding: 1.2rem;
   height: 320px;
@@ -37,6 +39,12 @@ const PopOutCardWrapper = styled.div`
     color: white !important;
   }
 
+  .img {
+    visibility: hidden;
+    // margin-block: auto;
+    padding-left: 3rem;
+  }
+
   //dynamic css
   ${(props) => css`
     z-index: ${100 - props.index};
@@ -50,25 +58,47 @@ const PopOutCardWrapper = styled.div`
       props.active &&
     css`
       cursor: pointer;
-      transform: rotateZ(0deg) translate(-35vw, 0);
+      transform: rotateZ(0deg) translate(-45vw, 0);
+      width: 800px;
       h3 {
         opacity: 1;
+        font-size: 24px;
       }
       p {
         opacity: 1;
       }
 
+      .img {
+        // display: block;
+        visibility: visible;
+      }
+
       @media only screen and (max-width: 1500px) {
-        transform: rotateZ(0deg) translate(-40vw, 0);
+        // transform: rotateZ(0deg) translate(-40vw, 0);
+        width: 680px;
+
+        .img {
+          padding-left: 1rem;
+        }
       }
 
       @media only screen and (max-width: 1200px) {
-        transform: rotateZ(0deg) translate(-46vw, 0);
+        transform: rotateZ(0deg) translate(-70vw, 0);
+        flex-direction: column;
+        text-align: center;
+        width: 300px;
+        height: 440px;
+        .img {
+          margin-inline: auto;
+          width: 60%;
+          padding-left: unset;
+          // padding-top: 0.6rem;
+        }
       }
 
-      @media only screen and (max-width: 999px) {
-        transform: rotateZ(0deg) translate(-70vw, 0);
-      }
+      // @media only screen and (max-width: 999px) {
+      //   transform: rotateZ(0deg) translate(-70vw, 0);
+      // }
     `}
 
   ${(props) =>
@@ -80,11 +110,7 @@ const PopOutCardWrapper = styled.div`
       }
     `}
 
-  @media only screen and (max-width: 1500px) {
-    right: -120px;
-    height: 280px;
-    width: 320px;
-  }
+
 
   @media only screen and (max-width: 1200px) {
     right: -160px;
