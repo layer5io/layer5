@@ -16,8 +16,7 @@ margin-top: 1rem;
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     ::-webkit-scrollbar{
     display: none;
   }

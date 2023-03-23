@@ -15,8 +15,7 @@ const VisualizerFeaturesWrapper = styled.section`
   .contentContainer {
     display: flex;
     position: relative;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     ::-webkit-scrollbar {
       display: none;
     }

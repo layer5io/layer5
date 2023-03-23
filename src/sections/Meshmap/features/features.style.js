@@ -43,9 +43,6 @@ const FeatureWrapper = styled.section`
     /* @media (max-width: 767px) {
       font-size: 20px;
     } */
-    @media (max-width: 670px) {
-      max-width: 80%;
-    }
 
   }
 }
