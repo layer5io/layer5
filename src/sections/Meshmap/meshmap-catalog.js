@@ -91,7 +91,7 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     }
   }
 .toCatalog {
-  background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+  background: ${(props) => props.theme.grey121212ToLinear};
 }
 .svg-cont{
   display:grid;

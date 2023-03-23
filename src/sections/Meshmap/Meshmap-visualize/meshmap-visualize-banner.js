@@ -16,7 +16,7 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 10;
         display: flex;
         flex-direction: column;
-        background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        background-color: ${props => props.theme.grey121212ToWhite};
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;
@@ -78,12 +78,12 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 0;
         opacity: 0.4;
         filter: blur(1px);
-        box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 3rem #00d3a9" : "-0.25rem 0.25rem 3rem #00d3a9"};
+        box-shadow: ${props => props.theme.boxShadowGreen00D3A9};
 
     }
 `;
 
-const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
+const MeshmapVisualizeBanner = ({ targetRef }) => {
   const handleClick = () => {
     const offset = 100;
     const targetPos = targetRef.current.getBoundingClientRect().top + window.pageYOffset;
