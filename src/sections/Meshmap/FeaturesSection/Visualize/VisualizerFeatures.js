@@ -39,8 +39,8 @@ export default function VisualizerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
-              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
+            <div className="diagram scroll hideInMobile">
+              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="visualizer-features">
               {features.map((feature, index) => (

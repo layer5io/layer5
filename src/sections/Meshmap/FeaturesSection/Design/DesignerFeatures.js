@@ -39,8 +39,8 @@ export default function DesignerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
-            <div className="diagram scroll">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
+            <div className="diagram scroll hideInMobile">
+              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="features design-features">
               {features.map((feature, index) => (

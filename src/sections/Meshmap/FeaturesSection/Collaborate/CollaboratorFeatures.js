@@ -38,8 +38,8 @@ export default function CollaboratorFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
+            <div className="diagram scroll hideInMobile">
+              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="features collaborator-features">
               {features.map((feature, index) => (
