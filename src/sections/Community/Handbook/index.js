@@ -87,17 +87,7 @@ const handbookHome = () => {
           to="/community/handbook/writing-program"
         />
 
-        <HandbookCard
-          title="Connect with Us"
-          description="We are a community of like-minded people with over a thousand members. Join our Slack Workspace and interact with people"
-          to="/community/handbook/connect-with-us"
-        />
 
-        <HandbookCard
-          title="Code of Conduct"
-          description="At Layer5 We follow the CNCF Code of Conduct. We pledge to respect all people who contribute through reporting issues, to submit pull requests or patches, and other activities."
-          to="/community/handbook/code-of-conduct"
-        />
         <HandbookCard
           title="Security Vulnerabilities"
           description="We are very grateful to the security researchers and users that report back Meshery security vulnerabilities. We investigate every report thoroughly."
