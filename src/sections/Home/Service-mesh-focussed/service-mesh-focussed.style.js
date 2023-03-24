@@ -13,9 +13,13 @@ const MeshFocusWrapper = styled.div`
         margin: 1rem;
     }
 
+    .filter-mode {
+        filter: invert(85%) sepia(6%) saturate(66%) hue-rotate(341deg) brightness(88%) contrast(78%);
+    }
+
     .quote-icon{
             width: 10vw;
-            opacity: .1;
+            opacity: .3;
             min-width: 60px;
             top: 4rem;
             margin-bottom: -4rem;
