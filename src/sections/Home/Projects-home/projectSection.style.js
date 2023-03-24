@@ -104,7 +104,7 @@ const ProjectItemWrapper = styled.section`
             font-size: 1rem;
             padding: 0 4rem;
             margin: 0rem;
-            color: #B3B3B3;
+            color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
             span {
                 font-weight: 600;
             }
