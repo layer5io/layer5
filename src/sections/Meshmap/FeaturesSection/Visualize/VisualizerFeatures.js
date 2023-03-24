@@ -9,7 +9,7 @@ import LinkArrow from "../../images/link-arrow.svg";
 import LinkArrowDark from "../../images/link-arrow-dark.svg";
 import useGsapTimeline from "../useGsapTimeline";
 
-export default function VisualizerFeatures({ features, theme }) {
+export default function VisualizerFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -40,8 +40,8 @@ export default function VisualizerFeatures({ features, theme }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
-              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
+            <div className="diagram scroll hideInMobile">
+              <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="visualizer-features">
               {features.map((feature, index) => (

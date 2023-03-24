@@ -39,7 +39,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .pagingDots {
-        top: 2rem !important;
+        top: 0rem;
         & .paging-item {
           padding :0.25rem;
         }
@@ -50,7 +50,11 @@ export const FeaturesWrapper = styled.div`
           // opacity: 1 !important;
           height: 0.65rem;
           width: 0.65rem;
-          fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
+          fill: ${props => props.theme.whiteToGreyB3B3B3};
+        }
+
+        @media (min-width: 799px) {
+          top: 2rem !important;
         }
       }
     }
@@ -82,11 +86,11 @@ export const FeaturesWrapper = styled.div`
     }
 
     .active-feature {
-      border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+      border-color: ${props => props.theme.grey212121ToBlack};
       padding-top: 0;
       @media (min-width: 768px){
-        border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+        border-color: ${props => props.theme.grey212121ToBlack};
+        background-color: ${props => props.theme.grey212121ToBlack};
         border-radius: 20px;
         padding: 3rem 2.75rem 2rem 2.75rem;
       }
