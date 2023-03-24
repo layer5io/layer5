@@ -98,7 +98,7 @@ const FooterWrapper = styled.section`
 			border: 1px solid #FFFFFF;
 			background-color: #000000;
 			border-radius: 0.25rem;
-			margin-bottom:0.75rem;
+			
 		}
 
 		button {
@@ -256,6 +256,14 @@ const FooterWrapper = styled.section`
 				text-align: left
 			}
 		}
+	}
+
+	@media screen and (max-width: 326px){
+     .subscribe{
+		 input{
+			margin-bottom:0.75rem;
+		 }
+	 }
 	}
 `;
 
