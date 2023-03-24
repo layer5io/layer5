@@ -44,6 +44,12 @@ const PopOutCardWrapper = styled.div`
     // margin-block: auto;
     padding-left: 3rem;
   }
+  @media only screen and (max-width: 1200px) {
+    right: -160px;
+  }
+  @media only screen and (max-width: 999px) {
+    height: 280px;
+  }
 
   //dynamic css
   ${(props) => css`
@@ -76,13 +82,34 @@ const PopOutCardWrapper = styled.div`
       @media only screen and (max-width: 1500px) {
         // transform: rotateZ(0deg) translate(-40vw, 0);
         width: 680px;
-
+        height: 290px;
         .img {
           padding-left: 1rem;
+          max-width: 60%;
         }
       }
 
       @media only screen and (max-width: 1200px) {
+        transform: rotateZ(0deg) translate(-50vw, 0);
+        align-items: center;
+        width: 620px;
+        height: 290px;
+        h3 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 18px;
+        }
+  
+        .img {
+          margin-inline: auto;
+          // width: 60%;
+          padding-left: 1rem;
+          // padding-top: 0.6rem;
+        }
+      }
+
+      @media only screen and (max-width: 999px) {
         transform: rotateZ(0deg) translate(-70vw, 0);
         flex-direction: column;
         text-align: center;
@@ -90,15 +117,10 @@ const PopOutCardWrapper = styled.div`
         height: 440px;
         .img {
           margin-inline: auto;
-          width: 60%;
+          max-width: 80%;  
           padding-left: unset;
-          // padding-top: 0.6rem;
         }
       }
-
-      // @media only screen and (max-width: 999px) {
-      //   transform: rotateZ(0deg) translate(-70vw, 0);
-      // }
     `}
 
   ${(props) =>
@@ -110,11 +132,6 @@ const PopOutCardWrapper = styled.div`
       }
     `}
 
-
-
-  @media only screen and (max-width: 1200px) {
-    right: -160px;
-  }
 `;
 
 export default PopOutCardWrapper;

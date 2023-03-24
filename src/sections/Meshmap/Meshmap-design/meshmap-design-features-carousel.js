@@ -40,15 +40,9 @@ const DivWrapper = styled.div`
   align-items: center;
   position: relative;
   .left {
-    // max-width: 30rem;
     text-align: center;
-    // margin-left: 10%;
-    flex: 1;
-    // h1 {
-    //   margin-bottom: 1rem;
-    // }
     margin-bottom: 4rem;
-
+    padding-inline: 6rem;
   }
   .right {
     position: relative;
@@ -101,7 +95,7 @@ const DivWrapper = styled.div`
   // }
   
   @media only screen and (max-width: 999px) {
-    // padding-block: 3rem;
+    padding-block: 3rem;
     .left {
       margin-bottom: 1rem;      
     }
