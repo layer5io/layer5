@@ -16,7 +16,7 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 10;
         display: flex;
         flex-direction: column;
-        background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+        background-color: ${props => props.theme.DarkTheme ? "rgb(18,18,18,0.8)" : "rgb(255, 255, 255, 0.8)"};
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;
@@ -34,6 +34,7 @@ const VisualizeBannerWrapper = styled.div`
         align-items: center;
         z-index: 1;
         padding: 3% 0%;
+        opacity: 1;
     }
 
     h1 {
@@ -49,11 +50,9 @@ const VisualizeBannerWrapper = styled.div`
     h4 {
         padding: 3% 0% 5%;
         color: #A0AAAA;
-        /* max-width: 50%; */
-        font-weight: bold;
 
         span {
-          color: #00b39f;
+          color: ${props => props.theme.primaryColor};
         }
 
         @media only screen and (max-width: 500px) {
@@ -97,7 +96,7 @@ const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
         </div> */}
       <div className="banner">
         <div className="banner-text">
-          <h1>Visualize your infrastructure. </h1>
+          <h1>Visualize your infrastructure </h1>
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
           <Button primary className="join-community-button" title="Explore MeshMap Visualizer" url="" onClick={handleClick} />
         </div>
