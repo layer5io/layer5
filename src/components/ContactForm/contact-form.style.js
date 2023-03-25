@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const ContactFormWrapper = styled.section`
   margin-bottom: 2rem;
-
   .form-submitted {
     height: 20rem;
     align-items: center;

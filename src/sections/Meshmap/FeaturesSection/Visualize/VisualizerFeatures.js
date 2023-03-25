@@ -30,17 +30,17 @@ export default function VisualizerFeatures({ features, theme }) {
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
-          <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-            <h1>Visualize</h1>
-            <Link to="/cloud-native-management/meshmap/visualize">
+          <Link to="/cloud-native-management/meshmap/visualize">
+            <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+              <h1>Visualize</h1>
               <div className="learn-more">
-                <h6 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h6>
+                <h5 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h5>
                 <img src={cursorOverArrow ? LinkArrowDark : LinkArrow} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
+            <div className="diagram scroll hideInMobile">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="visualizer-features">
