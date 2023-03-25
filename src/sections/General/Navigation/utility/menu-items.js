@@ -4,8 +4,44 @@ import communityGreen from "../../../../assets/images/community/community-green.
 const Data = {
   menuItems: [
     {
-      name: "Landscape",
-      path: "/service-mesh-landscape",
+      name: "Solutions",
+      path: "/projects",
+      subItems: [
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
+        {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+          sepLine: true
+        },
+        {
+          name: "Design",
+          path: "/cloud-native-management/meshmap/design",
+        },
+        {
+          name: "Visualize",
+          path: "/cloud-native-management/meshmap/visualize",
+        },
+        {
+          name: "Collaborate",
+          path: "/cloud-native-management/meshmap/collaborate",
+        },
+        {
+          name: "Landscape",
+          path: "/service-mesh-landscape",
+          sepLine: true
+        },
+      ],
+      actionItems: [
+        {
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+      ],
+
       // subItems: [
       //     {
       //         name: "Current Home",
@@ -27,6 +63,12 @@ const Data = {
       //         path: "/hosting",
       //         sepLine: true
       //     }
+      // ],
+      // actionItems: [
+      //   {
+      //     actionName: "All projects",
+      //     actionLink: "/projects",
+      //   },
       // ],
       // actionName: "Home",
       // actionLink: "/",

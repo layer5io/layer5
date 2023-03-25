@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
+import meshmap_designer from "../../../../assets/images/meshmap/MeshmapDesigner.png";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
@@ -63,7 +64,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 </Link>
                 {active.subItems.map((subItem, i) => (
                   <li key={i}>
-                    { subItem.name === "Forum" ?
+                    {subItem.name === "Forum" ?
                       <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
                         {subItem.name}
                       </a>
@@ -75,7 +76,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 ))}
                 <div className="action-items">
                   {active.actionItems.map((actionItem, i) => (
-                    ( actionItem.actionName === "Join the discussion" ?
+                    (actionItem.actionName === "Join the discussion" ?
                       <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
@@ -91,10 +92,27 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   ))}
                 </div>
               </div>
-              <div className="nav-display">
-                <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}/>
-                <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields}/>
-              </div>
+              {blogData[active.name].nodes.length !== 0 ? (
+                <div className="nav-display">
+                  <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields} />
+                  <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields} />
+                </div>) : (
+                <>
+                  <a href="https://play.meshery.io/">
+                    <div className="single-card">
+                      <img src={meshmap_designer} style={{
+                        maxWidth: "50%",
+                        padding: "5%"
+                      }}
+                      alt="MeshMap Designer" />
+                      <div className="card-text">
+                        <p>The Cloud Native Playground</p>
+                        <h6>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</h6>
+                      </div>
+                    </div>
+                  </a>
+                </>)
+              }
             </div>
           </ul>
           <div className="wrap" ref={wrapRef} style={{ zIndex: "100" }} />
