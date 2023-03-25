@@ -20,7 +20,7 @@ const ContactWrapper = styled.section`
         text-align: center;
         background: ${props => props.theme.grey212121ToLinear};
         border-radius: 10px 10px 0px 0px;
-        box-shadow: ${props => props.theme.boxShadowGreenBrightToBlackTwoFive};
+        box-shadow: ${props => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
         padding: 25px;
         border-radius: 10px;
     }

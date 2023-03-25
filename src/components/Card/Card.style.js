@@ -101,7 +101,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: ${props => props.theme.whiteSevenToBlackSeven};
+            color: ${props => props.theme.whiteSixToBlackSix};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
