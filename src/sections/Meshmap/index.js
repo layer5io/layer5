@@ -39,7 +39,6 @@ import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const Meshmap = () => {
-
   const { isDark } = useStyledDarkMode();
   const theme = isDark ? "dark" : "light";
 
@@ -112,7 +111,7 @@ const Meshmap = () => {
                     <img id="design-image4" src={theme === "dark" ? roleBind4_dark : roleBind4} style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
                   )
                 },
-              ]} />
+              ]}/>
 
           <VisualizerFeatures
             features={

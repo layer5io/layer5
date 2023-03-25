@@ -8,6 +8,7 @@ import LinkArrow from "../../images/link-arrow.svg";
 import LinkArrowDark from "../../images/link-arrow-dark.svg";
 import useGsapTimeline from "../useGsapTimeline";
 
+
 export default function VisualizerFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
