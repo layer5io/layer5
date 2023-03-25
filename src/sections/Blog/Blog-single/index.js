@@ -119,6 +119,7 @@ const BlogSingle = ({ data }) => {
             thumbnail={(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
+
           />
           <div className="single-post-wrapper">
             <SRLWrapper>

@@ -16,13 +16,13 @@ const CollaboratorFeaturesWrapper = styled.section`
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    max-height: 600px;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     ::-webkit-scrollbar {
       display: none;
     }
-
+    @media (min-width: 799px) {
+        max-height: 600px;
+      }
     @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
@@ -101,7 +101,8 @@ const CollaboratorFeaturesWrapper = styled.section`
       justify-content: center;
     }
 
-    h6 {
+    h5 {
+      font-weight: 600;
       @media (max-width: 600px) {
         font-size: 0.7rem;
       }
@@ -171,12 +172,16 @@ const CollaboratorFeaturesWrapper = styled.section`
     transition: ease-in-out;
   }
 
+  .hideInMobile{
+    @media (max-width: 799px) {
+      display:none;
+    }
+}
   .arrow {
     transition: all 0.5s;
   }
   .arrow-enter {
-    fill: #000;
-    transform: translateX(1rem);
+    transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
 `;

@@ -188,7 +188,7 @@ const MeshmapCollaborateBanner = () => {
     <CollaborationBannerWrapper>
       <div className="banner">
         <div className="banner-text">
-          <h1>Collaborate with the team. <br /> Build solutions together. </h1>
+          <h1>Collaborate with the team. <br /> Build solutions together </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
           <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
         </div>

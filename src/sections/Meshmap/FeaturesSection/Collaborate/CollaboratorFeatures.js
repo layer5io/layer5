@@ -28,18 +28,18 @@ export default function CollaboratorFeatures({ features }) {
     <CollaboratorFeaturesWrapper>
       <Container className="collaborate-container collaborator-trigger-container">
         <div className="root">
-          <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-            <h1>Collaborate</h1>
-            <Link to="/cloud-native-management/meshmap/collaborate">
+          <Link to="/cloud-native-management/meshmap/collaborate">
+            <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+              <h1>Collaborate</h1>
               <div className="learn-more">
-                <h6 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h6>
+                <h5 style={cursorOverArrow ? { color: "#ececec", opacity: "1", transition: "all 0.5s ease-in-out" } : { color: "#ececec", opacity: "0", transition: "all 0.5s" }}>Learn more</h5>
                 <img src={cursorOverArrow ? LinkArrowDark : LinkArrow} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex}  />
+            <div className="diagram scroll hideInMobile">
+              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className="features collaborator-features">
               {features.map((feature, index) => (

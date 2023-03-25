@@ -15,13 +15,14 @@ const VisualizerFeaturesWrapper = styled.section`
   .contentContainer {
     display: flex;
     position: relative;
-    max-height: 600px;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     ::-webkit-scrollbar {
       display: none;
     }
 
+    @media (min-width: 799px) {
+      max-height: 600px;
+    }
     @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
@@ -102,7 +103,8 @@ const VisualizerFeaturesWrapper = styled.section`
       justify-content: center;
     }
 
-    h6 {
+    h5 {
+      font-weight: 600;
       @media (max-width: 600px) {
         font-size: 0.7rem;
       }
@@ -169,12 +171,17 @@ const VisualizerFeaturesWrapper = styled.section`
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: ease-in-out;
   }
+  .hideInMobile{
+    @media (max-width: 799px) {
+      display:none;
+    }
+}
+
   .arrow {
     transition: all 0.5s;
   }
   .arrow-enter {
-    fill: #000;
-    transform: translateX(1rem);
+    transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
 `;

@@ -79,7 +79,7 @@ section.bq-section {
 .type-one-quote .type-one-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.greyEEEEEEToGrey777777};
+    border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
 
 }
 
