@@ -9,7 +9,7 @@ import LinkArrow from "../../images/link-arrow.svg";
 import LinkArrowDark from "../../images/link-arrow-dark.svg";
 import useGsapTimeline from "../useGsapTimeline";
 
-export default function DesignerFeatures({ features }) {
+export default function DesignerFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -41,7 +41,7 @@ export default function DesignerFeatures({ features }) {
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
             <div className="diagram scroll hideInMobile">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features design-features">
               {features.map((feature, index) => (

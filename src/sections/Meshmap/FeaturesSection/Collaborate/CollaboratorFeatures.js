@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 import LinkArrow from "../../images/link-arrow.svg";
 import LinkArrowDark from "../../images/link-arrow-dark.svg";
 
-export default function CollaboratorFeatures({ features }) {
+export default function CollaboratorFeatures({ features, theme }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
@@ -39,7 +39,7 @@ export default function CollaboratorFeatures({ features }) {
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
             <div className="diagram scroll hideInMobile">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features collaborator-features">
               {features.map((feature, index) => (

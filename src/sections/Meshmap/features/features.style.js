@@ -38,7 +38,7 @@ const FeatureWrapper = styled.section`
     margin-top: 1.5rem;
     z-index: 0;
     font-weight: 500;
-    color: ${props => props.theme.greyDDDDDDToGrey333333};
+    color: ${props => props.theme.DarkTheme ? "#dddddd" : "#333333"};
 
     /* @media (max-width: 767px) {
       font-size: 20px;

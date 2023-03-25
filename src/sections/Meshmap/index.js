@@ -36,12 +36,8 @@ import Collab4_dark from "./FeaturesSection/Collaborate/images/collab4-dark.svg"
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.png";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.png";
 import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
-import { useStyledDarkMode } from "../../theme/app/StyledThemeProvider";
 
-const Meshmap = () => {
-
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
+const Meshmap = ({ theme }) => {
 
   return (
     <MeshmapWrapper>
@@ -112,7 +108,7 @@ const Meshmap = () => {
                     <img id="design-image4" src={theme === "dark" ? roleBind4_dark : roleBind4} style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
                   )
                 },
-              ]} />
+              ]} theme={theme} />
 
           <VisualizerFeatures
             features={
@@ -131,7 +127,7 @@ const Meshmap = () => {
                     <img id="visualize-image2" src={theme === "dark" ? Visualize2_dark : Visualize2}  alt="visualize-image2" />
                   )
                 },
-              ]} />
+              ]} theme={theme} />
 
           <CollaboratorFeatures
             features={
@@ -185,7 +181,7 @@ const Meshmap = () => {
                     </>
                   )
                 }
-              ]} />
+              ]} theme={theme} />
           {/* <CollaboratorFeatures
             features={
               [
