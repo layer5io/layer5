@@ -46,7 +46,7 @@ const PartnerItemWrapper = styled.section`
             }
         }
 
-        #vm:hover
+        #VMware:hover
         {
         
            filter:brightness(10%);

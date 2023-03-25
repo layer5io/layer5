@@ -13,7 +13,6 @@ import vmware from "../../../assets/images/partners/vmware.svg";
 export const partners = [
   {
     name: "Redhat",
-    id: "re",
     imageLink: redhat,
     imageRoute: "/partners#redhat",
     innerDivStyle: "partner__block__inner horizontal",
@@ -21,7 +20,6 @@ export const partners = [
     imageWidth: 382
   }, {
     name: "Intel",
-    id: "in",
     imageLink: intel,
     imageRoute: "/partners#intel",
     innerDivStyle: "partner__block__inner",
@@ -30,7 +28,6 @@ export const partners = [
 
   }, {
     name: "University of Texas at Austin partnership with Layer5",
-    id: "un",
     imageLink: utaustin,
     imageRoute: "/partners#utaustin",
     innerDivStyle: "partner__block__inner horizontal",
@@ -38,7 +35,6 @@ export const partners = [
     imageWidth: 278
   }, {
     name: "Citrix",
-    id: "ci",
     imageLink: citrix,
     imageRoute: "/partners#Citrix",
     innerDivStyle: "partner__block__inner",
@@ -46,7 +42,6 @@ export const partners = [
     imageWidth: 144
   }, {
     name: "Hashicorp partnership with Layer5",
-    id: "ha",
     imageLink: hashicorp,
     imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
     innerDivStyle: "partner__block__inner",
@@ -54,7 +49,6 @@ export const partners = [
     imageWidth: 113
   }, {
     name: "Hewlett-Packard Enterprise",
-    id: "he",
     imageLink: hpe,
     imageRoute: "/partners#hpe",
     innerDivStyle: "partner__block__inner",
@@ -62,7 +56,6 @@ export const partners = [
     imageWidth: 178
   }, {
     name: "National Institute of Technology Karnataka",
-    id: "na",
     imageLink: nitk,
     imageRoute: "/partners#nitk",
     innerDivStyle: "partner__block__inner",
@@ -70,7 +63,6 @@ export const partners = [
     imageWidth: 409
   }, {
     name: "Rackspace Technology",
-    id: "ra",
     imageLink: rackspace,
     imageRoute: "/partners#rackspace",
     innerDivStyle: "partner__block__inner",
@@ -79,7 +71,6 @@ export const partners = [
 
   }, {
     name: "UEM",
-    id: "ue",
     imageLink: uem,
     imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner",
@@ -87,7 +78,6 @@ export const partners = [
     imageWidth: 302
   }, {
     name: "VMware",
-    id: "vm",
     imageLink: vmware,
     imageRoute: "/partners#VMware",
     innerDivStyle: "partner__block__inner",
