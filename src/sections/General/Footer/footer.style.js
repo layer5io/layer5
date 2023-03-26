@@ -245,7 +245,6 @@ const FooterWrapper = styled.section`
 			padding: 0 1.2rem;
 
 			.copyright-text {
-				// order: 2;
 				margin-bottom: 0;
 				text-align: center;
 			}
@@ -254,17 +253,12 @@ const FooterWrapper = styled.section`
 	
 	@media screen and (max-width: 445px){
 		.footer-bottom{
-			// .policies {
-			// 	text-align: center;
-			// 	li {
-			// 		padding: 0.125rem
-			// 	}
-			// }
-
-			// li + li {
-			// 	margin-left: 0 !important;
-			// 	text-align: center;
-			// }
+			.policies {
+				text-align: center;
+				li {
+					padding: 0.125rem
+				}
+			}
 		}
 		.section-categories {
 			li {
