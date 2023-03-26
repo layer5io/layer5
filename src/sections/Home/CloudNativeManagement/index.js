@@ -4,12 +4,12 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
 
+import ReactPlayer from "react-player/youtube";
+
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
-// const imgHero = "../service-mesh-management/images/service-mesh.svg";
+import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
 
 const BannerDefault = () => {
   return (
@@ -20,7 +20,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" />
+                  <img src={svgBackground} alt="background" loading="lazy"/>
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -37,7 +37,7 @@ const BannerDefault = () => {
                         The <span>extensible</span> cloud native manager.
                       </div> */}
                       <div className="description">
-                        <p>An extensible platform, Meshery comes packed with <Link to="/cloud-native-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, and support for WebAssembly filters for Envoy.</p>
+                        <p>An extensible platform, Meshery comes packed with <Link to="/cloud-native-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, support for WebAssembly filters for Envoy, and hundreds of other cloud native projects.</p>
                         <p>
                           Meshery is your microservices manager. With extension points throughout, Meshery offers users and integrators the ability to extend and customize platform functionality.
                         </p>
@@ -52,7 +52,16 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <StaticImage loading="lazy" className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" />
+            <ReactPlayer
+              url="https://youtu.be/Do7htKrRzDA"
+              playing
+              controls
+              light={< img className="imgHero" src={imgHero} loading="lazy" alt="meshmap designer" width="100%" height="100%" />}
+              width="auto"
+              height="100%"
+              style={{ margin: "auto" }}
+              className="vidHero"
+            />
           </Col>
         </Row>
       </div>

@@ -10,12 +10,15 @@ export const LandscapePageWrapper = styled.div`
 		font-style:unset;
 		color:${props => props.theme.text};
 	}
+
 	#service-mesh-comparison-strength {
             margin: -2.5rem 1rem 5rem;
 	}
+
 	.subsequent-heading {
 		padding-top: 6rem;
 	}
+	
 	.landscape-section-sub-heading {
 		text-align: center;
 		width: 100%;
@@ -149,7 +152,7 @@ export const LandscapePageWrapper = styled.div`
 		margin: 2.5em 0;
 	}
 	.vertical-timeline::before {
-		background: #1E2117;
+		background: ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.tertiaryColor};
 		border-radius: 4rem;
 		width: 0.5rem;
 	}
@@ -166,7 +169,7 @@ export const LandscapePageWrapper = styled.div`
 	.meshBubble {
 		background: #00B39F;
 		margin-top: 5rem;
-		border: 8px solid #1E2117;
+		border: 8px solid ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.tertiaryColor};
 	}
 	.hideIcon {
 		display: none;

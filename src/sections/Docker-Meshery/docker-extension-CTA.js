@@ -48,7 +48,7 @@ const DockerExtensionCTA = () => {
     <DockerExtensionCTAWrapper>
       <Container>
         <div className="docker-callout">
-          <img src={Dockerimage} alt="Docker and Meshery" />
+          <img src={Dockerimage} alt="Docker and Meshery" loading="lazy" />
           <div>
             <h2>Docker Extension for Meshery is now available!</h2>
             <p><i>Managing cloud native infrastructure has never been easier.</i></p>

@@ -228,7 +228,7 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: rgb(0, 179, 158, 0.3);
+      background: rgb(255, 243, 197, 1);
       color:  ${props => props.theme.secondaryColor};
     }
 
@@ -243,6 +243,15 @@ const PricingWrapper = styled.section`
   }
 }
 
+.pricing_coming_soon{
+  width : 150px;
+  position : relative ;
+  float : right;
+  z-index:2;
+  margin-top:-2rem;
+  margin-right:-5.4rem;
+  -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
+}
 
 `;
 

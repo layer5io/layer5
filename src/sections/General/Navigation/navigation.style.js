@@ -39,7 +39,7 @@ const NavigationWrap = styled.header`
       border: 1px solid transparent;
       border-radius: .25rem;
       color: ${props => props.theme.secondaryColor};
-      background-color: transparent;
+      background: ${(props) => props.theme.DarkTheme ? "#121212" : "white"};
         &:hover{
           border: 1px solid ${props => props.theme.secondaryColor};
           background: ${props => props.theme.highlightColor};
