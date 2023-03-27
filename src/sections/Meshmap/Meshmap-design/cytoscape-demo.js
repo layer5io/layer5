@@ -32,7 +32,11 @@ const style = [
   {
     selector: "node",
     style: {
-      "background-image": "./../../../collections/integrations/nginx-ingress/icon/color/nginx-ingress-color.svg",
+      "background-color": "#00b39f",
+      // 'background-image': '../../../assets/images/meshery/icon-only/meshery-logo-dark.png',
+      // 'background-fit': 'contain',
+      // 'background-clip': 'none',
+      // 'background-opacity': 1,
       label: "data(id)"
     }
   },

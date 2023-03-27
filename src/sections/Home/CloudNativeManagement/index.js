@@ -20,7 +20,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" />
+                  <img src={svgBackground} alt="background" loading="lazy"/>
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -56,7 +56,7 @@ const BannerDefault = () => {
               url="https://youtu.be/Do7htKrRzDA"
               playing
               controls
-              light={imgHero}
+              light={< img className="imgHero" src={imgHero} loading="lazy" alt="meshmap designer" width="100%" height="100%" />}
               width="auto"
               height="100%"
               style={{ margin: "auto" }}
