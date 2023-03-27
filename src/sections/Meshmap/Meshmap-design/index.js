@@ -15,8 +15,8 @@ const MeshmapDesign = ({ theme }) => {
       <MeshmapDesignBanner theme={theme} />
       <MeshmapHeroSection theme={theme} />
       <DesignDefault theme={theme} />
-      <MeshmapMobileSwiper/>
-      <MeshmapDesignFeatureCarousel />
+      {/* <MeshmapMobileSwiper/> */}
+      {/* <MeshmapDesignFeatureCarousel /> */}
       <MeshmapDesignFeatures />
       <SignupForm />
       <Reviews />
