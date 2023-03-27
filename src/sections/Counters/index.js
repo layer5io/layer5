@@ -5,7 +5,7 @@ import Counter from "../../reusecore/Counter";
 
 import CounterSectionWrapper from "./counterSection.style";
 
-export const URL = "https://meshery.layer5.io/api/performance/results/totala";
+export const URL = "https://meshery.layer5.io/api/performance/results/total";
 
 const Counters = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
