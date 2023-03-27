@@ -6,10 +6,12 @@ videos: 4
 lectures: 12
 order: 1
 ---
-
+ 
+ 
+<!-- 
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
-import InstallIstio from "../../../../src/assets/images/learn-layer5/istio/install-istio.png";
-import IstioAdapter from "../../../../src/assets/images/learn-layer5/istio/istio-adapter.png";
+import InstallIstio from "../../../../src/assets/images/learn-layer5/istio/install-istio1.png";
+import IstioDeploy from "../../../../src/assets/images/learn-layer5/istio/install-istio2.png"; -->
 
 <ChapterStyle>
 
@@ -32,21 +34,24 @@ Optional (manual install of Istio):
   <a name="1">Install Istio</a>
 </h3>
 
-Using Meshery, select `Istio` from the `Management` menu.
+Using Meshery, select `Istio` from the `Lifecycle` menu.
 
-<a href={IstioAdapter}>
-  <img src={IstioAdapter} align="center" />
-</a>
 
 In the Istio management page:
 
 1. Type `istio-system` into the namespace field.
-1. Click the (+) icon on the `Install` card and select `Latest Istio` to install the latest version of Istio.
+2. Click the (+) icon on the `Install` card and click on `Istio Service Mesh` to install latest version of Istio.
 
-   <a href={InstallIstio}>
-     <img src={InstallIstio} align="center" />
+   <a href="../../../../src/assets/images/learn-layer5/istio/install-istio1.png">
+     <img src="../../../../src/assets/images/learn-layer5/istio/install-istio1.png" width="70%" align="center" />
    </a>
 
+3. Click the `Deploy` button on the confirmation modal.
+  
+  <a href="../../../../src/assets/images/learn-layer5/istio/install-istio2.png">
+     <img src="../../../../src/assets/images/learn-layer5/istio/install-istio2.png"  width="70%" align="center" />
+   </a>
+  
 <h3>Alternative:Manual installation</h3>
 Perform the below steps if the above steps doesn't work for you.
 
