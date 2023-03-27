@@ -48,7 +48,7 @@ const CommunityPage = ({ theme }) => {
       <BgImage image={pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
-          <h3>New members are always welcome</h3>
+          <h2>New members are always welcome</h2>
         </div>
       </BgImage>
       <div className="community-section-wrapper">
@@ -99,7 +99,7 @@ const CommunityPage = ({ theme }) => {
         <Container>
           <Row className="meshmate">
             <Col className="content" sm={12} lg={6}>
-              <h3>An onboarding and mentoring program</h3>
+              <h1 className="onboarding">An onboarding and mentoring program</h1>
               <h1>Layer5 MeshMates</h1>
               <p>
                 The Layer5 community is growing at a tremendous rate.
@@ -119,8 +119,8 @@ const CommunityPage = ({ theme }) => {
             <Col sm={12} lg={6}>
               <img src={theme == "dark" ? lightMeshmateIcon : MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
-                <h3>Open Source Mentorship Program</h3>
-                <button className="icon">
+                <h2>Open Source Mentorship Program</h2>
+                <button className="icon" aria-label="mentorship-program">
                   <FaArrowRight />
                 </button>
               </Link>
@@ -136,7 +136,7 @@ const CommunityPage = ({ theme }) => {
             <Col xs={12} lg={6} className="text">
               <div>
                 <h1>Newcomers Welcome!</h1>
-                <h3>Are you new to the community?</h3>
+                <h2>Are you new to the community?</h2>
                 <p className="invitation">
                   Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                   and engage in the community and projects.
