@@ -85,7 +85,7 @@ const DivWrapper = styled.div`
   //       font-size: 24px;
   //     }
   //   }
-  }
+  //}
 
   // @media only screen and (max-width: 1200px) {
   //   // padding-block: 6% 14%;
@@ -93,16 +93,20 @@ const DivWrapper = styled.div`
   //     margin-left: 5%;
   //   }
   // }
-  
+
   @media only screen and (max-width: 999px) {
     padding-block: 3rem;
     .left {
-      margin-bottom: 1rem;      
+      margin-bottom: 1rem;
     }
     // .right {
     //   top: 0px;
     //   height: 380px;
     // }
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: none;
   }
 `;
 
@@ -121,7 +125,7 @@ export default function MeshmapDesignFeatureCarousel() {
   return (
     <DivWrapper>
       <div className="left">
-        <h1>Multi user real time collaboration</h1>
+        <h1>Multi-user real-time collaboration</h1>
         <p>
           Designer and Visualizer live side-by-side, so all design work, from
           ideation to operation, can be found in one place.
