@@ -31,7 +31,9 @@ const CollaborationFeatureCreateWrapper = styled.div`
     position: relative;
     height: 200px;
     width: 200px;
-    color: #00B39F;
+
+    color: ${(props) => props.theme.DarkTheme ? "white" : "black"};
+    
     margin-left: 45px;
     margin-top: 10px;
     font-family: "Qanelas Soft";
@@ -46,7 +48,7 @@ const HeaderWrapper = styled.div`
     font-family: "Qanelas Soft";
     font-style: normal;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 42px;
     line-height: 50px;
 
     color: #00B39F;
@@ -76,6 +78,11 @@ const HeaderWrapper = styled.div`
 const DescriptionWrapper = styled.div`
   display: ${(props) => (props.visible ? "block" : "none")};
   transition: all 1s ease-in-out;
+  font-family: "Qanelas Soft";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 5px;
 `;
 
 const CreateWrapper = styled.div`
@@ -84,9 +91,11 @@ const CreateWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
  
-  filter: blur(${({ blurWord }) => blurWord ? "2px" : "none"});
+  transform: translateX(-50%) scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
+
 `;
 
 const IterateWrapper = styled.div`
@@ -94,7 +103,8 @@ const IterateWrapper = styled.div`
   bottom: 0;
   left: 0;
   left: -45px;
-  filter: blur(${({ blurWord }) => blurWord ? "2px" : "none"});
+  transform: scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
   }
@@ -105,7 +115,8 @@ const RepeatWrapper = styled.div`
   bottom: 0;
   right: 0;
   right: -50px;
-  filter: blur(${({ blurWord }) => blurWord ? "2px" : "none"});
+  transform: scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
   }
@@ -113,14 +124,14 @@ const RepeatWrapper = styled.div`
 
 const CollaborationFeatureCreate = () => {
   const [hoveredWord, setHoveredWord] = useState("Create");
-  const [blurWord, setBlurWord] = useState({
+  const [hoverWord, sethoverWord] = useState({
     create: false,
     repeat: false,
     iterate: false,
   });
   const handleWordHover = (word) => {
     setHoveredWord(word);
-    setBlurWord({
+    sethoverWord({
       create: word === "Create" ? false : true,
       repeat: word === "Repeat" ? false : true,
       iterate: word === "Iterate" ? false : true,
@@ -153,13 +164,13 @@ const CollaborationFeatureCreate = () => {
         </DescriptionWrapper>
       </div>
       <div className="hero-triangle">
-        <CreateWrapper onMouseEnter={() => handleWordHover("Create")} blurWord={blurWord.create}>
+        <CreateWrapper onMouseEnter={() => handleWordHover("Create")} hoverWord={hoverWord.create}>
           Create
         </CreateWrapper>
-        <IterateWrapper onMouseEnter={() => handleWordHover("Iterate")} blurWord={blurWord.iterate}>
+        <IterateWrapper onMouseEnter={() => handleWordHover("Iterate")} hoverWord={hoverWord.iterate}>
           Iterate
         </IterateWrapper>
-        <RepeatWrapper onMouseEnter={() => handleWordHover("Repeat")} blurWord={blurWord.repeat}>
+        <RepeatWrapper onMouseEnter={() => handleWordHover("Repeat")} hoverWord={hoverWord.repeat}>
           Repeat
         </RepeatWrapper>
       </div>
