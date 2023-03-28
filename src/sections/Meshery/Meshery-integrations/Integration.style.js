@@ -33,7 +33,7 @@ export const HoneycombGrid = styled.div`
 
     &:hover {
       opacity: 0.8;
-      box-shadow: rgb(60 73 79) 0px 0px 6px -2px ${props => props.theme.DarkTheme ? "#FFFFFF" : "#3c494f"};
+      box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
 }
   }
 
