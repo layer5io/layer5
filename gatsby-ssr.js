@@ -1,2 +1,2 @@
 export { onRenderBody } from "./onRenderBody";
-export { wrapPageElement } from "./page-wrapper";
+export { wrapRootElement } from "./root-wrapper";
