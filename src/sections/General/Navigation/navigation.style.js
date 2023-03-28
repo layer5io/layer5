@@ -347,6 +347,10 @@ const NavigationWrap = styled.header`
   .logo {
     margin-top: 8px;
     transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
+    svg {
+      width: 155px;
+    }
+    
     img {
       width: 155px;
     }
@@ -394,6 +398,10 @@ const NavigationWrap = styled.header`
       width: 100%;
       display: block;
       margin-top: 7px;
+      svg {
+        width: 130px;
+      }
+      
       img {
         width: 130px;
       }

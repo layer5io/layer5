@@ -13,9 +13,16 @@ import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-import layer5_logo from "../../../assets/images/app/layer5.svg";
-import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
+// import layer5_logo from "../../../assets/images/app/layer5.svg";
+// import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5_nav.svg";
+
 import NavigationWrap from "./navigation.style";
+import styled from "styled-components";
+
+const LogoColorMode = styled(Logo)`
+color: ${props => props.theme.whiteToGreen3C494F}
+`;
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -162,7 +169,6 @@ const Navigation = () => {
   const [scroll, setScroll] = useState(false);
 
   const { isDark, toggleDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
   const themeToggler = () => toggleDark();
 
   const dropDownRef = useRef();
@@ -203,7 +209,7 @@ const Navigation = () => {
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
-            <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
+            <LogoColorMode />
           </Link>
           <nav className="nav">
             {expand ?
