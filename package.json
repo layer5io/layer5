@@ -97,8 +97,8 @@
     "simple-react-cytoscape": "^1.0.4",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.6",
-    "swiper": "^8.4.5"
+    "styled-components": "^5.3.9",
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",

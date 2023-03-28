@@ -108,4 +108,5 @@ export const BlogPageWrapper = styled.div`
       align-items: center;
     }
   }
+  
 `;
