@@ -10,6 +10,7 @@ import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 
 import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
+import playIcon from "../../../assets/images/meshmap/play-icon.png";
 
 const BannerDefault = () => {
   return (
@@ -20,7 +21,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" loading="lazy"/>
+                  <img src={svgBackground} alt="background" loading="lazy" />
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -59,6 +60,18 @@ const BannerDefault = () => {
               light={< img className="imgHero" src={imgHero} loading="lazy" alt="meshmap designer" width="100%" height="100%" />}
               width="auto"
               height="100%"
+              playIcon={
+                <img
+                  loading="lazy"
+                  style={{
+                    position: "absolute",
+                    backgroundColor: "transparent",
+                    border: "none", cursor: "pointer",
+                    borderRadius: "50%",
+                    boxShadow: "0 0 4vh 0 #3FC6B7"
+                  }}
+                  src={playIcon}>
+                </img>}
               style={{ margin: "auto" }}
               className="vidHero"
             />
