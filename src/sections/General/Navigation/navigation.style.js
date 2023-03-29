@@ -663,6 +663,7 @@ const NavigationWrap = styled.header`
         margin: 0%;
         max-width: 70%;
         position: relative;
+        z-index: -1;
     }
 
 
@@ -671,7 +672,7 @@ const NavigationWrap = styled.header`
         top: 0%;
         left: 0%;
         scale: 0.7;
-        opacity: 1;
+        opacity: 0;
         transition: 1s;
     }
 
@@ -692,6 +693,7 @@ const NavigationWrap = styled.header`
     .ingress-gateway-transition {
         transform: translateX(40%);
         scale: 1;
+        opacity: 1;
         transition: 0.7s;
     }
 
@@ -702,6 +704,7 @@ const NavigationWrap = styled.header`
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
         scale: 1;
+        opacity: 1;
         transition: 0.5s;
     }
 
@@ -712,6 +715,7 @@ const NavigationWrap = styled.header`
     .pod-transition {
         transform: translateX(-40%) translateY(-30%);
         scale: 1;
+        opacity: 1;
         transition: 0.7s;
     }
 
@@ -722,11 +726,13 @@ const NavigationWrap = styled.header`
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
         scale: 1;
+        opacity: 1;
         transition: 1s;
     }
 
     .service-interface {
         scale: 1;
+        opacity: 1;
     }
 `;
 
