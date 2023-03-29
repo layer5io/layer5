@@ -153,7 +153,7 @@ section{
 
 .Modal {
     position: absolute;
-    inset: 50% auto auto 50%;
+    inset: 50% auto -45% 50%;
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
