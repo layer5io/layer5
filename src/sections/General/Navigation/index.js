@@ -158,6 +158,9 @@ const Navigation = ({ theme, themeSetter }) => {
       }
     ]
   };
+  data["Solutions"] = {
+    nodes: []
+  };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [themeToggle, setthemeToggle] = useState(false);
