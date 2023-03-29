@@ -163,8 +163,9 @@ const Navigation = () => {
       }
     ]
   };
-
-
+  data["Solutions"] = {
+    nodes: []
+  };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
 

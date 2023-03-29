@@ -4,8 +4,38 @@ import communityGreen from "../../../../assets/images/community/community-green.
 const Data = {
   menuItems: [
     {
-      name: "Landscape",
-      path: "/service-mesh-landscape",
+      name: "Solutions",
+      path: "/projects",
+      subItems: [
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
+        {
+          name: "Developer-defined Infrastructure",
+          path: "/cloud-native-management/meshmap",
+        },
+        {
+          name: "Cloud Native Deployments by Diagram",
+          path: "/cloud-native-management/meshmap/design",
+        },
+        {
+          name: "Kubernetes Multi-cluster Operation",
+          path: "/cloud-native-management/meshmap/visualize",
+        },
+        {
+          name: "Collaborative GitOps",
+          path: "/cloud-native-management/meshmap/collaborate",
+        },
+      ],
+      actionItems: [
+        {
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+      ],
+
       // subItems: [
       //     {
       //         name: "Current Home",
@@ -27,6 +57,12 @@ const Data = {
       //         path: "/hosting",
       //         sepLine: true
       //     }
+      // ],
+      // actionItems: [
+      //   {
+      //     actionName: "All projects",
+      //     actionLink: "/projects",
+      //   },
       // ],
       // actionName: "Home",
       // actionLink: "/",
