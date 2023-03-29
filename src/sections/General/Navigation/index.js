@@ -293,6 +293,7 @@ const Navigation = ({ theme, themeSetter }) => {
                 className={`collapsed ${expand ? "is-expanded" : ""}`}
                 menuItems={Data.menuItems}
                 blogData={data}
+                theme={theme}
               />
             </nav>
 
