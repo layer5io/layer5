@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
-import meshmap_designer from "../../../../assets/images/meshmap/MeshmapDesigner.png";
+import meshmap_designer from "../../../../assets/images/meshmap/meshmap-collaborate.webp";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
@@ -98,19 +98,22 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields} />
                 </div>) : (
                 <>
-                  <a href="https://play.meshery.io/">
+                  <Link to="/cloud-native-management/meshmap">
                     <div className="single-card">
                       <img src={meshmap_designer} style={{
-                        maxWidth: "50%",
-                        padding: "5%"
+                        maxWidth: "65%",
+                        boxShadow: "0px 5px 10px 1px rgba(0, 179, 159, 0.5)",
+                        "&:hover": {
+                          boxShadow: "none",
+                        }
                       }}
                       alt="MeshMap Designer" />
                       <div className="card-text">
-                        <p>The Cloud Native Playground</p>
-                        <h6>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</h6>
+                        <p>MeshMap</p>
+                        <h6>Stop finger-pointing and start collaborating.</h6>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </>)
               }
             </div>
