@@ -13,26 +13,20 @@ const Data = {
         //   sepLine: true
         // },
         {
-          name: "MeshMap",
+          name: "Developer-defined Infrastructure",
           path: "/cloud-native-management/meshmap",
-          sepLine: true
         },
         {
-          name: "Design",
+          name: "Cloud Native Deployments by Diagram",
           path: "/cloud-native-management/meshmap/design",
         },
         {
-          name: "Visualize",
+          name: "Kubernetes Multi-cluster Operation",
           path: "/cloud-native-management/meshmap/visualize",
         },
         {
-          name: "Collaborate",
+          name: "Collaborative GitOps",
           path: "/cloud-native-management/meshmap/collaborate",
-        },
-        {
-          name: "Landscape",
-          path: "/service-mesh-landscape",
-          sepLine: true
         },
       ],
       actionItems: [
