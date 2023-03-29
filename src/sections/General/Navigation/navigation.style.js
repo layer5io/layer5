@@ -199,6 +199,29 @@ const NavigationWrap = styled.header`
          padding: .5em;
        }
     }
+
+    .single-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+      p {
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+      h6 {
+        font-size: 15px;
+        line-height: 1.5rem;
+      }
+      a {
+        padding: 0%;
+      }
+    }
   }
   @keyframes nav-bar-anim {
     0% {
