@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
 import PerformanceMetrics from "./images/performance-metrics-bars.svg";
-import PerformanceMetricsGraphDark from "./images/performance-metrics-graph-dark.svg";
-import PerformanceMetricsGraphLight from "./images/performance-metrics-graph-light.svg";
+import PerformanceMetricsGraph from "./images/performance-metrics-graph.svg";
 import TimelineDVR from "./images/timeline-dvr.svg";
 import TimelineDVRClock from "./images/timeline-dvr-clock.svg";
 import ServicePerformanceGearDark from "./images/service-performance-gear-dark.svg";
@@ -144,7 +143,7 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
             <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
-                <img src={theme == "dark" ? PerformanceMetricsGraphDark : PerformanceMetricsGraphLight} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
+                <img src={PerformanceMetricsGraph} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
               </div>
               <h3>Real-time performance metrics</h3>
               <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
