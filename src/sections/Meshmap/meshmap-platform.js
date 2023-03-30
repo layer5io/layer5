@@ -16,7 +16,7 @@ const PlatformWrapper = styled.div`
   width: 50%;
   width: calc(60% + 2rem);
 }
-}
+
 .block--left {
   background-color: BLACK;
   clip-path: polygon(0 0, 100% 0, calc(100% - 3rem) 100%, 0% 100%);
@@ -42,6 +42,7 @@ const PlatformWrapper = styled.div`
     text-align: right;
     padding: 1rem 2rem;
     color: white;
+    background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%)
   }
   p{
     padding: 1.1rem 2rem 0 4rem;

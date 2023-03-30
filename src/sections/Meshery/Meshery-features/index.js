@@ -17,7 +17,7 @@ const MesheryFeaturesWrapper = styled.div`
     margin: auto;
     margin-top: 4rem;
     @media (max-width: 32rem){
-        margin-top: 10rem;
+        margin-top: 4rem;
     }
 
     .feature-expose {
@@ -40,22 +40,25 @@ const MesheryFeatures = () => {
         <Features
           features={[
             {
+              id: "first" ,
               title: "Operational Best Practices",
               description:
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
               learnMoreLink: "/books/service-mesh-patterns",
-              content: <StaticImage src={img1} alt="Operational Best Practices" />,
+              content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
             },
             {
+              id: "second" ,
               title: "Adaptive WebAssembly Filters for Envoy",
               description:
                 "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
-                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
+                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" loading="lazy" />
               ),
             },
             {
+              id: "third" ,
               title: "Integration with ArgoCD",
               description:
                 "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
@@ -112,12 +115,13 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "fourth" ,
               title: "Docker Extension for Meshery",
               description:
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
                   <p>
                     The Docker Extension for Meshery extends Docker Desktop’s
                     position as the cloud native developer’s go-to Kubernetes
@@ -129,13 +133,14 @@ const MesheryFeatures = () => {
               learnMoreLink: "/docker-extension-meshery",
             },
             {
+              id: "five" ,
               title: "Meshery Operator",
               description: "",
               learnMoreLink:
                 "/cloud-native-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
-                  <img src={img3} alt="Kubernetes Operator for Meshery" />
+                  <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />
                   <p>
                     Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
                   </p>
@@ -148,6 +153,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "six" ,
               title: "Integration with Prometheus and Grafana",
               description: "",
               content: (
@@ -155,6 +161,7 @@ const MesheryFeatures = () => {
                   <StaticImage
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
+                    loading="lazy"
                   />
                   <p>
                     Key to the efficient operation of any service mesh is the
@@ -232,6 +239,7 @@ const MesheryFeatures = () => {
             //   ),
             // },
             {
+              id: "seven" ,
               title: "MeshSync",
               description: "Strict control of service mesh behavior.",
               //learnMoreLink: "/",
@@ -240,6 +248,7 @@ const MesheryFeatures = () => {
                   <img
                     src={img5}
                     alt="Meshery, the extensible cloud native manager"
+                    loading="lazy"
                   />
                   <p>
                     With MeshSync was designed from the ground up to perform
@@ -256,6 +265,7 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              id: "eight" ,
               title: "Extensible Management Plane",
               description:
                 "Plug in different service meshes, load generators and providers.",
@@ -264,6 +274,7 @@ const MesheryFeatures = () => {
                   <img
                     src={img6}
                     alt="Meshery, the extensible cloud native manager"
+                    loading="lazy"
                   />
                   <p>
                     Meshery is not just an application. It is a set of

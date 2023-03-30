@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import c_icon from "./checkmark-box_green.svg";
-import data from "./data";
+import LifecycleFeature from "./data";
 import Counter from "../../../reusecore/Counter";
 import {
   FeaturesSectionWrapper,
@@ -11,6 +11,8 @@ import {
   FeatureInfoContainer,
   CountBlockContainer,
 } from "./featuresColSection.style.js";
+
+
 
 function getServiceFeature(service, index) {
   return (
@@ -29,7 +31,7 @@ function getFeatureBlock(feature, index, performanceCount) {
     <FeatureBlockContainer key={index} className="feature-col">
       <FeatureTitleInfoContainer>
         <div className="feature-block">
-          <h3>{feature.name}</h3>
+          <h2>{feature.name}</h2>
         </div>
         <p>{feature.description}</p>
       </FeatureTitleInfoContainer>
@@ -46,7 +48,7 @@ function getFeatureBlock(feature, index, performanceCount) {
             end={
               feature.count.value !== 0 ? feature.count.value : performanceCount
             }
-            suffix={feature.count.description == "components" ? "+" : ""}
+            suffix= {(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
@@ -57,7 +59,7 @@ function getFeatureBlock(feature, index, performanceCount) {
 
 const Features = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
-  const performanceCountEndpoint = "https://meshery.layer5.io/result/total";
+  const performanceCountEndpoint = "https://meshery.layer5.io/api/performance/results/total";
 
   useEffect(() => {
     fetch(performanceCountEndpoint)
@@ -65,6 +67,7 @@ const Features = () => {
       .then((resultcount) => setPerformanceCount(resultcount.total_runs));
   }, []);
 
+  const data = LifecycleFeature().features;
   return (
     <FeaturesSectionWrapper>
       <TitleContainer>
@@ -74,12 +77,13 @@ const Features = () => {
         </h1>
       </TitleContainer>
       <FeaturesSectionContainer>
-        {data.features.map((feature, index) =>
+        {data.map((feature, index) =>
           getFeatureBlock(feature, index, performanceCount)
         )}
       </FeaturesSectionContainer>
     </FeaturesSectionWrapper>
   );
 };
+
 
 export default Features;

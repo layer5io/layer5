@@ -346,6 +346,9 @@ body {
 .footer-icons a:hover {
   filter: grayscale(0) invert(0);
 }
+.github a:hover {
+  filter: grayscale(0) invert(1);
+}
 .footer-resources {
   margin-left: 60px;
 }

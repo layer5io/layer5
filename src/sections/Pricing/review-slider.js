@@ -57,6 +57,7 @@ const settings = {
 };
 
 const ReviewsWrapper = styled.div`
+max-width: 100%;
 .slider{
   overflow: hidden;
   padding: 2rem 0 0.5rem;

@@ -62,6 +62,9 @@ const MeshFocusWrapper = styled.div`
     .book_btn{
        padding-right: 3rem;
        text-align: center;
+       :hover{
+        color: white;
+        box-shadow: ${props => props.theme.DarkTheme ? " rgb(255 255 255 / 40%)" : " rgb(0 0 0 / 40%)"} 0px 2px 10px;
     }
     .icon-right{
         position: relative;

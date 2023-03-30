@@ -16,13 +16,13 @@ const CollaboratorFeaturesWrapper = styled.section`
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    max-height: 600px;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     ::-webkit-scrollbar {
       display: none;
     }
-
+    @media (min-width: 799px) {
+        max-height: 600px;
+      }
     @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
@@ -49,6 +49,9 @@ const CollaboratorFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
+    margin-top:auto;
+    margin-bottom:auto;
+    height:100%;
 
     @media (max-width: 1200px) {
       min-width: 38rem;
@@ -70,12 +73,45 @@ const CollaboratorFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
+      background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
 
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
     }
   }
+
+  .learn-more {
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    display: flex;
+    flex-direction: row;
+    text-align: end;
+    align-items: center;
+    height: 90px;
+
+    @media screen and (max-width: 992px) {
+        height: 73px;
+      }
+
+    a {
+      display: flex;
+      text-align: end;
+      justify-content: center;
+    }
+
+    h5 {
+      font-weight: 600;
+      @media (max-width: 600px) {
+        font-size: 0.7rem;
+      }
+      @media (max-width: 450px) {
+        opacity: 0 !important;
+      }
+    }
+  }
+
   .features {
     z-index: 1;
     & > li {
@@ -115,7 +151,6 @@ const CollaboratorFeaturesWrapper = styled.section`
   }
 
   .fixed {
-    position: sticky;
     top: 6rem;
     font-weight: 300;
     transition: 0.3s ease-in-out;
@@ -136,6 +171,20 @@ const CollaboratorFeaturesWrapper = styled.section`
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: ease-in-out;
   }
+
+  .hideInMobile{
+    @media (max-width: 799px) {
+      display:none;
+    }
+}
+  .arrow {
+    transition: all 0.5s;
+  }
+  .arrow-enter {
+    transform: translateX(0.4rem);
+    transition: transform 0.5s ease-in-out;
+  }
+
 `;
 
 export default CollaboratorFeaturesWrapper;

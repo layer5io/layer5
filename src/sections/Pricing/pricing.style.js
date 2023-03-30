@@ -4,7 +4,7 @@ const PricingWrapper = styled.section`
 
 .headers {
   background:${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.tertiaryColor};
-  background: linear-gradient(0deg, ${props => props.theme.DarkTheme ? "#121212" : "white"} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background: linear-gradient(0deg, ${props => props.theme.DarkTheme ? "#121212" : "white"} 12%, rgba(0,211,169,1) 53%, rgba(0,179,159,1) 90%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -14,14 +14,14 @@ const PricingWrapper = styled.section`
   height: 22rem;
   @media (min-width: 1400px) {
     height: 25rem;
-  }  
+  }
   @media (min-width: 2048px) {
     height: 30rem;
   }
   h1{
     margin-top: -2rem;
   }
-  
+
  .header-svg {
     position: absolute;
     bottom: 0;
@@ -47,25 +47,25 @@ const PricingWrapper = styled.section`
       }
 
     }
-} 
+}
 
 .subscriptionButtons {
   .button {
-    margin:.5rem 0rem 0rem 0rem; 
+    margin:.5rem 0rem 0rem 0rem;
     font-weight:400;
     color: white;
   }
   @media (min-width: 434px) {
     .button:first-child{
       border-top-right-radius: 0rem;
-      border-bottom-right-radius: 0rem;     
+      border-bottom-right-radius: 0rem;
     }
     .button:last-child{
       border-top-left-radius: 0rem;
-      border-bottom-left-radius: 0rem;     
+      border-bottom-left-radius: 0rem;
     }
-  }  
-.active {   
+  }
+.active {
   border-left: 1px solid ${props => props.theme.caribbeanGreenColor};
   border-right: 1px solid ${props => props.theme.caribbeanGreenColor};
   background-color: ${props => props.theme.caribbeanGreenColor};
@@ -89,7 +89,7 @@ const PricingWrapper = styled.section`
   justify-content: space-between;
   @media (min-width: 1400px) {
     margin: -8rem auto 0;
-  }  
+  }
   @media (min-width: 2048px) {
     margin: -10rem auto;
   }
@@ -122,7 +122,7 @@ const PricingWrapper = styled.section`
     }
 
 .pricing-table{
-  
+
     .pricing-label {
       border-radius: 2px;
       padding: .25rem .5rem;
@@ -130,7 +130,7 @@ const PricingWrapper = styled.section`
       position: relative;
       float: right;
       justify-content: flex-end;
-      align-content: flex-end;    
+      align-content: flex-end;
       width: fit-content;
       font-size: .75rem;
       font-weight: 500;
@@ -218,7 +218,7 @@ const PricingWrapper = styled.section`
       transition: .3s;
       background: ${props => props.theme.secondaryColor};
     }
-    
+
     .price-button-disabled{
       background: rgb(0, 179, 158, 0.6);
     }
@@ -228,7 +228,7 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: rgb(0, 179, 158, 0.3);
+      background: rgb(255, 243, 197, 1);
       color:  ${props => props.theme.secondaryColor};
     }
 
@@ -243,6 +243,15 @@ const PricingWrapper = styled.section`
   }
 }
 
+.pricing_coming_soon{
+  width : 150px;
+  position : relative ;
+  float : right;
+  z-index:2;
+  margin-top:-2rem;
+  margin-right:-5.4rem;
+  -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
+}
 
 `;
 

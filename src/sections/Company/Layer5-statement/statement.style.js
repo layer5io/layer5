@@ -23,12 +23,22 @@ const BannerSectionWrapper = styled.section`
         padding-left: 0px;
         padding-right: 0px;
     }
+    p.statement {
+        font-size: 20px;
+        font-weight: bold;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        line-height: normal;
+        color: white;
+    }
     h2.statement {
         color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
     }
     h3.statement {
-        color: ${(props) => props.theme.secondaryLightColor};
+        color: ${(props) => props.theme.white};
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
@@ -58,7 +68,7 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title {
         padding: 3rem 8rem;
-        background: #00b39f;
+        background: linear-gradient(123deg, #00B39F 60%, #0F1212 100%);
     }
     .svg-background {
         position: absolute;
