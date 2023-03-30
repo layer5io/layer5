@@ -57,60 +57,30 @@ const Customers = (props) => {
               </div>
             </div>
           </section>
+          :
+          <section className="bq-section">
+            <div className="type-one-wrapper type-one-wrapper-boxed">
+              <div className="bq-quote type-three-quote">
 
-          : props.type === "3" ?
-
-            <section className="bq-section">
-              <div className="type-one-wrapper type-one-wrapper-boxed">
-                <div className="bq-quote type-three-quote">
-
-                  <div className="type-three-quote-qmark">
+                <div className="type-three-quote-qmark">
                 &#10078;
-                  </div>
+                </div>
 
-                  <div className="type-three-quote-base">
-                    <blockquote className="type-three-quote-text">
-                      {props.quote}
-                    </blockquote>
-                    <div className="type-three-quote-meta">
-                      <div className="type-three-quote-userpic"><img src={props.image}></img></div>
-                      <div className="type-three-quote-meta-info">
-                        <div className="type-three-quote-author"><cite>{props.person ? props.person : ""}</cite></div>
-                        <div className="type-three-quote-source"><span>{props.title ? props.title : ""}</span></div>
-                      </div>
+                <div className="type-three-quote-base">
+                  <blockquote className="type-three-quote-text">
+                    {props.quote}
+                  </blockquote>
+                  <div className="type-three-quote-meta">
+                    <div className="type-three-quote-userpic"><img src={props.image}></img></div>
+                    <div className="type-three-quote-meta-info">
+                      <div className="type-three-quote-author"><cite>{props.person ? props.person : ""}</cite></div>
+                      <div className="type-three-quote-source"><span>{props.title ? props.title : ""}</span></div>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-
-            :
-
-            <section className="bq-section">
-              <div className="type-one-wrapper type-one-wrapper-boxed">
-                <div className="bq-quote type-four-quote">
-                  <div className="type-four-quote-pattern">
-                    <div className="type-four-quote-qmark">
-                    &#10077;
-                    </div>
-                  </div>
-
-                  <div className="type-four-quote-userpic"><img src={props.image}></img></div>
-
-                  <div className="type-four-quote-base">
-                    <blockquote className="type-four-quote-text">
-                      {props.quote}
-                    </blockquote>
-                    <div className="type-four-quote-meta">
-                      <div className="type-four-quote-meta-info">
-                        <div className="type-four-quote-author"><cite>{props.person ? props.person : ""}</cite></div>
-                        <div className="type-four-quote-source"><span>{props.title ? props.title : ""}</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            </div>
+          </section>
       }
 
     </CustomersWrapper>
