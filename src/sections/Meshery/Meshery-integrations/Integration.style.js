@@ -208,6 +208,10 @@ export const IntegrationSlider = styled(Slider)`
     height: 3rem;
   }
 
+  .slick-list {
+    padding-top: 0.2rem;
+  }
+
   .slick-disabled {
     pointer-events: none;
     opacity: 0.3;
