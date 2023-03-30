@@ -15,7 +15,6 @@ import Testimonial from "../sections/Testimonial";
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const Footer = loadable(() => import("../sections/General/Footer"));
-const HomePageQuotes = loadable(() => import("./homePage-testimonials"));
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
@@ -51,9 +50,8 @@ const IndexPage = () => {
         {/*<ContactCard />*/}
         <SoSpecial theme={theme} />
         {/* <Testimonial /> */}
-        <HomePageQuotes />
         {/* <CloudNativeLeaders /> */}
-        <ServiceMeshFocussed />
+        <ServiceMeshFocussed bookName={"enterprise-path"} />
         {/* <EngineerEnabler /> */}
         <SubscribeSection />
         <Footer />

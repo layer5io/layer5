@@ -9,6 +9,7 @@ import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
+import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
@@ -57,6 +58,7 @@ const MembersPage = () => {
               <ResourcesList theme={theme} resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
             </Col>
           </Row>
+          <ServiceMeshFocused bookName={"service-mesh-patterns"} />
         </Container>
         <Footer />
       </Layout>
