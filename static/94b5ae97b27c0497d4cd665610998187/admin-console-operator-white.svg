@@ -3,13 +3,13 @@
 <style type="text/css">
         .st0{display:none;}
         .st1{display:inline;}
-        .st2{fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;}
-        .st3{fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.9969,0.9969;}
-        .st4{display:inline;fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:1,1;}
-        .st5{fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.993,0.993;}
-        .st6{fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:1.0017,1.0017;}
-        .st7{fill:none;stroke:#B2B2B2;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.9926,0.9926;}
-        .st8{display:inline;fill:none;stroke:#E71D73;stroke-width:0.25;stroke-miterlimit:10;}
+        .st2{fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;}
+        .st3{fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.9969,0.9969;}
+        .st4{display:inline;fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:1,1;}
+        .st5{fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.993,0.993;}
+        .st6{fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:1.0017,1.0017;}
+        .st7{fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:0.9926,0.9926;}
+        .st8{display:inline;fill:none;stroke:#ffffff;stroke-width:0.25;stroke-miterlimit:10;}
         .st9{fill:#9D9D9C;}
         .st10{fill:#424241;}
         .st11{display:inline;fill:#00ABCD;}
