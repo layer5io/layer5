@@ -2,7 +2,6 @@ import React from "react";
 import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
 
-
 const handbookHome = () => {
   return (
     <HandbookWrapper>
@@ -86,7 +85,6 @@ const handbookHome = () => {
           description="The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content."
           to="/community/handbook/writing-program"
         />
-
 
         <HandbookCard
           title="Security Vulnerabilities"

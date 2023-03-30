@@ -3,8 +3,6 @@ import MeshmapVisualizeWrapper from "./meshmap-visualize.style";
 import MeshmapVisualizeBanner from "./meshmap-visualize-banner";
 import MeshmapVisualizerFeatures from "./meshmap-visualize-features";
 import MeshmapVisualizerViews from "./meshmap-visualize-views";
-import MeshmapHeroSection from "./meshmap-visualize-features";
-import DesignDefault from "../../Home/MeshmapDesignHighlight";
 import BackgroundImage from "./images/oval-blur-shape.svg";
 import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
@@ -20,8 +18,6 @@ const MeshmapDesign = ({ theme }) => {
       <MeshmapVisualizeBanner theme={theme} targetRef={targetRef} />
       <MeshmapVisualizerFeatures theme={theme} />
       <MeshmapVisualizerViews theme={theme} />
-      {/* <MeshmapHeroSection theme={theme} /> */}
-      {/* <DesignDefault theme={theme} /> */}
       <SignupForm targetRef={targetRef} />
       <Reviews />
     </MeshmapVisualizeWrapper>

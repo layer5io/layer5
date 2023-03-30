@@ -38,7 +38,7 @@ export default function CollaboratorFeatures({ features, theme }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
+            <div className="diagram scroll hideInMobile">
               <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features collaborator-features">

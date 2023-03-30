@@ -40,7 +40,7 @@ export default function DesignerFeatures({ features, theme }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
-            <div className="diagram scroll">
+            <div className="diagram scroll hideInMobile">
               <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="features design-features">
