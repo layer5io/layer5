@@ -228,8 +228,8 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: rgb(255, 243, 197, 1);
-      color:  ${props => props.theme.secondaryColor};
+      background: ${props => props.theme.DarkTheme ? "#eee" : "#666"};
+      color:  ${props => props.theme.DarkTheme ? "#000" : "#fff"};
     }
 
     .price-tag {
