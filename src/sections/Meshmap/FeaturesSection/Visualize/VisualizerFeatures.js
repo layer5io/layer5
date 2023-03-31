@@ -40,7 +40,7 @@ export default function VisualizerFeatures({ features, theme }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll">
+            <div className="diagram scroll hideInMobile">
               <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} theme={theme} />
             </div>
             <ul className="visualizer-features">

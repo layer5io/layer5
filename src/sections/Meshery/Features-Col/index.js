@@ -59,7 +59,7 @@ function getFeatureBlock(feature, index, performanceCount) {
 
 const Features = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
-  const performanceCountEndpoint = "https://meshery.layer5.io/result/total";
+  const performanceCountEndpoint = "https://meshery.layer5.io/api/performance/results/total";
 
   useEffect(() => {
     fetch(performanceCountEndpoint)

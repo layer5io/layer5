@@ -7,6 +7,8 @@ export default function Feature({
   title,
   description,
   onInViewStatusChanged,
+  imgContent
+
 }) {
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [inViewStatus, setInViewStatus] = useState(false);
@@ -22,6 +24,9 @@ export default function Feature({
           <h2>{title}</h2>
           <hr />
           <p>{description}</p>
+          <div className="imageContent">
+            {imgContent}
+          </div>
         </div>
       </div>
     </FeatureWrapper>
