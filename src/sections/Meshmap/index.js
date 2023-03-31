@@ -231,8 +231,15 @@ const Meshmap = ({ theme }) => {
                   description: ""
                 },
               ]} />*/}
-
+          <InlineQuotes
+            quote="MeshMap is unreal. Support for air-gapped deployments is all the better, too."
+            person="Phillip"
+            title="Solutions Architect at Raymond James Financial, Inc." />
           <Catalog />
+          <InlineQuotes
+            quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            person="Alex"
+            title="Infrastructure Engineering at Docker, Inc." />
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />
