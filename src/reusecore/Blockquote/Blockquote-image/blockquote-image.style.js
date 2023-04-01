@@ -298,6 +298,7 @@ section.bq-section {
     }
 
 }
+
 `;
 
 export default CustomersWrapper;
