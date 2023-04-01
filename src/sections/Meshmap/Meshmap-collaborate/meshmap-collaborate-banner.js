@@ -12,7 +12,6 @@ import PrometheusImageDark from "./images/banner-transitions/prometheus-partial-
 import ServiceIntefaceImage from "./images/banner-transitions/service-interface-partial.svg";
 import ServiceIntefaceImageDark from "./images/banner-transitions/service-interface-partial-dark.svg";
 import SupportingArrows from "./images/banner-transitions/supporting-arrows.svg";
-import CanvasImage from "./images/banner-transitions/canvas.svg";
 import EmptyLight from "./images/banner-transitions/empty-light.svg";
 import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";

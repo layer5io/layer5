@@ -37,7 +37,7 @@ function SMI_Compatibility() {
   const [smiData, setSmiData] = useState(0);
 
   useEffect(() => {
-    fetch("https://meshery.layer5.io/smi/results/public")
+    fetch("https://meshery.layer5.io/api/smi/results/public")
       .then(response => response.json())
       // Group by SMI-spec version
       .then(results => {

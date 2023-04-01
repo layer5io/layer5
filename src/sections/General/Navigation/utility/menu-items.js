@@ -129,10 +129,10 @@ const Data = {
           actionName: "All projects",
           actionLink: "/projects",
         },
-        {
-          actionName: "Pricing",
-          actionLink: "/pricing",
-        },
+        // {
+        //   actionName: "Pricing",
+        //   actionLink: "/pricing",
+        // },
       ],
       // div1: {
       //   src: meshery,

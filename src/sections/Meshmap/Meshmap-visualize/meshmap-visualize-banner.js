@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import BannerImage from "./images/banner-image.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
