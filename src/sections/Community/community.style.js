@@ -10,8 +10,12 @@ const CommunitySectionWrapper = styled.div`
         justify-content: center;
         align-items: center;
         text-align: center;
-        h1,h3{
+        h1,h2{
             color: white;
+        }
+        h2{
+            font-size: 1.75rem;
+            font-weight: 500;
         }
     }
 
@@ -108,8 +112,13 @@ const CommunitySectionWrapper = styled.div`
             h3{
                 margin: 0.5rem auto 0.5rem auto;
             }
-            h1{
+            h4{
                 margin: 1rem auto 1rem auto;
+            }
+            h1.onboarding{
+                margin: 0.5rem auto 0.5rem auto;
+                font-size: 1.75rem;
+                font-weight: 500;
             }
             @media (max-width: 62rem) {
               text-align:center;
@@ -147,15 +156,19 @@ const CommunitySectionWrapper = styled.div`
               display: flex;
               margin: auto;
             }
+            h2 {
+                font-size: 1.75rem;
+                font-weight: 500;
+            }
 
             @media (max-width: 36rem) {
-               h3{
+               h4{
                   font-size: 18px;
                }
             }
 
             &:hover{
-                h3{
+                h4{
                     color: ${props => props.theme.primaryLightColorTwo};
                 }
                 .icon{
@@ -172,6 +185,10 @@ const CommunitySectionWrapper = styled.div`
         margin: 5rem 0;
         padding: 2rem 0;
         .text{
+            h2{
+                font-size: 1.75rem;
+                font-weight: 500;
+            }
             text-align: center;
         }
         h4{
@@ -191,6 +208,10 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+            a {
+                font-weight: 600;
+                background: linear-gradient(123deg, ${props => props.theme.DarkTheme ? "black" : "white"} 60%,${props => props.theme.DarkTheme ? "black" : "white"} 100%);
+            }
         }
     }
 

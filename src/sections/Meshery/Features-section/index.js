@@ -20,9 +20,9 @@ const FeaturesSection = () => {
   var settings = {
     customPaging: function (i) {
       return (
-        <a>
-          <img src={slides_list[i]} />
-        </a>
+        <p>
+          <img src={slides_list[i]} loading="lazy" alt={"slide-img" + [i]}/>
+        </p>
       );
     },
     infinite: false,
@@ -60,7 +60,7 @@ const FeaturesSection = () => {
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
-              <h3>The Performance Yardstick: MeshMark</h3>
+              <h2>The Performance Yardstick: MeshMark</h2>
               <p>
                 Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your          application across different service meshes. Compare and manage service mesh overhead.
               </p>
@@ -71,10 +71,10 @@ const FeaturesSection = () => {
                   <img src={Slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <StaticImage src={slide2Path} alt="Slide 2" />
+                  <StaticImage src={slide2Path} alt="Slide 2" loading="lazy" />
                 </div>
                 <div>
-                  <StaticImage src={slide3Path} alt="Slide 3" />
+                  <StaticImage src={slide3Path} alt="Slide 3" loading="lazy" />
                 </div>
               </Slider>
             </Col>
@@ -82,7 +82,7 @@ const FeaturesSection = () => {
         </div>
         <div className="mesh-mngmnt">
           <div>
-            <h4>One step to managing your microservices</h4>
+            <h3>One step to managing your microservices</h3>
             <h1>Cloud Native Application Management</h1>
             <p>Confidently take full advantage of all that your infrastructure offers.</p>
           </div>

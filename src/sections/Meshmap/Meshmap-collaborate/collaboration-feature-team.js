@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import CollaborationImg from "./../FeaturesSection/Collaborate/images/collab4-dark.svg";
+import CollaborationImgDark from "./../FeaturesSection/Collaborate/images/collab4-dark.svg";
+import CollaborationImgLight from "./../FeaturesSection/Collaborate/images/collab4.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
@@ -25,6 +26,7 @@ const CollaborationFeatureWrapper = styled.div`
       flex-direction: row-reverse;
       background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
       max-width: 90%;
+      height: fit-content;
       justify-content: space-between;
       align-items: center;
       padding: 2% 5% 8%;
@@ -67,7 +69,7 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
-const CollaborationFeatureTeam = () => {
+const CollaborationFeatureTeam = ({ theme }) => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
@@ -85,7 +87,7 @@ const CollaborationFeatureTeam = () => {
     <CollaborationFeatureWrapper>
       <div className="hero-div">
         <div className="hero-image">
-          <img className={imageInView ? "visible" : ""} src={CollaborationImg} alt="" ref={locatorRef} />
+          <img className={imageInView ? "visible" : ""} src={theme == "dark" ? CollaborationImgDark : CollaborationImgLight} alt="" ref={locatorRef} />
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>
