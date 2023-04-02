@@ -10,13 +10,14 @@ const CollaborationFeatureCreateWrapper = styled.div`
     rgba(71, 126, 150, 0.26) 52.12%,
     rgba(18, 18, 18, 0.16) 102%
   );
-  opacity: 0.5;
+  // opacity: 0.5;
   backdrop-filter: blur(19.5px);
   max-width: 90%;
   justify-content: space-between;
   align-items: center;
   padding: 4% 5% 8%;
   border-radius: 36px;
+  margin-bottom: 8%;
 
   .hero-div {
     display: flex;
@@ -91,7 +92,7 @@ const CreateWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
  
-  transform: translateX(-50%) scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transform: translateX(-50%) scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -103,7 +104,7 @@ const IterateWrapper = styled.div`
   bottom: 0;
   left: 0;
   left: -45px;
-  transform: scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transform: scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -115,7 +116,7 @@ const RepeatWrapper = styled.div`
   bottom: 0;
   right: 0;
   right: -50px;
-  transform: scale(${({ hoverWord }) => hoverWord ? "none" : "1.2"});
+  transform: scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
