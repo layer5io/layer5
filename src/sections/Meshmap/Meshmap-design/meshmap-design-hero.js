@@ -26,10 +26,14 @@ const HeroSectionWrapper = styled.div`
         flex-direction: column;
         flex: 0 0 30%;
         max-width: 30%;
-        padding-bottom: 3rem;
+        /* padding-bottom: 3rem; */
         @media only screen and (max-width: 767px) {
           max-width: 100%;
         }
+    }
+
+    h1 {
+      padding-bottom: 2%;
     }
 
     .hero-image {
@@ -68,7 +72,7 @@ const HeroSectionWrapper = styled.div`
 `;
 
 const MeshmapHeroSection = ({ theme }) => {
-  const [locatorRef, inView] = useInView({ threshold: 1.0 });
+  const [locatorRef, inView] = useInView({ threshold: 0.8 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
@@ -78,11 +82,11 @@ const MeshmapHeroSection = ({ theme }) => {
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
-        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" />
+        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
       <div className="hero-text">
-        <h2><span>Design your infrastructure</span></h2>
+        <h1><span>Design your infrastructure</span></h1>
         <p>Play with powerful features including context-aware designs and namespace configurations to easily manage all services.</p>
       </div>
     </HeroSectionWrapper>

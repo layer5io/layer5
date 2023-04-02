@@ -8,6 +8,7 @@ import nitk from "../../../assets/images/partners/nitk_black.svg";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-grey.svg";
 import vmware from "../../../assets/images/partners/vmware.svg";
+import cncf from "../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg";
 
 
 export const partners = [
@@ -83,6 +84,14 @@ export const partners = [
     innerDivStyle: "partner__block__inner",
     imageHeight: 31,
     imageWidth: 190
+  }, {
+    name: "CNCF",
+    imageLink: cncf,
+    imageRoute: "/partners#cncf",
+    innerDivStyle: "partner__block__inner ",
+    imageHeight: 130,
+    imageWidth: 120
   }
+
 
 ];

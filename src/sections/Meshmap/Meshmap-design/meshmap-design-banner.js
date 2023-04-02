@@ -38,8 +38,8 @@ const DesignBannerWrapper = styled.div`
         @media only screen and (max-width: 950px) {
             padding-bottom: 15%;
         }
-        @media only screen and (max-width: 550px) {
-            padding-bottom: 25%;
+        @media only screen and (max-width: 600px) {
+            padding-bottom: 30%;
         }
     }
 
@@ -68,6 +68,12 @@ const DesignBannerWrapper = styled.div`
                 font-size: 7rem;
             }
         }
+    }
+
+    h2 {
+        padding-left: 8px;
+        color: #00b39f;
+        font-weight: 100;
     }
 
     h5 {
@@ -123,12 +129,13 @@ const MeshmapDesignBanner = ({ theme }) => {
     <DesignBannerWrapper>
       <img className="banner-image" src={theme === "dark" ? BannerImageDark : BannerImageLight} alt="" />
       <div className="hero-text">
-        <h2 style={{ paddingLeft: "8px", color: "#00b39f" }}>MeshMap</h2>
+        <h2>MeshMap</h2>
         <h1><span>Designer</span></h1>
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
         <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
+        {/* <CytoscapeDemo/> */}
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>

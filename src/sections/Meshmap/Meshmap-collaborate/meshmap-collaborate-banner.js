@@ -12,7 +12,6 @@ import PrometheusImageDark from "./images/banner-transitions/prometheus-partial-
 import ServiceIntefaceImage from "./images/banner-transitions/service-interface-partial.svg";
 import ServiceIntefaceImageDark from "./images/banner-transitions/service-interface-partial-dark.svg";
 import SupportingArrows from "./images/banner-transitions/supporting-arrows.svg";
-import CanvasImage from "./images/banner-transitions/canvas.svg";
 import EmptyLight from "./images/banner-transitions/empty-light.svg";
 import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
@@ -23,10 +22,11 @@ const CollaborationBannerWrapper = styled.div`
     .banner {
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.DarkTheme ? "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)" : "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)"};
+        background: ${props => props.theme.DarkTheme ? "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)" : "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #FFFFFF 63.36%)"};
         /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"}; */
         max-width: 1920px;
         width: 100%;
+        height: fit-content;
         justify-content: space-evenly;
         align-items: center;
         padding: 4% 5% 6%;
@@ -44,7 +44,7 @@ const CollaborationBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
-        padding-top: 5%;
+        padding-top: 2%;
     }
 
     h1 {
@@ -78,10 +78,17 @@ const CollaborationBannerWrapper = styled.div`
 
     h4 {
         padding: 3% 0%;
-        color: #A0AAAA;
+        color: ${props => props.theme.DarkTheme ? "#A0AAAA" : "#666666"};
         /* font-size: 20px; */
         max-width: 40%;
-        font-weight: bold;
+        /* font-weight: bold; */
+        @media only screen and (max-width: 500px) {
+            font-size: 1rem;
+            max-width: 100%;
+        }
+        @media only screen and (max-width: 767px) {
+            max-width: 100%;
+        }
     }
 
     h5 {
@@ -116,7 +123,7 @@ const CollaborationBannerWrapper = styled.div`
 
     .supporting-arrows-transition {
         opacity: 1;
-        transition: 0.5s ease-out 2s ;
+        transition: 0.5s ease-out 1s ;
     }
 
     .ingress-gateway {
@@ -126,7 +133,7 @@ const CollaborationBannerWrapper = styled.div`
     .ingress-gateway-transition {
         transform: translateX(40%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .kubernetes {
@@ -136,7 +143,7 @@ const CollaborationBannerWrapper = styled.div`
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
         scale: 1;
-        transition: 1s;
+        transition: 0.75s;
     }
 
     .pod {
@@ -146,7 +153,7 @@ const CollaborationBannerWrapper = styled.div`
     .pod-transition {
         transform: translateX(-40%) translateY(-30%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .prometheus {
@@ -156,7 +163,7 @@ const CollaborationBannerWrapper = styled.div`
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
         scale: 1;
-        transition: 2s;
+        transition: 1.25s;
     }
 
     .service-interface {
@@ -177,7 +184,7 @@ const MeshmapCollaborateBanner = ({ theme }) => {
     <CollaborationBannerWrapper>
       <div className="banner">
         <div className="banner-text">
-          <h1>Collaborate with the team. <br /> Build solutions together. </h1>
+          <h1>Collaborate with the team. <br /> Build solutions together </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
           <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
         </div>
