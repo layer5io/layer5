@@ -1,22 +1,17 @@
 import React from "react";
 import DiagramStyles from "../../diagram/diagram.style";
-import Visualize1 from "./images/visualize-1.svg";
-import Visualize1_dark from "./images/visualize-1-dark.svg";
-import Visualize2 from "./images/visualize-2.svg";
-import Visualize2_dark from "./images/visualize-2-dark.svg";
+import { ReactComponent as Visualize1 } from "./images/visualize-1-colorMode.svg";
+import { ReactComponent as Visualize2 } from "./images/visualize-2-colorMode.svg";
 import { useInView } from "react-intersection-observer";
-import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const VisualizerFeaturesDiagram = ({ activeExampleIndex }) => {
-  const [ref, inView] = useInView({ threshold: 0.4 });
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
+  const [ref, inView] = useInView({ threshold: 0.6 });
 
   return (
     <DiagramStyles>
-      <div className="root" style={{ paddingLeft: "0rem", minHeight: "25rem" }}>
-        <img id="visualize-image1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} src={theme === "dark" ? Visualize1_dark : Visualize1} alt="" />
-        <img id="visualize-image2" className={(activeExampleIndex >= 1) ? "show" : "render"} src={theme === "dark" ? Visualize2_dark : Visualize2} alt="" />
+      <div className="root" ref={ref} style={{ paddingLeft: "0rem", minHeight: "25rem" }}>
+        <Visualize1 id="visualize-image1"  className={inView && activeExampleIndex == 0 ? "show" : "render"} alt="visualize-image1" />
+        <Visualize2 id="visualize-image2" className={(activeExampleIndex >= 1) ? "show" : "render"} alt="visualize-image2" />
       </div>
     </DiagramStyles>
   );

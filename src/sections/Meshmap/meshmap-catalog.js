@@ -74,6 +74,9 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     font-style: normal;
     font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
+    color: ${props => props.theme.whiteToBlack};
+
+    
     font-size: 1.5rem;
     line-height: 2.125rem;
     text-align: right;

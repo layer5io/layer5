@@ -56,6 +56,7 @@ const MeshmapWrapper = styled.div`
   }
 
   p.caption {
+    color: ${props => props.theme.whiteToBlack};
     display: relative;
     margin-top: -3rem;
     font-style: italic;

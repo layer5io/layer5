@@ -65,6 +65,10 @@ const FeatureWrapper = styled.section`
    max-width:90%;
    margin-right: auto;
    margin-top: 2rem;
+   
+   svg {
+      color: ${props => props.theme.text}
+    }
 }
 `;
 
