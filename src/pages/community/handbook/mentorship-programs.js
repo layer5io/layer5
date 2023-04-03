@@ -24,7 +24,7 @@ const Mentorship = () => {
       <Layout>
         <GlobalStyle />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <MentorshipPage />
+        <MentorshipPage theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>
