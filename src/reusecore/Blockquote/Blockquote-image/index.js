@@ -57,9 +57,7 @@ const Customers = (props) => {
               </div>
             </div>
           </section>
-
           :
-
           <section className="bq-section">
             <div className="type-one-wrapper type-one-wrapper-boxed">
               <div className="bq-quote type-three-quote">

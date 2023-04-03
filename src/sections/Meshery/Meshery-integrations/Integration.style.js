@@ -32,6 +32,12 @@ export const HoneycombGrid = styled.div`
     color: #1e2117;
     font-size: 0.875rem;
     cursor: pointer;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
+}
   }
 
   .selected {
@@ -47,6 +53,7 @@ export const HoneycombGrid = styled.div`
 
   .container-active,
   .container-inactive {
+    -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
     background: ${(props) => props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
@@ -199,6 +206,10 @@ export const IntegrationSlider = styled(Slider)`
   .slick-arrow {
     width: 2rem;
     height: 3rem;
+  }
+
+  .slick-list {
+    padding-top: 0.2rem;
   }
 
   .slick-disabled {
