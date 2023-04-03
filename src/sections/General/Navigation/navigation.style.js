@@ -553,7 +553,8 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;

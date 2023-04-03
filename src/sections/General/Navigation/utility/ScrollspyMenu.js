@@ -10,6 +10,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     active: menuItems[0]
   });
 
+  const [hover, setHover] = useState(false);
+
   const wrapRef = useRef(null);
 
   const handleMouseOver = (index) => {
@@ -58,7 +60,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         <React.Fragment>
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
-              <div className="hr">
+              <div
+                className="hr"
+                onMouseOver={() => setHover(true)}
+                onMouseOut={() => setHover(false)}
+              >
                 <Link className="section" to={active.path} activeClassName="nav-link-active">{active.name}
                 </Link>
                 {active.subItems.map((subItem, i) => (
@@ -67,9 +73,29 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
                         {subItem.name}
                       </a>
-                      : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
-                        {subItem.name}
-                      </Link>
+                      :
+                      <div>
+                        { hover ?
+                          <Link
+                            to={subItem.path}
+                            partiallyActive={true}
+                            className={subItem.sepLine && "sub-item"}
+                            activeClassName="nav-link-active"
+                          >
+                            {subItem.name}
+                          </Link>
+                          :
+                          <Link
+                            to={subItem.path}
+                            partiallyActive={true}
+                            className={subItem.sepLine && "sub-item"}
+                            activeClassName="nav-link-active"
+                            style={(active.name === "Projects" && !subItem.sepLine) ? { display: "none" } : { display: "block" }}
+                          >
+                            {subItem.name}
+                          </Link>
+                        }
+                      </div>
                     }
                   </li>
                 ))}
