@@ -87,7 +87,7 @@ const MentorshipPrograms = () => {
         <Container>
 
           {data.map((data) => {
-            const { id, name, description, buttonLink, imageLink, imagePosition } = data;
+            const { id, name, description, buttonLink, imageLink, imageLinkDark, imagePosition } = data;
             return (
               <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
@@ -100,7 +100,7 @@ const MentorshipPrograms = () => {
                       </div>
                     </Col>
                     <Col lg={6} md={6} sm={12} id="col2">
-                      <img src={imageLink} alt="logo" />
+                      <img src={(imageLinkDark && theme === 'dark') ? imageLinkDark:imageLink} alt="logo" />
                     </Col>
                   </Row>
                 </div>
