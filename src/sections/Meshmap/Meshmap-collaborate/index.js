@@ -13,7 +13,7 @@ const MeshmapDesign = ({ theme }) => {
     <MeshmapCollaborateWrapper>
       <MeshmapCollaborateBanner theme={theme} />
       <CollaborationFeatureTeam theme={theme} />
-      <CollaborationFeatureCreate/>
+      {/* <CollaborationFeatureCreate/> */}
       <CollaborationFeatureWork />
       <SignupForm />
       <Reviews />
