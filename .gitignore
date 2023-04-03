@@ -91,3 +91,6 @@ default.profraw
 
 # Lighthouse CI
 .lighthouseci/
+
+# gitpod
+.gitpod.yml
