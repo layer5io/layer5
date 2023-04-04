@@ -3,7 +3,7 @@ import SCALightlogo from "../../../collections/programs/sca-contributhon/sca-dar
 import MLH from "../../../collections/programs/mlh-2020/mlh.svg";
 import MLHLightlogo from "../../../collections/programs/mlh-2020/mlh-dark.svg";
 import LFX from "../../../collections/programs/lfx-2022/Linux_Foundation_logo.png";
-import LFXLightlogo from "../../../collections/programs/lfx-2022/lfx-white.png";
+import LFXLightlogo from "../../../collections/programs/lfx-2022/lfx-white.svg";
 import Hacktoberfest from "../../../assets/images/programs/hacktoberfest.png";
 import GSOC from "../../../collections/programs/gsoc-2020/gsoc.svg";
 import GSOD from "../../../collections/programs/gsod/gsod.png";
