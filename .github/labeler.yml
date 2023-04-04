@@ -50,7 +50,7 @@ area/resources:
 area/projects:
   - "src/collections/projects/**/*"
   - "src/pages/projects/**/*"
-area/core-styls:
+type/core-styls:
   - "src/sections/app.style.js"
   - "src/theme/app/*"
 area/site-config:
