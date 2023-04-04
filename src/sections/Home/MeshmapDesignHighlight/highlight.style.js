@@ -95,6 +95,13 @@ const DesignDefaultWrapper = styled.section`
         border-radius: 2rem 0 0 2rem;
         background:${props => props.theme.linearToLinear};
     }
+
+    svg {
+        display: block;
+        .integration-image-colorMode_svg__colorMode1{
+            stop-color: ${props => props.theme.grey212121ToWhite};
+        }
+    }
     .svg-background {
         position: absolute;
         top: 0px;

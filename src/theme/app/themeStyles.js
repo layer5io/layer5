@@ -143,7 +143,7 @@ const lighttheme = {
   grey313131ToYellowFFF7D8: "#FFF7D8",
   grey323232ToGreenF3FFFD: "#F3FFFD",
   grey3C3C3CToGreyF1F1F1: "#F1F1F1",
-  grey404040ToGreen00B39F: "#3C494F",
+  grey404040ToGreen3C494F: "#3C494F",
   grey404040ToGrey1E2117: "#1E2117",
   grey737373ToGrey222222: "#222222",
   grey737373ToGrey4C4A4A: "#4C4A4A",
@@ -155,6 +155,7 @@ const lighttheme = {
   greyAAAAAAToGrey7A848E: "#7A848E",
   greyB1B6B8ToBlue477E96: "#477E96",
   greyB4B4B4ToGrey505050: "#505050",
+  grey505050ToGreyB4B4B$: "#B4B4B4",
   greyC1C1C1ToGreyB3B3B3: "#B3B3B3",
   greyC8C8C8ToGreen3C494F: "#3C494F",
   greyD3D7DBToGreen1E2117: "#1E2117",
@@ -194,6 +195,8 @@ const lighttheme = {
   whiteZeroFiveToBlackZeroFive: "rgb(0 0 0 / 0.05)",
   whiteZeroThreeToBlackZeroOne: "rgb(0 0 0 / 0.01)",
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
+  whiteToBlue1229A9: "#1229A9",
+  whiteToBlue2A2DDE: "2A2DDE",
 
   //DarkTheme
   DarkTheme: false,
@@ -362,7 +365,8 @@ export const darktheme = {
   greyA0AAAAToGrey666666: "#A0AAAA",
   greyAAAAAAToGrey7A848E: "#AAAAAA",
   greyB1B6B8ToBlue477E96: "#B1B6B8",
-  greyB4B4B4ToGrey505050: "#505050",
+  greyB4B4B4ToGrey505050: "#B4B4B4",
+  grey505050ToGreyB4B4B4: "#505050",
   greyC1C1C1ToGreyB3B3B3: "#C1C1C1",
   greyC8C8C8ToGreen3C494F: "#C8C8C8",
   greyD3D7DBToGreen1E2117: "#D3D7DB",
@@ -402,6 +406,8 @@ export const darktheme = {
   whiteZeroFiveToBlackZeroFive: "rgb(255 255 255 / 0.05)",
   whiteZeroThreeToBlackZeroOne: "rgb(255 255 255 / 0.03)",
   whiteZeroThreeToBlackZeroThree: "rgb(255 255 255 / 0.03)",
+  whiteToBlue1229A9: "#FFFFFF",
+  whiteToBlue2A2DDE: "#FFFFFF",
 
   //DarkTheme
   DarkTheme: true,

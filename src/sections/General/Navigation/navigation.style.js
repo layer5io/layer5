@@ -204,7 +204,20 @@ const NavigationWrap = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      svg {
+        .prometheus-partial-colorMode_svg__colorMode1,
+        .pod-partial-colorMode_svg__colorMode1,
+        .kubernetes-partial-colorMode_svg__colorMode1,
+        .ingress-gateway-partial-colorMode_svg__colorMode1 {
+          fill: ${props => props.theme.whiteToBlack};
+        }
+        .empty-colorMode_svg__colorMode1 {
+          fill: ${props => props.theme.whiteToGrey121212};
+        }
+      }
     }
+
 
     .card-text {
       display: flex;
@@ -369,9 +382,12 @@ const NavigationWrap = styled.header`
   }
   .logo {
     margin-top: 8px;
-    transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
+    
     svg {
       width: 155px;
+      .layer5-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+      }
     }
     
     img {
@@ -643,7 +659,7 @@ const NavigationWrap = styled.header`
     box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
     border-radius: 999px;
     color: #00B39F;
-    transition: all 500ms;
+    transition: all 300ms;
     vertical-align: middle;
   }
 

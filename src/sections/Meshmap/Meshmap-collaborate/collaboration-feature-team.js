@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CollaborationImgDark from "./../FeaturesSection/Collaborate/images/collab4-dark.svg";
-import CollaborationImgLight from "./../FeaturesSection/Collaborate/images/collab4.svg";
+import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
@@ -62,6 +61,21 @@ const CollaborationFeatureWrapper = styled.div`
       transition: opacity ease-out 0.5s;
     }
 
+    svg {
+      opacity: 0;
+      transition: opacity ease-out 0.5s;
+      .collab4-colorMode_svg__colorMode1
+       {
+        fill: ${props => props.theme.whiteToBlack}
+       }
+      .collab4-colorMode_svg__colorMode2{
+        fill: ${props => props.theme.greyB4B4B4ToGrey505050}
+       }
+       .collab4-colorMode_svg__colorMode3{
+        fill: ${props => props.theme.blackToWhite}
+       }
+    }
+
     .visible {
       opacity: 1;
       transition: opacity ease-in 0.5s;
@@ -69,7 +83,7 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
-const CollaborationFeatureTeam = ({ theme }) => {
+const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
   const [imageInView, setimageInView] = useState(false);
@@ -86,8 +100,8 @@ const CollaborationFeatureTeam = ({ theme }) => {
   return (
     <CollaborationFeatureWrapper>
       <div className="hero-div">
-        <div className="hero-image">
-          <img className={imageInView ? "visible" : ""} src={theme == "dark" ? CollaborationImgDark : CollaborationImgLight} alt="" ref={locatorRef} />
+        <div className="hero-image" ref={locatorRef}>
+          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>

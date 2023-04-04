@@ -59,8 +59,14 @@ const AboutSectionWrapper = styled.section`
       font-weight: 600;
       margin: 0rem;
   }
-  .head-images-meet {
+  .head-images {
     text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+      }
+    }
   }
   .colab {
     font-size: 20px;

@@ -13,18 +13,12 @@ import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-// import layer5_logo from "../../../assets/images/app/layer5.svg";
-// import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
-import { ReactComponent as Logo } from "../../../assets/images/app/layer5_nav.svg";
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
 import NavigationWrap from "./navigation.style";
-import styled from "styled-components";
-
-const LogoColorMode = styled(Logo)`
-color: ${props => props.theme.whiteToGreen3C494F}
-`;
 
 const Navigation = () => {
+
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
@@ -210,7 +204,7 @@ const Navigation = () => {
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
-            <LogoColorMode />
+            <Logo />
           </Link>
           <nav className="nav">
             {expand ?

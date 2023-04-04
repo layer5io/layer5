@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import BannerImageDark from "./images/banner-image-dark.svg";
 import BannerImageLight from "./images/banner-image-light.svg";
-import CytoscapeImgDark from "./images/cytoscape-dark.svg";
-import CytoscapeImgLight from "./images/cytoscape-light.svg";
+import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
+
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const DesignBannerWrapper = styled.div`
@@ -114,6 +114,15 @@ const DesignBannerWrapper = styled.div`
         flex: 0 0 50%;
         max-width: 50%;
         z-index: 1;
+
+        svg {
+            .cytoscape-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.grey232323ToGreyEEEEEE};
+            }
+            .cytoscape-colorMode_svg__colorMode2 {
+                fill: ${props => props.theme.grey505050ToGreyB4B4B4};
+            }
+        }
         /* max-width: 56rem; */
         /* min-width: 56rem; */
 
@@ -137,7 +146,7 @@ const MeshmapDesignBanner = () => {
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
-        <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
+        <CytoscapeImg alt="cytoscape" />
         {/* <CytoscapeDemo/> */}
         <h5>Experience context-aware design</h5>
       </div>

@@ -18,6 +18,12 @@ const MeshMatesWrapper = styled.div`
           img{
             max-height: 25rem;
           }
+          svg {
+            max-height: 25rem;
+            .meshmate-stack-colorMode_svg__colorMode1 {
+                  fill: ${props => props.theme.whiteToGreen3C494F};
+                }
+          }
        }
     }
     .meshmates-grid{

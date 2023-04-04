@@ -73,6 +73,23 @@ const PartnerWrapper = styled.section`
             width: 100%;
 
         }
+        svg{
+            .cncf-stacked-colorMode_svg__colorMode1,
+            .hashicorp_vertical-colorMode_svg__colorMode1,
+            .hpe_side-colorMode_svg__colorMode1,
+            .microsoft-colorMode_svg__colorMode1,
+            .redhat-colorMode_svg__colorMode1,
+            .intel-colorMode_svg__colorMode1,
+            .vmware-colorMode_svg__colorMode1,
+            .istio-colorMode_svg__colorMode1
+            {
+                fill: ${props => props.theme.whiteToBlack}
+            }
+
+            .smi-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.whiteToBlue2A2DDE}
+            }
+        }
     }
 
     .custom-col{

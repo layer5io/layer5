@@ -1,17 +1,15 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { partners } from "./partners";
 import PartnerWrapper from "./partner.style";
 import Partner_Icon from "../../assets/images/contact/partner_white.svg";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const Partner = () => {
   let academic_partners = partners.filter(partner => partner.type === "academic");
   let technology_partners = partners.filter(partner => partner.type === "technology");
   let len_acad_part = academic_partners.length;
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
+
   // const [isOpen, setIsOpen] = useState(false);
   // const [ID, setID] = useState(-1);
 
@@ -62,7 +60,7 @@ const Partner = () => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={theme === "dark" ? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>
@@ -111,7 +109,11 @@ const Partner = () => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={theme === "dark" ? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      { isValidElement(partner.imageLink)
+                        ? partner.imageLink
+                        :  <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      }
+
                     </a>
                   </div>
                 </Col>

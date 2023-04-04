@@ -2,7 +2,16 @@ import styled from "styled-components";
 
 export const Gnhwrapper = styled.section`
     
-   
+        svg {
+                .nighthawk-colorMode_svg__colorMode1{
+                    fill: ${props => props.theme.whiteToGreen3C494F};  
+                }
+                .smp-colorMode_svg__colorMode1{
+                    fill: ${props => props.theme.whiteToGreen3C494F}; 
+                }
+            }     
+
+
     .hero-section{
         padding: 5rem 0rem;
         .logo{
@@ -10,6 +19,7 @@ export const Gnhwrapper = styled.section`
             margin: 0 auto;
             width: 80%;
         }
+
         .hero-text{
             margin: 0 auto;
             img{
@@ -20,7 +30,7 @@ export const Gnhwrapper = styled.section`
                 color: ${props => props.theme.tertiaryColor};
             }
         }
-    }
+    }                       
 
     .stats {
         text-align: center;
@@ -109,6 +119,16 @@ export const Gnhwrapper = styled.section`
                     width: 2.5rem;
                     vertical-align: top;
                 }
+
+                svg {
+                    rect {
+                        fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
+                      }
+                    path {
+                        stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+                      }
+                }
+
                 .service{
                     color: ${props => props.theme.tertiaryColor};
                     font-size: 16px;
@@ -120,12 +140,7 @@ export const Gnhwrapper = styled.section`
             }
         }
     }
-    rect {
-        fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
-      }
-      path {
-        stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
-      }
+   
     .distributedPerf {
         display: relative;
         float: left;

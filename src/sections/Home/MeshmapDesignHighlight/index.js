@@ -2,18 +2,15 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import integrationsImageLight from "./integration-image-light.svg";
-import integrationsImageDark from "./integration-image-dark.svg";
-import DesignDefaultWrapper from "./highlight.style";import { useInView } from "react-intersection-observer";
+import { ReactComponent as IntegrationsImage } from "./integration-image-colorMode.svg";
+import DesignDefaultWrapper from "./highlight.style";
+import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const DesignDefault = () => {
   const [diagramRef, inView] = useInView({ threshold: 0.6 });
   const [imageInView, setimageInView] = useState(false);
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   if (inView && !imageInView)
     setimageInView(true);
@@ -59,8 +56,10 @@ const DesignDefault = () => {
               </div>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={6} className="right-col">
-            <img className={imageInView ? "diagram-visible" : "diagram-hidden"} src={theme === "dark" ? integrationsImageDark : integrationsImageLight} alt="integrations-img" ref={diagramRef} />
+          <Col sm={12} md={6} lg={6} className="right-col" >
+            <div ref={diagramRef} style={{ alignSelf: "center" }}>
+              <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
+            </div>
           </Col>
         </Row>
       </div>

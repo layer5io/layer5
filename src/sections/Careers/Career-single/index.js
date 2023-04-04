@@ -8,15 +8,10 @@ import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
 import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
-import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
-import Layer5_LightIcon from "../../../assets/images/layer5/layer5-only/png/layer5-light-bg.png";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
-
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
 const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <CareerPageWrapper>
@@ -47,7 +42,7 @@ const CareerSingle = ({ data }) => {
             </Col>
             <Col xs={12} md={5} xl={4} className="logo-col">
               <div className="layer5-logo">
-                <img src={theme === "dark" ? Layer5_LightIcon : Layer5_Icon} alt="Layer5 logo" />
+                <Logo alt="Layer5 logo" />
               </div>
             </Col>
           </Row>

@@ -12,12 +12,10 @@ import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
-import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
-import lightMeshmateIcon from "../../assets/images/meshmate/meshmate-stack-light.svg";
+import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
@@ -43,8 +41,6 @@ const CommunityPage = () => {
   );
 
   const pluginImage = getImage(backgroundImage123);
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <CommunitySectionWrapper>
@@ -120,7 +116,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <img src={theme == "dark" ? lightMeshmateIcon : MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
+              <MeshmateIcon className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
                 <button className="icon" aria-label="mentorship-program">

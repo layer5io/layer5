@@ -6,11 +6,10 @@ import CommunityCallCard from "../../../components/CommunityCallCard";
 import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
-import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
-import MeshmateStackLightImage from "../../../assets/images/meshmate/meshmate-stack-light.svg";
+import { ReactComponent as MeshmateStackImage } from "../../../assets/images/meshmate/meshmate-stack-colorMode.svg";
+
 import { Link } from "gatsby";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const Meshmates = () => {
   const data = useStaticQuery(
@@ -49,9 +48,6 @@ const Meshmates = () => {
 `
   );
 
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
-
   return (
     <MeshMatesWrapper>
       <Container>
@@ -67,7 +63,7 @@ const Meshmates = () => {
             </p>
           </Col>
           <Col className="meshmate-logo-wrapper" sm={12} lg={6}>
-            <img src={theme === "dark" ? MeshmateStackLightImage : MeshmateStackImage} alt="meshmate logo"/>
+            <MeshmateStackImage alt="meshmate logo"/>
           </Col>
         </Row>
         <div className="meshmates-grid">

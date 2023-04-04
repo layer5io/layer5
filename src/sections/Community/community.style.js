@@ -130,6 +130,13 @@ const CommunitySectionWrapper = styled.div`
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
         }
+        svg {
+            max-width: 25rem;
+            .meshmate-stack-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGreen3C494F};
+            }
+          }
+
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
             padding-bottom: 2rem;

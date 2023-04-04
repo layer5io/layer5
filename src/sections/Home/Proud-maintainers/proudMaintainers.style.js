@@ -80,6 +80,30 @@ const ProjectItemWrapper = styled.section`
 		justify-content: center;
 		margin: auto;
 
+		svg {
+			.cncf-colorMode_svg__colorMode1,
+			.linkerd-horizontal-colorMode_svg__colorMode1,
+			.envoy-horizontal-colorMode_svg__colorMode1,
+			.oam-colorMode_svg__colorMode1,
+			.meshery-logo-colorMode_svg__colorMode1,
+			.smp-colorMode_svg__colorMode1
+			 {
+				fill: ${props => props.theme.whiteToBlack};
+			}
+	
+			.openservicemesh-stacked-colorMode_svg__colorMode1 {
+				fill: ${props => props.theme.whiteToBlue1229A9};
+			}
+			.servicemeshinterface-horizontal-stackedtext-color_svg__colorMode1{
+				fill: ${props => props.theme.whiteToBlue2A2DDE};
+			}
+
+			.oam-colorMode_svg__colorMode2 {
+				fill: ${props => props.theme.blackToWhite};
+			}
+		
+		}
+
 		h4 {
 			font-weight: 500;
 			margin: auto 0;
@@ -108,7 +132,6 @@ const ProjectItemWrapper = styled.section`
 
 	.proj_icon_1 {
 		padding: 1rem;
-
 	}
 	.proj_icon_2 {
 		img {

@@ -47,6 +47,13 @@ const CareerPageWrapper = styled.div`
     .layer5-logo {
         width: 15rem;
         margin: auto;
+
+        svg {
+            width: 15rem;
+            .layer5-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGreen3C494F};
+            }
+          }
     }
 
     @media screen and (max-width: 1200px) and (min-width: 768px) {

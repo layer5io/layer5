@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import VisualizerViewsDark from "./images/visualizer-views-dark.svg";
-import VisualizerViewsLight from "./images/visualizer-views-light.svg";
+import { ReactComponent as VisualizerViews } from "./images/visualizer-views-colorMode.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import { useState } from "react";
 
 const ViewsSectionWrapper = styled.div`
 
@@ -74,6 +72,15 @@ const ViewsSectionWrapper = styled.div`
             width: 70%;
         }
 
+        svg {
+          align-items: center;
+          justify-content: center;
+          width: 70%;
+          .visualizer-views-colorMode_svg__colorMode1 {
+            fill: ${props => props.theme.whiteToGrey737373};
+          }
+        }
+
         .visible {
                 opacity: 1;
                 transition: all 1s ease-in;
@@ -106,9 +113,6 @@ const MeshmapVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.4 });
   const [imageInView, setimageInView] = useState(false);
 
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
-
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)
@@ -118,7 +122,7 @@ const MeshmapVisualizerViews = () => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          <img className={imageInView ? "visible" : "not-visible"} src={theme == "dark" ? VisualizerViewsDark : VisualizerViewsLight} alt="" style={{ position: "absolute", top: "0%" }}/>
+          <VisualizerViews className={imageInView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
           <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
         </div>
         <div className="hero-text">

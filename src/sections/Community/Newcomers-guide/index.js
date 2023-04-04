@@ -4,23 +4,19 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import CommunityImage1 from "../../../assets/images/newcomers-page-images/contributor-chest.svg";
-import CommunityWhiteImage1 from "../../../assets/images/newcomers-page-images/contributor-chest-white.svg";
+import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/contributor-chest-colorMode.svg";
 import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.png";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <NewcomersGuideWrapper>
@@ -85,7 +81,9 @@ const NewcomersGuide = () => {
               <Button primary className="newcomers-form" title="Submit a Member Form" url="/newcomer" external={false} />
             </Col>
             <Col sm={12} lg={6}>
-              <img src={theme === "dark" ? CommunityWhiteImage1 : CommunityImage1} className="finding-an-issue" alt="Community Image" />
+              <div className="finding-an-issue">
+                <CommunityImage1  alt="Community Image" />
+              </div>
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
