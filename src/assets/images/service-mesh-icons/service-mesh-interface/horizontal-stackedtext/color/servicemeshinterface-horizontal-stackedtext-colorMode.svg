@@ -2,8 +2,8 @@
   <defs>
     <style>
       .colorMode1 {
-        fill: #FFFFFF,
-          fill-rule: evenodd
+        fill: #FFFFFF;
+        fill-rule: evenodd
       }
 
       .cls-1 {

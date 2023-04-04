@@ -196,7 +196,7 @@ const lighttheme = {
   whiteZeroThreeToBlackZeroOne: "rgb(0 0 0 / 0.01)",
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
   whiteToBlue1229A9: "#1229A9",
-  whiteToBlue2A2DDE: "2A2DDE",
+  whiteToBlue2A2DDE: "#2A2DDE",
 
   //DarkTheme
   DarkTheme: false,

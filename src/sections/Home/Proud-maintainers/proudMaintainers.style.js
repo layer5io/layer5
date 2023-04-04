@@ -94,7 +94,9 @@ const ProjectItemWrapper = styled.section`
 			.openservicemesh-stacked-colorMode_svg__colorMode1 {
 				fill: ${props => props.theme.whiteToBlue1229A9};
 			}
-			.servicemeshinterface-horizontal-stackedtext-color_svg__colorMode1{
+			
+			.servicemeshinterface-horizontal-stackedtext-colorMode_svg__colorMode1
+			{
 				fill: ${props => props.theme.whiteToBlue2A2DDE};
 			}
 
