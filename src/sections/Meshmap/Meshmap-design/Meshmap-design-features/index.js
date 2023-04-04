@@ -4,10 +4,10 @@ import { Container } from "../../../../reusecore/Layout";
 import Features from "../../../../components/Features-carousel";
 import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "../../../assets/images/meshmap/MeshmapDesigner.png";
-const img2 = "../../../assets/images/meshmap/MeshmapDesigner.png";
-const img3 = "../../../assets/images/meshmap/MeshmapDesigner.png";
-const img4 = "../../../assets/images/meshmap/MeshmapDesigner.png";
+const img1 = "../../../../assets/images/meshmap/MeshmapDesigner.png";
+const img2 = "../../../../assets/images/meshmap/MeshmapDesigner.png";
+const img3 = "../../../../assets/images/meshmap/MeshmapDesigner.png";
+const img4 = "../../../../assets/images/meshmap/MeshmapDesigner.png";
 
 const MeshmapDesignFeaturesWrapper = styled.div`
     margin: auto;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import BannerImage from "./images/banner-image.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
@@ -16,7 +15,7 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 10;
         display: flex;
         flex-direction: column;
-        background-color: ${props => props.theme.DarkTheme ? "rgb(18,18,18,0.8)" : "rgb(255, 255, 255, 0.8)"};
+        background-image: ${props => props.theme.DarkTheme ? "radial-gradient(rgba(18, 18, 18, 0.8) 5%, rgba(18, 18, 18, 0.95) 60%)" : "radial-gradient(rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0.95) 60%)"};
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;

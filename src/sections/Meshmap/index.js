@@ -13,6 +13,7 @@ import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeat
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import SignupForm from "./signup-form";
 import Reviews from "../Pricing/review-slider";
+import InlineQuotes from "../../components/Inline-quotes";
 import roleBind1 from "./FeaturesSection/Design/images/role-binding-1.svg";
 import roleBind1_dark from "./FeaturesSection/Design/images/role-binding-1-dark.svg";
 import roleBind2 from "./FeaturesSection/Design/images/role-binding-2.svg";
@@ -84,7 +85,7 @@ const Meshmap = ({ theme }) => {
                   title: "Design your deployments the way you want",
                   description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
                   imgContent: (
-                    <img id="design-image1" src={theme === "dark" ? roleBind1_dark : roleBind1} style={{ transform: "translateX(-2rem)" }}  alt="design-image1" />
+                    <img id="design-image1" src={theme === "dark" ? roleBind1_dark : roleBind1} style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )
                 },
                 {
@@ -110,6 +111,10 @@ const Meshmap = ({ theme }) => {
                 },
               ]} theme={theme} />
 
+          <InlineQuotes
+            person="Kaur Kallas"
+            title="Software Architect at Entigo"
+            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team." />
           <VisualizerFeatures
             features={
               [
@@ -124,10 +129,14 @@ const Meshmap = ({ theme }) => {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
-                    <img id="visualize-image2" src={theme === "dark" ? Visualize2_dark : Visualize2}  alt="visualize-image2" />
+                    <img id="visualize-image2" src={theme === "dark" ? Visualize2_dark : Visualize2} alt="visualize-image2" />
                   )
                 },
               ]} theme={theme} />
+          <InlineQuotes
+            quote="Guys, I love MeshMap! This tool is crazy!"
+            person="Ala Eddine BENHASSIR"
+            title="Networks & Systems Engineer at AYRADE" />
 
           <CollaboratorFeatures
             features={
@@ -137,7 +146,7 @@ const Meshmap = ({ theme }) => {
                   description: "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
                   imgContent: (
                     <>
-                      <img id="avatar-1"  src={Avatar1} alt="" />
+                      <img id="avatar-1" src={Avatar1} alt="" />
                       <img id="collaborate-image1" src={theme === "dark" ? Collab1_dark : Collab1} alt="collaborate-image1" />
                     </>
                   )
@@ -152,7 +161,7 @@ const Meshmap = ({ theme }) => {
                   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-2"  src={Avatar2} alt="avatar-2" />
+                      <img id="avatar-2" src={Avatar2} alt="avatar-2" />
                       <img id="collaborate-image2" src={theme === "dark" ? Collab2_dark : Collab2} alt="collaborate-image2" />
                     </>
                   )
@@ -162,7 +171,7 @@ const Meshmap = ({ theme }) => {
                   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-3"  src={Avatar3} alt="avatar-3" />
+                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
                       <img id="collaborate-image3" src={theme === "dark" ? Collab3_dark : Collab3} alt="collaborate-image3" />
                     </>
                   )
@@ -176,7 +185,7 @@ const Meshmap = ({ theme }) => {
                   description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
                   imgContent: (
                     <>
-                      <img id="avatar-3"  src={Avatar3} alt="avatar-3" />
+                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
                       <img id="collaborate-image4" src={theme === "dark" ? Collab4_dark : Collab4} alt="collaborate-image4" />
                     </>
                   )
@@ -222,8 +231,15 @@ const Meshmap = ({ theme }) => {
                   description: ""
                 },
               ]} />*/}
-
+          <InlineQuotes
+            quote="MeshMap is unreal. Support for air-gapped deployments is all the better, too."
+            person="Phillip"
+            title="Solutions Architect at Raymond James Financial, Inc." />
           <Catalog />
+          <InlineQuotes
+            quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            person="Alex"
+            title="Infrastructure Engineering at Docker, Inc." />
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />
