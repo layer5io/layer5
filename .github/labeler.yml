@@ -57,3 +57,5 @@ area/site-config:
   - "gatsby-*.js"
 area/packages:
   - "package-*.js"
+project/meshery:
+  - "src/collections/integrations/**/*"
