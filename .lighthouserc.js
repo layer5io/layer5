@@ -9,6 +9,10 @@ module.exports = {
                  "http://localhost/cloud-native-management/meshery/index.html",
                  "http://localhost/cloud-native-management/meshmap/index.html",
                  "http://localhost/learn/index.html",
+                 "http://localhost/landscape/index.html",
+
+                 "http://localhost/partners/index.html",
+                 "http://localhost/public/community/*",
                  "http://localhost/community/index.html"],
       },
       "assert": {
