@@ -19,35 +19,25 @@ import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/b
 import { useInView } from "react-intersection-observer";
 
 const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
-  const addAllClasses = props.className ? [props.className] : [""];
+  const { blogData,className } = props;
 
-  const [state, setState] = useState({
-    active: menuItems[0]
-  });
+  const addAllClasses = className ? [className] : [""];
+  const [activeState,setActiveState] = useState(null);
 
   const [isWrapVisible,setIsWrapperVisible] = useState(false);
   const [imageInView, setimageInView] = useState(false);
 
-
   const handleMouseOver = (index) => {
-    console.log("handleMouseOver");
-    setState({
-      active: menuItems[index]
-    });
+    setActiveState(menuItems[index]);
   };
 
   const wrapDisplay = () => {
-    console.log("wrapDisplay");
     setIsWrapperVisible(true);
   };
 
   const wrapNone = () => {
     setIsWrapperVisible(false);
   };
-
-
-  const { active } = state;
-  const blogData = props.blogData;
 
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
 
@@ -76,14 +66,14 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
           </Link>
         </li>
       ))}
-      {active.subItems && (
+      {activeState?.subItems && (
         <React.Fragment>
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
-                <Link className="section" to={active.path} activeClassName="nav-link-active">{active.name}
+                <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
                 </Link>
-                {active.subItems.map((subItem, i) => (
+                {activeState.subItems.map((subItem, i) => (
                   <li key={i}>
                     {subItem.name === "Forum" ?
                       <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
@@ -96,7 +86,7 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                   </li>
                 ))}
                 <div className="action-items">
-                  {active.actionItems.map((actionItem, i) => (
+                  {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
                       <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
                         <span className="readmore-btn">
@@ -113,10 +103,10 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                   ))}
                 </div>
               </div>
-              {blogData[active.name].nodes.length !== 0 ? (
+              {blogData[activeState.name].nodes.length !== 0 ? (
                 <div className="nav-display">
-                  <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields} />
-                  <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields} />
+                  <Card frontmatter={blogData[activeState.name].nodes[0].frontmatter} fields={blogData[activeState.name].nodes[0].fields} />
+                  <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
                 <>
                   <Link to="/cloud-native-management/meshmap">
