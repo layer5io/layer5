@@ -155,7 +155,7 @@ const lighttheme = {
   greyAAAAAAToGrey7A848E: "#7A848E",
   greyB1B6B8ToBlue477E96: "#477E96",
   greyB4B4B4ToGrey505050: "#505050",
-  grey505050ToGreyB4B4B$: "#B4B4B4",
+  grey505050ToGreyB4B4B4: "#B4B4B4",
   greyC1C1C1ToGreyB3B3B3: "#B3B3B3",
   greyC8C8C8ToGreen3C494F: "#3C494F",
   greyD3D7DBToGreen1E2117: "#1E2117",
