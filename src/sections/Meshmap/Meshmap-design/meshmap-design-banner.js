@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import BannerImageDark from "./images/banner-image-dark.svg";
-import BannerImageLight from "./images/banner-image-light.svg";
+import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
 import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
-
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const DesignBannerWrapper = styled.div`
 
@@ -92,11 +89,22 @@ const DesignBannerWrapper = styled.div`
         overflow: hidden;
         /* height: 200rem; */
         width: 90rem;
-            img {
-                filter: brightness(1.3);
-                transform: scale(2);
-                transform-origin: 0rem 0rem;
-            }
+
+        .banner-image-colorMode_svg__colorMode1 {
+            fill: ${props => props.theme.blueE0FFFCToBlue477E96};
+        }
+        .banner-image-colorMode_svg__colorMode2 {
+            stop-color: ${props => props.theme.blue477E96ToGreen00B39F};
+        }
+        .banner-image-colorMode_svg__colorMode3 {
+            stop-color: ${props => props.theme.grey121212ToWhite};
+        }
+
+        img {
+            filter: brightness(1.3);
+            transform: scale(2);
+            transform-origin: 0rem 0rem;
+        }
 
             @media only screen and (max-width: 700px) {
                 top: 5rem;
@@ -134,12 +142,10 @@ const DesignBannerWrapper = styled.div`
 `;
 
 const MeshmapDesignBanner = () => {
-  const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <DesignBannerWrapper>
-      <img className="banner-image" src={theme === "dark" ? BannerImageDark : BannerImageLight} alt="" />
+      <BannerImage className="banner-image" alt="BannerImage"/>
       <div className="hero-text">
         <h2>MeshMap</h2>
         <h1><span>Designer</span></h1>
