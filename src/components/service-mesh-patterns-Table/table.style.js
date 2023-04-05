@@ -63,6 +63,11 @@ export const TableWrapper = styled.div`
                 &:hover{
                     box-shadow: 0px 2px 15px -10px black;
                     transform: translateY(0px);
+                    ${props =>
+                        props.theme.DarkTheme
+                          ? "box-shadow: 0px 0px 8px 3px #00B39F;"
+                          : ""
+                        }
                 }
             }
 
