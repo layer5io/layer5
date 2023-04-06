@@ -10,15 +10,15 @@ import loadable from "@loadable/component";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
-const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Native"));
-import Testimonial from "../sections/Testimonial";
+
+
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const Footer = loadable(() => import("../sections/General/Footer"));
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
-import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+
 
 
 const IndexPage = () => {
