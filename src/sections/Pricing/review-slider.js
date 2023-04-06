@@ -16,7 +16,6 @@ import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 
 
-
 const settings = {
   dots: false,
   infinite: true,
