@@ -586,6 +586,7 @@ const NavigationWrap = styled.header`
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
+		text-align: center;
     color: ${props => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
