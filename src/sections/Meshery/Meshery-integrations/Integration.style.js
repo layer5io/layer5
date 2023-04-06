@@ -158,7 +158,7 @@ export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
   margin: 5.1875rem auto;
   text-align: center;
-  .seeAll-btn {
+  .seeAllBtn {
     &:hover {
       color: white;
     }
