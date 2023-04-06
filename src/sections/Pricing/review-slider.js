@@ -14,7 +14,7 @@ import Kaur from "./reviews/kaur-kallas.jpg";
 import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
-import Lee from "../../collections/members/lee-calcote/lee-calcote.jpg";
+
 
 
 const settings = {
