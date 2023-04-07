@@ -11,8 +11,8 @@ import CollaborationFeatureCreate from "./collaboration-feature-terms";
 const MeshmapDesign = () => {
   return (
     <MeshmapCollaborateWrapper>
-      <MeshmapCollaborateBanner theme={theme} />
-      <CollaborationFeatureTeam theme={theme} />
+      <MeshmapCollaborateBanner />
+      <CollaborationFeatureTeam />
       {/* <CollaborationFeatureCreate/> */}
       <CollaborationFeatureWork />
       <SignupForm />
