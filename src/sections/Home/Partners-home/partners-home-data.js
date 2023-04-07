@@ -87,11 +87,10 @@ export const partners = [
   }, {
     name: "CNCF",
     imageLink: cncf,
-    imageRoute: "/partners#cncf",
+    imageRoute: "/partners#cncf" ,
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
     imageWidth: 120
   }
-
 
 ];
