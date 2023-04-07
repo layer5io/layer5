@@ -25,7 +25,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fullcalendar/core": "~6.1.5",
     "@fullcalendar/daygrid": "^5.11.3",
     "@fullcalendar/google-calendar": "^6.0.2",
     "@fullcalendar/interaction": "^6.0.1",
