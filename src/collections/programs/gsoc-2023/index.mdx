@@ -1,0 +1,159 @@
+---
+title: "Google Summer of Code 2023"
+thumbnail: ./gsoc.svg
+permalink: "gsoc/2023"
+published: true
+program: "Google Summer of Code"
+programSlug: "gsoc"
+redirect_from:
+  - /gsoc/2022/
+---
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import gsoc_logo from "./gsoc.svg";
+import {Link} from "gatsby";
+import playground from "./meshery-playground-alt-4.png";
+
+<ProgramsWrapper>
+
+<img src={gsoc_logo} alt="gsoc_logo" />
+<b>GSoC 2023 Program Timeline</b>
+<div>
+  <ul>
+    <li>Febuary 7 - Organization applications open</li>
+    <li>March 7 - Accepted GSoC Organizations announced</li>
+    <li>April 4 - Students submit their proposals</li>
+    <li>May 20 - Accepted students are announced</li>
+    <li>May 20-June 12 - Community bonding period with orgs</li>
+    <li>June 13-Sep 12 - Students code the summer away</li>
+    <li>September 20 - Successful student projects are announced</li>
+  </ul>
+</div>
+<b>Statistics</b>
+<div>
+  <ul>
+    <li>
+      Since year 2005, 16,000+ students and 13000 mentors from over 118
+      countries has came together to participate in GSoC
+    </li>
+    <li>Approximately 38+ million lines of code have been produced</li>
+  </ul>
+</div>
+
+## GSoC 2023 Project Ideas
+<br />
+
+### Cloud Native Playground
+
+<a href="https://play.meshery.io">
+<img src={playground} alt="the cncf playground mockup" style="width:40%;" />
+</a>
+
+
+#### In-browser OPA policy evaluation in WASM and Rego
+
+- Description: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI, so that a powerful, real-time user experience is possible.
+- Expected outcome:
+- Recommended Skills: Golang, Open Policy Agent, WASM
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Expected project size: 350 hours
+- Difficulty: Hard
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7019
+
+#### [MeshModel] Kubernetes Ontology Browser
+
+- Description: Network topologies and graph databases go hand-in-hand. The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph.
+- Expected outcome: 
+  - Web-based MeshModel capabilities browser
+  - Modeling in graph database
+  - Augmentation of cuelang-based component generator
+  - Stretch: Import/export of MeshModel models and components as OCI images
+- Recommended Skills: Reactjs, Golang, Cuelang, GraphQL, OpenAPI Schema
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Expected project size: 350 hours
+- Difficulty: Hard
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7465
+
+#### Adopt OCI as the packaging and distribution format for Meshery MeshModels
+
+- Description: Meshery MeshModels represent a schema-based description of cloud native infratructure. MeshModels need to be portable between Meshery deployments as well as easily versionable in external repositories. 
+- Expected outcome:
+  - Meshery clients (mesheryctl and Meshery UI) should be able to import/export MeshModels as OCI images.
+  - Meshery clients (mesheryctl and Meshery UI) should be able to push/pull from OCI-compatible registries.
+  - Stretch Goal: OCI image signing; Verify the authenticity of MeshModels using [cosign](https://github.com/sigstore/cosign).
+  - Target registries: Meshery Catalog (https://meshery.io/catalog), Artifact Hub.
+- Recommended Skills: Reactjs, Golang, GraphQL
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Expected project size: 175 hours
+- Difficulty: Medium
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/6447
+
+<br />
+<hr />
+<br />
+<h2>Additional Information</h2>
+<div className="flex-div">&nbsp;</div>
+<div id="layer5-intro" className="iframe-container">
+  <iframe
+    width="392"
+    height="220.5"
+    src="https://www.youtube.com/embed/0yN5T5LB9ps"
+    loading="lazy"
+    frameBorder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+<p>
+  Layer5 projects are open source software. Anyone can download, use, work on,
+  and share it with others. It's built on principles like collaboration,
+  globalism, and innovation. Layer5 projects are distributed under the terms of
+  Apache v2.
+</p>
+
+<h3>About Layer5</h3>
+
+<p>
+We want to participate to help first-time open source contributors get started and what will hopefully be a lifelong journey of open source participation. We want to have them have a great first experience, understand what it means to be embraced by empathy and, in turn, to have empathy for others. We are all learning and growing each day. Our organization and community culture has a pay-it-forward mentality. We spend a lot of time with both students and adults alike, tutoring them, supporting them, and watching them grow. We believe that the world has too few truly diverse and perpetually encouraging open source communities. We take our internships very seriously and grow and support interns to dramatically increase their career velocity. We love helping others learn and grow. </p>
+
+<p>
+Mentoring and seeing others learn and grow is what Layer5 is all about - they grow, we grow. Layer5 is a platform for mentees to hoist themselves up on and leapfrog from. We’re a platform for shared success. Direct participation in GSoC will be most meaningful to the community. </p>
+
+<p>
+We interact daily over Slack, and have an open source project <Link to="/community/calendar">meeting everyday</Link>, which are posted to the community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1" rel="nofollow">YouTube channel</a>.</p>
+<p>
+  Layer5 projects are open source software. Anyone can download, use, work on,
+  and share it with others. It's built on principles like collaboration,
+  globalism, and innovation. Layer5 projects are distributed under the terms of
+  Apache v2.
+</p>
+
+<h3>Google Summer of Code Participation</h3>
+
+<p>
+  The key component of these projects is our Community. This community, which
+  you will join as a participant in Google Summer of Code, is improving the
+  world of diverse cloud native systems. Your contributions will affect people
+  you've never met. The Layer5 community includes software engineers,
+  researchers, students, artists, system administrators, operators and web
+  designers -- all of whom will be happy to help you get started.
+</p>
+<p>
+  We believe that all contributors should expect and be part of a safe and
+  friendly environment for constructive contribution. We can more effectively
+  and successfully compare and challenge different ideas to find the best
+  solutions for advancement, while building the size, diversity, and strength of
+  our community.
+</p>
+<div className="apply-button">
+  <h3>
+    <Button
+      primary
+      title="Participate"
+      url="https://discuss.layer5.io"
+      external="true"
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

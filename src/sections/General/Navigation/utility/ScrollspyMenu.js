@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
-import meshmap_designer from "../../../../assets/images/meshmap/meshmap-collaborate.webp";
+// import meshmap_designer from "../../../../assets/images/meshmap/meshmap-collaborate.webp";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import IngressGatewayImage from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial.svg";
 import IngressGatewayImageDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-dark.svg";
@@ -19,53 +19,43 @@ import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/b
 import { useInView } from "react-intersection-observer";
 
 const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
-  const addAllClasses = [""];
+  const { blogData,className } = props;
 
-  const [state, setState] = useState({
-    active: menuItems[0]
-  });
+  const addAllClasses = className ? [className] : [""];
+  const [activeState,setActiveState] = useState(null);
 
-  const wrapRef = useRef(null);
+  const [isWrapVisible,setIsWrapperVisible] = useState(false);
+  const [imageInView, setimageInView] = useState(false);
 
   const handleMouseOver = (index) => {
-    setState({
-      active: menuItems[index]
-    });
+    setActiveState(menuItems[index]);
   };
 
-  if (props.className) {
-    addAllClasses.push(props.className);
-  }
-
   const wrapDisplay = () => {
-    if (wrapRef.current) {
-      wrapRef.current.style.display = "block";
-    }
+    setIsWrapperVisible(true);
   };
 
   const wrapNone = () => {
-    if (wrapRef.current) {
-      wrapRef.current.style.display = "none";
-    }
+    setIsWrapperVisible(false);
   };
 
-  const { active } = state;
-  const blogData = props.blogData;
-
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
-  const [imageInView, setimageInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
+
+  useEffect(() => {
+    if (inView && !imageInView){
+      setimageInView(true);
+    } else if (imageInView && !inView){
+      setimageInView(false);
+    }
+  },[inView,imageInView]);
 
   return (
-    <ul className={addAllClasses.join(" ")} onMouseOver={wrapDisplay} onMouseOut={wrapNone}>
+    <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
       {menuItems.map((menu, index) => (
         <li
           key={index}
           className={
-            menu.subItems !== undefined ? "nav-item has-dropdown" : "nav-item"
+            menu.subItems ? "nav-item has-dropdown" : "nav-item"
           }
           onMouseOver={() => handleMouseOver(index)}
         >
@@ -76,14 +66,14 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
           </Link>
         </li>
       ))}
-      {active.subItems !== undefined && (
+      {activeState?.subItems && (
         <React.Fragment>
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
-                <Link className="section" to={active.path} activeClassName="nav-link-active">{active.name}
+                <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
                 </Link>
-                {active.subItems.map((subItem, i) => (
+                {activeState.subItems.map((subItem, i) => (
                   <li key={i}>
                     {subItem.name === "Forum" ?
                       <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
@@ -96,7 +86,7 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                   </li>
                 ))}
                 <div className="action-items">
-                  {active.actionItems.map((actionItem, i) => (
+                  {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
                       <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
                         <span className="readmore-btn">
@@ -113,10 +103,10 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                   ))}
                 </div>
               </div>
-              {blogData[active.name].nodes.length !== 0 ? (
+              {blogData[activeState.name].nodes.length !== 0 ? (
                 <div className="nav-display">
-                  <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields} />
-                  <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields} />
+                  <Card frontmatter={blogData[activeState.name].nodes[0].frontmatter} fields={blogData[activeState.name].nodes[0].fields} />
+                  <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
                 <>
                   <Link to="/cloud-native-management/meshmap">
@@ -140,7 +130,7 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
               }
             </div>
           </ul>
-          <div className="wrap" ref={wrapRef} style={{ zIndex: "100" }} />
+          {isWrapVisible && <div className="wrap"  style={{ zIndex: "100" }} />}
         </React.Fragment>
       )}
     </ul>
