@@ -29,7 +29,7 @@
     "@fullcalendar/google-calendar": "^6.0.2",
     "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^5.11.2",
-    "@loadable/component": "^5.15.2",
+    "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@react-icons/all-files": "^4.1.0",
