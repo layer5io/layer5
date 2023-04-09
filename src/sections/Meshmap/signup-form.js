@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import MeshMapDrafts from "./images/meshmap-draft-logos.png";
+
 import CommonForm from "../../components/CommonForm";
 
 const SignupFormWrapper = styled.div`
