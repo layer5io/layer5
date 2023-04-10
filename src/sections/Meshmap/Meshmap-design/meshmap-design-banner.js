@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BannerImageDark from "./images/banner-image-dark.svg";
 import BannerImageLight from "./images/banner-image-light.svg";
-import CytoscapeDemo from "./cytoscape-demo";
+
 import CytoscapeImgDark from "./images/cytoscape-dark.svg";
 import CytoscapeImgLight from "./images/cytoscape-light.svg";
 
