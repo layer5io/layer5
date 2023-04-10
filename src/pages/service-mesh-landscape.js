@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 import LandscapeGrid from "../sections/Landscape";
-import Footer from "../sections/General/Footer";
+
 const LandscapeGridPage = () => {
   return (
-    <Layout>
+    <>
       <LandscapeGrid  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default LandscapeGridPage;

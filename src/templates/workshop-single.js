@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
-import Footer from "../sections/General/Footer";
+
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
@@ -39,12 +39,12 @@ const WorkshopSingle = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

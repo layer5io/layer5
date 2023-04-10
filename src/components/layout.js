@@ -10,17 +10,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ScrollToTopBtn from "./Scrolltotop-button";
-import { GlobalStyle } from "../sections/app.style";
 import Navigation from "../sections/General/Navigation";
+import Footer from "../sections/General/Footer";
 
 const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
       <Navigation/>
       {children}
       <ScrollToTopBtn />
+      <Footer />
     </>
   );
 };

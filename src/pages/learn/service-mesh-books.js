@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import BooksPage from "../../sections/Learn/Books-grid";
 import LearnServiceMeshCTA from "../../sections/Learn/Learn-Service-Mesh-CTA";
-import Footer from "../../sections/General/Footer";
+
 const BooksGridPage = ({ hide_path }) => {
   return (
-    <Layout>
+    <>
       <BooksPage hide_path={hide_path} />
       <LearnServiceMeshCTA />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default BooksGridPage;

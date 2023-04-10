@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
 import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
-import Footer from "../../../sections/General/Footer";
+
 import SMILogo from "../../../sections/Meshery/How-meshery-works/images/servicemeshinterface-icon-color.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/visual-topology.svg";
@@ -16,7 +16,7 @@ const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-me
 const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
 const OperatingServiceMeshes = () => {
   return (
-    <Layout>
+    <>
       <HowMesheryWorksHero  />
       <HowMesheryWorks
         title="How Meshery Manages Cloud Native Infra"
@@ -104,8 +104,8 @@ const OperatingServiceMeshes = () => {
             },
           ]} />
       <HowMesheryWorksSpecs />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default OperatingServiceMeshes;

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
-import Footer from "../../../sections/General/Footer";
+
 import Conduct from "../../../sections/Company/Legal/code-of-conduct";
 const CodeOfConduct = () => {
   return (
-    <Layout>
+    <>
       <Conduct />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default CodeOfConduct;

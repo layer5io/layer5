@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import ProjectPage from "../../sections/Projects/Project-grid";
-import Footer from "../../sections/General/Footer";
+
 export const query = graphql`query allProjects {
   allMdx(
     filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
@@ -29,10 +29,10 @@ export const query = graphql`query allProjects {
 `;
 const ProjectGridPage = ({ data }) => {
   return (
-    <Layout>
+    <>
       <ProjectPage data={data}  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default ProjectGridPage;

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import ImageHubPage from "../../sections/Projects/Image-Hub";
-import Footer from "../../sections/General/Footer";
+
 const ImageHub = () => {
   return (
-    <Layout>
+    <>
       <ImageHubPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default ImageHub;

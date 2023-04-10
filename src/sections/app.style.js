@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
-    background: ${(props) => props.theme.body};
 }
 
 body,html {
@@ -36,9 +35,12 @@ body {
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-property: color, background-color;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
   font-family: "Qanelas Soft", "Open Sans", sans-serif;
   overflow-x: hidden !important;
   font-weight: 400 !important;

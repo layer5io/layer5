@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
-import Layout from "../../components/layout";
+
+
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
@@ -29,7 +29,7 @@ const MembersPage = () => {
       .forEach(el => el.checked = false);
   };
   return (
-    <Layout>
+    <>
       <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml" />
       <Container>
         <Row>
@@ -42,8 +42,8 @@ const MembersPage = () => {
         </Row>
         <ServiceMeshFocused bookName={"service-mesh-patterns"} />
       </Container>
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MembersPage;

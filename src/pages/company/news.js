@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 import NewsPage from "../../sections/Company/News-grid";
-import Footer from "../../sections/General/Footer";
+
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query allNews {
   allMdx(
@@ -43,12 +43,12 @@ export const query = graphql`query allNews {
 `;
 const NewsGridPage = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SimpleReactLightbox>
         <NewsPage  data={data} />
       </SimpleReactLightbox>
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default NewsGridPage;

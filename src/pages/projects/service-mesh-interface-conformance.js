@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import SMIPage from "../../sections/Projects/SMI";
-import Footer from "../../sections/General/Footer";
+
 const SMI = () => {
   return (
-    <Layout>
+    <>
       <SMIPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default SMI;

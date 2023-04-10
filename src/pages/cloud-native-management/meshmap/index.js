@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
-import Footer from "../../../sections/General/Footer";
+
 import Meshmap from "../../../sections/Meshmap/index";
 const MeshmapPage = () => {
   return (
-    <Layout>
+    <>
       <Meshmap  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MeshmapPage;

@@ -1,14 +1,14 @@
 import React from "react";
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
-import Layout from "../../components/layout";
+
+
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 const NewComers = () => {
   return (
-    <Layout>
+    <>
       <NewcomersGuide />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default NewComers;

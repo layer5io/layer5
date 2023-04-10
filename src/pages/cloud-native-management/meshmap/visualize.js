@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
-import Footer from "../../../sections/General/Footer";
+
 import MeshmapVisualize from "../../../sections/Meshmap/Meshmap-visualize/index";
 
 const MeshmapVisualizePage = () => {
 
   return (
-    <Layout>
+    <>
       <MeshmapVisualize />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MeshmapVisualizePage;

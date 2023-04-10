@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
 
 import NewsSingle from "../sections/Company/News-single";
-import Footer from "../sections/General/Footer";
+
 export const query = graphql`query NewsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
     body
@@ -36,12 +36,12 @@ const NewsSinglePage = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <NewsSingle data={data} />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

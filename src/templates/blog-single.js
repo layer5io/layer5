@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
 
 import BlogSingle from "../sections/Blog/Blog-single";
-import Footer from "../sections/General/Footer";
+
 
 
 import SimpleReactLightbox from "simple-react-lightbox";
@@ -46,14 +46,14 @@ const BlogSinglePage = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <SimpleReactLightbox>
         <BlogSingle  data={data} />
       </SimpleReactLightbox>
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

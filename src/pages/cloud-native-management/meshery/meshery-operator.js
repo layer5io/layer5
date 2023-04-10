@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
 import MesheryOperatorPage from "../../../sections/Meshery/meshery-operator";
-import Footer from "../../../sections/General/Footer";
+
 const MesheryOperator = () => {
   return (
-    <Layout>
+    <>
       <MesheryOperatorPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MesheryOperator;

@@ -1,17 +1,17 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import Brand from "../../sections/Company/Brand";
-import Footer from "../../sections/General/Footer";
+
 import SimpleReactLightbox from "simple-react-lightbox";
 const BrandPage = () => {
   return (
-    <Layout>
+    <>
       <SimpleReactLightbox>
         <Brand />
       </SimpleReactLightbox>
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default BrandPage;

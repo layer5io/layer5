@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-import Layout from "../../../components/layout";
+
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
@@ -41,7 +41,7 @@ const SMPPage = () => {
   const pluginImage = getImage(backgroundImage123);
 
   return (
-    <Layout>
+    <>
       <SMPWrapper>
         <BgImage image={pluginImage} className="section">
           <div className="smp-hero">
@@ -159,7 +159,7 @@ const SMPPage = () => {
         </div>
         <MeshMapCTA />
       </SMPWrapper>
-    </Layout>
+    </>
   );
 };
 

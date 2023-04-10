@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
-import Footer from "../../../sections/General/Footer";
+
 import MeshmapCollaborate from "../../../sections/Meshmap/Meshmap-collaborate";
 const MeshmapCollaboratePage = () => {
   return (
-    <Layout>
+    <>
       <MeshmapCollaborate  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MeshmapCollaboratePage;

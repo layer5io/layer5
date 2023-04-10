@@ -8,6 +8,8 @@ const DesignBannerWrapper = styled.div`
     display: flex;
     flex-direction: row;
     background-color: ${props => props.theme.grey121212ToWhite};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  
     max-width: 1920px;
     width: 100%;
     justify-content: space-evenly;
@@ -135,14 +137,14 @@ const DesignBannerWrapper = styled.div`
                 fill: ${props => props.theme.grey505050ToGreyB4B4B4};
             }
         }
-    }
+    
         /* max-width: 56rem; */
         /* min-width: 56rem; */
 
         /* @media only screen and (max-width: 1600px) {
             min-width: 40rem;
         } */
-
+    }
 `;
 
 const MeshmapDesignBanner = () => {

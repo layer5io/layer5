@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
@@ -12,12 +12,11 @@ const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Nati
 import Testimonial from "../sections/Testimonial";
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
-const Footer = loadable(() => import("../sections/General/Footer"));
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <>
       <Banner />
       <Integrations />
       <Partners />
@@ -38,8 +37,8 @@ const IndexPage = () => {
       <ServiceMeshFocussed bookName={"enterprise-path"} />
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export const Head = () => {

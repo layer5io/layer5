@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
 
 import Chapters from "../sections/Learn-Layer5/Chapters";
-import Footer from "../sections/General/Footer";
+
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
@@ -85,14 +85,14 @@ const SingleChapter = ({ data, location }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <SimpleReactLightbox>
         <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} />
       </SimpleReactLightbox>
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

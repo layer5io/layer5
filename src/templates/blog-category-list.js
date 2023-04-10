@@ -1,12 +1,12 @@
 import React from "react";
 
 
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
 
 import BlogList from "../sections/Blog/Blog-list";
-import Footer from "../sections/General/Footer";
+
 
 
 import { graphql } from "gatsby";
@@ -49,12 +49,12 @@ const BlogListPage = ({ pageContext, data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <BlogList data={data} pageContext={pageContext} />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

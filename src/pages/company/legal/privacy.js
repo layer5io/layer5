@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
-import Footer from "../../../sections/General/Footer";
+
 import CompanyPrivacy from "../../../sections/Company/Legal/privacy";
 const Privacy = () => {
   return (
-    <Layout>
+    <>
       <CompanyPrivacy />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Privacy;

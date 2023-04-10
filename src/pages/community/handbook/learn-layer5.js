@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
 import LearnPage from "../../../sections/Community/Handbook/learn5";
-import Footer from "../../../sections/General/Footer";
+
 const CommunityLearn = () => {
   return (
-    <Layout>
+    <>
       <LearnPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default CommunityLearn;

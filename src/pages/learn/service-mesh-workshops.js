@@ -1,15 +1,15 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import WorkshopsPage from "../../sections/Learn/Workshop-grid";
-import Footer from "../../sections/General/Footer";
+
 import { useState } from "react";
 const WorkshopsGridPage = () => {
   return (
-    <Layout>
+    <>
       <WorkshopsPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default WorkshopsGridPage;

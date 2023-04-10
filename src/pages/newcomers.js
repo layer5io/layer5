@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
-import Footer from "../sections/General/Footer";
+
 import WebBasedForm from "../sections/Community/Web-based-from";
 const NewcomersPage = () => {
   return (
-    <Layout>
+    <>
       <WebBasedForm />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default NewcomersPage;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
-import Footer from "../../sections/General/Footer";
+
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
@@ -62,7 +62,7 @@ const Blog = (props) => {
     return <BlogGrid {...props} />;
   };
   return (
-    <Layout>
+    <>
       <BlogView
         isListView={isListView}
         setListView={setListView}
@@ -70,8 +70,8 @@ const Blog = (props) => {
         pageContext={props.pageContext}
         data={props.data}
       />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Blog;

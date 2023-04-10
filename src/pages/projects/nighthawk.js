@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
 import Nighthawk from "../../sections/Projects/Nighthawk";
-import Footer from "../../sections/General/Footer";
+
 import Subscribe from "../../sections/subscribe/subscribe";
 const NighthawkPage = () => {
   return (
-    <Layout>
+    <>
       <Nighthawk  />
       <Subscribe />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default NighthawkPage;

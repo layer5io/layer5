@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
-import Layout from "../../components/layout";
+
+
 import Loadable from "react-loadable";
 import Loader from "./Loader.style";
 import LoadingIcon from "../../assets/images/LoadingIcon";
@@ -49,10 +49,10 @@ const LoadableCalendar = Loadable({
 });
 const CalendarPage = () => {
   return (
-    <Layout>
+    <>
       <LoadableCalendar />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default CalendarPage;

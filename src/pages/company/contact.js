@@ -1,15 +1,15 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
+
 import ContactPage from "../../sections/Company/Contact";
 import { Script } from "gatsby";
 const Contact = () => {
   return (
-    <Layout>
+    <>
       <ContactPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Contact;

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
 import HandbookPage from "../../../sections/Community/Handbook/index";
-import Footer from "../../../sections/General/Footer";
+
 const Handbook = () => {
   return (
-    <Layout>
+    <>
       <HandbookPage />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Handbook;

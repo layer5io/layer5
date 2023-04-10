@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
+
 import AboutSection from "../../sections/Company/About";
 import StewardsOfIndustry from "../../sections/Company/Stewards-of-industry";
 const About = () => {
   return (
-    <Layout>
+    <>
       <AboutSection  />
       <StewardsOfIndustry />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default About;

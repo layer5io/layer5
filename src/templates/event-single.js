@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
 
 
 import EventSingle from "../sections/Community/Event-single";
-import Footer from "../sections/General/Footer";
+
 import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
@@ -41,14 +41,14 @@ const EventSinglePage = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <EventSingle data={data} />
       <LearnServiceMeshCTA />
       <Subscribe />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

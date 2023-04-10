@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
 
 
 import BookSingle from "../sections/Learn/Book-single";
 import DockerExtensionCTA from "../sections/Docker-Meshery/docker-extension-CTA";
 // import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
-import Footer from "../sections/General/Footer";
+
 
 
 import SEO from "../components/seo";
@@ -33,13 +33,13 @@ const BookSinglePage = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <BookSingle data={data} />
       <DockerExtensionCTA />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
+
 import CareersSection from "../../sections/Careers";
 const Careers = () => {
   return (
-    <Layout>
+    <>
       <CareersSection  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Careers;

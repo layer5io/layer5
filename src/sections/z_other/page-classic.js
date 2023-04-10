@@ -1,10 +1,5 @@
 import React from "react";
-
-
-import Layout from "../../components/layout";
 import SEO from "../../components/seo";
-
-
 import BannerClassic from "./Banner-classic";
 import AboutClassic from "./About-classic";
 import FeaturesClassic from "./Features-classic";
@@ -16,7 +11,7 @@ import Testimonial from "../Testimonial";
 import News from "../Company/News";
 import Getapp from "./Getapp";
 import Client from "../Client";
-import Footer from "./Footer-classic";
+
 
 
 import theme from "../../theme/classic/themeStyles";
@@ -24,7 +19,7 @@ import theme from "../../theme/classic/themeStyles";
 const ClassicPage = () => (
 
 
-  <Layout>
+  <>
     <BannerClassic />
     <AboutClassic />
     <Integrations />
@@ -36,8 +31,8 @@ const ClassicPage = () => (
     <Getapp />
     <News />
     <Client />
-    <Footer />
-  </Layout>
+
+  </>
 
 );
 export default ClassicPage;

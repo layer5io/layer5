@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
+
 import Community from "../../sections/Community";
 const CommunityIndex = () => {
   return (
-    <Layout>
+    <>
       <Community  />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default CommunityIndex;

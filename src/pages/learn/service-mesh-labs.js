@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layout";
+
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
+
 import ServiceMeshLabs from "../../sections/Learn/Service-Mesh-Labs";
 const ServiceMeshLabsPage = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -11,10 +11,10 @@ const ServiceMeshLabsPage = (props) => {
     }
   }, []);
   return (
-    <Layout>
+    <>
       <ServiceMeshLabs selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default ServiceMeshLabsPage;

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layout";
+
 import SEO from "../../../components/seo";
 import Writers from "../../../sections/Community/Handbook/writing-program";
-import Footer from "../../../sections/General/Footer";
+
 const Faq = () => {
   return (
-    <Layout>
+    <>
       <Writers />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default Faq;

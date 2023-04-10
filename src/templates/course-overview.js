@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import CourseOverview from "../sections/Learn-Layer5/Course-Overview";
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
-import Footer from "../sections/General/Footer";
+
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
@@ -87,7 +87,7 @@ const CourseOverviewTemplate = ({ data }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <SimpleReactLightbox>
@@ -98,8 +98,8 @@ const CourseOverviewTemplate = ({ data }) => {
           canonical="https://layer5.io/learn/learning-paths"
         />
       </SimpleReactLightbox>
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

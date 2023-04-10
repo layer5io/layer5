@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
 
-  background-color:  ${props => props.theme.body};
   position: sticky;
   width: 100%;
   z-index: 9999;
   top: 0;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background-color: ${(props) => props.theme.body};
+  transition-property: color, background-color;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   .nav-container {
     display: flex;
@@ -386,6 +388,7 @@ const NavigationWrap = styled.header`
     svg {
       width: 155px;
       .layer5-colorMode_svg__colorMode1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         fill: ${props => props.theme.whiteToGreen3C494F};
       }
     }

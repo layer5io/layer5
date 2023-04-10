@@ -1,11 +1,11 @@
 import React from "react";
 
 
-import Layout from "../components/layout";
+
 import SEO from "../components/seo";
 
 
-import Footer from "../sections/General/Footer";
+
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
 
@@ -189,12 +189,12 @@ const Events = ({ data, pageContext }) => {
 
   return (
 
-    <Layout>
+    <>
 
 
       <Meetups  data={data} pageContext={pageContext} />
-      <Footer />
-    </Layout>
+
+    </>
 
   );
 };

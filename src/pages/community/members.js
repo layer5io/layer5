@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // Libraries
 // Components
 import SEO from "../../components/seo";
-import Footer from "../../sections/General/Footer";
-import Layout from "../../components/layout";
+
+
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
@@ -209,11 +209,11 @@ const MembersPage = () => {
   const [members, setMembers] = useState([activeMember]);
   const handleChange = (value) => setMembers(value);
   return (
-    <Layout>
+    <>
       <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
       <MultipleMembers members={members} />
-      <Footer />
-    </Layout>
+
+    </>
   );
 };
 export default MembersPage;

@@ -1,9 +1,7 @@
 // import React from "react";
 //
-
-// import Layout from "../components/layout";
+//
 // import SEO from "../components/seo";
-
 //
 // import Banner from "../sections/z_other/Banner-hosting";
 // import About from "../sections/z_other/About-hosting";
@@ -14,7 +12,7 @@
 // import Testimonial from "../sections/Testimonial";
 // import News from "../sections/Company/News";
 // import ContactCard from "../components/ContactCard";
-// import Footer from "../sections/General/Footer";
+//
 
 //
 // import theme from "../theme/hosting/themeStyles";
@@ -22,7 +20,7 @@
 // const HostingPage = () => (
 //
 //
-//     <Layout>
+//     <>
 //       <SEO title="Layer5 | The Service Mesh Company" />
 //       <Navigation />
 //       <Banner />
@@ -34,8 +32,8 @@
 //       <Faq />
 //       <News />
 //       <ContactCard />
-//       <Footer />
-//     </Layout>
+//
+//     </>
 //
 // );
 
