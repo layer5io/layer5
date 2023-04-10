@@ -7,7 +7,7 @@ import { Container } from "../../reusecore/Layout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
 
-const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => {
+const CommonForm = ({ form, title, submit_title, submit_body }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
@@ -27,7 +27,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
   // const [twitter, setTwitterAccount] = useState("");
   // const [linkedin, setLinkedinAccount] = useState("");
 
-  const errorAccounts = "Please provide at least one account";
+
   const errorRole = "Please select role as applicable";
 
   const confirmationMessageRef = useRef(null);  //set reference to confirmation message

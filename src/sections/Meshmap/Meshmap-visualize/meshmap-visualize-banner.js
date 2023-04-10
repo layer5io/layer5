@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import BannerImage from "./images/banner-image.svg";
-import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+
 
 const VisualizeBannerWrapper = styled.div`
 
@@ -82,7 +80,7 @@ const VisualizeBannerWrapper = styled.div`
     }
 `;
 
-const MeshmapVisualizeBanner = ({ theme, targetRef }) => {
+const MeshmapVisualizeBanner = ({ targetRef }) => {
   const handleClick = () => {
     const offset = 100;
     const targetPos = targetRef.current.getBoundingClientRect().top + window.pageYOffset;
