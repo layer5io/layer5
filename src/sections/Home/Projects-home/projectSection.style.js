@@ -5,16 +5,18 @@ const ProjectItemWrapper = styled.section`
     padding: 0 0 2rem 0;
     overflow: hidden;
     margin-top: 4rem;
+
     .project-title {
         .section-title{
-
+            
             h4 {
                 font-weight: 500;
-                color: ${props => props.theme.grey737373ToGreyB3B3B3};            }
+                color: ${props => props.theme.grey737373ToGreyB3B3B3};
+            }
             h2{
                 color: ${props => props.theme.greyDEE3DEToGreen3C494F};
                 margin-bottom: 40px;
-
+                
                 span{
                     color: ${props => props.theme.text};
                 }

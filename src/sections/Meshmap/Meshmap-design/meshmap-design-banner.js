@@ -93,8 +93,10 @@ const DesignBannerWrapper = styled.div`
         .banner-image-colorMode_svg__colorMode1 {
             fill: ${props => props.theme.blueE0FFFCToBlue477E96};
         }
+
         .banner-image-colorMode_svg__colorMode2 {
             stop-color: ${props => props.theme.blue477E96ToGreen00B39F};
+            offset: ${props => props.theme.blue477E96ToGreen00B39F === "#477E96" ? 0.510971 : 0.210971};
         }
         .banner-image-colorMode_svg__colorMode3 {
             stop-color: ${props => props.theme.grey121212ToWhite};
@@ -124,13 +126,16 @@ const DesignBannerWrapper = styled.div`
         z-index: 1;
 
         svg {
+            
             .cytoscape-colorMode_svg__colorMode1 {
                 fill: ${props => props.theme.grey232323ToGreyEEEEEE};
             }
+
             .cytoscape-colorMode_svg__colorMode2 {
                 fill: ${props => props.theme.grey505050ToGreyB4B4B4};
             }
         }
+    }
         /* max-width: 56rem; */
         /* min-width: 56rem; */
 
@@ -138,7 +143,6 @@ const DesignBannerWrapper = styled.div`
             min-width: 40rem;
         } */
 
-    }
 `;
 
 const MeshmapDesignBanner = () => {

@@ -14,9 +14,11 @@ export const FeaturesSectionContainer = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   rect {
+    transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
   }
   path {
+    transition: stroke 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
   }
   @media (max-width: 1198px) {
@@ -98,6 +100,7 @@ export const FeatureInfoContainer = styled.div`
       vertical-align: top;
     }
     .service {
+      transition: color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       color: ${(props) => props.theme.text};
       font-size: 16px;
       padding: 0 0 1.25rem 1.875rem;
