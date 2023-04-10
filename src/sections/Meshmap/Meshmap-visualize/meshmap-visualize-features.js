@@ -15,7 +15,7 @@ import InteractiveTerminal from "./images/interactive-terminal.svg";
 import InteractiveTerminalCode from "./images/interactive-terminal-code.svg";
 import LogStream from "./images/log-stream.svg";
 import LogStreamSearch from "./images/log-stream-search.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const VisualizerFeaturesWrapper = styled.div`
 

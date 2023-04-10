@@ -5,7 +5,7 @@ import MeshmapLocatorDark from "./images/meshmap-locator-dark.svg";
 import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
 import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const HeroSectionWrapper = styled.div`
 

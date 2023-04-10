@@ -52,7 +52,7 @@ const HowMesheryWorksHero = ({ theme }) => {
             <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
           <Col className="hero-img-wrapper" xs={4} lg={6}>
-            <img src={theme === "dark" ? HeroImageLight : HeroImage} alt="hero" />
+            <img height="450" width="450" src={theme === "dark" ? HeroImageLight : HeroImage} alt="hero" />
           </Col>
         </Row>
       </Container>
