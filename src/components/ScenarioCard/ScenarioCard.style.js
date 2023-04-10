@@ -13,7 +13,7 @@ export const ScenarioCardWrapper = styled.div`
             transition: 0.2s ease-in all;
         }
         &:hover .open-close-scenario {
-            color: ${props => props.theme.primaryLightColorTwo};
+            color: ${props => props.theme.secondaryColor};
         }
     }
     .scenario-cover {

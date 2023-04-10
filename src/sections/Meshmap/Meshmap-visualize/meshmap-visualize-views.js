@@ -4,7 +4,7 @@ import VisualizerViewsDark from "./images/visualizer-views-dark.svg";
 import VisualizerViewsLight from "./images/visualizer-views-light.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ViewsSectionWrapper = styled.div`
 

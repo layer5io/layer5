@@ -59,7 +59,7 @@ const options = {
 };
 
 const CytoscapeDemo = () => {
-  const [myCy, setMyCy] = useState();
+  const [setMyCy] = useState();
 
   const cyCallback = useCallback(cy => {
     setMyCy(cy);
