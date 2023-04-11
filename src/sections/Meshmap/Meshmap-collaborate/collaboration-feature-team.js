@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CollaborationImgDark from "./../FeaturesSection/Collaborate/images/collab4-dark.svg";
 import CollaborationImgLight from "./../FeaturesSection/Collaborate/images/collab4.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
 
