@@ -46,7 +46,6 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   const programs = data.allMdx.nodes.filter((item) => {
     if (programsArray.indexOf(item.frontmatter.program) >= 0) {
@@ -76,7 +75,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
-                          {...(frontmatter.darkthumbnail !== null && theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                          {...(frontmatter.darkthumbnail !== null && isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                           imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />

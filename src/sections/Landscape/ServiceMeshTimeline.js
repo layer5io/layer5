@@ -27,7 +27,6 @@ const ServiceMeshTimeline = () => {
   const [elements, setElements] = useState(initialMeshes);
   const [loadedAll, showIcon] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   const loadMore = () => {
     setElements([...elements, ...remainingMeshes]);
@@ -46,7 +45,7 @@ const ServiceMeshTimeline = () => {
       >
         {mesh.icon ?
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
+            <img src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
           </div>
           : <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />

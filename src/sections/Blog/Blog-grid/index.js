@@ -64,7 +64,7 @@ const BlogGrid = ({
 
                   {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
-                      <Card  frontmatter={frontmatter} fields={fields} />
+                      <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>

@@ -87,7 +87,6 @@ const IntegrationsGrid = ({ category, count }) => {
   const [hideFilter, setHideFilter] = useState(false);
   const allIntegrations = useRef(data.allMdx.nodes);
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
   const categoryNames = allIntegrations.current.reduce(
@@ -283,7 +282,7 @@ const IntegrationsGrid = ({ category, count }) => {
                     <img
                       className="integration-icon"
                       src={
-                        theme === "dark" && darkModeIntegrationIcon !== null
+                        isDark && darkModeIntegrationIcon !== null
                           ? darkModeIntegrationIcon.publicURL
                           : integrationIcon
                       }
@@ -311,7 +310,7 @@ const IntegrationsGrid = ({ category, count }) => {
                       <img
                         className="integration-icon"
                         src={
-                          theme === "dark" && darkModeIntegrationIcon !== null
+                          isDark && darkModeIntegrationIcon !== null
                             ? darkModeIntegrationIcon.publicURL
                             : integrationIcon
                         }
@@ -320,7 +319,7 @@ const IntegrationsGrid = ({ category, count }) => {
                         width={70}
                         style={{
                           filter:
-                            theme === "dark" && darkModeIntegrationIcon == null
+                            isDark && darkModeIntegrationIcon == null
                               ? "brightness(0) invert(1)"
                               : "none",
                         }}

@@ -6,7 +6,7 @@ export const CardWrapper = styled.div`
         border-radius: 0.5rem;
         background-Color:${props => props.theme.grey212121ToWhite};
         box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
-        transition: all 0.3s ease-in;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         &:hover{
             box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
             .post-thumb-block{

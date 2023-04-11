@@ -82,13 +82,12 @@ const MeshmapHeroSection = () => {
     setimageInView(false);
 
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
-        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
+        <img className={imageInView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={imageInView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
       <div className="hero-text">
         <h1><span>Design your infrastructure</span></h1>

@@ -1,11 +1,5 @@
 import React from "react";
-
-
-
 import SEO from "../components/seo";
-
-
-
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
 
@@ -185,17 +179,10 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
 `;
 
 const Events = ({ data, pageContext }) => {
-
-
   return (
-
     <>
-
-
       <Meetups  data={data} pageContext={pageContext} />
-
     </>
-
   );
 };
 

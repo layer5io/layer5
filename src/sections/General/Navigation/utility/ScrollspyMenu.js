@@ -12,8 +12,9 @@ import SupportingArrows from "../../../../sections/Meshmap/Meshmap-collaborate/i
 import EmptyLight from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
+import { useStyledDarkMode } from "../../../../theme/app/StyledThemeProvider";
 
-const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
+const ScrollspyMenu = ({ menuItems, ...props }) => {
   const { blogData,className } = props;
 
   const addAllClasses = className ? [className] : [""];
@@ -21,6 +22,7 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
 
   const [isWrapVisible,setIsWrapperVisible] = useState(false);
   const [imageInView, setimageInView] = useState(false);
+  const { isDark } = useStyledDarkMode();
 
   const handleMouseOver = (index) => {
     setActiveState(menuItems[index]);
@@ -107,7 +109,7 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                   <Link to="/cloud-native-management/meshmap">
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
-                        <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
+                        <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
                         <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
                         <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
                         <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />

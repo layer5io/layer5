@@ -184,7 +184,6 @@ const MeshmapCollaborateBanner = () => {
     setimageInView(false);
 
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <CollaborationBannerWrapper>
@@ -195,7 +194,7 @@ const MeshmapCollaborateBanner = () => {
           <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
         </div>
         <div className="transition-container" ref={transitionRef}>
-          <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
+          <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
           <div>
             <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
           </div>

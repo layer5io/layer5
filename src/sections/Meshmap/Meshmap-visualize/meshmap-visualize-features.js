@@ -122,7 +122,6 @@ const MeshmapVisualizerFeatures = () => {
   const [hoveredFeature, sethoveredFeature] = useState("");
 
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   const handleMouseOver = (num) => {
     setisHovered(true);
@@ -181,7 +180,7 @@ const MeshmapVisualizerFeatures = () => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={theme == "dark" ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
+                <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
                 <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
                   style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
                 />

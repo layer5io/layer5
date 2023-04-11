@@ -99,7 +99,6 @@ const SoSpecial = () => {
   };
 
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <SoSpecialWrapper>
@@ -115,7 +114,7 @@ const SoSpecial = () => {
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
-                      {...(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      {...(isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />

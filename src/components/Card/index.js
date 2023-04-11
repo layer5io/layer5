@@ -9,14 +9,14 @@ import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 const Card = ({ frontmatter, fields }) => {
 
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
+              ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}
           />

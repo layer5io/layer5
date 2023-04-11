@@ -92,7 +92,6 @@ const BlogSingle = ({ data }) => {
 
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
-  const theme = isDark ? "dark" : "light";
 
   useEffect(() => {
     if (copied) {
@@ -116,10 +115,9 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            thumbnail={(isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
-
           />
           <div className="single-post-wrapper">
             <SRLWrapper>
