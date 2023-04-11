@@ -42,7 +42,7 @@ p{
   }
 
   .opportunity-card {
-    width: 20rem;
+    width: 21rem;
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
@@ -86,7 +86,7 @@ p{
       box-shadow: 0px 4px 20px 4px ${(props) => props.theme.shadowLightColor};
 
       .text {
-        width: 80%;
+        width: 75%;
         transform: translateX(2%);
         transition: all 0.4s ease-in-out;
       }

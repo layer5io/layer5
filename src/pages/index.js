@@ -8,11 +8,13 @@ import loadable from "@loadable/component";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
-const CloudNativeLeaders = loadable(() => import("../sections/Company/Cloud-Native"));
-import Testimonial from "../sections/Testimonial";
+
+
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
+
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+
 
 const IndexPage = () => {
   return (
@@ -33,7 +35,7 @@ const IndexPage = () => {
       {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
       <SoSpecial  />
-      <CloudNativeLeaders />
+      {/* <CloudNativeLeaders /> */}
       <ServiceMeshFocussed bookName={"enterprise-path"} />
       {/* <EngineerEnabler /> */}
       <SubscribeSection />

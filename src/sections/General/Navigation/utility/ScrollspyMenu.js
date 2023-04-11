@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
-// import meshmap_designer from "../../../../assets/images/meshmap/meshmap-collaborate.webp";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { ReactComponent as IngressGatewayImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
 import { ReactComponent as KubernetesImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-partial-colorMode.svg";

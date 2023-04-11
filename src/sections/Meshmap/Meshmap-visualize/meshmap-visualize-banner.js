@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+
 
 const VisualizeBannerWrapper = styled.div`
 
