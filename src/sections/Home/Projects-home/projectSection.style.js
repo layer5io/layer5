@@ -107,7 +107,7 @@ const ProjectItemWrapper = styled.section`
             content: none;
         }
         .project__block__inner {
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem;
         }
     }
     @media only screen and (max-width: 912px) {
