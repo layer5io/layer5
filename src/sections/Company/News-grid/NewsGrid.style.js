@@ -6,10 +6,12 @@ export const NewsPageWrapper = styled.div`
     }
     .page-header{
         margin:5rem auto;
+        margin-top: 1rem;
     }
 
     .button-container{
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: start;
         margin-bottom: 3rem;
@@ -20,7 +22,7 @@ export const NewsPageWrapper = styled.div`
     }
     }
     .press-release-button{
-        margin-left: 3rem;
+        margin: 0.5rem;
         background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
@@ -29,6 +31,7 @@ export const NewsPageWrapper = styled.div`
         }
     }   
     .coverage-button {
+        margin: 0.5rem;
         background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
@@ -64,16 +67,17 @@ export const NewsPageWrapper = styled.div`
         
         margin-bottom: 0.8rem;
         .searchBox{
-            flex:0 0 50%;
             @media only screen and (max-width:990px){
                 
-                    flex:0 0 100%;
-                    max-width:100%;
+                    width:100%;
                     margin-bottom: 1.8rem;
                 
             }
         }
         
+    }
+    .search-box {
+        margin: auto;
     }
 
 `;
