@@ -14,14 +14,15 @@ const BooksListWrapper = styled.div`
     .book-heading {
         text-align: center;
         margin: 5rem 0
+        color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .books-card {
         display: flex;
         margin: 1rem auto;
         min-height: 15.5rem;
         max-width: 50.5rem;
-        transition: all 0.2s;
-        transition-timing-function: ease-in-out;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         .books-image {
             height: 12rem;
@@ -39,6 +40,11 @@ const BooksListWrapper = styled.div`
             margin: auto;
             h2 {
                 margin: 0.5rem 0;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            p{
+              color: ${props => props.theme.text};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
         .arrow_icon{

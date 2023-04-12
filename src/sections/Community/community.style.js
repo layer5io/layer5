@@ -110,6 +110,9 @@ const CommunitySectionWrapper = styled.div`
     .meshmate{
         margin-top: 5rem;
         .content{
+            h1, h3, h4 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
             h3{
                 margin: 0.5rem auto 0.5rem auto;
             }
