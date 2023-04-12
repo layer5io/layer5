@@ -24,8 +24,17 @@ const UpcomingEventsWrapper = styled.div`
 	}
 	.blog-slider_content{
 		text-align: center;
-		max-height: 24rem;
 		overflow: hidden;
+		padding-bottom: 4rem;
+	}
+
+	.blog-slider_item {
+		overflow-x: hidden;
+		overflow-y: auto;
+
+	}
+	.blog-slider_item.swiper-slide::-webkit-scrollbar {
+		width: 0;
 	}
 
 	.blog-slider_title {

@@ -520,7 +520,7 @@ export const LandscapePageWrapper = styled.div`
 	.Legend {
 		display: flex;
 		padding: .7rem;
-		text-align: right;
+		text-align: left;
 		margin-left: auto;
 		vertical-align: middle;
 		border: 1px ${props => props.theme.primaryColor};
@@ -535,6 +535,7 @@ export const LandscapePageWrapper = styled.div`
 			font-weight:600;
 			margin: auto;
 			margin-right: 1rem;
+			padding: 0 0.5rem;
 		}
 		img {
 			height: 2rem;
