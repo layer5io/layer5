@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
-overflow: hidden;
+overflow-x: auto;
+overflow-y: hidden;
 
 .smiMark {
 	height: 70%;
