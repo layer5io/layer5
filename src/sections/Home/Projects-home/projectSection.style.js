@@ -31,11 +31,6 @@ const ProjectItemWrapper = styled.section`
             color: ${props => props.theme.black};
         }
     }
-    .project-text {
-        font-weight: 300;
-        margin-bottom: 80px;
-        margin-top: 0;
-    }
     .project__block__wrap{
         position: relative;
         width: 100%;
@@ -59,7 +54,7 @@ const ProjectItemWrapper = styled.section`
         }
         padding: 12% 6% 12% 6%;
         height: 220px;
-        border-radius: 4%;
+        border-radius: 10px;
         text-align: center;
         justify-content: center;
         h3{
@@ -114,11 +109,8 @@ const ProjectItemWrapper = styled.section`
         .project__block__wrap:before {
             content: none;
         }
-    }
-    @media only screen and (max-width: 992px) {
-        .project-text{
-            font-size: 7rem;
-            color:red;
+        .project__block__inner {
+            margin-bottom: 2.5rem;
         }
     }
     @media only screen and (max-width: 912px) {
@@ -156,9 +148,6 @@ const ProjectItemWrapper = styled.section`
                     margin: 1rem auto;
                 }
               }
-        }
-        .project-text{
-            margin-bottom: 40px;
         }
      }
      @media only screen and (max-width: 760px) {
