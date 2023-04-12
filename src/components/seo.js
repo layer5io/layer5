@@ -25,7 +25,7 @@ export const useSiteMetadata = () => {
 };
 
 
-const SEO = ({ canonical, description,image, meta, schemaMarkup, title,children }) => {
+const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
   const { pathname } = useLocation();
   const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
   const seo = {

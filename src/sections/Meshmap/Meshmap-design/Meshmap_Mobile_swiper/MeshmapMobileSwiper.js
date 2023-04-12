@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styled from "styled-components";
+
 import SwiperContainer from "./mobile-swiper.style.js";
 import "swiper/css";
 import "swiper/css/effect-cards";

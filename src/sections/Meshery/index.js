@@ -15,6 +15,7 @@ import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 import MesheryWrapper from "./meshery.style";
 import FeaturesSection from "./Features-section";
 import Features from "./Meshery-features";
+import InlineQuotes from "../../components/Inline-quotes";
 
 const MesheryPage = () => {
   return (
@@ -49,6 +50,10 @@ const MesheryPage = () => {
         </Container>
         <FeaturesSection />
         <Container>
+          <InlineQuotes
+            quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
+            person="Nic Jackson"
+            title="Principal Developer Advocate at HashiCorp" />
           <div className="callout">
             <h1> Manage your clusters with features you won't find anywhere else.</h1>
           </div>
@@ -56,6 +61,10 @@ const MesheryPage = () => {
         <Features />
         <Container>
           <DockerExtensionCTA />
+          <InlineQuotes
+            quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
+            person="Maximiliano Churichi"
+            title="Software Engineer at HPE" />
         </Container>
       </MesheryWrapper>
     </Layout>
