@@ -50,6 +50,7 @@ export const FeaturesWrapper = styled.div`
           // opacity: 1 !important;
           height: 0.65rem;
           width: 0.65rem;
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           fill: ${props => props.theme.whiteToGreyB3B3B3};
         }
 
@@ -73,6 +74,7 @@ export const FeaturesWrapper = styled.div`
     }
 
     .feature {
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       border-left: 2px solid;
       border-color: ${props => props.theme.bodyRevert};
       padding-left: 44px;
@@ -86,6 +88,7 @@ export const FeaturesWrapper = styled.div`
     }
 
     .active-feature {
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       border-color: ${props => props.theme.grey212121ToBlack};
       padding-top: 0;
       @media (min-width: 768px){
@@ -137,7 +140,7 @@ export const FeaturesWrapper = styled.div`
       box-shadow: none;
       color: ${props => props.theme.text};
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       :hover {
         color: #00b39f;
         transition: all 0.2s ease-in-out;

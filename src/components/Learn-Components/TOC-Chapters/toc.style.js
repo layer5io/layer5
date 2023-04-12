@@ -36,6 +36,7 @@ const TOCWrapper = styled.div`
             height: 1.5rem; 
             cursor: pointer;
             fill: ${props => props.theme.menuColor};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     
@@ -66,6 +67,7 @@ const TOCWrapper = styled.div`
 
                     a {
                         color: ${props => props.theme.whiteSixFiveToBlackSixFive};
+                        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     }
                 }
                 &:hover {

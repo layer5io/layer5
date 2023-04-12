@@ -100,6 +100,7 @@ export const WorkshopsListWrapper = styled.div`
 			p {
 				font-size: 1.85rem;
 				color: ${props => props.theme.whiteSevenToBlackSeven};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 	}

@@ -18,10 +18,12 @@ cursor: pointer;
     width: 1.2rem; 
     height: 1.2rem; 
     fill: ${props => props.theme.primaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 p{
     font-size: 0.9rem;
-    color: ${props => props.theme.greyC1C1C1ToGreyB3B3B3};  
+    color: ${props => props.theme.greyC1C1C1ToGreyB3B3B3}; 
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
 }
 .toggle-btn{
     display:inline-block;

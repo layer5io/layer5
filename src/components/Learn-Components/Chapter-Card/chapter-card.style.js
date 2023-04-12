@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ChapterCardWrapper = styled.div`
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding: 1rem 1.25rem;
   margin: 2rem 0;
   background-color: ${props => props.theme.grey111111ToGreyFAFAFA};
@@ -19,6 +20,7 @@ const ChapterCardWrapper = styled.div`
     display: inline-flex;
 
     .chapter-number {
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       font-size: 2rem;
       margin: 0 2rem 0 1rem;
       color:  ${props => props.theme.whiteSixToBlackSix};
@@ -31,6 +33,7 @@ const ChapterCardWrapper = styled.div`
       }
       p {
           margin: 0.35rem 0;
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           color:  ${props => props.theme.whiteSixToBlackSix};
       }
 

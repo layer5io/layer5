@@ -68,6 +68,7 @@ const AboutSectionWrapper = styled.section`
 		justify-content: left;
 		padding: 1rem;
     overflow-block: visible;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		p {
       padding-left: .5rem;
       padding-right: 1.5rem;

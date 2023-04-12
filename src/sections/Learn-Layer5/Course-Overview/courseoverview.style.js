@@ -90,7 +90,7 @@ export const CourseOverviewWrapper = styled.div`
   .course-toc {
     margin-top: 1.75rem;
     color: ${props => props.theme.whiteSixToBlackSix};
-b
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .service-meshes-you-can-learn,

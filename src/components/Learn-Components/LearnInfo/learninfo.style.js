@@ -10,6 +10,7 @@ const InfoWrapper = styled.div`
       p {
         color: ${props => props.theme.whiteSevenToBlackSeven};
         margin: 1rem auto;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       @media screen and (max-width: 992px) {

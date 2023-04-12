@@ -18,6 +18,7 @@ const MesheryOperatorWrapper = styled.section`
             padding-top: 3.125rem;
             p{
                 color: ${props => props.theme.tertiaryColor};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     }
@@ -50,10 +51,12 @@ const MesheryOperatorWrapper = styled.section`
             width: 96%;
         }
         rect {
-            fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
+            fill:  ${props => props.theme.grey313131ToGreenC9FCF6}; 
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
           }
           path {
             stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
         .iframe-div{
             height: 450px;
@@ -75,6 +78,7 @@ const MesheryOperatorWrapper = styled.section`
                 color: ${props => props.theme.primaryColor};
                 font-size: 3rem;
                 display: inline-block;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             .slick-arrow:hover:before{	
                 color: ${props => props.theme.secondaryColor};	
@@ -148,6 +152,7 @@ const MesheryOperatorWrapper = styled.section`
         p {
             color: ${props => props.theme.tertiaryColor};
             padding: 0px 3.125rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         h1 {
             padding: 1.25rem 0px;
@@ -158,6 +163,7 @@ const MesheryOperatorWrapper = styled.section`
             padding: 5rem 1.25rem;
             background-color: ${props => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             .card {
                 box-shadow:
                 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -171,6 +177,7 @@ const MesheryOperatorWrapper = styled.section`
                 padding: 1.25rem;
                 background: ${props => props.theme.grey212121ToWhite};
                 border-radius: 25px;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 p {
                     text-align: left;
                     padding: 0px 0px;
@@ -200,6 +207,7 @@ const MesheryOperatorWrapper = styled.section`
                 color: ${props => props.theme.tertiaryColor};
                 font-size: 16px;
                 padding: 0 0 1.25rem 1.875rem;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 h4{
                     font-weight: 600;
                 }

@@ -15,6 +15,7 @@ export const TutorialsTableWrapper = styled.div`
     th, tr {
       height: 3.75rem;
       vertical-align: middle;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     tr:nth-child(odd) {
       background-color: ${props => props.theme.grey212121ToWhite};

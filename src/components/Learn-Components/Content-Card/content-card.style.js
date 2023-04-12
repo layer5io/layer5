@@ -7,6 +7,7 @@ const ContentCardWrapper = styled.div`
   display: flex;
   border: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroOne};
   justify-content: space-between;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     transition: background 150ms ease-out 0s, border 150ms ease-out 0s,
       transform 150ms ease-out 0s;
@@ -22,6 +23,7 @@ const ContentCardWrapper = styled.div`
         margin: 0 2rem 0 1rem;
         color:  ${props => props.theme.whiteFourToBlackFour};
         align-self: center;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .chapter-desc {
       h2 {
@@ -30,6 +32,7 @@ const ContentCardWrapper = styled.div`
       p {
           margin: 0.35rem 0;
           color:  ${props => props.theme.whiteFourToBlackFour};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
   }

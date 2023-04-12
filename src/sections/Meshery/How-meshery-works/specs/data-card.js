@@ -12,6 +12,7 @@ const DataCardWrapper = styled.div`
   border-radius: 10px;
   color: ${props => props.theme.text};
   padding: 2rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   
   ul{
     list-style: none;

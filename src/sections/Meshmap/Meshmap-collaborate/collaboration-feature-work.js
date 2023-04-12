@@ -14,6 +14,7 @@ const CollaborationFeatureWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 2% 5% 8%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;

@@ -34,6 +34,7 @@ const CalendarStyleWrapper = styled.div`
         margin: 0px;
         min-width: 2.5rem;
         color: ${props => props.theme.shadowLightColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     }
     .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {

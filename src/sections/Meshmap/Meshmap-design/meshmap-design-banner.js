@@ -94,14 +94,17 @@ const DesignBannerWrapper = styled.div`
 
         .banner-image-colorMode_svg__colorMode1 {
             fill: ${props => props.theme.blueE0FFFCToBlue477E96};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .banner-image-colorMode_svg__colorMode2 {
             stop-color: ${props => props.theme.blue477E96ToGreen00B39F};
             offset: ${props => props.theme.blue477E96ToGreen00B39F === "#477E96" ? 0.510971 : 0.210971};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .banner-image-colorMode_svg__colorMode3 {
             stop-color: ${props => props.theme.grey121212ToWhite};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         img {
@@ -131,10 +134,12 @@ const DesignBannerWrapper = styled.div`
             
             .cytoscape-colorMode_svg__colorMode1 {
                 fill: ${props => props.theme.grey232323ToGreyEEEEEE};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .cytoscape-colorMode_svg__colorMode2 {
                 fill: ${props => props.theme.grey505050ToGreyB4B4B4};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     

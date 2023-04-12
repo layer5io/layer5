@@ -84,6 +84,7 @@ const BlogSideBarWrapper = styled.div`
                         border-bottom: 1px solid transparent;
                         transition: all 0.3s linear;
                     }
+                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     &:hover{
                         span, em{
                             color: ${props => props.theme.secondaryColor}; 
@@ -116,7 +117,7 @@ const BlogSideBarWrapper = styled.div`
                     border-radius: 3px;
                     background: ${props => props.theme.grey212121ToGreyF0F0F0};
                     font: 400 13px/26px "Qanelas Soft", "Open Sans", sans-serif; 
-                    transition: all 0.3s linear;
+                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     &:hover{
                         background: ${props => props.theme.secondaryColor};
                         color: ${props => props.theme.textRevert};

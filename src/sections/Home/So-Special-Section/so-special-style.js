@@ -45,6 +45,7 @@ const SoSpecialWrapper = styled.div`
         font-size: 4.5rem;
         display: inline-block;
         height: 2rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .slick-disabled {
         pointer-events:none;
@@ -99,9 +100,9 @@ const SoSpecialWrapper = styled.div`
         width:100%;
         border-radius:1rem;
         background-color: ${props => props.theme.grey212121ToWhite};
-
         box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.green00D3A9ToBlackFour};
         color:${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     #special-cont_img{
         height:70%;
@@ -137,7 +138,8 @@ const SoSpecialWrapper = styled.div`
         color:black;
         height: 30rem;
         outline:none;
-        border:none;   
+        border:none;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
 
     .so-special-foot{

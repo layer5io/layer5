@@ -4,6 +4,8 @@ const Banner1SectionWrapper = styled.section`
     display: none;
     padding: 7rem 0;
     background-color: ${props => props.theme.body};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     .background-svg {
         overflow: visible;
         position: absolute;
@@ -18,6 +20,7 @@ const Banner1SectionWrapper = styled.section`
         color: ${props => props.theme.greyDEE3DEToGreen3C494F};
         margin: 0 0 70px 0;
         text-align: center;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .section-title-wrapper {
         min-width: 80%;
@@ -36,6 +39,8 @@ const Banner1SectionWrapper = styled.section`
         h2 {
             color: ${props => props.theme.greyDEE3DEToGreen3C494F};
             margin: 0 0 20px 0;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            
             span {
                 color: ${props => props.theme.secondaryColor};
             }

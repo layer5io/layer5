@@ -21,8 +21,10 @@ export const TableWrapper = styled.div`
 			line-height: .9rem;
 			font-weight: 400;
 			border-bottom: 1px solid #efefef;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			a {
 				color: ${props => props.theme.text};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				&:hover {
 					color: ${props => props.theme.greyB4B4B4ToGrey505050};
 				}
@@ -39,6 +41,7 @@ export const TableWrapper = styled.div`
 			font-weight: 600;
 			font-size: 1rem;
 			line-height: 1rem;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	
 		tr {

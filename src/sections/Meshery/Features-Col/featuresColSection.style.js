@@ -50,11 +50,11 @@ export const FeatureBlockContainer = styled.div`
   box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.blackFiveToWhiteFive};
   background-color:	${props => props.theme.grey212121ToWhite};
   border-radius: 1.25rem;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
 export const TitleContainer = styled.div`
@@ -102,10 +102,10 @@ export const FeatureInfoContainer = styled.div`
       vertical-align: top;
     }
     .service {
-      transition: color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       color: ${(props) => props.theme.text};
       font-size: 16px;
       padding: 0 0 1.25rem 1.875rem;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
 `;
@@ -122,9 +122,11 @@ export const CountBlockContainer = styled.div`
     font-weight: 700;
     margin-bottom: 0.625rem;
     color: ${(props) => props.theme.text};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .count-desc {
     font-size: 0.94rem;
     color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 `;

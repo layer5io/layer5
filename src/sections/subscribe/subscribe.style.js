@@ -4,16 +4,19 @@ const SubscribeWrapper = styled.div`
     background-color:${props => props.theme.grey1D1D1DToGreyFAFAFA};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     h2{
         font-weight: 600;
         font-size:1.875rem;
         margin:1.25rem 0;
         color:${props => props.theme.text};
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
         background: ${props => props.theme.grey1D1D1DToLinear2};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     
     input{

@@ -20,6 +20,7 @@ overflow: hidden;
 	box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
 	border-radius: .75rem;
 	line-height: 1.5rem;
+	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .tooltip-div{
@@ -38,25 +39,30 @@ table {
         font-size: 0.9rem;
         font-weight: 400;
         border-bottom: 1px solid ${props => props.theme.grey212121ToGreyEFEFEF};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     th {
         background: ${props => props.theme.grey404040ToGrey1E2117} ;
         color: #ffffff;
-		height: 4rem;
-		font-size: 1rem;
+				height: 4rem;
+				font-size: 1rem;
         font-weight: 600;
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   
 	tr.primaryRow {
 		background: ${props => props.theme.body};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		td {
 			border-right: 1px solid ${props => props.theme.body};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 	tr.secondaryRow {
 		background: #efefef;
 		td {
 			border-right: 1px solid ${props => props.theme.body};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 

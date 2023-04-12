@@ -20,9 +20,8 @@ export const ProfileCardWrapper = styled.div`
         top: 50%;
         transition: 0.3s;
         height: 235px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         
-        
-
         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
         }

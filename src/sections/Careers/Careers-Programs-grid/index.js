@@ -75,7 +75,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
-                          {...(frontmatter.darkthumbnail !== null && isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                          {...(frontmatter.darkthumbnail !== null && (isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                           imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />

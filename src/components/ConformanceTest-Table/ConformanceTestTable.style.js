@@ -11,6 +11,7 @@ table {
     width: 100%;
   
     td {
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         padding: 0.3rem;
         height: 4rem;
         text-align: center;
@@ -30,15 +31,18 @@ table {
     }
   
     tr {
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		:nth-child(odd) {
 			background: ${props => props.theme.grey212121ToWhite};
 			td {
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				border-right: 1px solid ${props => props.theme.grey212121ToWhite};
 			}
 		}
 		:nth-child(even) {
 			background: ${props => props.theme.grey121212ToGreyEFEFEF};
 			td {
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				border-right: 1px solid ${props => props.theme.grey121212ToGreyEFEFEF};
 			}
 		}

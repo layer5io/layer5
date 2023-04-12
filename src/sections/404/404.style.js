@@ -16,6 +16,7 @@ const L404SectionWrapper = styled.section`
         color: ${props => props.theme.greyDEE3DEToGrey363636};
         font-style: italic;
         margin-top: 2.5rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .button-row{
         display: flex;

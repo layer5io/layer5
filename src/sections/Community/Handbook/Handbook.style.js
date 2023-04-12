@@ -14,21 +14,26 @@ export const HandbookWrapper = styled.div`
       padding-bottom: 2rem;
       ul > li {
         color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li {
         color: ${(props) => props.theme.menuColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ul > li > span {
         color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li > span {
         color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
 
     h2 h3{
       margin: 0.5rem 0;
       color: ${(props) => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .page-section{
@@ -53,6 +58,7 @@ export const HandbookWrapper = styled.div`
         position: absolute;
         height: 150rem;
         overflow: auto;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a {
@@ -65,11 +71,13 @@ export const HandbookWrapper = styled.div`
     .sidebar a.active {
         background-color: ${(props) => props.theme.primaryLightColorTwo};
         color: white;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a:hover:not(.active) {
         background-color:${(props) => props.theme.secondaryLightColor};
         color: white;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .page-header-section {
@@ -122,6 +130,7 @@ export const HandbookWrapper = styled.div`
       border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
       text-align: left;
       padding: 0.5rem;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .linkscol{
@@ -131,6 +140,7 @@ export const HandbookWrapper = styled.div`
 
     tbody:nth-child(even) {
       background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .codes{
@@ -183,10 +193,12 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
       stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     svg {
       color: "red";
@@ -197,6 +209,7 @@ export const HandbookWrapper = styled.div`
       background-color: ${(props) => props.theme.keppelColor};
       border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     input[type=checkbox]:disabled + label:before {
@@ -208,6 +221,7 @@ export const HandbookWrapper = styled.div`
       transform: scale(1);
       background-color: ${(props) => props.theme.secondaryLightColor};
       border-color: ${(props) => props.theme.secondaryLightColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .project-org-list{
@@ -426,6 +440,7 @@ width: 90%;
   .text{
     p{
       color: ${props => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
   .listed{
@@ -440,6 +455,7 @@ width: 90%;
               color: ${props => props.theme.tertiaryColor};
               font-size: 16px;
               padding: 0 0 1.25rem 1.8rem;
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
               h4{
                   font-weight: 600;
               }
@@ -459,6 +475,7 @@ width: 90%;
   flex-direction: column;
   background: ${props => props.theme.grey212121ToWhite};
   box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }
@@ -476,6 +493,7 @@ width: 90%;
   p{
       font-weight: 300;
       color: ${props => props.theme.text};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   img{
       height: 60px ; 
@@ -486,6 +504,7 @@ width: 90%;
   margin: 10px auto;
   border-left: solid 2px ${(props) => props.theme.tertiaryColor};
   padding: 0px 20px 0px 20px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 } 
 .process .item {
   padding: 10px;
@@ -504,6 +523,7 @@ width: 90%;
   background-color: ${(props) => props.theme.secondaryColor};
   top: 25px;
   left: -32px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 }
 

@@ -8,18 +8,21 @@ const Banner3SectionWrapper = styled.section`
     background: url(${HeroCubesBlack}) no-repeat;
     background-size: 50%;
     background-color: ${props => props.theme.secondaryLightColorTwo};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     background-position: bottom -85px right;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     p {
         font-size: 21px;
         font-weight: 300; 
         color: ${props => props.theme.greyDEE3DEToGreen3C494F};
         margin: 0 0 70px 0;
         width: 70%;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h4 {
         color: ${props => props.theme.grey737373ToGreyB3B3B3};
         text-transform: uppercase;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .section-title{
         h1 {

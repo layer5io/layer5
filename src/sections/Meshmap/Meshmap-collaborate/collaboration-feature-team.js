@@ -29,6 +29,7 @@ const CollaborationFeatureWrapper = styled.div`
       justify-content: space-between;
       align-items: center;
       padding: 2% 5% 8%;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       @media only screen and (max-width: 767px) {
         text-align: center;
         flex-direction: column-reverse;
@@ -67,12 +68,15 @@ const CollaborationFeatureWrapper = styled.div`
       .collab4-colorMode_svg__colorMode1
        {
         fill: ${props => props.theme.whiteToBlack}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
       .collab4-colorMode_svg__colorMode2{
         fill: ${props => props.theme.greyB4B4B4ToGrey505050}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
        .collab4-colorMode_svg__colorMode3{
         fill: ${props => props.theme.blackToWhite}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
     }
 

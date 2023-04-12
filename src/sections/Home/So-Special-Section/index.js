@@ -114,7 +114,7 @@ const SoSpecial = () => {
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
-                      {...(isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />

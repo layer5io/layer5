@@ -21,6 +21,7 @@ h2, h5{
     display: block;
     overflow-x: scroll;
     overflow-y:hidden;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .price-table {
     width: 100%;
@@ -29,12 +30,15 @@ h2, h5{
 }
 .price-table tr:not(:last-child) {
     border-bottom: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroThree};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .price-table tr td {
     border-left: 1px solid ${props => props.theme.whiteZeroFiveToBlackZeroFive};
     padding: 0rem 2rem;
     font-size: 1rem;
     vertical-align: middle;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     h5{
       display: block;
       text-align: left;
@@ -54,6 +58,7 @@ h2, h5{
 
 .price-table tr:hover {
     background-color: ${props => props.theme.secondaryLightColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .price-table .fa-check {
     color: #5336ca;
@@ -106,6 +111,7 @@ h2, h5{
 .price-table .price-blank {
     background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
     border: 0 none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .category{

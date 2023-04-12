@@ -22,6 +22,8 @@ const PartnerWrapper = styled.section`
         background-color:${props => props.theme.grey212121ToGreen1E2117};
         color: white;
         padding: 4rem 0;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         .partner-container-head{
             padding:2rem;
             text-align: center;
@@ -84,10 +86,12 @@ const PartnerWrapper = styled.section`
             .istio-colorMode_svg__colorMode1
             {
                 fill: ${props => props.theme.whiteToBlack}
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .smi-colorMode_svg__colorMode1 {
                 fill: ${props => props.theme.whiteToBlue2A2DDE}
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     }

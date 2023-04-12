@@ -62,6 +62,7 @@ export const HoneycombGrid = styled.div`
     padding: 0.625rem;
     position: relative;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     .integration-container {
       display: flex;
@@ -93,11 +94,11 @@ export const HoneycombGrid = styled.div`
         .title {
           line-height: 1.375rem;
           color: ${(props) => props.theme.whiteToBlack};
-          transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
           opacity: 0.2;
           font-weight: 600;
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .learnMoreBtn {
           padding: 5px 10px;
@@ -132,6 +133,7 @@ export const HoneycombGrid = styled.div`
         }
       }
       background: #00d3a9;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       ::after {
         content: "";
         background: ${(props) => props.theme.grey212121ToWhite};
@@ -228,6 +230,7 @@ export const IntegrationSlider = styled(Slider)`
     display: inline-block;
     height: 1rem;
     -webkit-text-size-adjust: none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .slick-arrow:hover:before {

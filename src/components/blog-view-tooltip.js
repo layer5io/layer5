@@ -19,6 +19,7 @@ export const ToolTipWrapper = styled.div`
     a {
         padding: 5px;
         color: ${props => props.theme.keppletColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         background-color: ${props => props.theme.grey212121ToWhite};
         border: 1.5px solid ${props => props.theme.keppletColor};
         &:hover{
@@ -29,6 +30,7 @@ export const ToolTipWrapper = styled.div`
         }             
     }
     .active {
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         background-color: ${props => props.theme.primaryColor};
         color: ${props => props.theme.primaryLightColorTwo};
         border: 1.5px solid ${props => props.theme.primaryColor};

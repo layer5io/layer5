@@ -11,7 +11,7 @@ const UpcomingEventsWrapper = styled.div`
 		padding: 1rem;
 		border-radius: 0.5rem;
 		height: 39.5rem;
-		transition: all 0.3s;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.blog-slider_img{
 		max-height: 25rem; 
@@ -38,6 +38,7 @@ const UpcomingEventsWrapper = styled.div`
 		color: ${props => props.theme.whiteSevenToBlackSeven};
 		justify-content: flex-end;
 		margin: 0;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.blog-slider_text {
@@ -59,14 +60,16 @@ const UpcomingEventsWrapper = styled.div`
 
 	.swiper-pagination-bullet {
 		background: ${props => props.theme.secondaryColor};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.swiper-pagination {
 		background: ${props => props.theme.grey212121ToWhite};
 		padding-top: 0.8rem;
-    	margin-top: 1rem;
-    	margin-bottom: -1.2rem;
-    	padding-bottom: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: -1.2rem;
+    padding-bottom: 0.8rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	@media (max-width: 720px) {

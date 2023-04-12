@@ -26,6 +26,7 @@ const ContainerWrapper = styled.div`
     a.mute {
     text-decoration: none;
     color: ${(props) => props.theme.tertiaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover {
       color: ${(props) => props.theme.keppelColor};
     }
@@ -36,6 +37,8 @@ const ContainerWrapper = styled.div`
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     &:hover {
       color: ${(props) => props.theme.keppelColor};
     }
@@ -46,6 +49,7 @@ const ContainerWrapper = styled.div`
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 `;
 

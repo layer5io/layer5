@@ -7,6 +7,8 @@ export const ProjectWrapper = styled.div`
         padding: 0;
         font-weight: 500;
         text-align:center;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         img{
             width: 3rem;
             position: relative;
@@ -55,7 +57,8 @@ export const ProjectWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.6s;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
             background-color: ${props => props.theme.secondaryColor};
             img {

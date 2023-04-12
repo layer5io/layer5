@@ -27,10 +27,12 @@ const ProjectItemWrapper = styled.section`
 			margin-bottom: 0.5rem;
 			color: ${props => props.theme.grey737373ToGreyB3B3B3};
 			text-transform: uppercase;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 		h2{
 			 span {
 				color: ${props => props.theme.text};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			 }
 			margin-bottom: 1rem;
 		}
@@ -38,6 +40,7 @@ const ProjectItemWrapper = styled.section`
 			margin:0 auto 4rem auto;
 			color: ${props => props.theme.whiteSixToBlackSix};
 			max-width: 60%;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 
@@ -79,6 +82,7 @@ const ProjectItemWrapper = styled.section`
 		border-radius: 1.5rem;
 		justify-content: center;
 		margin: auto;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		svg {
 			.cncf-colorMode_svg__colorMode1,
@@ -89,19 +93,23 @@ const ProjectItemWrapper = styled.section`
 			.smp-colorMode_svg__colorMode1
 			 {
 				fill: ${props => props.theme.whiteToBlack};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 	
 			.openservicemesh-stacked-colorMode_svg__colorMode1 {
 				fill: ${props => props.theme.whiteToBlue1229A9};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 			
 			.servicemeshinterface-horizontal-stackedtext-colorMode_svg__colorMode1
 			{
 				fill: ${props => props.theme.whiteToBlue2A2DDE};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 
 			.oam-colorMode_svg__colorMode2 {
 				fill: ${props => props.theme.blackToWhite};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		
 		}

@@ -24,6 +24,7 @@ section.bq-section {
 .links{
     .type-one-quote-base, .type-two-quote-base {
         color: ${props => props.theme.tertiaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 }
 /* ========== Type One ========== */
@@ -35,6 +36,7 @@ section.bq-section {
     min-height: 250px;
     box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-pattern {
@@ -50,6 +52,7 @@ section.bq-section {
     font-size: 11pt;
     line-height: 1.62em;
     border-radius: 0 10px 10px 0;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-qmark {
@@ -80,13 +83,13 @@ section.bq-section {
     margin-top: 30px;
     padding-top: 10px;
     border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
-
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-meta .type-one-author,
 .type-one-quote .type-one-quote-meta .type-one-source {
    color: ${props => props.theme.greyEEEEEEToBlack};
-
+   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-meta .type-one-author {
@@ -134,6 +137,7 @@ section.bq-section {
     position: relative;
     box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-pattern {
@@ -179,6 +183,7 @@ section.bq-section {
     font-size: 11pt;
     line-height: 1.62em;
     border-radius: 0 0 10px 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta {
@@ -186,11 +191,13 @@ section.bq-section {
     padding-top: 10px;
     border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
     text-align: center;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author,
 .type-two-quote .type-two-quote-meta .type-two-quote-source {
     color: ${props => props.theme.greyEEEEEEToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author {
@@ -224,6 +231,7 @@ section.bq-section {
     min-height: 250px;
     border-radius: 10px;
     box-shadow: 2px 2px 25px ${props => props.theme.whiteFourToGreyCECECE};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-three-quote .type-three-quote-base {

@@ -8,8 +8,8 @@ const BrandPageWrapper = styled.section`
 	.brandHeader {
 		padding: 6rem 0;
 		background:${props => props.theme.grey212121ToGreen1E2117};
-		
 		text-align: center;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		h1{
 			color: ${props => props.theme.white};
 		}
@@ -31,6 +31,7 @@ const BrandPageWrapper = styled.section`
 	.logo {
 		background: ${ props => props.theme.blackToGreen3C494F};
 		padding: 0.95rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.brand-row {
@@ -54,7 +55,7 @@ const BrandPageWrapper = styled.section`
 		width: fit-content;
 		color: ${props => props.theme.whiteFourToBlackFour};
 		font: 500 1.2rem/2.5rem 'Qanelas Soft', sans-serif;
-		transition: 0.2s border ease-in-out;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		span::before {
 			content: '';
@@ -194,6 +195,7 @@ const BrandPageWrapper = styled.section`
 	.white-color-box {
 		.PalletBox {
 			border: 1px solid ${props => props.theme.tertiaryColor};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 

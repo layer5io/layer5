@@ -42,6 +42,7 @@ const NavigationWrap = styled.header`
       border-radius: .25rem;
       color: ${props => props.theme.secondaryColor};
       background: ${(props) => props.theme.grey121212ToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         &:hover{
           border: 1px solid ${props => props.theme.secondaryColor};
           background: ${props => props.theme.highlightColor};
@@ -106,6 +107,7 @@ const NavigationWrap = styled.header`
     display: none;
     color: ${props => props.theme.menuColor};
     font-size: 24px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .dropdown {
     position: absolute;
@@ -120,6 +122,7 @@ const NavigationWrap = styled.header`
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .18s forwards;
     pointer-events: none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .wrap {
     display: block;
@@ -153,6 +156,7 @@ const NavigationWrap = styled.header`
       position: relative;
       padding: 3em;
       border-radius: 50px 0 0 50px;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       .sub-item {
         padding: 0;
       }
@@ -162,6 +166,7 @@ const NavigationWrap = styled.header`
         font-weight: 600;
         margin-left:0px;
         padding-left:0px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       li:nth-last-child(2) {
         margin-bottom: auto;
@@ -174,6 +179,7 @@ const NavigationWrap = styled.header`
           display: block;
           .readmore-btn {
             color: ${props => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           &:before {
             content: none;
@@ -197,6 +203,7 @@ const NavigationWrap = styled.header`
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       @media screen and (max-width: 992px) and (min-width: 912px) {
          padding: .5em;
        }
@@ -213,9 +220,11 @@ const NavigationWrap = styled.header`
         .kubernetes-partial-colorMode_svg__colorMode1,
         .ingress-gateway-partial-colorMode_svg__colorMode1 {
           fill: ${props => props.theme.whiteToBlack};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .empty-colorMode_svg__colorMode1 {
           fill: ${props => props.theme.whiteToGrey121212};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
     }
@@ -345,6 +354,7 @@ const NavigationWrap = styled.header`
       transition: 450ms all;
       padding: 0px 20px 0px 20px;
       cursor: pointer;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:before {
         content: "";
         position: absolute;
@@ -378,6 +388,7 @@ const NavigationWrap = styled.header`
           height: 1px;
           opacity: 0;
           background: ${props => props.theme.menuHoverColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
     }
@@ -406,6 +417,7 @@ const NavigationWrap = styled.header`
       .nav-item{
         a {
           color:${props => props.theme.menuColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           &:hover {
             color: ${props => props.theme.menuHoverColor};
           }
@@ -469,6 +481,7 @@ const NavigationWrap = styled.header`
       max-height: 400px;
       overflow-y: scroll;
       scrollbar-width: thin;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .mobile-dropdown::-webkit-scrollbar{
       border-radius: 3px;
@@ -542,6 +555,7 @@ const NavigationWrap = styled.header`
 
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .anchor:before {
@@ -567,6 +581,7 @@ const NavigationWrap = styled.header`
       }
       .post-title{
           color: ${props => props.theme.text};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
     a:before {
@@ -619,7 +634,7 @@ const NavigationWrap = styled.header`
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
-    transition: 450ms all;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover{
       color: ${props => props.theme.highlightLightColor};
 

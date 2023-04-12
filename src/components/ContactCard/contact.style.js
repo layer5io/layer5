@@ -11,6 +11,7 @@ const ContactWrapper = styled.section`
     }
     .contact-icon {
         color: ${props => props.theme.green00B39FToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     img {
         max-width: 100px;
@@ -23,6 +24,7 @@ const ContactWrapper = styled.section`
         box-shadow: ${props => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
         padding: 25px;
         border-radius: 10px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .inputrow{
         margin-bottom: 10px;
@@ -67,6 +69,7 @@ const ContactWrapper = styled.section`
         h3 {
             margin-bottom: 2rem;
             color: ${props => props.theme.green00B39FToGreen3C494F};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     @media only screen and (max-width: 912px) {

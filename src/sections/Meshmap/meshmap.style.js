@@ -32,6 +32,7 @@ const MeshmapWrapper = styled.div`
             font-weight: 700;
             color: ${props => props.theme.secondaryColor};
             background: ${(props) => props.theme.grey121212ToLinear};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .desc-p {
 
@@ -45,6 +46,7 @@ const MeshmapWrapper = styled.div`
   }
   .vote-design {
     background: ${(props) => props.theme.grey121212ToLinear};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .modes-image{
     margin: 0 0 2rem;
@@ -61,6 +63,7 @@ const MeshmapWrapper = styled.div`
     margin-top: -3rem;
     font-style: italic;
     text-align: center;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
     @media only screen and (max-width: 300px) {

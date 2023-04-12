@@ -30,6 +30,7 @@ const CollaborationBannerWrapper = styled.div`
         /* @media only screen and (max-width: 500px) {
             max-height: 400px;
         } */
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         svg {
             .service-interface-partial-colorMode_svg__colorMode1,
@@ -38,6 +39,7 @@ const CollaborationBannerWrapper = styled.div`
             .kubernetes-partial-colorMode_svg__colorMode1,
             .ingress-gateway-partial-colorMode_svg__colorMode1 {
               fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
     }
 
@@ -56,6 +58,7 @@ const CollaborationBannerWrapper = styled.div`
         position: relative;
         display: inline-block;
         color: ${props => props.theme.primaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 /*
         @media only screen and (min-width: 500px) {
             font-size: 3.5rem;
@@ -83,6 +86,7 @@ const CollaborationBannerWrapper = styled.div`
     h4 {
         padding: 3% 0%;
         color: ${props => props.theme.greyA0AAAAToGrey666666};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         /* font-size: 20px; */
         max-width: 40%;
         /* font-weight: bold; */

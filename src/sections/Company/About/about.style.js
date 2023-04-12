@@ -65,6 +65,7 @@ const AboutSectionWrapper = styled.section`
     svg {
       .cncf-stacked-color_svg__st0 {
         fill: ${props => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
   }
@@ -95,12 +96,14 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color: ${props => props.theme.whiteToBlack};  
+      color: ${props => props.theme.whiteToBlack}; 
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     h4{
         margin-bottom: 1.7vw;
         font-family:"Qanelas Soft";
-        color: ${props => props.theme.whiteSevenToBlackSeven};  
+        color: ${props => props.theme.whiteSevenToBlackSeven}; 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
       }
   }
   .section-bottom {

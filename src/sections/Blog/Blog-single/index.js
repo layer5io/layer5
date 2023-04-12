@@ -115,7 +115,7 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={(isDark ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
           />

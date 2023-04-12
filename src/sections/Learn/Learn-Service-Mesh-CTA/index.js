@@ -8,6 +8,7 @@ const ServiceMeshImage = "./service-mesh.svg";
 
 const LearnServiceMeshCTAWrapper = styled.div`
     background-color:${props => props.theme.grey141414ToGreyFAFAFA};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     Button:hover {
       box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
     }

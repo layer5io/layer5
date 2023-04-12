@@ -7,6 +7,7 @@ export const CardWrapper = styled.div`
         background-Color:${props => props.theme.grey212121ToWhite};
         box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
             box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
             .post-thumb-block{
@@ -25,7 +26,7 @@ export const CardWrapper = styled.div`
     }
     .readmore-btn{
         color: ${props => props.theme.secondaryColor};
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width:776px){
 		.post-block{
@@ -105,6 +106,7 @@ export const CardWrapper = styled.div`
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .type{
             text-align: end;
@@ -132,7 +134,8 @@ export const CardWrapper = styled.div`
        display: flex;
        flex: auto;
        align-items: center;
-       transition: all 0.3s ease-in;
+       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       
        svg{
            font-size: 1.5rem;
            transition: all 0.3s;

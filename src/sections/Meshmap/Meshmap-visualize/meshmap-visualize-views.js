@@ -24,6 +24,8 @@ const ViewsSectionWrapper = styled.div`
     align-items: center;
     padding: 4% 5% 3%;
     box-shadow: ${props => props.theme.boxShadowBlue477E96};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -78,6 +80,7 @@ const ViewsSectionWrapper = styled.div`
           width: 70%;
           .visualizer-views-colorMode_svg__colorMode1 {
             fill: ${props => props.theme.whiteToGrey737373};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
         }
 

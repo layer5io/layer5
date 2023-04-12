@@ -20,10 +20,11 @@ const CardWrapper = styled.div`
         justify-content: space-between;
         box-shadow: 0px 0.75rem 1rem 0.25rem rgb(0 0 0 / 12%);
         position: relative;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .card-2{
         background: ${props => props.theme.grey1D1817ToGreyE6E6E6};
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .card-head{
         display: flex;
@@ -34,10 +35,11 @@ const CardWrapper = styled.div`
             border-radius: 0.8rem;
             padding: 0.05rem 0.75rem;
             font-size: 1rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         h3{
             color:${props => props.theme.text};
-
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
 
@@ -45,6 +47,7 @@ const CardWrapper = styled.div`
         padding: 0 1rem;
         .summary {
             color:${props => props.theme.whiteSevenFiveToBlackSevenFive};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         p{
             font-size: 1rem;
@@ -59,6 +62,7 @@ const CardWrapper = styled.div`
             font-size: 1rem;
             color:${props => props.theme.text};
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
 

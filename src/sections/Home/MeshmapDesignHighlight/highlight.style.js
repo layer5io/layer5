@@ -37,6 +37,7 @@ const DesignDefaultWrapper = styled.section`
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h3.statement {
         color: ${props => props.theme.primaryColor};
@@ -45,6 +46,7 @@ const DesignDefaultWrapper = styled.section`
         margin-bottom: 2rem;
         font-size: clamp(10px, 12px + .8vw, 50px);
         line-height: clamp(10px, 12px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         &:before {
             content: "";
@@ -62,6 +64,7 @@ const DesignDefaultWrapper = styled.section`
         font-weight: bold;
         display: flex;
         color: ${props => props.theme.primaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .description a {
         color: ${props => props.theme.white};
@@ -77,6 +80,7 @@ const DesignDefaultWrapper = styled.section`
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .demo span {
         font-weight: 600;
@@ -94,6 +98,7 @@ const DesignDefaultWrapper = styled.section`
         padding: 3rem 4rem;
         border-radius: 2rem 0 0 2rem;
         background:${props => props.theme.linearToLinear};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     svg {

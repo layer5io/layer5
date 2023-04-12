@@ -21,9 +21,9 @@ Button{
 
 .media_block { 
   background-color: ${props => props.theme.grey212121ToWhite};		
-  transition: 450ms all;
-    margin-bottom: 1rem;
-    border: 1px solid ${props => props.theme.shadowLightColor};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-bottom: 1rem;
+  border: 1px solid ${props => props.theme.shadowLightColor};
     &:hover{
         box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};;
     }
@@ -37,6 +37,7 @@ Button{
     p{
         font-weight: 300;
         color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width: 768px) {
         margin: 6% 15%;

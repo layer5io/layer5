@@ -13,6 +13,7 @@ const WorkshopSinglePageWrapper = styled.div`
 		a{
 			display: flex;
 		    color: ${props => props.theme.primaryColor};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		    &:hover{
 		        color: ${props => props.theme.linkColor};
 			}
@@ -42,6 +43,7 @@ const WorkshopSinglePageWrapper = styled.div`
 		justify-content: space-evenly;
 		align-items: center;
 		flex-wrap: wrap;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		
 		button{
 		    margin-bottom: 1rem;
@@ -67,7 +69,7 @@ const WorkshopSinglePageWrapper = styled.div`
 		font-size: 1.125rem;
 		font-weight: 400;
 		box-shadow: 0rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
-		transition: 0.5s ease-in-out all;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		&:hover {
 			color: ${props => props.theme.secondaryColor};

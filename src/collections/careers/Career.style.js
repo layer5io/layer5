@@ -53,6 +53,8 @@ export const CareerWrapper = styled.div`
             display: flex;
             line-height: 1.5rem;
             color: ${props => props.theme.whiteSevenFiveToBlackSevenFive};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            
             h5 {
                 font-weight: 600;
             }

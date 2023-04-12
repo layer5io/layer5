@@ -12,6 +12,8 @@ const PricingWrapper = styled.section`
   align-items: center;
   text-align: center;
   height: 22rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
   @media (min-width: 1400px) {
     height: 25rem;
   }
@@ -40,10 +42,12 @@ const PricingWrapper = styled.section`
     text-align: center;
     h2 {
       color: ${props => props.theme.whiteToBlack};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media (min-width: 1400px) {
       h2{
         color: ${props => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
     }
@@ -75,6 +79,7 @@ const PricingWrapper = styled.section`
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
   padding: 0.2rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }
 
@@ -102,7 +107,8 @@ const PricingWrapper = styled.section`
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
 	border-radius: 4px;
-	transition: .3s;
+	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
   @media (max-width: 992px) {
     margin: 1.5rem 1rem;
   }
@@ -111,8 +117,8 @@ const PricingWrapper = styled.section`
 .featured{
       transform: scale(1.05);
       background-color: ${props => props.theme.grey212121ToWhite};
-
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 .pricing-table:hover {
       box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
@@ -144,12 +150,14 @@ const PricingWrapper = styled.section`
       color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
       font-size: 24px;
       font-weight: 500;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .byline {
       color: ${props => props.theme.greyC8C8C8ToGreen3C494F};
       font-size: 16px;
       font-weight: 400;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .pricing-features {
@@ -168,6 +176,7 @@ const PricingWrapper = styled.section`
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       .check{
         padding-right: 0.2rem;
@@ -228,8 +237,9 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: ${props => props.theme.DarkTheme ? "#eee" : "#666"};
-      color:  ${props => props.theme.DarkTheme ? "#000" : "#fff"};
+      background: ${props => props.theme.greyDDDDDDToGrey333333};
+      color:  ${props => props.theme.blackToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .price-tag {

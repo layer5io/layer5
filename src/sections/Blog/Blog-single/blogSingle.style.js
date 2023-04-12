@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BlogPageWrapper = styled.div`
     div{
         color: ${props => props.theme.text}; 
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     ul {
     list-style: none; /* Remove default bullets */
@@ -19,13 +19,16 @@ const BlogPageWrapper = styled.div`
         display: inline-block; 
         width: 1em; 
         margin-left: -1em; 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     p{
         color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     li{
         color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .post-info-block{
         margin-top: 3rem;
@@ -58,7 +61,7 @@ const BlogPageWrapper = styled.div`
             padding: 0.3rem 0.8rem;
             border-radius: 0.2rem;
             background: ${props => props.theme.grey212121ToGreyF0F0F0};
-            transition: all 0.3s linear;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             &:hover{
                 background: ${props => props.theme.secondaryColor};
                 color: ${props => props.theme.textRevert};
