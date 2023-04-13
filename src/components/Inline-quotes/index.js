@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 
 const QuotesWrapper = styled.div`
@@ -15,9 +14,9 @@ text-align: center;
     align-items: center;
     padding: 5% 5%;
     border: 2px solid transparent;
-    border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to right, #00b39f, #121212 80%)" : "linear-gradient(to right, #00b39f, #fff 80%)"} ;
+    border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to right bottom, #00b39f, #121212 80%)" : "linear-gradient(to right bottom, #00b39f, #fff 80%)"} ;
     border-image-slice: 1 0 1 1;
-    transition: border 0.7s ease-in-out;
+    transition: border 0.2s ease-in-out;
     @media screen and (max-width: 500px) {
         flex-direction: column;
     }
@@ -38,9 +37,9 @@ text-align: center;
 }
 
 .border {
-    border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to left, #00b39f, #121212 80%)" : "linear-gradient(to left, #00b39f, #fff 80%)"} ;
+    border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to left top, #00b39f, #121212 80%)" : "linear-gradient(to left top, #00b39f, #fff 80%)"} ;
     border-image-slice: 1 1 1 0;
-    transition: 1.5s ease-in-out;
+    transition: 0.6s ease-in-out;
 }
 
 .quote-source {
@@ -79,12 +78,15 @@ hr {
 `;
 
 const InlineQuotes = ({ person, title, quote }) => {
+
   const [quoteRef, inView] = useInView({ threshold: 1.0 });
   const [quoteInView, setquoteInView] = useState(false);
-  if (inView && !quoteInView)
-    setquoteInView(true);
-  else if (quoteInView && !inView)
-    setquoteInView(false);
+  useEffect(() => {
+    if (inView && !quoteInView)
+      setquoteInView(true);
+    else if (quoteInView && !inView)
+      setquoteInView(false);
+  }, [inView, quoteInView]);
 
   return (
     <QuotesWrapper>
