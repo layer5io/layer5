@@ -562,7 +562,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       const slug = createFilePath({
         node,
         getNode,
-        basePath: "content-learn"
+        basePath: "content-learn",
+        trailingSlash: false
       });
 
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
