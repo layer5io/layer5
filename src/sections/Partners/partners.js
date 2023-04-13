@@ -21,7 +21,7 @@ import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
 
 
 import partner12 from "../../assets/images/partners/vmware.svg";
-import partner13 from "../../assets/images/partners/metabit-trading-logo.svg";
+import partner14 from "../../assets/images/partners/metabit-trading-logo.svg";
 
 export const partners = [
   {
@@ -157,8 +157,8 @@ export const partners = [
     desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
     //link: null,
     type: "technology",
-    imageLink: partner13,
-    darkimageLink: partner13,
+    imageLink: partner14,
+    darkimageLink: partner14,
     partnerId: "metabittrading",
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
