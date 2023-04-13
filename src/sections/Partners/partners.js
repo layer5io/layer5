@@ -21,7 +21,7 @@ import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
 
 
 import partner12 from "../../assets/images/partners/vmware.svg";
-import partner14 from "../../assets/images/partners/metabit-trading-logo.svg";
+import partner14 from "../../assets/images/partners/metabit-trading-logo .svg";
 
 export const partners = [
   {
