@@ -51,7 +51,7 @@ const DivWrapper = styled.div`
   .right {
     position: relative;
     width: 100%;
-    height: 420px;
+    height: 450px;
     display: flex;
     justify-content: center;
     // flex: 1;

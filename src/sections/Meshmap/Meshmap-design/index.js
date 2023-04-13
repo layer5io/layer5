@@ -3,8 +3,9 @@ import MeshmapDesignWrapper from "./meshmap-design.style";
 import MeshmapDesignBanner from "./meshmap-design-banner";
 import MeshmapHeroSection from "./meshmap-design-hero";
 import DesignDefault from "../../Home/MeshmapDesignHighlight";
-import { MeshmapMobileSwiper } from "./Meshmap_Mobile_swiper/MeshmapMobileSwiper";
+import MeshmapDesignFeatures from "./Meshmap-design-features";
 import MeshmapDesignFeatureCarousel from "./meshmap-design-features-carousel";
+
 import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
@@ -15,7 +16,7 @@ const MeshmapDesign = ({ theme }) => {
       <MeshmapDesignBanner theme={theme} />
       <MeshmapHeroSection theme={theme} />
       <DesignDefault theme={theme} />
-      <MeshmapMobileSwiper/>
+      {/* <MeshmapMobileSwiper/> */}
       <MeshmapDesignFeatureCarousel />
       {/* <MeshmapDesignFeatures /> */}
       <SignupForm />
