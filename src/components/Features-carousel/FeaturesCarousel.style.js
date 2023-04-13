@@ -39,7 +39,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .pagingDots {
-        top: 0rem;
+        top: 4rem !important;
         & .paging-item {
           padding :0.25rem;
         }
