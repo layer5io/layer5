@@ -21,6 +21,7 @@ import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
 
 
 import partner12 from "../../assets/images/partners/vmware.svg";
+import partner13 from "../../assets/images/partners/metabit-trading-logo.svg";
 
 export const partners = [
   {
@@ -151,6 +152,17 @@ export const partners = [
     //imageRoute: "https://www.vmware.com/",
     moreInfo:
       "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
+  }, {
+    name: "Metabit Trading",
+    desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
+    //link: null,
+    type: "technology",
+    imageLink: partner13,
+    darkimageLink: partner13,
+    partnerId: "metabittrading",
+    //imageRoute: "https://www.metabit-trading.com/home",
+    moreInfo:
+      "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
   }
 
 
