@@ -5,8 +5,7 @@ export const NewsPageWrapper = styled.div`
         margin-bottom: 5rem;
     }
     .page-header{
-        margin:5rem auto;
-        margin-top: 1rem;
+        margin: 1rem auto 5rem;
     }
 
     .button-container{
