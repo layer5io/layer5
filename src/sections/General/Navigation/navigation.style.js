@@ -154,6 +154,14 @@ const NavigationWrap = styled.header`
       .sub-item {
         padding: 0;
       }
+      .dropdownicon, .dropdownicon-rotate {
+        height: 10px;
+        width: 10px;
+      }
+      .dropdownicon-rotate {
+        transform: rotate(90deg);
+        transition: all 0.1s;
+      }
       .section {
         color: ${props => props.theme.text};
         font-size: 20px;

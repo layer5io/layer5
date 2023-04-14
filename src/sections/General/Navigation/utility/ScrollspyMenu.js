@@ -16,6 +16,7 @@ import SupportingArrows from "../../../../sections/Meshmap/Meshmap-collaborate/i
 import EmptyLight from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
+import DropDownIcon from "./icons/dropDownIcon.svg";
 
 const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
   const { blogData,className } = props;
@@ -91,11 +92,15 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                         {hover
                           ? <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active"
                           >
-                            {subItem.name}
+                            {activeState.name === "Projects" && subItem.sepLine ?
+                              <p>{subItem.name} <img src={DropDownIcon} className="dropdownicon-rotate" /></p>
+                              :
+                              <p>{subItem.name}</p>
+                            }
                           </Link>
                           : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active" style={(activeState.name === "Projects" && !subItem.sepLine) ? { display: "none" } : { display: "block" }}
                           >
-                            {subItem.name}
+                            {activeState.name === "Projects" ? <p>{subItem.name} <img className="dropdownicon" src={DropDownIcon} /> </p> : <p>{subItem.name}</p>}
                           </Link>
                         }
                       </div>
