@@ -9,6 +9,7 @@ import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-grey.svg";
 import vmware from "../../../assets/images/partners/vmware.svg";
 import cncf from "../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg";
+import metabittrading from  "../../../assets/images/partners/metabit-trading-logo .svg";
 
 
 export const partners = [
@@ -88,6 +89,13 @@ export const partners = [
     name: "CNCF",
     imageLink: cncf,
     imageRoute: "/partners#cncf" ,
+    innerDivStyle: "partner__block__inner ",
+    imageHeight: 130,
+    imageWidth: 120
+  }, {
+    name: "Metabit Trading",
+    imageLink: partner14,
+    imageRoute: "/partners#metabittrading" ,
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
     imageWidth: 120
