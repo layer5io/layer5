@@ -22,6 +22,8 @@ import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
 
 import partner12 from "../../assets/images/partners/vmware.svg";
 import partner14 from "../../assets/images/partners/metabit-trading-logo .svg";
+import lightpartner14 from "../../assets/images/partners/metabit-trading-light.svg";
+
 
 export const partners = [
   {
@@ -158,7 +160,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner14,
-    darkimageLink: partner14,
+    darkimageLink: lightpartner14,
     partnerId: "metabittrading",
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
