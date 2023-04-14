@@ -14,6 +14,7 @@ module.exports = {
     FAST_DEV: true,
     PARALLEL_SOURCING: true
   },
+  trailingSlash: "never",
   plugins: [
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
