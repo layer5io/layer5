@@ -348,6 +348,9 @@ const NavigationWrap = styled.header`
         }
       }
     }
+    a{
+      align-items: center;
+    }
     .menu-link {
       margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
@@ -583,10 +586,10 @@ const NavigationWrap = styled.header`
     padding: 20px 0px;
   }
   .post-title{
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-		text-align: center;
     color: ${props => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
