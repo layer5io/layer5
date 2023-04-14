@@ -94,7 +94,7 @@ export const partners = [
     imageWidth: 120
   }, {
     name: "Metabit Trading",
-    imageLink: partner14,
+    imageLink: metabittrading,
     imageRoute: "/partners#metabittrading" ,
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
