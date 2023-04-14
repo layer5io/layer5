@@ -2,31 +2,33 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../../components/PopOutCardCarousel";
 
-import img1 from "./images/drag-drop-components.gif";
-// const img1 = "../Meshmap-design/images/drag-drop-components.gif";
+import dragDrop from "./images/drag-drop-components.gif";
+import mergeDesign from "./images/merge-design.gif";
+import connectComponents from "./images/connect-components.gif";
+import shareDesign from "./images/share-design.gif";
 
 const CONTENT = [
   {
     title: "Design your deployments the way you want",
-    img: "https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/meshmap/designer/quick-tips/drag-drop-components.gif",
+    img: dragDrop,
     description:
       "Browse available components and select the specific version you need. Build complex cloud native deployments.",
   },
   {
     title: "Manage your applications visually and intuitively",
-    img: "https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/meshmap/designer/quick-tips/merge-design.gif",
+    img: mergeDesign,
     description:
       "Drag-and-drop an existing design to merge it with your current design.",
   },
   {
     title: "Build the bridge",
-    img: "https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/meshmap/designer/quick-tips/connect-components.gif",
+    img: connectComponents,
     description:
       "Connect components or group them as needed.",
   },
   {
     title: "Stop finger-pointing",
-    img: "https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/meshmap/designer/quick-tips/share-design.gif",
+    img: shareDesign,
     description:
       "Share your designs publically or in private to collaborate with others in real-time.",
   },
@@ -126,7 +128,7 @@ export default function MeshmapDesignFeatureCarousel() {
     });
     setCardIndices(newIndices);
   };
-  console.log(img1);
+
   return (
     <DivWrapper>
       <div className="left">
@@ -150,9 +152,9 @@ export default function MeshmapDesignFeatureCarousel() {
             </div>
             <div className="img">
               <img
-                // width="0%"
-                // height="80%"
-                style={{ border: "1px solid #444444", marginTop: "8px" }}
+                // width="85%"
+                // // height="90%"
+                style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
                 src={content.img}
               />
             </div>
