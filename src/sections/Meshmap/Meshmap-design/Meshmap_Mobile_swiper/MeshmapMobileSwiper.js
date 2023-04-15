@@ -5,36 +5,36 @@ import SwiperContainer from "./mobile-swiper.style.js";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper";
-import img from "./images/BlankSwiper.png";
+import dragDrop from "../images/drag-drop-components.gif";
+import mergeDesign from "../images/merge-design.gif";
+import connectComponents from "../images/connect-components.gif";
+import shareDesign from "../images/share-design.gif";
+
 
 const CONTENT = [
   {
     title: "Design your deployments the way you want",
+    img: dragDrop,
     description:
-      "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
-    img: img,
-    readMoreLink: "https://google.com",
+      "Browse available components and select the specific version you need. Build complex cloud native deployments.",
   },
   {
     title: "Manage your applications visually and intuitively",
+    img: mergeDesign,
     description:
-      "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
-    img: img,
-    readMoreLink: "https://google.com",
+      "Drag-and-drop an existing design to merge it with your current design.",
   },
   {
     title: "Build the bridge",
+    img: connectComponents,
     description:
-      "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-    img: img,
-    readMoreLink: "https://google.com",
+      "Connect components or group them as needed.",
   },
   {
     title: "Stop finger-pointing",
+    img: shareDesign,
     description:
-      "Make infrastructure and application management less about finger-pointing and more about collaborating.",
-    img: img,
-    readMoreLink: "https://google.com",
+      "Share your designs publically or in private to collaborate with others in real-time.",
   },
 ];
 
@@ -44,8 +44,8 @@ const Card = ({ title, description, img, readMoreLink }) => {
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img src={img} alt="" />
-      <a href={readMoreLink}>Read More</a>
+      <img style={{ border: "1px solid #444444", borderRadius: "10px" }} src={img} alt="" />
+      {/* <a href={readMoreLink}>Read More</a> */}
     </div>
   );
 };
