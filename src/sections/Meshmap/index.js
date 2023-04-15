@@ -37,6 +37,9 @@ import Collab4_dark from "./FeaturesSection/Collaborate/images/collab4-dark.svg"
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.png";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.png";
 import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
+import Kaur from "../../sections/Pricing/reviews/kaur-kallas.jpg";
+import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
+
 
 const Meshmap = ({ theme }) => {
 
@@ -114,7 +117,8 @@ const Meshmap = ({ theme }) => {
           <InlineQuotes
             person="Kaur Kallas"
             title="Software Architect at Entigo"
-            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team." />
+            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
+            image={Kaur}/>
           <VisualizerFeatures
             features={
               [
@@ -136,7 +140,8 @@ const Meshmap = ({ theme }) => {
           <InlineQuotes
             quote="Guys, I love MeshMap! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
-            title="Networks & Systems Engineer at AYRADE" />
+            title="Networks & Systems Engineer at AYRADE"
+            image={Ala}/>
 
           <CollaboratorFeatures
             features={

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 
 
+
 const QuotesWrapper = styled.div`
 
 margin: 5% 0%;
@@ -50,6 +51,12 @@ text-align: center;
     @media screen and (max-width: 500px) {
         text-align: center;
     }
+    img{
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 1rem;
+    }
     h5 {
         font-weight: bold;
         text-transform: uppercase;
@@ -77,7 +84,7 @@ hr {
 }
 `;
 
-const InlineQuotes = ({ person, title, quote }) => {
+const InlineQuotes = ({ person, title, quote,image }) => {
 
   const [quoteRef, inView] = useInView({ threshold: 1.0 });
   const [quoteInView, setquoteInView] = useState(false);
@@ -94,6 +101,7 @@ const InlineQuotes = ({ person, title, quote }) => {
         <h4>❝ {quote} ❞</h4>
         <hr />
         <div className="quote-source">
+          <img src={image}></img>
           <h5>{person}</h5>
           <p>{title}</p>
         </div>
