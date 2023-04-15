@@ -38,15 +38,17 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
 
   return (
     <>
-      <title>{seo.title}</title>
       <html lang="en" />
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      <meta name="og:title" content={seo.title} />
+      <title>{seo.title}</title>
+      <meta name="description" property="og:description" content={seo.description} />
       <meta name="og:description" content={seo.description} />
-      <meta name="og:url" content={seo.url} />
-      <meta name="og:type" content="website" />
+      <meta name="image" property="og:image" content={seo.image} />
       <meta name="og:image" content={seo.image} />
+      <meta name="og:title" content={seo.title} />
+      <meta name="og:url" content={seo.url} />
+      <meta name="url" property="og:url" content={seo.url} />
+      <meta name="og:type" content="website" />
+      <meta name="author" content="Layer5, Inc."></meta>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

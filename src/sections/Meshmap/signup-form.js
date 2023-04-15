@@ -11,8 +11,9 @@ const SignupFormWrapper = styled.div`
 }
 
 .meshmap-video {
-  box-shadow: 0px 5px 5px 2px #b3b3b3;
+  /* box-shadow: 0px 5px 5px 2px #b3b3b3; */
   height: 28rem;
+  text-align: center;
 
   @media screen and (max-width: 1200px) {
     height: 26rem;
@@ -41,7 +42,7 @@ const SignupForm = ({ targetRef }) => {
                 <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p> */}
                 <iframe
                   src="https://www.youtube.com/embed/qaoYRP3oLok?modestbranding=1&rel=0"
-                  width="100%"
+                  width="95%"
                   height="100%"
                   style={{ border: "0" }}
                   allow="autoplay"

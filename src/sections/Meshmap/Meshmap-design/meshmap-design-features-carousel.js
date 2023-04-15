@@ -47,7 +47,7 @@ const DivWrapper = styled.div`
   .right {
     position: relative;
     width: 100%;
-    height: 420px;
+    height: 450px;
     display: flex;
     justify-content: center;
     // flex: 1;
@@ -144,7 +144,7 @@ export default function MeshmapDesignFeatureCarousel() {
               <p>{content.description}</p>
             </div>
             <div className="img">
-              <StaticImage src={img1} alt="sample image" height={900} />
+              <StaticImage src={img1} alt="sample image" height={450} />
             </div>
           </PopOutCard>
         ))}
