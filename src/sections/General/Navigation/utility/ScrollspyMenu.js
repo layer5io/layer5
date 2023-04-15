@@ -16,7 +16,7 @@ import SupportingArrows from "../../../../sections/Meshmap/Meshmap-collaborate/i
 import EmptyLight from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
-import DropDownIcon from "./icons/dropDownIcon.svg";
+import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 
 const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
   const { blogData,className } = props;
@@ -93,14 +93,18 @@ const ScrollspyMenu = ({ menuItems, theme, ...props }) => {
                           ? <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active"
                           >
                             {activeState.name === "Projects" && subItem.sepLine ?
-                              <p>{subItem.name} <img src={DropDownIcon} className="dropdownicon-rotate" /></p>
+                              <>{subItem.name} <IoMdArrowDropdown className="dropdownicon-up" /></>
                               :
-                              <p>{subItem.name}</p>
+                              subItem.name
                             }
                           </Link>
                           : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active" style={(activeState.name === "Projects" && !subItem.sepLine) ? { display: "none" } : { display: "block" }}
                           >
-                            {activeState.name === "Projects" ? <p>{subItem.name} <img className="dropdownicon" src={DropDownIcon} /> </p> : <p>{subItem.name}</p>}
+                            {activeState.name === "Projects" ?
+                              <> {subItem.name} <IoMdArrowDropdown /> </>
+                              :
+                              subItem.name
+                            }
                           </Link>
                         }
                       </div>
