@@ -28,6 +28,7 @@ const PopOutCardWrapper = styled.div`
     0.53,
     1.105
   ); /* custom */
+  align-items: center ;
 
   h3 {
     opacity: 0.4;
@@ -43,6 +44,8 @@ const PopOutCardWrapper = styled.div`
   .img {
     visibility: hidden;
     width: 0;
+    text-align: center;
+    max-width: 60%;
     // margin-block: auto;
   }
 
@@ -109,7 +112,7 @@ const PopOutCardWrapper = styled.div`
         p {
           font-size: 18px;
         }
-  
+
         .img {
           margin-inline: auto;
           // width: 60%;
@@ -126,7 +129,7 @@ const PopOutCardWrapper = styled.div`
         height: 440px;
         .img {
           margin-inline: auto;
-          max-width: 80%;  
+          max-width: 80%;
           padding-left: unset;
         }
       }
