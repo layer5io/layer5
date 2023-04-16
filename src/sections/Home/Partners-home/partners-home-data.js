@@ -9,7 +9,7 @@ import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-grey.svg";
 import vmware from "../../../assets/images/partners/vmware.svg";
 import cncf from "../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg";
-import metabittrading from  "../../../assets/images/partners/metabit-trading-logo .svg";
+import metabittrading from  "../../../assets/images/partners/metabit-trading-logo-gray .svg";
 
 
 export const partners = [
