@@ -46,6 +46,9 @@ img{
     border-radius: 50%;
     width: 5.6rem;
     height: 5.6rem;
+    @media screen and (max-width: 600px) {
+
+    }
 
 }
 
@@ -58,9 +61,10 @@ img{
    
     h5 {
         font-weight: bold;
-        width: 10rem;
+        width: 15rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
+            margin-top: 1rem;
             font-size: 1rem;
         }
     }
