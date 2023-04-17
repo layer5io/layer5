@@ -39,7 +39,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .pagingDots {
-        top: 4rem !important;
+        top: 2rem !important;
         & .paging-item {
           padding :0.25rem;
         }
@@ -51,10 +51,6 @@ export const FeaturesWrapper = styled.div`
           height: 0.65rem;
           width: 0.65rem;
           fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
-        }
-
-        @media (min-width: 799px) {
-          top: 2rem !important;
         }
       }
     }
