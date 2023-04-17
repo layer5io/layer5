@@ -1,58 +1,201 @@
-## Adding dark theme for components
+## Adding dark mode for components
 
-1. To differentiate between the colors of the dark and light theme, we have created a customization system in which you can define styles like color, position, display, etc using {props => props.theme.DarkTheme? darkThemeStyle: LightThemeStyle}
+The site currently has dark and light mode, the colors used in these two modes can be found in the dark and light theme objects in [themeStyles.js](https://github.com/layer5io/layer5/blob/master/src/theme/app/themeStyles.js).
 
-2. It is recommended to use pre-existing styles or colors from the theme. Avoid adding your CSS variables."
+These theme objects use a property whose value automatically changes based on color mode without using a conditional.
 
-Examples- To change Text Color according to the theme
+An example of a conditional:
 
-color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor}; (Recommended)
+```
+theme === "dark" ? "white" : "black"
+```
 
-color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0, 0, 0.6)"}; (Not recommended, only use when there is a need for creating a new css variable)
+The preference is to not use conditionals for elements because they will flicker when reloading a page in dark mode.
 
-## Changing SVG according to theme
+As currently constructed, the dark and light theme objects share similar property names that have different values.
 
-To change similar SVG as in dark and light according to the theme, fill inner paths or rect or polygon with the preferable colors like in the case of the components.
+The property name will tell you how the value (color or hexcode) will change from dark mode to light mode. The first part is for dark mode, then "To", and the next part is for light mode.
 
-Examples -
+example #1: `whiteToBlack`
 
-rect {
-fill: ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
- }
-path {
-stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
-}
+"white" is the first part for dark mode
+"To"
+"Black" is the second part for light mode
 
-## Changing images according to theme
+In dark mode the value of `whiteToBlack` will be `white`
+In light mode the value of `whiteToBlack` will be `black`
 
-1. To change images or SVG as in image source, according to the theme, pass the theme state to a specific image parent component and change its source according to the theme. For example- <img src={theme ==="dark"? DarkThemelogoSource : LightThemelogoSource}/>
+example #2: `grey141414ToGreyF5F5F5`
 
-2. Also Fetch Logo source as a Source variable is recommended as it will be easier to read.
+In dark mode this value will be `#141414` (a dark shade of grey)
+In light mode this value will be `#F5F5F5` (a light shade of grey).
 
-   Examples-
+Colors in the property name give an indication of the color shade of a hexcode.
 
-   <img src={theme ==="dark"? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
+In a styled component, you can use the property name in the following way:
+
+### Examples
+
+example #1:
+`color: ${props => props.theme.whiteToBlack};`
+
+example #2:
+`color: ${props => props.theme.greyDEE3DEToGreen3C494F}`
+
+### Adding new color transition property
+
+It is recommended to use pre-existing styles, colors, hexcodes from the theme. Avoid adding your own CSS variables.
+
+If you must add a new property that changes with color mode (Not recommended, only use when there is a need for creating a new property):
+
+1. Add a new property with the same name to the dark and light theme objects in [themeStyles.js](https://github.com/layer5io/layer5/blob/master/src/theme/app/themeStyles.js) and the corresponding values you want them to have in each mode.
+
+example:
+
+```
+const lighttheme = {
+  blue0000FFToRedFF0000: "#FF0000",
+```
+
+```
+const darktheme = {
+  blue0000FFToRedFF0000: "#0000FF",
+
+```
+
+2. Use that property name in your styled component
+
+```
+color: ${props => props.theme.blue0000FFToRedFF0000};
+```
+
+## Preferable SVG and Images
+
+If your SVG or Image does not need to change colors depending on color mode OR uses transparent sections to allow it to change depending on color mode, then you do not need to do any modifications
+
+[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg)
+
+[Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.png)
+
+You can see these two examples in action [here](https://layer5.io/projects) by changing the color modes.
+
+### Changing SVG according to color mode
+
+SVGs are preferable to image files because we have the ability to control colors used to fill path or stroke using styled-components and have them change dependent on the color mode without using a conditional.
+
+#### Importing SVG as a React Component
+
+To use the SVG as an `svg` element and not a source for an `image` element, we will import the SVG as a ReactComponent. You can see an example of importing the SVG as a ReactComponent [here](https://github.com/layer5io/layer5/blob/master/src/sections/General/Navigation/index.js)
+
+```
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
+```
+
+Then we include the component where you want to display it
+
+```
+<Link to="/" className="logo">
+    <Logo />
+</Link>
+```
+
+#### Adding the color change property to the SVG
+
+To change a fill for a SVG depending on color mode, you will need to create a class in the SVG to fill inner paths or rect or polygon with default colors, then assign that SVG class in a styled-component to a property value as done in components.
+
+Example #1 Layer5 Logo
+
+To see the code for this SVG click [here](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/layer5-colorMode.svg?short_path=e76da80). (note if link is not working , click [here](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/layer5-colorMode.svg) and then click the "<>" button to display the source blob.)
+
+In the SVG code, we see classes declared here:
+
+```
+<defs>
+        <style>
+            .colorMode1 {
+                fill: #fff
+            }
+          ...
+        </style>
+</defs>
+```
+
+We use `colorMode[#]` in the class name to designate classes that we want to change depending on color mode.
+
+Then in the related styled component, we use a specific class generated by styled-components to designate the theme property.
+
+In our example with the logo in the navigation, this is the relevant [styled component](https://github.com/layer5io/layer5/blob/master/src/sections/General/Navigation/navigation.style.js).
+
+And if we find target the SVG element in the appropriate class, for this example `.logo` is the relevant class. We then add the class that is generated by the styled-component plugin, which is based off the file name and the colorMode class name ( in this case `.layer5-colorMode_svg__colorMode1`).
+
+```
+ .logo {
+    margin-top: 8px;
+
+    svg {
+      width: 155px;
+      .layer5-colorMode_svg__colorMode1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${props => props.theme.whiteToGreen3C494F};
+      }
+    }
+  }
+```
+
+Notes:
+
+- you can find the generated class name when you inspect the element in the browser and look at the styles section of the svg code.
+- even though we have a default fill property in the SVG itself (just in case), the fill property in the styled component will override it.
+- whenever we are changing colors in an element, be sure to add the transition timing and style that is used for the background color mode change in [GlobalStyle](https://github.com/layer5io/layer5/blob/master/src/sections/app.style.js) to have everything smoothly transition. Currently this property: value is
+  ```
+  transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  ```
+
+## Changing images according to color mode.
+
+If possibe we wish to avoid using images dependent on color mode because we are required to use a conditional (which will cause a flicker of the image when the page is reloaded). If necessary, please use the following instructions.
+
+1. To change images or SVG as in image source, according to the color mode, you have to import the hook `useStyledDarkMode` from the following [folder](https://github.com/layer5io/layer5/blob/master/src/theme/app/useStyledDarkMode.js), and then use the `isDark` value from `useStyledDarkMode` hook for the conditional.
+
+For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Meshmap/Meshmap-collaborate/meshmap-collaborate-banner.js).
+
+Here are the relevant parts of the code:
+
+```
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+const { isDark } = useStyledDarkMode();
+
+ <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
+```
 
 ## Changing images in gatsby-image-plugin according to the theme.
 
-Procedure of changing the image for the gatsby-image is the same as we change for images, however, it is recommended to fetch two images, one for a dark theme and one for a light theme change it according to the theme state as did with images.
+Procedure of changing the image for the gatsby-image is the same as we change for images, however, it is recommended to fetch two images, one for a dark theme and one for a light theme change it according to the `isDark` value as done with images.
 
-    Example (For Thumbnail)
+Example (For Thumbnail):
+Fetching images through Graphql. Add this in graphql query in frontmatter
 
-        Fetching images through Graphql:
-          Add this in graphql query in frontmatter
-           darkthumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            extension
-            publicURL
-          }
+      darkthumbnail {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+      extension
+      publicURL
+    }
 
-          Change image according to theme
-          <Image
-             {...(theme ==="dark"? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-             imgStyle={{ objectFit: "contain" }}
-             alt={frontmatter.title}
-           />): ""
+Change image according to isDark value:
 
+```
+<Image
+      {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
+        ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+      imgStyle={{ objectFit: "contain" }}
+      alt={frontmatter.title}
+    />
+```
+
+notes:
+
+- an additional conditional value
+  `&& frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL` is added so that the image only changes if there is a difference between the thumbnail publicURLs.
