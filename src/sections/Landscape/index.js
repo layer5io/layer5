@@ -21,6 +21,7 @@ import NonFunctional from "./non-functional";
 import Functional from "./functional";
 import SMI_Compatibility from "./smi";
 import Tools from "./tools";
+import "regenerator-runtime/runtime";
 
 const isBrowser = typeof window !== "undefined";
 
