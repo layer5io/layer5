@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../../components/PopOutCardCarousel";
-import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "../../../assets/images/meshmap/MeshmapDesigner.png";
+import dragDrop from "./images/drag-drop-components.gif";
+import mergeDesign from "./images/merge-design.gif";
+import connectComponents from "./images/connect-components.gif";
+import shareDesign from "./images/share-design.gif";
 
 const CONTENT = [
   {
     title: "Design your deployments the way you want",
+    img: dragDrop,
     description:
-      "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+      "Browse available components and select the specific version you need. Build complex cloud native deployments.",
   },
   {
     title: "Manage your applications visually and intuitively",
+    img: mergeDesign,
     description:
-      "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
+      "Drag-and-drop an existing design to merge it with your current design.",
   },
   {
     title: "Build the bridge",
+    img: connectComponents,
     description:
-      "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
+      "Connect components or group them as needed.",
   },
   {
     title: "Stop finger-pointing",
+    img: shareDesign,
     description:
-      "Make infrastructure and application management less about finger-pointing and more about collaborating.",
+      "Share your designs publically or in private to collaborate with others in real-time.",
   },
 ];
 
@@ -122,6 +128,7 @@ export default function MeshmapDesignFeatureCarousel() {
     });
     setCardIndices(newIndices);
   };
+
   return (
     <DivWrapper>
       <div className="left">
@@ -144,7 +151,12 @@ export default function MeshmapDesignFeatureCarousel() {
               <p>{content.description}</p>
             </div>
             <div className="img">
-              <StaticImage src={img1} alt="sample image" height={450} />
+              <img
+                // width="85%"
+                // // height="90%"
+                style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
+                src={content.img}
+              />
             </div>
           </PopOutCard>
         ))}

@@ -39,7 +39,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .pagingDots {
-        top: 0rem;
+        top: 2rem !important;
         & .paging-item {
           padding :0.25rem;
         }
@@ -51,10 +51,6 @@ export const FeaturesWrapper = styled.div`
           height: 0.65rem;
           width: 0.65rem;
           fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
-        }
-
-        @media (min-width: 799px) {
-          top: 2rem !important;
         }
       }
     }
@@ -147,7 +143,11 @@ export const FeaturesWrapper = styled.div`
     .terminal-wrapper {
       & > div {
         max-width: 100%;
-        height: 430px;
+        @media (max-width: 768px) {
+            maxHeight: 330px;
+            height:330px;
+            overflow-y:scroll;
+        }
       }
 
       & > img {

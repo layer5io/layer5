@@ -110,12 +110,12 @@ const SwiperContainer = styled.div`
       width:150px;
       margin-left: 0.5rem !important;
     }
-    h2{
+    /* h2{
         font-size: 1rem !important;
     }
     p{
         font-size: 0.6rem !important;
-    }
+    } */
 
   }
 
