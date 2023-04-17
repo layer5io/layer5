@@ -2,6 +2,7 @@ import React from "react";
 import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import CommonForm from "../../components/CommonForm";
+import Button from "../../reusecore/Button";
 
 const Kubernetes = "./kubernetes-logo.svg";
 const mesheryworkdiagram =
@@ -22,13 +23,10 @@ const DockerExtensionMeshery = () => {
       <Container>
         <Row className="dockerMesherySection">
           <h2 className="sectionTitle">
-            Develop service mesh-ready apps using Docker Desktop and Meshery
+            Wrangle cloud native apps using Docker Desktop and Meshery
           </h2>
           <p>
-            The Docker Extension for Meshery extends Docker Desktop’s position
-            as the cloud native developer’s go-to Kubernetes environment with
-            easy access to the next layer of cloud native infrastructure:
-            service meshes.
+          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
           </p>
         </Row>
         <Row>
@@ -129,6 +127,8 @@ const DockerExtensionMeshery = () => {
             </Row>
           </Col>
           <Col md={6} sm={12}>
+            <p className="installButton">
+              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external="true" /></p>
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
