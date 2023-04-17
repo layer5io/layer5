@@ -147,7 +147,11 @@ export const FeaturesWrapper = styled.div`
     .terminal-wrapper {
       & > div {
         max-width: 100%;
-        height: 430px;
+        @media (max-width: 768px) {
+            maxHeight: 330px;
+            height:330px;
+            overflow-y:scroll;
+        }
       }
 
       & > img {
