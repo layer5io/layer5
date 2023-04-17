@@ -42,30 +42,30 @@ text-align: center;
     border-image-slice: 1 1 1 0;
     transition: 0.6s ease-in-out;
 }
+img{
+    border-radius: 50%;
+    width: 5.6rem;
+    height: 5.6rem;
+
+}
 
 .quote-source {
     display: flex;
     flex-direction: column;
-    text-align: left;
-
     @media screen and (max-width: 500px) {
         text-align: center;
     }
-    img{
-        border-radius: 50%;
-        width: 90px;
-        height: 90px;
-        margin-bottom: 1rem;
-    }
+   
     h5 {
         font-weight: bold;
+        width: 10rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
             font-size: 1rem;
         }
     }
     p {
-        margin: 0;
+        width: 16rem;
         @media screen and (max-width: 600px) {
             font-size: 0.75rem;
             line-height: 1.25rem;
@@ -75,7 +75,7 @@ text-align: center;
 
 hr {
     height: 5rem;
-    margin: 0% 5%;
+    margin: 0% 3%;
     @media screen and (max-width: 500px) {
         margin: 5% 0%;
         height: 0;
@@ -100,8 +100,8 @@ const InlineQuotes = ({ person, title, quote,image }) => {
       <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
         <hr />
+        <img src={image}></img>
         <div className="quote-source">
-          <img src={image}></img>
           <h5>{person}</h5>
           <p>{title}</p>
         </div>
