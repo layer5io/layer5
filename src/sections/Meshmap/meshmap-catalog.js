@@ -440,60 +440,62 @@ const Catalog = () => {
         </div>
 
         {/* 3d Spinning */}
-        <div className="catalog-wrapper ">
-          <div className="container">
-            <div id="carousel">
-              <div className="slide one">
-                <img src={Mutual_tls} />
-              </div>
-              <div className="slide two">
-                <img src={Retries} />
-              </div>
-              <div className="slide three">
-                <img src={Traces} />
-              </div>
-              <div className="slide four">
-                <img src={Denial} />
-              </div>
-              <div className="slide five">
-                <img src={Correlate_event} />
-              </div>
-              <div className="slide six">
-                <img src={Only_wagent} />
-              </div>
-              <div className="slide seven">
-                <img src={Node_agent} />
-              </div>
-              <div className="slide eight">
-                <img src={Single_tenant} />
-              </div>
-              <div className="slide nine">
-                <img src={Pre_provison} />
-              </div>
-              <div className="slide ten">
-                <img src={Circuit_breaker} />
-              </div>
-              <div className="slide eleven">
-                <img src={Retry_deadline} />
-              </div>
-              <div className="slide twelve">
-                <img src={Singleton} />
-              </div>
-              <div className="slide thirteen">
-                <img src={Jwt_transformer} />
-              </div>
-              <div className="slide fourteen">
-                <img src={Multicluster} />
-              </div>
-              <div className="slide fifteen">
-                <img src={Http_metrics} />
+        <a href="https://meshery.io/catalog">
+          <div className="catalog-wrapper ">
+            <div className="container">
+              <div id="carousel">
+                <div className="slide one">
+                  <img src={Mutual_tls} />
+                </div>
+                <div className="slide two">
+                  <img src={Retries} />
+                </div>
+                <div className="slide three">
+                  <img src={Traces} />
+                </div>
+                <div className="slide four">
+                  <img src={Denial} />
+                </div>
+                <div className="slide five">
+                  <img src={Correlate_event} />
+                </div>
+                <div className="slide six">
+                  <img src={Only_wagent} />
+                </div>
+                <div className="slide seven">
+                  <img src={Node_agent} />
+                </div>
+                <div className="slide eight">
+                  <img src={Single_tenant} />
+                </div>
+                <div className="slide nine">
+                  <img src={Pre_provison} />
+                </div>
+                <div className="slide ten">
+                  <img src={Circuit_breaker} />
+                </div>
+                <div className="slide eleven">
+                  <img src={Retry_deadline} />
+                </div>
+                <div className="slide twelve">
+                  <img src={Singleton} />
+                </div>
+                <div className="slide thirteen">
+                  <img src={Jwt_transformer} />
+                </div>
+                <div className="slide fourteen">
+                  <img src={Multicluster} />
+                </div>
+                <div className="slide fifteen">
+                  <img src={Http_metrics} />
+                </div>
               </div>
             </div>
+            <h3 className="containerCaption">
+              Discover best practices. Publish design patterns.
+            </h3>
           </div>
-          <h3 className="containerCaption">
-            Discover best practices. Publish design patterns.
-          </h3>
-        </div>
+        </a>
       </Container>
     </CatalogWrapper>
   );

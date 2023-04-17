@@ -4,9 +4,10 @@ const PopOutCardWrapper = styled.div`
   position: absolute;
   display: flex;
   // align-items: center;
-  right: -80px;
-  padding: 1.2rem;
-  height: 320px;
+  right: -100px;
+  // padding: 2rem 2.6rem;
+  padding: 2.5rem 3rem;
+  height: 360px;
   width: 350px;
   box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px;
   background: linear-gradient(
@@ -27,6 +28,7 @@ const PopOutCardWrapper = styled.div`
     0.53,
     1.105
   ); /* custom */
+  align-items: center ;
 
   h3 {
     opacity: 0.4;
@@ -41,10 +43,13 @@ const PopOutCardWrapper = styled.div`
 
   .img {
     visibility: hidden;
+    width: 0;
+    text-align: center;
+    max-width: 60%;
     // margin-block: auto;
-    padding-left: 3rem;
   }
-  @media only screen and (max-width: 1200px) {
+
+  @media only screen and (max-width: 1300px) {
     right: -160px;
   }
   @media only screen and (max-width: 999px) {
@@ -64,8 +69,8 @@ const PopOutCardWrapper = styled.div`
       props.active &&
     css`
       cursor: pointer;
-      transform: rotateZ(0deg) translate(-45vw, 0);
-      width: 800px;
+      transform: rotateZ(0deg) translate(-33vw, 0);
+      width: 1100px;
       h3 {
         opacity: 1;
         font-size: 24px;
@@ -77,30 +82,37 @@ const PopOutCardWrapper = styled.div`
       .img {
         // display: block;
         visibility: visible;
+        padding-left: 3rem;
+        width: unset;
       }
 
-      @media only screen and (max-width: 1500px) {
-        // transform: rotateZ(0deg) translate(-40vw, 0);
-        width: 680px;
-        height: 290px;
-        .img {
-          padding-left: 1rem;
-          max-width: 60%;
-        }
+      @media only screen and (max-width: 1600px) {
+        transform: rotateZ(0deg) translate(-38vw, 0);
+        width: 920px;
+      }
+
+      @media only screen and (max-width: 1400px) {
+        transform: rotateZ(0deg) translate(-40vw, 0);
+        width: 820px;
+        padding: 2rem;
+      }
+      @media only screen and (max-width: 1300px) {
+        transform: rotateZ(0deg) translate(-42vw, 0);
+        width: 820px;
+        padding: 2rem;
       }
 
       @media only screen and (max-width: 1200px) {
         transform: rotateZ(0deg) translate(-50vw, 0);
-        align-items: center;
         width: 620px;
-        height: 290px;
+        height: 320px;
         h3 {
           font-size: 22px;
         }
         p {
           font-size: 18px;
         }
-  
+
         .img {
           margin-inline: auto;
           // width: 60%;
@@ -117,7 +129,7 @@ const PopOutCardWrapper = styled.div`
         height: 440px;
         .img {
           margin-inline: auto;
-          max-width: 80%;  
+          max-width: 80%;
           padding-left: unset;
         }
       }
