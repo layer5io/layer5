@@ -56,12 +56,13 @@ export const HoneycombGrid = styled.div`
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) => props.theme.DarkTheme ? "linear-gradient(to right, #666666, #444444)" : props.theme.white};
+    background: ${(props) => props.theme.linearToWhite};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
     position: relative;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     .integration-container {
       display: flex;
@@ -92,12 +93,12 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
-          transition: all 0.5s cubic-bezier(1, 0.82, 0.165, 1);
+          color: ${(props) => props.theme.whiteToBlack};
           // margin-bottom: -2.7rem;
           font-size: 0.675rem;
           opacity: 0.2;
           font-weight: 600;
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .learnMoreBtn {
           padding: 5px 10px;
@@ -132,9 +133,10 @@ export const HoneycombGrid = styled.div`
         }
       }
       background: #00d3a9;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       ::after {
         content: "";
-        background: ${(props) => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.white};
+        background: ${(props) => props.theme.grey212121ToWhite};
         margin: 0px 0px 0 4px;
         clip-path: polygon(
           50% 0%,
@@ -223,11 +225,12 @@ export const IntegrationSlider = styled(Slider)`
   }
 
   .slick-arrow:before {
-    color: ${(props) => props.theme.DarkTheme ? props.theme.white : props.theme.black};
+    color: ${(props) => props.theme.whiteToBlack};
     font-size: 4rem;
     display: inline-block;
     height: 1rem;
     -webkit-text-size-adjust: none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .slick-arrow:hover:before {

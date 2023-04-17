@@ -14,13 +14,14 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 10;
         display: flex;
         flex-direction: column;
-        background-image: ${props => props.theme.DarkTheme ? "radial-gradient(rgba(18, 18, 18, 0.8) 5%, rgba(18, 18, 18, 0.95) 60%)" : "radial-gradient(rgba(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, 0.95) 60%)"};
+        background-color: ${props => props.theme.grey121212EightToWhiteEight};
         border-radius: 2rem;
         max-width: 1920px;
         width: 90vw;
         max-height: 50rem;
         align-items: center;
         padding: 4% 5% 6%;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
 
@@ -33,6 +34,7 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 1;
         padding: 3% 0%;
         opacity: 1;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     h1 {
@@ -51,6 +53,7 @@ const VisualizeBannerWrapper = styled.div`
 
         span {
           color: ${props => props.theme.primaryColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         @media only screen and (max-width: 500px) {
@@ -75,8 +78,8 @@ const VisualizeBannerWrapper = styled.div`
         z-index: 0;
         opacity: 0.4;
         filter: blur(1px);
-        box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 3rem #00d3a9" : "-0.25rem 0.25rem 3rem #00d3a9"};
-
+        box-shadow: ${props => props.theme.boxShadowGreen00D3A9};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 `;
 

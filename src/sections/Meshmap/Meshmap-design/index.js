@@ -10,12 +10,12 @@ import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 
-const MeshmapDesign = ({ theme }) => {
+const MeshmapDesign = () => {
   return (
     <MeshmapDesignWrapper>
-      <MeshmapDesignBanner theme={theme} />
-      <MeshmapHeroSection theme={theme} />
-      <DesignDefault theme={theme} />
+      <MeshmapDesignBanner />
+      <MeshmapHeroSection />
+      <DesignDefault />
       <MeshmapMobileSwiper/>
       <MeshmapDesignFeatureCarousel />
       <SignupForm />

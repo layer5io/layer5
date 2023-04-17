@@ -3,15 +3,16 @@ import styled from "styled-components";
 const ContentCardWrapper = styled.div`
   padding: 2.5rem;
   margin: 2rem 0;
-  background-color: ${props => props.theme.DarkTheme ? "#111111" : "#fafafa"};
+  background-color: ${props => props.theme.grey111111ToGreyFAFAFA};
   display: flex;
-  border: 1px solid ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.3)" : "rgba(0 ,0 ,0 ,0.1)"};
+  border: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroOne};
   justify-content: space-between;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     transition: background 150ms ease-out 0s, border 150ms ease-out 0s,
       transform 150ms ease-out 0s;
     transform: translate3d(0px, -1px, 0px);
-    box-shadow:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.08)" : "rgba(0 ,0 ,0 ,0.08)"} 0px 8px 16px 0px;
+    box-shadow:  ${props => props.theme.whiteZeroEightToBlackZeroEight} 0px 8px 16px 0px;
   }
 
   .chapter-content {
@@ -20,8 +21,9 @@ const ContentCardWrapper = styled.div`
     .chapter-number {
         font-size: 2rem;
         margin: 0 2rem 0 1rem;
-        color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" : "rgba(0 ,0 ,0 ,0.4)"};
+        color:  ${props => props.theme.whiteFourToBlackFour};
         align-self: center;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .chapter-desc {
       h2 {
@@ -29,7 +31,8 @@ const ContentCardWrapper = styled.div`
       }
       p {
           margin: 0.35rem 0;
-          color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" : "rgba(0 ,0 ,0 ,0.4)"};
+          color:  ${props => props.theme.whiteFourToBlackFour};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Layout from "../../../components/layout";
+
 
 import MesheryOperatorWrapper from "./mesheryoperator.style";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -16,7 +16,7 @@ const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.p
 
 const MesheryOperatorPage = () => {
   return (
-    <Layout>
+    <>
       <MesheryOperatorWrapper>
         <div className="banner-background">
           <Container>
@@ -128,7 +128,7 @@ const MesheryOperatorPage = () => {
         </div>
       </MesheryOperatorWrapper>
       <SubscribeSection />
-    </Layout>
+    </>
   );
 };
 

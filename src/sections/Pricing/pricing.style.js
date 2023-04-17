@@ -3,8 +3,8 @@ import styled from "styled-components";
 const PricingWrapper = styled.section`
 
 .headers {
-  background:${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.tertiaryColor};
-  background: linear-gradient(0deg, ${props => props.theme.DarkTheme ? "#121212" : "white"} 12%, rgba(0,211,169,1) 53%, rgba(0,179,159,1) 90%);
+  background:${props => props.theme.grey212121ToGreen1E2117};
+  background: linear-gradient(0deg, ${props => props.theme.grey121212ToWhite} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -12,6 +12,8 @@ const PricingWrapper = styled.section`
   align-items: center;
   text-align: center;
   height: 22rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
   @media (min-width: 1400px) {
     height: 25rem;
   }
@@ -39,11 +41,13 @@ const PricingWrapper = styled.section`
     margin-bottom: 4rem;
     text-align: center;
     h2 {
-      color: ${props => props.theme.DarkTheme ? "white" : "black"};
+      color: ${props => props.theme.whiteToBlack};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media (min-width: 1400px) {
       h2{
-        color: ${props => props.theme.DarkTheme ? "white" : "black"};
+        color: ${props => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
     }
@@ -75,6 +79,7 @@ const PricingWrapper = styled.section`
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
   padding: 0.2rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }
 
@@ -97,12 +102,13 @@ const PricingWrapper = styled.section`
 
 
 .pricing-table {
-  background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  background-color: ${props => props.theme.grey212121ToWhite};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
 	border-radius: 4px;
-	transition: .3s;
+	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
   @media (max-width: 992px) {
     margin: 1.5rem 1rem;
   }
@@ -110,9 +116,9 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
-      background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-
+      background-color: ${props => props.theme.grey212121ToWhite};
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 .pricing-table:hover {
       box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
@@ -141,15 +147,17 @@ const PricingWrapper = styled.section`
 
     h2 {
       margin-top: 1rem;
-      color: ${props => props.theme.DarkTheme ? "rgb(220, 220, 220)" : "#3b3b3b"};
+      color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
       font-size: 24px;
       font-weight: 500;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .byline {
-      color: ${props => props.theme.DarkTheme ? "rgb(200, 200, 200)" : props.theme.primaryLightColor};
+      color: ${props => props.theme.greyC8C8C8ToGreen3C494F};
       font-size: 16px;
       font-weight: 400;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .pricing-features {
@@ -163,11 +171,12 @@ const PricingWrapper = styled.section`
         margin: 0.5rem 0;
       }
       h5{
-        color: ${props => props.theme.DarkTheme ? "#AAAAAA" : "#7A848E"};
+        color: ${props => props.theme.greyAAAAAAToGrey7A848E};
         display: block;
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       .check{
         padding-right: 0.2rem;
@@ -228,8 +237,9 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: ${props => props.theme.DarkTheme ? "#eee" : "#666"};
-      color:  ${props => props.theme.DarkTheme ? "#000" : "#fff"};
+      background: ${props => props.theme.greyDDDDDDToGrey333333};
+      color:  ${props => props.theme.blackToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .price-tag {

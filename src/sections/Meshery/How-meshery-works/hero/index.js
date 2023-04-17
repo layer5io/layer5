@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
-import HeroImage from "../images/meshery-operator-dark.svg";
-import HeroImageLight from "../images/meshery-operator-white.svg";
+import { ReactComponent as HeroImage } from "../images/meshery-operator-colorMode.svg";
 
 const HowMesheryWorksHeroWrapper = styled.div`
     
@@ -29,6 +28,23 @@ const HowMesheryWorksHeroWrapper = styled.div`
       align-self: top;
       margin-top: 0px;
       padding-top: 0px;
+      svg {
+        .meshery-operator-colorMode_svg__colorMode1, 
+        .meshery-operator-colorMode_svg__colorMode2
+        {
+          fill: ${props => props.theme.greyB4B4B4ToGrey505050};
+          enable-background: new;
+        }
+        .meshery-operator-colorMode_svg__colorMode2 {
+          fill: ${props => props.theme.grey8C8C8CToGreen1E2117};
+        }
+
+        padding: 2rem 2rem;
+        margin: auto;
+        @media only screen and (max-width: 992px){
+            margin:auto;
+            padding: 1rem 0rem 0rem 0rem;
+         }
       img {
         padding: 2rem 2rem;
         margin: auto;
@@ -41,7 +57,8 @@ const HowMesheryWorksHeroWrapper = styled.div`
   
 `;
 
-const HowMesheryWorksHero = ({ theme }) => {
+const HowMesheryWorksHero = () => {
+
   return (
     <HowMesheryWorksHeroWrapper>
       <Container>
@@ -52,7 +69,7 @@ const HowMesheryWorksHero = ({ theme }) => {
             <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
           <Col className="hero-img-wrapper" xs={4} lg={6}>
-            <img height="450" width="450" src={theme === "dark" ? HeroImageLight : HeroImage} alt="hero" />
+            <HeroImage height="450" width="450" alt="hero" />
           </Col>
         </Row>
       </Container>

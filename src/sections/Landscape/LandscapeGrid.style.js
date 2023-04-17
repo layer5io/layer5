@@ -9,6 +9,7 @@ export const LandscapePageWrapper = styled.div`
 		text-align: center;
 		font-style:unset;
 		color:${props => props.theme.text};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	#service-mesh-comparison-strength {
@@ -74,11 +75,12 @@ export const LandscapePageWrapper = styled.div`
 				border-bottom-right-radius: 0.8rem;
 				border-bottom-left-radius: 0.8rem;
 				transform: translateY(-6rem);
-				transition: all 0.5s ease;
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 				p {
 					margin: 0;
 					color: ${props => props.theme.textRevert};
+					transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				}
 			}
 
@@ -135,12 +137,14 @@ export const LandscapePageWrapper = styled.div`
 	.title-0, .title-1 {
 		font-size: 1.25rem;
 		color: ${props => props.theme.text};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.subtitle-0, .subtitle-1 {
 		font-size: 1rem;
 		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		font-weight: 400;
-		color: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" : "rgb(160, 160, 160)"};
+		color: ${props => props.theme.grey8C8C8CToGreyA0A0A0};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
@@ -152,9 +156,10 @@ export const LandscapePageWrapper = styled.div`
 		margin: 2.5em 0;
 	}
 	.vertical-timeline::before {
-		background: ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.tertiaryColor};
+		background: ${props => props.theme.whiteToGreen1E2117};
 		border-radius: 4rem;
 		width: 0.5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.vertical-timeline--two-columns .vertical-timeline-element-icon {
 		box-shadow: none;
@@ -165,11 +170,13 @@ export const LandscapePageWrapper = styled.div`
 		border-radius: 1.25em;
 		background: ${props => props.theme.body};
 		box-shadow: none;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.meshBubble {
 		background: #00B39F;
 		margin-top: 5rem;
-		border: 8px solid ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.tertiaryColor};
+		border: 8px solid ${props => props.theme.whiteToGreen1E2117};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.hideIcon {
 		display: none;
@@ -377,12 +384,14 @@ export const LandscapePageWrapper = styled.div`
 	.landscape-table {
 		width: 100%;
 		margin: 2rem 0;
-		box-shadow: ${props => props.theme.DarkTheme ? "0px 2px 16px rgba(163, 163, 163, 0.2)" : "0px 2px 16px rgba(0, 0, 0, 0.2)"};
+		box-shadow: ${props => props.theme.boxShadowGreyA3A3A3toBlackTwo};
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		a { 
 			color: ${props => props.theme.text};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	
 			&:hover {
 				color: ${props => props.theme.secondaryColor};
@@ -394,8 +403,9 @@ export const LandscapePageWrapper = styled.div`
 		font-size: 1.05rem;
 		padding: 0.75rem;
 		font-weight: 600;
-		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
-		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		color: ${props => props.theme.white};
+		background: ${props => props.theme.grey404040ToGrey1E2117};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	ul.category {
 		margin: 0;
@@ -416,15 +426,16 @@ export const LandscapePageWrapper = styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.DarkTheme ? "#262626" : "#3C494F"};
+		background-color: ${props => props.theme.grey262626ToGreen3C494F};
 		border-right: 1px solid ${props => props.theme.shadowLightColor};
 		border-bottom: 1px solid ${props => props.theme.shadowLightColor};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		&:nth-child(1){
 			border-top-left-radius: .5rem;
 		}
 		&:hover {
-			background-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
-			color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
+			background-color: ${props => props.theme.grey404040ToGrey1E2117};
+			color: ${props => props.theme.white};
 			&:nth-child(1){
 				border-top-left-radius: .5rem;
 			}
@@ -439,16 +450,18 @@ export const LandscapePageWrapper = styled.div`
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 		color: #ffffff;
-		background: ${props => props.theme.DarkTheme ? "#009a89" : "#00B39F"};
+		background: ${props => props.theme.green009A89ToGreen00B39F};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
-		border-color: ${props => props.theme.DarkTheme ? "#404040" : props.theme.tertiaryColor};
+		background: ${props => props.theme.grey404040ToGrey1E2117};
+		border-color: ${props => props.theme.grey404040ToGrey1E2117};
 		border-right: 1px solid ${props => props.theme.shadowLightColor};
 		border-radius:0;
-		color: ${props => props.theme.DarkTheme ? "#FFFFFF" : props.theme.textRevert};
+		color: ${props => props.theme.white};
 		font-weight: 600;
 		// border-bottom: 0px;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.react-tabs__tab:focus:after{
 		content: none;
@@ -457,14 +470,16 @@ export const LandscapePageWrapper = styled.div`
 		border-right: none;
 	}
 	.odd-row {
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background: ${props => props.theme.grey212121ToWhite};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);
@@ -475,6 +490,7 @@ export const LandscapePageWrapper = styled.div`
 		box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
 		border-radius: .75rem;
 		line-height: 1.5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.AboutLandscape {
 		display: flex;
@@ -513,6 +529,7 @@ export const LandscapePageWrapper = styled.div`
 		color: #efefef;
 		font-size: .9rem;
 		border-style: inset; 
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		span {
 			font-size: 1rem;
 			font-weight:600;
@@ -541,6 +558,7 @@ export const LandscapePageWrapper = styled.div`
 			color: ${props => props.theme.darkJungleGreenColor};
 			border: 1px dashed ${props => props.theme.primaryLightColor};
 			margin: 0rem .3rem;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		}
 	}

@@ -6,16 +6,19 @@ import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
 import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const HeroSectionWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    background-color: ${props => props.theme.grey121212ToWhite};;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
     padding: 2% 5% 8%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -71,7 +74,8 @@ const HeroSectionWrapper = styled.div`
     }
 `;
 
-const MeshmapHeroSection = ({ theme }) => {
+
+const MeshmapHeroSection = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.8 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
@@ -79,11 +83,13 @@ const MeshmapHeroSection = ({ theme }) => {
   else if (imageInView && !inView)
     setimageInView(false);
 
+  const { isDark } = useStyledDarkMode();
+
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
-        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
+        <img className={imageInView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={imageInView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
       <div className="hero-text">
         <h1><span>Design your infrastructure</span></h1>

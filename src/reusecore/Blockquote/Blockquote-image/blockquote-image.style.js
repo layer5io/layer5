@@ -24,11 +24,9 @@ section.bq-section {
 .links{
     .type-one-quote-base, .type-two-quote-base {
         color: ${props => props.theme.tertiaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 }
-
-
-
 /* ========== Type One ========== */
 
 .type-one-quote {
@@ -36,8 +34,9 @@ section.bq-section {
     display: flex;
     flex-direction: row;
     min-height: 250px;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.1)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-pattern {
@@ -48,11 +47,12 @@ section.bq-section {
 
 .type-one-quote .type-one-quote-base {
     flex-basis: calc(100% - 80px);
-    background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+    background-color: ${props => props.theme.grey212121ToWhite};
     padding: 40px 30px 50px 80px;
     font-size: 11pt;
     line-height: 1.62em;
     border-radius: 0 10px 10px 0;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-qmark {
@@ -82,14 +82,14 @@ section.bq-section {
 .type-one-quote .type-one-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.DarkTheme ? "#EEEEEE" : "black"};
-
+    border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-meta .type-one-author,
 .type-one-quote .type-one-quote-meta .type-one-source {
-    color: ${props => props.theme.DarkTheme ? "#EEEEEE" : "black"};
-
+   color: ${props => props.theme.greyEEEEEEToBlack};
+   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-one-quote .type-one-quote-meta .type-one-author {
@@ -131,18 +131,13 @@ section.bq-section {
         top: 45px;
     }
 }
-
-
-
-
-
-
 /* ========== Type Two ========== */
 
 .type-two-quote {
     position: relative;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.1)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-pattern {
@@ -183,24 +178,26 @@ section.bq-section {
 
 .type-two-quote .type-two-quote-base {
     flex-basis: calc(100% - 80px);
-    background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+    background-color: ${props => props.theme.grey212121ToWhite};
     padding: 60px 30px 50px 100px;
     font-size: 11pt;
     line-height: 1.62em;
     border-radius: 0 0 10px 10px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta {
     margin-top: 30px;
     padding-top: 10px;
-    border-top: 2px dotted ${props => props.theme.DarkTheme ? "#EEEEEE" : "black"};
-
+    border-top: 2px dotted ${props => props.theme.greyEEEEEEToBlack};
     text-align: center;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author,
 .type-two-quote .type-two-quote-meta .type-two-quote-source {
-    color: ${props => props.theme.DarkTheme ? "#EEEEEE" : "black"};
+    color: ${props => props.theme.greyEEEEEEToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-two-quote .type-two-quote-meta .type-two-quote-author {
@@ -227,19 +224,14 @@ section.bq-section {
 }
 
 
-
-
-
-
-
-
 /* ========== Type Three ========== */
 
 .type-three-quote {
     position: relative;
     min-height: 250px;
     border-radius: 10px;
-    box-shadow: 2px 2px 25px ${props => props.theme.DarkTheme ? "rgba(255 , 255,  255, 0.4)" : "#cecece"};
+    box-shadow: 2px 2px 25px ${props => props.theme.whiteFourToGreyCECECE};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .type-three-quote .type-three-quote-base {
