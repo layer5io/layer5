@@ -10,7 +10,7 @@ import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/ima
 import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
-import dark_githubLogo from "../../../assets/images/socialIcons/github_black.svg";
+import { ReactComponent as GithubLogo } from "../../../assets/images/socialIcons/github_colorMode.svg";
 import loadable from "@loadable/component";
 const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-meshery-works"));
 const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
@@ -25,7 +25,7 @@ const OperatingServiceMeshes = () => {
           [
             {
               title: "GitOps: Configuration as Visual Design",
-              icon: dark_githubLogo,
+              icon: <GithubLogo alt="title"/>,
               description: <p>GitOps is a way to define workflows for declarative configuration using Git. Meshery greatly simplifies configuring and managing cloud native infrastructure at-scale across multiple clusters with a git-integrated experience.</p>
             },
             {
