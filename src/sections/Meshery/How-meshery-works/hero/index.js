@@ -40,9 +40,8 @@ const HowMesheryWorksHeroWrapper = styled.div`
         }
 
         padding: 2rem 2rem;
+        margin: auto;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
         @media only screen and (max-width: 992px){
             margin:auto;
             padding: 1rem 0rem 0rem 0rem;
