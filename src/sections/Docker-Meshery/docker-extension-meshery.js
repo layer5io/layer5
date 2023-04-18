@@ -15,6 +15,7 @@ const dockerDesktop =
   "../../assets/images/docker-extension/docker-extension-meshery.png";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 const DockerExtensionMeshery = () => {
 
@@ -47,10 +48,9 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Service mesh support for your Docker Compose apps</div> {" "}
+                <div className="feature-title">Kubernetes support for your Docker Compose apps</div> {" "}
                 <i>
-                  Import your Docker Compose apps. Configure and deploy them
-                  to Kubernetes and any service mesh.
+                 Import your Docker Compose apps. Configure and deploy them to Kubernetes and integrate into your GitOps pipeline.
                 </i>
               </Col>
             </Row>
@@ -58,10 +58,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                  Early access to the Docker Extension for Meshery that
-                  offers a visual topology for designing Docker Compose
-                  applications, operating Kubernetes, service meshes, and
-                  their workloads.
+                Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
@@ -95,7 +92,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Detection of Kubernetes environments</div> {" "}
                 <i>
-                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.
+                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another or manage all clusters concurrently.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
