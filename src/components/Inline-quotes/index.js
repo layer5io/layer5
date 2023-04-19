@@ -13,7 +13,7 @@ text-align: center;
     flex-direction: row;
     text-align: center;
     align-items: center;
-    padding: 5% 5%;
+    padding: 5% 10%;
     border: 2px solid transparent;
     border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to right bottom, #00b39f, #121212 80%)" : "linear-gradient(to right bottom, #00b39f, #fff 80%)"} ;
     border-image-slice: 1 0 1 1;
@@ -44,8 +44,8 @@ text-align: center;
 }
 img{
     border-radius: 50%;
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 5rem;
+    height: 5rem;
     @media screen and (max-width: 600px) {
 
     }
@@ -54,6 +54,7 @@ img{
 
 .quote-source {
     display: flex;
+    padding: 0 1rem;
     flex-direction: column;
     @media screen and (max-width: 500px) {
         text-align: center;
@@ -62,6 +63,7 @@ img{
     h5 {
         font-weight: bold;
         width: 15rem;
+        padding:0.1rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
             margin-top: 1rem;
