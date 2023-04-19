@@ -55,6 +55,7 @@
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-preload-fonts": "^3.24.0",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-plugin-sitemap": "^5.19.0",
