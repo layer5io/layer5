@@ -75,6 +75,10 @@ const CollaboratorFeaturesWrapper = styled.section`
       padding-bottom: 1rem;
       background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
 
+      &:hover{
+        background: linear-gradient(123deg, #00d3a9 60%, #00b39f 100%);
+      }
+
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
