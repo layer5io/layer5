@@ -76,9 +76,11 @@ const VisualizerFeaturesWrapper = styled.section`
       padding-top: 1rem;
       padding-bottom: 1rem;
       background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
+      transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
       &:hover{
         background: linear-gradient(123deg, #00d3a9 60%, #00b39f 100%);
+        transform: scale(1.05);
       }
 
       @media (max-width: 767px) {
