@@ -148,12 +148,6 @@ const FooterWrapper = styled.section`
 			display: none;
 		}
 	}
-
-	@media only screen and (max-width: 1199px) and (min-width: 704px) {
-		.subscribe {
-			margin-top: -7rem;
-		}
-	}
 	@media only screen and (max-width:767px) and (min-width: 729px){
 		.subscribe {
 			margin-top: 10px;
