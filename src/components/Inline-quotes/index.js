@@ -46,10 +46,6 @@ img{
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
-    @media screen and (max-width: 600px) {
-
-    }
-
 }
 
 .quote-source {
