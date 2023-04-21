@@ -8,11 +8,11 @@ import SignupForm from "./../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 
-const MeshmapDesign = ({ theme }) => {
+const MeshmapDesign = () => {
   return (
     <MeshmapCollaborateWrapper>
-      <MeshmapCollaborateBanner theme={theme} />
-      <CollaborationFeatureTeam theme={theme} />
+      <MeshmapCollaborateBanner />
+      <CollaborationFeatureTeam />
       {/* <CollaborationFeatureCreate/> */}
       <CollaborationFeatureWork />
       <SignupForm />

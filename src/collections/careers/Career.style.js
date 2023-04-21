@@ -52,7 +52,9 @@ export const CareerWrapper = styled.div`
         span {
             display: flex;
             line-height: 1.5rem;
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.75)" : "rgba(0, 0, 0, 0.75)"};
+            color: ${props => props.theme.whiteSevenFiveToBlackSevenFive};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            
             h5 {
                 font-weight: 600;
             }

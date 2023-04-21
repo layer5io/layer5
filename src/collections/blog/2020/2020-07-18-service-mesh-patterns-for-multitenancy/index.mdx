@@ -7,16 +7,16 @@ thumbnail: ./image2.png
 darkthumbnail: ./image2.png
 category: Istio
 tags:
- - Service Mesh
- - Open Source
- - Istio
+  - Service Mesh
+  - Open Source
+  - Istio
 published: true
 type: Blog
 technology: Kubernetes
 mesh: Istio
 resource: true
 redirect_from:
- - /blog/service-mesh-patterns-for-multitenancy/
+  - /blog/service-mesh-patterns-for-multitenancy/
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
@@ -47,6 +47,7 @@ Here by Ingress Gateway we mean the Istio Ingress Gateway and not the Kubernetes
 Now, before we get into the steps for building an Istio Multi-tenant setup, lets quickly review the prerequisite :
 
 - Kubernetes setup (in the steps below I am using v1.18 on ubuntu 18.04)
+
   ```sh
   $ sudo apt-get install -y docker.io
   $ sudo sh -c “echo ‘deb http://apt.kubernetes.io/ kubernetes-xenial main’ >> /etc/apt/sources.list.d/kubernetes.list”
@@ -61,6 +62,7 @@ Now, before we get into the steps for building an Istio Multi-tenant setup, lets
   ```
 
 - Get the latest istioctl binary
+
   ```sh
   $ curl -L https://git.io/getLatestIstio | sh -
   cd istio-*
@@ -69,21 +71,21 @@ Now, before we get into the steps for building an Istio Multi-tenant setup, lets
   ```
 
 - Initialize the Istio Operator
-    ```sh
-    $ istioctl operator init
-    Using operator Deployment image: docker.io/istio/operator:1.6.3
-    ✔ Istio operator installed
-    ✔ Installation complete
-    $ kubectl get all -n istio-operator
-    NAME READY STATUS RESTARTS AGE
-    pod/istio-operator-5998f6c744-vrkbk 1/1 Running 1 78m
-    NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
-    service/istio-operator ClusterIP 10.107.183.94 <none> 8383/TCP 78m
-    NAME READY UP-TO-DATE AVAILABLE AGE
-    deployment.apps/istio-operator 1/1 1 1 78m
-    NAME DESIRED CURRENT READY AGE
-    replicaset.apps/istio-operator-5998f6c744 1 1 1 78m
-    ```
+  ```sh
+  $ istioctl operator init
+  Using operator Deployment image: docker.io/istio/operator:1.6.3
+  ✔ Istio operator installed
+  ✔ Installation complete
+  $ kubectl get all -n istio-operator
+  NAME READY STATUS RESTARTS AGE
+  pod/istio-operator-5998f6c744-vrkbk 1/1 Running 1 78m
+  NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
+  service/istio-operator ClusterIP 10.107.183.94 <none> 8383/TCP 78m
+  NAME READY UP-TO-DATE AVAILABLE AGE
+  deployment.apps/istio-operator 1/1 1 1 78m
+  NAME DESIRED CURRENT READY AGE
+  replicaset.apps/istio-operator-5998f6c744 1 1 1 78m
+  ```
 
 Next we will look into the details of the multitenancy scenarios; but before that a few word on the Istio operator would be nice. The Istio Operator follows the Kubernetes Controller and Custom Resource Definition mechanism and basically the above steps create an Istio operator controller in the istio-operator namespace and also registers the CRDs in the Kubernetes Registry. Basically, it extends the API for Kubernetes and allows management of a Custom Resource(CR). A word of caution, the existing upstream Istio Operator does not follow any Operator Framework like kubebuilder or Operator SDK. Hence, many of the expected behavior fail like trying to create two Istio Operator Custom Resource(the community mentions it as `iop` instances) in different namespaces or multiple `iop` instances and are under heavy development.
 
@@ -94,11 +96,13 @@ b. Ingress Gateway in the Worskpace 1 namespace for traffic entry point to the w
 c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the workspace 2 microservices.
 
 <img src={img1} alt="kubernetes-cluster" />
-<p align="center">Single Control Plane with Multiple Data Plane each with separate Ingress Gateway</p>
-
+<p align="center">
+  Single Control Plane with Multiple Data Plane each with separate Ingress
+  Gateway
+</p>
 
 - Creation of Control Plane CR and Data Plane CR
-A sample CR for creation of the Control plane and Data Plane CR can be referred below :
+  A sample CR for creation of the Control plane and Data Plane CR can be referred below :
   ```sh
   $ cat iop-platform.yaml
   apiVersion: install.istio.io/v1alpha1
@@ -155,20 +159,20 @@ Reference: [Istio Website](https://istio.io/latest/docs/setup/install/)
 
 Deploy the CRs using kubectl:
 
-  ```sh
-  $ kubectl create ns istio-system
-  $ kubectl create ns workspace-1
-  $ kubectl create ns workspace-2
-  $ kubectl apply -f ../iop-platform.yaml
-  istiooperator.install.istio.io/platform-istiocontrolplane created
-  $ kubectl apply -f ../iop-wk1-gw.yaml
-  istiooperator.install.istio.io/wk1-gwconfig configured
-  $ kubectl apply -f ../iop-wk2-gw.yaml
-  istiooperator.install.istio.io/wk2-gwconfig configured
-  ```
+```sh
+$ kubectl create ns istio-system
+$ kubectl create ns workspace-1
+$ kubectl create ns workspace-2
+$ kubectl apply -f ../iop-platform.yaml
+istiooperator.install.istio.io/platform-istiocontrolplane created
+$ kubectl apply -f ../iop-wk1-gw.yaml
+istiooperator.install.istio.io/wk1-gwconfig configured
+$ kubectl apply -f ../iop-wk2-gw.yaml
+istiooperator.install.istio.io/wk2-gwconfig configured
+```
 
 - Troubleshooting the Istio Operator Controller.
-Its a good idea to run another window and execute the below command to observe the running logs on the controller pod.
+  Its a good idea to run another window and execute the below command to observe the running logs on the controller pod.
   ```sh
   $ kubectl logs -f -n istio-operator
   $(kubectl get pods -n istio-operator -lname=istio-operator -o jsonpath=’{.items[0].metadata.name}’)
@@ -240,14 +244,14 @@ Its a good idea to run another window and execute the below command to observe t
 
 Deploy the applications in workspace-1 and workspace-2 and deploy the Gateway,VirtualService and DestinationRules.
 
-  ```sh
-  $kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n workspace-1
-  $kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n workspace-2
-  $kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml -n workspace-1
-  $kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml -n workspace-2
-  $kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml -n workspace-1
-  $kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml -n workspace-2
-  ```
+```sh
+$kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n workspace-1
+$kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n workspace-2
+$kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml -n workspace-1
+$kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml -n workspace-2
+$kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml -n workspace-1
+$kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml -n workspace-2
+```
 
 Essentially what is happening is the Gateway CR is configuring the traffic to come via the ingress-gateway, it specifies the label selector based on which the ingress-gateway is selected and the host from where the traffic is allowed and port on which the traffic is allowed. It is important to ensure the label maps the label on the ingress-gateway.
 Once this is done the traffic will start flowing the intended gateway and it could be observed on the Kiali dashboard.
@@ -262,12 +266,15 @@ Please note that in this scenario the Kiali is also accessed via the default con
 Shortly, we will go over the 3rd scenario which is to run multiple Istio Control Planes (Multiple Service Meshes) within the same Kubernetes Cluster. For that, we will need to build an open-shift setup and deploy the Maistra Istio Operator.
 Special thanks to the [Istio Community](https://istio.slack.com/) for helping me understand the concepts and also answering my queries and of course to [Lee Calcote](https://calcotestudios.com/talks/), who helped me embark on my Istio journey.
 
-
-
-<div><b>Connect with Sudeep Batra on
-<a href="https://www.linkedin.com/in/sudeep-batra"> LinkedIn</a>,
-<a href="https://github.com/sb1975"> GitHub</a>, or
-<a href="https://twitter.com/sudeepbatra"> Twitter</a>.
-</b></div>
+<div>
+  <b>
+    Connect with Sudeep Batra on
+    <a href="https://www.linkedin.com/in/sudeep-batra"> LinkedIn</a>,<a href="https://github.com/sb1975">
+      {" "}
+      GitHub
+    </a>, or
+    <a href="https://twitter.com/sudeepbatra"> Twitter</a>.
+  </b>
+</div>
 
 </BlogWrapper>

@@ -16,9 +16,10 @@ const SetupPreReqWrapper = styled.div`
         }
         .card {
             padding: 2rem;
-            background: ${props => props.theme.DarkTheme ? "#212121" : "#eee"};
+            background: ${props => props.theme.grey212121ToGreyEEEEEE};
             max-width: 20rem;
             min-height: 21.5rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             .card-header {
                 display: flex;
                 flex: auto;
@@ -39,6 +40,7 @@ const SetupPreReqWrapper = styled.div`
                     flex: 0 0 25%;
                     margin: 0 0.5rem;
                     filter: ${props => props.theme.invertColor};
+                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 }
                 h2 {
                     font-size: 1.75rem;
@@ -47,7 +49,7 @@ const SetupPreReqWrapper = styled.div`
             }
             p {
                 color: ${props => props.theme.text};
-
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     }

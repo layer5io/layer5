@@ -1,37 +1,17 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
+import React from "react";
 
-import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-import Navigation from "../../sections/General/Navigation";
-import Footer from "../../sections/General/Footer";
 import Community from "../../sections/Community";
-
-import { GlobalStyle } from "../../sections/app.style";
-import lighttheme from "../../theme/app/themeStyles";
-import { darktheme } from "../../theme/app/themeStyles";
-
-
 const CommunityIndex = () => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
-
   return (
-    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <Community theme={theme} />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Community  />
+
+    </>
   );
 };
 export default CommunityIndex;
-
 export const Head = () => {
   return  <SEO title="Award-winning Open Source Community"
     description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.

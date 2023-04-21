@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../../../components/layout";
+
 
 import SMIWrapper from "./smi.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
@@ -16,7 +16,7 @@ import TestsTable from "./testsTable";
 
 const SMIPage = () => {
   return (
-    <Layout>
+    <>
       <SMIWrapper>
         <Container>
           <img className="logo" src={logo} />
@@ -112,7 +112,7 @@ const SMIPage = () => {
         </div>
       </SMIWrapper>
       <MeshMapCTA />
-    </Layout>
+    </>
   );
 };
 

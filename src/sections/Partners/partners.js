@@ -1,26 +1,17 @@
-
+import React from "react";
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
 import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
 import partner4 from "../../assets/images/partners/citrix.svg";
-import partner5 from "../../assets/images/partners/cncf-stacked-color.svg";
-import darkpartner5 from "../../assets/images/partners/cncf-stacked-white-color.svg";
-import partner6 from "../../assets/images/partners/hashicorp_vertical_black.svg";
-import lightPartner6 from "../../assets/images/partners/hashicorp_vertical_light.svg";
-import partner7 from "../../assets/images/partners/hpe_side_black.svg";
-import lightPartner7 from "../../assets/images/partners/hpe_side_white.svg";
-import partner8 from "../../assets/images/partners/microsft.svg";
-import lightPartner8 from "../../assets/images/partners/microsoft-light.svg";
-import partner9 from "../../assets/images/partners/redhat.svg";
-import lightPartner9 from "../../assets/images/partners/redhat_white.svg";
-import partner10 from "../../assets/images/partners/smi1.png";
-import partner11 from "../../assets/images/partners/intel.svg";
-import lightPartner11 from "../../assets/images/partners/intel_white.svg";
-import partnerIstio from "../../assets/images/partners/istio-light.svg";
-import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
-
-
-import partner12 from "../../assets/images/partners/vmware.svg";
+import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
+import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
+import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
+import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
+import { ReactComponent as Partner9 } from "../../assets/images/partners/redhat-colorMode.svg";
+import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
+import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-colorMode.svg";
+import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
+import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
 export const partners = [
   {
@@ -68,8 +59,7 @@ export const partners = [
     desc: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
     //link: null,
     type: "technology",
-    imageLink: partner5,
-    darkimageLink: darkpartner5,
+    imageLink: <Partner5 alt="CNCF" />,
     imageRoute: "https://landscape.cncf.io/card-mode?category=cncf-members&grouping=category&selected=layer5-member&embed=yes&style=logo",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   }, {
@@ -77,8 +67,7 @@ export const partners = [
     desc: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
     //link: null,
     type: "technology",
-    imageLink: partner6,
-    darkimageLink: lightPartner6,
+    imageLink: <Partner6 alt="HashiCorp" />,
     partnerId: "HashiCorp",
     imageRoute: "https://www.hashicorp.com/partners/tech/layer5",
     moreInfo: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
@@ -87,8 +76,7 @@ export const partners = [
     desc: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
     //link: null,
     type: "technology",
-    imageLink: partner7,
-    darkimageLink: lightPartner7,
+    imageLink: <Partner7 alt="HPE" />,
     partnerId: "hpe",
     //imageRoute: "https://www.hpe.com/",
     moreInfo: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
@@ -97,9 +85,7 @@ export const partners = [
     desc: "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
     //link: null,
     type: "technology",
-    imageLink: partnerIstio,
-    darkimageLink: lightPartnerIstio,
-
+    imageLink: <PartnerIstio alt="Istio" />,
     imageRoute: "https://istio.io/about/community/partners/",
     moreInfo: "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
   }, {
@@ -107,8 +93,7 @@ export const partners = [
     desc: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
     //link: null,
     type: "technology",
-    imageLink: partner8,
-    darkimageLink: lightPartner8,
+    imageLink: <Partner8 alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
   }, {
@@ -116,8 +101,7 @@ export const partners = [
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
     type: "technology",
-    imageLink: partner9,
-    darkimageLink: lightPartner9,
+    imageLink: <Partner9 alt="Red Hat" />,
     partnerId: "redhat",
     //imageRoute: "https://www.redhat.com/",
     moreInfo: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
@@ -126,8 +110,7 @@ export const partners = [
     desc: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
     //link: null,
     type: "technology",
-    imageLink: partner10,
-    darkimageLink: partner10,
+    imageLink: <Partner10 alt="Service Mesh Interface" />,
     imageRoute: "https://smi-spec.io/blog/validating-smi-conformance-with-meshery/",
     moreInfo: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
   }, {
@@ -135,8 +118,7 @@ export const partners = [
     desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
     //link: null,
     type: "technology",
-    imageLink: partner11,
-    darkimageLink: lightPartner11,
+    imageLink: <Partner11 alt="Intel" />,
     partnerId: "intel",
     //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
     moreInfo: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
@@ -145,8 +127,7 @@ export const partners = [
     desc: "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
     //link: null,
     type: "technology",
-    imageLink: partner12,
-    darkimageLink: partner12,
+    imageLink: < Partner12 alt="VMWare" />,
     partnerId: "VMware",
     //imageRoute: "https://www.vmware.com/",
     moreInfo:

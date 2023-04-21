@@ -8,16 +8,18 @@ import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 import { useRef } from "react";
 
-const MeshmapDesign = ({ theme }) => {
+const MeshmapDesign = () => {
   const targetRef = useRef(null);
   return (
     <MeshmapVisualizeWrapper>
       <div className="background-image">
         <img src={BackgroundImage} alt="" />
       </div>
-      <MeshmapVisualizeBanner theme={theme} targetRef={targetRef} />
-      <MeshmapVisualizerFeatures theme={theme} />
-      <MeshmapVisualizerViews theme={theme} />
+      <MeshmapVisualizeBanner targetRef={targetRef} />
+      <MeshmapVisualizerFeatures />
+      <MeshmapVisualizerViews />
+      {/* <MeshmapHeroSection /> */}
+      {/* <DesignDefault /> */}
       <SignupForm targetRef={targetRef} />
       <Reviews />
     </MeshmapVisualizeWrapper>

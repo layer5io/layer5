@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 const InternshipSectionWrapper = styled.div`
 p{
-  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
+  color: ${props => props.theme.whiteEightToBlack};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 }
   h1 {
     margin-bottom: 1rem;
     color: ${props => props.theme.text};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .grid {
@@ -46,11 +48,10 @@ p{
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
-    background:  ${props => props.theme.DarkTheme ? "#212121" : "rgba(245, 245, 245, 1)"};
+    background:  ${props => props.theme.grey212121ToGreyF5F5F5};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
-    transition: all 0.2s;
-    transition-timing-function: ease-in-out;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
 
     .text {
@@ -65,9 +66,8 @@ p{
     }
     p {
       margin: 0.5rem 0;
-      color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)"};
-
-      transition: transform 0.7s ease-in-out;
+      color: ${props => props.theme.whiteEightToBlackEight};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .peek-card {
@@ -138,13 +138,12 @@ p{
   .partners-card {
     display: block;
     width: max-content;
-    background:  ${props => props.theme.DarkTheme ? "rgba(5, 5, 5, 1)" : "rgba(241, 242, 241, 1)"};
-
+    background:  ${props => props.theme.grey050505ToGreyF1F2F1};
     border-radius: 1rem;
     text-align: center;
     justify-content: space-between;
-    transition: all 0.2s;
-    transition-timing-function: ease-in-out;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
     h5 {
       display: inline-flex;
       font-weight: 400;

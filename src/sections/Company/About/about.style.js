@@ -59,8 +59,15 @@ const AboutSectionWrapper = styled.section`
       font-weight: 600;
       margin: 0rem;
   }
-  .head-images-meet {
+  .head-images {
     text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
   }
   .colab {
     font-size: 20px;
@@ -89,12 +96,14 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,1.0)" : "rgba(0, 0, 0, 1.0)"};  
+      color: ${props => props.theme.whiteToBlack}; 
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     h4{
         margin-bottom: 1.7vw;
         font-family:"Qanelas Soft";
-        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "rgba(0, 0, 0, 0.7)"};  
+        color: ${props => props.theme.whiteSevenToBlackSeven}; 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
       }
   }
   .section-bottom {
@@ -131,7 +140,7 @@ const AboutSectionWrapper = styled.section`
 
       &:hover {
             background: ${props => props.theme.highlightLightColor}; 
-            box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+            box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
   }

@@ -5,8 +5,9 @@ import styled from "styled-components";
 
 const HowIntegrationWorksWrapper = styled.section`
 
-  background-color: ${props => props.theme.DarkTheme ? "#101010" : "#F7F7F7"};
+  background-color: ${props => props.theme.grey101010ToGreyF7F7F7};
 	padding-bottom: 2rem;
+	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 	.section-data {
 		padding: 1rem 2rem 0;
@@ -42,6 +43,7 @@ const HowIntegrationWorksWrapper = styled.section`
 		.integration-section-data {
 			h1, h3, p {
 				text-align: start; color: ${props => props.theme.primaryColor};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 

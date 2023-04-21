@@ -31,7 +31,8 @@ const MeshmapWrapper = styled.div`
         .heading-2 {
             font-weight: 700;
             color: ${props => props.theme.secondaryColor};
-            background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+            background: ${(props) => props.theme.grey121212ToLinear};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .desc-p {
 
@@ -44,7 +45,8 @@ const MeshmapWrapper = styled.div`
       padding-top: 6rem;
   }
   .vote-design {
-    background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+    background: ${(props) => props.theme.grey121212ToLinear};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .modes-image{
     margin: 0 0 2rem;
@@ -56,10 +58,12 @@ const MeshmapWrapper = styled.div`
   }
 
   p.caption {
+    color: ${props => props.theme.whiteToBlack};
     display: relative;
     margin-top: -3rem;
     font-style: italic;
     text-align: center;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
     @media only screen and (max-width: 300px) {

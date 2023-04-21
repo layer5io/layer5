@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
-import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
 
-import Navigation from "../sections/General/Navigation";
 import EventSingle from "../sections/Community/Event-single";
-import Footer from "../sections/General/Footer";
+
 import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
-
-import { GlobalStyle } from "../sections/app.style";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
-
 import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
@@ -45,23 +37,19 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 `;
 
 const EventSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState();
 
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <EventSingle data={data} />
-        <LearnServiceMeshCTA />
-        <Subscribe />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <>
+
+
+      <EventSingle data={data} />
+      <LearnServiceMeshCTA />
+      <Subscribe />
+
+    </>
+
   );
 };
 

@@ -38,7 +38,8 @@ const FeatureWrapper = styled.section`
     margin-top: 1.5rem;
     z-index: 0;
     font-weight: 500;
-    color: ${props => props.theme.DarkTheme ? "#dddddd" : "#333333"};
+    color: ${props => props.theme.greyDDDDDDToGrey333333};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     /* @media (max-width: 767px) {
       font-size: 20px;
@@ -65,6 +66,11 @@ const FeatureWrapper = styled.section`
    max-width:90%;
    margin-right: auto;
    margin-top: 2rem;
+   
+   svg {
+      color: ${props => props.theme.text}
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
 }
 `;
 

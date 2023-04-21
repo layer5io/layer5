@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import VisualizerViewsDark from "./images/visualizer-views-dark.svg";
-import VisualizerViewsLight from "./images/visualizer-views-light.svg";
+import { ReactComponent as VisualizerViews } from "./images/visualizer-views-colorMode.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -16,7 +15,7 @@ const ViewsSectionWrapper = styled.div`
     position: relative;
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"};
+    background-color: ${props => props.theme.grey121212ToWhite};
     margin: 3%;
     border-radius: 2rem;
     max-width: 1920px;
@@ -24,7 +23,9 @@ const ViewsSectionWrapper = styled.div`
     justify-content: space-evenly;
     align-items: center;
     padding: 4% 5% 3%;
-    box-shadow: ${props => props.theme.DarkTheme ? "0rem 0.25rem 1.25rem #477e96" : "-0.25rem 0.25rem 1.25rem #477e96"};
+    box-shadow: ${props => props.theme.boxShadowBlue477E96};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -73,6 +74,16 @@ const ViewsSectionWrapper = styled.div`
             width: 70%;
         }
 
+        svg {
+          align-items: center;
+          justify-content: center;
+          width: 70%;
+          .visualizer-views-colorMode_svg__colorMode1 {
+            fill: ${props => props.theme.whiteToGrey737373};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+        }
+
         .visible {
                 opacity: 1;
                 transition: all 1s ease-in;
@@ -101,9 +112,10 @@ const ViewsSectionWrapper = styled.div`
 
 `;
 
-const MeshmapVisualizerViews = ({ theme }) => {
+const MeshmapVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.4 });
   const [imageInView, setimageInView] = useState(false);
+
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)
@@ -113,7 +125,7 @@ const MeshmapVisualizerViews = ({ theme }) => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          <img className={imageInView ? "visible" : "not-visible"} src={theme == "dark" ? VisualizerViewsDark : VisualizerViewsLight} alt="" style={{ position: "absolute", top: "0%" }}/>
+          <VisualizerViews className={imageInView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
           <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
         </div>
         <div className="hero-text">

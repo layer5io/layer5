@@ -20,9 +20,6 @@ const RangeSlider = memo(
     useEffect(() => {
       setSliderVal(value);
     }, [value]);
-
-
-
     const changeCallback = e => {
       setSliderVal(e.target.value);
     };

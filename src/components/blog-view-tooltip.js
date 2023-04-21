@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row } from "../reusecore/Layout";
 import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
@@ -19,7 +19,8 @@ export const ToolTipWrapper = styled.div`
     a {
         padding: 5px;
         color: ${props => props.theme.keppletColor};
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        background-color: ${props => props.theme.grey212121ToWhite};
         border: 1.5px solid ${props => props.theme.keppletColor};
         &:hover{
             background-color: ${props => props.theme.primaryColor};
@@ -29,6 +30,7 @@ export const ToolTipWrapper = styled.div`
         }             
     }
     .active {
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         background-color: ${props => props.theme.primaryColor};
         color: ${props => props.theme.primaryLightColorTwo};
         border: 1.5px solid ${props => props.theme.primaryColor};
@@ -36,6 +38,17 @@ export const ToolTipWrapper = styled.div`
 `;
 
 const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
+
+  const NoSsr = ({ children }) => {
+    const [isMounted, setMount] = useState(false);
+
+    useEffect(() => {
+      setMount(true);
+    }, []);
+
+    return <>{isMounted ? children : null}</>;
+  };
+
   return (
     <ToolTipWrapper>
       <Row className="border">
@@ -43,36 +56,41 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
           data-tip="Grid View"
           data-for="grid-view"
           onClick={setGridView}
-          className={`${isListView ? "" : "active"}`}
+          className={`${!isListView && "active"}`}
         >
           <BsGrid3X3GapFill size={22} />
         </a>
-        <ReactTooltip
-          id="grid-view"
-          border
-          className="grid-view"
-          backgroundColor="black"
-          place="top"
-          effect="solid"
-        />
+        <NoSsr>
+          <ReactTooltip
+            id="grid-view"
+            border
+            className="grid-view"
+            backgroundColor="black"
+            place="top"
+            effect="solid"
+          />
+        </NoSsr>
         <a
           data-tip="List View"
           data-for="list-view"
           onClick={setListView}
-          className={`${isListView ? "active" : ""}`}
+          className={`${isListView && "active"}`}
         >
           <TiThList size={22} />
         </a>
-        <ReactTooltip
-          id="list-view"
-          className="list-view"
-          backgroundColor="black"
-          place="top"
-          type="dark"
-          effect="solid"
-        />
+        <NoSsr>
+          <ReactTooltip
+            id="list-view"
+            className="list-view"
+            backgroundColor="black"
+            place="top"
+            type="dark"
+            effect="solid"
+          />
+        </NoSsr>
       </Row>
     </ToolTipWrapper>
+
   );
 };
 

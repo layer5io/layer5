@@ -5,21 +5,20 @@ import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 import { Container } from "../../../reusecore/Layout";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-import layer5_logo from "../../../assets/images/app/layer5.svg";
-import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
-import { darktheme } from "../../../theme/app/themeStyles";
-import lighttheme from "../../../theme/app/themeStyles";
-import NavigationWrap from "./navigation.style";
-import { ThemeProvider } from "styled-components";
-import { useLayoutEffect } from "react";
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
-const Navigation = ({ theme, themeSetter }) => {
+import NavigationWrap from "./navigation.style";
+
+const Navigation = () => {
+
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
@@ -163,30 +162,9 @@ const Navigation = ({ theme, themeSetter }) => {
   };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [themeToggle, setthemeToggle] = useState(false);
-  const defaultTheme = "light";
-  const handle = () => {
-    theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
-    localStorage.setItem("Theme", theme);
-
-  };
-
-  useLayoutEffect(() => {
-    if (localStorage.getItem("Theme") === null) {
-      themeSetter(defaultTheme);
-    } else {
-      themeSetter(localStorage.getItem("Theme"));
-    }
-
-  }, []);
-
-  useLayoutEffect(() => {
-    handle();
-  }, [theme]);
-  const themeToggler = () => {
-    theme === "light" ? themeSetter("dark") : themeSetter("light");
-  };
+  const { isDark, toggleDark } = useStyledDarkMode();
+  const themeToggler = () => toggleDark();
 
   const dropDownRef = useRef();
   const navWrapRef = useRef();
@@ -222,94 +200,91 @@ const Navigation = ({ theme, themeSetter }) => {
   };
 
   return (
-
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`} ref={navWrapRef}>
-        <Container className="nav-container">
-          <div className="navbar-wrap">
-            <Link to="/" className="logo">
-              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
-            </Link>
-            <nav className="nav">
-              {expand ?
-                <IoMdClose
-                  className="mobile-menu-icon open"
-                  onClick={function () {
-                    setExpand(!expand); closeDropDown();
-                  }}
-                /> : <FaBars
-                  className="mobile-menu-icon"
-                  onClick={function () {
-                    setExpand(!expand); openDropDown();
-                  }}
-                />
-              }
-              <div className="mobile-dropdown-container" ref={dropDownRef}>
-                <div className="mobile-dropdown">
-                  <ul className="mobile-collapsed">
-                    {Data.menuItems.map((menu, index) => (
-                      <li
-                        key={index}
-                        className={
-                          menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
-                        }
-                      >
-                        <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
-                        <ul>
-                          {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
-                            <li
-                              key={index}
-                              className="mobile-nav-subitem"
-                            >
-                              {subItems.name === "Forum" ?
-                                <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="mobile-sub-menu-item" rel="noreferrer">
-                                  {subItems.name}
-                                </a>
-                                : <Link to={subItems.path} onClick={changeDropdownState} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
-                              }
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
+    <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`} ref={navWrapRef}>
+      <Container className="nav-container">
+        <div className="navbar-wrap">
+          <Link to="/" className="logo">
+            <Logo />
+          </Link>
+          <nav className="nav">
+            {expand ?
+              <IoMdClose
+                className="mobile-menu-icon open"
+                onClick={function () {
+                  setExpand(!expand); closeDropDown();
+                }}
+              /> : <FaBars
+                className="mobile-menu-icon"
+                onClick={function () {
+                  setExpand(!expand); openDropDown();
+                }}
+              />
+            }
+            <div className="mobile-dropdown-container" ref={dropDownRef}>
+              <div className="mobile-dropdown">
+                <ul className="mobile-collapsed">
+                  {Data.menuItems.map((menu, index) => (
+                    <li
+                      key={index}
+                      className={
+                        menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
+                      }
+                    >
+                      <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
+                      <ul>
+                        {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
+                          <li
+                            key={index}
+                            className="mobile-nav-subitem"
+                          >
+                            {subItems.name === "Forum" ?
+                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="mobile-sub-menu-item" rel="noreferrer">
+                                {subItems.name}
+                              </a>
+                              : <Link to={subItems.path} onClick={changeDropdownState} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
+                            }
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+                <div>
+                  <ul>
+                    <li>
+                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" />
+                    </li>
                   </ul>
-                  <div>
-                    <ul>
-                      <li>
-                        <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li className="mobile-nav-item">
-                        <a href="https://meshery.layer5.io/login" className="menu-item" activeClassName="nav-link-active">Login</a>
-                      </li>
-                    </ul>
-                  </div>
+                </div>
+                <div>
+                  <ul>
+                    <li className="mobile-nav-item">
+                      <a href="https://meshery.layer5.io/login" className="menu-item" activeClassName="nav-link-active">Login</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <ScrollspyMenu
-                className={`collapsed ${expand ? "is-expanded" : ""}`}
-                menuItems={Data.menuItems}
-                blogData={data}
-                theme={theme}
-              />
-            </nav>
-
-          </div>
-          <div className="meshery-cta">
-            <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud"  url="https://meshery.layer5.io/registration" />
-            <Button id="login" aria-label="Login to Layer5 Cloud" secondary className="banner-btn login" external={true} title="Login" alt="Login for Layer5 Cloud"  url="https://meshery.layer5.io/login" />
-            <div className="dark-theme-toggle">
-              <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!themeToggle} />
             </div>
+            <ScrollspyMenu
+              className={`collapsed ${expand ? "is-expanded" : ""}`}
+              menuItems={Data.menuItems}
+              blogData={data}
+            />
+          </nav>
+
+        </div>
+        <div className="meshery-cta">
+          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud"  url="https://meshery.layer5.io/registration" />
+          <Button id="login" aria-label="Login to Layer5 Cloud" secondary className="banner-btn login" external={true} title="Login" alt="Login for Layer5 Cloud"  url="https://meshery.layer5.io/login" />
+          <div className="dark-theme-toggle">
+            <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!isDark} />
           </div>
+        </div>
 
-        </Container>
+      </Container>
 
-      </NavigationWrap>
-    </ThemeProvider>
+    </NavigationWrap>
+
   );
 };
 

@@ -62,12 +62,13 @@ const AboutSectionWrapper = styled.section`
 	.item {
     height: 100%;
     min-width: 150px;
-		background: ${props => props.theme.DarkTheme ? "#212121" : props.theme.tertiaryColor};    
+		background: ${props => props.theme.grey212121ToGreen1E2117};    
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: left;
 		padding: 1rem;
     overflow-block: visible;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		p {
       padding-left: .5rem;
       padding-right: 1.5rem;

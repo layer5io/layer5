@@ -14,26 +14,19 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import SignupForm from "./signup-form";
 import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
-import roleBind1 from "./FeaturesSection/Design/images/role-binding-1.svg";
-import roleBind1_dark from "./FeaturesSection/Design/images/role-binding-1-dark.svg";
-import roleBind2 from "./FeaturesSection/Design/images/role-binding-2.svg";
-import roleBind2_dark from "./FeaturesSection/Design/images/role-binding-2-dark.svg";
-import roleBind3 from "./FeaturesSection/Design/images/role-binding-3.svg";
-import roleBind3_dark from "./FeaturesSection/Design/images/role-binding-3-dark.svg";
-import roleBind4 from "./FeaturesSection/Design/images/role-binding-4.svg";
-import roleBind4_dark from "./FeaturesSection/Design/images/role-binding-4-dark.svg";
-import Visualize1 from "./FeaturesSection/Visualize/images/visualize-1.svg";
-import Visualize1_dark from "./FeaturesSection/Visualize/images/visualize-1-dark.svg";
-import Visualize2 from "./FeaturesSection/Visualize/images/visualize-2.svg";
-import Visualize2_dark from "./FeaturesSection/Visualize/images/visualize-2-dark.svg";
-import Collab1 from "./FeaturesSection/Collaborate/images/collab1.svg";
-import Collab1_dark from "./FeaturesSection/Collaborate/images/collab1-dark.svg";
-import Collab2 from "./FeaturesSection/Collaborate/images/collab2.svg";
-import Collab2_dark from "./FeaturesSection/Collaborate/images/collab2-dark.svg";
-import Collab3 from "./FeaturesSection/Collaborate/images/collab3.svg";
-import Collab3_dark from "./FeaturesSection/Collaborate/images/collab3-dark.svg";
-import Collab4 from "./FeaturesSection/Collaborate/images/collab4.svg";
-import Collab4_dark from "./FeaturesSection/Collaborate/images/collab4-dark.svg";
+import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
+import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
+import { ReactComponent as RoleBind3 } from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
+import { ReactComponent as RoleBind4 } from "./FeaturesSection/Design/images/role-binding-4-colorMode.svg";
+
+import { ReactComponent as Visualize1 } from "./FeaturesSection/Visualize/images/visualize-1-colorMode.svg";
+import { ReactComponent as Visualize2 } from "./FeaturesSection/Visualize/images/visualize-2-colorMode.svg";
+
+import { ReactComponent as Collab1 } from "./FeaturesSection/Collaborate/images/collab1-colorMode.svg";
+import { ReactComponent as Collab2 } from "./FeaturesSection/Collaborate/images/collab2-colorMode.svg";
+import { ReactComponent as Collab3 } from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
+import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/collab4-colorMode.svg";
+
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.png";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.png";
 import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
@@ -42,7 +35,7 @@ import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 
 
 
-const Meshmap = ({ theme }) => {
+const Meshmap = () => {
 
   return (
     <MeshmapWrapper>
@@ -89,31 +82,31 @@ const Meshmap = ({ theme }) => {
                   title: "Design your deployments the way you want",
                   description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
                   imgContent: (
-                    <img id="design-image1" src={theme === "dark" ? roleBind1_dark : roleBind1} style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
+                    <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )
                 },
                 {
                   title: "Manage your applications visually and intuitively",
                   description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
                   imgContent: (
-                    <img id="design-image2" src={theme === "dark" ? roleBind2_dark : roleBind2} alt="design-image2" />
+                    <RoleBind2 id="design-image2" alt="design-image2" />
                   )
                 },
                 {
                   title: "Build the bridge",
                   description: "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
                   imgContent: (
-                    <img id="design-image3" src={theme === "dark" ? roleBind3_dark : roleBind3} style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
+                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
                   )
                 },
                 {
                   title: "Stop finger-pointing",
                   description: "Make infrastructure and application management less about finger-pointing and more about collaborating.",
                   imgContent: (
-                    <img id="design-image4" src={theme === "dark" ? roleBind4_dark : roleBind4} style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
+                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
                   )
                 },
-              ]} theme={theme} />
+              ]}/>
 
           <InlineQuotes
             person="Kaur Kallas"
@@ -127,17 +120,17 @@ const Meshmap = ({ theme }) => {
                   title: "All your Kubernetes clusters under a common management",
                   description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
                   imgContent: (
-                    <img id="visualize-image1" src={theme === "dark" ? Visualize1_dark : Visualize1} alt="visualize-image1" />
+                    <Visualize1 id="visualize-image1" alt="visualize-image1" />
                   )
                 },
                 {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
-                    <img id="visualize-image2" src={theme === "dark" ? Visualize2_dark : Visualize2} alt="visualize-image2" />
+                    <Visualize2 id="visualize-image2" alt="visualize-image2" />
                   )
                 },
-              ]} theme={theme} />
+              ]} />
           <InlineQuotes
             quote="Guys, I love MeshMap! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
@@ -153,7 +146,7 @@ const Meshmap = ({ theme }) => {
                   imgContent: (
                     <>
                       <img id="avatar-1" src={Avatar1} alt="" />
-                      <img id="collaborate-image1" src={theme === "dark" ? Collab1_dark : Collab1} alt="collaborate-image1" />
+                      <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
                   // Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
@@ -168,7 +161,7 @@ const Meshmap = ({ theme }) => {
                   imgContent: (
                     <>
                       <img id="avatar-2" src={Avatar2} alt="avatar-2" />
-                      <img id="collaborate-image2" src={theme === "dark" ? Collab2_dark : Collab2} alt="collaborate-image2" />
+                      <Collab2 id="collaborate-image2" alt="collaborate-image2" />
                     </>
                   )
                 },
@@ -178,7 +171,7 @@ const Meshmap = ({ theme }) => {
                   imgContent: (
                     <>
                       <img id="avatar-3" src={Avatar3} alt="avatar-3" />
-                      <img id="collaborate-image3" src={theme === "dark" ? Collab3_dark : Collab3} alt="collaborate-image3" />
+                      <Collab3 id="collaborate-image3" alt="collaborate-image3" />
                     </>
                   )
                 },
@@ -192,11 +185,11 @@ const Meshmap = ({ theme }) => {
                   imgContent: (
                     <>
                       <img id="avatar-3" src={Avatar3} alt="avatar-3" />
-                      <img id="collaborate-image4" src={theme === "dark" ? Collab4_dark : Collab4} alt="collaborate-image4" />
+                      <Collab4 id="collaborate-image4" alt="collaborate-image4" />
                     </>
                   )
                 }
-              ]} theme={theme} />
+              ]} />
           {/* <CollaboratorFeatures
             features={
               [

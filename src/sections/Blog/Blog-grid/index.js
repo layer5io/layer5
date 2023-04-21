@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
@@ -10,14 +10,12 @@ import SearchBox from "../../../reusecore/Search";
 import Pagination from "../../Resources/Resources-grid/paginate";
 import useDataList from "../../../utils/usedataList";
 
-
 const BlogGrid = ({
   isListView,
   setListView,
   setGridView,
   pageContext,
   data,
-  theme
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
@@ -66,7 +64,7 @@ const BlogGrid = ({
 
                   {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
-                      <Card theme={theme} frontmatter={frontmatter} fields={fields} />
+                      <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>

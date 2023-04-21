@@ -11,6 +11,8 @@ export const MemberSingleWrapper = styled.div`
 		a{
 			display: flex;
 		    color: ${props => props.theme.primaryColor};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
 		    &:hover{
 		        color: ${props => props.theme.linkColor};
 			}
@@ -84,6 +86,7 @@ export const MemberSingleWrapper = styled.div`
                 margin-top: 0.9375rem;
                 padding: 0;
                 text-align: left;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             
             .position {
@@ -96,6 +99,7 @@ export const MemberSingleWrapper = styled.div`
                 padding-top: 1px;
                 width: 50%;
                 text-align: left;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
         
@@ -145,9 +149,10 @@ export const MemberSingleWrapper = styled.div`
                     }
                     
                     svg{
-                        color: ${props => props.theme.DarkTheme ? "white" : "greyscale"};
+                        color: ${props => props.theme.whiteToGrey737373};
                         display: block;
                         width: 2rem;
+                        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     }
                     img {
                         display: block;

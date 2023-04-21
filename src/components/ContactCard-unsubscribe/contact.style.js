@@ -10,7 +10,8 @@ const ContactWrapper = styled.section`
         margin: auto;
     }
     .contact-icon {
-        color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryColor};
+        color: ${props => props.theme.green00B39FToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     img {
         max-width: 100px;
@@ -18,11 +19,12 @@ const ContactWrapper = styled.section`
     }
     form{
         text-align: center;
-        background: ${props => props.theme.DarkTheme ? "rgb(33, 33, 33)" : "linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%)"};
+        background: ${props => props.theme.grey212121ToLinear};
         border-radius: 10px 10px 0px 0px;
-        box-shadow: ${props => props.theme.DarkTheme ? "rgb(0 211 169) 0px 0px 10px" : "rgba(0, 0, 0, 0.25) 0px 0px 10px"};
+        box-shadow: ${props => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
         padding: 25px;
         border-radius: 10px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .inputrow{
         margin-bottom: 10px;
@@ -66,7 +68,8 @@ const ContactWrapper = styled.section`
     .section-title{
         h3 {
             margin-bottom: 2rem;
-            color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryColor};
+            color: ${props => props.theme.green00B39FToGreen3C494F};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     @media only screen and (max-width: 912px) {

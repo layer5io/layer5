@@ -1,4 +1,3 @@
-import { wrapRootElement as wrap } from "./root-wrapper";
 import "./fonts.css";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,4 +27,6 @@ function initGTM() {
   script.src = "https://www.googletagmanager.com/gtm.js?id=G-MDVP5FT6JY";
   document.head.appendChild(script);
 }
-export const wrapRootElement = wrap;
+
+export { wrapRootElement } from "./root-wrapper";
+export { wrapPageElement } from "./page-wrapper";

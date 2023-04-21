@@ -7,8 +7,7 @@ import TimelineDVR from "./images/timeline-dvr.svg";
 import TimelineDVRClock from "./images/timeline-dvr-clock.svg";
 import ServicePerformanceGearDark from "./images/service-performance-gear-dark.svg";
 import ServicePerformanceGearLight from "./images/service-performance-gear-light.svg";
-import ServicePerformanceMeterDark from "./images/service-performance-meter-dark.svg";
-import ServicePerformanceMeterLight from "./images/service-performance-meter-light.svg";
+import { ReactComponent as ServicePerformanceMeter } from "./images/service-performance-meter-colorMode.svg";
 import ApplicationImportBoxes from "./images/application-import-boxes.svg";
 import ApplicationImportArrows from "./images/application-import-arrows.svg";
 import InteractiveTerminal from "./images/interactive-terminal.svg";
@@ -16,6 +15,7 @@ import InteractiveTerminalCode from "./images/interactive-terminal-code.svg";
 import LogStream from "./images/log-stream.svg";
 import LogStreamSearch from "./images/log-stream-search.svg";
 import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const VisualizerFeaturesWrapper = styled.div`
 
@@ -41,10 +41,12 @@ z-index: 10;
     .project__block__inner {
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.DarkTheme ? "#212121" : "#ffffff"};
-        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#fff" : "#E6E6E6"};
+        background: ${props => props.theme.grey212121ToWhite};
+        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.whiteToGreyE6E6E6};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
-            box-shadow: 0px 0px 5px ${props => props.theme.DarkTheme ? "#00d3a9" : "#3c494f"};
+            box-shadow: 0px 0px 5px ${props => props.theme.green00D3A9ToGreen3C494F};
         }
         padding: 10% 8%;
         height: 25rem;
@@ -68,12 +70,14 @@ z-index: 10;
             font-weight: 300;
             color: ${props => props.theme.text};
             margin: auto;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         img{
             height: auto;
             width: 70%;
         }
+
         .gatsby-image-wrapper{
             margin: 10px auto;
             min-height: 40px;
@@ -81,15 +85,22 @@ z-index: 10;
     }
 
     .darken {
-      background: ${props => props.theme.DarkTheme ? "#121212" : "#ffffff"};
+      background: ${props => props.theme.grey121212ToWhite};
       /* scale:1.1; */
       /* transition: all 0.5s ease; */
       opacity: 0.85;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .feature-image {
       position: relative;
       padding: 0% 0% 10%;
+
+      svg {
+        .service-performance-meter-colorMode_svg__colorMode1{
+          fill: ${props => props.theme.grey212121ToGreyF3F3F3};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
     }
 
     .secondary-image {
@@ -111,9 +122,11 @@ z-index: 10;
     }
 `;
 
-const MeshmapVisualizerFeatures = ({ theme }) => {
+const MeshmapVisualizerFeatures = () => {
   const [isHovered, setisHovered] = useState(false);
   const [hoveredFeature, sethoveredFeature] = useState("");
+
+  const { isDark } = useStyledDarkMode();
 
   const handleMouseOver = (num) => {
     setisHovered(true);
@@ -172,8 +185,10 @@ const MeshmapVisualizerFeatures = ({ theme }) => {
           <Col sm={12} md={6} lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
-                <img src={theme == "dark" ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
-                <img src={theme == "dark" ? ServicePerformanceMeterDark : ServicePerformanceMeterLight} alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"} style={{ position: "relative", zIndex: "10", transformOrigin: "center center" }} />
+                <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
+                <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
+                  style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
+                />
               </div>
               <h3>Service Performance</h3>
               <p>Continuous visibility across all of your clusters and workloads metrics.</p>

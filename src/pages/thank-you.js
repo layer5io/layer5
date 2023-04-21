@@ -1,33 +1,17 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "../sections/app.style";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
+import React from "react";
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
-import Footer from "../sections/General/Footer";
-import Layout from "../components/layout";
+
+
 import ThankYou from "../sections/thank-you/thank-you";
-
 const ThankYouSection = () => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
-
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <ThankYou />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <ThankYou />
+
+    </>
   );
 };
 export default ThankYouSection;
-
 export const Head = () => {
   return <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />;
 };
