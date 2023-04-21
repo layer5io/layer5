@@ -23,6 +23,7 @@ const ResourceGrid = (props) => {
       left: 100,
       behavior: "smooth",
     });
+
   };
 
   return (
