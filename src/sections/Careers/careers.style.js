@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
 p {
-    color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
-
+    color: ${props => props.theme.whiteEightToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
     h1{
-
         color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .page-header{
         margin:4rem auto;
@@ -35,8 +35,8 @@ p {
     }
     .introText p {
         text-align: justify;
-        color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
-
+        color: ${props => props.theme.whiteEightToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .introVideo{
         width: 50%;

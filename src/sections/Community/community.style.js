@@ -61,6 +61,7 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 2rem;
         color: white;
         background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         @media (max-width: 991px) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 42rem, ${props => props.theme.black} 42rem);
         }
@@ -109,6 +110,9 @@ const CommunitySectionWrapper = styled.div`
     .meshmate{
         margin-top: 5rem;
         .content{
+            h1, h3, h4 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
             h3{
                 margin: 0.5rem auto 0.5rem auto;
             }
@@ -129,13 +133,23 @@ const CommunitySectionWrapper = styled.div`
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+        svg {
+            max-width: 25rem;
+            .meshmate-stack-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGreen3C494F};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+          }
+
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
             padding-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             .icon{
                 align-items: center;
                 width: 40px;
@@ -210,7 +224,8 @@ const CommunitySectionWrapper = styled.div`
             margin: 2rem 0rem 2rem 0rem;
             a {
                 font-weight: 600;
-                background: linear-gradient(123deg, ${props => props.theme.DarkTheme ? "black" : "white"} 60%,${props => props.theme.DarkTheme ? "black" : "white"} 100%);
+                background: linear-gradient(123deg, ${props => props.theme.blackToWhite} 60%,${props => props.theme.blackToWhite} 100%);
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     }

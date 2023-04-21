@@ -16,11 +16,6 @@ import Docker from "../Meshery-platforms/supported-icons/docker.svg";
 import OAM from "../../../assets/images/partners/oam.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-
-
-
-
-
 const MesheryTerminal = () => {
   return (
     <MesheryWrapper>

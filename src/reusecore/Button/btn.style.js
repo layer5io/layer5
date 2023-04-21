@@ -22,10 +22,10 @@ const ButtonStyle = styled.button`
     &:focus {
         color: white;
         background: ${props => props.theme.activeColor}; 
-        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+        box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
     }
     &:active{
-        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+        box-shadow: 0 2px 10px ${props => props.theme.blackFourToWhiteFour};
         transform: scale(0.98);
     }
     .icon-left{
@@ -42,11 +42,11 @@ const ButtonStyle = styled.button`
         &:hover{
             color: ${props.theme.black};
             background: ${props.theme.highlightColor}; 
-            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+            box-shadow: 0 2px 10px ${props.theme.whiteFourToBlackFour};
         }
         &:active{
             background: ${props => props.theme.saffronColor};
-            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+            box-shadow: 0 2px 10px ${props.theme.blackFourToWhiteFour};
             transform: scale(0.98);
         }
         
@@ -56,12 +56,12 @@ const ButtonStyle = styled.button`
         background: ${props.theme.secondaryColor}; 
         &:hover{
             background: ${props.theme.caribbeanGreenColor};
-            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+            box-shadow: 0 2px 10px ${props.theme.whiteFourToBlackFour};
         }
         &:active{
             color: #326d62;
             background: ${props.theme.secondaryColor};
-            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(0 0 0 / 40%)" : "rgb(255 255 255 / 40%)"};
+            box-shadow: 0 2px 10px ${props.theme.blackFourToWhiteFour};
             transform: scale(0.98);
         }
     `}

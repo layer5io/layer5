@@ -71,13 +71,9 @@ export const ProgramsWrapper = styled.div`
         tbody tr {
             transition: .2s ease;
             :hover {
-                ${props => props.theme.DarkTheme ? "background-color: #3c494f" : "background-color: #f5f5f5" };
+                background-color: ${props => props.theme.green3C494FToGreyF5F5F5};
             }
 
         }
     }
-
-
-
-
 `;

@@ -15,30 +15,33 @@ export const TableWrapper = styled.div`
 			padding: 0.3rem;
 			height: 4rem;
 			color: ${props => props.theme.text};
-			background-color: ${props => props.theme.DarkTheme ? "rgb(21, 21, 21, 0.1)" : "rgb(255, 255, 255, 0.1)"};
+			background-color: ${props => props.theme.grey151515OneToWhiteOne};
 			text-align: center;
 			font-size: 0.9rem;
 			line-height: .9rem;
 			font-weight: 400;
 			border-bottom: 1px solid #efefef;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			a {
 				color: ${props => props.theme.text};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				&:hover {
-					color: ${props => props.theme.DarkTheme ? "rgb(180, 180, 180)" : "rgb(80, 80, 80)"};
+					color: ${props => props.theme.greyB4B4B4ToGrey505050};
 				}
 			}
 			:first-child {
-				background-color: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.1)" : "rgba(0,0,0,0.05)"};
+				background-color: ${props => props.theme.blackOneToBlackZeroFive};
 				font-weight: 600;
 			}
 		}
 		th {
-			background-color: ${props => props.theme.DarkTheme ? "rgb(14 14 14)" : "#3c494f"};
+			background-color: ${props => props.theme.grey0E0E0EToGreen3C494F};
 			color: ${props => props.theme.white};
 			height: 4rem;
 			font-weight: 600;
 			font-size: 1rem;
 			line-height: 1rem;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	
 		tr {
@@ -54,7 +57,7 @@ export const TableWrapper = styled.div`
 				background: ${props => props.theme.saffronLightColor};
 			}
 			&:hover {
-				background-color: ${props => props.theme.DarkTheme ? "rgb(50 50 50)" : "#F3FFFD"};
+				background-color: ${props => props.theme.grey323232ToGreenF3FFFD};
 				border-color:  ${props => props.theme.shadowColor};
 			}
 		}

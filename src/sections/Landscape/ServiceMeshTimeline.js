@@ -4,6 +4,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { non_functional } from "../../collections/landscape/non-functional";
 import { MdExpandMore } from "@react-icons/all-files/md/MdExpandMore";
 import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const meshes = [];
 const initialMeshes = [];
@@ -22,9 +23,10 @@ for (let i = 0; i < meshes.length; i++) {
     remainingMeshes.push(meshes[i]);
 }
 
-const ServiceMeshTimeline = ({ theme }) => {
+const ServiceMeshTimeline = () => {
   const [elements, setElements] = useState(initialMeshes);
   const [loadedAll, showIcon] = useState(false);
+  const { isDark } = useStyledDarkMode();
 
   const loadMore = () => {
     setElements([...elements, ...remainingMeshes]);
@@ -43,7 +45,7 @@ const ServiceMeshTimeline = ({ theme }) => {
       >
         {mesh.icon ?
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={theme === "dark" ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
+            <img src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
           </div>
           : <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />

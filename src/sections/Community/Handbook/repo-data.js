@@ -320,9 +320,6 @@ export const repo_data = [
       },
     ],
   },
-
-
-
   {
     category: "Meshery Adapter Repos",
     subdata: [

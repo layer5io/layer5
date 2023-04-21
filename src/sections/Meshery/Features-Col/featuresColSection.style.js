@@ -14,10 +14,12 @@ export const FeaturesSectionContainer = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   rect {
-    fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+    transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
   }
   path {
-    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+    transition: stroke 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
   }
   @media (max-width: 1198px) {
     grid-template-columns: repeat(auto-fill, 17rem);
@@ -45,14 +47,14 @@ export const FeaturesSectionContainer = styled.div`
 `;
 
 export const FeatureBlockContainer = styled.div`
-  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.05)"};
-  background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.blackFiveToWhiteFive};
+  background-color:	${props => props.theme.grey212121ToWhite};
   border-radius: 1.25rem;
-  transition: all 0.3s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
 export const TitleContainer = styled.div`
@@ -77,14 +79,16 @@ export const FeatureTitleInfoContainer = styled.div`
       margin: 0 0 0.625rem 0;
       padding-top: 15px;
       color: ${(props) => props.theme.text};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
 
   p {
     font-size: 18px;
-    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+    color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
     text-align: center;
     font-weight: 300;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 `;
 
@@ -101,19 +105,28 @@ export const FeatureInfoContainer = styled.div`
       color: ${(props) => props.theme.text};
       font-size: 16px;
       padding: 0 0 1.25rem 1.875rem;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
 `;
 
 export const CountBlockContainer = styled.div`
   text-align: center;
+  
+  .count,
+  .count-desc {
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  
   .count {
     font-weight: 700;
     margin-bottom: 0.625rem;
     color: ${(props) => props.theme.text};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .count-desc {
     font-size: 0.94rem;
-    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+    color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 `;

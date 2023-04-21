@@ -74,9 +74,11 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     font-style: normal;
     font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
+    color: ${props => props.theme.whiteToBlack};
     font-size: 1.5rem;
     line-height: 2.125rem;
     text-align: right;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media (max-width: 992px) {
         font-size: 1.275rem;
     }
@@ -91,7 +93,8 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     }
   }
 .toCatalog {
-  background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+  background: ${(props) => props.theme.grey121212ToLinear};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .svg-cont{
   display:grid;
@@ -179,8 +182,8 @@ h3.containerCaption {
     margin: auto;
     height: 20rem;
     width: 0px;
-    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
-
+    border: 1.5px solid ${(props) => props.theme.green00B39FToGreyB3B3B3};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media (max-width: 468px) {
       display: none;
     }

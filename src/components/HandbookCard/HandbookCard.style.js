@@ -9,20 +9,20 @@ export const HandbookCardWrapper = styled.div`
     .handbook__card {
 	  border-radius: 5px;
 	  width: 25rem;
-	  box-shadow: 0 5px 10px ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+	  box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
 	  overflow: hidden;
 	  height: 15rem;
-	  transition: all 0.3s;
 	  position: relative;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.handbook__card--head {
 	  padding: 1.25rem;
 	  color: ${props => props.theme.text};
 	  text-align: center;
-	  transition: all 0.3s;
 	  position: relative;
 	  font-size: 1.5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.handbook__card--head::before {
@@ -46,7 +46,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card--para {
-	  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)"};
+	  color: ${props => props.theme.whiteSevenToBlackSeven};
 	  text-align: center;
 	  margin: 1.5rem;
 	  margin-bottom: 0rem;
@@ -54,6 +54,7 @@ export const HandbookCardWrapper = styled.div`
 	  letter-spacing: 0px;
 	  font-weight: 400;
 	  font-size: .9rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.handbook__card--lm__container {
@@ -69,19 +70,19 @@ export const HandbookCardWrapper = styled.div`
 	  margin: .5rem 1rem;
 	  font-size: .8rem;
 	  text-decoration: none;
-	  color: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "rgba(71, 126, 150, 1.0)"};
+	  color: ${props => props.theme.green00D3A9ToBlue477E96};
 	  font-weight: 500;
 	  padding: 0.1rem .5rem;
 	  transform: translateX(5rem);
-	  transition: all 0.4s;
 	  opacity: 0;
 	  display: flex;
 	  align-items: center;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.handbook__card--lm:hover {
-	  border-bottom: 1px solid ${props => props.theme.DarkTheme ? props.theme.keppelColor : "rgba(71, 126, 150, 1.0)"};
-
+	  border-bottom: 1px solid ${props => props.theme.green00D3A9ToBlue477E96};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.handbook__card:hover .handbook__card--lm {

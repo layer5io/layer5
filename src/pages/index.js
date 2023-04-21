@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
-import Layout from "../components/layout";
+import React from "react";
+
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
 import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
@@ -14,52 +12,37 @@ const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh
 
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
-const Footer = loadable(() => import("../sections/General/Footer"));
-import { GlobalStyle } from "../sections/app.style";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
 
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
-
-
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <GlobalStyle />
+    <>
+      <Banner />
+      <Integrations />
+      <Partners />
+      {/* <Features /> */}
+      {/* <ServiceMeshManagement /> */}
+      <CloudNativeManagement />
+      <MesheryIntegration  />
+      {/* <Statement /> */}
+      {/* <AppScreens /> */}
+      {/* <Pricing /> */}
+      {/* <Testimonial /> */}
+      {/* <Getapp /> */}
+      {/* <News /> */}
+      {/* <Faq category = "all"/> */}
+      {/*<ContactCard />*/}
+      <SoSpecial  />
+      {/* <CloudNativeLeaders /> */}
+      <ServiceMeshFocussed bookName={"enterprise-path"} />
+      {/* <EngineerEnabler /> */}
+      <SubscribeSection />
 
-      <Layout >
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <Banner />
-        <Integrations />
-        <Partners />
-        {/* <Features /> */}
-        {/* <ServiceMeshManagement /> */}
-        <CloudNativeManagement />
-        <MesheryIntegration theme={theme} />
-        {/* <Statement /> */}
-        {/* <AppScreens /> */}
-        {/* <Pricing /> */}
-        {/* <Getapp /> */}
-        {/* <News /> */}
-        {/* <Faq category = "all"/> */}
-        {/*<ContactCard />*/}
-        <SoSpecial theme={theme} />
-        {/* <Testimonial /> */}
-        {/* <CloudNativeLeaders /> */}
-        <ServiceMeshFocussed bookName={"enterprise-path"} />
-        {/* <EngineerEnabler /> */}
-        <SubscribeSection />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    </>
   );
 };
-
 export const Head = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -79,5 +62,4 @@ export const Head = () => {
       schemaMarkup={schema} />
   );
 };
-
 export default IndexPage;

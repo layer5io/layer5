@@ -6,7 +6,7 @@ import DataWrapper from "./DataWrapper";
 import { options } from "./options";
 import useDataList from "../../../utils/usedataList";
 
-const ResourcesList = (props, { theme }) => {
+const ResourcesList = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     props.allResources.allMdx.nodes,
@@ -113,7 +113,7 @@ const ResourcesList = (props, { theme }) => {
 
   return (
     <ResourcesGrid
-      theme={theme}
+
       data={[...new Set(data)]}
       {...props}
       searchData={searchData}

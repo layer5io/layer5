@@ -15,6 +15,7 @@ import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-
 const PressWrapper = styled.div`
 padding: 2rem 0;
 background: ${props => props.theme.secondaryLightColor};
+transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 h2{
     text-align: center;
     border-top: 4px solid #00b39f;
@@ -27,10 +28,11 @@ h4, h5{
 }
 
 .press_card { 
-    background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+    background: ${props => props.theme.grey212121ToWhite};
     transition: 450ms all;
     height: 15rem;
-    border: 1px solid ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+    border: 1px solid ${props => props.theme.green00D3A9ToGreyE6E6E6};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover{
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
@@ -45,6 +47,7 @@ h4, h5{
     p{
         font-weight: 300;
         color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width: 768px) {
         margin: 6% 15%;
@@ -59,9 +62,6 @@ img{
     margin: 0 0 0.5rem;
 }
 `;
-
-
-
 const Press = () => {
   return (
     <PressWrapper>

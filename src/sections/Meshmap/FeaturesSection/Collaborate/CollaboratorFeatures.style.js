@@ -184,7 +184,6 @@ const CollaboratorFeaturesWrapper = styled.section`
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
-
 `;
 
 export default CollaboratorFeaturesWrapper;

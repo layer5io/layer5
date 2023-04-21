@@ -56,8 +56,21 @@ export const NewcomersGuideWrapper = styled.section`
       padding-left: 1rem;
       transition: .5s;
       }
+      .heading-start__arrow {
+        svg{
+        height: 3rem;
+        width: 4rem;
+        transition: .5s;
+        margin-top: -1.5rem;
+        }
+        svg:hover{
+        padding-left: 1rem;
+        transition: .5s;
+        }
+      }
     }
     .instructions{
+
       .step{
         display: flex;
         align-items: center;
@@ -71,9 +84,22 @@ export const NewcomersGuideWrapper = styled.section`
           padding: 1rem;
         }
       }
-      .finding-an-issue { 
-        max-height: 22rem;
-      }
+        .finding-an-issue { 
+          display: block;
+          margin: 0 auto;
+          text-align: center; 
+          margin-top:1rem;
+        }
+
+        svg {
+          max-height: 22rem;
+          width: 21.875rem;
+          .contributor-chest-colorMode_svg__colorMode1 {
+            fill: ${props => props.theme.whiteToBlack};
+          }
+        }
+      
+
       h3{
         display:inline;
         padding-bottom: 0.3rem;
@@ -111,17 +137,18 @@ export const NewcomersGuideWrapper = styled.section`
         h4 {
           font-size: 1.25rem;
         }
-        img {
-          margin-top: -.3rem;
-          height: 2rem;
-          transition: .5s;
-         transform: rotate(90deg);
+       img {
+            margin-top: -.3rem;
+            height: 2rem;
+            transition: .5s;
+           transform: rotate(90deg);
+          }
         }
-      }
-      .heading-start__arrow {
-        margin-bottom: 1rem;
-        margin-left: -1.25rem; margin-right: auto;
-      }
+        .heading-start__arrow {
+          margin-bottom: 1rem;
+          margin-left: -1.25rem; margin-right: auto;
+        } 
+        
       .heading{
         h2 {
           margin-top: -1.5rem;

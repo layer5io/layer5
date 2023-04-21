@@ -3,12 +3,10 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import logo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full.svg";
-import Lightlogo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full_light.svg";
+import { ReactComponent as Logo } from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-colorMode.svg";
+import { ReactComponent as SmpIcon } from "./images/smp-colorMode.svg";
 import cloud from "./images/cloud-network_green.svg";
 import cpu from "./images/cpu_green.svg";
-import smpIcon from "./images/smp-dark-text.svg";
-import lightSmpIcon from "./images/smp-light-text.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
 
@@ -21,7 +19,7 @@ import { Gnhwrapper, CardsContainer } from "./gnh.style";
 import { URL } from "../../Counters/index";
 import Counter from "../../../reusecore/Counter";
 
-const Projects = ({ theme }) => {
+const Projects = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
   useEffect(() => {
@@ -36,7 +34,7 @@ const Projects = ({ theme }) => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={theme === "dark" ? Lightlogo : logo} className="logo" alt="Nighthawk Logo"/>
+              <Logo className="logo" alt="Nighthawk Logo"/>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
@@ -114,7 +112,7 @@ const Projects = ({ theme }) => {
               <CardsContainer>
                 <div className="card">
                   <div className="circle">
-                    <img src={theme === "dark" ? lightSmpIcon : smpIcon} className="smp" alt="smp logo" />
+                    <SmpIcon className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
