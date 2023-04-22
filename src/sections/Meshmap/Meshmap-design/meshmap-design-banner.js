@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import BannerImageDark from "./images/banner-image-dark.svg";
-import BannerImageLight from "./images/banner-image-light.svg";
-import CytoscapeDemo from "./cytoscape-demo";
-import CytoscapeImgDark from "./images/cytoscape-dark.svg";
-import CytoscapeImgLight from "./images/cytoscape-light.svg";
+import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
+import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
 
 const DesignBannerWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};
+    background-color: ${props => props.theme.grey121212ToWhite};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  
     max-width: 1920px;
     width: 100%;
     justify-content: space-evenly;
@@ -38,8 +37,8 @@ const DesignBannerWrapper = styled.div`
         @media only screen and (max-width: 950px) {
             padding-bottom: 15%;
         }
-        @media only screen and (max-width: 550px) {
-            padding-bottom: 25%;
+        @media only screen and (max-width: 600px) {
+            padding-bottom: 30%;
         }
     }
 
@@ -70,6 +69,12 @@ const DesignBannerWrapper = styled.div`
         }
     }
 
+    h2 {
+        padding-left: 8px;
+        color: #00b39f;
+        font-weight: 100;
+    }
+
     h5 {
         padding: 2rem 0;
     }
@@ -86,11 +91,27 @@ const DesignBannerWrapper = styled.div`
         overflow: hidden;
         /* height: 200rem; */
         width: 90rem;
-            img {
-                filter: brightness(1.3);
-                transform: scale(2);
-                transform-origin: 0rem 0rem;
-            }
+
+        .banner-image-colorMode_svg__colorMode1 {
+            fill: ${props => props.theme.blueE0FFFCToBlue477E96};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .banner-image-colorMode_svg__colorMode2 {
+            stop-color: ${props => props.theme.blue477E96ToGreen00B39F};
+            offset: ${props => props.theme.blue477E96ToGreen00B39F === "#477E96" ? 0.510971 : 0.210971};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .banner-image-colorMode_svg__colorMode3 {
+            stop-color: ${props => props.theme.grey121212ToWhite};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        img {
+            filter: brightness(1.3);
+            transform: scale(2);
+            transform-origin: 0rem 0rem;
+        }
 
             @media only screen and (max-width: 700px) {
                 top: 5rem;
@@ -108,27 +129,42 @@ const DesignBannerWrapper = styled.div`
         flex: 0 0 50%;
         max-width: 50%;
         z-index: 1;
+
+        svg {
+            
+            .cytoscape-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.grey232323ToGreyEEEEEE};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .cytoscape-colorMode_svg__colorMode2 {
+                fill: ${props => props.theme.grey505050ToGreyB4B4B4};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+        }
+    
         /* max-width: 56rem; */
         /* min-width: 56rem; */
 
         /* @media only screen and (max-width: 1600px) {
             min-width: 40rem;
         } */
-
     }
 `;
 
-const MeshmapDesignBanner = ({ theme }) => {
+const MeshmapDesignBanner = () => {
+
   return (
     <DesignBannerWrapper>
-      <img className="banner-image" src={theme === "dark" ? BannerImageDark : BannerImageLight} alt="" />
+      <BannerImage className="banner-image" alt="BannerImage"/>
       <div className="hero-text">
-        <h2 style={{ paddingLeft: "8px", color: "#00b39f" }}>MeshMap</h2>
+        <h2>MeshMap</h2>
         <h1><span>Designer</span></h1>
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
-        <img src={theme == "dark" ? CytoscapeImgDark : CytoscapeImgLight} alt="cytoscape" />
+        <CytoscapeImg alt="cytoscape" />
+        {/* <CytoscapeDemo/> */}
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>

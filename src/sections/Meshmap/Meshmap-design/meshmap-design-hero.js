@@ -5,17 +5,20 @@ import MeshmapLocatorDark from "./images/meshmap-locator-dark.svg";
 import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
 import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const HeroSectionWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    background-color: ${props => props.theme.grey121212ToWhite};;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
     padding: 2% 5% 8%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -26,10 +29,14 @@ const HeroSectionWrapper = styled.div`
         flex-direction: column;
         flex: 0 0 30%;
         max-width: 30%;
-        padding-bottom: 3rem;
+        /* padding-bottom: 3rem; */
         @media only screen and (max-width: 767px) {
           max-width: 100%;
         }
+    }
+
+    h1 {
+      padding-bottom: 2%;
     }
 
     .hero-image {
@@ -67,22 +74,25 @@ const HeroSectionWrapper = styled.div`
     }
 `;
 
-const MeshmapHeroSection = ({ theme }) => {
-  const [locatorRef, inView] = useInView({ threshold: 1.0 });
+
+const MeshmapHeroSection = () => {
+  const [locatorRef, inView] = useInView({ threshold: 0.8 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
     setimageInView(true);
   else if (imageInView && !inView)
     setimageInView(false);
 
+  const { isDark } = useStyledDarkMode();
+
   return (
     <HeroSectionWrapper>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={theme === "dark" ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" ref={locatorRef} />
-        <img className={imageInView ? "map map-visible" : "map"} src={theme === "dark" ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" />
+        <img className={imageInView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={imageInView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
       <div className="hero-text">
-        <h2><span>Design your infrastructure</span></h2>
+        <h1><span>Design your infrastructure</span></h1>
         <p>Play with powerful features including context-aware designs and namespace configurations to easily manage all services.</p>
       </div>
     </HeroSectionWrapper>

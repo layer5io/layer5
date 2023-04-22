@@ -1,32 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import IngressGatewayImage from "./images/banner-transitions/ingress-gateway-partial.svg";
-import IngressGatewayImageDark from "./images/banner-transitions/ingress-gateway-partial-dark.svg";
-import KubernetesImage from "./images/banner-transitions/kubernetes-partial.svg";
-import KubernetesImageDark from "./images/banner-transitions/kubernetes-partial-dark.svg";
-import PodImage from "./images/banner-transitions/pod-partial.svg";
-import PodImageDark from "./images/banner-transitions/pod-partial-dark.svg";
-import PrometheusImage from "./images/banner-transitions/prometheus-partial.svg";
-import PrometheusImageDark from "./images/banner-transitions/prometheus-partial-dark.svg";
-import ServiceIntefaceImage from "./images/banner-transitions/service-interface-partial.svg";
-import ServiceIntefaceImageDark from "./images/banner-transitions/service-interface-partial-dark.svg";
+import { ReactComponent as IngressGatewayImage } from "./images/banner-transitions/ingress-gateway-partial-colorMode.svg";
+import { ReactComponent as KubernetesImage } from "./images/banner-transitions/kubernetes-partial-colorMode.svg";
+import { ReactComponent as PodImage } from "./images/banner-transitions/pod-partial-colorMode.svg";
+import { ReactComponent as PrometheusImage } from "./images/banner-transitions/prometheus-partial-colorMode.svg";
+import { ReactComponent as ServiceIntefaceImage } from "./images/banner-transitions/service-interface-partial-colorMode.svg";
 import SupportingArrows from "./images/banner-transitions/supporting-arrows.svg";
-import CanvasImage from "./images/banner-transitions/canvas.svg";
 import EmptyLight from "./images/banner-transitions/empty-light.svg";
 import EmptyDark from "./images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const CollaborationBannerWrapper = styled.div`
 
     .banner {
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.DarkTheme ? "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)" : "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)"};
-        /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "#fff"}; */
+        background: ${props => props.theme.linearToLinear2};
+        /* background-color: ${props => props.theme.grey121212ToWhite}; */
         max-width: 1920px;
         width: 100%;
+        height: fit-content;
         justify-content: space-evenly;
         align-items: center;
         padding: 4% 5% 6%;
@@ -35,6 +30,17 @@ const CollaborationBannerWrapper = styled.div`
         /* @media only screen and (max-width: 500px) {
             max-height: 400px;
         } */
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+        svg {
+            .service-interface-partial-colorMode_svg__colorMode1,
+            .prometheus-partial-colorMode_svg__colorMode1,
+            .pod-partial-colorMode_svg__colorMode1,
+            .kubernetes-partial-colorMode_svg__colorMode1,
+            .ingress-gateway-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
     }
 
 
@@ -44,7 +50,7 @@ const CollaborationBannerWrapper = styled.div`
         text-align: center;
         align-items: center;
         z-index: 1;
-        padding-top: 5%;
+        padding-top: 2%;
     }
 
     h1 {
@@ -52,6 +58,7 @@ const CollaborationBannerWrapper = styled.div`
         position: relative;
         display: inline-block;
         color: ${props => props.theme.primaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 /*
         @media only screen and (min-width: 500px) {
             font-size: 3.5rem;
@@ -78,10 +85,18 @@ const CollaborationBannerWrapper = styled.div`
 
     h4 {
         padding: 3% 0%;
-        color: #A0AAAA;
+        color: ${props => props.theme.greyA0AAAAToGrey666666};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         /* font-size: 20px; */
         max-width: 40%;
-        font-weight: bold;
+        /* font-weight: bold; */
+        @media only screen and (max-width: 500px) {
+            font-size: 1rem;
+            max-width: 100%;
+        }
+        @media only screen and (max-width: 767px) {
+            max-width: 100%;
+        }
     }
 
     h5 {
@@ -97,7 +112,6 @@ const CollaborationBannerWrapper = styled.div`
         max-width: 70%;
         position: relative;
     }
-
 
     .ingress-gateway, .kubernetes, .pod, .prometheus, .supporting-arrows, .service-interface {
         /* max-width: 70%; */
@@ -116,7 +130,7 @@ const CollaborationBannerWrapper = styled.div`
 
     .supporting-arrows-transition {
         opacity: 1;
-        transition: 0.5s ease-out 2s ;
+        transition: 0.5s ease-out 1s ;
     }
 
     .ingress-gateway {
@@ -126,7 +140,7 @@ const CollaborationBannerWrapper = styled.div`
     .ingress-gateway-transition {
         transform: translateX(40%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .kubernetes {
@@ -136,7 +150,7 @@ const CollaborationBannerWrapper = styled.div`
     .kubernetes-transition {
         transform: translateX(-50%) translateY(30%);
         scale: 1;
-        transition: 1s;
+        transition: 0.75s;
     }
 
     .pod {
@@ -146,7 +160,7 @@ const CollaborationBannerWrapper = styled.div`
     .pod-transition {
         transform: translateX(-40%) translateY(-30%);
         scale: 1;
-        transition: 1.5s;
+        transition: 1s;
     }
 
     .prometheus {
@@ -156,7 +170,7 @@ const CollaborationBannerWrapper = styled.div`
     .prometheus-transition {
         transform: translateX(50%) translateY(-30%);
         scale: 1;
-        transition: 2s;
+        transition: 1.25s;
     }
 
     .service-interface {
@@ -165,7 +179,7 @@ const CollaborationBannerWrapper = styled.div`
 
 `;
 
-const MeshmapCollaborateBanner = ({ theme }) => {
+const MeshmapCollaborateBanner = () => {
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
   const [imageInView, setimageInView] = useState(false);
   if (inView && !imageInView)
@@ -173,21 +187,33 @@ const MeshmapCollaborateBanner = ({ theme }) => {
   else if (imageInView && !inView)
     setimageInView(false);
 
+  const { isDark } = useStyledDarkMode();
+
   return (
     <CollaborationBannerWrapper>
       <div className="banner">
         <div className="banner-text">
-          <h1>Collaborate with the team. <br /> Build solutions together. </h1>
+          <h1>Collaborate with the team. <br /> Build solutions together </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
           <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
         </div>
         <div className="transition-container" ref={transitionRef}>
-          <img className="canvas" src={theme == "dark" ? EmptyDark : EmptyLight} alt="" />
-          <img className="service-interface" src={theme == "dark" ? ServiceIntefaceImageDark : ServiceIntefaceImage} alt="" />
-          <img className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} src={theme == "dark" ? IngressGatewayImageDark : IngressGatewayImage} alt="" />
-          <img className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} src={theme == "dark" ? KubernetesImageDark : KubernetesImage} alt="" />
-          <img className={imageInView ? "pod-transition pod" : "pod"} src={theme == "dark" ? PodImageDark : PodImage} alt="" />
-          <img className={imageInView ? "prometheus-transition prometheus" : "prometheus"} src={theme == "dark" ? PrometheusImageDark : PrometheusImage} alt="" />
+          <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
+          <div>
+            <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
+          </div>
+          <div>
+            <IngressGatewayImage className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} alt="IngressGatewayImage" />
+          </div>
+          <div>
+            <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />
+          </div>
+          <div>
+            <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
+          </div>
+          <div>
+            <PrometheusImage alt="PrometheusImage" className={imageInView ? "prometheus-transition prometheus" : "prometheus"} />
+          </div>
           <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
         </div>
       </div>

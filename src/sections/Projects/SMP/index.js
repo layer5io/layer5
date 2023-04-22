@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-import Layout from "../../../components/layout";
+
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
@@ -41,17 +41,17 @@ const SMPPage = () => {
   const pluginImage = getImage(backgroundImage123);
 
   return (
-    <Layout>
+    <>
       <SMPWrapper>
         <BgImage image={pluginImage} className="section">
           <div className="smp-hero">
             <Container>
               <div className="hero-text">
                 <Row>
-                  <Col lg={5} md={12} sm={12}>
+                  <Col lg={5} md={12} sm={12} style={{ display: "flex", justifyContent: "center" }}>
                     <img className="logo-img" alt="smp-logo" src={smp} />
                   </Col>
-                  <Col lg={7} md={12} sm={12}>
+                  <Col lg={7} md={12} sm={12} style={{ textAlign: "center" }}>
                     <h1> Service Mesh Performance </h1>
                     <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Service Mesh Performance is a CNCF-hosted project. Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
                   </Col>
@@ -159,7 +159,7 @@ const SMPPage = () => {
         </div>
         <MeshMapCTA />
       </SMPWrapper>
-    </Layout>
+    </>
   );
 };
 

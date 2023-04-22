@@ -13,7 +13,7 @@ import Deepak from "./reviews/deepak-dinesh.jpg";
 import Kaur from "./reviews/kaur-kallas.jpg";
 import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
-import Lee from "../../collections/members/lee-calcote/lee-calcote.jpg";
+import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 
 
 const settings = {
@@ -93,6 +93,13 @@ const Reviews = () => {
             person="Otto Van Der Schaaf"
             title="Principal Engineer at Red Hat"
             image={Otto}
+          />
+          <Customers
+            type="3"
+            quote="Guys, I love MeshMap! This tool is crazy!"
+            person="Ala Eddine BENHASSIR"
+            title="Networks & Systems Engineer at AYRADE"
+            image={Ala}
           />
           <Customers
             type="2"

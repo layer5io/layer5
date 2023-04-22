@@ -1,25 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import WorldImg from "./images/world-transitions/world-image.svg";
-import World1 from "./images/world-transitions/world-1.svg";
-import World2 from "./images/world-transitions/world-2.svg";
-import World3 from "./images/world-transitions/world-3.svg";
-import World4 from "./images/world-transitions/world-4.svg";
-import World5 from "./images/world-transitions/world-5.svg";
-import World6 from "./images/world-transitions/world-6.svg";
-import World7 from "./images/world-transitions/world-7.svg";
+
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    background-color: ${props => props.theme.grey121212ToWhite};;
     max-width: 90%;
     justify-content: space-between;
     align-items: center;
     padding: 2% 5% 8%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;

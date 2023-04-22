@@ -33,10 +33,11 @@ const DesignDefaultWrapper = styled.section`
         max-width: 30%;
     }
     h2.statement {
-        color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
+        color: ${props => props.theme.green00B39FToGreyB3B3B3};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h3.statement {
         color: ${props => props.theme.primaryColor};
@@ -45,6 +46,7 @@ const DesignDefaultWrapper = styled.section`
         margin-bottom: 2rem;
         font-size: clamp(10px, 12px + .8vw, 50px);
         line-height: clamp(10px, 12px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         &:before {
             content: "";
@@ -62,9 +64,10 @@ const DesignDefaultWrapper = styled.section`
         font-weight: bold;
         display: flex;
         color: ${props => props.theme.primaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .description a {
-        color: ${props => props.theme.DarkTheme ? props.theme.white : "#ffffff"};
+        color: ${props => props.theme.white};
         font-style: italic;
         :hover {
             cursor: hand;
@@ -73,10 +76,11 @@ const DesignDefaultWrapper = styled.section`
         }
     }
     .demo {
-        color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.whiteToBlack};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .demo span {
         font-weight: 600;
@@ -93,7 +97,15 @@ const DesignDefaultWrapper = styled.section`
     .section-title {
         padding: 3rem 4rem;
         border-radius: 2rem 0 0 2rem;
-        background:${props => props.theme.DarkTheme ? "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)" : "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 99.34%)"};
+        background:${props => props.theme.linearToLinear};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    svg {
+        display: block;
+        .integration-image-colorMode_svg__colorMode1{
+            stop-color: ${props => props.theme.grey212121ToWhite};
+        }
     }
     .svg-background {
         position: absolute;

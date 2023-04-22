@@ -45,6 +45,7 @@ const SoSpecialWrapper = styled.div`
         font-size: 4.5rem;
         display: inline-block;
         height: 2rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .slick-disabled {
         pointer-events:none;
@@ -98,10 +99,10 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-
-        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)"};
+        background-color: ${props => props.theme.grey212121ToWhite};
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.green00D3A9ToBlackFour};
         color:${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     #special-cont_img{
         height:70%;
@@ -137,7 +138,8 @@ const SoSpecialWrapper = styled.div`
         color:black;
         height: 30rem;
         outline:none;
-        border:none;   
+        border:none;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
 
     .so-special-foot{
@@ -152,7 +154,7 @@ const SoSpecialWrapper = styled.div`
             margin:2rem;
             :hover{
                 color: white;
-                box-shadow: ${props => props.theme.DarkTheme ? " rgb(255 255 255 / 40%)" : " rgb(0 0 0 / 40%)"} 0px 2px 10px;
+                box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
             }
         }
     }

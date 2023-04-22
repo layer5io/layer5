@@ -25,8 +25,8 @@ export const Categories = {
     "Image": docker,
     "Image_Alt": "Meshery Docker",
     "Heading": "Meshery Docker Extension",
-    "Content": "Develop service mesh-ready apps using Docker Desktop and Meshery. The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes.",
-    "Button_Text": "Get yours now!",
+    "Content": "Design cloud native apps using the Meshery Docker Extension. Import existing Docker Compose, Helm Chart, or Kubernetes Manifests, or grab a best practices pattern from Meshery Catalog The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to multi-cluster Kubernetes design and management off ALL cloud native infrastructure.",
+    "Button_Text": "Get Meshery Docker Extension",
     "Link": "/docker-extension-meshery",
     "Link_external": false
   }

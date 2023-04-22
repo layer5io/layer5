@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
-    background: ${(props) => props.theme.body};
 }
 
 body,html {
@@ -36,9 +35,12 @@ body {
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-property: color, background-color;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
   font-family: "Qanelas Soft", "Open Sans", sans-serif;
   overflow-x: hidden !important;
   font-weight: 400 !important;
@@ -131,7 +133,7 @@ p {
     }
 }
 Button:hover {
-  box-shadow: 0 2px 10px  ${(props) => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+  box-shadow: 0 2px 10px  ${(props) => props.theme.whiteFourToBlackFour};
 }
 a {
     text-decoration: none;
@@ -153,7 +155,7 @@ section{
 
 .Modal {
     position: absolute;
-    inset: 50% auto auto 50%;
+    inset: 50% auto -45% 50%;
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;

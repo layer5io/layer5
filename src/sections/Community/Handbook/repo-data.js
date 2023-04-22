@@ -39,7 +39,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Aditya Chatterjee"],
         link: ["https://layer5.io/community/members/aditya-chatterjee"],
-        repository: "https://github.com/meshery/meshery",
+        repository: "https://github.com/meshery/meshery.io",
       },
       {
         project: "Meshery Documentation",
@@ -320,9 +320,6 @@ export const repo_data = [
       },
     ],
   },
-
-
-
   {
     category: "Meshery Adapter Repos",
     subdata: [

@@ -15,7 +15,7 @@ export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
 	Button:hover {
-		box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+		box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
 	  }
 	.workshops-col {
 			margin: auto;
@@ -99,7 +99,8 @@ export const WorkshopsListWrapper = styled.div`
 
 			p {
 				font-size: 1.85rem;
-				color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+				color: ${props => props.theme.whiteSevenToBlackSeven};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../../../components/layout";
+
 
 import ImageHubWrapper from "./imageHub.style";
 import { Container } from "../../../reusecore/Layout";
@@ -17,7 +17,7 @@ import imagehubslider2 from "./image-hub-on-consul-with-wasm-and-meshery.png";
 
 const ImageHubPage = () => {
   return (
-    <Layout>
+    <>
       <ImageHubWrapper>
         <div className="banner-background">
           <Container>
@@ -81,7 +81,7 @@ const ImageHubPage = () => {
           </div>
         </Container>
       </ImageHubWrapper>
-    </Layout>
+    </>
   );
 };
 

@@ -24,7 +24,7 @@ import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
-margin: 1rem 0 7rem;
+margin: 1rem 0;
 min-height: fit-content;
 border-width: 2px 2px 2px 2px;
 box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
@@ -74,9 +74,11 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     font-style: normal;
     font-family: 'Qanelas Soft','Qanelas Soft', sans-serif;
     font-weight: 300;
+    color: ${props => props.theme.whiteToBlack};
     font-size: 1.5rem;
     line-height: 2.125rem;
     text-align: right;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media (max-width: 992px) {
         font-size: 1.275rem;
     }
@@ -91,7 +93,8 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     }
   }
 .toCatalog {
-  background: ${(props) => props.theme.DarkTheme ? "#121212" : "linear-gradient(123deg, white 60%, white 100%)"};
+  background: ${(props) => props.theme.grey121212ToLinear};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .svg-cont{
   display:grid;
@@ -179,8 +182,8 @@ h3.containerCaption {
     margin: auto;
     height: 20rem;
     width: 0px;
-    border: 1.5px solid ${(props) => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor};
-
+    border: 1.5px solid ${(props) => props.theme.green00B39FToGreyB3B3B3};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     @media (max-width: 468px) {
       display: none;
     }
@@ -440,60 +443,62 @@ const Catalog = () => {
         </div>
 
         {/* 3d Spinning */}
-        <div className="catalog-wrapper ">
-          <div className="container">
-            <div id="carousel">
-              <div className="slide one">
-                <img src={Mutual_tls} />
-              </div>
-              <div className="slide two">
-                <img src={Retries} />
-              </div>
-              <div className="slide three">
-                <img src={Traces} />
-              </div>
-              <div className="slide four">
-                <img src={Denial} />
-              </div>
-              <div className="slide five">
-                <img src={Correlate_event} />
-              </div>
-              <div className="slide six">
-                <img src={Only_wagent} />
-              </div>
-              <div className="slide seven">
-                <img src={Node_agent} />
-              </div>
-              <div className="slide eight">
-                <img src={Single_tenant} />
-              </div>
-              <div className="slide nine">
-                <img src={Pre_provison} />
-              </div>
-              <div className="slide ten">
-                <img src={Circuit_breaker} />
-              </div>
-              <div className="slide eleven">
-                <img src={Retry_deadline} />
-              </div>
-              <div className="slide twelve">
-                <img src={Singleton} />
-              </div>
-              <div className="slide thirteen">
-                <img src={Jwt_transformer} />
-              </div>
-              <div className="slide fourteen">
-                <img src={Multicluster} />
-              </div>
-              <div className="slide fifteen">
-                <img src={Http_metrics} />
+        <a href="https://meshery.io/catalog">
+          <div className="catalog-wrapper ">
+            <div className="container">
+              <div id="carousel">
+                <div className="slide one">
+                  <img src={Mutual_tls} />
+                </div>
+                <div className="slide two">
+                  <img src={Retries} />
+                </div>
+                <div className="slide three">
+                  <img src={Traces} />
+                </div>
+                <div className="slide four">
+                  <img src={Denial} />
+                </div>
+                <div className="slide five">
+                  <img src={Correlate_event} />
+                </div>
+                <div className="slide six">
+                  <img src={Only_wagent} />
+                </div>
+                <div className="slide seven">
+                  <img src={Node_agent} />
+                </div>
+                <div className="slide eight">
+                  <img src={Single_tenant} />
+                </div>
+                <div className="slide nine">
+                  <img src={Pre_provison} />
+                </div>
+                <div className="slide ten">
+                  <img src={Circuit_breaker} />
+                </div>
+                <div className="slide eleven">
+                  <img src={Retry_deadline} />
+                </div>
+                <div className="slide twelve">
+                  <img src={Singleton} />
+                </div>
+                <div className="slide thirteen">
+                  <img src={Jwt_transformer} />
+                </div>
+                <div className="slide fourteen">
+                  <img src={Multicluster} />
+                </div>
+                <div className="slide fifteen">
+                  <img src={Http_metrics} />
+                </div>
               </div>
             </div>
+            <h3 className="containerCaption">
+              Discover best practices. Publish design patterns.
+            </h3>
           </div>
-          <h3 className="containerCaption">
-            Discover best practices. Publish design patterns.
-          </h3>
-        </div>
+        </a>
       </Container>
     </CatalogWrapper>
   );

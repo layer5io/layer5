@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
 
-  background-color:  ${props => props.theme.body};
   position: sticky;
   width: 100%;
   z-index: 9999;
   top: 0;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background-color: ${(props) => props.theme.body};
+  transition-property: color, background-color;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   .nav-container {
     display: flex;
@@ -39,7 +41,8 @@ const NavigationWrap = styled.header`
       border: 1px solid transparent;
       border-radius: .25rem;
       color: ${props => props.theme.secondaryColor};
-      background: ${(props) => props.theme.DarkTheme ? "#121212" : "white"};
+      background: ${(props) => props.theme.grey121212ToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         &:hover{
           border: 1px solid ${props => props.theme.secondaryColor};
           background: ${props => props.theme.highlightColor};
@@ -104,12 +107,13 @@ const NavigationWrap = styled.header`
     display: none;
     color: ${props => props.theme.menuColor};
     font-size: 24px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .dropdown {
     position: absolute;
     background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};
+    border: 1px solid ${props => props.theme.grey141414ToGreyF5F5F5};
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -118,6 +122,7 @@ const NavigationWrap = styled.header`
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .18s forwards;
     pointer-events: none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .wrap {
     display: block;
@@ -145,12 +150,13 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
-      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
+      background: ${props => props.theme.grey141414ToGreyFAFAFA};
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 3em;
       border-radius: 50px 0 0 50px;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       .sub-item {
         padding: 0;
       }
@@ -160,6 +166,7 @@ const NavigationWrap = styled.header`
         font-weight: 600;
         margin-left:0px;
         padding-left:0px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       li:nth-last-child(2) {
         margin-bottom: auto;
@@ -172,6 +179,7 @@ const NavigationWrap = styled.header`
           display: block;
           .readmore-btn {
             color: ${props => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           &:before {
             content: none;
@@ -189,15 +197,54 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"};
+      border-left: 2px solid ${props => props.theme.grey3C3C3CToGreyF1F1F1};
       padding-top: 1em;
       padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       @media screen and (max-width: 992px) and (min-width: 912px) {
          padding: .5em;
        }
+    }
+
+    .single-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        .prometheus-partial-colorMode_svg__colorMode1,
+        .pod-partial-colorMode_svg__colorMode1,
+        .kubernetes-partial-colorMode_svg__colorMode1,
+        .ingress-gateway-partial-colorMode_svg__colorMode1 {
+          fill: ${props => props.theme.whiteToBlack};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .empty-colorMode_svg__colorMode1 {
+          fill: ${props => props.theme.whiteToGrey121212};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+      }
+    }
+
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+      p {
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+      h6 {
+        font-size: 15px;
+        line-height: 1.5rem;
+      }
+      a {
+        padding: 0%;
+      }
     }
   }
   @keyframes nav-bar-anim {
@@ -307,6 +354,7 @@ const NavigationWrap = styled.header`
       transition: 450ms all;
       padding: 0px 20px 0px 20px;
       cursor: pointer;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:before {
         content: "";
         position: absolute;
@@ -340,13 +388,22 @@ const NavigationWrap = styled.header`
           height: 1px;
           opacity: 0;
           background: ${props => props.theme.menuHoverColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
     }
   }
   .logo {
     margin-top: 8px;
-    transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
+    
+    svg {
+      width: 155px;
+      .layer5-colorMode_svg__colorMode1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${props => props.theme.whiteToGreen3C494F};
+      }
+    }
+    
     img {
       width: 155px;
     }
@@ -360,6 +417,7 @@ const NavigationWrap = styled.header`
       .nav-item{
         a {
           color:${props => props.theme.menuColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           &:hover {
             color: ${props => props.theme.menuHoverColor};
           }
@@ -394,6 +452,10 @@ const NavigationWrap = styled.header`
       width: 100%;
       display: block;
       margin-top: 7px;
+      svg {
+        width: 130px;
+      }
+      
       img {
         width: 130px;
       }
@@ -413,12 +475,13 @@ const NavigationWrap = styled.header`
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
+      background: ${props => props.theme.grey141414ToGreyFAFAFA};
       border-radius: 10px;
       box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
       max-height: 400px;
       overflow-y: scroll;
       scrollbar-width: thin;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .mobile-dropdown::-webkit-scrollbar{
       border-radius: 3px;
@@ -492,6 +555,7 @@ const NavigationWrap = styled.header`
 
   .nav-link-active {
     color: ${(props) => props.theme.menuHoverColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .anchor:before {
@@ -506,7 +570,7 @@ const NavigationWrap = styled.header`
     margin: 0 auto;
     padding: 1rem 1rem 0rem 1rem;
     &:hover{
-      box-shadow: ${props => props.theme.DarkTheme ? "0px 0px 8px -2px #bababa" : "0px 0px 8px -2px rgba(0, 0, 0, 0.25)"};
+      box-shadow: ${props => props.theme.boxShadowGreyBABABAtoBlackTwoFive};
       border-radius: 1rem;
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
@@ -517,6 +581,7 @@ const NavigationWrap = styled.header`
       }
       .post-title{
           color: ${props => props.theme.text};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
     a:before {
@@ -569,7 +634,7 @@ const NavigationWrap = styled.header`
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
-    transition: 450ms all;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover{
       color: ${props => props.theme.highlightLightColor};
 
@@ -599,6 +664,7 @@ const NavigationWrap = styled.header`
   }
   .dark-theme-toggle {
     /* margin-left: 2rem; */
+    visibility: ${props => typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
@@ -611,7 +677,7 @@ const NavigationWrap = styled.header`
     box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
     border-radius: 999px;
     color: #00B39F;
-    transition: all 500ms;
+    transition: all 300ms;
     vertical-align: middle;
   }
 
@@ -636,6 +702,81 @@ const NavigationWrap = styled.header`
     --color: #fa0;
   }
 
+  .transition-container {
+        margin: 0%;
+        max-width: 70%;
+        position: relative;
+        z-index: -1;
+    }
+
+
+    .ingress-gateway, .kubernetes, .pod, .prometheus, .supporting-arrows, .service-interface {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        scale: 0.7;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .supporting-arrows {
+        opacity: 0;
+        scale: 1;
+    }
+
+    .supporting-arrows-transition {
+        opacity: 1;
+        transition: 0.5s ease-out 0.75s;
+    }
+
+    .ingress-gateway {
+        translate: -40% 0;
+    }
+
+    .ingress-gateway-transition {
+        transform: translateX(40%);
+        scale: 1;
+        opacity: 1;
+        transition: 0.7s;
+    }
+
+    .kubernetes {
+        translate: 50% -30%;
+    }
+
+    .kubernetes-transition {
+        transform: translateX(-50%) translateY(30%);
+        scale: 1;
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+    .pod {
+        translate: 40% 30%;
+    }
+
+    .pod-transition {
+        transform: translateX(-40%) translateY(-30%);
+        scale: 1;
+        opacity: 1;
+        transition: 0.7s;
+    }
+
+    .prometheus {
+        translate: -50% 30%;
+    }
+
+    .prometheus-transition {
+        transform: translateX(50%) translateY(-30%);
+        scale: 1;
+        opacity: 1;
+        transition: 1s;
+    }
+
+    .service-interface {
+        scale: 1;
+        opacity: 1;
+    }
 `;
 
 export default NavigationWrap;

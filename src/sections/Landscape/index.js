@@ -21,10 +21,11 @@ import NonFunctional from "./non-functional";
 import Functional from "./functional";
 import SMI_Compatibility from "./smi";
 import Tools from "./tools";
+import "regenerator-runtime/runtime";
 
 const isBrowser = typeof window !== "undefined";
 
-const LandscapeGrid = ( { theme } ) => {
+const LandscapeGrid = () => {
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -84,7 +85,7 @@ const LandscapeGrid = ( { theme } ) => {
               <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
               </h2>
-              <ServiceMeshTimeline theme={theme} />
+              <ServiceMeshTimeline  />
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>

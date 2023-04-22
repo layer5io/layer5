@@ -26,26 +26,30 @@ const ContainerWrapper = styled.div`
     a.mute {
     text-decoration: none;
     color: ${(props) => props.theme.tertiaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover {
       color: ${(props) => props.theme.keppelColor};
     }
   }
   a.highlight {
     color: ${(props) => props.theme.primaryColor};
-    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
+    background-color: ${(props) => props.theme.grey232323ToGreyEEEEEE};
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     &:hover {
       color: ${(props) => props.theme.keppelColor};
     }
   }
   .highlight {
     color: ${(props) => props.theme.primaryColor};
-    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
+    background-color: ${(props) => props.theme.grey232323ToGreyEEEEEE};
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 `;
 

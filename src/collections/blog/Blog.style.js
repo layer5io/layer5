@@ -149,14 +149,14 @@ export const BlogWrapper = styled.div`
     width: 40%;
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};
   }
 
   .image-right {
     width: 40%;
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};
   }
   .image-right-no-shadow {
     width: 40%;
@@ -320,7 +320,7 @@ styles for meshmate-of-the-year-2020
 
   .slides{
     width: 45%;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
     margin-bottom: 1rem;
   }
   .slides-right{
@@ -329,7 +329,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     margin: 1rem 0 1rem 2rem;
     float: right;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
   }
   .slides-left {
     width: 45%;
@@ -337,7 +337,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     float: left;
     margin: 1rem 2rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
   }
   @media screen and (max-width: 768px) {
     .slides-right, .slides-left, .slides{

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
 import { Link } from "gatsby";
@@ -44,7 +44,7 @@ const Projects = () => {
         {partners.map((partner, index) => (
           <Link className="partner-card" to={partner.imageRoute} key={index}>
             <div className={partner.innerDivStyle}>
-              <img className="partner-image" loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
+              <img className="partner-image" id={partner.name} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
             </div>
           </Link>
         ))}

@@ -7,7 +7,7 @@ import Card from "./Card";
 import { Location } from "@reach/router";
 import Button from "../../../reusecore/Button";
 
-const Integrations = ({ theme }) => {
+const Integrations = () => {
   return (
     <IntegrationsWrapper>
       <Location>
@@ -15,7 +15,7 @@ const Integrations = ({ theme }) => {
           if (location.pathname !== "/") {
             return (
               <>
-                <IntegrationsGrid theme={theme} count={"All"} />
+                <IntegrationsGrid  count={"All"} />
                 <Card />
                 <FAQ category={["Meshery Integrations"]} />
               </>
@@ -23,9 +23,9 @@ const Integrations = ({ theme }) => {
           } else {
             return (
               <>
-                <IntegrationsGrid theme={theme} count={13} />
+                <IntegrationsGrid  count={13} />
                 <div style={{ marginTop: "20px" }}>
-                  <Button
+                  <Button className="seeAllBtn"
                     primary
                     title={"See All"}
                     url="/cloud-native-management/meshery/integrations/"

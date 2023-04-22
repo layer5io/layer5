@@ -129,7 +129,4 @@ const FaqSectionWrapper = styled.section`
      
     
 `;
-
-
-
 export default FaqSectionWrapper;

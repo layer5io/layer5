@@ -118,15 +118,12 @@ const MesheryFeatures = () => {
               id: "fourth" ,
               title: "Docker Extension for Meshery",
               description:
-                "Develop service mesh-ready apps using Docker Desktop and Meshery",
+                "Wrangle cloud native apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
                   <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
                   <p>
-                    The Docker Extension for Meshery extends Docker Desktop’s
-                    position as the cloud native developer’s go-to Kubernetes
-                    environment with easy access to the next layer of cloud
-                    native infrastructure: service meshes.
+                  From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
                   </p>
                 </div>
               ),

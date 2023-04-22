@@ -50,7 +50,8 @@ export const FeaturesWrapper = styled.div`
           // opacity: 1 !important;
           height: 0.65rem;
           width: 0.65rem;
-          fill: ${props => props.theme.DarkTheme ? "white" : "var(--gray-6)"};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          fill: ${props => props.theme.whiteToGreyB3B3B3};
         }
       }
     }
@@ -69,6 +70,7 @@ export const FeaturesWrapper = styled.div`
     }
 
     .feature {
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       border-left: 2px solid;
       border-color: ${props => props.theme.bodyRevert};
       padding-left: 44px;
@@ -82,11 +84,12 @@ export const FeaturesWrapper = styled.div`
     }
 
     .active-feature {
-      border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-color: ${props => props.theme.grey212121ToBlack};
       padding-top: 0;
       @media (min-width: 768px){
-        border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+        border-color: ${props => props.theme.grey212121ToBlack};
+        background-color: ${props => props.theme.grey212121ToBlack};
         border-radius: 20px;
         padding: 3rem 2.75rem 2rem 2.75rem;
       }
@@ -133,7 +136,7 @@ export const FeaturesWrapper = styled.div`
       box-shadow: none;
       color: ${props => props.theme.text};
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       :hover {
         color: #00b39f;
         transition: all 0.2s ease-in-out;
@@ -143,7 +146,11 @@ export const FeaturesWrapper = styled.div`
     .terminal-wrapper {
       & > div {
         max-width: 100%;
-        height: 430px;
+        @media (max-width: 768px) {
+            maxHeight: 330px;
+            height:330px;
+            overflow-y:scroll;
+        }
       }
 
       & > img {

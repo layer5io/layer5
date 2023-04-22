@@ -2,6 +2,7 @@ import React from "react";
 import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import CommonForm from "../../components/CommonForm";
+import Button from "../../reusecore/Button";
 
 const Kubernetes = "./kubernetes-logo.svg";
 const mesheryworkdiagram =
@@ -14,6 +15,7 @@ const dockerDesktop =
   "../../assets/images/docker-extension/docker-extension-meshery.png";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 const DockerExtensionMeshery = () => {
 
@@ -22,13 +24,10 @@ const DockerExtensionMeshery = () => {
       <Container>
         <Row className="dockerMesherySection">
           <h2 className="sectionTitle">
-            Develop service mesh-ready apps using Docker Desktop and Meshery
+            Wrangle cloud native apps using Docker Desktop and Meshery
           </h2>
           <p>
-            The Docker Extension for Meshery extends Docker Desktop’s position
-            as the cloud native developer’s go-to Kubernetes environment with
-            easy access to the next layer of cloud native infrastructure:
-            service meshes.
+          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
           </p>
         </Row>
         <Row>
@@ -49,10 +48,9 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Service mesh support for your Docker Compose apps</div> {" "}
+                <div className="feature-title">Kubernetes support for your Docker Compose apps</div> {" "}
                 <i>
-                  Import your Docker Compose apps. Configure and deploy them
-                  to Kubernetes and any service mesh.
+                 Import your Docker Compose apps. Configure and deploy them to Kubernetes and integrate into your GitOps pipeline.
                 </i>
               </Col>
             </Row>
@@ -60,10 +58,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                  Early access to the Docker Extension for Meshery that
-                  offers a visual topology for designing Docker Compose
-                  applications, operating Kubernetes, service meshes, and
-                  their workloads.
+                Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
@@ -97,7 +92,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Detection of Kubernetes environments</div> {" "}
                 <i>
-                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.
+                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another or manage all clusters concurrently.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
@@ -129,6 +124,8 @@ const DockerExtensionMeshery = () => {
             </Row>
           </Col>
           <Col md={6} sm={12}>
+            <p className="installButton">
+              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external="true" /></p>
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"

@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import CollaborationImg from "./../FeaturesSection/Collaborate/images/collab4-dark.svg";
+import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
     flex-direction: row;
-    /* background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+    /* background-color: ${props => props.theme.grey121212ToWhite};;
     max-width: 90%; */
     justify-content: center;
     /* align-items: center; */
@@ -23,11 +23,13 @@ const CollaborationFeatureWrapper = styled.div`
       transition: 0.5s;
       display: flex;
       flex-direction: row-reverse;
-      background-color: ${props => props.theme.DarkTheme ? "#121212" : "fff"};;
+      background-color: ${props => props.theme.grey121212ToWhite};;
       max-width: 90%;
+      height: fit-content;
       justify-content: space-between;
       align-items: center;
       padding: 2% 5% 8%;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       @media only screen and (max-width: 767px) {
         text-align: center;
         flex-direction: column-reverse;
@@ -60,6 +62,24 @@ const CollaborationFeatureWrapper = styled.div`
       transition: opacity ease-out 0.5s;
     }
 
+    svg {
+      opacity: 0;
+      transition: opacity ease-out 0.5s;
+      .collab4-colorMode_svg__colorMode1
+       {
+        fill: ${props => props.theme.whiteToBlack}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       }
+      .collab4-colorMode_svg__colorMode2{
+        fill: ${props => props.theme.greyB4B4B4ToGrey505050}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       }
+       .collab4-colorMode_svg__colorMode3{
+        fill: ${props => props.theme.blackToWhite}
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       }
+    }
+
     .visible {
       opacity: 1;
       transition: opacity ease-in 0.5s;
@@ -84,8 +104,8 @@ const CollaborationFeatureTeam = () => {
   return (
     <CollaborationFeatureWrapper>
       <div className="hero-div">
-        <div className="hero-image">
-          <img className={imageInView ? "visible" : ""} src={CollaborationImg} alt="" ref={locatorRef} />
+        <div className="hero-image" ref={locatorRef}>
+          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>

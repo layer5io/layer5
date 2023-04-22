@@ -56,6 +56,11 @@ export const DockerMesheryWrapper = styled.div`
         padding: 2rem 0rem;
     }
 
+    .installButton {
+      text-align: center;
+      margin: 4rem 4rem;
+
+    }
     @media only screen and (max-width: 1000px) {
       .docker-extension-meshery {
           margin-bottom: 2rem;

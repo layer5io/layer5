@@ -126,9 +126,6 @@ const Navigation = (props) => {
                             <span> {x.label}</span>
                             <span key={x.id}  className="total">({type.totalCount})</span>
                           </>
-
-
-
                     ))}
                   </label>
                 </li>
@@ -163,9 +160,6 @@ const Navigation = (props) => {
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({product.totalCount})</span>
                          </>
-
-
-
                     ))}
                   </label>
                 </li>
@@ -200,9 +194,6 @@ const Navigation = (props) => {
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({technology.totalCount})</span>
                          </>
-
-
-
                     ))}
 
                   </label>
@@ -238,9 +229,6 @@ const Navigation = (props) => {
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({mesh.totalCount})</span>
                          </>
-
-
-
                     ))}
 
                   </label>

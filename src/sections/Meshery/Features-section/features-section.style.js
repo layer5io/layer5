@@ -5,6 +5,7 @@ const FeaturesSectionWrapper = styled.section`
 	background-color: black;
 	transform: skew(0deg, -6deg);
 	padding-bottom:5rem;
+	margin-bottom: 10%;
 	.skw{
 		display: grid;
 		position: relative;
@@ -135,7 +136,7 @@ const FeaturesSectionWrapper = styled.section`
 						}
 					}
 				}
-				.slick-dots 
+				.slick-dots
 					li.slick-active {
 						opacity: 1;
 					}

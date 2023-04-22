@@ -70,6 +70,10 @@ top: calc(39vh - 249px);
     position: sticky;
     top: calc(60vh - 249px);
 
+    svg {
+      color: ${props => props.theme.text}
+    }
+
   @media (max-width: 1200px) {
      min-height: 17rem !important;
     }
@@ -120,7 +124,6 @@ top: calc(39vh - 249px);
   #design-image1 {
     max-width: 90%;
     z-index: 0;
-
   }
 
   #design-image2 {

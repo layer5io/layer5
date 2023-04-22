@@ -2,11 +2,13 @@ import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
     h3{
-        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.6)" : props.theme.primaryLightColor};  
+        color: ${props => props.theme.whiteSixToGreen3C494F};  
         margin: 0;
         padding: 0;
         font-weight: 500;
         text-align:center;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         img{
             width: 3rem;
             position: relative;
@@ -49,13 +51,14 @@ export const ProjectWrapper = styled.div`
         grid-auto-flow: row;
     }
     .project__card{
-        box-shadow: 0px 0px 10px ${props => props.theme.DarkTheme ? "#00d3a9" : "lightgrey"};
-        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        box-shadow: 0px 0px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
+        background-color: ${props => props.theme.grey212121ToWhite};
         border-radius: 0.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.6s;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
             background-color: ${props => props.theme.secondaryColor};
             img {

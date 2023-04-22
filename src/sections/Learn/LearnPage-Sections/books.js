@@ -8,20 +8,21 @@ import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+      box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
 
     }
     .book-heading {
         text-align: center;
         margin: 5rem 0
+        color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .books-card {
         display: flex;
         margin: 1rem auto;
         min-height: 15.5rem;
         max-width: 50.5rem;
-        transition: all 0.2s;
-        transition-timing-function: ease-in-out;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         .books-image {
             height: 12rem;
@@ -39,6 +40,11 @@ const BooksListWrapper = styled.div`
             margin: auto;
             h2 {
                 margin: 0.5rem 0;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            p{
+              color: ${props => props.theme.text};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
         .arrow_icon{
@@ -56,7 +62,7 @@ const BooksListWrapper = styled.div`
             padding: 0 0.75rem;
         }
         &:hover{
-            box-shadow: 0px 0px 20px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
+            box-shadow: 0px 0px 20px ${props => props.theme.whiteNineToBlackOne};
             .arrow_icon{
                 left: 0.2rem;
                 color: white;

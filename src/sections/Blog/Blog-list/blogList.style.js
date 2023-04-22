@@ -10,13 +10,12 @@ export const BlogPageWrapper = styled.div`
 		
 	}
 	.post-block{
-		background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+		background-color: ${props => props.theme.grey212121ToWhite};
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
-		
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.blog-lists{
 		margin-top: 5rem;
@@ -108,4 +107,5 @@ export const BlogPageWrapper = styled.div`
       align-items: center;
     }
   }
+  
 `;

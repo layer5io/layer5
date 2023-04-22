@@ -19,7 +19,7 @@ import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-
 import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
 
-const ProjectPage = ({ theme }) => {
+const ProjectPage = () => {
   return (
     <ProjectWrapper>
       <PageHeader
@@ -118,7 +118,7 @@ const ProjectPage = ({ theme }) => {
           <MeshMapCTA />
         </Container>
       </div>
-      <ProudMaintainers theme={theme} />
+      <ProudMaintainers  />
     </ProjectWrapper>
   );
 };
