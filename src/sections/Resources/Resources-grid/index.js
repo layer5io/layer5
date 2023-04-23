@@ -16,7 +16,15 @@ const ResourceGrid = (props) => {
       ? props.data.slice(indexOfFirstPost, indexOfLastPost)
       : props.data;
 
-  const paginate = (pageNumber) => props.setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    props.setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 200,
+      left: 100,
+      behavior: "smooth",
+    });
+
+  };
 
   return (
     <ResourcePageWrapper>
