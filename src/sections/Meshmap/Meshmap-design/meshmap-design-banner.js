@@ -47,6 +47,8 @@ const DesignBannerWrapper = styled.div`
             font-size: 7rem;
         } */
 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         @media only screen and (min-width: 500px) {
             span {
                 font-size: 3.5rem;
