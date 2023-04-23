@@ -429,7 +429,17 @@ const NavigationWrap = styled.header`
       margin-top: -34px;
     }
   }
-
+  @media only screen and (min-width:912px) and (max-width:994px){
+    .nav{
+      margin-left: 22px;
+    }
+    #login{
+      margin-right: 0;
+    }
+    .dark-theme-toggle{
+      margin:-5px;
+    }
+  }
   @media only screen and (max-width: 912px) {
     height: auto;
     min-height: 50px;
