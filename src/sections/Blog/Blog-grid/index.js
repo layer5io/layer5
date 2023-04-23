@@ -33,6 +33,11 @@ const BlogGrid = ({
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 150,
+      left: 100,
+      behavior: "smooth",
+    });
   };
   return (
     <BlogPageWrapper>
