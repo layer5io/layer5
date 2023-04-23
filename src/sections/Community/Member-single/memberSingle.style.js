@@ -102,6 +102,11 @@ export const MemberSingleWrapper = styled.div`
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
+
+        .social-bg {
+            margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
+        }
         
         .profile-social-links {
             display: flex;
