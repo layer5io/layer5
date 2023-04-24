@@ -16,7 +16,7 @@ const handbookHome = () => {
       <div className="community-home-container">
         <HandbookCard
           title="About"
-          description="Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings."
+          description="Layer5 offers cloud native application management by harnessing the power of a developer-friendly applications management system that supports visualization of the modern infrastructure leading to effective operation with best practices."
           to="/community/handbook/contributor-journey"
         />
 

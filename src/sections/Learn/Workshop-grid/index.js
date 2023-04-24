@@ -78,7 +78,7 @@ const WorkshopsPage = () => {
 
   return (
     <WorkshopPageWrapper>
-      <PageHeader title="Service Mesh Workshops"/>
+      <PageHeader title="Cloud Native Workshops"/>
       <h2 className="sub-heading">Over 5,000 engineers trained.</h2>
       <div className="workshop-page-wrapper">
         <Container>

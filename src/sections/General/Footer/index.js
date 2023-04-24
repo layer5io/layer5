@@ -68,7 +68,7 @@ const Footer = () => {
                       className="category-link"
                       to="/learn/service-mesh-workshops"
                     >
-                      Service Mesh Workshops
+                      Cloud Native Workshops
                     </Link>
                   </li>
                   <li>
