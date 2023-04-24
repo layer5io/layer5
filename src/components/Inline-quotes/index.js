@@ -44,8 +44,8 @@ text-align: center;
 }
 img{
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6vw;
+    height: 6vw;
 }
 
 .quote-source {
@@ -58,7 +58,7 @@ img{
    
     h5 {
         font-weight: bold;
-        width: 15rem;
+        width: 18vw;
         padding:0.1rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
@@ -67,7 +67,7 @@ img{
         }
     }
     p {
-        width: 16rem;
+        width: 18vw;
         @media screen and (max-width: 600px) {
             font-size: 0.75rem;
             line-height: 1.25rem;
