@@ -11,9 +11,10 @@ text-align: center;
 .quote-box {
     display: flex;
     flex-direction: row;
+    flex: 1 1 0;
     text-align: center;
     align-items: center;
-    padding: 5% 10%;
+    padding: 2rem;
     border: 2px solid transparent;
     border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to right bottom, #00b39f, #121212 80%)" : "linear-gradient(to right bottom, #00b39f, #fff 80%)"} ;
     border-image-slice: 1 0 1 1;
@@ -50,6 +51,7 @@ img{
 
 .quote-source {
     display: flex;
+    flex: 2 1 0;
     padding: 0 1rem;
     flex-direction: column;
     @media screen and (max-width: 500px) {
@@ -58,7 +60,7 @@ img{
    
     h5 {
         font-weight: bold;
-        width: 18vw;
+
         padding:0.1rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
@@ -67,7 +69,6 @@ img{
         }
     }
     p {
-        width: 18vw;
         @media screen and (max-width: 600px) {
             font-size: 0.75rem;
             line-height: 1.25rem;
