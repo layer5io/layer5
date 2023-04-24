@@ -31,7 +31,7 @@ const PopOutCardWrapper = styled.div`
   align-items: center ;
 
   h3 {
-    opacity: 0.4;
+    opacity: 0.5;
     color: white !important;
     font-weight: bold;
     margin-bottom: 0.6rem;
@@ -141,7 +141,10 @@ const PopOutCardWrapper = styled.div`
       :hover {
         transform: rotateZ(${-1 - 6 * props.index}deg)
           translate(-${props.index * 36}px, ${props.index * 5}px);
-      }
+        h3 {
+          opacity: 1;
+          transition: opacity .95s; 
+        }
     `}
 
 `;
