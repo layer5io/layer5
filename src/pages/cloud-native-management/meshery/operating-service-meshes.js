@@ -14,6 +14,7 @@ import { ReactComponent as GithubLogo } from "../../../assets/images/socialIcons
 import loadable from "@loadable/component";
 const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-meshery-works"));
 const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
+
 const OperatingServiceMeshes = () => {
   return (
     <>
@@ -109,6 +110,7 @@ const OperatingServiceMeshes = () => {
   );
 };
 export default OperatingServiceMeshes;
+
 export const Head = () => {
   return  <SEO title="Manage Meshery"
     description="How the cloud native management plane, Meshery works"
