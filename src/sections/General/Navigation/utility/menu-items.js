@@ -90,12 +90,20 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Catalog",
+          path: "https://meshery.io/catalog",
+        },
+        {
           name: "Docker Extension",
           path: "/docker-extension-meshery",
         },
         {
           name: "MeshMap",
           path: "/cloud-native-management/meshmap",
+        },
+        {
+          name: "Playground",
+          path: "https://play.meshery.io",
         },
         {
           name: "Nighthawk",
