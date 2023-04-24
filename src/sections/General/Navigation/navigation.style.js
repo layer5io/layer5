@@ -431,7 +431,7 @@ const NavigationWrap = styled.header`
   }
   @media only screen and (min-width:912px) and (max-width:992px){
     .nav{
-      margin-left: 22px;
+      margin-left: 1.375rem;
     }
     #login , #get-started-2 {
       margin:0;
