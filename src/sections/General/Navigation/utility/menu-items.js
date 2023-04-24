@@ -178,10 +178,10 @@ const Data = {
           actionName: "Join the discussion",
           actionLink: "https://discuss.layer5.io",
         },
-        {
-          actionName: "Free service mesh training",
-          actionLink: "/learn",
-        }
+        // {
+        //   actionName: "Free service mesh training",
+        //   actionLink: "/learn",
+        // }
       ],
       // div1: {
       //   src: meshery,
