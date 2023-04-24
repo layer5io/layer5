@@ -104,7 +104,7 @@ const Data = {
         },
         {
           name: "Service Mesh",
-          path: "/landscape",
+          path: "/service-mesh-landscape",
           sepLine: true
         },
         {
@@ -117,7 +117,7 @@ const Data = {
         },
         {
           name: "Landscape",
-          path: "/landscape",
+          path: "/service-mesh-landscape",
         },
         {
           name: "Performance",
