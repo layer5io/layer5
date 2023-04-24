@@ -39,9 +39,11 @@ export default function DesignerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
-            <div className="diagram scroll hideInMobile">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
-            </div>
+            <Link to="/cloud-native-management/meshmap/design">
+              <div className="diagram scroll hideInMobile">
+                <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              </div>
+            </Link>
             <ul className="features design-features">
               {features.map((feature, index) => (
                 <li className="design-feature-slide" key={index}>

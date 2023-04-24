@@ -38,9 +38,11 @@ export default function CollaboratorFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <div className="diagram scroll hideInMobile">
-              <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
-            </div>
+            <Link to="/cloud-native-management/meshmap/collaborate">
+              <div className="diagram scroll hideInMobile">
+                <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              </div>
+            </Link>
             <ul className="features collaborator-features">
               {features.map((feature, index) => (
                 <li className="collaborator-feature-slide" key={index}>
