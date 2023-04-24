@@ -28,8 +28,8 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Debopriya Bhattacharjee","Gaurav Chadha", "Nikhil Ladha", "Aditya Chatterjee"],
-        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
+        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha", "Shivam Sood"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/shivam-sood"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -37,8 +37,8 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Aditya Chatterjee"],
-        link: ["https://layer5.io/community/members/aditya-chatterjee"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/meshery/meshery.io",
       },
       {
@@ -46,8 +46,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Adithya Krishna"],
-        link: ["https://layer5.io/community/members/adithya-krishna"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
@@ -55,8 +55,8 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Gaurav Chadha","Nithish Karthik"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nithish-karthik"],
+        maintainers_name: ["Gaurav Chadha","Abhishek Kumar"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/abhishek-kumar"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
@@ -74,8 +74,8 @@ export const repo_data = [
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        maintainers_name: ["Aaditya Subedy"],
-        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
@@ -320,9 +320,6 @@ export const repo_data = [
       },
     ],
   },
-
-
-
   {
     category: "Meshery Adapter Repos",
     subdata: [

@@ -19,9 +19,11 @@ const PartnerWrapper = styled.section`
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        background-color:${props => props.theme.DarkTheme ? props.theme.elevationColor : props.theme.darkJungleGreenColor};
+        background-color:${props => props.theme.grey212121ToGreen1E2117};
         color: white;
         padding: 4rem 0;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         .partner-container-head{
             padding:2rem;
             text-align: center;
@@ -72,6 +74,25 @@ const PartnerWrapper = styled.section`
             height: 100%;
             width: 100%;
 
+        }
+        svg{
+            .cncf-stacked-colorMode_svg__colorMode1,
+            .hashicorp_vertical-colorMode_svg__colorMode1,
+            .hpe_side-colorMode_svg__colorMode1,
+            .microsoft-colorMode_svg__colorMode1,
+            .redhat-colorMode_svg__colorMode1,
+            .intel-colorMode_svg__colorMode1,
+            .vmware-colorMode_svg__colorMode1,
+            .istio-colorMode_svg__colorMode1
+            {
+                fill: ${props => props.theme.whiteToBlack}
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .smi-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.whiteToBlue2A2DDE}
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
         }
     }
 

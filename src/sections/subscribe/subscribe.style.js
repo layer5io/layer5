@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
 const SubscribeWrapper = styled.div`
-    background-color:${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
+    background-color:${props => props.theme.grey1D1D1DToGreyFAFAFA};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     h2{
         font-weight: 600;
         font-size:1.875rem;
         margin:1.25rem 0;
         color:${props => props.theme.text};
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
-        background: ${props => props.theme.DarkTheme ? "#1D1D1D" : "linear-gradient(123deg, white 60%, white 100%)"};
+        background: ${props => props.theme.grey1D1D1DToLinear2};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     
     input{
@@ -37,7 +40,7 @@ const SubscribeWrapper = styled.div`
         background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
     }
     #mc-embedded-subscribe:hover{
-        box-shadow: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"} 0px 2px 10px;
+        box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
     }
     @media only screen and (max-width: 1050px) {
         .email-cont{

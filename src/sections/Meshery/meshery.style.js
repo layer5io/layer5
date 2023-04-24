@@ -38,7 +38,9 @@ const MesheryWrapper = styled.section`
                 }
                 .banner-btn {
                     margin: 0rem 0.75rem 0 1rem;
-                    color: ${props => props.theme.DarkTheme ? "rgba(0,0,0,1.0)" : "rgba(255, 255, 255, 1.0)"};  
+                    color: ${props => props.theme.blackToWhite}; 
+                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+                     
                     .button-icon{
                         margin-right: 0.625rem;
                     }    

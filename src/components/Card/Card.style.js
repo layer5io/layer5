@@ -4,11 +4,12 @@ export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
         border-radius: 0.5rem;
-        background-Color:${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-        box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
-        transition: all 0.3s ease-in;
+        background-Color:${props => props.theme.grey212121ToWhite};
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
-            box-shadow: 0px 2px 15px 4px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
@@ -25,7 +26,7 @@ export const CardWrapper = styled.div`
     }
     .readmore-btn{
         color: ${props => props.theme.secondaryColor};
-
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width:776px){
 		.post-block{
@@ -101,10 +102,11 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+            color: ${props => props.theme.whiteSixToBlackSix};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .type{
             text-align: end;
@@ -128,11 +130,12 @@ export const CardWrapper = styled.div`
         bottom: 0;
     }
     .readmore-btn, .external-link-btn{
-       color: ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+       color: ${props => props.theme.whiteFourToBlackFour};
        display: flex;
        flex: auto;
        align-items: center;
-       transition: all 0.3s ease-in;
+       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       
        svg{
            font-size: 1.5rem;
            transition: all 0.3s;

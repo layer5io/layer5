@@ -8,9 +8,6 @@ import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "re
 import { Link } from "gatsby";
 import Button from "../../../reusecore/Button";
 import AboutTheAuthorWrapper from "./author.style";
-
-
-
 const AboutTheAuthor = (props) => {
   const { authorInformation, shareQuote } = props;
   const location = useLocation();

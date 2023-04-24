@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-import { ThemeProvider } from "styled-components";
-import Layout from "../components/layout";
+
+
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
+
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
-import Footer from "../sections/General/Footer";
-import { GlobalStyle } from "../sections/app.style";
-import lighttheme, { darktheme } from "../theme/app/themeStyles";
+
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!) {
@@ -40,20 +38,17 @@ export const query = graphql`
   }
 `;
 const Integrations = ({ data }) => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
+
 
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <Layout>
-        <GlobalStyle />
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <IndividualIntegrations theme={theme} data={data} />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <>
+
+
+      <IndividualIntegrations  data={data} />
+
+    </>
+
   );
 };
 export default Integrations;

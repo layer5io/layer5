@@ -13,10 +13,9 @@ const CardOutlineWrapper = styled.div`
         padding: 1rem 2rem;
         text-align: center;
         position: relative;
-        background: ${props => props.theme.DarkTheme ? "#212121" : "rgba(255, 255, 255, 1)"};
-
+        background: ${props => props.theme.grey212121ToWhite};
         border: 1px solid ${props => props.theme.secondaryColor};
-        transition: all 0.2s ease-in-out;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         .card-image {
             height: 7rem;
@@ -34,7 +33,8 @@ const CardOutlineWrapper = styled.div`
         }
 
         .card-content {
-            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+            color: ${props => props.theme.whiteSevenToBlackSeven};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         &:hover {

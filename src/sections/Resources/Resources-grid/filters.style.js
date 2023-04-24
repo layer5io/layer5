@@ -11,6 +11,8 @@ export const ResourceNavigationWrapper = styled.div`
       font-size: 0.9rem;
       color: ${(props) => props.theme.primaryColor};
       cursor: pointer;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
       .clear-icon{
         vertical-align: middle;
         width: 1rem; 
@@ -106,7 +108,9 @@ input[type="checkbox"] {
         
           .total{
             float: right;
-            color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
+            color: ${props => props.theme.grey737373ToGreyB3B3B3};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
             &:hover{
                   color: ${props => props.theme.secondaryColor}; 
                   border-color: ${props => props.theme.secondaryColor}; 
@@ -218,9 +222,6 @@ input[type="checkbox"] {
         height: 1.2rem;
       }
      }
-
-     
-    
            
 `;
 

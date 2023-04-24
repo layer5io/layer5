@@ -19,8 +19,9 @@ import { useLocation } from "@reach/router";
 import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 import AboutTheAuthor from "./author";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const BlogSingle = ({ theme, data }) => {
+const BlogSingle = ({ data }) => {
   const location = useLocation();
   const { frontmatter, body, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
@@ -90,6 +91,7 @@ const BlogSingle = ({ theme, data }) => {
     .getPosts();
 
   const [copied, setCopied] = useState(false);
+  const { isDark } = useStyledDarkMode();
 
   useEffect(() => {
     if (copied) {
@@ -113,10 +115,9 @@ const BlogSingle = ({ theme, data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
-            theme={theme}
           />
           <div className="single-post-wrapper">
             <SRLWrapper>

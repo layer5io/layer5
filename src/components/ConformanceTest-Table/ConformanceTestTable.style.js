@@ -11,13 +11,14 @@ table {
     width: 100%;
   
     td {
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         padding: 0.3rem;
         height: 4rem;
         text-align: center;
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        border-bottom: 1px solid ${props => props.theme.grey212121ToWhite};
 
     }
     th {
@@ -30,16 +31,19 @@ table {
     }
   
     tr {
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		:nth-child(odd) {
-			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+			background: ${props => props.theme.grey212121ToWhite};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+				border-right: 1px solid ${props => props.theme.grey212121ToWhite};
 			}
 		}
 		:nth-child(even) {
-			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+			background: ${props => props.theme.grey121212ToGreyEFEFEF};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+				border-right: 1px solid ${props => props.theme.grey121212ToGreyEFEFEF};
 			}
 		}
 		:last-child {

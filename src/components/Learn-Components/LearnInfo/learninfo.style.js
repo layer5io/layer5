@@ -8,8 +8,9 @@ const InfoWrapper = styled.div`
     margin: auto;
     .col {
       p {
-        color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)"};
+        color: ${props => props.theme.whiteSevenToBlackSeven};
         margin: 1rem auto;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       @media screen and (max-width: 992px) {

@@ -16,7 +16,15 @@ const ResourceGrid = (props) => {
       ? props.data.slice(indexOfFirstPost, indexOfLastPost)
       : props.data;
 
-  const paginate = (pageNumber) => props.setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    props.setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 200,
+      left: 100,
+      behavior: "smooth",
+    });
+
+  };
 
   return (
     <ResourcePageWrapper>
@@ -37,7 +45,6 @@ const ResourceGrid = (props) => {
           {searchedResource.map(({ id, frontmatter, fields }) => (
             <Col key={id} xs={12} sm={6} xl={4}>
               <Card
-                theme={props.theme}
                 frontmatter={frontmatter}
                 fields={fields}
               />

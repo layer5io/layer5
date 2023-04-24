@@ -28,9 +28,10 @@ const PopOutCardWrapper = styled.div`
     0.53,
     1.105
   ); /* custom */
+  align-items: center ;
 
   h3 {
-    opacity: 0.4;
+    opacity: 0.5;
     color: white !important;
     font-weight: bold;
     margin-bottom: 0.6rem;
@@ -43,6 +44,8 @@ const PopOutCardWrapper = styled.div`
   .img {
     visibility: hidden;
     width: 0;
+    text-align: center;
+    max-width: 60%;
     // margin-block: auto;
   }
 
@@ -91,12 +94,12 @@ const PopOutCardWrapper = styled.div`
       @media only screen and (max-width: 1400px) {
         transform: rotateZ(0deg) translate(-40vw, 0);
         width: 820px;
-        padding: 2rem;
+        padding: 1.25rem;
       }
       @media only screen and (max-width: 1300px) {
         transform: rotateZ(0deg) translate(-42vw, 0);
         width: 820px;
-        padding: 2rem;
+        padding: 1.25rem;
       }
 
       @media only screen and (max-width: 1200px) {
@@ -109,7 +112,7 @@ const PopOutCardWrapper = styled.div`
         p {
           font-size: 18px;
         }
-  
+
         .img {
           margin-inline: auto;
           // width: 60%;
@@ -126,7 +129,7 @@ const PopOutCardWrapper = styled.div`
         height: 440px;
         .img {
           margin-inline: auto;
-          max-width: 80%;  
+          max-width: 100%;
           padding-left: unset;
         }
       }
@@ -138,7 +141,10 @@ const PopOutCardWrapper = styled.div`
       :hover {
         transform: rotateZ(${-1 - 6 * props.index}deg)
           translate(-${props.index * 36}px, ${props.index * 5}px);
-      }
+        h3 {
+          opacity: 1;
+          transition: opacity .95s; 
+        }
     `}
 
 `;

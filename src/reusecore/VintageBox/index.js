@@ -59,9 +59,6 @@ const VintageBox = ({ children, ...props }) => {
     </BoxWrapper>
   );
 };
-
-
-
 VintageBox.propTypes = {
   children: PropTypes.any.isRequired
 };

@@ -89,8 +89,8 @@ export const CourseOverviewWrapper = styled.div`
 
   .course-toc {
     margin-top: 1.75rem;
-    color: ${props => props.theme.DarkTheme ? "rga(255, 255, 255, 0.6)" : "rga(0, 0, 0, 0.6)"};
-b
+    color: ${props => props.theme.whiteSixToBlackSix};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .service-meshes-you-can-learn,

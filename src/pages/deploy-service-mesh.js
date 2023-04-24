@@ -1,36 +1,17 @@
-import React, { useState } from "react";
-
-import { ThemeProvider } from "styled-components";
-
-import Layout from "../components/layout";
+import React from "react";
 
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
-import Footer from "../sections/General/Footer";
-import { GlobalStyle } from "../sections/app.style";
-import DeployServiceMesh from "../sections/DeployServiceMesh/index";
-import { darktheme } from "../theme/app/themeStyles";
-import lighttheme from "../theme/app/themeStyles";
-const DeployServiceMeshPage = () => {
-  const [theme, setTheme] = useState();
-  const themeSetter = (thememode) => {
-    setTheme(thememode);
-  };
 
+import DeployServiceMesh from "../sections/DeployServiceMesh/index";
+const DeployServiceMeshPage = () => {
   return (
-    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
-      <GlobalStyle />
-      <Layout>
-        <Navigation theme={theme} themeSetter={themeSetter} />
-        <DeployServiceMesh />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <DeployServiceMesh />
+
+    </>
   );
 };
 export default DeployServiceMeshPage;
-
-
 export const Head = () => {
   return <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />;
 };
