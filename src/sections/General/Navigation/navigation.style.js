@@ -373,6 +373,9 @@ const NavigationWrap = styled.header`
         }
       }
     }
+    a{
+      align-items: center;
+    }
     .menu-link {
       margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
@@ -626,12 +629,14 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;
   }
   .post-title{
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
