@@ -12,21 +12,26 @@ const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 
-// Replacing '/' would result in empty string which is invalid
-const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
-  const oldPage = Object.assign({}, page);
-  // Remove trailing slash unless page is /
-  page.path = replacePath(page.path);
-  if (page.path !== oldPage.path) {
+if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "local") {
+
+  // Replacing '/' would result in empty string which is invalid
+  const replacePath = (url) => ((url === "/" || url.includes("/404")) ? url : `${url}.html`);
+
+  exports.onCreatePage = ({ page, actions }) => {
+    const { createPage, deletePage, createRedirect } = actions;
+    const oldPage = Object.assign({}, page);
+    page.matchPath = page.path;
+    page.path = replacePath(page.path);
+    if (page.path !== oldPage.path) {
     // Replace new page with old page
-    deletePage(oldPage);
-    createPage(page);
-  }
-};
+      deletePage(oldPage);
+      createPage(page);
+
+      createRedirect({ fromPath: `/${page.matchPath}`, toPath: `/${page.matchPath}`, redirectInBrowser: true, isPermanent: true });
+    }
+  };
+}
+
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
 
@@ -62,6 +67,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create Pages
   const { createPage } = actions;
+
+  const envCreatePage = (props) => {
+    if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "local"){
+      const { path, ...rest } = props;
+
+      createRedirect({ fromPath: `/${path}`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
+
+      return createPage({
+        path: `${path}.html`,
+        matchPath: path,
+        ...rest
+      });
+    }
+    return createPage(props);
+  };
+
+
   const blogPostTemplate = path.resolve(
     "src/templates/blog-single.js"
   );
@@ -266,7 +288,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   blogs.forEach(blog => {
-    createPage({
+    envCreatePage({
       path: blog.fields.slug,
       component: blogPostTemplate,
       context: {
@@ -277,7 +299,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
-    createPage({
+    envCreatePage({
       path: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
@@ -288,7 +310,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    createPage({
+    envCreatePage({
       path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
       context: {
@@ -298,7 +320,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   resources.forEach(resource => {
-    createPage({
+    envCreatePage({
       path: resource.fields.slug,
       component: resourcePostTemplate,
       context: {
@@ -308,7 +330,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   news.forEach(singleNews => {
-    createPage({
+    envCreatePage({
       path: singleNews.fields.slug,
       component: NewsPostTemplate,
       context: {
@@ -318,7 +340,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   books.forEach(book => {
-    createPage({
+    envCreatePage({
       path: book.fields.slug,
       component: BookPostTemplate,
       context: {
@@ -328,7 +350,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   events.forEach(event => {
-    createPage({
+    envCreatePage({
       path: event.fields.slug,
       component: EventTemplate,
       context: {
@@ -338,7 +360,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   programs.forEach(program => {
-    createPage({
+    envCreatePage({
       path: program.fields.slug,
       component: ProgramPostTemplate,
       context: {
@@ -348,7 +370,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   careers.forEach(career => {
-    createPage({
+    envCreatePage({
       path: career.fields.slug,
       component: CareerPostTemplate,
       context: {
@@ -358,7 +380,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   members.forEach(member => {
-    createPage({
+    envCreatePage({
       path: member.fields.slug,
       component: MemberTemplate,
       context: {
@@ -369,7 +391,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const MemberBio = res.data.memberBio.nodes;
   MemberBio.forEach(memberbio => {
-    createPage({
+    envCreatePage({
       path: `${memberbio.fields.slug}/bio`,
       component: MemberBioTemplate,
       context: {
@@ -379,7 +401,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   singleWorkshop.forEach(workshop => {
-    createPage({
+    envCreatePage({
       path: workshop.fields.slug,
       component: WorkshopTemplate,
       context: {
@@ -389,7 +411,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   labs.forEach(lab => {
-    createPage({
+    envCreatePage({
       path: lab.fields.slug,
       component: LabTemplate,
       context: {
@@ -399,7 +421,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   integrations.forEach((integration) => {
-    createPage({
+    envCreatePage({
       path: `/cloud-native-management/meshery${integration.fields.slug}`,
       component: integrationTemplate,
       context: {
@@ -418,7 +440,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       return false;
     } else {
       programsArray.push(program.frontmatter.program);
-      createPage({
+      envCreatePage({
         path: `/programs/${program.frontmatter.programSlug}`,
         component: MultiProgramPostTemplate,
         context: {
@@ -435,22 +457,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const { pageType } = node.fields;
 
       if (pageType === "learnpath") {
-        createCoursesListPage({ createPage, node });
+        createCoursesListPage({ envCreatePage, node });
         return;
       }
 
       if (pageType === "course") {
-        createCourseOverviewPage({ createPage, node });
+        createCourseOverviewPage({ envCreatePage, node });
         return;
       }
 
       if (pageType === "chapter") {
-        createChapterPage({ createPage, node });
+        createChapterPage({ envCreatePage, node });
         return;
       }
 
       if (pageType === "section") {
-        createSectionPage({ createPage, node });
+        createSectionPage({ envCreatePage, node });
         return;
       }
     }
@@ -562,7 +584,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       const slug = createFilePath({
         node,
         getNode,
-        basePath: "content-learn"
+        basePath: "content-learn",
+        trailingSlash: false
       });
 
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -591,10 +614,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-const createCoursesListPage = ({ createPage, node }) => {
+const createCoursesListPage = ({ envCreatePage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
 
-  createPage({
+  envCreatePage({
+
     path: `${slug}`,
     component: path.resolve("src/templates/courses-list.js"),
     context: {
@@ -607,7 +631,7 @@ const createCoursesListPage = ({ createPage, node }) => {
   });
 };
 
-const createCourseOverviewPage = ({ createPage, node }) => {
+const createCourseOverviewPage = ({ envCreatePage, node }) => {
   const {
     learnpath,
     slug,
@@ -616,7 +640,8 @@ const createCourseOverviewPage = ({ createPage, node }) => {
     permalink,
   } = node.fields;
 
-  createPage({
+  envCreatePage({
+
     path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
     context: {
@@ -629,7 +654,7 @@ const createCourseOverviewPage = ({ createPage, node }) => {
   });
 };
 
-const createChapterPage = ({ createPage, node }) => {
+const createChapterPage = ({ envCreatePage, node }) => {
   const {
     learnpath,
     slug,
@@ -640,7 +665,8 @@ const createChapterPage = ({ createPage, node }) => {
     permalink,
   } = node.fields;
 
-  createPage({
+  envCreatePage({
+
     path: `${slug}`,
     component: path.resolve("src/templates/learn-chapter.js"),
     context: {
@@ -655,7 +681,7 @@ const createChapterPage = ({ createPage, node }) => {
   });
 };
 
-const createSectionPage = ({ createPage, node }) => {
+const createSectionPage = ({ envCreatePage, node }) => {
   const {
     learnpath,
     slug,
@@ -665,7 +691,8 @@ const createSectionPage = ({ createPage, node }) => {
     permalink,
   } = node.fields;
 
-  createPage({
+  envCreatePage({
+
     path: `${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
     context: {

@@ -32,6 +32,7 @@
     "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@randychilau/gatsby-plugin-meta-redirect": "^1.2.5",
     "@react-icons/all-files": "^4.1.0",
     "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^6.5.1",
