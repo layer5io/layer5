@@ -630,13 +630,11 @@ const NavigationWrap = styled.header`
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-start;
-    align-items: center;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;
   }
   .post-title{
-    text-align: center;
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
