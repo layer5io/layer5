@@ -94,12 +94,12 @@ const PopOutCardWrapper = styled.div`
       @media only screen and (max-width: 1400px) {
         transform: rotateZ(0deg) translate(-40vw, 0);
         width: 820px;
-        padding: 2rem;
+        padding: 1.25rem;
       }
       @media only screen and (max-width: 1300px) {
         transform: rotateZ(0deg) translate(-42vw, 0);
         width: 820px;
-        padding: 2rem;
+        padding: 1.25rem;
       }
 
       @media only screen and (max-width: 1200px) {
@@ -129,7 +129,7 @@ const PopOutCardWrapper = styled.div`
         height: 440px;
         .img {
           margin-inline: auto;
-          max-width: 80%;
+          max-width: 100%;
           padding-left: unset;
         }
       }

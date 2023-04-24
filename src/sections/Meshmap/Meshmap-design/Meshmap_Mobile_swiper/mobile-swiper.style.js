@@ -47,7 +47,7 @@ const SwiperContainer = styled.div`
 
 
   height:64vh;
-  padding:2rem;
+  padding:1rem;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -55,9 +55,9 @@ const SwiperContainer = styled.div`
   justify-content: center;
 }
 .card img{
-  height:200px;
-  width:300px;
-  margin-left: 1.5rem;
+  height:40%;
+  width:100%;
+  /* margin-left: 1.5rem; */
 }
 .card h2{
   text-align: center;
@@ -73,8 +73,8 @@ const SwiperContainer = styled.div`
 }
 @media (max-width:670px){
 .card img{
-  height:150px;
-  width:250px;
+  height:40%;
+  width:100%;
 }
 }
 
@@ -106,8 +106,8 @@ const SwiperContainer = styled.div`
       padding: 1rem;
     }
     .card img{
-      height:80px;
-      width:150px;
+      max-height:30%;
+      width:100%;
       margin-left: 0.5rem !important;
     }
     /* h2{
