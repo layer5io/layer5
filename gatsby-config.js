@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /* eslint-env node */
 module.exports = {
   siteMetadata: {
@@ -14,6 +18,7 @@ module.exports = {
     FAST_DEV: true,
     PARALLEL_SOURCING: true
   },
+  trailingSlash: "never",
   plugins: [
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
@@ -518,7 +523,12 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
-    "gatsby-plugin-meta-redirect", // make sure this is always the last one
+    {
+      resolve: "@randychilau/gatsby-plugin-meta-redirect",
+      options: {
+        host: process.env.GATSBY_BUILD_HOST || "",
+      }
+    }
   ],
 
 };
