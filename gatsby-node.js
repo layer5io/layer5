@@ -5,7 +5,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-
 const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
