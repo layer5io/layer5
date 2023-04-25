@@ -373,6 +373,9 @@ const NavigationWrap = styled.header`
         }
       }
     }
+    a{
+      align-items: center;
+    }
     .menu-link {
       margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
@@ -429,7 +432,15 @@ const NavigationWrap = styled.header`
       margin-top: -34px;
     }
   }
-
+  @media only screen and (min-width:912px) and (max-width:992px){
+    .nav{
+      margin-left: 1.375rem;
+    }
+    #login , #get-started-2 {
+      margin:0;
+    }
+    
+  }
   @media only screen and (max-width: 912px) {
     height: auto;
     min-height: 50px;
@@ -618,7 +629,7 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;

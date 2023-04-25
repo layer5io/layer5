@@ -59,3 +59,5 @@ area/packages:
   - "package-*.js"
 project/meshery:
   - "src/collections/integrations/**/*"
+project/meshmap:
+  - "src/sections/Meshmap/**/*"
