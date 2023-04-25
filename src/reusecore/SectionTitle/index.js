@@ -34,11 +34,13 @@ h2{
     font-size: 40px;
     font-weight: 300;
     line-height: 50px;
-    color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
+    color: ${props => props.theme.whiteToBlack};
     margin: 0 0 75px 0;
     span{
         font-weight: 600;
+        color: #3C494F;
     }
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @media only screen and (max-width: 912px) {
     width: 100%;

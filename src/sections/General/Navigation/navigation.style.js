@@ -406,10 +406,6 @@ const NavigationWrap = styled.header`
         fill: ${props => props.theme.whiteToGreen3C494F};
       }
     }
-    
-    img {
-      width: 155px;
-    }
     @media screen and (max-width: 992px) and (min-width: 912px) {
       width: 125px;
     }
