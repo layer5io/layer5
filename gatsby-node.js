@@ -13,15 +13,20 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 
 if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "local") {
-
+  console.log("github pages", process.env.GATSBY_BUILD_HOST);
   // Replacing '/' would result in empty string which is invalid
-  const replacePath = (url) => ((url === "/" || url.includes("/404")) ? url : `${url}.html`);
+  const replacePath = (url) => (url === "/" || url.includes("/404")) ? url : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
     const oldPage = Object.assign({}, page);
     page.matchPath = page.path;
     page.path = replacePath(page.path);
+
+    console.log("oldpage", oldPage.path);
+    console.log("replacePath", page.path);
+    console.log("matchPath", page.matchPath);
+
     if (page.path !== oldPage.path) {
     // Replace new page with old page
       deletePage(oldPage);
