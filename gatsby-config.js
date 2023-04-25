@@ -523,7 +523,7 @@ module.exports = {
     {
       resolve: "@randychilau/gatsby-plugin-meta-redirect",
       options: {
-        host: process.env.GATSBY_BUILD_HOST || "",
+        ci: process.env.CI,
       }
     }
     // make sure this is always the last one
