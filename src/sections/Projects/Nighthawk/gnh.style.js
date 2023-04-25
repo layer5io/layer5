@@ -28,6 +28,9 @@ export const Gnhwrapper = styled.section`
                 width: 70%;
             }
             padding-top: 3.125rem;
+            h1{
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
             p{
                 color: ${props => props.theme.tertiaryColor};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -56,6 +59,7 @@ export const Gnhwrapper = styled.section`
         }
         h1 {
             padding: 1.25rem 0px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         img {
             display: block;
@@ -84,6 +88,7 @@ export const Gnhwrapper = styled.section`
                 font-weight: 700;
                 font-size: 40px;
                 padding: 1.25rem 0px;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             p{
                 color: ${props => props.theme.tertiaryColor};
@@ -109,6 +114,7 @@ export const Gnhwrapper = styled.section`
               font-size: 2rem;
               font-weight: 700;
               padding: 1.25rem 0px;
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           p{
             color: ${props => props.theme.tertiaryColor};
@@ -145,6 +151,7 @@ export const Gnhwrapper = styled.section`
 
                     h4{
                         font-weight: 600;
+                        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     }
                 }
             }
@@ -230,6 +237,7 @@ export const CardsContainer = styled.div`
             font-size: 24px;
             text-transform:uppercase;
             margin-top: 10px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .circle {
             border-radius: 50%;
