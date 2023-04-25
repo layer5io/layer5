@@ -238,10 +238,20 @@ const Navigation = () => {
                             className="mobile-nav-subitem"
                           >
                             {subItems.name === "Forum" ?
-                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="mobile-sub-menu-item" rel="noreferrer">
+                              <a href={subItems.path} target="_blank" onClick={
+                                function (){
+                                  changeDropdownState();
+                                  closeDropDown();
+                               }
+                              } className="mobile-sub-menu-item" rel="noreferrer">
                                 {subItems.name}
                               </a>
-                              : <Link to={subItems.path} onClick={changeDropdownState} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
+                              : <Link to={subItems.path} onClick={
+                                function (){
+                                  changeDropdownState();
+                                  closeDropDown();
+                               }
+                              } className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
                             }
                           </li>
                         ))}
