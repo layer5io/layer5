@@ -5,15 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-
 const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 
-if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "local") {
-  console.log("github pages", process.env.GATSBY_BUILD_HOST);
+if (process.env.GATSBY_BUILD_HOST !== "local") {
   // Replacing '/' would result in empty string which is invalid
   const replacePath = (url) => (url === "/" || url.includes("/404")) ? url : `${url}.html`;
 
@@ -22,10 +20,6 @@ if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "
     const oldPage = Object.assign({}, page);
     page.matchPath = page.path;
     page.path = replacePath(page.path);
-
-    console.log("oldpage", oldPage.path);
-    console.log("replacePath", page.path);
-    console.log("matchPath", page.matchPath);
 
     if (page.path !== oldPage.path) {
     // Replace new page with old page
@@ -74,7 +68,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
-    if (process.env.NODE_ENV === "production" && process.env.GATSBY_BUILD_HOST !== "local"){
+    if (process.env.GATSBY_BUILD_HOST !== "local"){
       const { path, ...rest } = props;
 
       createRedirect({ fromPath: `/${path}`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
