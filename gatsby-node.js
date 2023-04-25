@@ -26,7 +26,7 @@ if (process.env.GATSBY_BUILD_HOST !== "local") {
       deletePage(oldPage);
       createPage(page);
 
-      createRedirect({ fromPath: `/${page.matchPath}`, toPath: `/${page.matchPath}`, redirectInBrowser: true, isPermanent: true });
+      createRedirect({ fromPath: `/${page.matchPath}/`, toPath: `/${page.matchPath}`, redirectInBrowser: true, isPermanent: true });
     }
   };
 }
@@ -71,7 +71,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     if (process.env.GATSBY_BUILD_HOST !== "local"){
       const { path, ...rest } = props;
 
-      createRedirect({ fromPath: `/${path}`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
+      createRedirect({ fromPath: `/${path}/`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
 
       return createPage({
         path: `${path}.html`,
