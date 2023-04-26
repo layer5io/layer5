@@ -30,6 +30,11 @@ import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.png";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.png";
 import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
+import Kaur from "../../sections/Pricing/reviews/kaur-kallas.jpg";
+import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
+import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
+import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
+
 
 const Meshmap = () => {
 
@@ -107,7 +112,8 @@ const Meshmap = () => {
           <InlineQuotes
             person="Kaur Kallas"
             title="Software Architect at Entigo"
-            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team." />
+            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
+            image={Kaur}/>
           <VisualizerFeatures
             features={
               [
@@ -129,7 +135,8 @@ const Meshmap = () => {
           <InlineQuotes
             quote="Guys, I love MeshMap! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
-            title="Networks & Systems Engineer at AYRADE" />
+            title="Networks & Systems Engineer at AYRADE"
+            image={Ala}/>
 
           <CollaboratorFeatures
             features={
@@ -226,13 +233,15 @@ const Meshmap = () => {
               ]} />*/}
           <InlineQuotes
             quote="MeshMap is unreal. Support for air-gapped deployments is all the better, too."
-            person="Phillip"
-            title="Solutions Architect at Raymond James Financial, Inc." />
+            person="Phillip Ulberg"
+            title="Solutions Architect at Raymond James Financial, Inc."
+            image={Phillip} />
           <Catalog />
           <InlineQuotes
             quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
             person="Alex"
-            title="Infrastructure Engineering at Docker, Inc." />
+            title="Infrastructure Engineering at Docker, Inc."
+            image={Alex} />
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />

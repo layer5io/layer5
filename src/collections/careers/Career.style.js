@@ -7,10 +7,14 @@ export const CareerWrapper = styled.div`
         p {
             margin-top: 0.25rem;
         }
+        h3 {
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
     }
     .body-headers {
         margin: 1rem 0;
         width: fit-content;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         :after {
             content: '';
             position: absolute;
@@ -57,6 +61,7 @@ export const CareerWrapper = styled.div`
             
             h5 {
                 font-weight: 600;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             p {
                 margin: 0 0 0 0.35rem;

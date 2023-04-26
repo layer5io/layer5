@@ -196,7 +196,7 @@ const Writers = () => {
               <li><a href="https://github.com/layer5io/layer5/labels/area%2Fblog">View open Writing Program issues</a></li>
               <li>Join the <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a></li>
               <li>Explore our <Link to="/resources">Resource Library</Link></li>
-              <li><Link to="/learn">Free service mesh training</Link></li>
+              <li><Link to="/learn">Learn Cloud Native</Link></li>
             </ul>
 
             <TocPagination />

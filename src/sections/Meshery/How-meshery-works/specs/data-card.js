@@ -28,6 +28,7 @@ const DataCardWrapper = styled.div`
       }
       h5{
         font-weight: 600;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
      }
      

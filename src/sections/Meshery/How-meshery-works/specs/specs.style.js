@@ -27,7 +27,7 @@ const SpecsWrapper = styled.div`
         padding-bottom: 1rem;
         z-index: 2;
       }
-      
+
       &:before{
         content: ' ';
         display: block;
@@ -54,6 +54,7 @@ const SpecsWrapper = styled.div`
     h3{
       font-weight: 600;
       margin-bottom: 1rem;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
    
@@ -81,6 +82,7 @@ const SpecsWrapper = styled.div`
       margin: 10rem 0;
       h3{
         font-weight: 600;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       p{
         margin: 1rem 0;
