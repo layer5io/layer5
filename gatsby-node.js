@@ -10,6 +10,8 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const { exists, writeFile, ensureDir } = require("fs-extra");
+const getMetaRedirect = require("./third_party/getMetaRedirect");
 
 if (process.env.CI) {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
@@ -488,7 +490,7 @@ const onCreatePathNode = ({ actions, node, slug }) => {
   const [learnpath] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "slug", value: `/learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "pageType", value: "learnpath" });
 };
@@ -499,7 +501,7 @@ const onCreateCourseNode = ({ actions, node, slug }) => {
   const [learnpath, course] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "slug", value: `/learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "pageType", value: "course" });
@@ -511,7 +513,7 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   const [learnpath, course, section] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "slug", value: `/learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -524,7 +526,7 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const [learnpath, course, section, chapter] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
+  createNodeField({ node, name: "slug", value: `/learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
@@ -733,4 +735,52 @@ exports.createSchemaCustomization = ({ actions }) => {
      }
    `;
   createTypes(typeDefs);
+};
+
+
+/*
+MIT License
+
+Copyright (c) 2018 Get Chalk
+*/
+
+async function writeRedirectsFile(redirects, folder, pathPrefix, siteUrl) {
+
+  if (!redirects.length) return;
+
+  for (const redirect of redirects) {
+    const { fromPath, toPath } = redirect;
+
+    const FILE_PATH = path.join(
+      folder,
+      fromPath.replace(pathPrefix, ""),
+      "index.html"
+    );
+
+    const fileExists = await exists(FILE_PATH);
+    if (!fileExists) {
+      try {
+        await ensureDir(path.dirname(FILE_PATH));
+      } catch (err) {
+        // ignore if the directory already exists;
+      }
+
+      const data = getMetaRedirect(toPath, pathPrefix, siteUrl);
+      await writeFile(FILE_PATH, data);
+    }
+  }
+}
+
+exports.onPostBuild = ({ store }) => {
+  const { redirects, program, config } = store.getState();
+
+  let pathPrefix = "";
+  if (program.prefixPaths) {
+    pathPrefix = config.pathPrefix;
+  }
+
+  const siteUrl = config.siteMetadata.siteUrl;
+  const folder = path.join(program.directory, "public");
+
+  return writeRedirectsFile(redirects, folder, pathPrefix, siteUrl);
 };

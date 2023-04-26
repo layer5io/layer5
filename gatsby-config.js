@@ -23,7 +23,41 @@ module.exports = {
         disable: true
       }
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+              matchPath
+            }
+          }
+          site {
+            siteMetadata {
+              siteUrl
+              }
+          }
+        }
+      `,
+        resolveSiteUrl: ({ site: { siteMetadata: { siteUrl } } }) => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path, matchPath }) => {
+          return {
+            url: matchPath ? matchPath : path,
+            changefreq: "daily",
+            priority: 0.7,
+          };
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-svgr",
       options: {
