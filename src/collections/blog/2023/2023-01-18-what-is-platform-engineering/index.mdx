@@ -17,8 +17,8 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
-import powerOfMeshery from "./power-of-meshery.png";
-import CTA_FullWidth from "../../../components/Call-To-Actions/CTA_FullWidth";
+import powerOfMeshery from "./meshery-cta.png";
+import CTA_ImageOnly from "../../../../components/Call-To-Actions/CTA_ImageOnly";
 
 
 <BlogWrapper>
@@ -77,8 +77,7 @@ Finally, internal developer platforms can improve the quality and reliability of
 
 <p>Meshery is the open source cloud native manager that provides a range of features for managing infrastructure and microservice deployments. Meshery simplifies Kubernetes and Docker management by providing a single, unified interface for managing Kubernetes deployments, multiple service meshes across multiple clusters and cloud providers.
 </p>
-
-<CTA_FullWidth
+<CTA_ImageOnly
   image={powerOfMeshery}
   alt="Alternate text for Image"
   content="This is an example callout"
@@ -86,7 +85,6 @@ Finally, internal developer platforms can improve the quality and reliability of
   url="https://layer5.io/meshmap"     // Always provide the http/https header 
   external_link={false}
 />
-
 <p>Meshery provides a range of features, including:</p>
 
 1. Cloud native lifecycle management: Meshery provides a range of tools for managing the lifecycle of service meshes, including installation, configuration, and upgrading.
