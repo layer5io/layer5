@@ -14,6 +14,15 @@ type: Blog
 resource: true
 published: true
 ---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import powerOfMeshery from "./power-of-meshery.png";
+import CTA_FullWidth from "../../../components/Call-To-Actions/CTA_FullWidth";
+
+
+<BlogWrapper>
+
 <div class="intro">
 As software applications grow in complexity, so do the platforms that host them. Platform engineering is a critical aspect of software development that involves creating and maintaining the underlying infrastructure and services that support modern applications. In this blog post, we will dive deep into platform engineering and discuss its importance in modern software development. We will also explore how Meshery and MeshMap are used as an internal developer platform to streamline platform engineering.
 </div>
@@ -37,11 +46,48 @@ Platform engineering also provides a range of benefits for organizations, includ
 1. Improved security: Platform engineering helps organizations improve the security of their applications by providing a range of security tools and processes to manage access to their infrastructure.
 1. Improved agility: Platform engineering helps organizations become more agile by providing a range of tools and processes for automating infrastructure management, testing, and deployment.
 
+Internal developer platforms are becoming increasingly popular in organizations that aim to improve the efficiency and productivity of their development teams. These platforms provide developers with the tools, services, and infrastructure they need to build, test, and deploy applications quickly and easily. However, there are patterns and anti-patterns that can impact the effectiveness of internal developer platforms. In this section, we will discuss these patterns and anti-patterns, who these engineering platforms are for, and how their use reduces developer friction.
+
+### Patterns of Internal Developer Platforms:
+
+1. Self-service: Internal developer platforms should be designed to be self-service, enabling developers to provision and manage the services and infrastructure they need without requiring intervention from IT or operations teams.
+1. Automation: Automation is critical to the success of internal developer platforms. Automated processes enable developers to focus on building applications instead of managing infrastructure and services.
+1. Standardization: Standardization is important for maintaining consistency and reducing complexity. Internal developer platforms should provide a standardized set of services and infrastructure, making it easier for developers to build and deploy applications.
+1. Integration: Internal developer platforms should integrate with existing tools and processes, making it easier for developers to adopt and use the platform.
+
+### Anti-patterns of Internal Developer Platforms:
+
+1. Over-centralization: Over-centralization can lead to bottlenecks and slow down the development process. Internal developer platforms should be designed to be distributed and decentralized, enabling developers to access the services and infrastructure they need from anywhere.
+1. Lack of flexibility: Internal developer platforms should be flexible enough to support a range of use cases and technologies. A lack of flexibility can limit the effectiveness of the platform.
+1. Poor user experience: Internal developer platforms should be easy to use and provide a good user experience. A poor user experience can discourage developers from using the platform.
+
+### Who are these engineering platforms for?
+
+Internal developer platforms are designed for developers and development teams. These platforms provide developers with the tools, services, and infrastructure they need to build, test, and deploy applications quickly and easily. Internal developer platforms are also designed to reduce the friction that developers often face when building applications. By providing a self-service, automated, and standardized platform, developers can focus on building applications instead of managing infrastructure and services.
+
+### How does the use of internal developer platforms reduce developer friction?
+
+Internal developer platforms reduce developer friction by providing developers with the tools, services, and infrastructure they need to build, test, and deploy applications quickly and easily. By providing a self-service, automated, and standardized platform, developers can focus on building applications instead of managing infrastructure and services.
+
+Internal developer platforms also enable developers to collaborate more effectively. By providing a single platform for building and deploying applications, developers can share code, test results, and deployment artifacts with their peers. This collaboration can reduce the time and effort required to build and deploy applications.
+
+Finally, internal developer platforms can improve the quality and reliability of applications. By providing a range of tools and processes for testing and deployment, internal developer platforms can help developers build and deploy applications more reliably and with higher quality. This can reduce the number of bugs and errors in applications, resulting in a better experience for end-users.
+
 ## Meshery and MeshMap as an Internal Developer Platform
 
-Meshery is the open source cloud native manager that provides a range of features for managing infrastructure and microservice deployments. Meshery simplifies Kubernetes and Docker management by providing a single, unified interface for managing Kubernetes deployments, multiple service meshes across multiple clusters and cloud providers.
+<p>Meshery is the open source cloud native manager that provides a range of features for managing infrastructure and microservice deployments. Meshery simplifies Kubernetes and Docker management by providing a single, unified interface for managing Kubernetes deployments, multiple service meshes across multiple clusters and cloud providers.
+</p>
 
-Meshery provides a range of features, including:
+<CTA_FullWidth
+  image={powerOfMeshery}
+  alt="Alternate text for Image"
+  content="This is an example callout"
+  button_text="Click Me"
+  url="https://layer5.io/meshmap"     // Always provide the http/https header 
+  external_link={false}
+/>
+
+<p>Meshery provides a range of features, including:</p>
 
 1. Cloud native lifecycle management: Meshery provides a range of tools for managing the lifecycle of service meshes, including installation, configuration, and upgrading.
 1. Multi-cluster management: Meshery enables organizations to manage multiple service meshes across multiple clusters and cloud providers from a single, unified interface.
@@ -57,6 +103,11 @@ MeshMap provides a range of features, including:
 1. Traffic filtering
 
 Get a quick index of most features by reviewing <Link to="/pricing">pricing</Link>.
+
+#### Conclusion:
+
+Internal developer platforms are becoming increasingly popular in organizations that aim to improve the efficiency and productivity of their development teams. These platforms provide developers with the tools, services, and infrastructure they need to build, test, and deploy applications quickly and easily. However, there are patterns and anti-patterns that can impact the effectiveness of internal developer platforms. To be effective, internal developer platforms should be designed to be self-service, automated, and standardized, while also being flexible and easy to use. By providing a range of benefits, including improved scalability, reliability, security, and agility, internal developer platforms can help organizations become more competitive in today's fast-paced digital world.
+
 <!-- 
 As technology continues to advance, businesses are increasingly turning to digital platforms to manage their operations, reach customers, and streamline processes. However, building and maintaining these platforms can be a complex and time-consuming task. That's where platform engineering comes in. In this post, we'll explore what platform engineering is, why it's important, and the key skills needed to become a platform engineer.
 
@@ -76,10 +127,10 @@ In addition to these technical considerations, platform engineering can also hel
 
 # Key skills for platform engineers
 
-Building and maintaining a digital platform requires a diverse range of skills, from technical expertise to project management and communication skills. Here are some of the key skills that are essential for success as a platform engineer:
+Developers should be able to deploy and run their apps and services end to end. “You build it, you run it”. Building and maintaining a digital platform requires a diverse range of skills, from technical expertise to project management and communication skills. Here are some of the key skills that are essential for success as a platform engineer:
 
 - Proficiency in programming languages and frameworks: A platform engineer should have a solid understanding of programming languages such as Java, Python, and JavaScript, as well as frameworks such as Spring, Django, and React.
-Cloud computing expertise: With many businesses moving their operations to the cloud, platform engineers should have a strong understanding of cloud computing concepts, including virtualization, containers, and cloud service models such as SaaS, PaaS, and IaaS.
+- Cloud computing expertise: With many businesses moving their operations to the cloud, platform engineers should have a strong understanding of cloud computing concepts, including virtualization, containers, and cloud service models such as SaaS, PaaS, and IaaS.
 - DevOps skills: DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and improve software quality. Platform engineers should be familiar with DevOps tools such as Jenkins, Docker, and Kubernetes, as well as continuous integration and continuous deployment (CI/CD) processes.
 - Security knowledge: Platform engineers should be well-versed in security best practices and have a deep understanding of concepts such as authentication, encryption, and access control. This is especially important as cyber threats continue to evolve and become more sophisticated.
 - Project management skills: Building and maintaining a digital platform is a complex and multi-faceted process that requires effective project management skills. Platform engineers should be able to manage timelines, budgets, and resources effectively, as well as communicate effectively with stakeholders at all levels of the organization.
@@ -87,3 +138,7 @@ Cloud computing expertise: With many businesses moving their operations to the c
 Conclusion
 
 In today's digital age, businesses need stable, scalable, and secure platforms to compete effectively. Platform engineering plays a critical role in creating the infrastructure that supports these platforms and enables businesses to innovate and grow. To be successful as a platform engineer. -->
+
+
+
+</BlogWrapper>
