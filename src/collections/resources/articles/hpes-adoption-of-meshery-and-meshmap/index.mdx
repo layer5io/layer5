@@ -1,0 +1,97 @@
+---
+title: HPE's adoption of Meshery and Meshmap
+subtitle:
+date: 2023-04-28 08:00:00 -0530
+author: HPE
+thumbnail: ./meshery-logo-light.svg
+darkthumbnail: ./meshery-logo-light.svg
+description: "HPE uses Meshery to manage SPIRE instances"
+type: Case Study
+category: Cloud Native
+tags:
+  - Cloud Native, Meshery
+featured: false
+published: true
+resource: true
+
+---
+import { ResourcesWrapper } from "../../Resources.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+
+<ResourceWrapper>
+<h3>
+    ❝ <i>HPE, a leading technology company specializing in enterprise infrastructure, adopted Layer5 MeshMap to enhance their Kubernetes deployments. HPE uses Kubernetes as a primary platform to build and deploy their containerized applications. The company has a large and complex Kubernetes environment, which requires robust networking solutions for efficient communication between services.</i> ❞
+</h3>
+<br/>
+<div class="intro">
+  <p>
+     HPE's adoption of Meshery was driven by the need to simplify the management and monitoring of their Kubernetes clusters. Meshery is an open source cloud native management tool that provides a self-service platform for designing, deploying, testing, and operating cloud native infrastructure wherever Kubernetes and its workloads run.
+  </p>
+</div>
+
+<p>
+    <b>Meshery offers several benefits to HPE, including:</b>
+    <li>
+    Consistent service mesh management: HPE can now manage all their service meshes consistently, regardless of the underlying infrastructure or cloud provider.
+    </li>
+    <li>
+    Improved observability: With Meshery's built-in visualization and observability tools, HPE can gain insights into the behavior of their service meshes, detect anomalies, and troubleshoot issues in real-time.
+    </li>
+    <li>
+    Simplified testing and validation: Meshery's service mesh validation capabilities enable HPE to easily test and validate their service meshes, ensuring that they meet their performance, security, and compliance requirements.
+    </li>
+    <li>
+    Enhanced security: With Meshery's security features, HPE can ensure that their service meshes are secure and compliant with their organization's security policies.
+    </li>
+</p>
+
+<p>
+    Overall, Meshery has helped HPE to streamline their integration of the identity management control plane to reduce complexity, and improve the overall reliability and performance of their Kubernetes environment. SPIFFE is a set of open-source specifications for a framework capable of bootstrapping and issuing identity to services across heterogeneous environments and organizational boundaries. The lifecycle of SPIFFE identities, SVIDs, is managed by SPIRE, a production-ready implementation of the SPIFFE APIs that performs node and workload attestation in order to securely issue SVIDs to workloads, and verify the SVIDs of other workloads, based on a predefined set of conditions.
+</p>
+
+<p>
+    <b>HPE's adoption of Meshery has also been enhanced by the platform's ability to integrate with other popular technologies, such as SPIRE and Istio</b>
+</p>
+
+<p>
+   SPIRE is an open-source project that provides a secure and scalable solution for service identity and authentication in distributed systems. HPE uses SPIRE to authenticate and authorize services in their Kubernetes environment, which ensures that only authorized services can communicate with each other.
+</p>
+
+<p>
+   Meshery's integration with SPIRE enables HPE to manage SPIRE instances, issue and revoke service certificates, and automate the management of SPIRE agents across their Kubernetes clusters. This integration ensures that HPE's service meshes are secure, and only authorized services can communicate with each other.
+</p>
+
+<p>
+   In addition, HPE's use of Meshery has been enhanced by its integration with Istio, an open-source service mesh that provides a comprehensive solution for traffic management, security, and observability in Kubernetes environments.
+</p>
+
+<p>
+   Meshery's integration with Istio enables HPE to manage Istio service meshes and configurations, automate the deployment of Istio components, and monitor and visualize Istio metrics and traces. This integration enables HPE to simplify the management of their Istio service meshes, ensure their security and compliance, and gain insights into their behavior for better decision-making.
+</p>
+
+<p>
+   Overall, HPE's adoption of Meshery, along with its integration with SPIRE and Istio, has enabled the company to streamline their service mesh management, ensure the security and compliance of their Kubernetes environment, and gain valuable insights into the behavior of their service meshes for improved performance and reliability.
+</p>
+
+<p>
+   <b>Meshery also implements the Service Mesh Performance (SMP) specification</b>
+</p>
+
+<p>
+   SMP is a community-driven effort that provides a standard for measuring and comparing the performance of different service meshes. It is designed to help users select the best service mesh for their needs by providing a common framework for benchmarking.
+</p>
+
+<p>
+   Meshery implements SMP by providing a simple and easy-to-use interface for running performance tests against different service meshes. Users can select the service mesh they want to test, configure the test parameters (such as the number of requests per second and the number of concurrent clients), and run the test. Meshery will then generate a report that shows the performance metrics for each service mesh, such as latency, throughput, and error rates.
+</p>
+
+<p>
+   By implementing SMP, Meshery provides a valuable tool for developers and operators who are evaluating different service meshes. Instead of having to create their own benchmarks, they can use SMP to get an objective and standardized view of each service mesh's performance characteristics. This can save a significant amount of time and effort, and help users make more informed decisions when choosing a service mesh.
+</p>
+
+<p>
+Overall, HPE's use of Meshery and the Docker Extension for Meshery demonstrates the power of cloud native technologies and the importance of open source collaboration. By leveraging these tools, HPE has been able to streamline its development and deployment processes, improve performance and security, and stay at the forefront of the cloud native movement.
+</p>
+
+</ResourceWrapper>
