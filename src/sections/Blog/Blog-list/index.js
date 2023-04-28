@@ -16,23 +16,17 @@ const BlogList = ({
   setGridView,
   pageContext,
   data,
+  currentPage,
+  searchQuery,
+  searchData,
+  setCurrentPage,
+  queryResults,
+  postsPerPage,
+  searchedPosts,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
   let { totalCount, nodes } = data.allMdx;
-  const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
-    nodes,
-    setSearchQuery,
-    searchQuery,
-    ["frontmatter", "title"],
-    "id"
-  );
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
-  const currentPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
   totalCount = queryResults.length;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
@@ -76,14 +70,19 @@ const BlogList = ({
                 <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
               )}
               <Row className="blog-lists">
-                {currentPosts.length > 0 &&
-                  currentPosts.map(({ id, frontmatter, fields }) => (
+               {queryResults.length < 1 && (
+                  <Col xs={12} sm={6}>
+                    No blog post that matches the title "{searchQuery}" found.
+                  </Col>
+                )}
+                {searchedPosts.length > 0 &&
+                  searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col xs={12} key={id}>
                       <Card  frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                 <Col>
-                  {currentPosts.length > 0 && (
+                  {searchedPosts.length > 0 && (
                     <Pagination
                       postsPerPage={postsPerPage}
                       totalPosts={queryResults.length}
