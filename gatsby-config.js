@@ -35,6 +35,7 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
+                  cleanupIDs: false,
                 }
               }
             },
