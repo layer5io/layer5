@@ -20,7 +20,7 @@ const CollaboratorFeaturesDiagram = ({ activeExampleIndex }) => {
           <img id="avatar-2" className={(activeExampleIndex == 1) ? "show" : "render"} src={Avatar2} alt="" />
           <img id="avatar-3" className={(activeExampleIndex >= 2) ? "show" : "render"} src={Avatar3} alt="" />
         </div>
-        <div className="root" style={{ minHeight: "25rem" }}>
+        <div className="root" style={{ minHeight: "25rem", minWidth: "41rem" }}>
           <Collab1 id="collaborate-image1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} alt="collaborate-image1" />
           <Collab2 id="collaborate-image2" className={(activeExampleIndex == 1) ? "show" : "render"} alt="collaborate-image2" />
           <Collab3 id="collaborate-image3" className={(activeExampleIndex == 2) ? "show" : "render"} alt="collaborate-image3" />
