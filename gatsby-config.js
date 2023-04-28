@@ -50,8 +50,10 @@ module.exports = {
           });
         },
         serialize: ({ path, matchPath }) => {
+          let url = matchPath ? matchPath : path;
+          url = url.startsWith("/") ? url : `/${url}`;
           return {
-            url: matchPath ? matchPath : path,
+            url: url,
             changefreq: "daily",
             priority: 0.7,
           };
