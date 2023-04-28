@@ -242,7 +242,7 @@ export const ProjectWrapper = styled.div`
         
     }
     .project__card.eight{
-        grid-column: 6/8;
+        grid-column: 6/7;
         grid-row: 6/8;
         img{
             width: 90px;
@@ -274,9 +274,8 @@ export const ProjectWrapper = styled.div`
         h5{
             font-weight: 600;
             text-align: center;
-            
         }
-        @media only screen and (min-width: 741px) {
+        @media only screen and (min-width: 780px) {
             width: 80%;
             place-content: center;
         }
@@ -285,6 +284,47 @@ export const ProjectWrapper = styled.div`
     .project__card.nine{
         grid-column: 1/3;
         grid-row: 3/6;
+    }
+    .project__card.ten{
+        grid-column: 7/8;
+        grid-row: 6/8;
+        img{
+            width: 90px;
+            align-self: center;
+            margin-top: 8px;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-start;
+            } 
+        }
+        h5{
+            margin-top: 1rem;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-end;
+                text-align: center;
+            }
+        }
+    }
+    .project__card-container-ten{
+        max-width: 100%;
+        height: 10rem;
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        h5{
+            font-weight: 600;
+            text-align: center;
+            
+        }
+        @media only screen and (min-width: 780px) {
+            width: 80%;
+            place-content: center;
+        }
+        
     }
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
@@ -346,6 +386,12 @@ export const ProjectWrapper = styled.div`
                 margin-top: 1.5rem;
             }
         }
+        .project__card-container-ten{
+            height: 10rem;
+            img{
+                margin-top: 1.5rem;
+            }
+        }
         .project__card-container_nighthawk{
             flex-direction: column;
             justify-content: space-around;
@@ -360,6 +406,7 @@ export const ProjectWrapper = styled.div`
                 margin-left: 0;
             }
         }
+        
         .project__card {
             h5{ 
                 width: 100%;
@@ -403,10 +450,21 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.eight{
             img{
-                margin-top: 10px;
+                margin-top: 15px;
+                width: 150%;
             }
             h5{ 
-                margin-top:35px;
+                margin-top:30px;
+                margin-bottom:30px;
+            }
+        }
+        .project__card.ten{
+            img{
+                margin-top: 15px;
+                width: 150%;
+            }
+            h5{ 
+                margin-top:30px;
             }
         }
          
