@@ -84,7 +84,7 @@ const Footer = () => {
                       className="category-link"
                       to="/learn/service-mesh-labs"
                     >
-                      Service Mesh Interactive Labs
+                      Cloud Native Interactive Labs
                     </Link>
                   </li>
                 </ul>
