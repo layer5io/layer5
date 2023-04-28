@@ -75,17 +75,17 @@ top: calc(39vh - 249px);
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
       .collab1-colorMode_svg__colorMode1 {
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${props => props.theme.blackToWhite};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .collab2-colorMode_svg__colorMode1 {
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${props => props.theme.blackToWhite};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .collab3-colorMode_svg__colorMode1 {
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${props => props.theme.blackToWhite};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
