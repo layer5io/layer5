@@ -147,8 +147,8 @@ export const FeaturesWrapper = styled.div`
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            maxHeight: 330px;
-            height:330px;
+            maxHeight: 380px;
+            height: 380px;
             overflow-y:scroll;
         }
       }
@@ -200,6 +200,7 @@ export const FeaturesWrapper = styled.div`
      display:flex;
      justify-content:center;
      align-items:center;
+     height:100%;
    }
 
 `;
