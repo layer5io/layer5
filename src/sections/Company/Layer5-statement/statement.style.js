@@ -37,6 +37,9 @@ const BannerSectionWrapper = styled.section`
         color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
     }
+    span.span-text{
+        color: white;
+    }
     h3.statement {
         color: ${(props) => props.theme.white};
         margin-left: 3.5rem;
