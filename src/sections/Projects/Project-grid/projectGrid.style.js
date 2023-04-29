@@ -245,7 +245,7 @@ export const ProjectWrapper = styled.div`
         grid-column:1/3;
         grid-row: 3/6;
         img{
-            width: 90px;
+            width: 100px;
             align-self: center;
             margin-top: 8px;
             @media only screen and (min-width: 780px) {
