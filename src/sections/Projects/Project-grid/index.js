@@ -126,7 +126,6 @@ const ProjectPage = () => {
                 </Col>
               </div>
             </Link>
-
           </div>
           <MeshMapCTA />
         </Container>

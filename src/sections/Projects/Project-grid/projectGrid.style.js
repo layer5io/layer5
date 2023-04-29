@@ -242,8 +242,8 @@ export const ProjectWrapper = styled.div`
         
     }
     .project__card.eight{
-        grid-column: 6/7;
-        grid-row: 6/8;
+        grid-column:1/3;
+        grid-row: 3/6;
         img{
             width: 90px;
             align-self: center;
@@ -282,8 +282,8 @@ export const ProjectWrapper = styled.div`
         
     }
     .project__card.nine{
-        grid-column: 1/3;
-        grid-row: 3/6;
+        grid-column:6/7;
+        grid-row: 6/8;
     }
     .project__card.ten{
         grid-column: 7/8;
