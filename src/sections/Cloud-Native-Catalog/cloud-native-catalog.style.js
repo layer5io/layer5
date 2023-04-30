@@ -18,6 +18,14 @@ export const CloudNativeCatalogWrapper = styled.div`
       height: 12rem;
       width: auto;
     }
+    .col {
+      display: flex;
+      align-items: center;
+
+    }
+    .catalog-image-col {
+      justify-content: center;
+    }
 
     @media screen and (max-width: 768px) {
       text-align: center;
