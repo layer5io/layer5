@@ -27,7 +27,7 @@ const BlogList = ({
   let { totalCount, nodes } = data.allMdx;
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
-  totalCount = queryResults.length;
+  totalCount = queryResults?.length;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
