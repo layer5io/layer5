@@ -3,6 +3,7 @@ import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
+import useDataList from '../../utils/usedataList';
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`
