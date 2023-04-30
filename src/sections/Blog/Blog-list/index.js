@@ -70,22 +70,22 @@ const BlogList = ({
                 <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
               )}
               <Row className="blog-lists">
-               {queryResults.length < 1 && (
+               {queryResults?.length < 1 && (
                   <Col xs={12} sm={6}>
                     No blog post that matches the title "{searchQuery}" found.
                   </Col>
                 )}
-                {searchedPosts.length > 0 &&
+                {searchedPosts?.length > 0 &&
                   searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col xs={12} key={id}>
                       <Card  frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                 <Col>
-                  {searchedPosts.length > 0 && (
+                  {searchedPosts?.length > 0 && (
                     <Pagination
                       postsPerPage={postsPerPage}
-                      totalPosts={queryResults.length}
+                      totalPosts={queryResults?.length}
                       currentPage={currentPage}
                       paginate={paginate}
                     />

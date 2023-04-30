@@ -56,22 +56,22 @@ const BlogGrid = ({
               </div>
               <div className="blog-grid-wrapper">
                 <Row>
-                  {queryResults.length < 1 && (
+                  {queryResults?.length < 1 && (
                     <Col xs={12} sm={6}>
                       No blog post that matches the title "{searchQuery}" found.
                     </Col>
                   )}
 
-                  {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
+                  {searchedPosts?.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
                       <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>
-                    {searchedPosts.length > 0 && (
+                    {searchedPosts?.length > 0 && (
                       <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={queryResults.length}
+                        totalPosts={queryResults?.length}
                         paginate={paginate}
                         currentPage={currentPage}
                       />
