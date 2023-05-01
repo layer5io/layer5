@@ -437,10 +437,10 @@ const data = {
       link: "https://layer5.io/cloud-native-management/meshmap",
       linktext: "Learn More",
       answer: [
-        "MeshMap is cloud-native visualizer and designer tool that could be deployed where you need it",
-        "It can be self-hosted to keep your designs and applications internal to your company",
-        "You can also choose the SaaS solution, where you can share your desings with team and collaborate upon it",
-        "Any choice you follow, you will always the Layer5 support in need"
+        "MeshMap is cloud-native visualizer and designer tool that could be deployed where you need it.",
+        "It can be self-hosted to keep your designs and applications internal to your company.",
+        "You can also choose the SaaS solution, where you can share your desings with team and collaborate upon it.",
+        "Any choice you follow, you will always get the Layer5 support in need."
       ]
     },
     {
@@ -458,7 +458,7 @@ const data = {
       link: "https://play.meshery.io",
       linktext: "MeshMap Playground",
       answer: [
-       "MeshMap along with Meshery is available as beta as a CNCF playground",
+       "MeshMap along with Meshery is available as beta as a CNCF playground.",
        "Signup for MeshMap and try out today!"
       ]
     },
@@ -468,7 +468,7 @@ const data = {
       link: "https://play.meshery.io",
       linktext: "MeshMap Playground",
       answer: [
-       "MeshMap is in beta mode and you can ask for early access to try it out",
+       "MeshMap is in beta mode and you can ask for early access to try it out.",
        "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
