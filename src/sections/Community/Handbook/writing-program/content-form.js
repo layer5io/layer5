@@ -97,7 +97,7 @@ const ContentForm = () => {
               </label>
             </div>
 
-            <label htmlFor="slackName" className="form-name">If yes, please mention your username on Slack. If no, you are welcome to join - http://slack.layer5.io/</label>
+            <label htmlFor="slackName" className="form-name">If yes, please mention your username on Slack. If no, you are welcome to join - https://slack.layer5.io/</label>
             <Field type="text" className="text-field" id="slackName" name="slackName" maxLength="32" />
 
             <label id="content-type" className="form-name">Choose the type of content<span className="required-sign">*</span></label>

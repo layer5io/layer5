@@ -13,5 +13,5 @@ const MeshmapDesignPage = () => {
 };
 export default MeshmapDesignPage;
 export const Head = () => {
-  return <SEO title="MeshMap" description="Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. Confidently configure your systems with MeshMap's visual topology and built-in design patterns." />;
+  return <SEO title="MeshMap Designer" description="Design your infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations." />;
 };

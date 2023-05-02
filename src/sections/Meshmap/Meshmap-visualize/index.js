@@ -8,7 +8,7 @@ import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 import { useRef } from "react";
 
-const MeshmapDesign = () => {
+const MeshmapVisualize = () => {
   const targetRef = useRef(null);
   return (
     <MeshmapVisualizeWrapper>
@@ -26,4 +26,4 @@ const MeshmapDesign = () => {
   );
 };
 
-export default MeshmapDesign;
+export default MeshmapVisualize;

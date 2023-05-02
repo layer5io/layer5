@@ -8,7 +8,7 @@ import SignupForm from "./../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 
-const MeshmapDesign = () => {
+const MeshmapCollaborate = () => {
   return (
     <MeshmapCollaborateWrapper>
       <MeshmapCollaborateBanner />
@@ -21,4 +21,4 @@ const MeshmapDesign = () => {
   );
 };
 
-export default MeshmapDesign;
+export default MeshmapCollaborate;
