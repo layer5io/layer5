@@ -27,12 +27,13 @@ export const useSiteMetadata = () => {
 
 const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
   const { pathname } = useLocation();
+  console.log("pathname", pathname);
   const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || siteMetadataImage}`,
-    url: `${siteUrl}${pathname || ""}`,
+    url: `${siteUrl}${pathname.replace(".html", "")  || ""}`,
     twitterUsername
   };
 
