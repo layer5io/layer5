@@ -1,8 +1,8 @@
 module.exports = {
-  ci: {
-    collect: {
-      staticDistDir: "./public",
-        url : ["http://localhost/404.html",
+  "ci": {
+    "collect": {
+      "staticDistDir": "./public",
+        "url" : ["http://localhost/404.html",
                "http://localhost/index.html",
                "http://localhost/404/index.html",
                "http://localhost/company/about.html" ,
@@ -20,8 +20,8 @@ module.exports = {
                "http://localhost/community/events.html",
                "http://localhost/community/newcomers.html",],
     },
-    assert: {
-      assertions: {
+    "assert": {
+      "assertions": {
         "categories:performance": "warn",
         "categories:accessibility": "warn",
         "categories:best-practices": "warn",
