@@ -97,19 +97,13 @@ const ProjectPage = () => {
                 </Row>
               </div>
             </Link>
-
             <Link
               to="/learn/service-mesh-books/service-mesh-patterns"
               className="project__card eight"
             >
-              <div className="project__card-container-eight">
-                <Col>
-                  <img className="image"
-                    src={patterns}
-                    alt="Service Mesh Patterns"
-                  />
-                  <h5> Service Mesh Patterns</h5>
-                </Col>
+              <div className="project__card-container">
+                <img src={patterns} alt="Service Mesh Patterns" />
+                <h5> Service Mesh Patterns</h5>
               </div>
             </Link>
             <Link

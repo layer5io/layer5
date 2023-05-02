@@ -241,48 +241,17 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+    // Service Mesh Patterns
     .project__card.eight{
-        grid-column:1/3;
+        grid-column: 1/3;
         grid-row: 3/6;
         img{
             width: 100px;
-            align-self: center;
-            margin-top: 8px;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-start;
-            } 
+            align-self: center; 
         }
-        h5{
-            align-self: center;
-            margin-top: 1rem;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-end;
-            }
-        }
-    }
-    .project__card-container-eight{
-        max-width: 100%;
-        height: 10rem;
-        width: 12rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img{
-            max-width: 100%;
-            max-height: 100%;
-        }
-        h5{
-            font-weight: 600;
-            text-align: center;
-        }
-        @media only screen and (min-width: 780px) {
-            width: 80%;
-            place-content: center;
-        }
-        
     }
     .project__card.nine{
-        grid-column:6/7;
+        grid-column: 6/7;
         grid-row: 6/8;
     }
     .project__card.ten{
