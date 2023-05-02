@@ -556,12 +556,7 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
-    {
-      resolve: "@randychilau/gatsby-plugin-meta-redirect",
-      options: {
-        ci: process.env.CI,
-      }
-    }
+    "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
   ],
 
