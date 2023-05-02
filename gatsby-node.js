@@ -282,7 +282,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const labs = res.data.labs.nodes;
 
   paginate({
-    envCreatePage,
+    createPage: envCreatePage,
     items: events,
     itemsPerPage: 9,
     pathPrefix: "/community/events",
