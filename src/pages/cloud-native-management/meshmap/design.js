@@ -13,5 +13,5 @@ const MeshmapDesignPage = () => {
 };
 export default MeshmapDesignPage;
 export const Head = () => {
-  return <SEO title="MeshMap Designer" description="Design your infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations." />;
+  return <SEO title="MeshMap Designer" description="Design your infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML." />;
 };
