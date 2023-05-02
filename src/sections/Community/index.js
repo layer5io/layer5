@@ -17,10 +17,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
-
 
 const CommunityPage = () => {
+
+  const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
   const { backgroundImage123 } = useStaticQuery(
     graphql`
