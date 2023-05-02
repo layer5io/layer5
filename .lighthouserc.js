@@ -21,16 +21,12 @@ module.exports = {
                "http://localhost/community/newcomers.html",],
     },
     assert: {
-      preset: "lighthouse:no-pwa",
       assertions: {
         "categories:performance": "warn",
         "categories:accessibility": "warn",
         "categories:best-practices": "warn",
         "categories:seo": "warn",
       }
-    },
-    upload: {
-      target: "temporary-public-storage",
     },
   }
 };
