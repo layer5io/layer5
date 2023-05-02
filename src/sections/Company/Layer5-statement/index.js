@@ -6,11 +6,11 @@ import svgBackground from "../../../assets/images/homePage-images/background.svg
 import BannerSectionWrapper from "./statement.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
 // const imgHero = "./images/layer5-projects.png";
 
 
 const BannerDefault = () => {
+  const imgHero = "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
   return (
     <BannerSectionWrapper>
       <div className="section">
