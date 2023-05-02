@@ -115,10 +115,11 @@ export const ProjectWrapper = styled.div`
         justify-content: center;
         align-items: center;
         img{
-            height: 6.25rem;
+            height: 3.25rem;
         }
         h5{
             margin-top: .8rem;
+            font-size: 1rem;
         }
     }
 
