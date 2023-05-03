@@ -26,4 +26,4 @@ A detailed explanation on how to set up a community member profile can be found 
 
 The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
 - See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
-- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs). Join the [Layer5 Community](http://slack.layer5.io) for access.
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs). Join the [Layer5 Community](https://slack.layer5.io) for access.
