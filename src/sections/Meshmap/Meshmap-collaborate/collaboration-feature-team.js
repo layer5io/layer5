@@ -67,15 +67,15 @@ const CollaborationFeatureWrapper = styled.div`
       transition: opacity ease-out 0.5s;
       .collab4-colorMode_svg__colorMode1
        {
-        fill: ${props => props.theme.whiteToBlack}
+        fill: ${props => props.theme.whiteToBlack};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
       .collab4-colorMode_svg__colorMode2{
-        fill: ${props => props.theme.greyB4B4B4ToGrey505050}
+        fill: ${props => props.theme.greyB4B4B4ToGrey505050};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
        .collab4-colorMode_svg__colorMode3{
-        fill: ${props => props.theme.blackToWhite}
+        fill: ${props => props.theme.blackToWhite};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        }
     }
@@ -109,7 +109,7 @@ const CollaborationFeatureTeam = () => {
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>
-          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.</p>
+          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
         </div>
       </div>
     </CollaborationFeatureWrapper>

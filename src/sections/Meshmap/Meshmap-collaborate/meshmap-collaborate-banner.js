@@ -176,7 +176,7 @@ const CollaborationBannerWrapper = styled.div`
     .service-interface {
         scale: 1;
     }
-
+}
 `;
 
 const MeshmapCollaborateBanner = () => {
