@@ -9,7 +9,8 @@ description: "Layer5 is an award-winning open community of supportive contributo
 type: Blog
 category: Community
 tags:
-  - Community, Open Source
+  - Community
+  - Open Source
 featured: false
 published: true
 ---
@@ -20,6 +21,7 @@ import Button from "../../../../reusecore/Button";
 import playfield from "./layer5-community-playfield.png";
 import mesheryMostPopular from "./meshery-most-popular-lfx-internship.png";
 import Blockquote from "../../../../reusecore/Blockquote";
+import { CTA_FullWidth } from "../../../components/Call-To-Actions/CTA_FullWidth";
 
 <BlogWrapper>
 
@@ -33,11 +35,21 @@ Members of the Layer5 community come from all backgrounds and levels of experien
 
 One of the most remarkable things about the Layer5 community is how supportive it is of its members. Whether you are a newcomer or a seasoned veteran, you will find that people are always willing to lend a hand, offer advice, or just provide a friendly ear when you need it.
 
-<img src={mesheryMostPopular} />
+<CTA_FullWidth 
+  image={playfield}
+  alt="Multi-Cluster Kubernetes Management with Meshery"
+  content="Multi-Cluster Kubernetes Management with Meshery"
+  button_text="Read blog post"
+  url="/blog/meshery/multi-cluster-kubernetes-management-with-meshery"
+  external_link={false}
+  className="get-start-kubernetes-resource"
+/>
+
+<img src={mesheryMostPopular} className="pull-right" />
 
 This culture of support and collaboration has not gone unnoticed by the wider tech community. Layer5's Meshery project, for example, has been recognized as the #1 most popular Linux Foundation Internship (LFX internship). This is a testament to the quality of work that the community produces, but it's also a reflection of the supportive and inclusive environment that it provides for its members.
 
-<Blockquote "Thank you for recognising me as a Layer5 member. It is an honour for me to be part of such a welcoming community. Even the smallest contributions are recognised. I am learning new things every day and so happy to belong to this community." />
+<Blockquote quote="Thank you for recognising me as a Layer5 member. It is an honour for me to be part of such a welcoming community. Even the smallest contributions are recognised. I am learning new things every day and so happy to belong to this community." person="Naureen" />
 
 In short, the Layer5 open source community is a warm, welcoming, and award-winning community that is well worth getting involved in. Whether you're looking to expand your skills, work on exciting projects, or just connect with other like-minded individuals, you'll find a home in this community. So why not join us and see for yourself what makes the <Link to="/community">Layer5 community</Link> so special?
 
