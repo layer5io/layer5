@@ -35,9 +35,8 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
     url: `${siteUrl}${pathname.replace(".html", "")  || ""}`,
     twitterUsername
   };
-  let canonicalUrl = canonical;
-  if (!canonicalUrl) {
-    canonicalUrl = seo.url;
+  if (!canonical) {
+    canonical = seo.url;
   }
 
   return (
@@ -81,7 +80,7 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
           />
           }`}
       </noscript>
-      {canonicalUrl &&   <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={canonical} />
       {schemaMarkup &&
         <Script type="application/ld+json">{JSON.stringify(schemaMarkup)}</Script>}
       {children}
