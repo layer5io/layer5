@@ -60,6 +60,7 @@ h6 {
     color: ${(props) => props.theme.tertiaryColor};
     margin: 0;
     line-height: normal;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 h1 {

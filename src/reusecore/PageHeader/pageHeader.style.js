@@ -19,6 +19,7 @@ const PageHeaderWrapper = styled.div`
                     padding-left: 1rem;
                     width: 3rem;
                     filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
                 }
             }

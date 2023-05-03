@@ -118,6 +118,7 @@ const ProjectItemWrapper = styled.section`
 			font-weight: 500;
 			margin: auto 0;
 			text-align: center;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 
 		// @media only screen and (max-width: 912px) {
