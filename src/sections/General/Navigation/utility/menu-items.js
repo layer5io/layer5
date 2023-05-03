@@ -103,7 +103,7 @@ const Data = {
         },
         {
           name: "Playground",
-          path: "https://play.meshery.io",
+          path: "/cloud-native-management/playground",
         },
         {
           name: "Nighthawk",
