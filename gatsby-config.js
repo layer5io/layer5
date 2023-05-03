@@ -44,7 +44,7 @@ module.exports = {
         resolvePages: ({
           allSitePage: { nodes: allPages },
         }) => {
-          return allPages.filter(page => page.path !== "/").map(page => {
+          return allPages.map(page => {
             return { ...page };
           });
         },
