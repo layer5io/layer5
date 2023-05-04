@@ -113,6 +113,8 @@ const BannerSectionWrapper = styled.section`
     .playBtn {
         position: absolute;
         border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
     }
     .vidHero:hover .playBtn { 
         box-shadow: 0px 0px 16px 3px #00B39F;
