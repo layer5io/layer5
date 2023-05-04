@@ -1,38 +1,48 @@
 import styled from "styled-components";
 
 export const CloudNativeCatalogWrapper = styled.div`
-  .page-header-section {
-    min-height: 30rem;
-    background: rgb(71,126,150);
-    background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+  .cloud-native-catalog.header {
+    min-height: 61.125rem;
+    background: linear-gradient(
+      90.2deg,
+      rgba(255, 255, 255, 0.38) 33.89%,
+      rgba(0, 179, 159, 0.74) 99.81%
+    );
     display: flex;
     align-items: center;
     align-content: space-between;
     flex-direction: column;
-    padding: 0 6rem;
     justify-content: center;
-    h1 {            
-      color: white;
+    .header__detail {
+      display: flex;
+      flex-direction: column;
     }
-    .catalogIcon{
+    .header__title {
+      color: #00b39f;
+      padding-right: 80px;
+      margin-bottom: 20px;
+    }
+    .header__title_description {
+      color: #1E2117;
+      font-weight: 400;
+      font-size: 1.438rem;
+      line-height: 2rem;
+      padding-right: 80px;
+      margin-bottom: 30px;
+    }
+    .catalogIcon {
       height: 12rem;
       width: auto;
     }
     .col {
       display: flex;
-      align-items: center;
-
     }
     .catalog-image-col {
       justify-content: center;
     }
 
     @media screen and (max-width: 768px) {
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-            
-      .catalogIcon{
+      .catalogIcon {
         height: 5rem;
         width: auto;
       }
@@ -41,12 +51,6 @@ export const CloudNativeCatalogWrapper = styled.div`
         height: 50%;
         width: 50%;
       }
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .page-header-section {
-      min-height: 20rem;
     }
   }
 `;
