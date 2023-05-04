@@ -29,6 +29,13 @@ export const query = graphql`query BlogsByTags($tag: String!) {
           extension
           publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug

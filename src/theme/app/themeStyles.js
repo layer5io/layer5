@@ -69,9 +69,9 @@ const lighttheme = {
   siteLinkBrightness: "0.5",
 
   //Invert Colors in dark theme(Usually for svg)
-  invertColor: "none",
-  meshInterfaceLogoFilter: "none",
-  mapBackground: "none%",
+  invertColor: "0%",
+  meshInterfaceLogoFilter: "0%",
+  mapBackground: "0%",
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#FFFFFF",
 

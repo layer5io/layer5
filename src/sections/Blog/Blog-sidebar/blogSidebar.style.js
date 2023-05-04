@@ -79,12 +79,13 @@ const BlogSideBarWrapper = styled.div`
                     display: flex;
                     justify-content: space-between;
                     font: 400 16px/35px "Qanelas Soft", "Open Sans", sans-serif;
-                    em{font-style: normal;}
+                    em{font-style: normal;
+                        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+                    }
                     span{
                         border-bottom: 1px solid transparent;
-                        transition: all 0.3s linear;
+                        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     }
-                    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                     &:hover{
                         span, em{
                             color: ${props => props.theme.secondaryColor}; 
