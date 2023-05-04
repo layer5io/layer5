@@ -35,7 +35,7 @@ export const TableWrapper = styled.div`
 			}
 		}
 		th {
-			background-color: ${props => props.theme.DarkTheme ? "#05A794" : props.theme.grey0E0E0EToGreen3C494F};
+			background-color: ${props => props.theme.green00D3A9ToGreen00B39F};
 			color: ${props => props.theme.white};
 			height: 4rem;
 			font-weight: 600;
@@ -54,7 +54,7 @@ export const TableWrapper = styled.div`
 			}
 			/* Highlight Community Calendar */
 			:nth-child(4) {
-				background: ${props => props.theme.DarkTheme ? "#039275" : props.theme.saffronLightColor};
+				background: ${props => props.theme.greyFiveToBlueFive};
 			}
 			&:hover {
 				background-color: ${props => props.theme.grey323232ToGreenF3FFFD};
