@@ -11,5 +11,5 @@ const PlaygroundPage = () => {
 };
 export default PlaygroundPage;
 export const Head = () => {
-  return <SEO title="Cloud-native Playground" description="Meshery CNCF Playground - The cloud native playground for Kubernetes and all CNCF projects" />;
+  return <SEO title="Cloud Native Playground" description="Meshery CNCF Playground - The cloud native playground for Kubernetes and all CNCF projects" />;
 };
