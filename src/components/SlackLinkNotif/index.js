@@ -5,11 +5,11 @@ import Button from "../../reusecore/Button";
 const SlackNotif = styled.div`
     color: #000000;
     .container {
-        background-color: #FFF7D8; 
+        background-color: #FFF7D8;
         padding: 16px 0px 16px 0px;
     }
 
-    .text { 
+    .text {
         text-align: center;
     }
 
@@ -27,7 +27,7 @@ const SlackLinkNotif = () => {
   return (
     <SlackNotif>
       <div className="container">
-        <div className="text"><span className="notice"> !</span> If you have not already joined us in Slack, jump in! <Button secondary title="Join Now" url="http://slack.layer5.io/" external={true}/></div>
+        <div className="text"><span className="notice"> !</span> If you have not already joined us in Slack, jump in! <Button secondary title="Join Now" url="https://slack.layer5.io/" external={true}/></div>
       </div>
     </SlackNotif>
   );
