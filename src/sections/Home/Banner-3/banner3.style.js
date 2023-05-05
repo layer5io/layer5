@@ -98,6 +98,7 @@ const Banner3SectionWrapper = styled.section`
         } 
      }
      @media only screen and (max-width: 760px) {
+        background-position: bottom -8px right -60px;
         padding: 2rem 0;
         background-size: 45%;
  
@@ -111,6 +112,7 @@ const Banner3SectionWrapper = styled.section`
          }
      }
      @media only screen and (max-width: 480px) {
+        background-position: bottom 110px right -60px;
         padding: 2rem 0;
         
         .section-title{
@@ -124,6 +126,9 @@ const Banner3SectionWrapper = styled.section`
                  content: none;
              }
          }
+         p { 
+            padding-right: 9rem;
+        }
 		 }
 		 @media screen and (max-width: 402px) {
 			.banner-btn.one, .banner-btn.two 
@@ -132,6 +137,10 @@ const Banner3SectionWrapper = styled.section`
 			}
 		 }
      @media only screen and (max-width: 380px) {
+        background-position: bottom 170px right -20px;
+        .vintage-box {
+            padding-right: 1rem;
+        }
         .section-title{
             h1 {
                 font-size: 30px;
@@ -149,6 +158,7 @@ const Banner3SectionWrapper = styled.section`
         } */
      }
      @media only screen and (max-width: 330px) {
+        background-position: bottom 200px right -10px;
         .section-title{
             h1 {
                 font-size: 23px;
