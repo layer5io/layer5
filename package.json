@@ -56,7 +56,7 @@
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-preload-fonts": "^3.24.0",
     "gatsby-plugin-robots-txt": "^1.7.1",
-    "gatsby-plugin-sharp": "^4.19.0",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-sitemap": "^5.19.0",
     "gatsby-plugin-styled-components": "^5.19.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
