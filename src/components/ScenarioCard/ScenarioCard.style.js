@@ -93,7 +93,7 @@ export const ScenarioCardWrapper = styled.div`
         a {
             color: ${props => props.theme.white};
             &:hover {
-                color: ${props => props.theme.primaryLightColorTwo};
+                color: ${props => props.theme.secondaryColor};
             }
         }
     }
