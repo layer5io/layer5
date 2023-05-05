@@ -18,7 +18,7 @@ import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.s
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
-  margin: 1rem 0;
+  margin: 0;
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
 
@@ -35,7 +35,6 @@ const CatalogWrapper = styled.div`
       hsla(173, 100%, 35%, 1) 7%,
       hsla(0, 0%, 0%, 1) 90%
     );
-    margin-bottom: 2rem;
   }
 
   h3.containerCaption {
@@ -257,9 +256,9 @@ const CatalogWrapper = styled.div`
 const Catalog = () => {
   return (
     <CatalogWrapper>
-      <Container className="catalog-container">
-        <a href="https://meshery.io/catalog">
-          <div className="catalog-wrapper ">
+      <a href="https://meshery.io/catalog">
+        <div className="catalog-wrapper">
+          <Container className="catalog-container">
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
@@ -312,9 +311,9 @@ const Catalog = () => {
             <h3 className="containerCaption">
               Discover best practices. Publish design patterns.
             </h3>
-          </div>
-        </a>
-      </Container>
+          </Container>
+        </div>
+      </a>
     </CatalogWrapper>
   );
 };
