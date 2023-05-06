@@ -38,12 +38,17 @@ const Button = ({
 Button.propTypes = {
   as: PropTypes.oneOf(["button", "a",]), //--
   upperCase: PropTypes.bool,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.number
+  ]),
   url: PropTypes.string,
   className: PropTypes.string,
   external: PropTypes.bool,
   icon: PropTypes.string,
   onClick: PropTypes.func
+
 };
 
 export default Button;
