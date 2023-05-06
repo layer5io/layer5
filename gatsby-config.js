@@ -1,4 +1,5 @@
 /* eslint-env node */
+
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -14,6 +15,7 @@ module.exports = {
     FAST_DEV: true,
     PARALLEL_SOURCING: true
   },
+  trailingSlash: "never",
   plugins: [
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
@@ -21,7 +23,42 @@ module.exports = {
         disable: true
       }
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+              matchPath
+            }
+          }
+          site {
+            siteMetadata {
+              siteUrl
+              }
+          }
+        }
+      `,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path, matchPath }) => {
+          let url = matchPath ? matchPath : path;
+          url = url.startsWith("/") ? url : `/${url}`;
+          return {
+            url: url,
+            changefreq: "daily",
+            priority: 0.7,
+          };
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-svgr",
       options: {
@@ -35,6 +72,7 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
+                  cleanupIDs: false,
                 }
               }
             },
@@ -518,7 +556,8 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
-    "gatsby-plugin-meta-redirect", // make sure this is always the last one
+    "gatsby-plugin-meta-redirect",
+    // make sure this is always the last one
   ],
 
 };

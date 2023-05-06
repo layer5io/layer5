@@ -100,7 +100,7 @@ const Connect = () => {
               members.
             </p>
             <p>
-              Join our <a href="http://slack.layer5.io/">Slack Workspace</a>{" "}
+              Join our <a href="https://slack.layer5.io/">Slack Workspace</a>{" "}
               “introduce yourself” and interact with the community. There are
               different channels in the workspace, to engage in, just search
               for:

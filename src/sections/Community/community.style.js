@@ -224,7 +224,6 @@ const CommunitySectionWrapper = styled.div`
             margin: 2rem 0rem 2rem 0rem;
             a {
                 font-weight: 600;
-                background: linear-gradient(123deg, ${props => props.theme.blackToWhite} 60%,${props => props.theme.blackToWhite} 100%);
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }

@@ -15,8 +15,8 @@ assignees: ''
 <!-- Add screenshots, if applicable, to help explain your problem. -->
 
 **Enviroment:**
-- Host OS: 
-- Browser: 
+- Host OS:
+- Browser:
 
 ---
 
@@ -37,6 +37,6 @@ Steps to get an access to the [staging-discuss.layer5.io](https://staging-discus
 - Then ask for the admin access.
 - And then start contributing to the discuss forum.
 
-- 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.layer5.io) and [Community Slack](http://slack.layer5.io).
+- 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.layer5.io) and [Community Slack](https://slack.layer5.io).
 
 <img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.png" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).
