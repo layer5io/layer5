@@ -268,7 +268,7 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li className="mobile-nav-item">
-                      <a href="https://meshery.layer5.io/login" className="menu-item" activeClassName="nav-link-active">Login</a>
+                      <a href="https://meshery.layer5.io/login" className="menu-item">Login</a>
                     </li>
                   </ul>
                 </div>
