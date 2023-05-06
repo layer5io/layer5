@@ -31,7 +31,7 @@ const CTA_ImageOnlyWrapper = styled.div`
 
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
+const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
   return (
     <CTA_ImageOnlyWrapper {...props}>
       { category ? (
@@ -54,3 +54,5 @@ export const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
     </CTA_ImageOnlyWrapper>
   );
 };
+
+export default CTA_ImageOnly;
