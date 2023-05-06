@@ -89,7 +89,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 <div className="action-items">
                   {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
-                      <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                      <a key={i} href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
