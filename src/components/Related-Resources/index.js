@@ -7,9 +7,13 @@ import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useHasMounted from "../../utils/useHasMounted";
+
 const RelatedResources = props => {
 
   const { resourceType , relatedResources , mainHead , lastCardHead , linkToAllItems } = props;
+
+  const hasMounted = useHasMounted();
 
   return (
     <RelatedResourcesWrapper>
@@ -17,7 +21,7 @@ const RelatedResources = props => {
         <h3>{mainHead}</h3>
       </div>
       {
-        typeof window !== "undefined" &&
+        hasMounted &&
                 <Slider
                   dots= { window.innerWidth < 992 }
                   arrows={ window.innerWidth >= 992 }

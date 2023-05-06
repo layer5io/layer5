@@ -14,6 +14,7 @@ import Banner1SectionWrapper from "./banner4.style";
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import useHasMounted from "../../../utils/useHasMounted";
 
 const Banner1 = (props) => {
 
@@ -37,6 +38,8 @@ const Banner1 = (props) => {
   );
 
   const pluginImage = getImage(heroImage);
+
+  const hasMounted = useHasMounted();
 
   return (
     <Banner1SectionWrapper {...props}>
@@ -63,7 +66,7 @@ const Banner1 = (props) => {
               </span>
             </Container>
           </Col>
-          {typeof window != "undefined" && window.innerWidth > 760 && (
+          {hasMounted && window.innerWidth > 760 && (
             <Col sm={4} lg={6} className="section-title-wrapper video-col">
               <Link to="/cloud-native-management/meshmap">
                 <video autoPlay muted loop preload="metadata" className="meshmapVideo">
