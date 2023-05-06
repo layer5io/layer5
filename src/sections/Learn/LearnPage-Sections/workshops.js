@@ -212,13 +212,21 @@ const WorkshopsSection = () => {
 `
   );
 
+  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
+    <span {...props}>{children}</span>
+  );
+
   var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <FiArrowRight />,
-    prevArrow: <FiArrowLeft />,
+    nextArrow: (<SlickButtonFix>
+      <FiArrowRight />
+    </SlickButtonFix>),
+    prevArrow: (<SlickButtonFix>
+      <FiArrowLeft />
+    </SlickButtonFix>),
     responsive: [
       {
         breakpoint: 700,
