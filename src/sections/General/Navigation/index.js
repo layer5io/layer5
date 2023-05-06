@@ -237,25 +237,29 @@ const Navigation = () => {
                     >
                       <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                       <ul>
-                        {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
-                          <li
-                            key={index}
-                            className="mobile-nav-subitem"
-                          >
-                            {(["Forum", "Catalog", "Playground"]).includes(subItems.name) ?
-                              <a href={subItems.path} target="_blank" onClick={ () => {
-                                changeDropdownState();
-                                closeDropDown();
-                              }} className="mobile-sub-menu-item" rel="noreferrer">
-                                {subItems.name}
-                              </a>
-                              : <Link to={subItems.path} onClick={ () => {
-                                changeDropdownState();
-                                closeDropDown();
-                              }} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
-                            }
-                          </li>
-                        ))}
+                        {menu.subItems !== undefined && menu.subItems.map((subItems, index) => {
+                          const externalLinks = ["Forum", "Catalog", "Playground"];
+
+                          return (
+                            <li
+                              key={index}
+                              className="mobile-nav-subitem"
+                            >
+                              {externalLinks.includes(subItems.name) ?
+                                <a href={subItems.path} target="_blank" onClick={ () => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }} className="mobile-sub-menu-item" rel="noreferrer">
+                                  {subItems.name}
+                                </a>
+                                : <Link to={subItems.path} onClick={ () => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
+                              }
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
                   ))}

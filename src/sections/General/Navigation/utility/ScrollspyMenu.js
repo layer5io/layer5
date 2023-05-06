@@ -48,6 +48,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   return (
     <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
       {menuItems.map((menu, index) => (
+
         <li
           key={index}
           className={
@@ -69,18 +70,22 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
               <div className="hr">
                 <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
                 </Link>
-                {activeState.subItems.map((subItem, i) => (
-                  <li key={i}>
-                    {subItem.name === "Forum" ?
-                      <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
-                        {subItem.name}
-                      </a>
-                      : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
-                        {subItem.name}
-                      </Link>
-                    }
-                  </li>
-                ))}
+                {activeState.subItems.map((subItem, i) => {
+                  const externalLinks = ["Forum", "Catalog", "Playground"];
+
+                  return (
+                    <li key={i}>
+                      {externalLinks.includes(subItem.name) ?
+                        <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
+                          {subItem.name}
+                        </a>
+                        : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+                          {subItem.name}
+                        </Link>
+                      }
+                    </li>
+                  );
+                })}
                 <div className="action-items">
                   {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?

@@ -91,7 +91,7 @@ const SMIPage = () => {
         <div id="tests" className="test-block">
           <h2>Conformance Tests</h2>
           <h3>for service mesh interoperability</h3>
-          <p></p>
+          <br />
           <div className="table">
             <TestsTable/>
           </div>
