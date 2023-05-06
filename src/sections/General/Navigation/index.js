@@ -261,7 +261,7 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li>
-                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" />
+                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true}/>
                     </li>
                   </ul>
                 </div>
