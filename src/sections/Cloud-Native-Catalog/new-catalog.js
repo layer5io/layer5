@@ -5,7 +5,7 @@ import Button from "../../reusecore/Button";
 
 const NewCatalogWrapper = styled.div`
   min-height: 500px;
-	background-color: #F0F0F0;
+  background-color: ${({ theme }) => theme.whiteOneToGreyF0F0F0};
   .container {
     min-height: 500px;
     display: flex;
@@ -15,31 +15,31 @@ const NewCatalogWrapper = styled.div`
   }
   .new-catalog__title {
     text-align: center;
-		color: #1E2117;
-		font-weight: 600;
-		font-size: 3.125rem;
-		line-height: 3.813rem;
-		padding: 0 200px 20px 200px;
+    color: ${(props) => props.theme.tertiaryColor};
+    font-weight: 600;
+    font-size: 3.125rem;
+    line-height: 3.813rem;
+    padding: 0 200px 20px 200px;
   }
   .new-catalog__button_section {
     display: flex;
     justify-content: center;
-		padding-top: 20px;
+    padding-top: 20px;
   }
-	@media screen and (max-width: 992px) {
-		.new-catalog__title {
-		padding: 0 0 10px 0;
+  @media screen and (max-width: 992px) {
+    .new-catalog__title {
+      padding: 0 0 10px 0;
+    }
+    .new-catalog__button_section {
+      padding-top: 10px;
+    }
   }
-	.new-catalog__button_section {
-		padding-top: 10px;
+  @media screen and (max-width: 767px) {
+    .new-catalog__title {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
   }
-	}
-	@media screen and (max-width: 767px) {
-		.new-catalog__title {
-		font-size: 2rem;
-		line-height: 2.5rem;
-  }
-	}
 `;
 
 const NewCatalog = () => {
