@@ -41,7 +41,6 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
 
   return (
     <>
-      <html lang="en" />
       <title>{seo.title}</title>
       <meta name="description" property="og:description" content={seo.description} />
       <meta name="og:description" content={seo.description} />
