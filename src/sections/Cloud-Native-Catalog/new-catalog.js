@@ -50,7 +50,7 @@ const NewCatalog = () => {
           CREATE A CATALOG AND SHARE WITH YOUR FRIENDS
         </p>
         <di className="new-catalog__button_section">
-          <Button primary title="Create Catalog" url=""></Button>
+          <Button primary title="Create Catalog" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog"></Button>
         </di>
       </Container>
     </NewCatalogWrapper>

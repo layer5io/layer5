@@ -206,25 +206,42 @@ const CatalogHeaderWrapper = styled.div`
       }
       .catalog {
         margin: 50px 0 0 0;
-        justify-content: unset;
-        .calalog__card--main {
-          display: none;
-        }
         .calalog__card--child {
-          position: relative;
-          top: 0px;
-          right: 0;
-          left: 0;
-          margin-bottom: 10px;
-          padding: 10px 30px;
+          .calalog__card__title {
+            font-size: 18px;
+            line-height: 21px;
+          }
         }
-        .calalog__card--patterns,
-        .calalog__card--programs {
-          right: 0;
-        }
-        .calalog__card--policies,
         .calalog__card--webAssembly {
-          right: 0;
+          right: 20px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 570px) {
+      .catalog {
+        .calalog__card--programs {
+          left: 50px;
+        }
+        .calalog__card--policies {
+          right: 50px;
+        }
+        .calalog__card--patterns {
+          left: 10px;
+        }
+        .calalog__card--webAssembly {
+          right: 50px;
+        }
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .catalog {
+        margin: 180px 0 130px 0;
+        .calalog__card--policies {
+          bottom: -140px;
+        }
+        .calalog__card--webAssembly {
+          top: -140px;
         }
       }
     }
@@ -245,7 +262,7 @@ const Header = () => {
                 upgrade your cloud native operations!
               </p>
               <di className="header__button_section">
-                <Button primary title="Create Catalog" url=""></Button>
+                <Button primary title="Create Catalog" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog"></Button>
               </di>
             </Col>
             <Col className="col catalog" lg={6} md={12}>
