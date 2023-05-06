@@ -72,13 +72,7 @@ margin-top: 1rem;
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
-      transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-
-      &:hover{
-        background: linear-gradient(123deg, #00d3a9 60%, #00b39f 100%);
-      }
-
+  
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
@@ -156,7 +150,7 @@ margin-top: 1rem;
   .fixed {
     top: 6rem;
     font-weight: 300;
-    transition: .4s ease-in-out;
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     background: #00b39f;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     & > h1 {
@@ -164,6 +158,9 @@ margin-top: 1rem;
     }
     @media (max-width: 912px) {
       top: 5rem;
+    }
+    &:hover{
+      background: #00d3a9;
     }
 }
 
