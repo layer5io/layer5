@@ -16,7 +16,7 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
 import { useLocation } from "@reach/router";
-import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
+import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
