@@ -227,6 +227,8 @@ const Navigation = () => {
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
                   {Data.menuItems.map((menu, index) => (
+
+
                     <li
                       key={index}
                       className={
@@ -240,7 +242,7 @@ const Navigation = () => {
                             key={index}
                             className="mobile-nav-subitem"
                           >
-                            {subItems.name === "Forum" ?
+                            {(["Forum", "Catalog", "Playground"]).includes(subItems.name) ?
                               <a href={subItems.path} target="_blank" onClick={ () => {
                                 changeDropdownState();
                                 closeDropDown();
