@@ -11,6 +11,14 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link rel="preconnect" href="https://fonts.gstatic.com/"  crossOrigin />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap" />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
+          media="print" onLoad="this.media='all'" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
