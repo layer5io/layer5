@@ -22,10 +22,12 @@ import Functional from "./functional";
 import SMI_Compatibility from "./smi";
 import Tools from "./tools";
 import "regenerator-runtime/runtime";
-
-const isBrowser = typeof window !== "undefined";
+import useHasMounted from "../../utils/useHasMounted";
 
 const LandscapeGrid = () => {
+
+  const hasMounted = useHasMounted();
+
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -89,7 +91,7 @@ const LandscapeGrid = () => {
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
-              {isBrowser ?
+              {hasMounted ?
                 <Tabs defaultIndex={2} className="landscape-table">
                   <TabList>
                     <Tab>Categories</Tab>
