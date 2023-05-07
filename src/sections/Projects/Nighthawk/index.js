@@ -97,7 +97,7 @@ const Projects = () => {
               <div className="text">
                 <h2>Easing Management of the Nighthawk Lifecycle</h2>
                 <p>As with a lot of open source projects, there is a lack of consistent tooling. This makes it difficult to have easily repeatable tests in that the building, deploying, and maintaining of Nighthawk instances (potentially a fleet of Nighthawk instances) is a burden without additional tooling. </p>
-                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" />
+                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" external={true}/>
               </div>
             </Col>
           </Row>
@@ -122,20 +122,19 @@ const Projects = () => {
                     <img src={cloud} alt="cloud image" />
                   </div>
                   <h2>Nighthawk Distribution</h2>
-                  <p>Stable builds available for:
-                    <ul>
-                      <li>Debian</li>
-                      <li>CentOS</li>
-                      <li>Unbuntu</li>
-                      <li>macOS</li>
-                      <li>Docker</li>
-                    </ul>
-                      In these package managers:
-                    <ul>
-                      <li>Homebrew</li>
-                      <li>Scoop</li>
-                    </ul>
-                  </p>
+                  <p>Stable builds available for:</p>
+                  <ul>
+                    <li>Debian</li>
+                    <li>CentOS</li>
+                    <li>Unbuntu</li>
+                    <li>macOS</li>
+                    <li>Docker</li>
+                  </ul>
+                  <p>In these package managers:</p>
+                  <ul>
+                    <li>Homebrew</li>
+                    <li>Scoop</li>
+                  </ul>
                 </div>
                 <div className="card">
                   <div className="circle">
