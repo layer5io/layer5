@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Ebpf from "../../assets/images/meshmap/ebpf.svg";
 import Opa from "../../assets/images/meshmap/opa.svg";
-import Catalogs from "../../assets/images/catalog/Catalog.svg";
+import CatalogsLight from "../../assets/images/catalog/Catalog-light.svg";
+import CatalogsDark from "../../assets/images/catalog/Catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const CatalogWrapper = styled.div`
   min-height: fit-content;
@@ -122,13 +124,20 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
+  const [img, setImg] = useState(CatalogsLight);
+  const { isDark } = useStyledDarkMode();
+
+  useEffect(() => {
+    isDark ? setImg(CatalogsDark) : setImg(CatalogsLight);
+  }, [isDark]);
+
   return (
     <CatalogWrapper>
       <Container className="catalog-container">
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Catalogs} className="calalog-image" />
+              <img src={img} className="calalog-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
