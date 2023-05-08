@@ -13,7 +13,7 @@ const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 
-import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+// import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
 
 const IndexPage = () => {
