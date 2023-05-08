@@ -227,6 +227,13 @@ export const repo_data = [
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
+      {
+        project: "Meshery Cloud",
+        image: meshery,
+        language: "Golang",
+        description: "A Meshery Remote Provider.",
+        repository: "https://docs.meshery.io/extensibility/providers",
+      },
       // {
       //   project: "MeshMonkey",
       //   language: "Golang",
