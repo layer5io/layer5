@@ -75,6 +75,7 @@ const CatalogWrapper = styled.div`
     transform-style: preserve-3d;
     animation: swirl 40s steps(10000, end) infinite;
   }
+
   #carousel:hover {
     animation-play-state: paused;
   }

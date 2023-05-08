@@ -261,9 +261,9 @@ const Header = () => {
                 infrastructure with the Cloud Native Catalog. Browse now and
                 upgrade your cloud native operations!
               </p>
-              <di className="header__button_section">
-                <Button primary title="Create Catalog" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog"></Button>
-              </di>
+              <div className="header__button_section">
+                <Button primary title="Create Catalog" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog" />
+              </div>
             </Col>
             <Col className="col catalog" lg={6} md={12}>
               <div className="calalog__card calalog__card--child calalog__card--programs">
