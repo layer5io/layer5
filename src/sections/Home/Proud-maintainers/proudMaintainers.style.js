@@ -151,6 +151,8 @@ const ProjectItemWrapper = styled.section`
       @media screen and (max-width: 550px) {
           img {
             padding: 1.65rem 0;
+			padding-left: 0.8rem;
+			padding-right: 0.5rem;
           }
           h4 {
             font-size: 0.7rem;
