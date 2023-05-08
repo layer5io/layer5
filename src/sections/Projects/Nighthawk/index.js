@@ -162,45 +162,47 @@ const Projects = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="listed">
                 <table className="table">
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                  <tbody>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Further the state of distributed <br />
                         performance management.
-                      </h4>
+                        </h4>
                       Enable standards-based, distributed performance management through compatibility with the Service Mesh Performance (SMP) specification.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Facilitate Nighthawk adoption.
-                      </h4>
+                        </h4>
                       Deliver trusted, certified builds, distributed via the most popular package managers: apt, yum, Homebrew, and platforms: Docker and Meshery.
                       Bridge Nighthawk’s C++ with the lingua franca of Cloud Native: Golang.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Deliver easy-to-use, repeatable <br />
                         tooling.
-                      </h4>
+                        </h4>
                       To leverage Nighthawk as the performance characterization tool as used in the 30 patterns in the Service Mesh Patterns book.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Educate the ecosystem
-                      </h4>
+                        </h4>
                       Educate the ecosystem through the CNCF Service Mesh Working Group.
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </Col>
