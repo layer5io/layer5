@@ -116,6 +116,15 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/meshery/play",
       },
+      {
+        project: "Meshery Cloud",
+        image: meshery,
+        site: "https://meshery.layer5.io/",
+        language: "React.js",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        repository: "https://github.com/meshery/meshery",
+      }
     ],
   },
 
