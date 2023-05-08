@@ -80,13 +80,13 @@ const Reviews = () => {
       <div className="slider">
         <h2>Hear what other users have to say...</h2>
         <Slider {...settings}>
-          <Customers
+          {/* <Customers
             type="1"
             quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
             person="Maximiliano Churichi"
             title="Software Engineer at HPE"
             image={Maxi}
-          />
+          /> */}
           <Customers
             type="2"
             quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
