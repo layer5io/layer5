@@ -30,7 +30,7 @@ const CollaborationFeatureCreateWrapper = styled.div`
     position: relative;
     height: 200px;
     width: 200px;
-    color: ${(props) => props.theme.DarkTheme ? "white" : "black"};
+    color: ${(props) => props.theme.text};
     
     margin-left: 45px;
     margin-top: 10px;
