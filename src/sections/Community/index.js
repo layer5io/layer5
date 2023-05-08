@@ -19,7 +19,6 @@ import { BgImage } from "gbimage-bridge";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
-
 const CommunityPage = () => {
 
   const { backgroundImage123 } = useStaticQuery(
