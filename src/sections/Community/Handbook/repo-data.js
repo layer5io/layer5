@@ -121,7 +121,7 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.layer5.io/",
         language: "React.js",
-        maintainers_name: ["Vacant"],
+        maintainers_name: ["Pranav Singh","Uzair Shaikh"],
         link: ["#"],
         repository: "https://github.com/meshery/meshery",
       }
