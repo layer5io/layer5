@@ -6,7 +6,7 @@ export const TooltipWrapper = styled.div`
 `;
 
 export const TooltipText = styled.span`
-    visibility: hidden;
+    display: none;
     width: 80px;
     font-size: 0.725rem;
     line-height: 1.2;
@@ -34,7 +34,7 @@ export const TooltipText = styled.span`
         left: 100%;
     }
     ${TooltipWrapper}:hover & {
-        visibility: visible;
+        display: block;
         opacity: 1;
     }
 `;
