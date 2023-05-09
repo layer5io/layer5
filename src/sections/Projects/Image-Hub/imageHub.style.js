@@ -4,6 +4,9 @@ const ImageHubWrapper = styled.section`
     .banner-background{
         background-color: ${props => props.theme.black};
     }
+    .margin4{
+        margin-bottom: 4%;
+    }
     .banner{
         padding: 6.25rem 0 1.25rem 0;
         .title-text{
