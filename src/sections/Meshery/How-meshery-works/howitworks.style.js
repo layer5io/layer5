@@ -4,6 +4,11 @@ const HowitworksWrapper = styled.section`
 // ul li:last-child {
 //     padding-bottom: 120px;
 //   }
+
+h2 {
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
   ul li:first-child {
     padding-top: 60px;
   }

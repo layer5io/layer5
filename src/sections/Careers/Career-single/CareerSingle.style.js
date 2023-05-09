@@ -22,6 +22,7 @@ const CareerPageWrapper = styled.div`
     .job-details {
         h5 {
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
             svg {
                 vertical-align: top;
@@ -50,7 +51,6 @@ const CareerPageWrapper = styled.div`
         margin: auto;
 
         svg {
-            width: 15rem;
             .layer5-colorMode_svg__colorMode1 {
               fill: ${props => props.theme.whiteToGreen3C494F};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

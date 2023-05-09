@@ -176,20 +176,18 @@ const Navigation = () => {
         closeDropDown();
       }
     };
+
     expand && document.addEventListener("click", outsideClickHandler);
     return () => {
       document.removeEventListener("click", outsideClickHandler);
     };
   }, [expand]);
+
   useEffect(() => {
     window.addEventListener("scroll", () =>
       window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
     );
   }, []);
-
-  const changeDropdownState = () => {
-    setExpand(!expand);
-  };
 
   const openDropDown = () => {
     dropDownRef.current.classList.add("expand");
@@ -197,6 +195,11 @@ const Navigation = () => {
 
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
+  };
+
+  const changeDropdownState = () => {
+    setExpand(false);
+    closeDropDown();
   };
 
   return (
@@ -210,13 +213,13 @@ const Navigation = () => {
             {expand ?
               <IoMdClose
                 className="mobile-menu-icon open"
-                onClick={function () {
-                  setExpand(!expand); closeDropDown();
+                onClick={function() {
+                  setExpand(false); closeDropDown();
                 }}
               /> : <FaBars
                 className="mobile-menu-icon"
-                onClick={function () {
-                  setExpand(!expand); openDropDown();
+                onClick={function() {
+                  setExpand(true); openDropDown();
                 }}
               />
             }
@@ -238,10 +241,16 @@ const Navigation = () => {
                             className="mobile-nav-subitem"
                           >
                             {subItems.name === "Forum" ?
-                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="mobile-sub-menu-item" rel="noreferrer">
+                              <a href={subItems.path} target="_blank" onClick={ () => {
+                                changeDropdownState();
+                                closeDropDown();
+                              }} className="mobile-sub-menu-item" rel="noreferrer">
                                 {subItems.name}
                               </a>
-                              : <Link to={subItems.path} onClick={changeDropdownState} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
+                              : <Link to={subItems.path} onClick={ () => {
+                                changeDropdownState();
+                                closeDropDown();
+                              }} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
                             }
                           </li>
                         ))}

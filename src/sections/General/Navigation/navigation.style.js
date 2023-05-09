@@ -213,20 +213,6 @@ const NavigationWrap = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-
-      svg {
-        .prometheus-partial-colorMode_svg__colorMode1,
-        .pod-partial-colorMode_svg__colorMode1,
-        .kubernetes-partial-colorMode_svg__colorMode1,
-        .ingress-gateway-partial-colorMode_svg__colorMode1 {
-          fill: ${props => props.theme.whiteToBlack};
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .empty-colorMode_svg__colorMode1 {
-          fill: ${props => props.theme.whiteToGrey121212};
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-      }
     }
 
 
@@ -373,6 +359,9 @@ const NavigationWrap = styled.header`
         }
       }
     }
+    a{
+      align-items: center;
+    }
     .menu-link {
       margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
@@ -403,10 +392,6 @@ const NavigationWrap = styled.header`
         fill: ${props => props.theme.whiteToGreen3C494F};
       }
     }
-    
-    img {
-      width: 155px;
-    }
     @media screen and (max-width: 992px) and (min-width: 912px) {
       width: 125px;
     }
@@ -429,7 +414,15 @@ const NavigationWrap = styled.header`
       margin-top: -34px;
     }
   }
-
+  @media only screen and (min-width:912px) and (max-width:992px){
+    .nav{
+      margin-left: 1.375rem;
+    }
+    #login , #get-started-2 {
+      margin:0;
+    }
+    
+  }
   @media only screen and (max-width: 912px) {
     height: auto;
     min-height: 50px;
@@ -618,7 +611,7 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 0px;
@@ -707,6 +700,33 @@ const NavigationWrap = styled.header`
         max-width: 70%;
         position: relative;
         z-index: -1;
+        svg {
+            .prometheus-partial-colorMode_svg__colorMode1,
+            .pod-partial-colorMode_svg__colorMode1,
+            .ingress-gateway-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .empty-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGrey121212};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            
+            .service-interface-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .kubernetes-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.blackToWhite};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .kubernetes-partial-colorMode_svg__colorMode2 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+        }
     }
 
 

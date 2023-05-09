@@ -29,8 +29,8 @@ const BannerDefault = () => {
                   <p className="statement">We make cloud native manageable by </p>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
-                    <span>
-                      harnessing the unique position service meshes have in changing how developers write applications and how operators run modern infrastructure.
+                    <span className="span-text">
+                      harnessing the power of a developer-friendly applications management system that supports visualization of the modern infrastructure leading to effective operation with best practices.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}

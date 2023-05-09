@@ -90,6 +90,10 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Catalog",
+          path: "https://meshery.io/catalog",
+        },
+        {
           name: "Docker Extension",
           path: "/docker-extension-meshery",
         },
@@ -98,13 +102,17 @@ const Data = {
           path: "/cloud-native-management/meshmap",
         },
         {
+          name: "Playground",
+          path: "https://play.meshery.io",
+        },
+        {
           name: "Nighthawk",
           path: "/projects/nighthawk",
           sepLine: true
         },
         {
           name: "Service Mesh",
-          path: "/landscape",
+          path: "/service-mesh-landscape",
           sepLine: true
         },
         {
@@ -117,7 +125,7 @@ const Data = {
         },
         {
           name: "Landscape",
-          path: "/landscape",
+          path: "/service-mesh-landscape",
         },
         {
           name: "Performance",
@@ -178,10 +186,10 @@ const Data = {
           actionName: "Join the discussion",
           actionLink: "https://discuss.layer5.io",
         },
-        {
-          actionName: "Free service mesh training",
-          actionLink: "/learn",
-        }
+        // {
+        //   actionName: "Free service mesh training",
+        //   actionLink: "/learn",
+        // }
       ],
       // div1: {
       //   src: meshery,

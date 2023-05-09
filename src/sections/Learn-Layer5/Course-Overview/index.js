@@ -133,7 +133,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               <Button
                 secondary
                 title="Join The Community"
-                url="http://slack.layer5.io/"
+                url="https://slack.layer5.io/"
                 external={true}
               />
             </div> */}

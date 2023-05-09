@@ -57,7 +57,7 @@ const DesignDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col" >
-            <div ref={diagramRef} style={{ alignSelf: "center" }}>
+            <div ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
               <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
             </div>
           </Col>
