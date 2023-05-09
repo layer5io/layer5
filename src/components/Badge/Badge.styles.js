@@ -11,7 +11,7 @@ export const TooltipText = styled.span`
     font-size: 0.725rem;
     line-height: 1.2;
     background-color: #555;
-    color: #fff;
+    color: ${(props) => props.theme.white};
     text-align: center;
     border-radius: 0.325rem;
     padding: 0.325rem 0;
