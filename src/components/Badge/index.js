@@ -8,7 +8,7 @@ const Badge = ({ name, to, className, src, alt, firstChild }) => {
       <Link to={to}>
         <TooltipWrapper>
           <img className={className} src={src} alt={alt}/>
-          {firstChild ? <TooltipText className="first">{name}</TooltipText> : <TooltipText>{name}</TooltipText>}
+          <TooltipText className={firstChild ? "first" : ""}>{name}</TooltipText>
         </TooltipWrapper>
       </Link>
     </li>
