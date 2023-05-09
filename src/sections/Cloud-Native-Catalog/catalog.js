@@ -4,8 +4,8 @@ import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Ebpf from "../../assets/images/meshmap/ebpf.svg";
 import Opa from "../../assets/images/meshmap/opa.svg";
-import CatalogsLight from "../../assets/images/catalog/Catalog-light.svg";
-import CatalogsDark from "../../assets/images/catalog/Catalog-dark.svg";
+import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
+import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
@@ -143,19 +143,17 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Harness Meshery's Compatibility</h2>
             <p className="caption">
-              easily manage and monitor your entire infrastructure, regardless
+              Easily manage and monitor your entire infrastructure, regardless
               of the specific tools and services you use.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-              Deploy Applications with Meshery's Deployment Patterns
-            </h2>
+            <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
-              Cloud native patterns enable the business function in simple
-              language.
+              Embedded in the data plane of a service mesh, WebAssembly filters
+              offer fine-grained control over service requests.
             </p>
           </Col>
           <Col md={6} className="catalog-image">

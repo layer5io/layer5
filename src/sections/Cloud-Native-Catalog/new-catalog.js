@@ -47,10 +47,10 @@ const NewCatalog = () => {
     <NewCatalogWrapper className="new-catalog">
       <Container className="container">
         <p className="new-catalog__title">
-          CREATE A CATALOG AND SHARE WITH YOUR FRIENDS
+          CREATE AND SHARE YOUR OWN BEST PRACTICES
         </p>
         <div className="new-catalog__button_section">
-          <Button primary title="Create Catalog" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog" />
+          <Button primary external={true} title="Publish Your Own Design" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog" />
         </div>
       </Container>
     </NewCatalogWrapper>
