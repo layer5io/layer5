@@ -123,7 +123,7 @@ export const repo_data = [
         language: "React.js",
         maintainers_name: ["Pranav Singh","Uzair Shaikh"],
         link: ["#"],
-        repository: "https://github.com/meshery/meshery",
+        repository: "https://github.com/layer5io/meshery-cloud",
       }
     ],
   },
