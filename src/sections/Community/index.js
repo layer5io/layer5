@@ -16,6 +16,7 @@ import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/mes
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import useHasMounted from "../../utils/useHasMounted";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
@@ -39,11 +40,13 @@ const CommunityPage = () => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const hasMounted = useHasMounted();
+
+  const pluginImage = hasMounted && getImage(backgroundImage123);
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={pluginImage} className="section">
+      <BgImage image={ pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>

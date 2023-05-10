@@ -12,6 +12,7 @@ import MeshMapCTA from "../../meshmap-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
+import useHasMounted from "../../../utils/useHasMounted";
 
 
 const latency = "../../../assets/images/smp-page/latency-at-scale.png";
@@ -38,7 +39,9 @@ const SMPPage = () => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const hasMounted = useHasMounted();
+
+  const pluginImage = hasMounted && getImage(backgroundImage123);
 
   return (
     <>
