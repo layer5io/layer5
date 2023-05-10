@@ -116,6 +116,15 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/meshery/play",
       },
+      {
+        project: "Meshery Cloud",
+        image: meshery,
+        site: "https://meshery.layer5.io/",
+        language: "React.js",
+        maintainers_name: ["Pranav Singh","Uzair Shaikh"],
+        link: ["#"],
+        repository: "https://github.com/layer5io/meshery-cloud",
+      }
     ],
   },
 
@@ -217,6 +226,13 @@ export const repo_data = [
         language: "Golang, Kuttl",
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository: "https://github.com/layer5io/meshery-smi-conformance-action",
+      },
+      {
+        project: "Meshery Cloud",
+        image: meshery,
+        language: "Golang",
+        description: "A Meshery Remote Provider.",
+        repository: "https://docs.meshery.io/extensibility/providers",
       },
       // {
       //   project: "MeshMonkey",
