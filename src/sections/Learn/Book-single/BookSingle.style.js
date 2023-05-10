@@ -27,6 +27,12 @@ const BookSinglePageWrapper = styled.div`
 		}
 		
 	}
+
+	@media only screen and (max-width: 480px) {
+		#service-mesh-patterns-table > select{
+			width: 100%;
+		}
+	}
     .single-post-wrapper{
         margin: 2rem 0;
     }

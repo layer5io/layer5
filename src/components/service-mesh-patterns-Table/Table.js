@@ -48,7 +48,7 @@ const Table = () => {
                       : <>
                       </>}
                     {(column.Header == "Category") ?
-                      <div>{column.canFilter ? column.render("Filter") : null}</div>
+                      <div id={"service-mesh-patterns-table"}>{column.canFilter ? column.render("Filter") : null}</div>
                       : <> </>
                     }
                   </div>
