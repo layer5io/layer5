@@ -29,7 +29,7 @@ const BookSinglePageWrapper = styled.div`
 	}
 
 	@media only screen and (max-width: 480px) {
-		#service-mesh-patterns-table > select{
+		#service-mesh-patterns-table-filter > select{
 			width: 100%;
 		}
 	}
