@@ -97,16 +97,16 @@ const RecognitionPage = () => {
                 <b>Community</b> - awarded given to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
               </li>
               <li>
+                <img src={DockerExtension} style={badgeStyle} />
+                <b>Docker Extension</b> - awarded community members who make consistent and impactful contributions to the Docker-Extension of meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
                 <b>Image Hub</b> - awarded community members who make consistent and impactful contributions the Image Hub project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
                 <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to the layer5.io website.
-              </li>
-              <li>
-                <img src={DockerExtension} style={badgeStyle} />
-                <b>Docker-Extension</b> - awarded community members who make consistent and impactful contributions to the Docker-Extension of meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={MesheryLogo} style={badgeStyle} />
