@@ -420,3 +420,5 @@ export const darktheme = {
 
 
 };
+
+export default lighttheme;
