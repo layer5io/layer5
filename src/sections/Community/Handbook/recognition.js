@@ -98,7 +98,7 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={DockerExtension} style={badgeStyle} />
-                <b>Docker Extension</b> - awarded community members who make consistent and impactful contributions to the Docker-Extension of meshery project in recognition and appreciation of their efforts.
+                <b>Docker Extension</b> - awarded community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
