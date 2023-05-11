@@ -7,6 +7,7 @@ import CommunityLogo from "../../../assets/images/community/community-green.svg"
 import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import DockerExtension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
@@ -102,6 +103,10 @@ const RecognitionPage = () => {
               <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
                 <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to the layer5.io website.
+              </li>
+              <li>
+                <img src={DockerExtension} style={badgeStyle} />
+                <b>Docker</b> - awarded community members who make consistent and impactful contributions to the Docker-Extension of meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={MesheryLogo} style={badgeStyle} />
