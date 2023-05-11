@@ -42,7 +42,7 @@ const CatalogWrapper = styled.div`
       }
     }
   }
-  
+
   .catalog {
     display: flex;
     padding: 5rem 0;
@@ -122,7 +122,8 @@ const CatalogWrapper = styled.div`
 
 const Catalog = () => {
   const Wasm = "../../assets/images/webassembly/webssembly_icon.svg";
-  const Patterns = "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+  const Patterns =
+    "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
   const Ebpf = "../../assets/images/meshmap/ebpf.svg";
   const Opa = "../../assets/images/meshmap/opa.svg";
 
@@ -154,8 +155,8 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
-              Embedded in the data plane of a service mesh, WebAssembly filters
-              offer fine-grained control over service requests.
+              EWebAssembly filters grant meticulous command over service
+              requests, seamlessly integrated into the data plane.
             </p>
           </Col>
           <Col md={6} className="catalog-image">
@@ -175,8 +176,8 @@ const Catalog = () => {
               Maximize Your Performance with eBPF Programs
             </h2>
             <p className="caption">
-              Embedded in the data plane of a service mesh, eBPF programs
-              performant, fine-grained control over service requests.
+              Embedded within the data plane, eBPF programs enable
+              high-performance, granular control over service requests.
             </p>
           </Col>
         </Row>
@@ -204,11 +205,11 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">
-              Revolutionize Your Mesh Security with Policies
+              Elevate Security Policies for a Revolutionary Transformation
             </h2>
             <p className="caption">
               Applied across the cloud native infrastructure under management,
-              policies may be applied broadly and specificly.
+              policies may be applied broadly and specifically.
             </p>
           </Col>
         </Row>
