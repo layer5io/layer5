@@ -159,7 +159,7 @@ const BlogSingle = ({ data }) => {
                   </div>
                 </div>
                 <CTA_Bottom
-                  category={"Docker"}
+                  category={"MeshMap"}
                 />
               </div>
             </div>

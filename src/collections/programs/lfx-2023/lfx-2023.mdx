@@ -113,14 +113,72 @@ A use-case that fits very well is be the ability to use it to run performance te
 #### Representing Kubernetes ontology in MeshModel
 
 **Description**: Network topologies and graph databases go hand-in-hand. The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph. Deliverables (among other items):
-- MeshModel capabilities browser
-- Import/export of MeshModel models and components as OCI images
-- augmentation of cuelang-based component generator
+1. MeshModel capabilities browser
+2. Import/export of MeshModel models and components as OCI images
+3. Augmentation of cuelang-based component generator
+
 
 - Recommended Skills: cuelang, golang, OCI
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
 - Issue: https://github.com/cncf/tag-network/issues/24
 - LFX URL: https://mentorship.lfx.linuxfoundation.org/project/96080e3d-83e2-46ed-928c-b6e7f3154bf3
+
+## LFX Mentorship 2023 Summer Projects
+<br />
+
+### Meshery
+<br />
+
+#### Meshery UI Permissions Framework
+
+**Description**: Meshery UI lacks a permissions framework. The existing internal implementation is simple, fragile and must be completely rewritten. The approach to implemention a permmissions framework includes using React.js and CASL.js. Meshery UI's approach needs to be extensible given that this framework will be an extension point for Remote Providers to supply their own permissions. 
+
+**Expected Outcome**: Definition of permissions and their enforcement in Meshery with an aim for deep granularity and extensibility with each user interface input component carrying a unique permission key id. Each key is then put into a group of keys in a keychain, keychains assigned to user roles, in turn, roles assigned to users. With users having the ability to create own custom roles, the framework will be dynamic based on the associated server-side permissions for the currently auth’ed user.
+- Recommended Skills: React.js, CASL.js
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7436, https://github.com/meshery/meshery/issues/7382
+
+#### OPA policy evaluation in-browser using WebAssembly and Rego
+
+**Description**: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI. 
+
+**Expected Outcome**: a powerful real-time multi-user collaboration experience.
+- Recommended Skills: Golang, Open Policy Agent, WASM
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7019
+
+#### Adopt OCI as the packaging and distribution format for Meshery MeshModels
+
+**Description**: Meshery MeshModels represent a schema-based description of cloud native infratructure. MeshModels need to be portable between Meshery deployments as well as easily versionable in external repositories. 
+
+**Expected Outcome**: 
+1. Meshery clients (mesheryctl and Meshery UI) should be able to import/export MeshModels as OCI images.
+2. Meshery clients (mesheryctl and Meshery UI) should be able to push/pull from OCI-compatible registries.
+3. Stretch Goal: OCI image signing; Verify the authenticity of MeshModels using cosign (https://github.com/sigstore/cosign).
+4. Target registries: Meshery Catalog (https://meshery.io/catalog), Artifact Hub.
+
+
+- Recommended Skills: Reactjs, Golang, GraphQL
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue (URL): https://github.com/meshery/meshery/issues/6447
+
+### Service Mesh Performance
+<br />
+
+#### Service Mesh Performance IDE Plugin
+
+**Description**: The objective of this project is to develop IDE plugins that can enhance the developer experience while working with Service Mesh Performance Performance Profiles. The proposed plugins will leverage technologies such as golang and cuelang to provide features such as syntax highlighting, auto-completion, validation, and rendering previews for Service Mesh Performance profile and model definitions. 
+
+**Expected Outcome**: 
+1. Release VS Code Extension
+2. Syntax Highlighting and Auto-completion: The plugin can fetch SMP Model definitions such as cloud-native components and their relationships. This information can be used to provide syntax highlighting and auto-completion for these definitions in the JSON files, making it easier for developers to write error-free code.
+3. Validation and Reference: For Meshery MeshModel definitions such as cloud-native components and their relationships, the plugin can use the CUE language to provide validation for the CUE input and preview the rendering result. The plugin can also fetch the SMP Model schemas and display them in the IDE for reference.
+
+
+- Recommended Skills: Cuelang
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue (URL): https://github.com/service-mesh-performance/service-mesh-performance/issues/379
+
 
 ## Additional information
 <br />
