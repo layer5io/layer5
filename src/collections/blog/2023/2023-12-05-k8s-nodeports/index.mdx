@@ -37,7 +37,7 @@ Here are a few examples of different port ranges and their band offset values:
 | Dynamic band start | 30086 |
 | Dynamic band end | 32767 |
 
-| Range properties | Values |
+|| Range properties || Values ||
 | --- | --- |
 | service-node-port-range | 30000-30015 |
 | Band Offset | 16 |
@@ -47,6 +47,7 @@ Here are a few examples of different port ranges and their band offset values:
 | Dynamic band end | N/A |
 
 NodePort Services can be useful in many scenarios. For example, consider a user that needs to expose a Minio object storage service on Kubernetes to clients running outside the Kubernetes cluster. The agreed port is 30009, and the user needs to create a Service as follows:
+
 ```
 apiVersion: v1
 kind: Service
