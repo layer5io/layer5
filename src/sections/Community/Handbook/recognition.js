@@ -16,7 +16,7 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
 import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
-
+import MesheryCatalog from "../../../assets/images/meshery/meshery-catalog.svg";
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
@@ -99,6 +99,7 @@ const RecognitionPage = () => {
                 <img src={ImageHubLogo} style={badgeStyle} />
                 <b>Image Hub</b> - awarded community members who make consistent and impactful contributions the Image Hub project in recognition and appreciation of their efforts.
               </li>
+
               <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
                 <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to the layer5.io website.
@@ -110,6 +111,10 @@ const RecognitionPage = () => {
               <li>
                 <img src={MesheryOperator} style={badgeStyle} />
                 <b>Meshery Operator</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
+                <img src={MesheryCatalog} style={badgeStyle} />
+                <b>Meshery Catalog</b> - awarded community members who make consistent and impactful contributions to the Meshery Catalog of meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={meshmapLogo} style={badgeStyle} />
