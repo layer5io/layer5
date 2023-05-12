@@ -1,0 +1,68 @@
+---
+title: Kubernetes NodePorts - Static and Dynamic Assignments
+subtitle: Avoiding Port Collisions
+date: 2023-05-12 08:00:00 -0530
+author: Lee Calcote
+thumbnail: ../2023-02-03-validating-admission-controllers/kubernetes-new.png
+darkthumbnail: ../2023-02-03-validating-admission-controllers/kubernetes-new-dark.png
+description: "Avoiding Port Collisions with Kubernetes NodePorts Static and Dynamic Assignments"
+type: Blog
+category: Kubernetes
+tags:
+  - Kubernetes
+  - Networking
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+import Blockquote from "../../../../reusecore/Blockquote";
+
+Kubernetes provides a Service to offer a unified traffic endpoint for the Pods. While it offers a VIP to the clients for access and Kubernetes ensures traffic balancing for the accessing back-end Pods, it has a limitation of routing traffic from outside the cluster. To overcome this issue, a new feature called "NodePort" has been introduced. 
+
+By setting up a mapping to a specific port of all nodes in the cluster, a NodePort Service redirects traffic from the outside to the inside of the cluster. When a NodePort Service is created, Kubernetes control plane allocates its corresponding ports in two ways. The first is dynamic, where Kubernetes control plane automatically assigns an unused port at the creation time. The second is static, which assigns a port within the nodeport port range configuration. It is crucial to assign a unique nodePort across the entire cluster while manually assigning nodePort, or it will result in an error if a service of type NodePort already uses that port. 
+
+Sometimes, there is a need to run a NodePort Service on well-known ports so that other components and users inside or outside the cluster can use them. In such cases, users need to reserve the required ports before using them. Kubernetes 1.27 introduced a new feature gate "ServiceNodePortStaticSubrange" that allows users to use a different port allocation strategy for type NodePort Services. Enabling this feature gate will divide the port range for NodePort Services based on a formula that uses nodeport size and determines the size of the static port range.
+
+Here are a few examples of different port ranges and their band offset values:
+
+| Range properties | Values |
+| --- | --- |
+| service-node-port-range | 30000-32767 |
+| Band Offset | 86 |
+| Static band start | 30000 |
+| Static band end | 30085 |
+| Dynamic band start | 30086 |
+| Dynamic band end | 32767 |
+
+| Range properties | Values |
+| --- | --- |
+| service-node-port-range | 30000-30015 |
+| Band Offset | 16 |
+| Static band start | 30000 |
+| Static band end | 30015 |
+| Dynamic band start | N/A |
+| Dynamic band end | N/A |
+
+NodePort Services can be useful in many scenarios. For example, consider a user that needs to expose a Minio object storage service on Kubernetes to clients running outside the Kubernetes cluster. The agreed port is 30009, and the user needs to create a Service as follows:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio
+spec:
+  ports:
+  - name: api
+    nodePort: 30009
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: minio
+  type: NodePort
+```
+If the port required for the Minio Service is not reserved and another NodePort (or possibly LoadBalancer) Service is created and dynamically allocated before or concurrently with the Minio Service, the TCP port 30009 might be allocated to that other Service. In this case, creation of the Minio Service will fail due to a node port collision. 
+
+In conclusion, using the NodePort Service will help Kubernetes users by allowing traffic to be routed from outside to inside the cluster, providing a unified traffic endpoint for the Pods. By enabling the ServiceNodePortStaticSubrange feature gate, users can adopt a different port allocation strategy, reducing the risk of collisions while using a different range of ports.
