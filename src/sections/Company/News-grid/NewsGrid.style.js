@@ -13,32 +13,30 @@ export const NewsPageWrapper = styled.div`
         flex-wrap: wrap;
         width: 100%;
         justify-content: start;
-        @media only screen and (max-width:990px){
-                
+        @media only screen and (max-width:990px) {
             justify-content: center;
             margin-bottom: 3rem;
-        
-    }
+        }
     }
     .press-release-button{
-        background : rgb(240, 240, 240);
+        background : ${props => props.theme.shadowDarkColor};
         border-radius: 5px;
-        color: black;
-        &:hover{
-        box-shadow: 0 2px 10px ${props => props.theme.green00B39FToBlackFive};
+        color: ${props => props.theme.text};
+        &:hover {
+            box-shadow: 0 2px 10px ${props => props.theme.green00B39FToBlackFive};
         }
     }   
     .coverage-button {
+        background : ${props => props.theme.shadowDarkColor};
         margin-right: 2rem;
-        background : rgb(240, 240, 240);
         border-radius: 5px;
-        color: black;
-        &:hover{
+        color: ${props => props.theme.text};
+        &:hover {
             box-shadow: 0 2px 10px ${props => props.theme.green00B39FToBlackFour};
-            }
+        }
     }
     .coverage-button, .press-release-button {
-        @media only screen and (max-width:990px){
+        @media only screen and (max-width:990px) {
             margin: 0.5rem;
         }    
     }
@@ -46,10 +44,9 @@ export const NewsPageWrapper = styled.div`
     .filter-buttons {
         display: flex;
         margin-bottom: 3rem;
-        @media only screen and (max-width:990px){
+        @media only screen and (max-width:990px) {
             display:block;
-        
-    }
+        }
     }
     .search-box-container {
         width: 35%;
@@ -68,17 +65,20 @@ export const NewsPageWrapper = styled.div`
         display:flex;
         justify-content:flex-end;
         width:100%;
-        
-        .searchBox{
+        .searchBox {
             @media only screen and (max-width:990px){
-                
-                    width:100%;
+                width:100%;
             }
         }
         
     }
     .search-box {
         margin: auto;
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+        }
     }
 
 `;
