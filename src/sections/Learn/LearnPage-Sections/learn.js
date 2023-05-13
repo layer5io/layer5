@@ -107,14 +107,20 @@ const LearnSectionWrapper = styled.div`
                 max-width: 20rem;
                 margin: auto;
             }
+            a:hover{
+              color: white;
+            }
 
             .learn-card {
-                max-width: 20rem;
-                height: 18.5rem;
-                border: 1px solid white;
-                padding: 1rem 0.75rem;
-                margin: 1rem auto;
-                transition: all 0.2s ease;
+              max-width: 20rem;
+              height: 18.5rem;
+              border-radius:1px;
+              padding: 1rem 0.75rem;
+              background: rgba(76,91,106,.3);
+              margin: 1rem auto;
+              box-shadow: 0px 0px 20px;
+              -webkit-transition: all 0.2s ease;
+              transition: all 0.2s ease;
 
                 h2, p{
                     text-align: left;
