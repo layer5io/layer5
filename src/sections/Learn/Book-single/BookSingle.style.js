@@ -32,9 +32,9 @@ const BookSinglePageWrapper = styled.div`
 		#service-mesh-patterns-table-filter > select{
 			width: 100%;
 		}
-		table > tbody> tr > td:nth-child(2) {
-			text-align:center;
-		}
+	}
+	table > tbody> tr > td {
+		text-align:center;
 	}
     .single-post-wrapper{
         margin: 2rem 0;
