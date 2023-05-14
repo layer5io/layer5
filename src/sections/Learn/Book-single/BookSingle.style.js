@@ -28,9 +28,12 @@ const BookSinglePageWrapper = styled.div`
 		
 	}
 
-	@media only screen and (max-width: 480px) {
+	@media only screen and (max-width: 500px) {
 		#service-mesh-patterns-table-filter > select{
 			width: 100%;
+		}
+		table > tbody> tr > td:nth-child(2) {
+			text-align:center;
 		}
 	}
     .single-post-wrapper{
