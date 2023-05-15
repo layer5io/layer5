@@ -46,6 +46,9 @@ const lighttheme = {
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
 
+  // dark gray
+  shadowDarkColor: "#E6E6E6",
+
   // charcoal
   menuColor: "#3c494f",
 
@@ -253,6 +256,9 @@ export const darktheme = {
 
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
+
+  // dark gray
+  shadowDarkColor: "#484848",
 
   // charcoal
   menuColor: "#ffffff",
