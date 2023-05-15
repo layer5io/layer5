@@ -9,8 +9,13 @@ const DockerExtensionCTAWrapper = styled.div`
 p {
   color:  black;  
 }
+.card-right{
+  padding-top: 3rem;
+  padding-left: 1rem;
+}
+
 .docker-callout {
-    background: linear-gradient(90deg, hsla(186, 33%, 94%, 0.7) 33%, hsla(173, 54%, 61%, 1) 100%);
+    background: linear-gradient(90deg, hsla(186, 33%, 94%, 0.01) 35%, hsla(173, 54%, 61%, 1) 100%);
     border-radius: 4rem;
     display: flex;
     padding: 2rem;
@@ -25,12 +30,20 @@ p {
     img {
       height: 18rem;
       margin-right: 2rem;
+      padding-left: 1rem;
     }
     h2{
-      color: black;
+      color: ${props => props.theme.whiteToBlack};
       padding: 0;
     }
-    @media screen and (max-width:767px) {
+    Button {
+      margin: 1rem 0;
+    }
+    @media screen and (max-width:1000px) {
+      .card-right{
+        padding-top: 1rem;
+        padding-left: 0;
+      }
       display: block;
       img {
         margin: 0 auto 0.25rem;
@@ -39,6 +52,7 @@ p {
       .text-gray {
         margin-top: 2rem;
       }
+      
     }
   }
 `;
@@ -49,10 +63,11 @@ const DockerExtensionCTA = () => {
       <Container>
         <div className="docker-callout">
           <img src={Dockerimage} alt="Docker and Meshery" loading="lazy" />
-          <div>
-            <h2>Docker Extension for Meshery is now available!</h2>
-            <p><i>Managing cloud native infrastructure has never been easier.</i></p>
-            <p className="text-gray">free tool</p>
+          <div className="card-right">
+            <div>
+            <h2>Docker Extension for Meshery<br></br> is now available!</h2>
+            </div>
+            <p>Managing cloud native infrastructure has never been easier.</p>
             <Button primary url="/docker-extension-meshery" external={false}>
               Use the Meshery Docker Extension
             </Button>
