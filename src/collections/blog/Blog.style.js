@@ -261,6 +261,7 @@ Example:
 
   figure.imgWithCaption {
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
     img{
       width: 100%;

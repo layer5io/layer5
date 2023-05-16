@@ -206,7 +206,7 @@ const NewcomersGuide = () => {
                 > discussion forum
                 </a>, join our{" "}
                 <a
-                  href="http://slack.layer5.io/"
+                  href="https://slack.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
                 >

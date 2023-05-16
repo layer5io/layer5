@@ -19,7 +19,6 @@ import { BgImage } from "gbimage-bridge";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
-
 const CommunityPage = () => {
 
   const { backgroundImage123 } = useStaticQuery(
@@ -137,7 +136,7 @@ const CommunityPage = () => {
                 <h1>Newcomers Welcome!</h1>
                 <h2>Are you new to the community?</h2>
                 <p className="invitation">
-                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                  Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                   and engage in the community and projects.
                 </p>
                 <Button primary title="See All Newcomers Resources" url="/community/newcomers">
