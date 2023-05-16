@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
+import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
+import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import Ebpf from "../../assets/images/meshmap/ebpf.svg";
+import Opa from "../../assets/images/meshmap/opa.svg";
 import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
 import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -121,12 +124,6 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
-  const Wasm = "../../assets/images/webassembly/webssembly_icon.svg";
-  const Patterns =
-    "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-  const Ebpf = "../../assets/images/meshmap/ebpf.svg";
-  const Opa = "../../assets/images/meshmap/opa.svg";
-
   const [img, setImg] = useState(CatalogsLight);
   const { isDark } = useStyledDarkMode();
 
@@ -161,14 +158,14 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <StaticImage src={Wasm} className="calalog-image" />
+              <img src={Wasm} className="calalog-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <StaticImage src={Ebpf} className="calalog-image" />
+              <img src={Ebpf} className="calalog-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -193,14 +190,14 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <StaticImage src={Patterns} className="calalog-image" />
+              <img src={Patterns} className="calalog-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <StaticImage src={Opa} className="calalog-image" />
+              <img src={Opa} className="calalog-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">

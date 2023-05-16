@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
 import { Row, Col, Container } from "../../reusecore/Layout";
+import CatalogCards from "../../assets/images/catalog/calalog-cards.svg";
 import Button from "../../reusecore/Button";
 
 const CatalogHeaderWrapper = styled.div`
@@ -69,8 +69,6 @@ const CatalogHeaderWrapper = styled.div`
 `;
 
 const Header = () => {
-  const CatalogCards = "../../assets/images/catalog/calalog-cards.svg";
-
   return (
     <CatalogHeaderWrapper>
       <div className="cloud-native-catalog header">
@@ -93,7 +91,7 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" md={6}>
-              <StaticImage src={CatalogCards} alt="catalog" placeholder="blurred" />
+              <img src={CatalogCards} alt="catalog" />
             </Col>
           </Row>
         </Container>
