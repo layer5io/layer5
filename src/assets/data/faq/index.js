@@ -433,19 +433,18 @@ const data = {
     },
     {
       question: "Is MeshMap cloud or a self-hosted solution?",
-      category: "Meshery Integrations",
+      category: "MeshMap",
       link: "https://layer5.io/cloud-native-management/meshmap",
       linktext: "Learn More",
       answer: [
-        "MeshMap is cloud-native visualizer and designer tool that could be deployed where you need it.",
-        "It can be self-hosted to keep your designs and applications internal to your company.",
-        "You can also choose the SaaS solution, where you can share your desings with team and collaborate upon it.",
-        "Any choice you follow, you will always get the Layer5 support in need."
+        "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
+        "MeshMap can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have MeshMap hosted as SaaS solution offered by Layer5.",
+        "Whether self-hosted or hosted by Layer5, we are here to support you."
       ]
     },
     {
-      question: "Can I deploy the Meshery and its integrations on-premises?",
-      category: "Meshery Integrations",
+      question: "Can I deploy Meshery and its integrations on-premises?",
+      category: "Meshery",
       link: "https://docs.meshery.io/installation/quick-start",
       linktext: "Quick Start Guide",
       answer: [
@@ -454,22 +453,22 @@ const data = {
     },
     {
       question: "How can I try out MeshMap?",
-      category: "Meshery Integrations",
-      link: "https://play.meshery.io",
-      linktext: "MeshMap Playground",
+      category: "MeshMap",
+      link: "https://layer5.io/cloud-native-management/meshmap",
+      linktext: "MeshMap Beta",
       answer: [
-       "MeshMap along with Meshery is available as beta as a CNCF playground.",
-       "Signup for MeshMap and try out today!"
+       "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
+       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
     {
-      question: "What is early access program?",
-      category: "Meshery Integrations",
-      link: "https://play.meshery.io",
-      linktext: "MeshMap Playground",
+      question: "What is MeshMap early access program?",
+      category: "MeshMap",
+      link: "https://layer5.io/cloud-native-management/meshmap",
+      linktext: "MeshMap Beta",
       answer: [
+        "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
        "MeshMap is in beta mode and you can ask for early access to try it out.",
-       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
 
