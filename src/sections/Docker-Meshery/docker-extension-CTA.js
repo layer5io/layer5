@@ -65,7 +65,7 @@ const DockerExtensionCTA = () => {
           <img src={Dockerimage} alt="Docker and Meshery" loading="lazy" />
           <div className="card-right">
             <div>
-            <h2>Docker Extension for Meshery<br></br> is now available!</h2>
+              <h2>Docker Extension for Meshery<br></br> is now available!</h2>
             </div>
             <p>Managing cloud native infrastructure has never been easier.</p>
             <Button primary url="/docker-extension-meshery" external={false}>
