@@ -133,6 +133,18 @@ alt="Nighthawk" align="left" />
 <br /><br /><br />
 </p>
 
+
+<p style="clear:both;">
+<h2><a href="https://layer5.io/projects/catalog">Meshery Catalog</a></h2>
+<a href="">
+  <img src=".github/assets/images/catalog/catalog.svg"
+style="float:left;margin:10px;" width="125px"
+alt="Meshery Catalog" align="left" />
+</a>
+<a href="">Meshery Catalog</a> is the ultimate solution for DevOps engineers looking to optimize their cloud native infrastructure configurations and operational patterns. As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications.
+<br /><br /><br />
+</p>
+
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
 <p> We would love to accept your contributions! This project is community-built and welcomes collaboration. Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are all appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
