@@ -39,6 +39,17 @@
 
 
 <p style="clear:both;">
+<h2><a href="https://layer5.io/meshmap">MeshMap</a></h2>
+<a href="https://layer5.io/meshmap">
+  <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="float:left;margin:10px;" />
+</a>
+<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
+<br /><br /><br/>
+</p>
+<br />
+
+
+<p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
 <a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
 </a>
