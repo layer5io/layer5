@@ -51,6 +51,276 @@ const data = {
     },
 
     //
+    // MESHERY
+    //
+
+    {
+      question: "Is Meshery a service mesh?",
+      category: "Meshery",
+      answer: [
+        "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
+      ],
+      link: "/cloud-native-management/meshery",
+      linktext: "Run Meshery",
+    },
+    {
+      question:
+        "Why do I need to authenticate my social account to use Meshery?",
+      category: "Meshery",
+      answer: [
+        "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
+        "Rank your deployment - results of performance tests are anonymously collected using the Service Mesh Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
+      ],
+      link: "",
+      linktext: "",
+    },
+    {
+      question: "Why use Meshery?",
+      category: "Meshery",
+      answer: [
+        "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
+        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
+      ],
+      link: "/projects/service-mesh-performance",
+      linktext: "Service Mesh Performance",
+    },
+    {
+      question:
+        "I have already selected and am operating a service mesh. Should I use Meshery?",
+      category: "Meshery",
+      answer: [
+        "As a management plane, Meshery provides value in a number of ways post-adoption of a service mesh. For example, Meshery analyzes your deployments in evaluation of service mesh best practices and patterns, highlighting where you might be deviating. Meshery's Other ways can be articulated in its set of features spanning:",
+        "Lifecycle Management",
+        "Configuration Management",
+        "Performance Management",
+        "Workload Management",
+      ],
+      link: "/cloud-native-management/meshery",
+      linktext: "Meshery",
+    },
+    {
+      question: "Is Meshery open source?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
+        "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
+      ],
+    },
+    {
+      question: "Can I deploy Meshery / MeshMap on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+      ],
+    },
+    {
+      question: "Where is Meshery Cloud hosted; where is my data stored?",
+      category: "Meshery",
+      answer: [
+        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+    },
+    {
+      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      category: "Meshery",
+      answer: [
+        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+
+      ],
+    },
+    {
+      question: "What is the difference between MeshMap<sup>BETA</sup>&nbsp;and the Cloud Native Playground?",
+      category: "Meshery",
+      answer: [
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+      ],
+    },    
+    {
+      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
+      category: "Meshery",
+      answer: [
+        "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
+      ],
+    },    
+
+    //
+    // INTEGRATIONS
+    //
+
+    {
+      question: "How do Meshery Extension Points work?",
+      category: "Meshery Integrations",
+      link: "https://docs.meshery.io/extensibility",
+      linktext: "Meshery Extensibility",
+      answer: [
+        "Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
+        "Take advantage of these extension points for working with different service meshes via adapters, different load generators and different providers. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app."
+      ],
+    },
+    {
+      question: "How can I request a new integration?",
+      category: "Meshery Integrations",
+      link: "https://layer5.io/company/contact",
+      linktext: "Contact Us",
+      answer: [
+        "Become a Layer5 partner or simply submit an integration proposal.",
+      ],
+    },
+    {
+      question: "How does Meshery infused GitOps practices into cloud native managemement?",
+      category: "Meshery Integrations",
+      link: "https://layer5.io/cloud-native-management/meshery",
+      linktext: "Run Meshery",
+      answer: [
+        "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
+        "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
+      ],
+    },
+    {
+      question: "Is MeshMap cloud or a self-hosted solution?",
+      category: "MeshMap",
+      link: "https://layer5.io/cloud-native-management/meshmap",
+      linktext: "Learn More",
+      answer: [
+        "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
+        "MeshMap can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have MeshMap hosted as SaaS solution offered by Layer5.",
+        "Whether self-hosted or hosted by Layer5, we are here to support you."
+      ]
+    },
+    {
+      question: "Can I deploy Meshery and its integrations on-premises?",
+      category: "Meshery",
+      link: "https://docs.meshery.io/installation/quick-start",
+      linktext: "Quick Start Guide",
+      answer: [
+        "Yes, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment."
+      ]
+    },
+    {
+      question: "How can I try out MeshMap?",
+      category: "MeshMap",
+      link: "https://layer5.io/cloud-native-management/meshmap",
+      linktext: "MeshMap Beta",
+      answer: [
+       "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
+       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
+      ]
+    },
+    {
+      question: "What is MeshMap early access program?",
+      category: "MeshMap",
+      link: "https://layer5.io/cloud-native-management/meshmap",
+      linktext: "MeshMap Beta",
+      answer: [
+        "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
+       "MeshMap is in beta mode and you can ask for early access to try it out.",
+      ]
+    },
+    
+    //
+    // PRICING
+    //
+
+    {
+      question: "How can I upgrade, downgrade, or cancel my plan?",
+      category: "Pricing",
+      answer: [
+        "Upgrade as needed. Downgrade or cancel at anytime. To make changes to your plan, please get in touch with sales.",
+      ],
+    },
+    {
+      question: "Do I need to enter my credit card details to sign up to a free plan?",
+      category: "Pricing",
+      answer: [
+        "No. The Free plan does not require a credit card. It is free and will forever be free. A credit card is required only if you want to upgrade to a more fully-featured plan.",
+      ],
+    },
+    {
+      question: "What is the refund policy?",
+      category: "Pricing",
+      answer: [
+        "Users can cancel or downgrade at anytime.",
+        "Your next billing statement will be prorated based on your date of cancelation or downgrade.",
+      ],
+    },
+    {
+      question: "Can I start with Free and upgrade later?",
+      category: "Pricing",
+      answer: [
+        "Yes! You are more than welcome to try the Free version.",
+        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us.",
+      ],
+    },
+    {
+      question: "What happens if I accidentally don't renew or forget to renew my subscription?",
+      category: "Pricing",
+      answer: [
+        "Continuity of your infrastructure and applicaiton management is important to us as it is to you. Meshery will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+      ],
+    },
+    {
+      question: "Are there other pricing options?",
+      category: "Pricing",
+      answer: [
+        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
+      ],
+    },
+    {
+      question: "Do you have special pricing for open source / non-profit projects?",
+      category: "Pricing",
+      answer: [
+        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+      ],
+    },
+
+    //
+    // BILLING
+    //
+
+    {
+      question: "What payment methods do you support?",
+      category: "Billing",
+      answer: [
+        "You can pay for Layer5 Team and Enterprise with a credit card or debit card. If you pay by credit card, billing receipts are available to Administrators for previous months under Billing History. For copies of your invoice, email Layer5 billing.",
+        "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager."
+      ],
+      linktext: "Contact Layer5 Billing",
+      link: "mailto:support@layer5.io"
+    },
+    {
+      question: "When does the billing cycle start and stop?",
+      category: "Billing",
+      answer: [
+        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+      ],
+    },
+    {
+      question: "How do I view and manage my subscription?",
+      category: "Billing",
+      answer: [
+        "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
+      ],
+    },
+    {
+      question: "What happens if payment fails?",
+      category: "Billing",
+      answer: [
+        "After an initial failed payment, we apply a 14 day grace period on your account and attempt to process a payment each week. After three failed payments, paid features are locked.",
+      ],
+    },
+    {
+      question: "How can I unlock my account after several failed transactions?",
+      category: "Billing",
+      answer: [
+        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+      ],
+    },
+
+    //
     // SERVICE MESH
     //
 
@@ -158,104 +428,7 @@ const data = {
       linktext: "Factors When considering how strongly you need a service mesh",
     },
 
-    //
-    // MESHERY
-    //
-
-    {
-      question: "Is Meshery a service mesh?",
-      category: "Meshery",
-      answer: [
-        "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
-      ],
-      link: "/cloud-native-management/meshery",
-      linktext: "Run Meshery",
-    },
-    {
-      question:
-        "Why do I need to authenticate my social account to use Meshery?",
-      category: "Meshery",
-      answer: [
-        "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
-        "Rank your deployment - results of performance tests are anonymously collected using the Service Mesh Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
-      ],
-      link: "",
-      linktext: "",
-    },
-    {
-      question: "Why use Meshery?",
-      category: "Meshery",
-      answer: [
-        "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
-        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
-      ],
-      link: "/projects/service-mesh-performance",
-      linktext: "Service Mesh Performance",
-    },
-    {
-      question:
-        "I have already selected and am operating a service mesh. Should I use Meshery?",
-      category: "Meshery",
-      answer: [
-        "As a management plane, Meshery provides value in a number of ways post-adoption of a service mesh. For example, Meshery analyzes your deployments in evaluation of service mesh best practices and patterns, highlighting where you might be deviating. Meshery's Other ways can be articulated in its set of features spanning:",
-        "Lifecycle Management",
-        "Configuration Management",
-        "Performance Management",
-        "Workload Management",
-      ],
-      link: "/cloud-native-management/meshery",
-      linktext: "Meshery",
-    },
-    {
-      question: "Is Meshery open source?",
-      category: "Meshery",
-      answer: [
-        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
-        "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
-      ],
-    },
-    {
-      question: "Can I deploy Meshery / MeshMap on-premises?",
-      category: "Meshery",
-      answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
-        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
-      ],
-    },
-    {
-      question: "Where is Meshery Cloud hosted; where is my data stored?",
-      category: "Meshery",
-      answer: [
-        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
-      ],
-    },
-    {
-      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
-      category: "Meshery",
-      answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
-        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
-
-      ],
-    },
-    {
-      question: "What is the difference between MeshMap<sup>BETA</sup>&nbsp;and the Cloud Native Playground?",
-      category: "Meshery",
-      answer: [
-        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
-        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
-      ],
-    },    
-    {
-      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
-      category: "Meshery",
-      answer: [
-        "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
-      ],
-    },    
-    
-    //
+     //
     // CAREERS / INTERNSHIPS
     //
 
@@ -298,180 +471,7 @@ const data = {
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
     },
-
-    //
-    // PRICING
-    //
-
-    {
-      question: "How can I upgrade, downgrade, or cancel my plan?",
-      category: "Pricing",
-      answer: [
-        "Upgrade as needed. Downgrade or cancel at anytime. To make changes to your plan, please get in touch with sales.",
-      ],
-    },
-    {
-      question: "Do I need to enter my credit card details to sign up to a free plan?",
-      category: "Pricing",
-      answer: [
-        "No. The Free plan does not require a credit card. It is free and will forever be free. A credit card is required only if you want to upgrade to a more fully-featured plan.",
-      ],
-    },
-    {
-      question: "What is the refund policy?",
-      category: "Pricing",
-      answer: [
-        "Users can cancel or downgrade at anytime.",
-        "Your next billing statement will be prorated based on your date of cancelation or downgrade.",
-      ],
-    },
-    {
-      question: "Can I start with Free and upgrade later?",
-      category: "Pricing",
-      answer: [
-        "Yes! You are more than welcome to try the Free version.",
-        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us.",
-      ],
-    },
-    {
-      question: "What happens if I accidentally don't renew or forget to renew my subscription?",
-      category: "Pricing",
-      answer: [
-        "Continuity of your infrastructure and applicaiton management is important to us as it is to you. Meshery will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
-      ],
-    },
-    {
-      question: "Are there other pricing options?",
-      category: "Pricing",
-      answer: [
-        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
-      ],
-    },
-    {
-      question: "Do you have special pricing for open source / non-profit projects?",
-      category: "Pricing",
-      answer: [
-        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
-      ],
-    },
-
-    //
-    // BILLING
-    //
-
-    {
-      question: "What payment methods do you support?",
-      category: "Billing",
-      answer: [
-        "You can pay for Layer5 Team and Enterprise with a credit card or debit card. If you pay by credit card, billing receipts are available to Administrators for previous months under Billing History. For copies of your invoice, email Layer5 billing.",
-        "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager."
-      ],
-      linktext: "Contact Layer5 Billing",
-      link: "mailto:support@layer5.io"
-    },
-    {
-      question: "When does the billing cycle start and stop?",
-      category: "Billing",
-      answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
-      ],
-    },
-    {
-      question: "How do I view and manage my subscription?",
-      category: "Billing",
-      answer: [
-        "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
-      ],
-    },
-    {
-      question: "What happens if payment fails?",
-      category: "Billing",
-      answer: [
-        "After an initial failed payment, we apply a 14 day grace period on your account and attempt to process a payment each week. After three failed payments, paid features are locked.",
-      ],
-    },
-    {
-      question: "How can I unlock my account after several failed transactions?",
-      category: "Billing",
-      answer: [
-        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
-      ],
-    },
-
-    //
-    // INTEGRATIONS
-    //
-
-    {
-      question: "How do Meshery Extension Points work?",
-      category: "Meshery Integrations",
-      link: "https://docs.meshery.io/extensibility",
-      linktext: "Meshery Extensibility",
-      answer: [
-        "Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
-        "Take advantage of these extension points for working with different service meshes via adapters, different load generators and different providers. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app."
-      ],
-    },
-    {
-      question: "How can I request a new integration?",
-      category: "Meshery Integrations",
-      link: "https://layer5.io/company/contact",
-      linktext: "Contact Us",
-      answer: [
-        "Become a Layer5 partner or simply submit an integration proposal.",
-      ],
-    },
-    {
-      question: "How does Meshery infused GitOps practices into cloud native managemement?",
-      category: "Meshery Integrations",
-      link: "https://layer5.io/cloud-native-management/meshery",
-      linktext: "Run Meshery",
-      answer: [
-        "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
-        "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
-      ],
-    },
-    {
-      question: "Is MeshMap cloud or a self-hosted solution?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "Learn More",
-      answer: [
-        "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
-        "MeshMap can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have MeshMap hosted as SaaS solution offered by Layer5.",
-        "Whether self-hosted or hosted by Layer5, we are here to support you."
-      ]
-    },
-    {
-      question: "Can I deploy Meshery and its integrations on-premises?",
-      category: "Meshery",
-      link: "https://docs.meshery.io/installation/quick-start",
-      linktext: "Quick Start Guide",
-      answer: [
-        "Yes, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment."
-      ]
-    },
-    {
-      question: "How can I try out MeshMap?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
-      answer: [
-       "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
-       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
-      ]
-    },
-    {
-      question: "What is MeshMap early access program?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
-      answer: [
-        "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
-       "MeshMap is in beta mode and you can ask for early access to try it out.",
-      ]
-    },
-
+    
     //
     // OTHER
     //

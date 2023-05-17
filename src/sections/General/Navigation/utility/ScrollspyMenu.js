@@ -118,7 +118,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       </div>
                       <div className="card-text">
                         <p>MeshMap</p>
-                        <h6>Stop finger-pointing and start collaborating.</h6>
+                        <h6>Stop finger-pointing.</h6>
+                        <h6>Start collaborating.</h6>
                       </div>
                     </div>
                   </Link>
