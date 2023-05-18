@@ -59,7 +59,6 @@ export const TerminalWrapper = styled.div`
     background: var(--terminal-body-color);
     border-radius: 0 0 var(--terminal-radius) var(--terminal-radius);
     padding: 24px 32px;
-
     @media (min-width: 768px) {
       height: 525px;
     }
@@ -80,16 +79,16 @@ export const TerminalWrapper = styled.div`
     width: 0;
     height: 0;
   }
-
+  
   .code-wrapper {
-     pre {
+    pre {
       padding: 0;
       margin: 0;
       width: 100%;
       height: 100%;
       font-style: normal;
       font-weight: normal;
-      font-size: 12px;
+      font-size: 10px;
       line-height: 27px;
       white-space: pre-wrap;
       color: ${props => props.theme.secondaryColor};
@@ -106,6 +105,9 @@ export const TerminalWrapper = styled.div`
         color: var(--white);
       }
 
+      wrap-word: normal;
+      max-width: 17rem;
+      
       @media (min-width: 768px){
         font-size: 13.5px;
         line-height: 26px;
