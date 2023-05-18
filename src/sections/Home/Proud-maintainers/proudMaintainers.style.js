@@ -148,20 +148,20 @@ const ProjectItemWrapper = styled.section`
 			padding: 1.5rem 1rem;
 			max-height: 125px;
 		}
-      @media screen and (max-width: 550px) {
-          img {
-            padding: 1.65rem 0;
-          }
-          h4 {
-            font-size: 0.7rem;
-          }
-      }
       @media screen and (max-width: 660px){
            h4{
 	    padding-right:1.2rem;
 	    font-size:0.95rem;
 	   }
       }
+	  @media screen and (max-width: 550px) {
+		img {
+		  padding: 1.65rem 0.5rem 1.65rem 0.8rem;
+		}
+		h4 {
+		  font-size: 0.7rem;
+		}
+	}
 	  @media screen and (max-width: 768px) {
 
 		.proj_icon_1 {
