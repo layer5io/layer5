@@ -4,6 +4,7 @@ import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
 import partner4 from "../../assets/images/partners/citrix.svg";
 import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
+import { ReactComponent as Partner5DarkMode } from "../../assets/images/partners/cncf/stacked/white/cncf-stacked-white.svg";
 import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
 import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
 import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
@@ -60,6 +61,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: <Partner5 alt="CNCF" />,
+    darkimageLink: <Partner5DarkMode alt="CNCF" />,
     imageRoute: "https://landscape.cncf.io/card-mode?category=cncf-members&grouping=category&selected=layer5-member&embed=yes&style=logo",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   }, {
