@@ -14,6 +14,7 @@ import Kaur from "./reviews/kaur-kallas.jpg";
 import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
+import Alex from "./reviews/alex-hokanson.jpeg";
 
 
 const settings = {
@@ -173,6 +174,14 @@ const Reviews = () => {
             title="Principal Developer Advocate at HashiCorp"
             image={Nic}
           />
+          <Customers
+            type="2"
+            quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            person="Alex"
+            title="Infrastructure Engineering at Docker, Inc."
+            image={Alex}
+          />
+
         </Slider>
       </div>
     </ReviewsWrapper>
