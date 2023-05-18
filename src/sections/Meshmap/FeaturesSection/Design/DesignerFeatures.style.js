@@ -5,6 +5,11 @@ margin-top: 1rem;
 
 .designer-container {
   padding: 0;
+
+  @media (max-width: 767px) {
+    margin-top: 6vw;
+  }
+  
 }
 
 .scroll{
