@@ -142,7 +142,7 @@ alt="Nighthawk" align="left" />
 style="float:left;margin:10px;" width="125px"
 alt="Meshery Catalog" align="left" />
 </a>
-<a href="">Meshery Catalog</a> is the ultimate solution for DevOps engineers looking to optimize their cloud native infrastructure configurations and operational patterns. As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications.
+<a href="">Meshery Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns.
 <br /><br /><br />
 </p>
 
