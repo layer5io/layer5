@@ -138,7 +138,7 @@ export const HandbookWrapper = styled.div`
         }
         .label {
           position: relative;
-          left: 1.9rem;
+          left: 1.5rem;
           border-radius: 0.5rem;
           font-size: 0.8rem;
           background: white;
