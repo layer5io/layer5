@@ -6,7 +6,7 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
-import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
+import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 import EventForm from "../../../components/CommonForm/events";
 
 const checkSpeaker = (speaker) => {
