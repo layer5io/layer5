@@ -163,7 +163,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                                 {project === "Meshery Cloud" && (
-                                  <span className="label">Private</span>
+                                  <span className="label">private</span>
                                 )}
                               </a>
                             </td>
