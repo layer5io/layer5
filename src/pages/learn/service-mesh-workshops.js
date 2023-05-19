@@ -3,7 +3,6 @@ import React from "react";
 import SEO from "../../components/seo";
 import WorkshopsPage from "../../sections/Learn/Workshop-grid";
 
-import { useState } from "react";
 const WorkshopsGridPage = () => {
   return (
     <>

@@ -18,7 +18,9 @@ const PageHeaderWrapper = styled.div`
                 img{
                     padding-left: 1rem;
                     width: 3rem;
+                    transition-duration: 0.8s;
                     filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+                    
 
                 }
             }

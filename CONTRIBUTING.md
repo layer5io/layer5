@@ -544,3 +544,55 @@ _~/.gitconfig_
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
 <a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
+
+## FYI regarding the dev environment
+
+### Dev and Browser Warnings You May Encounter
+
+Note:
+
+- These are **non-blocking warnings** you can expect to see in your terminal or browser while working in local development environment.
+- They do not impact the performance of the code and are unrelated to your contributions.
+- These will not show in `build` or `production` mode.
+- These are being documented to minimize confusion for the user while doing development.
+
+---
+
+> warn ./node_modules/react-accessible-accordion/dist/es/index.js
+> Attempted import error: 'useId' is not exported from 'react' (imported as 'useId').
+
+and
+
+> client.js:196 export 'useId' (imported as 'useId') was not found in 'react' (possible exports: Children, Component, Fragment, Profiler, PureComponent, StrictMode, Suspense, \_\_SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, cloneElement, createContext, createElement, createFactory, createRef, forwardRef, isValidElement, lazy, memo, useCallback, useContext, useDebugValue, useEffect, useImperativeHandle, useLayoutEffect, useMemo, useReducer, useRef, useState, version)
+
+Where/When:
+
+- In terminal: after `npm start`
+- In browser: loading https://layer5.io
+
+Reason: [https://github.com/springload/react-accessible-accordion/issues/351](https://github.com/springload/react-accessible-accordion/issues/351)
+
+> V5 is a release we cut explicitly for React 18 support (Hence the major upgrade, this was a breaking change, the webpack fix would not work as we are using React 18 new APIs), we are sticking with V4 for React 17 and under compatibility, using V4 has no functional difference outside of React version compatibility.
+
+Layer5 currently using:
+"react-accessible-accordion": "^5.0.0"
+react": "^17.0.2"
+
+To clear the warning:
+Upgrade the `react`package to ^18. However upgrading may introduce too many breaking changes and complexity.
+
+---
+
+> Warning: Each child in a list should have a unique "key" prop.
+> Check the top-level render call using <head>. See https://reactjs.org/link/warning-keys for more information.
+> at title
+
+Where/When:
+
+- In terminal: after `npm start` and loading page
+
+Reason: In this version of Gatsby (4.20), the file:
+`node_modules/gatsby/cache-dir/head/head-export-handler-for-ssr.js` is missing code to assign `key` prop to each head tag included in the `SEO` component.
+
+To clear the warning:
+This could be resolved by adding code to the package, but requires too much complexity to include for each user. This warning is cleared in later versions of Gatsby.

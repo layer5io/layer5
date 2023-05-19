@@ -29,10 +29,7 @@ export const query = graphql`query allProjects {
 `;
 const ProjectGridPage = ({ data }) => {
   return (
-    <>
-      <ProjectPage data={data}  />
-
-    </>
+    <ProjectPage data={data}  />
   );
 };
 export default ProjectGridPage;
