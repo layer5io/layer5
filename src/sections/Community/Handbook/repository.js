@@ -159,8 +159,12 @@ const Repository = () => {
                                 href={repository}
                                 target="_blank"
                                 rel="noreferrer"
+                                className={project === "Meshery Cloud" ? "disabled" : ""}
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
+                                {project === "Meshery Cloud" && (
+                                  <span className="label">Private</span>
+                                )}
                               </a>
                             </td>
                           </tr>
