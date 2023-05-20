@@ -85,12 +85,12 @@ const PartnerWrapper = styled.section`
             .vmware-colorMode_svg__colorMode1,
             .istio-colorMode_svg__colorMode1
             {
-                fill: ${props => props.theme.whiteToBlack}
+                fill: ${props => props.theme.whiteToBlack};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .smi-colorMode_svg__colorMode1 {
-                fill: ${props => props.theme.whiteToBlue2A2DDE}
+                fill: ${props => props.theme.whiteToBlue2A2DDE};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
