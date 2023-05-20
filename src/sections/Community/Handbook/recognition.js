@@ -17,7 +17,8 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
 import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
-import MesheryCatalog from  "../../../assets/images/meshery/meshery-catalog.svg";
+import MesheryCatalogLogo from  "../../../assets/images/meshery/meshery-catalog.svg";
+import DocsLogo from "../../../assets/images/docs/docs.svg";
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
@@ -94,7 +95,7 @@ const RecognitionPage = () => {
             <ul style={badgeListStyle}>
               <li>
                 <img src={CommunityLogo} style={badgeStyle} />
-                <b>Community</b> - awarded given to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
+                <b>Community</b> - awarded community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
               </li>
               <li>
                 <img src={DockerExtension} style={badgeStyle} />
@@ -102,12 +103,16 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
-                <b>Image Hub</b> - awarded community members who make consistent and impactful contributions the Image Hub project in recognition and appreciation of their efforts.
+                <b>Image Hub</b> - awarded community members who make consistent and impactful contributions to the Image Hub project in recognition and appreciation of their efforts.
               </li>
 
               <li>
+                <img src={DocsLogo} style={badgeStyle} />
+                <b>Docs</b> - awarded community members who make consistent and impactful contributions to <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
+              </li>
+              <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
-                <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to the layer5.io website.
+                <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the layer5.io website.
               </li>
               <li>
                 <img src={MesheryLogo} style={badgeStyle} />
@@ -115,23 +120,23 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={MesheryOperator} style={badgeStyle} />
-                <b>Meshery Operator</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
+                <b>Meshery Operator</b> - awarded community members who make consistent and impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={MesheryCatalog} style={badgeStyle} />
-                <b>Meshery Catalog</b> - awarded community members who make consistent and impactful contributions to the Meshery Catalog of meshery project in recognition and appreciation of their efforts.
+                <img src={MesheryCatalogLogo} style={badgeStyle} />
+                <b>Meshery Catalog</b> - awarded community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={meshmapLogo} style={badgeStyle} />
-                <b>MeshMap</b> - awarded community members who make consistent and impactful contributions the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+                <b>MeshMap</b> - awarded community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={NightHawkLogo} style={badgeStyle} />
-                <b>Nighthawk</b> - awarded community members who make consistent and impactful contributions the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+                <b>Nighthawk</b> - awarded community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={PatternsLogo} style={badgeStyle} />
-                <b>Patterns</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to <a href="https://meshery.io/catalog">Meshery Catalog</a> and or the <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> project in recognition and appreciation of their efforts.
+                <b>Patterns</b> - awarded community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={ServiceMeshPerformance} style={badgeStyle} />
