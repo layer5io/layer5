@@ -40,7 +40,7 @@
 
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
-<a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
+<a href="https://github.com/service-mesh-patterns"><img src=".github/assets/images/patterns/service-mesh-pattern.svg" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
 </a>
 <a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh, or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
@@ -89,7 +89,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <p style="clear:both;">
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
-   <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg"
+   <img src=".github/assets/images/meshery-operator/meshery-operator-dark.svg"
  style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
 </a>
  <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
