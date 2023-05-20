@@ -76,6 +76,7 @@ const PartnerWrapper = styled.section`
 
         }
         svg{
+            .citrix-colorMode_svg__colorMode2,
             .cncf-stacked-colorMode_svg__colorMode1,
             .hashicorp_vertical-colorMode_svg__colorMode1,
             .hpe_side-colorMode_svg__colorMode1,
@@ -86,6 +87,11 @@ const PartnerWrapper = styled.section`
             .istio-colorMode_svg__colorMode1
             {
                 fill: ${props => props.theme.whiteToBlack};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .citrix-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.blackToWhite};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
