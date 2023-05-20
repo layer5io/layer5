@@ -223,10 +223,12 @@ const NavigationWrap = styled.header`
       p {
         font-weight: bold;
         font-size: 1.25rem;
+        text-align: center;
       }
       h6 {
         font-size: 15px;
         line-height: 1.5rem;
+        text-align: center;
       }
       a {
         padding: 0%;
@@ -697,7 +699,7 @@ const NavigationWrap = styled.header`
 
   .transition-container {
         margin: 0%;
-        max-width: 70%;
+        max-width: 68%;
         position: relative;
         z-index: -1;
         svg {
