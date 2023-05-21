@@ -6,11 +6,6 @@ export default function HTML(props) {
   return (
     <html lang="en" {...props.htmlAttributes}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: gtmScript,
-          }}
-        />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
