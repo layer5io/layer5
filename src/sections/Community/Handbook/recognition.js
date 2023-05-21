@@ -7,6 +7,7 @@ import CommunityLogo from "../../../assets/images/community/community-green.svg"
 import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import DockerExtension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
@@ -16,7 +17,7 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
 import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
-
+import MesheryCatalog from  "../../../assets/images/meshery/meshery-catalog.svg";
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
@@ -96,9 +97,14 @@ const RecognitionPage = () => {
                 <b>Community</b> - awarded given to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
               </li>
               <li>
+                <img src={DockerExtension} style={badgeStyle} />
+                <b>Docker Extension</b> - awarded community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
                 <b>Image Hub</b> - awarded community members who make consistent and impactful contributions the Image Hub project in recognition and appreciation of their efforts.
               </li>
+
               <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
                 <b>Landscape</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to the layer5.io website.
@@ -110,6 +116,10 @@ const RecognitionPage = () => {
               <li>
                 <img src={MesheryOperator} style={badgeStyle} />
                 <b>Meshery Operator</b> - awarded community members who make consistent and impactful contributions to the have made impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
+                <img src={MesheryCatalog} style={badgeStyle} />
+                <b>Meshery Catalog</b> - awarded community members who make consistent and impactful contributions to the Meshery Catalog of meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={meshmapLogo} style={badgeStyle} />

@@ -12,9 +12,7 @@ import News from "../Company/News";
 import Getapp from "./Getapp";
 import Client from "../Client";
 
-
-
-import theme from "../../theme/classic/themeStyles";
+// import theme from "../../theme/classic/themeStyles";
 
 const ClassicPage = () => (
 

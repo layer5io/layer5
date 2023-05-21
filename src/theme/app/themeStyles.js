@@ -34,8 +34,6 @@ const lighttheme = {
 
   // Teal Blue
   tertiaryColorTwo: "#477E96",
-  tealColor: "#477E96",
-  tealLightColor: "#66B6D9",
 
   headingColor: "#111111",
 
@@ -45,6 +43,9 @@ const lighttheme = {
 
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
+
+  // dark gray
+  shadowDarkColor: "#E6E6E6",
 
   // charcoal
   menuColor: "#3c494f",
@@ -69,14 +70,16 @@ const lighttheme = {
   siteLinkBrightness: "0.5",
 
   //Invert Colors in dark theme(Usually for svg)
-  invertColor: "none",
-  meshInterfaceLogoFilter: "none",
-  mapBackground: "none%",
+  invertColor: "0%",
+  meshInterfaceLogoFilter: "0%",
+  mapBackground: "0%",
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#FFFFFF",
 
   //selection color(used when text is selected)
   selectionColor: "#3c494f",
+
+  activeColor: "#3c494f",
 
   /* color transition pairings for dark/light theme switch. naming convention is 1. darktheme color first and lighttheme color second. 2. color then hexcode for color (except for white and black) 3. if there is an alpha channel setting, it is added in the number word (e.g. eight).
 
@@ -97,6 +100,7 @@ const lighttheme = {
   boxShadowGreen00D3A9ToBlackTwoFive: "rgb(0 0 0 / 0.25) 0px 0px 10px",
   boxShadowGreyA3A3A3toBlackTwo: "0px 2px 16px rgb(0 0 0 / 0.2)",
   boxShadowGreyBABABAtoBlackTwoFive: "0px 0px 8px -2px rgb(0 0 0 / 0.25)",
+  boxShadowGreen00B39FtoBlack: "0px 0px 8px 3px #00B39F",
   green009A89ToGreen00B39F: "#00B39F",
   green00B39FToBlackFive: "rgb(0 0 0 / 0.5)",
   green00B39FToBlackFour: "rgb(0 0 0 / 0.4)",
@@ -254,6 +258,9 @@ export const darktheme = {
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
 
+  // dark gray
+  shadowDarkColor: "#484848",
+
   // charcoal
   menuColor: "#ffffff",
   // 00D3A9
@@ -308,6 +315,7 @@ export const darktheme = {
   boxShadowBlue477E96: "0rem 0.25rem 1.25rem #477e96",
   boxShadowGreen00D3A9: "0rem 0.25rem 3rem #00D3A9",
   boxShadowGreen00D3A9ToBlackTwoFive: "#00D3A9 0px 0px 10px",
+  boxShadowGreen00B39FtoBlack: "0px 2px 15px -10px black",
   boxShadowGreyA3A3A3toBlackTwo: "0px 2px 16px #A3A3A3",
   boxShadowGreyBABABAtoBlackTwoFive: "0px 0px 8px -2px #BABABA",
   green009A89ToGreen00B39F: "#009A89",
@@ -418,6 +426,5 @@ export const darktheme = {
 
 
 };
-
 
 export default lighttheme;
