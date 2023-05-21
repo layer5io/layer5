@@ -29,7 +29,6 @@ const MeshFocusWrapper = styled.div`
         margin-bottom: 4rem;
         font-size: 20px;
         font-style: italic;
-        position: relative;
     }
     .book {
         object-fit: contain;
