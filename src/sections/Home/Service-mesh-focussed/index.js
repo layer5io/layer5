@@ -44,7 +44,7 @@ const ServiceMeshFocused = ({ bookName }) => {
                 <StaticImage src={ServiceMeshPatternsImage} className="book" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
               </Col>
               <Col xs={12} sm={6} lg={6}>
-                <img src={BlockQuoteImage} className="quote-icon" alt="Quote from book" />
+                <img src={BlockQuoteImage} className="quote-icon filter-mode" alt="Quote from book" />
                 <p className="quote">
               "A service mesh is a layer in your infrastructure that facilitates communication between services… and so much more. Its value is enormous, and the value you derive from one is very much related to what role you play in the design, implementation, and operations of your cloud native applications and infrastructure."
                 </p>
