@@ -706,6 +706,21 @@ const createSectionPage = ({ envCreatePage, node }) => {
   });
 };
 
+exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /cookie/,
+            use: ["null-loader"],
+          },
+        ],
+      }
+    });
+  }
+};
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
