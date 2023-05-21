@@ -160,7 +160,7 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("ui-ux") && (
                         <li>
-                          <Link to="../../handbook/writing-program" >
+                          <Link to="../../handbook/designer" >
                             <img
                               className="profile-social-links"
                               src={uiuxrLogo}
