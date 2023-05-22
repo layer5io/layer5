@@ -64,7 +64,7 @@ const Projects = () => {
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }} />
                   <h3>Service Mesh Performance</h3>
-                  <p>The Measurement Standard</p>
+                  <p>Infrastructure Value Measurement</p>
                 </div>
               </Link>
             </Col>
