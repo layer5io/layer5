@@ -16,6 +16,7 @@ export const TerminalWrapper = styled.div`
   --terminal-body-color: var(--gray-1);
 
   width: 837px;
+  max-width: 90%;
 
   .title-bar {
     display: flex;
@@ -106,7 +107,6 @@ export const TerminalWrapper = styled.div`
       }
 
       wrap-word: normal;
-      max-width: 17rem;
       
       @media (min-width: 768px){
         font-size: 13.5px;
