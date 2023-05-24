@@ -91,7 +91,7 @@ const Data = {
         },
         {
           name: "Catalog",
-          path: "https://meshery.io/catalog",
+          path: "/catalog",
         },
         {
           name: "Docker Extension",
