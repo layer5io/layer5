@@ -108,7 +108,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to=""
+              to="/catalog"
               className="project__card ten"
             >
               <div className="project__card-container-ten">
