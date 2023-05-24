@@ -4,7 +4,7 @@ import { Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import DiscussWrapper from "./discuss.style";
 
-const Discuss = "../../assets/images/discuss/layer5-discuss-white.png";
+const Discuss = "../../assets/images/discuss/layer5-discuss-white.webp";
 
 const DiscussCallout = () => {
   return (

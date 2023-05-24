@@ -6,7 +6,7 @@ import { Row, Col, Container } from "../../reusecore/Layout";
 import CardComponent from "../../components/Learn-Components/Card-Component";
 import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
-import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
+import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import JoinCommunity from "../Community/Join-community";
 import Button from "../../reusecore/Button";
 

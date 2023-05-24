@@ -4,9 +4,9 @@ import { ReactComponent as Collab1 } from "./images/collab1-colorMode.svg";
 import { ReactComponent as Collab2 } from "./images/collab2-colorMode.svg";
 import { ReactComponent as Collab3 } from "./images/collab3-colorMode.svg";
 import { ReactComponent as Collab4 } from "./images/collab4-colorMode.svg";
-import Avatar1 from "./images/avatar1.png";
-import Avatar2 from "./images/avatar2.png";
-import Avatar3 from "./images/avatar3.png";
+import Avatar1 from "./images/avatar1.webp";
+import Avatar2 from "./images/avatar2.webp";
+import Avatar3 from "./images/avatar3.webp";
 import { useInView } from "react-intersection-observer";
 
 const CollaboratorFeaturesDiagram = ({ activeExampleIndex }) => {

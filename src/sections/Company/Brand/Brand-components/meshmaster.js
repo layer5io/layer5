@@ -4,9 +4,9 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMasterFull from   "../../../../assets/images/meshmaster/meshmaster-full.png";
-import MeshMasterIcon from   "../../../../assets/images/meshmaster/meshmaster-icon.png";
-import MeshMasterText from   "../../../../assets/images/meshmaster/meshmaster-text.png";
+import MeshMasterFull from   "../../../../assets/images/meshmaster/meshmaster-full.webp";
+import MeshMasterIcon from   "../../../../assets/images/meshmaster/meshmaster-icon.webp";
+import MeshMasterText from   "../../../../assets/images/meshmaster/meshmaster-text.webp";
 
 const MeshMasterBrand = () => {
   return (

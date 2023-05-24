@@ -8,11 +8,11 @@ const Kubernetes = "./kubernetes-logo.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
 const dockercompose_logo =
-  "../../assets/images/dockercompose-logo/dockercompose-logo.png";
+  "../../assets/images/dockercompose-logo/dockercompose-logo.webp";
 const visual_topology =
   "../../assets/images/visual-topology/visual-topology.svg";
 const dockerDesktop =
-  "../../assets/images/docker-extension/docker-extension-meshery.png";
+  "../../assets/images/docker-extension/docker-extension-meshery.webp";
 
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";

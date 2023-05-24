@@ -1,9 +1,9 @@
 import React from "react";
 import Particles from "react-tsparticles";
 
-import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
-import smp from "../../assets/images/app/projects/smp.png";
-import imagehub from "../../assets/images/app/projects/layer5-image-hub.png";
+import meshery from "../../assets/images/app/projects/meshery-logo-white.webp";
+import smp from "../../assets/images/app/projects/smp.webp";
+import imagehub from "../../assets/images/app/projects/layer5-image-hub.webp";
 
 export default () => (
   <div
