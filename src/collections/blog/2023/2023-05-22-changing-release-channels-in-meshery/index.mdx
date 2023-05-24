@@ -26,8 +26,13 @@ import MesheryVersion from "./meshery-version.png";
   updates, you can switch between different release channels.
 </p>
 <p>
-Artifacts of the builds for Meshery and its components are published under two different release channels, so that improved controls may be provided to both Meshery users and Meshery developers. The two release channels are edge and stable release channels.
-Relative to stable releases, edge releases occur much more frequently. Edge releases are made with each merge to master, unless that merge to master is for a stable release. Stable releases are made with each merge to master when a GitHub release tag is also present in the workflow.
+  Artifacts of the builds for Meshery and its components are published under two
+  different release channels, so that improved controls may be provided to both
+  Meshery users and Meshery developers. The two release channels are edge and
+  stable release channels. Relative to stable releases, edge releases occur much
+  more frequently. Edge releases are made with each merge to master, unless that
+  merge to master is for a stable release. Stable releases are made with each
+  merge to master when a GitHub release tag is also present in the workflow.
 </p>
 <p>
   There are two ways to switch between Meshery release channels: using
@@ -35,72 +40,92 @@ Relative to stable releases, edge releases occur much more frequently. Edge rele
   both methods.
 </p>
 
-<br/>
+<br />
+
 <h3>
-  Switching between Meshery release channels by editing your meshconfig
-  file.
+  Switching between Meshery release channels by editing your meshconfig file.
 </h3>
 
-<br/>
-Another way to switch between Meshery release channels is by editing your config.yaml file. This file is typically located in the ~/.meshery directory. Here's how:
+<br />
+Another way to switch between Meshery release channels is by editing your config.yaml
+file. This file is typically located in the <code>~/.meshery</code> directory. Here's how:
 
 <ol>
 <li>
-  1. Open your config.yaml file in a text editor.</li>
-
+  Open your config.yaml file in a text editor.
+</li>
 <li>
-  2. Find the channel field in the meshery section of the file.</li>
-
+  Find the channel field in the meshery section of the file.
+</li>
 <li>
-  3. Change the value of the version field to the desired release channel, stable
+  Change the value of the version field to the desired release channel, stable
   or edge.
+</li>
+<li>
+  Save the changes to the file.
 </li>
 
 <li>
-  4.Save the changes to the file.</li>
-</ol>
-<p>After making these changes, future updates to Meshery will use the selected release channel.</p>
+  To confirm that the channel has been changed, run the following command again:
 
-<br/>
+<pre>
+  <code class="language-bash">mesheryctl system channel view</code>
+</pre>
+</li>
+</ol>
+
+<p>
+  After making these changes, future updates to Meshery will use the selected
+  release channel.
+</p>
+
+<br />
 <h3>Switching between Meshery release channels using mesheryctl.</h3>
-<br/>
+<br />
 
 <p>
   mesheryctl is a command-line tool for managing Meshery. You can use it to switch between different release channels. Here's how:</p>
 <p>
-  Open your terminal and confirm that you have mesheryctl installed by running  mesheryctl version. If you don't have mesheryctl installed, you can install it by following the instructions in the Meshery documentation.
+  Open your terminal and confirm that you have mesheryctl installed by running  <code>mesheryctl version</code>. If you don't have mesheryctl installed, you can install it by following the instructions in the  <a href="https://docs.meshery.io/installation/mesheryctl">Meshery documentation</a>.
 </p>
 
-<p>
-  Run the following command to see the current release channel and version of
+<ul>
+<li>
+  Run the following command to see the current configuration for
   Meshery:
-</p>
+</li>
 
-<pre><code class="language-bash">mesheryctl system channel view</code>
+<pre>
+  <code class="language-bash">mesheryctl system context view</code>
 </pre>
-<img src={MesheryVersion} className="image-center-no-shadow" /> 
+
+<img src={MesheryVersion} className="image-center-no-shadow"></img>
 
 <p>
-  This will show you the currently channels , such as <b>stable</b> or <b>edge</b>.
+  This will show you the currently channels ,<b>stable</b> or <b>edge</b>, along with the version number and other information.
 </p>
 
-<p>Run the following command to switch to a different release channel:</p>
+<li>Run the following command to switch to a different release channel: 
 <pre><code class="language-bash">mesheryctl system channel set [stable|stable-version|edge|edge-version]
 </code></pre>
 
-To set the channel to a specific version, replace it with the desired version number. 
-
-
-<p>
   This command will update your local Meshery configuration to use the selected
-  channel for future updates.
-</p>
-<p>
-  To confirm that the channel has been changed, run the following command:
-</p>
-<pre><code class="language-bash">
-mesheryctl system channel view
-</code></pre>
+  channel for future updates.To set the channel to a specific version, replace <code>version</code> with the desired version number.
+
+</li>
+
+
+
+<li>
+  To confirm that the channel has been changed, run the following command again:
+
+<pre>
+  <code class="language-bash">mesheryctl system channel view</code>
+</pre>
+</li>
+
+</ul>
+
 <br/>
 <h3>Conclusion </h3>
 
@@ -112,6 +137,5 @@ mesheryctl system channel view
   your use case and needs before making any changes to ensure that you have the
   best Meshery experience.
 </p>
-
 
 </BlogWrapper>
