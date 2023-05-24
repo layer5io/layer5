@@ -17,6 +17,7 @@ import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import catalog from "../../../assets/images/catalog-icon/catalog.svg";
 
 
 const ProjectPage = () => {
@@ -53,12 +54,12 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/projects/service-mesh-interface-conformance"
+              to="/cloud-native-management/meshmap"
               className="project__card four"
             >
               <div className="project__card-container">
-                <img src={smi} alt="Service Mesh Interface Conformance" />
-                <h5>Service Mesh Interface Conformance</h5>
+                <img src={meshmap} alt="MeshMap" />
+                <h5>MeshMap</h5>
               </div>
             </Link>
             <Link
@@ -70,10 +71,11 @@ const ProjectPage = () => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
-            <Link to="/cloud-native-management/meshmap" className="project__card nine">
+            <Link to="/projects/service-mesh-interface-conformance"
+              className="project__card nine">
               <div className="project__card-container project__card-container_meshmap">
-                <img src={meshmap} alt="MeshMap" />
-                <h5>MeshMap</h5>
+                <img src={smi} alt="Service Mesh Interface Conformance" />
+                <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link>
             <Link to="/projects/nighthawk" className="project__card six">
@@ -100,25 +102,30 @@ const ProjectPage = () => {
               to="/learn/service-mesh-books/service-mesh-patterns"
               className="project__card eight"
             >
-              <div className="project__card-container-eight">
-                <Row>
-                  <Col lg={4} md={12} sm={12} className="image">
-                    <img
-                      src={patterns}
-                      alt="Service Mesh Patterns"
-                    />
-                  </Col>
-                  <Col lg={8} md={12} sm={12}>
-                    <h5> Service Mesh Patterns</h5>
-                  </Col>
-                </Row>
+              <div className="project__card-container">
+                <img src={patterns} alt="Service Mesh Patterns" />
+                <h5> Service Mesh Patterns</h5>
+              </div>
+            </Link>
+            <Link
+              to=""
+              className="project__card ten"
+            >
+              <div className="project__card-container-ten">
+                <Col>
+                  <img
+                    src={catalog}
+                    alt="Catalog"
+                  />
+                  <h5> Catalog</h5>
+                </Col>
               </div>
             </Link>
           </div>
           <MeshMapCTA />
         </Container>
       </div>
-      <ProudMaintainers  />
+      <ProudMaintainers />
     </ProjectWrapper>
   );
 };
