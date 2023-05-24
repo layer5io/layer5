@@ -3,8 +3,8 @@ import React from "react";
 const CatalogIcon = ({
   width,
   height,
-  primaryFill = "#51636B",
-  secondaryFill = "#00B39F",
+  secondaryFill = "#51636B",
+  primaryFill= "#00B39F",
   style = {}
 }) => (
   <svg
