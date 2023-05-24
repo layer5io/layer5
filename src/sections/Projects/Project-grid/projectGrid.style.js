@@ -116,10 +116,11 @@ export const ProjectWrapper = styled.div`
         justify-content: center;
         align-items: center;
         img{
-            height: 6.25rem;
+            height: 3.25rem;
         }
         h5{
             margin-top: .8rem;
+            font-size: 1rem;
         }
     }
 
@@ -242,8 +243,21 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+    // Service Mesh Patterns
     .project__card.eight{
-        grid-column: 6/8;
+        grid-column: 1/3;
+        grid-row: 3/6;
+        img{
+            width: 100px;
+            align-self: center; 
+        }
+    }
+    .project__card.nine{
+        grid-column: 6/7;
+        grid-row: 6/8;
+    }
+    .project__card.ten{
+        grid-column: 7/8;
         grid-row: 6/8;
         img{
             width: 90px;
@@ -254,20 +268,20 @@ export const ProjectWrapper = styled.div`
             } 
         }
         h5{
-            align-self: center;
             margin-top: 1rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
+                text-align: center;
             }
         }
     }
-    .project__card-container-eight{
+    .project__card-container-ten{
         max-width: 100%;
         height: 10rem;
         width: 12rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -277,15 +291,11 @@ export const ProjectWrapper = styled.div`
             text-align: center;
             
         }
-        @media only screen and (min-width: 741px) {
+        @media only screen and (min-width: 780px) {
             width: 80%;
             place-content: center;
         }
         
-    }
-    .project__card.nine{
-        grid-column: 1/3;
-        grid-row: 3/6;
     }
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
@@ -347,6 +357,12 @@ export const ProjectWrapper = styled.div`
                 margin-top: 1.5rem;
             }
         }
+        .project__card-container-ten{
+            height: 10rem;
+            img{
+                margin-top: 1.5rem;
+            }
+        }
         .project__card-container_nighthawk{
             flex-direction: column;
             justify-content: space-around;
@@ -361,6 +377,7 @@ export const ProjectWrapper = styled.div`
                 margin-left: 0;
             }
         }
+        
         .project__card {
             h5{ 
                 width: 100%;
@@ -404,10 +421,21 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.eight{
             img{
-                margin-top: 10px;
+                margin-top: 15px;
+                width: 150%;
             }
             h5{ 
-                margin-top:35px;
+                margin-top:30px;
+                margin-bottom:30px;
+            }
+        }
+        .project__card.ten{
+            img{
+                margin-top: 15px;
+                width: 150%;
+            }
+            h5{ 
+                margin-top:30px;
             }
         }
          
