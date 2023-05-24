@@ -14,6 +14,12 @@ const PlaygroundFeaturesWrapper = styled.div`
     align-items: center;
     margin: 5% 0%;
 
+    svg {
+      .playground-feature-2_svg__text {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
     h1 {
         margin-bottom: 8px;
     }
