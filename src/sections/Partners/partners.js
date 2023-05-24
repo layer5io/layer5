@@ -5,7 +5,7 @@ import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
 import partner4 from "../../assets/images/partners/citrix.svg";
 
 import partner14 from "../../assets/images/partners/metabit-trading-logo-gray.svg";
-import lightpartner14 from "../../assets/images/partners/metabit-trading-logo-gray.svg";
+import lightpartner14 from "../../assets/images/partners/metabit-trading-white.svg";
 
 
 import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
