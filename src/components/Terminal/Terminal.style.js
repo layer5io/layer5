@@ -16,6 +16,7 @@ export const TerminalWrapper = styled.div`
   --terminal-body-color: var(--gray-1);
 
   width: 837px;
+  max-width: 90%;
 
   .title-bar {
     display: flex;
@@ -59,7 +60,6 @@ export const TerminalWrapper = styled.div`
     background: var(--terminal-body-color);
     border-radius: 0 0 var(--terminal-radius) var(--terminal-radius);
     padding: 24px 32px;
-
     @media (min-width: 768px) {
       height: 525px;
     }
@@ -80,9 +80,9 @@ export const TerminalWrapper = styled.div`
     width: 0;
     height: 0;
   }
-
+  
   .code-wrapper {
-     pre {
+    pre {
       padding: 0;
       margin: 0;
       width: 100%;
@@ -106,6 +106,8 @@ export const TerminalWrapper = styled.div`
         color: var(--white);
       }
 
+      wrap-word: normal;
+      
       @media (min-width: 768px){
         font-size: 13.5px;
         line-height: 26px;

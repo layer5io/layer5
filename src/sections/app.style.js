@@ -21,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 
+  #___gatsby {
+    background: ${(props) => props.theme.body};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
