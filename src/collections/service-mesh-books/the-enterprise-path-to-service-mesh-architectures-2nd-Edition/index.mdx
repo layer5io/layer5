@@ -25,7 +25,14 @@ import CommonForm from "../../../components/CommonForm";
         form="epsma-book"
         account_desc="Email the The Enterprise Path to Service Mesh Architectures 2nd Edition"
         submit_title="Your copy of the book will arrive in your mailbox shortly."
-        submit_body="While waiting for your copy to arrive take a free <a href='https://layer5.io/learn/learning-path'>learning path</a>"
+        submit_body={
+          <span
+            dangerouslySetInnerHTML={{
+              __html:
+                'While waiting for your copy to arrive, take a free <a href="https://layer5.io/learn/learning-path">learning path</a>.',
+            }}
+          />
+        }
       />
     </Col>
 </div>
