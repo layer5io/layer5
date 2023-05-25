@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 ::selection {
-    background: ${(props) => props.theme.selectionColor};
+    background: rgba(0, 50, 0, 0.99);
     color: #ffffff;
 }
 
