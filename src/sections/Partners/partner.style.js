@@ -84,7 +84,7 @@ const PartnerWrapper = styled.section`
             .redhat-colorMode_svg__colorMode1,
             .intel-colorMode_svg__colorMode1,
             .vmware-colorMode_svg__colorMode1,
-            .istio-colorMode_svg__colorMode1
+            .istio-colorMode_svg__colorMode1,
             .metabit-trading-logo-colorMode_svg__colorMode1
             {
                 fill: ${props => props.theme.whiteToBlack};
