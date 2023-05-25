@@ -8,7 +8,7 @@ const PopupWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 9999;
     padding: 0.5rem;
     display: flex;
@@ -36,6 +36,10 @@ const PopupWrapper = styled.div`
     right: 1rem;
     width: 4%;
     cursor: pointer;
+}
+
+.popup-image{
+    box-shadow: 0 0 30px rgba(0,211,169, 0.6);
 }
 
 `;

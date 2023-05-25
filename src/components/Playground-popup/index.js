@@ -24,7 +24,7 @@ const PlaygroundPopup = () => {
           <div className="popup">
             <div className="popup-inner">
               <img className="close-btn" src={closeIcon} onClick={() => setTrigger(false)}/>
-              <img src={popupImage} alt="" />
+              <img className="popup-image" src={popupImage} alt="" />
               <Button primary className="join-community-button" title="Explore Meshery Playground" url="https://play.meshery.io/" />
             </div>
           </div>
