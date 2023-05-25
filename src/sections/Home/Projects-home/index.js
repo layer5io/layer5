@@ -46,7 +46,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo"  width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
+                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
                   <p>Meshery</p>
                   <h3>Cloud Native Management and Governance</h3>
                 </div>
@@ -64,14 +64,14 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }}/>
+                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
                   <p>Nighthawk</p>
                   <h3>Distributed Performance Management for Microservices</h3>
                 </div>
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/service-mesh-landscape">
+              <Link className="project-card" to="/catalog">
                 <div className="project__block__inner">
                   {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
                   <CatalogLogo height="40px" width="auto" style={{ margin: "10px auto", minHeight: "40px" }} />
