@@ -29,6 +29,7 @@ const PartnerWrapper = styled.section`
             text-align: center;
             h1{
                 color:white;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             
         }
@@ -52,7 +53,10 @@ const PartnerWrapper = styled.section`
             font-weight: 5;
             text-algin: left;
             font-size: 35px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+        color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .heading {
@@ -169,6 +173,8 @@ const PartnerWrapper = styled.section`
         .acad-container-body{
             width:78%;
             text-align: center;
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     .partner-btn{
@@ -212,6 +218,7 @@ const PartnerWrapper = styled.section`
         flex-direction:column;
         h1{
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     } 
     .moreInfo-div{
