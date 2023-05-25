@@ -85,6 +85,7 @@ const PartnerWrapper = styled.section`
             .intel-colorMode_svg__colorMode1,
             .vmware-colorMode_svg__colorMode1,
             .istio-colorMode_svg__colorMode1
+            .metabit-trading-logo-colorMode_svg__colorMode1
             {
                 fill: ${props => props.theme.whiteToBlack};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -98,6 +99,24 @@ const PartnerWrapper = styled.section`
             .smi-colorMode_svg__colorMode1 {
                 fill: ${props => props.theme.whiteToBlue2A2DDE};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode2,
+            .metabit-trading-logo-colorMode_svg__colorMode3,
+            .metabit-trading-logo-colorMode_svg__colorMode4 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode2 {
+                fill: ${props => props.theme.whiteToBlack};
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode3 {
+                fill: ${props => props.theme.whiteToBlack};
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode4 {
+                fill: ${props => props.theme.whiteToBlack};
             }
         }
     }

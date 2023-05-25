@@ -13,6 +13,9 @@ import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-
 import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
+import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
+
+
 export const partners = [
   {
     name: "The University of Texas at Austin",
@@ -128,6 +131,16 @@ export const partners = [
     //imageRoute: "https://www.vmware.com/",
     moreInfo:
       "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
+  }, {
+    name: "Metabit Trading",
+    desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
+    //link: null,
+    type: "technology",
+    imageLink: <Partner14 alt="Metabit Trading" />,
+    partnerId: "metabittrading",
+    //imageRoute: "https://www.metabit-trading.com/home",
+    moreInfo:
+      "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
   }
 
 
