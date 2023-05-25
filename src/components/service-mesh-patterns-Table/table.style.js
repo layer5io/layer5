@@ -17,7 +17,7 @@ export const TableWrapper = styled.div`
 
 
         th{
-            background:${(props) => props.theme.tertiaryColor};
+            background:#1e2117;
             color:${(props) => props.theme.white};
             padding:10px;
             border-collapse:collapse;
@@ -52,7 +52,7 @@ export const TableWrapper = styled.div`
         
         .table-header {
             border-radius: 0 !important;
-            background-color: ${(props) => props.theme.primaryColor};
+            background-color: #3c494f;
         }
 
         tbody{
