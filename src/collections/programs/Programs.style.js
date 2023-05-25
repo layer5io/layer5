@@ -57,6 +57,22 @@ export const ProgramsWrapper = styled.div`
     .gsod-table-container{
         overflow-x: auto;
     }
+    .mlh_logo{
+        width: 19vw;
+        float: right;
+        margin-left: 40px;
+        margin-bottom: 30px;
+        .mlh_svg__cls-1 {
+            transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            fill: ${props => props.theme.whiteToBlack};
+        }
+        @media only screen and (max-width:572px) {
+            display: block;
+            float: none;
+            width: 35vw;
+            margin: 0 auto 40px auto;
+        }
+    }
     .tutorials-table {
         border-spacing: 0;
         th {
