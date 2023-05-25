@@ -91,7 +91,7 @@ const Data = {
         },
         {
           name: "Catalog",
-          path: "https://meshery.io/catalog",
+          path: "/catalog",
         },
         {
           name: "Docker Extension",
@@ -103,7 +103,7 @@ const Data = {
         },
         {
           name: "Playground",
-          path: "https://play.meshery.io",
+          path: "/cloud-native-management/playground",
         },
         {
           name: "Nighthawk",

@@ -38,20 +38,15 @@ export const FeaturesWrapper = styled.div`
         }
       }
 
-      & .pagingDots {
-        top: 0.5rem !important;
-        & .paging-item {
-          padding :0.25rem;
+      .slick-slider{
+        .slick-dots li button:before {
+          font-size: 0.6rem;
+          color: ${props => props.theme.secondaryColor};
         }
-        & .paging-item > button:hover {
-          box-shadow:none;
-        }
-        & .paging-item > button > svg {
-          // opacity: 1 !important;
-          height: 0.65rem;
-          width: 0.65rem;
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          fill: ${props => props.theme.whiteToGreyB3B3B3};
+
+        .slick-dots li.slick-active button:before {
+          opacity: 1;
+          color: ${props => props.theme.secondaryColor};
         }
       }
     }
@@ -147,8 +142,8 @@ export const FeaturesWrapper = styled.div`
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            maxHeight: 330px;
-            height:330px;
+            maxHeight: 380px;
+            height: 380px;
             overflow-y:scroll;
         }
       }
@@ -200,6 +195,7 @@ export const FeaturesWrapper = styled.div`
      display:flex;
      justify-content:center;
      align-items:center;
+     height:100%;
    }
 
 `;
