@@ -160,7 +160,6 @@ const CytoscapeCtx = () => {
       zoom: 3,
       minZoom: 0.3,
       maxZoom: 2,
-      boundingBox: { x1: 0, y1: 0, w: "40vh", h: "50vh" },
       boxSelectionEnabled: false,
     });
 
