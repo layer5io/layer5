@@ -30,7 +30,9 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud naative standards. Maker of Meshery, the cloud native manager.
+              An empowerer of engineers, Layer5 helps you extract more value
+              from your infrastructure. Creator and maintainer of cloud naative
+              standards. Maker of Meshery, the cloud native manager.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -43,10 +45,8 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/learning-paths"
-                    >Learning Paths
+                    <Link className="category-link" to="/learn/learning-paths">
+                      Learning Paths
                     </Link>
                   </li>
                   <li>
@@ -124,7 +124,10 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/community/handbook/writing-program">
+                    <Link
+                      className="category-link"
+                      to="/community/handbook/writing-program"
+                    >
                       Writing Program
                     </Link>
                   </li>
@@ -183,7 +186,6 @@ const Footer = () => {
                       Service Mesh Performance
                     </Link>
                   </li>
-
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -227,6 +229,24 @@ const Footer = () => {
               </div>
             </Row>
             <Row className="subscribe">
+              <Col sm={4} id="edit-page">
+                <span> Get Involved </span>
+
+                <a href="/">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="inherit"
+                      height="24"
+                      viewBox="0 -960 960 960"
+                      width="24"
+                    >
+                      <path d="M490.001-130.001v-71.153l208.923-208.922 71.152 71.152-208.922 208.923h-71.153Zm-360-200v-59.998h280v59.998h-280Zm668.075-36.923-71.152-71.152 29-29q8.692-8.693 21.076-8.693t21.076 8.693l29 29q8.693 8.692 8.693 21.076t-8.693 21.076l-29 29ZM130.001-490.001v-59.998h440v59.998h-440Zm0-160v-59.998h440v59.998h-440Z" />
+                    </svg>
+                    <p>Edit This Page</p>
+                  </span>
+                </a>
+              </Col>
               <form
                 name="contactform"
                 method="post"
@@ -240,8 +260,10 @@ const Footer = () => {
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL-2"
-                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
-                    onInput={e => e.target.setCustomValidity("")}
+                    onInvalid={(e) =>
+                      e.target.setCustomValidity("Please fill-in this field")
+                    }
+                    onInput={(e) => e.target.setCustomValidity("")}
                     required
                   />
                   <Button
@@ -271,18 +293,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/company/legal/privacy"
-                >
-                  Privacy
-                </a>
+                <a href="/company/legal/privacy">Privacy</a>
               </li>
               <li>
-                <a
-                  href="/company/legal/terms-of-service"
-                >
-                  Terms
-                </a>
+                <a href="/company/legal/terms-of-service">Terms</a>
               </li>
             </ul>
           </div>

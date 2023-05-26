@@ -23,6 +23,54 @@ const FooterWrapper = styled.section`
 		}
 	}
 
+	#edit-page{
+		color:white;
+		cursor:pointer;
+		margin: auto;
+		margin-left:0;
+		padding:0;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
+		margin: 0 2.5rem 2rem 0;
+		justify-content: flex-end;
+
+		span {
+			display: block;
+			width: 100%;
+			margin: 0;
+			margin-bottom:0.5rem;
+		}
+		
+		a{
+			color:white;
+		}
+
+		a:hover{
+			p{
+				color: ${(props) => props.theme.secondaryColor};
+			}
+			svg{
+			fill:  ${(props) => props.theme.secondaryColor};
+			}
+		}
+
+		p{
+			font-size:0.85rem;
+		}
+		
+		svg{
+			margin:0 8px;
+			fill:white;
+			align-self:self-end
+
+		}
+		
+		span{
+			display:flex
+			align-items:center
+		}
+		
+	}
+
 	.desc-info {
 		color: #ccc;
 		padding-right: 2.25rem;
@@ -45,7 +93,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 				color: rgba(255, 255, 255, 0.8);
 				&:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 		}
@@ -61,7 +109,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 
 				&:hover{
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 
@@ -74,7 +122,7 @@ const FooterWrapper = styled.section`
 				border-radius: .25rem;
 				vertical-align: top;
 				text-transform: uppercase;
-				color: ${props => props.theme.saffronLightColor};
+				color: ${(props) => props.theme.saffronLightColor};
 			}
 		}
 	}
@@ -134,7 +182,7 @@ const FooterWrapper = styled.section`
 					color: #CCCCCC;
 				}
 				a:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 			li + li {
