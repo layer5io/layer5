@@ -14,10 +14,10 @@ const CytoscapeCtx = () => {
 
       elements: {
         nodes: [
-          { data: { id: "a", parent: "b" }, position: { x: 215, y: 85 } },
+          { data: { id: "a", parent: "b" }, position: { x: 300, y: 175 } },
           { data: { id: "b" } },
           { data: { id: "c", parent: "b" }, position: { x: 300, y: 85 } },
-          { data: { id: "d" }, position: { x: 215, y: 175 } },
+          { data: { id: "d" } },
           { data: { id: "e" } },
           { data: { id: "f", parent: "e" }, position: { x: 300, y: 175 } },
           { data: { id: "g", parent: "b" }, position: { x: 215, y: 85 } },
@@ -146,8 +146,9 @@ const CytoscapeCtx = () => {
             "text-outline-width": "1px",
             "text-wrap": "wrap",
             width: "1.5px",
+            "length": "2px"
           }
-        }
+        },
       ],
 
       layout: {
@@ -156,10 +157,15 @@ const CytoscapeCtx = () => {
         animationDuration: 1000,
         animationEasing: "ease-out",
         fit: true,
+        idealEdgeLength: 20,
+        spacingFactor: 1,
+        gravityRangeCompound: 1,
+        gravityCompound: 1,
       },
       zoom: 3,
       minZoom: 0.3,
       maxZoom: 2,
+      // boundingBox: { x1: 0, y1: 0, w: "40vh", h: "50vh" },
       boxSelectionEnabled: false,
     });
 
