@@ -50,7 +50,7 @@ const Partner = () => {
         <div className="academic-container">
           <div className="acad-container-body">
             <h1 className="heading">Academic Partners</h1>
-            Layer5 established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.
+            Layer5 established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers' digital transformations, helping them move into the new era of DevOps and cloud native applications.
           </div>
         </div>
         {
