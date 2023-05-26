@@ -14,34 +14,7 @@ const PartnerWrapper = styled.section`
     position: relative;
     min-height: 100%;
     top: 0px;
-    .partner-container{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-color:${props => props.theme.grey212121ToGreen1E2117};
-        color: white;
-        padding: 4rem 0;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-        .partner-container-head{
-            padding:2rem;
-            text-align: center;
-            h1{
-                color:white;
-                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            }
-            
-        }
-        .partner-container-body{
-            width:60%;
-            display: flex;
-            justify-content: center;
-            padding:2rem;
-            flex-direction: column;
-        }
-    }
-    
     .container {
         position: relative;
         text-align: justify;
@@ -57,6 +30,47 @@ const PartnerWrapper = styled.section`
         }
         color: ${(props) => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .partner-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color:${props => props.theme.grey212121ToGreen1E2117};
+        color: white;
+        padding: 4rem 0;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+        .partner-container-head{
+            padding:2rem;
+            text-align: center;
+            h1{
+                color:white;
+            }
+            
+        }
+        .partner-container-body{
+            width:60%;
+            display: flex;
+            justify-content: center;
+            padding:2rem;
+            flex-direction: column;
+            .container {
+                position: relative;
+                text-align: justify;
+                margin: 0 2rem;
+                max-width: 1280px;
+                z-index: 1;
+                padding: 1em;
+                color: white;
+                h1 {
+                    font-weight: 5;
+                    text-algin: left;
+                    font-size: 35px;
+                }
+            }
+        }
     }
 
     .heading {
