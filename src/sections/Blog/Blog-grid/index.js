@@ -11,25 +11,20 @@ import Pagination from "../../Resources/Resources-grid/paginate";
 import useDataList from "../../../utils/usedataList";
 
 const BlogGrid = ({
-  isListView,
-  setListView,
-  setGridView,
-  pageContext,
-  data,
+	isListView,
+	setListView,
+	setGridView,
+	pageContext,
+	data,
+	searchData,
+	searchQuery,
+	setCurrentPage,
+	currentPage,
+	searchedPosts,
+	queryResults,
+	postsPerPage,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
-    data.allMdx.nodes,
-    setSearchQuery,
-    searchQuery,
-    ["frontmatter", "title"],
-    "id"
-  );
-  const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
+   
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -61,22 +56,22 @@ const BlogGrid = ({
               </div>
               <div className="blog-grid-wrapper">
                 <Row>
-                  {queryResults.length < 1 && (
+                  {queryResults?.length < 1 && (
                     <Col xs={12} sm={6}>
                       No blog post that matches the title "{searchQuery}" found.
                     </Col>
                   )}
 
-                  {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
+                  {searchedPosts?.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
                       <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>
-                    {searchedPosts.length > 0 && (
+                    {searchedPosts?.length > 0 && (
                       <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={queryResults.length}
+                        totalPosts={queryResults?.length}
                         paginate={paginate}
                         currentPage={currentPage}
                       />
