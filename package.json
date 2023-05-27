@@ -40,6 +40,8 @@
     "babel-preset-gatsby": "^2.22.0",
     "caniuse-lite": "^1.0.30001435",
     "cytoscape": "^3.23.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-fcose": "^2.2.0",
     "dedent": "^0.7.0",
     "deepmerge": "^4.3.0",
     "formik": "^2.2.9",
