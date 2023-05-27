@@ -33,15 +33,17 @@ export default function DesignerFeatures({ features }) {
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Design</h1>
               <div className="learn-more">
-                <h5 style={{ color: "#ececec" }}>Learn more</h5>
+                <h5 style={cursorOverArrow ? { color: "#ffffff" } : { color: "#ececec" }}>Learn more</h5>
                 <img src={cursorOverArrow ? LinkArrow : LinkArrowDark} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
               </div>
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
-            <div className="diagram scroll hideInMobile">
-              <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
-            </div>
+            <Link to="/cloud-native-management/meshmap/design">
+              <div className="diagram scroll hideInMobile">
+                <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
+              </div>
+            </Link>
             <ul className="features design-features">
               {features.map((feature, index) => (
                 <li className="design-feature-slide" key={index}>

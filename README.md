@@ -39,8 +39,19 @@
 
 
 <p style="clear:both;">
+<h2><a href="https://layer5.io/meshmap">MeshMap</a></h2>
+<a href="https://layer5.io/meshmap">
+  <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="margin:10px;" align="left" />
+</a>
+<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
+<br /><br /><br/>
+</p>
+<br />
+
+
+<p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
-<a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
+<a href="https://github.com/service-mesh-patterns"><img src=".github/assets/images/patterns/service-mesh-pattern.svg" style="float:left;margin:10px;" width="125px" alt="Service Mesh Pattern" align="left"/>
 </a>
 <a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh, or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
@@ -89,7 +100,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <p style="clear:both;">
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
-   <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg"
+   <img src=".github/assets/images/meshery-operator/meshery-operator-dark.svg"
  style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
 </a>
  <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
@@ -133,9 +144,22 @@ alt="Nighthawk" align="left" />
 <br /><br /><br />
 </p>
 
+
+
+<p style="clear:both;">
+<h2><a href="https://layer5.io/projects/catalog">Meshery Catalog</a></h2>
+<a href="">
+  <img src=".github/assets/images/catalog/catalog.svg"
+style="float:left;margin:10px;" width="125px"
+alt="Meshery Catalog" align="left" />
+</a>
+<a href="">Meshery Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns.
+<br /><br /><br />
+</p>
+
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
-<p> We would love to accept your contributions! This project is community-built and welcomes collaboration. Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are all appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
+<p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether your opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull requests</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
   Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" /> Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.

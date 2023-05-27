@@ -3,7 +3,6 @@ import React from "react";
 import SEO from "../../components/seo";
 import LearnPage from "../../sections/Learn";
 
-import { useState } from "react";
 const LearnGridPage = () => {
   return (
     <>

@@ -11,7 +11,7 @@ export const HandbookCardWrapper = styled.div`
 	  width: 25rem;
 	  box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
 	  overflow: hidden;
-	  height: 15rem;
+	  height: 19rem;
 	  position: relative;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
@@ -53,7 +53,7 @@ export const HandbookCardWrapper = styled.div`
 	  line-height: 1.75;
 	  letter-spacing: 0px;
 	  font-weight: 400;
-	  font-size: .9rem;
+	  font-size: 1.1rem;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
@@ -95,7 +95,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card:hover {
-	  height: 17rem;
+	  height: 21rem;
 	}
 
 	.handbook__card:hover .handbook__card--head {

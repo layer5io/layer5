@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql,Script } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import FavIcon from "../assets/images/favicon.png";
 
 
@@ -32,13 +32,15 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || siteMetadataImage}`,
-    url: `${siteUrl}${pathname || ""}`,
+    url: `${siteUrl}${pathname.replace(".html", "")  || ""}`.replace(/\/$/, ""),
     twitterUsername
   };
+  if (!canonical) {
+    canonical = seo.url;
+  }
 
   return (
     <>
-      <html lang="en" />
       <title>{seo.title}</title>
       <meta name="description" property="og:description" content={seo.description} />
       <meta name="og:description" content={seo.description} />
@@ -58,28 +60,9 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
-      <link rel="preconnect" href="https://fonts.gstatic.com/" />
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
-        media="print"
-        onLoad="this.media='all'"
-        as="font"
-        crossOrigin
-      />
-      <noscript>
-        {`${
-          <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
-            as="font"
-            crossOrigin
-          />
-          }`}
-      </noscript>
-      {canonical &&   <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={canonical} />
       {schemaMarkup &&
-        <Script type="application/ld+json">{JSON.stringify(schemaMarkup)}</Script>}
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>}
       {children}
     </>
   );

@@ -16,9 +16,9 @@ import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/mes
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import useHasMounted from "../../utils/useHasMounted";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
-
 
 const CommunityPage = () => {
 
@@ -40,11 +40,13 @@ const CommunityPage = () => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const hasMounted = useHasMounted();
+
+  const pluginImage = hasMounted && getImage(backgroundImage123);
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={pluginImage} className="section">
+      <BgImage image={ pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>
@@ -137,7 +139,7 @@ const CommunityPage = () => {
                 <h1>Newcomers Welcome!</h1>
                 <h2>Are you new to the community?</h2>
                 <p className="invitation">
-                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                  Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                   and engage in the community and projects.
                 </p>
                 <Button primary title="See All Newcomers Resources" url="/community/newcomers">

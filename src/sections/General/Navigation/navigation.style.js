@@ -216,20 +216,6 @@ const NavigationWrap = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-
-      svg {
-        .prometheus-partial-colorMode_svg__colorMode1,
-        .pod-partial-colorMode_svg__colorMode1,
-        .kubernetes-partial-colorMode_svg__colorMode1,
-        .ingress-gateway-partial-colorMode_svg__colorMode1 {
-          fill: ${props => props.theme.whiteToBlack};
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .empty-colorMode_svg__colorMode1 {
-          fill: ${props => props.theme.whiteToGrey121212};
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-      }
     }
 
 
@@ -240,10 +226,12 @@ const NavigationWrap = styled.header`
       p {
         font-weight: bold;
         font-size: 1.25rem;
+        text-align: center;
       }
       h6 {
         font-size: 15px;
         line-height: 1.5rem;
+        text-align: center;
       }
       a {
         padding: 0%;
@@ -408,10 +396,6 @@ const NavigationWrap = styled.header`
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         fill: ${props => props.theme.whiteToGreen3C494F};
       }
-    }
-    
-    img {
-      width: 155px;
     }
     @media screen and (max-width: 992px) and (min-width: 912px) {
       width: 125px;
@@ -719,9 +703,36 @@ const NavigationWrap = styled.header`
 
   .transition-container {
         margin: 0%;
-        max-width: 70%;
+        max-width: 68%;
         position: relative;
         z-index: -1;
+        svg {
+            .prometheus-partial-colorMode_svg__colorMode1,
+            .pod-partial-colorMode_svg__colorMode1,
+            .ingress-gateway-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .empty-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGrey121212};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            
+            .service-interface-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .kubernetes-partial-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.blackToWhite};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .kubernetes-partial-colorMode_svg__colorMode2 {
+              fill: ${props => props.theme.whiteToBlack};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+        }
     }
 
 

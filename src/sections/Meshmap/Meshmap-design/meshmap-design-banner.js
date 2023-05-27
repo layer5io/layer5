@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
 import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
+import CytoscapeDemo from "./cytoscape-demo";
+import CytoscapeCanvas from "./cytoscape-demo";
+import Graph from "./cytoscapeCanvas";
+import CytoscapeComponent from "./cytoscapeCanvas";
+import CytoscapeCtx from "./cytoscapeCanvas";
 
 const DesignBannerWrapper = styled.div`
 
@@ -47,6 +52,8 @@ const DesignBannerWrapper = styled.div`
             font-size: 7rem;
         } */
 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         @media only screen and (min-width: 500px) {
             span {
                 font-size: 3.5rem;
@@ -84,13 +91,9 @@ const DesignBannerWrapper = styled.div`
     }
 
     .banner-image {
-        z-index: 0;
         position: absolute;
         top: 2rem;
         left: 0px;
-        overflow: hidden;
-        /* height: 200rem; */
-        width: 90rem;
 
         .banner-image-colorMode_svg__colorMode1 {
             fill: ${props => props.theme.blueE0FFFCToBlue477E96};
@@ -107,16 +110,10 @@ const DesignBannerWrapper = styled.div`
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        img {
-            filter: brightness(1.3);
-            transform: scale(2);
-            transform-origin: 0rem 0rem;
-        }
-
-            @media only screen and (max-width: 700px) {
+        @media only screen and (max-width: 700px) {
                 top: 5rem;
         }
-            @media only screen and (max-width: 400px) {
+        @media only screen and (max-width: 400px) {
                 top: 7rem;
         }
     }
@@ -163,8 +160,7 @@ const MeshmapDesignBanner = () => {
         {/* <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p> */}
       </div>
       <div className="hero-image">
-        <CytoscapeImg alt="cytoscape" />
-        {/* <CytoscapeDemo/> */}
+        <CytoscapeCtx />
         <h5>Experience context-aware design</h5>
       </div>
     </DesignBannerWrapper>

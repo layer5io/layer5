@@ -97,7 +97,7 @@ const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
+const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
     <CTA_FullWidthWrapper {...props}>
       { category ? (
@@ -126,3 +126,5 @@ export const CTA_FullWidth = ({ alt, button_text, category, content, external_li
     </CTA_FullWidthWrapper>
   );
 };
+
+export default CTA_FullWidth;

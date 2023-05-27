@@ -30,8 +30,7 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure.
-              Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane.
+              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud naative standards. Maker of Meshery, the cloud native manager.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -84,7 +83,7 @@ const Footer = () => {
                       className="category-link"
                       to="/learn/service-mesh-labs"
                     >
-                      Service Mesh Interactive Labs
+                      Cloud Native Interactive Labs
                     </Link>
                   </li>
                 </ul>

@@ -51,6 +51,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   return (
     <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
       {menuItems.map((menu, index) => (
+
         <li
           key={index}
           className={
@@ -79,39 +80,26 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 >
                   {activeState.name}
                 </Link>
-                {activeState.subItems.map((subItem, i) => (
-                  <li key={i}>
-                    {subItem.name === "Forum" ?
-                      <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
-                        {subItem.name}
-                      </a>
-                      : <div>
-                        {hover
-                          ? <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active"
-                          >
-                            {activeState.name === "Projects" && subItem.sepLine ?
-                              <>{subItem.name} <IoMdArrowDropdown className="dropdownicon-up" /></>
-                              :
-                              subItem.name
-                            }
-                          </Link>
-                          : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active" style={(activeState.name === "Projects" && !subItem.sepLine) ? { display: "none" } : { display: "block" }}
-                          >
-                            {activeState.name === "Projects" ?
-                              <> {subItem.name} <IoMdArrowDropdown /> </>
-                              :
-                              subItem.name
-                            }
-                          </Link>
-                        }
-                      </div>
-                    }
-                  </li>
-                ))}
+                {activeState.subItems.map((subItem, i) => {
+                  const externalLinks = ["Forum", "Catalog", "Playground"];
+
+                  return (
+                    <li key={i}>
+                      {externalLinks.includes(subItem.name) ?
+                        <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
+                          {subItem.name}
+                        </a>
+                        : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+                          {subItem.name}
+                        </Link>
+                      }
+                    </li>
+                  );
+                })}
                 <div className="action-items">
                   {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
-                      <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                      <a key={i} href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
@@ -145,7 +133,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       </div>
                       <div className="card-text">
                         <p>MeshMap</p>
-                        <h6>Stop finger-pointing and start collaborating.</h6>
+                        <h6>Stop finger-pointing.</h6>
+                        <h6>Start collaborating.</h6>
                       </div>
                     </div>
                   </Link>

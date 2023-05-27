@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 
 
+
 const QuotesWrapper = styled.div`
 
 margin: 5% 0%;
@@ -10,9 +11,10 @@ text-align: center;
 .quote-box {
     display: flex;
     flex-direction: row;
+    flex: 1 1 0;
     text-align: center;
     align-items: center;
-    padding: 5% 5%;
+    padding: 2rem;
     border: 2px solid transparent;
     border-image: ${props => props.theme.DarkTheme ? "linear-gradient(to right bottom, #00b39f, #121212 80%)" : "linear-gradient(to right bottom, #00b39f, #fff 80%)"} ;
     border-image-slice: 1 0 1 1;
@@ -41,24 +43,32 @@ text-align: center;
     border-image-slice: 1 1 1 0;
     transition: 0.6s ease-in-out;
 }
+img{
+    border-radius: 50%;
+    width: 6vw;
+    height: 6vw;
+}
 
 .quote-source {
     display: flex;
+    flex: 2 1 0;
+    padding: 0 1rem;
     flex-direction: column;
-    text-align: left;
-
     @media screen and (max-width: 500px) {
         text-align: center;
     }
+   
     h5 {
         font-weight: bold;
+
+        padding:0.1rem;
         text-transform: uppercase;
         @media screen and (max-width: 600px) {
+            margin-top: 1rem;
             font-size: 1rem;
         }
     }
     p {
-        margin: 0;
         @media screen and (max-width: 600px) {
             font-size: 0.75rem;
             line-height: 1.25rem;
@@ -68,7 +78,7 @@ text-align: center;
 
 hr {
     height: 5rem;
-    margin: 0% 5%;
+    margin: 0% 3%;
     @media screen and (max-width: 500px) {
         margin: 5% 0%;
         height: 0;
@@ -77,7 +87,7 @@ hr {
 }
 `;
 
-const InlineQuotes = ({ person, title, quote }) => {
+const InlineQuotes = ({ person, title, quote,image }) => {
 
   const [quoteRef, inView] = useInView({ threshold: 1.0 });
   const [quoteInView, setquoteInView] = useState(false);
@@ -93,6 +103,7 @@ const InlineQuotes = ({ person, title, quote }) => {
       <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
         <hr />
+        <img src={image}></img>
         <div className="quote-source">
           <h5>{person}</h5>
           <p>{title}</p>

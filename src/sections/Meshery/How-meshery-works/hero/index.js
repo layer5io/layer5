@@ -10,15 +10,21 @@ const HowMesheryWorksHeroWrapper = styled.div`
       margin: auto;
       h5{
         font-weight: 600;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       h2 {
         font-weight: 400;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      h1 {
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       @media only screen and (max-width: 992px){
          margin-top: 2rem;
          margin-bottom: 2rem;
       }
     }
+
     .hero-img-wrapper{
       background-color: ${props => props.theme.secondaryLightColorTwo};
       border-bottom-left-radius: 4.375rem;
@@ -28,34 +34,32 @@ const HowMesheryWorksHeroWrapper = styled.div`
       align-self: top;
       margin-top: 0px;
       padding-top: 0px;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      @media only screen and (max-width: 992px){
+        margin:auto;
+        padding: 1rem 0rem 0rem 0rem;
+      }
+
       svg {
         .meshery-operator-colorMode_svg__colorMode1, 
         .meshery-operator-colorMode_svg__colorMode2
         {
           fill: ${props => props.theme.greyB4B4B4ToGrey505050};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           enable-background: new;
         }
         .meshery-operator-colorMode_svg__colorMode2 {
           fill: ${props => props.theme.grey8C8C8CToGreen1E2117};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         padding: 2rem 2rem;
         margin: auto;
         display: block;
-        @media only screen and (max-width: 992px){
-            margin:auto;
-            padding: 1rem 0rem 0rem 0rem;
-         }
-      img {
-        padding: 2rem 2rem;
-        margin: auto;
-        @media only screen and (max-width: 992px){
-            margin:auto;
-            padding: 1rem 0rem 0rem 0rem;
-         }
+
       }
     }
-  
 `;
 
 const HowMesheryWorksHero = () => {
@@ -70,7 +74,7 @@ const HowMesheryWorksHero = () => {
             <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
           <Col className="hero-img-wrapper" xs={4} lg={6}>
-            <HeroImage height="450" width="450" alt="hero" />
+            <HeroImage alt="hero" />
           </Col>
         </Row>
       </Container>

@@ -3,6 +3,7 @@ import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
+import playIcon from "../../../assets/images/homePage-images/play-button.png";
 
 import ReactPlayer from "react-player/youtube";
 
@@ -57,11 +58,12 @@ const BannerDefault = () => {
               playing
               controls
               light={< img className="imgHero" src={imgHero} loading="lazy" alt="meshmap designer" width="100%" height="100%" />}
+              playIcon={<img src={playIcon} className = "playBtn" loading="lazy"/>}
               width="auto"
               height="100%"
               style={{ margin: "auto" }}
               className="vidHero"
-            />
+            ><></></ReactPlayer>
           </Col>
         </Row>
       </div>

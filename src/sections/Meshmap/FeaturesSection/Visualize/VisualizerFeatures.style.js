@@ -75,8 +75,7 @@ const VisualizerFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
-
+    
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
@@ -154,7 +153,7 @@ const VisualizerFeaturesWrapper = styled.section`
   .fixed {
     top: 6rem;
     font-weight: 300;
-    transition: 0.3s ease-in-out;
+    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     background: #00b39f;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     & > h1 {
@@ -162,6 +161,9 @@ const VisualizerFeaturesWrapper = styled.section`
     }
     @media (max-width: 912px) {
       top: 5rem;
+    }
+    &:hover{
+      background: #00d3a9;
     }
   }
   #add-border {

@@ -90,12 +90,20 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Catalog",
+          path: "/catalog",
+        },
+        {
           name: "Docker Extension",
           path: "/docker-extension-meshery",
         },
         {
           name: "MeshMap",
           path: "/cloud-native-management/meshmap",
+        },
+        {
+          name: "Playground",
+          path: "/cloud-native-management/playground",
         },
         {
           name: "Nighthawk",
@@ -178,10 +186,10 @@ const Data = {
           actionName: "Join the discussion",
           actionLink: "https://discuss.layer5.io",
         },
-        {
-          actionName: "Free service mesh training",
-          actionLink: "/learn",
-        }
+        // {
+        //   actionName: "Free service mesh training",
+        //   actionLink: "/learn",
+        // }
       ],
       // div1: {
       //   src: meshery,

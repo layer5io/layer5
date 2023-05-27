@@ -33,7 +33,7 @@ const Honeycomb = (props) => {
       }
     } else {
       // All hexagons are covered in n pairs of 2 rows ( first row with a hexagons and second row with b hexagons )
-      setHeight(pairsCount * 272);
+      !isNaN(pairsCount) && setHeight(pairsCount * 272);
     }
   };
   useEffect(() => {

@@ -347,7 +347,7 @@ body {
   filter: grayscale(0) invert(0);
 }
 .github a:hover {
-  filter: grayscale(0) invert(1);
+  filter: brightness(100%);
 }
 .footer-resources {
   margin-left: 60px;

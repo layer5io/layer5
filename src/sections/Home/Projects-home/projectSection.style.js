@@ -41,6 +41,7 @@ const ProjectItemWrapper = styled.section`
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         margin-bottom: 2rem;
         &:before {
             content: url(${background});
@@ -51,11 +52,12 @@ const ProjectItemWrapper = styled.section`
     }
     .project__block__inner { 
         display: flex;
+        margin-bottom: 2rem;
         flex-direction: column;
         background: ${props => props.theme.grey212121ToLinear2};
         box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        &:hover{
+        &:hover {
             box-shadow: 0px 0px 5px ${props => props.theme.whiteToGreen3C494F};
         }
         padding: 12% 6% 12% 6%;
@@ -63,24 +65,24 @@ const ProjectItemWrapper = styled.section`
         border-radius: 10px;
         text-align: center;
         justify-content: center;
-        h3{
+        h3 {
             margin: auto;
             font-weight: 700;
             font-size: 1.3rem;
             color: ${props => props.theme.secondaryColor}
         }
-        p{
+        p {
             font-weight: 300;
             color: ${props => props.theme.text};
             margin: auto;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        img{
-            height: 40px ; 
-            width: auto ;
+        img {
+            height: 40px; 
+            width: auto;
         }
-        .gatsby-image-wrapper{
+        .gatsby-image-wrapper {
             margin: 10px auto;
             min-height: 40px;
         }

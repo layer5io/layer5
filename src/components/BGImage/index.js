@@ -6,7 +6,7 @@ const BGImg = ({ image, title, className, children }) => {
   return (
     <BGWrapper>
       <Content className={className}>{children}</Content>
-      <FakeBGImg loading="eager" placeholder="none" image={image} title={title} />
+      <FakeBGImg loading="eager" placeholder="none" image={image} title={title} alt=""/>
     </BGWrapper>
   );
 };
