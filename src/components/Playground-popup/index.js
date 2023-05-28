@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PopupWrapper from "./popup.style";
 import popupImage from "./power-of-meshery.svg";
 import closeIcon from "./closeIcon.svg";
@@ -7,6 +7,7 @@ import Button from "../../reusecore/Button";
 const PlaygroundPopup = () => {
 
   const [trigger, setTrigger] = useState(false);
+  const popupRef = useRef();
 
   useEffect(() => {
     if (!localStorage.getItem("popupTrigger")) {
@@ -14,6 +15,14 @@ const PlaygroundPopup = () => {
         setTrigger(true);
       }, 2000);
       localStorage.setItem("popupTrigger", true);
+
+      let clickHandler = (e) => {
+        if (!popupRef.current.contains(e.target)){
+          setTrigger(false);
+        }
+      };
+
+      document.addEventListener("mousedown", clickHandler);
     } else setTrigger(false);
   }, []);
 
@@ -22,9 +31,11 @@ const PlaygroundPopup = () => {
     trigger &&
         <PopupWrapper>
           <div className="popup">
-            <div className="popup-inner">
+            <div className="popup-inner" ref={popupRef}>
               <img className="close-btn" src={closeIcon} onClick={() => setTrigger(false)}/>
-              <img className="popup-image" src={popupImage} alt="" />
+              <a href="https://play.meshery.io/">
+                <img className="popup-image" src={popupImage} alt="" />
+              </a>
               <Button primary className="join-community-button" title="Explore Meshery Playground" url="https://play.meshery.io/" />
             </div>
           </div>
