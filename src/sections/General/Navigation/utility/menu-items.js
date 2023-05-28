@@ -92,6 +92,7 @@ const Data = {
         {
           name: "Catalog",
           path: "/catalog",
+          sepLine: true
         },
         {
           name: "Docker Extension",
@@ -104,6 +105,7 @@ const Data = {
         {
           name: "Playground",
           path: "/cloud-native-management/playground",
+          sepLine: true
         },
         {
           name: "Nighthawk",

@@ -84,7 +84,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   const externalLinks = ["Forum", "Catalog", "Playground"];
 
                   return (
-                    <li key={i}>
+                    <li key={i} style={!hover && activeState.name == "Projects" && !subItem.sepLine ? { display: "none" } : null}>
                       {externalLinks.includes(subItem.name) ?
                         <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
                           {subItem.name}

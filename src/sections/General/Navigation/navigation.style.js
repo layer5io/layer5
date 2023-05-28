@@ -160,9 +160,6 @@ const NavigationWrap = styled.header`
       .sub-item {
         padding: 0;
       }
-      .dropdownicon-up {
-        transform: rotate(-180deg);
-      }
       .section {
         color: ${props => props.theme.text};
         font-size: 20px;
