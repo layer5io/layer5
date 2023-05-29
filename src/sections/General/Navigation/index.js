@@ -33,10 +33,9 @@ const Navigation = () => {
         thumbnail {
           childImageSharp {
             gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
+              width: 1050
+              height:1360
+              layout: CONSTRAINED
             )
           }
           publicURL
