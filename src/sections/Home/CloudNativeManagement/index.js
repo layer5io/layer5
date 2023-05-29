@@ -63,7 +63,7 @@ const BannerDefault = () => {
               height="100%"
               style={{ margin: "auto" }}
               className="vidHero"
-            />
+            ><></></ReactPlayer>
           </Col>
         </Row>
       </div>

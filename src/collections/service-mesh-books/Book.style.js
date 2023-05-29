@@ -24,7 +24,6 @@ export const BookWrapper = styled.div`
     .card{
         position: relative;
         margin: 0.5rem 0 1rem 0;
-        background-color: #fff;
         -webkit-transition: -webkit-box-shadow .25s;
         transition: -webkit-box-shadow .25s;
         transition: box-shadow .25s;

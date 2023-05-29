@@ -23,6 +23,9 @@ import inactiveIcon from "../../assets/images/status/inactive.webp";
 import activeIcon from "../../assets/images/status/active.webp";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
+import docsIcon from "../../assets/images/docs/docs.svg";
+import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -61,6 +64,14 @@ const options = [
     className: "allOptions",
   },
   {
+    label: "Docker Extension",
+    value: "docker-extension",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: dockerExtensionIcon,
+    className: "allOptions",
+  },
+  {
     label: "Image Hub",
     value: "image-hub",
     color: theme.linkColor,
@@ -69,11 +80,27 @@ const options = [
     className: "allOptions",
   },
   {
+    label: "Docs",
+    value: "docs",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: docsIcon,
+    className: "allOptions",
+  },
+  {
     label: "Meshery",
     value: "meshery",
     color: theme.linkColor,
     isFixed: true,
     icon: mesheryIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Meshery Catalog",
+    value: "meshery-catalog",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: mesheryCatalogIcon,
     className: "allOptions",
   },
   {
