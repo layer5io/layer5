@@ -11,7 +11,6 @@ import SupportingArrows from "../../../../sections/Meshmap/Meshmap-collaborate/i
 import EmptyLight from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
