@@ -21,7 +21,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" loading="lazy"/>
+                  <img src={svgBackground} alt="background" loading="lazy" />
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -38,15 +38,31 @@ const BannerDefault = () => {
                         The <span>extensible</span> cloud native manager.
                       </div> */}
                       <div className="description">
-                        <p>An extensible platform, Meshery comes packed with <Link to="/cloud-native-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, support for WebAssembly filters for Envoy, and hundreds of other cloud native projects.</p>
                         <p>
-                          Meshery is your microservices manager. With extension points throughout, Meshery offers users and integrators the ability to extend and customize platform functionality.
+                          An extensible platform, Meshery comes packed with{" "}
+                          <Link to="/cloud-native-management/meshery/integrations">
+                            integrations
+                          </Link>{" "}
+                          for Prometheus, Grafana, Jaeger, CloudEvents, support
+                          for WebAssembly filters for Envoy, and hundreds of
+                          other cloud native projects.
+                        </p>
+                        <p>
+                          Meshery is your microservices manager. With extension
+                          points throughout, Meshery offers users and
+                          integrators the ability to extend and customize
+                          platform functionality.
                         </p>
                       </div>
                     </div>
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="Extend your control" url="/projects" />
+                    <Button
+                      primary
+                      className="join-community-button"
+                      title="Extend your control"
+                      url="/projects"
+                    />
                   </div>
                 </SectionTitle>
               </div>
@@ -57,13 +73,32 @@ const BannerDefault = () => {
               url="https://youtu.be/Do7htKrRzDA"
               playing
               controls
-              light={< img className="imgHero" src={imgHero} loading="lazy" alt="meshmap designer" width="100%" height="100%" />}
-              playIcon={<img src={playIcon} className = "playBtn" loading="lazy"/>}
+              light={
+                <img
+                  className="imgHero"
+                  src={imgHero}
+                  loading="lazy"
+                  alt="meshmap designer"
+                  width="100%"
+                  height="100%"
+                />
+              }
+              playIcon={
+                <img
+                  src={playIcon}
+                  className="playBtn"
+                  loading="lazy"
+                  alt="Play"
+                  role="button"
+                  aria-label="Play"
+                  style={{ fontSize: "24px" }}
+                />
+              }
               width="auto"
               height="100%"
               style={{ margin: "auto" }}
               className="vidHero"
-            ><></></ReactPlayer>
+            ></ReactPlayer>
           </Col>
         </Row>
       </div>
