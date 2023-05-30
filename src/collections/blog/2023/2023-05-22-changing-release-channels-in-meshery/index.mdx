@@ -34,6 +34,30 @@ import MesheryVersion from "./meshery-version.png";
   merge to master is for a stable release. Stable releases are made with each
   merge to master when a GitHub release tag is also present in the workflow.
 </p>
+
+<h3> How release channels offer subscription </h3>
+<p>
+  Release Channels offers a subsciption where user can subscribe to a specific 
+  release channel and get notified when a new release is available. This is  
+  useful for users who want to stay up to date with the latest Meshery features, while also
+  also providing flexibility for users who want to stay on a specific version of Meshery.
+
+  However, this approach can be risky because some updates may introduce bugs or 
+  compatibility issues that could break your existing installation. 
+  In such cases, having a subscription means that you will automatically 
+  receive these updates even if they are not suitable for your use case.
+
+  On the other hand, release channels also offer the ability to pin to a specific release which is a 
+  good thing as it allows users to maintain stability and predictability of their environment by preventing 
+  unexpected changes from being introduced into their system. However, doing so cancels out any future subscription-based 
+  benefits such as receiving security patches or bug fixes that were added after that version was released.
+
+  Therefore, it's important for users to weigh the pros and cons of each option before making decisions on how they 
+  want to manage their Meshery deployment. It's recommended that organizations have a well-defined upgrade 
+  strategy based on testing and validation procedures prior to applying new releases in production environments whether 
+  via subscriptions or manual upgrades to ensure 
+  that system availability is maintained and risks are minimized.
+</p>
 <p>
   There are two ways to switch between Meshery release channels: using
   mesheryctl or by editing your meshconfig file. In this blog post, we'll cover
@@ -41,14 +65,26 @@ import MesheryVersion from "./meshery-version.png";
 </p>
 
 <br />
+<h3>
+  What is Meshconfig?
+</h3>
+<p>
+  Meshconfig is a configuration file that is used to configure Meshery. It is
+  typically located in the <code>~/.meshery</code> directory.It contains
+  information about the current release channel, the version of Meshery that is
+  installed, and other configuration options that are specific to your Meshery
+  installation. It is a YAML file, so you can edit it using any text editor.
 
+  Meshconfig is automatically generated when you run Meshery for the first time.
+  It is also automatically updated when you update Meshery. Meshconfig is a YAML
+  file, so you can edit it using any text editor. 
+</p>
 <h3>
   Switching between Meshery release channels by editing your meshconfig file.
 </h3>
 
 <br />
-Another way to switch between Meshery release channels is by editing your config.yaml
-file. This file is typically located in the <code>~/.meshery</code> directory. Here's how:
+Another way to switch between Meshery release channels is by editing your config.yaml file. Here's how:
 
 <ol>
 <li>
@@ -99,19 +135,19 @@ file. This file is typically located in the <code>~/.meshery</code> directory. H
   <code class="language-bash">mesheryctl system context view</code>
 </pre>
 
-<img src={MesheryVersion} className="image-center-no-shadow"></img>
+<img src={MesheryVersion} className="image-center-no-shadow"  style="width:50%;"></img>
 
 <p>
   This will show you the currently channels ,<b>stable</b> or <b>edge</b>, along with the version number and other information.
 </p>
 
-<li>Run the following command to switch to a different release channel: 
+<li>Run the following command to switch to a different release channel:
 <pre><code class="language-bash">mesheryctl system channel set [stable|stable-version|edge|edge-version]
 </code></pre>
-
   This command will update your local Meshery configuration to use the selected
-  channel for future updates.To set the channel to a specific version, replace <code>version</code> with the desired version number.
+  channel for future updates. To set the channel to a specific version, replace <b>Version</b> with the desired version number.
 
+  Example: <code>mesheryctl system channel set stable</code> or <code>mesheryctl system channel set stable-v0.5.56</code>
 </li>
 
 
