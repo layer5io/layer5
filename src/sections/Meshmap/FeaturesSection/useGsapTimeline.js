@@ -1,22 +1,17 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useLayoutEffect } from "react";
-import useHasMounted from "../../../utils/useHasMounted";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
 
-  const hasMounted = useHasMounted();
-
   const useIsomorphicLayoutEffect =
-  hasMounted ? useLayoutEffect : useEffect;
-
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
   const GOLDEN_RATIO = (1 + Math.sqrt(3)) / 5;
   const RECIPROCAL_GR = 1 / GOLDEN_RATIO;
   const DURATION = RECIPROCAL_GR;
-
 
   useIsomorphicLayoutEffect(() => {
     let mm = gsap.matchMedia();
