@@ -27,7 +27,7 @@ export const BlogPageWrapper = styled.div`
 		width: 25%;
 		img{
 			padding: 0px;
-			margin: 0px;
+			margin-left: 0.5rem;
 			width: 100%;
 			height: 100%;
 		}
@@ -61,12 +61,8 @@ export const BlogPageWrapper = styled.div`
 		}
 		.post-thumb-block{
 			height: 8rem;
-	
-			img{
-				width: 100%;
-			height: 100%;
-			}
 		}
+
 	}
 
 	@media screen and (max-width:992px){
@@ -78,12 +74,12 @@ export const BlogPageWrapper = styled.div`
 			height: 15rem;
 	
 			img{
-				max-height:15rem;
+				max-height:9rem;
 			}
 		}
 	}
 
-	@media screen and (max-width:575px){
+	@media screen and (max-width:576px){
 		.post-block{
 			height: 9rem;
 		}
@@ -96,9 +92,12 @@ export const BlogPageWrapper = styled.div`
 		.post-content-block{
 			height: fit-content;
 		}
+		.tooltip-search{
+			display: block;
+		}
 	}
 
-	@media only screen and (min-width: 575px) {
+	@media only screen and (min-width: 577px) {
     .tooltip-search {
       display: flex;
       justify-content: space-between;
