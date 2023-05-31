@@ -4,7 +4,6 @@ const CytoscapeWrapper = styled.div`
 .simple-react-cytoscape {
     width: 40vw;
     height: 50vh;
-    border-style: dashed;
 
     @media only screen and (max-width: 1000px) {
       height: 40vh;
