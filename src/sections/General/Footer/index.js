@@ -235,7 +235,7 @@ const Footer = ({ location }) => {
               <Col sm={4} id="edit-page">
                 <span> Get Involved </span>
 
-                <a href={editUrl}>
+                <a href={editUrl} target="_blank" rel="noreferrer">
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
