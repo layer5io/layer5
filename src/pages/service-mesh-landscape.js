@@ -9,7 +9,7 @@ const LandscapeGridPage = ({ location }) => {
   return (
     <>
       <LandscapeGrid  />
-
+      <Footer location={location} />
     </>
   );
 };
