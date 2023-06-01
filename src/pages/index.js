@@ -6,6 +6,7 @@ import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
 import Footer from "../sections/General/Footer";
+import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
@@ -22,6 +23,7 @@ const IndexPage = ({ location }) => {
       <Banner />
       <Integrations />
       <Partners />
+      <CornerPopup/>
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
