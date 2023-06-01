@@ -3,10 +3,12 @@ import React from "react";
 import SEO from "../../components/seo";
 
 import InternshipPage from "../../sections/Careers/Careers-Internship-grid";
-const Internships = () => {
+import Footer from "../../sections/General/Footer";
+const Internships = ({ location }) => {
   return (
     <>
       <InternshipPage />
+      <Footer location={location} />
 
     </>
   );

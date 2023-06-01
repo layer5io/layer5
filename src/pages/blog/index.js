@@ -3,6 +3,8 @@ import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
+import Footer from "../../sections/General/Footer";
+
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`
@@ -70,7 +72,7 @@ const Blog = (props) => {
         pageContext={props.pageContext}
         data={props.data}
       />
-
+      <Footer location={props.location} />
     </>
   );
 };

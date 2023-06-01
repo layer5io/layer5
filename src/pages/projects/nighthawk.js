@@ -4,11 +4,13 @@ import SEO from "../../components/seo";
 import Nighthawk from "../../sections/Projects/Nighthawk";
 
 import Subscribe from "../../sections/subscribe/subscribe";
-const NighthawkPage = () => {
+import Footer from "../../sections/General/Footer";
+const NighthawkPage = ({ location }) => {
   return (
     <>
       <Nighthawk  />
       <Subscribe />
+      <Footer location={location} />
 
     </>
   );

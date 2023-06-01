@@ -1,12 +1,13 @@
 import React from "react";
 import SEO from "../components/seo";
 
-
 import ContactSubscribeSection from "../components/ContactCard";
-const SubscribeSection = () => {
+import Footer from "../sections/General/Footer";
+const SubscribeSection = ({ location }) => {
   return (
     <>
       <ContactSubscribeSection />
+      <Footer location={location} />
 
     </>
   );

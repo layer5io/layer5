@@ -4,10 +4,12 @@ import SEO from "../../components/seo";
 
 import ContactPage from "../../sections/Company/Contact";
 import { Script } from "gatsby";
-const Contact = () => {
+import Footer from "../../sections/General/Footer";
+const Contact = ({ location }) => {
   return (
     <>
       <ContactPage />
+      <Footer location={location} />
 
     </>
   );

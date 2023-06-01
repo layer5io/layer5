@@ -1,12 +1,14 @@
 import React from "react";
 
 import SEO from "../components/seo";
+import Footer from "../sections/General/Footer";
 import DockerMesheryPage from "../sections/Docker-Meshery";
 
-const MesheryDocker = () => {
+const MesheryDocker = ({ location }) => {
   return (
     <>
       <DockerMesheryPage />
+      <Footer location={location} />
 
     </>
   );

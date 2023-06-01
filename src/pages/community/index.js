@@ -1,12 +1,13 @@
 import React from "react";
 
 import SEO from "../../components/seo";
-
 import Community from "../../sections/Community";
-const CommunityIndex = () => {
+import Footer from "../../sections/General/Footer";
+const CommunityIndex = ({ location }) => {
   return (
     <>
       <Community  />
+      <Footer location={location} />
 
     </>
   );

@@ -58,7 +58,7 @@ const FooterWrapper = styled.section`
 		}
 		
 		svg{
-			margin:0 8px;
+			margin:0 8px 0 0;
 			fill:white;
 			align-self:self-end
 

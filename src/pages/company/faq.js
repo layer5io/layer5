@@ -4,11 +4,13 @@ import SEO from "../../components/seo";
 import FAQ from "../../sections/General/Faq";
 
 import DiscussCallout from "../../sections/Discuss-Callout";
-const FAQPage = () => {
+import Footer from "../../sections/General/Footer";
+const FAQPage = ({ location }) => {
   return (
     <>
       <FAQ category={["all"]} />
       <DiscussCallout />
+      <Footer location={location} />
 
     </>
   );

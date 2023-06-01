@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import CommunityPage from "../../../sections/Community/Handbook/community";
+import Footer from "../../../sections/General/Footer";
 
-const Community = () => {
+const Community = ({ location }) => {
   return (
     <>
       <CommunityPage  />
+      <Footer location={location} />
 
     </>
   );

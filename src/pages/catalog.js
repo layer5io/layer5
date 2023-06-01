@@ -2,11 +2,12 @@ import React from "react";
 
 import SEO from "../components/seo";
 import CatalogPage from "../sections/Cloud-Native-Catalog";
-
-const Catalog = () => {
+import Footer from "../sections/General/Footer";
+const Catalog = ({ location }) => {
   return (
     <>
       <CatalogPage />
+      <Footer location={location} />
     </>
   );
 };

@@ -1,14 +1,15 @@
 import React from "react";
 
 import SEO from "../../components/seo";
-
 import AboutSection from "../../sections/Company/About";
 import StewardsOfIndustry from "../../sections/Company/Stewards-of-industry";
-const About = () => {
+import Footer from "../../sections/General/Footer";
+const About = ({ location }) => {
   return (
     <>
       <AboutSection  />
       <StewardsOfIndustry />
+      <Footer location={location} />
 
     </>
   );

@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import MesheryOperatorPage from "../../../sections/Meshery/meshery-operator";
+import Footer from "../../../sections/General/Footer";
 
-const MesheryOperator = () => {
+const MesheryOperator = ({ location }) => {
   return (
     <>
       <MesheryOperatorPage />
+      <Footer location={location} />
 
     </>
   );

@@ -1,12 +1,13 @@
 import React from "react";
 
 import SEO from "../../../components/seo";
-
 import CompanyPrivacy from "../../../sections/Company/Legal/privacy";
-const Privacy = () => {
+import Footer from "../../../sections/General/Footer";
+const Privacy = ({ location }) => {
   return (
     <>
       <CompanyPrivacy />
+      <Footer location={location} />
 
     </>
   );

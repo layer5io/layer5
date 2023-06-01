@@ -2,12 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import HandbookPage from "../../../sections/Community/Handbook/index";
+import Footer from "../../../sections/General/Footer";
 
-const Handbook = () => {
+const Handbook = ({ location }) => {
   return (
     <>
       <HandbookPage />
-
+      <Footer location={location} />
     </>
   );
 };

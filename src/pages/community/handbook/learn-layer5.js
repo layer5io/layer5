@@ -2,12 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import LearnPage from "../../../sections/Community/Handbook/learn5";
+import Footer from "../../../sections/General/Footer";
 
-const CommunityLearn = () => {
+const CommunityLearn = ({ location }) => {
   return (
     <>
       <LearnPage />
-
+      <Footer location={location} />
     </>
   );
 };

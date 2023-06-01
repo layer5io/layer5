@@ -1,12 +1,13 @@
 import React from "react";
 import SEO from "../../components/seo";
 
-
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
-const NewComers = () => {
+import Footer from "../../sections/General/Footer";
+const NewComers = ({ location }) => {
   return (
     <>
       <NewcomersGuide />
+      <Footer location={location} />
 
     </>
   );

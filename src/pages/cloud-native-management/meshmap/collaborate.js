@@ -3,10 +3,12 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import MeshmapCollaborate from "../../../sections/Meshmap/Meshmap-collaborate";
-const MeshmapCollaboratePage = () => {
+import Footer from "../../../sections/General/Footer";
+const MeshmapCollaboratePage = ({ location }) => {
   return (
     <>
       <MeshmapCollaborate  />
+      <Footer location={location} />
 
     </>
   );

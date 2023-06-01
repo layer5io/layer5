@@ -3,12 +3,14 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import MeshmapVisualize from "../../../sections/Meshmap/Meshmap-visualize/index";
-
-const MeshmapVisualizePage = () => {
+import Footer from "../../../sections/General/Footer";
+const MeshmapVisualizePage = ({ location }) => {
 
   return (
     <>
       <MeshmapVisualize />
+      <Footer location={location} />
+
 
     </>
   );

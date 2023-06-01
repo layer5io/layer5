@@ -3,16 +3,18 @@ import React from "react";
 import SEO from "../../../components/seo";
 import MesheryTerminal from "../../../sections/Meshery/Meshery-terminal";
 import loadable from "@loadable/component";
+import Footer from "../../../sections/General/Footer";
 const MesheryPlatforms = loadable(() => import ("../../../sections/Meshery/Meshery-platforms"));
 const MesheryManageMesh = loadable(() => import ("../../../sections/Meshery/Meshery-mange-mesh"));
 const MesheryQuotes = loadable(() => import ("../../../sections/Meshery/Meshery-quotes"));
-const MesheryMainPage = () => {
+const MesheryMainPage = ({ location }) => {
   return (
     <>
       <MesheryTerminal />
       <MesheryPlatforms />
       <MesheryManageMesh />
       <MesheryQuotes />
+      <Footer location={location} />
 
     </>
   );

@@ -1,12 +1,16 @@
 import React from "react";
 
 import SEO from "../../components/seo";
-import LearnPathsPage from "../../sections/Learn-Layer5";
 
-const LearningPathsPage = () => {
+import LearnPathsPage from "../../sections/Learn-Layer5";
+import Footer from "../../sections/General/Footer";
+
+const LearningPathsPage = ({ location }) => {
   return (
     <>
       <LearnPathsPage />
+      <Footer location={location} />
+
 
     </>
   );

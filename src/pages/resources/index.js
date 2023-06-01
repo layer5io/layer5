@@ -2,14 +2,14 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
-
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
-const MembersPage = () => {
+import Footer from "../../sections/General/Footer";
+const MembersPage = ({ location }) => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
@@ -42,6 +42,7 @@ const MembersPage = () => {
         </Row>
         <ServiceMeshFocused bookName={"service-mesh-patterns"} />
       </Container>
+      <Footer location={location} />
 
     </>
   );

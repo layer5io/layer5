@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../components/seo";
 import ImageHubPage from "../../sections/Projects/Image-Hub";
+import Footer from "../../sections/General/Footer";
 
-const ImageHub = () => {
+const ImageHub = ({ location }) => {
   return (
     <>
       <ImageHubPage />
+      <Footer location={location} />
 
     </>
   );

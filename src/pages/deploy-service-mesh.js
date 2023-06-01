@@ -1,12 +1,13 @@
 import React from "react";
 
 import SEO from "../components/seo";
-
 import DeployServiceMesh from "../sections/DeployServiceMesh/index";
-const DeployServiceMeshPage = () => {
+import Footer from "../sections/General/Footer";
+const DeployServiceMeshPage = ({ location }) => {
   return (
     <>
       <DeployServiceMesh />
+      <Footer location={location} />
 
     </>
   );

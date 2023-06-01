@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import NewsPage from "../../sections/Company/News-grid";
 
 import SimpleReactLightbox from "simple-react-lightbox";
+import Footer from "../../sections/General/Footer";
 export const query = graphql`query allNews {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
@@ -41,12 +42,13 @@ export const query = graphql`query allNews {
   }
 }
 `;
-const NewsGridPage = ({ data }) => {
+const NewsGridPage = ({ data ,location }) => {
   return (
     <>
       <SimpleReactLightbox>
         <NewsPage  data={data} />
       </SimpleReactLightbox>
+      <Footer location={location} />
 
     </>
   );

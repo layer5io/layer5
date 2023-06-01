@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../components/seo";
 import SMPPage from "../../sections/Projects/SMP";
+import Footer from "../../sections/General/Footer";
 
-const SMP = () => {
+const SMP = ({ location }) => {
   return (
     <>
       <SMPPage />
+      <Footer location={location} />
 
     </>
   );

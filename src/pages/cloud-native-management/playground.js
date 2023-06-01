@@ -1,11 +1,13 @@
 import React from "react";
 import SEO from "../../components/seo";
 import Playground from "../../sections/Playground";
-
-const PlaygroundPage = () => {
+import Footer from "../../sections/General/Footer";
+const PlaygroundPage = ({ location }) => {
   return (
     <>
       <Playground/>
+      <Footer location={location} />
+
     </>
   );
 };

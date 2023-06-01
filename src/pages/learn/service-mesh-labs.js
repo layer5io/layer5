@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SEO from "../../components/seo";
 
 import ServiceMeshLabs from "../../sections/Learn/Service-Mesh-Labs";
+import Footer from "../../sections/General/Footer";
 const ServiceMeshLabsPage = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   useEffect(() => {
@@ -13,6 +14,7 @@ const ServiceMeshLabsPage = (props) => {
   return (
     <>
       <ServiceMeshLabs selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
+      <Footer location={props.location} />
 
     </>
   );

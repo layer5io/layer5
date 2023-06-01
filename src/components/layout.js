@@ -11,24 +11,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import ScrollToTopBtn from "./Scrolltotop-button";
 import Navigation from "../sections/General/Navigation";
-import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <GlobalStyle />
-      <Navigation/>
+      <Navigation />
       {children}
       <ScrollToTopBtn />
-      <Footer />
     </>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

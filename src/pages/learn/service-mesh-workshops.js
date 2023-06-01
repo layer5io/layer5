@@ -2,11 +2,14 @@ import React from "react";
 
 import SEO from "../../components/seo";
 import WorkshopsPage from "../../sections/Learn/Workshop-grid";
+import Footer from "../../sections/General/Footer";
 
-const WorkshopsGridPage = () => {
+const WorkshopsGridPage = ({ location }) => {
   return (
     <>
       <WorkshopsPage />
+      <Footer location={location} />
+
 
     </>
   );

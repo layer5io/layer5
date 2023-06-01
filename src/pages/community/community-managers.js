@@ -3,10 +3,13 @@ import SEO from "../../components/seo";
 
 
 import CommunityManagers from "../../sections/Community/CommunityManagers";
-const ManagersPage = () => {
+import Footer from "../../sections/General/Footer";
+const ManagersPage = ({ location }) => {
   return (
     <>
       <CommunityManagers />
+
+      <Footer location={location} />
 
     </>
   );

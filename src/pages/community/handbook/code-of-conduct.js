@@ -2,12 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import ConductPage from "../../../sections/Community/Handbook/conduct";
+import Footer from "../../../sections/General/Footer";
 
-const CommunityConduct = () => {
+const CommunityConduct = ({ location }) => {
   return (
     <>
       <ConductPage />
-
+      <Footer location={location} />
     </>
   );
 };

@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import ConnectPage from "../../../sections/Community/Handbook/connect";
+import Footer from "../../../sections/General/Footer";
 
-const Connect = () => {
+const Connect = ({ location }) => {
   return (
     <>
       <ConnectPage />
+      <Footer location={location} />
 
     </>
   );

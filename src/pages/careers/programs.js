@@ -4,11 +4,13 @@ import SEO from "../../components/seo";
 
 import FAQ from "../../sections/General/Faq";
 import ProgramsGrid from "../../sections/Careers/Careers-Programs-grid";
-const CareerPrograms = () => {
+import Footer from "../../sections/General/Footer";
+const CareerPrograms = ({ location }) => {
   return (
     <>
       <ProgramsGrid  />
       <FAQ category={["internships"]} />
+      <Footer location={location} />
 
     </>
   );

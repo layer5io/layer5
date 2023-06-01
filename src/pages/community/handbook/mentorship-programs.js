@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import MentorshipPage from "../../../sections/Community/Handbook/mentorships";
+import Footer from "../../../sections/General/Footer";
 
-const Mentorship = () => {
+const Mentorship = ({ location }) => {
   return (
     <>
       <MentorshipPage />
+      <Footer location={location} />
 
     </>
   );

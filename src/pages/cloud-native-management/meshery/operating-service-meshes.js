@@ -12,10 +12,11 @@ import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
 import { ReactComponent as GithubLogo } from "../../../assets/images/socialIcons/github_colorMode.svg";
 import loadable from "@loadable/component";
+import Footer from "../../../sections/General/Footer";
 const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-meshery-works"));
 const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
 
-const OperatingServiceMeshes = () => {
+const OperatingServiceMeshes = ({ location }) => {
   return (
     <>
       <HowMesheryWorksHero  />
@@ -105,6 +106,7 @@ const OperatingServiceMeshes = () => {
             },
           ]} />
       <HowMesheryWorksSpecs />
+      <Footer location={location} />
 
     </>
   );

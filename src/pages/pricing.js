@@ -3,10 +3,13 @@ import SEO from "../components/seo";
 
 
 import PricingPage from "../sections/Pricing";
-const Pricing = () => {
+import Footer from "../sections/General/Footer";
+const Pricing = ({ location }) => {
   return (
     <>
       <PricingPage />
+      <Footer location={location} />
+
 
     </>
   );

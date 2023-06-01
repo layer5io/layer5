@@ -1,12 +1,13 @@
 import React from "react";
 import SEO from "../components/seo";
 
-
 import ThankYou from "../sections/thank-you/thank-you";
-const ThankYouSection = () => {
+import Footer from "../sections/General/Footer";
+const ThankYouSection = ({ location }) => {
   return (
     <>
       <ThankYou />
+      <Footer location={location} />
 
     </>
   );

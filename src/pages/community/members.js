@@ -3,7 +3,6 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
-
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
@@ -26,6 +25,7 @@ import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";
 import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
+import Footer from "../../sections/General/Footer";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -229,7 +229,7 @@ const activeMember = {
   icon: activeIcon && `url(${activeIcon})`,
   className: "allOptions",
 };
-const MembersPage = () => {
+const MembersPage = ({ location }) => {
   /**
    * state storing the currently selected categories.
    */
@@ -239,6 +239,7 @@ const MembersPage = () => {
     <>
       <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
       <MultipleMembers members={members} />
+      <Footer location={location} />
 
     </>
   );

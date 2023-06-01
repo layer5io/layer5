@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import MesheryPage from "../../../sections/Meshery";
-
-const Meshery = () => {
+import Footer from "../../../sections/General/Footer";
+const Meshery = ({ location }) => {
   return (
     <>
       <MesheryPage />
+      <Footer location={location} />
+
 
     </>
   );

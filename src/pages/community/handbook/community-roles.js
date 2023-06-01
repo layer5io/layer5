@@ -2,12 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import LeadershipPage from "../../../sections/Community/Handbook/community-roles";
+import Footer from "../../../sections/General/Footer";
 
-const ContributorJourney = () => {
+const ContributorJourney = ({ location }) => {
   return (
     <>
       <LeadershipPage />
-
+      <Footer location={location} />
     </>
   );
 };

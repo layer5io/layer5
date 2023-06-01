@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import RecognitionPage from "../../../sections/Community/Handbook/recognition";
+import Footer from "../../../sections/General/Footer";
 
-const Recognition = () => {
+const Recognition = ({ location }) => {
   return (
     <>
       <RecognitionPage  />
+      <Footer location={location} />
 
     </>
   );

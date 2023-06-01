@@ -1,12 +1,14 @@
 import React from "react";
 import SEO from "../components/seo";
 import Partner from "../sections/Partners";
+import Footer from "../sections/General/Footer";
 
 
-const Partners = () => {
+const Partners = ({ location }) => {
   return (
     <>
       <Partner  />
+      <Footer location={location} />
 
     </>
   );

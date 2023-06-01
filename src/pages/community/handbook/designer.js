@@ -2,12 +2,14 @@ import React from "react";
 
 import SEO from "../../../components/seo";
 import Designers from "../../../sections/Community/Handbook/designer";
+import Footer from "../../../sections/General/Footer";
 
-const Faq = () => {
+
+const Faq = ({ location }) => {
   return (
     <>
       <Designers />
-
+      <Footer location={location} />
     </>
   );
 };

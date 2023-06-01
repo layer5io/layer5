@@ -1,12 +1,14 @@
 import React from "react";
 
 import SEO from "../../../components/seo";
-
 import Conduct from "../../../sections/Company/Legal/code-of-conduct";
-const CodeOfConduct = () => {
+import Footer from "../../../sections/General/Footer";
+const CodeOfConduct = ({ location }) => {
   return (
     <>
       <Conduct />
+      <Footer location={location} />
+
 
     </>
   );

@@ -1,12 +1,13 @@
 import React from "react";
-
 import SEO from "../../components/seo";
 
 import CareersSection from "../../sections/Careers";
-const Careers = () => {
+import Footer from "../../sections/General/Footer";
+const Careers = ({ location }) => {
   return (
     <>
       <CareersSection  />
+      <Footer location={location} />
 
     </>
   );

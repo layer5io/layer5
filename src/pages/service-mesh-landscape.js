@@ -2,8 +2,10 @@ import React from "react";
 
 import SEO from "../components/seo";
 import LandscapeGrid from "../sections/Landscape";
+import Footer from "../sections/General/Footer";
 
-const LandscapeGridPage = () => {
+
+const LandscapeGridPage = ({ location }) => {
   return (
     <>
       <LandscapeGrid  />

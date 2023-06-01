@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../components/seo";
 import LearnPage from "../../sections/Learn";
+import Footer from "../../sections/General/Footer";
 
-const LearnGridPage = () => {
+const LearnGridPage = ({ location }) => {
   return (
     <>
       <LearnPage />
+      <Footer location={location} />
 
     </>
   );

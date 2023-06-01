@@ -7,8 +7,11 @@ import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const Footer = () => {
+const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
+  let pathname = location.pathname;
+  const indexUrl = ["/","/blog","/careers","/meshery","/meshmap","/community","/handbook","projects","/resources"];
+  const editUrl = `https://github.com/layer5io/layer5/blob/master/src/pages${pathname}${indexUrl.some(str => pathname.endsWith(str)) ? "/index" : ""}.js`;
   return (
     <FooterWrapper>
       <img
@@ -232,7 +235,7 @@ const Footer = () => {
               <Col sm={4} id="edit-page">
                 <span> Get Involved </span>
 
-                <a href="/">
+                <a href={editUrl}>
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

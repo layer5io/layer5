@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../components/seo";
 import L404 from "../sections/404";
+import Footer from "../sections/General/Footer";
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ location }) => {
   return (
     <>
       <L404 />
+      <Footer location={location} />
 
     </>
   );

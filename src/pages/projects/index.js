@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import SEO from "../../components/seo";
 import ProjectPage from "../../sections/Projects/Project-grid";
-
+import Footer from "../../sections/General/Footer";
 export const query = graphql`query allProjects {
   allMdx(
     filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
@@ -27,9 +27,13 @@ export const query = graphql`query allProjects {
   }
 }
 `;
-const ProjectGridPage = ({ data }) => {
+const ProjectGridPage = ({ data, location }) => {
   return (
-    <ProjectPage data={data}  />
+    <>
+      <ProjectPage data={data}  />
+      <Footer location={location} />
+    </>
+
   );
 };
 export default ProjectGridPage;

@@ -1,12 +1,13 @@
 import React from "react";
 
 import SEO from "../components/seo";
-
 import WebBasedForm from "../sections/Community/Web-based-from";
-const NewcomersPage = () => {
+import Footer from "../sections/General/Footer";
+const NewcomersPage = ({ location }) => {
   return (
     <>
       <WebBasedForm />
+      <Footer location={location} />
 
     </>
   );

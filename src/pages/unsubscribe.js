@@ -1,12 +1,13 @@
 import React from "react";
 import SEO from "../components/seo";
 
-
 import ContactUnSubscribeSection from "../components/ContactCard-unsubscribe";
-const UnSubscribeSection = () => {
+import Footer from "../sections/General/Footer";
+const UnSubscribeSection = ({ location }) => {
   return (
     <>
       <ContactUnSubscribeSection />
+      <Footer location={location} />
 
     </>
   );

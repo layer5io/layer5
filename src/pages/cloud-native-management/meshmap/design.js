@@ -3,10 +3,12 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import MeshmapDesign from "../../../sections/Meshmap/Meshmap-design/index";
-const MeshmapDesignPage = () => {
+import Footer from "../../../sections/General/Footer";
+const MeshmapDesignPage = ({ location }) => {
   return (
     <>
       <MeshmapDesign  />
+      <Footer location={location} />
 
     </>
   );

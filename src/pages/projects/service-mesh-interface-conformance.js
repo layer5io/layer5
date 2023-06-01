@@ -2,11 +2,13 @@ import React from "react";
 
 import SEO from "../../components/seo";
 import SMIPage from "../../sections/Projects/SMI";
+import Footer from "../../sections/General/Footer";
 
-const SMI = () => {
+const SMI = ({ location }) => {
   return (
     <>
       <SMIPage />
+      <Footer location={location} />
 
     </>
   );
