@@ -4,11 +4,11 @@ import SEO from "../components/seo";
 import L404 from "../sections/404";
 import Footer from "../sections/General/Footer";
 
-const NotFoundPage = ({ location }) => {
+const NotFoundPage = () => {
   return (
     <>
       <L404 />
-      <Footer location={location} />
+      <Footer location={"/404"} />
 
     </>
   );
