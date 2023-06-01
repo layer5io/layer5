@@ -8,8 +8,7 @@ const NotFoundPage = () => {
   return (
     <>
       <L404 />
-      <Footer location={"/404"} />
-
+      <Footer location={{ pathname: "/404" }} />
     </>
   );
 };
