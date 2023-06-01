@@ -41,6 +41,15 @@ const CornerPopupWrapper = styled.div`
 }
 .popup-image{
     box-shadow: 0 0 30px rgba(0,211,169, 0.6);
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+}
+.popup-image-small{
+    box-shadow: 0 0 30px rgba(0,211,169, 0.6);
+    @media only screen and (min-width: 767px) {
+        display: none;
+    }
 }
 
 .explore-playground-button {
