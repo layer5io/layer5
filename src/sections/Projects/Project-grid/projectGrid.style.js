@@ -44,7 +44,7 @@ export const ProjectWrapper = styled.div`
         flex-basis: 33%;
     }
     .project__grid{
-        margin: 100px 0;
+        margin: 6rem 0;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
         grid-template-rows: repeat(4, 100px);
@@ -210,13 +210,13 @@ export const ProjectWrapper = styled.div`
             align-self: center;
             margin: auto;
 
-            @media only screen and (min-width: 780px) {
+            @media only screen and (min-width: 740px) {
                 align-self: flex-start;
             } 
         }
         h5{
             align-self: center;
-            @media only screen and (min-width: 780px) {
+            @media only screen and (min-width: 740px) {
                 padding-top:  0px;
             }
         }
@@ -264,13 +264,13 @@ export const ProjectWrapper = styled.div`
             width: 90px;
             align-self: center;
             margin-top: 8px;
-            @media only screen and (min-width: 780px) {
+            @media only screen and (min-width: 740px) {
                 align-self: flex-start;
             } 
         }
         h5{
             margin-top: 1rem;
-            @media only screen and (min-width: 780px) {
+            @media only screen and (min-width: 740px) {
                 align-self: flex-end;
                 text-align: center;
             }
@@ -292,7 +292,7 @@ export const ProjectWrapper = styled.div`
             text-align: center;
             
         }
-        @media only screen and (min-width: 780px) {
+        @media only screen and (min-width: 740px) {
             width: 80%;
             place-content: center;
         }
@@ -316,6 +316,10 @@ export const ProjectWrapper = styled.div`
         
     }
     @media only screen and (max-width: 991px) {
+        .project-page-wrapper{
+            margin-left: -5rem;
+            padding: 0 0;
+        }
         padding: 5px 0 0 0;
         .project-text{
         }
@@ -341,6 +345,10 @@ export const ProjectWrapper = styled.div`
         
      }
      @media only screen and (max-width: 740px) {
+        .project-page-wrapper{
+            margin-left: 0;
+            padding: 0 0;
+        }
         .project__grid{
             margin: 50px 0;
             display: flex;
