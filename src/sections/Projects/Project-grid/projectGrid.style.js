@@ -4,10 +4,11 @@ export const ProjectWrapper = styled.div`
     h3{
         color: ${props => props.theme.whiteSixToGreen3C494F};  
         margin: 0;
-        padding: 0;
+        padding: 0 2rem;
         font-weight: 500;
         text-align:center;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        word-wrap: normal;
 
         img{
             width: 3rem;
