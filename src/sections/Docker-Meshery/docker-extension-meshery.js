@@ -125,7 +125,7 @@ const DockerExtensionMeshery = () => {
           </Col>
           <Col md={6} sm={12}>
             <p className="installButton">
-              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external="true" /></p>
+              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external={true} /></p>
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
