@@ -99,6 +99,6 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card:hover .handbook__card--head {
-	  color: #fff;
+	  color: ${props => props.theme.text};
 	}
 `;
