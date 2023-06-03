@@ -79,7 +79,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                         <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
                           {subItem.name}
                         </a>
-                        : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+                        : <Link to={subItem.path} partiallyActive={false} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
                           {subItem.name}
                         </Link>
                       }

@@ -55,10 +55,10 @@ const BlogList = ({
         img={RssFeedIcon}
         feedlink="/blog/feed.xml"
       />
-      <div className="blog-list-wrapper">
+      <div className="blog-page-wrapper">
         <Container>
           <Row>
-            <Col sm={12} md={8}>
+            <Col xs={12} lg={8}>
               {!pageContext.tag && !pageContext.category ? (
                 <div className="tooltip-search">
                   <BlogViewToolTip
@@ -75,26 +75,28 @@ const BlogList = ({
               ) : (
                 <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
               )}
-              <Row className="blog-lists">
-                {currentPosts.length > 0 &&
-                  currentPosts.map(({ id, frontmatter, fields }) => (
-                    <Col xs={12} key={id}>
-                      <Card  frontmatter={frontmatter} fields={fields} />
-                    </Col>
-                  ))}
-                <Col>
-                  {currentPosts.length > 0 && (
-                    <Pagination
-                      postsPerPage={postsPerPage}
-                      totalPosts={queryResults.length}
-                      currentPage={currentPage}
-                      paginate={paginate}
-                    />
-                  )}
-                </Col>
-              </Row>
+              <div className="blog-list-wrapper">
+                <Row className="blog-lists">
+                  {currentPosts.length > 0 &&
+                    currentPosts.map(({ id, frontmatter, fields }) => (
+                      <Col xs={12} key={id}>
+                        <Card  frontmatter={frontmatter} fields={fields} />
+                      </Col>
+                    ))}
+                  <Col>
+                    {currentPosts.length > 0 && (
+                      <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={queryResults.length}
+                        currentPage={currentPage}
+                        paginate={paginate}
+                      />
+                    )}
+                  </Col>
+                </Row>
+              </div>
             </Col>
-            <Col sm={12} md={4}>
+            <Col xs={12} lg={4}>
               <Sidebar pageContext={pageContext} />
             </Col>
           </Row>

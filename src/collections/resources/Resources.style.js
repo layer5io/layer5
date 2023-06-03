@@ -7,6 +7,10 @@ export const ResourcesWrapper = styled.div`
     top: -10px;
   }
 
+  table{
+    color: ${props => props.theme.primaryColor};
+  }
+
   div.fact {
     display: flex;
     flex-direction: column;
