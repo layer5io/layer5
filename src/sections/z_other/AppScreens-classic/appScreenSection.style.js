@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import AppSecreenBG from "../../../assets/images/app/get-app/get-app-bg.png";
+import AppSecreenBG from "../../../assets/images/app/get-app/get-app-bg.webp";
 
 const AppScreenSctionWrapper = styled.section`
   padding: 130px 0 110px 0;

@@ -15,9 +15,9 @@ import smp from "../../../assets/images/smp-page/smp-white.svg";
 import useHasMounted from "../../../utils/useHasMounted";
 
 
-const latency = "../../../assets/images/smp-page/latency-at-scale.png";
-const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.png";
-const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
+const latency = "../../../assets/images/smp-page/latency-at-scale.webp";
+const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.webp";
+const client_capacity = "../../../assets/images/smp-page/client-capacity.webp";
 
 const SMPPage = () => {
 
@@ -25,7 +25,7 @@ const SMPPage = () => {
     graphql`
       query {
         backgroundImage123: file(
-          relativePath: { eq: "smp-page/smp-hero.png" }
+          relativePath: { eq: "smp-page/smp-hero.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(

@@ -6,8 +6,8 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
-import Bookmarks from "../../../../assets/images/layer5/bookmarks.png";
+import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/layer5-white-bg.webp";
+import Bookmarks from "../../../../assets/images/layer5/bookmarks.webp";
 import BookmarksPDF from "../../../../assets/brand/bookmarks.pdf";
 import Layer5Icon from "../../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 

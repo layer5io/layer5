@@ -51,7 +51,7 @@ export const Head = () => {
     "@type": "Corporation",
     "name": "Layer5",
     "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-gradient.png",
+    "logo": "https://layer5.io/images/layer5-gradient.webp",
     "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",

@@ -4,8 +4,8 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import ImageHub from "../../../../assets/images/image-hub/layer5-image-hub.png";
-import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-white.png";
+import ImageHub from "../../../../assets/images/image-hub/layer5-image-hub.webp";
+import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-white.webp";
 
 
 const ImageHubBrand = () => {
