@@ -11,9 +11,9 @@ import "slick-carousel/slick/slick-theme.css";
 import VintageBox from "../../../reusecore/VintageBox";
 
 
-import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.png";
-import imagehubslider1 from "./service-mesh-architecture-consul.png";
-import imagehubslider2 from "./image-hub-on-consul-with-wasm-and-meshery.png";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.webp";
+import imagehubslider1 from "./service-mesh-architecture-consul.webp";
+import imagehubslider2 from "./image-hub-on-consul-with-wasm-and-meshery.webp";
 
 const ImageHubPage = () => {
   return (

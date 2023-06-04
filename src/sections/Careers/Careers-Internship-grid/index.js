@@ -8,8 +8,8 @@ import ProgramsGrid from "../Careers-Programs-grid/index";
 import FAQ from "../../General/Faq";
 
 
-const UEM_Img = "../../../assets/images/partners/uem_partner.png";
-const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.png";
+const UEM_Img = "../../../assets/images/partners/uem_partner.webp";
+const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.webp";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {

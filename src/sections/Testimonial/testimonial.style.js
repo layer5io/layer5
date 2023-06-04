@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TestimonialNavBG from "../../assets/images/app/testimonial/vintage.png";
+import TestimonialNavBG from "../../assets/images/app/testimonial/vintage.webp";
 
 const TestimonialWrapper = styled.section`
   padding: 110px 0 120px 0;

@@ -13,8 +13,8 @@ import MesheryWrapper from "./meshery.style";
 import FeaturesSection from "./Features-section";
 import Features from "./Meshery-features";
 import InlineQuotes from "../../components/Inline-quotes";
-import Maximiliano from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
-import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
+import Maximiliano from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
+import Nic from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 
 const MesheryPage = () => {
   return (

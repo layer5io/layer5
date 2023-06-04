@@ -16,7 +16,7 @@ import ParticleComponent from "../../../reusecore/Particle";
 
 import logo from "../../Footer/images/footer-logo-two.svg";
 
-import FooterBGTwo from "../../Footer/images/footer-particle-two.png";
+import FooterBGTwo from "../../Footer/images/footer-particle-two.webp";
 
 import FooterWrapper from "./footer.style";
 
