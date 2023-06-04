@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const BlogPageWrapper = styled.div`
 	.blog-list-wrapper {
-		margin-bottom: 5rem;
+		margin: 5rem auto;
 	}
-
 	.blog-lists{
 		margin-top: 5rem;
-		
+	}
+
+	.tooltip-search{
+		margin-bottom: 0.8rem;
 	}
 	.post-block{
 		background-color: ${props => props.theme.grey212121ToWhite};
@@ -25,7 +27,7 @@ export const BlogPageWrapper = styled.div`
 		width: 25%;
 		img{
 			padding: 0px;
-			margin: 0px;
+			margin-left: 0.5rem;
 			width: 100%;
 			height: 100%;
 		}
@@ -59,28 +61,25 @@ export const BlogPageWrapper = styled.div`
 		}
 		.post-thumb-block{
 			height: 8rem;
-	
-			img{
-				width: 100%;
-			height: 100%;
-			}
 		}
+
 	}
 
 	@media screen and (max-width:992px){
 		.post-block{
 			height: 10rem;
+			width: auto;
 		}
 		.post-thumb-block{
 			height: 15rem;
 	
 			img{
-				max-height:15rem;
+				max-height:9rem;
 			}
 		}
 	}
 
-	@media screen and (max-width:500px){
+	@media screen and (max-width:576px){
 		.post-block{
 			height: 9rem;
 		}
@@ -93,18 +92,17 @@ export const BlogPageWrapper = styled.div`
 		.post-content-block{
 			height: fit-content;
 		}
+		.tooltip-search{
+			display: block;
+		}
 	}
 
-	@media only screen and (min-width: 575px) {
-    .tooltip-search {
-      margin-bottom: 0;
-    }
-  }
-  @media only screen and (min-width: 990px) {
+	@media only screen and (min-width: 577px) {
     .tooltip-search {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 0;
     }
   }
   
