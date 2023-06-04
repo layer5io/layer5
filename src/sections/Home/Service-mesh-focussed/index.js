@@ -5,8 +5,8 @@ import BlockQuoteImage from "../../../assets/images/blockquote/quote-left.svg";
 import Button from "../../../reusecore/Button";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { StaticImage } from "gatsby-plugin-image";
-const ServiceMeshFocusedImage = "../../../assets/images/homePage-images/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
-const ServiceMeshPatternsImage = "../../../assets/images/homePage-images/service-mesh-patterns.png";
+const ServiceMeshFocusedImage = "../../../assets/images/homePage-images/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.webp";
+const ServiceMeshPatternsImage = "../../../assets/images/homePage-images/service-mesh-patterns.webp";
 
 const ServiceMeshFocused = ({ bookName }) => {
 

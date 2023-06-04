@@ -1,7 +1,7 @@
 import React from "react";
-import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
+import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
 import partner2 from "../../assets/images/partners/gsoc.svg";
-import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
+import partner3 from "../../assets/images/partners/UEM_Logo.webp";
 import partner4 from "../../assets/images/partners/citrix.svg";
 
 import partner14 from "../../assets/images/partners/metabit-trading-logo-gray.svg";
