@@ -80,6 +80,7 @@ const BooksPage = ({ hide_path }) => {
                 <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />
               </div>
               <Link className="book-page_link" to={fields.slug}/>
+              {console.log(fields.fileAbsolutePath)}
             </div>
           ))}
         </Slider>

@@ -45,7 +45,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 				color: rgba(255, 255, 255, 0.8);
 				&:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 		}
@@ -61,7 +61,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 
 				&:hover{
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 
@@ -74,7 +74,7 @@ const FooterWrapper = styled.section`
 				border-radius: .25rem;
 				vertical-align: top;
 				text-transform: uppercase;
-				color: ${props => props.theme.saffronLightColor};
+				color: ${(props) => props.theme.saffronLightColor};
 			}
 		}
 	}
@@ -112,6 +112,46 @@ const FooterWrapper = styled.section`
 		}
 	}
 
+	.edit-page{
+		color:white;
+		padding:0;
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
+		margin: 0 2.5rem 2rem 0;
+		
+		span{
+			display:flex;
+			align-items: center;
+		}
+		
+		a{
+			cursor:pointer;
+			color:white;
+			display: inline-block;
+			width: fit-content;
+
+		}
+
+		a:hover{
+			p{
+				color: ${(props) => props.theme.secondaryColor};
+			}
+			svg{
+			fill:  ${(props) => props.theme.secondaryColor};
+			}
+		}
+
+		p{
+			font-size:0.85rem;
+			margin:0;
+		}
+		
+		svg{
+			margin:0 8px 0 0;
+			fill:white;
+
+		}
+	}
+
 	.footer-bottom{
 		display: flex;
 		flex: auto;
@@ -134,7 +174,7 @@ const FooterWrapper = styled.section`
 					color: #CCCCCC;
 				}
 				a:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 			li + li {

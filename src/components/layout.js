@@ -14,7 +14,7 @@ import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 
-const Layout = ({ children }) => {
+const Layout = ({ children,location }) => {
 
   return (
     <>
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <Navigation/>
       {children}
       <ScrollToTopBtn />
-      <Footer />
+      <Footer location={location} />
     </>
   );
 };
