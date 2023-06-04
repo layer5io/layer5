@@ -58,14 +58,14 @@ const Terminal = ({ lines, title, noScroll }) => {
             {lines && lines.map((line, index) => (
               <Fragment key={index}>
                 <pre className={`${line.short ? "short" : ""} ${line.color ? line.color : "blue"}`} >
-                  {line.indent &&
+                    {line.indent &&
                             new Array(line.indent * 2)
                               .fill({})
                               .map((_, index) => (
                                 <Fragment key={index}>&nbsp;</Fragment>
                               ))}
-                  {line.code}
-                </pre>
+                    {line.code}
+                  </pre>
               </Fragment>
             ))}
           </div>

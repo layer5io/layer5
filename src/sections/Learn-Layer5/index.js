@@ -120,7 +120,7 @@ const LearnPathsPage = () => {
           <div className="service-mesh-patterns_text-and_button">
             <h1>Use Service Mesh Patterns</h1>
             <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
-            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external="true" />
+            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
           </div>
         </div>
         <JoinCommunity

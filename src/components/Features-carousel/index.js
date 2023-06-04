@@ -92,11 +92,14 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
       )}
       <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
-        {learnMoreLink && (
-          <Link className="learn-more-link" to={learnMoreLink}>
+        {learnMoreLink && learnMoreLink.startsWith("/")
+          ? <Link className="learn-more-link" to={learnMoreLink}>
             Explore <IoIosArrowRoundForward />
           </Link>
-        )}
+          : <a href={learnMoreLink} className="learn-more-link">
+           Explore <IoIosArrowRoundForward />
+          </a>
+        }
       </div>
     </Element>
   );

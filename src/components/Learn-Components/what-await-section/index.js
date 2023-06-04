@@ -25,7 +25,7 @@ const WhatAwaitsSection = () => {
                 code: "✓ Deployment successfully rolled out!",
                 color: "green",
               },
-              { code: "\n" },
+              { code: " " },
               { code: "» Traffic splitting...", color: "navy" },
               {
                 code: "✓ 5% of user requests to v3.",
@@ -47,7 +47,7 @@ const WhatAwaitsSection = () => {
                 code: "✓ 100% of user requests to v3.",
                 color: "green",
               },
-              { code: "\n" },
+              { code: " " },
               {
                 code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
                 color: "navy",
