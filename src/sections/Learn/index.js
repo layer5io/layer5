@@ -4,7 +4,7 @@ import WorkshopsSection from "./LearnPage-Sections/workshops";
 import LearnSection from "./LearnPage-Sections/learn";
 import JoinCommunity from "../Community/Join-community";
 import LearningPaths from "./LearnPage-Sections/learning-path";
-import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
+import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import { LearnPageWrapper } from "./learnpage.style";
 
 const LearnPage = () => {

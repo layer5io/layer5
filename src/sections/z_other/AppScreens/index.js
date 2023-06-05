@@ -4,13 +4,13 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import { SlickSlider, SliderItem } from "../../../reusecore/SlickSlider";
 
-import image1 from "../../../assets/images/app/app-screen/01.png";
-import image2 from "../../../assets/images/app/app-screen/02.png";
-import image3 from "../../../assets/images/app/app-screen/03.png";
-import image4 from "../../../assets/images/app/app-screen/04.png";
-import particle1 from "../../../assets/images/app/particle/09.png";
-import particle2 from "../../../assets/images/app/particle/10.png";
-import particle4 from "../../../assets/images/app/particle/13.png";
+import image1 from "../../../assets/images/app/app-screen/01.webp";
+import image2 from "../../../assets/images/app/app-screen/02.webp";
+import image3 from "../../../assets/images/app/app-screen/03.webp";
+import image4 from "../../../assets/images/app/app-screen/04.webp";
+import particle1 from "../../../assets/images/app/particle/09.webp";
+import particle2 from "../../../assets/images/app/particle/10.webp";
+import particle4 from "../../../assets/images/app/particle/13.webp";
 
 import AppScreenSectionWrapper from "./appScreenSection.style";
 

@@ -4,9 +4,9 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 
-import imgAbout from "../../../assets/images/hosting/hosting/about.png";
-import particle1 from "../../../assets/images/app/particle/05.png";
-import particle2 from "../../../assets/images/app/particle/06.png";
+import imgAbout from "../../../assets/images/hosting/hosting/about.webp";
+import particle1 from "../../../assets/images/app/particle/05.webp";
+import particle2 from "../../../assets/images/app/particle/06.webp";
 
 import AboutSectionWrapper from "./about.style";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
+import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
 import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
 import { ReactComponent as Partner4 } from "../../assets/images/partners/citrix-colorMode.svg";

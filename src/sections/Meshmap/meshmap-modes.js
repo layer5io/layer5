@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
-import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
+import designerImage from "../../assets/images/meshmap/MeshmapDesigner.webp";
+import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.webp";
 
 const MeshmapModesWrapper = styled.div`
   margin-top: 0.1rem;

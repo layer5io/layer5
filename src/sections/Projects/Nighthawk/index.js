@@ -10,9 +10,9 @@ import cpu from "./images/cpu_green.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
 
-const explain1 = "./images/Rectangle 479.png";
-const explain2 = "./images/optimizing-your-average-response-time.png";
-const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.png";
+const explain1 = "./images/Rectangle 479.webp";
+const explain2 = "./images/optimizing-your-average-response-time.webp";
+const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.webp";
 
 import { Gnhwrapper, CardsContainer } from "./gnh.style";
 

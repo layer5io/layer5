@@ -13,5 +13,5 @@ const NewcomersPage = () => {
 };
 export default NewcomersPage;
 export const Head = () => {
-  return  <SEO title="Layer5 Community Member Form" description="New member form for Layer5 community members: contributors, users and visitors" image="/images/layer5-community-sign.png" />;
+  return  <SEO title="Layer5 Community Member Form" description="New member form for Layer5 community members: contributors, users and visitors" image="/images/layer5-community-sign.webp" />;
 };

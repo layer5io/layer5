@@ -4,11 +4,11 @@ import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
 
-import Slack from "../../../assets/images/socialIcons/slack_color.png";
-import Slide from "../../../assets/images/socialIcons/slide_color.png";
-import LinkIcon from "../../../assets/images/socialIcons/link_color.png";
-import Youtube from "../../../assets/images/socialIcons/youtube_color.png";
-import Lab from "../../../assets/images/socialIcons/lab_color.png";
+import Slack from "../../../assets/images/socialIcons/slack_color.webp";
+import Slide from "../../../assets/images/socialIcons/slide_color.webp";
+import LinkIcon from "../../../assets/images/socialIcons/link_color.webp";
+import Youtube from "../../../assets/images/socialIcons/youtube_color.webp";
+import Lab from "../../../assets/images/socialIcons/lab_color.webp";
 import PageHeader from "../../../reusecore/PageHeader";
 import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";

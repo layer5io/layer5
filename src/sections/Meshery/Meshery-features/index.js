@@ -8,10 +8,10 @@ import img5 from "./feature-images/meshsync.svg";
 import img6 from "./feature-images/meshery-extensibility.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "./feature-images/meshery-configuration-management.png";
-const img2 = "./feature-images/meshery-wasm.png";
-const img4 = "./feature-images/meshery-and-grafana.png";
-const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.png";
+const img1 = "./feature-images/meshery-configuration-management.webp";
+const img2 = "./feature-images/meshery-wasm.webp";
+const img4 = "./feature-images/meshery-and-grafana.webp";
+const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.webp";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
