@@ -3,14 +3,14 @@ import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
-import playIcon from "../../../assets/images/homePage-images/play-button.png";
+import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
 import ReactPlayer from "react-player/youtube";
 
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 
-import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
+import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.webp";
 
 const BannerDefault = () => {
   return (

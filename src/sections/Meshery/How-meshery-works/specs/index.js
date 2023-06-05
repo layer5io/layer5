@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
-import MesheryImage1 from "../images/cloud-native-journey.png";
-import MesheryImage2 from "../images/meshery-configuration-management.png";
+import MesheryImage1 from "../images/cloud-native-journey.webp";
+import MesheryImage2 from "../images/meshery-configuration-management.webp";
 import GreenBubble from "../images/green-bubble.svg";
 import YellowBubble from "../images/yellow-bubble.svg";
 import DataCard from "./data-card";

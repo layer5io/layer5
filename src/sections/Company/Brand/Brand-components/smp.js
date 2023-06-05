@@ -5,12 +5,12 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.png";
-import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.png";
-import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.png";
-import SmPLightTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-light-text-side.png";
-import SmPDarkTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png";
-import SmPWhiteTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-white-text-side.png";
+import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.webp";
+import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.webp";
+import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.webp";
+import SmPLightTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-light-text-side.webp";
+import SmPDarkTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.webp";
+import SmPWhiteTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-white-text-side.webp";
 
 const SMPWrap = styled.section`
     .smp-logo {

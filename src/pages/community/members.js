@@ -19,8 +19,8 @@ import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import inactiveIcon from "../../assets/images/status/inactive.png";
-import activeIcon from "../../assets/images/status/active.png";
+import inactiveIcon from "../../assets/images/status/inactive.webp";
+import activeIcon from "../../assets/images/status/active.webp";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";

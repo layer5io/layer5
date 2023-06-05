@@ -8,11 +8,11 @@ const Kubernetes = "./kubernetes-logo.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
 const dockercompose_logo =
-  "../../assets/images/dockercompose-logo/dockercompose-logo.png";
+  "../../assets/images/dockercompose-logo/dockercompose-logo.webp";
 const visual_topology =
   "../../assets/images/visual-topology/visual-topology.svg";
 const dockerDesktop =
-  "../../assets/images/docker-extension/docker-extension-meshery.png";
+  "../../assets/images/docker-extension/docker-extension-meshery.webp";
 
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
@@ -125,7 +125,7 @@ const DockerExtensionMeshery = () => {
           </Col>
           <Col md={6} sm={12}>
             <p className="installButton">
-              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external="true" /></p>
+              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external={true} /></p>
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
