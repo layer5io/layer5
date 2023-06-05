@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Define the project directory path
-const projectDirectory = '../src';
+const projectDirectory = '../../';
 
 // Function to recursively process files in a directory
 function processFiles(directory) {

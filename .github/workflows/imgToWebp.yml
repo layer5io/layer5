@@ -1,0 +1,24 @@
+name: ImageToWebpCI
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:  
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run imgToWeb.js
+        run: node ../imgToWebp.js
+
+      - name: Run updateImagePath.js
+        run: node ../updateImagePath.js
+        if: success()
+
+      - name: Commit workflow changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update images to webp
