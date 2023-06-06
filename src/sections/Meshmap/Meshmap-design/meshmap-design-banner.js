@@ -96,7 +96,7 @@ const DesignBannerWrapper = styled.div`
         left: 0px;
 
         .banner-image-colorMode_svg__colorMode1 {
-            fill: ${props => props.theme.blueE0FFFCToBlue477E96};
+            fill: ${props => props.theme.grey1D1817ToGreyE6E6E6};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
