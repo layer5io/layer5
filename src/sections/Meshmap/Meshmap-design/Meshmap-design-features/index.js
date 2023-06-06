@@ -11,8 +11,8 @@ const img4 = "../../../../assets/images/meshmap/MeshmapDesigner.webp";
 
 const MeshmapDesignFeaturesWrapper = styled.div`
     margin: auto;
-    margin-top: 8% !important;
-    margin-bottom: 8%;
+    margin-top: 12% !important;
+    margin-bottom: 12%;
     @media (max-width: 32rem){
         margin-top: 10rem;
     }
