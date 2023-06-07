@@ -205,6 +205,7 @@ const lighttheme = {
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
   whiteToBlue1229A9: "#1229A9",
   whiteToBlue2A2DDE: "#2A2DDE",
+  integrationsGraphicGradient: "linear-gradient(90deg, #000000 0%, #00D3A9 100%)",
 
   //DarkTheme
   DarkTheme: false,
@@ -424,6 +425,7 @@ export const darktheme = {
   whiteZeroThreeToBlackZeroThree: "rgb(255 255 255 / 0.03)",
   whiteToBlue1229A9: "#FFFFFF",
   whiteToBlue2A2DDE: "#FFFFFF",
+  integrationsGraphicGradient: "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 51.1%, rgba(0, 179, 159, 0.54) 99.99%)",
 
   //DarkTheme
   DarkTheme: true,
