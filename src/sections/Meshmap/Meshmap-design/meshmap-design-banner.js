@@ -135,7 +135,7 @@ const DesignBannerWrapper = styled.div`
 
     .dots-upper {
         position: absolute;
-        top: -25%;
+        top: 0;
         left: 0;
     }
 
