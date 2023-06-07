@@ -5,6 +5,7 @@ import Cone from "../../assets/images/gitops/conelight.svg";
 import MeshMap from "../../assets/images/meshmap/meshmap-color-icon.svg";
 import { GitOpsWrapper, SquarePointWrapper } from "./meshery.style.js";
 import SmpLogo from "../../assets/images/app/projects/smp.svg";
+import Reviews from "../Pricing/review-slider";
 
 
 const SquarePoint = ({ children }) => {
@@ -19,7 +20,7 @@ const GitOpsPage = () => {
   return (
     <GitOpsWrapper>
       <Container>
-        <div className="info">
+        <div style={{ marginTop: "5rem" }} className="info">
           <Row className="description">
             <Col className="desc-text" lg={6} md={6} sm={10} xs={8}>
               <h1 className="heading-1"> Pipelining Cloud Native Insights and GitOps</h1>
@@ -81,6 +82,8 @@ const GitOpsPage = () => {
           </Row>
         </div>
       </Container>
+
+      <Reviews/>
     </GitOpsWrapper>
   );
 };
