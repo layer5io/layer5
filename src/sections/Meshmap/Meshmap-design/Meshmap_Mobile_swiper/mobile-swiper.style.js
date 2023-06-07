@@ -7,7 +7,6 @@ const SwiperContainer = styled.div`
     display: none;
 }
 
-
 .swiper-slide{
   border-radius: 20px;
 }
@@ -130,9 +129,10 @@ const SwiperContainer = styled.div`
   width:64vw;
 }
 
+  margin-top: 10%;
   border-radius:20px;
   width: 57vw;
-  // height:100vh;
+  text-align: center;
 
   .swiper {
     width: 100%;
