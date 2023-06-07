@@ -101,7 +101,7 @@ const SwiperContainer = styled.div`
   }
   @media (max-width:470px){
     .card{
-      height:50vh;
+      /* height:50vh; */
       padding: 1rem;
     }
     .card img{
