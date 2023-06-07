@@ -7,7 +7,6 @@ const Meshery = () => {
   return (
     <>
       <GitOps />
-
     </>
   );
 };
