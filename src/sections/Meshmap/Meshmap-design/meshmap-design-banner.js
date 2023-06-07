@@ -6,7 +6,7 @@ import CytoscapeDemo from "./cytoscape-demo";
 import CytoscapeCanvas from "./cytoscape-demo";
 import Graph from "./cytoscapeCanvas";
 import CytoscapeComponent from "./cytoscapeCanvas";
-import plusSign from "./images/plus-sign.svg";
+import plusSign from "./images/plus-sign-colorMode.svg";
 import CytoscapeCtx from "./cytoscapeCanvas";
 import BackgroundDotsPattern from "./images/background-dots-pattern.svg";
 
@@ -15,7 +15,7 @@ const DesignBannerWrapper = styled.div`
     display: flex;
     flex-direction: row;
     background-color: ${props => props.theme.grey121212ToWhite};
-    background-image: url(${plusSign}); /* Set the background image */
+    background-image: url(${plusSign});
     background-repeat: repeat;
     background-size: 2.5rem 2.5rem;
     background-position: 10px 10px;
@@ -135,7 +135,7 @@ const DesignBannerWrapper = styled.div`
 
     .dots-upper {
         position: absolute;
-        top: -23%;
+        top: -25%;
         left: 0;
     }
 
