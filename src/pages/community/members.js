@@ -26,6 +26,7 @@ import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";
 import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
+import meshMapIcon from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -109,6 +110,14 @@ const options = [
     color: theme.linkColor,
     isFixed: true,
     icon: mesheryOpIcon,
+    className: "allOptions",
+  },
+  {
+    label: "MeshMap",
+    value: "meshmap",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: meshMapIcon,
     className: "allOptions",
   },
   {
