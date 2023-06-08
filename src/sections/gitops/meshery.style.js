@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 export const GitOpsWrapper = styled.section`
-  position: relative;
+    position: relative;
     z-index: 1;
+    .gradient-wrapper {
+        background: linear-gradient(245.08deg, rgba(0, 0, 0, 0.06) 49.26%, rgba(0, 211, 169, 0.5) 100%);
+        width: 100%;
+        height: 43.75rem;
+        position: absolute;
+    }
     .info {
         position: relative;
         overflow: hidden;
         display: block;
-        margin-bottom:13rem;
+        padding-bottom:13rem;
         .meshery-video {
             border-radius: 1rem;
             width: 100%;
