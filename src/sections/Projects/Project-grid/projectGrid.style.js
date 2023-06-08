@@ -151,7 +151,7 @@ export const ProjectWrapper = styled.div`
     }
     //Image Hub
     .project__card.three{
-        grid-column: 6/8;
+        grid-column: 6/7;
         grid-row: 4/6;
         img{
             width: 90px;
@@ -275,6 +275,21 @@ export const ProjectWrapper = styled.div`
             }
         }
     }
+
+    
+    .project__card.eleven {
+        grid-column: 7/8;
+        grid-row: 4/6;
+        img {
+            width: 90px;
+            align-self: center;
+            margin-top: 16px
+        }
+        h5 {
+            margin-bottom: 25px;
+        }
+}
+
     .project__card-container-ten{
         max-width: 100%;
         height: 10rem;
@@ -297,6 +312,7 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
             img{
