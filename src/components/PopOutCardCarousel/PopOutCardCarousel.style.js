@@ -34,7 +34,7 @@ const PopOutCardWrapper = styled.div`
     opacity: 0.5;
     color: white !important;
     font-weight: bold;
-    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
   }
   p {
     opacity: 0;
@@ -126,7 +126,7 @@ const PopOutCardWrapper = styled.div`
         flex-direction: column;
         text-align: center;
         width: 300px;
-        height: 440px;
+        height: 470px;
         .img {
           margin-inline: auto;
           max-width: 100%;
@@ -143,7 +143,7 @@ const PopOutCardWrapper = styled.div`
           translate(-${props.index * 36}px, ${props.index * 5}px);
         h3 {
           opacity: 1;
-          transition: opacity .95s; 
+          transition: opacity .95s;
         }
     `}
 

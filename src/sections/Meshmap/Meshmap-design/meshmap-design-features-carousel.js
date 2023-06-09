@@ -15,10 +15,10 @@ const CONTENT = [
       "MeshMap automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
   },
   {
-    title: "Understand your infrastructure with visualization and automation",
+    title: "Visualize and automate infrastructure understanding",
     img: mergeDesign,
     description:
-      "MeshMap helps your team automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
+      "MeshMap helps automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
   },
   {
     title: "Make working across services as easy as working across files",
