@@ -396,7 +396,7 @@ export const darktheme = {
   linearToLinear2: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)",
   linearToGreen: "linear-gradient(90.2deg, rgba(0, 0, 0, 0.2) 0.16%, rgba(0, 179, 159, 0.74) 99.81%)",
   linearToWhite: "linear-gradient(to right, #666666, #444444)",
-  radialToWhite: "radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(68,68,68,1) 100%)",
+  radialToWhite: "radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(28,28,28,1) 100%)",
   linearDarkToLinearLight: "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 179, 159, 0.58) 46.87%, rgba(0, 179, 159, 0.034) 100%), linear-gradient(179.39deg, rgba(0, 179, 159, 0) 0.58%, #000000 99.54%)",
   whiteEightToBlack: "rgb(255 255 255 / 0.8)",
   whiteEightToBlackEight: "rgb(255 255 255 / 0.8)",
