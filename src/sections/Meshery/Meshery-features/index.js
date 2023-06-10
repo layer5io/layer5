@@ -31,6 +31,11 @@ const MesheryFeaturesWrapper = styled.div`
       padding: 0rem;
     }
   }
+  @media (max-width: 767px){ 
+    .feature-expose img { 
+      height: 15rem; 
+    } 
+  }
 `;
 
 const MesheryFeatures = () => {
