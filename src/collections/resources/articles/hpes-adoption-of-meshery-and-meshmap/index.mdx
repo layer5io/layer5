@@ -13,10 +13,12 @@ tags:
 featured: false
 published: true
 resource: true
-
 ---
+
 import { ResourcesWrapper } from "../../Resources.style.js";
-import { HPEfacts } from "./hpe.style.js";
+import { HPEfacts, HPEintro } from "./hpe.style.js";
+import { theme } from "../../../../theme/app/themeStyles.js";
+
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
 import GlobeIcon from "./globe.svg";
@@ -26,17 +28,13 @@ import LayersIcon from "./layers.svg"
 
 <ResourceWrapper>
 
-<h3>
-    <i>
-    HPE, a leading technology company specializing in enterprise infrastructure, adopted Layer5 MeshMap to enhance their Kubernetes deployments. HPE uses Kubernetes as a primary platform to build and deploy their containerized applications. The company has a large and complex Kubernetes environment, which requires robust networking solutions for efficient communication between services.
-    </i>
-</h3>
+<HPEintro>
+   HPE's adoption of Meshery was driven by the need to simplify the management and monitoring of their Kubernetes clusters. Meshery is an open source cloud native management tool that provides a self-service platform for designing, deploying, testing, and operating cloud native infrastructure wherever Kubernetes and its workloads run.
+</HPEintro>
 
-<div class="intro">
-  <p>
-     HPE's adoption of Meshery was driven by the need to simplify the management and monitoring of their Kubernetes clusters. Meshery is an open source cloud native management tool that provides a self-service platform for designing, deploying, testing, and operating cloud native infrastructure wherever Kubernetes and its workloads run.
-  </p>
-</div>
+<p>
+   HPE, a leading technology company specializing in enterprise infrastructure, adopted Layer5 MeshMap to enhance their Kubernetes deployments. HPE uses Kubernetes as a primary platform to build and deploy their containerized applications. The company has a large and complex Kubernetes environment, which requires robust networking solutions for efficient communication between services. 
+</p>
 
 
 
