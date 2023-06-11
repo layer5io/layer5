@@ -9,16 +9,16 @@ import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
+import Lee_workshop from "../../assets/images/community/Lee_Workshop.webp";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import useHasMounted from "../../utils/useHasMounted";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
-
+const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
 const CommunityPage = () => {
 
@@ -26,7 +26,7 @@ const CommunityPage = () => {
     graphql`
       query {
         backgroundImage123: file(
-          relativePath: { eq: "bookmarks.jpg" }
+          relativePath: { eq: "bookmarks.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(
@@ -40,11 +40,13 @@ const CommunityPage = () => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const hasMounted = useHasMounted();
+
+  const pluginImage = hasMounted && getImage(backgroundImage123);
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={pluginImage} className="section">
+      <BgImage image={ pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>
@@ -137,7 +139,7 @@ const CommunityPage = () => {
                 <h1>Newcomers Welcome!</h1>
                 <h2>Are you new to the community?</h2>
                 <p className="invitation">
-                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                  Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                   and engage in the community and projects.
                 </p>
                 <Button primary title="See All Newcomers Resources" url="/community/newcomers">

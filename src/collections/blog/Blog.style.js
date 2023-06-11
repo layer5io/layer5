@@ -78,7 +78,29 @@ export const BlogWrapper = styled.div`
     width: 40%;
     margin-left: 1.8em;
   }
-
+  .table-3 {
+    display: flex; 
+    flex-direction: row;
+    width: fit-content;
+    table {
+      display: inline; 
+     }, 
+     tr:nth-child(even) {
+      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+     },
+     tr:nth-child(odd) {
+      background-color: ${(props) => props.theme.secondaryLightColor};
+     },
+    td {
+      text-align: center;
+      border-top: 1px dotted #3c494f;
+      th { 
+          background-color: #3c494f;
+          color: #eee;
+          padding: 0rem .5rem;
+        }
+    }
+  }
   .table-box {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -261,6 +283,7 @@ Example:
 
   figure.imgWithCaption {
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
     img{
       width: 100%;

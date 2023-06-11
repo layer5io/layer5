@@ -4,13 +4,14 @@ import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import useHasMounted from "../../../utils/useHasMounted";
 
 const StewardsOfIndustry = () => {
   const { backgroundImage123 } = useStaticQuery(
     graphql`
       query {
         backgroundImage123: file(
-          relativePath: { eq: "stewards/stewards.png" }
+          relativePath: { eq: "stewards/stewards.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(
@@ -24,7 +25,9 @@ const StewardsOfIndustry = () => {
     `
   );
 
-  const pluginImage = getImage(backgroundImage123);
+  const hasMounted = useHasMounted();
+
+  const pluginImage = hasMounted && getImage(backgroundImage123);
 
   return (
     <BannerSectionWrapper>

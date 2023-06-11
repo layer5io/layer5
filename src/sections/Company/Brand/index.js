@@ -17,6 +17,7 @@ const ServiceMeshPatterns = loadable(() => import ("./Brand-components/serviceme
 const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
 const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
 const MeshMapBrand = loadable(() => import ("./Brand-components/meshmap"));
+const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -163,6 +164,9 @@ const Brand = () => {
       </div>
       <Row className="brand-row">
         <Col xs={12} md={9} className="brand-col">
+          <div className="section">
+            <BrandGuide />
+          </div>
           <div className="section" ref={layer5Ref}>
             <Layer5Brand />
           </div>

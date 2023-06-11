@@ -3,11 +3,11 @@ import React from "react";
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 import { Container } from "../../reusecore/Layout";
 
-import Client1 from "../../assets/images/app/clients/client-1.png";
-import Client2 from "../../assets/images/app/clients/client-2.png";
-import Client3 from "../../assets/images/app/clients/client-3.png";
-import Client4 from "../../assets/images/app/clients/client-4.png";
-import Client5 from "../../assets/images/app/clients/client-5.png";
+import Client1 from "../../assets/images/app/clients/client-1.webp";
+import Client2 from "../../assets/images/app/clients/client-2.webp";
+import Client3 from "../../assets/images/app/clients/client-3.webp";
+import Client4 from "../../assets/images/app/clients/client-4.webp";
+import Client5 from "../../assets/images/app/clients/client-5.webp";
 
 import ClientsSectionWrapper from "./clientSection.style";
 

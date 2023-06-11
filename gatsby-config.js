@@ -1,4 +1,5 @@
 /* eslint-env node */
+
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -7,13 +8,14 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-gradient.png",
+    image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: true
   },
+  trailingSlash: "never",
   plugins: [
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
@@ -21,7 +23,42 @@ module.exports = {
         disable: true
       }
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+              matchPath
+            }
+          }
+          site {
+            siteMetadata {
+              siteUrl
+              }
+          }
+        }
+      `,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path, matchPath }) => {
+          let url = matchPath ? matchPath : path;
+          url = url.startsWith("/") ? url : `/${url}`;
+          return {
+            url: url,
+            changefreq: "daily",
+            priority: 0.7,
+          };
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-svgr",
       options: {
@@ -35,6 +72,7 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
+                  cleanupIDs: false,
                 }
               }
             },
@@ -42,8 +80,6 @@ module.exports = {
         },
       },
     },
-
-
     {
       resolve: "gatsby-plugin-feed",
       options: {
@@ -501,7 +537,7 @@ module.exports = {
         background_color: "#3c494f",
         theme_color: "#00b39f",
         display: "minimal-ui",
-        icon: "src/assets/images/favicon.png", // This path is relative to the root of the site.
+        icon: "src/assets/images/favicon.webp", // This path is relative to the root of the site.
       },
     },
     {
@@ -518,7 +554,8 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
-    "gatsby-plugin-meta-redirect", // make sure this is always the last one
+    "gatsby-plugin-meta-redirect",
+    // make sure this is always the last one
   ],
 
 };

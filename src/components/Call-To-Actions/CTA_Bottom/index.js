@@ -1,5 +1,5 @@
 import React from "react";
-import image_src from "../../../assets/images/callout/callout.png";
+import image_src from "../../../assets/images/callout/callout.webp";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import { Categories } from "./cta_bottom_categories";
@@ -97,7 +97,7 @@ const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
+const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
     <CTA_BottomWrapper {...props}>
       { category ? (
@@ -126,3 +126,5 @@ export const CTA_Bottom = ({ alt, button_text, category, content, external_link,
     </CTA_BottomWrapper>
   );
 };
+
+export default CTA_Bottom;

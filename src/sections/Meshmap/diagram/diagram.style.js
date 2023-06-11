@@ -71,7 +71,38 @@ top: calc(39vh - 249px);
     top: calc(60vh - 249px);
 
     svg {
-      color: ${props => props.theme.text}
+      color: ${props => props.theme.text};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      .collab1-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.blackToWhite};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .collab2-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.blackToWhite};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .collab3-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.blackToWhite};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .collab4-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .collab4-colorMode_svg__colorMode2 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .collab4-colorMode_svg__colorMode3{
+        fill: ${props => props.theme.blackToWhite};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+
     }
 
   @media (max-width: 1200px) {

@@ -229,6 +229,11 @@ export const CardsContainer = styled.div`
             letter-spacing: 0;
             margin-top: 10px;
         }
+
+        ul {
+            text-align: left;
+        }
+
         a:hover {
             color: ${props => props.theme.text};
         }

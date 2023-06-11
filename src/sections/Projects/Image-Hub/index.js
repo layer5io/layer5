@@ -11,9 +11,9 @@ import "slick-carousel/slick/slick-theme.css";
 import VintageBox from "../../../reusecore/VintageBox";
 
 
-import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.png";
-import imagehubslider1 from "./service-mesh-architecture-consul.png";
-import imagehubslider2 from "./image-hub-on-consul-with-wasm-and-meshery.png";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.webp";
+import imagehubslider1 from "./service-mesh-architecture-consul.webp";
+import imagehubslider2 from "./image-hub-on-consul-with-wasm-and-meshery.webp";
 
 const ImageHubPage = () => {
   return (
@@ -70,7 +70,7 @@ const ImageHubPage = () => {
             <p>This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
               Learn more about the Layer5 and HashiCorp Partnership.</p>
             <VintageBox right={true} vintageOne={true}>
-              <Button primary title="Layer5 and HashiCorp" url="/partners"></Button>
+              <Button className="margin4" primary title="Layer5 and HashiCorp" url="/partners"></Button>
               &nbsp;
               <Button secondary title="Discuss WASM Filters" url="https://discuss.layer5.io/c/webassembly-filters/11" external={true}></Button>
             </VintageBox>

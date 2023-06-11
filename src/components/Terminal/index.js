@@ -43,9 +43,9 @@ const Terminal = ({ lines, title, noScroll }) => {
     <TerminalWrapper>
       <div className="title-bar">
         <ul className="window-controls">
-          <li/>
-          <li/>
-          <li/>
+          <li />
+          <li />
+          <li />
         </ul>
         {title && <div className="title">{title}</div>}
       </div>
@@ -59,11 +59,11 @@ const Terminal = ({ lines, title, noScroll }) => {
               <Fragment key={index}>
                 <pre className={`${line.short ? "short" : ""} ${line.color ? line.color : "blue"}`} >
                   {line.indent &&
-                            new Array(line.indent * 2)
-                              .fill({})
-                              .map((_, index) => (
-                                <Fragment key={index}>&nbsp;</Fragment>
-                              ))}
+                    new Array(line.indent * 2)
+                      .fill({})
+                      .map((_, index) => (
+                        <Fragment key={index}>&nbsp;</Fragment>
+                      ))}
                   {line.code}
                 </pre>
               </Fragment>

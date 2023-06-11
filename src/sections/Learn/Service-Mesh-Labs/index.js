@@ -82,7 +82,7 @@ const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
           <div className="join-community_text-and_button">
             <h1>Use Service Mesh Patterns</h1>
             <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
-            <Button primary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external="true" />
+            <Button primary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
           </div>
         </div>
       </div>

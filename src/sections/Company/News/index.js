@@ -7,11 +7,11 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import { TiMessageTyping } from "@react-icons/all-files/ti/TiMessageTyping";
 import { TiHeartOutline } from "@react-icons/all-files/ti/TiHeartOutline";
 
-import imgNews1 from "../../../assets/images/app/news/news-thumb-1.png";
-import imgNews2 from "../../../assets/images/app/news/news-thumb-2.png";
-import imgNews3 from "../../../assets/images/app/news/news-thumb-3.png";
-import particle1 from "../../../assets/images/app/particle/16.png";
-import particle2 from "../../../assets/images/app/particle/09.png";
+import imgNews1 from "../../../assets/images/app/news/news-thumb-1.webp";
+import imgNews2 from "../../../assets/images/app/news/news-thumb-2.webp";
+import imgNews3 from "../../../assets/images/app/news/news-thumb-3.webp";
+import particle1 from "../../../assets/images/app/particle/16.webp";
+import particle2 from "../../../assets/images/app/particle/09.webp";
 
 import NewsSectionWrapper from "./newsSection.style";
 

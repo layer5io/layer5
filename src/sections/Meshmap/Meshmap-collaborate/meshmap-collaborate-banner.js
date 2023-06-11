@@ -57,7 +57,7 @@ const CollaborationBannerWrapper = styled.div`
         /* font-size: 4rem; */
         position: relative;
         display: inline-block;
-        color: ${props => props.theme.primaryColor};
+        /* color: ${props => props.theme.primaryColor}; */
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 /*
         @media only screen and (min-width: 500px) {
@@ -176,7 +176,7 @@ const CollaborationBannerWrapper = styled.div`
     .service-interface {
         scale: 1;
     }
-
+}
 `;
 
 const MeshmapCollaborateBanner = () => {
@@ -195,7 +195,7 @@ const MeshmapCollaborateBanner = () => {
         <div className="banner-text">
           <h1>Collaborate with the team. <br /> Build solutions together </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
-          <Button primary className="join-community-button" title="Start Collaborating" url="/projects" />
+          <Button primary className="join-community-button" title="Start Collaborating" url="https://play.meshery.io/" />
         </div>
         <div className="transition-container" ref={transitionRef}>
           <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
