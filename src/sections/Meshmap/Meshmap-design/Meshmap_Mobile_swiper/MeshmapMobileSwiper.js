@@ -39,6 +39,7 @@ const CONTENT = [
 ];
 
 
+// eslint-disable-next-line no-unused-vars
 const Card = ({ title, description, img, readMoreLink }) => {
   return (
     <div className="card">

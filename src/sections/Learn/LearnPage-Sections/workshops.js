@@ -212,6 +212,7 @@ const WorkshopsSection = () => {
 `
   );
 
+  // eslint-disable-next-line no-unused-vars
   const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
     <span {...props}>{children}</span>
   );
