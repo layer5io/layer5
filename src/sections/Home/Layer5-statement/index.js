@@ -6,7 +6,7 @@ import svgBackground from "../../../assets/images/homePage-images/background.svg
 import BannerSectionWrapper from "./statement.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
+const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.webp";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const BannerDefault = () => {

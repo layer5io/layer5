@@ -10,7 +10,7 @@ import DeployServiceMeshWrapper from "./DeployServiceMesh.style";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { Link } from "gatsby";
-import bookCover from "../../assets/images/learn/book-cover.png";
+import bookCover from "../../assets/images/learn/book-cover.webp";
 
 const RangeSlider = memo(
   ({ label, onChange, value, ...sliderProps }) => {

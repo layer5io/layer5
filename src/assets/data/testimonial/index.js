@@ -1,9 +1,9 @@
-import image1 from "../../images/app/testimonial/intraserve.png";
-import image2 from "../../images/app/testimonial/hpe-logo-text.png";
-import image3 from "../../images/app/testimonial/testimonial-thumb-3.jpg";
-import image4 from "../../images/app/testimonial/testimonial-thumb-4.jpg";
-import image5 from "../../images/app/testimonial/testimonial-thumb-5.jpg";
-import image6 from "../../images/app/testimonial/testimonial-thumb-6.jpg";
+import image1 from "../../images/app/testimonial/intraserve.webp";
+import image2 from "../../images/app/testimonial/hpe-logo-text.webp";
+import image3 from "../../images/app/testimonial/testimonial-thumb-3.webp";
+import image4 from "../../images/app/testimonial/testimonial-thumb-4.webp";
+import image5 from "../../images/app/testimonial/testimonial-thumb-5.webp";
+import image6 from "../../images/app/testimonial/testimonial-thumb-6.webp";
 
 const data = {
     thumbs: [image1, image2, image3, image4, image5, image6],

@@ -13,8 +13,8 @@ import MesheryWrapper from "./meshery.style";
 import FeaturesSection from "./Features-section";
 import Features from "./Meshery-features";
 import InlineQuotes from "../../components/Inline-quotes";
-import Maximiliano from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
-import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
+import Maximiliano from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
+import Nic from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 
 const MesheryPage = () => {
   return (
@@ -29,10 +29,12 @@ const MesheryPage = () => {
                 {/* Meshery is the cloud native manager. <br /> */}
                 Confidently design, deploy, and operate your infrastructure and workloads with Meshery.
               </p>
-              <Button primary className="banner-btn" title="How Meshery Works" url="./operating-service-meshes">
+              <Button primary className="banner-btn" title="How Meshery Works"
+                url="/cloud-native-management/meshery/operating-service-meshes">
                 <GiClockwork size={21} className="button-icon" />
               </Button>
-              <Button secondary className="banner-btn" title="Run Meshery" url="./getting-started">
+              <Button secondary className="banner-btn" title="Run Meshery"
+                url="/cloud-native-management/meshery/getting-started">
                 <FiDownloadCloud size={21} className="button-icon" />
               </Button>
             </Col>

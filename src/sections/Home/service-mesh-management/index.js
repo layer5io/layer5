@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-const MeshMap = "../../../assets/images/homePage-images/meshmap.png";
+const MeshMap = "../../../assets/images/homePage-images/meshmap.webp";
 
 const ServiceMeshManagement = () => {
   return (
