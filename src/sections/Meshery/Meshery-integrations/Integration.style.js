@@ -56,7 +56,7 @@ export const HoneycombGrid = styled.div`
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) => props.theme.linearToWhite};
+    background: ${(props) => props.theme.radialToWhite};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
