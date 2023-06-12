@@ -276,20 +276,6 @@ export const ProjectWrapper = styled.div`
         }
     }
 
-    
-    .project__card.eleven {
-        grid-column: 7/8;
-        grid-row: 4/6;
-        img {
-            width: 90px;
-            align-self: center;
-            margin-top: 16px
-        }
-        h5 {
-            margin-bottom: 25px;
-        }
-}
-
     .project__card-container-ten{
         max-width: 100%;
         height: 10rem;
@@ -312,6 +298,42 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+
+    //Playground
+    .project__card.eleven {
+        grid-column: 7/8;
+        grid-row: 4/6;
+       img {
+        width: 90px;
+        align-self: center;
+       }
+       h5 {
+        text-align: center;
+        align-self: center;
+        @media only screen and (min-width: 780px) {
+            margin-bottom: 10px;
+        }
+    }
+}
+.project__card-container-eleven{
+    max-width: 100%;
+    height: 10rem;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 780px) {
+        justify-content: space-between;
+        img {
+            margin-top: 15px;
+        }
+    }
+    h5{
+        font-weight: 600;
+        text-align: center;
+    }    
+}
 
     @media only screen and (max-width: 1200px) {
         .project__card-container_nighthawk{
@@ -355,7 +377,7 @@ export const ProjectWrapper = styled.div`
         }
         
      }
-     @media only screen and (max-width: 740px) {
+     @media only screen and (max-width: 780px) {
         .project__grid{
             margin: 50px 0;
             display: flex;
@@ -375,7 +397,7 @@ export const ProjectWrapper = styled.div`
         }
         .project__card-container-ten{
             height: 10rem;
-            img{
+            img{ 
                 margin-top: 1.5rem;
             }
         }

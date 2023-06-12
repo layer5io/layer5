@@ -121,10 +121,12 @@ const ProjectPage = () => {
                 </Col>
               </div>
             </Link>
-            <Link to="/cloud-native-management/playground"
-              className="project__card eleven">
-              <div className="project__card-container">
-                <img src={meshery} alt="Playgroud Mesh" />
+            <Link
+              to="/cloud-native-management/playground"
+              className="project__card eleven"
+            >
+              <div className="project__card-container-eleven">
+                <img src={meshery} alt="Service Mesh Patterns" />
                 <h5>Playground</h5>
               </div>
             </Link>
