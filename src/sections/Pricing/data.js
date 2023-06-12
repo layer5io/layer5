@@ -9,6 +9,7 @@ import Identity from "./icons/identity.svg";
 import Notification from "./icons/notification.svg";
 import Configuration from "./icons/configuration.svg";
 import Perforamance from "./icons/perf.svg";
+import comingSoon from "./icons/coming-soon.webp";
 
 export const details = [
   {
@@ -118,7 +119,7 @@ export const details = [
         feature: "Distributed Load Generation",
         description: "Distributed Load Generator: Support multiple Meshery clients generating load, collecting and coalescing results into a single report.",
         free: <MdClose className="no-icon" />,
-        team: <GiCheckMark className="no-icon" />,
+        team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
@@ -138,15 +139,15 @@ export const details = [
       {
         feature: "Service Mesh Interface Conformance GitHub Action",
         description: "Using Meshery as the offical SMI Conformance validation tool, configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
-        free: <MdClose className="yes-icon" />,
+        free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "MeshMark",
         description: "Identify the cost of a specific network function.",
-        free: <GiCheckMark className="no-icon" />,
-        team: <GiCheckMark className="no-icon" />,
+        free: <GiCheckMark className="yes-icon" />,
+        team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
     ],
@@ -159,7 +160,7 @@ export const details = [
       {
         feature: "Collaborators for public designs",
         description: "Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design that you control – including making changes and releasing new versions.",
-        free: <MdClose className="yes-icon" />,
+        free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
@@ -167,7 +168,7 @@ export const details = [
         feature: "Collaborators for private designs",
         description: "Invite any Meshery Cloud user to work with you on a private design that you control – including making changes and releasing new versions.",
         free: <MdClose className="no-icon" />,
-        team: <MdClose className="yes-icon" />,
+        team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
@@ -285,7 +286,7 @@ export const details = [
       {
         feature: "Audit Trail",
         description: "Detailed accounting of user activity. Historical record or each action taken.",
-        free: <GiCheckMark className="no-icon" />,
+        free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
@@ -386,7 +387,7 @@ export const options = [
     featured: false,
     monthlyprice: 15.99,
     yearlyprice: 180,
-    pricing_coming_soon: <img src="https://user-images.githubusercontent.com/7570704/222531680-8f711edc-c4bd-4812-aa25-307fa78191ac.png"></img>,
+    pricing_coming_soon: <img src={comingSoon}></img>,
     byline: "Everything in Team, plus:",
     button: ["Coming Soon", ""],
     summary: [

@@ -1,7 +1,7 @@
 import React from "react";
 import FeatureWrapper from "./features.style";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Feature({
   title,
@@ -12,10 +12,13 @@ export default function Feature({
 }) {
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [inViewStatus, setInViewStatus] = useState(false);
-  if (inView !== inViewStatus) {
-    setInViewStatus(inView);
-    onInViewStatusChanged(inView);
-  }
+
+  useEffect(() => {
+    if (inView !== inViewStatus) {
+      setInViewStatus(inView);
+      onInViewStatusChanged(inView);
+    }
+  },[inView, inViewStatus]);
 
   return (
     <FeatureWrapper>

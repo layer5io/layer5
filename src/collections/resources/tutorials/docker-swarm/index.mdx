@@ -1,0 +1,332 @@
+---
+title: "Configuring Highly Available Docker Swarm"
+thumbnail: ./docker-swarm.webp
+darkthumbnail: ./docker-swarm.webp
+date: 2023-05-18 10:30:05 -0530
+category: Docker
+tags: 
+- Meshery
+- Tutorial
+type: Tutorial
+product: Meshery
+technology: Docker
+featured: false
+published: true
+resource: true
+---
+
+import {ResourcesWrapper} from "../../Resources.style.js";
+import {Link} from "gatsby"
+
+<ResourcesWrapper>
+<p>
+Docker Swarm is a{" "}
+<Link to="../../articles/kubernetes/management-of-kubernetes">
+container orchestration
+</Link>{" "}
+tool that makes it easy to manage and scale your existing Docker
+infrastructure. It consists of a pool of Docker hosts that run in Swarm
+mode with some nodes acting as managers, workers, or both. Using Docker
+Swarm mode to manage your Docker containers brings the following
+benefits:
+</p>
+<ul>
+<li>It allows you to incrementally apply updates with zero downtime.</li>
+<li>
+It increases application resilience to outages by reconciling any
+differences between the actual state and your expressed desired state.
+</li>
+<li>
+It eases the process of scaling your applications since you only need to
+define the desired number of replicas in the cluster.
+</li>
+<li>
+It is built into the <code>docker</code> CLI, so you don't need
+additional software to get up and running.
+</li>
+<li>
+It enables multi-host networking such that containers deployed on
+different nodes can communicate with each other easily.
+</li>
+</ul>
+<p>
+In this tutorial, you will learn key concepts in Docker Swarm and set up a
+highly available Swarm cluster that is resilient to failures. You will
+also learn some best practices and recommendations to ensure that your
+Swarm setup is fault tolerant.
+</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>
+Before proceeding with this tutorial, ensure that you have access to five
+Ubuntu 22.04 servers. This is necessary to demonstrate a highly available
+set up, although it is also possible to run Docker Swarm on a single
+machine. You also need to configure each server with a user that has
+administrative privileges.
+</p>
+<p>
+The following ports must also be available on each server for communication
+purposes between the nodes. On Ubuntu 22.04, they are open by default:
+</p>
+<ul>
+<li>TCP port 2377 for cluster management communications,</li>
+<li>TCP and UDP port 7946 for communication among nodes,</li>
+<li>TCP and UDP port 4789 for overlay network traffic.</li>
+</ul>
+<h2 id="explaining-docker-swarm-terminology">Explaining Docker Swarm terminology</h2>
+<p>
+Before proceeding with this tutorial, let's examine some terms and
+definitions in Docker Swarm so that you have enough understanding of what
+each one means when they are used in this article and in other Docker Swarm
+resources.
+</p>
+
+<div>
+    <ul>
+    <li>
+        <strong>Node</strong>: refers to an instance of the Docker engine in the Swarm cluster.
+    </li>
+    <li>
+        <strong>Manager nodes</strong>: they are tasked with handling orchestration and cluster management functions, and dispatching incoming tasks to worker nodes. They can also act as worker nodes unless placed in Drain mode (recommended).
+    </li>
+    <li>
+        <strong>Leader</strong>: this is a specific manager node that is elected to perform orchestration tasks and management/maintenance operations by all the manager nodes in the cluster using the <a rel="" target="_blank" className="whitespace-nowrap" href="https://raft.github.io/">Raft Consensus Algorithm</a>.
+    </li>
+    <li>
+        <strong>Worker nodes</strong>: are Docker instances whose sole purpose is to receive and execute Swarm tasks from manager nodes.
+    </li>
+    <li>
+        <strong>Swarm task</strong>: refers to a Docker container and the commands that run inside the container. Once a task is assigned to a node, it can run or fail but it cannot be transferred to a different node.
+    </li>
+    <li>
+        <strong>Swarm service</strong>: this is the mechanism for defining tasks that should be executed on a node. It involves specifying the container image and commands that should run inside the container.
+    </li>
+    <li>
+        <strong>Drain</strong>: means that new tasks are no longer assigned to a node, and existing tasks are reassigned to other available nodes.
+    </li>
+    </ul>
+    
+    <h2 id="docker-swarm-requirements-for-high-availability">Docker Swarm requirements for high availability</h2>
+    <p>A highly available Docker Swarm setup ensures that if a node fails, services on the failed node are re-provisioned and assigned to other available nodes in the cluster. A Docker Swarm setup that consists of one or two manager nodes is not considered highly available because any incident will cause operations on the cluster to be interrupted. Therefore the minimum number of manager nodes in a highly available Swarm cluster should be three.</p>
+    <p>The table below shows the number of failures a Swarm cluster can tolerate depending on the number of manager nodes in the cluster:</p>
+    <div>
+    <table>
+        <thead>
+        <tr>
+            <th>Manager Nodes</th>
+            <th>Failures tolerated</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>As you can see, having an even number of manager nodes does not help with failure tolerance, so you should always maintain an odd number of manager nodes. Fault tolerance improves as you add more manager nodes, but Docker recommends no more than seven managers so that performance is not negatively impacted since each node must acknowledge proposals to update the state of the cluster.</p>
+    <p>You should also distribute your manager nodes in separate locations so they are not affected by the same outage. If they run on the same server, a hardware problem could cause them all to go down. The high availability Swarm cluster that you will be set up in this tutorial will therefore exhibit the following characteristics:</p>
+    <ul>
+    <li>5 total nodes (2 workers and 3 managers) with each one running on a separate server.</li>
+    <li>2 worker nodes (<code>worker-1</code> and <code>worker-2</code>).</li>
+    <li>3 manager nodes (<code>manager-1</code>, <code>manager-2</code>, and <code>manager-3</code>).</li>
+    </ul>
+    
+    <h2 id="step-1-installing-docker">Step 1 — Installing Docker</h2>
+    <p>In this step, you will install Docker on all five Ubuntu servers. Therefore, execute all the commands below (and in step 2) on all five servers. If your host offers a snapshot feature, you may be able to run the commands on a single server and use that server as a base for the other four instances.</p>
+    <p>Let's start by installing the latest version of the Docker Engine (20.10.18 at the time of writing). Go ahead and update the package information list from all configured sources on your system:</p>
+    <pre>
+    <code>
+        sudo apt update
+    </code>
+    </pre>
+    <p>Afterward, install the following packages to allow <code>apt</code> to use packages over HTTPS:</p>
+    <pre>
+    <code>
+        sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    </code>
+    </pre>
+    <p>Next, add the GPG key for the official Docker repository to the server:</p>
+    <pre>
+    <code>
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    </code>
+    </pre>
+    <p>Once the GPG key is added, include the official Docker repository in the server's apt sources list:</p>
+    <pre>
+    <code>
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+    </code>
+    </pre>
+    <p>Finally, update apt once again and install the Docker Engine:</p>
+    <pre>
+    <code>
+        sudo apt update
+    </code>
+    </pre>
+    <pre>
+    <code>
+        sudo apt install docker-ce
+    </code>
+    </pre>
+    <p>Once the relevant packages are installed, you can check the status of the <code>docker</code> service using the command below:</p>
+    <pre>
+    <code>
+        sudo systemctl status docker
+    </code>
+    </pre>
+    <p>If everything goes well, you should observe that the container engine is active and running on your server.</p>
+    
+    <h2 id="step-2-executing-the-docker-command-without-sudo">Step 2 — Executing the Docker command without sudo</h2>
+    <p>By default, the <code>docker</code> command can only be executed by the root user or any user in the <code>docker</code> group (auto created on installation). If you execute a <code>docker</code> command without prefixing it with <code>sudo</code> or running it through a user that belongs to the <code>docker</code> group, you will get a permission error that looks like this:</p>
+    <pre>
+    <code>
+        Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": dial unix /var/run/docker.sock: connect: permission denied
+    </code>
+    </pre>
+    <p>As mentioned earlier, using <code>sudo</code> with <code>docker</code> is a security risk, so the solution to the above error is to add the relevant user to the <code>docker</code> group. This can be achieved through the command below:</p>
+    <pre>
+    <code>
+        sudo usermod -aG docker $USER
+    </code>
+    </pre>
+    <p>Next, run the following command and enter the user's password when prompted for the changes to take effect:</p>
+    <pre>
+    <code>
+        su - $USER
+    </code>
+    </pre>
+    <p>You should now be able to run <code>docker</code> commands without prefixing them with <code>sudo</code>. For example, when you run the command <code>docker ps</code>, you should observe the output.</p>
+    <p>Before proceeding to the next step, ensure that all the commands in step 1 and step 2 have been executed on all five servers.</p>
+    
+    <h2>Step 3 — Initializing the Swarm Cluster</h2>
+    <p>At this point, each of your five Docker instances are acting as separate hosts and not as part of a Swarm cluster. Therefore, in this step, we will initialize the Swarm cluster on the <code>manager-1</code> server and add the hosts to the cluster accordingly.</p>
+    <p>Start by logging into one of the Ubuntu servers (<code>manager-1</code>) and retrieve the private IP address of the machine using the following command:</p>
+    <pre>
+    <code>hostname -I | awk '&#123;print $1&#125;'
+    </code>
+    </pre>
+    <p>Copy the IP address to your clipboard and replace the <code>&lt;manager_1_server_ip&gt;</code> placeholder in the command below to initialize Swarm mode:</p>
+    <pre>
+    <code>
+        docker swarm init --advertise-addr &lt;manager_1_server_ip&gt;
+    </code>
+    </pre>
+    <p>If the command is successful, you will see output indicating that the Swarm has been initialized and that the current node is now a manager. It will also provide a command to join worker nodes to the cluster. Copy the command for later use.</p>
+    
+    <p>Next, SSH into each of the other four Ubuntu servers (manager-2, manager-3, worker-1, and worker-2) and run the command you copied earlier to join them to the Swarm cluster. The command should look like this:</p>
+    <pre>
+    <code>
+        docker swarm join --token &lt;token&gt; &lt;manager_1_server_ip&gt;:&lt;port&gt;
+    </code>
+    </pre>
+    
+    <p>After running the command on each server, you should see output indicating that the node has joined the Swarm as either a manager or a worker. To verify the status of the Swarm cluster, you can run the command <code>docker node ls</code> on the manager node:</p>
+    <pre>
+    <code>
+        docker node ls
+    </code>
+    </pre>
+    
+    <p>You should see a list of all the nodes in the Swarm cluster, including their IDs, hostname, status, availability, and whether they are a manager or a worker.</p>
+    
+    <h2>Step 4 — Deploying the Application Stack</h2>
+    <p>Now that you have a functioning Docker Swarm cluster, you can deploy your application stack. In this tutorial, we will use a simple example of a web application stack consisting of a front-end service and a back-end service.</p>
+    
+    <p>Start by creating a new directory for your application stack on the manager node:</p>
+    <pre>
+    <code>
+        mkdir app-stack
+        cd app-stack
+    </code>
+    </pre>
+    
+    <p>Next, create a file called <code>docker-compose.yml</code> in the <code>app-stack</code> directory and open it in a text editor:</p>
+    <pre>
+    <code>
+        nano docker-compose.yml
+    </code>
+    </pre>
+    
+    <p>Copy and paste the following YAML code into the <code>docker-compose.yml</code> file:</p>
+    <pre>
+    <code>
+        version: '3.8'
+        
+        services:
+        frontend:
+            image: nginx:latest
+            ports:
+            - 80:80
+            deploy:
+            replicas: 2
+            restart_policy:
+                condition: on-failure
+        
+        backend:
+            image: httpd:latest
+            ports:
+            - 8080:80
+            deploy:
+            replicas: 2
+            restart_policy:
+                condition: on-failure
+    </code>
+    </pre>
+    
+    <p>This Docker Compose file defines two services: <code>frontend</code> and <code>backend</code>. The <code>frontend</code> service uses the <code>nginx:latest</code> image and maps port 80 of the host to port 80 of the container. It is configured to have 2 replicas and to restart on failure. The <code>backend</code> service uses the <code>httpd:latest</code> image and maps port 8080 of the host to port 80 of the container. It is also configured to have 2 replicas and to restart on failure.</p>
+    
+    <p>Save and close the <code>docker-compose.yml</code> file.</p>
+    
+    <p>To deploy the application stack, run the following command:</p>
+    <pre>
+    <code>
+        docker stack deploy -c docker-compose.yml app-stack
+    </code>
+    </pre>
+    
+    <p>If the command is successful, you should see output indicating that the services are being deployed. You can check the status of the services by running the command <code>docker service ls</code>:</p>
+    <pre>
+    <code>
+        docker service ls
+    </code>
+    </pre>
+    
+    <p>You should see a list of the services in the stack, including their names, mode, replicas, and ports.</p>
+    
+    <h2>Conclusion</h2>
+    <p>In this tutorial, you learned how to set up a highly available Docker Swarm cluster and deploy a simple application stack. This setup provides fault tolerance and load balancing for your applications, allowing you to scale them easily as your needs grow.</p>
+    
+    <p>Next steps:</p>
+    <ul>
+    <li>Explore more Docker Swarm features, such as service updates and rolling updates.</li>
+    <li>Deploy your own application stack using Docker Compose.</li>
+    <li>Learn about Docker networking and how to create overlay networks.</li>
+    </ul>
+</div>
+
+</ResourcesWrapper>

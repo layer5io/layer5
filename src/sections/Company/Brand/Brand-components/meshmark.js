@@ -5,15 +5,15 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshmarkDark from "../../../../assets/images/meshmark/icon/meshmark-dark.png";
-import MeshmarkLight from "../../../../assets/images/meshmark/icon/meshmark-light.png";
-import MeshmarkWhite from "../../../../assets/images/meshmark/icon/meshmark-white.png";
-import MeshmarkLightTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-light-text-side.png";
-import MeshmarkDarkTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-dark-text-side.png";
-import MeshmarkWhiteTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-white-text-side.png";
-import MeshmarkTextLight from "../../../../assets/images/meshmark/text/meshmark-light-text-charcoal.png";
-import MeshmarkTextDark from "../../../../assets/images/meshmark/text/meshmark-dark-text.png";
-import MeshmarkTextBlue from "../../../../assets/images/meshmark/text/meshmark-light-text-blue.png";
+import MeshmarkDark from "../../../../assets/images/meshmark/icon/meshmark-dark.webp";
+import MeshmarkLight from "../../../../assets/images/meshmark/icon/meshmark-light.webp";
+import MeshmarkWhite from "../../../../assets/images/meshmark/icon/meshmark-white.webp";
+import MeshmarkLightTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-light-text-side.webp";
+import MeshmarkDarkTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-dark-text-side.webp";
+import MeshmarkWhiteTextSide from "../../../../assets/images/meshmark/horizontal/meshmark-white-text-side.webp";
+import MeshmarkTextLight from "../../../../assets/images/meshmark/text/meshmark-light-text-charcoal.webp";
+import MeshmarkTextDark from "../../../../assets/images/meshmark/text/meshmark-dark-text.webp";
+import MeshmarkTextBlue from "../../../../assets/images/meshmark/text/meshmark-light-text-blue.webp";
 
 const SMPWrap = styled.section`
     .smp-logo {

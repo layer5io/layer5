@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import Bg1 from "../../assets/images/app/features/bg-1.png";
-import Bg2 from "../../assets/images/app/features/bg-2.png";
+import Bg1 from "../../assets/images/app/features/bg-1.webp";
+import Bg2 from "../../assets/images/app/features/bg-2.webp";
 
-import Vintage1 from "../../assets/images/app/features/vintage-1.png";
+import Vintage1 from "../../assets/images/app/features/vintage-1.webp";
 import MeshSyncLogo from "./img/meshsync.svg";
 const FeturesSectionWrapper = styled.section`
    padding: 95px 0 50px 0;

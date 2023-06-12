@@ -6,8 +6,8 @@ import MeshmapModes from "./meshmap-modes";
 import Catalog from "./meshmap-catalog";
 import Platform from "./meshmap-platform";
 import MeshmapBanner from "./meshmap_banner";
-import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
-import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
+import designerImage from "../../assets/images/meshmap/MeshmapDesigner.webp";
+import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.webp";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
@@ -27,10 +27,10 @@ import { ReactComponent as Collab2 } from "./FeaturesSection/Collaborate/images/
 import { ReactComponent as Collab3 } from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
 import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 
-import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.png";
-import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.png";
-import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.png";
-import Kaur from "../../sections/Pricing/reviews/kaur-kallas.jpg";
+import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.webp";
+import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.webp";
+import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.webp";
+import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";

@@ -11,7 +11,7 @@ const StewardsOfIndustry = () => {
     graphql`
       query {
         backgroundImage123: file(
-          relativePath: { eq: "stewards/stewards.png" }
+          relativePath: { eq: "stewards/stewards.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(

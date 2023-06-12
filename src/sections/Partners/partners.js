@@ -1,8 +1,13 @@
 import React from "react";
-import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
+import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
 import partner2 from "../../assets/images/partners/gsoc.svg";
-import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
+import partner3 from "../../assets/images/partners/UEM_Logo.webp";
 import partner4 from "../../assets/images/partners/citrix.svg";
+
+import partner14 from "../../assets/images/partners/metabit-trading-logo-gray.svg";
+import lightpartner14 from "../../assets/images/partners/metabit-trading-white.svg";
+
+
 import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
 import { ReactComponent as Partner5DarkMode } from "../../assets/images/partners/cncf/stacked/white/cncf-stacked-white.svg";
 import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
@@ -13,6 +18,7 @@ import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-co
 import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-colorMode.svg";
 import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
+
 
 export const partners = [
   {
@@ -134,6 +140,17 @@ export const partners = [
     //imageRoute: "https://www.vmware.com/",
     moreInfo:
       "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
+  }, {
+    name: "Metabit Trading",
+    desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
+    //link: null,
+    type: "technology",
+    imageLink: partner14,
+    darkimageLink: lightpartner14,
+    partnerId: "metabittrading",
+    //imageRoute: "https://www.metabit-trading.com/home",
+    moreInfo:
+      "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
   }
 
 

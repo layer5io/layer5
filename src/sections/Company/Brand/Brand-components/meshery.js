@@ -4,10 +4,10 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.png";
-import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png";
-import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.png";
-import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-logo-dark.png";
+import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.webp";
+import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.webp";
+import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.webp";
+import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-logo-dark.webp";
 
 
 const MesheryBrand = () => {

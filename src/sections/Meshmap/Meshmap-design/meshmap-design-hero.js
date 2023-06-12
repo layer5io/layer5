@@ -16,9 +16,9 @@ const HeroSectionWrapper = styled.div`
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2% 5% 8%;
+    padding: 3% 5% 8%;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    
+
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -27,15 +27,15 @@ const HeroSectionWrapper = styled.div`
     .hero-text {
         display: flex;
         flex-direction: column;
-        flex: 0 0 30%;
-        max-width: 30%;
-        /* padding-bottom: 3rem; */
+        flex: 0 0 35%;
+        margin-top: 5%;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
+          margin-top: 15%;
         }
     }
 
-    h1 {
+    h2 {
       padding-bottom: 2%;
     }
 
@@ -44,7 +44,7 @@ const HeroSectionWrapper = styled.div`
         grid-template-rows: 5rem 5rem;
         place-items: center;
         margin: 5% 0;
-        flex: 0 0 60%;
+        flex: 0 0 50%;
         max-width: 60%;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
@@ -87,13 +87,13 @@ const MeshmapHeroSection = () => {
 
   return (
     <HeroSectionWrapper>
+      <div className="hero-text">
+        <h2><span>Design your infrastructure</span></h2>
+        <p>MeshMap is the world’s only visual designer for Kubernetes and cloud native applications. Design, deploy, and manage your Kubernetes-based, cloud native deployments allowing you to speed up infrastructure configuration.</p>
+      </div>
       <div className="hero-image">
         <img className={imageInView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
         <img className={imageInView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
-      </div>
-      <div className="hero-text">
-        <h1><span>Design your infrastructure</span></h1>
-        <p>Play with powerful features including context-aware designs and namespace configurations to easily manage all services.</p>
       </div>
     </HeroSectionWrapper>
 
