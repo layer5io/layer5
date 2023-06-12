@@ -33,7 +33,11 @@ const MemberBio = ({ frontmatter, body }) => {
             <Col xs={12} sm={12} lg={9}>
               <div className="header">
                 <div className="name">{name}</div>
-                {executive_position && <div className="position">{executive_position}, {company}</div>}
+                {executive_position && (
+                  <div className="position">
+                    {executive_position}, {company}
+                  </div>
+                )}
               </div>
             </Col>
             <Col xs={12} sm={12} lg={3}>
@@ -82,13 +86,6 @@ const MemberBio = ({ frontmatter, body }) => {
                       <li>
                         <a href={`https://Linkedin.com/in/${linkedin}`}>
                           <FaLinkedin className="linkedin" size={32} />
-                        </a>
-                      </li>
-                    )}
-                    {email && (
-                      <li>
-                        <a href={`mailto:=${email}`}>
-                          <MdMail className="github" size={32} />
                         </a>
                       </li>
                     )}

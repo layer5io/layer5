@@ -27,6 +27,7 @@ import Button from "../../../reusecore/Button";
 const MemberSingle = ({ frontmatter }) => {
   const {
     name,
+    uuid,
     position,
     github,
     twitter,
@@ -196,7 +197,7 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("ui-ux") && (
                         <li>
-                          <Link to="../../handbook/designer" >
+                          <Link to="../../handbook/designer">
                             <img
                               className="profile-social-links"
                               src={uiuxrLogo}
@@ -223,13 +224,13 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
-                  {executive_bio &&
+                  {executive_bio && (
                     <li>
                       <Link to="bio">
                         <FaUserTie className="bio" size={32} />
                       </Link>
                     </li>
-                  }
+                  )}
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>
@@ -251,6 +252,13 @@ const MemberSingle = ({ frontmatter }) => {
                       </a>
                     </li>
                   )}
+                  {
+                    <li>
+                      <a href="https://layer5.io/cloud-native-management/meshery">
+                        <img src="https://layer5.io/static/80fdb4f718709a96dfb6dc09bb1e25df/61ca6/meshery-logo-light.webp"></img>
+                      </a>
+                    </li>
+                  }
                   {meshmate && (
                     <li>
                       <Link to="/community/meshmates">
