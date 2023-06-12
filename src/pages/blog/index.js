@@ -82,7 +82,6 @@ const Blog = (props) => {
         setListView={setListView}
         setGridView={setGridView}
         pageContext={props.pageContext}
-        // data={props.data}
         searchedPosts={searchedPosts}
         setCurrentPage={setCurrentPage}
         postsPerPage={postsPerPage}

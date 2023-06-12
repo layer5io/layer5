@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useDataList from "../utils/usedataList";
 
 
@@ -66,7 +66,6 @@ const BlogListPage = ({ pageContext, data }) => {
   return (
 
     <>
-
 
       <BlogList
         data={data}

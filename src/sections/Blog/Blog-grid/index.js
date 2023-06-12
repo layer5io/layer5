@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
@@ -8,7 +8,6 @@ import Card from "../../../components/Card";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import SearchBox from "../../../reusecore/Search";
 import Pagination from "../../Resources/Resources-grid/paginate";
-import useDataList from "../../../utils/usedataList";
 
 const BlogGrid = ({
   isListView,
@@ -23,19 +22,6 @@ const BlogGrid = ({
   queryResults,
   postsPerPage,
 }) => {
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage] = useState(10);
-  // const indexOfLastPost = currentPage * postsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const { queryResults, searchData } = useDataList(
-  //   data.allMdx.nodes,
-  //   setSearchQuery,
-  //   searchQuery,
-  //   ["frontmatter", "title"],
-  //   "id"
-  // );
-  // const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
