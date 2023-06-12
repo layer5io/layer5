@@ -36,6 +36,9 @@ p {
       color: ${props => props.theme.whiteToBlack};
       padding: 0;
     }
+    p{
+      color: ${props => props.theme.whiteToBlack}
+    }
     Button {
       margin: 1rem 0;
     }
