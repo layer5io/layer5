@@ -254,8 +254,14 @@ const MemberSingle = ({ frontmatter }) => {
                   )}
                   {
                     <li>
-                      <a href="https://layer5.io/cloud-native-management/meshery">
-                        <img src="https://layer5.io/static/80fdb4f718709a96dfb6dc09bb1e25df/61ca6/meshery-logo-light.webp"></img>
+                      <a
+                        href="https://layer5.io/cloud-native-management/meshery"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://layer5.io/static/80fdb4f718709a96dfb6dc09bb1e25df/61ca6/meshery-logo-light.webp"
+                          alt="Meshery"
+                        ></img>
                       </a>
                     </li>
                   }

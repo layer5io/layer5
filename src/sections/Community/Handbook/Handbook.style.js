@@ -344,8 +344,7 @@ export const HandbookWrapper = styled.div`
 
     .channels-para {
       display: flex;
-      align-items: flex-end;
-      
+      align-items: flex-end;      
     }
 
     .newcomers-journey{

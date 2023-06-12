@@ -19,7 +19,7 @@ const PartnerItemWrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    @media (max-width: 1400px) {
+    @media screen and (max-width: 1400px) {
       flex-wrap: wrap;
     }
   }
