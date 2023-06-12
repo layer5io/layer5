@@ -9,7 +9,7 @@ import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
+import Lee_workshop from "../../assets/images/community/Lee_Workshop.webp";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -18,7 +18,7 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
+const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
 const CommunityPage = () => {
 
@@ -26,7 +26,7 @@ const CommunityPage = () => {
     graphql`
       query {
         backgroundImage123: file(
-          relativePath: { eq: "bookmarks.jpg" }
+          relativePath: { eq: "bookmarks.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(

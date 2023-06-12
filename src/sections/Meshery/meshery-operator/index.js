@@ -12,7 +12,7 @@ import SubscribeSection from "../../../sections/subscribe/subscribe";
 import Deployment from "./deployment.svg";
 import Initialization from "./initialization.svg";
 
-const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.png";
+const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.webp";
 
 const MesheryOperatorPage = () => {
   return (

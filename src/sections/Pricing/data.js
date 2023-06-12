@@ -9,6 +9,7 @@ import Identity from "./icons/identity.svg";
 import Notification from "./icons/notification.svg";
 import Configuration from "./icons/configuration.svg";
 import Perforamance from "./icons/perf.svg";
+import comingSoon from "./icons/coming-soon.webp";
 
 export const details = [
   {
@@ -386,7 +387,7 @@ export const options = [
     featured: false,
     monthlyprice: 15.99,
     yearlyprice: 180,
-    pricing_coming_soon: <img src="https://user-images.githubusercontent.com/7570704/222531680-8f711edc-c4bd-4812-aa25-307fa78191ac.png"></img>,
+    pricing_coming_soon: <img src={comingSoon}></img>,
     byline: "Everything in Team, plus:",
     button: ["Coming Soon", ""],
     summary: [

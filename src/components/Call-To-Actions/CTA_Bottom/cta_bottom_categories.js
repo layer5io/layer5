@@ -1,5 +1,5 @@
-import img_source from "../../../assets/images/callout/callout.png";
-import meshmap_icon from "../../../assets/images/meshmap/icon-only/meshmap-icon.png";
+import img_source from "../../../assets/images/callout/callout.webp";
+import meshmap_icon from "../../../assets/images/meshmap/icon-only/meshmap-icon.webp";
 import docker from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 
 export const Categories = {

@@ -5,6 +5,7 @@ import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
+import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
@@ -22,6 +23,7 @@ const IndexPage = () => {
       <Banner />
       <Integrations />
       <Partners />
+      <CornerPopup/>
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
@@ -49,7 +51,7 @@ export const Head = () => {
     "@type": "Corporation",
     "name": "Layer5",
     "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-gradient.png",
+    "logo": "https://layer5.io/images/layer5-gradient.webp",
     "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",

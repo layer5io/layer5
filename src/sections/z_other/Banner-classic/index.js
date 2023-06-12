@@ -8,9 +8,9 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
 import { FaDownload } from "@react-icons/all-files/fa/FaDownload";
 
-import AppScreenImage from "../../../assets/images/classic/app-screen.png";
-import AppScreenThumb1 from "../../../assets/images/classic/app-screen-thumb-1.png";
-import AppScreenThumb2 from "../../../assets/images/classic/app-screen-thumb-2.png";
+import AppScreenImage from "../../../assets/images/classic/app-screen.webp";
+import AppScreenThumb1 from "../../../assets/images/classic/app-screen-thumb-1.webp";
+import AppScreenThumb2 from "../../../assets/images/classic/app-screen-thumb-2.webp";
 
 import BannerSectionWrapper from "./banner.style";
 

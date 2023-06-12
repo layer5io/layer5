@@ -3,7 +3,7 @@ import SEO from "../../components/seo";
 
 
 import Meshmates from "../../sections/Community/Meshmates";
-import seoImage from "../../assets/images/meshmate/meshmate-icon.png";
+import seoImage from "../../assets/images/meshmate/meshmate-icon.webp";
 const MeshmatePage = () => {
   return (
     <>

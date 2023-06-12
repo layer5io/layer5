@@ -4,8 +4,8 @@ subtitle: ""
 date: 2022-08-29 00:00:08 +0000
 category: Coverage
 author: Bill Doerrfeld
-thumbnail: ./tools.jpg
-darkthumbnail: ./tools.jpg
+thumbnail: ./tools.webp
+darkthumbnail: ./tools.webp
 eurl: https://containerjournal.com/features/the-ultimate-list-of-open-source-cloud-native-tools/
 published: true
 type: News

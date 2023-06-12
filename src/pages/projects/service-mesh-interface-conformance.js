@@ -17,5 +17,5 @@ export const Head = () => {
     description="Layer5 is the maker of Meshery and Service Mesh Performance (SMP) and maintainers of Service Mesh Interface (SMI).
             We are the largest collection of cloud native projects and their maintainers in the world.
             Contact Layer5 for help with operating a service mesh."
-    image="/images/servicemeshinterface-icon-color.png" />;
+    image="/images/servicemeshinterface-icon-color.webp" />;
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import layer5_img from "./layer5-white.png";
+import layer5_img from "./layer5-white.webp";
 
 const sortByLen = (rowA, rowB, id, desc) => {
 
