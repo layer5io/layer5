@@ -4,15 +4,17 @@ export const HPEfacts = styled("table")(({ theme }) => ({
   backgroundColor: "#212121",
   borderRadius: "0.5rem",
   marginBottom: "1rem",
-  color: `${theme.secondaryLightColorTwo}`,
+  color: "#FFF",
 
   " > tr:first-child": {
-    color: `${theme.secondaryLightColorTwo}`,
+    color: `${theme.body}`,
     padding: "0rem",
   },
 
   " > tr:first-child td": {
-    color: `${theme.secondaryLightColorTwo}`,
+    h4: {
+      color: `${theme.white}`,
+    },
     backgroundColor: "#414141",
     padding: ".5rem",
     textAlign: "center",
@@ -25,7 +27,7 @@ export const HPEfacts = styled("table")(({ theme }) => ({
     marginRight: ".5rem",
     marginBottom: "0rem",
     paddingBottom: "0rem",
-  }
+  },
 }));
 
 
@@ -38,9 +40,9 @@ export const HPEintro = styled("div")(({ theme }) => ({
   fontStyle: "italic",
   fontSize: "1.5rem",
 
-  borderTop: `1px dashed ${theme.primaryLightColor}`,
-  borderBottom: `1px dashed ${theme.primaryLightColor}`,
+  borderTop: `1px dashed ${theme.text}`,
+  borderBottom: `1px dashed ${theme.text}`,
   marginBottom: "1rem",
 
-  backgroundColor: `${theme.secondaryLightColorTwo}`,
+  backgroundColor: `${theme.body}`,
 }));
