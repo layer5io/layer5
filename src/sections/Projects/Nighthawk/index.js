@@ -10,9 +10,9 @@ import cpu from "./images/cpu_green.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
 
-const explain1 = "./images/Rectangle 479.png";
-const explain2 = "./images/optimizing-your-average-response-time.png";
-const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.png";
+const explain1 = "./images/Rectangle 479.webp";
+const explain2 = "./images/optimizing-your-average-response-time.webp";
+const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.webp";
 
 import { Gnhwrapper, CardsContainer } from "./gnh.style";
 
@@ -97,7 +97,7 @@ const Projects = () => {
               <div className="text">
                 <h2>Easing Management of the Nighthawk Lifecycle</h2>
                 <p>As with a lot of open source projects, there is a lack of consistent tooling. This makes it difficult to have easily repeatable tests in that the building, deploying, and maintaining of Nighthawk instances (potentially a fleet of Nighthawk instances) is a burden without additional tooling. </p>
-                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" />
+                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" external={true}/>
               </div>
             </Col>
           </Row>
@@ -122,20 +122,19 @@ const Projects = () => {
                     <img src={cloud} alt="cloud image" />
                   </div>
                   <h2>Nighthawk Distribution</h2>
-                  <p>Stable builds available for:
-                    <ul>
-                      <li>Debian</li>
-                      <li>CentOS</li>
-                      <li>Unbuntu</li>
-                      <li>macOS</li>
-                      <li>Docker</li>
-                    </ul>
-                      In these package managers:
-                    <ul>
-                      <li>Homebrew</li>
-                      <li>Scoop</li>
-                    </ul>
-                  </p>
+                  <p>Stable builds available for:</p>
+                  <ul>
+                    <li>Debian</li>
+                    <li>CentOS</li>
+                    <li>Unbuntu</li>
+                    <li>macOS</li>
+                    <li>Docker</li>
+                  </ul>
+                  <p>In these package managers:</p>
+                  <ul>
+                    <li>Homebrew</li>
+                    <li>Scoop</li>
+                  </ul>
                 </div>
                 <div className="card">
                   <div className="circle">
@@ -163,45 +162,47 @@ const Projects = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="listed">
                 <table className="table">
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                  <tbody>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Further the state of distributed <br />
                         performance management.
-                      </h4>
+                        </h4>
                       Enable standards-based, distributed performance management through compatibility with the Service Mesh Performance (SMP) specification.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Facilitate Nighthawk adoption.
-                      </h4>
+                        </h4>
                       Deliver trusted, certified builds, distributed via the most popular package managers: apt, yum, Homebrew, and platforms: Docker and Meshery.
                       Bridge Nighthawk’s C++ with the lingua franca of Cloud Native: Golang.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Deliver easy-to-use, repeatable <br />
                         tooling.
-                      </h4>
+                        </h4>
                       To leverage Nighthawk as the performance characterization tool as used in the 30 patterns in the Service Mesh Patterns book.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                    <td className="service">
-                      <h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                      <td className="service">
+                        <h4>
                         Educate the ecosystem
-                      </h4>
+                        </h4>
                       Educate the ecosystem through the CNCF Service Mesh Working Group.
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </Col>

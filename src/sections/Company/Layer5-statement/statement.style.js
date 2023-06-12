@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
+import imgHero from "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.webp";
 
 
 const BannerSectionWrapper = styled.section`
@@ -35,7 +35,10 @@ const BannerSectionWrapper = styled.section`
     }
     h2.statement {
         color: ${(props) => props.theme.white};
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+    span.span-text{
+        color: ${(props) => props.theme.white};
     }
     h3.statement {
         color: ${(props) => props.theme.white};

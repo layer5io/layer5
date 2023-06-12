@@ -19,6 +19,10 @@ import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg"
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writerIcon from "../../../assets/images/writer-program/writer-program-badge.svg";
+import docsLogo from "../../../assets/images/docs/docs.svg";
+import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
+import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import Button from "../../../reusecore/Button";
 
 const MemberSingle = ({ frontmatter }) => {
@@ -125,6 +129,50 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
+                      {badges.includes("docs") && (
+                        <li>
+                          <Link to="https://docs.meshery.io/">
+                            <img
+                              className="profile-social-links"
+                              src={docsLogo}
+                              alt="Docs logo"
+                            />
+                          </Link>
+                        </li>
+                      )}
+                      {badges.includes("meshery-catalog") && (
+                        <li>
+                          <Link to="https://meshery.io/catalog">
+                            <img
+                              className="profile-social-links"
+                              src={mesheryCatalogLogo}
+                              alt="Meshery Catalog logo"
+                            />
+                          </Link>
+                        </li>
+                      )}
+                      {badges.includes("meshmap") && (
+                        <li>
+                          <Link to="/meshmap" >
+                            <img
+                              className="profile-social-links"
+                              src={meshMapLogo}
+                              alt="MeshMap Logo"
+                            />
+                          </Link>
+                        </li>
+                      )}
+                      {badges.includes("docker-extension") && (
+                        <li>
+                          <Link to="/docker-extension-meshery">
+                            <img
+                              className="profile-social-links"
+                              src={dockerExtensionLogo}
+                              alt="Docker Extension logo"
+                            />
+                          </Link>
+                        </li>
+                      )}
                       {badges.includes("nighthawk") && (
                         <li>
                           <Link to="/projects/nighthawk">
@@ -160,11 +208,13 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("ui-ux") && (
                         <li>
-                          <img
-                            className="profile-social-links"
-                            src={uiuxrLogo}
-                            alt="UI/UX'er Logo"
-                          />
+                          <Link to="../../handbook/designer" >
+                            <img
+                              className="profile-social-links"
+                              src={uiuxrLogo}
+                              alt="UI/UX'er Logo"
+                            />
+                          </Link>
                         </li>
                       )}
                       {badges.includes("writer") && (

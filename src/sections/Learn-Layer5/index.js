@@ -6,7 +6,7 @@ import { Row, Col, Container } from "../../reusecore/Layout";
 import CardComponent from "../../components/Learn-Components/Card-Component";
 import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
-import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
+import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import JoinCommunity from "../Community/Join-community";
 import Button from "../../reusecore/Button";
 
@@ -120,7 +120,7 @@ const LearnPathsPage = () => {
           <div className="service-mesh-patterns_text-and_button">
             <h1>Use Service Mesh Patterns</h1>
             <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
-            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external="true" />
+            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
           </div>
         </div>
         <JoinCommunity

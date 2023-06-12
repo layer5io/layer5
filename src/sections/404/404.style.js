@@ -9,6 +9,7 @@ const L404SectionWrapper = styled.section`
     h1.message {
         font-size: 2rem;
         line-height: 2rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h2.subtitle {      
         font-weight: 400;       

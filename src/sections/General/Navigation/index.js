@@ -33,10 +33,9 @@ const Navigation = () => {
         thumbnail {
           childImageSharp {
             gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
+              width: 1050
+              height:1360
+              layout: CONSTRAINED
             )
           }
           publicURL
@@ -227,6 +226,8 @@ const Navigation = () => {
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
                   {Data.menuItems.map((menu, index) => (
+
+
                     <li
                       key={index}
                       className={
@@ -235,19 +236,29 @@ const Navigation = () => {
                     >
                       <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                       <ul>
-                        {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
-                          <li
-                            key={index}
-                            className="mobile-nav-subitem"
-                          >
-                            {subItems.name === "Forum" ?
-                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="mobile-sub-menu-item" rel="noreferrer">
-                                {subItems.name}
-                              </a>
-                              : <Link to={subItems.path} onClick={changeDropdownState} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
-                            }
-                          </li>
-                        ))}
+                        {menu.subItems !== undefined && menu.subItems.map((subItems, index) => {
+                          const externalLinks = ["Forum", "Catalog", "Playground"];
+
+                          return (
+                            <li
+                              key={index}
+                              className="mobile-nav-subitem"
+                            >
+                              {externalLinks.includes(subItems.name) ?
+                                <a href={subItems.path} target="_blank" onClick={ () => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }} className="mobile-sub-menu-item" rel="noreferrer">
+                                  {subItems.name}
+                                </a>
+                                : <Link to={subItems.path} onClick={ () => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
+                              }
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
                   ))}
@@ -255,14 +266,14 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li>
-                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" />
+                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true}/>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <ul>
                     <li className="mobile-nav-item">
-                      <a href="https://meshery.layer5.io/login" className="menu-item" activeClassName="nav-link-active">Login</a>
+                      <a href="https://meshery.layer5.io/login" className="menu-item">Login</a>
                     </li>
                   </ul>
                 </div>

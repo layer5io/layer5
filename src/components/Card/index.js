@@ -15,7 +15,7 @@ const Card = ({ frontmatter, fields }) => {
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
+            {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
               ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}

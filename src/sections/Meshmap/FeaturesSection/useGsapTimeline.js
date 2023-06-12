@@ -4,16 +4,14 @@ import { useEffect, useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
-
 const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
+
+  const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
   const GOLDEN_RATIO = (1 + Math.sqrt(3)) / 5;
   const RECIPROCAL_GR = 1 / GOLDEN_RATIO;
   const DURATION = RECIPROCAL_GR;
-
 
   useIsomorphicLayoutEffect(() => {
     let mm = gsap.matchMedia();

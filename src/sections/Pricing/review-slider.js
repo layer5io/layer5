@@ -4,16 +4,17 @@ import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
-import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.jpg";
-import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
-import William from "./reviews/william-morgan.png";
-import Ken from "./reviews/ken-owens.png";
-import Deepak from "./reviews/deepak-dinesh.jpg";
-import Kaur from "./reviews/kaur-kallas.jpg";
+import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
+import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.webp";
+import Nic from "../../collections/members/nicholas-jackson/nic-jackson.webp";
+import William from "./reviews/william-morgan.webp";
+import Ken from "./reviews/ken-owens.webp";
+import Deepak from "./reviews/deepak-dinesh.webp";
+import Kaur from "./reviews/kaur-kallas.webp";
 import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
+import Alex from "./reviews/alex-hokanson.jpeg";
 
 
 const settings = {
@@ -21,9 +22,9 @@ const settings = {
   infinite: true,
   speed: 400,
   slidesToShow: 3,
-  slidesToScroll: 0.5,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 1500,
+  autoplaySpeed: 2000,
 
   responsive: [
     {
@@ -80,13 +81,13 @@ const Reviews = () => {
       <div className="slider">
         <h2>Hear what other users have to say...</h2>
         <Slider {...settings}>
-          <Customers
+          {/* <Customers
             type="1"
             quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
             person="Maximiliano Churichi"
             title="Software Engineer at HPE"
             image={Maxi}
-          />
+          /> */}
           <Customers
             type="2"
             quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
@@ -173,6 +174,14 @@ const Reviews = () => {
             title="Principal Developer Advocate at HashiCorp"
             image={Nic}
           />
+          <Customers
+            type="2"
+            quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            person="Alex"
+            title="Infrastructure Engineering at Docker, Inc."
+            image={Alex}
+          />
+
         </Slider>
       </div>
     </ReviewsWrapper>

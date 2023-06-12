@@ -42,7 +42,6 @@ export const query = graphql`
             extension
             publicURL
           }
-
         }
         fields {
           slug

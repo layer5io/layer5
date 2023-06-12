@@ -24,7 +24,7 @@ function initGTM() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "gtm.js", "gtm.start": new Date().getTime(), "gtm.uniqueEventId": 0 });
   };
-  script.src = "https://www.googletagmanager.com/gtm.js?id=G-MDVP5FT6JY";
+  script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PS26QB9";
   document.head.appendChild(script);
 }
 

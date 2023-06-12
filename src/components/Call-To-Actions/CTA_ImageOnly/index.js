@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import image_src from "../../../assets/images/callout/callout.png";
+import image_src from "../../../assets/images/callout/callout.webp";
 import styled from "styled-components";
 import { Categories } from "./cta_imageonly_categories";
 
@@ -31,7 +31,7 @@ const CTA_ImageOnlyWrapper = styled.div`
 
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
+const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
   return (
     <CTA_ImageOnlyWrapper {...props}>
       { category ? (
@@ -54,3 +54,5 @@ export const CTA_ImageOnly = ({ alt, category, image, url, blend }, props) => {
     </CTA_ImageOnlyWrapper>
   );
 };
+
+export default CTA_ImageOnly;

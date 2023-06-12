@@ -5,13 +5,14 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
 import Button from "../../../reusecore/Button";
+import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
 
 const Projects = () => {
   const projectsIcon = "./images/projects.svg";
 
-  const projectImage2 = "../../../assets/images/app/projects/smp.png";
-  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
-  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
+  const projectImage2 = "../../../assets/images/app/projects/smp.webp";
+  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
+  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
   const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
   return (
@@ -32,30 +33,22 @@ const Projects = () => {
         </Row>
         <Row>
           <div className="project__block__wrap">
-            {/* <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/service-mesh-landscape">
-                <div className="project__block__inner">
-                  <StaticImage src={projectImage1} alt="Landscape Logo" height={40} />
-                  <h5>Landscape</h5>
-                  <p>Service Mesh Ecosystem</p>
-                </div>
-              </Link>
-            </Col> */}
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
-                  <h3>MeshMap</h3>
-                  <p>Collaborative Infrastructure Management</p>
+                  <p>MeshMap</p>
+                  <h3>Collaborative GitOps</h3>
+                  {/* <h3>Multiplayer Kubernetes by Design</h3> */}
                 </div>
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo"  width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
-                  <h3>Meshery</h3>
-                  <p>Cloud Native Management</p>
+                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
+                  <p>Meshery</p>
+                  <h3>Cloud Native Management and Governance</h3>
                 </div>
               </Link>
             </Col>
@@ -63,17 +56,27 @@ const Projects = () => {
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }} />
-                  <h3>Service Mesh Performance</h3>
-                  <p>The Measurement Standard</p>
+                  <p>Cloud Native Performance</p>
+                  <h3>Infrastructure Value Measurement</h3>
                 </div>
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }}/>
-                  <h3>Nighthawk</h3>
-                  <p>Distributed Performance Management</p>
+                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
+                  <p>Nighthawk</p>
+                  <h3>Distributed Performance Management for Microservices</h3>
+                </div>
+              </Link>
+            </Col>
+            <Col sm={12} md={6} lg={3}>
+              <Link className="project-card" to="/catalog">
+                <div className="project__block__inner">
+                  {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
+                  <CatalogLogo height="40px" width="auto" style={{ margin: "10px auto", minHeight: "40px" }} />
+                  <p>Meshery Catalog</p>
+                  <h3>Patterns and Templates</h3>
                 </div>
               </Link>
             </Col>

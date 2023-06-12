@@ -23,7 +23,7 @@ Using `<CTA_FullWidth />` will render the full-width CTA with the default data h
 But,
 ```
 <CTA_FullWidth 
-  image={"./example.png"}
+  image={"./example.webp"}
   alt="Alternate text for Image"
   content="This is an example callout"
   button_text="Click Me"
