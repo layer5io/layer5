@@ -122,9 +122,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/playground"
-              className="project__card eleven"
-            >
+              to="/cloud-native-management/playground" className="project__card eleven">
               <div className="project__card-container-eleven">
                 <img src={meshery} alt="Service Mesh Patterns" />
                 <h5>Playground</h5>
