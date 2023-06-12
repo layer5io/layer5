@@ -17,9 +17,9 @@ const contents = [
 ];
 
 const contributingGuide = () => {
-  const Signoff = "../../../../.github/assets/images/git-signoff-vscode.png";
-  const compareAndPR = "../../../../.github/assets/images/compare-and-pr.png";
-  const createPR = "../../../../.github/assets/images/create-pr.png";
+  const Signoff = "../../../../.github/assets/images/git-signoff-vscode.webp";
+  const compareAndPR = "../../../../.github/assets/images/compare-and-pr.webp";
+  const createPR = "../../../../.github/assets/images/create-pr.webp";
 
   return (
     <HandbookWrapper>

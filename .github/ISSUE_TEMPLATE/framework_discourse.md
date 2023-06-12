@@ -39,4 +39,4 @@ Steps to get an access to the [staging-discuss.layer5.io](https://staging-discus
 
 - 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.layer5.io) and [Community Slack](https://slack.layer5.io).
 
-<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.png" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).
+<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.webp" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).

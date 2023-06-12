@@ -9,7 +9,7 @@ import ParticleComponent from "../../../reusecore/Particle";
 // import { FaPlay, FaDownload } from "react-icons/fa";
 
 import BannerSectionWrapper from "./banner.style";
-import imgHero from "../../../assets/images/app/hero/mobile-screen.png";
+import imgHero from "../../../assets/images/app/hero/mobile-screen.webp";
 const BannerModern = () => {
   return (
     <BannerSectionWrapper>

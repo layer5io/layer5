@@ -5,13 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slide1 from "../images/service mesh performance example.gif";
-import Slide2 from "../images/meshery_benchmark_screen.png";
-import Slide3 from "../images/meshery-configuration-management.png";
+import Slide2 from "../images/meshery_benchmark_screen.webp";
+import Slide3 from "../images/meshery-configuration-management.webp";
 import FeaturesSectionWrapper from "./features-section.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const slide2Path = "../images/meshery_benchmark_screen.png";
-const slide3Path = "../images/meshery-configuration-management.png";
+const slide2Path = "../images/meshery_benchmark_screen.webp";
+const slide3Path = "../images/meshery-configuration-management.webp";
 
 const slides_list = [Slide1, Slide2, Slide3];
 

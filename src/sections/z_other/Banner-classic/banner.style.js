@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/classic/hero-bg.png";
+import imgHero from "../../../assets/images/classic/hero-bg.webp";
 
 const BannerSectionWrapper = styled.section`
   /* color: #1D316C; */
