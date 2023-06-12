@@ -8,7 +8,7 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-gradient.png",
+    image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
   flags: {
@@ -537,7 +537,7 @@ module.exports = {
         background_color: "#3c494f",
         theme_color: "#00b39f",
         display: "minimal-ui",
-        icon: "src/assets/images/favicon.png", // This path is relative to the root of the site.
+        icon: "src/assets/images/favicon.webp", // This path is relative to the root of the site.
       },
     },
     {

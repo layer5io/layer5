@@ -11,6 +11,19 @@ export default function HowItWorks({ title, description, features }) {
     new Array(features.length).fill(false)
   );
 
+  const onInViewStatusChanged = (state, index) => {
+    const newStatusArray = [...viewportStatus];
+    newStatusArray[index] = state;
+    setViewportStatus(newStatusArray);
+    // Calculate the first element in focus, set that as
+    // our new activeExampleIndex. If it's been updated
+    // notify the subscriber.
+    const newExampleIndex = newStatusArray.lastIndexOf(true);
+    if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+      setActiveExampleIndex(newExampleIndex);
+    }
+  };
+
   return (
     <HowitworksWrapper>
       <Container>
@@ -28,18 +41,8 @@ export default function HowItWorks({ title, description, features }) {
                 <li key={index}>
                   <Feature
                     {...feature}
-                    onInViewStatusChanged={(state) => {
-                      const newStatusArray = [...viewportStatus];
-                      newStatusArray[index] = state;
-                      setViewportStatus(newStatusArray);
-                      // Calculate the first element in focus, set that as
-                      // our new activeExampleIndex. If it's been updated
-                      // notify the subscriber.
-                      const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
-                        setActiveExampleIndex(newExampleIndex);
-                      }
-                    }}
+                    index={index}
+                    onInViewStatusChanged={onInViewStatusChanged}
                   />
                 </li>
               ))}

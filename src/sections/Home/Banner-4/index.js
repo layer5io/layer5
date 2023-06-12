@@ -22,7 +22,7 @@ const Banner1 = (props) => {
     graphql`
       query {
         heroImage: file(
-          relativePath: { eq: "poster.png" }
+          relativePath: { eq: "poster.webp" }
         ) {
           childImageSharp {
             gatsbyImageData(

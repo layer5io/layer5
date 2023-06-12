@@ -9,22 +9,22 @@ import shareDesign from "./images/share-design.gif";
 
 const CONTENT = [
   {
-    title: "Design your deployments the way you want",
+    title: "Confidently make changes to your infrastructure",
     img: dragDrop,
     description:
-      "Browse available components and select the specific version you need. Build complex cloud native deployments.",
+      "MeshMap automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
   },
   {
-    title: "Manage your applications visually and intuitively",
+    title: "Visualize and automate infrastructure understanding",
     img: mergeDesign,
     description:
-      "Drag-and-drop an existing design to merge it with your current design.",
+      "MeshMap helps automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
   },
   {
-    title: "Build the bridge",
+    title: "Make working across services as easy as working across files",
     img: connectComponents,
     description:
-      "Connect components or group them as needed.",
+      "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices.",
   },
   {
     title: "Stop finger-pointing",
@@ -37,7 +37,7 @@ const CONTENT = [
 const DivWrapper = styled.div`
   width: 100%;
   overflow: hidden;
-  margin: auto;
+  margin: 8% 0%;
   padding-block: 4%;
   display: flex;
   flex-direction: column;

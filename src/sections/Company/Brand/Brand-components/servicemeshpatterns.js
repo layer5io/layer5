@@ -4,9 +4,9 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import SmpLogo from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns.png";
-import SmpWhite from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns-side-white.png";
-import SmpTxt from "../../../../assets/images/service-mesh-patterns/service-mesh-pattern-text_white.png";
+import SmpLogo from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns.webp";
+import SmpWhite from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns-side-white.webp";
+import SmpTxt from "../../../../assets/images/service-mesh-patterns/service-mesh-pattern-text_white.webp";
 
 const ServiceMeshPatterns = () => {
   return (

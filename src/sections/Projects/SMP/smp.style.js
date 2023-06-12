@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import cncf from "../../../assets/images/smp-page/cncf-icon.png";
+import cncf from "../../../assets/images/smp-page/cncf-icon.webp";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;

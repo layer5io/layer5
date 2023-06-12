@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/app/hero/hero-two.png";
+import imgHero from "../../../assets/images/app/hero/hero-two.webp";
 
 const BannerSectionWrapper = styled.section`
     padding: 120px 0 0 0;

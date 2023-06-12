@@ -14,7 +14,7 @@ import { ReactComponent as CNCFstackedlogo } from "./images/cncf-stacked-color.s
 import { Link } from "gatsby";
 
 const About = () => {
-  const Community_meetup = "./images/Community_meetup.png";
+  const Community_meetup = "./images/Community_meetup.webp";
   const Layer5Projects = "./images/layer5-projects.svg";
 
   return (
