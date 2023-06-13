@@ -15,7 +15,8 @@ Let's recognize <@github-username> as a contributor and community member by crea
 
 - GitHub: <!-- username only -->
 - Twitter: <!-- handle only -->
-- LinkedIn: <!-- <profilename> only (https://www.linkedin.com/in/<profilename>)-->
+- LinkedIn: <!-- <profilename> only https://www.linkedin.com/in/<profilename> -->
+- Meshery Cloud: <!-- <user ID> only UUID https://meshery.layer5.io/user/<uuid> -->
 - Link to profile picture:
 
 A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
