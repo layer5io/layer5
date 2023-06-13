@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapLocatorLight from "./images/meshmap-locator-light.svg";
-import MeshmapLocatorDark from "./images/meshmap-locator-dark.svg";
-import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
-import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { ReactComponent as IntegrationsImage } from "./images/integration-image-colorMode.svg";
 import UnderlineImg from "./images/underline.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+// import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const IntegrationsSectionWrapper = styled.div`
 
@@ -106,7 +102,7 @@ const MeshmapIntegrationsSection = () => {
   else if (imageInView && !inView)
     setimageInView(false);
 
-  const { isDark } = useStyledDarkMode();
+  // const { isDark } = useStyledDarkMode();
 
   return (
     <IntegrationsSectionWrapper>
