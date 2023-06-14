@@ -7,7 +7,7 @@ import Dockerimage from "../../assets/images/docker-extension/Docker_animated.sv
 
 const DockerExtensionCTAWrapper = styled.div`
 p {
-  color:  black;  
+  color: ${props => props.theme.whiteToBlack};   
 }
 .card-right{
   padding-top: 3rem;
