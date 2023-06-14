@@ -131,6 +131,24 @@ export const HandbookWrapper = styled.div`
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      .disabled {
+          display:flex;
+          flex-direction:column;
+          pointer-events: none;
+          cursor: default;
+          opacity: 0.7;
+          align-items:center;
+        }
+        .label {
+          position:relative;
+          border-radius: 0.5rem;
+          font-size: 0.8rem;
+          background: white;
+          color: black;
+          margin:0.3rem 0 0;
+          padding:0 0.1rem;
+          line-height:initial;
+        }
     }
 
     .disabled {

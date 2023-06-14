@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
-import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
-import CytoscapeDemo from "./cytoscape-demo";
-import CytoscapeCanvas from "./cytoscape-demo";
-import Graph from "./cytoscapeCanvas";
-import CytoscapeComponent from "./cytoscapeCanvas";
+// uncomment if need
+// import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
+// import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
+// import CytoscapeDemo from "./cytoscape-demo";
+// import CytoscapeCanvas from "./cytoscape-demo";
+// import Graph from "./cytoscapeCanvas";
+// import CytoscapeComponent from "./cytoscapeCanvas";
 import plusSign from "./images/plus-sign-colorMode.svg";
 import CytoscapeCtx from "./cytoscapeCanvas";
 import BackgroundDotsPattern from "./images/background-dots-pattern.svg";
