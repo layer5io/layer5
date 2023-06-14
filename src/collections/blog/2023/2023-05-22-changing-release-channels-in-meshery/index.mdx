@@ -56,7 +56,7 @@ This command will update your local Meshery configuration to use the selected ch
 <p>Open your terminal and confirm that you have mesheryctl installed by running  <code>mesheryctl version</code>. If you don't have mesheryctl installed, you can install it by following the instructions in the  <a href="https://docs.meshery.io/installation/mesheryctl">Meshery documentation</a>.</p>
 <li>Create new Meshery config.yaml file <pre><code class="language=bash">mesheryctl system context create [context-name]</code></pre></li>
 Example: <br/> <code class="language-bash">mesheryctl system context create new-context --components meshery-istio meshery-osm meshery-linkerd --platform docker --url http://localhost:9081 --set --yes </code>
-<li> To view the newly created meshery context use <pre><code class="language-bash">mesheryctl system context view [contex-name]</code></pre></li>
+<li> To view the newly created meshery context use <pre><code class="language-bash">mesheryctl system context view [context-name]</code></pre></li>
 <li>After making these changes, you can switch between different context by using <pre><code class="language-bash">mesheryctl system context switch</code></pre></li>
 </ol>
 
