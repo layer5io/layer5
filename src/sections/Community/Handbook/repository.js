@@ -29,7 +29,6 @@ const Repository = () => {
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
 
-
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -43,45 +42,48 @@ const Repository = () => {
               <h2>GitHub Organizations and Repositories</h2>
             </a>
             <p>
-              A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
+              A brief introduction to all of the Github repositories of Layer5
+              organization is offered below. This overview serves as a resource
+              to newcomers seeking a perspective of the collective community
+              efforts (from a code-centric perspective). See{" "}
+              <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">
+                Layer5 GitHub Process
+              </a>{" "}
+              for more related information.
             </p>
 
             <p>
-              Note that the Layer5 community spans four GitHub
-              organizations:
+              Note that the Layer5 community spans four GitHub organizations:
             </p>
 
             <ul className="project-org-list">
               <li>
                 <a href="https://github.com/layer5io">
-                  <img
-                    src={layer5icon}
-                    alt="layer5 icon"
-                  />
+                  <img src={layer5icon} alt="layer5 icon" />
                   &nbsp; Layer5
                 </a>
-                  - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
+                - emerging projects like GetNighthawk, community with MeshMates,
+                a catch-all org.
               </li>
 
               <li>
                 <a href="https://github.com/meshery">
-                  <img
-                    src={meshery}
-                    alt="meshery icon"
-                  />
+                  <img src={meshery} alt="meshery icon" />
                   &nbsp; Meshery
                 </a>
-                  -  Meshery and its components Meshery Operator
+                - Meshery and its components Meshery Operator
                 <img
                   src={MesheryOperator}
                   alt="meshery operator icon"
                   style={{ marginLeft: ".3rem" }}
-                /> and MeshSync
+                />{" "}
+                and MeshSync
                 <img
                   src={MeshSync}
                   alt="mesh sync icon"
                   style={{ marginLeft: ".3rem" }}
-                />.
+                />
+                .
               </li>
 
               <li>
@@ -92,7 +94,7 @@ const Repository = () => {
                   />
                   &nbsp; Service Mesh Performance
                 </a>
-                  - Service Mesh Performance specification and site.
+                - Service Mesh Performance specification and site.
               </li>
 
               <li>
@@ -103,7 +105,8 @@ const Repository = () => {
                   />
                   &nbsp; Service Mesh Patterns
                 </a>
-                  - a collection of curated patterns of service mesh use cases compatible with Meshery.
+                - a collection of curated patterns of service mesh use cases
+                compatible with Meshery.
               </li>
             </ul>
 
@@ -140,7 +143,11 @@ const Repository = () => {
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} alt="site-icon" />
+                                <img
+                                  className="site-icon"
+                                  src={image}
+                                  alt="site-icon"
+                                />
                               </a>
                             </td>
                             <td>{project}</td>
@@ -149,7 +156,8 @@ const Repository = () => {
                               {maintainers_name.map((mname, index) => {
                                 return (
                                   <Link to={link[index]} key={index}>
-                                    <span>{index > 0 ? ", " : ""}</span>{mname}
+                                    <span>{index > 0 ? ", " : ""}</span>
+                                    {mname}
                                   </Link>
                                 );
                               })}
@@ -159,8 +167,18 @@ const Repository = () => {
                                 href={repository}
                                 target="_blank"
                                 rel="noreferrer"
+                                className={
+                                  project === "Meshery Cloud" ? "disabled" : ""
+                                }
                               >
-                                <img className="github-icon" src={github} alt="github-icon" />
+                                <img
+                                  className="github-icon"
+                                  src={github}
+                                  alt="github-icon"
+                                />
+                                {project === "Meshery Cloud" && (
+                                  <span className="label">private</span>
+                                )}
                               </a>
                             </td>
                           </tr>
@@ -189,12 +207,24 @@ const Repository = () => {
                       </tr>
                     </thead>
                     {backendProject.subdata.map((subdata) => {
-                      const { project, image, language, description, repository } = subdata;
+                      const {
+                        project,
+                        image,
+                        language,
+                        description,
+                        repository,
+                      } = subdata;
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} alt="project" />&nbsp;{project} </td>
+                              <img
+                                className="site-icon inline"
+                                src={image}
+                                alt="project"
+                              />
+                              &nbsp;{project}{" "}
+                            </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -203,7 +233,11 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} alt="github-icon" />
+                                <img
+                                  className="github-icon"
+                                  src={github}
+                                  alt="github-icon"
+                                />
                               </a>
                             </td>
                           </tr>
