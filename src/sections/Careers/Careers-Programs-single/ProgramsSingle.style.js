@@ -32,9 +32,11 @@ margin-bottom : 3.125rem;
         h4 {
             line-height: 1.75rem;
             margin-left: 0.5rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         svg {
             font-size: 1.75rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
 }
@@ -46,6 +48,8 @@ margin-bottom : 3.125rem;
     padding: 50px 0 0 0;
 }
 .single-post-block{
+    color: ${props => props.theme.text };
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     p{
         line-height: 29px;
         letter-spacing: 0.2px;
