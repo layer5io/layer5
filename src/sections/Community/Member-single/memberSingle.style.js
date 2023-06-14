@@ -102,8 +102,16 @@ export const MemberSingleWrapper = styled.div`
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
+            
+        .social-bg {
+            margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
+        }
         
         .profile-social-links {
+            @media screen and (max-width: 62rem) {
+                flex-wrap: wrap;
+            }
             display: flex;
             justify-content: left;
             width: 90%;
@@ -127,8 +135,8 @@ export const MemberSingleWrapper = styled.div`
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
-                        background: white;
-                        
+                        background :  ${props => props.theme.whiteToGrey737373};
+
                         .github{
                             color: #211F1F;
                         }
