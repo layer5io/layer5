@@ -206,6 +206,8 @@ const lighttheme = {
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
   whiteToBlue1229A9: "#1229A9",
   whiteToBlue2A2DDE: "#2A2DDE",
+  whiteToBlue003764: "#003764",
+  whiteToBlue0096d6: "#0096d6",
   integrationsGraphicGradient: "linear-gradient(90deg, #000000 0%, #00D3A9 100%)",
 
   //DarkTheme
