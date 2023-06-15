@@ -131,7 +131,7 @@ export const HandbookWrapper = styled.div`
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      
+    }  
     .disabled {
       display:flex;
       flex-direction:column;
@@ -144,8 +144,8 @@ export const HandbookWrapper = styled.div`
       position:relative;
       border-radius: 0.5rem;
       font-size: 0.8rem;
-      background: ${(props) => (props.theme.DarkTheme ? "white" : "black")};
-      color: ${(props) => (props.theme.DarkTheme ? "black" : "white")};;
+      background: ${props => props.theme.whiteToBlack};
+      color: ${props => props.theme.blackToWhite};;
       margin:0.3rem 0 0;
       padding:0 0.1rem;
       line-height:initial;
