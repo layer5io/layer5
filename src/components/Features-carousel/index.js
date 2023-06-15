@@ -52,9 +52,11 @@ const FeaturesCarousel = ({ features, heading }) => {
       <div className="features-carousel">
         <h2 className="main-heading">{heading ? heading : "Features"}</h2>
         <Slider
+          autoplay={true}
+          autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite= {false}
+          infinite= {true}
           speed="500"
           slidesToShow={1}
           slidesToScroll={1}
