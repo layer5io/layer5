@@ -113,43 +113,8 @@ const FooterWrapper = styled.section`
 	}
 
 	.edit-page{
-		color:white;
-		padding:0;
 		font-family: "Qanelas Soft", "Open Sans", sans-serif;
-		margin: 0 2.5rem 2rem 0;
-		
-		span{
-			display:flex;
-			align-items: center;
-		}
-		
-		a{
-			cursor:pointer;
-			color:white;
-			display: inline-block;
-			width: fit-content;
-
-		}
-
-		a:hover{
-			p{
-				color: ${(props) => props.theme.secondaryColor};
-			}
-			svg{
-			fill:  ${(props) => props.theme.secondaryColor};
-			}
-		}
-
-		p{
-			font-size:0.85rem;
-			margin:0;
-		}
-		
-		svg{
-			margin:0 8px 0 0;
-			fill:white;
-
-		}
+		margin-right: 1.5rem;
 	}
 
 	.footer-bottom{
