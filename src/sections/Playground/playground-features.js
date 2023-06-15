@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { ReactComponent as PlaygroundFeature1 } from "./images/playground-feature-1.svg";
 import { ReactComponent as PlaygroundFeature2 } from "./images/playground-feature-2.svg";
 import { ReactComponent as PlaygroundFeature3 } from "./images/playground-feature-3.svg";
-import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 const PlaygroundFeaturesWrapper = styled.div`
     display: flex;
