@@ -27,7 +27,6 @@ import Button from "../../../reusecore/Button";
 const MemberSingle = ({ frontmatter }) => {
   const {
     name,
-    uuid,
     position,
     github,
     twitter,
@@ -257,6 +256,7 @@ const MemberSingle = ({ frontmatter }) => {
                       <a
                         href="https://layer5.io/cloud-native-management/meshery"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <img
                           src="https://layer5.io/static/80fdb4f718709a96dfb6dc09bb1e25df/61ca6/meshery-logo-light.webp"

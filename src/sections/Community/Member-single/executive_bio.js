@@ -6,7 +6,7 @@ import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { FaCloudDownloadAlt } from "@react-icons/all-files/fa/FaCloudDownloadAlt";
-import { MdMail } from "@react-icons/all-files/md/MdMail";
+// import { MdMail } from "@react-icons/all-files/md/MdMail";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
@@ -17,7 +17,7 @@ const MemberBio = ({ frontmatter, body }) => {
   const {
     github,
     twitter,
-    email,
+    // email,
     linkedin,
     name,
     executive_image,

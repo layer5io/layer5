@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as PlaygroundHeroImage } from "./images/playground-hero.svg";
 import Button from "../../reusecore/Button";
-import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+// import { useInView } from "react-intersection-observer";
+// import { useState } from "react";
 
 const PlaygroundHeroWrapper = styled.div`
     display: flex;

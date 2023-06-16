@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
-import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
-import CytoscapeDemo from "./cytoscape-demo";
-import CytoscapeCanvas from "./cytoscape-demo";
-import Graph from "./cytoscapeCanvas";
-import CytoscapeComponent from "./cytoscapeCanvas";
+// import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
+// import CytoscapeDemo from "./cytoscape-demo";
+// import CytoscapeCanvas from "./cytoscape-demo";
+// import Graph from "./cytoscapeCanvas";
+// import CytoscapeComponent from "./cytoscapeCanvas";
 import CytoscapeCtx from "./cytoscapeCanvas";
 
 const DesignBannerWrapper = styled.div`
@@ -153,7 +153,7 @@ const MeshmapDesignBanner = () => {
 
   return (
     <DesignBannerWrapper>
-      <BannerImage className="banner-image" alt="BannerImage"/>
+      <BannerImage className="banner-image" alt="BannerImage" />
       <div className="hero-text">
         <h2>MeshMap</h2>
         <h1><span>Designer</span></h1>

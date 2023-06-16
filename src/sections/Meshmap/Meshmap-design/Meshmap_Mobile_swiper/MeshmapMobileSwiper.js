@@ -45,7 +45,7 @@ const Card = ({ title, description, img, readMoreLink }) => {
       <h2>{title}</h2>
       <p>{description}</p>
       <img style={{ border: "1px solid #444444", borderRadius: "10px" }} src={img} alt="" />
-      {/* <a href={readMoreLink}>Read More</a> */}
+      <a href={readMoreLink}>Read More</a>
     </div>
   );
 };
