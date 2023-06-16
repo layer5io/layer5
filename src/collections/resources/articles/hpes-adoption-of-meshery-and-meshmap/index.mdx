@@ -25,7 +25,10 @@ import GlobeIcon from "./globe.svg";
 import UsersIcon from "./users.svg";
 import NetworkIcon from "./network.svg";
 import LayersIcon from "./layers.svg";
+import InlineQuotes from "../../../../components/Inline-quotes";
 import MesheryIntegration from "./meshery-integrations.svg";
+import Maxi from "../../../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
+import Yogi from "./yogi.webp"
 
 <ResourceWrapper>
 
@@ -96,6 +99,11 @@ SPIRE is a toolchain of APIs for establishing trust between software systems acr
 <p>
    Meshery's integration with SPIRE enables HPE to manage SPIRE instances, issue and revoke service certificates, and automate the management of SPIRE agents across their Kubernetes clusters. This integration ensures that HPE's service meshes are secure, and only authorized services can communicate with each other.
 </p>
+  <InlineQuotes
+          quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery's Extension to deploy their cloud native infrastructure of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
+          person="Maximiliano Churichi"
+          title="Software Engineer at HPE"
+          image={Maxi} />
 
 <p>
    In addition, HPE's use of Meshery has been enhanced by its integration with Istio, an open-source service mesh that provides a comprehensive solution for traffic management, security, and observability in Kubernetes environments.
@@ -115,12 +123,12 @@ SPIRE is a toolchain of APIs for establishing trust between software systems acr
 
 <p>
    SMP is a community-driven effort that provides a standard for measuring and comparing the performance of different service meshes. It is designed to help users select the best service mesh for their needs by providing a common framework for benchmarking.
-   <Blockquote quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery's Extension to deploy their cloud native infrastructure of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
-            person="Maximiliano Churichi"
-            title="Software Engineer at HPE" />
-
 </p>
-
+ <InlineQuotes
+          quote="The Layer5 team has been amazing. Our project wouldn’t have been successful with out Meshery."
+          person="Yogi Porla"
+          title="Engineering Manager, HPE"
+          image={Yogi} />
 <p>
    Meshery implements SMP by providing a simple and easy-to-use interface for running performance tests against different service meshes. Users can select the service mesh they want to test, configure the test parameters (such as the number of requests per second and the number of concurrent clients), and run the test. Meshery will then generate a report that shows the performance metrics for each service mesh, such as latency, throughput, and error rates.
 </p>
