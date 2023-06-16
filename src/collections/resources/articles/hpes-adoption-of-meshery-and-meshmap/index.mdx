@@ -1,7 +1,7 @@
 ---
 title: HPE's adoption of Meshery and Meshmap
 subtitle:
-date: 2023-04-28 08:00:00 -0530
+date: 2023-06-17 08:00:00 -0530
 author: HPE
 thumbnail: ./meshery-and-hpe.svg
 darkthumbnail: ./meshery-and-hpe.svg
@@ -18,7 +18,7 @@ resource: true
 import { ResourcesWrapper } from "../../Resources.style.js";
 import { HPEfacts, HPEintro } from "./hpe.style.js";
 import { theme } from "../../../../theme/app/themeStyles.js";
-
+import Blockquote from "../../../../reusecore/Blockquote";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
 import GlobeIcon from "./globe.svg";
@@ -113,6 +113,10 @@ SPIRE is a toolchain of APIs for establishing trust between software systems acr
 
 <p>
    SMP is a community-driven effort that provides a standard for measuring and comparing the performance of different service meshes. It is designed to help users select the best service mesh for their needs by providing a common framework for benchmarking.
+   <Blockquote quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery's Extension to deploy their cloud native infrastructure of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
+            person="Maximiliano Churichi"
+            title="Software Engineer at HPE" />
+
 </p>
 
 <p>
