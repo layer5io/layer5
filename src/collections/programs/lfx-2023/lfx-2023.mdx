@@ -10,12 +10,12 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import lfx_logo from "./Linux_Foundation_logo.svg";
+import {ReactComponent as LfxLogo} from "./lfx-white.svg";
 import { Link } from "gatsby";
 
 <ProgramsWrapper>
 
-<img src={lfx_logo} alt="lfx_logo" />
+<LfxLogo alt="lfx_logo" class="lfx_logo"/>
 <h3>Linux Foundation 2023 Program Timeline</h3>
 
 <div>
@@ -212,7 +212,7 @@ We interact daily over Slack, and have an open source project [meeting everyday]
       primary
       title="Participate"
       url="https://slack.layer5.io"
-      external="true"
+      external={ true }
     />
   </h3>
 </div>
