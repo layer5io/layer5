@@ -21,7 +21,7 @@ const settings = {
   responsive: [
     {
       breakpoint: 1400,
-      settings: "slick",
+      settings: "slick",//made changes to this line for slider issue
     },
   ],
 };
