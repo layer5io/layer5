@@ -61,6 +61,8 @@ export const GitOpsWrapper = styled.section`
                 }
                 .learn-more-btn{
                     color:white;
+                    font-weight: 800;
+                    font-size: 1.5em;
                 }
             }
             .hero-images {
@@ -85,6 +87,9 @@ export const GitOpsWrapper = styled.section`
 
             }
             .hero-image {
+                display:flex;
+                   align-items: flex-end;
+                   justify-content: flex-end;
                 .image-container{
                    display:flex;
                    align-items: center;
