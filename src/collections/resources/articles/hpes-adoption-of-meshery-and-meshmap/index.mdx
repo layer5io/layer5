@@ -24,7 +24,8 @@ import Button from "../../../../reusecore/Button";
 import GlobeIcon from "./globe.svg";
 import UsersIcon from "./users.svg";
 import NetworkIcon from "./network.svg";
-import LayersIcon from "./layers.svg"
+import LayersIcon from "./layers.svg";
+import MesheryIntegration from "./meshery-integrations.svg";
 
 <ResourceWrapper>
 
@@ -64,20 +65,19 @@ HPE's adoption of Meshery was driven by the need to simplify Kubernetes cluster 
 
 <p>
 SPIRE is a toolchain of APIs for establishing trust between software systems across a wide variety of hosting platforms. SPIRE exposes the SPIFFE Workload API, which can attest running software systems and issue SPIFFE IDs and SVIDs to them. <br/><br/>
-    <b>Meshery offers several benefits to HPE, including:</b>
-    <li>
-    Consistent service mesh management: HPE can now manage all their service meshes consistently, regardless of the underlying infrastructure or cloud provider.
-    </li>
-    <li>
-    Improved observability: With Meshery's built-in visualization and observability tools, HPE can gain insights into the behavior of their service meshes, detect anomalies, and troubleshoot issues in real-time.
-    </li>
-    <li>
-    Simplified testing and validation: Meshery's service mesh validation capabilities enable HPE to easily test and validate their service meshes, ensuring that they meet their performance, security, and compliance requirements.
-    </li>
-    <li>
-    Enhanced security: With Meshery's security features, HPE can ensure that their service meshes are secure and compliant with their organization's security policies.
-    </li>
 </p>
+<div style={{border: "1px solid #00B39F", padding: "2rem", boxShadow: "rgba(0, 179, 159, 0.2) 0px 10px 25px"}}>
+    <b>Meshery offers several benefits to HPE, including:</b>
+    <br/>
+    ✔️ Consistent service mesh management: HPE can now manage all their service meshes consistently, regardless of the underlying infrastructure or cloud provider.
+    <br/>
+    ✔️ Improved observability: With Meshery's built-in visualization and observability tools, HPE can gain insights into the behavior of their service meshes, detect anomalies, and troubleshoot issues in real-time.
+    <br/>
+    ✔️ Simplified testing and validation: Meshery's service mesh validation capabilities enable HPE to easily test and validate their service meshes, ensuring that they meet their performance, security, and compliance requirements.
+    <br/>
+    ✔️ Enhanced security: With Meshery's security features, HPE can ensure that their service meshes are secure and compliant with their organization's security policies.
+</div>
+<br/>
 
 <p>
     Overall, Meshery has helped HPE to streamline their integration of the identity management control plane to reduce complexity, and improve the overall reliability and performance of their Kubernetes environment. SPIFFE is a set of open-source specifications for a framework capable of bootstrapping and issuing identity to services across heterogeneous environments and organizational boundaries. The lifecycle of SPIFFE identities, SVIDs, is managed by SPIRE, a production-ready implementation of the SPIFFE APIs that performs node and workload attestation in order to securely issue SVIDs to workloads, and verify the SVIDs of other workloads, based on a predefined set of conditions.
@@ -86,7 +86,9 @@ SPIRE is a toolchain of APIs for establishing trust between software systems acr
 <p>
     <b>HPE's adoption of Meshery has also been enhanced by the platform's ability to integrate with other popular technologies, such as SPIRE and Istio</b>
 </p>
-
+<p style={{display: "flex", justifyContent: "center", alignItem: "center", padding: "2%"}}>
+<img src={MesheryIntegration}></img>
+</p>
 <p>
    SPIRE is an open-source project that provides a secure and scalable solution for service identity and authentication in distributed systems. HPE uses SPIRE to authenticate and authorize services in their Kubernetes environment, which ensures that only authorized services can communicate with each other.
 </p>

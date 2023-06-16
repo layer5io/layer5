@@ -30,7 +30,6 @@ export const HPEfacts = styled("table")(({ theme }) => ({
   },
 }));
 
-
 export const HPEintro = styled("div")(({ theme }) => ({
   display: "flex",
   paddingLeft: "3rem",
