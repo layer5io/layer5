@@ -3,7 +3,6 @@ import MeshmapDesignWrapper from "./meshmap-design.style";
 import MeshmapDesignBanner from "./meshmap-design-banner";
 import MeshmapHeroSection from "./meshmap-design-hero";
 import MeshmapIntegrationsSection from "./meshmap-design-integrations";
-import DesignDefault from "../../Home/MeshmapDesignHighlight";
 import { MeshmapMobileSwiper } from "./Meshmap_Mobile_swiper/MeshmapMobileSwiper";
 import MeshmapDesignFeatureCarousel from "./meshmap-design-features-carousel";
 
