@@ -16,22 +16,29 @@ export const GitOpsWrapper = styled.section`
         position: absolute;
 
         @media only screen and (min-width: 768px) {
-          height: 43.75rem;  
+          height: 43.75rem;
         }
     }
-    
+
+    svg {
+      .meshmap-light-stacked_svg__cls-1 {
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${props => props.theme.whiteToBlack};
+      }
+    }
+
     .content-container {
         position: relative;
         overflow: hidden;
         display: block;
         padding-bottom: 4rem;
         padding-left: 1.25rem;
-        padding-right: 1.25rem; 
+        padding-right: 1.25rem;
 
         @media only screen and (min-width: 1024px) {
             padding-bottom: 13rem;
             padding-left: 3.125rem;
-            padding-right: 3.125rem; 
+            padding-right: 3.125rem;
         }
 
         .meshery-video {
@@ -42,7 +49,7 @@ export const GitOpsWrapper = styled.section`
             max-width: 45rem;
             position: relative;
             bottom: 2rem;
-            margin: auto; 
+            margin: auto;
         }
         .content-row {
              display: flex;
@@ -59,7 +66,7 @@ export const GitOpsWrapper = styled.section`
                     font-size: 3.125em;
                 }
                 .desc-p {
-                    font-size: 1.25em;   
+                    font-size: 1.25em;
                     font-weight: 400;
                     margin: 0.5rem 0 0.5rem 0;
 
@@ -76,7 +83,7 @@ export const GitOpsWrapper = styled.section`
             .hero-images {
                 padding-top: 0rem;
                 justify-content: flex-start;
-               
+
                 display:flex;
                 gap: 1.25rem;
 
@@ -90,7 +97,7 @@ export const GitOpsWrapper = styled.section`
 
                    .meshmap-stack-hero {
                       position: absolute;
-                      height: 80px; 
+                      height: 80px;
                       animation: "floating 3s ease-in-out infinite";
                    }
 
@@ -99,13 +106,13 @@ export const GitOpsWrapper = styled.section`
                     width: 465px;
 
                     .meshmap-stack-hero {
-                      height: 100px; 
+                      height: 100px;
                     }
                   }
 
                   @media only screen and (min-width: 1280px) {
                     .meshmap-stack-hero {
-                      height: 150px; 
+                      height: 150px;
                     }
                   }
                 }
@@ -136,8 +143,8 @@ export const GitOpsWrapper = styled.section`
                    }
 
                    .logo {
-                      position: absolute; 
-                        height: 235px; 
+                      position: absolute;
+                        height: 235px;
                         width: 235px ;
                    }
 
@@ -161,11 +168,11 @@ export const GitOpsWrapper = styled.section`
 
     .first-content-container {
        padding-top: 0rem;
-    
+
        @media only screen and (min-width: 360px) {
           padding-top: 5rem;
        }
-    } 
+    }
 
     .reviews-container{
         display: flex;

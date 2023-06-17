@@ -6,7 +6,7 @@ import MeshMap from "../../assets/images/meshmap/meshmap-color-icon.svg";
 import { GitOpsWrapper, SquarePointWrapper } from "./gitops.style.js";
 import SmpLogo from "../../assets/images/app/projects/smp.svg";
 import Reviews from "../Pricing/review-slider";
-import MeshMapStack from "../../assets/images/meshmap/meshmap-light-stacked.svg";
+import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 
 
 const SquarePoint = ({ children }) => {
@@ -31,7 +31,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-images">
             <div className="hero-image-container" >
-              <img src={MeshMapStack} className="meshmap-stack-hero" />
+              <MeshMapStack className="meshmap-stack-hero" />
               <img src={Cone} />
             </div>
             <div className="hero-image-container">
@@ -50,7 +50,7 @@ const GitOpsPage = () => {
             <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <Button primary className="learn-more-btn" title="Install" url="./operating-service-meshes"/>
+              <Button primary className="learn-more-btn" title="Install" url="https://cloud.layer5.io/connect/github/new"/>
             </div>
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >
@@ -73,7 +73,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-image" style={{ display: "flex", justifyContent: "flex-end" }} >
             <div className="image-container" >
-              <img src={MeshMapStack} className="logo" />
+              <MeshMapStack className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>
