@@ -31,7 +31,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-images">
             <div className="hero-image-container" >
-              <img src={MeshMapStack} style={{ position: "absolute", height: "155px", width: "235px", animation: "floating 3s ease-in-out infinite" }} />
+              <img src={MeshMapStack} className="meshmap-stack-hero" />
               <img src={Cone} />
             </div>
             <div className="hero-image-container">

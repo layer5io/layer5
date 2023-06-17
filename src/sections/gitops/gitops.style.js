@@ -12,8 +12,12 @@ export const GitOpsWrapper = styled.section`
     .gradient-wrapper {
         background: linear-gradient(245.08deg, rgba(0, 0, 0, 0.06) 49.26%, rgba(0, 211, 169, 0.5) 100%);
         width: 100%;
-        height: 43.75rem;
+        height: 40rem;
         position: absolute;
+
+        @media only screen and (min-width: 768px) {
+          height: 43.75rem;  
+        }
     }
     
     .content-container {
@@ -56,8 +60,12 @@ export const GitOpsWrapper = styled.section`
                 }
                 .desc-p {
                     font-size: 1.25em;   
-                    margin: 1.875rem 0 2.5rem 0;
                     font-weight: 400;
+                    margin: 0.5rem 0 0.5rem 0;
+
+                    @media screen and (min-width: 640px) {
+                      margin: 1.875rem 0 2.5rem 0;
+                    }
                 }
                 .learn-more-btn{
                     color:white;
@@ -66,36 +74,61 @@ export const GitOpsWrapper = styled.section`
                 }
             }
             .hero-images {
-                padding: 5rem 2rem 6rem 2rem;
+                padding-top: 0rem;
+                justify-content: flex-start;
+               
                 display:flex;
                 gap: 1.25rem;
-                justify-content: flex-end;
 
                 .hero-image-container {
-                   height: 350px;
+                   height: 250px;
                    width: 300px;
                    position: relative;
                    display:flex;
                    align-items: center;
                    justify-content: center;
+
+                   .meshmap-stack-hero {
+                      position: absolute;
+                      height: 80px; 
+                      animation: "floating 3s ease-in-out infinite";
+                   }
+
+                  @media only screen and (min-width: 768px) {
+                    height: 542px;
+                    width: 465px;
+
+                    .meshmap-stack-hero {
+                      height: 100px; 
+                    }
+                  }
+
+                  @media only screen and (min-width: 1280px) {
+                    .meshmap-stack-hero {
+                      height: 150px; 
+                    }
+                  }
                 }
 
-            @media only screen and (max-width: 768px) {
-               padding-top: 0rem;
-               justify-content: flex-start;
-            }
+                @media only screen and (min-width: 768px) {
+                  padding: 5rem 2rem 6rem 2rem;
+                  justify-content: flex-end;
+                }
 
             }
             .hero-image {
-                display:flex;
+                   display:flex;
                    align-items: flex-end;
                    justify-content: flex-end;
+
                 .image-container{
                    display:flex;
                    align-items: center;
                    justify-content: center;
-                   height: 542px;
-                   width: 465px;
+                   margin-left: auto;
+                   margin-right: auto;
+                   height: 250px;
+                   width: 300px;
 
                    .cone-image{
                       width: 100%;
@@ -104,14 +137,13 @@ export const GitOpsWrapper = styled.section`
 
                    .logo {
                       position: absolute; 
-                      height: 235px; 
-                      width: 235px ;
+                        height: 235px; 
+                        width: 235px ;
                    }
-                   @media only screen and (max-width: 768px) {
-                       margin-left: auto;
-                       margin-right: auto;
-                       height: 350px;
-                       width: 300px;
+
+                   @media only screen and (min-width: 768px) {
+                    height: 542px;
+                    width: 465px;
                   }
                 }
             }
@@ -128,10 +160,10 @@ export const GitOpsWrapper = styled.section`
     }
 
     .first-content-container {
-       padding-top: 5rem;
-
-       @media only screen and (max-width: 768px) {
-         padding-top: 0rem;
+       padding-top: 0rem;
+    
+       @media only screen and (min-width: 360px) {
+          padding-top: 5rem;
        }
     } 
 
