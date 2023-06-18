@@ -15,5 +15,10 @@ jobs:
         with:
           node-version: 19
       - run: npm install && npm install -g @lhci/cli@0.11.x
-      - run: npm run build
-      - run: lhci autorun
+      - run: CI=false npm run build
+      - run: lhci collect
+      - run: lhci assert
+      - run: lhci upload
+      - run: lhci collect --config=.desktop-lighthouserc.js
+      - run: lhci assert --config=.desktop-lighthouserc.js
+      - run: lhci upload
