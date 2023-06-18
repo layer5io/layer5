@@ -6,6 +6,7 @@ import Button from "../../reusecore/Button";
 const NewCatalogWrapper = styled.div`
   min-height: 500px;
   background-color: ${({ theme }) => theme.whiteOneToGreyF0F0F0};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   .container {
     min-height: 500px;
     display: flex;
@@ -16,6 +17,7 @@ const NewCatalogWrapper = styled.div`
   .new-catalog__title {
     text-align: center;
     color: ${(props) => props.theme.tertiaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     font-weight: 600;
     font-size: 3.125rem;
     line-height: 3.813rem;
