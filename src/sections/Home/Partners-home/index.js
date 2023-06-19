@@ -21,7 +21,7 @@ const settings = {
   responsive: [
     {
       breakpoint: 1400,
-      settings: "unslick"
+      settings: "slick"
     }
   ]
 };
