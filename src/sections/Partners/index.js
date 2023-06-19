@@ -39,7 +39,7 @@ const Partner = () => {
         </div>
         <div className="partner-container-body">
           <div className="container">
-            <p>Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.</p>
+            Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.
           </div>
           <div className="partner-button">
             <Button primary className="partner-btn" url="mailto:partners@layer5.io?subject=Partner Program" external={true} icon={Partner_Icon} title="Become A Partner" />
@@ -50,7 +50,7 @@ const Partner = () => {
         <div className="academic-container">
           <div className="acad-container-body">
             <h1 className="heading">Academic Partners</h1>
-            <p>Layer5 established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
+            Layer5 established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers' digital transformations, helping them move into the new era of DevOps and cloud native applications.
           </div>
         </div>
         {

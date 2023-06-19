@@ -2,14 +2,8 @@ import React from "react";
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
 import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.webp";
-import partner4 from "../../assets/images/partners/citrix.svg";
-
-import partner14 from "../../assets/images/partners/metabit-trading-logo-gray.svg";
-import lightpartner14 from "../../assets/images/partners/metabit-trading-white.svg";
-
-
+import { ReactComponent as Partner4 } from "../../assets/images/partners/citrix-colorMode.svg";
 import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
-import { ReactComponent as Partner5DarkMode } from "../../assets/images/partners/cncf/stacked/white/cncf-stacked-white.svg";
 import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
 import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
 import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
@@ -19,6 +13,8 @@ import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-
 import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
+import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
+
 
 export const partners = [
   {
@@ -27,7 +23,6 @@ export const partners = [
     //link: "http://www.ece.utexas.edu/speakers/lee-calcote",
     type: "academic",
     imageLink: partner1,
-    darkimageLink: partner1,
     partnerId: "utaustin",
     //imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
     moreInfo: "In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
@@ -38,7 +33,6 @@ export const partners = [
     //link: "/programs",
     type: "academic",
     imageLink: partner2,
-    darkimageLink: partner2,
     imageRoute: "https://layer5.io/programs/gsoc",
     moreInfo: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",
   }, {
@@ -47,7 +41,6 @@ export const partners = [
     //link: "/careers/internships",
     type: "academic",
     imageLink: partner3,
-    darkimageLink: partner3,
     partnerId: "uem",
     //imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
     moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
@@ -56,8 +49,7 @@ export const partners = [
     desc: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
     //link: null,
     type: "technology",
-    imageLink: partner4,
-    darkimageLink: partner4,
+    imageLink: <Partner4 alt="Citrix" />,
     partnerId: "Citrix",
     //imageRoute: "https://www.citrix.com/products/citrix-adc/",
     moreInfo: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
@@ -67,7 +59,6 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: <Partner5 alt="CNCF" />,
-    darkimageLink: <Partner5DarkMode alt="CNCF" />,
     imageRoute: "https://landscape.cncf.io/card-mode?category=cncf-members&grouping=category&selected=layer5-member&embed=yes&style=logo",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   }, {
@@ -145,8 +136,7 @@ export const partners = [
     desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
     //link: null,
     type: "technology",
-    imageLink: partner14,
-    darkimageLink: lightpartner14,
+    imageLink: <Partner14 alt="Metabit Trading" />,
     partnerId: "metabittrading",
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
