@@ -55,7 +55,7 @@ const GitOpsPage = () => {
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >
             <div className="image-container" >
-              <img src={SmpLogo} className="logo" />
+              <MeshMapStack className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>
@@ -73,7 +73,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-image" style={{ display: "flex", justifyContent: "flex-end" }} >
             <div className="image-container" >
-              <MeshMapStack className="logo" />
+              <img src={SmpLogo} className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>
