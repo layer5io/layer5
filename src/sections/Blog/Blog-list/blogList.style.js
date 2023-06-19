@@ -75,6 +75,7 @@ export const BlogPageWrapper = styled.div`
 	
 			img{
 				max-height:9rem;
+				margin-top:2.8125rem;
 			}
 		}
 	}
