@@ -26,6 +26,7 @@ const BlockquoteStyle = styled.div`
         border: 2px solid ${props => props.theme.primaryLightColorTwo};
         border-radius:20px;
         padding: 20px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     /* Blockquote right double quotes */
@@ -33,6 +34,7 @@ const BlockquoteStyle = styled.div`
         content:"";
         position: absolute;
         border: 2px solid ${props => props.theme.primaryLightColorTwo};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         border-radius: 0 50px 0 0;
         width: 60px;
         height: 60px;
@@ -48,6 +50,7 @@ const BlockquoteStyle = styled.div`
         position: absolute;
         width: 80px;
         border: 6px solid ${props => props.theme.body};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         bottom: -3px;
         left: 50px;
         z-index: 2;
