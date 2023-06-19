@@ -26,6 +26,7 @@ const BannerWrapper = styled.div`
     justify-content: center;
     border: 1px solid;
     border-color: ${props => props.theme.whiteToBlack};
+    border-bottom-width: 2px;
     transform-origin: top right;
     transform: skewX(-25deg);
     padding: 3%;
@@ -76,6 +77,7 @@ const BannerWrapper = styled.div`
     text-align: center;
     justify-content: center;
     border: 1px solid;
+    border-bottom-width: 2px;
     border-color: ${props => props.theme.whiteToBlack};
     transform-origin: bottom left;
     transform: skewX(-25deg);
