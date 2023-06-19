@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useDataList from "../../utils/usedataList";
 import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
@@ -46,6 +47,19 @@ export const query = graphql`
 
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { queryResults, searchData } = useDataList(
+    props.data.allMdx.nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    "id"
+  );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
   const setListView = () => {
     setIsListView(true);
   };
@@ -68,7 +82,14 @@ const Blog = (props) => {
         setListView={setListView}
         setGridView={setGridView}
         pageContext={props.pageContext}
-        data={props.data}
+        searchedPosts={searchedPosts}
+        setCurrentPage={setCurrentPage}
+        postsPerPage={postsPerPage}
+        searchData={searchData}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        currentPage={currentPage}
+        queryResults={queryResults}
       />
 
     </>
