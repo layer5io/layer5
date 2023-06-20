@@ -3,9 +3,9 @@ module.exports = {
       "collect": {
         "staticDistDir": "./public",
         "url" : ["http://localhost/404.html",
-                 "http://localhost/index.html",
                  "http://localhost/404/index.html",
-                 "http://localhost/company/about/index.html" ,
+                 "http://localhost",
+                 "http://localhost/company/about/index.html",
                  "http://localhost/cloud-native-management/meshery/index.html",
                  "http://localhost/cloud-native-management/meshmap/index.html",
                  "http://localhost/learn/learning-paths/index.html",

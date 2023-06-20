@@ -6,8 +6,8 @@ module.exports = {
         },
       "staticDistDir": "./public",
       "url": [
-        "http://localhost/index.html?desktop",
         "http://localhost/404/index.html?desktop",
+        "http://localhost/?desktop",
         "http://localhost/company/about/index.html?desktop",
         //  "http://localhost/cloud-native-management/meshery.html",
         //  "http://localhost/cloud-native-management/meshmap.html",
