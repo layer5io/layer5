@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import Cone from "../../assets/images/gitops/conelight.svg";
-import MeshMap from "../../assets/images/meshmap/meshmap-color-icon.svg";
 import { GitOpsWrapper, SquarePointWrapper } from "./gitops.style.js";
 import SmpLogo from "../../assets/images/app/projects/smp.svg";
 import Reviews from "../Pricing/review-slider";
