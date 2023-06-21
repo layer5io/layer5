@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
-
-
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 
 export const query = graphql`
@@ -23,7 +20,7 @@ export const query = graphql`
     }
 `;
 
-const ProgramsPage = ({ data }) => {
+const ProgramsPage = ({ data, children }) => {
   const [activeOption, setActiveOption] = useState(0);
   const programs = data.allMdx.nodes;
 
@@ -33,25 +30,23 @@ const ProgramsPage = ({ data }) => {
     optionItem.value = index;
     return optionItem;
   });
+
   return (
-
     <>
-
-
       <ProgramsSingle
         data={programs[activeOption]}
         options={options}
         setActiveOption={setActiveOption}
         activeOption={activeOption}
-      />
-
+      >
+        { children }
+      </ProgramsSingle>
     </>
 
   );
 };
 
 export default ProgramsPage;
-
 
 export const Head = ({ data }) => {
   const programs = data.allMdx.nodes;

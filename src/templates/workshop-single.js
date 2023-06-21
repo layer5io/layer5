@@ -1,10 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
 import SEO from "../components/seo";
-
-
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
@@ -34,18 +30,14 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 }
 `;
 
-const WorkshopSingle = ({ data }) => {
-
+const WorkshopSingle = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-
+      <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} >
+        { children }
+      </WorkshopSinglePage>
     </>
-
   );
 };
 

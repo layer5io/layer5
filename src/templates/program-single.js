@@ -1,9 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
-
-
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 
 export const query = graphql`
@@ -17,12 +14,13 @@ export const query = graphql`
     }
 `;
 
-const ProgramSinglePage = ({ data }) => {
+const ProgramSinglePage = ({ data, children }) => {
 
   return (
     <>
-      <ProgramsSingle data={data.mdx} />
-
+      <ProgramsSingle data={data.mdx} >
+        { children }
+      </ProgramsSingle>
     </>
   );
 };

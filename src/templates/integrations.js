@@ -1,11 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
 import SEO from "../components/seo";
-
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
-
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!) {
@@ -37,18 +33,14 @@ export const query = graphql`
     }
   }
 `;
-const Integrations = ({ data }) => {
-
+const Integrations = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <IndividualIntegrations  data={data} />
-
+      <IndividualIntegrations  data={data} >
+        { children }
+      </IndividualIntegrations>
     </>
-
   );
 };
 export default Integrations;
