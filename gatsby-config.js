@@ -111,7 +111,8 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -124,7 +125,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -160,7 +161,8 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -173,7 +175,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -208,7 +210,8 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -221,7 +224,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -259,7 +262,8 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -272,7 +276,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -306,7 +310,8 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -319,7 +324,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -353,7 +358,8 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  excerpt: node.excerpt
+                  // custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -366,7 +372,7 @@ module.exports = {
                 ) {
                   nodes {
                     body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -406,8 +412,12 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        // gatsbyRemarkPlugins: ["gatsby-remark-prismjs"],
         mdxOptions: {
-          remarkPlugins: ["remark-gfm"],
+          remarkPlugins: [
+            // Add GitHub Flavored Markdown (GFM) support
+            require("remark-gfm"),
+          ]
         },
       }
     },
@@ -421,7 +431,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/blog`,
+        path: process.env.NODE_ENV === "development" ? `${__dirname}/src/collections/blog/2023` : `${__dirname}/src/collections/blog`,
         name: "blog",
       },
     },
