@@ -211,9 +211,10 @@ const lighttheme = {
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
   integrationsGraphicGradient: "linear-gradient(90deg, #000000 0%, #00D3A9 100%)",
   bannerGradientBackgroundToWhite: "#fff",
+  bannerGradientBackground2ToWhite: "#fff",
   bannerDescriptionGradient: "linear-gradient(122.25deg, #00B39F 26.92%, #195E4A 46.51%, #1F787D 74.85%)",
-  borderGradientTransitionBefore: "linear-gradient(to right bottom, #00b39f, #fff 80%)",
-  borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #fff 100%)",
+  borderGradientTransitionBefore: "linear-gradient(to right bottom, #00b39f, #fff 110%)",
+  borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #fff 120%)",
 
   //DarkTheme
   DarkTheme: false,
@@ -439,8 +440,9 @@ export const darktheme = {
   whiteZeroThreeToBlackZeroThree: "rgb(255 255 255 / 0.03)",
   integrationsGraphicGradient: "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 51.1%, rgba(0, 179, 159, 0.54) 99.99%)",
   bannerGradientBackgroundToWhite: "linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgba(18, 18, 18, 0.16) 99.99%)",
+  bannerGradientBackground2ToWhite: "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 49.9%, rgba(0, 179, 159, 0.54) 99.47%)",
   bannerDescriptionGradient: "#121212",
-  borderGradientTransitionBefore: "linear-gradient(to right bottom, #00b39f, #121212 80%)",
+  borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
 
   //DarkTheme

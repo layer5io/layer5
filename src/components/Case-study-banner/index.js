@@ -24,9 +24,13 @@ const BannerWrapper = styled.div`
     flex: 0 0 20%;
     text-align: center;
     justify-content: center;
-    border: 1px solid;
+    /* border: 1px solid;
     border-color: ${props => props.theme.whiteToBlack};
-    border-bottom-width: 2px;
+    border-bottom-width: 2px; */
+    border: 2px solid transparent;
+    border-image: ${props => props.theme.borderGradientTransitionBefore};
+    border-image-slice: 1 1 1 1;
+    transition: border 0.4s ease-in-out;
     transform-origin: top right;
     transform: skewX(-25deg);
     padding: 3%;
@@ -44,9 +48,9 @@ const BannerWrapper = styled.div`
   background:${props => props.theme.bannerDescriptionGradient};
     flex: 0 0 60%;
     text-align: center;
-    border: 2px solid transparent;
-    border-image: ${props => props.theme.borderGradientTransitionBefore} ;
-    border-image-slice: 1 1 1 1;
+    border: 2px solid #00b39f;
+    /* border-image: ${props => props.theme.borderGradientTransitionBefore} ;
+    border-image-slice: 1 1 1 1; */
     transition: border 0.4s ease-in-out;
     justify-content: center;
     align-items: center;
@@ -72,13 +76,17 @@ const BannerWrapper = styled.div`
 
 .right-img {
   display: flex;
-  background: ${props => props.theme.bannerGradientBackgroundToWhite};
+  background: ${props => props.theme.bannerGradientBackground2ToWhite};
     flex: 0 0 20%;
     text-align: center;
     justify-content: center;
-    border: 1px solid;
+    /* border: 1px solid;
     border-bottom-width: 2px;
-    border-color: ${props => props.theme.whiteToBlack};
+    border-color: #00b39f; */
+    border: 2px solid transparent;
+    border-image: ${props => props.theme.borderGradientTransitionBefore};
+    border-image-slice: 1 1 1 1;
+    transition: border 0.4s ease-in-out;
     transform-origin: bottom left;
     transform: skewX(-25deg);
     padding: 3%;
@@ -91,6 +99,9 @@ const BannerWrapper = styled.div`
 }
 
 .scale-on-hover {
+  border-image: ${props => props.theme.borderGradientTransitionAfter} ;
+    border-image-slice: 1 1 1 1;
+    transition: 0.4s ease-in-out;
   > * {
     transition: transform 0.4s ease;
     transform: skewX(25deg) scale(1.4);
@@ -98,9 +109,9 @@ const BannerWrapper = styled.div`
 }
 
 .desc-hover {
-  border-image: ${props => props.theme.borderGradientTransitionAfter} ;
+  /* border-image: ${props => props.theme.borderGradientTransitionAfter} ;
     border-image-slice: 1 1 1 1;
-    transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out; */
 }
 
 .small-screen {
