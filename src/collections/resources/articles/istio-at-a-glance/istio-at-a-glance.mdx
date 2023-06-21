@@ -29,29 +29,34 @@ The <strong>data plane</strong> in Istio intercepts each packet in the request a
 Istio's <strong>control plane</strong> provides a single point of administration for service proxies, which require programmatic configuration due to the need to manage a large number of them efficiently and have their configuration updated in real-time as services are rescheduled around your environment (i.e., container cluster). Control planes offer policy and configuration for the mesh's services, transforming a collection of isolated, stateless proxies into a service mesh. The control planes do not directly touch any network packets in the mesh. They operate out-of-band. Control planes usually feature a command line interface and a user interface, both of which provide access to a centralized API for regulating proxy behavior holistically. Changes to control plane configuration can be automated using its APIs (for example, using a CI/CD pipeline), however configuration is usually version-controlled and updated in practise. To summarize, Istio's control plane:
 </p>
 <ul>
-<li>Provides policy and configuration for services in the mesh.
-<ul>
-<li>APIs for operators to specify desired routing/resilience behavior.</li>
-</ul>
+<li>
+Provides policy and configuration for services in the mesh.
+  <ul>
+    <li>APIs for operators to specify desired routing/resilience behavior.</li>
+  </ul>
 </li>
-<li>Takes a set of isolated stateless sidecar proxies and turns them into a service mesh.
+<li>
+Takes a set of isolated stateless sidecar proxies and turns them into a service mesh.
 <ul>
 <li>APIs for the data plane to consume localized configuration.</li>
 <li>Service discovery abstraction for the data plane.</li>
 </ul>
 </li>
-<li>APIs for specifying usage policies
+<li>
+APIs for specifying usage policies
 <ul>
 <li>Quota and Usage restrictions</li>
 </ul>
 </li>
-<li>Security
+<li>
+Security
 <ul>
 <li>Certificate issuance and rotation</li>
 <li>Assigning workload identity</li>
 </ul>
 </li>
-<li>Routing configuration
+<li>
+Routing configuration
 <ul>
 <li>Does not touch any packets/requests in the system.</li>
 <li>Specifying network boundaries and how to access them</li>
@@ -188,8 +193,7 @@ spec:
     - "*"
 ```
 <h4>Egress</h4>
-<p>Traffic can exit an Istio service mesh in two ways - directly from the sidecar or funnelled through an egress gateway, where traffic policy may be applied.
-</p>
+<p>Traffic can exit an Istio service mesh in two ways - directly from the sidecar or funnelled through an egress gateway, where traffic policy may be applied.</p>
 
 <div class="fact">
 By default, Istio-enabled applications are unable to access URLs external the cluster.
@@ -216,8 +220,7 @@ Istio monitoring and route rules can be applied to traffic leaving the mesh thro
 <div class="intro" style="text-align:center">
 <p><b>Why use Istio Gateways and not Kubernetes Ingresses?</b></p>
 <p>In general, the Istio v1alpha3 APIs leverage Gateways for richer functionality as Kubernetes Ingress has proven insufficient for Istio applications. In comparison to Kubernetes Ingress, Istio Gateways can function as a pure L4 TCP proxy and support all protocols supported by Envoy.</p>
-<p>
-Another factor to examine is the division of trust domains between organizational teams. Kubernetes Ingress API combines specification for L4 to L7, which makes it challenging for different teams in organizations with separate trust domains (such as SecOps, NetOps, ClusterOps and Developers) to own Ingress traffic management.</p>
+<p>Another factor to examine is the division of trust domains between organizational teams. Kubernetes Ingress API combines specification for L4 to L7, which makes it challenging for different teams in organizations with separate trust domains (such as SecOps, NetOps, ClusterOps and Developers) to own Ingress traffic management.</p>
 </div>
 
 </ResourcesWrapper>

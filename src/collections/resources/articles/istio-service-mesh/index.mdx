@@ -38,12 +38,11 @@ import arch from "./arch.svg";
   
   <h3> Inside the Istio service mesh </h3>
   
-  <p> A data plane and a control plane are logically separate parts of an Istio service mesh.
+ A data plane and a control plane are logically separate parts of an Istio service mesh.
   <ul>
     <li> A group of intelligent proxies (Envoy) that are deployed as sidecars make up the data plane. All network connection among the microservices is mediated and managed by these proxies. Additionally, they gather and compile data on all mesh communications. </li>
     <li> The proxies are controlled and set up by the control plane to route traffic. </li>
   </ul>
-  </p>
   
    <img src = {arch} class="image-center" alt="Istio Service Mesh Architecture" />
   

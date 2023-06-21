@@ -17,7 +17,6 @@ mesh: Consul
 resource: true
 ---
 
-
 import layer5_hashicorp_partnership from "./Layer5-HashiCorp-Service-Mesh-Partnership.webp";
 import layer5_image_hub from "./layer5-image-hub-on-hashicorp-consul.webp";
 
@@ -46,7 +45,8 @@ Demonstrated at DockerCon 2020, is the “[Image Hub](https://github.com/layer5i
 
 In order to assess the overall performance of the service mesh, and the overhead of individual, fine-grained traffic control mechanisms defined in Consul’s control plane and enforced through Consul’s intelligent data plane, Meshery provides users with statistical analysis of the responsiveness of their services and performance of the service mesh. As highlighted by Docker Captain, [Luc Juggery](https://twitter.com/lucjuggery), performance is an ongoing concern:
 
-<div style="margin:20px;">Running a performance test is not a one shot thing. Tests should be run on a regular basis to (re)establish baselines and evaluate configuration changes:
+<div style="margin:20px;">
+Running a performance test is not a one shot thing. Tests should be run on a regular basis to (re)establish baselines and evaluate configuration changes:
 <ul>
 <li>- for each new release of the chosen service mesh</li>
 <li>- for each change of the configuration of your service mesh</li>

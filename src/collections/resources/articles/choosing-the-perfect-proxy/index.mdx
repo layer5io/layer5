@@ -15,13 +15,9 @@ published: true
 resource: true
 ---
 
-
-
 import Api from "./citrix-api-security-considerations-by-traffic-direction.svg";
 
-
 <ResourcesWrapper>
-
 <p>
     Historically, application delivery controllers were purchased, deployed, and managed by IT professionals most commonly to run enterprise-architected applications. With their distributed systems design and ephemeral infrastructure, cloud native applications require load balancers to be as dynamic as the infrastructure (containers, for example) upon which they run. These are often software load balancers. Because cloud native applications are typically developer-led initiatives in which developers are creating the application — that is, the microservices — and the infrastructure, developers and platform teams are increasingly making, or heavily influencing, decisions for load balancing (and other) infrastructure.
 </p>
@@ -55,8 +51,7 @@ Selecting your proxy is one of the most important decision your team will make. 
 </p>
 
 <h3>TCP/UDP Support</h3>
-<p>There are many applications that communicate over TCP/UDP ports. Kubernetes ingress was developed with web traffic in mind. It provides a standard way to control and route HTTP/S traffic into the cluster. However, ingress mechanisms for non-HTTP traffic are inconsistent and can be challenging. 
-</p>
+<p>There are many applications that communicate over TCP/UDP ports. Kubernetes ingress was developed with web traffic in mind. It provides a standard way to control and route HTTP/S traffic into the cluster. However, ingress mechanisms for non-HTTP traffic are inconsistent and can be challenging. </p>
 
 Typical methods are:
 
@@ -80,8 +75,7 @@ Typically offered only in public clouds, LoadBalancers could get expensive depen
   <img src={Api} align="center" alt="API security considerations by traffic direction." />
   <p>API security considerations by traffic direction.</p>
   </div>
-<p>While traffic direction will dictate your security needs, the reality is that several concerns are shared considerations for both north-south and east-west traffic.
-</p>
+<p>While traffic direction will dictate your security needs, the reality is that several concerns are shared considerations for both north-south and east-west traffic.</p>
 <p>
 Let’s walk through the API security requirements one by one: 
 </p>

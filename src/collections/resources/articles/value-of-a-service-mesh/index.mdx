@@ -12,8 +12,6 @@ published: true
 resource: true
 ---
 
-
-
 import Communication from "./figure4.webp";
 import Timeouts from "./figure3.webp";
 import Metrics from "./figure2.webp";
@@ -21,22 +19,17 @@ import Mixer from "./figure1.webp";
 
 <ResourcesWrapper>
   <div className="intro">
-    <p>Learn more about service mesh fundamentals in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource which addresses how to evaluate your organization’s readiness, provides factors to consider when building new applications and converting existing applications to best take advantage of a service mesh, and offers insight on deployment architectures used to get you there.</p>
+  Learn more about service mesh fundamentals in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource which addresses how to evaluate your organization’s readiness, provides factors to consider when building new applications and converting existing applications to best take advantage of a service mesh, and offers insight on deployment architectures used to get you there.
   </div>
 
-<p>
-    Service meshes provide visibility, resiliency, traffic, and security control of distributed application services.
-</p>
+Service meshes provide visibility, resiliency, traffic, and security control of distributed application services.
 
 <h3>Observability</h3>
 
-<p>
 Many organisations are attracted to the uniform observability that service meshes provide. There is no such thing as a fully healthy complex system. Service-level  t elemetry sheds light on difficult-to-answer questions like why your requests are slow to respond. It's quite simple to figure out when a service is down, but figuring out where it's slow and why is a different story.
-</p>
 
-<p>
 Service meshes allow both black-box (observing a system from the outside) and white-box (monitoring a system from the inside) monitoring of service-to-service communication. To provide white-box monitoring, some service meshes combine with a distributed tracing library. In contrast, other service meshes use protocol-specific filters as a capability of their proxies to provide a deeper level of visibility. The components of the data plane are well-positioned (transparently, in-band) to create metrics, logs, and traces, ensuring uniform and thorough observability across the mesh.
-</p>
+
   <div className="center" >
   <img src={Mixer} align="right" alt="Istio Mixer" />
   <p>Figure 1: Istio’s Mixer is capable of collecting multiple telemetric signals and sending those signals to backend monitoring, authentication, and quota systems via adapters</p>
@@ -94,8 +87,7 @@ You can choose to fail fast and disconnect the service, prohibiting calls to it,
     <strong>Rate limiting</strong>(throttling) is implemented to ensure service stability. When requests by one client surge, the service continues to function smoothly for others. The rate limits are calculated over a period of time. You can also utilise various algorithms, such as a fixed or sliding window, a sliding log, etc. The purpose of rate limits is to ensure that your services are not oversubscribed.
 </p>
 
-<p>When a limit is reached, well-implemented services commonly adhere to IETF RFC 6585, sending 429 Too Many Requests as the response code, including headers, such as the following, describing the request limit, number of requests remaining, and amount of time remaining until the request counter is reset:
-</p>
+When a limit is reached, well-implemented services commonly adhere to IETF RFC 6585, sending 429 Too Many Requests as the response code, including headers, such as the following, describing the request limit, number of requests remaining, and amount of time remaining until the request counter is reset:
 
 <div class="fact-left">
 <p>X-RateLimit-Limit: 60</p>

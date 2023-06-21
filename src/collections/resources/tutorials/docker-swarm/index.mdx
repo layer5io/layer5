@@ -15,21 +15,10 @@ published: true
 resource: true
 ---
 
-
-
-
 <ResourcesWrapper>
-<p>
-Docker Swarm is a{" "}
-<Link to="../../articles/kubernetes/management-of-kubernetes">
-container orchestration
-</Link>{" "}
-tool that makes it easy to manage and scale your existing Docker
-infrastructure. It consists of a pool of Docker hosts that run in Swarm
-mode with some nodes acting as managers, workers, or both. Using Docker
-Swarm mode to manage your Docker containers brings the following
-benefits:
-</p>
+
+Docker Swarm is a <Link to="../../articles/kubernetes/management-of-kubernetes">container orchestration</Link> tool that makes it easy to manage and scale your existing Docker infrastructure. It consists of a pool of Docker hosts that run in Swarm mode with some nodes acting as managers, workers, or both. Using Docker Swarm mode to manage your Docker containers brings the following benefits:
+
 <ul>
 <li>It allows you to incrementally apply updates with zero downtime.</li>
 <li>
@@ -227,8 +216,7 @@ resources.
     <p>At this point, each of your five Docker instances are acting as separate hosts and not as part of a Swarm cluster. Therefore, in this step, we will initialize the Swarm cluster on the <code>manager-1</code> server and add the hosts to the cluster accordingly.</p>
     <p>Start by logging into one of the Ubuntu servers (<code>manager-1</code>) and retrieve the private IP address of the machine using the following command:</p>
     <pre>
-    <code>hostname -I | awk '&#123;print $1&#125;'
-    </code>
+    <code>hostname -I | awk '&#123;print $1&#125;'</code>
     </pre>
     <p>Copy the IP address to your clipboard and replace the <code>&lt;manager_1_server_ip&gt;</code> placeholder in the command below to initialize Swarm mode:</p>
     <pre>

@@ -54,14 +54,14 @@ import proxy from "./service-proxy-architecture.webp";
   
   <img src = {proxy} class="image-center" alt="Side-car proxy" />
   
-  <p> The lifecycle of a Consul cluster:
+  <p> The lifecycle of a Consul cluster:</p>
     <ol>
       <li> An agent is started. </li>
       <li> An agent joins the cluster. </li>
       <li> Information of the agent is communicated throughout the cluster</li>
       <li> Existing servers will begin replicating to the new node. </li>
     </ol>    
-  </p>
+  
   
   <h3> Benefits and Compatibility of Consul Connect </h3>
   
@@ -69,28 +69,35 @@ import proxy from "./service-proxy-architecture.webp";
   
   <p> Consul service mesh streamlines application deployment into a zero-trust network and makes service discovery easier in complex networking situations. </p>
   
-  <p> Features of Consul Service Mesh:
+  <p> 
+  Features of Consul Service Mesh:
   <br />
     <ol>
-      <li> Service Discovery 
+      <li> 
+      Service Discovery 
         <p> Consul provides a service catalog, configurable service routing, health checks, automatic load balancing, and geo-failover across multiple instances of the same service. The capacity to control changes in the service landscape of your network becomes essential when new versions of a service are introduced and must coexist with existing instances of the same application, frequently running on different versions. The agent provides a simple service definition format to declare the availability of a service and to potentially associate it with a health check. </p> 
       </li>
-      <li> Zero-trust Security Model
+      <li> 
+      Zero-trust Security Model
         <p> Trust can be exploited and with the increasing number of services, there are higher chances of breach. The Consul service mesh control plane can be configured to enforce mutual TLS (mTLS), and will automatically generate and distribute the TLS certificates for every service in the mesh. The certificates are used for both service identity verification and communication encryption. </p> 
       </li>
-      <li> Simplify Application Security with Intentions 
+      <li> 
+      Simplify Application Security with Intentions 
         <p> Communication between services is secure within the mesh once the service sidecar proxies have been set up. To designate which services are permitted to communicate with one another, you might want to build a more granular set of policies. Consul Intentions are used to limit which services can make requests or create connections and define access control for services through Connect. We can manage intentions via the UI, CLI, or API. The proxy or a natively integrated application enforces intentions on inbound connections or requests. </p> 
       </li>
     </ol>
   </p>
   
-  <p> Compatibility of Consul Connect:
+  <p> 
+  Compatibility of Consul Connect:
   <br />
   <ol>
-    <li> First-Class Kubernetes Support 
+    <li> 
+    First-Class Kubernetes Support 
         <p> By offering an official Helm chart for installing, configuring, and upgrading Consul on Kubernetes, Consul enables first-class Kubernetes support. The chart automates Kubernetes's Consul service mesh installation and configuration. </p> 
      </li>
-    <li> Platform Agnostic and Multi-Cluster Mesh
+    <li> 
+    Platform Agnostic and Multi-Cluster Mesh
         <p> Consul works with all cloud providers and architectures. You can expand the scope of your Kubernetes clusters to include services that aren't run using Kubernetes by using the service catalog sync and auto-join features. In order to facilitate safe service-to-service communication between Nomad tasks and jobs, Consul additionally interfaces with HashiCorp Nomad. </p> 
      </li>
   </ol>
