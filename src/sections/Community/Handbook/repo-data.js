@@ -82,7 +82,7 @@ export const repo_data = [
         project: "MeshMap",
         image: meshery,
         site:
-          "/cloud-native-management/meshmap",
+          "https://layer5.io/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Nithish-Karthik"],
         link: ["https://layer5.io/community/members/nithish-karthik"],
