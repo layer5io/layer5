@@ -49,8 +49,8 @@ const SMIWrapper = styled.section`
     @media screen and (max-width: 1550px) and (min-width: 992px) {
         .hero_img_col {
             position: absolute;
-            right: 0;
-            overflow: hidden;
+            right: 60px;
+            
         }
         .description {
             margin: 6.5rem auto 15rem;
@@ -60,7 +60,7 @@ const SMIWrapper = styled.section`
         }
     }
     .hero-img{
-        width: 36rem;
+        width: 34rem;
     }
     .feature-table{
         margin: 0 5rem 1.875rem 5rem;
