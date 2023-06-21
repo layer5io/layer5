@@ -13,6 +13,7 @@ import { BookWrapper } from "./src/collections/service-mesh-books/Book.style.js"
 import { NewsWrapper } from "./src/collections/news/News.style.js";
 import { ResourcesWrapper } from "./src/collections/resources/Resources.style.js";
 import { ProgramsWrapper } from "./src/collections/programs/Programs.style.js";
+import { ChapterStyle } from "./src/components/Learn-Components/Chapters-Style/chapters.style.js";
 import Button from "./src/reusecore/Button";
 import Blockquote from "./src/reusecore/Blockquote";
 import BlockquoteAlt from "./src/reusecore/Blockquote/Blockquote-alt-style";
@@ -39,6 +40,7 @@ const components = {
   BlockquoteAlt,
   BlogWrapper,
   BookWrapper,
+  ChapterStyle,
   CareerWrapper,
   NewsWrapper,
   ProgramsWrapper,
