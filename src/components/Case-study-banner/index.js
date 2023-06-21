@@ -114,6 +114,63 @@ const BannerWrapper = styled.div`
     transition: 0.4s ease-in-out; */
 }
 
+.ribbon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+    right: -3px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    text-align: right;
+
+    span {
+      padding-left: 1.75rem;
+      font-size: 13px;
+    font-weight: bold;
+    color: ${props => props.theme.whiteToBlack};
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 150px;
+    display: block;
+    background: #79A70A;
+    background: ${props => props.theme.yellowEBC0EBToGradient};
+    box-shadow: 0 3px 10px -5px #000;
+    position: absolute;
+    top: 20px;
+    right: -19px;
+    }
+
+    span:before {
+      content: "";
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    z-index: -1;
+    border-left: 3px solid #00B39F;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #00B39F;
+    }
+
+    span:after {
+      content: "";
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    z-index: -1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid #00B39F;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #00B39F;
+    }
+}
+
 .small-screen {
   display: none;
   text-align: center;
@@ -150,29 +207,34 @@ const CaseStudyBanner = () => {
   };
 
   return (
-    <a href="/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap">
-      <BannerWrapper>
-        <div className="small-screen">
-          <div className="small-screen-desc">
-            <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
+    <>
+      <a href="/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap">
+        <BannerWrapper>
+          <div className="small-screen">
+            <div className="small-screen-desc">
+              <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
+            </div>
+            <div className="meshery-and-spire">
+              <img src={MesheryAndSpire} alt="meshery-and-spire" />
+            </div>
           </div>
-          <div className="meshery-and-spire">
-            <img src={MesheryAndSpire} alt="meshery-and-spire" />
+          <div className="large-screen">
+            <div className={`left-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+              <img src={MesheryLogo} alt="meshery-logo" />
+            </div>
+            <div className={`desc ${hover ? "desc-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+              <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
+              <div className="ribbon">
+                <span>Case Study</span>
+              </div>
+            </div>
+            <div className={`right-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+              <img src={SpireLogo} alt="spire-logo" />
+            </div>
           </div>
-        </div>
-        <div className="large-screen">
-          <div className={`left-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-            <img src={MesheryLogo} alt="meshery-logo" />
-          </div>
-          <div className={`desc ${hover ? "desc-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-            <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
-          </div>
-          <div className={`right-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-            <img src={SpireLogo} alt="spire-logo" />
-          </div>
-        </div>
-      </BannerWrapper>
-    </a>
+        </BannerWrapper>
+      </a>
+    </>
   );
 };
 
