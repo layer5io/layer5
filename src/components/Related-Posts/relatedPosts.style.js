@@ -68,6 +68,9 @@ const RelatedPostsWrapper = styled.div`
     .slick-disabled{	
         visibility: hidden;
     }
+    .slick-dots li:before{
+        content: "";
+    }
     .slick-dots li button:before {
         font-size: 0.6rem;
         color: ${props => props.theme.secondaryColor};
