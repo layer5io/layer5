@@ -406,7 +406,10 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
-      },
+        mdxOptions: {
+          remarkPlugins: ["remark-gfm"],
+        },
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
