@@ -1,20 +1,35 @@
 import styled from "styled-components";
+import { Row, Col } from "../../reusecore/Layout";
 
 
 export const SnapshotWrapper = styled.section`
     position: relative;
     z-index: 1;
-    font-size: 16px;
+    font-size: 12px;
 
     .gradient-wrapper {
         background: linear-gradient(245.08deg, rgba(0, 0, 0, 0.06) 49.26%, rgba(0, 211, 169, 0.5) 100%);
         width: 100%;
-        height: 40rem;
+        height: 50rem;
         position: absolute;
 
         @media only screen and (min-width: 768px) {
-          height: 92rem;
+          height: 65rem;
         }
+
+        @media only screen and (min-width: 1024px) {
+          height: 78rem;
+        }
+    }
+
+    .reviews-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+        font-size: 16px;
     }
 `;
 
@@ -36,30 +51,26 @@ export const ContentContainerWrapper = styled.div`
 export const HeroContentContainerWrapper = styled(ContentContainerWrapper)`
     padding-top: 0rem;
 
-    @media only screen and (min-width: 360px) {
-          padding-top: 5rem;
+    @media only screen and (min-width: 460px) {
+          padding-top: 8rem;
     }
 `;
 
 
-export const ContentRowWrapper = styled.span`
-
-   .content-row {
+export const ContentRowWrapper = styled(Row)`
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-             .desc-text-container {
-                padding: 1.56rem;
+        .desc-text-container {
+            padding: 1.5rem;
  
-                .learn-more-btn{
-                    color:white;
-                    font-weight: 800;
-                    font-size: 1.5em;
-                }
+            .learn-more-btn{
+                color:white;
+                font-weight: 800;
+                font-size: 1.5em;
             }
-    }
-
+        }
 `;
 
 
@@ -79,21 +90,39 @@ export const Description = styled.p`
      }
 `;
 
-export const HeroImageWrapper = styled.div`
-                   display:flex;
-                   align-items: center;
-                   justify-content: center;
-                   position: relative;
+export const ColumnWrapper = styled(Col)`
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
 
 
-                  .meshmap-stack-hero {
-                      position: absolute;
-                      height: 200px;
-                      animation: "floating 3s ease-in-out infinite";
-                   }
+        .meshmap-stack-hero {
+            position: absolute;
+            height: 150px;
+            animation: "floating 3s ease-in-out infinite";
 
-                   .meshmap-stack-cone{
-                     height: 400px;
-                   }
+            @media screen and (min-width: 768px) {
+                height: 200px; 
+            }
+        }
 
+        .meshmap-stack-cone{
+            height: 300px;
+
+             @media screen and (min-width: 768px) {
+                height: 400px; 
+            }
+        }
+
+        .screenshot {
+            height:200px;
+
+            @media screen and (min-width: 768px) {
+                width: 530px; 
+                height: 375px;
+            }
+
+        }
 `;
+
