@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "../image";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel } from "swiper";
@@ -8,7 +7,6 @@ import { Link } from "gatsby";
 import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
 import slugify from "../../utils/slugify";
-
 
 const UpcomingEvents = ({ data }) => {
   return (
@@ -36,9 +34,7 @@ const UpcomingEvents = ({ data }) => {
                       <p className="blog-slider_date">{item.frontmatter.date}</p>
                       <p className="blog-slider_description">{item.frontmatter.abstract}</p>
                       <div className="blog-slider_text">
-                        <MDXRenderer>
-                          {item.body}
-                        </MDXRenderer>
+                        {item.body}
                       </div>
                       <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" external={true} />
                     </div>

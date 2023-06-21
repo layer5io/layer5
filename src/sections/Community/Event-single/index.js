@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -33,7 +32,6 @@ const checkSpeaker = (speaker) => {
 
   isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == speaker);
 
-
   return (
     <>
       {
@@ -47,11 +45,10 @@ const checkSpeaker = (speaker) => {
   );
 };
 
-
-const EventSingle = ({ data }) => {
+const EventSingle = ({ data, children }) => {
 
   //const frontmatter = ({speakers = []});
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter } = data.mdx;
 
 
   return (
@@ -75,7 +72,7 @@ const EventSingle = ({ data }) => {
                   />
               }
 
-              <MDXRenderer>{body}</MDXRenderer>
+              { children }
               <ul className="speakers">
                 {
                   frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""

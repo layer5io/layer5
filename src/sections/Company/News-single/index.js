@@ -1,5 +1,4 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -9,7 +8,7 @@ import NewsSidebar from "./Sidebar";
 import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
 
-const NewsSingle = ({ data }) => {
+const NewsSingle = ({ data, children }) => {
   const { frontmatter, body, fields } = data.mdx;
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
@@ -64,7 +63,7 @@ const NewsSingle = ({ data }) => {
             <Row>
               <Col lg={9} md={8} xs={12}>
                 <SRLWrapper>
-                  <MDXRenderer>{body}</MDXRenderer>
+                  { children }
                 </SRLWrapper>
               </Col>
               <Col lg={3} md={4} xs={12}>

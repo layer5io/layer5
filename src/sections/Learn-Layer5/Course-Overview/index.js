@@ -8,13 +8,12 @@ import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTex
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
-const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
@@ -109,7 +108,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           <Col md={12} lg={8} xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>
-              <MDXRenderer>{course.body}</MDXRenderer>
+              { children }
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
