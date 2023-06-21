@@ -134,6 +134,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/workshop-single.js"
   );
 
+  // const MultiWorkshopTemplate = path.resolve(
+  //   "src/sections/Careers/Careers-Programs-grid/index.js"
+  // );
+
   const LabTemplate = path.resolve(
     "src/templates/lab-single.js"
   );
@@ -199,33 +203,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               contentFilePath
             }
           }
-      }
-      singleWorkshop: allMdx(
-        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
-          }
-          internal {
-            contentFilePath
-          }
-        }
-      }
-      labs: allMdx(
-        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
-          }
-          internal {
-            contentFilePath
-          }
-        }
-      }
+      }     
+     
       learncontent: allMdx(
         filter: {fields: {collection: {eq: "content-learn"}}}
       ){
@@ -291,8 +270,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     nodes => nodes.fields.collection === "integrations"
   );
 
-  const singleWorkshop = res.data.singleWorkshop.nodes;
-  const labs = res.data.labs.nodes;
+  const singleWorkshop = allNodes.filter(
+    nodes => nodes.fields.collection === "service-mesh-workshops"
+  );
+
+  const labs = allNodes.filter(
+    nodes => nodes.fields.collection === "service-mesh-labs"
+  );
 
   paginate({
     createPage: envCreatePage,
@@ -450,7 +434,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach(program => {
     if (
       programsArray.indexOf(program.frontmatter.program) >= 0 &&
-      program.frontmatter.program === "Layer5"
+        program.frontmatter.program === "Layer5"
     ) {
       return false;
     } else {
@@ -464,6 +448,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
     }
   });
+
+  // let workShopArray = [];
+  // singleWorkshop.forEach(workshop => {
+  //   workShopArray.push(workshop.field.slug);
+  //   envCreatePage({
+  //     path: `/workshops/${workshop.field.slug}`,
+  //     component: `${MultiWorkshopTemplate}?__contentFilePath=${workshop.internal.contentFilePath}`,
+  //     context: {
+  //       slug: workshop.fields.slug,
+  //     },
+  //   });
+  // });
 
   const learnNodes = res.data.learncontent.nodes;
 
@@ -567,7 +563,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
           case "news":
-            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+            if (node.frontmatter.published)
+              slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
             break;
           case "service-mesh-books":
           case "service-mesh-workshops":
@@ -656,9 +653,8 @@ const createCourseOverviewPage = ({ envCreatePage, node }) => {
   } = node.fields;
 
   envCreatePage({
-
     path: `${slug}`,
-    component: path.resolve("src/templates/course-overview.js"),
+    component: `${path.resolve("src/templates/course-overview.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,
@@ -683,7 +679,7 @@ const createChapterPage = ({ envCreatePage, node }) => {
   envCreatePage({
 
     path: `${slug}`,
-    component: path.resolve("src/templates/learn-chapter.js"),
+    component: `${path.resolve("src/templates/learn-chapter.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,
