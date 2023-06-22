@@ -7,18 +7,17 @@ thumbnail: ./cnab-logo.webp
 darkthumbnail: ./cnab-logo.webp
 category: Meshery
 tags:
- - Community
- - Meshery
- - mesheryctl
+  - Community
+  - Meshery
+  - mesheryctl
 published: true
 type: Blog
 technology: Docker
 product: Meshery
 resource: true
 redirect_from:
- - /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d/
+  - /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d/
 ---
-
 
 import wsldockerstart from "./wsl-docker-start.webp";
 import wslgrafanalogin from "./wsl-grafana-login.webp";
@@ -33,24 +32,26 @@ import wslmesherystart from "./wsl-meshery-start.webp";
 <BlogWrapper>
 
 During KubeCon EU 2019, I had the chance to discover two new softwares that simply amazed me:
+
 1. [Meshery](https://layer5.io/cloud-native-management/meshery), which is the multi-service mesh management plane.
 2. [k3d](https://github.com/rancher/k3d), which is used to create a dockerized [k3s](https://k3s.io) server.
 
-And, what really appealed to me about both of them is that everything from the installation to the usage was just *simple!*
+And, what really appealed to me about both of them is that everything from the installation to the usage was just _simple!_
 And cream on the top, both softwares are used with or inside containers, making each ideal for a create/try/delete workflow.
 
 <h4>Environment Setup</h4>
 
-Before we start having *real* fun with Meshery, I will quickly list the different components I used for this blog post and ensure I define what could be optional for your own setup:
+Before we start having _real_ fun with Meshery, I will quickly list the different components I used for this blog post and ensure I define what could be optional for your own setup:
+
 1. [Meshery](https://layer5.io/cloud-native-management/meshery)
 2. [Docker](https://docs.docker.com/install/)
-    - Docker is of course mandatory and as Meshery is based on a Compose file, which means that [docker-compose](https://docs.docker.com/compose/install/) is also mandatory.
+   - Docker is of course mandatory and as Meshery is based on a Compose file, which means that [docker-compose](https://docs.docker.com/compose/install/) is also mandatory.
 3. [k3d](https://github.com/rancher/k3d)
-    - k3d or any k3s/K8s cluster that you might have already configured.
+   - k3d or any k3s/K8s cluster that you might have already configured.
 4. [WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)
-    - For the (few) ones who know me, my "OS base" is WSL2, which means that without much/any change, it should run fine for any Linux/MacOS setup.
-5. [Grafana](https://grafana.com/) *(optional)*
-    - Grafana is not mandatory however is strongly recommend. We will setup a dockerized instance, but feel free to plug Meshery with your existing instance.
+   - For the (few) ones who know me, my "OS base" is WSL2, which means that without much/any change, it should run fine for any Linux/MacOS setup.
+5. [Grafana](https://grafana.com/) _(optional)_
+   - Grafana is not mandatory however is strongly recommend. We will setup a dockerized instance, but feel free to plug Meshery with your existing instance.
 
 <h4> Nothing is taken for granted </h4>
 
@@ -76,8 +77,9 @@ docker version
 ```bash
 curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
 ```
+
 <a href={wsldockerstart}>
-    <img src={wsldockerstart} class="thumbnail" alt="wsl-docker-start" />
+  <img src={wsldockerstart} className="thumbnail" alt="wsl-docker-start" />
 </a>
 
 - Create a new k3d cluster with the <code> WSL2 IP </code>
@@ -91,19 +93,20 @@ kubectl cluster-info
 ```
 
 <a href={wslk3dstart}>
-    <img src={wslk3dstart} class="thumbnail" alt="wslk3dstart" />
+  <img src={wslk3dstart} className="thumbnail" alt="wslk3dstart" />
 </a>
-<br/>
-- Start Meshery on the newly created cluster
+<br />- Start Meshery on the newly created cluster
 
 ```bash
 mesheryctl system start
 ```
 
 <a href={wslmesherystart}>
-    <img src={wslmesherystart} class="thumbnail" alt="wslmesherystart" />
+  <img src={wslmesherystart} className="thumbnail" alt="wslmesherystart" />
 </a>
-- Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
+- Once Meshery is fully started, login in your preferred browser using the <code>
+  WSL2 IP
+</code> instead of <code>localhost</code>
 
 ```bash
 export BROWSER=/mnt/c/Firefox/firefox.exe
@@ -111,14 +114,14 @@ $BROWSER $mainIP:9081 &
 ```
 
 <a href={wslmesherylogin}>
-        <img src={wslmesherylogin} alt="wslmesherylogin" />
+  <img src={wslmesherylogin} alt="wslmesherylogin" />
 </a>
 <a href={wslmesheryloginsuccess}>
-    <img src={wslmesheryloginsuccess} alt="wslmesheryloginsuccess" />
+  <img src={wslmesheryloginsuccess} alt="wslmesheryloginsuccess" />
 </a>
 
-
 #### [Optional] More analytics with Grafana
+
 As stated above, Meshery can leverage the analytics provided by Grafana. For this blog post, as everything is built from scratch. Here is the setup for a new Grafana dockerized instance.
 
 Start a new Grafana on docker instance
@@ -134,32 +137,43 @@ grafana/grafana
 ```
 
 <a href={wslgrafanastart}>
-    <img src={wslgrafanastart} class="thumbnail" alt="wslgrafanastart" />
+  <img src={wslgrafanastart} className="thumbnail" alt="wslgrafanastart" />
 </a>
 
 - Access the new instance with the admin password that you set in the docker environment variable
+
 ```bash
 $BROWSER $mainIP:3000 &
 ```
 
 <a href={wslgrafanalogin}>
-    <img src={wslgrafanalogin} class="thumbnail" alt="wslgrafanalogin" />
+  <img src={wslgrafanalogin} className="thumbnail" alt="wslgrafanalogin" />
 </a>
 <br />
 <a href={wslgrafanaloginsuccess}>
-    <img src={wslgrafanaloginsuccess} class="thumbnail" alt="wslgrafanaloginsuccess" />
+  <img
+    src={wslgrafanaloginsuccess}
+    className="thumbnail"
+    alt="wslgrafanaloginsuccess"
+  />
 </a>
 
 ### An inside look
+
 While everything should run fine, it's always good to have a look at what has been deployed.
 
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
 
 <a href={wslmesherycomplete}>
-    <img src={wslmesherycomplete}class="thumbnail" alt="wslmesherycomplete" />
+  <img
+    src={wslmesherycomplete}
+    className="thumbnail"
+    alt="wslmesherycomplete"
+  />
 </a>
 
 #### Conclusion
+
 As [Lee Calcote](https://twitter.com/lcalcote) put it, this is a lot of buzz words: Meshery > k3s (deployed via k3d) > Docker > WSL2 > Windows 10. And he's totally right, still the "beauty" here, is that it "simply works".
 
 Since the begin of the Docker era, new tooling has appeard for simplifying complex workflows.
@@ -167,7 +181,9 @@ Even Kubernetes (K8s) as a much lighter version with k3s by Rancher.
 
 And of course, Meshery which integrates and simplifies the installation and benchmarking of different service meshes. Hope you had fun assembling all these pieces and stay tunned for the "Bonuses", more fun to come!
 
-<span> > > > <i>Nunix out</i></span>
-
+<span>
+  {" "}
+  > > > <i>Nunix out</i>
+</span>
 
 </BlogWrapper>

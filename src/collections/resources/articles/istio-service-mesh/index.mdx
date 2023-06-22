@@ -10,8 +10,8 @@ published: true
 category: Service Mesh
 mesh: Istio
 tags:
- - Service Mesh
- - Istio
+  - Service Mesh
+  - Istio
 resource: true
 ---
 
@@ -22,9 +22,21 @@ import arch from "./arch.svg";
   
 <p> Microservice architectures offer some solutions while posing new ones. Application division into separate services makes scaling, updating, and development easier. It also provides you with a lot more moving pieces to connect and secure. It can get quite complicated to manage all of the network services, including load balancing, traffic management, authentication and authorisation, etc. </p>
 
-<p> Istio, an open-source service mesh created by Google, IBM, and Lyft, enables you to connect, monitor, and secure microservices that are hosted on-premises, in the cloud, or with orchestration systems like Kubernetes and Mesos. The beta version of Istio was announced in the year 2018 in KubeCon on Google Cloud. </p> 
+<p>
+  {" "}
+  Istio, an open-source service mesh created by Google, IBM, and Lyft, enables you
+  to connect, monitor, and secure microservices that are hosted on-premises, in the
+  cloud, or with orchestration systems like Kubernetes and Mesos. The beta version
+  of Istio was announced in the year 2018 in KubeCon on Google Cloud.{" "}
+</p>
+{" "}
 
-<p> Before moving on to what Istio is and how it works, let us look into what service meshes are and why there was an urgent need for them as microservices started getting used more. </p>
+<p>
+  {" "}
+  Before moving on to what Istio is and how it works, let us look into what service
+  meshes are and why there was an urgent need for them as microservices started getting
+  used more.{" "}
+</p>
 
   <h3> Service Mesh </h3>
   
@@ -34,7 +46,7 @@ import arch from "./arch.svg";
   
   <p> The communication between services, on the other hand, is handled by the data plane. Because many service mesh solutions use a sidecar proxy to manage data plane connections, the amount of knowledge that the services must have about the network environment is constrained. </p>
  
-  <img src = {serviceMesh} class="image-center" alt="Service Mesh" />
+  <img src = {serviceMesh} className="image-center" alt="Service Mesh" />
   
   <h3> Inside the Istio service mesh </h3>
   
@@ -44,7 +56,7 @@ import arch from "./arch.svg";
     <li> The proxies are controlled and set up by the control plane to route traffic. </li>
   </ul>
   
-   <img src = {arch} class="image-center" alt="Istio Service Mesh Architecture" />
+   <img src = {arch} className="image-center" alt="Istio Service Mesh Architecture" />
   
   <h4> Envoy </h4>
   

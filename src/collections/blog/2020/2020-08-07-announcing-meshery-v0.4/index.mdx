@@ -7,17 +7,16 @@ thumbnail: ./meshery-v040.webp
 darkthumbnail: ./meshery-v040.webp
 category: Announcements
 tags:
- - Meshery
- - Projects
- - News
+  - Meshery
+  - Projects
+  - News
 published: true
 type: Blog
 product: Meshery
 resource: true
 redirect_from:
- - /blog/meshery/announcing-meshery-v0.4.0/
+  - /blog/meshery/announcing-meshery-v0.4.0/
 ---
-
 
 import operator from "./meshery-operator-dark.svg";
 import MesheryArchitecture from "./meshery-architecture.webp";
@@ -33,8 +32,10 @@ Layer5 community members are hard at work providing our users with easy access t
 The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across service mesh environments spanning Meshery and it's various adapters.
 
 ### Meshery's CLI: `mesheryctl`
+
 **New Command Structure**<br/>
 `mesheryctl` commands and subcommands have been restructured in v0.4.0 into the categories:
+
 - Global Commands and Flags
 - Meshery Lifecycle Management
 - Performance Management
@@ -53,15 +54,20 @@ Support extended to Scoop Bucket. You can now install mesheryctl on your Windows
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
 ### MeshSync<br/>
-<img src={operator} class="image-right" alt="meshery-operator-dark" />
 
--  A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster.
--  MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change.
--  MeshSync brings a service mesh agnostic object model that defines relationships between all objects under management.
+<img src={operator} className="image-right" alt="meshery-operator-dark" />
+
+- A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster.
+- MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing. Meshery operations should be resilient in the face of this change.
+- MeshSync brings a service mesh agnostic object model that defines relationships between all objects under management.
 
 ### Meshery Adapter for Citrix Service Mesh (beta)<br/>
 
-<img src={MesheryArchitecture} class="image-right" alt="meshery-architecture" />
+<img
+  src={MesheryArchitecture}
+  className="image-right"
+  alt="meshery-architecture"
+/>
 
 - [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported service mesh. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
 - CPX runs as the Istio Data Plane component, displacing Envoy as the default data plane service proxy.<br/>
@@ -83,8 +89,17 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 - ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
 - Cypress has been set-up to enable end-to-end tests and integration tests for Meshery UI.
 
-<center><iframe frameborder="0" width="100%" height="300" allowfullscreen={true} mozallowfullscreen="true" webkitallowfullscreen="true"frameborder="0" width="100%" height="300" allowfullscreen={true} mozallowfullscreen="true" webkitallowfullscreen="true" src="https://www.youtube.com/embed/ds9D2KgZKxo" loading="lazy"></iframe></center>
-
+<center>
+  <iframe
+    frameBorder="0"
+    width="100%"
+    height="300"
+    allowFullScreen={true}
+    mozAllowFullScreen="true"
+    webkitAllowFullScreen="true"
+    src="https://www.youtube.com/embed/ds9D2KgZKxo"
+    loading="lazy"></iframe>
+</center>
 
 ### Other notable changes
 
@@ -92,7 +107,6 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 - ReleaseDrafter & WelcomeBot has been added to the repository to enable automation of release notes and for welcoming new contributors, respectively.
 
 To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.4.0 release, see the [Meshery Documentation](https://docs.meshery.io/project/releases)
-
 
 _**P.S.: If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on our [Slack Channel](http://slack.layer5.io) and one of us will reach out to you!**_
 

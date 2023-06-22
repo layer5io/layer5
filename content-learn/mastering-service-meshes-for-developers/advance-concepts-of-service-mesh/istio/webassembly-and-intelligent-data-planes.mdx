@@ -7,8 +7,6 @@ lectures: 12
 order: 7
 ---
 
-
-
 import installimagehub from "../../../../src/assets/images/learn-layer5/istio/install-imagehub.webp";
 import deployenvoyfilter from "../../../../src/assets/images/learn-layer5/istio/deploy-envoyfilter.webp";
 
@@ -16,7 +14,7 @@ import deployenvoyfilter from "../../../../src/assets/images/learn-layer5/istio/
 
 In this lab, you will use the sample application [Image Hub](https://github.com/layer5io/image-hub). This version of the Image Hub filter has been simplified for your lab. To self-study deeper functionality, try the other version of the Image Hub filter that is available in the Image Hub repo.
 
-<h2 class="chapter-sub-heading">Deploy Sample Application</h2>
+<h2 className="chapter-sub-heading">Deploy Sample Application</h2>
 
 Using Meshery, select Istio from the Management menu.
 
@@ -25,13 +23,12 @@ In the Istio management page:
 1. Type default into the namespace field.
 2. Click the (+) icon on the Manage Sample Application Lifecycle card and select Image Hub Application to install the latest version of Image Hub
 
-
 <img src={installimagehub} align="center" width="100%" />
 
 <br />
 <br />
 
-<h2 class="chapter-sub-heading">Load the filter</h2>
+<h2 className="chapter-sub-heading">Load the filter</h2>
 
 Next, load the custom Envoy filter. This filter is written in Rust and is compiled against WebAssembly as it's target runtime.
 
@@ -46,9 +43,9 @@ In the Istio management page:
 
 <br />
 <br />
-<h2 class="chapter-sub-heading">Send traffic</h2>
+<h2 className="chapter-sub-heading">Send traffic</h2>
 <br />
-<h2 class="chapter-sub-heading">Analyze behavior</h2>
+<h2 className="chapter-sub-heading">Analyze behavior</h2>
 
 Alternative, manual installation steps are provided for reference below. No need to execute these if you have performed the steps above.
 
@@ -90,8 +87,8 @@ spec:
     labels:
       app: api-v1
       version: v1
-
 ```
+
 Manually patch the Image Hub Deployment.
 
 ```yaml
@@ -143,6 +140,7 @@ Manually patch the Image Hub Deployment.
 // '
 
 ```
+
 A future version of Meshery will allow you to deploy any filter from the [wasm-filters](https://github.com/layer5io/wasm-filters) repo. PR the repo to upload your custom filter and have Meshery deploy it.
 
 </ChapterStyle>

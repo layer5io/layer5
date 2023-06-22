@@ -6,13 +6,12 @@ author: "Adithya Krishna"
 thumbnail: ./buf-protocol.webp
 darkthumbnail: ./buf-protocol.webp
 category: "Cloud Native"
-tags: 
- - gRPC
+tags:
+  - gRPC
 published: true
 resource: true
 type: Blog
 ---
-
 
 import { BufProtocol } from "./BufProtocol.style";
 
@@ -21,22 +20,41 @@ import Problems from "./problems.webp";
 <BlogWrapper>
 <BufProtocol>
 
-
-<div class="intro" style="text-align:center;margin: 2rem 4rem;"><p>At Layer5, we are continuously evaluating new technologies and incorporating them into our open source projects. Buf is one of those projects. This post presents an overview of Buf.</p></div>
-
+<div className="intro" style={{textAlign: "center", margin: "2rem 4rem"}}>
+  <p>
+    At Layer5, we are continuously evaluating new technologies and incorporating
+    them into our open source projects. Buf is one of those projects. This post
+    presents an overview of Buf.
+  </p>
+</div>
 
 ## What is Buf?
 
-<p>A tool to make Protobuf reliable and easy to use for service owners and clients, while keeping it the obvious choice on the technical merits.
-Our organization should not have to reinvent the wheel to create, maintain, and consume Protobuf APIs efficiently and effectively. It will handle our Protobuf management strategy for us, so we can focus on what matters.</p>
+<p>
+  A tool to make Protobuf reliable and easy to use for service owners and
+  clients, while keeping it the obvious choice on the technical merits. Our
+  organization should not have to reinvent the wheel to create, maintain, and
+  consume Protobuf APIs efficiently and effectively. It will handle our Protobuf
+  management strategy for us, so we can focus on what matters.
+</p>
 
-<div class="fact">Learn more about Buf Protocol, visit <a href="https://buf.build" rel="nofollow">Buf Protocol</a> or their documentation at <a href="https://docs.buf.build/" rel="nofollow">Buf Protocol Docs</a></div>
+<div className="fact">
+  Learn more about Buf Protocol, visit{" "}
+  <a href="https://buf.build" rel="nofollow">
+    Buf Protocol
+  </a>
+{" "}
+  or their documentation at{" "}
+  <a href="https://docs.buf.build/" rel="nofollow">
+    Buf Protocol Docs
+  </a>
+</div>
 
-<img class="problem-image" src={Problems} />
+<img className="problem-image" src={Problems} />
 
-## Features 
+## Features
 
-- Automatic file discovery. 
+- Automatic file discovery.
 - Selectable configuration - 40 lint checkers and 54 breaking checkers
 - Selectable error output - `file:line:col:message`
 - Check anything from anywhere - proto files, tar, git, pre-built images or file descriptors.
@@ -53,32 +71,45 @@ Buf attempts to simplify your Protocol Buffers workflow using the Buf CLI and pr
 - A configurable file builder that produces Images, our extension of FileDescriptorSets.
 
 ## Comparison Between Protobuf and Buf
+
 Layer5 projects currently use protoc as the tool for building their protobuf defintions. The following are some considerations made while determining whether to use Buf.
 
 - Protobuf is not as widely adopted as JSON.
-- API Structure 
+- API Structure
   - No standards enforcement
-  - Inconsistency can arise across an organization's Protobuf APIs,   
+  - Inconsistency can arise across an organization's Protobuf APIs,
   - Design decisions can be made that can affect your API's future iterability.
 - Backward Compatibility
 - Stub distribution
 - Tooling
 
-<p>Buf aims to solve the above problems and it's long-term goal is to enable schema-driven development: A future where APIs are defined consistently, in a way that service owners and us can depend on</p>
+<p>
+  Buf aims to solve the above problems and it's long-term goal is to enable
+  schema-driven development: A future where APIs are defined consistently, in a
+  way that service owners and us can depend on
+</p>
 
 ## Roadmap to Adopting Buf
+
 In consideration of the use of Buf, we would adopt it in phases, starting with the following ares of integration.
 
-- **API Structure  Enforcements**
-  - Linter solves this issue by enforcing standards. 
-  - Also, we don’t need to use Buf as a standalone tool we can just use linter as plugins.
+- **API Structure Enforcements**
 
+  - Linter solves this issue by enforcing standards.
+  - Also, we don’t need to use Buf as a standalone tool we can just use linter as plugins.
 
 - **Backward Compatibility**
   - It will check for different things that can cause breaking change.
   - For example, type change.
 
-<div class="intro"><p>If these topics excite you and you want to explore more <a href="/resources">cloud native technolgies</a>, come and say "Hi" on the community <a href="http://slack.layer5.io">Slack</a> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+<div className="intro">
+  <p>
+    If these topics excite you and you want to explore more{" "}
+    <a href="/resources">cloud native technolgies</a>, come and say "Hi" on the
+    community <a href="http://slack.layer5.io">Slack</a> and you are sure to be
+    warmly welcomed. <span>😀</span>
+  </p>
+</div>
 
 </BufProtocol>
 </BlogWrapper>

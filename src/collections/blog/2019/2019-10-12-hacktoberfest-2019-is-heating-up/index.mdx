@@ -13,9 +13,6 @@ redirect_from:
  - /blog/hacktoberfest-2019-heating-up/
 ---
 
-
-
-
 <BlogWrapper>
 
 (ICYMI: [I've made my first-ever Hacktoberfest contribution](https://raungar.wordpress.com/2019/10/02/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-contribution/)!)_
@@ -54,13 +51,13 @@ To do so, I followed coding style on the issue's previous contributor by encapsu
 I chose to implement the [simplest of sorting algorithms](https://github.com/layer5io/layer5/blob/master/assets/js/table-sort.js#L13) in JavaScript (which I count as study for my _Data Structures and Algorithms_ midterm):
 
 
-```js
-// Excerpted from https://github.com/layer5io/layer5/blob/master/assets/js/table-sort.js
+```
+{/*Excerpted from https://github.com/layer5io/layer5/blob/master/assets/js/table-sort.js*/}
 let bubbleSort = () => {
-  for (i = 0; i < rows.length-1; i++) {
-    for (j = 0; j < rows.length-i-1; j++) {
-      if (shouldSwap(text(j), text(j+1))) {
-        rows[j].parentNode.insertBefore(rows[j+1], rows[j]);
+  for (i = 0; i < rows.length - 1; i++) {
+    for (j = 0; j < rows.length - i - 1; j++) {
+      if (shouldSwap(text(j), text(j + 1))) {
+        rows[j].parentNode.insertBefore(rows[j + 1], rows[j]);
         didSort = true;
       }
     }

@@ -43,7 +43,7 @@ import githubBlack from "../../../../assets/images/socialIcons/github_black.svg"
 
 <p>Conformance of SMI specifications is defined as a series of test assertions. These test assertions are categorised by SMI specification (of which, there are currently four specifications) and comprise the complete suite of SMI conformance tests. Conformance requirements will change appropriately as each new version of the SMI spec is released. Refer to Meshery's documentation for details of how <a href="https://docs.meshery.io/functionality/service-mesh-interface">Meshery performs SMI conformance</a>.</p>
 
-<img src={githubBlack} className="image-left-no-shadow" style="max-width:9vw" />
+<img src={githubBlack} className="image-left-no-shadow" style={{ maxWidth: "9vw"}} />
 
 <h3>Using Meshery's SMI Conformance GitHub Action</h3>
 
@@ -112,8 +112,7 @@ jobs:
 
 <p>You can download a token from Meshery and add it as a GitHub secret (in the example above, the secret is <code>MESHERY_PROVIDER_TOKEN</code>). After the test is run, you can view the results from the Service Mesh Interface dashboard in Meshery UI.</p>
 
-<p align="center"><img src={smidashboard} className="image-center-shadow" style="width:70%" alt="smi conformance dashboard" /> <br />
-<i>Meshery's Service Mesh Interface Conformance Results</i></p>
+<p align="center"><img src={smidashboard} className="image-center-shadow" style={{ width: "70%" }} alt="smi conformance dashboard" /> <br /><i>Meshery's Service Mesh Interface Conformance Results</i></p>
 
 <p>Participating service mesh projects can also <a href="https://docs.meshery.io/functionality/service-mesh-interface#reporting-conformance">automatically report their conformance test results</a> to the <a href="https://meshery.io/service-mesh-interface">SMI Conformance dashboard</a></p>
 
@@ -121,7 +120,7 @@ jobs:
 
 <p>Measuring and managing the performance of a service mesh is key to efficient operation of any service mesh. Meshery is the canonical implementation of the Service Mesh Performance specification. You can choose from multiple load generators and use a highly configurable set of load profiles with variable tunable facets to run a performance test. Meshery packages all these features into an easy-to-use GitHub Action.</p>
 
-<img src={githubBlack} className="image-left-no-shadow" style="max-width:9vw" />
+<img src={githubBlack} className="image-left-no-shadow" style={{ maxWidth: "9vw"}} />
 
 <h3>Using Meshery's Service Mesh Performance GitHub Action</h3>
 
