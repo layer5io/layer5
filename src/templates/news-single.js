@@ -1,10 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
-
-
 import NewsSingle from "../sections/Company/News-single";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query NewsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -31,18 +29,16 @@ export const query = graphql`query NewsBySlug($slug: String!) {
 }
 `;
 
-const NewsSinglePage = ({ data }) => {
-
+const NewsSinglePage = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <NewsSingle data={data} />
-
+      <SimpleReactLightbox>
+        <NewsSingle data={data} >
+          { children }
+        </NewsSingle>
+      </SimpleReactLightbox>
     </>
-
   );
 };
 

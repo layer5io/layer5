@@ -34,7 +34,7 @@ Button{
         font-weight: 700;
         color: ${props => props.theme.secondaryColor}
     }
-    p{
+    span{
         font-weight: 300;
         color: ${props => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -96,23 +96,23 @@ const NewsSidebar = (props) => {
     <NewsSidebarWrapper>
       {props.kit ?
         <a href={props.kit}>
-          <Button primary title="Press Kit" external={true}>
+          <Button primary title="Press Kit" >
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
-        </a> : ""}
-      <Link to="/brand">
-        <Button secondary title="Layer5 brand kit" external={true} />
-      </Link>
+        </a>
+        : ""}
+      <Button secondary title="Layer5 brand kit" url="/brand" />
       <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
         <div className="media_block">
           <h5>Media Contacts</h5>
-          <p>Kate Suttons</p>
+          <span>Kate Suttons</span>
           <FiMail size={40} className="icon" />
-          <p>press@layer5.io</p>
+          <span>press@layer5.io</span>
         </div>
       </a>
-      <Link to="/meshmap">
-        <div className="cta">
+
+      <div className="cta">
+        <Link to="/meshmap">
           <h4 className="cta_heading">
         MeshMap
           </h4>
@@ -120,15 +120,14 @@ const NewsSidebar = (props) => {
             <h3 className="cta_heading-heading">
             Your friendly cloud native visual editor.
             </h3>
-            <div className="chapter-link">
-              <Button primary title="Try Now!"
-                className="btn"
-                url="/meshmap"
-                external={false} />
-            </div>
           </div>
+        </Link>
+        <div className="chapter-link">
+          <Button primary title="Try Now!"
+            className="btn"
+            url="/meshmap" />
         </div>
-      </Link>
+      </div>
     </NewsSidebarWrapper>
   );
 };
