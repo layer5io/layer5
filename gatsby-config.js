@@ -418,7 +418,7 @@ module.exports = {
             // Add GitHub Flavored Markdown (GFM) support
             require("remark-gfm"),
           ]
-        },
+        }
       }
     },
     {

@@ -94,5 +94,27 @@ module.exports = {
     "space-infix-ops": [
       "error"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.mdx", "*.md"],
+      "extends": ["plugin:mdx/recommended"],
+      "settings": {
+        "mdx/code-blocks": true,
+        "mdx/language-mapper": {},
+      },
+      "rules": {
+        "semi": 0,
+        "indent": 0,
+        "no-trailing-spaces": 0,
+        "object-curly-spacing": 0,
+        "space-infix-ops": 0,
+        "no-irregular-whitespace": 0,
+        "no-unused-expressions": 0,
+        "linebreak-style": 0,
+        "react/jsx-no-undef": 0,
+        "no-unused-vars": 0,
+      }
+    }
+  ],
 };
