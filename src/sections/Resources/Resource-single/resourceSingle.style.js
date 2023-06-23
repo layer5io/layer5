@@ -4,6 +4,10 @@ const ResourcePageWrapper = styled.div`
     color: ${props => props.theme.text};
     .single-resource-wrapper{
         margin-bottom: 4rem;
+
+        h3 {
+            text-align: center;
+        }
     }
 
     .resource-info-block{
@@ -21,7 +25,7 @@ const ResourcePageWrapper = styled.div`
         margin: 3rem auto;
         font-weight: 600;
         z-index: 2;
-    
+
         @media screen and (max-width: 62rem) {
             display: none;
         }
@@ -31,7 +35,7 @@ const ResourcePageWrapper = styled.div`
             &:hover{
                 color: ${props => props.theme.linkColor};
             }
-            
+
             h4 {
                 line-height: 1.75rem;
                 margin-left: 0.5rem;

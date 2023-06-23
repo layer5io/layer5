@@ -42,6 +42,7 @@ const TOCWrapper = styled.div`
 
   .toc-sub-heading {
     color: ${(props) => props.theme.text};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;
