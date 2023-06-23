@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -8,32 +8,23 @@ import { BlogPageWrapper } from "./blogList.style";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Pagination from "../../Resources/Resources-grid/paginate";
 import SearchBox from "../../../reusecore/Search";
-import useDataList from "../../../utils/usedataList";
 
 const BlogList = ({
   isListView,
   setListView,
   setGridView,
   pageContext,
-  data,
+  currentPage,
+  searchQuery,
+  searchData,
+  setCurrentPage,
+  queryResults,
+  postsPerPage,
+  searchedPosts,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  let { totalCount, nodes } = data.allMdx;
-  const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
-    nodes,
-    setSearchQuery,
-    searchQuery,
-    ["frontmatter", "title"],
-    "id"
-  );
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
-  const currentPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
-  totalCount = queryResults.length;
+  const totalCount = queryResults.length;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
@@ -77,14 +68,14 @@ const BlogList = ({
               )}
               <div className="blog-list-wrapper">
                 <Row className="blog-lists">
-                  {currentPosts.length > 0 &&
-                    currentPosts.map(({ id, frontmatter, fields }) => (
+                  {searchedPosts.length > 0 &&
+                    searchedPosts?.map(({ id, frontmatter, fields }) => (
                       <Col xs={12} key={id}>
                         <Card  frontmatter={frontmatter} fields={fields} />
                       </Col>
                     ))}
                   <Col>
-                    {currentPosts.length > 0 && (
+                    {searchedPosts.length > 0 && (
                       <Pagination
                         postsPerPage={postsPerPage}
                         totalPosts={queryResults.length}

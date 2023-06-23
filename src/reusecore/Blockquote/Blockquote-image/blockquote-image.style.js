@@ -8,6 +8,12 @@ blockquote {
     margin: 0;
 }
 
+.type-one-text,
+.type-two-quote-text {
+    color: ${props => props.theme.greyEEEEEEToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 section.bq-section {
     padding: 30px;
     margin-bottom: 60px;
