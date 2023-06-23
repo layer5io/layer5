@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const BookWrapper = styled.div`
 
     .book{
-        float:right;
+        display:flex;
+        justify-content:center;
+        align-items:center;
         padding:20px;
         text-align:center;
         @media only screen and (max-width: 568px){
