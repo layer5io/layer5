@@ -8,7 +8,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
-import { BsArrowUpRightSquareFill } from "@react-icons/all-files/bs/BsArrowUpRightSquareFill";
+import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
 
 import Banner1SectionWrapper from "./banner4.style";
 
@@ -64,7 +64,7 @@ const Banner1 = (props) => {
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io">
-                    <BsArrowUpRightSquareFill size={21} className="icon-left" />
+                    <BsArrowUpRight size={21} className="icon-left" />
                   </Button>
                 </VintageBox>
               </span>
