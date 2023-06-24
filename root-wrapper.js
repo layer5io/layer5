@@ -1,6 +1,6 @@
 import React from "react";
+
 import { MDXProvider } from "@mdx-js/react";
-import Code from "./src/components/CodeBlock";
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
@@ -17,6 +17,9 @@ import { ChapterStyle } from "./src/components/Learn-Components/Chapters-Style/c
 import Button from "./src/reusecore/Button";
 import Blockquote from "./src/reusecore/Blockquote";
 import BlockquoteAlt from "./src/reusecore/Blockquote/Blockquote-alt-style";
+// import Code from "./src/components/CodeBlock";
+import loadable from "@loadable/component";
+const Code = loadable(() => import("./src/components/CodeBlock"));
 
 const layer5Pre = ({ children: { props, type } }) => {
   if (type === "code") {

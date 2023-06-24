@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
-import Card from "./Card";
+
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
-import { ReactComponent as IngressGatewayImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
-import { ReactComponent as KubernetesImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-partial-colorMode.svg";
-import { ReactComponent as PodImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
-import { ReactComponent as PrometheusImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
-import { ReactComponent as ServiceIntefaceImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
+// import { ReactComponent as IngressGatewayImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
+// import { ReactComponent as KubernetesImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-partial-colorMode.svg";
+// import { ReactComponent as PodImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
+// import { ReactComponent as PrometheusImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
+// import { ReactComponent as ServiceIntefaceImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
+import loadable from "@loadable/component";
 import SupportingArrows from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/supporting-arrows.svg";
 import EmptyLight from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/empty-dark.svg";
 import { useInView } from "react-intersection-observer";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
+
+
+const Card = loadable(() => import("./Card"));
+const IngressGatewayImage = loadable.lib(() => import("../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg"));
+const KubernetesImage = loadable.lib(() => import("../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-partial-colorMode.svg"));
+const PodImage  = loadable.lib(() => import("../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/pod-partial-colorMode.svg"));
+const PrometheusImage = loadable.lib(() => import("../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg"));
+const ServiceIntefaceImage = loadable.lib(() => import("../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg"));
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
   const { blogData,className } = props;
@@ -114,11 +123,23 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
-                        <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
+                        {/* <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
                         <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
                         <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />
                         <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
                         <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
+                        <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" /> */}
+
+                        <ServiceIntefaceImage>{({ ReactComponent }) => <ReactComponent className="service-interface" alt="ServiceIntefaceImage"/>}</ServiceIntefaceImage>
+
+                        <IngressGatewayImage>{({ ReactComponent }) => <ReactComponent alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />}</IngressGatewayImage>
+
+                        <KubernetesImage>{({ ReactComponent }) => <ReactComponent className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage"/>}</KubernetesImage>
+
+                        <PodImage>{({ ReactComponent }) => <ReactComponent className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage"/>}</PodImage>
+
+                        <PrometheusImage >{({ ReactComponent }) => <ReactComponent className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />}</PrometheusImage>
+
                         <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
                       </div>
                       <div className="card-text">
