@@ -71,8 +71,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
                 </Link>
                 {activeState.subItems.map((subItem, i) => {
-                  // const externalLinks = ["Forum", "Catalog", "Playground"];
-
                   return (
                     <li key={i}>
                       {subItem.externalLink ?
