@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
@@ -8,7 +8,17 @@ import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
+  const [isInputFocused, setInputFocused] = useState(false);
+  const inputRef = useRef(null);
   var currentYear = new Date().getFullYear();
+  const handleFocus = () => {
+    setInputFocused(true);
+    window.scrollTo(0, document.body.scrollHeight);
+  };
+
+  const handleBlur = () => {
+    setInputFocused(false);
+  };
   return (
     <FooterWrapper>
       <img
@@ -232,14 +242,23 @@ const Footer = () => {
                 method="post"
                 action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
               >
-                <div>
+                <div         className="mobiletype"
+                  style={{
+                    marginBottom: isInputFocused ? "48%" : "0",
+                    transition: "margin-bottom 0.3s ease",
+                    position: "relative",
+                    zIndex: "1",
+                  }}>
                   <span>Subscribe to our Newsletter</span>
                   <input
+                    ref={inputRef}
                     className="inputrow subscribe-email"
                     type="email"
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL-2"
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
                     onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
                     onInput={e => e.target.setCustomValidity("")}
                     required
