@@ -6,6 +6,7 @@ import SocialLinksColor from "../../../components/SocialLinks-Color";
 import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
+import { MobileTypeContainer } from "./footer-mobile";
 
 const Footer = () => {
   const [isInputFocused, setInputFocused] = useState(false);
@@ -242,13 +243,7 @@ const Footer = () => {
                 method="post"
                 action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
               >
-                <div         className="mobiletype"
-                  style={{
-                    marginBottom: isInputFocused ? "48%" : "0",
-                    transition: "margin-bottom 0.3s ease",
-                    position: "relative",
-                    zIndex: "1",
-                  }}>
+                <MobileTypeContainer isInputFocused={isInputFocused}>
                   <span>Subscribe to our Newsletter</span>
                   <input
                     ref={inputRef}
@@ -269,7 +264,7 @@ const Footer = () => {
                     aria-label="subscribe-us"
                     id="mc-embedded-subscribe-2"
                   />
-                </div>
+                </MobileTypeContainer>
               </form>
             </Row>
           </Col>
