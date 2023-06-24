@@ -20,6 +20,9 @@ export const BookWrapper = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
+        @media only screen and (max-width: 568px){
+             display:block;
+        }
     } 
     div.center {
         text-align:center;
