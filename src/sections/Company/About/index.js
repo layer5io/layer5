@@ -1,21 +1,27 @@
 import React from "react";
+import { Link } from "gatsby";
+import loadable from "@loadable/component";
+import { useInView } from "react-intersection-observer";
 import { StaticImage } from "gatsby-plugin-image";
+
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import AboutSectionWrapper from "./about.style";
-import Statement from "../Layer5-statement";
 
 import collabMap from "./images/layer5-collaboration-map.svg";
-import location from "./images/location.svg";
-import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import { ReactComponent as CNCFstackedlogo } from "./images/cncf-stacked-color.svg";
-import { Link } from "gatsby";
+
+
+const WhoWeAre = loadable(() => import("../WhoWeAre"));
+const Statement = loadable(() => import("../Layer5-statement"));
+const CNCFstackedlogo = loadable.lib(() => import("./images/cncf-stacked-color.svg"));
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
-  const Layer5Projects = "./images/layer5-projects.svg";
+  const Layer5Projects = "../Layer5-statement/layer5-projects.webp";
+  const location = "./images/location.svg";
+  const { ref: inViewRef, inView } = useInView({ threshold: .5, triggerOnce: true });
 
   return (
     <AboutSectionWrapper id="about">
@@ -26,7 +32,7 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={FiveIcon} alt="About Layer5" />
+                  <img src={FiveIcon} alt="About Layer5" loading="eager"/>
                 </div>
               </Col>
               <Col xs={12} sm={6}>
@@ -41,6 +47,7 @@ const About = () => {
                 </div>
               </Col>
             </Row>
+            <span ref={inViewRef}></span>
             <StaticImage loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
@@ -56,14 +63,15 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <CNCFstackedlogo alt="About Layer5 Projects" />
+                  {inView && <CNCFstackedlogo>{({ ReactComponent }) => <ReactComponent alt="About Layer5 Projects" />}</CNCFstackedlogo>
+                  }
                 </div>
               </Col>
             </Row>
           </Col>
         </Row>
       </Container>
-      <Statement />
+      {inView && <Statement />}
       <Container fullWidthSM>
         <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={12}>
@@ -119,7 +127,7 @@ const About = () => {
                 <Col xs={12} sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
-                      <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
+                      <StaticImage src={location} className="location" alt="Layer5 locations" loading="lazy"/>
                     </a>
                     <div className="loc">
                       <p className="country">USA</p>
@@ -138,7 +146,7 @@ const About = () => {
                 <Col xs={12} sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
-                      <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
+                      <StaticImage src={location} className="location" alt="Layer5 locations" loading="lazy"/>
                     </a>
                     <div className="loc">
                       <p className="country">Scotland</p>
