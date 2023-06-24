@@ -2,23 +2,25 @@ import styled from "styled-components";
 
 export const BookWrapper = styled.div`
 
-    .book{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:20px;
+  .book,.book-1{
         text-align:center;
         @media only screen and (max-width: 568px){
              float: inherit;
         }
-
         .two-buttons{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
         }
-
     }
+    .book{
+        float:right;
+    }
+    .book-1{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    } 
     div.center {
         text-align:center;
         margin: 1rem 0rem;
