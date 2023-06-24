@@ -82,10 +82,8 @@
                             <p>
                                 Subscribe to our Newsletter
                             </p>
-                            <div class = "mobiletype" >
-                                <input class="footer-input inputmbl" type="email" placeholder="Email Address" />
-                                <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
-                            </div>
+                            <input class="footer-input" type="email" placeholder="Email Address" />
+                            <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
                         </div>
                     </form>
                 </div>
@@ -95,7 +93,7 @@
             <hr class="footer-hr" />
             <div class="footer-bottom-left">
                 <p>
-                    <script>document.write(new Date().getFullYear()); </script>
+                    <script>document.write(new Date().getFullYear())</script>
                      Copyright ©Layer5, Inc | All Rights Reserved
                 </p>
             </div>
@@ -105,35 +103,3 @@
         </div>
     </div>
 </div>
-<style>
-    .mobiletype {
-      margin-bottom: 0;
-      transition: margin-bottom 0.3s ease;
-    }
-
-    .mobiletype.active {
-      margin-bottom: 60%;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      /* width: 100%; */
-      background-color: #f5f5f5;
-      padding: 10px;
-    }
-
-    .inputmbl {
-      /* width: 100%; */
-      padding: 5px;
-    }
-  </style>
-<script>
-const input = document.querySelector('.inputmbl');
-input.addEventListener('focus', () => {
-document.querySelector('.mobiletype').classList.add('active');
-});
-input.addEventListener('blur', () => {
-document.querySelector('.mobiletype').classList.remove('active');
-});
-</script>
