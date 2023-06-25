@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BookWrapper = styled.div`
 
-    .book{
+    .book,.book-1,.book-2{
         float:right;
         padding:20px;
         text-align:center;
@@ -16,6 +16,17 @@ export const BookWrapper = styled.div`
             justify-content: space-evenly;
         }
 
+    }
+    .book{
+        float:right;
+    }
+    .book-1,.book-2{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        @media only screen and (max-width: 568px){
+             display:block;
+        }
     }
     div.center {
         text-align:center;
