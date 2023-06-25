@@ -17,7 +17,9 @@ const BookComponentWrapper = styled.div`
   }
 }
 
-
+.rot-on-rel {
+  transform: rotateY(0deg);
+}
 
 .book {
   min-width: 200px;
@@ -43,13 +45,11 @@ const BookComponentWrapper = styled.div`
   transform: translateZ(25px);
   background-color: #171a12;
   border-radius: 0 2px 2px 0;
-  box-shadow: 5px 5px 20px #666;
 }
 
 .book::before {
   position: absolute;
   content: ' ';
-  background-color: blue;
   left: 0;
   top: 3px;
   width: 48px;
@@ -88,9 +88,9 @@ const BookComponentWrapper = styled.div`
   width: 200px;
   height: 300px;
   transform: translateZ(-25px);
-  background-color: #171a12;
+  background-color: #292929;
   border-radius: 0 2px 2px 0;
-  box-shadow: -10px 0 50px 10px #666;
+  box-shadow: -2px 1px 30px 2px #666;
 }
 `;
 
