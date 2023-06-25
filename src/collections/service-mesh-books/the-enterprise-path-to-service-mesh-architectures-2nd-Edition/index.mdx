@@ -14,12 +14,9 @@ redirect_from:
 import { BookWrapper } from "../Book.style.js";
 import service_mesh_book_second_edition from "./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.webp"
 import Button from "../../../reusecore/Button";
+import CommonForm from "../../../components/CommonForm";
 
 <BookWrapper>
-
-<div className="book"><a href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures/"><img className="card" width="300px" src={service_mesh_book_second_edition} align="centre" /></a><div>&nbsp;</div>
-    <Button primary className="banner-btn one pa-8" title="Get the Book" url="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures/" external={ true } />
-</div>
 
 Planning to build a microservice-driven cloud native application or looking to modernize existing application services? Consider using a service mesh. A service mesh approach can help you create robust and scalable applications, but it also introduces new challenges. This updated report answers common questions regarding service mesh architectures through the lens of a large enterprise.
 <span>Author <b>Lee Calcote</b>, founder and CEO of Layer5, shows developers, operators, architects, and IT leaders how to evaluate your organization’s readiness for using a service mesh—and provides a clear path to help you adopt one. You’ll evaluate several factors when deciding which applications should be built from the ground up and which can be converted with a new service mesh architecture.</span>
@@ -37,5 +34,26 @@ This updated edition discusses several service meshes available and the tools yo
 <br/>
 <br/><b>Early Release:</b> Summer 2020
 <br/><b>Publish:</b> November 2020
+
+<div className="book-2"><a href={service_mesh_book_second_edition}><img className="card" width="300px" src={service_mesh_book_second_edition} alt="The-Enterprise-Path-to-Service-Mesh-Architectures" align="centre" /></a><div>&nbsp;</div>
+  <div>
+    <Col lg={5} md={6} sm={12} style={{ padding: "0" }}>
+      <CommonForm
+        title="Get the Book"
+        form="epsma-book"
+        account_desc="Email the The Enterprise Path to Service Mesh Architectures 2nd Edition"
+        submit_title="Your copy of the book will arrive in your mailbox shortly."
+        submit_body={
+          <span
+            dangerouslySetInnerHTML={{
+              __html:
+                'While waiting for your copy to arrive, take a free <a href="https://layer5.io/learn/learning-path">learning path</a>.',
+            }}
+          />
+        }
+      />
+    </Col>
+  </div>
+</div>
 
 </BookWrapper>
