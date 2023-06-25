@@ -24,10 +24,10 @@ module.exports = {
       },
       "assert": {
         "assertions": {
-          "categories:performance": ["warn", {"minScore": .70}],
-          "categories:accessibility": ["warn", {"minScore": .80}],
-          "categories:best-practices": ["warn", {"minScore": .80}],
-          "categories:seo": ["warn", {"minScore": .80}],
+          "categories:performance": ["warn", {"minScore": .90}],
+          "categories:accessibility": ["warn", {"minScore": .90}],
+          "categories:best-practices": ["warn", {"minScore": .90}],
+          "categories:seo": ["warn", {"minScore": .90}],
           }
         },
       "upload": {
