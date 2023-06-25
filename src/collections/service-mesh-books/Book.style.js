@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const BookWrapper = styled.div`
 
     .book,.book-1,.book-2{
-        float:right;
-        padding:20px;
         text-align:center;
         @media only screen and (max-width: 568px){
              float: inherit;
