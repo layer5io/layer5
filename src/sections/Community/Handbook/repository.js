@@ -162,7 +162,7 @@ const Repository = () => {
                                 className={project === "Meshery Cloud" ? "disabled" : ""}
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
-                                {project==="Meshery Cloud" && (<span className="label">private</span>)}
+                                {project === "Meshery Cloud" && (<span className="label">private</span>)}
                               </a>
                             </td>
                           </tr>
