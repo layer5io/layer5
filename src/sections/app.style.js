@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 ::selection {
-    background: rgba(0, 70, 0, 0.99);
+    background: rgb(0,179,159);
     color: #FFFFFF;
 }
 
