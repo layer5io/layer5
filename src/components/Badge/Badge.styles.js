@@ -19,7 +19,7 @@ export const TooltipText = styled.span`
     z-index: 1;
     top: 145%;
     left: 50%;
-    margin-left: -40px;
+    margin-left: -26px;
     opacity: 0;
     transition: opacity 0.3s;
     &::before {
@@ -29,10 +29,7 @@ export const TooltipText = styled.span`
         left: 50%;
         margin-left: -5px;
     }
-    &.first {
-        top: 140%;
-        left: 100%;
-    }
+    
     ${TooltipWrapper}:hover & {
         display: block;
         opacity: 1;

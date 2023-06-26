@@ -77,21 +77,17 @@ const MemberSingle = ({ frontmatter }) => {
                       {badges.includes("meshery") && (
                       <Badge name="Meshery" to="/cloud-native-management/meshery" className="profile-social-links" src={mesheryLogo} alt="Meshery logo" firstChild={true}/>
                       )}
-                      {badges.includes("smp") && (
-                      <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo" firstChild={false}/>
-                      )}
                       {badges.includes("image-hub") && (
-                      <Badge name="Landscape" to="/service-mesh-landscape" className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo" firstChild={false}/>  
+                      <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo" firstChild={false}/>
+                      )} 
+                      {badges.includes("docs") && (
+                      <Badge name ="Docs" to="https://docs.meshery.io/" className="profile-social-links" src={docsLogo} alt="Docs logo" firstChild={false}/>
                       )}
                       {badges.includes("landscape") && (
-                      <Badge name="Community" to="/community/community-managers" className="profile-social-links" src={communityLogo} alt="Community logo" firstChild={false}/>
+                      <Badge name="Landscape" to="/service-mesh-landscape" className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo" firstChild={false}/>
                       )}
                       {badges.includes("community") && (
                       <Badge name="Community" to="/community/community-managers" className="profile-social-links" src={communityLogo} alt="Community logo" firstChild={false}/> 
-                      )}
-                      {badges.includes("docs") && (
-                      <Badge name ="Docs" to="https://docs.meshery.io/" className="profile-social-links" src={docsLogo} alt="Docs logo" firstChild={false}/>
-                       
                       )}
                       {badges.includes("meshery-catalog") && (
                       <Badge name ="meshery-catalog" to="https://meshery.io/catalog" className="profile-social-links" src={mesheryCatalogLogo} alt="Meshery Catalog logo" firstChild={false}/>
@@ -100,8 +96,7 @@ const MemberSingle = ({ frontmatter }) => {
                       <Badge name = "meshmap" to="/meshmap" className="profile-social-links" src={meshMapLogo} alt="Mesh" firstchild={false}/>
                       )}
                       {badges.includes("docker-extension") && (
-                      <Badge name = "docker-extension" to="/docker-extension-meshery" className="profile-social-links" src={dockerExtensionLogo} alt="Docker Extension logo" firstChild={false}/>
-                         
+                      <Badge name = "docker-extension" to="/docker-extension-meshery" className="profile-social-links" src={dockerExtensionLogo} alt="Docker Extension logo" firstChild={false}/>    
                       )}
                       {badges.includes("nighthawk") && (
                       <Badge name="NightHawk" to="/projects/nighthawk" className="profile-social-links" src={NighthawkLogo} alt="Nighthawk logo" firstChild={false}/>
