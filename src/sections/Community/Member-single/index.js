@@ -78,11 +78,11 @@ const MemberSingle = ({ frontmatter }) => {
                       {badges.includes("meshery") && (
                       <Badge name="Meshery" to="/cloud-native-management/meshery" className="profile-social-links" src={mesheryLogo} alt="Meshery logo" firstChild={true}/>
                       )}
-                      {badges.includes("smp") && (
-                      <Badge name="Service Mesh Performance" to="/projects/service-mesh-performance" className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo" firstchild={true}/>
-                      )}
                       {badges.includes("image-hub") && (
                       <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo" firstChild={false}/>
+                      )}
+                      {badges.includes("smp") && (
+                      <Badge name="Service Mesh Performance" to="/projects/service-mesh-performance" className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo" firstchild={true}/>
                       )} 
                       {badges.includes("docs") && (
                       <Badge name ="Docs" to="https://docs.meshery.io/" className="profile-social-links" src={docsLogo} alt="Docs logo" firstChild={false}/>
