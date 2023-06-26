@@ -11,6 +11,7 @@ import Image from "../../../components/image";
 import MeshMateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import mesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import mesheryOperatorLogo from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import smpLogo from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import landscapeLogo from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import patternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
@@ -76,6 +77,9 @@ const MemberSingle = ({ frontmatter }) => {
                     <ul className="profile-social-links">
                       {badges.includes("meshery") && (
                       <Badge name="Meshery" to="/cloud-native-management/meshery" className="profile-social-links" src={mesheryLogo} alt="Meshery logo" firstChild={true}/>
+                      )}
+                      {badges.includes("smp") && (
+                      <Badge name="Service Mesh Performance" to="/projects/service-mesh-performance" className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo" firstchild={true}/>
                       )}
                       {badges.includes("image-hub") && (
                       <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo" firstChild={false}/>
