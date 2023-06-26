@@ -80,12 +80,10 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
                 </Link>
                 {activeState.subItems.map((subItem, i) => {
-                  const externalLinks = ["Forum", "Catalog", "Playground"];
-
                   return (
                     <li key={i}>
-                      {externalLinks.includes(subItem.name) ?
-                        <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
+                      {subItem.externalLink ?
+                        <a href={subItem.path} target="_blank" className={subItem.sepLine && "sub-item"} rel="noreferrer">
                           {subItem.name}
                         </a>
                         : <Link to={subItem.path} partiallyActive={false} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
