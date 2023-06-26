@@ -87,7 +87,6 @@ const Data = {
         {
           name: "Meshery",
           path: "/cloud-native-management/meshery",
-          sepLine: true
         },
         {
           name: "Catalog",
