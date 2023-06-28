@@ -1,0 +1,25 @@
+---
+title: Intel Case Study
+subtitle:
+date: 2023-06-29 08:00:00 -0530
+author: HPE
+thumbnail: ./meshery-and-hpe.svg
+darkthumbnail: ./meshery-and-hpe.svg
+description: "Intel Case Study"
+type: Case Study
+category: Cloud Native
+tags:
+  - Cloud Native, Meshery
+featured: false
+published: true
+resource: true
+---
+import CaseStudyLayout from "../../../../components/Case-Study-Layout";
+import {about, challenges} from "./data.js";
+import mesheryhpe from "./meshery-and-hpe.svg";
+
+
+<ResourceWrapper>
+    <CaseStudyLayout description="Customer Story" aboutCompany={about} challenges={challenges} companyImage={mesheryhpe}>
+    </CaseStudyLayout>
+</ResourceWrapper>
