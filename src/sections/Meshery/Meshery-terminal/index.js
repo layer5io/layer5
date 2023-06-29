@@ -231,7 +231,7 @@ const MesheryTerminal = () => {
                     Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
                   </p>
                   <p>
-                    With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                    With a patternfile, you can capture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
