@@ -112,11 +112,6 @@ const FooterWrapper = styled.section`
 		}
 	}
 
-	.edit-page{
-		font-family: "Qanelas Soft", "Open Sans", sans-serif;
-		margin-right: 1.5rem;
-	}
-
 	.footer-bottom{
 		display: flex;
 		flex: auto;

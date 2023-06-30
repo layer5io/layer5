@@ -62,7 +62,7 @@ const Footer = ({ location }) => {
           <Col xs={12} lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
-              from your infrastructure. Creator and maintainer of cloud naative
+              from your infrastructure. Creator and maintainer of cloud native
               standards. Maker of Meshery, the cloud native manager.
             </p>
           </Col>
@@ -316,12 +316,11 @@ const Footer = ({ location }) => {
             </p>
             <ul className="policies">
               <li className="edit-page">
-              We are an
-                <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md" target="_blank" rel="noreferrer">
-              &nbsp;- Open Source First Organization -&nbsp;</a>
-               you may help -
+                {/* We are an
+                {" "}
+                <Link to="/company/about">open source-first organization</Link>. */}
                 <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-              &nbsp;Edit This Page
+                  Edit This Page
                 </a>
               </li>
               <li>
