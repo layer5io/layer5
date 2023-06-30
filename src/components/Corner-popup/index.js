@@ -17,7 +17,7 @@ const CornerPopup = () => {
   },[]);
 
   return (
-    // showPopup &&
+    showPopup &&
     <CornerPopupWrapper>
       <div>
         <div className="popup">
