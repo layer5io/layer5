@@ -180,7 +180,7 @@ OR
 
 [Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg)
 
-[Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.png)
+[Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.webp)
 
 You can see these two examples in action [here](https://layer5.io/projects) by toggling the theme (located on the right side of the navigation bar).
 
@@ -354,6 +354,7 @@ Badges are a great way of highlighting the area of contribution by any given com
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docker-extension/docker-extension-meshery-logo.svg" width="25px" height="25px"/> Docker Extension
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docs/docs.svg" width="25px" height="25px"/> Docs
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/meshery-catalog.svg" width="25px" height="25px"/> Meshery Catalog
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg" width="25px" height="25px"/> MeshMap
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/icon-only/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
@@ -546,7 +547,7 @@ _~/.gitconfig_
 
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
+<a href="./.github/assets/images/git-signoff-vscode.webp" ><img src="./.github/assets/images/git-signoff-vscode.webp" width="50%"/><a>
 
 ## FYI regarding the dev environment
 

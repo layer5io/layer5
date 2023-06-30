@@ -2,9 +2,9 @@
 /*.js
 /*.css
 /*.woff2
-/*.jpg
+/*.webp
 /*.jpeg
-/*.png
+/*.webp
 /*.gif
 /*.svg
   Cache-Control: public, max-age=25920000

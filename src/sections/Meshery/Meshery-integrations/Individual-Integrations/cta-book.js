@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 
-const LearnBook = "../../../../assets/images/learn/book-cover.png";
+const LearnBook = "../../../../assets/images/learn/book-cover.webp";
 
 const CTAWrapper = styled.section`
   .book_cover {

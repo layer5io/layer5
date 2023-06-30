@@ -1,5 +1,5 @@
 import React from "react";
-import image_src from "../../../assets/images/callout/callout.png";
+import image_src from "../../../assets/images/callout/callout.webp";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import { Categories } from "./cta_bottom_categories";

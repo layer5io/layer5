@@ -92,6 +92,7 @@ const Data = {
         {
           name: "Catalog",
           path: "/catalog",
+          externalLink: true
         },
         {
           name: "Docker Extension",
@@ -104,6 +105,7 @@ const Data = {
         {
           name: "Playground",
           path: "/cloud-native-management/playground",
+          externalLink: true
         },
         {
           name: "Nighthawk",
@@ -163,7 +165,8 @@ const Data = {
         {
           name: "Forum",
           path: "https://discuss.layer5.io",
-          sepLine: true
+          sepLine: true,
+          externalLink: true
         },
         {
           name: "Workshops",

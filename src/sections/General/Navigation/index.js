@@ -205,7 +205,7 @@ const Navigation = () => {
     <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`} ref={navWrapRef}>
       <Container className="nav-container">
         <div className="navbar-wrap">
-          <Link to="/" className="logo">
+          <Link aria-label="layer5" to="/" className="logo">
             <Logo />
           </Link>
           <nav className="nav">
@@ -237,14 +237,12 @@ const Navigation = () => {
                       <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                       <ul>
                         {menu.subItems !== undefined && menu.subItems.map((subItems, index) => {
-                          const externalLinks = ["Forum", "Catalog", "Playground"];
-
                           return (
                             <li
                               key={index}
                               className="mobile-nav-subitem"
                             >
-                              {externalLinks.includes(subItems.name) ?
+                              {subItems.externalLink ?
                                 <a href={subItems.path} target="_blank" onClick={ () => {
                                   changeDropdownState();
                                   closeDropDown();

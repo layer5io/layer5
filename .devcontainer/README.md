@@ -8,4 +8,4 @@
 * Open the new terminal and run the command which in Makefile
   * According to the Remote-Containers extension tips open the browser to access the website
 
-![](./vscode-dev-container.png)
+![](./vscode-dev-container.webp)

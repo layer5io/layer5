@@ -1,4 +1,4 @@
-import img_source from "../../../assets/images/callout/callout.png";
+import img_source from "../../../assets/images/callout/callout.webp";
 
 export const Categories = {
   "Community": {

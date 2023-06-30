@@ -33,7 +33,7 @@ const style = [
     selector: "node",
     style: {
       "background-color": "#00b39f",
-      // 'background-image': '../../../assets/images/meshery/icon-only/meshery-logo-dark.png',
+      // 'background-image': '../../../assets/images/meshery/icon-only/meshery-logo-dark.webp',
       // 'background-fit': 'contain',
       // 'background-clip': 'none',
       // 'background-opacity': 1,
