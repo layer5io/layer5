@@ -10,11 +10,10 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import mlh_logo from "./mlh.svg";
+import {ReactComponent as MlhLogo} from "./mlh.svg";
 
 <ProgramsWrapper>
-
-<img src={mlh_logo} alt="mlh_logo" />
+<MlhLogo alt="mlh_logo" class="mlh_logo"/>
 <h2><b>MLH Fellowship Program</b></h2>
 <div>
 The Major League Hacking’s <a href="https://fellowship.mlh.io/">MLH Fellowship</a> is an internship alternative for software engineers. Instead of working on a project for just one company, you’ll contribute to Open Source projects that are used by companies around the world. You’ll collaborate with a group of 10 students under the guidance of a professional mentor whose only job is to help you successfully contribute.<br/>
@@ -104,7 +103,7 @@ and strength of our community.
 </p>
 <div id="gsoc-2020" className="apply-button">
     <h3>
-        <Button primary title="Participate" url="http://slack.layer5.io" external="true" />
+        <Button primary title="Participate" url="http://slack.layer5.io" external={ true } />
     </h3>
 </div>
 

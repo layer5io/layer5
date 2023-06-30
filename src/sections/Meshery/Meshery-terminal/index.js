@@ -9,7 +9,7 @@ import Kubernetes from "../Meshery-platforms/supported-icons/kubernetes.svg";
 import KinD from "../Meshery-platforms/supported-icons/kind.svg";
 import Minikube from "../Meshery-platforms/supported-icons/minikube.svg";
 import EKS from "../Meshery-platforms/supported-icons/eks.svg";
-import Helm from "../Meshery-platforms/supported-icons/helm-icon-color.png";
+import Helm from "../Meshery-platforms/supported-icons/helm-icon-color.webp";
 import WSL2 from "../Meshery-platforms/supported-icons/wsl2.svg";
 import GKE from "../Meshery-platforms/supported-icons/gke.svg";
 import Docker from "../Meshery-platforms/supported-icons/docker.svg";
@@ -231,7 +231,7 @@ const MesheryTerminal = () => {
                     Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
                   </p>
                   <p>
-                    With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                    With a patternfile, you can capture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),

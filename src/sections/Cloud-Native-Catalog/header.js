@@ -24,6 +24,7 @@ const CatalogHeaderWrapper = styled.div`
     }
     .header__title_description {
       color: ${(props) => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       font-weight: 400;
       font-size: 1.438rem;
       line-height: 2rem;

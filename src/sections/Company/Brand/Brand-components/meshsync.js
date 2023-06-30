@@ -5,8 +5,8 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.png";
-import MeshSync from "../../../../assets/images/meshsync/meshsync.png";
+import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.webp";
+import MeshSync from "../../../../assets/images/meshsync/meshsync.webp";
 
 const MeshSyncWrapper = styled.section`
     .sub-project {

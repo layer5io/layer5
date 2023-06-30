@@ -10,9 +10,9 @@ import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
 const Projects = () => {
   const projectsIcon = "./images/projects.svg";
 
-  const projectImage2 = "../../../assets/images/app/projects/smp.png";
-  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
-  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
+  const projectImage2 = "../../../assets/images/app/projects/smp.webp";
+  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
+  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
   const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
   return (

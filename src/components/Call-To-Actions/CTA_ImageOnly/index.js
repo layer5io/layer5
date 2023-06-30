@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import image_src from "../../../assets/images/callout/callout.png";
+import image_src from "../../../assets/images/callout/callout.webp";
 import styled from "styled-components";
 import { Categories } from "./cta_imageonly_categories";
 

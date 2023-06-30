@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-import FavIcon from "../assets/images/favicon.png";
+import FavIcon from "../assets/images/favicon.webp";
 
 
 export const useSiteMetadata = () => {

@@ -52,9 +52,11 @@ const FeaturesCarousel = ({ features, heading }) => {
       <div className="features-carousel">
         <h2 className="main-heading">{heading ? heading : "Features"}</h2>
         <Slider
+          autoplay={true}
+          autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite= {false}
+          infinite= {true}
           speed="500"
           slidesToShow={1}
           slidesToScroll={1}
@@ -92,11 +94,14 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
       )}
       <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
-        {learnMoreLink && (
-          <Link className="learn-more-link" to={learnMoreLink}>
+        {learnMoreLink && learnMoreLink.startsWith("/")
+          ? <Link className="learn-more-link" to={learnMoreLink}>
             Explore <IoIosArrowRoundForward />
           </Link>
-        )}
+          : <a href={learnMoreLink} className="learn-more-link">
+           Explore <IoIosArrowRoundForward />
+          </a>
+        }
       </div>
     </Element>
   );

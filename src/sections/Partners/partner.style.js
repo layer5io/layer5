@@ -14,6 +14,24 @@ const PartnerWrapper = styled.section`
     position: relative;
     min-height: 100%;
     top: 0px;
+
+    .container {
+        position: relative;
+        text-align: justify;
+        margin: 0 2rem;
+        max-width: 1280px;
+        z-index: 1;
+        padding: 1em;
+        h1 {
+            font-weight: 5;
+            text-algin: left;
+            font-size: 35px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
     .partner-container{
         display: flex;
         justify-content: center;
@@ -38,20 +56,20 @@ const PartnerWrapper = styled.section`
             justify-content: center;
             padding:2rem;
             flex-direction: column;
-        }
-    }
-    
-    .container {
-        position: relative;
-        text-align: justify;
-        margin: 0 2rem;
-        max-width: 1280px;
-        z-index: 1;
-        padding: 1em;
-        h1 {
-            font-weight: 5;
-            text-algin: left;
-            font-size: 35px;
+            .container {
+                position: relative;
+                text-align: justify;
+                margin: 0 2rem;
+                max-width: 1280px;
+                z-index: 1;
+                padding: 1em;
+                color: white;
+                h1 {
+                    font-weight: 5;
+                    text-algin: left;
+                    font-size: 35px;
+                }
+            }
         }
     }
 
@@ -76,6 +94,7 @@ const PartnerWrapper = styled.section`
 
         }
         svg{
+            .citrix-colorMode_svg__colorMode2,
             .cncf-stacked-colorMode_svg__colorMode1,
             .hashicorp_vertical-colorMode_svg__colorMode1,
             .hpe_side-colorMode_svg__colorMode1,
@@ -83,15 +102,39 @@ const PartnerWrapper = styled.section`
             .redhat-colorMode_svg__colorMode1,
             .intel-colorMode_svg__colorMode1,
             .vmware-colorMode_svg__colorMode1,
-            .istio-colorMode_svg__colorMode1
+            .istio-colorMode_svg__colorMode1,
+            .metabit-trading-logo-colorMode_svg__colorMode1
             {
-                fill: ${props => props.theme.whiteToBlack}
+                fill: ${props => props.theme.whiteToBlack};
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .citrix-colorMode_svg__colorMode1 {
+                fill: ${props => props.theme.blackToWhite};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .smi-colorMode_svg__colorMode1 {
-                fill: ${props => props.theme.whiteToBlue2A2DDE}
+                fill: ${props => props.theme.whiteToBlue2A2DDE};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode2,
+            .metabit-trading-logo-colorMode_svg__colorMode3,
+            .metabit-trading-logo-colorMode_svg__colorMode4 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode2 {
+                fill: ${props => props.theme.whiteToBlack};
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode3 {
+                fill: ${props => props.theme.whiteToBlack};
+            }
+
+            .metabit-trading-logo-colorMode_svg__colorMode4 {
+                fill: ${props => props.theme.whiteToBlack};
             }
         }
     }
@@ -144,6 +187,8 @@ const PartnerWrapper = styled.section`
         .acad-container-body{
             width:78%;
             text-align: center;
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     .partner-btn{
@@ -187,6 +232,7 @@ const PartnerWrapper = styled.section`
         flex-direction:column;
         h1{
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     } 
     .moreInfo-div{

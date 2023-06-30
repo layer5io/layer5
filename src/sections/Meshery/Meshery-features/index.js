@@ -8,10 +8,10 @@ import img5 from "./feature-images/meshsync.svg";
 import img6 from "./feature-images/meshery-extensibility.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const img1 = "./feature-images/meshery-configuration-management.png";
-const img2 = "./feature-images/meshery-wasm.png";
-const img4 = "./feature-images/meshery-and-grafana.png";
-const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.png";
+const img1 = "./feature-images/meshery-configuration-management.webp";
+const img2 = "./feature-images/meshery-wasm.webp";
+const img4 = "./feature-images/meshery-and-grafana.webp";
+const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.webp";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -30,6 +30,11 @@ const MesheryFeaturesWrapper = styled.div`
     img {
       padding: 0rem;
     }
+  }
+  @media (max-width: 767px){ 
+    .feature-expose img { 
+      height: 15rem; 
+    } 
   }
 `;
 
@@ -75,7 +80,7 @@ const MesheryFeatures = () => {
                       code: "✓ Deployment successfully rolled out!",
                       color: "green",
                     },
-                    { code: "\n" },
+                    { code: " " },
                     { code: "» Traffic splitting...", color: "navy" },
                     {
                       code: "✓ 5% of user requests to v3.",
@@ -97,7 +102,7 @@ const MesheryFeatures = () => {
                       code: "✓ 100% of user requests to v3.",
                       color: "green",
                     },
-                    { code: "\n" },
+                    { code: " " },
                     {
                       code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
                       color: "navy",
