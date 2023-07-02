@@ -47,7 +47,8 @@ const MesheryWrapper = styled.section`
                 }
                 .align-btn{
                     bottom: -12px;
-                    background-color: #EBC017;
+                    background-color: ${props => props.theme.highlightColor};;
+
                 }
             }
             .meshery-hero-img {
