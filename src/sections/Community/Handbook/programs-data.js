@@ -1,11 +1,12 @@
-import SCA from "../../../collections/programs/sca-contributhon/sca.svg";
-import MLH from "../../../collections/programs/mlh-2020/mlh.svg";
-import LFX from "../../../collections/programs/lfx-2022/Linux_Foundation_logo.webp";
-import Hacktoberfest from "../../../assets/images/programs/hacktoberfest.webp";
+import React from "react";
+import { ReactComponent as SCA }  from "../../../collections/programs/sca-contributhon/sca.svg";
+import { ReactComponent as MLH } from "../../../collections/programs/mlh-2020/mlh.svg";
+import { ReactComponent as LFX } from "../../../collections/programs/lfx-2022/lfx-white.svg";
+import { ReactComponent as Hacktoberfest } from "../../../assets/images/programs/hacktoberfest.svg";
+import { ReactComponent as Layer } from "../../../assets/images/app/layer5-colorMode.svg";
+import { ReactComponent as Bridge } from "../../../collections/programs/communitybridge/communitybridge_logo.svg";
 import GSOC from "../../../collections/programs/gsoc-2020/gsoc.svg";
 import GSOD from "../../../collections/programs/gsod/gsod.webp";
-import Layer from "../../../assets/images/layer5/layer5-only/svg/layer5-white-bg.svg";
-import Bridge from "../../../collections/programs/communitybridge/communitybridge-blue.webp";
 
 export const programs_data = [
   {
@@ -32,7 +33,7 @@ export const programs_data = [
     description:
       "Hacktoberfest is open to everyone in the global community. Whether you’re a developer, student learning to code, event host, or a company of any size, you can help drive the growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge. Every year in October, Hacktoberfest is held. So far, Layer5 has been a participant organization with different projects and issues such as first-timers-only, help-wanted, and good-first-issues for open-source contributors. This is to help towards completing the Hacktoberfest challenge.",
     buttonLink: "/programs/hacktoberfest",
-    imageLink: Hacktoberfest,
+    imageLink: <Hacktoberfest alt="Hacktoberfest" />,
     imagePosition: "second",
   },
   {
@@ -41,7 +42,7 @@ export const programs_data = [
     description:
       "The Linux Foundation (Mentorship Programs) are designed to help developers with the necessary skills–many of whom are first-time open source contributors–experiment, learn, and contribute effectively to open source communities. Layer5, as an organization, has been participating in the Linux Foundation mentorship program since 2019. ",
     buttonLink: "/programs/lfx",
-    imageLink: LFX,
+    imageLink: <LFX alt="LFX" />,
     imagePosition: "first",
   },
   {
@@ -50,7 +51,7 @@ export const programs_data = [
     description:
       "The MLH Fellowship is a 12-week internship alternative for students interested in becoming software engineers. Instead of an internship at a single company, you'll contribute to the type of Open Source projects that every company depends on. The programs pair fun, educational curriculum with practical experience that you can put on your resume right away. It's collaborative, remote, and happens under the guidance of expert mentors.Layer5, as an organization, participates in the program by submitting a project idea for contributors to work on and also provides mentorship during the time phase given.",
     buttonLink: "/programs/mlh",
-    imageLink: MLH,
+    imageLink: <MLH alt="MLH" />,
     imagePosition: "second",
   },
   {
@@ -59,7 +60,7 @@ export const programs_data = [
     description:
       "The Linux Foundation's CommunityBridge is building a healthy ecosystem around the open source software by funding projects, securing code, and connecting with talented developers. Layer5 has been participating in the  CommunityBridge's mentorship program since 2019.",
     buttonLink: "/programs/communitybridge",
-    imageLink: Bridge,
+    imageLink: <Bridge alt="Bridge"/>,
     imagePosition: "first",
   },
   {
@@ -68,7 +69,7 @@ export const programs_data = [
     description:
       "At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences. Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.",
     buttonLink: "/careers/internships/",
-    imageLink: Layer,
+    imageLink: <Layer alt="Layer5" />,
     imagePosition: "second",
   },
   {
@@ -77,7 +78,7 @@ export const programs_data = [
     description:
       "She Code Africa is a non-profit organization focused on celebrating and empowering young girls and women in tech across Africa.The She Code Africa Contributhon Program is a virtual open-source boot camp for 4 weeks where ladies get the opportunity to work with open source organizations on selected projects with dedicated mentorship and on completion of the program, a stipend of $500 is awarded. This program aims to create a more diverse, inclusive, and innovative culture within the African open source ecosystem by matching African women in technology with sponsors and mentor open source organizations to work on projects used by millions of people all over the world.Layer5 is participating in Contributhon as a Mentoring Organization. This program engages more with the open-source ecosystem in Africa and diversifies contributions. Most especially, we love making an impact. Various project ideas are submitted for the selected ladies to contribute during the one-month time phase.",
     buttonLink: "/programs/sca-contributhon",
-    imageLink: SCA,
+    imageLink: <SCA alt="SCA" />,
     imagePosition: "first",
   },
 ];
