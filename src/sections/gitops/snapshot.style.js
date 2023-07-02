@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Row, Col } from "../../reusecore/Layout";
 
 
-export const SnapshotWrapper = styled.section`
+export const PageWrapper = styled.section`
     position: relative;
     z-index: 1;
     font-size: 12px;
@@ -62,6 +62,7 @@ export const ContentRowWrapper = styled(Row)`
         align-items: center;
         justify-content: space-between;
 
+
         .desc-text-container {
             padding: 1.5rem;
  
@@ -96,11 +97,16 @@ export const ColumnWrapper = styled(Col)`
         justify-content: center;
         position: relative;
 
-
-        .meshmap-stack-hero {
+        .stack-logo {
             position: absolute;
             height: 150px;
             animation: "floating 3s ease-in-out infinite";
+            fill: ${props => props.theme.primaryColor};
+
+            .meshmap-light-stacked_svg__cls-1, .smp-light-text_svg__cls-6 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+                fill: ${props => props.theme.primaryColor};
+            }
 
             @media screen and (min-width: 768px) {
                 height: 200px; 
@@ -123,6 +129,15 @@ export const ColumnWrapper = styled(Col)`
                 height: 375px;
             }
 
+        }
+
+        .code-screenshot {
+            height:300px;
+
+            @media screen and (min-width: 768px) {
+                width: 605px; 
+                height: 700px;
+            }
         }
 `;
 

@@ -2,29 +2,32 @@ import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
-import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
+import SMPconfig from "../../assets/images/gitops/SMPconfig.png";
+import SMPTestconfig from "../../assets/images/gitops/SMPTestconfig.png";
+
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
 import ServicePerformanceProfileTest from "../../assets/images/gitops/service-mesh-performance-profile.png";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
+import { ReactComponent as SmpLogo }  from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
+import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icon/color/github-color.svg";
 
-
-const SnapshotPage = () => {
+const PerformanceManagementPage = () => {
   return (
     <PageWrapper>
       <div className="gradient-wrapper" />
       <HeroContentContainerWrapper>
         <ContentRow>
           <TextColumn>
-            <Heading>Visual insights in every pull request</Heading>
+            <Heading>Performance regressions begone</Heading>
             <Description>
                Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Install" url="https://cloud.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
-            <MeshMapStack className="stack-logo" />
+            <SmpLogo className="stack-logo" />
             <img src={Cone} className="meshmap-stack-cone" />
           </ColumnContainer>
         </ContentRow>
@@ -33,29 +36,58 @@ const SnapshotPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
-            <img src={GithubActionComment} className="screenshot" alt="GithubActionComment" width={530} height={375} />
+            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
           </ColumnContainer>
           <ColumnContainer>
-            <Heading>See your deployment <br/> before you merge.</Heading>
+            <Heading>A sample configuration of the action</Heading>
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>
+
+
 
       <ContentContainerWrapper>
         <ContentRow>
-          <TextColumn >
-            <Heading>Using Meshery's Snapshot GitHub Action</Heading>
-            <SquarePoint>MeshMap Snapshot GitHub Action is available in the GitHub Marketplace.</SquarePoint>
-            <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.</SquarePoint>
+          <ColumnContainer>
+            <GithubLogo className="stack-logo" />
+            <img src={Cone} className="meshmap-stack-cone" />
+          </ColumnContainer>
+
+          <TextColumn>
+            <Heading>Using Meshery's Service Mesh Performance GitHub Action</Heading>
+            <SquarePoint>The Service Mesh Performance GitHub Action is available in the GitHub Marketplace.</SquarePoint>
+            <SquarePoint>You can create your own performance profiles to run repeatable tests with Meshery.</SquarePoint>
             <SquarePoint>You can configure this action to trigger with each of your releases, on every pull request.</SquarePoint>
           </TextColumn>
+        </ContentRow>
+      </ContentContainerWrapper>
 
-          <ColumnContainer>
-            <MeshMapStack className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+
+      <ContentContainerWrapper>
+        <ContentRow>
+          <TextColumn>
+            <Heading>A sample configuration <br/> of the action</Heading>
+          </TextColumn>
+          <ColumnContainer >
+            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>
+
+
+
+      <ContentContainerWrapper>
+        <ContentRow>
+          <ColumnContainer >
+            <img src={SMPTestconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+          </ColumnContainer>
+          <TextColumn>
+            <Heading>Define your test <br /> configuration in an SMP compatible configuration file</Heading>
+          </TextColumn>
+        </ContentRow>
+      </ContentContainerWrapper>
+
+
 
 
       <ContentContainerWrapper>
@@ -78,5 +110,5 @@ const SnapshotPage = () => {
   );
 };
 
-export default SnapshotPage;
+export default PerformanceManagementPage;
 
