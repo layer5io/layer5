@@ -16,7 +16,7 @@ import { Link } from "gatsby";
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
   const Layer5Projects = "./images/layer5-projects.svg";
-
+  const community_stat = "./images/layer5-community-stat.svg";
   return (
     <AboutSectionWrapper id="about">
 
@@ -42,6 +42,7 @@ const About = () => {
               </Col>
             </Row>
             <StaticImage loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
+            <StaticImage loading="lazy" src={community_stat} alt="About Community Stat" className="community_stat" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
