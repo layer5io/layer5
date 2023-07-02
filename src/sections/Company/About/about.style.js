@@ -19,6 +19,9 @@ const AboutSectionWrapper = styled.section`
       left: -22px;
     }
   }
+  .community_stat{
+    margin-top:4rem;
+  }
   .busCard {
     display: block;
     margin-bottom: 2rem;
