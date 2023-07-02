@@ -47,7 +47,7 @@ const MesheryWrapper = styled.section`
                 }
                 .align-btn{
                     bottom: -12px;
-                    background-color: ${props => props.theme.highlightColor};;
+                    background-color: ${props => props.theme.highlightColor};
 
                 }
             }
