@@ -32,7 +32,7 @@ const MemberSingle = ({ frontmatter }) => {
     github,
     twitter,
     image_path,
-    mesherycloud_uuid,
+    layer5,
     meshmate,
     linkedin,
     location,
@@ -264,9 +264,9 @@ const MemberSingle = ({ frontmatter }) => {
                       </a>
                     </li>
                   )}
-                  {mesherycloud_uuid && (
+                    {layer5 && (
                     <li>
-                      <a href={`https://meshery.layer5.io/user/${mesherycloud_uuid}`}>
+                      <a href={`https://meshery.layer5.io/user/${layer5}`}>
                         <img src={mesheryLogo} alt="meshery-icon"></img>
                       </a>
                     </li>
