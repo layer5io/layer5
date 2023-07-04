@@ -85,7 +85,7 @@ export const BlogPageWrapper = styled.div`
 			height: 9rem;
 		}
 		.blog-list-wrapper{
-			margin: 0rem auto 5rem;
+			margin: 1.5rem auto 5rem;
 		}
 		.blog-lists{
 			margin-top: 0rem;
