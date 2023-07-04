@@ -718,7 +718,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        eurl: String,
        twitter: String,
        github: String,
-       mesherycloud_uuid: String,
+       layer5: String,
        meshmate: String,
        maintainer:String,
        emeritus: String,

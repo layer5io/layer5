@@ -12,7 +12,7 @@ export const query = graphql`query MemberBySlug($slug: String!) {
       position
       github
       twitter
-      mesherycloud_uuid
+      layer5
       meshmate
       linkedin
       location
