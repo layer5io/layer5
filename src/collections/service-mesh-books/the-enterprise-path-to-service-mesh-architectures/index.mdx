@@ -13,14 +13,13 @@ redirect_from:
 import { BookWrapper } from "../Book.style.js";
 import service_mesh_ent_book from "./The-Enterprise-Path-to-Service-Mesh-Architectures.webp"
 import Button from "../../../reusecore/Button";
-
+import CommonForm from "../../../components/CommonForm";
 
 <BookWrapper>
 
 <div className="book"><a href={service_mesh_ent_book}><img className="card" width="300px" src={service_mesh_ent_book} alt="The-Enterprise-Path-to-Service-Mesh-Architectures" align="center" /></a><div>&nbsp;</div>
   <div className="two-buttons">
-        <Button primary className="pa-8 mr-2" title="Get free ebook" url="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote" external={ true } />
-        <Button primary className="pa-8 mr-2" title="Read on Safari" url="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote" external={ true } />
+        <Button primary className="pa-8 mr-2" title="Get free ebook" url="#epsma-book" />
   </div>
 </div>
 
@@ -39,8 +38,21 @@ Three most important things readers will learn from this book:
   <li> What are practical steps to adopt a service mesh in my enterprise?</li>
   <li> How do I fit a service mesh into my existing infrastructure?</li>
 </div>
-<br/>
-<b>Publisher:</b> O'Reilly
-<br/><b>Publish:</b>  August 2018
+
+<a id="epsma-book" style="margin-bottom:5rem;">&nbsp;</a>
+<CommonForm 
+    title="Get the Free eBook"
+  form="epsma-book"
+  account_desc="Email the The Enterprise Path to Service Mesh Architectures 1st Edition"
+  submit_title="Your copy of the book will arrive in your mailbox shortly."
+  submit_body={
+    <span
+      dangerouslySetInnerHTML={{
+        __html:
+          'While waiting for your copy to arrive, take a free <a href="https://layer5.io/learn/learning-path">learning path</a>.',
+      }}
+    />
+  }
+/>
 
 </BookWrapper>
