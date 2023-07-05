@@ -3,8 +3,8 @@ title: "What is Meshery Operator"
 subtitle: "Describing Meshery operator, what it is and how it simplifies management"
 date: 2023-06-21 10:30:05 -0530
 author: Karan Thakur
-thumbnail: ./gsoc-wide.webp
-darkthumbnail: ./gsoc-wide.webp
+thumbnail: ./operator-thumbnail.png
+darkthumbnail: ./operator-thumbnail.png
 category: "Meshery"
 description: "Streamlining Cloud native Management with Meshery Operators and it's Custom Controllers"
 tags:
@@ -18,7 +18,6 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 
-import gsoc from "./gsoc.webp";
 import operator from "./meshery-operator-dark.png"
 import meshsync from "./meshsync.png"
 
@@ -47,7 +46,7 @@ Meshery Operator is one such operator built specifically for Meshery cloud nativ
 <a>
 
 Meshery Operator is a multi-service mesh operator (a Kubernetes custom controller) created by Layer5 community to simplify the lifecycle management of Meshery instances.
-<figure class="imgWithCaption fig-right" style="width:50%" >
+<figure class="imgWithCaption fig-right" style="width:30%" >
     <img src={operator}  />
     <figcaption>
     <p>Meshery Operator</p>
@@ -62,7 +61,14 @@ Meshery Operator automates the installation and lifecycle management of Meshery 
 
 Meshsync and Broker controllers are two custom controllers managed by Meshery Operator that are responsible for managing different aspects of Meshery deployment. While both these controllers are not directly concerned with the configuration management of Service meshes, they play a crucial role in ensuring smooth functioning and data synchronization between different instances of Meshery deployed across multiple environments/clusters.
 ### Meshsync
-The purpose of MeshSync controller is to manage cluster discovery and push all discovered Kubernetes objects with a particular topic onto the broker. This means that it helps synchronize data across multiple clusters/environments, ensuring consistency throughout the system while also enabling better collaboration among teams working on large-scale projects involving distributed architectures.
+<section>
+<img src={meshsync} className="image-left-no-shadow"  style="width:12%"/>
+
+<p>The purpose of MeshSync controller is to manage cluster discovery and push all discovered Kubernetes objects with a particular topic onto the broker. This means that it helps synchronize data across multiple clusters/environments, ensuring consistency throughout the system while also enabling better collaboration among teams working on large-scale projects involving distributed architectures.</p>
+</section>
+
+<br/>
+
 ### Broker 
 On the other hand, Broker Controller manages NATS server which acts as an intermediary between Meshery Server and MeshSync. Its main function is to facilitate communication between various components within instance enabling seamless integration third-party tools/services like Prometheus/Grafana etc., making it easier than ever before monitor performance metrics in real-time!
 
@@ -80,5 +86,8 @@ Key Benefits:
 
 3. Automation & Standardization: Operators help reduce human error associated with manual intervention along with providing standardized ways working across various environments making collaboration among teams much easier than otherwise would have been possible.
 
+## Conclusion
+In this blog we have read about Meshery's own operator called Meshery Operator and how this powerful tool simplifies the deployment and lifecycle management of service meshes within a Kubernetes cluster and leverages two essential controllers Meshsync and Broker.
+To delve deeper into understanding Meshery's operator architecture and how it empowers you to efficiently manage your service meshes within Kubernetes clusters. Read more about the Meshery Operator architecture at [docs.meshery.io](https://docs.meshery.io/concepts/architecture/operator).
 
 </BlogWrapper>
