@@ -193,7 +193,7 @@ const Connect = () => {
               Learn more about Layer5 and connect with the community by following and
               engaging with us on our social media accounts.
             </p>
-            <div className="channels-list">
+            <div>
               <p className="channels-para">
                 <img
                   className="channels-img"
