@@ -15,7 +15,6 @@ export const MeetTheMeshMate = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: #222;
     font-style: italic;
     text-align: left;
     border-left: 2px solid ${(props) => props.theme.primaryLightColor};
