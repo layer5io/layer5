@@ -20,11 +20,11 @@ const top = require("process-top")();
 
 setInterval(function () {
   // Prints out a string containing stats about your Node.js process.
-
-  let heapMem = top.memory().heapUsed / 1000000;
-  if (heapMem > 1500) {
-    console.log(top.toString());
-  }
+  console.log(top.toString());
+  // let heapMem = top.memory().heapUsed / 1000000;
+  // if (heapMem > 1500) {
+  //   console.log(top.toString());
+  // }
   // console.log(`${(top.memory().heapUsed) / 1000000}MB`);
 }, 1000);
 
