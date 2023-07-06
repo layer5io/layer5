@@ -264,7 +264,7 @@ const MemberSingle = ({ frontmatter }) => {
                       </a>
                     </li>
                   )}
-                    {layer5 && (
+                  {layer5 && (
                     <li>
                       <a href={`https://meshery.layer5.io/user/${layer5}`}>
                         <img src={mesheryLogo} alt="meshery-icon"></img>
