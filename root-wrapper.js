@@ -27,13 +27,13 @@ import Blockquote from "./src/reusecore/Blockquote";
 import BlockquoteAlt from "./src/reusecore/Blockquote/Blockquote-alt-style";
 
 const components = {
-  pre: ({ children: { props } }) => {
-    if (props.mdxType === "code") {
+  pre: ({ children: { props, type } }) => {
+    if (type === "code") {
       return (
         <Code
           codeString={props.children.trim()}
           language={
-            props.className && props.className.replace("language-", "")
+            props.className && props.className.replace("language-", "").trim()
           }
           {...props}
         />
