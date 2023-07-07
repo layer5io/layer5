@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
@@ -21,9 +20,9 @@ import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const BlogSingle = ({ data }) => {
+const BlogSingle = ({ data, children }) => {
   const location = useLocation();
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
       relatedPosts: allMdx(
@@ -76,7 +75,9 @@ const BlogSingle = ({ data }) => {
               publicURL
             }
           }
-          slug
+          fields {
+            slug
+          }
         }
       }
     }  `
@@ -121,7 +122,7 @@ const BlogSingle = ({ data }) => {
           />
           <div className="single-post-wrapper">
             <SRLWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
+              { children }
             </SRLWrapper>
             <BlogPostSignOff
               author={{ name: frontmatter.author }}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
@@ -10,9 +9,9 @@ import ReactTooltip from "react-tooltip";
 import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
 
-const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCData }) => {
+const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCData, children }) => {
 
-  const { frontmatter, body } = chapterData;
+  const { frontmatter } = chapterData;
   const [showQuizModal, setShowQuizModal] = useState(false);
 
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn;
@@ -109,7 +108,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="chapter-data">
               <h1 className="chapter-heading">{frontmatter.chapterTitle}</h1>
               <SRLWrapper>
-                <MDXRenderer>{body}</MDXRenderer>
+                { children }
               </SRLWrapper>
             </div>
             <Pagination TOCData={TOCData} chapterData={chapterData} location={location} showQuizModal={() => setShowQuizModal(true)} />

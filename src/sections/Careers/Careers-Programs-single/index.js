@@ -1,15 +1,14 @@
 import React from "react";
 import Select from "react-select";
 import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProgramsPageWrapper, { dropdownTheme, selectStyles } from "./ProgramsSingle.style.js";
 
-const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
+const ProgramsSingle = ({ data, options, setActiveOption, activeOption, children }) => {
 
-  const { frontmatter, body } = data;
+  const { frontmatter } = data;
 
   return (
     <ProgramsPageWrapper>
@@ -44,7 +43,7 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
         <Container>
 
           <div className="single-post-block">
-            <MDXRenderer>{body}</MDXRenderer>
+            { children }
           </div>
         </Container>
       </div>

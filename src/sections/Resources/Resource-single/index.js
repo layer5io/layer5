@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -11,8 +10,8 @@ import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDr
 import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
 
-const ResourceSingle = ({ data }) => {
-  const { frontmatter, body, fields } = data.mdx;
+const ResourceSingle = ({ data, children }) => {
+  const { frontmatter, fields } = data.mdx;
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
   allMdx(
@@ -69,7 +68,7 @@ const ResourceSingle = ({ data }) => {
       <div className="single-resource-wrapper">
         <Container>
           <SRLWrapper>
-            <MDXRenderer>{body}</MDXRenderer>
+            { children }
           </SRLWrapper>
 
           <CTA_Bottom
