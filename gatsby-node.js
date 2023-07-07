@@ -11,24 +11,6 @@ const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 
-// const top = require("process-top")();
-
-// const v8 = require("v8");
-// const vm = require("vm");
-// v8.setFlagsFromString("--expose_gc");
-// const gc = vm.runInNewContext("gc");
-
-// setInterval(function () {
-// Prints out a string containing stats about your Node.js process.
-// console.log(top.toString());
-// let heapMem = top.memory().heapUsed / 1000000;
-// if (heapMem > 1500) {
-//   console.log(top.toString());
-// }
-// console.log(`${(top.memory().heapUsed) / 1000000}MB`);
-// }, 1000);
-
-
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
