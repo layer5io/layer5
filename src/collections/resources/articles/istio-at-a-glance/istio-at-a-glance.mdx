@@ -213,7 +213,7 @@ Istio monitoring and route rules can be applied to traffic leaving the mesh thro
 </p>
 <img src={IstioArchitecture} class="image-center" alt="Istio Architecture" />
 
-<div class="intro" style="text-align:center">
+<div class="intro" style={{textAlign: "center"}}>
 <p><b>Why use Istio Gateways and not Kubernetes Ingresses?</b></p>
 <p>In general, the Istio v1alpha3 APIs leverage Gateways for richer functionality as Kubernetes Ingress has proven insufficient for Istio applications. In comparison to Kubernetes Ingress, Istio Gateways can function as a pure L4 TCP proxy and support all protocols supported by Envoy.</p>
 <p>
