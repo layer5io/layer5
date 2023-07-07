@@ -32,8 +32,7 @@ resource: true
 <p>L7 proxies used as API gateways generally can be represented by a collection of microservices-oriented, open source projects, which have taken the approach of wrapping existing L7 proxies with additional features needed for an API gateway.</p>
 
 <h3>NGINX</h3>
-<p>As a stable, efficient, ubiquitous L7 proxy, NGINX is commonly found at the core of API gateways. It may be used on its own or wrapped with additional features to facilitate container orchestrator native integration or additional self-service functionality for developers. Examples of this include:
-</p>
+<p>As a stable, efficient, ubiquitous L7 proxy, NGINX is commonly found at the core of API gateways. It may be used on its own or wrapped with additional features to facilitate container orchestrator native integration or additional self-service functionality for developers. Examples of this include:</p>
 <ul>
 <li>APIUmbrella</li>
 <li>Kong</li>
@@ -42,8 +41,7 @@ resource: true
 
 <h3>Envoy</h3>
 
-<p>The Envoy project also has been used as the foundation for API gateways.
-</p>
+<p>The Envoy project also has been used as the foundation for API gateways.</p>
 
 <ul>
 <li>Ambassador: Based on Envoy, Ambassador is an API gateway for microservices functioning stand-alone or as a Kubernetes Ingress Controller. </li>
@@ -59,7 +57,7 @@ Other differences between traditional API gateways and microservices API gateway
 One of the most important distinctions to make when it comes to service meshes is that API gateways are designed to accept traffic from outside your organization/network and distribute it internally. API gateways expose your services as managed APIs, focused on transiting north/south traffic. They aren’t as well suited for traffic management within the service mesh necessarily, because they require traffic to travel through a central proxy and add a network hop. Service meshes are primarily designed to handle east/west traffic internal to the service mesh.
 </p>
 
-<div class="fact-left">
+<div className="fact-left">
 Traffic Directions
 <p>North-south (N-S) traffic refers to traffic between clients outside the Kubernetes cluster and services inside the cluster, while east-west (E-W) traffic refers to traffic between services inside the Kubernetes cluster.</p>
 </div>
@@ -79,14 +77,10 @@ An API gateway can call downstream services via service mesh by offloading appli
 </p>
 
 <ul>
-<li>Developers use a portal to discover APIs available for API documentation and discovery,  API testing, and exercising their code.
-</li>
-<li>API analytics for tracking KPIs, generating reports on usage and adoption trending.
-</li>
-<li>API lifecycle management to secure APIs (allocate keys) and promote or demote APIs.
-</li>
-<li>Monetization to tracking payment plans and enforcing quotas.
-</li>
+<li>Developers use a portal to discover APIs available for API documentation and discovery,  API testing, and exercising their code.</li>
+<li>API analytics for tracking KPIs, generating reports on usage and adoption trending.</li>
+<li>API lifecycle management to secure APIs (allocate keys) and promote or demote APIs.</li>
+<li>Monetization to tracking payment plans and enforcing quotas.</li>
 </ul>
 
 </ResourcesWrapper>

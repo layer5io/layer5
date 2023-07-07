@@ -31,7 +31,7 @@ import Flowchart from "./flowchart.webp";
 
 <BlogWrapper>
 
-<div class="intro ">
+<div className="intro ">
   <p>
    <Link to="/community/members/lee-calcote">Lee Calcote</Link> is an innovator, product and technology leader, active in the community as a Docker Captain, Cloud Native Ambassador and GSoC, GSoD, and Community Bridge Mentor. In this talk, he walked through service mesh specifications and why they matter in your deployment.
    How many service mesh specifications do you know? He went through all of them. So, no worries if you're unfamiliar.
@@ -54,7 +54,7 @@ The advent of cloud native was the popularization of containers. Thank you Docke
 Service meshes have become a hot topic in the last few years. They still continue to be, rightfully so, a very powerful piece of technology. “A lot of the power is yet to come from my perspective. For my part, I believe that there is a tomorrow in which data plane intelligence really matters. And matters about how people write cloud native applications.”, Lee emphasized. Not everyone quite understands the capabilities of meshes as they are promoted and spoken about today. So come along into the journey of service mesh.
 
 There are a number of service meshes out there. One of the community projects is to track the landscape of all of the meshes there are. There’s a lot to say about each of them, their architecture, and their working. Why are they made? Who are they focused on? What do they do? When did they come about? Why are some of them not here anymore? Why are we still seeing new ones? A lot of things to go through. You might be interested in any number of the details that the landscape tracks.
- <div class="note">Be Aware, It's Meshy Out There!</div>
+ <div className="note">Be Aware, It's Meshy Out There!</div>
 
 ### Service Mesh Interface
 <img src={SMI} className="slides-left" align="left" alt="smi-image" />
@@ -126,7 +126,8 @@ Demonstration of the implementation of service mesh Performance:
   <li>Specifies a set of API standards for enabling service mesh federation</li>
   <li>Hamlet takes on a client-server architecture in which resources and services of one service mesh are discovered, registered and using a common format, information about them is exchanged between different service mesh.</li>
   <li>Rules around authentication and authorization rules around which Services get exposed and to whom and who can communicate with them and whether or not they can do it securely. These are things that Hamlet addresses.</li>
-  <li>The specification currently consists of two APIs:
+  <li>
+  The specification currently consists of two APIs:
     <ul>
       <li><strong>The Federated Resource Discovery API</strong>: API to authenticate and securely distribute resources between federated service meshes.</li>
       <li>The <strong>Federated Service Discovery API</strong>: API to discover, reach, authenticate and securely communicate with federated services.</li>

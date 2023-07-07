@@ -28,7 +28,7 @@ import slidesTAG from "../../../events/kubecon-china-2021/cncf-tag-network-and-s
 
 <BlogWrapper>
 
-<div class="intro ">
+<div className="intro ">
 <p>
     The CNCF Technical Advisory Group for Network Co-Chairs <Link to="/community/members/lee-calcote">Lee Calcote</Link> and Ken Owens gave a presentation entitled Intro and Deep Dive into CNCF TAG Network and CNCF Service Mesh Working Group at KubeCon China 2021.
 </p>
@@ -91,14 +91,14 @@ The majority of the more detailed activities occur in the CNCF Service Mesh Work
 <li><b><Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP):</Link></b> SMP tries to make it uniform and succinct the way you characterize the performance of cloud native infrastructure with a focus on service meshes.</li>
 </ul>
 <p>
-<img src={Smi} class="slides" align="center" style={{marginLeft: "10px"}} alt="SMI" />
-<img src={Smp} class="slides" align="center" style={{marginLeft: "10px"}} alt="SMP" />
+<img src={Smi} className="slides" align="center" style={{marginLeft: "10px"}} alt="SMI" />
+<img src={Smp} className="slides" align="center" style={{marginLeft: "10px"}} alt="SMP" />
 </p>
 
 <p>
     Owens and Calcote also discuss <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> and Service Mesh Catalog. These patterns promote the reuse of best practices, are service mesh agnostic, and also help in behavior analysis. A circuit breaker test is a good example.  If something goes wrong in your network be it a node failure, router failure, etc., then it helps you identify the point of failure as well as gets your network running quickly. 
 </p>
-<img src={Catalog} class="slides" alt="Service Mesh Catalog" style={{display: "block", margin: "0 auto 1.5rem", width: "60%"}}/>
+<img src={Catalog} className="slides" alt="Service Mesh Catalog" style={{display: "block", margin: "0 auto 1.5rem", width: "60%"}}/>
 
 
 <p>
@@ -112,12 +112,11 @@ The majority of the more detailed activities occur in the CNCF Service Mesh Work
 <p>
     This brings us to <Link to="/projects/nighthawk">Nighthawk</Link> and <Link to="/cloud-native-management/meshery">Meshery</Link>. Together they help produce robust, distributed and scalable services. Distributed load testing offers insight into system behaviors that accurately represent real world behaviors of services under load as that load comes from any number of sources.
 </p>
-<img src={Gnh} class="slides" style={{display: "block", margin: "0 auto 1.5rem", width: "60%"}} alt="GetNighthawk" />
+<img src={Gnh} className="slides" style={{display: "block", margin: "0 auto 1.5rem", width: "60%"}} alt="GetNighthawk" />
 
-<p><strong>Calcote and Owens packed a great deal of information in this talk. If you are passionate about Cloud Native Networking and Service Meshes, then this talk is definitely worth your time. Find the recording below. The presentation slides are available <a href={slidesTAG}>here</a>. </strong>
-</p>
-<div class="iframe-container">
-<iframe src="https://www.youtube.com/embed/pUDm8Xx4RXg" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+<p><strong>Calcote and Owens packed a great deal of information in this talk. If you are passionate about Cloud Native Networking and Service Meshes, then this talk is definitely worth your time. Find the recording below. The presentation slides are available <a href={slidesTAG}>here</a>. </strong></p>
+<div className="iframe-container">
+<iframe src="https://www.youtube.com/embed/pUDm8Xx4RXg" loading="lazy" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
 </div>
 
 </BlogWrapper>

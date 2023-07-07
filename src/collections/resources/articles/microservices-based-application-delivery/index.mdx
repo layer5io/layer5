@@ -115,7 +115,7 @@ Whether you are a cloud native pro or a novice, your selection of the right appl
   <img src={Graph} align="center" alt="Graph" />
   </div>
 
-<div class="intro">
+<div className="intro">
     <h3 align="center">Tip: Traffic Directions</h3>
     <p>
         North-south (N-S) traffic refers to traffic between clients outside the Kubernetes cluster and services inside the cluster, while east-west (E-W) traffic refers to traffic between services inside the Kubernetes cluster.
@@ -171,7 +171,7 @@ Let’s examine each of the four deployment models.
     Overall, two-tier ingress provides excellent services for N-S traffic but lacks control for E-W traffic. It is a popular architecture because it is simple to implement and is frequently a starting point for enterprises on their cloud native journey to microservices adoption.
 </p>
 
-<div class="note">
+<div className="note">
 By default, kube-proxy uses iptables (x_tables kernel modules), so it does not perform as well as other proxies. You can configure kube-proxy to run in different modes by setting the --proxy-mode flag. Setting this flag to ipvs enables IPVS mode (netfilter kernel modules), which provides a much improved performance and also enables choice of load balancing algorithm through the --ipvs-scheduler parameter beyond the default round robin algorithm.
 </div>
 
@@ -289,7 +289,7 @@ It’s imperative that your various application delivery tools and processes, in
     Performance counters are another way to track application behavior and performance. Akin to SNMP for physical and virtual network monitoring, the equivalent cloud native “standard” is the use of Prometheus and Grafana, so it’s important that your application delivery solution integrate with these tools. Currently there is no recognized standard for cloud native application performance monitoring metrics.
 </p>
 
-<div class="intro">
+<div className="intro">
     <h3 align="center">OpenMetrics</h3>
     <p>
         The cloud native ecosystem needs a common format for the exchange of metrics. Observability pains grow with the release of each newly instrumented service that presents its own metric format. OpenMetrics is an effort to create an open standard for transmitting metrics at scale, with support for both text representation and protocolbBuffers. OpenMetrics builds on Prometheus’s exposition format, popular telemetry formats, and protocols used in infrastructure and application monitoring. 

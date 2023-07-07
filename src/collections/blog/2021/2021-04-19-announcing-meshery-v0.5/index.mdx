@@ -44,14 +44,14 @@ import layer5Logo from "../../../../assets/images/layer5/layer5-only/svg/layer5-
 - Meshery Remote Provider extensions with dynamic injection
 - New Meshery CLI commands to manage mutiple Meshery deployments
 
-<div class="intro" style={{textAlign: "center", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center", alignContent: "center", margin: "2rem"}}>
+<div className="intro" style={{textAlign: "center", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center", alignContent: "center", margin: "2rem"}}>
   <img src={layer5Logo} style={{maxHeight: "55px", height: "auto", margin: "auto", padding: ".5rem"}} />
   <p style={{flexBasis: "50%", width: "100%", padding: "0rem", margin: "0rem"}} >Thank you to the wonderful Layer5 community of open source contributors in making this significant release possible.</p>
 </div>
 
 ## New Service Mesh Support
 
-<p><span class="bigfirstletter">2</span> new Meshery service mesh adapters are bundled with this latest version of Meshery: The Meshery Adapter for Traefik Mesh and the Meshery Adapter for NGINX Service Mesh.</p>
+<p><span className="bigfirstletter">2</span> new Meshery service mesh adapters are bundled with this latest version of Meshery: The Meshery Adapter for Traefik Mesh and the Meshery Adapter for NGINX Service Mesh.</p>
 
 <h3>Meshery Adapter for Traefik Mesh (beta)</h3>
 <img style={{display: "inline", float: "left", maxWidth: "300px", width: "80%", padding: "1.25rem"}} src={Traefik} />
@@ -82,7 +82,7 @@ import layer5Logo from "../../../../assets/images/layer5/layer5-only/svg/layer5-
 
 As the cloud native manager, Meshery, is an extensible platform offering user and integrators well-crafted, extension points. Extension points allow you to  augment the behavior of Meshery by either adding entirely new capabilities or affecting the behavior of existing functionality, as see in the figure below.
 
-<div class="img-center">
+<div className="img-center">
   <a href={MesheryExtensibility} style={{backgroundColor: "rgba(255,255,255,0)"}}><img src={MesheryExtensibility} /></a>
 </div>
 
@@ -115,21 +115,23 @@ As a service mesh toolkit, MeshKit aims to specifically focus on service mesh ma
 <h3>Meshery Adapter Library</h3>
 
 <p>The Meshery Adapter Library provides a common and consistent set of functionality for managing the lifecycle of service meshes and their workloads.</p>
-<div class="img-center">
+<div className="img-center">
   <a href={MesheryAdapterLibrary}><img src={MesheryAdapterLibrary} /></a>
 </div>
 
 * The library provides a set of interfaces, some with default implementations like a mini framework implementing the gRPC server that allows plugging in the mesh-specific configuration and operations implemented in the adapters.
 * The default configuration provider we use Viper to reads the adapter specific configuration, and the configuration providers are implementations of an interface, this can be flexible if anyone wants to implement it on their own.
 
-<div class="intro" style={{textAlign: "center", margin: "2rem 4rem"}}><p>Read <Link to="/community/members/michael-gfeller">Maintainer Michael Gfeller</Link>'s blog post <Link to="/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library">Introduction MeshKit and the Meshery Adapter Library</Link> for more details.</p></div>
+<div className="intro" style={{textAlign: "center", margin: "2rem 4rem"}}><p>Read <Link to="/community/members/michael-gfeller">Maintainer Michael Gfeller</Link>'s blog post <Link to="/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library">Introduction MeshKit and the Meshery Adapter Library</Link> for more details.</p></div>
 
 With the increasing the number and diversity of service meshes supported by Meshery, you might find the list of [Supported Service Meshes](https://docs.meshery.io/service-meshes) a helpful, complete list.
 
 <h2>Meshery Operator</h2>
 <img style={{float: "left", maxWidth: "300px", width: "20%", padding: "1.25rem"}} src={MesheryOperator} />
 <p style={{display: "block", width: "100%"}}>
-As a Kubernetes custom controller, Meshery Operator provides a Kubernetes-native approach to interfacing with Meshery. Kubernetes is where service meshes have gotten their initial foothold, and therefore, important that Meshery interface to Kubernetes natively.</p><p>Some service meshes support non-containerized workloads outside of the cluster and will grow in this focus over time. While Meshery Operator is Kubernetes only in the v0.5.0 release, Meshery's arichitecture makes considerations for different workload and platform types.</p>
+As a Kubernetes custom controller, Meshery Operator provides a Kubernetes-native approach to interfacing with Meshery. Kubernetes is where service meshes have gotten their initial foothold, and therefore, important that Meshery interface to Kubernetes natively.
+</p>
+<p>Some service meshes support non-containerized workloads outside of the cluster and will grow in this focus over time. While Meshery Operator is Kubernetes only in the v0.5.0 release, Meshery's arichitecture makes considerations for different workload and platform types.</p>
 
 <div style={{display: "flex", width: "100%"}}>
   <div style={{textAlign: "center", flex: "50%"}}>
@@ -160,7 +162,7 @@ maintain the local snapshot of the cluster and refreshed periodically.</li>
 
 Meshery's <a href="https://docs.meshery.io/concepts/architecture/database">relational database</a> serves as a repository for MeshSync data, user preferences, and system settings. This database should be considered ephemeral and given that it operates as a cache. Meshery relational database offers federated datasets for managing multiple Kubernetes cluster and multiple service meshes.
 
-<div class="img-center">
+<div className="img-center">
   <a href={MesheryDB}><img src={MesheryDB} /></a>
 </div>
 
@@ -187,6 +189,6 @@ Review the <Link to="https://docs.meshery.io/reference/mesheryctl">mesheryctl Co
 
 To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.5.0 release, see the [Meshery Documentation](https://docs.meshery.io/). With v0.6.0 planning complete these signal of the Layer5 community's innovation cycle trending upward sharply. See Meshery's <Link to="https://github.com/layer5io/meshery/blob/master/ROADMAP.md">roadmap</Link> for a prelude of what's yet to come.
 
-<div class="intro"><p>If these topics excite you and you want to explore the wonderful world of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+<div className="intro"><p>If these topics excite you and you want to explore the wonderful world of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
 
 </BlogWrapper>

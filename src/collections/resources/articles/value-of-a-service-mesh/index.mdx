@@ -94,10 +94,9 @@ You can choose to fail fast and disconnect the service, prohibiting calls to it,
     <strong>Rate limiting</strong>(throttling) is implemented to ensure service stability. When requests by one client surge, the service continues to function smoothly for others. The rate limits are calculated over a period of time. You can also utilise various algorithms, such as a fixed or sliding window, a sliding log, etc. The purpose of rate limits is to ensure that your services are not oversubscribed.
 </p>
 
-<p>When a limit is reached, well-implemented services commonly adhere to IETF RFC 6585, sending 429 Too Many Requests as the response code, including headers, such as the following, describing the request limit, number of requests remaining, and amount of time remaining until the request counter is reset:
-</p>
+<p>When a limit is reached, well-implemented services commonly adhere to IETF RFC 6585, sending 429 Too Many Requests as the response code, including headers, such as the following, describing the request limit, number of requests remaining, and amount of time remaining until the request counter is reset:</p>
 
-<div class="fact-left">
+<div className="fact-left">
 <p>X-RateLimit-Limit: 60</p>
 <p>X-RateLimit-Remaining: 0</p>
 <p>X-RateLimit-Reset: 1372016266</p>

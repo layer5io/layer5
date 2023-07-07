@@ -11,11 +11,11 @@ order: 3
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Ingressing and Egressing with Linkerd</h2>
+<h2 className="chapter-sub-heading">Ingressing and Egressing with Linkerd</h2>
 
 Linkerd's control plane does not include ingress or egress gateways. Linkerd allows you choice of your preferred ingress (and egress) controller.
 
-<h2 class="chapter-sub-heading">How to use Ingress with Linkerd</h2>
+<h2 className="chapter-sub-heading">How to use Ingress with Linkerd</h2>
 
 In case you're anticipating infusing Linkerd into your ingress controller's pods there is some setup required. Linkerd discovers
 services dependent on the `:authority` or `Host` header. This permits Linkerd to comprehend what service a request is bound for without
@@ -23,7 +23,7 @@ being subject to DNS or IPs.
 
 In this workshop, you will use the NGINX Ingress Controller with Linkerd.
 
-<h3 class="chapter-sub-heading"> Installing NGINX Ingress Controller</h3>
+<h3 className="chapter-sub-heading"> Installing NGINX Ingress Controller</h3>
 
 Using Meshery, select the Linkerd from the Management menu, and:
 
@@ -36,7 +36,7 @@ Follow this if the above steps did not work for you
 <br />
 <br />
 
-<h4 class="chapter-alt-heading"> Installing NGINX Ingress Controller</h4>
+<h4 className="chapter-alt-heading"> Installing NGINX Ingress Controller</h4>
 
 Install ingress controller using Docker Desktop
 
@@ -50,7 +50,7 @@ Install the ingress controller using Minikube
 minikube addons enable ingress
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   {" "}
   Setting up Ingress controller with the sample application deployed
 </h3>
@@ -84,11 +84,11 @@ You'll need to include both the Kubernetes administration FQDN (web-svc.emojivot
 
 To test this, you need to get the external IP of your controller.
 
-<h4 class="chapter-sub-heading"> Docker Desktop</h4>
+<h4 className="chapter-sub-heading"> Docker Desktop</h4>
 
 You may use http://localhost or <span>http://</span>kubernetes.docker.internal or your host's IP address.
 
-<h4 class="chapter-sub-heading"> Minikube</h4>
+<h4 className="chapter-sub-heading"> Minikube</h4>
 
 Expose your Kubernetes's cluster services to your localhost network:
 
@@ -98,7 +98,7 @@ minikube tunnel
 
 You may use http://localhost or You may use http://localhost: provided by the output of `minikube tunnel`.
 
-<h4 class="chapter-sub-heading">Hosted Kubernetes</h4>
+<h4 className="chapter-sub-heading">Hosted Kubernetes</h4>
 
 Retrieve the external IP address by running:
 

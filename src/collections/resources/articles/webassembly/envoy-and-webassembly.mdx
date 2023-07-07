@@ -45,14 +45,11 @@ On startup, Envoy's configuration is initialised using bootstrap. The xDS APIs i
 <h3>Dynamically (Re)loadable Intelligence</h3>
 <p> Data planes are powerful because they can dynamically load WASM programs to inspect, rewrite, and reroute packets carrying application requests. WASM applications can integrate business logic considerations when filtering application requests when using a management plane. The service mesh can implement business logic, as well as common application infrastructure logic: </p>
 <ul>
-<li>Subscription plan enforcement: rate limiting requests based on user’s subscription plan
-</li>
-<li>Class of Service: directing requests to high performance clusters based on user demographics or activity
-</li>
-<li>Multivariate testing: facilitating comparison a of high number of variables between deployments (service versions) and users
-</li>
+<li>Subscription plan enforcement: rate limiting requests based on user’s subscription plan</li>
+<li>Class of Service: directing requests to high performance clusters based on user demographics or activity</li>
+<li>Multivariate testing: facilitating comparison a of high number of variables between deployments (service versions) and users</li>
 </ul>
-<div class="fact">
+<div className="fact">
 <p>
 To get a feel of these capabilities, try experimenting with the <Link to="/projects/image-hub">Image Hub</Link>,a prototype application developed in Rust that runs on Consul and allows you to explore WebAssembly modules used as Envoy filters.
 </p>
@@ -60,8 +57,7 @@ To get a feel of these capabilities, try experimenting with the <Link to="/proj
 
   <div className="center" >
   <img src={Infrastructure} align="center" alt="application infrastructure logic" />
-  <p>
-Figure 1:. How the intelligence of the cloud native management plane and the power of the service mesh data plane combine to deliver application infrastructure logic.  </p>
+  <p>Figure 1:. How the intelligence of the cloud native management plane and the power of the service mesh data plane combine to deliver application infrastructure logic.  </p>
   </div>
 
 <p>

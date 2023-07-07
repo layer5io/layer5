@@ -33,7 +33,7 @@ import PatternsLogo from "./patterns-logo.webp";
 
 <BlogWrapper>
 
-<div class="intro ">
+<div className="intro ">
   <p>
     Meshery is the open-source, multi-service mesh management plane that can
     provision ten different service meshes, onboard your applications, manage
@@ -151,7 +151,8 @@ import PatternsLogo from "./patterns-logo.webp";
       <td>
         <a href="https://docs.meshery.io/service-meshes/adapters/linkerd">
           Meshery Adapter for Linkerd
-        </a>{" "}
+        </a>
+{" "}
       </td>
       <td className="status">stable</td>
     </tr>
@@ -262,7 +263,8 @@ import PatternsLogo from "./patterns-logo.webp";
 <p>
   <Link to="/cloud-native-management/meshery/meshery-operator">
     Meshery operator
-  </Link>{" "}
+  </Link>
+  {" "}
   is a custom controller called MeshSync. MeshSync helps keep Meshery apprised
   of the various changes that are going on to the service meshes and various
   changes that are happening within Kubernetes itself. In this way Meshery
@@ -381,16 +383,16 @@ import PatternsLogo from "./patterns-logo.webp";
   <Link to="/cloud-native-management/meshery">Meshery</Link> - The Cloud Native
   Manager to learn more!
 </h3>
-<div class="iframe-container">
+<div className="iframe-container">
   <iframe
     width="460"
     height="215"
     src="https://www.youtube.com/embed/mU8qHUGYsk8"
     loading="lazy"
     title="YouTube video player"
-    frameborder="0"
+    frameBorder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowFullScreen
   ></iframe>
 </div>
 

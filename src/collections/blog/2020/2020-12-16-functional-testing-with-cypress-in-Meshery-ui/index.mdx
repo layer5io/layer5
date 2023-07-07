@@ -16,8 +16,8 @@ published: true
 ---
 
 
-import bestPracticesSelectingElementsImg from './best-practices-selecting-elements.webp';
-import cypressTestRunnerImg from './cypress-test-runner.webp';
+import bestPracticesSelectingElementsImg from "./best-practices-selecting-elements.webp";
+import cypressTestRunnerImg from "./cypress-test-runner.webp";
 
 <BlogWrapper>
 
@@ -44,7 +44,7 @@ Then, you have to add your test below `"provider-ui/cypress/integration"` or `"u
 
 Here is a basic example of a test validating that <b>Provider UI component</b> exists:
 
-```javascript
+```
 describe('Provider UI', () => {
   it('renders provider component', () => {
     cy
@@ -57,7 +57,7 @@ describe('Provider UI', () => {
 Please follow the <b><u><a href="https://docs.cypress.io/guides/references/best-practices.html">best practices recommended</a></u></b> by Cypress.
 One of the most important is to use or add the `"data-cy"` attribute to the element you want to interact to:
 
-<img src={bestPracticesSelectingElementsImg} class="image-center" alt="Best Practices selecting elements with Cypress" />
+<img src={bestPracticesSelectingElementsImg} className="image-center" alt="Best Practices selecting elements with Cypress" />
 <p align="center">Best Practices Selecting Elements</p>
 
 ### Run your test!
@@ -92,7 +92,7 @@ $ npm run cy:open
 
 this will open the <b>Cypress Test Runner:</b>
 
-<img src={cypressTestRunnerImg} class="image-center" alt="Cypress Test Runner" />
+<img src={cypressTestRunnerImg} className="image-center" alt="Cypress Test Runner" />
 <p align="center">Cypress Test Runner</p>
 
 just double-click on your test and a window browser will be opened and you will see your testing running!
@@ -101,9 +101,9 @@ just double-click on your test and a window browser will be opened and you will 
 
 To improve writting better tests, I recommend that you watch:
 
-- Watch the <a href="https://www.youtube.com/watch?v=pIFSI7xtwFs" target="_blank" rel="nofollow">Meshery Development Meeting (Nov 4th, 2020)</a> where I gave a demo running UI tests on the Meshery project (<a href="https://docs.google.com/presentation/d/1QbMEyQgbXMLvvSheAIDruzCFe8SmBrKXUjqP0Hxfqjw" target="_blank">slides</a>)
-- <a href="https://docs.cypress.io/examples/examples/tutorials.html" rel="nofollow" target="_blank">Tutorial Videos</a> from Cypress blog.
-- The <a href="https://www.youtube.com/watch?v=5XQOK0v_YRE" target="_blank" rel="nofollow">Brian Mann – I see your point, but… (Part 1)</a> YouTube video where he gives pro tips writting tests in Cypress.
+- Watch the <a href="https://www.youtube.com/watch?v=pIFSI7xtwFs" target="_blank" rel="noreferrer">Meshery Development Meeting (Nov 4th, 2020)</a> where I gave a demo running UI tests on the Meshery project (<a href="https://docs.google.com/presentation/d/1QbMEyQgbXMLvvSheAIDruzCFe8SmBrKXUjqP0Hxfqjw" target="_blank" rel="noreferrer">slides</a>)
+- <a href="https://docs.cypress.io/examples/examples/tutorials.html" rel="noreferrer" target="_blank">Tutorial Videos</a> from Cypress blog.
+- The <a href="https://www.youtube.com/watch?v=5XQOK0v_YRE" target="_blank" rel="noreferrer">Brian Mann – I see your point, but… (Part 1)</a> YouTube video where he gives pro tips writting tests in Cypress.
 
 If you have questions, do not hesitate to ask to the Meshery community on Slack :)
 

@@ -29,7 +29,7 @@ import Code from "../../../../components/CodeBlock";
 <p>
   By default Envoy system logs are sent to <code>/dev/stderr</code>. This location be overridden using <code>--log-path</code>. Logging to <code>/dev/stderr</code>  for system logs and to <code>/dev/stdout</code> for access logs can be useful when running Envoy inside a container. In this way, these two individual logstreams can be separated, and using this approach, logging requires no additional files or directories to be mounted.
 </p>
-<div class="intro">
+<div className="intro">
 <p>
   We recommend setting the Envoy proxy’s log level to debug in a pre-production environment. Debug logs can help you identify issues before you graduate the associated configuration to your production environment.
 </p>

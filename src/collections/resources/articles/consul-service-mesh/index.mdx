@@ -30,7 +30,7 @@ import proxy from "./service-proxy-architecture.webp";
   
   <p> The data plane, on the other hand, handles the communication between services. The amount of knowledge that the services need to have about the network environment is limited by the fact that many service mesh solutions use a sidecar proxy to conduct data plane connections. </p>
   
-  <img src = {serviceMesh} class="image-center" alt="Service Mesh" />
+  <img src = {serviceMesh} className="image-center" alt="Service Mesh" />
   
   <h3> What is Consul? </h3>
   
@@ -42,19 +42,20 @@ import proxy from "./service-proxy-architecture.webp";
   
   <p> Consul is a distributed system built for a node cluster to operate on. A physical server, cloud instance, virtual machine, or container can all function as a Consul node. The collection of interconnected nodes that Consul runs on is known as a datacenter. Consul supports multiple datacenters and considers this as a common case. It is expected that there will be many clients and three to five servers in a datacenter. This creates a balance between performance and availability in the event of a breakdown because consensus slows down as more machines are added. The number of clients, however, is unlimited and can easily increase to thousands or tens of thousands. </p>
   
-  <img src = {datacenter} class="image-center" alt="Image of datacenter" />
+  <img src = {datacenter} className="image-center" alt="Image of datacenter" />
   
   <p> The Consul Agent is responsible for maintaining membership information, registering services, running checks, responding to queries, etc. It is required to run on every node that is a part of the Consul cluster. In some places, client agents may cache data from the servers to make it available locally for performance and reliability. They can either run in server mode or client mode. Client nodes make up for most of the cluster and are lightweight processes. They act as an interface between server nodes for most operations. They run on every node where services are running. </p>
   
   <p> Along with core agent operations, a server node participates in the consensus quorum. The Raft protocol, which offers excellent consistency and availability in the event of failure, serves as the foundation for the quorum. Because they consume more resources than client nodes, server nodes should run on dedicated instances. </p>
   
-  <img src = {agent} class="image-center" alt="Consul Agent" />
+  <img src = {agent} className="image-center" alt="Consul Agent" />
   
   <p> A per-service proxy sidecar manages incoming and outgoing service connections by automatically wrapping and verifying TLS connections. Consul includes its own built-in L4 proxy and has first class support for Envoy. Other than this, we can choose to use any other proxy to plug in as well. The following diagram shows how proxies work: </p>
   
-  <img src = {proxy} class="image-center" alt="Side-car proxy" />
+  <img src = {proxy} className="image-center" alt="Side-car proxy" />
   
-  <p> The lifecycle of a Consul cluster:
+  <p> 
+  The lifecycle of a Consul cluster:
     <ol>
       <li> An agent is started. </li>
       <li> An agent joins the cluster. </li>
@@ -69,28 +70,35 @@ import proxy from "./service-proxy-architecture.webp";
   
   <p> Consul service mesh streamlines application deployment into a zero-trust network and makes service discovery easier in complex networking situations. </p>
   
-  <p> Features of Consul Service Mesh:
+  <p> 
+  Features of Consul Service Mesh:
   <br />
     <ol>
-      <li> Service Discovery 
-        <p> Consul provides a service catalog, configurable service routing, health checks, automatic load balancing, and geo-failover across multiple instances of the same service. The capacity to control changes in the service landscape of your network becomes essential when new versions of a service are introduced and must coexist with existing instances of the same application, frequently running on different versions. The agent provides a simple service definition format to declare the availability of a service and to potentially associate it with a health check. </p> 
-      </li>
-      <li> Zero-trust Security Model
+      <li> 
+      Service Discovery 
+        <p> Consul provides a service catalog, configurable service routing, health checks, automatic load balancing, and geo-failover across multiple instances of the same service. The capacity to control changes in the service landscape of your network becomes essential when new versions of a service are introduced and must coexist with existing instances of the same application, frequently running on different versions. The agent provides a simple service definition format to declare the availability of a service and to potentially associate it with a health check. </p>
+        </li>
+      <li> 
+      Zero-trust Security Model
         <p> Trust can be exploited and with the increasing number of services, there are higher chances of breach. The Consul service mesh control plane can be configured to enforce mutual TLS (mTLS), and will automatically generate and distribute the TLS certificates for every service in the mesh. The certificates are used for both service identity verification and communication encryption. </p> 
       </li>
-      <li> Simplify Application Security with Intentions 
+      <li> 
+      Simplify Application Security with Intentions 
         <p> Communication between services is secure within the mesh once the service sidecar proxies have been set up. To designate which services are permitted to communicate with one another, you might want to build a more granular set of policies. Consul Intentions are used to limit which services can make requests or create connections and define access control for services through Connect. We can manage intentions via the UI, CLI, or API. The proxy or a natively integrated application enforces intentions on inbound connections or requests. </p> 
       </li>
     </ol>
   </p>
   
-  <p> Compatibility of Consul Connect:
+  <p> 
+  Compatibility of Consul Connect:
   <br />
   <ol>
-    <li> First-Class Kubernetes Support 
+    <li> 
+    First-Class Kubernetes Support 
         <p> By offering an official Helm chart for installing, configuring, and upgrading Consul on Kubernetes, Consul enables first-class Kubernetes support. The chart automates Kubernetes's Consul service mesh installation and configuration. </p> 
      </li>
-    <li> Platform Agnostic and Multi-Cluster Mesh
+    <li> 
+    Platform Agnostic and Multi-Cluster Mesh
         <p> Consul works with all cloud providers and architectures. You can expand the scope of your Kubernetes clusters to include services that aren't run using Kubernetes by using the service catalog sync and auto-join features. In order to facilitate safe service-to-service communication between Nomad tasks and jobs, Consul additionally interfaces with HashiCorp Nomad. </p> 
      </li>
   </ol>

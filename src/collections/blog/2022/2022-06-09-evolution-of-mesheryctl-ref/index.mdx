@@ -25,18 +25,20 @@ import newDesign from "./mesheryctl-docs.webp";
 
 <BlogWrapper>
 
-<div class="intro">
+<div className="intro">
 <p>Documentation plays a major role in any project. Even if the project is small or too big, the creator or the team behind the project needs to curate the documentation very well such that it'll be useful for new end users to refer and learn to use the project, troubleshoot the problems occurred and lot more. Thus, we, Layer5 have curated the documentation for Meshery to meet such purposes. Not to mention, <code>mesheryctl</code>, the CLI client of Meshery needs a curated documentation as well. This blog describes about the evolution of <code>mesheryctl</code> command reference page. </p>
 </div>
 
 <h3>Initial Command Reference Design</h3>
-<p>The initial design of <code>mesheryctl</code> command reference page is all made using pure markdown and the functionality is handled using Jekyll, the main framework used for Meshery Docs. This handled great at initial stage but had many limitations, such as:
+<p>
+The initial design of <code>mesheryctl</code> command reference page is all made using pure markdown and the functionality is handled using Jekyll, the main framework used for Meshery Docs. This handled great at initial stage but had many limitations, such as:
     <ul>
         <li>Updation of YAML for data is often required</li>
         <li>Design was obselete at initial stage</li>
         <li>No separate pages for each command and subcommand</li>
     </ul>
-    Thus, the idea for redesigning the <code>mesheryctl</code> reference page was desperately needed.</p>
+    Thus, the idea for redesigning the <code>mesheryctl</code> reference page was desperately needed.
+    </p>
     <p><a href="https://docs.meshery.io" alt="Meshery Documentation" target="_parent">
     <img src = {oldDesign} className="image-center-shadow" alt="Initial design of mesheryctl command reference" /></a></p>
 
@@ -61,8 +63,8 @@ import newDesign from "./mesheryctl-docs.webp";
     {{ name.description }}
 
     <!-- Basic usage of the command -->
-    <pre class="codeblock-pre">
-    <div class="codeblock">
+    <pre className="codeblock-pre">
+    <div className="codeblock">
     mesheryctl mesh [flags] 
     </div>
     </pre>

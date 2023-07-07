@@ -28,7 +28,7 @@ resource: true
   The source of traffic can also be matched within a routing rule that allows routing to be customized for every specific client context.
 </p>  
 
-<div class="fact-left">
+<div className="fact-left">
 <p>
   The below example on Kubernetes routes all HTTP traffic by default to pods of the reviews service with the label “version: v1”. Additionally, HTTP requests with path starting with /wpcatalog/ or /consumercatalog/ will be rewritten to /newcatalog and sent to the pods with label “version: v2”.
 </p>
@@ -145,7 +145,7 @@ spec:
       version: v2
 
 ```
-<div class="fact-left">
+<div className="fact-left">
 <p>A version of the route destination is identified with a reference to a named service subset which should be declared in a corresponding DestinationRule.</p>
 </div>
 

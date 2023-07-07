@@ -21,18 +21,18 @@ product: MeshMap
 
 import slidesTAG from "../../../events/kubecon-china-2021/cncf-tag-network-and-service-mesh-working-group-kubecon-china-2021-lee-calcote-ken-owens.pdf";
 
-import meshmark from './meshmark-dark-text-side.svg';
-import performanceQuestion from './performance-question.webp';
-import smp from './smp.webp';
-import meshmarkSlide from './meshmark.webp';
-import example from './example.webp';
-import formula from './formula.webp';
-import MUE from './mue.webp';
-import MeshMapDemo from './meshmark-score.webp';
+import meshmark from "./meshmark-dark-text-side.svg";
+import performanceQuestion from "./performance-question.webp";
+import smp from "./smp.webp";
+import meshmarkSlide from "./meshmark.webp";
+import example from "./example.webp";
+import formula from "./formula.webp";
+import MUE from "./mue.webp";
+import MeshMapDemo from "./meshmark-score.webp";
 
 <BlogWrapper>
 
-<div class="intro ">
+<div className="intro ">
 <p>
     <Link to="/community/members/lee-calcote">Lee Calcote</Link> and <Link to="">Mrittika Ganguli</Link> presented <i>MeshMark: Service Mesh value measurement</i> at ServiceMeshCon Europe 2022.
 </p>
@@ -101,8 +101,8 @@ the value that your infrastructure is providing. So we're really kind of missing
 </p>
 
 <p>
-<img src={meshmarkSlide} class="slides" align="center" style={{marginLeft: "30px"}} alt="meshmark" />
-<img src={example} class="slides" align="center" style={{marginLeft: "30px"}} alt="meshmark example" />
+<img src={meshmarkSlide} className="slides" align="center" style={{marginLeft: "30px"}} alt="meshmark" />
+<img src={example} className="slides" align="center" style={{marginLeft: "30px"}} alt="meshmark example" />
 </p>
 
 <img src={formula} alt="MeshMark formula" style={{width: "50%", float: "right"}} />
@@ -129,11 +129,10 @@ We could also take a look at service intentions of console and examine the effic
 </p>    
 
 <div style={{textAlign: "center"}}>
-<iframe width="70%" height="450px"  style={{marginRight: "1.5rem", marginLeft: "1.5rem"}} src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="70%" height="450px"  style={{marginRight: "1.5rem", marginLeft: "1.5rem"}} src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 <p style={{fontStyle: "italic", fontSize: "1rem", marginLeft: "1rem"}}>MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</p>
 </div>
 
-<p><strong>Lee Calcote and Mrittika Ganguli covered all the concepts of SMP and MeshMark in this great talk. Learn more about MeshMark on the <Link to="https://meshery.io/service-mesh-interface">Service Mesh Performance </Link>website.</strong>
-</p>
+<p><strong>Lee Calcote and Mrittika Ganguli covered all the concepts of SMP and MeshMark in this great talk. Learn more about MeshMark on the <Link to="https://meshery.io/service-mesh-interface">Service Mesh Performance </Link>website.</strong></p>
 
 </BlogWrapper>

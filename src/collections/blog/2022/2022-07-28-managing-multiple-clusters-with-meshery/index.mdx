@@ -29,7 +29,7 @@ import CoreArch from "./meshery-core-architecture.webp";
 
 <BlogWrapper>
 
-<div class="intro">
+<div className="intro">
   <p>
     From multi-mesh to now multi-cluster, <Link to="/meshery">Meshery</Link> is
     continuously expanding its capability to give developers, operators, and
@@ -41,7 +41,7 @@ import CoreArch from "./meshery-core-architecture.webp";
 
 ## Philosophy behind Meshery's multi-cluster management approach
 
-While designing Meshery for the world of many service meshes, and many Kubernetes clusters, much care has been taken to ensure that Meshery is an <a href="https://docs.meshery.io/extensibility">extensible management platform</a>, ready for handling new types of infrastructure and new use cases rapidly through its plugin model. Under the hood, <a href="https://docs.meshery.io">Meshery Server</a> acts as a delegator of operations by figuring out which Meshery Adapter registered its capability against the given operation. The operation is then sent to that given component (like one of Meshery’s service mesh adapters,e.g. Istio adapter) via a gRPC call. <img src={CoreArch} alt="deploy modal"  class="image-right" /> When the operation involves a Kubernetes cluster(s), the kubeconfig(s) is sent as a parameter to the RPCs. It is then the job of the handling adapter to respect that and perform the operation across the passed clusters from kubeconfigs as needed. The operations not requiring a kubeconfig are managed through the same RPC, with the only difference being that the handling component would ignore the `kubeconfigs` field altogether making the system work not just for Kubernetes, but for other cloud native use cases. This approach of reusing the same RPC for different types of requests is pretty common and sometimes debatable with the other approach of being strict with the RPCs. This is what makes Meshery completely pluggable and extensible.
+While designing Meshery for the world of many service meshes, and many Kubernetes clusters, much care has been taken to ensure that Meshery is an <a href="https://docs.meshery.io/extensibility">extensible management platform</a>, ready for handling new types of infrastructure and new use cases rapidly through its plugin model. Under the hood, <a href="https://docs.meshery.io">Meshery Server</a> acts as a delegator of operations by figuring out which Meshery Adapter registered its capability against the given operation. The operation is then sent to that given component (like one of Meshery’s service mesh adapters,e.g. Istio adapter) via a gRPC call. <img src={CoreArch} alt="deploy modal"  className="image-right" /> When the operation involves a Kubernetes cluster(s), the kubeconfig(s) is sent as a parameter to the RPCs. It is then the job of the handling adapter to respect that and perform the operation across the passed clusters from kubeconfigs as needed. The operations not requiring a kubeconfig are managed through the same RPC, with the only difference being that the handling component would ignore the `kubeconfigs` field altogether making the system work not just for Kubernetes, but for other cloud native use cases. This approach of reusing the same RPC for different types of requests is pretty common and sometimes debatable with the other approach of being strict with the RPCs. This is what makes Meshery completely pluggable and extensible.
 
 ## Using multi cluster with Meshery
 
@@ -52,13 +52,13 @@ All cluster specific operations are now applied over a number of clusters unifor
 It is as simple as selecting the specific cluster(s) from the Kubernetes context switcher in the navbar, and then applying whatever operation you wanted to, whether that be deploying a sample app, a service mesh, or a <Link to="/meshmap">MeshMap</Link> design.
 
 <p align="center">
-  <img src={Switcher} alt="context switcher" class="image-center-shadow" />
+  <img src={Switcher} alt="context switcher" className="image-center-shadow" />
 </p>
 
 Just before applying the operation, you will be prompted with a confirmation modal which will provide the information about which cluster(s) that operation will be performed against. As the User interface improves, this same modal will also convey more useful information about the operation they are going to perform.
 
 <p align="center">
-  <img src={Deploy} alt="deploy modal" class="image-center-shadow" />
+  <img src={Deploy} alt="deploy modal" className="image-center-shadow" />
 </p>
 
 <br />
@@ -71,14 +71,14 @@ You can switch between views of your cluster in visualizer mode while using <Lin
   <img
     src={Cluster2}
     alt="visualizer showing data of context1"
-    class="slides-right"
+    className="slides-right"
   />
 </p>
 <p align="center">
   <img
     src={Cluster1}
     alt="visualizer showing data of context2"
-    class="slides-left"
+    className="slides-left"
   />
 </p>
 
@@ -86,7 +86,7 @@ You can switch between views of your cluster in visualizer mode while using <Lin
 
 Users can perform cluster related operations from the settings page like adding more clusters, removing data from existing clusters and removing existing clusters.
 
-<img src={Settings} alt="Settings page" class="slides-right" />
+<img src={Settings} alt="Settings page" className="slides-right" />
 
 Meshery also deploys Meshery operator across the cluster it’s about to manage. This operator manages the lifecycle of a Meshery broker and MeshSync. MeshSync pumps the blood into Meshery’s core, in other words, it is responsible for watching all different types of resources by establishing a watch stream over each of them. MeshSync then pumps that data into the NATS server, of which Meshery server itself is a client. From there, Meshery server gets all the relevant data related to activities in the cluster.
 
@@ -95,12 +95,12 @@ By default, <Link to="/meshery">Meshery</Link> wants to be as much aware about y
 <img
   src={Cluster}
   alt="Kubernetes multi-cluster management with Meshery"
-  class="image-center-shadow"
+  className="image-center-shadow"
 />
 
 If you disconnect your cluster and do not want to persist the data from that cluster then you can perform a fine-grained deletion by deleting all MeshSync data (which are the Kubernetes objects) for that specific cluster.
 
-<img src={Flush} alt="flushing MeshSync data" class="image-center-shadow" />
+<img src={Flush} alt="flushing MeshSync data" className="image-center-shadow" />
 ## Future of multi-cluster
 
 Meshery as an extension point to your infrastructure provides out-of-the-box value by adding components which can be Kubernetes specific, service mesh specific or custom components to add new functionality. We can now add multi-cluster specific components to provide more abstraction. This model can be used along with Meshery’s multi-mesh capabilities to give an overall multi-mesh multi-cluster experience to the user. For instance, your Istio service mesh spanning across multiple clusters can be abstracted and managed by Meshery using custom components such as VirtualGateway and VirtualDestinationRules. In this case, Meshery’s Istio adapter will handle the logic of converting a VirtualGateway into gateways across the clusters. This abstraction provides high value by powering the service mesh to span across the clusters while the Ops team can configure the mesh with minimal effort.
