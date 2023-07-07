@@ -9,8 +9,13 @@ import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import FAQ from "./src/sections/General/Faq";
 import { Link } from "gatsby";
 import { BlogWrapper } from "./src/collections/blog/Blog.style.js";
+import { MeetTheMaintainer } from "./src/collections/blog/MeetTheMaintainer.style";
+import { MeetTheMeshMate } from "./src/collections/blog/MeetTheMeshMate.style";
 import { CareerWrapper } from "./src/collections/careers/Career.style.js";
+import PositionApply from "./src/collections/careers/how-to-apply.js";
 import { BookWrapper } from "./src/collections/service-mesh-books/Book.style.js";
+import { EventWrapper } from "./src/collections/events/Event.style.js";
+
 import { NewsWrapper } from "./src/collections/news/News.style.js";
 import { ProjectWrapper } from "./src/collections/projects/Project.style.js";
 import { ResourcesWrapper } from "./src/collections/resources/Resources.style.js";
@@ -48,7 +53,11 @@ const components = {
   BookWrapper,
   ChapterStyle,
   CareerWrapper,
+  EventWrapper,
+  MeetTheMaintainer,
+  MeetTheMeshMate,
   NewsWrapper,
+  PositionApply,
   ProgramsWrapper,
   ProjectWrapper,
   ResourcesWrapper,
