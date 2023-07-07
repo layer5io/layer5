@@ -406,6 +406,20 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        mdxOptions: {
+          remarkPlugins: [
+            // Add GitHub Flavored Markdown (GFM) support
+            require("remark-gfm"),
+          ]
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1000,
+            },
+          }
+        ],
       },
     },
     {
