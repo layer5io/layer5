@@ -111,7 +111,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -123,8 +123,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -151,7 +150,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.body,
+                  description: node.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -160,7 +159,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -172,8 +171,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -199,7 +197,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.body,
+                  description: node.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -208,7 +206,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -220,8 +218,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -259,7 +256,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -271,8 +268,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -306,7 +302,7 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -318,8 +314,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
@@ -353,7 +348,7 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
@@ -365,8 +360,7 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    body
-                    html
+                    excerpt
                     frontmatter {
                       title
                       author
