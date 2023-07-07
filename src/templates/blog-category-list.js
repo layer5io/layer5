@@ -1,15 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import useDataList from "../utils/usedataList";
-
-
 import SEO from "../components/seo";
-
-
 import BlogList from "../sections/Blog/Blog-list";
-
-
-
 import { graphql } from "gatsby";
 export const query = graphql`
   query BlogsByCategory($category: String!) {
@@ -58,7 +51,7 @@ const BlogListPage = ({ pageContext, data }) => {
   const [postsPerPage] = useState(10);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  let { totalCount, nodes } = data.allMdx;
+  let { nodes } = data.allMdx;
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     nodes,
