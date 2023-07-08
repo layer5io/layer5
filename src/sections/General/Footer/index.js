@@ -323,22 +323,22 @@ const Footer = ({ location }) => {
                   Edit This Page
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://layer5.statuspage.io"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Status
-                </a>
-              </li>
-
-
+           
               <li>
                 <a href="/company/legal/privacy">Privacy</a>
               </li>
               <li>
                 <a href="/company/legal/terms-of-service">Terms</a>
+              </li>
+              <li>
+                <a
+                  className="status-link"
+                  href="https://layer5.statuspage.io"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Layer5 Cloud Status <span class="pulse-icon">  </span>
+                </a>
               </li>
             </ul>
           </div>

@@ -278,6 +278,48 @@ const FooterWrapper = styled.section`
 		 }
 	 }
 	}
+
+	.status-link {
+		background-color : white ;
+		display : inline-flex ;
+		gap : 0.2rem;
+		height: 24px; 
+  		border-radius: 12px;
+		justify-content: center;
+		align-items: center; 
+		padding-inline : 0.4rem;
+		padding-block : 0.2rem;
+	}
+
+	.pulse-icon {
+
+		display: block;
+		width: 10px;
+		height: 10px;
+		border: none;
+		border-radius: 50%;
+		background: rgb(0,255,0);
+		cursor: pointer;
+		box-shadow: 0 0 0 0 rgba(0,255,0, .5);
+		-webkit-animation: pulse 1.5s infinite;
+	}
+	.pulse-icon:hover {
+		-webkit-animation: none;
+	}
+	  
+	@keyframes pulse {
+		0% {
+			transform: scale(.9);
+		}
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 5px rgba(0,255,0, 0);
+		}
+		100% {
+			transform: scale(.9);
+			box-shadow: 0 0 0 0 rgba(0,255,0, 0);
+		}
+	}
 `;
 
 export default FooterWrapper;
