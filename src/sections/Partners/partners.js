@@ -14,7 +14,7 @@ import { ReactComponent as PartnerIstio } from "../../assets/images/partners/ist
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
-
+import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg"
 
 export const partners = [
   {
@@ -141,7 +141,12 @@ export const partners = [
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
       "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
+  }, {
+    name: "Docker",
+    imageLink: <Partner15 alt="Docker" />,
+    type: "technology",
+    partnerId: "docker",
+    desc: "Docker Layer5 enhances the Docker experience with Meshery as an application and infrastructure management platform that simplifies the deployment and operation of cloud native applications and service meshes. Using Layer5’s solutions along with Docker, developers can easily import their Docker Compose apps, configure and deploy them to Kubernetes and any service mesh, and visually design their cloud native infrastructure using MeshMap",
+    moreInfo: "Docker Layer5 enhances the Docker experience with Meshery as an application and infrastructure management platform that simplifies the deployment and operation of cloud native applications and service meshes. Using Layer5’s solutions along with Docker, developers can easily import their Docker Compose apps, configure and deploy them to Kubernetes and any service mesh, and visually design their cloud native infrastructure using MeshMap"
   }
-
-
 ];
