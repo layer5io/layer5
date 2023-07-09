@@ -10,35 +10,66 @@ import bubblesElement from "./images/bubbles-element.svg";
 const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
 
-
-
-
   const getUrl = (pathname) => {
     //remove ".html" that results in live production build
     if (pathname.endsWith(".html")) {
       pathname = pathname.replace(".html", "");
     }
 
-    const indexUrl = ["/", "/blog", "/careers", "/meshery", "/meshmap", "/community", "/handbook", "projects", "/resources", "/learn"];
+    const indexUrl = [
+      "/",
+      "/blog",
+      "/careers",
+      "/meshery",
+      "/meshmap",
+      "/community",
+      "/handbook",
+      "projects",
+      "/resources",
+      "/learn",
+    ];
     const test = {
       mdx: function (path) {
         let returnPath = "";
-        return ["/blog/", "/careers/", "/community/events", "/integrations/", "/landscape/", "/members/", "/news/", "/programs", "/projects/", "/resources/", "/service-mesh-books/", "/service-mesh-labs/", "/service-mesh-workshops/"].some((check) => {
-          returnPath = check; return path.startsWith(check);
-        }) && `src/collections${returnPath}`;
+        return (
+          [
+            "/blog/",
+            "/careers/",
+            "/community/events",
+            "/integrations/",
+            "/landscape/",
+            "/members/",
+            "/news/",
+            "/programs",
+            "/projects/",
+            "/resources/",
+            "/service-mesh-books/",
+            "/service-mesh-labs/",
+            "/service-mesh-workshops/",
+          ].some((check) => {
+            returnPath = check;
+            return path.startsWith(check);
+          }) && `src/collections${returnPath}`
+        );
       },
       learningPath: function (path) {
-        return path.startsWith("/learn/learning-paths/") && `content-learn${pathname.replace("learn/learning-paths/", "")}`;
+        return (
+          path.startsWith("/learn/learning-paths/") &&
+          `content-learn${pathname.replace("learn/learning-paths/", "")}`
+        );
       },
-
     };
 
-    return test.mdx(pathname) ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}` : (test.learningPath(pathname) ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}` : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname}${indexUrl.some(str => pathname.endsWith(str)) ? "/index" : ""}.js`);
-
+    return test.mdx(pathname)
+      ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
+      : test.learningPath(pathname)
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
+          pathname
+        )}`
+        : `https://github.com/layer5io/layer5/blob/master/src/pages${
+          pathname == "/" ? "" : pathname
+        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
-
-
-
 
   return (
     <FooterWrapper>
@@ -311,9 +342,18 @@ const Footer = ({ location }) => {
         </Row>
         <Row>
           <div className="footer-bottom">
-            <ul>
-              <li>
-                {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
+            <p className="copyright-text">
+              {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
+            </p>
+            <ul className="policies">
+              <li className="edit-page">
+                <a
+                  href={getUrl(location.pathname)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Edit This Page
+                </a>
               </li>
               <li>
                 <a href="/company/legal/privacy">Privacy</a>
@@ -321,12 +361,7 @@ const Footer = ({ location }) => {
               <li>
                 <a href="/company/legal/terms-of-service">Terms</a>
               </li>
-              <li className="center">
-                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-                  Edit This Page
-                </a>
-              </li>
-              <li className="right">
+              <li>
                 <a
                   className="status-link"
                   href="https://layer5.statuspage.io"
