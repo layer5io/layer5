@@ -283,7 +283,7 @@ const FooterWrapper = styled.section`
 		background-color : #484848 ;
 		display : inline-flex ;
 		gap : 0.2rem;
-		height: 24px; 
+		height: 1.15rem; 
   		border-radius: 12px;
 		justify-content: center;
 		align-items: center; 
@@ -298,9 +298,9 @@ const FooterWrapper = styled.section`
 		height: 10px;
 		border: none;
 		border-radius: 50%;
-		background: rgb(0,255,0);
+		background: rgb(0,211,169);
 		cursor: pointer;
-		box-shadow: 0 0 0 0 rgba(0,255,0, .5);
+		box-shadow: 0 0 0 0 rgba(0,211,169, .5);
 		-webkit-animation: pulse 1.5s infinite;
 	}
 	.pulse-icon:hover {
