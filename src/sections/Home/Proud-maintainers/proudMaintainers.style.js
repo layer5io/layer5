@@ -16,7 +16,7 @@ const ProjectItemWrapper = styled.section`
 			max-width: none;
 		}
 	}
-	margin: 5rem 0rem;
+	//margin: 5rem 0rem;
 
 	.project-title {
 		text-align: center;
