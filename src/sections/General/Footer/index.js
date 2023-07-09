@@ -323,7 +323,6 @@ const Footer = ({ location }) => {
                   Edit This Page
                 </a>
               </li>
-           
               <li>
                 <a href="/company/legal/privacy">Privacy</a>
               </li>
@@ -337,7 +336,7 @@ const Footer = ({ location }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Layer5 Cloud Status <span class="pulse-icon">  </span>
+                  Layer5 Cloud Status <span className="pulse-icon"></span>
                 </a>
               </li>
             </ul>

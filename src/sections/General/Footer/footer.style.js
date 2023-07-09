@@ -280,7 +280,7 @@ const FooterWrapper = styled.section`
 	}
 
 	.status-link {
-		background-color : white ;
+		background-color : #484848 ;
 		display : inline-flex ;
 		gap : 0.2rem;
 		height: 24px; 
