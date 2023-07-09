@@ -21,13 +21,13 @@ const Footer = ({ location }) => {
 
     const indexUrl = ["/", "/blog", "/careers", "/meshery", "/meshmap", "/community", "/handbook", "projects", "/resources", "/learn"];
     const test = {
-      mdx: function(path){
+      mdx: function (path) {
         let returnPath = "";
-        return ["/blog/", "/careers/","/community/events", "/integrations/", "/landscape/", "/members/", "/news/", "/programs", "/projects/", "/resources/", "/service-mesh-books/", "/service-mesh-labs/", "/service-mesh-workshops/"].some((check) => {
+        return ["/blog/", "/careers/", "/community/events", "/integrations/", "/landscape/", "/members/", "/news/", "/programs", "/projects/", "/resources/", "/service-mesh-books/", "/service-mesh-labs/", "/service-mesh-workshops/"].some((check) => {
           returnPath = check; return path.startsWith(check);
         }) && `src/collections${returnPath}`;
       },
-      learningPath: function(path) {
+      learningPath: function (path) {
         return path.startsWith("/learn/learning-paths/") && `content-learn${pathname.replace("learn/learning-paths/", "")}`;
       },
 
@@ -311,34 +311,31 @@ const Footer = ({ location }) => {
         </Row>
         <Row>
           <div className="footer-bottom">
-            <p className="copyright-text">
+            <ul>
+            <li>
               {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
-            </p>
-            <ul className="policies">
-              <li className="edit-page">
-                {/* We are an
-                {" "}
-                <Link to="/company/about">open source-first organization</Link>. */}
-                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-                  Edit This Page
-                </a>
-              </li>
-              <li>
-                <a href="/company/legal/privacy">Privacy</a>
-              </li>
-              <li>
-                <a href="/company/legal/terms-of-service">Terms</a>
-              </li>
-              <li>
-                <a
-                  className="status-link"
-                  href="https://layer5.statuspage.io"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Layer5 Cloud Status <span className="pulse-icon"></span>
-                </a>
-              </li>
+            </li>
+            <li>
+              <a href="/company/legal/privacy">Privacy</a>
+            </li>
+            <li>
+              <a href="/company/legal/terms-of-service">Terms</a>
+            </li>
+            <li className="center">
+              <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
+                Edit This Page
+              </a>
+            </li>
+            <li className="right">
+              <a
+                className="status-link"
+                href="https://layer5.statuspage.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Layer5 Cloud Status <span className="pulse-icon"></span>
+              </a>
+            </li>
             </ul>
           </div>
         </Row>
