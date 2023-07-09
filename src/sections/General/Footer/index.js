@@ -312,30 +312,30 @@ const Footer = ({ location }) => {
         <Row>
           <div className="footer-bottom">
             <ul>
-            <li>
-              {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
-            </li>
-            <li>
-              <a href="/company/legal/privacy">Privacy</a>
-            </li>
-            <li>
-              <a href="/company/legal/terms-of-service">Terms</a>
-            </li>
-            <li className="center">
-              <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-                Edit This Page
-              </a>
-            </li>
-            <li className="right">
-              <a
-                className="status-link"
-                href="https://layer5.statuspage.io"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Layer5 Cloud Status <span className="pulse-icon"></span>
-              </a>
-            </li>
+              <li>
+                {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
+              </li>
+              <li>
+                <a href="/company/legal/privacy">Privacy</a>
+              </li>
+              <li>
+                <a href="/company/legal/terms-of-service">Terms</a>
+              </li>
+              <li className="center">
+                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
+                  Edit This Page
+                </a>
+              </li>
+              <li className="right">
+                <a
+                  className="status-link"
+                  href="https://layer5.statuspage.io"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Layer5 Cloud Status <span className="pulse-icon"></span>
+                </a>
+              </li>
             </ul>
           </div>
         </Row>
