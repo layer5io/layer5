@@ -291,25 +291,7 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-              {/* <Col sm={4} className="edit-page">
-                <span> Get Involved </span>
 
-                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="inherit"
-                      height="24"
-                      viewBox="0 -960 960 960"
-                      width="24"
-                    >
-                      <path d="M490.001-130.001v-71.153l208.923-208.922 71.152 71.152-208.922 208.923h-71.153Zm-360-200v-59.998h280v59.998h-280Zm668.075-36.923-71.152-71.152 29-29q8.692-8.693 21.076-8.693t21.076 8.693l29 29q8.693 8.692 8.693 21.076t-8.693 21.076l-29 29ZM130.001-490.001v-59.998h440v59.998h-440Zm0-160v-59.998h440v59.998h-440Z" />
-                    </svg>
-                    <p>Edit This Page</p>
-
-                  </span>
-                </a>
-              </Col> */}
               <form
                 name="contactform"
                 method="post"

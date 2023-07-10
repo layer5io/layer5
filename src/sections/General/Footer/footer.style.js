@@ -284,7 +284,7 @@ const FooterWrapper = styled.section`
 		display : inline-flex ;
 		gap : 0.2rem;
 		height: 1.15rem; 
-  		border-radius: 12px;
+  		border-radius: 0.75rem;
 		justify-content: center;
 		align-items: center; 
 		padding-inline : 0.4rem;
@@ -294,8 +294,8 @@ const FooterWrapper = styled.section`
 	.pulse-icon {
 
 		display: block;
-		width: 10px;
-		height: 10px;
+		width: 0.62rem;
+		height: 0.62rem;
 		border: none;
 		border-radius: 50%;
 		background: rgb(0,211,169);
@@ -313,11 +313,11 @@ const FooterWrapper = styled.section`
 		}
 		70% {
 			transform: scale(1);
-			box-shadow: 0 0 0 5px rgba(0,255,0, 0);
+			box-shadow: 0 0 0 5px rgba(0,211,169, 0);
 		}
 		100% {
 			transform: scale(.9);
-			box-shadow: 0 0 0 0 rgba(0,255,0, 0);
+			box-shadow: 0 0 0 0 rgba(0,211,169, 0);
 		}
 	}
 `;
