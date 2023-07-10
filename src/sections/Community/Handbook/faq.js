@@ -55,9 +55,10 @@ const Faq = () => {
               <li>Fix the Issue: Prioritize resolving them promptly.</li>
               <li>Assignment Order: Generally chronological, with exceptions:</li>
               <ul>
-                <li>Unqualified, unavailable, or incapable contributors.</li>
+                <li>Unqualified to perform this task currently.</li>
+                <li>Unavailable and/or incapable of performing the task promptly.</li>
                 <li>Lack of context when another contributor has it.</li>
-                <li>Requesting contributor with existing open assignments.</li>
+                <li>Requesting contributor has existing open assignments.</li>
               </ul>
             </ul>
             <p>These guidelines aim to create a supportive and efficient community where everyone can contribute effectively.</p>
