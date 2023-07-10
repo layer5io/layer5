@@ -132,7 +132,7 @@ const data = {
       ],
     },
     {
-      question: <div dangerouslySetInnerHTML={{__html: What is the difference between MeshMap<sup>BETA</sup>&nbsp;and the Cloud Native Playground?}}></div>,
+      question: `What is the difference between MeshMap(BETA) and the Cloud Native Playground?`,
       category: "Meshery",
       answer: [
         "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
