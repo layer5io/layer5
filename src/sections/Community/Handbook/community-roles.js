@@ -24,8 +24,8 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             <a id="top">
-              {" "}
-              <h2>What are the roles held by individuals in the Layer5 community?</h2>{" "}
+              
+              <h2>What are the roles held by individuals in the Layer5 community?</h2>
             </a>
 
             <p>
@@ -36,10 +36,10 @@ const CommunityGuide = () => {
             <h3>What does it take to be a leader?</h3>
 
             <a id="Community Manager">
-              {" "}
+              
               <h4>
                 <strong>Community Manager</strong>
-              </h4>{" "}
+              </h4>
             </a>
 
             <p>
@@ -104,12 +104,12 @@ const CommunityGuide = () => {
             <br />
 
             <a id="MeshMate">
-              {" "}
+              
               <h4>
                 <strong>
                   <Link to="/community/meshmates">MeshMate</Link>
                 </strong>
-              </h4>{" "}
+              </h4>
             </a>
 
             <p>
@@ -134,10 +134,10 @@ const CommunityGuide = () => {
             </p>
 
             <a id="Maintainer">
-              {" "}
+              
               <h4>
                 <strong>Maintainer</strong>
-              </h4>{" "}
+              </h4>
             </a>
 
             <p>

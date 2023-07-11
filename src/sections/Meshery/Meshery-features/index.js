@@ -144,7 +144,7 @@ const MesheryFeatures = () => {
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />
                   <p>
-                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
+                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. 
                   </p>
                   <p>
                     Meshery is continually cognizant of such changes. The

@@ -80,7 +80,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               <IoVideocam /> <span>{course.frontmatter.videos} videos</span>
             </div> */}
             <div className="info">
-              <IoDocumentTextOutline />{" "}
+              <IoDocumentTextOutline />
               <span>{course.frontmatter.toc.length} Chapters</span>
             </div>
           </div>

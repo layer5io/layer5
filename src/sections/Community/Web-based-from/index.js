@@ -163,7 +163,7 @@ const WebBasedForm = () => {
       <Container>
         <h2 className="title">About You and Why You're Here</h2>
         <p className="para">
-          Which describes your main focus as a community member?{" "}
+          Which describes your main focus as a community member?
         </p>
 
         <div className="center">

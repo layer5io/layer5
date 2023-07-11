@@ -27,9 +27,9 @@ const NewcomersGuide = () => {
             Whether you are a first time contributor or an open source
             veteran, you are welcome to contribute to and actively engage in the
             development of projects at Layer5. Here are some instructions to get
-            you started and if you haven’t joined yet, join the{" "}
+            you started and if you haven’t joined yet, join the
             <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
-              Slack workspace</a>{" "}
+              Slack workspace</a>
             to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
             quick-links below for jumping straight into things.</p>
           <Row className="newcomers-journey">
@@ -58,14 +58,14 @@ const NewcomersGuide = () => {
               These steps outline the process by which you can
               openly engage, learn, and participate in the broad set of open
               source projects at Layer5. If at any time you get stuck, please
-              seek help in the{" "}
+              seek help in the
               <a
                 href="https://discuss.layer5.io"
                 target="_blank"
                 rel="noreferrer"
               >
                 community forum</a>{""}.
-              Our{" "}
+              Our
               <Link to="/community/meshmates">MeshMates</Link> and community
               members are here to help!
             </p>
@@ -89,14 +89,14 @@ const NewcomersGuide = () => {
               <h3>Finding an Issue to Work On</h3>
               <ol type="i">
                 <li>
-                  Browse the list of{" "}
+                  Browse the list of
                   <a
                     href="https://github.com/layer5io"
                     target="_blank"
                     rel="noreferrer"
                   >
                     Layer5 org
-                  </a>{" "}
+                  </a>
                   issues bearing the “
                   <a
                     href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
@@ -121,7 +121,7 @@ const NewcomersGuide = () => {
                 </li>
                 <li>
                   Alternatively, find an area of interest by reviewing/browsing
-                  the{" "}
+                  the
                   <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
                   </Link>.
@@ -141,7 +141,7 @@ const NewcomersGuide = () => {
               <ol type="i">
                 <li>
                   Once an issue has been assigned to you, it’s time to get
-                  started! Make sure you take a look at the{" "}
+                  started! Make sure you take a look at the
                   <a
                     href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md"
                     target="_blank"
@@ -152,7 +152,7 @@ const NewcomersGuide = () => {
                   .
                 </li>
                 <li>
-                  Be sure to{" "}
+                  Be sure to
                   <a
                     href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin"
                     target="_blank"
@@ -164,22 +164,22 @@ const NewcomersGuide = () => {
                 </li>
                 <li>Contributions of all sizes are welcome.</li>
                 <li>
-                  If you need some additional help, please join Layer5{" "}
+                  If you need some additional help, please join Layer5
                   <a
                     href="https://discuss.layer5.io/"
                     target="_blank"
                     rel="noreferrer"
                   >
                     discussion forum
-                  </a>{" "}
-                  or find your way to the{" "}
+                  </a>
+                  or find your way to the
                   <a
                     href="https://slack.layer5.io"
                     target="_blank"
                     rel="noreferrer"
                   >
                     #newcomers
-                  </a>{" "}
+                  </a>
                   channel in our Slack workspace. Introduce yourself and ask questions.
                 </li>
               </ol>
@@ -198,20 +198,20 @@ const NewcomersGuide = () => {
                 Be patient. There are a large number of contributors and only a
                 small number of maintainers/reviewers. All contributors are
                 equally important to us, and we'll be sure to get to you as soon
-                as possible. In the meanwhile, you are welcome to engage in the Layer5{" "}
+                as possible. In the meanwhile, you are welcome to engage in the Layer5
                 <a
                   href="https://discuss.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
                 > discussion forum
-                </a>, join our{" "}
+                </a>, join our
                 <a
                   href="https://slack.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Slack workspace
-                </a>{" "}
+                </a>
                 and take a look at all our <Link to="/projects">projects</Link>.
               </p>
             </Col>

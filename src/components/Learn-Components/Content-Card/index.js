@@ -26,7 +26,7 @@ const ContentCard = ({ chapterNum, chapter }) => (
           <IoVideocam /> <span>{chapter.frontmatter.videos} videos</span>
         </div>
         <div className="info">
-          <IoDocumentTextOutline />{" "}
+          <IoDocumentTextOutline />
           <span>{chapter.frontmatter.lectures} lectures</span>
         </div>
       </div> */}

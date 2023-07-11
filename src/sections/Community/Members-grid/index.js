@@ -41,7 +41,7 @@ const MembersGrid = (props) => {
               <p>
                 The open source community at Layer5 goes out of its way to
                 welcome and encourage new contributors. We often assign
-                newcomers an onboarding buddy, a{" "}
+                newcomers an onboarding buddy, a
                 <Link to="/community/meshmates" className="meshmate-link">
                   MeshMate
                 </Link>
@@ -56,22 +56,22 @@ const MembersGrid = (props) => {
                 uplift contributors on the Layer5 and Meshery Twitter accounts
                 whether "contribution" means code or any of the other various
                 forms of being involved int the projects and community.
-                Likewise, we try to lift up contributors' works on the{" "}
+                Likewise, we try to lift up contributors' works on the
                 <Link to="https://www.linkedin.com/company/layer5">Layer5</Link>
-                ,{" "}
+                ,
                 <Link to="https://www.linkedin.com/showcase/meshery">
                   Meshery
                 </Link>
-                ,{" "}
+                ,
                 <Link to="https://getnighthawk.dev/">
                 Nighthawk
                 </Link>
-                , and{" "}
+                , and
                 <Link to="https://www.linkedin.com/showcase/service-mesh-performance">
                   Service Mesh Performance
-                </Link>{" "}
+                </Link>
                 LinkedIn pages, too. We openly and publicly share our community
-                meetings on{" "}
+                meetings on
                 <Link to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
                   YouTube
                 </Link>

@@ -167,7 +167,7 @@ const About = () => {
               leftAlign={false}
               UniWidth="100%"
             >
-              {" "}
+              
               <Button
                 primary
                 id="contact"

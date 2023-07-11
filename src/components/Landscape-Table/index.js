@@ -23,7 +23,7 @@ function GlobalFilter({
 
   return (
     <span>
-      Search:{" "}
+      Search:
       <input
         value={value || ""}
         onChange={e => {

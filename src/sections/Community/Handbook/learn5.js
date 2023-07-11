@@ -51,8 +51,8 @@ const LearnLayer = () => {
 
 
             <a id="Blogging">
-              {" "}
-              <h2>Sharing what you've learned on our blog</h2>{" "}
+              
+              <h2>Sharing what you've learned on our blog</h2>
             </a>
             <p>
               Write down what you've learned, what you've built, and what experiences that you have had in the community. All community members are welcome to contribute to the <Link to="/blog">Layer5 blog</Link>.

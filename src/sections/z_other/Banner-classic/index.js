@@ -26,7 +26,7 @@ const BannerClassic = () => {
               UniWidth="100%"
             >
               <h4>
-                {" "}
+                
                 <span> 50% </span> off for new users for 1 month
               </h4>
               <h1>

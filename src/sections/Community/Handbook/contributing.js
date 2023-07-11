@@ -42,7 +42,7 @@ const contributingGuide = () => {
                 <span>
                   Go to your GitHub account, open the forked repository, click
                   on the code button and then click the “copy to clipboard” icon
-                  if you intend to use a command-line tool.{" "}
+                  if you intend to use a command-line tool.
                 </span>
               </li>
               <li>
@@ -99,7 +99,7 @@ const contributingGuide = () => {
                   For example,
                   <div className="codes">
                     <Code codeString="git checkout -b feature" />
-                  </div>{" "}
+                  </div>
                   (feature being a branch name)
                 </span>
               </li>
@@ -117,7 +117,7 @@ const contributingGuide = () => {
               </li>
               <li>
                 <span>
-                  {" "}
+                  
                   If you add multiple file changes to the branch, you simply
                   use:
                   <div className="codes">
@@ -140,10 +140,10 @@ const contributingGuide = () => {
             </ul>
 
             <a id="Sign-off commits"> <h3>
-                Make sure to{" "}
+                Make sure to
               <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
                   Sign-off
-              </a>{" "}
+              </a>
                 on your Commits (Developer Certificate of Origin)
             </h3>
             </a>
@@ -151,7 +151,7 @@ const contributingGuide = () => {
               To contribute to this project, you must agree to the Developer
               Certificate of Origin (DCO) for each commit you make. The DCO is a
               simple statement that you, as a contributor, have the legal right to
-              contribute.{" "}
+              contribute.
             </p>
             <p>
               To signify that you agree to the DCO for contributions, you simply

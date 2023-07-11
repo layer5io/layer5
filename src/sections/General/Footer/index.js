@@ -317,7 +317,7 @@ const Footer = ({ location }) => {
             <ul className="policies">
               <li className="edit-page">
                 {/* We are an
-                {" "}
+                
                 <Link to="/company/about">open source-first organization</Link>. */}
                 <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
                   Edit This Page

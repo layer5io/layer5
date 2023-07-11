@@ -35,14 +35,14 @@ const Intro = () => {
               Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
               maintainer of
               <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
-                {" "}
-                service mesh standards{" "}
+                
+                service mesh standards
               </Link>
               and also the maker of <Link to="/meshery">Meshery </Link>,
               the
               <Link to="/cloud-native-management/meshery">
-                {" "}
-                Cloud Native Management Plane{" "}
+                
+                Cloud Native Management Plane
               </Link>
               .<br />
               Layer5 is not just a company, we are also:
@@ -61,15 +61,15 @@ const Intro = () => {
               All Layer5 projects are open-source. Anyone can download, use,
               work on, and share it with others. It's built on principles like
               collaboration, globalism, and innovation. Layer5 projects are
-              distributed under the terms of{" "}
+              distributed under the terms of
               <a href="https://www.apache.org/licenses/LICENSE-2.0">
                 Apache v2
               </a>
               .
             </p>
             <a id="Goals">
-              {" "}
-              <h2>Goals</h2>{" "}
+              
+              <h2>Goals</h2>
             </a>
             <ul>
               <li>
@@ -88,8 +88,8 @@ const Intro = () => {
             </ul>
 
             <a id="Newcomer’s Path">
-              {" "}
-              <h2>Newcomer’s Path</h2>{" "}
+              
+              <h2>Newcomer’s Path</h2>
             </a>
             <p>
               Thank you for your interest in contributing to Layer5 open source
@@ -119,8 +119,8 @@ const Intro = () => {
               support first-time (or near first-time) open-source contributors.
             </p>
             <a id="How to contribute?">
-              {" "}
-              <h3>How to contribute?</h3>{" "}
+              
+              <h3>How to contribute?</h3>
             </a>
             <p>
               The following steps outline the process by which you can openly
@@ -131,20 +131,20 @@ const Intro = () => {
             <ol>
               <li>
                 <span>
-                  Browse the list of{" "}
+                  Browse the list of
                   <a href="https://github.com/layer5io">Layer5</a> org issues
-                  bearing the{" "}
+                  bearing the
                   <a href="https://github.com/search?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22good+first+issue%22+no%3Aassignee">
                     “good first issue”
                   </a>
-                  ,{" "}
+                  ,
                   <a href="https://github.com/search?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22first+timers+only%22+no%3Aassignee">
                     “first-timers-only”
-                  </a>{" "}
-                  or the{" "}
+                  </a>
+                  or the
                   <a href="https://github.com/search?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+no%3A%22assignee%22">
                     “help wanted”
-                  </a>{" "}
+                  </a>
                   label.
                 </span>
               </li>
@@ -164,8 +164,8 @@ const Intro = () => {
               </li>
             </ol>
             <a id="Working on your issue">
-              {" "}
-              <h3>Working on your issue</h3>{" "}
+              
+              <h3>Working on your issue</h3>
             </a>
             <p>
               Once an issue has been assigned to you, it’s time to get started!
@@ -174,7 +174,7 @@ const Intro = () => {
             <ol>
               <li>
                 <span>
-                  Be sure to{" "}
+                  Be sure to
                   <a href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin">
                     sign off on your commits
                   </a>
@@ -192,8 +192,8 @@ const Intro = () => {
               </li>
             </ol>
             <a id="While your issue is under review">
-              {" "}
-              <h3>While your issue is under review</h3>{" "}
+              
+              <h3>While your issue is under review</h3>
             </a>
 
             <ol>
@@ -209,7 +209,7 @@ const Intro = () => {
                   a small number of maintainers/reviewers. All contributors are
                   equally important to us, and we'll be sure to get to you as
                   soon as possible. In the meanwhile, you are welcome to join
-                  our Slack workspace and take a look at all our projects.{" "}
+                  our Slack workspace and take a look at all our projects.
                 </span>
               </li>
             </ol>

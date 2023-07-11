@@ -39,10 +39,10 @@ const BannerDefault = () => {
                       </div> */}
                       <div className="description">
                         <p>
-                          An extensible platform, Meshery comes packed with{" "}
+                          An extensible platform, Meshery comes packed with
                           <Link to="/cloud-native-management/meshery/integrations">
                             integrations
-                          </Link>{" "}
+                          </Link>
                           for Prometheus, Grafana, Jaeger, CloudEvents, support
                           for WebAssembly filters for Envoy, and hundreds of
                           other cloud native projects.

@@ -46,28 +46,28 @@ const Maintainer = () => {
             <p>
 
               <a id="Layer5">
-                {" "}
+                
                 <h3>
                   <a href="https://layer5.io/">
                     <img className="project-title-icon" src={layer5icon} alt="Layer5" />
-                    &nbsp; Layer5{" "}
+                    &nbsp; Layer5
                   </a>
-                </h3>{" "}
+                </h3>
               </a>
 
             </p>
             <p>
 
               Its cloud nativecommunity represents the largest collection of
-              service Mesh projects. Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
+              service Mesh projects. Emerging projects like Nighthawk
+              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with
               <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
               <br />
               <ul>
                 <li>
                   <h4>
                     <a href="https://layer5.io/">Layer5 :</a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   Layer5 is the official website of the Layer5 community showing
@@ -80,7 +80,7 @@ const Maintainer = () => {
                     <a href="https://layer5.io/projects/image-hub">
                       Image-Hub :
                     </a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   Image Hub is a sample application written to run on Consul for
@@ -95,7 +95,7 @@ const Maintainer = () => {
                     <a href="https://layer5.io/projects/nighthawk">
                       Nighthawk :
                     </a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance
@@ -110,19 +110,19 @@ const Maintainer = () => {
             <p>
 
               <a id="Meshery">
-                {" "}
+                
                 <h3>
                   <a href="https://layer5.io/cloud-native-management/meshery">
                     <img className="project-title-icon" src={meshery} alt="Meshery" />
                     &nbsp; Meshery
                   </a>
-                </h3>{" "}
+                </h3>
               </a>
 
             </p>
             <p>
-              Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
+              Meshery and its components Meshery Operator
+              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync
               <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
               <ul>
                 <li>
@@ -130,7 +130,7 @@ const Maintainer = () => {
                     <a href="https://layer5.io/cloud-native-management/meshery">
                       Meshery
                     </a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   It is a cloud native management plane offering lifecycle
@@ -139,12 +139,12 @@ const Maintainer = () => {
                   operating, and managing the performance of different service
                   meshes and incorporates the collection and display of metrics
                   from applications running on top of any service mesh.
-                  <br />{" "}
+                  <br />
                 </p>
                 <li>
                   <h4>
                     <a href="https://meshery.io/">Meshery.io :</a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   Website for Meshery, the cloud native manager. <br />
@@ -154,7 +154,7 @@ const Maintainer = () => {
                     <a href="https://layer5.io/cloud-native-management/meshery/meshery-operator">
                       Meshery-operator :
                     </a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   Meshery Operator is the multi-service mesh operator and
@@ -165,7 +165,7 @@ const Maintainer = () => {
                     <a href="https://layer5.io/docker-extension-meshery">
                       Meshery-docker-extension :
                     </a>
-                  </h4>{" "}
+                  </h4>
                 </li>
                 <p>
                   The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
@@ -182,7 +182,7 @@ const Maintainer = () => {
                       alt="service mesh performance"
                       src={servicemeshperformance}
                     />
-                    &nbsp; Service Mesh Performance{" "}
+                    &nbsp; Service Mesh Performance
                   </a>
                 </h3>
               </p>
@@ -191,7 +191,7 @@ const Maintainer = () => {
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
                 The Service Mesh Performance (SMP)
-              </a>{" "}
+              </a>
               is a vendor-neutral specification for capturing details of
               environment and infrastructure details, service mesh and it’s
               configuration, service/application details, and bundling of
@@ -201,17 +201,17 @@ const Maintainer = () => {
             <p>
 
               <a id="Service Mesh Patterns">
-                {" "}
+                
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
                     <img
                       className="project-title-icon"
                       alt="service mesh patterns"
                       src={PatternsLogo}
-                    />{" "}
-                    &nbsp; Service Mesh Patterns{" "}
+                    />
+                    &nbsp; Service Mesh Patterns
                   </a>
-                </h3>{" "}
+                </h3>
               </a>
             </p>
             <p>

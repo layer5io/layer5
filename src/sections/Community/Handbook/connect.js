@@ -36,8 +36,8 @@ const Connect = () => {
         <Container>
           <div className="content">
             <a id="Newsletter">
-              {" "}
-              <h2>Subscribe to Newsletter</h2>{" "}
+              
+              <h2>Subscribe to Newsletter</h2>
             </a>
             <p>
               Don’t miss out on anything, sign up to receive updates on our
@@ -59,8 +59,8 @@ const Connect = () => {
               </li>
             </ul>
             <a id="Mailing Lists">
-              {" "}
-              <h2>Mailing Lists</h2>{" "}
+              
+              <h2>Mailing Lists</h2>
             </a>
             <ul>
 
@@ -81,26 +81,26 @@ const Connect = () => {
               <li><a href="mailto:community-members@layer5.io">Layer5 Community Members</a></li>
             </ul>
             <a id="Calendar">
-              {" "}
-              <h2>Calendar</h2>{" "}
+              
+              <h2>Calendar</h2>
             </a>
             <p>
               Don’t miss out on any of the activities in the community. Join any
-              or all of the weekly meetings subscribing to the{" "}
+              or all of the weekly meetings subscribing to the
               <a href="https://layer5.io/community/calendar#meetings">
                 community calendar .
               </a>
-            </p>{" "}
+            </p>
             <a id="Slack Community">
-              {" "}
-              <h2>Slack Community</h2>{" "}
+              
+              <h2>Slack Community</h2>
             </a>
             <p>
               We are a community of like-minded people with over a thousand
               members.
             </p>
             <p>
-              Join our <a href="https://slack.layer5.io/">Slack Workspace</a>{" "}
+              Join our <a href="https://slack.layer5.io/">Slack Workspace</a>
               “introduce yourself” and interact with the community. There are
               different channels in the workspace, to engage in, just search
               for:
@@ -109,84 +109,84 @@ const Connect = () => {
               <p>
                 <a href="https://layer5io.slack.com/archives/CDM0ACDM5">
                   #general
-                </a>{" "}
+                </a>
                 - For workspace-wide communication and announcements.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/CFGG6U10E">
                   #meshery
-                </a>{" "}
+                </a>
                 - For discussion on topics in and around Meshery.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C017NA80S66">
                   #meshery-adapters
-                </a>{" "}
+                </a>
                 - Discuss topics related to meshery-adapters.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C011VPREG2Z">
                   #meshery-ci
-                </a>{" "}
+                </a>
                 - For discussion on topics related to meshery-ci.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C010LFFGFFA">
                   #meshery-meshsync
-                </a>{" "}
+                </a>
                 - For discussions on issues related to mesh sync.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C0130BQ4L3T">
                   #mesheryctl
-                </a>{" "}
+                </a>
                 - For discussions on Meshery’s CLI
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C019426UBNY">
                   #newcomers
-                </a>{" "}
+                </a>
                 - For welcoming first-time contributors and community newcomers.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/CVBGPTFJN">
                   #performance
-                </a>{" "}
+                </a>
                 - For discussions related to measuring and evaluating Service
                 Mesh Performance.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C010H0HE2E6">
                   #smi
-                </a>{" "}
+                </a>
                 - For discussions related to Meshery and Service Mesh Interface
                 (SMI).
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C012UMS2MCM">
                   #wasm
-                </a>{" "}
+                </a>
                 - For discussions on web assembly, rust, data plane filters.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C015QJKUMPU">
                   #websites
-                </a>{" "}
-                - For discussions related to the UI/UX of{" "}
+                </a>
+                - For discussions related to the UI/UX of
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
             </div>
             <a id="Discussion Forum">
-              {" "}
-              <h2>Discussion Forum</h2>{" "}
+              
+              <h2>Discussion Forum</h2>
             </a>
             <p>
-              Join us on our cloud native community's{" "}
+              Join us on our cloud native community's
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
             <a id="Social Media">
-              {" "}
-              <h2>Social Media</h2>{" "}
+              
+              <h2>Social Media</h2>
             </a>
             <p>
               Layer5 is dedicated to empowering engineers and supporting the open source community that create them.

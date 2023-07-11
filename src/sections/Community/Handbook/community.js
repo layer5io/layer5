@@ -28,7 +28,7 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            {" "}
+            
             <a id="Community Guidelines">
               <h2 id="communityGuidelines">Community Guidelines</h2>
             </a>
@@ -53,7 +53,7 @@ const CommunityGuide = () => {
               multiple initiatives for you to explore. Some initiatives have
               working groups that meet at different times each week, while
               others use the weekly community meeting as their place of
-              discussion. Details of each can be found on the{" "}
+              discussion. Details of each can be found on the
               <Link to="/community/calendar">community calendar</Link>. Everyone
               is welcome to join the calls and engage with other community
               members over Slack, the mailing list, and so on.
@@ -62,14 +62,14 @@ const CommunityGuide = () => {
               <img className="logo" src={Point} alt="Point" />
               <strong>Familiarize with the projects -</strong> The following is
               a sample of the many active, ongoing community projects. One way
-              of doing so is to review the{" "}
+              of doing so is to review the
               <Link to="/community/handbook/repository-overview">
                 Layer5 Repository Overview
-              </Link>{" "}
+              </Link>
               section of this handbook to get a better understanding of each
               project. This document will help you to understand the projects
               based on their technology domain(s). Be sure to star the
-              community’s <a href="https://github.com/layer5io">repositories</a>{" "}
+              community’s <a href="https://github.com/layer5io">repositories</a>
               on GitHub!
             </p>
             <p>
@@ -106,23 +106,23 @@ const CommunityGuide = () => {
             <p>
               <img className="logo" src={Point} alt="Point" />
               <strong>Resources -</strong> Be sure to access the resources in
-              the{" "}
+              the
               <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
                 community drive
-              </a>{" "}
-              and sign-up on the{" "}
+              </a>
+              and sign-up on the
               <a href="https://layer5.io/subscribe">community mailer</a>. Ask
-              for a copy of{" "}
+              for a copy of
               <a href="https://layer5.io/books/the-enterprise-path-to-service-mesh-architectures">
                 The Enterprise Path to Service Mesh Architectures
               </a>
               .
             </p>
             <p>
-              Please refer to the{" "}
+              Please refer to the
               <Link to="/community/handbook/code-of-conduct">
                 Code of Conduct
-              </Link>{" "}
+              </Link>
               for more details.
             </p>
           </div>

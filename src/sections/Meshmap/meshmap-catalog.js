@@ -414,7 +414,7 @@ const Catalog = () => {
           <div className="text">
             <h2 className="heading">Save time with design patterns</h2>
             <p className="caption">
-              Turbo-charge your infrastructure with power-ups from the{" "}
+              Turbo-charge your infrastructure with power-ups from the
               <b>
                 <a className="toCatalog" href="https://meshery.io/catalog">cloud native catalog</a>
               </b>

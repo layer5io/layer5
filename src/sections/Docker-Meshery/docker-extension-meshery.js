@@ -48,7 +48,7 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Kubernetes support for your Docker Compose apps</div> {" "}
+                <div className="feature-title">Kubernetes support for your Docker Compose apps</div> 
                 <i>
                  Import your Docker Compose apps. Configure and deploy them to Kubernetes and integrate into your GitOps pipeline.
                 </i>
@@ -56,7 +56,7 @@ const DockerExtensionMeshery = () => {
             </Row>
             <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
-                <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
+                <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> 
                 <i>
                 Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
@@ -80,7 +80,7 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
+                <div className="feature-title">Single-click deployment of any service mesh</div> 
                 <i>
                   Support of 10 different service meshes to the fingertips
                   of developers in connection with Docker Desktop’s ability
@@ -90,7 +90,7 @@ const DockerExtensionMeshery = () => {
             </Row>
             <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
-                <div className="feature-title">Detection of Kubernetes environments</div> {" "}
+                <div className="feature-title">Detection of Kubernetes environments</div> 
                 <i>
                   Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another or manage all clusters concurrently.
                 </i>

@@ -512,7 +512,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               y={0}
               style={{ letterSpacing: "0.00003205743791258494em" }}
             >
-              ory{" "}
+              ory
             </tspan>
             <tspan
               x="76.24"
