@@ -17,6 +17,7 @@ resource: true
 
 import {ResourcesWrapper} from "../../Resources.style.js";
 import {Link} from "gatsby"
+import DockerExtensionCTA from "../../../../sections/Docker-Meshery/docker-extension-CTA.js"
 
 <ResourcesWrapper>
 <p>
@@ -155,7 +156,7 @@ resources.
     <li>2 worker nodes (<code>worker-1</code> and <code>worker-2</code>).</li>
     <li>3 manager nodes (<code>manager-1</code>, <code>manager-2</code>, and <code>manager-3</code>).</li>
     </ul>
-    
+    <DockerExtensionCTA/>
     <h2 id="step-1-installing-docker">Step 1 — Installing Docker</h2>
     <p>In this step, you will install Docker on all five Ubuntu servers. Therefore, execute all the commands below (and in step 2) on all five servers. If your host offers a snapshot feature, you may be able to run the commands on a single server and use that server as a base for the other four instances.</p>
     <p>Let's start by installing the latest version of the Docker Engine (20.10.18 at the time of writing). Go ahead and update the package information list from all configured sources on your system:</p>

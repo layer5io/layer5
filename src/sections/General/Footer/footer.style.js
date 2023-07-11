@@ -45,7 +45,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 				color: rgba(255, 255, 255, 0.8);
 				&:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 		}
@@ -61,7 +61,7 @@ const FooterWrapper = styled.section`
 				transition: 0.2s all;
 
 				&:hover{
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 
@@ -74,7 +74,7 @@ const FooterWrapper = styled.section`
 				border-radius: .25rem;
 				vertical-align: top;
 				text-transform: uppercase;
-				color: ${props => props.theme.saffronLightColor};
+				color: ${(props) => props.theme.saffronLightColor};
 			}
 		}
 	}
@@ -134,7 +134,7 @@ const FooterWrapper = styled.section`
 					color: #CCCCCC;
 				}
 				a:hover {
-					color: ${props => props.theme.secondaryColor};
+					color: ${(props) => props.theme.secondaryColor};
 				}
 			}
 			li + li {
@@ -154,7 +154,7 @@ const FooterWrapper = styled.section`
 			margin-top: -7rem;
 		}
 	}
-	@media only screen and (max-width:767px) and (min-width: 729px){
+	@media only screen and (max-width:767px) and (min-width: 726px){
 		.subscribe {
 			margin-top: 10px;
 		}

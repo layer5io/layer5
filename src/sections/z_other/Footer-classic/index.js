@@ -51,7 +51,7 @@ const FooterClassic = () => {
                   <Link to="#">Android App</Link>
                 </li>
                 <li>
-                  <Link to="#">ios App</Link>
+                  <Link to="#">iOS App</Link>
                 </li>
                 <li>
                   <Link to="#">Desktop</Link>
@@ -67,13 +67,13 @@ const FooterClassic = () => {
                   <Link to="#">FAQ</Link>
                 </li>
                 <li>
-                  <Link to="#">Privecy</Link>
+                  <Link to="#">Privacy</Link>
                 </li>
                 <li>
                   <Link to="#">Reporting</Link>
                 </li>
                 <li>
-                  <Link to="#">Terms & Condition</Link>
+                  <Link to="#">Terms & Conditions</Link>
                 </li>
               </ul>
             </div>
