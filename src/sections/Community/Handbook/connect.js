@@ -225,20 +225,20 @@ const Connect = () => {
               <p className="channels-para">
                 <img className="channels-img" src={github_icon} alt="github" />
                 &nbsp;&nbsp;
-                <a href="https://github.com/layer5io">Layer5io</a>
+                <a href="https://github.com/layer5io">Discover our projects on GitHub</a>
               </p>
               <p className="channels-para">
 
                 <img className="channels-img" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/layer5">Layer5</a>
+                <a href="https://www.linkedin.com/company/layer5">Join our professional network on LinkedIn</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={docker_icon} alt="docker" />&nbsp;&nbsp;
-                <a href="https://hub.docker.com/u/layer5/">Layer5</a>
+                <a href="https://hub.docker.com/u/layer5/">Take control with Docker deployment</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={slack_icon} alt="slack" />&nbsp;&nbsp;
-                <a href="https://bit.ly/3fXwYPk">Layer5</a>
+                <a href="https://bit.ly/3fXwYPk">Communicate and collaborate with us on Slack</a>
 
               </p>
             </div>
