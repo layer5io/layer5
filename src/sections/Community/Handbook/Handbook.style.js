@@ -138,7 +138,6 @@ export const HandbookWrapper = styled.div`
       flex-direction:column;
       pointer-events: none;
       cursor: default;
-      opacity: 0.7;
       align-items:center;
     }
     
