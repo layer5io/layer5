@@ -327,7 +327,8 @@ const Footer = ({ location }) => {
             <p className="copyright-text">
               {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
-            <ul className="policies">
+
+            <ul className="misc-links">
               <li className="edit-page">
                 <a
                   href={getUrl(location.pathname)}
@@ -338,12 +339,6 @@ const Footer = ({ location }) => {
                 </a>
               </li>
               <li>
-                <a href="/company/legal/privacy">Privacy</a>
-              </li>
-              <li>
-                <a href="/company/legal/terms-of-service">Terms</a>
-              </li>
-              <li>
                 <a
                   className="status-link"
                   href="https://layer5.statuspage.io"
@@ -352,6 +347,14 @@ const Footer = ({ location }) => {
                 >
                   Layer5 Cloud Status <span className="pulse-icon"></span>
                 </a>
+              </li>
+            </ul>
+            <ul className="policies">
+              <li>
+                <a href="/company/legal/privacy">Privacy</a>
+              </li>
+              <li>
+                <a href="/company/legal/terms-of-service">Terms</a>
               </li>
             </ul>
           </div>

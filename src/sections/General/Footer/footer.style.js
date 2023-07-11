@@ -114,17 +114,19 @@ const FooterWrapper = styled.section`
 
 	.footer-bottom{
 		display: flex;
-		flex: auto;
+		width: 100%;
 		border-top: 1px solid #FFFFFF;
 		margin: 0 2rem;
+        justify-content: space-between;
+        padding-top:  0.2rem;
 
 		.copyright-text {
 			font-size: 0.8rem;
-			flex: auto;
 			color: #CCCCCC;
 		}
-
-		.policies{
+		
+		.policies , .misc-links  {
+			
 			font-size: 0.8rem;
 			margin: 0;
 			padding: 0;
