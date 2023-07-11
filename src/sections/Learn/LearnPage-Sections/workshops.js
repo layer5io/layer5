@@ -60,6 +60,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+        padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -213,21 +214,17 @@ const WorkshopsSection = () => {
   );
 
 
-  const SlickButtonFix = ({ children, ...props }) => (
-    <span {...props}>{children}</span>
-  );
+
 
   var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (<SlickButtonFix>
-      <FiArrowRight />
-    </SlickButtonFix>),
-    prevArrow: (<SlickButtonFix>
-      <FiArrowLeft />
-    </SlickButtonFix>),
+    nextArrow: (
+      <FiArrowRight />),
+    prevArrow: (
+      <FiArrowLeft />),
     responsive: [
       {
         breakpoint: 700,
