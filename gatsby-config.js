@@ -1,4 +1,9 @@
 /* eslint-env node */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const devIgnoreArray = require("./gatsby-dev-filesystem-ignore");
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +22,7 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
+    "gatsby-plugin-no-sourcemaps",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
@@ -428,6 +434,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("blog")
+          : []
       },
     },
     {
@@ -435,6 +444,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/news`,
         name: "news",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("news")
+          : []
       },
     },
     {
@@ -470,6 +482,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/members`,
         name: "members",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("members")
+          : []
       },
     },
     {
@@ -498,6 +513,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/events`,
         name: "events",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("events")
+          : []
       },
     },
     {
@@ -512,6 +530,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/integrations`,
         name: "integrations",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("integrations")
+          : []
       },
     },
     {
