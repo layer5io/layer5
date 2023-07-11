@@ -218,7 +218,7 @@ const WorkshopsSection = () => {
     <span {...props}>{children}</span>
   );
 
-  var settings = {
+  const settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
