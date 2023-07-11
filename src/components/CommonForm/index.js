@@ -23,18 +23,14 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   const [org, setOrg] = useState("");
   const [occupation, setOccupation] = useState("");
   const [role, setRole] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
   // const [google, setGoogleAccount] = useState("");
   // const [github, setGithubAccount] = useState("");
   // const [twitter, setTwitterAccount] = useState("");
   // const [linkedin, setLinkedinAccount] = useState("");
-
-
   const errorRole = "Please select role as applicable";
-  const errorEmail = "Please enter a valid email address";
-
   const confirmationMessageRef = useRef(null);  //set reference to confirmation message
   const navBarOffset = 120;
-
   const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -44,14 +40,44 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
       behavior: "smooth"
     });
   };
-
+  // Validating role
+  const isValidRole = (value) => {
+    if (!value) {
+      setValidateRole(true);
+      return false;
+    } else {
+      setValidateRole(false);
+      return true;
+    }
+  };
+  /*
+  Validating Email ----
+  1. Check for email if it satisfies the standard forn for email
+  2. Check for anonymous email address/domains. Currently It is checking for only 4 domains, we can add more to regex expression as we move ahead.
+  */
+  const isValidEmail = (value) => {
+    const validEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value);
+    if (!validEmail) {
+      setValidateEmail(true);
+      setErrorEmail("Please enter a valid email address");
+      return false;
+    } else if (validEmail && /.*(?=.*@(?:duck\.com|protonmail\.com|anonaddy\.me|tuta\.io)).*/.test(value)) {
+      setValidateEmail(true);
+      setErrorEmail("Use of this email address is not allowed. Please enter a non-anonymous email address / domain.");
+      return false;
+    } else {
+      setValidateEmail(false);
+      setErrorEmail("");
+      return true;
+    }
+  };
   useEffect(() => {
     if (submit) {
       axios.post("https://hook.us1.make.com/s4jo47a8ydq6uk7gg16wuukgr4l52p8c", {
         memberFormOne,
       });
     }
-  }, [submit]);
+  }, [submit, errorEmail, validateEmail, validateRole]);
 
   return (
     <CommonFormWrapper>
@@ -74,7 +100,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         form: form,
       }}
       onSubmit={values => {
-        if (values.role && values.email && !values.email.includes(";")) {
+        if (isValidRole(values.role) && isValidEmail(values.email)) {
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
@@ -82,14 +108,6 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
           // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
           scrollElementIntoView(confirmationMessageRef.current, navBarOffset);
         } else {
-          if (!values.role) {
-            setValidateRole(true);
-          } else if (values.email.includes(";")) {
-            setValidateEmail(true);
-          } else {
-            setValidateRole(false);
-            setValidateEmail(false);
-          }
           // if (!(values.google || values.github || values.twitter || values.linkedin)) {
           //   setValidateAccounts(true);
           // } else {
@@ -114,8 +132,8 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
         <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-        {validateEmail && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorEmail}</p>}
-        <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+        {validateEmail && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorEmail}</p>}
+        <Field type="email" className="text-field" id="email" name="email" pattern="([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$)" required />
         <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="occupation" name="occupation" required />
         <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
@@ -140,7 +158,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
          </div> */}
 
         <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
-        {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
+        {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
         <div role="group" className="formRight" aria-labelledby="select">
           <Field as="select" name="role">
             <option defaultValue hidden>Select your role</option>
