@@ -18,6 +18,7 @@ const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"))
 const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
 const MeshMapBrand = loadable(() => import ("./Brand-components/meshmap"));
 const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
+const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -102,6 +103,7 @@ const Brand = () => {
   const meshmateRef = useRef(null);
   const meshmarkRef = useRef(null);
   const meshmapRef = useRef(null);
+  const stickfiguresRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -116,6 +118,7 @@ const Brand = () => {
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
     { section: "MeshMap", ref: meshmapRef },
+    { section: "StickFigures", ref: stickfiguresRef }
   ];
 
   useEffect(() => {
@@ -202,6 +205,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={meshmapRef}>
             <MeshMapBrand />
+          </div>
+          <div className="section" ref={stickfiguresRef}>
+            <StickFigures />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
@@ -325,6 +331,16 @@ const Brand = () => {
               }}
             >
               <span> MeshMap </span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "StickFigures" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(stickfiguresRef.current);
+              }}
+            >
+              <span> Stick Figures </span>
             </p>
           </nav>
         </Col>

@@ -42,6 +42,10 @@ const supported_platforms = [
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`
         }
         />
+        <h2 style={{ marginTop: "20px" }}>Docker Extension</h2>
+        <Code codeString={dedent`docker extension install meshery/docker-extension-meshery:stable-latest`
+        }
+        />
       </>
     )
   },
@@ -217,7 +221,7 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        <Container style={{ transition: "height 0.5s ease-in-out", height: installationStepsHeight, overflow: "hidden" }}>
+        <Container style={{ transition: "height 0.5s ease-in-out", height: currentPlatform.name == "Docker" ? "320px" : installationStepsHeight, overflow: "hidden" }}>
           <Row className="installation-steps" >
             {currentPlatform.name && currentPlatform.steps}
           </Row>

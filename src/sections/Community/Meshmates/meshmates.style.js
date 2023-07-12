@@ -45,6 +45,17 @@ const MeshMatesWrapper = styled.div`
             font-weight: 600;
         }
     }
+.bookcomponent{
+    align-items: center;
+    float: right;
+    margin: 1rem;
+    padding: 20px;
+}
+@media (max-width: 576px) {
+    .bookcomponent {
+      float: none;
+    }
+  }
     .meshmate-meet{
         margin: 4.25rem auto 2.75rem auto;
         h2{
