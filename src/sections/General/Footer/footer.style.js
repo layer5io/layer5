@@ -319,7 +319,7 @@ const FooterWrapper = styled.section`
 		}
 		100% {
 			transform: scale(.9);
-			box-shadow: 0 0 0 0 rgba(0,211,169, 0);
+			box-shadow: 0 0 0 0 rgba(153,237,220, 0);
 		}
 	}
 `;
