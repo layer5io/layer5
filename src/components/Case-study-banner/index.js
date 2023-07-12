@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import SpireLogo from "../../collections/integrations/spire/icon/color/spire-color.svg";
