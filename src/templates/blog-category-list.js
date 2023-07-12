@@ -1,16 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import useDataList from "../utils/usedataList";
-
-
 import SEO from "../components/seo";
-
-
 import BlogList from "../sections/Blog/Blog-list";
-
-
-
 import { graphql } from "gatsby";
+
 export const query = graphql`
   query BlogsByCategory($category: String!) {
     allMdx(
@@ -20,7 +14,6 @@ export const query = graphql`
         frontmatter: { category: { eq: $category }, published: { eq: true } }
       }
     ) {
-      totalCount
       nodes {
         id
         body
