@@ -39,7 +39,7 @@ const CONTENT = [
 ];
 
 
-const Card = ({ title, description, img, readMoreLink }) => {
+const Card = ({ title, description, img }) => {
   return (
     <div className="card">
       <h2>{title}</h2>

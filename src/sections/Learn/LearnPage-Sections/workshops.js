@@ -213,7 +213,7 @@ const WorkshopsSection = () => {
   );
 
 
-  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
+  const SlickButtonFix = ({ children, ...props }) => (
     <span {...props}>{children}</span>
   );
 
