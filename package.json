@@ -34,7 +34,7 @@
     "@mdx-js/react": "^1.6.22",
     "@react-icons/all-files": "^4.1.0",
     "@sideway/address": "^5.0.0",
-    "@svgr/webpack": "^6.5.1",
+    "@svgr/webpack": "^8.0.1",
     "axios": "^1.4.0",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.22.0",
