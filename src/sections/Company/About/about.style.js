@@ -21,6 +21,7 @@ const AboutSectionWrapper = styled.section`
   }
   .community_stat{
     margin-top:4rem;
+    padding-left:5rem;
   }
   .busCard {
     display: block;
