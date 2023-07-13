@@ -9,6 +9,7 @@ import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
+import CaseStudyBanner from "../components/Case-study-banner";
 
 
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
@@ -23,6 +24,7 @@ const IndexPage = () => {
       <Banner />
       <Integrations />
       <Partners />
+      <CaseStudyBanner/>
       <CornerPopup/>
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}

@@ -5,7 +5,7 @@ const CornerPopupWrapper = styled.div`
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 0 1rem 1rem 0;
+    margin: 0 2rem 3rem 0;
     max-width: 30%;
     max-height: 40%;
     /* background-color: ${props => props.theme.blackToWhite}; */
@@ -24,36 +24,49 @@ const CornerPopupWrapper = styled.div`
 .popup-inner {
     position: relative;
     width: 100%;
-    max-width: 25rem;
-    background-color: transparent;
+    max-width: 30rem;
+    background-color: ${props => props.theme.blackToWhite};
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
     align-items: center;
+    padding: 7%;
+    border: 1px solid #00d3a9;
+    border-radius: 5%;
+    box-shadow: 0 0 30px rgba(0,211,169, 0.6);
 }
 .close-btn {
     position: absolute;
     top: 0;
     right: 0;
-    width: 8%;
+    /* width: 8%; */
     cursor: pointer;
 }
 .popup-image{
-    box-shadow: 0 0 30px rgba(0,211,169, 0.6);
-    @media only screen and (max-width: 767px) {
-        display: none;
-    }
+    border: 1px solid ${props => props.theme.whiteToBlack};
+    border-radius: 3%;
 }
-.popup-image-small{
+/* .popup-image-small{
     box-shadow: 0 0 30px rgba(0,211,169, 0.6);
     @media only screen and (min-width: 767px) {
         display: none;
     }
-}
+} */
 
 .explore-playground-button {
     min-width: 140px;
+    @media only screen and (max-width: 422px) {
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+}
+
+svg {
+    .closeIcon_svg__cls-1{
+        stop-color: ${props => props.theme.whiteToBlack};
+    }
 }
 `;
 
