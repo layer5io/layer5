@@ -221,14 +221,7 @@ div.fact-left {
     font-size: 0.8rem;
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
-
-  /* ==============
-  styles for hpes-adoption-of-meshery-and-meshmap
-  =======================*/
   
-  .benefits{
-    color: ${props => props.theme.whiteToBlack};
-  }
   
   /* ==============
   styles for service-mesh-specifications 
