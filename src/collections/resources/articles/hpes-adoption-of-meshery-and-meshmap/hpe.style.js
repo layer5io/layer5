@@ -38,7 +38,7 @@ export const HPEintro = styled("div")(({ theme }) => ({
   paddingTop: "1.5rem",
   fontStyle: "italic",
   fontSize: "1.5rem",
-  color: `${props => props.theme.whiteToBlack}`,
+  color: `${theme.whiteToBlack}`,
 
   borderTop: `1px dashed ${theme.text}`,
   borderBottom: `1px dashed ${theme.text}`,
