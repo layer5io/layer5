@@ -46,3 +46,10 @@ export const HPEintro = styled("div")(({ theme }) => ({
 
   backgroundColor: `${theme.body}`,
 }));
+
+export const HPEbenefits = styled("div")(({ theme }) => ({
+  border: "1px solid #00B39F",
+  padding: "2rem",
+  boxShadow: "rgba(0, 179, 159, 0.2) 0px 10px 25px",
+  color: `${theme.whiteToBlack}`,
+}));
