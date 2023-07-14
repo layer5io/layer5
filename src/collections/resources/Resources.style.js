@@ -222,7 +222,14 @@ div.fact-left {
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
 
-
+  /* ==============
+  styles for hpes-adoption-of-meshery-and-meshmap
+  =======================*/
+  
+  .benefits{
+    color: ${props => props.theme.whiteToBlack};
+  }
+  
   /* ==============
   styles for service-mesh-specifications 
   =======================*/
@@ -313,13 +320,6 @@ iframe{
         color: black;
       }
     }
-  }
-  
-  /* ==============
-  styles for hpes-adoption-of-meshery-and-meshmap
-  =======================*/
-  .benefits{
-    color: ${props => props.theme.whiteToBlack};
   }
 }
 `;
