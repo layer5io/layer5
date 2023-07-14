@@ -11,7 +11,6 @@ import Image from "../../../components/image";
 import MeshMateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import mesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import mesheryOperatorLogo from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import smpLogo from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import landscapeLogo from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import patternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
@@ -24,6 +23,7 @@ import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.s
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import Button from "../../../reusecore/Button";
+import Badge from "../../../components/Badge";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -75,158 +75,43 @@ const MemberSingle = ({ frontmatter }) => {
                   <div className="social-bg">
                     <ul className="profile-social-links">
                       {badges.includes("meshery") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryLogo}
-                              alt="Meshery logo"
-                            />
-                          </Link>
-                        </li>
-                      )}
-                      {badges.includes("smp") && (
-                        <li>
-                          <Link to="/projects/service-mesh-performance">
-                            <img
-                              className="profile-social-links"
-                              src={smpLogo}
-                              alt="Service Mesh Peformance logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Meshery" to="/cloud-native-management/meshery" className="profile-social-links" src={mesheryLogo} alt="Meshery logo" firstChild={true}/>
                       )}
                       {badges.includes("image-hub") && (
-                        <li>
-                          <Link to="/projects/image-hub">
-                            <img
-                              className="profile-social-links"
-                              src={imageHubLogo}
-                              alt="Image Hublogo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Image Hub" to="/projects/image-hub" className="profile-social-links" src={imageHubLogo} alt="Image Hublogo" firstChild={false}/>
+                      )} 
+                      {badges.includes("docs") && (
+                      <Badge name ="Docs" to="https://docs.meshery.io/" className="profile-social-links" src={docsLogo} alt="Docs logo" firstChild={false}/>
                       )}
                       {badges.includes("landscape") && (
-                        <li>
-                          <Link to="/service-mesh-landscape">
-                            <img
-                              className="profile-social-links"
-                              src={landscapeLogo}
-                              alt="Service Mesh Landscape logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Landscape" to="/service-mesh-landscape" className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo" firstChild={false}/>
                       )}
                       {badges.includes("community") && (
-                        <li>
-                          <Link to="/community/community-managers">
-                            <img
-                              className="profile-social-links"
-                              src={communityLogo}
-                              alt="Community logo"
-                            />
-                          </Link>
-                        </li>
-                      )}
-                      {badges.includes("docs") && (
-                        <li>
-                          <Link to="https://docs.meshery.io/">
-                            <img
-                              className="profile-social-links"
-                              src={docsLogo}
-                              alt="Docs logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Community" to="/community/community-managers" className="profile-social-links" src={communityLogo} alt="Community logo" firstChild={false}/> 
                       )}
                       {badges.includes("meshery-catalog") && (
-                        <li>
-                          <Link to="https://meshery.io/catalog">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryCatalogLogo}
-                              alt="Meshery Catalog logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name ="meshery-catalog" to="https://meshery.io/catalog" className="profile-social-links" src={mesheryCatalogLogo} alt="Meshery Catalog logo" firstChild={false}/>
                       )}
                       {badges.includes("meshmap") && (
-                        <li>
-                          <Link to="/meshmap" >
-                            <img
-                              className="profile-social-links"
-                              src={meshMapLogo}
-                              alt="MeshMap Logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name = "meshmap" to="/meshmap" className="profile-social-links" src={meshMapLogo} alt="Mesh" firstchild={false}/>
                       )}
                       {badges.includes("docker-extension") && (
-                        <li>
-                          <Link to="/docker-extension-meshery">
-                            <img
-                              className="profile-social-links"
-                              src={dockerExtensionLogo}
-                              alt="Docker Extension logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name = "docker-extension" to="/docker-extension-meshery" className="profile-social-links" src={dockerExtensionLogo} alt="Docker Extension logo" firstChild={false}/>    
                       )}
                       {badges.includes("nighthawk") && (
-                        <li>
-                          <Link to="/projects/nighthawk">
-                            <img
-                              className="profile-social-links"
-                              src={NighthawkLogo}
-                              alt="Nighthawk logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="NightHawk" to="/projects/nighthawk" className="profile-social-links" src={NighthawkLogo} alt="Nighthawk logo" firstChild={false}/>
                       )}
                       {badges.includes("meshery-operator") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery/meshery-operator">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryOperatorLogo}
-                              alt="Meshery Operator logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Meshery Operator" to="/cloud-native-management/meshery/meshery-operator" className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo" firstChild={false}/> 
                       )}
                       {badges.includes("patterns") && (
-                        <li>
-                          <Link to="/learn/service-mesh-books/service-mesh-patterns">
-                            <img
-                              className="profile-social-links"
-                              src={patternsLogo}
-                              alt="Patterns Logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Patterns" to="/learn/service-mesh-books/service-mesh-patterns" className="profile-social-links" src={patternsLogo} alt="Patterns Logo" firstChild={false}/>
                       )}
                       {badges.includes("ui-ux") && (
-                        <li>
-                          <Link to="../../handbook/designer" >
-                            <img
-                              className="profile-social-links"
-                              src={uiuxrLogo}
-                              alt="UI/UX'er Logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name= "UI/UX" to="../../handbook/designer" className="profile-social-links"src={uiuxrLogo} alt="UI/UX'er Logo" falseChild={false}/>   
                       )}
                       {badges.includes("writer") && (
-                        <li>
-                          <Link to="../../handbook/writing-program">
-                            <img
-                              className="profile-social-links"
-                              src={writerIcon}
-                              alt="Writer Program Logo"
-                            />
-                          </Link>
-                        </li>
+                      <Badge name="Writer" to="../../handbook/writing-program" className="profile-social-links" src={writerIcon} alt="Writer Program Logo" firstChild={false}/>
                       )}
                     </ul>
                   </div>
