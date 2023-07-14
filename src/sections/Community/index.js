@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
+import Quote from "../Community/Quote/Index";
 import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
@@ -46,7 +47,7 @@ const CommunityPage = () => {
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={ pluginImage} className="section">
+      <BgImage image={pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>
@@ -149,6 +150,7 @@ const CommunityPage = () => {
             </Col>
           </Row>
         </Container>
+        <Quote />
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
       <DiscussCallout />
