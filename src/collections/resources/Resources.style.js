@@ -314,5 +314,12 @@ iframe{
       }
     }
   }
+  
+  /* ==============
+  styles for hpes-adoption-of-meshery-and-meshmap
+  =======================*/
+  .benefits{
+    color: ${props => props.theme.whiteToBlack};
+  }
 }
 `;
