@@ -34,6 +34,11 @@ export const proxies = [
     desc: "MOSN is a cloud-native proxy for edge or service mesh."
   },
   {
+    name: "Pipy",
+    link: "https://flomesh.io/pipy",
+    desc: "Pipy is a programmable network proxy for the cloud, edge and IoT. "
+  },
+  {
     name: "Traefik",
     link: "https://traefik.io/",
     desc: "Traefik is a modern HTTP reverse proxy and load balancer that integrates with service discovery systems and container orchestrators."

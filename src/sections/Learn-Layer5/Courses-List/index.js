@@ -20,12 +20,12 @@ const CoursesList = ({ coursesData, learnPath }) => {
       <PageHeader
         title={learnPath}
       />
-      <Container>
+      <Container sm={12} lg={9} xl={9}>
         {/* <Row className="course-list">
           <Col sm={0} lg={3} xl={3}>
             <TOC coursesData={coursesData} />
           </Col> */}
-        <div sm={12} lg={9} xl={9} className="content">
+        <div className="content">
           <SetupPreReq />
           <div className="course-list-cont" id="courses-list">
             <h2>Courses</h2>
