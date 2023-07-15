@@ -12,7 +12,7 @@ export const CardWrapper = styled.div`
             box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
-                    transform: scale3d(1.1,1.1,1);
+                    transform: scale3d(1,1.1,1);
                 }
             }
             .readmore-btn{
