@@ -36,9 +36,10 @@ import sectionTemplate from "./src/sections/Learn-Layer5/Section/index.js";
 import chapterTemplate from "./src/templates/learn-chapter.js";
 import courseOverviewTemplate from "./src/templates/course-overview.js";
 import courseListTemplate from "./src/templates/courses-list.js";
-//
-// import from "./src/sections/Careers/Careers-Programs-grid/index.js""
-// );
+import DockerExtensionCTA from "./src/sections/Docker-Meshery/docker-extension-CTA";
+import InlineQuotes from "./src/components/Inline-quotes";
+import Table from "./src/components/service-mesh-patterns-Table/Table.js";
+import CommonForm from "./src/components/CommonForm";
 
 //workaround to resolve build heap OOM error due to mdxv2 upgrade (ref: https://github.com/gatsbyjs/gatsby/issues/36899#issuecomment-1422616312), revisit with upgrade to gatsby v5 and gatsby-plugin-mdx if still applicable
 // eslint-disable-next-line no-unused-vars
@@ -79,7 +80,11 @@ const MDXComponents = [
   sectionTemplate,
   chapterTemplate,
   courseOverviewTemplate,
-  courseListTemplate
+  courseListTemplate,
+  DockerExtensionCTA,
+  InlineQuotes,
+  Table,
+  CommonForm,
 ];
 
 export { onRenderBody } from "./onRenderBody";

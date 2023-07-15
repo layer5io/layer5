@@ -2,10 +2,10 @@ import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { ContextWrapper } from "./context-wrapper";
 import Code from "./src/components/CodeBlock";
-
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
+
 import FAQ from "./src/sections/General/Faq";
 import { Link } from "gatsby";
 import { BlogWrapper } from "./src/collections/blog/Blog.style.js";
@@ -25,6 +25,10 @@ import { Col } from "./src/reusecore/Layout";
 import Button from "./src/reusecore/Button";
 import Blockquote from "./src/reusecore/Blockquote";
 import BlockquoteAlt from "./src/reusecore/Blockquote/Blockquote-alt-style";
+import DockerExtensionCTA from "./src/sections/Docker-Meshery/docker-extension-CTA";
+import InlineQuotes from "./src/components/Inline-quotes";
+import Table from "./src/components/service-mesh-patterns-Table/Table.js";
+import CommonForm from "./src/components/CommonForm";
 
 const components = {
   pre: ({ children: { props, type } }) => {
@@ -61,6 +65,10 @@ const components = {
   ProgramsWrapper,
   ProjectWrapper,
   ResourcesWrapper,
+  CommonForm,
+  Table,
+  DockerExtensionCTA,
+  InlineQuotes
 };
 
 export const wrapRootElement = ({ element }) => (
