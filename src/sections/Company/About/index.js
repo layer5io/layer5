@@ -13,7 +13,7 @@ import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.
 import { ReactComponent as CNCFstackedlogo } from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
 import Layer5Projects from "./images/layer5-projects.svg";
-import communityStat from "./images/layer5_community-stat.svg";
+import communityStat from "./images/layer5-community-stat.svg";
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
