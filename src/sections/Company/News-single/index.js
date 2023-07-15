@@ -1,12 +1,14 @@
 import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import NewsSidebar from "./Sidebar";
+import loadable from "@loadable/component";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
-import RelatedPosts from "../../../components/Related-Posts";
+const RelatedPosts = loadable(() => import("../../../components/Related-Posts"));
+
 
 const NewsSingle = ({ data, children }) => {
   const { frontmatter, fields } = data.mdx;
@@ -62,9 +64,9 @@ const NewsSingle = ({ data, children }) => {
           <div className="single-post-block">
             <Row>
               <Col lg={9} md={8} xs={12}>
-                <SRLWrapper>
-                  { children }
-                </SRLWrapper>
+                {/* <SRLWrapper> */}
+                { children }
+                {/* </SRLWrapper> */}
               </Col>
               <Col lg={3} md={4} xs={12}>
                 <NewsSidebar kit={frontmatter.presskit} />

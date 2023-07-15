@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import ResourceSingle from "../sections/Resources/Resource-single";
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -32,11 +32,11 @@ const ResourceSinglePage = ({ data, children }) => {
 
   return (
     <>
-      <SimpleReactLightbox>
-        <ResourceSingle data={data} >
-          { children }
-        </ResourceSingle>
-      </SimpleReactLightbox>
+      {/* <SimpleReactLightbox> */}
+      <ResourceSingle data={data} >
+        { children }
+      </ResourceSingle>
+      {/* </SimpleReactLightbox> */}
     </>
   );
 };

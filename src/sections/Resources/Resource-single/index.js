@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import RelatedResources from "../../../components/Related-Resources";
@@ -67,9 +67,9 @@ const ResourceSingle = ({ data, children }) => {
       />
       <div className="single-resource-wrapper">
         <Container>
-          <SRLWrapper>
-            { children }
-          </SRLWrapper>
+          {/* <SRLWrapper> */}
+          { children }
+          {/* </SRLWrapper> */}
 
           <CTA_Bottom
             category={"MeshMap"}

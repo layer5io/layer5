@@ -1,6 +1,5 @@
 import React from "react";
 import slugify from "../../../utils/slugify";
-import { SRLWrapper } from "simple-react-lightbox";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
@@ -50,9 +49,7 @@ const MemberBio = ({ frontmatter, children }) => {
           <Row>
             <Col xs={12} sm={12} lg={9}>
               <h3>Executive Bio</h3>
-              <SRLWrapper>
-                { children }
-              </SRLWrapper>
+              { children }
             </Col>
             <Col xs={12} sm={12} lg={3}>
               <div className="exec-bio-image">

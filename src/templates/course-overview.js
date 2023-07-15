@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import CourseOverview from "../sections/Learn-Layer5/Course-Overview";
 import SEO from "../components/seo";
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
   query eachCourse($course: String!) {
@@ -82,16 +82,16 @@ const CourseOverviewTemplate = ({ data, children }) => {
 
   return (
     <>
-      <SimpleReactLightbox>
-        <CourseOverview
-          course={data.courseByTitle.nodes[0]}
-          chapters={data.courseChapters.nodes}
-          serviceMeshesList={data.serviceMeshesList.nodes}
-          canonical="https://layer5.io/learn/learning-paths"
-        >
-          { children }
-        </CourseOverview>
-      </SimpleReactLightbox>
+      {/* <SimpleReactLightbox> */}
+      <CourseOverview
+        course={data.courseByTitle.nodes[0]}
+        chapters={data.courseChapters.nodes}
+        serviceMeshesList={data.serviceMeshesList.nodes}
+        canonical="https://layer5.io/learn/learning-paths"
+      >
+        { children }
+      </CourseOverview>
+      {/* </SimpleReactLightbox> */}
     </>
   );
 };

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
-import BlogPostSignOff from "../BlogPostSignOff";
+
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -15,10 +14,12 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
 import { useLocation } from "@reach/router";
-import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
-
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import loadable from "@loadable/component";
+const BlogPostSignOff = loadable(() => import("../BlogPostSignOff"));
+const CTA_Bottom = loadable(() => import("../../../components/Call-To-Actions/CTA_Bottom"));
+const RelatedPosts = loadable(() => import("../../../components/Related-Posts"));
 
 const BlogSingle = ({ data, children }) => {
   const location = useLocation();
@@ -93,13 +94,24 @@ const BlogSingle = ({ data, children }) => {
 
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     if (copied) {
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setCopied(false);
       }, 3000);
     }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [copied]);
 
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
@@ -117,13 +129,12 @@ const BlogSingle = ({ data, children }) => {
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
             thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
-            <SRLWrapper>
-              { children }
-            </SRLWrapper>
+            {/* <SRLWrapper> */}
+            { children }
+            {/* </SRLWrapper> */}
             <BlogPostSignOff
               author={{ name: frontmatter.author }}
             />
