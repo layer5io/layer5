@@ -95,7 +95,6 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card:hover {
-	  height: 19rem;
 	  scale: 1.07;
 	}
 
