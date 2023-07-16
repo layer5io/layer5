@@ -10,6 +10,7 @@ import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
 import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
+import useHasMounted from "../../../utils/useHasMounted";
 
 export const WorkshopsListWrapper = styled.div`
 
@@ -80,7 +81,7 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots {
-				bottom: -2rem;
+				bottom: 2rem;
 			}
 
 			.slick-dots li button:before {
@@ -212,6 +213,8 @@ const WorkshopsSection = () => {
 `
   );
 
+  const hasMounted = useHasMounted();
+
   // need to declare currentSlide, slideCount to prevent console warning
   // eslint-disable-next-line no-unused-vars
   const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
@@ -266,7 +269,7 @@ const WorkshopsSection = () => {
         </Col>
       </div>
       <div className="feedback-section">
-        <Slider {...settings}>
+        {hasMounted && <Slider {...settings}>
           {
             feedbackData.map((data, index) => {
               return (
@@ -279,7 +282,7 @@ const WorkshopsSection = () => {
               );
             })
           }
-        </Slider>
+        </Slider> }
       </div>
     </WorkshopsListWrapper>
   );
