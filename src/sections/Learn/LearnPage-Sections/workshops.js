@@ -12,6 +12,7 @@ import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 import useHasMounted from "../../../utils/useHasMounted";
 
+
 export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
@@ -61,6 +62,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+				padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -215,13 +217,20 @@ const WorkshopsSection = () => {
 
   const hasMounted = useHasMounted();
 
-  // need to declare currentSlide, slideCount to prevent console warning
+  /* currentSlide, slideCount is needed to prevent console error
+	ref: https://github.com/akiran/react-slick/issues/1195#issuecomment-390383615
+	*/
   // eslint-disable-next-line no-unused-vars
-  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
-    <span {...props}>{children}</span>
-  );
+  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => {
+    const childrenWithProps = React.cloneElement(children, { ...props });
+    return	(
+      <>
+        { childrenWithProps }
+      </>
+    );
+  };
 
-  const settings = {
+  var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
