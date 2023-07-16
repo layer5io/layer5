@@ -1,20 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import useDataList from "../utils/usedataList";
-
-
 import SEO from "../components/seo";
-
-
 import BlogList from "../sections/Blog/Blog-list";
-
 import { graphql } from "gatsby";
+
 export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: [$tag]}, published: {eq: true}}}
   ) {
-    totalCount
     nodes {
       id
       body
