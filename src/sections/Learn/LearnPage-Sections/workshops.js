@@ -62,6 +62,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+        padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -216,30 +217,15 @@ const WorkshopsSection = () => {
 
   const hasMounted = useHasMounted();
 
-  /* currentSlide, slideCount is needed to prevent another console error
-	ref: https://github.com/akiran/react-slick/issues/1195#issuecomment-390383615
-	*/
-  // eslint-disable-next-line no-unused-vars
-  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => {
-    const childrenWithProps = React.cloneElement(children, { ...props });
-    return	(
-      <>
-        { childrenWithProps }
-      </>
-    );
-  };
-
   var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (<SlickButtonFix>
-      <FiArrowRight />
-    </SlickButtonFix>),
-    prevArrow: (<SlickButtonFix>
-      <FiArrowLeft />
-    </SlickButtonFix>),
+    nextArrow: (
+      <FiArrowRight />),
+    prevArrow: (
+      <FiArrowLeft />),
     responsive: [
       {
         breakpoint: 700,
