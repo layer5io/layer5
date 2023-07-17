@@ -3,7 +3,7 @@ import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Headin
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import SMPconfig from "../../assets/images/gitops/SMPconfig.png";
-import SMPTestconfig from "../../assets/images/gitops/SMPTestconfig.png";
+import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.png";
 
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
@@ -77,7 +77,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
-            <img src={SMPTestconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+            <img src={SMPTestconfig} className="code-screenshot" alt="SMPTestconfig" width={605} height={740} />
           </ColumnContainer>
           <TextColumn>
             <Heading>Define your test <br /> configuration in an SMP compatible configuration file</Heading>
