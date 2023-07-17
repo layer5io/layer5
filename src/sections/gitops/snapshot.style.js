@@ -18,6 +18,7 @@ export const PageWrapper = styled.section`
         width: 100%;
         height: 50rem;
         position: absolute;
+        filter: blur(100px);
 
         @media only screen and (min-width: 768px) {
           height: 65rem;
@@ -29,11 +30,12 @@ export const PageWrapper = styled.section`
     }
 
     .gradient-wrapper-2 {
-        background: linear-gradient(300deg, rgba(0, 0, 0, 0.00) 53.06%, rgba(0, 211, 169, 0.50) 100.00%);
+        background: linear-gradient(300deg, rgba(0, 0, 0, 0.06) 49.26%, rgba(0, 211, 169, 0.50) 100.00%);
+        filter: blur(100px);
         width: 100%;
         height: 50rem;
         position: absolute;
-         top: 50rem;
+        top: 50rem;
 
         @media only screen and (min-width: 768px) {
           height: 25rem;
