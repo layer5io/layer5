@@ -48,25 +48,25 @@ const Table = ({ columns, data }) => {
             prepareRow(row);
             return (
               <tr key={`row${i}`} {...row.getRowProps()} style={{}}>
-                {row.cells.map(cell => {
+                {row.cells.map((cell,i) => {
                   if (cell["column"]["id"] === "test_no"){
-                    return <td {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
                   } else if (cell["column"]["id"] === "spec"){
-                    return <td {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
                   } else if (cell["column"]["id"] === "test_type"){
-                    return <td {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()} style={{ whiteSpace: "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
                   } else if (cell["column"]["id"] === "desc"){
-                    return <td {...cell.getCellProps()} style={{ textAlign: "left" }}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()} style={{ textAlign: "left" }}>
                       <i>{cell.render("Cell")}</i>
                     </td>;
                   } else {
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       {cell.render("Cell")}
                     </td>;
                   }

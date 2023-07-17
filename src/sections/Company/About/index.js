@@ -12,10 +12,10 @@ import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import { ReactComponent as CNCFstackedlogo } from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
+import Layer5Projects from "./images/layer5-projects.svg";
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
-  const Layer5Projects = "./images/layer5-projects.svg";
 
   return (
     <AboutSectionWrapper id="about">
@@ -41,7 +41,7 @@ const About = () => {
                 </div>
               </Col>
             </Row>
-            <StaticImage loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
+            <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
