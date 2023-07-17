@@ -91,12 +91,16 @@ export const ContentRowWrapper = styled(Row)`
 
         .desc-text-container {
             padding: 1.5rem;
- 
-            .learn-more-btn{
+             .learn-more-btn{
                 color:white;
                 font-weight: 800;
                 font-size: 1.5em;
-            }
+                width: 100%;
+
+               @media only screen and (min-width: 420px) {
+                  width: auto;
+                }
+              }
         }
 `;
 
