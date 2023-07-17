@@ -14,6 +14,8 @@ const SnapshotPage = () => {
   return (
     <PageWrapper>
       <div className="gradient-wrapper" />
+      <div className="gradient-wrapper-2" />
+
       <HeroContentContainerWrapper>
         <ContentRow>
           <TextColumn>

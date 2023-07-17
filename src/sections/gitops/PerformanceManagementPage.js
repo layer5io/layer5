@@ -16,7 +16,10 @@ import { ReactComponent as GithubLogo } from "../../collections/integrations/git
 const PerformanceManagementPage = () => {
   return (
     <PageWrapper>
+
       <div className="gradient-wrapper" />
+      <div className="gradient-wrapper-2" />
+
       <HeroContentContainerWrapper>
         <ContentRow>
           <TextColumn>
@@ -44,8 +47,6 @@ const PerformanceManagementPage = () => {
         </ContentRow>
       </ContentContainerWrapper>
 
-
-
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer>
@@ -62,7 +63,6 @@ const PerformanceManagementPage = () => {
         </ContentRow>
       </ContentContainerWrapper>
 
-
       <ContentContainerWrapper>
         <ContentRow>
           <TextColumn>
@@ -74,8 +74,6 @@ const PerformanceManagementPage = () => {
         </ContentRow>
       </ContentContainerWrapper>
 
-
-
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
@@ -86,9 +84,6 @@ const PerformanceManagementPage = () => {
           </TextColumn>
         </ContentRow>
       </ContentContainerWrapper>
-
-
-
 
       <ContentContainerWrapper>
         <ContentRow>
