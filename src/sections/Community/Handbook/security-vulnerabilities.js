@@ -79,7 +79,7 @@ const SecurityVulnerabilitiesPage = () => {
                   - a collection of curated patterns of service mesh use cases compatible with Meshery.
               </li>
             </ul>
-            <p>You can find the list of all the Layer5 project repositories <a hrf="https://layer5.io/community/handbook/repository-overview">here</a></p>
+            <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
             <h3>When to report a security vulnerability?</h3>
             <p>Send us a report whenever you:</p>
             <ul>

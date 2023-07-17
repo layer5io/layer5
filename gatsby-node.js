@@ -11,7 +11,7 @@ const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 
-if (process.env.CI) {
+if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
   const replacePath = (url) => (url === "/" || url.includes("/404")) ? url : `${url}.html`;
@@ -55,6 +55,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resoruce Redirects
@@ -63,13 +64,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap", toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
-    if (process.env.CI){
+    if (process.env.CI === "true"){
       const { path, ...rest } = props;
 
       createRedirect({ fromPath: `/${path}/`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
@@ -718,6 +719,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        eurl: String,
        twitter: String,
        github: String,
+       layer5: String,
        meshmate: String,
        maintainer:String,
        emeritus: String,

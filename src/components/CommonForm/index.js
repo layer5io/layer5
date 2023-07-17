@@ -16,6 +16,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   // Form values
   // const [validateAccounts, setValidateAccounts] = useState(false);
   const [validateRole, setValidateRole] = useState(false);
+  const [validateEmail, setValidateEmail] = useState(false);
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -29,6 +30,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
 
 
   const errorRole = "Please select role as applicable";
+  const errorEmail = "Please enter a valid email address";
 
   const confirmationMessageRef = useRef(null);  //set reference to confirmation message
   const navBarOffset = 120;
@@ -45,7 +47,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/s4jo47a8ydq6uk7gg16wuukgr4l52p8c", {
+      axios.post("https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y", {
         memberFormOne,
       });
     }
@@ -72,7 +74,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         form: form,
       }}
       onSubmit={values => {
-        if (values.role && values.email) {
+        if (values.role && values.email && !values.email.includes(";")) {
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
@@ -82,8 +84,11 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         } else {
           if (!values.role) {
             setValidateRole(true);
+          } else if (values.email.includes(";")) {
+            setValidateEmail(true);
           } else {
             setValidateRole(false);
+            setValidateEmail(false);
           }
           // if (!(values.google || values.github || values.twitter || values.linkedin)) {
           //   setValidateAccounts(true);
@@ -109,6 +114,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
         <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+        {validateEmail && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorEmail}</p>}
         <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
         <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="occupation" name="occupation" required />

@@ -21,6 +21,9 @@ const SocialLinksWrapper = styled.div`
         .github:hover {
             filter: grayscale(0) invert(1);
         }
+        .github {
+            filter: grayscale(1.5) invert(0.38);
+        }
 
         .mail_icon {
             img {

@@ -38,10 +38,18 @@ export const HPEintro = styled("div")(({ theme }) => ({
   paddingTop: "1.5rem",
   fontStyle: "italic",
   fontSize: "1.5rem",
+  color: `${theme.whiteToBlack}`,
 
   borderTop: `1px dashed ${theme.text}`,
   borderBottom: `1px dashed ${theme.text}`,
   marginBottom: "1rem",
 
   backgroundColor: `${theme.body}`,
+}));
+
+export const HPEbenefits = styled("div")(({ theme }) => ({
+  border: "1px solid #00B39F",
+  padding: "2rem",
+  boxShadow: "rgba(0, 179, 159, 0.2) 0px 10px 25px",
+  color: `${theme.whiteToBlack}`,
 }));
