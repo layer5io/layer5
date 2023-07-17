@@ -87,7 +87,7 @@ hr {
 }
 `;
 
-const InlineQuotes = ({ person, title, quote,image }) => {
+const InlineQuotes = ({ person, title, quote, image }) => {
 
   const [quoteRef, inView] = useInView({ threshold: 1.0 });
   const [quoteInView, setquoteInView] = useState(false);
@@ -103,7 +103,9 @@ const InlineQuotes = ({ person, title, quote,image }) => {
       <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
         <hr />
-        <img src={image}></img>
+        {image &&
+                    <img src={image}></img>
+        }
         <div className="quote-source">
           <h5>{person}</h5>
           <p>{title}</p>

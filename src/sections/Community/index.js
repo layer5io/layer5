@@ -5,7 +5,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
-import Quote from "../Community/Quote/Index";
 import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
@@ -18,6 +17,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
+import InlineQuotes from "../../components/Inline-quotes";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
@@ -127,7 +127,6 @@ const CommunityPage = () => {
                 </button>
               </Link>
             </Col>
-
           </Row>
         </Container>
         <Container>
@@ -149,9 +148,10 @@ const CommunityPage = () => {
               </div>
             </Col>
           </Row>
+          <InlineQuotes title="What do newcomers say" person="priyanshu-kun" quote="Wow, you’re incredibly helpful. I wish every opensource community was as friendly as yours." />
         </Container>
-        <Quote />
       </div>
+
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
       <DiscussCallout />
 
