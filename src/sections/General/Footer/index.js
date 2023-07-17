@@ -7,8 +7,70 @@ import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const Footer = () => {
+const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
+
+  const getUrl = (pathname) => {
+    //remove ".html" that results in live production build
+    if (pathname.endsWith(".html")) {
+      pathname = pathname.replace(".html", "");
+    }
+
+    const indexUrl = [
+      "/",
+      "/blog",
+      "/careers",
+      "/meshery",
+      "/meshmap",
+      "/community",
+      "/handbook",
+      "projects",
+      "/resources",
+      "/learn",
+    ];
+    const test = {
+      mdx: function (path) {
+        let returnPath = "";
+        return (
+          [
+            "/blog/",
+            "/careers/",
+            "/community/events",
+            "/integrations/",
+            "/landscape/",
+            "/members/",
+            "/news/",
+            "/programs",
+            "/projects/",
+            "/resources/",
+            "/service-mesh-books/",
+            "/service-mesh-labs/",
+            "/service-mesh-workshops/",
+          ].some((check) => {
+            returnPath = check;
+            return path.startsWith(check);
+          }) && `src/collections${returnPath}`
+        );
+      },
+      learningPath: function (path) {
+        return (
+          path.startsWith("/learn/learning-paths/") &&
+          `content-learn${pathname.replace("learn/learning-paths/", "")}`
+        );
+      },
+    };
+
+    return test.mdx(pathname)
+      ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
+      : test.learningPath(pathname)
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
+          pathname
+        )}`
+        : `https://github.com/layer5io/layer5/blob/master/src/pages${
+          pathname == "/" ? "" : pathname
+        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+  };
+
   return (
     <FooterWrapper>
       <img
@@ -30,7 +92,9 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud naative standards. Maker of Meshery, the cloud native manager.
+              An empowerer of engineers, Layer5 helps you extract more value
+              from your infrastructure. Creator and maintainer of cloud native
+              standards. Maker of Meshery, the cloud native manager.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -43,10 +107,8 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/learning-paths"
-                    >Learning Paths
+                    <Link className="category-link" to="/learn/learning-paths">
+                      Learning Paths
                     </Link>
                   </li>
                   <li>
@@ -124,7 +186,10 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/community/handbook/writing-program">
+                    <Link
+                      className="category-link"
+                      to="/community/handbook/writing-program"
+                    >
                       Writing Program
                     </Link>
                   </li>
@@ -183,7 +248,6 @@ const Footer = () => {
                       Service Mesh Performance
                     </Link>
                   </li>
-
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -227,6 +291,7 @@ const Footer = () => {
               </div>
             </Row>
             <Row className="subscribe">
+
               <form
                 name="contactform"
                 method="post"
@@ -240,8 +305,10 @@ const Footer = () => {
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL-2"
-                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
-                    onInput={e => e.target.setCustomValidity("")}
+                    onInvalid={(e) =>
+                      e.target.setCustomValidity("Please fill-in this field")
+                    }
+                    onInput={(e) => e.target.setCustomValidity("")}
                     required
                   />
                   <Button
@@ -260,29 +327,34 @@ const Footer = () => {
             <p className="copyright-text">
               {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
-            <ul className="policies">
+
+            <ul className="misc-links">
+              <li className="edit-page">
+                <a
+                  href={getUrl(location.pathname)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Edit This Page
+                </a>
+              </li>
               <li>
                 <a
+                  className="status-link"
                   href="https://layer5.statuspage.io"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Status
+                  Layer5 Cloud Status <span className="pulse-icon"></span>
                 </a>
               </li>
+            </ul>
+            <ul className="policies">
               <li>
-                <a
-                  href="/company/legal/privacy"
-                >
-                  Privacy
-                </a>
+                <a href="/company/legal/privacy">Privacy</a>
               </li>
               <li>
-                <a
-                  href="/company/legal/terms-of-service"
-                >
-                  Terms
-                </a>
+                <a href="/company/legal/terms-of-service">Terms</a>
               </li>
             </ul>
           </div>
