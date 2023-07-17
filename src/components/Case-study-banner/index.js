@@ -208,7 +208,7 @@ const CaseStudyBanner = () => {
 
   return (
     <>
-      <a href="/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap">
+      <a href="/resources/case-study/hpes-adoption-of-meshery-and-meshmap">
         <BannerWrapper>
           <div className="small-screen">
             <div className="small-screen-desc">
