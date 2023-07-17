@@ -209,7 +209,7 @@ const Connect = () => {
               <p className="channels-para">
                 <img className="channels-img" src={mail_icon} alt="mail" />
                 &nbsp;&nbsp;
-                <a href="mailto:community@layer5.io">community@layer5.io</a>
+                <a href="mailto:community-managers@layer5.io">Connect with our community managers for any inquiries or support!</a>
               </p>
               <p className="channels-para">
                 <img
