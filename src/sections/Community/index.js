@@ -151,7 +151,7 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <InlineQuotes title={"What do newcomers feel?"} quote={"Wow, you’re incredibly helpful. I wish every opensource community was as friendly as yours."} person={"Priyanshu Sharma"}/>
+          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
