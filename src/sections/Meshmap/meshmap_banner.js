@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapIcon from "./meshmap-icon.svg";
+import MeshmapIcon from "./meshmap-icon.png";
 
 const BannerSectionWrapper = styled.div`
 
