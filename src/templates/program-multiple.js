@@ -29,6 +29,7 @@ const ProgramsPage = ({ data, children }) => {
     optionItem.value = index;
     return optionItem;
   });
+
   return (
     <>
       <ProgramsSingle
