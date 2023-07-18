@@ -28,6 +28,10 @@ const Data = {
           name: "Collaborative GitOps",
           path: "/cloud-native-management/meshmap/collaborate",
         },
+        {
+          name: "GitOps with Cloud Native Insights",
+          path: "/cloud-native-management/gitops",
+        },
       ],
       actionItems: [
         {
