@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
+import loadable from "@loadable/component";
 // import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
 import ReactTooltip from "react-tooltip";
-import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
+
+const Pagination = loadable(() => import("../../../components/Learn-Components/Pagination"));
 
 const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCData, children }) => {
 

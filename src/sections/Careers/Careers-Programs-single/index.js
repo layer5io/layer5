@@ -5,7 +5,8 @@ import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDr
 import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProgramsPageWrapper, { dropdownTheme, selectStyles } from "./ProgramsSingle.style.js";
-import SelectedProgram from "../selected_program";
+import loadable from "@loadable/component";
+const SelectedProgram = loadable(() => import("../selected_program"));
 
 const ProgramsSingle = ({ data, options, setActiveOption, activeOption, children }) => {
 

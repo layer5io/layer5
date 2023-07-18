@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import loadable from "@loadable/component";
 import { CourseOverviewWrapper } from "./courseoverview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -9,9 +10,11 @@ import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOu
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 // import { SRLWrapper } from "simple-react-lightbox";
-import DiscussCallout from "../../Discuss-Callout";
-import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
+
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
+
+const DiscussCallout = loadable(() => import("../../Discuss-Callout"));
+const SubscribeLearnPath = loadable(() => import("../../subscribe/SubscribeLearnPath"));
 
 const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
   const [hasBookmark, setHasBookmark] = useState(false);

@@ -1,14 +1,16 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import loadable from "@loadable/component";
 // import { SRLWrapper } from "simple-react-lightbox";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import RelatedResources from "../../../components/Related-Resources";
+
 import ResourcePageWrapper from "./resourceSingle.style";
 import RelatedResourcesFactory from "../../../components/Related-Resources/relatedResourcesFactory";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
-import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
+const CTA_Bottom = loadable(() => import("../../../components/Call-To-Actions/CTA_Bottom"));
+const RelatedResources = loadable(() => import("../../../components/Related-Resources"));
 
 const ResourceSingle = ({ data, children }) => {
   const { frontmatter, fields } = data.mdx;
