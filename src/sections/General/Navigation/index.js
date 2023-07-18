@@ -130,7 +130,7 @@ const Navigation = () => {
 }
 `
   );
-  data["Projects"] = {
+  data["Products"] = {
     nodes: [
       {
         frontmatter: {
