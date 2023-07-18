@@ -314,32 +314,7 @@ export const ProjectWrapper = styled.div`
         }
         
     }
-    @media only screen and (max-width: 991px) {
-        padding: 5px 0 0 0;
-        .project-text{
-        }
-        .project__card h5{
-            font-size: 12px;
-        }
-        .project__card.two{
-            img{
-                height: 100px;
-                width: 100px;
-            }
-            h5{
-                font-size: 25px;
-            }
-        }
-        .project__card.three img{
-            width: 70px;
-        }
-        .project__card.four h5{
-            width: 100%;
-            font-size: 12px;
-        }
-        
-     }
-     @media only screen and (max-width: 740px) {
+     @media only screen and (max-width: 991px) {
         .project__grid{
             margin: 50px 0;
             display: flex;
