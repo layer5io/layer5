@@ -327,7 +327,6 @@ export const ProjectWrapper = styled.div`
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-
         }
         .project__card-container_meshery{
             all:unset;
