@@ -112,7 +112,7 @@ const ProjectPage = () => {
               className="project__card ten"
             >
               <div className="project__card-container-ten">
-                <Col>
+                <Col className="col">
                   <img
                     src={catalog}
                     alt="Catalog"
