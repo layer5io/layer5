@@ -44,7 +44,7 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption, children
       <div className="single-post-wrapper" id="programs">
         <Container>
           {
-            options.length > 1
+            optionsAvailable && options.length > 1
               ?  <SelectedProgram
                 selected={options[activeOption].label}
               />
