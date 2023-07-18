@@ -17,6 +17,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
+import InlineQuotes from "../../components/Inline-quotes";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
@@ -148,6 +149,9 @@ const CommunityPage = () => {
               </div>
             </Col>
           </Row>
+        </Container>
+        <Container>
+          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
