@@ -14,7 +14,7 @@ import { ReactComponent as PartnerIstio } from "../../assets/images/partners/ist
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
-import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg"
+import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
 
 export const partners = [
   {
