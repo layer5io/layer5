@@ -338,7 +338,7 @@ export const HandbookWrapper = styled.div`
     }
 
     .channels-img {
-      width: 40px;
+      // width: 40px;
       height: 30px;
     }
 
