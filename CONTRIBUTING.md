@@ -184,6 +184,19 @@ transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 ## Adding SVG and Images Guidelines
 
+Each image on a website adds to [page weight/page size](https://www.debugbear.com/blog/page-weight-website-speed#:~:text=What%20is%20page%20weight%20or,to%20load%20for%20the%20visitor.) affecting loading times, especially on mobile browsers. In general, images for the site should be optimized for file size, format, and dimensions.
+
+Preferred:
+  file size: less than 500Kbs, ideally less than 100kbs.
+  format: webp
+  dimensions: 
+    - if background image, width no bigger than 2000px
+    - most other web images should not need a width bigger than 1200px
+    - helpful [image optimzation tool](https://tiny-img.com/webp/) (more tools under "tools" tab)
+ (more guidelines available [here](https://tiny-img.com/blog/best-image-size-for-website/))
+
+In addition, it is preferred that the images have these qualities with regards to the site's dark and light theme colors:
+
 - SVG or image does not need to change colors depending on the theme
 
 OR
@@ -727,6 +740,7 @@ success Writing page-data.json files to public directory - 11.966s - 808/809
 
 </details>
 
+**note**: There is a temporary workaround to help with overly long build times if your changes do not involve `.mdx` files. In the file `layer5/.env.development`, you can set the `GATSBY_DEV_AMENDED` env variable to `true`, and save the file. This will restrict the number of mdx files to include in a development build. Remember to change this env variable back to `false` and do not commit changes to this file (it should be `.gitignored`).
 
 ## Additional Developer Notes
 
