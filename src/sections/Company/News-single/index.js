@@ -1,16 +1,17 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import NewsSidebar from "./Sidebar";
+import loadable from "@loadable/component";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
-import RelatedPosts from "../../../components/Related-Posts";
+const RelatedPosts = loadable(() => import("../../../components/Related-Posts"));
 
-const NewsSingle = ({ data }) => {
-  const { frontmatter, body, fields } = data.mdx;
+
+const NewsSingle = ({ data, children }) => {
+  const { frontmatter, fields } = data.mdx;
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
@@ -63,9 +64,9 @@ const NewsSingle = ({ data }) => {
           <div className="single-post-block">
             <Row>
               <Col lg={9} md={8} xs={12}>
-                <SRLWrapper>
-                  <MDXRenderer>{body}</MDXRenderer>
-                </SRLWrapper>
+                {/* <SRLWrapper> */}
+                { children }
+                {/* </SRLWrapper> */}
               </Col>
               <Col lg={3} md={4} xs={12}>
                 <NewsSidebar kit={frontmatter.presskit} />
@@ -73,7 +74,7 @@ const NewsSingle = ({ data }) => {
             </Row>
           </div>
           {
-            body && !body.slug && frontmatter.eurl && (
+            frontmatter.eurl && (
               <div style={{ display: "flex" }}>
                 <h5>
                   Read the full article on <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>

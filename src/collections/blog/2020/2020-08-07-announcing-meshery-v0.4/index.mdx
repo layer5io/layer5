@@ -18,7 +18,7 @@ redirect_from:
  - /blog/meshery/announcing-meshery-v0.4.0/
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
+
 import operator from "./meshery-operator-dark.svg";
 import MesheryArchitecture from "./meshery-architecture.webp";
 
@@ -53,7 +53,7 @@ Support extended to Scoop Bucket. You can now install mesheryctl on your Windows
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
 ### MeshSync<br/>
-<img src={operator} class="image-right" alt="meshery-operator-dark" />
+<img src={operator} className="image-right" alt="meshery-operator-dark" />
 
 -  A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster.
 -  MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change.
@@ -61,7 +61,7 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 
 ### Meshery Adapter for Citrix Service Mesh (beta)<br/>
 
-<img src={MesheryArchitecture} class="image-right" alt="meshery-architecture" />
+<img src={MesheryArchitecture} className="image-right" alt="meshery-architecture" />
 
 - [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported service mesh. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
 - CPX runs as the Istio Data Plane component, displacing Envoy as the default data plane service proxy.<br/>
@@ -83,7 +83,7 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 - ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
 - Cypress has been set-up to enable end-to-end tests and integration tests for Meshery UI.
 
-<center><iframe frameborder="0" width="100%" height="300" allowfullscreen={true} mozallowfullscreen="true" webkitallowfullscreen="true"frameborder="0" width="100%" height="300" allowfullscreen={true} mozallowfullscreen="true" webkitallowfullscreen="true" src="https://www.youtube.com/embed/ds9D2KgZKxo" loading="lazy"></iframe></center>
+<center><iframe frameBorder="0" width="100%" height="300" allowFullScreen={true} mozallowFullScreen="true" webkitallowFullScreen="true"frameBorder="0" width="100%" height="300" allowFullScreen={true} mozallowFullScreen="true" webkitallowFullScreen="true" src="https://www.youtube.com/embed/ds9D2KgZKxo" loading="lazy"></iframe></center>
 
 
 ### Other notable changes

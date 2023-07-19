@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ResourcesWrapper = styled.div`
+const ResourcesWrapper = styled.div`
   color: #000;
   .sub-heading {
     color: gray;
@@ -221,8 +221,8 @@ div.fact-left {
     font-size: 0.8rem;
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
-
-
+  
+  
   /* ==============
   styles for service-mesh-specifications 
   =======================*/
@@ -316,3 +316,5 @@ iframe{
   }
 }
 `;
+
+export default ResourcesWrapper;

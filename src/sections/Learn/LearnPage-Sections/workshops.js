@@ -62,6 +62,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+				padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -216,7 +217,7 @@ const WorkshopsSection = () => {
 
   const hasMounted = useHasMounted();
 
-  /* currentSlide, slideCount is needed to prevent another console error
+  /* currentSlide, slideCount is needed to prevent console error
 	ref: https://github.com/akiran/react-slick/issues/1195#issuecomment-390383615
 	*/
   // eslint-disable-next-line no-unused-vars

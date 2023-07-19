@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 
 import Chapters from "../sections/Learn-Layer5/Chapters";
 
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
   query chapters($slug: String!, $course: String!) {
@@ -86,12 +86,9 @@ const SingleChapter = ({ data, location }) => {
   return (
 
     <>
-
-
-      <SimpleReactLightbox>
-        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} />
-      </SimpleReactLightbox>
-
+      {/* <SimpleReactLightbox> */}
+      <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} />
+      {/* </SimpleReactLightbox> */}
     </>
 
   );

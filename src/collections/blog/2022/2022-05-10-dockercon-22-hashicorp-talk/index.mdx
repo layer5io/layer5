@@ -17,19 +17,19 @@ product: Docker Extension
 featured: true
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
-import Blockquote from "../../../../reusecore/Blockquote";
+
+
 import slidesTAG from "../../../events/kubecon-china-2021/cncf-tag-network-and-service-mesh-working-group-kubecon-china-2021-lee-calcote-ken-owens.pdf";
-import { Link } from "gatsby";
-import DDE from './docker-extension-meshery.webp';
-import developer from './developers-need.webp';
-import dashboard from './dashboard.webp';
-import designer from './designer-1.webp';
-import visualizer from './viz-1.webp';
+
+import DDE from "./docker-extension-meshery.webp";
+import developer from "./developers-need.webp";
+import dashboard from "./dashboard.webp";
+import designer from "./designer-1.webp";
+import visualizer from "./viz-1.webp";
 
 <BlogWrapper>
 
-<div class="intro ">
+<div className="intro ">
 <p>
     <Link to="/community/members/lee-calcote">Lee Calcote</Link> and <Link to="/community/members/nic-jackson">Nic Jackson</Link> gave a presentation entitled <i>Extending the Docker Compose Experience to Service Mesh</i> at DockerCon 2022.
 </p>
@@ -52,7 +52,7 @@ import visualizer from './viz-1.webp';
 
 <p>
 <h3>Discussing Developers need to access Service Mesh</h3>
-<img src={developer} alt="Developers need to access service mesh" style="width:50%;float:right;" />
+<img src={developer} alt="Developers need to access service mesh" style={{width: "50%", float: "right"}} />
 </p>
 
 <p>
@@ -61,7 +61,7 @@ Moving forward with the introduction to Docker Extension for Meshery, Nic says, 
 
 <p>
     <h3>Meshery Extension offers an easy single click button to go from Docker Compose to Kubernetes wih all cloud native infrastructure supported.</h3>
-<img src={DDE} alt="Docker Desktop Extension Meshery" style="width:50%;float:right;" />
+<img src={DDE} alt="Docker Desktop Extension Meshery" style={{width: "50%", float: "right"}} />
 </p>
 <p>
     The Docker Extension for Meshery provides:
@@ -73,7 +73,7 @@ Moving forward with the introduction to Docker Extension for Meshery, Nic says, 
 </ul>
 <p>
     
-    <img src={dashboard} alt="Docker Desktop Extension Meshery Dashboard" style="width:50%;float:left; padding-right:30px;" />
+    <img src={dashboard} alt="Docker Desktop Extension Meshery Dashboard" style={{width: "50%", float: "left", paddingRight: "30px"}} />
     </p>
 <p>
     <ul>
@@ -94,13 +94,13 @@ Moving forward with the introduction to Docker Extension for Meshery, Nic says, 
     <p>
     <h3>Lee Calcote introduces MeshMap</h3>
     </p>
-        <img src={designer} alt="MeshMap Designer" style="width:50%;float:right;" />
+        <img src={designer} alt="MeshMap Designer" style={{width: "50%", float: "right"}} />
 MeshMap is the world's only visual designer for Kubernetes and all cloud native infrastructure. Collaborate with other engineers in real-time as you use MeshMap to design, deploy, and manage your Kubernetes-based deployments. Save time and use a design template. Take advantage of the best practices embedded in the patterns found in Meshery Catalog. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but to deploy and operate that infrastructure as well.
 
     Lee demonstrated MeshMap <strong>Designer</strong>  design capabilities using Consul Service Mesh as an eample and configures various Consul-specific features. He designs a service mesh deployment with application and Envoy filter from scratch. 
 </p>
        <p>
-       <img src={visualizer} alt="MeshMap Designer" style="width:50%;float:left;padding-right:30px;" />
+       <img src={visualizer} alt="MeshMap Designer" style={{width: "50%", float: "left", paddingRight: "30px"}} />
      MeshMap <strong>Visualizer Mode</strong> allows you to examines a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.
        </p>
 
@@ -111,12 +111,10 @@ MeshMap is the world's only visual designer for Kubernetes and all cloud native 
        These Docker Extensions are so powerful that it allows you to do multiple tasks without leaving Docker Desktop. 
         </p>
 
-<div class="iframe-container">
-<iframe src="https://www.youtube.com/embed/3DPZafR8VWM" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+<div className="iframe-container">
+<iframe src="https://www.youtube.com/embed/3DPZafR8VWM" loading="lazy" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
 </div>
 
-<p><strong>Lee Calcote and Nic Jackson packed a great deal of information in this talk. Find the recording below. The Meshery Extension is now out! Try now, and Share your Experience </strong>
-<Link to="/meshmap">Apply for MeshMap Beta Program</Link>
-</p>
+<p><strong>Lee Calcote and Nic Jackson packed a great deal of information in this talk. Find the recording below. The Meshery Extension is now out! Try now, and Share your Experience </strong><Link to="/meshmap">Apply for MeshMap Beta Program</Link></p>
 
 </BlogWrapper>
