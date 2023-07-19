@@ -85,7 +85,7 @@ const Projects = () => {
         {/* <div className="button">
           <Button secondary url="/projects" title="Learn More" />
         </div> */}
-        <Row>
+        {/* <Row>
           <Col xs={12}>
             <div className="description">
               <div className="button">
@@ -97,7 +97,7 @@ const Projects = () => {
               </p>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </ProjectItemWrapper>
   );

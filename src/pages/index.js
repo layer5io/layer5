@@ -24,7 +24,6 @@ const IndexPage = () => {
       <Banner />
       <Integrations />
       <Partners />
-      <CaseStudyBanner/>
       <CornerPopup/>
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
@@ -38,8 +37,9 @@ const IndexPage = () => {
       {/* <News /> */}
       {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
-      <SoSpecial  />
+      {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
+      <CaseStudyBanner/>
       <ServiceMeshFocussed bookName={"enterprise-path"} />
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
