@@ -18,6 +18,8 @@ if (process.env.CI === "true") {
 
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
+    if (page.path.endsWith("html")) return;
+
     const oldPage = Object.assign({}, page);
     page.matchPath = page.path;
     page.path = replacePath(page.path);
