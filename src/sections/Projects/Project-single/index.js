@@ -1,10 +1,13 @@
 import React from "react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
+
 import ProjectPageWrapper from "./projectSingle.style";
 
-const ProjectSingle = ({ data, children  }) => {
-  const { frontmatter } = data.mdx;
+const ProjectSingle = ({ data }) => {
+  const { frontmatter, body } = data.mdx;
   return (
     <ProjectPageWrapper>
       <PageHeader
@@ -13,7 +16,7 @@ const ProjectSingle = ({ data, children  }) => {
       <div className="single-post-wrapper">
         <Container>
           <div className="single-project-block">
-            { children }
+            <MDXRenderer>{body}</MDXRenderer>
           </div>
         </Container>
       </div>

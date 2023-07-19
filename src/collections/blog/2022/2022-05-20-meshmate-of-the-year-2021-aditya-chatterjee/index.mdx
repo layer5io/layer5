@@ -11,11 +11,11 @@ tags:
 published: true
 ---
 
-
+import { BlogWrapper } from "../../Blog.style.js";
 import MMoY2021 from "./meshmate-of-the-year-2021.svg";
-
-
-
+import Blockquote from "../../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import { Link } from "gatsby";
 import graduateLFX from "./aditya-chatterjee-graduates-lfx-meshery-program.webp";
 import MeshMate from "../../../../assets/images/meshmate/meshmate-stack.svg";
 import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
@@ -41,8 +41,8 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
     className="highlight"
   >
     inaugral winner of last year's
-  </Link>
-  {" "}MeshMate of the Year award, I am honored to present the prestigious MeshMate
+  </Link>{" "}
+  MeshMate of the Year award, I am honored to present the prestigious MeshMate
   of the Year badge to{" "}
   <Link to="/community/members/aditya-chatterjee" className="highlight">
     Aditya Chatterjee
@@ -58,7 +58,7 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
   person="Nikhil Ladha"
 />
 
-<h3 style={{padding: "2rem 0"}}>What is a Layer5 MeshMate?</h3>
+<h3 style="padding:2rem 0;">What is a Layer5 MeshMate?</h3>
 
 <img src={MeshMate} className="left" alt="MeshMate" />
 <p>
@@ -80,7 +80,7 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
   projects, can use projects and have their feedback heard.{" "}
   <Blockquote
     className="pull-right"
-    style={{position: "relative"}}
+    style="position:relative;"
     quote="I've known Aditya ever since he joined Layer5. He is an individual that I've watched grow both as a person and as a developer. He just takes things up willingly and gives his 100% no matter how simple or complex it is, which is something that I truly admire about him. It's not a surprise that he is chosen as the MeshMate of the year, considering the amount of impact he has made."
     person="Nithish Karthik"
   />
@@ -97,14 +97,15 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
   comments about Aditya.
 </p>
 
-<h3 style={{padding: "2rem 0"}}>It's not easy being a MeshMate</h3>
+<h3 style="padding:2rem 0;">It's not easy being a MeshMate</h3>
 
 <p>
   With thousands of members in the Layer5 community, many come and go. Many take
   and many give. While we hope that each and every individual that joins will
   find a fit in the community and/or on a project, this isn't always the case.
   <BlockquoteAlt
-    style={{width: "100%", position: "relative"}}
+    style="width:100%;"
+    style="position:relative;"
     quote="Aditya and I joined Layer5 around the same time. In fact, he was the one who introduced me to the community and has helped me every step of the way since then. It's incredible to see how much you've grown in your time here. There isn't a single part of our projects that you haven't contributed to. Your dedication and effort are truly inspiring. Congratulations! You definitely deserve this honor and more!"
     person="Debopriya Bhattacharjee"
   />
@@ -143,7 +144,7 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
   person="Mrittika Ganguli"
 />
 
-<h3 style={{padding: "2rem 0"}}>MeshMates are a massive force</h3>
+<h3 style="padding:2rem 0;">MeshMates are a massive force</h3>
 <p>
   With all that said, you must have already realized that it is not easy being a
   MeshMate. Only a few get this opportunity by showcasing their abilities and
@@ -162,9 +163,9 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
     person="Abhijay Jain"
   />
 
-<div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", float: "right", width: "40%"}}>
-  <img src={graduateLFX} className="image-right" style={{width: "100%"}} />
-  <p style={{color: "#666", fontStyle: "italic"}}>
+<div style="dispay:flex; flex-wrap:wrap; flex-direction:row; float: right;width:40%;">
+  <img src={graduateLFX} className="image-right" style="width:100%" />
+  <p style="color:#666;font-style:italic;">
     Aditya graduates the LFX Meshery program.
   </p>
 </div>
@@ -240,7 +241,7 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
 </div>
 
 <img
-  style={{width: "30%"}}
+  style="width:30%;"
   className="left"
   src={MMoY2021}
   alt="MeshMate of the Year 2021: Aditya Chatterjee"
@@ -264,7 +265,7 @@ import MMOYAditya from "./MeshMate-of-the-Year-2021-Aditya-Chatterjee.webp";
   external to the Layer5 community.
 </p>
 
-<p style={{textAlign: "center"}}>
+<p style="text-align:center;">
   Wear your MeshMate of the Year badge proudly, Aditya.
 </p>
 

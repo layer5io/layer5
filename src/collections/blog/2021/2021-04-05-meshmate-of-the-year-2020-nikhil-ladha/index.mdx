@@ -11,11 +11,11 @@ tags:
 published: true
 ---
 
-
+import { BlogWrapper } from "../../Blog.style.js";
 import MMoY2020 from "./meshmate-of-the-year-2020.webp";
-
-
-
+import Blockquote from "../../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import { Link } from "gatsby";
 
 import MeshMate from "../../../../assets/images/meshmate/meshmate-stack.svg";
 import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
@@ -24,7 +24,9 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
 
 <p>
   If you are in the Layer5 Community, no doubt, you've met
-  <Link to="/community/members/nikhil-ladha" className="highlight">Nikhil Ladha</Link>. If not, I recommend that you join the community and get to know Nikhil.
+  <Link to="/community/members/nikhil-ladha" className="highlight">
+    Nikhil Ladha
+  </Link>. If not, I recommend that you join the community and get to know Nikhil.
   He's the Layer5 MeshMate of the Year and here's why: Nikhil consistently volunteers
   to uplift and support others in the community, freely sharing of his time and knowledge.
   His actions embody and espouse the pay-it-forward culture of Layer5.
@@ -37,7 +39,7 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
 
 2020 was a noteworthy year in many ways. Nikhil's committment to the people and projects of the Layer5 community will forever be at the top of list of mentionables I and others will recall of last year. It was in 2019, though, that <Link to="/blog/community/my-journey-from-a-contributor-to-a-maintainer">Nikhil's journey</Link> in the Layer5 community started and where he first began helping build our healthy, inclusive, and <Link to="/community" className="highlight">diverse community</Link> and our industry-leading, innovate <Link to="/projects" className="highlight">open source projects</Link>. Nikhil's natural disposition to mentoring others and his stewardship on various projects make him a successful MeshMate.
 
-<h3 style={{padding: "2rem 0"}}>What is a Layer5 MeshMate?</h3>
+<h3 style="padding:2rem 0;">What is a Layer5 MeshMate?</h3>
 
 <img src={MeshMate} className="left" alt="Meshmate" />
 <p>
@@ -50,7 +52,7 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
 </p>
 
 <Blockquote
-  style={{position: "relative"}}
+  style="position:relative;"
   quote="Congratulations on the MeshMate of the Year Award, Nikhil, a well-deserved honor for a distinguished gentleman. When I was having a look at the Layer5 community, your member experience blog post stood out and was one of the main reasons for me to join the community. Within the community, it is apparent that your guidance, support, and contributions are very much appreciated. Keep up the excellent work!"
   person="Michael Gfeller"
 />
@@ -76,14 +78,15 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
   comments about Nikhil.
 </p>
 
-<h3 style={{padding: "2rem 0"}}>It's not easy being a MeshMate</h3>
+<h3 style="padding:2rem 0;">It's not easy being a MeshMate</h3>
 
 <p>
   With thousands of members in the Layer5 community, many come and go. Many take
   and many give. While we hope that each and every individual that joins will
   find a fit in the community and/or on a project, this isn't always the case.
   <BlockquoteAlt
-    style={{width: "100%", position: "relative"}}
+    style="width:100%;"
+    style="position:relative;"
     quote="The dedication you have shown on the way to this achievement is impressive, Nikhil. People like you are the key to the great community at Layer5."
     person="Rodolfo"
   />
@@ -105,12 +108,13 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
 </p>
 
 <BlockquoteAlt
-  style={{width: "100%", position: "relative"}}
+  style="width:100%;"
+  style="position:relative;"
   quote="Congratulations on being our community maintainer superstar, Nikhil. You has done a great job on our new Layer5 site and your infinite patience on communicating with everyone sets you apart as an awesome community ambassador."
   person="Aisuko Li"
 />
 
-<h3 style={{padding: "2rem 0"}}>MeshMates are a massive force</h3>
+<h3 style="padding:2rem 0;">MeshMates are a massive force</h3>
 <p>
   In just a year's time, with thousands of people in the Layer5 community and
   500+ contributors to our projects, it's clear that Layer5 MeshMates
@@ -168,7 +172,7 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
 </div>
 
 <img
-  style={{width: "130px"}}
+  style="width:130px;"
   className="right"
   src={MMoY2020}
   alt="MeshMate of the Year 2020: Nikhil Ladha"
@@ -182,7 +186,7 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
   my friend. He is the Layer5 MeshMate of the Year.
 </p>
 
-<div style={{textAlign: "center"}}>
+<div style="text-align: center;">
   <img className="meshmate-img" src={MMOYNikhil} alt="Meshmate of the year" />
 </div>
 
@@ -192,7 +196,7 @@ import MMOYNikhil from "./MeshMate-of-the-Year-2020-Nihkil-Ladha.webp";
   external to the Layer5 community.
 </p>
 
-<p style={{textAlign: "center"}}>
+<p style="text-align:center;">
   Wear your MeshMate of the Year badge proudly, Nikhil.
 </p>
 

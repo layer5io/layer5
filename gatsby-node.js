@@ -160,9 +160,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             collection
             slug
           }
-          internal {
-            contentFilePath
-          }
         }
       }
       blogTags: allMdx(
@@ -196,9 +193,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               collection
             }
-            internal {
-              contentFilePath
-            }
           }
       }
       singleWorkshop: allMdx(
@@ -209,9 +203,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
-          internal {
-            contentFilePath
-          }
         }
       }
       labs: allMdx(
@@ -221,9 +212,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields{
             slug
             collection
-          }
-          internal {
-            contentFilePath
           }
         }
       }
@@ -239,9 +227,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             chapter
             pageType
             collection
-          }
-          internal {
-            contentFilePath
           }
         }
       }
@@ -306,7 +291,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   blogs.forEach(blog => {
     envCreatePage({
       path: blog.fields.slug,
-      component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
+      component: blogPostTemplate,
       context: {
         slug: blog.fields.slug,
       },
@@ -338,7 +323,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   resources.forEach(resource => {
     envCreatePage({
       path: resource.fields.slug,
-      component: `${resourcePostTemplate}?__contentFilePath=${resource.internal.contentFilePath}`,
+      component: resourcePostTemplate,
       context: {
         slug: resource.fields.slug,
       },
@@ -348,7 +333,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   news.forEach(singleNews => {
     envCreatePage({
       path: singleNews.fields.slug,
-      component: `${NewsPostTemplate}?__contentFilePath=${singleNews.internal.contentFilePath}`,
+      component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
       },
@@ -358,7 +343,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   books.forEach(book => {
     envCreatePage({
       path: book.fields.slug,
-      component: `${BookPostTemplate}?__contentFilePath=${book.internal.contentFilePath}`,
+      component: BookPostTemplate,
       context: {
         slug: book.fields.slug,
       },
@@ -368,7 +353,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   events.forEach(event => {
     envCreatePage({
       path: event.fields.slug,
-      component: `${EventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
+      component: EventTemplate,
       context: {
         slug: event.fields.slug,
       },
@@ -378,7 +363,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach(program => {
     envCreatePage({
       path: program.fields.slug,
-      component: `${ProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
+      component: ProgramPostTemplate,
       context: {
         slug: program.fields.slug,
       },
@@ -388,7 +373,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   careers.forEach(career => {
     envCreatePage({
       path: career.fields.slug,
-      component: `${CareerPostTemplate}?__contentFilePath=${career.internal.contentFilePath}`,
+      component: CareerPostTemplate,
       context: {
         slug: career.fields.slug,
       },
@@ -398,7 +383,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   members.forEach(member => {
     envCreatePage({
       path: member.fields.slug,
-      component: `${MemberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
+      component: MemberTemplate,
       context: {
         slug: member.fields.slug,
       },
@@ -409,7 +394,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   MemberBio.forEach(memberbio => {
     envCreatePage({
       path: `${memberbio.fields.slug}/bio`,
-      component: `${MemberBioTemplate}?__contentFilePath=${memberbio.internal.contentFilePath}`,
+      component: MemberBioTemplate,
       context: {
         member: memberbio.frontmatter.name,
       },
@@ -419,7 +404,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   singleWorkshop.forEach(workshop => {
     envCreatePage({
       path: workshop.fields.slug,
-      component: `${WorkshopTemplate}?__contentFilePath=${workshop.internal.contentFilePath}`,
+      component: WorkshopTemplate,
       context: {
         slug: workshop.fields.slug,
       },
@@ -429,7 +414,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   labs.forEach(lab => {
     envCreatePage({
       path: lab.fields.slug,
-      component: `${LabTemplate}?__contentFilePath=${lab.internal.contentFilePath}`,
+      component: LabTemplate,
       context: {
         slug: lab.fields.slug,
       },
@@ -439,7 +424,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   integrations.forEach((integration) => {
     envCreatePage({
       path: `/cloud-native-management/meshery${integration.fields.slug}`,
-      component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
+      component: integrationTemplate,
       context: {
         slug: integration.fields.slug,
       },
@@ -458,7 +443,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       programsArray.push(program.frontmatter.program);
       envCreatePage({
         path: `/programs/${program.frontmatter.programSlug}`,
-        component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
+        component: MultiProgramPostTemplate,
         context: {
           program: program.frontmatter.program,
         },
@@ -568,8 +553,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
           case "news":
-            if (node.frontmatter.published)
-              slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
             break;
           case "service-mesh-books":
           case "service-mesh-workshops":
@@ -589,7 +573,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
               slug = `/community/events/${slugify(node.frontmatter.title)}`;
             break;
           default:
-            if (!node.frontmatter.title) console.log("default", node);
             slug = `/${collection}/${slugify(node.frontmatter.title)}`;
         }
       }
@@ -659,8 +642,9 @@ const createCourseOverviewPage = ({ envCreatePage, node }) => {
   } = node.fields;
 
   envCreatePage({
+
     path: `${slug}`,
-    component: `${path.resolve("src/templates/course-overview.js")}?__contentFilePath=${node.internal.contentFilePath}`,
+    component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
       slug,
@@ -685,7 +669,7 @@ const createChapterPage = ({ envCreatePage, node }) => {
   envCreatePage({
 
     path: `${slug}`,
-    component: `${path.resolve("src/templates/learn-chapter.js")}?__contentFilePath=${node.internal.contentFilePath}`,
+    component: path.resolve("src/templates/learn-chapter.js"),
     context: {
       learnpath,
       slug,

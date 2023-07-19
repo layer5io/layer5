@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const BlogWrapper = styled.div`
+export const BlogWrapper = styled.div`
   color: #000;
   .sub-heading {
     color: gray;
@@ -440,5 +440,3 @@ code {
   }
     
 `;
-
-export default BlogWrapper;

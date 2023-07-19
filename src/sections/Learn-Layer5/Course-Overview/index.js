@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import loadable from "@loadable/component";
 import { CourseOverviewWrapper } from "./courseoverview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -9,14 +8,13 @@ import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTex
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
-// import { SRLWrapper } from "simple-react-lightbox";
-
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SRLWrapper } from "simple-react-lightbox";
+import DiscussCallout from "../../Discuss-Callout";
+import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
-const DiscussCallout = loadable(() => import("../../Discuss-Callout"));
-const SubscribeLearnPath = loadable(() => import("../../subscribe/SubscribeLearnPath"));
-
-const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
+const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
@@ -110,9 +108,9 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
         <Row className="content-section">
           <Col md={12} lg={8} xl={7}>
             <h2 className="overview">Overview</h2>
-            {/* <SRLWrapper> */}
-            { children }
-            {/* </SRLWrapper> */}
+            <SRLWrapper>
+              <MDXRenderer>{course.body}</MDXRenderer>
+            </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
               <Link key={index} to={`istio/${item}`} className="chapter-link">

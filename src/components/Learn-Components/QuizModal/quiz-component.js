@@ -4,7 +4,6 @@ import { QuizComponentWrapper } from "./quiz-component.style";
 import Button from "../../../reusecore/Button";
 import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
-import useTimeout from "../../../utils/useTimeout";
 
 
 const Instruction = ({ closeInstruction }) => {
@@ -50,7 +49,7 @@ const ListItem = (props) => {
     <li
       className={`${props.pquestionToAns?.aIndex === props.index ? "ans" : "no-ans"}`}
       onClick={() => {
-        useTimeout(() => {
+        setTimeout(() => {
           onClickAnswer();
         }, 300);
         props.attemptQuestion(props.index);
@@ -150,7 +149,7 @@ const QuizComponent = () => {
   const [questionToAns,setQuestionToAns] = useState([]);
 
   const finishTimer = () => {
-    useTimeout(() => {
+    setTimeout(() => {
       setProgress(5);
     }, 180000);
   };

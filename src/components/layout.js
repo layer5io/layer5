@@ -9,11 +9,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import loadable from "@loadable/component";
+import ScrollToTopBtn from "./Scrolltotop-button";
 import Navigation from "../sections/General/Navigation";
+import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
-const Footer = loadable(() => import("../sections/General/Footer"));
-const ScrollToTopBtn = loadable(() => import("./Scrolltotop-button"));
 
 const Layout = ({ children }) => {
 
