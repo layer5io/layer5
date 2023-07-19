@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
+
+
+
 import EventSingle from "../sections/Community/Event-single";
+
 import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       attribute {
         name
@@ -31,17 +36,20 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 }
 `;
 
-const EventSinglePage = ({ data, children }) => {
+const EventSinglePage = ({ data }) => {
+
 
   return (
 
     <>
-      <EventSingle data={data} >
-        { children }
-      </EventSingle>
+
+
+      <EventSingle data={data} />
       <LearnServiceMeshCTA />
       <Subscribe />
+
     </>
+
   );
 };
 

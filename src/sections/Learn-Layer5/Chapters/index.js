@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import loadable from "@loadable/component";
-// import { SRLWrapper } from "simple-react-lightbox";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
 import ReactTooltip from "react-tooltip";
+import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
 
-const Pagination = loadable(() => import("../../../components/Learn-Components/Pagination"));
+const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCData }) => {
 
-const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCData, children }) => {
-
-  const { frontmatter } = chapterData;
+  const { frontmatter, body } = chapterData;
   const [showQuizModal, setShowQuizModal] = useState(false);
 
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn;
@@ -109,9 +108,9 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
           <Col sm={12} md={9}>
             <div className="chapter-data">
               <h1 className="chapter-heading">{frontmatter.chapterTitle}</h1>
-              {/* <SRLWrapper> */}
-              { children }
-              {/* </SRLWrapper> */}
+              <SRLWrapper>
+                <MDXRenderer>{body}</MDXRenderer>
+              </SRLWrapper>
             </div>
             <Pagination TOCData={TOCData} chapterData={chapterData} location={location} showQuizModal={() => setShowQuizModal(true)} />
           </Col>

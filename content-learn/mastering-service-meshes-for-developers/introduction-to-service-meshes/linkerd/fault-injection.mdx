@@ -7,15 +7,15 @@ lectures: 12
 order: 8
 ---
 
-
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 
 <ChapterStyle>
 
-<h2 className="chapter-sub-heading">Fault Injection using SMI in Linkerd</h2>
+<h2 class="chapter-sub-heading">Fault Injection using SMI in Linkerd</h2>
 
 Application failure injection is a form of chaos engineering where we artificially increase the error rate of certain services in a microservice application to see what impact that has on the system as a whole. Traditionally, you would need to add some kind of failure injection library into your service code in order to do application failure injection. Thankfully, the service mesh gives us a way to inject application failures without needing to modify or rebuild our services at all.
 
-<h3 className="chapter-sub-heading">
+<h3 class="chapter-sub-heading">
   Using SMI Traffic Split API to inject errors
 </h3>
 
@@ -25,7 +25,7 @@ We will do this first by deploying a new service which only return errored respo
 
 We will then create a traffic split which would redirect the service mesh to send a sample percentage of traffic to the error service instead, let's say 20% of service's traffic to error, then we would have injected an artificial 20% error rate in service.
 
-<h3 className="chapter-sub-heading">Deploy Linkerd Books Application</h3>
+<h3 class="chapter-sub-heading">Deploy Linkerd Books Application</h3>
 
 We will be deploying [Linkerd Books application](https://github.com/BuoyantIO/booksapp) for this part of the demo
 
@@ -60,7 +60,7 @@ Now if you will see `linkerd stat`, the success rate would be 100%
 linkerd stat deploy
 ```
 
-<h3 className="chapter-sub-heading"> Create the errored service</h3>
+<h3 class="chapter-sub-heading"> Create the errored service</h3>
 
 Now we will create our error service, we have NGINX pre-configured to only respond with HTTP 500 status code
 
@@ -164,7 +164,7 @@ kubectl port-forward deploy/webapp 7000 && open http://localhost:7000
 
 If you refresh page few times, you will see `Internal Server Error`.
 
-<h3 className="chapter-alt-heading">Cleanup</h3>
+<h3 class="chapter-alt-heading">Cleanup</h3>
 
 ```sh
 kubectl delete trafficsplit/error-split

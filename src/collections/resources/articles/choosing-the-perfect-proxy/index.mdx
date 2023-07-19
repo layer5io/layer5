@@ -15,8 +15,8 @@ published: true
 resource: true
 ---
 
-
-
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
 import Api from "./citrix-api-security-considerations-by-traffic-direction.svg";
 
 
@@ -33,8 +33,8 @@ Selecting your proxy is one of the most important decision your team will make. 
 <li>gRPC, NATS, Kafka: A developer-centric consideration in which the top item on the list is application-level protocols, specifically those commonly used in modern distributed application designs.</li> 
 </ul>
 
-<div className="intro">
-<h3 style={{textAlign: "center"}}>Tip: HTTP2, gRPC, NATS</h3>
+<div class="intro">
+<h3 align="center">Tip: HTTP2, gRPC, NATS</h3>
 <p>
     At the heart of many distributed systems architectures are streaming and messaging protocols. When your applications need higher performance than JSON-REST, the application architecture commonly includes use of gRPC or NATS. REST is often found on the perimeter of the services while gRPC is used for service-to-service interactions. gRPC is a universal RPC framework. NATS is a multi-modal messaging system that includes request/reply, pub/sub and load balanced queues. 
 </p>
@@ -55,7 +55,8 @@ Selecting your proxy is one of the most important decision your team will make. 
 </p>
 
 <h3>TCP/UDP Support</h3>
-<p>There are many applications that communicate over TCP/UDP ports. Kubernetes ingress was developed with web traffic in mind. It provides a standard way to control and route HTTP/S traffic into the cluster. However, ingress mechanisms for non-HTTP traffic are inconsistent and can be challenging. </p>
+<p>There are many applications that communicate over TCP/UDP ports. Kubernetes ingress was developed with web traffic in mind. It provides a standard way to control and route HTTP/S traffic into the cluster. However, ingress mechanisms for non-HTTP traffic are inconsistent and can be challenging. 
+</p>
 
 Typical methods are:
 
@@ -79,7 +80,8 @@ Typically offered only in public clouds, LoadBalancers could get expensive depen
   <img src={Api} align="center" alt="API security considerations by traffic direction." />
   <p>API security considerations by traffic direction.</p>
   </div>
-<p>While traffic direction will dictate your security needs, the reality is that several concerns are shared considerations for both north-south and east-west traffic.</p>
+<p>While traffic direction will dictate your security needs, the reality is that several concerns are shared considerations for both north-south and east-west traffic.
+</p>
 <p>
 Let’s walk through the API security requirements one by one: 
 </p>

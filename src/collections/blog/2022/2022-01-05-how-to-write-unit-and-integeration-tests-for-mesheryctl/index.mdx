@@ -16,8 +16,8 @@ type: Blog
 product: Meshery
 ---
 
-
-
+import { BlogWrapper } from "../../Blog.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
 
 import UnitTest from "./unit-test.webp";
 import IntegrationTest from "./integration-test.webp";
@@ -25,13 +25,14 @@ import TreeGraph from "./tree-graph.webp";
 
 <BlogWrapper>
 
-<div className="intro ">
+<div class="intro ">
 <p>Delivering a high quality user experience is our pinnacle goal in the design of Meshery's CLI: <code>mesheryctl</code>. Delivering a high quality user experience means testing both qualitatively and quantatively. As a concept, quality - whether you're talking about software or anything else - can be directly measured by consistency. A quality user experience is consistent and consistency of <code>mesheryctl</code> is reinforced by its many unit tests.</p>
 </div>
 
 <p><code>mesheryctl</code> is written in Golang. In the Meshery project, we use CodeCov to calculate the code coverage across <code>mesheryctl</code>'s line of code. And there are plenty of lines of code. Achieving high percentages of code coverage in Meshery's CLI with grows in criticality as we bring more features into <code>mesheryctl</code> as a robust and sophisticated command line client of Meshery. Unit and integration tests bolster and roll up into broader end-to-end, functional testing performed across Meshery and the rest of its components. </p>
 
-<p>High levels of code coverage makes it easier for each project contributor to be confident that their code changes aren’t breaking any preexisting <code>mesheryctl</code> commands, side-swiping their functionality unknowingly, and consequently, unwittingly lowering the quality of Meshery's overall user experience.</p>
+<p>High levels of code coverage makes it easier for each project contributor to be confident that their code changes aren’t breaking any preexisting <code>mesheryctl</code> commands, side-swiping their functionality unknowingly, and consequently, unwittingly lowering the quality of Meshery's overall user experience.
+</p>
 
 <h3> mesheryctl lines of code</h3>
 
