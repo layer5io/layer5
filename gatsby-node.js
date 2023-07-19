@@ -19,6 +19,7 @@ if (process.env.CI === "true") {
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
     const oldPage = Object.assign({}, page);
+    console.log("Page:", page);
     page.matchPath = page.path;
     page.path = replacePath(page.path);
 
@@ -72,6 +73,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const envCreatePage = (props) => {
     if (process.env.CI === "true"){
       const { path, ...rest } = props;
+      console.log("Path:", path);
 
       createRedirect({ fromPath: `/${path}/`, toPath: `/${path}`, redirectInBrowser: true, isPermanent: true });
 
