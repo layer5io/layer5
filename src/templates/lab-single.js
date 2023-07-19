@@ -1,16 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
 import SEO from "../components/seo";
-
-
 import LabSinglePage from "../sections/Learn/Lab-single/index";
 
 export const query = graphql`
     query LabBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } } ) {
-            body
             frontmatter {
                 title
             }
@@ -21,18 +16,14 @@ export const query = graphql`
     }
 `;
 
-const LabSingle = ({ data }) => {
-
+const LabSingle = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <LabSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-
+      <LabSinglePage frontmatter={data.mdx.frontmatter} >
+        { children }
+      </LabSinglePage>
     </>
-
   );
 };
 

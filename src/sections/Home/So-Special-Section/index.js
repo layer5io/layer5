@@ -128,11 +128,11 @@ const SoSpecial = () => {
 
         </Slider>
       </div>
-      <div className="so-special-foot">
+      {/* <div className="so-special-foot">
         <p>Layer5 provides cloud native management for monoliths and <br></br>
                    microservices alike.</p>
         <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects" />
-      </div>
+      </div> */}
     </SoSpecialWrapper>
   );
 };

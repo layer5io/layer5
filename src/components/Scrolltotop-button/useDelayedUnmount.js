@@ -1,19 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const useDelayUnmount = ({ isMounted, delayTime }) => {
   const [shouldRender, setShouldRender] = useState(false);
 
+  const timeoutRef = useRef(null);
+
   useEffect(() => {
-    let timeoutId;
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     if (isMounted && !shouldRender) {
       setShouldRender(true);
     } else if (!isMounted && shouldRender) {
-      timeoutId = setTimeout(
+      timeoutRef.current = setTimeout(
         () => setShouldRender(false),
         delayTime
       );
     }
-    return () => clearTimeout(timeoutId);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [isMounted, delayTime, shouldRender]);
   return [shouldRender, delayTime];
 };

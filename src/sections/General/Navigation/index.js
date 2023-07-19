@@ -73,7 +73,7 @@ const Navigation = () => {
       }
     }
   }
-  Blog: allMdx(
+  Resources: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
@@ -130,7 +130,7 @@ const Navigation = () => {
 }
 `
   );
-  data["Projects"] = {
+  data["Products"] = {
     nodes: [
       {
         frontmatter: {
@@ -184,8 +184,13 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
+      window.scrollY > 50 ? setScroll(true) : setScroll(false)
     );
+    return () => {
+      window.removeEventListener("scroll", () =>
+        window.scrollY > 50 ? setScroll(true) : setScroll(false)
+      );
+    };
   }, []);
 
   const openDropDown = () => {
