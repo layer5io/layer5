@@ -259,21 +259,6 @@ export const ProjectWrapper = styled.div`
     .project__card.ten{
         grid-column: 6/8;
         grid-row: 6/8;
-        // img{
-        //     width: 90px;
-        //     align-self: center;
-        //     margin-top: 8px;
-        //     @media only screen and (min-width: 780px) {
-        //         align-self: flex-start;
-        //     } 
-        // }
-        // h5{
-        //     margin-top: 1rem;
-        //     @media only screen and (min-width: 780px) {
-        //         align-self: flex-end;
-        //         text-align: center;
-        //     }
-        // }
     }
     .project__card-container-ten{
         display: flex;
@@ -320,7 +305,6 @@ export const ProjectWrapper = styled.div`
             gap: 12px;
             
         }
-@media only screen and (max-width: 995px) {
         .project__grid{
             margin: 50px 0;
             display: flex;
