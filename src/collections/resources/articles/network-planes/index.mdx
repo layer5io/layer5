@@ -13,8 +13,8 @@ published: true
 resource: true
 ---
 
-import { Link } from "gatsby";
-import { ResourcesWrapper } from "../../Resources.style.js";
+
+
 
 <ResourcesWrapper>
   <div className="intro">
@@ -44,16 +44,14 @@ The linkerd2-proxy is explicitly built for the service mesh sidecar use case, Li
 <strong>SmartStack</strong>
 <p>Comprising two components: Nerve for health-checking and Synapse for service discovery. Open source. From AirBnB. Written in Ruby.</p>
 <strong>Nelson</strong>
-<p>Takes advantage of integrations with Envoy, Prometheus, Vault, and Nomad to provide Git-centric, developer-driven deployments with automated build-and-release workflow. Open source. From Verizon Labs. Written in Scala.
-</p>
+<p>Takes advantage of integrations with Envoy, Prometheus, Vault, and Nomad to provide Git-centric, developer-driven deployments with automated build-and-release workflow. Open source. From Verizon Labs. Written in Scala.</p>
 
 <h2>Control Plane</h2>
 <strong>Consul </strong>
 <p>Announced service mesh capable intention in v1.5. Became a full service mesh in v1.8. Consul uses Envoy as its dataplane, offering multi-cluster federation.
 Open and closed source. From HashiCorp. Primarily written in Go.</p>
 <strong>Linkerd</strong>
-<p>Linkerd is hosted by the Cloud Native Computing Foundation (CNCF) and has undergone two major releases with significant architectural changes and an entirely different code base used between the two versions.
-</p>
+<p>Linkerd is hosted by the Cloud Native Computing Foundation (CNCF) and has undergone two major releases with significant architectural changes and an entirely different code base used between the two versions.</p>
 <strong>Linkerdv1</strong>
 <p>The first version of Linkerd was built on top of Twitter Finagle. Pronounced “linker-dee”, it includes both a proxying data plane and control plane, Namerd (“namer-dee”), all in one package.
 Open source. Written primarily in Scala.</p>
@@ -61,26 +59,21 @@ Open source. Written primarily in Scala.</p>
 <li>Supports services running within container orchestrators and as standalone virtual or physical machines.</li>
 <li>Service discovery abstractions to unite multiple systems.</li>
 <strong>Linkerdv2</strong>
-<p>The second major version of Linkerd is based on a project formerly known as Conduit, a Kubernetes-native and Kubernetes-only service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerdv1, Linkerdv2’s design principles revolve around a minimalist architecture and zero configuration philosophy, optimizing for streamlined setup.
-</p>
+<p>The second major version of Linkerd is based on a project formerly known as Conduit, a Kubernetes-native and Kubernetes-only service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerdv1, Linkerdv2’s design principles revolve around a minimalist architecture and zero configuration philosophy, optimizing for streamlined setup.</p>
 <li>Open Source. From Buoyant. Control-plane written in Go. Hosted by the CNCF.</li>
 <li>Support for gRPC, HTTP/2, and HTTP/1.x requests plus all TCP traffic. Currently only supports Kubernetes.</li>
 
 <strong>Istio</strong>
-<p>Announced as a project in May 2017, Istio is considered to be a “second explosion after Kubernetes” given its architecture and surface area of functional aspiration.
-</p>
-<li>Supports services running within container orchestrators and as standalone virtual or physical machines.
-</li>
-<li>Was the first service mesh to promote the model of supporting automatic injection of service proxies as sidecars using Kubernetes Admission controller.
-</li>
-<li>Many projects have been built around Istio. Commercial, closed source offerings built around Istio include: AspenMesh, VMware Tanzu Service Mesh, Octarine (acquired by VMware in 2020).
+<p>Announced as a project in May 2017, Istio is considered to be a “second explosion after Kubernetes” given its architecture and surface area of functional aspiration.</p>
+<li>Supports services running within container orchestrators and as standalone virtual or physical machines.</li>
+<li>Was the first service mesh to promote the model of supporting automatic injection of service proxies as sidecars using Kubernetes Admission controller.</li>
+<li>
+Many projects have been built around Istio. Commercial, closed source offerings built around Istio include: AspenMesh, VMware Tanzu Service Mesh, Octarine (acquired by VMware in 2020).
 Commercial, closed source offerings built inside of Istio include Citrix Service Mesh To be built “within Istio” means to offer the Istio control plane with an alternative service proxy. Citrix Service Mesh displaces Envoy with CPX. 
 Open source, data plane proxy, MOSN released support for running under Istio as the control plane, while displacing Envoy as the service proxy.
 </li>
-<li>Many projects have been built within Istio.
-</li>
-<li>Mesher. Layer 7 (L7) proxy that runs as a sidecar deployable on Huawei Cloud Service Engine. Open source. Written primarily in Go. From Huawei.
-</li>
+<li>Many projects have been built within Istio.</li>
+<li>Mesher. Layer 7 (L7) proxy that runs as a sidecar deployable on Huawei Cloud Service Engine. Open source. Written primarily in Go. From Huawei.</li>
 
 <strong>NGINX Service Mesh </strong>
 <p>NGINX Service Mesh is a more recent arrival into the service mesh arena, having released in September 2020. Using an Nginx Plus augmented to interface with Kubernetes natively as its dataplane, supports ingress and egress gateways through NGINX Plus Kubernetes Ingress Controllers. NGINX Service Mesh offers its control plane as a CLI, meshctl, using the Service Mesh Interface (SMI) specification as its API. 
@@ -95,10 +88,12 @@ This list is meant to give you an idea of the wide range of service meshes that 
 The management plane sits a level above the control plane. It can perform various tasks such as operational patterns, business system integration, and application logic enhancement while functioning across different service meshes. A management plane can perform workload and mesh configuration validation, whether in preparation for onboarding a workload into the mesh or as you upgrade to new versions of components running your control and data planes or new versions of your applications. Management planes help organizations running a service mesh get the most out of their investment. Performance management is one part of maintaining service meshes, a function at which Meshery excels. 
  </p>
 <strong>Meshery</strong>
-<p>the cloud native management plane for adopting, operating and developing on different service meshes. Meshery integrates business processes and application logic into service meshes by deploying custom WebAssembly (WASM) modules as filters in Envoy-based data planes. It provides governance, policy and performance and configuration management of service meshes with a visual topology for designing service mesh deployments and managing the fine-grained traffic control of a service mesh. 
-- Open source. Created by Layer5. Primarily written in Go.</p>
+<p>
+the cloud native management plane for adopting, operating and developing on different service meshes. Meshery integrates business processes and application logic into service meshes by deploying custom WebAssembly (WASM) modules as filters in Envoy-based data planes. It provides governance, policy and performance and configuration management of service meshes with a visual topology for designing service mesh deployments and managing the fine-grained traffic control of a service mesh. 
+- Open source. Created by Layer5. Primarily written in Go.
+</p>
 
-<div class="fact">
+<div className="fact">
 Service Mesh Linguistics
 <p>As the lingua franca of the cloud-native ecosystem, Go is certainly prevalent and you might expect most service mesh projects to be written in Go. By the nature of their task, data planes must be highly efficient in the interception, introspection, and rewriting of network traffic. As a data plane component, Envoy is written in C++11 because it provides excellent performance (surprisingly, some say it provides a great developer experience). Rust has found its way into service meshes as a growing language (and something of a C++ competitor). Because of its properties around efficiency (outperforming Go) and memory safety (when written to be so) without garbage collection, Rust has been used for Linkerdv2’s data plane component, for the former nginMesh’s Mixer module (see “How to customize an Istio service mesh”), and is now being used in WebAssembly programs as data plane filters (see “Write WASM filters for Envoy in Rust and deploy with Consul”).</p>
 </div>

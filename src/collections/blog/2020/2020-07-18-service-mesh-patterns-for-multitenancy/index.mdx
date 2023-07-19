@@ -19,7 +19,7 @@ redirect_from:
   - /blog/service-mesh-patterns-for-multitenancy/
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
+
 import listioLayer5 from "./layer5-and-istio.webp";
 import img1 from "./image1.webp";
 import img2 from "./image2.webp";
@@ -96,7 +96,7 @@ b. Ingress Gateway in the Worskpace 1 namespace for traffic entry point to the w
 c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the workspace 2 microservices.
 
 <img src={img1} alt="kubernetes-cluster" />
-<p align="center">
+<p style={{align: "center"}}>
   Single Control Plane with Multiple Data Plane each with separate Ingress
   Gateway
 </p>
@@ -258,10 +258,10 @@ Once this is done the traffic will start flowing the intended gateway and it cou
 Please note that in this scenario the Kiali is also accessed via the default control plane ingress-gateway running in the istio-system control plane namespace.
 
 <img src={img3} alt="image" />
-<p align="center">Kiali view for Workspace-1</p>
+<p style={{align: "center"}}>Kiali view for Workspace-1</p>
 
 <img src={img4} alt="image" />
-<p align="center">Kiali view for Workspace-2</p>
+<p style={{align: "center"}}>Kiali view for Workspace-2</p>
 
 Shortly, we will go over the 3rd scenario which is to run multiple Istio Control Planes (Multiple Service Meshes) within the same Kubernetes Cluster. For that, we will need to build an open-shift setup and deploy the Maistra Istio Operator.
 Special thanks to the [Istio Community](https://istio.slack.com/) for helping me understand the concepts and also answering my queries and of course to [Lee Calcote](https://calcotestudios.com/talks/), who helped me embark on my Istio journey.
@@ -270,9 +270,7 @@ Special thanks to the [Istio Community](https://istio.slack.com/) for helping me
   <b>
     Connect with Sudeep Batra on
     <a href="https://www.linkedin.com/in/sudeep-batra"> LinkedIn</a>,<a href="https://github.com/sb1975">
-      {" "}
-      GitHub
-    </a>, or
+      {" "}GitHub</a>, or
     <a href="https://twitter.com/sudeepbatra"> Twitter</a>.
   </b>
 </div>

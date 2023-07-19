@@ -1,15 +1,16 @@
 import React from "react";
+import loadable from "@loadable/component";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import CTA_Book from "./cta-book";
-import Image from "../../../../components/image";
-import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
-import RelatedIntegration from "../IntegrationsGrid";
+import Image from "../../../../components/image";
 
-const IndividualIntegrations = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+const HowIntegrationWorks = loadable(() => import("./howItWork"));
+const CTA_Book = loadable(() => import("./cta-book"));
+const RelatedIntegration = loadable(() => import("../IntegrationsGrid"));
+
+const IndividualIntegrations = ({ data, children }) => {
+  const { frontmatter } = data.mdx;
 
   return (
     <IntegrationPageWrapper>
@@ -33,7 +34,7 @@ const IndividualIntegrations = ({ data }) => {
         </div>
         <div className="content">
           <h2>Overview</h2>
-          <MDXRenderer>{body}</MDXRenderer>
+          { children }
           <section className="external-btns">
             <Button primary className="get-started" title="Get Started" url="../../getting-started" />
             {(frontmatter.docURL != null) &&

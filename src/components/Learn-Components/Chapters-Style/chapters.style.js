@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ChapterStyle = styled.div`
+const ChapterStyle = styled.div`
 
   color: ${(props) => props.theme.text};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -18,3 +18,5 @@ export const ChapterStyle = styled.div`
   }
   }
 `;
+
+export default ChapterStyle;

@@ -19,7 +19,7 @@ redirect_from:
  - /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d/
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
+
 import wsldockerstart from "./wsl-docker-start.webp";
 import wslgrafanalogin from "./wsl-grafana-login.webp";
 import wslgrafanaloginsuccess from "./wsl-grafana-login-success.webp";
@@ -77,7 +77,7 @@ docker version
 curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
 ```
 <a href={wsldockerstart}>
-    <img src={wsldockerstart} class="thumbnail" alt="wsl-docker-start" />
+    <img src={wsldockerstart} className="thumbnail" alt="wsl-docker-start" />
 </a>
 
 - Create a new k3d cluster with the <code> WSL2 IP </code>
@@ -91,7 +91,7 @@ kubectl cluster-info
 ```
 
 <a href={wslk3dstart}>
-    <img src={wslk3dstart} class="thumbnail" alt="wslk3dstart" />
+    <img src={wslk3dstart} className="thumbnail" alt="wslk3dstart" />
 </a>
 <br/>
 - Start Meshery on the newly created cluster
@@ -101,7 +101,7 @@ mesheryctl system start
 ```
 
 <a href={wslmesherystart}>
-    <img src={wslmesherystart} class="thumbnail" alt="wslmesherystart" />
+    <img src={wslmesherystart} className="thumbnail" alt="wslmesherystart" />
 </a>
 - Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
 
@@ -134,7 +134,7 @@ grafana/grafana
 ```
 
 <a href={wslgrafanastart}>
-    <img src={wslgrafanastart} class="thumbnail" alt="wslgrafanastart" />
+    <img src={wslgrafanastart} className="thumbnail" alt="wslgrafanastart" />
 </a>
 
 - Access the new instance with the admin password that you set in the docker environment variable
@@ -143,11 +143,11 @@ $BROWSER $mainIP:3000 &
 ```
 
 <a href={wslgrafanalogin}>
-    <img src={wslgrafanalogin} class="thumbnail" alt="wslgrafanalogin" />
+    <img src={wslgrafanalogin} className="thumbnail" alt="wslgrafanalogin" />
 </a>
 <br />
 <a href={wslgrafanaloginsuccess}>
-    <img src={wslgrafanaloginsuccess} class="thumbnail" alt="wslgrafanaloginsuccess" />
+    <img src={wslgrafanaloginsuccess} className="thumbnail" alt="wslgrafanaloginsuccess" />
 </a>
 
 ### An inside look
@@ -156,7 +156,7 @@ While everything should run fine, it's always good to have a look at what has be
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
 
 <a href={wslmesherycomplete}>
-    <img src={wslmesherycomplete}class="thumbnail" alt="wslmesherycomplete" />
+    <img src={wslmesherycomplete}className="thumbnail" alt="wslmesherycomplete" />
 </a>
 
 #### Conclusion
