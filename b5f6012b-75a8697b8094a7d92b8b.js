@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[10825],{90342:function(e,a,s){s(67294);a.Z=s.p+"static/catalog-light.577be9f8.svg"}}]);
