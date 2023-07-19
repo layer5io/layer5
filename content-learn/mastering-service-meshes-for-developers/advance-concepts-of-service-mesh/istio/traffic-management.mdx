@@ -7,7 +7,7 @@ lectures: 12
 order: 5
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 
 <ChapterStyle>
 Service routes and version subsets should be in place given the destination rules applied in Lab 3. If they are not present, re-apply the destination rules:
@@ -80,14 +80,14 @@ version: v2
 
 <br />
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
   Start managing traffic routes
 </h2>
 
 
 Some basics to get us started.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Send all requests to Productpage v1
 </h3>
 
@@ -111,7 +111,7 @@ _Using Meshery, apply custom configuration._
 
 Refresh BookInfo productpage
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Send all requests to Productpage v2
 </h3>
 
@@ -133,13 +133,13 @@ _Using Meshery, apply custom configuration._
 
 Refresh BookInfo productpage.
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
    Traffic routing based on user or user-agent type
 </h2>
 
 <br/>
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Redirect requests from mobile devices
 </h3>
 
@@ -177,7 +177,7 @@ spec:
 
 Set your browser to mimic a mobile device. Enable Developer tools, if need. Refresh BookInfo productpage.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Redirect requests based on HTTP header information
 </h3>
 
@@ -216,7 +216,7 @@ spec:
 
 ```
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
    Traffic Mirroring with Istio
 </h2>
 
@@ -288,13 +288,13 @@ spec:
           weight: 50
 
 ```
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
    Injecting Latency
 </h2>
 
 Acknowledging the fallacy that the network is always reliable, you will intentionally cause a little chaos.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Exploring timeouts with Reviews service
 </h3>
 
@@ -331,7 +331,7 @@ spec:
 
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
    Exploring timeouts with Ratings service
 </h3>
 
@@ -366,13 +366,13 @@ spec:
 
 ```
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
     Retries
 </h2>
 
 Overcoming the latency issue.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
     Set 5 retry attempts and a 3 second timeout
 </h3>
 
@@ -401,7 +401,7 @@ Follow these steps if the above steps did not work
 <br />
 <br />
 
-<h4 class="chapter-alt-heading"> Traffic management with Istio</h4>
+<h4 className="chapter-alt-heading"> Traffic management with Istio</h4>
 
 If you haven't forked or cloned this repository, please do so now:
 
@@ -409,7 +409,7 @@ If you haven't forked or cloned this repository, please do so now:
 git clone https://github.com/layer5io/advanced-istio-service-mesh-workshop
 
 ```
-<h4 class="chapter-alt-heading">
+<h4 className="chapter-alt-heading">
   {" "}
   Route all traffic to version V1 
   
@@ -418,7 +418,7 @@ git clone https://github.com/layer5io/advanced-istio-service-mesh-workshop
 ```sh
 kubectl apply -f route-v1-v2/v1.yaml
 ```
-<h4 class="chapter-alt-heading">
+<h4 className="chapter-alt-heading">
   {" "}
   Route all traffic to version V2 
   
@@ -428,18 +428,18 @@ kubectl apply -f route-v1-v2/v1.yaml
 kubectl apply -f route-v1-v2/v2.yaml
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
  
   Traffic routing based on user or user-agent type
 </h3>
 
-<h4 class="chapter-alt-heading"> Redirect requests from mobile devices</h4>
+<h4 className="chapter-alt-heading"> Redirect requests from mobile devices</h4>
 
 ```sh
 kubectl apply -f route-header/device.yaml
 ```
 
-<h4 class="chapter-alt-heading"> Redirect requests based on Cookie data </h4>
+<h4 className="chapter-alt-heading"> Redirect requests based on Cookie data </h4>
 
 ```sh
 kubectl apply -f route-header/user.yaml

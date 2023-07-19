@@ -18,6 +18,7 @@ import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg"
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import catalog from "../../../assets/images/catalog-icon/catalog.svg";
+import SoSpecial from "../../Home/So-Special-Section";
 
 
 const ProjectPage = () => {
@@ -71,13 +72,13 @@ const ProjectPage = () => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
-            <Link to="/projects/service-mesh-interface-conformance"
+            {/* <Link to="/projects/service-mesh-interface-conformance"
               className="project__card nine">
               <div className="project__card-container project__card-container_meshmap">
                 <img src={smi} alt="Service Mesh Interface Conformance" />
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
-            </Link>
+            </Link> */}
             <Link to="/projects/nighthawk" className="project__card six">
               <div className="project__card-container project__card-container_nighthawk">
                 <img src={nighthawk} alt="Nighthawk" />
@@ -107,7 +108,13 @@ const ProjectPage = () => {
                 <h5> Service Mesh Patterns</h5>
               </div>
             </Link>
-            <Link
+            <Link to="/catalog" className="project__card ten">
+              <div className="project__card-container project__card-container_nighthawk">
+                <img src={catalog} alt="Catalog" />
+                <h5>Catalog</h5>
+              </div>
+            </Link>
+            {/* <Link
               to="/catalog"
               className="project__card ten"
             >
@@ -120,12 +127,13 @@ const ProjectPage = () => {
                   <h5> Catalog</h5>
                 </Col>
               </div>
-            </Link>
+            </Link> */}
           </div>
           <MeshMapCTA />
         </Container>
       </div>
-      <ProudMaintainers />
+      {/* <ProudMaintainers /> */}
+      <SoSpecial/>
     </ProjectWrapper>
   );
 };

@@ -7,7 +7,7 @@ lectures: 12
 order: 7
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 
 import installimagehub from "../../../../src/assets/images/learn-layer5/istio/install-imagehub.webp";
 import deployenvoyfilter from "../../../../src/assets/images/learn-layer5/istio/deploy-envoyfilter.webp";
@@ -16,7 +16,7 @@ import deployenvoyfilter from "../../../../src/assets/images/learn-layer5/istio/
 
 In this lab, you will use the sample application [Image Hub](https://github.com/layer5io/image-hub). This version of the Image Hub filter has been simplified for your lab. To self-study deeper functionality, try the other version of the Image Hub filter that is available in the Image Hub repo.
 
-<h2 class="chapter-sub-heading">Deploy Sample Application</h2>
+<h2 className="chapter-sub-heading">Deploy Sample Application</h2>
 
 Using Meshery, select Istio from the Management menu.
 
@@ -31,7 +31,7 @@ In the Istio management page:
 <br />
 <br />
 
-<h2 class="chapter-sub-heading">Load the filter</h2>
+<h2 className="chapter-sub-heading">Load the filter</h2>
 
 Next, load the custom Envoy filter. This filter is written in Rust and is compiled against WebAssembly as it's target runtime.
 
@@ -46,9 +46,9 @@ In the Istio management page:
 
 <br />
 <br />
-<h2 class="chapter-sub-heading">Send traffic</h2>
+<h2 className="chapter-sub-heading">Send traffic</h2>
 <br />
-<h2 class="chapter-sub-heading">Analyze behavior</h2>
+<h2 className="chapter-sub-heading">Analyze behavior</h2>
 
 Alternative, manual installation steps are provided for reference below. No need to execute these if you have performed the steps above.
 
