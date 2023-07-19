@@ -22,6 +22,7 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
+    "gatsby-plugin-no-sourcemaps",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {

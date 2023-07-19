@@ -54,6 +54,7 @@
     "gatsby-plugin-manifest": "^4.25.0",
     "gatsby-plugin-mdx": "^4.4.0",
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
+    "gatsby-plugin-no-sourcemaps": "^4.25.0",
     "gatsby-plugin-preload-fonts": "^3.24.0",
     "gatsby-plugin-robots-txt": "1.7.1",
     "gatsby-plugin-sharp": "^4.25.1",
