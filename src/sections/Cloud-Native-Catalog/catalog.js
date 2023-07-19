@@ -151,8 +151,7 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
-              EWebAssembly filters grant meticulous command over service
-              requests, seamlessly integrated into the data plane.
+              Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
             </p>
           </Col>
           <Col md={6} className="catalog-image">
