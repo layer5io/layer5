@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NewsWrapper = styled.div`
+export const NewsWrapper = styled.div`
     iframe {
         margin: 0 auto;
         display:block;
@@ -30,5 +30,3 @@ const NewsWrapper = styled.div`
     
     }
 `;
-
-export default NewsWrapper;

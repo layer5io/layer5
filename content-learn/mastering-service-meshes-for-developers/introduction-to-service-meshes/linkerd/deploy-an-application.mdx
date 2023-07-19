@@ -7,7 +7,7 @@ lectures: 12
 order: 2
 ---
 
-
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 
 <ChapterStyle>
 
@@ -64,7 +64,7 @@ No resource quota.
 No LimitRange resource.
 ```
 
-<h3 className="chapter-sub-heading"> Deploy the application</h3>
+<h3 class="chapter-sub-heading"> Deploy the application</h3>
 
 Using Meshery, navigate to the Linkerd management page.
 
@@ -82,7 +82,7 @@ Follow this if the above steps did not work for you
 <br />
 <br />
 
-<h4 className="chapter-alt-heading"> Deploy emojivoto application</h4>
+<h4 class="chapter-alt-heading"> Deploy emojivoto application</h4>
 
 Install emojivoto into the emojivoto namespace by running:
 
@@ -100,7 +100,7 @@ To forward web-svc locally to port 8080, you can run:
 kubectl -n emojivoto port-forward svc/web-svc 8080:80
 ```
 
-<h3 className="chapter-sub-heading">
+<h3 class="chapter-sub-heading">
   <a name="verify"></a> Verify EmojiVoto deployment{" "}
 </h3>
 
@@ -155,7 +155,7 @@ will deploy the sample app into your cluster.
 kubectl apply -f https://run.linkerd.io/emojivoto.yml
 ```
 
-<h4 className="chapter-alt-heading">
+<h4 class="chapter-alt-heading">
   Inject Linkerd proxy into the sample application
 </h4>
 

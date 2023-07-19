@@ -8,10 +8,10 @@ programSlug: "gsoc"
 redirect_from:
   - /gsoc/2022/
 ---
-
-
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
 import gsoc_logo from "./gsoc.svg";
-
+import {Link} from "gatsby";
 import playground from "./meshery-playground-alt-4.webp";
 
 <ProgramsWrapper>
@@ -46,7 +46,7 @@ import playground from "./meshery-playground-alt-4.webp";
 ### Cloud Native Playground
 
 <a href="https://play.meshery.io">
-<img src={playground} alt="the cncf playground mockup" style={{width: "40%"}} />
+<img src={playground} alt="the cncf playground mockup" style="width:40%;" />
 </a>
 
 
@@ -114,16 +114,13 @@ import playground from "./meshery-playground-alt-4.webp";
 <h3>About Layer5</h3>
 
 <p>
-We want to participate to help first-time open source contributors get started and what will hopefully be a lifelong journey of open source participation. We want to have them have a great first experience, understand what it means to be embraced by empathy and, in turn, to have empathy for others. We are all learning and growing each day. Our organization and community culture has a pay-it-forward mentality. We spend a lot of time with both students and adults alike, tutoring them, supporting them, and watching them grow. We believe that the world has too few truly diverse and perpetually encouraging open source communities. We take our internships very seriously and grow and support interns to dramatically increase their career velocity. We love helping others learn and grow. 
-</p>
+We want to participate to help first-time open source contributors get started and what will hopefully be a lifelong journey of open source participation. We want to have them have a great first experience, understand what it means to be embraced by empathy and, in turn, to have empathy for others. We are all learning and growing each day. Our organization and community culture has a pay-it-forward mentality. We spend a lot of time with both students and adults alike, tutoring them, supporting them, and watching them grow. We believe that the world has too few truly diverse and perpetually encouraging open source communities. We take our internships very seriously and grow and support interns to dramatically increase their career velocity. We love helping others learn and grow. </p>
 
 <p>
-Mentoring and seeing others learn and grow is what Layer5 is all about - they grow, we grow. Layer5 is a platform for mentees to hoist themselves up on and leapfrog from. We’re a platform for shared success. Direct participation in GSoC will be most meaningful to the community. 
-</p>
+Mentoring and seeing others learn and grow is what Layer5 is all about - they grow, we grow. Layer5 is a platform for mentees to hoist themselves up on and leapfrog from. We’re a platform for shared success. Direct participation in GSoC will be most meaningful to the community. </p>
 
 <p>
-We interact daily over Slack, and have an open source project <Link to="/community/calendar">meeting everyday</Link>, which are posted to the community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1" rel="nofollow">YouTube channel</a>.
-</p>
+We interact daily over Slack, and have an open source project <Link to="/community/calendar">meeting everyday</Link>, which are posted to the community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1" rel="nofollow">YouTube channel</a>.</p>
 <p>
   Layer5 projects are open source software. Anyone can download, use, work on,
   and share it with others. It's built on principles like collaboration,

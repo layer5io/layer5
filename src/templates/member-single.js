@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
+
 import SEO from "../components/seo";
+
 import MemberSingle from "../sections/Community/Member-single";
 
 export const query = graphql`query MemberBySlug($slug: String!) {
@@ -31,12 +33,18 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 
 const MemberSinglePage = ({ data }) => {
 
+
   return (
+
     <>
+
+
       <MemberSingle
         frontmatter={data.mdx.frontmatter}
       />
+
     </>
+
   );
 };
 
