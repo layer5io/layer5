@@ -5,7 +5,7 @@ import ProfileCard from "../../../components/Profile-card";
 import CommunityManagersWrapper from "./styles";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
-
+import InlineQuotes from "../../../components/Inline-quotes";
 
 const CommunityManagers = () => {
   const data = useStaticQuery(
@@ -58,6 +58,7 @@ const CommunityManagers = () => {
             ))}
           </Row>
         </div>
+        <InlineQuotes quote={"Thank you so much for your kind words. I absolutely love this community."} person={"Naureen Imran"}/>
         <div className="expect">
           <h2> What Does a Community Manager Do? </h2>
           <p> Layer5 Community Managers generally oversee community activities and support ongoing initiatives. They are responsible for the health and growth of the community.
