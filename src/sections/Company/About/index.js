@@ -11,9 +11,8 @@ import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import { Link } from "gatsby";
-import Layer5Projects from "./images/layer5-projects.webp";
+import Layer5Projects from "./images/layer5-projects.svg";
 import communityStat from "./images/layer5-community-stat.svg";
-
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
@@ -42,7 +41,7 @@ const About = () => {
                 </div>
               </Col>
             </Row>
-            <img src={Layer5Projects} alt="About Layer5 Projects" loading="lazy"/>
+            <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
