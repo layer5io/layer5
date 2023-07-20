@@ -5,10 +5,12 @@ We are beyond excited to see that you want to contribute! We would love to accep
 - [Before You Get Started](#before-you-get-started)
 - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
 - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
+- [Common Types of Site Contributions](#common-types-of-site-contributions)
 - [How to Contribute](#how-to-contribute)
-  - [Prerequisites](#prerequisites)
-  - [Set up your Local Development Environment](#set-up-your-local-development-environment)
-  - [Signing-off on Commits](#signing-off-on-commits)
+- [Prerequisites](#prerequisites)
+- [Set up your Local Development Environment](#set-up-your-local-development-environment)
+- [Signing-off on Commits](#signing-off-on-commits)
+- [Additional Developer Notes](#additional-developer-notes)
 
 ⚠️ Cloning this repository ⚠️
 
@@ -81,6 +83,16 @@ If you'd like to contribute a post to layer5.io/blog, please open an issue and s
 4. Entries will be listed in chronological order automatically.
 
 # Common Types of Site Contributions
+
+  - [Things to keep in mind](#things-to-keep-in-mind)
+	- [Adding dark mode for components](#adding-dark-mode-for-components)
+  - [Choosing SVG and Images Guidelines](#adding-svg-and-images-guidelines)
+    - [Changing SVG according to theme](#changing-svg-according-to-theme)
+    - [Changing images depending on the theme](#changing-images-depending-on-the-theme)
+  - [How to Add Images and Icons](#how-to-add-images-and-icons)
+  - [Updating/Creating a Community Member Profile](#updatingcreating-a-community-member-profile)
+  - [Updating the Service Mesh Landscape](#updating-the-service-mesh-landscape)
+  - [Site Performance Considerations](#site-performance-considerations)
 
 The following list of instructions pertains to commonplace site updates by contributors.
 
@@ -170,7 +182,20 @@ Currently this property:value is
 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 ```
 
-## Preferable SVG and Images
+## Adding SVG and Images Guidelines
+
+Each image on a website adds to [page weight/page size](https://www.debugbear.com/blog/page-weight-website-speed#:~:text=What%20is%20page%20weight%20or,to%20load%20for%20the%20visitor.) affecting loading times, especially on mobile browsers. In general, images for the site should be optimized for file size, format, and dimensions.
+
+Preferred:
+  file size: less than 500Kbs, ideally less than 100kbs.
+  format: webp
+  dimensions: 
+    - if background image, width no bigger than 2000px
+    - most other web images should not need a width bigger than 1200px
+    - helpful [image optimzation tool](https://tiny-img.com/webp/) (more tools under "tools" tab)
+ (more guidelines available [here](https://tiny-img.com/blog/best-image-size-for-website/))
+
+In addition, it is preferred that the images have these qualities with regards to the site's dark and light theme colors:
 
 - SVG or image does not need to change colors depending on the theme
 
@@ -324,21 +349,11 @@ Change image according to isDark value:
 >
 > - A condition `frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL` is added so that the image only changes if there is a difference between the thumbnail publicURLs.
 
-## Adding Images and Icons
+## How to Add Images and Icons
 
 1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
 2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site **except for SVG images**. This performs automatic image optimization, thereby improving site performance.
 3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder.
-
-## Site Performance Considerations
-
-1. Analyze page load metrics of mobile version in lighthouse report (see status of GitHub workflow on your open PR).
-2. While creating a new page make sure to use Gatsby Head API for SEO.
-3. Prefer using `loading="eager"` for Hero images to improve LCP(Largest Contentful Paint) and FCP(First Contentful Paint).
-4. Optimise page by deferring loading of third party scripts. You can use [off-main-thread](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/#off-main-thread-strategy-experimental) in Script API.
-5. Prefer Code Splitting using [loadable](https://github.com/gregberge/loadable-components) to lazy load heavy components which are not in the viewport.
-
-Note:- You can also refer to [Improving Site Performance](https://www.gatsbyjs.com/docs/how-to/performance/improving-site-performance/), [web.dev](https://web.dev/vitals/).
 
 ## Updating/Creating a Community Member Profile
 
@@ -380,6 +395,17 @@ Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?as
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
 To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add an `announce-date` key for the service mesh, then add a `timeline-order` key having a value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+
+## Site Performance Considerations
+
+1. Analyze page load metrics of mobile version in lighthouse report (see status of GitHub workflow on your open PR).
+2. While creating a new page make sure to use Gatsby Head API for SEO.
+3. Prefer using `loading="eager"` for Hero images to improve LCP(Largest Contentful Paint) and FCP(First Contentful Paint).
+4. Optimise page by deferring loading of third party scripts. You can use [off-main-thread](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/#off-main-thread-strategy-experimental) in Script API.
+5. Prefer Code Splitting using [loadable](https://github.com/gregberge/loadable-components) to lazy load heavy components which are not in the viewport.
+
+Note:- You can also refer to [Improving Site Performance](https://www.gatsbyjs.com/docs/how-to/performance/improving-site-performance/), [web.dev](https://web.dev/vitals/).
+
 
 # How to Contribute
 
@@ -549,7 +575,179 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="./.github/assets/images/git-signoff-vscode.webp" ><img src="./.github/assets/images/git-signoff-vscode.webp" width="50%"/><a>
 
-## FYI regarding the dev environment
+## What to Expect For `development` and `production` Builds
+
+When you do a cold build (this means that there are no cached files from previous builds, or you have used the `make clean` or `gatsby clean` command), it will take longer to build, depending on your systems memory/processor, it can take around **10-15 minutes**. We are working to reduce this time. If you experience unsuccessful builds or extremely long build times, or memory crashes, please post in the [Layer 5 Community Discussion](https://discuss.layer5.io/c/community/12) or Layer 5 Slack #support channel.  
+
+Warm development and production builds are much faster as Gatsby will use cache files when possible during the build.
+
+When you run a gatsby build command, you can expect your terminal/console to show the following output (remember timing can be dependent on your system):
+
+<details>
+<summary>sample build log for a cold development build</summary>
+
+```
+success compile gatsby files - 2.272s
+
+info The following flags are active:
+- FAST_DEV · Enable all experiments aimed at improving develop server start
+time.
+- PARALLEL_SOURCING · EXPERIMENTAL · (Umbrella Issue
+(https://gatsby.dev/parallel-sourcing-feedback)) · Run all source plugins at the
+ same time instead of serially. For sites with multiple source plugins, this can
+ speedup sourcing and transforming considerably.
+- DEV_SSR · (Umbrella Issue (https://gatsby.dev/dev-ssr-feedback)) · Server Side
+ Render (SSR) pages on full reloads during develop. Helps you detect SSR bugs
+and fix them without needing to do full builds.
+- PRESERVE_FILE_DOWNLOAD_CACHE · (Umbrella Issue
+(https://gatsby.dev/cache-clearing-feedback)) · Don't delete the downloaded
+files cache when changing gatsby-node.js & gatsby-config.js files.
+
+There is one other flag available that you might be interested in:
+- DETECT_NODE_MUTATIONS · Diagnostic mode to log any attempts to mutate node
+directly. Helpful when debugging missing data problems. See
+https://gatsby.dev/debugging-missing-data for more details.
+
+success load gatsby config - 0.302s
+success load plugins - 2.748s
+success onPreInit - 0.011s
+success initialize cache - 0.097s
+success copy gatsby files - 0.742s
+success Compiling Gatsby Functions - 1.666s
+success onPreBootstrap - 1.810s
+success createSchemaCustomization - 0.022s
+success Checking for changed pages - 0.003s
+success source and transform nodes - 17.829s
+success building schema - 2.631s
+success create redirects
+success createPages - 13.746s
+success createPagesStatefully - 0.822s
+info Total nodes: 6935, SitePage nodes: 809 (use --verbose for breakdown)
+success Checking for changed pages - 0.064s
+success write out redirect data - 0.010s
+success Build manifest and related icons - 0.206s
+success onPostBootstrap - 0.212s
+info bootstrap finished - 52.436s
+success onPreExtractQueries - 0.001s
+success extract queries from components - 14.772s
+success write out requires - 0.058s
+success run static queries - 0.011s - 1/1 94.47/s
+success Running gatsby-plugin-sharp.IMAGE_PROCESSING jobs - 3.067s - 60/60
+19.56/s
+
+warn `isModuleDeclaration` has been deprecated, please migrate to
+`isImportOrExportDeclaration`
+    at isModuleDeclaration (/Users/------/Documents/GitHub/layer5/node_modules
+/@babel/types/lib/validators/generated/index.js:2740:35)
+    at PluginPass.Program (/Users/------/Documents/GitHub/layer5/node_modules/
+babel-plugin-lodash/lib/index.js:102:44)
+
+You can now view Layer5 in the browser.
+  http://localhost:8000/
+
+View the GraphQL Playground, an in-browser IDE, to explore your site's data and
+schema
+  http://localhost:8000/___graphql
+
+Note that the development build is not optimized.
+
+To create a production build, use gatsby build
+
+warn ./node_modules/react-accessible-accordion/dist/es/index.js
+Attempted import error: 'useId' is not exported from 'react' (imported as
+'useId').
+
+success Building development bundle - 554.782s
+success Writing page-data.json files to public directory - 13.033s - 808/809
+62.07/s
+```
+
+</details>
+
+<details>
+<summary>sample build log for a warm development build</summary>
+
+```
+success compile gatsby files - 1.478s
+
+info The following flags are active:
+- FAST_DEV · Enable all experiments aimed at improving develop server start
+time.
+- PARALLEL_SOURCING · EXPERIMENTAL · (Umbrella Issue
+(https://gatsby.dev/parallel-sourcing-feedback)) · Run all source plugins at the
+ same time instead of serially. For sites with multiple source plugins, this can
+ speedup sourcing and transforming considerably.
+- DEV_SSR · (Umbrella Issue (https://gatsby.dev/dev-ssr-feedback)) · Server Side
+ Render (SSR) pages on full reloads during develop. Helps you detect SSR bugs
+and fix them without needing to do full builds.
+- PRESERVE_FILE_DOWNLOAD_CACHE · (Umbrella Issue
+(https://gatsby.dev/cache-clearing-feedback)) · Don't delete the downloaded
+files cache when changing gatsby-node.js & gatsby-config.js files.
+
+There is one other flag available that you might be interested in:
+- DETECT_NODE_MUTATIONS · Diagnostic mode to log any attempts to mutate node
+directly. Helpful when debugging missing data problems. See
+https://gatsby.dev/debugging-missing-data for more details.
+
+success load gatsby config - 0.151s
+success load plugins - 2.721s
+success onPreInit - 0.010s
+success initialize cache - 0.063s
+success copy gatsby files - 0.734s
+success Compiling Gatsby Functions - 2.017s
+success onPreBootstrap - 2.179s
+success createSchemaCustomization - 0.018s
+success Checking for changed pages - 0.002s
+success source and transform nodes - 9.687s
+success building schema - 0.916s
+success create redirects
+success createPages - 9.703s
+success createPagesStatefully - 0.853s
+info Total nodes: 6935, SitePage nodes: 809 (use --verbose for breakdown)
+success Checking for changed pages - 0.098s
+success write out redirect data - 0.028s
+success Build manifest and related icons - 0.191s
+success onPostBootstrap - 0.209s
+info bootstrap finished - 38.108s
+success onPreExtractQueries - 0.001s
+success extract queries from components - 11.239s
+success write out requires - 0.082s
+warn `isModuleDeclaration` has been deprecated, please migrate to
+`isImportOrExportDeclaration`
+    at isModuleDeclaration (/Users/------/Documents/GitHub/layer5/node_modules
+/@babel/types/lib/validators/generated/index.js:2740:35)
+    at PluginPass.Program (/Users/------/Documents/GitHub/layer5/node_modules/
+babel-plugin-lodash/lib/index.js:102:44)
+
+You can now view Layer5 in the browser.
+  http://localhost:8000/
+
+View the GraphQL Playground, an in-browser IDE, to explore your site's data and
+schema
+  http://localhost:8000/___graphql
+
+Note that the development build is not optimized.
+To create a production build, use gatsby build
+
+warn ./node_modules/react-accessible-accordion/dist/es/index.js
+Attempted import error: 'useId' is not exported from 'react' (imported as
+'useId').
+
+success Building development bundle - 204.131s
+success Writing page-data.json files to public directory - 11.966s - 808/809
+67.61/s
+```
+
+</details>
+
+**note**: There is a temporary workaround to help with overly long build times if your changes do not involve `.mdx` files. In the file `layer5/.env.development`, you can set the `GATSBY_DEV_AMENDED` env variable to `true`, and save the file. This will restrict the number of mdx files to include in a development build. Remember to change this env variable back to `false` and do not commit changes to this file (it should be `.gitignored`).
+
+## Additional Developer Notes
+
+### Sitewide Changes
+If you are making changes that affect multiple or all site pages, remember that pages are also built from `.mdx` files (in the `src/collections` folder and `content-learn` folder that is outside of the `src` folder) using files in the `src/templates` folder.
+
+If your code involves modifying path names, please note that in live production builds on GitHub Pages (the Layer5 host server), the pathnames will end in `.html` (e.g. `about.html`). This was done to address a flickering trailing slash issue. Otherwise in local development and production builds, pages are served as `index.html` (e.g. about/index.html). Click [here](https://github.com/layer5io/layer5/pull/4133) for more information.
 
 ### Dev and Browser Warnings You May Encounter
 
@@ -600,3 +798,7 @@ Reason: In this version of Gatsby (4.20), the file:
 
 To clear the warning:
 This could be resolved by adding code to the package, but requires too much complexity to include for each user. This warning is cleared in later versions of Gatsby.
+
+### Tool: Editing .md, .mdx files
+For editing .md files like CONTRIBUTING.md, this is a [helpful editor](https://jbt.github.io/markdown-editor/) that maintains spacing with preview (note: local images will not appear).
+For editing .mdx files, you can check MDX compatibility with this [editor](https://mdxjs.com/playground/).

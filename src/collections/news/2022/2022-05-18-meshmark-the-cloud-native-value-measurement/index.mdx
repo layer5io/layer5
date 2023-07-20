@@ -16,12 +16,9 @@ type: News
 resource: false
 published: true
 ---
-import { Link } from "gatsby";
+
 import Formula from "./MeshMark-Formula.webp";
 import MeshmapMeshmark from "./meshmark-score.webp";
-import { NewsWrapper } from "../../News.style.js";
-import Blockquote from "../../../../reusecore/Blockquote";
-import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 
 <NewsWrapper>
 <p>
@@ -69,7 +66,7 @@ With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collabo
 <p>
 With the project’s <Link to="/company/news/analyzing-service-mesh-performance">approach to performance analysis</Link> published in IEEE The Bridge, ongoing analysis of nearly 40,000 performance test results will comprise the initial release of the <a href="https://smp-spec.io/dashboard">Service Mesh Performance Dashboard</a>, also unveiling at KubeCon EU. <Link to="/cloud-native-management/meshery">Meshery</Link>, the cloud native manager, orchestrates the provisioning and configuration of Kubernetes and each service mesh. With <Link to="/projects/nighthawk">Nighthawk</Link> embedded, Meshery’s performance management functions are what drives the tests run within the CNCF Lab.
 </p>
-<Blockquote style="display:block;"
+<Blockquote style={{display: "block"}}
   quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
   person="Otto van der Schaaf"
   title="Principal Engineer at Red Hat" 
@@ -100,8 +97,8 @@ A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific 
 Learn how we distill a variety of microarchitecture performance signals and application key performance indicators into a simple measurement scale. Join the open source effort and explore the other side of the performance measurement coin: <i>value measurement</i>.
 </p>
 <div>
-<iframe width="100%" height="315" style="margin-right: 1.5rem;margin-left:1.5rem;" src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p style="font-style:italic;font-size:1rem;margin-left:1rem;">MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</p>
+<iframe width="100%" height="315" style={{marginRight: "1.5rem", marginLeft: "1.5rem"}} src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<p style={{fontStyle: "italic", fontSize: "1rem", marginLeft: "1rem"}}>MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</p>
 </div>
 
 #### Resources
@@ -114,12 +111,14 @@ Learn how we distill a variety of microarchitecture performance signals and appl
 </ul>
 
 ##### About Layer5, Inc.
-<p style="font-size:1rem">
-Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. For more information, visit <Link to="/">layer5.io</Link></p>
+<p style={{fontSize: "1rem"}}>
+Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. For more information, visit <Link to="/">layer5.io</Link>
+</p>
 
 ##### About Service Mesh Performance 
-<p style="font-size:1rem">
-Hosted within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
+<p style={{fontSize: "1rem"}}>
+Hosted within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a>
+</p>
 
 
 </NewsWrapper>

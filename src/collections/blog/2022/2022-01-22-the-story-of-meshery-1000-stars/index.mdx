@@ -14,16 +14,16 @@ published: true
 featured: true
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
-import Blockquote from "../../../../reusecore/Blockquote";
-import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
-import { Link } from "gatsby";
+
+
+
+
 import Stars from "./stars-forks.webp";
 import Slack from "./meshery-star-notifications.webp";
 
 <BlogWrapper>
 <p>
-  <Link to="/cloud-native-management/meshery">Meshery</Link> took its first steps into the cloud native world in July of 2019 with the goal to ease the adoption and operation of cloud native infrastructure with a focus on service meshes as ubiquitous a layer within and outside of Kubernetes deployments. Since then, Meshery as a project and Layer5 as an open source community have <img src={Slack} alt="Slack notification of GitHub stars applied to Meshery and Service Mesh Performance" style="width:60%;float:right;" /> grown by leaps and bounds. Now, we are bursting with pride in announcing that Meshery has reached yet another milestone: 1,000 stars on the Meshery repository on GitHub.
+  <Link to="/cloud-native-management/meshery">Meshery</Link> took its first steps into the cloud native world in July of 2019 with the goal to ease the adoption and operation of cloud native infrastructure with a focus on service meshes as ubiquitous a layer within and outside of Kubernetes deployments. Since then, Meshery as a project and Layer5 as an open source community have <img src={Slack} alt="Slack notification of GitHub stars applied to Meshery and Service Mesh Performance" style={{width: "60%", float: "right"}} /> grown by leaps and bounds. Now, we are bursting with pride in announcing that Meshery has reached yet another milestone: 1,000 stars on the Meshery repository on GitHub.
 </p>
 
 <p>
@@ -42,7 +42,7 @@ import Slack from "./meshery-star-notifications.webp";
   enables service mesh users to overcome the challenges of complex virtual
   networking,{" "}
   <Blockquote
-    style="float:left;width:60%;"
+    style={{float: "left", width: "60%"}}
     quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration."
     person="Nic Jackson, Principal Developer Advocate at HashiCorp"
   />{" "}
@@ -55,7 +55,7 @@ import Slack from "./meshery-star-notifications.webp";
   certainly earned its title as the <i>extensible</i> service mesh manager.
 </p>
 
-<div class="intro" style="text-align:center;">
+<div className="intro" style={{textAlign: "center"}}>
   <p>
     Within just a year of its creation,{" "}
     <Link to="/company/news/meshery-accepted-into-the-cncf-landscape">
@@ -65,7 +65,7 @@ import Slack from "./meshery-star-notifications.webp";
   </p>
 </div>
 <Blockquote
-  style="width:40%;float:right;"
+  style={{width: "40%", float: "right"}}
   quote="Open source contributions are a must-do for becoming a true cloud native hero. Cloud native is all about the community and one can't be a part of a community by only taking and never giving back. So, if you were looking for a promising and welcoming project to join - look no further!"
   person="Anton Weiss, Founder and CEO, Otomato"
 />
@@ -73,7 +73,8 @@ import Slack from "./meshery-star-notifications.webp";
   Not long after, Meshery was{" "}
   <Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">
     adopted by the CNCF
-  </Link>{" "}
+  </Link>
+  {" "}
   in October 2021. With its natural step into the Cloud Native Computing
   Foundation, the contributor community and Meshery's functionality maintains
   steadfast in their rate of growth and use. With continuous improvements in the
@@ -108,16 +109,16 @@ import Slack from "./meshery-star-notifications.webp";
 
 <img
   src={Stars}
-  style="width:75%; display: block; margin: auto;"
+  style={{width: "75%", display: "block", margin: "auto"}}
   alt="Meshery Stars and Forks Graph"
 />
-<p style="font-size: 15px; text-align: center">
+<p style={{fontSize: "15px", textAlign: "center"}}>
   Note: These metrics and reports were obtained from DevStats, a CNCF-created
   tool for analyzing and graphing developer contributions.
 </p>
 
 <Blockquote
-  style="float:right;width:50%;font-size:.5rem;"
+  style={{float: "right", width: "50%", fontSize: ".5rem"}}
   quote="Layer5 has been instrumental in helping us understand the patterns, best practices, and strategies in our approach to the service mesh ecosystem. Meshery has simplified the process of configuring and operating meshes. Meshery's service mesh neutrality, open source governance, and defining of industry standards like SMP, SMI, and now service mesh patterns will ensure that Meshery helps any organization adopt meshes with utmost clarity curated to their needs."
   person="Yogi Porla, Customer Success Manager at HPE"
 />
