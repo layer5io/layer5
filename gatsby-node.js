@@ -17,6 +17,8 @@ if (process.env.CI === "true") {
   const replacePath = (url) => (url === "/" || url.includes("/404")) ? url : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
+
+    if (page.path.endsWith("html")) return;
     const { createPage, deletePage, createRedirect } = actions;
     const oldPage = Object.assign({}, page);
     page.matchPath = page.path;
