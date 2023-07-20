@@ -11,6 +11,7 @@ import mesheryPlayground from "./meshery-playground-meshmap.png";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
+import { BsFillCalendarFill } from "@react-icons/all-files/bs/BsFillCalendarFill";
 
 import Banner1SectionWrapper from "./banner4.style";
 
@@ -18,6 +19,8 @@ import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-co
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import useHasMounted from "../../../utils/useHasMounted";
+import playIcon from "../../../assets/images/homePage-images/play-button.webp";
+
 
 const Banner1 = (props) => {
 
@@ -61,14 +64,21 @@ const Banner1 = (props) => {
                 </h2>
               </SectionTitle>
               <span className="vintage-box-container">
+                {/* <div className="row-1"> */}
                 <VintageBox right={true} vintageOne={true}>
-                  <Button primary className="banner-btn one" title="Learn about MeshMap" url="/cloud-native-management/meshmap">
-                    <FaMapMarkedAlt size={21} className="icon-left" />
+                  <Button primary className="banner-btn one" title="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true">
+                    <BsFillCalendarFill size={21} className="icon-left" />
                   </Button>
                   <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io">
                     <BsArrowUpRight size={21} className="icon-left" />
                   </Button>
                 </VintageBox>
+                {/* </div> */}
+                {/* <div className="row-2">
+                  <Button primary className="banner-btn one" title="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvUgv=true" style={{backgroundColor: "#477E96"}}>
+                    <BsArrowUpRight size={21} className="icon-left" />
+                  </Button>
+                </div> */}
               </span>
             </Container>
           </Col>
@@ -79,7 +89,19 @@ const Banner1 = (props) => {
                 playing
                 controls
                 light={mesheryPlayground}
+                playIcon={
+                  <img
+                    src={playIcon}
+                    className="playBtn"
+                    loading="lazy"
+                    alt="Play"
+                    role="button"
+                    aria-label="Play"
+                    style={{ fontSize: "24px" }}
+                  />
+                }
                 width="90%"
+                height="30vw"
                 style={{ margin: "auto" }}
                 className="embedVideo"
               />

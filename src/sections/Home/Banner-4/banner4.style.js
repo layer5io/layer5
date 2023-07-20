@@ -36,6 +36,7 @@ const Banner1SectionWrapper = styled.section`
         min-width:25%;
         max-width:100%;
         object-fit: cover;
+        height: 560px;
         /* height: 44vw !important;
         border-radius: 2.5%;
         transition: 0.2s ease-in-out;
@@ -58,9 +59,12 @@ const Banner1SectionWrapper = styled.section`
         }
 
         &:hover {
-        box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.75);
-        .react-player__play-icon {
+        /* box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.75); */
+        /* .react-player__play-icon {
             border-color: transparent transparent transparent #EBC017 !important;
+        } */
+        .playBtn {
+        box-shadow: 0px 0px 16px 3px #00B39F;
         }
         }
     }
@@ -71,6 +75,12 @@ const Banner1SectionWrapper = styled.section`
         object-fit: cover;
 }
     .vintage-box-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .row-1 {
         display: flex;
     }
     .vintage-box {
@@ -117,6 +127,12 @@ const Banner1SectionWrapper = styled.section`
             background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
         }
+    }
+    .playBtn {
+        position: absolute;
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
     }
     @media only screen and (max-width: 1200px) {
         .section-title {
