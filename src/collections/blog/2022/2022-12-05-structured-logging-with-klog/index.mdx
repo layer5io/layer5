@@ -15,12 +15,8 @@ featured: false
 published: true
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
-import { Link } from "gatsby";
-import Button from "../../../../reusecore/Button";
-
-
 <BlogWrapper>
+
 <p>As a platform for developers and system administrators to easily deploy and manage applications in a distributed environment, Kubernetes clusters generate logs and lots of them. One of the key components of Kubernetes is its logging and instrumentation capabilities. The upcoming Kubernetes 1.26 release has a handful of noteworthy changes to its system component logger, <code>klog</code>.</p>
 
 ## Kubernetes System Log
@@ -56,7 +52,6 @@ Proof of concept implementation of new logging formats were completed to assess 
 
 Interestingly, Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
 
-
 <p>Log a message and 10 fields:</p>
 
 | Package             |    Time     | Time % to zap | Objects Allocated |
@@ -68,6 +63,7 @@ Interestingly, Klog isn't the fastest logger in the West, but Uber's open source
 | logrus              | 17104 ns/op |     +490%     |   81 allocs/op    |
 | apex/log            | 32424 ns/op |    +1018%     |   66 allocs/op    |
 | log15               | 33579 ns/op |    +1058%     |   76 allocs/op    |
+
 </div>
 
 Output will always be written to stderr, regardless of the output format. Output redirection is expected to be handled by the component which invokes a Kubernetes component. This can be a POSIX shell or a tool like systemd.

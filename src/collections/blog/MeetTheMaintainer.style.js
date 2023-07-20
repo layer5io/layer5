@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const MeetTheMaintainer = styled.div`
+const MeetTheMaintainer = styled.div`
   div.intro {
     word-spacing: 0.5rem;
   }
@@ -41,3 +41,5 @@ export const MeetTheMaintainer = styled.div`
     font-weight: 600;
   }
 `;
+
+export default MeetTheMaintainer;

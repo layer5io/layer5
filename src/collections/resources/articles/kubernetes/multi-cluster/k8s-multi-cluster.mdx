@@ -14,9 +14,9 @@ published: true
 resource: true
 ---
 
-import { Link } from "gatsby";
 
-import { ResourcesWrapper } from "../../Resources.style.js";
+
+
 
 Learn more about how to wrangle <Link to= "/blog/meshery/multi-cluster-kubernetes-management-with-meshery">Multiple Kubernetes clusters with Meshery.</Link>
 
@@ -114,9 +114,7 @@ Upgrading a cluster and its toolset follows the approach of upgrading the contro
 
 The complexity of management tasks across multiple Kubernetes clusters greatly increases your the number of clusters increase. You need higher-level view and control as you manage workloads across clusters; need to be able to simply switch between clusters; you need a management plane.
 
-<Link className="blog" to="/meshery">
-  Meshery
-</Link> is the open source, cloud native management plane that enables the adoption,
+<Link className="blog" to="/meshery">  Meshery</Link> is the open source, cloud native management plane that enables the adoption,
 operation, and management of Kubernetes, any service mesh, and their workloads.
 
 MeshSync, a custom controller managed by Meshery Operator, uniquely contains cluster-wide details of all objects across any number of managed clusters separated by Kubernetes Cluster ID.

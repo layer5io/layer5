@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProgramsWrapper = styled.div`
+const ProgramsWrapper = styled.div`
     a {        color: ${props => props.theme.keppelColor};
 }
     img{
@@ -130,3 +130,5 @@ export const ProgramsWrapper = styled.div`
         }
     }
 `;
+
+export default ProgramsWrapper;
