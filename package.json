@@ -21,7 +21,7 @@
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
-    "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
+    "noIndex": "gatsby build --prefix-paths && echo 'User-agent: *\nDisallow: /' > public/robots.txt && gh-pages -d public -b master",
     "prepare": "husky install"
   },
   "dependencies": {

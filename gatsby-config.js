@@ -6,6 +6,7 @@ require("dotenv").config({
 const devIgnoreArray = require("./gatsby-dev-filesystem-ignore");
 
 module.exports = {
+  pathPrefix: "/layer5",
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
