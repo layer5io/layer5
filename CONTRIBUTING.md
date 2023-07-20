@@ -743,11 +743,21 @@ success Writing page-data.json files to public directory - 11.966s - 808/809
 **note**: There is a temporary workaround to help with overly long build times if your changes do not involve `.mdx` files. In the file `layer5/.env.development`, you can set the `GATSBY_DEV_AMENDED` env variable to `true`, and save the file. This will restrict the number of mdx files to include in a development build. Remember to change this env variable back to `false` and do not commit changes to this file (it should be `.gitignored`).
 
 ## Additional Developer Notes
+- [Sitewide Changes](#sitewide-changes)
+- [Changes Involving Page Creation, Redirects, or URLs](#changes-involving-page-creation-redirects-or-urls)
+- [Dev and Browser Warnings You May Encounter](#dev-and-browser-warnings-you-may-encounter)
+- [Tool: Editing .md, .mdx files](#tool-editing-md-mdx-files)
 
 ### Sitewide Changes
 If you are making changes that affect multiple or all site pages, remember that pages are also built from `.mdx` files (in the `src/collections` folder and `content-learn` folder that is outside of the `src` folder) using files in the `src/templates` folder.
 
 If your code involves modifying path names, please note that in live production builds on GitHub Pages (the Layer5 host server), the pathnames will end in `.html` (e.g. `about.html`). This was done to address a flickering trailing slash issue. Otherwise in local development and production builds, pages are served as `index.html` (e.g. about/index.html). Click [here](https://github.com/layer5io/layer5/pull/4133) for more information.
+
+### Changes Involving Page Creation, Redirects, or URLs
+
+If your code changes involve working on gatsby-node.js and page creation, urls, or redirects, please create production builds with the `CI` variable set to `true`, e.g. `CI=true npm run build`. There are customized apis/functions in gatsby-node.js that are only active when `CI` is `true` that may interact with your code changes. These customized api/functions have been implemented to have no-trailing-slash be compatible with GitHub Pages hosting.
+
+Another good check when the PR is opened, is to look at the build logs and test the netlify site preview to ensure those changes are functional since they are created with `CI` set to `true`.
 
 ### Dev and Browser Warnings You May Encounter
 
