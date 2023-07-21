@@ -4,7 +4,6 @@ import { ContextWrapper } from "./context-wrapper";
 import { Link } from "gatsby";
 import loadable from "@loadable/component";
 
-
 const Button = loadable(() => import("./src/reusecore/Button"));
 const Blockquote = loadable(() => import("./src/reusecore/Blockquote"));
 const BlockquoteAlt = loadable(() => import("./src/reusecore/Blockquote/Blockquote-alt-style"));
@@ -16,7 +15,6 @@ const CTA_FullWidth = loadable(() => import("./src/components/Call-To-Actions/CT
 const CTA_ImageOnly = loadable(() => import("./src/components/Call-To-Actions/CTA_ImageOnly"));
 const DockerExtensionCTA = loadable(() => import("./src/sections/Docker-Meshery/docker-extension-CTA"));
 const FAQ = loadable(() => import("./src/sections/General/Faq"));
-const InlineQuotes = loadable(() => import("./src/components/Inline-quotes"));
 const Table = loadable(() => import("./src/components/service-mesh-patterns-Table/Table.js"));
 
 const BlogWrapper = loadable(() => import("./src/collections/blog/Blog.style.js"));
@@ -56,7 +54,6 @@ const components = {
   CTA_ImageOnly,
   DockerExtensionCTA,
   FAQ,
-  InlineQuotes,
   Link,
   Table,
   BlogWrapper,

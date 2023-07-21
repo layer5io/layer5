@@ -10,7 +10,6 @@ import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import DockerExtensionCTA from "./src/sections/Docker-Meshery/docker-extension-CTA";
 import FAQ from "./src/sections/General/Faq";
-import InlineQuotes from "./src/components/Inline-quotes";
 import Table from "./src/components/service-mesh-patterns-Table/Table.js";
 
 import blogCategoryListTemplate from "./src/templates/blog-category-list.js";
@@ -61,7 +60,6 @@ const MDXComponents = [
   CTA_ImageOnly,
   DockerExtensionCTA,
   FAQ,
-  InlineQuotes,
   Link,
   Table,
   blogCategoryListTemplate,
