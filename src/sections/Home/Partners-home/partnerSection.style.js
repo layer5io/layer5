@@ -24,11 +24,11 @@ const PartnerItemWrapper = styled.section`
         }
     }
 		.slick-dots li button:before{
-			color: ${props => props.theme.grey939393ToGrey4C4A4A}
+			color: ${props => props.theme.blue477E96ToGreen00B39F};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 		.slick-dots li.slick-active button:before {
-			color: ${props => props.theme.whiteToGrey4C4A4A};
+			color: ${props => props.theme.green009A89ToGreen00B39F};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 		.slick-dots li button:hover{

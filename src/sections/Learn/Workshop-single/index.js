@@ -1,4 +1,5 @@
 import React from "react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
@@ -12,7 +13,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 
-const WorkshopSinglePage = ({ frontmatter, children }) => {
+const WorkshopSinglePage = ({ frontmatter, body }) => {
 
   return (
     <WorkshopSinglePageWrapper>
@@ -29,7 +30,7 @@ const WorkshopSinglePage = ({ frontmatter, children }) => {
       />
       <Container>
         <div className="cardContent">
-          { children }
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
         <div className="btn-and-status">
           <div className="social-icons">

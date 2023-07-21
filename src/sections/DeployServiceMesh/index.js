@@ -11,7 +11,6 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { Link } from "gatsby";
 import bookCover from "../../assets/images/learn/book-cover.webp";
-import useTimeout from "../../utils/useTimeout";
 
 const RangeSlider = memo(
   ({ label, onChange, value, ...sliderProps }) => {
@@ -240,7 +239,7 @@ const ServiceMesh = () => {
   const Progress = ({ done }) => {
     const [style, setStyle] = React.useState({});
 
-    useTimeout(() => {
+    setTimeout(() => {
       const newStyle = {
         opacity: 1,
         width: `${done}%`

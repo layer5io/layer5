@@ -13,16 +13,16 @@ resource: true
 type: Blog
 ---
 
-
+import { BlogWrapper } from "../../Blog.style.js";
 import { BufProtocol } from "./BufProtocol.style";
-
+import { Link } from "gatsby";
 import Problems from "./problems.webp";
 
 <BlogWrapper>
 <BufProtocol>
 
 
-<div className="intro" style={{textAlign: "center", margin: "2rem 4rem"}}><p>At Layer5, we are continuously evaluating new technologies and incorporating them into our open source projects. Buf is one of those projects. This post presents an overview of Buf.</p></div>
+<div class="intro" style="text-align:center;margin: 2rem 4rem;"><p>At Layer5, we are continuously evaluating new technologies and incorporating them into our open source projects. Buf is one of those projects. This post presents an overview of Buf.</p></div>
 
 
 ## What is Buf?
@@ -30,9 +30,9 @@ import Problems from "./problems.webp";
 <p>A tool to make Protobuf reliable and easy to use for service owners and clients, while keeping it the obvious choice on the technical merits.
 Our organization should not have to reinvent the wheel to create, maintain, and consume Protobuf APIs efficiently and effectively. It will handle our Protobuf management strategy for us, so we can focus on what matters.</p>
 
-<div className="fact">Learn more about Buf Protocol, visit <a href="https://buf.build" rel="nofollow">Buf Protocol</a> or their documentation at <a href="https://docs.buf.build/" rel="nofollow">Buf Protocol Docs</a></div>
+<div class="fact">Learn more about Buf Protocol, visit <a href="https://buf.build" rel="nofollow">Buf Protocol</a> or their documentation at <a href="https://docs.buf.build/" rel="nofollow">Buf Protocol Docs</a></div>
 
-<img className="problem-image" src={Problems} />
+<img class="problem-image" src={Problems} />
 
 ## Features 
 
@@ -78,7 +78,7 @@ In consideration of the use of Buf, we would adopt it in phases, starting with t
   - It will check for different things that can cause breaking change.
   - For example, type change.
 
-<div className="intro"><p>If these topics excite you and you want to explore more <a href="/resources">cloud native technolgies</a>, come and say "Hi" on the community <a href="http://slack.layer5.io">Slack</a> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+<div class="intro"><p>If these topics excite you and you want to explore more <a href="/resources">cloud native technolgies</a>, come and say "Hi" on the community <a href="http://slack.layer5.io">Slack</a> and you are sure to be warmly welcomed. <span>😀</span></p></div>
 
 </BufProtocol>
 </BlogWrapper>

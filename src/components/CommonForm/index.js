@@ -36,8 +36,8 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   const navBarOffset = 120;
 
   const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - offset;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - offset;
 
     window.scrollTo({
       top: offsetPosition,

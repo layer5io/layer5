@@ -1,10 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
+
 import SEO from "../components/seo";
+
+
 import BlogSingle from "../sections/Blog/Blog-single";
-// import SimpleReactLightbox from "simple-react-lightbox";
+
+
+
+import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       subtitle
@@ -34,18 +41,25 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({ data, children }) => {
+const BlogSinglePage = ({ data }) => {
+
 
   return (
+
     <>
-      <BlogSingle  data={data}>
-        { children }
-      </BlogSingle>
+
+
+      <SimpleReactLightbox>
+        <BlogSingle  data={data} />
+      </SimpleReactLightbox>
+
     </>
+
   );
 };
 
 export default BlogSinglePage;
+
 
 export const Head = ({ data }) => {
   return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;

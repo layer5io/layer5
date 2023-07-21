@@ -13,14 +13,14 @@ tags:
 published: true
 ---
 
-
-
-import mentees from "./mentees.webp"
+import { Link } from "gatsby";
+import { BlogWrapper } from "../../Blog.style.js";
+import mentees from './mentees.webp'
 import meshmate from "../../../../assets/images/meshmate/meshmate-icon.svg"
 
 <BlogWrapper>
 
-<div className="intro">
+<div class="intro">
 <p>
 To newbies, open source contributions may seem daunting. In much the same way that non-techies develop a reverence for programmers courtesy of the film industry’s portrayal of them as wizards whose brains magically sprout up elaborate mathematical models and whose mouths eloquently spew technological jargon, so do newbies perceive contributors: a bunch of techies who debug in seconds, recite programming language documentation by heart and, well, create pull requests in their sleep (this is a bit exaggerated, but you get the point). 
 </p>
@@ -90,7 +90,7 @@ To newbies, open source contributions may seem daunting. In much the same way th
   </p>
   <ul>
     <li>
-    <Link to="https://layer5.io/community/members/ekene-leonard-nwobodo"><img src={meshmate} style={{height: "1.25rem"}} /> Ekene Leonard Nwobodo</Link>
+    <Link to="https://layer5.io/community/members/ekene-leonard-nwobodo"><img src={meshmate} style="height: 1.25rem;" /> Ekene Leonard Nwobodo</Link>
     </li>
     <li>
     <a href="https://twitter.com/etienejames5">Etiene James</a>

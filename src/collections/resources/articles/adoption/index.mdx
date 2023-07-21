@@ -11,8 +11,8 @@ published: true
 resource: true
 ---
 
-
-
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
 import Traffic from "./figure1.webp";
 
 <ResourcesWrapper>
@@ -116,7 +116,7 @@ import Traffic from "./figure1.webp";
   secure the edge of their network, but they still want the observability and
   control that a service mesh can provide.
 </p>
-<div className="fact">
+<div class="fact">
   <p>
     Needless to say, it is recommended that you run workloads securely, using a
     service mesh to provide authentication and authorization between all service
