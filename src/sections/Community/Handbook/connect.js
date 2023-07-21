@@ -238,7 +238,7 @@ const Connect = () => {
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={slack_icon} alt="slack" />&nbsp;&nbsp;
-                <a href="https://bit.ly/3fXwYPk">Communicate and collaborate with us on Slack</a>
+                <a href="https://slack.layer5.io/">Communicate and collaborate with us on Slack</a>
 
               </p>
             </div>
