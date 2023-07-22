@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BookWrapper = styled.div`
+export const BookWrapper = styled.div`
 
     .book{
         float:right;
@@ -48,5 +48,3 @@ const BookWrapper = styled.div`
     }
 
 `;
-
-export default BookWrapper;

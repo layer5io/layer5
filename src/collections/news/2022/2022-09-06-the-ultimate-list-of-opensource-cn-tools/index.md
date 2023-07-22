@@ -11,6 +11,9 @@ published: true
 type: News
 ---
 
+import { NewsWrapper } from "../../News.style.js";
+import { Link } from "gatsby";
+
 <NewsWrapper>
 
 <div className="test">

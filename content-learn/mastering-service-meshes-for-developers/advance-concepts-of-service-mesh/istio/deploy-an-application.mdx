@@ -7,7 +7,7 @@ lectures: 12
 order: 2
 ---
 
-
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 import BookInfoOffMesh from "../../../../src/assets/images/learn-layer5/istio/bookinfo-off-mesh.webp";
 import BookInfoOnMesh from "../../../../src/assets/images/learn-layer5/istio/bookinfo-on-mesh.webp";
 
@@ -61,7 +61,7 @@ If your environment **does NOT** supports either of these two APIs, then you may
 As part of Istio deployment in [Previous chapter](./getting-started), you have deployed the sidecar injector.
 
 <br />
-<h2 className="chapter-sub-heading">
+<h2 class="chapter-sub-heading">
   <a name="auto"></a> Deploying Sample App with Automatic sidecar injection
 </h2>
 
@@ -107,7 +107,7 @@ This will do 3 things:
 1. Deploys all the BookInfo services in the `default` namespace.
 1. Deploys the virtual service and gateway needed to expose the BookInfo's productpage application in the `default` namespace.
 
-<h3 className="chapter-sub-heading">
+<h3 class="chapter-sub-heading">
   <a name="verify"></a> Verify Bookinfo deployment{" "}
 </h3>
 
@@ -139,7 +139,7 @@ Follow this if the above steps did not work for you
 <br />
 <br />
 
-<h4 className="chapter-alt-heading"> Label namespace for injection</h4>
+<h4 class="chapter-alt-heading"> Label namespace for injection</h4>
 
 Label the default namespace with istio-injection=enabled
 
@@ -161,7 +161,7 @@ kube-public    Active    1h
 kube-system    Active    1h
 ```
 
-<h4 className="chapter-alt-heading"> Deploy BookInfo</h4>
+<h4 class="chapter-alt-heading"> Deploy BookInfo</h4>
 <br />
 
 Applying this yaml file included in the Istio package you collected in [Getting Started](./getting-started) will deploy the BookInfo app in you cluster.
@@ -170,7 +170,7 @@ Applying this yaml file included in the Istio package you collected in [Getting 
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
-<h4 className="chapter-alt-heading">
+<h4 class="chapter-alt-heading">
   Deploy Gateway and Virtual Service for BookInfo app
 </h4>
 

@@ -12,8 +12,8 @@ published: true
 resource: true
 ---
 
-
-
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
 import Differences from "./figure1.webp";
 
 <ResourcesWrapper>
@@ -37,7 +37,8 @@ Since microservices are distributed (often ephemeral) by nature, and the network
 
 <h3>What Is a Service Mesh?</h3>
 
-<p>Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:</p>
+<p>Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:
+</p>
 <ul>
   <li>A services-first network;</li>
   <li>A developer-driven network;</li>
@@ -65,7 +66,8 @@ The demand for service meshes, including meshes native to specific cloud platfor
 </p>
 
 <h3>Service Mesh Abstractions</h3>
-<p>Because there are any number of service meshes available, independent specifications have cropped up to provide abstraction and standardization across them. Three service mesh abstractions exist today:</p>
+<p>Because there are any number of service meshes available, independent specifications have cropped up to provide abstraction and standardization across them. Three service mesh abstractions exist today:
+</p>
 <ul>
     <li><Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) is a format for describing and capturing service mesh performance. Created by Layer5; Meshery is the canonical implementation of this specification.</li>
     <li>Multi-Vendor Service Mesh Interoperation (Hamlet) is a set of API standards for enabling service mesh federation. Created by VMware.</li>
@@ -77,7 +79,7 @@ The demand for service meshes, including meshes native to specific cloud platfor
 Let's start characterizing different service meshes now that we better understand why we live in a multi-mesh world. Some service meshes support non-containerized workloads (services operating on a VM or on bare metal), while others specialize in layering on top of container orchestrators, such as Kubernetes. All service meshes support integration with service discovery systems. The subsections that follow provide a very brief survey of service mesh offerings within the current technology landscape.
 </p>
 
-<div className="fact-left">
+<div class="fact-left">
 <p>
 See the Layer5 <Link to="/service-mesh-landscape">service mesh landscape</Link> for a comprehensive overview and characterizing of all of the service meshes, service proxies, and related tools available today. This landscape is community-maintained and places service meshes in contrast with one another so that the reader might make the most informed decision about which service mesh best suits their needs.
 </p>

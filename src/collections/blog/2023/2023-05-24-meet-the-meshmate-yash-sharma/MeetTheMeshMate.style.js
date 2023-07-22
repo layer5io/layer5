@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const MeetTheMeshMate = styled.div`
+export const MeetTheMeshMate = styled.div`
   div.intro {
     word-spacing: 0.5rem;
   }
@@ -40,5 +40,3 @@ const MeetTheMeshMate = styled.div`
     font-weight: 600;
   }
 `;
-
-export default MeetTheMeshMate;

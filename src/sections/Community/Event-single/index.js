@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -47,10 +48,10 @@ const checkSpeaker = (speaker) => {
 };
 
 
-const EventSingle = ({ data, children }) => {
+const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
-  const { frontmatter } = data.mdx;
+  const { frontmatter, body } = data.mdx;
 
 
   return (
@@ -74,7 +75,7 @@ const EventSingle = ({ data, children }) => {
                   />
               }
 
-              { children }
+              <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
                 {
                   frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""

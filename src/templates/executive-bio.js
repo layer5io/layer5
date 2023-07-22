@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
+
 import SEO from "../components/seo";
+
 import MemberBio from "../sections/Community/Member-single/executive_bio";
 
 export const query = graphql`query MemberBioBySlug($member: String!) {
@@ -12,6 +14,7 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
   ) {
     nodes {
         id
+        body
     frontmatter {
       name
       position
@@ -40,14 +43,21 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
 }
 `;
 
-const MemberBioSinglePage = ({ data, children }) => {
+const MemberBioSinglePage = ({ data }) => {
+
 
   return (
+
     <>
-      <MemberBio frontmatter={data.allMdx.nodes[0].frontmatter}>
-        { children }
-      </MemberBio>
+
+
+      <MemberBio
+        frontmatter={data.allMdx.nodes[0].frontmatter}
+        body={data.allMdx.nodes[0].body}
+      />
+
     </>
+
   );
 };
 

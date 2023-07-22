@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import { Col, Container, Row } from "../../../reusecore/Layout";
-import useTimeout from "../../../utils/useTimeout";
 import Button from "../../../reusecore/Button";
 import Code from "../../../components/CodeBlock";
 import dedent from "dedent";
@@ -198,7 +197,7 @@ const MesheryPlatforms = () => {
       changeCurrentPlatformState(index);
       return;
     }
-    useTimeout(() => changeCurrentPlatformState(index), 500);
+    setTimeout(() => changeCurrentPlatformState(index), 500);
     setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
   };
 

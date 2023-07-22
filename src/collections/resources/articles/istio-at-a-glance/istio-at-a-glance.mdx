@@ -14,7 +14,7 @@ featured: false
 published: true
 resource: true
 ---
-
+import { ResourcesWrapper } from "../../Resources.style.js";
 import BookinfoWith from "./bookinfo-with-proxies.svg";
 import BookinfoWithout from "./bookinfo-without-proxies.svg";
 import IstioArchitecture from "./istio-architecture.svg";
@@ -29,34 +29,29 @@ The <strong>data plane</strong> in Istio intercepts each packet in the request a
 Istio's <strong>control plane</strong> provides a single point of administration for service proxies, which require programmatic configuration due to the need to manage a large number of them efficiently and have their configuration updated in real-time as services are rescheduled around your environment (i.e., container cluster). Control planes offer policy and configuration for the mesh's services, transforming a collection of isolated, stateless proxies into a service mesh. The control planes do not directly touch any network packets in the mesh. They operate out-of-band. Control planes usually feature a command line interface and a user interface, both of which provide access to a centralized API for regulating proxy behavior holistically. Changes to control plane configuration can be automated using its APIs (for example, using a CI/CD pipeline), however configuration is usually version-controlled and updated in practise. To summarize, Istio's control plane:
 </p>
 <ul>
-<li>
-Provides policy and configuration for services in the mesh.
+<li>Provides policy and configuration for services in the mesh.
 <ul>
 <li>APIs for operators to specify desired routing/resilience behavior.</li>
 </ul>
 </li>
-<li>
-Takes a set of isolated stateless sidecar proxies and turns them into a service mesh.
+<li>Takes a set of isolated stateless sidecar proxies and turns them into a service mesh.
 <ul>
 <li>APIs for the data plane to consume localized configuration.</li>
 <li>Service discovery abstraction for the data plane.</li>
 </ul>
 </li>
-<li>
-APIs for specifying usage policies
+<li>APIs for specifying usage policies
 <ul>
 <li>Quota and Usage restrictions</li>
 </ul>
 </li>
-<li>
-Security
+<li>Security
 <ul>
 <li>Certificate issuance and rotation</li>
 <li>Assigning workload identity</li>
 </ul>
 </li>
-<li>
-Routing configuration
+<li>Routing configuration
 <ul>
 <li>Does not touch any packets/requests in the system.</li>
 <li>Specifying network boundaries and how to access them</li>
@@ -117,7 +112,7 @@ Envoy is deployed as a sidecar to the relevant service in the same Kubernetes po
 </p>
 
 <h4>Injection</h4>
-<img src={BookinfoWithout} className="image-right" alt="BookInfo without proxies" />
+<img src={BookinfoWithout} class="image-right" alt="BookInfo without proxies" />
 <p>
 You can easily add Istio capabilities to an existing deployment without having to re-architect or rewrite code using the sidecar proxy model. This is one of the most compelling reasons to use Istio. The promises of immediate view to top-level service metrics, detailed traffic control, and automated authentication and encryption across all services without having to do either:
 </p>
@@ -127,7 +122,7 @@ You can easily add Istio capabilities to an existing deployment without having t
 </ol>
 
 <p>Using the canonical sample application BookInfo you can see how service proxies come into play and form a mesh.</p>
-<img src={BookinfoWith} className="image-left" alt="BookInfo with proxies" />
+<img src={BookinfoWith} class="image-left" alt="BookInfo with proxies" />
 
 <p>
 In Kubernetes, automatic proxy injection is implemented as a webhook using a Kubernetes API Server with the Mutating Webhook Admission Controller. It is stateless, relying solely on the injection template and mesh configuration configmaps and the to-be-injected pod object. It can be easily horizontally scaled, either manually via the deployment object or automatically via a Horizontal Pod Autoscaler.
@@ -193,9 +188,10 @@ spec:
     - "*"
 ```
 <h4>Egress</h4>
-<p>Traffic can exit an Istio service mesh in two ways - directly from the sidecar or funnelled through an egress gateway, where traffic policy may be applied.</p>
+<p>Traffic can exit an Istio service mesh in two ways - directly from the sidecar or funnelled through an egress gateway, where traffic policy may be applied.
+</p>
 
-<div className="fact">
+<div class="fact">
 By default, Istio-enabled applications are unable to access URLs external the cluster.
 </div>
 
@@ -215,14 +211,13 @@ External requests bypass the sidecar and route directly to the intended destinat
 <p>
 Istio monitoring and route rules can be applied to traffic leaving the mesh through an egress gateway. It also enables communication between applications running in a cluster where the nodes lack public IP addresses, preventing the mesh's applications from accessing the Internet. The nodes (and the applications running on them) can access external services in a regulated manner by defining an egress gateway, directing all egress traffic through it, and allocating public IPs to the egress gateway nodes. 
 </p>
-<img src={IstioArchitecture} className="image-center" alt="Istio Architecture" />
+<img src={IstioArchitecture} class="image-center" alt="Istio Architecture" />
 
-<div className="intro" style={{textAlign: "center"}}>
+<div class="intro" style="text-align:center">
 <p><b>Why use Istio Gateways and not Kubernetes Ingresses?</b></p>
 <p>In general, the Istio v1alpha3 APIs leverage Gateways for richer functionality as Kubernetes Ingress has proven insufficient for Istio applications. In comparison to Kubernetes Ingress, Istio Gateways can function as a pure L4 TCP proxy and support all protocols supported by Envoy.</p>
 <p>
-Another factor to examine is the division of trust domains between organizational teams. Kubernetes Ingress API combines specification for L4 to L7, which makes it challenging for different teams in organizations with separate trust domains (such as SecOps, NetOps, ClusterOps and Developers) to own Ingress traffic management.
-</p>
+Another factor to examine is the division of trust domains between organizational teams. Kubernetes Ingress API combines specification for L4 to L7, which makes it challenging for different teams in organizations with separate trust domains (such as SecOps, NetOps, ClusterOps and Developers) to own Ingress traffic management.</p>
 </div>
 
 </ResourcesWrapper>

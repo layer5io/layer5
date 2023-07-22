@@ -15,8 +15,11 @@ resource: true
 type: Blog
 ---
 
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
 import bugEnvoy from "./debug-envoy-proxy.svg";
-
+import DockerExtensionCTA from "../../../../sections/Docker-Meshery/docker-extension-CTA";
+import Code from "../../../../components/CodeBlock";
 
 <BlogWrapper>
 <p>
@@ -26,7 +29,7 @@ import bugEnvoy from "./debug-envoy-proxy.svg";
 <p>
   By default Envoy system logs are sent to <code>/dev/stderr</code>. This location be overridden using <code>--log-path</code>. Logging to <code>/dev/stderr</code>  for system logs and to <code>/dev/stdout</code> for access logs can be useful when running Envoy inside a container. In this way, these two individual logstreams can be separated, and using this approach, logging requires no additional files or directories to be mounted.
 </p>
-<div className="intro">
+<div class="intro">
 <p>
   We recommend setting the Envoy proxy’s log level to debug in a pre-production environment. Debug logs can help you identify issues before you graduate the associated configuration to your production environment.
 </p>
@@ -43,13 +46,13 @@ import bugEnvoy from "./debug-envoy-proxy.svg";
 The available log levels are:
 
 <ul>
-  <li className="highlight" style={{width: "fitContent"}}>trace</li>
-  <li className="highlight" style={{width: "fitContent"}}>debug</li>
-  <li className="highlight" style={{width: "fitContent"}}>info</li>
-  <li className="highlight" style={{width: "fitContent"}}>warning/warn</li>
-  <li className="highlight" style={{width: "fitContent"}}>error</li>
-  <li className="highlight" style={{width: "fitContent"}}>critical</li>
-  <li className="highlight" style={{width: "fitContent"}}>off</li>
+  <li className="highlight" style="width: fit-content;">trace</li>
+  <li className="highlight" style="width: fit-content;">debug</li>
+  <li className="highlight" style="width: fit-content;">info</li>
+  <li className="highlight" style="width: fit-content;">warning/warn</li>
+  <li className="highlight" style="width: fit-content;">error</li>
+  <li className="highlight" style="width: fit-content;">critical</li>
+  <li className="highlight" style="width: fit-content;">off</li>
 </ul>
 
 The default is <span className="highlight">info</span>.

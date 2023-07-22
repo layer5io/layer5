@@ -15,12 +15,16 @@ published: true
 resource: true
 ---
 
+import {ResourcesWrapper} from "../../Resources.style.js";
+import {Link} from "gatsby"
 import DockerExtensionCTA from "../../../../sections/Docker-Meshery/docker-extension-CTA.js"
 
 <ResourcesWrapper>
 <p>
 Docker Swarm is a{" "}
-<Link to="../../articles/kubernetes/management-of-kubernetes">container orchestration</Link>{" "}
+<Link to="../../articles/kubernetes/management-of-kubernetes">
+container orchestration
+</Link>{" "}
 tool that makes it easy to manage and scale your existing Docker
 infrastructure. It consists of a pool of Docker hosts that run in Swarm
 mode with some nodes acting as managers, workers, or both. Using Docker
@@ -86,7 +90,7 @@ resources.
         <strong>Manager nodes</strong>: they are tasked with handling orchestration and cluster management functions, and dispatching incoming tasks to worker nodes. They can also act as worker nodes unless placed in Drain mode (recommended).
     </li>
     <li>
-        <strong>Leader</strong>: this is a specific manager node that is elected to perform orchestration tasks and management/maintenance operations by all the manager nodes in the cluster using the <a rel="noreferrer" target="_blank" className="whitespace-nowrap" href="https://raft.github.io/">Raft Consensus Algorithm</a>.
+        <strong>Leader</strong>: this is a specific manager node that is elected to perform orchestration tasks and management/maintenance operations by all the manager nodes in the cluster using the <a rel="" target="_blank" className="whitespace-nowrap" href="https://raft.github.io/">Raft Consensus Algorithm</a>.
     </li>
     <li>
         <strong>Worker nodes</strong>: are Docker instances whose sole purpose is to receive and execute Swarm tasks from manager nodes.
@@ -224,7 +228,8 @@ resources.
     <p>At this point, each of your five Docker instances are acting as separate hosts and not as part of a Swarm cluster. Therefore, in this step, we will initialize the Swarm cluster on the <code>manager-1</code> server and add the hosts to the cluster accordingly.</p>
     <p>Start by logging into one of the Ubuntu servers (<code>manager-1</code>) and retrieve the private IP address of the machine using the following command:</p>
     <pre>
-    <code>hostname -I | awk '&#123;print $1&#125;'</code>
+    <code>hostname -I | awk '&#123;print $1&#125;'
+    </code>
     </pre>
     <p>Copy the IP address to your clipboard and replace the <code>&lt;manager_1_server_ip&gt;</code> placeholder in the command below to initialize Swarm mode:</p>
     <pre>
