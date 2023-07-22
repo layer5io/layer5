@@ -131,6 +131,7 @@ const PricingWrapper = styled.section`
 
     .pricing-label {
       border-radius: 2px;
+      background-color: rgb(235,192,23);
       padding: .25rem .5rem;
       display: block;
       position: relative;
@@ -237,8 +238,8 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: ${props => props.theme.greyDDDDDDToGrey333333};
-      color:  ${props => props.theme.blackToWhite};
+      background: rgb(235,192,23);
+      color: #000;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 

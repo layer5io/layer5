@@ -7,14 +7,14 @@ lectures: 12
 order: 5
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 import Octopus from "../../../../src/assets/images/learn-layer5/linkerd/octopus.webp";
 import WebTop from "../../../../src/assets/images/learn-layer5/linkerd/webtop.webp";
 import WebTap from "../../../../src/assets/images/learn-layer5/linkerd/webtap.webp";
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Debugging application using Linkerd</h2>
+<h2 className="chapter-sub-heading">Debugging application using Linkerd</h2>
 
 We will be using Linkerd to debug the sample application, we had deployed earlier in the workshop. The demo application emojivoto has some issues. Let's use that and Linkerd to diagnose an application that fails in ways which are a little more subtle than the entire service crashing.
 
@@ -22,7 +22,7 @@ Let's jump into debugging the Emojivoto application right away.
 
 <br />
 
-<h3 class="chapter-sub-heading">Exploring the Linkerd Dashboard</h3>
+<h3 className="chapter-sub-heading">Exploring the Linkerd Dashboard</h3>
 
 In the event that you look at the Linkerd dashboard (by running the `linkerd dashboard` command), you should see all the resources in the emojivoto namespace, including the deployments. Every deployments running Linkerd shows success rate, requests per second and latency percentiles. If you see closely, you will observe success rate is below 100% because of some buggy endpoint present in the service.
 
@@ -34,7 +34,7 @@ The first thing you'll see here is that the web deployment is taking traffic fro
 
 While the emoji deployment is handling every request from web successfully, it looks like the voting deployment is failing some requests! A failure in a dependent deployment may be exactly what is causing the errors that web is returning.
 
-<h3 class="chapter-sub-heading"> Debugging the application</h3>
+<h3 className="chapter-sub-heading"> Debugging the application</h3>
 
 Scrolling down a little from the deployment page, we'll see a live list of all traffic that is incoming to and outgoing from web.
 

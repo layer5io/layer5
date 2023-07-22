@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import SpireLogo from "../../collections/integrations/spire/icon/color/spire-color.svg";
-import MesheryAndSpire from "../../collections/resources/articles/hpes-adoption-of-meshery-and-meshmap/meshery-and-hpe.svg";
+import MesheryAndSpire from "../../collections/resources/case-study/hpes-adoption-of-meshery-and-meshmap/meshery-and-hpe.svg";
 
 
 const BannerWrapper = styled.div`
@@ -208,7 +208,7 @@ const CaseStudyBanner = () => {
 
   return (
     <>
-      <a href="/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap">
+      <a href="/resources/case-study/hpes-adoption-of-meshery-and-meshmap">
         <BannerWrapper>
           <div className="small-screen">
             <div className="small-screen-desc">
