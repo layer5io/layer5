@@ -61,14 +61,14 @@ export const HandbookCardWrapper = styled.div`
 	  display: flex;
 	  justify-content: flex-end;
 	  position: absolute;
-	  bottom: 0;
+	  bottom: -8px;
 	  right: 0;
-	  padding-bottom: 10px;
+	  padding-bottom: 3px;
 	}
 
 	.handbook__card--lm {
 	  margin: .5rem 1rem;
-	  font-size: .8rem;
+	  font-size: .7rem;
 	  text-decoration: none;
 	  color: ${props => props.theme.green00D3A9ToBlue477E96};
 	  font-weight: 500;
@@ -95,7 +95,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card:hover {
-	  height: 21rem;
+	  scale: 1.07;
 	}
 
 	.handbook__card:hover .handbook__card--head {

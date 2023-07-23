@@ -97,7 +97,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container_nighthawk{
         display: flex;
-        height: auto;
+        height: 100;
         width: 100%;
         flex-direction: row;
         justify-content: center;
@@ -257,31 +257,31 @@ export const ProjectWrapper = styled.div`
         grid-row: 6/8;
     }
     .project__card.ten{
-        grid-column: 7/8;
+        grid-column: 6/8;
         grid-row: 6/8;
-        img{
-            width: 90px;
-            align-self: center;
-            margin-top: 8px;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-start;
-            } 
-        }
-        h5{
-            margin-top: 1rem;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-end;
-                text-align: center;
-            }
-        }
+        // img{
+        //     width: 90px;
+        //     align-self: center;
+        //     margin-top: 8px;
+        //     @media only screen and (min-width: 780px) {
+        //         align-self: flex-start;
+        //     } 
+        // }
+        // h5{
+        //     margin-top: 1rem;
+        //     @media only screen and (min-width: 780px) {
+        //         align-self: flex-end;
+        //         text-align: center;
+        //     }
+        // }
     }
     .project__card-container-ten{
-        max-width: 100%;
-        height: 10rem;
-        width: 12rem;
         display: flex;
-        flex-direction: column;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -339,7 +339,7 @@ export const ProjectWrapper = styled.div`
         }
         
      }
-     @media only screen and (max-width: 740px) {
+     @media only screen and (max-width: 995px) {
         .project__grid{
             margin: 50px 0;
             display: flex;
