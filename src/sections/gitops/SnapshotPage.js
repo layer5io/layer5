@@ -23,7 +23,7 @@ const SnapshotPage = () => {
             <Description>
                Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Install" url="https://cloud.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="INSTALL" url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
             <MeshMapStack className="stack-logo" />
