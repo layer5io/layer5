@@ -97,7 +97,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container_nighthawk{
         display: flex;
-        height: auto;
+        height: 100;
         width: 100%;
         flex-direction: row;
         justify-content: center;
