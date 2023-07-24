@@ -11,6 +11,7 @@ import mesheryPlayground from "./meshery-playground-meshmap.png";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
+import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
 import Banner1SectionWrapper from "./banner4.style";
 
@@ -79,7 +80,19 @@ const Banner1 = (props) => {
                 playing
                 controls
                 light={mesheryPlayground}
+                playIcon={
+                  <img
+                    src={playIcon}
+                    className="playBtn"
+                    loading="lazy"
+                    alt="Play"
+                    role="button"
+                    aria-label="Play"
+                    style={{ fontSize: "24px" }}
+                  />
+                }
                 width="90%"
+                height="30vw"
                 style={{ margin: "auto" }}
                 className="embedVideo"
               />
