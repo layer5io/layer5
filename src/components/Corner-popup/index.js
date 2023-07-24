@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../reusecore/Button";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
 import popupImageSmall from "./power-of-meshery-small.svg";
@@ -6,25 +6,14 @@ import CornerPopupWrapper from "./popup.style";
 
 const CornerPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const timeoutRef = useRef(null);
 
   useEffect(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
     if (!localStorage.getItem("showPopup")) {
-      timeoutRef.current = setTimeout(() => {
+      setTimeout(() => {
         setShowPopup(true);
       }, 8000);
       localStorage.setItem("showPopup", true);
     } else setShowPopup(false);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
   },[]);
 
   return (

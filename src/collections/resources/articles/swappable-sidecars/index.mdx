@@ -11,9 +11,9 @@ published: true
 resource: true
 ---
 
-
+import { Link } from "gatsby";
 import Swappingproxy from "./figure1.webp";
-
+import { ResourcesWrapper } from "../../Resources.style.js";
 
 <ResourcesWrapper>
   <div className="intro">
@@ -24,11 +24,14 @@ import Swappingproxy from "./figure1.webp";
     One of the most significant considerations to make when establishing a service mesh is the proxy's functionality. From the standpoint of a developer, a proxy's cloud native integrations (e.g., with OpenTelemetry / OpenTracing, Prometheus, and so on) are extremely important. Surprisingly, a developer may be uninterested in the APIs of a proxy. The control plane for the service mesh is the point of control for managing proxy settings. A developer, however, will be interested in the APIs of a management plane. Protocol support is at the top of the developers' wish list for proxies. Protocol considerations can be divided into two categories:
 </p>
 <ul>
-    <li>TCP, UDP, HTTP: Network team-centric consideration in which efficiency, performance, offload, and load balancing algorithm support are evaluated. Support for HTTP2 often takes top billing.</li>
-    <li>gRPC, NATS, Kafka: A developer-centric consideration in which the top item on the list is application-level protocols, specifically those commonly used in modern distributed application designs.</li>
+    <li>TCP, UDP, HTTP: Network team-centric consideration in which efficiency, performance, offload, and load balancing algorithm support are evaluated. Support for HTTP2 often takes top billing.
+</li>
+    <li>gRPC, NATS, Kafka: A developer-centric consideration in which the top item on the list is application-level protocols, specifically those commonly used in modern distributed application designs.
+</li>
 </ul> 
 
-<p>The reality is that selecting the perfect proxy involves more than protocol support. Your proxy should meet all key criteria:</p>
+<p>The reality is that selecting the perfect proxy involves more than protocol support. Your proxy should meet all key criteria:
+</p>
 <ul>
     <li>High performance and low latency</li>
 <li>High scalability and small memory footprint</li>
@@ -42,7 +45,7 @@ import Swappingproxy from "./figure1.webp";
 </p>
 
   <div className="intro">
-      <h3 style={{textAlign: "center"}}>Standardizing Data Plane APIs</h3>
+      <h3 align="center">Standardizing Data Plane APIs</h3>
     <p>
         The xDS APIs are a collection of Envoy's APIs. The Universal Data Plane API (UDPA) working group attempts to create a set of APIs that will serve as the de facto standard for L4/L7 data plane configuration (similar to OpenFlow's role in SDN at L2/L3/L4). The Envoy xDS APIs are being evolved to address service discovery, load balancing assignments, routing discovery, listener configuration, secret discovery, load reporting, health check delegation, and more, in combination with a well-defined, stable API versioning policy.
     </p>    
@@ -68,7 +71,7 @@ If you already have Citrix Application Delivery Controllers and want to use them
     MOSN can deploy as an Istio data plane. You might choose to deploy MOSN if you need to highly customize your service proxy and are a Golang shop. MOSN supports a multi-protocol framework, and you access private protocols with a unified routing framework. It has a multi-process plug-in mechanism, which can easily extend the plug-ins of independent MOSN processes through the plug-in framework, and do some other management, bypass and other functional module extensions.
 </p>
 
-<div className="fact">
+<div class="fact">
     You might find this article on <a href="https://www.oreilly.com/content/how-to-customize-an-istio-service-mesh/">How to customize an Istio service mesh and its adjoining webcast</a> helpful in further understanding Istio’s extensibility with respect to swappable service proxies.
 </div>
 

@@ -61,6 +61,7 @@ const BlogListPage = ({ pageContext, data }) => {
   return (
 
     <>
+
       <BlogList
         data={data}
         pageContext={pageContext}

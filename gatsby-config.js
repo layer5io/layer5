@@ -1,9 +1,4 @@
 /* eslint-env node */
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
-const devIgnoreArray = require("./gatsby-dev-filesystem-ignore");
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +17,6 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
-    "gatsby-plugin-no-sourcemaps",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
@@ -78,7 +72,7 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
-                  cleanupIds: false,
+                  cleanupIDs: false,
                 }
               }
             },
@@ -117,7 +111,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -129,7 +123,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -156,7 +151,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.description,
+                  description: node.body,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -165,7 +160,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -177,7 +172,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -203,7 +199,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.description,
+                  description: node.body,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -212,7 +208,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -224,7 +220,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -262,7 +259,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -274,7 +271,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -308,7 +306,7 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -320,7 +318,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -354,7 +353,7 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.excerpt }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -366,7 +365,8 @@ module.exports = {
                   limit: 20
                 ) {
                   nodes {
-                    excerpt
+                    body
+                    html
                     frontmatter {
                       title
                       author
@@ -406,20 +406,6 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
-        mdxOptions: {
-          remarkPlugins: [
-            // Add GitHub Flavored Markdown (GFM) support
-            require("remark-gfm"),
-          ]
-        },
-        gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1000,
-            },
-          }
-        ],
       },
     },
     {
@@ -434,9 +420,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("blog")
-          : []
       },
     },
     {
@@ -444,9 +427,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/news`,
         name: "news",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("news")
-          : []
       },
     },
     {
@@ -482,9 +462,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/members`,
         name: "members",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("members")
-          : []
       },
     },
     {
@@ -513,9 +490,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/events`,
         name: "events",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("events")
-          : []
       },
     },
     {
@@ -530,9 +504,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/integrations`,
         name: "integrations",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("integrations")
-          : []
       },
     },
     {

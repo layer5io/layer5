@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProjectWrapper = styled.div`
+export const ProjectWrapper = styled.div`
   color: #000;
   margin-top: 50px;
   .heading {
@@ -116,5 +116,3 @@ const ProjectWrapper = styled.div`
     }
   }
 `;
-
-export default ProjectWrapper;
