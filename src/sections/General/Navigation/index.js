@@ -271,7 +271,7 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li className="mobile-nav-item">
-                      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book A Demo</a>
+                      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a>
                     </li>
                   </ul>
                 </div>
