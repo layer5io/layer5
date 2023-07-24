@@ -4,7 +4,7 @@ export const HPEfacts = styled("table")(({ theme }) => ({
   backgroundColor: "#212121",
   borderRadius: "0.5rem",
   marginBottom: "1rem",
-  color: "#FFF",
+  color: "#FFF !important",
 
   " > tr:first-child": {
     color: `${theme.body}`,
