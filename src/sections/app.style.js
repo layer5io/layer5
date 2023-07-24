@@ -20,6 +20,22 @@ const GlobalStyle = createGlobalStyle`
   *:focus {
     outline: none;
   }
+  ::-webkit-scrollbar {
+    width: 0.5rem; 
+}
+
+::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.body}; 
+}
+
+::-webkit-scrollbar-thumb {
+    background:${(props) => props.theme.scrollbarColor}; 
+    border-radius: 0.3rem; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
 
   #___gatsby {
     background: ${(props) => props.theme.body};
