@@ -193,7 +193,7 @@ const WorkshopsSection = () => {
   const data = useStaticQuery(
     graphql`query workshopsList {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
   ) {
     nodes {
@@ -211,8 +211,7 @@ const WorkshopsSection = () => {
       }
     }
   }
-}
-`
+}`
   );
 
   const hasMounted = useHasMounted();

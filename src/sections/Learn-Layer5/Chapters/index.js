@@ -6,7 +6,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
-import ReactTooltip from "react-tooltip";
+import Tooltip from "react-tooltip";
 import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
 
@@ -75,7 +75,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             />
           </Link>
         </div>
-        <ReactTooltip
+        <Tooltip
           id="mesh-name"
           place="bottom"
           effect="solid"

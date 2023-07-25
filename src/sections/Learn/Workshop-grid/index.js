@@ -22,7 +22,7 @@ const WorkshopsPage = () => {
   const data = useStaticQuery(
     graphql`query allWorkshops {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
   ) {
     nodes {
@@ -52,8 +52,7 @@ const WorkshopsPage = () => {
       }
     }
   }
-}
-`
+}`
   );
 
   const toggleActive = (id) => {

@@ -12,32 +12,24 @@ const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
 
 const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(
-    graphql`
-      query allTagsAndCategories {
-        tags: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-          }
-        }
-        categories: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___category) {
-            fieldValue
-            totalCount
-          }
-        }
-      }
-    `
+    graphql`query allTagsAndCategories {
+  tags: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+  categories: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {category: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+}`
   );
 
   const [showTag, setShowTag] = useState(true);

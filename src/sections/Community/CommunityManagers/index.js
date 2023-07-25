@@ -11,8 +11,8 @@ const CommunityManagers = () => {
   const data = useStaticQuery(
     graphql`query managers {
   allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {badges: {in:["community"]},status: {eq: "Active"}}}
+    sort: {frontmatter: {name: ASC}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {badges: {in: ["community"]}, status: {eq: "Active"}}}
   ) {
     nodes {
       id
@@ -39,8 +39,7 @@ const CommunityManagers = () => {
       }
     }
   }
-}
-`
+}`
   );
   return (
     <CommunityManagersWrapper>

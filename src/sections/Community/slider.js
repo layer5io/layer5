@@ -41,25 +41,19 @@ const PictureSliderWrapper = styled.div`
 const PictureSlider = () => {
 
   const data = useStaticQuery(
-    graphql`
-      query community {
-        allFile(
-          filter: {
-            extension: { regex: "/(jpg)|(jpeg)|(png)/" }
-            relativeDirectory: {eq: "Community-pictures"}
-            
-          }
-          sort: {fields: [base] }
-        ) {
-          edges {
-            node {
-              extension
-              publicURL
-            }
-          }
-        }
+    graphql`query community {
+  allFile(
+    filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "Community-pictures"}}
+    sort: {base: ASC}
+  ) {
+    edges {
+      node {
+        extension
+        publicURL
       }
-    `
+    }
+  }
+}`
   );
 
   const settings = {

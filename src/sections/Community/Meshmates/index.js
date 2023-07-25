@@ -16,7 +16,7 @@ const Meshmates = () => {
   const data = useStaticQuery(
     graphql`query meshmates {
   allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
+    sort: {frontmatter: {name: ASC}}
     filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, emeritus: {ne: "yes"}}}
   ) {
     nodes {
@@ -45,8 +45,7 @@ const Meshmates = () => {
       }
     }
   }
-}
-`
+}`
   );
 
   return (

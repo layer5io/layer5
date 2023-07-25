@@ -22,7 +22,7 @@ const Navigation = () => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "service-mesh-books"}}}
     limit: 2
   ) {
@@ -32,11 +32,7 @@ const Navigation = () => {
         title
         thumbnail {
           childImageSharp {
-            gatsbyImageData(
-              width: 1050
-              height:1360
-              layout: CONSTRAINED
-            )
+            gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
           }
           publicURL
         }
@@ -47,7 +43,7 @@ const Navigation = () => {
     }
   }
   Community: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
     limit: 2
   ) {
@@ -74,8 +70,8 @@ const Navigation = () => {
     }
   }
   Resources: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {featured: {eq: true}}}
     limit: 2
   ) {
     nodes {
@@ -101,7 +97,7 @@ const Navigation = () => {
     }
   }
   Home: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
     limit: 2
   ) {
@@ -127,8 +123,7 @@ const Navigation = () => {
       }
     }
   }
-}
-`
+}`
   );
   data["Products"] = {
     nodes: [

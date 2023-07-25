@@ -14,7 +14,7 @@ const NewsSingle = ({ data }) => {
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
     limit: 6
   ) {
@@ -40,8 +40,7 @@ const NewsSingle = ({ data }) => {
       }
     }
   }
-}
-`
+}`
   );
   const posts = newsData.allMdx.nodes;
   const relatedPosts = posts.filter(

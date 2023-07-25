@@ -5,7 +5,7 @@ import Meetups from "../sections/Events/index";
 
 export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   allCategories: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
     skip: $skip
     limit: $limit
@@ -44,7 +44,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
     }
   }
   allMeetups: allMdx(
-    sort: {fields: frontmatter___date, order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {frontmatter: {type: {eq: "Meetups"}, published: {eq: true}}}
   ) {
     totalCount
@@ -113,7 +113,9 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}) {
+  allEvents: allMdx(
+    filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}
+  ) {
     nodes {
       id
       fields {
@@ -145,7 +147,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   }
   allUpcoming: allMdx(
     filter: {frontmatter: {upcoming: {eq: true}}, fields: {collection: {eq: "events"}}}
-    sort: {fields: frontmatter___date, order: DESC}
+    sort: {frontmatter: {date: DESC}}
   ) {
     nodes {
       id
@@ -175,8 +177,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       }
     }
   }
-}
-`;
+}`;
 
 const Events = ({ data, pageContext }) => {
   return (

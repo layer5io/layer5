@@ -103,32 +103,29 @@ const BooksListWrapper = styled.div`
 
 const BooksSection = () => {
   const data = useStaticQuery(
-    graphql`
-            query booksList {
-                allMdx(
-                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: ASC }
-                    limit: 2
-                ) 
-                {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            abstract
-                            thumbnail{
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query booksList {
+  allMdx(
+    filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
+    sort: {frontmatter: {date: ASC}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        abstract
+        thumbnail {
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}`
   );
 
   return (

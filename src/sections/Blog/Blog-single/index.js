@@ -26,60 +26,57 @@ const BlogSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
-      relatedPosts: allMdx(
-        sort: {fields: [frontmatter___date], order: DESC}
-        filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-      ) {
-        nodes {
-          frontmatter {
-            title
-            date(formatString: "MMM Do YYYY")
-            author
-            category
-            tags
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-              extension
-              publicURL
-            }
-            darkthumbnail {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-              extension
-              publicURL
-            }
+  relatedPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        title
+        date(formatString: "MMM Do YYYY")
+        author
+        category
+        tags
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
-          fields {
-            slug
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
         }
       }
-      authors: allMdx(
-        sort: { fields: [frontmatter___name], order: ASC }
-        filter: {
-          fields: { collection: { eq: "members" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        nodes {
-          frontmatter{
-            bio
-            name
-            image_path {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
+      fields {
+        slug
+      }
+    }
+  }
+  authors: allMdx(
+    sort: {frontmatter: {name: ASC}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        bio
+        name
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
-          slug
+          extension
+          publicURL
         }
       }
-    }  `
+      slug
+    }
+  }
+}`
   );
 
   const posts = blogData.nodes;

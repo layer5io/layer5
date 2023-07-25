@@ -14,7 +14,7 @@ const SoSpecial = () => {
     graphql`query newsList {
   allMdx(
     filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     limit: 8
   ) {
     nodes {
@@ -30,7 +30,7 @@ const SoSpecial = () => {
           extension
           publicURL
         }
-        darkthumbnail{
+        darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
@@ -43,8 +43,7 @@ const SoSpecial = () => {
       }
     }
   }
-}
-`
+}`
   );
   const settings = {
     dots: false,
