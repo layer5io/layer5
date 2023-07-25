@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row } from "../reusecore/Layout";
 import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
-import ReactTooltip from "react-tooltip";
+import Tooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
@@ -61,7 +61,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
           <BsGrid3X3GapFill size={22} />
         </a>
         <NoSsr>
-          <ReactTooltip
+          <Tooltip
             id="grid-view"
             border
             className="grid-view"
@@ -79,7 +79,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
           <TiThList size={22} />
         </a>
         <NoSsr>
-          <ReactTooltip
+          <Tooltip
             id="list-view"
             className="list-view"
             backgroundColor="black"

@@ -4,7 +4,7 @@ import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./SMITable.style";
 import { non_functional } from "../../collections/landscape/non-functional";
-import ReactTooltip from "react-tooltip";
+import Tooltip from "react-tooltip";
 import { StaticImage } from "gatsby-plugin-image";
 
 const halfMark = "../../assets/images/landscape/half.svg";
@@ -57,7 +57,7 @@ const Table = ({ columns, data, spec }) => {
                       (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
                         <>
                           <img data-for="react-tooltip" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
-                          <ReactTooltip
+                          <Tooltip
                             id="react-tooltip"
                             place="bottom"
                             effect="solid"
@@ -68,7 +68,7 @@ const Table = ({ columns, data, spec }) => {
                         </>
                         : <>
                           <StaticImage  data-for="react-tooltip" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
-                          <ReactTooltip
+                          <Tooltip
                             id="react-tooltip"
                             place="bottom"
                             effect="solid"
