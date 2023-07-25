@@ -38,7 +38,93 @@ const Navigation = () => {
           }
         }
       }
-    `
+      fields {
+        slug
+      }
+    }
+  }
+  Community: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Resources: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {featured: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Home: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}`
   );
   data["Products"] = {
     nodes: [
