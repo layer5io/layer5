@@ -2,7 +2,6 @@ import React from "react";
 import { AdventuresWrapper } from "./adventures.style.js";
 import AdventuresVol from "../../../components/AdventuresVol/index";
 import vol1Img from "./vol1/meet-five.png";
-import vol1Link from "./vol1/mascot-five-adventure-github-stars.pdf";
 
 
 const AdventuresHome = () => {
