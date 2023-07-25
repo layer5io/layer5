@@ -4,7 +4,7 @@ import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./SMITable.style";
 import { non_functional } from "../../collections/landscape/non-functional";
-import Tooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import { StaticImage } from "gatsby-plugin-image";
 
 const halfMark = "../../assets/images/landscape/half.svg";

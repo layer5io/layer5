@@ -4,7 +4,7 @@ import { meshes } from "../../collections/landscape/meshes";
 import { gateways } from "../../collections/landscape/gateways";
 import { proxies } from "../../collections/landscape/proxies";
 import { load_balancer } from "../../collections/landscape/load-balancer";
-import Tooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 
 function Categories() {
   return (

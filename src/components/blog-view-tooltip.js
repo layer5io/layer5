@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row } from "../reusecore/Layout";
 import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
-import Tooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
-import Tooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./LandscapeTable.style";
