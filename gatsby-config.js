@@ -72,7 +72,7 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
-                  cleanupIDs: false,
+                  cleanupIds: false,
                 }
               }
             },
@@ -115,33 +115,31 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "resources", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events", "FAQ"] } } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      description
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["blog", "resources", "news"]}}, frontmatter: {published: {eq: true}, category: {nin: ["Programs", "Community", "Events", "FAQ"]}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        description
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
           },
@@ -164,32 +162,30 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: [ "news"] } }, frontmatter: { published: { eq: true } } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["news"]}}, frontmatter: {published: {eq: true}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/news/feed.xml",
             title: "Layer5 News",
           },
@@ -212,35 +208,33 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: [ "resources"] } }, frontmatter: { published: { eq: true } } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                      darkthumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["resources"]}}, frontmatter: {published: {eq: true}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+        darkthumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
           },
@@ -263,33 +257,31 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true } } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      description
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["blog", "news"]}}, frontmatter: {published: {eq: true}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        description
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
           },
@@ -310,33 +302,31 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog"] } }, frontmatter: { published: { eq: true }, } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      description
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["blog"]}}, frontmatter: {published: {eq: true}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        description
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/blog/feed.xml",
             title: "Layer5 Blog"
           },
@@ -357,33 +347,31 @@ module.exports = {
                 });
               });
             },
-            query: `
-              {
-                allPosts: allMdx(
-                  sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["events"] } }, frontmatter: { published: { eq: true }, } }
-                  limit: 20
-                ) {
-                  nodes {
-                    body
-                    html
-                    frontmatter {
-                      title
-                      author
-                      description
-                      date(formatString: "MMM DD YYYY")
-                      thumbnail {
-                        publicURL
-                      }
-                    }
-                    fields {
-                      collection
-                      slug
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allPosts: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["events"]}}, frontmatter: {published: {eq: true}}}
+    limit: 20
+  ) {
+    nodes {
+      body
+      html
+      frontmatter {
+        title
+        author
+        description
+        date(formatString: "MMM DD YYYY")
+        thumbnail {
+          publicURL
+        }
+      }
+      fields {
+        collection
+        slug
+      }
+    }
+  }
+}`,
             output: "/events/feed.xml",
             title: "Layer5 Events"
           },
