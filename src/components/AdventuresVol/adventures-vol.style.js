@@ -105,6 +105,6 @@ export const AdventuresVolWrapper = styled.div`
     }
 
     .handbook__card:hover .handbook__card--head {
-        color: white;
+        color: #fff;
     }
 `;
