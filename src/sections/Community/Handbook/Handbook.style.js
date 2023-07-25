@@ -338,13 +338,13 @@ export const HandbookWrapper = styled.div`
     }
 
     .channels-img {
-      width: 40px;
+      // width: 40px;
       height: 30px;
     }
 
     .channels-para {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .newcomers-journey{

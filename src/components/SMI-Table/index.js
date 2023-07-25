@@ -80,27 +80,27 @@ const Table = ({ columns, data, spec }) => {
                     }
                   </td>
                   <td>{row.original.mesh_version}</td>
-                  {row.original.more_details.map(spec => {
+                  {row.original.more_details.map((spec,i) => {
                     if (spec["capability"] === "FULL"){
-                      return <td>
+                      return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["result"]}`}>
                           <StaticImage className="smiMark" src={passingMark} alt="Pass Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "HALF"){
-                      return <td>
+                      return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
                           <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "NONE") {
-                      return <td >
+                      return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
                           <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
                         </div>
                       </td>;
                     } else {
-                      return <td >
+                      return <td key={`spec${i}`}>
                         <IconContext.Provider value={{ color: "gray", size: "20px" }}>
                           <IoMdHelpCircle />
                         </IconContext.Provider>
@@ -117,21 +117,21 @@ const Table = ({ columns, data, spec }) => {
                       <tr key={`collapse-row${i}`} className={isCollapsed[i] ? "secondaryRow" : "secondaryRow-hidden"} >
                         <td></td>
                         <td>{prevResult.mesh_version}</td>
-                        {prevResult.more_details.map(spec => {
+                        {prevResult.more_details.map((spec,i) => {
                           if (spec["capability"] === "Full"){
-                            return <td key="capability-half">
+                            return <td key={`spec${i}`}>
                               <StaticImage className="smiMark" src={passingMark} alt="Passing Mark" />
                             </td>;
                           } else if (spec["capability"] === "None"){
-                            return <td>
-                              <StaticImage key="capability-none" className="smiMark" src={failingMark} alt="Fail Mark" />
+                            return <td key={`spec${i}`}>
+                              <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
                             </td>;
                           } else if (spec["capability"] === "Half"){
-                            return <td>
-                              <StaticImage key="capability-half" className="smiMark" src={halfMark} alt="Half Mark" />
+                            return <td key={`spec${i}`}>
+                              <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
                             </td>;
                           } else {
-                            return <td >
+                            return <td key={`spec${i}`}>
                               <IconContext.Provider value={{ color: "gray", size: "20px" }}>
                                 <IoMdHelpCircle />
                               </IconContext.Provider>

@@ -55,6 +55,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resoruce Redirects
@@ -63,7 +64,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap", toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
@@ -718,6 +719,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        eurl: String,
        twitter: String,
        github: String,
+       layer5: String,
        meshmate: String,
        maintainer:String,
        emeritus: String,
