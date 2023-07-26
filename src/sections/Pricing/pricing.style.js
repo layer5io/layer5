@@ -3,8 +3,8 @@ import styled from "styled-components";
 const PricingWrapper = styled.section`
 
 .headers {
-  background:${props => props.theme.grey212121ToGreen1E2117};
-  background: linear-gradient(0deg, ${props => props.theme.grey121212ToWhite} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background:${props => props.theme.secondaryColor};
+  background: linear-gradient(0deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -131,6 +131,7 @@ const PricingWrapper = styled.section`
 
     .pricing-label {
       border-radius: 2px;
+      background-color: rgb(235,192,23);
       padding: .25rem .5rem;
       display: block;
       position: relative;
@@ -237,8 +238,8 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-label {
-      background: ${props => props.theme.greyDDDDDDToGrey333333};
-      color:  ${props => props.theme.blackToWhite};
+      background: rgb(235,192,23);
+      color: #000;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
