@@ -62,6 +62,7 @@ export const MemberSingleWrapper = styled.div`
         }
     }
     .profile-image{
+        filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         &:hover{
             transition: 0.9s;
             border-radius: 5px 50px 5px 50px;
