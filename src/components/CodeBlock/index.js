@@ -41,7 +41,7 @@ const CopyCode = styled.button`
   }
 `;
 
-const Code = ({ codeString, language }) => {
+const Code = ({ codeString, language = "jsx" }) => {
   const [copyText, setCopyText] = useState("Copy");
   const handleClick = () => {
     copyToClipboard(codeString);
