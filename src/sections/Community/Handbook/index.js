@@ -96,11 +96,6 @@ const handbookHome = () => {
           description="General frequently asked questions (FAQ) about Layer5 and people who contribute through reporting issues, to submit pull requests or patches, and other activities."
           to="/community/handbook/faq"
         />
-        <HandbookCard
-          title="Five and His Adventures"
-          description="Join the thrilling odyssey of Meshworld with Five, our intergalactic cloud native hero! His mission: to explore planet Meshery using a trusty rocket ship, powered by the stars of GitHub. Get set for an unparalleled adventure!"
-          to="/community/adventures-of-five-and-friends"
-        />
       </div>
     </HandbookWrapper>
   );
