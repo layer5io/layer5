@@ -36,7 +36,6 @@ export const ProfileCardWrapper = styled.div`
                 font-size: 1.1rem;
                 font-weight: bold;
                 transform:rotate(45deg);
-                background:linear-gradient(rgb(86 120 114) 0%, rgb(0, 179, 159) 100%);
                 color: #fff;
                 z-index: 1;
                 box-shadow: rgb(0, 0, 0) 0px 3px 10px -5px;
