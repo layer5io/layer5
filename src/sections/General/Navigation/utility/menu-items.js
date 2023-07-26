@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/projects",
+      path: "/cloud-native-management/meshmap",
       subItems: [
         // {
         //   name: "Image Hub",
@@ -27,6 +27,10 @@ const Data = {
         {
           name: "Collaborative GitOps",
           path: "/cloud-native-management/meshmap/collaborate",
+        },
+        {
+          name: "GitOps with Cloud Native Insights",
+          path: "/cloud-native-management/gitops",
         },
       ],
       actionItems: [
@@ -76,7 +80,7 @@ const Data = {
       // }
     },
     {
-      name: "Projects",
+      name: "Products",
       path: "/projects",
       subItems: [
         // {
@@ -92,6 +96,7 @@ const Data = {
         {
           name: "Catalog",
           path: "/catalog",
+          externalLink: true
         },
         {
           name: "Docker Extension",
@@ -104,6 +109,7 @@ const Data = {
         {
           name: "Playground",
           path: "/cloud-native-management/playground",
+          externalLink: true
         },
         {
           name: "Nighthawk",
@@ -119,10 +125,10 @@ const Data = {
           name: "Patterns",
           path: "/learn/service-mesh-books/service-mesh-patterns",
         },
-        {
-          name: "Interface",
-          path: "/projects/service-mesh-interface-conformance",
-        },
+        // {
+        //   name: "Interface",
+        //   path: "/projects/service-mesh-interface-conformance",
+        // },
         {
           name: "Landscape",
           path: "/service-mesh-landscape",
@@ -152,54 +158,59 @@ const Data = {
       // }
     },
     {
-      name: "Learn",
-      path: "/learn",
-      subItems: [
-        {
-          name: "Books",
-          path: "/learn/service-mesh-books",
-          sepLine: true
-        },
-        {
-          name: "Forum",
-          path: "https://discuss.layer5.io",
-          sepLine: true
-        },
-        {
-          name: "Workshops",
-          path: "/learn/service-mesh-workshops",
-          sepLine: true
-        },
-        {
-          name: "Learning Paths",
-          path: "/learn/learning-paths",
-          sepLine: true
-        },
-        {
-          name: "Interactive Labs",
-          path: "/learn/service-mesh-labs",
-          sepLine: true
-        },
-      ],
-      actionItems: [
-        {
-          actionName: "Join the discussion",
-          actionLink: "https://discuss.layer5.io",
-        },
-        // {
-        //   actionName: "Free service mesh training",
-        //   actionLink: "/learn",
-        // }
-      ],
-      // div1: {
-      //   src: meshery,
-      //   descr: "How I schooled my seniors"
-      // },
-      // div2: {
-      //   src: img2,
-      //   descr: "Service Mesh Istio patterns for multitenancy"
-      // }
+      name: "Pricing",
+      path: "/pricing"
     },
+    // {
+    //   name: "Learn",
+    //   path: "/learn",
+    //   subItems: [
+    //     {
+    //       name: "Books",
+    //       path: "/learn/service-mesh-books",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Forum",
+    //       path: "https://discuss.layer5.io",
+    //       sepLine: true,
+    //       externalLink: true
+    //     },
+    //     {
+    //       name: "Workshops",
+    //       path: "/learn/service-mesh-workshops",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Learning Paths",
+    //       path: "/learn/learning-paths",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Interactive Labs",
+    //       path: "/learn/service-mesh-labs",
+    //       sepLine: true
+    //     },
+    //   ],
+    //   actionItems: [
+    // {
+    //   actionName: "Join the discussion",
+    //   actionLink: "https://discuss.layer5.io",
+    // },
+    //     // {
+    //     //   actionName: "Free service mesh training",
+    //     //   actionLink: "/learn",
+    //     // }
+    //   ],
+    //   // div1: {
+    //   //   src: meshery,
+    //   //   descr: "How I schooled my seniors"
+    //   // },
+    //   // div2: {
+    //   //   src: img2,
+    //   //   descr: "Service Mesh Istio patterns for multitenancy"
+    //   // }
+    // },
     {
       name: "Community",
       path: "/community",
@@ -250,25 +261,51 @@ const Data = {
       }
     },
     {
-      name: "Blog",
-      path: "/blog",
+      name: "Resources",
+      path: "/resources",
       subItems: [
         {
-          name: "Resources",
-          path: "/resources",
+          name: "Blog",
+          path: "/blog",
+          sepLine: true
+        },
+        // {
+        //   name: "News",
+        //   path: "/news",
+        //   sepLine: true
+        // },
+        {
+          name: "Books",
+          path: "/learn/service-mesh-books",
+          sepLine: true
+        },
+        // {
+        //   name: "Forum",
+        //   path: "https://discuss.layer5.io",
+        //   sepLine: true,
+        //   externalLink: true
+        // },
+        {
+          name: "Workshops",
+          path: "/learn/service-mesh-workshops",
           sepLine: true
         },
         {
-          name: "News",
-          path: "/news",
+          name: "Learning Paths",
+          path: "/learn/learning-paths",
           sepLine: true
-        }
+        },
+        {
+          name: "Interactive Labs",
+          path: "/learn/service-mesh-labs",
+          sepLine: true
+        },
       ],
       actionItems: [
-        {
-          actionName: "Explore resource library",
-          actionLink: "/resources",
-        },
+        // {
+        //   actionName: "Explore resource library",
+        //   actionLink: "/resources",
+        // },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",
@@ -276,7 +313,11 @@ const Data = {
         {
           actionName: "Recent announcements",
           actionLink: "/blog/category/announcements"
-        }
+        },
+        {
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
+        },
       ],
       // div1: {
       //     src: img1,

@@ -67,9 +67,9 @@ const Faq = (props) => {
             <input type="text" placeholder="Search" />
           </div> */}
         </SectionTitle>
-        <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
-          {faq_keys.map((key) => (
-            <>
+        <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
+          {faq_keys.map((key, index) => (
+            <React.Fragment key={index}>
               <h2 className="category_name">{key}</h2>
               {faqs[key].map((faq, index) => (
                 <AccordionItem key={index}>
@@ -85,16 +85,23 @@ const Faq = (props) => {
                     </IconWrapper>
                   </AccordionTitle>
                   <AccordionBody>
-                    {
-                      faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
-                    }
-                    <div className="faqbutton">
-                      {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />}
+                    <div className="inner">
+                      {
+                        faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
+                      }
+                      {faq.link &&
+                       <div className="faqbutton">
+                         {faq.link.startsWith("/")
+                           ? <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />
+                           :  <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={true} />
+                         }
+                       </div>
+                      }
                     </div>
                   </AccordionBody>
                 </AccordionItem>
               ))}
-            </>
+            </React.Fragment>
           ))}
         </Accordion>
         <div className="askus_section">

@@ -9,6 +9,7 @@ import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
+import CaseStudyBanner from "../components/Case-study-banner";
 
 
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
@@ -36,8 +37,9 @@ const IndexPage = () => {
       {/* <News /> */}
       {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
-      <SoSpecial  />
+      {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
+      <CaseStudyBanner/>
       <ServiceMeshFocussed bookName={"enterprise-path"} />
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
@@ -60,7 +62,7 @@ export const Head = () => {
     ]
   };
   return (
-    <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud naative standards. Maker of Meshery, the cloud native manager."
+    <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery, the cloud native manager."
       schemaMarkup={schema} />
   );
 };

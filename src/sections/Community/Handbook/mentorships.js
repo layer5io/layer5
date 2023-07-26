@@ -1,4 +1,4 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import styled from "styled-components";
@@ -22,20 +22,61 @@ const ConductWrapper = styled.div`
           }
           p{
               color: ${props => props.theme.tertiaryColor};
-              
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
       }
-      img{
+      img, svg {
           height: auto;
           width: 23rem;
           display: block;
           margin-left: auto;
           margin-right: auto;
       }
+
+      path {
+        stroke: none;
+      }
+
+      .communitybridge_logo_svg__cls-1{
+        fill: ${props => props.theme.whiteToBlue003764};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .hacktoberfest_svg__cls-1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${props => props.theme.whiteToRed662839};
+      }
+
+      .lfx-white_svg__b{
+        fill: ${props => props.theme.whiteToBlue003764};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .lfx-white_svg__c{
+        fill: ${props => props.theme.whiteToBlue0096d6};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .layer5-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .mlh_svg__cls-1 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .sca_svg__fil0, .sca_svg__fil6 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      
       Button{
           margin: 1.25rem 0px;
           color: white;
       }
+
       #col2 {
         align-self: center
       }
@@ -100,7 +141,10 @@ const MentorshipPrograms = () => {
                       </div>
                     </Col>
                     <Col lg={6} md={6} sm={12} id="col2">
-                      <img src={imageLink} alt="logo" />
+                      { isValidElement(imageLink)
+                        ? imageLink
+                        :  <img src={imageLink} title="Click to know More about our partner" alt={name} />
+                      }
                     </Col>
                   </Row>
                 </div>

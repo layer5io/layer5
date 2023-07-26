@@ -43,6 +43,7 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
     }
     &[aria-expanded='true'] {
       background: ${props => props.theme.grey8C8C8CToGreen1E2117};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
 
@@ -56,11 +57,35 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
 export const AccordionItemButtonWrapper = styled(AccordionItemButton)`
   padding: 0.625rem 1.5rem 0.625rem 1.5rem;
   `;
+
 export const AccordionBodyWrapper = styled(AccordionItemPanel)`
-  animation: 0.35s ${fadeIn} ease-in;
-  &.accordion__body--hidden {
-    animation: 0.35s ${fadeIn} ease-in;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows ease 1.0s;
+
+  > .inner {
+      min-height: 0;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.35s;
   }
+
+  &[hidden] {
+      grid-template-rows: 0fr;
+
+      > .inner {
+          visibility: hidden;
+          opacity: 0;
+          transition: opacity 0.35s, visibility 0s 0.35s;
+      }
+  }
+
+  // animation: 0.35s ${fadeIn} ease-in;
+  // &.accordion__body--hidden {
+  //   animation: 0.35s ${fadeIn} ease-in;
+  // }
+
 `;
 
 export const IconWrapper = styled.div`

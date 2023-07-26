@@ -73,7 +73,7 @@ const Navigation = () => {
       }
     }
   }
-  Blog: allMdx(
+  Resources: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
@@ -130,7 +130,7 @@ const Navigation = () => {
 }
 `
   );
-  data["Projects"] = {
+  data["Products"] = {
     nodes: [
       {
         frontmatter: {
@@ -170,7 +170,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const outsideClickHandler = (e) => {
-      if (expand && navWrapRef.current && !navWrapRef.current.contains(e.target)){
+      if (expand && navWrapRef.current && !navWrapRef.current.contains(e.target)) {
         setExpand(false);
         closeDropDown();
       }
@@ -212,12 +212,12 @@ const Navigation = () => {
             {expand ?
               <IoMdClose
                 className="mobile-menu-icon open"
-                onClick={function() {
+                onClick={function () {
                   setExpand(false); closeDropDown();
                 }}
               /> : <FaBars
                 className="mobile-menu-icon"
-                onClick={function() {
+                onClick={function () {
                   setExpand(true); openDropDown();
                 }}
               />
@@ -237,21 +237,19 @@ const Navigation = () => {
                       <Link to={menu.path} onClick={changeDropdownState} className="menu-item" activeClassName="nav-link-active">{menu.name}</Link>
                       <ul>
                         {menu.subItems !== undefined && menu.subItems.map((subItems, index) => {
-                          const externalLinks = ["Forum", "Catalog", "Playground"];
-
                           return (
                             <li
                               key={index}
                               className="mobile-nav-subitem"
                             >
-                              {externalLinks.includes(subItems.name) ?
-                                <a href={subItems.path} target="_blank" onClick={ () => {
+                              {subItems.externalLink ?
+                                <a href={subItems.path} target="_blank" onClick={() => {
                                   changeDropdownState();
                                   closeDropDown();
                                 }} className="mobile-sub-menu-item" rel="noreferrer">
                                   {subItems.name}
                                 </a>
-                                : <Link to={subItems.path} onClick={ () => {
+                                : <Link to={subItems.path} onClick={() => {
                                   changeDropdownState();
                                   closeDropDown();
                                 }} className="mobile-sub-menu-item" activeClassName="nav-link-active">{subItems.name}</Link>
@@ -266,14 +264,14 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li>
-                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true}/>
+                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true} />
                     </li>
                   </ul>
                 </div>
                 <div>
                   <ul>
                     <li className="mobile-nav-item">
-                      <a href="https://meshery.layer5.io/login" className="menu-item">Login</a>
+                      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a>
                     </li>
                   </ul>
                 </div>
@@ -288,8 +286,11 @@ const Navigation = () => {
 
         </div>
         <div className="meshery-cta">
-          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud"  url="https://meshery.layer5.io/registration" />
-          <Button id="login" aria-label="Login to Layer5 Cloud" secondary className="banner-btn login" external={true} title="Login" alt="Login for Layer5 Cloud"  url="https://meshery.layer5.io/login" />
+          {/* <Button primary className="banner-btn two" title="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true">
+            <BsFillCalendarFill size={21} className="icon-left" />
+          </Button> */}
+          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud" url="https://meshery.layer5.io/registration" />
+          <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           <div className="dark-theme-toggle">
             <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!isDark} />
           </div>

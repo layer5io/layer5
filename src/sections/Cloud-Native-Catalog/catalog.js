@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
@@ -13,6 +13,7 @@ const CatalogWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
   background-color: ${(props) => props.theme.body};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding-top: 100px;
   padding-bottom: 100px;
   @media (max-width: 468px) {
@@ -63,6 +64,7 @@ const CatalogWrapper = styled.div`
         font-size: 3.125rem;
         line-height: 3.813rem;
         color: ${(props) => props.theme.tertiaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         margin-bottom: 2rem;
         @media (max-width: 992px) {
           font-size: 2.8rem;
@@ -86,6 +88,7 @@ const CatalogWrapper = styled.div`
         font-size: 1.563rem;
         line-height: 2rem;
         color: ${(props) => props.theme.tertiaryColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         opacity: 0.8;
         @media (max-width: 767px) {
           font-size: 1rem;
@@ -124,12 +127,8 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
-  const [img, setImg] = useState(CatalogsLight);
-  const { isDark } = useStyledDarkMode();
 
-  useEffect(() => {
-    isDark ? setImg(CatalogsDark) : setImg(CatalogsLight);
-  }, [isDark]);
+  const { isDark } = useStyledDarkMode();
 
   return (
     <CatalogWrapper>
@@ -137,7 +136,7 @@ const Catalog = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={img} className="calalog-image" />
+              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -152,8 +151,7 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
-              EWebAssembly filters grant meticulous command over service
-              requests, seamlessly integrated into the data plane.
+              Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
             </p>
           </Col>
           <Col md={6} className="catalog-image">

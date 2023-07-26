@@ -122,7 +122,7 @@ alt="Learn Layer5" align="left" />
 <br />
 
 
-<p style="clear:both;">
+<!-- <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
 <a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
 style="float:left;margin:10px;" width="125px"
@@ -131,7 +131,7 @@ alt="Service Mesh Interface Conformance" align="left" /></a>
 <br /><br /><br />
 </p>
 <br />
-
+ -->
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/nighthawk">Nighthawk</a></h2>

@@ -1,19 +1,15 @@
 import React from "react";
-
-
-
+import { useState } from "react";
+import useDataList from "../utils/usedataList";
 import SEO from "../components/seo";
-
-
 import BlogList from "../sections/Blog/Blog-list";
-
 import { graphql } from "gatsby";
+
 export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: [$tag]}, published: {eq: true}}}
   ) {
-    totalCount
     nodes {
       id
       body
@@ -47,13 +43,37 @@ export const query = graphql`query BlogsByTags($tag: String!) {
 
 const BlogListPage = ({ pageContext, data }) => {
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  let { nodes } = data.allMdx;
+  const [searchQuery, setSearchQuery] = useState("");
+  const { queryResults, searchData } = useDataList(
+    nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    "id"
+  );
+  const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
 
     <>
 
-
-      <BlogList data={data} pageContext={pageContext} />
+      <BlogList
+        data={data}
+        pageContext={pageContext}
+        searchedPosts={searchedPosts}
+        setCurrentPage={setCurrentPage}
+        postsPerPage={postsPerPage}
+        searchData={searchData}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        currentPage={currentPage}
+        queryResults={queryResults}
+      />
 
     </>
 
