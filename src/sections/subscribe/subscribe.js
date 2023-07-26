@@ -4,7 +4,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const subscribe = () => {
+const subscribe = ({ msg = "Stay meshy" }) => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">
@@ -12,7 +12,7 @@ const subscribe = () => {
           <Row>
             <Col md={6}>
               <SectionTitle className="section-title" UniWidth="100%">
-                <h2><span className="meshy">Stay meshy </span>and subscribe!</h2>
+                <h2><span className="meshy">{msg}</span> and subscribe!</h2>
               </SectionTitle>
             </Col>
             <Col md={6}>
