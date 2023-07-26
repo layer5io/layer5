@@ -69,7 +69,7 @@ const ProjectPage = () => {
             >
               <div className="project__card-container">
                 <img src={smp} alt="Service Mesh Performance" />
-                <h5>Service Mesh Performance</h5>
+                <h5>Cloud Native Performance</h5>
               </div>
             </Link>
             {/* <Link to="/projects/service-mesh-interface-conformance"
