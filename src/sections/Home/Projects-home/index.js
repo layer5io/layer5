@@ -59,7 +59,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/projectsto doing something/service-mesh-performance">
+              <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
                     {( isDark ) ? (

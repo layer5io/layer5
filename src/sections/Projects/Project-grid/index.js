@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
-
+import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import { ProjectWrapper } from "./projectGrid.style";
 import MeshMapCTA from "../../meshmap-cta";
 
@@ -11,7 +11,8 @@ import extension from "../../../assets/images/docker-extension/docker-extension-
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import smp_dark from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import smp_light from "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
 import smi from "../../../assets/images/app/projects/smi.svg";
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
@@ -22,6 +23,7 @@ import SoSpecial from "../../Home/So-Special-Section";
 
 
 const ProjectPage = () => {
+  const { isDark } = useContext(ThemeManagerContext);
   return (
     <ProjectWrapper>
       <PageHeader
@@ -68,7 +70,7 @@ const ProjectPage = () => {
               className="project__card five"
             >
               <div className="project__card-container">
-                <img src={smp} alt="Service Mesh Performance" />
+                <img src={isDark ? smp_light : smp_dark} alt="Service Mesh Performance" />
                 <h5>Cloud Native Performance</h5>
               </div>
             </Link>
