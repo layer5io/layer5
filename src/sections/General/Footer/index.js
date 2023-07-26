@@ -245,7 +245,7 @@ const Footer = ({ location }) => {
                       className="category-link"
                       to="/projects/service-mesh-performance"
                     >
-                      Service Mesh Performance
+                      Cloud Native Performance
                     </Link>
                   </li>
                 </ul>
