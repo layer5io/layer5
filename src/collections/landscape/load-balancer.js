@@ -10,6 +10,11 @@ export const load_balancer = [
     desc: "NGINX -  is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
   },
   {
+    name: "Pipy",
+    link: "https://flomesh.io/pipy/",
+    desc: "Flomesh Pipy is an open source programmable network proxy for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
+  },
+  {
     name: "Proxygen",
     link: "https://github.com/facebook/proxygen",
     desc: "Proxygen - is an open source library that not only powers Facebook's load balancer, but is also used by HHVM (github/facebook/hhvm)."

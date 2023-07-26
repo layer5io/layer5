@@ -97,7 +97,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container_nighthawk{
         display: flex;
-        height: auto;
+        height: 100;
         width: 100%;
         flex-direction: row;
         justify-content: center;
@@ -257,31 +257,31 @@ export const ProjectWrapper = styled.div`
         grid-row: 6/8;
     }
     .project__card.ten{
-        grid-column: 7/8;
+        grid-column: 6/8;
         grid-row: 6/8;
-        img{
-            width: 90px;
-            align-self: center;
-            margin-top: 8px;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-start;
-            } 
-        }
-        h5{
-            margin-top: 1rem;
-            @media only screen and (min-width: 780px) {
-                align-self: flex-end;
-                text-align: center;
-            }
-        }
+        // img{
+        //     width: 90px;
+        //     align-self: center;
+        //     margin-top: 8px;
+        //     @media only screen and (min-width: 780px) {
+        //         align-self: flex-start;
+        //     } 
+        // }
+        // h5{
+        //     margin-top: 1rem;
+        //     @media only screen and (min-width: 780px) {
+        //         align-self: flex-end;
+        //         text-align: center;
+        //     }
+        // }
     }
     .project__card-container-ten{
-        max-width: 100%;
-        height: 10rem;
-        width: 12rem;
         display: flex;
-        flex-direction: column;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -315,31 +315,11 @@ export const ProjectWrapper = styled.div`
         
     }
     @media only screen and (max-width: 991px) {
-        padding: 5px 0 0 0;
-        .project-text{
+        .project__card-container{
+            justify-content: center;
+            gap: 12px;
+            
         }
-        .project__card h5{
-            font-size: 12px;
-        }
-        .project__card.two{
-            img{
-                height: 100px;
-                width: 100px;
-            }
-            h5{
-                font-size: 25px;
-            }
-        }
-        .project__card.three img{
-            width: 70px;
-        }
-        .project__card.four h5{
-            width: 100%;
-            font-size: 12px;
-        }
-        
-     }
-     @media only screen and (max-width: 740px) {
         .project__grid{
             margin: 50px 0;
             display: flex;
@@ -349,32 +329,57 @@ export const ProjectWrapper = styled.div`
             justify-content: center;
         }
         .project__card-container_meshery{
+            all:unset;
+            aspect-ratio: 6/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
             height: 10rem;
+            h5{
+                margin: 0 !important;
+            }
         }
         .project__card-container_one{
+            all:unset;
+            aspect-ratio: 6/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
             height: 10rem;
-            img{
-                margin-top: 1.5rem;
+            h5{
+                margin: 0 !important;
             }
+           
         }
         .project__card-container-ten{
+            all:unset;
+            aspect-ratio: 6/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
             height: 10rem;
-            img{
-                margin-top: 1.5rem;
+            h5{
+                margin: 0;
             }
+            
         }
         .project__card-container_nighthawk{
+            all:unset;
+            aspect-ratio: 6/5;
+            display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            max-width: 100%;
+            justify-content: center;
+            gap: 12px;
             height: 10rem;
-            width: 12rem;
             img{
                 width: 8.12rem;
             }
             h5{ 
                 width: 100%;
-                margin-left: 0;
+                margin: 0;
             }
         }
         
@@ -384,6 +389,7 @@ export const ProjectWrapper = styled.div`
                 font-size: 13px;
                 font-weight: 600;
                 padding-bottom: 10px;
+                margin: 0;
             }
             img{
                 width: auto;
@@ -392,6 +398,7 @@ export const ProjectWrapper = styled.div`
             }
         }
         .project__card.two{
+            
             img{
                 align-self: center;
                 margin-top: 0px;
@@ -403,44 +410,64 @@ export const ProjectWrapper = styled.div`
                 margin-top: 10px;
             }
         }
-        .project__card.three h5{
-            margin-bottom: 0;
+        .project__card.three {
+            /* all:unset; */
+            aspect-ratio: 6/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            height: 10rem;
+            img{
+                margin: 0;
+            }
+            h5{
+                margin: 0;
+            }
         }
+
         .project__card.four img{
             margin-top: 0px;
             margin-bottom: 0px;
         }
         .project__card.seven{
+            aspect-ratio: 6/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            height: 10rem;
             img{
-                margin-top: 15px;
                 width: 150%;
             }
-            h5{ 
-                margin-top:30px;
+            h5{
+                padding-top: 20px;
             }
         }
         .project__card.eight{
             img{
-                margin-top: 15px;
                 width: 150%;
-            }
-            h5{ 
-                margin-top:30px;
-                margin-bottom:30px;
             }
         }
         .project__card.ten{
-            img{
-                margin-top: 15px;
-                width: 150%;
+            .col{
+                padding: 0;
+                img{
+                    width: 150%;
+    
+                    padding: 0;
+                }
+                h5{
+                margin-top: 20px !important;
             }
-            h5{ 
-                margin-top:30px;
             }
+           
         }
-         
-        
-        
+        .project__card-container{
+
+            justify-content: center;
+            gap: 20px;
+        }
     }
     @media only screen and (max-width: 568px) {
         padding: 0 0 40px 0;
