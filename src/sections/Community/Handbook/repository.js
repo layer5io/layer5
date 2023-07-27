@@ -12,6 +12,8 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+
 import { Link } from "gatsby";
 
 const contents = [
@@ -47,7 +49,7 @@ const Repository = () => {
             </p>
 
             <p>
-              Note that the Layer5 community spans four GitHub
+              Note that the Layer5 community spans <strong>five</strong> GitHub
               organizations:
             </p>
 
@@ -60,7 +62,7 @@ const Repository = () => {
                   />
                   &nbsp; Layer5
                 </a>
-                  - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
+                  - established projects like GetNighthawk, community with  MeshMates, a catch-all org.
               </li>
 
               <li>
@@ -71,39 +73,53 @@ const Repository = () => {
                   />
                   &nbsp; Meshery
                 </a>
-                  -  Meshery and its components Meshery Operator
+                  -  Meshery and its components 
                 <img
                   src={MesheryOperator}
-                  alt="meshery operator icon"
-                  style={{ marginLeft: ".3rem" }}
-                /> and MeshSync
+                  alt="Meshery Operator logo"
+                  style={{ marginLeft: ".25rem",height: "1.5rem" }}
+                /> Meshery Operator
                 <img
                   src={MeshSync}
                   alt="mesh sync icon"
-                  style={{ marginLeft: ".3rem" }}
-                />.
+                  style={{ marginLeft: ".25rem",height: "1.5rem" }}
+                /> and MeshSync.
               </li>
 
               <li>
                 <a href="https://github.com/service-mesh-performance">
                   <img
                     src={servicemeshperformance}
-                    alt="service mesh performance icon"
+                    alt="service mesh performance logo"
                   />
                   &nbsp; Service Mesh Performance
                 </a>
                   - Service Mesh Performance specification and site.
               </li>
-
               <li>
                 <a href="https://github.com/service-mesh-patterns">
                   <img
                     src={servicemeshpattern}
-                    alt="service mesh patterns icon"
+                    alt="service mesh patterns logo"
                   />
                   &nbsp; Service Mesh Patterns
                 </a>
                   - a collection of curated patterns of service mesh use cases compatible with Meshery.
+              </li>
+              <li>
+                <a href="https://github.com/layer5labs">
+                  <img
+                    src={layer5icon}
+                    alt="Layer5 logo"
+                  />
+                  &nbsp; Layer5 Labs
+                </a>
+                  - emerging projects and Meshery extensions, like
+                <img
+                  src={MeshMap}
+                  alt="MeshMap logo"
+                  style={{ height: "1.5rem" }}
+                /> MeshMap.
               </li>
             </ul>
 
@@ -134,6 +150,7 @@ const Repository = () => {
                         site,
                         image,
                         link,
+                        accessRequired,
                       } = subdata;
                       return (
                         <tbody key={project}>
@@ -162,6 +179,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
+                              <div className="accessRequired">{ accessRequired != "" ? accessRequired : ""}</div>
                             </td>
                           </tr>
                         </tbody>

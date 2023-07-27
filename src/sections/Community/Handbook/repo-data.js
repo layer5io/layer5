@@ -28,8 +28,8 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha", "Shivam Sood"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/shivam-sood"],
+        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -55,8 +55,8 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Gaurav Chadha","Abhishek Kumar"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/abhishek-kumar"],
+        maintainers_name: ["Antonette Caldwell","Abhishek Kumar"],
+        link: ["https://layer5.io/community/members/antonette-caldwell","https://layer5.io/community/members/abhishek-kumar"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
@@ -74,8 +74,8 @@ export const repo_data = [
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        maintainers_name: ["Vacant"],
-        link: ["#"],
+        maintainers_name: ["Uzair Shaikh"],
+        link: ["https://layer5.io/community/members/uzair-shaikh"],
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
@@ -84,18 +84,19 @@ export const repo_data = [
         site:
           "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
-        maintainers_name: ["Nithish-Karthik"],
-        link: ["https://layer5.io/community/members/nithish-karthik"],
+        maintainers_name: ["Abhishek Kumar"],
+        link: ["https://layer5.io/community/members/abhishek-kumar"],
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
-        repository: "https://github.com/meshery/meshery",
+        repository: "https://github.com/layer5labs/meshery-extensions",
+        accessRequired: "*program participation required"
       },
       {
-        project: "Discuss Layer5.io",
+        project: "Discussion Forum",
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
-        maintainers_name: ["Leonard Nwobodo"],
-        link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
+        maintainers_name: ["Vivek Vishal"],
+        link: ["https://layer5.io/community/members/vishal-vivek"],
         repository: " https://discuss.layer5.io",
       },
       {
@@ -103,8 +104,8 @@ export const repo_data = [
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
-        maintainers_name: ["Debopriya Bhattacharjee", "Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
@@ -121,9 +122,10 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.layer5.io/",
         language: "React.js",
-        maintainers_name: ["Pranav Singh","Uzair Shaikh"],
-        link: ["#"],
+        maintainers_name: ["Pranav Singh"],
+        link: ["https://layer5.io/community/members/pranav-singh"],
         repository: "https://github.com/layer5io/meshery-cloud",
+        accessRequired: "*program participation required"
       }
     ],
   },
