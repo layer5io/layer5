@@ -87,7 +87,7 @@ export const repo_data = [
         maintainers_name: ["Nithish-Karthik"],
         link: ["https://layer5.io/community/members/nithish-karthik"],
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
-        repository: "https://github.com/meshery/meshery",
+        repository: "https://github.com/layer5labs/meshmap-snapshot",
       },
       {
         project: "Discuss Layer5.io",
@@ -123,7 +123,7 @@ export const repo_data = [
         language: "React.js",
         maintainers_name: ["Pranav Singh","Uzair Shaikh"],
         link: ["#"],
-        repository: "https://github.com/layer5io/meshery-cloud",
+        repository: "https://github.com/meshery/meshery",
       }
     ],
   },
