@@ -33,6 +33,7 @@ export const ProfileCardWrapper = styled.div`
                 right: -7px;
                 width: 278px;                          
                 justify-content: center;
+
                 font-size: 1.5rem;
                 font-weight: bold;            
                 background: linear-gradient(45deg, #5e5d5d, #393939);
