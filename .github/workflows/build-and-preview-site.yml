@@ -1,9 +1,8 @@
 name: Build and Preview Site
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
     types: [opened, synchronize, reopened]
-
 
 jobs:
   site-preview:
@@ -15,9 +14,9 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: Install and Build 🔧 
+      - name: Install and Build 🔧
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run noIndex
 
       - name: Zip Site
