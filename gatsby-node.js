@@ -727,7 +727,6 @@ exports.createSchemaCustomization = ({ actions }) => {
        labs: String,
        slides: String,
        slack: String,
-       status: String,
        video: String,
        community_manager: String,
        docURL: String, 

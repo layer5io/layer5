@@ -23,22 +23,22 @@ export const ProfileCardWrapper = styled.div`
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        
         &::before{            
+                   
+                display: ${props => props.status === "Inactive" ? "flex" : "none"};
                 content: "Inactive";
                 position: absolute;
-                line-height:21px;
-                top: 20px;
-                padding:4px;
-                right: -47px;
-                width: 150px;   
-                display: ${props => props.status === "Inactive" ? "flex" : "none"};
-                align-items: center;
+                line-height: 32px;
+                top: 3px;
+                padding: 4px;
+                right: -7px;
+                width: 278px;                          
                 justify-content: center;
-                font-size: 1.1rem;
-                font-weight: bold;
-                transform:rotate(45deg);
-                color: #fff;
-                z-index: 1;
-                box-shadow: rgb(0, 0, 0) 0px 3px 10px -5px;
+
+                font-size: 1.5rem;
+                font-weight: bold;            
+                background: linear-gradient(45deg, #5e5d5d, #393939);
+                color: rgb(255, 255, 255);
+                z-index: 10;
               }             
         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
