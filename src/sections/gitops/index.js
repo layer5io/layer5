@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import { ThemeManagerContext } from "../../theme/app/ThemeManager";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import { GitOpsWrapper, SquarePointWrapper } from "./gitops.style.js";
-import SmpLogo from "../../assets/images/app/projects/smp.svg";
+import SmpLogo_dark from "../../assets/images/app/projects/smp.svg";
+import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp-light.svg";
 import Reviews from "../Pricing/review-slider";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 
@@ -17,6 +19,7 @@ const SquarePoint = ({ children }) => {
 
 
 const GitOpsPage = () => {
+  const { isDark } = useContext(ThemeManagerContext);
   return (
     <GitOpsWrapper>
       <div className="gradient-wrapper" />
@@ -34,7 +37,7 @@ const GitOpsPage = () => {
               <img src={Cone} />
             </div>
             <div className="hero-image-container">
-              <img src={SmpLogo} style={{ position: "absolute", height: "235px", width: "235px" }} />
+              <img src={isDark ? SmpLogo_light : SmpLogo_dark} style={{ position: "absolute", height: "235px", width: "235px" }} />
               <img src={Cone} />
             </div>
           </Col>
@@ -75,7 +78,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-image" style={{ display: "flex", justifyContent: "flex-end" }} >
             <div className="image-container" >
-              <img src={SmpLogo} className="logo" />
+              <img src={isDark ? SmpLogo_light : SmpLogo_dark} className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>

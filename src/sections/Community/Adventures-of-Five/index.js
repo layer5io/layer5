@@ -27,6 +27,20 @@ const AdventuresHome = () => {
         />
 
         <AdventuresVol
+          title="Planet Prometheus"
+          description="Sinking in the quicksands of planet Prometheus as he tries to write PromQL to retrieve a golden signal.
+          ...coming soon..."
+        //   to="/community/handbook/faq"
+        />
+
+        <AdventuresVol
+          title="Planet Jaeger"
+          description="Stumbling over a lunar rock on the third moon of planet Jaeger as his distributed traces stop propagating through incorrectly configured proxies.
+          ...coming soon..."
+        //   to="/community/handbook/faq"
+        />
+
+        <AdventuresVol
           title="Planet Meshery"
           description="Our hero parchutes into planet Meshery.
           ...coming soon..."
