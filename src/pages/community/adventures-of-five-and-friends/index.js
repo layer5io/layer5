@@ -13,5 +13,5 @@ const Adventures = () => {
 };
 export default Adventures;
 export const Head = () => {
-  return <SEO title="Adventures of Five and Friends" description="Meet Five, our intergalatic Cloud Native Hero" image="/images/meet-five.svg" />;
+  return <SEO title="Adventures of Five and Friends" description="Meet Five, our intergalatic Cloud Native Hero" image="./mascot-five-adventure-github-stars.png" />;
 };
