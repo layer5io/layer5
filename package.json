@@ -43,7 +43,6 @@
     "@mui/material": "^5.15.11",
     "@mui/icons-material": "^5.16.4",
     "@react-icons/all-files": "^4.1.0",
-    "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
     "axios": "^1.7.3",
