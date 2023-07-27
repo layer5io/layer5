@@ -73,7 +73,7 @@ const Repository = () => {
                   />
                   &nbsp; Meshery
                 </a>
-                  -  Meshery and its components 
+                  -  Meshery and its components
                 <img
                   src={MesheryOperator}
                   alt="Meshery Operator logo"
