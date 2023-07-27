@@ -37,7 +37,7 @@ const NavigationWrap = styled.header`
       font-weight: 600;
     }
 
-    .banner-btn.login{
+    .banner-btn.book-a-demo{
       border: 1px solid transparent;
       border-radius: .25rem;
       color: ${props => props.theme.secondaryColor};
@@ -81,7 +81,7 @@ const NavigationWrap = styled.header`
       #signup {
         min-width: 95px;
       }
-      #login {
+      #book-a-demo {
         min-width: 95px;
       }
     }
@@ -386,7 +386,7 @@ const NavigationWrap = styled.header`
   }
   .logo {
     margin-top: 8px;
-    
+
     svg {
       width: 155px;
       .layer5-colorMode_svg__colorMode1 {
@@ -420,10 +420,10 @@ const NavigationWrap = styled.header`
     .nav{
       margin-left: 1.375rem;
     }
-    #login , #get-started-2 {
+    #book-a-demo , #get-started-2 {
       margin:0;
     }
-    
+
   }
   @media only screen and (max-width: 912px) {
     height: auto;
@@ -450,7 +450,7 @@ const NavigationWrap = styled.header`
       svg {
         width: 130px;
       }
-      
+
       img {
         width: 130px;
       }
@@ -713,7 +713,7 @@ const NavigationWrap = styled.header`
               fill: ${props => props.theme.whiteToGrey121212};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
-            
+
             .service-interface-partial-colorMode_svg__colorMode1 {
               fill: ${props => props.theme.whiteToBlack};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

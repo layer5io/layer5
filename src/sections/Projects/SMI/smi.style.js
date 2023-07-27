@@ -50,7 +50,7 @@ const SMIWrapper = styled.section`
         .hero_img_col {
             position: absolute;
             right: 0;
-            overflow: hidden;
+            // overflow: hidden;
         }
         .description {
             margin: 6.5rem auto 15rem;
@@ -60,7 +60,7 @@ const SMIWrapper = styled.section`
         }
     }
     .hero-img{
-        width: 36rem;
+        max-width: 100%;
     }
     .feature-table{
         margin: 0 5rem 1.875rem 5rem;

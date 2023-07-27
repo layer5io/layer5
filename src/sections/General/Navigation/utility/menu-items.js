@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/projects",
+      path: "/cloud-native-management/meshmap",
       subItems: [
         // {
         //   name: "Image Hub",
