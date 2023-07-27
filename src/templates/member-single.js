@@ -17,6 +17,7 @@ export const query = graphql`query MemberBySlug($slug: String!) {
       linkedin
       location
       badges
+      status
       bio
       executive_bio
       image_path {
