@@ -84,7 +84,7 @@ const Brand = () => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.pageYOffset > 510 ? setScroll(true) : setScroll(false)
+      window.scrollY > 510 ? setScroll(true) : setScroll(false)
     );
   }, []);
 

@@ -179,7 +179,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
+      window.scrollY > 50 ? setScroll(true) : setScroll(false)
     );
   }, []);
 
