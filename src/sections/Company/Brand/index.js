@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
 import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import loadable from "@loadable/component";
+import Loading from "../../../components/loading";
 
-const MeshSyncBrand = loadable(() => import ("./Brand-components/meshsync"));
-const MesheryOperatorBrand = loadable(() => import ("./Brand-components/meshery-operator"));
-const ImageHubBrand = loadable(() => import ("./Brand-components/imagehub"));
-const SMPBrand = loadable(() => import ("./Brand-components/smp"));
-const CommunityBrand = loadable(() => import ("./Brand-components/community"));
-const Button = loadable(() => import ("../../../reusecore/Button"));
-const NightHawk = loadable(() => import ("./Brand-components/nighthawk"));
-const ServiceMeshPatterns = loadable(() => import ("./Brand-components/servicemeshpatterns"));
-const MeshMasterBrand = loadable(() => import ("./Brand-components/meshmaster"));
-const MeshMarkBrand = loadable(() => import ("./Brand-components/meshmark"));
-const MeshMapBrand = loadable(() => import ("./Brand-components/meshmap"));
-const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
-const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
+const MeshSyncBrand = React.lazy(() => import ("./Brand-components/meshsync"));
+const MesheryOperatorBrand = React.lazy(() => import ("./Brand-components/meshery-operator"));
+const ImageHubBrand = React.lazy(() => import ("./Brand-components/imagehub"));
+const SMPBrand = React.lazy(() => import ("./Brand-components/smp"));
+const CommunityBrand = React.lazy(() => import ("./Brand-components/community"));
+const Button = React.lazy(() => import ("../../../reusecore/Button"));
+const NightHawk = React.lazy(() => import ("./Brand-components/nighthawk"));
+const ServiceMeshPatterns = React.lazy(() => import ("./Brand-components/servicemeshpatterns"));
+const MeshMasterBrand = React.lazy(() => import ("./Brand-components/meshmaster"));
+const MeshMarkBrand = React.lazy(() => import ("./Brand-components/meshmark"));
+const MeshMapBrand = React.lazy(() => import ("./Brand-components/meshmap"));
+const BrandGuide = React.lazy(() => import("./Brand-components/brand-guide"));
+const StickFigures = React.lazy(() => import("./Brand-components/stickfigures"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -168,46 +168,74 @@ const Brand = () => {
       <Row className="brand-row">
         <Col xs={12} md={9} className="brand-col">
           <div className="section">
-            <BrandGuide />
+            <Suspense fallback={<Loading />}>
+              <BrandGuide />
+            </Suspense>
           </div>
           <div className="section" ref={layer5Ref}>
-            <Layer5Brand />
+            <Suspense fallback={<Loading />}>
+              <Layer5Brand />
+            </Suspense>
           </div>
           <div className="section" ref={mesheryRef}>
-            <MesheryBrand />
+            <Suspense fallback={<Loading />}>
+              <MesheryBrand />
+            </Suspense>
           </div>
           <div className="section" ref={meshsyncRef}>
-            <MeshSyncBrand />
+            <Suspense fallback={<Loading />}>
+              <MeshSyncBrand />
+            </Suspense>
           </div>
           <div className="section" ref={mesheryOperatorRef}>
-            <MesheryOperatorBrand />
+            <Suspense fallback={<Loading />}>
+              <MesheryOperatorBrand />
+            </Suspense>
           </div>
           <div className="section" ref={imageHubRef}>
-            <ImageHubBrand />
+            <Suspense fallback={<Loading />}>
+              <ImageHubBrand />
+            </Suspense>
           </div>
           <div className="section" ref={smpRef}>
-            <SMPBrand />
+            <Suspense fallback={<Loading />}>
+              <SMPBrand />
+            </Suspense>
           </div>
           <div className="section" ref={meshmarkRef}>
-            <MeshMarkBrand />
+            <Suspense fallback={<Loading />}>
+              <MeshMarkBrand />
+            </Suspense>
           </div>
           <div className="section" ref={servicemeshpatternsRef}>
-            <ServiceMeshPatterns />
+            <Suspense fallback={<Loading />}>
+              <ServiceMeshPatterns />
+            </Suspense>
           </div>
           <div className="section" ref={nightHawkRef}>
-            <NightHawk />
+            <Suspense fallback={<Loading />}>
+              <NightHawk />
+            </Suspense>
           </div>
           <div className="section" ref={meshmateRef}>
-            <CommunityBrand />
+            <Suspense fallback={<Loading />}>
+              <CommunityBrand />
+            </Suspense>
           </div>
           <div className="section" ref={meshMasterRef}>
-            <MeshMasterBrand />
+            <Suspense fallback={<Loading />}>
+              <MeshMasterBrand />
+            </Suspense>
           </div>
           <div className="section" ref={meshmapRef}>
-            <MeshMapBrand />
+            <Suspense fallback={<Loading />}>
+              <MeshMapBrand />
+            </Suspense>
           </div>
           <div className="section" ref={stickfiguresRef}>
-            <StickFigures />
+            <Suspense fallback={<Loading />}>
+              <StickFigures />
+            </Suspense>
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">

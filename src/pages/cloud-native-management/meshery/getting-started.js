@@ -1,18 +1,24 @@
-import React from "react";
-
+import React, { Suspense } from "react";
+import Loading from "../../../components/loading";
 import SEO from "../../../components/seo";
 import MesheryTerminal from "../../../sections/Meshery/Meshery-terminal";
-import loadable from "@loadable/component";
-const MesheryPlatforms = loadable(() => import ("../../../sections/Meshery/Meshery-platforms"));
-const MesheryManageMesh = loadable(() => import ("../../../sections/Meshery/Meshery-mange-mesh"));
-const MesheryQuotes = loadable(() => import ("../../../sections/Meshery/Meshery-quotes"));
+const MesheryPlatforms = React.lazy(() => import ("../../../sections/Meshery/Meshery-platforms"));
+const MesheryManageMesh = React.lazy(() => import ("../../../sections/Meshery/Meshery-mange-mesh"));
+const MesheryQuotes = React.lazy(() => import ("../../../sections/Meshery/Meshery-quotes"));
+
 const MesheryMainPage = () => {
   return (
     <>
       <MesheryTerminal />
-      <MesheryPlatforms />
-      <MesheryManageMesh />
-      <MesheryQuotes />
+      <Suspense fallback={<Loading />}>
+        <MesheryPlatforms />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <MesheryManageMesh />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <MesheryQuotes />
+      </Suspense>
 
     </>
   );
