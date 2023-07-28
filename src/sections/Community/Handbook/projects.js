@@ -58,7 +58,7 @@ const Maintainer = () => {
             </p>
             <p>
 
-              Its cloud nativecommunity represents the largest collection of
+              Its cloud native community represents the largest collection of
               service Mesh projects. Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
               <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
