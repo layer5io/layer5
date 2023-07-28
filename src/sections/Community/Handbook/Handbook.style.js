@@ -338,13 +338,13 @@ export const HandbookWrapper = styled.div`
     }
 
     .channels-img {
-      width: 40px;
+      // width: 40px;
       height: 30px;
     }
 
     .channels-para {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .newcomers-journey{
@@ -526,5 +526,10 @@ width: 90%;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 }
-
+/* repository overview  */
+div.accessRequired {
+  font-size: small;
+  line-height: .9rem;
+  font-style: italic;
+}
 `;

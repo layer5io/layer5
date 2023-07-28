@@ -37,6 +37,7 @@ const MemberSingle = ({ frontmatter }) => {
     linkedin,
     location,
     badges,
+    status,
     bio,
     executive_bio,
   } = frontmatter;
@@ -55,7 +56,7 @@ const MemberSingle = ({ frontmatter }) => {
           <Row>
             <Col xs={12} sm={12} lg={6}>
               <Image
-                className="profile-image"
+                className={status.includes("Inactive") ? "profile-image-inactive" : "profile-image"}
                 {...image_path}
                 imgStyle={{ objectFit: "contain" }}
                 alt={name}
