@@ -170,6 +170,16 @@ const Maintainer = () => {
                 <p>
                   The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
                 </p>
+                <li>
+                  <h4>
+                    <a href="https://layer5.io/catalog">
+                      Meshery Catalog :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. <br />
+                </p>
               </ul>
             </p>
 
