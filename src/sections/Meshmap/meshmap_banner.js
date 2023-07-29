@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MeshmapIcon from "./meshmap-icon.svg";
+import MeshmapIcon from "./meshmap-icon.png";
 
 const BannerSectionWrapper = styled.div`
 
@@ -92,7 +92,7 @@ const BannerSectionWrapper = styled.div`
     }
 
     .meshmap-logo {
-        width: 14rem;
+        width: 10rem;
         overflow: hidden;
         margin-top: -7rem;
         position: relative;
