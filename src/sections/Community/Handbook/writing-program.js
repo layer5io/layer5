@@ -58,7 +58,7 @@ const Writers = () => {
                           <h4>
                         Build your technical profile
                           </h4>
-                          Share your knowledge with a worldwide developer community. Build your GitHub profile with assigned issues and merged pull requests. Articles, posts, project documetation written by you will be drafted, put into a pull request, reviewed and merged like any other code-centric contribution. Documenting the problems you solved or a new feature you implemented will serve as a perpetual guide to others in the community.
+                          Share your knowledge with a worldwide developer community. Build your GitHub profile with assigned issues and merged pull requests. Articles, posts, project documentation written by you will be drafted, put into a pull request, reviewed and merged like any other code-centric contribution. Documenting the problems you solved or a new feature you implemented will serve as a perpetual guide to others in the community.
                         </td>
                       </tr>
                     </table>
