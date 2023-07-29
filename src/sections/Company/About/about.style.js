@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
-
   .visible-only-in-mobile {
     display: none;
   }
-  
   .section__particle {
     position: absolute;
     &.one {
@@ -143,8 +141,7 @@ const AboutSectionWrapper = styled.section`
 
       &:hover {
             background: ${(props) => props.theme.highlightLightColor}; 
-            box-shadow: ${(props) =>
-              props.theme.whiteFourToBlackFour} 0px 2px 10px;
+            box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
   }
@@ -275,7 +272,7 @@ const AboutSectionWrapper = styled.section`
     .visible-only-in-mobile {
       display: inline;
     }
-     .visible-except-mobile {
+    .visible-except-mobile {
         display: none;
     }
     padding: 40px 0 60px 0;
