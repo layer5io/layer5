@@ -12,10 +12,12 @@ export const query = graphql`query MemberBySlug($slug: String!) {
       position
       github
       twitter
+      layer5
       meshmate
       linkedin
       location
       badges
+      status
       bio
       executive_bio
       image_path {

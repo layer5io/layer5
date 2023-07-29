@@ -10,35 +10,66 @@ import bubblesElement from "./images/bubbles-element.svg";
 const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
 
-
-
-
   const getUrl = (pathname) => {
     //remove ".html" that results in live production build
     if (pathname.endsWith(".html")) {
       pathname = pathname.replace(".html", "");
     }
 
-    const indexUrl = ["/", "/blog", "/careers", "/meshery", "/meshmap", "/community", "/handbook", "projects", "/resources", "/learn"];
+    const indexUrl = [
+      "/",
+      "/blog",
+      "/careers",
+      "/meshery",
+      "/meshmap",
+      "/community",
+      "/handbook",
+      "projects",
+      "/resources",
+      "/learn",
+    ];
     const test = {
-      mdx: function(path){
+      mdx: function (path) {
         let returnPath = "";
-        return ["/blog/", "/careers/","/community/events", "/integrations/", "/landscape/", "/members/", "/news/", "/programs", "/projects/", "/resources/", "/service-mesh-books/", "/service-mesh-labs/", "/service-mesh-workshops/"].some((check) => {
-          returnPath = check; return path.startsWith(check);
-        }) && `src/collections${returnPath}`;
+        return (
+          [
+            "/blog/",
+            "/careers/",
+            "/community/events",
+            "/integrations/",
+            "/landscape/",
+            "/members/",
+            "/news/",
+            "/programs",
+            "/projects/",
+            "/resources/",
+            "/service-mesh-books/",
+            "/service-mesh-labs/",
+            "/service-mesh-workshops/",
+          ].some((check) => {
+            returnPath = check;
+            return path.startsWith(check);
+          }) && `src/collections${returnPath}`
+        );
       },
-      learningPath: function(path) {
-        return path.startsWith("/learn/learning-paths/") && `content-learn${pathname.replace("learn/learning-paths/", "")}`;
+      learningPath: function (path) {
+        return (
+          path.startsWith("/learn/learning-paths/") &&
+          `content-learn${pathname.replace("learn/learning-paths/", "")}`
+        );
       },
-
     };
 
-    return test.mdx(pathname) ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}` : (test.learningPath(pathname) ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}` : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname}${indexUrl.some(str => pathname.endsWith(str)) ? "/index" : ""}.js`);
-
+    return test.mdx(pathname)
+      ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
+      : test.learningPath(pathname)
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
+          pathname
+        )}`
+        : `https://github.com/layer5io/layer5/blob/master/src/pages${
+          pathname == "/" ? "" : pathname
+        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
-
-
-
 
   return (
     <FooterWrapper>
@@ -201,20 +232,20 @@ const Footer = ({ location }) => {
                       Docker Extension
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       className="category-link"
                       to="/projects/service-mesh-interface-conformance"
                     >
                       Service Mesh Interface
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       className="category-link"
                       to="/projects/service-mesh-performance"
                     >
-                      Service Mesh Performance
+                      Cloud Native Performance
                     </Link>
                   </li>
                 </ul>
@@ -260,25 +291,7 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-              {/* <Col sm={4} className="edit-page">
-                <span> Get Involved </span>
 
-                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="inherit"
-                      height="24"
-                      viewBox="0 -960 960 960"
-                      width="24"
-                    >
-                      <path d="M490.001-130.001v-71.153l208.923-208.922 71.152 71.152-208.922 208.923h-71.153Zm-360-200v-59.998h280v59.998h-280Zm668.075-36.923-71.152-71.152 29-29q8.692-8.693 21.076-8.693t21.076 8.693l29 29q8.693 8.692 8.693 21.076t-8.693 21.076l-29 29ZM130.001-490.001v-59.998h440v59.998h-440Zm0-160v-59.998h440v59.998h-440Z" />
-                    </svg>
-                    <p>Edit This Page</p>
-
-                  </span>
-                </a>
-              </Col> */}
               <form
                 name="contactform"
                 method="post"
@@ -314,26 +327,29 @@ const Footer = ({ location }) => {
             <p className="copyright-text">
               {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
-            <ul className="policies">
+
+            <ul className="misc-links">
               <li className="edit-page">
-                {/* We are an
-                {" "}
-                <Link to="/company/about">open source-first organization</Link>. */}
-                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
+                <a
+                  href={getUrl(location.pathname)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Edit This Page
                 </a>
               </li>
               <li>
                 <a
+                  className="status-link"
                   href="https://layer5.statuspage.io"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Status
+                  Layer5 Cloud Status <span className="pulse-icon"></span>
                 </a>
               </li>
-
-
+            </ul>
+            <ul className="policies">
               <li>
                 <a href="/company/legal/privacy">Privacy</a>
               </li>

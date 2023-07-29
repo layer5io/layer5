@@ -19,6 +19,16 @@ import writersLogo from "../../../assets/images/writer-program/writer-program-ba
 import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import MesheryCatalogLogo from  "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
+import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
+import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
+import DesignPioneerLogo from "../../../assets/images/design-pioneer/design-pioneer.svg";
+import GitOPsWithFriendsLogo from "../../../assets/images/gitops-with-friends/gitops-with-friends.svg";
+import HipHackerLogo from "../../../assets/images/hip-hacker/hip-hacker.svg";
+import NeedForSpeedLogo from "../../../assets/images/need-for-speed/need-for-speed.svg";
+import SharingIsCaringLogo from "../../../assets/images/sharing-is-caring/sharing-is-caring.svg";
+import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
+import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
+
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
@@ -93,25 +103,59 @@ const RecognitionPage = () => {
               Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
             </p>
             <ul style={badgeListStyle}>
+              <p><b>Activity badges:</b></p>
               <li>
-                <img src={CommunityLogo} style={badgeStyle} />
-                <b>Community</b> - awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
+                <img src={DesignPioneerLogo} style={badgeStyle} />
+                <b>Design Pioneer</b> - awarded to the Layer5 cloud users when they create their first design.
               </li>
               <li>
-                <img src={DockerExtension} style={badgeStyle} />
-                <b>Docker Extension</b> - awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
+                <img src={ApplicationPioneerLogo} style={badgeStyle} />
+                <b>Application Pioneer</b> - awarded to the Layer5 cloud users when they create their first application.
               </li>
               <li>
-                <img src={DocsLogo} style={badgeStyle} />
-                <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
+                <img src={SharingIsCaringLogo} style={badgeStyle} />
+                <b>Sharing is Caring</b> - This badge is awarded upon first-time sharing one of your designs.
               </li>
+              <li>
+                <img src={ShippedLogo} style={badgeStyle} />
+                <b>Shipped</b> - This badge is awarded upon the success of your first design deployment.
+              </li>
+              <li>
+                <img src={NeedForSpeedLogo} style={badgeStyle} />
+                <b>Need for Speed</b> - This badge is awarded upon successful execution of your first performance test.
+              </li>
+              <li>
+                <img src={HipHackerLogo} style={badgeStyle} />
+                <b>Hip Hacker</b> - First Interactive Terminal Session - awarded the first time that you establish an interactive terminal session with a Kubernetes Pod.
+              </li>
+              <li>
+                <img src={StreamerLogo} style={badgeStyle} />
+                <b>Streamer</b> - First Log Streaming Session - awarded the first time that you stream logs from a Kubernetes Pod.
+              </li>
+              <li>
+                <img src={GitOPsWithFriendsLogo} style={badgeStyle} />
+                <b>GitOps with Friends</b> - First Collaborator - awarded the first time a collaborator saves changes to one of your designs.
+              </li>
+              <li>
+                <img src={BringABuddyLogo} style={badgeStyle} />
+                <b>Bring a Buddy</b> - awarded to the users who invite someone to Layer5 cloud.
+              </li>
+              <p><b>Projects:</b></p>
               <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
                 <b>Image Hub</b> - awarded to the community members who make consistent and impactful contributions to the Image Hub project in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={LandscapeGreen} style={badgeStyle} />
-                <b>Landscape</b> - awarded to the community members who make consistent and impactful contributions to the layer5.io website.
+                <img src={meshmapLogo} style={badgeStyle} />
+                <b>MeshMap</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+              </li>
+              <li>
+                <img src={ServiceMeshPerformance} style={badgeStyle} />
+                <b>Service Mesh Performance</b> - awarded to the community members who make consistent and impactful contributions to the Service Mesh Performance project. Community members who earn this badge occasionally become a project maintainer.
+              </li>
+              <li>
+                <img src={CommunityLogo} style={badgeStyle} />
+                <b>Community</b> - awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
               </li>
               <li>
                 <img src={MesheryLogo} style={badgeStyle} />
@@ -122,32 +166,36 @@ const RecognitionPage = () => {
                 <b>Meshery Operator</b> - awarded to the community members who make consistent and impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={MesheryCatalogLogo} style={badgeStyle} />
-                <b>Meshery Catalog</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.
+                <img src={PatternsLogo} style={badgeStyle} />
+                <b>Patterns</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> project in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={meshmapLogo} style={badgeStyle} />
-                <b>MeshMap</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+                <img src={LandscapeGreen} style={badgeStyle} />
+                <b>Landscape</b> - awarded to the community members who make consistent and impactful contributions to the layer5.io website.
+              </li>
+              <li>
+                <img src={writersLogo} style={badgeStyle} />
+                <b>Writer's Program</b> - awarded to the community members who make with two or more published writings whether in article, blog post, project documentation or other form in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={NightHawkLogo} style={badgeStyle} />
                 <b>Nighthawk</b> - awarded to the community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
-                <img src={PatternsLogo} style={badgeStyle} />
-                <b>Patterns</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={ServiceMeshPerformance} style={badgeStyle} />
-                <b>Service Mesh Performance</b> - awarded to the community members who make consistent and impactful contributions to the Service Mesh Performance project. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
                 <img src={uiuxrLogo} style={badgeStyle} />
                 <b>UI/UX</b> - awarded to the community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={writersLogo} style={badgeStyle} />
-                <b>Writer's Program</b> - awarded to the community members who make with two or more published writings whether in article, blog post, project documentation or other form in recognition and appreciation of their efforts.
+                <img src={MesheryCatalogLogo} style={badgeStyle} />
+                <b>Meshery Catalog</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
+                <img src={DockerExtension} style={badgeStyle} />
+                <b>Docker Extension</b> - awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
+              </li>
+              <li>
+                <img src={DocsLogo} style={badgeStyle} />
+                <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
               </li>
             </ul>
             <a id="SocialMedia">

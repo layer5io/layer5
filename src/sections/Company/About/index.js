@@ -10,12 +10,12 @@ import collabMap from "./images/layer5-collaboration-map.svg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import { ReactComponent as CNCFstackedlogo } from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
+import Layer5Projects from "./images/layer5-projects.svg";
+import communityStat from "./images/layer5-community-stat.svg";
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
-  const Layer5Projects = "./images/layer5-projects.svg";
 
   return (
     <AboutSectionWrapper id="about">
@@ -41,7 +41,7 @@ const About = () => {
                 </div>
               </Col>
             </Row>
-            <StaticImage loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
+            <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
@@ -56,7 +56,7 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <CNCFstackedlogo alt="About Layer5 Projects" />
+                  <img src={communityStat} alt="Layer5 Community Stat" loading="lazy"/>
                 </div>
               </Col>
             </Row>

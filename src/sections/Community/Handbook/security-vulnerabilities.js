@@ -10,6 +10,7 @@ import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
 const SecurityVulnerabilitiesPage = () => {
   return (
@@ -24,7 +25,7 @@ const SecurityVulnerabilitiesPage = () => {
             <h2>Reporting a vulnerability</h2><br />
             <p>We are very grateful to the security researchers and users that report security vulnerabilities. We investigate each report thoroughly.</p>
             <p>To make a report, send an email to the private <a href="mailto: security@layer5.io">security@layer5.io</a>  mailing list with the vulnerability details. For normal product bugs unrelated to latent security vulnerabilities, please head to the appropriate repository and submit a <a href="https://github.com/layer5io/layer5/issues/new/choose">new issue</a> .</p>
-            <p>Note that the Layer5 community spans four GitHub organizations:</p>
+            <p>Note that the Layer5 community spans five GitHub organizations:</p>
             <ul className="project-org-list">
               <li>
                 <a href="https://github.com/layer5io">
@@ -34,7 +35,7 @@ const SecurityVulnerabilitiesPage = () => {
                   />
                   &nbsp; Layer5
                 </a>
-                  - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
+                  - established projects like GetNighthawk, community with  MeshMates, a catch-all org.
               </li>
 
               <li>
@@ -48,7 +49,7 @@ const SecurityVulnerabilitiesPage = () => {
                   -  Meshery and its components Meshery Operator
                 <img
                   src={MesheryOperator}
-                  alt="meshery operator icon"
+                  alt="Meshery Operator logo"
                   style={{ marginLeft: ".3rem" }}
                 /> and MeshSync
                 <img
@@ -62,7 +63,7 @@ const SecurityVulnerabilitiesPage = () => {
                 <a href="https://github.com/service-mesh-performance">
                   <img
                     src={servicemeshperformance}
-                    alt="service mesh performance icon"
+                    alt="service mesh performance logo"
                   />
                   &nbsp; Service Mesh Performance
                 </a>
@@ -72,14 +73,28 @@ const SecurityVulnerabilitiesPage = () => {
                 <a href="https://github.com/service-mesh-patterns">
                   <img
                     src={servicemeshpattern}
-                    alt="service mesh patterns icon"
+                    alt="service mesh patterns logo"
                   />
                   &nbsp; Service Mesh Patterns
                 </a>
                   - a collection of curated patterns of service mesh use cases compatible with Meshery.
               </li>
+              <li>
+                <a href="https://github.com/layer5labs">
+                  <img
+                    src={layer5icon}
+                    alt="Layer5 logo"
+                  />
+                  &nbsp; Layer5 Labs
+                </a>
+                  - emerging projects and Meshery extensions, like                 <img
+                  src={MeshMap}
+                  alt="MeshMap logo"
+                  style={{ marginLeft: ".3rem" }}
+                />MeshMap.
+              </li>
             </ul>
-            <p>You can find the list of all the Layer5 project repositories <a hrf="https://layer5.io/community/handbook/repository-overview">here</a></p>
+            <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
             <h3>When to report a security vulnerability?</h3>
             <p>Send us a report whenever you:</p>
             <ul>
