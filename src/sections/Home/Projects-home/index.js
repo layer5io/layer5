@@ -59,7 +59,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/projects/service-mesh-performance">
+              <Link className="project-card" to="/products/service-mesh-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
                     {( isDark ) ? (
@@ -74,7 +74,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/projects/nighthawk">
+              <Link className="project-card" to="/products/nighthawk">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
                   <p>Nighthawk</p>

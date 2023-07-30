@@ -24,7 +24,7 @@ const Footer = ({ location }) => {
       "/meshmap",
       "/community",
       "/handbook",
-      "projects",
+      "/products",
       "/resources",
       "/learn",
     ];
@@ -41,7 +41,7 @@ const Footer = ({ location }) => {
             "/members/",
             "/news/",
             "/programs",
-            "/projects/",
+            "/products/",
             "/resources/",
             "/service-mesh-books/",
             "/service-mesh-labs/",
@@ -197,7 +197,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/projects">
+                  <Link className="title-link" to="/products">
                     SOLUTIONS
                   </Link>
                 </h3>
@@ -220,7 +220,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/nighthawk">
+                    <Link className="category-link" to="/products/nighthawk">
                       Nighthawk
                     </Link>
                   </li>
@@ -243,7 +243,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/projects/service-mesh-performance"
+                      to="/products/service-mesh-performance"
                     >
                       Cloud Native Performance
                     </Link>
