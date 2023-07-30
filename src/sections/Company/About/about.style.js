@@ -230,6 +230,12 @@ const AboutSectionWrapper = styled.section`
   }
   
   @media only screen and (max-width: 575px) {
+    .visible-only-in-mobile {
+      display: inline;
+    }
+    .visible-except-mobile {
+        display: none;
+    }
     .section-title,
     .about-content-wrap {
       text-align: center;
@@ -269,12 +275,6 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 480px) {
-    .visible-only-in-mobile {
-      display: inline;
-    }
-    .visible-except-mobile {
-        display: none;
-    }
     padding: 40px 0 60px 0;
     .section-title {
     h2 {
