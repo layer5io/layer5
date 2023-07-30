@@ -81,7 +81,7 @@ const Data = {
     },
     {
       name: "Products",
-      path: "/projects",
+      path: "/products",
       subItems: [
         // {
         //   name: "Image Hub",
@@ -113,7 +113,7 @@ const Data = {
         },
         {
           name: "Nighthawk",
-          path: "/projects/nighthawk",
+          path: "/products/nighthawk",
           sepLine: true
         },
         {
@@ -135,13 +135,13 @@ const Data = {
         },
         {
           name: "Performance",
-          path: "/projects/service-mesh-performance",
+          path: "/products/service-mesh-performance",
         },
       ],
       actionItems: [
         {
           actionName: "All projects",
-          actionLink: "/projects",
+          actionLink: "/products",
         },
         // {
         //   actionName: "Pricing",
