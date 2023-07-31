@@ -1,0 +1,93 @@
+---
+title: "What is Meshery Operator"
+subtitle: "Describing Meshery operator, what it is and how it simplifies management"
+date: 2023-07-30 10:30:05 -0530
+author: Karan Thakur
+thumbnail: ./operator-thumbnail.png
+darkthumbnail: ./operator-thumbnail.png
+category: "Meshery"
+description: "Meshery Operator is a Kubernetes Operator that deploys and manages the lifecycle of two Meshery components critical to Meshery’s operations of Kubernetes clusters."
+tags:
+ - Community
+ - Projects
+ - Meshery
+type: Blog
+resource: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+
+import operator from "./meshery-operator-dark.png"
+import meshsync from "./meshsync.png"
+
+<BlogWrapper>
+
+
+## What are Operators
+Kubernetes can manage and scale stateless applications, such as web apps, mobile backends, and API services, without requiring any additional knowledge about how these applications operate. The built-in features of Kubernetes are designed to easily handle these tasks.
+
+However, stateful applications, like databases and monitoring systems, require additional domain-specific knowledge that Kubernetes doesn’t have. It needs this knowledge in order to scale, upgrade, and reconfigure these applications.
+
+Kubernetes Operators are a powerful tool for managing complex applications and services on Kubernetes clusters. They provide an automated way to manage the entire lifecycle of an application, from deployment through scaling and maintenance, using custom controllers that are designed specifically for each application.
+### Use cases 
+
+1. Kubernetes Operators provide an advantage by extending the functionality of Kubernetes to stateful applications, in addition to stateless ones. This is important because managing stateful cloud applications and services can be more complex than managing stateless ones.
+
+2. The use of Operators helps standardize manual activities, creating a consistent approach to automation.
+
+3. One benefit of using Operators is their ease of transportability between environments and projects. This has led to the development of an ecosystem with many generic Operators that can be downloaded, configured, and used across different projects without needing in-house development efforts. 
+
+Meshery Operator is one such operator built specifically for Meshery cloud native management platform. It provides a declarative way to install, configure and maintain Meshery instances running on Kubernetes platforms while also providing better workflows which simplify much of the complexity involved in deploying/maintaining these systems.
+
+## What is Meshery Operator?
+
+
+<a>
+
+Meshery Operator is a multi-service mesh operator (a Kubernetes custom controller) created by Layer5 community to simplify the lifecycle management of Meshery instances.
+<figure class="imgWithCaption fig-right" style="width:30%" >
+    <img src={operator}  />
+    <figcaption>
+    <p>Meshery Operator</p>
+    </figcaption>
+ </figure>
+
+Meshery Operator automates the installation and lifecycle management of Meshery service mesh management platform. It uses custom controllers to manage different aspects of Meshery deployment, including configuration, scaling, monitoring, and maintenance.
+
+ </a>
+
+## Controllers managed by Meshey Operator 
+
+Meshsync and Broker controllers are two custom controllers managed by Meshery Operator that are responsible for managing different aspects of Meshery deployment. While both these controllers are not directly concerned with the configuration management of Service meshes, they play a crucial role in ensuring smooth functioning and data synchronization between different instances of Meshery deployed across multiple environments/clusters.
+### Meshsync
+<section>
+<img src={meshsync} className="image-left-no-shadow"  style="width:12%"/>
+
+<p>The purpose of MeshSync controller is to manage cluster discovery and push all discovered Kubernetes objects with a particular topic onto the broker. This means that it helps synchronize data across multiple clusters/environments, ensuring consistency throughout the system while also enabling better collaboration among teams working on large-scale projects involving distributed architectures.</p>
+</section>
+
+<br/>
+
+### Broker 
+On the other hand, Broker Controller manages NATS server which acts as an intermediary between Meshery Server and MeshSync. Its main function is to facilitate communication between various components within instance enabling seamless integration third-party tools/services like Prometheus/Grafana etc., making it easier than ever before monitor performance metrics in real-time!
+
+Overall, Both these custom controllers make it easier for users to install and manage their own instances of Meshery while also providing better orchestration workflows which simplify much of complexity involved in deploying/maintaining these systems!
+
+## How does it work?
+
+Meshery operator leverages Kubernetes Custom Resource Definitions (CRDs) which provide native support for custom resources within API server thereby enabling better orchestration workflows! This means that users can now define all aspects related to infrastructure requirements upfront using simple YAML files allowing operators seamlessly manage entire lifecycle from single interface making maintenance tasks easier than ever before!
+
+Key Benefits:
+
+1. Simplified Deployment: With automated installation & configuration provided by operator one doesn't have worry about setting up everything manually thereby reducing time-to-deployment significantly!
+
+2. Scalability: By leveraging CRD's one can easily scale deployments up/down based on workload demands ensuring optimal performance levels at all times while also being able handle errors gracefully due seamless integration with other components like Prometheus/Grafana .
+
+3. Automation & Standardization: Operators help reduce human error associated with manual intervention along with providing standardized ways working across various environments making collaboration among teams much easier than otherwise would have been possible.
+
+## Conclusion
+In this blog we have read about Meshery's own operator called Meshery Operator and how this powerful tool simplifies the deployment and lifecycle management of service meshes within a Kubernetes cluster and leverages two essential controllers Meshsync and Broker.
+To delve deeper into understanding Meshery's operator architecture and how it empowers you to efficiently manage your service meshes within Kubernetes clusters. Read more about the Meshery Operator architecture at [docs.meshery.io](https://docs.meshery.io/concepts/architecture/operator).
+
+</BlogWrapper>
