@@ -1,6 +1,8 @@
 import React from "react";
 import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
+import AdventuresVol from "../../../components/AdventuresVol/index";
+import vol1Img from "../Adventures-of-Five/vol1/meet-five.png";
 
 const handbookHome = () => {
   return (
@@ -14,6 +16,14 @@ const handbookHome = () => {
       </div>
 
       <div className="community-home-container">
+
+        <AdventuresVol
+          title="Meet Five"
+          description="Join Five as he sets off in his trusty rocketship following the trail of stars to planet Meshery."
+          to="/five/vol1/mascot-five-adventure-github-stars.pdf"
+          image={vol1Img}
+        />
+
         <HandbookCard
           title="About"
           description="Layer5 offers cloud native application management by harnessing the power of a developer-friendly applications management system that supports visualization of the modern infrastructure leading to effective operation with best practices."
