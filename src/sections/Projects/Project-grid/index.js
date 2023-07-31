@@ -29,7 +29,7 @@ const ProjectPage = () => {
       <PageHeader
         className="title"
         title="Cloud Native Management"
-        path="/products"
+        path="/projects"
       />
       <h3>
         for the <img src={L5gray} alt="Layer 5 icon" />
@@ -50,7 +50,7 @@ const ProjectPage = () => {
                 <h5>Meshery</h5>
               </div>
             </Link>
-            <Link to="/products/image-hub" className="project__card three">
+            <Link to="/projects/image-hub" className="project__card three">
               <div className="project__card-container">
                 <img src={imagehub} alt="Image Hub" />
                 <h5>Image Hub</h5>
@@ -66,7 +66,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/products/service-mesh-performance"
+              to="/projects/service-mesh-performance"
               className="project__card five"
             >
               <div className="project__card-container">
@@ -81,7 +81,7 @@ const ProjectPage = () => {
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link> */}
-            <Link to="/products/nighthawk" className="project__card six">
+            <Link to="/projects/nighthawk" className="project__card six">
               <div className="project__card-container project__card-container_nighthawk">
                 <img src={nighthawk} alt="Nighthawk" />
                 <h5>NightHawk</h5>
