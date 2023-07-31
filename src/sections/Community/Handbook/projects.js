@@ -42,26 +42,35 @@ const Maintainer = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
-            <p>
-
-              <a id="Layer5">
-                {" "}
-                <h3>
-                  <a href="https://layer5.io/">
-                    <img className="project-title-icon" src={layer5icon} alt="Layer5" />
-                    &nbsp; Layer5{" "}
-                  </a>
-                </h3>{" "}
+          <div className="content remove-margin">
+            <h3 className="top-most-line">
+              <a href="https://layer5.io/">
+                <img
+                  className="project-title-icon"
+                  src={layer5icon}
+                  alt="Layer5"
+                />
+                &nbsp; Layer5
               </a>
-
-            </p>
+            </h3>
             <p>
-
               Its cloud native community represents the largest collection of
               service Mesh projects. Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
+              <img
+                className="project-description-icon"
+                src={hawkIcon}
+                alt="Nighthawk Icon"
+              />{" "}
+              , community with{" "}
+              <Link to="/community/meshmates">
+                <img
+                  className="project-description-icon"
+                  src={meshmateicon}
+                  alt="MeshMate icon"
+                />{" "}
+                MeshMates{" "}
+              </Link>
+              , catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -108,22 +117,33 @@ const Maintainer = () => {
               </ul>
             </p>
             <p>
-
               <a id="Meshery">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/cloud-native-management/meshery">
-                    <img className="project-title-icon" src={meshery} alt="Meshery" />
+                    <img
+                      className="project-title-icon"
+                      src={meshery}
+                      alt="Meshery"
+                    />
                     &nbsp; Meshery
                   </a>
                 </h3>{" "}
               </a>
-
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
+              <img
+                className="project-description-icon"
+                src={mesheryoperatoricon}
+                alt="Meshery Operator Icon"
+              />{" "}
+              and MeshSync{" "}
+              <img
+                className="project-description-icon"
+                src={mesherysyncicon}
+                alt="MeshSync icon"
+              />
               <ul>
                 <li>
                   <h4>
@@ -168,21 +188,25 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
+                  The Docker Extension for Meshery extends Docker Desktop’s
+                  position as the cloud native developer’s go-to Kubernetes
+                  environment with easy access to the next layer of cloud native
+                  infrastructure: service meshes. <br />
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/catalog">
-                      Meshery Catalog :
-                    </a>
+                    <a href="https://layer5.io/catalog">Meshery Catalog :</a>
                   </h4>{" "}
                 </li>
                 <p>
-                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. <br />
+                  As a central hub for sharing cloud native infrastructure
+                  designs, Meshery Catalog enables the exchange of the best
+                  practices, reusable templates, and Kubernetes-based
+                  operational patterns for multi-cluster Kubernetes clusters and
+                  distributed applications. <br />
                 </p>
               </ul>
             </p>
-
             <a id="Service Mesh Performance">
               <p>
                 <h3>
@@ -197,7 +221,6 @@ const Maintainer = () => {
                 </h3>
               </p>
             </a>
-
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
                 The Service Mesh Performance (SMP)
@@ -207,9 +230,7 @@ const Maintainer = () => {
               configuration, service/application details, and bundling of
               statistical analysis of the result. <br />
             </p>
-
             <p>
-
               <a id="Service Mesh Patterns">
                 {" "}
                 <h3>
