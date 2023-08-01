@@ -47,7 +47,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y", {
+      axios.post("https://hook.us1.make.com/s4jo47a8ydq6uk7gg16wuukgr4l52p8c", {
         memberFormOne,
       });
     }
@@ -110,9 +110,9 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
     >
       <Form className="form" method="post">
         <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
+        <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="^[\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*([\s][\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*){0,31}$" required />
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="([A-Za-zŽžÀ-ÿ]+('{0,1}-{0,1}[A-Za-zÀ-ÿ])?[A-Za-zŽžÀ-ÿ]){1,32}|[A-Za-zŽžÀ-ÿ]" required />
+        <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="^[\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*([\s][\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*){0,31}$" required />
         <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
         {validateEmail && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorEmail}</p>}
         <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />

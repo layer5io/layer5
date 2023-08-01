@@ -220,6 +220,14 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/gitops"
+                    >
+                      GitOps
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/projects/nighthawk">
                       Nighthawk
                     </Link>
