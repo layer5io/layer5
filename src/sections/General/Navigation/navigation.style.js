@@ -154,7 +154,7 @@ const NavigationWrap = styled.header`
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 3em;
+      padding: 3em 1.5em 3em 1.5em;
       border-radius: 50px 0 0 50px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       .sub-item {
