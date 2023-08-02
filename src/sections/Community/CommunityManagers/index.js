@@ -59,6 +59,7 @@ const CommunityManagers = () => {
           </Row>
         </div>
         <InlineQuotes quote={"Thank you so much for your kind words. I absolutely love this community."} person={"Naureen Imran"}/>
+        <InlineQuotes quote={"Thanks for your wishes, it would not be possible without Layer5's support. Through my work in the LFX program, the HRs were pretty much impressed and selected me for this role. I'm grateful to the Layer5 community."} person={"Aadhitya Amarendiran"}/>
         <div className="expect">
           <h2> What Does a Community Manager Do? </h2>
           <p> Layer5 Community Managers generally oversee community activities and support ongoing initiatives. They are responsible for the health and growth of the community.
