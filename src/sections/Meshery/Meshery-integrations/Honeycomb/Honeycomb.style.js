@@ -17,7 +17,13 @@ export const HoneycombGrid = styled.div`
       margin-bottom: calc(3px - 150px * 0.2885);
       filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 20px);
     }
-
+    @media (max-width: 340px) {
+      li{
+        display: inline-block;
+        width:60px;
+        height: calc(5rem * 1.1547);
+      }
+    }
     ::before {
       content: "";
       width: calc(150px / 2 + 3px);

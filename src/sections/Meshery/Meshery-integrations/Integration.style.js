@@ -37,7 +37,7 @@ export const HoneycombGrid = styled.div`
     &:hover {
       opacity: 0.8;
       box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
-}
+  }
   }
 
   .selected {
@@ -49,6 +49,21 @@ export const HoneycombGrid = styled.div`
     margin: 2.5rem 0 0 0;
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  @media (max-width: 340px) {
+     ul{
+    display: flex;
+    flex-direction: row;
+    flex:wrap;
+    justify-content: flex-start;
+    overflow: auto;
+    max-width: 100%; /* Set a maximum width to limit container size */
+    max-height: 135px;
+    padding-left:0px;
+    padding-right:0px
+    
+    }
   }
 
   .container-active,
@@ -63,6 +78,9 @@ export const HoneycombGrid = styled.div`
     position: relative;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    @media (max-width: 340px) {
+      width:60px;
+    }
 
     .integration-container {
       display: flex;
@@ -78,6 +96,9 @@ export const HoneycombGrid = styled.div`
       }
       .integration-icon {
         flex-shrink: 0;
+        @media (max-width: 340px) {
+          width:50px;
+        }
       }
       .integration-content {
         opacity: 0;
@@ -109,6 +130,7 @@ export const HoneycombGrid = styled.div`
         }
       }
     }
+  @media (min-width: 341px) {
     :hover {
       .integration-container {
         img {
@@ -153,6 +175,7 @@ export const HoneycombGrid = styled.div`
         z-index: -1;
       }
     }
+   }
   }
 `;
 
