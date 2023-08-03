@@ -3,14 +3,14 @@ import React from "react";
 import SEO from "../../../components/seo";
 import PerformanceManagementPage from "../../../sections/gitops/PerformanceManagementPage";
 
-const Meshery = () => {
+const Page = () => {
   return (
     <>
       <PerformanceManagementPage />
     </>
   );
 };
-export default Meshery;
+export default Page;
 export const Head = () => {
   // TODO Change this
   return  <SEO title="GitOps with Meshery"
