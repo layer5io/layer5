@@ -97,7 +97,7 @@
     "simple-react-cytoscape": "^1.0.4",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.0.5",
+    "styled-components": "^5.3.9",
     "swiper": "^9.2.0"
   },
   "devDependencies": {
