@@ -5,7 +5,6 @@ import { ThemeManagerContext } from "../../theme/app/ThemeManager";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import { GitOpsWrapper } from "./gitops.style.js";
 import SmpLogo_dark from "../../assets/images/app/projects/smp.svg";
-import MeshMap from "../../assets/images/meshmap/meshmap-color-icon.svg";
 import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp-light.svg";
 import Reviews from "../Pricing/review-slider";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
