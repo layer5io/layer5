@@ -41,16 +41,21 @@ export const CardWrapper = styled.div`
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
 
-        .gatsby-image-wrapper, .old-gatsby-image-wrapper{
-            height:100%;
+        .gatsby-image-wrapper{
+            height:80%;
             transition: all 0.3s ease-in;
         }
-        img{
-            height: inherit;
-            max-height: 180px;
-            display: block;
-            text-align: center;
-            margin: auto;
+        .old-gatsby-image-wrapper{
+            height:100%;
+            width:70%;
+            margin-left: 3rem;
+            transition: all 0.3s ease-in;
+        }
+         img{
+            padding: 0px;
+            margin-top: 0.5rem;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -97,6 +102,7 @@ export const CardWrapper = styled.div`
     .post-meta-block{
         height: auto;
         display: flex;
+        
 
         .author{
             text-align: end;
