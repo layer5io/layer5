@@ -51,20 +51,7 @@ export const HoneycombGrid = styled.div`
     padding-right: 50px;
   }
 
-  @media (max-width: 340px) {
-     ul{
-    display: flex;
-    flex-direction: row;
-    flex:wrap;
-    justify-content: flex-start;
-    overflow: auto;
-    max-width: 100%; /* Set a maximum width to limit container size */
-    max-height: 135px;
-    padding-left:0px;
-    padding-right:0px
-    
-    }
-  }
+  
 
   .container-active,
   .container-inactive {
@@ -78,9 +65,7 @@ export const HoneycombGrid = styled.div`
     position: relative;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    @media (max-width: 340px) {
-      width:60px;
-    }
+   
 
     .integration-container {
       display: flex;
@@ -130,8 +115,7 @@ export const HoneycombGrid = styled.div`
         }
       }
     }
-  @media (min-width: 341px) {
-    :hover {
+  :hover {
       .integration-container {
         img {
           transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -175,8 +159,8 @@ export const HoneycombGrid = styled.div`
         z-index: -1;
       }
     }
-   }
   }
+  
 `;
 
 export const IntegrationsWrapper = styled.div`
