@@ -43,19 +43,12 @@ const Maintainer = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <p>
-
-              <a id="Layer5">
-                {" "}
-                <h3>
-                  <a href="https://layer5.io/">
-                    <img className="project-title-icon" src={layer5icon} alt="Layer5" />
-                    &nbsp; Layer5{" "}
-                  </a>
-                </h3>{" "}
+            <h3 className="top-most-line">
+              <a href="https://layer5.io/">
+                <img className="project-title-icon" src={layer5icon} alt="Layer5" />
+                  &nbsp; Layer5
               </a>
-
-            </p>
+            </h3>
             <p>
 
               Its cloud native community represents the largest collection of

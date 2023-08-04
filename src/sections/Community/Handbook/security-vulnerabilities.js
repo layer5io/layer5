@@ -22,7 +22,9 @@ const SecurityVulnerabilitiesPage = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>Reporting a vulnerability</h2><br />
+            <a id="Reporting a vulnerability">
+              <h2>Reporting a vulnerability</h2><br />
+            </a>
             <p>We are very grateful to the security researchers and users that report security vulnerabilities. We investigate each report thoroughly.</p>
             <p>To make a report, send an email to the private <a href="mailto: security@layer5.io">security@layer5.io</a>  mailing list with the vulnerability details. For normal product bugs unrelated to latent security vulnerabilities, please head to the appropriate repository and submit a <a href="https://github.com/layer5io/layer5/issues/new/choose">new issue</a> .</p>
             <p>Note that the Layer5 community spans five GitHub organizations:</p>

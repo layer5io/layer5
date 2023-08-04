@@ -19,7 +19,9 @@ const Designers = () => {
       <div className="page-section">
         <Container>
           <div className="content writing_program">
-            <h2>UI/UX</h2>
+            <a id="UI/UX">
+              <h2>UI/UX</h2>
+            </a>
             <p>
             The UI/UX badge is given to community members who contribute towards creating or improving the visual design or user flow of various aspects such as websites, flyers, promotions, Meshery UI, and more. This recognition is awarded as an appreciation of their efforts in enhancing the user experience. The badge serves as a symbol of their expertise in UI/UX design and acknowledges their valuable contribution to the community.
             We are always looking for ways to improve the user experience of our projects. If you have ideas for how to improve the user experience of any of our projects, please share them with us.

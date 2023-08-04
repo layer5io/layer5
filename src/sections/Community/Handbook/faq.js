@@ -16,7 +16,9 @@ const Faq = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>General FAQs:</h2><br />
+            <a id="General FAQs">
+              <h2>General FAQs:</h2><br />
+            </a>
             <h4>Q: Are Layer5’s solutions open source?</h4>
             <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
 

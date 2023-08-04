@@ -15,7 +15,7 @@ const CodeofConduct = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div className="content remove-margin">
             <p>Layer5 follows the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a> which states that:</p>
             <p>As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, to post feature requests, to update documentation, to submit pull requests or patches, and other activities.</p>
             <p>We are committed to participating in this project as a harassment-free experience for everyone, regardless of the level of experience, gender, gender identity, and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality.</p>

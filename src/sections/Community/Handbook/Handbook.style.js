@@ -5,6 +5,13 @@ export const HandbookWrapper = styled.div`
       padding-top: 1rem;
     }
 
+    .content > .top-most-line {
+      padding-top: 1rem;
+    }
+    .remove-margin {
+      margin-top: -6rem;
+    }
+
     .highlight{
       font-weight: 600;
     }
