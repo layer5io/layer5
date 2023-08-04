@@ -38,7 +38,7 @@ export const HandbookWrapper = styled.div`
     }
 
     h2 h3{
-      margin: 0.5rem 0;
+      margin: 0.5rem 0;  
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -200,11 +200,11 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${(props) => props.theme.grey313131ToGreenC9FCF6};
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
-      stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
+      stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     svg {
@@ -496,11 +496,11 @@ width: 90%;
       margin-bottom: auto; 
       margin-top: 0.5rem;
       font-weight: 700;
-      color: ${(props) => props.theme.secondaryColor}
+      color: ${props => props.theme.secondaryColor}
   }
   p{
       font-weight: 300;
-      color: ${(props) => props.theme.text};
+      color: ${props => props.theme.text};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   img{
