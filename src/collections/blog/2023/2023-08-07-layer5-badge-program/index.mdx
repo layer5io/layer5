@@ -18,8 +18,10 @@ import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
 import Blockquote from "../../../../reusecore/Blockquote";
+import { Blog } from "./blog.style";
 
 <BlogWrapper>
+<Blog>
 
 Are you ready to take your open ource journey to the next level? We're thrilled to announce an exciting update for all Layer5 users and contributors – the launch of our brand new badge program! 🎉🎈
 
@@ -49,34 +51,89 @@ Project Badges are assigned by the admin to the user when a user contributes to 
 
 <h3 align="center">Layer5 Badges</h3>
 <h4>Achievement Badges</h4>
-
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/bring-a-buddy/bring-a-buddy.svg) | **Bring a Buddy** : This badge is awarded to the users who invite someone to Layer5 cloud. |
-| --- | --- |
-| ![](https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-application/first-application.svg) | **Application Pioneer:** This badge isawarded to the Layer5 cloud users when they create their first application. |
-| ![](https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-collaborator/first-collaborator.svg) | **Sharing is Caring:** This badge is awarded upon first-time sharing one of your designs. |
-| ![](https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-deployment/first-deployment.svg) | **Shipped:** This badge is awarded upon the success of your first design deployment. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/need-for-speed/need-for-speed.svg) | **Need for Speed** : This badge is awarded upon successful execution of your first performance test. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/first-interactive-terminal-session/first-interactive-terminal-session.svg) | **Hip Hacker:** This badge is awarded the first time that you establish an interactive terminal session with a Kubernetes Pod. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/first-log-streaming-session/first-log-streaming-session.svg) | **Log Streamer:** This badge is awarded the first time that you stream logs from a Kubernetes Pod. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/gitops-with-friends/gitops-with-friends.svg) | **GitOps with Friends:** This badge is awarded the first time a collaborator saves changes to one of your designs. |
+<div class="badge-grid">
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/bring-a-buddy/bring-a-buddy.svg" /><span>Bring a Buddy</span> This badge is awarded to the users who invite someone to Layer5 cloud.
+</div>
+<div>
+  <img src="https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-application/first-application.svg" />
+  <span>Application Pioneer</span> This badge isawarded to the Layer5 cloud users when they create their first application.
+</div>
+<div>
+    <img src="https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-collaborator/first-collaborator.svg" />
+    <span>Sharing is Caring</span> This badge is awarded upon first-time sharing one of your designs.
+</div>
+<div>
+    <img src="https://github.com/layer5labs/meshery-extensions-packages/raw/master/assets/badges/first-deployment/first-deployment.svg" /> 
+    <span>Shipped</span> This badge is awarded upon the success of your first design deployment.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/need-for-speed/need-for-speed.svg" />
+    <span>Need for Speed</span> This badge is awarded upon successful execution of your first performance test.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/first-interactive-terminal-session/first-interactive-terminal-session.svg" /> 
+    <span>Hip Hacker</span> This badge is awarded the first time that you establish an interactive terminal session with a Kubernetes Pod.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/first-log-streaming-session/first-log-streaming-session.svg" /> <span>Log Streamer</span> This badge is awarded the first time that you stream logs from a Kubernetes Pod.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/gitops-with-friends/gitops-with-friends.svg" />
+    <span>GitOps with Friends</span> This badge is awarded the first time a collaborator saves changes to one of your designs.
+</div>
+</div>
 
 <h4>Project Badges</h4>
 
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/ui-ux/ui-ux.svg) | **UI/UX** : This badge is awarded to the community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts. |
-| --- | --- |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshmap/meshmap.svg) | **MeshMap:** This badge is awarded to the community members who make consistent and impactful contributions to the [MeshMap](https://layer5.io/cloud-native-management/meshmap) project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/smp/smp.svg) | **Service Mesh Performance** - This badge isawarded to the community members who make consistent and impactful contributions to the Service Mesh Performance project. Community members who earn this badge occasionally become a project maintainer. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/community/community.svg) | **Community** - This badge is awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery/meshery.svg) | **Meshery** - This badge isawarded to the community members who make consistent and impactful contributions to the Meshery project. Community members who earn this badge occasionally become a project maintainer. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/patterns/patterns.svg) | **Patterns** - This badge is awarded to the community members who make consistent and impactful contributions to the [Service Mesh Patterns](https://service-mesh-patterns.github.io/service-mesh-patterns) project in recognition and appreciation of their efforts. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/landscape/landscape.svg) | **Landscape** - This badge is awarded to the community members who make consistent and impactful contributions to the layer5.io website. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/nighthawk/nighthawk.svg)  | **Nighthawk** - This badge is awarded to the community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery-catalog/meshery-catalog.svg)  | **Meshery Catalog** - This badge is awarded to the community members who make consistent and impactful contributions to the [Meshery Catalog](https://meshery.io/catalog) of Meshery project in recognition and appreciation of their efforts. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/docker-extension/docker-extension.svg)  | **Docker Extension** - This badge is awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts. |
-| ![](https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery-docs/meshery-docs.svg)  | **Meshery Docs:** This badge is awarded to the community members who make consistent and impactful contributions to the [Meshery docs](https://docs.meshery.io/) in recognition and appreciation of their efforts. | 
+<div class="badge-grid">
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/ui-ux/ui-ux.svg" />
+  <span>UI/UX</span> This badge is awarded to the community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshmap/meshmap.svg" />
+  <span>MeshMap</span> This badge is awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/smp/smp.svg" />
+  <span>Service Mesh Performance</span> This badge isawarded to the community members who make consistent and impactful contributions to the Service Mesh Performance project. Community members who earn this badge occasionally become a project maintainer.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/community/community.svg" />
+  <span>Community</span> This badge is awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery/meshery.svg" />
+    <span>Meshery</span> This badge isawarded to the community members who make consistent and impactful contributions to the Meshery project. Community members who earn this badge occasionally become a project maintainer.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/patterns/patterns.svg" />
+    <span>Patterns</span> This badge is awarded to the community members who make consistent and impactful contributions to the [Service Mesh Patterns](https://service-mesh-patterns.github.io/service-mesh-patterns.svg) project in recognition and appreciation of their efforts.
+</div>
+<div>
+    <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/landscape/landscape.svg" />
+    <span>Landscape</span> This badge is awarded to the community members who make consistent and impactful contributions to the layer5.io website.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/nighthawk/nighthawk.svg" />
+  <span>Nighthawk</span> This badge is awarded to the community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery-catalog/meshery-catalog.svg" />
+  <span>Meshery Catalog</span> This badge is awarded to the community members who make consistent and impactful contributions to the [Meshery Catalog](https://meshery.io/catalog) of Meshery project in recognition and appreciation of their efforts.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/docker-extension/docker-extension.svg" /> 
+  <span>Docker Extension</span> This badge is awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
+</div>
+<div>
+  <img src="https://raw.githubusercontent.com/layer5labs/meshery-extensions-packages/master/assets/badges/meshery-docs/meshery-docs.svg" /> <span>Meshery Docs</span> This badge is awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io">Meshery Docs</a> in recognition and appreciation of their efforts.
+</div>
+</div>
 
 
-### Earn your first badge today
+<h3>Earn your first badge today</h3>
 
 Are you ready to start earning badges? Join the [Layer5](http://layer5.io/) community platform and start making your contributions! By earning badges, you don't just highlight your accomplishments - you contribute to the growth and success of Layer5.
 
@@ -87,4 +144,8 @@ Keep an eye out for more updates, challenges, and badge releases. Together, let'
 Star our [repository](https://github.com/meshery/meshery) and help us cross 3,000.
 
 Happy contributing and badge-earning! 🚀🛡️
+
+
+</Blog>
 </BlogWrapper>
+
