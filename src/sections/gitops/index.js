@@ -45,8 +45,9 @@ const GitOpsPage = () => {
             <SquarePoint>See your deployment before you merge</SquarePoint>
             <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="buttons-container">
               <Button primary className="learn-more-btn" title="Install" url="https://meshery.layer5.io/connect/github/new"/>
+              <Button secondary className="learn-more-btn" title="Learn More" url="/cloud-native-management/gitops/snapshot"/>
             </div>
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >

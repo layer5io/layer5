@@ -75,9 +75,18 @@ export const GitOpsWrapper = styled.section`
                     }
                 }
                 .learn-more-btn{
-                    color:white;
-                    font-weight: 800;
+                    font-weight: 400;
                     font-size: 1.5em;
+                    width: 100%;
+                }
+                .buttons-container{
+                  display: flex;
+                  gap: 1rem;
+                  flex-direction: column;
+
+                  @media only screen and (min-width: 425px) {
+                    flex-direction: row;
+                  }
                 }
             }
             .hero-images {

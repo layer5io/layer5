@@ -92,10 +92,10 @@ export const ContentRowWrapper = styled(Row)`
         .desc-text-container {
             padding: 1.5rem;
              .learn-more-btn{
-                color:white;
-                font-weight: 700;
+                font-weight: 400;
                 font-size: 1.375em;
                 width: 100%;
+                text-transform: capitalize;
 
                @media only screen and (min-width: 420px) {
                   width: auto;
