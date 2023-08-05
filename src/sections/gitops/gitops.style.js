@@ -168,10 +168,6 @@ export const GitOpsWrapper = styled.section`
 
     .first-content-container {
        padding-top: 0rem;
-
-       @media only screen and (min-width: 360px) {
-          padding-top: 5rem;
-       }
     }
 
     .reviews-container{
