@@ -19,6 +19,7 @@ export const Blog = styled.div`
         max-width: 150px;
       }
     }
+
   }  
   @media (max-width: 1200px) {
     div.badge-grid > div {
