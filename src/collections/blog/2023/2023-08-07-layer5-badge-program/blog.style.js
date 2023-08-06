@@ -3,6 +3,7 @@ export const Blog = styled.div`
   div.badge-grid {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     flex-direction: row;
     justify-content: center;
     > div {
@@ -14,6 +15,7 @@ export const Blog = styled.div`
       align-items: center;
       > span {
         font-weight: bold;
+        padding-top: 0.8rem;
       }
       > img {
         max-width: 150px;
