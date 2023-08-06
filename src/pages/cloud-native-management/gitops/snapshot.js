@@ -3,17 +3,10 @@ import React from "react";
 import SEO from "../../../components/seo";
 import SnapshotPage from "../../../sections/gitops/SnapshotPage";
 
-const Meshery = () => {
-  return (
-    <>
-      <SnapshotPage />
-    </>
-  );
-};
-export default Meshery;
+export default SnapshotPage;
+
 export const Head = () => {
-  // TODO Change this
-  return  <SEO title="GitOps with Meshery"
-    description="GitOps, lifecycle, performance, and configuration management for cloud native infrastructure as code. Manage your Kubernetes clusters visually. Use the catalog of patterns and best practices."
+  return  <SEO title="Visual insights for any Kubernetes environment in every pull request"
+    description="Layer5 creates a visual map of your infrastructure that stays up to date with every PR. Visualize your whole environment, see generated insights, and share a single, accurate source of truth to help quickly onboard new contributors. Layer5 MeshMap uses GitHub to generate dependencies between files and update your map to reflect changes in your codebase. We do not store your code, your code is only stored by GitHub. We analyze your code while it's on GitHub's servers using a GitHub Action."
     image="/images/meshery-logo-dark-text.png" />;
 };
