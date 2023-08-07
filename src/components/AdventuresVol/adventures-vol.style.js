@@ -91,8 +91,8 @@ export const AdventuresVolWrapper = styled.div`
   }
 
   .handbook__card:hover .handbook__card--lm {
-    transform: translateX(0);
-    opacity: 1;
+     transform: translateX(0);
+     opacity: 1;
   }
 
   .handbook__card:hover .handbook__card--head::before {
