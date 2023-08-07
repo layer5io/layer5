@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
+
 const AboutSectionWrapper = styled.section`
+
   .visible-only-in-mobile {
     display: none;
   }
@@ -51,7 +53,7 @@ const AboutSectionWrapper = styled.section`
   }
 
   .about-text.text-two {
-    color: ${(props) => props.theme.sideTextColor};
+    color: ${props => props.theme.sideTextColor};
     font-weight: 400;
     margin-bottom: 28px;
   }
@@ -65,7 +67,7 @@ const AboutSectionWrapper = styled.section`
 
     svg {
       .cncf-stacked-color_svg__st0 {
-        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        fill: ${props => props.theme.whiteToGreen3C494F};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
@@ -97,13 +99,13 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color: ${(props) => props.theme.whiteToBlack}; 
+      color: ${props => props.theme.whiteToBlack}; 
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     h4{
         margin-bottom: 1.7vw;
         font-family:"Qanelas Soft";
-        color: ${(props) => props.theme.whiteSevenToBlackSeven}; 
+        color: ${props => props.theme.whiteSevenToBlackSeven}; 
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
       }
   }
@@ -137,11 +139,11 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title{
     #contact{
-      background: ${(props) => props.theme.highlightColor}; 
+      background: ${props => props.theme.highlightColor}; 
 
       &:hover {
-            background: ${(props) => props.theme.highlightLightColor}; 
-            box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+            background: ${props => props.theme.highlightLightColor}; 
+            box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
   }
@@ -299,7 +301,6 @@ const AboutSectionWrapper = styled.section`
     .loc{
         width:100%;
       }
-    
   }
 `;
 export default AboutSectionWrapper;
