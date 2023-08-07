@@ -28,7 +28,7 @@ const Catalog = () => {
             <h1 className="layerH3">Catalog</h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <a href="/brand/layer5-brand-kit.zip">
+            <a href="/brand/catalog-brand-kit.zip">
               <Button primary title="Download Logo Assets" external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
