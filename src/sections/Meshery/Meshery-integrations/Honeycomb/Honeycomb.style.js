@@ -33,19 +33,20 @@ export const HoneycombGrid = styled.div`
     ul {
       font-size: 0;
       line-height: 0;
-      padding-left:10px;
-      padding-right:5px;
+      padding-left:20px;
+      padding-right:10px;
+      padding-bottom:40px;
       height:auto;
      li {
-        width: 75px;
-        height: calc(75px * 1.1547);
-        margin-bottom: calc(3px - 75px * 0.2885);
+        width: 55px;
+        height: calc(55px * 1.1547);
+        margin-bottom: calc(3px - 55px * 0.2885);
         }
      ::before {
-        width: calc(75px / 2 + 3px);
+        width: calc(55px / 2 + 3px);
         shape-outside: repeating-linear-gradient(
-          #0000 0 calc(calc(1.732 * 75px + 4 * 3px - 1px) - 3px),
-          #000 0 calc(1.732 * 75px + 4 * 3px - 1px)
+          #0000 0 calc(calc(1.732 * 55px + 4 * 3px - 1px) - 3px),
+          #000 0 calc(1.732 * 55px + 4 * 3px - 1px)
         );
       }
     }
