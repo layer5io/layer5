@@ -18,6 +18,7 @@ import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-inte
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
+import recognitionLogo from "../../../assets/images/recognition-program/layer5-recognition-program.svg";
 
 export const repo_data = [
   {
@@ -126,6 +127,15 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/pranav-singh"],
         repository: "https://github.com/layer5io/meshery-cloud",
         accessRequired: "*program participation required"
+      },
+      {
+        project: "Recognition Program",
+        image: recognitionLogo,
+        site: "https://badges.layer5.io/",
+        language: "Gatsby",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        repository: "https://github.com/layer5labs/meshery-extensions-packages/"
       }
     ],
   },
