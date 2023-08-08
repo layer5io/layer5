@@ -301,7 +301,7 @@ const NavigationWrap = styled.header`
       display: flex;
     }
     ul.collapsed {
-      margin: 2rem 0 2rem 0;
+      margin: 1rem 0 1rem 0;
     }
     .nav-item {
       position: relative;
@@ -425,7 +425,7 @@ const NavigationWrap = styled.header`
     }
 
   }
-  @media only screen and (max-width: 912px) {
+  @media only screen and (max-width: 1000px) {
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
