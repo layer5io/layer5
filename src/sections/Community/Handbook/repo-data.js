@@ -18,7 +18,7 @@ import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-inte
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
-import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.svg";
+import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.png";
 
 export const repo_data = [
   {
