@@ -43,6 +43,9 @@ export const CardWrapper = styled.div`
 
         .gatsby-image-wrapper{
             height:80%;
+            width:70%;
+            margin-top: 0.5rem;
+            margin-left: 3rem;
             transition: all 0.3s ease-in;
         }
         .old-gatsby-image-wrapper{
@@ -53,7 +56,6 @@ export const CardWrapper = styled.div`
         }
          img{
             padding: 0px;
-            margin-top: 0.5rem;
             width: 100%;
             height: 100%;
         }
@@ -102,6 +104,7 @@ export const CardWrapper = styled.div`
     .post-meta-block{
         height: auto;
         display: flex;
+        margin-buttom: 0.5rem;
         
 
         .author{
@@ -124,6 +127,7 @@ export const CardWrapper = styled.div`
     .readmore-btn-wrapper{
         display:flex;
         justify-content: flex-start;
+        
     }
 
     .readmore-btn::after{
@@ -141,6 +145,7 @@ export const CardWrapper = styled.div`
        flex: auto;
        align-items: center;
        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       
        
        svg{
            font-size: 1.5rem;
