@@ -44,18 +44,17 @@ export const CardWrapper = styled.div`
         .gatsby-image-wrapper{
             height:80%;
             width:70%;
-            margin-top: 0.5rem;
-            margin-left: 3rem;
+            margin: auto;
             transition: all 0.3s ease-in;
         }
         .old-gatsby-image-wrapper{
             height:100%;
             width:70%;
-            margin-left: 3rem;
+            margin: auto;
             transition: all 0.3s ease-in;
         }
          img{
-            padding: 0px;
+            padding: 10px;
             width: 100%;
             height: 100%;
         }
