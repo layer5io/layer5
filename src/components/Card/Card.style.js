@@ -35,30 +35,27 @@ export const CardWrapper = styled.div`
 		}
 	}
 
-    .post-thumb-block{
+   .post-thumb-block{
         overflow: hidden;
         height: 11.5rem;
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
 
-        .gatsby-image-wrapper{
-            height:80%;
-            width:70%;
-            margin: auto;
-            transition: all 0.3s ease-in;
-        }
-        .old-gatsby-image-wrapper{
-            height:100%;
-            width:70%;
-            margin: auto;
-            transition: all 0.3s ease-in;
-        }
-         img{
-            padding: 10px;
-            width: 100%;
-            height: 100%;
-        }
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
+        height:100%;
+        margin-top: 0.2rem;
+        transition: all 0.3s ease-in;
     }
+    img{
+        height: inherit;
+        max-height: 180px;
+        display: block;
+        text-align: center;
+        margin: auto;
+        }
+
+    }
+    
 
     .post-content-block{
         padding: 1rem 2rem;
