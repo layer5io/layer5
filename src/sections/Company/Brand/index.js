@@ -118,7 +118,7 @@ const Brand = () => {
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
     { section: "MeshMap", ref: meshmapRef },
-    { section: "StickFigures", ref: stickfiguresRef }
+    { section: "Five", ref: stickfiguresRef }
   ];
 
   useEffect(() => {
@@ -334,13 +334,13 @@ const Brand = () => {
             </p>
             <p
               className={`header_link ${
-                visibleSection === "StickFigures" ? "selected" : ""
+                visibleSection === "Five" ? "selected" : ""
               }`}
               onClick={() => {
                 scrollTo(stickfiguresRef.current);
               }}
             >
-              <span> Stick Figures </span>
+              <span> Five, our mascot </span>
             </p>
           </nav>
         </Col>
