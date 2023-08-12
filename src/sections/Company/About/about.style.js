@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
   
+.About-projects-mobile{
+  display:none;
+}
+
   .section__particle {
     position: absolute;
     &.one {
@@ -68,6 +72,9 @@ const AboutSectionWrapper = styled.section`
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
+  }
+  .head-images-mobile{
+    display:none;
   }
   .colab {
     font-size: 20px;
@@ -269,6 +276,19 @@ const AboutSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 480px) {
     padding: 40px 0 60px 0;
+    .head-images-mobile{
+      display:flex;
+    }
+    .head-images{
+      display:none;
+    }
+    .About-projects{
+      display:none;
+    }
+    .About-projects-mobile{
+      margin:2rem 0;
+      display:flex;
+    }
     .section-title {
     h2 {
       margin-bottom: 0rem;
