@@ -6,8 +6,7 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
-    height: ${(props) =>
-  props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
+    height: ${(props) => props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
     li {
       width: 150px;
       margin: 3px;
@@ -29,24 +28,27 @@ export const HoneycombGrid = styled.div`
     }
   }
 
-  @media (max-width: 340px){
+  @media (max-width: 425px){
     ul {
       font-size: 0;
       line-height: 0;
+      margin: 2.5rem 0 0 5px;
       padding-left:20px;
-      padding-right:10px;
+      padding-right:20px;
       padding-bottom:40px;
       height:auto;
      li {
-        width: 55px;
-        height: calc(55px * 1.1547);
-        margin-bottom: calc(3px - 55px * 0.2885);
+      margin: 2px;
+        width: 50px;
+        height: calc(50px * 1.1547);
+        margin-bottom: calc(2px - 50px * 0.2885);
         }
      ::before {
-        width: calc(55px / 2 + 3px);
+        width: calc(50px / 2 + 2px);
+        float: left;
         shape-outside: repeating-linear-gradient(
-          #0000 0 calc(calc(1.732 * 55px + 4 * 3px - 1px) - 3px),
-          #000 0 calc(1.732 * 55px + 4 * 3px - 1px)
+          #0000 0 calc(calc(1.732 * 50px + 4 * 2px - 1px) - 2px),
+          #000 0 calc(1.732 * 50px + 4 * 2px - 1px)
         );
       }
     }

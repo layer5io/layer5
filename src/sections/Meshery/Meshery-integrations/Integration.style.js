@@ -81,7 +81,8 @@ export const HoneycombGrid = styled.div`
       }
       .integration-icon {
         flex-shrink: 0;
-        @media (max-width: 340px) {
+        @media (max-width: 425px) {
+          flex-shrink: 0;
           width:29px;
         }
       }
