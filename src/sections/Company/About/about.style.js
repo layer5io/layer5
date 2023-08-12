@@ -6,6 +6,9 @@ const AboutSectionWrapper = styled.section`
 .About-projects-mobile{
   display:none;
 }
+.About-projects{
+  display:flex;
+}
 
   .section__particle {
     position: absolute;
@@ -64,6 +67,16 @@ const AboutSectionWrapper = styled.section`
       margin: 0rem;
   }
   .head-images {
+    text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+  .head-images-2 {
     text-align: center;
 
     svg {

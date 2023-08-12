@@ -60,7 +60,7 @@ const About = () => {
                 </div>
               </Col>
             </Row>
-
+            <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects"  className="About-projects"/>
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
@@ -87,7 +87,7 @@ const About = () => {
                 </div>
               </Col>
               <Col xs={12} sm={6}>
-                <div className="head-images">
+                <div className="head-images-2">
                   <img
                     src={communityStat}
                     alt="Layer5 Community Stat"
