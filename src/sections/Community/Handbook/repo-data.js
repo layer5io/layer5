@@ -141,7 +141,7 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Training",
+    category: "Cloud Native Training",
     subdata: [
       {
         project: "Service Mesh Labs",
