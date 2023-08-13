@@ -48,7 +48,7 @@ const MesheryFeatures = () => {
               id: "first" ,
               title: "Operational Best Practices",
               description:
-                "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
+                "Benefit from the operational expertise of the world’s foremost cloud native management software and the designs they use.",
               learnMoreLink: "/books/service-mesh-patterns",
               content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
             },

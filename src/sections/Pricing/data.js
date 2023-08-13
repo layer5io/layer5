@@ -46,22 +46,22 @@ export const details = [
     icon: Lifecycle,
     features: [
       {
-        feature: "Configure and deploy any service mesh",
-        description: "Meshery adapters provision, configure, and manage 10 different service meshes.",
+        feature: "Configure and deploy any cloud native infrastructure",
+        description: "230+ Built-In integrations, support Cloud Native Infrastructure and Apps",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "Cluster discovery",
-        description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
+        description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and cloud native changes.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
         feature: "Multiple Kubernetes Clusters",
-        description: "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+        description: "Ongoing synchronization of Kubernetes configuration, workloads and cloud native changes across any number of Kubernetes clusters.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
@@ -130,19 +130,19 @@ export const details = [
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "GitOps - Service Mesh Performance GitHub Action",
+        feature: "GitOps - Cloud Native Performance GitHub Action",
         description: "Integrate performance analysis as a gate in your GitOps pipeline, using performance profiles to run repeatable tests and avoid regression issues before they start. Configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
         free: <MdClose className="no-icon" />,
         team: <GiCheckMark className="yes-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       },
-      {
-        feature: "Service Mesh Interface Conformance GitHub Action",
-        description: "Using Meshery as the offical SMI Conformance validation tool, configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
-        free: <MdClose className="no-icon" />,
-        team: <GiCheckMark className="yes-icon" />,
-        enterprise: <GiCheckMark className="yes-icon" />,
-      },
+      // {
+      //   feature: "Service Mesh Interface Conformance GitHub Action",
+      //   description: "Using Meshery as the offical SMI Conformance validation tool, configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event.",
+      //   free: <MdClose className="no-icon" />,
+      //   team: <GiCheckMark className="yes-icon" />,
+      //   enterprise: <GiCheckMark className="yes-icon" />,
+      // },
       {
         feature: "MeshMark",
         description: "Identify the cost of a specific network function.",
@@ -360,8 +360,8 @@ export const options = [
     button: ["Join for Free", "https://meshery.layer5.io"],
     summary: [
       { id: 0, category: "Cloud Native Design Patterns", description: "Import and export your designs using your local filesystem or remote URL." },
-      { id: 1, category: "Multiple Kubernetes Clusters", description: "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters." },
-      { id: 2, category: "Cluster Discovery", description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes." },
+      { id: 1, category: "Multiple Kubernetes Clusters", description: "Ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes across any number of Kubernetes clusters." },
+      { id: 2, category: "Cluster Discovery", description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes." },
       { id: 3, category: "Microservices Performance", description: "Continuous visibility across all of your clusters and workloads." },
       { id: 4, category: "Load Generation", description: "Single Load Generator: Support testing multiple endpoints simultaneously." },
       { id: 5, category: "MeshMark", description: "Identify the cost of a specific network function." }]

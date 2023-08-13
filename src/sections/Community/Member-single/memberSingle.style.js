@@ -62,6 +62,33 @@ export const MemberSingleWrapper = styled.div`
         }
     }
     .profile-image{
+
+        &-inactive{
+            filter:grayscale(1);
+            &:hover{
+                transition: 0.9s;
+                border-radius: 5px 50px 5px 50px;
+            }
+        }
+        &-inactive:before{
+            content: "INACTIVE";
+            position: absolute;
+            top: 18px;
+            left: -56px;
+            transform: rotate(-45deg);
+            display: flex;
+            height: 65px;
+            width: 206px;           
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, rgb(94, 93, 93), rgb(57, 57, 57));
+            color: rgb(255, 255, 255);
+            z-index: 10;
+            align-items: center;
+           
+        }
+       
         &:hover{
             transition: 0.9s;
             border-radius: 5px 50px 5px 50px;
