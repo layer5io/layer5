@@ -99,6 +99,10 @@ export const HoneycombGrid = styled.div`
         opacity: 1;
         overflow: hidden;
         .title {
+          @media (max-width: 425px) {
+            line-height:  8px;
+            font-weight: 700
+          }
           line-height: 1.375rem;
           color: ${(props) => props.theme.whiteToBlack};
           // margin-bottom: -2.7rem;
@@ -131,6 +135,10 @@ export const HoneycombGrid = styled.div`
             // margin-top: -50%;
             font-size: 1.2rem;
             opacity: 1;
+            @media (max-width: 425px) {
+              font-size: 9px;
+            }
+
           }
           .learnMoreBtn {
             &:hover {
