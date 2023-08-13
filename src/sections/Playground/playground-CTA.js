@@ -90,9 +90,8 @@ p {
         background-size: contain;
       }
     }
-    h2{
-      color: ${props => props.theme.whiteToBlack};
-      padding: 0;
+    h4{
+      color: #ffffff;
     }
     Button {
       margin: 1rem 0;
