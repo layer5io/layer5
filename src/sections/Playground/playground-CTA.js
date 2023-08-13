@@ -4,8 +4,8 @@ import Button from "../../reusecore/Button";
 import { Container } from "../../reusecore/Layout";
 import MesheryTitle from "./images/meshery-title.svg";
 import playgroundbgCTA from "./images/playground-bg-CTA.png";
-import smalldots from "./images/small-dots.png"
-import MesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo.webp"
+import smalldots from "./images/small-dots.png";
+import MesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo.webp";
 
 const DockerExtensionCTAWrapper = styled.div`
 p {
@@ -135,14 +135,14 @@ p {
 const DockerExtensionCTA = () => {
   return (
     <DockerExtensionCTAWrapper>
-      <Container> 
+      <Container>
         <div className="playground-callout">
-        <div className="dots-icon"/>
-        <div className="card-left">
-          <img className="meshery-title" src={MesheryTitle} alt="Meshery Title" loading="lazy" />
-          <div className="playground">Playground</div>
-        </div>
-        <div class="line"></div>
+          <div className="dots-icon"/>
+          <div className="card-left">
+            <img className="meshery-title" src={MesheryTitle} alt="Meshery Title" loading="lazy" />
+            <div className="playground">Playground</div>
+          </div>
+          <div className="line"></div>
           <div className="card-right">
             <div>
               <h4>Mesh Your Way to Success<br></br>Discover, validate, and visualize<br></br> Application with ease. Don't wait </h4>
@@ -151,8 +151,6 @@ const DockerExtensionCTA = () => {
             <Button primary url="https://play.meshery.io/" external={true}>
               Try Playground now!
             </Button>
-         
-
           </div>
           <div className="meshery-icon"/>
         </div>
