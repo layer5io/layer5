@@ -144,7 +144,7 @@ const DockerExtensionCTA = () => {
           <div className="line"></div>
           <div className="card-right">
             <div>
-              <h4>Mesh Your Way to Success<br></br>Discover, validate, and visualize<br></br> Application with ease. Don't wait </h4>
+              <h4>Connect to live clusters<br />Discover, validate, and visualize<br />Kubernetes infrastructure with ease.</h4>
             </div>
             <p></p>
             <Button primary url="https://play.meshery.io/" external={true}>
