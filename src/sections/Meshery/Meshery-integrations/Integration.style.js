@@ -100,8 +100,10 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           @media (max-width: 425px) {
-            line-height:  8px;
+            font-size: 0.406rem;
+            line-height:  0.5rem;
             font-weight: 700
+            opacity: 0.2;
           }
           line-height: 1.375rem;
           color: ${(props) => props.theme.whiteToBlack};
@@ -136,7 +138,7 @@ export const HoneycombGrid = styled.div`
             font-size: 1.2rem;
             opacity: 1;
             @media (max-width: 425px) {
-              font-size: 9px;
+              font-size: 0.413rem;
             }
 
           }
@@ -153,7 +155,10 @@ export const HoneycombGrid = styled.div`
         content: "";
         background: ${(props) => props.theme.grey212121ToWhite};
         margin: 0px 0px 0 4px;
-        clip-path: polygon(
+        @media (max-width: 425px) { 
+          margin: 0px 0px 0 1.5px;
+        }
+       clip-path: polygon(
           50% 0%,
           100% 25%,
           100% 75%,

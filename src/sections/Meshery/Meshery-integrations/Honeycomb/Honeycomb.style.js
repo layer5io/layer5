@@ -32,10 +32,13 @@ export const HoneycombGrid = styled.div`
     ul {
       font-size: 0;
       line-height: 0;
-      margin: 2.5rem 0 0 5px;
+      margin: 1rem 0 0 5px;
+      @media (max-width: 290px){
+        margin: -3rem 0 0 5px;
+      }
       padding-left:20px;
       padding-right:20px;
-      padding-bottom:40px;
+      padding-bottom:20px;
       height:auto;
      li {
       margin: 2px;
