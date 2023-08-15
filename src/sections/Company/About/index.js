@@ -60,9 +60,20 @@ const About = () => {
                 </div>
               </Col>
             </Row>
-            <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects"  className="About-projects"/>
+            <img
+              loading="lazy"
+              src={Layer5Projects}
+              alt="About Layer5 Projects"
+              className="About-projects"
+            />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
+                <img
+                  loading="lazy"
+                  src={Layer5Projects}
+                  alt="About Layer5 Projects"
+                  className="About-projects-mobile"
+                />
                 <div className="about-text text-two">
                   <h1>Open Source First</h1>
                   <p className="indent">
@@ -71,12 +82,13 @@ const About = () => {
                     patterns and best practices for managing all aspects of
                     distributed services.
                   </p>
-                  <img
-                    loading="lazy"
-                    src={Layer5Projects}
-                    alt="About Layer5 Projects"
-                    className="About-projects-mobile"
-                  />
+                  <div className="head-images-2-mobile">
+                    <img
+                      src={communityStat}
+                      alt="Layer5 Community Stat"
+                      loading="lazy"
+                    />
+                  </div>
                   <p className="section-title">We are principled.</p>
                   <p>
                     We are proud of the inclusive and kind work environment we

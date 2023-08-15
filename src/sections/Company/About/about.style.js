@@ -8,7 +8,9 @@ const AboutSectionWrapper = styled.section`
 .About-projects{
   display:flex;
 }
-
+.head-images-2-mobile{
+  display:none;
+}
   .section__particle {
     position: absolute;
     &.one {
@@ -294,11 +296,26 @@ const AboutSectionWrapper = styled.section`
     .head-images{
       display:none;
     }
+    .head-images-2-mobile{
+      margin:2rem 0;
+      display:block;
+      text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+    }
+    .head-images-2{
+      display:none;
+    }
     .About-projects{
       display:none;
     }
     .About-projects-mobile{
-      margin:2rem 0;
+      margin-bottom:2rem;
       display:flex;
     }
     .section-title {
