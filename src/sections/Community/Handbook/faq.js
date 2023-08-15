@@ -17,20 +17,20 @@ const Faq = () => {
         <Container>
           <div className="content">
             <h2>General FAQs:</h2><br />
-            <h3>Q: Are Layer5’s solutions open source?</h3>
+            <h3>Q: Are <strong>Layer5’s</strong> solutions open source?</h3>
             <p><strong>A:</strong> Yes, all <strong>Layer5</strong> projects are licensed under Apache V2. <strong>Layer5</strong> also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
 
             <h3>Q: I am new to Open Source, where do I begin?</h3>
             <p><strong>A:</strong> You can start by going through the <a href="https://layer5.io/community/newcomers">Newcomers’ Welcome Guide.</a></p>
 
             <h3>Q: What exactly is a MeshMate?</h3>
-            <p><strong>A:</strong><strong>Layer5</strong><Link to="/community/meshmates"> MeshMates </Link>are individuals committed to helping community members be successful contributors. Meshmates are there to guide and support the community members, helping them identify projects they can contribute to depending on their areas of interest, directing them on groups to join and helping them grow in their open-source and cloud native knowledge.</p>
+            <p><strong>A:</strong> <strong>Layer5</strong><Link to="/community/meshmates"> MeshMates </Link>are individuals committed to helping community members be successful contributors. Meshmates are there to guide and support the community members, helping them identify projects they can contribute to depending on their areas of interest, directing them on groups to join and helping them grow in their open-source and cloud native knowledge.</p>
 
             <h3>Q: How do I join the mailing list?</h3>
             <p><strong>A:</strong> You can subscribe to the <strong>Layer5</strong> mailing <a href="https://layer5.io/subscribe">here.</a></p>
 
-            <h3>Q: How do I get an internship in Layer5?</h3>
-            <p><strong>A:</strong> To best position your candidacy for an internship with Layer5, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.</p>
+            <h3>Q: How do I get an internship in <strong>Layer5</strong>?</h3>
+            <p><strong>A:</strong> To best position your candidacy for an internship with <strong>Layer5</strong>, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.</p>
 
             <h3>Q: How do I follow up on the meetings?</h3>
             <p><strong>A:</strong> To follow up on the community meetings, you can view and add the <a href="https://bit.ly/2SbrRhe">community calendar</a> to your calendar list.</p>
@@ -39,7 +39,7 @@ const Faq = () => {
             <p><strong>A:</strong> We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with the <a href="https://twitter.com/layer5">Twitter,</a><a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"> Youtube,</a> and <a href="https://www.linkedin.com/company/layer5/">Linkedin</a> accounts.</p>
 
             <h3>Q: I am not a coder, can I contribute too?</h3>
-            <p><strong>A:</strong> Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5<a href="https://slack.layer5.io"> slack </a>and let other community members get acquainted with you and vice-versa.</p>
+            <p><strong>A:</strong> Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the <strong>Layer5</strong><a href="https://slack.layer5.io"> slack </a>and let other community members get acquainted with you and vice-versa.</p>
 
             <h3>Q: How should I approach assigning and working on issues within the community?</h3>
             <p><strong>A:</strong> To ensure efficiency and positive collaboration, please follow these guidelines:</p>
