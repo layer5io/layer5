@@ -70,7 +70,7 @@ const BannerDefault = () => {
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
             <ReactPlayer
-              url="https://youtu.be/Do7htKrRzDA"
+              url="https://youtu.be/qaoYRP3oLok"
               playing
               controls
               light={

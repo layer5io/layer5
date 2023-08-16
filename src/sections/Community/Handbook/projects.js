@@ -58,7 +58,7 @@ const Maintainer = () => {
             </p>
             <p>
 
-              Its cloud nativecommunity represents the largest collection of
+              Its cloud native community represents the largest collection of
               service Mesh projects. Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
               <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
@@ -169,6 +169,16 @@ const Maintainer = () => {
                 </li>
                 <p>
                   The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
+                </p>
+                <li>
+                  <h4>
+                    <a href="https://layer5.io/catalog">
+                      Meshery Catalog :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. <br />
                 </p>
               </ul>
             </p>
