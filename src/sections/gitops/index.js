@@ -3,19 +3,13 @@ import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { ThemeManagerContext } from "../../theme/app/ThemeManager";
 import Cone from "../../assets/images/gitops/conelight.svg";
-import { GitOpsWrapper, SquarePointWrapper } from "./gitops.style.js";
+import { GitOpsWrapper } from "./gitops.style.js";
 import SmpLogo_dark from "../../assets/images/app/projects/smp.svg";
 import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp-light.svg";
 import Reviews from "../Pricing/review-slider";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
+import SquarePoint from "./SquarePoint";
 
-
-const SquarePoint = ({ children }) => {
-  return <SquarePointWrapper>
-    <div className="square-box" />
-    <p className="content">{children}</p>
-  </SquarePointWrapper>;
-};
 
 
 const GitOpsPage = () => {
@@ -51,8 +45,9 @@ const GitOpsPage = () => {
             <SquarePoint>See your deployment before you merge</SquarePoint>
             <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="buttons-container">
               <Button primary className="learn-more-btn" title="Install" url="https://meshery.layer5.io/connect/github/new"/>
+              <Button secondary className="learn-more-btn" title="Learn More" url="/cloud-native-management/gitops/snapshot"/>
             </div>
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >
