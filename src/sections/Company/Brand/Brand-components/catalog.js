@@ -1,15 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import CatalogIcon from "../../../../assets/images/catalog-icon/catalog.svg";
-import CatalogIcon2 from "../../../../assets/images/catalog-icon/catalog2.svg";
-import CatalogIcon3 from "../../../../assets/images/catalog-icon/catalog3.svg";
-import CatalogIcon4 from "../../../../assets/images/catalog-icon/catalog4.svg";
-import CatalogIcon5 from "../../../../assets/images/catalog-icon/catalog5.svg";
+import ProjectItemWrapper from "./projectSection.style.js";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Layer5Wrapper = styled.section`
   @media (max-width: 575px) {
@@ -20,6 +16,12 @@ const Layer5Wrapper = styled.section`
 `;
 
 const Catalog = () => {
+  const CatalogIcon = "../../../../assets/images/catalog-icon/catalog.svg";
+  const CatalogIcon2 = "../../../../assets/images/catalog-icon/catalog2.svg";
+  const CatalogIcon3 = "../../../../assets/images/catalog-icon/catalog3.svg";
+  const CatalogIcon4 = "../../../../assets/images/catalog-icon/catalog4.svg";
+  const CatalogIcon5 = "../../../../assets/images/catalog-icon/catalog5.svg";
+
   return (
     <Layer5Wrapper>
       <div className="post-content">
@@ -49,28 +51,59 @@ const Catalog = () => {
           <Col xs={12}>
             <h2 className="layerH3 in">Logos</h2>
           </Col>
-          <SRLWrapper>
-            <Row Vcenter className="Layer5Logos">
-              <Col xs={12} sm={1} />
-              <Col xs={12} sm={2}>
-                <img src={CatalogIcon} alt="Catalog Logo" />
-              </Col>
-              <Col xs={12} sm={2}>
-                <img src={CatalogIcon2} alt="Catalog Logo" />
-              </Col>
-              <Col xs={12} sm={2}>
-                <img src={CatalogIcon3} alt="Catalog Logo" />
-              </Col>
-              <Col xs={12} sm={2}>
-                <img src={CatalogIcon4} alt="Catalog Logo" />
-              </Col>
-              <Col xs={12} sm={2}>
-                <img src={CatalogIcon5} alt="Catalog Logo" />
-              </Col>
-              <Col xs={12} sm={1} />
-            </Row>
-          </SRLWrapper>
         </Row>
+        <ProjectItemWrapper id="projects">
+          <Row>
+            <div className="project__block__wrap">
+              <Col sm={12} md={6} lg={4}>
+                <div className="project__block__inner">
+                  <StaticImage
+                    loading="lazy"
+                    src={CatalogIcon}
+                    alt="MeshMap Logo"
+                  />
+                </div>
+              </Col>
+              <Col sm={12} md={6} lg={4}>
+                <div className="project__block__inner">
+                  <StaticImage
+                    loading="lazy"
+                    src={CatalogIcon2}
+                    alt="Meshery Logo"
+                  />
+                </div>
+              </Col>
+              <Col sm={12} md={6} lg={4}>
+                <div className="project__block__inner">
+                  <StaticImage
+                    loading="lazy"
+                    src={CatalogIcon3}
+                    alt="SMP Logo"
+                  />
+                </div>
+              </Col>
+              <Col sm={12} md={6} lg={4}>
+                <div className="project__block__inner">
+                  <StaticImage
+                    loading="lazy"
+                    src={CatalogIcon4}
+                    alt="Nighthawk Logo"
+                  />
+                </div>
+              </Col>
+              <Col sm={12} md={6} lg={4}>
+                <div className="project__block__inner">
+                  <StaticImage
+                    loading="lazy"
+                    src={CatalogIcon5}
+                    alt="Nighthawk Logo"
+                  />
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </ProjectItemWrapper>
+
         <Row>
           <Col xs={12}>
             <h2 className="layerH3 in">Colors</h2>
@@ -78,8 +111,8 @@ const Catalog = () => {
           <Col xs={12}>
             <p>
               Our community color palette consists of gray and green colors
-              representing each of our projects. The Catalog logo should be white
-              when using project colors as the background.
+              representing each of our projects. The Catalog logo should be
+              white when using project colors as the background.
             </p>
           </Col>
           <Row className="color-code-wrapper">
