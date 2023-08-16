@@ -6,9 +6,12 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
+import ReactPlayer from "react-player/youtube";
+import mesheryPlayground from "./meshery-playground-meshmap.png";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
+import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
 import Banner1SectionWrapper from "./banner4.style";
 
@@ -72,11 +75,32 @@ const Banner1 = (props) => {
           </Col>
           {hasMounted && window.innerWidth > 760 && (
             <Col sm={4} lg={6} className="section-title-wrapper video-col">
-              <Link to="/cloud-native-management/meshmap">
+              <ReactPlayer
+                url="https://youtu.be/Do7htKrRzDA"
+                playing
+                controls
+                light={mesheryPlayground}
+                playIcon={
+                  <img
+                    src={playIcon}
+                    className="playBtn"
+                    loading="lazy"
+                    alt="Play"
+                    role="button"
+                    aria-label="Play"
+                    style={{ fontSize: "24px" }}
+                  />
+                }
+                width="90%"
+                height="30vw"
+                style={{ margin: "auto" }}
+                className="embedVideo"
+              />
+              {/* <Link to="/cloud-native-management/meshmap">
                 <video autoPlay muted loop preload="metadata" className="meshmapVideo">
                   <source src={meshmapVideo} type="video/mp4"></source>
                 </video>
-              </Link>
+              </Link> */}
             </Col>
           )}
         </Row>

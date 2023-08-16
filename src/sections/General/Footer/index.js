@@ -220,6 +220,14 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/gitops"
+                    >
+                      GitOps
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/projects/nighthawk">
                       Nighthawk
                     </Link>
@@ -232,20 +240,20 @@ const Footer = ({ location }) => {
                       Docker Extension
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       className="category-link"
                       to="/projects/service-mesh-interface-conformance"
                     >
                       Service Mesh Interface
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       className="category-link"
                       to="/projects/service-mesh-performance"
                     >
-                      Service Mesh Performance
+                      Cloud Native Performance
                     </Link>
                   </li>
                 </ul>
