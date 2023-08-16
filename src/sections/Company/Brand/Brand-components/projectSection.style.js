@@ -49,7 +49,7 @@ const ProjectItemWrapper = styled.section`
             box-shadow: 0px 0px 5px ${props => props.theme.whiteToGreen3C494F};
         }
         padding: 12% 6% 12% 6%;
-        height: 220px;
+        height: auto;
         border-radius: 10px;
         text-align: center;
         justify-content: center;
@@ -67,7 +67,7 @@ const ProjectItemWrapper = styled.section`
         }
 
         img {
-            height: 100px; 
+            height: 75px; 
             width: auto;
         }
         .gatsby-image-wrapper {
