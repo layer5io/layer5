@@ -120,7 +120,7 @@ const Brand = () => {
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
     { section: "MeshMap", ref: meshmapRef },
-    { section: "Five", ref: stickfiguresRef }
+    { section: "Five", ref: stickfiguresRef },
     { section: "Catalog", ref: CatalogRef }
   ];
 
