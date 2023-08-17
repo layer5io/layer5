@@ -22,22 +22,12 @@ Kubernetes is an open-source project, originally started by Google and now devel
 
 As is the case with every Kubernetes release, there is a theme and a code name; for Kubernetes 1.28 the name is “Planternetes.” “So in the northern hemisphere, it’s summer right now and I think the symbolism of the garden and our community goes hand in hand,” Grace Nguyen, release lead for Kubernetes 1.28, told SDxCentral. “Each of us has a very important role in the ecosystem and together we built this big, open-source project that has a lot of impact.”
 
-<h3>Kubernetes 1.28 has deep roots for stability</h3>
-Nguyen noted that there are some 45 enhancements in the Kubernetes 1.28 update, spanning new stable, beta and alpha capabilities.
-
-Kubernetes is widely deployed on public cloud providers and is also used as the foundation of several commercial offerings, including one from IBM‘s Red Hat business unit.
-
-“The latest release of Kubernetes has a number of enhancements to help increase the stability, performance and maintainability of the core platform while also augmenting workload innovation, including AI [artificial intelligence] and virtual machines,” Karena Angell, OpenShift Commons lead and senior principal product manager for Red Hat OpenShift and Hybrid Platforms, told SDxCentral.
-
-Angell said Red Hat is particularly interested in the new node system memory swap support that has been added to Kubernetes 1.28 to enable better memory performance across a cluster. Additionally, she noted that the Kubernetes Job API now allows for more choices in AI model training and retraining, which is especially key for AI-driven and intelligent workloads.
-
-“As Kubernetes continues to mature as a platform with release 1.28, we’re very happy to see a number of new features and tweaks that further support production stability and consistency,” Angell said. “Large and complicated jobs can now fail faster and more accurately which, while it sounds strange, contributes to better overall performance of Kubernetes in production.”
-
-
 <h3>Networking enhancements in Kubernetes 1.28</h3>
 Looking specifically at the networking capabilities of Kubernetes 1.28, there are a few enhancements that will also help to improve overall performance.
+<br></br>
+<br></br>
 
-Lee Calcote, founder of Layer5 and a CNCF contributor, explained that one of the key networking updates is an enhancement to the kube-proxy feature that will enable better connection-draining capabilities for load balancers targeting terminating nodes.
+<Link to="/community/members/lee-calcote/bio">Lee Calcote</Link>, founder of <Link to="/about">Layer5</Link> and a CNCF contributor, explained that one of the key networking updates is an enhancement to the kube-proxy feature that will enable better connection-draining capabilities for load balancers targeting terminating nodes.
 
 “This enhancement improves the reliability of load balancer health checks and connection draining for terminating nodes within Kubernetes, so that kube-proxy can independently report its health regardless of the terminating state of the node,” Calcote told SDxCentral. “In this way, cloud providers in particular can be more sophisticated in ascertaining if a load balancer should target a specific node for ingress traffic or not.”
 
@@ -48,5 +38,17 @@ While Kubernetes has many built-in capabilities, extensibility of the platform i
 
 Calcote explained that proxies running in Kubernetes are quite powerful and many support on-the-fly insertion or removal of traffic filters as plugins, with technologies like Envoy, Traefik, and NGINX as prime examples. He noted that each technology varies in support for the chaining of multiple filters and for the programming languages in which developers can create these filters. Envoy, in particular, supports WebAssembly (WASM)-based filters, which means that a number of different languages are supported.
 
-“Kubernetes has yet to address this deeper area of network traffic management, which is where CNCF projects like Meshery step in with WASM filter management for any Envoy proxy or Envoy-based service-mesh data plane,” he said.
+“Kubernetes has yet to address this deeper area of network traffic management, which is where CNCF projects like <Link to="/cloud-native-management/meshery">Meshery</Link> step in with WASM filter management for any Envoy proxy or Envoy-based service-mesh data plane,” he said.
+
+Kubernetes 1.28 has deep roots for stability
+Nguyen noted that there are some 45 enhancements in the Kubernetes 1.28 update, spanning new stable, beta and alpha capabilities.
+
+Kubernetes is widely deployed on public cloud providers and is also used as the foundation of several commercial offerings, including one from IBM‘s Red Hat business unit.
+
+“The latest release of Kubernetes has a number of enhancements to help increase the stability, performance and maintainability of the core platform while also augmenting workload innovation, including AI [artificial intelligence] and virtual machines,” Karena Angell, OpenShift Commons lead and senior principal product manager for Red Hat OpenShift and Hybrid Platforms, told SDxCentral.
+
+Angell said Red Hat is particularly interested in the new node system memory swap support that has been added to Kubernetes 1.28 to enable better memory performance across a cluster. Additionally, she noted that the Kubernetes Job API now allows for more choices in AI model training and retraining, which is especially key for AI-driven and intelligent workloads.
+
+“As Kubernetes continues to mature as a platform with release 1.28, we’re very happy to see a number of new features and tweaks that further support production stability and consistency,” Angell said. “Large and complicated jobs can now fail faster and more accurately which, while it sounds strange, contributes to better overall performance of Kubernetes in production.”
+
 </NewsWrapper>
