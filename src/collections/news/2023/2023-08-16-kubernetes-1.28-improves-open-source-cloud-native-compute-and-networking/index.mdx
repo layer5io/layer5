@@ -34,5 +34,19 @@ Angell said Red Hat is particularly interested in the new node system memory swa
 “As Kubernetes continues to mature as a platform with release 1.28, we’re very happy to see a number of new features and tweaks that further support production stability and consistency,” Angell said. “Large and complicated jobs can now fail faster and more accurately which, while it sounds strange, contributes to better overall performance of Kubernetes in production.”
 
 
+<h3>Networking enhancements in Kubernetes 1.28</h3>
+Looking specifically at the networking capabilities of Kubernetes 1.28, there are a few enhancements that will also help to improve overall performance.
 
+Lee Calcote, founder of Layer5 and a CNCF contributor, explained that one of the key networking updates is an enhancement to the kube-proxy feature that will enable better connection-draining capabilities for load balancers targeting terminating nodes.
+
+“This enhancement improves the reliability of load balancer health checks and connection draining for terminating nodes within Kubernetes, so that kube-proxy can independently report its health regardless of the terminating state of the node,” Calcote told SDxCentral. “In this way, cloud providers in particular can be more sophisticated in ascertaining if a load balancer should target a specific node for ingress traffic or not.”
+
+Also of note in Kubernetes 1.28 for networking is IPv4 to IPv6 dual-stack transition support for Kubernetes pods. Calcote explained that this enhancement allows pods to access information about both IPv4 and IPv6 addresses associated with the node they are running on, thereby enhancing their ability to adapt to dual-stack network transitions.
+
+Cloud-native networking beyond Kubernetes
+While Kubernetes has many built-in capabilities, extensibility of the platform is a key attribute as well.
+
+Calcote explained that proxies running in Kubernetes are quite powerful and many support on-the-fly insertion or removal of traffic filters as plugins, with technologies like Envoy, Traefik, and NGINX as prime examples. He noted that each technology varies in support for the chaining of multiple filters and for the programming languages in which developers can create these filters. Envoy, in particular, supports WebAssembly (WASM)-based filters, which means that a number of different languages are supported.
+
+“Kubernetes has yet to address this deeper area of network traffic management, which is where CNCF projects like Meshery step in with WASM filter management for any Envoy proxy or Envoy-based service-mesh data plane,” he said.
 </NewsWrapper>
