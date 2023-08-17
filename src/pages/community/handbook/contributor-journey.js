@@ -13,5 +13,5 @@ const CommunityAbout = () => {
 };
 export default CommunityAbout;
 export const Head = () => {
-  return <SEO title="Community Handbook" description="Instructions to encourage and support first-time open-source contributors." />;
+  return <SEO title="Contributor-Journey" description="Instructions to encourage and support first-time open-source contributors." />;
 };
