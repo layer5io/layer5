@@ -10,6 +10,9 @@ import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 
 const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
+  const sortEvents = (nodes) => {
+    return nodes.slice().sort((first, second) => new Date(second.frontmatter.date.replace(/(st|nd|rd|th),/g, "")) - new Date(first.frontmatter.date.replace(/(st|nd|rd|th),/g, "")));
+  };
 
   return (
     <MeetupStyle>
@@ -25,28 +28,28 @@ const Meetups = ({ data, pageContext }) => {
         </div>
         <div>
           <Row>
-            {active == "all" ? data.allCategories.nodes.map(category => {
+            {active == "all" ? sortEvents(data.allCategories.nodes).map(category => {
               return (
                 <Col xs={12} sm={6} lg={4} key={category.id}>
                   <Card  frontmatter={category.frontmatter} fields={category.fields} />
                 </Col>
               );
             }) : <></>}
-            {active == "events" ? data.allEvents.nodes.map(event => {
+            {active == "events" ? sortEvents(data.allEvents.nodes).map(event => {
               return (
                 <Col xs={12} sm={6} lg={4} key={event.id}>
                   <Card  frontmatter={event.frontmatter} fields={event.fields} />
                 </Col>
               );
             }) : <></>}
-            {active == "workshops" ? data.allWorkshops.nodes.map(workshop => {
+            {active == "workshops" ? sortEvents(data.allWorkshops.nodes).map(workshop => {
               return (
                 <Col xs={12} sm={6} lg={4} key={workshop.id}>
                   <Card  frontmatter={workshop.frontmatter} fields={workshop.fields} />
                 </Col>
               );
             }) : <></>}
-            {active == "meetups" ? data.allMeetups.nodes.map(meetup => {
+            {active == "meetups" ? sortEvents(data.allMeetups.nodes).map(meetup => {
               return (
                 <Col xs={12} sm={6} lg={4} key={meetup.id}>
                   <Card  frontmatter={meetup.frontmatter} fields={meetup.fields} />

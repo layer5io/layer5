@@ -212,7 +212,7 @@ section{
 .Overlay {
     position: fixed;
     inset: 0px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 9999;
     overflowY: auto;
 }
