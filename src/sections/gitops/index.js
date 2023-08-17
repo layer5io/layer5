@@ -8,6 +8,7 @@ import SmpLogo_dark from "../../assets/images/app/projects/smp.svg";
 import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp-light.svg";
 import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
+import Github_Light from "../../assets/images/socialIcons/github-light.svg";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import SquarePoint from "./SquarePoint";
 
@@ -65,7 +66,7 @@ const GitOpsPage = () => {
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10}>
             <div className="image-container">
-              <img src={Github_Dark} className="logo" />
+              <img src={isDark ? Github_Dark : Github_Light} className="logo" />
             </div>
           </Col>
         </Row>
