@@ -29,7 +29,7 @@ const Faq = () => {
             <h3>Q: How do I join the mailing list?</h3>
             <p><strong>A:</strong> You can subscribe to the <strong>Layer5</strong> mailing <a href="https://layer5.io/subscribe">here.</a></p>
 
-            <h3>Q: How do I get an internship in <strong>Layer5</strong>?</h3>
+            <h3>Q: How do I get an internship at <strong>Layer5</strong>?</h3>
             <p><strong>A:</strong> To best position your candidacy for an internship with <strong>Layer5</strong>, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.</p>
 
             <h3>Q: How do I follow up on the meetings?</h3>
