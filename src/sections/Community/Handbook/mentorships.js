@@ -10,7 +10,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
-    margin-top: -36rem; 
+    margin-top: -51rem; 
     .explain-2{
       padding: 25px 0px;
       .text{
