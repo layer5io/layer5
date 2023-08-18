@@ -9,6 +9,7 @@ import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevron
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
+const Journey = "../../../assets/images/five-and-friends/journey.png";
 
 const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(
@@ -68,6 +69,18 @@ const Sidebar = ({ pageContext }) => {
               <h2>Join the Conversation</h2>
               <p>On our Discussion Forum</p>
               <StaticImage imgClassName="logo" alt="Discuss" src={Discuss} />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div className="explain-1">
+        <div className="cards">
+          <a href="https://layer5.io/community/adventures-of-five-and-friends/">
+            <div className="card">
+              <h2>Witness the Journey</h2>
+              <p>Of Adventures of Five And Friends</p>
+              <StaticImage imgClassName="logo" alt="Journey" src={Journey} style={{ padding: 0 }}/>
             </div>
           </a>
         </div>
