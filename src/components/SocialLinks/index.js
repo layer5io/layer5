@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "../../reusecore/Layout";
 import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
 import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
-import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
+import x_icon from "../../assets/images/socialIcons/x-light.svg";
 import github_icon from "../../assets/images/socialIcons/github_white_trim.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
@@ -28,11 +28,11 @@ const SocialLinks = () => {
             <img className="slack" height="40 px" src={slack_icon} alt="slack" />
           </a>
           <a
-            href="https://twitter.com/layer5"
+            href="https://x.com/layer5"
             target="_blank"
             rel="noreferrer"
           >
-            <img className="twitter" height="40 px" src={twitter_icon} alt="twitter" />
+            <img className="twitter" height="40 px" src={x_icon} alt="twitter" />
           </a>
           <a
             href="https://github.com/layer5io"
