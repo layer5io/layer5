@@ -3,7 +3,7 @@ import { Col, Row } from "../../reusecore/Layout";
 import forum_icon from "../../assets/images/socialIcons/forum.svg";
 import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
 import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
-import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
+import x_icon from "../../assets/images/socialIcons/x-light.svg";
 import github_icon from "../../assets/images/socialIcons/github.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
@@ -33,11 +33,11 @@ const SocialLinksColor = () => {
           <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
-          <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
+          <a href="https://x.com/layer5" target="_blank" rel="noreferrer">
             <img
               className="twitter"
               height="30px"
-              src={twitter_icon}
+              src={x_icon}
               alt="twitter"
             />
           </a>
