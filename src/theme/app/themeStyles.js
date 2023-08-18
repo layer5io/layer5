@@ -18,7 +18,7 @@ const lighttheme = {
 
   // keppel (dark green)
   primaryLightColorTwo: "#00d3a9",
-  keppelColor: "#00d3a9",
+  keppelColor: "#3ab09e",
 
   // caribbean green (light green)
   secondaryColor: "#00b39f",
@@ -246,7 +246,7 @@ export const darktheme = {
 
   // keppel (dark green)
   primaryLightColorTwo: "#2C2C2C",
-  keppelColor: "#00d3a9",
+  keppelColor: "#3ab09e",
 
   // caribbean green (light green)
   secondaryColor: "#00b39f",
