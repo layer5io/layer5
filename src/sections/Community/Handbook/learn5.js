@@ -23,7 +23,7 @@ const LearnLayer = () => {
 
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
 
             <a id="Learning">
               <h2>Learning together</h2>

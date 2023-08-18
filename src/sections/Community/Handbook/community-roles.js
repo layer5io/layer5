@@ -22,7 +22,7 @@ const CommunityGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
             <a id="top">
               {" "}
               <h2>What are the roles held by individuals in the Layer5 community?</h2>{" "}

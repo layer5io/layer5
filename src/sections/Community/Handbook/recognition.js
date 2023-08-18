@@ -65,7 +65,7 @@ const RecognitionPage = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
             <a id="Community Guidelines">
               <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
             </a>

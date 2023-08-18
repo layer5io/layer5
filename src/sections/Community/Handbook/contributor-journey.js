@@ -11,9 +11,13 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 const contents = [
   { id: 0, link: "#About Layer5", text: "About Layer5" },
   { id: 1, link: "#Goals", text: "Goals" },
-  { id: 2, link: "#Newcomer’s Path", text: "Newcomer’s Path", },
+  { id: 2, link: "#Newcomer’s Path", text: "Newcomer’s Path" },
   { id: 3, link: "#Working on your issue", text: "Working on your issue" },
-  { id: 4, link: "#While your issue is under review", text: "While your issue is under review", },
+  {
+    id: 4,
+    link: "#While your issue is under review",
+    text: "While your issue is under review",
+  },
 ];
 
 const Intro = () => {
@@ -27,19 +31,18 @@ const Intro = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
             <a id="About Layer5">
               <h2>About Layer5</h2>
             </a>
             <p>
-              Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
-              maintainer of
+              Layer5 is an open source-first company and community of cloud
+              native engineers. We are the creator and maintainer of
               <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
                 {" "}
                 service mesh standards{" "}
               </Link>
-              and also the maker of <Link to="/meshery">Meshery </Link>,
-              the
+              and also the maker of <Link to="/meshery">Meshery </Link>, the
               <Link to="/cloud-native-management/meshery">
                 {" "}
                 Cloud Native Management Plane{" "}
@@ -49,8 +52,8 @@ const Intro = () => {
             </p>
             <h4>Community First</h4>
             <p>
-              The Layer5 community builds projects to provide
-              learning environments, deployment, and operational best practices,
+              The Layer5 community builds projects to provide learning
+              environments, deployment, and operational best practices,
               performance benchmarks, create documentation, share networking
               opportunities, and more. Our shared commitment to the open-source
               spirit pushes Layer5 projects forward. New members are always
@@ -106,7 +109,11 @@ const Intro = () => {
                 <h2>Contributor's Journey</h2>
                 <div className="heading-start">
                   <h5>Start Here</h5>
-                  <img className="heading-start__arrow" src={longArrow} alt="longArrow" />
+                  <img
+                    className="heading-start__arrow"
+                    src={longArrow}
+                    alt="longArrow"
+                  />
                 </div>
               </Col>
               <Col sm={12} lg={6}>

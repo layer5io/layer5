@@ -34,7 +34,7 @@ const Connect = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
             <a id="Newsletter">
               {" "}
               <h2>Subscribe to Newsletter</h2>{" "}

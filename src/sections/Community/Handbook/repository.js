@@ -40,7 +40,7 @@ const Repository = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div>
             <a id="top">
               <h2>GitHub Organizations and Repositories</h2>
             </a>
