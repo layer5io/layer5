@@ -41,11 +41,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      h3{
-        padding-top: 7rem;
-        margin-top: -7rem;
-      }
-      margin-top: -36rem;
+      margin-top: -48rem;
       margin-left: 20rem;
       display: flex;
     }
