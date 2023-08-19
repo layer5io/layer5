@@ -107,8 +107,6 @@ const SwiperContainer = styled.div`
       padding: 1rem;
     }
     .card img {
-      /* max-height:20%;
-      width:90%; */
       margin-left: 0.5rem !important;
     }
   }
