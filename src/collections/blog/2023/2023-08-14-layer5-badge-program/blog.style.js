@@ -18,7 +18,7 @@ export const Blog = styled.div`
         padding-top: 0.8rem;
       }
       > img {
-        max-width: 150px;
+        max-width: 225px;
       }
     }
 
