@@ -35,7 +35,11 @@ export const HandbookWrapper = styled.div`
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-
+    #less-padding {
+      padding-top: 0rem;
+        margin-top: -6rem;
+    }
+    
     .page-section{
       h2{
         padding-top: 7rem;
@@ -48,6 +52,9 @@ export const HandbookWrapper = styled.div`
       margin-top: -36rem;
       margin-left: 20rem;
       display: flex;
+    }
+    #conduct-section{
+      margin-top: -43rem;
     }
 
     .sidebar {
@@ -193,11 +200,11 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};
+      fill:  ${(props) => props.theme.grey313131ToGreenC9FCF6};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
-      stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+      stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     svg {
@@ -439,7 +446,7 @@ width: 90%;
    }
   .text{
     p{
-      color: ${props => props.theme.tertiaryColor};
+      color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   }
@@ -452,7 +459,7 @@ width: 90%;
               vertical-align: top;
           }
           .skill{
-              color: ${props => props.theme.tertiaryColor};
+              color: ${(props) => props.theme.tertiaryColor};
               font-size: 16px;
               padding: 0 0 1.25rem 1.8rem;
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -473,11 +480,12 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.grey212121ToWhite};
-  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
+  background: ${(props) => props.theme.grey212121ToWhite};
+  box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize} ${(props) =>
+  props.theme.green00D3A9ToGreyE6E6E6};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   &:hover{
-      box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+      box-shadow: 0px 0px 5px ${(props) => props.theme.primaryColor};
   }
   padding: 12% 6% 12% 6%;
   height: 220px;
@@ -488,11 +496,11 @@ width: 90%;
       margin-bottom: auto; 
       margin-top: 0.5rem;
       font-weight: 700;
-      color: ${props => props.theme.secondaryColor}
+      color: ${(props) => props.theme.secondaryColor}
   }
   p{
       font-weight: 300;
-      color: ${props => props.theme.text};
+      color: ${(props) => props.theme.text};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   img{

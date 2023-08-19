@@ -13,7 +13,7 @@ const CodeofConduct = () => {
         <h1>Code of Conduct</h1>
       </div>
       <TOC />
-      <div className="page-section">
+      <div className="page-section" id="conduct-section">
         <Container>
           <div className="content">
             <p>Layer5 follows the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a> which states that:</p>
