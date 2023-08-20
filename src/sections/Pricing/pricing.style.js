@@ -110,7 +110,7 @@ const PricingWrapper = styled.section`
 	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
-    margin: 1.5rem 1rem;
+    margin: 1.5rem 0;
   }
 }
 
@@ -229,12 +229,6 @@ const PricingWrapper = styled.section`
       background: ${props => props.theme.secondaryColor};
     }
 
-    @media (max-width: 320px) {
-      .price-button-disabled,
-      .price-button-link {
-        margin-left: -20px;
-      }
-    }
 
     .price-button-disabled{
       background: rgb(0, 179, 158, 0.6);
