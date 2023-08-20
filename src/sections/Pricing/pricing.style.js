@@ -229,6 +229,7 @@ const PricingWrapper = styled.section`
       background: ${props => props.theme.secondaryColor};
     }
 
+    
 
     .price-button-disabled{
       background: rgb(0, 179, 158, 0.6);
