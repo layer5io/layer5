@@ -1,5 +1,10 @@
 import styled from "styled-components";
 export const Blog = styled.div`
+  img.badge-modal{
+    display: block;
+    margin: 0 auto;
+    max-width: 625px
+  }
   div.badge-grid {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +23,7 @@ export const Blog = styled.div`
         padding-top: 0.8rem;
       }
       > img {
-        max-width: 150px;
+        max-width: 225px;
       }
     }
 
