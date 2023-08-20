@@ -2,7 +2,7 @@
 title: "Introduction to Layer5 Learning Resources"
 subtitle: Discover Learning Paths of Layer5
 date: 2023-08-12 05:23:00 -0530
-author: Layer5 Team
+author: Hiren Timbadiya
 thumbnail: ./blog-title.svg
 darkthumbnail: ./blog-title.svg
 type: Blog
@@ -17,6 +17,8 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
+import pathDark from "./path-dark.png";
+import pathLight from "./path-light.png";
 
 <BlogWrapper>
 <p>If you're seeking an introduction to the world of service meshes and how to create and maintain applications using them, this article is for you.</p>
@@ -33,12 +35,14 @@ import { Link } from "gatsby";
 
 <p>The <Link to="/community"> Layer5 community </Link> believes that the growth of an individual user and contributor will impact the community’s development. Hence, these courses are all carefully selected to help you learn service mesh the right way from experts on service meshes in Layer5. This Learning Path/Certification course, in addition to the available mesh training resources, is designed to take a developer from a novice in service mesh to an advanced service mesh Practitioner.</p>
 
-<h2>Learning Paths Architecture</h2>
+<div style="margin: 2rem 0 5rem 0;">
+  <img src={pathDark} className="image-left" style="height: 24rem;" alt="learning path architechture"/>
 
-
-<div style="padding-top: 1rem; padding-bottom:2rem; line-height:2rem">This learning path or Certification project is still in its earliest phases, and so currently, only one learning path is currently available: <Link to="learn/learning-paths/mastering-service-meshes-for-developers"> Mastering Service Meshes For Developers. </Link>
-It comprises two courses in length; <Link to="/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes"> an introduction to Service Meshes </Link> and <Link to="/learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh"> an introduction to the advanced concepts of Service Meshes </Link>, with ~8 chapters per course.  The courses in this learning path focus on the fundamentals of service meshes and use <a href="https://meshery.io/"> Meshery </a> as the management plane in managing the service meshes. You will discover eight to nine streamlined chapters in each course that will assist developers with installing Meshery, deploying apps, and maintaining service meshes using Meshery.</div>
-
+  <h2 style="padding: 1rem 0 0 0;">Learning Paths Architecture</h2>
+  <div style="padding-top: 1rem; padding-bottom:2rem; line-height:2rem">This learning path or Certification project is still in its earliest phases, and so currently, only one learning path is currently available: <Link to="learn/learning-paths/mastering-service-meshes-for-developers"> Mastering Service Meshes For Developers. </Link>
+  It comprises two courses in length; <Link to="/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes"> an introduction to Service Meshes </Link> and <Link to="/learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh"> an introduction to the advanced concepts of Service Meshes </Link>, with ~8 chapters per course.  The courses in this learning path focus on the fundamentals of service meshes and use <a href="https://meshery.io/"> Meshery </a> as the management plane in managing the service meshes. You will discover eight to nine streamlined chapters in each course that will assist developers with installing Meshery, deploying apps, and maintaining service meshes using Meshery.
+  </div>
+</div>
 
 <h2 style="margin-top: 1rem">Service Mesh Supported</h2>
 
