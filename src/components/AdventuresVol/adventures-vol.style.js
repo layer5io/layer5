@@ -99,6 +99,6 @@ export const AdventuresVolWrapper = styled.div`
 	}
 
 	.handbook__card:hover .handbook__card--head {
-	  color: ${props => props.theme.white};
+	  color: white;
 	}
 `;
