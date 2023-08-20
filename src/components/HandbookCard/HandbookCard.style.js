@@ -89,16 +89,12 @@ export const HandbookCardWrapper = styled.div`
 	  transform: translateX(0);
 	  opacity: 1;
 	}
-
 	.handbook__card:hover .handbook__card--head::before {
 	  height: 100%;
 	}
-
 	.handbook__card:hover {
 	  scale: 1.07;
 	}
-
 	.handbook__card:hover .handbook__card--head {
 	  color: ${props => props.theme.white};
-	}
-`;
+	}`;
