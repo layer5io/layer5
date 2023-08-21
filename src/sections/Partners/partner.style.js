@@ -477,6 +477,17 @@ const PartnerWrapper = styled.section`
         }
     }
     @media only screen and (max-width:476px){
+        .container{
+            padding: 1rem;
+            text-align: center;
+        }        
+        .partner-container{
+            .partner-container-body{
+                .container{
+                    text-align: center;
+                }
+            }
+        }
         .custom-col{
            width: 100%;
         }   
@@ -517,6 +528,17 @@ const PartnerWrapper = styled.section`
         }
     }
     @media only screen and (max-width:376px){
+        .container{
+            padding: 1rem;
+            text-align: center;
+        }        
+        .partner-container{
+            .partner-container-body{
+                .container{
+                    text-align: center;
+                }
+            }
+        }
         .mob-col{
             flex: 0 0 50%;
             max-width: 50%;
