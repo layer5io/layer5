@@ -1,47 +1,73 @@
 ---
-title: "Lorem Ipsum"
-subtitle: "Lorem Ipsum"
-date: 2020-06-23 10:30:05 -0530
-author: John Doe
-thumbnail: ./gsoc-wide.webp
-darkthumbnail: ./gsoc-wide.webp
-category: "Lorem Ipsum"
-description: "This is a short summary of my blog post. This text will show in the blog's list view and in community newsletters."
+title: The Importance of GitHub Stars
+subtitle: 
+date: 2023-08-21 08:22:05 -0530
+author: Victoria Nduka
+thumbnail: ./Hero-Image.svg
+darkthumbnail: ./Hero-Image.svg
+category: "Community"
+description: "Learn about GitHub Stars and how they impact a repository's performance "
 tags:
- - Community
- - Projects
- - News
+ - Community, Meshery, Open-source, GitHub
 type: Blog
 resource: false
 published: false
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
-import Blockquote from "../../../reusecore/Blockquote";
-
-import gsoc from "./gsoc.webp";
-
+import HeroImage from "./Hero Image.svg";
+import MainRepository from "./Main repository.PNG";
+import StarredRepository from "./Starred repository.PNG";
 
 <BlogWrapper>
 
-### Lorem Ipsum
+You've probably seen tweets or LinkedIn posts celebrating the number of stars a project receives on GitHub. Maybe someone has even asked you to star their repository. If you've ever wondered how much of an impact your star could make on their project, you're in the right place. This article dives into exactly that. We'll explain what GitHub Stars are and explore the significant role they play in boosting a project.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula consequat ipsum, at egestas leo. Donec molestie ipsum ut neque lobortis convallis.
+<h2>What are GitHub Stars?</h2>
+<p>GitHub stars are like virtual thumbs-up or bookmarks that you can give to projects you like on the GitHub platform. They're a way to show that you find a project interesting, useful, or valuable. When you star a project, it's saved in the [stars page](https://github.com/stars) of your profile so you can easily find it again.</p>
 
-<figure class="imgWithCaption fig-right">
-    <img src={gsoc} />
-    <figcaption>
-    <p>This is text for the image</p>
-    </figcaption>
- </figure>
- 
+<h2>How Does GitHub Rate Projects?</h2>
+<p>Stars are one of the key metrics that GitHub uses to track and identify trending projects on its platform. When a repository gains a significant number of stars within a relatively short period, it can be an indicator that the project is currently trending or gaining popularity. Here's how GitHub uses stars to track trending projects:</p>
+<h3>1. Star Activity</h3>
+GitHub monitors the rate at which repositories are being starred. Projects that receive a sudden surge of stars are likely to catch the attention of GitHub's algorithms.
+<h3>2. Time Sensitivity</h3>
+GitHub takes into account the time frame within which stars are accumulated. Projects that gain stars rapidly in a short span of time are considered for trending status.
+<h3>3. Relative Comparison</h3>
+Trending repositories are often determined based on a comparison with their usual star activity. If a repository's star activity significantly exceeds its typical rate, it might be flagged as trending.
+<h3>4. Consistency</h3>
+While rapid stars are important, consistent activity also matters. Projects that sustain their increased star activity over time are more likely to be recognized as trending.
 
-Curabitur iaculis ante sit amet condimentum interdum. Cras tellus nunc, gravida sit amet pellentesque eu, placerat ac diam. Mauris fermentum condimentum odio, ac fringilla ante condimentum vel. Vivamus volutpat sit amet libero eleifend ultricies. Praesent tempor libero tincidunt aliquam convallis. Aliquam in magna ante. Morbi egestas efficitur massa sed pretium.
+<p>Once a repository meets these criteria, it might be highlighted on GitHub's Trending page or other curated sections of the platform. This visibility can attract even more attention and stars, creating a feedback loop that amplifies the project's popularity.</p>
 
-<img src={gsoc} className="gsoc-image" align="right" alt="gsoc-image" />
+<h2>Effect of Stars on a Project</h2>
+Starring a project on GitHub does not directly impact the project’s functionality, but it can have several positive effects which include:
+<h3>1. Visibility</h3>
+Starring a project increases its visibility. Projects with more stars tend to appear higher in search results, making it easier for others to discover and contribute to the project
+<h3>2. Community Engagement</h3>
+A higher number of stars can attract more contributors, users, and potential collaborators. It indicates that the project has generated interest and resonates with others.
+<h3>3. Motivation</h3>
+For project maintainers and contributors, seeing their project receive stars can be motivating. It shows that their work is appreciated and valued by the community.
+<h3>4. Recognition</h3>
+Starring a project is a way for users to acknowledge and recognize the effort put into it. It’s a form of social validation.
+<h3>5. Contributor Potential</h3>
+Potential contributors might use the number of stars a project has as a signal of the project’s importance and popularity. A well-started project might attract developers looking for projects to contribute to.
+<h3>6. Feedback and Support</h3>
+Starring can also serve as a lightweight way for users to express their support for the project or to keep track of projects they find interesting even if they don’t actively contribute.
 
-\-- <Link to="/community/members/john-jane-doe">John Jane Doe</Link>
+<p>Overall, starring a project helps create a positive cycle where visibility leads to engagement, engagement leads to contributions, and contributions lead to a stronger project.</p>
 
-_**P.S.: If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on our [Slack Channel](http://slack.layer5.io) and one of us will reach out to you!**_
+<h2>How to Star a Repository</h2>
+Starring a repository is a simple two-step process.
+- **Step 1:** On [GitHub.com](https://www.github.com), navigate to the main page of the repository.
+- **Step 2:** At the top-right corner of the page, click Star.
+
+<img src={MainRepository} className="image-center-no-shadow" />
+
+This is what it will look like after you have starred it:
+
+<img src={StarredRepository} className="image-center-no-shadow" />
+
+<h2>Five Needs Your Stars</h2>
+Now that you understand how much impact stars can make, take a moment to help [Five on his Cloud Native course](https://layer5.io/five/vol1/mascot-five-adventure-github-stars.pdf). Five is our intergalactic Cloud Space Hero on a journey to Meshery planet. Five’s rocketship runs on stars and he needs all the stars he can get. The community is doing its best to provide fuel, but that's not enough. Our friend Five needs more stars to get him through this journey. You can help Five by giving a star to the [Meshery repository](https://github.com/meshery/meshery)! Visit github.com/meshery/meshery and drop a star to show your support!
 
 </BlogWrapper>
