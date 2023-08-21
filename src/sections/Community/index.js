@@ -157,8 +157,8 @@ const CommunityPage = () => {
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
       <Container className="Callout">
-      <DiscussCallout />
-      <AdventuresCallout />
+        <DiscussCallout />
+        <AdventuresCallout />
       </Container>
 
     </CommunitySectionWrapper>
