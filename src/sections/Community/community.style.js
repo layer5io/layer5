@@ -240,14 +240,14 @@ const CommunitySectionWrapper = styled.div`
 
     .Callout {
         display: flex;
-        flex-direction: column; /* Always stack elements vertically by default */
+        flex-direction: column; 
         align-items: center;
 
         @media screen and (min-width: 768px) {
-            flex-direction: row; /* Arrange elements side by side on larger screens */
-            justify-content: center; /* Center the elements horizontally */
-            align-items: flex-start; /* Align items to the top of the container */
-            gap: 2rem; /* Adjust the gap between the elements */
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 2rem; 
         }
     }
 
