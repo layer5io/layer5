@@ -18,6 +18,7 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
+import AdventuresCallout from "../Adventures-Callout";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
@@ -155,7 +156,10 @@ const CommunityPage = () => {
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
+      <Container className="Callout">
       <DiscussCallout />
+      <AdventuresCallout />
+      </Container>
 
     </CommunitySectionWrapper>
   );
