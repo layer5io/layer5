@@ -1,9 +1,15 @@
 import styled from "styled-components";
 export const Blog = styled.div`
   img.badge-modal{
-    display: block;
-    margin: 0 auto;
-    max-width: 625px
+    display: inline;
+    float: right;
+    margin: .5rem;
+    max-width: 625px;
+  }
+  img.badge-modal::after {
+    content: " ";
+    clear: both;
+    display: table;
   }
   div.badge-grid {
     display: flex;
