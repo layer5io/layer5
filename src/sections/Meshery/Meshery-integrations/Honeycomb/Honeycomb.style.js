@@ -32,15 +32,18 @@ export const HoneycombGrid = styled.div`
     ul {
       font-size: 0;
       line-height: 0;
-      margin: 1rem 0 0 5px;
+      height: ${(props) => props.heightMobile === 0 ? "unset" : `calc(${props.heightMobile}px + 40px )`};
+      margin: 2rem 0 0 5px;
+      @media (min-width: 261px) and (max-width: 338px) {
+        margin-top: 1rem;
+        height: ${(props) => props.heightMobile === 0 ? "unset" : `calc(${props.heightMobile}px - 4.5rem)`};
+      }
       @media (max-width: 290px){
-        margin: -3rem 0 0 5px;
+        margin: -3rem 0 0 5px; 
       }
       padding-left:20px;
       padding-right:20px;
-      padding-bottom:20px;
-      height:auto;
-     li {
+      li {
       margin: 2px;
         width: 52px;
         height: calc(52px * 1.1547);
