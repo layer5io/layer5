@@ -238,6 +238,19 @@ const CommunitySectionWrapper = styled.div`
         }
     }
 
+    .Callout {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 2rem; 
+        }
+    }
+
 `;
 
 export default CommunitySectionWrapper;
