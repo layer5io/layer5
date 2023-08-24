@@ -195,13 +195,13 @@ export const IntegrationCard = styled.div`
     }
   }
 
-  .open-modal-btn {
-    background-color: #00b39f;
-    color: white;
-    :hover {
-      color: black;
-    }
-  }
+  // . {
+  //   background-color: #00b39f;
+  //   color: white;
+  //   :hover {
+  //     color: black;
+  //   }
+  // }
 `;
 
 export const IntegrationSlider = styled(Slider)`

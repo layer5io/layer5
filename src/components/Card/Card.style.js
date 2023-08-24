@@ -35,24 +35,27 @@ export const CardWrapper = styled.div`
 		}
 	}
 
-    .post-thumb-block{
+   .post-thumb-block{
         overflow: hidden;
         height: 11.5rem;
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
 
-        .gatsby-image-wrapper, .old-gatsby-image-wrapper{
-            height:100%;
-            transition: all 0.3s ease-in;
-        }
-        img{
-            height: inherit;
-            max-height: 180px;
-            display: block;
-            text-align: center;
-            margin: auto;
-        }
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
+        height:100%;
+        margin-top: 0.2rem;
+        transition: all 0.3s ease-in;
     }
+    img{
+        height: inherit;
+        max-height: 180px;
+        display: block;
+        text-align: center;
+        margin: auto;
+        }
+
+    }
+    
 
     .post-content-block{
         padding: 1rem 2rem;
@@ -97,6 +100,8 @@ export const CardWrapper = styled.div`
     .post-meta-block{
         height: auto;
         display: flex;
+        margin-buttom: 0.5rem;
+        
 
         .author{
             text-align: end;
@@ -118,6 +123,7 @@ export const CardWrapper = styled.div`
     .readmore-btn-wrapper{
         display:flex;
         justify-content: flex-start;
+        
     }
 
     .readmore-btn::after{
@@ -135,6 +141,7 @@ export const CardWrapper = styled.div`
        flex: auto;
        align-items: center;
        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       
        
        svg{
            font-size: 1.5rem;
