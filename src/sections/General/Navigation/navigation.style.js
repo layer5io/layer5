@@ -425,7 +425,7 @@ const NavigationWrap = styled.header`
     }
 
   }
-  @media only screen and (max-width: 999px) {
+  @media only screen and (max-width: 1000px) {
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
