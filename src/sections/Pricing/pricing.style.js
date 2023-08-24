@@ -110,7 +110,7 @@ const PricingWrapper = styled.section`
 	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
-    margin: 1.5rem 1rem;
+    margin: 1.5rem 0;
   }
 }
 
