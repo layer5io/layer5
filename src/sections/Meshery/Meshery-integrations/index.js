@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
-import Loading from "../../../components/loading";
-const IntegrationsGrid = React.lazy(() => import("./IntegrationsGrid"));
+import React from "react";
+import loadable from "@loadable/component";
+const IntegrationsGrid = loadable(() => import("./IntegrationsGrid"));
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
 import Card from "./Card";
@@ -15,9 +15,7 @@ const Integrations = () => {
           if (location.pathname !== "/") {
             return (
               <>
-                <Suspense fallback={<Loading />}>
-                  <IntegrationsGrid  count={"All"} />
-                </Suspense>
+                <IntegrationsGrid  count={"All"} />
                 <Card />
                 <FAQ category={["Meshery Integrations"]} />
               </>
@@ -25,9 +23,7 @@ const Integrations = () => {
           } else {
             return (
               <>
-                <Suspense fallback={<Loading />}>
-                  <IntegrationsGrid  count={13} />
-                </Suspense>
+                <IntegrationsGrid  count={13} />
                 <div style={{ marginTop: "20px" }}>
                   <Button className="seeAllBtn"
                     $primary                    title={"See All"}

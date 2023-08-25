@@ -1,22 +1,19 @@
-import React, { Suspense } from "react";
+import React from "react";
+
 import SEO from "../components/seo";
 import Partners from "../sections/Home/Partners-home";
 import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
+import loadable from "@loadable/component";
 import CornerPopup from "../components/Corner-popup";
-import Loading from "../components/loading";
-import CloudNativeManagement from "../sections/Home/CloudNativeManagement";
-import SubscribeSection from "../sections/subscribe/subscribe";
-import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
+const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
+const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
+const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
-import MesheryIntegration from "../sections/Meshery/Meshery-integrations";
 
-// const CloudNativeManagement = React.lazy(() => import("../sections/Home/CloudNativeManagement"));
-// const SubscribeSection = React.lazy(() => import("../sections/subscribe/subscribe"));
-// const ServiceMeshFocussed = React.lazy(() => import("../sections/Home/Service-mesh-focussed"));
-// const CaseStudyBanner = React.lazy(() => import("../components/Case-study-banner"));
-// const SoSpecial = React.lazy(() => import("../sections/Home/So-Special-Section"));
-// const MesheryIntegration = React.lazy(() => import("../sections/Meshery/Meshery-integrations"));
+
+const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
+const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
@@ -30,12 +27,8 @@ const IndexPage = () => {
       <CornerPopup/>
       {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
-      {/* <Suspense fallback={<Loading />}> */}
       <CloudNativeManagement />
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<Loading />}> */}
       <MesheryIntegration  />
-      {/* </Suspense> */}
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -46,16 +39,10 @@ const IndexPage = () => {
       {/*<ContactCard />*/}
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
-      {/* <Suspense fallback={<Loading />}> */}
       <CaseStudyBanner/>
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<Loading />}> */}
       <ServiceMeshFocussed bookName={"enterprise-path"} />
-      {/* </Suspense> */}
       {/* <EngineerEnabler /> */}
-      {/* <Suspense fallback={<Loading />}> */}
       <SubscribeSection />
-      {/* </Suspense> */}
 
     </>
   );

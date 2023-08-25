@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
-import Loading from "../../../components/loading.js";
-const SubscribeSection = React.lazy(() => import("../../../sections/subscribe/subscribe"));
+import React from "react";
+import loadable from "@loadable/component";
+const SubscribeSection = loadable(() => import("../../../sections/subscribe/subscribe"));
 
 import { AdventuresWrapper } from "./adventures.style.js";
 import AdventuresVol from "../../../components/AdventuresVol/index";
@@ -47,9 +47,7 @@ const AdventuresHome = () => {
         //   to="/community/handbook/faq"
         />
       </div>
-      <Suspense fallback={<Loading />}>
-        <SubscribeSection msg="Follow Five's adventures" />
-      </Suspense>
+      <SubscribeSection msg="Follow Five's adventures" />
     </AdventuresWrapper>
   );
 };

@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import useDataList from "../../utils/usedataList";
 import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
-import Loading from "../../components/loading";
-const BlogList = React.lazy(() => import ("../../sections/Blog/Blog-list"));
+import loadable from "@loadable/component";
+const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`query allBlogs {
   allMdx(
@@ -67,13 +67,7 @@ const Blog = (props) => {
     }
   }, []);
   let BlogView = (props) => {
-    if (isListView) {
-      return (
-        <Suspense fallback={<Loading />}>
-          <BlogList {...props} />
-        </Suspense>
-      );
-    }
+    if (isListView) return <BlogList {...props} />;
     return <BlogGrid {...props} />;
   };
   return (
