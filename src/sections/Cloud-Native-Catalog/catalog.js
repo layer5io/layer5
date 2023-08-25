@@ -149,11 +149,20 @@ const Catalog = () => {
         </Row>
         <Row className="catalog">
           <Col $md={6} className="catalog-detail">
-            <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
+            <h2 className="heading">
+            Center of Excellence: Mutli-tentant Platform Engineering Patterns
+            </h2>
             <p className="caption">
               Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
             </p>
           </Col>
+          <Col $md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={Patterns} className="calalog-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Wasm} className="calalog-image" />
@@ -177,11 +186,6 @@ const Catalog = () => {
           </Col>
         </Row> */}
         <Row className="catalog">
-          <Col $md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={Opa} className="calalog-image" />
-            </div>
-          </Col>
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Policy-driven Orchestration and Control Where You Need It

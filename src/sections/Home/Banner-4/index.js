@@ -68,7 +68,7 @@ const Banner1 = (props) => {
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox $right={true} $vintageOne={true}>
-                  <Button $primary className="banner-btn one" title="Learn about MeshMap" $url="/cloud-native-management/meshmap">
+                  <Button $primary className="banner-btn one" title="Learn about Meshery" $url="/cloud-native-management/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button $secondary className="banner-btn two" title="Open in Playground" $url="https://play.meshery.io" $external={true}>

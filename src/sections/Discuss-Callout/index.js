@@ -19,7 +19,7 @@ const DiscussCallout = () => {
             >
               <div className="card">
                 <div className="parentcard">
-                  <SectionTitle className="section-title" UniWidth="100%">
+                  <SectionTitle className="section-title" $UniWidth="100%">
                     <div className="card-align">
                       <h2>Join the Conversation</h2>
                       <p>

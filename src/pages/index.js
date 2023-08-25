@@ -29,12 +29,12 @@ const IndexPage = () => {
       <Partners />
       <CornerPopup/>
       {/* <ServiceMeshManagement /> */}
-      <Suspense fallback={<Loading />}>
-        <CloudNativeManagement />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <MesheryIntegration  />
-      </Suspense>
+      {/* <Suspense fallback={<Loading />}> */}
+      <CloudNativeManagement />
+      {/* </Suspense> */}
+      {/* <Suspense fallback={<Loading />}> */}
+      <MesheryIntegration  />
+      {/* </Suspense> */}
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -52,9 +52,9 @@ const IndexPage = () => {
         <ServiceMeshFocussed bookName={"enterprise-path"} />
       </Suspense> */}
       {/* <EngineerEnabler /> */}
-      <Suspense fallback={<Loading />}>
-        <SubscribeSection />
-      </Suspense>
+      {/* <Suspense fallback={<Loading />}> */}
+      <SubscribeSection />
+      {/* </Suspense> */}
 
     </>
   );

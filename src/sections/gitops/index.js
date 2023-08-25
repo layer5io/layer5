@@ -75,6 +75,38 @@ const GitOpsPage = () => {
       <div className="content-container content-container-more-width">
         <Row className="content-row">
           <Col $lg={6} $md={6} className="desc-text-container">
+            <h1 className="heading-1">What is GitOps?</h1>
+            <SquarePoint>
+              GitOps uses Git for defining and tracking infrastructure and app
+              changes.
+            </SquarePoint>
+            <SquarePoint>
+              It automates syncing actual state with Git's desired state.
+            </SquarePoint>
+            <SquarePoint>
+              GitOps ensures consistent, auditable changes using code-defined
+              configurations.
+            </SquarePoint>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                $primary
+                className="learn-more-btn"
+                title="Read More"
+                $url="https://layer5.io/resources/cloud-native/what-is-gitops"
+              />
+            </div>
+          </Col>
+          <Col className="hero-image" $lg={6} $md={6} $xs={12} $sm={10}>
+            <div className="image-container">
+              <img src={isDark ? Github_Dark : Github_Light} className="logo" />
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div className="content-container content-container-more-width">
+        <Row className="content-row">
+          <Col $lg={6} $md={6} className="desc-text-container">
             <h1 className="heading-1">MeshMap GitHub Action</h1>
             <SquarePoint>See your deployment before you merge</SquarePoint>
             <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request</SquarePoint>

@@ -24,9 +24,9 @@ const About = () => {
           <Col $xs={12} $sm={12}>
             <Row $Vcenter={true} className="row-img-cont-1">
               <Col $xs={12} $sm={6}>
-                {/* <div className="head-images"> */}
-                <img src={FiveIcon} alt="About Layer5" />
-                {/* </div> */}
+                <div className="head-images">
+                  <img src={FiveIcon} alt="About Layer5" />
+                </div>
               </Col>
               <Col $xs={12} $sm={6}>
                 <div className="about-text text-one">

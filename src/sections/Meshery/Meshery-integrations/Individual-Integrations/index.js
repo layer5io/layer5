@@ -87,7 +87,7 @@ const IndividualIntegrations = ({ data }) => {
               title="Get Started"
               $url="../../getting-started"
             />
-            {frontmatter.docURL != null && (
+            {(frontmatter.docURL != null) && (
               <span className="doc-link">
                 <a href={frontmatter.docURL}>See Documentation</a>
                 <FaArrowRight />

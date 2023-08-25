@@ -55,8 +55,8 @@ const SMPPage = () => {
                     <img className="logo-img" alt="smp-logo" src={smp} />
                   </Col>
                   <Col $lg={7} $md={12} $sm={12} style={{ textAlign: "center" }}>
-                    <h1> Service Mesh Performance </h1>
-                    <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Service Mesh Performance is a CNCF-hosted project. Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                    <h1> Cloud Native Performance </h1>
+                    <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Cloud Native Performance is a CNCF-hosted project. MeshMark provides a universal performance index to gauge your infrastructure's efficiency against deployments in other organizations' environments.</p>
                   </Col>
                 </Row>
               </div>

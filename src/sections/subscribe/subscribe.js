@@ -11,7 +11,7 @@ const subscribe = ({ msg = "Layer5" }) => {
         <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
           <Row $Vcenter>
             <Col $md={6}>
-              <SectionTitle className="section-title" UniWidth="100%">
+              <SectionTitle className="section-title" $UniWidth="100%">
                 <h2>Join the <span className="meshy">{msg}</span> community. Subscribe.</h2>
               </SectionTitle>
             </Col>
