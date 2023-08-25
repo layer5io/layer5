@@ -33,7 +33,7 @@ const SubscribeLearnPath = () => {
                 onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
                 onInput={e => e.target.setCustomValidity("")}
               />
-              <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+              <Button $secondary title="Subscribe" id="mc-embedded-subscribe" />
             </div>
           </div>
         </form>

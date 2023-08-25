@@ -14,7 +14,7 @@ const Hero = ({ title, initialdescription, enddescription, subtitle, links, code
         <div className="links">
           {links && links.map((link) => {
             return (
-              <Button primary key={link.text} title={link.text} url={link.url} external={link.external}/>
+              <Button $primary key={link.text} title={link.text} $url={link.url} $external={link.external}/>
             );
           })}
         </div>

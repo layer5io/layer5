@@ -238,7 +238,7 @@ const Meshmap = () => {
             image={Phillip} />
           <Catalog />
           <InlineQuotes
-            quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            quote="Do we like MeshMap? ABSOLUTELY! It addresses our $primary concern of having a service mesh!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex} />

@@ -69,7 +69,7 @@ const Press = () => {
         <h2>Media Resources</h2>
         <h4>For any press or analyst inquiries, please reach out:</h4>
         <Row>
-          <Col xs={12} md={4}>
+          <Col $xs={12} $md={4}>
             <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
               <div className="press_card">
                 <h5>Media Contacts</h5>
@@ -79,19 +79,19 @@ const Press = () => {
               </div>
             </a>
           </Col>
-          <Col xs={12} md={4}>
+          <Col $xs={12} $md={4}>
             <Link to="/brand">
               <div className="press_card">
                 <h5>Brand Kit</h5>
                 <p>Get our brand, logo assets and more.</p>
                 <img src={FiveIcon} alt="Five Logo" height={30} /> <br />
                 <Link to="/brand">
-                  <Button secondary title="Layer5 brand kit" external={true} />
+                  <Button $secondary title="Layer5 brand kit" $external={true} />
                 </Link>
               </div>
             </Link>
           </Col>
-          <Col xs={12} md={4}>
+          <Col $xs={12} $md={4}>
             <div className="press_card">
               <h5>Follow Us</h5>
               <p>On Social Media</p>

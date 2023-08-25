@@ -28,8 +28,8 @@ const Projects = () => {
           <div className="project-title">
             <SectionTitle
               className="section-title"
-              leftAlign={true}
-              UniWidth="75%"
+              $leftAlign={true}
+              $UniWidth="75%"
             >
               <h2>
                 Operate cloud native infrastructure <span>with confidence</span>.
@@ -39,7 +39,7 @@ const Projects = () => {
         </Row>
         <Row>
           <div className="project__block__wrap">
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshmap">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
@@ -49,7 +49,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
@@ -58,7 +58,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
@@ -73,7 +73,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
@@ -82,7 +82,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/catalog">
                 <div className="project__block__inner">
                   {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
@@ -95,13 +95,13 @@ const Projects = () => {
           </div>
         </Row>
         {/* <div className="button">
-          <Button secondary url="/projects" title="Learn More" />
+          <Button $secondary $url="/projects" title="Learn More" />
         </div> */}
         {/* <Row>
-          <Col xs={12}>
+          <Col $xs={12}>
             <div className="description">
               <div className="button">
-                <Button secondary className="banner-btn" title="All Projects" url="/projects">
+                <Button $secondary className="banner-btn" title="All Projects" $url="/projects">
                   <StaticImage loading="lazy" src={projectsIcon} alt="All Layer5 Projects" height={18} />&nbsp;
                 </Button>
               </div>

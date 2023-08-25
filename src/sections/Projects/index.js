@@ -18,8 +18,8 @@ const Projects = () => {
   return (
     <ProjectItemWrapper id="projects">
       <Container>
-        <Row Vcenter={true}>
-          <Col xs={12} sm={6}>
+        <Row $Vcenter={true}>
+          <Col $xs={12} $sm={6}>
             <div className="project__block__wrap">
               <div className="project__block">
                 <div className="project__block__inner">
@@ -59,11 +59,11 @@ const Projects = () => {
               </div>
             </div>
           </Col>
-          <Col xs={12} sm={6} className="project-content-wrap">
+          <Col $xs={12} $sm={6} className="project-content-wrap">
             <SectionTitle
               className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
+              $leftAlign={true}
+              $UniWidth="100%"
             >
               <h4>Projects</h4>
 
@@ -75,8 +75,8 @@ const Projects = () => {
               Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
             </p>
             <VintageBox
-              right={true}
-              vintageTwo={true}
+              $right={true}
+              $vintageTwo={true}
               position="relative"
             >
               <Button className="project-btn" title="Learn More" />

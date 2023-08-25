@@ -60,7 +60,7 @@ const PlaygroundHero = () => {
         <div className="hero-text">
           <h1>Manage your Cloud Native mess</h1>
           <h4>Employ a set of learning paths that incorporate an application networking centric curriculum featuring training on 200+ integrations.</h4>
-          <Button primary className="join-community-button" title="Use Meshery Playground" url="https://play.meshery.io/" />
+          <Button $primary className="join-community-button" title="Use Meshery Playground" $url="https://play.meshery.io/" $external={true}/>
         </div>
         <div className="hero-image">
           <PlaygroundHeroImage />

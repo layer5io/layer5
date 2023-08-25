@@ -142,7 +142,7 @@ const MeshmapVisualizerFeatures = () => {
     <VisualizerFeaturesWrapper>
       <Row>
         <div className="project__block__wrap">
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
@@ -152,7 +152,7 @@ const MeshmapVisualizerFeatures = () => {
               <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
@@ -162,7 +162,7 @@ const MeshmapVisualizerFeatures = () => {
               <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
@@ -172,7 +172,7 @@ const MeshmapVisualizerFeatures = () => {
               <p>Establish sessions with one or more pods at a time.</p>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={TimelineDVRClock} alt="Timeline" style={{ position: "absolute", width: "80%" }} />
@@ -182,7 +182,7 @@ const MeshmapVisualizerFeatures = () => {
               <p>Playback service transactions. Scrub over the history of changes to your deployments.</p>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
@@ -194,7 +194,7 @@ const MeshmapVisualizerFeatures = () => {
               <p>Continuous visibility across all of your clusters and workloads metrics.</p>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={4}>
+          <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />

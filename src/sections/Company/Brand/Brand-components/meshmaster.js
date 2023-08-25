@@ -12,14 +12,14 @@ const MeshMasterBrand = () => {
   return (
     <div className="post-content">
       <Row className="brand-section">
-        <Col xs={12} sm={6}>
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
           MeshMaster
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshmasters-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -42,14 +42,14 @@ const MeshMasterBrand = () => {
           </h2>
         </Col>
         <SRLWrapper>
-          <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
+          <Row $Vcenter className="ImgDiv">
+            <Col $xs={12} $sm={4}>
               <img src={MeshMasterFull} alt="Meshmaster Full Logo"/>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <img src={MeshMasterIcon} alt="Meshmaster Icon"/>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <img src={MeshMasterText} alt="Meshmaster Text"/>
             </Col>
 
@@ -57,14 +57,14 @@ const MeshMasterBrand = () => {
         </SRLWrapper>
       </Row>
       <Row>
-        <Col xs={12}>
+        <Col $xs={12}>
           <h2 className="layerH3 in">
             Colors
           </h2>
         </Col>
         <Col>
           <p>
-            The MeshMaster color palette consists of the primary Image Hub
+            The MeshMaster color palette consists of the $primary Image Hub
             color and additional shades. The Meshmaster logo should be white or
             monochrome tonal when using a color background.
           </p>

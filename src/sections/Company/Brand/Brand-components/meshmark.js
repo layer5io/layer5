@@ -26,14 +26,14 @@ const MeshMarkBrand = () => {
     <SMPWrap>
       <div className="post-content">
         <Row className="brand-section">
-          <Col xs={12} sm={6}>
+          <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               <strong>MeshMark</strong>
             </h1>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshmark-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -56,44 +56,44 @@ const MeshMarkBrand = () => {
             </h2>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv smp-logo">
-              <Col xs={12} sm={4}>
+            <Row $Vcenter className="ImgDiv smp-logo">
+              <Col $xs={12} $sm={4}>
                 <img src={MeshmarkDark} alt="MeshmarkDark Logo"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
                   <img src={MeshmarkWhite} alt="MeshMarkWhite Logo"/>
                 </div>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
                   <img src={MeshmarkLight} alt="MeshmarkLightLogo"/>
                 </div>
               </Col>
             </Row>
-            <Row Vcenter className="ImgDiv MeshMark-logo">
-              <Col xs={12} sm={4}>
+            <Row $Vcenter className="ImgDiv MeshMark-logo">
+              <Col $xs={12} $sm={4}>
                 <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
                   <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo"/>
                 </div>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
                   <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo"/>
                 </div>
               </Col>
             </Row>
-            <Row Vcenter className="ImgDiv smp-logo">
-              <Col xs={12} sm={4}>
+            <Row $Vcenter className="ImgDiv smp-logo">
+              <Col $xs={12} $sm={4}>
                 <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
               </Col>
             </Row>

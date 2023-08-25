@@ -211,7 +211,7 @@ const MesheryPlatforms = () => {
         </Row>
         <Row className="supported-platforms">
           {supported_platforms.map((platform, index) => (
-            <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
+            <Col $xs={6} $sm={4} $md={3} $lg={2} key={platform.name}>
               <Button
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
                   ? "single-platform single-platform-selected " : "single-platform "}

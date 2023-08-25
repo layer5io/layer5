@@ -51,7 +51,7 @@ const CommunityManagers = () => {
             overcoming obstacles as they arise—or even before they arise!—by collaborating with other departments and the community to find solutions that benefit the entire community.</p>
           <Row>
             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Col xs={12} sm={6} lg={4} key={id}>
+              <Col $xs={12} $sm={6} $lg={4} key={id}>
                 <ProfileCard frontmatter={frontmatter} cardlink = {fields.slug}/>
               </Col>
             ))}
@@ -73,7 +73,7 @@ const CommunityManagers = () => {
           <h2> Code of Conduct </h2>
           <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
                     To report any violations please fill out this incident form. </p>
-          <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
+          <Button $primary title="Report Incident" $url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" $external={true}/>
         </div>
       </Container>
     </CommunityManagersWrapper>

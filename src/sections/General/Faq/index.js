@@ -51,11 +51,11 @@ const Faq = (props) => {
 
   return (
     <FaqSectionWrapper id="faq">
-      <Container fullWidthSM>
+      <Container >
         <SectionTitle
           className="section-title"
-          leftAlign={true}
-          UniWidth="100%"
+          $leftAlign={true}
+          $UniWidth="100%"
         >
           <h1>
             <span>Frequently Asked Questions</span>
@@ -92,8 +92,8 @@ const Faq = (props) => {
                       {faq.link &&
                        <div className="faqbutton">
                          {faq.link.startsWith("/")
-                           ? <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />
-                           :  <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={true} />
+                           ? <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={false} />
+                           :  <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={true} />
                          }
                        </div>
                       }

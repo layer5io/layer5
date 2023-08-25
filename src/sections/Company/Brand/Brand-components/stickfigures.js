@@ -8,14 +8,14 @@ const StickFigures = () => {
   return (
     <div className="post-content">
       <Row className="brand-section">
-        <Col xs={12} sm={6}>
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Stick Figures </strong>
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/stick-figures.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -34,8 +34,8 @@ const StickFigures = () => {
         <Col>
           <h2 className="layerH3 in"> Logos </h2>
         </Col>
-        <Row Vcenter className="ImgDiv">
-          <Col xs={12} className="stick-figure">
+        <Row $Vcenter className="ImgDiv">
+          <Col $xs={12} className="stick-figure">
             <img src={SFL} alt="Stick figures" />
           </Col>
         </Row>

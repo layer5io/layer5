@@ -159,7 +159,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
           </Field>
         </div>
 
-        <Button secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title="Submit" />
       </Form>
     </Formik>
   </div>

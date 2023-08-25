@@ -109,7 +109,7 @@ const SoSpecial = () => {
         <Slider {...settings}>
           {
             data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Button className="special-cont_btn" url={fields.slug} key={id}>
+              <Button className="special-cont_btn" $url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
@@ -130,7 +130,7 @@ const SoSpecial = () => {
       {/* <div className="so-special-foot">
         <p>Layer5 provides cloud native management for monoliths and <br></br>
                    microservices alike.</p>
-        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects" />
+        <Button className="so-special-foot-btn" $primary $url="/projects" title="Our Projects" />
       </div> */}
     </SoSpecialWrapper>
   );

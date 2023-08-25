@@ -45,7 +45,7 @@ const QuizModal = () => {
             <Field type="email" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="password" className="form-name">Password <span className="required-sign">*</span></label>
             <Field type="password" className="text-field" id="password" name="password" minLength="8" pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
-            <Button secondary type="submit" className="btn" title="Log In" /> <br /><br /><br /><br />
+            <Button $secondary type="submit" className="btn" title="Log In" /> <br /><br /><br /><br />
           </Form>
         </Formik>
       </Container>

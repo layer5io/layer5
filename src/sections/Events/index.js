@@ -30,28 +30,28 @@ const Meetups = ({ data, pageContext }) => {
           <Row>
             {active == "all" ? sortEvents(data.allCategories.nodes).map(category => {
               return (
-                <Col xs={12} sm={6} lg={4} key={category.id}>
+                <Col $xs={12} $sm={6} $lg={4} key={category.id}>
                   <Card  frontmatter={category.frontmatter} fields={category.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "events" ? sortEvents(data.allEvents.nodes).map(event => {
               return (
-                <Col xs={12} sm={6} lg={4} key={event.id}>
+                <Col $xs={12} $sm={6} $lg={4} key={event.id}>
                   <Card  frontmatter={event.frontmatter} fields={event.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "workshops" ? sortEvents(data.allWorkshops.nodes).map(workshop => {
               return (
-                <Col xs={12} sm={6} lg={4} key={workshop.id}>
+                <Col $xs={12} $sm={6} $lg={4} key={workshop.id}>
                   <Card  frontmatter={workshop.frontmatter} fields={workshop.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "meetups" ? sortEvents(data.allMeetups.nodes).map(meetup => {
               return (
-                <Col xs={12} sm={6} lg={4} key={meetup.id}>
+                <Col $xs={12} $sm={6} $lg={4} key={meetup.id}>
                   <Card  frontmatter={meetup.frontmatter} fields={meetup.fields} />
                 </Col>
               );

@@ -22,14 +22,14 @@ const BrandGuide = () => {
       <Layer5Wrapper>
         <div className="post-content">
           <Row className="brand-section">
-            <Col xs={12} sm={6}>
+            <Col $xs={12} $sm={6}>
               <h1 className="layerH3">
                 Brand Guide
               </h1>
             </Col>
-            <Col xs={12} sm={6} className="download-button">
+            <Col $xs={12} $sm={6} className="download-button">
               <a href="/brand/brand-guide.pdf">
-                <Button primary title="Download Brand Guide" external={false}>
+                <Button $primary title="Download Brand Guide" $external={false}>
                   <FiDownloadCloud size={21} className="icon-left" />
                 </Button>
               </a>
@@ -41,7 +41,7 @@ const BrandGuide = () => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
+            <Col $xs={12}>
               <Row className="bookmarks">
                 <Link to={BrandGuidePDF}>
                   <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" />

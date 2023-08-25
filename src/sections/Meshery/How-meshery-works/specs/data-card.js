@@ -56,8 +56,8 @@ const DataCard = () => {
 
   return (
     <DataCardWrapper>
-      <Row Vcenter>
-        <Col className="col-1" sm={6} lg={6}>
+      <Row $Vcenter>
+        <Col className="col-1" $sm={6} $lg={6}>
           <ul>
             <li>
               <img src={LifeCycleIcon} alt="Lifecycle Icon" />
@@ -73,7 +73,7 @@ const DataCard = () => {
             </li>
           </ul>
         </Col>
-        <Col className="col-2" sm={6} lg={6}>
+        <Col className="col-2" $sm={6} $lg={6}>
           <ul>
             <li>
               <h3>

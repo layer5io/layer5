@@ -259,7 +259,7 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li>
-                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true} />
+                      <Button id="get-started" $secondary className="banner-btn two" title="Get Started" $url="https://meshery.layer5.io/registration" $external={true} />
                     </li>
                   </ul>
                 </div>
@@ -281,11 +281,11 @@ const Navigation = () => {
 
         </div>
         <div className="meshery-cta">
-          {/* <Button primary className="banner-btn two" title="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true">
+          {/* <Button $primary className="banner-btn two" title="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true">
             <BsFillCalendarFill size={21} className="icon-left" />
           </Button> */}
-          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud" url="https://meshery.layer5.io/registration" />
-          <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" $secondary className="banner-btn two" $external={true} title="Get Started" alt="Signup for Layer5 Cloud" $url="https://meshery.layer5.io/registration" />
+          <Button id="book-a-demo" aria-label="Book a demo" $secondary className="banner-btn book-a-demo" $external={true} title="Book a demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           <div className="dark-theme-toggle">
             <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!isDark} />
           </div>

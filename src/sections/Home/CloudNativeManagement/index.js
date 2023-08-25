@@ -17,7 +17,7 @@ const BannerDefault = () => {
     <BannerSectionWrapper>
       <div className="section">
         <Row className="row">
-          <Col sm={12} md={6} lg={6} className="left-col">
+          <Col $sm={12} $md={6} $lg={6} className="left-col">
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
@@ -25,8 +25,8 @@ const BannerDefault = () => {
                 </div>
                 <SectionTitle
                   className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
+                  $leftAlign={true}
+                  $UniWidth="100%"
                 >
                   <h4 className="statement">Meshery is</h4>
                   <div className="demo">
@@ -58,17 +58,16 @@ const BannerDefault = () => {
                   </h3>
                   <div className="join-community">
                     <Button
-                      primary
-                      className="join-community-button"
+                      $primary                      className="join-community-button"
                       title="Extend your control"
-                      url="/projects"
+                      $url="/projects"
                     />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={6} className="right-col">
+          <Col $sm={12} $md={6} $lg={6} className="right-col">
             <ReactPlayer
               url="https://youtu.be/qaoYRP3oLok"
               playing

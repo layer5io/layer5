@@ -12,14 +12,14 @@ const ServiceMeshPatterns = () => {
   return (
     <div className="post-content">
       <Row className="brand-section">
-        <Col xs={12} sm={6}>
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong>Service Mesh Patterns</strong>
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/service-mesh-patterns-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -42,16 +42,16 @@ const ServiceMeshPatterns = () => {
           </h2>
         </Col>
         <SRLWrapper>
-          <Row Vcenter className="ImgDiv smp-logo">
-            <Col xs={12} sm={4}>
+          <Row $Vcenter className="ImgDiv smp-logo">
+            <Col $xs={12} $sm={4}>
               <img src={SmpLogo} alt="Smp Logo"/>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <div className="logo">
                 <img src={SmpWhite} alt="SmpWhite Logo"/>
               </div>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <div className="logo">
                 <img src={SmpTxt} alt="SmpTxt Logo"/>
               </div>

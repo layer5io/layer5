@@ -21,7 +21,7 @@ const ContactFormModal = (props) => {
 
   return (
     <ContactFormModalWrapper>
-      <Button primary className="open-modal-btn" onClick={openModal} title={props.callout_text} />
+      <Button $primary className="open-modal-btn" onClick={openModal} title={props.callout_text} />
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -30,7 +30,7 @@ const ContactFormModal = (props) => {
         ariaHideApp={false}
         contentLabel="Contact Form"
       >
-        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+        <Button $secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
         <h2 className="modal-heading">{props.form_header}</h2>
         <div className="contact-form">
           <iframe

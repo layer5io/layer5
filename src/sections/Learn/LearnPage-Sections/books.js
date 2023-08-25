@@ -143,13 +143,13 @@ const BooksSection = () => {
                   <h2>{frontmatter.title}</h2>
                   <p>{frontmatter.abstract}</p>
                 </div>
-                <Button secondary title={<FaArrowRight />} className="arrow_icon" />
+                <Button $secondary title={<FaArrowRight />} className="arrow_icon" />
               </Link>
             </div>
           ))}
         </div>
         <div className="see-more-button">
-          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books" />
+          <Button $primary title="Checkout all service mesh books" $url="/learn/service-mesh-books" />
         </div>
       </Container>
     </BooksListWrapper>

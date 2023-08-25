@@ -52,7 +52,7 @@ const NewCatalog = () => {
           CREATE AND SHARE YOUR OWN BEST PRACTICES
         </p>
         <div className="new-catalog__button_section">
-          <Button primary external={true} title="Publish Your Own Design" url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog" />
+          <Button $primary $external={true} title="Publish Your Own Design" $url="https://github.com/meshery/meshery.io/blob/master/README.md#add-your-patterns-to-the-catalog" />
         </div>
       </Container>
     </NewCatalogWrapper>

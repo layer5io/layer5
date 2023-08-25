@@ -49,7 +49,7 @@ const BlogList = ({
       <div className="blog-page-wrapper">
         <Container>
           <Row>
-            <Col xs={12} lg={8}>
+            <Col $xs={12} $lg={8}>
               {!pageContext.tag && !pageContext.category ? (
                 <div className="tooltip-search">
                   <BlogViewToolTip
@@ -70,7 +70,7 @@ const BlogList = ({
                 <Row className="blog-lists">
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }) => (
-                      <Col xs={12} key={id}>
+                      <Col $xs={12} key={id}>
                         <Card  frontmatter={frontmatter} fields={fields} />
                       </Col>
                     ))}
@@ -87,7 +87,7 @@ const BlogList = ({
                 </Row>
               </div>
             </Col>
-            <Col xs={12} lg={4}>
+            <Col $xs={12} $lg={4}>
               <Sidebar pageContext={pageContext} />
             </Col>
           </Row>

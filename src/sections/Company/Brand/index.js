@@ -160,13 +160,13 @@ const Brand = () => {
           include a visual mockup of intended use.
         </p>
         <a href="/brand/brand-kit.zip">
-          <Button primary title="Download Brand Kit">
+          <Button $primary title="Download Brand Kit">
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
         </a>
       </div>
       <Row className="brand-row">
-        <Col xs={12} md={9} className="brand-col">
+        <Col $xs={12} $md={9} className="brand-col">
           <div className="section">
             <Suspense fallback={<Loading />}>
               <BrandGuide />
@@ -238,7 +238,7 @@ const Brand = () => {
             </Suspense>
           </div>
         </Col>
-        <Col md={3} className="brand-nav-col">
+        <Col $md={3} className="brand-nav-col">
           <nav className={`brand-nav ${scroll ? "nav-fixed" : ""}`}>
             <p
               className={`header_link ${

@@ -23,29 +23,29 @@ const MesheryPage = () => {
       <Container>
         <div className="info">
           <Row className="description">
-            <Col className="desc-text" lg={6} md={6} sm={10} xs={8}>
+            <Col className="desc-text" $lg={6} $md={6} $sm={10} $xs={8}>
               <h1 className="heading-1"> Wrangle your infrastructure</h1>
               <h1 className="heading-2"> <span className="heading-2"> collaboratively</span></h1>
               <p className="desc-p">
                 {/* Meshery is the cloud native manager. <br /> */}
                 Confidently design, deploy, and operate your infrastructure and workloads with Meshery.
               </p>
-              <Button primary className="banner-btn" title="How Meshery Works"
-                url="/cloud-native-management/meshery/operating-service-meshes">
+              <Button $primary className="banner-btn" title="How Meshery Works"
+                $url="/cloud-native-management/meshery/operating-service-meshes">
                 <GiClockwork size={21} className="button-icon" />
               </Button>
-              <Button secondary className="banner-btn" title="Run Meshery"
-                url="/cloud-native-management/meshery/getting-started">
+              <Button $secondary className="banner-btn" title="Run Meshery"
+                $url="/cloud-native-management/meshery/getting-started">
                 <FiDownloadCloud size={21} className="button-icon" />
               </Button>
             </Col>
-            <Col lg={6} md={6} className="meshery-hero-img desc-text">
+            <Col $lg={6} $md={6} className="meshery-hero-img desc-text">
               <video autoPlay muted loop controls className="meshery-video" >
                 <source src={mesheryDemo} type="video/mp4" />
               </video>
               {/* <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" /> */}
-              <Button primary className="banner-btn align-btn"
-                title="Star the Repository" url="https://github.com/meshery/meshery" external="true">
+              <Button $primary className="banner-btn align-btn"
+                title="Star the Repository" url="https://github.com/meshery/meshery" $external={ true }>
                 <FaGithub size={21} className="button-icon" />
               </Button>
             </Col>

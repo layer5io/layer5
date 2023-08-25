@@ -10,18 +10,18 @@ const subscribe = ({ msg = "Stay meshy" }) => {
       <div className="parentcard">
         <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
           <Row>
-            <Col md={6}>
-              <SectionTitle className="section-title" UniWidth="100%">
+            <Col $md={6}>
+              <SectionTitle className="section-title" $UniWidth="100%">
                 <h2><span className="meshy">{msg}</span> and subscribe!</h2>
               </SectionTitle>
             </Col>
-            <Col md={6}>
+            <Col $md={6}>
               <Row className="email-cont">
-                <Col md={6} xs={12} >
+                <Col $md={6} $xs={12} >
                   <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
                 </Col>
                 <div>
-                  <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+                  <Button $secondary title="Subscribe" id="mc-embedded-subscribe" />
                 </div>
               </Row>
             </Col>

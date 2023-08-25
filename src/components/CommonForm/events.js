@@ -68,7 +68,7 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="org" name="org" />
 
-        <Button secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title="Submit" />
       </Form>
     </Formik>
   </div>

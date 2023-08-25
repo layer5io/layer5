@@ -134,12 +134,12 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container className="catalog-container">
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">Harness Meshery's Compatibility</h2>
             <p className="caption">
               Easily manage and monitor your entire infrastructure, regardless
@@ -148,25 +148,25 @@ const Catalog = () => {
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
               Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Wasm} className="calalog-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Ebpf} className="calalog-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Maximize Your Performance with eBPF Programs
             </h2>
@@ -177,7 +177,7 @@ const Catalog = () => {
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Deploy Applications with Meshery's Deployment Patterns
             </h2>
@@ -186,19 +186,19 @@ const Catalog = () => {
               language.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Patterns} className="calalog-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Opa} className="calalog-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Elevate Security Policies for a Revolutionary Transformation
             </h2>

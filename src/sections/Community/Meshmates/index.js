@@ -52,7 +52,7 @@ const Meshmates = () => {
     <MeshMatesWrapper>
       <Container>
         <Row className="hero">
-          <Col sm={12} lg={6}>
+          <Col $sm={12} $lg={6}>
             <h5>A warm and welcoming collection of open sourcers</h5>
             <h1>Layer5 MeshMates</h1>
             <p>
@@ -62,7 +62,7 @@ const Meshmates = () => {
                   By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible.
             </p>
           </Col>
-          <Col className="meshmate-logo-wrapper" sm={12} lg={6}>
+          <Col className="meshmate-logo-wrapper" $sm={12} $lg={6}>
             <MeshmateStackImage alt="meshmate logo"/>
           </Col>
         </Row>
@@ -71,7 +71,7 @@ const Meshmates = () => {
           <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them! </p>
           <Row>
             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Col xs={12} sm={6} lg={4} key={id}>
+              <Col $xs={12} $sm={6} $lg={4} key={id}>
                 <ProfileCard frontmatter={frontmatter} cardlink = {fields.slug}/>
               </Col>
             ))}
@@ -85,8 +85,8 @@ const Meshmates = () => {
           <p> Meshtees are encouraged to reach out to any MeshMate directly in order to pair up. Introduce yourself either on in the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>. Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
         <div className="meshmate-meet">
-          <Row Vcenter>
-            <Col sm={12} lg={6}>
+          <Row $Vcenter>
+            <Col $sm={12} $lg={6}>
               <h2> Meeting Your MeshMate </h2>
               <p>After pairing up on the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>, the community Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
               <table>
@@ -127,7 +127,7 @@ const Meshmates = () => {
                 </tr>
               </table>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <CommunityCallCard />
             </Col>
           </Row>
@@ -139,7 +139,7 @@ const Meshmates = () => {
           <h2> Code of Conduct </h2>
           <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
                     To report any violations please fill out this incident form. </p>
-          <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
+          <Button $primary title="Report Incident" $url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" $external={true}/>
         </div>
       </Container>
     </MeshMatesWrapper>

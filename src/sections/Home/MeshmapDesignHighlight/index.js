@@ -21,7 +21,7 @@ const DesignDefault = () => {
     <DesignDefaultWrapper>
       <div className="section">
         <Row className="row">
-          <Col sm={12} md={6} lg={6} className="left-col">
+          <Col $sm={12} $md={6} $lg={6} className="left-col">
             <div className="left">
               <div className="left-child">
                 {/* <div className="svg-background">
@@ -29,8 +29,8 @@ const DesignDefault = () => {
                 </div> */}
                 <SectionTitle
                   className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
+                  $leftAlign={true}
+                  $UniWidth="100%"
                 >
                   <h4 className="statement">Step onto</h4>
                   <div className="demo">
@@ -50,13 +50,13 @@ const DesignDefault = () => {
                     </div>
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="Extend your control" url="/projects" />
+                    <Button $primary className="join-community-button" title="Extend your control" $url="/projects" />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={6} className="right-col" >
+          <Col $sm={12} $md={6} $lg={6} className="right-col" >
             <div ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
               <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
             </div>

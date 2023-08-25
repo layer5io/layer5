@@ -240,17 +240,17 @@ const WorkshopsSection = () => {
   return (
     <WorkshopsListWrapper>
       <div className="workshop-section-wrapper">
-        <Col xs={12} md={3} className="workshops-col">
+        <Col $xs={12} $md={3} className="workshops-col">
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops" />
+            <Button $primary title="Checkout all workshops" $url="/learn/service-mesh-workshops" />
           </div>
         </Col>
-        <Col xs={12} md={9} className="workshops-col">
+        <Col $xs={12} $md={9} className="workshops-col">
           <Row>
             {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
-              <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
+              <Col $xs={12} $sm={6} $xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
                     <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />

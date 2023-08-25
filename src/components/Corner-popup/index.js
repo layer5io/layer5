@@ -28,7 +28,7 @@ const CornerPopup = () => {
             <a href="https://play.meshery.io/">
               <img className="popup-image" src={popupImageSmall} />
             </a>
-            <Button primary className="explore-playground-button" title="Explore Meshery Playground" url="https://play.meshery.io/" />
+            <Button $primary className="explore-playground-button" title="Explore Meshery Playground" $url="https://play.meshery.io/" $external={true}/>
           </div>
         </div>
       </div>

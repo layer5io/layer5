@@ -32,15 +32,13 @@ const Pricing = () => {
                 <h2>Choose <b>annual pricing</b> and get <i>2 months free</i> every year.</h2>
                 <div className="subscriptionButtons">
                   <Button
-                    secondary
-                    className={monthly ? "active button" : "inactive button"}
+                    $secondary                    className={monthly ? "active button" : "inactive button"}
                     onClick={() => setMonthly(true)}
                   >
                     Monthly
                   </Button>
                   <Button
-                    secondary
-                    className={monthly ? "inactive button" : "active button"}
+                    $secondary                    className={monthly ? "inactive button" : "active button"}
                     onClick={() => setMonthly(false)} >
                     Yearly
                   </Button>
@@ -50,7 +48,7 @@ const Pricing = () => {
           </Row> */}
           <Row Hcenter={true}>
             {options.map((x) => (
-              <Col lg={4} md={6} key={x.tier}>
+              <Col $lg={4} $md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                   {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
                   <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
@@ -67,7 +65,7 @@ const Pricing = () => {
                     <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>
                     <span className="after">/user{monthly? "/month" : "/year"}</span>
                   </div> */}
-                  <Button primary className={x.button[0] === "Coming Soon" ? "price-button-disabled" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
+                  <Button $primary className={x.button[0] === "Coming Soon" ? "price-button-disabled" : "price-button-link"} $url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>
             ))}

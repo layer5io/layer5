@@ -20,16 +20,16 @@ const About = () => {
   return (
     <AboutSectionWrapper id="about">
 
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12}>
-            <Row Vcenter={true} className="row-img-cont-1">
-              <Col xs={12} sm={6}>
+      <Container >
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12}>
+            <Row $Vcenter={true} className="row-img-cont-1">
+              <Col $xs={12} $sm={6}>
                 <div className="head-images">
                   <img src={FiveIcon} alt="About Layer5" />
                 </div>
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>We embrace <i>developer</i>-defined infrastructure. We empower developers to change how they write applications, support <i>operators</i> in rethinking how they run modern infrastructure, and enable <i>product owners</i> to regain full-control over their product portfolio.</p>
@@ -42,8 +42,8 @@ const About = () => {
               </Col>
             </Row>
             <img loading="lazy" src={Layer5Projects} alt="About Layer5 Projects" />
-            <Row Vcenter={true} className="row-img-cont-2">
-              <Col xs={12} sm={6}>
+            <Row $Vcenter={true} className="row-img-cont-2">
+              <Col $xs={12} $sm={6}>
                 <div className="about-text text-two">
                   <h1>Open Source First</h1>
                   <p className="indent">
@@ -54,7 +54,7 @@ const About = () => {
                   <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
                 </div>
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="head-images">
                   <img src={communityStat} alt="Layer5 Community Stat" loading="lazy"/>
                 </div>
@@ -64,11 +64,11 @@ const About = () => {
         </Row>
       </Container>
       <Statement />
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12}>
-            <Row Vcenter={true} className="row-img-cont-1">
-              <Col xs={12} sm={6}>
+      <Container >
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12}>
+            <Row $Vcenter={true} className="row-img-cont-1">
+              <Col $xs={12} $sm={6}>
                 <div className="head-images-meet">
                   <StaticImage src={Community_meetup} alt="Community_meetup" loading="lazy" />
                   <figcaption className="caption">
@@ -77,7 +77,7 @@ const About = () => {
                   </figcaption>
                 </div>
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
@@ -93,13 +93,13 @@ const About = () => {
         </Row>
       </Container>
       <WhoWeAre />
-      <Container fullWidthSM>
-        <Row Vcenter={true}>
-          <Col xs={12} sm={12}>
+      <Container >
+        <Row $Vcenter={true}>
+          <Col $xs={12} $sm={12}>
             <SectionTitle
               className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
+              $leftAlign={false}
+              $UniWidth="100%"
             >
               <h1>Collaborate</h1>
               <p className="colab">Join the community and collaborate on our projects all around the world.</p>
@@ -110,13 +110,13 @@ const About = () => {
         </Row>
       </Container>
 
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12} >
+      <Container >
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12} >
             <h1 className="bottom-sect-head">Locations</h1>
             <div>
               <Row className="location-row">
-                <Col xs={12} sm={6}>
+                <Col $xs={12} $sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
                       <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
@@ -135,7 +135,7 @@ const About = () => {
                     </div>
                   </div>
                 </Col>
-                <Col xs={12} sm={6}>
+                <Col $xs={12} $sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
                       <img src={location} className="location" alt="Layer5 locations" loading="lazy"/>
@@ -161,20 +161,19 @@ const About = () => {
           </Col>
         </Row>
         <Row className="contactButton section-bottom ">
-          <Col xs={12} sm={12}>
+          <Col $xs={12} $sm={12}>
             <SectionTitle
               className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
+              $leftAlign={false}
+              $UniWidth="100%"
             >
               {" "}
               <Button
-                primary
-                id="contact"
+                $primary                id="contact"
                 className="about-button"
-                url="/company/contact"
+                $url="/company/contact"
                 title="Contact Us"
-                external={false}
+                $external={false}
               />
             </SectionTitle>
           </Col>

@@ -20,14 +20,14 @@ const MeshMapBrand = () => {
     <MeshMapWrapper>
       <div className="post-content">
         <Row className="sub-project brand-section">
-          <Col xs={12} sm={6}>
+          <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
                 MeshMap
             </h2>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshmap-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -50,14 +50,14 @@ const MeshMapBrand = () => {
             </h3>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv">
-              <Col xs={12} sm={4}>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
                 <img src={MeshMap} alt="MeshMap Logo"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <img src={MeshMapIcon} alt="MeshMapLight Icon"/>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <img src={MeshMapTitle} alt="MeshMapTitle Text"/>
               </Col>
             </Row>
@@ -71,7 +71,7 @@ const MeshMapBrand = () => {
           </Col>
           <Col>
             <p>
-                            The MeshMap color palette consists of the primary MeshMap color
+                            The MeshMap color palette consists of the $primary MeshMap color
                             and additional shades. The MeshMap logo should be white or
                             monochrome tonal when using a color background.
             </p>

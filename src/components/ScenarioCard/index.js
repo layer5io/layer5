@@ -27,19 +27,19 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
     <ScenarioCardWrapper>
       <div className="scenario-card-block" onClick={() => toggleActive(subId)}>
         <Row>
-          <Col xs={12} sm={12}>
+          <Col $xs={12} $sm={12}>
             <div className="full-screen">
               <Link to={link} className="siteLink"><FaExternalLinkAlt style={{ height: "1.5rem", width: "auto" }} /></Link>
             </div>
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={4}>
+          <Col $xs={12} $sm={4}>
             <div className="scenario-cover">
               <img src={cover} className="scenario-image" />
             </div>
           </Col>
-          <Col xs={12} sm={8}>
+          <Col $xs={12} $sm={8}>
             <div className="scenario-description">
 
               <h4 className="title">{title}</h4>
@@ -55,7 +55,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
           </Col>
         </Row>
         <Row>
-          <Col xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
+          <Col $xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
                 <div id="katacoda-scenario"

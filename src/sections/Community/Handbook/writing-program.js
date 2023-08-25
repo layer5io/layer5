@@ -40,7 +40,7 @@ const Writers = () => {
             <h2>Why should you participate?</h2>
             <div className="list">
               <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="listed">
                     <table className="table">
                       <tr>
@@ -64,7 +64,7 @@ const Writers = () => {
                     </table>
                   </div>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="listed">
                     <table className="table">
                       <tr>
@@ -101,7 +101,7 @@ const Writers = () => {
 
             <Row>
               <div className="content_list">
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/blog">
                     <div className="content_type">
                       <img src={blog} alt="Blog" />
@@ -110,7 +110,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/resources">
                     <div className="content_type">
                       <img src={resources} alt="Resource" />
@@ -119,7 +119,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/learn/service-mesh-workshops">
                     <div className="content_type">
                       <img src={workshop} alt="Workshop" />
@@ -132,7 +132,7 @@ const Writers = () => {
             </Row>
             <Row>
               <div className="content_list">
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
                       <img src={event} alt="Event" />
@@ -141,7 +141,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
                       <img src={talks} alt="Talks" />
@@ -150,7 +150,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/cloud-native-management/meshery">
                     <div className="content_type">
                       <img src={videos} alt="Videos" />
@@ -168,7 +168,7 @@ const Writers = () => {
               <div className="item">
                 <p>If you’re interested in the Layer5 Writing Program, please submit your information (and proposed topic, if you have one) to get started. <i>Don't have a topic? Don't worry, we have plenty of suggestions for you.</i></p>
 
-                <Button primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
+                <Button $primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
                 <Modal
                   isOpen={modalIsOpen}
                   onRequestClose={closeModal}
@@ -177,7 +177,7 @@ const Writers = () => {
                   ariaHideApp={false}
                   contentLabel="Content Form"
                 >
-                  <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+                  <Button $secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
                   <h2 className="modal-heading">Layer5 Content Registration Form</h2>
                   <div className="content-form">
                     <ContentForm />

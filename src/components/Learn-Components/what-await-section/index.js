@@ -7,7 +7,7 @@ const WhatAwaitsSection = () => {
   return (
     <WhatAwaitsWrapper>
       <Row className="what-await-section">
-        <Col sm={12} md={6} xl={4} className="what-await-section-info">
+        <Col $sm={12} $md={6} $xl={4} className="what-await-section-info">
           <h2>What Awaits you</h2>
           <p>
               Learning service mesh the right way. From the best
@@ -15,7 +15,7 @@ const WhatAwaitsSection = () => {
               to mesh
           </p>
         </Col>
-        <Col sm={12} md={6} xl={4} className="what-await-section-image">
+        <Col $sm={12} $md={6} $xl={4} className="what-await-section-image">
 
           <Terminal
             lines={[

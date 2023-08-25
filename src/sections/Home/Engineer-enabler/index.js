@@ -16,7 +16,7 @@ const EngineerEnabler = () => {
       </div>
       <h5>It's a multi-mesh world. Infrastructure diversity is reality for any enterprise.</h5>
       <div>
-        <Button primary title="Request Training" url="/company/contact" />
+        <Button $primary title="Request Training" $url="/company/contact" />
       </div>
     </EngineerWrapper>
   );

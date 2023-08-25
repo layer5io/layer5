@@ -94,7 +94,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     <ChapterWrapper>
       <Container className="chapter-container">
         <Row>
-          <Col sm={12} md={3}>
+          <Col $sm={12} $md={3}>
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
@@ -105,7 +105,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
               </div>
             </div>
           </Col>
-          <Col sm={12} md={9}>
+          <Col $sm={12} $md={9}>
             <div className="chapter-data">
               <h1 className="chapter-heading">{frontmatter.chapterTitle}</h1>
               <SRLWrapper>

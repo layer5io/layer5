@@ -31,7 +31,7 @@ const DockerExtensionMeshery = () => {
           </p>
         </Row>
         <Row>
-          <Col md={6} sm={12}>
+          <Col $md={6} $sm={12}>
             <StaticImage
               src={dockerDesktop}
               alt="Meshery Docker Extension"
@@ -39,7 +39,7 @@ const DockerExtensionMeshery = () => {
             <p>Install Meshery Docker Extension from <a href="https://hub.docker.com/extensions/meshery/docker-extension-meshery">Docker Hub</a> and get:</p>
 
             <Row>
-              <Col className="docker-extension-meshery" lg={2}>
+              <Col className="docker-extension-meshery" $lg={2}>
                 <StaticImage
                   src={dockercompose_logo}
                   alt="Docker Compose Logo"
@@ -47,7 +47,7 @@ const DockerExtensionMeshery = () => {
                   objectFit="contain"
                 />
               </Col>
-              <Col lg={10}>
+              <Col $lg={10}>
                 <div className="feature-title">Kubernetes support for your Docker Compose apps</div> {" "}
                 <i>
                  Import your Docker Compose apps. Configure and deploy them to Kubernetes and integrate into your GitOps pipeline.
@@ -55,13 +55,13 @@ const DockerExtensionMeshery = () => {
               </Col>
             </Row>
             <Row className="extension-feature mobile-image-reverse">
-              <Col lg={10}>
+              <Col $lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
                 Using <Link to="cloud-native-management/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
-              <Col className="docker-extension-meshery" lg={2}>
+              <Col className="docker-extension-meshery" $lg={2}>
                 <StaticImage
                   src={visual_topology}
                   alt="Visual Topology"
@@ -71,7 +71,7 @@ const DockerExtensionMeshery = () => {
               </Col>
             </Row>
             <Row className="extension-feature">
-              <Col className="docker-extension-meshery" lg={2}>
+              <Col className="docker-extension-meshery" $lg={2}>
                 <StaticImage
                   src={mesheryworkdiagram}
                   alt="Single-click Istio deployment"
@@ -79,7 +79,7 @@ const DockerExtensionMeshery = () => {
                   objectFit="contain"
                 />
               </Col>
-              <Col lg={10}>
+              <Col $lg={10}>
                 <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
                 <i>
                   Support of 10 different service meshes to the fingertips
@@ -89,13 +89,13 @@ const DockerExtensionMeshery = () => {
               </Col>
             </Row>
             <Row className="extension-feature mobile-image-reverse">
-              <Col lg={10}>
+              <Col $lg={10}>
                 <div className="feature-title">Detection of Kubernetes environments</div> {" "}
                 <i>
                   Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another or manage all clusters concurrently.
                 </i>
               </Col>
-              <Col className="docker-extension-meshery" lg={2}>
+              <Col className="docker-extension-meshery" $lg={2}>
                 <StaticImage
                   src={Kubernetes}
                   alt="Kubernetes scan and MeshSync"
@@ -105,7 +105,7 @@ const DockerExtensionMeshery = () => {
               </Col>
             </Row>
             <Row className="extension-feature">
-              <Col lg={10}>
+              <Col $lg={10}>
                 <div className="listed">
                   <strong>Resources</strong>
                   <p>
@@ -123,9 +123,9 @@ const DockerExtensionMeshery = () => {
               </Col>
             </Row>
           </Col>
-          <Col md={6} sm={12}>
+          <Col $md={6} $sm={12}>
             <p className="installButton">
-              <Button primary title="Install Meshery Docker Extension" url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" external={true} /></p>
+              <Button $primary title="Install Meshery Docker Extension" $url="https://hub.docker.com/extensions/meshery/docker-extension-meshery" $external={true} /></p>
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"

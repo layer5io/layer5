@@ -13,7 +13,7 @@ const Conduct = () => {
       />
       <Container>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Introduction</h2>
             </div>
@@ -34,7 +34,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Expected Behavior</h2>
             </div>
@@ -51,7 +51,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Unacceptable Behavior</h2>
             </div>
@@ -71,7 +71,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Reporting and Enforcement</h2>
             </div>

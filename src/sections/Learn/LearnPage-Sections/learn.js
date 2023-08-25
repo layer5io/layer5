@@ -186,14 +186,14 @@ const LearnSection = () => {
         <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
         <Container>
           <Row Hcenter className="learn-buttons-section labs">
-            <Col xs={12} lg={6}>
+            <Col $xs={12} $lg={6}>
               <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 0 }}>
-                <Button secondary title="Getting started with any service mesh"/>
+                <Button $secondary title="Getting started with any service mesh"/>
               </Link>
             </Col>
-            <Col xs={12} lg={6}>
+            <Col $xs={12} $lg={6}>
               <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 1 }}>
-                <Button secondary title="Managing the performance of your service mesh"/>
+                <Button $secondary title="Managing the performance of your service mesh"/>
               </Link>
             </Col>
             <img src={OReillyLogo} alt="OReilly Logo"/>
@@ -204,7 +204,7 @@ const LearnSection = () => {
           <div className="cards-row">
             {data[0].scenarios.map(({ subId, title, info, link }, index) => (
               index < 4 && (
-                <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
+                <Col $xs={12} $sm={6} $lg={4} $xl={3} key={subId}>
                   <Link className="link" to={link}>
                     <div className="learn-card">
                       <h2>{title}</h2>
@@ -222,7 +222,7 @@ const LearnSection = () => {
         </div>
       </div>
       <div className="learn-buttons-section">
-        <Button primary title="Checkout all the labs" url="/learn/service-mesh-labs" />
+        <Button $primary title="Checkout all the labs" $url="/learn/service-mesh-labs" />
       </div>
     </LearnSectionWrapper>
   );

@@ -33,19 +33,19 @@ const RelatedPosts = props => {
                   {
                     postType === "blogs" ? relatedPosts.map(({ post }) => {
                       return (
-                        <Col className="cardCol" xs={12} key={post.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
                     }) : relatedPosts.map((post) => {
                       return (
-                        <Col className="cardCol" xs={12} key={post.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
                     })
                   }
-                  <Col xs={12} lg={12} className="allBlogs">
+                  <Col $xs={12} $lg={12} className="allBlogs">
                     <div className="allBlogs_card">
                       <Link to={linkToAllItems}>
                         <h2>{lastCardHead}</h2>
