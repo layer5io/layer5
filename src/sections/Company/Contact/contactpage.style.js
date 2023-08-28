@@ -47,6 +47,13 @@ const ContactPageWrapper = styled.section`
     height: 70rem;
     margin: auto -15px;
   }
+  @media screen and (max-width: 727px) {
+    .contact-form-row {
+      .card-outline {
+        width: 20rem;  
+      }
+    }
+  }
 
   @media screen and (max-width: 765px) {
     .contact-form {

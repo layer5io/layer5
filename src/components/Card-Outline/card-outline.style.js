@@ -9,7 +9,7 @@ const CardOutlineWrapper = styled.div`
 
     .card-outline {
         height: 16rem;
-        // width: 20rem;
+        width: 20rem;
         padding: 1rem 2rem;
         text-align: center;
         position: relative;
