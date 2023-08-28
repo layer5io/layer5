@@ -3,7 +3,7 @@ import styled from "styled-components";
 const NavigationWrap = styled.header`
 
   position: sticky;
-  width: 100%;
+  width: 100vw;
   z-index: 9999;
   top: 0;
   background-color: ${(props) => props.theme.body};
@@ -85,7 +85,7 @@ const NavigationWrap = styled.header`
         min-width: 95px;
       }
     }
-    @media screen and (max-width: 912px) {
+    @media screen and (max-width: 1100px) {
       a {
         display: none;
       }
@@ -266,7 +266,7 @@ const NavigationWrap = styled.header`
     }
     50% {
         transform: translate3d(0px, 0px, 4px) scale(.75, .75);
-        perspective(800px);
+        perspective: (800px);
         opacity: 20%;
     }
     100% {
@@ -324,7 +324,7 @@ const NavigationWrap = styled.header`
         a {
           display: block;
           &:hover {
-            color: ${props => props.theme.menuHoverColor}; !important;
+            color: ${props => props.theme.menuHoverColor} !important;
           }
           &:before {
             content: none;
@@ -425,7 +425,7 @@ const NavigationWrap = styled.header`
     }
 
   }
-  @media only screen and (max-width: 912px) {
+  @media only screen and (max-width: 1100px) {
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
