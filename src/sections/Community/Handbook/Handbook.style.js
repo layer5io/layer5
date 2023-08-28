@@ -8,7 +8,7 @@ export const HandbookWrapper = styled.div`
     .highlight{
       font-weight: 600;
     }
-
+    
     .content{
       width:100%;
       padding-bottom: 2rem;
@@ -35,11 +35,9 @@ export const HandbookWrapper = styled.div`
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    #less-padding {
-      padding-top: 0rem;
-        margin-top: -6rem;
+    .content-fix {
+      margin-top: -6rem;
     }
-    
     .page-section{
       h2{
         padding-top: 7rem;
@@ -53,8 +51,10 @@ export const HandbookWrapper = styled.div`
       margin-left: 20rem;
       display: flex;
     }
-    #conduct-section{
-      margin-top: -43rem;
+    .page-section-fix{
+      h2:first-child {
+        padding-top: 1rem;
+      }
     }
 
     .sidebar {

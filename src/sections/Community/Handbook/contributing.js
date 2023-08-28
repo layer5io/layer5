@@ -27,15 +27,18 @@ const contributingGuide = () => {
         <h1>Contribution</h1>
       </div>
       <TOC />
-      <div className="page-section" >
+      <div className="page-section page-section-fix">
         <Container>
-          <h2 id="less-padding">General contribution flow</h2>
+          <h2>General contribution flow</h2>
           <p>
             Pull requests (PRs) are the best ways to propose changes to a
             project repository. At Layer5 org, we use the Github Flow:
           </p>
           <div className="content">
-            <a id="Clone your fork">  <h3>Clone your fork to your local machine</h3> </a>
+            <a id="Clone your fork">
+              {" "}
+              <h3>Clone your fork to your local machine</h3>{" "}
+            </a>
             <ul>
               <li>Fork the repository you are working on.</li>
               <li>
@@ -78,7 +81,10 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Checkout a new branch">  <h3>Create and checkout a new branch</h3> </a>
+            <a id="Checkout a new branch">
+              {" "}
+              <h3>Create and checkout a new branch</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -127,7 +133,10 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Commit your changes">  <h3>Commit the changes made</h3> </a>
+            <a id="Commit your changes">
+              {" "}
+              <h3>Commit the changes made</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -139,19 +148,21 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Sign-off commits"> <h3>
+            <a id="Sign-off commits">
+              {" "}
+              <h3>
                 Make sure to{" "}
-              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
+                <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
                   Sign-off
-              </a>{" "}
+                </a>{" "}
                 on your Commits (Developer Certificate of Origin)
-            </h3>
+              </h3>
             </a>
             <p>
               To contribute to this project, you must agree to the Developer
               Certificate of Origin (DCO) for each commit you make. The DCO is a
-              simple statement that you, as a contributor, have the legal right to
-              contribute.{" "}
+              simple statement that you, as a contributor, have the legal right
+              to contribute.{" "}
             </p>
             <p>
               To signify that you agree to the DCO for contributions, you simply
@@ -161,10 +172,11 @@ const contributingGuide = () => {
               <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
             </div>
             <p>
-              In most cases, you can add this signoff to your commit automatically
-              with the -s or --signoff flag to git commit. You must use your real
-              name and a reachable email address (sorry, no pseudonyms or
-              anonymous contributions). An example of signing off on a commit:
+              In most cases, you can add this signoff to your commit
+              automatically with the -s or --signoff flag to git commit. You
+              must use your real name and a reachable email address (sorry, no
+              pseudonyms or anonymous contributions). An example of signing off
+              on a commit:
             </p>
             <div className="codes">
               <Code codeString="$ commit -s -m “my commit message w/signoff”" />
@@ -188,7 +200,10 @@ const contributingGuide = () => {
             </p>
             <StaticImage src={Signoff} id="sign-off" alt="Signoff" />
 
-            <a id="Push changes to Github">  <h3>Push changes to Github</h3> </a>
+            <a id="Push changes to Github">
+              {" "}
+              <h3>Push changes to Github</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -199,26 +214,37 @@ const contributingGuide = () => {
                 </span>
               </li>
             </ul>
-            <a id="Create a pull request">  <h3>Create a pull request (PR)</h3> </a>
+            <a id="Create a pull request">
+              {" "}
+              <h3>Create a pull request (PR)</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
-                  Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
+                  Head over to your forked repository on GitHub and you'll see a
+                  Compare & pull request button. Click on that button.
                 </span>
-                <br/>
+                <br />
                 <span>
-                  Note: Please ensure that the right branch is selected for the PR.
+                  Note: Please ensure that the right branch is selected for the
+                  PR.
                 </span>
                 <div>
                   <br />
-                  <StaticImage src={compareAndPR} alt="Compare and pull request" />
+                  <StaticImage
+                    src={compareAndPR}
+                    alt="Compare and pull request"
+                  />
                 </div>
               </li>
             </ul>
             <ul>
               <li>
                 <span>
-                  Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
+                  Once you click on the button, you'll be taken to the Pull
+                  Request page. Here, you can add a title and description to
+                  your pull request that explains your contribution. Once you're
+                  done, click on the Create pull request button.
                 </span>
                 <div>
                   <br />

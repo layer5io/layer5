@@ -16,9 +16,8 @@ import videos from "./images/videos.svg";
 import workshop from "./images/workshop.svg";
 import resources from "./images/resources.svg";
 
-
 const Writers = () => {
-  const [modalIsOpen,setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
 
@@ -30,12 +29,17 @@ const Writers = () => {
         <h1>Write with Layer5!</h1>
       </div>
       <TOC />
-      <div className="page-section">
+      <div className="page-section page-section-fix">
         <Container>
           <div className="content writing_program">
-            <h2 id="less-padding">What is Layer5 Writing Program?</h2>
+            <h2>What is Layer5 Writing Program?</h2>
             <p>
-            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies.
+              The Layer5 Writing Program is a way to demonstrate your expertise,
+              give back to the community, and help us produce great content. We
+              collaborate with authors and technologists from around the world
+              to produce high quality articles, blog posts, tutorials and other
+              cloud native resources on Meshery, Kubernetes, service meshes,
+              Docker and related technologies.
             </p>
             <h2>Why should you participate?</h2>
             <div className="list">
@@ -44,21 +48,76 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
+                        <td className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="27"
+                            height="40"
+                            fill="none"
+                            viewBox="0 0 40 40"
+                          >
+                            <rect
+                              width="40"
+                              height="40"
+                              fill="#C9FCF6"
+                              rx="5"
+                            />
+                            <path
+                              stroke="#00B39F"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M28 14L17 25L12 20"
+                            />
+                          </svg>
+                        </td>
                         <td className="skill">
                           <h4>
-                        Improve your writing and  <br />
-                        communication skills
+                            Improve your writing and <br />
+                            communication skills
                           </h4>
-                      Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics clearly, and iterate to improve results. Become a better technical writer by collaborating with an accomplished team of technical writers and editors.</td>
+                          Publishing is a feedback-driven process that can help
+                          you understand your audience better, explain complex
+                          topics clearly, and iterate to improve results. Become
+                          a better technical writer by collaborating with an
+                          accomplished team of technical writers and editors.
+                        </td>
                       </tr>
                       <tr>
-                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
+                        <td className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="27"
+                            height="40"
+                            fill="none"
+                            viewBox="0 0 40 40"
+                          >
+                            <rect
+                              width="40"
+                              height="40"
+                              fill="#C9FCF6"
+                              rx="5"
+                            />
+                            <path
+                              stroke="#00B39F"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M28 14L17 25L12 20"
+                            />
+                          </svg>
+                        </td>
                         <td className="skill">
-                          <h4>
-                        Build your technical profile
-                          </h4>
-                          Share your knowledge with a worldwide developer community. Build your GitHub profile with assigned issues and merged pull requests. Articles, posts, project documentation written by you will be drafted, put into a pull request, reviewed and merged like any other code-centric contribution. Documenting the problems you solved or a new feature you implemented will serve as a perpetual guide to others in the community.
+                          <h4>Build your technical profile</h4>
+                          Share your knowledge with a worldwide developer
+                          community. Build your GitHub profile with assigned
+                          issues and merged pull requests. Articles, posts,
+                          project documentation written by you will be drafted,
+                          put into a pull request, reviewed and merged like any
+                          other code-centric contribution. Documenting the
+                          problems you solved or a new feature you implemented
+                          will serve as a perpetual guide to others in the
+                          community.
                         </td>
                       </tr>
                     </table>
@@ -68,21 +127,71 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
+                        <td className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="40"
+                            fill="none"
+                            viewBox="0 0 40 40"
+                          >
+                            <rect
+                              width="40"
+                              height="40"
+                              fill="#C9FCF6"
+                              rx="5"
+                            />
+                            <path
+                              stroke="#00B39F"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M28 14L17 25L12 20"
+                            />
+                          </svg>
+                        </td>
                         <td className="skill">
-                          <h4>
-                          Establish your voice and personal brand
-                          </h4>
-                      Sharing your knowledge not only demonstrates your technical expertise, it highlights your ability to teach others, and establishes you as an authority on the topic. Your technical write-ups are empirical evidence of your ability to learn and teach.
+                          <h4>Establish your voice and personal brand</h4>
+                          Sharing your knowledge not only demonstrates your
+                          technical expertise, it highlights your ability to
+                          teach others, and establishes you as an authority on
+                          the topic. Your technical write-ups are empirical
+                          evidence of your ability to learn and teach.
                         </td>
                       </tr>
                       <tr>
-                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
+                        <td className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="40"
+                            fill="none"
+                            viewBox="0 0 40 40"
+                          >
+                            <rect
+                              width="40"
+                              height="40"
+                              fill="#C9FCF6"
+                              rx="5"
+                            />
+                            <path
+                              stroke="#00B39F"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M28 14L17 25L12 20"
+                            />
+                          </svg>
+                        </td>
                         <td className="skill">
-                          <h4>
-                        Educate
-                          </h4>
-                      Whether you're writing about a complex system or a a set of actions you took to address an error, the odds are high that someone else will someday struggle with the same things as you. By writing about the things that you learn or find interesting, you aren't just teaching yourself, you're also helping share your knowledge with every person who reads your post.
+                          <h4>Educate</h4>
+                          Whether you're writing about a complex system or a a
+                          set of actions you took to address an error, the odds
+                          are high that someone else will someday struggle with
+                          the same things as you. By writing about the things
+                          that you learn or find interesting, you aren't just
+                          teaching yourself, you're also helping share your
+                          knowledge with every person who reads your post.
                         </td>
                       </tr>
                     </table>
@@ -94,9 +203,15 @@ const Writers = () => {
             <h2>Where can you contribute?</h2>
 
             <p>
-              We welcome the contribution of any type that shares knowledge about our projects or related technologies.
+              We welcome the contribution of any type that shares knowledge
+              about our projects or related technologies.
               <br />
-              Do you want to document your recent effort in implementing a new feature? Do you want to share a solution for a problem you were struggling with? Do you want to share information about a recent technology you find intriguing? Want to host an event with Layer5?  Want to deliver a talk, a workshop, or a tutorial?  Just let us know.
+              Do you want to document your recent effort in implementing a new
+              feature? Do you want to share a solution for a problem you were
+              struggling with? Do you want to share information about a recent
+              technology you find intriguing? Want to host an event with Layer5?
+              Want to deliver a talk, a workshop, or a tutorial? Just let us
+              know.
             </p>
 
             <Row>
@@ -120,7 +235,10 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  <Link className="project-card" to="/learn/service-mesh-workshops">
+                  <Link
+                    className="project-card"
+                    to="/learn/service-mesh-workshops"
+                  >
                     <div className="content_type">
                       <img src={workshop} alt="Workshop" />
                       <h5>Workshop</h5>
@@ -151,7 +269,10 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  <Link className="project-card" to="/cloud-native-management/meshery">
+                  <Link
+                    className="project-card"
+                    to="/cloud-native-management/meshery"
+                  >
                     <div className="content_type">
                       <img src={videos} alt="Videos" />
                       <h5>Recorded Videos</h5>
@@ -166,9 +287,22 @@ const Writers = () => {
 
             <div className="process">
               <div className="item">
-                <p>If you’re interested in the Layer5 Writing Program, please submit your information (and proposed topic, if you have one) to get started. <i>Don't have a topic? Don't worry, we have plenty of suggestions for you.</i></p>
+                <p>
+                  If you’re interested in the Layer5 Writing Program, please
+                  submit your information (and proposed topic, if you have one)
+                  to get started.{" "}
+                  <i>
+                    Don't have a topic? Don't worry, we have plenty of
+                    suggestions for you.
+                  </i>
+                </p>
 
-                <Button primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
+                <Button
+                  primary
+                  className="open-modal-btn"
+                  onClick={openModal}
+                  title="Layer5 Content Form"
+                />
                 <Modal
                   isOpen={modalIsOpen}
                   onRequestClose={closeModal}
@@ -177,26 +311,58 @@ const Writers = () => {
                   ariaHideApp={false}
                   contentLabel="Content Form"
                 >
-                  <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-                  <h2 className="modal-heading">Layer5 Content Registration Form</h2>
+                  <Button
+                    secondary
+                    className="close-modal-btn"
+                    onClick={closeModal}
+                  >
+                    {" "}
+                    <GrFormClose />
+                  </Button>
+                  <h2 className="modal-heading">
+                    Layer5 Content Registration Form
+                  </h2>
                   <div className="content-form">
                     <ContentForm />
                   </div>
                 </Modal>
               </div>
               <div className="item">
-                <p>Upon being accepted, you'll work with a coordinator on the content team to decide on a topic, develop a project plan, and discuss submission details.</p>
+                <p>
+                  Upon being accepted, you'll work with a coordinator on the
+                  content team to decide on a topic, develop a project plan, and
+                  discuss submission details.
+                </p>
               </div>
             </div>
 
             <h3>Additional Resources</h3>
             <ul>
-              <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-blog-post">Contributing to Layer5 Blogs</a></li>
-              <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-resource">Contributing to Layer5 Resources</a></li>
-              <li><a href="https://github.com/layer5io/layer5/labels/area%2Fblog">View open Writing Program issues</a></li>
-              <li>Join the <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a></li>
-              <li>Explore our <Link to="/resources">Resource Library</Link></li>
-              <li><Link to="/learn">Learn Cloud Native</Link></li>
+              <li>
+                <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-blog-post">
+                  Contributing to Layer5 Blogs
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-resource">
+                  Contributing to Layer5 Resources
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/layer5io/layer5/labels/area%2Fblog">
+                  View open Writing Program issues
+                </a>
+              </li>
+              <li>
+                Join the{" "}
+                <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a>
+              </li>
+              <li>
+                Explore our <Link to="/resources">Resource Library</Link>
+              </li>
+              <li>
+                <Link to="/learn">Learn Cloud Native</Link>
+              </li>
             </ul>
 
             <TocPagination />
