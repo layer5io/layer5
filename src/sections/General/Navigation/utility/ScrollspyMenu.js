@@ -3,7 +3,8 @@ import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { ReactComponent as IngressGatewayImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
-import { ReactComponent as KubernetesImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-partial-colorMode.svg";
+import { ReactComponent as KubernetesImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-navbar.svg";
+import { ReactComponent as KubernetesImage1 } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/kubernetes-navbar-light.svg";
 import { ReactComponent as PodImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
 import { ReactComponent as PrometheusImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
 import { ReactComponent as ServiceIntefaceImage } from "../../../../sections/Meshmap/Meshmap-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
@@ -114,7 +115,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
                         <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
                         <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
-                        <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />
+                        {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
                         <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
                         <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
                         <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />

@@ -10,7 +10,7 @@ const StickFigures = () => {
       <Row className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
-            <strong> Stick Figures </strong>
+            <strong> Five, our mascot </strong>
           </h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
@@ -22,8 +22,8 @@ const StickFigures = () => {
         </Col>
         <Col>
           <p>
-            Introducing stick figures, a playful and dynamic visual language
-            that captures the essence of Layer5.io. These charming and
+            Introducing Five, a playful and dynamic visual language
+            that captures the essence of Layer5. These charming and
             minimalist illustrations serve as the perfect embodiment of
             our brand's values and offerings.
           </p>
@@ -36,7 +36,7 @@ const StickFigures = () => {
         </Col>
         <Row $Vcenter className="ImgDiv">
           <Col $xs={12} className="stick-figure">
-            <img src={SFL} alt="Stick figures" />
+            <img src={SFL} alt="Layer5 Mascot, Five" />
           </Col>
         </Row>
       </Row>

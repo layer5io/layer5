@@ -21,7 +21,7 @@ const ContactFormModal = (props) => {
 
   return (
     <ContactFormModalWrapper>
-      <Button $primary className="open-modal-btn" onClick={openModal} title={props.callout_text} />
+      <Button $secondary className="open-modal-btn" onClick={openModal} title={props.callout_text} />
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

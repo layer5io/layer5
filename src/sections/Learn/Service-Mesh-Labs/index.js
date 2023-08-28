@@ -36,7 +36,7 @@ const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
 
   return (
     <LabsWrapper>
-      <PageHeader title="Learn how to service mesh" subtitle="with interactive labs" />
+      <PageHeader title="Learn how to manage Kubernetes" subtitle="with interactive labs" />
       <div className="Labs-section-wrapper">
         <Container>
           <Tabs className="course-tabs"
