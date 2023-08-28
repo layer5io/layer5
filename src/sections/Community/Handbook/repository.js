@@ -208,11 +208,13 @@ const Repository = () => {
                     </thead>
                     {backendProject.subdata.map((subdata) => {
                       const { project, image, language, description, repository } = subdata;
+                      const smpClass = project === "SMP Action";
+                      const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} alt="project" />&nbsp;{project} </td>
+                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
