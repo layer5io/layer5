@@ -109,7 +109,7 @@ export const HoneycombGrid = styled.div`
         }
       }
     }
-    :hover {
+    &:hover {
       .integration-container {
         img {
           transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -134,7 +134,7 @@ export const HoneycombGrid = styled.div`
       }
       background: #00d3a9;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      ::after {
+      &:after {
         content: "";
         background: ${(props) => props.theme.grey212121ToWhite};
         margin: 0px 0px 0 4px;
