@@ -238,8 +238,8 @@ const FooterWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 767px){
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
 
 		.footer-bottom{
 			flex-direction: column;
@@ -250,6 +250,9 @@ const FooterWrapper = styled.section`
 				margin-bottom: 0;
 				text-align: center;
 			}
+		}
+		.subscribe {
+			margin: 0 0 2rem 0;
 		}
 	}
 	
