@@ -9,8 +9,8 @@ export const BackToTopButton = styled.button`
     outline : none;
     border-radius:  50%;
     border : none;
-    animation-name : ${props => props.isMounted ? onMountBtnAnimation : onUnmountBtnAnimation};
-    animation-duration: ${props => `${props.delay}ms`};
+    animation-name : ${props => props.$isMounted ? onMountBtnAnimation : onUnmountBtnAnimation};
+    animation-duration: ${props => `${props.$delay}ms`};
     background-color: #3c494f;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     cursor: pointer;
