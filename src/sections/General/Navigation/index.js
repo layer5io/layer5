@@ -154,6 +154,7 @@ const Navigation = () => {
   data["Solutions"] = {
     nodes: []
   };
+
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -171,7 +172,8 @@ const Navigation = () => {
       }
     };
 
-    expand && document.addEventListener("click", outsideClickHandler);
+    expand && setTimeout(() => document.addEventListener("click", outsideClickHandler));
+
     return () => {
       document.removeEventListener("click", outsideClickHandler);
     };
@@ -207,13 +209,15 @@ const Navigation = () => {
             {expand ?
               <IoMdClose
                 className="mobile-menu-icon open"
-                onClick={function () {
-                  setExpand(false); closeDropDown();
+                onClick={() =>  {
+                  setExpand(false);
+                  closeDropDown();
                 }}
               /> : <FaBars
                 className="mobile-menu-icon"
-                onClick={function () {
-                  setExpand(true); openDropDown();
+                onClick={() => {
+                  setExpand(true);
+                  openDropDown();
                 }}
               />
             }
@@ -221,8 +225,6 @@ const Navigation = () => {
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
                   {Data.menuItems.map((menu, index) => (
-
-
                     <li
                       key={index}
                       className={
@@ -290,11 +292,8 @@ const Navigation = () => {
             <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!isDark} />
           </div>
         </div>
-
       </Container>
-
     </NavigationWrap>
-
   );
 };
 
