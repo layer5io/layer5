@@ -219,7 +219,7 @@ const MesheryPlatforms = () => {
   return (
     <MesheryPlatformsWrapper>
       <div className="content">
-        <Row Hcenter className="step-1">
+        <Row $Hcenter className="step-1">
           <p>1 step install to managing service meshes</p>
           <h2><span>Step 1:</span> Choose your platform</h2>
         </Row>
@@ -240,7 +240,7 @@ const MesheryPlatforms = () => {
             {currentPlatform.name && currentPlatform.steps}
           </Row>
         </Container>
-        <Row Hcenter className="step-2">
+        <Row $Hcenter className="step-2">
           <Col>
             <h2><span>Step 2:</span> Manage your mesh</h2>
             <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />

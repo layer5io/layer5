@@ -185,7 +185,7 @@ const LearnSection = () => {
       <div>
         <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
         <Container>
-          <Row Hcenter className="learn-buttons-section labs">
+          <Row $Hcenter className="learn-buttons-section labs">
             <Col $xs={12} $lg={6}>
               <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 0 }}>
                 <Button $secondary title="Getting started with any service mesh"/>

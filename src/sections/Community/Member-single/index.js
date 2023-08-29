@@ -287,7 +287,7 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
             </Col>
           </Row>
-          <Row Hcenter>
+          <Row $Hcenter>
             <Col className="start-contributing" $sm={12} $lg={12}>
               <p> Would you Like a Member Profile?</p>
               <Button

@@ -46,7 +46,7 @@ const Pricing = () => {
               </div>
             </Col>
           </Row> */}
-          <Row Hcenter={true}>
+          <Row $Hcenter={true}>
             {options.map((x) => (
               <Col $lg={4} $md={6} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>

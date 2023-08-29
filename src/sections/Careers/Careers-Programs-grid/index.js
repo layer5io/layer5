@@ -61,7 +61,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
       <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
         <Container>
           <div className="program-grid-wrapper">
-            <Row Hcenter>
+            <Row $Hcenter>
               {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
                   <Link
