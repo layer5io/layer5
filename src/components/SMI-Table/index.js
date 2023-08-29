@@ -5,12 +5,17 @@ import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./SMITable.style";
 import { non_functional } from "../../collections/landscape/non-functional";
 import { Tooltip } from "react-tooltip";
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
 
-const halfMark = "../../assets/images/landscape/half.svg";
-const passingMark = "../../assets/images/landscape/passing.svg";
-const failingMark = "../../assets/images/landscape/failing.svg";
-const ServiceMeshIcon = "../../assets/images/service-mesh-icons/service-mesh.svg";
+import halfMark from "../../assets/images/landscape/half.svg";
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
+import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
+
+// const halfMark = "../../assets/images/landscape/half.svg";
+// const passingMark = "../../assets/images/landscape/passing.svg";
+// const failingMark = "../../assets/images/landscape/failing.svg";
+// const ServiceMeshIcon = "../../assets/images/service-mesh-icons/service-mesh.svg";
 
 const Table = ({ columns, data, spec }) => {
   // Use the state and functions returned from useTable to build the UI
@@ -65,7 +70,7 @@ const Table = ({ columns, data, spec }) => {
                           />
                         </>
                         : <>
-                          <StaticImage  data-tooltip-id="react-tooltip" data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
+                          <img data-tooltip-id="react-tooltip" data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
                           <Tooltip
                             id="react-tooltip"
                             place="bottom"
@@ -80,19 +85,19 @@ const Table = ({ columns, data, spec }) => {
                     if (spec["capability"] === "FULL"){
                       return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["result"]}`}>
-                          <StaticImage className="smiMark" src={passingMark} alt="Pass Mark" />
+                          <img className="smiMark" src={passingMark} alt="Pass Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "HALF"){
                       return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
-                          <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
+                          <img className="smiMark" src={halfMark} alt="Half Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "NONE") {
                       return <td key={`spec${i}`}>
                         <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
-                          <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
+                          <img className="smiMark" src={failingMark} alt="Fail Mark" />
                         </div>
                       </td>;
                     } else {
@@ -116,15 +121,15 @@ const Table = ({ columns, data, spec }) => {
                         {prevResult.more_details.map((spec,i) => {
                           if (spec["capability"] === "Full"){
                             return <td key={`spec${i}`}>
-                              <StaticImage className="smiMark" src={passingMark} alt="Passing Mark" />
+                              <img className="smiMark" src={passingMark} alt="Passing Mark" />
                             </td>;
                           } else if (spec["capability"] === "None"){
                             return <td key={`spec${i}`}>
-                              <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
+                              <img className="smiMark" src={failingMark} alt="Fail Mark" />
                             </td>;
                           } else if (spec["capability"] === "Half"){
                             return <td key={`spec${i}`}>
-                              <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
+                              <img className="smiMark" src={halfMark} alt="Half Mark" />
                             </td>;
                           } else {
                             return <td key={`spec${i}`}>
