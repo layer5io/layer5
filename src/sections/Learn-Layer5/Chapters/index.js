@@ -67,7 +67,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     return (
       <>
         <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
-          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={index}>
+          <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
             <Image
               {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
               className="docker"
@@ -78,8 +78,8 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
         <Tooltip
           id="mesh-name"
           place="bottom"
-          effect="solid"
-          backgroundColor="rgb(60,73,79)"
+
+          style={{ backgroundColor: "rgb(60,73,79)" }}
           className="mesh-tooltip"
         />
       </>);

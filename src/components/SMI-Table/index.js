@@ -56,24 +56,20 @@ const Table = ({ columns, data, spec }) => {
                     {
                       (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
                         <>
-                          <img data-for="react-tooltip" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
+                          <img data-tooltip-id="react-tooltip" data-tooltip-content={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
                           <Tooltip
                             id="react-tooltip"
                             place="bottom"
-                            effect="solid"
-                            multiline
-                            backgroundColor="rgb(60,73,79)"
+                            style={{ backgroundColor: "rgb(60,73,79)" }}
                             className="smi-tooltip"
                           />
                         </>
                         : <>
-                          <StaticImage  data-for="react-tooltip" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
+                          <StaticImage  data-tooltip-id="react-tooltip" data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
                           <Tooltip
                             id="react-tooltip"
                             place="bottom"
-                            effect="solid"
-                            multiline
-                            backgroundColor="rgb(60,73,79)"
+                            style={{ backgroundColor: "rgb(60,73,79)" }}
                             className="smi-tooltip"
                           />
                         </>
@@ -83,19 +79,19 @@ const Table = ({ columns, data, spec }) => {
                   {row.original.more_details.map((spec,i) => {
                     if (spec["capability"] === "FULL"){
                       return <td key={`spec${i}`}>
-                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["result"]}`}>
+                        <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["result"]}`}>
                           <StaticImage className="smiMark" src={passingMark} alt="Pass Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "HALF"){
                       return <td key={`spec${i}`}>
-                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
+                        <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                           <StaticImage className="smiMark" src={halfMark} alt="Half Mark" />
                         </div>
                       </td>;
                     } else if (spec["capability"] === "NONE") {
                       return <td key={`spec${i}`}>
-                        <div className="tooltip-div" data-for="react-tooltip" data-tip={`${spec["reason"]}<br>${spec["result"]}`}>
+                        <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                           <StaticImage className="smiMark" src={failingMark} alt="Fail Mark" />
                         </div>
                       </td>;

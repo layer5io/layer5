@@ -114,16 +114,16 @@ const Table = ({ columns, data, placeHolder }) => {
                           <a
                             href={row["original"]["link"]}
                             rel="nofollow"
-                            data-tip={row["original"]["desc"]}
-                            data-for="mesh-name"
+                            data-tooltip-content={row["original"]["desc"]}
+                            data-tooltip-id="mesh-name"
                           >
                             {cell.render("Cell")}
                           </a>
                           <Tooltip
                             id="mesh-name"
                             place="bottom"
-                            effect="solid"
-                            backgroundColor="rgb(60,73,79)"
+
+                            style={{ backgroundColor: "rgb(60,73,79)" }}
                             className="mesh-tooltip"
                           />
                         </td>

@@ -17,12 +17,12 @@ function Categories() {
               mesh.name ?
                 <li key={mesh.name}>
                   <div className="tooltip">
-                    <a href={mesh.link} rel="nofollow" data-tip={mesh.desc} data-for="mesh-name">{mesh.name}</a>
+                    <a href={mesh.link} rel="nofollow" data-tooltip-content={mesh.desc} data-tooltip-id="mesh-name">{mesh.name}</a>
                     <Tooltip
                       id="mesh-name"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="rgb(60,73,79)"
+
+                      style={{ backgroundColor: "rgb(60,73,79)" }}
                       className="mesh-tooltip"
                     />
                   </div>
@@ -39,12 +39,12 @@ function Categories() {
               client.name ?
                 <li key={client.name}>
                   <div className="tooltip">
-                    <a href={client.link} rel="nofollow" data-tip={client.desc} data-for="client-name">{client.name}</a>
+                    <a href={client.link} rel="nofollow" data-tooltip-content={client.desc} data-tooltip-id="client-name">{client.name}</a>
                     <Tooltip
                       id="client-name"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="rgb(60,73,79)"
+
+                      style={{ backgroundColor: "rgb(60,73,79)" }}
                       className="mesh-tooltip"
                     />
                   </div>
@@ -60,12 +60,12 @@ function Categories() {
               gateway.name ?
                 <li key={gateway.name}>
                   <div className="tooltip">
-                    <a href={gateway.link} rel="nofollow" data-tip={gateway.desc} data-for="gateway-name">{gateway.name}</a>
+                    <a href={gateway.link} rel="nofollow" data-tooltip-content={gateway.desc} data-tooltip-id="gateway-name">{gateway.name}</a>
                     <Tooltip
                       id="gateway-name"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="rgb(60,73,79)"
+
+                      style={{ backgroundColor: "rgb(60,73,79)" }}
                       className="mesh-tooltip"
                     />
                   </div>
@@ -81,12 +81,12 @@ function Categories() {
               proxy.name ?
                 <li key={proxy.name}>
                   <div className="tooltip">
-                    <a href={proxy.link} rel="nofollow" data-tip={proxy.desc} data-for="proxy-name">{proxy.name}</a>
+                    <a href={proxy.link} rel="nofollow" data-tooltip-content={proxy.desc} data-tooltip-id="proxy-name">{proxy.name}</a>
                     <Tooltip
                       id="proxy-name"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="rgb(60,73,79)"
+
+                      style={{ backgroundColor: "rgb(60,73,79)" }}
                       className="mesh-tooltip"
                     />
                   </div>
@@ -102,12 +102,12 @@ function Categories() {
               balancer.name ?
                 <li key={balancer.name}>
                   <div className="tooltip">
-                    <a href={balancer.link} rel="nofollow" data-tip={balancer.desc} data-for="balancer-name">{balancer.name}</a>
+                    <a href={balancer.link} rel="nofollow" data-tooltip-content={balancer.desc} data-tooltip-id="balancer-name">{balancer.name}</a>
                     <Tooltip
                       id="balancer-name"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="rgb(60,73,79)"
+
+                      style={{ backgroundColor: "rgb(60,73,79)" }}
                       className="mesh-tooltip"
                     />
                   </div>

@@ -53,8 +53,8 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
     <ToolTipWrapper>
       <Row className="border">
         <a
-          data-tip="Grid View"
-          data-for="grid-view"
+          data-tooltip-content="Grid View"
+          data-tooltip-id="grid-view"
           onClick={setGridView}
           className={`${!isListView && "active"}`}
         >
@@ -63,16 +63,15 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
         <NoSsr>
           <Tooltip
             id="grid-view"
-            border
+            border="solid"
             className="grid-view"
-            backgroundColor="black"
             place="top"
-            effect="solid"
+            variant="dark"
           />
         </NoSsr>
         <a
-          data-tip="List View"
-          data-for="list-view"
+          data-tooltip-content="List View"
+          data-tooltip-id="list-view"
           onClick={setListView}
           className={`${isListView && "active"}`}
         >
@@ -82,10 +81,9 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
           <Tooltip
             id="list-view"
             className="list-view"
-            backgroundColor="black"
+            border="solid"
             place="top"
-            type="dark"
-            effect="solid"
+            variant="dark"
           />
         </NoSsr>
       </Row>
