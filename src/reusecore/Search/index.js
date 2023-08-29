@@ -40,6 +40,7 @@ const SearchBox = ({
           debounceTimeout={500}
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
+          autoFocus
         />
         <Button aria-label="search icon">
           <FaSearch />
