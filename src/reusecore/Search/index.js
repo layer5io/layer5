@@ -37,7 +37,7 @@ const SearchBox = ({
           type="text"
           value={searchQuery}
           minLength={1}
-          debounceTimeout={500}
+          debounceTimeout={5000}
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
         />
