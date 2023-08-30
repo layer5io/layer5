@@ -58,15 +58,15 @@ const PopOutCardWrapper = styled.div`
 
   //dynamic css
   ${(props) => css`
-    z-index: ${100 - props.index};
-    ${props.index % 2 ? "" : "background: #00B39F;"}
-    // ${props.index % 2 ? "" : "background: #00B39F;"}
-    transform: rotateZ(${-4 - 6 * props.index}deg) translate(-${props.index *
-    36}px, ${props.index * 5}px);
+    z-index: ${100 - props.$index};
+    ${props.$index % 2 ? "" : "background: #00B39F;"}
+    // ${props.$index % 2 ? "" : "background: #00B39F;"}
+    transform: rotateZ(${-4 - 6 * props.$index}deg) translate(-${props.$index *
+    36}px, ${props.$index * 5}px);
   `}
 
   ${(props) =>
-      props.active &&
+      props.$active &&
     css`
       cursor: pointer;
       transform: rotateZ(0deg) translate(-33vw, 0);
@@ -136,11 +136,11 @@ const PopOutCardWrapper = styled.div`
     `}
 
   ${(props) =>
-      !props.active &&
+      !props.$active &&
     css`
       :hover {
-        transform: rotateZ(${-1 - 6 * props.index}deg)
-          translate(-${props.index * 36}px, ${props.index * 5}px);
+        transform: rotateZ(${-1 - 6 * props.$index}deg)
+          translate(-${props.$index * 36}px, ${props.$index * 5}px);
         h3 {
           opacity: 1;
           transition: opacity .95s;
