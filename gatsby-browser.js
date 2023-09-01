@@ -28,5 +28,6 @@ function initGTM() {
   document.head.appendChild(script);
 }
 
+
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";
