@@ -14,6 +14,7 @@ const CTA_Bottom = loadable(() => import("./src/components/Call-To-Actions/CTA_B
 const CTA_FullWidth = loadable(() => import("./src/components/Call-To-Actions/CTA_FullWidth"));
 const CTA_ImageOnly = loadable(() => import("./src/components/Call-To-Actions/CTA_ImageOnly"));
 const DockerExtensionCTA = loadable(() => import("./src/sections/Docker-Meshery/docker-extension-CTA"));
+const PlaygroundCTA = loadable(() => import("./src/sections/Playground/playground-CTA"));
 const FAQ = loadable(() => import("./src/sections/General/Faq"));
 const Table = loadable(() => import("./src/components/service-mesh-patterns-Table/Table.js"));
 
@@ -53,6 +54,7 @@ const components = {
   CTA_FullWidth,
   CTA_ImageOnly,
   DockerExtensionCTA,
+  PlaygroundCTA,
   FAQ,
   Link,
   Table,

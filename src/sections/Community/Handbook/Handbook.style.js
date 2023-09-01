@@ -124,6 +124,9 @@ export const HandbookWrapper = styled.div`
         display: inline;
         vertical-align: bottom;
       }
+      .smp-action{
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+      }
     }
 
     td, th {
@@ -526,5 +529,10 @@ width: 90%;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 }
-
+/* repository overview  */
+div.accessRequired {
+  font-size: small;
+  line-height: .9rem;
+  font-style: italic;
+}
 `;

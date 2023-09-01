@@ -8,16 +8,16 @@ import Button from "../../../reusecore/Button";
 
 const LabSinglePage = ({ frontmatter, children }) => {
 
-  React.useEffect(() => {
-    if (typeof window !== undefined) {
-      const script = document.createElement("script");
-      script.setAttribute("src", "//katacoda.com/embed.js");
-      document.body.appendChild(script);
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (typeof window !== undefined) {
+  //     const script = document.createElement("script");
+  //     script.setAttribute("src", "//katacoda.com/embed.js");
+  //     document.body.appendChild(script);
+  //     return () => {
+  //       document.body.removeChild(script);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <LabSinglePageWrapper>
@@ -35,7 +35,7 @@ const LabSinglePage = ({ frontmatter, children }) => {
       </div>
       <div className="join-community">
         <div className="join-community_text-and_button">
-          <h1>Use Service Mesh Patterns</h1>
+          <h1>Use Cloud Native Patterns</h1>
           <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
           <Button primary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
         </div>

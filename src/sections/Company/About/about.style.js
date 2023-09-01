@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-
 const AboutSectionWrapper = styled.section`
   
+.About-projects-mobile{
+  display:none;
+}
+.About-projects{
+  display:flex;
+}
+.head-images-2-mobile{
+  display:none;
+}
   .section__particle {
     position: absolute;
     &.one {
@@ -50,7 +58,7 @@ const AboutSectionWrapper = styled.section`
   }
 
   .about-text.text-two {
-    color: ${props => props.theme.sideTextColor};
+    color: ${(props) => props.theme.sideTextColor};
     font-weight: 400;
     margin-bottom: 28px;
   }
@@ -64,10 +72,23 @@ const AboutSectionWrapper = styled.section`
 
     svg {
       .cncf-stacked-color_svg__st0 {
-        fill: ${props => props.theme.whiteToGreen3C494F};
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
+  }
+  .head-images-2 {
+    text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+  .head-images-mobile{
+    display:none;
   }
   .colab {
     font-size: 20px;
@@ -96,13 +117,13 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color: ${props => props.theme.whiteToBlack}; 
+      color: ${(props) => props.theme.whiteToBlack}; 
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     h4{
         margin-bottom: 1.7vw;
         font-family:"Qanelas Soft";
-        color: ${props => props.theme.whiteSevenToBlackSeven}; 
+        color: ${(props) => props.theme.whiteSevenToBlackSeven}; 
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
       }
   }
@@ -136,11 +157,11 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title{
     #contact{
-      background: ${props => props.theme.highlightColor}; 
+      background: ${(props) => props.theme.highlightColor}; 
 
       &:hover {
-            background: ${props => props.theme.highlightLightColor}; 
-            box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+            background: ${(props) => props.theme.highlightLightColor}; 
+            box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
   }
@@ -269,6 +290,34 @@ const AboutSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 480px) {
     padding: 40px 0 60px 0;
+    .head-images-mobile{
+      display:flex;
+    }
+    .head-images{
+      display:none;
+    }
+    .head-images-2-mobile{
+      margin:2rem 0;
+      display:block;
+      text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+    }
+    .head-images-2{
+      display:none;
+    }
+    .About-projects{
+      display:none;
+    }
+    .About-projects-mobile{
+      margin-bottom:2rem;
+      display:flex;
+    }
     .section-title {
     h2 {
       margin-bottom: 0rem;

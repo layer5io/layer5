@@ -65,6 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap", toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap", redirectInBrowser: true, isPermanent: true });
 
@@ -745,7 +746,6 @@ exports.createSchemaCustomization = ({ actions }) => {
        labs: String,
        slides: String,
        slack: String,
-       status: String,
        video: String,
        community_manager: String,
        docURL: String, 

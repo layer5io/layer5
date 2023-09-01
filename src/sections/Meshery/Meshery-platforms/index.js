@@ -43,6 +43,11 @@ const supported_platforms = [
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`
         }
         />
+        <h2 style={{ marginTop: "20px" }}>Using mesheryctl</h2>
+        <Code codeString={dedent`mesheryctl system context create docker --platform docker --set
+        mesheryctl system start`
+        }
+        />
         <h2 style={{ marginTop: "20px" }}>Docker Extension</h2>
         <Code codeString={dedent`docker extension install meshery/docker-extension-meshery:stable-latest`
         }
@@ -83,7 +88,13 @@ const supported_platforms = [
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
         <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
-        helm install my-meshery meshery/meshery --version 2.1.2`}
+             helm install my-meshery meshery/meshery --version 2.1.2`}
+        />
+        <h3  style={{ marginTop: "20px" }}>Using kubectl</h3>
+        <Code codeString={dedent`kubectl create ns meshery
+        helm repo add meshery https://meshery.io/charts
+        helm install meshery-operator meshery/meshery-operator -n meshery
+        helm install meshery meshery/meshery -n meshery`}
         />
       </>
     )
@@ -101,19 +112,19 @@ const supported_platforms = [
       </>
     )
   },
-  {
-    icon: Kind,
-    name: "Kind",
-    steps: (
-      <>
-        <h2>Kind User</h2>
-        <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
-        kubectl create namespace meshery
-        helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
-        />
-      </>
-    )
-  },
+  // {
+  //   icon: Kind,
+  //   name: "Kind",
+  //   steps: (
+  //     <>
+  //       <h2>Kind User</h2>
+  //       <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
+  //       kubectl create namespace meshery
+  //       helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
+  //       />
+  //     </>
+  //   )
+  // },
   {
     icon: Kubernetes,
     name: "Kubernetes",
@@ -132,8 +143,11 @@ const supported_platforms = [
     name: "Linux",
     steps: (
       <>
-        <h2>Bash User</h2>
+        <h3>Install Using Kubernetes</h3>
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
+        />
+        <h3 style={{ marginTop: "20px" }}>Install Using Docker</h3>
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }
         />
       </>
     )
@@ -222,7 +236,7 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        <Container style={{ transition: "height 0.5s ease-in-out", height: currentPlatform.name == "Docker" ? "320px" : installationStepsHeight, overflow: "hidden" }}>
+        <Container style={{ transition: "height 0.5s ease-in-out", height: (currentPlatform.name === "Docker" || currentPlatform.name === "Helm" || currentPlatform.name === "Linux" )  ? "30rem" : installationStepsHeight, overflow: "hidden" }}>
           <Row className="installation-steps" >
             {currentPlatform.name && currentPlatform.steps}
           </Row>

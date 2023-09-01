@@ -68,7 +68,7 @@ const MesheryPage = () => {
       <Container>
         <DockerExtensionCTA />
         <InlineQuotes
-          quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
+          quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any cloud native infrastructure with a click of the button and invoke and control load-based performance tests from my desktop."
           person="Maximiliano Churichi"
           title="Software Engineer at HPE"
           image={Maximiliano} />

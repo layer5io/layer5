@@ -9,6 +9,7 @@ import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import DockerExtensionCTA from "./src/sections/Docker-Meshery/docker-extension-CTA";
+import PlaygroundCTA from "./src/sections/Playground/playground-CTA.js";
 import FAQ from "./src/sections/General/Faq";
 import Table from "./src/components/service-mesh-patterns-Table/Table.js";
 
@@ -59,6 +60,7 @@ const MDXComponents = [
   CTA_FullWidth,
   CTA_ImageOnly,
   DockerExtensionCTA,
+  PlaygroundCTA,
   FAQ,
   Link,
   Table,

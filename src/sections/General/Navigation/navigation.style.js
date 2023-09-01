@@ -3,7 +3,7 @@ import styled from "styled-components";
 const NavigationWrap = styled.header`
 
   position: sticky;
-  width: 100%;
+  width: 100vw;
   z-index: 9999;
   top: 0;
   background-color: ${(props) => props.theme.body};
@@ -37,7 +37,7 @@ const NavigationWrap = styled.header`
       font-weight: 600;
     }
 
-    .banner-btn.login{
+    .banner-btn.book-a-demo{
       border: 1px solid transparent;
       border-radius: .25rem;
       color: ${props => props.theme.secondaryColor};
@@ -81,11 +81,11 @@ const NavigationWrap = styled.header`
       #signup {
         min-width: 95px;
       }
-      #login {
+      #book-a-demo {
         min-width: 95px;
       }
     }
-    @media screen and (max-width: 912px) {
+    @media screen and (max-width: 1100px) {
       a {
         display: none;
       }
@@ -266,7 +266,7 @@ const NavigationWrap = styled.header`
     }
     50% {
         transform: translate3d(0px, 0px, 4px) scale(.75, .75);
-        perspective(800px);
+        perspective: (800px);
         opacity: 20%;
     }
     100% {
@@ -324,7 +324,7 @@ const NavigationWrap = styled.header`
         a {
           display: block;
           &:hover {
-            color: ${props => props.theme.menuHoverColor}; !important;
+            color: ${props => props.theme.menuHoverColor} !important;
           }
           &:before {
             content: none;
@@ -386,7 +386,7 @@ const NavigationWrap = styled.header`
   }
   .logo {
     margin-top: 8px;
-    
+
     svg {
       width: 155px;
       .layer5-colorMode_svg__colorMode1 {
@@ -420,12 +420,12 @@ const NavigationWrap = styled.header`
     .nav{
       margin-left: 1.375rem;
     }
-    #login , #get-started-2 {
+    #book-a-demo , #get-started-2 {
       margin:0;
     }
-    
+
   }
-  @media only screen and (max-width: 912px) {
+  @media only screen and (max-width: 1100px) {
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
@@ -450,7 +450,7 @@ const NavigationWrap = styled.header`
       svg {
         width: 130px;
       }
-      
+
       img {
         width: 130px;
       }
@@ -713,7 +713,7 @@ const NavigationWrap = styled.header`
               fill: ${props => props.theme.whiteToGrey121212};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
-            
+
             .service-interface-partial-colorMode_svg__colorMode1 {
               fill: ${props => props.theme.whiteToBlack};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

@@ -18,6 +18,7 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
+import AdventuresCallout from "../Adventures-Callout";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
 
@@ -84,7 +85,7 @@ const CommunityPage = () => {
               <h1>Our Community Members</h1>
               <p>
                 With active members from around the globe, the Layer5 community is a collection of diverse open source contributors, each of whom espouse our cultural values of inclusivity and paying it forward for others.
-                We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaninfully and consistently advancing the community's open source initiatives.
+                We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaningfully and consistently advancing the community's open source initiatives.
               </p>
               <p>
                 We believe that every contributor deserves a safe and friendly environment,
@@ -155,7 +156,10 @@ const CommunityPage = () => {
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
-      <DiscussCallout />
+      <Container className="Callout">
+        <DiscussCallout />
+        <AdventuresCallout />
+      </Container>
 
     </CommunitySectionWrapper>
   );

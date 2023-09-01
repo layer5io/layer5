@@ -23,7 +23,7 @@ export const GitOpsWrapper = styled.section`
     svg {
       .meshmap-light-stacked_svg__cls-1 {
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${props => props.theme.primaryColor};
       }
     }
 
@@ -75,9 +75,18 @@ export const GitOpsWrapper = styled.section`
                     }
                 }
                 .learn-more-btn{
-                    color:white;
-                    font-weight: 800;
+                    font-weight: 400;
                     font-size: 1.5em;
+                    width: 100%;
+                }
+                .buttons-container{
+                  display: flex;
+                  gap: 1rem;
+                  flex-direction: column;
+
+                  @media only screen and (min-width: 425px) {
+                    flex-direction: row;
+                  }
                 }
             }
             .hero-images {
@@ -168,10 +177,6 @@ export const GitOpsWrapper = styled.section`
 
     .first-content-container {
        padding-top: 0rem;
-
-       @media only screen and (min-width: 360px) {
-          padding-top: 5rem;
-       }
     }
 
     .reviews-container{
