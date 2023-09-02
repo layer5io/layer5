@@ -96,9 +96,9 @@ const SingleChapter = ({ data, location }) => {
 
 export default SingleChapter;
 
-export const Head = ({ data }) => {
+export const Head = ({ data: { chapter: { frontmatter: { chapterTitle } } } }) => {
   return <SEO
-    title={data.chapter.frontmatter.chapterTitle}
+    title={chapterTitle}
     canonical="https://layer5.io/learn/learning-paths"
   />;
 };

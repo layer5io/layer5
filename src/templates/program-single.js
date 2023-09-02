@@ -26,6 +26,6 @@ const ProgramSinglePage = ({ data, children }) => {
 
 export default ProgramSinglePage;
 
-export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} />;
+export const Head = ({ data: { mdx: { frontmatter: { title } } } }) => {
+  return <SEO title={title} />;
 };

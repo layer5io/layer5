@@ -98,9 +98,9 @@ const CourseOverviewTemplate = ({ data, children }) => {
 
 export default CourseOverviewTemplate;
 
-export const Head = ({ data }) => {
+export const Head = ({ data: { courseByTitle } }) => {
   return <SEO
-    title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
+    title={`${courseByTitle.nodes[0].frontmatter.courseTitle}`}
     description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
   />;
 };
