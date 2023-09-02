@@ -434,9 +434,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("blog")
-          : []
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("blog")
+        //   : []
       },
     },
     {
@@ -444,9 +444,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/news`,
         name: "news",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("news")
-          : []
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("news")
+        //   : []
       },
     },
     {
