@@ -530,9 +530,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/integrations`,
         name: "integrations",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("integrations")
-          : []
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("integrations")
+        //   : []
       },
     },
     {
