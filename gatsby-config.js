@@ -513,9 +513,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/events`,
         name: "events",
-        ignore: process.env.GATSBY_DEV_AMENDED === "true"
-          ? devIgnoreArray("events")
-          : []
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("events")
+        //   : []
       },
     },
     {
