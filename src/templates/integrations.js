@@ -23,7 +23,7 @@ export const query = graphql`
         featureList
         workingSlides {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
@@ -44,6 +44,6 @@ const Integrations = ({ data, children }) => {
 };
 export default Integrations;
 
-export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} />;
+export const Head = ({ data: { mdx: { frontmatter: { title, integrationIcon: { publicURL } } } } }) => {
+  return <SEO title={title} image={publicURL} />;
 };

@@ -21,14 +21,14 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
         programSlug
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
         }
         darkthumbnail {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
             extension
             publicURL

@@ -47,6 +47,6 @@ const BlogSinglePage = ({ data, children }) => {
 
 export default BlogSinglePage;
 
-export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+export const Head = ({ data: { mdx: { frontmatter: { title, thumbnail: { publicURL } } } } }) => {
+  return <SEO title={title} image={publicURL} />;
 };

@@ -39,14 +39,14 @@ const BlogSingle = ({ data, children }) => {
             tags
             thumbnail {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
               }
               extension
               publicURL
             }
             darkthumbnail {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
               }
               extension
               publicURL

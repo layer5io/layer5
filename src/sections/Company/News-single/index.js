@@ -30,7 +30,7 @@ const NewsSingle = ({ data, children }) => {
         presskit
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
