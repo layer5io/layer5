@@ -62,7 +62,7 @@
     "gatsby-plugin-styled-components": "^5.25.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-remark-images": "^6.25.0",
-    "gatsby-redirect-from": "^1.0.4",
+    "gatsby-redirect-from": "^1.0.5",
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-sharp": "^4.25.0",
     "gbimage-bridge": "^0.2.2",
