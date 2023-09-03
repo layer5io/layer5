@@ -75,33 +75,7 @@ const Navigation = () => {
       }
     }
   }
-  Home: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
-            )
-          }
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
+ 
 }
 `
   );
@@ -152,6 +126,33 @@ const Navigation = () => {
   //             layout: CONSTRAINED
   //           )
   //         }
+  //         publicURL
+  //       }
+  //     }
+  //     fields {
+  //       slug
+  //     }
+  //   }
+  // },
+  // Home: allMdx(
+  //   sort: {fields: [frontmatter___date], order: DESC}
+  //   filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+  //   limit: 2
+  // ) {
+  //   nodes {
+  //     id
+  //     frontmatter {
+  //       title
+  //       thumbnail {
+  //         childImageSharp {
+  //           gatsbyImageData(
+  //             width: 240
+  //             height: 160
+  //             transformOptions: {cropFocus: CENTER}
+  //             layout: FIXED
+  //           )
+  //         }
+  //         extension
   //         publicURL
   //       }
   //     }
