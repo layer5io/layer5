@@ -26,7 +26,7 @@ function devIgnoreArray(folder) {
     }
   } else if (folder === "members") {
     const excludeArray = folderMap.filter(item => item !== "lee-calcote");
-    return excludeArray.slice(100).map(item => `**/${item}`);
+    return excludeArray.slice(150).map(item => `**/${item}`);
   } else {
     return folderMap.length > 12
       ? folderMap.slice(12).map(item => `**/${item}`)
