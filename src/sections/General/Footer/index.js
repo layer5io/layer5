@@ -5,7 +5,7 @@ import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.
 import SocialLinksColor from "../../../components/SocialLinks-Color";
 import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
-import bubblesElement from "./images/bubbles-element.svg";
+// import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
@@ -73,11 +73,11 @@ const Footer = ({ location }) => {
 
   return (
     <FooterWrapper>
-      <img
+      {/* <img
         className="section__particle"
         src={bubblesElement}
         alt="Layer5, the cloud native management company"
-      />
+      /> */}
       <Container>
         <Row className="footer-head">
           <Col className="footer_logo-icons" sm={3}>
