@@ -8,7 +8,7 @@ import bgSvg from "../../assets/images/products/concentricCircle.svg";
 import product_hero_img from "../../assets/images/products/MesheryRange.svg";
 import desktop from "../../assets/images/products/fluent_desktop-mac.png";
 import codicon from "../../assets/images/products/codicon_extensions.svg";
-import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
+// import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
 import Nightawk from "../../assets/images/products/Nightawk.svg";
 import patterns from "../../assets/images/products/patterns.svg";
 import meshmap from "../../assets/images/products/meshmap.svg";
@@ -179,7 +179,7 @@ const CardsData = [
   },
   {
     id: 4,
-    logo: mesheryLogo,
+    logo: Nightawk,
     title: "Meshmap",
     icon: [codicon, desktop],
     text: "Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your application across different cloud native infrastructure. Compare and manage cloud native overhead.",
@@ -194,14 +194,11 @@ const index = () => {
           <div className="product_hero">
             <div className="product_hero_text">
               <h1>
-                Utilize join efforts to Skillfuly manage your{" "}
+              Effortless Configuration & Complete Control of Your Cloud Native{" "}
                 <span>Infrastructure</span>.
               </h1>
               <p>
-                access the value of your cloud native infrastructure in the
-                context of its cost. Benchark and manage the performance of your
-                application accross different cloud native infrastructure.
-                Compare and manage cloud native overhead.{" "}
+              Unlock your enterprise's capabilities with our innovative cloud native solutions. Crafted to tackle cloud challenges, our offerings enhance processes for effectiveness, scalability, and flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
                 <Button title="See our Products" />
