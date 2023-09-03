@@ -9,7 +9,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
+import meshmap_dark from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -21,31 +21,6 @@ const Navigation = () => {
 
   let data = useStaticQuery(
     graphql`{
-  Learn: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "service-mesh-books"}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              width: 1050
-              height:1360
-              layout: CONSTRAINED
-            )
-          }
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
   Community: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
@@ -159,6 +134,33 @@ const Navigation = () => {
   data["Solutions"] = {
     nodes: []
   };
+
+  // Learn: allMdx(
+  //   sort: {fields: [frontmatter___date], order: DESC}
+  //   filter: {fields: {collection: {eq: "service-mesh-books"}}}
+  //   limit: 2
+  // ) {
+  //   nodes {
+  //     id
+  //     frontmatter {
+  //       title
+  //       thumbnail {
+  //         childImageSharp {
+  //           gatsbyImageData(
+  //             width: 1050
+  //             height:1360
+  //             layout: CONSTRAINED
+  //           )
+  //         }
+  //         publicURL
+  //       }
+  //     }
+  //     fields {
+  //       slug
+  //     }
+  //   }
+  // }
+
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
 
