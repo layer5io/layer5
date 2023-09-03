@@ -44,5 +44,5 @@ const MemberSinglePage = ({ data }) => {
 export default MemberSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path?.publicURL} />;
 };
