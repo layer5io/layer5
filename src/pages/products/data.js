@@ -11,7 +11,7 @@ import Configuration from "./icons/configuration.svg";
 import Perforamance from "./icons/perf.svg";
 import comingSoon from "./icons/coming-soon.webp";
 
-export const details = [
+const details = [
   {
     id: 0,
     category: "Configuration Management",

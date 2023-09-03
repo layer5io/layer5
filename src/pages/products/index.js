@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
-import { options } from "./data";
+// import { options } from "./data";
 import FeatureDetails from "./collapsible-details";
 import Button from "../../reusecore/Button";
 import bgSvg from "../../assets/images/products/concentricCircle.svg";
@@ -12,7 +12,149 @@ import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
 import Nightawk from "../../assets/images/products/Nightawk.svg";
 import patterns from "../../assets/images/products/patterns.svg";
 import meshmap from "../../assets/images/products/meshmap.svg";
+import comingSoon from "./icons/coming-soon.webp";
 
+const options = [
+  {
+    tier: "Personal",
+    featured: true,
+    monthlyprice: 0,
+    yearlyprice: 0,
+    byline: "Open Source features, plus:",
+    button: ["Join for Free", "https://meshery.layer5.io"],
+    summary: [
+      {
+        id: 0,
+        category: "Cloud Native Design Patterns",
+        description:
+          "Import and export your designs using your local filesystem or remote URL.",
+      },
+      {
+        id: 1,
+        category: "Multiple Kubernetes Clusters",
+        description:
+          "Ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes across any number of Kubernetes clusters.",
+      },
+      {
+        id: 2,
+        category: "Cluster Discovery",
+        description:
+          "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes.",
+      },
+      {
+        id: 3,
+        category: "Microservices Performance",
+        description:
+          "Continuous visibility across all of your clusters and workloads.",
+      },
+      {
+        id: 4,
+        category: "Load Generation",
+        description:
+          "Single Load Generator: Support testing multiple endpoints simultaneously.",
+      },
+      {
+        id: 5,
+        category: "MeshMark",
+        description: "Identify the cost of a specific network function.",
+      },
+    ],
+  },
+
+  {
+    tier: "Team",
+    featured: false,
+    monthlyprice: 9.99,
+    yearlyprice: 100,
+    byline: "Everything in Free, plus:",
+    button: [
+      "Contact Sales",
+      "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8",
+    ],
+    summary: [
+      {
+        id: 0,
+        category: "Dry-run",
+        description:
+          "Test and verify configuration changes in a separate environment.",
+      },
+      {
+        id: 1,
+        category: "Design Reviews",
+        description:
+          "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
+      },
+      {
+        id: 2,
+        category: "Visual Design",
+        description:
+          "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+      },
+      {
+        id: 3,
+        category: "Performance Profiles",
+        description:
+          "Share performance profiles and test results with individual users or teams.",
+      },
+      {
+        id: 4,
+        category: "Built-in Roles",
+        description: "Static - out of the box",
+      },
+      {
+        id: 5,
+        category: "Standard Support",
+        description:
+          "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+      },
+    ],
+  },
+  {
+    tier: "Enterprise",
+    featured: false,
+    monthlyprice: 15.99,
+    yearlyprice: 180,
+    pricing_coming_soon: <img src={comingSoon}></img>,
+    byline: "Everything in Team, plus:",
+    button: ["Coming Soon", ""],
+    summary: [
+      {
+        id: 0,
+        category: "User-defined Roles",
+        description: "Customizable roles for specific permission assignments",
+      },
+      {
+        id: 1,
+        category: "Authentication: LDAP",
+        description:
+          "Access Meshery  using your existing accounts and centrally manage repository access.",
+      },
+      {
+        id: 2,
+        category: "Authentication: SAML",
+        description:
+          "Use an identity provider to manage the identities of Meshery users and applications.",
+      },
+      {
+        id: 3,
+        category: "Self-hosted Deployment",
+        description:
+          "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants.",
+      },
+      {
+        id: 4,
+        category: "Traffic Replay",
+        description: "Visual event replay in MeshMap",
+      },
+      {
+        id: 5,
+        category: "Phone Support",
+        description:
+          "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+      },
+    ],
+  },
+];
 const CardsData = [
   {
     id: 1,
