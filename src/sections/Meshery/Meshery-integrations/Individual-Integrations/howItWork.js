@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "../../../../reusecore/Layout";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import styled from "styled-components";
 
 const HowIntegrationWorksWrapper = styled.section`
@@ -193,24 +193,25 @@ const HowIntegrationWorksWrapper = styled.section`
 `;
 
 
+// eslint-disable-next-line no-unused-vars
 const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
 
-  const settings = {
-    customPaging: (i) => {
-      return (
-        <a>
-          <img src={slides[i].publicURL} alt={`Slide ${i}`} />
-        </a>
-      );
-    },
-    infinite: false,
-    speed: 400,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    vertical: true,
-    verticalSwiping: true
-  };
+  // const settings = {
+  //   customPaging: (i) => {
+  //     return (
+  //       <a>
+  //         <img src={slides[i].publicURL} alt={`Slide ${i}`} />
+  //       </a>
+  //     );
+  //   },
+  //   infinite: false,
+  //   speed: 400,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   dots: true,
+  //   vertical: true,
+  //   verticalSwiping: true
+  // };
 
   return (
     <HowIntegrationWorksWrapper>
@@ -228,7 +229,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
                 {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
-            <Col xs={12} xl={8} className="integration-section-caraousel">
+            {/* <Col xs={12} xl={8} className="integration-section-caraousel">
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>
@@ -236,7 +237,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
                   </div>
                 ))}
               </Slider>
-            </Col>
+            </Col> */}
           </Row>
         </div>
       </div>
