@@ -9,7 +9,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 import integrationImage1 from "../../../assets/images/app/integrations/integration-1.webp";
 import integrationImage2 from "../../../assets/images/app/integrations/integration-2.webp";
 import integrationImage3 from "../../../assets/images/app/integrations/integration-3.webp";
-import integrationImage4 from "../../../assets/images/app/integrations/integration-4.webp";
+import integrationImage4 from "../../../assets/images/socialIcons/x-light.svg";
 import Icon from "../../../assets/images/app/integrations/arrow.webp";
 
 import IntegrationItemWrapper from "./integrationSection.style";

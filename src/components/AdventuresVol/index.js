@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+
 import { HiOutlineChevronRight } from "@react-icons/all-files/hi/HiOutlineChevronRight";
 import { AdventuresVolWrapper } from "./adventures-vol.style";
 

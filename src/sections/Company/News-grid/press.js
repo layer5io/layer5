@@ -11,6 +11,8 @@ import { GrYoutube } from "@react-icons/all-files/gr/GrYoutube";
 import { FaDocker } from "@react-icons/all-files/fa/FaDocker";
 import { FaDiscourse } from "@react-icons/all-files/fa/FaDiscourse";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
+import xIcon from "../../../assets/images/socialIcons/x-light.svg";
+
 
 const PressWrapper = styled.div`
 padding: 2rem 0;
@@ -96,7 +98,7 @@ const Press = () => {
               <h5>Follow Us</h5>
               <p>On Social Media</p>
               <a href="https://www.linkedin.com/company/layer5"><GrLinkedin size={40} className="icon" /></a>
-              <a href="https://twitter.com/layer5"><GrTwitter size={40} className="icon" /></a>
+              <a href="https://twitter.com/layer5"><img src={xIcon} className="icon" /></a>
               <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"><GrYoutube size={45} className="icon" /></a>
               <br />
               <a href="https://github.com/layer5io"><GrGithub size={45} className="icon" /></a>

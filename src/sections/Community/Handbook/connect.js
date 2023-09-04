@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
+import x_icon from "../../../assets/images/socialIcons/x-light.svg";
 import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";
 import youtube_icon from "../../../assets/images/socialIcons/youtube-light.svg";
 import github_icon from "../../../assets/images/socialIcons/github-light.svg";
@@ -197,7 +197,7 @@ const Connect = () => {
               <p className="channels-para">
                 <img
                   className="channels-img"
-                  src={twitter_icon}
+                  src={x_icon}
                   alt="twitter"
                 />
                 &nbsp;&nbsp;
