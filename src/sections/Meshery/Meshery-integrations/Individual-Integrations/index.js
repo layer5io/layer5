@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import loadable from "@loadable/component";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
@@ -46,12 +47,12 @@ const IndividualIntegrations = ({ data, children }) => {
           </section>
         </div>
       </section>
-      <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={frontmatter.workingSlides} />
+      {/* <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={frontmatter.workingSlides} />
       <section className="integration-collection">
         <h2>Related Integrations</h2>
         <RelatedIntegration  category={frontmatter.category} />
       </section>
-      <CTA_Book />
+      <CTA_Book /> */}
     </IntegrationPageWrapper>
   );
 };
