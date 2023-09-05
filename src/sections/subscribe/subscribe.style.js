@@ -101,6 +101,14 @@ const SubscribeWrapper = styled.div`
             margin:1.5625rem 0;
             width:100%;
         }
+        .email-cont{
+            justify-content:center;
+            display:flex;
+            align-items:center;
+        }
+        #mc-embedded-subscribe{
+            margin: 0 0.3125rem;
+        }
         .email-cont div{
             padding:0;
             width:50%;
