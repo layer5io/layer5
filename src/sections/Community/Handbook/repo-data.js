@@ -87,7 +87,7 @@ export const repo_data = [
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Abhishek Kumar"],
         link: ["https://layer5.io/community/members/abhishek-kumar"],
-        description: "A visual topology to display service mesh configuration, workloads and traffic.",
+        description: "A visual topology to display cloud native configuration, workloads and traffic.",
         repository: "https://github.com/layer5labs/meshery-extensions",
         accessRequired: "*program participation required"
       },
@@ -101,7 +101,7 @@ export const repo_data = [
         repository: " https://discuss.layer5.io",
       },
       {
-        project: "Service Mesh Patterns",
+        project: "Cloud Native Patterns",
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
@@ -144,11 +144,11 @@ export const repo_data = [
     category: "Cloud Native Training",
     subdata: [
       {
-        project: "Service Mesh Labs",
+        project: "Cloud Native Labs",
         image: five,
         language: "yaml",
         description:
-          "A variety of interactive labs spanning different service meshes. See https://layer5.io/learn/service-mesh-labs.",
+          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
         repository:
           "https://github.com/layer5io/service-mesh-labs",
       },
@@ -193,7 +193,7 @@ export const repo_data = [
         image: meshery,
         language: "Meshery",
         description:
-          "Cloud Native Playground for Kubernetes and Service Mesh ",
+          "Cloud Native Playground for Kubernetes and CNCF projects",
         repository:
           "https://github.com/meshery/play",
       }
@@ -201,7 +201,7 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Management Repos",
+    category: "Cloud Native Management Repos",
     subdata: [
       {
         project: "Meshery",
@@ -222,7 +222,7 @@ export const repo_data = [
         project: "Meshery Operator",
         image: MesheryOperator,
         language: "Golang, Kubernetes Operator",
-        description: "Meshery Operator is the multi-service mesh operator and implementation of MeshSync.",
+        description: "Meshery Operator is the multi-cloud native operator and implementation of MeshSync.",
         repository: "https://github.com/meshery/meshery-operator",
       },
       {
@@ -236,7 +236,7 @@ export const repo_data = [
         project: "Learn-Layer5",
         image: five,
         language: "Golang, Kuttl",
-        description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
+        description: "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
         repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       {
@@ -275,14 +275,14 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Performance Repos ",
+    category: "Cloud Native Performance Repos ",
     subdata: [
       {
-        project: "Service Mesh Performance",
+        project: "Cloud Native Performance",
         image: smp,
         language: "Protobuf",
         description:
-          "a common format for capturing and describing service meshes’ performance and workloads.",
+          "a common format for capturing and describing cloud native infrastucture performance and services.",
         repository:
           "https://github.com/layer5io/service-mesh-performance-specification",
       },
@@ -328,10 +328,10 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Pattern Repos",
+    category: "Cloud Native Pattern Repos",
     subdata: [
       {
-        project: "Service Mesh Patterns",
+        project: "Cloud Native Patterns",
         image: patterns,
         language: "Yaml",
         description:
@@ -340,10 +340,10 @@ export const repo_data = [
           "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
-        project: "Service Mesh Patterns Action",
+        project: "Cloud Native Patterns Action",
         image: patterns,
         language: "shell",
-        description: "GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
+        description: "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
     ],

@@ -23,13 +23,13 @@ const contents = [
   { id: 1, link: "#Meshery", text: "Meshery" },
   {
     id: 2,
-    link: "#Service Mesh Performance",
-    text: "Service Mesh Performance",
+    link: "#Cloud Native Performance",
+    text: "Cloud Native Performance",
   },
   {
     id: 3,
-    link: "#Service Mesh Patterns",
-    text: " Service Mesh Patterns",
+    link: "#Cloud Native Patterns",
+    text: " Cloud Native Patterns",
   },
 ];
 
@@ -59,7 +59,7 @@ const Maintainer = () => {
             <p>
 
               Its cloud native community represents the largest collection of
-              service Mesh projects. Emerging projects like Nighthawk{" "}
+              cloud native projects. Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
               <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
               <br />
@@ -71,8 +71,8 @@ const Maintainer = () => {
                 </li>
                 <p>
                   Layer5 is the official website of the Layer5 community showing
-                  an overview of the Layer5 projects. The different service mesh
-                  landscapes, resources to learn about service mesh, and
+                  an overview of the Layer5 projects. The different cloud native
+                  landscapes, resources to learn about cloud native, and
                   communities. <br />
                 </p>
                 <li>
@@ -102,8 +102,7 @@ const Maintainer = () => {
                   characterization tool. Nighthawk is Envoy’s load generator and
                   is written in C++. Meshery integrates Nighthawk as one of
                   (currently) three choices of load generators for
-                  characterizing and managing the performance of service meshes
-                  and their workloads. <br />
+                  characterizing and managing the performance of cloud native infrastructure (e.g. Kubernetes and Docker) and their services. <br />
                 </p>
               </ul>
             </p>
@@ -134,16 +133,14 @@ const Maintainer = () => {
                 </li>
                 <p>
                   It is a cloud native management plane offering lifecycle
-                  management of more types of service meshes than any other tool
-                  available today. Meshery facilitates adopting, configuring,
-                  operating, and managing the performance of different service
-                  meshes and incorporates the collection and display of metrics
+                  management of more types of cloud native infrastrcture than any other tool                  available today. Meshery facilitates adopting, configuring,
+                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics
                   from applications running on top of any service mesh.
                   <br />{" "}
                 </p>
                 <li>
                   <h4>
-                    <a href="https://meshery.io/">Meshery.io :</a>
+                    <a href="https://meshery.io/">Meshery.io</a>
                   </h4>{" "}
                 </li>
                 <p>
@@ -157,7 +154,7 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  Meshery Operator is the multi-service mesh operator and
+                  Meshery Operator is the multi-cloud native operator and
                   implementation of MeshSync. <br />
                 </p>
                 <li>
@@ -168,7 +165,7 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. <br />
+                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: cloud native infra. <br />
                 </p>
                 <li>
                   <h4>
@@ -183,16 +180,16 @@ const Maintainer = () => {
               </ul>
             </p>
 
-            <a id="Service Mesh Performance">
+            <a id="Cloud Native Performance">
               <p>
                 <h3>
                   <a href="https://smp-spec.io/">
                     <img
                       className="project-title-icon"
-                      alt="service mesh performance"
+                      alt="cloud native performance"
                       src={servicemeshperformance}
                     />
-                    &nbsp; Service Mesh Performance{" "}
+                    &nbsp; Cloud Native Performance{" "}
                   </a>
                 </h3>
               </p>
@@ -200,32 +197,32 @@ const Maintainer = () => {
 
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
-                The Service Mesh Performance (SMP)
+                The Cloud Native Performance (SMP)
               </a>{" "}
               is a vendor-neutral specification for capturing details of
-              environment and infrastructure details, service mesh and it’s
+              environment and infrastructure details, cloud native infrastrcture and it’s
               configuration, service/application details, and bundling of
               statistical analysis of the result. <br />
             </p>
 
             <p>
 
-              <a id="Service Mesh Patterns">
+              <a id="Cloud Native Patterns">
                 {" "}
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
                     <img
                       className="project-title-icon"
-                      alt="service mesh patterns"
+                      alt="cloud native patterns"
                       src={PatternsLogo}
                     />{" "}
-                    &nbsp; Service Mesh Patterns{" "}
+                    &nbsp; Cloud Native Patterns{" "}
                   </a>
                 </h3>{" "}
               </a>
             </p>
             <p>
-              A collection of curated patterns of service mesh use cases
+              A collection of curated patterns of cloud native use cases
               compatible with Meshery. <br />
             </p>
           </div>
