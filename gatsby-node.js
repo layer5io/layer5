@@ -344,9 +344,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
-          internal {
-            contentFilePath
-          }
         }
       }
     }
@@ -574,7 +571,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   members.forEach(member => {
     envCreatePage({
       path: member.fields.slug,
-      component: `${MemberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
+      component: MemberTemplate,
       context: {
         slug: member.fields.slug,
       },
