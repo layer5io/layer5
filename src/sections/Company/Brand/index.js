@@ -282,7 +282,7 @@ const Brand = () => {
                 scrollTo(smpRef.current);
               }}
             >
-              <span>Service Mesh Performance</span>
+              <span>Cloud Native Performance</span>
             </p>
             <p
               className={`header_link ${
@@ -302,7 +302,7 @@ const Brand = () => {
                 scrollTo(servicemeshpatternsRef.current);
               }}
             >
-              <span>Service Mesh Patterns</span>
+              <span>Cloud Native Patterns</span>
             </p>
             <p
               className={`header_link ${

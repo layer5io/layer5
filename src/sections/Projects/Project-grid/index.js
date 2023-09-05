@@ -70,7 +70,7 @@ const ProjectPage = () => {
               className="project__card five"
             >
               <div className="project__card-container">
-                <img src={isDark ? smp_light : smp_dark} alt="Service Mesh Performance" />
+                <img src={isDark ? smp_light : smp_dark} alt="Cloud Native Performance" />
                 <h5>Cloud Native Performance</h5>
               </div>
             </Link>
@@ -106,8 +106,8 @@ const ProjectPage = () => {
               className="project__card eight"
             >
               <div className="project__card-container">
-                <img src={patterns} alt="Service Mesh Patterns" />
-                <h5> Service Mesh Patterns</h5>
+                <img src={patterns} alt="Cloud Native Patterns" />
+                <h5> Cloud Native Patterns</h5>
               </div>
             </Link>
             <Link to="/catalog" className="project__card ten">

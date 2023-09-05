@@ -151,7 +151,7 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={ServiceMeshPerformance} style={badgeStyle} />
-                <b>Service Mesh Performance</b> - awarded to the community members who make consistent and impactful contributions to the Service Mesh Performance project. Community members who earn this badge occasionally become a project maintainer.
+                <b>Cloud Native Performance</b> - awarded to the community members who make consistent and impactful contributions to the Cloud Native Performance project. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={CommunityLogo} style={badgeStyle} />
@@ -167,7 +167,7 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={PatternsLogo} style={badgeStyle} />
-                <b>Patterns</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> project in recognition and appreciation of their efforts.
+                <b>Patterns</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Cloud Native Patterns</Link> project in recognition and appreciation of their efforts.
               </li>
               <li>
                 <img src={LandscapeGreen} style={badgeStyle} />
