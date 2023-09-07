@@ -82,7 +82,6 @@ const FooterWrapper = styled.section`
 	.subscribe {
 		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		margin: 0 2.5rem 2rem 0;
-		justify-content: flex-start;
 
 		span {
 			display: block;
@@ -150,6 +149,12 @@ const FooterWrapper = styled.section`
 			display: none;
 		}
 	}
+
+ 	@media only screen and (min-width:1200px) {
+		.subscribe {
+  			justify-content: flex-start;
+  		}
+	}	
 
 	@media only screen and (max-width: 1199px) and (min-width: 704px) {
 		.subscribe {
