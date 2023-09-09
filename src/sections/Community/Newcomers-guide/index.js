@@ -13,6 +13,7 @@ import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
 const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.webp";
+const BadgeImage = "../../../assets/images/recognition-program/recognition-program.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
 
 const NewcomersGuide = () => {
@@ -214,6 +215,42 @@ const NewcomersGuide = () => {
                 </a>{" "}
                 and take a look at all our <Link to="/projects">projects</Link>.
               </p>
+            </Col>
+          </Row>
+          <Row>
+          <Col sm={12} lg={6}>
+              <h3>Awarding New Community Members</h3>
+              <ol type="i">
+                <li>
+                Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project.{" "}
+                  <a
+                    href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Contributing Guidelines
+                  </a>
+                  .
+                </li>
+                <li>
+                Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts.{" "}
+                </li>
+                <li>Community members are encouraged to collect the whole set!</li>
+                <li>
+                To learn more about the badges and awards system, visit the{" "}
+                  <a
+                    href="https://badges.layer5.io/."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Badges
+                  </a>{" "}
+                  page.
+                </li>
+              </ol>
+            </Col>
+            <Col sm={12} lg={6} className="community-img">
+              <StaticImage src={BadgeImage} alt="Community Image"  />
             </Col>
           </Row>
         </div>
