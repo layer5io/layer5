@@ -366,7 +366,7 @@ const PricingWrapper = styled.section`
     font-weight: 700;
   }
   .product_cards .card {
-    width: 440px;
+    width: 540px;
 height: 360px;
     border-radius: 20px;
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};

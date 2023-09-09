@@ -8,7 +8,7 @@ import product_hero_img from "../../assets/images/products/MesheryRange.svg";
 import product_hero_img_light from "../../assets/images/products/mesheryRangeLight.svg";
 import desktop from "../../assets/images/products/fluent_desktop-mac.png";
 import codicon from "../../assets/images/products/codicon_extensions.svg";
-import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
+import mesheryLogo from "../../assets/images/products/meshery-logo-light.svg";
 import meshmap from "../../assets/images/products/meshmap.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
