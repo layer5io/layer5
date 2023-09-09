@@ -219,38 +219,28 @@ const NewcomersGuide = () => {
           </Row>
           <Row>
           <Col sm={12} lg={6}>
-              <h3>Awarding New Community Members</h3>
+              <h3>Recognizing Community Members</h3>
               <ol type="i">
                 <li>
-                Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project.{" "}
-                  <a
-                    href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Contributing Guidelines
-                  </a>
+                Whether as a user or a contributor, community members are awarded badges as and when they achieve any number of different milestones throughout their journey whether that accomplishment lie within a community activity or an aspect of using or contributing to a project
                   .
                 </li>
                 <li>
-                Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts.{" "}
+                Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges in recognition of your achievements.{" "}
                 </li>
-                <li>Community members are encouraged to collect the whole set!</li>
-                <li>
-                To learn more about the badges and awards system, visit the{" "}
+                <li>See what badges you can earn by visiting the {" "}
                   <a
-                    href="https://badges.layer5.io/."
+                    href="https://badges.layer5.io"
                     target="_blank"
-                    rel="noreferrer"
                   >
-                    Badges
+                    Layer5 badges site
                   </a>{" "}
-                  page.
+                Collect the whole set!
                 </li>
               </ol>
             </Col>
             <Col sm={12} lg={6} className="community-img">
-              <StaticImage src={BadgeImage} alt="Community Image"  />
+              <StaticImage src={BadgeImage} alt="Layer5 Community Badge"  />
             </Col>
           </Row>
         </div>
