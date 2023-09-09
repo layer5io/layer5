@@ -228,6 +228,102 @@ const contributingGuide = () => {
               </li>
             </ul>
           </div>
+          
+          <h2>Handling PRs Made Without Being Assigned</h2>
+          <p>
+          Contributors may encounter unassigned pull requests that require attention. In such cases, the approach should be flexible and adaptive. Here are some guiding principles to follow when dealing with these unassigned contributions:
+          </p>
+          <ol>
+            <li>
+              <p>
+                <strong>We value getting things done:</strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Evaluate the PR:</strong> First, assess the quality
+                    and significance of the PR. Is it a valuable contribution to
+                    the project? Does it fix a bug or add a meaningful feature?
+                    If the PR aligns with the project's goals and standards,
+                    it's worth considering.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Review the code:</strong> Ensure that the code in
+                    the PR meets the project's coding guidelines and standards.
+                    If the code quality is high and the changes are beneficial,
+                    it's a positive sign.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>We value our contributors' feelings:</strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Communication:</strong> Reach out to the
+                    contributor who made the unassigned PR in a friendly and
+                    respectful manner. Express gratitude for their contribution
+                    and explain the importance of assigning PRs to maintain
+                    transparency and collaboration within the community.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Offer assistance:</strong> If the contributor is
+                    willing, help them understand the process of assigning PRs
+                    and offer guidance on how to do it correctly in the future.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Encourage participation:</strong> Emphasize that
+                    their contribution is valuable and that the project welcomes
+                    their involvement. Encourage them to continue contributing.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>
+                  Attempt to uphold the spirit of #2 while ensuring that #1
+                  happens:
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Balance:</strong> Strive to strike a balance
+                    between maintaining a welcoming and inclusive community (#2)
+                    and ensuring that the project continues to make progress
+                    (#1).
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Collaboration:</strong> If the contributor is
+                    receptive and willing to work together, consider helping
+                    them assign the PR correctly, and possibly collaborate on
+                    improving the PR if necessary.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>If necessary, reassign:</strong> If the contributor
+                    is unresponsive or unable to assign the PR correctly, you
+                    may consider reassigning the PR to an appropriate
+                    contributor or assigning it to yourself to ensure it
+                    doesn't go unnoticed.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
           <TocPagination />
         </Container>
 
