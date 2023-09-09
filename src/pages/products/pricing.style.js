@@ -294,10 +294,13 @@ const PricingWrapper = styled.section`
 
   .product_hero {
     display: flex;
+    justify-content:center;
+    align-items : center;
   }
   .product_hero_text {
     flex: 1;
     margin: 4rem;
+    margin-left:8vw;
   }
   .product_hero_text h1 {
     font-family: Qanelas Soft;
@@ -347,13 +350,13 @@ const PricingWrapper = styled.section`
     position: relative;
   }
   .product_hero_img {
-    flex: 1;
+   margin:4rem;
   }
   .heroImg path {
     filter: red;
   }
   .product_cards {
-    min-height: 90vh;
+    min-height: 100%;
   }
   .product_cards h2 {
     text-align: center;
@@ -427,7 +430,14 @@ const PricingWrapper = styled.section`
   .iconss img {
     padding: 5px;
   }
-
+  @media (max-width:1141px){
+    .product_hero_img {
+      margin:1rem;
+    }
+    .product_hero_img img{
+      height:420px;
+    }
+  }
   @media (max-width: 807px) {
     .product_hero_text h1 {
       font-size: 34px;
@@ -439,8 +449,8 @@ const PricingWrapper = styled.section`
       font-size: 40px;
     }
   }
-
-  @media (max-width: 888px) {
+  
+  @media (max-width: 968px) {
     .product_hero {
       display: flex;
       flex-direction: column;
