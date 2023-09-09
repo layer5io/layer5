@@ -11,12 +11,12 @@ const PricingWrapper = styled.section`
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* gap: 40px; */
+    gap: 40px;
     padding: 0 20px;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     h1 {
       color: ${(props) => props.theme.whiteToBlack};
-      margin-bottom: 2.5rem;
+      font-weight: bolder;
     }
     h1 span {
       color: rgb(235, 192, 23);
@@ -24,7 +24,6 @@ const PricingWrapper = styled.section`
 
     p {
       color: ${(props) => props.theme.whiteToBlack};
-      margin-bottom: 5rem;
     }
 
     .header-heading {
@@ -54,6 +53,9 @@ const PricingWrapper = styled.section`
   .gap {
     padding: 5rem 20px;
   }
+ .bot_gap{
+  margin-bottom: 4rem;
+ }
   .freeTry {
     position: relative;
     display: flex;
