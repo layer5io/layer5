@@ -1,18 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
-// import { options } from "./data";
 import FeatureDetails from "./collapsible-details";
 import Button from "../../reusecore/Button";
 import bgSvg from "../../assets/images/products/concentricCircle.svg";
 import product_hero_img from "../../assets/images/products/MesheryRange.svg";
+import product_hero_img_light from "../../assets/images/products/mesheryRangeLight.svg";
 import desktop from "../../assets/images/products/fluent_desktop-mac.png";
 import codicon from "../../assets/images/products/codicon_extensions.svg";
-// import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
-import Nightawk from "../../assets/images/products/Nightawk.svg";
-import patterns from "../../assets/images/products/patterns.svg";
+import mesheryLogo from "../../assets/images/products/Meshery-logo-light.svg";
 import meshmap from "../../assets/images/products/meshmap.svg";
 import comingSoon from "./icons/coming-soon.webp";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const options = [
   {
@@ -158,35 +157,22 @@ const options = [
 const CardsData = [
   {
     id: 1,
-    logo: patterns,
-    title: "Meshmap",
-    icon: [codicon],
-    text: "Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your application across different cloud native infrastructure. Compare and manage cloud native overhead.",
-  },
-  {
-    id: 2,
     logo: meshmap,
     title: "Meshmap",
     icon: [codicon, desktop],
-    text: "Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your application across different cloud native infrastructure. Compare and manage cloud native overhead.",
+    text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native applications. MeshMap works with your Kubernetes clusters so that you design and manage your infrastructure and applications between members of your team.",
   },
   {
-    id: 3,
-    logo: Nightawk,
-    title: "Meshmap",
+    id: 2,
+    logo: mesheryLogo,
+    title: "Meshery",
     icon: [desktop],
-    text: "Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your application across different cloud native infrastructure. Compare and manage cloud native overhead.",
-  },
-  {
-    id: 4,
-    logo: Nightawk,
-    title: "Meshmap",
-    icon: [codicon, desktop],
-    text: "Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your application across different cloud native infrastructure. Compare and manage cloud native overhead.",
+    text: "A cloud native management plane that enables the operation and management of Kubernetes, any service mesh, and their workloads. it enables operators to deploy WebAssembly filters to Envoy-based data planes.",
   },
 ];
 
 const index = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <div>
       <PricingWrapper>
@@ -194,18 +180,32 @@ const index = () => {
           <div className="product_hero">
             <div className="product_hero_text">
               <h1>
-              Effortless Configuration & Complete Control of Your Cloud Native{" "}
-                <span>Infrastructure</span>.
+                Effortless Configuration & Complete Control of Your Cloud Native{" "}
+                <span
+                  style={{
+                    color: "#EBC017",
+                  }}
+                >
+                  Infrastructure
+                </span>
+                .
               </h1>
               <p>
-              Unlock your enterprise's capabilities with our innovative cloud native solutions. Crafted to tackle cloud challenges, our offerings enhance processes for effectiveness, scalability, and flexibility, elevating operations to new efficiencies.{" "}
+                Unlock your enterprise's capabilities with our innovative cloud
+                native solutions. Crafted to tackle cloud challenges, our
+                offerings enhance processes for effectiveness, scalability, and
+                flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
                 <Button title="Book a Demo" />
               </div>
             </div>
             <div className="product_hero_img">
-              <img className="heroImg" src={product_hero_img} alt="" />
+              <img
+                className="heroImg"
+                src={isDark ? product_hero_img : product_hero_img_light}
+                alt=""
+              />
             </div>
           </div>
           <div className="product_cards">
