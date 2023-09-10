@@ -375,13 +375,15 @@ height: 360px;
     padding: 2rem;
     margin: 2rem;
   }
-  .card:hover {
-    box-shadow: 0px 0px 10px ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
-  }
-  .cards {
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* transition: all 2s ease-in-out; */
+  }
+  .card:hover {
+    transition: all 300ms ease-in-out;
+    box-shadow: 0px 0px 10px ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
   }
 
   .card_head {

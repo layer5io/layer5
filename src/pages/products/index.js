@@ -244,14 +244,10 @@ const index = () => {
             <img className="bgSvgRight" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
             <div className="headers rotate gap">
               <h1 className="header-heading">
-                <span>Experience </span>Our Product in Action!
+                Unlock Your <span>Potential </span> with Free Tier Account!
               </h1>
               <p className="paraInfo">
-                Ready to transform? Don't miss this chance to elevate [specific
-                use cases, e.g., marketing, project management, analytics].
-                Embrace innovation and see how [Product Name] revolutionizes
-                [specific outcomes, e.g., customer engagement, project
-                efficiency, data analysis].
+                Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
               <Button button secondary className="banner-btn two" title="Explore" alt=""/>
             </div>
@@ -261,11 +257,7 @@ const index = () => {
               <span>Plans</span> For Every Team Size
             </h1>
             <p className="paraInfo">
-              Discover the ideal plan to propel your goals forward. Unveil our
-              pricing options and explore how our tailored solutions can enhance
-              your [industry/field] journey. From startups to enterprises, we
-              have a plan designed to fit your unique needs. Take the next step
-              towards success and view our pricing and plans now.
+              Choose the ideal plan to propel your infrastructure goals. From startups to seasoned enterprises, we have a plan designed to fit your unique needs.
             </p>
           </div>
           <Container>
@@ -313,7 +305,7 @@ const index = () => {
           </Container>
           <div className="headers gap">
             <h1 className="header-heading">
-              <span>Experience </span>Our Product in Action!
+              Don’t Just Take Our Word For It, <span>Experience </span> It!
             </h1>
             <div className="paras">
               <p>See how our products can transform your cloud experience today.</p>
