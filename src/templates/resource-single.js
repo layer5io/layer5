@@ -19,6 +19,7 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
       author
       category
       tags
+      description
       thumbnail {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
@@ -54,5 +55,5 @@ const ResourceSinglePage = ({ data }) => {
 export default ResourceSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description}/>;
 };
