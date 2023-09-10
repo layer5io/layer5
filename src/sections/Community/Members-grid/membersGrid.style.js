@@ -17,7 +17,6 @@ const img = (icon) => ({
   paddingLeft: 8,
   width: "auto",
 });
-
 export const selectStyles = {
   menu: (styles) => ({
     ...styles,
@@ -197,6 +196,10 @@ export const MembersGridWrapper = styled.div`
       padding-left: 3rem;
       margin-right: 3rem;
       margin-top: 3rem;
+    }
+    #Badge_img {
+      width: 444px;
+      height: 305px;
     }
     .detailsCommunity {
       width: 60%;
