@@ -7,8 +7,7 @@ const CornerPopupWrapper = styled.div`
     right: 0;
     margin: 0 2rem 3rem 0;
     width: 100%;
-    width: 23rem;
-    max-width: "70%";
+    width: 26rem;
     /* background-color: ${props => props.theme.blackToWhite}; */
     background-color: transparent;
     z-index: 9999;
@@ -17,7 +16,7 @@ const CornerPopupWrapper = styled.div`
     align-items: center;
     /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px; */
     @media only screen and (max-width: 1000px) {
-        max-width: 20rem;
+        max-width: 22rem;
     }
     @media only screen and (max-width: 640px) {
         width: 20rem;
