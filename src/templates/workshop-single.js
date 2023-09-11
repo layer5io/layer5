@@ -52,5 +52,5 @@ const WorkshopSingle = ({ data }) => {
 export default WorkshopSingle;
 
 export const Head = ({ data }) => {
-  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.abstract}/>;
 };
