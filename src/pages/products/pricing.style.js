@@ -497,11 +497,14 @@ height: 100%;
       font-size: 40px;
     }
   }
-
+  @media (max-width: 600px){
+    .product_cards .card{
+      width:440px;
+    }
+  }
   @media (max-width: 509px) {
     .product_cards .card {
       width: 400px;
-      height:400px;
       margin: 14px;
     }
   }
@@ -514,7 +517,7 @@ height: 100%;
       width: 320px;
     }
   }
-  @media (max-width: 408px) {
+  @media (max-width: 418px) {
     .product_hero {
       justify-content: center;
       margin: auto;
@@ -542,7 +545,6 @@ height: 100%;
     }
     .product_cards .card {
       width: 320px;
-      height:420px;
       margin: 14px;
     }
   }
@@ -553,6 +555,7 @@ height: 100%;
     .product_cards .card {
       width:280px;
       padding: 16px;
+     
     }
     .card_head {
       margin: 0;
