@@ -367,7 +367,7 @@ const PricingWrapper = styled.section`
   }
   .product_cards .card {
     width: 540px;
-height: 360px;
+height: 100%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};
     padding: 2rem;
@@ -410,9 +410,10 @@ height: 360px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin:0;
   }
   .card_bottom .learn {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-decoration: underline;
     text-decoration-color: ${(props) => props.theme.secondaryColor};
     text-underline-offset: 8px;
@@ -424,6 +425,7 @@ height: 360px;
     color: ${(props) => props.theme.whiteToBlack};
     font-weight: 700;
     font-size: 20px;
+    margin-bottom:0;
   }
   .iconss {
     position: absolute;
