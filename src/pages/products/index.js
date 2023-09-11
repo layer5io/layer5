@@ -3,7 +3,8 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
 import FeatureDetails from "./collapsible-details";
 import Button from "../../reusecore/Button";
-import bgSvg from "../../assets/images/products/concentricCircle.svg";
+import darkbgSvg from "../../assets/images/products/circle_dark.svg";
+import lightbgSvg from "../../assets/images/products/circle_light.svg";
 import product_hero_img from "../../assets/images/products/MesheryRange.svg";
 import product_hero_img_light from "../../assets/images/products/mesheryRangeLight.svg";
 import desktop from "../../assets/images/products/fluent_desktop-mac.png";
@@ -197,7 +198,9 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button title="Book a Demo" />
+                <Button secondary className="banner-btn two" external={true} title="Explore Now" alt=""/>
+                <Button primary className="banner-btn two" external={true} title="Book a Demo" alt=""/>
+                {/* <Button title="Book a Demo" /> */}
               </div>
             </div>
             <div className="product_hero_img">
@@ -228,7 +231,7 @@ const index = () => {
                     <div className="card_bottom">
                       <div className="learn">Learn more</div>
                       <div className="btns">
-                        <Button title="Subscribe" />
+                        <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -237,32 +240,24 @@ const index = () => {
             </div>
           </div>
           <div className="freeTry">
-            <img className="bgSvgLeft" src={bgSvg} alt="" />
-            <img className="bgSvgRight" src={bgSvg} alt="" />
+            <img className="bgSvgLeft" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
+            <img className="bgSvgRight" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
             <div className="headers rotate gap">
               <h1 className="header-heading">
-                <span>Experience </span>Our Product in Action!
+                Unlock Your <span>Potential </span> with Free Tier Account!
               </h1>
               <p className="paraInfo">
-                Ready to transform? Don't miss this chance to elevate [specific
-                use cases, e.g., marketing, project management, analytics].
-                Embrace innovation and see how [Product Name] revolutionizes
-                [specific outcomes, e.g., customer engagement, project
-                efficiency, data analysis].
+                Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button title="Explore Now" />
+              <Button button secondary className="banner-btn two" title="Explore" alt=""/>
             </div>
           </div>
-          <div className="headers">
+          <div className="headers bot_gap">
             <h1 className="header-heading">
               <span>Plans</span> For Every Team Size
             </h1>
             <p className="paraInfo">
-              Discover the ideal plan to propel your goals forward. Unveil our
-              pricing options and explore how our tailored solutions can enhance
-              your [industry/field] journey. From startups to enterprises, we
-              have a plan designed to fit your unique needs. Take the next step
-              towards success and view our pricing and plans now.
+              Choose the ideal plan to propel your infrastructure goals. From startups to seasoned enterprises, we have a plan designed to fit your unique needs.
             </p>
           </div>
           <Container>
@@ -310,15 +305,14 @@ const index = () => {
           </Container>
           <div className="headers gap">
             <h1 className="header-heading">
-              <span>Experience </span>Our Product in Action!
+              Don’t Just Take Our Word For It, <span>Experience </span> It!
             </h1>
-            {/* <p>See how our Product/Service can transform your Developer Experience today.</p> */}
-            <p className="paraInfo">
-              Book a demo with us now! Our experts are eager to guide you
-              through the incredible possibilities of [Product/Service]. Don't
-              miss this chance to revolutionize your [specific outcome]! Click
-              below to schedule your demo.
-            </p>
+            <div className="paras">
+              <p>See how our products can transform your cloud experience today.</p>
+              <p className="paraInfo">
+              Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
+              </p>
+            </div>
             <Button primary title="Book a Demo" />
           </div>
         </div>

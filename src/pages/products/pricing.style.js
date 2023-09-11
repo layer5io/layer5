@@ -11,12 +11,12 @@ const PricingWrapper = styled.section`
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* gap: 40px; */
+    gap: 40px;
     padding: 0 20px;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     h1 {
       color: ${(props) => props.theme.whiteToBlack};
-      margin-bottom: 2.5rem;
+      font-weight: bolder;
     }
     h1 span {
       color: rgb(235, 192, 23);
@@ -24,7 +24,6 @@ const PricingWrapper = styled.section`
 
     p {
       color: ${(props) => props.theme.whiteToBlack};
-      margin-bottom: 5rem;
     }
 
     .header-heading {
@@ -54,6 +53,9 @@ const PricingWrapper = styled.section`
   .gap {
     padding: 5rem 20px;
   }
+ .bot_gap{
+  margin-bottom: 4rem;
+ }
   .freeTry {
     position: relative;
     display: flex;
@@ -373,13 +375,15 @@ height: 100%;
     padding: 2rem;
     margin: 2rem;
   }
-  .card:hover {
-    box-shadow: 0px 0px 10px ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
-  }
-  .cards {
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* transition: all 2s ease-in-out; */
+  }
+  .card:hover {
+    transition: all 300ms ease-in-out;
+    box-shadow: 0px 0px 10px ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
   }
 
   .card_head {
