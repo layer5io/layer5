@@ -36,7 +36,7 @@ const SubscribeWrapper = styled.div`
         
     }
     #mc-embedded-subscribe{
-        margin: 1.5rem 0.3125rem 0;
+        margin: 1.5625rem 0.3125rem 0;
         background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
     }
     #mc-embedded-subscribe:hover{
@@ -101,8 +101,17 @@ const SubscribeWrapper = styled.div`
             margin:1.5625rem 0;
             width:100%;
         }
+        .email-cont{
+            justify-content:center;
+            display:flex;
+            align-items:center;
+        }
+        #mc-embedded-subscribe{
+            margin: 0 0.3125rem;
+        }
         .email-cont div{
             padding:0;
+            width:50%;
         }
 
     }

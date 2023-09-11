@@ -7,30 +7,30 @@ const Data = {
       name: "Solutions",
       path: "/cloud-native-management/meshmap",
       subItems: [
-        // {
-        //   name: "Image Hub",
-        //   path: "/projects/image-hub",
-        //   sepLine: true
-        // },
         {
           name: "Developer-defined Infrastructure",
           path: "/cloud-native-management/meshmap",
+          sepLine: true
         },
         {
           name: "Cloud Native Deployments by Diagram",
           path: "/cloud-native-management/meshmap/design",
+          sepLine: true
         },
         {
           name: "Kubernetes Multi-cluster Operation",
           path: "/cloud-native-management/meshmap/visualize",
+          sepLine: true
         },
         {
           name: "Collaborative GitOps",
           path: "/cloud-native-management/meshmap/collaborate",
+          sepLine: true
         },
         {
           name: "GitOps with Cloud Native Insights",
           path: "/cloud-native-management/gitops",
+          sepLine: true
         },
       ],
       actionItems: [

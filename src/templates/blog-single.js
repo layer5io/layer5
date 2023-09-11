@@ -8,6 +8,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
     frontmatter {
       title
       subtitle
+      description
       date(formatString: "MMMM Do, YYYY")
       author
       category
@@ -47,6 +48,7 @@ const BlogSinglePage = ({ data, children }) => {
 
 export default BlogSinglePage;
 
-export const Head = ({ data: { mdx: { frontmatter: { title, thumbnail: { publicURL } } } } }) => {
-  return <SEO title={title} image={publicURL} />;
+
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description} />;
 };
