@@ -325,13 +325,13 @@ const PricingWrapper = styled.section`
     color: ${(props) => props.theme.whiteToBlack};
     margin: 2rem 0;
   }
+  .btn {
+      display: flex;
+      gap: 40px;
+      flex-direction: row;
+    }
   .btn Button {
-    color: black;
     font-size: 18px;
-    font-weight: 700;
-    margin: 1rem;
-    margin-left: 0;
-    width: 100px;
   }
   .hoverCard {
     margin-top: 1rem;
@@ -388,16 +388,13 @@ height: 100%;
 
   .card_head {
     display: flex;
+    align-items: center;
+    margin-bottom: 20px;
     position: relative;
   }
-  .card_head .logo {
-    padding: 1rem;
-    padding-left: 0;
-    padding-top: 0;
-  }
+
   .card_head .title {
-    padding: 1rem;
-    padding-top: 0;
+    padding-left: 1rem;
     font-size: 32px;
     font-weight: 700;
   }
@@ -417,6 +414,7 @@ height: 100%;
     margin:0;
   }
   .card_bottom .learn {
+    font-size: 1rem;
     margin-bottom: 10px;
     text-decoration: underline;
     text-decoration-color: ${(props) => props.theme.secondaryColor};
@@ -425,9 +423,9 @@ height: 100%;
     color: ${(props) => props.theme.whiteToBlack};
   }
   .btns Button {
-    margin: 20px 10px;
-    color: ${(props) => props.theme.whiteToBlack};
-    font-weight: 700;
+    margin: 20px 0px;
+    /* color: ${(props) => props.theme.whiteToBlack}; */
+    /* font-weight: 700; */
     font-size: 20px;
     margin-bottom:0;
   }
@@ -460,6 +458,7 @@ height: 100%;
     .product_hero_text {
       text-align: center;
       margin: 2rem;
+      margin-top: 4rem;
     }
     .product_hero_text h1 {
       justify-content: center;
@@ -472,6 +471,9 @@ height: 100%;
       flex-direction: column;
       justify-content: center;
       margin: auto;
+    }
+    .btn {
+      justify-content: center;
     }
 
     .card_head {
@@ -535,13 +537,12 @@ height: 100%;
       margin-top: 10px;
     }
     .btn {
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
     .product_hero_text {
-      margin: 1rem;
+      margin: 4rem 1rem;
     }
     .product_cards .card {
       width: 320px;

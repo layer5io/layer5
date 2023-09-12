@@ -5,8 +5,8 @@ import FeatureDetails from "./collapsible-details";
 import Button from "../../reusecore/Button";
 import darkbgSvg from "../../assets/images/products/circle_dark.svg";
 import lightbgSvg from "../../assets/images/products/circle_light.svg";
-import product_hero_img from "../../assets/images/products/MesheryRange.svg";
-import product_hero_img_light from "../../assets/images/products/mesheryRangeLight.svg";
+import product_hero_img from "../../assets/images/products/MesheryRangeDark.svg";
+import product_hero_img_light from "../../assets/images/products/MesheryRange.svg";
 import desktop from "../../assets/images/products/fluent_desktop-mac.png";
 import codicon from "../../assets/images/products/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/products/meshery-logo-light.svg";
@@ -162,6 +162,8 @@ const CardsData = [
     title: "Meshmap",
     icon: [codicon, desktop],
     text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native applications. MeshMap works with your Kubernetes clusters so that you design and manage your infrastructure and applications between members of your team.",
+    //as there is no soluton page.
+    url: "/cloud-native-management/meshmap"
   },
   {
     id: 2,
@@ -169,6 +171,7 @@ const CardsData = [
     title: "Meshery",
     icon: [desktop],
     text: "A cloud native management plane that enables the operation and management of Kubernetes, any service mesh, and their workloads. it enables operators to deploy WebAssembly filters to Envoy-based data planes.",
+    url: "https://meshery.io/"
   },
 ];
 
@@ -229,7 +232,9 @@ const index = () => {
                     </div>
                     <div className="text">{card.text}</div>
                     <div className="card_bottom">
-                      <div className="learn">Learn more</div>
+                      {/* <Link className="learn" > */}
+                      <a className="learn" href={card.url}>Learn more</a>
+                      {/* </Link> */}
                       <div className="btns">
                         <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
                       </div>
@@ -249,7 +254,7 @@ const index = () => {
               <p className="paraInfo">
                 Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button button secondary className="banner-btn two" title="Explore" alt=""/>
+              <Button button secondary className="banner-btn two" title="Open Playground" alt=""/>
             </div>
           </div>
           <div className="headers bot_gap">
