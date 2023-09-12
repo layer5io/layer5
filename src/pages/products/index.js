@@ -224,10 +224,10 @@ const index = () => {
                       <img src={card.logo} alt="" className="logo" />
                       <div className="title">{card.title}</div>
                       <div className="iconss">
-                        <>
+                        <div>
                           <img src={card.icon[0]} alt="" />
                           <img src={card.icon[1]} alt="" />
-                        </>
+                        </div>
                       </div>
                     </div>
                     <div className="text">{card.text}</div>
