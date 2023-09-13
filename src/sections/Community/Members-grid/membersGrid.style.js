@@ -184,6 +184,7 @@ export const MembersGridWrapper = styled.div`
     text-align: center;
     margin: auto auto 4rem;
     align-items: center;
+    margin-top: 10rem;
 
     .sectionTitle {
       width: 100%;
@@ -195,11 +196,11 @@ export const MembersGridWrapper = styled.div`
       padding-right: 3rem;
       padding-left: 3rem;
       margin-right: 3rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     #Badge_img {
       width: 444px;
-      height: 305px;
+      height: auto;
     }
     .detailsCommunity {
       width: 60%;
@@ -240,6 +241,7 @@ export const MembersGridWrapper = styled.div`
     }
     .memberProfileBtn {
       margin: 1rem;
+      margin-left: 0;
     }
   }
 `;

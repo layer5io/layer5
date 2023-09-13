@@ -218,7 +218,7 @@ const NewcomersGuide = () => {
             </Col>
           </Row>
           <Row>
-          <Col sm={12} lg={6}>
+            <Col sm={12} lg={6} style={{marginTop:"3rem"}}>
               <h3>Recognizing Community Members</h3>
               <ol type="i">
                 <li>
@@ -231,7 +231,7 @@ const NewcomersGuide = () => {
                 <li>See what badges you can earn by visiting the {" "}
                   <a
                     href="https://badges.layer5.io"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     Layer5 badges site
                   </a>{" "}

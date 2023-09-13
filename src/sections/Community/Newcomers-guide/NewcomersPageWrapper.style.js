@@ -130,6 +130,7 @@ export const NewcomersGuideWrapper = styled.section`
     .table-wrapper{
       text-align: center;
       margin-bottom: 4rem;
+      margin-top: 5rem;
     }
     @media only screen and (max-width: 991px) {
       .heading-start {
