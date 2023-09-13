@@ -7,7 +7,7 @@ import darkbgSvg from "../../assets/images/products/circle_dark.svg";
 import lightbgSvg from "../../assets/images/products/circle_light.svg";
 import product_hero_img from "../../assets/images/products/MesheryRangeDark.svg";
 import product_hero_img_light from "../../assets/images/products/MesheryRange.svg";
-import desktop from "../../assets/images/products/fluent_desktop-mac.png";
+import desktop from "../../assets/images/products/fluent_desktop-mac.svg";
 import codicon from "../../assets/images/products/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/products/meshery-logo-light.svg";
 import meshmap from "../../assets/images/products/meshmap.svg";
@@ -169,7 +169,7 @@ const CardsData = [
     id: 2,
     logo: mesheryLogo,
     title: "Meshery",
-    icon: [desktop],
+    icon: ["",desktop],
     text: "A cloud native management plane that enables the operation and management of Kubernetes, any service mesh, and their workloads. it enables operators to deploy WebAssembly filters to Envoy-based data planes.",
     url: "https://meshery.io/"
   },
@@ -224,10 +224,10 @@ const index = () => {
                       <img src={card.logo} alt="" className="logo" />
                       <div className="title">{card.title}</div>
                       <div className="iconss">
-                        <div>
-                          <img src={card.icon[0]} alt="" />
-                          <img src={card.icon[1]} alt="" />
-                        </div>
+                        {/* <div> */}
+                        <img src={card.icon[0]} alt="" />
+                        <img src={card.icon[1]} alt="" />
+                        {/* </div> */}
                       </div>
                     </div>
                     <div className="text">{card.text}</div>

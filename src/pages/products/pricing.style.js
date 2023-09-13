@@ -333,25 +333,6 @@ const PricingWrapper = styled.section`
   .btn Button {
     font-size: 18px;
   }
-  .hoverCard {
-    margin-top: 1rem;
-    border-radius: 16px;
-    background: linear-gradient(
-      133deg,
-      #293b43 0%,
-      rgba(41, 59, 67, 0) 100%,
-      rgba(41, 59, 67, 0) 100%
-    );
-    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.25);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    aspect-ratio: 2/1;
-    max-width: 560px;
-    animation: hover 4s ease-in-out infinite;
-    position: relative;
-  }
   .product_hero_img {
    margin:4rem;
   }
@@ -379,11 +360,10 @@ height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* transition: all 2s ease-in-out; */
   }
   .card:hover {
-    transition: all 300ms ease-in-out;
-    box-shadow: 0px 0px 10px ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
+    transition: 400ms ease-in-out;
+    box-shadow: 0px 0px 10px ${(props) => props.theme.caribbeanGreenColor};
   }
 
   .card_head {
@@ -424,18 +404,18 @@ height: 100%;
   }
   .btns Button {
     margin: 20px 0px;
-    /* color: ${(props) => props.theme.whiteToBlack}; */
-    /* font-weight: 700; */
     font-size: 20px;
     margin-bottom:0;
   }
   .iconss {
+    display: flex;
+    gap: 16px;
     position: absolute;
     right: 0;
   }
-  .iconss img {
-    padding: 5px;
-  }
+  /* .iconss img {
+    width: 28px;
+  } */
   @media (max-width:1141px){
     .product_hero_img {
       margin:1rem;
@@ -485,6 +465,7 @@ height: 100%;
       justify-content: center;
     }
     .btns {
+      font-size: 16px;
       flex-direction: row;
     }
   }
