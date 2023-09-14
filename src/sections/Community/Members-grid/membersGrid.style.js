@@ -199,7 +199,7 @@ export const MembersGridWrapper = styled.div`
       margin-top: 2rem;
     }
     #Badge_img {
-      width: 444px;
+      width: 27.75rem;
       height: auto;
     }
     .detailsCommunity {
