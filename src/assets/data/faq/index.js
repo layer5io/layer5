@@ -470,6 +470,8 @@ const data = {
         "Many Layer5 interns speak at large, public technology conferences like KubeCon, DockerCon, and so on. They write blog posts and share about their experience and learnings on social media. They engage with their whole self.",
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
+      link: "/community/handbook/writing-program",
+      linktext: "Writing Program",
     },
     
     //
