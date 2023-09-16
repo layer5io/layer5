@@ -158,10 +158,19 @@ export const MembersGridWrapper = styled.div`
   .members-profile-cards {
     z-index: -1 !important;
   }
+  #Badge_img {
+    width: 20.75rem;
+    height: auto;
+    margin-top: 0;
+    margin-left: 3rem !important;
+  }
   @media only screen and (max-width: 990px) and (min-width: 580px) {
     .members-profile-cards {
       max-width: 550px;
       margin: auto;
+    }
+    #Badge_img {
+      margin-left: 0 !important;
     }
   }
   @media only screen and (min-width: 991px) and (max-width: 1200px) {
@@ -181,7 +190,7 @@ export const MembersGridWrapper = styled.div`
   }
   .AboutCommunity {
     display: flex;
-    text-align: center;
+    text-align: center !important;
     margin: auto auto 4rem;
     align-items: center;
     margin-top: 10rem;
@@ -198,10 +207,7 @@ export const MembersGridWrapper = styled.div`
       margin-right: 3rem;
       margin-top: 2rem;
     }
-    #Badge_img {
-      width: 27.75rem;
-      height: auto;
-    }
+
     .detailsCommunity {
       width: 60%;
       flex-grow: 1;
@@ -221,9 +227,13 @@ export const MembersGridWrapper = styled.div`
         display: inline-block;
         width: 90%;
         font-size: 2.25rem;
-        margin: 1rem auto 1.5rem;
+        margin: 3rem auto 1.5rem;
         align-items: center;
-        text-align: center;
+        text-align: center !important;
+      }
+      #Badge_img {
+        margin-left: 0 !important;
+        width:15rem;
       }
 
       img {

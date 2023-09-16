@@ -111,15 +111,14 @@ const MembersGrid = (props) => {
               </div>
             </div>
           </div>
-          <div className="AboutCommunity" style={{
-            textAlign: "left",
-          }}>
-            
+          <div className="AboutCommunity">
+            <div>
+              <h3 className="sectionTitle">Recognition Program</h3>
+                <img id="Badge_img" src={badgeImg} alt="Layer5 Community" style={{
+                    marginLeft: "6rem"
+              }}/>
+            </div>
             <div className="detailsCommunity">
-            <h3 className="sectionTitle"
-             style={{
-              textAlign: "left",
-            }}>Recognizing Community Members</h3>
               <p>
               Layer5 badges are one of the many ways that we recognize the efforts
               of our contributors and uplift our users. Layer5 badges represent milestones
@@ -144,16 +143,7 @@ const MembersGrid = (props) => {
 
               {/* <p className="text-gray">Would you like to participate?</p> */}
               <div className="">
-                <VintageBox left={true} vintageOne={true}>
-                <Button
-                    secondary
-                    className="banner-btn two memberProfileBtn"
-                    title="Join the Community"
-                    url="https://slack.layer5.io"
-                  >
-                    <FaUsers size={21} className="icon-left" />
-                  </Button>
-
+                <VintageBox right={true} vintageOne={true}>
                   <Button
                     primary
                     className="banner-btn memberProfileBtn"
@@ -166,15 +156,18 @@ const MembersGrid = (props) => {
                   >
                     <FaCertificate size={21} className="icon-left" />
                   </Button>
+                  <Button
+                    secondary
+                    className="banner-btn two memberProfileBtn"
+                    title="Join the Community"
+                    url="https://slack.layer5.io"
+                  >
+                    <FaUsers size={21} className="icon-left" />
+                  </Button>
                 </VintageBox>
               </div>
             </div>
-            <div>
-             
-              <img id="Badge_img" src={badgeImg} alt="Layer5 Community" style={{
-                    marginLeft: "6rem"
-              }}/>
-            </div>
+            
           </div>
         </Container>
       </div>
