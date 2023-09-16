@@ -69,7 +69,7 @@ export const programs_data = [
     description:
       "At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences. Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.",
     buttonLink: "/careers/internships/",
-    imageLink: <Layer alt="Layer5" />,
+    imageLink: <Layer alt="Layer5"/>,
     imagePosition: "second",
   },
   {
