@@ -23,7 +23,7 @@ const AdventuresWrapper = styled.div`
         }
         h2 {
             color: ${props => props.theme.white}; 
-            line-height: 1.3;
+            line-height: 1.2;
         }
         h1 {
             padding: 1.25rem 0px;
