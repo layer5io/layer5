@@ -106,11 +106,11 @@ const Table = ({ columns, data, placeHolder }) => {
             prepareRow(row);
             return (
               <tr key={`row${i}`} {...row.getRowProps()}>
-                {row.cells.map(cell => {
+                {row.cells.map((cell,i) => {
                   if ( cell["column"]["id"] === "name" ){
                     return (
                       row["original"]["desc"] ?
-                        <td {...cell.getCellProps()}>
+                        <td key={`cell${i}`} {...cell.getCellProps()}>
                           <a
                             href={row["original"]["link"]}
                             rel="nofollow"
@@ -127,40 +127,40 @@ const Table = ({ columns, data, placeHolder }) => {
                             className="mesh-tooltip"
                           />
                         </td>
-                        :   <td {...cell.getCellProps()}>
+                        :   <td key={`cell${i}`} {...cell.getCellProps()}>
                           <a href={row["original"]["link"]} rel="nofollow">
                             {cell.render("Cell")}
                           </a>
                         </td>
                     );
                   } else if (cell["column"]["id"] === "tool"){
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       <a href={row["original"]["link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;
                   } else if (cell["value"] === "Project shutdown"){
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       <a href={row["original"]["tmp_link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;
                   } else if (cell["value"] === "Yes" || cell["value"] === "Full"){
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       <StaticImage className="Mark" src={passingMark} alt="Passing Mark" />
                     </td>;
                   } else if (cell["value"] === "No" || cell["value"] === "None"){
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       <StaticImage className="Mark" src={failingMark} alt="Failing Mark" />
                     </td>;
                   } else if (cell["value"] === "?"){
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       <IconContext.Provider value={{ color: "gray", size: "70%" }}>
                         <IoMdHelpCircle className="Mark"/>
                       </IconContext.Provider>
                     </td>;
                   } else {
-                    return <td {...cell.getCellProps()}>
+                    return <td key={`cell${i}`} {...cell.getCellProps()}>
                       {cell.render("Cell")}
                     </td>;
                   }

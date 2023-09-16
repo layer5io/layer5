@@ -8,20 +8,20 @@ import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 
-  const isScriptLoaded = (src) => {
-    return document.querySelector("script[src=\"" + src + "\"]") ? true : false;
-  };
+  // const isScriptLoaded = (src) => {
+  //   return document.querySelector("script[src=\"" + src + "\"]") ? true : false;
+  // };
 
-  React.useEffect(() => {
-    if (typeof window !== undefined && !isScriptLoaded("//katacoda.com/embed.js")) {
-      const script = document.createElement("script");
-      script.setAttribute("src", "//katacoda.com/embed.js");
-      document.body.appendChild(script);
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (typeof window !== undefined && !isScriptLoaded("//katacoda.com/embed.js" && false )) {
+  //     const script = document.createElement("script");
+  //     script.setAttribute("src", "//katacoda.com/embed.js");
+  //     // document.body.appendChild(script);
+  //     return () => {
+  //       document.body.removeChild(script);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <ScenarioCardWrapper>
@@ -56,8 +56,11 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
         </Row>
         <Row>
           <Col xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
+
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
+              Sign into the&nbsp;<a href="https://playground.meshery.io">Meshery Playground</a>&nbsp;(free account) to continue your lab.
+                {/*
                 <div id="katacoda-scenario"
                   data-katacoda-id={`${courseLink}/${embed}`}
                   data-katacoda-startscenariobuttontext="Start Scenario"
@@ -68,7 +71,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
                   data-katacoda-hideprogress="true"
                   data-katacoda-font="Qanelas Soft"
                   data-katacoda-fontheader="Qanelas Soft" style={{ minHeight: "37rem" }}>
-                </div>
+                </div>*/}
               </div>
             </div>
           </Col>

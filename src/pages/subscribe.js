@@ -13,5 +13,5 @@ const SubscribeSection = () => {
 };
 export default SubscribeSection;
 export const Head = () => {
-  return <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />;
+  return <SEO title="Subscribe" description="Subscribe to Layer5 Mailing List" />;
 };

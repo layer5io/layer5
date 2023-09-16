@@ -14,7 +14,7 @@ export const BackToTopButton = styled.button`
     background-color: #3c494f;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     cursor: pointer;
-    z-index: 999
+    z-index: 9999
 `;
 
 const onMountBtnAnimation = keyframes`

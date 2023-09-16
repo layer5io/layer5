@@ -87,6 +87,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
+              <p>Note that the Layer5 community spans five GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
               <ol type="i">
                 <li>
                   Browse the list of{" "}
@@ -99,19 +100,19 @@ const NewcomersGuide = () => {
                   </a>{" "}
                   issues bearing the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
                     target="_blank"
                     rel="noreferrer"
                   >
                     good first issue
                   </a>
                   ” label, “
-                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22first-timers-only%22+">
+                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns+label%3A%22first-timers-only%22+">
                     first timers only
                   </a>
                   ” or the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns++label%3A%22help+wanted%22+"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -120,8 +121,7 @@ const NewcomersGuide = () => {
                   ” label.
                 </li>
                 <li>
-                  Alternatively, find an area of interest by reviewing/browsing
-                  the{" "}
+                  Find an area of interest by perusing the list of projects by repository and technology in the{" "}
                   <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
                   </Link>.
@@ -130,7 +130,7 @@ const NewcomersGuide = () => {
                   After identifying the issue you wish to work on, check whether
                   it has been assigned or not by taking a look at the assignee
                   section on the issue. If it hasn't been, signal your interest
-                  by commenting on the issue so that it can be assigned to you.
+                  by commenting on the issue, so that it can be assigned to you.
                 </li>
               </ol>
             </Col>

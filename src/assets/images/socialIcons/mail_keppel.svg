@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 265.5 199" xml:space="preserve" style="enable-background:new 0 0 265.5 199"><style type="text/css">.st0{fill:#00b39f}</style><path d="M260.4,65.7c2-1.6,5-0.1,5,2.4v106c0,13.7-11.1,24.9-24.9,24.9H24.9C11.2,199,0,187.9,0,174.1v-106	c0-2.6,3-4,5-2.4c11.6,9,27,20.5,79.9,58.9c10.9,8,29.4,24.8,47.8,24.7c18.5,0.2,37.3-17,47.8-24.7	C233.4,86.2,248.8,74.7,260.4,65.7z M132.7,132.7c12,0.2,29.3-15.1,38.1-21.5c68.8-49.9,74-54.3,89.9-66.7c3-2.3,4.8-6,4.8-9.8v-9.8	c0-13.7-11.1-24.9-24.9-24.9H24.9C11.2,0,0,11.1,0,24.9v9.8c0,3.8,1.8,7.4,4.8,9.8c15.9,12.4,21.1,16.8,89.9,66.7	C103.4,117.5,120.7,132.9,132.7,132.7L132.7,132.7z" class="st0"/></svg>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 255" width="275" height="255">
+	<title>New Project</title>
+	<defs>
+		<image  width="275" height="255" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAD/AQMAAADolqC2AAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAgSURBVHic7cExAQAAAMKg9U9tDQ+gAAAAAAAAAACARwMj3AABf1T2WAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		.s0 { fill: #00b39f } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m184.5 151.6c-10.5 7.7-29.3 24.9-47.8 24.7-18.4 0.1-36.9-16.7-47.8-24.7-52.9-38.4-68.3-49.9-79.9-58.9-2-1.6-5-0.2-5 2.4v106c0 13.8 11.2 24.9 24.9 24.9h215.6c13.8 0 24.9-11.2 24.9-24.9v-106c0-2.5-3-4-5-2.4-11.6 9-27 20.5-79.9 58.9zm-47.8 8.1c12 0.2 29.3-15.1 38.1-21.5 68.8-49.9 74-54.3 89.9-66.7 3-2.3 4.8-6 4.8-9.8v-9.8c0-13.7-11.1-24.9-24.9-24.9h-215.7c-13.7 0-24.9 11.1-24.9 24.9v9.8c0 3.8 1.8 7.4 4.8 9.8 15.9 12.4 21.1 16.8 89.9 66.7 8.7 6.3 26 21.7 38 21.5z"/>
+</svg>

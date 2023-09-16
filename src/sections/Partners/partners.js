@@ -14,7 +14,7 @@ import { ReactComponent as PartnerIstio } from "../../assets/images/partners/ist
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
-
+import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
 
 export const partners = [
   {
@@ -141,7 +141,12 @@ export const partners = [
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
       "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
+  }, {
+    name: "Docker",
+    imageLink: <Partner15 alt="Docker" />,
+    type: "technology",
+    partnerId: "docker",
+    desc: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in service mesh technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively.",
+    moreInfo: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in cloud native technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively."
   }
-
-
 ];

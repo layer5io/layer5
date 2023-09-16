@@ -62,7 +62,7 @@ const FeaturesSection = () => {
             <Col xs={12} xl={4} className="smp-section-data">
               <h2>The Performance Yardstick: MeshMark</h2>
               <p>
-                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your          application across different service meshes. Compare and manage service mesh overhead.
+                Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your          application across different cloud native infrastructure. Compare and manage cloud native overhead.
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">

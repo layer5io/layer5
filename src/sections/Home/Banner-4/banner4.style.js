@@ -31,6 +31,42 @@ const Banner1SectionWrapper = styled.section`
             }
         }
     }
+    .embedVideo {
+        position: relative;
+        min-width:25%;
+        max-width:100%;
+        object-fit: cover;
+        /* height: 44vw !important;
+        border-radius: 2.5%;
+        transition: 0.2s ease-in-out;
+        box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.5); */
+
+        .react-player__preview {
+        border-radius: 1.5%;
+        }
+
+        .react-player__play-icon {
+        transform: scale(3, 3);
+        }
+
+        iframe {
+        border-radius: 2.5%;
+        }
+
+        @media (max-width: 768px) {
+        height: 54vw !important;
+        }
+
+        &:hover {
+        /* box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.75);
+        .react-player__play-icon {
+            border-color: transparent transparent transparent #EBC017 !important;
+        } */
+        .playBtn {
+        box-shadow: 0px 0px 16px 3px #00B39F;
+        }
+        }
+    }
     .meshmapVideo {
         position: relative;
         min-width:25%;
@@ -42,19 +78,39 @@ const Banner1SectionWrapper = styled.section`
     }
     .vintage-box {
         margin: auto;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+
+        @media only screen and (max-width:975px) {
+            flex-direction: column;
+        }
+
+        @media only screen and (max-width:767px) {
+            flex-direction: row;
+            margin-top: 5%;
+        }
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        background: ${props => props.theme.highlightColor}; 
+        background: ${props => props.theme.highlightColor};
+
+        @media only screen and (max-width:975px) {
+            margin: 8% 0%;
+        }
+
+        @media only screen and (max-width:767px) {
+            margin: 0rem .5rem 0 .5rem;
+        }
 
         &:hover {
-             background: ${props => props.theme.highlightLightColor}; 
+             background: ${props => props.theme.highlightLightColor};
         }
         &:active{
-            background: ${props => props.theme.saffronColor}; 
+            background: ${props => props.theme.saffronColor};
         }
     }
     .banner-btn.two{
@@ -65,8 +121,15 @@ const Banner1SectionWrapper = styled.section`
             //color: #326d62;
         }
     }
+
+    .playBtn {
+        position: absolute;
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+    }
     @media only screen and (max-width: 1200px) {
-        .section-title { 
+        .section-title {
             h1 {
                 font-size: 3rem;
                 line-height: 3.5rem;
@@ -81,7 +144,7 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 992px) {
-        .section-title { 
+        .section-title {
             h1 {
                 font-size: 2.7rem;
                 line-height: 2.7rem;
@@ -110,7 +173,7 @@ const Banner1SectionWrapper = styled.section`
                 width: 90%;
             }
         }
-        p { 
+        p {
             font-size: 1.25rem;
             margin: 2rem auto;
             width: 80%;
@@ -120,7 +183,7 @@ const Banner1SectionWrapper = styled.section`
         }
         .banner-btn+.banner-btn{
             margin-left: 15px;
-        } 
+        }
     }
     @media only screen and (max-width: 767px) {
         .section-title-wrapper {
@@ -129,8 +192,8 @@ const Banner1SectionWrapper = styled.section`
         .video-col{
             display: none;
         }
-        .section-title { 
-            h1 { 
+        .section-title {
+            h1 {
                 margin: 0rem;
                 font-size: 1.82rem;
             }
@@ -162,8 +225,8 @@ const Banner1SectionWrapper = styled.section`
 	}
     @media only screen and (max-width: 430px) {
         padding: 1rem 0;
-        .section-title { 
-            h1 { 
+        .section-title {
+            h1 {
                 margin: 0rem;
                 font-size: 1.8rem;
             }
@@ -205,7 +268,7 @@ const Banner1SectionWrapper = styled.section`
         .banner-btn{
             font-size: 14px;
             min-width: 127px;
-            padding: 14px 12px; 
+            padding: 14px 12px;
         }
      }
      @media only screen and (max-width: 330px) {
@@ -216,7 +279,7 @@ const Banner1SectionWrapper = styled.section`
             }
         }
      }
-     
+
 `;
 
 export default Banner1SectionWrapper;

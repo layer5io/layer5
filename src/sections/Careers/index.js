@@ -41,7 +41,7 @@ const CareersPage = () => {
               <p>All team members <strong>should expect to... </strong>
                 be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.</p>
               <p><strong>You should... </strong>
-                pay attention to detail and take pride in your work. Know when to pri- oritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
+                pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
             <div className="introVideo">
               <iframe

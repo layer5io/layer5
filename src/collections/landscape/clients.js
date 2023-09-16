@@ -38,5 +38,10 @@ export const clients = [
     name: "go-zero",
     link: "https://go-zero.dev/en/",
     desc: "go-zero is a web and rpc framework written in Go. It's born to ensure the stability of the busy sites with resilient design. Builtin goctl greatly improves the development productivity."
+  },
+  {
+    name: "Nasp",
+    link: "https://github.com/cisco-open/nasp/",
+    desc: "Nasp is an open-source, lightweight library to expand service mesh capabilities to non-cloud environments by getting rid of the complexity of operating dedicated network proxies."
   }
 ];

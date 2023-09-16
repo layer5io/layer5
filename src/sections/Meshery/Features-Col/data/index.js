@@ -26,18 +26,18 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Deploy and operate any service mesh",
+        content: "Deploy and operate cloud native infrastructure",
         className: "--on",
       },
       {
         content: "Use known cloud native ",
         className: "--on",
       },
-      {
-        content:
-          "Validate each service mesh's compliance with Service Mesh Interface (SMI)",
-        className: "--on",
-      },
+      // {
+      //   content:
+      //     "Validate each service mesh's compliance with Service Mesh Interface (SMI)",
+      //   className: "--on",
+      // },
     ],
     count: {
       value: 0,
@@ -72,7 +72,7 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Apply well-known service mesh patterns",
+        content: "Apply well-known cloud native designs",
         className: "--on",
       },
     ],
@@ -84,7 +84,7 @@ const LifecycleFeature = () => {
 
   const performanceFeatureData = {
     name: "Performance",
-    description: "Assess the performance of your service mesh",
+    description: "Assess the performance of your cloud native infrastructure",
     link: "#",
     btnText: "Get Started",
     services: [

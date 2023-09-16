@@ -58,7 +58,7 @@ const LabSinglePageWrapper = styled.div`
 		margin: 0 5rem;
 	}
 	#katacoda-scenario {
-		min-height: 45rem;
+		min-height: 25rem;
 	}
 `;
 
