@@ -228,10 +228,9 @@ const contributingGuide = () => {
               </li>
             </ul>
           </div>
-          
           <h2>Handling PRs Made Without Being Assigned</h2>
           <p>
-          Contributors may encounter unassigned pull requests that require attention. In such cases, the approach should be flexible and adaptive. Here are some guiding principles to follow when dealing with these unassigned contributions:
+          At <a href="https://layer5.io/">Layer5</a>, we usually suggest to contributors that they ask maintainers to assign them to the issue they want to work on. But sometimes, pull requests that aren't assigned to anyone can be found. In such cases, it's important to be flexible and ready to adapt. Here are some simple guidelines for dealing with these unassigned contributions:
           </p>
           <ol>
             <li>
@@ -319,6 +318,33 @@ const contributingGuide = () => {
                     may consider reassigning the PR to an appropriate
                     contributor or assigning it to yourself to ensure it
                     doesn't go unnoticed.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>
+                Contributor Guidance:
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>How you should:</strong> As a contributor, it's important to follow the project's guidelines. Start by identifying a suitable issue or create one if necessary. Afterward, kindly request assignment or express your interest in working on the issue by commenting on it. This ensures that maintainers are aware of your intentions and can provide guidance or assign the issue appropriately. Once assigned, proceed with your work and submit a pull request.
+                    <br/><strong>Example:</strong> <a href="https://github.com/layer5io/layer5/issues/3889">Hover animation on different integration category #3889</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>How you should not:</strong> Avoid starting work on an issue and creating a pull request without prior communication or assignment. Jumping directly into the code can lead to misunderstandings and duplicate efforts. Instead, take a moment to engage with the maintainers and community by discussing your interest in the issue and seeking assignment before submitting a pull request. This promotes transparency and effective collaboration within the project.
+                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery/issues/8757">[MeshModel] [UX]: Icon for Kubernetes Component - Endpoints #8757</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Requesting Reassignment:</strong> If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If they are unable or unwilling to collaborate, and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
+                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery-nsm/issues/169">[chore] update Go to 1.21, and update relevant pkgs #169</a>
                   </p>
                 </li>
               </ul>
