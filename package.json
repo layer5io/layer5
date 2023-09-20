@@ -25,6 +25,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^5.11.3",
     "@fullcalendar/google-calendar": "^6.0.2",
     "@fullcalendar/interaction": "^6.0.1",
@@ -35,7 +36,7 @@
     "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.4.0",
-    "babel-plugin-styled-components": "^2.0.7",
+    "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-gatsby": "^2.22.0",
     "cytoscape": "^3.23.0",
     "cytoscape-cose-bilkent": "^4.1.0",
@@ -61,8 +62,8 @@
     "gatsby-plugin-sitemap": "^5.25.0",
     "gatsby-plugin-styled-components": "^5.25.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
-    "gatsby-remark-images": "^6.25.0",
     "gatsby-redirect-from": "^1.0.5",
+    "gatsby-remark-images": "^6.25.0",
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-sharp": "^4.25.0",
     "gbimage-bridge": "^0.2.2",

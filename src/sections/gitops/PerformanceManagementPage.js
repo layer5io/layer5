@@ -27,7 +27,7 @@ const PerformanceManagementPage = () => {
             <Description>
                Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://meshery.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />
