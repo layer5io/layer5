@@ -5,6 +5,7 @@ const Honeycomb = (props) => {
   const { items, renderItem } = props;
   const [height, setHeight] = useState(0);
   const [heightMobile, setHeightmobile]= useState(0);
+  const [DiffScreenHeight, setDiffScreenHeight] = useState(0);
   const gridRef = useRef(null);
 
   const setHoneycombHeight = () => {
@@ -29,15 +30,18 @@ const Honeycomb = (props) => {
       if (left <= firstRow) {
         setHeight(pairsCount * 272 + 130);
         setHeightmobile(pairsCount * 24 + 10);
+        setDiffScreenHeight(pairsCount * 70 + 15)
       } else {
         // If the left hexagons need be adjusted in 2 rows -> add 2 rows height to total height
         setHeight(pairsCount * 272 + 272);
         setHeightmobile(pairsCount * 24 + 24);
+        setDiffScreenHeight(pairsCount * 70 + 70)
       }
     } else {
       // All hexagons are covered in n pairs of 2 rows ( first row with a hexagons and second row with b hexagons )
       !isNaN(pairsCount) && setHeight(pairsCount * 272);
       setHeightmobile(pairsCount * 24);
+      setDiffScreenHeight(pairsCount * 70 )
     }
   };
   useEffect(() => {
@@ -50,7 +54,7 @@ const Honeycomb = (props) => {
 
   return (
     <div>
-      <HoneycombGrid height={height} heightMobile={heightMobile}>
+      <HoneycombGrid height={height} heightMobile={heightMobile} DiffScreenHeight={DiffScreenHeight}>
         <ul ref={gridRef}>
           {items.map((item, key) => (
             <li key={key}>{renderItem(item)}</li>

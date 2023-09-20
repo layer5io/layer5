@@ -85,6 +85,10 @@ export const HoneycombGrid = styled.div`
           flex-shrink: 0;
           width:29px;
         }
+        @media(min-width: 426px) and (max-width: 550px) {
+          flex-shrink: 0;
+          width: 40px;
+        }
       }
       .integration-content {
         opacity: 0;
@@ -104,6 +108,13 @@ export const HoneycombGrid = styled.div`
             line-height:  0.5rem;
             font-weight: 700
             opacity: 0.2;
+          }
+          @media(min-width: 426px) and (max-width: 550px) {  
+            // font-size: 0.150rem;
+            line-height:  0.890rem;
+            font-weight: 300
+            opacity: 0.2;
+
           }
           line-height: 1.375rem;
           color: ${(props) => props.theme.whiteToBlack};
@@ -140,6 +151,9 @@ export const HoneycombGrid = styled.div`
             @media (max-width: 425px) {
               font-size: 0.413rem;
             }
+            @media(min-width: 426px) and (max-width: 550px) {  
+              font-size: 0.630rem;
+            }
 
           }
           .learnMoreBtn {
@@ -157,6 +171,10 @@ export const HoneycombGrid = styled.div`
         margin: 0px 0px 0 4px;
         @media (max-width: 425px) { 
           margin: 0px 0px 0 1.5px;
+        }
+        @media(min-width: 426px) and (max-width: 550px) {  
+          margin: 0px 0px 0 2.3px;
+           
         }
        clip-path: polygon(
           50% 0%,

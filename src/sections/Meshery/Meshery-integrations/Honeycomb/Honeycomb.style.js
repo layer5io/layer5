@@ -28,6 +28,33 @@ export const HoneycombGrid = styled.div`
     }
   }
 
+
+  @media(min-width: 426px) and (max-width: 550px) {
+    ul {
+      font-size: 0;
+      line-height: 0;
+      margin: 2rem 0 0 5px;
+      padding-left: 31px;
+      padding-right: 20px;
+      margin-top: 1rem;
+      height:  ${(props) => props.DiffScreenHeight === 0 ? "unset" : `calc(${props.DiffScreenHeight}px + 46px)`};
+      li {
+        margin: 2px;
+        width: 85px;
+        height: calc(85px * 1.1547);
+        margin-bottom: calc(2px - 85px * 0.2885);
+        }
+     ::before {
+        width: calc(85px / 2 + 2px);
+        float: left;
+        shape-outside: repeating-linear-gradient(
+          #0000 0 calc(calc(1.732 * 85px + 4 * 2px - 1px) - 2px),
+          #000 0 calc(1.732 * 85px + 4 * 2px - 1px)
+        );
+      }
+    }
+  }
+  
   @media (max-width: 425px){
     ul {
       font-size: 0;
@@ -44,7 +71,7 @@ export const HoneycombGrid = styled.div`
       padding-left:20px;
       padding-right:20px;
       li {
-      margin: 2px;
+        margin: 2px;
         width: 52px;
         height: calc(52px * 1.1547);
         margin-bottom: calc(2px - 52px * 0.2885);
