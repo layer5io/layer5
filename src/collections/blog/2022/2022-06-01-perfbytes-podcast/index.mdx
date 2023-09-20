@@ -16,10 +16,10 @@ type: Blog
 product: Meshery
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
-import Blockquote from "../../../../reusecore/Blockquote";
-import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
-import { Link } from "gatsby";
+
+
+
+
 import { PerfbytesPodcast } from "./perfbytesPodcast";
 import ConsulDemo from "./consul-docker-extension-demo.webp"
 
@@ -81,8 +81,7 @@ I like to pretend that I know a lot about service meshes, but when it comes to h
 Taking this example of consul, produced by hashicorp, is a little more of an
 intriguing deployment and a simple two-tier deck.  We announced the <Link to="/docker-extension-meshery">Meshery Docker Extension</Link> recently. So if you're using docker desktop, Meshery will be a first class app that's available inside of market and part of what it does as it integrates with docker desktop is it will import docker compose apps convert them to kubernetes manifests or kubernetes apps and they'll let you deploy those formerly docker compose apps onto a mesh which is why I'm talking about a two-tiered service.
 
-<h5>Does MeshMap allow you to load the current configuration that is has been applied in the current cluster?
-</h5>
+<h5>Does MeshMap allow you to load the current configuration that is has been applied in the current cluster?</h5>
 <div className="answer">
 Currently, there are two modes: the one we were looking at before was the designer mode, and the one we'll be looking at now is the visualizer mode, which is probably a little more of an it's not entirely read-only to the extent that you could grab a pod and start an interactive session with the containers in that pod or you could you start a logging session. You could also initiate a performance test against  that particular service or that particular endpoint. 
 Meshery supports three different types of load generators, which is a nighthawk, fortio and wrk2. 
@@ -110,9 +109,7 @@ That load is generated on demand or on schedule against one or more endpoints, 
 
 <h5>If I say I have never scripted or built any scenarios for fortio or nighthawk. Let's say I'm a loadrunner, a neoload, or a k6 user, and I want to accomplish the same thing with them. So what is the journey on those load generator? is it the same thing you have to build a workflow of requests that you want to send in that scenario?</h5>
 <div className="answer">
-<p>That leads us to probably talk about one of our other projects which is called <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> which is a specification. It's another one of the projects that we've donated to the CNCF. Service Mesh Performance is the spec while Meshery is an implementation of the spec. 
-At a high level, if those other load generators were to adhere to how we standardize and describe the test that you want to run and then hand off that configuration to generate the performance profiles that are created here  you're not gonna down download them but the descriptor is important.
-</p>
+<p>That leads us to probably talk about one of our other projects which is called <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> which is a specification. It's another one of the projects that we've donated to the CNCF. Service Mesh Performance is the spec while Meshery is an implementation of the spec. At a high level, if those other load generators were to adhere to how we standardize and describe the test that you want to run and then hand off that configuration to generate the performance profiles that are created here  you're not gonna down download them but the descriptor is important.</p>
 This implements a standard for the industry on what is the actual
 service mesh test and then standardize the format so then anyone can use the same format to design their script or whatever they want and then use it to test. 
 So when I build a script, and I don't know loadrunner today and I want to use neologo tomorrow, then I don't have to rewrite everything. Great!
@@ -120,8 +117,8 @@ So when I build a script, and I don't know loadrunner today and I want to use ne
 
 Missed the podcast? No worries, we got you covered. Check out the recording below :)
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dGMGUocTvOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div className="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dGMGUocTvOk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </div>
 
 

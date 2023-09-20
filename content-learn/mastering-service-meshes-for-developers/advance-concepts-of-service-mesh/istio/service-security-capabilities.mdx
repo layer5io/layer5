@@ -7,11 +7,11 @@ lectures: 12
 order: 6
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Access Control</h2>
+<h2 className="chapter-sub-heading">Access Control</h2>
 
 You will start by denying all traffic.
 
@@ -24,7 +24,7 @@ metadata:
 spec: {}
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   And then begin poking holes in your service mesh "firewall".
 </h3>
 
@@ -45,7 +45,7 @@ spec:
             methods: ["GET"]
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   Create AuthorizationPolicy for each BookInfo service.
 </h3>
 
@@ -117,7 +117,7 @@ spec:
             methods: ["GET", "POST"]
 ```
 
-<h3 class="chapter-sub-heading">Allow per user access</h3>
+<h3 className="chapter-sub-heading">Allow per user access</h3>
 
 ```yaml
 ---
@@ -142,7 +142,7 @@ spec:
           values: ["naruto"]
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   Reset BookInfo Subsets (reset destination rules)
 </h3>
 
@@ -212,13 +212,13 @@ spec:
 
 ```
 
-<h2 class="chapter-sub-heading">Identity Verification</h2>
+<h2 className="chapter-sub-heading">Identity Verification</h2>
 
 Note: this lab uses the sample application HTTPbin.
 
 Using Meshery, deploy the HTTPbin sample application.
 
-<h3 class="chapter-sub-heading">Add Claims</h3>
+<h3 className="chapter-sub-heading">Add Claims</h3>
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -241,7 +241,7 @@ spec:
           values: ["group1"]
 ```
 
-<h3 class="chapter-sub-heading">Def</h3>
+<h3 className="chapter-sub-heading">Def</h3>
 
 ```yaml
 apiVersion: "security.istio.io/v1beta1"
@@ -258,7 +258,7 @@ spec:
       jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.7/security/tools/jwt/samples/jwks.json"
 ```
 
-<h2 class="chapter-sub-heading">Mutual TLS</h2>
+<h2 className="chapter-sub-heading">Mutual TLS</h2>
 
 Using Meshery, you can change mTLS enforcement for a namespace.
 

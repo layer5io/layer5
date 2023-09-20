@@ -1,17 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
-
-
 import BlogSingle from "../sections/Blog/Blog-single";
-
-
-
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       subtitle
@@ -42,20 +35,14 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({ data }) => {
-
+const BlogSinglePage = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <SimpleReactLightbox>
-        <BlogSingle  data={data} />
-      </SimpleReactLightbox>
-
+      <BlogSingle  data={data}>
+        { children }
+      </BlogSingle>
     </>
-
   );
 };
 

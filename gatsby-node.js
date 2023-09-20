@@ -17,6 +17,8 @@ if (process.env.CI === "true") {
   const replacePath = (url) => (url === "/" || url.includes("/404")) ? url : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
+
+    if (page.path.endsWith("html")) return;
     const { createPage, deletePage, createRedirect } = actions;
     const oldPage = Object.assign({}, page);
     page.matchPath = page.path;
@@ -147,22 +149,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/integrations.js"
   );
 
-  const res = await graphql(`
+  const res_blog = await graphql(`
     {
-      allPosts:  allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
-      ) {
-        nodes {
-          frontmatter{
-            program
-            programSlug
-          }
-          fields {
-            collection
+      blogs: allMdx(
+        filter: { 
+          fields: { collection: { eq: "blog" } }, 
+          frontmatter: { published: { eq: true } } 
+        }
+      ){
+        nodes{
+          fields{
             slug
+            collection
+          }
+          internal {
+            contentFilePath
           }
         }
       }
+    }
+    `);
+
+  const res_blogTags = await graphql(`
+    {
       blogTags: allMdx(
         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
         ){
@@ -172,7 +181,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             fieldValue
           }
-      }
+        }
+    }
+    `);
+
+  const res_blogCategory = await graphql(`
+    {
       blogCategory: allMdx(
         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
         ){
@@ -183,6 +197,181 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             fieldValue
           }
       }
+    }
+    `);
+
+  const res_resources = await graphql(`
+    {
+      resources: allMdx(
+        filter: { 
+          fields: { collection: { eq: "resources" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_news = await graphql(`
+    {
+      news: allMdx(
+        filter: { 
+          fields: { collection: { eq: "news" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+
+  const res_books = await graphql(`
+    {
+      books: allMdx(
+        filter: { 
+          fields: { collection: { eq: "service-mesh-books" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_events = await graphql(`
+    {
+      events: allMdx(
+        filter: { 
+          fields: { collection: { eq: "events" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_programs = await graphql(`
+    {
+      programs: allMdx(
+        filter: { 
+          fields: { collection: { eq: "programs" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          frontmatter{
+            program
+            programSlug
+          }
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_careers = await graphql(`
+    {
+      careers: allMdx(
+        filter: { 
+          fields: { collection: { eq: "careers" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_members = await graphql(`
+    {
+      members: allMdx(
+        filter: { 
+          fields: { collection: { eq: "members" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+    }
+    `);
+
+  const res_integrations = await graphql(`
+    {
+      integrations: allMdx(
+        filter: { 
+          fields: { collection: { eq: "integrations" } }, 
+          frontmatter: { published: { eq: true } } 
+      }
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+    `);
+
+  const res_memberBio = await graphql(`
+    {
       memberBio: allMdx(
         filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, executive_bio: { eq: true } } }
         ){
@@ -194,8 +383,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               collection
             }
+            internal {
+              contentFilePath
+            }
           }
       }
+    }
+    `);
+
+  const res_singleWorkshop = await graphql(`
+    {
       singleWorkshop: allMdx(
         filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
       ){
@@ -204,8 +401,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
+    }
+    `);
+
+  const res_labs = await graphql(`
+    {
       labs: allMdx(
         filter: {fields: {collection: {eq: "service-mesh-labs"}}}
       ){
@@ -214,8 +419,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
+    }
+    `);
+
+  const res_learncontent = await graphql(`
+    {
       learncontent: allMdx(
         filter: {fields: {collection: {eq: "content-learn"}}}
       ){
@@ -229,57 +442,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             pageType
             collection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
     }
   `);
 
   // handle errors
-  if (res.errors) {
+  if (res_blog.errors) {
     reporter.panicOnBuild("Error while running GraphQL query.");
     return;
   }
 
-  const allNodes = res.data.allPosts.nodes;
-
-  const blogs = allNodes.filter(
-    node => node.fields.collection === "blog"
-  );
-
-  const resources = allNodes.filter(
-    node => node.fields.collection === "resources"
-  );
-
-  const news = allNodes.filter(
-    node => node.fields.collection === "news"
-  );
-
-  const books = allNodes.filter(
-    node => node.fields.collection === "service-mesh-books"
-  );
-
-  const events = allNodes.filter(
-    node => node.fields.collection === "events"
-  );
-
-  const programs = allNodes.filter(
-    node => node.fields.collection === "programs"
-  );
-
-  const careers = allNodes.filter(
-    node => node.fields.collection === "careers"
-  );
-
-  const members = allNodes.filter(
-    node => node.fields.collection === "members"
-  );
-
-  const integrations = allNodes.filter(
-    nodes => nodes.fields.collection === "integrations"
-  );
-
-  const singleWorkshop = res.data.singleWorkshop.nodes;
-  const labs = res.data.labs.nodes;
+  const blogs = res_blog.data.blogs.nodes;
+  const resources = res_resources.data.resources.nodes;
+  const news = res_news.data.news.nodes;
+  const books = res_books.data.books.nodes;
+  const events = res_events.data.events.nodes;
+  const careers = res_careers.data.careers.nodes;
+  const members = res_members.data.members.nodes;
+  const integrations = res_integrations.data.integrations.nodes;
+  const singleWorkshop = res_singleWorkshop.data.singleWorkshop.nodes;
+  const labs = res_labs.data.labs.nodes;
+  const programs = res_programs.data.programs.nodes;
 
   paginate({
     createPage: envCreatePage,
@@ -292,14 +479,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   blogs.forEach(blog => {
     envCreatePage({
       path: blog.fields.slug,
-      component: blogPostTemplate,
+      component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
       context: {
         slug: blog.fields.slug,
       },
     });
   });
 
-  const blogCategory = res.data.blogCategory.group;
+  const blogCategory = res_blogCategory.data.blogCategory.group;
   blogCategory.forEach(category => {
     envCreatePage({
       path: `/blog/category/${slugify(category.fieldValue)}`,
@@ -310,7 +497,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  const BlogTags = res.data.blogTags.group;
+  const BlogTags = res_blogTags.data.blogTags.group;
   BlogTags.forEach(tag => {
     envCreatePage({
       path: `/blog/tag/${slugify(tag.fieldValue)}`,
@@ -324,7 +511,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   resources.forEach(resource => {
     envCreatePage({
       path: resource.fields.slug,
-      component: resourcePostTemplate,
+      component: `${resourcePostTemplate}?__contentFilePath=${resource.internal.contentFilePath}`,
       context: {
         slug: resource.fields.slug,
       },
@@ -334,7 +521,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   news.forEach(singleNews => {
     envCreatePage({
       path: singleNews.fields.slug,
-      component: NewsPostTemplate,
+      component: `${NewsPostTemplate}?__contentFilePath=${singleNews.internal.contentFilePath}`,
       context: {
         slug: singleNews.fields.slug,
       },
@@ -344,7 +531,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   books.forEach(book => {
     envCreatePage({
       path: book.fields.slug,
-      component: BookPostTemplate,
+      component: `${BookPostTemplate}?__contentFilePath=${book.internal.contentFilePath}`,
       context: {
         slug: book.fields.slug,
       },
@@ -354,7 +541,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   events.forEach(event => {
     envCreatePage({
       path: event.fields.slug,
-      component: EventTemplate,
+      component: `${EventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
       context: {
         slug: event.fields.slug,
       },
@@ -364,7 +551,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach(program => {
     envCreatePage({
       path: program.fields.slug,
-      component: ProgramPostTemplate,
+      component: `${ProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         slug: program.fields.slug,
       },
@@ -374,7 +561,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   careers.forEach(career => {
     envCreatePage({
       path: career.fields.slug,
-      component: CareerPostTemplate,
+      component: `${CareerPostTemplate}?__contentFilePath=${career.internal.contentFilePath}`,
       context: {
         slug: career.fields.slug,
       },
@@ -391,11 +578,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  const MemberBio = res.data.memberBio.nodes;
+  const MemberBio = res_memberBio.data.memberBio.nodes;
   MemberBio.forEach(memberbio => {
     envCreatePage({
       path: `${memberbio.fields.slug}/bio`,
-      component: MemberBioTemplate,
+      component: `${MemberBioTemplate}?__contentFilePath=${memberbio.internal.contentFilePath}`,
       context: {
         member: memberbio.frontmatter.name,
       },
@@ -405,7 +592,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   singleWorkshop.forEach(workshop => {
     envCreatePage({
       path: workshop.fields.slug,
-      component: WorkshopTemplate,
+      component: `${WorkshopTemplate}?__contentFilePath=${workshop.internal.contentFilePath}`,
       context: {
         slug: workshop.fields.slug,
       },
@@ -415,7 +602,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   labs.forEach(lab => {
     envCreatePage({
       path: lab.fields.slug,
-      component: LabTemplate,
+      component: `${LabTemplate}?__contentFilePath=${lab.internal.contentFilePath}`,
       context: {
         slug: lab.fields.slug,
       },
@@ -425,7 +612,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   integrations.forEach((integration) => {
     envCreatePage({
       path: `/cloud-native-management/meshery${integration.fields.slug}`,
-      component: integrationTemplate,
+      component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
       context: {
         slug: integration.fields.slug,
       },
@@ -444,7 +631,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       programsArray.push(program.frontmatter.program);
       envCreatePage({
         path: `/programs/${program.frontmatter.programSlug}`,
-        component: MultiProgramPostTemplate,
+        component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
         context: {
           program: program.frontmatter.program,
         },
@@ -452,7 +639,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const learnNodes = res.data.learncontent.nodes;
+  const learnNodes = res_learncontent.data.learncontent.nodes;
 
   learnNodes.forEach((node) => {
     if (node.fields) {
@@ -554,7 +741,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
           case "news":
-            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+            if (node.frontmatter.published)
+              slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
             break;
           case "service-mesh-books":
           case "service-mesh-workshops":
@@ -574,6 +762,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
               slug = `/community/events/${slugify(node.frontmatter.title)}`;
             break;
           default:
+            if (!node.frontmatter.title) console.log("default", node);
             slug = `/${collection}/${slugify(node.frontmatter.title)}`;
         }
       }
@@ -643,9 +832,8 @@ const createCourseOverviewPage = ({ envCreatePage, node }) => {
   } = node.fields;
 
   envCreatePage({
-
     path: `${slug}`,
-    component: path.resolve("src/templates/course-overview.js"),
+    component: `${path.resolve("src/templates/course-overview.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,
@@ -670,7 +858,7 @@ const createChapterPage = ({ envCreatePage, node }) => {
   envCreatePage({
 
     path: `${slug}`,
-    component: path.resolve("src/templates/learn-chapter.js"),
+    component: `${path.resolve("src/templates/learn-chapter.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,

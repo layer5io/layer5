@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
 import styled from "styled-components";
 import { copyToClipboard } from "./copy-to-clipboard";
+import useTimeout from "../../utils/useTimeout";
 
 export const Pre = styled.pre`
   position: relative;
@@ -47,7 +48,7 @@ const Code = ({ codeString, language }) => {
   const handleClick = () => {
     copyToClipboard(codeString);
     setCopyText("Copied!");
-    setTimeout(() => setCopyText("Copy"), 1000);
+    useTimeout(() => setCopyText("Copy"), 1000);
   };
   return (
     <Highlight

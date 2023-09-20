@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import List_Icon from "../../assets/images/careers/list-icon.svg";
 
-export const CareerWrapper = styled.div`
+const CareerWrapper = styled.div`
     .body-sections {
         position: relative;
         p {
@@ -69,3 +69,5 @@ export const CareerWrapper = styled.div`
         }
     }
 `;
+
+export default CareerWrapper;

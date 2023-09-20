@@ -86,7 +86,7 @@ const VisualizeBannerWrapper = styled.div`
 const MeshmapVisualizeBanner = ({ targetRef }) => {
   const handleClick = () => {
     const offset = 100;
-    const targetPos = targetRef.current.getBoundingClientRect().top + window.pageYOffset;
+    const targetPos = targetRef.current.getBoundingClientRect().top + window.scrollY;
     const finalpos = targetPos - offset;
     window.scrollTo({ top: finalpos, behavior: "smooth" });
   };

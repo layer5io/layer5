@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ResourcesWrapper = styled.div`
+const ResourcesWrapper = styled.div`
   color: #000;
   .sub-heading {
     color: gray;
@@ -316,3 +316,5 @@ iframe{
   }
 }
 `;
+
+export default ResourcesWrapper;

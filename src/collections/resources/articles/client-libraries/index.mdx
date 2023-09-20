@@ -15,8 +15,8 @@ published: true
 resource: true
 ---
 
-import { Link } from "gatsby";
-import { ResourcesWrapper } from "../../Resources.style.js";
+
+
 import Library from "./using-different-microservice-client-libraries.webp";
 
 <ResourcesWrapper>
@@ -60,14 +60,15 @@ import Library from "./using-different-microservice-client-libraries.webp";
   </ul>
 
 
-  <div class="fact">
+  <div className="fact">
   <p>
     See the Layer5 <Link to="/landscape">service mesh landscape</Link> for a comprehensive perspective of and characterizing of all popular client libraries.
   </p>
   </div>
 
   <p>
-  Prior to the availability of service meshes, developers used language-specific microservices frameworks to improve the resiliency, security, and observability of their services. The drawback of client libraries is that they embed infrastructure concerns into your application code. Services that embed the same client library across themselves in the presence of a service mesh incorporate duplicative code. Inconsistency is a concern for services that include different client libraries or different versions of the same client library. In environments with polyglot microservices, different client libraries are used.  </p>
+  Prior to the availability of service meshes, developers used language-specific microservices frameworks to improve the resiliency, security, and observability of their services. The drawback of client libraries is that they embed infrastructure concerns into your application code. Services that embed the same client library across themselves in the presence of a service mesh incorporate duplicative code. Inconsistency is a concern for services that include different client libraries or different versions of the same client library. In environments with polyglot microservices, different client libraries are used.  
+  </p>
   <p>
   Getting teams to update their client libraries can be an arduous process. When these infrastructure concerns are embedded in your service code, you'll need to track down your developers to update and reconfigure these libraries.  It can take a long time to get a consistent configuration with the same and most recent version deployed.  Enforcing consistency is challenging.  As seen in the figure below, these frameworks couple your services with the infrastructure.
   </p>

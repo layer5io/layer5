@@ -4,7 +4,7 @@ import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 import NewsPage from "../../sections/Company/News-grid";
 
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query allNews {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
@@ -21,14 +21,14 @@ export const query = graphql`query allNews {
         eurl
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
         }
         darkthumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
@@ -44,9 +44,9 @@ export const query = graphql`query allNews {
 const NewsGridPage = ({ data }) => {
   return (
     <>
-      <SimpleReactLightbox>
-        <NewsPage  data={data} />
-      </SimpleReactLightbox>
+      {/* <SimpleReactLightbox> */}
+      <NewsPage  data={data} />
+      {/* </SimpleReactLightbox> */}
 
     </>
   );

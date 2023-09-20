@@ -1,16 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
 import SEO from "../components/seo";
-
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
-
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
-      body
       frontmatter {
         title
         subtitle
@@ -28,7 +23,7 @@ export const query = graphql`
         featureList
         workingSlides {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
@@ -37,22 +32,18 @@ export const query = graphql`
     }
   }
 `;
-const Integrations = ({ data }) => {
-
+const Integrations = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <IndividualIntegrations  data={data} />
-
+      <IndividualIntegrations  data={data}>
+        { children }
+      </IndividualIntegrations>
     </>
-
   );
 };
 export default Integrations;
 
-export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} />;
+export const Head = ({ data: { mdx: { frontmatter: { title, integrationIcon: { publicURL } } } } }) => {
+  return <SEO title={title} image={publicURL} />;
 };

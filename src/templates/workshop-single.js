@@ -1,15 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
 import SEO from "../components/seo";
-
-
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       date(formatString: "MMMM Do, YYYY")
@@ -34,23 +29,19 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 }
 `;
 
-const WorkshopSingle = ({ data }) => {
-
+const WorkshopSingle = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-
+      <WorkshopSinglePage frontmatter={data.mdx.frontmatter}>
+        { children }
+      </WorkshopSinglePage>
     </>
-
   );
 };
 
 export default WorkshopSingle;
 
-export const Head = ({ data }) => {
-  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+export const Head = ({ data: { mdx: { frontmatter: { title, thumbnail: { publicURL } } } } }) => {
+  return  <SEO title={title} image={publicURL} />;
 };

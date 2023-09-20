@@ -1,11 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import CourseOverview from "../sections/Learn-Layer5/Course-Overview";
-
 import SEO from "../components/seo";
-
-
-import SimpleReactLightbox from "simple-react-lightbox";
+// import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
   query eachCourse($course: String!) {
@@ -16,7 +13,6 @@ export const query = graphql`
       }
     ) {
       nodes {
-        body
         frontmatter {
           courseTitle
           description
@@ -82,33 +78,29 @@ export const query = graphql`
       }
   }
 `;
-const CourseOverviewTemplate = ({ data }) => {
-
+const CourseOverviewTemplate = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <SimpleReactLightbox>
-        <CourseOverview
-          course={data.courseByTitle.nodes[0]}
-          chapters={data.courseChapters.nodes}
-          serviceMeshesList={data.serviceMeshesList.nodes}
-          canonical="https://layer5.io/learn/learning-paths"
-        />
-      </SimpleReactLightbox>
-
+      {/* <SimpleReactLightbox> */}
+      <CourseOverview
+        course={data.courseByTitle.nodes[0]}
+        chapters={data.courseChapters.nodes}
+        serviceMeshesList={data.serviceMeshesList.nodes}
+        canonical="https://layer5.io/learn/learning-paths"
+      >
+        { children }
+      </CourseOverview>
+      {/* </SimpleReactLightbox> */}
     </>
-
   );
 };
 
 export default CourseOverviewTemplate;
 
-export const Head = ({ data }) => {
+export const Head = ({ data: { courseByTitle } }) => {
   return <SEO
-    title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
+    title={`${courseByTitle.nodes[0].frontmatter.courseTitle}`}
     description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
   />;
 };

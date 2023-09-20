@@ -1,14 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
-
-
 import NewsSingle from "../sections/Company/News-single";
 
 export const query = graphql`query NewsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       subtitle
@@ -31,23 +27,19 @@ export const query = graphql`query NewsBySlug($slug: String!) {
 }
 `;
 
-const NewsSinglePage = ({ data }) => {
-
+const NewsSinglePage = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <NewsSingle data={data} />
-
+      <NewsSingle data={data}>
+        { children }
+      </NewsSingle>
     </>
-
   );
 };
 
 export default NewsSinglePage;
 
-export const Head = ({ data }) => {
-  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+export const Head = ({ data: { mdx: { frontmatter: { title, thumbnail: { publicURL } } } } }) => {
+  return  <SEO title={title} image={publicURL} />;
 };
