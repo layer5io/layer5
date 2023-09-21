@@ -343,7 +343,7 @@ const contributingGuide = () => {
                 </li>
                 <li>
                   <p>
-                    <strong>Requesting Reassignment:</strong> If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If they are unable or unwilling to collaborate, and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
+                    <strong>Requesting Reassignment:</strong> If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If the assignee is not responsive or there has been no progress on the issue for a long time and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
                     <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery-nsm/issues/169">[chore] update Go to 1.21, and update relevant pkgs #169</a>
                   </p>
                 </li>
