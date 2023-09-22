@@ -13,5 +13,5 @@ const Faq = () => {
 };
 export default Faq;
 export const Head = () => {
-  return <SEO title="FAQ" description="Frequently Asked Questions" />;
+  return <SEO title="FAQ" description="General Frequently Asked Questions" />;
 };

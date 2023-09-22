@@ -124,6 +124,9 @@ export const HandbookWrapper = styled.div`
         display: inline;
         vertical-align: bottom;
       }
+      .smp-action{
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+      }
     }
 
     td, th {

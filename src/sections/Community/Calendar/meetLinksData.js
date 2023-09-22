@@ -72,15 +72,6 @@ export const meet_links_data = [
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IPZ3dP6FgZBAA0dZFmmX0kA",
   },
   {
-    day: "Biweekly Wednesday",
-    meeting: "CNCF SMI Community Meeting",
-    slack_channel: "#smi",
-    slack_link: "https://layer5io.slack.com/archives/CDM0ACDM5",
-    meeting_minutes: "https://docs.google.com/document/d/1NTBaJf6LhUBlF8_lfvBBt_MbyPvT-6CZNg6Ckpm_yCo/edit",
-    meeting_link: "https://zoom.us/my/cncfsmiproject",
-    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
-  },
-  {
     day: "1st & 3rd Thursday",
     meeting: "CNCF TAG Network Meeting",
     slack_channel: "#tag-network",

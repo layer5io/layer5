@@ -14,7 +14,7 @@ const ServiceMeshPatterns = () => {
       <Row className="brand-section">
         <Col xs={12} sm={6}>
           <h1 className="layerH3">
-            <strong>Service Mesh Patterns</strong>
+            <strong>Cloud Native Patterns</strong>
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
@@ -26,7 +26,7 @@ const ServiceMeshPatterns = () => {
         </Col>
         <Col>
           <p>
-              The Service Mesh Pattern mark includes Service Mesh Pattern name & logo and any
+              The Cloud Native Pattern mark includes Cloud Native Pattern name & logo and any
               word, phrase, image, or other designation that identifies the
               source or origin of any Layer5 projects. PLease don't modify the
               marks or use them in a confusing way, including suggesting
@@ -67,7 +67,7 @@ const ServiceMeshPatterns = () => {
         </Col>
         <Col>
           <p>
-                            The Service Mesh Pattern color palette consists of gray and green colors along with
+                            The Cloud Native Pattern color palette consists of gray and green colors along with
                             additional shades. The SMP logo should be white or monochrome when
                             using project colors as the background.
           </p>
