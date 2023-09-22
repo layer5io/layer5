@@ -59,7 +59,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
 
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
-              Sign into the&nbsp;<a href="https://playground.meshery.io">Meshery Playground</a>&nbsp;(free account) to continue your lab.
+              Sign into the&nbsp;<a className="ak" href="https://playground.meshery.io">Meshery Playground</a>&nbsp;(free account) to continue your lab.
                 {/*
                 <div id="katacoda-scenario"
                   data-katacoda-id={`${courseLink}/${embed}`}
