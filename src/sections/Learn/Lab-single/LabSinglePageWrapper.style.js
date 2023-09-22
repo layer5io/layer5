@@ -56,6 +56,7 @@ const LabSinglePageWrapper = styled.div`
 	}
 	.cardContent {
 		margin: 0 5rem;
+		color: white;
 	}
 	#katacoda-scenario {
 		min-height: 25rem;
