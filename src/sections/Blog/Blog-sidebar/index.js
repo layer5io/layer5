@@ -112,7 +112,7 @@ const Sidebar = ({ pageContext }) => {
           <a href="https://layer5.io/community/adventures-of-five-and-friends">
             <div className="card">
               <h2>See the Adventures of Five and Friends</h2>
-              <StaticImage imgClassName="logo logo-top-margin" alt="five friends adventures" src={FiveandFriendsAdventures} />
+              <StaticImage alt="layer5 five and friends adventures" src={FiveandFriendsAdventures} />
             </div>
           </a>
         </div>
