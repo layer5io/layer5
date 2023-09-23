@@ -78,6 +78,7 @@ export const ScenarioCardWrapper = styled.div`
         justify-content:center; 
         margin-top:4rem;
         width:100%;
+        color: white;
     }
 
 	.active {
