@@ -25,19 +25,16 @@ jobs:
       - name: Label Commenter
         uses: peaceiris/actions-label-commenter@v1
 
-  automate_invite:
-    if: contains(github.event.issue.labels.*.name, 'issue/invite')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Invite on label
-        uses: vj-abigo/invite-on-label@v1.2
-        with:
-          organization: layer5io
-          label: issue/invite
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          comment: "We are sending you an invitation to join the Layer5 GitHub Organization. :partying_face: <b>Welcome to the community! 🎉</b><br /><br />&nbsp;&nbsp;&nbsp;Be sure to :star: [star the projects](../stargazers), if you haven't already.<br />"
-        env:
-          INVITE_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+      - name: Verify Valid Issue
+        if: contains(github.event.issue.labels.*.name, 'issue/valid')
+        run: |
+          echo "This issue has been verified as valid. Please take appropriate action in accordance with the description provided in the issue."
+          # You can customize the comment message above as needed.
+
+      - name: Help Wanted Issue
+        if: contains(github.event.issue.labels.*.name, 'help wanted')
+        run: |
+          echo "This issue is marked as 'help wanted'. If you can help, please consider contributing to this issue."
 
       - name: View context attributes
         uses: actions/github-script@master
@@ -54,9 +51,11 @@ jobs:
           echo "ISSUE=${{steps.set-url.outputs.url}}" >> $GITHUB_ENV
 
       - name: Notify slack
+        if: contains(github.event.issue.labels.*.name, 'issue/valid')
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"CF9RK4H89\",\"text\":\"An invitation to join the layer5io GitHub org has been sent\"}'
-          # to the author of: ${{env.URL}}\"}'
+          args: '{\"channel\":\"CF9RK4H89\",\"text\":\"This issue has been verified as valid. Please take appropriate action in accordance with the description provided in the issue.\"}'
+
+          # You can customize the Slack notification message above as needed.
