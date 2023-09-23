@@ -4,7 +4,7 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/contributor-chest-colorMode.svg";
+import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/layer5-contributor.svg";
 import CommunityImage4 from "./community-image4.webp";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
