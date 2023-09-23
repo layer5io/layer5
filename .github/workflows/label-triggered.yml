@@ -52,7 +52,23 @@ jobs:
         run: |
           echo "URL=${{steps.set-url.outputs.result}}" >> $GITHUB_ENV
           echo "ISSUE=${{steps.set-url.outputs.url}}" >> $GITHUB_ENV
+      
+      - name: Check Labels
+        id: label-check
+        run: echo "Label Check"
 
+      - name: Comment on Valid Label
+        if: steps.label-check.outputs.label == 'issue/valid'
+        run: |
+          comment="This issue has been verified as valid. Please take action accordingly."
+          echo "$comment" | gh issue comment ${{ github.event.issue.number }}
+
+      - name: Comment on Help Wanted Label
+        if: steps.label-check.outputs.label == 'help wanted'
+        run: |
+          comment="This issue is marked as 'help wanted.' Your contributions are welcome!"
+          echo "$comment" | gh issue comment ${{ github.event.issue.number }}
+          
       - name: Notify slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
