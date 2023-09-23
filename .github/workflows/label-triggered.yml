@@ -29,7 +29,6 @@ jobs:
         if: contains(github.event.issue.labels.*.name, 'issue/valid')
         run: |
           echo "This issue has been verified as valid. Please take appropriate action in accordance with the description provided in the issue."
-          # You can customize the comment message above as needed.
 
       - name: Help Wanted Issue
         if: contains(github.event.issue.labels.*.name, 'help wanted')
@@ -57,5 +56,3 @@ jobs:
         uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"CF9RK4H89\",\"text\":\"This issue has been verified as valid. Please take appropriate action in accordance with the description provided in the issue.\"}'
-
-          # You can customize the Slack notification message above as needed.
