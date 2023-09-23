@@ -99,7 +99,7 @@ const FaqSectionWrapper = styled.section`
     .accordion__item {
       .accordion__header {
         h5 {
-          font-size: 13px;
+          font-size: 18px;
           line-height: 21px;
           padding-right: 1.6rem;
         }
