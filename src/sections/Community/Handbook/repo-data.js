@@ -136,6 +136,15 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["https://badges.layer5.io"],
         repository: "https://github.com/layer5labs/meshery-extensions-packages/"
+      },
+      {
+        project: "Sistent Design System",
+        image: five,
+        site: "https://layer5.io/",
+        language: "React.js",
+        maintainers_name: ["Antonette Caldwell"],
+        link: ["https://layer5.io/community/members/antonette-caldwell"],
+        repository: "https://github.com/layer5io/sistent"
       }
     ],
   },
