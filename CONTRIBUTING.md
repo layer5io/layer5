@@ -32,6 +32,50 @@ The comfort and safety of Layer5 community members are our priority. Please do w
 
 To help you get started on contributing to Layer5 projects, refer to the [Layer5 Newcomers Guide](https://layer5.io/community/newcomers), which aims to make contributions easier for new folks like you! See the resources and tutorials to help you get started. Along with this we have an extensive handbook on how this community works , how folks inside the community wear different hats to run it and few of its guidelines, have a look inside the [Community Handbook](https://layer5.io/community/handbook).
 
+## Issues & Pull Requests
+
+### Creating an Issue
+
+Before **creating** an Issue i.e for `features`/`bugs`/`improvements` please follow these steps:
+
+
+1. search existing Issues before creating a new issue (look to see if the issue has already been created)
+1. if it doesn't exist create a new issue giving as much context as possible (please take note and select the correct Issue type, for example `bug`, `documentation` or `feature`)
+1. if you wish to work on the Issue once it has been triaged, please include this in your Issue description
+
+### Working on an Issue (get it assigned to you)
+
+Before working on an existing Issue please follow these steps:
+
+1. comment asking for the issue to be assigned to you (do not tag maintainers on GitHub or Slack as all maintainers receive your comment notifications)
+1. after the Issue is assigned to you, you can start working on it
+1. **only** start working on this Issue (and open a Pull Request) when it has been assigned to you - this will prevent confusion, multiple people working on the same issue and work not being used
+1. reference the Issue in your Pull Request (for example `This PR fixes #123`)
+
+> Notes:
+>
+> - check the `Assignees` box at the top of the page to see if the issue has been assigned to someone else before requesting this be assigned to you
+> - if an Issue is unclear, ask questions to get more clarity before asking to have the Issue assigned to you
+> - only request to be assigned an Issue if you know how to work on it
+> - an Issue can be assigned to multiple people, if you all agree to collaborate on the issue (the Pull Request can contain commits from different collaborators)
+> - any Issues that have no activity after 2 weeks will be unassigned and re-assigned to someone else
+
+## Reviewing Pull Requests
+
+We welcome everyone to review Pull Requests, it is a great way to learn, network and support each other.
+
+### DOs
+
+- use inline comments to explain your suggestions
+- use inline suggestions to propose changes
+
+### DON'Ts
+
+- do not be rude, disrespectful or aggressive
+- do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
+- do not blindly approve pull requests to improve your GitHub contributors graph
+
+
 ## Style Guide
 
 The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
