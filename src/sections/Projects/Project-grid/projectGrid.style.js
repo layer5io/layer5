@@ -243,7 +243,7 @@ export const ProjectWrapper = styled.div`
         }
         
     }
-    // Service Mesh Patterns
+    // Cloud Native Patterns
     .project__card.eight{
         grid-column: 1/3;
         grid-row: 3/6;

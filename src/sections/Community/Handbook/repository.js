@@ -90,21 +90,21 @@ const Repository = () => {
                 <a href="https://github.com/service-mesh-performance">
                   <img
                     src={servicemeshperformance}
-                    alt="service mesh performance logo"
+                    alt="cloud native performance logo"
                   />
-                  &nbsp; Service Mesh Performance
+                  &nbsp; Cloud Native Performance
                 </a>
-                  - Service Mesh Performance specification and site.
+                  - Cloud Native Performance specification and site.
               </li>
               <li>
                 <a href="https://github.com/service-mesh-patterns">
                   <img
                     src={servicemeshpattern}
-                    alt="service mesh patterns logo"
+                    alt="cloud native patterns logo"
                   />
-                  &nbsp; Service Mesh Patterns
+                  &nbsp; Cloud Native Patterns
                 </a>
-                  - a collection of curated patterns of service mesh use cases compatible with Meshery.
+                  - a collection of curated patterns of cloud native use cases compatible with Meshery.
               </li>
               <li>
                 <a href="https://github.com/layer5labs">
@@ -208,11 +208,13 @@ const Repository = () => {
                     </thead>
                     {backendProject.subdata.map((subdata) => {
                       const { project, image, language, description, repository } = subdata;
+                      const smpClass = project === "SMP Action";
+                      const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} alt="project" />&nbsp;{project} </td>
+                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
