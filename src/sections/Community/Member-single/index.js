@@ -24,6 +24,7 @@ import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.s
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import Button from "../../../reusecore/Button";
+import xIcon from "../../../assets/images/socialIcons/x-light.svg";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -254,7 +255,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {twitter && (
                     <li>
                       <a href={`https://twitter.com/${twitter}`}>
-                        <FaTwitter className="twitter" size={32} />
+                        <img src={xIcon} className="twitter" size={32} />
                       </a>
                     </li>
                   )}
