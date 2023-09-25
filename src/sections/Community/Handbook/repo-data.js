@@ -140,7 +140,7 @@ export const repo_data = [
       {
         project: "Sistent Design System",
         image: five,
-        site: "https://layer5.io/",
+        site: "https://github.com/layer5io/sistent",
         language: "React.js",
         maintainers_name: ["Antonette Caldwell"],
         link: ["https://layer5.io/community/members/antonette-caldwell"],
