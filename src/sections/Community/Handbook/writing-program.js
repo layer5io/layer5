@@ -433,6 +433,53 @@ const Writers = () => {
               </li>
             </ul>
 
+            <br></br>
+            <h2>How to Submit and Review Your Writing?</h2>
+            <p>
+              The Writing Program offers writers two convenient ways to get
+              their writings reviewed by Community. Whether you prefer working
+              with Google Docs or contributing directly to the website, we've
+              got you covered. This structured guide will walk you through both
+              options, ensuring that your valuable content is reviewed
+              effectively.{" "}
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <strong>Google Docs Review:</strong>
+                </p>
+                <p>
+                  If you prefer a straightforward approach, start by crafting
+                  your blog article within{" "}
+                  <a href="https://docs.google.com/">Google Docs</a>, ensuring
+                  it's well-structured and error-free. Share the document with
+                  us by adding it to the{" "}
+                  <a href="https://drive.google.com/drive/folders/1o6ZSqCq1QUJmLIjl_Y0VgT_azNbgg1W2">
+                    Community Drive
+                  </a>
+                  , we will provide feedback directly within the Google Doc.
+                  Engage in discussions to refine your content collaboratively.
+                  Once thoroughly reviewed, prepare your submission according to
+                  community guidelines.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Website Contribution Review:</strong>
+                </p>
+                <p>
+                  For those comfortable with local website development,
+                  contribute directly to the community website. <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Set up your
+                  local environment</a>, create a blog post adhering to specified
+                  guidelines, and submit it via a Pull Request on <a href="https://github.com/layer5io/layer5/">GitHub</a>.
+                  Reviewers will provide feedback, and you'll refine your post
+                  collaboratively. Upon completion, maintainers will
+                  merge your blog post into the website repository, celebrating
+                  your contribution.
+                </p>
+              </li>
+            </ol>
+
             <h3>Additional Resources</h3>
             <ul>
               <li>
