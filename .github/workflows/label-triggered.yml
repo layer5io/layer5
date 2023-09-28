@@ -60,7 +60,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-              Thank you for opening this issue extra attention is needed for this issue.
+             Thank you for opening this issue. It requires special attention, and we appreciate your contribution.
 
 
       - name: View context attributes
