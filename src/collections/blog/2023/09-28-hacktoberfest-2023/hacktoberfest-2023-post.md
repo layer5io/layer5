@@ -20,6 +20,7 @@ import { BlogWrapper } from "../../Blog.style.js";
 import mesheryLogo from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import hacktoberfestEvent from "./layer5-event-hacktoberfest2023.png";
 import cloudNativeHacktoberfest from "./hacktoberfest-2023-with-layer5.png";
+import hacktoberfestBadge from "./hacktoberfest-contributor.png";
 import Blockquote from "../../../../reusecore/Blockquote";
 import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 import { Link } from "gatsby" ;
@@ -87,6 +88,11 @@ Open source is a marathon, not a sprint. Feedback may take time, and collaborati
 ### 8. Humility and Gratitude: The Essence of Meaningful Contributions
 
 Remember, a meaningful contribution is its own reward. Swag and a profile boost is a delightful bonus, not the end goal. Celebrate your progress, no matter how small, and learn from your experiences. As you recognize that you are part of a much larger movement, we <Link to="blog/community/layer5-recognition-program">recognize our contributors and users milestones</Link> each step of the way. Earn any number of <a href="https://badges.layer5.io">Layer5 badges</a> as you grow with the community.
+
+### 9. Earn a Badge
+    
+<p>Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.</p>
+<img src={hacktoberfestBadge} style="width: 250px"/>
 
 # Join Layer5's Hacktoberfest Event
 
