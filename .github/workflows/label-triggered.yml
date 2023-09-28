@@ -48,7 +48,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-              Thanks for opening this issue.It is a verified and valid issue you can take action in accordance
+              Thank you for opening this issue. It has been verified and is considered a valid issue. You can now take action based on the provided issue description. 
               to description offered in the issue.
 
   add-comment-help-wanted:
