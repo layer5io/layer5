@@ -8,14 +8,8 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
-  { id: 1, link: "#Recognitions", text: "Recognition" },
-  { id: 2, link: "#Membership", text: "Membership to the github" },
-  {
-    id: 3,
-    link: "#Community_member_profile",
-    text: "Community member profile",
-  },
+
+ 
 ];
 
 const CommunityGuide = () => {
