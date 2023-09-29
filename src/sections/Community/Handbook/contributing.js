@@ -14,6 +14,7 @@ const contents = [
   { id: 3, link: "#Sign-off commits", text: "Sign-off commits" },
   { id: 4, link: "#Push changes to Github", text: "Push changes to Github" },
   { id: 5, link: "#Create a pull request", text: "Create a pull request" },
+  { id: 6, link: "#Handling PRs Made Without Being Assigned", text: "Handling PRs Made Without Being Assigned" },
 ];
 
 const contributingGuide = () => {
@@ -228,7 +229,7 @@ const contributingGuide = () => {
               </li>
             </ul>
           </div>
-          <h2>Handling PRs Made Without Being Assigned</h2>
+          <h2 id="Handling PRs Made Without Being Assigned">Handling PRs Made Without Being Assigned</h2>
           <p>
           At <a href="https://layer5.io/">Layer5</a>, we usually suggest to contributors that they ask maintainers to assign them to the issue they want to work on. But sometimes, pull requests that aren't assigned to anyone can be found. In such cases, it's important to be flexible and ready to adapt. Here are some simple guidelines for dealing with these unassigned contributions:
           </p>
