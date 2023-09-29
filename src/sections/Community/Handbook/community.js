@@ -5,18 +5,18 @@ import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
 import Point from "./images/bullet.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
+// import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-const contents = [
-  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
-  { id: 1, link: "#Recognitions", text: "Recognition" },
-  { id: 2, link: "#Membership", text: "Membership to the github" },
-  {
-    id: 3,
-    link: "#Community_member_profile",
-    text: "Community member profile",
-  },
-];
+// const contents = [
+//   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
+//   { id: 1, link: "#Recognitions", text: "Recognition" },
+//   { id: 2, link: "#Membership", text: "Membership to the github" },
+//   {
+//     id: 3,
+//     link: "#Community_member_profile",
+//     text: "Community member profile",
+//   },
+// ];
 
 const CommunityGuide = () => {
   return (
@@ -128,7 +128,7 @@ const CommunityGuide = () => {
           </div>
           <TocPagination />
         </Container>
-        <IntraPage contents={contents} />
+        {/* <IntraPage contents={contents} /> */}
       </div>
     </HandbookWrapper>
   );
