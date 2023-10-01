@@ -216,7 +216,7 @@ export const CardsContainer = styled.div`
     grid-gap: 10px;
 
     .card {
-      box-shadow: rgb(0 0 0 / 5%) 2px 4px 2.5rem 0.5rem;
+      box-shadow: #00B39F 2px 4px 2.5rem 0.5rem;
         margin: 2px;
         padding: 1.5rem;
         background-color: ${props => props.theme.grey212121ToWhite};
@@ -254,6 +254,10 @@ export const CardsContainer = styled.div`
             img { 
                 padding: 0.3rem 0px;
             }
+        }
+        &:hover {
+            box-shadow: white 2px 4px 2.5rem 0.5rem;
+            cursor:pointer
         }
     }
 
