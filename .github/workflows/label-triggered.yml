@@ -48,8 +48,8 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-              Thank you for opening this issue. It has been verified and is considered a valid issue. You can now take action based on the provided issue description. 
-              to description offered in the issue.
+              Thank you for raising this issue. It has been reviewed and confirmed as a valid concern. 
+              You may now proceed with appropriate actions based on the provided issue description
 
   add-comment-help-wanted:
     if: github.event.label.name == 'help-wanted'
@@ -60,7 +60,9 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-             Thank you for opening this issue. It requires special attention, and we appreciate your contribution.
+              Thank you for bringing this matter to our attention. 
+              It merits special consideration, and we genuinely value your 
+              input and contribution.
 
 
       - name: View context attributes
