@@ -65,6 +65,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "gbimage-bridge": "^0.2.2",
     "gsap": "^3.12.2",
+    "joi": "^17.10.2",
     "js-search": "^2.0.0",
     "lodash": "^4.17.21",
     "prism-react-renderer": "^2.0.6",
