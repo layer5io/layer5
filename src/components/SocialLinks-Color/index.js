@@ -13,7 +13,7 @@ import SocialLinksWrapper from "./sociallinkscolor.style";
 const SocialLinksColor = () => {
   return (
     <SocialLinksWrapper>
-      <Col xs={12}>
+      <Col $xs={12}>
         <Row className="social_icons">
           <a
             href="https://discuss.layer5.io"

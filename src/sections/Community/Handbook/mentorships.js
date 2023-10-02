@@ -133,14 +133,14 @@ const MentorshipPrograms = () => {
               <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
                   <Row>
-                    <Col lg={6} md={6} sm={12} id="col1">
+                    <Col $lg={6} $md={6} $sm={12} id="col1">
                       <div className="text">
                         <h2>{name}</h2>
                         <p>{description}</p>
-                        <Button primary id="learn" type="button" title="Learn More" url={buttonLink} />
+                        <Button $primary id="learn" type="button" title="Learn More" $url={buttonLink} />
                       </div>
                     </Col>
-                    <Col lg={6} md={6} sm={12} id="col2">
+                    <Col $lg={6} $md={6} $sm={12} id="col2">
                       { isValidElement(imageLink)
                         ? imageLink
                         :  <img src={imageLink} title="Click to know More about our partner" alt={name} />

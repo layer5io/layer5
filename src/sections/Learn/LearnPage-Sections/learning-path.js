@@ -90,13 +90,13 @@ const LearningPaths = () => {
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col sm={6} key={tutorial.id}>
+            <Col $sm={6} key={tutorial.id}>
               <CardComponent tutorial={tutorial} path={`learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
         </Row>
         <div className="see-more-button">
-          <Button primary title="Checkout all learning paths" url="/learn/learning-paths" />
+          <Button $primary title="Checkout all learning paths" $url="/learn/learning-paths" />
         </div>
       </Container>
     </LearningPathsWrapper>

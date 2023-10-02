@@ -12,7 +12,7 @@ const BooksPage = ({ hide_path }) => {
     graphql`query allBooks {
   allMdx(
     filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
-    sort: {fields: [frontmatter___date], order: ASC}
+    sort: {frontmatter: {date: ASC}}
   ) {
     nodes {
       id
@@ -33,8 +33,7 @@ const BooksPage = ({ hide_path }) => {
       }
     }
   }
-}
-`
+}`
   );
 
   let path = hide_path ? "" : "Books";

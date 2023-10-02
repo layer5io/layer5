@@ -136,10 +136,10 @@ const Calendar = () => {
       <br />
       <Container>
         <Row className="newcomers-section">
-          <Col xs={12} lg={6} className="map">
+          <Col $xs={12} $lg={6} className="map">
             <NewcomersMap />
           </Col>
-          <Col xs={12} lg={6} className="text">
+          <Col $xs={12} $lg={6} className="text">
             <div>
               <h1>Newcomers Welcome!</h1>
               <h3>Are you new to the community?</h3>
@@ -147,7 +147,7 @@ const Calendar = () => {
                 Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                 and engage in the community and projects.
               </p>
-              <Button primary title="See All Newcomers Resources" url="/community/newcomers">
+              <Button $primary title="See All Newcomers Resources" $url="/community/newcomers">
                 <FaUsers size={21} className="icon-left" />
               </Button>
             </div>

@@ -219,13 +219,13 @@ const MesheryPlatforms = () => {
   return (
     <MesheryPlatformsWrapper>
       <div className="content">
-        <Row Hcenter className="step-1">
+        <Row $Hcenter className="step-1">
           <p>1 step install to managing service meshes</p>
           <h2><span>Step 1:</span> Choose your platform</h2>
         </Row>
         <Row className="supported-platforms">
           {supported_platforms.map((platform, index) => (
-            <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
+            <Col $xs={6} $sm={4} $md={3} $lg={2} key={platform.name}>
               <Button
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
                   ? "single-platform single-platform-selected " : "single-platform "}
@@ -240,7 +240,7 @@ const MesheryPlatforms = () => {
             {currentPlatform.name && currentPlatform.steps}
           </Row>
         </Container>
-        <Row Hcenter className="step-2">
+        <Row $Hcenter className="step-2">
           <Col>
             <h2><span>Step 2:</span> Manage your mesh</h2>
             <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />

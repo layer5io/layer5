@@ -26,9 +26,9 @@ const Button = ({
   return (
     <React.Fragment>
       {
-        props.url ?
-          (props.external ?
-            <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a> : <Link to={props.url}>{initalButton}</Link>)
+        props.$url ?
+          (props.$external ?
+            <a href={props.$url} target="_blank" rel="noreferrer">{initalButton}</a> : <Link to={props.$url}>{initalButton}</Link>)
           : initalButton
       }
     </React.Fragment>

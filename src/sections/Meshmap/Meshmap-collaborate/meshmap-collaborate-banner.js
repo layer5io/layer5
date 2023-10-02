@@ -195,7 +195,7 @@ const MeshmapCollaborateBanner = () => {
         <div className="banner-text">
           <h1>Collaborate with the team. <br /> Build solutions together </h1>
           <h4>Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.</h4>
-          <Button primary className="join-community-button" title="Start Collaborating" url="https://play.meshery.io/" />
+          <Button $primary className="join-community-button" title="Start Collaborating" $url="https://play.meshery.io/" $external={true} />
         </div>
         <div className="transition-container" ref={transitionRef}>
           <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />

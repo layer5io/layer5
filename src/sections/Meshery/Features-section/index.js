@@ -59,13 +59,13 @@ const FeaturesSection = () => {
         <div className="smp-section">
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
-            <Col xs={12} xl={4} className="smp-section-data">
+            <Col $xs={12} $xl={4} className="smp-section-data">
               <h2>The Performance Yardstick: MeshMark</h2>
               <p>
                 Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your          application across different cloud native infrastructure. Compare and manage cloud native overhead.
               </p>
             </Col>
-            <Col xs={12} xl={8} className="smp-section-caraousel">
+            <Col $xs={12} $xl={8} className="smp-section-caraousel">
               <Slider {...settings}>
                 <div>
                   <img src={Slide1} alt="Slide 1" />
@@ -87,14 +87,14 @@ const FeaturesSection = () => {
             <p>Confidently take full advantage of all that your infrastructure offers.</p>
           </div>
           <div className="mesh-mngmnt-btn">
-            <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Install" url="/cloud-native-management/meshery/getting-started" />
+            <Col $xs={12} $sm={6} $md={4}>
+              <Button $secondary className="mgmt_button" title="Install" $url="/cloud-native-management/meshery/getting-started" />
             </Col>
-            <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-service-meshes" />
+            <Col $xs={12} $sm={6} $md={4}>
+              <Button $secondary className="mgmt_button" title="Manage" $url="/cloud-native-management/meshery/operating-service-meshes" />
             </Col>
-            <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />
+            <Col $xs={12} $sm={6} $md={4}>
+              <Button $secondary className="mgmt_button" title="Patterns" $url="/learn/service-mesh-books/service-mesh-patterns" />
             </Col>
           </div>
         </div>

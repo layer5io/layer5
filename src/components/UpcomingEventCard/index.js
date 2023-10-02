@@ -3,7 +3,7 @@ import Image from "../image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel } from "swiper";
+import { Pagination, Mousewheel } from "swiper/modules";
 import { Link } from "gatsby";
 import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
@@ -40,7 +40,7 @@ const UpcomingEvents = ({ data }) => {
                           {item.body}
                         </MDXRenderer>
                       </div>
-                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" external={true} />
+                      <Button $secondary className="blog-slider_button" $url={item.frontmatter.eurl} title="Join Now" $external={true} />
                     </div>
                   </div>
                 </SwiperSlide>

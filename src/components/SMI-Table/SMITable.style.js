@@ -5,8 +5,9 @@ overflow-x: auto;
 overflow-y: hidden;
 
 .smiMark {
-	height: 70%;
-	max-height:2.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+ 	max-height:2.5rem;
 }
 
 .gatsby-image-wrapper {

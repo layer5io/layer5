@@ -107,7 +107,7 @@ const CTA_Bottom = ({ alt, button_text, category, content, external_link, image,
               <h3>{Categories[category]["Heading"]}</h3>
               <p>{Categories[category]["Content"]}</p>
             </div>
-            <Button primary title={Categories[category]["Button_Text"]} url={Categories[category]["Link"]} external={Categories[category]["Link_external"]} />
+            <Button $primary title={Categories[category]["Button_Text"]} $url={Categories[category]["Link"]} $external={Categories[category]["Link_external"]} />
           </div>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
         </>
@@ -118,7 +118,7 @@ const CTA_Bottom = ({ alt, button_text, category, content, external_link, image,
               <h3>{heading ? heading : defaultHeading}</h3>
               <p>{content ? content : defaultContent}</p>
             </div>
-            <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={external_link ? true : false} />
+            <Button $primary title={button_text ? button_text : "Join Us"} $url={url ? url : defaultURL} $external={external_link ? true : false} />
           </div>
           <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
         </>

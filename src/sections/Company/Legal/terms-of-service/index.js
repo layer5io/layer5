@@ -11,7 +11,7 @@ const Conduct = () => {
       />
       <Container>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Agreement between User and Layer5, Inc.</h2>
             </div>
@@ -24,7 +24,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Electronic Communications</h2>
             </div>
@@ -34,7 +34,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Children Under Thirteen</h2>
             </div>
@@ -43,7 +43,7 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>No Unlawful or Prohibited Use/Intellectual Property</h2>
             </div>
@@ -54,7 +54,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>No Unlawful or Prohibited Use/Intellectual Property</h2>
             </div>
@@ -69,7 +69,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>International Users</h2>
             </div>
@@ -79,7 +79,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Indemnification</h2>
             </div>
@@ -89,7 +89,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Class Action Waiver</h2>
             </div>
@@ -99,7 +99,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Liability Disclaimerr</h2>
             </div>
@@ -111,7 +111,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Termination/Access Restriction</h2>
             </div>
@@ -123,7 +123,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Changes to Terms</h2>
             </div>
@@ -133,7 +133,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Contact Us</h2>
             </div>

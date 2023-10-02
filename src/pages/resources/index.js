@@ -33,10 +33,10 @@ const MembersPage = () => {
       <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml" />
       <Container>
         <Row>
-          <Col xs={12} lg={3}>
+          <Col $xs={12} $lg={3}>
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
-          <Col xs={12} lg={9}>
+          <Col $xs={12} $lg={9}>
             <ResourcesList  resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>

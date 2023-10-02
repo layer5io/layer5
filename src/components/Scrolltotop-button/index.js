@@ -14,9 +14,9 @@ const ScrollToTopBtn = () => {
     <>
       {shouldRender && (
         <BackToTopButton
-          isMounted={isMounted}
+          $isMounted={isMounted}
           aria-label="back-to-top"
-          delay={delay}
+          $delay={delay}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <IoIosArrowUp color={"#fff"} size={24}/>

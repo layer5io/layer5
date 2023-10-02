@@ -15,32 +15,32 @@ const HowMesheryWorksSpecs = () => {
     <SpecsWrapper>
       <div className="management-plane">
         <Container>
-          <Row Vcenter>
-            <Col className="text" xs={12} lg={6}>
+          <Row $Vcenter>
+            <Col className="text" $xs={12} $lg={6}>
               <h2>Meshery is the cloud native management plane</h2>
               <p>Adopt and operate cloud native infrastructure with confidence using Meshery's intuitive management features</p>
             </Col>
-            <Col className="card" xs={12} lg={6}>
+            <Col className="card" $xs={12} $lg={6}>
               <DataCard />
             </Col>
           </Row>
         </Container>
       </div>
       <Container>
-        <Row className="cloud-native" Vcenter>
-          <Col xs={12} lg={6}>
+        <Row className="cloud-native" $Vcenter>
+          <Col $xs={12} $lg={6}>
             <h3>Service meshes will be commonplace cloud native and edge infrastructure</h3>
             <p>Today: Over 40% of the enterprises run cloud native technologies in production; Over 80% of those enterprises running Kubernetes</p>
           </Col>
-          <Col xs={12} lg={6}>
+          <Col $xs={12} $lg={6}>
             <img src={MesheryImage1} alt="Meshery Img" />
           </Col>
         </Row>
-        <Row className="cloud-native" Vcenter>
-          <Col xs={12} lg={6}>
+        <Row className="cloud-native" $Vcenter>
+          <Col $xs={12} $lg={6}>
             <img src={MesheryImage2} alt="Meshery Img" />
           </Col>
-          <Col xs={12} lg={6}>
+          <Col $xs={12} $lg={6}>
             <h3>Begin Your Cloud Native Journey</h3>
             <p>Tomorrow: 70% of cloud native environments running a service mesh in three years</p>
           </Col>
@@ -53,7 +53,7 @@ const HowMesheryWorksSpecs = () => {
               you’ll find a service mesh.</h3>
             <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
             <VintageBox left={true} vintageTwo={true} >
-              <Button primary url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
+              <Button $primary $url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
             </VintageBox>
           </div>
         </div>

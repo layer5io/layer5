@@ -35,7 +35,7 @@ const ButtonStyle = styled.button`
         margin-left: 8px;
     }
 
-    ${props => props.primary && css`
+    ${props => props.$primary && css`
         color: ${props => props.theme.black};
         background: ${props => props.theme.highlightColor};
 
@@ -51,7 +51,7 @@ const ButtonStyle = styled.button`
         }
         
     `}
-    ${props => props.secondary && css`
+    ${props => props.$secondary && css`
         color: white; 
         background: ${props.theme.secondaryColor}; 
         &:hover{

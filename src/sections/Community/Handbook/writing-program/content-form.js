@@ -139,7 +139,7 @@ const ContentForm = () => {
             <Field type="text" className="text-field" id="comments" name="comment" />
 
             <div className="form-submit">
-              <Button secondary className="btn" title="Submit" />
+              <Button $secondary className="btn" title="Submit" />
             </div>
           </Form>
         </Formik>

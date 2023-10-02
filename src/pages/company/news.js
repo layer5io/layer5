@@ -7,7 +7,7 @@ import NewsPage from "../../sections/Company/News-grid";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query allNews {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
@@ -39,8 +39,7 @@ export const query = graphql`query allNews {
       }
     }
   }
-}
-`;
+}`;
 const NewsGridPage = ({ data }) => {
   return (
     <>

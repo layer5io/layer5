@@ -103,7 +103,7 @@ const LearnPathsPage = () => {
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col sm={6} key={tutorial.id}>
+            <Col $sm={6} key={tutorial.id}>
               <CardComponent tutorial={tutorial} path={tutorial.fields.learnpath} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
@@ -120,7 +120,7 @@ const LearnPathsPage = () => {
           <div className="service-mesh-patterns_text-and_button">
             <h1>Use Cloud Native Patterns</h1>
             <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.</p>
-            <Button secondary title="Visit Cloud Native Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
+            <Button $secondary title="Visit Cloud Native Patterns website" $url="https://service-mesh-patterns.github.io/service-mesh-patterns/" $external={true} />
           </div>
         </div>
         <JoinCommunity

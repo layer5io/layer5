@@ -13,7 +13,7 @@ const Conduct = () => {
       />
       <Container>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Purpose</h2>
             </div>
@@ -31,7 +31,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Collection of your data</h2>
             </div>
@@ -53,7 +53,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Use and purpose of collected data</h2>
             </div>
@@ -71,7 +71,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Reporting and Enforcement</h2>
             </div>
@@ -84,7 +84,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Information choices and changes</h2>
             </div>
@@ -106,7 +106,7 @@ const Conduct = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} lg={12}>
+          <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
               <h2>Contact information</h2>
             </div>

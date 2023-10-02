@@ -101,7 +101,10 @@ function SMI_Compatibility() {
       {
         Object.keys(smiData).map(ver =>
           <TabPanel key={ver}>
-            <Table columns={columns} data={smiData[ver]} spec={{ "traffic-access": Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split": Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec": Object.values(smiData[ver])[0].more_details[2].smi_version }} />
+            <Table columns={columns} data={smiData[ver]} spec={{
+              "traffic-access": Object.values(smiData[ver])[0].more_details[0].smi_version,
+              "traffic-split": Object.values(smiData[ver])[0].more_details[1].smi_version,
+              "traffic-spec": Object.values(smiData[ver])[0].more_details[2].smi_version }} />
           </TabPanel>
         )}
     </Tabs>

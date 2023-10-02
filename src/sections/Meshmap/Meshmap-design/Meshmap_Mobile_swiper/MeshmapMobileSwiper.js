@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperContainer from "./mobile-swiper.style.js";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { EffectCards, Pagination, Navigation, Autoplay } from "swiper";
+import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
 import dragDrop from "../images/drag-drop-components.gif";
 import mergeDesign from "../images/merge-design.gif";
 import connectComponents from "../images/connect-components.gif";

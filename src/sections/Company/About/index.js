@@ -19,16 +19,16 @@ const About = () => {
 
   return (
     <AboutSectionWrapper id="about">
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12}>
-            <Row Vcenter={true} className="row-img-cont-1">
-              <Col xs={12} sm={6}>
-                <div className="head-images">
-                  <img src={FiveIcon} alt="About Layer5" />
-                </div>
+      <Container $fullWidthSM>
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12}>
+            <Row $Vcenter={true} className="row-img-cont-1">
+              <Col $xs={12} $sm={6}>
+                {/* <div className="head-images"> */}
+                <img src={FiveIcon} alt="About Layer5" />
+                {/* </div> */}
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>
@@ -66,8 +66,8 @@ const About = () => {
               alt="About Layer5 Projects"
               className="About-projects"
             />
-            <Row Vcenter={true} className="row-img-cont-2">
-              <Col xs={12} sm={6}>
+            <Row $Vcenter={true} className="row-img-cont-2">
+              <Col $xs={12} $sm={6}>
                 <img
                   loading="lazy"
                   src={Layer5Projects}
@@ -98,7 +98,7 @@ const About = () => {
                   </p>
                 </div>
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="head-images-2">
                   <img
                     src={communityStat}
@@ -112,11 +112,11 @@ const About = () => {
         </Row>
       </Container>
       <Statement />
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12}>
-            <Row Vcenter={true} className="row-img-cont-1">
-              <Col xs={12} sm={6}>
+      <Container >
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12}>
+            <Row $Vcenter={true} className="row-img-cont-1">
+              <Col $xs={12} $sm={6}>
                 <div className="head-images-meet">
                   <StaticImage
                     src={Community_meetup}
@@ -129,7 +129,7 @@ const About = () => {
                   </figcaption>
                 </div>
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
@@ -154,13 +154,13 @@ const About = () => {
         </Row>
       </Container>
       <WhoWeAre />
-      <Container fullWidthSM>
-        <Row Vcenter={true}>
-          <Col xs={12} sm={12}>
+      <Container >
+        <Row $Vcenter={true}>
+          <Col $xs={12} $sm={12}>
             <SectionTitle
               className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
+              $leftAlign={false}
+              $UniWidth="100%"
             >
               <h1>Collaborate</h1>
               <p className="colab">
@@ -181,13 +181,13 @@ const About = () => {
         </Row>
       </Container>
 
-      <Container fullWidthSM>
-        <Row Vcenter={true} className="aboutus-title">
-          <Col xs={12} sm={12}>
+      <Container $fullWidthSM>
+        <Row $Vcenter={true} className="aboutus-title">
+          <Col $xs={12} $sm={12}>
             <h1 className="bottom-sect-head">Locations</h1>
             <div>
               <Row className="location-row">
-                <Col xs={12} sm={6}>
+                <Col $xs={12} $sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
                       <img
@@ -209,7 +209,7 @@ const About = () => {
                     </div>
                   </div>
                 </Col>
-                <Col xs={12} sm={6}>
+                <Col $xs={12} $sm={6}>
                   <div className="footer-section">
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
                       <img
@@ -238,20 +238,19 @@ const About = () => {
           </Col>
         </Row>
         <Row className="contactButton section-bottom ">
-          <Col xs={12} sm={12}>
+          <Col $xs={12} $sm={12}>
             <SectionTitle
               className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
+              $leftAlign={false}
+              $UniWidth="100%"
             >
               {" "}
               <Button
-                primary
-                id="contact"
+                $primary                id="contact"
                 className="about-button"
-                url="/company/contact"
+                $url="/company/contact"
                 title="Contact Us"
-                external={false}
+                $external={false}
               />
             </SectionTitle>
           </Col>

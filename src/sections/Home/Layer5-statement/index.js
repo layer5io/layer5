@@ -14,7 +14,7 @@ const BannerDefault = () => {
     <BannerSectionWrapper>
       <div className="section">
         <Row className="row">
-          <Col sm={12} md={6} lg={6} className="left-col">
+          <Col $sm={12} $md={6} $lg={6} className="left-col">
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
@@ -22,8 +22,8 @@ const BannerDefault = () => {
                 </div>
                 <SectionTitle
                   className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
+                  $leftAlign={true}
+                  $UniWidth="100%"
                 >
                   <h4 className="statement">We make cloud native manageable by </h4>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
@@ -38,13 +38,13 @@ const BannerDefault = () => {
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="our projects" url="/projects" />
+                    <Button $primary className="join-community-button" title="our projects" $url="/projects" />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={6} className="right-col">
+          <Col $sm={12} $md={6} $lg={6} className="right-col">
             <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" loading="lazy" />
           </Col>
         </Row>

@@ -13,32 +13,24 @@ const FiveandFriendsAdventures = "../../../assets/images/blog/five-and-friends.p
 
 const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(
-    graphql`
-      query allTagsAndCategories {
-        tags: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-          }
-        }
-        categories: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___category) {
-            fieldValue
-            totalCount
-          }
-        }
-      }
-    `
+    graphql`query allTagsAndCategories {
+  tags: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+  categories: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {category: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+}`
   );
 
   const [showTag, setShowTag] = useState(true);
@@ -147,7 +139,7 @@ const Sidebar = ({ pageContext }) => {
               }
               onInput={(e) => e.target.setCustomValidity("")}
             />
-            <Button secondary title="Subscribe" aria-label="subscribe-us" id="mc-embedded-subscribe" />
+            <Button $secondary title="Subscribe" aria-label="subscribe-us" id="mc-embedded-subscribe" />
           </div>
         </form>
       </div>

@@ -328,8 +328,7 @@ const IntegrationsGrid = ({ category, count }) => {
                       <div className="integration-content">
                         <div className="title">{item.frontmatter.title}</div>
                         {/* <Button
-                        secondary
-                        title="Learn More"
+                        $secondary                        title="Learn More"
                         className="learnMoreBtn"
                       /> */}
                       </div>

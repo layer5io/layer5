@@ -14,14 +14,14 @@ const MesheryBrand = () => {
   return (
     <div className="post-content">
       <Row className="brand-section">
-        <Col xs={12} sm={6}>
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
                         Meshery
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshery-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -44,19 +44,19 @@ const MesheryBrand = () => {
           </h2>
         </Col>
         <SRLWrapper>
-          <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
+          <Row $Vcenter className="ImgDiv">
+            <Col $xs={12} $sm={4}>
               <img src={MeshDarkText} alt="MesheryDark Logo"/>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
             </Col>
           </Row>
-          <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
+          <Row $Vcenter className="ImgDiv">
+            <Col $xs={12} $sm={4}>
               <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
             </Col>
-            <Col xs={12} sm={4}>
+            <Col $xs={12} $sm={4}>
               <img src={MeshLogoOnly} alt="Meshery Logo" />
             </Col>
           </Row>
@@ -70,7 +70,7 @@ const MesheryBrand = () => {
         </Col>
         <Col>
           <p>
-            The Meshery color palette consists of the primary Meshery color
+            The Meshery color palette consists of the $primary Meshery color
             and additional shades. The Meshery logo should be white or
             monochrome tonal when using a color background.
           </p>

@@ -22,7 +22,7 @@ const Navigation = () => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "service-mesh-books"}}}
     limit: 2
   ) {
@@ -32,11 +32,7 @@ const Navigation = () => {
         title
         thumbnail {
           childImageSharp {
-            gatsbyImageData(
-              width: 1050
-              height:1360
-              layout: CONSTRAINED
-            )
+            gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
           }
           publicURL
         }
@@ -47,7 +43,7 @@ const Navigation = () => {
     }
   }
   Community: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
     limit: 2
   ) {
@@ -74,8 +70,8 @@ const Navigation = () => {
     }
   }
   Resources: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {featured: {eq: true}}}
     limit: 2
   ) {
     nodes {
@@ -101,7 +97,7 @@ const Navigation = () => {
     }
   }
   Home: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
     limit: 2
   ) {
@@ -127,8 +123,7 @@ const Navigation = () => {
       }
     }
   }
-}
-`
+}`
   );
   data["Products"] = {
     nodes: [
@@ -159,6 +154,7 @@ const Navigation = () => {
   data["Solutions"] = {
     nodes: []
   };
+
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -176,7 +172,8 @@ const Navigation = () => {
       }
     };
 
-    expand && document.addEventListener("click", outsideClickHandler);
+    expand && setTimeout(() => document.addEventListener("click", outsideClickHandler));
+
     return () => {
       document.removeEventListener("click", outsideClickHandler);
     };
@@ -184,7 +181,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
+      window.scrollY > 50 ? setScroll(true) : setScroll(false)
     );
   }, []);
 
@@ -212,13 +209,15 @@ const Navigation = () => {
             {expand ?
               <IoMdClose
                 className="mobile-menu-icon open"
-                onClick={function () {
-                  setExpand(false); closeDropDown();
+                onClick={() =>  {
+                  setExpand(false);
+                  closeDropDown();
                 }}
               /> : <FaBars
                 className="mobile-menu-icon"
-                onClick={function () {
-                  setExpand(true); openDropDown();
+                onClick={() => {
+                  setExpand(true);
+                  openDropDown();
                 }}
               />
             }
@@ -226,8 +225,6 @@ const Navigation = () => {
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
                   {Data.menuItems.map((menu, index) => (
-
-
                     <li
                       key={index}
                       className={
@@ -264,7 +261,7 @@ const Navigation = () => {
                 <div>
                   <ul>
                     <li>
-                      <Button id="get-started" secondary className="banner-btn two" title="Get Started" url="https://meshery.layer5.io/registration" external={true} />
+                      <Button id="get-started" $secondary className="banner-btn two" title="Get Started" $url="https://meshery.layer5.io/registration" $external={true} />
                     </li>
                   </ul>
                 </div>
@@ -287,18 +284,15 @@ const Navigation = () => {
 
         </div>
         <div className="meshery-cta">
-          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" secondary className="banner-btn two" external={true} title="Get Started" alt="Signup for Layer5 Cloud" url="https://meshery.layer5.io/registration" />
+          <Button id="get-started-2" aria-label="Signup for Layer5 Cloud" $secondary className="banner-btn two" $external={true} title="Get Started" alt="Signup for Layer5 Cloud" $url="https://meshery.layer5.io/registration" />
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}
-          <Button id="book-a-demo" aria-label="Meshery Playground" secondary className="banner-btn book-a-demo" external={true} title="Playground" alt="Meshery Playground" url="https://play.meshery.io" />
+          <Button id="book-a-demo" aria-label="Meshery Playground" $secondary className="banner-btn book-a-demo" $external={true} title="Playground" alt="Meshery Playground" $url="https://play.meshery.io" />
           <div className="dark-theme-toggle">
             <input id="toggle" className="toggle" type="checkbox" aria-label="toggle-dark-mode" onChange={themeToggler} checked={!isDark} />
           </div>
         </div>
-
       </Container>
-
     </NavigationWrap>
-
   );
 };
 

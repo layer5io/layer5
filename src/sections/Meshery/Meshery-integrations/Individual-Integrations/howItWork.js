@@ -222,13 +222,13 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
         </div>
         <div className="integration-section">
           <Row className="integration-section-row">
-            <Col xs={12} xl={4} className="integration-section-data">
+            <Col $xs={12} $xl={4} className="integration-section-data">
               <h3>{howitworks != null ? howitworks : "Docker with Meshery" }</h3>
               <p>
                 {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
-            <Col xs={12} xl={8} className="integration-section-caraousel">
+            <Col $xs={12} $xl={8} className="integration-section-caraousel">
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>

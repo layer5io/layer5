@@ -16,7 +16,7 @@ const ResourceSingle = ({ data }) => {
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "resources"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
@@ -46,8 +46,7 @@ const ResourceSingle = ({ data }) => {
       }
     }
   }
-}
-`
+}`
   );
 
   const resources = resourceData.allMdx.nodes;

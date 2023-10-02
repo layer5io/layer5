@@ -9,7 +9,6 @@ const About = () => {
     <>
       <AboutSection  />
       <StewardsOfIndustry />
-
     </>
   );
 };

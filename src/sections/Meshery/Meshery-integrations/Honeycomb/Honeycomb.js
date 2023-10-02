@@ -46,7 +46,7 @@ const Honeycomb = (props) => {
 
   return (
     <div>
-      <HoneycombGrid height={height}>
+      <HoneycombGrid $height={height}>
         <ul ref={gridRef}>
           {items.map((item, key) => (
             <li key={key}>{renderItem(item)}</li>

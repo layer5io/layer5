@@ -86,14 +86,13 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            url={`istio/${course.frontmatter.toc[0]}`}
+            $url={`istio/${course.frontmatter.toc[0]}`}
           />
           {hasBookmark && (
             <Button
               className="start-again-button"
-              primary
-              title="Resume"
-              url={bookmarkUrl}
+              $primary              title="Resume"
+              $url={bookmarkUrl}
             />
           )}
         </div>
@@ -106,7 +105,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
       </div>
       <div className="content-section-container" id="toc">
         <Row className="content-section">
-          <Col md={12} lg={8} xl={7}>
+          <Col $md={12} $lg={8} $xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>
               <MDXRenderer>{course.body}</MDXRenderer>
@@ -121,7 +120,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               </Link>
             ))}
           </Col>
-          <Col md={12} lg={4} xl={5}>
+          <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
               <h2>Service Meshes You can Learn</h2>
               <ServiceMeshesAvailable
@@ -131,10 +130,9 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
               <Button
-                secondary
-                title="Join The Community"
-                url="https://slack.layer5.io/"
-                external={true}
+                $secondary                title="Join The Community"
+                $url="https://slack.layer5.io/"
+                $external={true}
               />
             </div> */}
             <DiscussCallout />

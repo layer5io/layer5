@@ -102,7 +102,7 @@ const MeshMapCTA = () => {
           <div className="text">
             <h2><span>MeshMap</span> is here!</h2>
             <h3 className="subtext">Discover a catalog of best practice cloud native patterns.</h3>
-            <Button primary url="/meshmap" className="button" external={false}>
+            <Button $primary $url="/meshmap" className="button" $external={false}>
               Try MeshMap Now!
             </Button>
 

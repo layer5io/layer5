@@ -8,19 +8,19 @@ margin-right: auto;
 width: 40%;
 text-align: center;
 
-${props => (props.rightAlign && css (
+${props => (props.$rightAlign && css (
   {
     "text-align": "right"
   }
 ))}
-${props => (props.leftAlign && css (
+${props => (props.$leftAlign && css (
   {
     "text-align": "left"
   }
 ))}
-${props => (props.UniWidth && css (
+${props => (props.$UniWidth && css (
   {
-    "width": props.UniWidth
+    "width": props.$UniWidth
   }
 ))}
 

@@ -19,14 +19,14 @@ const MesheryOperatorBrand = () => {
     <MesheryOperatorWrapper>
       <div className="post-content">
         <Row className="sub-project brand-section">
-          <Col xs={12} sm={6}>
+          <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
             Meshery Operator
             </h2>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshery-operator-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -49,11 +49,11 @@ const MesheryOperatorBrand = () => {
             </h3>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv">
-              <Col xs={12} sm={4}>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
                 <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
               </Col>
-              <Col xs={12} sm={4} className="logo">
+              <Col $xs={12} $sm={4} className="logo">
                 <img src={MesheryOperator} alt="MesheryOperator Logo"/>
               </Col>
             </Row>
@@ -67,7 +67,7 @@ const MesheryOperatorBrand = () => {
           </Col>
           <Col>
             <p>
-              The Meshery Operator color palette consists of the primary Meshery Operator color
+              The Meshery Operator color palette consists of the $primary Meshery Operator color
               and additional shades. The Meshery Operator logo should be white or
               monochrome tonal when using a color background.
             </p>

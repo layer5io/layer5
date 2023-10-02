@@ -45,8 +45,8 @@ const Testimonial = () => {
     <TestimonialWrapper id="testimonial">
       <Container>
         <Row>
-          <Col xs={12}>
-            <SectionTitle leftAlign={true} className="testmonial__heading">
+          <Col $xs={12}>
+            <SectionTitle $leftAlign={true} className="testmonial__heading">
               <h4>Testimonial</h4>
               <h2>
                 <span>What our users are</span> saying

@@ -5,45 +5,40 @@ import SEO from "../components/seo";
 import BlogList from "../sections/Blog/Blog-list";
 import { graphql } from "gatsby";
 
-export const query = graphql`
-  query BlogsByCategory($category: String!) {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        fields: { collection: { eq: "blog" } }
-        frontmatter: { category: { eq: $category }, published: { eq: true } }
+export const query = graphql`query BlogsByCategory($category: String!) {
+  allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {category: {eq: $category}, published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      body
+      frontmatter {
+        title
+        subtitle
+        date(formatString: "MMMM Do, YYYY")
+        author
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
       }
-    ) {
-      nodes {
-        id
-        body
-        frontmatter {
-          title
-          subtitle
-          date(formatString: "MMMM Do, YYYY")
-          author
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            extension
-            publicURL
-          }
-          darkthumbnail {
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
-            extension
-            publicURL
-          }
-        }
-        fields {
-          slug
-        }
+      fields {
+        slug
       }
     }
   }
-`;
+}`;
 
 const BlogListPage = ({ pageContext, data }) => {
 

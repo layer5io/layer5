@@ -266,21 +266,21 @@ const ServiceMesh = () => {
       <div className="info">
         <Container>
           <Row>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h3>Factors of your service mesh's functionality</h3>
             </Col>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h4>it depends...</h4>
               <p>At this point, you might be thinking, “I have a container orchestrator. Why do I need another infrastructure layer?” </p>
             </Col>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h4>Service-level needs</h4>
               <p>With microservices and containers mainstreaming, container orchestrators provide much of what the cluster (nodes and containers) need.</p>
             </Col>
           </Row>
 
           <div className="button">
-            <Button secondary url="#form" title="Take The Full Questionaire" />
+            <Button $secondary $url="#form" title="Take The Full Questionaire" />
           </div>
         </Container>
       </div>
@@ -297,21 +297,21 @@ const ServiceMesh = () => {
       <div className="info">
         <Container>
           <Row>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h3>Factors of your enviroment and workloads</h3>
             </Col>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h4>Service communication</h4>
               <p>The higher volume of service requests that you have to internal and external services there are, the more insight and control you will need and the higher the return on investment your service mesh will deliver.</p>
             </Col>
-            <Col sm={12} md={6} lg={4}>
+            <Col $sm={12} $md={6} $lg={4}>
               <h4>Observability</h4>
               <p>Edge focus—metrics and usage are for response time to clients and request failure rates.</p>
             </Col>
           </Row>
 
           <div className="button">
-            <Button secondary url="#form" title="Take The Full Questionaire" />
+            <Button $secondary $url="#form" title="Take The Full Questionaire" />
           </div>
         </Container>
       </div>
@@ -372,7 +372,7 @@ const ServiceMesh = () => {
                 <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData3}  placeholder="Organization or Company"></input>
                 <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
                 <br/>
-                <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
+                <Button $secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
               </div>
             }
             <div className={!flag ? "blur" : ""}>
@@ -431,7 +431,7 @@ const ServiceMesh = () => {
                 {
                   !submitFlag
                     &&
-                    <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+                    <Button $secondary type="button" onClick={submit} title="Submit &rarr;"/>
                 }
                 {
                   submitFlag
@@ -445,15 +445,15 @@ const ServiceMesh = () => {
       </Container>
 
       <Row className="book_cover">
-        <Col xs={12} sm={6} className="book_col text">
+        <Col $xs={12} $sm={6} className="book_col text">
           <p className="cover">Services-first Network</p>
           <h1>What is A <br></br> Service Mesh?</h1>
           <p>
             Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
           </p>
-          <Button primary className="learn" type="button" title="Learn More" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
+          <Button $primary className="learn" type="button" title="Learn More" $url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
         </Col>
-        <Col xs={12} sm={6} className="book_col book_img">
+        <Col $xs={12} $sm={6} className="book_col book_img">
           <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"} className="bookLink">
             <img src={bookCover} alt="Book Image" />
           </Link>

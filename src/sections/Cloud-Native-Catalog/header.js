@@ -75,7 +75,7 @@ const Header = () => {
       <div className="cloud-native-catalog header">
         <Container>
           <Row className="row">
-            <Col className="col header__detail" md={6}>
+            <Col className="col header__detail" $md={6}>
               <h1 className="header__title">Cloud Native Catalog</h1>
               <p className="header__title_description">
                 Discover top-quality cloud native services for your
@@ -84,14 +84,13 @@ const Header = () => {
               </p>
               <div className="header__button_section">
                 <Button
-                  primary
-                  title="Browse Catalog"
-                  external={true}
-                  url="https://meshery.io/catalog"
+                  $primary                  title="Browse Catalog"
+                  $external={true}
+                  $url="https://meshery.io/catalog"
                 />
               </div>
             </Col>
-            <Col className="col catalog" md={6}>
+            <Col className="col catalog" $md={6}>
               <img src={CatalogCards} alt="catalog" />
             </Col>
           </Row>
