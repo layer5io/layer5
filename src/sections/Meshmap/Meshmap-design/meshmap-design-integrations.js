@@ -4,6 +4,7 @@ import { ReactComponent as IntegrationsImage } from "./images/integration-image-
 import UnderlineImg from "./images/underline.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 // import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const IntegrationsSectionWrapper = styled.div`
@@ -97,10 +98,20 @@ const MeshmapIntegrationsSection = () => {
   const [diagramRef, inView] = useInView({ threshold: 0.6 });
   const [imageInView, setimageInView] = useState(false);
 
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
+  const integrations = useStaticQuery(graphql`
+    query {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "integrations" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        totalCount
+      }
+    }
+  `);
+  if (inView && !imageInView) setimageInView(true);
+  else if (imageInView && !inView) setimageInView(false);
 
   // const { isDark } = useStyledDarkMode();
 
@@ -110,7 +121,7 @@ const MeshmapIntegrationsSection = () => {
         <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
       </div>
       <div className="hero-text">
-        <h1>220+ Built-in Integrations</h1>
+        <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in Integrations</h1>
         <img className="underline-img" src={UnderlineImg}/>
         <h4>Support for all of your Cloud Native Infrastructure and Applications.</h4>
       </div>

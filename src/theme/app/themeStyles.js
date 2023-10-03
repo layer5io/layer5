@@ -9,6 +9,7 @@ const lighttheme = {
   bodyRevert: "#000000",
   body: "#FFFFFF",
   backgroundColor: "#eeeeee",
+  scrollbarColor: "#3c494f",
   // charcoal
   primaryColor: "#3c494f",
 
@@ -235,6 +236,7 @@ export const darktheme = {
   toggleBorder: "#6B8096",
   background: "#999",
   backgroundColor: "rgb(33,33,33)",
+  scrollbarColor: "#00d3a9",
 
   // white
   primaryColor: "#FFFFFF",

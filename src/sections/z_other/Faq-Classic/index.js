@@ -34,7 +34,7 @@ const FaqClassic = () => {
         </SectionTitle>
         <Row Vcenter={true}>
           <Col className="faq-content-block" md={8} sm={12} offsetMd={2}>
-            <Accordion>
+            <Accordion allowZeroExpanded={true} allowMultipleExpanded={false}>
               {data.faqs.map((faq, index) => (
                 <AccordionItem key={index}>
                   <AccordionTitle>

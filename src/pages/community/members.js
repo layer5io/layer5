@@ -8,7 +8,7 @@ import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 // Assets + Icons
-import theme from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 import writerIcon from "../../assets/images/writer-program/writer-program-badge.svg";
 import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
@@ -35,7 +35,7 @@ const options = [
   {
     label: "BADGES",
     value: "",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
     className: "category",
@@ -43,7 +43,7 @@ const options = [
   {
     label: "Community",
     value: "community",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: communityIcon,
     className: "allOptions",
@@ -51,7 +51,7 @@ const options = [
   {
     label: "Writer",
     value: "writer",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: writerIcon,
     className: "allOptions",
@@ -59,7 +59,7 @@ const options = [
   {
     label: "Landscape",
     value: "landscape",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: landscapeIcon,
     className: "allOptions",
@@ -67,7 +67,7 @@ const options = [
   {
     label: "Docker Extension",
     value: "docker-extension",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: dockerExtensionIcon,
     className: "allOptions",
@@ -75,7 +75,7 @@ const options = [
   {
     label: "Image Hub",
     value: "image-hub",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: hubIcon,
     className: "allOptions",
@@ -83,7 +83,7 @@ const options = [
   {
     label: "Docs",
     value: "docs",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: docsIcon,
     className: "allOptions",
@@ -91,7 +91,7 @@ const options = [
   {
     label: "Meshery",
     value: "meshery",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryIcon,
     className: "allOptions",
@@ -99,7 +99,7 @@ const options = [
   {
     label: "Meshery Catalog",
     value: "meshery-catalog",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryCatalogIcon,
     className: "allOptions",
@@ -107,7 +107,7 @@ const options = [
   {
     label: "Meshery Operator",
     value: "meshery-operator",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryOpIcon,
     className: "allOptions",
@@ -115,7 +115,7 @@ const options = [
   {
     label: "MeshMap",
     value: "meshmap",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: meshMapIcon,
     className: "allOptions",
@@ -123,7 +123,7 @@ const options = [
   {
     label: "Service Mesh Performance",
     value: "smp",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: smpIcon,
     className: "allOptions",
@@ -131,7 +131,7 @@ const options = [
   {
     label: "Nighthawk",
     value: "nighthawk",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: hawkIcon,
     className: "allOptions",
@@ -139,7 +139,7 @@ const options = [
   {
     label: "Service Mesh Patterns",
     value: "patterns",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: patternsIcon,
     className: "allOptions",
@@ -147,7 +147,7 @@ const options = [
   {
     label: "UI/UX'er",
     value: "ui-ux",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: uiuxrIcon,
     className: "allOptions",
@@ -155,7 +155,7 @@ const options = [
   {
     label: "STATUS",
     value: "",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
     className: "category",
@@ -163,7 +163,7 @@ const options = [
   {
     label: "All Members",
     value: "all",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
     className: "allOptions",
@@ -171,7 +171,7 @@ const options = [
   {
     label: "Active",
     value: "active",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: activeIcon,
     className: "allOptions",
@@ -179,7 +179,7 @@ const options = [
   {
     label: "Inactive",
     value: "inactive",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: inactiveIcon,
     className: "allOptions",
@@ -187,7 +187,7 @@ const options = [
   {
     label: "ROLE",
     value: "",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
     className: "category",
@@ -195,7 +195,7 @@ const options = [
   {
     label: "Maintainers",
     value: "maintainers",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: icon5,
     className: "allOptions",
@@ -203,7 +203,7 @@ const options = [
   {
     label: "Meshmates",
     value: "meshmates",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: meshmateIcon,
     className: "allOptions",
@@ -211,7 +211,7 @@ const options = [
   {
     label: "Community Managers",
     value: "community_managers",
-    color: theme.linkColor,
+    color: lighttheme.linkColor,
     isFixed: true,
     icon: communityIcon,
     className: "allOptions",
@@ -233,7 +233,7 @@ const activeMember = {
     </DropdownWrapper>
   ),
   value: "active",
-  color: theme.linkColor,
+  color: lighttheme.linkColor,
   isFixed: true,
   icon: activeIcon && `url(${activeIcon})`,
   className: "allOptions",

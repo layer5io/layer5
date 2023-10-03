@@ -67,7 +67,7 @@ const Faq = (props) => {
             <input type="text" placeholder="Search" />
           </div> */}
         </SectionTitle>
-        <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
+        <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
           {faq_keys.map((key, index) => (
             <React.Fragment key={index}>
               <h2 className="category_name">{key}</h2>

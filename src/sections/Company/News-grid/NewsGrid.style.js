@@ -51,6 +51,30 @@ export const NewsPageWrapper = styled.div`
     .search-box-container {
         width: 35%;
     }
+    .post-thumb-block{
+        overflow: hidden;
+        height: 11.5rem;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+
+        .gatsby-image-wrapper{
+            height: 100%;
+            width: 80%;
+            margin: auto;
+            transition: all 0.3s ease-in;
+        }
+        .old-gatsby-image-wrapper{
+            height:100%;
+            width:80%;
+            margin: auto;
+            transition: all 0.3s ease-in;
+        }
+         img{
+            padding: 4px;
+            width: 100%;
+            height: 100%;
+        }
+    }
     
     .post-content-block {
         height: 10rem;

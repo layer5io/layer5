@@ -20,6 +20,7 @@ import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import Asm from "../../assets/images/service-mesh-icons/alibaba-cloud-asm.svg";
 import Tcm from "../../assets/images/service-mesh-icons/tencent-cloud-mesh.svg";
+import Fsm from "../../assets/images/service-mesh-icons/fsm.svg";
 
 
 export const non_functional = [{
@@ -521,5 +522,18 @@ export const non_functional = [{
   ga_1_date: "?",
   commercial: "?",
   category: "Load-Balancers"
-}
+},
+{
+  name: "Flomesh Service Mesh",
+  opensource: "Yes",
+  link: "https://flomesh.io/",
+  governance: "Flomesh",
+  primary_lang: "Go",
+  announce_date: "May 2023",
+  ga_1_date: "May 2023",
+  commercial: "Flomesh",
+  category: "Service Mesh",
+  timeline_order: 25,
+  icon: Fsm
+},
 ];

@@ -5,6 +5,7 @@ export const ProfileCardWrapper = styled.div`
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
        border: 0;
+       filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
     }
 
     .profile-card{
@@ -15,13 +16,30 @@ export const ProfileCardWrapper = styled.div`
         position: relative;
         margin: auto;
         margin-bottom: 2.5rem;
-        background: ${props => props.status === "Active" ? props.theme.grey212121ToGreen3C494F : "gray"};
-        filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
+        background: ${props => props.status === "Active" ? props.theme.grey212121ToGreen3C494F : "gray"};       
         top: 50%;
         transition: 0.3s;
         height: 235px;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        
+       
+        &::before{            
+                   
+                display: ${props => props.status === "Inactive" ? "flex" : "none"};
+                content: "Inactive";
+                position: absolute;
+                line-height: 32px;
+                top: 3px;
+                padding: 4px;
+                right: -7px;
+                width: 278px;                          
+                justify-content: center;
+
+                font-size: 1.5rem;
+                font-weight: bold;            
+                background: linear-gradient(45deg, #5e5d5d, #393939);
+                color: rgb(255, 255, 255);
+                z-index: 10;
+              }             
         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
         }

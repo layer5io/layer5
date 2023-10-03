@@ -24,8 +24,8 @@ text-align: center;
     }
 
     h4 {
-        text-align: right;
-        flex: 0 0 65%;
+        text-align: ${props => props.onlyQuoteIsPresent ? "center" : "right"};
+        flex: ${props => props.onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%"};
         font-weight: 100;
         font-style: italic;
         @media screen and (max-width: 600px) {
@@ -99,11 +99,14 @@ const InlineQuotes = ({ person, title, quote,image }) => {
   }, [inView, quoteInView]);
 
   return (
-    <QuotesWrapper>
+    <QuotesWrapper onlyQuoteIsPresent={!(image || person || title)}>
       <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
-        <hr />
-        <img src={image}></img>
+        {(image || person || title) && <hr />}
+        {
+          image &&
+          <img src={image}></img>
+        }
         <div className="quote-source">
           <h5>{person}</h5>
           <p>{title}</p>

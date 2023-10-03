@@ -1,8 +1,6 @@
 import React from "react";
-
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import PageHeader from "../../../../reusecore/PageHeader";
-
 import TermsWrapper from "../terms.style";
 
 const Conduct = () => {
@@ -14,7 +12,7 @@ const Conduct = () => {
       <Container>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Agreement between User and Layer5, Inc.</h2>
             </div>
             <p>Welcome to meshery.layer5.io. The meshery.layer5.io website (the “Site”) is comprised of various web pages operated by Layer5.io, Inc (“Layer5”). meshery.layer5.io is offered to you conditioned on your acceptance without modification of the terms, conditions, and notices contained herein (the “Terms”). Your use of meshery.layer5.io constitutes your agreement to all such Terms. Please read these terms carefully, and keep a copy of them for your reference.
@@ -27,7 +25,7 @@ const Conduct = () => {
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Electronic Communications</h2>
             </div>
             <p>
@@ -37,7 +35,7 @@ const Conduct = () => {
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Children Under Thirteen</h2>
             </div>
             <h5 className="black-text"></h5>
@@ -46,7 +44,7 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>No Unlawful or Prohibited Use/Intellectual Property</h2>
             </div>
             <h5 className="black-text">Links to Third Party Sites/Third Party Services</h5>
@@ -57,7 +55,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>No Unlawful or Prohibited Use/Intellectual Property</h2>
             </div>
 
@@ -72,7 +70,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>International Users</h2>
             </div>
             <p>
@@ -82,7 +80,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Indemnification</h2>
             </div>
             <p>
@@ -92,7 +90,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Class Action Waiver</h2>
             </div>
             <p>
@@ -102,7 +100,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Liability Disclaimerr</h2>
             </div>
             <p>THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE SITE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN. LAYER5.IO, INC AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE SITE AT ANY TIME.</p>
@@ -114,7 +112,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Termination/Access Restriction</h2>
             </div>
             <p>Layer5 reserves the right, in its sole discretion, to terminate your access to the Site and the related services or any portion thereof at any time, without notice. To the maximum extent permitted by law, this agreement is governed by the laws of the State of California and you hereby consent to the use of the Site. Use of the Site is unauthorized in any jurisdiction that does not give effect to all provisions of these Terms, including, without limitation, this section.</p>
@@ -126,7 +124,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Changes to Terms</h2>
             </div>
             <p>
@@ -136,7 +134,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
-            <div leftAlign={true} className="conduct_heading">
+            <div className="conduct_heading">
               <h2>Contact Us</h2>
             </div>
             <p>Layer5 welcomes your questions or comments regarding the Terms:</p>

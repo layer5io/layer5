@@ -4,6 +4,7 @@ import Button from "../../reusecore/Button";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import FeaturesTable from "./Features-Col";
 
 import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
@@ -38,11 +39,15 @@ const MesheryPage = () => {
                 <FiDownloadCloud size={21} className="button-icon" />
               </Button>
             </Col>
-            <Col lg={6} md={6} className="meshery-hero-img">
-              <video autoPlay muted loop controls className="meshery-video">
+            <Col lg={6} md={6} className="meshery-hero-img desc-text">
+              <video autoPlay muted loop controls className="meshery-video" >
                 <source src={mesheryDemo} type="video/mp4" />
               </video>
               {/* <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" /> */}
+              <Button primary className="banner-btn align-btn"
+                title="Star the Repository" url="https://github.com/meshery/meshery" external="true">
+                <FaGithub size={21} className="button-icon" />
+              </Button>
             </Col>
           </Row>
         </div>
@@ -63,7 +68,7 @@ const MesheryPage = () => {
       <Container>
         <DockerExtensionCTA />
         <InlineQuotes
-          quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
+          quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any cloud native infrastructure with a click of the button and invoke and control load-based performance tests from my desktop."
           person="Maximiliano Churichi"
           title="Software Engineer at HPE"
           image={Maximiliano} />

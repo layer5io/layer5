@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -6,14 +6,20 @@ import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
 import Button from "../../../reusecore/Button";
 import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
+import { ThemeManagerContext, ThemeManagerProvider, ThemeSetting } from "../../../theme/app/ThemeManager";
 
 const Projects = () => {
   const projectsIcon = "./images/projects.svg";
+  const { isDark, didLoad } = useContext(ThemeManagerContext);
 
-  const projectImage2 = "../../../assets/images/app/projects/smp.webp";
+  const projectImage2_light = "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
+  const projectImage2_dark = "../../../assets/images/app/projects/smp.webp";
   const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
   const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
   const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+  if (!didLoad){
+    return null;
+  }
 
   return (
     <ProjectItemWrapper id="projects">
@@ -55,7 +61,13 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage2} alt="SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }} />
+                  <ThemeManagerProvider>
+                    {( isDark ) ? (
+                      <StaticImage loading="lazy" src={projectImage2_light} alt="Light Mode SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }}/>
+                    ) : (
+                      <StaticImage loading="lazy" src={projectImage2_dark} alt="Dark Mode SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }}/>
+                    )}
+                  </ThemeManagerProvider>
                   <p>Cloud Native Performance</p>
                   <h3>Infrastructure Value Measurement</h3>
                 </div>
@@ -85,7 +97,7 @@ const Projects = () => {
         {/* <div className="button">
           <Button secondary url="/projects" title="Learn More" />
         </div> */}
-        <Row>
+        {/* <Row>
           <Col xs={12}>
             <div className="description">
               <div className="button">
@@ -97,7 +109,7 @@ const Projects = () => {
               </p>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </ProjectItemWrapper>
   );

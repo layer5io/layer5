@@ -99,7 +99,7 @@ const LearnPathsPage = () => {
         <PageHeader title="Learning Paths" />
         <div className="learn-subtitle">
           <h3>Learn how to build an application and </h3>
-          <h3>manage it using a service mesh</h3>
+          <h3>manage it using cloud native infrastructure</h3>
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
@@ -118,9 +118,9 @@ const LearnPathsPage = () => {
         />
         <div className="service-mesh-patterns">
           <div className="service-mesh-patterns_text-and_button">
-            <h1>Use Service Mesh Patterns</h1>
-            <p>Service mesh patterns help you get the most out of any service mesh. Each pattern can be used as a template and is customizable.</p>
-            <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
+            <h1>Use Cloud Native Patterns</h1>
+            <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.</p>
+            <Button secondary title="Visit Cloud Native Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
           </div>
         </div>
         <JoinCommunity

@@ -110,6 +110,9 @@ export const ProgramsWrapper = styled.div`
             margin: 0 auto 40px auto;
         }
     }
+    .lfx-timeline_terms{
+        list-style:none;
+    }
     .tutorials-table {
         border-spacing: 0;
         th {

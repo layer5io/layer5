@@ -38,7 +38,8 @@ const CONTENT = [
   },
 ];
 
-
+//readMoreLink is available if link is uncommented below
+// eslint-disable-next-line no-unused-vars
 const Card = ({ title, description, img, readMoreLink }) => {
   return (
     <div className="card">

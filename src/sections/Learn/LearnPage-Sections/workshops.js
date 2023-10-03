@@ -10,6 +10,8 @@ import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
 import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
+import useHasMounted from "../../../utils/useHasMounted";
+
 
 export const WorkshopsListWrapper = styled.div`
 
@@ -60,6 +62,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+        padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -80,7 +83,7 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots {
-				bottom: -2rem;
+				bottom: 2rem;
 			}
 
 			.slick-dots li button:before {
@@ -212,22 +215,17 @@ const WorkshopsSection = () => {
 `
   );
 
-
-  const SlickButtonFix = ({ currentSlide, slideCount, children, ...props }) => (
-    <span {...props}>{children}</span>
-  );
+  const hasMounted = useHasMounted();
 
   var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (<SlickButtonFix>
-      <FiArrowRight />
-    </SlickButtonFix>),
-    prevArrow: (<SlickButtonFix>
-      <FiArrowLeft />
-    </SlickButtonFix>),
+    nextArrow: (
+      <FiArrowRight />),
+    prevArrow: (
+      <FiArrowLeft />),
     responsive: [
       {
         breakpoint: 700,
@@ -265,7 +263,7 @@ const WorkshopsSection = () => {
         </Col>
       </div>
       <div className="feedback-section">
-        <Slider {...settings}>
+        {hasMounted && <Slider {...settings}>
           {
             feedbackData.map((data, index) => {
               return (
@@ -278,7 +276,7 @@ const WorkshopsSection = () => {
               );
             })
           }
-        </Slider>
+        </Slider> }
       </div>
     </WorkshopsListWrapper>
   );

@@ -32,10 +32,12 @@ const MemberSingle = ({ frontmatter }) => {
     github,
     twitter,
     image_path,
+    layer5,
     meshmate,
     linkedin,
     location,
     badges,
+    status,
     bio,
     executive_bio,
   } = frontmatter;
@@ -54,7 +56,7 @@ const MemberSingle = ({ frontmatter }) => {
           <Row>
             <Col xs={12} sm={12} lg={6}>
               <Image
-                className="profile-image"
+                className={status.includes("Inactive") ? "profile-image-inactive" : "profile-image"}
                 {...image_path}
                 imgStyle={{ objectFit: "contain" }}
                 alt={name}
@@ -260,6 +262,13 @@ const MemberSingle = ({ frontmatter }) => {
                     <li>
                       <a href={`https://Linkedin.com/in/${linkedin}`}>
                         <FaLinkedin className="linkedin" size={32} />
+                      </a>
+                    </li>
+                  )}
+                  {layer5 && (
+                    <li>
+                      <a href={`https://meshery.layer5.io/user/${layer5}`}>
+                        <img src={mesheryLogo} alt="meshery-icon"></img>
                       </a>
                     </li>
                   )}
