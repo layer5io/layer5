@@ -132,7 +132,7 @@ const MembersGrid = (props) => {
                 community members are awarded badges as and when they
                 achieve any number of different milestones throughout
                 their journey whether that accomplishment lie within a
-                community activity or an aspect of using or contributing to a project .
+                community activity or an aspect of using or contributing to a project.
                 Every community member, whether contributing with code or not,
                 has the opportunity to obtain any number of badges in
                 recognition of your achievements.
