@@ -114,8 +114,11 @@ const MembersGrid = (props) => {
           <div className="AboutCommunity">
             <div>
               <h3 className="sectionTitle">Recognition Program</h3>
-                <img id="Badge_img" src={badgeImg} alt="Layer5 Community" style={{
-                    marginLeft: "6rem"
+                <img className="Badge_img" src={badgeImg} alt="Layer5 Community" style={{
+                    marginLeft: "3rem",
+                    width: "20.75rem",
+                    height: "auto",
+                    marginTop: 0
               }}/>
             </div>
             <div className="detailsCommunity">

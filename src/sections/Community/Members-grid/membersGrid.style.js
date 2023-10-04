@@ -158,18 +158,13 @@ export const MembersGridWrapper = styled.div`
   .members-profile-cards {
     z-index: -1 !important;
   }
-  #Badge_img {
-    width: 20.75rem;
-    height: auto;
-    margin-top: 0;
-    margin-left: 3rem !important;
-  }
+
   @media only screen and (max-width: 990px) and (min-width: 580px) {
     .members-profile-cards {
       max-width: 550px;
       margin: auto;
     }
-    #Badge_img {
+    .Badge_img {
       margin-left: 0 !important;
     }
   }
@@ -231,7 +226,7 @@ export const MembersGridWrapper = styled.div`
         align-items: center;
         text-align: center !important;
       }
-      #Badge_img {
+      .Badge_img {
         margin-left: 0 !important;
         width:15rem;
       }
