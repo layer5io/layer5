@@ -62,6 +62,11 @@ const MemberSingle = ({ frontmatter }) => {
                     ? "profile-image-inactive"
                     : "profile-image"
                 }
+                className={
+                  status.includes("Inactive")
+                    ? "profile-image-inactive"
+                    : "profile-image"
+                }
                 {...image_path}
                 imgStyle={{ objectFit: "contain" }}
                 alt={name}
@@ -82,158 +87,210 @@ const MemberSingle = ({ frontmatter }) => {
                   <div className="social-bg">
                     <ul className="profile-social-links">
                       {badges.includes("meshery") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryLogo}
-                              alt="Meshery logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/cloud-native-management/meshery">
+                              <img
+                                className="profile-social-links"
+                                src={mesheryLogo}
+                                alt="Meshery logo"
+                              />
+                            </Link>
+                          </li>
+                          <div className="tooltip-text meshery">
+                            Meshery
+                          </div>
+                        </div>
                       )}
                       {badges.includes("smp") && (
-                        <li>
-                          <Link to="/projects/cloud-native-performance">
-                            <img
-                              className="profile-social-links"
-                              src={smpLogo}
-                              alt="Service Mesh Peformance logo"
-                            />
-                          </Link>
-                        </li>
+                        <div class="tooltip">
+                          <li>
+                            <Link to="/projects/service-mesh-performance">
+                              <img
+                                className="profile-social-links"
+                                src={smpLogo}
+                                alt="Service Mesh Peformance logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text smp">
+                            SMP
+                          </span>
+                        </div>
                       )}
                       {badges.includes("image-hub") && (
-                        <li>
-                          <Link to="/projects/image-hub">
-                            <img
-                              className="profile-social-links"
-                              src={imageHubLogo}
-                              alt="Image Hublogo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/projects/image-hub">
+                              <img
+                                className="profile-social-links"
+                                src={imageHubLogo}
+                                alt="Image Hublogo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text image-hub">Image-hub</span>
+                        </div>
                       )}
                       {badges.includes("landscape") && (
-                        <li>
-                          <Link to="/service-mesh-landscape">
-                            <img
-                              className="profile-social-links"
-                              src={landscapeLogo}
-                              alt="Service Mesh Landscape logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/service-mesh-landscape">
+                              <img
+                                className="profile-social-links"
+                                src={landscapeLogo}
+                                alt="Service Mesh Landscape logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text landscape">Landscape</span>
+                        </div>
                       )}
                       {badges.includes("community") && (
-                        <li>
-                          <Link to="/community/community-managers">
-                            <img
-                              className="profile-social-links"
-                              src={communityLogo}
-                              alt="Community logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/community/community-managers">
+                              <img
+                                className="profile-social-links"
+                                src={communityLogo}
+                                alt="Community logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text community">Community</span>
+                        </div>
                       )}
                       {badges.includes("docs") && (
-                        <li>
-                          <Link to="https://docs.meshery.io/">
-                            <img
-                              className="profile-social-links"
-                              src={docsLogo}
-                              alt="Docs logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="https://docs.meshery.io/">
+                              <img
+                                className="profile-social-links"
+                                src={docsLogo}
+                                alt="Docs logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text docs">Docs</span>
+                        </div>
                       )}
                       {badges.includes("meshery-catalog") && (
-                        <li>
-                          <Link to="https://meshery.io/catalog">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryCatalogLogo}
-                              alt="Meshery Catalog logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="https://meshery.io/catalog">
+                              <img
+                                className="profile-social-links"
+                                src={mesheryCatalogLogo}
+                                alt="Meshery Catalog logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text meshery-catalog">
+                            Meshery-catalog
+                          </span>
+                        </div>
                       )}
                       {badges.includes("meshmap") && (
-                        <li>
-                          <Link to="/meshmap">
-                            <img
-                              className="profile-social-links"
-                              src={meshMapLogo}
-                              alt="MeshMap Logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/meshmap">
+                              <img
+                                className="profile-social-links"
+                                src={meshMapLogo}
+                                alt="MeshMap Logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text meshmap">Meshmap</span>
+                        </div>
                       )}
                       {badges.includes("docker-extension") && (
-                        <li>
-                          <Link to="/docker-extension-meshery">
-                            <img
-                              className="profile-social-links"
-                              src={dockerExtensionLogo}
-                              alt="Docker Extension logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/docker-extension-meshery">
+                              <img
+                                className="profile-social-links"
+                                src={dockerExtensionLogo}
+                                alt="Docker Extension logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text docker-extension">
+                            Docker-extension
+                          </span>
+                        </div>
                       )}
                       {badges.includes("nighthawk") && (
-                        <li>
-                          <Link to="/projects/nighthawk">
-                            <img
-                              className="profile-social-links"
-                              src={NighthawkLogo}
-                              alt="Nighthawk logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/projects/nighthawk">
+                              <img
+                                className="profile-social-links"
+                                src={NighthawkLogo}
+                                alt="Nighthawk logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text nighthawk">Nighthawk</span>
+                        </div>
                       )}
                       {badges.includes("meshery-operator") && (
-                        <li>
-                          <Link to="/cloud-native-management/meshery/meshery-operator">
-                            <img
-                              className="profile-social-links"
-                              src={mesheryOperatorLogo}
-                              alt="Meshery Operator logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/cloud-native-management/meshery/meshery-operator">
+                              <img
+                                className="profile-social-links"
+                                src={mesheryOperatorLogo}
+                                alt="Meshery Operator logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text meshery-operator">
+                            Meshery-operator
+                          </span>
+                        </div>
                       )}
                       {badges.includes("patterns") && (
-                        <li>
-                          <Link to="/learn/service-mesh-books/service-mesh-patterns">
-                            <img
-                              className="profile-social-links"
-                              src={patternsLogo}
-                              alt="Patterns Logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/learn/service-mesh-books/service-mesh-patterns">
+                              <img
+                                className="profile-social-links"
+                                src={patternsLogo}
+                                alt="Patterns Logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text patterns">Patterns</span>
+                        </div>
                       )}
                       {badges.includes("ui-ux") && (
-                        <li>
-                          <Link to="../../handbook/designer">
-                            <img
-                              className="profile-social-links"
-                              src={uiuxrLogo}
-                              alt="UI/UX'er Logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="../../handbook/designer">
+                              <img
+                                className="profile-social-links"
+                                src={uiuxrLogo}
+                                alt="UI/UX'er Logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text ui-ux">UI-UX</span>
+                        </div>
                       )}
                       {badges.includes("writer") && (
-                        <li>
-                          <Link to="../../handbook/writing-program">
-                            <img
-                              className="profile-social-links"
-                              src={writerIcon}
-                              alt="Writer Program Logo"
-                            />
-                          </Link>
-                        </li>
+                        <div className="tooltip">
+                          <li>
+                            <Link to="../../handbook/writing-program">
+                              <img
+                                className="profile-social-links"
+                                src={writerIcon}
+                                alt="Writer Program Logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text writer">Writer</span>
+                        </div>
                       )}
                     </ul>
                   </div>

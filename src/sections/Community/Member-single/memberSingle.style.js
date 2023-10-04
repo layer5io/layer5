@@ -12,6 +12,17 @@ export const MemberSingleWrapper = styled.div`
       display: flex;
       color: ${(props) => props.theme.primaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 4.5rem 0 3.125rem 0;
+  .backBtn {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    @media screen and (max-width: 62rem) {
+      display: none;
+    }
+    a {
+      display: flex;
+      color: ${(props) => props.theme.primaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
       &:hover {
         color: ${(props) => props.theme.linkColor};
@@ -40,7 +51,7 @@ export const MemberSingleWrapper = styled.div`
     position: relative;
     text-align: center;
     z-index: 1;
-    overflow: hidden;
+    // overflow: hidden;
 
     .text {
       font-weight: 400;
@@ -134,6 +145,37 @@ export const MemberSingleWrapper = styled.div`
     width: 90%;
     padding-left: 0 !important;
 
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      
+    }
+    .tooltip-text {
+      visibility: hidden;
+      font-size: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+       padding: 2px;
+      position: absolute;
+      z-index: 1;
+      width: 80px;
+      
+      left: 50%;
+      bottom: 105%; /* Position the tooltip above the text */
+      width: 110px;
+      margin-left: -40px; /* Center the tooltip */
+      opacity: 0;
+      transition: opacity 0.3s; /* Add a smooth fade-in effect */
+    }
+    
+    }
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
     li {
       display: block;
       color: black;
@@ -162,7 +204,7 @@ export const MemberSingleWrapper = styled.div`
           color: #0e76a8;
         }
         .twitter {
-          color: #000;
+          color: #1da1f2;
         }
         .bio {
           color: #00b39f;
