@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+// import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
@@ -24,6 +24,7 @@ import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.s
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import Button from "../../../reusecore/Button";
+import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -56,7 +57,11 @@ const MemberSingle = ({ frontmatter }) => {
           <Row>
             <Col $xs={12} $sm={12} $lg={6}>
               <Image
-                className={status.includes("Inactive") ? "profile-image-inactive" : "profile-image"}
+                className={
+                  status.includes("Inactive")
+                    ? "profile-image-inactive"
+                    : "profile-image"
+                }
                 {...image_path}
                 imgStyle={{ objectFit: "contain" }}
                 alt={name}
@@ -155,7 +160,7 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("meshmap") && (
                         <li>
-                          <Link to="/meshmap" >
+                          <Link to="/meshmap">
                             <img
                               className="profile-social-links"
                               src={meshMapLogo}
@@ -210,7 +215,7 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("ui-ux") && (
                         <li>
-                          <Link to="../../handbook/designer" >
+                          <Link to="../../handbook/designer">
                             <img
                               className="profile-social-links"
                               src={uiuxrLogo}
@@ -237,13 +242,13 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
-                  {executive_bio &&
+                  {executive_bio && (
                     <li>
                       <Link to="bio">
                         <FaUserTie className="bio" size={32} />
                       </Link>
                     </li>
-                  }
+                  )}
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>
@@ -254,7 +259,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {twitter && (
                     <li>
                       <a href={`https://twitter.com/${twitter}`}>
-                        <FaTwitter className="twitter" size={32} />
+                        <TwitterIcon class="twitter" />
                       </a>
                     </li>
                   )}

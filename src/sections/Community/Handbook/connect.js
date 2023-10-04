@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
+import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";
 import youtube_icon from "../../../assets/images/socialIcons/youtube-light.svg";
 import github_icon from "../../../assets/images/socialIcons/github-light.svg";
@@ -63,22 +63,71 @@ const Connect = () => {
               <h2>Mailing Lists</h2>{" "}
             </a>
             <ul>
-
-              <li><a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a></li>
-              <li><a href="mailto:discuss-moderators@layer5.io">Moderators of Discussion Forum</a></li>
-              <li><a href="mailto:dev-group@meshery.io">Meshery Developers</a></li>
-              <li><a href="mailto:user-group@meshery.io">Meshery Users</a></li>
-              <li><a href="http://meshery-dev@meshery.dev">Meshery Contributors</a></li>
-              <li><a href="mailto:maintainers@meshery.io">Meshery Maintainers</a></li>
-              <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
-              <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
-              <li><a href="https://groups.google.com/a/getnighthawk.dev/g/developers">Nighthawk Developers</a></li>
-              <li><a href="https://groups.google.com/u/2/a/getnighthawk.dev/g/maintainers">Nighthawk Maintainers</a></li>
-              <li><a href="https://groups.google.com/a/getnighthawk.dev/g/users">Nighthawk Users</a></li>
-              <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
-              <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
-              <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
-              <li><a href="mailto:community-members@layer5.io">Layer5 Community Members</a></li>
+              <li>
+                <a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a>
+              </li>
+              <li>
+                <a href="mailto:discuss-moderators@layer5.io">
+                  Moderators of Discussion Forum
+                </a>
+              </li>
+              <li>
+                <a href="mailto:dev-group@meshery.io">Meshery Developers</a>
+              </li>
+              <li>
+                <a href="mailto:user-group@meshery.io">Meshery Users</a>
+              </li>
+              <li>
+                <a href="http://meshery-dev@meshery.dev">
+                  Meshery Contributors
+                </a>
+              </li>
+              <li>
+                <a href="mailto:maintainers@meshery.io">Meshery Maintainers</a>
+              </li>
+              <li>
+                <a href="http://meshery-security-vulns-reports@meshery.dev">
+                  Meshery Security and Vulnerability Reports
+                </a>
+              </li>
+              <li>
+                <a href="mailto:community@meshery.io">Meshery Community</a>
+              </li>
+              <li>
+                <a href="https://groups.google.com/a/getnighthawk.dev/g/developers">
+                  Nighthawk Developers
+                </a>
+              </li>
+              <li>
+                <a href="https://groups.google.com/u/2/a/getnighthawk.dev/g/maintainers">
+                  Nighthawk Maintainers
+                </a>
+              </li>
+              <li>
+                <a href="https://groups.google.com/a/getnighthawk.dev/g/users">
+                  Nighthawk Users
+                </a>
+              </li>
+              <li>
+                <a href="mailto:community@smp-spec.io">
+                  Service Mesh Performance Community
+                </a>
+              </li>
+              <li>
+                <a href="mailto:maintainers@smp-spec.io">
+                  Service Mesh Performance Maintainers
+                </a>
+              </li>
+              <li>
+                <a href="mailto:user-group@smp-spec.io">
+                  Service Mesh Performance Users
+                </a>
+              </li>
+              <li>
+                <a href="mailto:community-members@layer5.io">
+                  Layer5 Community Members
+                </a>
+              </li>
             </ul>
             <a id="Calendar">
               {" "}
@@ -189,17 +238,14 @@ const Connect = () => {
               <h2>Social Media</h2>{" "}
             </a>
             <p>
-              Layer5 is dedicated to empowering engineers and supporting the open source community that create them.
-              Learn more about Layer5 and connect with the community by following and
-              engaging with us on our social media accounts.
+              Layer5 is dedicated to empowering engineers and supporting the
+              open source community that create them. Learn more about Layer5
+              and connect with the community by following and engaging with us
+              on our social media accounts.
             </p>
             <div>
               <p className="channels-para">
-                <img
-                  className="channels-img"
-                  src={twitter_icon}
-                  alt="twitter"
-                />
+                <TwitterIcon className="twitter" />
                 &nbsp;&nbsp;
                 <a href="https://twitter.com/layer5">@layer5</a>,&nbsp;
                 <a href="https://twitter.com/mesheryio">@mesheryio</a>
@@ -209,7 +255,10 @@ const Connect = () => {
               <p className="channels-para">
                 <img className="channels-img" src={mail_icon} alt="mail" />
                 &nbsp;&nbsp;
-                <a href="mailto:community-managers@layer5.io">Connect with our community managers for any inquiries or support!</a>
+                <a href="mailto:community-managers@layer5.io">
+                  Connect with our community managers for any inquiries or
+                  support!
+                </a>
               </p>
               <p className="channels-para">
                 <img
@@ -225,21 +274,34 @@ const Connect = () => {
               <p className="channels-para">
                 <img className="channels-img" src={github_icon} alt="github" />
                 &nbsp;&nbsp;
-                <a href="https://github.com/layer5io">Discover our projects on GitHub</a>
+                <a href="https://github.com/layer5io">
+                  Discover our projects on GitHub
+                </a>
               </p>
               <p className="channels-para">
-
-                <img className="channels-img" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/layer5">Join our professional network on LinkedIn</a>
+                <img
+                  className="channels-img"
+                  src={linkedin_icon}
+                  alt="linkedin"
+                />
+                &nbsp;&nbsp;
+                <a href="https://www.linkedin.com/company/layer5">
+                  Join our professional network on LinkedIn
+                </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={docker_icon} alt="docker" />&nbsp;&nbsp;
-                <a href="https://hub.docker.com/u/layer5/">Take control with Docker deployment</a>
+                <img className="channels-img" src={docker_icon} alt="docker" />
+                &nbsp;&nbsp;
+                <a href="https://hub.docker.com/u/layer5/">
+                  Take control with Docker deployment
+                </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={slack_icon} alt="slack" />&nbsp;&nbsp;
-                <a href="https://slack.layer5.io/">Communicate and collaborate with us on Slack</a>
-
+                <img className="channels-img" src={slack_icon} alt="slack" />
+                &nbsp;&nbsp;
+                <a href="https://slack.layer5.io/">
+                  Communicate and collaborate with us on Slack
+                </a>
               </p>
             </div>
           </div>
