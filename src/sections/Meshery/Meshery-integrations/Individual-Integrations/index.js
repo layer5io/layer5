@@ -13,15 +13,15 @@ const IndividualIntegrations = ({ data }) => {
 
   return (
     <IntegrationPageWrapper>
-      <section className="herosection">
+      <section className ="herosection">
         <Image {...frontmatter.integrationIcon} alt={frontmatter.title} />
         <h2>
           {frontmatter.title} with {" "}<span className="hero-header">Meshery</span>
         </h2>
         <p>{frontmatter.subtitle}</p>
       </section>
-      <section className="overview">
-        <div className="feature">
+      <section className ="overview">
+        <div className ="feature">
           <h2>Features</h2>
           <ul>
             {frontmatter.featureList.map((feature, indx) => (
@@ -31,11 +31,11 @@ const IndividualIntegrations = ({ data }) => {
             ))}
           </ul>
         </div>
-        <div className="content">
+        <div className ="content">
           <h2>Overview</h2>
           <MDXRenderer>{body}</MDXRenderer>
-          <section className="external-btns">
-            <Button primary className="get-started" title="Get Started" url="../../getting-started" />
+          <section className ="external-btns">
+            <Button primary className ="get-started" title="Get Started" url="../../getting-started" />
             {(frontmatter.docURL != null) &&
               (<span className="doc-link">
                 <a href={frontmatter.docURL}>See Documentation</a>

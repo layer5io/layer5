@@ -2,9 +2,9 @@ import React from "react";
 import loadable from "@loadable/component";
 const IntegrationsGrid = loadable(() => import("./IntegrationsGrid"));
 import FAQ from "../../General/Faq";
-import { IntegrationsWrapper } from "./Integration.style";
+import {IntegrationsWrapper} from "./Integration.style";
 import Card from "./Card";
-import { Location } from "@reach/router";
+import {Location} from "@reach/router";
 import Button from "../../../reusecore/Button";
 
 const Integrations = () => {
@@ -27,7 +27,7 @@ const Integrations = () => {
                 <div style={{ marginTop: "20px" }}>
                   <Button className="seeAllBtn"
                     primary
-                    title={"See All"}
+                    title={"See All "}
                     url="/cloud-native-management/meshery/integrations/"
                   />
                 </div>
