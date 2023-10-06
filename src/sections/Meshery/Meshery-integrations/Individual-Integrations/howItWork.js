@@ -214,11 +214,11 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
 
   return (
     <HowIntegrationWorksWrapper>
-      <div className="section-data">
-        <div className="section-header">
+      <div className ="section-data">
+        <div className ="section-header">
           <h4 >How it Works</h4>
-          <h1>See It in Action </h1>
-          <p>Better together - {name} with <span>Meshery</span></p>
+          <h1>See it in Action </h1>
+          <p>Better together -{name} with <span>Meshery</span></p>
         </div>
         <div className="integration-section">
           <Row className="integration-section-row">
@@ -228,11 +228,11 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
                 {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
-            <Col xs={12} xl={8} className="integration-section-caraousel">
+            <Col xs={12} xl={8} className ="integration-section-caraousel">
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>
-                    <img src={slide.publicURL} alt={`Slide ${index + 1}`} />
+                    <img src={slide.publicURL} alt ={`Slide ${index + 1}`} />
                   </div>
                 ))}
               </Slider>
