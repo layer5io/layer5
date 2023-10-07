@@ -151,7 +151,7 @@ export const MemberSingleWrapper = styled.div`
     }
     .tooltip-text {
       visibility: hidden;
-      font-size: 10px;
+      font-size: 14px;
       background-color: #333;
       color: #fff;
       text-align: center;
@@ -168,17 +168,36 @@ export const MemberSingleWrapper = styled.div`
       opacity: 0;
       transition: opacity 0.3s; /* Add a smooth fade-in effect */
     }
+    .mashmap{
+        width:90px;
+    }
+    .community{
+        left:30%;
+        width:100px;
+    }
     .docker-extension {
-      left: 28%;
-      width: 110px;
+      left: -18%;
+      width: 150px;
     }
     .meshery-catalog {
-      left: 28%;
-      width: 110px;
+      left: -18%;
+      width: 150px;
     }
     .meshery-operator {
+      left: -18%;
+      width: 150px;
+    }
+    .image-hub {
+      left: 33%;
+      width: 100px;
+    }
+    .landscape {
+      left: 33%;
+      width: 100px;
+    }
+    .nighthawk {
       left: 28%;
-      width: 110px;
+      width: 100px;
     }
     .tooltip:hover .tooltip-text {
       visibility: visible;
