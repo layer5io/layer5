@@ -144,11 +144,10 @@ export const MemberSingleWrapper = styled.div`
     justify-content: left;
     width: 90%;
     padding-left: 0 !important;
-
+    //my code
     .tooltip {
       position: relative;
       display: inline-block;
-      
     }
     .tooltip-text {
       visibility: hidden;
@@ -157,25 +156,35 @@ export const MemberSingleWrapper = styled.div`
       color: #fff;
       text-align: center;
       border-radius: 6px;
-       padding: 2px;
+      padding: 2px;
       position: absolute;
       z-index: 1;
       width: 80px;
-      
+
       left: 50%;
-      bottom: 105%; /* Position the tooltip above the text */
-      width: 110px;
+      bottom: 115%; /* Position the tooltip above the text */
+      //width: 110px;
       margin-left: -40px; /* Center the tooltip */
       opacity: 0;
       transition: opacity 0.3s; /* Add a smooth fade-in effect */
     }
-    
-    
+    .docker-extension {
+      left: 28%;
+      width: 110px;
+    }
+    .meshery-catalog {
+      left: 28%;
+      width: 110px;
+    }
+    .meshery-operator {
+      left: 28%;
+      width: 110px;
+    }
     .tooltip:hover .tooltip-text {
       visibility: visible;
       opacity: 1;
     }
-
+    //till here
     li {
       display: block;
       color: black;
