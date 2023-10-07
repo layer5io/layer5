@@ -23,7 +23,7 @@
 
 # About Layer5
 
-[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in re-think how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
+[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
 # Projects
 
@@ -43,7 +43,7 @@
 <a href="https://layer5.io/meshmap">
   <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="margin:10px;" align="left" />
 </a>
-<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploys designs, apply patterns, manage and operate your deployments and services in real-time.
+<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
 <br /><br /><br/>
 </p>
 <br />
@@ -98,7 +98,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 
 
 <p style="clear:both;">
- <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator: </a></h2>
+ <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
    <img src=".github/assets/images/meshery-operator/meshery-operator-dark.svg"
  style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
@@ -162,7 +162,7 @@ alt="Meshery Catalog" align="left" />
 <p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether you're opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull request</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
-  Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.webp" height="16px" align="bottom" />Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
+  Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.webp" height="16px" align="bottom" /> Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
 </p>
 <p>
 <a href="https://slack.meshery.io">
