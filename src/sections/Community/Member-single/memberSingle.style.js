@@ -170,7 +170,7 @@ export const MemberSingleWrapper = styled.div`
       transition: opacity 0.3s; /* Add a smooth fade-in effect */
     }
     
-    }
+    
     .tooltip:hover .tooltip-text {
       visibility: visible;
       opacity: 1;
