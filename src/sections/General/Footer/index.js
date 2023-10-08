@@ -63,10 +63,10 @@ const Footer = ({ location }) => {
     return test.mdx(pathname)
       ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
       : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
+      ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
           pathname
         )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${
+      : `https://github.com/layer5io/layer5/blob/master/src/pages${
           pathname == "/" ? "" : pathname
         }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
@@ -185,14 +185,6 @@ const Footer = ({ location }) => {
                       Internship Programs
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      className="category-link"
-                      to="/community/handbook/writing-program"
-                    >
-                      Writing Program
-                    </Link>
-                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">
@@ -299,7 +291,6 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-
               <form
                 name="contactform"
                 method="post"
