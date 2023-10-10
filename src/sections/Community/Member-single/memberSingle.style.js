@@ -168,12 +168,12 @@ export const MemberSingleWrapper = styled.div`
       opacity: 0;
       transition: opacity 0.3s; /* Add a smooth fade-in effect */
     }
-    .mashmap{
-        width:90px;
+    .mashmap {
+      width: 90px;
     }
-    .community{
-        left:30%;
-        width:100px;
+    .community {
+      left: 30%;
+      width: 100px;
     }
     .docker-extension {
       left: -18%;
@@ -266,7 +266,42 @@ export const MemberSingleWrapper = styled.div`
       font-weight: 700;
     }
   }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+   
+  }
 
+  .tooltip .tooltiptext {
+    
+    font-size: 14px;
+    visibility: hidden;
+   
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%; /* Position the tooltip above the list item */
+    left: 50%; /* Center the tooltip */
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip .small-tooltip{
+    width:150px;
+  }
+  .tooltip .large-tooltip{
+    width:200px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
   .executive-bio {
     margin: 4.5rem 0 3.125rem 0;
 

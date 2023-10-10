@@ -97,9 +97,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <div className="tooltip-text meshery">
-                            Meshery
-                          </div>
+                          <div className="tooltip-text meshery">Meshery</div>
                         </div>
                       )}
                       {badges.includes("smp") && (
@@ -113,9 +111,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text smp">
-                            SMP
-                          </span>
+                          <span className="tooltip-text smp">SMP</span>
                         </div>
                       )}
                       {badges.includes("image-hub") && (
@@ -129,7 +125,9 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text image-hub">Image-hub</span>
+                          <span className="tooltip-text image-hub">
+                            Image-hub
+                          </span>
                         </div>
                       )}
                       {badges.includes("landscape") && (
@@ -143,7 +141,9 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text landscape">Landscape</span>
+                          <span className="tooltip-text landscape">
+                            Landscape
+                          </span>
                         </div>
                       )}
                       {badges.includes("community") && (
@@ -157,7 +157,9 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text community">Community</span>
+                          <span className="tooltip-text community">
+                            Community
+                          </span>
                         </div>
                       )}
                       {badges.includes("docs") && (
@@ -231,7 +233,9 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text nighthawk">Nighthawk</span>
+                          <span className="tooltip-text nighthawk">
+                            Nighthawk
+                          </span>
                         </div>
                       )}
                       {badges.includes("meshery-operator") && (
@@ -261,7 +265,9 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text patterns">Patterns</span>
+                          <span className="tooltip-text patterns">
+                            Patterns
+                          </span>
                         </div>
                       )}
                       {badges.includes("ui-ux") && (
@@ -300,48 +306,90 @@ const MemberSingle = ({ frontmatter }) => {
               <div className="social-bg">
                 <ul className="profile-social-links">
                   {executive_bio && (
-                    <li>
+                    <li className="tooltip">
                       <Link to="bio">
                         <FaUserTie className="bio" size={32} />
+                        <span className="tooltiptext">Executive Bio</span>
                       </Link>
                     </li>
                   )}
                   {github && (
-                    <li>
+                    <li className="tooltip">
                       <a href={`https://github.com/${github}`}>
                         <FaGithub className="github" size={32} />
+                        <span
+                          className={`tooltiptext ${
+                            github.length > 20
+                              ? "large-tooltip "
+                              : `${
+                                  github.length > 10 && github.length <= 20
+                                    ? "small-tooltip "
+                                    : "tooltiptext "
+                                }`
+                          } `}
+                        >
+                          {github}
+                        </span>
                       </a>
                     </li>
                   )}
                   {twitter && (
-                    <li>
+                    <li className="tooltip">
                       <a href={`https://twitter.com/${twitter}`}>
-                        <TwitterIcon class="twitter" />
+                        <FaTwitter className="twitter" size={32} />
+                        <span
+                          className={`tooltiptext ${
+                            twitter.length > 20
+                              ? "large-tooltip "
+                              : `${
+                                  twitter.length > 10 && twitter.length <= 20
+                                    ? "small-tooltip "
+                                    : "tooltiptext "
+                                }`
+                          } `}
+                        >
+                          {twitter}
+                        </span>
                       </a>
                     </li>
                   )}
                   {linkedin && (
-                    <li>
+                    <li className="tooltip">
                       <a href={`https://Linkedin.com/in/${linkedin}`}>
                         <FaLinkedin className="linkedin" size={32} />
+                        <span
+                          className={`tooltiptext ${
+                            linkedin.length > 20
+                              ? "large-tooltip "
+                              : `${
+                                  linkedin.length > 10 && linkedin.length <= 20
+                                    ? "small-tooltip "
+                                    : "tooltiptext "
+                                }`
+                          } `}
+                        >
+                          {linkedin}
+                        </span>
                       </a>
                     </li>
                   )}
                   {layer5 && (
-                    <li>
+                    <li className="tooltip">
                       <a href={`https://meshery.layer5.io/user/${layer5}`}>
                         <img src={mesheryLogo} alt="meshery-icon"></img>
+                        <span className="tooltiptext">Meshery</span>
                       </a>
                     </li>
                   )}
                   {meshmate && (
-                    <li>
+                    <li className="tooltip">
                       <Link to="/community/meshmates">
                         <img
                           src={MeshMateIcon}
                           className="meshmate-white"
                           alt="meshmate-icon"
                         />
+                        <span className="tooltiptext">Meshmate</span>
                       </Link>
                     </li>
                   )}
