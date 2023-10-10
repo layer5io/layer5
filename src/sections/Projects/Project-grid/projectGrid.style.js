@@ -1,12 +1,6 @@
 import styled from "styled-components";
 //These are the diferent breakpoints used in this file for different screen sizes.
-const breakpoints = {
-  tablet_small: "568px",
-  tablet_medium: "741px",
-  tablet_large: "780px",
-  desktop_small: "991px",
-  desktop_large: "1200px",
-};
+import { breakpoints } from "../../../theme/modern/themeStyles";
 export const ProjectWrapper = styled.div`
   padding: 0 2rem;
   padding-bottom: 5rem;
