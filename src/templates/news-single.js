@@ -47,6 +47,7 @@ export const Head = ({ data }) => {
     <SEO
       title={data.mdx.frontmatter.title}
       image={data.mdx.frontmatter.thumbnail.publicURL}
+      description={data.mdx.frontmatter.description}
     />
   );
 };
