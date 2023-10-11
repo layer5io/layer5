@@ -30,7 +30,7 @@ export const repo_data = [
         site: "https://layer5.io/",
         language: "Gatsby",
         maintainers_name: ["Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -97,7 +97,7 @@ export const repo_data = [
         site: "https://discuss.layer5.io",
         language: "Discourse",
         maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vishal-vivek"],
+        link: ["https://layer5.io/community/members/vivek-vishal"],
         repository: " https://discuss.layer5.io",
       },
       {
@@ -106,7 +106,7 @@ export const repo_data = [
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
         maintainers_name: ["Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
