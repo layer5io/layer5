@@ -76,7 +76,7 @@ const Banner1 = (props) => {
           {hasMounted && window.innerWidth > 760 && (
             <Col $sm={4} $lg={6} className="section-title-wrapper video-col">
               <ReactPlayer
-                url="https://youtu.be/Do7htKrRzDA"
+                url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
                 playing
                 controls
                 light={mesheryPlayground}
