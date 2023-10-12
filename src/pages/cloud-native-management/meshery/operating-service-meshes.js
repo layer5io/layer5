@@ -40,7 +40,7 @@ const OperatingServiceMeshes = () => {
               title: "Each service mesh adapter is unique",
               icon: MesheryLogo,
               description:
-                  <div><p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.Care is taken in each Meshery Adapter to expose the unique value of each service mesh. </p>
+                  <div><p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users. Care is taken in each Meshery Adapter to expose the unique value of each service mesh. </p>
                     <p>Consequently, each Meshery Adapter is not equally capable just as each service mesh is not equally
                       capable as another service mesh.</p>
                   </div>,
