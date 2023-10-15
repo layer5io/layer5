@@ -3,7 +3,7 @@ import { Col, Row } from "../../reusecore/Layout";
 import forum_icon from "../../assets/images/socialIcons/forum.svg";
 import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
 import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
-import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/images/socialIcons/twitter.svg";
 import github_icon from "../../assets/images/socialIcons/github.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
@@ -15,11 +15,7 @@ const SocialLinksColor = () => {
     <SocialLinksWrapper>
       <Col xs={12}>
         <Row className="social_icons">
-          <a
-            href="https://discuss.layer5.io"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://discuss.layer5.io" target="_blank" rel="noreferrer">
             <img height="30px" src={forum_icon} alt="forum" />
           </a>
           <a
@@ -33,13 +29,13 @@ const SocialLinksColor = () => {
           <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
-          <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
-            <img
-              className="twitter"
-              height="30px"
-              src={twitter_icon}
-              alt="twitter"
-            />
+          <a
+            href="https://twitter.com/layer5"
+            target="_blank"
+            rel="noreferrer"
+            className="footer_twitter"
+          >
+            <TwitterIcon />
           </a>
           <a
             href="https://github.com/layer5io"
@@ -47,11 +43,7 @@ const SocialLinksColor = () => {
             rel="noreferrer"
             className="github"
           >
-            <img
-              height="30px"
-              src={github_icon}
-              alt="github"
-            />
+            <img height="30px" src={github_icon} alt="github" />
           </a>
           <a
             href="https://www.linkedin.com/company/layer5"
