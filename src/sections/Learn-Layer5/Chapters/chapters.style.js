@@ -30,9 +30,9 @@ export const ChapterWrapper = styled.div`
         }
     }
 
-    .service-mesh-image-active {
-        border: 2px solid rgb(0, 179, 159);
-    }
+    // .service-mesh-image-active {
+    //     border: 2px solid rgb(0, 179, 159);
+    // }
 
     .chapter-container {
         @media (min-width: 576px) {
