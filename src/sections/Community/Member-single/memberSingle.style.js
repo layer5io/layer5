@@ -221,7 +221,7 @@ export const MemberSingleWrapper = styled.div`
           color: #0e76a8;
         }
         .twitter {
-          color: #1da1f2;
+          color: #000;
         }
         .bio {
           color: #00b39f;

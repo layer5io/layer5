@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+// import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
@@ -24,6 +24,7 @@ import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.s
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import Button from "../../../reusecore/Button";
+import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -330,7 +331,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {twitter && (
                     <li className="tooltip">
                       <a href={`https://twitter.com/${twitter}`}>
-                        <FaTwitter className="twitter" size={32} />
+                        <TwitterIcon className="twitter" size={32} />
                         <span
                           className={`tooltiptext ${
                             twitter.length > 20
