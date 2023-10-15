@@ -6,11 +6,11 @@ const CardWrapper = styled.div`
     margin: auto;
     border-radius: 1rem;
     cursor: pointer;
-    box-shadow: rgba(0, 179, 158, 0.9) 0px 2px 10px 1px;
+    box-shadow: rgba(0, 179, 158, 0.4) 0px 0px 15px 8px;
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s;
 
     &:hover{
-        box-shadow: rgba(0, 179, 158, 0.7) 0px 2px 18px 5px;
+        box-shadow: rgba(0, 179, 158, 0.9) 0px 0px 19px 6px;
     }
 
     .card-link{
