@@ -55,7 +55,7 @@ const MembersGrid = (props) => {
                 We also spend a great deal of time trying to recognize and
                 uplift contributors on the Layer5 and Meshery Twitter accounts
                 whether "contribution" means code or any of the other various
-                forms of being involved int the projects and community.
+                forms of being involved in the projects and community.
                 Likewise, we try to lift up contributors' works on the{" "}
                 <Link to="https://www.linkedin.com/company/layer5">Layer5</Link>
                 ,{" "}
