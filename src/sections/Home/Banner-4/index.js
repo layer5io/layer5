@@ -57,14 +57,18 @@ const Banner1 = (props) => {
                 leftAlign={true}
                 UniWidth="100%"
               >
-                <h1>Take the blinders off</h1>
+                <h1>What's in your</h1>
+                <h2>
+                  Kubernetes clusters?
+                </h2>
+                {/* <h1>Take the blinders off</h1>
                 <h2>
                   cloud native management
-                </h2>
+                </h2> */}
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox right={true} vintageOne={true}>
-                  <Button primary className="banner-btn one" title="Learn about MeshMap" url="/cloud-native-management/meshmap">
+                  <Button primary className="banner-btn one" title="Learn about Meshery" url="/cloud-native-management/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io" external={true}>

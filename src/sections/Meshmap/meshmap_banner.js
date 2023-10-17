@@ -180,7 +180,7 @@ const BannerSection = () => {
       <div className="banner-text">
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
-        <h1><span>MeshMap</span> is here</h1>
+        <h1><span>Meshery</span> is here</h1>
         {/* <h3>the world's only visual designer for cloud native infrastructure.</h3> */}
         {/* <h3>
                     Application reigns King. Context is his Queen.
