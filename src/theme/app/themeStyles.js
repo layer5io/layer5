@@ -301,7 +301,6 @@ export const darktheme = {
   //Invert Colors in dark theme(Usually for svg)
   invertColor: "invert(100%)",
   meshInterfaceLogoFilter: "90%",
-  mapBackground: "93%",
 
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#212121",
@@ -448,7 +447,7 @@ export const darktheme = {
   bannerDescriptionGradient: "#121212",
   borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
-
+  grey2D2F2FToGreyE0DDDD: "#E0DDDD",
   //DarkTheme
   DarkTheme: true,
 

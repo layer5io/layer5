@@ -166,8 +166,11 @@ const AboutSectionWrapper = styled.section`
     }
   }
   #mapBack {
-    filter: invert(${(props) => props.theme.mapBackground});
-
+    .svg{
+        .layer5-collaboration-map_svg__colorMode1{
+            fill: ${(props) => props.theme.blackToWhite};
+        }
+    }
   }
   .caption {
     font-size: .9rem;
