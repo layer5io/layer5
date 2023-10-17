@@ -89,7 +89,7 @@ const WhoWeAre = () => {
         <Col xs={12} sm={6} md={6} lg={3} className="col">
           <div className="item">
             <img src={checkCircle} alt="Service Mesh Authors and Trainers" />
-            <p>Service Mesh Trainers</p>
+            <p>Kubernetes Certified Administrators</p>
           </div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={3} className="col">

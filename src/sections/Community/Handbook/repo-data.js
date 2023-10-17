@@ -29,8 +29,8 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -97,7 +97,7 @@ export const repo_data = [
         site: "https://discuss.layer5.io",
         language: "Discourse",
         maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vishal-vivek"],
+        link: ["https://layer5.io/community/members/vivek-vishal"],
         repository: " https://discuss.layer5.io",
       },
       {
@@ -105,8 +105,8 @@ export const repo_data = [
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
-        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/nikhil-ladha"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
@@ -136,6 +136,15 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["https://badges.layer5.io"],
         repository: "https://github.com/layer5labs/meshery-extensions-packages/"
+      },
+      {
+        project: "Sistent Design System",
+        image: five,
+        site: "https://github.com/layer5io/sistent",
+        language: "React.js",
+        maintainers_name: ["Antonette Caldwell"],
+        link: ["https://layer5.io/community/members/antonette-caldwell"],
+        repository: "https://github.com/layer5io/sistent"
       }
     ],
   },
