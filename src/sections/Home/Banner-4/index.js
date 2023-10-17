@@ -66,7 +66,7 @@ const Banner1 = (props) => {
                   <Button primary className="banner-btn one" title="Learn about MeshMap" url="/cloud-native-management/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
-                  <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io">
+                  <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io" external={true}>
                     <BsArrowUpRight size={21} className="icon-left" />
                   </Button>
                 </VintageBox>
