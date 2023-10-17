@@ -124,7 +124,7 @@ const MeshmapIntegrationsSection = () => {
         <IntegrationsImage alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
       </div>
       <div className="hero-text">
-        <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built -in Integrations</h1>
+        <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in Integrations</h1>
         <img className="underline-img" src={UnderlineImg} />
         <h4>Support for all of your Cloud Native Infrastructure and Applications.</h4>
         <Button id="integrations" aria-label="Meshery In" secondary
