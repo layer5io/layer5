@@ -82,6 +82,35 @@ const CardWrapper = styled.div`
     @media(max-width: 1300px){
         margin: 1rem auto;
     }
+    
+    @media (max-width: 500px) {
+        max-width: 100%;
+        padding: 0 1rem;
+    
+        .card-head h3 {
+            font-size: 1.1rem;
+        }
+    
+        .card-desc .summary {
+            font-size: 0.8rem;
+        }
+    
+        .card-image img {
+            height: 6rem;
+            width: 6rem;
+        }
+        .card-head span {
+            font-size: 0.55rem; 
+            padding: 0.05rem 0.5rem; 
+        }
+        
+        .card-subdata p {
+            font-size: 0.8rem; 
+            bottom: 0.5rem; 
+        }
+    }
+   
+    
 `;
 
 export default CardWrapper;
