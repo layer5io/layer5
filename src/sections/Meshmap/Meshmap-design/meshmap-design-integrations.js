@@ -5,6 +5,7 @@ import UnderlineImg from "./images/underline.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import Button from "../../../reusecore/Button";
 // import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const IntegrationsSectionWrapper = styled.div`
@@ -43,7 +44,9 @@ const IntegrationsSectionWrapper = styled.div`
     h4 {
         color: white;
     }
-
+    #integrations{
+      margin:2%;
+    }
     .hero-image {
         display: grid;
         /* grid-template-rows: 5rem 5rem; */
@@ -70,14 +73,14 @@ const IntegrationsSectionWrapper = styled.div`
     .underline-img {
         width: 20%;
         position: absolute;
-        top: 40%;
+        top: 60%;
         left: -6%;
 
         @media only screen and (max-width: 1498px) {
-          top: 27%;
+          top: 50%;
         }
         @media only screen and (max-width: 838px) {
-          top: 24%;
+          top: 38%;
         }
         @media only screen and (max-width: 767px) {
           left: 10%;
@@ -118,12 +121,16 @@ const MeshmapIntegrationsSection = () => {
   return (
     <IntegrationsSectionWrapper>
       <div className="hero-image" ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
-        <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
+        <IntegrationsImage alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
       </div>
       <div className="hero-text">
-        <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in Integrations</h1>
-        <img className="underline-img" src={UnderlineImg}/>
+        <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built -in Integrations</h1>
+        <img className="underline-img" src={UnderlineImg} />
         <h4>Support for all of your Cloud Native Infrastructure and Applications.</h4>
+        <Button id="integrations" aria-label="Meshery In" secondary
+          className="banner-btn two"
+          external={true}
+          title="All Integrations" alt="Meshery Integrations" url="https://layer5.io/cloud-native-management/meshery/integrations" />
       </div>
     </IntegrationsSectionWrapper>
 
