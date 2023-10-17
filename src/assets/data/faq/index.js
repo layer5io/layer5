@@ -69,7 +69,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
-        "Rank your deployment - results of performance tests are anonymously collected using the Service Mesh Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
+        "Rank your deployment - results of performance tests are anonymously collected using the Cloud Native  Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
       ],
       link: "",
       linktext: "",
@@ -81,8 +81,8 @@ const data = {
         "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
         "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
       ],
-      link: "/projects/service-mesh-performance",
-      linktext: "Service Mesh Performance",
+      link: "/projects/cloud-native-performance",
+      linktext: "Cloud Native Performance",
     },
     {
       question:
