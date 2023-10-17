@@ -119,7 +119,7 @@ export const repo_data = [
         repository: "https://github.com/meshery/play",
       },
       {
-        project: "Meshery Cloud",
+        project: "Layer5 Cloud",
         image: meshery,
         site: "https://meshery.layer5.io/",
         language: "React.js",
@@ -249,7 +249,7 @@ export const repo_data = [
         repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       {
-        project: "Meshery Cloud",
+        project: "Layer5 Cloud",
         image: meshery,
         language: "Golang",
         description: "A Meshery Remote Provider.",

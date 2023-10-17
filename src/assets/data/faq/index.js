@@ -110,23 +110,23 @@ const data = {
       question: "Can I deploy Meshery / MeshMap on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
     {
-      question: "Where is Meshery Cloud hosted; where is my data stored?",
+      question: "Where is Layer5 Cloud hosted; where is my data stored?",
       category: "Meshery",
       answer: [
-        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
     },
     {
-      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
 
       ],
@@ -295,7 +295,7 @@ const data = {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
       answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
       ],
     },
     {
@@ -316,7 +316,7 @@ const data = {
       question: "How can I unlock my account after several failed transactions?",
       category: "Billing",
       answer: [
-        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
       ],
     },
 
