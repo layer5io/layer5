@@ -89,6 +89,16 @@ const Data = {
         //   sepLine: true
         // },
         {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+          sepLine: true
+        },
+        {
+          name: "---",
+          // path: "/cloud-native-management/meshmap",
+
+        },
+        {
           name: "Meshery",
           path: "/cloud-native-management/meshery",
           sepLine: true
@@ -101,10 +111,6 @@ const Data = {
         {
           name: "Docker Extension",
           path: "/docker-extension-meshery",
-        },
-        {
-          name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
         },
         {
           name: "Playground",
@@ -134,8 +140,9 @@ const Data = {
           path: "/service-mesh-landscape",
         },
         {
-          name: "Performance",
-          path: "/projects/service-mesh-performance",
+          name: "Cloud Native Performance",
+          path: "/projects/cloud-native-performance",
+          sepLine: true
         },
       ],
       actionItems: [

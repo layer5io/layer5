@@ -66,7 +66,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/projects/service-mesh-performance"
+              to="/projects/cloud-native-performance"
               className="project__card five"
             >
               <div className="project__card-container">
