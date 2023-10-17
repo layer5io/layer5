@@ -13,7 +13,7 @@ const SMP = () => {
 };
 export default SMP;
 export const Head = () => {
-  return <SEO title="Service Mesh Performance (SMP)"
-    description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
+  return <SEO title="Cloud Native Performance"
+    description="Measuring and indexing the performance, overhead, and value of the world's cloud native deployments."
     image="/images/smp-dark.webp" />;
 };
