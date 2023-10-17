@@ -196,7 +196,7 @@ const Maintainer = () => {
             </a>
 
             <p>
-              <a href="https://layer5.io/projects/service-mesh-performance">
+              <a href="https://layer5.io/projects/cloud-native-performance">
                 The Cloud Native Performance (SMP)
               </a>{" "}
               is a vendor-neutral specification for capturing details of

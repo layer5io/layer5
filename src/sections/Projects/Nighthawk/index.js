@@ -115,7 +115,7 @@ const Projects = () => {
                     <SmpIcon className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
-                  <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
+                  <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/cloud-native-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
                 </div>
                 <div className="card">
                   <div className="circle">
