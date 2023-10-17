@@ -8,6 +8,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
 import ReactPlayer from "react-player/youtube";
 import mesheryPlayground from "./meshery-playground-meshmap.png";
+import videoThumbnail from "./meshery-infrastructure-as-diagram.webp";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
@@ -79,7 +80,7 @@ const Banner1 = (props) => {
                 url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
                 playing
                 controls
-                light={mesheryPlayground}
+                light={videoThumbnail}
                 playIcon={
                   <img
                     src={playIcon}
