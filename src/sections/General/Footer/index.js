@@ -251,7 +251,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/projects/service-mesh-performance"
+                      to="/projects/cloud-native-performance"
                     >
                       Cloud Native Performance
                     </Link>
