@@ -137,7 +137,7 @@ const Platform = () => {
             {
               title: "Cloud",
               description:
-                "Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
+                "Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
               content: (
                 <img
                   src={CloudHosted}
@@ -162,7 +162,7 @@ const Platform = () => {
           <h1>Cloud</h1>
           <img src={CloudHosted} alt="MeshMap Cloud" />
           <p>
-            Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
+            Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
           </p>
         </div>
       </div>
