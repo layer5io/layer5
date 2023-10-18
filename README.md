@@ -71,15 +71,15 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/projects/service-mesh-performance">Cloud Native Performance</a></h2>
-<a href="https://layer5.io/projects/service-mesh-performance">
+<h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
+<a href="https://layer5.io/projects/cloud-native-performance">
 <picture align="left">
          <source media="(prefers-color-scheme: dark)" srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg">
          <source media="(prefers-color-scheme: light)" srcset=".github/assets/images/smp-dark-text.svg">
          <img align="left" src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg" alt="Shows a dark SMP logo in light mode and a white logo in dark mode" width="125px" style="float:left;margin:10px;" />
 </picture>
 </a>
-The <a href="https://layer5.io/projects/service-mesh-performance">Cloud Native Performance</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, cloud native infrastructure and its configuration, service/application details, and bundling of statistical analysis of results.
+The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, cloud native infrastructure and its configuration, service/application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
 <br />
