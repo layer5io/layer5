@@ -36,7 +36,6 @@ const IntegrationsSectionWrapper = styled.div`
 
   h1 {
     font-weight: 100;
-    margin-bottom: 5%;
     color: white;
   }
 
@@ -68,7 +67,6 @@ const IntegrationsSectionWrapper = styled.div`
 
   .underline-img {
     width: 20%;
-    position: absolute;
     top: 40%;
     left: -6%;
 
@@ -126,12 +124,16 @@ const MeshmapIntegrationsSection = () => {
         />
       </div>
       <div className="hero-text">
-        <div className="hero-text">
+        <div>
           <h1>
             {Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in
             Integrations
           </h1>
+        </div>
+        <div>
           <img className="underline-img" src={UnderlineImg} />
+        </div>
+        <div>
           <h4>
             Support for all of your Cloud Native Infrastructure and
             Applications.
