@@ -85,7 +85,7 @@ const CardWrapper = styled.div`
     
     @media (max-width: 500px) {
         max-width: 100%;
-        padding: 0 1rem;
+        padding: 0 0rem;
     
         .card-head h3 {
             font-size: 1.1rem;
