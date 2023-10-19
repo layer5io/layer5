@@ -15,7 +15,6 @@ const SetupPreReqWrapper = styled.div`
       margin: 1rem;
     }
     .card {
-      box-shadow: rgb(0, 211, 169) 0px 0px 5px;
       border-radius: 10px;
       padding: 2rem;
       background: ${(props) => props.theme.grey212121ToGreyEEEEEE};
@@ -23,7 +22,7 @@ const SetupPreReqWrapper = styled.div`
       min-height: 21.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       :hover {
-        box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+        box-shadow: rgb(0, 211, 169) 0px 0px 5px;
       }
       .card-header {
         display: flex;
