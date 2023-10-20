@@ -141,13 +141,11 @@ const MeshmapIntegrationsSection = () => {
         </div>
         <div>
           <Button
+            id="integrations"
             secondary
             style={{ margin: "1.5rem 0 1.5rem 0" }}
-            onClick={function () {
-              navigate(
-                "https://layer5.io/cloud-native-management/meshery/integrations"
-              );
-            }}
+            url="https://layer5.io/cloud-native-management/meshery/integrations"
+            external={true}
           >
             All Integrations
           </Button>
