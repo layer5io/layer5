@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Ebpf from "../../assets/images/meshmap/ebpf.svg";
+import EbpfDark from "../../assets/images/meshmap/ebpf-dark.webp";
 import Opa from "../../assets/images/meshmap/opa.svg";
 import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
 import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
@@ -163,7 +164,7 @@ const Catalog = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Ebpf} className="calalog-image" />
+              <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
