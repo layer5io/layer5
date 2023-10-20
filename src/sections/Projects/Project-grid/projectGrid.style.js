@@ -4,7 +4,7 @@ import { breakpoints } from "../../../theme/modern/themeStyles";
 export const ProjectWrapper = styled.div`
   padding: 0 2rem;
   padding-bottom: 5rem;
-  font-size: 1rem;
+
   h3 {
     color: ${(props) => props.theme.whiteSixToGreen3C494F};
     margin: 0;
