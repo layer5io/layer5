@@ -428,7 +428,7 @@ const Catalog = () => {
               <p>Cloud Native Patterns</p>
             </div>
             <div>
-              <img src={Ebpf} />
+              <img src={Ebpf} style={{ filter: "drop-shadow(0.8px 1.5px 1.3px white) contrast(110%)" }}/>
               <p className="ebpf-text">eBPF Programs</p>
             </div>
             <div>
