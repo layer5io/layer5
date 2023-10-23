@@ -101,6 +101,13 @@ const handbookHome = () => {
           description="We are very grateful to the security researchers and users that report back Meshery security vulnerabilities. We investigate every report thoroughly."
           to="/community/handbook/security-vulnerabilities"
         />
+
+        <HandbookCard
+          title="GitHub Process"
+          description="The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across their growing repository collection."
+          to="/community/handbook/github-process"
+        />
+
         <HandbookCard
           title="FAQs"
           description="General frequently asked questions (FAQ) about Layer5 and people who contribute through reporting issues, to submit pull requests or patches, and other activities."
