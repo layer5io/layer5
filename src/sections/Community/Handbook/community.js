@@ -8,7 +8,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  { id: 0, link: "#Community Guidelines", text: "Guidelines" },
+  { id: 0, link: "#Community-Guidelines", text: "Guidelines" },
   { id: 1, link: "#Resources", text: "Resources" },
 ];
 
@@ -21,10 +21,10 @@ const CommunityGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content">
+          <div className="content" >
             {" "}
-            <a id="Community Guidelines">
-              <h2 id="communityGuidelines">Community Guidelines</h2>
+            <a id="Community-Guidelines">
+              <h2 >Community Guidelines</h2>
             </a>
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and

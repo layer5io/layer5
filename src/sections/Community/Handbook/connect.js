@@ -18,11 +18,11 @@ const contents = [
     link: "#Newsletter",
     text: "Newsletter",
   },
-  { id: 1, link: "#Mailing Lists", text: "Mailing Lists" },
+  { id: 1, link: "#Mailing-Lists", text: "Mailing Lists" },
   { id: 2, link: "#Calendar", text: "Calendar" },
-  { id: 3, link: "#Slack Community", text: "Slack Community" },
-  { id: 4, link: "#Discussion Forum", text: "Discussion Forum" },
-  { id: 5, link: "#Social Media", text: "Social Media" },
+  { id: 3, link: "#Slack-Community", text: "Slack Community" },
+  { id: 4, link: "#Discussion-Forum", text: "Discussion Forum" },
+  { id: 5, link: "#Social-Media", text: "Social Media" },
 ];
 
 const Connect = () => {
@@ -58,7 +58,7 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Mailing Lists">
+            <a id="Mailing-Lists">
               {" "}
               <h2>Mailing Lists</h2>{" "}
             </a>
@@ -140,7 +140,7 @@ const Connect = () => {
                 community calendar .
               </a>
             </p>{" "}
-            <a id="Slack Community">
+            <a id="Slack-Community">
               {" "}
               <h2>Slack Community</h2>{" "}
             </a>
@@ -225,7 +225,7 @@ const Connect = () => {
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
             </div>
-            <a id="Discussion Forum">
+            <a id="Discussion-Forum">
               {" "}
               <h2>Discussion Forum</h2>{" "}
             </a>
@@ -233,7 +233,7 @@ const Connect = () => {
               Join us on our cloud native community's{" "}
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
-            <a id="Social Media">
+            <a id="Social-Media">
               {" "}
               <h2>Social Media</h2>{" "}
             </a>

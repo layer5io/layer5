@@ -8,7 +8,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 
 const contents = [
   { id: 0, link: "#top", text: "What are the different roles in the Layer5 community?", },
-  { id: 1, link: "#Community Manager", text: "Community Manager" },
+  { id: 1, link: "#Community-Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
   { id: 3, link: "#Maintainer", text: "Maintainer", },
 ];
@@ -35,7 +35,7 @@ const CommunityGuide = () => {
             </p>
             <h3>What does it take to be a leader?</h3>
 
-            <a id="Community Manager">
+            <a id="Community-Manager">
               {" "}
               <h4>
                 <strong>Community Manager</strong>

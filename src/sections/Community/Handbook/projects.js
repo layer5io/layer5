@@ -23,12 +23,12 @@ const contents = [
   { id: 1, link: "#Meshery", text: "Meshery" },
   {
     id: 2,
-    link: "#Cloud Native Performance",
+    link: "#Cloud-Native-Performance",
     text: "Cloud Native Performance",
   },
   {
     id: 3,
-    link: "#Cloud Native Patterns",
+    link: "#Cloud-Native-Patterns",
     text: " Cloud Native Patterns",
   },
 ];
@@ -180,7 +180,7 @@ const Maintainer = () => {
               </ul>
             </p>
 
-            <a id="Cloud Native Performance">
+            <a id="Cloud-Native-Performance">
               <p>
                 <h3>
                   <a href="https://smp-spec.io/">
@@ -207,7 +207,7 @@ const Maintainer = () => {
 
             <p>
 
-              <a id="Cloud Native Patterns">
+              <a id="Cloud-Native-Patterns">
                 {" "}
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">

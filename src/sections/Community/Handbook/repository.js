@@ -22,8 +22,8 @@ const contents = [
     link: "#top",
     text: "GitHub Organizations and Repositories",
   },
-  { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
-  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+  { id: 1, link: "#Frontend-Projects", text: "Frontend Projects" },
+  { id: 2, link: "#Backend-Projects", text: "Backend Projects" },
 ];
 
 const Repository = () => {
@@ -123,7 +123,7 @@ const Repository = () => {
               </li>
             </ul>
 
-            <a id="Frontend Projects">
+            <a id="Frontend-Projects">
               <h2>Frontend Projects</h2>
             </a>
 
@@ -189,7 +189,7 @@ const Repository = () => {
                 </div>
               );
             })}
-            <a id="Backend Projects">
+            <a id="Backend-Projects">
               <h2>Backend Projects</h2>
             </a>
 
