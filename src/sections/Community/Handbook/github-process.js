@@ -43,16 +43,80 @@ const SecurityVulnerabilitiesPage = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>2021-04-28</td>
-                  <td>CVE-2021-31856</td>
+                  <td>CYPRESS_RECORD_KEY</td>
+                  <td>Needed for recording the Cypress run in the Cypress Dashboard</td>
                 </tr>
                 <tr>
-                  <td>2021-05-12</td>
-                  <td>CVE-2021-34567</td>
+                  <td>DOCKER_PASSWORD</td>
+                  <td>Belongs to user “mesheryci”</td>
                 </tr>
                 <tr>
-                  <td>2021-06-03</td>
-                  <td>CVE-2021-37589</td>
+                  <td>DOCKER_USERNAME</td>
+                  <td>“mesheryci”</td>
+                </tr>
+                <tr>
+                  <td>NETLIFY_AUTH_TOKEN</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>NETLIFY_SITE_ID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>RELEASEDRAFTER_PAT</td>
+                  <td>Belongs to user “l5io”</td>
+                </tr>
+                <tr>
+                  <td>RELEASE_NOTES_PAT</td>
+                  <td>Belongs to user “l5io”</td>
+                </tr>
+                <tr>
+                  <td>SLACK_BOT_TOKEN</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>GITHUB_TOKEN</td>
+                  <td>For the community scope repo that can be use commit and release</td>
+                </tr>
+                <tr>
+                  <td>NODE_VERSION</td>
+                  <td>“v18” as of Nov 15, 2022.</td>
+                </tr>
+                <tr>
+                  <td>GO_VERSION</td>
+                  <td>1.19</td>
+                </tr>
+                <tr>
+                  <td>PROVIDER_TOKEN</td>
+                  <td>Infinite Meshery Cloud token</td>
+                </tr>
+                <tr>
+                  <td>NPM_TOKEN</td>
+                  <td>l5io user’s token for publishing packages</td>
+                </tr>
+                <tr>
+                  <td>INTEGRATION_SPREADSHEET_CRED</td>
+                  <td>Base64 encoded cred for accessing integration spreadsheet on behalf of user  <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a></td>
+                </tr>
+                <tr>
+                  <td>PLAYGROUND_CONFIG</td>
+                  <td>Base64 encoded kubeconfig of Playground</td>
+                </tr>
+                <tr>
+                  <td>METAL_SSH_KEY</td>
+                  <td>SMP Project-wide SSH private key</td>
+                </tr>
+                <tr>
+                  <td>METAL_AUTH_TOKEN</td>
+                  <td>Metal cli auth token</td>
+                </tr>
+                <tr>
+                  <td>METAL_SERVER1</td>
+                  <td>ID of 1st metal server running playground</td>
+                </tr>
+                <tr>
+                  <td>METAL_SERVER2</td>
+                  <td>ID of 2nd metal server running playground</td>
                 </tr>
               </tbody>
             </table>
