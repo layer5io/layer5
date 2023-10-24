@@ -433,17 +433,24 @@ const SecurityVulnerabilitiesPage = () => {
               <li><b>area/ui</b> -  build the Meshery UI</li>
               <li><b>component/meshery-server</b> - Assumed that Meshery Server should always be build, but this is not the case.</li>
             </ul>
+
+            <h3>Bots</h3>
+            <p>Layer5 uses the following bots:</p>
             <ul>
-              <li>Changes are merged from the private GitHub repository holding the fix into the appropriate set of public branches.</li>
-              <li>Layer5 team ensures all necessary binaries are promptly built and published.</li>
-              <li>Once the binaries are available, an announcement is sent out on the following channels:
-                <ul>
-                  <li>The <a href="https://layer5.io/blog">Layer5 blog</a></li>
-                  <li>The <a href="https://twitter.com/layer5">Layer5 Twitter feed</a></li>
-                  <li>The <a href="https://layer5io.slack.com/archives/CSF3PSZT9">#announcements</a> channel on community <a href="https://slack.layer5.io/">Slack</a></li>
-                </ul>
-              </li>
+              <li>Triage bot</li>
+              <li>Stale bot</li>
+              <li>Welcome bot</li>
+              <li>DCO bot</li>
             </ul>
+
+            <h3>Actions</h3>
+            <ul>
+              <li>Labeler.yml</li>
+              <li>label-commenter.yml</li>
+            </ul>
+
+            <p>Good resource - <a href="https://github.com/sdras/awesome-actions#pull-requests">https://github.com/sdras/awesome-actions#pull-requests</a></p>
+
           </div>
         </Container>
       </div>
