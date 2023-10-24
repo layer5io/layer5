@@ -231,7 +231,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/design required</td>
-                  <td>Design specification needed</td>
+                  <td>A labeler bot comments with a note stipulating the a design specification required prior to proceeding.</td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
