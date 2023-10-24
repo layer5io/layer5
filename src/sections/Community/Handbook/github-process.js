@@ -20,7 +20,7 @@ const SecurityVulnerabilitiesPage = () => {
             <p>The number of repositories under the “Layer5io” organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.</p>
 
             <h3>Issue and Pull Request Templates</h3>
-            <p>Layer5 uses issue and pull request templates. See the .github folder in any repo.</p>
+            <p>Layer5 uses issue and pull request templates. See the `.github` folder in any repo for examples.</p>
 
             <h3>Template Repositories</h3>
             <p>Layer5 uses the following repository templates:</p>
@@ -221,7 +221,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/invite</td>
-                  <td>Send an invitation to the issue author to join the GH org</td>
+                  <td>When applied, this label triggers a to send an invitation to the issue author to join the respective GH org. Invitations are missing appropriate team assignments, however.</td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -246,7 +246,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/stale</td>
-                  <td>Issue has not had any activity for an extended period of time</td>
+                  <td>Issue has not had any activity for an extended period of time. Label is most often applied by a stale bot, working under specific inactivity timeouts.</td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -256,12 +256,12 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/remind</td>
-                  <td>Reminds the contributor towards the issue to be attentive</td>
+                  <td>A labeler bot comments on the issue with a helpful reminder to the current assignee that help is available, if needed, and a reminder that their issue remains outstanding (undone).</td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
                   <td>issue/willfix</td>
-                  <td>This issue will be worked on</td>
+                  <td>This issue will be worked on. The stale bot honors this label and skips staleness consideration of issues with this label.</td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -400,11 +400,6 @@ const SecurityVulnerabilitiesPage = () => {
                   <td>#57b6cc</td>
                 </tr>
                 <tr>
-                  <td>service-mesh/octarine</td>
-                  <td>Issues related to Octarine</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
                   <td>service-mesh/tanzu</td>
                   <td>Issues related to Tanzu</td>
                   <td>#57b6cc</td>
@@ -413,11 +408,11 @@ const SecurityVulnerabilitiesPage = () => {
             </table>
 
             <h3>List for Pull Requests</h3>
-            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, <br/> and significantly, they will be used in conditional logic during workflow execution to determine the PR’s appropriate path through the CI flow.</p>
+            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, and significantly, they will be used in conditional logic during workflow execution to determine the PR’s appropriate path through the CI flow.</p>
             <ul>
               <li><b>Refactor</b> - Chore related pull request</li>
               <li><b>Fix</b> - Bug fixes PRs</li>
-              <li><b>On-hold </b> - PR needs review before merging or it needs to behold until a specific issue is fixed.</li>
+              <li><b>On-hold</b> - PR needs review before merging or it needs to behold until a specific issue is fixed.</li>
               <li><b>Dependabot</b> - All dependabot related automated PRs</li>
               <li><b>release</b> - identifies that a release is / will be made</li>
               <li><b>Draft</b> - PR is in draft state, GitHub provides a way for the draft state but having a label will help us in triage purposes.</li>
