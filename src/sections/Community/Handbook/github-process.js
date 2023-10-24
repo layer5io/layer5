@@ -121,9 +121,295 @@ const SecurityVulnerabilitiesPage = () => {
               </tbody>
             </table>
 
+            <h3>Labels for Issues</h3>
+            <p>The following list of GitHub issue labels are applied organization-wide. New repositories created as of June 13th, 2020 will contain these labels by default.</p>
 
-            <h3>Public disclosures</h3>
-            <p>On the day chosen for public disclosure, a sequence of activities takes place as quickly as possible:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th><b>labels</b></th>
+                  <th><b>Description</b></th>
+                  <th><b>Color</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>area/ci</td>
+                  <td>Continuous integration | Build and release</td>
+                  <td>#5319e1</td>
+                </tr>
+                <tr>
+                  <td>area/docs</td>
+                  <td>Improvements or additions to documentation</td>
+                  <td>#5319e2</td>
+                </tr>
+                <tr>
+                  <td>area/lifecycle</td>
+                  <td>Lifecycle management (install, uninstall, configure) related</td>
+                  <td>#5319e3</td>
+                </tr>
+                <tr>
+                  <td>area/performance</td>
+                  <td>Performance management</td>
+                  <td>#5319e4</td>
+                </tr>
+                <tr>
+                  <td>area/tests</td>
+                  <td>Testing / quality assurance</td>
+                  <td>#5319e5</td>
+                </tr>
+                <tr>
+                  <td>area/ui</td>
+                  <td>User Interface</td>
+                  <td>#5319e6</td>
+                </tr>
+                <tr>
+                  <td>area/workloads</td>
+                  <td>Applications / services</td>
+                  <td>#5319e7</td>
+                </tr>
+                <tr>
+                  <td>area/helm</td>
+                  <td>Helm charts issues</td>
+                  <td>#5319e8</td>
+                </tr>
+                <tr>
+                  <td>component/api</td>
+                  <td>API related</td>
+                  <td>#3a0485</td>
+                </tr>
+                <tr>
+                  <td>component/mesheryctl</td>
+                  <td>Meshery CLI related</td>
+                  <td>#3a0486</td>
+                </tr>
+                <tr>
+                  <td>component/ui</td>
+                  <td></td>
+                  <td>#3a0486</td>
+                </tr>
+                <tr>
+                  <td>component/filters</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>component/patterns</td>
+                  <td></td>
+                  <td>#3a0486</td>
+                </tr>
+                <tr>
+                  <td>component/meshsync</td>
+                  <td>MeshSync related</td>
+                  <td>#3a0487</td>
+                </tr>
+                <tr>
+                  <td>component/meshery-perf</td>
+                  <td>Meshery-perf related</td>
+                  <td>#3a0488</td>
+                </tr>
+                <tr>
+                  <td>good first issue</td>
+                  <td>Good for newcomers</td>
+                  <td>#7057ff</td>
+                </tr>
+                <tr>
+                  <td>help wanted</td>
+                  <td>Extra attention is needed</td>
+                  <td>#35f48e</td>
+                </tr>
+                <tr>
+                  <td>issue/invite</td>
+                  <td>Send an invitation to the issue author to join the GH org</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/blocked</td>
+                  <td>Issue is blocked</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/design required</td>
+                  <td>Design specification needed</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/duplicate</td>
+                  <td>This issue or pull request already exists</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/invalid</td>
+                  <td>This doesn't seem right</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/stale</td>
+                  <td>Issue has not had any activity for an extended period of time</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/tweet</td>
+                  <td>Posts</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/remind</td>
+                  <td>Reminds the contributor towards the issue to be attentive</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>issue/willfix</td>
+                  <td>This issue will be worked on</td>
+                  <td>#eeeeee</td>
+                </tr>
+                <tr>
+                  <td>kind/bug</td>
+                  <td>Something isn't working</td>
+                  <td>#088073</td>
+                </tr>
+                <tr>
+                  <td>kind/child</td>
+                  <td>One of a number of issues relating to an epic</td>
+                  <td>#088074</td>
+                </tr>
+                <tr>
+                  <td>kind/chore</td>
+                  <td>Necessary task</td>
+                  <td>#088075</td>
+                </tr>
+                <tr>
+                  <td>kind/enhancement</td>
+                  <td>Improvement in current feature</td>
+                  <td>#088076</td>
+                </tr>
+                <tr>
+                  <td>kind/epic</td>
+                  <td>An issue that describes a set of concerns (issues)</td>
+                  <td>#088077</td>
+                </tr>
+                <tr>
+                  <td>kind/feature</td>
+                  <td>New major feature or request</td>
+                  <td>#088078</td>
+                </tr>
+                <tr>
+                  <td>kind/proposal</td>
+                  <td>Proposal request for project</td>
+                  <td>#088079</td>
+                </tr>
+                <tr>
+                  <td>kind/question</td>
+                  <td>Further information is requested</td>
+                  <td>#088080</td>
+                </tr>
+                <tr>
+                  <td>language/go</td>
+                  <td>Golang related</td>
+                  <td>#16e2e2</td>
+                </tr>
+                <tr>
+                  <td>language/javascript</td>
+                  <td>Javascript related</td>
+                  <td>#16e2e3</td>
+                </tr>
+                <tr>
+                  <td>language/ruby</td>
+                  <td>Ruby related</td>
+                  <td>#16e2e4</td>
+                </tr>
+                <tr>
+                  <td>pr/dependencies</td>
+                  <td>Dependabot or manual dependencies addressed in this PR</td>
+                  <td>#0366d5</td>
+                </tr>
+                <tr>
+                  <td>pr/do-not-merge</td>
+                  <td>PRs not ready to be merged</td>
+                  <td>#0366d6</td>
+                </tr>
+                <tr>
+                  <td>pr/draft</td>
+                  <td>WIP/Draft pull request</td>
+                  <td>#0366d7</td>
+                </tr>
+                <tr>
+                  <td>pr/on hold</td>
+                  <td>PR/Issue on hold</td>
+                  <td>#0366d8</td>
+                </tr>
+                <tr>
+                  <td>priority/urgent</td>
+                  <td>Issue to be addressed urgently</td>
+                  <td>#f60205</td>
+                </tr>
+                <tr>
+                  <td>priority/high</td>
+                  <td>High priority issue</td>
+                  <td>#d60205</td>
+                </tr>
+                <tr>
+                  <td>priority/low</td>
+                  <td>Low priority issue</td>
+                  <td>#a60205</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/app-mesh</td>
+                  <td>Issues related to App Mesh</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/consul</td>
+                  <td>Issues related to Consul</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/cpx</td>
+                  <td>Issues related to CPX</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/istio</td>
+                  <td>Issues related to Istio</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/kuma</td>
+                  <td>Issues related to Kuma</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/linkerd</td>
+                  <td>Issues related to Linkerd</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/maesh</td>
+                  <td>Issues related to Maesh</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/nginx</td>
+                  <td>ssues related to NGINX SM</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/nsm</td>
+                  <td>Issues related to NSM</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/octarine</td>
+                  <td>Issues related to Octarine</td>
+                  <td>#57b6cc</td>
+                </tr>
+                <tr>
+                  <td>service-mesh/tanzu</td>
+                  <td>Issues related to Tanzu</td>
+                  <td>#57b6cc</td>
+                </tr>
+              </tbody>
+            </table>
             <ul>
               <li>Changes are merged from the private GitHub repository holding the fix into the appropriate set of public branches.</li>
               <li>Layer5 team ensures all necessary binaries are promptly built and published.</li>
