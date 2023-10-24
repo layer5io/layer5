@@ -410,6 +410,29 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
               </tbody>
             </table>
+
+            <h3>List for Pull Requests</h3>
+            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, <br/> and significantly, they will be used in conditional logic during workflow execution to determine the PR’s appropriate path through the CI flow.</p>
+            <ul>
+              <li><b>Refactor</b> - Chore related pull request</li>
+              <li><b>Fix</b> - Bug fixes PRs</li>
+              <li><b>On-hold </b> - PR needs review before merging or it needs to behold until a specific issue is fixed.</li>
+              <li><b>Dependabot</b> - All dependabot related automated PRs</li>
+              <li><b>release</b> - identifies that a release is / will be made</li>
+              <li><b>Draft</b> - PR is in draft state, GitHub provides a way for the draft state but having a label will help us in triage purposes.</li>
+              <li><b>Approved</b> - Indicates a PR has been approved by approver form all required OWNERS files. #51ed31</li>
+              <li><b>help wanted</b> - Extra attention is needed #008672</li>
+              <li><b>needs-ok-to-test</b> -  #d60c6a</li>
+              <li><b>awaiting review</b> - The PR is ready for the reviewer to review. #fbca04</li>
+            </ul>
+
+            <p>Improving the build times through conditional logic that will skip sections of the ci.yml, unless these labels are present:</p>
+            <ul>
+              <li><b>docs</b> -  build the Jekyll site for Meshery documentation</li>
+              <li><b>component/mesheryctl</b> - build the Meshery CLI</li>
+              <li><b>area/ui</b> -  build the Meshery UI</li>
+              <li><b>component/meshery-server</b> - Assumed that Meshery Server should always be build, but this is not the case.</li>
+            </ul>
             <ul>
               <li>Changes are merged from the private GitHub repository holding the fix into the appropriate set of public branches.</li>
               <li>Layer5 team ensures all necessary binaries are promptly built and published.</li>
