@@ -40,7 +40,7 @@ export const MemberSingleWrapper = styled.div`
     position: relative;
     text-align: center;
     z-index: 1;
-    overflow: hidden;
+    // overflow: hidden;
 
     .text {
       font-weight: 400;
@@ -133,7 +133,66 @@ export const MemberSingleWrapper = styled.div`
     justify-content: left;
     width: 90%;
     padding-left: 0 !important;
+    //my code
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip-text {
+      visibility: hidden;
+      font-size: 14px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 2px;
+      position: absolute;
+      z-index: 1;
+      width: 80px;
 
+      left: 50%;
+      bottom: 115%; /* Position the tooltip above the text */
+      //width: 110px;
+      margin-left: -40px; /* Center the tooltip */
+      opacity: 0;
+      transition: opacity 0.3s; /* Add a smooth fade-in effect */
+    }
+    .mashmap {
+      width: 90px;
+    }
+    .community {
+      left: 30%;
+      width: 100px;
+    }
+    .docker-extension {
+      left: -18%;
+      width: 150px;
+    }
+    .meshery-catalog {
+      left: -18%;
+      width: 150px;
+    }
+    .meshery-operator {
+      left: -18%;
+      width: 150px;
+    }
+    .image-hub {
+      left: 33%;
+      width: 100px;
+    }
+    .landscape {
+      left: 33%;
+      width: 100px;
+    }
+    .nighthawk {
+      left: 28%;
+      width: 100px;
+    }
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    //till here
     li {
       display: block;
       color: black;
@@ -196,7 +255,42 @@ export const MemberSingleWrapper = styled.div`
       font-weight: 700;
     }
   }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+   
+  }
 
+  .tooltip .tooltiptext {
+    
+    font-size: 14px;
+    visibility: hidden;
+   
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%; /* Position the tooltip above the list item */
+    left: 50%; /* Center the tooltip */
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip .small-tooltip{
+    width:150px;
+  }
+  .tooltip .large-tooltip{
+    width:200px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
   .executive-bio {
     margin: 4.5rem 0 3.125rem 0;
 
