@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import slugify from "../../../utils/slugify";
 import { StaticImage } from "gatsby-plugin-image";
-// import Button from "../../../reusecore/Button";
+
 import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
@@ -132,32 +132,6 @@ const Sidebar = ({ pageContext }) => {
             </div>
           </a>
         </div>
-      </div>
-      <div className="subscribe">
-        <form
-          name="contactform"
-          method="post"
-          action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
-        >
-          {/* <div>
-            <span>
-              <h4>Subscribe to our Newsletter</h4>
-            </span>
-            <input
-              className="inputrow subscribe-email"
-              type="email"
-              placeholder="Email Address"
-              name="EMAIL"
-              id="mce-EMAIL"
-              required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
-              onInput={(e) => e.target.setCustomValidity("")}
-            />
-            <Button $secondary title="Subscribe" aria-label="subscribe-us" id="mc-embedded-subscribe" />
-          </div>
-        </form>
       </div>
     </BlogSideBarWrapper>
   );
