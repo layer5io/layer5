@@ -14,6 +14,7 @@ export const query = graphql`query NewsBySlug($slug: String!) {
       subtitle
       date(formatString: "MMMM Do, YYYY")
       author
+      description
       eurl
       presskit
       thumbnail {
@@ -49,5 +50,5 @@ const NewsSinglePage = ({ data }) => {
 export default NewsSinglePage;
 
 export const Head = ({ data }) => {
-  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return  <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description} />;
 };
