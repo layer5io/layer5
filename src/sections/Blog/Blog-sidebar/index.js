@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import slugify from "../../../utils/slugify";
 import { StaticImage } from "gatsby-plugin-image";
-
 import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
