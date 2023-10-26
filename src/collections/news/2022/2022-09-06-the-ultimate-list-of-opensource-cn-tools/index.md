@@ -6,6 +6,7 @@ category: Coverage
 author: Bill Doerrfeld
 thumbnail: ./tools.webp
 darkthumbnail: ./tools.webp
+description: "Discover the ultimate compilation of open-source cloud-native tools curated by the Cloud Native Computing Foundation (CNCF). From scheduling and observability to security, CI/CD, service mesh, and edge computing, explore a comprehensive range of tools revolutionizing the cloud-native landscape"
 eurl: https://containerjournal.com/features/the-ultimate-list-of-open-source-cloud-native-tools/
 published: true
 type: News
