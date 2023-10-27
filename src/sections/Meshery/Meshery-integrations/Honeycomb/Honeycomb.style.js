@@ -7,7 +7,7 @@ export const HoneycombGrid = styled.div`
     font-size: 0;
     line-height: 0;
     height: ${(props) =>
-  props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
+      props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
     li {
       width: 150px;
       margin: 3px;
@@ -27,6 +27,35 @@ export const HoneycombGrid = styled.div`
         #0000 0 calc(calc(1.732 * 150px + 4 * 3px - 1px) - 3px),
         #000 0 calc(1.732 * 150px + 4 * 3px - 1px)
       );
+    }
+  }
+  @media (max-width: 320px) {
+    ul {
+      font-size: 0;
+      line-height: 0;
+      height: 1820px;
+      li {
+        width: 15opx;
+        margin-top: 8px;
+        margin-left: -2px;
+        margin-right: -2px;
+        height: 168px;
+        display: inline-block;
+        font-size: initial;
+        margin-bottom: -40.27px;
+        filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 20px);
+      }
+
+      ::before {
+        content: "";
+        width: 74px;
+        float: left;
+        height: 100%;
+        shape-outside: repeating-linear-gradient(
+          #0000 0 calc(calc(1.732 * 150px + 4 * 3px - 1px) - 3px),
+          #000 0 calc(1.732 * 150px + 4 * 3px - 1px)
+        );
+      }
     }
   }
 `;
