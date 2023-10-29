@@ -248,7 +248,7 @@ In the styled component, we find ".logo", add the `svg` element, and within that
 > svg file name (`layer5-colorMode`)
 
 - a separator (`_svg___`)
-- the class name being targetted inside the SVG (`colorMode1`)
+- the class name being targeted inside the SVG (`colorMode1`)
   > this results in the class `.layer5-colorMode_svg__colorMode1`
 
 ```
