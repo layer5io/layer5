@@ -27,7 +27,9 @@ const JoinCommunityWrapper = styled.div`
     ul {
       list-style: none;
       top: 3rem;
-
+      @media only screen and (max-width: 1300px){
+        padding-left:1rem;
+      }
       li {
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
