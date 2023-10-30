@@ -203,27 +203,58 @@ const Repository = () => {
                         <th>{category}</th>
                         <th>Language</th>
                         <th>Description</th>
+                        <th>Maintainers</th>
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
                     {backendProject.subdata.map((subdata) => {
-                      const { project, image, language, description, repository } = subdata;
+                      const {
+                        project,
+                        image,
+                        language,
+                        description,
+                        repository,
+                        link,
+                        maintainers_name,
+                      } = subdata;
                       const smpClass = project === "SMP Action";
-                      const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
+                      const siteIconClasses = smpClass
+                        ? "site-icon inline smp-action"
+                        : "site-icon inline";
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
+                              <img
+                                className={siteIconClasses}
+                                src={image}
+                                alt="project"
+                              />
+                              &nbsp;{project}{" "}
+                            </td>
                             <td>{language}</td>
                             <td>{description}</td>
+                            <td>
+                              {maintainers_name?.map((mname, index) => {
+                                return (
+                                  <Link to={link[index]} key={index}>
+                                    <span>{index > 0 ? ", " : ""}</span>
+                                    {mname}
+                                  </Link>
+                                );
+                              })}
+                            </td>
                             <td>
                               <a
                                 href={repository}
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} alt="github-icon" />
+                                <img
+                                  className="github-icon"
+                                  src={github}
+                                  alt="github-icon"
+                                />
                               </a>
                             </td>
                           </tr>
