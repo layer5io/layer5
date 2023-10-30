@@ -12,18 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include .github/Makefile.show-help.mk
+include .github/build/Makefile.show-help.mk
 
-setup-libs: 
-	## "DEPRECATED: This target is deprecated. Use `make setup`.
-
-## Install layer5.io dependencies your local machine.
+## Install docs.layer5.io dependencies your local machine.
+## See https://gohugo.io/categories/installation
 setup:
-	npm install
+	hugo server -D 
 
-## Run layer5.io on your local machine.
+## Run layer5.io on your local machine with draft and future content enabled.
 site:
-	npm start
+	hugo server -D -F
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
