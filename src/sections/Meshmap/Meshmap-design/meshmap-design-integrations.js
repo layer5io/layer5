@@ -4,7 +4,7 @@ import { ReactComponent as IntegrationsImage } from "./images/integration-image-
 import UnderlineImg from "./images/underline.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import { useStaticQuery, graphql, navigate } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import Button from "../../../reusecore/Button";
 // import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 

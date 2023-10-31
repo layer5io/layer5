@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -7,7 +7,7 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
 import ReactPlayer from "react-player/youtube";
-import mesheryPlayground from "./meshery-playground-meshmap.png";
+// import mesheryPlayground from "./meshery-playground-meshmap.png";
 import videoThumbnail from "./meshery-infrastructure-as-diagram.webp";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
@@ -16,7 +16,7 @@ import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
 import Banner1SectionWrapper from "./banner4.style";
 
-import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
+// import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import useHasMounted from "../../../utils/useHasMounted";
