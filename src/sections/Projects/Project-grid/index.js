@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
+// import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import { ProjectWrapper } from "./projectGrid.style";
 import MeshMapCTA from "../../meshmap-cta";
@@ -13,7 +13,6 @@ import landscape from "../../../assets/images/landscape/layer5_landscape_green.s
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import smp_dark from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import smp_light from "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
-import smi from "../../../assets/images/app/projects/smi.svg";
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
