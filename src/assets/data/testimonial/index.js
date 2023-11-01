@@ -10,14 +10,14 @@ const data = {
     testimonials: [
         {
             quote:
-        "Working with service mesh technology, I find one of the most useful tools is Meshery! I use Meshery to run POCs for our customers to help them adopt, and then, ongoing to check our mesh configuration. The most fantastic part about Meshery is it's performance management features.",
+        "Working with Kubernetes and cloud technology, I find one of the most useful tools is Meshery! I use Meshery to run POCs for our customers to help them adopt, and then, ongoing to check our mesh configuration. The most fantastic part about Meshery is it's performance management features.",
             author: "Mohsen Houshmand",
             dsignation: "Intraserve Systems",
             thumb: image1
         },
         {
             quote:
-          "Our Complex, Dynamic, and Intelligent system demands leverage different tools to efficiently manage service exchange and ecosystem at Global Scale; for instance, we need to identify right fit Service Mesh to address varying workload scenarios, distributed systems across locations, different security tiers, minimal latency etc. Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools.",
+          "Our Complex, Dynamic, and Intelligent system demands leverage different tools to efficiently manage service exchange and ecosystem at Global Scale; for instance, we need to identify right fit infrastructure configuration to address varying workload scenarios, distributed systems across locations, different security tiers, minimal latency etc. Meshery helps us curate cloud infrastructure for tailored need by helping us running simulations and identifying the right fit of Kubernetes-based tooling that works efficiently across diverse ecosystem.",
             author: "Distinguished Technologist",
             dsignation: "Cloudless, HPE Labs",
             thumb: image2
