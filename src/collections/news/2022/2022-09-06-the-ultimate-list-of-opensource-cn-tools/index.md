@@ -45,7 +45,7 @@ Argo is a suite of packages that help direct jobs on Kubernetes to aid a continu
 
 ### Service Mesh Tools
 <br />
-Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), <Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface (SMI) </Link> , <Link to="/meshery">Meshery</Link> and <Link to="/projects/service-mesh-performance">Service Mesh Performance(SMP)</Link>.
+Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), <Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface (SMI) </Link> , <Link to="/meshery">Meshery</Link> and <Link to="/projects/cloud-native-performance">Service Mesh Performance(SMP)</Link>.
 <br /> <br />
 
 ### Service Proxies

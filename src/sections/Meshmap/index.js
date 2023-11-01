@@ -150,7 +150,7 @@ const Meshmap = () => {
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
-                  // Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+                  // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
                 },
                 // {
                 //   title: "Nothing great is made alone.",

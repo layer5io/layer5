@@ -4,12 +4,10 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
-import Button from "../../../reusecore/Button";
 import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
-import { ThemeManagerContext, ThemeManagerProvider, ThemeSetting } from "../../../theme/app/ThemeManager";
+import { ThemeManagerContext, ThemeManagerProvider } from "../../../theme/app/ThemeManager";
 
 const Projects = () => {
-  const projectsIcon = "./images/projects.svg";
   const { isDark, didLoad } = useContext(ThemeManagerContext);
 
   const projectImage2_light = "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
@@ -59,7 +57,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/projects/service-mesh-performance">
+              <Link className="project-card" to="/projects/cloud-native-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
                     {( isDark ) ? (

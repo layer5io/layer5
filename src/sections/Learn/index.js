@@ -13,7 +13,7 @@ const LearnPage = () => {
       <div className="page-header-section">
         <h1>Learn Cloud Native</h1>
 
-        <h3>Free training and how-tos on cloud native architectures, deployment models with Kubernetes, Istio, Linkerd, Consul, Open Service Mesh, Kuma, NGINX Service Mesh, AWS App Mesh, and VMware Tanzu Service Mesh</h3>
+        <h3>Free training and how-tos on cloud native architectures, deployment models with Kubernetes, Istio, Prometheus, Open Policy Agent, Jaeger, Terraform, Linkerd, Consul...</h3>
 
       </div>
       <BooksSection />

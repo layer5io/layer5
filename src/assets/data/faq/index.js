@@ -69,7 +69,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
-        "Rank your deployment - results of performance tests are anonymously collected using the Service Mesh Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
+        "Rank your deployment - results of performance tests are anonymously collected using the Cloud Native  Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
       ],
       link: "",
       linktext: "",
@@ -81,8 +81,8 @@ const data = {
         "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
         "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
       ],
-      link: "/projects/service-mesh-performance",
-      linktext: "Service Mesh Performance",
+      link: "/projects/cloud-native-performance",
+      linktext: "Cloud Native Performance",
     },
     {
       question:
@@ -110,23 +110,23 @@ const data = {
       question: "Can I deploy Meshery / MeshMap on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
     {
-      question: "Where is Meshery Cloud hosted; where is my data stored?",
+      question: "Where is Layer5 Cloud hosted; where is my data stored?",
       category: "Meshery",
       answer: [
-        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
     },
     {
-      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
 
       ],
@@ -295,7 +295,7 @@ const data = {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
       answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
       ],
     },
     {
@@ -316,7 +316,7 @@ const data = {
       question: "How can I unlock my account after several failed transactions?",
       category: "Billing",
       answer: [
-        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
       ],
     },
 
@@ -404,19 +404,19 @@ const data = {
     //     link: "/service-mesh-landscape",
     //     linktext: "Service Mesh Landscape",
     // },
-    {
-      question: "What is a service mesh?",
-      category: "Service Mesh",
-      answer: [
-        "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
-        "A services-first network; A developer-driven network;",
-        "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
-        "A network that enables service owners to control application logic without engaging developers to change its code.",
-        "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
-      ],
-      link: "",
-      linktext: "",
-    },
+    // {
+    //   question: "What is a service mesh?",
+    //   category: "Service Mesh",
+    //   answer: [
+    //     "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
+    //     "A services-first network; A developer-driven network;",
+    //     "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
+    //     "A network that enables service owners to control application logic without engaging developers to change its code.",
+    //     "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
+    //   ],
+    //   link: "",
+    //   linktext: "",
+    // },
     {
       question: "When should I adopt a service mesh?",
       category: "Service Mesh",
