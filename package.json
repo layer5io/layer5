@@ -28,7 +28,7 @@
     "@emotion/is-prop-valid": "^1.2.1",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
-    "@fullcalendar/google-calendar": "^6.0.2",
+    "@fullcalendar/google-calendar": "^6.1.9",
     "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^6.1.8",
     "@loadable/component": "^5.15.3",
