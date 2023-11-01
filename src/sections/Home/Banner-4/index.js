@@ -57,9 +57,9 @@ const Banner1 = (props) => {
                 $leftAlign={true}
                 $UniWidth="100%"
               >
-                <h1>What's in your</h1>
+                <h1>Kubernetes is better with friends</h1>
                 <h2>
-                  Kubernetes clusters?
+                  Collaborate to innovate
                 </h2>
                 {/* <h1>Take the blinders off</h1>
                 <h2>

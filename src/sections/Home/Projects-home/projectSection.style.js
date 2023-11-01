@@ -69,7 +69,7 @@ const ProjectItemWrapper = styled.section`
             margin: auto;
             font-weight: 700;
             font-size: 1.3rem;
-            color: ${props => props.theme.secondaryColor}
+            color: ${props => props.theme.primaryColor}
         }
         p {
             font-weight: 300;
