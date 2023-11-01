@@ -404,19 +404,19 @@ const data = {
     //     link: "/service-mesh-landscape",
     //     linktext: "Service Mesh Landscape",
     // },
-    {
-      question: "What is a service mesh?",
-      category: "Service Mesh",
-      answer: [
-        "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
-        "A services-first network; A developer-driven network;",
-        "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
-        "A network that enables service owners to control application logic without engaging developers to change its code.",
-        "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
-      ],
-      link: "",
-      linktext: "",
-    },
+    // {
+    //   question: "What is a service mesh?",
+    //   category: "Service Mesh",
+    //   answer: [
+    //     "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
+    //     "A services-first network; A developer-driven network;",
+    //     "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
+    //     "A network that enables service owners to control application logic without engaging developers to change its code.",
+    //     "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
+    //   ],
+    //   link: "",
+    //   linktext: "",
+    // },
     {
       question: "When should I adopt a service mesh?",
       category: "Service Mesh",
