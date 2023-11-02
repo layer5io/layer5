@@ -83,6 +83,31 @@ const Data = {
       name: "Products",
       path: "/products",
       subItems: [
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
+        {
+          name: "PRODUCTS",
+          path: "/products",
+          sepLine: true
+        },
+        {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+          sepLine: true
+        },
+        {
+          name: "---",
+          // path: "/cloud-native-management/meshmap",
+
+        },
+        {
+          name: "PROJECTS",
+          path: "/projects",
+          sepLine: true
+        },
         {
           name: "Meshery",
           path: "/cloud-native-management/meshery",
