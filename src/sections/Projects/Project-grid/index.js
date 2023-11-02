@@ -109,7 +109,7 @@ const ProjectPage = () => {
                 <h5> Cloud Native Patterns</h5>
               </div>
             </Link>
-            <Link to="/catalog" className="project__card ten">
+            <Link to="/cloud-native-management/catalog" className="project__card ten">
               <div className="project__card-container project__card-container_nighthawk">
                 <img src={catalog} alt="Catalog" />
                 <h5>Catalog</h5>

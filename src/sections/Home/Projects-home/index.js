@@ -81,7 +81,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col $sm={12} $md={6} $lg={3}>
-              <Link className="project-card" to="/catalog">
+              <Link className="project-card" to="/cloud-native-management/catalog">
                 <div className="project__block__inner">
                   {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
                   <CatalogLogo height="40px" width="auto" style={{ margin: "10px auto", minHeight: "40px" }} />

@@ -105,7 +105,7 @@ const Data = {
         },
         {
           name: "Catalog",
-          path: "/catalog",
+          path: "/cloud-native-management/catalog",
           externalLink: true
         },
         {
