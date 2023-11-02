@@ -32,29 +32,19 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>
-                    We embrace <i>developer</i>-defined infrastructure. We
-                    empower developers to change how they write applications,
-                    support <i>operators</i> in rethinking how they run modern
-                    infrastructure, and enable <i>product owners</i> to regain
-                    full-control over their product portfolio.
-                  </p>
-                  <p>
-                    Our cloud native application and infrastructure management
-                    software enables organizations to expect more from their
-                    infrastructure.
+                    At Layer5, we champion <i>developer</i>-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
                   </p>
                   <div className="head-images-mobile">
                     <img src={FiveIcon} alt="About Layer5" />
                   </div>
                   <p className="section-title">We are enablers.</p>
                   <p>
-                    At Layer5, we believe collaboration enables innovation, and
-                    infrastructure enables collaboration. We help organizations
-                    look at their infrastructure differently, asking it "what
-                    have you done for me lately?". Our suite of multi-mesh,
-                    multi-cloud infrastructure management products — all with
-                    open source projects at their core — underpin each of our
-                    offerings.{" "}
+                    We believe innovation is furthered by collaboration and that collaboration is enabled by infrastructure. Layer5 encourages organizations to view their infrastructure through a fresh lens, constantly asking, "What
+                    have you done for me lately?" Our suite of multi-cluster, multi-cloud infrastructure management products, with open source projects at their core, form the bedrock of our offerings.
+
+                    Our cloud native application and infrastructure management
+                    software enables organizations to expect more from their
+                    infrastructure.
                   </p>
                   {/* <p>As stewards of industry, we enable organizations of all sizes, from well-known brands to ambitious start-ups to rely on our solutions to provision, secure, connect, and run their business-critical applications.</p> */}
                 </div>
@@ -91,10 +81,7 @@ const About = () => {
                   </div>
                   <p className="section-title">We are principled.</p>
                   <p>
-                    We are proud of the inclusive and kind work environment we
-                    have built. We support each other as we work to solve
-                    important problems. We take our work seriously, and we do it
-                    with integrity and in alignment with our core principles.
+                    We are proud of the inclusive and kind community and work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and execute with integrity and in alignment with our core principles of paying it forward, challenging ourselves and those around to be and to do better.
                   </p>
                 </div>
               </Col>
