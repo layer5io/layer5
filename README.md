@@ -23,7 +23,7 @@
 
 # About Layer5
 
-[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
+[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
 # Projects
 
@@ -147,7 +147,7 @@ alt="Nighthawk" align="left" />
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/catalog">Meshery Catalog</a></h2>
+<h2><a href="https://meshery.layer5.io/catalog">Meshery Catalog</a></h2>
 <a href="">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"

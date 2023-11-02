@@ -18,7 +18,7 @@ const CatalogHeaderWrapper = styled.div`
       flex-direction: column;
     }
     .header__title {
-      color: ${(props) => props.theme.secondaryColor};
+      color: ${(props) => props.theme.primaryColor};
       padding-right: 80px;
       margin-bottom: 20px;
     }
@@ -87,7 +87,7 @@ const Header = () => {
                   primary
                   title="Browse Catalog"
                   external={true}
-                  url="https://meshery.io/catalog"
+                  url="https://meshery.layer5.io/catalog"
                 />
               </div>
             </Col>
