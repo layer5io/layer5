@@ -32,7 +32,7 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>
-                    At Layer5, we champion <i>developer</i>-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+                    At Layer5, we champion <i>developer-defined</i> infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
                   </p>
                   <div className="head-images-mobile">
                     <img src={FiveIcon} alt="About Layer5" />
