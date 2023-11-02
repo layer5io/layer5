@@ -30,7 +30,11 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Use known cloud native ",
+        content: "Share and use known cloud native patterns",
+        className: "--on",
+      },
+      {
+        content: "Multi-player collaboration",
         className: "--on",
       },
       // {
