@@ -1,7 +1,7 @@
 import React from "react";
 
-import SEO from "../components/seo";
-import CatalogPage from "../sections/Cloud-Native-Catalog";
+import SEO from "../../components/seo";
+import CatalogPage from "../../sections/Cloud-Native-Catalog";
 
 const Catalog = () => {
   return (
@@ -13,6 +13,6 @@ const Catalog = () => {
 export default Catalog;
 export const Head = () => {
   return <SEO title="Cloud Native Catalog"
-    description="The Cloud Native Catalog, easily import any catalog item into Meshery."
+    description="The Kubernetes and Cloud Native Catalog. Build, share, innovate with CNCF project-curated best practices."
     image="/images/meshery-logo-dark-text.webp" />;
 };
