@@ -169,7 +169,7 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/catalog">
+                    <a href="https://layer5.io/cloud-native-management/catalog">
                       Meshery Catalog :
                     </a>
                   </h4>{" "}
