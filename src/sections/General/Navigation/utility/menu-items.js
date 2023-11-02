@@ -133,10 +133,10 @@ const Data = {
       //   descr: "Service Mesh Istio patterns for multilatency"
       // }
     },
-    // {
-    //   name: "Pricing",
-    //   path: "/pricing"
-    // },
+    {
+      name: "Integrations",
+      path: "/cloud-native-management/meshery/integrations"
+    },
     // {
     //   name: "Learn",
     //   path: "/learn",
