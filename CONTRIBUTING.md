@@ -39,46 +39,46 @@ To help you get started on contributing to Layer5 projects, refer to the [Layer5
 Before **creating** an Issue i.e for `features`/`bugs`/`improvements` please follow these steps:
 
 
-1. search existing Issues before creating a new issue (look to see if the issue has already been created)
-1. if it doesn't exist create a new issue giving as much context as possible (please take note and select the correct Issue type, for example `bug`, `documentation` or `feature`)
-1. if you wish to work on the Issue once it has been triaged, please include this in your Issue description
+1. Search existing Issues before creating a new Issue (look to see if the Issue has already been created)
+1. If it doesn't exist create a new Issue giving as much context as possible (please take note and select the correct Issue type, for example `bug`, `documentation` or `feature`)
+1. If you wish to work on the Issue once it has been triaged, please include this in your Issue description
 
-### Working on an Issue (get it assigned to you)
+### Working on an Issue
 
 Before working on an existing Issue please follow these steps:
 
-1. comment asking for the issue to be assigned to you (do not tag maintainers on GitHub or Slack as all maintainers receive your comment notifications)
-1. after the Issue is assigned to you, you can start working on it
-1. **only** start working on this Issue (and open a Pull Request) when it has been assigned to you - this will prevent confusion, multiple people working on the same issue and work not being used
-1. reference the Issue in your Pull Request (for example `This PR fixes #123`)
+1. Comment asking for the Issue to be assigned to you (do not tag maintainers on GitHub or Slack as all maintainers receive your comment notifications)
+1. After the Issue is assigned to you, you can start working on it
+1. **only** start working on this Issue (and open a Pull Request) when it has been assigned to you - this will prevent confusion, multiple people working on the same Issue and work not being used
+1. Reference the Issue in your Pull Request (for example `This PR fixes #123`)
 
 > Notes:
 >
-> - check the `Assignees` box at the top of the page to see if the issue has been assigned to someone else before requesting this be assigned to you
-> - if an Issue is unclear, ask questions to get more clarity before asking to have the Issue assigned to you
-> - only request to be assigned an Issue if you know how to work on it
-> - an Issue can be assigned to multiple people, if you all agree to collaborate on the issue (the Pull Request can contain commits from different collaborators)
-> - any Issues that have no activity after 2 weeks will be unassigned and re-assigned to someone else
+> - Check the `Assignees` box at the top of the page to see if the Issue has been assigned to someone else before requesting this be assigned to you
+> - Only request to be assigned an Issue if you know how to work on it
+> - If an Issue is unclear, ask questions to get more clarity before asking to have the Issue assigned to you
+> - An Issue can be assigned to multiple people, if you all agree to collaborate on the Issue (the Pull Request can contain commits from different collaborators)
+> - Any Issues that have no activity after 2 weeks will be unassigned and re-assigned to someone else
 
 ## Reviewing Pull Requests
 
-We welcome everyone to review Pull Requests, it is a great way to learn, network and support each other.
+We welcome everyone to review Pull Requests. It is a great way to learn, network, and support each other.
 
 ### DOs
 
-- use inline comments to explain your suggestions
-- use inline suggestions to propose changes
+- Use inline comments to explain your suggestions
+- Use inline suggestions to propose changes
+- Exercise patience and empathy while offering critiques of the works of others.
 
 ### DON'Ts
 
-- do not be rude, disrespectful or aggressive
-- do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
-- do not blindly approve pull requests to improve your GitHub contributors graph
+- Do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
+- Do not blindly approve Pull Requests to improve your GitHub contributors graph
 
 
 ## Style Guide
 
-The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
+The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a Pull Request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a Pull Request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
 
 ## Discussion Forum
 
@@ -90,12 +90,12 @@ Please follow these steps and note these guidelines to begin contributing:
 
 1. First step is to set up the local development environment.
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
-1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
-1. We regularly discuss new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any issue or any idea that you may have.
+1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these Issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the Issue.
+1. We regularly discuss new Issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any Issue or any idea that you may have.
 
 # Contributing to Layer5's Blogs Section
 
-If you'd like to contribute a post to layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
+If you'd like to contribute a post to layer5.io/blog, please open an Issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
 
 ## Things to keep in mind
 
@@ -370,7 +370,7 @@ Change image according to isDark value:
 
 ## Adding Images and Icons
 
-1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
+1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The Issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
 2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site **except for SVG images**. This performs automatic image optimization, thereby improving site performance.
 3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder.
 
