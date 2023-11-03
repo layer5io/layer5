@@ -79,6 +79,10 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     line-height: 2.125rem;
     text-align: right;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    .descr {
+      text-align: left;
+      padding: 2rem;
+    }
     @media (max-width: 992px) {
         font-size: 1.275rem;
     }
@@ -90,6 +94,14 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
 
     @media (max-width: 468px) {
       text-align: center;
+    }
+  }
+  p.caption.descr {
+      text-align: left;
+      padding: 4rem 4rem 0rem 4rem;
+    @media (max-width: 468px) {
+      text-align: center;
+      padding: 4rem 1rem 0rem 1rem;
     }
   }
 .toCatalog {
@@ -408,6 +420,13 @@ h3.containerCaption {
 const Catalog = () => {
   return (
     <CatalogWrapper>
+      <Container className="catalog-container">
+        <div className="patterns">
+          <p className="caption descr">
+          MeshMap is a sophisticated and delightfully intuitive tool for designing and operating cloud native infrastructure for Kubernetes. Choose freestyle composition of your infrastructure by drawing shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters or quickstart by selecting a pattern the catalog of predefined templates.
+          </p>
+        </div>
+      </Container>
       <Container className="catalog-container">
         <div className="patterns">
           {/* Left Section */}
