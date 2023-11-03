@@ -6,7 +6,7 @@ import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
 import { Link } from "gatsby";
 import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
 
-const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
+const Card = ({ title, info, link, cover, content, subId, ID, toggleActive }) => {
 
   // const isScriptLoaded = (src) => {
   //   return document.querySelector("script[src=\"" + src + "\"]") ? true : false;
