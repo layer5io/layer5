@@ -87,7 +87,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <TextColumn>
-            <Heading>See this sample GitHub workflow (action.yml) for more configuration details.</Heading>
+            <Heading>See this sample GitHub workflow in the 'action.yml' for configuration details.</Heading>
           </TextColumn>
           <ColumnContainer >
             <img src={ServicePerformanceProfileTest} className="screenshot" alt="ServicePerformanceProfileTest" width={530} height={375} />
