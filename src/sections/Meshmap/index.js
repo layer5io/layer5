@@ -43,7 +43,6 @@ const Meshmap = () => {
       <div >
         <Container>
           <MeshmapBanner />
-          
           <div className="mobile-modes">
             <Features
               heading="MeshMap Modes"
