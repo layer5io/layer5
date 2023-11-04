@@ -1,6 +1,5 @@
 import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
-import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import SMPconfig from "../../assets/images/gitops/SMPconfig.png";
 import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.png";

@@ -183,7 +183,7 @@ const LearnSection = () => {
         <img src={Meshery_Logo} alt="Meshery Logo"/>
       </div>
       <div>
-        <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
+        <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage Kubernetes</h1>
         <Container>
           <Row Hcenter className="learn-buttons-section labs">
             <Col xs={12} lg={6}>
@@ -193,14 +193,14 @@ const LearnSection = () => {
             </Col>
             <Col xs={12} lg={6}>
               <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 1 }}>
-                <Button secondary title="Managing the performance of your service mesh"/>
+                <Button secondary title="Managing the performance of your microservices"/>
               </Link>
             </Col>
             <img src={OReillyLogo} alt="OReilly Logo"/>
           </Row>
         </Container>
         <div className="learn-cards-section">
-          <h2>Learn to Service Mesh through interactive labs</h2>
+          <h2>Learn to DevOps through interactive labs</h2>
           <div className="cards-row">
             {data[0].scenarios.map(({ subId, title, info, link }, index) => (
               index < 4 && (

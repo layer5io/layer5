@@ -83,30 +83,23 @@ const Data = {
       name: "Products",
       path: "/projects",
       subItems: [
-        // {
-        //   name: "Image Hub",
-        //   path: "/projects/image-hub",
-        //   sepLine: true
-        // },
-        {
-          name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
-          sepLine: true
-        },
-        {
-          name: "---",
-          // path: "/cloud-native-management/meshmap",
-
-        },
         {
           name: "Meshery",
           path: "/cloud-native-management/meshery",
           sepLine: true
         },
         {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+        },
+        // {
+        //   name: "---",
+        //   // path: "/cloud-native-management/meshmap",
+
+        // },
+        {
           name: "Catalog",
-          path: "/catalog",
-          externalLink: true
+          path: "/cloud-native-management/catalog",
         },
         {
           name: "Docker Extension",
@@ -115,39 +108,15 @@ const Data = {
         {
           name: "Playground",
           path: "/cloud-native-management/playground",
-          externalLink: true
-        },
-        {
-          name: "Nighthawk",
-          path: "/projects/nighthawk",
-          sepLine: true
-        },
-        {
-          name: "Service Mesh",
-          path: "/service-mesh-landscape",
-          sepLine: true
-        },
-        {
-          name: "Patterns",
-          path: "/learn/service-mesh-books/service-mesh-patterns",
-        },
-        // {
-        //   name: "Interface",
-        //   path: "/projects/service-mesh-interface-conformance",
-        // },
-        {
-          name: "Landscape",
-          path: "/service-mesh-landscape",
-        },
-        {
-          name: "Cloud Native Performance",
-          path: "/projects/cloud-native-performance",
-          sepLine: true
         },
       ],
       actionItems: [
         {
-          actionName: "All projects",
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+        {
+          actionName: "Open source projects",
           actionLink: "/projects",
         },
         // {
@@ -165,8 +134,8 @@ const Data = {
       // }
     },
     {
-      name: "Pricing",
-      path: "/pricing"
+      name: "Integrations",
+      path: "/cloud-native-management/meshery/integrations"
     },
     // {
     //   name: "Learn",
@@ -223,6 +192,11 @@ const Data = {
       path: "/community",
       subItems: [
         {
+          name: "Open Source Projects",
+          path: "/projects",
+          sepLine: true
+        },
+        {
           name: "Handbook",
           path: "/community/handbook",
           sepLine: true
@@ -231,6 +205,10 @@ const Data = {
           name: "Members",
           path: "/community/members",
           sepLine: true
+        },
+        {
+          name: "Newcomers",
+          path: "/community/newcomers",
         },
         {
           name: "MeshMates",
@@ -247,9 +225,13 @@ const Data = {
         },
       ],
       actionItems: [
+        // {
+        //   actionName: "Newcomer's journey",
+        //   actionLink: "/community/newcomers",
+        // },
         {
-          actionName: "Newcomer's journey",
-          actionLink: "/community/newcomers",
+          actionName: "Discussion forum",
+          actionLink: "https://discuss.layer5.io",
         },
         {
           actionName: "Open source internships",
@@ -282,9 +264,14 @@ const Data = {
         //   sepLine: true
         // },
         {
+          name: "Learn",
+          path: "/learn",
+          sepLine: true
+        },
+        {
           name: "Books",
           path: "/learn/service-mesh-books",
-          sepLine: true
+
         },
         // {
         //   name: "Forum",
@@ -295,17 +282,14 @@ const Data = {
         {
           name: "Workshops",
           path: "/learn/service-mesh-workshops",
-          sepLine: true
         },
         {
           name: "Learning Paths",
           path: "/learn/learning-paths",
-          sepLine: true
         },
         {
           name: "Interactive Labs",
           path: "/learn/service-mesh-labs",
-          sepLine: true
         },
       ],
       actionItems: [
@@ -320,10 +304,6 @@ const Data = {
         {
           actionName: "Recent announcements",
           actionLink: "/blog/category/announcements"
-        },
-        {
-          actionName: "Join the discussion",
-          actionLink: "https://discuss.layer5.io",
         },
       ],
       // div1: {
