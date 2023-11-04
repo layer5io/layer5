@@ -90,7 +90,7 @@ const Data = {
         // },
         {
           name: "PRODUCTS",
-          path: "/products",
+          path: "/cloud-native-management/meshmap",
           sepLine: true
         },
         {
