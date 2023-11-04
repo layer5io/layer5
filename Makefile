@@ -14,14 +14,16 @@
 
 include .github/build/Makefile.show-help.mk
 
-## Install docs.layer5.io dependencies your local machine.
-## See https://gohugo.io/categories/installation
-setup:
-	hugo server -D 
+setup-libs: 
+	## "DEPRECATED: This target is deprecated. Use `make setup`.
 
-## Run layer5.io on your local machine with draft and future content enabled.
+## Install layer5.io dependencies your local machine.
+setup:
+	npm install
+
+## Run layer5.io on your local machine.
 site:
-	hugo server -D -F
+	npm start
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:

@@ -85,8 +85,7 @@ const LearningPaths = () => {
       <Container>
         <h1 className="learn-path-heading">Learning Paths</h1>
         <div className="learn-subtitle">
-          <h3>Learn how to build an application and </h3>
-          <h3>manage it using a service mesh</h3>
+          <h3>Learn DevOps and platform engineering</h3>
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
