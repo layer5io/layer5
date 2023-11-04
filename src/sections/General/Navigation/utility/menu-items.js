@@ -100,8 +100,6 @@ const Data = {
         },
         {
           name: "---",
-          // path: "/cloud-native-management/meshmap",
-
         },
         {
           name: "PROJECTS",
