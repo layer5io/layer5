@@ -152,8 +152,17 @@ export const repo_data = [
         language: "React.js",
         maintainers_name: ["Antonette Caldwell"],
         link: ["https://layer5.io/community/members/antonette-caldwell"],
-        repository: "https://github.com/layer5io/sistent",
+        repository: "https://github.com/layer5io/sistent"
       },
+      {
+        project: "Layer5 Documentation",
+        image: five,
+        site: "https://docs.layer5.io/",
+        language: "Hugo",
+        maintainers_name: ["Pranav Singh"],
+        link: ["https://layer5.io/community/members/pranav-singh"],
+        repository: "https://github.com/layer5io/docs"
+      }
     ],
   },
 
