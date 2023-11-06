@@ -34,7 +34,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/bmmi8btg3xb2fmx6kcavxmtf0a3uame2", {
+      axios.post("https://hook.us1.make.com/v66ana9yf3w11k4a1rf3epwquur1s9rd", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -456,8 +456,8 @@ const WebBasedForm = () => {
               <span className="checkbox-label">No, thank you.</span>
             </label>
             <br />
-            <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the <a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers channel</a> in the Layer5 Slack.</p>
-            <label htmlFor="interests" className="form-name">What has your recent focus been? Why have you joined the community? What are you passionate about? Is there a specific project or aspect a project that interests you?<span className="required-sign">*</span></label>
+            <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simply ask to be partnered in the <a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers channel</a> in the Layer5 Slack.</p>
+            <label htmlFor="interests" className="form-name">What has your recent focus been? Why have you joined the community? What are you passionate about? Is there a specific project or aspect of project that interests you?<span className="required-sign">*</span></label>
             <Field as="textarea" className="text-field" id="interests" name="interests" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, or languages are you most proficient with?</label>
             <Field as="textarea" className="text-field" id="profiency" name="profiency" />

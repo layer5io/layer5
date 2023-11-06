@@ -74,11 +74,19 @@ export const ScenarioCardWrapper = styled.div`
 	}
 
     .sub-content {
-        display:flex; 
+        display:flex;
+        color: white;
+        .ak {
+            color: ${props => props.theme.linkColor};
+            &:hover {
+                color: white;
+            }
+        } 
         justify-content:center; 
         margin-top:4rem;
         width:100%;
     }
+    
 
 	.active {
 		display: blwock;
