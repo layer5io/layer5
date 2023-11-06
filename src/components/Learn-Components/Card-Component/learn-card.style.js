@@ -6,6 +6,15 @@ const CardWrapper = styled.div`
     margin: auto;
     border-radius: 1rem;
 
+    .card-active{
+        cursor: pointer;
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s;
+
+        &:hover{
+            box-shadow: rgba(0, 179, 158, 0.9) 0px 0px 19px 6px;
+        }
+    }
+
     .card-link{
         color: black;
     }
@@ -82,6 +91,35 @@ const CardWrapper = styled.div`
     @media(max-width: 1300px){
         margin: 1rem auto;
     }
+    
+    @media (max-width: 500px) {
+        max-width: 100%;
+        padding: 0 0rem;
+    
+        .card-head h3 {
+            font-size: 1.1rem;
+        }
+    
+        .card-desc .summary {
+            font-size: 0.8rem;
+        }
+    
+        .card-image img {
+            height: 6rem;
+            width: 6rem;
+        }
+        .card-head span {
+            font-size: 0.55rem; 
+            padding: 0.05rem 0.5rem; 
+        }
+        
+        .card-subdata p {
+            font-size: 0.8rem; 
+            bottom: 0.5rem; 
+        }
+    }
+   
+    
 `;
 
 export default CardWrapper;
