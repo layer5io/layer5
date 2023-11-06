@@ -226,8 +226,6 @@ const Navigation = () => {
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
                   {Data.menuItems.map((menu, index) => (
-
-
                     <li
                       key={index}
                       className={

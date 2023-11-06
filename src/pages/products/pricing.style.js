@@ -16,10 +16,6 @@ const PricingWrapper = styled.section`
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     h1 {
       color: ${(props) => props.theme.whiteToBlack};
-      font-weight: bolder;
-    }
-    h1 span {
-      color: rgb(235, 192, 23);
     }
 
     p {

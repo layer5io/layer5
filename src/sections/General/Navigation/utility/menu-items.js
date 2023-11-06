@@ -81,7 +81,7 @@ const Data = {
     },
     {
       name: "Products",
-      path: "/projects",
+      path: "/products",
       subItems: [
         // {
         //   name: "Image Hub",
