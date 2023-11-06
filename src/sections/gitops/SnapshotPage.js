@@ -21,7 +21,7 @@ const SnapshotPage = () => {
           <TextColumn>
             <Heading>Visual insights in every pull request</Heading>
             <Description>
-               Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
+               Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
             </Description>
             <Button primary className="learn-more-btn" title="INSTALL" url="https://meshery.layer5.io/connect/github/new"/>
           </TextColumn>

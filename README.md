@@ -147,7 +147,7 @@ alt="Nighthawk" align="left" />
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/catalog">Meshery Catalog</a></h2>
+<h2><a href="https://meshery.layer5.io/catalog">Meshery Catalog</a></h2>
 <a href="">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"
