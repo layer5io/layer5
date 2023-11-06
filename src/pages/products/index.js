@@ -171,7 +171,7 @@ const CardsData = [
     title: "Meshery",
     icon: ["",desktop],
     text: "A cloud native management plane that enables the operation and management of Kubernetes, any service mesh, and their workloads. it enables operators to deploy WebAssembly filters to Envoy-based data planes.",
-    url: "https://meshery.io/"
+    url: "/cloud-native-management/meshery"
   },
 ];
 
@@ -187,7 +187,7 @@ const index = () => {
                 Effortless Configuration & Complete Control of Your Cloud Native{" "}
                 <span
                   style={{
-                    color: "#EBC017",
+                    fontWeight: "bolder",
                   }}
                 >
                   Infrastructure
@@ -311,7 +311,9 @@ const index = () => {
           </Container>
           <div className="headers gap">
             <h1 className="header-heading">
-              Don’t Just Take Our Word For It, <span>Experience </span> It!
+              Don’t Just Take Our Word For It, <span style={{
+                fontWeight: "bolder",
+              }}>Experience </span> It!
             </h1>
             <div className="paras">
               <p>See how our products can transform your cloud experience today.</p>
