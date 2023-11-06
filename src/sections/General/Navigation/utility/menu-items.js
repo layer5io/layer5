@@ -80,7 +80,6 @@ const Data = {
       // }
     },
     {
-      allProducts
       name: "Products",
       path: "/products",
       subItems: [
