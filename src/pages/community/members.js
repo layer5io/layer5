@@ -121,7 +121,7 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "Service Mesh Performance",
+    label: "Cloud Native Performance",
     value: "smp",
     color: lighttheme.linkColor,
     isFixed: true,
@@ -137,7 +137,7 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "Service Mesh Patterns",
+    label: "Cloud Native Patterns",
     value: "patterns",
     color: lighttheme.linkColor,
     isFixed: true,

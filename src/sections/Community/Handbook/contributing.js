@@ -228,6 +228,128 @@ const contributingGuide = () => {
               </li>
             </ul>
           </div>
+          <h2>Handling PRs Made Without Being Assigned</h2>
+          <p>
+          At <a href="https://layer5.io/">Layer5</a>, we usually suggest to contributors that they ask maintainers to assign them to the issue they want to work on. But sometimes, pull requests that aren't assigned to anyone can be found. In such cases, it's important to be flexible and ready to adapt. Here are some simple guidelines for dealing with these unassigned contributions:
+          </p>
+          <ol>
+            <li>
+              <p>
+                <strong>We value getting things done:</strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Evaluate the PR:</strong> First, assess the quality
+                    and significance of the PR. Is it a valuable contribution to
+                    the project? Does it fix a bug or add a meaningful feature?
+                    If the PR aligns with the project's goals and standards,
+                    it's worth considering.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Review the code:</strong> Ensure that the code in
+                    the PR meets the project's coding guidelines and standards.
+                    If the code quality is high and the changes are beneficial,
+                    it's a positive sign.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>We value our contributors' feelings:</strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Communication:</strong> Reach out to the
+                    contributor who made the unassigned PR in a friendly and
+                    respectful manner. Express gratitude for their contribution
+                    and explain the importance of assigning PRs to maintain
+                    transparency and collaboration within the community.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Offer assistance:</strong> If the contributor is
+                    willing, help them understand the process of assigning PRs
+                    and offer guidance on how to do it correctly in the future.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Encourage participation:</strong> Emphasize that
+                    their contribution is valuable and that the project welcomes
+                    their involvement. Encourage them to continue contributing.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>
+                  Attempt to uphold the spirit of #2 while ensuring that #1
+                  happens:
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Balance:</strong> Strive to strike a balance
+                    between maintaining a welcoming and inclusive community (#2)
+                    and ensuring that the project continues to make progress
+                    (#1).
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Collaboration:</strong> If the contributor is
+                    receptive and willing to work together, consider helping
+                    them assign the PR correctly, and possibly collaborate on
+                    improving the PR if necessary.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>If necessary, reassign:</strong> If the contributor
+                    is unresponsive or unable to assign the PR correctly, you
+                    may consider reassigning the PR to an appropriate
+                    contributor or assigning it to yourself to ensure it
+                    doesn't go unnoticed.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>
+                Contributor Guidance:
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>How you should:</strong> As a contributor, it's important to follow the project's guidelines. Start by identifying a suitable issue or create one if necessary. Afterward, kindly request assignment or express your interest in working on the issue by commenting on it. This ensures that maintainers are aware of your intentions and can provide guidance or assign the issue appropriately. Once assigned, proceed with your work and submit a pull request.
+                    <br/><strong>Example:</strong> <a href="https://github.com/layer5io/layer5/issues/3889">Hover animation on different integration category #3889</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>How you should not:</strong> Avoid starting work on an issue and creating a pull request without prior communication or assignment. Jumping directly into the code can lead to misunderstandings and duplicate efforts. Instead, take a moment to engage with the maintainers and community by discussing your interest in the issue and seeking assignment before submitting a pull request. This promotes transparency and effective collaboration within the project.
+                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery/issues/8757">[MeshModel] [UX]: Icon for Kubernetes Component - Endpoints #8757</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Requesting Reassignment:</strong> If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If the assignee is not responsive or there has been no progress on the issue for a long time and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
+                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery-nsm/issues/169">[chore] update Go to 1.21, and update relevant pkgs #169</a>
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
           <TocPagination />
         </Container>
 

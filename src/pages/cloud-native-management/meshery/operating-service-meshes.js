@@ -37,12 +37,11 @@ const OperatingServiceMeshes = () => {
                     standard set of management features across all service meshes.</p>,
             },
             {
-              title: "Each service mesh adapter is unique",
+              title: "Adapter is extend rich control over infra",
               icon: MesheryLogo,
               description:
-                  <div><p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.Care is taken in each Meshery Adapter to expose the unique value of each service mesh. </p>
-                    <p>Consequently, each Meshery Adapter is not equally capable just as each service mesh is not equally
-                      capable as another service mesh.</p>
+                  <div><p>Adapters allow Meshery to interface with the different Kuberentes-based infrastructure, exposing the tools' differentiated value to users. Care is taken in each Meshery Adapter to expose the unique value of each component. </p>
+                    <p>Consequently, each Meshery Adapter is not equally capable just as each Kubernetes infrastucture tool is not equally capable as another.</p>
                   </div>,
             },
             {
@@ -80,19 +79,19 @@ const OperatingServiceMeshes = () => {
                     See the <a href="https://docs.meshery.io/guides/multiple-adapters" target="_blank" rel="noreferrer">Using Multiple Adapters</a> guide for more information.</p>,
             },
             {
-              title: "Service Mesh Interface Conformance",
+              title: "Interactive Terminal",
               icon: Smi,
               description:
-                  <p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.</p>,
+                  <p>Establish web-based console sessions with one or more pods at a time.</p>,
             },
             {
-              title: "WebAssembly Filters",
+              title: "Envoy WebAssembly Filters",
               icon: WebA,
               description:
                   <p>Meshery dynamically loads and reloads WebAssembly (WASM) modules in service mesh data planes, enabling Envoy-based data planes to be more intelligent and responsive in real-time.</p>,
             },
             {
-              title: "Service Mesh Performance",
+              title: "Cloud Native Performance",
               icon: SMP,
               description:
                   <p>Track your MeshMark and compare with others.</p>,
