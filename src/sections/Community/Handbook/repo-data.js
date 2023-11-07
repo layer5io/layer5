@@ -59,11 +59,8 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Antonette Caldwell", "Abhishek Kumar"],
-        link: [
-          "https://layer5.io/community/members/antonette-caldwell",
-          "https://layer5.io/community/members/abhishek-kumar",
-        ],
+        maintainers_name: ["Antonette Caldwell","Abhishek Kumar"],
+        link: ["https://layer5.io/community/members/antonette-caldwell","https://layer5.io/community/members/abhishek-kumar"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
@@ -88,7 +85,8 @@ export const repo_data = [
       {
         project: "MeshMap",
         image: meshery,
-        site: "/cloud-native-management/meshmap",
+        site:
+         "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],
@@ -140,8 +138,7 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Vacant"],
         link: ["https://badges.layer5.io"],
-        repository:
-          "https://github.com/layer5labs/meshery-extensions-packages/",
+        repository: "https://github.com/layer5labs/meshery-extensions-packages/",
       },
       {
         project: "Sistent Design System",
@@ -175,7 +172,8 @@ export const repo_data = [
         link: ["#"],
         description:
           "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
-        repository: "https://github.com/layer5io/service-mesh-labs",
+        repository:
+         "https://github.com/layer5io/service-mesh-labs",
       },
       {
         project: "Istio Service Mesh Workshop",
@@ -185,7 +183,8 @@ export const repo_data = [
         link: ["#"],
         description:
           "A workshop that teaches about service meshes through the lens of Istio.",
-        repository: "https://github.com/layer5io/istio-service-mesh-workshop",
+        repository:
+         "https://github.com/layer5io/istio-service-mesh-workshop",
       },
       {
         project: "Advanced Istio Service Mesh Workshop",
@@ -206,7 +205,8 @@ export const repo_data = [
         link: ["#"],
         description:
           "A workshop that teaches about service meshes through the lens of Linkerd.",
-        repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
+        repository:
+         "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
       {
         project: "Containers 101 Workshop",
@@ -216,7 +216,8 @@ export const repo_data = [
         link: ["#"],
         description:
           "A workshop that introduces Linux containers through concepts in slides and hands-on labs.",
-        repository: "https://github.com/layer5io/containers-101-workshop",
+        repository:
+         "https://github.com/layer5io/containers-101-workshop",
       },
       {
         project: "Cloud Native Playground",
@@ -224,8 +225,10 @@ export const repo_data = [
         language: "Meshery",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description: "Cloud Native Playground for Kubernetes and CNCF projects",
-        repository: "https://github.com/meshery/play",
+        description:
+         "Cloud Native Playground for Kubernetes and CNCF projects",
+        repository:
+         "https://github.com/meshery/play",
       },
     ],
   },
@@ -280,8 +283,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
-        repository:
-          "https://github.com/layer5io/meshery-smi-conformance-action",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       {
         project: "Layer5 Cloud",
@@ -354,7 +356,8 @@ export const repo_data = [
         language: "C",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description: "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
+        description:
+         "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
         repository: "https://github.com/giltene/wrk2",
       },
       {
@@ -384,7 +387,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
-        repository: "https://github.com/layer5io/meshery-smp-action",
+        repository: "https://github.com/layer5io/meshery-smp-action"
       },
       {
         project: "Meshery-Perf",
@@ -393,8 +396,8 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "meshery-perf is a Meshery component used to run performance tests",
-        repository: "https://github.com/meshery/meshery-perf",
-      },
+        repository: "https://github.com/meshery/meshery-perf"
+      }
     ],
   },
 
@@ -423,8 +426,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
-        repository:
-          "https://github.com/layer5io/meshery-service-mesh-patterns-action",
+        repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
     ],
   },
