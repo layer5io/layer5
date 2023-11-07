@@ -218,20 +218,12 @@ const Repository = () => {
                         maintainers_name,
                       } = subdata;
                       const smpClass = project === "SMP Action";
-                      const siteIconClasses = smpClass
-                        ? "site-icon inline smp-action"
-                        : "site-icon inline";
+                      const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img
-                                className={siteIconClasses}
-                                src={image}
-                                alt="project"
-                              />
-                              &nbsp;{project}{" "}
-                            </td>
+                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -250,7 +242,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} alt="github-icon"/>
+                                <img className="github-icon" src={github} alt="github-icon" />
                               </a>
                             </td>
                           </tr>
