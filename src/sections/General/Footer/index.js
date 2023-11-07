@@ -193,9 +193,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/community/handbook/writing-program"
+                      to="/community/handbook"
                     >
-                      Writing Program
+                      Handbook
                     </Link>
                   </li>
                 </ul>
