@@ -86,7 +86,7 @@ export const repo_data = [
         project: "MeshMap",
         image: meshery,
         site:
-         "/cloud-native-management/meshmap",
+          "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],
@@ -138,7 +138,7 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Vacant"],
         link: ["https://badges.layer5.io"],
-        repository: "https://github.com/layer5labs/meshery-extensions-packages/",
+        repository: "https://github.com/layer5labs/meshery-extensions-packages/"
       },
       {
         project: "Sistent Design System",
@@ -173,7 +173,7 @@ export const repo_data = [
         description:
           "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
         repository:
-         "https://github.com/layer5io/service-mesh-labs",
+          "https://github.com/layer5io/service-mesh-labs",
       },
       {
         project: "Istio Service Mesh Workshop",
@@ -184,7 +184,7 @@ export const repo_data = [
         description:
           "A workshop that teaches about service meshes through the lens of Istio.",
         repository:
-         "https://github.com/layer5io/istio-service-mesh-workshop",
+          "https://github.com/layer5io/istio-service-mesh-workshop",
       },
       {
         project: "Advanced Istio Service Mesh Workshop",
@@ -206,7 +206,7 @@ export const repo_data = [
         description:
           "A workshop that teaches about service meshes through the lens of Linkerd.",
         repository:
-         "https://github.com/layer5io/linkerd-service-mesh-workshop",
+          "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
       {
         project: "Containers 101 Workshop",
@@ -217,7 +217,7 @@ export const repo_data = [
         description:
           "A workshop that introduces Linux containers through concepts in slides and hands-on labs.",
         repository:
-         "https://github.com/layer5io/containers-101-workshop",
+          "https://github.com/layer5io/containers-101-workshop",
       },
       {
         project: "Cloud Native Playground",
@@ -226,10 +226,10 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-         "Cloud Native Playground for Kubernetes and CNCF projects",
+          "Cloud Native Playground for Kubernetes and CNCF projects",
         repository:
-         "https://github.com/meshery/play",
-      },
+          "https://github.com/meshery/play",
+      }
     ],
   },
 
@@ -357,7 +357,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-         "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
+          "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
         repository: "https://github.com/giltene/wrk2",
       },
       {
