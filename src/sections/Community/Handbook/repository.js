@@ -250,11 +250,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img
-                                  className="github-icon"
-                                  src={github}
-                                  alt="github-icon"
-                                />
+                                <img className="github-icon" src={github} alt="github-icon"/>
                               </a>
                             </td>
                           </tr>
