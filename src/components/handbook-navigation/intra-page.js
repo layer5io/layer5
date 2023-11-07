@@ -27,14 +27,15 @@ const JoinCommunityWrapper = styled.div`
     ul {
       list-style: none;
       top: 3rem;
-      @media only screen and (max-width: 1300px){
-        padding-left:1rem;
-      }
       li {
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
       }
     }
+    @media only screen and (min-width: 1280px) and (max-width: 1350px){
+        padding-right:0rem;
+        margin-right:0rem;
+      }
     @media only screen and (max-width: 950px) {
       width: 0;
       opacity: 0;

@@ -48,8 +48,21 @@ export const HandbookWrapper = styled.div`
       margin-top: -36rem;
       margin-left: 20rem;
       display: flex;
+      @media screen and (min-width: 1280px) and (max-width: 1350px) {
+        margin-left:16rem;
+      }
     }
+    .conduct-section{
+      @media screen and (min-width: 768px) {
+        margin-top:-43rem;
+      }
 
+    }
+    .page-section .heading-top{
+      @media screen and (min-width: 768px) {
+        padding-top:1rem;
+      }
+    }
     .sidebar {
         margin: 0;
         padding: 0;
