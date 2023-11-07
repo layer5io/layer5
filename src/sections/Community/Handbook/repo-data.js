@@ -32,7 +32,7 @@ export const repo_data = [
         maintainers_name: ["Nikhil Ladha", "Mohith Gadireddy"],
         link: [
           "https://layer5.io/community/members/nikhil-ladha",
-          "https://layer5.io/community/members/mohith-gadireddy",
+          "https://layer5.io/community/members/mohith-gadireddy"
         ],
         repository: "https://github.com/layer5io/layer5",
       },
@@ -92,10 +92,9 @@ export const repo_data = [
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],
-        description:
-          "A collaborative, visual topology to design and operate cloud native infrastructure.",
+        description: "A collaborative, visual topology to design and operate cloud native infrastructure.",
         repository: "https://github.com/layer5labs/meshery-extensions",
-        accessRequired: "*program participation required",
+        accessRequired: "*program participation required"
       },
       {
         project: "Discussion Forum",
@@ -113,8 +112,7 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["vacant"],
         link: ["https://layer5.io/community/members/#"],
-        repository:
-          "https://github.com/service-mesh-patterns/service-mesh-patterns",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
         project: "Cloud Native Playground",
@@ -133,7 +131,7 @@ export const repo_data = [
         maintainers_name: ["Pranav Singh"],
         link: ["https://layer5.io/community/members/pranav-singh"],
         repository: "https://github.com/layer5io/meshery-cloud",
-        accessRequired: "*program participation required",
+        accessRequired: "*program participation required"
       },
       {
         project: "Recognition Program",
@@ -244,8 +242,7 @@ export const repo_data = [
           "https://layer5.io/community/members/nikhil-ladha",
           "https://layer5.io/community/members/aaditya-narayan-subedy",
         ],
-        description:
-          "the cloud native management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
+        description: "the cloud native management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
         repository: "https://github.com/meshery/meshery",
       },
       {
@@ -254,8 +251,7 @@ export const repo_data = [
         language: "GitHub Action",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
+        description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
       },
@@ -265,8 +261,7 @@ export const repo_data = [
         language: "Golang, Kubernetes Operator",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "Meshery Operator is the multi-cloud native operator and implementation of MeshSync.",
+        description: "Meshery Operator is the multi-cloud native operator and implementation of MeshSync.",
         repository: "https://github.com/meshery/meshery-operator",
       },
       {
@@ -275,8 +270,7 @@ export const repo_data = [
         language: "Golang and NATS",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
+        description: "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
         repository: "https://github.com/meshery/meshsync",
       },
       {
@@ -285,8 +279,7 @@ export const repo_data = [
         language: "Golang, Kuttl",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
+        description: "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
       },
@@ -316,8 +309,7 @@ export const repo_data = [
         language: "Vuejs",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A sample application written to run on Istio or Consul for exploring WebAssembly modules used as Envoy filters.",
+        description: "A sample application written to run on Istio or Consul for exploring WebAssembly modules used as Envoy filters.",
         repository: "https://github.com/layer5io/image-hub",
       },
       {
@@ -326,8 +318,7 @@ export const repo_data = [
         language: "C, C++, Rust",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A collection of WebAssemby filters for Envoy proxy written in C, C++, and Rust for exercising different features provided by envoy-wasm.",
+        description: "A collection of WebAssemby filters for Envoy proxy written in C, C++, and Rust for exercising different features provided by envoy-wasm.",
         repository: "https://github.com/layer5io/wasm-filters",
       },
     ],
@@ -363,8 +354,7 @@ export const repo_data = [
         language: "C",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
+        description: "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
         repository: "https://github.com/giltene/wrk2",
       },
       {
@@ -393,8 +383,7 @@ export const repo_data = [
         language: "shell",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
+        description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-smp-action",
       },
       {
@@ -403,8 +392,7 @@ export const repo_data = [
         language: "Golang",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "meshery-perf is a Meshery component used to run performance tests",
+        description: "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf",
       },
     ],
@@ -434,8 +422,7 @@ export const repo_data = [
         language: "shell",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
+        description: "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
         repository:
           "https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
@@ -531,8 +518,7 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "Meshery adapter for management of VMware Tanzu Service Mesh",
+        description: "Meshery adapter for management of VMware Tanzu Service Mesh",
         repository: "https://github.com/layer5io/meshery-tanzu-sm",
       },
       {
@@ -568,8 +554,7 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A common and consistent set of functionality for Meshery Adapters.",
+        description: "A common and consistent set of functionality for Meshery Adapters.",
         repository: "https://github.com/layer5io/meshery-adapter-library",
       },
       {
@@ -578,8 +563,7 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A GitHub repo used as a template for new Meshery Adapters.",
+        description: "A GitHub repo used as a template for new Meshery Adapters.",
         repository: "https://github.com/layer5io/meshery-adapter-template",
       },
     ],
