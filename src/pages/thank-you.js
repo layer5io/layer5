@@ -13,5 +13,5 @@ const ThankYouSection = () => {
 };
 export default ThankYouSection;
 export const Head = () => {
-  return <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />;
+  return <SEO title="Layer5 Newsletter" description="Cloud native application and infrastructure management software for engineers who expect more from their infrastructure." />;
 };
