@@ -265,6 +265,11 @@ const Data = {
       path: "/resources",
       subItems: [
         {
+          name: "Docs",
+          path: "https://docs.layer5.io",
+          sepLine: true
+        },
+        {
           name: "Blog",
           path: "/blog",
           sepLine: true
