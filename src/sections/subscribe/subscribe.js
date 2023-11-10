@@ -9,7 +9,7 @@ const subscribe = ({ msg = "Stay meshy" }) => {
     <SubscribeWrapper>
       <div className="parentcard">
         <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
-          <Row>
+          <Row Vcenter>
             <Col md={6}>
               <SectionTitle className="section-title" UniWidth="100%">
                 <h2><span className="meshy">{msg}</span> and subscribe!</h2>

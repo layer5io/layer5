@@ -58,7 +58,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                Using <Link to="cloud-native-management/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
+                Using <Link to="/cloud-native-management/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
@@ -129,7 +129,7 @@ const DockerExtensionMeshery = () => {
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
-              account_desc="Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account."
+              account_desc="Selected participants will receive a free Layer5 Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account."
               submit_title = "Thank you for your interest in Meshery Docker Extension!"
               submit_body = "You will soon receive detailed guidance on the all of the extension's features."
             />

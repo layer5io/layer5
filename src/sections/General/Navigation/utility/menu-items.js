@@ -7,30 +7,30 @@ const Data = {
       name: "Solutions",
       path: "/cloud-native-management/meshmap",
       subItems: [
-        // {
-        //   name: "Image Hub",
-        //   path: "/projects/image-hub",
-        //   sepLine: true
-        // },
         {
           name: "Developer-defined Infrastructure",
           path: "/cloud-native-management/meshmap",
+          sepLine: true
         },
         {
           name: "Cloud Native Deployments by Diagram",
           path: "/cloud-native-management/meshmap/design",
+          sepLine: true
         },
         {
           name: "Kubernetes Multi-cluster Operation",
           path: "/cloud-native-management/meshmap/visualize",
+          sepLine: true
         },
         {
           name: "Collaborative GitOps",
           path: "/cloud-native-management/meshmap/collaborate",
+          sepLine: true
         },
         {
           name: "GitOps with Cloud Native Insights",
           path: "/cloud-native-management/gitops",
+          sepLine: true
         },
       ],
       actionItems: [
@@ -83,64 +83,40 @@ const Data = {
       name: "Products",
       path: "/projects",
       subItems: [
-        // {
-        //   name: "Image Hub",
-        //   path: "/projects/image-hub",
-        //   sepLine: true
-        // },
         {
           name: "Meshery",
           path: "/cloud-native-management/meshery",
           sepLine: true
         },
         {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+        },
+        // {
+        //   name: "---",
+        //   // path: "/cloud-native-management/meshmap",
+
+        // },
+        {
           name: "Catalog",
-          path: "/catalog",
-          externalLink: true
+          path: "/cloud-native-management/catalog",
         },
         {
           name: "Docker Extension",
           path: "/docker-extension-meshery",
         },
         {
-          name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
-        },
-        {
           name: "Playground",
           path: "/cloud-native-management/playground",
-          externalLink: true
-        },
-        {
-          name: "Nighthawk",
-          path: "/projects/nighthawk",
-          sepLine: true
-        },
-        {
-          name: "Service Mesh",
-          path: "/service-mesh-landscape",
-          sepLine: true
-        },
-        {
-          name: "Patterns",
-          path: "/learn/service-mesh-books/service-mesh-patterns",
-        },
-        // {
-        //   name: "Interface",
-        //   path: "/projects/service-mesh-interface-conformance",
-        // },
-        {
-          name: "Landscape",
-          path: "/service-mesh-landscape",
-        },
-        {
-          name: "Performance",
-          path: "/projects/service-mesh-performance",
         },
       ],
       actionItems: [
         {
-          actionName: "All projects",
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+        {
+          actionName: "Open source projects",
           actionLink: "/projects",
         },
         // {
@@ -158,8 +134,8 @@ const Data = {
       // }
     },
     {
-      name: "Pricing",
-      path: "/pricing"
+      name: "Integrations",
+      path: "/cloud-native-management/meshery/integrations"
     },
     // {
     //   name: "Learn",
@@ -216,6 +192,11 @@ const Data = {
       path: "/community",
       subItems: [
         {
+          name: "Open Source Projects",
+          path: "/projects",
+          sepLine: true
+        },
+        {
           name: "Handbook",
           path: "/community/handbook",
           sepLine: true
@@ -224,6 +205,10 @@ const Data = {
           name: "Members",
           path: "/community/members",
           sepLine: true
+        },
+        {
+          name: "Newcomers",
+          path: "/community/newcomers",
         },
         {
           name: "MeshMates",
@@ -240,9 +225,13 @@ const Data = {
         },
       ],
       actionItems: [
+        // {
+        //   actionName: "Newcomer's journey",
+        //   actionLink: "/community/newcomers",
+        // },
         {
-          actionName: "Newcomer's journey",
-          actionLink: "/community/newcomers",
+          actionName: "Discussion forum",
+          actionLink: "https://discuss.layer5.io",
         },
         {
           actionName: "Open source internships",
@@ -280,9 +269,14 @@ const Data = {
         //   sepLine: true
         // },
         {
+          name: "Learn",
+          path: "/learn",
+          sepLine: true
+        },
+        {
           name: "Books",
           path: "/learn/service-mesh-books",
-          sepLine: true
+
         },
         // {
         //   name: "Forum",
@@ -293,17 +287,14 @@ const Data = {
         {
           name: "Workshops",
           path: "/learn/service-mesh-workshops",
-          sepLine: true
         },
         {
           name: "Learning Paths",
           path: "/learn/learning-paths",
-          sepLine: true
         },
         {
           name: "Interactive Labs",
           path: "/learn/service-mesh-labs",
-          sepLine: true
         },
       ],
       actionItems: [
@@ -318,10 +309,6 @@ const Data = {
         {
           actionName: "Recent announcements",
           actionLink: "/blog/category/announcements"
-        },
-        {
-          actionName: "Join the discussion",
-          actionLink: "https://discuss.layer5.io",
         },
       ],
       // div1: {

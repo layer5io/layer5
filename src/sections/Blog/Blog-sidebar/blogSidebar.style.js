@@ -199,25 +199,31 @@ const BlogSideBarWrapper = styled.div`
             .card {
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
-                margin: 2px 2px 2px 2px;
                 padding: 1.25rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                gap: 1rem;
                 background-color: ${props => props.theme.darkJungleGreenColor};   
-                border-radius: 25px;
+                border-radius: 1.5rem;
+                
                 p {
                     text-align: center;
                     letter-spacing: 0;
                     font-size: 15px;
                     font-weight: 200;
+                    margin-top: -1rem;
                     color: ${props => props.theme.white}; 
                 }
                 h2 {
                     text-align: center;
-                    font-size: 21px;
+                    font-size: 1.5rem;
                     text-transform:uppercase;
                     clear: both;
-                    margin-bottom: 0rem;
-                    margin-top: 1rem;
                     color: ${props => props.theme.white}; 
+                }
+                img {
+                    border-radius: 1rem;
                 }
                 .logo{
                  width: 100%;  

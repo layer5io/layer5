@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include .github/Makefile.show-help.mk
+include .github/build/Makefile.show-help.mk
 
 setup-libs: 
 	## "DEPRECATED: This target is deprecated. Use `make setup`.

@@ -29,8 +29,11 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["Nikhil Ladha", "Mohith Gadireddy"],
+        link: [
+          "https://layer5.io/community/members/nikhil-ladha",
+          "https://layer5.io/community/members/mohith-gadireddy"
+        ],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -85,9 +88,9 @@ export const repo_data = [
         site:
           "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
-        maintainers_name: ["Abhishek Kumar"],
-        link: ["https://layer5.io/community/members/abhishek-kumar"],
-        description: "A visual topology to display service mesh configuration, workloads and traffic.",
+        maintainers_name: ["Aabid Sofi"],
+        link: ["https://layer5.io/community/members/aabid-sofi"],
+        description: "A collaborative, visual topology to design and operate cloud native infrastructure.",
         repository: "https://github.com/layer5labs/meshery-extensions",
         accessRequired: "*program participation required"
       },
@@ -97,16 +100,16 @@ export const repo_data = [
         site: "https://discuss.layer5.io",
         language: "Discourse",
         maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vishal-vivek"],
+        link: ["https://layer5.io/community/members/vivek-vishal"],
         repository: " https://discuss.layer5.io",
       },
       {
-        project: "Service Mesh Patterns",
+        project: "Cloud Native Patterns",
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
-        maintainers_name: ["Gaurav Chadha", "Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["vacant"],
+        link: ["https://layer5.io/community/members/#"],
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
@@ -114,12 +117,12 @@ export const repo_data = [
         image: meshery,
         site: "https://play.meshery.io",
         language: "React.js",
-        maintainers_name: ["Nikhil Ladha"],
-        link: ["https://layer5.io/community/members/nikhil-ladha"],
+        maintainers_name: ["vacant"],
+        link: ["https://layer5.io/community/members/#"],
         repository: "https://github.com/meshery/play",
       },
       {
-        project: "Meshery Cloud",
+        project: "Layer5 Cloud",
         image: meshery,
         site: "https://meshery.layer5.io/",
         language: "React.js",
@@ -136,6 +139,24 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["https://badges.layer5.io"],
         repository: "https://github.com/layer5labs/meshery-extensions-packages/"
+      },
+      {
+        project: "Sistent Design System",
+        image: five,
+        site: "https://github.com/layer5io/sistent",
+        language: "React.js",
+        maintainers_name: ["Antonette Caldwell"],
+        link: ["https://layer5.io/community/members/antonette-caldwell"],
+        repository: "https://github.com/layer5io/sistent"
+      },
+      {
+        project: "Layer5 Documentation",
+        image: five,
+        site: "https://docs.layer5.io/",
+        language: "Hugo",
+        maintainers_name: ["Pranav Singh"],
+        link: ["https://layer5.io/community/members/pranav-singh"],
+        repository: "https://github.com/layer5io/docs"
       }
     ],
   },
@@ -144,11 +165,11 @@ export const repo_data = [
     category: "Cloud Native Training",
     subdata: [
       {
-        project: "Service Mesh Labs",
+        project: "Cloud Native Labs",
         image: five,
         language: "yaml",
         description:
-          "A variety of interactive labs spanning different service meshes. See https://layer5.io/learn/service-mesh-labs.",
+          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
         repository:
           "https://github.com/layer5io/service-mesh-labs",
       },
@@ -193,7 +214,7 @@ export const repo_data = [
         image: meshery,
         language: "Meshery",
         description:
-          "Cloud Native Playground for Kubernetes and Service Mesh ",
+          "Cloud Native Playground for Kubernetes and CNCF projects",
         repository:
           "https://github.com/meshery/play",
       }
@@ -201,7 +222,7 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Management Repos",
+    category: "Cloud Native Management Repos",
     subdata: [
       {
         project: "Meshery",
@@ -222,7 +243,7 @@ export const repo_data = [
         project: "Meshery Operator",
         image: MesheryOperator,
         language: "Golang, Kubernetes Operator",
-        description: "Meshery Operator is the multi-service mesh operator and implementation of MeshSync.",
+        description: "Meshery Operator is the multi-cloud native operator and implementation of MeshSync.",
         repository: "https://github.com/meshery/meshery-operator",
       },
       {
@@ -236,13 +257,15 @@ export const repo_data = [
         project: "Learn-Layer5",
         image: five,
         language: "Golang, Kuttl",
-        description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
+        description: "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
         repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       {
-        project: "Meshery Cloud",
+        project: "Layer5 Cloud",
         image: meshery,
         language: "Golang",
+        maintainers_name: ["Pranav Singh"],
+        link: ["https://layer5.io/community/members/pranav-singh"],
         description: "A Meshery Remote Provider.",
         repository: "https://docs.meshery.io/extensibility/providers",
       },
@@ -275,14 +298,14 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Performance Repos ",
+    category: "Cloud Native Performance Repos ",
     subdata: [
       {
-        project: "Service Mesh Performance",
+        project: "Cloud Native Performance",
         image: smp,
         language: "Protobuf",
         description:
-          "a common format for capturing and describing service meshes’ performance and workloads.",
+          "a common format for capturing and describing cloud native infrastucture performance and services.",
         repository:
           "https://github.com/layer5io/service-mesh-performance-specification",
       },
@@ -306,6 +329,8 @@ export const repo_data = [
         project: "Nighthawk",
         image: gnh,
         language: "Golang, gRPC",
+        maintainers_name: ["Uzair Shaikh"],
+        link: ["https://layer5.io/community/members/uzair-shaikh"],
         description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
@@ -328,10 +353,10 @@ export const repo_data = [
   },
 
   {
-    category: "Service Mesh Pattern Repos",
+    category: "Cloud Native Pattern Repos",
     subdata: [
       {
-        project: "Service Mesh Patterns",
+        project: "Cloud Native Patterns",
         image: patterns,
         language: "Yaml",
         description:
@@ -340,10 +365,10 @@ export const repo_data = [
           "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
-        project: "Service Mesh Patterns Action",
+        project: "Cloud Native Patterns Action",
         image: patterns,
         language: "shell",
-        description: "GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
+        description: "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
     ],

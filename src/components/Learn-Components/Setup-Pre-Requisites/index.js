@@ -11,7 +11,7 @@ const SetupPreReq = () => (
   <SetupPreReqWrapper>
     <div className="get-started-desc" id="pre-requisites">
       <h2>Prerequisites</h2>
-      <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery is the cloud native management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
+      <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery, collaborative Kubernetes manager</p>
     </div>
     <div className="container-card" id="Set up">
       <a href="/cloud-native-management/meshery"

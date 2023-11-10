@@ -302,7 +302,6 @@ export const darktheme = {
   invertColor: "invert(100%)",
   meshInterfaceLogoFilter: "90%",
   mapBackground: "93%",
-
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#212121",
 
@@ -381,7 +380,7 @@ export const darktheme = {
   grey313131ToYellowFFF7D8: "#313131",
   grey323232ToGreenF3FFFD: "#323232",
   grey3C3C3CToGreyF1F1F1: "#3C3C3C",
-  grey404040ToGreen3C494F: "#404040",
+  grey404040ToGreen3C494F: "#ffffff66",
   grey404040ToGrey1E2117: "#404040",
   grey737373ToGrey222222: "#737373",
   grey737373ToGrey4C4A4A: "#737373",
@@ -448,7 +447,6 @@ export const darktheme = {
   bannerDescriptionGradient: "#121212",
   borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
-
   //DarkTheme
   DarkTheme: true,
 
