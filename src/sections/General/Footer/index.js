@@ -145,14 +145,14 @@ const Footer = ({ location }) => {
                       Service Mesh Comparison
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       className="category-link"
                       to="/learn/service-mesh-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="footer-sections even-col">
