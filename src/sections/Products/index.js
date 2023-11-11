@@ -320,7 +320,7 @@ const index = () => {
               Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button primary title="Book a Demo" />
+            <Button primary title="Book a Demo" title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>
