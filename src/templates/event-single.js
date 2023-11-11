@@ -19,6 +19,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
       }
       eurl
       title
+      description
       type
       speakers
       register
@@ -57,5 +58,5 @@ export default EventSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail.publicURL} />;
 };
