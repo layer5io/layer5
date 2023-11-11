@@ -32,12 +32,12 @@ import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
-  { id: 2, link: "#Badges", text: "Community Member Profile Badges" },
   {
-    id: 3,
+    id: 2,
     link: "#Community_member_profile",
     text: "Community Member Profile",
   },
+  { id: 3, link: "#Badges", text: "Community Member Profile Badges" },
   { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
 ];
 
