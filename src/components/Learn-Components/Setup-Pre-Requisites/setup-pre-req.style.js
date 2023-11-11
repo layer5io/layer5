@@ -16,10 +16,14 @@ const SetupPreReqWrapper = styled.div`
         }
         .card {
             padding: 2rem;
+            box-shadow: rgb();
             background: ${props => props.theme.grey212121ToGreyEEEEEE};
             max-width: 20rem;
             min-height: 21.5rem;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            :hover{
+                box-shadow: rgb(0,211,169) 0px 0px 5px;
+            }
             .card-header {
                 display: flex;
                 flex: auto;
