@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const PricingWrapper = styled.section`
+const ProductWrapper = styled.section`
   .freeCont {
     width: 100vw;
     overflow: hidden;
@@ -336,7 +336,13 @@ const PricingWrapper = styled.section`
     font-size: 18px;
   }
   .product_hero_img {
-   margin:4rem;
+   margin:1rem;
+   > img {
+    width: 35rem;
+    height: 35rem;
+    position: relative;
+    
+   }
   }
   .heroImg path {
     filter: red;
@@ -358,6 +364,9 @@ height: 100%;
     padding: 2rem;
     margin: 2rem;
   }
+.logo {
+  max-height: 3rem;
+}
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -566,4 +575,4 @@ height: 100%;
   }
 `;
 
-export default PricingWrapper;
+export default ProductWrapper;
