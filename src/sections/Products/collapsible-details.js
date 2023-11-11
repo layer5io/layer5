@@ -39,12 +39,10 @@ p{
    .open{
     visibility:visible;
    }
-
  h5{
    display: inline-block;
    vertical-align: middle;
  }
-
 `;
 
 const FeatureDetails = (props) => {
