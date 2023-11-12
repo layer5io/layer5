@@ -73,7 +73,6 @@ const SoSpecialWrapper = styled.div`
     .slick-next:before{	
         content: "›";
         line-height: 0;
-        opacity: 1;
     }
     .slick-dots li button:before {
         font-size: 0.6rem;
