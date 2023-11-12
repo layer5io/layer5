@@ -205,17 +205,10 @@ const Connect = () => {
                 Mesh Performance.
               </p>
               <p>
-                <a href="https://layer5io.slack.com/archives/C010H0HE2E6">
-                  #smi
-                </a>{" "}
-                - For discussions related to Meshery and Service Mesh Interface
-                (SMI).
-              </p>
-              <p>
                 <a href="https://layer5io.slack.com/archives/C012UMS2MCM">
                   #wasm
                 </a>{" "}
-                - For discussions on web assembly, rust, data plane filters.
+                - For discussions on webassembly, rust, envoy filters.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C015QJKUMPU">
