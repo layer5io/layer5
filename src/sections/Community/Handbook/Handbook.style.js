@@ -1,9 +1,9 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
-    .content > a:first-of-type > h2:first-of-type {
-      padding-top: 1rem;
-    }
+    // .content > a:first-of-type > h2:first-of-type {
+    //   padding-top: 1rem;
+    // }
 
     .highlight{
       font-weight: 600;
@@ -45,7 +45,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      margin-top: -36rem;
+      margin-top: -39rem;
       margin-left: 20rem;
       display: flex;
     }
@@ -397,6 +397,7 @@ export const HandbookWrapper = styled.div`
     position: sticky;
     top: 10rem;
     right:0rem;
+    margin-top: 6rem;
     margin-right: 1rem;
     padding-bottom: 5rem;
     align-items:left;
