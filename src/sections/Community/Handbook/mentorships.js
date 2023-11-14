@@ -10,7 +10,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
-    margin-top: -36rem; 
+    margin-top: -51rem; 
     .explain-2{
       padding: 25px 0px;
       .text{
@@ -21,7 +21,7 @@ const ConductWrapper = styled.div`
               padding: 1.25rem 0px;
           }
           p{
-              color: ${props => props.theme.tertiaryColor};
+              color: ${(props) => props.theme.tertiaryColor};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
       }
@@ -38,37 +38,37 @@ const ConductWrapper = styled.div`
       }
 
       .communitybridge_logo_svg__cls-1{
-        fill: ${props => props.theme.whiteToBlue003764};
+        fill: ${(props) => props.theme.whiteToBlue003764};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .hacktoberfest_svg__cls-1 {
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        fill: ${props => props.theme.whiteToRed662839};
+        fill: ${(props) => props.theme.whiteToRed662839};
       }
 
       .lfx-white_svg__b{
-        fill: ${props => props.theme.whiteToBlue003764};
+        fill: ${(props) => props.theme.whiteToBlue003764};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .lfx-white_svg__c{
-        fill: ${props => props.theme.whiteToBlue0096d6};
+        fill: ${(props) => props.theme.whiteToBlue0096d6};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .layer5-colorMode_svg__colorMode1 {
-        fill: ${props => props.theme.whiteToGreen3C494F};
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .mlh_svg__cls-1 {
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${(props) => props.theme.whiteToBlack};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .sca_svg__fil0, .sca_svg__fil6 {
-        fill: ${props => props.theme.whiteToBlack};
+        fill: ${(props) => props.theme.whiteToBlack};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       
@@ -115,7 +115,6 @@ const ConductWrapper = styled.div`
 
 `;
 
-
 const MentorshipPrograms = () => {
   const data = React.useMemo(() => programs_data);
   return (
@@ -126,9 +125,15 @@ const MentorshipPrograms = () => {
       <TOC />
       <ConductWrapper>
         <Container>
-
           {data.map((data) => {
-            const { id, name, description, buttonLink, imageLink, imagePosition } = data;
+            const {
+              id,
+              name,
+              description,
+              buttonLink,
+              imageLink,
+              imagePosition,
+            } = data;
             return (
               <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
@@ -137,21 +142,31 @@ const MentorshipPrograms = () => {
                       <div className="text">
                         <h2>{name}</h2>
                         <p>{description}</p>
-                        <Button primary id="learn" type="button" title="Learn More" url={buttonLink} />
+                        <Button
+                          primary
+                          id="learn"
+                          type="button"
+                          title="Learn More"
+                          url={buttonLink}
+                        />
                       </div>
                     </Col>
                     <Col lg={6} md={6} sm={12} id="col2">
-                      { isValidElement(imageLink)
-                        ? imageLink
-                        :  <img src={imageLink} title="Click to know More about our partner" alt={name} />
-                      }
+                      {isValidElement(imageLink) ? (
+                        imageLink
+                      ) : (
+                        <img
+                          src={imageLink}
+                          title="Click to know More about our partner"
+                          alt={name}
+                        />
+                      )}
                     </Col>
                   </Row>
                 </div>
               </div>
             );
           })}
-
         </Container>
         <TocPagination />
       </ConductWrapper>
