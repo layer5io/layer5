@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
+import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";
 import youtube_icon from "../../../assets/images/socialIcons/youtube-light.svg";
 import github_icon from "../../../assets/images/socialIcons/github-light.svg";
@@ -127,11 +127,11 @@ const Connect = () => {
                   Layer5 Community Members
                 </a>
               </li>
-            </ul>{" "}
-            <h2>Calendar</h2>{" "}
-            {/* <a id="Calendar">
-
-            </a> */}
+            </ul>
+            <a id="Calendar">
+              {" "}
+              <h2>Calendar</h2>{" "}
+            </a>
             <p>
               Don’t miss out on any of the activities in the community. Join any
               or all of the weekly meetings subscribing to the{" "}
@@ -241,11 +241,7 @@ const Connect = () => {
             </p>
             <div>
               <p className="channels-para">
-                <img
-                  className="channels-img"
-                  src={twitter_icon}
-                  alt="twitter"
-                />
+                <TwitterIcon className="twitter" />
                 &nbsp;&nbsp;
                 <a href="https://twitter.com/layer5">@layer5</a>,&nbsp;
                 <a href="https://twitter.com/mesheryio">@mesheryio</a>

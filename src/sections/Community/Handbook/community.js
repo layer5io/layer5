@@ -8,14 +8,8 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
-  { id: 1, link: "#Recognitions", text: "Recognition" },
-  { id: 2, link: "#Membership", text: "Membership to the github" },
-  {
-    id: 3,
-    link: "#Community_member_profile",
-    text: "Community member profile",
-  },
+  { id: 0, link: "#Community Guidelines", text: "Guidelines" },
+  { id: 1, link: "#Resources", text: "Resources" },
 ];
 
 const CommunityGuide = () => {
@@ -103,20 +97,27 @@ const CommunityGuide = () => {
               check up on our Github page regularly etc. Within the community
               and outside, we encourage teamwork.
             </p>
-            <p>
-              <img className="logo" src={Point} alt="Point" />
-              <strong>Resources -</strong> Be sure to access the resources in
-              the{" "}
-              <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
-                community drive
-              </a>{" "}
-              and sign-up on the{" "}
-              <a href="https://layer5.io/subscribe">community mailer</a>. Ask
-              for a copy of{" "}
-              <a href="https://layer5.io/books/the-enterprise-path-to-service-mesh-architectures">
-                The Enterprise Path to Service Mesh Architectures
-              </a>
-              .
+            <p id="Resources">
+              <h3> Resources </h3>
+              <p>
+                <img className="logo" src={Point} alt="Point" />
+                Be sure to access the resources{" "}
+                <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
+                  community drive.
+                </a>{" "}
+              </p>
+              <p>
+                <img className="logo" src={Point} alt="Point" />
+                Sign-up on the{" "}
+                <a href="https://layer5.io/subscribe">community mailer</a>.
+              </p>
+              <p>
+                <img className="logo" src={Point} alt="Point" />
+                Ask for a copy of{" "}
+                <a href="https://layer5.io/books/the-enterprise-path-to-service-mesh-architectures">
+                  The Enterprise Path to Service Mesh Architectures.
+                </a>
+              </p>
             </p>
             <p>
               Please refer to the{" "}
