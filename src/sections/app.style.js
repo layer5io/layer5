@@ -45,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
+    scroll-behavior: smooth;
 }
 
 body,html {
