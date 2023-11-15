@@ -207,8 +207,8 @@ export const repo_data = [
         project: "Linkerd Service Mesh Workshop",
         image: linkerdLogo,
         language: "Meshery",
-        maintainers_name: ["Hussaina Begum"],
-        link: ["https://layer5.io/community/members/hussaina-begum"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         description:
           "A workshop that teaches about service meshes through the lens of Linkerd.",
         repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
@@ -348,12 +348,14 @@ export const repo_data = [
           "Nic Jackson",
           "Otto Van Der Schaaf",
           "Xin Huang",
+          "Aaditya Narayan Subedy",
         ],
         link: [
           "https://layer5.io/community/members/lee-calcote",
           "https://layer5.io/community/members/nic-jackson",
           "https://layer5.io/community/members/otto-van-der-schaaf",
           "https://layer5.io/community/members/xin-huang",
+          "https://layer5.io/community/members/aaditya-narayan-subedy",
         ],
         description:
           "a common format for capturing and describing cloud native infrastucture performance and services.",
