@@ -8,7 +8,7 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 
 
 export const query = graphql`
-  query IntegrationsBySlug($slug: String!) {
+  query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
       body
       frontmatter {
@@ -33,6 +33,17 @@ export const query = graphql`
           extension
           publicURL
         }
+      }
+    }
+    allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    ) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+        extension
+        publicURL
       }
     }
   }

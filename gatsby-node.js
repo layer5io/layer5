@@ -421,6 +421,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: integrationTemplate,
       context: {
         slug: integration.fields.slug,
+        name: "_images/" + integration.fields.slug.split("/")[2],
       },
     });
   });
