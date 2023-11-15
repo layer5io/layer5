@@ -150,8 +150,12 @@ export const repo_data = [
         image: five,
         site: "https://github.com/layer5io/sistent",
         language: "React.js",
-        maintainers_name: ["Rex Joshua Ibegbu", "Aabid Sofi"],
-        link: [
+        maintainers_name: [
+          "Antonette Caldwell",
+          "Rex Joshua Ibegbu",
+          "Aabid Sofi",
+        ],
+        link: ["https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/rex-joshua-ibegbu",
           "https://layer5.io/community/members/aabid-sofi",
         ],
