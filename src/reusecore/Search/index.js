@@ -1,5 +1,5 @@
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import React from "react";
+import React, { useEffect } from "react";
 import { SearchWrapper } from "./searchbox.style";
 import Button from "../../reusecore/Button";
 import { DebounceInput } from "react-debounce-input";
@@ -30,6 +30,14 @@ const SearchBox = ({
       paginate(1);
     searchData(e);
   };
+
+  useEffect(() => {
+    const inputElement = document.getElementById("search-input");
+    if (inputElement && searchQuery !== "") {
+      inputElement.focus();
+    }
+  }, []);
+
   return (
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
@@ -40,7 +48,7 @@ const SearchBox = ({
           debounceTimeout={500}
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
-          // autoFocus
+          id="search-input"
         />
         <Button aria-label="search icon">
           <FaSearch />
