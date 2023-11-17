@@ -1,5 +1,5 @@
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import React, { useEffect } from "react";
+import React from "react";
 import { SearchWrapper } from "./searchbox.style";
 import Button from "../../reusecore/Button";
 import { DebounceInput } from "react-debounce-input";
@@ -11,7 +11,8 @@ const SearchBox = ({
   setHideFilter,
   paginate,
   currentPage,
-  classnames
+  classnames,
+  focusSearch
 }) => {
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {
@@ -31,13 +32,6 @@ const SearchBox = ({
     searchData(e);
   };
 
-  useEffect(() => {
-    const inputElement = document.getElementById("search-input");
-    if (inputElement && searchQuery !== "") {
-      inputElement.focus();
-    }
-  }, []);
-
   return (
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
@@ -48,7 +42,7 @@ const SearchBox = ({
           debounceTimeout={500}
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
-          id="search-input"
+          autoFocus={focusSearch}
         />
         <Button aria-label="search icon">
           <FaSearch />

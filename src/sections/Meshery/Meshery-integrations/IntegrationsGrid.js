@@ -235,6 +235,7 @@ const IntegrationsGrid = ({ category, count }) => {
         hideFilter={hideFilter}
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
+        focusSearch={false}
       />
 
       <section style={{ "margin": "0 2.6rem" }}>
