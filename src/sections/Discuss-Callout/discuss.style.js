@@ -8,7 +8,7 @@ const DiscussWrapper = styled.div`
         font-weight: 500;
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:${(props) => props.theme.secondaryColor};
     }
     .logo{
         width: 200px;
@@ -18,11 +18,11 @@ const DiscussWrapper = styled.div`
         text-align: center;
         p { 
             text-align: center;
-            color: ${props => props.theme.white};
+            color: ${(props) => props.theme.white};
             padding: 0px 3.125rem;
         }
         h2 {
-            color: ${props => props.theme.white};  
+            color: ${(props) => props.theme.white};  
         }
         h1 {
             padding: 1.25rem 0px;
@@ -34,6 +34,7 @@ const DiscussWrapper = styled.div`
             background-color: none;
             border-radius: 25px;
             .card {
+                height:20rem;
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
                 margin: auto;
@@ -81,7 +82,8 @@ const DiscussWrapper = styled.div`
                 .cards {
                     padding: 0;
                     .card {
-                        width: 23.25rem;
+                        height:20rem;
+                        width: 23.8rem;
                     }  
                 }
             }
@@ -96,6 +98,10 @@ const DiscussWrapper = styled.div`
                         }
                         p {
                             font-size: 15px
+                        }
+                        .card{
+                            width:20rem;
+                            height:20rem;
                         }
                     }
                 }
@@ -114,6 +120,8 @@ const DiscussWrapper = styled.div`
                             font-size: 13px;
                             line-height: 23px;
                         }
+                        width:18rem;
+                        height:20rem;
                     }
                 }
                 button {
@@ -122,6 +130,7 @@ const DiscussWrapper = styled.div`
             }
         }
     }
+  
     @media only screen and (max-width: 450px){
         .explain {
             .cards {

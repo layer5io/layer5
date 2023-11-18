@@ -82,6 +82,7 @@ const AdventuresWrapper = styled.div`
                 .cards {
                     padding: 0;
                     .card {
+                        height:20rem;
                         width: 23.25rem;
                     }  
                 }
@@ -97,6 +98,10 @@ const AdventuresWrapper = styled.div`
                         }
                         p {
                             font-size: 15px
+                        }
+                        .card{
+                            width:20rem;
+                            height:20rem;
                         }
                     }
                 }
@@ -115,6 +120,8 @@ const AdventuresWrapper = styled.div`
                             font-size: 13px;
                             line-height: 23px;
                         }
+                        width:18rem;
+                        height:20rem;
                     }
                 }
                 button {

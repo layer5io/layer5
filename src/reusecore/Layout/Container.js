@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const ContainerWrapper = styled.div`
-
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
