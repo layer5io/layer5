@@ -21,7 +21,7 @@ const CommunityGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <div className="content" >
+          <div className="content">
             {" "}
             <a id="1 Community Guidelines">
               <h2 >Community Guidelines</h2>
