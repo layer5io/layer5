@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import DesignEmbedWrapper from "./designEmbedds.style";
 import { Col, Container, Row } from "../../../reusecore/Layout";
-import et from "../../../assets/images/et/meshmap.jpg";
 
 import SectionTitle from "../../../reusecore/SectionTitle";
 // import { Helmet } from "react-helmet";
