@@ -17,18 +17,18 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 const contents = [
   {
     id: 0,
-    link: "#Layer5",
+    link: "#1 Layer5",
     text: "Layer5",
   },
-  { id: 1, link: "#Meshery", text: "Meshery" },
+  { id: 1, link: "#2 Meshery", text: "Meshery" },
   {
     id: 2,
-    link: "#Cloud-Native-Performance",
+    link: "#3 Cloud Native Performance",
     text: "Cloud Native Performance",
   },
   {
     id: 3,
-    link: "#Cloud-Native-Patterns",
+    link: "#4 Cloud Native Patterns",
     text: " Cloud Native Patterns",
   },
 ];
@@ -45,7 +45,7 @@ const Maintainer = () => {
           <div className="content">
             <p>
 
-              <a id="Layer5">
+              <a id="1 Layer5">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/">
@@ -108,7 +108,7 @@ const Maintainer = () => {
             </p>
             <p>
 
-              <a id="Meshery">
+              <a id="2 Meshery">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/cloud-native-management/meshery">
@@ -180,7 +180,7 @@ const Maintainer = () => {
               </ul>
             </p>
 
-            <a id="Cloud-Native-Performance">
+            <a id="3 Cloud Native Performance">
               <p>
                 <h3>
                   <a href="https://smp-spec.io/">
@@ -207,7 +207,7 @@ const Maintainer = () => {
 
             <p>
 
-              <a id="Cloud-Native-Patterns">
+              <a id="4 Cloud Native Patterns">
                 {" "}
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">

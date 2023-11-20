@@ -9,11 +9,11 @@ import longArrow from "../Newcomers-guide/long-arrow.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contents = [
-  { id: 0, link: "#About-Layer5", text: "About Layer5" },
-  { id: 1, link: "#Goals", text: "Goals" },
-  { id: 2, link: "#Newcomers-Path", text: "Newcomer’s Path", },
-  { id: 3, link: "#Working-on-your-issue", text: "Working on your issue" },
-  { id: 4, link: "#While-your-issue-is-under-review", text: "While your issue is under review", },
+  { id: 0, link: "#1 About Layer5", text: "About Layer5" },
+  { id: 1, link: "#2 Goals", text: "Goals" },
+  { id: 2, link: "#3 Newcomers Path", text: "Newcomer’s Path", },
+  { id: 3, link: "#4 Working on your issue", text: "Working on your issue" },
+  { id: 4, link: "#5 While your issue is under review", text: "While your issue is under review", },
 ];
 
 const Intro = () => {
@@ -28,7 +28,7 @@ const Intro = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="About-Layer5">
+            <a id="1 About Layer5">
               <h2>About Layer5</h2>
             </a>
             <p>
@@ -67,7 +67,7 @@ const Intro = () => {
               </a>
               .
             </p>
-            <a id="Goals">
+            <a id="2 Goals">
               {" "}
               <h2>Goals</h2>{" "}
             </a>
@@ -87,7 +87,7 @@ const Intro = () => {
               </li>
             </ul>
 
-            <a id="Newcomers-Path">
+            <a id="3 Newcomers Path">
               {" "}
               <h2>Newcomer’s Path</h2>{" "}
             </a>
@@ -163,7 +163,7 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <a id="Working-on-your-issue">
+            <a id="4 Working on your issue">
               {" "}
               <h3>Working on your issue</h3>{" "}
             </a>
@@ -191,7 +191,7 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <a id="While-your-issue-is-under-review">
+            <a id="5 While your issue is under review">
               {" "}
               <h3>While your issue is under review</h3>{" "}
             </a>

@@ -30,15 +30,15 @@ import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
 import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
 
 const contents = [
-  { id: 0, link: "#Profile Bages", text: "Profile Bages" },
-  { id: 1, link: "#Membership", text: "Membership to GitHub" },
+  // { id: 0, link: "#1 Profile Badges", text: "Profile Badges" },
+  { id: 1, link: "#2 Membership", text: "Membership to GitHub" },
   {
     id: 2,
-    link: "#Community_member_profile",
-    text: "Community Member Profile",
+    link: "#3 Community member profile",
+    text: "Community Member Profiles",
   },
-  { id: 3, link: "#Badges", text: "Community Member Profile Badges" },
-  { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
+  { id: 3, link: "#4 Badges", text: "Community Member Profile Badges" },
+  { id: 4, link: "#5 SocialMedia", text: "Recognition on Social Media Platforms" },
 ];
 
 const badgeStyle = {
@@ -66,19 +66,19 @@ const RecognitionPage = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="Community Guidelines">
+            <a id="1 Community Guidelines">
               <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
             </a>
             <p>
               As an open source-first community, we very much appreciate the engagement of individuals within the Layer5 community. We wouldn't be here without you. Our success is a collective one.Consequently, we are quite intentional about defining and encouraging the journey for each individual community member. No small part of their journey is that of recongizing their accomplishments and publicly celebrating their accolades. We do so in a number of ways.
             </p>
-            <a id="Membership">
+            <a id="2 Membership">
               <h3>Membership to the Github organizations</h3>
             </a>
             <p>
               Membership to the Github organizations is a significant milestone for contributors who have shown persistent commitment and dedication to Layer5 projects. It is not solely about writing code but rather the consistency of engagement and alignment of mentality. Those who have been actively involved in the community for several months, making updates, helping others, attending meetings, and demonstrating a willingness to learn and share their knowledge, are the ones who are likely to receive an invite. Such individuals demonstrate a genuine desire to improve themselves, others, and the projects they are working on. Depending on the number of contributions made across the five GitHub organizations of Layer5, contributors can expect to receive an invitation to any or all of these organizations. We value and appreciate the hard work and dedication of our contributors, and we are delighted to reward their efforts with access to our Github organizations. Our <Link to="https://layer5.io/community/community-managers">Community Managers</Link> and <Link to="https://layer5.io/community/meshmates"> MeshMates</Link> recognize potential contributors on a weekly basis and typically invite individuals after 6 to 8 weeks of continuous, active participation.
             </p>
-            <a id="Community_member_profile">
+            <a id="3 Community member profile">
               <h3>
                 <Link to="/community/members">Community Member Profiles</Link>
               </h3>
@@ -96,7 +96,7 @@ const RecognitionPage = () => {
               </li>
               <li><b>Inactive</b>  - Members who have previously engaged but have not participated in the community or projects within ~two months.</li>
             </ul>
-            <a id="Badges">
+            <a id="4 Badges">
               <h3 style={recognitionsstyle}>Community Member Profile Badges</h3>
             </a>
             <p>
@@ -198,7 +198,7 @@ const RecognitionPage = () => {
                 <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
               </li>
             </ul>
-            <a id="SocialMedia">
+            <a id="5 SocialMedia">
               <h3>Recognition on Social Media Platforms</h3>
             </a>
             <p>

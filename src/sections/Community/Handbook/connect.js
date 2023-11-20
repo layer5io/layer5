@@ -15,14 +15,14 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 const contents = [
   {
     id: 0,
-    link: "#Newsletter",
+    link: "#1 Newsletter",
     text: "Newsletter",
   },
-  { id: 1, link: "#Mailing-Lists", text: "Mailing Lists" },
-  { id: 2, link: "#Calendar", text: "Calendar" },
-  { id: 3, link: "#Slack-Community", text: "Slack Community" },
-  { id: 4, link: "#Discussion-Forum", text: "Discussion Forum" },
-  { id: 5, link: "#Social-Media", text: "Social Media" },
+  { id: 1, link: "#2 Mailing Lists", text: "Mailing Lists" },
+  { id: 2, link: "#3 Calendar", text: "Calendar" },
+  { id: 3, link: "#4 Slack Community", text: "Slack Community" },
+  { id: 4, link: "#5 Discussion Forum", text: "Discussion Forum" },
+  { id: 5, link: "#6 Social Media", text: "Social Media" },
 ];
 
 const Connect = () => {
@@ -35,7 +35,7 @@ const Connect = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="Newsletter">
+            <a id="1 Newsletter">
               {" "}
               <h2>Subscribe to Newsletter</h2>{" "}
             </a>
@@ -58,7 +58,7 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Mailing-Lists">
+            <a id="2 Mailing Lists">
               {" "}
               <h2>Mailing Lists</h2>{" "}
             </a>
@@ -129,7 +129,7 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Calendar">
+            <a id="3 Calendar">
               {" "}
               <h2>Calendar</h2>{" "}
             </a>
@@ -140,7 +140,7 @@ const Connect = () => {
                 community calendar .
               </a>
             </p>{" "}
-            <a id="Slack-Community">
+            <a id="4 Slack Community">
               {" "}
               <h2>Slack Community</h2>{" "}
             </a>
@@ -216,7 +216,7 @@ const Connect = () => {
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
             </div>
-            <a id="Discussion-Forum">
+            <a id="5 Discussion Forum">
               {" "}
               <h2>Discussion Forum</h2>{" "}
             </a>
@@ -229,7 +229,7 @@ const Connect = () => {
                 <li><a href="https://discuss.layer5.io/c/community/12">Community Topic</a></li>
               </ul>
             </div>
-            <a id="Social-Media">
+            <a id="6 Social Media">
               {" "}
               <h2>Social Media</h2>{" "}
             </a>

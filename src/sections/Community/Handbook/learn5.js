@@ -8,9 +8,9 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0, link: "#Learning",text: "Learning", },
-  { id: 1, link: "#Eventing", text: "Eventing" },
-  { id: 2, link: "#Blogging", text: "Blogging" },
+    id: 0, link: "#1 Learning",text: "Learning", },
+  { id: 1, link: "#2 Eventing", text: "Eventing" },
+  { id: 2, link: "#3 Blogging", text: "Blogging" },
 ];
 
 const LearnLayer = () => {
@@ -25,7 +25,7 @@ const LearnLayer = () => {
         <Container>
           <div className="content">
 
-            <a id="Learning">
+            <a id="1 Learning">
               <h2>Learning together</h2>
             </a>
             <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture and service meshes.</p>
@@ -42,7 +42,7 @@ const LearnLayer = () => {
               free for all.
             </p>
 
-            <a id="Eventing">
+            <a id="2 Eventing">
               <h2>Sharing what you've learned at a technical event</h2>
             </a>
             <p>At Layer5, we participate in many different technical conferences, in international events, in online workshops, at meetups, and so on. Our engagement in these events ranges across  various cloud native and open source topics and varies between speaking, hosting workshops, managing project booths, and so on. Our engagement in these events, increases awareness about our projects and the individual community members that contribute to the projects.
@@ -50,7 +50,7 @@ const LearnLayer = () => {
             <p>A member of the Layer5 community has presented at every KubeCon since its inception. Join us at the many events we host or participate in. Check out <Link to="/community/events">Layer5 events</Link> to for a current list of events.</p>
 
 
-            <a id="Blogging">
+            <a id="3 Blogging">
               {" "}
               <h2>Sharing what you've learned on our blog</h2>{" "}
             </a>

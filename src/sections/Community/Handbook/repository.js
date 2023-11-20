@@ -19,11 +19,11 @@ import { Link } from "gatsby";
 const contents = [
   {
     id: 0,
-    link: "#top",
+    link: "#1 top",
     text: "GitHub Organizations and Repositories",
   },
-  { id: 1, link: "#Frontend-Projects", text: "Frontend Projects" },
-  { id: 2, link: "#Backend-Projects", text: "Backend Projects" },
+  { id: 1, link: "#2 Frontend Projects", text: "Frontend Projects" },
+  { id: 2, link: "#3 Backend Projects", text: "Backend Projects" },
 ];
 
 const Repository = () => {
@@ -41,7 +41,7 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="top">
+            <a id="1 top">
               <h2>GitHub Organizations and Repositories</h2>
             </a>
             <p>
@@ -123,7 +123,7 @@ const Repository = () => {
               </li>
             </ul>
 
-            <a id="Frontend-Projects">
+            <a id="2 Frontend Projects">
               <h2>Frontend Projects</h2>
             </a>
 
@@ -189,7 +189,7 @@ const Repository = () => {
                 </div>
               );
             })}
-            <a id="Backend-Projects">
+            <a id="3 Backend Projects">
               <h2>Backend Projects</h2>
             </a>
 

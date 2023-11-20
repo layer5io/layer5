@@ -8,12 +8,12 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
-  { id: 0, link: "#Clone-your-fork", text: "Clone your fork" },
-  { id: 1, link: "#Checkout-a-new-branch", text: "Checkout a new branch" },
-  { id: 2, link: "#Commit-your-changes", text: "Commit your changes" },
-  { id: 3, link: "#Sign-off-commits", text: "Sign-off commits" },
-  { id: 4, link: "#Push-changes-to-Github", text: "Push changes to Github" },
-  { id: 5, link: "#Create-a-pull-request", text: "Create a pull request" },
+  { id: 0, link: "#1 Clone your fork", text: "Clone your fork" },
+  { id: 1, link: "#2 Checkout a new branch", text: "Checkout a new branch" },
+  { id: 2, link: "#3 Commit your changes", text: "Commit your changes" },
+  { id: 3, link: "#4 Sign-off commits", text: "Sign-off commits" },
+  { id: 4, link: "#5 Push changes to Github", text: "Push changes to Github" },
+  { id: 5, link: "#6 Create a pull request", text: "Create a pull request" },
 ];
 
 const contributingGuide = () => {
@@ -35,7 +35,7 @@ const contributingGuide = () => {
             project repository. At Layer5 org, we use the Github Flow:
           </p>
           <div className="content">
-            <a id="Clone-your-fork">  <h3>Clone your fork to your local machine</h3> </a>
+            <a id="1 Clone your fork">  <h3>Clone your fork to your local machine</h3> </a>
             <ul>
               <li>Fork the repository you are working on.</li>
               <li>
@@ -78,7 +78,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Checkout-a-new-branch">  <h3>Create and checkout a new branch</h3> </a>
+            <a id="2 Checkout a new branch">  <h3>Create and checkout a new branch</h3> </a>
             <ul>
               <li>
                 <span>
@@ -127,7 +127,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Commit-your-changes">  <h3>Commit the changes made</h3> </a>
+            <a id="3 Commit your changes">  <h3>Commit the changes made</h3> </a>
             <ul>
               <li>
                 <span>
@@ -139,7 +139,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Sign-off-commits"> <h3>
+            <a id="4 Sign-off commits"> <h3>
                 Make sure to{" "}
               <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
                   Sign-off
@@ -188,7 +188,7 @@ const contributingGuide = () => {
             </p>
             <StaticImage src={Signoff} id="sign-off" alt="Signoff" />
 
-            <a id="Push-changes-to-Github">  <h3>Push changes to Github</h3> </a>
+            <a id="5 Push changes to Github">  <h3>Push changes to Github</h3> </a>
             <ul>
               <li>
                 <span>
@@ -199,7 +199,7 @@ const contributingGuide = () => {
                 </span>
               </li>
             </ul>
-            <a id="Create-a-pull-request">  <h3>Create a pull request (PR)</h3> </a>
+            <a id="6 Create a pull request">  <h3>Create a pull request (PR)</h3> </a>
             <ul>
               <li>
                 <span>

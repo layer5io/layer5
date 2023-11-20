@@ -8,8 +8,8 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  { id: 0, link: "#Community-Guidelines", text: "Guidelines" },
-  { id: 1, link: "#Resources", text: "Resources" },
+  { id: 0, link: "#1 Community Guidelines", text: "Guidelines" },
+  { id: 1, link: "#2 Resources", text: "Resources" },
 ];
 
 const CommunityGuide = () => {
@@ -23,7 +23,7 @@ const CommunityGuide = () => {
         <Container>
           <div className="content" >
             {" "}
-            <a id="Community-Guidelines">
+            <a id="1 Community Guidelines">
               <h2 >Community Guidelines</h2>
             </a>
             <p>
@@ -97,7 +97,7 @@ const CommunityGuide = () => {
               check up on our Github page regularly etc. Within the community
               and outside, we encourage teamwork.
             </p>
-            <p id="Resources">
+            <p id="2 Resources">
               <h3> Resources </h3>
               <p>
                 <img className="logo" src={Point} alt="Point" />
