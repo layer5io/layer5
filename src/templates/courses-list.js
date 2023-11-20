@@ -82,7 +82,7 @@ export const Head = ({  pageContext }) => {
   const learnpath = getTitle(pageContext.learnpath);
   return <SEO
     title={`${learnpath}`}
-    description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
+    description="Learn Cloud Native Infrastructure: Kubernetes, Prometheus, Fluentd, Envoy, Istio, GitHub, Linkerd, Open Policy Agent..."
     canonical="https://layer5.io/learn/learning-paths"
   />;
 };
