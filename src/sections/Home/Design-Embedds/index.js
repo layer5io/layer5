@@ -30,7 +30,7 @@ const DesignEmbedds = () => {
           {/* <div className="bb"> */}
           {/* </div> */}
           <Col>
-            <div id="embedded-design-168bf17a-9386-4a0e-8c32-dd2bc22c8fe9">
+            <div id="embedded-design-168bf17a-9386-4a0e-8c32-dd2bc22c8fe9" style="height:26rem;width:100%">
             </div>
             <script
               src="../../../assets/data/embed-test/embedded-design-cypress-des-1-no-modify-by-me-copy-copy"
