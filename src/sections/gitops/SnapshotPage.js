@@ -60,16 +60,7 @@ const SnapshotPage = () => {
       </ContentContainerWrapper>
 
 
-      <ContentContainerWrapper>
-        <ContentRow>
-          <TextColumn>
-            <Heading>See this sample GitHub workflow (action.yml) for more configuration details.</Heading>
-          </TextColumn>
-          <ColumnContainer >
-            <img src={ServicePerformanceProfileTest} className="screenshot" alt="ServicePerformanceProfileTest" width={530} height={375} />
-          </ColumnContainer>
-        </ContentRow>
-      </ContentContainerWrapper>
+
 
 
       <div className="reviews-container" >
