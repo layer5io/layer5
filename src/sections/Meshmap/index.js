@@ -34,9 +34,10 @@ import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
+import TeaserModal from "../../components/TeaserModal";
 
 
-const Meshmap = () => {
+const Meshmap = (props) => {
 
   return (
     <MeshmapWrapper>
@@ -245,9 +246,10 @@ const Meshmap = () => {
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />
-        </Container >
-      </div >
+        </Container>
+      </div>
       <Reviews />
+      <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
     </MeshmapWrapper>
   );
 };
