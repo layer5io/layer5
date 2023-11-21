@@ -248,8 +248,10 @@ const Meshmap = (props) => {
           <Platform />
         </Container>
       </div>
-      <Reviews />
-      <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
+      <>
+        <Reviews />
+        <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
+      </>
     </MeshmapWrapper>
   );
 };
