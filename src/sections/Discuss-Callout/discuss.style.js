@@ -3,6 +3,7 @@ import styled from "styled-components";
 const DiscussWrapper = styled.div`
     background-color:none;
     padding: 1.5rem 0.625rem 1rem;
+    
     overflow: hidden;
     h2{
         font-weight: 500;
@@ -13,6 +14,7 @@ const DiscussWrapper = styled.div`
     .logo{
         width: 200px;
     }
+    
     .explain {
         padding-top: 0rem;
         text-align: center;
@@ -76,11 +78,17 @@ const DiscussWrapper = styled.div`
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
-    @media only screen and (min-width: 990px){
+    @media only screen and (min-width: 768px){
         @media only screen and (min-width: 1211px){
+            .card-align{
+              padding:2rem 0;
+            }
             .explain {
                 .cards {
                     padding: 0;
+                    h2{
+                        padding-bottom:1rem;
+                    }
                     .card {
                         height:20rem;
                         width: 23.8rem;
@@ -88,11 +96,15 @@ const DiscussWrapper = styled.div`
                 }
             }
         }
-        @media only screen and (max-width: 1210px){
+        @media only screen and (max-width: 1211px){
+            .card-align{
+              padding:2rem 0;
+            }
             .explain {
                 .cards {
                     padding: 0; 
                         h2 {
+                            padding-bottom:1rem;
                             font-size: 25px;
                             line-height: 35px;
                         }
@@ -100,14 +112,18 @@ const DiscussWrapper = styled.div`
                             font-size: 15px
                         }
                         .card{
-                            width:20rem;
+                            width:23rem;
                             height:20rem;
                         }
                     }
                 }
             }
         }
-        @media only screen and (max-width: 1100px){
+     
+        @media only screen and (max-width: 992px){
+            .card-align{
+              padding:1.1rem 0;
+            }
             .explain {
                 .cards {
                     padding: 0;
@@ -115,13 +131,14 @@ const DiscussWrapper = styled.div`
                         h2 {
                             font-size: 22px;
                             line-height: 32px;
+                            padding-bottom:1rem;
                         }
                         p {
                             font-size: 13px;
                             line-height: 23px;
                         }
                         width:18rem;
-                        height:20rem;
+                        height:18rem;
                     }
                 }
                 button {
@@ -132,6 +149,9 @@ const DiscussWrapper = styled.div`
     }
   
     @media only screen and (max-width: 450px){
+        .card-align{
+              padding:2rem 0;
+        }
         .explain {
             .cards {
                 padding: 1rem 1rem 1rem 1rem;
