@@ -3,15 +3,22 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import Meshmap from "../../../sections/Meshmap/index";
-const MeshmapPage = () => {
-  let teaser = "";
-  if (window !== undefined) {
-    const params = new URLSearchParams(window.location.search);
-    teaser = params.get("teaser");
-  }
+const MeshmapPage = ({ location }) => {
+  const params = new URLSearchParams(location.search);
+  const parameter1 = params.get("teaser");
+  const parameter2 = params.get("parameter2");
+
+  console.log(parameter1); // -> "firstParam"
+  console.log(parameter2); // -> "secondParam"
+  // ...
+  // let teaser = "";
+  // if (window !== undefined) {
+  //   const params = new URLSearchParams(window.location.search);
+  //   teaser = params.get("teaser");
+  // }
   return (
     <>
-      <Meshmap teaser={teaser === "play"} />
+      <Meshmap teaser={parameter1 === "play"} />
     </>
   );
 };
