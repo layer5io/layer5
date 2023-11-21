@@ -49,22 +49,22 @@ While a flurry of pull requests may be impressive, maintainers value contributio
 That CONTRIBUTING.md file? It's not there for decoration. Treat it as your playbook, providing guidance for equitable collaboration. Ignoring these guidelines is akin to rearranging someone's furniture without permission. Established protocols are crucial, especially in projects with numerous contributors. They help navigate the intricacies of collaborative development. As an example, there is a full set of contributig docs written for Meshery - one for each component:
 
 <ul>
-  <li><a href="/project/contributing/contributing-gitflow">Contributing to Meshery using git</a></li>
-  <li><a href="/project/contributing/meshery-windows">Setting up Meshery Development Environment on Windows</a></li>
-  <li><a href="/project/contributing/build-and-release">Contributing to Meshery Build and Release (CI)</a></li>
-  <ul><li><a href="/project/contributing/contributing-cypress">Contributing to Meshery's End-to-End Tests using Cypress</a></li></ul>
-  <li><a href="/project/contributing/contributing-adapters">Contributing to Meshery Adapters</a></li>
-  <li><a href="/project/contributing/contributing-docker-extension">Contributing to Meshery Docker Extension</a></li>
-  <li><a href="/project/contributing/contributing-server">Contributing to Meshery Server</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-gitflow">Contributing to Meshery using git</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/meshery-windows">Setting up Meshery Development Environment on Windows</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/build-and-release">Contributing to Meshery Build and Release (CI)</a></li>
+  <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-cypress">Contributing to Meshery's End-to-End Tests using Cypress</a></li></ul>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-adapters">Contributing to Meshery Adapters</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-docker-extension">Contributing to Meshery Docker Extension</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-server">Contributing to Meshery Server</a></li>
     <ul>
-      <li><a href="/project/contributing/contributing-models">Contributing to Meshery Models</a></li>
-      <li><a href="/project/contributing/contributing-error">How to write MeshKit compatible errors</a></li>
+      <li><a href="https://docs.meshery.io/project/contributing/contributing-models">Contributing to Meshery Models</a></li>
+      <li><a href="https://docs.meshery.io/project/contributing/contributing-error">How to write MeshKit compatible errors</a></li>
     </ul>
-  <li><a href="/project/contributing/contributing-ui">Contributing to Meshery UI</a></li>
-    <ul><li><a href="/project/contributing/contributing-ui-notification-center">Contributing to Meshery UI - Notification Center</a></li></ul>
-  <li><a href="/project/contributing/contributing-docs">Contributing to Meshery Docs</a></li>
-  <li><a href="/project/contributing/contributing-cli">Contributing to Meshery CLI</a></li>
-    <ul><li><a href="/project/contributing/contributing-cli-guide">Meshery CLI Contributing Guidelines</a></li></ul>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-ui">Contributing to Meshery UI</a></li>
+    <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-ui-notification-center">Contributing to Meshery UI - Notification Center</a></li></ul>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-docs">Contributing to Meshery Docs</a></li>
+  <li><a href="https://docs.meshery.io/project/contributing/contributing-cli">Contributing to Meshery CLI</a></li>
+    <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-cli-guide">Meshery CLI Contributing Guidelines</a></li></ul>
 </ul>
 
 ### 4. Upholding a Safe Environment: The Code of Conduct
@@ -87,7 +87,7 @@ Open source is a marathon, not a sprint. Feedback may take time, and collaborati
 
 ### 8. Humility and Gratitude: The Essence of Meaningful Contributions
 
-Remember, a meaningful contribution is its own reward. Swag and a profile boost is a delightful bonus, not the end goal. Celebrate your progress, no matter how small, and learn from your experiences. As you recognize that you are part of a much larger movement, we <Link to="blog/community/layer5-recognition-program">recognize our contributors and users milestones</Link> each step of the way. Earn any number of <a href="https://badges.layer5.io">Layer5 badges</a> as you grow with the community.
+Remember, a meaningful contribution is its own reward. Swag and a profile boost is a delightful bonus, not the end goal. Celebrate your progress, no matter how small, and learn from your experiences. As you recognize that you are part of a much larger movement, we <Link to="/blog/community/layer5-recognition-program">recognize our contributors and users milestones</Link> each step of the way. Earn any number of <a href="https://badges.layer5.io">Layer5 badges</a> as you grow with the community.
 
 ### 9. Earn a Badge
     
