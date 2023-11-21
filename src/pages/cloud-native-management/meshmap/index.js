@@ -4,8 +4,11 @@ import SEO from "../../../components/seo";
 
 import Meshmap from "../../../sections/Meshmap/index";
 const MeshmapPage = () => {
-  const params = new URLSearchParams(location.search);
-  const teaser = params.get("teaser");
+  let teaser = "";
+  if (window !== undefined) {
+    const params = new URLSearchParams(window.location.search);
+    teaser = params.get("teaser");
+  }
   return (
     <>
       <Meshmap teaser={teaser === "play"} />
