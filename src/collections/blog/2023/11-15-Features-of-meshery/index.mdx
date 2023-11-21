@@ -24,16 +24,16 @@ Before we dive into the features, Let’s take a recap, What is [Meshery Playgro
 
 ## What is [Meshery Playground](https://playground.meshery.io/) ?
 
-[Meshery Playground](https://playground.meshery.io/) is a valuable feature within [Meshery](https://meshery.io/), offering users a controlled environment to explore, experiment, and learn about cloud-native infrastructure. Serving as a sandbox for testing configurations, Meshery Playground enables users to simulate deployments, practice applying best practices, and visualize the impact on Kubernetes clusters. This educational resource not only supports learning and training but also allows for testing and validation before implementing changes in production environments. Users can share their experiences and collaborate within the Playground community, making it a collaborative space for enhancing skills and understanding Meshery's capabilities. As a safe and interactive tool, Meshery Playground empowers users to confidently navigate Meshery's features and manage cloud-native infrastructure effectively.
+[Meshery Playground](https://playground.meshery.io/) is a running instance within [Meshery](https://meshery.io/), offering users a controlled environment to explore, experiment, and learn about cloud-native infrastructure. Serving as a sandbox for testing configurations, Meshery Playground enables users to simulate deployments, practice applying best practices, and visualize the impact on Kubernetes clusters. This educational resource not only supports learning and training but also allows for testing and validation before implementing changes in production environments. Users can share their experiences and collaborate within the Playground community, making it a collaborative space for enhancing skills and understanding Meshery's capabilities. As a safe and interactive tool, Meshery Playground empowers users to confidently navigate Meshery's features and manage cloud-native infrastructure effectively.
 
 When it comes to Meshery, Sky is the limit, While Meshery is packed with so many features, we will be going through some of them you don't want to miss, which are:
 
 ## [Docker Extension for Meshery](https://docs.meshery.io/installation/docker/docker-extension)
 
-Meshery goes beyond traditional deployment with its [Docker Extension](https://docs.meshery.io/installation/docker/docker-extension), enhancing [Docker Desktop](https://www.docker.com/) as a go-to Kubernetes environment for cloud-native developers. This extension seamlessly integrates with Docker Desktop. By extending Docker Desktop's capabilities, Meshery's Docker Extension empowers developers to effortlessly navigate and deploy service meshes, further streamlining their cloud-native development experience. This integration reinforces Meshery's commitment to simplifying the management of microservices and cloud-native applications within familiar developer environments.
+[Meshery](https://meshery.io/) goes beyond traditional deployment with its [Docker Extension](https://docs.meshery.io/installation/docker/docker-extension), enhancing [Docker Desktop](https://www.docker.com/) as a go-to Kubernetes environment for cloud-native developers. This extension seamlessly integrates with Docker Desktop. By extending Docker Desktop's capabilities, Meshery's Docker Extension empowers developers to effortlessly navigate and deploy service meshes, further streamlining their cloud-native development experience. This integration reinforces Meshery's commitment to simplifying the management of cloud-native applications within familiar developer environments.
 
 ## [Meshery Extensions Overview](https://playground.meshery.io/extension/) :
-In addition to the Docker extension, Meshery offers a range of its own extensions designed to enhance the management of Kubernetes clusters, service mesh deployments, and cloud-native applications.
+In addition to the Docker extension, Meshery offers a range of its own extensions designed to enhance the management of Kubernetes clusters, cloud-native applications.
 #### 1. [MeshMap](https://layer5.io/cloud-native-management/meshmap):
 MeshMap Designer and Visualizer collectively provide a comprehensive environment for designing, deploying, and managing cloud-native applications, enhancing the overall user experience in cloud-native infrastructure projects.
 
@@ -74,18 +74,24 @@ MeshMap Visualizer is the deployment and management mode within MeshMap, complem
 - `/` : Search MeshMap elements
 - `` ` `` : Close Visualizer Terminal
 
+Go and try out the MeshMap Designer and Visualizer [here](https://playground.meshery.io/extension/meshmap) and share your feedback with us on our [Discuss Forum](https://discuss.layer5.io/).
+
 #### 2. [Adapters Overview](https://docs.meshery.io/concepts/architecture/adapters): 
 Meshery offers adapters for various service meshes, enhancing lifecycle management capabilities. Deploying specific adapters enables deeper and more efficient lifecycle management of the corresponding service mesh. Meshery currently supports the following adapters:
-- Available Adapters:
-- Istio
-- Linkerd
-- Consul
-- Network Service Mesh
-- App Mesh
-- Traefik Mesh
-- Kuma
-- Nginx Service Mesh
-- Cilium Service Mesh
+
+**Available Adapters**:
+- [Istio](https://docs.meshery.io/service-meshes/adapters/istio )
+- [Linkerd](https://docs.meshery.io/service-meshes/adapters/linkerd)
+- [Consul](https://docs.meshery.io/service-meshes/adapters/consul)
+- [Network Service Mesh](https://docs.meshery.io/service-meshes/adapters/nsm)
+- [App Mesh](https://docs.meshery.io/service-meshes/adapters/app-mesh)
+- [Traefik Mesh](https://docs.meshery.io/service-meshes/adapters/traefik-mesh)
+- [Kuma](https://docs.meshery.io/service-meshes/adapters/kuma)
+- [Nginx Service Mesh](https://docs.meshery.io/service-meshes/adapters/nginx-sm)
+- [Cilium Service Mesh](https://docs.meshery.io/service-meshes/adapters/cilium)
+- [Tanzu Service Mesh](https://docs.meshery.io/service-meshes/adapters/tanzu-sm)
+- [Open Service Mesh](https://docs.meshery.io/service-meshes/adapters/osm)
+
 
 ####  3. [GitHub Action: MeshMap Snapshot](https://layer5.io/cloud-native-management/gitops/snapshot):
 
