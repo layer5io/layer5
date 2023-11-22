@@ -27,12 +27,11 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            {" "}
-            <h2>
-              What are the roles held by individuals in the Layer5 community?
-            </h2>{" "}
             {/* <a id="top">
             </a> */}
+            <h2>
+              What are the roles held by individuals in the Layer5 community?
+            </h2>
             <p>
               A leader is someone who can contribute to the Layer5 Community's
               growth by being accountable, participating in decision-making, and
