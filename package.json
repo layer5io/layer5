@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.11.3",
-    "@fullcalendar/google-calendar": "^6.0.2",
+    "@fullcalendar/google-calendar": "^6.1.9",
     "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^5.11.2",
     "@loadable/component": "^5.15.3",
@@ -47,7 +47,7 @@
     "gatsby": "^4.20.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-background-image": "^1.6.0",
-    "gatsby-cli": "^5.5.0",
+    "gatsby-cli": "^5.12.4",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-feed": "^4.25.0",
     "gatsby-plugin-image": "^2.22.0",
@@ -103,7 +103,7 @@
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.22.9",
-    "@babel/eslint-parser": "^7.22.9",
+    "@babel/eslint-parser": "^7.22.15",
     "babel-plugin-module-resolver": "^5.0.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.0",
