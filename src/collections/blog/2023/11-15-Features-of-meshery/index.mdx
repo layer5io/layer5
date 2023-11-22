@@ -1,13 +1,13 @@
 ---
-title: "Meshery Playground"
-subtitle: "Meshery Playground: Features you don't want to miss"
+title: "Exploring Meshery Playground"
+subtitle:  "Features you don't want to miss"
 date: 2023-11-15 10:30:05 -0530
 author: Saurabh Soni
 thumbnail: "./MesheryLogo.webp"
 darkthumbnail: "./MesheryLogo.webp"
 
 category: "Meshery"
-description: "Features of Meshery Playground which takes your user experience to the next level."  
+description: "Key features of Meshery Playground for Kubernetes, Prometheus, Argo and other CNCF projects. Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure."  
 tags:
  - Meshery
 type: Blog
@@ -20,59 +20,56 @@ import mesheryLogo from "../../../../assets/images/meshery/icon-only/meshery-log
 
 <BlogWrapper>
 
-Before we dive into the features, Let’s take a recap, What is [Meshery Playground](https://playground.meshery.io/)?
+Before we dive into features, let’s understand what the [Meshery Playground]() is.
 
-## What is [Meshery Playground](https://playground.meshery.io/) ?
+# [What is Meshery Playground ?](https://playground.meshery.io/):
 
 [Meshery Playground](https://playground.meshery.io/) is a running instance within [Meshery](https://meshery.io/), offering users a controlled environment to explore, experiment, and learn about cloud-native infrastructure. Serving as a sandbox for testing configurations, Meshery Playground enables users to simulate deployments, practice applying best practices, and visualize the impact on Kubernetes clusters. This educational resource not only supports learning and training but also allows for testing and validation before implementing changes in production environments. Users can share their experiences and collaborate within the Playground community, making it a collaborative space for enhancing skills and understanding Meshery's capabilities. As a safe and interactive tool, Meshery Playground empowers users to confidently navigate Meshery's features and manage cloud-native infrastructure effectively.
 
 When it comes to Meshery, Sky is the limit, While Meshery is packed with so many features, we will be going through some of them you don't want to miss, which are:
 
-## [Docker Extension for Meshery](https://docs.meshery.io/installation/docker/docker-extension)
+# [Docker Extension for Meshery](https://docs.meshery.io/installation/docker/docker-extension):
 
 [Meshery](https://meshery.io/) goes beyond traditional deployment with its [Docker Extension](https://docs.meshery.io/installation/docker/docker-extension), enhancing [Docker Desktop](https://www.docker.com/) as a go-to Kubernetes environment for cloud-native developers. This extension seamlessly integrates with Docker Desktop. By extending Docker Desktop's capabilities, Meshery's Docker Extension empowers developers to effortlessly navigate and deploy service meshes, further streamlining their cloud-native development experience. This integration reinforces Meshery's commitment to simplifying the management of cloud-native applications within familiar developer environments.
 
-## [Meshery Extensions Overview](https://playground.meshery.io/extension/) :
+# [Meshery Extensions Overview](https://playground.meshery.io/extension/):
 In addition to the Docker extension, Meshery offers a range of its own extensions designed to enhance the management of Kubernetes clusters, cloud-native applications.
 #### 1. [MeshMap](https://layer5.io/cloud-native-management/meshmap):
 MeshMap Designer and Visualizer collectively provide a comprehensive environment for designing, deploying, and managing cloud-native applications, enhancing the overall user experience in cloud-native infrastructure projects.
 
-#### [MeshMap Designer](https://layer5.io/cloud-native-management/meshmap/design):
+1. #### [MeshMap Designer](https://layer5.io/cloud-native-management/meshmap/design):
+  MeshMap Designer is a GitOps-infused cloud-native visual designer tailored for Kubernetes and cloud-native applications, currently in private beta. This mode is dedicated to the creation and sharing of Kubernetes deployments and patterns. Its features and capabilities include:  
+   - **Collaborative Design**: MeshMap Designer facilitates collaborative design and management of infrastructure and applications within Kubernetes clusters. It serves as a central hub for teams to collectively shape and optimize their cloud-native projects.
+   - **User-Friendly Interface**: With a user-friendly interface, MeshMap Designer makes it easy for users to create, modify, and share Kubernetes deployments and patterns, enhancing the overall design experience.
+   - **Multi-User Collaboration**: MeshMap Designer is equipped with multi-user collaboration features, allowing team members to work seamlessly together in real-time. This ensures that everyone on the team is on the same page when it comes to managing cloud-native infrastructure projects.
+  
+  **Designer Shortcut Keys:**
+  
+   - **`Ctrl`+`M`**: Add a comment
+   - **`Ctrl`+`C`**: Copy selected node or collection
+   - **`Ctrl`+`A`**: Select all nodes
+   - **`Ctrl`+`Delete` | `⌘`+`Backspace`**: Delete selected node or collection
+   - **`Ctrl`+`V`**: Paste node or collection from clipboard
+   - **`Ctrl`+`Left-click`+`Drag`**: Create a selection box for multiple nodes
+   - **`Ctrl`+`Z`**: Undo last action
+   - **`Ctrl`+`Y` | `Shift`+`Z`**: Redo last action
+   - **`Right-click` | `Left-click`+`Hold`**: Open context menu
+  
 
-MeshMap Designer is a GitOps-infused cloud-native visual designer tailored for Kubernetes and cloud-native applications, currently in private beta. This mode is dedicated to the creation and sharing of Kubernetes deployments and patterns. Its features and capabilities include:
+2. #### [MeshMap Visualizer](https://docs.layer5.io/meshmap/visualizer/):
+     MeshMap Visualizer is the deployment and management mode within MeshMap, complementing the Designer mode. It focuses on turning design concepts into reality and managing infrastructure designs effectively. Key features of MeshMap Visualizer include:
+   - **Deployment and Management**: In Visualizer mode, users can deploy and manage the infrastructure designs created in MeshMap Designer. This seamless transition from design to deployment enhances the efficiency of managing cloud-native applications.
+   - **Interactive Console Sessions**: Users can open a terminal window for interactive console sessions or log viewing directly within the Visualizer mode, providing a convenient way to interact with deployed resources.
+   - **Search and Navigation**: MeshMap Visualizer allows users to search for specific elements within the environment ("/"), providing a quick and efficient way to locate and manage resources.
+   - **Shortcut Keys**:Visualizer comes with its set of shortcut keys, such as Ctrl+Left-click+Drag for creating selection boxes and Ctrl+Left-click for individually selecting nodes.
+  
+  **Visualizer Shortcut Keys:**
 
-
-- **Collaborative Design**: MeshMap Designer facilitates collaborative design and management of infrastructure and applications within Kubernetes clusters. It serves as a central hub for teams to collectively shape and optimize their cloud-native projects.
-- **User-Friendly Interface**: With a user-friendly interface, MeshMap Designer makes it easy for users to create, modify, and share Kubernetes deployments and patterns, enhancing the overall design experience.
-- **Multi-User Collaboration**: MeshMap Designer is equipped with multi-user collaboration features, allowing team members to work seamlessly together in real-time. This ensures that everyone on the team is on the same page when it comes to managing cloud-native infrastructure projects.
-
-**Designer Shortcut Keys:**
-
-- **`Ctrl`+`M`**: Add a comment
-- **`Ctrl`+`C`**: Copy selected node or collection
-- **`Ctrl`+`A`**: Select all nodes
-- **`Ctrl`+`Delete` | `⌘`+`Backspace`**: Delete selected node or collection
-- **`Ctrl`+`V`**: Paste node or collection from clipboard
-- **`Ctrl`+`Left-click`+`Drag`**: Create a selection box for multiple nodes
-- **`Ctrl`+`Z`**: Undo last action
-- **`Ctrl`+`Y` | `Shift`+`Z`**: Redo last action
-- **`Right-click` | `Left-click`+`Hold`**: Open context menu
-
-
-#### [MeshMap Visualizer](https://docs.layer5.io/meshmap/visualizer/):
-MeshMap Visualizer is the deployment and management mode within MeshMap, complementing the Designer mode. It focuses on turning design concepts into reality and managing infrastructure designs effectively. Key features of MeshMap Visualizer include:
-
-- **Deployment and Management**: In Visualizer mode, users can deploy and manage the infrastructure designs created in MeshMap Designer. This seamless transition from design to deployment enhances the efficiency of managing cloud-native applications.
-- **Interactive Console Sessions**: Users can open a terminal window for interactive console sessions or log viewing directly within the Visualizer mode, providing a convenient way to interact with deployed resources.
-- **Search and Navigation**: MeshMap Visualizer allows users to search for specific elements within the environment ("/"), providing a quick and efficient way to locate and manage resources.
-- **Shortcut Keys**: Visualizer comes with its set of shortcut keys, such as Ctrl+Left-click+Drag for creating selection boxes and Ctrl+Left-click for individually selecting nodes.
-
-**Visualizer Shortcut Keys:**
-- `Ctrl`+`Left-click`+`Drag`: Create a selection box for multiple nodes
-- `Ctrl`+`Left-click`: Select multiple nodes individually
-- `Ctrl`+`` ` ``: Open terminal window for interactive console sessions or log viewing
-- `/` : Search MeshMap elements
-- `` ` `` : Close Visualizer Terminal
+   - `Ctrl`+`Left-click`+`Drag`: Create a selection box for multiple nodes
+   - `Ctrl`+`Left-click`: Select multiple nodes individually
+   - `Ctrl`+`` ` ``: Open terminal window for interactive console sessions or log viewing
+   - `/`: Search MeshMap elements
+   - `` ` ``: Close Visualizer Terminal
 
 Go and try out the MeshMap Designer and Visualizer [here](https://playground.meshery.io/extension/meshmap) and share your feedback with us on our [Discuss Forum](https://discuss.layer5.io/).
 
@@ -102,7 +99,7 @@ MeshMap Snapshot is a GitHub Action that enables users to take snapshots of thei
 Meshery Catalog serves as a cloud-native marketplace, offering a user-friendly interface for browsing, discovering, and sharing configurations and patterns for cloud-native infrastructure. With its capabilities, Meshery Catalog significantly simplifies the deployment and management of Kubernetes-based infrastructure and tools, contributing to streamlined cloud-native development and operations processes.
 
 
-## **[Workspaces](https://docs.meshery.io/concepts/workspaces)**:
+# **[Workspaces](https://docs.meshery.io/concepts/workspaces)**:
 Facilitating Team Collaboration and Resource Management, Meshery Workspaces serve as virtual spaces for team-based collaboration, offering a central point for organizing work, controlling access to resources, and tracking team activity. Key features include:
 - **Resource Sharing**:
 Seamless sharing of resources among team members, fostering collaboration on projects and responsibilities.
@@ -132,7 +129,7 @@ Clearly define permissions through team assignments to ensure proper access cont
 Leverage Infrastructure Designs to standardize resource deployments and enhance consistency.
 - **Regular Review and Update**: Periodically review and update Workspace resources and configurations to ensure optimal functionality.
 
-## [Mesheryctl](https://docs.meshery.io/reference/mesheryctl):
+# [Mesheryctl](https://docs.meshery.io/reference/mesheryctl):
 Mesheryctl is a command-line utility for Meshery, offering a convenient way to interact with Meshery Server. Mesheryctl is a valuable tool for DevOps engineers, enhancing the efficiency of their cloud-native development and operations workflows. Key features include:
 - **Mesheryctl Commands**:
 Mesheryctl offers a range of commands for interacting with Meshery Server, including commands for managing adapters, patterns, and filters.
@@ -145,7 +142,7 @@ Mesheryctl supports multiple profiles, allowing users to switch between differen
 - **Mesheryctl Subcommands**:
 Mesheryctl supports subcommands for various commands, providing a convenient way to interact with Meshery Server.
 
-## [Meshery UI](https://meshery.io/):
+# [Meshery UI](https://meshery.io/):
 Meshery UI is a web-based user interface for Meshery, offering a convenient way to interact with Meshery Server. Meshery UI is a valuable tool for DevOps engineers, enhancing the efficiency of their cloud-native development and operations workflows. Key features include:
 - **Meshery UI Components**:
 Meshery UI offers a range of components for interacting with Meshery Server, including components for managing adapters, patterns, and filters.
@@ -155,7 +152,7 @@ Meshery UI allows users to configure their Meshery Server, providing a convenien
 Meshery UI supports multiple contexts, allowing users to switch between different Meshery Server instances.
 
 
-## [Meshery catalog](https://meshery.io/catalog):
+# [Meshery catalog](https://meshery.io/catalog):
 
 Meshery Catalog serves as a cloud-native marketplace, offering a user-friendly interface for browsing, discovering, and sharing configurations and patterns for cloud-native infrastructure. With its capabilities, Meshery Catalog significantly simplifies the deployment and management of Kubernetes-based infrastructure and tools, contributing to streamlined cloud-native development and operations processes.
 
