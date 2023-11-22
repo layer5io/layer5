@@ -4,7 +4,7 @@ const StyledEmbdedVideo = styled.section`
 
   .embedVideo {
    position: relative;
-        min-width:25%;
+        min-width:50%;
         max-width:100%;
         object-fit: cover;
         /* height: 44vw !important;
