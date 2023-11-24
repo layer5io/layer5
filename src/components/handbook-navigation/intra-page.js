@@ -3,6 +3,9 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
+  @media screen and (min-width: 751px) and (max-width: 1279px) {
+        display:none;
+  }
   .intra-page {
     position: sticky;
     top: 10rem;
