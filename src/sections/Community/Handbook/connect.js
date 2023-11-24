@@ -48,9 +48,7 @@ const Connect = () => {
                 <a href="https://meshery.io/subscribe">Meshery mailing list</a>
               </li>
               <li>
-                <a href="https://layer5.io/subscribe">
-                  Layer5 mailing list
-                </a>
+                <a href="https://layer5.io/subscribe">Layer5 mailing list</a>
               </li>
               <li>
                 <a href="https://smp-spec.io/subscribe">
@@ -174,7 +172,8 @@ const Connect = () => {
                 <a href="https://layer5io.slack.com/archives/C011VPREG2Z">
                   #meshery-ci
                 </a>{" "}
-                - For discussion on topics related to Meshery Build, Release, Workflows, DevOps.
+                - For discussion on topics related to Meshery Build, Release,
+                Workflows, DevOps.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C010LFFGFFA">
@@ -198,7 +197,8 @@ const Connect = () => {
                 <a href="https://layer5io.slack.com/archives/CVBGPTFJN">
                   #performance
                 </a>{" "}
-                - For discussions related to measuring and evaluating cloud native performance.
+                - For discussions related to measuring and evaluating cloud
+                native performance.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C012UMS2MCM">
@@ -221,17 +221,18 @@ const Connect = () => {
               Join us on our cloud native community's{" "}
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
-<div className="channels-list">
+            <div className="channels-list">
               <ul>
-                <li><a href="https://discuss.layer5.io/c/community/12">Community Topic</a></li>
+                <li>
+                  <a href="https://discuss.layer5.io/c/community/12">
+                    Community Topic
+                  </a>
+                </li>
               </ul>
-            </div>
-{" "}
+            </div>{" "}
             <h2>Social Media</h2>{" "}
             {/* <a id="Social Media">
             </a> */}
-
-            
             <p>
               Layer5 is dedicated to empowering engineers and supporting the
               open source community that create them. Learn more about Layer5
