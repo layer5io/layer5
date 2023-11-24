@@ -27,8 +27,6 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            {/* <a id="top">
-            </a> */}
             <h2>
               What are the roles held by individuals in the Layer5 community?
             </h2>
