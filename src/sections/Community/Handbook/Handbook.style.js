@@ -51,15 +51,19 @@ export const HandbookWrapper = styled.div`
       @media screen and (min-width: 1280px) and (max-width: 1350px) {
         margin-left:16rem;
       }
+      @media screen and (min-width: 751px) and (max-width: 1279px) {
+        display:block;
+        margin-top: -43rem
+      }
     }
     .conduct-section{
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 751px) {
         margin-top:-43rem;
       }
 
     }
     .page-section .heading-top{
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 751px) {
         padding-top:1rem;
       }
     }
