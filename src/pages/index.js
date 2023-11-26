@@ -11,6 +11,7 @@ const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
 import DesignEmbedds from "../sections/Home/Design-Embedds";
+import WhiteboardShowcase from "../sections/Home/Whiteboard-Showcase";
 
 
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
@@ -25,6 +26,7 @@ const IndexPage = () => {
       <Banner />
       <Integrations />
       <DesignEmbedds/>
+      <WhiteboardShowcase/>
       <Partners />
       <CornerPopup/>
       {/* <Features /> */}

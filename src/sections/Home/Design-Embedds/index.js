@@ -17,13 +17,13 @@ const DesignEmbedds = () => {
     <DesignEmbedWrapper>
       <Container className="embed-container">
         <Row Hcenter Vcenter>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} className={"heading"}>
             {/* <div className="heading"> */}
             <SectionTitle
               UniWidth="100%"
             >
               <h2>
-                <span className="embed-highlight">Showcase</span> your Designs
+                <b>Embed</b> your <b>Designs</b> with <b>Meshery</b> <span className="embed-highlight">Embeddings</span>
               </h2>
             </SectionTitle>
             {/* </div> */}
@@ -70,13 +70,14 @@ const DesignEmbedds = () => {
                   {/*<div>*/}
                   <div className="skeleton-lines body-right-top"></div>
                   {/*</div>*/}
-                  <div className="body-right-bottom">
+                  <div className="body-right-bottom"><div id="embedded-design-142f0054-d9ae-4352-8618-887104a81928"></div>
+                    <Script src="/embed-test/embedded-design-cypress-des-1-no-modify-by-me-copy.js" type="module" strategy={"idle"} ></Script>
                     {/*<img src={tempEmbedImage} alt={"temporary image"}/>*/}
-                    <div id="embedded-design-168bf17a-9386-4a0e-8c32-dd2bc22c8fe9">
-                    </div>
-                    <Script
-                      src="/embed-test/embedded-design-cypress-des-1-no-modify-by-me-copy-copy.js"
-                      type="module" strategy={"post-hydrate"}></Script>
+                    {/*<div id="embedded-design-168bf17a-9386-4a0e-8c32-dd2bc22c8fe9">*/}
+                    {/*</div>*/}
+                    {/*<Script*/}
+                    {/*  src="/embed-test/embedded-design-cypress-des-1-no-modify-by-me-copy-copy.js"*/}
+                    {/*  type="module" strategy={"post-hydrate"}></Script>*/}
                   </div>
                 </div>
               </div>
