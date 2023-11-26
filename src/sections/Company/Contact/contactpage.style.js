@@ -58,6 +58,11 @@ const ContactPageWrapper = styled.section`
     .cards-container {
       padding: 0 2rem 0 2rem;
     }
+
+    .card-outline {
+      width: 105%;
+      margin-bottom: 1.5rem;
+    }
   }
 `;
 
