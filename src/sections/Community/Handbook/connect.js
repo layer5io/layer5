@@ -55,8 +55,8 @@ const Connect = () => {
                   Service Mesh Performance mailing list
                 </a>
               </li>
-            </ul>{" "}
-            <h2>Mailing Lists</h2>{" "}
+            </ul>
+            <br /> <h2>Mailing Lists</h2>{" "}
             {/* <a id="Mailing Lists">
             </a> */}
             <ul>
@@ -126,18 +126,21 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Calendar">
-              {" "}
-              <h2>Calendar</h2>{" "}
-            </a>
-            <p>
-              Don’t miss out on any of the activities in the community. Join any
-              or all of the weekly meetings subscribing to the{" "}
-              <a href="https://layer5.io/community/calendar#meetings">
-                community calendar .
+            <br />
+            <div>
+              <a id="Calendar">
+                {" "}
+                <h2>Calendar</h2>{" "}
               </a>
-            </p>{" "}
-            <h2>Slack Community</h2>{" "}
+              <p>
+                Don’t miss out on any of the activities in the community. Join
+                any or all of the weekly meetings subscribing to the{" "}
+                <a href="https://layer5.io/community/calendar#meetings">
+                  community calendar .
+                </a>
+              </p>
+            </div>
+            <br /> <h2>Slack Community</h2>{" "}
             {/* <a id="Slack Community">
             </a> */}
             <p>
@@ -213,8 +216,8 @@ const Connect = () => {
                 - For discussions related to the UI/UX of{" "}
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
-            </div>{" "}
-            <h2>Discussion Forum</h2>{" "}
+            </div>
+            <br /> <h2>Discussion Forum</h2>{" "}
             {/* <a id="Discussion Forum">
             </a> */}
             <p>
@@ -229,8 +232,8 @@ const Connect = () => {
                   </a>
                 </li>
               </ul>
-            </div>{" "}
-            <h2>Social Media</h2>{" "}
+            </div>
+            <br /> <h2>Social Media</h2>{" "}
             {/* <a id="Social Media">
             </a> */}
             <p>

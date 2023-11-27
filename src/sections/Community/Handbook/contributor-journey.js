@@ -69,8 +69,8 @@ const Intro = () => {
                 Apache v2
               </a>
               .
-            </p>{" "}
-            <h2>Goals</h2>{" "}
+            </p>
+            <br /> <h2>Goals</h2>{" "}
             {/* <a id="Goals">
             </a> */}
             <ul>
@@ -87,8 +87,8 @@ const Intro = () => {
                   To build a welcoming community for open-source contributions.
                 </span>
               </li>
-            </ul>{" "}
-            <h2>Newcomer’s Path</h2>{" "}
+            </ul>
+            <br /> <h2>Newcomer’s Path</h2>{" "}
             {/* <a id="Newcomer’s Path">
             </a> */}
             <p>

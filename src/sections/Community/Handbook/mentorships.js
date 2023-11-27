@@ -14,11 +14,11 @@ const ConductWrapper = styled.div`
     .explain-2{
       padding: 25px 0px;
       .text{
-          padding: 1.25rem 1.25rem 0px 1.25rem;
+          padding: 0rem 1.25rem 0px 1.25rem;
           h2{
               font-weight: 700;
               font-size: 40px;
-              padding: 1.25rem 0px;
+              padding: 0rem 0px;
           }
           p{
               color: ${(props) => props.theme.tertiaryColor};

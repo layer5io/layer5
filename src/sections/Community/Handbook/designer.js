@@ -29,7 +29,7 @@ const Designers = () => {
               ideas for how to improve the user experience of any of our
               projects, please share them with us.
             </p>
-
+            <br />
             <h2>Where can you contribute?</h2>
 
             <p>
@@ -43,7 +43,7 @@ const Designers = () => {
               interest by filling out the form provided.
               <br />
             </p>
-
+            <br />
             <h2>What is the process?</h2>
 
             <div className="process">

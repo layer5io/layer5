@@ -125,154 +125,166 @@ const Repository = () => {
                 MeshMap.
               </li>
             </ul>
+            <br />
+            <div>
+              <a id="Frontend Projects">
+                <h2>Frontend Projects</h2>
+              </a>
 
-            <a id="Frontend Projects">
-              <h2>Frontend Projects</h2>
-            </a>
+              {frontendProjects.map((frontendProject, index) => {
+                const { category } = frontendProject;
+                return (
+                  <div className="table-container" key={index}>
+                    <table className="frontendTable" key={category}>
+                      <thead>
+                        <tr>
+                          <th className="linkscol">Site</th>
+                          <th>Project</th>
+                          <th>Framework</th>
+                          <th>Maintainers</th>
+                          <th className="linkscol">Repo</th>
+                        </tr>
+                      </thead>
+                      {frontendProject.subdata.map((subdata) => {
+                        const {
+                          project,
+                          language,
+                          repository,
+                          maintainers_name,
+                          site,
+                          image,
+                          link,
+                          accessRequired,
+                        } = subdata;
+                        return (
+                          <tbody key={project}>
+                            <tr>
+                              <td>
+                                <a href={site} target="_blank" rel="noreferrer">
+                                  <img
+                                    className="site-icon"
+                                    src={image}
+                                    alt="site-icon"
+                                  />
+                                </a>
+                              </td>
+                              <td>{project}</td>
+                              <td>{language}</td>
+                              <td>
+                                {maintainers_name.map((mname, index) => {
+                                  return (
+                                    <Link to={link[index]} key={index}>
+                                      <span>{index > 0 ? ", " : ""}</span>
+                                      {mname}
+                                    </Link>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                <a
+                                  href={repository}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <img
+                                    className="github-icon"
+                                    src={github}
+                                    alt="github-icon"
+                                  />
+                                </a>
+                                <div className="accessRequired">
+                                  {accessRequired != "" ? accessRequired : ""}
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        );
+                      })}
+                    </table>
+                  </div>
+                );
+              })}
+            </div>
+            <br />
+            <div>
+              <a id="Backend Projects">
+                <h2>Backend Projects</h2>
+              </a>
 
-            {frontendProjects.map((frontendProject, index) => {
-              const { category } = frontendProject;
-              return (
-                <div className="table-container" key={index}>
-                  <table className="frontendTable" key={category}>
-                    <thead>
-                      <tr>
-                        <th className="linkscol">Site</th>
-                        <th>Project</th>
-                        <th>Framework</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {frontendProject.subdata.map((subdata) => {
-                      const {
-                        project,
-                        language,
-                        repository,
-                        maintainers_name,
-                        site,
-                        image,
-                        link,
-                        accessRequired,
-                      } = subdata;
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <a href={site} target="_blank" rel="noreferrer">
+              {backendProjects.map((backendProject, index) => {
+                const { category } = backendProject;
+                return (
+                  <div className="table-container" key={index}>
+                    <table key={category}>
+                      <thead>
+                        <tr>
+                          <th>{category}</th>
+                          <th>Language</th>
+                          <th>Description</th>
+                          <th>Maintainers</th>
+                          <th className="linkscol">Repo</th>
+                        </tr>
+                      </thead>
+                      {backendProject.subdata.map((subdata) => {
+                        const {
+                          project,
+                          image,
+                          language,
+                          description,
+                          repository,
+                          link,
+                          maintainers_name,
+                        } = subdata;
+
+                        const smpClass = project === "SMP Action";
+                        const siteIconClasses = smpClass
+                          ? "site-icon inline smp-action"
+                          : "site-icon inline";
+                        return (
+                          <tbody key={project}>
+                            <tr>
+                              <td>
                                 <img
-                                  className="site-icon"
+                                  className={siteIconClasses}
                                   src={image}
-                                  alt="site-icon"
+                                  alt="project"
                                 />
-                              </a>
-                            </td>
-                            <td>{project}</td>
-                            <td>{language}</td>
-                            <td>
-                              {maintainers_name.map((mname, index) => {
-                                return (
-                                  <Link to={link[index]} key={index}>
-                                    <span>{index > 0 ? ", " : ""}</span>
-                                    {mname}
-                                  </Link>
-                                );
-                              })}
-                            </td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img
-                                  className="github-icon"
-                                  src={github}
-                                  alt="github-icon"
-                                />
-                              </a>
-                              <div className="accessRequired">
-                                {accessRequired != "" ? accessRequired : ""}
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
-            <a id="Backend Projects">
-              <h2>Backend Projects</h2>
-            </a>
-
-            {backendProjects.map((backendProject, index) => {
-              const { category } = backendProject;
-              return (
-                <div className="table-container" key={index}>
-                  <table key={category}>
-                    <thead>
-                      <tr>
-                        <th>{category}</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {backendProject.subdata.map((subdata) => {
-
-                      const { project,image,language,description,repository,link,maintainers_name } = subdata;
-
-                      const smpClass = project === "SMP Action";
-                      const siteIconClasses = smpClass
-                        ? "site-icon inline smp-action"
-                        : "site-icon inline";
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <img
-                                className={siteIconClasses}
-                                src={image}
-                                alt="project"
-                              />
-                              &nbsp;{project}{" "}
-                            </td>
-                            <td>{language}</td>
-                            <td>{description}</td>
-                            <td>
-                              {maintainers_name?.map((mname, index) => {
-                                return (
-                                  <Link to={link[index]} key={index}>
-                                    <span>{index > 0 ? ", " : ""}</span>
-                                    {mname}
-                                  </Link>
-                                );
-                              })}
-                            </td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img
-                                  className="github-icon"
-                                  src={github}
-                                  alt="github-icon"
-                                />
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
+                                &nbsp;{project}{" "}
+                              </td>
+                              <td>{language}</td>
+                              <td>{description}</td>
+                              <td>
+                                {maintainers_name?.map((mname, index) => {
+                                  return (
+                                    <Link to={link[index]} key={index}>
+                                      <span>{index > 0 ? ", " : ""}</span>
+                                      {mname}
+                                    </Link>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                <a
+                                  href={repository}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <img
+                                    className="github-icon"
+                                    src={github}
+                                    alt="github-icon"
+                                  />
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        );
+                      })}
+                    </table>
+                  </div>
+                );
+              })}
+            </div>
             <TocPagination />
           </div>
         </Container>

@@ -72,6 +72,7 @@ const LearnLayer = () => {
               These materials were created to be interactive, easy to use, and
               free for all.
             </p>
+            <br />
             <h2>Sharing what you've learned at a technical event</h2>
             {/* <a id="Eventing">
             </a> */}
@@ -90,8 +91,8 @@ const LearnLayer = () => {
               participate in. Check out{" "}
               <Link to="/community/events">Layer5 events</Link> to for a current
               list of events.
-            </p>{" "}
-            <h2>Sharing what you've learned on our blog</h2>{" "}
+            </p>
+            <br /> <h2>Sharing what you've learned on our blog</h2>{" "}
             {/* <a id="Blogging">
 
             </a> */}
