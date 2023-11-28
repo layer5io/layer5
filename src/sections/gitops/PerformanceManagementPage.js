@@ -1,6 +1,5 @@
 import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
-import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import SMPconfig from "../../assets/images/gitops/SMPconfig.png";
 import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.png";
@@ -82,17 +81,6 @@ const PerformanceManagementPage = () => {
           <TextColumn>
             <Heading>Define your test <br /> configuration in an SMP compatible configuration file</Heading>
           </TextColumn>
-        </ContentRow>
-      </ContentContainerWrapper>
-
-      <ContentContainerWrapper>
-        <ContentRow>
-          <TextColumn>
-            <Heading>See this sample GitHub workflow (action.yml) for more configuration details.</Heading>
-          </TextColumn>
-          <ColumnContainer >
-            <img src={ServicePerformanceProfileTest} className="screenshot" alt="ServicePerformanceProfileTest" width={530} height={375} />
-          </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>
 

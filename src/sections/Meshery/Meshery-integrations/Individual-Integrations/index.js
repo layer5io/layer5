@@ -11,6 +11,9 @@ import RelatedIntegration from "../IntegrationsGrid";
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
 
+  const screenshotNodes = data.allFile.nodes;
+  const finalScreenshots = screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
+
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
@@ -45,7 +48,7 @@ const IndividualIntegrations = ({ data }) => {
           </section>
         </div>
       </section>
-      <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={frontmatter.workingSlides} />
+      <HowIntegrationWorks name={frontmatter.title} howitworks={frontmatter.howItWorks} howitworksdetails={frontmatter.howItWorksDetails} slides={finalScreenshots} />
       <section className="integration-collection">
         <h2>Related Integrations</h2>
         <RelatedIntegration  category={frontmatter.category} />
