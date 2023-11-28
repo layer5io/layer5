@@ -1,7 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../reusecore/Layout";
 import ProductsWrapper from "./products.style";
-import FeatureDetails from "./collapsible-details";
 import Button from "../../reusecore/Button";
 import darkbgSvg from "./images/circle_dark.svg";
 import lightbgSvg from "./images/circle_light.svg";
@@ -13,6 +11,8 @@ import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-ligh
 import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import PlanCard from "../../components/PlanCard";
+import { Row } from "../../reusecore/Layout";
 
 const options = [
   {
@@ -60,7 +60,6 @@ const options = [
       },
     ],
   },
-
   {
     tier: "Team",
     featured: false,
@@ -265,49 +264,13 @@ const index = () => {
               Choose the ideal plan to propel your infrastructure goals. From startups to seasoned enterprises, we have a plan designed to fit your unique needs.
             </p>
           </div>
-          <Container>
-            <Row Hcenter={true}>
-              {options.map((x) => (
-                <Col lg={4} md={6} key={x.tier}>
-                  <div
-                    className={`${x.featured ? "featured" : ""} pricing-table`}
-                  >
-                    {x.featured ? (
-                      <div className="pricing-label">Free Forever</div>
-                    ) : (
-                      ""
-                    )}
-                    <div className="pricing_coming_soon">
-                      {x.pricing_coming_soon}
-                    </div>
-                    <h2>{x.tier}</h2>
-                    <h5 className="byline">{x.byline}</h5>
-                    <div className="pricing-features">
-                      {x.summary.map((t) => (
-                        <div className="feature" key={t.id}>
-                          <FeatureDetails
-                            category={t.category}
-                            description={t.description}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <Button
-                      primary
-                      className={
-                        x.button[0] === "Coming Soon"
-                          ? "price-button-disabled"
-                          : "price-button-link"
-                      }
-                      url={x.button[1]}
-                    >
-                      {x.button[0]}
-                    </Button>
-                  </div>
-                </Col>
-              ))}
-            </Row>
-          </Container>
+
+          <PlanCard planData={options}/>
+
+          <Row Vcenter Hcenter className={"comparison-button"}>
+            <Button primary title="Feature Comparison" alt="Feature Comparison" url={"/pricing/#feature-comparison"}/>
+          </Row>
+
           <div className="headers gap">
             <h1 className="header-heading">
               Don’t Just Take Our Word For It, <span style={{
@@ -320,7 +283,7 @@ const index = () => {
               Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button primary title="Book a Demo" title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+            <Button external={true} primary title="Book a Demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>
