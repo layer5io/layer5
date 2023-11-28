@@ -6,7 +6,7 @@ import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
-import FeatureDetails from "./collapsible-details";
+import PlanCard from "../../components/PlanCard";
 
 const Pricing = () => {
 
@@ -25,52 +25,7 @@ const Pricing = () => {
       </div>
 
       <div className="wrapper">
-        <Container>
-          {/* <Row>
-            <Col>
-              <div className="subscription-duration">
-                <h2>Choose <b>annual pricing</b> and get <i>2 months free</i> every year.</h2>
-                <div className="subscriptionButtons">
-                  <Button
-                    $secondary                    className={monthly ? "active button" : "inactive button"}
-                    onClick={() => setMonthly(true)}
-                  >
-                    Monthly
-                  </Button>
-                  <Button
-                    $secondary                    className={monthly ? "inactive button" : "active button"}
-                    onClick={() => setMonthly(false)} >
-                    Yearly
-                  </Button>
-                </div>
-              </div>
-            </Col>
-          </Row> */}
-          <Row $Hcenter={true}>
-            {options.map((x) => (
-              <Col $lg={4} $md={6} key={x.tier}>
-                <div className={`${x.featured ? "featured" : ""} pricing-table`}>
-                  {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
-                  <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
-                  <h2>{x.tier}</h2>
-                  <h5 className="byline">{x.byline}</h5>
-                  <div className="pricing-features">
-                    {x.summary.map((t) => (
-                      <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description} /></div>
-                    ))}
-                  </div>
-                  {/*
-                  <div className="price-tag">
-                    <span className="symbol">$</span>
-                    <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>
-                    <span className="after">/user{monthly? "/month" : "/year"}</span>
-                  </div> */}
-                  <Button $primary className={x.button[0] === "Coming Soon" ? "price-button-disabled" : "price-button-link"} $url={x.button[1]}>{x.button[0]}</Button>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <PlanCard planData={options}/>
       </div>
       <Comparison />
       <Reviews />
