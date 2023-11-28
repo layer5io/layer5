@@ -176,10 +176,10 @@ height: 100%;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .card:hover {
-    transition: 400ms ease-in-out;
-    box-shadow: 0px 0px 10px ${(props) => props.theme.caribbeanGreenColor};
-  }
+  // .card:hover {
+  //   transition: 400ms ease-in-out;
+  //   box-shadow: 0px 0px 10px ${(props) => props.theme.caribbeanGreenColor};
+  // }
 
   .card_head {
     display: flex;

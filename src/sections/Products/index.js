@@ -233,10 +233,10 @@ const index = () => {
                       {/* <Link className="learn" > */}
                       <a className="learn" href={card.url}>Learn more</a>
                       {/* </Link> */}
-                      <div className="btns">
-                        {/* <Button secondary className="banner-btn two" external={true} title="Subscribe" alt=""/> */}
+                      {/* TEMPORARY COMMENTED BUTTON  */}
+                      {/* <div className="btns">
                         <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </>
