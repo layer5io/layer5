@@ -42,9 +42,7 @@ const ProductWrapper = styled.section`
   
   .comparison-button{
     margin-top: 75px;
-    a{
-      padding: 0 1.5rem 2rem 1.5rem;
-    }
+    padding: 0 1.5rem 2rem 1.5rem ;
     Button {
       color: white;
       font-size: 1.75rem;
