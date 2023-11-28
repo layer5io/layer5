@@ -208,14 +208,16 @@ height: 100%;
     justify-content: space-between;
     margin:0;
   }
-  .card_bottom .learn {
+.learn {
     font-size: 1rem;
-    margin-bottom: 10px;
-    text-decoration: underline;
-    text-decoration-color: ${(props) => props.theme.secondaryColor};
-    text-underline-offset: 8px;
+    margin: 10px 0;
     cursor: pointer;
     color: ${(props) => props.theme.whiteToBlack};
+    &:hover { 
+        text-decoration: underline;
+        text-decoration-color: ${(props) => props.theme.secondaryColor};
+        text-underline-offset: 8px;
+    }
   }
   .btns Button {
     margin: 20px 0px;
