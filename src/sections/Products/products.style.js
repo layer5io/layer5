@@ -47,7 +47,6 @@ const ProductWrapper = styled.section`
       color: white;
       font-size: 1.75rem;
       font-weight: bold;
-      // width: 100%;
     }
   }
   
