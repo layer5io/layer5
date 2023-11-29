@@ -9,7 +9,9 @@ import product_hero_img from "./images/layer5-products-overview.svg";
 import product_hero_img_light from "./images/layer5-products-overview-dark.svg";
 import desktop from "./images/fluent_desktop-mac.svg";
 import codicon from "./images/codicon_extensions.svg";
+import cloudicon from "./images/cloud.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
@@ -173,6 +175,15 @@ const CardsData = [
     text: "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud native infrastructure.",
     url: "/cloud-native-management/meshery"
   },
+  {
+    id: 3,
+    logo: layer5,
+    title: "Cloud",
+    icon: [cloudicon, codicon, desktop],
+    text: "The Meshery Remote Provider with identity and collaboration services, private catalogs, GitOps, and multi-Meshery management.",
+    //as there is no soluton page.
+    url: "https://docs.layer5.io/cloud"
+  },
 ];
 
 const index = () => {
@@ -201,7 +212,7 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button secondary className="banner-btn two" external={true} title="Explore Now" alt=""/>
+                <Button secondary className="banner-btn two" external={true} title="Explore Now" alt="" url="https://meshery.layer5.io" />
                 <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
@@ -234,10 +245,11 @@ const index = () => {
                       {/* <Link className="learn" > */}
                       <a className="learn" href={card.url}>Learn more</a>
                       {/* </Link> */}
-                      <div className="btns">
-                        {/* <Button secondary className="banner-btn two" external={true} title="Subscribe" alt=""/> */}
+                      {/* Temporarily hide button */}
+                      {/* <div className="btns">
+                        {/* <Button secondary className="banner-btn two" external={true} title="Subscribe" alt=""/>
                         <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </>
