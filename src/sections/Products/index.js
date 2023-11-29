@@ -8,6 +8,8 @@ import product_hero_img_light from "./images/layer5-products-overview-dark.svg";
 import desktop from "./images/fluent_desktop-mac.svg";
 import codicon from "./images/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import cloudicon from "./images/cloud.svg";
+import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
@@ -171,6 +173,15 @@ const CardsData = [
     icon: ["",desktop],
     text: "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud native infrastructure.",
     url: "/cloud-native-management/meshery"
+  },
+  {
+    id: 3,
+    logo: layer5,
+    title: "Cloud",
+    icon: [cloudicon, codicon, desktop],
+    text: "The Meshery Remote Provider with identity and collaboration services, private catalogs, GitOps, and multi-Meshery management.",
+    //as there is no soluton page.
+    url: "https://docs.layer5.io/cloud"
   },
 ];
 
