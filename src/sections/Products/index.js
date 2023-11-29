@@ -234,8 +234,9 @@ const index = () => {
                       <div className="title">{card.title}</div>
                       <div className="iconss">
                         {/* <div> */}
-                        <img src={card.icon[0]} alt="" />
-                        <img src={card.icon[1]} alt="" />
+                        {card.icon.map((curr_icon) => (
+                          <img src={curr_icon} alt="" key={curr_icon} />
+                        ))}
                         {/* </div> */}
                       </div>
                     </div>
