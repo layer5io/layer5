@@ -6,15 +6,15 @@ darkModeIntegrationIcon: icon/white/contour-white.svg
 docURL: 
 category: Cloud Native Network
 subcategory: Service Proxy
-featureList: ["Manage AWS Elastic Load Balancers for a Kubernetes cluster.",
-"Provide high performance traffic serving that can scale to millions of requests per second.",
-"Supports IP address targeting mode for Network Load Balancers."
+featureList: ["Supports dynamic configuration updates out of the box while maintaining a lightweight profile.",
+"Introduces a new ingress API (HTTPProxy) which is implemented via a Custom Resource Definition (CRD).",
+"Solves shortcomings in the original design."
 ]
 workingSlides: [
     ../_images/meshmap-visualizer.png,
     ../_images/meshmap-designer.png]
 howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets and virtual appliances in one or more Availability Zones (AZs)."
+howItWorksDetails: "Builds upon the basic Kubernetes resource and controller concepts, but includes domain-specific knowledge to automate the entire lifecycle of Contour."
 published: true
 ---
 <p>
