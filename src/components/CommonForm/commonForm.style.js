@@ -95,7 +95,7 @@ margin: 1rem;
         display: block;
       }
       .formRight select {
-        background: none repeat scroll 0 0 #FFFFFF;
+        background: linear-gradient(90deg, rgba(0,179,159,0.15) 0%, rgba(208,208,208,.4) 80%);
         border: 1px solid black;
         border-radius: 10px;
         height: 50px;
@@ -103,6 +103,7 @@ margin: 1rem;
         width: 100%;
         font-size: 0.85rem;
         margin: 0.5rem 0;
+        color: ${props => props.theme.primaryColor};
       }
 
       .custom-arrow {
@@ -135,6 +136,8 @@ margin: 1rem;
         border-radius: 10px;
         padding: .5rem .5rem;
         font-size: .85rem;
+        background: linear-gradient(90deg, rgba(0,179,159,0.15) 0%, rgba(208,208,208,.4) 80%);
+        color: ${props => props.theme.primaryColor};
       }
 
       .text-field:focus {
