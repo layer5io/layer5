@@ -1,12 +1,10 @@
 import React from "react";
-import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
-import Reviews from "./review-slider";
-import Button from "../../reusecore/Button";
 import { options } from "./data";
 import PlanCard from "../../components/PlanCard";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 const Pricing = () => {
 
@@ -28,7 +26,7 @@ const Pricing = () => {
         <PlanCard planData={options}/>
       </div>
       <Comparison />
-      <Reviews />
+      <ReviewsSlider />
       <FAQ category={["Pricing", "Billing"]} />
     </PricingWrapper>
   );

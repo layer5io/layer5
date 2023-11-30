@@ -5,8 +5,8 @@ import MeshmapVisualizerFeatures from "./meshmap-visualize-features";
 import MeshmapVisualizerViews from "./meshmap-visualize-views";
 import BackgroundImage from "./images/oval-blur-shape.svg";
 import SignupForm from "../signup-form";
-import Reviews from "../../Pricing/review-slider";
 import { useRef } from "react";
+import ReviewsSlider from "../../../components/ReviewsSlider";
 
 const MeshmapVisualize = () => {
   const targetRef = useRef(null);
@@ -21,7 +21,7 @@ const MeshmapVisualize = () => {
       {/* <MeshmapHeroSection /> */}
       {/* <DesignDefault /> */}
       <SignupForm targetRef={targetRef} />
-      <Reviews />
+      <ReviewsSlider />
     </MeshmapVisualizeWrapper>
   );
 };

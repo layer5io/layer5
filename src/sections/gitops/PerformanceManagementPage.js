@@ -6,11 +6,11 @@ import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.png";
 
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
-import Reviews from "../Pricing/review-slider";
 import ServicePerformanceProfileTest from "../../assets/images/gitops/service-mesh-performance-profile.png";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
 import { ReactComponent as SmpLogo }  from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icon/color/github-color.svg";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 const PerformanceManagementPage = () => {
   return (
@@ -86,7 +86,7 @@ const PerformanceManagementPage = () => {
 
 
       <div className="reviews-container" >
-        <Reviews/>
+        <ReviewsSlider/>
       </div>
 
     </PageWrapper>

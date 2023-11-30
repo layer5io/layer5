@@ -9,13 +9,13 @@ import desktop from "./images/fluent_desktop-mac.svg";
 import codicon from "./images/codicon_extensions.svg";
 import cloudicon from "./images/cloud.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
 import { Row } from "../../reusecore/Layout";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 const options = [
   {
@@ -244,7 +244,7 @@ const index = () => {
                     <div className="text">{card.text}</div>
                     <div className="card_bottom">
                       {/* <Link className="learn" > */}
-                      <a className="learn" href={card.url}>Learn more</a>
+                      <a className="learn" href={card.url}><span className={"learn-underline"}>Learn more</span></a>
                     </div>
                   </div>
                 </>
@@ -292,6 +292,10 @@ const index = () => {
               </p>
             </div>
             <Button external={true} primary title="Book a Demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+          </div>
+
+          <div className={"testimonials"}>
+            <ReviewsSlider/>
           </div>
         </div>
       </ProductsWrapper>

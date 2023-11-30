@@ -7,7 +7,7 @@ import { MeshmapMobileSwiper } from "./Meshmap_Mobile_swiper/MeshmapMobileSwiper
 import MeshmapDesignFeatureCarousel from "./meshmap-design-features-carousel";
 
 import SignupForm from "../signup-form";
-import Reviews from "../../Pricing/review-slider";
+import ReviewsSlider from "../../../components/ReviewsSlider";
 
 
 const MeshmapDesign = () => {
@@ -20,7 +20,7 @@ const MeshmapDesign = () => {
       <MeshmapMobileSwiper/>
       <MeshmapDesignFeatureCarousel />
       <SignupForm />
-      <Reviews />
+      <ReviewsSlider />
     </MeshmapDesignWrapper>
   );
 };

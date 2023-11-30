@@ -12,7 +12,6 @@ import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import SignupForm from "./signup-form";
-import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
 import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
 import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
@@ -30,11 +29,12 @@ import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.webp";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.webp";
 import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.webp";
-import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
-import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
-import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
-import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
+import Kaur from "../../components/ReviewsSlider/reviews/kaur-kallas.webp";
+import Ala from "../../components/ReviewsSlider/reviews/ala-eddine-benhassir.jpeg";
+import Phillip from "../../components/ReviewsSlider/reviews/phillip-ulberg.jpeg";
+import Alex from "../../components/ReviewsSlider/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 
 const Meshmap = (props) => {
@@ -249,7 +249,7 @@ const Meshmap = (props) => {
         </Container>
       </div>
       <>
-        <Reviews />
+        <ReviewsSlider />
         <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
       </>
     </MeshmapWrapper>

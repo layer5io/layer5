@@ -45,7 +45,7 @@ const ProductWrapper = styled.section`
     padding: 0 1.5rem 2rem 1.5rem ;
     Button {
       color: white;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: bold;
     }
   }
@@ -162,7 +162,7 @@ const ProductWrapper = styled.section`
   }
   .product_cards .card {
     width: 540px;
-height: 100%;
+    height: 100%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};
     padding: 2rem;
@@ -213,12 +213,24 @@ height: 100%;
     margin: 10px 0;
     cursor: pointer;
     color: ${(props) => props.theme.whiteToBlack};
-    &:hover { 
-        text-decoration: underline;
-        text-decoration-color: ${(props) => props.theme.secondaryColor};
-        text-underline-offset: 8px;
-    }
+    position: relative;
   }
+  
+  .learn-underline:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    background: rgb(0, 211, 169);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  }
+  
+  .learn-underline:hover:before{
+    opacity: 100%;
+  }
+  
   .btns Button {
     margin: 20px 0px;
     font-size: 16px;
@@ -230,6 +242,11 @@ height: 100%;
     position: absolute;
     right: 0;
   }
+  
+  .testimonials{
+    margin-bottom: 100px;
+  }
+  
   @media (max-width:1141px){
     .product_hero_img {
       margin:1rem;
