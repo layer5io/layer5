@@ -7,6 +7,7 @@ import product_hero_img from "./images/layer5-products-overview.svg";
 import product_hero_img_light from "./images/layer5-products-overview-dark.svg";
 import desktop from "./images/fluent_desktop-mac.svg";
 import codicon from "./images/codicon_extensions.svg";
+import cloudicon from "./images/cloud.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -244,11 +245,6 @@ const index = () => {
                     <div className="card_bottom">
                       {/* <Link className="learn" > */}
                       <a className="learn" href={card.url}>Learn more</a>
-                      {/* </Link> */}
-                      {/* TEMPORARY COMMENTED BUTTON  */}
-                      {/* <div className="btns">
-                        <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
-                      </div> */}
                     </div>
                   </div>
                 </>
