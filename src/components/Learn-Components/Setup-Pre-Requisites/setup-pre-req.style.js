@@ -20,6 +20,10 @@ const SetupPreReqWrapper = styled.div`
             max-width: 20rem;
             min-height: 21.5rem;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border-radius:10px;
+            :hover{
+                box-shadow: rgb(0,211,169) 0px 0px 7px;
+            }
             .card-header {
                 display: flex;
                 flex: auto;
