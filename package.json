@@ -43,7 +43,7 @@
     "cytoscape-fcose": "^2.2.0",
     "dedent": "^0.7.0",
     "deepmerge": "^4.3.0",
-    "formik": "^2.2.9",
+    "formik": "^2.4.5",
     "gatsby": "^4.20.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-background-image": "^1.6.0",
