@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import WhiteboardWrapper from "./whiteboard.style";
-import { Container, Row } from "../../reusecore/Layout";
+import { Col, Container, Row } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
 import Partners from "../Home/Partners-home";
@@ -49,7 +49,8 @@ const Whiteboard = () => {
             </h2>
           </SectionTitle>
           <div className={"collaboration_display"}>
-            <div className={"display-container"}>
+            {/*<div className={"display-container"}>*/}
+            <Col sm={12} md={6} lg={4} className={"display-container"}>
               <div className={"image-container"}>
                 {/*<img/>*/}
               </div>
@@ -58,8 +59,8 @@ const Whiteboard = () => {
                 Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.
                 Use templates to get a head start
               </span>
-            </div>
-            <div className={"display-container"}>
+            </Col >
+            <Col sm={12} md={6} lg={4} className={"display-container"}>
               <div className={"image-container"}>
                 {/*<img/>*/}
               </div>
@@ -68,8 +69,8 @@ const Whiteboard = () => {
                 Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.
                 Use templates to get a head start
               </span>
-            </div>
-            <div className={"display-container"}>
+            </Col >
+            <Col sm={12} md={6} lg={4} className={"display-container"}>
               <div className={"image-container"}>
                 {/*<img/>*/}
               </div>
@@ -78,7 +79,9 @@ const Whiteboard = () => {
                 Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.
                 Use templates to get a head start
               </span>
-            </div>
+            </Col >
+
+
           </div>
         </div>
       </Container>

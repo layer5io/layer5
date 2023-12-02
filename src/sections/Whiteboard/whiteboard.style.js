@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const WhiteboardWrapper = styled.div`
   height: 100%;
-  color: white !important;
 
   .heading-container {
     z-index: 3;
@@ -12,10 +11,9 @@ const WhiteboardWrapper = styled.div`
     //height: 30rem;
     //padding: 100px 100px 0 100px;
     padding: 100px;
-    //text-align: left !important;
 
     .section-title {
-      text-align: left !important;
+      text-align: left;
     }
     
     #whiteboard-svg{
@@ -25,6 +23,7 @@ const WhiteboardWrapper = styled.div`
       //transform: translateX(-50%);
       transition: transform 0.3s ease-out;
       transform-origin: top center;
+      min-width: 400px;
     }
 
     h2 {
@@ -34,10 +33,6 @@ const WhiteboardWrapper = styled.div`
 
     .whiteboard-heading {
       color: white !important;
-    }
-
-    .whiteboard-text {
-      text-align: left;
     }
 
     .heading-image {
@@ -95,8 +90,7 @@ const WhiteboardWrapper = styled.div`
       justify-content: center;
 
       .display-container {
-        flex: 1;
-        margin: 20px;
+        margin-bottom: 40px;
       }
 
       .image-container {
@@ -115,6 +109,23 @@ const WhiteboardWrapper = styled.div`
       font-size: 1.2rem;
     }
 
+  }
+
+  @media (max-width: 500px){
+    .heading-image {
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .whiteboard-text{
+      text-align: center; 
+    }
+    
+    .section-title{
+      margin-bottom: 15px;
+    }
+    
   }
 
 
