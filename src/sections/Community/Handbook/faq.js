@@ -70,6 +70,27 @@ const Faq = () => {
             <h4>Q: In addition to the routinely scheduled project meetings, do project contributors ever meet separately to deep-dive on special topics?</h4>
             <p>A: Yes, outside of the regularly scheduled meetings on the <Link to="https://layer5.io/community/calendar#meetings">community calendar</Link>, there are any number of other meetings that occur to facilitate deeper levels or more concentrated attention to particular bodies of work (e.g. a design spec review). On occasion, these one-off meetings are scheduled in advance and put onto the community calendar, while other times they are simply self-organized by interested contributors. Often contributors will use Slack huddles or Zoom meetings to facilitate the discussion. If you need a new meeting placed onto the community calendar, please reach out to a <Link to="/community/community-managers">Community Manager</Link>.</p>
 
+            <h4>Q: How do I access the community docs?</h4>
+            <p>A: To access the community documentation, follow these steps:</p>
+            <ol>
+              <li>
+                Ensure you have filled out the
+                <Link to="https://layer5.io/newcomers">newcomers form</Link>. If
+                you haven't, please do.
+              </li>
+              <li>
+                Go to the "Shared Drives" section of your Google Drive using the
+                same email address you used to fill out the newcomers form.
+              </li>
+              <li>
+                Look for "Layer5 Community" within the Shared Drives section.
+              </li>
+            </ol>
+            <p>
+              Once you've completed these steps, you should have access to the
+              community docs.
+            </p>
+
 
             {/* <p>Q: Why does the community use slack?</p>
             <p>A:</p>
