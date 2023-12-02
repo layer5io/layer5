@@ -3,8 +3,8 @@ title: "Load Generation and Load Balancing"
 subtitle: "Fueling Performance Testing and Ensuring Fair Distribution of Workload"
 date: 2023-11-27 10:30:05 -0530
 author: Chandravijay Rai
-thumbnail: "./Load.png"
-darkthumbnail: "./Load.png"
+thumbnail: "./MeshMap.png"
+darkthumbnail: "./MeshMap.png"
 category: "Kubernetes"
 description: "Load Generation simulates demand on software, identifying capacity and bottlenecks and Load Balancing distributes workloads across resources, preventing overload and enhancing performance."
 tags:
@@ -16,7 +16,7 @@ published: true
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
-import LoadBalancing from "./loadbalancingimage.png";
+import Layer5 from "./Layer5.png";
 
 <BlogWrapper>
 
@@ -33,22 +33,22 @@ Load tests empower developers to:
 
 ## [Meshery](https://meshery.io/) Load Generator
 
-Let's delve into [Meshery](https://meshery.io/), a multi-service mesh management plane founded by [Layer5](https://layer5.io/)—a community dedicated to open-source initiatives in network management and observability. Meshery aids developers in assessing the performance of their service meshes.
+Let's delve into Meshery, a multi-Cloud Native management plane founded by [Layer5](https://layer5.io/)—a community dedicated to open-source initiatives in network management and observability. Meshery aids developers in assessing the performance of their Cloud Native applications.
 
-[Meshery](https://meshery.io/) boasts a comprehensive set of features, including:
+ Meshery boasts a comprehensive set of features, including:
 
 - Performance testing
-- Service mesh lifecycle management
+- Cloud Native Lifecycle Management
 - Configuration management
 
-Supporting various load generators like HTTP/HTTPS/HTTP2, [Nighthawk](https://layer5.io/projects/nighthawk) and its built-in load generator, Meshery facilitates the creation of synthetic HTTP load and benchmarking the performance of service meshes.
+Supporting various load generators like HTTP/HTTPS/HTTP2, [Nighthawk](https://layer5.io/projects/nighthawk) and its built-in load generator, Meshery facilitates the creation of synthetic HTTP load and enables benchmarking the performance of Cloud Native applications.
 Developers can choose their preferred load generator for tests and benefit from the capability to run tests, providing a more comprehensive performance analysis.
 
-With [Meshery](https://meshery.io/), developers can:
+With Meshery, developers can:
 
-- Manage the lifecycle of various [service meshes](https://docs.meshery.io/service-meshes).
-- Conduct performance tests and compare results between [service meshes](https://docs.meshery.io/service-meshes).
-- Apply custom or pre-defined configurations on [service meshes](https://docs.meshery.io/service-meshes).
+- Manage the lifecycle of various [Cloud Native](https://play.meshery.io/) applications.
+- Conduct performance tests and compare results between across different [Cloud Native](https://play.meshery.io/) environments.
+- Apply custom or pre-defined configurations to enhance [Cloud Native](https://play.meshery.io/) functionality.
 
 
 # Load Balancing  
@@ -61,12 +61,11 @@ Load balancing plays a pivotal role in optimizing the performance of internet ap
 <br/>
 
  <figure class="imgWithCaption fig-right">
-    <img src={LoadBalancing} />
+    <img src={Layer5} />
     <figcaption>
-    <p>Load Balancing</p>
+    <p>Layer5</p>
     </figcaption>
  </figure>
- 
 
 ### How Load Balancing Works:
 
@@ -92,7 +91,7 @@ When a user initiates a request, the load balancer evaluates factors such as ser
 
 ## Load Balancing with [Meshery](https://meshery.io/)
     
-Meshery  serves as a platform for managing various service meshes. While it doesn't perform load balancing directly, Meshery allows users to configure and observe load balancing within their chosen service mesh Adaptors. Through a unified dashboard, users can customize load balancing settings, monitor relevant metrics, and leverage observability tools to gain insights into the performance and health of load balancing features. Meshery's focus is on providing a consistent and user-friendly interface for service mesh lifecycle management, including load balancing configuration.
+Meshery  serves as a platform for managing various Cloud Native applications . While it doesn't directly perform load balancing directly, Meshery allows users to configure and observe load balancing within their chosen Cloud Native Adaptors. Through a unified dashboard, users can customize load balancing settings, monitor relevant metrics, and leverage observability tools to gain insights into the performance and health of load balancing features. Meshery's focus is on providing a consistent and user-friendly interface for Cloud Native Lifecycle Management, including load balancing configuration.
 
 **Adapters**
 
