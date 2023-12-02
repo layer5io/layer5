@@ -15,8 +15,8 @@ const WhiteboardWrapper = styled.div`
     .section-title {
       text-align: left;
     }
-    
-    #whiteboard-svg{
+
+    #whiteboard-svg {
       //position: fixed;
       //top: 0;
       //left: 50%;
@@ -66,20 +66,6 @@ const WhiteboardWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    .use-heading {
-      color: white !important;
-      font-weight: bold;
-
-      .highlighted-text {
-        color: white;
-        padding: 0 0.5rem;
-        border-radius: 0.5rem;
-        background: rgba(0, 179, 159, 0.35);
-        font-weight: bold;
-      }
-
-    }
-
     .collaboration_display {
       display: flex;
       flex-direction: row;
@@ -111,24 +97,128 @@ const WhiteboardWrapper = styled.div`
 
   }
 
-  @media (max-width: 500px){
+
+  .use-heading {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+
+    .highlighted-text {
+      color: white;
+      padding: 0 0.5rem;
+      border-radius: 0.5rem;
+      background: rgba(0, 179, 159, 0.35);
+      font-weight: bold;
+    }
+
+  }
+
+  .see-you {
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+
+    .headings {
+      z-index: 3;
+    }
+
+    img {
+      animation-name: floating;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      position: absolute;
+    }
+
+    .square {
+      animation-duration: 5s;
+      top: 5%;
+      left: 5%;
+      height: 75px;
+    }
+
+    .pentagon {
+
+      animation-duration: 4s;
+      top: 0;
+      right: 30%;
+      height: 75px;
+    }
+
+    .hexagon {
+      animation-duration: 3s;
+      bottom: 20%;
+      right: 10%;
+      height: 75px;
+
+    }
+
+    .heptagon {
+
+      animation-duration: 2s;
+      bottom: -37.5px;
+      left: 30%;
+      height: 75px;
+
+    }
+
+    .cursor_1 {
+      animation-duration: 4s;
+      right: 40%;
+      height: 50px;
+
+    }
+
+    .cursor_2 {
+      animation-duration: 5s;
+      bottom: 5%;
+      left: 40%;
+      height: 50px;
+
+    }
+
+    .playground-button {
+      margin: 70px 0 5px 0;
+    }
+
+  }
+
+  @media (max-width: 500px) {
     .heading-image {
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
     }
-    
-    .whiteboard-text{
-      text-align: center; 
+
+    .whiteboard-text {
+      text-align: center;
     }
-    
-    .section-title{
+
+    .section-title {
       margin-bottom: 15px;
     }
-    
+
+    .cursor_2 {
+      visibility: hidden;
+    }
+
   }
 
-
+  @keyframes floating {
+    from {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, 5px);
+    }
+    to {
+      transform: translate(0, -0px);
+    }
+  }
 
 
 `;
