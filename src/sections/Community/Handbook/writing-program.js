@@ -32,7 +32,7 @@ const Writers = () => {
       <div className="page-section">
         <Container>
           <div className="content writing_program">
-            <h2>What is Layer5 Writing Program?</h2>
+            <h2 className="heading-top">What is Layer5 Writing Program?</h2>
             <p>
               The Layer5 Writing Program is a way to demonstrate your expertise,
               give back to the community, and help us produce great content. We
