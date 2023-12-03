@@ -15,6 +15,10 @@ const WhiteboardWrapper = styled.div`
     .section-title {
       text-align: left;
     }
+    
+    .whiteboard-image{
+      perspective: 1000px;
+    }
 
     #whiteboard-svg {
       //position: fixed;
