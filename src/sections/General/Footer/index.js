@@ -107,6 +107,11 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
+                    <Link className="category-link" href="https://docs.layer5.io">
+                      Docs
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/learn/learning-paths">
                       Learning Paths
                     </Link>
@@ -140,14 +145,14 @@ const Footer = ({ location }) => {
                       Service Mesh Comparison
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       className="category-link"
                       to="/learn/service-mesh-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -188,9 +193,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/community/handbook/writing-program"
+                      to="/community/handbook"
                     >
-                      Writing Program
+                      Handbook
                     </Link>
                   </li>
                 </ul>

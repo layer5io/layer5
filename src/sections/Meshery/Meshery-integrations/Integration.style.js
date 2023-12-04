@@ -37,7 +37,7 @@ export const HoneycombGrid = styled.div`
     &:hover {
       opacity: 0.8;
       box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
-}
+    }
   }
 
   .selected {

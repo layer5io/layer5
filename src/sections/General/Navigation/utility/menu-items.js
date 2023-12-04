@@ -81,7 +81,7 @@ const Data = {
     },
     {
       name: "Products",
-      path: "/projects",
+      path: "/products",
       subItems: [
         {
           name: "Meshery",
@@ -253,6 +253,11 @@ const Data = {
       name: "Resources",
       path: "/resources",
       subItems: [
+        {
+          name: "Docs",
+          path: "https://docs.layer5.io",
+          sepLine: true
+        },
         {
           name: "Blog",
           path: "/blog",

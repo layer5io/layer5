@@ -56,6 +56,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/projects/service-mesh-performance", toPath: "/projects/cloud-native-performance", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resoruce Redirects
@@ -428,6 +429,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: integrationTemplate,
       context: {
         slug: integration.fields.slug,
+        name: "_images/" + integration.fields.slug.split("/")[2],
       },
     });
   });
