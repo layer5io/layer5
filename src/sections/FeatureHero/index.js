@@ -1,0 +1,44 @@
+import React, { useEffect } from "react";
+import SectionTitle from "../../reusecore/SectionTitle";
+import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
+import FeatureHeroWrapper from "./featureHero.style";
+
+const FeatureHero = (props) => {
+
+  useEffect(() => {
+    const scrollingImage = document.getElementById("whiteboard-svg");
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const translateY = -scrollPosition / 5;
+      scrollingImage.style.transform = `rotateX(${translateY}deg)`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <FeatureHeroWrapper>
+      <div className={"heading-container"}>
+        <div className={"heading-image"}>
+          <SectionTitle className={"section-title"}  >
+            <h2>
+              <span className={"whiteboard-heading"}>{props.data.heading}</span>
+            </h2>
+            <span className={"whiteboard-text"}>{props.data.sub_heading}</span>
+          </SectionTitle>
+          <div className={"whiteboard-image"}>
+            <img id={"whiteboard-svg"} src={props.data.image} alt={""}/>
+          </div>
+        </div>
+      </div>
+    </FeatureHeroWrapper>
+  );
+};
+
+export default FeatureHero;

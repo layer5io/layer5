@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const WhiteboardWrapper = styled.div`
+const CommentsWrapper = styled.div`
   height: 100%;
+  
   .feature-use-container {
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@ const WhiteboardWrapper = styled.div`
     flex-wrap: wrap;
     width: 100%;
     margin: 0 10px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
   
@@ -38,4 +39,4 @@ const WhiteboardWrapper = styled.div`
 
 `;
 
-export default WhiteboardWrapper;
+export default CommentsWrapper;
