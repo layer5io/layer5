@@ -80,7 +80,7 @@ const Faq = () => {
               </li>
               <li>
                 Go to the "Shared Drives" section of your Google Drive using the
-                same email address you used to fill out the newcomers form.
+                same email address you used to fill out the form.
               </li>
               <li>
                 Look for "Layer5 Community" within the Shared Drives section.
