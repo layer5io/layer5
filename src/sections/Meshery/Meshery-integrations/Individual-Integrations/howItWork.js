@@ -83,6 +83,7 @@ const HowIntegrationWorksWrapper = styled.section`
 							img {
 								height: 5rem;
 								vertical-align: middle;
+								object-fit: contain;
 							}
 						}
 					}
@@ -108,6 +109,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 				li a img {
 					height: 4rem;
+					object-fit: contain;
 				}
 			}
 		}
@@ -164,6 +166,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 					li a img {
 						height: 2.5rem;
+						object-fit: contain;
 					}
 				}
 			}
