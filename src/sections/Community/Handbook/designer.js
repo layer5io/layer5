@@ -16,7 +16,7 @@ const Designers = () => {
       <div className="page-section">
         <Container>
           <div className="content writing_program">
-            <h2>UI/UX</h2>
+            <h2 className="heading-top">UI/UX</h2>
             <p>
               The UI/UX badge is given to community members who contribute
               towards creating or improving the visual design or user flow of

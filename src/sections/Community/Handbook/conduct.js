@@ -12,7 +12,7 @@ const CodeofConduct = () => {
         <h1>Code of Conduct</h1>
       </div>
       <TOC />
-      <div className="page-section">
+      <div className="page-section conduct-section">
         <Container>
           <div className="content">
             <h2>Code of Conduct</h2>
