@@ -75,7 +75,7 @@ const Faq = () => {
             <ol>
               <li>
                 Ensure you have filled out the
-                <Link to="https://layer5.io/newcomers">newcomers form</Link>. If
+                <Link to="https://layer5.io/newcomers"> community member form</Link>. If
                 you haven't, please do.
               </li>
               <li>
