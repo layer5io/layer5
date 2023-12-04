@@ -3,11 +3,12 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import Meshmap from "../../../sections/Meshmap/index";
-const MeshmapPage = () => {
+const MeshmapPage = ({ location }) => {
+  const params = new URLSearchParams(location.search);
+  const parameter1 = params.get("teaser");
   return (
     <>
-      <Meshmap  />
-
+      <Meshmap teaser={parameter1 === "play"} />
     </>
   );
 };
