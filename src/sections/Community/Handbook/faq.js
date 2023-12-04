@@ -88,7 +88,7 @@ const Faq = () => {
             </ol>
             <p>
               Once you've completed these steps, you should have access to the
-              community docs.
+              community docs, otherwise please reach out to any of the Community Managers or MeshMates.
             </p>
 
 
