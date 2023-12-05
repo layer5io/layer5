@@ -6,7 +6,7 @@ const FeatureHeroWrapper = styled.div`
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 100px 100px 0 100px ;
+    padding: 100px 50px 0 50px ;
 
     .section-title {
       text-align: left;

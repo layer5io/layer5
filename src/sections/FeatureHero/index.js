@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import SectionTitle from "../../reusecore/SectionTitle";
 import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
 import FeatureHeroWrapper from "./featureHero.style";
+import { Container } from "../../reusecore/Layout";
 
 const FeatureHero = (props) => {
 
@@ -24,7 +25,7 @@ const FeatureHero = (props) => {
 
   return (
     <FeatureHeroWrapper>
-      <div className={"heading-container"}>
+      <Container className={"heading-container"}>
         <div className={"heading-image"}>
           <SectionTitle className={"section-title"}  >
             <h2>
@@ -36,7 +37,7 @@ const FeatureHero = (props) => {
             <img id={"whiteboard-svg"} src={props.data.image} alt={""}/>
           </div>
         </div>
-      </div>
+      </Container>
     </FeatureHeroWrapper>
   );
 };

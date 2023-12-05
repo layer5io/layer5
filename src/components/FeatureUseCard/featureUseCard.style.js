@@ -5,11 +5,16 @@ const FeatureUseCardWrapper = styled.div`
   height: 100%;
   
   .image-container {
-    height: 15rem;
     width: 100%;
+    padding: 10px 10px 5px 10px;
     border-radius: 0.5rem;
     border: 1px solid var(--grey-light, #A0AAAA);
     margin: 0 auto 10px auto;
+    
+    img{
+      border-radius: 0.5rem;
+    }
+    
   }
 
   .image-heading {
