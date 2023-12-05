@@ -16,7 +16,7 @@ const WhiteboardWrapper = styled.div`
     flex-wrap: wrap;
     width: 100%;
     margin: 0 10px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
   

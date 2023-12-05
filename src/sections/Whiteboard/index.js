@@ -7,6 +7,9 @@ import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
+import use_case_1 from "../../assets/images/whiteboard/use-case-1.png";
+import use_case_2 from "../../assets/images/whiteboard/use-case-2.png";
+import use_case_3 from "../../assets/images/whiteboard/use-case-3.png";
 
 let data = {
   heading: "Whiteboarding",
@@ -17,21 +20,18 @@ let data = {
 let card_data = [
   {
     heading: "Choose from multiple shapes",
-    subtitle: "Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.\n" +
-      "Use templates to get a head start",
-    image: ""
+    subtitle: "Select from a variety of available shapes to suit your preferences and needs.",
+    image: use_case_1
   },
   {
-    heading: "Use our components and templates",
-    subtitle: "Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.\n" +
-      "Use templates to get a head start",
-    image: ""
+    heading: "Text Annotation",
+    subtitle: "Text annotations come with various options. Customize fonts, sizes, alignments, and styles easily",
+    image: use_case_2
   },
   {
-    heading: "Use our components and templates",
-    subtitle: "Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.\n" +
-      "Use templates to get a head start",
-    image: ""
+    heading: "Interactive Tooltip Interface",
+    subtitle: "The tooltip serves as your gateway to customization, providing a simple and intuitive experience by offering a range of editing options upon selection.",
+    image: use_case_3
   },
 
 ];

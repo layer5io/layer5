@@ -7,7 +7,7 @@ const FeatureUseCard = (props) => {
     <Col sm={props.sm} md={props.md} lg={props.lg} className={"display-container"}>
       <FeatureUseCardWrapper >
         <div className={"image-container"}>
-          {/*<img/>*/}
+          <img src={props.data.image} alt={""}/>
         </div>
         <div>
           <p className={"image-heading"}>{props.data.heading}</p>

@@ -7,6 +7,9 @@ import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import CommentsWrapper from "./comments.style";
+import use_case_1 from "../../assets/images/comments/use-case-1.png";
+import use_case_2 from "../../assets/images/comments/use-case-2.png";
+import use_case_3 from "../../assets/images/comments/use-case-3.png";
 
 let data = {
   heading: "Brainstorm with Comments",
@@ -18,18 +21,17 @@ let card_data = [
   {
     heading: "Dynamic collaboration",
     subtitle: "Bring your ideas to life by adding visual annotations and comments directly onto your MeshMap canvas.",
-    image: ""
+    image: use_case_1
   },
   {
     heading: "Seamless communication",
     subtitle: "Keep the conversation flowing with instant updates and notifications, ensuring everyone stays in the loop.",
-    image: ""
+    image: use_case_2
   },
   {
-    heading: "Effortless iteration",
-    subtitle: "Use our pre-built components like device frames, icons and UI elements to quickly draw wireframes.\n" +
-      "Use templates to get a head start",
-    image: ""
+    heading: "Track discussion with comment history",
+    subtitle: "Revisit and relive your digital conversations effortlessly with Comment History. Explore the evolution of your discussions, track key moments, and gain valuable insights",
+    image: use_case_3
   },
 
 ];
