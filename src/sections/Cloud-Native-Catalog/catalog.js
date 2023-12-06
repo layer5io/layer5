@@ -141,10 +141,9 @@ const Catalog = () => {
             </div>
           </Col>
           <Col $md={6} className="catalog-detail">
-            <h2 className="heading">Harness Meshery's Compatibility</h2>
+            <h2 className="heading">Harness Well-Architected Kubernetes Patterns</h2>
             <p className="caption">
-              Easily manage and monitor your entire infrastructure, regardless
-              of the specific tools and services you use.
+                Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
             </p>
           </Col>
         </Row>
@@ -161,8 +160,8 @@ const Catalog = () => {
             </div>
           </Col>
         </Row>
-        <Row className="catalog">
-          <Col $md={6} className="catalog-image">
+        {/* <Row className="catalog">
+          <Col md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
             </div>
@@ -176,23 +175,7 @@ const Catalog = () => {
               high-performance, granular control over service requests.
             </p>
           </Col>
-        </Row>
-        <Row className="catalog">
-          <Col $md={6} className="catalog-detail">
-            <h2 className="heading">
-              Deploy Applications with Meshery's Deployment Patterns
-            </h2>
-            <p className="caption">
-              Cloud native patterns enable the business function in simple
-              language.
-            </p>
-          </Col>
-          <Col $md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={Patterns} className="calalog-image" />
-            </div>
-          </Col>
-        </Row>
+        </Row> */}
         <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
@@ -201,12 +184,26 @@ const Catalog = () => {
           </Col>
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">
-              Elevate Security Policies for a Revolutionary Transformation
+              Policy-driven Orchestration and Control Where You Need It
             </h2>
             <p className="caption">
-              Applied across the cloud native infrastructure under management,
-              policies may be applied broadly and specifically.
+              Inherent standard policy for your organization or override it at your team or individual user-level. Reconfigure Meshery's and your infrastructure's behavior whether applying policy broadly or very specifically.
             </p>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={6} className="catalog-detail">
+            <h2 className="heading">
+            Center of Excellence: Mutli-tentant Platform Engineering Patterns
+            </h2>
+            <p className="caption">
+              Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
+            </p>
+          </Col>
+          <Col md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={Patterns} className="calalog-image" />
+            </div>
           </Col>
         </Row>
       </Container>

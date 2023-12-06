@@ -78,9 +78,9 @@ const Header = () => {
             <Col className="col header__detail" $md={6}>
               <h1 className="header__title">Cloud Native Catalog</h1>
               <p className="header__title_description">
-                Discover top-quality cloud native services for your
-                infrastructure with the Cloud Native Catalog. Discover best
-                practices and upgrade your Kubernetes management practices.
+                The Ultimate Shopping Guide for Your Infrastructure.
+
+                Packed with Kubernetes and cloud native templates to get you deploying in the right way.
               </p>
               <div className="header__button_section">
                 <Button
