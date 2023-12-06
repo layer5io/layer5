@@ -22,7 +22,7 @@ const WhiteboardWrapper = styled.div`
   
   
   .use-heading {
-    color: white !important;
+    color: {props => props.theme.whiteToBlack};
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2.5rem;
