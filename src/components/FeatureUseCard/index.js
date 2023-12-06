@@ -9,9 +9,9 @@ const FeatureUseCard = (props) => {
         <div className={"image-container"}>
           <img src={props.data.image} alt={""}/>
         </div>
-        <div>
-          <p className={"image-heading"}>{props.data.heading}</p>
-          <span>
+        <div className={"feature-info-container"}>
+          <p className={"feature-title"}>{props.data.heading}</p>
+          <span className={"feature-description"}>
             {props.data.subtitle}
           </span>
         </div>

@@ -17,11 +17,19 @@ const FeatureUseCardWrapper = styled.div`
     
   }
 
-  .image-heading {
+  .feature-title {
     font-weight: bold;
     font-size: 1.2rem;
+    margin-bottom: 0.25rem;
   }
 
+  .feature-info-container{
+    margin-top: 1.5rem
+  }
+
+  .feature-description{
+    color: ${props => props.theme.greyA0AAAAToGrey666666};
+  }
 
 `;
 
