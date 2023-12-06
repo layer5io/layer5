@@ -191,21 +191,6 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-        <Row className="catalog">
-          <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-            Center of Excellence: Mutli-tentant Platform Engineering Patterns
-            </h2>
-            <p className="caption">
-              Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
-            </p>
-          </Col>
-          <Col md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={Patterns} className="calalog-image" />
-            </div>
-          </Col>
-        </Row>
       </Container>
     </CatalogWrapper>
   );
