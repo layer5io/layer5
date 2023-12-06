@@ -30,6 +30,7 @@ const PlaygroundFeaturesWrapper = styled.div`
         display: flex;
         flex-direction: row;
         width: 70%;
+        max-width: 1440px;
         justify-content: flex-end;
         align-items: center;
         margin: 1% 0%;
@@ -87,10 +88,10 @@ const PlaygroundFeatures = () => {
           <h2>Use Whiteboarding </h2>
           <h5>The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Playground.</h5>
           <Button url="https://layer5.io/whiteboard" style={{ marginTop: "1.5rem" }}>
-            Know more
+            Learn more
           </Button>
         </div>
-        <div className="feature-image" style={{ scale: "0.8" }}>
+        <div className="feature-image" style={{ scale: "1" }}>
           <img src={whiteboard_svg} />
         </div>
       </div>
@@ -100,10 +101,10 @@ const PlaygroundFeatures = () => {
           <h2>Brainstorm with Comments </h2>
           <h5>Playground’s Designer Mode offers a powerful collaboration feature through comments.</h5>
           <Button url="https://layer5.io/comments" style={{ marginTop: "1.5rem" }}>
-            Know more
+            Learn more
           </Button>
         </div>
-        <div className="feature-image" style={{ scale: "0.8" }}>
+        <div className="feature-image" style={{ scale: "1" }}>
           <img src={comments_svg} />
         </div>
       </div>
