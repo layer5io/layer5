@@ -27,7 +27,7 @@ const FeatureHeroWrapper = styled.div`
     }
 
     .whiteboard-heading {
-      color: ${props => props.theme.whiteToBlack} !important; !important;
+      color: ${props => props.theme.whiteToBlack} !important;
     }
 
     .heading-image {
@@ -54,6 +54,10 @@ const FeatureHeroWrapper = styled.div`
     z-index: -3;
   }
 
+  .whiteboard-text {
+    color: ${props => props.theme.greyA0AAAAToGrey666666}
+  }
+
   @media (max-width: 500px) {
     .heading-image {
       align-items: center;
@@ -62,8 +66,12 @@ const FeatureHeroWrapper = styled.div`
     }
 
     .section-title {
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
       text-align: center !important;
+    }
+
+    .whiteboard-heading{
+      font-size: 2rem;
     }
   
 `;
