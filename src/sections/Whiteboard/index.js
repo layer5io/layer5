@@ -1,7 +1,6 @@
 import React from "react";
 import WhiteboardWrapper from "./whiteboard.style";
 import { Container } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
 import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
 import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
@@ -44,9 +43,9 @@ const Whiteboard = () => {
 
       <Container>
         <div className={"feature-use-container"}>
-          <SectionTitle className={"use-heading"}>
-            <h2> Use whiteboarding for <span className={"highlighted-text"}>collaboration</span> </h2>
-          </SectionTitle>
+          <div>
+            <h2 className={"use-heading"}> Use whiteboarding for <span className={"highlighted-text"}>collaboration</span> </h2>
+          </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
               <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4}/>

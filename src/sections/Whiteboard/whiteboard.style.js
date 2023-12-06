@@ -23,9 +23,9 @@ const WhiteboardWrapper = styled.div`
   
   .use-heading {
     color: white !important;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 2.5rem;
 
     .highlighted-text {
       color: white;
@@ -34,7 +34,6 @@ const WhiteboardWrapper = styled.div`
       background: ${props => props.theme.green009A89ToGreen00B39F};
       font-weight: bold;
     }
-
 
 `;
 
