@@ -19,7 +19,7 @@ let data = {
 
 let card_data = [
   {
-    heading: "Choose from multiple shapes",
+    heading: "Collection of shapes",
     subtitle: "Select from a variety of available shapes to suit your preferences and needs.",
     image: use_case_1
   },
