@@ -4,7 +4,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const subscribe = ({ msg = "Stay meshy" }) => {
+const subscribe = ({ msg = "Join the Layer5 community" }) => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">
