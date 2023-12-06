@@ -27,7 +27,7 @@ const CatalogWrapper = styled.div`
   .catalog-container .catalog:nth-child(odd) {
     .catalog-image {
       .image-wrapper {
-        justify-content: flex-start;
+        justify-content: center;
         @media (max-width: 767px) {
           justify-content: center;
         }
@@ -110,7 +110,7 @@ const CatalogWrapper = styled.div`
       justify-content: center;
       .image-wrapper {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         @media (max-width: 767px) {
           justify-content: center;
@@ -189,6 +189,11 @@ const Catalog = () => {
             <p className="caption">
               Inherent standard policy for your organization or override it at your team or individual user-level. Reconfigure Meshery's and your infrastructure's behavior whether applying policy broadly or very specifically.
             </p>
+          </Col>
+          <Col md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={Opa} className="calalog-image" />
+            </div>
           </Col>
         </Row>
       </Container>
