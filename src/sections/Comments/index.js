@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
 import comments_svg from "../../assets/images/comments/comment.svg";
 import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
@@ -39,22 +38,22 @@ let card_data = [
 const Comments = () => {
   return (
     <CommentsWrapper>
-      <FeatureHero data={data}/>
+      <FeatureHero data={data} />
       <Partners />
 
       <Container>
         <div className={"feature-use-container"}>
-          <SectionTitle className={"use-heading"}>
-            <h2> Use <span className={"highlighted-text"}>comments</span> to streamline design reviews </h2>
-          </SectionTitle>
+          <div>
+            <h2 className={"use-heading"}> Use <span className={"highlighted-text"}>comments</span> to streamline design reviews </h2>
+          </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4}/>
+              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
             ))}
           </div>
         </div>
       </Container>
-      <SeeYou/>
+      <SeeYou />
     </CommentsWrapper>
   );
 };
