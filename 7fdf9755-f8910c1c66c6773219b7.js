@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[9907],{57645:function(e,s,a){a(67294);s.Z=a.p+"static/whiteboard.264b8247.svg"}}]);
+//# sourceMappingURL=7fdf9755-f8910c1c66c6773219b7.js.map
