@@ -198,6 +198,11 @@ const Footer = ({ location }) => {
                       Handbook
                     </Link>
                   </li>
+                  <li>
+                    <Link className="category-link" href="https://badges.layer5.io/">
+                    Recognition Programs
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">
