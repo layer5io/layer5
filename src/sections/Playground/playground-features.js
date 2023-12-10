@@ -87,7 +87,7 @@ const PlaygroundFeatures = () => {
         <div className="feature-text">
           <h2>Use Whiteboarding </h2>
           <h5>The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Playground.</h5>
-          <Button url="https://layer5.io/whiteboard" style={{ marginTop: "1.5rem" }}>
+          <Button url="/whiteboard" style={{ marginTop: "1.5rem" }}>
             Learn more
           </Button>
         </div>
@@ -100,7 +100,7 @@ const PlaygroundFeatures = () => {
         <div className="feature-text">
           <h2>Brainstorm with Comments </h2>
           <h5>Playground’s Designer Mode offers a powerful collaboration feature through comments.</h5>
-          <Button url="https://layer5.io/comments" style={{ marginTop: "1.5rem" }}>
+          <Button url="/comments" style={{ marginTop: "1.5rem" }}>
             Learn more
           </Button>
         </div>
