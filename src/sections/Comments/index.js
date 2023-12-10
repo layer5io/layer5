@@ -50,6 +50,7 @@ const Comments = () => {
           </div>
         </div>
       </Container>
+      <Partners />
       <SeeYou />
 
 

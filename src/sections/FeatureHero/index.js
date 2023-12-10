@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import SectionTitle from "../../reusecore/SectionTitle";
-import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
 import FeatureHeroWrapper from "./featureHero.style";
 import { Container } from "../../reusecore/Layout";
 
@@ -11,7 +9,7 @@ const FeatureHero = (props) => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const translateY = -scrollPosition / 2.5;
+      const translateY = -scrollPosition / 16;
       scrollingImage.style.transform = `rotateX(${translateY}deg)`;
     };
 
@@ -26,16 +24,14 @@ const FeatureHero = (props) => {
   return (
     <FeatureHeroWrapper>
       <Container className={"heading-container"}>
-        <div className={"heading-image"}>
-          <SectionTitle className={"section-title"}  >
-            <h2>
-              <span className={"whiteboard-heading"}>{props.data.heading}</span>
-            </h2>
-            <span className={"whiteboard-text"}>{props.data.sub_heading}</span>
-          </SectionTitle>
-          <div className={"whiteboard-image"}>
-            <img id={"whiteboard-svg"} src={props.data.image} alt={""}/>
-          </div>
+        <div className={"section-title"} >
+          <h2 className={"whiteboard-heading"}>
+            {props.data.heading}
+          </h2>
+          <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
+        </div>
+        <div className={"whiteboard-image"}>
+          <img id={"whiteboard-svg"} src={props.data.image} alt={""} />
         </div>
       </Container>
     </FeatureHeroWrapper>
