@@ -4,9 +4,8 @@ const FeatureHeroWrapper = styled.div`
   .heading-container {
     z-index: 3;
     width: 100%;
-    overflow: hidden;
     position: relative;
-    padding: 100px 50px 0 50px ;
+    padding: 100px 0 0;
 
     .section-title {
       text-align: left;
@@ -14,27 +13,29 @@ const FeatureHeroWrapper = styled.div`
 
     .whiteboard-image{
       perspective: 1000px;
+      padding: 0 1rem;
+      &>img {
+        width: 100%;
+        margin: 2rem auto;
+      }
     }
 
     #whiteboard-svg {
       transition: transform 0.3s ease-out;
       transform-origin: top center;
-      min-width: 400px;
-    }
-
-    h2 {
-      margin: 0 0 10px 0;
     }
 
     .whiteboard-heading {
       color: ${props => props.theme.whiteToBlack} !important;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 600;
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
 
     .heading-image {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
       margin: 0 auto;
     }
 
@@ -55,24 +56,40 @@ const FeatureHeroWrapper = styled.div`
   }
 
   .whiteboard-text {
-    color: ${props => props.theme.greyA0AAAAToGrey666666}
+    color: ${props => props.theme.greyA0AAAAToGrey666666};
+    text-align: center;
+    font-size: 1.75rem;
+    line-height: 2.4rem;
+    max-width: 600px;
+    margin: 1rem auto;
+    padding: 0 1rem
+  }
+
+  @media (max-width: 768px) {
+    .whiteboard-heading{
+      font-size: 2.75rem !important;
+    }
+    .whiteboard-text {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
   }
 
   @media (max-width: 500px) {
-    .heading-image {
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     .section-title {
       margin-bottom: 1rem;
       text-align: center !important;
     }
 
     .whiteboard-heading{
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
+
+    .whiteboard-text {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
   
 `;
 
