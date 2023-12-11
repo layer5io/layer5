@@ -27,7 +27,7 @@ const CatalogWrapper = styled.div`
   .catalog-container .catalog:nth-child(odd) {
     .catalog-image {
       .image-wrapper {
-        justify-content: flex-start;
+        justify-content: center;
         @media (max-width: 767px) {
           justify-content: center;
         }
@@ -110,7 +110,7 @@ const CatalogWrapper = styled.div`
       justify-content: center;
       .image-wrapper {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         @media (max-width: 767px) {
           justify-content: center;
@@ -141,27 +141,41 @@ const Catalog = () => {
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">Harness Meshery's Compatibility</h2>
+            <h2 className="heading">Harness Well-Architected Kubernetes Patterns</h2>
             <p className="caption">
-              Easily manage and monitor your entire infrastructure, regardless
-              of the specific tools and services you use.
+                Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
+          <Col md={6} className="catalog-detail">
+            <h2 className="heading">
+            Center of Excellence: Mutli-tentant Platform Engineering Patterns
+            </h2>
+            <p className="caption">
+              Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
+            </p>
+          </Col>
+          <Col md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={Patterns} className="calalog-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={Wasm} className="calalog-image" />
+            </div>
+          </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
               Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={Wasm} className="calalog-image" />
-            </div>
-          </Col>
         </Row>
-        <Row className="catalog">
+        {/* <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
@@ -176,37 +190,20 @@ const Catalog = () => {
               high-performance, granular control over service requests.
             </p>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">
-              Deploy Applications with Meshery's Deployment Patterns
+              Policy-driven Orchestration and Control Where You Need It
             </h2>
             <p className="caption">
-              Cloud native patterns enable the business function in simple
-              language.
+              Inherent standard policy for your organization or override it at your team or individual user-level. Reconfigure Meshery's and your infrastructure's behavior whether applying policy broadly or very specifically.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={Patterns} className="calalog-image" />
-            </div>
-          </Col>
-        </Row>
-        <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Opa} className="calalog-image" />
             </div>
-          </Col>
-          <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-              Elevate Security Policies for a Revolutionary Transformation
-            </h2>
-            <p className="caption">
-              Applied across the cloud native infrastructure under management,
-              policies may be applied broadly and specifically.
-            </p>
           </Col>
         </Row>
       </Container>
