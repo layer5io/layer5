@@ -65,7 +65,7 @@ const CatalogWrapper = styled.div`
       flex-direction: column;
       justify-content: center;
       .heading {
-        font-size: 3.125rem;
+        font-size: 3rem;
         line-height: 3.813rem;
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -83,8 +83,19 @@ const CatalogWrapper = styled.div`
           margin-bottom: 1rem;
         }
         @media (max-width: 467px) {
+          font-size: 1.3rem;
           padding-left: 25px;
           padding-right: 25px;
+          text-align: left;
+        }
+      }
+      .sub-heading {
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+        @media (max-width: 467px) {
+          padding-left: 25px;
+          text-align: left;
         }
       }
       .caption {
@@ -104,6 +115,7 @@ const CatalogWrapper = styled.div`
         @media (max-width: 467px) {
           padding-left: 25px;
           padding-right: 25px;
+          text-align: left;
         }
       }
     }
@@ -145,15 +157,15 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
-            <b>Scalable Infrastructure </b>
+            <b className="sub-heading">Scalable Infrastructure </b>
             <p className="caption">
             The AWS architecture diagram tool ensures your architecture is inherently scalable from the start, making expansion a seamless process.
             </p>
-            <b>Cost-Effective Solutions </b>
+            <b className="sub-heading">Cost-Effective Solutions </b>
             <p className="caption">
             AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
             </p>
-            <b>Ensure Security and Reliability </b>
+            <b className="sub-heading">Ensure Security and Reliability </b>
             <p className="caption">
             Enhance the security and reliability of your AWS architecture by adhering to industry best practices.
             </p>
@@ -162,15 +174,15 @@ const Catalog = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Designing AWS diagrams is effortless</h2>
-            <b>Quick-start templates </b>
+            <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
             Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
             </p>
-            <b>User-friendly editor </b>
+            <b className="sub-heading">User-friendly editor </b>
             <p className="caption">
             Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
             </p>
-            <b>Extensive AWS Icon Library </b>
+            <b className="sub-heading">Extensive AWS Icon Library </b>
             <p className="caption">
             Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
@@ -189,15 +201,15 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
-            <b>Collaborate with your Team </b>
+            <b className="sub-heading">Collaborate with your Team </b>
             <p className="caption">
             Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.
             </p>
-            <b>Work from Anywhere </b>
+            <b className="sub-heading">Work from Anywhere </b>
             <p className="caption">
             Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.
             </p>
-            <b>Inclusive collaboration from start to finish </b>
+            <b className="sub-heading">Inclusive collaboration from start to finish </b>
             <p className="caption">
             MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.
             </p>
@@ -222,11 +234,11 @@ const Catalog = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Visualize your infrastructure</h2>
-            <b>Continuous visibility </b>
+            <b className="sub-heading">Continuous visibility </b>
             <p className="caption">
             Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
-            <b>Common management </b>
+            <b className="sub-heading">Common management </b>
             <p className="caption">
             Deploy designs, apply patterns, manage and operate your deployments and services in real-time.
             </p>
