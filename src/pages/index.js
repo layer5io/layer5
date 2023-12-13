@@ -14,6 +14,7 @@ import CaseStudyBanner from "../components/Case-study-banner";
 
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
+const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContainer"));
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
@@ -22,6 +23,7 @@ const IndexPage = () => {
   return (
     <>
       <Banner />
+      <FeaturesContainer />
       <Integrations />
       <Partners />
       <CornerPopup/>
