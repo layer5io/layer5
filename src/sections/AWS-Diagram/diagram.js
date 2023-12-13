@@ -20,7 +20,7 @@ const CatalogWrapper = styled.div`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding-top: 100px;
   padding-bottom: 100px;
-  @media (max-width: 468px) {
+  @media (max-width: 850px) {
     margin: 3rem 0;
   }
   @media (max-width: 767px) {
@@ -131,12 +131,11 @@ const CatalogWrapper = styled.div`
           justify-content: center;
         }
         .calalog-image {
-          max-width: 300px;
           @media (max-width: 767px) {
-            max-width: 200px;
-            margin-bottom: 20px;
+            max-width: 90%;
+            margin-bottom: 2rem;
           }
-        }
+        } 
       }
     }
   }
