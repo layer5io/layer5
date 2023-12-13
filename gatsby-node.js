@@ -38,6 +38,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
   createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/books/the-enterprise-path-to-service-mesh-architectures", toPath: "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures",
+    redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/books/the-enterprise-path-to-service-mesh-architectures-2nd-edition", toPath: "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition",
+    redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/books/istio-up-and-running", toPath: "/learn/service-mesh-books/istio-up-and-running",
+    redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
@@ -59,7 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/projects/service-mesh-performance", toPath: "/projects/cloud-native-performance", redirectInBrowser: true, isPermanent: true });
 
   //****
-  // External Resoruce Redirects
+  // External Resource Redirects
   //****
 
   // New Community Member (Google Form)
