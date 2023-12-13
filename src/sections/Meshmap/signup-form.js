@@ -51,6 +51,7 @@ const SignupForm = ({ targetRef }) => {
                   height="100%"
                   src="https://www.youtube.com/embed/034nVaQUyME?si=Xip0JqrwiG2QY5vp"
                   allow="autoplay"
+                  style={{ border: "0" }}
                   allowfullscreen
                 />
               </div>
