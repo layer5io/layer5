@@ -1,10 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
-import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import Ebpf from "../../assets/images/meshmap/ebpf.svg";
-import EbpfDark from "../../assets/images/meshmap/ebpf-dark.webp";
-import Opa from "../../assets/images/meshmap/opa.svg";
 import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
 import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -13,12 +8,11 @@ import CollImg from "./../Meshmap/FeaturesSection/Collaborate/images/collab4-col
 import DragDrop from "./../Meshmap/Meshmap-design/images/drag-drop-components.gif";
 import Visualize from "./../Meshmap/FeaturesSection/Visualize/images/visualize-2-dark.svg";
 
-const CatalogWrapper = styled.div`
+const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
   background-color: ${(props) => props.theme.body};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  padding-top: 100px;
   padding-bottom: 100px;
   @media (max-width: 850px) {
     margin: 3rem 0;
@@ -27,8 +21,8 @@ const CatalogWrapper = styled.div`
     padding-top: 0;
     padding-bottom: 0;
   }
-  .catalog-container .catalog:nth-child(odd) {
-    .catalog-image {
+  .diagram-container .catalog:nth-child(odd) {
+    .diagram-image {
       .image-wrapper {
         justify-content: center;
         @media (max-width: 767px) {
@@ -38,13 +32,13 @@ const CatalogWrapper = styled.div`
     }
   }
 
-  .catalog-container .catalog:nth-child(even) {
-    .catalog-image {
+  .diagram-container .catalog:nth-child(even) {
+    .diagram-image {
       @media (max-width: 767px) {
         order: 0;
       }
     }
-    .catalog-detail {
+    .diagram-detail {
       @media (max-width: 767px) {
         order: 1;
       }
@@ -60,7 +54,7 @@ const CatalogWrapper = styled.div`
     @media (max-width: 468px) {
       flex-direction: column;
     }
-    .catalog-detail {
+    .diagram-detail {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -119,7 +113,7 @@ const CatalogWrapper = styled.div`
         }
       }
     }
-    .catalog-image {
+    .diagram-image {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -130,7 +124,7 @@ const CatalogWrapper = styled.div`
         @media (max-width: 767px) {
           justify-content: center;
         }
-        .calalog-image {
+        .aws-image {
           @media (max-width: 767px) {
             max-width: 90%;
             margin-bottom: 2rem;
@@ -141,20 +135,20 @@ const CatalogWrapper = styled.div`
   }
 `;
 
-const Catalog = () => {
+const Aws = () => {
 
   const { isDark } = useStyledDarkMode();
 
   return (
-    <CatalogWrapper>
-      <Container className="catalog-container">
+    <DiagramWrapper>
+      <Container className="diagram-container">
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
+              <img src={isDark ? CatalogsDark : CatalogsLight} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col md={6} className="diagram-detail">
             <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Scalable Infrastructure </b>
             <p className="caption">
@@ -171,7 +165,7 @@ const Catalog = () => {
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col md={6} className="diagram-detail">
             <h2 className="heading">Designing AWS diagrams is effortless</h2>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
@@ -186,20 +180,20 @@ const Catalog = () => {
             Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDrop} className="calalog-image" />
+              <img src={DragDrop} alt="Designing AWS Diagrams with MeshMap" className="aws-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={CollImg} className="calalog-image" />
+              <img src={CollImg} alt="Collaborate with your Team for AWS Diagrams" className="aws-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
-            <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
+          <Col md={6} className="diagram-detail">
+            <h2 className="heading">Work together and instantly share with your team.</h2>
             <b className="sub-heading">Collaborate with your Team </b>
             <p className="caption">
             Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.
@@ -214,24 +208,8 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-        {/* <Row className="catalog">
-          <Col md={6} className="catalog-image">
-            <div className="image-wrapper">
-              <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
-            </div>
-          </Col>
-          <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-              Maximize Your Performance with eBPF Programs
-            </h2>
-            <p className="caption">
-              Embedded within the data plane, eBPF programs enable
-              high-performance, granular control over service requests.
-            </p>
-          </Col>
-        </Row> */}
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col md={6} className="diagram-detail">
             <h2 className="heading">Visualize your infrastructure</h2>
             <b className="sub-heading">Continuous visibility </b>
             <p className="caption">
@@ -242,15 +220,15 @@ const Catalog = () => {
             Deploy designs, apply patterns, manage and operate your deployments and services in real-time.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={Visualize} className="calalog-image" />
+              <img src={Visualize} alt="Visualize your AWS infrastructure with MeshMap" className="aws-image" />
             </div>
           </Col>
         </Row>
       </Container>
-    </CatalogWrapper>
+    </DiagramWrapper>
   );
 };
 
-export default Catalog;
+export default Aws;
