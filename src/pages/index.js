@@ -27,7 +27,6 @@ const IndexPage = () => {
       <Integrations />
       <Partners />
       <CornerPopup/>
-      {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
       <MesheryIntegration  />

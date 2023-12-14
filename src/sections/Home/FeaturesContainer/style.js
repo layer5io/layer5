@@ -7,6 +7,9 @@ export const Container = styled.div`
     .title {
         text-transform: capitalize;
         text-align: center;
+        /* span {
+            background-color: ${(props) => props.theme.secondaryColor};
+        } */
     }
 
     .subtitle {
