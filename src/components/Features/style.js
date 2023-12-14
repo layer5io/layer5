@@ -71,7 +71,7 @@ export const ImageWrapper = styled.div`
 export const ImageWrapperTwo = styled.div`
     position: relative;
     flex: 1.5; 
-    transform: translate(120px, 50px);
+    transform: translate(170px, 0px);
     transition: transform 1s ease 0s;
 
     & > img {
