@@ -11,10 +11,12 @@ import projectImage2 from "../../assets/images/app/projects/smp.webp";
 import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.webp";
 import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.webp";
 import Icon from "../../assets/images/app/projects/arrow.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 import ProjectItemWrapper from "./projectSection.style";
 
 const Projects = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <ProjectItemWrapper id="projects">
       <Container>
