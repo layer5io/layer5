@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container, ContentWrapper, ImageWrapper, ImageWrapperTwo } from "./style.js";
-import cursor from "../../assets/images/features-section/cursor.svg";
+import cursor from "./images/cursor.svg";
 
 const Features = (props) => {
 
