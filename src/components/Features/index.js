@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container, ContentWrapper, ImageWrapper } from "./style.js";
+import { Container, ContentWrapper, ImageWrapper, ImageWrapperTwo } from "./style.js";
 import cursor from "../../assets/images/features-section/cursor.svg";
 
 const Features = (props) => {
@@ -17,10 +17,11 @@ const Features = (props) => {
           <p className="text">{props.desc}</p>
           <Link to={props.redirectLink}>Learn more &rarr;</Link>
         </ContentWrapper>
-        <ImageWrapper>
+        {props.show_custom_cursor ? (<ImageWrapper>
           <img src={props.imgLink} alt="image" />
-        </ImageWrapper>
-        <div className="container" id="container"></div>
+        </ImageWrapper>) : (<ImageWrapperTwo>
+          <img src={props.imgLink} alt="image" />
+        </ImageWrapperTwo>)}
       </Container>
     </>
   );
