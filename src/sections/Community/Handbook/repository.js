@@ -179,7 +179,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
-                              <div className="accessRequired"><Link to="/community/handbook/faq" style = {{cursor : 'pointer'}}> { accessRequired != "" ? accessRequired : ""}</Link></div>
+                              <div className="accessRequired"><Link to="/community/handbook/faq/#program-permission"> { accessRequired != "" ? accessRequired : ""}</Link></div>
                             </td>
                           </tr>
                         </tbody>
