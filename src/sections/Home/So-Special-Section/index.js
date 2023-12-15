@@ -113,8 +113,17 @@ const SoSpecial = () => {
               {frontmatter ? (
                 <div id="special-cont" >
                   <div id="special-cont_img">
-                    <Image
+                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
+                    {console.log("Thumbnail:", frontmatter.thumbnail)} */}
+                    {/* <Image
                       {...((isDark && frontmatter.darkthumbnail?.publicURL !== frontmatter.thumbnail?.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      imgStyle={{ objectFit: "contain" }}
+                      alt={frontmatter.title}
+                    /> */}
+                    <Image
+
+                      {...((isDark && frontmatter.darkthumbnail?.publicURL !== frontmatter.thumbnail?.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
