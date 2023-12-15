@@ -108,13 +108,13 @@ const SoSpecial = () => {
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
-          {
-            data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Button className="special-cont_btn" url={fields.slug} key={id}>
+          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+            <Button className="special-cont_btn" url={fields.slug} key={id}>
+              {frontmatter ? (
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
-                      {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      {...((isDark && frontmatter.darkthumbnail?.publicURL !== frontmatter.thumbnail?.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
@@ -123,9 +123,11 @@ const SoSpecial = () => {
                     <p className="special-cont_para">{frontmatter.title}</p>
                   </div>
                 </div>
-              </Button>
-            ))}
-
+              ) : (
+                <p>Frontmatter is null!</p>
+              )}
+            </Button>
+          ))}
         </Slider>
       </div>
       {/* <div className="so-special-foot">
