@@ -42,7 +42,7 @@ const IndexPage = () => {
       {/* <CloudNativeLeaders /> */}
       <CaseStudyBanner/>
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
-      <EngineerEnabler />
+      {/* <EngineerEnabler /> */}
       <SubscribeSection />
 
     </>
