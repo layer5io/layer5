@@ -17,13 +17,17 @@ const Features = (props) => {
           <p className="text">{props.desc}</p>
           <Link to={props.redirectLink}>Learn more &rarr;</Link>
         </ContentWrapper>
-        <Link to={props.redirectLink}>
-          {props.animationOne ? (<ImageWrapper>
+        {/* <Link to={props.redirectLink}> */}
+        {props.animationOne ? (<ImageWrapper>
+          <Link to={props.redirectLink}>
             <img src={props.imgLink} alt="image" />
-          </ImageWrapper>) : (<ImageWrapperTwo>
+          </Link>
+        </ImageWrapper>) : (<ImageWrapperTwo>
+          <Link to={props.redirectLink}>
             <img src={props.imgLink} alt="image" />
-          </ImageWrapperTwo>)}
-        </Link>
+          </Link>
+        </ImageWrapperTwo>)}
+        {/* </Link> */}
       </Container>
     </>
   );
