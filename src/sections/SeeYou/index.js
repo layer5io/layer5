@@ -14,8 +14,8 @@ const SeeYou = () => {
     <SeeYouWrapper>
       <Container className={"see-you"} id={"see-you-canvas"}>
         <div className={"headings"}>
-          <span className={"use-heading"}><h2>See you on the <span className={"highlighted-text"}>canvas</span></h2></span>
-        Unlock your team's collaborative superpowers.
+          <span className={"use-heading"}><h2>See you in <span className={"highlighted-text"}>Meshery</span></h2></span>
+        Take the work out of teamwork.
         </div>
         <div >
           <img className={"square"} src={square} alt={""}/>
