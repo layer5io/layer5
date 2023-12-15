@@ -35,10 +35,10 @@ const Connect = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="Newsletter">
-              {" "}
-              <h2>Subscribe to Newsletter</h2>{" "}
-            </a>
+            {" "}
+            <h2>Subscribe to Newsletter</h2>{" "}
+            {/* <a id="Newsletter">
+            </a> */}
             <p>
               Don’t miss out on anything, sign up to receive updates on our
               newest releases, latest blog posts and any relevant information.
@@ -48,9 +48,7 @@ const Connect = () => {
                 <a href="https://meshery.io/subscribe">Meshery mailing list</a>
               </li>
               <li>
-                <a href="https://layer5.io/subscribe">
-                  Layer5 mailing list
-                </a>
+                <a href="https://layer5.io/subscribe">Layer5 mailing list</a>
               </li>
               <li>
                 <a href="https://smp-spec.io/subscribe">
@@ -58,10 +56,9 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Mailing Lists">
-              {" "}
-              <h2>Mailing Lists</h2>{" "}
-            </a>
+            <br /> <h2>Mailing Lists</h2>{" "}
+            {/* <a id="Mailing Lists">
+            </a> */}
             <ul>
               <li>
                 <a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a>
@@ -129,21 +126,23 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a id="Calendar">
-              {" "}
-              <h2>Calendar</h2>{" "}
-            </a>
-            <p>
-              Don’t miss out on any of the activities in the community. Join any
-              or all of the weekly meetings subscribing to the{" "}
-              <a href="https://layer5.io/community/calendar#meetings">
-                community calendar .
+            <br />
+            <div>
+              <a id="Calendar">
+                {" "}
+                <h2>Calendar</h2>{" "}
               </a>
-            </p>{" "}
-            <a id="Slack Community">
-              {" "}
-              <h2>Slack Community</h2>{" "}
-            </a>
+              <p>
+                Don’t miss out on any of the activities in the community. Join
+                any or all of the weekly meetings subscribing to the{" "}
+                <a href="https://layer5.io/community/calendar#meetings">
+                  community calendar .
+                </a>
+              </p>
+            </div>
+            <br /> <h2>Slack Community</h2>{" "}
+            {/* <a id="Slack Community">
+            </a> */}
             <p>
               We are a community of like-minded people with thousands of
               members.
@@ -176,7 +175,8 @@ const Connect = () => {
                 <a href="https://layer5io.slack.com/archives/C011VPREG2Z">
                   #meshery-ci
                 </a>{" "}
-                - For discussion on topics related to Meshery Build, Release, Workflows, DevOps.
+                - For discussion on topics related to Meshery Build, Release,
+                Workflows, DevOps.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C010LFFGFFA">
@@ -200,7 +200,8 @@ const Connect = () => {
                 <a href="https://layer5io.slack.com/archives/CVBGPTFJN">
                   #performance
                 </a>{" "}
-                - For discussions related to measuring and evaluating cloud native performance.
+                - For discussions related to measuring and evaluating cloud
+                native performance.
               </p>
               <p>
                 <a href="https://layer5io.slack.com/archives/C012UMS2MCM">
@@ -216,23 +217,25 @@ const Connect = () => {
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
             </div>
-            <a id="Discussion Forum">
-              {" "}
-              <h2>Discussion Forum</h2>{" "}
-            </a>
+            <br /> <h2>Discussion Forum</h2>{" "}
+            {/* <a id="Discussion Forum">
+            </a> */}
             <p>
               Join us on our cloud native community's{" "}
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
             <div className="channels-list">
               <ul>
-                <li><a href="https://discuss.layer5.io/c/community/12">Community Topic</a></li>
+                <li>
+                  <a href="https://discuss.layer5.io/c/community/12">
+                    Community Topic
+                  </a>
+                </li>
               </ul>
             </div>
-            <a id="Social Media">
-              {" "}
-              <h2>Social Media</h2>{" "}
-            </a>
+            <br /> <h2>Social Media</h2>{" "}
+            {/* <a id="Social Media">
+            </a> */}
             <p>
               Layer5 is dedicated to empowering engineers and supporting the
               open source community that create them. Learn more about Layer5

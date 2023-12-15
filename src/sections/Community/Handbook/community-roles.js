@@ -7,10 +7,14 @@ import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contents = [
-  { id: 0, link: "#top", text: "What are the different roles in the Layer5 community?", },
+  {
+    id: 0,
+    link: "#top",
+    text: "What are the different roles in the Layer5 community?",
+  },
   { id: 1, link: "#Community Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
-  { id: 3, link: "#Maintainer", text: "Maintainer", },
+  { id: 3, link: "#Maintainer", text: "Maintainer" },
 ];
 
 const CommunityGuide = () => {
@@ -23,25 +27,21 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="top">
-              {" "}
-              <h2>What are the roles held by individuals in the Layer5 community?</h2>{" "}
-            </a>
-
+            <h2>
+              What are the roles held by individuals in the Layer5 community?
+            </h2>
             <p>
               A leader is someone who can contribute to the Layer5 Community's
               growth by being accountable, participating in decision-making, and
               feeling responsible.
             </p>
             <h3>What does it take to be a leader?</h3>
-
             <a id="Community Manager">
               {" "}
               <h4>
                 <strong>Community Manager</strong>
               </h4>{" "}
             </a>
-
             <p>
               Roles/Responsibilities: <br />A Community Manager is a person who
               has an innate drive to contribute to the community's prosperity. A
@@ -102,7 +102,6 @@ const CommunityGuide = () => {
               An understanding of how contemporary open-source projects function
             </label>
             <br />
-
             <a id="MeshMate">
               {" "}
               <h4>
@@ -111,7 +110,6 @@ const CommunityGuide = () => {
                 </strong>
               </h4>{" "}
             </a>
-
             <p>
               <strong> Roles and Responsibilities: </strong>
               <br />
@@ -132,14 +130,12 @@ const CommunityGuide = () => {
                 <li>Facilitate newcomers call</li>
               </ul>
             </p>
-
             <a id="Maintainer">
               {" "}
               <h4>
                 <strong>Maintainer</strong>
               </h4>{" "}
             </a>
-
             <p>
               Roles/Responsibilities:
               <br />

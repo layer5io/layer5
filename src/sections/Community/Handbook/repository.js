@@ -31,7 +31,6 @@ const Repository = () => {
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
 
-
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -41,11 +40,19 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a id="top">
-              <h2>GitHub Organizations and Repositories</h2>
-            </a>
+            <h2>GitHub Organizations and Repositories</h2>
+
+            {/* <a id="top">
+            </a> */}
             <p>
-              A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
+              A brief introduction to all of the Github repositories of Layer5
+              organization is offered below. This overview serves as a resource
+              to newcomers seeking a perspective of the collective community
+              efforts (from a code-centric perspective). See{" "}
+              <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">
+                Layer5 GitHub Process
+              </a>{" "}
+              for more related information.
             </p>
 
             <p>
@@ -56,34 +63,31 @@ const Repository = () => {
             <ul className="project-org-list">
               <li>
                 <a href="https://github.com/layer5io">
-                  <img
-                    src={layer5icon}
-                    alt="layer5 icon"
-                  />
+                  <img src={layer5icon} alt="layer5 icon" />
                   &nbsp; Layer5
                 </a>
-                  - established projects like GetNighthawk, community with  MeshMates, a catch-all org.
+                - established projects like GetNighthawk, community with
+                MeshMates, a catch-all org.
               </li>
 
               <li>
                 <a href="https://github.com/meshery">
-                  <img
-                    src={meshery}
-                    alt="meshery icon"
-                  />
+                  <img src={meshery} alt="meshery icon" />
                   &nbsp; Meshery
                 </a>
-                  -  Meshery and its components
+                - Meshery and its components
                 <img
                   src={MesheryOperator}
                   alt="Meshery Operator logo"
-                  style={{ marginLeft: ".25rem",height: "1.5rem" }}
-                /> Meshery Operator
+                  style={{ marginLeft: ".25rem", height: "1.5rem" }}
+                />{" "}
+                Meshery Operator
                 <img
                   src={MeshSync}
                   alt="mesh sync icon"
-                  style={{ marginLeft: ".25rem",height: "1.5rem" }}
-                /> and MeshSync.
+                  style={{ marginLeft: ".25rem", height: "1.5rem" }}
+                />{" "}
+                and MeshSync.
               </li>
 
               <li>
@@ -94,7 +98,7 @@ const Repository = () => {
                   />
                   &nbsp; Cloud Native Performance
                 </a>
-                  - Cloud Native Performance specification and site.
+                - Cloud Native Performance specification and site.
               </li>
               <li>
                 <a href="https://github.com/service-mesh-patterns">
@@ -104,147 +108,183 @@ const Repository = () => {
                   />
                   &nbsp; Cloud Native Patterns
                 </a>
-                  - a collection of curated patterns of cloud native use cases compatible with Meshery.
+                - a collection of curated patterns of cloud native use cases
+                compatible with Meshery.
               </li>
               <li>
                 <a href="https://github.com/layer5labs">
-                  <img
-                    src={layer5icon}
-                    alt="Layer5 logo"
-                  />
+                  <img src={layer5icon} alt="Layer5 logo" />
                   &nbsp; Layer5 Labs
                 </a>
-                  - emerging projects and Meshery extensions, like
+                - emerging projects and Meshery extensions, like
                 <img
                   src={MeshMap}
                   alt="MeshMap logo"
                   style={{ height: "1.5rem" }}
-                /> MeshMap.
+                />{" "}
+                MeshMap.
               </li>
             </ul>
+            <br />
+            <div>
+              <a id="Frontend Projects">
+                <h2>Frontend Projects</h2>
+              </a>
 
-            <a id="Frontend Projects">
-              <h2>Frontend Projects</h2>
-            </a>
+              {frontendProjects.map((frontendProject, index) => {
+                const { category } = frontendProject;
+                return (
+                  <div className="table-container" key={index}>
+                    <table className="frontendTable" key={category}>
+                      <thead>
+                        <tr>
+                          <th className="linkscol">Site</th>
+                          <th>Project</th>
+                          <th>Framework</th>
+                          <th>Maintainers</th>
+                          <th className="linkscol">Repo</th>
+                        </tr>
+                      </thead>
+                      {frontendProject.subdata.map((subdata) => {
+                        const {
+                          project,
+                          language,
+                          repository,
+                          maintainers_name,
+                          site,
+                          image,
+                          link,
+                          accessRequired,
+                        } = subdata;
+                        return (
+                          <tbody key={project}>
+                            <tr>
+                              <td>
+                                <a href={site} target="_blank" rel="noreferrer">
+                                  <img
+                                    className="site-icon"
+                                    src={image}
+                                    alt="site-icon"
+                                  />
+                                </a>
+                              </td>
+                              <td>{project}</td>
+                              <td>{language}</td>
+                              <td>
+                                {maintainers_name.map((mname, index) => {
+                                  return (
+                                    <Link to={link[index]} key={index}>
+                                      <span>{index > 0 ? ", " : ""}</span>
+                                      {mname}
+                                    </Link>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                <a
+                                  href={repository}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <img
+                                    className="github-icon"
+                                    src={github}
+                                    alt="github-icon"
+                                  />
+                                </a>
+                                <div className="accessRequired">
+                                  {accessRequired != "" ? accessRequired : ""}
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        );
+                      })}
+                    </table>
+                  </div>
+                );
+              })}
+            </div>
+            <br />
+            <div>
+              <a id="Backend Projects">
+                <h2>Backend Projects</h2>
+              </a>
 
-            {frontendProjects.map((frontendProject, index) => {
-              const { category } = frontendProject;
-              return (
-                <div className="table-container" key={index}>
-                  <table className="frontendTable" key={category}>
-                    <thead>
-                      <tr>
-                        <th className="linkscol">Site</th>
-                        <th>Project</th>
-                        <th>Framework</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {frontendProject.subdata.map((subdata) => {
-                      const {
-                        project,
-                        language,
-                        repository,
-                        maintainers_name,
-                        site,
-                        image,
-                        link,
-                        accessRequired,
-                      } = subdata;
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} alt="site-icon" />
-                              </a>
-                            </td>
-                            <td>{project}</td>
-                            <td>{language}</td>
-                            <td>
-                              {maintainers_name.map((mname, index) => {
-                                return (
-                                  <Link to={link[index]} key={index}>
-                                    <span>{index > 0 ? ", " : ""}</span>{mname}
-                                  </Link>
-                                );
-                              })}
-                            </td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img className="github-icon" src={github} alt="github-icon" />
-                              </a>
-                              <div className="accessRequired">{ accessRequired != "" ? accessRequired : ""}</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
-            <a id="Backend Projects">
-              <h2>Backend Projects</h2>
-            </a>
+              {backendProjects.map((backendProject, index) => {
+                const { category } = backendProject;
+                return (
+                  <div className="table-container" key={index}>
+                    <table key={category}>
+                      <thead>
+                        <tr>
+                          <th>{category}</th>
+                          <th>Language</th>
+                          <th>Description</th>
+                          <th>Maintainers</th>
+                          <th className="linkscol">Repo</th>
+                        </tr>
+                      </thead>
+                      {backendProject.subdata.map((subdata) => {
+                        const {
+                          project,
+                          image,
+                          language,
+                          description,
+                          repository,
+                          link,
+                          maintainers_name,
+                        } = subdata;
 
-            {backendProjects.map((backendProject, index) => {
-              const { category } = backendProject;
-              return (
-                <div className="table-container" key={index}>
-                  <table key={category}>
-                    <thead>
-                      <tr>
-                        <th>{category}</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {backendProject.subdata.map((subdata) => {
-                      const { project,image,language,description,repository,link,maintainers_name } = subdata;
-                      const smpClass = project === "SMP Action";
-                      const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
-                            <td>{language}</td>
-                            <td>{description}</td>
-                            <td>
-                              {maintainers_name?.map((mname, index) => {
-                                return (
-                                  <Link to={link[index]} key={index}>
-                                    <span>{index > 0 ? ", " : ""}</span>
-                                    {mname}
-                                  </Link>
-                                );
-                              })}
-                            </td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img className="github-icon" src={github} alt="github-icon" />
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
+                        const smpClass = project === "SMP Action";
+                        const siteIconClasses = smpClass
+                          ? "site-icon inline smp-action"
+                          : "site-icon inline";
+                        return (
+                          <tbody key={project}>
+                            <tr>
+                              <td>
+                                <img
+                                  className={siteIconClasses}
+                                  src={image}
+                                  alt="project"
+                                />
+                                &nbsp;{project}{" "}
+                              </td>
+                              <td>{language}</td>
+                              <td>{description}</td>
+                              <td>
+                                {maintainers_name?.map((mname, index) => {
+                                  return (
+                                    <Link to={link[index]} key={index}>
+                                      <span>{index > 0 ? ", " : ""}</span>
+                                      {mname}
+                                    </Link>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                <a
+                                  href={repository}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <img
+                                    className="github-icon"
+                                    src={github}
+                                    alt="github-icon"
+                                  />
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        );
+                      })}
+                    </table>
+                  </div>
+                );
+              })}
+            </div>
             <TocPagination />
           </div>
         </Container>

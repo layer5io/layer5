@@ -44,24 +44,38 @@ const Maintainer = () => {
         <Container>
           <div className="content">
             <p>
-
               <a id="Layer5">
                 {" "}
-                <h3 className="heading-top">
+                <h2 className="heading-top">
                   <a href="https://layer5.io/">
-                    <img className="project-title-icon" src={layer5icon} alt="Layer5" />
+                    <img
+                      className="project-title-icon"
+                      src={layer5icon}
+                      alt="Layer5"
+                    />
                     &nbsp; Layer5{" "}
                   </a>
-                </h3>{" "}
+                </h2>{" "}
               </a>
-
             </p>
             <p>
-
               Its cloud native community represents the largest collection of
               cloud native projects. Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
+              <img
+                className="project-description-icon"
+                src={hawkIcon}
+                alt="Nighthawk Icon"
+              />{" "}
+              , community with{" "}
+              <Link to="/community/meshmates">
+                <img
+                  className="project-description-icon"
+                  src={meshmateicon}
+                  alt="MeshMate icon"
+                />{" "}
+                MeshMates{" "}
+              </Link>
+              , catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -102,27 +116,40 @@ const Maintainer = () => {
                   characterization tool. Nighthawk is Envoy’s load generator and
                   is written in C++. Meshery integrates Nighthawk as one of
                   (currently) three choices of load generators for
-                  characterizing and managing the performance of cloud native infrastructure (e.g. Kubernetes and Docker) and their services. <br />
+                  characterizing and managing the performance of cloud native
+                  infrastructure (e.g. Kubernetes and Docker) and their
+                  services. <br />
                 </p>
               </ul>
             </p>
             <p>
-
               <a id="Meshery">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/cloud-native-management/meshery">
-                    <img className="project-title-icon" src={meshery} alt="Meshery" />
+                    <img
+                      className="project-title-icon"
+                      src={meshery}
+                      alt="Meshery"
+                    />
                     &nbsp; Meshery
                   </a>
                 </h3>{" "}
               </a>
-
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
+              <img
+                className="project-description-icon"
+                src={mesheryoperatoricon}
+                alt="Meshery Operator Icon"
+              />{" "}
+              and MeshSync{" "}
+              <img
+                className="project-description-icon"
+                src={mesherysyncicon}
+                alt="MeshSync icon"
+              />
               <ul>
                 <li>
                   <h4>
@@ -133,9 +160,12 @@ const Maintainer = () => {
                 </li>
                 <p>
                   It is a cloud native management plane offering lifecycle
-                  management of more types of cloud native infrastrcture than any other tool                  available today. Meshery facilitates adopting, configuring,
-                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics
-                  from applications running on top of any service mesh.
+                  management of more types of cloud native infrastrcture than
+                  any other tool available today. Meshery facilitates adopting,
+                  configuring, operating, and managing the performance of
+                  Kuberenetes workloads and incorporates the collection and
+                  display of metrics from applications running on top of any
+                  service mesh.
                   <br />{" "}
                 </p>
                 <li>
@@ -165,7 +195,10 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: cloud native infra. <br />
+                  The Docker Extension for Meshery extends Docker Desktop’s
+                  position as the cloud native developer’s go-to Kubernetes
+                  environment with easy access to the next layer of cloud native
+                  infrastructure: cloud native infra. <br />
                 </p>
                 <li>
                   <h4>
@@ -175,7 +208,11 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. <br />
+                  As a central hub for sharing cloud native infrastructure
+                  designs, Meshery Catalog enables the exchange of the best
+                  practices, reusable templates, and Kubernetes-based
+                  operational patterns for multi-cluster Kubernetes clusters and
+                  distributed applications. <br />
                 </p>
               </ul>
             </p>
@@ -200,13 +237,12 @@ const Maintainer = () => {
                 The Cloud Native Performance (SMP)
               </a>{" "}
               is a vendor-neutral specification for capturing details of
-              environment and infrastructure details, cloud native infrastrcture and it’s
-              configuration, service/application details, and bundling of
-              statistical analysis of the result. <br />
+              environment and infrastructure details, cloud native infrastrcture
+              and it’s configuration, service/application details, and bundling
+              of statistical analysis of the result. <br />
             </p>
 
             <p>
-
               <a id="Cloud Native Patterns">
                 {" "}
                 <h3>

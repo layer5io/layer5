@@ -23,9 +23,9 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             {" "}
-            <a id="Community Guidelines">
-              <h2 id="communityGuidelines">Community Guidelines</h2>
-            </a>
+            <h2 id="communityGuidelines">Community Guidelines</h2>
+            {/* <a id="Community Guidelines">
+            </a> */}
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and
               handhold you for your first contribution. Here are some tips to

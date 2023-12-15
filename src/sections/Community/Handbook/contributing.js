@@ -29,13 +29,18 @@ const contributingGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <h2 className="heading-top">General contribution flow</h2>
+
+          <h2 className="heading-top">General Contribution Flow</h2>
+
           <p>
             Pull requests (PRs) are the best ways to propose changes to a
             project repository. At Layer5 org, we use the Github Flow:
           </p>
           <div className="content">
-            <a id="Clone your fork">  <h3>Clone your fork to your local machine</h3> </a>
+            <a id="Clone your fork">
+              {" "}
+              <h3>Clone your fork to your local machine</h3>{" "}
+            </a>
             <ul>
               <li>Fork the repository you are working on.</li>
               <li>
@@ -78,7 +83,10 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Checkout a new branch">  <h3>Create and checkout a new branch</h3> </a>
+            <a id="Checkout a new branch">
+              {" "}
+              <h3>Create and checkout a new branch</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -127,7 +135,10 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Commit your changes">  <h3>Commit the changes made</h3> </a>
+            <a id="Commit your changes">
+              {" "}
+              <h3>Commit the changes made</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -139,19 +150,21 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id="Sign-off commits"> <h3>
+            <a id="Sign-off commits">
+              {" "}
+              <h3>
                 Make sure to{" "}
-              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
+                <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
                   Sign-off
-              </a>{" "}
+                </a>{" "}
                 on your Commits (Developer Certificate of Origin)
-            </h3>
+              </h3>
             </a>
             <p>
               To contribute to this project, you must agree to the Developer
               Certificate of Origin (DCO) for each commit you make. The DCO is a
-              simple statement that you, as a contributor, have the legal right to
-              contribute.{" "}
+              simple statement that you, as a contributor, have the legal right
+              to contribute.{" "}
             </p>
             <p>
               To signify that you agree to the DCO for contributions, you simply
@@ -161,10 +174,11 @@ const contributingGuide = () => {
               <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
             </div>
             <p>
-              In most cases, you can add this signoff to your commit automatically
-              with the -s or --signoff flag to git commit. You must use your real
-              name and a reachable email address (sorry, no pseudonyms or
-              anonymous contributions). An example of signing off on a commit:
+              In most cases, you can add this signoff to your commit
+              automatically with the -s or --signoff flag to git commit. You
+              must use your real name and a reachable email address (sorry, no
+              pseudonyms or anonymous contributions). An example of signing off
+              on a commit:
             </p>
             <div className="codes">
               <Code codeString="$ commit -s -m “my commit message w/signoff”" />
@@ -188,7 +202,10 @@ const contributingGuide = () => {
             </p>
             <StaticImage src={Signoff} id="sign-off" alt="Signoff" />
 
-            <a id="Push changes to Github">  <h3>Push changes to Github</h3> </a>
+            <a id="Push changes to Github">
+              {" "}
+              <h3>Push changes to Github</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
@@ -199,26 +216,37 @@ const contributingGuide = () => {
                 </span>
               </li>
             </ul>
-            <a id="Create a pull request">  <h3>Create a pull request (PR)</h3> </a>
+            <a id="Create a pull request">
+              {" "}
+              <h3>Create a pull request (PR)</h3>{" "}
+            </a>
             <ul>
               <li>
                 <span>
-                  Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
+                  Head over to your forked repository on GitHub and you'll see a
+                  Compare & pull request button. Click on that button.
                 </span>
-                <br/>
+                <br />
                 <span>
-                  Note: Please ensure that the right branch is selected for the PR.
+                  Note: Please ensure that the right branch is selected for the
+                  PR.
                 </span>
                 <div>
                   <br />
-                  <StaticImage src={compareAndPR} alt="Compare and pull request" />
+                  <StaticImage
+                    src={compareAndPR}
+                    alt="Compare and pull request"
+                  />
                 </div>
               </li>
             </ul>
             <ul>
               <li>
                 <span>
-                  Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
+                  Once you click on the button, you'll be taken to the Pull
+                  Request page. Here, you can add a title and description to
+                  your pull request that explains your contribution. Once you're
+                  done, click on the Create pull request button.
                 </span>
                 <div>
                   <br />
@@ -230,7 +258,12 @@ const contributingGuide = () => {
           </div>
           <h2>Handling PRs Made Without Being Assigned</h2>
           <p>
-          At <a href="https://layer5.io/">Layer5</a>, we usually suggest to contributors that they ask maintainers to assign them to the issue they want to work on. But sometimes, pull requests that aren't assigned to anyone can be found. In such cases, it's important to be flexible and ready to adapt. Here are some simple guidelines for dealing with these unassigned contributions:
+            At <a href="https://layer5.io/">Layer5</a>, we usually suggest to
+            contributors that they ask maintainers to assign them to the issue
+            they want to work on. But sometimes, pull requests that aren't
+            assigned to anyone can be found. In such cases, it's important to be
+            flexible and ready to adapt. Here are some simple guidelines for
+            dealing with these unassigned contributions:
           </p>
           <ol>
             <li>
@@ -264,11 +297,11 @@ const contributingGuide = () => {
               <ul>
                 <li>
                   <p>
-                    <strong>Communication:</strong> Reach out to the
-                    contributor who made the unassigned PR in a friendly and
-                    respectful manner. Express gratitude for their contribution
-                    and explain the importance of assigning PRs to maintain
-                    transparency and collaboration within the community.
+                    <strong>Communication:</strong> Reach out to the contributor
+                    who made the unassigned PR in a friendly and respectful
+                    manner. Express gratitude for their contribution and explain
+                    the importance of assigning PRs to maintain transparency and
+                    collaboration within the community.
                   </p>
                 </li>
                 <li>
@@ -297,10 +330,9 @@ const contributingGuide = () => {
               <ul>
                 <li>
                   <p>
-                    <strong>Balance:</strong> Strive to strike a balance
-                    between maintaining a welcoming and inclusive community (#2)
-                    and ensuring that the project continues to make progress
-                    (#1).
+                    <strong>Balance:</strong> Strive to strike a balance between
+                    maintaining a welcoming and inclusive community (#2) and
+                    ensuring that the project continues to make progress (#1).
                   </p>
                 </li>
                 <li>
@@ -316,35 +348,72 @@ const contributingGuide = () => {
                     <strong>If necessary, reassign:</strong> If the contributor
                     is unresponsive or unable to assign the PR correctly, you
                     may consider reassigning the PR to an appropriate
-                    contributor or assigning it to yourself to ensure it
-                    doesn't go unnoticed.
+                    contributor or assigning it to yourself to ensure it doesn't
+                    go unnoticed.
                   </p>
                 </li>
               </ul>
             </li>
             <li>
               <p>
-                <strong>
-                Contributor Guidance:
-                </strong>
+                <strong>Contributor Guidance:</strong>
               </p>
               <ul>
                 <li>
                   <p>
-                    <strong>How you should:</strong> As a contributor, it's important to follow the project's guidelines. Start by identifying a suitable issue or create one if necessary. Afterward, kindly request assignment or express your interest in working on the issue by commenting on it. This ensures that maintainers are aware of your intentions and can provide guidance or assign the issue appropriately. Once assigned, proceed with your work and submit a pull request.
-                    <br/><strong>Example:</strong> <a href="https://github.com/layer5io/layer5/issues/3889">Hover animation on different integration category #3889</a>
+                    <strong>How you should:</strong> As a contributor, it's
+                    important to follow the project's guidelines. Start by
+                    identifying a suitable issue or create one if necessary.
+                    Afterward, kindly request assignment or express your
+                    interest in working on the issue by commenting on it. This
+                    ensures that maintainers are aware of your intentions and
+                    can provide guidance or assign the issue appropriately. Once
+                    assigned, proceed with your work and submit a pull request.
+                    <br />
+                    <strong>Example:</strong>{" "}
+                    <a href="https://github.com/layer5io/layer5/issues/3889">
+                      Hover animation on different integration category #3889
+                    </a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <strong>How you should not:</strong> Avoid starting work on an issue and creating a pull request without prior communication or assignment. Jumping directly into the code can lead to misunderstandings and duplicate efforts. Instead, take a moment to engage with the maintainers and community by discussing your interest in the issue and seeking assignment before submitting a pull request. This promotes transparency and effective collaboration within the project.
-                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery/issues/8757">[MeshModel] [UX]: Icon for Kubernetes Component - Endpoints #8757</a>
+                    <strong>How you should not:</strong> Avoid starting work on
+                    an issue and creating a pull request without prior
+                    communication or assignment. Jumping directly into the code
+                    can lead to misunderstandings and duplicate efforts.
+                    Instead, take a moment to engage with the maintainers and
+                    community by discussing your interest in the issue and
+                    seeking assignment before submitting a pull request. This
+                    promotes transparency and effective collaboration within the
+                    project.
+                    <br />
+                    <strong>Example:</strong>{" "}
+                    <a href="https://github.com/meshery/meshery/issues/8757">
+                      [MeshModel] [UX]: Icon for Kubernetes Component -
+                      Endpoints #8757
+                    </a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <strong>Requesting Reassignment:</strong> If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If the assignee is not responsive or there has been no progress on the issue for a long time and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
-                    <br/><strong>Example:</strong> <a href="https://github.com/meshery/meshery-nsm/issues/169">[chore] update Go to 1.21, and update relevant pkgs #169</a>
+                    <strong>Requesting Reassignment:</strong> If you are
+                    interested in working on an issue that is already assigned
+                    to someone else, it's important to respect their efforts and
+                    contributions. First, politely reach out to the assignee and
+                    express your interest in collaborating on the issue. Discuss
+                    the possibility of working together or sharing the workload.
+                    If the assignee agrees or is open to collaboration, you can
+                    proceed. If the assignee is not responsive or there has been
+                    no progress on the issue for a long time and the issue
+                    aligns with your skills and interests, kindly request
+                    reassignment from the maintainers, providing a clear and
+                    courteous explanation for the request.
+                    <br />
+                    <strong>Example:</strong>{" "}
+                    <a href="https://github.com/meshery/meshery-nsm/issues/169">
+                      [chore] update Go to 1.21, and update relevant pkgs #169
+                    </a>
                   </p>
                 </li>
               </ul>
