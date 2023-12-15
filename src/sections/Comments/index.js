@@ -39,7 +39,6 @@ const Comments = () => {
   return (
     <CommentsWrapper>
       <FeatureHero data={data} />
-
       <Container>
         <div className={"feature-use-container"}>
           <div>
@@ -54,6 +53,8 @@ const Comments = () => {
       </Container>
       <Partners />
       <SeeYou />
+
+
     </CommentsWrapper>
   );
 };

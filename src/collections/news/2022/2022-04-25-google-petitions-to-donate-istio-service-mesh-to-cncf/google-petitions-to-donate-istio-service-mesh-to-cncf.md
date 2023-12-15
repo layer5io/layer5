@@ -6,6 +6,7 @@ author: Container Journal
 category: Coverage
 thumbnail: istio-to-cncf.webp
 darkthumbnail: istio-to-cncf.webp
+description: "Google and Istio Steering Committee submit Istio service mesh to CNCF for incubation, aiming for closer collaboration with Kubernetes. Service mesh competition focuses on feature richness and applicability to both cloud-native and legacy environments, becoming integral in DevOps workflows."
 eurl: https://containerjournal.com/features/google-petitions-to-donate-istio-service-mesh-to-cncf/
 published: true
 type: News

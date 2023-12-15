@@ -11,9 +11,10 @@ const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"
 const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
 
-
+const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
 const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
+const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContainer"));
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
@@ -22,10 +23,10 @@ const IndexPage = () => {
   return (
     <>
       <Banner />
+      <FeaturesContainer />
       <Integrations />
       <Partners />
       <CornerPopup/>
-      {/* <Features /> */}
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
       <MesheryIntegration  />
@@ -40,8 +41,8 @@ const IndexPage = () => {
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
       <CaseStudyBanner/>
-      <ServiceMeshFocussed bookName={"enterprise-path"} />
-      {/* <EngineerEnabler /> */}
+      {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
+      <EngineerEnabler />
       <SubscribeSection />
 
     </>
