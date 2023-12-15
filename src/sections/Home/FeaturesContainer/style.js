@@ -7,9 +7,14 @@ export const Container = styled.div`
     .title {
         text-transform: capitalize;
         text-align: center;
-        /* span {
+        font-weight: 400;
+         span {
+            padding: 0 1rem;
+            border-radius: 0.25rem;
             background-color: ${(props) => props.theme.secondaryColor};
-        } */
+            color: ${(props) => props.theme.white};
+            font-weight: 700;
+        } 
     }
 
     .subtitle {
