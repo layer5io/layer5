@@ -90,6 +90,25 @@ const Faq = () => {
               Once you've completed these steps, you should have access to the
               community docs, otherwise please reach out to any of the Community Managers or MeshMates.
             </p>
+            <h4>Q: What are "Participation Required" projects, and how can I get an invitation?</h4>
+            <p>A: "Participation Required" projects are special initiatives accessible through invitation only. To receive an invitation, show your active involvement within the community and highlight your enthusiasm and practical skills that can contribute meaningfully to projects. Our Community Managers, MeshMates, and Maintainers meet weekly to recognize outstanding contributors and extend invitations to those who excel.
+              <ul>
+                <li>
+                Q: How does the invitation process work?
+                <p>
+                A: The invitation process involves a two-week trial period for those invited. During this time, participants receive training and support while participating in core team meetings. This trial period is an opportunity for individuals to evaluate their interest in joining the program long-term and to demonstrate their ability to positively contribute.
+                </p>
+                <li>
+                Q: What can I expect as a program participant?
+                <p>A: Program participants receive strong support and experience rapid personal and professional growth. Their contributions are often celebrated on conference stages, highlighting their achievements. While the programs are intense, the experience is truly rewarding. Each participant commits to maintaining a specific level of daily participation, ensuring a dynamic and collaborative environment.</p>
+                </li>
+                <li>
+                Q: How can I express my interest and inquire about these programs?
+                <p>A: If you're interested in exploring these opportunities, reach out to a <Link to="/community/community-managers"> Community Manager</Link>, <Link to="/community/meshmates" >MeshMate</Link>, or <Link to="/community/members">Maintainer</Link>. They are your contacts for inquiries, guidance, and expressing your interest in becoming part of these transformative programs.</p>
+                </li>
+              </li>
+              </ul>
+            </p>
 
 
             {/* <p>Q: Why does the community use slack?</p>
