@@ -59,25 +59,16 @@ const DiagramWrapper = styled.div`
       flex-direction: column;
       justify-content: center;
       .heading {
-        font-size: 3rem;
-        line-height: 3.813rem;
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         margin-bottom: 2rem;
-        @media (max-width: 992px) {
-          font-size: 2.8rem;
-          line-height: 3rem;
-        }
         @media (max-width: 767px) {
-          font-size: 2rem;
-          line-height: 2.5rem;
           text-align: center;
           padding-left: 100px;
           padding-right: 100px;
           margin-bottom: 1rem;
         }
         @media (max-width: 467px) {
-          font-size: 1.3rem;
           padding-left: 25px;
           padding-right: 25px;
           text-align: left;
@@ -149,7 +140,7 @@ const Aws = () => {
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
+            <h1 className="heading">AWS architectural diagrams tailored to meet any requirement</h1>
             <b className="sub-heading">Scalable Infrastructure </b>
             <p className="caption">
             The AWS architecture diagram tool ensures your architecture is inherently scalable from the start, making expansion a seamless process.
@@ -166,7 +157,7 @@ const Aws = () => {
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">Designing AWS diagrams is effortless</h2>
+            <h1 className="heading">Designing AWS diagrams is effortless</h1>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
             Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
@@ -193,7 +184,7 @@ const Aws = () => {
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">Work together and instantly share with your team.</h2>
+            <h1 className="heading">Work together and instantly share with your team.</h1>
             <b className="sub-heading">Collaborate with your Team </b>
             <p className="caption">
             Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.
@@ -210,7 +201,7 @@ const Aws = () => {
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">Visualize your infrastructure</h2>
+            <h1 className="heading">Visualize your infrastructure</h1>
             <b className="sub-heading">Continuous visibility </b>
             <p className="caption">
             Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.
