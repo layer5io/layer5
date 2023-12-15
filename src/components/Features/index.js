@@ -18,7 +18,7 @@ const Features = (props) => {
           <Link to={props.redirectLink}>Learn more &rarr;</Link>
         </ContentWrapper>
         <Link to={props.redirectLink}>
-          {props.show_custom_cursor ? (<ImageWrapper>
+          {props.animationOne ? (<ImageWrapper>
             <img src={props.imgLink} alt="image" />
           </ImageWrapper>) : (<ImageWrapperTwo>
             <img src={props.imgLink} alt="image" />
