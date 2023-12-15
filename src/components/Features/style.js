@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     border-radius: 1rem;
-    border: 2px solid ${props => props.theme.primaryLightColor};
-    background: ${props => props.theme.grey191919ToGreyFAFAFA};
+    background: ${props => props.theme.grey191919ToGreyF2F5F7};
     position: relative;
     display: flex;
     align-items: center;
