@@ -8,11 +8,9 @@ export const Container = styled.div`
         text-transform: capitalize;
         text-align: center;
         font-weight: 400;
+        color: ${props => props.theme.greyDEE3DEToGreen3C494F};
          span {
-            padding: 0 1rem;
-            border-radius: 0.25rem;
-            background-color: ${(props) => props.theme.secondaryColor};
-            color: ${(props) => props.theme.white};
+            color: ${(props) => props.theme.text};
             font-weight: 700;
         } 
     }
