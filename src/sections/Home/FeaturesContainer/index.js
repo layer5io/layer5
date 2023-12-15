@@ -4,7 +4,8 @@ import React from "react";
 import Features from "../../../components/Features/index.js";
 import WhiteboardingImage from "./images/whiteboarding.svg";
 import WhiteboardingImageLight from "./images/whiteboarding-light.svg";
-import CommentingImage from "./images/commenting.svg";
+import CommentingImageDark from "./images/commenting.svg";
+import CommentingImageLight from "./images/commenting-white.svg";
 // Named imports
 import { Container } from "./style.js";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode.js";
@@ -16,10 +17,10 @@ const FeaturesContainer = () => {
   return (
     <>
       <Container>
-        <h1 className="title">Deploy faster together with complete <span>Confidence</span></h1>
+        <h1 className="title">Deploy <i>faster </i>together with <span>Confidence</span></h1>
         <p className="subtitle">Give your team full application visibility at every layer so the team can ship, refactor and onboard faster.</p>
         {/* Tools to help you scale your cloud native infrastructure */}
-        <Features title="Collaborate with Precision" show_custom_cursor={true} redirectLink="/comments" desc="Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls." imgLink={CommentingImage}/>
+        <Features title="Collaborate with Precision" show_custom_cursor={true} animationOne = {true} redirectLink="/comments" desc="Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls." imgLink={isDark ? CommentingImageDark : CommentingImageLight}/>
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}
         <Features title="Generate stunning diagrams" show_custom_cursor={true} redirectLink="/whiteboard" desc="Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration." imgLink={isDark ? WhiteboardingImage : WhiteboardingImageLight}/>
       </Container>
