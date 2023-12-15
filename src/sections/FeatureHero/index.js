@@ -11,7 +11,7 @@ const FeatureHero = (props) => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const translateY = -scrollPosition / 5;
+      const translateY = -scrollPosition / 2.5;
       scrollingImage.style.transform = `rotateX(${translateY}deg)`;
     };
 
