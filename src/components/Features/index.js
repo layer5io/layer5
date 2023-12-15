@@ -17,11 +17,13 @@ const Features = (props) => {
           <p className="text">{props.desc}</p>
           <Link to={props.redirectLink}>Learn more &rarr;</Link>
         </ContentWrapper>
-        {props.show_custom_cursor ? (<ImageWrapper>
-          <img src={props.imgLink} alt="image" />
-        </ImageWrapper>) : (<ImageWrapperTwo>
-          <img src={props.imgLink} alt="image" />
-        </ImageWrapperTwo>)}
+        <Link to={props.redirectLink}>
+          {props.show_custom_cursor ? (<ImageWrapper>
+            <img src={props.imgLink} alt="image" />
+          </ImageWrapper>) : (<ImageWrapperTwo>
+            <img src={props.imgLink} alt="image" />
+          </ImageWrapperTwo>)}
+        </Link>
       </Container>
     </>
   );
