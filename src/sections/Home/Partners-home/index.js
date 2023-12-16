@@ -26,7 +26,7 @@ const settings = {
   ],
 };
 
-const EngagingSection = () => {
+const Projects = () => {
   const [showEngagingSection, setShowEngagingSection] = useState(false);
 
   useEffect(() => {
@@ -69,4 +69,4 @@ const EngagingSection = () => {
   );
 };
 
-export default EngagingSection;
+export default Projects;
