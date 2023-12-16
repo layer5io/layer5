@@ -150,8 +150,17 @@ const FooterWrapper = styled.section`
 			display: none;
 		}
 	}
-
-	@media only screen and (max-width: 1199px) and (min-width: 704px) {
+	@media only screen and (max-width: 702px) and (min-width: 662px) {
+		.subscribe {
+			margin-top: -7rem;
+		}
+	}
+	@media only screen and (max-width: 798px) and (min-width: 768px) {
+		.subscribe {
+			margin-top: -7rem;
+		}
+	}
+	@media only screen and (max-width: 1032px) and (min-width: 992px) {
 		.subscribe {
 			margin-top: -7rem;
 		}
