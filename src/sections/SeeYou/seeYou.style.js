@@ -55,7 +55,8 @@ const SeeYouWrapper = styled.div`
 
     .cursor_1 {
       animation-duration: 4s;
-      right: 40%;
+      bottom: 14%;
+      right: 15%;
       height: 50px;
 
     }

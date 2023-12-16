@@ -61,7 +61,7 @@ const BannerDefault = () => {
                       primary
                       className="join-community-button"
                       title="Extend your control"
-                      url="/projects"
+                      url="/cloud-native-management/meshery"
                     />
                   </div>
                 </SectionTitle>
