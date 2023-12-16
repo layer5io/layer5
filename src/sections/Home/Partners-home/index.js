@@ -34,8 +34,6 @@ const EngagingSection = () => {
     const timeoutId = setTimeout(() => {
       setShowEngagingSection(true);
     }, 3000);
-
-    
     return () => clearTimeout(timeoutId);
   }, []);
 
