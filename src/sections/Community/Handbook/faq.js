@@ -90,7 +90,7 @@ const Faq = () => {
               Once you've completed these steps, you should have access to the
               community docs, otherwise please reach out to any of the Community Managers or MeshMates.
             </p>
-            
+
 
             {/* <p>Q: Why does the community use slack?</p>
             <p>A:</p>
