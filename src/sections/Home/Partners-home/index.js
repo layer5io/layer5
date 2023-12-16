@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -21,36 +21,54 @@ const settings = {
   responsive: [
     {
       breakpoint: 1400,
-      settings: "unslick"
-    }
-  ]
+      settings: "unslick",
+    },
+  ],
 };
 
-const Projects = () => {
+const EngagingSection = () => {
+  const [showEngagingSection, setShowEngagingSection] = useState(false);
+
+  useEffect(() => {
+    //This timeout has been intentionally added to prevent unwanted artifacts in this section from affecting the hero section
+    const timeoutId = setTimeout(() => {
+      setShowEngagingSection(true);
+    }, 3000);
+
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <PartnerItemWrapper>
       <Container>
         <Row>
-          <SectionTitle
-            className="section-title"
-            leftAlign={true}
-            UniWidth="75%"
-          >
+          <SectionTitle className="section-title" leftAlign={true} UniWidth="75%">
             <h4>ENGAGING AND COLLABORATING WITH</h4>
           </SectionTitle>
         </Row>
       </Container>
-      <Slider {...settings}>
-        {partners.map((partner, index) => (
-          <Link className="partner-card" to={partner.imageRoute} key={index}>
-            <div className={partner.innerDivStyle}>
-              <img className="partner-image" id={partner.name} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
-            </div>
-          </Link>
-        ))}
-      </Slider>
+      {showEngagingSection && (
+        <Slider {...settings}>
+          {partners.map((partner, index) => (
+            <Link className="partner-card" to={partner.imageRoute} key={index}>
+              <div className={partner.innerDivStyle}>
+                <img
+                  className="partner-image"
+                  id={partner.name}
+                  loading="lazy"
+                  src={partner.imageLink}
+                  alt={partner.name}
+                  width={partner.imageWidth}
+                  height={partner.imageHeight}
+                />
+              </div>
+            </Link>
+          ))}
+        </Slider>
+      )}
     </PartnerItemWrapper>
   );
 };
 
-export default Projects;
+export default EngagingSection;
