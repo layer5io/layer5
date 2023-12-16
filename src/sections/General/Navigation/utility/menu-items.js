@@ -224,7 +224,7 @@ const Data = {
           path: "/community/calendar",
         },
         {
-          name: "Recognition Programs",
+          name: "Recognition Program",
           path: "https://badges.layer5.io/",
           sepLine: true
         },
