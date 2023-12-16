@@ -225,7 +225,7 @@ const Data = {
         },
         {
           name: "Recognition Program",
-          path: "https://badges.layer5.io/",
+          path: "https://badges.layer5.io",
           sepLine: true
         },
       ],
