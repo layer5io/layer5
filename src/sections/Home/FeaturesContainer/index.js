@@ -32,7 +32,7 @@ const FeaturesContainer = () => {
           redirectLink="/comments"
           desc="Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls."
           imgLink={isDark ? CommentingImageDark : CommentingImageLight}
-          index={0}
+          cursor={0}
         />
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}
         <Features
@@ -41,7 +41,6 @@ const FeaturesContainer = () => {
           redirectLink="/whiteboard"
           desc="Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration."
           imgLink={isDark ? WhiteboardingImage : WhiteboardingImageLight}
-          index={1}
         />
       </Container>
       {/* a suite of annotation and visualization tools, allowing users to draw, annotate, and collaborate in real-time on their cloud native designs. */}
