@@ -27,11 +27,13 @@ const Features = (props) => {
 
       const moveRandomly = (element) => {
         const rect = container.getBoundingClientRect();
-        const maxX = rect.width;
-        const maxY = rect.height;
+
+        const maxX = rect.width - element.clientWidth - 50;
+        const maxY = rect.height - element.clientHeight - 50;
         const randomX = Math.floor(Math.random() * maxX);
-        const halfMaxY = maxY / 2;
-        const randomY = Math.floor(Math.random() * (maxY + 1)) - halfMaxY;
+        // const halfMaxY = maxY / 2;
+        console.log(maxX, maxY, "here");
+        const randomY = Math.floor(Math.random() * (maxY + 1));
 
         element.style.transition = "transform 3s ease";
         element.style.transform = `translate(${randomX}px, ${randomY}px)`;
@@ -43,8 +45,8 @@ const Features = (props) => {
 
       const setInitialRandomPosition = (element) => {
         const rect = container.getBoundingClientRect();
-        const maxX = rect.width - element.clientWidth;
-        const maxY = rect.height - element.clientHeight;
+        const maxX = rect.width - element.clientWidth - 50;
+        const maxY = rect.height - element.clientHeight - 50;
         const randomX = Math.floor(Math.random() * maxX);
         const randomY = Math.floor(Math.random() * maxY);
 
@@ -84,44 +86,63 @@ const Features = (props) => {
   };
   return (
     <Container
-      ref={containerRef}
       style={style}
       onMouseEnter={mouseEnterEvent}
       onMouseLeave={mouseLeaveEvent}
     >
-      <SvgRandomWrapper
-        className="person1"
-        style={{ display: props.cursor ? "none" : "" }}
-      >
-        {waveStart && (
-          <img
-            src={wave}
-            alt=""
-            style={{ position: "absolute" }}
-            className="waveAnimation"
-          />
-        )}
-        <img src={getPerson(props.cursor * 2)} alt="" />
-      </SvgRandomWrapper>
-      <SvgRandomWrapper
-        className="person2"
-        style={{ display: props.cursor ? "none" : "" }}
-      >
-        <img src={getPerson(props.cursor * 2 + 1)} alt="" />
-      </SvgRandomWrapper>
       <ContentWrapper>
         <h2>{props.title}</h2>
         <p className="text">{props.desc}</p>
         <Link to={props.redirectLink}>Learn more &rarr;</Link>
       </ContentWrapper>
       {props.animationOne ? (
-        <ImageWrapper>
+        <ImageWrapper ref={containerRef}>
+          <SvgRandomWrapper
+            className="person1"
+            style={{ display: props.cursor ? "none" : "" }}
+          >
+            {waveStart && (
+              <img
+                src={wave}
+                alt=""
+                style={{ position: "absolute" }}
+                className="waveAnimation"
+              />
+            )}
+            <img src={getPerson(props.cursor * 2)} alt="" />
+          </SvgRandomWrapper>
+          <SvgRandomWrapper
+            className="person2"
+            style={{ display: props.cursor ? "none" : "" }}
+          >
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+          </SvgRandomWrapper>
           <Link to={props.redirectLink}>
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapper>
       ) : (
-        <ImageWrapperTwo>
+        <ImageWrapperTwo ref={containerRef}>
+          <SvgRandomWrapper
+            className="person1"
+            style={{ display: props.cursor ? "none" : "" }}
+          >
+            {waveStart && (
+              <img
+                src={wave}
+                alt=""
+                style={{ position: "absolute" }}
+                className="waveAnimation"
+              />
+            )}
+            <img src={getPerson(props.cursor * 2)} alt="" />
+          </SvgRandomWrapper>
+          <SvgRandomWrapper
+            className="person2"
+            style={{ display: props.cursor ? "none" : "" }}
+          >
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+          </SvgRandomWrapper>
           <Link to={props.redirectLink}>
             <img src={props.imgLink} alt="image" />
           </Link>
