@@ -38,6 +38,26 @@ export const Container = styled.div`
     animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
   }
+  .small-card-container {
+    display: flex;
+    gap: 1rem;
+  }
+  .small-card {
+    padding: 1rem 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: fit-content;
+    border-radius: 0.25rem;
+    background-color: ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
+    cursor: pointer;
+    color: ${(props) => props.theme.greyA0AAAAToGrey666666};
+    border: 2px solid ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
+    &:hover {
+      color: ${(props) => props.theme.text};
+      border: 2px solid ${(props) => props.theme.keppelColor};
+    }
+  }
 `;
 export const SvgRandomWrapper = styled.div`
   position: absolute;
