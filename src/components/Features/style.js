@@ -43,18 +43,22 @@ export const Container = styled.div`
     gap: 1rem;
   }
   .small-card {
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: center;
     width: fit-content;
     border-radius: 0.25rem;
-    background-color: ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
     cursor: pointer;
     color: ${(props) => props.theme.text};
     border: 2px solid ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
     &:hover {
-      border: 2px solid ${(props) => props.theme.keppelColor};
+      background-color: ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 `;

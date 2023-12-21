@@ -97,7 +97,7 @@ const Features = (props) => {
           : (<div className="small-card-container">
             {props.redirectLinkWithImage.map((item) => (
               <a key={item.text} className="small-card" href={item.redirect}>
-                <img src={item.image} width={36} />
+                <img src={item.image} width={40} />
                 <span>{item.text}</span>
               </a>
             ))}
