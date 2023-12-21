@@ -8,7 +8,8 @@ import CommentingImageDark from "./images/commenting.svg";
 import CommentingImageLight from "./images/commenting-white.svg";
 import AWSImage from "./images/aws.svg";
 import AWSImageLight from "./images/aws-light.svg";
-import AWSLogo from "./images/aws-logo.svg";
+import AWSLogoDark from "./images/aws-logo-dark.svg";
+import AWSLogoLight from "./images/aws-logo-light.svg";
 import GCPLogo from "./images/gcp-logo.svg";
 // Named imports
 import { Container } from "./style.js";
@@ -47,12 +48,12 @@ const FeaturesContainer = () => {
       imageRedirectLink: true,
       redirectLinkWithImage: [
         {
-          text: "AWS",
-          image: AWSLogo,
+          text: "Amazon Web Services",
+          image: isDark ? AWSLogoDark : AWSLogoLight,
           redirect: "/"
         },
         {
-          text: "GCP",
+          text: "Google Cloud Platform",
           image: GCPLogo,
           redirect: "/"
         }
