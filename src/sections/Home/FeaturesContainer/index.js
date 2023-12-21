@@ -41,7 +41,7 @@ const FeaturesContainer = () => {
       show_custom_cursor: false,
       animationOne: true,
       redirectLink: "",
-      desc: "Meshery natively supports multi-cloud credentials natively with AWS and GCP.",
+      desc: "Meshery natively supports multi-cloud credentials natively with AWS and GCP. This integration allow users to incorporate AWS and GCP icons into their diagrams for comprehensive and intuitive system mapping and documentation.",
       imgLink: isDark ? AWSImage : AWSImageLight,
       cursor: true,
       imageRedirectLink: true,
