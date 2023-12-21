@@ -5,8 +5,11 @@ import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import CollImg from "./../Meshmap/FeaturesSection/Collaborate/images/collab4-colorMode.svg";
-import DragDrop from "./../Meshmap/Meshmap-design/images/drag-drop-components.gif";
 import Visualize from "./../Meshmap/FeaturesSection/Visualize/images/visualize-2-dark.svg";
+import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
+import TemplateLight from "../../assets/images/AWS-Diagram/templates.svg";
+import InfrastructureDark from "../../assets/images/AWS-Diagram/infrastructure-dark.svg";
+import InfrastructureLight from "../../assets/images/AWS-Diagram/infrastructure-light.svg";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -136,7 +139,7 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} alt="AWS Diagrams for anything" className="aws-image" />
+              <img src={isDark ? InfrastructureDark : InfrastructureLight} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
@@ -173,47 +176,7 @@ const Aws = () => {
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDrop} alt="Designing AWS Diagrams with MeshMap" className="aws-image" />
-            </div>
-          </Col>
-        </Row>
-        <Row className="catalog">
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={CollImg} alt="Collaborate with your Team for AWS Diagrams" className="aws-image" />
-            </div>
-          </Col>
-          <Col md={6} className="diagram-detail">
-            <h1 className="heading">Work together and instantly share with your team.</h1>
-            <b className="sub-heading">Collaborate with your Team </b>
-            <p className="caption">
-            Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.
-            </p>
-            <b className="sub-heading">Work from Anywhere </b>
-            <p className="caption">
-            Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.
-            </p>
-            <b className="sub-heading">Inclusive collaboration from start to finish </b>
-            <p className="caption">
-            MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.
-            </p>
-          </Col>
-        </Row>
-        <Row className="catalog">
-          <Col md={6} className="diagram-detail">
-            <h1 className="heading">Visualize your infrastructure</h1>
-            <b className="sub-heading">Continuous visibility </b>
-            <p className="caption">
-            Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.
-            </p>
-            <b className="sub-heading">Common management </b>
-            <p className="caption">
-            Deploy designs, apply patterns, manage and operate your deployments and services in real-time.
-            </p>
-          </Col>
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={Visualize} alt="Visualize your AWS infrastructure with MeshMap" className="aws-image" />
+              <img src={isDark ? TemplateDark : TemplateLight} alt="Designing AWS Diagrams with MeshMap" className="aws-image" />
             </div>
           </Col>
         </Row>
