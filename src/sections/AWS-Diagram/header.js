@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import AWSCards from "../../assets/images/playground/gitops-explore-design.webp";
+import AWSCardDark from "../../assets/images/AWS-Diagram/aws-light.svg";
+import AWSCardLight from "../../assets/images/AWS-Diagram/aws.svg";
 import Button from "../../reusecore/Button";
 
 const CatalogHeaderWrapper = styled.div`
@@ -13,6 +15,7 @@ const CatalogHeaderWrapper = styled.div`
     align-content: space-between;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
     .header__detail {
       display: flex;
       flex-direction: column;
@@ -36,6 +39,19 @@ const CatalogHeaderWrapper = styled.div`
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      transform-origin: center; /* Set the transform origin to the center */
+      transform: translateZ(-50px) scale(1.1); /* Adjust translateZ and scale values for the desired parallax effect */
+      transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    }
+
+    &:hover img {
+      transform: translateZ(0) scale(1); /* Adjust values for hover effect */
     }
 
     @media screen and (max-width: 992px) {
@@ -70,6 +86,7 @@ const CatalogHeaderWrapper = styled.div`
 `;
 
 const Header = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <CatalogHeaderWrapper>
       <div className="cloud-native-catalog header">
@@ -90,7 +107,7 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" md={6}>
-              <img src={AWSCards} alt="catalog" />
+              <img src={isDark ? AWSCardLight : AWSCardDark} alt="catalog" />
             </Col>
           </Row>
         </Container>
