@@ -51,10 +51,9 @@ export const Container = styled.div`
     border-radius: 0.25rem;
     background-color: ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
     cursor: pointer;
-    color: ${(props) => props.theme.greyA0AAAAToGrey666666};
+    color: ${(props) => props.theme.text};
     border: 2px solid ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
     &:hover {
-      color: ${(props) => props.theme.text};
       border: 2px solid ${(props) => props.theme.keppelColor};
     }
   }
