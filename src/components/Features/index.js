@@ -93,7 +93,15 @@ const Features = (props) => {
       <ContentWrapper>
         <h2>{props.title}</h2>
         <p className="text">{props.desc}</p>
-        <Link to={props.redirectLink}>Learn more &rarr;</Link>
+        {props.redirectLink ? <Link to={props.redirectLink}>Learn more &rarr;</Link>
+          : (<div className="small-card-container">
+            {props.redirectLinkWithImage.map((item) => (
+              <a key={item.text} className="small-card" href={item.redirect}>
+                <img src={item.image} width={36} />
+                <span>{item.text}</span>
+              </a>
+            ))}
+          </div>)}
       </ContentWrapper>
       {props.animationOne ? (
         <ImageWrapper ref={containerRef}>
