@@ -140,17 +140,13 @@ const Aws = () => {
           </Col>
           <Col md={6} className="diagram-detail">
             <h1 className="heading">AWS architectural diagrams tailored to meet any requirement</h1>
-            <b className="sub-heading">Scalable Infrastructure </b>
+            <b className="sub-heading">Extensive AWS Icon Library </b>
             <p className="caption">
-            The AWS architecture diagram tool ensures your architecture is inherently scalable from the start, making expansion a seamless process.
+            Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
             <b className="sub-heading">Cost-Effective Solutions </b>
             <p className="caption">
             AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
-            </p>
-            <b className="sub-heading">Ensure Security and Reliability </b>
-            <p className="caption">
-            Enhance the security and reliability of your AWS architecture by adhering to industry best practices.
             </p>
           </Col>
         </Row>
@@ -164,10 +160,6 @@ const Aws = () => {
             <b className="sub-heading">User-friendly editor </b>
             <p className="caption">
             Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
-            </p>
-            <b className="sub-heading">Extensive AWS Icon Library </b>
-            <p className="caption">
-            Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
           </Col>
           <Col md={6} className="diagram-image">
