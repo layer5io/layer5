@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import GCPCards from "../../assets/images/playground/gitops-explore-design.webp";
 import Button from "../../reusecore/Button";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import GCPDiagramDark from "./images/gcp-diagram-dark.svg";
+import GCPDiagramLight from "./images/gcp-diagram-light.svg";
 
 const CatalogHeaderWrapper = styled.div`
   .cloud-native-catalog.header {
-    min-height: 40rem;
     background: ${({ theme }) => theme.linearToGreen};
+    padding: 6rem 1rem;
     display: flex;
     align-items: center;
     align-content: space-between;
@@ -70,12 +72,13 @@ const CatalogHeaderWrapper = styled.div`
 `;
 
 const Header = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <CatalogHeaderWrapper>
       <div className="cloud-native-catalog header">
         <Container>
           <Row className="row">
-            <Col className="col header__detail" md={6}>
+            <Col className="col header__detail" lg={6}>
               <h1 className="header__title">Google Cloud Platform Diagram Tool</h1>
               <p className="header__title_description">
               Create GCP diagrams easily with predefined templates and symbols designed for professionals.
@@ -89,8 +92,8 @@ const Header = () => {
                 />
               </div>
             </Col>
-            <Col className="col catalog" md={6}>
-              <img src={GCPCards} alt="catalog" />
+            <Col className="col catalog" lg={6}>
+              <img src={isDark ? GCPDiagramDark : GCPDiagramLight} alt="catalog" />
             </Col>
           </Row>
         </Container>

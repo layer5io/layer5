@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
-import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import CollImg from "./../Meshmap/FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import DragDrop from "./../Meshmap/Meshmap-design/images/drag-drop-components.gif";
-import Visualize from "./../Meshmap/FeaturesSection/Visualize/images/visualize-2-dark.svg";
+import GCPIconsDark from "./images/gcp-icons-dark.svg";
+import GCPIconsLight from "./images/gcp-icons-light.svg";
+import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
+import GCPCatalogLight from "./images/gcp-catalog-light.svg";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -134,24 +134,20 @@ const Gcp = () => {
     <DiagramWrapper>
       <Container className="diagram-container">
         <Row className="catalog">
-          <Col md={6} className="diagram-image">
+          <Col lg={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} alt="GCP Diagrams for anything" className="gcp-image" />
+              <img src={isDark ? GCPIconsDark : GCPIconsLight} alt="GCP Diagrams for anything" className="gcp-image" />
             </div>
           </Col>
-          <Col md={6} className="diagram-detail">
+          <Col lg={6} className="diagram-detail">
             <h1 className="heading">GCP architectural diagrams tailored to meet any requirement</h1>
-            <b className="sub-heading">Network optimization </b>
+            <b className="sub-heading">Extensive GCP Icon Library </b>
             <p className="caption">
-            Optimize your network's performance to achieve its best functionality, encompassing security, backup, efficiency, and more, through the adoption of cloud computing methodologies instead of traditional networking approaches.
+            Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
             <b className="sub-heading">Manage and analyze data </b>
             <p className="caption">
             Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
-            </p>
-            <b className="sub-heading">Navigate services categories </b>
-            <p className="caption">
-            Google Cloud Platform (GCP) offers a multitude of Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS) options to enhance the efficiency of managing your service infrastructure.
             </p>
           </Col>
         </Row>
@@ -166,54 +162,10 @@ const Gcp = () => {
             <p className="caption">
             Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
             </p>
-            <b className="sub-heading">Extensive GCP Icon Library </b>
-            <p className="caption">
-            Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
-            </p>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDrop} alt="Designing GCP Diagrams with MeshMap" className="gcp-image" />
-            </div>
-          </Col>
-        </Row>
-        <Row className="catalog">
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={CollImg} alt="Collaborate with your Team for GCP Diagrams" className="gcp-image" />
-            </div>
-          </Col>
-          <Col md={6} className="diagram-detail">
-            <h1 className="heading">Work together and instantly share with your team.</h1>
-            <b className="sub-heading">Collaborate with your Team </b>
-            <p className="caption">
-            Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.
-            </p>
-            <b className="sub-heading">Work from Anywhere </b>
-            <p className="caption">
-            Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.
-            </p>
-            <b className="sub-heading">Inclusive collaboration from start to finish </b>
-            <p className="caption">
-            MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.
-            </p>
-          </Col>
-        </Row>
-        <Row className="catalog">
-          <Col md={6} className="diagram-detail">
-            <h1 className="heading">Visualize your infrastructure</h1>
-            <b className="sub-heading">Continuous visibility </b>
-            <p className="caption">
-            Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.
-            </p>
-            <b className="sub-heading">Common management </b>
-            <p className="caption">
-            Deploy designs, apply patterns, manage and operate your deployments and services in real-time.
-            </p>
-          </Col>
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={Visualize} alt="Visualize your GCP infrastructure with MeshMap" className="gcp-image" />
+              <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with MeshMap" className="gcp-image" />
             </div>
           </Col>
         </Row>
