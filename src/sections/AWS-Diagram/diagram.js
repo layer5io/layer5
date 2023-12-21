@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
-import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import CollImg from "./../Meshmap/FeaturesSection/Collaborate/images/collab4-colorMode.svg";
-import Visualize from "./../Meshmap/FeaturesSection/Visualize/images/visualize-2-dark.svg";
 import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
 import TemplateLight from "../../assets/images/AWS-Diagram/templates.svg";
 import InfrastructureDark from "../../assets/images/AWS-Diagram/infrastructure-dark.svg";
