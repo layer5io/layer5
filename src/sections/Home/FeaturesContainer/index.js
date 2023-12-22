@@ -42,19 +42,19 @@ const FeaturesContainer = () => {
       show_custom_cursor: false,
       animationOne: true,
       redirectLink: "",
-      desc: "Meshery natively supports multi-cloud credentials natively with AWS and GCP. This integration allow users to incorporate AWS and GCP icons into their diagrams for comprehensive and intuitive system mapping and documentation.",
+      desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, <i>and</i> orchestration.",
       imgLink: isDark ? AWSImage : AWSImageLight,
       cursor: true,
       redirectLinkWithImage: [
         {
           text: "Amazon Web Services",
           image: isDark ? AWSLogoDark : AWSLogoLight,
-          redirect: "/cloud-native-management/aws-diagram"
+          redirect: "/cloud-native-management/generate-aws-architecture-diagram"
         },
         {
           text: "Google Cloud Platform",
           image: GCPLogo,
-          redirect: "/cloud-native-management/gcp-diagram"
+          redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
         }
       ]
     },
