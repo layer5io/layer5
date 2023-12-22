@@ -96,10 +96,10 @@ const Features = (props) => {
         {props.redirectLink ? <Link to={props.redirectLink}>Learn more &rarr;</Link>
           : (<div className="small-card-container">
             {props.redirectLinkWithImage.map((item) => (
-              <a key={item.text} className="small-card" href={item.redirect}>
+              <Link key={item.text} className="small-card" to={item.redirect}>
                 <img src={item.image} width={40} />
                 <span>{item.text}</span>
-              </a>
+              </Link>
             ))}
           </div>)}
       </ContentWrapper>
@@ -125,7 +125,7 @@ const Features = (props) => {
           >
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink}>
+          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapper>
@@ -151,7 +151,7 @@ const Features = (props) => {
           >
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink}>
+          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapperTwo>
