@@ -5,7 +5,7 @@ import CollaborationFeatureTeam from "./collaboration-feature-team";
 import CollaborationFeatureWork from "./collaboration-feature-work";
 
 import SignupForm from "./../signup-form";
-import Reviews from "../../Pricing/review-slider";
+import ReviewsSlider from "../../../components/ReviewsSlider";
 
 
 const MeshmapCollaborate = () => {
@@ -16,7 +16,7 @@ const MeshmapCollaborate = () => {
       {/* <CollaborationFeatureCreate/> */}
       <CollaborationFeatureWork />
       <SignupForm />
-      <Reviews />
+      <ReviewsSlider />
     </MeshmapCollaborateWrapper>
   );
 };

@@ -5,9 +5,9 @@ import Cone from "../../assets/images/gitops/conelight.svg";
 import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
-import Reviews from "../Pricing/review-slider";
 import ServicePerformanceProfileTest from "../../assets/images/gitops/service-mesh-performance-profile.png";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 
 const SnapshotPage = () => {
@@ -64,7 +64,7 @@ const SnapshotPage = () => {
 
 
       <div className="reviews-container" >
-        <Reviews/>
+        <ReviewsSlider/>
       </div>
 
     </PageWrapper>

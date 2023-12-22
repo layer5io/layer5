@@ -6,11 +6,11 @@ import Cone from "../../assets/images/gitops/conelight.svg";
 import { GitOpsWrapper } from "./gitops.style.js";
 import SmpLogo_dark from "../../assets/images/app/projects/smp.svg";
 import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp-light.svg";
-import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
 import Github_Light from "../../assets/images/socialIcons/github-light.svg";
 import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
 import SquarePoint from "./SquarePoint";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 
 
@@ -115,7 +115,7 @@ const GitOpsPage = () => {
       </div>
 
       <div className="reviews-container" >
-        <Reviews/>
+        <ReviewsSlider/>
       </div>
 
     </GitOpsWrapper>

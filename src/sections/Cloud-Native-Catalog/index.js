@@ -2,8 +2,8 @@ import React from "react";
 import Patterns from "./patterns";
 import Header from "./header";
 import NewCatalog from "./new-catalog";
-import Reviews from "../Pricing/review-slider";
 import Catalog from "./catalog";
+import ReviewsSlider from "../../components/ReviewsSlider";
 
 const CloudNativeCatalogPage = () => {
   return (
@@ -11,7 +11,7 @@ const CloudNativeCatalogPage = () => {
       <Header />
       <Catalog />
       <Patterns />
-      <Reviews />
+      <ReviewsSlider />
       <NewCatalog />
     </>
   );
