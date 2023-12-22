@@ -42,7 +42,7 @@ const FeaturesContainer = () => {
       show_custom_cursor: false,
       animationOne: true,
       redirectLink: "",
-      desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, <i>and</i> orchestration.",
+      desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.",
       imgLink: isDark ? AWSImage : AWSImageLight,
       cursor: true,
       redirectLinkWithImage: [
