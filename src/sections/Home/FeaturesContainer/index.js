@@ -22,27 +22,40 @@ const FeaturesContainer = () => {
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false
     },
-    // {
-    //   title: "Multi-Cloud by design",
-    //   show_custom_cursor: false,
-    //   animationOne: true,
-    //   redirectLink: "",
-    //   desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.",
-    //   imgLink: isDark ? AWSImage : AWSImageLight,
-    //   cursor: true,
-    //   redirectLinkWithImage: [
-    //     {
-    //       text: "Amazon Web Services",
-    //       image: isDark ? AWSLogoDark : AWSLogoLight,
-    //       redirect: "/cloud-native-management/generate-aws-architecture-diagram"
-    //     },
-    //     {
-    //       text: "Google Cloud Platform",
-    //       image: GCPLogo,
-    //       redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
-    //     }
-    //   ]
-    // },
+    {
+      title: "Generate stunning diagrams",
+      show_custom_cursor: false,
+      animationOne: false,
+      redirectLink: "/whiteboard",
+      desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
+      imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
+      cursor: true
+    },
+    {
+      title: "Multi-Cloud by design",
+      show_custom_cursor: false,
+      animationOne: true,
+      redirectLink: "",
+      desc: (
+          <span>
+            Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, <i>and</i> orchestration.
+          </span>
+      ),
+      imgLink: isDark ? AWSImage : AWSImageLight,
+      cursor: true,
+      redirectLinkWithImage: [
+        {
+          text: "Amazon Web Services",
+          image: isDark ? AWSLogoDark : AWSLogoLight,
+          redirect: "/cloud-native-management/generate-aws-architecture-diagram"
+        },
+        {
+          text: "Google Cloud Platform",
+          image: GCPLogo,
+          redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
+        }
+      ]
+    },
   ];
 
   return (
