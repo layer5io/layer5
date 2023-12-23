@@ -179,7 +179,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
-                              <div className="accessRequired">{ accessRequired != "" ? accessRequired : ""}</div>
+                              <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
                           </tr>
                         </tbody>

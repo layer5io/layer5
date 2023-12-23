@@ -25,7 +25,7 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #f0f0f0;
+    background-color: #D2D8DA; //#E7EFF3;
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
@@ -37,7 +37,7 @@ export const HoneycombGrid = styled.div`
     &:hover {
       opacity: 0.8;
       box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
-}
+    }
   }
 
   .selected {
