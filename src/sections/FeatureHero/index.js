@@ -3,14 +3,20 @@ import FeatureHeroWrapper from "./featureHero.style";
 import { Container } from "../../reusecore/Layout";
 
 const FeatureHero = (props) => {
-
   useEffect(() => {
     const scrollingImage = document.getElementById("whiteboard-svg");
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const translateY = -scrollPosition / 16;
-      scrollingImage.style.transform = `rotateX(${translateY}deg)`;
+      const imageRect = scrollingImage.getBoundingClientRect();
+      const isImageAtTop = imageRect.top <= 110;
+
+      if (isImageAtTop) {
+        const scrollPosition = window.scrollY;
+        const translateY = -scrollPosition / 16;
+        scrollingImage.style.transform = `rotateX(${translateY}deg)`;
+      } else {
+        scrollingImage.style.transform = null;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -24,10 +30,8 @@ const FeatureHero = (props) => {
   return (
     <FeatureHeroWrapper>
       <Container className={"heading-container"}>
-        <div className={"section-title"} >
-          <h2 className={"whiteboard-heading"}>
-            {props.data.heading}
-          </h2>
+        <div className={"section-title"}>
+          <h2 className={"whiteboard-heading"}>{props.data.heading}</h2>
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
         </div>
         <div className={"whiteboard-image"}>
