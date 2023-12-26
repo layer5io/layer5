@@ -162,28 +162,28 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <div role="group" className="formRight" aria-labelledby="select">
           <Field as="select" name="role" >
             <option defaultValue hidden className="custom-arrow">Select your role</option>
-            <option value="Frontend Engineer">Frontend Engineer</option>
-            <option value="Backend Engineer">Backend Engineer</option>
-            <option value="Fullstack Engineer">Fullstack Engineer</option>
-            <option value="Architect">Architect</option>
-            <option value="Developer">Developer</option>
-            <option value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
-            <option value="Platform Engineer">Platform Engineer</option>
-            <option value="Site Reliability Engineer">Site Reliability Engineer</option>
-            <option value="Data Analyst">Data Analyst</option>
-            <option value="Designer">Designer</option>
-            <option value="Manager">Manager</option>
-            <option value="Executive">Executive</option>
-            <option value="IT Operations">IT Operations</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Sales">Sales</option>
-            <option value="Sales Engineer">Sales Engineer</option>
-            <option value="Business Operations">Business Operations</option>
-            <option value="Product Manager">Product Manager</option>
-            <option value="Media/Analyst">Media/Analyst</option>
-            <option value="Professor/Academic">Professor/Academic</option>
-            <option value="Student">Student</option>
-            <option value="Other">Other</option>
+            <option style={{ color: "black" }} value="Frontend Engineer">Frontend Engineer</option>
+            <option style={{ color: "black" }} value="Backend Engineer">Backend Engineer</option>
+            <option style={{ color: "black" }} value="Fullstack Engineer">Fullstack Engineer</option>
+            <option style={{ color: "black" }} value="Architect">Architect</option>
+            <option style={{ color: "black" }} value="Developer">Developer</option>
+            <option style={{ color: "black" }} value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
+            <option style={{ color: "black" }} value="Platform Engineer">Platform Engineer</option>
+            <option style={{ color: "black" }} value="Site Reliability Engineer">Site Reliability Engineer</option>
+            <option style={{ color: "black" }} value="Data Analyst">Data Analyst</option>
+            <option style={{ color: "black" }} value="Designer">Designer</option>
+            <option style={{ color: "black" }} value="Manager">Manager</option>
+            <option style={{ color: "black" }} value="Executive">Executive</option>
+            <option style={{ color: "black" }} value="IT Operations">IT Operations</option>
+            <option style={{ color: "black" }} value="Marketing">Marketing</option>
+            <option style={{ color: "black" }} value="Sales">Sales</option>
+            <option style={{ color: "black" }} value="Sales Engineer">Sales Engineer</option>
+            <option style={{ color: "black" }} value="Business Operations">Business Operations</option>
+            <option style={{ color: "black" }} value="Product Manager">Product Manager</option>
+            <option style={{ color: "black" }} value="Media/Analyst">Media/Analyst</option>
+            <option style={{ color: "black" }} value="Professor/Academic">Professor/Academic</option>
+            <option style={{ color: "black" }} value="Student">Student</option>
+            <option style={{ color: "black" }} value="Other">Other</option>
           </Field>
         </div>
 
