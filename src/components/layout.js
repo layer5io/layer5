@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import ScrollToTopBtn from "./Scrolltotop-button";
 import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
+import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
 
 const Layout = ({ children }) => {
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
+      <TopPromotionalBanner />
       <Navigation/>
       {children}
       <ScrollToTopBtn />

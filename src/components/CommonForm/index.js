@@ -73,7 +73,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   };
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y", {
+      axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
         memberFormOne,
       });
     }
@@ -161,7 +161,10 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
         <div role="group" className="formRight" aria-labelledby="select">
           <Field as="select" name="role">
-            <option defaultValue hidden>Select your role</option>
+            <option defaultValue hidden className="custom-arrow">Select your role</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="Fullstack Engineer">Fullstack Engineer</option>
             <option value="Architect">Architect</option>
             <option value="Backend Engineer">Backend Engineer</option>
             <option value="Business Operations">Business Operations</option>
