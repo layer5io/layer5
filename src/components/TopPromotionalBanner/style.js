@@ -27,6 +27,7 @@ export const TopBannercontainer = styled.div`
        & > span {
         font-weight: normal;
         margin-left: 0.5rem;
+        color: ${props => props.theme.body};
         &:hover {
             text-decoration: underline;
         }
