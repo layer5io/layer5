@@ -160,28 +160,28 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
         {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
         <div role="group" className="formRight" aria-labelledby="select">
-          <Field as="select" name="role" >
+          <Field as="select" name="role">
             <option defaultValue hidden className="custom-arrow">Select your role</option>
-            <option value="Frontend Engineer">Frontend Engineer</option>
-            <option value="Backend Engineer">Backend Engineer</option>
-            <option value="Fullstack Engineer">Fullstack Engineer</option>
             <option value="Architect">Architect</option>
-            <option value="Developer">Developer</option>
-            <option value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
-            <option value="Platform Engineer">Platform Engineer</option>
-            <option value="Site Reliability Engineer">Site Reliability Engineer</option>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="Business Operations">Business Operations</option>
             <option value="Data Analyst">Data Analyst</option>
             <option value="Designer">Designer</option>
-            <option value="Manager">Manager</option>
+            <option value="Developer">Developer</option>
+            <option value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
             <option value="Executive">Executive</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Fullstack Engineer">Fullstack Engineer</option>
             <option value="IT Operations">IT Operations</option>
+            <option value="Manager">Manager</option>
             <option value="Marketing">Marketing</option>
+            <option value="Media/Analyst">Media/Analyst</option>
+            <option value="Platform Engineer">Platform Engineer</option>
+            <option value="Professor/Academic">Professor/Academic</option>
+            <option value="Product Manager">Product Manager</option>
             <option value="Sales">Sales</option>
             <option value="Sales Engineer">Sales Engineer</option>
-            <option value="Business Operations">Business Operations</option>
-            <option value="Product Manager">Product Manager</option>
-            <option value="Media/Analyst">Media/Analyst</option>
-            <option value="Professor/Academic">Professor/Academic</option>
+            <option value="Site Reliability Engineer">Site Reliability Engineer</option>
             <option value="Student">Student</option>
             <option value="Other">Other</option>
           </Field>
