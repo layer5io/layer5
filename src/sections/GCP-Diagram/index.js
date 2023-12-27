@@ -7,7 +7,7 @@ import Diagram from "./diagram";
 
 const GcpDiagramPage = () => {
   let data = {
-    heading: "Google Cloud Platform Diagram Tool",
+    heading: "GCP Architecture Diagram Tool",
     sub_heading: "Create GCP diagrams easily with predefined templates and symbols designed for professionals.",
     image: GCPDiagramDark
   };
