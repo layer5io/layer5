@@ -6,7 +6,8 @@ const TopPromotionalBanner = () => {
   return (
     <>
       <TopBannercontainer>
-        <a href="https://play.meshery.io/" rel="noreferrer" target="_blank"><p className="content"><img src={Rocket} alt="Five on rocket" />Soar to New Heights with Meshery v0.7.0 <span>Try it now &rarr;</span></p></a>
+        <a href="https://meshery.io/blog/meshery-v07-release-announcement" rel="noreferrer" target="_blank"><p className="content"><img src={Rocket} alt="Five on rocket" /><span>Soar to New Heights with Meshery v0.7.0 &rarr;</span>{/* <span>Try it now &rarr;</span> */}
+        </p></a>
       </TopBannercontainer>
     </>
   );
