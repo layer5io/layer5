@@ -162,9 +162,6 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <div role="group" className="formRight" aria-labelledby="select">
           <Field as="select" name="role">
             <option defaultValue hidden className="custom-arrow">Select your role</option>
-            <option value="Frontend Engineer">Frontend Engineer</option>
-            <option value="Backend Engineer">Backend Engineer</option>
-            <option value="Fullstack Engineer">Fullstack Engineer</option>
             <option value="Architect">Architect</option>
             <option value="Backend Engineer">Backend Engineer</option>
             <option value="Business Operations">Business Operations</option>
