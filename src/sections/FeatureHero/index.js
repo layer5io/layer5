@@ -7,16 +7,10 @@ const FeatureHero = (props) => {
     const scrollingImage = document.getElementById("whiteboard-svg");
 
     const handleScroll = () => {
-      const imageRect = scrollingImage.getBoundingClientRect();
-      const isImageAtTop = imageRect.top <= 110;
-
-      if (isImageAtTop) {
-        const scrollPosition = window.scrollY;
-        const translateY = -scrollPosition / 16;
-        scrollingImage.style.transform = `rotateX(${translateY}deg)`;
-      } else {
-        scrollingImage.style.transform = null;
-      }
+      const scrollPosition = window.scrollY;
+      const translateY = scrollPosition / 16;
+      const finalRotateAngle = Math.min(translateY, 12);
+      scrollingImage.style.transform = `rotateX(${12 - finalRotateAngle}deg)`;
     };
 
     window.addEventListener("scroll", handleScroll);
