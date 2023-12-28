@@ -86,7 +86,7 @@ const FeatureHeroWrapper = styled.div`
     }
 
     .whiteboard-heading{
-      font-size: 2rem !important;
+      font-size: 2.5rem !important;
     }
 
     .whiteboard-text {
