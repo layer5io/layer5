@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import DragDrop from "./../Meshmap/Meshmap-design/images/drag-drop-components.gif";
 import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPIconsLight from "./images/gcp-icons-light.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import GCPCatalogLight from "./images/gcp-catalog-light.svg";
-
+import RelatedPicks from "../../components/RelatedPicks";
+import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
+import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -129,7 +130,14 @@ const DiagramWrapper = styled.div`
 const Gcp = () => {
 
   const { isDark } = useStyledDarkMode();
-
+  const content = [
+    {
+      id: 1,
+      title: "AWS architecture diagram",
+      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
+      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
+    }
+  ];
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
@@ -140,7 +148,7 @@ const Gcp = () => {
             </div>
           </Col>
           <Col lg={6} className="diagram-detail">
-            <h1 className="heading">GCP architectural diagrams tailored to meet any requirement</h1>
+            <h2 className="heading">GCP architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive GCP Icon Library </b>
             <p className="caption">
             Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
@@ -153,7 +161,7 @@ const Gcp = () => {
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h1 className="heading">Designing GCP diagrams is effortless</h1>
+            <h2 className="heading">Designing GCP diagrams is effortless</h2>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
             Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
@@ -169,6 +177,7 @@ const Gcp = () => {
             </div>
           </Col>
         </Row>
+        <RelatedPicks content={content}/>
       </Container>
     </DiagramWrapper>
   );
