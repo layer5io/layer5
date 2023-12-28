@@ -6,6 +6,9 @@ import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
 import TemplateLight from "../../assets/images/AWS-Diagram/templates.svg";
 import InfrastructureDark from "../../assets/images/AWS-Diagram/infrastructure-dark.svg";
 import InfrastructureLight from "../../assets/images/AWS-Diagram/infrastructure-light.svg";
+import RelatedPicks from "../../components/RelatedPicks";
+import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
+import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -128,6 +131,14 @@ const DiagramWrapper = styled.div`
 const Aws = () => {
 
   const { isDark } = useStyledDarkMode();
+  const content = [
+    {
+      id: 1,
+      title: "GCP architecture diagram",
+      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
+      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
+    }
+  ];
 
   return (
     <DiagramWrapper>
@@ -142,11 +153,11 @@ const Aws = () => {
             <h1 className="heading">AWS architectural diagrams tailored to meet any requirement</h1>
             <b className="sub-heading">Extensive AWS Icon Library </b>
             <p className="caption">
-            Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
+              Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
             <b className="sub-heading">Cost-Effective Solutions </b>
             <p className="caption">
-            AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
+              AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
             </p>
           </Col>
         </Row>
@@ -155,11 +166,11 @@ const Aws = () => {
             <h1 className="heading">Designing AWS diagrams is effortless</h1>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
-            Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
+              Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
             </p>
             <b className="sub-heading">User-friendly editor </b>
             <p className="caption">
-            Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
             </p>
           </Col>
           <Col md={6} className="diagram-image">
@@ -168,6 +179,7 @@ const Aws = () => {
             </div>
           </Col>
         </Row>
+        <RelatedPicks content={content} />
       </Container>
     </DiagramWrapper>
   );

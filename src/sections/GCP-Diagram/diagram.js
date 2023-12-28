@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import DragDrop from "./../Meshmap/Meshmap-design/images/drag-drop-components.gif";
 import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPIconsLight from "./images/gcp-icons-light.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import GCPCatalogLight from "./images/gcp-catalog-light.svg";
-
+import RelatedPicks from "../../components/RelatedPicks";
+import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
+import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -129,7 +130,14 @@ const DiagramWrapper = styled.div`
 const Gcp = () => {
 
   const { isDark } = useStyledDarkMode();
-
+  const content = [
+    {
+      id: 1,
+      title: "AWS architecture diagram",
+      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
+      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
+    }
+  ];
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
@@ -169,6 +177,7 @@ const Gcp = () => {
             </div>
           </Col>
         </Row>
+        <RelatedPicks content={content}/>
       </Container>
     </DiagramWrapper>
   );
