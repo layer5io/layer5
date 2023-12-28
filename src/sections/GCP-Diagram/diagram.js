@@ -148,7 +148,7 @@ const Gcp = () => {
             </div>
           </Col>
           <Col lg={6} className="diagram-detail">
-            <h1 className="heading">GCP architectural diagrams tailored to meet any requirement</h1>
+            <h2 className="heading">GCP architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive GCP Icon Library </b>
             <p className="caption">
             Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
@@ -161,7 +161,7 @@ const Gcp = () => {
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h1 className="heading">Designing GCP diagrams is effortless</h1>
+            <h2 className="heading">Designing GCP diagrams is effortless</h2>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
             Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
