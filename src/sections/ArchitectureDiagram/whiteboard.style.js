@@ -22,10 +22,9 @@ const WhiteboardWrapper = styled.div`
   
   
   .use-heading {
-    color: {props => props.theme.whiteToBlack};
-    font-size: 2rem;
+    color: ${props => props.theme.whiteToBlack};
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 
     .highlighted-text {
       color: white;
@@ -34,7 +33,26 @@ const WhiteboardWrapper = styled.div`
       background: ${props => props.theme.green009A89ToGreen00B39F};
       font-weight: bold;
     }
+  }
+  .question-container {
+    max-width: 1170px;
+    margin: 0rem auto 4rem;
+    .wrapper {
+      padding: 2rem;
+      margin: 0 2rem;
+      border-radius: 0.25rem;
+      background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
+      & > p {
+        text-align: center;
+        color: ${props => props.theme.greyA0AAAAToGrey666666};
+      }
 
+      @media only screen and (max-width: 500px) {
+        padding: 1rem;
+        margin: 0 1rem;
+      }
+    }
+  }
 `;
 
 export default WhiteboardWrapper;
