@@ -150,7 +150,7 @@ const Aws = () => {
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
-            <h1 className="heading">AWS architectural diagrams tailored to meet any requirement</h1>
+            <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive AWS Icon Library </b>
             <p className="caption">
               Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
@@ -163,7 +163,7 @@ const Aws = () => {
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h1 className="heading">Designing AWS diagrams is effortless</h1>
+            <h2 className="heading">Designing AWS diagrams is effortless</h2>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
               Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
