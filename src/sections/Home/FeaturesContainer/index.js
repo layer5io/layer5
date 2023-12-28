@@ -32,7 +32,7 @@ const FeaturesContainer = () => {
       title: "Generate stunning diagrams",
       show_custom_cursor: false,
       animationOne: false,
-      redirectLink: "/whiteboard",
+      redirectLink: "/architecture-diagram/design-architecture-diagram",
       desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
       imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
       cursor: true
