@@ -20,7 +20,7 @@ import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
+const CommunityMember = "./Community-pictures/17.png";
 
 const CommunityPage = () => {
 
