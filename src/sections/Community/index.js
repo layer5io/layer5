@@ -20,7 +20,7 @@ import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
 
-const CommunityMember = "./Community-pictures/17.png";
+const CommunityMember = "./Community-pictures/Five playing.png";
 
 const CommunityPage = () => {
 
