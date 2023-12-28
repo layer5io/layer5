@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[5734],{1041:function(s,t,a){a(67294);t.Z=a.p+"static/aws-light.63224022.svg"},78811:function(s,t,a){a(67294);t.Z=a.p+"static/aws.2e7b3d8d.svg"}}]);
+//# sourceMappingURL=646e061d2f9d1dd6be93c5e1001524ca010681e4-6abf7e58a71783c8fd5f.js.map
