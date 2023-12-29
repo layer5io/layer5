@@ -25,7 +25,7 @@ let data = {
 let card_data = [
   {
     heading: "Numerous Architecture Diagram Shapes & Templates",
-    subtitle: "Designning a visually striking and logical architecture diagram is much easier than you imagine. Simply drag and drop the pre-made shapes or templates that can fit your needs to the canvas, the architecture diagram in your mind will abruptly appear in front of you.",
+    subtitle: "Designing visually striking and logical architecture diagram is much easier than you imagine. Simply drag and drop the pre-made shapes or templates that can fit your needs to the canvas, the architecture diagram in your mind will abruptly appear in front of you.",
     image: shapesAndTemplatesGIF
   },
   {
