@@ -6,9 +6,10 @@ import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
-import use_case_1 from "../../assets/images/whiteboard/use-case-1.png";
-import use_case_2 from "../../assets/images/whiteboard/use-case-2.png";
-import use_case_3 from "../../assets/images/whiteboard/use-case-3.png";
+import collaborationGIF from "./images/collaboration.gif";
+import optimizedGIF from "./images/optimized.gif";
+import customizationGIF from "./images/customization.gif";
+import shapesAndTemplatesGIF from "./images/shapes-and-templates.gif";
 import RelatedPicks from "../../components/RelatedPicks";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
@@ -24,28 +25,23 @@ let data = {
 let card_data = [
   {
     heading: "Numerous Architecture Diagram Shapes & Templates",
-    subtitle: "With plenty of built-in vector shapes and ready-made templates, design a visually striking and logical architecture diagram is much easier than you imagine.",
-    image: use_case_1
-  },
-  {
-    heading: "Easy to use",
-    subtitle: "Simply drag and drop the pre-made shapes that can fit your needs to the canvas, the architecture diagram in your mind will abruptly appear in front of you.",
-    image: use_case_1
+    subtitle: "Designning a visually striking and logical architecture diagram is much easier than you imagine. Simply drag and drop the pre-made shapes or templates that can fit your needs to the canvas, the architecture diagram in your mind will abruptly appear in front of you.",
+    image: shapesAndTemplatesGIF
   },
   {
     heading: "Powerful Customizability",
     subtitle: "Customize fonts, sizes, alignments, and styles easily according to your needs. In a word, you can customize everything to create the most engaging architecture diagram.",
-    image: use_case_3
+    image: customizationGIF
   },
   {
     heading: "Cloud collaboration",
     subtitle: "With cloud-based architecture diagram tool, you can efficiently collaborate with your team members at any time, anywhere.",
-    image: use_case_3
+    image: collaborationGIF
   },
   {
     heading: "AWS, GCP and K8s optimized",
     subtitle: "Capture your key services with smart components for EC2, ELB, Lambda, RDS, DynamoDB, Kinesis, etc.",
-    image: use_case_3
+    image: optimizedGIF
   },
 
 ];
@@ -84,7 +80,7 @@ const ArchitectureDiagram = () => {
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
+              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={6} />
             ))}
           </div>
         </div>
