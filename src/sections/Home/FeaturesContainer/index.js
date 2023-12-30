@@ -4,11 +4,6 @@ import React from "react";
 import Features from "../../../components/Features/index.js";
 import CommentingImageDark from "./images/commenting.svg";
 import CommentingImageLight from "./images/commenting-white.svg";
-import AWSImage from "./images/aws.svg";
-import AWSImageLight from "./images/aws-light.svg";
-import AWSLogoDark from "./images/aws-logo-dark.svg";
-import AWSLogoLight from "./images/aws-logo-light.svg";
-import GCPLogo from "./images/gcp-logo.svg";
 import TwoColLayout from "../../../components/Features/TwoColLayout.js";
 // Named imports
 import { Container } from "./style.js";
