@@ -103,7 +103,7 @@ margin: 1rem;
         width: 100%;
         font-size: 0.85rem;
         margin: 0.5rem 0;
-        color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.textColor};
       }
 
       .custom-arrow {
