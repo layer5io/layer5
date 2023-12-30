@@ -11,7 +11,7 @@ const GcpDiagramPage = () => {
   const { isDark } = useStyledDarkMode();
   let data = {
     heading: "GCP Architecture Diagram Tool",
-    sub_heading: "Create GCP diagrams easily with predefined templates and symbols designed for professionals.",
+    sub_heading: "Create Google Cloud Platform diagrams easily with predefined templates and symbols designed for professionals.",
     image: isDark ? GCPDiagramDark : GCPDiagramLight
   };
   return (
