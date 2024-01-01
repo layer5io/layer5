@@ -42,14 +42,14 @@ const TwoColLayout = () => {
       </Container>
       <Container>
         <ImageWrapper ref={containerRef}>
-          <Link to="/">
+          <Link to="/orchestration-management">
             <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" />
           </Link>
         </ImageWrapper>
         <ContentWrapper>
-          <h2>Orchestration Management</h2>
+          <h2>Easing your Workflow Burden Collaboratively</h2>
           <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
-          <Link to="/whiteboard" style={{ visibility: "hidden" }}>Learn more &rarr;</Link>
+          <Link to="/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>
       </Container>
     </Section>
