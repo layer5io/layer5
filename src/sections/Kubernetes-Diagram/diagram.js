@@ -7,6 +7,8 @@ import TemplateLight from "../../assets/images/AWS-Diagram/templates.svg";
 import InfrastructureDark from "../../assets/images/AWS-Diagram/infrastructure-dark.svg";
 import InfrastructureLight from "../../assets/images/AWS-Diagram/infrastructure-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
+import AWSDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
+import AWSDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
 
@@ -117,7 +119,7 @@ const DiagramWrapper = styled.div`
         @media (max-width: 767px) {
           justify-content: center;
         }
-        .aws-image {
+        .kubernetes-image {
           @media (max-width: 767px) {
             max-width: 90%;
             margin-bottom: 2rem;
@@ -128,20 +130,20 @@ const DiagramWrapper = styled.div`
   }
 `;
 
-const Aws = () => {
+const Kubernetes = () => {
 
   const { isDark } = useStyledDarkMode();
   const content = [
     {
       id: 1,
-      title: "GCP architecture diagram",
-      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
-      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
+      title: "AWS architecture diagram",
+      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
+      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
     },
     {
       id: 2,
-      title: "Kubernetes architecture diagram",
-      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
+      title: "GCP architecture diagram",
+      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
       imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
     }
   ];
@@ -152,36 +154,36 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? InfrastructureDark : InfrastructureLight} alt="AWS Diagrams for anything" className="aws-image" />
+              <img src={isDark ? InfrastructureDark : InfrastructureLight} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
-            <b className="sub-heading">Extensive AWS Icon Library </b>
+            <h2 className="heading">Kubernetes architectural diagrams tailored to meet any requirement</h2>
+            <b className="sub-heading">Extensive Kubernetes Icon Library </b>
             <p className="caption">
-              Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
+              Utilize a vast and continually expanding collection of Kubernetes icons for creating globally comprehensible diagrams that are authentic and up-to-date.
             </p>
             <b className="sub-heading">Cost-Effective Solutions </b>
             <p className="caption">
-              AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
+            Kubernetes architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
-            <h2 className="heading">Designing AWS diagrams is effortless</h2>
+            <h2 className="heading">Designing Kubernetes diagrams is effortless</h2>
             <b className="sub-heading">Quick-start templates </b>
             <p className="caption">
-              Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
+              Get started quickly with our ready-to-use templates. Effortlessly create your Kubernetes architecture diagrams using these professional templates. They are fully customizable and available for free download.
             </p>
             <b className="sub-heading">User-friendly editor </b>
             <p className="caption">
-              Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Create Kubernetes diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
             </p>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateLight} alt="Designing AWS Diagrams with MeshMap" className="aws-image" />
+              <img src={isDark ? TemplateDark : TemplateLight} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
             </div>
           </Col>
         </Row>
@@ -191,4 +193,4 @@ const Aws = () => {
   );
 };
 
-export default Aws;
+export default Kubernetes;

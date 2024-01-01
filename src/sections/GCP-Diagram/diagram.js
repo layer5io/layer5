@@ -136,6 +136,12 @@ const Gcp = () => {
       title: "AWS architecture diagram",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
+    },
+    {
+      id: 2,
+      title: "Kubernetes architecture diagram",
+      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
+      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
     }
   ];
   return (
