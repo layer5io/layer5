@@ -9,7 +9,7 @@ import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "../../assets/images/community/Lee_Workshop.webp";
+import Lee_workshop from "./Community-pictures/14.svg";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -20,7 +20,7 @@ import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
+const CommunityMember = "./Community-pictures/17.svg";
 
 const CommunityPage = () => {
 
