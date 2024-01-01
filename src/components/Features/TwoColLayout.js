@@ -26,7 +26,7 @@ const TwoColLayout = () => {
           </Link>
         </ImageWrapper>
         <ContentWrapper>
-          <h2>Simplify Your Visual Workflow</h2>
+          <h2>Visualize and Simplify Platform Engineering</h2>
           <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
             <Link className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
