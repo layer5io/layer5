@@ -3,6 +3,7 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import CTA_Book from "./cta-book";
+import PerformanceCTA from "./cta-performance";
 import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
@@ -53,7 +54,9 @@ const IndividualIntegrations = ({ data }) => {
         <h2>Related Integrations</h2>
         <RelatedIntegration  category={frontmatter.category} />
       </section>
+      <PerformanceCTA category={frontmatter.category}/>
       <CTA_Book />
+
     </IntegrationPageWrapper>
   );
 };
