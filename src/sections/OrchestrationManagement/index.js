@@ -11,8 +11,8 @@ import DeployDesignsGIF from "./images/deploy-designs.gif";
 import Validate from "./images/validate.gif";
 
 let data = {
-  heading: "Automate Infrastructure with Orchestration Management",
-  sub_heading: "Achieve seamless collaboration and operational harmony for enhanced productivity.",
+  heading: "Insights Visualized into Action",
+  sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
   image: whiteboard_svg
 };
 
