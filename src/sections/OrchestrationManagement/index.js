@@ -6,9 +6,9 @@ import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
-import use_case_1 from "../../assets/images/whiteboard/use-case-1.png";
-import use_case_2 from "../../assets/images/whiteboard/use-case-2.png";
-import use_case_3 from "../../assets/images/whiteboard/use-case-3.png";
+import SelfServiceAndIntegrationsGIF from "./images/self-service-and-integration.gif";
+import DeployDesignsGIF from "./images/deploy-designs.gif";
+import Validate from "./images/validate.gif";
 
 let data = {
   heading: "Automate Infrastructure with Orchestration Management",
@@ -18,19 +18,19 @@ let data = {
 
 let card_data = [
   {
-    heading: "Environment provisioning",
-    subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy environments, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
-    image: use_case_1
-  },
-  {
     heading: "Self-service & Integrations",
     subtitle: "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
-    image: use_case_2
+    image: SelfServiceAndIntegrationsGIF
   },
   {
-    heading: "Governance & Custom policies",
-    subtitle: "Set custom policies and governance controls to ensure compliance and maintain control over your infrastructure.",
-    image: use_case_3
+    heading: "Validate your infra before deployment",
+    subtitle: "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
+    image: Validate
+  },
+  {
+    heading: "Environment provisioning",
+    subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
+    image: DeployDesignsGIF
   },
 
 ];
@@ -47,7 +47,7 @@ const Orchestration = () => {
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
+              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={6} />
             ))}
           </div>
         </div>
