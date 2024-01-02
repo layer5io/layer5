@@ -1,7 +1,6 @@
 import React from "react";
 import OrchestrationWrapper from "./orchestration.style";
 import { Container } from "../../reusecore/Layout";
-import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.png";
 import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
@@ -9,12 +8,9 @@ import FeatureUseCard from "../../components/FeatureUseCard";
 import SelfServiceAndIntegrationsGIF from "./images/self-service-and-integration.gif";
 import DeployDesignsGIF from "./images/deploy-designs.gif";
 import Validate from "./images/validate.gif";
-
-let data = {
-  heading: "Insights Visualized into Action",
-  sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
-  image: whiteboard_svg
-};
+import OrchestrationImgDark from "../../components/Features/images/orchestration.svg";
+import OrchestrationImgLight from "../../components/Features/images/orchestration-light.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 let card_data = [
   {
@@ -36,6 +32,12 @@ let card_data = [
 ];
 
 const Orchestration = () => {
+  const { isDark } = useStyledDarkMode();
+  const data = {
+    heading: "Insights Visualized into Action",
+    sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
+    image: isDark ? OrchestrationImgDark : OrchestrationImgLight
+  };
   return (
     <OrchestrationWrapper>
       <FeatureHero data={data} />
