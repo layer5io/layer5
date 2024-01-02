@@ -2,15 +2,9 @@ import React from "react";
 
 // Default imports
 import Features from "../../../components/Features/index.js";
-import WhiteboardingImage from "./images/whiteboarding.svg";
-import WhiteboardingImageLight from "./images/whiteboarding-light.svg";
 import CommentingImageDark from "./images/commenting.svg";
 import CommentingImageLight from "./images/commenting-white.svg";
-import AWSImage from "./images/aws.svg";
-import AWSImageLight from "./images/aws-light.svg";
-import AWSLogoDark from "./images/aws-logo-dark.svg";
-import AWSLogoLight from "./images/aws-logo-light.svg";
-import GCPLogo from "./images/gcp-logo.svg";
+import TwoColLayout from "../../../components/Features/TwoColLayout.js";
 // Named imports
 import { Container } from "./style.js";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode.js";
@@ -28,36 +22,27 @@ const FeaturesContainer = () => {
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false
     },
-    {
-      title: "Generate stunning diagrams",
-      show_custom_cursor: false,
-      animationOne: false,
-      redirectLink: "/architecture-diagram/design-architecture-diagram",
-      desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
-      imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
-      cursor: true
-    },
-    {
-      title: "Multi-Cloud by design",
-      show_custom_cursor: false,
-      animationOne: true,
-      redirectLink: "",
-      desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.",
-      imgLink: isDark ? AWSImage : AWSImageLight,
-      cursor: true,
-      redirectLinkWithImage: [
-        {
-          text: "Amazon Web Services",
-          image: isDark ? AWSLogoDark : AWSLogoLight,
-          redirect: "/cloud-native-management/generate-aws-architecture-diagram"
-        },
-        {
-          text: "Google Cloud Platform",
-          image: GCPLogo,
-          redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
-        }
-      ]
-    },
+    // {
+    //   title: "Multi-Cloud by design",
+    //   show_custom_cursor: false,
+    //   animationOne: true,
+    //   redirectLink: "",
+    //   desc: "Incorporate AWS and GCP components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.",
+    //   imgLink: isDark ? AWSImage : AWSImageLight,
+    //   cursor: true,
+    //   redirectLinkWithImage: [
+    //     {
+    //       text: "Amazon Web Services",
+    //       image: isDark ? AWSLogoDark : AWSLogoLight,
+    //       redirect: "/cloud-native-management/generate-aws-architecture-diagram"
+    //     },
+    //     {
+    //       text: "Google Cloud Platform",
+    //       image: GCPLogo,
+    //       redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
+    //     }
+    //   ]
+    // },
   ];
 
   return (
@@ -88,6 +73,7 @@ const FeaturesContainer = () => {
               redirectLinkWithImage = {feature.redirectLinkWithImage}
             />))
         }
+        <TwoColLayout />
       </Container>
     </>
   );
