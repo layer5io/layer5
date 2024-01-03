@@ -83,7 +83,7 @@ const PerformanceCTA = ({ category }) => {
             <h2><span>Cloud Native Performance</span></h2>
             <h3 className="subtext">Standardizing Service Mesh Value Measurement</h3>
             <Button primary url="/projects/cloud-native-performance" className="button" external={false}>
-                            Know more
+                            Learn More
             </Button>
           </div>
         </div>
