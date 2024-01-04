@@ -22,7 +22,7 @@ const TwoColLayout = () => {
     <Section>
       <Container>
         <ImageWrapper ref={containerRef}>
-          <Link to="/whiteboard">
+          <Link to="/architecture-diagram/design-architecture-diagram">
             <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
           </Link>
         </ImageWrapper>
