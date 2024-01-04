@@ -9,7 +9,7 @@ import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "./Community-pictures/14.svg";
+import Five from "./Community-pictures/14.svg";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -155,7 +155,7 @@ const CommunityPage = () => {
           <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
         </Container>
       </div>
-      <JoinCommunity image={Lee_workshop} className="newcomers-join" />
+      <JoinCommunity image={Five} className="newcomers-join" />
       <Container className="Callout">
         <DiscussCallout />
         <AdventuresCallout />
