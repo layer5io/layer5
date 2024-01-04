@@ -12,7 +12,7 @@ const AwsDiagramPage = () => {
 
   let data = {
     heading: "AWS Architecture Diagram Tool",
-    sub_heading: "Create AWS diagrams easily with predefined templates and symbols designed for professionals.",
+    sub_heading: "Create Amazon Web Services diagrams easily with predefined templates and symbols designed for professionals.",
     image: isDark ? AWSDark : AWSLight
   };
   return (
