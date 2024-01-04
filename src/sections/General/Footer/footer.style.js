@@ -153,7 +153,7 @@ const FooterWrapper = styled.section`
 
 	@media only screen and (max-width: 1199px) and (min-width: 704px) {
 		.subscribe {
-			margin-top: -7rem;
+			margin-top: 2rem;
 		}
 	}
 	@media only screen and (max-width:767px) and (min-width: 726px){
