@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[9469],{39156:function(e,c,s){s(67294);c.Z=s.p+"static/kubernetes-catalog-light.c053ec9e.svg"}}]);
+//# sourceMappingURL=216a1d79-5f1405809718faaeed5a.js.map
