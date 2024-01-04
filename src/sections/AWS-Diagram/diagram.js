@@ -9,7 +9,8 @@ import InfrastructureLight from "../../assets/images/AWS-Diagram/infrastructure-
 import RelatedPicks from "../../components/RelatedPicks";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
-
+import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
+import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -142,7 +143,7 @@ const Aws = () => {
       id: 2,
       title: "Kubernetes architecture diagram",
       redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
-      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
+      imgSrc: isDark ? KubernetesDark : KubernetesLight,
     }
   ];
 
