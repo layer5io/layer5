@@ -11,6 +11,7 @@ import DiagrammingImageLight from "../../assets/images/AWS-Diagram/aws-light.svg
 import AWSLogoDark from "../../sections/Home/FeaturesContainer/images/aws-logo-dark.svg";
 import AWSLogoLight from "../../sections/Home/FeaturesContainer/images/aws-logo-light.svg";
 import GCPLogo from "../../sections/Home/FeaturesContainer/images/gcp-logo.svg";
+import KubernetesLogo from "../../sections/Kubernetes-Diagram/images/kubernetes-icon.svg";
 import OrchestrationLight from "./images/orchestration-light.svg";
 import OrchestrationDark from "./images/orchestration.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode.js";
@@ -21,7 +22,7 @@ const TwoColLayout = () => {
     <Section>
       <Container>
         <ImageWrapper ref={containerRef}>
-          <Link to="/whiteboard">
+          <Link to="/architecture-diagram/design-architecture-diagram">
             <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
           </Link>
         </ImageWrapper>
@@ -31,11 +32,12 @@ const TwoColLayout = () => {
           <div className="small-card-container">
             <Link className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
               <img src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
-              <span>Amazon Web Services</span>
             </Link>
             <Link className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
               <img src={GCPLogo} width={40} />
-              <span>Google Cloud Platform</span>
+            </Link>
+            <Link className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
+              <img src={KubernetesLogo} width={40} />
             </Link>
           </div>
         </ContentWrapper>
