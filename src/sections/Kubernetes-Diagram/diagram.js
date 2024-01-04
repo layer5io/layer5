@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
-import TemplateLight from "../../assets/images/AWS-Diagram/templates.svg";
-import InfrastructureDark from "../../assets/images/AWS-Diagram/infrastructure-dark.svg";
-import InfrastructureLight from "../../assets/images/AWS-Diagram/infrastructure-light.svg";
+import KubernetesIconsDarkLight from "./images/kubernetes-icons-light.svg";
+import KubernetesIconsDark from "./images/kubernetes-icons.svg";
+import KubernetesCatalogLight from "./images/kubernetes-catalog-light.svg";
+import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
-import AWSDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
-import AWSDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
+import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
+import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
 
@@ -154,7 +154,7 @@ const Kubernetes = () => {
         <Row className="catalog">
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? InfrastructureDark : InfrastructureLight} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img src={isDark ? KubernetesIconsDark : KubernetesIconsDarkLight} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={6} className="diagram-detail">
@@ -183,7 +183,7 @@ const Kubernetes = () => {
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateLight} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
+              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogLight} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
             </div>
           </Col>
         </Row>

@@ -2,8 +2,8 @@ import React from "react";
 import FeatureHero from "../FeatureHero";
 import Reviews from "../Pricing/review-slider";
 import Diagram from "./diagram";
-import KubernetesDark from "../../assets/images/AWS-Diagram/aws.svg";
-import KubernetesLight from "../../assets/images/AWS-Diagram/aws-light.svg";
+import KubernetesDark from "./images/kubernetes.svg";
+import KubernetesLight from "./images/kubernetes-light.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const KubernetesDiagramPage = () => {
