@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 import FavIcon from "../assets/images/favicon.webp";
-
+// import HelmetProvider from "react-helmet-async";
 
 export const useSiteMetadata = () => {
   const data = useStaticQuery(graphql`
@@ -24,16 +24,28 @@ export const useSiteMetadata = () => {
   return data.site.siteMetadata;
 };
 
-
-const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
+const SEO = ({
+  canonical,
+  description,
+  image,
+  schemaMarkup,
+  title,
+  children,
+}) => {
   const { pathname } = useLocation();
-  const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image: siteMetadataImage,
+    siteUrl,
+    twitterUsername,
+  } = useSiteMetadata();
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || siteMetadataImage}`,
-    url: `${siteUrl}${pathname.replace(".html", "")  || ""}`.replace(/\/$/, ""),
-    twitterUsername
+    url: `${siteUrl}${pathname.replace(".html", "") || ""}`.replace(/\/$/, ""),
+    twitterUsername,
   };
   if (!canonical) {
     canonical = seo.url;
@@ -42,7 +54,11 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="description" property="og:description" content={seo.description} />
+      <meta
+        name="description"
+        property="og:description"
+        content={seo.description}
+      />
       <meta name="og:description" content={seo.description} />
       <meta name="image" property="og:image" content={seo.image} />
       <meta name="og:image" content={seo.image} />
@@ -61,8 +77,11 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
       <link rel="canonical" href={canonical} />
-      {schemaMarkup &&
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>}
+      {schemaMarkup && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
       {children}
     </>
   );
