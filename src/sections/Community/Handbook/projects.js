@@ -46,7 +46,7 @@ const Maintainer = () => {
             <p>
               <a id="Layer5">
                 {" "}
-                <h2>
+                <h2 className="heading-top">
                   <a href="https://layer5.io/">
                     <img
                       className="project-title-icon"
