@@ -23,7 +23,7 @@ const RelatedPicks = ({ content }) => {
   return (
     <>
       <Container>
-        <h2>You may also like</h2>
+        <h2>Other Supported Platforms</h2>
         <Wrapper>
           {
             content.map(item => (
