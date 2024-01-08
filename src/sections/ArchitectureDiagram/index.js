@@ -66,7 +66,7 @@ const ArchitectureDiagram = () => {
     },
     {
       id: 3,
-      title: "K8s orchestration and architecture diagramming",
+      title: "Kubernetes architecture diagram",
       redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
       imgSrc: isDark ? KubernetesDark : KubernetesLight,
     }
