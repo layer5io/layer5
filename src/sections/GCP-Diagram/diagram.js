@@ -159,24 +159,30 @@ const Gcp = () => {
             <h2 className="heading">GCP architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive GCP Icon Library </b>
             <p className="caption">
-            Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
+              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
             </p>
             <b className="sub-heading">Manage and analyze data </b>
             <p className="caption">
-            Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
+              Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
             <h2 className="heading">Designing GCP diagrams is effortless</h2>
-            <b className="sub-heading">Quick-start templates </b>
+            <b className="sub-heading">Swift Kickstart with Ready-to-Use Templates</b>
             <p className="caption">
-            Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
+              Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
             </p>
-            <b className="sub-heading">User-friendly editor </b>
+            <b className="sub-heading">Intuitively Designed User-Friendly Editor</b>
             <p className="caption">
-            Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
             </p>
           </Col>
           <Col md={6} className="diagram-image">
@@ -185,7 +191,7 @@ const Gcp = () => {
             </div>
           </Col>
         </Row>
-        <RelatedPicks content={content}/>
+        <RelatedPicks content={content} />
       </Container>
     </DiagramWrapper>
   );

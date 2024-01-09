@@ -61,6 +61,10 @@ const DiagramWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      .link {
+        margin: 1rem 0;
+        cursor: pointer;
+      }
       .heading {
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -160,24 +164,29 @@ const Aws = () => {
             <h2 className="heading">AWS architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive AWS Icon Library </b>
             <p className="caption">
-              Utilize a vast and continually expanding collection of AWS icons for creating globally comprehensible diagrams that are authentic and up-to-date.
+              Utilize a vast and continually expanding collection of AWS icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
             </p>
-            <b className="sub-heading">Cost-Effective Solutions </b>
+            <b className="sub-heading">Cost-Effective Solutions for Enhanced Efficiency</b>
             <p className="caption">
-              AWS architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
+              Our platform offers economic benefits by presenting the entire AWS system in one comprehensive diagram. Identify bottlenecks and their respective solutions seamlessly, whether it's optimizing resource allocation or refining orchestration workflows.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
             <h2 className="heading">Designing AWS diagrams is effortless</h2>
-            <b className="sub-heading">Quick-start templates </b>
+            <b className="sub-heading">Swift Kickstart with Ready-to-Use Templates</b>
             <p className="caption">
-              Get started quickly with our ready-to-use templates. Effortlessly create your AWS architecture diagrams using these professional templates. They are fully customizable and available for free download.
-            </p>
-            <b className="sub-heading">User-friendly editor </b>
+              Accelerate your projects with our quick-start templates designed for both AWS architecture visualization and orchestration management. Access a variety of professionally crafted templates that are fully customizable, ensuring you can adapt them to your specific requirements.            </p>
+            <b className="sub-heading">Intuitively Designed User-Friendly Editor</b>
             <p className="caption">
-              Create AWS diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Simplify AWS architecture visualization and orchestration management with our user-friendly editor. It incorporates smart auto-adjustment capabilities, intuitive drag-and-drop functionality, and an extensive toolkit. Seamlessly create and customize your diagrams, allowing you to bring your concepts to life effortlessly.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
             </p>
           </Col>
           <Col md={6} className="diagram-image">
