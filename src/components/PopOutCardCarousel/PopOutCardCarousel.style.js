@@ -9,13 +9,8 @@ const PopOutCardWrapper = styled.div`
   padding: 2.5rem 3rem;
   height: 360px;
   width: 350px;
-  box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px;
-  background: linear-gradient(
-    266.65deg,
-    #00b39f 40.19%,
-    #477e96 74.31%,
-    #3c494f 92.89%
-  );
+  background: linear-gradient(125deg, #02A08F 5%, #121212 95%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
   transform: translate3d(0, 0, 0);
   border-radius: 20px;
   cursor: pointer;
@@ -31,7 +26,7 @@ const PopOutCardWrapper = styled.div`
   align-items: center ;
 
   h3 {
-    opacity: 0.5;
+    opacity: 0.8;
     color: white !important;
     font-weight: bold;
     padding-bottom: 0.6rem;
@@ -58,11 +53,10 @@ const PopOutCardWrapper = styled.div`
 
   //dynamic css
   ${(props) => css`
-    z-index: ${100 - props.$index};
-    ${props.$index % 2 ? "" : "background: #00B39F;"}
-    // ${props.$index % 2 ? "" : "background: #00B39F;"}
-    transform: rotateZ(${-4 - 6 * props.$index}deg) translate(-${props.$index *
-    36}px, ${props.$index * 5}px);
+    z-index: ${100 - props.index};
+    ${props.index % 2 ? "" : "background: linear-gradient(250deg, #02A08F 2.93%, #121212 98.2%);"}
+    transform: rotateZ(${-4 - 6 * props.index}deg) translate(-${props.index *
+    36}px, ${props.index * 5}px);
   `}
 
   ${(props) =>
