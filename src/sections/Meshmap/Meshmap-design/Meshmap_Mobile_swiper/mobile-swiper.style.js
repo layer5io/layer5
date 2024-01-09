@@ -10,23 +10,13 @@ const SwiperContainer = styled.div`
   }
 
   .card.light {
-    box-shadow: none;
-
-    background: linear-gradient(
-      266.65deg,
-      #00b39f 40.19%,
-      #00b39f 74.31%,
-      #3c494f 92.89%
-    );
+    background: linear-gradient(125deg, #02A08F 5%, #121212 95%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
   }
-
+  
   .card.dark {
-    background: linear-gradient(
-      266.65deg,
-      #00584e 40.19%,
-      #2e5363 74.31%,
-      #212529 92.89%
-    );
+    background: linear-gradient(250deg, #02A08F 2.93%, #121212 98.2%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
   }
 
   .card {
