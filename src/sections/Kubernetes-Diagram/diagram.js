@@ -169,8 +169,10 @@ const Kubernetes = () => {
             <b className="sub-heading">Cost-Effective Solutions for Enhanced Efficiency </b>
             <p className="caption">
               Our platform offers economic benefits by presenting the entire Kubernetes system in one comprehensive diagram. Identify bottlenecks and their respective solutions seamlessly, whether it's optimizing resource allocation or refining orchestration workflows.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
             </p>
-            <a className="link" href="https:play.meshery.io" rel="noreferrer" target="_blank">Start Diagramming &rarr;</a>
           </Col>
         </Row>
         <Row className="catalog">
@@ -185,7 +187,7 @@ const Kubernetes = () => {
               Crafting Kubernetes diagrams and managing orchestrations has never been easier. Our user-friendly editor provides an intuitive layout and interface, offering intelligent auto-adjustment features, drag-and-drop functionality, and a comprehensive toolkit. Effortlessly create and modify your diagrams, empowering you to bring your ideas to life in minutes.
               <br />
               <br />
-              <a className="link" href="https://meshery.layer5.io/catalog" rel="noreferrer" target="_blank">Browse Library of Templates &rarr;</a>
+              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
             </p>
           </Col>
           <Col md={6} className="diagram-image">
