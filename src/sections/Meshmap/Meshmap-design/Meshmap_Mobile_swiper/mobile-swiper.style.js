@@ -9,14 +9,20 @@ const SwiperContainer = styled.div`
     border-radius: 20px;
   }
 
-  .card.light {
-    background: linear-gradient(125deg, #02A08F 5%, #121212 95%);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
+  .card.one {
+    background: linear-gradient(222deg, #077165 2.76%, #1D2827 117.91%);
   }
   
-  .card.dark {
-    background: linear-gradient(250deg, #02A08F 2.93%, #121212 98.2%);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
+  .card.two {
+    background: linear-gradient(134deg, #252E31 -16.51%, #0D997F 101%);
+  }
+  
+  .card.three {
+    background: linear-gradient(125deg, #137771 -16.81%, #252E31 104.15%);
+  }
+  
+  .card.four {
+    background: linear-gradient(180deg, #202020 -32.18%, #18433F 52.35%, #0B7E71 106.65%, #00B39F 142.23%);
   }
 
   .card {
@@ -31,6 +37,7 @@ const SwiperContainer = styled.div`
 
   ); */
 
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
     height: 70vh;
     padding: 1rem;
     border-radius: 20px;
