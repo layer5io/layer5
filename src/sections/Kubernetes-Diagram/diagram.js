@@ -2,15 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import KubernetesIconsDarkLight from "./images/kubernetes-icons-light.svg";
-import KubernetesIconsDark from "./images/kubernetes-icons.svg";
-import KubernetesCatalogLight from "./images/kubernetes-catalog-light.svg";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
 import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
+import ConfigGIF from "./images/config.gif";
+import DeployGIF from "./images/deploy.gif";
+import DragDropGIF from "./images/drag-drop.gif";
+import IconLibraryGIF from "./images/icon-library.gif";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -24,6 +25,10 @@ const DiagramWrapper = styled.div`
   @media (max-width: 767px) {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .image-wrapper{
+    border-radius: 0.25rem;
+    overflow: hidden;
   }
   .diagram-container .catalog:nth-child(odd) {
     .diagram-image {
@@ -140,13 +145,13 @@ const Kubernetes = () => {
   const content = [
     {
       id: 1,
-      title: "AWS architecture diagram",
+      title: "AWS orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
     },
     {
       id: 2,
-      title: "GCP architecture diagram",
+      title: "GCP orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
       imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
     }
@@ -156,44 +161,68 @@ const Kubernetes = () => {
     <DiagramWrapper>
       <Container className="diagram-container">
         <Row className="catalog">
-          <Col md={6} className="diagram-image">
+          <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesIconsDark : KubernetesIconsDarkLight} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img src={ConfigGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
-          <Col md={6} className="diagram-detail">
-            <h2 className="heading">Kubernetes architectural diagrams tailored to meet any requirement</h2>
-            <b className="sub-heading">Extensive Kubernetes Icon Library </b>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Diagram + Config = Awesome!</h2>
             <p className="caption">
-              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.            </p>
-            <b className="sub-heading">Cost-Effective Solutions for Enhanced Efficiency </b>
-            <p className="caption">
-              Our platform offers economic benefits by presenting the entire Kubernetes system in one comprehensive diagram. Identify bottlenecks and their respective solutions seamlessly, whether it's optimizing resource allocation or refining orchestration workflows.
-              <br />
-              <br />
-              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
+              Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="diagram-detail">
-            <h2 className="heading">Designing Kubernetes diagrams is effortless</h2>
-            <b className="sub-heading">Swift Kickstart with Ready-to-Use Templates</b>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Deploy  with No Code Kubernetes</h2>
+            <p className="caption">
+              Our visual Kubernetes interface enables anyone to deploy production-grade software with no code. Whether you're new to Kubernetes and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software using the industry-leading container orchestrator, all with no code.            </p>
+          </Col>
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DeployGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DragDropGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Visual drag & drop</h2>
+            <p className="caption">
+              Instantly search for and find any integration that CNCF supports and drop on the canvas to create your cloud native infrastructure. MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+            </p>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Extensive Kubernetes Icon Library</h2>
+            <p className="caption">
+              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
+            </p>
+          </Col>
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={IconLibraryGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Kickstart with Ready-to-Use Templates</h2>
             <p className="caption">
               Jumpstart your projects with our quick-start templates designed for both Kubernetes diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
             </p>
-            <b className="sub-heading">Intuitively Designed User-Friendly Editor</b>
-            <p className="caption">
-              Crafting Kubernetes diagrams and managing orchestrations has never been easier. Our user-friendly editor provides an intuitive layout and interface, offering intelligent auto-adjustment features, drag-and-drop functionality, and a comprehensive toolkit. Effortlessly create and modify your diagrams, empowering you to bring your ideas to life in minutes.
-              <br />
-              <br />
-              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
-            </p>
-          </Col>
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogLight} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
-            </div>
+            {/* <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>  */}
           </Col>
         </Row>
         <RelatedPicks content={content} />
