@@ -4,7 +4,7 @@ import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
+import Five from "../../sections/Community/Community-pictures/14.svg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
@@ -59,7 +59,7 @@ const CareersPage = () => {
           <InternshipPage hide_heading={true} />
         </div>
 
-        <JoinCommunity image={Lee_giveaway} />
+        <JoinCommunity image={Five} />
         <Container>
           <br />
           <p className="center">Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
