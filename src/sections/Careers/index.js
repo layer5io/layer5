@@ -8,7 +8,7 @@ import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shi
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Lee_and_Rigs = "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
+const Lee_and_Rigs = "../../assets/images/careers/Five.svg";
 
 const CareersPage = () => {
   return (
