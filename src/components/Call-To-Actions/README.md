@@ -9,9 +9,12 @@ Below, find the details on the types of CTA and where/how to use them.
 ### Types of CTA:
 
 1. CTA_ImageOnly - This CTA is an image callout, and is meant to be used in the first half of the content.
+![image](https://github.com/meshery/meshery/assets/74408634/c5f4c35e-3de4-4ae5-b255-9b406cdc4748)
 2. CTA_FullWidth - This CTA is a full-width callout, and is meant to be used in the second half/middle of the content.
+![image](https://github.com/meshery/meshery/assets/74408634/a89f6711-18b8-4497-ba80-605a8d2aae0a)
 3. CTA_Bottom - This CTA is also a full-width callout, but it is meant to be used at the bottom of the content, or better after the content
     in the component rendering the content. Like `Blog-single.js`.
+![image](https://github.com/meshery/meshery/assets/74408634/9209455b-0d4f-42e0-b665-70ff8a93e3e0)
 
 ### How to use the CTA:
 
