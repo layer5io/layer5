@@ -1,14 +1,14 @@
 import React from "react";
-import Whiteboard from "../../sections/Whiteboard";
+import Orchestration from "../../sections/OrchestrationManagement";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 
-const WhiteboardPage = () => {
+const OrchestrationManagement = () => {
   return (
     <>
-      <Whiteboard/>
+      <Orchestration/>
       <ServiceMeshFocused bookName={"enterprise-path"} />
     </>
   );
 };
 
-export default WhiteboardPage;
+export default OrchestrationManagement;

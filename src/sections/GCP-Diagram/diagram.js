@@ -9,6 +9,8 @@ import GCPCatalogLight from "./images/gcp-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
 import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
+import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
+import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -136,6 +138,12 @@ const Gcp = () => {
       title: "AWS architecture diagram",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
+    },
+    {
+      id: 2,
+      title: "Kubernetes architecture diagram",
+      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
+      imgSrc: isDark ? KubernetesDark : KubernetesLight,
     }
   ];
   return (
