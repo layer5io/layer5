@@ -27,7 +27,7 @@
   "dependencies": {
     "@fullcalendar/daygrid": "^5.11.3",
     "@fullcalendar/google-calendar": "^6.1.9",
-    "@fullcalendar/interaction": "^6.0.1",
+    "@fullcalendar/interaction": "^6.1.10",
     "@fullcalendar/react": "^5.11.2",
     "@layer5/meshery-design-embed": "^0.2.0",
     "@loadable/component": "^5.15.3",
@@ -42,7 +42,7 @@
     "cytoscape": "^3.26.0",
     "cytoscape-cose-bilkent": "^4.1.0",
     "cytoscape-fcose": "^2.2.0",
-    "dedent": "^0.7.0",
+    "dedent": "^1.5.1",
     "deepmerge": "^4.3.0",
     "formik": "^2.4.5",
     "gatsby": "^4.20.0",
