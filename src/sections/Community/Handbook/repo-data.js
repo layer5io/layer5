@@ -29,7 +29,7 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Nikhil Ladha", "Mohith Gadireddy"],
+        maintainers_name: ["Nikhil Ladha"],
         link: [
           "https://layer5.io/community/members/nikhil-ladha",
           "https://layer5.io/community/members/mohith-gadireddy",
