@@ -49,11 +49,10 @@ const FeaturesContainer = () => {
     <>
       <Container>
         <h1 className="title">
-          Deploy <i>faster </i>together with <span>Confidence</span>
+          Visual Tools That Get Things Done
         </h1>
         <p className="subtitle">
-          Give your team full application visibility at every layer so the team
-          can ship, refactor and onboard faster.
+          Not just pretty pictures. Data-linked visual apps to streamline all your efforts.
         </p>
         {/* Tools to help you scale your cloud native infrastructure */}
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}
