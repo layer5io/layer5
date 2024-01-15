@@ -1,26 +1,207 @@
 ---
-title: Kubeform Provider AWS  
-subtitle: Collaborative and visual infrastructure as code for Integration Template
+title: Kubeform Provider AWS
+subtitle: Collaborative and visual infrastructure as code for NGINX Service Mesh
 integrationIcon: icon/color/kubeform-provider-aws-color.svg
 darkModeIntegrationIcon: icon/white/kubeform-provider-aws-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/kubeform-provider-aws
+description: 
 category: Provisioning
 subcategory: Cloud Provider
-featureList: ["Native Kubernetes support.
+registrant: artifacthub
+components: 
+	-	name: ProviderConfig
+		colorIcon: icon/components/ProviderConfig-color.svg
+		whiteIcon: icon/components/ProviderConfig-white.svg
+		description: 
+	-	name: ProviderConfigUsage
+		colorIcon: icon/components/ProviderConfigUsage-color.svg
+		whiteIcon: icon/components/ProviderConfigUsage-white.svg
+		description: 
+	-	name: StoreConfig
+		colorIcon: icon/components/StoreConfig-color.svg
+		whiteIcon: icon/components/StoreConfig-white.svg
+		description: 
+	-	name: ClusterInstance
+		colorIcon: icon/components/ClusterInstance-color.svg
+		whiteIcon: icon/components/ClusterInstance-white.svg
+		description: 
+	-	name: ClusterParameterGroup
+		colorIcon: icon/components/ClusterParameterGroup-color.svg
+		whiteIcon: icon/components/ClusterParameterGroup-white.svg
+		description: 
+	-	name: Cluster
+		colorIcon: icon/components/Cluster-color.svg
+		whiteIcon: icon/components/Cluster-white.svg
+		description: 
+	-	name: ClusterSnapshot
+		colorIcon: icon/components/ClusterSnapshot-color.svg
+		whiteIcon: icon/components/ClusterSnapshot-white.svg
+		description: 
+	-	name: EventSubscription
+		colorIcon: icon/components/EventSubscription-color.svg
+		whiteIcon: icon/components/EventSubscription-white.svg
+		description: 
+	-	name: GlobalCluster
+		colorIcon: icon/components/GlobalCluster-color.svg
+		whiteIcon: icon/components/GlobalCluster-white.svg
+		description: 
+	-	name: SubnetGroup
+		colorIcon: icon/components/SubnetGroup-color.svg
+		whiteIcon: icon/components/SubnetGroup-white.svg
+		description: 
+	-	name: ContributorInsights
+		colorIcon: icon/components/ContributorInsights-color.svg
+		whiteIcon: icon/components/ContributorInsights-white.svg
+		description: 
+	-	name: GlobalTable
+		colorIcon: icon/components/GlobalTable-color.svg
+		whiteIcon: icon/components/GlobalTable-white.svg
+		description: 
+	-	name: KinesisStreamingDestination
+		colorIcon: icon/components/KinesisStreamingDestination-color.svg
+		whiteIcon: icon/components/KinesisStreamingDestination-white.svg
+		description: 
+	-	name: TableItem
+		colorIcon: icon/components/TableItem-color.svg
+		whiteIcon: icon/components/TableItem-white.svg
+		description: 
+	-	name: TableReplica
+		colorIcon: icon/components/TableReplica-color.svg
+		whiteIcon: icon/components/TableReplica-white.svg
+		description: 
+	-	name: Table
+		colorIcon: icon/components/Table-color.svg
+		whiteIcon: icon/components/Table-white.svg
+		description: 
+	-	name: Tag
+		colorIcon: icon/components/Tag-color.svg
+		whiteIcon: icon/components/Tag-white.svg
+		description: 
+	-	name: Route
+		colorIcon: icon/components/Route-color.svg
+		whiteIcon: icon/components/Route-white.svg
+		description: 
+	-	name: SecurityGroupRule
+		colorIcon: icon/components/SecurityGroupRule-color.svg
+		whiteIcon: icon/components/SecurityGroupRule-white.svg
+		description: 
+	-	name: VPCPeeringConnection
+		colorIcon: icon/components/VPCPeeringConnection-color.svg
+		whiteIcon: icon/components/VPCPeeringConnection-white.svg
+		description: 
+	-	name: ParameterGroup
+		colorIcon: icon/components/ParameterGroup-color.svg
+		whiteIcon: icon/components/ParameterGroup-white.svg
+		description: 
+	-	name: ReplicationGroup
+		colorIcon: icon/components/ReplicationGroup-color.svg
+		whiteIcon: icon/components/ReplicationGroup-white.svg
+		description: 
+	-	name: UserGroup
+		colorIcon: icon/components/UserGroup-color.svg
+		whiteIcon: icon/components/UserGroup-white.svg
+		description: 
+	-	name: User
+		colorIcon: icon/components/User-color.svg
+		whiteIcon: icon/components/User-white.svg
+		description: 
+	-	name: DomainPolicy
+		colorIcon: icon/components/DomainPolicy-color.svg
+		whiteIcon: icon/components/DomainPolicy-white.svg
+		description: 
+	-	name: Domain
+		colorIcon: icon/components/Domain-color.svg
+		whiteIcon: icon/components/Domain-white.svg
+		description: 
+	-	name: DomainSAMLOptions
+		colorIcon: icon/components/DomainSAMLOptions-color.svg
+		whiteIcon: icon/components/DomainSAMLOptions-white.svg
+		description: 
+	-	name: Configuration
+		colorIcon: icon/components/Configuration-color.svg
+		whiteIcon: icon/components/Configuration-white.svg
+		description: 
+	-	name: Stream
+		colorIcon: icon/components/Stream-color.svg
+		whiteIcon: icon/components/Stream-white.svg
+		description: 
+	-	name: Key
+		colorIcon: icon/components/Key-color.svg
+		whiteIcon: icon/components/Key-white.svg
+		description: 
+	-	name: ACL
+		colorIcon: icon/components/ACL-color.svg
+		whiteIcon: icon/components/ACL-white.svg
+		description: 
+	-	name: Snapshot
+		colorIcon: icon/components/Snapshot-color.svg
+		whiteIcon: icon/components/Snapshot-white.svg
+		description: 
+	-	name: ClusterActivityStream
+		colorIcon: icon/components/ClusterActivityStream-color.svg
+		whiteIcon: icon/components/ClusterActivityStream-white.svg
+		description: 
+	-	name: ClusterEndpoint
+		colorIcon: icon/components/ClusterEndpoint-color.svg
+		whiteIcon: icon/components/ClusterEndpoint-white.svg
+		description: 
+	-	name: ClusterRoleAssociation
+		colorIcon: icon/components/ClusterRoleAssociation-color.svg
+		whiteIcon: icon/components/ClusterRoleAssociation-white.svg
+		description: 
+	-	name: DBInstanceAutomatedBackupsReplication
+		colorIcon: icon/components/DBInstanceAutomatedBackupsReplication-color.svg
+		whiteIcon: icon/components/DBInstanceAutomatedBackupsReplication-white.svg
+		description: 
+	-	name: DBSnapshotCopy
+		colorIcon: icon/components/DBSnapshotCopy-color.svg
+		whiteIcon: icon/components/DBSnapshotCopy-white.svg
+		description: 
+	-	name: InstanceRoleAssociation
+		colorIcon: icon/components/InstanceRoleAssociation-color.svg
+		whiteIcon: icon/components/InstanceRoleAssociation-white.svg
+		description: 
+	-	name: Instance
+		colorIcon: icon/components/Instance-color.svg
+		whiteIcon: icon/components/Instance-white.svg
+		description: 
+	-	name: OptionGroup
+		colorIcon: icon/components/OptionGroup-color.svg
+		whiteIcon: icon/components/OptionGroup-white.svg
+		description: 
+	-	name: Proxy
+		colorIcon: icon/components/Proxy-color.svg
+		whiteIcon: icon/components/Proxy-white.svg
+		description: 
+	-	name: ProxyDefaultTargetGroup
+		colorIcon: icon/components/ProxyDefaultTargetGroup-color.svg
+		whiteIcon: icon/components/ProxyDefaultTargetGroup-white.svg
+		description: 
+	-	name: ProxyEndpoint
+		colorIcon: icon/components/ProxyEndpoint-color.svg
+		whiteIcon: icon/components/ProxyEndpoint-white.svg
+		description: 
+	-	name: ProxyTarget
+		colorIcon: icon/components/ProxyTarget-color.svg
+		whiteIcon: icon/components/ProxyTarget-white.svg
+		description: 
+featureList: [
+  "Native Kubernetes support.
 
 ",
-"Built on Terraform; Supports Terraform resources",
-"Define & manage cloud infrastructures as Kubernetes CRD (Custom Resource Definition)"
+  "Built on Terraform; Supports Terraform resources",
+  "Define & manage cloud infrastructures as Kubernetes CRD (Custom Resource Definition)"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kubeform is a Kubernetes operator provisioning cloud or on-prem resources using Terraform providers. Kubeform provides auto-generated Kubernetes CRDs for Terraform resources so that you can manage any cloud infrastructure in a Kubernetes native way. You just write a CRD for a cloud infrastructure, apply it and Kubeform will create it for you! Kubeform currently supports 5 top cloud platforms. These are AWS, Google Cloud, Azure, DigitalOcean and Linode.
+Kubeform is a Kubernetes operator provisioning cloud or on-prem resources using Terraform providers. Kubeform provides auto-generated Kubernetes CRDs for Terraform resources so that you can manage any cloud infrastructure in a Kubernetes native way. You just write a CRD for a cloud infrastructure, apply it and Kubeform will create it for you! Kubeform currently supports 5 top cloud platforms. These are AWS, Google Cloud, Azure, DigitalOcean and Linode.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

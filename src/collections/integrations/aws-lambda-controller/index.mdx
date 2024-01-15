@@ -1,24 +1,57 @@
 ---
-title: AWS Lambda  
+title: AWS Lambda
 subtitle: Collaborative and visual infrastructure as code for AWS Lambda
 integrationIcon: icon/color/aws-lambda-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-lambda-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-lambda-controller
+description: 
 category: App Definition and Development
 subcategory: Serverless
-featureList: ["Run code for virtually any type of application or backend service. ",
-"Write Lambda functions in your favorite language ",
-"Bring your own code"
+registrant: aws
+components: 
+	-	name: CodeSigningConfig
+		colorIcon: icon/components/CodeSigningConfig-color.svg
+		whiteIcon: icon/components/CodeSigningConfig-white.svg
+		description: 
+	-	name: EventSourceMapping
+		colorIcon: icon/components/EventSourceMapping-color.svg
+		whiteIcon: icon/components/EventSourceMapping-white.svg
+		description: 
+	-	name: FunctionURLConfig
+		colorIcon: icon/components/FunctionURLConfig-color.svg
+		whiteIcon: icon/components/FunctionURLConfig-white.svg
+		description: 
+	-	name: LayerVersion
+		colorIcon: icon/components/LayerVersion-color.svg
+		whiteIcon: icon/components/LayerVersion-white.svg
+		description: 
+	-	name: Function
+		colorIcon: icon/components/Function-color.svg
+		whiteIcon: icon/components/Function-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+featureList: [
+  "Run code for virtually any type of application or backend service. ",
+  "Write Lambda functions in your favorite language ",
+  "Bring your own code"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    AWS Lambda enables you to run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
+AWS Lambda enables you to run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,53 @@
 ---
-title: AWS Managed Service for Prometheus  
+title: AWS Managed Service for Prometheus
 subtitle: Collaborative and visual infrastructure as code for AWS Managed Service for Prometheus
 integrationIcon: icon/color/aws-prometheusservice-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-prometheusservice-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-prometheusservice-controller
+description: 
 category: Observability and Analysis
 subcategory: Metrics
-featureList: ["No collection agents required",
-"Amazon Managed Service for Prometheus includes a remote write-compatible API that can ingest metrics from OpenTelemetry, Prometheus libraries, and existing Prometheus servers.",
-"Amazon Managed Service for Prometheus includes a query-compatible HTTP API that allows you to query metrics, metric labels, metric metadata, and time series metrics. "
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: AlertManagerDefinition
+		colorIcon: icon/components/AlertManagerDefinition-color.svg
+		whiteIcon: icon/components/AlertManagerDefinition-white.svg
+		description: 
+	-	name: Workspace
+		colorIcon: icon/components/Workspace-color.svg
+		whiteIcon: icon/components/Workspace-white.svg
+		description: 
+	-	name: LoggingConfiguration
+		colorIcon: icon/components/LoggingConfiguration-color.svg
+		whiteIcon: icon/components/LoggingConfiguration-white.svg
+		description: 
+	-	name: RuleGroupsNamespace
+		colorIcon: icon/components/RuleGroupsNamespace-color.svg
+		whiteIcon: icon/components/RuleGroupsNamespace-white.svg
+		description: 
+featureList: [
+  "No collection agents required",
+  "Amazon Managed Service for Prometheus includes a remote write-compatible API that can ingest metrics from OpenTelemetry, Prometheus libraries, and existing Prometheus servers.",
+  "Amazon Managed Service for Prometheus includes a query-compatible HTTP API that allows you to query metrics, metric labels, metric metadata, and time series metrics. "
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Managed Service for Prometheus is a Prometheus-compatible service that monitors and provides alerts on containerized applications and infrastructure at scale. The service is integrated with Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Distro for OpenTelemetry.
+Amazon Managed Service for Prometheus is a Prometheus-compatible service that monitors and provides alerts on containerized applications and infrastructure at scale. The service is integrated with Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Distro for OpenTelemetry.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

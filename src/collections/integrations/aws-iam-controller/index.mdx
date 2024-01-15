@@ -1,24 +1,61 @@
 ---
-title: AWS Identity and Access Management  
+title: AWS Identity and Access Management
 subtitle: Collaborative and visual infrastructure as code for AWS Identity and Access Management
 integrationIcon: icon/color/aws-iam-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-iam-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-iam-controller
+description: 
 category: Security & Compliance
 subcategory: Security Identity Compliance
-featureList: ["Manage per-account access or scale access across AWS accounts and applications",
-"Set, verify, and right-size permissions toward least privilege",
-"Establish organization-wide and preventative guardrails on AWS"
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: Group
+		colorIcon: icon/components/Group-color.svg
+		whiteIcon: icon/components/Group-white.svg
+		description: 
+	-	name: InstanceProfile
+		colorIcon: icon/components/InstanceProfile-color.svg
+		whiteIcon: icon/components/InstanceProfile-white.svg
+		description: 
+	-	name: Policy
+		colorIcon: icon/components/Policy-color.svg
+		whiteIcon: icon/components/Policy-white.svg
+		description: 
+	-	name: Role
+		colorIcon: icon/components/Role-color.svg
+		whiteIcon: icon/components/Role-white.svg
+		description: 
+	-	name: User
+		colorIcon: icon/components/User-color.svg
+		whiteIcon: icon/components/User-white.svg
+		description: 
+	-	name: OpenIDConnectProvider
+		colorIcon: icon/components/OpenIDConnectProvider-color.svg
+		whiteIcon: icon/components/OpenIDConnectProvider-white.svg
+		description: 
+featureList: [
+  "Manage per-account access or scale access across AWS accounts and applications",
+  "Set, verify, and right-size permissions toward least privilege",
+  "Establish organization-wide and preventative guardrails on AWS"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    AWS Identity and Access Management securely manage identities and access to AWS services and resources
+AWS Identity and Access Management securely manage identities and access to AWS services and resources
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

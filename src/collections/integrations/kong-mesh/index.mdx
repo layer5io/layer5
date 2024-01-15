@@ -1,24 +1,57 @@
 ---
-title: Kong Mesh  
+title: Kong Mesh
 subtitle: Collaborative and visual infrastructure as code for Kong Mesh
 integrationIcon: icon/color/kong-mesh-color.svg
 darkModeIntegrationIcon: icon/white/kong-mesh-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kong-mesh
+description: 
 category: Cloud Native Network
 subcategory: Service Mesh
-featureList: ["Built on top of Envoy with 50+ observability charts out of the box, you can collect metrics, traces and logs of all L4-L7 traffic.",
-"Integrate with Kong Ingress Controller to implement authentication, transformations, and other functionalities across Kubernetes clusters with zero downtime.",
-"Configure Mesh natively using an API, web UI, or with declarative configuration to manage updates via your CI/CD pipelines."
+registrant: artifacthub
+components: 
+	-	name: AccessAudit
+		colorIcon: icon/components/AccessAudit-color.svg
+		whiteIcon: icon/components/AccessAudit-white.svg
+		description: 
+	-	name: AccessRoleBinding
+		colorIcon: icon/components/AccessRoleBinding-color.svg
+		whiteIcon: icon/components/AccessRoleBinding-white.svg
+		description: 
+	-	name: AccessRole
+		colorIcon: icon/components/AccessRole-color.svg
+		whiteIcon: icon/components/AccessRole-white.svg
+		description: 
+	-	name: MeshOPA
+		colorIcon: icon/components/MeshOPA-color.svg
+		whiteIcon: icon/components/MeshOPA-white.svg
+		description: 
+	-	name: OPAPolicy
+		colorIcon: icon/components/OPAPolicy-color.svg
+		whiteIcon: icon/components/OPAPolicy-white.svg
+		description: 
+	-	name: MeshGatewayConfig
+		colorIcon: icon/components/MeshGatewayConfig-color.svg
+		whiteIcon: icon/components/MeshGatewayConfig-white.svg
+		description: 
+	-	name: MeshGlobalRateLimit
+		colorIcon: icon/components/MeshGlobalRateLimit-color.svg
+		whiteIcon: icon/components/MeshGlobalRateLimit-white.svg
+		description: 
+featureList: [
+  "Built on top of Envoy with 50+ observability charts out of the box, you can collect metrics, traces and logs of all L4-L7 traffic.",
+  "Integrate with Kong Ingress Controller to implement authentication, transformations, and other functionalities across Kubernetes clusters with zero downtime.",
+  "Configure Mesh natively using an API, web UI, or with declarative configuration to manage updates via your CI/CD pipelines."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Enterprise service mesh based on Kuma for multi-cloud and multi-cluster on both Kubernetes and VMs.
+Enterprise service mesh based on Kuma for multi-cloud and multi-cluster on both Kubernetes and VMs.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

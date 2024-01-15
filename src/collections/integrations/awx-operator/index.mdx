@@ -1,24 +1,41 @@
 ---
-title: AWX Operator  
+title: AWX Operator
 subtitle: Collaborative and visual infrastructure as code for AWX Operator
 integrationIcon: icon/color/awx-operator-color.svg
 darkModeIntegrationIcon: icon/white/awx-operator-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/awx-operator
+description: 
 category: Orchestration & Management
 subcategory: Automation & Configuration
-featureList: ["Keep revision history and audit trail of all configuration changes",
-"Use MeshMap&lsquo;s visual designer to explore your App Mesh configuration",
-"Deploy Meshery on your EKS clusters for App Mesh management"
+registrant: artifacthub
+components: 
+	-	name: AWXBackup
+		colorIcon: icon/components/AWXBackup-color.svg
+		whiteIcon: icon/components/AWXBackup-white.svg
+		description: 
+	-	name: AWXRestore
+		colorIcon: icon/components/AWXRestore-color.svg
+		whiteIcon: icon/components/AWXRestore-white.svg
+		description: 
+	-	name: AWX
+		colorIcon: icon/components/AWX-color.svg
+		whiteIcon: icon/components/AWX-white.svg
+		description: 
+featureList: [
+  "Keep revision history and audit trail of all configuration changes",
+  "Use MeshMap&lsquo;s visual designer to explore your App Mesh configuration",
+  "Deploy Meshery on your EKS clusters for App Mesh management"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    An Ansible AWX operator for Kubernetes built with Operator SDK and Ansible.
+An Ansible AWX operator for Kubernetes built with Operator SDK and Ansible.
 </p>
 <p>AWX provides a web-based user interface, REST API, and task engine built on top of Ansible. It is one of the upstream projects for Red Hat Ansible Automation Platform.</p>
 <p>

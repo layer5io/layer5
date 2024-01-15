@@ -1,24 +1,109 @@
 ---
-title: Jitsi  
+title: Jitsi
 subtitle: Collaborative and visual infrastructure as code for Jitsi
 integrationIcon: icon/color/jitsi-color.svg
 darkModeIntegrationIcon: icon/white/jitsi-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/jitsi
+description: 
 category: Tools
 subcategory: Video Conferencing
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: Backup
+		colorIcon: icon/components/Backup-color.svg
+		whiteIcon: icon/components/Backup-white.svg
+		description: 
+	-	name: Cluster
+		colorIcon: icon/components/Cluster-color.svg
+		whiteIcon: icon/components/Cluster-white.svg
+		description: 
+	-	name: Pooler
+		colorIcon: icon/components/Pooler-color.svg
+		whiteIcon: icon/components/Pooler-white.svg
+		description: 
+	-	name: ScheduledBackup
+		colorIcon: icon/components/ScheduledBackup-color.svg
+		whiteIcon: icon/components/ScheduledBackup-white.svg
+		description: 
+	-	name: IngressRoute
+		colorIcon: icon/components/IngressRoute-color.svg
+		whiteIcon: icon/components/IngressRoute-white.svg
+		description: 
+	-	name: IngressRouteTCP
+		colorIcon: icon/components/IngressRouteTCP-color.svg
+		whiteIcon: icon/components/IngressRouteTCP-white.svg
+		description: 
+	-	name: IngressRouteUDP
+		colorIcon: icon/components/IngressRouteUDP-color.svg
+		whiteIcon: icon/components/IngressRouteUDP-white.svg
+		description: 
+	-	name: AddressPool
+		colorIcon: icon/components/AddressPool-color.svg
+		whiteIcon: icon/components/AddressPool-white.svg
+		description: 
+	-	name: BFDProfile
+		colorIcon: icon/components/BFDProfile-color.svg
+		whiteIcon: icon/components/BFDProfile-white.svg
+		description: 
+	-	name: BGPAdvertisement
+		colorIcon: icon/components/BGPAdvertisement-color.svg
+		whiteIcon: icon/components/BGPAdvertisement-white.svg
+		description: 
+	-	name: BGPPeer
+		colorIcon: icon/components/BGPPeer-color.svg
+		whiteIcon: icon/components/BGPPeer-white.svg
+		description: 
+	-	name: IPAddressPool
+		colorIcon: icon/components/IPAddressPool-color.svg
+		whiteIcon: icon/components/IPAddressPool-white.svg
+		description: 
+	-	name: L2Advertisement
+		colorIcon: icon/components/L2Advertisement-color.svg
+		whiteIcon: icon/components/L2Advertisement-white.svg
+		description: 
+	-	name: Community
+		colorIcon: icon/components/Community-color.svg
+		whiteIcon: icon/components/Community-white.svg
+		description: 
+	-	name: Middleware
+		colorIcon: icon/components/Middleware-color.svg
+		whiteIcon: icon/components/Middleware-white.svg
+		description: 
+	-	name: MiddlewareTCP
+		colorIcon: icon/components/MiddlewareTCP-color.svg
+		whiteIcon: icon/components/MiddlewareTCP-white.svg
+		description: 
+	-	name: ServersTransport
+		colorIcon: icon/components/ServersTransport-color.svg
+		whiteIcon: icon/components/ServersTransport-white.svg
+		description: 
+	-	name: TLSOption
+		colorIcon: icon/components/TLSOption-color.svg
+		whiteIcon: icon/components/TLSOption-white.svg
+		description: 
+	-	name: TLSStore
+		colorIcon: icon/components/TLSStore-color.svg
+		whiteIcon: icon/components/TLSStore-white.svg
+		description: 
+	-	name: TraefikService
+		colorIcon: icon/components/TraefikService-color.svg
+		whiteIcon: icon/components/TraefikService-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Jitsi is a set of open-source projects that allows you to easily build and deploy secure video conferencing solutions.
+Jitsi is a set of open-source projects that allows you to easily build and deploy secure video conferencing solutions.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,61 @@
 ---
-title: AWS MemoryDB for Redis  
+title: AWS MemoryDB for Redis
 subtitle: Collaborative and visual infrastructure as code for AWS MemoryDB for Redis
 integrationIcon: icon/color/aws-memorydb-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-memorydb-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-memorydb-controller
+description: 
 category: Provisioning
 subcategory: Database
-featureList: ["Amazon MemoryDB for Redis enables machine learning (ML) and generative artificial intelligence (AI) models to work with data stored in Amazon MemoryDB in real-time and without moving your data.",
-"Amazon MemoryDB provides native support for JavaScript Object Notation (JSON) documents in addition to the data structures included in open source Redis, at no additional cost.",
-"MemoryDB stores your entire dataset in memory to deliver microsecond read latency, single-digit millisecond write latency, and high throughput. It can handle more than 13 trillion requests per day and support peaks of 160 million requests per second."
+registrant: aws
+components: 
+	-	name: Cluster
+		colorIcon: icon/components/Cluster-color.svg
+		whiteIcon: icon/components/Cluster-white.svg
+		description: 
+	-	name: Snapshot
+		colorIcon: icon/components/Snapshot-color.svg
+		whiteIcon: icon/components/Snapshot-white.svg
+		description: 
+	-	name: SubnetGroup
+		colorIcon: icon/components/SubnetGroup-color.svg
+		whiteIcon: icon/components/SubnetGroup-white.svg
+		description: 
+	-	name: User
+		colorIcon: icon/components/User-color.svg
+		whiteIcon: icon/components/User-white.svg
+		description: 
+	-	name: ParameterGroup
+		colorIcon: icon/components/ParameterGroup-color.svg
+		whiteIcon: icon/components/ParameterGroup-white.svg
+		description: 
+	-	name: ACL
+		colorIcon: icon/components/ACL-color.svg
+		whiteIcon: icon/components/ACL-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+featureList: [
+  "Amazon MemoryDB for Redis enables machine learning (ML) and generative artificial intelligence (AI) models to work with data stored in Amazon MemoryDB in real-time and without moving your data.",
+  "Amazon MemoryDB provides native support for JavaScript Object Notation (JSON) documents in addition to the data structures included in open source Redis, at no additional cost.",
+  "MemoryDB stores your entire dataset in memory to deliver microsecond read latency, single-digit millisecond write latency, and high throughput. It can handle more than 13 trillion requests per day and support peaks of 160 million requests per second."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon MemoryDB for Redis is a durable database with microsecond reads, low single-digit millisecond writes, scalability, and enterprise security. MemoryDB delivers 99.99% availability and near instantaneous recovery without any data loss.
+Amazon MemoryDB for Redis is a durable database with microsecond reads, low single-digit millisecond writes, scalability, and enterprise security. MemoryDB delivers 99.99% availability and near instantaneous recovery without any data loss.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,229 @@
 ---
-title: Kubernetes  
+title: Kubernetes
 subtitle: The easiest way to get a production-grade Kubernetes cluster up and running
 integrationIcon: icon/color/kubernetes-color.svg
 darkModeIntegrationIcon: icon/white/kubernetes-white.svg
-docURL: https://docs.meshery.io/installation/platforms/kubernetes
+docURL: https://docs.meshery.io/installation/kubernetes
+description: 
 category: Orchestration & Management
 subcategory: Orchestration & Management
-featureList: ["Visualize your Kubernetes clusters",
-"Distributed evaluation and enforcement of policy",
-"Pre and post-provisioning workflow extensions"
+registrant: artifacthub
+components: 
+	-	name: Namespace
+		colorIcon: icon/components/Namespace-color.svg
+		whiteIcon: icon/components/Namespace-white.svg
+		description: 
+	-	name: Service
+		colorIcon: icon/components/Service-color.svg
+		whiteIcon: icon/components/Service-white.svg
+		description: 
+	-	name: Pod
+		colorIcon: icon/components/Pod-color.svg
+		whiteIcon: icon/components/Pod-white.svg
+		description: 
+	-	name: Node
+		colorIcon: icon/components/Node-color.svg
+		whiteIcon: icon/components/Node-white.svg
+		description: 
+	-	name: Deployment
+		colorIcon: icon/components/Deployment-color.svg
+		whiteIcon: icon/components/Deployment-white.svg
+		description: 
+	-	name: Secret
+		colorIcon: icon/components/Secret-color.svg
+		whiteIcon: icon/components/Secret-white.svg
+		description: 
+	-	name: CronJob
+		colorIcon: icon/components/CronJob-color.svg
+		whiteIcon: icon/components/CronJob-white.svg
+		description: 
+	-	name: DaemonSet
+		colorIcon: icon/components/DaemonSet-color.svg
+		whiteIcon: icon/components/DaemonSet-white.svg
+		description: 
+	-	name: ClusterRole
+		colorIcon: icon/components/ClusterRole-color.svg
+		whiteIcon: icon/components/ClusterRole-white.svg
+		description: 
+	-	name: ClusterRoleBinding
+		colorIcon: icon/components/ClusterRoleBinding-color.svg
+		whiteIcon: icon/components/ClusterRoleBinding-white.svg
+		description: 
+	-	name: APIService
+		colorIcon: icon/components/APIService-color.svg
+		whiteIcon: icon/components/APIService-white.svg
+		description: 
+	-	name: AuthorizationPolicy
+		colorIcon: icon/components/AuthorizationPolicy-color.svg
+		whiteIcon: icon/components/AuthorizationPolicy-white.svg
+		description: 
+	-	name: Binding
+		colorIcon: icon/components/Binding-color.svg
+		whiteIcon: icon/components/Binding-white.svg
+		description: 
+	-	name: Broker
+		colorIcon: icon/components/Broker-color.svg
+		whiteIcon: icon/components/Broker-white.svg
+		description: 
+	-	name: CSIDriver
+		colorIcon: icon/components/CSIDriver-color.svg
+		whiteIcon: icon/components/CSIDriver-white.svg
+		description: 
+	-	name: CSINode
+		colorIcon: icon/components/CSINode-color.svg
+		whiteIcon: icon/components/CSINode-white.svg
+		description: 
+	-	name: CSIStorageCapacity
+		colorIcon: icon/components/CSIStorageCapacity-color.svg
+		whiteIcon: icon/components/CSIStorageCapacity-white.svg
+		description: 
+	-	name: CertificateSigningRequest
+		colorIcon: icon/components/CertificateSigningRequest-color.svg
+		whiteIcon: icon/components/CertificateSigningRequest-white.svg
+		description: 
+	-	name: ComponentStatus
+		colorIcon: icon/components/ComponentStatus-color.svg
+		whiteIcon: icon/components/ComponentStatus-white.svg
+		description: 
+	-	name: ConfigMap
+		colorIcon: icon/components/ConfigMap-color.svg
+		whiteIcon: icon/components/ConfigMap-white.svg
+		description: 
+	-	name: ControllerRevision
+		colorIcon: icon/components/ControllerRevision-color.svg
+		whiteIcon: icon/components/ControllerRevision-white.svg
+		description: 
+	-	name: EndpointSlice
+		colorIcon: icon/components/EndpointSlice-color.svg
+		whiteIcon: icon/components/EndpointSlice-white.svg
+		description: 
+	-	name: Endpoints
+		colorIcon: icon/components/Endpoints-color.svg
+		whiteIcon: icon/components/Endpoints-white.svg
+		description: 
+	-	name: Event
+		colorIcon: icon/components/Event-color.svg
+		whiteIcon: icon/components/Event-white.svg
+		description: 
+	-	name: Flow Schema
+		colorIcon: icon/components/Flow Schema-color.svg
+		whiteIcon: icon/components/Flow Schema-white.svg
+		description: 
+	-	name: Horizontal Pod Autoscaler
+		colorIcon: icon/components/Horizontal Pod Autoscaler-color.svg
+		whiteIcon: icon/components/Horizontal Pod Autoscaler-white.svg
+		description: 
+	-	name: Ingress
+		colorIcon: icon/components/Ingress-color.svg
+		whiteIcon: icon/components/Ingress-white.svg
+		description: 
+	-	name: Network Policy
+		colorIcon: icon/components/Network Policy-color.svg
+		whiteIcon: icon/components/Network Policy-white.svg
+		description: 
+	-	name: NodeMetrics
+		colorIcon: icon/components/NodeMetrics-color.svg
+		whiteIcon: icon/components/NodeMetrics-white.svg
+		description: 
+	-	name: PersistentVolume
+		colorIcon: icon/components/PersistentVolume-color.svg
+		whiteIcon: icon/components/PersistentVolume-white.svg
+		description: 
+	-	name: PersistentVolumeClaim
+		colorIcon: icon/components/PersistentVolumeClaim-color.svg
+		whiteIcon: icon/components/PersistentVolumeClaim-white.svg
+		description: 
+	-	name: PodDisruptionBudget
+		colorIcon: icon/components/PodDisruptionBudget-color.svg
+		whiteIcon: icon/components/PodDisruptionBudget-white.svg
+		description: 
+	-	name: PodTemplate
+		colorIcon: icon/components/PodTemplate-color.svg
+		whiteIcon: icon/components/PodTemplate-white.svg
+		description: 
+	-	name: PriorityClass
+		colorIcon: icon/components/PriorityClass-color.svg
+		whiteIcon: icon/components/PriorityClass-white.svg
+		description: 
+	-	name: PriorityLevelConfiguration
+		colorIcon: icon/components/PriorityLevelConfiguration-color.svg
+		whiteIcon: icon/components/PriorityLevelConfiguration-white.svg
+		description: 
+	-	name: ReplicaSet
+		colorIcon: icon/components/ReplicaSet-color.svg
+		whiteIcon: icon/components/ReplicaSet-white.svg
+		description: 
+	-	name: ReplicationController
+		colorIcon: icon/components/ReplicationController-color.svg
+		whiteIcon: icon/components/ReplicationController-white.svg
+		description: 
+	-	name: ResourceQuota
+		colorIcon: icon/components/ResourceQuota-color.svg
+		whiteIcon: icon/components/ResourceQuota-white.svg
+		description: 
+	-	name: Role
+		colorIcon: icon/components/Role-color.svg
+		whiteIcon: icon/components/Role-white.svg
+		description: 
+	-	name: RoleBinding
+		colorIcon: icon/components/RoleBinding-color.svg
+		whiteIcon: icon/components/RoleBinding-white.svg
+		description: 
+	-	name: RuntimeClass
+		colorIcon: icon/components/RuntimeClass-color.svg
+		whiteIcon: icon/components/RuntimeClass-white.svg
+		description: 
+	-	name: SelfSubjectAccessReview
+		colorIcon: icon/components/SelfSubjectAccessReview-color.svg
+		whiteIcon: icon/components/SelfSubjectAccessReview-white.svg
+		description: 
+	-	name: SelfSubjectRulesReview
+		colorIcon: icon/components/SelfSubjectRulesReview-color.svg
+		whiteIcon: icon/components/SelfSubjectRulesReview-white.svg
+		description: 
+	-	name: ServiceAccount
+		colorIcon: icon/components/ServiceAccount-color.svg
+		whiteIcon: icon/components/ServiceAccount-white.svg
+		description: 
+	-	name: StatefulSet
+		colorIcon: icon/components/StatefulSet-color.svg
+		whiteIcon: icon/components/StatefulSet-white.svg
+		description: 
+	-	name: StorageClass
+		colorIcon: icon/components/StorageClass-color.svg
+		whiteIcon: icon/components/StorageClass-white.svg
+		description: 
+	-	name: SubjectAccessReview
+		colorIcon: icon/components/SubjectAccessReview-color.svg
+		whiteIcon: icon/components/SubjectAccessReview-white.svg
+		description: 
+	-	name: Token Review
+		colorIcon: icon/components/Token Review-color.svg
+		whiteIcon: icon/components/Token Review-white.svg
+		description: 
+	-	name: ValidatingWebhookConfiguration
+		colorIcon: icon/components/ValidatingWebhookConfiguration-color.svg
+		whiteIcon: icon/components/ValidatingWebhookConfiguration-white.svg
+		description: 
+	-	name: VolumeAttachment
+		colorIcon: icon/components/VolumeAttachment-color.svg
+		whiteIcon: icon/components/VolumeAttachment-white.svg
+		description: 
+featureList: [
+  "Visualize your Kubernetes clusters",
+  "Distributed evaluation and enforcement of policy",
+  "Pre and post-provisioning workflow extensions"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications
+Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

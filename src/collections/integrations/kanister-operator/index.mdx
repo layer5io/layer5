@@ -1,24 +1,45 @@
 ---
-title: Kanister Operator  
+title: Kanister Operator
 subtitle: Collaborative and visual infrastructure as code for Kanister Operator
 integrationIcon: icon/color/kanister-operator-color.svg
 darkModeIntegrationIcon: icon/white/kanister-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kanister-operator
+description: 
 category: App Definition and Development
 subcategory: Provisioning
-featureList: ["Encapsulate key data management tasks in blueprints that allow uniform operations at scale.",
-"Customize blueprints to fit specific needs of your environment and workload without starting from scratch.",
-"Keep application images unchanged by including required tools as a sidecar container or as a separate pod."
+registrant: artifacthub
+components: 
+	-	name: ActionSet
+		colorIcon: icon/components/ActionSet-color.svg
+		whiteIcon: icon/components/ActionSet-white.svg
+		description: 
+	-	name: Blueprint
+		colorIcon: icon/components/Blueprint-color.svg
+		whiteIcon: icon/components/Blueprint-white.svg
+		description: 
+	-	name: Profile
+		colorIcon: icon/components/Profile-color.svg
+		whiteIcon: icon/components/Profile-white.svg
+		description: 
+	-	name: RepositoryServer
+		colorIcon: icon/components/RepositoryServer-color.svg
+		whiteIcon: icon/components/RepositoryServer-white.svg
+		description: 
+featureList: [
+  "Encapsulate key data management tasks in blueprints that allow uniform operations at scale.",
+  "Customize blueprints to fit specific needs of your environment and workload without starting from scratch.",
+  "Keep application images unchanged by including required tools as a sidecar container or as a separate pod."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kanister is a framework that enables application-level data management on Kubernetes. It allows domain experts to capture application specific data management tasks via blueprints, which can be easily shared and extended. The framework takes care of the tedious details surrounding execution on Kubernetes and presents a homogeneous operational experience across applications at scale.
+Kanister is a framework that enables application-level data management on Kubernetes. It allows domain experts to capture application specific data management tasks via blueprints, which can be easily shared and extended. The framework takes care of the tedious details surrounding execution on Kubernetes and presents a homogeneous operational experience across applications at scale.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

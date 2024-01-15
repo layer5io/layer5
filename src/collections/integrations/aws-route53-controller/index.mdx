@@ -1,24 +1,45 @@
 ---
-title: AWS Route 53  
+title: AWS Route 53
 subtitle: Collaborative and visual infrastructure as code for AWS Route 53
 integrationIcon: icon/color/aws-route53-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-route53-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-route53-controller
+description: 
 category: Cloud Native Network
 subcategory: Networking Content Delivery
-featureList: ["Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling.",
-"Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools.",
-"Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance."
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: HostedZone
+		colorIcon: icon/components/HostedZone-color.svg
+		whiteIcon: icon/components/HostedZone-white.svg
+		description: 
+	-	name: RecordSet
+		colorIcon: icon/components/RecordSet-color.svg
+		whiteIcon: icon/components/RecordSet-white.svg
+		description: 
+featureList: [
+  "Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling.",
+  "Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools.",
+  "Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. Route 53 connects user requests to internet applications running on AWS or on-premises.
+Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. Route 53 connects user requests to internet applications running on AWS or on-premises.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

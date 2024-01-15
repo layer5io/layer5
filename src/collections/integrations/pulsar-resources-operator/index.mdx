@@ -1,24 +1,53 @@
 ---
-title: Pulsar Resources Operator  
+title: Pulsar Resources Operator
 subtitle: Collaborative and visual infrastructure as code for Pulsar Resources Operator
 integrationIcon: icon/color/pulsar-resources-operator-color.svg
 darkModeIntegrationIcon: icon/white/pulsar-resources-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/pulsar-resources-operator
+description: 
 category: App Definition and Development
 subcategory: Streaming & Messaging
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: PulsarConnection
+		colorIcon: icon/components/PulsarConnection-color.svg
+		whiteIcon: icon/components/PulsarConnection-white.svg
+		description: 
+	-	name: PulsarNamespace
+		colorIcon: icon/components/PulsarNamespace-color.svg
+		whiteIcon: icon/components/PulsarNamespace-white.svg
+		description: 
+	-	name: PulsarPermission
+		colorIcon: icon/components/PulsarPermission-color.svg
+		whiteIcon: icon/components/PulsarPermission-white.svg
+		description: 
+	-	name: PulsarTenant
+		colorIcon: icon/components/PulsarTenant-color.svg
+		whiteIcon: icon/components/PulsarTenant-white.svg
+		description: 
+	-	name: PulsarTopic
+		colorIcon: icon/components/PulsarTopic-color.svg
+		whiteIcon: icon/components/PulsarTopic-white.svg
+		description: 
+	-	name: PulsarGeoReplication
+		colorIcon: icon/components/PulsarGeoReplication-color.svg
+		whiteIcon: icon/components/PulsarGeoReplication-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    The Pulsar Operator is a controller that manages Pulsar clusters in Kubernetes. It provides a full management life-cycle for Pulsar, including deployment, upgrades, scaling, and configuration changes. With the Pulsar Operator, Pulsar can run seamlessly in the Kubernetes clusters deployed on a public or private cloud. You can then manage Pulsar clusters using the Kubernetes Application Programming Interface (API) and the kubectl tool.
+The Pulsar Operator is a controller that manages Pulsar clusters in Kubernetes. It provides a full management life-cycle for Pulsar, including deployment, upgrades, scaling, and configuration changes. With the Pulsar Operator, Pulsar can run seamlessly in the Kubernetes clusters deployed on a public or private cloud. You can then manage Pulsar clusters using the Kubernetes Application Programming Interface (API) and the kubectl tool.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,49 @@
 ---
-title: New Relic Operator  
+title: New Relic Operator
 subtitle: Collaborative and visual infrastructure as code for New Relic Operator
 integrationIcon: icon/color/newrelic-operator-color.svg
 darkModeIntegrationIcon: icon/white/newrelic-operator-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/newrelic-operator
+description: 
 category: Observability and Analysis
 subcategory: Observability and Analysis
-featureList: ["Alert Policies and NRQL Alert Conditions",
-"Alert Conditions for APM, Browser and mobile",
-"Alert Channels"
+registrant: artifacthub
+components: 
+	-	name: AlertChannel
+		colorIcon: icon/components/AlertChannel-color.svg
+		whiteIcon: icon/components/AlertChannel-white.svg
+		description: 
+	-	name: AlertPolicy
+		colorIcon: icon/components/AlertPolicy-color.svg
+		whiteIcon: icon/components/AlertPolicy-white.svg
+		description: 
+	-	name: Dashboard
+		colorIcon: icon/components/Dashboard-color.svg
+		whiteIcon: icon/components/Dashboard-white.svg
+		description: 
+	-	name: Data
+		colorIcon: icon/components/Data-color.svg
+		whiteIcon: icon/components/Data-white.svg
+		description: 
+	-	name: Monitor
+		colorIcon: icon/components/Monitor-color.svg
+		whiteIcon: icon/components/Monitor-white.svg
+		description: 
+featureList: [
+  "Alert Policies and NRQL Alert Conditions",
+  "Alert Conditions for APM, Browser and mobile",
+  "Alert Channels"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    The newrelic-kubernetes-operator is a Kubernetes Operator that facilitates management of New Relic resources from within your Kubernetes configuration. Managing New Relic resources via custom Kubernetes objects can be done the same way you manage built-in Kubernetes objects.
+The newrelic-kubernetes-operator is a Kubernetes Operator that facilitates management of New Relic resources from within your Kubernetes configuration. Managing New Relic resources via custom Kubernetes objects can be done the same way you manage built-in Kubernetes objects.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

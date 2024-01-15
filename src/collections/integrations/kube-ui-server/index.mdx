@@ -1,24 +1,69 @@
 ---
-title: Kubernetes UI Server  
+title: Kubernetes UI Server
 subtitle: Collaborative and visual infrastructure as code for Kubernetes UI Server
 integrationIcon: icon/color/kube-ui-server-color.svg
 darkModeIntegrationIcon: icon/white/kube-ui-server-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kube-ui-server
+description: 
 category: Provisioning
 subcategory: Automation & Configuration
-featureList: ["WhoAmI service returns the user info of the user making the api call.",
-"PodView resource exposes actual resource usage by a Pod. The resource usage information is read from Prometheus.",
-"Identity Server is a Kubernetes extended apiserver (EAS). As an EAS, it has access to the user who is making an api call to the whoami server."
+registrant: artifacthub
+components: 
+	-	name: AppBinding
+		colorIcon: icon/components/AppBinding-color.svg
+		whiteIcon: icon/components/AppBinding-white.svg
+		description: 
+	-	name: HelmRelease
+		colorIcon: icon/components/HelmRelease-color.svg
+		whiteIcon: icon/components/HelmRelease-white.svg
+		description: 
+	-	name: HelmRepository
+		colorIcon: icon/components/HelmRepository-color.svg
+		whiteIcon: icon/components/HelmRepository-white.svg
+		description: 
+	-	name: Feature
+		colorIcon: icon/components/Feature-color.svg
+		whiteIcon: icon/components/Feature-white.svg
+		description: 
+	-	name: FeatureSet
+		colorIcon: icon/components/FeatureSet-color.svg
+		whiteIcon: icon/components/FeatureSet-white.svg
+		description: 
+	-	name: ResourceDashboard
+		colorIcon: icon/components/ResourceDashboard-color.svg
+		whiteIcon: icon/components/ResourceDashboard-white.svg
+		description: 
+	-	name: ResourceEditor
+		colorIcon: icon/components/ResourceEditor-color.svg
+		whiteIcon: icon/components/ResourceEditor-white.svg
+		description: 
+	-	name: ChartPreset
+		colorIcon: icon/components/ChartPreset-color.svg
+		whiteIcon: icon/components/ChartPreset-white.svg
+		description: 
+	-	name: ClusterChartPreset
+		colorIcon: icon/components/ClusterChartPreset-color.svg
+		whiteIcon: icon/components/ClusterChartPreset-white.svg
+		description: 
+	-	name: ProjectQuota
+		colorIcon: icon/components/ProjectQuota-color.svg
+		whiteIcon: icon/components/ProjectQuota-white.svg
+		description: 
+featureList: [
+  "WhoAmI service returns the user info of the user making the api call.",
+  "PodView resource exposes actual resource usage by a Pod. The resource usage information is read from Prometheus.",
+  "Identity Server is a Kubernetes extended apiserver (EAS). As an EAS, it has access to the user who is making an api call to the whoami server."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kubernetes UI Server is an extended api server for Kubernetes. This exposes a number of apis for a Kubernetes cluster, such as:
+Kubernetes UI Server is an extended api server for Kubernetes. This exposes a number of apis for a Kubernetes cluster, such as:
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

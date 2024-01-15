@@ -1,24 +1,65 @@
 ---
-title: OPA Gatekeeper  
+title: OPA Gatekeeper
 subtitle: Collaborative and visual infrastructure as code for Frinx Machine
 integrationIcon: icon/color/gatekeeper-color.svg
 darkModeIntegrationIcon: icon/white/gatekeeper-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/gatekeeper
+description: 
 category: Security & Compliance
 subcategory: Security & Compliance
-featureList: ["Native Kubernetes CRDs for instantiating the policy library (aka constraints)",
-"An extensible, parameterized policy library",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: Assign
+		colorIcon: icon/components/Assign-color.svg
+		whiteIcon: icon/components/Assign-white.svg
+		description: 
+	-	name: AssignMetadata
+		colorIcon: icon/components/AssignMetadata-color.svg
+		whiteIcon: icon/components/AssignMetadata-white.svg
+		description: 
+	-	name: ConstraintTemplate
+		colorIcon: icon/components/ConstraintTemplate-color.svg
+		whiteIcon: icon/components/ConstraintTemplate-white.svg
+		description: 
+	-	name: ExpansionTemplate
+		colorIcon: icon/components/ExpansionTemplate-color.svg
+		whiteIcon: icon/components/ExpansionTemplate-white.svg
+		description: 
+	-	name: ModifySet
+		colorIcon: icon/components/ModifySet-color.svg
+		whiteIcon: icon/components/ModifySet-white.svg
+		description: 
+	-	name: MutatorPodStatus
+		colorIcon: icon/components/MutatorPodStatus-color.svg
+		whiteIcon: icon/components/MutatorPodStatus-white.svg
+		description: 
+	-	name: Provider
+		colorIcon: icon/components/Provider-color.svg
+		whiteIcon: icon/components/Provider-white.svg
+		description: 
+	-	name: AssignImage
+		colorIcon: icon/components/AssignImage-color.svg
+		whiteIcon: icon/components/AssignImage-white.svg
+		description: 
+	-	name: ExpansionTemplatePodStatus
+		colorIcon: icon/components/ExpansionTemplatePodStatus-color.svg
+		whiteIcon: icon/components/ExpansionTemplatePodStatus-white.svg
+		description: 
+featureList: [
+  "Native Kubernetes CRDs for instantiating the policy library (aka constraints)",
+  "An extensible, parameterized policy library",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Compared to using OPA with its sidecar kube-mgmt (aka Gatekeeper v1.0), Gatekeeper introduces the following functionality:
+Compared to using OPA with its sidecar kube-mgmt (aka Gatekeeper v1.0), Gatekeeper introduces the following functionality:
 </p>
 <p>
     Connect GitHub with Meshery and import selectively import your existing Helm Charts, Docker Compose applications, and Kubernetes manifests.Visually configure and customize your cloud native infrastructure.

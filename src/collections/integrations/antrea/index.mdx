@@ -1,24 +1,89 @@
 ---
-title: Antrea  
+title: Antrea
 subtitle: Collaborative and visual infrastructure as code for Antrea
 integrationIcon: icon/color/antrea-color.svg
 darkModeIntegrationIcon: icon/white/antrea-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/antrea
+description: 
 category: Runtime
 subcategory: Cloud Native Network
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: AntreaAgentInfo
+		colorIcon: icon/components/AntreaAgentInfo-color.svg
+		whiteIcon: icon/components/AntreaAgentInfo-white.svg
+		description: 
+	-	name: AntreaControllerInfo
+		colorIcon: icon/components/AntreaControllerInfo-color.svg
+		whiteIcon: icon/components/AntreaControllerInfo-white.svg
+		description: 
+	-	name: ClusterGroup
+		colorIcon: icon/components/ClusterGroup-color.svg
+		whiteIcon: icon/components/ClusterGroup-white.svg
+		description: 
+	-	name: ClusterNetworkPolicy
+		colorIcon: icon/components/ClusterNetworkPolicy-color.svg
+		whiteIcon: icon/components/ClusterNetworkPolicy-white.svg
+		description: 
+	-	name: Egress
+		colorIcon: icon/components/Egress-color.svg
+		whiteIcon: icon/components/Egress-white.svg
+		description: 
+	-	name: ExternalEntity
+		colorIcon: icon/components/ExternalEntity-color.svg
+		whiteIcon: icon/components/ExternalEntity-white.svg
+		description: 
+	-	name: ExternalIPPool
+		colorIcon: icon/components/ExternalIPPool-color.svg
+		whiteIcon: icon/components/ExternalIPPool-white.svg
+		description: 
+	-	name: ExternalNode
+		colorIcon: icon/components/ExternalNode-color.svg
+		whiteIcon: icon/components/ExternalNode-white.svg
+		description: 
+	-	name: IPPool
+		colorIcon: icon/components/IPPool-color.svg
+		whiteIcon: icon/components/IPPool-white.svg
+		description: 
+	-	name: NetworkPolicy
+		colorIcon: icon/components/NetworkPolicy-color.svg
+		whiteIcon: icon/components/NetworkPolicy-white.svg
+		description: 
+	-	name: SupportBundleCollection
+		colorIcon: icon/components/SupportBundleCollection-color.svg
+		whiteIcon: icon/components/SupportBundleCollection-white.svg
+		description: 
+	-	name: Tier
+		colorIcon: icon/components/Tier-color.svg
+		whiteIcon: icon/components/Tier-white.svg
+		description: 
+	-	name: Traceflow
+		colorIcon: icon/components/Traceflow-color.svg
+		whiteIcon: icon/components/Traceflow-white.svg
+		description: 
+	-	name: TrafficControl
+		colorIcon: icon/components/TrafficControl-color.svg
+		whiteIcon: icon/components/TrafficControl-white.svg
+		description: 
+	-	name: Group
+		colorIcon: icon/components/Group-color.svg
+		whiteIcon: icon/components/Group-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kubernetes networking based on Open vSwitch
+Kubernetes networking based on Open vSwitch
 </p>
 <p>Antrea is a Kubernetes-native project that implements the Container Network Interface (CNI) and Kubernetes NetworkPolicy thereby providing network connectivity and security for pod workloads. Antrea extends the benefit of programmable networks from Open vSwitch (OVS) to Kubernetes.</p><p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

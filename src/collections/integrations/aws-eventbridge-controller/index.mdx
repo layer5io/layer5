@@ -1,24 +1,53 @@
 ---
-title: AWS EventBridge  
+title: AWS EventBridge
 subtitle: Collaborative and visual infrastructure as code for AWS EventBridge
 integrationIcon: icon/color/aws-eventbridge-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-eventbridge-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-eventbridge-controller
+description: 
 category: App Definition and Development
 subcategory: Streaming & Messaging
-featureList: ["Amazon EventBridge Event Bus is a serverless event bus that helps you receive, filter, transform, route, and deliver events.",
-"Amazon EventBridge Pipes is a serverless point-to-point integration resource that helps you connect event producers to event consumers with optional filtering, enrichment, and transformation capabilities.",
-"Use Amazon EventBridge Scheduler to schedule tasks and events at scale."
+registrant: aws
+components: 
+	-	name: Archive
+		colorIcon: icon/components/Archive-color.svg
+		whiteIcon: icon/components/Archive-white.svg
+		description: 
+	-	name: Endpoint
+		colorIcon: icon/components/Endpoint-color.svg
+		whiteIcon: icon/components/Endpoint-white.svg
+		description: 
+	-	name: EventBus
+		colorIcon: icon/components/EventBus-color.svg
+		whiteIcon: icon/components/EventBus-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: Rule
+		colorIcon: icon/components/Rule-color.svg
+		whiteIcon: icon/components/Rule-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+featureList: [
+  "Amazon EventBridge Event Bus is a serverless event bus that helps you receive, filter, transform, route, and deliver events.",
+  "Amazon EventBridge Pipes is a serverless point-to-point integration resource that helps you connect event producers to event consumers with optional filtering, enrichment, and transformation capabilities.",
+  "Use Amazon EventBridge Scheduler to schedule tasks and events at scale."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon EventBridge enables you to build event-driven applications at scale across AWS, existing systems, or SaaS applications
+Amazon EventBridge enables you to build event-driven applications at scale across AWS, existing systems, or SaaS applications
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

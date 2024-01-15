@@ -1,24 +1,41 @@
 ---
-title: AWS CloudFront  
+title: AWS CloudFront
 subtitle: Collaborative and visual infrastructure as code for AWS CloudFront
 integrationIcon: icon/color/aws-cloudfront-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-cloudfront-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-cloudfront-controller
+description: 
 category: Cloud Native Network
 subcategory: Networking Content Delivery
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: CachedPolicy
+		colorIcon: icon/components/CachedPolicy-color.svg
+		whiteIcon: icon/components/CachedPolicy-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.
+Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

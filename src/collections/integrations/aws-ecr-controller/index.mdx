@@ -1,26 +1,47 @@
 ---
-title: AWS Elastic Container Registry  
+title: AWS Elastic Container Registry
 subtitle: Collaborative and visual infrastructure as code for AWS Elastic Container Registry
 integrationIcon: icon/color/aws-ecr-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-ecr-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-ecr-controller
+description: 
 category: Provisioning
 subcategory: Containers
-featureList: ["OCI and Docker support",
-"Public container image and artifact gallery
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: PullThroughCacheRule
+		colorIcon: icon/components/PullThroughCacheRule-color.svg
+		whiteIcon: icon/components/PullThroughCacheRule-white.svg
+		description: 
+	-	name: Repository
+		colorIcon: icon/components/Repository-color.svg
+		whiteIcon: icon/components/Repository-white.svg
+		description: 
+featureList: [
+  "OCI and Docker support",
+  "Public container image and artifact gallery
 
 ",
-"Amazon ECR supports the ability to define and organize repositories in your registry using namespaces."
+  "Amazon ECR supports the ability to define and organize repositories in your registry using namespaces."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Elastic Container Registry (Amazon ECR) is a fully managed container registry offering high-performance hosting, so you can reliably deploy application images and artifacts anywhere.
+Amazon Elastic Container Registry (Amazon ECR) is a fully managed container registry offering high-performance hosting, so you can reliably deploy application images and artifacts anywhere.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

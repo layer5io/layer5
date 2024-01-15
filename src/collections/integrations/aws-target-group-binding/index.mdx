@@ -1,24 +1,33 @@
 ---
-title: AWS Target Group Binding  
+title: AWS Target Group Binding
 subtitle: Collaborative and visual infrastructure as code for AWS Target Group Binding
 integrationIcon: icon/color/aws-target-group-binding-color.svg
 darkModeIntegrationIcon: icon/white/aws-target-group-binding-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-target-group-binding
+description: 
 category: Cloud Native Network
 subcategory: Service Proxy
-featureList: ["Expose your pods using an existing ALB TargetGroup or NLB TargetGroup.",
-"Allows you to provision the load balancer infrastructure completely outside of Kubernetes.",
-"Used by AWS LoadBalancer controller internally to  support the functionality for Ingress and Service resource as well."
+registrant: artifacthub
+components: 
+	-	name: TargetGroupBinding
+		colorIcon: icon/components/TargetGroupBinding-color.svg
+		whiteIcon: icon/components/TargetGroupBinding-white.svg
+		description: 
+featureList: [
+  "Expose your pods using an existing ALB TargetGroup or NLB TargetGroup.",
+  "Allows you to provision the load balancer infrastructure completely outside of Kubernetes.",
+  "Used by AWS LoadBalancer controller internally to  support the functionality for Ingress and Service resource as well."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Povision a TargetGroupBinding resource that can be combined with an externally provisioned AWS Loadbalancer to provide an ingress route into the defined kubernetes service.
+Povision a TargetGroupBinding resource that can be combined with an externally provisioned AWS Loadbalancer to provide an ingress route into the defined kubernetes service.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,85 @@
 ---
-title: Stackgres Operator  
+title: Stackgres Operator
 subtitle: Collaborative and visual infrastructure as code for Stackgres Operator
 integrationIcon: icon/color/stackgres-operator-color.svg
 darkModeIntegrationIcon: icon/white/stackgres-operator-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/stackgres-operator
+description: 
 category: App Definition and Development
 subcategory: Database
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: SGBackup
+		colorIcon: icon/components/SGBackup-color.svg
+		whiteIcon: icon/components/SGBackup-white.svg
+		description: 
+	-	name: SGBackupConfig
+		colorIcon: icon/components/SGBackupConfig-color.svg
+		whiteIcon: icon/components/SGBackupConfig-white.svg
+		description: 
+	-	name: SGCluster
+		colorIcon: icon/components/SGCluster-color.svg
+		whiteIcon: icon/components/SGCluster-white.svg
+		description: 
+	-	name: SGDistributedLogs
+		colorIcon: icon/components/SGDistributedLogs-color.svg
+		whiteIcon: icon/components/SGDistributedLogs-white.svg
+		description: 
+	-	name: SGInstanceProfile
+		colorIcon: icon/components/SGInstanceProfile-color.svg
+		whiteIcon: icon/components/SGInstanceProfile-white.svg
+		description: 
+	-	name: SGPoolingConfig
+		colorIcon: icon/components/SGPoolingConfig-color.svg
+		whiteIcon: icon/components/SGPoolingConfig-white.svg
+		description: 
+	-	name: SGPostgresConfig
+		colorIcon: icon/components/SGPostgresConfig-color.svg
+		whiteIcon: icon/components/SGPostgresConfig-white.svg
+		description: 
+	-	name: SGConfig
+		colorIcon: icon/components/SGConfig-color.svg
+		whiteIcon: icon/components/SGConfig-white.svg
+		description: 
+	-	name: SGShardedCluster
+		colorIcon: icon/components/SGShardedCluster-color.svg
+		whiteIcon: icon/components/SGShardedCluster-white.svg
+		description: 
+	-	name: SGObjectStorage
+		colorIcon: icon/components/SGObjectStorage-color.svg
+		whiteIcon: icon/components/SGObjectStorage-white.svg
+		description: 
+	-	name: SGScript
+		colorIcon: icon/components/SGScript-color.svg
+		whiteIcon: icon/components/SGScript-white.svg
+		description: 
+	-	name: SGShardedBackup
+		colorIcon: icon/components/SGShardedBackup-color.svg
+		whiteIcon: icon/components/SGShardedBackup-white.svg
+		description: 
+	-	name: SGDbOps
+		colorIcon: icon/components/SGDbOps-color.svg
+		whiteIcon: icon/components/SGDbOps-white.svg
+		description: 
+	-	name: SGShardedDbOps
+		colorIcon: icon/components/SGShardedDbOps-color.svg
+		whiteIcon: icon/components/SGShardedDbOps-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    StackGres is a fully-featured platform for running PostgreSQL on Kubernetes.
+StackGres is a fully-featured platform for running PostgreSQL on Kubernetes.
 Deploy in minutes an Enterprise-Grade Postgres-as-a-Service, in your infrastructure.
 100% Open Source.
 </p>
