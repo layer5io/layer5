@@ -1,24 +1,41 @@
 ---
-title: Litmus Chaos  
+title: Litmus Chaos
 subtitle: Collaborative and visual infrastructure as code for Litmus Chaos
 integrationIcon: icon/color/litmus-core-color.svg
 darkModeIntegrationIcon: icon/white/litmus-core-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/litmus-core
+description: 
 category: Observability and Analysis
 subcategory: Chaos Engineering
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: ChaosEngine
+		colorIcon: icon/components/ChaosEngine-color.svg
+		whiteIcon: icon/components/ChaosEngine-white.svg
+		description: 
+	-	name: ChaosResult
+		colorIcon: icon/components/ChaosResult-color.svg
+		whiteIcon: icon/components/ChaosResult-white.svg
+		description: 
+	-	name: ChaosExperiment
+		colorIcon: icon/components/ChaosExperiment-color.svg
+		whiteIcon: icon/components/ChaosExperiment-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Litmus helps  SREs and developers practice chaos engineering in a Cloud-native way.
+Litmus helps  SREs and developers practice chaos engineering in a Cloud-native way.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

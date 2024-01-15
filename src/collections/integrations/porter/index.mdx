@@ -1,24 +1,41 @@
 ---
-title: Porter  
+title: Porter
 subtitle: Collaborative and visual infrastructure as code for Porter
 integrationIcon: icon/color/porter-color.svg
 darkModeIntegrationIcon: icon/white/porter-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/porter
+description: 
 category: App Definition and Development
 subcategory: Application Definition & Image Build
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: BgpConf
+		colorIcon: icon/components/BgpConf-color.svg
+		whiteIcon: icon/components/BgpConf-white.svg
+		description: 
+	-	name: BgpPeer
+		colorIcon: icon/components/BgpPeer-color.svg
+		whiteIcon: icon/components/BgpPeer-white.svg
+		description: 
+	-	name: Eip
+		colorIcon: icon/components/Eip-color.svg
+		whiteIcon: icon/components/Eip-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Porter enables you to package your application artifact, client tools, configuration and deployment logic together as an installer that you can distribute, and install with a single command.
+Porter enables you to package your application artifact, client tools, configuration and deployment logic together as an installer that you can distribute, and install with a single command.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

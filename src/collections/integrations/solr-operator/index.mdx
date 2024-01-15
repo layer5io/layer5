@@ -1,24 +1,41 @@
 ---
-title: Solr Operator  
+title: Solr Operator
 subtitle: Collaborative and visual infrastructure as code for Solr Operator
 integrationIcon: icon/color/solr-operator-color.svg
 darkModeIntegrationIcon: icon/white/solr-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/solr-operator
+description: 
 category: Analytics
 subcategory: Query
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: SolrBackup
+		colorIcon: icon/components/SolrBackup-color.svg
+		whiteIcon: icon/components/SolrBackup-white.svg
+		description: 
+	-	name: SolrCloud
+		colorIcon: icon/components/SolrCloud-color.svg
+		whiteIcon: icon/components/SolrCloud-white.svg
+		description: 
+	-	name: SolrPrometheusExporter
+		colorIcon: icon/components/SolrPrometheusExporter-color.svg
+		whiteIcon: icon/components/SolrPrometheusExporter-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
+Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

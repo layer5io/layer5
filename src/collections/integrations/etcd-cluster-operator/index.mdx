@@ -1,24 +1,49 @@
 ---
-title: Etcd Cluster Operator  
+title: Etcd Cluster Operator
 subtitle: Collaborative and visual infrastructure as code for Etcd Cluster Operator
 integrationIcon: icon/color/etcd-cluster-operator-color.svg
 darkModeIntegrationIcon: icon/white/etcd-cluster-operator-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/etcd-cluster-operator
+description: 
 category: Orchestration & Management
 subcategory: Coordination & Service Discovery
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: EtcdBackup
+		colorIcon: icon/components/EtcdBackup-color.svg
+		whiteIcon: icon/components/EtcdBackup-white.svg
+		description: 
+	-	name: EtcdBackupSchedule
+		colorIcon: icon/components/EtcdBackupSchedule-color.svg
+		whiteIcon: icon/components/EtcdBackupSchedule-white.svg
+		description: 
+	-	name: EtcdCluster
+		colorIcon: icon/components/EtcdCluster-color.svg
+		whiteIcon: icon/components/EtcdCluster-white.svg
+		description: 
+	-	name: EtcdPeer
+		colorIcon: icon/components/EtcdPeer-color.svg
+		whiteIcon: icon/components/EtcdPeer-white.svg
+		description: 
+	-	name: EtcdRestore
+		colorIcon: icon/components/EtcdRestore-color.svg
+		whiteIcon: icon/components/EtcdRestore-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Distributed reliable key-value store for the most critical data of a distributed system
+Distributed reliable key-value store for the most critical data of a distributed system
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -1,24 +1,61 @@
 ---
-title: AWS Elastic Kubernetes Service  
+title: AWS Elastic Kubernetes Service
 subtitle: Collaborative and visual infrastructure as code for AWS Elastic Kubernetes Service
 integrationIcon: icon/color/aws-eks-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-eks-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-eks-controller
+description: 
 category: Orchestration & Management
 subcategory: Containers
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: aws
+components: 
+	-	name: Cluster
+		colorIcon: icon/components/Cluster-color.svg
+		whiteIcon: icon/components/Cluster-white.svg
+		description: 
+	-	name: Addon
+		colorIcon: icon/components/Addon-color.svg
+		whiteIcon: icon/components/Addon-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: EKSAnywhereSubscription
+		colorIcon: icon/components/EKSAnywhereSubscription-color.svg
+		whiteIcon: icon/components/EKSAnywhereSubscription-white.svg
+		description: 
+	-	name: FargateProfile
+		colorIcon: icon/components/FargateProfile-color.svg
+		whiteIcon: icon/components/FargateProfile-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: Nodegroup
+		colorIcon: icon/components/Nodegroup-color.svg
+		whiteIcon: icon/components/Nodegroup-white.svg
+		description: 
+	-	name: PodIdentityAssociation
+		colorIcon: icon/components/PodIdentityAssociation-color.svg
+		whiteIcon: icon/components/PodIdentityAssociation-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that you can use to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or nodes. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.
+Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that you can use to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or nodes. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

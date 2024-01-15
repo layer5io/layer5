@@ -1,24 +1,33 @@
 ---
-title: Kubevault Operator  
+title: Kubevault Operator
 subtitle: Collaborative and visual infrastructure as code for Kubevault Operator
 integrationIcon: icon/color/kubevault-operator-color.svg
 darkModeIntegrationIcon: icon/white/kubevault-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kubevault-operator
+description: 
 category: Security & Compliance
 subcategory: Uncategorized
-featureList: ["Deploy TLS secured Vault Servers on Kubernetes using KubeVault. You can use cert-manager to manage VaultServer TLS or you can manage TLS with self-signed.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: VaultServer
+		colorIcon: icon/components/VaultServer-color.svg
+		whiteIcon: icon/components/VaultServer-white.svg
+		description: 
+featureList: [
+  "Deploy TLS secured Vault Servers on Kubernetes using KubeVault. You can use cert-manager to manage VaultServer TLS or you can manage TLS with self-signed.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    KubeVault is a Git-Ops ready, production-grade solution for deploying and configuring Hashicorp's Vault on Kubernetes.
+KubeVault is a Git-Ops ready, production-grade solution for deploying and configuring Hashicorp's Vault on Kubernetes.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

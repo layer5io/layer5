@@ -1,24 +1,33 @@
 ---
-title: Capsule Proxy  
+title: Capsule Proxy
 subtitle: Collaborative and visual infrastructure as code for Capsule Proxy
 integrationIcon: icon/color/capsule-proxy-color.svg
 darkModeIntegrationIcon: icon/white/capsule-proxy-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/capsule-proxy
+description: 
 category: Provisioning
 subcategory: Uncategorized
-featureList: ["Allows to overcome the limitations of Kubernetes API Server on listing owned cluster-scoped resources.",
-"Add-on for Capsule.",
-"Capsule provides multi-tenancy in Kubernetes."
+registrant: artifacthub
+components: 
+	-	name: ProxySetting
+		colorIcon: icon/components/ProxySetting-color.svg
+		whiteIcon: icon/components/ProxySetting-white.svg
+		description: 
+featureList: [
+  "Allows to overcome the limitations of Kubernetes API Server on listing owned cluster-scoped resources.",
+  "Add-on for Capsule.",
+  "Capsule provides multi-tenancy in Kubernetes."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Capsule implements a multi-tenant and policy-based environment in your Kubernetes cluster. It is designed as a micro-services-based ecosystem with the minimalist approach, leveraging only on upstream Kubernetes.
+Capsule implements a multi-tenant and policy-based environment in your Kubernetes cluster. It is designed as a micro-services-based ecosystem with the minimalist approach, leveraging only on upstream Kubernetes.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

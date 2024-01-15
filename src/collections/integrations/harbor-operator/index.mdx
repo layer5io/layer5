@@ -1,24 +1,53 @@
 ---
-title: Harbor Operator  
+title: Harbor Operator
 subtitle: Collaborative and visual infrastructure as code for Harbor Operator
 integrationIcon: icon/color/harbor-operator-color.svg
 darkModeIntegrationIcon: icon/white/harbor-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/harbor-operator
+description: 
 category: Provisioning
 subcategory: Container Registry
-featureList: ["Content signing and validation",
-"Security and vulnerability analysis",
-"Replication across many registries, including Harbor"
+registrant: artifacthub
+components: 
+	-	name: InstanceChartRepository
+		colorIcon: icon/components/InstanceChartRepository-color.svg
+		whiteIcon: icon/components/InstanceChartRepository-white.svg
+		description: 
+	-	name: Instance
+		colorIcon: icon/components/Instance-color.svg
+		whiteIcon: icon/components/Instance-white.svg
+		description: 
+	-	name: Project
+		colorIcon: icon/components/Project-color.svg
+		whiteIcon: icon/components/Project-white.svg
+		description: 
+	-	name: Registry
+		colorIcon: icon/components/Registry-color.svg
+		whiteIcon: icon/components/Registry-white.svg
+		description: 
+	-	name: Replication
+		colorIcon: icon/components/Replication-color.svg
+		whiteIcon: icon/components/Replication-white.svg
+		description: 
+	-	name: User
+		colorIcon: icon/components/User-color.svg
+		whiteIcon: icon/components/User-white.svg
+		description: 
+featureList: [
+  "Content signing and validation",
+  "Security and vulnerability analysis",
+  "Replication across many registries, including Harbor"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Harbor is an open source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted. Harbor, a CNCF Graduated project, delivers compliance, performance, and interoperability to help you consistently and securely manage artifacts across cloud native compute platforms like Kubernetes and Docker.
+Harbor is an open source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted. Harbor, a CNCF Graduated project, delivers compliance, performance, and interoperability to help you consistently and securely manage artifacts across cloud native compute platforms like Kubernetes and Docker.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

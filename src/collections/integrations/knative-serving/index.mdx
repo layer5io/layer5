@@ -1,24 +1,77 @@
 ---
-title: Knative Serving  
+title: Knative Serving
 subtitle: Collaborative and visual infrastructure as code for Knative Serving
 integrationIcon: icon/color/knative-serving-color.svg
 darkModeIntegrationIcon: icon/white/knative-serving-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/knative-serving
+description: 
 category: Serverless
 subcategory: Installable Platform
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: Certificate
+		colorIcon: icon/components/Certificate-color.svg
+		whiteIcon: icon/components/Certificate-white.svg
+		description: 
+	-	name: Configuration
+		colorIcon: icon/components/Configuration-color.svg
+		whiteIcon: icon/components/Configuration-white.svg
+		description: 
+	-	name: ClusterDomainClaim
+		colorIcon: icon/components/ClusterDomainClaim-color.svg
+		whiteIcon: icon/components/ClusterDomainClaim-white.svg
+		description: 
+	-	name: DomainMapping
+		colorIcon: icon/components/DomainMapping-color.svg
+		whiteIcon: icon/components/DomainMapping-white.svg
+		description: 
+	-	name: Ingress
+		colorIcon: icon/components/Ingress-color.svg
+		whiteIcon: icon/components/Ingress-white.svg
+		description: 
+	-	name: Metric
+		colorIcon: icon/components/Metric-color.svg
+		whiteIcon: icon/components/Metric-white.svg
+		description: 
+	-	name: PodAutoscaler
+		colorIcon: icon/components/PodAutoscaler-color.svg
+		whiteIcon: icon/components/PodAutoscaler-white.svg
+		description: 
+	-	name: Revision
+		colorIcon: icon/components/Revision-color.svg
+		whiteIcon: icon/components/Revision-white.svg
+		description: 
+	-	name: Route
+		colorIcon: icon/components/Route-color.svg
+		whiteIcon: icon/components/Route-white.svg
+		description: 
+	-	name: ServerlessService
+		colorIcon: icon/components/ServerlessService-color.svg
+		whiteIcon: icon/components/ServerlessService-white.svg
+		description: 
+	-	name: Service
+		colorIcon: icon/components/Service-color.svg
+		whiteIcon: icon/components/Service-white.svg
+		description: 
+	-	name: Image
+		colorIcon: icon/components/Image-color.svg
+		whiteIcon: icon/components/Image-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Knative is a developer-focused serverless application layer which is a great complement to the existing Kubernetes application constructs. Knative consists of two components: an HTTP-triggered autoscaling container runtime called “Knative Serving”, and a CloudEvents-over-HTTP asynchronous routing layer called “Knative Eventing”.
+Knative is a developer-focused serverless application layer which is a great complement to the existing Kubernetes application constructs. Knative consists of two components: an HTTP-triggered autoscaling container runtime called “Knative Serving”, and a CloudEvents-over-HTTP asynchronous routing layer called “Knative Eventing”.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

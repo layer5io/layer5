@@ -1,24 +1,105 @@
 ---
-title: Ambassador  
+title: Ambassador
 subtitle: Collaborative and visual infrastructure as code for Ambassador
 integrationIcon: icon/color/ambassador-color.svg
 darkModeIntegrationIcon: icon/white/ambassador-white.svg
-docURL: https://docs.meshery.io
+docURL: https://docs.meshery.io/extensibility/integrations/ambassador
+description: 
 category: Cloud Native Network
 subcategory: API Gateway
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: Filter
+		colorIcon: icon/components/Filter-color.svg
+		whiteIcon: icon/components/Filter-white.svg
+		description: 
+	-	name: FilterPolicy
+		colorIcon: icon/components/FilterPolicy-color.svg
+		whiteIcon: icon/components/FilterPolicy-white.svg
+		description: 
+	-	name: AuthService
+		colorIcon: icon/components/AuthService-color.svg
+		whiteIcon: icon/components/AuthService-white.svg
+		description: 
+	-	name: ConsulResolver
+		colorIcon: icon/components/ConsulResolver-color.svg
+		whiteIcon: icon/components/ConsulResolver-white.svg
+		description: 
+	-	name: DevPortal
+		colorIcon: icon/components/DevPortal-color.svg
+		whiteIcon: icon/components/DevPortal-white.svg
+		description: 
+	-	name: Host
+		colorIcon: icon/components/Host-color.svg
+		whiteIcon: icon/components/Host-white.svg
+		description: 
+	-	name: KubernetesEndpointResolver
+		colorIcon: icon/components/KubernetesEndpointResolver-color.svg
+		whiteIcon: icon/components/KubernetesEndpointResolver-white.svg
+		description: 
+	-	name: KubernetesServiceResolver
+		colorIcon: icon/components/KubernetesServiceResolver-color.svg
+		whiteIcon: icon/components/KubernetesServiceResolver-white.svg
+		description: 
+	-	name: LogService
+		colorIcon: icon/components/LogService-color.svg
+		whiteIcon: icon/components/LogService-white.svg
+		description: 
+	-	name: Mapping
+		colorIcon: icon/components/Mapping-color.svg
+		whiteIcon: icon/components/Mapping-white.svg
+		description: 
+	-	name: Module
+		colorIcon: icon/components/Module-color.svg
+		whiteIcon: icon/components/Module-white.svg
+		description: 
+	-	name: RateLimitService
+		colorIcon: icon/components/RateLimitService-color.svg
+		whiteIcon: icon/components/RateLimitService-white.svg
+		description: 
+	-	name: TCPMapping
+		colorIcon: icon/components/TCPMapping-color.svg
+		whiteIcon: icon/components/TCPMapping-white.svg
+		description: 
+	-	name: TLSContext
+		colorIcon: icon/components/TLSContext-color.svg
+		whiteIcon: icon/components/TLSContext-white.svg
+		description: 
+	-	name: TracingService
+		colorIcon: icon/components/TracingService-color.svg
+		whiteIcon: icon/components/TracingService-white.svg
+		description: 
+	-	name: Project
+		colorIcon: icon/components/Project-color.svg
+		whiteIcon: icon/components/Project-white.svg
+		description: 
+	-	name: ProjectController
+		colorIcon: icon/components/ProjectController-color.svg
+		whiteIcon: icon/components/ProjectController-white.svg
+		description: 
+	-	name: ProjectRevision
+		colorIcon: icon/components/ProjectRevision-color.svg
+		whiteIcon: icon/components/ProjectRevision-white.svg
+		description: 
+	-	name: RateLimit
+		colorIcon: icon/components/RateLimit-color.svg
+		whiteIcon: icon/components/RateLimit-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    The Ambassador Edge Stack and its open source version Emissary-Ingress (FKA Ambassador API Gateway) offer a self-service, comprehensive API Gateway that is Kubernetes-native and built on Envoy.
+The Ambassador Edge Stack and its open source version Emissary-Ingress (FKA Ambassador API Gateway) offer a self-service, comprehensive API Gateway that is Kubernetes-native and built on Envoy.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

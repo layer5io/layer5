@@ -1,24 +1,41 @@
 ---
-title: AWS CloudWatch  
+title: AWS CloudWatch
 subtitle: Collaborative and visual infrastructure as code for AWS CloudWatch
 integrationIcon: icon/color/aws-cloudwatch-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-cloudwatch-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-cloudwatch-controller
+description: 
 category: Observability and Analysis
 subcategory: Management Governance
-featureList: ["Provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, and optimize resource utilization.",
-"Collects monitoring and operational data in the form of logs, metrics, and traces.",
-"Get a unified view of operational health and gain complete visibility of your AWS resources, applications, and services running on AWS and on-premises."
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: MetricAlarm
+		colorIcon: icon/components/MetricAlarm-color.svg
+		whiteIcon: icon/components/MetricAlarm-white.svg
+		description: 
+featureList: [
+  "Provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, and optimize resource utilization.",
+  "Collects monitoring and operational data in the form of logs, metrics, and traces.",
+  "Get a unified view of operational health and gain complete visibility of your AWS resources, applications, and services running on AWS and on-premises."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    CloudWatch enables you to monitor and observe your AWS and on-premises resources and applications.
+CloudWatch enables you to monitor and observe your AWS and on-premises resources and applications.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

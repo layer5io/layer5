@@ -1,24 +1,41 @@
 ---
-title: AWS Simple Storage Service (S3)  
+title: AWS Simple Storage Service (S3)
 subtitle: Collaborative and visual infrastructure as code for AWS Simple Storage Service (S3)
 integrationIcon: icon/color/aws-s3-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-s3-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-s3-controller
+description: 
 category: Cloud Native Storage
 subcategory: Storage
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: Bucket
+		colorIcon: icon/components/Bucket-color.svg
+		whiteIcon: icon/components/Bucket-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance.
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

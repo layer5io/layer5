@@ -1,24 +1,37 @@
 ---
-title: NATS Operator  
+title: NATS Operator
 subtitle: Collaborative and visual infrastructure as code for Mongodb Operator
 integrationIcon: icon/color/nats-operator-color.svg
 darkModeIntegrationIcon: icon/white/nats-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/nats-operator
+description: 
 category: App Definition and Development
 subcategory: Streaming & Messaging
-featureList: ["With true multi-tenancy, securely isolate message topics",
-"Bring your own NATS server",
-"Meshery Broker with NATS inside"
+registrant: artifacthub
+components: 
+	-	name: NatsCluster
+		colorIcon: icon/components/NatsCluster-color.svg
+		whiteIcon: icon/components/NatsCluster-white.svg
+		description: 
+	-	name: NatsServiceRole
+		colorIcon: icon/components/NatsServiceRole-color.svg
+		whiteIcon: icon/components/NatsServiceRole-white.svg
+		description: 
+featureList: [
+  "With true multi-tenancy, securely isolate message topics",
+  "Bring your own NATS server",
+  "Meshery Broker with NATS inside"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    High-Performance server for NATS.io, the cloud and edge native messaging system.
+High-Performance server for NATS.io, the cloud and edge native messaging system.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

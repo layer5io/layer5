@@ -1,24 +1,53 @@
 ---
-title: Thanos Operator  
+title: Thanos Operator
 subtitle: Collaborative and visual infrastructure as code for Thanos Operator
 integrationIcon: icon/color/thanos-operator-color.svg
 darkModeIntegrationIcon: icon/white/thanos-operator-white.svg
-docURL: https://docs.meshery.io/integrations/thanos-operator
+docURL: https://docs.meshery.io/extensibility/integrations/thanos-operator
+description: 
 category: Observability and Analysis
 subcategory: Monitoring
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: ObjectStore
+		colorIcon: icon/components/ObjectStore-color.svg
+		whiteIcon: icon/components/ObjectStore-white.svg
+		description: 
+	-	name: Receiver
+		colorIcon: icon/components/Receiver-color.svg
+		whiteIcon: icon/components/Receiver-white.svg
+		description: 
+	-	name: StoreEndpoint
+		colorIcon: icon/components/StoreEndpoint-color.svg
+		whiteIcon: icon/components/StoreEndpoint-white.svg
+		description: 
+	-	name: Thanos
+		colorIcon: icon/components/Thanos-color.svg
+		whiteIcon: icon/components/Thanos-white.svg
+		description: 
+	-	name: ThanosEndpoint
+		colorIcon: icon/components/ThanosEndpoint-color.svg
+		whiteIcon: icon/components/ThanosEndpoint-white.svg
+		description: 
+	-	name: ThanosPeer
+		colorIcon: icon/components/ThanosPeer-color.svg
+		whiteIcon: icon/components/ThanosPeer-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Highly available Prometheus setup with long term storage capabilities. A CNCF Incubating project.
+Highly available Prometheus setup with long term storage capabilities. A CNCF Incubating project.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

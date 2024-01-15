@@ -1,24 +1,41 @@
 ---
-title: Kusk Gateway  
+title: Kusk Gateway
 subtitle: Collaborative and visual infrastructure as code for Kusk Gateway
 integrationIcon: icon/color/kusk-gateway-color.svg
 darkModeIntegrationIcon: icon/white/kusk-gateway-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kusk-gateway
+description: 
 category: Orchestration & Management
 subcategory: API Gateway
-featureList: ["Rapidly prototype your APIs by mocking your API responses",
-" Protect your endpoints with automatic request and response validations",
-"Configure critical policies like request timeouts and CORS with no coding required."
+registrant: artifacthub
+components: 
+	-	name: EnvoyFleet
+		colorIcon: icon/components/EnvoyFleet-color.svg
+		whiteIcon: icon/components/EnvoyFleet-white.svg
+		description: 
+	-	name: StaticRoute
+		colorIcon: icon/components/StaticRoute-color.svg
+		whiteIcon: icon/components/StaticRoute-white.svg
+		description: 
+	-	name: API
+		colorIcon: icon/components/API-color.svg
+		whiteIcon: icon/components/API-white.svg
+		description: 
+featureList: [
+  "Rapidly prototype your APIs by mocking your API responses",
+  " Protect your endpoints with automatic request and response validations",
+  "Configure critical policies like request timeouts and CORS with no coding required."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Kusk Gateway is a self-service API gateway powered by OpenAPI and Envoy. Kusk Gateway is built and maintained by Kubeshop.
+Kusk Gateway is a self-service API gateway powered by OpenAPI and Envoy. Kusk Gateway is built and maintained by Kubeshop.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

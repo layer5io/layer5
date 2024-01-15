@@ -1,24 +1,41 @@
 ---
-title: Percona Postgres Operator  
+title: Percona Postgres Operator
 subtitle: Create and manage highly available, enterprise-ready MySQL, PostgreSQL, and MongoDB clusters on Kubernetes.
 integrationIcon: icon/color/pg-operator-color.svg
 darkModeIntegrationIcon: icon/white/pg-operator-white.svg
-docURL: https://docs.meshery.io/integrations
+docURL: https://docs.meshery.io/extensibility/integrations/pg-operator
+description: 
 category: App Definition and Development
 subcategory: Database
-featureList: ["Create and manage highly available, enterprise-ready MySQL, PostgreSQL, and MongoDB clusters on Kubernetes.",
-"Percona Operators include backup/restore, high availability, replication, sharding, logging features and more.",
-"Create ready-to-use database clusters of open source, enterprise-ready versions of MySQL, MongoDB, and PostgreSQL, created and supported by the Percona team."
+registrant: artifacthub
+components: 
+	-	name: PerconaPGBackup
+		colorIcon: icon/components/PerconaPGBackup-color.svg
+		whiteIcon: icon/components/PerconaPGBackup-white.svg
+		description: 
+	-	name: PerconaPGCluster
+		colorIcon: icon/components/PerconaPGCluster-color.svg
+		whiteIcon: icon/components/PerconaPGCluster-white.svg
+		description: 
+	-	name: PerconaPGRestore
+		colorIcon: icon/components/PerconaPGRestore-color.svg
+		whiteIcon: icon/components/PerconaPGRestore-white.svg
+		description: 
+featureList: [
+  "Create and manage highly available, enterprise-ready MySQL, PostgreSQL, and MongoDB clusters on Kubernetes.",
+  "Percona Operators include backup/restore, high availability, replication, sharding, logging features and more.",
+  "Create ready-to-use database clusters of open source, enterprise-ready versions of MySQL, MongoDB, and PostgreSQL, created and supported by the Percona team."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Create and manage highly available, enterprise-ready MySQL, PostgreSQL, and MongoDB clusters on Kubernetes.
+Create and manage highly available, enterprise-ready MySQL, PostgreSQL, and MongoDB clusters on Kubernetes.
 </p>
 <p>
     With Percona Operators, you can support your Cloud Native strategy with managing database workloads on any supported Kubernetes cluster running in private, public, hybrid, or multi-cloud environments.

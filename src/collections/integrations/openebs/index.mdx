@@ -1,24 +1,125 @@
 ---
-title: OpenEBS  
+title: OpenEBS
 subtitle: Collaborative and visual infrastructure as code for OpenEBS
 integrationIcon: icon/color/openebs-color.svg
 darkModeIntegrationIcon: icon/white/openebs-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/openebs
+description: 
 category: Cloud Native Storage
 subcategory: Cloud Native Storage
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: BlockDevice
+		colorIcon: icon/components/BlockDevice-color.svg
+		whiteIcon: icon/components/BlockDevice-white.svg
+		description: 
+	-	name: BlockDeviceClaim
+		colorIcon: icon/components/BlockDeviceClaim-color.svg
+		whiteIcon: icon/components/BlockDeviceClaim-white.svg
+		description: 
+	-	name: LVMNode
+		colorIcon: icon/components/LVMNode-color.svg
+		whiteIcon: icon/components/LVMNode-white.svg
+		description: 
+	-	name: LVMSnapshot
+		colorIcon: icon/components/LVMSnapshot-color.svg
+		whiteIcon: icon/components/LVMSnapshot-white.svg
+		description: 
+	-	name: LVMVolume
+		colorIcon: icon/components/LVMVolume-color.svg
+		whiteIcon: icon/components/LVMVolume-white.svg
+		description: 
+	-	name: ZFSBackup
+		colorIcon: icon/components/ZFSBackup-color.svg
+		whiteIcon: icon/components/ZFSBackup-white.svg
+		description: 
+	-	name: ZFSNode
+		colorIcon: icon/components/ZFSNode-color.svg
+		whiteIcon: icon/components/ZFSNode-white.svg
+		description: 
+	-	name: ZFSRestore
+		colorIcon: icon/components/ZFSRestore-color.svg
+		whiteIcon: icon/components/ZFSRestore-white.svg
+		description: 
+	-	name: ZFSSnapshot
+		colorIcon: icon/components/ZFSSnapshot-color.svg
+		whiteIcon: icon/components/ZFSSnapshot-white.svg
+		description: 
+	-	name: ZFSVolume
+		colorIcon: icon/components/ZFSVolume-color.svg
+		whiteIcon: icon/components/ZFSVolume-white.svg
+		description: 
+	-	name: CStorBackup
+		colorIcon: icon/components/CStorBackup-color.svg
+		whiteIcon: icon/components/CStorBackup-white.svg
+		description: 
+	-	name: CStorCompletedBackup
+		colorIcon: icon/components/CStorCompletedBackup-color.svg
+		whiteIcon: icon/components/CStorCompletedBackup-white.svg
+		description: 
+	-	name: CStorPoolCluster
+		colorIcon: icon/components/CStorPoolCluster-color.svg
+		whiteIcon: icon/components/CStorPoolCluster-white.svg
+		description: 
+	-	name: CStorPoolInstance
+		colorIcon: icon/components/CStorPoolInstance-color.svg
+		whiteIcon: icon/components/CStorPoolInstance-white.svg
+		description: 
+	-	name: CStorRestore
+		colorIcon: icon/components/CStorRestore-color.svg
+		whiteIcon: icon/components/CStorRestore-white.svg
+		description: 
+	-	name: CStorVolume
+		colorIcon: icon/components/CStorVolume-color.svg
+		whiteIcon: icon/components/CStorVolume-white.svg
+		description: 
+	-	name: CStorVolumeAttachment
+		colorIcon: icon/components/CStorVolumeAttachment-color.svg
+		whiteIcon: icon/components/CStorVolumeAttachment-white.svg
+		description: 
+	-	name: CStorVolumeConfig
+		colorIcon: icon/components/CStorVolumeConfig-color.svg
+		whiteIcon: icon/components/CStorVolumeConfig-white.svg
+		description: 
+	-	name: CStorVolumePolicy
+		colorIcon: icon/components/CStorVolumePolicy-color.svg
+		whiteIcon: icon/components/CStorVolumePolicy-white.svg
+		description: 
+	-	name: CStorVolumeReplica
+		colorIcon: icon/components/CStorVolumeReplica-color.svg
+		whiteIcon: icon/components/CStorVolumeReplica-white.svg
+		description: 
+	-	name: MigrationTask
+		colorIcon: icon/components/MigrationTask-color.svg
+		whiteIcon: icon/components/MigrationTask-white.svg
+		description: 
+	-	name: UpgradeTask
+		colorIcon: icon/components/UpgradeTask-color.svg
+		whiteIcon: icon/components/UpgradeTask-white.svg
+		description: 
+	-	name: JivaVolumePolicy
+		colorIcon: icon/components/JivaVolumePolicy-color.svg
+		whiteIcon: icon/components/JivaVolumePolicy-white.svg
+		description: 
+	-	name: JivaVolume
+		colorIcon: icon/components/JivaVolume-color.svg
+		whiteIcon: icon/components/JivaVolume-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Leading Open Source Container Attached Storage, built using Cloud Native Architecture, simplifies running Stateful Applications on Kubernetes.
+Leading Open Source Container Attached Storage, built using Cloud Native Architecture, simplifies running Stateful Applications on Kubernetes.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

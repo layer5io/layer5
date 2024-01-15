@@ -1,24 +1,209 @@
 ---
-title: Kubedb CRDs  
+title: Kubedb CRDs
 subtitle: Collaborative and visual infrastructure as code for Kubedb CRDs
 integrationIcon: icon/color/kubedb-crds-color.svg
 darkModeIntegrationIcon: icon/white/kubedb-crds-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kubedb-crds
+description: 
 category: App Definition and Development
 subcategory: Database
-featureList: ["KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity.",
-"Standard Kubernetes is all you need. If you can run Kubernetes, you can provision and manage databases using KubeDB. Use standard Kubernetes CLI and API to provision and manage databases.",
-"KubeDB uses Persistent Volume Claims (PVC) to dynamically provision disks for database instances. Using appropriately defined StorageClasses, KubeDB provisioned database instances are designed to scale from small development workloads up to performance-intensive workloads on private and public cloud environments."
+registrant: artifacthub
+components: 
+	-	name: ElasticsearchAutoscaler
+		colorIcon: icon/components/ElasticsearchAutoscaler-color.svg
+		whiteIcon: icon/components/ElasticsearchAutoscaler-white.svg
+		description: 
+	-	name: EtcdAutoscaler
+		colorIcon: icon/components/EtcdAutoscaler-color.svg
+		whiteIcon: icon/components/EtcdAutoscaler-white.svg
+		description: 
+	-	name: MariaDBAutoscaler
+		colorIcon: icon/components/MariaDBAutoscaler-color.svg
+		whiteIcon: icon/components/MariaDBAutoscaler-white.svg
+		description: 
+	-	name: MemcachedAutoscaler
+		colorIcon: icon/components/MemcachedAutoscaler-color.svg
+		whiteIcon: icon/components/MemcachedAutoscaler-white.svg
+		description: 
+	-	name: MongoDBAutoscaler
+		colorIcon: icon/components/MongoDBAutoscaler-color.svg
+		whiteIcon: icon/components/MongoDBAutoscaler-white.svg
+		description: 
+	-	name: MySQLAutoscaler
+		colorIcon: icon/components/MySQLAutoscaler-color.svg
+		whiteIcon: icon/components/MySQLAutoscaler-white.svg
+		description: 
+	-	name: PerconaXtraDBAutoscaler
+		colorIcon: icon/components/PerconaXtraDBAutoscaler-color.svg
+		whiteIcon: icon/components/PerconaXtraDBAutoscaler-white.svg
+		description: 
+	-	name: PgBouncerAutoscaler
+		colorIcon: icon/components/PgBouncerAutoscaler-color.svg
+		whiteIcon: icon/components/PgBouncerAutoscaler-white.svg
+		description: 
+	-	name: PostgresAutoscaler
+		colorIcon: icon/components/PostgresAutoscaler-color.svg
+		whiteIcon: icon/components/PostgresAutoscaler-white.svg
+		description: 
+	-	name: ProxySQLAutoscaler
+		colorIcon: icon/components/ProxySQLAutoscaler-color.svg
+		whiteIcon: icon/components/ProxySQLAutoscaler-white.svg
+		description: 
+	-	name: RedisAutoscaler
+		colorIcon: icon/components/RedisAutoscaler-color.svg
+		whiteIcon: icon/components/RedisAutoscaler-white.svg
+		description: 
+	-	name: RedisSentinelAutoscaler
+		colorIcon: icon/components/RedisSentinelAutoscaler-color.svg
+		whiteIcon: icon/components/RedisSentinelAutoscaler-white.svg
+		description: 
+	-	name: ElasticsearchVersion
+		colorIcon: icon/components/ElasticsearchVersion-color.svg
+		whiteIcon: icon/components/ElasticsearchVersion-white.svg
+		description: 
+	-	name: EtcdVersion
+		colorIcon: icon/components/EtcdVersion-color.svg
+		whiteIcon: icon/components/EtcdVersion-white.svg
+		description: 
+	-	name: KafkaVersion
+		colorIcon: icon/components/KafkaVersion-color.svg
+		whiteIcon: icon/components/KafkaVersion-white.svg
+		description: 
+	-	name: MariaDBVersion
+		colorIcon: icon/components/MariaDBVersion-color.svg
+		whiteIcon: icon/components/MariaDBVersion-white.svg
+		description: 
+	-	name: MemcachedVersion
+		colorIcon: icon/components/MemcachedVersion-color.svg
+		whiteIcon: icon/components/MemcachedVersion-white.svg
+		description: 
+	-	name: MongoDBVersion
+		colorIcon: icon/components/MongoDBVersion-color.svg
+		whiteIcon: icon/components/MongoDBVersion-white.svg
+		description: 
+	-	name: MySQLVersion
+		colorIcon: icon/components/MySQLVersion-color.svg
+		whiteIcon: icon/components/MySQLVersion-white.svg
+		description: 
+	-	name: PerconaXtraDBVersion
+		colorIcon: icon/components/PerconaXtraDBVersion-color.svg
+		whiteIcon: icon/components/PerconaXtraDBVersion-white.svg
+		description: 
+	-	name: PgBouncerVersion
+		colorIcon: icon/components/PgBouncerVersion-color.svg
+		whiteIcon: icon/components/PgBouncerVersion-white.svg
+		description: 
+	-	name: PostgresVersion
+		colorIcon: icon/components/PostgresVersion-color.svg
+		whiteIcon: icon/components/PostgresVersion-white.svg
+		description: 
+	-	name: ProxySQLVersion
+		colorIcon: icon/components/ProxySQLVersion-color.svg
+		whiteIcon: icon/components/ProxySQLVersion-white.svg
+		description: 
+	-	name: RedisVersion
+		colorIcon: icon/components/RedisVersion-color.svg
+		whiteIcon: icon/components/RedisVersion-white.svg
+		description: 
+	-	name: ElasticsearchDashboard
+		colorIcon: icon/components/ElasticsearchDashboard-color.svg
+		whiteIcon: icon/components/ElasticsearchDashboard-white.svg
+		description: 
+	-	name: ElasticsearchOpsRequest
+		colorIcon: icon/components/ElasticsearchOpsRequest-color.svg
+		whiteIcon: icon/components/ElasticsearchOpsRequest-white.svg
+		description: 
+	-	name: EtcdOpsRequest
+		colorIcon: icon/components/EtcdOpsRequest-color.svg
+		whiteIcon: icon/components/EtcdOpsRequest-white.svg
+		description: 
+	-	name: MariaDBOpsRequest
+		colorIcon: icon/components/MariaDBOpsRequest-color.svg
+		whiteIcon: icon/components/MariaDBOpsRequest-white.svg
+		description: 
+	-	name: MemcachedOpsRequest
+		colorIcon: icon/components/MemcachedOpsRequest-color.svg
+		whiteIcon: icon/components/MemcachedOpsRequest-white.svg
+		description: 
+	-	name: MongoDBOpsRequest
+		colorIcon: icon/components/MongoDBOpsRequest-color.svg
+		whiteIcon: icon/components/MongoDBOpsRequest-white.svg
+		description: 
+	-	name: MySQLOpsRequest
+		colorIcon: icon/components/MySQLOpsRequest-color.svg
+		whiteIcon: icon/components/MySQLOpsRequest-white.svg
+		description: 
+	-	name: PerconaXtraDBOpsRequest
+		colorIcon: icon/components/PerconaXtraDBOpsRequest-color.svg
+		whiteIcon: icon/components/PerconaXtraDBOpsRequest-white.svg
+		description: 
+	-	name: PgBouncerOpsRequest
+		colorIcon: icon/components/PgBouncerOpsRequest-color.svg
+		whiteIcon: icon/components/PgBouncerOpsRequest-white.svg
+		description: 
+	-	name: PostgresOpsRequest
+		colorIcon: icon/components/PostgresOpsRequest-color.svg
+		whiteIcon: icon/components/PostgresOpsRequest-white.svg
+		description: 
+	-	name: ProxySQLOpsRequest
+		colorIcon: icon/components/ProxySQLOpsRequest-color.svg
+		whiteIcon: icon/components/ProxySQLOpsRequest-white.svg
+		description: 
+	-	name: RedisOpsRequest
+		colorIcon: icon/components/RedisOpsRequest-color.svg
+		whiteIcon: icon/components/RedisOpsRequest-white.svg
+		description: 
+	-	name: RedisSentinelOpsRequest
+		colorIcon: icon/components/RedisSentinelOpsRequest-color.svg
+		whiteIcon: icon/components/RedisSentinelOpsRequest-white.svg
+		description: 
+	-	name: Publisher
+		colorIcon: icon/components/Publisher-color.svg
+		whiteIcon: icon/components/Publisher-white.svg
+		description: 
+	-	name: Subscriber
+		colorIcon: icon/components/Subscriber-color.svg
+		whiteIcon: icon/components/Subscriber-white.svg
+		description: 
+	-	name: MariaDBDatabase
+		colorIcon: icon/components/MariaDBDatabase-color.svg
+		whiteIcon: icon/components/MariaDBDatabase-white.svg
+		description: 
+	-	name: MongoDBDatabase
+		colorIcon: icon/components/MongoDBDatabase-color.svg
+		whiteIcon: icon/components/MongoDBDatabase-white.svg
+		description: 
+	-	name: PostgresDatabase
+		colorIcon: icon/components/PostgresDatabase-color.svg
+		whiteIcon: icon/components/PostgresDatabase-white.svg
+		description: 
+	-	name: RedisDatabase
+		colorIcon: icon/components/RedisDatabase-color.svg
+		whiteIcon: icon/components/RedisDatabase-white.svg
+		description: 
+	-	name: MySQLDatabase
+		colorIcon: icon/components/MySQLDatabase-color.svg
+		whiteIcon: icon/components/MySQLDatabase-white.svg
+		description: 
+	-	name: KafkaOpsRequest
+		colorIcon: icon/components/KafkaOpsRequest-color.svg
+		whiteIcon: icon/components/KafkaOpsRequest-white.svg
+		description: 
+featureList: [
+  "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity.",
+  "Standard Kubernetes is all you need. If you can run Kubernetes, you can provision and manage databases using KubeDB. Use standard Kubernetes CLI and API to provision and manage databases.",
+  "KubeDB uses Persistent Volume Claims (PVC) to dynamically provision disks for database instances. Using appropriately defined StorageClasses, KubeDB provisioned database instances are designed to scale from small development workloads up to performance-intensive workloads on private and public cloud environments."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    KubeDB simplifies Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup, Restore for various Databases in Kubernetes on any Public & Private Cloud
+KubeDB simplifies Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup, Restore for various Databases in Kubernetes on any Public & Private Cloud
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

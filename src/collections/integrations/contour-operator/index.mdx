@@ -1,24 +1,77 @@
 ---
-title: Contour  
+title: Contour
 subtitle: Collaborative and visual infrastructure as code for Contour
 integrationIcon: icon/color/contour-operator-color.svg
 darkModeIntegrationIcon: icon/white/contour-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/contour-operator
+description: 
 category: Cloud Native Network
 subcategory: Service Proxy
-featureList: ["Supports dynamic configuration updates out of the box while maintaining a lightweight profile.",
-"Introduces a new ingress API (HTTPProxy) which is implemented via a Custom Resource Definition (CRD).",
-"Solves shortcomings in the original design."
+registrant: artifacthub
+components: 
+	-	name: Contour
+		colorIcon: icon/components/Contour-color.svg
+		whiteIcon: icon/components/Contour-white.svg
+		description: 
+	-	name: ContourConfiguration
+		colorIcon: icon/components/ContourConfiguration-color.svg
+		whiteIcon: icon/components/ContourConfiguration-white.svg
+		description: 
+	-	name: ContourDeployment
+		colorIcon: icon/components/ContourDeployment-color.svg
+		whiteIcon: icon/components/ContourDeployment-white.svg
+		description: 
+	-	name: ExtensionService
+		colorIcon: icon/components/ExtensionService-color.svg
+		whiteIcon: icon/components/ExtensionService-white.svg
+		description: 
+	-	name: Gateway
+		colorIcon: icon/components/Gateway-color.svg
+		whiteIcon: icon/components/Gateway-white.svg
+		description: 
+	-	name: GatewayClass
+		colorIcon: icon/components/GatewayClass-color.svg
+		whiteIcon: icon/components/GatewayClass-white.svg
+		description: 
+	-	name: HTTPProxy
+		colorIcon: icon/components/HTTPProxy-color.svg
+		whiteIcon: icon/components/HTTPProxy-white.svg
+		description: 
+	-	name: HTTPRoute
+		colorIcon: icon/components/HTTPRoute-color.svg
+		whiteIcon: icon/components/HTTPRoute-white.svg
+		description: 
+	-	name: TCPRoute
+		colorIcon: icon/components/TCPRoute-color.svg
+		whiteIcon: icon/components/TCPRoute-white.svg
+		description: 
+	-	name: TLSCertificateDelegation
+		colorIcon: icon/components/TLSCertificateDelegation-color.svg
+		whiteIcon: icon/components/TLSCertificateDelegation-white.svg
+		description: 
+	-	name: TLSRoute
+		colorIcon: icon/components/TLSRoute-color.svg
+		whiteIcon: icon/components/TLSRoute-white.svg
+		description: 
+	-	name: UDPRoute
+		colorIcon: icon/components/UDPRoute-color.svg
+		whiteIcon: icon/components/UDPRoute-white.svg
+		description: 
+featureList: [
+  "Supports dynamic configuration updates out of the box while maintaining a lightweight profile.",
+  "Introduces a new ingress API (HTTPProxy) which is implemented via a Custom Resource Definition (CRD).",
+  "Solves shortcomings in the original design."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Builds upon the basic Kubernetes resource and controller concepts, but includes domain-specific knowledge to automate the entire lifecycle of Contour."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Builds upon the basic Kubernetes resource and controller concepts, but includes domain-specific knowledge to automate the entire lifecycle of Contour.
+published: FALSE
 ---
 <p>
-    Contour is a Kubernetes ingress controller using Envoy proxy.
+Contour is a Kubernetes ingress controller using Envoy proxy.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

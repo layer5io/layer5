@@ -1,24 +1,65 @@
 ---
-title: NGINX Service Mesh  
+title: NGINX Service Mesh
 subtitle: Collaborative and visual infrastructure as code for NGINX Service Mesh
 integrationIcon: icon/color/nginx-service-mesh-color.svg
 darkModeIntegrationIcon: icon/white/nginx-service-mesh-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/adapters/nginx-sm
+description: 
 category: Cloud Native Network
 subcategory: Service Mesh
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: HTTPRouteGroup
+		colorIcon: icon/components/HTTPRouteGroup-color.svg
+		whiteIcon: icon/components/HTTPRouteGroup-white.svg
+		description: 
+	-	name: SpiffeID
+		colorIcon: icon/components/SpiffeID-color.svg
+		whiteIcon: icon/components/SpiffeID-white.svg
+		description: 
+	-	name: TCPRoute
+		colorIcon: icon/components/TCPRoute-color.svg
+		whiteIcon: icon/components/TCPRoute-white.svg
+		description: 
+	-	name: TrafficSplit
+		colorIcon: icon/components/TrafficSplit-color.svg
+		whiteIcon: icon/components/TrafficSplit-white.svg
+		description: 
+	-	name: TrafficTarget
+		colorIcon: icon/components/TrafficTarget-color.svg
+		whiteIcon: icon/components/TrafficTarget-white.svg
+		description: 
+	-	name: CircuitBreaker
+		colorIcon: icon/components/CircuitBreaker-color.svg
+		whiteIcon: icon/components/CircuitBreaker-white.svg
+		description: 
+	-	name: MeshConfig
+		colorIcon: icon/components/MeshConfig-color.svg
+		whiteIcon: icon/components/MeshConfig-white.svg
+		description: 
+	-	name: MeshConfigClass
+		colorIcon: icon/components/MeshConfigClass-color.svg
+		whiteIcon: icon/components/MeshConfigClass-white.svg
+		description: 
+	-	name: RateLimit
+		colorIcon: icon/components/RateLimit-color.svg
+		whiteIcon: icon/components/RateLimit-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    NGINX Service Mesh is a fully integrated lightweight service mesh that leverages a data plane powered by NGINX Plus to manage container traffic in Kubernetes environments.
+NGINX Service Mesh is a fully integrated lightweight service mesh that leverages a data plane powered by NGINX Plus to manage container traffic in Kubernetes environments.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

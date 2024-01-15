@@ -1,24 +1,73 @@
 ---
-title: Argo Workflows  
+title: Argo Workflows
 subtitle: Collaborative and visual infrastructure as code for Argo Workflows
 integrationIcon: icon/color/argo-workflows-color.svg
 darkModeIntegrationIcon: icon/white/argo-workflows-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/argo-workflows
+description: 
 category: App Definition and Development
 subcategory: Continuous Integration & Delivery
-featureList: ["UI to visualize and manage Workflows.",
-"Workflow templating to store commonly used Workflows in the cluster.",
-"Archiving Workflows after executing for later access."
+registrant: artifacthub
+components: 
+	-	name: ClusterWorkflowTemplate
+		colorIcon: icon/components/ClusterWorkflowTemplate-color.svg
+		whiteIcon: icon/components/ClusterWorkflowTemplate-white.svg
+		description: 
+	-	name: CronWorkflow
+		colorIcon: icon/components/CronWorkflow-color.svg
+		whiteIcon: icon/components/CronWorkflow-white.svg
+		description: 
+	-	name: EventBus
+		colorIcon: icon/components/EventBus-color.svg
+		whiteIcon: icon/components/EventBus-white.svg
+		description: 
+	-	name: EventSource
+		colorIcon: icon/components/EventSource-color.svg
+		whiteIcon: icon/components/EventSource-white.svg
+		description: 
+	-	name: Sensor
+		colorIcon: icon/components/Sensor-color.svg
+		whiteIcon: icon/components/Sensor-white.svg
+		description: 
+	-	name: WorkflowArtifactGCTask
+		colorIcon: icon/components/WorkflowArtifactGCTask-color.svg
+		whiteIcon: icon/components/WorkflowArtifactGCTask-white.svg
+		description: 
+	-	name: WorkflowEventBinding
+		colorIcon: icon/components/WorkflowEventBinding-color.svg
+		whiteIcon: icon/components/WorkflowEventBinding-white.svg
+		description: 
+	-	name: Workflow
+		colorIcon: icon/components/Workflow-color.svg
+		whiteIcon: icon/components/Workflow-white.svg
+		description: 
+	-	name: WorkflowTaskResult
+		colorIcon: icon/components/WorkflowTaskResult-color.svg
+		whiteIcon: icon/components/WorkflowTaskResult-white.svg
+		description: 
+	-	name: WorkflowTaskSet
+		colorIcon: icon/components/WorkflowTaskSet-color.svg
+		whiteIcon: icon/components/WorkflowTaskSet-white.svg
+		description: 
+	-	name: WorkflowTemplate
+		colorIcon: icon/components/WorkflowTemplate-color.svg
+		whiteIcon: icon/components/WorkflowTemplate-white.svg
+		description: 
+featureList: [
+  "UI to visualize and manage Workflows.",
+  "Workflow templating to store commonly used Workflows in the cluster.",
+  "Archiving Workflows after executing for later access."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Workflow engine for Kubernetes
+Workflow engine for Kubernetes
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

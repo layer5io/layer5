@@ -1,24 +1,41 @@
 ---
-title: AWS Secrets Manager  
+title: AWS Secrets Manager
 subtitle: Collaborative and visual infrastructure as code for AWS Secrets Manager
 integrationIcon: icon/color/aws-secretsmanager-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-secretsmanager-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-secretsmanager-controller
+description: 
 category: Security & Compliance
 subcategory: Security Identity Compliance
-featureList: ["Centrally store and manage credentials, API keys, and other secrets.",
-"Use AWS Identity and Access Management (IAM) permissions policies to manage access to your secrets.",
-"Rotate secrets on demand or on a schedule, without redeploying or disrupting active applications."
+registrant: aws
+components: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: Secret
+		colorIcon: icon/components/Secret-color.svg
+		whiteIcon: icon/components/Secret-white.svg
+		description: 
+featureList: [
+  "Centrally store and manage credentials, API keys, and other secrets.",
+  "Use AWS Identity and Access Management (IAM) permissions policies to manage access to your secrets.",
+  "Rotate secrets on demand or on a schedule, without redeploying or disrupting active applications."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, API keys, and other secrets throughout their lifecycles.
+AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, API keys, and other secrets throughout their lifecycles.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

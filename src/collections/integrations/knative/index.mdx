@@ -1,24 +1,73 @@
 ---
-title: Knative  
+title: Knative
 subtitle: Collaborative and visual infrastructure as code for Knative
 integrationIcon: icon/color/knative-color.svg
 darkModeIntegrationIcon: icon/white/knative-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/knative
+description: 
 category: Serverless
 subcategory: Installable Platform
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: ApiServerSource
+		colorIcon: icon/components/ApiServerSource-color.svg
+		whiteIcon: icon/components/ApiServerSource-white.svg
+		description: 
+	-	name: Broker
+		colorIcon: icon/components/Broker-color.svg
+		whiteIcon: icon/components/Broker-white.svg
+		description: 
+	-	name: Channel
+		colorIcon: icon/components/Channel-color.svg
+		whiteIcon: icon/components/Channel-white.svg
+		description: 
+	-	name: ContainerSource
+		colorIcon: icon/components/ContainerSource-color.svg
+		whiteIcon: icon/components/ContainerSource-white.svg
+		description: 
+	-	name: EventType
+		colorIcon: icon/components/EventType-color.svg
+		whiteIcon: icon/components/EventType-white.svg
+		description: 
+	-	name: Parallel
+		colorIcon: icon/components/Parallel-color.svg
+		whiteIcon: icon/components/Parallel-white.svg
+		description: 
+	-	name: PingSource
+		colorIcon: icon/components/PingSource-color.svg
+		whiteIcon: icon/components/PingSource-white.svg
+		description: 
+	-	name: Sequence
+		colorIcon: icon/components/Sequence-color.svg
+		whiteIcon: icon/components/Sequence-white.svg
+		description: 
+	-	name: SinkBinding
+		colorIcon: icon/components/SinkBinding-color.svg
+		whiteIcon: icon/components/SinkBinding-white.svg
+		description: 
+	-	name: Subscription
+		colorIcon: icon/components/Subscription-color.svg
+		whiteIcon: icon/components/Subscription-white.svg
+		description: 
+	-	name: Trigger
+		colorIcon: icon/components/Trigger-color.svg
+		whiteIcon: icon/components/Trigger-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Knative is a developer-focused serverless application layer which is a great complement to the existing Kubernetes application constructs. Knative consists of two components: an HTTP-triggered autoscaling container runtime called “Knative Serving”, and a CloudEvents-over-HTTP asynchronous routing layer called “Knative Eventing”.
+Knative is a developer-focused serverless application layer which is a great complement to the existing Kubernetes application constructs. Knative consists of two components: an HTTP-triggered autoscaling container runtime called “Knative Serving”, and a CloudEvents-over-HTTP asynchronous routing layer called “Knative Eventing”.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

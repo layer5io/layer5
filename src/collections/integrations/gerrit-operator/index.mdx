@@ -1,24 +1,57 @@
 ---
-title: Gerrit Operator  
+title: Gerrit Operator
 subtitle: Collaborative and visual infrastructure as code for Gerrit Operator
 integrationIcon: icon/color/gerrit-operator-color.svg
 darkModeIntegrationIcon: icon/white/gerrit-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/gerrit-operator
+description: 
 category: App Definition and Development
 subcategory: Source Version Control
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: GerritGroupMember
+		colorIcon: icon/components/GerritGroupMember-color.svg
+		whiteIcon: icon/components/GerritGroupMember-white.svg
+		description: 
+	-	name: GerritGroup
+		colorIcon: icon/components/GerritGroup-color.svg
+		whiteIcon: icon/components/GerritGroup-white.svg
+		description: 
+	-	name: GerritMergeRequest
+		colorIcon: icon/components/GerritMergeRequest-color.svg
+		whiteIcon: icon/components/GerritMergeRequest-white.svg
+		description: 
+	-	name: GerritProjectAccess
+		colorIcon: icon/components/GerritProjectAccess-color.svg
+		whiteIcon: icon/components/GerritProjectAccess-white.svg
+		description: 
+	-	name: GerritProject
+		colorIcon: icon/components/GerritProject-color.svg
+		whiteIcon: icon/components/GerritProject-white.svg
+		description: 
+	-	name: GerritReplicationConfig
+		colorIcon: icon/components/GerritReplicationConfig-color.svg
+		whiteIcon: icon/components/GerritReplicationConfig-white.svg
+		description: 
+	-	name: Gerrit
+		colorIcon: icon/components/Gerrit-color.svg
+		whiteIcon: icon/components/Gerrit-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    
+
 </p>
 <p>
     Connect GitHub with Meshery and import selectively import your existing Helm Charts, Docker Compose applications, and Kubernetes manifests.Visually configure and customize your cloud native infrastructure.

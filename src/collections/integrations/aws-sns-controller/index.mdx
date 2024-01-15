@@ -1,24 +1,53 @@
 ---
-title: AWS Simple Notification Service  
+title: AWS Simple Notification Service
 subtitle: Collaborative and visual infrastructure as code for AWS Simple Notification Service
 integrationIcon: icon/color/aws-sns-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-sns-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-sns-controller
+description: 
 category: App Definition and Development
 subcategory: App Integration
-featureList: ["Message fanout: Each account can support 100,000 Standard topics and each topic supports up to 12.5M subscriptions.",
-"Amazon SNS supports VPC Endpoints (VPCE) via AWS PrivateLink.",
-"Amazon SNS mobile notifications make it simple and cost effective to fan out mobile push notifications to iOS, Android, Fire, Windows, and Baidu devices."
+registrant: aws
+components: 
+	-	name: PlatformEndpoint
+		colorIcon: icon/components/PlatformEndpoint-color.svg
+		whiteIcon: icon/components/PlatformEndpoint-white.svg
+		description: 
+	-	name: PlatformApplication
+		colorIcon: icon/components/PlatformApplication-color.svg
+		whiteIcon: icon/components/PlatformApplication-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: Subscription
+		colorIcon: icon/components/Subscription-color.svg
+		whiteIcon: icon/components/Subscription-white.svg
+		description: 
+	-	name: Topic
+		colorIcon: icon/components/Topic-color.svg
+		whiteIcon: icon/components/Topic-white.svg
+		description: 
+featureList: [
+  "Message fanout: Each account can support 100,000 Standard topics and each topic supports up to 12.5M subscriptions.",
+  "Amazon SNS supports VPC Endpoints (VPCE) via AWS PrivateLink.",
+  "Amazon SNS mobile notifications make it simple and cost effective to fan out mobile push notifications to iOS, Android, Fire, Windows, and Baidu devices."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon Simple Notification Service (Amazon SNS) sends notifications two ways, A2A and A2P.
+Amazon Simple Notification Service (Amazon SNS) sends notifications two ways, A2A and A2P.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

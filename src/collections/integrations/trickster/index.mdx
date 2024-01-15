@@ -1,24 +1,53 @@
 ---
-title: Trickster  
+title: Trickster
 subtitle: Collaborative and visual infrastructure as code for Trickster
 integrationIcon: icon/color/trickster-color.svg
 darkModeIntegrationIcon: icon/white/trickster-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/trickster
+description: 
 category: Observability and Analysis
 subcategory: Monitoring
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: TricksterBackend
+		colorIcon: icon/components/TricksterBackend-color.svg
+		whiteIcon: icon/components/TricksterBackend-white.svg
+		description: 
+	-	name: TricksterCache
+		colorIcon: icon/components/TricksterCache-color.svg
+		whiteIcon: icon/components/TricksterCache-white.svg
+		description: 
+	-	name: TricksterRequestRewriter
+		colorIcon: icon/components/TricksterRequestRewriter-color.svg
+		whiteIcon: icon/components/TricksterRequestRewriter-white.svg
+		description: 
+	-	name: TricksterRule
+		colorIcon: icon/components/TricksterRule-color.svg
+		whiteIcon: icon/components/TricksterRule-white.svg
+		description: 
+	-	name: Trickster
+		colorIcon: icon/components/Trickster-color.svg
+		whiteIcon: icon/components/Trickster-white.svg
+		description: 
+	-	name: TricksterTracingConfig
+		colorIcon: icon/components/TricksterTracingConfig-color.svg
+		whiteIcon: icon/components/TricksterTracingConfig-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Open Source HTTP Reverse Proxy Cache and Time Series Dashboard Accelerator
+Open Source HTTP Reverse Proxy Cache and Time Series Dashboard Accelerator
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

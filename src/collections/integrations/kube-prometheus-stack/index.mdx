@@ -1,24 +1,61 @@
 ---
-title: Kube Prometheus Stack  
+title: Kube Prometheus Stack
 subtitle: Collaborative and visual infrastructure as code for Kube Prometheus Stack
 integrationIcon: icon/color/kube-prometheus-stack-color.svg
 darkModeIntegrationIcon: icon/white/kube-prometheus-stack-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/kube-prometheus-stack
+description: 
 category: Observability and Analysis
 subcategory: Monitoring
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: AlertmanagerConfig
+		colorIcon: icon/components/AlertmanagerConfig-color.svg
+		whiteIcon: icon/components/AlertmanagerConfig-white.svg
+		description: 
+	-	name: Alertmanager
+		colorIcon: icon/components/Alertmanager-color.svg
+		whiteIcon: icon/components/Alertmanager-white.svg
+		description: 
+	-	name: Prometheus
+		colorIcon: icon/components/Prometheus-color.svg
+		whiteIcon: icon/components/Prometheus-white.svg
+		description: 
+	-	name: ThanosRuler
+		colorIcon: icon/components/ThanosRuler-color.svg
+		whiteIcon: icon/components/ThanosRuler-white.svg
+		description: 
+	-	name: PrometheusAgent
+		colorIcon: icon/components/PrometheusAgent-color.svg
+		whiteIcon: icon/components/PrometheusAgent-white.svg
+		description: 
+	-	name: ScrapeConfig
+		colorIcon: icon/components/ScrapeConfig-color.svg
+		whiteIcon: icon/components/ScrapeConfig-white.svg
+		description: 
+	-	name: PrometheusConnection
+		colorIcon: icon/components/PrometheusConnection-color.svg
+		whiteIcon: icon/components/PrometheusConnection-white.svg
+		description: 
+	-	name: PrometheusCredential
+		colorIcon: icon/components/PrometheusCredential-color.svg
+		whiteIcon: icon/components/PrometheusCredential-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Prometheus is an open-source systems monitoring and alerting toolkit
+Prometheus is an open-source systems monitoring and alerting toolkit
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

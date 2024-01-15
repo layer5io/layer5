@@ -1,24 +1,85 @@
 ---
-title: Fluent Operator  
+title: Fluent Operator
 subtitle: Collaborative and visual infrastructure as code for Fluent Operator
 integrationIcon: icon/color/fluent-operator-color.svg
 darkModeIntegrationIcon: icon/white/fluent-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/fluent-operator
+description: 
 category: Observability and Analysis
 subcategory: Logging
-featureList: ["Fluentd decouples data sources from backend systems by providing a unified logging layer in between.",
-"Fluentds 500+ plugins connect it to many data sources and outputs while keeping its core simple.",
-"Fluentd has a flexible plugin system that allows the community to extend its functionality. "
+registrant: artifacthub
+components: 
+	-	name: ClusterFilter
+		colorIcon: icon/components/ClusterFilter-color.svg
+		whiteIcon: icon/components/ClusterFilter-white.svg
+		description: 
+	-	name: ClusterFluentBitConfig
+		colorIcon: icon/components/ClusterFluentBitConfig-color.svg
+		whiteIcon: icon/components/ClusterFluentBitConfig-white.svg
+		description: 
+	-	name: ClusterInput
+		colorIcon: icon/components/ClusterInput-color.svg
+		whiteIcon: icon/components/ClusterInput-white.svg
+		description: 
+	-	name: ClusterOutput
+		colorIcon: icon/components/ClusterOutput-color.svg
+		whiteIcon: icon/components/ClusterOutput-white.svg
+		description: 
+	-	name: ClusterParser
+		colorIcon: icon/components/ClusterParser-color.svg
+		whiteIcon: icon/components/ClusterParser-white.svg
+		description: 
+	-	name: FluentBit
+		colorIcon: icon/components/FluentBit-color.svg
+		whiteIcon: icon/components/FluentBit-white.svg
+		description: 
+	-	name: ClusterFluentdConfig
+		colorIcon: icon/components/ClusterFluentdConfig-color.svg
+		whiteIcon: icon/components/ClusterFluentdConfig-white.svg
+		description: 
+	-	name: Filter
+		colorIcon: icon/components/Filter-color.svg
+		whiteIcon: icon/components/Filter-white.svg
+		description: 
+	-	name: FluentdConfig
+		colorIcon: icon/components/FluentdConfig-color.svg
+		whiteIcon: icon/components/FluentdConfig-white.svg
+		description: 
+	-	name: Fluentd
+		colorIcon: icon/components/Fluentd-color.svg
+		whiteIcon: icon/components/Fluentd-white.svg
+		description: 
+	-	name: Collector
+		colorIcon: icon/components/Collector-color.svg
+		whiteIcon: icon/components/Collector-white.svg
+		description: 
+	-	name: Output
+		colorIcon: icon/components/Output-color.svg
+		whiteIcon: icon/components/Output-white.svg
+		description: 
+	-	name: FluentBitConfig
+		colorIcon: icon/components/FluentBitConfig-color.svg
+		whiteIcon: icon/components/FluentBitConfig-white.svg
+		description: 
+	-	name: Parser
+		colorIcon: icon/components/Parser-color.svg
+		whiteIcon: icon/components/Parser-white.svg
+		description: 
+featureList: [
+  "Fluentd decouples data sources from backend systems by providing a unified logging layer in between.",
+  "Fluentds 500+ plugins connect it to many data sources and outputs while keeping its core simple.",
+  "Fluentd has a flexible plugin system that allows the community to extend its functionality. "
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Fluent Operator provides great flexibility in building a logging layer based on Fluent Bit and Fluentd.
+Fluent Operator provides great flexibility in building a logging layer based on Fluent Bit and Fluentd.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

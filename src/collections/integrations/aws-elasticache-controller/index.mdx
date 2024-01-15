@@ -1,24 +1,61 @@
 ---
-title: AWS ElastiCache  
+title: AWS ElastiCache
 subtitle: Collaborative and visual infrastructure as code for AWS ElastiCache
 integrationIcon: icon/color/aws-elasticache-controller-color.svg
 darkModeIntegrationIcon: icon/white/aws-elasticache-controller-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/aws-elasticache-controller
+description: 
 category: App Definition and Development
 subcategory: Database
-featureList: ["Fully managed Redis and Memcached",
-"Add a cache to your relational database",
-"You can create an ElastiCache Serverless cache in a few steps by specifying a cache name in Meshery"
+registrant: aws
+components: 
+	-	name: CacheParameterGroup
+		colorIcon: icon/components/CacheParameterGroup-color.svg
+		whiteIcon: icon/components/CacheParameterGroup-white.svg
+		description: 
+	-	name: CacheSubnetGroup
+		colorIcon: icon/components/CacheSubnetGroup-color.svg
+		whiteIcon: icon/components/CacheSubnetGroup-white.svg
+		description: 
+	-	name: FieldExport
+		colorIcon: icon/components/FieldExport-color.svg
+		whiteIcon: icon/components/FieldExport-white.svg
+		description: 
+	-	name: AdoptedResource
+		colorIcon: icon/components/AdoptedResource-color.svg
+		whiteIcon: icon/components/AdoptedResource-white.svg
+		description: 
+	-	name: Snapshot
+		colorIcon: icon/components/Snapshot-color.svg
+		whiteIcon: icon/components/Snapshot-white.svg
+		description: 
+	-	name: User
+		colorIcon: icon/components/User-color.svg
+		whiteIcon: icon/components/User-white.svg
+		description: 
+	-	name: UserGroup
+		colorIcon: icon/components/UserGroup-color.svg
+		whiteIcon: icon/components/UserGroup-white.svg
+		description: 
+	-	name: ReplicationGroup
+		colorIcon: icon/components/ReplicationGroup-color.svg
+		whiteIcon: icon/components/ReplicationGroup-white.svg
+		description: 
+featureList: [
+  "Fully managed Redis and Memcached",
+  "Add a cache to your relational database",
+  "You can create an ElastiCache Serverless cache in a few steps by specifying a cache name in Meshery"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    Amazon ElastiCache allows you to seamlessly set up, run, and scale an in-memory cache in the cloud. ElastiCache is compatible with both Redis and Memcached.
+Amazon ElastiCache allows you to seamlessly set up, run, and scale an in-memory cache in the cloud. ElastiCache is compatible with both Redis and Memcached.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

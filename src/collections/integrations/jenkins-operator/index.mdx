@@ -1,24 +1,73 @@
 ---
-title: Jenkins Operator  
+title: Jenkins Operator
 subtitle: Collaborative and visual infrastructure as code for Jenkins Operator
 integrationIcon: icon/color/jenkins-operator-color.svg
 darkModeIntegrationIcon: icon/white/jenkins-operator-white.svg
-docURL: 
+docURL: https://docs.meshery.io/extensibility/integrations/jenkins-operator
+description: 
 category: App Definition and Development
 subcategory: Continuous Integration & Delivery
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: 
+	-	name: Jenkins
+		colorIcon: icon/components/Jenkins-color.svg
+		whiteIcon: icon/components/Jenkins-white.svg
+		description: 
+	-	name: CDStageJenkinsDeployment
+		colorIcon: icon/components/CDStageJenkinsDeployment-color.svg
+		whiteIcon: icon/components/CDStageJenkinsDeployment-white.svg
+		description: 
+	-	name: JenkinsAgent
+		colorIcon: icon/components/JenkinsAgent-color.svg
+		whiteIcon: icon/components/JenkinsAgent-white.svg
+		description: 
+	-	name: JenkinsAuthorizationRoleMapping
+		colorIcon: icon/components/JenkinsAuthorizationRoleMapping-color.svg
+		whiteIcon: icon/components/JenkinsAuthorizationRoleMapping-white.svg
+		description: 
+	-	name: JenkinsAuthorizationRole
+		colorIcon: icon/components/JenkinsAuthorizationRole-color.svg
+		whiteIcon: icon/components/JenkinsAuthorizationRole-white.svg
+		description: 
+	-	name: JenkinsFolder
+		colorIcon: icon/components/JenkinsFolder-color.svg
+		whiteIcon: icon/components/JenkinsFolder-white.svg
+		description: 
+	-	name: JenkinsJobBuildRun
+		colorIcon: icon/components/JenkinsJobBuildRun-color.svg
+		whiteIcon: icon/components/JenkinsJobBuildRun-white.svg
+		description: 
+	-	name: JenkinsJob
+		colorIcon: icon/components/JenkinsJob-color.svg
+		whiteIcon: icon/components/JenkinsJob-white.svg
+		description: 
+	-	name: JenkinsScript
+		colorIcon: icon/components/JenkinsScript-color.svg
+		whiteIcon: icon/components/JenkinsScript-white.svg
+		description: 
+	-	name: JenkinsServiceAccount
+		colorIcon: icon/components/JenkinsServiceAccount-color.svg
+		whiteIcon: icon/components/JenkinsServiceAccount-white.svg
+		description: 
+	-	name: JenkinsSharedLibrary
+		colorIcon: icon/components/JenkinsSharedLibrary-color.svg
+		whiteIcon: icon/components/JenkinsSharedLibrary-white.svg
+		description: 
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: FALSE
 ---
 <p>
-    CNCF Jaeger, a Distributed Tracing Platform
+CNCF Jaeger, a Distributed Tracing Platform
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.
