@@ -106,6 +106,10 @@ margin: 1rem;
         color: ${props => props.theme.primaryColor};
       }
 
+      .options {
+        color: ${props => props.theme.textColor};
+      }
+
       .custom-arrow {
         background-color: white;
         width: 2rem;
