@@ -1,0 +1,220 @@
+---
+title: "Meet the Maintainer: Aisuko Li"
+subtitle: "An interview series with Layer5 Maintainers"
+date: 2023-04-15 10:30:05 -0530
+author: Anita Ihumanl
+thumbnail: "./aisuko-li-layer5-maintainer.png"
+darkthumbnail: "./aisuko-li-layer5-maintainer.png"
+category: "Community"
+tags:
+ - Community
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import img from "./aisuko-li-layer5-maintainer.png";
+import { MeetTheMaintainer } from "./MeetTheMaintainer.style";
+import { Link } from "gatsby";
+import ForkLift from "../../../../assets/images/app/hero/forklift.svg";
+
+<BlogWrapper>
+<MeetTheMaintainer>
+
+<div class="intro"><p>Continuing our Meet the Maintainer series, we have Aisuko Li.
+Aisuko is …(Please provide a short bio)
+</p></div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	Aisuko, thank you for joining me today. This certainly isn’t our first conversation, and many in the Layer5 community have seen your work, but may not know the backstory as to who Aisuko is and how you arrived at the position you currently hold. Indulge us. How did you come across the Layer5 community? What made you stay?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"Thanks for having me there. Actually, Aisuko is my code name. My real name is Bowen Li. I love both of them. And I am also a maintainer for the GNU Hurd project.
+
+I used to work for RancherLabs for a while and I work to maintain the official Helm(Third party management tool for the Kuebretes manifest.) charts repo. And these experiences help me make contributions for creating and maintaining Meshery Helm charts.
+
+And I like open source software. So, I love to contribute to the community. And as much as your contribution. You will get more permission to help the community be better.
+
+The Layer5 community is a real open source community. Everyone here can get a comfortable role in the community. I have been here since 2019(a long time ago). I saw new blood join and the members leave. It is good for people to work together without other conditions. This is one of my ways to have some fun."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>You’ve been consistently contributing to a large number of <Link to="/projects">Layer5 projects</Link> (Meshery adapters, mesheryctl, SMI, SMP). Layer5 has a large collection of active projects. Which one are you currently focusing on?
+ <i>Psst.</i> Which one’s your favorite? I won’t tell.</p></div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"Actually, Meshery project in 2021-2022 has changed a lot. More skilled and talented contributors join the community. They are so professional and active, their hard work makes Meshery more powerful than before. For instance, like the `meshkit` project and the `meshsync` etc. It is nice we have them work together.
+And now, I am primarily focusing on the `meshery-operator` project and `meshert-linkerd` and bugs of all the projects. I always want to make all the projects more controllable and keep a high code quality."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+  <Link to="/projects">Have you worked with any other open source project? How does Layer5 compare?
+</p></div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"I used the rancher community and Helm charts project as the owner of three charts. And I am still a maintainer of the GNU Hurd. And these days, I am working to contribute to the Kubernetes community’s projects.
+
+Compared to the Layer5 community, the Kubernetes community is large. So, you can see that many of the memer were not active. So, your PR and issues are hard to get feedback from the non-active memeber.
+
+The GNU Hurd project is a special one. There is no need to compare with it. As I mentioned before, our community has a warm welcome to the new blood and most projects have active reviewers. They can give the feedback quickly."
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Anita:</span>
+  <p>
+	What is so fascinating about service meshes?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"Service-mesh is a concept which is beyond the current people’s thought. It has lots of useful features that support  your microservices. It provides a view for the internal traffic of the cluster, internal mLTS connection, more flexible way to release new version services etc. And these features without 0 change of the services code.
+
+And the most important point, it returns the control permission to the end-user. End-user can know the details for any of the traffic and make a specific strategy for it. It is hard to find these out-of-box features without service-mesh."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	Fascinating. Why did you pick service meshes specifically though?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"I have many experiences with the middle/small companies who want to migrate to the cloud but it is not always fantasy. It is easy to migrate to the cluster, it is hard to make sure everything goes right. Especially, you do not have any idea of what happens in the cluster because you only can check all the components from several ways that kubernetes provides to you. For example, like Endpoints to services, services to services, internal DNS records. You have no idea the status of the real traffic of the applications.
+
+So, Service-mesh can show the traffic status directly to the user. This is the most  useful feature for the users."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	Haha. Leading on that, what should Meshery dream about next? What can we hope to contribute to the service mesh landscape in your opinion?
+  </p>
+</div>
+
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"One time I talked to Lee, founder of Layer5. Because of the time zone, we do not have too many chances to discuss directly. I believe we do not need to provide a new service-mesh to the community.
+
+What we do is provide third-party performance tools for all the service-mesh projects. We return the choice permission back to the end-users. They can choose which service-mesh is most comfortable to their situation.
+
+And we should contribute to the SMI and CNCF projects, we define the standard for the performance tools of the cloud-native industry. This is the reason I always want to join these communities. Maybe Lee can help me, haha."
+  </p>
+</div>
+
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	Interesting. Do expand on that. What do you think Meshery could offer, in addition to what it already does?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"I believe we can offer a CNCF standard performance tool for all the service-mesh applications. And we can collaborate with service-mesh application maintainers to define the standard rules. This is good for the end-user. For example, like what we did in SMI."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	What are today's challenges when working with service meshes?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"Although service-mesh has so many of the features, it is still struggling to be stable in production. I remember even Istio(v1.1x) cannot upgrade to the higher version directly. And the other is we do not have too many chances to get the test results from the real production environments.
+
+Nowadays, we focus more on the multiple cluster service mesh ability. This is also a new challenge."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span><p>
+That’s good to hear. What do you think we should look forward to with respect to service mesh development?
+</p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"Actually, I have some experience with the service mesh applications like Linkerd2, Istio and OSM  in the development environment. OSM is the one I prefer. Because it is deployed by modules. And the architecture is quite simple compared to others.
+
+According to my experience, I believe that we do not need all the features of service-mesh. Maybe only 1~2 is enough for our environment. For example, some middle or small companies only want to know what happened in their cluster, they may not need mLTS connection in the cluster or the further complex strategies on their traffic.
+
+So, I believe we need simple architecture and features. For example, the visualization can work with Ingress, the user does not need to create new customized resources in order to use service-mesh to track traffic."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span>
+  <p>
+	Ah while I have you here, let me get more reading recommendations lined up. Cloud Native and especially, the field of service meshes evolving exceptionally fast. Keeping up with all the developments can be challenging. Which resources do you use to stay up-to-date?
+  </p>
+</div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"People are always interested in new technology. But we were limited by the time. I believe keeping a contribution to the service-mesh open-source community is the most useful way to get the latest news.
+
+The articles and news may include the author’s personal point, we do not know he/she has a strong relationship with the community. We should lose our critical thinking on technology. Our goal is to fix the issue of using service-mesh in the real world. We need to know the truth by ourselves."
+  </p>
+</div>
+
+Anita: What does being a Meshery maintainer mean to you? How has being a maintainer impacted your full-time role?
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"It is my honor to be a maintainer of the Meshery community. The membership is a reward for me to contribute to the Meshery community.
+
+Being a maintainer makes me more happy to contribute to open source projects. I believe it gives me confidence to contribute to other projects."
+  </p>
+</div>
+
+<div class="interviewer">
+<span>Anita:</span><p> Do you have any advice for individuals hopeful to become Layer5 contributors or potentially maintainers?
+</p></div>
+
+<div class="interviewee">
+<span>Aisuko:</span>
+  <p>
+	"I believe the Layer5 and Meshery  community are always welcoming to everyone. Maybe we do not need to only focus on the code. I mean the new feature is good, but we have lots of things we need to do for example, like the unit test, code-comments. These are also important to the new features.
+
+One of our visions is to provide an opportunity to everyone who wants to contribute to the open course project. So, we need to make sure our code quality is at a high level."
+  </p>
+</div>
+
+<div class="note"><img src={ForkLift} height="100px" /><p>The Meshery project moves at an impressive pace thanks to maintainers like Aisuko. Be like Aisuko. Join the <a href="https://slack.layer5.io">Layer5 Slack</a> and say “hi”.
+</p></div>
+
+</MeetTheMaintainer>
+</BlogWrapper>
