@@ -49,7 +49,7 @@ const FeaturesContainer = () => {
     <>
       <Container>
         <h1 className="title">
-          Visual Tools That Get Things Done
+          <span>Visual Tools</span> That Get Things Done
         </h1>
         <p className="subtitle">
           Not just pretty pictures. Data-linked visual apps to streamline all your efforts.
