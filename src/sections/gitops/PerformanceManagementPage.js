@@ -9,7 +9,7 @@ import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
 import { ReactComponent as SmpLogo }  from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icon/color/github-color.svg";
+import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icons/color/github-color.svg";
 
 const PerformanceManagementPage = () => {
   return (
