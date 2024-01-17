@@ -13,6 +13,7 @@ const IndividualIntegrations = ({ data }) => {
 
   const screenshotNodes = data.allFile.nodes;
   const finalScreenshots = screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
+  const components = frontmatter.components;
 
   return (
     <IntegrationPageWrapper>
@@ -45,6 +46,13 @@ const IndividualIntegrations = ({ data }) => {
                 <FaArrowRight />
               </span>)
             }
+            {/* accessing Components */}
+            <div>  {(components != null) && (components.map((component, index) => (
+              <div key={index}>
+                <p>{`Component[${index}]: ${component.name}, ${component.colorIcon}, ${component.whiteIcon}, ${component.description}`}</p>
+              </div>
+            )))}
+            </div>
           </section>
         </div>
       </section>

@@ -25,6 +25,12 @@ export const query = graphql`
         }
         docURL
         category
+        components {
+          name
+          colorIcon
+          whiteIcon
+          description
+        }
         featureList
         workingSlides {
           childImageSharp {
