@@ -1,24 +1,47 @@
 ---
-title: GitLab  
+title: GitLab
 subtitle: Collaborative and visual infrastructure as code for GitLab
-integrationIcon: icon/color/gitlab-color.svg
-darkModeIntegrationIcon: icon/white/gitlab-white.svg
-docURL: 
+integrationIcon: icons/color/gitlab-color.svg
+darkModeIntegrationIcon: icons/white/gitlab-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/gitlab
+description: 
 category: App Definition and Development
 subcategory: Security & Compliance
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: artifacthub
+components: [
+{
+"name": "backend",
+"colorIcon": "icons/components/backend/icons/color/backend-color.svg",
+"whiteIcon": "icons/components/backend/icons/white/backend-white.svg",
+"description": "",
+},
+{
+"name": "defaults",
+"colorIcon": "icons/components/defaults/icons/color/defaults-color.svg",
+"whiteIcon": "icons/components/defaults/icons/white/defaults-white.svg",
+"description": "",
+},
+{
+"name": "global",
+"colorIcon": "icons/components/global/icons/color/global-color.svg",
+"whiteIcon": "icons/components/global/icons/white/global-white.svg",
+"description": "",
+}]
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: Collaborative Infrastructure as Code
+howItWorksDetails: Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs.
+published: TRUE
 ---
 <p>
-    Enables Kubernetes applications to access cloud resources securely with Azure Active Directory (AAD).
+Enables Kubernetes applications to access cloud resources securely with Azure Active Directory (AAD).
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.
