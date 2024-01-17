@@ -8,15 +8,19 @@ description:
 category: App Definition and Development
 subcategory: Continuous Integration & Delivery
 registrant: artifacthub
-components: 
-	-	name: ArmoryAccount
-		colorIcon: icon/components/ArmoryAccount-color.svg
-		whiteIcon: icon/components/ArmoryAccount-white.svg
-		description: 
-	-	name: SpinnakerService
-		colorIcon: icon/components/SpinnakerService-color.svg
-		whiteIcon: icon/components/SpinnakerService-white.svg
-		description: 
+components: [
+{
+"name": "armory-account"
+"colorIcon": "icons/components/armory-account/icons/color/armory-account-color.svg"
+"whiteIcon": "icons/components/armory-account/icons/white/armory-account-white.svg"
+"description": ""
+},
+{
+"name": "spinnaker-service"
+"colorIcon": "icons/components/spinnaker-service/icons/color/spinnaker-service-color.svg"
+"whiteIcon": "icons/components/spinnaker-service/icons/white/spinnaker-service-white.svg"
+"description": ""
+}]
 featureList: [
   "Stop using Halyard commands: just kubectl apply your Spinnaker configuration.",
   "Expose Spinnaker to the outside world (via LoadBalancer).",
