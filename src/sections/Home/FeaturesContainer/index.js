@@ -49,10 +49,11 @@ const FeaturesContainer = () => {
     <>
       <Container>
         <h1 className="title">
-          <span>Visual Tools</span> That Get Things Done
+          Deploy <i>faster </i>together with <span>Confidence</span>
         </h1>
         <p className="subtitle">
-          Not just pretty pictures. Data-linked visual apps to streamline all your efforts.
+          Give your team full application visibility at every layer so the team
+          can ship, refactor and onboard faster.
         </p>
         {/* Tools to help you scale your cloud native infrastructure */}
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}
@@ -61,15 +62,15 @@ const FeaturesContainer = () => {
         {
           featuresInfo.map((feature) => (
             <Features
-              key = {feature.title}
-              title = {feature.title}
-              show_custom_cursor = {feature.show_custom_cursor}
-              animationOne = {feature.animationOne}
-              redirectLink = {feature.redirectLink}
-              desc = {feature.desc}
-              imgLink = {feature.imgLink}
-              cursor = {feature.cursor}
-              redirectLinkWithImage = {feature.redirectLinkWithImage}
+              key={feature.title}
+              title={feature.title}
+              show_custom_cursor={feature.show_custom_cursor}
+              animationOne={feature.animationOne}
+              redirectLink={feature.redirectLink}
+              desc={feature.desc}
+              imgLink={feature.imgLink}
+              cursor={feature.cursor}
+              redirectLinkWithImage={feature.redirectLinkWithImage}
             />))
         }
         <TwoColLayout />

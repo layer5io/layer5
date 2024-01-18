@@ -26,6 +26,14 @@ const WhiteboardWrapper = styled.div`
     text-align: center;
     margin-bottom: 2rem;
 
+    &>h2 {
+      margin-bottom: 0.5rem
+    }
+
+    &>p{
+      color: ${props => props.theme.greyA0AAAAToGrey666666};
+    }
+
     .highlighted-text {
       color: white;
       padding: 0 0.5rem;

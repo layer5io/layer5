@@ -83,8 +83,9 @@ const ArchitectureDiagram = () => {
       </div>
       <Container>
         <div className={"feature-use-container"}>
-          <div>
-            <h2 className={"use-heading"}> Features that we provide</h2>
+          <div className={"use-heading"}>
+            <h2>Visual Tool That Get Things Done</h2>
+            <p> Not just pretty pictures. Data-linked visual apps to streamline all your efforts.</p>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
@@ -94,7 +95,7 @@ const ArchitectureDiagram = () => {
         </div>
       </Container>
 
-      <RelatedPicks content={content}/>
+      <RelatedPicks content={content} />
       <SeeYou />
       <Partners />
     </WhiteboardWrapper>
