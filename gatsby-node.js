@@ -72,6 +72,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/blog/category/landscape", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/landscape/", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/service-mesh-specifications", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/opensource", toPath: "/blog/tag/open-source", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/smp", toPath: "/blog/tag/service-mesh-performance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/smp/", toPath: "/blog/tag/service-mesh-performance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/open-service-mesh", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/envoy", toPath: "/blog/tag/envoy", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/istio", toPath: "/blog/tag/istio", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/products/service-mesh-performance", toPath: "/projects/cloud-native-performance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/products/nighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/lfx", toPath: "/blog/tag/programs", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/lfx", toPath: "/blog/tag/programs", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/open-service-mesh", toPath: "/blog/tag/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/open-service-mesh/", toPath: "/blog/tag/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/products/service-mesh-interface-conformance", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/products.html", toPath: "/products", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resource Redirects
