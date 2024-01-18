@@ -37,6 +37,18 @@ const LifecycleFeature = () => {
         content: "Multi-player collaboration",
         className: "--on",
       },
+      {
+        content: "Support for Annotations, Shapes, GCP/AWS",
+        className: "--on",
+      },
+      {
+        content: "Server-side OPA Evaluation",
+        className: "--on",
+      },
+      {
+        content: "Dynamic de/provisioning of Meshery Adapters",
+        className: "--on",
+      },
       // {
       //   content:
       //     "Validate each service mesh's compliance with Service Mesh Interface (SMI)",
@@ -79,6 +91,10 @@ const LifecycleFeature = () => {
         content: "Apply well-known cloud native designs",
         className: "--on",
       },
+      {
+        content: "Configurable OAuth callbacks",
+        className: "--on",
+      },
     ],
     count: {
       value: 1500,
@@ -117,6 +133,10 @@ const LifecycleFeature = () => {
       },
       {
         content: "Baseline and track deltas of your workload performance",
+        className: "--on",
+      },
+      {
+        content: "Certificate support in performance profiles",
         className: "--on",
       },
     ],

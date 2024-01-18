@@ -10,8 +10,8 @@ const KubernetesDiagramPage = () => {
   const { isDark } = useStyledDarkMode();
 
   let data = {
-    heading: "Kubernetes Orchestration and diagramming software",
-    sub_heading: "Orchestrate Kubernetes and Create diagrams easily with predefined templates and symbols designed for professionals.",
+    heading: "Kubernetes Orchestration and Diagramming software",
+    sub_heading: "Orchestrate and design Kubernetes architecture diagrams easily with predefined templates and symbols designed for professionals.",
     image: isDark ? KubernetesDark : KubernetesDark
   };
   return (
