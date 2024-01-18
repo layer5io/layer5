@@ -49,9 +49,12 @@ const PlanCardWrapper = styled.section`
 
     h2 {
       margin-top: 1rem;
+      margin-bottom: 1rem;
+
       color: ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
       font-size: 24px;
-      font-weight: 500;
+      font-weight: 600;
+      margin-left: 1rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
