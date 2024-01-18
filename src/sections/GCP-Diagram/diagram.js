@@ -151,7 +151,7 @@ const Gcp = () => {
     <DiagramWrapper>
       <Container className="diagram-container">
 
-        <Row className="catalog">
+        {/* <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
               <img src={GCPIconsDark} alt="GCP Diagrams for anything" className="GCP-image" />
@@ -163,7 +163,7 @@ const Gcp = () => {
               Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
             </p>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Deploy  with No Code GCP</h2>
