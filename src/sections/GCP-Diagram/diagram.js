@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import GCPIconsDark from "./images/gcp-icons-dark.svg";
+// import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
