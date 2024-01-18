@@ -16,7 +16,8 @@ export const Wrapper = styled("div")`
 `;
 
 export const CardWrapper = styled("div")`
-    width: 300px;
+    width: 350px;
+    flex: 1;
     background: ${props => props.theme.grey212121ToLinear2};
     border-radius: 0.25rem;
     box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};

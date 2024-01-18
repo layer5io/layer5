@@ -12,7 +12,7 @@ const AwsDiagramPage = () => {
 
   let data = {
     heading: "AWS Orchestration and Diagramming Software",
-    sub_heading: "Orchestrate and Create Amazon Web Services diagrams easily with predefined templates and symbols designed for professionals.",
+    sub_heading: "Orchestrate and Design Amazon Web Services architecture diagrams easily with predefined templates and symbols designed for professionals.",
     image: isDark ? AWSDark : AWSDark
   };
   return (
