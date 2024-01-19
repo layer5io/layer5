@@ -25,6 +25,27 @@ export const query = graphql`
         }
         docURL
         category
+<<<<<<< HEAD
+=======
+        components {
+          name
+          colorIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          whiteIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          description
+        }
+>>>>>>> c9aeeb8575c0db0a08cdff22cdf08166c42ec8e6
         featureList
         workingSlides {
           childImageSharp {
