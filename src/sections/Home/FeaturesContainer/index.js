@@ -62,15 +62,15 @@ const FeaturesContainer = () => {
         {
           featuresInfo.map((feature) => (
             <Features
-              key = {feature.title}
-              title = {feature.title}
-              show_custom_cursor = {feature.show_custom_cursor}
-              animationOne = {feature.animationOne}
-              redirectLink = {feature.redirectLink}
-              desc = {feature.desc}
-              imgLink = {feature.imgLink}
-              cursor = {feature.cursor}
-              redirectLinkWithImage = {feature.redirectLinkWithImage}
+              key={feature.title}
+              title={feature.title}
+              show_custom_cursor={feature.show_custom_cursor}
+              animationOne={feature.animationOne}
+              redirectLink={feature.redirectLink}
+              desc={feature.desc}
+              imgLink={feature.imgLink}
+              cursor={feature.cursor}
+              redirectLinkWithImage={feature.redirectLinkWithImage}
             />))
         }
         <TwoColLayout />
