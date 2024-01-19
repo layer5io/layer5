@@ -38,15 +38,23 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Support for Annotations, Shapes, GCP/AWS",
+        content: "Real-Time Helm Chart Generation for CLI and UI",
         className: "--on",
       },
       {
-        content: "Server-side OPA Evaluation",
+        content: "Enhanced Multi-Cluster Support for Streamlined Environments",
         className: "--on",
       },
       {
-        content: "Dynamic de/provisioning of Meshery Adapters",
+        content: "Multiplayer5 designer for kubernetes and cloud",
+        className: "--on",
+      },
+      {
+        content: "Scheduled Workflow: Automated Helm Chart Generation",
+        className: "--on",
+      },
+      {
+        content: "Hierarchical Organization and Teams management",
         className: "--on",
       },
       // {
@@ -92,6 +100,14 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
+        content: "Kubernetes Management with Design Deployment Dry-run",
+        className: "--on",
+      },
+      {
+        content: "Efficient WASM Envoy Filter Management in Meshery UI and CLI",
+        className: "--on",
+      },
+      {
         content: "Configurable OAuth callbacks",
         className: "--on",
       },
@@ -133,6 +149,10 @@ const LifecycleFeature = () => {
       },
       {
         content: "Baseline and track deltas of your workload performance",
+        className: "--on",
+      },
+      {
+        content: "Validate and dry run your configurations before deploying",
         className: "--on",
       },
       {
