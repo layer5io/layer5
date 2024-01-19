@@ -25,8 +25,6 @@ export const query = graphql`
         }
         docURL
         category
-<<<<<<< HEAD
-=======
         components {
           name
           colorIcon {
@@ -45,7 +43,6 @@ export const query = graphql`
           }
           description
         }
->>>>>>> c9aeeb8575c0db0a08cdff22cdf08166c42ec8e6
         featureList
         workingSlides {
           childImageSharp {
