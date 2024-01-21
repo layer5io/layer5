@@ -2,15 +2,17 @@ import React, { useEffect } from "react";
 import FeatureHeroWrapper from "./featureHero.style";
 import { Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+
 const FeatureHero = (props) => {
   useEffect(() => {
     const scrollingImage = document.getElementById("whiteboard-svg");
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const translateY = scrollPosition / 16;
-      const finalRotateAngle = Math.min(translateY, 12);
-      scrollingImage.style.transform = `rotateX(${12 - finalRotateAngle}deg)`;
+      const translateY = scrollPosition / 8;
+      let finalRotateAngle = Math.max(12 - translateY, 0);
+
+      scrollingImage.style.transform = `rotateX(${finalRotateAngle}deg)`;
     };
 
     window.addEventListener("scroll", handleScroll);

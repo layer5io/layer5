@@ -24,7 +24,7 @@ const FeatureHeroWrapper = styled.div`
     }
 
     #whiteboard-svg {
-      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out; // Add opacity transition
       transform-origin: bottom center;
       transform: rotateX(12deg);
     }
