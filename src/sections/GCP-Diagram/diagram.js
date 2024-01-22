@@ -9,7 +9,7 @@ import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
 import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
 import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
-import DeployGIF from "./images/gcp-deploy.gif";
+// import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
 import IconsLibraryGIF from "./images/gcp-icon-library.gif";
 import { Link } from "gatsby";
