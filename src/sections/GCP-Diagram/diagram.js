@@ -12,6 +12,8 @@ import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
 import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
 import IconsLibraryGIF from "./images/gcp-icon-library.gif";
+import { Link } from "gatsby";
+
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -164,9 +166,9 @@ const Gcp = () => {
             </p>
           </Col>
         </Row> */}
-        <Row className="catalog">
+        {/* <Row className="catalog">
           <Col md={4} className="diagram-detail">
-            <h2 className="heading">Deploy  with No Code GCP</h2>
+            <h2 className="heading">Deploy with No Code GCP</h2>
             <p className="caption">
               Our visual GCP interface enables anyone to deploy production-grade software with no code. Whether you're new to GCP and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software, all with no code.
             </p>
@@ -176,7 +178,7 @@ const Gcp = () => {
               <img src={DeployGIF} alt="GCP Diagrams for anything" className="GCP-image" />
             </div>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
@@ -188,6 +190,7 @@ const Gcp = () => {
             <p className="caption">
               MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
+            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -214,7 +217,7 @@ const Gcp = () => {
             <p className="caption">
               Jumpstart your projects with our quick-start templates designed for both GCP diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
             </p>
-            {/* <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>  */}
+            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
           </Col>
         </Row>
 
