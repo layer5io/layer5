@@ -288,8 +288,8 @@ const IntegrationsGrid = ({ category, count }) => {
                           : integrationIcon
                       }
                       alt={item.frontmatter.title}
-                      height={70}
-                      width={70}
+                      height={55}
+                      width={130}
                       style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
@@ -316,8 +316,8 @@ const IntegrationsGrid = ({ category, count }) => {
                             : integrationIcon
                         }
                         alt={item.frontmatter.title}
-                        height={70}
-                        width={70}
+                        height={55}
+                        width={130}
                         style={{
                           filter:
                             isDark && darkModeIntegrationIcon == null
