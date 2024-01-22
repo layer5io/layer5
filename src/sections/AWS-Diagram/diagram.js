@@ -12,6 +12,7 @@ import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
 import DragDropGIF from "./images/drag-drop.gif";
 import IconLibraryGIF from "./images/icon-library.gif";
+import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -197,6 +198,7 @@ const Aws = () => {
             <p className="caption">
               MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
+            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -223,7 +225,7 @@ const Aws = () => {
             <p className="caption">
               Jumpstart your projects with our quick-start templates designed for both AWS diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
             </p>
-            {/* <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>  */}
+            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
           </Col>
         </Row>
         <RelatedPicks content={content} />
