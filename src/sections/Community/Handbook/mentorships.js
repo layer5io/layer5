@@ -93,9 +93,15 @@ const ConductWrapper = styled.div`
   }
 
   @media only screen and (max-width: 475px){
-        margin-top: -2rem;
-        margin-left: 0rem;
-      } 
+      margin-top: -2rem;
+      margin-left: 0rem;
+      
+      .explain-2 img, .explain-2 svg{
+        width: 15rem;
+      }
+      .explain-2 .text h2{
+        font-size: 30px;
+      }
   }
 
   @media only screen and (min-width: 765px){
