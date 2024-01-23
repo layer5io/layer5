@@ -14,16 +14,20 @@ export const MeetTheMaintainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        color: #222;
         font-style: italic;
-        text-align:left;
+        text-align: left;
         border-left: 2px solid ${props => props.theme.primaryLightColor};
+        color: ${(props) => props.theme.text};
         padding-left: 2rem;
-        span {
-            font-weight: 600;
-            font-style: normal;
-        }
     }
+    
+    div.interviewee span {
+        font-weight: 600;
+        font-style: normal;
+    }
+    
+    
+    
     div.note {
         margin: 1rem;
         padding: 2rem;
