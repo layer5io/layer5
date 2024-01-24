@@ -17,7 +17,7 @@ const FeaturesContainer = () => {
       title: "Collaborate with Precision",
       show_custom_cursor: true,
       animationOne: true,
-      redirectLink: "/comments",
+      redirectLink: "/cloud-native-management/meshmap/collaborate/peer-reviews",
       desc: "Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false
