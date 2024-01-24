@@ -63,6 +63,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/service-mesh-performance", toPath: "/projects/cloud-native-performance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/service-mesh-performance", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/service-mesh-performance/", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/tag/smi", toPath: "/blog/tag/service-mesh-interface", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/catalog", toPath: "/cloud-native-management/catalog", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator", toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/", toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/landscape", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/landscape/", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/blog/category/service-mesh-specifications", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resource Redirects
