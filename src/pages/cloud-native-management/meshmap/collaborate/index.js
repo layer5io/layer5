@@ -1,8 +1,8 @@
 import React from "react";
 
-import SEO from "../../../components/seo";
+import SEO from "../../../../components/seo";
 
-import MeshmapCollaborate from "../../../sections/Meshmap/Meshmap-collaborate";
+import MeshmapCollaborate from "../../../../sections/Meshmap/Meshmap-collaborate";
 const MeshmapCollaboratePage = () => {
   return (
     <>

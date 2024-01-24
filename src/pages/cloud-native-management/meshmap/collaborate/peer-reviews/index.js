@@ -1,5 +1,5 @@
 import React from "react";
-import Comments from "../../sections/Comments";
+import Comments from "../../../../../sections/Comments";
 
 const CommentsPage = () => {
   return (
