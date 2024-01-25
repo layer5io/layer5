@@ -412,7 +412,7 @@ export const repo_data = [
         image: meshery,
         language: "Golang",
         maintainers_name: ["Xin Huang"],
-        link: ["#"],
+        link: ["https://layer5.io/community/members/xin-huang"],
         description:
           "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf",
