@@ -408,7 +408,7 @@ export const repo_data = [
         repository: "https://github.com/layer5io/meshery-smp-action",
       },
       {
-        project: "Meshery-Perf",
+        project: "Meshery Nighthawk",
         image: meshery,
         language: "Golang",
         maintainers_name: ["Xin Huang"],
