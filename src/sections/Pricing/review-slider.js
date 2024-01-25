@@ -187,7 +187,7 @@ const Reviews = () => {
             type="3"
             quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
             person="Hein Htet Win"
-            title="DevOps Engineer"
+            title="MeshMap User"
             image={Hein}
           />
 
