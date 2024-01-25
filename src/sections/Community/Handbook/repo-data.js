@@ -411,7 +411,7 @@ export const repo_data = [
         project: "Meshery-Perf",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Vacant"],
+        maintainers_name: ["Xin Huang"],
         link: ["#"],
         description:
           "meshery-perf is a Meshery component used to run performance tests",
