@@ -15,6 +15,7 @@ import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
+import Hein from "./reviews/hein.webp";
 
 
 const settings = {
@@ -181,6 +182,13 @@ const Reviews = () => {
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex}
+          />
+          <Customers
+            type="3"
+            quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
+            person="Hein Htet Win"
+            title="DevOps Engineer"
+            image={Hein}
           />
 
         </Slider>
