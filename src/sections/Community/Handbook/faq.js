@@ -16,7 +16,7 @@ const Faq = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>General FAQs:</h2><br />
+            <h2 className="heading-top">General FAQs:</h2><br />
             <h4>Q: Are Layer5’s solutions open source?</h4>
             <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
 
@@ -68,7 +68,28 @@ const Faq = () => {
             <p>A: Check if any assigned issues are stale. ( Assigned some time back, but no discussions have happened or is not updated for a long time ). If you find such issues, comment to ask if you can help. Alternatively, Look to find the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted</a> issues.</p>
 
             <h4>Q: In addition to the routinely scheduled project meetings, do project contributors ever meet separately to deep-dive on special topics?</h4>
-            <p>A: Yes, outside of the regularly scheduled meetings on the community calendar (meet.layer5.io), there are any number of other meetings that occur to facilitate deeper levels or more concentrated attention to particular bodies of work (e.g. a design spec review). On occasion, these one-off meetings are scheduled in advance and put onto the community calendar, while other other times they are simply self-organized by interested contributors. Often contributors will use Slack huddles or Zoom meetings to facilitate the discussion. If you need a new meeting placed onto the community calendar, please reach out to a <Link to="/community/community-managers">Community Manager</Link></p>
+            <p>A: Yes, outside of the regularly scheduled meetings on the <Link to="https://layer5.io/community/calendar#meetings">community calendar</Link>, there are any number of other meetings that occur to facilitate deeper levels or more concentrated attention to particular bodies of work (e.g. a design spec review). On occasion, these one-off meetings are scheduled in advance and put onto the community calendar, while other times they are simply self-organized by interested contributors. Often contributors will use Slack huddles or Zoom meetings to facilitate the discussion. If you need a new meeting placed onto the community calendar, please reach out to a <Link to="/community/community-managers">Community Manager</Link>.</p>
+
+            <h4>Q: How do I access the community docs?</h4>
+            <p>A: To access the community documentation, follow these steps:</p>
+            <ol>
+              <li>
+                Ensure you have filled out the
+                <Link to="https://layer5.io/newcomers"> community member form</Link>. If
+                you haven't, please do.
+              </li>
+              <li>
+                Go to the "Shared Drives" section of your Google Drive using the
+                same email address you used to fill out the form.
+              </li>
+              <li>
+                Look for "Layer5 Community" within the Shared Drives section.
+              </li>
+            </ol>
+            <p>
+              Once you've completed these steps, you should have access to the
+              community docs, otherwise please reach out to any of the Community Managers or MeshMates.
+            </p>
 
 
             {/* <p>Q: Why does the community use slack?</p>

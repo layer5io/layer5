@@ -8,7 +8,7 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 
 
 export const query = graphql`
-  query IntegrationsBySlug($slug: String!) {
+  query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
       body
       frontmatter {
@@ -25,6 +25,24 @@ export const query = graphql`
         }
         docURL
         category
+        components {
+          name
+          colorIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          whiteIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          description
+        }
         featureList
         workingSlides {
           childImageSharp {
@@ -33,6 +51,17 @@ export const query = graphql`
           extension
           publicURL
         }
+      }
+    }
+    allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    ) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+        extension
+        publicURL
       }
     }
   }
@@ -54,5 +83,5 @@ const Integrations = ({ data }) => {
 export default Integrations;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} description={data.mdx.frontmatter.subtitle}/>;
 };

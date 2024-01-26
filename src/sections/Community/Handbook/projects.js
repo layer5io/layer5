@@ -47,7 +47,7 @@ const Maintainer = () => {
 
               <a id="Layer5">
                 {" "}
-                <h3>
+                <h3 className="heading-top">
                   <a href="https://layer5.io/">
                     <img className="project-title-icon" src={layer5icon} alt="Layer5" />
                     &nbsp; Layer5{" "}
@@ -169,7 +169,7 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/catalog">
+                    <a href="https://layer5.io/cloud-native-management/catalog">
                       Meshery Catalog :
                     </a>
                   </h4>{" "}
@@ -196,7 +196,7 @@ const Maintainer = () => {
             </a>
 
             <p>
-              <a href="https://layer5.io/projects/service-mesh-performance">
+              <a href="https://layer5.io/projects/cloud-native-performance">
                 The Cloud Native Performance (SMP)
               </a>{" "}
               is a vendor-neutral specification for capturing details of
