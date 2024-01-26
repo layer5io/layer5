@@ -11,6 +11,7 @@ import vmware from "../../../assets/images/partners/vmware.svg";
 import cncf from "../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg";
 import metabittrading from "../../../assets/images/partners/metabit-trading-logo-gray.svg";
 import citibank from "../../../assets/images/partners/citibank_black.svg";
+import ayabank from "../../../assets/images/partners/aya_bank_black.svg";
 
 export const partners = [
   {
@@ -114,6 +115,14 @@ export const partners = [
     name: "Citibank",
     imageLink: citibank,
     imageRoute: "/partners#citibank",
+    innerDivStyle: "partner__block__inner ",
+    imageHeight: 130,
+    imageWidth: 120,
+  },
+  {
+    name: "Aya Bank",
+    imageLink: ayabank,
+    imageRoute: "/partners",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
     imageWidth: 120,
