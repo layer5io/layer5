@@ -22,7 +22,8 @@ const AdventuresWrapper = styled.div`
             padding: 0px 3.125rem;
         }
         h2 {
-            color: ${props => props.theme.white};  
+            color: ${props => props.theme.white}; 
+            line-height: 1.2;
         }
         h1 {
             padding: 1.25rem 0px;
@@ -75,18 +76,19 @@ const AdventuresWrapper = styled.div`
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
-    @media only screen and (min-width: 990px){
+    @media only screen and (min-width: 768px){
         @media only screen and (min-width: 1211px){
             .explain {
                 .cards {
                     padding: 0;
                     .card {
-                        width: 23.25rem;
+                        height:20rem;
+                        width: 23.8rem;
                     }  
                 }
             }
         }
-        @media only screen and (max-width: 1210px){
+        @media only screen and (max-width: 1211px){
             .explain {
                 .cards {
                     padding: 0; 
@@ -97,11 +99,17 @@ const AdventuresWrapper = styled.div`
                         p {
                             font-size: 15px
                         }
+                        .card{
+                            width:23rem;
+                            height:20rem;
+                        }
                     }
                 }
             }
         }
-        @media only screen and (max-width: 1100px){
+       
+        @media only screen and (max-width: 992px){
+          
             .explain {
                 .cards {
                     padding: 0;
@@ -114,6 +122,8 @@ const AdventuresWrapper = styled.div`
                             font-size: 13px;
                             line-height: 23px;
                         }
+                        width:18rem;
+                        height:18rem;
                     }
                 }
                 button {

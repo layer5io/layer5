@@ -55,8 +55,8 @@ const SMPPage = () => {
                     <img className="logo-img" alt="smp-logo" src={smp} />
                   </Col>
                   <Col lg={7} md={12} sm={12} style={{ textAlign: "center" }}>
-                    <h1> Service Mesh Performance </h1>
-                    <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Service Mesh Performance is a CNCF-hosted project. Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                    <h1> Cloud Native Performance </h1>
+                    <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Cloud Native Performance is a CNCF-hosted project. MeshMark provides a universal performance index to gauge your infrastructure's efficiency against deployments in other organizations' environments.</p>
                   </Col>
                 </Row>
               </div>
@@ -65,7 +65,7 @@ const SMPPage = () => {
         </BgImage>
         <Container>
           <div className="smp-details">
-            <h2> Standardizing Service Mesh Value Measurement</h2>
+            <h2> Standardizing Cloud Native Value Measurement</h2>
             <h3>SMP is a collaborative effort of Layer5, UT Austin, Intel, Red Hat, HashiCorp, Google and The Linux Foundation.</h3>
             <Row>
               <Col lg={6}>
@@ -80,7 +80,7 @@ const SMPPage = () => {
                   </tr>
                   <tr>
                     <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
-                    <td className="feature"> Service mesh and its configuration </td>
+                    <td className="feature"> Cloud Native infrastructure and its configuration </td>
                   </tr>
                   <tr>
                     <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
@@ -156,7 +156,7 @@ const SMPPage = () => {
           </div>
         </div>
         <div className="cncf-callout">
-          <h1> Join the CNCF Service Mesh Working Group </h1>
+          <h1> Join the CNCF Cloud Native Working Group </h1>
           <h4> Learn more about these initiatives</h4>
           <Button primary title="Learn More" url="https://smp-spec.io"></Button>
         </div>

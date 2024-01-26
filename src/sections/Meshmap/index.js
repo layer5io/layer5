@@ -34,9 +34,10 @@ import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
+import TeaserModal from "../../components/TeaserModal";
 
 
-const Meshmap = () => {
+const Meshmap = (props) => {
 
   return (
     <MeshmapWrapper>
@@ -150,7 +151,7 @@ const Meshmap = () => {
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
-                  // Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+                  // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
                 },
                 // {
                 //   title: "Nothing great is made alone.",
@@ -245,9 +246,12 @@ const Meshmap = () => {
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />
-        </Container >
-      </div >
-      <Reviews />
+        </Container>
+      </div>
+      <>
+        <Reviews />
+        <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
+      </>
     </MeshmapWrapper>
   );
 };
