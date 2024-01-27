@@ -17,7 +17,7 @@ const FeaturesContainer = () => {
       title: "Collaborate with Precision",
       show_custom_cursor: true,
       animationOne: true,
-      redirectLink: "/comments",
+      redirectLink: "/cloud-native-management/meshmap/collaborate/peer-reviews",
       desc: "Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false
@@ -62,15 +62,15 @@ const FeaturesContainer = () => {
         {
           featuresInfo.map((feature) => (
             <Features
-              key = {feature.title}
-              title = {feature.title}
-              show_custom_cursor = {feature.show_custom_cursor}
-              animationOne = {feature.animationOne}
-              redirectLink = {feature.redirectLink}
-              desc = {feature.desc}
-              imgLink = {feature.imgLink}
-              cursor = {feature.cursor}
-              redirectLinkWithImage = {feature.redirectLinkWithImage}
+              key={feature.title}
+              title={feature.title}
+              show_custom_cursor={feature.show_custom_cursor}
+              animationOne={feature.animationOne}
+              redirectLink={feature.redirectLink}
+              desc={feature.desc}
+              imgLink={feature.imgLink}
+              cursor={feature.cursor}
+              redirectLinkWithImage={feature.redirectLinkWithImage}
             />))
         }
         <TwoColLayout />
