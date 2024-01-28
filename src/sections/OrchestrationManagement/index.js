@@ -46,26 +46,7 @@ const Orchestration = () => {
     image: isDark ? OrchestrationImgDark : OrchestrationImgLight
   };
 
-  const content = [
-    {
-      id: 1,
-      title: "AWS Orchestration and diagramming",
-      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
-      imgSrc: isDark ? OrchestrationImgDark : OrchestrationImgLight,
-    },
-    {
-      id: 2,
-      title: "GCP Orchestration and diagramming",
-      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
-      imgSrc: isDark ? OrchestrationImgDark : OrchestrationImgLight,
-    },
-    {
-      id: 3,
-      title: "K8s Orchestration and diagramming",
-      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
-      imgSrc: isDark ? OrchestrationImgDark : OrchestrationImgLight,
-    }
-  ];
+
   return (
     <OrchestrationWrapper>
       <FeatureHero data={data} />
@@ -82,7 +63,7 @@ const Orchestration = () => {
           </div>
         </div>
       </Container>
-      <RelatedPicks content={content}/>
+      <RelatedPicks heading="self" />
       <Partners />
       <SeeYou />
     </OrchestrationWrapper>

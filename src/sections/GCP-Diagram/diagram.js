@@ -5,10 +5,6 @@ import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 // import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
-import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
-import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
-import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
-import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
 // import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
 import IconsLibraryGIF from "./images/gcp-icon-library.gif";
@@ -134,21 +130,7 @@ const DiagramWrapper = styled.div`
 
 const Gcp = () => {
 
-  const { isDark } = useStyledDarkMode();
-  const content = [
-    {
-      id: 1,
-      title: "AWS orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
-      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
-    },
-    {
-      id: 2,
-      title: "K8s orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
-      imgSrc: isDark ? KubernetesDark : KubernetesLight,
-    }
-  ];
+
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
@@ -263,7 +245,7 @@ const Gcp = () => {
             </div>
           </Col>
         </Row> */}
-        <RelatedPicks content={content} />
+        <RelatedPicks heading="gcp" />
       </Container>
     </DiagramWrapper>
   );

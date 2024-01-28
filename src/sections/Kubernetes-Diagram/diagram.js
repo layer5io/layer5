@@ -4,10 +4,6 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
-import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
-import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
-import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
-import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
 import DragDropGIF from "./images/drag-drop.gif";
@@ -143,20 +139,6 @@ const DiagramWrapper = styled.div`
 const Kubernetes = () => {
 
   const { isDark } = useStyledDarkMode();
-  const content = [
-    {
-      id: 1,
-      title: "AWS orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
-      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
-    },
-    {
-      id: 2,
-      title: "GCP orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
-      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
-    }
-  ];
 
   return (
     <DiagramWrapper>
@@ -227,7 +209,7 @@ const Kubernetes = () => {
             <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
           </Col>
         </Row>
-        <RelatedPicks content={content} />
+        <RelatedPicks heading="kubernetes" />
       </Container>
     </DiagramWrapper>
   );

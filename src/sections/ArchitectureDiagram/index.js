@@ -11,13 +11,6 @@ import optimizedGIF from "./images/optimized.gif";
 import customizationGIF from "./images/customization.gif";
 import shapesAndTemplatesGIF from "./images/shapes-and-templates.gif";
 import RelatedPicks from "../../components/RelatedPicks";
-import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
-import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
-import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
-import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
-import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
-import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 let data = {
   heading: "Design Architecture Diagram Online",
   sub_heading: "Effortlessly create software architectures, application architectures and system architectures in minutes.",
@@ -50,27 +43,6 @@ let card_data = [
 
 
 const ArchitectureDiagram = () => {
-  const { isDark } = useStyledDarkMode();
-  const content = [
-    {
-      id: 1,
-      title: "GCP orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
-      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
-    },
-    {
-      id: 2,
-      title: "AWS orchestration and architecture diagramming",
-      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
-      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
-    },
-    {
-      id: 3,
-      title: "Kubernetes architecture diagram",
-      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
-      imgSrc: isDark ? KubernetesDark : KubernetesLight,
-    }
-  ];
   return (
     <WhiteboardWrapper>
       <FeatureHero data={data} />
@@ -95,7 +67,7 @@ const ArchitectureDiagram = () => {
         </div>
       </Container>
 
-      <RelatedPicks content={content} />
+      <RelatedPicks heading="design" />
       <SeeYou />
       <Partners />
     </WhiteboardWrapper>
