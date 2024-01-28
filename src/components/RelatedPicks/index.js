@@ -1,5 +1,7 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import { Container, Wrapper, CardWrapper, CardImageContainer, Image, CardTitle } from "./style";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 import { Link } from "gatsby";
 
@@ -18,7 +20,39 @@ const Card = ({ title, imgSrc, redirectLink }) => {
   );
 };
 
-const RelatedPicks = ({ content }) => {
+const RelatedPicks = ({ heading }) => {
+  const { isDark } = useStyledDarkMode();
+
+  const data = useStaticQuery(
+    graphql `query allUseCases {
+      allMdx(
+        filter: {fields: {collection: {eq: "use-cases"}}, frontmatter: {category: {eq: "supportedplatform"}}}
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            redirectLink
+            darkimgsrc {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            lightimgsrc {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            category
+          }
+        }
+      }
+    }`
+  );
 
   return (
     <>
@@ -26,9 +60,11 @@ const RelatedPicks = ({ content }) => {
         <h2>Other Supported Platforms</h2>
         <Wrapper>
           {
-            content.map(item => (
-              <Card key={item.id} title={item.title} imgSrc={item.imgSrc} redirectLink={item.redirectLink}/>
-            ))
+            data.allMdx.nodes
+              .filter(item => item.frontmatter.title.split(" ")[0].toLowerCase() !== heading)
+              .map(item => (
+                <Card key={item.id} title={item.frontmatter.title} imgSrc={ isDark ? item.frontmatter.darkimgsrc.publicURL : item.frontmatter.lightimgsrc.publicURL } redirectLink={item.frontmatter.redirectLink}/>
+              ))
           }
         </Wrapper>
       </Container>
