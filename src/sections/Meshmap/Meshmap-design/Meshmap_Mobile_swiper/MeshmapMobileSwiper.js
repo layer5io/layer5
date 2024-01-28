@@ -17,24 +17,28 @@ const CONTENT = [
     img: dragDrop,
     description:
       "MeshMap automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
+    gradient: "one",
   },
   {
     title: "Understand your infrastructure with visualization and automation",
     img: mergeDesign,
     description:
       "MeshMap helps your team automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
+    gradient: "two",
   },
   {
     title: "Make working across services as easy as working across files",
     img: connectComponents,
     description:
       "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices.",
+    gradient: "three",
   },
   {
     title: "Stop finger-pointing",
     img: shareDesign,
     description:
       "Share your designs publically or in private to collaborate with others in real-time.",
+    gradient: "four",
   },
 ];
 
@@ -73,9 +77,9 @@ export const MeshmapMobileSwiper = () => {
         navigation={false}
         className="mySwiper"
       >
-        {CONTENT.map(({ title, description, img, readMoreLink }, index) => (
+        {CONTENT.map(({ title, description, img, readMoreLink, gradient }) => (
           <SwiperSlide key={title}>
-            <div className={`card ${index % 2 === 0 ? "dark" : "light"}`}>
+            <div className={`card ${gradient}`}>
               <Card title={title} description={description} img={img} readMoreLink={readMoreLink} />
             </div>
           </SwiperSlide>

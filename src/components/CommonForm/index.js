@@ -161,29 +161,29 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
         <div role="group" className="formRight" aria-labelledby="select">
           <Field as="select" name="role">
-            <option defaultValue hidden>Select your role</option>
-            <option value="Frontend Engineer">Frontend Engineer</option>
-            <option value="Backend Engineer">Backend Engineer</option>
-            <option value="Fullstack Engineer">Fullstack Engineer</option>
-            <option value="Architect">Architect</option>
-            <option value="Developer">Developer</option>
-            <option value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
-            <option value="Platform Engineer">Platform Engineer</option>
-            <option value="Site Reliability Engineer">Site Reliability Engineer</option>
-            <option value="Data Analyst">Data Analyst</option>
-            <option value="Designer">Designer</option>
-            <option value="Manager">Manager</option>
-            <option value="Executive">Executive</option>
-            <option value="IT Operations">IT Operations</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Sales">Sales</option>
-            <option value="Sales Engineer">Sales Engineer</option>
-            <option value="Business Operations">Business Operations</option>
-            <option value="Product Manager">Product Manager</option>
-            <option value="Media/Analyst">Media/Analyst</option>
-            <option value="Professor/Academic">Professor/Academic</option>
-            <option value="Student">Student</option>
-            <option value="Other">Other</option>
+            <option defaultValue hidden className="custom-arrow">Select your role</option>
+            <option className="options" value="Architect">Architect</option>
+            <option className="options" value="Backend Engineer">Backend Engineer</option>
+            <option className="options" value="Business Operations">Business Operations</option>
+            <option className="options" value="Data Analyst">Data Analyst</option>
+            <option className="options" value="Designer">Designer</option>
+            <option className="options" value="Developer">Developer</option>
+            <option className="options" value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
+            <option className="options" value="Executive">Executive</option>
+            <option className="options" value="Frontend Engineer">Frontend Engineer</option>
+            <option className="options" value="Fullstack Engineer">Fullstack Engineer</option>
+            <option className="options" value="IT Operations">IT Operations</option>
+            <option className="options" value="Manager">Manager</option>
+            <option className="options" value="Marketing">Marketing</option>
+            <option className="options" value="Media/Analyst">Media/Analyst</option>
+            <option className="options" value="Platform Engineer">Platform Engineer</option>
+            <option className="options" value="Professor/Academic">Professor/Academic</option>
+            <option className="options" value="Product Manager">Product Manager</option>
+            <option className="options" value="Sales">Sales</option>
+            <option className="options" value="Sales Engineer">Sales Engineer</option>
+            <option className="options" value="Site Reliability Engineer">Site Reliability Engineer</option>
+            <option className="options" value="Student">Student</option>
+            <option className="options" value="Other">Other</option>
           </Field>
         </div>
 

@@ -9,24 +9,20 @@ const SwiperContainer = styled.div`
     border-radius: 20px;
   }
 
-  .card.light {
-    box-shadow: none;
-
-    background: linear-gradient(
-      266.65deg,
-      #00b39f 40.19%,
-      #00b39f 74.31%,
-      #3c494f 92.89%
-    );
+  .card.one {
+    background: linear-gradient(222deg, #077165 2.76%, #1D2827 117.91%);
   }
-
-  .card.dark {
-    background: linear-gradient(
-      266.65deg,
-      #00584e 40.19%,
-      #2e5363 74.31%,
-      #212529 92.89%
-    );
+  
+  .card.two {
+    background: linear-gradient(134deg, #252E31 -16.51%, #0D997F 101%);
+  }
+  
+  .card.three {
+    background: linear-gradient(125deg, #137771 -16.81%, #252E31 104.15%);
+  }
+  
+  .card.four {
+    background: linear-gradient(180deg, #202020 -32.18%, #18433F 52.35%, #0B7E71 106.65%, #00B39F 142.23%);
   }
 
   .card {

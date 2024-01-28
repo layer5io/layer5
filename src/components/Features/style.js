@@ -38,6 +38,30 @@ export const Container = styled.div`
     animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
   }
+  .small-card-container {
+    display: flex;
+    gap: 1rem;
+  }
+  .small-card {
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    width: fit-content;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    color: ${(props) => props.theme.text};
+    border: 2px solid ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
+    &:hover {
+      background-color: ${(props) => props.theme.whiteZeroEightToBlackZeroEight};
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 `;
 export const SvgRandomWrapper = styled.div`
   position: absolute;

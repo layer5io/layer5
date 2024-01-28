@@ -17,7 +17,7 @@ export const IntegrationPageWrapper = styled.section`
 			text-align: center;
 		}
 		.hero-header {
-			color: #00B39F;
+			color: #00D3A9;
 		}
 		img {
 			margin-bottom: 0.5rem;
