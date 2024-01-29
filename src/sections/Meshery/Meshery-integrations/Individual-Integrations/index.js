@@ -7,6 +7,7 @@ import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
+import HowMesheryWorksSpecs from "../../../../components/specs";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
@@ -49,6 +50,8 @@ const IndividualIntegrations = ({ data }) => {
     "AWS Simple Notification Service",
     "AWS Target Group Binding",
     "AWS VPC CNI",
+    "AWS App Mesh",
+    "Kubeform Provider AWS",
   ];
 
   const gcpIntegrations = ["Google Cloud Platform"];
@@ -95,11 +98,25 @@ const IndividualIntegrations = ({ data }) => {
       </section>
       <div>
         {isAwsItem ? (
-          <h1>AWS Link</h1>
+          <HowMesheryWorksSpecs
+            title="AWS Orchestration and Diagramming Software"
+            desc="Orchestrate and Design Amazon Web Services architecture diagrams easily with predefined templates and symbols designed for professionals."
+            btnUrl="/cloud-native-management/generate-aws-architecture-diagram"
+          />
         ) : isGcpItem ? (
-          <h1>GCP Link</h1>
+          <HowMesheryWorksSpecs
+            title="GCP Orchestration and Diagramming Softwarel"
+            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates and symbols designed for professionals."
+            btnUrl="/cloud-native-management/generate-gcp-architecture-diagram"
+          />
         ) : (
-          <h1>K8s Link</h1>
+          <>
+            <HowMesheryWorksSpecs
+              title="Kubernetes Orchestration and Diagramming software"
+              desc="Orchestrate and design Kubernetes architecture diagrams easily with predefined templates and symbols designed for professionals."
+              btnUrl="/cloud-native-management/generate-kubernetes-architecture-diagram"
+            />
+          </>
         )}
       </div>
       <HowIntegrationWorks
