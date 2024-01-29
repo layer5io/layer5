@@ -54,19 +54,19 @@ const ArchitectureDiagram = () => {
   const content = [
     {
       id: 1,
-      title: "GCP architecture diagram",
+      title: "GCP orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
       imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
     },
     {
       id: 2,
-      title: "AWS architecture diagram",
+      title: "AWS orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
     },
     {
       id: 3,
-      title: "Kubernetes architecture diagram",
+      title: "K8s orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
       imgSrc: isDark ? KubernetesDark : KubernetesLight,
     }
@@ -83,8 +83,9 @@ const ArchitectureDiagram = () => {
       </div>
       <Container>
         <div className={"feature-use-container"}>
-          <div>
-            <h2 className={"use-heading"}> Features that we provide</h2>
+          <div className={"use-heading"}>
+            <h2>Visual Tool That Get Things Done</h2>
+            <p> Not just pretty pictures. Data-linked visual apps to streamline all your efforts.</p>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
@@ -94,7 +95,7 @@ const ArchitectureDiagram = () => {
         </div>
       </Container>
 
-      <RelatedPicks content={content}/>
+      <RelatedPicks content={content} />
       <SeeYou />
       <Partners />
     </WhiteboardWrapper>
