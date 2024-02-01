@@ -6,6 +6,7 @@ import ConfigurationIcon from "./images/configuration-icon.svg";
 import { Col, Row } from "../../reusecore/Layout";
 import Counter from "../../reusecore/Counter";
 import { URL } from "../../sections/Counters/index";
+import List_Icon from "../../assets/images/app/tick.svg";
 
 const DataCardWrapper = styled.div`
   background: ${props => props.theme.grey222222ToWhite};
@@ -60,39 +61,32 @@ const DataCard = () => {
         <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>
-              <img src={LifeCycleIcon} alt="Lifecycle Icon" />
+              <img src={List_Icon} alt="Performance Icon" />
               <h5>Extensive Icon Library</h5>
             </li>
             <li>
-              <img src={ConfigurationIcon} alt="Configuration Icon" />
+              <img src={List_Icon} alt="Configuration Icon" />
               <h5>User-friendly editor </h5>
             </li>
             <li>
-              <img src={PerformanceIcon} alt="Performance Icon" />
+              <img src={List_Icon} alt="Performance Icon" />
               <h5>Cost-Effective Solutions</h5>
             </li>
           </ul>
         </Col>
-        <Col className="col-2" sm={6} lg={6}>
+        <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>
-              <h3>
-                <Counter
-                  duration={3}
-                  separator=","
-                  end={1000}
-                  suffix="+" />
-              </h3>
-              <p>Users</p>
+              <img src={List_Icon} alt="Performance Icon" />
+              <h5>Ready-to-Use Templates</h5>
             </li>
             <li>
-              <h3>
-                <Counter
-                  duration={3}
-                  separator=","
-                  end={performanceCount} />
-              </h3>
-              <p>Performance Tests run</p>
+              <img src={List_Icon} alt="Configuration Icon" />
+              <h5>Visual drag & drop</h5>
+            </li>
+            <li>
+              <img src={List_Icon} alt="Performance Icon" />
+              <h5>Deploy with No Code</h5>
             </li>
           </ul>
         </Col>
