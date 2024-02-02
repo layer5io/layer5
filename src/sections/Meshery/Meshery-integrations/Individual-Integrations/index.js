@@ -8,6 +8,7 @@ import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
+import ModelComponents from "./ComponentsGrid";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
@@ -125,6 +126,12 @@ const IndividualIntegrations = ({ data }) => {
         howitworksdetails={frontmatter.howItWorksDetails}
         slides={finalScreenshots}
       />
+      {frontmatter.components && frontmatter.components.length > 0 && (
+        <section className="component-collection">
+          <h2>Model Components</h2>
+          <ModelComponents frontmatter={frontmatter} />
+        </section>
+      )}
       <section className="integration-collection">
         <h2>Related Integrations</h2>
         <RelatedIntegration category={frontmatter.category} />
