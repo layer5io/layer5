@@ -88,17 +88,18 @@ export const HoneycombGrid = styled.div`
         flex-direction: column;
         justify-content: center;
 
-        transition: all 1s linear;
+        transition: all 0.5s linear;
         opacity: 1;
         overflow: hidden;
         .title {
           line-height: 1.375rem;
           color: ${(props) => props.theme.whiteToBlack};
           // margin-bottom: -2.7rem;
-          font-size: 0.675rem;
-          opacity: 0.2;
+          font-size: 1.2rem;
+          opacity: 0;
           font-weight: 600;
-          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+          padding:10px;
         }
         .learnMoreBtn {
           padding: 5px 10px;
@@ -112,7 +113,7 @@ export const HoneycombGrid = styled.div`
     &:hover {
       .integration-container {
         img {
-          transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
           height: 0%;
           opacity: 0%;
         }
