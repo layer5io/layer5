@@ -445,7 +445,7 @@ const NavigationWrap = styled.header`
     }
     .logo {
       width: fit-content;
-      display: block;
+      display: inline-block;
       margin-top: 7px;
       svg {
         width: 130px;
