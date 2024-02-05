@@ -21,5 +21,4 @@ const RowWrapper = styled.div`
 const Row = ({ children, ...props }) => {
   return <RowWrapper {...props}>{children}</RowWrapper>;
 };
-
 export default Row;

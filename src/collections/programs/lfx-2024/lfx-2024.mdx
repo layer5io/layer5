@@ -64,138 +64,76 @@ Layer5 is all about <Link to="/community">its community</Link> of contributors. 
 Technical writers and other contributors are what comprise Layer5 - an open organization, built for the community by the community. Many student contributors have been placed into new jobs with technology companies like Red Hat, Microsoft, and VMware to name a few of the larger organizations. Layer5 expects much from interns and in return, we put them on stage at DockerCon and KubeCon. We promote them and uplift their works. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites. A number of former interns are now project maintainers.
 
 
-## LFX Mentorship 2023 Spring Projects
+## LFX Mentorship 2024 Spring Projects
 <br />
 
 ### Meshery
 <br />
 
-#### Distributed workflow engine
+#### UI Migration from MUI v4 to MUI v5 and NextjS 13
 
-**Description**: Integrate a new architectural component into Meshery: a workflow engine. This project involves shifting Meshery off of bitcask and off of sqlite over to postgres using gorm (golang). Interns will familiarize with concepts of orchestration engines, including chaining workflows, and content lifecycle management.
-- Recommended Skills: Golang, Temporal, ReactJS
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/ashish-tiwari">Ashish Tiwari</Link>
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/73202d21-d4ca-4435-9a73-f326c9b3e796
-  
-#### Multi-user cloud native playground
+**Description**: Meshery's UI is powerful and utilizes frameworks like Next.js and Material-UI. However, it relies on outdated technology stacks, resulting in performance inefficiencies and increased maintenance overhead.
+- Expected Outcome: Migrate from MUI v4 to MUI v5 and fully utilize features of Nextjs v13. Migrate all class based components to function based component. Reduced code complexity and improved maintainability for long-term sustainability. Responsive and accessible UI that adapts to diverse devices and user needs.
+- Recommended Skills: ReactJs, NextJs, familiarity with Material UI, Redux and Redux Toolkit
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/aabid-sofi">Aabid Sofi</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/6680
+- LFX URL: 
 
-**Description**: Advance the cloud native playground in which any CNCF project can be explored. Meshery’s genesis is that of helping teach people about cloud native technology and enabling to operate various types of cloud native infrastructure confidently. The proposed project is aimed at furthering this mission by infusing multi-user collaboration as a pervasisve feature so that users can learn together in a running instance of Meshery.
-- Recommended Skills: ReactJS, CSS, Golang (nice-to-have)
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
-- Issue: https://github.com/meshery/meshery/issues/7020
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/2ee7a912-e26e-4602-9dfc-4febe3842df3
+#### Expand Meshery CLI capabilities for registry management
 
-#### Distributed client-side policy evaluation in WASM and Rego
+**Description**: Meshery CLI is a powerful tool to manage all your cloud native resources, Meshery has internal capability called Registry to store and manage models, categories, component and relationship, presently Meshery’s v0.7 release allow users to view all this information from Mehery UI. We also need to expose Meshery’s registry capability through mesheryctl
+- Expected Outcome: Design mesheryctl subcommands and flags for registering, listing, retrieving, updating, and deleting models, components and relationships. Implement validation and error handling for user input and API responses. Integrate with relevant Meshery APIs to interact with the registry backend.
+- Recommended Skills: Golang, familiarity with Golang CLI framework Cobra
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/8176
+- LFX URL: 
 
-**Description**: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI, so that a powerful, real-time user experience is possible.
-- Recommended Skills: Golang, Open Policy Agent, WebAssembly
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/ashish-tiwari">Ashish Tiwari</Link>
-- Issue: https://github.com/meshery/meshery/issues/7019
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/7e3382be-5d82-443e-b0bc-4dcd2194705d
+#### Expand integration of Meshery with Artifact Hub
+
+**Description**: While Meshery has made significant strides, its integration with Artifact Hub requires expansion and enhancement to maximize users experience. The goal is expand integration between Meshery and Artifact Hub which starts with making Meshery designs as a new Artifact Hub kind.
+- Expected Outcome: Definition and implementation of Meshery patterns as a distinct category within Artifact Hub. Design features to showcase Meshery's unique design patterns, enhancing visibility and accessibility. Collaborate with select publishers to integrate Meshery snapshots into Artifact Hub entries. Enhance user experience by providing visual representations of Meshery-related artifacts.
+- Recommended Skills: Familiarity with Helm charts and Artifact Hub, basic familiarity with Kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/9966
+- LFX URL:
   
 
 ### Service Mesh Performance
 <br />
 
-#### Adaptive Load Controller II
+#### Nighthawk Advanced Load Controller
 
-**Description**: The adaptive load controller is to execute optimization routines recursivley to determine the maximum load a system can sustain. The maximum load is usually defined by the maximum requests per second (rps) the system can handle. The metrics (CPU usage, latency etc) collected from the system under test are the constraints we provide to judge whether a system under test (SUT) is sustaining the load.
+**Description**: The adaptive load controller operates by iteratively running optimization routines to ascertain the maximum load a system can sustain. Typically, this maximum load is determined by the system's capacity to handle requests per second (rps). The metrics, such as CPU usage and latency, collected from the system under test (SUT) serve as constraints to assess whether the SUT can sustain the imposed load. However, it lacks comprehensive lifecycle management functionalities. This hinders its adoption and limits its potential for continuous performance monitoring and optimization.
 
-A use-case that fits very well is be the ability to use it to run performance tests on a schedule and track the maximum load a system can handle over time. This could give insights to performance improvements or degradations.
-- Recommended Skills: golang, grpc, docker, kubernetes
+- Expected outcome: Implement mechanisms to trigger alerts and notifications based on performance thresholds or significant changes in key metrics.
+Integrate Nighthawk testing with existing CI/CD pipelines for automated performance validation and optimization as part of the development and deployment process.
+- Recommended Skills: Golang, familiarity with Service Mesh, grpc, docker, kubernetes
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
-- Upstream Issue (URL): https://github.com/service-mesh-performance/service-mesh-performance/issues/350
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/2597fc3d-eb2c-411f-b02d-940c8347328d
+- Upstream Issue: https://github.com/service-mesh-performance/service-mesh-performance/issues/350
+- LFX URL: 
+
+### Nighthawk Distributed Performance Tests
+
+**Description**: Many performance benchmarks are limited to single instance load generation (single pod load generator). This limits the amount of traffic that can be generated to the output of the single machine that the benchmark tool runs on in or out of a cluster. Overcoming this limitation would allow for more flexible and robust testing. Distributed load testing in parallel poses a challenge when merging results without losing the precision we need to gain insight into the high tail percentiles. Distributed load testing offers insight into system behaviors that arguably more accurately represent real-world behaviors of services under load as that load comes from any number of sources. 
+- Expected Outcome: Implementation of distributed load generation in Nighthawk. Integration of Nighthawk with relevant service mesh performance testing scenarios. Capability to invoke Nighthawk for distributed load testing through APIs and command-line interfaces. Implementation of reporting mechanisms for distributed load testing results.
+- Recommended Skills: Golang, familiarity with HTTP/HTTPS performance testing tools, Service Mesh, grpc, familiarity with containerization technologies, like Docker would be helpful.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: 
+- LFX URL:
+
 
 ### CNCF TAG Network
 <br />
 
-#### Representing Kubernetes ontology in MeshModel
+#### Mapping Kubernetes Resources: Identifying relationships between all standard and custom resources
 
-**Description**: Network topologies and graph databases go hand-in-hand. The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph. Deliverables (among other items):
-1. MeshModel capabilities browser
-2. Import/export of MeshModel models and components as OCI images
-3. Augmentation of cuelang-based component generator
-
-
-- Recommended Skills: cuelang, golang, OCI
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
-- Issue: https://github.com/cncf/tag-network/issues/24
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/96080e3d-83e2-46ed-928c-b6e7f3154bf3
-
-## LFX Mentorship 2023 Summer Projects
-<br />
-
-### Meshery
-<br />
-
-#### Meshery UI Permissions Framework
-
-**Description**: Meshery UI lacks a permissions framework. The existing internal implementation is simple, fragile and must be completely rewritten. The approach to implemention a permmissions framework includes using React.js and CASL.js. Meshery UI's approach needs to be extensible given that this framework will be an extension point for Remote Providers to supply their own permissions. 
-
-**Expected Outcome**: Definition of permissions and their enforcement in Meshery with an aim for deep granularity and extensibility with each user interface input component carrying a unique permission key id. Each key is then put into a group of keys in a keychain, keychains assigned to user roles, in turn, roles assigned to users. With users having the ability to create own custom roles, the framework will be dynamic based on the associated server-side permissions for the currently auth’ed user.
-- Recommended Skills: React.js, CASL.js
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
-- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7436, https://github.com/meshery/meshery/issues/7382
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/f4a9804f-2e46-42a4-b2ae-ad3ea7b29734
-
-#### OPA policy evaluation in-browser using WebAssembly and Rego
-
-**Description**: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI. 
-
-**Expected Outcome**: a powerful real-time multi-user collaboration experience.
-- Recommended Skills: Golang, Open Policy Agent, WASM
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/abhishek-kumar">Abhishek Kumar</Link>
-- Upstream Issue (URL): https://github.com/meshery/meshery/issues/7019
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/005db8db-7efe-4433-9605-91d14174c72c
-
-#### Adopt OCI as the packaging and distribution format for Meshery MeshModels
-
-**Description**: Meshery MeshModels represent a schema-based description of cloud native infratructure. MeshModels need to be portable between Meshery deployments as well as easily versionable in external repositories. 
-
-**Expected Outcome**: 
-1. Meshery clients (mesheryctl and Meshery UI) should be able to import/export MeshModels as OCI images.
-2. Meshery clients (mesheryctl and Meshery UI) should be able to push/pull from OCI-compatible registries.
-3. Stretch Goal: OCI image signing; Verify the authenticity of MeshModels using cosign (https://github.com/sigstore/cosign).
-4. Target registries: Meshery Catalog (https://meshery.io/catalog), Artifact Hub.
-
-
-- Recommended Skills: Reactjs, Golang, GraphQL
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
-- Upstream Issue (URL): https://github.com/meshery/meshery/issues/6447
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/26377c30-9ffd-41e3-bfea-839bf126f8f6
-
-#### OCI compatible Kubernetes ontology
-
-**Description**: Network topologies and graph databases go hand-in-hand. The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph. Deliverables (among other items):
-1. MeshModel capabilities browser
-2. Import/export of MeshModel models and components as OCI images
-3. Augmentation of cuelang-based component generator
-
-
-- Recommended Skills: cuelang, golang, OCI
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>
-- Upstream Issue (URL): https://github.com/meshery/meshery/issues/6447
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/bb8ddf84-31d7-4a89-9e4b-e6aa9601c0db
-
-### Service Mesh Performance
-<br />
-
-#### Service Mesh Performance IDE Plugin
-
-**Description**: The objective of this project is to develop IDE plugins that can enhance the developer experience while working with Service Mesh Performance Performance Profiles. The proposed plugins will leverage technologies such as golang and cuelang to provide features such as syntax highlighting, auto-completion, validation, and rendering previews for Service Mesh Performance profile and model definitions. 
-
-**Expected Outcome**: 
-1. Release VS Code Extension
-2. Syntax Highlighting and Auto-completion: The plugin can fetch SMP Model definitions such as cloud-native components and their relationships. This information can be used to provide syntax highlighting and auto-completion for these definitions in the JSON files, making it easier for developers to write error-free code.
-3. Validation and Reference: For Meshery MeshModel definitions such as cloud-native components and their relationships, the plugin can use the CUE language to provide validation for the CUE input and preview the rendering result. The plugin can also fetch the SMP Model schemas and display them in the IDE for reference.
-
-
-- Recommended Skills: Cuelang
-- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/xin-huang">Xin Huang</Link>
-- Upstream Issue (URL): https://github.com/service-mesh-performance/service-mesh-performance/issues/379
-- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/4735d0fa-229f-43e7-9415-dff9220bf687
-
+**Description**: The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph.
+- Expected Outcome: YAML-formatted definition
+- Recommended Skills: DevOps, Kubernetes Administration, Light familiarity with all of the CNCF projects and a desire to study each project and their operators/resources.
+- Mentor(s):
+  - Mentor Name: <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue:
+- LFX URL:
 
 ## Additional information
 <br />
