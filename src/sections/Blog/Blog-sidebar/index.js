@@ -121,7 +121,7 @@ const Sidebar = ({ pageContext }) => {
       </div>
       <div className="explain-1">
         <div className="cards">
-          <a href="https://layer5.io/community/adventures-of-five-and-friends">
+          <Link to="/community/adventures-of-five-and-friends">
             <div className="card">
               <h2>See the Adventures of Five and Friends</h2>
               <StaticImage
@@ -129,7 +129,7 @@ const Sidebar = ({ pageContext }) => {
                 src={FiveandFriendsAdventures}
               />
             </div>
-          </a>
+            </Link>
         </div>
       </div>
     </BlogSideBarWrapper>
