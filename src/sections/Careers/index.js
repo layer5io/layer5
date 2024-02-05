@@ -8,7 +8,7 @@ import Five from "../../sections/Community/Community-pictures/14.svg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Lee_and_Rigs = "../../assets/images/careers/Five.png";
+const Lee_and_Rigs = "../../assets/images/careers/Five.svg";
 
 const CareersPage = () => {
   return (
