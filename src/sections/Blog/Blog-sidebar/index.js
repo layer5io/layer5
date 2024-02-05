@@ -138,7 +138,7 @@ const Sidebar = ({ pageContext }) => {
                 src={FiveandFriendsAdventures}
               />
             </div>
-            </Link>
+          </Link>
         </div>
       </div>
     </BlogSideBarWrapper>
