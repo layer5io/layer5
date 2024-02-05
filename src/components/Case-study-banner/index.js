@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import SpireLogo from "../../collections/integrations/spire/icon/color/spire-color.svg";
+import SpireLogo from "../../collections/integrations/spire/icons/color/spire-color.svg";
 import MesheryAndSpire from "../../collections/resources/case-study/hpes-adoption-of-meshery-and-meshmap/meshery-and-hpe.svg";
 
 

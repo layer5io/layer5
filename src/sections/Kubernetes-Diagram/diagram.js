@@ -2,15 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import KubernetesIconsDarkLight from "./images/kubernetes-icons-light.svg";
-import KubernetesIconsDark from "./images/kubernetes-icons.svg";
-import KubernetesCatalogLight from "./images/kubernetes-catalog-light.svg";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
 import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
 import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
 import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
+import ConfigGIF from "./images/config.gif";
+import DeployGIF from "./images/deploy.gif";
+import DragDropGIF from "./images/drag-drop.gif";
+import IconLibraryGIF from "./images/icon-library.gif";
+import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -24,6 +26,10 @@ const DiagramWrapper = styled.div`
   @media (max-width: 767px) {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .image-wrapper{
+    border-radius: 0.25rem;
+    overflow: hidden;
   }
   .diagram-container .catalog:nth-child(odd) {
     .diagram-image {
@@ -62,6 +68,10 @@ const DiagramWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      .link {
+        margin: 1rem 0;
+        cursor: pointer;
+      }
       .heading {
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -136,13 +146,13 @@ const Kubernetes = () => {
   const content = [
     {
       id: 1,
-      title: "AWS architecture diagram",
+      title: "AWS orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
     },
     {
       id: 2,
-      title: "GCP architecture diagram",
+      title: "GCP orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
       imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
     }
@@ -152,39 +162,69 @@ const Kubernetes = () => {
     <DiagramWrapper>
       <Container className="diagram-container">
         <Row className="catalog">
-          <Col md={6} className="diagram-image">
+          <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesIconsDark : KubernetesIconsDarkLight} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img src={ConfigGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
-          <Col md={6} className="diagram-detail">
-            <h2 className="heading">Kubernetes architectural diagrams tailored to meet any requirement</h2>
-            <b className="sub-heading">Extensive Kubernetes Icon Library </b>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Diagram + Config = Awesome!</h2>
             <p className="caption">
-              Utilize a vast and continually expanding collection of Kubernetes icons for creating globally comprehensible diagrams that are authentic and up-to-date.
-            </p>
-            <b className="sub-heading">Cost-Effective Solutions </b>
-            <p className="caption">
-            Kubernetes architecture diagrams offer economic benefits by presenting the entire system in one diagram, allowing the team to identify bottlenecks and their respective solutions.
+              Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="diagram-detail">
-            <h2 className="heading">Designing Kubernetes diagrams is effortless</h2>
-            <b className="sub-heading">Quick-start templates </b>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Deploy  with No Code Kubernetes</h2>
             <p className="caption">
-              Get started quickly with our ready-to-use templates. Effortlessly create your Kubernetes architecture diagrams using these professional templates. They are fully customizable and available for free download.
+              Our visual Kubernetes interface enables anyone to deploy production-grade software with no code. Whether you're new to Kubernetes and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software using the industry-leading container orchestrator, all with no code.            </p>
+          </Col>
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DeployGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DragDropGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Visual drag & drop</h2>
+            <p className="caption">
+              Instantly search for and find any integration that CNCF supports and drop on the canvas to create your cloud native infrastructure. MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <b className="sub-heading">User-friendly editor </b>
+            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Extensive Kubernetes Icon Library</h2>
             <p className="caption">
-              Create Kubernetes diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
             </p>
           </Col>
-          <Col md={6} className="diagram-image">
+          <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogLight} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
+              <img src={IconLibraryGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Kickstart with Ready-to-Use Templates</h2>
+            <p className="caption">
+              Jumpstart your projects with our quick-start templates designed for both Kubernetes diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
+            </p>
+            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
           </Col>
         </Row>
         <RelatedPicks content={content} />
