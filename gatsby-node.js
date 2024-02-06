@@ -72,6 +72,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/blog/category/landscape", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/landscape/", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/service-mesh-specifications", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/orchestration-management", toPath: "/solutions/orchestration-management", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/gitops", toPath: "/solutions/gitops", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/gitops/snapshot", toPath: "/solutions/gitops/snapshot", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/gitops/performance-management", toPath: "/solutions/gitops/performance-management", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resource Redirects
