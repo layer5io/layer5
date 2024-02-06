@@ -1,0 +1,158 @@
+---
+title: "Linux Foundation 2024"
+thumbnail: ./Linux_Foundation_logo.svg
+darkthumbnail: ./lfx-white.svg
+permalink: "lfx/2024"
+program: "Linux Foundation"
+programSlug: "lfx"
+published: true
+---
+
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import {ReactComponent as LfxLogo} from "./lfx-white.svg";
+import { Link } from "gatsby";
+
+<ProgramsWrapper>
+
+<LfxLogo alt="lfx_logo" class="lfx_logo"/>
+<h3>Linux Foundation 2024 Program Timeline</h3>
+
+<div>
+  <h4><strong>Full-Time Terms:</strong></h4>
+<ul>
+    <li className="lfx-timeline_terms"><strong>Spring Term: March 1st - May 31st</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: Jan 15th, 2024</li>
+    <li>applications open: Jan 29th - Feb 13th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: Feb 14th - Feb 27th</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Summer Term: June 1st - August  31st</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: April 15th, 2024</li>
+    <li>applications open: April 29th - May 14th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: May 15th - June 29th</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Fall Term: September 1st - Nov 30th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: July 27th, 2024</li>
+    <li>applications open: August 2nd - August 15th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: August 16th - August 29th</li>
+  </ul>
+</ul>
+Part-time terms will start on the same schedule and last six versus three months.
+</div>
+
+<h3>About Layer5 and its projects</h3>
+
+<p>The Layer5 community embraces developer-defined infrastructure. We empower developers to change how they write applications, support operators in rethinking how they run modern infrastructure, and enable product owners to regain full-control over their product portfolio. Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
+
+<p>Our inclusive and diverse community stewards projects to provide learning environments, create and implement cloud native industry standards, deployment and operational best practices, benchmarks and abstractions, and more. Our pay-it-forward mentality with every contributor (mentee or not) is a shared commitment by all maintainers (and MeshMates - contributor onboarding buddies) to the open source spirit that pushes Layer5 projects like Meshery forward. New members are always welcome.</p>
+
+<h3>About Meshery</h3>
+
+<p>Meshery is the open source, service mesh management plane for enabling the adoption, operation, and management of any service mesh and their workloads. There are many service meshes available. Software-defined networking is difficult to understand. Meshery’s aim is to make the power of the network available to the rest of us.</p>
+
+<h3>About our Community</h3>
+ 
+Layer5 is all about <Link to="/community">its community</Link> of contributors. We have designed an onboarding program customized to <Link to="/community/newcomers">meet newcomers</Link> where they’re at and developed an onboarding buddy program, <Link to="/community/meshmates">MeshMates</Link> with individuals dedicated to assisting contributors. Layer5 and Meshery have been around for a year and half and have a healthy, growing community of 800+ contributors. The layer5.io website itself is open source and created by 400+ of our contributors.
+
+Technical writers and other contributors are what comprise Layer5 - an open organization, built for the community by the community. Many student contributors have been placed into new jobs with technology companies like Red Hat, Microsoft, and VMware to name a few of the larger organizations. Layer5 expects much from interns and in return, we put them on stage at DockerCon and KubeCon. We promote them and uplift their works. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites. A number of former interns are now project maintainers.
+
+
+## LFX Mentorship 2024 Spring Projects
+<br />
+
+### Meshery
+<br />
+
+#### UI Migration from MUI v4 to MUI v5 and NextjS 13
+
+**Description**: Meshery's UI is powerful and utilizes frameworks like Next.js and Material-UI. However, it relies on outdated technology stacks, resulting in performance inefficiencies and increased maintenance overhead.
+- Expected Outcome: Migrate from MUI v4 to MUI v5 and fully utilize features of Nextjs v13. Migrate all class based components to function based component. Reduced code complexity and improved maintainability for long-term sustainability. Responsive and accessible UI that adapts to diverse devices and user needs.
+- Recommended Skills: ReactJs, NextJs, familiarity with Material UI, Redux and Redux Toolkit
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/aabid-sofi">Aabid Sofi</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/6680
+- LFX URL: 
+
+#### Expand Meshery CLI capabilities for registry management
+
+**Description**: Meshery CLI is a powerful tool to manage all your cloud native resources, Meshery has internal capability called Registry to store and manage models, categories, component and relationship, presently Meshery’s v0.7 release allow users to view all this information from Mehery UI. We also need to expose Meshery’s registry capability through mesheryctl
+- Expected Outcome: Design mesheryctl subcommands and flags for registering, listing, retrieving, updating, and deleting models, components and relationships. Implement validation and error handling for user input and API responses. Integrate with relevant Meshery APIs to interact with the registry backend.
+- Recommended Skills: Golang, familiarity with Golang CLI framework Cobra
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/8176
+- LFX URL: 
+
+#### Expand integration of Meshery with Artifact Hub
+
+**Description**: While Meshery has made significant strides, its integration with Artifact Hub requires expansion and enhancement to maximize users experience. The goal is expand integration between Meshery and Artifact Hub which starts with making Meshery designs as a new Artifact Hub kind.
+- Expected Outcome: Definition and implementation of Meshery patterns as a distinct category within Artifact Hub. Design features to showcase Meshery's unique design patterns, enhancing visibility and accessibility. Collaborate with select publishers to integrate Meshery snapshots into Artifact Hub entries. Enhance user experience by providing visual representations of Meshery-related artifacts.
+- Recommended Skills: Familiarity with Helm charts and Artifact Hub, basic familiarity with Kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/9966
+- LFX URL:
+  
+
+### Service Mesh Performance
+<br />
+
+#### Nighthawk Advanced Load Controller
+
+**Description**: The adaptive load controller operates by iteratively running optimization routines to ascertain the maximum load a system can sustain. Typically, this maximum load is determined by the system's capacity to handle requests per second (rps). The metrics, such as CPU usage and latency, collected from the system under test (SUT) serve as constraints to assess whether the SUT can sustain the imposed load. However, it lacks comprehensive lifecycle management functionalities. This hinders its adoption and limits its potential for continuous performance monitoring and optimization.
+
+- Expected outcome: Implement mechanisms to trigger alerts and notifications based on performance thresholds or significant changes in key metrics.
+Integrate Nighthawk testing with existing CI/CD pipelines for automated performance validation and optimization as part of the development and deployment process.
+- Recommended Skills: Golang, familiarity with Service Mesh, grpc, docker, kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: https://github.com/service-mesh-performance/service-mesh-performance/issues/350
+- LFX URL: 
+
+### Nighthawk Distributed Performance Tests
+
+**Description**: Many performance benchmarks are limited to single instance load generation (single pod load generator). This limits the amount of traffic that can be generated to the output of the single machine that the benchmark tool runs on in or out of a cluster. Overcoming this limitation would allow for more flexible and robust testing. Distributed load testing in parallel poses a challenge when merging results without losing the precision we need to gain insight into the high tail percentiles. Distributed load testing offers insight into system behaviors that arguably more accurately represent real-world behaviors of services under load as that load comes from any number of sources. 
+- Expected Outcome: Implementation of distributed load generation in Nighthawk. Integration of Nighthawk with relevant service mesh performance testing scenarios. Capability to invoke Nighthawk for distributed load testing through APIs and command-line interfaces. Implementation of reporting mechanisms for distributed load testing results.
+- Recommended Skills: Golang, familiarity with HTTP/HTTPS performance testing tools, Service Mesh, grpc, familiarity with containerization technologies, like Docker would be helpful.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: 
+- LFX URL:
+
+
+### CNCF TAG Network
+<br />
+
+#### Mapping Kubernetes Resources: Identifying relationships between all standard and custom resources
+
+**Description**: The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph.
+- Expected Outcome: YAML-formatted definition
+- Recommended Skills: DevOps, Kubernetes Administration, Light familiarity with all of the CNCF projects and a desire to study each project and their operators/resources.
+- Mentor(s):
+  - Mentor Name: <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue:
+- LFX URL:
+
+## Additional information
+<br />
+
+### Previous experience with technical writers or documentation
+
+<p>Our mentors have managed teams of technical writers working on documenting enterprise-grade software at large technology companies (Cisco, Seagate, SolarWinds). During the span of time, they have worked with technical writers in DITA and post-DITA environments (from Word to FrameMaker, structured writing, online help, various CMSes, git). Our mentors have worked with technical writers on documentation strategy, creating document sets, covering the full spectrum of reader personas.</p>
+
+We interact daily over Slack, and have an open source project [meeting everyday](https://layer5.io/community/calendar), which are posted to the community [YouTube channel](https://www.youtube.com/c/Layer5io?sub_confirmation=1).
+
+<div className="apply-button">
+  <h3>
+    <Button
+      primary
+      title="Participate"
+      url="https://slack.layer5.io"
+      external={ true }
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

@@ -11,7 +11,8 @@ const SearchBox = ({
   setHideFilter,
   paginate,
   currentPage,
-  classnames
+  classnames,
+  focusSearch
 }) => {
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {
@@ -30,6 +31,7 @@ const SearchBox = ({
       paginate(1);
     searchData(e);
   };
+
   return (
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
@@ -40,6 +42,7 @@ const SearchBox = ({
           debounceTimeout={500}
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
+          autoFocus={focusSearch}
         />
         <Button aria-label="search icon">
           <FaSearch />

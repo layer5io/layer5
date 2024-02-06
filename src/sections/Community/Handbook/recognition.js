@@ -32,12 +32,12 @@ import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
   { id: 1, link: "#Membership", text: "Membership to GitHub" },
-  { id: 2, link: "#Badges", text: "Community Member Profile Badges" },
   {
-    id: 3,
+    id: 2,
     link: "#Community_member_profile",
     text: "Community Member Profile",
   },
+  { id: 3, link: "#Badges", text: "Community Member Profile Badges" },
   { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
 ];
 
@@ -70,7 +70,7 @@ const RecognitionPage = () => {
               <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
             </a>
             <p>
-              As an open source-first community, we very much appreciate the engagement of individuals within the Layer5 community. We wouldn't be here without you. Our success is a collective one.Consequently, we are quite intentional about defining and encouraging the journey for each individual community member. No small part of their journey is that of recongizing their accomplishments and publicly celebrating their accolades. We do so in a number of ways.
+              As an open source-first community, we very much appreciate the engagement of individuals within the Layer5 community. We wouldn't be here without you. Our success is a collective one.Consequently, we are quite intentional about defining and encouraging the journey for each individual community member. No small part of their journey is that of recognizing their accomplishments and publicly celebrating their accolades. We do so in a number of ways.
             </p>
             <a id="Membership">
               <h3>Membership to the Github organizations</h3>

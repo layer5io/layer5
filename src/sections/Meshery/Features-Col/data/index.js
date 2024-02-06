@@ -30,7 +30,31 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Use known cloud native ",
+        content: "Share and use known cloud native patterns",
+        className: "--on",
+      },
+      {
+        content: "Multi-player collaboration",
+        className: "--on",
+      },
+      {
+        content: "Real-Time Helm Chart Generation for CLI and UI",
+        className: "--on",
+      },
+      {
+        content: "Enhanced Multi-Cluster Support for Streamlined Environments",
+        className: "--on",
+      },
+      {
+        content: "Multiplayer5 designer for kubernetes and cloud",
+        className: "--on",
+      },
+      {
+        content: "Scheduled Workflow: Automated Helm Chart Generation",
+        className: "--on",
+      },
+      {
+        content: "Hierarchical Organization and Teams management",
         className: "--on",
       },
       // {
@@ -75,6 +99,18 @@ const LifecycleFeature = () => {
         content: "Apply well-known cloud native designs",
         className: "--on",
       },
+      {
+        content: "Kubernetes Management with Design Deployment Dry-run",
+        className: "--on",
+      },
+      {
+        content: "Efficient WASM Envoy Filter Management in Meshery UI and CLI",
+        className: "--on",
+      },
+      {
+        content: "Configurable OAuth callbacks",
+        className: "--on",
+      },
     ],
     count: {
       value: 1500,
@@ -113,6 +149,14 @@ const LifecycleFeature = () => {
       },
       {
         content: "Baseline and track deltas of your workload performance",
+        className: "--on",
+      },
+      {
+        content: "Validate and dry run your configurations before deploying",
+        className: "--on",
+      },
+      {
+        content: "Certificate support in performance profiles",
         className: "--on",
       },
     ],
