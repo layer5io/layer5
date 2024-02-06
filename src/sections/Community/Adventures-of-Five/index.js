@@ -5,7 +5,7 @@ const SubscribeSection = loadable(() => import("../../../sections/subscribe/subs
 import { AdventuresWrapper } from "./adventures.style.js";
 import AdventuresVol from "../../../components/AdventuresVol/index";
 import vol1Img from "./vol1/meet-five.png";
-
+import vol2Img from "./vol2/the-adventures-of-five-cover-vol2.png";
 
 const AdventuresHome = () => {
   return (
@@ -30,6 +30,7 @@ const AdventuresHome = () => {
           title="Planet Prometheus"
           description="Sinking in the quicksands of planet Prometheus as he tries to write PromQL to retrieve a golden signal.
           ...coming soon..."
+          image={vol2Img}
         //   to="/community/handbook/faq"
         />
 
