@@ -29,7 +29,7 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Nikhil Ladha", "Mohith Gadireddy"],
+        maintainers_name: ["Nikhil Ladha"],
         link: [
           "https://layer5.io/community/members/nikhil-ladha",
           "https://layer5.io/community/members/mohith-gadireddy",
@@ -409,11 +409,11 @@ export const repo_data = [
         repository: "https://github.com/layer5io/meshery-smp-action",
       },
       {
-        project: "Meshery-Perf",
+        project: "Meshery Nighthawk",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Vacant"],
-        link: ["#"],
+        maintainers_name: ["Xin Huang"],
+        link: ["https://layer5.io/community/members/xin-huang"],
         description:
           "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf",
