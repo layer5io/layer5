@@ -14,7 +14,7 @@ const Data = {
         },
         {
           name: "Cloud Native Deployments by Diagram",
-          path: "/solutions/cloud-native-deployments-by-diagram",
+          path: "/cloud-native-management/meshmap/design",
           sepLine: true
         },
         {
