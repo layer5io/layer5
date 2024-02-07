@@ -1,8 +1,12 @@
 import React from "react";
-import SistentHome from "../../../sections/Projects/Sistent/";
+import SistentHome from "../../../sections/Projects/Sistent/index";
 
 const SistentIndexPage = () => {
-  return <SistentHome />;
+  return (
+    <>
+      <SistentHome />
+    </>
+  );
 };
 
 export default SistentIndexPage;
