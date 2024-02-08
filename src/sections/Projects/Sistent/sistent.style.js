@@ -45,7 +45,6 @@ const SistentWrapper = styled.div`
       padding-top: 7rem;
       margin-top: -7rem;
     }
-    margin-top: -36rem;
     margin-left: 20rem;
     display: flex;
     @media screen and (min-width: 1280px) and (max-width: 1350px) {

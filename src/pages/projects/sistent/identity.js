@@ -1,7 +1,8 @@
 import React from "react";
+import SistentIdentity from "../../../sections/Projects/Sistent/identity";
 
-const SistentIdentity = () => {
-  return <div>SistentIdentity</div>;
+const SistentIdentityPage = () => {
+  return <SistentIdentity />;
 };
 
-export default SistentIdentity;
+export default SistentIdentityPage;

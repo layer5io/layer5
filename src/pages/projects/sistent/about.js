@@ -1,7 +1,8 @@
 import React from "react";
+import SistentAbout from "../../../sections/Projects/Sistent/about";
 
-const SistentAbout = () => {
-  return <div>SistentAbout</div>;
+const SistentAboutPage = () => {
+  return <SistentAbout />;
 };
 
-export default SistentAbout;
+export default SistentAboutPage;

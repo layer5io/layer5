@@ -1,7 +1,8 @@
 import React from "react";
+import SistentComponents from "../../../sections/Projects/Sistent/components";
 
-const SistentComponents = () => {
-  return <div>SistentComponents</div>;
+const SistentComponentsPage = () => {
+  return <SistentComponents />;
 };
 
-export default SistentComponents;
+export default SistentComponentsPage;
