@@ -8,6 +8,7 @@ const UseCasesWrapper = styled.div`
 		justify-content: center;
 		text-align: center;
 		margin: 1rem 0;
+
 		.heading{
 			color: ${props => props.theme.whiteToBlack} !important;
       		font-size: 4rem;
@@ -24,6 +25,7 @@ const UseCasesWrapper = styled.div`
     		margin: 1rem auto;
     		padding: 0 1rem
 		}
+
 		@media (max-width: 768px) {
 			.heading{
 			  font-size: 2.75rem !important;
@@ -34,7 +36,7 @@ const UseCasesWrapper = styled.div`
 			}
 		  }
 		
-		  @media (max-width: 500px) {
+		@media (max-width: 500px) {
 			.heading{
 			  font-size: 2rem !important;
 			}
@@ -43,9 +45,21 @@ const UseCasesWrapper = styled.div`
 			  font-size: 1rem;
 			  line-height: 1.2rem;
 			}
+		}
 	}
+	
 	.usecases-grid-wrapper{
+		padding-bottom: 3.75rem;
+
 		.usecases-grid-card{
+			background-color: ${props => props.theme.grey212121ToWhite};
+			width: 100%;
+			display: block;
+			height: auto;
+			border-radius: 0.3125rem;
+			margin-bottom: 1.25rem;
+			box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 		.externalLink {
 			position: relative;
