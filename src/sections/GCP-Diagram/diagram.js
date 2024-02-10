@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import GCPIconsDark from "./images/gcp-icons-dark.svg";
-import GCPIconsLight from "./images/gcp-icons-light.svg";
+// import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
-import GCPCatalogLight from "./images/gcp-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
 import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
+import KubernetesDark from "../Kubernetes-Diagram/images/kubernetes.svg";
+import KubernetesLight from "../Kubernetes-Diagram/images/kubernetes-light.svg";
+// import DeployGIF from "./images/gcp-deploy.gif";
+import DragNDropGIF from "./images/gcp-drag-drop.gif";
+import IconsLibraryGIF from "./images/gcp-icon-library.gif";
+import { Link } from "gatsby";
+
 const DiagramWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -133,15 +138,90 @@ const Gcp = () => {
   const content = [
     {
       id: 1,
-      title: "AWS architecture diagram",
+      title: "AWS orchestration and architecture diagramming",
       redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
       imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
+    },
+    {
+      id: 2,
+      title: "K8s orchestration and architecture diagramming",
+      redirectLink: "/cloud-native-management/generate-kubernetes-architecture-diagram",
+      imgSrc: isDark ? KubernetesDark : KubernetesLight,
     }
   ];
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
+
+        {/* <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={GCPIconsDark} alt="GCP Diagrams for anything" className="GCP-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Diagram + Config = Awesome!</h2>
+            <p className="caption">
+              Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
+            </p>
+          </Col>
+        </Row> */}
+        {/* <Row className="catalog">
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Deploy with No Code GCP</h2>
+            <p className="caption">
+              Our visual GCP interface enables anyone to deploy production-grade software with no code. Whether you're new to GCP and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software, all with no code.
+            </p>
+          </Col>
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DeployGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+            </div>
+          </Col>
+        </Row> */}
         <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={DragNDropGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Visual drag & drop</h2>
+            <p className="caption">
+              MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+            </p>
+            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Extensive GCP Icon Library</h2>
+            <p className="caption">
+              Utilize a vast and continually expanding collection of GCP icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
+            </p>
+          </Col>
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={IconsLibraryGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="catalog">
+          <Col md={8} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with MeshMap" className="GCP-image" />
+            </div>
+          </Col>
+          <Col md={4} className="diagram-detail">
+            <h2 className="heading">Kickstart with Ready-to-Use Templates</h2>
+            <p className="caption">
+              Jumpstart your projects with our quick-start templates designed for both GCP diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
+            </p>
+            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
+          </Col>
+        </Row>
+
+        {/* <Row className="catalog">
           <Col lg={6} className="diagram-image">
             <div className="image-wrapper">
               <img src={isDark ? GCPIconsDark : GCPIconsLight} alt="GCP Diagrams for anything" className="gcp-image" />
@@ -151,24 +231,30 @@ const Gcp = () => {
             <h2 className="heading">GCP architectural diagrams tailored to meet any requirement</h2>
             <b className="sub-heading">Extensive GCP Icon Library </b>
             <p className="caption">
-            Utilize a vast and continually expanding collection of GCP icons for creating globally comprehensible diagrams that are authentic and up-to-date.
+              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
             </p>
             <b className="sub-heading">Manage and analyze data </b>
             <p className="caption">
-            Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
+              Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="diagram-detail">
             <h2 className="heading">Designing GCP diagrams is effortless</h2>
-            <b className="sub-heading">Quick-start templates </b>
+            <b className="sub-heading">Swift Kickstart with Ready-to-Use Templates</b>
             <p className="caption">
-            Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
+              Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
             </p>
-            <b className="sub-heading">User-friendly editor </b>
+            <b className="sub-heading">Intuitively Designed User-Friendly Editor</b>
             <p className="caption">
-            Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
+              <br />
+              <br />
+              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
             </p>
           </Col>
           <Col md={6} className="diagram-image">
@@ -176,8 +262,8 @@ const Gcp = () => {
               <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with MeshMap" className="gcp-image" />
             </div>
           </Col>
-        </Row>
-        <RelatedPicks content={content}/>
+        </Row> */}
+        <RelatedPicks content={content} />
       </Container>
     </DiagramWrapper>
   );
