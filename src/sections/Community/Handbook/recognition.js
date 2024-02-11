@@ -147,7 +147,7 @@ const RecognitionPage = () => {
               </li>
               <li>
                 <img src={meshmapLogo} style={badgeStyle} />
-                <b>MeshMap</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+                <b>MeshMap</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/products/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={ServiceMeshPerformance} style={badgeStyle} />

@@ -46,10 +46,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/service-mesh-management/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/service-mesh-management/meshery/operating-service-meshes", toPath: "/cloud-native-management/meshery/operating-service-meshes", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/service-mesh-management/meshery/getting-started", toPath: "/cloud-native-management/meshery/getting-started", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/products/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery", toPath: "/products/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery/operating-service-meshes", toPath: "/products/meshery/operating-service-meshes", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery/getting-started", toPath: "/products/meshery/getting-started", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
@@ -67,8 +67,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/blog/category/service-mesh-performance/", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/tag/smi", toPath: "/blog/tag/service-mesh-interface", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/catalog", toPath: "/cloud-native-management/catalog", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator", toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/", toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator", toPath: "/products/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/", toPath: "/products/meshery/integrations/argo-cd-operator", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/landscape", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/landscape/", toPath: "/blog/tag/landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/blog/category/service-mesh-specifications", toPath: "/blog/category/service-mesh", redirectInBrowser: true, isPermanent: true });
@@ -76,6 +76,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/cloud-native-management/gitops", toPath: "/solutions/gitops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/cloud-native-management/gitops/snapshot", toPath: "/solutions/gitops/snapshot", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/cloud-native-management/gitops/performance-management", toPath: "/solutions/gitops/performance-management", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshmap", toPath: "/products/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/cloud-native-management/meshery", toPath: "/products/meshery", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resource Redirects
@@ -444,7 +446,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   integrations.forEach((integration) => {
     envCreatePage({
-      path: `/cloud-native-management/meshery${integration.fields.slug}`,
+      path: `/products/meshery${integration.fields.slug}`,
       component: integrationTemplate,
       context: {
         slug: integration.fields.slug,

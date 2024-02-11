@@ -14,7 +14,7 @@ const SetupPreReq = () => (
       <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery, collaborative Kubernetes manager</p>
     </div>
     <div className="container-card" id="Set up">
-      <a href="/cloud-native-management/meshery"
+      <a href="/products/meshery"
         target="_blank"
       >
         <div className="card">
@@ -25,7 +25,7 @@ const SetupPreReq = () => (
           <p>Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: 'mesheryctl'.</p>
         </div>
       </a>
-      <a href="/cloud-native-management/meshery/getting-started" id="Run Meshery"
+      <a href="/products/meshery/getting-started" id="Run Meshery"
         target="_blank"
       >
         <div className="card">
@@ -36,7 +36,7 @@ const SetupPreReq = () => (
           <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, measure their performance, verify conformance to service mesh standards.</p>
         </div>
       </a>
-      <a href="/cloud-native-management/meshery/operating-service-meshes" id="Manage Meshery"
+      <a href="/products/meshery/operating-service-meshes" id="Manage Meshery"
         target="_blank"
       >
         <div className="card">

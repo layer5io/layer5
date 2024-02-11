@@ -60,7 +60,7 @@ const data = {
       answer: [
         "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
       ],
-      link: "/cloud-native-management/meshery",
+      link: "/products/meshery",
       linktext: "Run Meshery",
     },
     {
@@ -95,7 +95,7 @@ const data = {
         "Performance Management",
         "Workload Management",
       ],
-      link: "/cloud-native-management/meshery",
+      link: "/products/meshery",
       linktext: "Meshery",
     },
     {
@@ -173,7 +173,7 @@ const data = {
     {
       question: "How does Meshery infused GitOps practices into cloud native managemement?",
       category: "Meshery Integrations",
-      link: "https://layer5.io/cloud-native-management/meshery",
+      link: "https://layer5.io/products/meshery",
       linktext: "Run Meshery",
       answer: [
         "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
@@ -183,7 +183,7 @@ const data = {
     {
       question: "Is MeshMap cloud or a self-hosted solution?",
       category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
+      link: "https://layer5.io/products/meshmap",
       linktext: "Learn More",
       answer: [
         "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
@@ -203,7 +203,7 @@ const data = {
     {
       question: "How can I try out MeshMap?",
       category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
+      link: "https://layer5.io/products/meshmap",
       linktext: "MeshMap Beta",
       answer: [
        "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
@@ -213,7 +213,7 @@ const data = {
     {
       question: "What is MeshMap early access program?",
       category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
+      link: "https://layer5.io/products/meshmap",
       linktext: "MeshMap Beta",
       answer: [
         "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",

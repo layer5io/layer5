@@ -43,14 +43,14 @@ const MeshmapDesignFeatures = () => {
               title: "Design your deployments the way you want",
               description:
                 "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
-              learnMoreLink: "/cloud-native-management/meshmap",
+              learnMoreLink: "/products/meshmap",
               content: <StaticImage src={img1} alt="Operational Best Practices" />,
             },
             {
               title: "Manage your applications visually and intuitively",
               description:
                 "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
-              learnMoreLink: "/cloud-native-management/meshmap",
+              learnMoreLink: "/products/meshmap",
               content: (
                 <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
@@ -59,7 +59,7 @@ const MeshmapDesignFeatures = () => {
               title: "Build the bridge",
               description:
                 "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-              learnMoreLink: "/cloud-native-management/meshmap",
+              learnMoreLink: "/products/meshmap",
               content: (
                 <StaticImage src={img3} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
@@ -71,7 +71,7 @@ const MeshmapDesignFeatures = () => {
               content: (
                 <StaticImage src={img4} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
-              learnMoreLink: "/cloud-native-management/meshmap",
+              learnMoreLink: "/products/meshmap",
             }
           ]}
         />

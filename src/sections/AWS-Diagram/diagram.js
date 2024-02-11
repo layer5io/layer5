@@ -180,7 +180,7 @@ const Aws = () => {
             <p className="caption">
               MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/products/meshmap/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">

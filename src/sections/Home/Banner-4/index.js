@@ -68,7 +68,7 @@ const Banner1 = (props) => {
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox right={true} vintageOne={true}>
-                  <Button primary className="banner-btn one" title="Learn about Meshery" url="/cloud-native-management/meshmap">
+                  <Button primary className="banner-btn one" title="Learn about Meshery" url="/products/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button secondary className="banner-btn two" title="Open in Playground" url="https://play.meshery.io" external={true}>
@@ -101,7 +101,7 @@ const Banner1 = (props) => {
                 style={{ margin: "auto" }}
                 className="embedVideo"
               />
-              {/* <Link to="/cloud-native-management/meshmap">
+              {/* <Link to="/products/meshmap">
                 <video autoPlay muted loop preload="metadata" className="meshmapVideo">
                   <source src={meshmapVideo} type="video/mp4"></source>
                 </video>

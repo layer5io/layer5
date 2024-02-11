@@ -28,7 +28,7 @@ export default function CollaboratorFeatures({ features }) {
     <CollaboratorFeaturesWrapper>
       <Container className="collaborate-container collaborator-trigger-container">
         <div className="root">
-          <Link to="/cloud-native-management/meshmap/collaborate">
+          <Link to="/products/meshmap/collaborate">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Collaborate</h1>
               <div className="learn-more">
@@ -38,7 +38,7 @@ export default function CollaboratorFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <Link to="/cloud-native-management/meshmap/collaborate">
+            <Link to="/products/meshmap/collaborate">
               <div className="diagram scroll hideInMobile">
                 <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>

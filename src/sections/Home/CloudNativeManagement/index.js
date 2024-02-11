@@ -40,7 +40,7 @@ const BannerDefault = () => {
                       <div className="description">
                         <p>
                           An extensible platform, Meshery comes packed with{" "}
-                          <Link to="/cloud-native-management/meshery/integrations">
+                          <Link to="/products/meshery/integrations">
                             integrations
                           </Link>{" "}
                           for Prometheus, Grafana, Jaeger, CloudEvents, support
@@ -61,7 +61,7 @@ const BannerDefault = () => {
                       primary
                       className="join-community-button"
                       title="Extend your control"
-                      url="/cloud-native-management/meshery"
+                      url="/products/meshery"
                     />
                   </div>
                 </SectionTitle>

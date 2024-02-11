@@ -140,7 +140,7 @@ const Navigation = () => {
           title: "Meshery, the Cloud Native Manager"
         },
         fields: {
-          slug: "/cloud-native-management/meshery"
+          slug: "/products/meshery"
         }
       },
       {
@@ -151,7 +151,7 @@ const Navigation = () => {
           title: "MeshMap, collaborative infrastructure management"
         },
         fields: {
-          slug: "/cloud-native-management/meshmap"
+          slug: "/products/meshmap"
         }
       }
     ]

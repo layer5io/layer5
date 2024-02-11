@@ -40,7 +40,7 @@ const Intro = () => {
               </Link>
               and also the maker of <Link to="/meshery">Meshery </Link>,
               the
-              <Link to="/cloud-native-management/meshery">
+              <Link to="/products/meshery">
                 {" "}
                 Cloud Native Management Plane{" "}
               </Link>
