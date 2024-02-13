@@ -5,7 +5,7 @@ const FeatureHeroWrapper = styled.div`
     z-index: 3;
     width: 100%;
     position: relative;
-    padding: 100px 0 70px;
+    padding: 100px 0 0;
 
     .section-title {
       display: flex;
