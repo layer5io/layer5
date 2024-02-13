@@ -1,5 +1,5 @@
 import React from "react";
-import FeatureHero from "../FeatureHero";
+import FeatureHero from "../SolutionHero";
 import comments_svg from "../../assets/images/comments/comment.svg";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
