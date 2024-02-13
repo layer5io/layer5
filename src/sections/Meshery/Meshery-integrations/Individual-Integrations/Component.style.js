@@ -14,8 +14,8 @@ export const ComponentsWrapper = styled.div`
   }
 
   .componentimg {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   .componentimg img {
     width: 100%;
@@ -35,7 +35,7 @@ export const ComponentsWrapper = styled.div`
     align-items: center;
     gap: 1rem;
     background-color: ${props => props.theme.grey212121ToGreyEEEEEE};
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     width: 100%;
     flex: 30%;
@@ -49,6 +49,7 @@ export const ComponentsWrapper = styled.div`
     font-size: 0.875rem;
     transition: all .1s ease-in-out;
     line-height: 1.1875rem;
+    width: 100%;
 `;
 
 
