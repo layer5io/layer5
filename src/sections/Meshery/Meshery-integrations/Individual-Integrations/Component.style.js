@@ -36,7 +36,7 @@ export const ComponentsWrapper = styled.div`
     gap: 1rem;
     background-color: ${props => props.theme.grey212121ToGreyEEEEEE};
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    border-radius: 0.85rem;
     width: 100%;
     flex: 30%;
     max-width: 350px;
