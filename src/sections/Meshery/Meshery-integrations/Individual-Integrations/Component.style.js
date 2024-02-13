@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const ComponentsWrapper = styled.div`
   .heading {
     text-align: center;
+    margin-top: 5rem;
 
     h1 {
-      line-height: 3.75rem;
     }
 
     h2 {
@@ -27,7 +27,7 @@ export const ComponentsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    padding: 3rem 2rem 7rem 2rem;
+    padding: 3rem 2rem 5rem 2rem;
     justify-content: center;
   }
   .maincontainer {
