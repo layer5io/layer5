@@ -128,7 +128,6 @@ const IndividualIntegrations = ({ data }) => {
       />
       {frontmatter.components && frontmatter.components.length > 0 && (
         <section className="component-collection">
-          <h2>Model Components</h2>
           <ModelComponents frontmatter={frontmatter} />
         </section>
       )}
