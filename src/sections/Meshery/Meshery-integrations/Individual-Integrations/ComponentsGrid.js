@@ -25,9 +25,9 @@ const ComponentsGrid = ({ frontmatter }) => {
             <div className="componentimg">
               <img src={item.colorIcon.publicURL} alt={item.name} />
             </div>
-            <div className="textcontent">
-              <p className="items">{item.name.replaceAll("-", " ")}</p>
-            </div>
+            <p className="items">{item.name.replaceAll("-", " ")}</p>
+            {/* <div className="textcontent">
+            </div> */}
           </div>
         ))}
       </section>
