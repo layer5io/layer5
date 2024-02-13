@@ -45,7 +45,7 @@ const PictureSlider = () => {
       query community {
         allFile(
           filter: {
-            extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+            extension: { regex: "/(svg)/" }
             relativeDirectory: {eq: "Community-pictures"}
             
           }
