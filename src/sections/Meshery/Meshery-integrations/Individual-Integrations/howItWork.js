@@ -12,7 +12,7 @@ const HowIntegrationWorksWrapper = styled.section`
 	.section-data {
 		padding: 1rem 2rem 0;
 		text-align: center;
-		margin-top: 5rem;
+		padding-top: 5rem;
 	}
 
 	.section-header {

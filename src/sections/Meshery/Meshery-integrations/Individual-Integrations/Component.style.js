@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ComponentsWrapper = styled.div`
   .heading {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 7rem;
 
     h1 {
     }
