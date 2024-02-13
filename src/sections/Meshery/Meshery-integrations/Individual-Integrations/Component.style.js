@@ -14,38 +14,39 @@ export const ComponentsWrapper = styled.div`
   }
 
   .componentimg {
-    flex-basis: 30%;
+    width: 70px;
+    height: 70px;
   }
   .componentimg img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .componentsSection {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-
+    gap: 1.5rem;
+    padding: 3rem 2rem 7rem 2rem;
   }
   .maincontainer {
-    height: 150px;
-    width: 300px;
-    border-radius: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: .2rem;
+    gap: 1rem;
+    background-color: ${props => props.theme.grey212121ToGreyEEEEEE};
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    flex: 30%;
   }
+
   .items {
-    background-color: #D2D8DA; //#E7EFF3;
-    padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: #1e2117;
+    color: ${props => props.theme.text};
     font-size: 0.875rem;
-    cursor: pointer;
     transition: all .1s ease-in-out;
-    
+    line-height: 1.1875rem;
 `;
 
 

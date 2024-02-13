@@ -15,21 +15,18 @@ const ComponentsGrid = ({ frontmatter }) => {
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {components.length} components of {frontmatter.title}
+          {frontmatter.title} Components ({components.length})
         </h1>
-        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
 
       <section className="componentsSection">
         {components.map((item) => (
-          <div key={item.id} className="childContainer">
-            <div className="maincontainer">
-              <div className="componentimg">
-                <img src={item.colorIcon.publicURL} alt={item.name} />
-              </div>
-              <div className="textcontent">
-                <p className="items">{item.name}</p>
-              </div>
+          <div key={item.id} className="maincontainer">
+            <div className="componentimg">
+              <img src={item.colorIcon.publicURL} alt={item.name} />
+            </div>
+            <div className="textcontent">
+              <p className="items">{item.name.replaceAll("-", " ")}</p>
             </div>
           </div>
         ))}
