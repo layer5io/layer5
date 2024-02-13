@@ -28,6 +28,7 @@ export const ComponentsWrapper = styled.div`
     flex-wrap: wrap;
     gap: 1.5rem;
     padding: 3rem 2rem 7rem 2rem;
+    justify-content: center;
   }
   .maincontainer {
     display: flex;
@@ -38,6 +39,7 @@ export const ComponentsWrapper = styled.div`
     border-radius: 0.25rem;
     width: 100%;
     flex: 30%;
+    max-width: 350px;
   }
 
   .items {
