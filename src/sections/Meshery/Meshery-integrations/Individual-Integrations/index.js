@@ -97,6 +97,11 @@ const IndividualIntegrations = ({ data }) => {
           </section>
         </div>
       </section>
+      {frontmatter.components && frontmatter.components.length > 0 && (
+        <section className="component-collection">
+          <ModelComponents frontmatter={frontmatter} />
+        </section>
+      )}
       <div>
         {isAwsItem ? (
           <HowMesheryWorksSpecs
@@ -126,11 +131,6 @@ const IndividualIntegrations = ({ data }) => {
         howitworksdetails={frontmatter.howItWorksDetails}
         slides={finalScreenshots}
       />
-      {frontmatter.components && frontmatter.components.length > 0 && (
-        <section className="component-collection">
-          <ModelComponents frontmatter={frontmatter} />
-        </section>
-      )}
       <section className="integration-collection">
         <h2>Related Integrations</h2>
         <RelatedIntegration category={frontmatter.category} />
