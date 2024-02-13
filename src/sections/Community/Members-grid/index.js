@@ -14,6 +14,8 @@ import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
 import { FaBook } from "@react-icons/all-files/fa/FaBook";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
+import  badgeImage from "../../../assets/images/recognition-program/recognition-program.png";
+import { FaCertificate } from "@react-icons/all-files/fa/FaCertificate";
 
 const MembersGrid = (props) => {
   return (
@@ -106,9 +108,68 @@ const MembersGrid = (props) => {
               </div>
             </div>
           </div>
+
+          <div className="AboutCommunity">
+            <div>
+              <h3 className="sectionTitle">Recognition Program</h3>
+              <img className="badgeImg" src={badgeImage} alt="Recognition Program Logo" style={{
+                width: "20.75rem",
+                height: "auto",
+                marginTop: 0
+              }}/>
+            </div>
+            <div className="detailsCommunity">
+              <p>
+              Layer5 badges are one of the many ways that we recognize the efforts
+              of our contributors and uplift our users. Layer5 badges represent milestones
+              that you achieve both in using and in contributing to Layer5-supported
+              open source projects. As a contributor, this is how you demonstrate your ownership,
+              dedication, skills and loyalty to Layer5. As a user,
+              this is how you demonstrate your prowess.
+              </p>
+              <p>
+              Whether as a user or a contributor,
+              community members are awarded badges as and when they
+              achieve any number of different milestones throughout
+              their journey whether that accomplishment lie within a
+              community activity or an aspect of using or contributing to a project.
+              Every community member, whether contributing with code or not,
+              has the opportunity to obtain any number of badges in
+              recognition of your achievements.
+              </p>
+              <p>
+              See what badges you can earn by visiting the Layer5 badges site. Collect the whole set!
+              </p>
+
+              <div>
+                <VintageBox right={true} vintageOne={true}>
+                  <Button
+                    primary
+                    className="banner-btn memberProfileBtn"
+                    title="Collect Badges"
+                    url="https://badges.layer5.io/"
+                    external={true}
+                  >
+                    <FaCertificate size={21} className="icon-left" />
+                  </Button>
+
+                  <Button
+                    secondary
+                    className="banner-btn two memberProfileBtn"
+                    title="Join the Community"
+                    url="https://slack.layer5.io"
+                  >
+                    <FaUsers size={21} className="icon-left" />
+                  </Button>
+                </VintageBox>
+              </div>
+            </div>
+          </div>
+
         </Container>
       </div>
     </MembersGridWrapper>
   );
 };
+
 export default MembersGrid;
