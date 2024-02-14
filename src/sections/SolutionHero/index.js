@@ -3,16 +3,21 @@ import FeatureHeroWrapper from "./featureHero.style";
 import { Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-
 const FeatureHero = (props) => {
   useEffect(() => {
     const scrollingImage = document.getElementById("whiteboard-svg");
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const translateY = scrollPosition / 16;
-      const finalRotateAngle = Math.min(translateY, 12);
-      scrollingImage.style.transform = `rotateX(${12 - finalRotateAngle}deg)`;
+      const imageRect = scrollingImage.getBoundingClientRect();
+      const isImageAtTop = imageRect.top <= 110;
+
+      if (isImageAtTop) {
+        const scrollPosition = window.scrollY;
+        const translateY = -scrollPosition / 50;
+        scrollingImage.style.transform = `rotateX(${translateY}deg)`;
+      } else {
+        scrollingImage.style.transform = null;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
