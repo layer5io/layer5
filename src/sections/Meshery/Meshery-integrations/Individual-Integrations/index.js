@@ -8,6 +8,7 @@ import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
+import ModelComponents from "./ComponentsGrid";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
@@ -96,6 +97,11 @@ const IndividualIntegrations = ({ data }) => {
           </section>
         </div>
       </section>
+      {frontmatter.components && frontmatter.components.length > 0 && (
+        <section className="component-collection">
+          <ModelComponents frontmatter={frontmatter} />
+        </section>
+      )}
       <div>
         {isAwsItem ? (
           <HowMesheryWorksSpecs
