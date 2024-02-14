@@ -25,8 +25,8 @@ const FeatureHeroWrapper = styled.div`
 
     #whiteboard-svg {
       transition: transform 0.3s ease-out;
-      transform-origin: bottom center;
-      transform: rotateX(12deg);
+      transform-origin: top center;
+      transform: rotateX(0deg);
     }
 
     .whiteboard-heading {

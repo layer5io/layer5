@@ -48,7 +48,7 @@ const FeatureWrapper = styled.div`
 
   .catalog {
     display: flex;
-    padding: 5rem 0;
+    padding: 2rem 0;
     @media (max-width: 768px) {
       padding: 2rem 0;
     }
