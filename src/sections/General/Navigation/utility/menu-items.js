@@ -29,7 +29,7 @@ const Data = {
         },
         {
           name: "GitOps with Cloud Native Insights",
-          path: "/cloud-native-management/gitops",
+          path: "/solutions/gitops",
           sepLine: true
         },
       ],
