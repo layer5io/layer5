@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState , useEffect } from "react";
 // Libraries
 import { Link } from "gatsby";
 
@@ -18,6 +17,26 @@ import  badgeImage from "../../../assets/images/recognition-program/recognition-
 import { FaCertificate } from "@react-icons/all-files/fa/FaCertificate";
 
 const MembersGrid = (props) => {
+
+  const [marginLeft, setMarginLeft] = useState("1.8rem");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 992) {
+        setMarginLeft("0");
+      } else {
+        setMarginLeft("1.8rem");
+      }
+    };
+
+    // Check if window is defined (client-side)
+    if (typeof window !== "undefined") {
+      handleResize(); // Initial check
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <MembersGridWrapper>
       <div className="members-page-wrapper">
@@ -112,10 +131,10 @@ const MembersGrid = (props) => {
           <div className="AboutCommunity">
             <div>
               <h3 className="sectionTitle">Recognition Program</h3>
-              <img className="badgeImg" src={badgeImage} alt="Recognition Program Logo" style={{
-                width: "20.75rem",
+              <img className="badge-Img" src={badgeImage} alt="Recognition Program Logo" style={{
+                width: "22rem",
                 height: "auto",
-                marginTop: 0
+                marginLeft: marginLeft,
               }}/>
             </div>
             <div className="detailsCommunity">

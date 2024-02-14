@@ -11,6 +11,7 @@ import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
+import  badgeImage from "../../../assets/images/recognition-program/recognition-program.png";
 
 const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.webp";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
@@ -214,6 +215,31 @@ const NewcomersGuide = () => {
                 </a>{" "}
                 and take a look at all our <Link to="/projects">projects</Link>.
               </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} lg={6} style={{ marginTop: "3rem" }}>
+              <h3>Recognizing Community Members</h3>
+              <ol type="i">
+                <li>
+                Whether as a user or a contributor, community members are awarded badges as and when they achieve any number of different milestones throughout their journey whether that accomplishment lie within a community activity or an aspect of using or contributing to a project.
+                </li>
+                <li>
+                Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges in recognition of your achievements.{" "}
+                </li>
+                <li>See what badges you can earn by visiting the {" "}
+                  <a
+                    href="https://badges.layer5.io"
+                    target="_blank" rel="noreferrer"
+                  >
+                    Layer5 badges site
+                  </a>{" "}
+                Collect the whole set!
+                </li>
+              </ol>
+            </Col>
+            <Col sm={12} lg={6} className="community-collage">
+              <img src={badgeImage} alt="Community Image" />
             </Col>
           </Row>
         </div>
