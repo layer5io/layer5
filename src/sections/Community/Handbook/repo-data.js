@@ -299,10 +299,10 @@ export const repo_data = [
         project: "Layer5 Cloud",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Vacant"],
-        link: ["#"],
+        maintainers_name: ["Yash Sharma"],
+        link: ["https://layer5.io/community/members/yash-sharma"],
         description: "A Meshery Remote Provider.",
-        repository: "https://docs.meshery.io/extensibility/providers",
+        repository: "https://github.com/layer5io/meshery-cloud",
       },
       // {
       //   project: "MeshMonkey",
