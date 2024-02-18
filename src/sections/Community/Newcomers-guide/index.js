@@ -5,7 +5,7 @@ import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
 import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/layer5-contributor.svg";
-import CommunityImage4 from "../../Community-pictures/14.svg";
+import CommunityImage4 from "../Community-pictures/14.svg";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
