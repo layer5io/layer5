@@ -12,7 +12,7 @@ import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage2 = "../../Community-pictures/17.svg";
+const CommunityImage2 = "../Community-pictures/17.svg";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
 
 const NewcomersGuide = () => {
