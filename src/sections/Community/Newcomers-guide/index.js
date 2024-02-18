@@ -5,14 +5,14 @@ import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
 import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/layer5-contributor.svg";
-import CommunityImage4 from "./community-image4.webp";
+import CommunityImage4 from "../../Community-pictures/14.svg";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.webp";
+const CommunityImage2 = "../../Community-pictures/17.svg";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
 
 const NewcomersGuide = () => {
