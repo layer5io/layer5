@@ -29,7 +29,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <StaticImage src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
+            <StaticImage src={Lee_and_Rigs} alt="Five" />
           </div>
         </div>
         <Container>
@@ -43,12 +43,12 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-            <div className="video-container">
               <div className="introVideo">
               <iframe
                 width="392"
                 height="220.5"
                 src="https://www.youtube.com/embed/0yN5T5LB9ps"
+                img src="./Thumbnail.svg"
                 loading="lazy"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
