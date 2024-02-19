@@ -43,7 +43,8 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-            <div className="introVideo">
+            <div className="video-container">
+              <div className="introVideo">
               <iframe
                 width="392"
                 height="220.5"
@@ -52,6 +53,14 @@ const CareersPage = () => {
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen />
+              </div>
+              <img
+                src="./Thumbnail.svg"
+                alt="What Does Layer5 Mean?"
+                className="thumbnail-image"
+                width="392"
+                height="220.5"
+             />
             </div>
           </Row>
         </Container>
