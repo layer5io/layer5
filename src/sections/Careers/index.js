@@ -48,20 +48,11 @@ const CareersPage = () => {
                 width="392"
                 height="220.5"
                 src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                img src="./Thumbnail.svg"
                 loading="lazy"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen />
               </div>
-              <img
-                src="./Thumbnail.svg"
-                alt="What Does Layer5 Mean?"
-                className="thumbnail-image"
-                width="392"
-                height="220.5"
-             />
-            </div>
           </Row>
         </Container>
         <div className="opportunity-section">
