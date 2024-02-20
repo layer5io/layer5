@@ -8,7 +8,7 @@ import Five from "../../sections/Community/Community-pictures/14.svg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Lee_and_Rigs = "../../assets/images/careers/Five.svg";
+const Five = "../../assets/images/careers/Five.svg";
 
 const CareersPage = () => {
   return (
@@ -29,7 +29,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <StaticImage src={Lee_and_Rigs} alt="Five" />
+            <StaticImage src={Five} alt="Five" />
           </div>
         </div>
         <Container>
@@ -43,15 +43,12 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-              <div className="introVideo">
-              <iframe
-                width="392"
-                height="220.5"
-                src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                loading="lazy"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen />
+              <img
+                src="./Thumbnail.svg"
+                alt="Five"
+                width="700"
+                height="504"
+                  />
               </div>
           </Row>
         </Container>
