@@ -43,13 +43,13 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-              <img
+            <div className="introVideo">
+                <img
                 src="./Thumbnail.svg"
                 alt="Five"
                 width="700"
-                height="504"
-                  />
-              </div>
+                height="504" />
+            </div>
           </Row>
         </Container>
         <div className="opportunity-section">
