@@ -8,7 +8,7 @@ import Five from "../../sections/Community/Community-pictures/14.svg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Five-image = "../../assets/images/careers/Five.svg";
+const Five_image = "../../assets/images/careers/Five.svg";
 
 const CareersPage = () => {
   return (
@@ -29,7 +29,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <StaticImage src={Five-image} alt="Five" />
+            <StaticImage src={Five_image} alt="Five" />
           </div>
         </div>
         <Container>
