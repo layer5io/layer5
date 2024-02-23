@@ -252,7 +252,7 @@ export const darktheme = {
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
-  secondaryLightColorTwo: "#121212",
+  secondaryLightColorTwo: "#7A848E",
 
   // lighter gray
   secondaryLightColor: "#000000",
