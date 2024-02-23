@@ -10,6 +10,8 @@ import styled from "styled-components";
 import plusSign from "./images/plus-sign-colorMode.svg";
 import CytoscapeCtx from "./cytoscapeCanvas";
 import BackgroundDotsPattern from "./images/background-dots-pattern.svg";
+import Button from "../../../reusecore/Button";
+
 
 const DesignBannerWrapper = styled.div`
 
@@ -161,7 +163,8 @@ const MeshmapDesignBanner = () => {
       </div>
       <div className="hero-image">
         <CytoscapeCtx />
-        <h5>Experience context-aware design</h5>
+        <Button secondary title="Experience context-aware design" url="https://meshery.layer5.io" external={ true } />
+        <h5>Upload your Helm Chart or Kubernetes manifest to have your infra diagrammed</h5>
       </div>
       <img className="dots-upper" src={BackgroundDotsPattern}  />
       <img className="dots-lower" src={BackgroundDotsPattern}  />

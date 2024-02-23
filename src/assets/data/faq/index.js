@@ -171,7 +171,7 @@ const data = {
       ],
     },
     {
-      question: "How does Meshery infused GitOps practices into cloud native managemement?",
+      question: "How does Meshery infuse GitOps practices into cloud native managemement?",
       category: "Meshery Integrations",
       link: "https://layer5.io/cloud-native-management/meshery",
       linktext: "Run Meshery",
