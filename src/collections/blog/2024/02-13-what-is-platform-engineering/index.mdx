@@ -18,11 +18,22 @@ published: true
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
+import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
+import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp"
 
 <BlogWrapper>
 <p>In today's fast-paced and interconnected world, the success of many businesses depends heavily on technology platforms that enable them to deliver their products and services efficiently. Platform engineering plays a crucial role in the development, operation, and maintenance of these platforms, ensuring their stability, scalability, and security.</p>
-
+<CTA_FullWidth 
+  image={CTAImg}
+  heading="Where DevOps Collaborates"
+  alt="Meshery is a self-service engineering platform."
+  content="As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure."
+  button_text="See Meshery's Features"
+  url="/cloud-native-management/meshery"
+  external_link={false}
+/>
 <div class="intro"><p>
+
 In this article, we will explore the fundamentals of platform engineering, providing a comprehensive overview of the key concepts, benefits, and challenges associated with this field. We will delve into the process of designing and building a platform, discussing the identification of requirements, architectural considerations, and the tools and technologies that facilitate platform development. Additionally, we will explore the critical aspects of operating and maintaining a platform, including managing infrastructure, monitoring performance, and ensuring security and compliance.
 </p></div>
 
@@ -46,7 +57,7 @@ To understand platform engineering better, it is essential to familiarize oursel
 
 2. Scalability: A well-designed platform can handle increased workloads and user demands without sacrificing performance. Scalability involves the ability to add resources, such as servers or processing power, to meet growing demands and ensure optimal system performance.
 
-3. Extensibility: Platforms should be designed to accommodate future growth and evolution. They should provide the necessary flexibility to integrate new technologies, frameworks, and tools as they emerge, allowing developers to stay ahead of the curve and leverage the latest advancements.
+3. Extensibility: Platforms should be designed to accommodate future growth and evolution. They should provide the necessary flexibility to integrate new technologies, frameworks, and tools as they emerge, allowing developers to stay ahead of the curve and leverage the latest advancements. Learn about <a href="https://docs.meshery.io/extensibility">Meshery's extensibility</a>. 
 
 ### Benefits and Challenges of Platform Engineering
 
