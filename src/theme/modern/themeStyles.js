@@ -14,6 +14,13 @@ const theme = {
   menuColor: "#ffffff",
   menuHoverColor: "#00B39F"
 };
+export const breakpoints = {
+  tablet_small: "568px",
+  tablet_medium: "741px",
+  tablet_large: "780px",
+  desktop_small: "991px",
+  desktop_large: "1200px",
+};
 export default theme;
 
 
