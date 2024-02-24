@@ -2,42 +2,46 @@
 title: "Lorem Ipsum"
 subtitle: "Lorem Ipsum"
 date: 2020-06-23 10:30:05 -0530
-author: John Doe
-thumbnail: ./gsoc-wide.webp
-darkthumbnail: ./gsoc-wide.webp
+author: Layer5 Team
+thumbnail: ../../../assets/images/layer5/layer5-only/svg/layer5-black.svg
+darkthumbnail: ../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg
 category: "Lorem Ipsum"
 description: "This is a short summary of my blog post. This text will show in the blog's list view and in community newsletters."
 tags:
  - Community
  - Meshery
 type: Blog
-resource: false
+resource: true
 published: false
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
 import Blockquote from "../../../reusecore/Blockquote";
-
-import gsoc from "./gsoc.webp";
+import image from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
 
 
 <BlogWrapper>
 
-### Lorem Ipsum
+## Lorem Ipsum
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula consequat ipsum, at egestas leo. Donec molestie ipsum ut neque lobortis convallis.
 
 <figure class="imgWithCaption fig-right">
-    <img src={gsoc} />
+    <img src={image} />
     <figcaption>
     <p>This is text for the image</p>
     </figcaption>
  </figure>
  
+Curabitur iaculis ante sit amet condimentum interdum. Cras tellus nunc, gravida sit amet pellentesque eu, placerat ac diam. Mauris fermentum condimentum odio, ac fringilla ante condimentum vel. Vivamus volutpat sit amet libero eleifend ultricies. Praesent tempor libero tincidunt aliquam convallis. Aliquam in magna ante. Morbi egestas efficitur massa sed pretium.
+
+### Lorem Ipsum
 
 Curabitur iaculis ante sit amet condimentum interdum. Cras tellus nunc, gravida sit amet pellentesque eu, placerat ac diam. Mauris fermentum condimentum odio, ac fringilla ante condimentum vel. Vivamus volutpat sit amet libero eleifend ultricies. Praesent tempor libero tincidunt aliquam convallis. Aliquam in magna ante. Morbi egestas efficitur massa sed pretium.
 
-<img src={gsoc} className="gsoc-image" align="right" alt="gsoc-image" />
+<img src={image} className="image-left-no-shadow" alt="image" />
+
+Curabitur iaculis ante sit amet condimentum interdum. Cras tellus nunc, gravida sit amet pellentesque eu, placerat ac diam. Mauris fermentum condimentum odio, ac fringilla ante condimentum vel. Vivamus volutpat sit amet libero eleifend ultricies. Praesent tempor libero tincidunt aliquam convallis. Aliquam in magna ante. Morbi egestas efficitur massa sed pretium.
 
 \-- <Link to="/community/members/john-jane-doe">John Jane Doe</Link>
 
