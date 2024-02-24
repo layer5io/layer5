@@ -88,39 +88,37 @@ const TOC = () => {
             </Link>
           </li>
           <li>
-            <p>
-              <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
-                <AccordionItem className="toc-acc-item">
-                  <AccordionTitle>
-                    Identity
-                    <IconWrapper>
-                      <OpenIcon>
-                        <IoIosArrowDown color="white" />
-                      </OpenIcon>
-                      <CloseIcon>
-                        <IoIosArrowUp color="white" />
-                      </CloseIcon>
-                    </IconWrapper>
-                  </AccordionTitle>
-                  <AccordionBody>
+            <div>
+              <li
+                className="toc-sub-heading identity"
+                onClick={() => setExpandIdentity((prev) => !prev)}
+              >
+                Idenitity
+                <IoIosArrowDown />
+              </li>
+              {expandIdenity && (
+                <div className="identity-sublinks">
+                  <li>
                     <Link
                       to="/projects/sistent/identity/color"
+                      className="toc-sub-heading toc-sub-inline identity-item"
                       activeClassName="active"
-                      className="toc-sub-heading toc-sub-inline"
                     >
                       Color
                     </Link>
+                  </li>
+                  <li>
                     <Link
                       to="/projects/sistent/identity/spacing"
+                      className="toc-sub-heading toc-sub-inline identity-item"
                       activeClassName="active"
-                      className="toc-sub-heading toc-sub-inline"
                     >
                       Spacing
                     </Link>
-                  </AccordionBody>
-                </AccordionItem>
-              </Accordion>
-            </p>
+                  </li>
+                </div>
+              )}
+            </div>
           </li>
           <li>
             <Link
