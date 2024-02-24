@@ -120,6 +120,10 @@ const TOCWrapper = styled.div`
       visibility: visible;
     }
   }
+
+  .toc-acc-item {
+    background-color: transparent;
+  }
 `;
 
 export default TOCWrapper;
