@@ -124,6 +124,27 @@ const TOCWrapper = styled.div`
   .toc-acc-item {
     background-color: transparent;
   }
+
+  .identity {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: ${(props) => props.theme.text};
+    }
+  }
+
+  .identity-sublinks {
+    padding-left: 0.56rem;
+
+    .identity-item {
+      font-size: 1.05rem;
+      margin-top: 0.45rem;
+    }
+  }
 `;
 
 export default TOCWrapper;

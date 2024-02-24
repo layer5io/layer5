@@ -6,18 +6,18 @@ import IntraPage from "../../../../components/handbook-navigation/intra-page";
 
 const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
 
-const SistentIdentityColor = () => {
+const SistentIdentitySpacing = () => {
   return (
     <SistentWrapper>
       <div className="page-header-section">
-        <h1>Color</h1>
+        <h1>Spacing</h1>
       </div>
       <TOC />
       <div className="page-section">
         <Container>
           <div className="content">
             <a id="Identity">
-              <h2>Color</h2>
+              <h2>Spacing</h2>
             </a>
           </div>
         </Container>
@@ -27,4 +27,4 @@ const SistentIdentityColor = () => {
   );
 };
 
-export default SistentIdentityColor;
+export default SistentIdentitySpacing;
