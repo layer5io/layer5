@@ -4,52 +4,18 @@ import { Link } from "gatsby";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
-// import { content } from "./content";
-
-const content = [
-  { id: 0, link: "/projects/sistent/about", text: "About Sistent" },
-  {
-    id: 1,
-    link: "/projects/sistent/identity",
-    text: "Identity",
-    children: [
-      {
-        id: 1.1,
-        text: "Colors",
-        link: "/projects/sistent/identity/colors",
-      },
-      {
-        id: 1.2,
-        text: "Typography",
-        link: "/projects/sistent/identity/typography",
-      },
-      {
-        id: 1.3,
-        text: "Spacing",
-        link: "/projects/sistent/identity/spacing",
-      },
-    ],
-  },
-  { id: 2, link: "/projects/sistent/components", text: "Components" },
-];
-
 import TOCWrapper from "./toc.style";
-import {
-  Accordion,
-  AccordionBody,
-  AccordionItem,
-  AccordionTitle,
-  CloseIcon,
-  IconWrapper,
-  OpenIcon,
-} from "../../reusecore/Accordion";
-import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
+import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
+
+import { useLocation } from "@reach/router";
 
 const TOC = () => {
   const [expand, setExpand] = useState(false);
-
-  const [expandIdenity, setExpandIdentity] = useState(false);
+  const location = useLocation();
+  const [expandIdenity, setExpandIdentity] = useState(
+    location.pathname.includes("/identity")
+  );
 
   return (
     <TOCWrapper>
@@ -94,7 +60,7 @@ const TOC = () => {
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Idenitity
-                <IoIosArrowDown />
+                {expandIdenity ? <IoIosArrowUp /> : <IoIosArrowDown />}
               </li>
               {expandIdenity && (
                 <div className="identity-sublinks">
