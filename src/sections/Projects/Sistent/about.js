@@ -3,7 +3,7 @@ import { Container } from "../../../reusecore/Layout";
 import SistentWrapper from "./sistent.style";
 import TOC from "../../../components/SistentNavigation";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-// import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
 
@@ -20,9 +20,8 @@ const SistentAbout = () => {
             <a id="About Sistent">
               <h2>About Sistent</h2>
             </a>
-            <p>Hello !</p>
           </div>
-          {/* <TocPagination /> */}
+          <TocPagination />
         </Container>
         <IntraPage contents={contents} />
       </div>

@@ -45,7 +45,7 @@ const SistentWrapper = styled.div`
       padding-top: 7rem;
       margin-top: -7rem;
     }
-    margin-left: 20rem;
+    padding-left: 20rem;
     display: flex;
     @media screen and (min-width: 1280px) and (max-width: 1350px) {
       margin-left: 16rem;
@@ -178,7 +178,7 @@ const SistentWrapper = styled.div`
   }
 
   p {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   input[type="checkbox"] + label {
@@ -414,6 +414,7 @@ const SistentWrapper = styled.div`
     top: 10rem;
     right: 0rem;
     margin-right: 1rem;
+    margin-top: 10rem;
     padding-bottom: 5rem;
     align-items: left;
     justify-content: space-around;
@@ -552,6 +553,39 @@ const SistentWrapper = styled.div`
     font-size: small;
     line-height: 0.9rem;
     font-style: italic;
+  }
+
+  .filterBtns {
+    display: flex;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #bec2c5;
+    margin-top: 5rem;
+
+    button {
+      font-size: 1.25rem;
+      color: ${(props) => props.theme.secondaryColor};
+      min-width: auto;
+      border: none;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 0.5rem 2rem;
+      background: ${(props) => props.theme.body};
+      transition: all 0.2s ease-in;
+    }
+    .active {
+      color: ${(props) => props.theme.text};
+      border-bottom: 2px solid ${(props) => props.theme.text};
+    }
+  }
+
+  .main-content {
+    padding-top: 1rem;
+  }
+
+  .image-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
