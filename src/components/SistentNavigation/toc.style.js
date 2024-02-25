@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TOCWrapper = styled.div`
-  position: sticky;
+  position: absolute;
   top: 10rem;
   left: 0rem;
   margin-left: 3rem;
