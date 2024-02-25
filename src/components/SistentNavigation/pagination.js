@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import { content } from "./content";
 import Button from "../../reusecore/Button";
-import TocPaginationWrapper from "./TocPagination.style";
+import PaginationWrapper from "./pagination.style";
 
-const TocPagination = () => {
+const SistentPagination = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const TocPagination = () => {
   }, []);
 
   return (
-    <TocPaginationWrapper>
+    <PaginationWrapper>
       {currentPage > 0 ? (
         <Button secondary url={content[currentPage - 1]?.link}>
           &larr; Previous
@@ -26,8 +26,8 @@ const TocPagination = () => {
           Next &rarr;
         </Button>
       ) : null}
-    </TocPaginationWrapper>
+    </PaginationWrapper>
   );
 };
 
-export default TocPagination;
+export default SistentPagination;
