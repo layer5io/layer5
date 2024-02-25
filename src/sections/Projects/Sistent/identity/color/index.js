@@ -7,6 +7,7 @@ import Button from "../../../../../reusecore/Button";
 import ColorOverview from "./overview";
 import ColorGuidance from "./guidance";
 import ColorCode from "./code";
+import SistentPagination from "../../../../../components/SistentNavigation/pagination";
 
 const overviewContents = [
   { id: 0, link: "#Introduction", text: "Introduction" },
@@ -81,6 +82,7 @@ const SistentIdentityColor = () => {
             {activeTab === "guidance" && <ColorGuidance />}
             {activeTab === "code" && <ColorCode />}
           </div>
+          <SistentPagination />
         </Container>
         <IntraPage contents={contents()} />
       </div>

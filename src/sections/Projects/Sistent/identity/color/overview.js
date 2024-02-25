@@ -193,7 +193,6 @@ const ColorOverview = () => {
         there might be no need to have a variation of its hue represent it, as
         is evident in the example above.
       </p>
-      <TocPagination />
     </div>
   );
 };
