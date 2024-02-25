@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const SistentWrapper = styled.div`
+  position: relative;
   .content > a:first-of-type > h2:first-of-type {
     padding-top: 1rem;
   }
@@ -46,10 +47,8 @@ const SistentWrapper = styled.div`
       margin-top: -7rem;
     }
     padding-left: 20rem;
+    margin-top: 15rem;
     display: flex;
-    @media screen and (min-width: 1280px) and (max-width: 1350px) {
-      margin-left: 16rem;
-    }
   }
   .conduct-section {
     @media screen and (min-width: 751px) {
@@ -576,6 +575,26 @@ const SistentWrapper = styled.div`
     .active {
       color: ${(props) => props.theme.text};
       border-bottom: 2px solid ${(props) => props.theme.text};
+    }
+  }
+
+  @media (max-width: 560px) {
+    .filterBtns {
+      overflow: hidden;
+      button {
+        padding: 0.5rem 1.5rem;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    .filterBtns {
+      button {
+        margin-right: 0px;
+        font-size: 18px;
+        padding: 10px;
+      }
     }
   }
 
