@@ -6,6 +6,7 @@ import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 import { Container } from "../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import axios from "axios";
 import Cookie from "js-cookie";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
@@ -16,6 +17,7 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
 import NavigationWrap from "./navigation.style";
+import DefaultAvatar from "./utility/DefaultAvatar.js";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -69,13 +71,37 @@ const Navigation = () => {
 
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [cookie, setCookie] = useState(null);
   const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
-
+  const [userData, setUserData] = useState();
   const dropDownRef = useRef();
   const navWrapRef = useRef();
+  useEffect(() => {
+    const PLAYGROUND_USER_API =
+      "https://meshery.layer5.io/api/identity/users/profile";
+    const fetchData = async () => {
+      try {
+        const token = Cookie.get("provider_token");
+        const response = await axios.get(PLAYGROUND_USER_API, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
+        if (response.status !== 200) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = response.data;
+        console.log(data, "here");
+        setUserData(data);
+      } catch (error) {
+        console.error("There was a problem with your fetch operation:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   useEffect(() => {
     const outsideClickHandler = (e) => {
       if (
@@ -99,7 +125,6 @@ const Navigation = () => {
     window.addEventListener("scroll", () =>
       window.scrollY > 50 ? setScroll(true) : setScroll(false)
     );
-    setCookie(Cookie.get("provide-token"));
   }, []);
 
   const openDropDown = () => {
@@ -201,20 +226,22 @@ const Navigation = () => {
                     </li>
                   ))}
                 </ul>
-                <div>
-                  <ul>
-                    <li>
-                      <Button
-                        id="get-started"
-                        $secondary
-                        className="banner-btn two"
-                        title="Get Started"
-                        $url="https://meshery.layer5.io/registration"
-                        $external={true}
-                      />
-                    </li>
-                  </ul>
-                </div>
+                {!userData && (
+                  <div>
+                    <ul>
+                      <li>
+                        <Button
+                          id="get-started"
+                          $secondary
+                          className="banner-btn two"
+                          title="Get Started"
+                          $url="https://meshery.layer5.io/registration"
+                          $external={true}
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                )}
                 <div>
                   <ul>
                     <li className="mobile-nav-item">
@@ -235,7 +262,20 @@ const Navigation = () => {
           </nav>
         </div>
         <div className="meshery-cta">
-          {cookie ? (
+          {userData ? (
+            <div className="avatar-container">
+              <a
+                href={`https://playground.meshery.io/user/${userData.id}`}
+                style={{ display: "contents" }}
+              >
+                {userData.avatar_url ? (
+                  <img src={userData.avatar_url} alt={userData.first_name} />
+                ) : (
+                  <DefaultAvatar className="default_avatar" />
+                )}
+              </a>
+            </div>
+          ) : (
             <Button
               id="get-started-2"
               aria-label="Signup for Layer5 Cloud"
@@ -246,8 +286,6 @@ const Navigation = () => {
               alt="Signup for Layer5 Cloud"
               $url="https://meshery.layer5.io/registration"
             />
-          ) : (
-            <></>
           )}
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}
           <Button
@@ -258,7 +296,7 @@ const Navigation = () => {
             $external={true}
             title="Playground"
             alt="Meshery Playground"
-            $url="https://play.meshery.io"
+            $url="https://playground.meshery.io"
           />
           <div className="dark-theme-toggle">
             <input
