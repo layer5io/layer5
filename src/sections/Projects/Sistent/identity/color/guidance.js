@@ -1,10 +1,14 @@
 import React from "react";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.svg";
+import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.svg";
 import ContextVisuals5 from "../../../../../assets/images/app/projects/sistent/context-visuals-5.svg";
 import ContextVisuals6 from "../../../../../assets/images/app/projects/sistent/context-visuals-6.svg";
+import ContextVisuals6Dark from "../../../../../assets/images/app/projects/sistent/context-visuals-6-dark.svg";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const ColorGuidance = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <div className="main-content">
       <p>
@@ -39,7 +43,10 @@ const ColorGuidance = () => {
       </p>
       <Row className="image-container" Hcenter>
         <Col md={8} lg={8} sm={12}>
-          <img src={TonalPalettes} alt="Content Visuals" />
+          <img
+            src={isDark ? TonalPalettesDark : TonalPalettes}
+            alt="Tonal Palettes"
+          />
         </Col>
       </Row>
       <a id="Basic Colors">
@@ -104,7 +111,7 @@ const ColorGuidance = () => {
       </p>
       <Row className="image-container" Hcenter>
         <Col md={8} lg={8} sm={12}>
-          <img src={ContextVisuals5} alt="Content Visuals" />
+          <img src={ContextVisuals5} alt="Context Visuals" />
         </Col>
       </Row>
       <h3>The Role of Color Tokens</h3>
@@ -147,7 +154,11 @@ const ColorGuidance = () => {
       </p>
       <Row className="image-container" Hcenter>
         <Col md={6} lg={6} sm={12}>
-          <img width="100%" src={ContextVisuals6} alt="Content Visuals" />
+          <img
+            width="100%"
+            src={isDark ? ContextVisuals6Dark : ContextVisuals6}
+            alt="Context Visuals"
+          />
         </Col>
       </Row>
       <p>

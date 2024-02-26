@@ -20,6 +20,7 @@ const SistentAbout = () => {
             <a id="About Sistent">
               <h2>About Sistent</h2>
             </a>
+            <p>Sorry, this page is still under work</p>
           </div>
           <SistentPagination />
         </Container>

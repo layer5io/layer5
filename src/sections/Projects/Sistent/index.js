@@ -14,17 +14,17 @@ const SistentHome = () => {
       <div className="community-home-container">
         <HandbookCard
           title="About"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+          description="Ensuring clarity and consistency across projects. Empowering developers with modular components, it defines a unified visual language, fostering a seamless and cohesive user experience."
           to="/projects/sistent/about"
         />
         <HandbookCard
           title="Identity"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-          to="/projects/sistent/identity"
+          description="Harmonizing Layer5's visual language. Precision in colors, balanced spacing, and refined typography create a unified, appealing design, enhancing user experience across projects."
+          to="/projects/sistent/identity/color"
         />
         <HandbookCard
           title="Components"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+          description="Streamlining development with reusable elements for consistent design. Empower projects with modular components, ensuring a unified and efficient user interface across Layer5 initiatives"
           to="/projects/sistent/components"
         />
       </div>
