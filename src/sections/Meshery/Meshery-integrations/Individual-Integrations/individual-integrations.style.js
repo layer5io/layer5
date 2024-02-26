@@ -103,7 +103,7 @@ export const IntegrationPageWrapper = styled.section`
 		};
 	}
 
-	.integration-collection{
+	.integration-collection, .component-collection {
 		margin: 2rem auto;
 		max-width: 1200px;
 		
