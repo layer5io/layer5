@@ -28,8 +28,8 @@ const NavigationWrap = styled.header`
       margin-right: 10px;
     }
     .avatar-container {
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       border-radius: 50%;
       overflow: hidden;
       border: 2px solid ${(props) => props.theme.primaryColor};
@@ -696,7 +696,7 @@ const NavigationWrap = styled.header`
   }
   .dark-theme-toggle {
     /* margin-left: 2rem; */
-    visibility: ${(props) => props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+    visibility: ${(props) => typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {

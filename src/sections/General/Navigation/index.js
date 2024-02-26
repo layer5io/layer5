@@ -77,12 +77,12 @@ const Navigation = () => {
   const dropDownRef = useRef();
   const navWrapRef = useRef();
   useEffect(() => {
-    const PLAYGROUND_USER_API =
+    const CLOUD_USER_API =
       "https://meshery.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
         const token = Cookie.get("provider_token");
-        const response = await axios.get(PLAYGROUND_USER_API, {
+        const response = await axios.get(CLOUD_USER_API, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
