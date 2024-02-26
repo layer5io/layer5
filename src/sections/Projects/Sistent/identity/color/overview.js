@@ -1,13 +1,15 @@
 import React from "react";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.svg";
+import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.svg";
 import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.svg";
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.svg";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.svg";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.svg";
-import TocPagination from "../../../../../components/handbook-navigation/TocPagination";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const ColorOverview = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <div className="main-content">
       <p>
@@ -87,7 +89,10 @@ const ColorOverview = () => {
       </p>
       <Row Hcenter className="image-container">
         <Col md={8} lg={8} sm={12}>
-          <img src={TonalPallete} alt="Tonal Palette" />
+          <img
+            src={isDark ? TonalPalleteDark : TonalPallete}
+            alt="Tonal Palette"
+          />
         </Col>
       </Row>
       <a id="Layer Hirarchy">
