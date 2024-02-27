@@ -28,6 +28,7 @@ const NavigationWrap = styled.header`
       margin-right: 10px;
     }
     .avatar-container {
+      cursor: pointer;
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
@@ -115,6 +116,9 @@ const NavigationWrap = styled.header`
       .dark-theme-toggle {
         margin-left: 0.5em;
         margin-bottom: 3em;
+      }
+      .dropDown-content {
+        top: 2rem;
       }
     }
   }
@@ -256,6 +260,41 @@ const NavigationWrap = styled.header`
       }
     }
   }
+  .dropDown {
+    float: left;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-left: 10rem;
+  }
+  .dropDown-content {
+    display: none;
+    position: absolute;
+    background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
+    min-width: 160px;
+    box-shadow: rgba(0, 179, 159, 0.5) 0px 5px 10px 1px;
+    z-index: 1;
+  }
+  .drop-item {
+    cursor: pointer;
+    color: ${(props) => props.theme.text};
+    line-height: 1.5rem;
+    font-size: 15px;
+  }
+  .dropDown-content a {
+    float: none;
+    color: ${(props) => props.theme.text};
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropDown-content a:hover {
+    color: ${(props) => props.theme.menuHoverColor};
+  }
+
   @keyframes nav-bar-anim {
     0% {
       opacity: 0;

@@ -71,9 +71,14 @@ const Navigation = () => {
 
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({
+    first_name: "Akshay",
+    avatar_url:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP_xRbyejmyqX9vxRHCtGbcdKHB_XgacKfNkLs9ljPtw1xVDhFDtPTIDx33Zwr0lQwGmQ&usqp=CAU",
+  });
   const dropDownRef = useRef();
   const navWrapRef = useRef();
   useEffect(() => {
@@ -263,17 +268,41 @@ const Navigation = () => {
         </div>
         <div className="meshery-cta">
           {userData ? (
-            <div className="avatar-container">
-              <a
-                href={`https://playground.meshery.io/user/${userData.id}`}
-                style={{ display: "contents" }}
+            <div className="dropDown">
+              <button
+                className="avatar-container"
+                onClick={() => setDropDown((prev) => !prev)}
               >
                 {userData.avatar_url ? (
                   <img src={userData.avatar_url} alt={userData.first_name} />
                 ) : (
                   <DefaultAvatar className="default_avatar" />
                 )}
-              </a>
+              </button>
+              <div
+                className={"dropDown-content"}
+                style={{ display: `${dropDown ? "block" : "none"}` }}
+              >
+                <a
+                  className="drop-item"
+                  href={`https://meshery.layer5.io/user/${userData.id}`}
+                >
+                  Cloud
+                </a>
+                <a className="drop-item" href="https://playground.meshery.io">
+                  Playground
+                </a>
+                <a
+                  onClick={() => {
+                    sessionStorage.clear();
+                    localStorage.clear();
+                  }}
+                  className="drop-item"
+                  href="https://meshery.layer5.io/user/logout"
+                >
+                  Logout
+                </a>
+              </div>
             </div>
           ) : (
             <Button
@@ -288,16 +317,18 @@ const Navigation = () => {
             />
           )}
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}
-          <Button
-            id="book-a-demo"
-            aria-label="Meshery Playground"
-            $secondary
-            className="banner-btn book-a-demo"
-            $external={true}
-            title="Playground"
-            alt="Meshery Playground"
-            $url="https://playground.meshery.io"
-          />
+          {!userData && (
+            <Button
+              id="book-a-demo"
+              aria-label="Meshery Playground"
+              $secondary
+              className="banner-btn book-a-demo"
+              $external={true}
+              title="Playground"
+              alt="Meshery Playground"
+              $url="https://playground.meshery.io"
+            />
+          )}
           <div className="dark-theme-toggle">
             <input
               id="toggle"
