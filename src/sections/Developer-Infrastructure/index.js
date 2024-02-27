@@ -11,7 +11,7 @@ const KubernetesMultiCluster = () => {
   let data = {
     heading: "Developer-defined Infrastructure",
     sub_heading:
-      "Cloud-native application and infrastructure management software that empowers organizations to expect more from their infrastructure.",
+      "Cloud Native application and infrastructure management software that empowers organizations to expect more from their infrastructure.",
     image: comments_svg,
   };
 
@@ -44,7 +44,7 @@ const KubernetesMultiCluster = () => {
           <div>
             <h2 className={"use-heading"}>
               {" "}
-              Seamless Deployment Across Multiple Kubernetes Clusters for Every Meshery Design {" "}
+              Seamless Deployment Across Multiple Kubernetes Clusters {" "}
             </h2>
           </div>
           <div className={"collaboration_display"}>
