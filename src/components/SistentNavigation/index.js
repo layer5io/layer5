@@ -82,6 +82,15 @@ const TOC = () => {
                       Spacing
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/identity/typography"
+                      className="toc-sub-heading toc-sub-inline identity-item"
+                      activeClassName="active"
+                    >
+                      Typography
+                    </Link>
+                  </li>
                 </div>
               )}
             </div>
