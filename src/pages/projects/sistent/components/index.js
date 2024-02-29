@@ -1,5 +1,5 @@
 import React from "react";
-import SistentComponents from "../../../sections/Projects/Sistent/components";
+import SistentComponents from "../../../../sections/Projects/Sistent/components";
 
 const SistentComponentsPage = () => {
   return <SistentComponents />;
