@@ -9,10 +9,38 @@ import { SpacingOverview } from "./overview";
 import { SpacingGuidance } from "./guidance";
 import { SpacingCode } from "./code";
 
-const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
+const overviewContents = [
+  { id: 0, link: "#The Basics", text: "The Basics" },
+  { id: 1, link: "#Scaling", text: "Scaling" },
+  { id: 2, link: "#Text and Spacing", text: "Text and Spacing" },
+];
 
+const guidanceContent = [
+  { id: 0, link: "#Spatial Organization", text: "Spatial Organization" },
+  {
+    id: 1,
+    link: "#Space Application Considerations",
+    text: "Space Application Considerations",
+  },
+];
+
+const codeContent = [
+  { id: 0, link: "#Primitive Category", text: "Primitive Category" },
+  { id: 1, link: "#Semantic Category", text: "Semantic Category" },
+];
 const SistentIdentitySpacing = () => {
   const [activeTab, setActiveTab] = useState("overview");
+
+  const contents = () => {
+    if (activeTab === "overview") {
+      return overviewContents;
+    } else if (activeTab === "guidance") {
+      return guidanceContent;
+    } else if (activeTab === "code") {
+      return codeContent;
+    }
+  };
+
   return (
     <SistentWrapper>
       <div className="page-header-section">
@@ -53,7 +81,7 @@ const SistentIdentitySpacing = () => {
             <SistentPagination />
           </div>
         </Container>
-        <IntraPage contents={contents} />
+        <IntraPage contents={contents()} />
       </div>
     </SistentWrapper>
   );

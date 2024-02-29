@@ -1,6 +1,13 @@
 import React from "react";
 
+import SpaceTokenTable1 from "../../../../../assets/images/app/projects/sistent/space-token-table-1-light.png";
+import SpaceTokenTable1Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-1-dark.png";
+
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { Col, Row } from "../../../../../reusecore/Layout";
+
 export const SpacingOverview = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <div className="main-content">
       <p>
@@ -64,6 +71,38 @@ export const SpacingOverview = () => {
         scale to account for much smaller space considerations, for example,
         icon padding. The half and quarter steps have values of two and four
         respectively.
+      </p>
+      <Row Hcenter className="image-container">
+        <Col md={8} lg={8} sm={12}>
+          <img
+            src={isDark ? SpaceTokenTable1Dark : SpaceTokenTable1}
+            alt="Space Token Table"
+          />
+        </Col>
+      </Row>
+      <p>
+        From this scale of multiples of eight, space values for different
+        purposes can now be selected for use in an interface raging from gap
+        between elements on a page to size of elements, to corner radiuses and
+        other space considerations.
+      </p>
+      <a id="Text and Spacing">
+        <h2>Text and Spacing</h2>
+      </a>
+      <p>
+        One factor that should be accounted for when sorting out spacing and
+        other considerations for spatial harmony is text size. Mostly this
+        affects the stack spacing values and their arrangement. Having all text
+        sizes in a multiple of the base spacing value is a principle that can
+        help to avoid inconsistent looking text and space across an interface.
+        This should also be the same for the line height that accompanies these
+        text sizes.
+      </p>
+      <p>
+        Mostly, the text is arranged in a pattern that takes into consideration
+        the line height of the different sizes of text used in order to
+        represent proper hierarchy and relationships between text content in an
+        interface.
       </p>
     </div>
   );
