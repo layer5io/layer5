@@ -20,10 +20,12 @@ export const HoneycombGrid = styled.div`
   }
 
   /* Media query for screens with maximum width of 320px */
-  @media (max-width: 334px) {
+  @media (max-width: 335px) {
     ul {
+      height: ${(props) =>
+    props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`};
       li {
-        width: 100px; /* Change to 15opx */
+        width: 100px; 
         margin-top: 0px;
         margin-right: 1px;
         height: calc(100px * 1.1547);
