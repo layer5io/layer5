@@ -29,7 +29,7 @@ const SistentComponents = () => {
     componentsData,
     setSearchQuery,
     searchQuery,
-    ["name", "description"],
+    ["name"],
     "id"
   );
 
