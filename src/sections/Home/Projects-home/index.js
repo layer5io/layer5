@@ -38,7 +38,7 @@ const Projects = () => {
         <Row>
           <div className="project__block__wrap">
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/cloud-native-management/meshmap">
+              <Link className="project-card" to="/products/meshmap">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
                   <p>MeshMap</p>
@@ -48,7 +48,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/cloud-native-management/meshery">
+              <Link className="project-card" to="/products/meshery">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
                   <p>Meshery</p>

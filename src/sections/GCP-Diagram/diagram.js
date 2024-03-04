@@ -172,7 +172,7 @@ const Gcp = () => {
             <p className="caption">
               MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/products/meshmap/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -220,7 +220,7 @@ const Gcp = () => {
               Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
               <br />
               <br />
-              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
+              <a className="link" href="/products/meshmap/design">Learn more &rarr;</a>
             </p>
           </Col>
         </Row>

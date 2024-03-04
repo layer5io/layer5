@@ -139,7 +139,7 @@ const MesheryFeatures = () => {
               title: "Meshery Operator",
               description: "",
               learnMoreLink:
-                "/cloud-native-management/meshery/meshery-operator",
+                "/products/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />

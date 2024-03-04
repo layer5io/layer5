@@ -5,26 +5,26 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/meshmap",
+      path: "/products/meshmap",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
-          path: "/cloud-native-management/meshmap",
+          path: "/products/meshmap",
           sepLine: true
         },
         {
           name: "Cloud Native Deployments by Diagram",
-          path: "/cloud-native-management/meshmap/design",
+          path: "/products/meshmap/design",
           sepLine: true
         },
         {
           name: "Kubernetes Multi-cluster Operation",
-          path: "/cloud-native-management/meshmap/visualize",
+          path: "/products/meshmap/visualize",
           sepLine: true
         },
         {
           name: "Collaborative GitOps",
-          path: "/cloud-native-management/meshmap/collaborate",
+          path: "/products/meshmap/collaborate",
           sepLine: true
         },
         {
@@ -85,12 +85,12 @@ const Data = {
       subItems: [
         {
           name: "Meshery",
-          path: "/cloud-native-management/meshery",
+          path: "/products/meshery",
           sepLine: true
         },
         {
           name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
+          path: "/products/meshmap",
         },
         // {
         //   name: "---",
@@ -135,7 +135,7 @@ const Data = {
     },
     {
       name: "Integrations",
-      path: "/cloud-native-management/meshery/integrations"
+      path: "/products/meshery/integrations"
     },
     // {
     //   name: "Learn",

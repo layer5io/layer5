@@ -29,7 +29,7 @@ export default function DesignerFeatures({ features }) {
     <DesignerFeaturesWrapper>
       <Container className="designer-container">
         <div className="root design-trigger-container">
-          <Link to="/cloud-native-management/meshmap/design">
+          <Link to="/products/meshmap/design">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Design</h1>
               <div className="learn-more">
@@ -39,7 +39,7 @@ export default function DesignerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border" >
-            <Link to="/cloud-native-management/meshmap/design">
+            <Link to="/products/meshmap/design">
               <div className="diagram scroll hideInMobile">
                 <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>

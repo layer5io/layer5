@@ -18,7 +18,7 @@ export const Categories = {
     "Heading": "MeshMap is here!",
     "Content": "Design your deployments the way you want. Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations. Have your cloud native deployments automatically diagrammed. Deployments configured and modeled in Designer mode, can be deployed into your environment and managed using Visualizer. Discover a catalog of best practice cloud native patterns",
     "Button_Text": "Try MeshMap now!",
-    "Link": "/cloud-native-management/meshmap",
+    "Link": "/products/meshmap",
     "Link_external": false
   },
   "Docker": {

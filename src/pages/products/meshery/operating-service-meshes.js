@@ -51,7 +51,7 @@ const OperatingServiceMeshes = () => {
                   <div>
                     <p>MeshMap enables all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
                       Designing and configuring your service mesh is as easy as dragging and dropping.</p>
-                    <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p>
+                    <p>Learn more about <a href="https://layer5.io/products/meshmap">MeshMap</a></p>
                   </div>,
             },
             {

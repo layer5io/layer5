@@ -43,7 +43,7 @@ const ProjectPage = () => {
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/cloud-native-management/meshery" className="project__card two">
+            <Link to="/products/meshery" className="project__card two">
               <div className="project__card-container project__card-container_meshery">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
@@ -56,7 +56,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/meshmap"
+              to="/products/meshmap"
               className="project__card four"
             >
               <div className="project__card-container">

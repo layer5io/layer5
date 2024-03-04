@@ -164,7 +164,7 @@ const CardsData = [
     icon: [codicon, desktop],
     text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native infrastucture.",
     //as there is no soluton page.
-    url: "/cloud-native-management/meshmap"
+    url: "/products/meshmap"
   },
   {
     id: 2,
@@ -172,7 +172,7 @@ const CardsData = [
     title: "Meshery",
     icon: ["",desktop],
     text: "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud native infrastructure.",
-    url: "/cloud-native-management/meshery"
+    url: "/products/meshery"
   },
   {
     id: 3,

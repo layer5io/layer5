@@ -34,7 +34,7 @@ const Banner2 = (props) => {
               <Button primary className="banner-btn one" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
-              <Button primary className="banner-btn two" title="See Meshery" url="/cloud-native-management/meshery">
+              <Button primary className="banner-btn two" title="See Meshery" url="/products/meshery">
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </VintageBox>
