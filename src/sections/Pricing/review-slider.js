@@ -15,6 +15,7 @@ import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
+import Patrick from "./reviews/patrick-steinig.jpeg";
 
 
 const settings = {
@@ -182,7 +183,13 @@ const Reviews = () => {
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex}
           />
-
+          <Customers
+            type="3"
+            quote="Visualization is a great idea for complex environments!"
+            person="Patrick Steinig"
+            title="Platform Engineering, HDI Group"
+            image={Patrick}
+          />
         </Slider>
       </div>
     </ReviewsWrapper>
