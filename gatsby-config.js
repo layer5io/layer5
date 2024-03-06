@@ -509,6 +509,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        path: `${__dirname}/src/collections/use-cases`,
+        name: "use-cases",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "integration-images",
         path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
       },
