@@ -15,7 +15,7 @@ import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
-import Hein from "./reviews/hein.webp";
+import Patrick from "./reviews/patrick-steinig.jpeg";
 
 
 const settings = {
@@ -185,12 +185,11 @@ const Reviews = () => {
           />
           <Customers
             type="3"
-            quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
-            person="Hein Htet Win"
-            title="MeshMap User"
-            image={Hein}
+            quote="Visualization is a great idea for complex environments!"
+            person="Patrick Steinig"
+            title="Platform Engineering, HDI Group"
+            image={Patrick}
           />
-
         </Slider>
       </div>
     </ReviewsWrapper>
