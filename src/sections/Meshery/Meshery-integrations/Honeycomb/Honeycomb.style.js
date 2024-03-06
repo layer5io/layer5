@@ -34,7 +34,7 @@ export const HoneycombGrid = styled.div`
   @media (max-width: 335px) {
     ul {
       height: ${(props) =>
-    props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`};
+    props.height === 0 ? "unset" : `calc(${props.heightforSmall}px + 15px)`};
       li {
         width: 100px; 
         margin-top: 0px;
