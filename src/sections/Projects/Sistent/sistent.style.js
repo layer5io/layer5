@@ -303,6 +303,7 @@ const SistentWrapper = styled.div`
     .page-section {
       margin-top: -2rem;
       margin-left: 0rem;
+      padding: 1rem 1rem;
     }
     table {
       margin-left: -1.5rem;
@@ -788,6 +789,32 @@ const SistentWrapper = styled.div`
     }
     .iconss img {
       width: 20px;
+    }
+  }
+
+  .showcase {
+    border: 1px solid ${(props) => props.theme.whiteToGreyE6E6E6};
+    margin: 0.8rem 0 2.5rem 0;
+    border-radius: 10px;
+    .items {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem;
+    }
+
+    .show-code {
+      border-top: 1px solid ${(props) => props.theme.whiteToGreyE6E6E6};
+      padding: 0.7rem 1rem;
+    }
+
+    .code {
+      font-size: 0.9rem;
+    }
+
+    .size-button {
+      margin-right: 1rem;
     }
   }
 `;

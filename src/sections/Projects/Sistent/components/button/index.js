@@ -17,14 +17,14 @@ const overviewContents = [
 ];
 
 const guidanceContents = [
-  { id: 0, link: "#Tonal Palettes", text: "Tonal Palettes" },
-  { id: 1, link: "#Basic Colors", text: "Basic Colors" },
-  { id: 2, link: "#Token Specification", text: "Token Specification" },
+  { id: 0, link: "#Function", text: "Function" },
+  { id: 1, link: "#Labeling", text: "Labeling" },
 ];
 
 const codeContents = [
-  { id: 0, link: "#Primitive Category", text: "Primitive Category" },
-  { id: 1, link: "#Semantic Category", text: "Semantic Category" },
+  { id: 0, link: "#Basic Button", text: "Basic Button" },
+  { id: 1, link: "#Sizes", text: "Sizes" },
+  { id: 1, link: "#Adding Icons", text: "Adding Icons" },
 ];
 
 const SistentButton = () => {
