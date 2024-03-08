@@ -24,12 +24,12 @@ const IndexPage = () => {
     <>
       <Banner />
       <FeaturesContainer />
-      <Integrations />
+      {/* <Integrations /> */}
       <Partners />
-      <CornerPopup/>
+      <CornerPopup />
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
-      <MesheryIntegration  />
+      <MesheryIntegration />
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -40,11 +40,10 @@ const IndexPage = () => {
       {/*<ContactCard />*/}
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
-      <CaseStudyBanner/>
+      <CaseStudyBanner />
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
-
     </>
   );
 };
