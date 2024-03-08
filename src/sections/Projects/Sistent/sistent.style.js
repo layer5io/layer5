@@ -442,8 +442,18 @@ const SistentWrapper = styled.div`
     }
   }
 
-  .learn {
-    width: 10rem;
+  .learn-more {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .icon {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: ${(props) => props.theme.whiteToBlack};
+    }
   }
 
   .writing_program {
@@ -683,9 +693,7 @@ const SistentWrapper = styled.div`
     cursor: pointer;
     color: ${(props) => props.theme.whiteToBlack};
     &:hover {
-      text-decoration: underline;
-      text-decoration-color: ${(props) => props.theme.secondaryColor};
-      text-underline-offset: 8px;
+      border-bottom: 1px solid ${(props) => props.theme.secondaryColor};
     }
   }
   .btns Button {

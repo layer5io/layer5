@@ -5,6 +5,7 @@ import TOC from "../../../../components/SistentNavigation";
 import SistentPagination from "../../../../components/SistentNavigation/pagination";
 import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 
 const componentsData = [
   {
@@ -68,7 +69,12 @@ const SistentComponents = () => {
                     <div>
                       <div className="card_bottom">
                         <a className="learn" href={comp.url}>
-                          Learn more
+                          <div className="learn-more">
+                            <div>Learn more</div>
+                            <div className="icon">
+                              <FaArrowRight />
+                            </div>
+                          </div>
                         </a>
                       </div>
                     </div>
