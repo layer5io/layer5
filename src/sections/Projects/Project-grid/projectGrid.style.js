@@ -436,7 +436,7 @@ export const ProjectWrapper = styled.div`
 
     .project__card.sistent img {
       margin-top: 0px;
-      margin-bottom: 0px;
+      margin-bottom: 0 px;
     }
 
     .project__card.seven {

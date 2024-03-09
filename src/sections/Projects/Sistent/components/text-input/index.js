@@ -6,12 +6,12 @@ import SistentPagination from "../../../../../components/SistentNavigation/pagin
 import TabButton from "../../../../../reusecore/Button";
 import IntraPage from "../../../../../components/handbook-navigation/intra-page";
 
-import { ButtonOverview } from "./overview";
-import { ButtonGuidance } from "./guidance";
-import { ButtonCode } from "./code";
+import { TextInputOverview } from "./overview";
+import { TextInputGuidance } from "./guidance";
+import { TextInputCode } from "./code";
 
 const overviewContents = [
-  { id: 0, link: "#Types", text: "Types" },
+  { id: 0, link: "#Design", text: "Design" },
   { id: 1, link: "#Sizes", text: "Sizes" },
   { id: 2, link: "#Adding Icons", text: "Adding Icons" },
 ];
@@ -27,7 +27,7 @@ const codeContents = [
   { id: 1, link: "#Adding Icons", text: "Adding Icons" },
 ];
 
-const SistentButton = () => {
+const SistentTextInput = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   const contents = () => {
@@ -50,12 +50,14 @@ const SistentButton = () => {
         <Container>
           <div className="content">
             <a id="Identity">
-              <h2>Button</h2>
+              <h2>Text Input</h2>
             </a>
             <p>
-              Colors when accurately applied can be a potent tool that enables
-              designers and developers to implement solutions with speed and
-              efficiency. Here are a couple of things to keep in mind.
+              Text inputs are important elements that help users interact with
+              an experience by providing text commands that will in turn return
+              expected results. These commands can range from providing a free
+              range of personal information to entering a limited number of
+              characters for a use case.
             </p>
             <div className="filterBtns">
               <TabButton
@@ -74,9 +76,9 @@ const SistentButton = () => {
                 title="Code"
               />
             </div>
-            {activeTab === "overview" && <ButtonOverview />}
-            {activeTab === "guidance" && <ButtonGuidance />}
-            {activeTab === "code" && <ButtonCode />}
+            {activeTab === "overview" && <TextInputOverview />}
+            {activeTab === "guidance" && <TextInputGuidance />}
+            {activeTab === "code" && <TextInputCode />}
           </div>
           <SistentPagination />
         </Container>
@@ -86,4 +88,4 @@ const SistentButton = () => {
   );
 };
 
-export default SistentButton;
+export default SistentTextInput;
