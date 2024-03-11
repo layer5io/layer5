@@ -7,7 +7,6 @@ import Button from "../../../reusecore/Button";
 import { Container } from "../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import axios from "axios";
-import Cookie from "js-cookie";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
@@ -15,10 +14,12 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
-
 import NavigationWrap from "./navigation.style";
 import DefaultAvatar from "./utility/DefaultAvatar.js";
-
+import CloudIcon from "./utility/CloudIcon.js";
+import LogoutIcon from "./utility/LogoutIcon.js";
+// import LogoutIcon from "./utility/LogoutIcon.js";
+import MeshMapIcon from "./utility/MeshMapIcon.js";
 const Navigation = () => {
   let data = useStaticQuery(
     graphql`{
@@ -74,19 +75,26 @@ const Navigation = () => {
   const [dropDown, setDropDown] = useState(false);
   const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
-  const [userData, setUserData] = useState({
-    first_name: "Akshay",
-    avatar_url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP_xRbyejmyqX9vxRHCtGbcdKHB_XgacKfNkLs9ljPtw1xVDhFDtPTIDx33Zwr0lQwGmQ&usqp=CAU",
-  });
+  const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
+  function getCookieValue(cookieName) {
+    const cookies = document.cookie.split(";");
+
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim(); // Remove whitespace
+      if (cookie.indexOf(cookieName + "=") === 0) {
+        return cookie.substring(cookieName.length + 1);
+      }
+    }
+    return null;
+  }
   useEffect(() => {
     const CLOUD_USER_API =
       "https://meshery.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
-        const token = Cookie.get("provider_token");
+        const token = getCookieValue("provider_token");
         const response = await axios.get(CLOUD_USER_API, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -98,7 +106,6 @@ const Navigation = () => {
         }
 
         const data = response.data;
-        console.log(data, "here");
         setUserData(data);
       } catch (error) {
         console.error("There was a problem with your fetch operation:", error);
@@ -287,20 +294,22 @@ const Navigation = () => {
                   className="drop-item"
                   href={`https://meshery.layer5.io/user/${userData.id}`}
                 >
-                  Cloud
+                  <CloudIcon /> Cloud
                 </a>
                 <a className="drop-item" href="https://playground.meshery.io">
-                  Playground
+                  <MeshMapIcon /> Playground
                 </a>
                 <a
                   onClick={() => {
                     sessionStorage.clear();
                     localStorage.clear();
                   }}
+                  rel="noreferrer"
+                  target="_blank"
                   className="drop-item"
                   href="https://meshery.layer5.io/user/logout"
                 >
-                  Logout
+                  <LogoutIcon /> Logout
                 </a>
               </div>
             </div>
