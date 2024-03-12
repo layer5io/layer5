@@ -37,7 +37,13 @@ export const MemberSingleWrapper = styled.div`
       }
     }
   }
-
+  .page-heading {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    color: ${(props) => props.theme.primaryColor};
+    text-align: right;
+    font-weight: 400;
+  }
   ul {
     list-style: none;
   }
