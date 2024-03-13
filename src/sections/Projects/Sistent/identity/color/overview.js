@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.png";
-import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.svg";
+import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.png";
 import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.png";
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
