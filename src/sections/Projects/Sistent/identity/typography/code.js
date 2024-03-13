@@ -2,6 +2,7 @@ import React from "react";
 
 import TypeTable1 from "../../../../../assets/images/app/projects/sistent/type-table-1-light.png";
 import TypeTable1Dark from "../../../../../assets/images/app/projects/sistent/type-table-1-dark.png";
+
 import TypeTable2 from "../../../../../assets/images/app/projects/sistent/type-table-2-light.png";
 import TypeTable2Dark from "../../../../../assets/images/app/projects/sistent/type-table-2-dark.png";
 import { Col, Row } from "../../../../../reusecore/Layout";

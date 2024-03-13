@@ -1,16 +1,20 @@
 import React from "react";
-import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.svg";
-import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.svg";
-import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.svg";
-import FunctionColors from "../../../../../assets/images/app/projects/sistent/function-colors-table.svg";
-import TextColors from "../../../../../assets/images/app/projects/sistent/text-colors-table.svg";
-import BorderColors from "../../../../../assets/images/app/projects/sistent/border-colors-table.svg";
-import BrandColorsDark from "../../../../../assets/images/app/projects/sistent/brand-colors-table-dark.svg";
-import GreyscaleColorsDark from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table-dark.svg";
-import BgColorsDark from "../../../../../assets/images/app/projects/sistent/bg-colors-table-dark.svg";
-import FunctionColorsDark from "../../../../../assets/images/app/projects/sistent/function-colors-table-dark.svg";
-import TextColorsDark from "../../../../../assets/images/app/projects/sistent/text-colors-table-dark.svg";
-import BorderColorsDark from "../../../../../assets/images/app/projects/sistent/border-colors-table-dark.svg";
+import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.png";
+import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.png";
+import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.png";
+import FunctionColors from "../../../../../assets/images/app/projects/sistent/function-colors-table.png";
+import TextColors from "../../../../../assets/images/app/projects/sistent/text-colors-table.png";
+import BorderColors from "../../../../../assets/images/app/projects/sistent/border-colors-table.png";
+import ComponentColors from "../../../../../assets/images/app/projects/sistent/components-table.png";
+
+import BrandColorsDark from "../../../../../assets/images/app/projects/sistent/brand-colors-table-dark.png";
+import GreyscaleColorsDark from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table-dark.png";
+import BgColorsDark from "../../../../../assets/images/app/projects/sistent/bg-colors-table-dark.png";
+import FunctionColorsDark from "../../../../../assets/images/app/projects/sistent/function-colors-table-dark.png";
+import TextColorsDark from "../../../../../assets/images/app/projects/sistent/text-colors-table-dark.png";
+import BorderColorsDark from "../../../../../assets/images/app/projects/sistent/border-colors-table-dark.png";
+import ComponentColorsDark from "../../../../../assets/images/app/projects/sistent/components-table-dark.png";
+
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
@@ -99,6 +103,20 @@ const ColorCode = () => {
           <img
             width="100%"
             src={isDark ? BorderColorsDark : BorderColors}
+            alt="Border colors"
+          />
+        </Col>
+      </Row>
+      <h3>Component Colors</h3>
+      <p>
+        Tokens here are component specific and must be used only for the
+        component that they are referencing.
+      </p>
+      <Row className="image-container" Hcenter>
+        <Col md={8} lg={8} sm={12}>
+          <img
+            width="100%"
+            src={isDark ? ComponentColorsDark : ComponentColors}
             alt="Border colors"
           />
         </Col>
