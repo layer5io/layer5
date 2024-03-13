@@ -19,7 +19,7 @@ const Data = {
         },
         {
           name: "Kubernetes Multi-cluster Operation",
-          path: "/cloud-native-management/meshmap/visualize",
+          path: "/solutions/kubernetes-multi-cluster-operation",
           sepLine: true
         },
         {
