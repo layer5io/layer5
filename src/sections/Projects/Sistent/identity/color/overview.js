@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Row } from "../../../../../reusecore/Layout";
-import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.svg";
+import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.png";
 import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.svg";
-import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.svg";
-import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.svg";
-import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.svg";
-import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.svg";
+import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.png";
+import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
+import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
+import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const ColorOverview = () => {

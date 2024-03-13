@@ -5,8 +5,6 @@ import TypeScale2 from "../../../../../assets/images/app/projects/sistent/type-s
 import TypeScale2Dark from "../../../../../assets/images/app/projects/sistent/type-scale-2-dark.png";
 import TypeScale3 from "../../../../../assets/images/app/projects/sistent/type-scale-3-light.png";
 import TypeScale3Dark from "../../../../../assets/images/app/projects/sistent/type-scale-3-dark.png";
-import TypeDetails1 from "../../../../../assets/images/app/projects/sistent/type-details-1-light.png";
-import TypeDetails1Dark from "../../../../../assets/images/app/projects/sistent/type-details-1-dark.png";
 
 import { Col, Row } from "../../../../../reusecore/Layout";
 
@@ -91,12 +89,12 @@ const TypographyGuidance = () => {
         sizes. This will require exploration and multiple tests of these text
         styles in the screen sizes they are intended for and the possible use
         cases that they will account for which may have already been identified
-        at those early stages before use.
+        in the early stages before use.
       </p>
       <p>
         With these seven different text sizes derived from the type scale, we
-        have come up with ten fonts that can be applied in multiple use cases
-        and across multiple devices. This variation ensures that fonts are not
+        have come up with 13 fonts that can be applied in multiple use cases and
+        across multiple devices. This variation ensures that fonts are not
         created randomly and utilized based on individual discretion, eventually
         leading to multiple redundant fonts present in our type system. These
         fonts must be considered first for application in any use case. If the
@@ -112,33 +110,6 @@ const TypographyGuidance = () => {
         different capacities. Of course it can also include replacing an already
         existing font or creating an entirely new one to add to the type system.
       </p>
-      <h3>Heading</h3>
-      <p>
-        Headings are usually the first thing a user sees when reading a block of
-        text. The idea is for them to be concise and provide a hint of what
-        readers can expect from the accompanying body of text or an entire page.
-        It should also capture attention and encourage further exploration. They
-        can range from large hero section headings to much smaller subtitle and
-        label headings. Whatever the case, headings at different sizes can help
-        to accurately indicate hierarchy and provide guidance for any reader
-        going through a group of text.
-      </p>
-      <p>
-        Of Layer5’s ten fonts, seven of them can function as heading text and
-        ensure hierarchy for different context. For text that needs to be
-        prominent in a group of text (especially at the beginning), any one of
-        these fonts will suffice.
-      </p>
-      <h3>Paragraph</h3>
-      <p>
-        A bulk of text content is written in body or paragraph fonts. These are
-        less prominent fonts that provide more context to what brief ideas any
-        available headings may have outlined. It can also be used for short text
-        in components and when creating other interface elements due to its
-        higher legibility when compared to heading or subtitle texts. Three font
-        sizes have been earmarked to function in this capacity for the text
-        needs in Layer5 and across all of its products.
-      </p>
       <a id="Font Specification">
         <h2>Font Specification</h2>
       </a>
@@ -146,17 +117,9 @@ const TypographyGuidance = () => {
         Each font should not be a product of random choices just to have a set
         of text to work with. They should be informed decisions based on how
         they can assist to reinforce a brand, what they can be used to achieve
-        in designs, and to what extent they should be applied.
-      </p>
-      <p>
-        With these seven different text sizes derived from the type scale, we
-        have come up with ten fonts that can be applied in multiple use cases
-        and across multiple devices. This variation ensures that fonts are not
-        created randomly and utilized based on individual discretion, eventually
-        leading to multiple redundant fonts present in our type system. These
-        fonts must be considered first for application in any use case. If the
-        need arises for a new font to be added to the type system, sufficient
-        use cases have to be established to do so.
+        in designs, and to what extent they should be applied. For more
+        documentation, check out details on each font in the Code section for
+        `Typography`.
       </p>
       <h3>Heading</h3>
       <p>
@@ -185,23 +148,22 @@ const TypographyGuidance = () => {
         Three font sizes have been earmarked to function in this capacity for
         the text needs in Layer5 and across all of its products.
       </p>
+      <h3>Label</h3>
       <p>
-        Below are a list of Layer5’s fonts along with hints on how they could be
-        applied to create usable and efficient text for our interfaces. For
-        reference purposes, more documentation can be done like how frequently
-        these fonts can appear on a page, what ui elements or text content they
-        can be used for, and how to adjust some font properties to suit multiple
-        scenarios. Responsive design documentation of the chosen fonts should be
-        documented as well to govern their usage and application.
+        To highlight supplementary information for interface elements, label
+        texts can suffice. They provide extra information for users as they
+        navigate a solution. Label texts ideally do not need to be too prominent
+        hence their smaller size compared to the body text category. There are
+        two label texts available in the Sistent type system.
       </p>
-      <Row Hcenter className="image-container">
-        <Col md={10} lg={10} sm={12}>
-          <img
-            src={isDark ? TypeDetails1Dark : TypeDetails1}
-            alt="Type Details"
-          />
-        </Col>
-      </Row>
+      <h3>Code</h3>
+      <p>
+        This fonts are curated specifically for the purpose of writing code
+        across our websites and solutions. They can be used to highlight code
+        related text in designs like token values, code snippets for components
+        and any other code related application. Two fonts have been made
+        available for this purpose.
+      </p>
     </div>
   );
 };

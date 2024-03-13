@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Row } from "../../../../../reusecore/Layout";
-import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.svg";
-import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.svg";
-import ContextVisuals5 from "../../../../../assets/images/app/projects/sistent/context-visuals-5.svg";
-import ContextVisuals6 from "../../../../../assets/images/app/projects/sistent/context-visuals-6.svg";
-import ContextVisuals6Dark from "../../../../../assets/images/app/projects/sistent/context-visuals-6-dark.svg";
+import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.png";
+import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.png";
+import ContextVisuals5 from "../../../../../assets/images/app/projects/sistent/context-visuals-5.png";
+import ContextVisuals6 from "../../../../../assets/images/app/projects/sistent/context-visuals-6.png";
+import ContextVisuals6Dark from "../../../../../assets/images/app/projects/sistent/context-visuals-6-dark.png";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const ColorGuidance = () => {
