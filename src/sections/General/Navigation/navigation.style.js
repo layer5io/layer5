@@ -31,14 +31,13 @@ const NavigationWrap = styled.header`
       cursor: pointer;
       width: 2.5rem;
       height: 2.5rem;
+      display: flex;
       border-radius: 50%;
       overflow: hidden;
       border: 2px solid ${(props) => props.theme.primaryColor};
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       &:hover {
         border: 2px solid ${(props) => props.theme.secondaryColor};
-        background: px ${(props) => props.theme.highlightColor};
-        background-color: transparent;
       }
     }
 
@@ -65,11 +64,9 @@ const NavigationWrap = styled.header`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:hover {
         border: 1px solid ${(props) => props.theme.secondaryColor};
-        background: ${(props) => props.theme.highlightColor};
         background-color: transparent;
       }
       &:active {
-        /* color: #326d62; */
         color: ${(props) => props.theme.keppelColor};
         border: 1px solid ${(props) => props.theme.keppelColor};
         background-color: transparent;
@@ -119,6 +116,7 @@ const NavigationWrap = styled.header`
       }
       .dropDown-content {
         top: 2rem;
+        left: 3rem;
       }
     }
   }
@@ -269,14 +267,18 @@ const NavigationWrap = styled.header`
     margin-left: 10rem;
   }
   .dropDown-content {
-    display: none;
     position: absolute;
     background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
     min-width: 160px;
     box-shadow: rgba(0, 179, 159, 0.5) 0px 5px 10px 1px;
     z-index: 1;
+    left: 3rem;
+  }
+  .drop-item-icon {
+    margin-right: 1rem;
   }
   .drop-item {
+    display: flex;
     cursor: pointer;
     color: ${(props) => props.theme.text};
     line-height: 1.5rem;
@@ -287,8 +289,8 @@ const NavigationWrap = styled.header`
     color: ${(props) => props.theme.text};
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
     text-align: left;
+    display: flex;
   }
 
   .dropDown-content a:hover {
