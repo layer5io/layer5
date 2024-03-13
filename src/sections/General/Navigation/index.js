@@ -394,10 +394,16 @@ const Navigation = () => {
                   className="drop-item"
                   href={`https://meshery.layer5.io/user/${userData.id}`}
                 >
-                  <CloudIcon /> Cloud
+                  <div className="drop-item-icon">
+                    <CloudIcon />
+                  </div>
+                  Cloud
                 </a>
                 <a className="drop-item" href="https://playground.meshery.io">
-                  <MeshMapIcon /> Playground
+                  <div className="drop-item-icon">
+                    <MeshMapIcon />
+                  </div>
+                  Playground
                 </a>
                 <a
                   onClick={() => {
@@ -409,7 +415,10 @@ const Navigation = () => {
                   className="drop-item"
                   href="https://meshery.layer5.io/user/logout"
                 >
-                  <LogoutIcon /> Logout
+                  <div className="drop-item-icon">
+                    <LogoutIcon />
+                  </div>
+                  Logout
                 </a>
               </div>
             </div>
