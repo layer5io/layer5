@@ -33,10 +33,12 @@ const NavigationWrap = styled.header`
       height: 2.5rem;
       display: flex;
       border-radius: 50%;
+      background-color: #c5c5c5;
       overflow: hidden;
       border: 2px solid ${(props) => props.theme.primaryColor};
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       &:hover {
+        background-color: #ebebeb;
         border: 2px solid ${(props) => props.theme.secondaryColor};
       }
     }
