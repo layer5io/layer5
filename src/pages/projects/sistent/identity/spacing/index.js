@@ -1,5 +1,5 @@
 import React from "react";
-import SistentIdentitySpacing from "../../../../sections/Projects/Sistent/identity/spacing/index";
+import SistentIdentitySpacing from "../../../../../sections/Projects/Sistent/identity/spacing/index";
 
 const IdentitySpacingPage = () => {
   return <SistentIdentitySpacing />;

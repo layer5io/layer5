@@ -67,7 +67,13 @@ const TOC = () => {
                   <li>
                     <Link
                       to="/projects/sistent/identity/color"
-                      className="toc-sub-heading toc-sub-inline identity-item"
+                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/identity/color"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
                       activeClassName="active"
                     >
                       Color
@@ -76,7 +82,13 @@ const TOC = () => {
                   <li>
                     <Link
                       to="/projects/sistent/identity/spacing"
-                      className="toc-sub-heading toc-sub-inline identity-item"
+                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/identity/spacing"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
                       activeClassName="active"
                     >
                       Spacing
@@ -85,7 +97,13 @@ const TOC = () => {
                   <li>
                     <Link
                       to="/projects/sistent/identity/typography"
-                      className="toc-sub-heading toc-sub-inline identity-item"
+                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/identity/typography"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
                       activeClassName="active"
                     >
                       Typography
