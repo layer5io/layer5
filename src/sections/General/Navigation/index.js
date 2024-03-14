@@ -89,6 +89,10 @@ const Navigation = () => {
     }
     return null;
   }
+  function removeCookie(cookieName) {
+    document.cookie =
+      cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
   useEffect(() => {
     const CLOUD_USER_API =
       "https://meshery.layer5.io/api/identity/users/profile";
@@ -291,6 +295,8 @@ const Navigation = () => {
                 style={{ display: `${dropDown ? "block" : "none"}` }}
               >
                 <a
+                  rel="noreferrer"
+                  target="_blank"
                   className="drop-item"
                   href={`https://meshery.layer5.io/user/${userData.id}`}
                 >
@@ -299,7 +305,12 @@ const Navigation = () => {
                   </div>
                   Cloud
                 </a>
-                <a className="drop-item" href="https://playground.meshery.io">
+                <a
+                  rel="noreferrer"
+                  className="drop-item"
+                  href="https://playground.meshery.io"
+                  target="_blank"
+                >
                   <div className="drop-item-icon">
                     <MeshMapIcon />
                   </div>
@@ -307,13 +318,15 @@ const Navigation = () => {
                 </a>
                 <a
                   onClick={() => {
-                    sessionStorage.clear();
-                    localStorage.clear();
+                    removeCookie("provider_token");
+                    // Open logout API link in a new tab
+                    window.open("https://meshery.layer5.io/logout", "_blank");
+
+                    // Refresh the current page
+                    window.location.reload();
                   }}
                   rel="noreferrer"
-                  target="_blank"
                   className="drop-item"
-                  href="https://meshery.layer5.io/user/logout"
                 >
                   <div className="drop-item-icon">
                     <LogoutIcon />
