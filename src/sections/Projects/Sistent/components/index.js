@@ -83,7 +83,6 @@ const SistentComponents = () => {
               </div>
             </div>
           </div>
-          <SistentPagination />
         </Container>
       </div>
     </SistentWrapper>
