@@ -1,5 +1,7 @@
 import React from "react";
 import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
+
 import { Col, Row } from "../../../../../reusecore/Layout";
 import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.png";
 import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.png";
@@ -12,6 +14,7 @@ import Button from "../../../../../reusecore/Button";
 
 const ColorGuidance = () => {
   const { isDark } = useStyledDarkMode();
+  const location = useLocation();
 
   return (
     <SistentLayout title="Color">

@@ -1,5 +1,7 @@
 import React from "react";
 import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
+
 import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.png";
 import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.png";
 import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.png";
@@ -23,7 +25,7 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const ColorCode = () => {
   const { isDark } = useStyledDarkMode();
-
+  const location = useLocation();
   return (
     <SistentLayout title="Color">
       <div className="content">
