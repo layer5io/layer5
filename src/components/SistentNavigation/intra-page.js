@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { link } from "joi";
 
 const JoinCommunityWrapper = styled.div`
+  width: 18rem;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+
   @media screen and (min-width: 751px) and (max-width: 1279px) {
     display: none;
   }
@@ -54,7 +59,23 @@ const JoinCommunityWrapper = styled.div`
   }
 `;
 
-function IntraPage({ contents }) {
+function IntraPage() {
+  const [contents, setContents] = useState([]);
+
+  useEffect(() => {
+    const anchors = document.querySelectorAll(".main-content > a");
+    console.log(anchors);
+    if (anchors) {
+      setContents(
+        Array.from(anchors).map((a) => ({
+          id: a.id,
+          link: `#${a.id}`,
+          text: a.id,
+        }))
+      );
+    }
+  }, []);
+
   const [intapath, setIntapath] = useState(null);
   useEffect(() => {
     const path = window.location.pathname;
