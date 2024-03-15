@@ -819,6 +819,7 @@ const SistentWrapper = styled.div`
 
     .code {
       font-size: 0.9rem;
+      overflow: auto;
     }
 
     .size-button {

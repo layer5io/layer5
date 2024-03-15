@@ -4,6 +4,11 @@ import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
   width: 18rem;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+
   @media screen and (min-width: 751px) and (max-width: 1279px) {
     display: none;
   }
