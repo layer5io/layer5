@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "./images/background.svg";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 2rem 0;
@@ -9,6 +8,14 @@ const ProjectItemWrapper = styled.section`
         text-align: center;
         margin-bottom: 3rem;
         color: ${props => props.theme.grey737373ToGreyB3B3B3};
+    }
+    img {
+        width: 100px; 
+        display: block;
+        margin: 0 auto; 
+      }
+    .logo-meshery {
+        margin-bottom: 2rem;
     }
     .project-title {
         .section-title{
@@ -45,35 +52,7 @@ const ProjectItemWrapper = styled.section`
         padding: 0 5% 0 5%;
         width: 100%;
         margin: auto;
-    }
-    .description {
-        padding: 1rem;
-        border-radius: 1rem;
-        display: flex;
-
-        justify-content: center;
-        align-items: baseline;
-        background: ${props => props.theme.secondaryLightColor};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        .button {
-            margin: auto;
-        }
-        p {
-            display: inline;
-            text-align: center;
-            justify-content: center;
-            font-size: 1rem;
-            padding: 0 4rem;
-            margin: 0rem;
-            color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            span {
-                font-weight: 600;
-            }
-        }        
-    }
-    
-   
+    }  
 
 `;
 

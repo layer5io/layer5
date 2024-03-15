@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
-import { StaticImage } from "gatsby-plugin-image";
+import logo from "./images/meshery-icon.svg";
 import {
   ThemeManagerContext,
   ThemeManagerProvider,
@@ -19,33 +18,36 @@ const Projects = () => {
   return (
     <ProjectItemWrapper id="projects">
       <Container>
-        <Row>
-          <div className="project-title">
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="75%"
-            >
-              <h2>
-                Get Multiplayer <span>Infrastructure Management</span>
-              </h2>
-            </SectionTitle>
-          </div>
-        </Row>
-        <Row>
-          <h4 className="subtitle">
-            Explore the Cloud Native Computing Foundation's graduated,
-            incubation, and sandbox projects as well as many other popular open
-            source projects.
-          </h4>
+        <div className="logo-meshery">
+          <img src={logo} alt="catalog" />
+        </div>
 
-          <div className="banner-btn"><Button
+        <div className="project-title">
+          <SectionTitle
+            className="section-title"
+            leftAlign={true}
+            UniWidth="75%"
+          >
+            <h2>
+              Get Multiplayer <span>Infrastructure Management</span>
+            </h2>
+          </SectionTitle>
+        </div>
+
+        <h4 className="subtitle">
+          Explore the Cloud Native Computing Foundation's graduated, incubation,
+          and sandbox projects as well as many other popular open source
+          projects.
+        </h4>
+
+        <div className="banner-btn">
+          <Button
             primary
             title="Use Meshery Playground"
             external={true}
             url="https://play.meshery.io/"
-          /></div>
-        </Row>
+          />
+        </div>
       </Container>
     </ProjectItemWrapper>
   );
