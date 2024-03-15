@@ -94,6 +94,9 @@ const NavigationWrap = styled.header`
       .dark-theme-toggle {
         margin-left: 0.5em;
       }
+      .dropDown{
+        margin-left:3rem;
+      }
     }
     @media screen and (max-width: 992px) {
       right: -1rem;
@@ -118,7 +121,10 @@ const NavigationWrap = styled.header`
       }
       .dropDown-content {
         top: 2rem;
-        left: 3rem;
+        left: -6rem;
+      }
+      .dropDown{
+        margin-left:1rem;
       }
     }
   }
