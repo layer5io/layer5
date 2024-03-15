@@ -32,6 +32,7 @@ const NavigationWrap = styled.header`
       width: 2.5rem;
       height: 2.5rem;
       display: flex;
+      align-items: center;
       border-radius: 50%;
       background-color: #c5c5c5;
       overflow: hidden;
@@ -94,8 +95,8 @@ const NavigationWrap = styled.header`
       .dark-theme-toggle {
         margin-left: 0.5em;
       }
-      .dropDown{
-        margin-left:3rem;
+      .dropDown {
+        margin-left: 3rem;
       }
     }
     @media screen and (max-width: 992px) {
@@ -123,8 +124,8 @@ const NavigationWrap = styled.header`
         top: 2rem;
         left: -6rem;
       }
-      .dropDown{
-        margin-left:1rem;
+      .dropDown {
+        margin-left: 1rem;
       }
     }
   }
