@@ -282,11 +282,13 @@ const Navigation = () => {
             <div className="dropDown">
               <button
                 className="avatar-container"
+                style={{
+                  backgroundImage: `url(${userData.avatar_url})`,
+                  backgroundSize: "cover",
+                }}
                 onClick={() => setDropDown((prev) => !prev)}
               >
-                {userData.avatar_url ? (
-                  <img src={userData.avatar_url} alt={userData.first_name} />
-                ) : (
+                {!userData.avatar_url && (
                   <DefaultAvatar className="default_avatar" />
                 )}
               </button>
