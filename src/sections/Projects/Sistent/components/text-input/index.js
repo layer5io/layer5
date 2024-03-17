@@ -7,9 +7,12 @@ import { SistentThemeProvider, Input } from "@layer5/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentTextInput = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
+
   return (
     <SistentLayout title="Text Input">
       <div className="content">
@@ -77,7 +80,7 @@ const SistentTextInput = () => {
             data and receive corresponding information.
           </p>
           <Row Hcenter>
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Placeholder goes here" type="text" />
             </SistentThemeProvider>
           </Row>
@@ -100,7 +103,7 @@ const SistentTextInput = () => {
             these different resolutions.
           </p>
           <Row Hcenter>
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
                 placeholder="Placeholder goes here"
                 type="text"
@@ -115,7 +118,7 @@ const SistentTextInput = () => {
             in different capacities across these screen sizes.
           </p>
           <Row Hcenter>
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
                 placeholder="Placeholder goes here"
                 type="text"
