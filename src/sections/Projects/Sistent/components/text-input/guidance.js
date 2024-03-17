@@ -7,8 +7,10 @@ import { SistentThemeProvider, Input } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 export const TextInputGuidance = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
 
   return (
     <SistentLayout title="Text Input">
@@ -77,7 +79,7 @@ export const TextInputGuidance = () => {
             input, however, they can included when extremely necessary.
           </p>
           <Row Hcenter>
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Placeholder goes here" />
             </SistentThemeProvider>
           </Row>
@@ -88,7 +90,7 @@ export const TextInputGuidance = () => {
             of lines of text entered into the text field.
           </p>
           <Row Hcenter>
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Placeholder goes here" multiline />
             </SistentThemeProvider>
           </Row>
