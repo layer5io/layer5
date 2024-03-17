@@ -6,9 +6,11 @@ import { SistentThemeProvider, Button } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentButton = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
 
   return (
     <SistentLayout title="Button">
@@ -79,7 +81,7 @@ const SistentButton = () => {
             color in a brand’s color palette.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="Filled" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -92,7 +94,7 @@ const SistentButton = () => {
             with brand guidelines.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="outlined" label="Outlined" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -104,7 +106,7 @@ const SistentButton = () => {
             states for easier identification.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="text" label="Text" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -129,7 +131,7 @@ const SistentButton = () => {
             across these different resolutions.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="56px / 3.5rem" size="large" />
             </SistentThemeProvider>
           </Row>
@@ -140,7 +142,7 @@ const SistentButton = () => {
             in different capacities across these screen sizes.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="48px / 3rem" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -153,7 +155,7 @@ const SistentButton = () => {
           </p>
           <Row Hcenter className="image-container">
             <Col sm={12}>
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button variant="contained" label="Full width" fullWidth />
               </SistentThemeProvider>
             </Col>

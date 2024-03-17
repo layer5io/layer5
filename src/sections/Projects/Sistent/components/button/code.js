@@ -8,6 +8,7 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
   `  <SistentThemeProvider>
@@ -36,6 +37,7 @@ const codes = [
 
 export const ButtonCode = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
 
   return (
     <SistentLayout title="Button">
@@ -97,7 +99,7 @@ export const ButtonCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button variant="contained">Filled</Button>
               </SistentThemeProvider>
             </div>
@@ -109,7 +111,7 @@ export const ButtonCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button variant="outlined">Outlined</Button>
               </SistentThemeProvider>
             </div>
@@ -122,7 +124,7 @@ export const ButtonCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button variant="text">Text</Button>
               </SistentThemeProvider>
             </div>
@@ -137,7 +139,7 @@ export const ButtonCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button
                   variant="contained"
                   size="medium"
@@ -162,7 +164,7 @@ export const ButtonCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button
                   variant="contained"
                   size="medium"

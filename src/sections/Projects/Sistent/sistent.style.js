@@ -801,7 +801,7 @@ const SistentWrapper = styled.div`
   }
 
   .showcase {
-    border: 1px solid ${(props) => props.theme.whiteToGreyE6E6E6};
+    border: 1px solid ${(props) => props.theme.grey212121ToGreyF0F0F0};
     margin: 0.8rem 0 2.5rem 0;
     border-radius: 10px;
     .items {
@@ -813,7 +813,7 @@ const SistentWrapper = styled.div`
     }
 
     .show-code {
-      border-top: 1px solid ${(props) => props.theme.whiteToGreyE6E6E6};
+      border-top: 1px solid ${(props) => props.theme.grey212121ToGreyF0F0F0};
       padding: 0.7rem 1rem;
     }
 

@@ -6,9 +6,11 @@ import { Button, SistentThemeProvider } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 export const ButtonGuidance = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
 
   return (
     <SistentLayout title="Button">
@@ -78,7 +80,7 @@ export const ButtonGuidance = () => {
             button.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button
                 variant="contained"
                 label="Primary"
@@ -99,7 +101,7 @@ export const ButtonGuidance = () => {
             serves as the secondary button
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button
                 variant="outlined"
                 label="Secondary"
@@ -118,7 +120,7 @@ export const ButtonGuidance = () => {
             button.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="text" label="Tertiary" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -133,7 +135,7 @@ export const ButtonGuidance = () => {
             added to them to achieve this necessary distinction.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button color="warning" label="Call to Action" size="medium" />
             </SistentThemeProvider>
           </Row>
@@ -145,7 +147,7 @@ export const ButtonGuidance = () => {
             is required in order to proceed.
           </p>
           <Row Hcenter className="image-container">
-            <SistentThemeProvider>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button color="error" label="Danger" size="medium" />
             </SistentThemeProvider>
           </Row>
