@@ -9,7 +9,7 @@ const Data = {
       subItems: [
         {
           name: "Developer-defined Infrastructure",
-          path: "/cloud-native-management/meshmap",
+          path: "/solutions/developer-defined-infrastructure",
           sepLine: true
         },
         {
