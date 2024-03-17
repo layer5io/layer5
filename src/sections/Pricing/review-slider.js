@@ -191,6 +191,7 @@ const Reviews = () => {
             title="Platform Engineering, HDI Group"
             image={Patrick}
           />
+          <Customers
             quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
             person="Hein Htet Win"
             title="MeshMap User"
