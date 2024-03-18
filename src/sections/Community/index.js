@@ -20,7 +20,7 @@ import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
 
 const CommunityMember = "./Community-pictures/17.svg";
-const Picture = "../../Careers/Thumbnail.svg";
+const Picture = "../Careers/Thumbnail.svg";
 
 const CommunityPage = () => {
 
