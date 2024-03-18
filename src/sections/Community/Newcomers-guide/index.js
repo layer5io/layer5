@@ -222,10 +222,10 @@ const NewcomersGuide = () => {
               <h3>Recognizing Community Members</h3>
               <ol type="i">
                 <li>
-                Whether as a user or a contributor, community members are awarded badges as and when they achieve any number of different milestones throughout their journey whether that accomplishment lie within a community activity or an aspect of using or contributing to a project.
+               Community members, whether users or contributors, receive badges upon achieving various milestones throughout their journey. These milestones can be related to community activities or aspects of using or contributing to a project.
                 </li>
                 <li>
-                Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges in recognition of your achievements.{" "}
+                Every community member, whether contributing with code or not, has the opportunity to earn any number of badges in recognition of your achievements.{" "}
                 </li>
                 <li>See what badges you can earn by visiting the {" "}
                   <a
