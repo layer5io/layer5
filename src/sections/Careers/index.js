@@ -45,7 +45,7 @@ const CareersPage = () => {
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
             <div className="introImage" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <StaticImage src={Five_with_banner} alt="Five holding Layer5 banner" style={{ maxWidth: '75%', height: 'auto' }} />
+                <StaticImage src={Five_with_banner} alt="Five holding Layer5 banner" style={{ maxWidth: '60%', height: 'auto' }} />
             </div>
           </Row>
         </Container>
