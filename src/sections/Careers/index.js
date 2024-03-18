@@ -9,6 +9,7 @@ import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
 const Five_image = "../../assets/images/careers/Five.svg";
+const Five_with_banner = "./Thumbnail.svg";
 
 const CareersPage = () => {
   return (
@@ -43,12 +44,8 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-            <div className="introVideo">
-                <img
-                src="./Thumbnail.svg"
-                alt="Five"
-                width="700"
-                height="504" />
+            <div className="introImage">
+                <StaticImage src={Five_with_banner} alt="Five holding Layer5 banner" />
             </div>
           </Row>
         </Container>
