@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { link } from "joi";
 
 const JoinCommunityWrapper = styled.div`
   @media screen and (min-width: 751px) and (max-width: 1279px) {
-        display:none;
+    display: none;
   }
   .intra-page {
     position: sticky;
@@ -35,10 +36,10 @@ const JoinCommunityWrapper = styled.div`
         padding-top: 0.5rem;
       }
     }
-    @media only screen and (min-width: 1280px) and (max-width: 1350px){
-        padding-right:0rem;
-        margin-right:0rem;
-      }
+    @media only screen and (min-width: 1280px) and (max-width: 1350px) {
+      padding-right: 0rem;
+      margin-right: 0rem;
+    }
     @media only screen and (max-width: 950px) {
       width: 0;
       opacity: 0;
@@ -59,6 +60,7 @@ function IntraPage({ contents }) {
     const path = window.location.pathname;
     setIntapath(path);
   }, []);
+
   return (
     <JoinCommunityWrapper>
       <div className="intra-page">

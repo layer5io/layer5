@@ -8,7 +8,10 @@ const FeatureHeroWrapper = styled.div`
     padding: 100px 0 70px;
 
     .section-title {
-      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .whiteboard-image{
@@ -22,7 +25,8 @@ const FeatureHeroWrapper = styled.div`
 
     #whiteboard-svg {
       transition: transform 0.3s ease-out;
-      transform-origin: top center;
+      transform-origin: bottom center;
+      transform: rotateX(12deg);
     }
 
     .whiteboard-heading {
@@ -30,7 +34,7 @@ const FeatureHeroWrapper = styled.div`
       text-align: center;
       font-size: 4rem;
       font-weight: 600;
-      max-width: 768px;
+      max-width: 965px;
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -60,7 +64,7 @@ const FeatureHeroWrapper = styled.div`
     text-align: center;
     font-size: 1.75rem;
     line-height: 2.4rem;
-    max-width: 600px;
+    max-width: 965px;
     margin: 1rem auto;
     padding: 0 1rem
   }
@@ -82,7 +86,7 @@ const FeatureHeroWrapper = styled.div`
     }
 
     .whiteboard-heading{
-      font-size: 2rem !important;
+      font-size: 2.5rem !important;
     }
 
     .whiteboard-text {

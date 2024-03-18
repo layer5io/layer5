@@ -20,7 +20,7 @@ const handbookHome = () => {
         <AdventuresVol
           title="Meet Five"
           description="Join Five as he sets off in his trusty rocketship following the trail of stars to planet Meshery."
-          to="/five/vol1/mascot-five-adventure-github-stars.pdf"
+          to="/community/adventures-of-five-and-friends"
           image={vol1Img}
         />
 
