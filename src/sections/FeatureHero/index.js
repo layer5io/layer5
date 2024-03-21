@@ -8,7 +8,7 @@ const FeatureHero = (props) => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const translateY = scrollPosition / 16;
+      const translateY = scrollPosition / 8;
       const finalRotateAngle = Math.min(translateY, 12);
       scrollingImage.style.transform = `rotateX(${12 - finalRotateAngle}deg)`;
     };
