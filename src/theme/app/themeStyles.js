@@ -13,6 +13,9 @@ const lighttheme = {
   // charcoal
   primaryColor: "#3c494f",
 
+  //mesh operator bg
+  meshOperatorBG: '#00d3a9',
+
   // silver chalice (light gray)
   primaryLightColor: "#b3b3b3",
 
@@ -238,6 +241,9 @@ export const darktheme = {
   background: "#999",
   backgroundColor: "rgb(33,33,33)",
   scrollbarColor: "#00d3a9",
+
+    //mesh operator bg
+    meshOperatorBG: '#0a0a0a',
 
   // white
   primaryColor: "#FFFFFF",
