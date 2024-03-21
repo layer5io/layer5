@@ -25,8 +25,14 @@ const AboutTheAuthor = (props) => {
             </div>
             <h4>{authorInformation.frontmatter?.name}</h4>
             <p>
-              {authorInformation.frontmatter?.bio}
+              {authorInformation.frontmatter?.bio
+                ? `${authorInformation.frontmatter?.bio.slice(0, 300)}${
+                    authorInformation.frontmatter?.bio.length > 300 ? 
+                    "..." : ""
+                  }`
+                : ""}
             </p>
+
             <div className="authors-info-meshery">
               <h4>MeshMap</h4>
               <p>MeshMap is the world's only visual and collaborative designer for Kubernetes and all cloud native infrastructure.</p>
