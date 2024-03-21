@@ -17,7 +17,7 @@ import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
 import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
-
+import Anusha from "./reviews/anusha.png";
 
 const settings = {
   dots: false,
@@ -196,6 +196,13 @@ const Reviews = () => {
             person="Hein Htet Win"
             title="MeshMap User"
             image={Hein}
+          />
+          <Customers
+            type="1"
+            quote="Meshery has so many really amazing features all of which make DevOps and SRE life easy."
+            person="Anusha Sridharan"
+            title="Lead Software Engineer at Fidelity Investments"
+            image={Anusha}
           />
         </Slider>
       </div>
