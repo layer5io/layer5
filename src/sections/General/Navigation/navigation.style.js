@@ -281,7 +281,9 @@ const NavigationWrap = styled.header`
     min-width: 160px;
     box-shadow: rgba(0, 179, 159, 0.5) 0px 5px 10px 1px;
     z-index: 1;
-    left: 3rem;
+    left:-1rem;
+    top: 0;
+    border-radius: 12px;
   }
   .drop-item-icon {
     margin-right: 1rem;
