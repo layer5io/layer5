@@ -70,7 +70,7 @@ const DataCard = () => {
             </li>
             <li>
               <img src={List_Icon} alt="Performance Icon" />
-              <h5>Cost-Effective Solutions</h5>
+              <h5>Multi-player editing</h5>
             </li>
           </ul>
         </Col>
