@@ -121,8 +121,9 @@ const NavigationWrap = styled.header`
         margin-bottom: 3em;
       }
       .dropDown-content {
+        left: -3rem;
+        right: 3rem;
         top: 2rem;
-        left: -6rem;
       }
       .dropDown {
         margin-left: 1rem;
@@ -282,6 +283,9 @@ const NavigationWrap = styled.header`
     box-shadow: rgba(0, 179, 159, 0.5) 0px 5px 10px 1px;
     z-index: 1;
     left: 3rem;
+    right: -3rem;
+    top: 4.5rem;
+    border-radius: 12px;
   }
   .drop-item-icon {
     margin-right: 1rem;
