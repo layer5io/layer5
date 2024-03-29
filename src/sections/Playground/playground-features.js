@@ -85,9 +85,9 @@ const PlaygroundFeatures = () => {
       <hr style={{ width: "20%", backgroundColor: "#00b39f", height: "4px", border: "0" }} />
       <div className="feature">
         <div className="feature-text">
-          <h2>Use Whiteboarding </h2>
+          <h2>Design architecture diagrams </h2>
           <h5>The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Playground.</h5>
-          <Button url="/whiteboard" style={{ marginTop: "1.5rem" }}>
+          <Button url="/solutions/architecture-diagram" style={{ marginTop: "1.5rem" }}>
             Learn more
           </Button>
         </div>
@@ -100,7 +100,7 @@ const PlaygroundFeatures = () => {
         <div className="feature-text">
           <h2>Brainstorm with Comments </h2>
           <h5>Playground’s Designer Mode offers a powerful collaboration feature through comments.</h5>
-          <Button url="/comments" style={{ marginTop: "1.5rem" }}>
+          <Button url="/cloud-native-management/meshmap/collaborate/peer-reviews" style={{ marginTop: "1.5rem" }}>
             Learn more
           </Button>
         </div>

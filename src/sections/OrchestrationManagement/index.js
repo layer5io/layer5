@@ -1,20 +1,18 @@
 import React from "react";
 import OrchestrationWrapper from "./orchestration.style";
 import { Container } from "../../reusecore/Layout";
-import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.png";
 import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import SelfServiceAndIntegrationsGIF from "./images/self-service-and-integration.gif";
 import DeployDesignsGIF from "./images/deploy-designs.gif";
+import EnvironmentsGIF from "./images/environments.gif";
 import Validate from "./images/validate.gif";
-
-let data = {
-  heading: "Insights Visualized into Action",
-  sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
-  image: whiteboard_svg
-};
+import OrchestrationImgDark from "../../components/Features/images/orchestration.svg";
+import OrchestrationImgLight from "../../components/Features/images/orchestration-light.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import RelatedPicks from "../../components/RelatedPicks";
 
 let card_data = [
   {
@@ -28,14 +26,27 @@ let card_data = [
     image: Validate
   },
   {
-    heading: "Environment provisioning",
+    heading: "Infrastructure provisioning",
     subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
     image: DeployDesignsGIF
+  },
+  {
+    heading: "Manage resources with Environment",
+    subtitle: "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
+    image: EnvironmentsGIF
   },
 
 ];
 
 const Orchestration = () => {
+  const { isDark } = useStyledDarkMode();
+  const data = {
+    heading: "Insights Visualized into Action",
+    sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
+    image: isDark ? OrchestrationImgDark : OrchestrationImgLight
+  };
+
+
   return (
     <OrchestrationWrapper>
       <FeatureHero data={data} />
@@ -52,6 +63,7 @@ const Orchestration = () => {
           </div>
         </div>
       </Container>
+      <RelatedPicks heading="self" />
       <Partners />
       <SeeYou />
     </OrchestrationWrapper>

@@ -11,11 +11,6 @@ import optimizedGIF from "./images/optimized.gif";
 import customizationGIF from "./images/customization.gif";
 import shapesAndTemplatesGIF from "./images/shapes-and-templates.gif";
 import RelatedPicks from "../../components/RelatedPicks";
-import GCPDiagramDark from "../GCP-Diagram/images/gcp-diagram-dark.svg";
-import GCPDiagramLight from "../GCP-Diagram/images/gcp-diagram-light.svg";
-import AWSDiagramDark from "../Home/FeaturesContainer/images/aws.svg";
-import AWSDiagramLight from "../Home/FeaturesContainer/images/aws-light.svg";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 let data = {
   heading: "Design Architecture Diagram Online",
   sub_heading: "Effortlessly create software architectures, application architectures and system architectures in minutes.",
@@ -48,21 +43,6 @@ let card_data = [
 
 
 const ArchitectureDiagram = () => {
-  const { isDark } = useStyledDarkMode();
-  const content = [
-    {
-      id: 1,
-      title: "GCP architecture diagram",
-      redirectLink: "/cloud-native-management/generate-gcp-architecture-diagram",
-      imgSrc: isDark ? GCPDiagramDark : GCPDiagramLight,
-    },
-    {
-      id: 2,
-      title: "AWS architecture diagram",
-      redirectLink: "/cloud-native-management/generate-aws-architecture-diagram",
-      imgSrc: isDark ? AWSDiagramDark : AWSDiagramLight,
-    }
-  ];
   return (
     <WhiteboardWrapper>
       <FeatureHero data={data} />
@@ -75,8 +55,9 @@ const ArchitectureDiagram = () => {
       </div>
       <Container>
         <div className={"feature-use-container"}>
-          <div>
-            <h2 className={"use-heading"}> Features that we provide</h2>
+          <div className={"use-heading"}>
+            <h2>Visual Tool That Get Things Done</h2>
+            <p> Not just pretty pictures. Data-linked visual apps to streamline all your efforts.</p>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
@@ -86,7 +67,7 @@ const ArchitectureDiagram = () => {
         </div>
       </Container>
 
-      <RelatedPicks content={content}/>
+      <RelatedPicks heading="design" />
       <SeeYou />
       <Partners />
     </WhiteboardWrapper>
