@@ -7,10 +7,16 @@ const FeatureHero = (props) => {
     const scrollingImage = document.getElementById("whiteboard-svg");
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const translateY = scrollPosition / 16;
-      const finalRotateAngle = Math.min(translateY, 12);
-      scrollingImage.style.transform = `rotateX(${12 - finalRotateAngle}deg)`;
+      const imageRect = scrollingImage.getBoundingClientRect();
+      const isImageAtTop = imageRect.top <= 110;
+
+      if (isImageAtTop) {
+        const scrollPosition = window.scrollY;
+        const translateY = -scrollPosition / 50;
+        scrollingImage.style.transform = `rotateX(${translateY}deg)`;
+      } else {
+        scrollingImage.style.transform = null;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,7 +36,7 @@ const FeatureHero = (props) => {
           <Button
             primary
             title="Try Now!"
-            url="https://play.meshery.io"
+            url="https://meshery.layer5.io"
             external={true}
           />
         </div>
