@@ -22,7 +22,7 @@ const TwoColLayout = () => {
     <Section>
       <Container>
         <ImageWrapper ref={containerRef}>
-          <Link to="/architecture-diagram/design-architecture-diagram">
+          <Link to="/solutions/architecture-diagram">
             <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
           </Link>
         </ImageWrapper>
@@ -30,14 +30,14 @@ const TwoColLayout = () => {
           <h2>Visualize and Simplify Platform Engineering</h2>
           <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
-            <Link className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
-              <img src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
+            <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
+              <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
             </Link>
-            <Link className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
-              <img src={GCPLogo} width={40} />
+            <Link aria-label="gcp" className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
+              <img alt="gcp" src={GCPLogo} width={40} />
             </Link>
-            <Link className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
-              <img src={KubernetesLogo} width={40} />
+            <Link aria-label="kubernetes" className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
+              <img alt="kubernetes" src={KubernetesLogo} width={40} />
             </Link>
           </div>
         </ContentWrapper>
@@ -51,7 +51,7 @@ const TwoColLayout = () => {
         <ContentWrapper>
           <h2>Easing your Workflow Burden Collaboratively</h2>
           <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
-          <Link to="/orchestration-management">Learn more &rarr;</Link>
+          <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>
       </Container>
     </Section>

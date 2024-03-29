@@ -49,7 +49,7 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props}>
       <BGImg title="heroImage" image={pluginImage}>
-        <Row>
+        <Row style={{ marginRight: 0 }}>
           <Col sm={4} lg={6} className="section-title-wrapper text-col">
             <Container fullWidthSM>
               <SectionTitle
