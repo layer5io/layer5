@@ -62,15 +62,15 @@ const DataCard = () => {
           <ul>
             <li>
               <img src={List_Icon} alt="Performance Icon" />
-              <h5>Extensive Icon Library</h5>
+              <h5>Extensive library of integrations</h5>
             </li>
             <li>
               <img src={List_Icon} alt="Configuration Icon" />
-              <h5>User-friendly editor </h5>
+              <h5>Infrastructure orchestration</h5>
             </li>
             <li>
               <img src={List_Icon} alt="Performance Icon" />
-              <h5>Cost-Effective Solutions</h5>
+              <h5>Multi-player editing</h5>
             </li>
           </ul>
         </Col>
@@ -78,7 +78,7 @@ const DataCard = () => {
           <ul>
             <li>
               <img src={List_Icon} alt="Performance Icon" />
-              <h5>Ready-to-Use Templates</h5>
+              <h5>Ready-to-use templates</h5>
             </li>
             <li>
               <img src={List_Icon} alt="Configuration Icon" />
@@ -86,7 +86,7 @@ const DataCard = () => {
             </li>
             <li>
               <img src={List_Icon} alt="Performance Icon" />
-              <h5>Deploy with No Code</h5>
+              <h5>Operate with No Code</h5>
             </li>
           </ul>
         </Col>
