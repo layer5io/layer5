@@ -4,6 +4,7 @@ const ProjectItemWrapper = styled.section`
     padding: 0 0 2rem 0;
     overflow: hidden;
     margin-top: 4rem;
+    margin-bottom: 4rem;
     .subtitle {
         text-align: center;
         margin-bottom: 3rem;
