@@ -5,7 +5,7 @@ const FeatureHeroWrapper = styled.div`
     z-index: 3;
     width: 100%;
     position: relative;
-    padding: 100px 0 70px;
+    padding: 100px 0 0;
 
     .section-title {
       display: flex;
@@ -25,8 +25,8 @@ const FeatureHeroWrapper = styled.div`
 
     #whiteboard-svg {
       transition: transform 0.3s ease-out;
-      transform-origin: bottom center;
-      transform: rotateX(12deg);
+      transform-origin: top center;
+      transform: rotateX(0deg);
     }
 
     .whiteboard-heading {
