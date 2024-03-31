@@ -3,14 +3,10 @@ import React from "react";
 import SEO from "../../../components/seo";
 
 import Meshmap from "../../../sections/Meshmap/index";
-const MeshmapPage = ({ location }) => {
-  const params = new URLSearchParams(location.search);
-  const parameter1 = params.get("teaser");
-  return (
-    <>
-      <Meshmap teaser={parameter1 === "play"} />
-    </>
-  );
+const MeshmapPage = ({ location: { search } }) => {
+  const { teaser: parameter1 = "" } = new URLSearchParams(search);
+  const teaser = parameter1 === "play";
+  return <Meshmap teaser={teaser} />;
 };
 export default MeshmapPage;
 export const Head = () => {
