@@ -29,7 +29,7 @@
     "@emotion/styled": "^11.11.0",
     "@fullcalendar/daygrid": "^5.11.3",
     "@fullcalendar/google-calendar": "^6.1.9",
-    "@fullcalendar/interaction": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.11",
     "@fullcalendar/react": "^5.11.2",
     "@layer5/meshery-design-embed": "^0.2.0",
     "@layer5/sistent": "^0.14.13",
