@@ -4,17 +4,16 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/layer5-contributor.svg";
-import CommunityImage4 from "./community-image4.webp";
+import CommunityImage4 from "../Community-pictures/community.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
-import  badgeImage from "../../../assets/images/recognition-program/recognition-program.png";
 
-const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.webp";
+const CommunityImage2 = "../Community-pictures/five-finding-issue.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
+const FiveWorking = "../Community-pictures/five-working.png";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
@@ -83,7 +82,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col $sm={12} $lg={6}>
               <div className="finding-an-issue">
-                <CommunityImage1  alt="Community Image" />
+                <StaticImage src={CommunityImage2} alt="Five Working Image" />
               </div>
             </Col>
             <Col $sm={12} $lg={6}>
@@ -186,7 +185,7 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
             <Col $sm={12} $lg={6} className="community-img">
-              <StaticImage src={CommunityImage2} alt="Community Image" />
+              <StaticImage src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
           <Row className="step">
@@ -215,31 +214,6 @@ const NewcomersGuide = () => {
                 </a>{" "}
                 and take a look at all our <Link to="/projects">projects</Link>.
               </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={12} lg={6} style={{ marginTop: "3rem" }}>
-              <h3>Recognizing Community Members</h3>
-              <ol type="i">
-                <li>
-               Community members, whether users or contributors, receive badges upon achieving various milestones throughout their journey. These milestones can be related to community activities or aspects of using or contributing to a project.
-                </li>
-                <li>
-                Every community member, whether contributing with code or not, has the opportunity to earn any number of badges in recognition of your achievements.{" "}
-                </li>
-                <li>See what badges you can earn by visiting the {" "}
-                  <a
-                    href="https://badges.layer5.io"
-                    target="_blank" rel="noreferrer"
-                  >
-                    Layer5 badges site
-                  </a>{" "}
-                Collect the whole set!
-                </li>
-              </ol>
-            </Col>
-            <Col sm={12} lg={6} className="community-collage">
-              <img src={badgeImage} alt="Community Image" />
             </Col>
           </Row>
         </div>

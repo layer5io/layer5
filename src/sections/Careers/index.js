@@ -4,11 +4,12 @@ import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
+import Five from "../../sections/Community/Community-pictures/community.png";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Lee_and_Rigs = "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
+const Five_image = "./img/open-source.png";
+const Layer5_culture = "./img/layer5-culture.png";
 
 const CareersPage = () => {
   return (
@@ -29,7 +30,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <StaticImage src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
+            <StaticImage src={Five_image} alt="Five" />
           </div>
         </div>
         <Container>
@@ -43,15 +44,8 @@ const CareersPage = () => {
               <p><strong>You should... </strong>
                 pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-            <div className="introVideo">
-              <iframe
-                width="392"
-                height="220.5"
-                src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                loading="lazy"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen />
+            <div className="introImage">
+              <StaticImage src={Layer5_culture} alt="Five holding Layer5 banner" />
             </div>
           </Row>
         </Container>
@@ -59,7 +53,7 @@ const CareersPage = () => {
           <InternshipPage hide_heading={true} />
         </div>
 
-        <JoinCommunity image={Lee_giveaway} />
+        <JoinCommunity image={Five} />
         <Container>
           <br />
           <p className="center">Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
