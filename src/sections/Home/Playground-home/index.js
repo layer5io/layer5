@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { ReactComponent as VisualizerViews } from "../../Meshmap/Meshmap-visualize/images/visualizer-views-colorMode.svg";
-import VisualizerViewsLines from "../../Meshmap/Meshmap-visualize/images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import CommentingImageDark from "../FeaturesContainer/images/commenting.svg";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
 import prometheus from "../../../collections/integrations/prometheus/icons/color/prometheus-color.svg";
