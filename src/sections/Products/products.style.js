@@ -44,9 +44,7 @@ const ProductWrapper = styled.section`
     margin-top: 75px;
     padding: 0 1.5rem 2rem 1.5rem;
     Button {
-      color: white;
-      font-size: 1.75rem;
-      font-weight: bold;
+      font-size: 1.25rem;
     }
   }
 
