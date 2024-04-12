@@ -8,7 +8,7 @@ import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
 import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import JoinCommunity from "../Community/Join-community";
-import Button from "../../reusecore/Button";
+// import Button from "../../reusecore/Button";
 
 
 const LearnPathsPage = () => {
