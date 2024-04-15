@@ -1,0 +1,28 @@
+---
+title: Kubernetes Metrics Server
+subtitle: Collaborative and visual infrastructure as code for Kubernetes Metrics Server
+integrationIcon: icons/color/metrics-server-color.svg
+darkModeIntegrationIcon: icons/white/metrics-server-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/metrics-server
+description: Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+category: Observability and Analysis
+subcategory: Monitoring
+registrant: GitHub
+components: []
+featureList: [
+  "Fast autoscaling, collecting metrics every 15 seconds.",
+  "Resource efficiency, using 1 mili core of CPU and 2 MB of memory for each node in a cluster.",
+  "Scalable support up to 5,000 node clusters."
+]
+workingSlides: [
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: "Collaborative Infrastructure as Code"
+howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
+published: TRUE
+---
+<p>
+Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+</p>
+Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler.
