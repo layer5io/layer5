@@ -23,11 +23,12 @@ p {
     .videoText {
         flex-wrap: nowrap;
         margin: auto;
-        margin-top: 4rem;
+        margin-top: 8rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
     .introText{
-        width: 50%;
-        clear:both;
         margin-top: 9rem;
     }
     .introText h1{
