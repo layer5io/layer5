@@ -12,13 +12,13 @@ const settings = {
   initialSlide: 1,
   lazyLoad: true,
   arrows: false,
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   centerMode: true,
   variableWidth: true,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1500,
   className: "partner-slider",
   responsive: [
     {
