@@ -105,6 +105,16 @@ export const CourseOverviewWrapper = styled.div`
       font-size: 1.7rem;
     }
   }
+  .embed-designs {
+    padding: 0.5rem 0 1rem 0;
+    align-items: center;
+    h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.7rem;
+    }
+  }
 
   .service-mesh-courses {
     display: inline-flex;

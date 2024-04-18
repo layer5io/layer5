@@ -13,6 +13,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
+import EmbeddedDesign from "../../Embedded-Design/index";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const [hasBookmark, setHasBookmark] = useState(false);
@@ -137,6 +138,10 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
                 external={true}
               />
             </div> */}
+            <div className="embed-designs">
+              <h2>Embed Designs</h2>
+              <EmbeddedDesign />
+            </div>
             <DiscussCallout />
             <SubscribeLearnPath />
           </Col>
