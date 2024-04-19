@@ -3,7 +3,6 @@ import React from "react";
 import SEO from "../../../components/seo";
 import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
 
-import SMILogo from "../../../sections/Meshery/How-meshery-works/images/servicemeshinterface-icon-color.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/visual-topology.svg";
 import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/images/meshery-operator-dark.svg";
