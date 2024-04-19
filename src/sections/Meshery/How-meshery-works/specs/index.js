@@ -49,9 +49,8 @@ const HowMesheryWorksSpecs = () => {
           <img className="green-bubble" src={GreenBubble} alt="bubble" />
           <img className="yellow-bubble" src={YellowBubble} alt="bubble" />
           <div className="content">
-            <h3>Where you find a Kubernetes,
-              you’ll find a service mesh.</h3>
-            <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
+            <h3>Assess the Performance and Manage your cloud native infrastructure</h3>
+            <p>Ensuring optimal functionality and seamless operations is crucial for all infrastructure.</p>
             <VintageBox left={true} vintageTwo={true} >
               <Button $primary $url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
             </VintageBox>

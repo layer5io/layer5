@@ -9,6 +9,13 @@ const DiagramStyles = styled.section`
     fill:#00b39f;
 }
 
+.cls-3{
+  fill:#fff;
+}
+.cls-4{
+  fill:#326ce5;
+}
+
 .st0{fill:url(#SVGID_1_)}
 .st1{fill:url(#SVGID_2_)}
 .st2{fill:#2beda7}
