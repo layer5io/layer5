@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -146,8 +145,6 @@ const ViewsSectionWrapper = styled.div`
       background-color: ${(props) => props.theme.backgroundColor}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
-      //box-shadow: ${(props) =>
-        props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
     }
     // .box:hover {
     //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
