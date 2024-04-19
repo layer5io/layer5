@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
 import prometheus from "../../../collections/integrations/prometheus/icons/color/prometheus-color.svg";
@@ -145,7 +146,8 @@ const ViewsSectionWrapper = styled.div`
       background-color: ${(props) => props.theme.backgroundColor}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
+      //box-shadow: ${(props) =>
+        props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
     }
     // .box:hover {
     //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
@@ -194,7 +196,11 @@ const MeshmapVisualizerViews = () => {
             src={CommentingImageDark}
             alt=""
           /> */}
-          <div className={imageInView ? "visible container" : "not-visible container"}>
+          <div
+            className={
+              imageInView ? "visible container" : "not-visible container"
+            }
+          >
             <div className="line1">
               <div className="box">
                 <img className="boxImg" src={argocd} alt="" />
@@ -242,12 +248,12 @@ const MeshmapVisualizerViews = () => {
             networking centric curriculum featuring training on 200+
             integrations.
           </p>
-          <Link
-            className="small-card-container"
-            to="https://playground.meshery.io/"
-          >
-            Use Playground &rarr;
-          </Link>
+          <Button
+            primary
+            title="Use Playground &rarr;"
+            external={true}
+            url="https://playground.meshery.io/"
+          />
         </div>
       </div>
     </ViewsSectionWrapper>
