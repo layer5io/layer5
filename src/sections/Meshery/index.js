@@ -31,7 +31,7 @@ const MesheryPage = () => {
                 Confidently design, deploy, and operate your infrastructure and workloads with Meshery.
               </p>
               <Button $primary className="banner-btn" title="How Meshery Works"
-                $url="/cloud-native-management/meshery/operating-service-meshes">
+                $url="/cloud-native-management/meshery/operating-cloud-native-infra">
                 <GiClockwork size={21} className="button-icon" />
               </Button>
               <Button $secondary className="banner-btn" title="Run Meshery"
