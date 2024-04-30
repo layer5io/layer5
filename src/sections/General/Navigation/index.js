@@ -251,7 +251,7 @@ const Navigation = () => {
                           $secondary
                           className="banner-btn two"
                           title="Get Started"
-                          $url="https://meshery.layer5.io/registration"
+                          $url="https://meshery.layer5.io/login"
                           $external={true}
                         />
                       </li>
