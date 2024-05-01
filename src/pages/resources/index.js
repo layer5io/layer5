@@ -30,7 +30,7 @@ const MembersPage = () => {
   };
   return (
     <>
-      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml" />
+      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes" img={RssFeedIcon} feedlink="/resources/feed.xml" />
       <Container>
         <Row>
           <Col xs={12} lg={3}>
