@@ -9,6 +9,34 @@ const DiagramStyles = styled.section`
     fill:#00b39f;
 }
 
+.cls-3{
+  fill:#fff;
+}
+.cls-4{
+  fill:#326ce5;
+}
+
+.keda-1{
+  fill:none;stroke-width:30px;stroke:url(#Gradient_bez_nazwy);
+}
+.keda-2{
+  fill:#326de6;
+}
+.keda-3{
+  opacity:0.95;isolation:isolate;
+}
+.keda-4{
+  fill:#fff;
+}
+
+.helm-1{
+  fill:#0f1689;
+}
+
+.etcd-1{
+  fill:#419eda;
+}
+
 .st0{fill:url(#SVGID_1_)}
 .st1{fill:url(#SVGID_2_)}
 .st2{fill:#2beda7}

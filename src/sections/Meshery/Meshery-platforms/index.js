@@ -91,7 +91,6 @@ const supported_platforms = [
         <h3  style={{ marginTop: "20px" }}>Using kubectl</h3>
         <Code codeString={dedent`kubectl create ns meshery
         helm repo add meshery https://meshery.io/charts
-        helm install meshery-operator meshery/meshery-operator -n meshery
         helm install meshery meshery/meshery -n meshery`}
         />
       </>

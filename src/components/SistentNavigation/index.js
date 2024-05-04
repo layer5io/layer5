@@ -59,7 +59,7 @@ const TOC = () => {
                 className="toc-sub-heading identity"
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
-                Idenitity
+                Identity
                 {expandIdenity ? <IoIosArrowUp /> : <IoIosArrowDown />}
               </li>
               {expandIdenity && (
