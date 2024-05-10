@@ -419,8 +419,16 @@ export const options = [
       { id: 1, category: "Multiple Kubernetes Clusters", description: "Ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes across any number of Kubernetes clusters." },
       { id: 2, category: "Cluster Discovery", description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes." },
       { id: 3, category: "Microservices Performance", description: "Continuous visibility across all of your clusters and workloads." },
-      { id: 4, category: "Load Generation", description: "Single Load Generator: Support testing multiple endpoints simultaneously." },
-      { id: 5, category: "MeshMark", description: "Identify the cost of a specific network function." }]
+      { id: 4, category: "Load Generation", description: "Single Load Generator: Support testing multiple endpoints simultaneously. Distributed Load Generator: Support multiple Meshery clients generating load, collecting and coalescing results into a single report." },
+      { id: 5, category: "Open Policy Agent integration", description: "Ensure adherence to performance budgets with comprehensive support in Patterns. Safeguard service requests through JWT-based authorization. Enforce admission control for specific workloads, empowering seamless governance across your infrastructure." },
+      { id: 6, category: "Continuous Service Monitoring", description: "Experience uninterrupted oversight of your service quality with our Continuous Quality of Service Monitoring." },
+      { id: 7, category: "Audit Trail", description: "Log of all actions invoked by users." },
+      { id: 8, category: "mesheryctl commands", description: " Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface." },
+      { id: 9, category: "MeshMark", description: "Identify the cost of a specific network function." },
+      { id: 10, category: "Notification Center", description: "Consolidate all important updates, alerts, and messages in one centralized hub, ensuring you never miss a critical communication or task." },
+      { id: 11, category: "Screenshots", description: "Capture and share visual snapshots of your work with ease using our Screenshots feature" },
+      { id: 12, category: "Community Support", description: "Get help with most of your Meshery questions and issues in our Community Forum." },
+    ]
   },
 
   {
@@ -434,9 +442,11 @@ export const options = [
       { id: 0, category: "Dry-run", description: "Test and verify configuration changes in a separate environment." },
       { id: 1, category: "Design Reviews", description: "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere." },
       { id: 2, category: "Visual Design", description: "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads" },
-      { id: 3, category: "Performance Profiles", description: "Share performance profiles and test results with individual users or teams." },
-      { id: 4, category: "Built-in Roles", description: "Static - out of the box" },
-      { id: 5, category: "Standard Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web." }]
+      { id: 3, category: "Design versioning", description: "Easily manage and track changes to your designs with our Design Versioning feature." },
+      { id: 4, category: "Performance Profiles", description: "Share performance profiles and test results with individual users or teams." },
+      { id: 5, category: "Built-in Roles", description: "Static - out of the box" },
+      { id: 6, category: "Comparative Testing", description: "Detect real-time anomalies and Historical views: Infrastructure-centric" },
+      { id: 7, category: "Standard Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web." }]
   },
   {
     tier: "Enterprise",
@@ -452,6 +462,9 @@ export const options = [
       { id: 2, category: "Authentication: SAML", description: "Use an identity provider to manage the identities of Meshery users and applications." },
       { id: 3, category: "Self-hosted Deployment", description: "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants." },
       { id: 4, category: "Traffic Replay", description: "Visual event replay in MeshMap" },
-      { id: 5, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone." }]
+      { id: 5, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone." },
+      { id: 6, category: "Organization and Team Management", description: "Manage access to designs on a team-by-team, or individual user, basis." },
+      { id: 7, category: "Team Chat", description: "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion." },
+    ]
   },
 ];
