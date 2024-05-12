@@ -94,6 +94,7 @@
     "react-select": "^5.8.0",
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
+    "react-syntax-highlighter": "^15.5.0",
     "react-table": "^7.8.0",
     "react-tabs": "^4.2.1",
     "react-tooltip": "^4.5.1",

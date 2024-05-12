@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { docco, irBlack } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 export const CodeBlock = ({ name, code }) => {
+  const { isDark } = useStyledDarkMode();
   const [showCode, setShowCode] = useState(false);
 
   const onChange = () => {
@@ -14,9 +19,13 @@ export const CodeBlock = ({ name, code }) => {
         Show Code
       </label>
       {showCode && (
-        <pre className="code">
-          <code lang="javascript">{code}</code>
-        </pre>
+        <SyntaxHighlighter
+          language="javascript"
+          className="code"
+          style={isDark ? irBlack : docco}
+        >
+          {code}
+        </SyntaxHighlighter>
       )}
     </div>
   );

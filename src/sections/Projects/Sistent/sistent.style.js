@@ -814,12 +814,20 @@ const SistentWrapper = styled.div`
 
     .show-code {
       border-top: 1px solid ${(props) => props.theme.grey212121ToGreyF0F0F0};
-      padding: 0.7rem 1rem;
+      padding: 0;
+
+      label {
+        margin: 0.3rem 0.5rem;
+      }
     }
 
     .code {
       font-size: 0.9rem;
       overflow: auto;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding: 0.3rem 0;
+      margin: 0;
     }
 
     .size-button {
