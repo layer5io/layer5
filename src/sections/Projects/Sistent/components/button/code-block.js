@@ -1,54 +1,55 @@
-import React, { useState } from "react";
-import { Button, SistentThemeProvider } from "@layer5/sistent";
-import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import React, { useState, useRef } from "react";
+import { ReactComponent as Logo } from "../../../../../assets/images/sistent/copy-button.svg";
+import { ReactComponent as Tick } from "../../../../../assets/images/sistent/tick.svg";
 
 export const CodeBlock = ({ name, code }) => {
   const [showCode, setShowCode] = useState(false);
-  const { isDark } = useStyledDarkMode();
+
+  const codeRef = useRef(null); // Ref for code element
+
+  const [swap , setSwap]  = useState(true); // by default it is true as it need to show the copy button
 
   const onChange = () => {
     setShowCode((prev) => !prev);
   };
 
   const handleCopy = () => {
-    const codeElement = document.querySelector(".code");
-    const selection = window.getSelection();
-    const range = document.createRange();
+    const codeText = codeRef.current.innerText;
+    console.log(codeText);
 
-    range.selectNodeContents(codeElement);
-    selection.removeAllRanges();
-    selection.addRange(range);
-
-    try {
-      document.execCommand("copy");
-      // Update button text to indicate successful copy (optional)
-      const copyButton = document.querySelector(".copy-button");
-      copyButton.textContent = "Copied!";
-      setTimeout(() => {
-        copyButton.textContent = "Copy";
-      }, 2000); // Reset button text after 2 seconds
-    } catch (err) {
-      console.error("Failed to copy code:", err);
-      // Handle potential errors (optional: show an error message)
-    } finally {
-      selection.removeAllRanges(); // Clean up selection
+    if (!navigator.clipboard) {
+      console.error("Clipboard API not supported");
+      return;
     }
+
+    navigator.clipboard.writeText(codeText)
+      .then(() => {
+        setSwap((prev) => !prev);
+        setTimeout(() => {
+          setSwap((prev) => !prev);
+        }, 2000); // Reset to copy button after 2 seconds
+      });
   };
 
   return (
-    <div className="show-code" style={{ position: "relative" }}>
+    <div className="show-code" >
       <input type="checkbox" name={name} id={name} onChange={onChange} />
       <label htmlFor={name} className="label">
         Show Code
       </label>
       {showCode && (
-        <div className="code-container">
+        <div className="code-container" style ={{ position: "relative" }} >
           <pre className="code">
-            <code lang="javascript">{code}</code>
+            <code ref={codeRef} lang="javascript">{code}</code>
           </pre>
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Button className="copy-button" onClick={handleCopy} style={{ position: "absolute", top: "12px", right: "12px" }} variant="contained">COPY</Button>
-          </SistentThemeProvider>
+          <button onClick={handleCopy} style={{ backgroundColor: "transparent",  position: "absolute",  top: "0rem",  right: "1rem", border: "none" }} >
+            {
+              swap && <Logo  style={{ cursor: "pointer" }} height="1.2rem" width = "1.2rem" />
+            }
+            {
+              !swap && <Tick height="1.2rem" width = "1.2rem" />
+            }
+          </button>
         </div>
       )}
     </div>
