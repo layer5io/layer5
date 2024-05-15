@@ -53,7 +53,7 @@ const badgeListStyle = {
 };
 
 const recognitionsstyle = {
-  marginBottom: "0.5rem",
+  marginBottom: "1rem",
 };
 
 const RecognitionPage = () => {
