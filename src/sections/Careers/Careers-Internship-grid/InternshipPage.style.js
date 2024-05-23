@@ -51,23 +51,20 @@ p{
     background:  ${props => props.theme.grey212121ToGreyF5F5F5};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
 
     .text {
       height: inherit;
       width: 100%;
-      transition: all 0.4s ease-in-out;
     }
 
     h3 {
       font-weight: 500;
-      transition: transform 0.7s ease-in-out;
     }
     p {
       margin: 0.5rem 0;
       color: ${props => props.theme.whiteEightToBlackEight};
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .peek-card {
@@ -88,26 +85,22 @@ p{
       .text {
         width: 75%;
         transform: translateX(2%);
-        transition: all 0.4s ease-in-out;
+        text-align: left;
       }
 
       h3 {
         transform: translateX(2%);
         text-align: left;
-        transition: transform 0.7s ease-in-out;
       }
 
       p {
         transform: translateX(2%);
         text-align: left;
-        transition: transform 0.7s ease-in-out;
       }
       .peek-card {
         visibility: visible;
         transform: rotate(-2deg);
         opacity: 1;
-        transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out,
-          visibility 0.7s ease-in-out;
       }
     }
   }
