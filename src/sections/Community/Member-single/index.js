@@ -47,12 +47,17 @@ const MemberSingle = ({ frontmatter }) => {
       <Container>
         <div>
           <Row>
-            <div className="backBtn">
-              <Link to="/community/members">
-                <IoIosArrowDropleftCircle />
-                <h4>Go Back</h4>
-              </Link>
-            </div>
+            <Col xs={12} sm={12} lg={6}>
+              <div className="backBtn">
+                <Link to="/community/members">
+                  <IoIosArrowDropleftCircle />
+                  <h4>Go Back</h4>
+                </Link>
+              </div>
+            </Col>
+            <Col xs={12} sm={12} lg={6}>
+              <h1 className="page-heading">Layer5 Community Member</h1>
+            </Col>
           </Row>
           <Row>
             <Col xs={12} sm={12} lg={6}>

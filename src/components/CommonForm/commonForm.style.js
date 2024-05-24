@@ -106,13 +106,14 @@ margin: 1rem;
         color: ${props => props.theme.primaryColor};
       }
 
-<<<<<<< HEAD
-=======
       .options {
         color: ${props => props.theme.textColor};
       }
 
->>>>>>> c9aeeb8575c0db0a08cdff22cdf08166c42ec8e6
+      .formRight option {
+        color: black;
+      }
+
       .custom-arrow {
         background-color: white;
         width: 2rem;
