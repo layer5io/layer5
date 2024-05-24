@@ -1,6 +1,9 @@
 import React from "react";
 import FeatureHero from "../SolutionHero";
-import comments_svg from "../../assets/images/comments/comment.svg";
+import whiteboard_svg from "./images/whiteboarding.svg";
+import collaborate_svg from "./images/collaborate.svg";
+import cluster_svg from "./images/cluster.svg";
+import switcher_img from "./images/switcher.png";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./deploy.style";
@@ -12,7 +15,7 @@ const KubernetesMultiCluster = () => {
     heading: "Cloud Native Deployments by Diagram",
     sub_heading:
       "Design and Deploy your Kubernetes-based, cloud native deployments",
-    image: comments_svg,
+    image: whiteboard_svg,
   };
 
   let card_data = [
@@ -20,19 +23,19 @@ const KubernetesMultiCluster = () => {
       heading: "Bring those ideas to life",
       subtitle:
         "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
-      image: comments_svg,
+      image: switcher_img,
     },
     {
       heading: "Discover more with intuitive zoom levels",
       subtitle:
         "Effectively narrow down the focus starting from a multi cluster infrastructure to individual service mechanisms. Get more clarity, yield better outputs.",
-      image: comments_svg,
+      image: cluster_svg,
     },
     {
       heading: "Stop finger-pointing",
       subtitle:
         "Make infrastructure and application management less about finger-pointing and more about collaborating.",
-      image: comments_svg,
+      image: collaborate_svg,
     },
   ];
   return (
