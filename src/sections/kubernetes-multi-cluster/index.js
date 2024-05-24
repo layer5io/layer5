@@ -1,6 +1,8 @@
 import React from "react";
 import SolutionHero from "../SolutionHero";
-import comments_svg from "../../assets/images/comments/comment.svg";
+import cluster_img from "./images/cluster.png";
+import deploy_img from "./images/deploy.png";
+import config_img from "./images/config.png";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./kube.style";
@@ -12,7 +14,7 @@ const KubernetesMultiCluster = () => {
     heading: "Kubernetes Multi-cluster Operation",
     sub_heading:
       "Manage all of your Kubernetes clusters with the cloud native management plane, Meshery.",
-    image: comments_svg,
+    image: cluster_img,
   };
 
   let card_data = [
@@ -20,19 +22,19 @@ const KubernetesMultiCluster = () => {
       heading: "Streamlined Multi-Cluster Operations",
       subtitle:
         "Empower your workflow with Meshery's multi-context feature, enabling seamless deployment and operations across clusters while simplifying visualization for efficient management.",
-      image: comments_svg,
+      image: deploy_img,
     },
     {
       heading: "Uniform Cluster Management Made Easy",
       subtitle:
         "Meshery's intuitive context switcher allows swift selection and execution of tasks, enhancing productivity in cluster management.",
-      image: comments_svg,
+      image: cluster_img,
     },
     {
       heading: "Seamless Meshery Configuration",
       subtitle:
         "Effortlessly manage Meshery across multiple clusters through the Settings page. Add, remove, or modify clusters with ease, and fine-tune configurations to tailor Meshery's awareness to your infrastructure needs.",
-      image: comments_svg,
+      image: config_img,
     },
   ];
   return (
