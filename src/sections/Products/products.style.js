@@ -5,7 +5,7 @@ const ProductWrapper = styled.section`
     width: 100vw;
     overflow: hidden;
   }
-  
+
   .headers {
     display: flex;
     flex-direction: column;
@@ -28,36 +28,34 @@ const ProductWrapper = styled.section`
       text-align: center;
     }
   }
-  
+
   .paraInfo {
     width: 80vw;
   }
-  
-  .paras{
+
+  .paras {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
   }
-  
-  .comparison-button{
+
+  .comparison-button {
     margin-top: 75px;
-    padding: 0 1.5rem 2rem 1.5rem ;
+    padding: 0 1.5rem 2rem 1.5rem;
     Button {
-      color: white;
-      font-size: 1.75rem;
-      font-weight: bold;
+      font-size: 1.25rem;
     }
   }
-  
+
   .gap {
     padding: 5rem 20px;
   }
-  
- .bot_gap{
-  margin-bottom: 4rem;
- }
-  
+
+  .bot_gap {
+    margin-bottom: 4rem;
+  }
+
   .freeTry {
     position: relative;
     display: flex;
@@ -81,7 +79,7 @@ const ProductWrapper = styled.section`
       width: 860px;
     }
   }
-  
+
   .rotate {
     transform: rotate(-4deg);
     width: 100vw;
@@ -100,15 +98,19 @@ const ProductWrapper = styled.section`
 
   .product_hero {
     display: flex;
-    justify-content:center;
-    align-items : center;
-    background: linear-gradient(180deg, rgba(0, 211, 169, 0.10) 0%, rgba(0, 179, 159, 0.00) 100%);
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 211, 169, 0.1) 0%,
+      rgba(0, 179, 159, 0) 100%
+    );
   }
-  
+
   .product_hero_text {
     flex: 1;
     margin: 2rem;
-    margin-left:10vw;
+    margin-left: 10vw;
   }
   .product_hero_text h1 {
     font-family: Qanelas Soft;
@@ -131,26 +133,25 @@ const ProductWrapper = styled.section`
     margin: 2rem 0;
   }
   .btn {
-      display: flex;
-      gap: 40px;
-      flex-direction: row;
-    }
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+  }
   .btn Button {
     font-size: 18px;
   }
   .product_hero_img {
-   margin:1rem;
-   > img {
-    width: 35rem;
-    height: 35rem;
-    position: relative;
-    
-   }
+    margin: 1rem;
+    > img {
+      width: 35rem;
+      height: 35rem;
+      position: relative;
+    }
   }
   .heroImg path {
     filter: red;
   }
-  
+
   .product_cards {
     min-height: 100%;
   }
@@ -162,16 +163,16 @@ const ProductWrapper = styled.section`
   }
   .product_cards .card {
     width: 540px;
-height: 100%;
+    height: 100%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};
     padding: 2rem;
     margin: 2rem;
   }
-.logo {
-  max-height: 3rem;
-}
-.cards {
+  .logo {
+    max-height: 3rem;
+  }
+  .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -206,23 +207,23 @@ height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin:0;
+    margin: 0;
   }
-.learn {
+  .learn {
     font-size: 1rem;
     margin: 10px 0;
     cursor: pointer;
     color: ${(props) => props.theme.whiteToBlack};
-    &:hover { 
-        text-decoration: underline;
-        text-decoration-color: ${(props) => props.theme.secondaryColor};
-        text-underline-offset: 8px;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: ${(props) => props.theme.secondaryColor};
+      text-underline-offset: 8px;
     }
   }
   .btns Button {
     margin: 20px 0px;
     font-size: 16px;
-    margin-bottom:0;
+    margin-bottom: 0;
   }
   .iconss {
     display: flex;
@@ -230,16 +231,15 @@ height: 100%;
     position: absolute;
     right: 0;
   }
-  @media (max-width:1141px){
+  @media (max-width: 1141px) {
     .product_hero_img {
-      margin:1rem;
+      margin: 1rem;
     }
-    .product_hero_img img{
-      height:420px;
+    .product_hero_img img {
+      height: 420px;
     }
   }
-  
-  
+
   @media (max-width: 968px) {
     .product_hero {
       display: flex;
@@ -295,9 +295,9 @@ height: 100%;
       font-size: 40px;
     }
   }
-  @media (max-width: 600px){
-    .product_cards .card{
-      width:440px;
+  @media (max-width: 600px) {
+    .product_cards .card {
+      width: 440px;
     }
   }
   @media (max-width: 509px) {
@@ -353,9 +353,8 @@ height: 100%;
       width: 100%;
     }
     .product_cards .card {
-      width:280px;
+      width: 280px;
       padding: 16px;
-     
     }
     .card_head {
       margin: 0;
@@ -366,7 +365,7 @@ height: 100%;
       margin: 4px;
       font-size: 16px;
     } */
-    .btns{
+    .btns {
       scale: 0.8;
     }
     .card .text {

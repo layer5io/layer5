@@ -5,11 +5,10 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
-import PictureSlider from "./slider";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "../../assets/images/community/Lee_Workshop.webp";
+import Five from "./Community-pictures/community.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -19,8 +18,10 @@ import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../utils/useHasMounted";
 import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
+// import PictureSlider from "./slider";
 
-const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.webp";
+const CommunityMember = "./Community-pictures/five.svg";
+const Picture = "./Community-pictures/join-the-community.png";
 
 const CommunityPage = () => {
 
@@ -95,7 +96,8 @@ const CommunityPage = () => {
               <Button primary title="See our community member profiles" url="/community/members" />
             </Col>
             <Col className="slider" sm={12} lg={6}>
-              <PictureSlider />
+              <StaticImage src={Picture} alt="Five_with_banner" />
+              {/* <PictureSlider /> */}
             </Col>
           </Row>
         </div>
@@ -120,8 +122,8 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <MeshmateIcon className="meshmate-img" />
-              <Link className="meshmate-link" to="/community/meshmates">
+              <MeshmateIcon className="meshmate-img meshmate-img-transparent" />
+              <Link className="meshmate-link meshmate-link-transparent" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
                 <button className="icon" aria-label="mentorship-program">
                   <FaArrowRight />
@@ -155,7 +157,7 @@ const CommunityPage = () => {
           <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
         </Container>
       </div>
-      <JoinCommunity image={Lee_workshop} className="newcomers-join" />
+      <JoinCommunity image={Five} className="newcomers-join" />
       <Container className="Callout">
         <DiscussCallout />
         <AdventuresCallout />

@@ -15,8 +15,9 @@ import Mrittika from "./reviews/mrittika-ganguli.jpeg";
 import Liz from "./reviews/liz-rice.jpeg";
 import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
+import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
-
+import Anusha from "./reviews/anusha.png";
 
 const settings = {
   dots: false,
@@ -106,7 +107,7 @@ const Reviews = () => {
           />
           <Customers
             type="2"
-            quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
+            quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
             person="Nic Jackson"
             title="Principal Developer Advocate at HashiCorp"
             image={Nic}
@@ -185,12 +186,24 @@ const Reviews = () => {
           />
           <Customers
             type="3"
+            quote="Visualization is a great idea for complex environments!"
+            person="Patrick Steinig"
+            title="Platform Engineering, HDI Group"
+            image={Patrick}
+          />
+          <Customers
             quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
             person="Hein Htet Win"
             title="MeshMap User"
             image={Hein}
           />
-
+          <Customers
+            type="1"
+            quote="Meshery has so many really amazing features all of which make DevOps and SRE life easy."
+            person="Anusha Sridharan"
+            title="Lead Software Engineer at Fidelity Investments"
+            image={Anusha}
+          />
         </Slider>
       </div>
     </ReviewsWrapper>
