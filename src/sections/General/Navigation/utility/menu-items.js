@@ -14,12 +14,12 @@ const Data = {
         },
         {
           name: "Cloud Native Deployments by Diagram",
-          path: "/cloud-native-management/meshmap/design",
+          path: "/solutions/cloud-native-deployments-by-diagram",
           sepLine: true
         },
         {
           name: "Kubernetes Multi-cluster Operation",
-          path: "/cloud-native-management/meshmap/visualize",
+          path: "/solutions/kubernetes-multi-cluster-operation",
           sepLine: true
         },
         {
@@ -222,6 +222,11 @@ const Data = {
         {
           name: "Calendar",
           path: "/community/calendar",
+        },
+        {
+          name: "Recognition Program",
+          path: "https://badges.layer5.io",
+          sepLine: true
         },
       ],
       actionItems: [

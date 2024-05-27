@@ -2,20 +2,25 @@ import React from "react";
 import WhatAwaitsWrapper from "./what-await.styles";
 import { Row, Col } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
+import Button from "../../../reusecore/Button";
+
 
 const WhatAwaitsSection = () => {
   return (
     <WhatAwaitsWrapper>
       <Row className="what-await-section">
-        <Col sm={12} md={6} xl={4} className="what-await-section-info">
-          <h2>What Awaits you</h2>
-          <p>
-              Learning service mesh the right way. From the best
-              learning path by the experts at Layer5 and learn how
-              to mesh
-          </p>
+        <Col sm={12} md={8} xl={4} className="what-await-section-info">
+          <div className="service-mesh-patterns_text-and_button">
+            <h2>Use Cloud Native Patterns</h2>
+            <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.
+            </p>
+            <p style={{ "justifyContent": "center", "textAlign": "center" }}>
+              <Button primary title="Visit Cloud Native Patterns catalog" url="https://meshery.layer5.io/catalog" external={true} style={{ "margin": "1rem" }}/>
+              <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
+            </p>
+          </div>
         </Col>
-        <Col sm={12} md={6} xl={4} className="what-await-section-image">
+        <Col sm={12} md={8} xl={4} className="what-await-section-image">
 
           <Terminal
             lines={[

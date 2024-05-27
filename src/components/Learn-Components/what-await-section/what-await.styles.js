@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WhatAwaitsWrapper = styled.div`
     padding: 1rem;
-    margin: 1rem auto 6rem;
+    margin: 1rem auto;
 
     .what-await-section {
         margin: 0;

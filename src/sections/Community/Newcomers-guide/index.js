@@ -4,16 +4,16 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import { ReactComponent as CommunityImage1 } from "../../../assets/images/newcomers-page-images/layer5-contributor.svg";
-import CommunityImage4 from "./community-image4.webp";
+import CommunityImage4 from "../Community-pictures/community.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.webp";
+const CommunityImage2 = "../Community-pictures/five-finding-issue.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
+const FiveWorking = "../Community-pictures/five-working.png";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
@@ -82,7 +82,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col sm={12} lg={6}>
               <div className="finding-an-issue">
-                <CommunityImage1  alt="Community Image" />
+                <StaticImage src={CommunityImage2} alt="Five Working Image" />
               </div>
             </Col>
             <Col sm={12} lg={6}>
@@ -185,7 +185,7 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
             <Col sm={12} lg={6} className="community-img">
-              <StaticImage src={CommunityImage2} alt="Community Image" />
+              <StaticImage src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
           <Row className="step">

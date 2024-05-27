@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../../components/seo";
-import KubernetesMultiCluster from "../../../sections/Developer-Infrastructure";
+import KubernetesMultiCluster from "../../../sections/CloudNativeDeployments";
 
 const CloudNativeDeploymentsPage = () => {
   return <KubernetesMultiCluster />;

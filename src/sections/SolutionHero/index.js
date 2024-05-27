@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import FeatureHeroWrapper from "./featureHero.style";
 import { Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 const FeatureHero = (props) => {
   useEffect(() => {
     const scrollingImage = document.getElementById("whiteboard-svg");
@@ -35,10 +36,12 @@ const FeatureHero = (props) => {
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
           <Button
             primary
-            title="Try Now!"
-            url="https://play.meshery.io"
-            external={true}
-          />
+            className="banner-btn two"
+            title="See Meshery"
+            url="/cloud-native-management/meshery"
+          >
+            <FiDownloadCloud size={21} className="icon-left" />
+          </Button>
         </div>
         <div className={"whiteboard-image"}>
           <img id={"whiteboard-svg"} src={props.data.image} alt={""} />
