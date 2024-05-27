@@ -110,6 +110,10 @@ margin: 1rem;
         color: ${props => props.theme.textColor};
       }
 
+      .formRight option {
+        color: black;
+      }
+
       .custom-arrow {
         background-color: white;
         width: 2rem;

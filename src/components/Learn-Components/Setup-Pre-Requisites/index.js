@@ -36,7 +36,7 @@ const SetupPreReq = () => (
           <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, measure their performance, verify conformance to service mesh standards.</p>
         </div>
       </a>
-      <a href="/cloud-native-management/meshery/operating-service-meshes" id="Manage Meshery"
+      <a href="/cloud-native-management/meshery/operating-cloud-native-infra" id="Manage Meshery"
         target="_blank"
       >
         <div className="card">

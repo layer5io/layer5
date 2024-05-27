@@ -27,7 +27,7 @@ const HowMesheryWorksSpecs = () => {
         </Container>
       </div>
       <Container>
-        <Row className="cloud-native" Vcenter>
+        {/* <Row className="cloud-native" Vcenter>
           <Col xs={12} lg={6}>
             <h3>Service meshes will be commonplace cloud native and edge infrastructure</h3>
             <p>Today: Over 40% of the enterprises run cloud native technologies in production; Over 80% of those enterprises running Kubernetes</p>
@@ -44,14 +44,13 @@ const HowMesheryWorksSpecs = () => {
             <h3>Begin Your Cloud Native Journey</h3>
             <p>Tomorrow: 70% of cloud native environments running a service mesh in three years</p>
           </Col>
-        </Row>
+        </Row> */}
         <div className="find-kubernetes">
           <img className="green-bubble" src={GreenBubble} alt="bubble" />
           <img className="yellow-bubble" src={YellowBubble} alt="bubble" />
           <div className="content">
-            <h3>Where you find a Kubernetes,
-              you’ll find a service mesh.</h3>
-            <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
+            <h3>Assess the Performance and Manage your cloud native infrastructure</h3>
+            <p>Ensuring optimal functionality and seamless operations is crucial for all infrastructure.</p>
             <VintageBox left={true} vintageTwo={true} >
               <Button primary url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
             </VintageBox>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
-import { ReactComponent as HeroImage } from "../images/meshery-operator-colorMode.svg";
+import { ReactComponent as HeroImage } from "../images/meshery-operator-dark.svg";
 
 const HowMesheryWorksHeroWrapper = styled.div`
     
@@ -26,7 +26,7 @@ const HowMesheryWorksHeroWrapper = styled.div`
     }
 
     .hero-img-wrapper{
-      background-color: ${props => props.theme.secondaryLightColorTwo};
+      // background-color: ${props => props.theme.secondaryLightColorTwo};
       border-bottom-left-radius: 4.375rem;
       border-bottom-right-radius: 4.375rem;
       vertical-align: top;

@@ -113,7 +113,7 @@ const WebBasedForm = () => {
             <label htmlFor="github" className="form-name">GitHub</label>
             <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
             <label htmlFor="twitter" className="form-name">Twitter</label>
-            <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+            <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
             <label htmlFor="linkedin" className="form-name">Linkedin</label>
             <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
             <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
