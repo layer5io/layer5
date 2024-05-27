@@ -9,12 +9,12 @@ const Data = {
       subItems: [
         {
           name: "Developer-defined Infrastructure",
-          path: "/cloud-native-management/meshmap",
+          path: "/solutions/developer-defined-infrastructure",
           sepLine: true
         },
         {
           name: "Cloud Native Deployments by Diagram",
-          path: "/cloud-native-management/meshmap/design",
+          path: "/solutions/cloud-native-deployments-by-diagram",
           sepLine: true
         },
         {
