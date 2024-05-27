@@ -1,6 +1,9 @@
 import React from "react";
 import FeatureHero from "../SolutionHero";
-import comments_svg from "../../assets/images/comments/comment.svg";
+import kubernetes_svg from "./images/kubernetes.svg";
+import orchestration_svg from "./images/orchestration.svg";
+import cluster_svg from "./images/cluster.png";
+import collaborate_svg from "./images/collaborate.svg";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./deploy.style";
@@ -12,7 +15,7 @@ const KubernetesMultiCluster = () => {
     heading: "Developer-defined Infrastructure",
     sub_heading:
       "Cloud Native application and infrastructure management software that empowers organizations to expect more from their infrastructure.",
-    image: comments_svg,
+    image: kubernetes_svg,
   };
 
   let card_data = [
@@ -20,19 +23,19 @@ const KubernetesMultiCluster = () => {
       heading: "Build the bridge",
       subtitle:
         "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-      image: comments_svg,
+      image: orchestration_svg,
     },
     {
       heading: "Continuous visibility across all of your clusters and workloads.",
       subtitle:
         "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
-      image: comments_svg,
+      image: cluster_svg,
     },
     {
       heading: "Inclusive collaboration from start to finish",
       subtitle:
         "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
-      image: comments_svg,
+      image: collaborate_svg,
     },
   ];
   return (
