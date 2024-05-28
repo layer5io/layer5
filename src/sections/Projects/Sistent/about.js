@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { Container } from "../../../reusecore/Layout";
 import SistentWrapper from "./sistent.style";
 import TOC from "../../../components/SistentNavigation";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import SistentPagination from "../../../components/SistentNavigation/pagination";
 
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import { CodeBlock } from "./components/button/code-block";
+import { SistentThemeProvider } from "@layer5/sistent";
+import { Button } from "@layer5/sistent";
+
 const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
 
+const codes = [
+  "npm i @layer5/sistent",
+  `  import { SistentThemeProvider } from "@layer5/sistent";
+  import { Button } from "@layer5/sistent";
+     
+  <SistentThemeProvider>
+    <div>
+      <Button variant="contained">Filled</Button>
+      <Button variant="outlined">Outlined</Button>
+      <Button variant="text">Text</Button>
+    </div>
+  </SistentThemeProvider>`,
+];
+
 const SistentAbout = () => {
+  const { isDark } = useStyledDarkMode();
+
   return (
     <SistentWrapper>
       <div className="page-header-section">
@@ -42,6 +63,33 @@ const SistentAbout = () => {
               If you’re interested in joining, please let us know, and we can
               help you get started on contributing to the Sistent Design System.
             </p>
+            <a id="Installation">
+              <h2>Installation and Quickstart</h2>
+            </a>
+            <p>
+              To install Sistent package, run:
+            </p>
+            <div className="showcase">
+              <CodeBlock name="installation" code={codes[0]} />
+            </div>
+            <p>
+              After installation, you can import Sistent theme and any Sistent
+              component from "@layer5/sistent". The component needs to be
+              included inside "SistentThemeProvider".
+            </p>
+            <p>Taking button as an example:</p>
+            <div className="showcase">
+              <div className="items">
+                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                  <div>
+                    <Button variant="contained">Filled</Button>
+                    <Button variant="outlined">Outlined</Button>
+                    <Button variant="text">Text</Button>
+                  </div>
+                </SistentThemeProvider>
+              </div>
+              <CodeBlock name="checkbox" code={codes[1]} />
+            </div>
           </div>
           <SistentPagination />
         </Container>
