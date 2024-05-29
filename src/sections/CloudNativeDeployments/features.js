@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 const docker_ext = "../../assets/images/docker-extension/docker-extension-meshery.webp";
-import meshery_operator from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import meshery_visualizer from "./images/meshery_visualizer.svg";
+import meshery_designer from "./images/meshery_designer.svg";
 import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
 import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -121,6 +122,25 @@ const FeatureWrapper = styled.div`
         }
       }
     }
+    .diagram-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 767px) {
+          justify-content: center;
+        }
+        .kubernetes-image {
+          @media (max-width: 767px) {
+            max-width: 90%;
+            margin-bottom: 2rem;
+          }
+        } 
+      }
+    }
   }
 `;
 
@@ -132,10 +152,10 @@ const Feature = () => {
     <FeatureWrapper>
       <Container className="catalog-container">
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              {/* <img src={docker_ext} className="calalog-image" /> */}
-              <StaticImage src={docker_ext} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
+              <img src={meshery_designer} className="kubernetes-image" />
+              {/* <StaticImage src={meshery_designer} alt="Meshery Designer" loading="lazy" /> */}
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -156,9 +176,9 @@ const Feature = () => {
             </p>
             <Link className="link" href="/cloud-native-management/meshmap/visualize">Learn more &rarr;</Link>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={meshery_operator} className="calalog-image" />
+              <img src={meshery_visualizer} className="kubernetes-image" />
             </div>
           </Col>
         </Row>

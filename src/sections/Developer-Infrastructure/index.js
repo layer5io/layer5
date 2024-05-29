@@ -1,7 +1,7 @@
 import React from "react";
 import FeatureHero from "../SolutionHero";
 import kubernetes_svg from "./images/kubernetes.svg";
-import orchestration_svg from "./images/orchestration.svg";
+import config_svg from "./images/config.svg";
 import cluster_svg from "./images/cluster.png";
 import collaborate_svg from "./images/collaborate.svg";
 import { Container } from "../../reusecore/Layout";
@@ -23,7 +23,7 @@ const KubernetesMultiCluster = () => {
       heading: "Build the bridge",
       subtitle:
         "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-      image: orchestration_svg,
+      image: config_svg,
     },
     {
       heading: "Continuous visibility across all of your clusters and workloads.",

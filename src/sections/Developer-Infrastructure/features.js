@@ -2,10 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
-const docker_ext = "../../assets/images/docker-extension/docker-extension-meshery.webp";
-import meshery_operator from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
-import CatalogsDark from "../../assets/images/catalog/catalog-dark.svg";
+import orchestration_svg from "./images/orchestration.svg";
+import whiteboard from "./images/whiteboard-1e9f33293030bc98a01945af9740863f.png";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
@@ -101,7 +99,7 @@ const FeatureWrapper = styled.div`
         }
       }
     }
-    .catalog-image {
+    .diagram-image {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -112,13 +110,12 @@ const FeatureWrapper = styled.div`
         @media (max-width: 767px) {
           justify-content: center;
         }
-        .calalog-image {
-          max-width: 300px;
+        .kubernetes-image {
           @media (max-width: 767px) {
-            max-width: 200px;
-            margin-bottom: 20px;
+            max-width: 90%;
+            margin-bottom: 2rem;
           }
-        }
+        } 
       }
     }
   }
@@ -132,9 +129,14 @@ const Feature = () => {
     <FeatureWrapper>
       <Container className="catalog-container">
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          {/* <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <StaticImage src={docker_ext} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
+              <img src={whiteboard} className="calalog-image" />
+            </div>
+          </Col> */}
+          <Col md={6} className="diagram-image">
+            <div className="image-wrapper">
+              <img src={whiteboard} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -157,7 +159,7 @@ const Feature = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={meshery_operator} className="calalog-image" />
+              <img src={orchestration_svg} className="calalog-image" />
             </div>
           </Col>
         </Row>
