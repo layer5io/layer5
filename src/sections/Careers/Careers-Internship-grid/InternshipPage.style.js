@@ -53,18 +53,25 @@ p{
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
+    display: flex;
+    align-items: center;
 
     .text {
       height: inherit;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h3 {
       font-weight: 500;
+      transition: transform 0.7s ease-in-out;
     }
     p {
       margin: 0.5rem 0;
       color: ${props => props.theme.whiteEightToBlackEight};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .peek-card {
@@ -91,11 +98,13 @@ p{
       h3 {
         transform: translateX(2%);
         text-align: left;
+        transition: transform 0.7s ease-in-out;
       }
 
       p {
         transform: translateX(2%);
         text-align: left;
+        transition: transform 0.7s ease-in-out;
       }
       .peek-card {
         visibility: visible;
