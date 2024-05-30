@@ -1,11 +1,11 @@
 ---
 title: The Observability Arms Race
-subtitle: ogs vs. Traces – A Cost vs. Clarity Showdown
+subtitle: Logs vs. Traces – A Cost vs. Clarity Showdown
 date: 2024-05-12
 author: Lee Calcote
-thumbnail: ../../../../assets/images/stick-figures/SVG/layer5-five-mascot-means-business.svg
-darkthumbnail: ../../../../assets/images/stick-figures/SVG/layer5-five-mascot-means-business.svg
-description: "Find a 10x engineer or build a 10x team."
+thumbnail: ./comparative-cost-of-observability-signals.png
+darkthumbnail: ./comparative-cost-of-observability-signals.png
+description: "Logs vs. Traces – A Cost vs. Clarity Showdown"
 type: Blog
 category: Community
 tags:
@@ -17,9 +17,10 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
+import comparativeCost from "./comparative-cost-of-observability-signals.png";
+import Blockquote from "../../../../reusecore/Blockquote";
 
 <BlogWrapper>
-##  The Observability Arms Race: Logs vs. Traces – A Cost vs. Clarity Showdown
 
 The world of software development is embroiled in a silent war – the Observability Arms Race.  On one side, verbose logs, relics of our debugging days, threaten to devour production budgets.  On the other, traces, the Sherlock Holmes of observability, offer targeted insights but come with their own complexities.
 
@@ -27,7 +28,7 @@ The world of software development is embroiled in a silent war – the Observabi
 
 Remember that single log statement you sprinkled in development?  Imagine it bombarded with millions of hits daily in production.  The cost implications are staggering.  Are we clinging to outdated habits, drowning in a sea of irrelevant data?
 
-**Log Levels: A Band-Aid, Not a Cure:**
+<BlockQuote quote="Log levels area a Band-Aid, not a cure." person="Lee Calcote" />
 
 Log levels offer some relief, silencing the noise in production.  But what if that critical error gets buried under an avalanche of info logs?  Is there a risk of sacrificing valuable insights for a false sense of cost control?
 
@@ -35,16 +36,20 @@ Log levels offer some relief, silencing the noise in production.  But what if th
 
 Traces offer a compelling alternative.  They map a request's journey through your system, meticulously recording events and their connections.  This targeted approach inherently generates less data, making them potentially cost-effective.
 
+Tracing offers the ability to granularly track request segments (spans) as the request is processed across various services. It is hard to introduce later, one reason being third party libraries that are used by the application also need to be instrumented. The cost of distributed tracing can be high, and so, most service mesh tracing systems employ various forms of sampling to capture only a certain portion of the observed traces. When traces are sampled performance overhead and storage costs are reduced, but so is your visibility. The rate at which sampling is done is a balance between the frequency by which traces are captured (typically expressed as a percentage in relation to service request volume). 
+
+**Figure: Cost vs. Value Spectrum**
+
+<img src={comparativeCost} />
+
+_Figure: a comparative spectrum of value provided by and cost of each pillar._
+
+The figure above presents a visual spectrum that acknowledges that collecting telemetry in production is a compromise between cost in terms of storage and performance (CPU, memory, and request latency) overhead, and the value of information collection, typically in terms of how expressiveness it is or useful it is in solving puzzles of slow or errored responses. 
+It’s argued that metrics provide the highest value for the smallest investment. Given that some service meshes facilitate distributed tracing, an argument that distributed tracing provides the highest value and can be achieved at low investment (relative to the amount of insight provided). Ideally, your instrumentation allows you to dial back the verbosity levels and sampling rate to facilitate control over your overhead costs vs desired observability.
+
 **The Power of Smart Sampling:**
 
 Not all traces are created equal.  Simple sampling techniques can leave you blindsided.  The key lies in dynamic/adaptive tail sampling – a detective sniffing out the real clues in a crime scene, focusing on the most valuable traces.
-
-**The Future of Observability Beckons:**
-
-The future of observability isn't about logs versus traces.  It's about embracing a proactive approach.  **It's time to move beyond the reactive "log everything" mentality.**  By adopting smarter practices, we can create a future where observability doesn't break the bank.  Let's ditch the cost-prohibitive logpocalypse and unlock the power of targeted, insightful monitoring. The choice is clear. 
-
-
-##  The Observability Arms Race: Logs vs. Traces – A Cost vs. Clarity Showdown (Continued)
 
 **The Power of Smart Sampling with Jaeger**
 
@@ -112,4 +117,9 @@ Jaeger is a powerful tool for distributed tracing, but it's not a one-size-fits-
 **The Takeaway:**
 
 By embracing Jaeger's smart sampling techniques and leveraging the Jaeger Tracing Operator for best-practice deployments, you can move beyond the reactive "log everything" mentality and enter a new era of cost-conscious, insightful monitoring. Remember, the ideal tool depends on your specific needs. Explore your options – Jaeger might be your perfect partner, or it might be the first step on your journey to finding the ideal distributed tracing solution for you. 
+
+**The Future of Observability Beckons:**
+
+The future of observability isn't about logs versus traces.  It's about embracing a proactive approach.  **It's time to move beyond the reactive "log everything" mentality.**  By adopting smarter practices, we can create a future where observability doesn't break the bank.  Let's ditch the cost-prohibitive logpocalypse and unlock the power of targeted, insightful monitoring. The choice is clear. 
+
  </BlogWrapper>
