@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "gatsby";
 import {
   Container,
@@ -16,17 +16,63 @@ import OrchestrationLight from "./images/orchestration-light.svg";
 import OrchestrationDark from "./images/orchestration.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode.js";
 const TwoColLayout = () => {
-  const containerRef = useRef(null);
+  const containerRefs = useRef([]);
+  const contentRefs = useRef([]);
   const { isDark } = useStyledDarkMode();
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        } else {
+          entry.target.classList.remove("fade-in");
+        }
+      });
+    }, options);
+
+    containerRefs.current.forEach((ref, index) => {
+      if (ref) {
+        observer.observe(ref);
+        // Adding classes for slide-in animations
+        ref.classList.add(index % 2 === 0 ? "left-slide-in" : "right-slide-in");
+      }
+    });
+
+    contentRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      containerRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+
+      contentRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
+
   return (
     <Section>
-      <Container>
-        <ImageWrapper ref={containerRef}>
+      <Container ref={(el) => (containerRefs.current[0] = el)}>
+        <ImageWrapper>
           <Link to="/solutions/architecture-diagram">
             <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
           </Link>
         </ImageWrapper>
-        <ContentWrapper>
+        <ContentWrapper ref={(el) => (contentRefs.current[0] = el)}>
           <h2>Visualize and Simplify Platform Engineering</h2>
           <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
@@ -42,13 +88,13 @@ const TwoColLayout = () => {
           </div>
         </ContentWrapper>
       </Container>
-      <Container>
-        <ImageWrapper ref={containerRef}>
+      <Container ref={(el) => (containerRefs.current[1] = el)}>
+        <ImageWrapper>
           <Link to="/orchestration-management">
             <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" />
           </Link>
         </ImageWrapper>
-        <ContentWrapper>
+        <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>
           <h2>Easing your Workflow Burden Collaboratively</h2>
           <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
           <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
