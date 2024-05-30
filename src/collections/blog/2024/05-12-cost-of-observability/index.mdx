@@ -47,7 +47,7 @@ _Figure: a comparative spectrum of value provided by and cost of each pillar._
 The figure above presents a visual spectrum that acknowledges that collecting telemetry in production is a compromise between cost in terms of storage and performance (CPU, memory, and request latency) overhead, and the value of information collection, typically in terms of how expressiveness it is or useful it is in solving puzzles of slow or errored responses. 
 It’s argued that metrics provide the highest value for the smallest investment. Given that some service meshes facilitate distributed tracing, an argument that distributed tracing provides the highest value and can be achieved at low investment (relative to the amount of insight provided). Ideally, your instrumentation allows you to dial back the verbosity levels and sampling rate to facilitate control over your overhead costs vs desired observability.
 
-**The Power of Smart Sampling:**
+### The Power of Smart Sampling
 
 Not all traces are created equal.  Simple sampling techniques can leave you blindsided.  The key lies in dynamic/adaptive tail sampling – a detective sniffing out the real clues in a crime scene, focusing on the most valuable traces.
 
