@@ -24,7 +24,6 @@ const FeaturesContainer = () => {
   const containerRef = useRef(null);
   const featureRefs = useRef([]);
   const layoutRef = useRef(null);
-
   const featuresInfo = [
     {
       title: "Collaborate with Precision",
@@ -161,25 +160,25 @@ const FeaturesContainer = () => {
 
         {featuresInfo.map((feature, index) => (
           <div
-          ref={(el) => (featureRefs.current[index] = el)}
-          className="feature-item"
-          key={feature.title}
-        >
-          <Features
+            ref={(el) => (featureRefs.current[index] = el)}
+            className="feature-item"
             key={feature.title}
-            title={feature.title}
-            show_custom_cursor={feature.show_custom_cursor}
-            animationOne={feature.animationOne}
-            redirectLink={feature.redirectLink}
-            desc={feature.desc}
-            imgLink={feature.imgLink}
-            cursor={feature.cursor}
-            redirectLinkWithImage={feature.redirectLinkWithImage}
-          />
+          >
+            <Features
+              key={feature.title}
+              title={feature.title}
+              show_custom_cursor={feature.show_custom_cursor}
+              animationOne={feature.animationOne}
+              redirectLink={feature.redirectLink}
+              desc={feature.desc}
+              imgLink={feature.imgLink}
+              cursor={feature.cursor}
+              redirectLinkWithImage={feature.redirectLinkWithImage}
+            />
           </div>
         ))}
         <div ref={layoutRef} className="layout-item">
-        <TwoColLayout />
+          <TwoColLayout />
         </div>
       </Container>
     </>
