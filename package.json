@@ -31,7 +31,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fullcalendar/google-calendar": "^6.1.9",
-    "@fullcalendar/interaction": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.13",
     "@fullcalendar/react": "^6.1.8",
     "@layer5/meshery-design-embed": "^0.2.0",
     "@layer5/sistent": "^0.14.13",
