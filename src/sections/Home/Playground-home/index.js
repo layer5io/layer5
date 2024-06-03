@@ -22,28 +22,28 @@ const ViewsSectionWrapper = styled.div`
     }
 
     .views-section {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
-    margin: 3%;
-    border-radius: 1rem;
-    max-width: 1920px;
-    width: 90vw;
-    height: 500px;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 5% 0 0;
-    box-sizing: border-box;
-    //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
+        margin: 3%;
+        border-radius: 1rem;
+        max-width: 1920px;
+        width: 90vw;
+        height: 500px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 5% 0 0;
+        box-sizing: border-box;
+        //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        overflow: hidden;
 
-    @media only screen and (max-width: 767px) {
-      text-align: center;
-      flex-direction: column-reverse;
+        @media only screen and (max-width: 767px) {
+          text-align: center;
+          flex-direction: column-reverse;
+        }
     }
-}
     .hero-text {
         display: flex;
         flex-direction: column;
@@ -90,8 +90,27 @@ const ViewsSectionWrapper = styled.div`
         }
 
         .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
+          opacity: 1;
+          transition: all 0.2s ease-in;
+        }
+
+        .visible.container {
+          @media only screen and (max-width: 400px) {
+            flex-direction: row;
+
+            .line-common {
+              flex-direction: row;
+              flex-wrap: wrap;
+            }
+
+            .line1, .line2 {
+              transform: translateY(0);
+            }
+
+            .line2 {
+              margin-right: 0;
+            }
+          }
         }
 
         .not-visible {
@@ -114,23 +133,21 @@ const ViewsSectionWrapper = styled.div`
       display: flex;
       justify-content: center;
     }
-    
-    .line1 {
+
+    .line-common {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-right: 2rem;
-      transform: translateY(50px);
       flex-wrap: wrap;
+    }
+    
+    .line1 {
+      transform: translateY(50px);
     }
 
     .line2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
       transform: translateY(-50px);
-      flex-wrap: wrap;
     }
     
     .box {
@@ -163,9 +180,6 @@ const ViewsSectionWrapper = styled.div`
     }
 
     @media only screen and (max-width: 700px) {
-      .hero-image {
-        display: none; 
-      }
       .views-section {
         padding: 2rem 2rem 0 2rem;
         height: auto;
@@ -175,7 +189,6 @@ const ViewsSectionWrapper = styled.div`
         justify-content: center;
       }
     }
-
 `;
 
 const MeshmapVisualizerViews = () => {
@@ -199,7 +212,7 @@ const MeshmapVisualizerViews = () => {
               imageInView ? "visible container" : "not-visible container"
             }
           >
-            <div className="line1">
+            <div className="line-common line1">
               <div className="box">
                 <img className="boxImg" src={argocd} alt="" />
                 <div className="boxText">Argo CD</div>
@@ -217,7 +230,7 @@ const MeshmapVisualizerViews = () => {
                 <div>Prometheus</div>
               </div>
             </div>
-            <div className="line2">
+            <div className="line-common line2">
               <div className="box">
                 <img className="boxImg" src={kubernetes} alt="" />
                 <div>Kubernetes</div>
