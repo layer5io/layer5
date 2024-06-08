@@ -15,55 +15,52 @@ import KubernetesLogo from "../../sections/Kubernetes-Diagram/images/kubernetes-
 import OrchestrationLight from "./images/orchestration-light.svg";
 import OrchestrationDark from "./images/orchestration.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode.js";
-const TwoColLayout = () => {
-  const containerRefs = useRef([]);
-  const contentRefs = useRef([]);
-  const { isDark } = useStyledDarkMode();
+const withIntersectionObserver = (WrappedComponent) => {
+  return(props) => {
+    const containerRefs = useRef([]);
+    const contentRefs = useRef([]);
+    useEffect(() => {
+      const options = {
+        threshold: 0.1,
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          } else {
+            entry.target.classList.remove("fade-in");
+          }
+        });
+      }, options);
 
-  useEffect(() => {
-    const options = {
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in");
-        } else {
-          entry.target.classList.remove("fade-in");
-        }
-      });
-    }, options);
-
-    containerRefs.current.forEach((ref, index) => {
+    const addClasses = (ref, index) => {
       if (ref) {
         observer.observe(ref);
-        // Adding classes for slide-in animations
         ref.classList.add(index % 2 === 0 ? "left-slide-in" : "right-slide-in");
       }
-    });
-
-    contentRefs.current.forEach((ref) => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      containerRefs.current.forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-
+    };
+    containerRefs.current.forEach(addClasses);
       contentRefs.current.forEach((ref) => {
         if (ref) {
-          observer.unobserve(ref);
+          observer.observe(ref);
         }
       });
-    };
-  }, []);
+        return () => {
+          const removeObserver = (ref) => {
+            if (ref) {
+              observer.unobserve(ref);
+            }
+          };
+        containerRefs.current.forEach(removeObserver);
+        contentRefs.current.forEach(removeObserver);
+      };
+    }, []);
 
+    return <WrappedComponent {...props} containerRefs={containerRefs} contentRefs={contentRefs} />;
+  };
+};
+const TwoColLayout = ({containerRefs, contentRefs}) => {
+  const {isDark} = useStyledDarkMode();
   return (
     <Section>
       <Container ref={(el) => (containerRefs.current[0] = el)}>
@@ -104,4 +101,4 @@ const TwoColLayout = () => {
   );
 };
 
-export default TwoColLayout;
+export default withIntersectionObserver(TwoColLayout);
