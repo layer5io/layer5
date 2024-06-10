@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import orchestration_svg from "./images/orchestration.svg";
 import whiteboard from "./images/whiteboard-1e9f33293030bc98a01945af9740863f.png";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const FeatureWrapper = styled.div`
   min-height: fit-content;
@@ -115,16 +113,13 @@ const FeatureWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Feature = () => {
-
-  const { isDark } = useStyledDarkMode();
-
   return (
     <FeatureWrapper>
       <Container className="catalog-container">

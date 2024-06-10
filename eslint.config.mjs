@@ -26,6 +26,8 @@ export default [
       "**/assets/",
       "**/public/",
       "**/.babelrc",
+      "**/.desktop-lighthouserc.js",
+      "**/.lighthouserc.js",
       "**/.env.development",
       "**/CNAME",
       "**/CODE_OF_CONDUCT.md",
@@ -45,31 +47,26 @@ export default [
     plugins: {
       react: fixupPluginRules(react),
     },
-
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
         ...globals.amd,
       },
-
       parser: babelParser,
       ecmaVersion: 2018,
       sourceType: "module",
-
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
-
     settings: {
       react: {
         version: "detect",
       },
     },
-
     rules: {
       "array-bracket-spacing": ["error", "never"],
       "comma-style": ["error"],
@@ -81,13 +78,11 @@ export default [
           before: true,
         },
       ],
-
       "block-scoped-var": "error",
       "block-spacing": "error",
       "brace-style": ["error", "1tbs"],
       "jsx-quotes": ["error", "prefer-double"],
       "keyword-spacing": "error",
-
       "key-spacing": [
         "error",
         {
@@ -95,21 +90,18 @@ export default [
           afterColon: true,
         },
       ],
-
       "no-unused-vars": [
         "warn",
         {
           varsIgnorePattern: "React",
         },
       ],
-
       "no-trailing-spaces": "error",
       "object-curly-spacing": ["error", "always"],
       "react/display-name": 0,
       "react/prop-types": 0,
       "react/no-unescaped-entities": [0],
       "react/jsx-no-duplicate-props": [0],
-
       indent: [
         "error",
         2,
@@ -131,17 +123,14 @@ export default [
             let: 2,
             const: 3,
           },
-
           ignoredNodes: ["TemplateLiteral"],
         },
       ],
-
       "linebreak-style": ["error", "unix"],
       quotes: ["error", "double"],
       semi: ["error", "always"],
       strict: 0,
       "valid-typeof": 0,
-
       "space-unary-ops": [
         1,
         {
@@ -149,7 +138,6 @@ export default [
           nonwords: false,
         },
       ],
-
       "space-infix-ops": ["error"],
     },
   },

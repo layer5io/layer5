@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 export default function HTML(props) {
   return (
     <html lang="en" {...props.htmlAttributes}>
@@ -12,7 +11,6 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {/* eslint-disable-next-line react/no-unknown-property*/}
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
         <link
           rel="preload"

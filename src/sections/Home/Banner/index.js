@@ -10,6 +10,7 @@ const RotationalBanner = () => {
   let initialValue;
   try {
     initialValue = sessionStorage.getItem("banner") || 1;
+    /* eslint-disable-next-line no-unused-vars*/
   } catch (e) {
     initialValue = 1;
   }

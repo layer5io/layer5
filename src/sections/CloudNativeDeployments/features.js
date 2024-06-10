@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
-const docker_ext = "../../assets/images/docker-extension/docker-extension-meshery.webp";
 import meshery_visualizer from "./images/meshery_visualizer.svg";
 import meshery_designer from "./images/meshery_designer.svg";
 import CatalogsLight from "../../assets/images/catalog/catalog-light.svg";
@@ -138,14 +136,13 @@ const FeatureWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Feature = () => {
-
   const { isDark } = useStyledDarkMode();
 
   return (

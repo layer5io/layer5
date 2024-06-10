@@ -8,16 +8,15 @@ import loadable from "@loadable/component";
 import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
-const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
+// const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
 
-const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
-const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
+// const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
+// const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContainer"));
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
-
 
 const IndexPage = () => {
   return (
@@ -26,10 +25,10 @@ const IndexPage = () => {
       <FeaturesContainer />
       <Integrations />
       <Partners />
-      <CornerPopup/>
+      <CornerPopup />
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
-      <MesheryIntegration  />
+      <MesheryIntegration />
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -40,11 +39,10 @@ const IndexPage = () => {
       {/*<ContactCard />*/}
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
-      <CaseStudyBanner/>
+      <CaseStudyBanner />
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
-
     </>
   );
 };
