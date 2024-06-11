@@ -1,4 +1,4 @@
-import React, { useSyncExternalStore } from "react";
+import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import SistentWrapper from "./sistent.style";
 import TOC from "../../../components/SistentNavigation";
