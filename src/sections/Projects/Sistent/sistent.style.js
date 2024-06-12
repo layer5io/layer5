@@ -810,6 +810,7 @@ const SistentWrapper = styled.div`
       align-items: center;
       justify-content: center;
       padding: 5rem;
+      gap: 1rem;
     }
 
     .show-code {
@@ -820,10 +821,6 @@ const SistentWrapper = styled.div`
     .code {
       font-size: 0.9rem;
       overflow: auto;
-    }
-
-    .size-button {
-      margin-right: 1rem;
     }
   }
 `;
