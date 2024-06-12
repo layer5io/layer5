@@ -7,7 +7,7 @@ import SoSpecialWrapper from "./so-special-style";
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "../../../components/image";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+// import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const SoSpecial = () => {
   const data = useStaticQuery(
@@ -98,7 +98,7 @@ const SoSpecial = () => {
     ]
   };
 
-  const { isDark } = useStyledDarkMode();
+  // const { isDark } = useStyledDarkMode();
 
   return (
     <SoSpecialWrapper>

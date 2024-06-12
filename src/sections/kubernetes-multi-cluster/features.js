@@ -6,7 +6,6 @@ const docker_ext = "../../assets/images/docker-extension/docker-extension-mesher
 import meshery_operator from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import meshsync from "./images/meshsync.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const FeatureWrapper = styled.div`
   min-height: fit-content;
@@ -127,7 +126,6 @@ const FeatureWrapper = styled.div`
 
 const Feature = () => {
 
-  const { isDark } = useStyledDarkMode();
 
   return (
     <FeatureWrapper>
