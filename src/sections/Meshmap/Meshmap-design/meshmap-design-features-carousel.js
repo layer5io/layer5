@@ -56,49 +56,7 @@ const DivWrapper = styled.div`
     height: 450px;
     display: flex;
     justify-content: center;
-    // flex: 1;
-    // right: 20px;
-    // top: -50px;
-
-    // animation-name: floating;
-    // animation-duration: 3s;
-    // animation-iteration-count: infinite;
-    // animation-timing-function: ease-in-out;
-
-    // @keyframes floating {
-    //   0% {
-    //     transform: translate(0, 0px);
-    //   }
-    //   50% {
-    //     transform: translate(0, 15px);
-    //   }
-    //   100% {
-    //     transform: translate(0, -0px);
-    //   }
-    // }
   }
-
-  // @media only screen and (max-width: 1500px) {
-  //   padding-block: 11rem;
-  //   .left {
-  //     max-width: 20rem;
-  //     h1 {
-  //       font-size: 34px;
-  //     }
-  //   }
-  //   .right {
-  //     h3 {
-  //       font-size: 24px;
-  //     }
-  //   }
-  //}
-
-  // @media only screen and (max-width: 1200px) {
-  //   // padding-block: 6% 14%;
-  //   .left {
-  //     margin-left: 5%;
-  //   }
-  // }
 
   @media only screen and (max-width: 999px) {
     padding-block: 3rem;
@@ -154,7 +112,11 @@ export default function MeshmapDesignFeatureCarousel() {
               <img
                 // width="85%"
                 // // height="90%"
-                style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
+                style={{
+                  border: "1px solid #444444",
+                  marginTop: "8px",
+                  borderRadius: "20px",
+                }}
                 src={content.img}
               />
             </div>
