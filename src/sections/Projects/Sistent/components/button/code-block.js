@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import CopySvg from "../../../../../assets/images/sistent/copy-button";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ReactComponent as Tick } from "../../../../../assets/images/sistent/tick.svg";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 export const CodeBlock = ({ name, code }) => {
 
   const [showCode, setShowCode] = useState(false);
+  const [isCopied , setIsCopied] = useState(false);
 
   const onChange = () => {
     setShowCode((prev) => !prev);
@@ -20,7 +22,10 @@ export const CodeBlock = ({ name, code }) => {
 
     navigator.clipboard.writeText(code)
       .then(() => {
-        toast.success("Code copied to clipboard!");
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        },1600);
       });
   };
 
@@ -38,11 +43,11 @@ export const CodeBlock = ({ name, code }) => {
           <div style={{ display: "flex", alignItems: "center", position: "absolute",  top: "0rem",  right: "1rem", border: "none" }}>
             <div style={{ width: "fit-content", height: "fit-content", cursor: "pointer" }}  onClick={handleCopy}>
               {/* <button onClick={handleCopy} style={{ width: "fit-content", height: "fit-content", border: "none", backgroundColor: "transperant"  }} > */}
-              <CopySvg />
+              {/* { isCopied ? ( <CopySvg /> ) : ( <Tick /> ) } */}
+              {!isCopied ? (<CopySvg />) : (<> <Tick height="1.2rem" width = "1.2rem"/> </>)}
               {/* </button> */}
             </div>
           </div>
-          <ToastContainer />
         </div>
       )}
     </div>
