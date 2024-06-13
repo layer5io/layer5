@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ReactComponent as IntegrationsImage } from "./images/integration-image-colorMode.svg";
 import UnderlineImg from "./images/underline.svg";
