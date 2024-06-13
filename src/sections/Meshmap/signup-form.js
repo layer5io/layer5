@@ -47,6 +47,7 @@ const SignupForm = ({ targetRef }) => {
                   <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
                 <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p> */}
                 <iframe
+                  title="Meshery, the collaborative Kubernetes manager"
                   width="95%"
                   height="100%"
                   src="https://www.youtube.com/embed/034nVaQUyME?si=Xip0JqrwiG2QY5vp"

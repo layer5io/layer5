@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
@@ -78,7 +78,7 @@ max-width: 100%;
 `;
 
 
-const Reviews = () => {
+const Reviews = memo(() => {
   return (
     <ReviewsWrapper>
       <div className="slider">
@@ -208,6 +208,6 @@ const Reviews = () => {
       </div>
     </ReviewsWrapper>
   );
-};
+});
 
 export default Reviews;

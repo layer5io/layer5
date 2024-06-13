@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperContainer from "./mobile-swiper.style.js";
@@ -55,7 +55,7 @@ const Card = ({ title, description, img, readMoreLink }) => {
   );
 };
 
-export const MeshmapMobileSwiper = () => {
+export const MeshmapMobileSwiper = memo(() => {
   return (
     <SwiperContainer>
       <h2>Multi user real time collaboration</h2>
@@ -87,5 +87,5 @@ export const MeshmapMobileSwiper = () => {
       </Swiper>
     </SwiperContainer>
   );
-};
+});
 
