@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import LifeCycleIcon from "./images/lifecycle-icon.svg";
-import PerformanceIcon from "./images/performance-icon.svg";
-import ConfigurationIcon from "./images/configuration-icon.svg";
 import { Col, Row } from "../../reusecore/Layout";
-import Counter from "../../reusecore/Counter";
-import { URL } from "../../sections/Counters/index";
 import List_Icon from "../../assets/images/app/tick.svg";
 
 const DataCardWrapper = styled.div`
@@ -47,13 +42,6 @@ const DataCardWrapper = styled.div`
 `;
 
 const DataCard = () => {
-  const [performanceCount, setPerformanceCount] = useState(0);
-
-  useEffect(() => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((result) => setPerformanceCount(result.total_runs));
-  }, []);
 
   return (
     <DataCardWrapper>
