@@ -48,6 +48,19 @@ const BrandPageWrapper = styled.section`
 		z-index: 1;
 	}
 
+      @media screen and (min-width: 768px) and (max-height: 725px) {
+	    .brand-nav-col {
+	        padding-right: 0px !important;
+	    }
+		.nav-fixed {
+		height:calc(100vh - 6rem);
+		overflow-y:auto;
+		padding-top:1rem;
+		padding-bottom:1rem
+	}
+
+	}
+
 	.header_link {
 		display: block;
 		margin: 0;
