@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import styled from "styled-components";
 // uncomment if need
 // import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
@@ -151,7 +151,7 @@ const DesignBannerWrapper = styled.div`
     }
 `;
 
-const MeshmapDesignBanner = memo(() => {
+const MeshmapDesignBanner = () => {
 
   return (
     <DesignBannerWrapper>
@@ -171,6 +171,6 @@ const MeshmapDesignBanner = memo(() => {
     </DesignBannerWrapper>
 
   );
-});
+};
 
 export default MeshmapDesignBanner;

@@ -78,7 +78,7 @@ max-width: 100%;
 `;
 
 
-const Reviews = memo(() => {
+const Reviews = () => {
   return (
     <ReviewsWrapper>
       <div className="slider">
@@ -208,6 +208,6 @@ const Reviews = memo(() => {
       </div>
     </ReviewsWrapper>
   );
-});
+};
 
 export default Reviews;
