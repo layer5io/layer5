@@ -146,6 +146,7 @@ const BrandPageWrapper = styled.section`
 		width: 100%;
 		margin: auto;
 		justify-content: space-around;
+		gap: 1rem;
 	}
 	.Layer5Logos {
 		font-style: italic;
