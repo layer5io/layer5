@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
 
@@ -92,23 +91,12 @@ const CollaborationFeatureWrapper = styled.div`
 
 const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
-  // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
-  const [imageInView, setimageInView] = useState(false);
-  // const [sectionInView, setSectionInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
-  // if (sectionView && !sectionInView)
-  //   setSectionInView(true);
-  // if (sectionInView && !sectionView)
-  //   setSectionInView(false);
 
   return (
     <CollaborationFeatureWrapper>
       <div className="hero-div">
         <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+          <CollaborationImg className={inView ? "visible" : ""}  alt=""/>
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>

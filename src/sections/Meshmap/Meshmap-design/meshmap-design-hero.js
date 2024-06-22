@@ -5,7 +5,6 @@ import MeshmapLocatorDark from "./images/meshmap-locator-dark.svg";
 import MeshmapImageBottomLight from "./images/meshmap-bottom-image-light.svg";
 import MeshmapImageBottomDark from "./images/meshmap-bottom-image-dark.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const HeroSectionWrapper = styled.div`
@@ -77,11 +76,6 @@ const HeroSectionWrapper = styled.div`
 
 const MeshmapHeroSection = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.8 });
-  const [imageInView, setimageInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
 
   const { isDark } = useStyledDarkMode();
 
@@ -92,8 +86,8 @@ const MeshmapHeroSection = () => {
         <p>MeshMap is the world’s only visual designer for Kubernetes and cloud native applications. Design, deploy, and manage your Kubernetes-based, cloud native deployments allowing you to speed up infrastructure configuration.</p>
       </div>
       <div className="hero-image">
-        <img className={imageInView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
-        <img className={imageInView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
+        <img className={inView ? "locator-moving" : "locator"} src={isDark ? MeshmapLocatorDark : MeshmapLocatorLight} alt="locator" />
+        <img className={inView ? "map map-visible" : "map"} src={isDark ? MeshmapImageBottomDark : MeshmapImageBottomLight} alt="integrations" ref={locatorRef} />
       </div>
     </HeroSectionWrapper>
 

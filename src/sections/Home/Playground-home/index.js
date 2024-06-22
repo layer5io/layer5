@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
@@ -180,23 +179,19 @@ const ViewsSectionWrapper = styled.div`
 
 const MeshmapVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.4 });
-  const [imageInView, setimageInView] = useState(false);
-
-  if (inView && !imageInView) setimageInView(true);
-  else if (imageInView && !inView) setimageInView(false);
 
   return (
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
           {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
+            className={inView ? "lines-visible" : "not-visible"}
             src={CommentingImageDark}
             alt=""
           /> */}
           <div
             className={
-              imageInView ? "visible container" : "not-visible container"
+              inView ? "visible container" : "not-visible container"
             }
           >
             <div className="line1">
