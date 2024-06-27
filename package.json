@@ -34,7 +34,7 @@
     "@fullcalendar/interaction": "^6.1.13",
     "@fullcalendar/react": "^6.1.8",
     "@layer5/meshery-design-embed": "^0.2.0",
-    "@layer5/sistent": "^0.14.13",
+    "@layer5/sistent": "^0.14.60",
     "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -79,6 +79,8 @@
     "lodash": "^4.17.21",
     "mui-datatables": "^4.3.0",
     "prism-react-renderer": "^2.0.6",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-accessible-accordion": "^5.0.0",
@@ -106,7 +108,8 @@
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.5",
-    "swiper": "^10.0.4"
+    "swiper": "^10.0.4",
+    "url": "^0.11.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.9",
