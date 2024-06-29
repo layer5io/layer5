@@ -17,33 +17,34 @@ const ViewsSectionWrapper = styled.div`
     justify-content: center;
 
     .small-card-container {
-      display: flex;
-      gap: 1rem;
+        display: flex;
+        gap: 1rem;
     }
 
     .views-section {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
-    margin: 3%;
-    border-radius: 1rem;
-    max-width: 1920px;
-    width: 90vw;
-    height: 500px;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 5% 0 0;
-    box-sizing: border-box;
-    //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
+        margin: 3%;
+        border-radius: 1rem;
+        max-width: 1920px;
+        width: 90vw;
+        height: 500px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 5% 0 0;
+        box-sizing: border-box;
+            //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        overflow: hidden;
 
-    @media only screen and (max-width: 767px) {
-      text-align: center;
-      flex-direction: column-reverse;
+        @media only screen and (max-width: 767px) {
+            text-align: center;
+            flex-direction: column-reverse;
+        }
     }
-}
+
     .hero-text {
         display: flex;
         flex-direction: column;
@@ -51,135 +52,164 @@ const ViewsSectionWrapper = styled.div`
         max-width: 50%;
         padding-bottom: 3rem;
         @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          justify-content: center;
-          text-align: center;
+            max-width: 100%;
+            justify-content: center;
+            text-align: center;
         }
     }
 
     h2 {
         /* max-width: 90%; */
         padding-bottom: 2%;
-      }
     }
+}
 
-    h4 {
-        max-width: 90%;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          }
+h4 {
+    max-width: 90%;
+    @media only screen and (max-width: 767px) {
+        max-width: 100%;
     }
+}
 
-    .hero-image {
-        position: relative;
-        display: flex;
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+
+    svg {
+        align-items: center;
         justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
+        width: 70%;
 
-        
-
-        svg {
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          .visualizer-views-colorMode_svg__colorMode1 {
+        .visualizer-views-colorMode_svg__colorMode1 {
             fill: ${(props) => props.theme.whiteToGrey737373};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          }
         }
+    }
 
-        .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
+    .visible {
+        opacity: 1;
+        transition: all 0.2s ease-in;
+    }
+
+    .not-visible {
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    @media only screen and (max-width: 767px) {
+        max-width: 100%;
+    }
+
+}
+
+.overlay {
+    width: 483px;
+    height: 680px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+    flex-wrap: wrap;
+}
+.position-line-down{
+    transform: translateY(-20em);
+}
+.position-line-up{
+    transform: translateY(20em);
+}
+
+.line-primary, .line-secondary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-up-scroll {
+    animation: scroll-up-animation 15s linear infinite;
+
+    @keyframes scroll-up-animation {
+        0% {
+            transform: translateY(0%);
         }
-
-        .not-visible {
-                opacity: 0;
-                transition: all 0.5s ease;
+        100% {
+            transform: translateY(-100%);
         }
+    }
+}
+.animation-down-scroll {
 
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
+    animation: scroll-down-animation 15s linear infinite;
+    @keyframes scroll-down-animation {
+        0% {
+            transform: translateY(0);
         }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: ${(props) => props.theme.backgroundColor};
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+        //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
+}
 
-    }
+// .box:hover {
+//   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
+// }
 
-    .overlay {
-        width: 483px;
-        height: 680x;
-    }
+.box .boxImg {
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+}
 
-    .container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .line1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      transform: translateY(50px);
-      flex-wrap: wrap;
-    }
+.box .boxText {
+    margin-top: 1rem;
+    text-align: center;
+}
 
-    .line2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      transform: translateY(-50px);
-      flex-wrap: wrap;
-    }
-    
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height:150px;
-      padding: 2rem;
-      box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor}; 
-      margin-bottom: 1rem; 
-      border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
-    }
-    // .box:hover {
-    //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    // }
-
-    .box .boxImg {
-      width: auto;
-      height: 60px;
-      max-width: 100%;
-    }
-    
-    .box .boxText {
-      margin-top: 1rem;
-      text-align: center;
+@media only screen and (max-width: 700px) {
+    .hero-image {
+        display: none;
     }
 
-    @media only screen and (max-width: 700px) {
-      .hero-image {
-        display: none; 
-      }
-      .views-section {
+    .views-section {
         padding: 2rem 2rem 0 2rem;
         height: auto;
-      }
-      .small-card-container {
+    }
+
+    .small-card-container {
         display: flex;
         justify-content: center;
-      }
     }
+}
 
 `;
 
 const MeshmapVisualizerViews = () => {
-  const [imageRef, inView] = useInView({ threshold: 0.4 });
+  const [imageRef, inView] = useInView({ threshold: 0.3 });
   const [imageInView, setimageInView] = useState(false);
 
   if (inView && !imageInView) setimageInView(true);
@@ -195,44 +225,85 @@ const MeshmapVisualizerViews = () => {
             alt=""
           /> */}
           <div
-            className={
-              imageInView ? "visible container" : "not-visible container"
-            }
+            // className={
+            //   imageInView ? "visible container" : "not-visible container"
+            // }
+            className="visible container"
           >
-            <div className="line1">
-              <div className="box">
-                <img className="boxImg" src={argocd} alt="" />
-                <div className="boxText">Argo CD</div>
+            <div className="line position-line-down">
+              <div className="line-primary animation-down-scroll">
+                <div className="box">
+                  <img className="boxImg" src={argocd} alt=""/>
+                  <div className="boxText">Argo CD</div>
+                </div>
+                < div className="box">
+                  <img className="boxImg" src={cilium} alt=""/>
+                  <div>Cilium</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt=""/>
+                  <div>Prometheus</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt=""/>
+                  <div>Prometheus</div>
+                </div>
               </div>
-              <div className="box">
-                <img className="boxImg" src={cilium} alt="" />
-                <div>Cilium</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={prometheus} alt="" />
-                <div>Prometheus</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={prometheus} alt="" />
-                <div>Prometheus</div>
+              <div className="line-secondary animation-down-scroll">
+                <div className="box">
+                  <img className="boxImg" src={argocd} alt=""/>
+                  <div className="boxText">Argo CD</div>
+                </div>
+                < div className="box">
+                  <img className="boxImg" src={cilium} alt=""/>
+                  <div>Cilium</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt=""/>
+                  <div>Prometheus</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt=""/>
+                  <div>Prometheus</div>
+                </div>
               </div>
             </div>
-            <div className="line2">
-              <div className="box">
-                <img className="boxImg" src={kubernetes} alt="" />
-                <div>Kubernetes</div>
+            <div className="line position-line-up">
+              <div className="line-primary animation-up-scroll">
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt=""/>
+                  <div>Kubernetes</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={keda} alt=""/>
+                  <div>Keda</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={linkerd} alt=""/>
+                  < div>Linkerd</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt=""/>
+                  <div>Kubernetes</div>
+                </div>
               </div>
-              <div className="box">
-                <img className="boxImg" src={keda} alt="" />
-                <div>Keda</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={linkerd} alt="" />
-                <div>Linkerd</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={kubernetes} alt="" />
-                <div>Kubernetes</div>
+              <div className="line-secondary animation-up-scroll">
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt=""/>
+                  <div>Kubernetes</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={keda} alt=""/>
+                  <div>Keda</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={linkerd} alt=""/>
+                  < div>Linkerd</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt=""/>
+                  <div>Kubernetes</div>
+                </div>
               </div>
             </div>
           </div>
