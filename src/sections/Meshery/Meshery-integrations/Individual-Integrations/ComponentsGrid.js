@@ -1,22 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
-
-export const checkImageUrlValidity = async (url) => {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.src = url;
-
-    img.onload = () => {
-      // Check if the image loaded successfully
-      resolve(true);
-    };
-
-    img.onerror = () => {
-      // Handle the case where the image could not be loaded
-      resolve(false);
-    };
-  });
-};
+import { checkImageUrlValidity } from "../../../../utils/imageValidate";
 
 const ComponentsGrid = ({ frontmatter }) => {
   const components = frontmatter.components.map((component) => {
@@ -32,8 +16,10 @@ const ComponentsGrid = ({ frontmatter }) => {
         );
         if (isSvgPathValid) {
           return item;
+        } else {
+          item.colorIcon.publicURL = frontmatter.integrationIcon.publicURL;
+          return item; // Return fallback image
         }
-        return null; // Return null for items that are not valid
       });
 
       const validItems = await Promise.all(promises);
@@ -47,7 +33,7 @@ const ComponentsGrid = ({ frontmatter }) => {
 
     fetchData();
   }, []);
-  console.log("here", validComponents);
+
   return (
     <ComponentsWrapper>
       <section className="heading">
