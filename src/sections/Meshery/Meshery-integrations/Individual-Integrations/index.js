@@ -3,20 +3,20 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import CTA_Book from "./cta-book";
+import PerformanceCTA from "./cta-performance";
 import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
 import ModelComponents from "./ComponentsGrid";
+import CatalogGrid from "./CatalogGrid";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
-
   const screenshotNodes = data.allFile.nodes;
   const finalScreenshots =
     screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
-
   const awsIntegrations = [
     "AWS API Gateway Operator",
     "AWS API Gateway v2",
@@ -54,7 +54,6 @@ const IndividualIntegrations = ({ data }) => {
     "AWS App Mesh",
     "Kubeform Provider AWS",
   ];
-
   const gcpIntegrations = ["Google Cloud Platform"];
 
   const isAwsItem = awsIntegrations.includes(frontmatter.title);
@@ -102,6 +101,9 @@ const IndividualIntegrations = ({ data }) => {
           <ModelComponents frontmatter={frontmatter} />
         </section>
       )}
+      <section className="component-collection">
+        <CatalogGrid frontmatter={frontmatter} />
+      </section>
       <div>
         {isAwsItem ? (
           <HowMesheryWorksSpecs
@@ -135,6 +137,7 @@ const IndividualIntegrations = ({ data }) => {
         <h2>Related Integrations</h2>
         <RelatedIntegration category={frontmatter.category} />
       </section>
+      <PerformanceCTA category={frontmatter.category} />
       <CTA_Book />
     </IntegrationPageWrapper>
   );

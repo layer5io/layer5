@@ -107,8 +107,13 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" href="https://docs.layer5.io">
+                    <a className="category-link" href="https://docs.layer5.io">
                       Docs
+                    </a>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/blog">
+                      Blog
                     </Link>
                   </li>
                   <li>
@@ -116,11 +121,11 @@ const Footer = ({ location }) => {
                       Learning Paths
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link className="category-link" to="/resources">
                       Resource Library
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       className="category-link"
@@ -163,11 +168,6 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/blog">
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
                     <Link className="category-link" to="/community/events">
                       Events
                     </Link>
@@ -197,6 +197,11 @@ const Footer = ({ location }) => {
                     >
                       Handbook
                     </Link>
+                  </li>
+                  <li>
+                    <a className="category-link" href="https://badges.layer5.io/">
+                    Recognition Program
+                    </a>
                   </li>
                 </ul>
               </div>

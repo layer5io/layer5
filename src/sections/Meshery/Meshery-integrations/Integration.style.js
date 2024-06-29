@@ -78,6 +78,7 @@ export const HoneycombGrid = styled.div`
       }
       .integration-icon {
         flex-shrink: 0;
+        object-fit: contain;
       }
       .integration-content {
         opacity: 0;

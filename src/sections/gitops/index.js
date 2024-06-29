@@ -97,7 +97,7 @@ const GitOpsPage = () => {
         <Row className="content-row">
           <Col className="desc-text-container" lg={6} md={6} xs={12} sm={10} >
             <h1 className="heading-1">Red light performance regressions</h1>
-            <SquarePoint>Baseline and analyze the performance of your services is key to efficient operation of any application</SquarePoint>
+            <SquarePoint>Baselin and track the performance of your services. Put your application service efficient to the test</SquarePoint>
             <SquarePoint>Meshery is the canonical implementation of the Cloud Native Performance specification</SquarePoint>
             <SquarePoint>Define your performance profiles upfront. See statistcal analysis with microservice latency and throughput quartiles</SquarePoint>
             <SquarePoint>Meshery includes your choice of load generator, so that you can meausure your way</SquarePoint>
