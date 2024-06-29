@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
-    .content > a:first-of-type > h2:first-of-type {
+    .content > a:first-of-type {
       padding-top: 1rem;
     }
 
@@ -45,7 +45,11 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      margin-top: -36rem;
+      h4{
+         padding-top: 7rem;
+        margin-top: -7rem;
+      }
+      margin-top: -46rem;
       margin-left: 20rem;
       display: flex;
 
@@ -501,8 +505,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.grey212121ToWhite};
-  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
+  background: ${(props) => props.theme.grey212121ToWhite};
+  box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize} ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
@@ -516,7 +520,7 @@ width: 90%;
       margin-bottom: auto; 
       margin-top: 0.5rem;
       font-weight: 700;
-      color: ${props => props.theme.secondaryColor}
+      color: ${(props) => props.theme.secondaryColor}
   }
   p{
       font-weight: 300;
