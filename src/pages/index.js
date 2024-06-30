@@ -1,5 +1,5 @@
 import React from "react";
-import 'layer5/fonts.css';
+import '../../fonts.css';
 
 import SEO from "../components/seo";
 import Partners from "../sections/Home/Partners-home";
