@@ -611,6 +611,10 @@ const SistentWrapper = styled.div`
 
   .main-content {
     padding-top: 1rem;
+    a {
+      display: block;
+      padding-top: 1.5rem;
+    }
   }
 
   .image-container {
