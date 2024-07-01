@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import CopySvg from "../../../../../assets/images/sistent/copy-button";
 import { ReactComponent as Tick } from "../../../../../assets/images/sistent/tick.svg";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
+
+const CopyButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    border: none;
+    cursor: pointer;
+  `;
 
 export const CodeBlock = ({ name, code }) => {
 
@@ -40,14 +49,9 @@ export const CodeBlock = ({ name, code }) => {
           <pre className="code">
             <code lang="javascript">{code}</code>
           </pre>
-          <div style={{ display: "flex", alignItems: "center", position: "absolute",  top: "0rem",  right: "1rem", border: "none" }}>
-            <div style={{ width: "fit-content", height: "fit-content", cursor: "pointer" }}  onClick={handleCopy}>
-              {/* <button onClick={handleCopy} style={{ width: "fit-content", height: "fit-content", border: "none", backgroundColor: "transperant"  }} > */}
-              {/* { isCopied ? ( <CopySvg /> ) : ( <Tick /> ) } */}
-              {!isCopied ? (<CopySvg />) : (<> <Tick height="1.2rem" width = "1.2rem"/> </>)}
-              {/* </button> */}
-            </div>
-          </div>
+          <CopyButtonContainer onClick={handleCopy} >
+            {!isCopied ? (<CopySvg />) : (<> <Tick height="1.2rem" width = "1.2rem"/> </>)}
+          </CopyButtonContainer>
         </div>
       )}
     </div>
