@@ -83,6 +83,7 @@ yarn.lock
 
 #IDE Files
 .vscode
+.idx
 
 default.profraw
 
