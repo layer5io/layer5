@@ -11,39 +11,39 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 
 const modalStyles = (isDark) => ({
-  backgroundColor: isDark ? '#15272F' : '#fff',
-  borderRadius: '8px',
-  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+  backgroundColor: isDark ? "#15272F" : "#fff",
+  borderRadius: "8px",
+  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
 });
 
 const headerStyles = (isDark) => ({
-  padding: '16px',
-  borderTopLeftRadius: '8px',
-  borderTopRightRadius: '8px',
-  background: isDark ? 'linear-gradient(to right, #28353A, #3D4F57)' : 'linear-gradient(to right, #3B687B, #507D90)',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  color: '#fff',
-  fontWeight: 'bold',
+  padding: "16px",
+  borderTopLeftRadius: "8px",
+  borderTopRightRadius: "8px",
+  background: isDark ? "linear-gradient(to right, #28353A, #3D4F57)" : "linear-gradient(to right, #3B687B, #507D90)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  color: "#fff",
+  fontWeight: "bold",
 });
 
 const footerStyles = (isDark) => ({
-  borderBottomLeftRadius: '8px',
-  borderBottomRightRadius: '8px',
-  background: isDark ? 'linear-gradient(to right, #28353A, #3D4F57)' : 'linear-gradient(to right, #3B687B, #507D90)',
-  fontWeight: 'bold',
+  borderBottomLeftRadius: "8px",
+  borderBottomRightRadius: "8px",
+  background: isDark ? "linear-gradient(to right, #28353A, #3D4F57)" : "linear-gradient(to right, #3B687B, #507D90)",
+  fontWeight: "bold",
 });
 
 const GradientModal = memo(({ title, icon, children, buttons }) => {
   const { isDark } = useStyledDarkMode();
 
   return (
-    <Box style={{ backgroundColor: '#E7EFF3', padding: '60px', maxWidth: '600px', margin: '20px auto', borderRadius: '8px'}}>
+    <Box style={{ backgroundColor: "#E7EFF3", padding: "60px", maxWidth: "600px", margin: "20px auto", borderRadius: "8px" }}>
       <Box style={modalStyles(isDark)}>
         <Box style={headerStyles(isDark)}>
-          <div style={{ fontSize: '1.25rem' }}>{title}</div>
-          {icon && <Box style={{ marginLeft: 'auto', fontSize: '1.2rem' }}>{icon}</Box>}
+          <div style={{ fontSize: "1.25rem" }}>{title}</div>
+          {icon && <Box style={{ marginLeft: "auto", fontSize: "1.2rem" }}>{icon}</Box>}
         </Box>
         <StyledDialogContent>
           {children}
@@ -59,7 +59,7 @@ const GradientModal = memo(({ title, icon, children, buttons }) => {
 });
 
 const CustomInput = ({ label, placeholder, style }) => (
-  <Box style={{ marginBottom: '16px', ...style }}>
+  <Box style={{ marginBottom: "16px", ...style }}>
     <Typography variant="subtitle1" gutterBottom>
       {label}
     </Typography>
@@ -67,18 +67,18 @@ const CustomInput = ({ label, placeholder, style }) => (
       type="text"
       placeholder={placeholder}
       style={{
-        width: '100%',
-        padding: '10px',
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        boxSizing: 'border-box',
+        width: "100%",
+        padding: "10px",
+        border: "1px solid #ccc",
+        borderRadius: "4px",
+        boxSizing: "border-box",
       }}
     />
   </Box>
 );
 
 const CustomDropdown = ({ label, options, placeholder }) => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -101,10 +101,10 @@ const CustomDropdown = ({ label, options, placeholder }) => {
         displayEmpty
         fullWidth
         style={{
-          borderRadius: '4px',
-          height: '40px',
-          color: '#8D9FA7',
-          backgroundColor: '#fff'
+          borderRadius: "4px",
+          height: "40px",
+          color: "#8D9FA7",
+          backgroundColor: "#fff"
         }}
       >
         <MenuItem value="" disabled>
@@ -168,13 +168,13 @@ const SistentModal = () => {
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <GradientModal
                 title="Delete Team"
-                icon={<FaTimes />} 
+                icon={<FaTimes />}
                 buttons={
                   <>
-                    <Button color="primary" style={{ marginRight: '10px', color: '#fff', borderColor: '#fff', border: '1px solid #fff' }}>
+                    <Button color="primary" style={{ marginRight: "10px", color: "#fff", borderColor: "#fff", border: "1px solid #fff" }}>
                       Cancel
                     </Button>
-                    <Button color="primary" style={{ color: '#fff', borderColor: '#fff', backgroundColor: '#B32700' }}>
+                    <Button color="primary" style={{ color: "#fff", borderColor: "#fff", backgroundColor: "#B32700" }}>
                       Delete
                     </Button>
                   </>
@@ -183,48 +183,48 @@ const SistentModal = () => {
                 <Typography>
                   This action is irreversible! Are you sure you want to delete this team?
                 </Typography>
-                <Typography align="center" style={{ fontWeight: 'bold' }}>
+                <Typography align="center" style={{ fontWeight: "bold" }}>
                   Team Name: My Team
                 </Typography>
               </GradientModal>
             </SistentThemeProvider>
           </Row>
-          
+
           <h3>Action</h3>
           <p>
             Action modals help users carry out specific tasks. These would naturally involve more steps than just confirming or rejecting an action. They may include forms, links, and feature specific elements that ensure that users complete crucial tasks along their given flow. They will usually have an icon at the top left corner of the modal to signify what the purpose of this modal is in relation to the given flow as well as help users familiarize with said custom icons for easy identification across our solutions however, this might not be applicable in all cases.
           </p>
           <Row Hcenter className="image-container">
-          <Col sm={12}>
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <GradientModal
-                title="Create Environment"
-                icon={<FaTimes />} 
-                buttons={
-                  <>
-                    <Button color="primary" style={{ marginRight: '10px', color: '#fff', borderColor: '#fff', border: '1px solid #fff' }}>
+            <Col sm={12}>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <GradientModal
+                  title="Create Environment"
+                  icon={<FaTimes />}
+                  buttons={
+                    <>
+                      <Button color="primary" style={{ marginRight: "10px", color: "#fff", borderColor: "#fff", border: "1px solid #fff" }}>
                       Cancel
-                    </Button>
-                    <Button color="primary" style={{ color: '#647176', borderColor: '#fff', backgroundColor: '#B1B9BC' }}>
+                      </Button>
+                      <Button color="primary" style={{ color: "#647176", borderColor: "#fff", backgroundColor: "#B1B9BC" }}>
                       Save
-                    </Button>
-                  </>
-                }
-              >
-                <CustomInput
-                  label="Organization"
-                  placeholder="Enter organization name"
-                />
-                <CustomInput
-                  label="Name"
-                  placeholder="Enter a name"
-                />
-                <CustomInput
-                  label="Description"
-                  placeholder="Enter a description"
-                />
-              </GradientModal>
-            </SistentThemeProvider>
+                      </Button>
+                    </>
+                  }
+                >
+                  <CustomInput
+                    label="Organization"
+                    placeholder="Enter organization name"
+                  />
+                  <CustomInput
+                    label="Name"
+                    placeholder="Enter a name"
+                  />
+                  <CustomInput
+                    label="Description"
+                    placeholder="Enter a description"
+                  />
+                </GradientModal>
+              </SistentThemeProvider>
             </Col>
           </Row>
           <h3>Full width</h3>
@@ -239,27 +239,27 @@ const SistentModal = () => {
                   icon={<FaTimes />}
                   buttons={
                     <>
-                      <Button color="primary" style={{ marginRight: '10px', color: '#fff', borderColor: '#fff', border: '1px solid #fff' }}>
+                      <Button color="primary" style={{ marginRight: "10px", color: "#fff", borderColor: "#fff", border: "1px solid #fff" }}>
                         Cancel
                       </Button>
-                      <Button color="primary" style={{ color: '#647176', borderColor: '#fff', backgroundColor: '#B1B9BC' }}>
+                      <Button color="primary" style={{ color: "#647176", borderColor: "#fff", backgroundColor: "#B1B9BC" }}>
                         Create
                       </Button>
                     </>
                   }
                 >
-                <div style={{display: 'flex', gap: '10px'}}>
+                  <div style={{ display: "flex", gap: "10px" }}>
                     <CustomInput
-                    label="First Name"
-                    placeholder="Enter a name"
-                    style={{ flex: '1' }}
-                  />
-                  <CustomInput
-                    label="Last Name"
-                    placeholder="Enter a name"
-                    style={{ flex: '1' }}
-                  />
-                </div>
+                      label="First Name"
+                      placeholder="Enter a name"
+                      style={{ flex: "1" }}
+                    />
+                    <CustomInput
+                      label="Last Name"
+                      placeholder="Enter a name"
+                      style={{ flex: "1" }}
+                    />
+                  </div>
                   <CustomInput
                     label="Email ID"
                     placeholder="Enter a valid email"
@@ -272,7 +272,7 @@ const SistentModal = () => {
                     label="Organization Roles"
                     placeholder="Select a role"
                     options={["Role 1", "Role 2", "Role 3"]}
-                    />
+                  />
                 </GradientModal>
               </SistentThemeProvider>
             </Col>
