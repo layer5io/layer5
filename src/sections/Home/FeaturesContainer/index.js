@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 // Default imports
 import Features from "../../../components/Features/index.js";
@@ -19,6 +19,11 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode.js";
 // Functional component
 const FeaturesContainer = () => {
   const { isDark } = useStyledDarkMode();
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const containerRef = useRef(null);
+  const featureRefs = useRef([]);
+  const layoutRef = useRef(null);
   const featuresInfo = [
     {
       title: "Collaborate with Precision",
@@ -69,13 +74,83 @@ const FeaturesContainer = () => {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const title = titleRef.current;
+      const subtitle = subtitleRef.current;
+      const container = containerRef.current;
+
+      if (container && title && subtitle) {
+        const rect = container.getBoundingClientRect();
+        if (rect.top <= 0) {
+          title.classList.add("fade-out");
+          subtitle.classList.add("fade-out");
+        } else {
+          title.classList.remove("fade-out");
+          subtitle.classList.remove("fade-out");
+        }
+      }
+    };
+
+    const options = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        } else {
+          entry.target.classList.remove("fade-in");
+        }
+      });
+    }, options);
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    if (subtitleRef.current) {
+      observer.observe(subtitleRef.current);
+    }
+
+    featureRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    if (layoutRef.current) {
+      observer.observe(layoutRef.current);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+      if (subtitleRef.current) {
+        observer.unobserve(subtitleRef.current);
+      }
+      featureRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+      if (layoutRef.current) {
+        observer.unobserve(layoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <Container>
-        <h1 className="title">
+      <Container ref={containerRef}>
+        <h1 className="title" ref={titleRef}>
           Deploy <i>faster </i>together with <span>Confidence</span>
         </h1>
-        <p className="subtitle">
+        <p className="subtitle" ref={subtitleRef}>
           Give your team full application visibility at every layer so the team
           can ship, refactor and onboard faster.
         </p>
@@ -83,20 +158,28 @@ const FeaturesContainer = () => {
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}
         {/* a suite of annotation and visualization tools, allowing users to draw, annotate, and collaborate in real-time on their cloud native designs. */}
 
-        {featuresInfo.map((feature) => (
-          <Features
+        {featuresInfo.map((feature, index) => (
+          <div
+            ref={(el) => (featureRefs.current[index] = el)}
+            className="feature-item"
             key={feature.title}
-            title={feature.title}
-            show_custom_cursor={feature.show_custom_cursor}
-            animationOne={feature.animationOne}
-            redirectLink={feature.redirectLink}
-            desc={feature.desc}
-            imgLink={feature.imgLink}
-            cursor={feature.cursor}
-            redirectLinkWithImage={feature.redirectLinkWithImage}
-          />
+          >
+            <Features
+              key={feature.title}
+              title={feature.title}
+              show_custom_cursor={feature.show_custom_cursor}
+              animationOne={feature.animationOne}
+              redirectLink={feature.redirectLink}
+              desc={feature.desc}
+              imgLink={feature.imgLink}
+              cursor={feature.cursor}
+              redirectLinkWithImage={feature.redirectLinkWithImage}
+            />
+          </div>
         ))}
-        <TwoColLayout />
+        <div ref={layoutRef} className="layout-item">
+          <TwoColLayout />
+        </div>
       </Container>
     </>
   );
