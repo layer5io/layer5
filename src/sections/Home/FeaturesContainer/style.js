@@ -5,6 +5,9 @@ export const Container = styled.div`
     padding: 0 1rem;
     margin: 5rem auto 0;
     .title {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         text-transform: capitalize;
         text-align: center;
         font-weight: 400;
@@ -16,9 +19,33 @@ export const Container = styled.div`
     }
 
     .subtitle {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95); 
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         text-align: center;
         margin-top: 1rem;
         margin-bottom: 3rem;
         font-size: 1.5rem;
     }
+    
+    .fade-out {
+        opacity: 0;
+      }
+    
+      .fade-in {
+        opacity: 1;
+        transform: translateY(0) scale(1); 
+      }
+    
+      .feature-item,
+      .layout-item {
+        opacity: 0; 
+        transform: translateY(20px) rotate(-3deg) scale(0.9); 
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+      }
+    
+      .fade-in {
+        opacity: 1; 
+        transform: translateY(0) rotate(0deg) scale(1); 
+      }
 `;
