@@ -166,8 +166,8 @@ const MeshmapDesignBanner = () => {
         <Button secondary title="Experience context-aware design" url="https://meshery.layer5.io" external={ true } />
         <h5>Upload your Helm Chart or Kubernetes manifest to have your infra diagrammed</h5>
       </div>
-      <img className="dots-upper" src={BackgroundDotsPattern}  />
-      <img className="dots-lower" src={BackgroundDotsPattern}  />
+      <img className="dots-upper" src={BackgroundDotsPattern}  alt="dots"/>
+      <img className="dots-lower" src={BackgroundDotsPattern}  alt="dots"/>
     </DesignBannerWrapper>
 
   );

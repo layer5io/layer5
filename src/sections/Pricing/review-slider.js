@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";

@@ -10,7 +10,6 @@ import mergeDesign from "../images/merge-design.gif";
 import connectComponents from "../images/connect-components.gif";
 import shareDesign from "../images/share-design.gif";
 
-
 const CONTENT = [
   {
     title: "Confidently make changes to your infrastructure",
@@ -88,4 +87,3 @@ export const MeshmapMobileSwiper = () => {
     </SwiperContainer>
   );
 };
-
