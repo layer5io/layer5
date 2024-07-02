@@ -46,6 +46,7 @@ const badgeStyle = {
   width: "25px",
   marginRight: "5px",
   verticalAlign: "middle",
+  marginBottom: "1rem",
 };
 
 const badgeListStyle = {
