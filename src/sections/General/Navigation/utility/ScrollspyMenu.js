@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
@@ -21,7 +21,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const [activeState,setActiveState] = useState(null);
 
   const [isWrapVisible,setIsWrapperVisible] = useState(false);
-  const [imageInView, setimageInView] = useState(false);
   const { isDark } = useStyledDarkMode();
 
   const handleMouseOver = (index) => {
@@ -37,14 +36,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   };
 
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
-
-  useEffect(() => {
-    if (inView && !imageInView){
-      setimageInView(true);
-    } else if (imageInView && !inView){
-      setimageInView(false);
-    }
-  },[inView,imageInView]);
 
   return (
     <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
@@ -114,11 +105,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
                         <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
-                        <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
-                        {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
-                        <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
-                        <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
-                        <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+                        <IngressGatewayImage alt="IngressGatewayImage" className={inView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
+                        {isDark ? <KubernetesImage className={inView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={inView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
+                        <PodImage className={inView ? "pod-transition pod" : "pod"} alt="PodImage" />
+                        <PrometheusImage className={inView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
+                        <img className={inView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
                       </div>
                       <div className="card-text">
                         <p>MeshMap</p>

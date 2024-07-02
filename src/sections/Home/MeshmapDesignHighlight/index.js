@@ -5,17 +5,10 @@ import Button from "../../../reusecore/Button";
 import { ReactComponent as IntegrationsImage } from "./integration-image-colorMode.svg";
 import DesignDefaultWrapper from "./highlight.style";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const DesignDefault = () => {
   const [diagramRef, inView] = useInView({ threshold: 0.6 });
-  const [imageInView, setimageInView] = useState(false);
-
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
 
   return (
     <DesignDefaultWrapper>
@@ -58,7 +51,7 @@ const DesignDefault = () => {
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col" >
             <div ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
-              <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
+              <IntegrationsImage  alt="integrations-img" className={inView ? "diagram-visible" : "diagram-hidden"} />
             </div>
           </Col>
         </Row>

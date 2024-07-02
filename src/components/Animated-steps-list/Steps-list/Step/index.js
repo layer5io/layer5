@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import LogoList from "../../../Logo-List";
 import { StepWrapper } from "./Step.style";
 
 const Step = ({ name, description, logos, onInViewStatusChanged }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
-  const [inViewStatus, setInViewStatus] = useState(false);
 
   useEffect(() => {
-    if (inView !== inViewStatus) {
-      setInViewStatus(inView);
-      onInViewStatusChanged(inView);
-    }
-  }, [inView, inViewStatus]);
+    onInViewStatusChanged(inView);
+  }, [inView]);
 
   return (
     <StepWrapper ref={ref}>

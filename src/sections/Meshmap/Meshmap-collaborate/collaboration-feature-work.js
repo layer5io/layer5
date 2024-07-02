@@ -3,7 +3,6 @@ import styled from "styled-components";
 import WorldImg from "./images/world-transitions/world-image.svg";
 
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
 
@@ -66,23 +65,18 @@ const CollaborationFeatureWrapper = styled.div`
 
 const CollaborationFeatureWork = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
-  const [imageInView, setimageInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
 
   return (
     <CollaborationFeatureWrapper>
       <div className="world-image">
-        <img className={imageInView ? "visible" : ""} src={WorldImg} alt="" ref={locatorRef} />
-        {/* <img className={imageInView ? "visible" : ""} src={World1} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World2} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World3} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World4} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World5} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World6} alt="" ref={locatorRef} />
-        <img className={imageInView ? "visible" : ""} src={World7} alt="" ref={locatorRef} /> */}
+        <img className={inView ? "visible" : ""} src={WorldImg} alt="" ref={locatorRef} />
+        {/* <img className={inView ? "visible" : ""} src={World1} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World2} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World3} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World4} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World5} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World6} alt="" ref={locatorRef} />
+        <img className={inView ? "visible" : ""} src={World7} alt="" ref={locatorRef} /> */}
       </div>
       <div className="hero-text">
         <h2><span>Work from Anywhere</span></h2>

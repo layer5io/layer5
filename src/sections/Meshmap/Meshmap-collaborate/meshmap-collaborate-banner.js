@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import { ReactComponent as IngressGatewayImage } from "./images/banner-transitions/ingress-gateway-partial-colorMode.svg";
@@ -181,11 +181,6 @@ const CollaborationBannerWrapper = styled.div`
 
 const MeshmapCollaborateBanner = () => {
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
-  const [imageInView, setimageInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
 
   const { isDark } = useStyledDarkMode();
 
@@ -203,18 +198,18 @@ const MeshmapCollaborateBanner = () => {
             <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
           </div>
           <div>
-            <IngressGatewayImage className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} alt="IngressGatewayImage" />
+            <IngressGatewayImage className={inView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} alt="IngressGatewayImage" />
           </div>
           <div>
-            <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />
+            <KubernetesImage className={inView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />
           </div>
           <div>
-            <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
+            <PodImage className={inView ? "pod-transition pod" : "pod"} alt="PodImage" />
           </div>
           <div>
-            <PrometheusImage alt="PrometheusImage" className={imageInView ? "prometheus-transition prometheus" : "prometheus"} />
+            <PrometheusImage alt="PrometheusImage" className={inView ? "prometheus-transition prometheus" : "prometheus"} />
           </div>
-          <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+          <img className={inView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
         </div>
       </div>
     </CollaborationBannerWrapper>

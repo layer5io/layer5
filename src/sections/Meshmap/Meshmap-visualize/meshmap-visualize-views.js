@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ReactComponent as VisualizerViews } from "./images/visualizer-views-colorMode.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 const ViewsSectionWrapper = styled.div`
 
@@ -114,19 +113,13 @@ const ViewsSectionWrapper = styled.div`
 
 const MeshmapVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.4 });
-  const [imageInView, setimageInView] = useState(false);
-
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
 
   return (
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          <VisualizerViews className={imageInView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
-          <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
+          <VisualizerViews className={inView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
+          <img className={inView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
         </div>
         <div className="hero-text">
           <h1><span>Discover more with intuitive zoom levels</span></h1>

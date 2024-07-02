@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 
@@ -90,17 +90,10 @@ hr {
 const InlineQuotes = ({ person, title, quote,image }) => {
 
   const [quoteRef, inView] = useInView({ threshold: 1.0 });
-  const [quoteInView, setquoteInView] = useState(false);
-  useEffect(() => {
-    if (inView && !quoteInView)
-      setquoteInView(true);
-    else if (quoteInView && !inView)
-      setquoteInView(false);
-  }, [inView, quoteInView]);
 
   return (
     <QuotesWrapper onlyQuoteIsPresent={!(image || person || title)}>
-      <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
+      <div className={inView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
         {(image || person || title) && <hr />}
         {
