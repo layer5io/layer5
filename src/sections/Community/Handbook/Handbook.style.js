@@ -110,8 +110,11 @@ export const HandbookWrapper = styled.div`
       text-align: center;
       background: rgb(71,126,150);
       background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+      display:flex;
+      justify-content: center;
+      align-items:center;
       h1 {
-          line-height: 10rem;
+          // line-height: 10rem;
           color: white;
       }
     }
@@ -342,6 +345,10 @@ export const HandbookWrapper = styled.div`
     }
 
     @media only screen and (max-width: 425px){
+      .page-header-section h1{
+        padding: 0 .3rem;
+        line-height: 2rem;
+      }
       .project-title-icon{
         width:11%;
         transform: translate(0,25%)
@@ -352,6 +359,10 @@ export const HandbookWrapper = styled.div`
     }
 
     @media only screen and (max-width: 375px){
+      .page-header-section h1{
+        padding: 0 .5rem;
+        line-height: 2rem;
+      }
       .project-title-icon{
         width:13%;
         transform : translate(0,20%)
