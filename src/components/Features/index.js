@@ -31,8 +31,6 @@ const Features = (props) => {
         const maxX = rect.width - element.clientWidth - 50;
         const maxY = rect.height - element.clientHeight - 50;
         const randomX = Math.floor(Math.random() * maxX);
-        // const halfMaxY = maxY / 2;
-        // console.log(maxX, maxY, "here");
         const randomY = Math.floor(Math.random() * (maxY + 1));
 
         element.style.transition = "transform 3s ease";
