@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
 	position: relative;
-	overflow: visible;
+	overflow-x: hidden;
 	margin-bottom: 2rem;
 
 	.brandHeader {
