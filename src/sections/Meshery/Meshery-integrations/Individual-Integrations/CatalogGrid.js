@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { CatalogCard, SistentThemeProvider } from "@layer5/sistent";
+import { CatalogCard, SistentThemeProviderWithoutBaseLine } from "@layer5/sistent";
 import axios from "axios";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 import Button from "../../../../reusecore/Button";
@@ -47,7 +47,7 @@ const CatalogGrid = ({ frontmatter }) => {
         </h1>
       </section>
       <section className="componentsSection">
-        <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+        <SistentThemeProviderWithoutBaseLine initialMode={isDark ? "dark" : "light"}>
           {designs?.patterns?.map((item, index) => {
             return (
               <CatalogCard
@@ -61,7 +61,7 @@ const CatalogGrid = ({ frontmatter }) => {
               />
             );
           })}
-        </SistentThemeProvider>
+        </SistentThemeProviderWithoutBaseLine>
       </section>
       {designSize <= designs?.total_count && (
         <Button
