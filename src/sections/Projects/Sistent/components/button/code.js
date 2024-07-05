@@ -140,11 +140,7 @@ export const ButtonCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button
-                  variant="contained"
-                  size="medium"
-                  className="size-button"
-                >
+                <Button variant="contained" size="medium">
                   48px Height
                 </Button>
                 <Button variant="contained" size="large">
