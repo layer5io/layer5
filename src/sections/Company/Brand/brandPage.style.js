@@ -179,9 +179,12 @@ const BrandPageWrapper = styled.section`
 		.color-code-wrapper{
 			margin-left: 0px;
 		}
-		.ImgDiv img{
+		.ImgDiv img {
 			margin: auto;
-			width: 200px;
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 200px;
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
