@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CopySvg from "../../../../../assets/images/sistent/copy-button";
-import { ReactComponent as Tick } from "../../../../../assets/images/sistent/tick.svg";
 import styled from "styled-components";
 
 const CopyButtonContainer = styled.div`
@@ -50,7 +49,7 @@ export const CodeBlock = ({ name, code }) => {
             <code lang="javascript">{code}</code>
           </pre>
           <CopyButtonContainer onClick={handleCopy} >
-            {!isCopied ? (<CopySvg />) : (<> <Tick height="1.2rem" width = "1.2rem"/> </>)}
+            {!isCopied ? (<CopySvg />) : "Copied!" }
           </CopyButtonContainer>
         </div>
       )}
