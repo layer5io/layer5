@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[7033],{14310:function(e,s,t){t(67294);s.Z=t.p+"static/kubernetes.1984069f.svg"}}]);
+//# sourceMappingURL=f6cc0b05-148e86a7ef611ac5e340.js.map
