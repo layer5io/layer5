@@ -13,7 +13,19 @@ export const AdventuresVolWrapper = styled.div`
 	  overflow: hidden;
 	  height: 19rem;
 	  position: relative;
-		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+	  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+	  @media (max-width: 450px) {
+      width: 24.5rem;
+      }
+
+	  @media (max-width: 420px) {
+      width: 23rem;
+      }
+
+	  @media (max-width: 390px) {
+      width: 19.5rem;
+      }
 	}
 
 	.handbook__card--head {
@@ -96,6 +108,13 @@ export const AdventuresVolWrapper = styled.div`
 
 	.handbook__card:hover {
 	  scale: 1.07;
+
+	 @media (max-width: 420px) {
+      scale: 1.03;
+     }
+	 @media (max-width: 390px) {
+      scale: 1.01;
+     }
 	}
 
 	.handbook__card:hover .handbook__card--head {

@@ -13,7 +13,15 @@ export const HandbookCardWrapper = styled.div`
 	  overflow: hidden;
 	  height: 19rem;
 	  position: relative;
-		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+	  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+	  @media (max-width: 420px) {
+      width: 23rem;
+      }
+
+	  @media (max-width: 390px) {
+      width: 20rem;
+      }
 	}
 
 	.handbook__card--head {
@@ -54,7 +62,10 @@ export const HandbookCardWrapper = styled.div`
 	  letter-spacing: 0px;
 	  font-weight: 400;
 	  font-size: 1.1rem;
-		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+	  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+		@media (max-width: 420px) {
+        font-size: 1rem;
+        }
 	}
 
 	.handbook__card--lm__container {
@@ -96,6 +107,14 @@ export const HandbookCardWrapper = styled.div`
 
 	.handbook__card:hover {
 	  scale: 1.07;
+
+	@media (max-width: 420px) {
+      scale: 1.03;
+    }
+
+	 @media (max-width: 390px) {
+      scale: 1.01;
+    }
 	}
 
 	.handbook__card:hover .handbook__card--head {
