@@ -3,26 +3,23 @@ import styled from "styled-components";
 const LabSinglePageWrapper = styled.div`
   margin-bottom: 4rem;
   display: block;
-  padding: 0 1rem; // Add padding for small screens
+  padding: 0 1rem;
+  color: white; // Added this line to make the text white
 
   .backBtn {
     display: flex;
     justify-content: flex-start;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
     font-weight: 600;
-
     a {
       display: flex;
-      align-items: center;
-      color: ${(props) => props.theme.primaryColor};
+      color: white; // Changed to white
       &:hover {
         color: ${(props) => props.theme.linkColor};
       }
-
       h4 {
         line-height: 1.75rem;
-        margin-left: 0.5rem;
       }
       svg {
         font-size: 1.75rem;
@@ -31,13 +28,34 @@ const LabSinglePageWrapper = styled.div`
   }
 
   .join-community {
-    margin: 3rem 0;
+    margin: 5rem 0rem;
+    .backBtn {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      a {
+        display: flex;
+        align-items: center;
+        color: white; // Changed to white
+        &:hover {
+          color: ${(props) => props.theme.linkColor};
+        }
+        h4 {
+          line-height: 1.75rem;
+          margin-left: 0.5rem;
+        }
+        svg {
+          font-size: 1.75rem;
+        }
+      }
+    }
   }
 
   .join-community_text-and_button {
     text-align: center;
     padding: 0 1rem;
-
     h1 {
       margin-top: 1rem;
       font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -57,15 +75,14 @@ const LabSinglePageWrapper = styled.div`
   .cardContent {
     margin: 0 auto;
     max-width: 60rem;
-    color: ${(props) => props.theme.textColor};
+    color: white; // Changed to white
     padding: 0 1rem;
-
     a {
       display: inline-flex;
       align-items: center;
       color: ${(props) => props.theme.linkColor};
       &:hover {
-        color: ${(props) => props.theme.primaryColor};
+        color: white; // Changed to white
       }
     }
   }
@@ -80,9 +97,20 @@ const LabSinglePageWrapper = styled.div`
       margin-top: 2rem;
       margin-left: 0;
     }
-
     .cardContent {
       margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .backBtn {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 25rem) {
+    .backBtn {
+      left: 0rem;
     }
   }
 
