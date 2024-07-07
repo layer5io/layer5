@@ -283,6 +283,12 @@ export const HandbookWrapper = styled.div`
       .content > a:first-of-type > h2:first-of-type {
         padding-top: 7rem;
       }
+      .page-header-section h1{
+        padding: 0 1rem;
+        line-height: 3rem;
+        padding-top: 2rem;
+        font-size:1.565rem;
+      }
       .page-section{
         margin-top: -2rem;
         margin-left: 0;
@@ -311,7 +317,8 @@ export const HandbookWrapper = styled.div`
       .page-header-section h1{
         padding: 0 1rem;
         line-height: 3rem;
-        padding-top: 4rem;
+        padding-top: 2rem;
+        font-size:1.565rem;
       }
       .page-section{
         margin-top: -2rem;
@@ -362,6 +369,7 @@ export const HandbookWrapper = styled.div`
       .page-header-section h1{
         padding: 0 .5rem;
         line-height: 2rem;
+        font-size:1.565rem;
       }
       .project-title-icon{
         width:13%;
