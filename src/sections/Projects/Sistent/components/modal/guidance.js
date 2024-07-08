@@ -25,7 +25,7 @@ export const ModalGuidance = () => {
           onClick={() => navigate("/projects/sistent/components/modal")}
           title="Overview"
         />
-        <TabButton
+        {/* <TabButton
           className={
             location.pathname ===
               "/projects/sistent/components/modal/guidance"
@@ -36,7 +36,7 @@ export const ModalGuidance = () => {
             navigate("/projects/sistent/components/modal/guidance")
           }
           title="Guidance"
-        />
+        /> */}
         <TabButton
           className={
             location.pathname === "/projects/sistent/components/modal/code"
