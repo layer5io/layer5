@@ -12,7 +12,6 @@ export const ComponentsWrapper = styled.div`
       font-weight: normal;
     }
   }
-
   .componentimg {
     width: 80px;
     height: 80px;
@@ -34,7 +33,7 @@ export const ComponentsWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: ${props => props.theme.grey212121ToGreyEEEEEE};
+    background-color: ${(props) => props.theme.grey212121ToGreyEEEEEE};
     padding: 0.5rem 1rem;
     border-radius: 0.85rem;
     width: 100%;
@@ -45,11 +44,9 @@ export const ComponentsWrapper = styled.div`
   .items {
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
     font-size: 0.875rem;
     transition: all .1s ease-in-out;
     line-height: 1.1875rem;
     width: 100%;
 `;
-
-
