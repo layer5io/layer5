@@ -2,6 +2,7 @@ import React from "react";
 import { SistentLayout } from "../../sistent-layout";
 import { useState } from "react";
 import {
+  Box,
   Button,
   Modal,
   ModalBody,
@@ -9,11 +10,31 @@ import {
   ModalButtonSecondary,
   ModalFooter,
   SistentThemeProvider,
+  Typography,
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+
+const CustomInput = ({ label, placeholder, style }) => (
+  <Box style={{ marginBottom: "16px", ...style }}>
+    <Typography variant="subtitle1" gutterBottom>
+      {label}
+    </Typography>
+    <input
+      type="text"
+      placeholder={placeholder}
+      style={{
+        width: "100%",
+        padding: "10px",
+        border: "1px solid #ccc",
+        borderRadius: "4px",
+        boxSizing: "border-box",
+      }}
+    />
+  </Box>
+);
 
 export const ModalCode = () => {
   const [open, setOpen] = useState(false);
@@ -132,7 +153,14 @@ export const ModalCode = () => {
                   onClose={handleActionClose}
                   title="Action Modal Title"
                 >
-                  <ModalBody></ModalBody>
+                  <ModalBody>
+                    <CustomInput label="Name" placeholder="Enter your name" />
+                    <CustomInput label="Email" placeholder="Enter your email" />
+                    <CustomInput
+                      label="Assign Organizations"
+                      placeholder="Assign organizations"
+                    />
+                  </ModalBody>
                   <ModalFooter variant="filled">
                     <ModalButtonSecondary onClick={handleActionClose}>
                       Cancel
