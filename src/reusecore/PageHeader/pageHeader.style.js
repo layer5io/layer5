@@ -13,7 +13,7 @@ const PageHeaderWrapper = styled.div`
             padding: 0 1rem 0;
             z-index: 99;
             h1 {
-                padding-top: 1.5rem;
+                padding-top: 3rem;
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 img{
                     padding-left: 1rem;
