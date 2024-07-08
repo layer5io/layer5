@@ -2,6 +2,7 @@ import React from "react";
 import { SistentLayout } from "../../sistent-layout";
 import { useState } from "react";
 import {
+  Button,
   Modal,
   ModalBody,
   ModalButtonPrimary,
@@ -57,7 +58,7 @@ export const ModalCode = () => {
             onClick={() => navigate("/projects/sistent/components/modal")}
             title="Overview"
           />
-          <TabButton
+          {/* <TabButton
             className={
               location.pathname ===
                 "/projects/sistent/components/modal/guidance"
@@ -68,7 +69,7 @@ export const ModalCode = () => {
               navigate("/projects/sistent/components/modal/guidance")
             }
             title="Guidance"
-          />
+          /> */}
           <TabButton
             className={
               location.pathname === "/projects/sistent/components/modal/code"
@@ -81,42 +82,67 @@ export const ModalCode = () => {
         </div>
         <div className="main-content">
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <div>
-              <button onClick={handleOpen}>Open Modal</button>
-              <Modal open={open} closeModal={handleClose} title="Modal Title">
-                <ModalBody>
-                  <div>
-                    This action is irreversible! Are you sure you want to delete
-                    this team?
-                  </div>
-                </ModalBody>
-                <ModalFooter variant="filled">
-                  <ModalButtonSecondary onClick={handleClose}>
-                    Cancel
-                  </ModalButtonSecondary>
-                  <ModalButtonPrimary onClick={handleClose}>
-                    Delete
-                  </ModalButtonPrimary>
-                </ModalFooter>
-              </Modal>
+            <p>
+              Buttons communicate actions to users and they can be placed at
+              several places throughout the user interface.
+            </p>
+            <a id="Basic Button">
+              <h2>confirmation Modal</h2>
+            </a>
+            <div className="showcase">
+              <div className="items">
+                <Button variant="contained" onClick={handleOpen}>
+                  Open Modal
+                </Button>
+                <Modal open={open} closeModal={handleClose} title="Modal Title">
+                  <ModalBody>
+                    <div>
+                      This action is irreversible! Are you sure you want to
+                      delete this team?
+                    </div>
+                  </ModalBody>
+                  <ModalFooter variant="filled">
+                    <ModalButtonSecondary onClick={handleClose}>
+                      Cancel
+                    </ModalButtonSecondary>
+                    <ModalButtonPrimary onClick={handleClose}>
+                      Delete
+                    </ModalButtonPrimary>
+                  </ModalFooter>
+                </Modal>
+              </div>
             </div>
-            <div>
-              <button onClick={handleActionOpen}>Open Action Modal</button>
-              <Modal
-                open={actionOpen}
-                onClose={handleActionClose}
-                title="Action Modal Title"
-              >
-                <ModalBody></ModalBody>
-                <ModalFooter variant="filled">
-                  <ModalButtonSecondary onClick={handleActionClose}>
-                    Cancel
-                  </ModalButtonSecondary>
-                  <ModalButtonPrimary onClick={handleActionClose}>
-                    Delete
-                  </ModalButtonPrimary>
-                </ModalFooter>
-              </Modal>
+            <h3>Action Modal</h3>
+            <p>
+              Action modals help users carry out specific tasks. These would
+              naturally involve more steps than just confirming or rejecting an
+              action. They may include forms, links, and feature specific
+              elements that ensure that users complete crucial tasks along their
+              given flow. They will usually have an icon at the top left corner
+              of the modal to signify what the purpose of this modal is in
+              relation to the given flow as well as help users familiarize with
+              said custom icons for easy identification across our solutions
+              however, this might not be applicable in all cases.
+            </p>
+            <div className="showcase">
+              <div className="items">
+                <Button onClick={handleActionOpen}>Open Action Modal</Button>
+                <Modal
+                  open={actionOpen}
+                  onClose={handleActionClose}
+                  title="Action Modal Title"
+                >
+                  <ModalBody></ModalBody>
+                  <ModalFooter variant="filled">
+                    <ModalButtonSecondary onClick={handleActionClose}>
+                      Cancel
+                    </ModalButtonSecondary>
+                    <ModalButtonPrimary onClick={handleActionClose}>
+                      Delete
+                    </ModalButtonPrimary>
+                  </ModalFooter>
+                </Modal>
+              </div>
             </div>
           </SistentThemeProvider>
         </div>
