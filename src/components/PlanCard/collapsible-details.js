@@ -50,7 +50,7 @@ const FeatureDetails = (props) => {
 
   return (
     <FeatureDetailsWrapper>
-      <div onClick={function () {
+      <div  onClick={function () {
         setExpand(!expand);
       }}>
         {props.description ?
@@ -71,7 +71,7 @@ const FeatureDetails = (props) => {
               />
             )}
           </div> : ""}
-        <h5>{props.category}</h5>
+        <h5 className="feature">{props.category}</h5>
         <div className="details">
           <p className={`closed ${expand ? "open" : ""}`}>
             {props.description}

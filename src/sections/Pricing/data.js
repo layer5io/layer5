@@ -25,7 +25,7 @@ export const details = [
         enterprise: <GiCheckMark className="yes-icon" />,
       },
       {
-        feature: "Configurable OAuth callbacks",
+        feature: "Configurable OAuth callbacks ",
         description: "Customize OAuth callback URLs to seamlessly integrate authentication workflows into your application.",
         free: <GiCheckMark className="yes-icon" />,
         team: <GiCheckMark className="yes-icon" />,

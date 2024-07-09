@@ -40,12 +40,12 @@ h2, h5{
     vertical-align: middle;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-    h5{
-      display: block;
-      text-align: left;
-      padding-top: 1rem;
-      font-size: 1.2rem;
-    }
+    // h5{
+    //   display: block;
+    //   text-align: left;
+    //   padding-top: 1rem;
+    //   font-size: 1.2rem;
+    // }
 }
 .price-table tr td:first-child {
     border-left: 0 none;
@@ -113,8 +113,13 @@ h2, h5{
     background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
     border: 0 none;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+.feature{
+    display: flex;
+    text-align: left;
+    padding-top: 1rem;
+    font-size: 1.2rem;
 }
-
 .category{
   display: inline-block;
   margin: 0 1rem;
@@ -153,6 +158,7 @@ h2, h5{
   align-items: center;
   margin: 1rem 0;
 }
+
 
 `;
 
