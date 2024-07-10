@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LearnPageWrapper = styled.div`
   .page-header-section {
-    height: 30rem;
+    height: 20rem;
     text-align: center;
     background: rgb(71, 126, 150);
     background: linear-gradient(
