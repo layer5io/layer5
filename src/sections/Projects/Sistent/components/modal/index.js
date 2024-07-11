@@ -3,9 +3,14 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
+import confirmation from "../../../../../assets/images/sistent/confirmation.png";
+import confirmationDark from "../../../../../assets/images/sistent/confirmation-dark.png";
+import { Col, Row } from "../../../../../reusecore/Layout";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 export const SistentModal = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
   return (
     <SistentLayout title="Modal">
       <div className="content">
@@ -81,6 +86,15 @@ export const SistentModal = () => {
             confirm and cancel actions or make progress while carrying out a
             particular task.
           </p>
+          <Row className="image-container" Hcenter>
+            <Col md={8} lg={8} sm={12}>
+              <img
+                width="100%"
+                src={isDark ? confirmationDark : confirmation}
+                alt="confirmation"
+              />
+            </Col>
+          </Row>
           <h3>Action</h3>
           <p>
             Action modals help users carry out specific tasks. These would
