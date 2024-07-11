@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CopySvg from "../../../../../assets/images/sistent/copy-button";
+import { ReactComponent as Logo } from "../../../../../assets/images/sistent/copy-logo.svg";
 import styled from "styled-components";
 
 const CopyButtonContainer = styled.div`
@@ -49,7 +49,7 @@ export const CodeBlock = ({ name, code }) => {
             <code lang="javascript">{code}</code>
           </pre>
           <CopyButtonContainer onClick={handleCopy} >
-            {!isCopied ? (<CopySvg />) : "Copied!" }
+            {!isCopied ? (<Logo  />) : "Copied!" }
           </CopyButtonContainer>
         </div>
       )}
