@@ -6,6 +6,7 @@ import {
   Button,
   Modal,
   ModalBody,
+  ModalButtonDanger,
   ModalButtonPrimary,
   ModalButtonSecondary,
   ModalFooter,
@@ -17,6 +18,7 @@ import TabButton from "../../../../../reusecore/Button";
 import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { CodeBlock } from "../button/code-block";
 
 const CustomInput = ({ label, text, style }) => (
   <Box style={{ marginBottom: "16px", ...style }}>
@@ -33,6 +35,50 @@ const CustomInput = ({ label, text, style }) => (
     />
   </Box>
 );
+
+const codes = [
+  `  <Button variant="contained" onClick={handleOpen}>
+        Open Modal
+    </Button>
+    <Modal open={open} closeModal={handleClose} title="Modal Title">
+        <ModalBody>
+            <div>
+                This action is irreversible! Are you sure you want to delete this team?
+            </div>
+        </ModalBody>
+        <ModalFooter variant="filled">
+            <ModalButtonSecondary onClick={handleClose}>
+                Cancel
+            </ModalButtonSecondary>
+            <ModalButtonDanger onClick={handleClose}>
+                Delete
+            </ModalButtonDanger>
+        </ModalFooter>
+    </Modal>`,
+  `  <Button onClick={handleActionOpen}>Open Action Modal</Button>
+    <Modal
+        open={actionOpen}
+        onClose={handleActionClose}
+        title="Action Modal Title"
+    >
+        <ModalBody>
+            <CustomInput label="Name" placeholder="Enter your name" />
+            <CustomInput label="Email" placeholder="Enter your email" />
+            <CustomInput
+                label="Assign Organizations"
+                placeholder="Assign organizations"
+            />
+        </ModalBody>
+        <ModalFooter variant="filled">
+            <ModalButtonSecondary onClick={handleActionClose}>
+                Cancel
+            </ModalButtonSecondary>
+            <ModalButtonPrimary onClick={handleActionClose}>
+                Save
+            </ModalButtonPrimary>
+        </ModalFooter>
+    </Modal>`,
+];
 
 export const ModalCode = () => {
   const [open, setOpen] = useState(false);
@@ -124,12 +170,13 @@ export const ModalCode = () => {
                     <ModalButtonSecondary onClick={handleClose}>
                       Cancel
                     </ModalButtonSecondary>
-                    <ModalButtonPrimary onClick={handleClose}>
+                    <ModalButtonDanger onClick={handleClose}>
                       Delete
-                    </ModalButtonPrimary>
+                    </ModalButtonDanger>
                   </ModalFooter>
                 </Modal>
               </div>
+              <CodeBlock name="confirmation-modal" code ={codes[0]} />
             </div>
             <h3>Action Modal</h3>
             <p>
@@ -163,11 +210,12 @@ export const ModalCode = () => {
                       Cancel
                     </ModalButtonSecondary>
                     <ModalButtonPrimary onClick={handleActionClose}>
-                      Delete
+                      Save
                     </ModalButtonPrimary>
                   </ModalFooter>
                 </Modal>
               </div>
+              <CodeBlock name="action-modal" code ={codes[1]} />
             </div>
           </SistentThemeProvider>
         </div>
