@@ -3,8 +3,8 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import confirmation from "../../../../../assets/images/sistent/confirmation.png";
-import confirmationDark from "../../../../../assets/images/sistent/confirmation-dark.png";
+import ConfirmationBg from "../../../../../assets/images/app/projects/sistent/confirmation.png";
+import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sistent/confirmation-dark.png";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
@@ -90,7 +90,7 @@ export const SistentModal = () => {
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
-                src={isDark ? confirmationDark : confirmation}
+                src={isDark ? ConfirmationDarkBg : ConfirmationBg}
                 alt="confirmation"
               />
             </Col>
