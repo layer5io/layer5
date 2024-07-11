@@ -10,6 +10,7 @@ import {
   ModalButtonSecondary,
   ModalFooter,
   SistentThemeProvider,
+  TextField,
   Typography,
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
@@ -17,20 +18,17 @@ import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-const CustomInput = ({ label, placeholder, style }) => (
+const CustomInput = ({ label, text, style }) => (
   <Box style={{ marginBottom: "16px", ...style }}>
     <Typography variant="subtitle1" gutterBottom>
       {label}
     </Typography>
-    <input
-      type="text"
-      placeholder={placeholder}
+    <TextField
+      label={text}
+      variant="outlined"
       style={{
         width: "100%",
         padding: "10px",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-        boxSizing: "border-box",
       }}
     />
   </Box>
@@ -108,7 +106,7 @@ export const ModalCode = () => {
               several places throughout the user interface.
             </p>
             <a id="Basic Button">
-              <h2>confirmation Modal</h2>
+              <h2>Confirmation Modal</h2>
             </a>
             <div className="showcase">
               <div className="items">
@@ -154,11 +152,10 @@ export const ModalCode = () => {
                   title="Action Modal Title"
                 >
                   <ModalBody>
-                    <CustomInput label="Name" placeholder="Enter your name" />
-                    <CustomInput label="Email" placeholder="Enter your email" />
+                    <CustomInput text="Name" />
+                    <CustomInput text="Email" />
                     <CustomInput
-                      label="Assign Organizations"
-                      placeholder="Assign organizations"
+                      text="Assign Organizations"
                     />
                   </ModalBody>
                   <ModalFooter variant="filled">
