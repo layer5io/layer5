@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 export const CodeBlock = ({ name, code }) => {
   const [showCode, setShowCode] = useState(false);
 
@@ -14,9 +15,9 @@ export const CodeBlock = ({ name, code }) => {
         Show Code
       </label>
       {showCode && (
-        <pre className="code">
-          <code lang="javascript">{code}</code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={docco}>
+          {code}
+        </SyntaxHighlighter>
       )}
     </div>
   );
