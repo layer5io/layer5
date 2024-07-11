@@ -29,8 +29,7 @@ const CustomInput = ({ label, text, style }) => (
       label={text}
       variant="outlined"
       style={{
-        width: "100%",
-        padding: "10px",
+        width: "100%"
       }}
     />
   </Box>
@@ -192,7 +191,7 @@ export const ModalCode = () => {
             </p>
             <div className="showcase">
               <div className="items">
-                <Button onClick={handleActionOpen}>Open Action Modal</Button>
+                <Button variant="contained" onClick={handleActionOpen}>Open Action Modal</Button>
                 <Modal
                   open={actionOpen}
                   onClose={handleActionClose}
