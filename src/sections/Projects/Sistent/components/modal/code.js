@@ -19,6 +19,7 @@ import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "../button/code-block";
+import { ActionBox } from "../../sistent.style";
 
 const CustomInput = ({ label, text, style }) => (
   <Box style={{ marginBottom: "16px", ...style }}>
@@ -166,16 +167,18 @@ export const ModalCode = () => {
                     </div>
                   </ModalBody>
                   <ModalFooter variant="filled">
-                    <ModalButtonSecondary onClick={handleClose}>
-                      Cancel
-                    </ModalButtonSecondary>
-                    <ModalButtonDanger onClick={handleClose}>
-                      Delete
-                    </ModalButtonDanger>
+                    <ActionBox>
+                      <ModalButtonSecondary onClick={handleClose}>
+                        Cancel
+                      </ModalButtonSecondary>
+                      <ModalButtonDanger onClick={handleClose}>
+                        Delete
+                      </ModalButtonDanger>
+                    </ActionBox>
                   </ModalFooter>
                 </Modal>
               </div>
-              <CodeBlock name="confirmation-modal" code ={codes[0]} />
+              <CodeBlock name="confirmation-modal" code={codes[0]} />
             </div>
             <h3>Action Modal</h3>
             <p>
@@ -194,7 +197,7 @@ export const ModalCode = () => {
                 <Button variant="contained" onClick={handleActionOpen}>Open Action Modal</Button>
                 <Modal
                   open={actionOpen}
-                  onClose={handleActionClose}
+                  closeModal={handleActionClose}
                   title="Action Modal Title"
                 >
                   <ModalBody>
@@ -205,16 +208,18 @@ export const ModalCode = () => {
                     />
                   </ModalBody>
                   <ModalFooter variant="filled">
-                    <ModalButtonSecondary onClick={handleActionClose}>
-                      Cancel
-                    </ModalButtonSecondary>
-                    <ModalButtonPrimary onClick={handleActionClose}>
-                      Save
-                    </ModalButtonPrimary>
+                    <ActionBox>
+                      <ModalButtonSecondary onClick={handleActionClose}>
+                        Cancel
+                      </ModalButtonSecondary>
+                      <ModalButtonPrimary onClick={handleActionClose}>
+                        Save
+                      </ModalButtonPrimary>
+                    </ActionBox>
                   </ModalFooter>
                 </Modal>
               </div>
-              <CodeBlock name="action-modal" code ={codes[1]} />
+              <CodeBlock name="action-modal" code={codes[1]} />
             </div>
           </SistentThemeProvider>
         </div>
