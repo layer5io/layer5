@@ -18,34 +18,58 @@ const CareerSingle = ({ data }) => {
       <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
-          <Row className="job-header-row">
-            <Col xs={12} md={7} xl={8} className="job-details">
-              <Row>
-                <Col xs={6} className="job-details-col">
-                  <h5> <FaPlay /> Start Date</h5>
-                  <p>{frontmatter.start_date}</p>
-                </Col>
-                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar /> Duration</h5><p>{frontmatter.duration}</p></Col> : ""}
-                <Col xs={6} className="job-details-col">
-                  <h5> <FaGlobeAmericas /> Location</h5>
-                  <p>{frontmatter.location}</p>
-                </Col>
-                <Col xs={6} className="job-details-col">
-                  <h5> <HiOutlineCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}</h5>
-                  <p>{frontmatter.salary}</p>
-                </Col>
-                <Col xs={6} className="job-details-col">
-                  <h5> <FiClock /> Apply By</h5>
-                  <p>{frontmatter.apply_by}</p>
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={12} md={5} xl={4} className="logo-col">
+          <div className="mainjobdiv">
+            <div className="leftjobdiv">
+              {/* */}
+              <div className="job-details">
+                <h5>
+                  {" "}
+                  <FaPlay /> Start Date
+                </h5>
+                <p>{frontmatter.start_date}</p>
+              </div>
+              {/* */}
+              {frontmatter.type === "internship" ? (
+                <div className="job-details">
+                  <h5>
+                    {" "}
+                    <FiCalendar /> Duration
+                  </h5>
+                  <p>{frontmatter.duration}</p>
+                </div>
+              ) : (
+                ""
+              )}
+              <div className="job-details">
+                <h5>
+                  {" "}
+                  <FaGlobeAmericas /> Location
+                </h5>
+                <p>{frontmatter.location}</p>
+              </div>
+              <div className="job-details">
+                <h5>
+                  {" "}
+                  <HiOutlineCash />{" "}
+                  {frontmatter.type === "internship" ? "Stipend" : "Salary"}
+                </h5>
+                <p>{frontmatter.salary}</p>
+              </div>
+              <div className="job-details">
+                <h5>
+                  {" "}
+                  <FiClock /> Apply By
+                </h5>
+                <p>{frontmatter.apply_by}</p>
+              </div>
+            </div>
+
+            <div className="rightjobdiv">
               <div className="layer5-logo">
                 <Logo alt="Layer5 logo" />
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <div>
             <MDXRenderer>{body}</MDXRenderer>
           </div>
