@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
 import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
