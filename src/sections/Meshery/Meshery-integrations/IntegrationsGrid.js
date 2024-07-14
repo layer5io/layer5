@@ -47,6 +47,7 @@ const IntegrationsGrid = ({ category, count }) => {
 
   const settings = {
     initialSlide: 0,
+    variableWidth: true,
     infinite: false,
     slidesToShow: 5.25,
     swipeToSlide: true,

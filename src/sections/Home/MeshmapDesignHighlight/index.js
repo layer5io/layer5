@@ -42,7 +42,7 @@ const DesignDefault = () => {
                         The <span>extensible</span> cloud native manager.
                       </div> */}
                       <div className="description">
-                        <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p>
+                        <p>Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.</p>
                         <p>
                           Play with powerful features including context-aware designs and namespace configurations to easily manage all services.
                         </p>

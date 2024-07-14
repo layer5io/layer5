@@ -9,17 +9,17 @@ const Data = {
       subItems: [
         {
           name: "Developer-defined Infrastructure",
-          path: "/cloud-native-management/meshmap",
+          path: "/solutions/developer-defined-infrastructure",
           sepLine: true
         },
         {
           name: "Cloud Native Deployments by Diagram",
-          path: "/cloud-native-management/meshmap/design",
+          path: "/solutions/cloud-native-deployments-by-diagram",
           sepLine: true
         },
         {
           name: "Kubernetes Multi-cluster Operation",
-          path: "/cloud-native-management/meshmap/visualize",
+          path: "/solutions/kubernetes-multi-cluster-operation",
           sepLine: true
         },
         {
@@ -223,6 +223,11 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
+        {
+          name: "Recognition Program",
+          path: "https://badges.layer5.io",
+          sepLine: true
+        },
       ],
       actionItems: [
         // {
@@ -254,13 +259,13 @@ const Data = {
       path: "/resources",
       subItems: [
         {
-          name: "Docs",
-          path: "https://docs.layer5.io",
+          name: "Blog",
+          path: "/blog",
           sepLine: true
         },
         {
-          name: "Blog",
-          path: "/blog",
+          name: "Docs",
+          path: "https://docs.layer5.io",
           sepLine: true
         },
         // {

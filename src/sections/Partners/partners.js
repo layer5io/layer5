@@ -8,7 +8,7 @@ import { ReactComponent as Partner6 } from "../../assets/images/partners/hashico
 import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
 import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
 import { ReactComponent as Partner9 } from "../../assets/images/partners/redhat-colorMode.svg";
-import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
+// import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
 import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-colorMode.svg";
 import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
@@ -104,14 +104,6 @@ export const partners = [
     partnerId: "redhat",
     //imageRoute: "https://www.redhat.com/",
     moreInfo: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
-  }, {
-    name: "Service Mesh Interface",
-    desc: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
-    //link: null,
-    type: "technology",
-    imageLink: <Partner10 alt="Service Mesh Interface" />,
-    imageRoute: "https://smi-spec.io/blog/validating-smi-conformance-with-meshery/",
-    moreInfo: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
   }, {
     name: "Intel",
     desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",

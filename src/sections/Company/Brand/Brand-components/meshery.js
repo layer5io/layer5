@@ -6,7 +6,7 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.webp";
 import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.webp";
-import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.webp";
+import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-light-text.svg";
 import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-logo-dark.webp";
 
 
@@ -16,7 +16,7 @@ const MesheryBrand = () => {
       <Row className="brand-section">
         <Col xs={12} sm={6}>
           <h1 className="layerH3">
-                        Meshery
+            Meshery
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
