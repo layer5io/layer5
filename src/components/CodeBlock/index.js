@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
-import vsCodeLight from "prism-react-renderer/themes/vsLight";
 import styled from "styled-components";
 import { copyToClipboard } from "./copy-to-clipboard";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 export const Pre = styled.pre`
   position: relative;
@@ -46,7 +44,6 @@ const CopyCode = styled.button`
 
 const Code = ({ codeString, language = "jsx" }) => {
   const [copyText, setCopyText] = useState("Copy");
-  const { isDark } = useStyledDarkMode();
   const handleClick = () => {
     copyToClipboard(codeString);
     setCopyText("Copied!");
@@ -56,7 +53,7 @@ const Code = ({ codeString, language = "jsx" }) => {
     <Highlight
       code={codeString}
       language={language}
-      theme={isDark ? theme : vsCodeLight}
+      theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Pre>
