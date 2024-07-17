@@ -165,7 +165,7 @@ export const repo_data = [
         site: "https://docs.layer5.io/",
         language: "Hugo",
         maintainers_name: ["Vacant"],
-        link: ["https://layer5.io/community/members/archit-sharma"],
+        link: [""],
         repository: "https://github.com/layer5io/docs",
       },
     ],
