@@ -29,6 +29,13 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Error Boundary",
+    description:
+      "The ErrorBoundary component is designed to catch errors that occur within its child components and provide a customizable fallback UI when an error occurs.",
+    url: "/projects/sistent/components/error-boundary"
+  }
 ];
 
 const SistentComponents = () => {
