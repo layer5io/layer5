@@ -149,7 +149,7 @@ export const ErrorBoundaryCode = () => {
               <div className="items">
                 <Button variant="contained" onClick={handleOpen}>
                   Open ErrorBoundary with CustomFallback
-                </Button>  
+                </Button>
               </div>
               <CodeBlock name="customFallback" code={codes[1]} />
             </div>
