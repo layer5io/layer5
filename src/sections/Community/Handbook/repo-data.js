@@ -138,7 +138,7 @@ export const repo_data = [
         site: "https://badges.layer5.io/",
         language: "Gatsby",
         maintainers_name: ["Vacant"],
-        link: ["https://badges.layer5.io"],
+        link: [""],
         repository:
           "https://github.com/layer5labs/meshery-extensions-packages/",
       },
