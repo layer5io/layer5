@@ -18,6 +18,8 @@
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
     "checklint": "eslint . --max-warnings=0",
+    "format": "prettier --write \"**/*.{mdx,js,html,css}\" --config ./.prettierrc",
+    "format:check": "prettier --check \"**/*.{mdx,js,html,css}\" --config ./.prettierrc",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
@@ -129,6 +131,7 @@
     "gh-pages": "^6.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
+    "prettier": "3.3.3",
     "rimraf": "^3.0.2",
     "webpack-cli": "^5.0.2"
   }
