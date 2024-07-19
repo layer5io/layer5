@@ -1,4 +1,12 @@
+import { Box } from "@layer5/sistent";
 import styled from "styled-components";
+
+export const ActionBox = styled(Box)(() => ({
+  display: "flex",
+  justifyContent: "end",
+  width: "100%",
+  gap: "1rem"
+}));
 
 const SistentWrapper = styled.div`
   position: relative;
