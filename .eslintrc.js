@@ -60,25 +60,25 @@ module.exports = {
     "react/prop-types": 0,
     "react/no-unescaped-entities": [0],
     "react/jsx-no-duplicate-props": [0],
-    "indent": [
-      "error", 2, {
-        "FunctionExpression": { "parameters": "first" },
-        "FunctionDeclaration": { "parameters": "first" },
-        "MemberExpression": 1,
-        "SwitchCase": 1,
-        "outerIIFEBody": 0,
-        "VariableDeclarator": { "var": 2, "let": 2, "const": 3 },
-        ignoredNodes: ["TemplateLiteral"]
-      }
-    ],
+    // "indent": [
+    //   "error", 2, {
+    //     "FunctionExpression": { "parameters": "first" },
+    //     "FunctionDeclaration": { "parameters": "first" },
+    //     "MemberExpression": 1,
+    //     "SwitchCase": 1,
+    //     "outerIIFEBody": 0,
+    //     "VariableDeclarator": { "var": 2, "let": 2, "const": 3 },
+    //     ignoredNodes: ["TemplateLiteral"]
+    //   }
+    // ],
     "linebreak-style": [
       "error",
       "unix"
     ],
-    "quotes": [
-      "error",
-      "double"
-    ],
+    // "quotes": [
+    //   "error",
+    //   "double"
+    // ],
     "semi": [
       "error",
       "always"
