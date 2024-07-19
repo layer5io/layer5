@@ -12,7 +12,6 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {/* eslint-disable-next-line react/no-unknown-property*/}
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
         <link
           rel="preload"
