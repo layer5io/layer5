@@ -21,9 +21,6 @@ const SistentWrapper = styled.div`
   .content {
     width: 100%;
     padding-bottom: 2rem;
-    @media only screen and (max-width: 425px){
-      overflow: hidden; 
-    }
     ul > li {
       color: ${(props) => props.theme.text};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -179,7 +176,7 @@ const SistentWrapper = styled.div`
   }
 
   .community-home-container {
-    padding: 1rem;
+    padding: 1rem 0;
     padding-bottom: 4rem;
     display: flex;
     flex-wrap: wrap;
@@ -449,7 +446,7 @@ const SistentWrapper = styled.div`
       opacity: 0;
       height: 0;
       transition: none;
-      display: none;
+      visibility: hidden;
     }
   }
 
@@ -627,6 +624,10 @@ const SistentWrapper = styled.div`
   .image-container {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .components-container {
+    margin-left: 1rem;
   }
 
   .search-container {

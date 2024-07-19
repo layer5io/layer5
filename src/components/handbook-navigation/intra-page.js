@@ -44,7 +44,7 @@ const JoinCommunityWrapper = styled.div`
       opacity: 0;
       height: 0;
       transition: none;
-      display: none;
+      visibility: hidden;
     }
   }
 
