@@ -200,11 +200,11 @@ const Repository = () => {
                   <table key={category}>
                     <thead>
                       <tr>
-                        <th>{category}</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
+                        <th className="table-container-head">{category}</th>
+                        <th className="table-container-head">Language</th>
+                        <th className="table-container-head">Description</th>
+                        <th className="table-container-head">Maintainers</th>
+                        <th className="linkscol table-container-head">Repo</th>
                       </tr>
                     </thead>
                     {backendProject.subdata.map((subdata) => {
@@ -212,7 +212,7 @@ const Repository = () => {
                       const smpClass = project === "SMP Action";
                       const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
-                        <tbody key={project}>
+                        <tbody className="table-container-body" key={project}>
                           <tr>
                             <td>
                               <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>

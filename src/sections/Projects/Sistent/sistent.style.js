@@ -124,7 +124,7 @@ const SistentWrapper = styled.div`
     padding-bottom: 4rem;
   }
 
-  table {
+  .table-container table {
     border-collapse: collapse;
     width: 98%;
     margin: 1rem 0 2rem 0;
@@ -152,8 +152,8 @@ const SistentWrapper = styled.div`
     }
   }
 
-  td,
-  th {
+  .table-container td,
+  th .table-container-head{
     border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
     text-align: left;
     padding: 0.5rem;
@@ -165,8 +165,8 @@ const SistentWrapper = styled.div`
     width: 8%;
   }
 
-  tbody:nth-child(even) {
-    background-color: ${(props) => props.theme.secondaryLightColorTwo};
+  tbody:nth-child(even) .table-container-body{
+     background-color: ${(props) => props.theme.secondaryLightColorTwo};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -831,6 +831,345 @@ const SistentWrapper = styled.div`
       overflow: auto;
     }
   }
+
+
+  .color-table{
+  width :100%;
+        
+
+  }
+
+
+
+   .color-col{
+   margin: auto;
+             
+             
+             font-family: Qanelas Soft;
+             font-size: 16px;
+             font-weight: 700;
+             line-height: 28px;
+             text-align: left;
+
+
+  }
+             .color-th{
+             width : 50%;
+             padding-top:1rem;
+             padding-bottom: 1rem;
+             }
+ 
+      .color-col{
+                 width: 86.5%;
+                 margin: auto;
+               }
+    
+    .token-col2{
+               visibility:hidden;
+               height: 50%;
+            }
+  
+  .color-table{
+    table {
+    
+    
+     border: 1px solid #C9DBE3 !important;
+     border-radius: 16px!important;
+     margin: auto!important;
+      border-spacing: 0px;
+            width: 66.6%;
+             border: 1px solid red;
+          
+     
+     
+     tbody{
+       tr{
+         td{
+           
+          .key{
+          
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            
+            .token-col{
+              width: 100%;
+              margin: auto;
+              height: 50%;
+              font-family: Consolas;
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 24px;
+              text-align: left;
+              color: #000D12;
+            }
+            
+          }
+          }
+           .value{
+            
+            display: flex;
+           width: 86.5%;
+              margin: auto;
+            .hex-color{
+              width: 100%;
+              .color1{
+                font-family: Open Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 24px;
+               
+
+              }
+              .color2{
+              font-family: Open Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 24px;
+              }
+            }
+            .swatch {
+              margin: auto;
+              width: 32px;
+              height: 32px;
+              border-radius: 4px;
+              border: 1px solid #51636B;
+            }
+           
+          
+        }
+         
+      }
+       
+    }  
+           
+   }
+    
+  }
+
+             .keppel-70{
+              background-color: #DAF2EB;
+            }
+               .keppel-60{
+               background-color: #93E6D1;
+              }
+             .keppel-50{
+                  background-color: #41CCB3;
+                 }
+            .keppel-40{
+            background-color: #00B39F;
+            }
+           .keppel-30{
+             background-color: #007763;
+            }
+            .keppel-20{
+             background-color: #006661;
+             }
+            .keppel-10{
+              background-color: #00403F;
+            }
+            .caribbean-70{
+             background-color: #E6FFF6;
+             }
+           .caribbean-60{
+             background-color: #A3FFE0;
+             }
+           .caribbean-50{
+            background-color: #78FAD3;
+            }
+           .caribbean-40{
+            background-color: #00D3A9;
+            }
+           .caribbean-30{
+             background-color: #00AD90;
+            }
+           .caribbean-20{
+            background-color: #006157;
+            }
+           .caribbean-10{
+             background-color: #003B37;
+            }
+            .Saffron-70{
+              background-color: #FFFEE6;
+            }
+            .Saffron-60{
+              background-color: #FFFBBD;
+            }
+            .Saffron-50{
+              background-color: #FFEB6B;
+            }
+            .Saffron-40{
+              background-color: #EBC017;
+            }
+            .Saffron-30{
+              background-color: #C4990A;
+            }
+            .Saffron-20{
+              background-color: #785400;
+            }
+            .Saffron-10{
+              background-color: #523600;
+            }
+              .charcoal-100{
+             background-color: #fdfdfd;
+             }
+            .charcoal-90{
+             background-color: #EAEDEE;
+             }
+            .charcoal-80{
+              background-color: #D2D8DA;
+            }
+            .charcoal-70{
+             background-color: #B1B9BC;
+             }
+           .charcoal-60{
+             background-color: #8C999E;
+             }
+           .charcoal-50{
+            background-color: #647176;
+            }
+           .charcoal-40{
+            background-color: #3C494E;
+            }
+           .charcoal-30{
+             background-color: #28353A;
+            }
+           .charcoal-20{
+            background-color: #142126;
+            }
+           .charcoal-10{
+             background-color: #000D12;
+            }
+             .accent_grey-90{
+              background-color: #E7EFF3;
+            }
+              .accent_grey-80{
+              background-color: #ABBDC5;
+            }
+            .accent_grey-70{
+              background-color: #ABBDC5;
+            }
+            .accent_grey-60{
+              background-color: #8D9FA7;
+            }
+            .accent_grey-50{
+              background-color: #6F8189;
+            }
+            .accent_grey-40{
+              background-color: #51636B;
+            }
+            .accent_grey-30{
+              background-color: #3D4F57;
+            }
+            .accent_grey-20{
+              background-color: #293B43;
+            }
+            .accent_grey-10{
+              background-color: #15272F;
+            }
+                .blue-70{
+              background-color: #F0FBFF;
+            }
+               .blue-60{
+               background-color: #9EDDFF;
+              }
+             .blue-50{
+                  background-color: #75CAFF;
+                 }
+            .blue-40{
+            background-color: #2196F3;
+            }
+           .blue-30{
+             background-color: #1272CC;
+            }
+            .blue-20{
+             background-color: #0754A6;
+             }
+            .blue-10{
+              background-color: #003980;
+            }
+            .green-70{
+             background-color: #EFFCED;
+             }
+           .green-60{
+             background-color: #B2E3AF;
+             }
+           .green-50{
+            background-color: #5BC95B;
+            }
+           .green-40{
+            background-color: #36BC3B;
+            }
+           .green-30{
+             background-color: #15701E;
+            }
+           .green-20{
+            background-color: #0A4A13;
+            }
+           .green-10{
+             background-color: #05240A;
+            }
+            .yellow-70{
+              background-color: #FFFBE6;
+            }
+            .yellow-60{
+              background-color: #FFEFA6;
+            }
+            .yellow-50{
+              background-color: #FFE37D;
+            }
+            .yellow-40{
+              background-color: #F0D053;
+            }
+            .yellow-30{
+              background-color: #F0A303;
+            }
+            .yellow-20{
+              background-color: #785400;
+            }
+            .yellow-10{
+              background-color: #A36500;
+            }
+               .red-70{
+              background-color: #F2E3DA;
+            }
+            .red-60{
+              background-color: #E6B093;
+            }
+            .red-50{
+              background-color: #BF471F;
+            }
+            .red-40{
+              background-color: #F91313;
+            }
+            .red-30{
+              background-color: #B32700;
+            }
+            .red-20{
+              background-color: #8C1A00;
+            }
+            .red-10{
+              background-color: #660F00;
+            }
+            tr.shades {
+             background-color: #E7EFF3 !important;
+            }
+            tr.light{
+            background-color: none;
+            }
+
+            tbody tr:last-child td:first-child {
+             border-bottom-left-radius: 16px; 
+            }
+
+            tbody tr:last-child td:last-child {
+              border-bottom-right-radius: 16px; 
+            }
+
+         
+
+     
 `;
 
 export default SistentWrapper;
