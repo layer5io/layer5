@@ -43,4 +43,17 @@ export const content = [
     link: "/projects/sistent/components/text-input/code",
     text: "Text Input",
   },
+  {
+    id: 15,
+    link: "/projects/sistent/components/modal",
+    text: "Modal",
+  },
+
+  {
+    id: 16,
+    link: "/projects/sistent/components/modal/code",
+    text: "Modal",
+  },
+
+  
 ];
