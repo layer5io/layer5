@@ -17,22 +17,7 @@ import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "../button/code-block";
-import { ActionBox } from "../../sistent.style";
 
-const CustomInput = ({ label, text, style }) => (
-  <Box style={{ marginBottom: "16px", ...style }}>
-    <Typography variant="subtitle1" gutterBottom>
-      {label}
-    </Typography>
-    <TextField
-      label={text}
-      variant="outlined"
-      style={{
-        width: "100%"
-      }}
-    />
-  </Box>
-);
 
 const codes = [
   `import { withErrorBoundary } from '@layer5/sistent';
@@ -72,18 +57,6 @@ export const ErrorBoundaryCode = () => {
 
   const handleOpen = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleActionOpen = () => {
-    setActionOpen(true);
-  };
-
-  const handleActionClose = () => {
-    setActionOpen(false);
   };
 
   return (
