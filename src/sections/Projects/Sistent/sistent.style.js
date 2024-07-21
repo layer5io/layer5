@@ -1,4 +1,12 @@
+import { Box } from "@layer5/sistent";
 import styled from "styled-components";
+
+export const ActionBox = styled(Box)(() => ({
+  display: "flex",
+  justifyContent: "end",
+  width: "100%",
+  gap: "1rem"
+}));
 
 const SistentWrapper = styled.div`
   position: relative;
@@ -810,6 +818,7 @@ const SistentWrapper = styled.div`
       align-items: center;
       justify-content: center;
       padding: 5rem;
+      gap: 1rem;
     }
 
     .show-code {
@@ -820,10 +829,6 @@ const SistentWrapper = styled.div`
     .code {
       font-size: 0.9rem;
       overflow: auto;
-    }
-
-    .size-button {
-      margin-right: 1rem;
     }
   }
 `;

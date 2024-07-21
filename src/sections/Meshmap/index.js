@@ -51,7 +51,7 @@ const Meshmap = (props) => {
                 {
                   title: "Designer Mode",
                   description:
-                    "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
+                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
                     <img
                       src={designerImage}
@@ -82,7 +82,7 @@ const Meshmap = (props) => {
               [
                 {
                   title: "Design your deployments the way you want",
-                  description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
                   imgContent: (
                     <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )

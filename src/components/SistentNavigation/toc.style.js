@@ -129,6 +129,7 @@ const TOCWrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     padding-right: 1rem;
     cursor: pointer;
 

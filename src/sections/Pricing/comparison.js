@@ -41,7 +41,7 @@ h2, h5{
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     h5{
-      display: block;
+      display: flex;
       text-align: left;
       padding-top: 1rem;
       font-size: 1.2rem;

@@ -12,7 +12,7 @@ const CopyButtonContainer = styled.div`
     cursor: pointer;
   `;
 
-export const CodeBlock = ({ name, code }) => {
+  export const CodeBlock = ({ name, code }) => {
 
   const [showCode, setShowCode] = useState(false);
   const [isCopied , setIsCopied] = useState(false);
