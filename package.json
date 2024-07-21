@@ -114,7 +114,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{mdx,html,css}": [
+      "prettier --write"
     ]
   },
   "devDependencies": {
