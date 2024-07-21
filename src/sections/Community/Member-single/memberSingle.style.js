@@ -30,7 +30,7 @@ export const MemberSingleWrapper = styled.div`
     font-size: 1.75rem;
     line-height: 1.75rem;
     color: ${(props) => props.theme.primaryColor};
-    text-align: right;
+    text-align: left;
     font-weight: 400;
   }
   ul {
@@ -264,14 +264,12 @@ export const MemberSingleWrapper = styled.div`
   .tooltip {
     position: relative;
     display: inline-block;
-   
   }
 
   .tooltip .tooltiptext {
-    
     font-size: 14px;
     visibility: hidden;
-   
+
     width: 100px;
     background-color: #333;
     color: #fff;
@@ -286,11 +284,11 @@ export const MemberSingleWrapper = styled.div`
     opacity: 0;
     transition: opacity 0.3s;
   }
-  .tooltip .small-tooltip{
-    width:150px;
+  .tooltip .small-tooltip {
+    width: 150px;
   }
-  .tooltip .large-tooltip{
-    width:200px;
+  .tooltip .large-tooltip {
+    width: 200px;
   }
 
   .tooltip:hover .tooltiptext {
