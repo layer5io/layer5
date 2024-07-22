@@ -50,7 +50,7 @@ const UseCases = () => {
             {data.allMdx.nodes.map(({ id, frontmatter }) => (
               <Col {...content && ID === id ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6, lg: 4 } } key={id} className="workshop-grid-col">
                 <div className="usecases-grid-card">
-                  <Card frontmatter={{...frontmatter, eurl: frontmatter.eurl }} fields={{ slug: frontmatter.eurl }} />
+                  <Card frontmatter={{ ...frontmatter, eurl: frontmatter.eurl }} fields={{ slug: frontmatter.eurl }} />
                 </div>
               </Col>
             ))}
