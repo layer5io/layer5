@@ -48,26 +48,12 @@ const TOCWrapper = styled.div`
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;
-
-    &:hover {
-      color: ${(props) => props.theme.secondaryColor};
-    }
   }
 
   .toc-sub-inline {
     display: inline-block;
   }
 
-  .components-heading{
-    color: ${(props) => props.theme.text};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    font-weight: 300;
-    font-size: 1.15rem;
-
-    &:hover {
-      color: ${(props) => props.theme.secondaryColor};
-    }
-  }
   .active {
     font-weight: 500;
     color: ${(props) => props.theme.secondaryColor};
@@ -108,6 +94,9 @@ const TOCWrapper = styled.div`
     fill: ${(props) => props.theme.menuColor};
   }
 
+  .toc-sub-heading:hover {
+    color: ${(props) => props.theme.secondaryColor};
+  }
 
   @media only screen and (max-width: 750px) {
     position: initial;
@@ -136,21 +125,7 @@ const TOCWrapper = styled.div`
     background-color: transparent;
   }
 
-  .components {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 1rem;
-    align-items: center;
-    padding-right: 1rem;
-    cursor: pointer;
-
-    &:hover {
-      color: ${(props) => props.theme.text};
-    }
-  }
-  
-  .element {
+  .identity {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -163,10 +138,10 @@ const TOCWrapper = styled.div`
     }
   }
 
-  .element-sublinks {
+  .identity-sublinks {
     padding-left: 0.56rem;
 
-    .element-item {
+    .identity-item {
       font-size: 1.05rem;
       margin-top: 0.45rem;
     }
