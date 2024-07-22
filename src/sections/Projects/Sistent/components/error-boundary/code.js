@@ -5,10 +5,8 @@ import {
   Button,
   SistentThemeProvider,
   ErrorBoundary,
-  Fallback,
   withErrorBoundary,
   withSuppressedErrorBoundary,
-  Typography,
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { useLocation } from "@reach/router";
@@ -47,15 +45,20 @@ const codes = [
     });`
 ];
 
-function trigerError(){
-  throw new Error("This is a deliberate error!");
+function MyComponent() {
+  // Simulate an error for demonstration purposes
+  if (Math.random() > 0.5) {
+    throw new Error("An error occurred in MyComponent");
+  }
+
+  // Component logic here
+  return <div>This is MyComponent</div>;
 }
 
 const ErrorThrowingComponent = () => {
   const triggerError = () => {
     throw new Error("This is a deliberate error!");
   };
-
   return (
     <div>
       <Button variant="contained" onClick={triggerError}>
@@ -68,15 +71,16 @@ const ErrorThrowingComponent = () => {
 const CustomFallbackComponent = () => {
   return (
     <div>
-      <h2>Custom Fallback Component</h2>
+      <h2>This is the Custom Fallback Component !!</h2>
     </div>
   );
 };
 
-
 export const ErrorBoundaryCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  // const WrappedComponent = withErrorBoundary(ErrorThrowingComponent());
+  // const SuppressedComponent = withSuppressedErrorBoundary({ Component: ErrorThrowingComponent });
 
   return (
     <SistentLayout title="ErrorBoundary">
@@ -127,15 +131,9 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component with the ErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                {/* <ErrorBoundary>{
-                  <Button variant="contained" onClick={trigerError}>
-                  Open ErrorBoundary
-                  </Button>
-                }</ErrorBoundary> */}
                 <ErrorBoundary>
-                  <ErrorThrowingComponent/>
+                  <MyComponent/>
                 </ErrorBoundary>
-                {/* <MyComponent/> */}
               </div>
               <CodeBlock name="errorBoundary" code={codes[0]} />
             </div>
@@ -145,11 +143,9 @@ export const ErrorBoundaryCode = () => {
             <p>You can provide a custom fallback component to ErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <ErrorBoundary  Fallback={CustomFallbackComponent}>{
-                  <Button variant="contained" onClick={trigerError}>
-                  Open ErrorBoundary with Custom Fallback
-                  </Button>
-                }</ErrorBoundary>
+                <ErrorBoundary customFallback={CustomFallbackComponent}>
+                  <MyComponent />
+                </ErrorBoundary>
               </div>
               <CodeBlock name="customFallback" code={codes[1]} />
             </div>
@@ -160,8 +156,7 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component using withErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                {/* <MyComponent/> */}
-                <Button variant="contained" onClick={trigerError}>Error</Button>
+                {/* <WrappedComponent/>  */}
               </div>
               <CodeBlock name="withErrorboundaryCode" code={codes[2]} />
             </div>
@@ -172,9 +167,9 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component using withSuppressedErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={trigerError}>
+                {/* <Button variant="contained" onClick={trigerError}>
                     Open withSuppressedErrorBoundary
-                </Button>
+                </Button> */}
               </div>
               <CodeBlock name="withSuppressedErrorBoundaryCode" code={codes[3]} />
             </div>
