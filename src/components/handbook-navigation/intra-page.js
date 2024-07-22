@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
-  @media screen and (min-width: 751px) and (max-width: 1279px) {
+  @media screen and (min-width: 300px) and (max-width: 1279px) {
     display: none;
   }
   .intra-page {
