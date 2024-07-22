@@ -2,14 +2,12 @@ import React from "react";
 import { SistentLayout } from "../../sistent-layout";
 import { useState } from "react";
 import {
-  Box,
   Button,
   SistentThemeProvider,
   ErrorBoundary,
   Fallback,
   withErrorBoundary,
   withSuppressedErrorBoundary,
-  TextField,
   Typography,
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
@@ -20,7 +18,7 @@ import { CodeBlock } from "../button/code-block";
 
 
 const codes = [
-  `import { withErrorBoundary } from '@layer5/sistent';
+  `import { ErrorBoundary } from '@layer5/sistent';
   const MyComponent = () => {
     // Your component logic
 
@@ -49,15 +47,36 @@ const codes = [
     });`
 ];
 
+function trigerError(){
+  throw new Error("This is a deliberate error!");
+}
+
+const ErrorThrowingComponent = () => {
+  const triggerError = () => {
+    throw new Error("This is a deliberate error!");
+  };
+
+  return (
+    <div>
+      <Button variant="contained" onClick={triggerError}>
+        Open ErrorBoundary
+      </Button>
+    </div>
+  );
+};
+
+const CustomFallbackComponent = () => {
+  return (
+    <div>
+      <h2>Custom Fallback Component</h2>
+    </div>
+  );
+};
+
+
 export const ErrorBoundaryCode = () => {
-  const [open, setOpen] = useState(false);
-  const [actionOpen, setActionOpen] = useState(false);
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   return (
     <SistentLayout title="ErrorBoundary">
@@ -108,9 +127,15 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component with the ErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={handleOpen}>
-                    Open ErrorBoundary
-                </Button>
+                {/* <ErrorBoundary>{
+                  <Button variant="contained" onClick={trigerError}>
+                  Open ErrorBoundary
+                  </Button>
+                }</ErrorBoundary> */}
+                <ErrorBoundary>
+                  <ErrorThrowingComponent/>
+                </ErrorBoundary>
+                {/* <MyComponent/> */}
               </div>
               <CodeBlock name="errorBoundary" code={codes[0]} />
             </div>
@@ -120,9 +145,11 @@ export const ErrorBoundaryCode = () => {
             <p>You can provide a custom fallback component to ErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={handleOpen}>
-                  Open ErrorBoundary with CustomFallback
-                </Button>
+                <ErrorBoundary  Fallback={CustomFallbackComponent}>{
+                  <Button variant="contained" onClick={trigerError}>
+                  Open ErrorBoundary with Custom Fallback
+                  </Button>
+                }</ErrorBoundary>
               </div>
               <CodeBlock name="customFallback" code={codes[1]} />
             </div>
@@ -133,9 +160,8 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component using withErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={handleOpen}>
-                    Open withErrorBoundary
-                </Button>
+                {/* <MyComponent/> */}
+                <Button variant="contained" onClick={trigerError}>Error</Button>
               </div>
               <CodeBlock name="withErrorboundaryCode" code={codes[2]} />
             </div>
@@ -146,7 +172,7 @@ export const ErrorBoundaryCode = () => {
             <p>Wrap your component using withSuppressedErrorBoundary:</p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={handleOpen}>
+                <Button variant="contained" onClick={trigerError}>
                     Open withSuppressedErrorBoundary
                 </Button>
               </div>
