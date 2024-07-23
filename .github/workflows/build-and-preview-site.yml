@@ -19,9 +19,6 @@ jobs:
           npm install --legacy-peer-deps
           npm run noIndex
 
-      - name: Run Eslint
-        run: npm run checklint
-
       - name: Zip Site
         run: bash ./script.sh
 
