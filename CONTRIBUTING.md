@@ -558,6 +558,18 @@ git push -u origin <your_branch_name>
 
 **15.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
 
+### Lint Rules
+
+Layer5 uses ESLint to maintain code quality and consistency in our UI code.  Use this command to trigger a lint check:
+
+```sh
+make lint
+```
+
+> Note:
+>     - Eslint in Gatsby requires generating config files from CLI. Run `gatsby build` or `gatsby develop` if you face this error during linting.
+
+
 ## Signing-off on Commits
 
 To contribute to this project, you must agree to the **Developer Certificate of
