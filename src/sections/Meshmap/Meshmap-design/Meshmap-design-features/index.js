@@ -42,7 +42,7 @@ const MeshmapDesignFeatures = () => {
             {
               title: "Design your deployments the way you want",
               description:
-                "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
               learnMoreLink: "/cloud-native-management/meshmap",
               content: <StaticImage src={img1} alt="Operational Best Practices" />,
             },

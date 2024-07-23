@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const ProgramsWrapper = styled.div`
-    a {        color: ${props => props.theme.keppelColor};
-}
+    a {        
+        color: ${props => props.theme.keppelColor};
+        overflow-wrap: break-word;
+    }
     img{
         width: 19vw;
         float: right;
