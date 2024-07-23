@@ -16,7 +16,7 @@ const MesheryBrand = () => {
       <Row className="brand-section">
         <Col xs={12} sm={6}>
           <h1 className="layerH3">
-                        Meshery
+            Meshery
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
