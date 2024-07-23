@@ -11,7 +11,7 @@ export const CodeBlock = ({ name, code }) => {
       <label htmlFor={name} className="label">
         Show Code
       </label>
-       {showCode && (
+      {showCode && (
         <Code codeString={code} language="javascript" />
       )}
     </div>
