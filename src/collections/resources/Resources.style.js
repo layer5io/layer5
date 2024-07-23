@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ResourcesWrapper = styled.div`
-  color: #000;
+
   .sub-heading {
     color: gray;
     position: relative;
