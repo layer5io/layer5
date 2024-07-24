@@ -5,6 +5,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import Image from "../../../components/image";
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import { ProjectWrapper } from "../../Projects/Project-grid/projectGrid.style";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
@@ -58,42 +59,53 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
 
   return (
     <ProgramsPageWrapper>
-      <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
-      <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
-        <Container>
-          <div className="program-grid-wrapper">
-            <Row Hcenter>
-              {programs.reverse().map(({ id, frontmatter, fields }) => (
-                <Col key={id} className="programs-col">
-                  <Link
-                    to={
-                      frontmatter.program === "Layer5"
-                        ? fields.slug
-                        : `/programs/${frontmatter.programSlug}`
-                    }
-                  >
-                    <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
-                      <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
-                        <Image
-                          {...(frontmatter.darkthumbnail !== null && (isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-                          imgStyle={{ objectFit: "contain" }}
-                          alt={frontmatter.title}
-                        />
+      <ProjectWrapper>
+        <PageHeader
+          className="title"
+          title="Open Source Internship Programs"
+          path={path}
+        />
+        <h3>
+      Build Your Career at Layer5
+        </h3>
+        <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
+          <Container>
+            <div className="program-grid-wrapper">
+              <Row Hcenter>
+                {programs.reverse().map(({ id, frontmatter, fields }) => (
+                  <Col key={id} className="programs-col">
+                    <Link
+                      to={
+                        frontmatter.program === "Layer5"
+                          ? fields.slug
+                          : `/programs/${frontmatter.programSlug}`
+                      }
+                    >
+                      <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
+                        <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
+                          <Image
+                            {...(frontmatter.darkthumbnail !== null && (isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                            imgStyle={{ objectFit: "contain" }}
+                            alt={frontmatter.title}
+                          />
+                        </div>
+                        <h5>{frontmatter.program}</h5>
                       </div>
-                      <h5>{frontmatter.program}</h5>
-                    </div>
-                  </Link>
-                </Col>
-              ))}
-            </Row>
-          </div>
-          <p>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+            <p>
           Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
-          </p>
+            </p>
 
-        </Container>
-      </div>
+          </Container>
+        </div>
+
+      </ProjectWrapper>
     </ProgramsPageWrapper>
+
   );
 };
 
