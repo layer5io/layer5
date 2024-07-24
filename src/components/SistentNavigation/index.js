@@ -16,6 +16,9 @@ const TOC = () => {
   const [expandIdenity, setExpandIdentity] = useState(
     location.pathname.includes("/identity")
   );
+  const [expandComponents, setExpandComponents] = useState(
+    location.pathname.includes("/components")
+  );
 
   return (
     <TOCWrapper>
@@ -56,18 +59,18 @@ const TOC = () => {
           <li>
             <div>
               <li
-                className="toc-sub-heading identity"
+                className="toc-sub-heading element"
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Identity
                 {expandIdenity ? <IoIosArrowUp /> : <IoIosArrowDown />}
               </li>
               {expandIdenity && (
-                <div className="identity-sublinks">
+                <div className="element-sublinks">
                   <li>
                     <Link
                       to="/projects/sistent/identity/color"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                      className={`toc-sub-heading toc-sub-inline element-item ${
                         location.pathname.includes(
                           "/projects/sistent/identity/color"
                         )
@@ -82,7 +85,7 @@ const TOC = () => {
                   <li>
                     <Link
                       to="/projects/sistent/identity/spacing"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                      className={`toc-sub-heading toc-sub-inline element-item ${
                         location.pathname.includes(
                           "/projects/sistent/identity/spacing"
                         )
@@ -97,7 +100,7 @@ const TOC = () => {
                   <li>
                     <Link
                       to="/projects/sistent/identity/typography"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
+                      className={`toc-sub-heading toc-sub-inline element-item ${
                         location.pathname.includes(
                           "/projects/sistent/identity/typography"
                         )
@@ -114,13 +117,70 @@ const TOC = () => {
             </div>
           </li>
           <li>
-            <Link
-              to="/projects/sistent/components"
-              activeClassName="active"
-              className="toc-sub-heading toc-sub-inline"
-            >
-              Components
-            </Link>
+            <div>
+              <li
+                className="components"
+                onClick={() => setExpandComponents((prev) => !prev)}
+              >
+                <Link
+                  to="/projects/sistent/components"
+                  className= "components-heading"
+                  activeClassName="active"
+                >
+                  Components
+                </Link>
+                {expandComponents ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              </li>
+              {expandComponents && (
+                <div className="element-sublinks">
+                  <li>
+                    <Link
+                      to="/projects/sistent/components/button"
+                      className={`toc-sub-heading toc-sub-inline element-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/components/button"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Button
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/components/text-input"
+                      className={`toc-sub-heading toc-sub-inline element-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/components/text-input"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Text Input
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/components/modal"
+                      className={`toc-sub-heading toc-sub-inline element-item ${
+                        location.pathname.includes(
+                          "/projects/sistent/components/modal"
+                        )
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Modal
+                    </Link>
+                  </li>
+                </div>
+              )}
+            </div>
           </li>
         </ul>
       </div>

@@ -21,6 +21,9 @@ const SistentWrapper = styled.div`
   .content {
     width: 100%;
     padding-bottom: 2rem;
+    @media only screen and (max-width: 750px){
+      overflow: hidden;
+    }
     ul > li {
       color: ${(props) => props.theme.text};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -176,7 +179,7 @@ const SistentWrapper = styled.div`
   }
 
   .community-home-container {
-    padding: 1rem 0;
+    padding: 1rem;
     padding-bottom: 4rem;
     display: flex;
     flex-wrap: wrap;
@@ -446,7 +449,7 @@ const SistentWrapper = styled.div`
       opacity: 0;
       height: 0;
       transition: none;
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -624,10 +627,6 @@ const SistentWrapper = styled.div`
   .image-container {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-  }
-
-  .components-container {
-    margin-left: 1rem;
   }
 
   .search-container {
