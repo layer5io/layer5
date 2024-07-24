@@ -44,6 +44,19 @@ const CTA_BottomWrapper = styled.div`
     button {
         width: fit-content; 
     }
+
+  @media(max-width: 600px){
+     flex-direction: column-reverse;
+     height: auto;
+
+     img{
+        max-width: 95%;
+     }
+
+     .cta-content{
+        max-width: none;
+     }
+  }
 `;
 
 const defaultHeading = "Layer5 Community";
