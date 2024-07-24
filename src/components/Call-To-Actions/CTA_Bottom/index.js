@@ -46,16 +46,16 @@ const CTA_BottomWrapper = styled.div`
     }
 
   @media(max-width: 600px){
-     flex-direction: column-reverse;
-     height: auto;
+    flex-direction: column-reverse;
+    height: auto;
 
-     img{
-        max-width: 95%;
-     }
+    img{
+      max-width: 95%;
+    }
 
-     .cta-content{
-        max-width: none;
-     }
+    .cta-content{
+      max-width: none;
+    }
   }
 `;
 
