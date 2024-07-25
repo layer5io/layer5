@@ -17,13 +17,17 @@ const SistentPagination = () => {
     <PaginationWrapper>
       {currentPage > 0 ? (
         <Button secondary url={content[currentPage - 1]?.link}>
-          &larr; Previous
+          <div className="btn-content">
+          <div className="previous-text">  Previous</div>
+         <div className="where-to-go-prev">&larr;{content[currentPage - 1]?.text}</div></div>
         </Button>
       ) : null}
 
       {currentPage < content.length - 1 ? (
         <Button primary url={content[currentPage + 1]?.link}>
-          Next &rarr;
+          <div className="btn-content">
+          <div className="next-text"> Next</div>
+         <div className="where-to-go">{content[currentPage + 1]?.text} &rarr;</div></div>
         </Button>
       ) : null}
     </PaginationWrapper>
