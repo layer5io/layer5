@@ -34,6 +34,7 @@ export const GitOpsWrapper = styled.section`
         padding-bottom: 4rem;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+        padding-top: 4.3rem;
 
         @media only screen and (min-width: 1024px) {
             padding-bottom: 13rem;
