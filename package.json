@@ -30,15 +30,18 @@
     "@fullcalendar/daygrid": "^6.1.8",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^5.11.3",
     "@fullcalendar/google-calendar": "^6.1.9",
     "@fullcalendar/interaction": "^6.1.13",
     "@fullcalendar/react": "^6.1.8",
-    "@layer5/meshery-design-embed": "^0.2.0",
+    "@layer5/meshery-design-embed": "^0.3.0",
     "@layer5/sistent": "^0.14.60",
     "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mui/material": "^5.15.11",
+    "@mui/icons-material": "^5.16.4",
     "@react-icons/all-files": "^4.1.0",
     "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^8.0.1",
@@ -109,7 +112,8 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.5",
     "swiper": "^10.0.4",
-    "url": "^0.11.3"
+    "url": "^0.11.3",
+    "xstate": "^5.13.0"
   },
   "lint-staged": {
     "*.js": [
