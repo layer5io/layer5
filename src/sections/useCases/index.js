@@ -44,7 +44,6 @@ const UseCases = () => {
         <p className="description"> Infrastructure diagraming is a breeze with Meshery. Configuration and operational design reviews between SRE, Platform Engineer, DevOps pro, or Developer </p>
       </div>
 
-      {/* use cases: */}
       <Container>
         <div className="usecases-grid-wrapper">
           <Row>
