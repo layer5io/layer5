@@ -17,7 +17,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
-    "checklint": "eslint . --max-warnings=0",
+    "checklint": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
@@ -110,15 +110,9 @@
     "simple-react-cytoscape": "^1.0.4",
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.0.5",
-    "swiper": "^10.0.4",
-    "url": "^0.11.3",
-    "xstate": "^5.13.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
+    "styled-components": "^5.3.9",
+    "swiper": "^9.2.0",
+    "url": "^0.11.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.9",
