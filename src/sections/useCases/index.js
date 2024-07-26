@@ -40,8 +40,8 @@ const UseCases = () => {
   return (
     <UseCasesWrapper>
       <div className="use-cases-title" >
-        <h2 className="heading"> Platform Engineering done right </h2>
-        <p className="description"> Infrastructure diagraming is a breeze with Meshery. Configuration and operational design reviews between SRE, Platform Engineer, DevOps pro, or Developer </p>
+        <h2 className="heading"> Platform Engineering done right</h2>
+        <p className="description"> Infrastructure diagraming is intuitive with visual architecture of Kubernetes clusters and Cloud services in Meshery. Whether you're an SRE, Platform Engineer, DevOps engineer, developer... Kubernetes configuration and operational design reviews between your engineering teams is a breeze.</p>
       </div>
 
       <Container>
