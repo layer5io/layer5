@@ -7,28 +7,41 @@ const TocPaginationWrapper = styled.div`
   margin: 3rem 2rem 4rem 2rem;
 .btn-content{
 display: grid;
-width: 100%;
+padding: 6px 16px;
+gap: 5px;
+}
+
+.right-icon .fsCoJX path{
+color: black;
+}
+.left-icon .fsCoJX path {
+ color: white
 }
 .previous-text{
 display: flex;
-justify-content: start;
 color: white;
-font-size: 14px;
+margin: auto;
+
 }
 .next-text{
 display: flex;
-justify-content: end;
-font-size: 14px;
+margin: auto;
 }
 .where-to-go-prev{
 display: flex;
-justify-content: start;
+font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
 color: white;
 }
 .where-to-go{
 display: flex;
-justify-content: end;
+font-family: "Open Sans", sans-serif;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
 }
+
 
   @media screen and (max-width: 540px) {
     margin: 0 0 2rem 0;
