@@ -18,6 +18,9 @@ jobs:
       - name: NPM Install
         run: npm install
 
+      - name: Prettier Check
+        run: npm run format:check
+
       - name: Build
         run: npm run build
 
