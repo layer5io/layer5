@@ -7,7 +7,6 @@ const NotFoundPage = () => {
   return (
     <>
       <L404 />
-
     </>
   );
 };

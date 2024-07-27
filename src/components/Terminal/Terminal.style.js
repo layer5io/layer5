@@ -7,7 +7,7 @@ export const TerminalWrapper = styled.div`
   --gray-7: #f7f7f9;
   --gray-6: #dcdde0;
   --gray-5: #bdbec2;
-  --gray-4: #76767d;    
+  --gray-4: #76767d;
   --gray-3: #4c4c53;
   --gray-2: #323339;
   --gray-1: #1d1e23;
@@ -28,7 +28,7 @@ export const TerminalWrapper = styled.div`
 
     .title {
       color: var(--gray-4);
-      font-family: 'Courier New', Courier, monospace;
+      font-family: "Courier New", Courier, monospace;
       font-size: 13.5px;
       margin: 0 auto;
     }
@@ -65,62 +65,62 @@ export const TerminalWrapper = styled.div`
     }
   }
 
-.overflow-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: scroll;
+  .overflow-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
 
-  /* Hides the scrollbars */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  &::-webkit-scrollbar {
-    /* Safari */
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
-  }
-  
-  .code-wrapper {
-    pre {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 27px;
-      white-space: pre-wrap;
-      color: ${props => props.theme.secondaryColor};
-      &.short {
-        line-height: 16px;
-      }
-      &.navy {
-        color: var(--vagrant-l1);
-      }
-      &.gray {
-        color: var(--gray-5);
-      }
-      &.white {
-        color: var(--white);
-      }
+    /* Hides the scrollbars */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      /* Safari */
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
 
-      wrap-word: normal;
-      
-      @media (min-width: 768px){
-        font-size: 13.5px;
-        line-height: 26px;
+    .code-wrapper {
+      pre {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 27px;
+        white-space: pre-wrap;
+        color: ${(props) => props.theme.secondaryColor};
+        &.short {
+          line-height: 16px;
+        }
+        &.navy {
+          color: var(--vagrant-l1);
+        }
+        &.gray {
+          color: var(--gray-5);
+        }
+        &.white {
+          color: var(--white);
+        }
+
+        wrap-word: normal;
+
+        @media (min-width: 768px) {
+          font-size: 13.5px;
+          line-height: 26px;
+        }
       }
     }
   }
-}
 
-.no-scroll-overflow-wrapper {
-
-  .code-wrapper {
-    bottom: 0;
-    position: absolute;
-    min-height: 100%;
+  .no-scroll-overflow-wrapper {
+    .code-wrapper {
+      bottom: 0;
+      position: absolute;
+      min-height: 100%;
+    }
   }
-}`;
+`;

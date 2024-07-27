@@ -9,9 +9,7 @@ const Honeycomb = (props) => {
 
   const setHoneycombHeight = () => {
     // Total horizontal available space for hexagons
-    const availableWidth = gridRef
-      ? gridRef.current.offsetWidth
-      : window.innerWidth;
+    const availableWidth = gridRef ? gridRef.current.offsetWidth : window.innerWidth;
 
     // No. of hexagons that can be adjusted in first and second row
     let firstRow = Math.floor((availableWidth - 100) / 156); // a
@@ -24,7 +22,7 @@ const Honeycomb = (props) => {
     }
 
     if (availableWidth <= 334 && availableWidth >= 308) {
-      firstRow = 2 ;
+      firstRow = 2;
       secondRow = 1;
     }
 
@@ -50,7 +48,6 @@ const Honeycomb = (props) => {
       } else {
         setHeight(pairsCount * 272 + 272);
       }
-
     } else {
       //if the innerWidth is less than 334px
       if (availableWidth < 335) {
@@ -70,7 +67,7 @@ const Honeycomb = (props) => {
 
   return (
     <div>
-      <HoneycombGrid height={height} heightforSmall={newheight} >
+      <HoneycombGrid height={height} heightforSmall={newheight}>
         <ul ref={gridRef}>
           {items.map((item, key) => (
             <li key={key}>{renderItem(item)}</li>

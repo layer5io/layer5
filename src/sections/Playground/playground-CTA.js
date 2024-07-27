@@ -8,30 +8,30 @@ import smalldots from "./images/small-dots.png";
 import MesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo.webp";
 
 const DockerExtensionCTAWrapper = styled.div`
-p {
-  color: white;   
-}
-.card-right{
-  padding-top: 3rem;
-  padding-left: 1rem;
-  padding-bottom: 3rem;
-  text-align: left;
-}
-.playground{
-  color:${(props) => props.theme.secondaryColor};
-  font-size: 5rem;
-  padding-top: 1.5rem;
-}
-.card-left{
-  padding-top: 3rem;
-  padding-left: 1rem;
-  padding-bottom: 3rem;
-  justify-content: center;
-  align-items: center;
-}
-.playground-callout {
-  background: #1E2117 url(${playgroundbgCTA}) no-repeat center;
-  background-size: cover;
+  p {
+    color: white;
+  }
+  .card-right {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+    text-align: left;
+  }
+  .playground {
+    color: ${(props) => props.theme.secondaryColor};
+    font-size: 5rem;
+    padding-top: 1.5rem;
+  }
+  .card-left {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .playground-callout {
+    background: #1e2117 url(${playgroundbgCTA}) no-repeat center;
+    background-size: cover;
     border-radius: 4rem;
     display: flex;
     padding: 2rem;
@@ -41,11 +41,11 @@ p {
     .dots-icon {
       position: relative;
       &::before {
-        content: "";    
+        content: "";
         position: absolute;
         top: -2rem;
         left: -2rem;
-        width: 5rem; 
+        width: 5rem;
         height: 7rem;
         background-image: url(${smalldots});
         background-repeat: no-repeat;
@@ -55,9 +55,8 @@ p {
     .line {
       position: relative;
       width: 0.2rem;
-      height: 13rem; 
-      margin: 2rem 2rem 0 2rem; 
-      
+      height: 13rem;
+      margin: 2rem 2rem 0 2rem;
     }
     .line::before {
       content: "";
@@ -66,48 +65,47 @@ p {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: ${(props) => props.theme.caribbeanGreenColor}; 
-      border-radius: 5%; 
+      background-color: ${(props) => props.theme.caribbeanGreenColor};
+      border-radius: 5%;
     }
-  
+
     .meshery-title {
       height: 5rem;
       margin-right: 4rem;
       padding: 2rem 0 0 4rem;
-      
     }
     .meshery-icon {
       position: relative;
       &::before {
-        content: "";  
-        opacity: 40%;  
+        content: "";
+        opacity: 40%;
         position: absolute;
         bottom: -4rem;
-        width: 8rem; 
+        width: 8rem;
         height: 8rem;
         background-image: url(${MesheryIcon});
         background-repeat: no-repeat;
         background-size: contain;
       }
     }
-    h4{
+    h4 {
       color: #ffffff;
     }
     Button {
       margin: 1rem 0;
     }
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       .meshery-icon {
         &::before {
-        right: -3rem;
+          right: -3rem;
+        }
       }
-      }
-      .meshery-title{
+      .meshery-title {
         padding-right: 2rem;
       }
     }
-    @media screen and (max-width:1000px) {
-      .card-right{
+    @media screen and (max-width: 1000px) {
+      .card-right {
         padding: 1rem 0 0 0;
         text-align: center;
       }
@@ -115,17 +113,16 @@ p {
       .line {
         display: none;
       }
-      .card-left{
+      .card-left {
         padding: 1rem 0 1rem 0;
       }
-      .playground{
+      .playground {
         font-size: 3rem;
       }
       .meshery-title {
         height: 4rem;
         margin-right: 2rem;
         padding: 2rem 1rem 0 4rem;
-        
       }
     }
   }
@@ -136,7 +133,7 @@ const DockerExtensionCTA = () => {
     <DockerExtensionCTAWrapper>
       <Container>
         <div className="playground-callout">
-          <div className="dots-icon"/>
+          <div className="dots-icon" />
           <div className="card-left">
             <img className="meshery-title" src={MesheryTitle} alt="Meshery Title" loading="lazy" />
             <div className="playground">Playground</div>
@@ -144,14 +141,20 @@ const DockerExtensionCTA = () => {
           <div className="line"></div>
           <div className="card-right">
             <div>
-              <h4>Connect to live clusters<br />Discover, validate, and visualize<br />Kubernetes infrastructure with ease.</h4>
+              <h4>
+                Connect to live clusters
+                <br />
+                Discover, validate, and visualize
+                <br />
+                Kubernetes infrastructure with ease.
+              </h4>
             </div>
             <p></p>
             <Button primary url="https://play.meshery.io/" external={true}>
               Try Playground now!
             </Button>
           </div>
-          <div className="meshery-icon"/>
+          <div className="meshery-icon" />
         </div>
       </Container>
     </DockerExtensionCTAWrapper>

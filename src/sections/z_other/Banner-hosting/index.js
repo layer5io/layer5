@@ -13,48 +13,32 @@ import imgHero2 from "../../../assets/images/hosting/hosting/banner/02.webp";
 const BannerHosting = () => {
   return (
     <BannerSectionWrapper>
-      <img src={imgHero1} alt="img" className="section-particle one"/>
+      <img src={imgHero1} alt="img" className="section-particle one" />
       <ParticleComponent />
       <Container fullWidthSM>
         <Row Vcenter={true}>
           <Col lg={6}>
-            <SectionTitle
-              className="section-title"
-              UniWidth="100%"
-            >
-              <h4>Save up to <span>99%</span> with our holiday Deals</h4>
-              <h1>
-                We provide the best web hosting
-                 solution around the world
-              </h1>
+            <SectionTitle className="section-title" UniWidth="100%">
+              <h4>
+                Save up to <span>99%</span> with our holiday Deals
+              </h4>
+              <h1>We provide the best web hosting solution around the world</h1>
               <p>
-              join with us by one click and build beautifull apps <br/>
+                join with us by one click and build beautifull apps <br />
                 for your startsup, company
               </p>
             </SectionTitle>
             <div className="domain-search-block">
               <div className="search-box">
                 <input type="text" placeholder="Search domain" />
-                <Button className="src-btn">
-                  {/* <FaSearch /> */}
-                </Button>
+                <Button className="src-btn">{/* <FaSearch /> */}</Button>
               </div>
               <div className="domain-extention-block">
-                <span className="com">
-                  .com
-                </span>
-                <span className="org">
-                  .org
-                </span>
-                <span className="net">
-                  .net
-                </span>
-                <span className="dev">
-                  .dev
-                </span>
-                <span className="xyz">
-                  .xyz
-                </span>
+                <span className="com">.com</span>
+                <span className="org">.org</span>
+                <span className="net">.net</span>
+                <span className="dev">.dev</span>
+                <span className="xyz">.xyz</span>
               </div>
             </div>
           </Col>

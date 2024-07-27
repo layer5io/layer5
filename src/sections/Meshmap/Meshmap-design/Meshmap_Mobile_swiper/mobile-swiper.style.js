@@ -10,19 +10,25 @@ const SwiperContainer = styled.div`
   }
 
   .card.one {
-    background: linear-gradient(222deg, #077165 2.76%, #1D2827 117.91%);
+    background: linear-gradient(222deg, #077165 2.76%, #1d2827 117.91%);
   }
-  
+
   .card.two {
-    background: linear-gradient(134deg, #252E31 -16.51%, #0D997F 101%);
+    background: linear-gradient(134deg, #252e31 -16.51%, #0d997f 101%);
   }
-  
+
   .card.three {
-    background: linear-gradient(125deg, #137771 -16.81%, #252E31 104.15%);
+    background: linear-gradient(125deg, #137771 -16.81%, #252e31 104.15%);
   }
-  
+
   .card.four {
-    background: linear-gradient(180deg, #202020 -32.18%, #18433F 52.35%, #0B7E71 106.65%, #00B39F 142.23%);
+    background: linear-gradient(
+      180deg,
+      #202020 -32.18%,
+      #18433f 52.35%,
+      #0b7e71 106.65%,
+      #00b39f 142.23%
+    );
   }
 
   .card {

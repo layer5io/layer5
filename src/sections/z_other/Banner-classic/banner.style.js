@@ -18,9 +18,9 @@ const BannerSectionWrapper = styled.section`
       align-items: center;
       text-transform: uppercase;
       span {
-        background: ${props => props.theme.primaryColor};
+        background: ${(props) => props.theme.primaryColor};
         padding: 7px 13px;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         border-radius: 25px;
         margin-right: 7px;
         line-height: 100%;
@@ -31,7 +31,7 @@ const BannerSectionWrapper = styled.section`
       font-size: 60px;
       line-height: 75px;
       margin: 0 0 38px 0;
-      span{
+      span {
         font-weight: 600;
       }
     }
@@ -61,7 +61,7 @@ const BannerSectionWrapper = styled.section`
     margin: 0 0 0 auto;
     .thumb {
       position: absolute;
-      box-shadow: 0 0 40px ${props => props.theme.shadowColor};
+      box-shadow: 0 0 40px ${(props) => props.theme.shadowColor};
       border-radius: 10px;
 
       img {

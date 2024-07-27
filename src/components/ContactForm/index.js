@@ -13,7 +13,7 @@ const ContactForm = () => {
     if (submit) {
       // Webhook to handle all event forms and all signup forms, except for the community member form.
       axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
-        memberFormOne,
+        memberFormOne
       });
       window.scrollTo(0, 700);
     }
@@ -43,7 +43,7 @@ const ContactForm = () => {
             subject: "",
             message: "",
             scope: "",
-            form: "contact",
+            form: "contact"
           }}
           onSubmit={(values) => {
             setmemberFormOne(values);
@@ -65,9 +65,7 @@ const ContactForm = () => {
               maxLength="32"
               pattern="[A-Za-z]{1,32}"
               required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
+              onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
               onInput={(e) => e.target.setCustomValidity("")}
             />
             <label htmlFor="lastname" className="form-name">
@@ -81,9 +79,7 @@ const ContactForm = () => {
               maxLength="32"
               pattern="[A-Za-z]{1,32}"
               required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
+              onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
               onInput={(e) => e.target.setCustomValidity("")}
             />
             <label htmlFor="email" className="form-name">
@@ -96,9 +92,7 @@ const ContactForm = () => {
               name="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
+              onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
               onInput={(e) => e.target.setCustomValidity("")}
             />
             <label htmlFor="subject" className="form-name">
@@ -110,9 +104,7 @@ const ContactForm = () => {
               id="subject"
               name="subject"
               required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
+              onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
               onInput={(e) => e.target.setCustomValidity("")}
             />
             <label htmlFor="message" className="form-name">
@@ -126,9 +118,7 @@ const ContactForm = () => {
               id="message"
               name="message"
               required
-              onInvalid={(e) =>
-                e.target.setCustomValidity("Please fill-in this field")
-              }
+              onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
               onInput={(e) => e.target.setCustomValidity("")}
             />
             <label htmlFor="scope" className="form-name">
@@ -136,81 +126,42 @@ const ContactForm = () => {
             </label>
             <div aria-labelledby="my-radio-group">
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="Meshery"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="Meshery" />
                 Meshery
               </label>
               <br></br>
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="SMP"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="SMP" />
                 SMP
               </label>
               <br></br>
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="SMI"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="SMI" />
                 SMI
               </label>
               <br></br>
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="GetNighthawk"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="GetNighthawk" />
                 GetNighthawk
               </label>
               <br></br>
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="Landscape"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="Landscape" />
                 Landscape
               </label>
               <br></br>
               <label>
-                <Field
-                  className="radio-field"
-                  type="radio"
-                  name="scope"
-                  value="Community"
-                />
+                <Field className="radio-field" type="radio" name="scope" value="Community" />
                 Community
               </label>
               <div className="newsletter">
                 <label>
-                  <Field
-                    type="checkbox"
-                    name="subscribed"
-                    className="form-check"
-                  />
+                  <Field type="checkbox" name="subscribed" className="form-check" />
                   <span>Subscribe to our newsletter</span>
                 </label>
               </div>
               <div className="form-submit">
-                <Button
-                  secondary
-                  type="submit"
-                  className="btn-next"
-                  title="Submit"
-                />
+                <Button secondary type="submit" className="btn-next" title="Submit" />
               </div>
             </div>
           </Form>

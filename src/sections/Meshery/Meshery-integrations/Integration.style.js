@@ -25,14 +25,14 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #D2D8DA; //#E7EFF3;
+    background-color: #d2d8da; //#E7EFF3;
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
     color: #1e2117;
     font-size: 0.875rem;
     cursor: pointer;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &:hover {
       opacity: 0.8;
@@ -100,7 +100,7 @@ export const HoneycombGrid = styled.div`
           opacity: 0;
           font-weight: 600;
           transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-          padding:10px;
+          padding: 10px;
         }
         .learnMoreBtn {
           padding: 5px 10px;
@@ -140,14 +140,7 @@ export const HoneycombGrid = styled.div`
         content: "";
         background: ${(props) => props.theme.grey212121ToWhite};
         margin: 0px 0px 0 4px;
-        clip-path: polygon(
-          50% 0%,
-          100% 25%,
-          100% 75%,
-          50% 100%,
-          0% 75%,
-          0% 25%
-        );
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         height: 95%;
         width: 95%;
         position: absolute;
@@ -207,9 +200,10 @@ export const IntegrationCard = styled.div`
 `;
 
 export const IntegrationSlider = styled(Slider)`
-  .slick-prev:hover, .slick-next:hover{
+  .slick-prev:hover,
+  .slick-next:hover {
     box-shadow: none;
-    outline:none;
+    outline: none;
   }
 
   .slick-arrow {
@@ -241,19 +235,19 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-slide {
     width: auto !important;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 
-  .slick-next{
+  .slick-next {
     right: -2.5rem;
   }
 
-  .slick-prev{
+  .slick-prev {
     left: -2.5rem;
   }
 
   .slick-prev:before {
-    content:"‹";
+    content: "‹";
     line-height: 0;
     opacity: 1;
   }
@@ -268,7 +262,8 @@ export const IntegrationSlider = styled(Slider)`
     opacity: 1;
   }
 
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     top: 1.5rem;
   }
-  `;
+`;

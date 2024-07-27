@@ -8,34 +8,45 @@ import LinkArrow from "../../images/link-arrow.svg";
 import LinkArrowDark from "../../images/link-arrow-dark.svg";
 import useGsapTimeline from "../useGsapTimeline";
 
-
 export default function VisualizerFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
-  const [viewportStatus, setViewportStatus] = useState(
-    new Array(features.length).fill(false)
-  );
+  const [viewportStatus, setViewportStatus] = useState(new Array(features.length).fill(false));
 
-  useGsapTimeline({ trigger: ".visualizer-trigger-container", featureContainerName: ".visualizer-features", yPercent: -100 });
+  useGsapTimeline({
+    trigger: ".visualizer-trigger-container",
+    featureContainerName: ".visualizer-features",
+    yPercent: -100
+  });
 
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {
-    if (!cursorOverArrow)
-      setcursorOverArrow(true);
+    if (!cursorOverArrow) setcursorOverArrow(true);
   };
   const handleLeave = () => {
-    if (cursorOverArrow)
-      setcursorOverArrow(false);
+    if (cursorOverArrow) setcursorOverArrow(false);
   };
   return (
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
           <Link to="/cloud-native-management/meshmap/visualize">
-            <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+            <div
+              id="featureHeading"
+              className="fixed"
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
+            >
               <h1>Visualize</h1>
               <div className="learn-more">
-                <h5 style={cursorOverArrow ? { color: "#ffffff" } : { color: "#ececec" }}>Learn more</h5>
-                <img src={cursorOverArrow ? LinkArrow : LinkArrowDark} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
+                <h5 style={cursorOverArrow ? { color: "#ffffff" } : { color: "#ececec" }}>
+                  Learn more
+                </h5>
+                <img
+                  src={cursorOverArrow ? LinkArrow : LinkArrowDark}
+                  alt="Learn more"
+                  style={{ maxWidth: "15%" }}
+                  className={cursorOverArrow ? "arrow-enter" : "arrow"}
+                />
               </div>
             </div>
           </Link>
@@ -66,7 +77,6 @@ export default function VisualizerFeatures({ features }) {
                 </li>
               ))}
             </ul>
-
           </div>
         </div>
       </Container>

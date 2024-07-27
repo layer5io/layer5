@@ -31,7 +31,7 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        repository: "https://github.com/layer5io/layer5",
+        repository: "https://github.com/layer5io/layer5"
       },
       {
         project: "Meshery.io",
@@ -40,7 +40,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Vivek Vishal"],
         link: ["https://layer5.io/community/members/vivek-vishal"],
-        repository: "https://github.com/meshery/meshery.io",
+        repository: "https://github.com/meshery/meshery.io"
       },
       {
         project: "Meshery Documentation",
@@ -49,7 +49,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Vivek Vishal"],
         link: ["https://layer5.io/community/members/vivek-vishal"],
-        repository: "https://github.com/meshery/meshery/tree/master/docs",
+        repository: "https://github.com/meshery/meshery/tree/master/docs"
       },
       {
         project: "Meshery UI",
@@ -59,9 +59,9 @@ export const repo_data = [
         maintainers_name: ["Antonette Caldwell", "Aabid Sofi"],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
-          "https://layer5.io/community/members/aabid-sofi",
+          "https://layer5.io/community/members/aabid-sofi"
         ],
-        repository: "https://github.com/meshery/meshery/tree/master/ui",
+        repository: "https://github.com/meshery/meshery/tree/master/ui"
       },
       {
         project: "Service Mesh Performance",
@@ -70,8 +70,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Aaditya Subedy"],
         link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
-        repository:
-          "https://github.com/service-mesh-performance/service-mesh-performance",
+        repository: "https://github.com/service-mesh-performance/service-mesh-performance"
       },
       {
         project: "Nighthawk",
@@ -80,7 +79,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Uzair Shaikh"],
         link: ["https://layer5.io/community/members/uzair-shaikh"],
-        repository: "https://github.com/layer5io/getnighthawk",
+        repository: "https://github.com/layer5io/getnighthawk"
       },
       {
         project: "MeshMap",
@@ -92,7 +91,7 @@ export const repo_data = [
         description:
           "A collaborative, visual topology to design and operate cloud native infrastructure.",
         repository: "https://github.com/layer5labs/meshery-extensions",
-        accessRequired: "*program participation required",
+        accessRequired: "*program participation required"
       },
       {
         project: "Discussion Forum",
@@ -101,7 +100,7 @@ export const repo_data = [
         language: "Discourse",
         maintainers_name: ["Vivek Vishal"],
         link: ["https://layer5.io/community/members/vivek-vishal"],
-        repository: " https://discuss.layer5.io",
+        repository: " https://discuss.layer5.io"
       },
       {
         project: "Cloud Native Patterns",
@@ -110,8 +109,7 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Nic Jackson"],
         link: ["https://layer5.io/community/members/nic-jackson"],
-        repository:
-          "https://github.com/service-mesh-patterns/service-mesh-patterns",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns"
       },
       {
         project: "Cloud Native Playground",
@@ -120,7 +118,7 @@ export const repo_data = [
         language: "React.js",
         maintainers_name: ["vacant"],
         link: ["#"],
-        repository: "https://github.com/meshery/play",
+        repository: "https://github.com/meshery/play"
       },
       {
         project: "Layer5 Cloud",
@@ -130,7 +128,7 @@ export const repo_data = [
         maintainers_name: ["Yash Sharma"],
         link: ["https://layer5.io/community/members/yash-sharma"],
         repository: "https://github.com/layer5io/meshery-cloud",
-        accessRequired: "*program participation required",
+        accessRequired: "*program participation required"
       },
       {
         project: "Recognition Program",
@@ -139,25 +137,20 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Vacant"],
         link: [""],
-        repository:
-          "https://github.com/layer5labs/meshery-extensions-packages/",
+        repository: "https://github.com/layer5labs/meshery-extensions-packages/"
       },
       {
         project: "Sistent Design System",
         image: five,
         site: "https://github.com/layer5io/sistent",
         language: "React.js",
-        maintainers_name: [
-          "Antonette Caldwell",
-          "Rex Joshua Ibegbu",
-          "Aabid Sofi",
-        ],
+        maintainers_name: ["Antonette Caldwell", "Rex Joshua Ibegbu", "Aabid Sofi"],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/rex-joshua-ibegbu",
-          "https://layer5.io/community/members/aabid-sofi",
+          "https://layer5.io/community/members/aabid-sofi"
         ],
-        repository: "https://github.com/layer5io/sistent",
+        repository: "https://github.com/layer5io/sistent"
       },
       {
         project: "Layer5 Documentation",
@@ -166,10 +159,9 @@ export const repo_data = [
         language: "Hugo",
         maintainers_name: ["Vacant"],
         link: [""],
-        repository: "https://github.com/layer5io/docs",
-      },
-
-    ],
+        repository: "https://github.com/layer5io/docs"
+      }
+    ]
   },
 
   {
@@ -183,7 +175,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
-        repository: "https://github.com/layer5io/service-mesh-labs",
+        repository: "https://github.com/layer5io/service-mesh-labs"
       },
       {
         project: "Istio Service Mesh Workshop",
@@ -191,9 +183,8 @@ export const repo_data = [
         language: "Meshery",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A workshop that teaches about service meshes through the lens of Istio.",
-        repository: "https://github.com/layer5io/istio-service-mesh-workshop",
+        description: "A workshop that teaches about service meshes through the lens of Istio.",
+        repository: "https://github.com/layer5io/istio-service-mesh-workshop"
       },
       {
         project: "Advanced Istio Service Mesh Workshop",
@@ -203,8 +194,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "An advanced workshop that teaches about service meshes through the lens of Istio.",
-        repository:
-          "https://github.com/layer5io/advanced-istio-service-mesh-workshop",
+        repository: "https://github.com/layer5io/advanced-istio-service-mesh-workshop"
       },
       {
         project: "Linkerd Service Mesh Workshop",
@@ -212,9 +202,8 @@ export const repo_data = [
         language: "Meshery",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A workshop that teaches about service meshes through the lens of Linkerd.",
-        repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
+        description: "A workshop that teaches about service meshes through the lens of Linkerd.",
+        repository: "https://github.com/layer5io/linkerd-service-mesh-workshop"
       },
       {
         project: "Containers 101 Workshop",
@@ -224,7 +213,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "A workshop that introduces Linux containers through concepts in slides and hands-on labs.",
-        repository: "https://github.com/layer5io/containers-101-workshop",
+        repository: "https://github.com/layer5io/containers-101-workshop"
       },
       {
         project: "Cloud Native Playground",
@@ -233,9 +222,9 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "Cloud Native Playground for Kubernetes and CNCF projects",
-        repository: "https://github.com/meshery/play",
-      },
-    ],
+        repository: "https://github.com/meshery/play"
+      }
+    ]
   },
 
   {
@@ -248,11 +237,11 @@ export const repo_data = [
         maintainers_name: ["Uzair Shaikh", "Antonette Caldwell"],
         link: [
           "https://layer5.io/community/members/uzair-shaikh",
-          "https://layer5.io/community/members/antonette-caldwell",
+          "https://layer5.io/community/members/antonette-caldwell"
         ],
         description:
           "the cloud native management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
-        repository: "https://github.com/meshery/meshery",
+        repository: "https://github.com/meshery/meshery"
       },
       {
         project: "SMI Conformance",
@@ -262,8 +251,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
-        repository:
-          "https://github.com/layer5io/meshery-smi-conformance-action",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action"
       },
       {
         project: "Meshery Operator",
@@ -273,7 +261,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/aisuko-li"],
         description:
           "Meshery Operator is the multi-cloud native operator and implementation of MeshSync.",
-        repository: "https://github.com/meshery/meshery-operator",
+        repository: "https://github.com/meshery/meshery-operator"
       },
       {
         project: "MeshSync",
@@ -283,7 +271,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
-        repository: "https://github.com/meshery/meshsync",
+        repository: "https://github.com/meshery/meshsync"
       },
       {
         project: "Learn-Layer5",
@@ -293,8 +281,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "A utility for validating the conformance of cloud native implementations and their adherence to the Cloud Native Interface specifications.",
-        repository:
-          "https://github.com/layer5io/meshery-smi-conformance-action",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action"
       },
       {
         project: "Layer5 Cloud",
@@ -303,14 +290,14 @@ export const repo_data = [
         maintainers_name: ["Yash Sharma"],
         link: ["https://layer5.io/community/members/yash-sharma"],
         description: "A Meshery Remote Provider.",
-        repository: "https://github.com/layer5io/meshery-cloud",
-      },
+        repository: "https://github.com/layer5io/meshery-cloud"
+      }
       // {
       //   project: "MeshMonkey",
       //   language: "Golang",
       //   repository: "https://github.com/layer5io/meshmonkey",
       // },
-    ],
+    ]
   },
 
   {
@@ -324,7 +311,7 @@ export const repo_data = [
         link: ["#"],
         description:
           "A sample application written to run on Istio or Consul for exploring WebAssembly modules used as Envoy filters.",
-        repository: "https://github.com/layer5io/image-hub",
+        repository: "https://github.com/layer5io/image-hub"
       },
       {
         project: "WASM Filters",
@@ -334,9 +321,9 @@ export const repo_data = [
         link: ["#"],
         description:
           "A collection of WebAssemby filters for Envoy proxy written in C, C++, and Rust for exercising different features provided by envoy-wasm.",
-        repository: "https://github.com/layer5io/wasm-filters",
-      },
-    ],
+        repository: "https://github.com/layer5io/wasm-filters"
+      }
+    ]
   },
 
   {
@@ -351,19 +338,18 @@ export const repo_data = [
           "Nic Jackson",
           "Otto Van Der Schaaf",
           "Xin Huang",
-          "Aaditya Narayan Subedy",
+          "Aaditya Narayan Subedy"
         ],
         link: [
           "https://layer5.io/community/members/lee-calcote",
           "https://layer5.io/community/members/nic-jackson",
           "https://layer5.io/community/members/otto-van-der-schaaf",
           "https://layer5.io/community/members/xin-huang",
-          "https://layer5.io/community/members/aaditya-narayan-subedy",
+          "https://layer5.io/community/members/aaditya-narayan-subedy"
         ],
         description:
           "a common format for capturing and describing cloud native infrastucture performance and services.",
-        repository:
-          "https://github.com/layer5io/service-mesh-performance-specification",
+        repository: "https://github.com/layer5io/service-mesh-performance-specification"
       },
       {
         project: "Wrk2",
@@ -373,7 +359,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/otto-van-der-schaaf"],
         description:
           "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
-        repository: "https://github.com/giltene/wrk2",
+        repository: "https://github.com/giltene/wrk2"
       },
       {
         project: "Gowrk2",
@@ -383,7 +369,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/uzair-shaikh"],
         description:
           "Augmentation of wrk2 to produce output compatible with Meshery’s visualization of performance test results.",
-        repository: "https://github.com/layer5io/gowrk2",
+        repository: "https://github.com/layer5io/gowrk2"
       },
       {
         project: "Nighthawk",
@@ -393,7 +379,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/uzair-shaikh"],
         description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
-        repository: "https://github.com/layer5io/nighthawk-go",
+        repository: "https://github.com/layer5io/nighthawk-go"
       },
       {
         project: "SMP Action",
@@ -401,9 +387,8 @@ export const repo_data = [
         language: "shell",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
-        repository: "https://github.com/layer5io/meshery-smp-action",
+        description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
+        repository: "https://github.com/layer5io/meshery-smp-action"
       },
       {
         project: "Meshery Nighthawk",
@@ -411,11 +396,10 @@ export const repo_data = [
         language: "Golang",
         maintainers_name: ["Xin Huang"],
         link: ["https://layer5.io/community/members/xin-huang"],
-        description:
-          "meshery-perf is a Meshery component used to run performance tests",
-        repository: "https://github.com/meshery/meshery-perf",
-      },
-    ],
+        description: "meshery-perf is a Meshery component used to run performance tests",
+        repository: "https://github.com/meshery/meshery-perf"
+      }
+    ]
   },
 
   {
@@ -428,12 +412,11 @@ export const repo_data = [
         maintainers_name: ["Lee Calcote", "Nic Jackson"],
         link: [
           "https://layer5.io/community/members/lee-calcote",
-          "https://layer5.io/community/members/nic-jackson",
+          "https://layer5.io/community/members/nic-jackson"
         ],
         description:
           "A collection of functional examples to be used as patterns for operationalizing cloud native infrastruture and application deployments and applying best practices.",
-        repository:
-          "https://github.com/service-mesh-patterns/service-mesh-patterns",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns"
       },
       {
         project: "Cloud Native Patterns Action",
@@ -441,12 +424,10 @@ export const repo_data = [
         language: "shell",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
-        repository:
-          "https://github.com/layer5io/meshery-cloud-native-patterns-action",
-      },
-    ],
+        description: "GitHub Action to deploy Cloud Native Patterns on CI/CD pipelines.",
+        repository: "https://github.com/layer5io/meshery-cloud-native-patterns-action"
+      }
+    ]
   },
   {
     category: "Meshery Adapter Repos",
@@ -458,7 +439,7 @@ export const repo_data = [
         maintainers_name: ["Aisuko Li"],
         link: ["https://layer5.io/community/members/aisuko-li"],
         description: "Meshery adapter for management of Istio.",
-        repository: "https://github.com/layer5io/meshery-istio",
+        repository: "https://github.com/layer5io/meshery-istio"
       },
       {
         project: "Meshery Adapter for Linkerd",
@@ -467,7 +448,7 @@ export const repo_data = [
         maintainers_name: ["Hussaina Begum"],
         link: ["https://layer5.io/community/members/hussaina-begum"],
         description: "Meshery adapter for management of Linkerd.",
-        repository: "https://github.com/layer5io/meshery-linkerd",
+        repository: "https://github.com/layer5io/meshery-linkerd"
       },
       {
         project: "Meshery Adapter for NSM",
@@ -476,7 +457,7 @@ export const repo_data = [
         maintainers_name: ["Michael Gfeller"],
         link: ["https://layer5.io/community/members/michael-gfeller"],
         description: "Meshery adapter for management of Network Service Mesh.",
-        repository: "https://github.com/layer5io/meshery-nsm",
+        repository: "https://github.com/layer5io/meshery-nsm"
       },
       // {
       //   project: "Meshery Adapter for Octarine",
@@ -494,7 +475,7 @@ export const repo_data = [
         maintainers_name: ["Antonette Caldwell"],
         link: ["https://layer5.io/community/members/antonette-caldwell"],
         description: "Meshery adapter for management of Traefik Mesh.",
-        repository: "https://github.com/layer5io/meshery-traefik-mesh",
+        repository: "https://github.com/layer5io/meshery-traefik-mesh"
       },
       {
         project: "Meshery Adapter for Kuma",
@@ -503,7 +484,7 @@ export const repo_data = [
         maintainers_name: ["Michael Gfeller"],
         link: ["https://layer5.io/community/members/michael-gfeller"],
         description: "Meshery adapter for management of Kuma.",
-        repository: "https://github.com/layer5io/meshery-kuma",
+        repository: "https://github.com/layer5io/meshery-kuma"
       },
       {
         project: "Meshery Adapter for Consul",
@@ -512,7 +493,7 @@ export const repo_data = [
         maintainers_name: ["Hussaina Begum"],
         link: ["https://layer5.io/community/members/hussaina-begum"],
         description: "Meshery adapter for management of Consul",
-        repository: "https://github.com/layer5io/meshery-consul",
+        repository: "https://github.com/layer5io/meshery-consul"
       },
       {
         project: "Meshery Adapter for CPX",
@@ -521,7 +502,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description: "Meshery adapter for management of Citrix CPX",
-        repository: "https://github.com/layer5io/meshery-cpx",
+        repository: "https://github.com/layer5io/meshery-cpx"
       },
       {
         project: "Meshery Adapter for App Mesh",
@@ -530,7 +511,7 @@ export const repo_data = [
         maintainers_name: ["Antonette Caldwell"],
         link: ["https://layer5.io/community/members/antonette-caldwell"],
         description: "Meshery adapter for management of AWS App Mesh",
-        repository: "https://github.com/layer5io/meshery-app-mesh",
+        repository: "https://github.com/layer5io/meshery-app-mesh"
       },
       {
         project: "Meshery Adapter for Tanzu Service Mesh",
@@ -538,9 +519,8 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Hussaina Begum"],
         link: ["https://layer5.io/community/members/hussaina-begum"],
-        description:
-          "Meshery adapter for management of VMware Tanzu Service Mesh",
-        repository: "https://github.com/layer5io/meshery-tanzu-sm",
+        description: "Meshery adapter for management of VMware Tanzu Service Mesh",
+        repository: "https://github.com/layer5io/meshery-tanzu-sm"
       },
       {
         project: "Meshery Adapter for NGINX Service Mesh",
@@ -549,7 +529,7 @@ export const repo_data = [
         maintainers_name: ["Hussaina Begum"],
         link: ["https://layer5.io/community/members/hussaina-begum"],
         description: "Meshery adapter for management of NGINX Service Mesh",
-        repository: "https://github.com/layer5io/meshery-nginx-sm",
+        repository: "https://github.com/layer5io/meshery-nginx-sm"
       },
       {
         project: "Meshery Adapter for Cilium Service Mesh",
@@ -558,7 +538,7 @@ export const repo_data = [
         maintainers_name: ["Uzair Shaikh"],
         link: ["https://layer5.io/community/members/uzair-shaikh"],
         description: "Meshery adapter for management of Cilium Service Mesh.",
-        repository: "https://github.com/meshery/meshery-cilium",
+        repository: "https://github.com/meshery/meshery-cilium"
       },
       {
         project: "MeshKit",
@@ -567,7 +547,7 @@ export const repo_data = [
         maintainers_name: ["Aisuko Li"],
         link: ["https://layer5.io/community/members/aisuko-li"],
         description: "Toolkit for Layer5's microservices.",
-        repository: "https://github.com/layer5io/meshkit",
+        repository: "https://github.com/layer5io/meshkit"
       },
       {
         project: "Meshery Adapter Library",
@@ -575,9 +555,8 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Michael Gfeller"],
         link: ["https://layer5.io/community/members/michael-gfeller"],
-        description:
-          "A common and consistent set of functionality for Meshery Adapters.",
-        repository: "https://github.com/layer5io/meshery-adapter-library",
+        description: "A common and consistent set of functionality for Meshery Adapters.",
+        repository: "https://github.com/layer5io/meshery-adapter-library"
       },
       {
         project: "Meshery Adapter Template",
@@ -585,12 +564,9 @@ export const repo_data = [
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
         link: ["#"],
-        description:
-          "A GitHub repo used as a template for new Meshery Adapters.",
-        repository: "https://github.com/layer5io/meshery-adapter-template",
-      },
-    ],
-  },
+        description: "A GitHub repo used as a template for new Meshery Adapters.",
+        repository: "https://github.com/layer5io/meshery-adapter-template"
+      }
+    ]
+  }
 ];
-
-

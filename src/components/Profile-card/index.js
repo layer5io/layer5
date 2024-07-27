@@ -14,19 +14,19 @@ const ProfileCard = (props) => {
       <div className="profile-card">
         <Link to={link}>
           <header>
-            <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
-            { meshmate === "yes" && (
+            <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name} />
+            {meshmate === "yes" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={MeshMateIcon} alt="meshmate-color-icon" />
               </Link>
             )}
             {/* TODO: Code needs to be improved */}
-            { name === "Nikhil Ladha" && (
+            {name === "Nikhil Ladha" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2020} alt="meshmate-color-icon" />
               </Link>
             )}
-            { name === "Aditya Chatterjee" && (
+            {name === "Aditya Chatterjee" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2021} alt="meshmate-color-icon" />
               </Link>

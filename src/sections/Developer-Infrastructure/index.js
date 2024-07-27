@@ -15,7 +15,7 @@ const KubernetesMultiCluster = () => {
     heading: "Developer-defined Infrastructure",
     sub_heading:
       "Cloud Native application and infrastructure management software that empowers organizations to expect more from their infrastructure.",
-    image: kubernetes_svg,
+    image: kubernetes_svg
   };
 
   let card_data = [
@@ -23,31 +23,31 @@ const KubernetesMultiCluster = () => {
       heading: "Build the bridge",
       subtitle:
         "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-      image: config_svg,
+      image: config_svg
     },
     {
       heading: "Continuous visibility across all of your clusters and workloads.",
       subtitle:
         "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
-      image: cluster_svg,
+      image: cluster_svg
     },
     {
       heading: "Inclusive collaboration from start to finish",
       subtitle:
         "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
-      image: collaborate_svg,
-    },
+      image: collaborate_svg
+    }
   ];
   return (
     <MultiClusterWrapper>
       <FeatureHero data={data} />
-      <Feature/>
+      <Feature />
       <Container>
         <div className={"feature-use-container"}>
           <div>
             <h2 className={"use-heading"}>
               {" "}
-              Seamless Deployment Across Multiple Kubernetes Clusters {" "}
+              Seamless Deployment Across Multiple Kubernetes Clusters{" "}
             </h2>
           </div>
           <div className={"collaboration_display"}>
@@ -57,7 +57,7 @@ const KubernetesMultiCluster = () => {
           </div>
         </div>
       </Container>
-      <Reviews/>
+      <Reviews />
     </MultiClusterWrapper>
   );
 };

@@ -7,19 +7,29 @@ author: "Lee Calcote"
 abstract: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
 published: true
 redirect_from:
- - /books/the-enterprise-path-to-service-mesh-architectures/
+  - /books/the-enterprise-path-to-service-mesh-architectures/
 ---
 
 import { BookWrapper } from "../Book.style.js";
-import service_mesh_ent_book from "./The-Enterprise-Path-to-Service-Mesh-Architectures.webp"
+import service_mesh_ent_book from "./The-Enterprise-Path-to-Service-Mesh-Architectures.webp";
 import Button from "../../../reusecore/Button";
 import CommonForm from "../../../components/CommonForm";
 
 <BookWrapper>
 
-<div className="book"><a href={service_mesh_ent_book}><img className="card" width="300px" src={service_mesh_ent_book} alt="The-Enterprise-Path-to-Service-Mesh-Architectures" align="center" /></a><div>&nbsp;</div>
+<div className="book">
+  <a href={service_mesh_ent_book}>
+    <img
+      className="card"
+      width="300px"
+      src={service_mesh_ent_book}
+      alt="The-Enterprise-Path-to-Service-Mesh-Architectures"
+      align="center"
+    />
+  </a>
+  <div>&nbsp;</div>
   <div className="two-buttons">
-        <Button primary className="pa-8 mr-2" title="Get free ebook" url="#epsma-book" />
+    <Button primary className="pa-8 mr-2" title="Get free ebook" url="#epsma-book" />
   </div>
 </div>
 
@@ -31,17 +41,19 @@ Three most important things readers will learn from this book:
 
 <div>
   <li> What is a service mesh and why do I need one? </li>
-    <li className="mr-l-15"> What are the different service meshes and how do they contrast?</li>
-    <li className="mr-l-15"> Where do services meshes layer in with other technologies?</li>
+  <li className="mr-l-15"> What are the different service meshes and how do they contrast?</li>
+  <li className="mr-l-15"> Where do services meshes layer in with other technologies?</li>
   <li>When and why should I adopt a service mesh?</li>
-    <li className="mr-l-15">What are popular deployment models and why?</li>
+  <li className="mr-l-15">What are popular deployment models and why?</li>
   <li> What are practical steps to adopt a service mesh in my enterprise?</li>
   <li> How do I fit a service mesh into my existing infrastructure?</li>
 </div>
 
-<a id="epsma-book" style="margin-bottom:5rem;">&nbsp;</a>
-<CommonForm 
-    title="Get the Free eBook"
+<a id="epsma-book" style="margin-bottom:5rem;">
+  &nbsp;
+</a>
+<CommonForm
+  title="Get the Free eBook"
   form="epsma-book"
   account_desc="Email the The Enterprise Path to Service Mesh Architectures 1st Edition"
   submit_title="Your copy of the book will arrive in your mailbox shortly."
@@ -49,7 +61,7 @@ Three most important things readers will learn from this book:
     <span
       dangerouslySetInnerHTML={{
         __html:
-          'While waiting for your copy to arrive, take a free <a href="https://layer5.io/learn/learning-paths">learning path</a>.',
+          'While waiting for your copy to arrive, take a free <a href="https://layer5.io/learn/learning-paths">learning path</a>.'
       }}
     />
   }

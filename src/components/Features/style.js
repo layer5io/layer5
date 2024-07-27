@@ -88,8 +88,7 @@ export const ContentWrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   flex: 1.5;
-  transform: perspective(1000px) scale(1.2) translate(120px, 50px)
-    rotateY(-25deg) rotateZ(4deg);
+  transform: perspective(1000px) scale(1.2) translate(120px, 50px) rotateY(-25deg) rotateZ(4deg);
   transition: transform 1s ease 0s;
 
   & > img {
@@ -104,8 +103,7 @@ export const ImageWrapper = styled.div`
 
   @media screen and (max-width: 968px) {
     padding: 1rem;
-    transform: perspective(1000px) scale(1.1) translate(150px, 0px)
-      rotateY(-25deg) rotateZ(4deg);
+    transform: perspective(1000px) scale(1.1) translate(150px, 0px) rotateY(-25deg) rotateZ(4deg);
 
     &:hover {
       transform: translate(0px, 0px) rotateY(0deg) rotateZ(0deg);

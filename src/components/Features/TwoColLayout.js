@@ -1,11 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "gatsby";
-import {
-  Container,
-  Section,
-  ContentWrapper,
-  ImageWrapper,
-} from "./two-col-layout.js";
+import { Container, Section, ContentWrapper, ImageWrapper } from "./two-col-layout.js";
 import DiagrammingImageDark from "../../assets/images/AWS-Diagram/aws.svg";
 import DiagrammingImageLight from "../../assets/images/AWS-Diagram/aws-light.svg";
 import AWSLogoDark from "../../sections/Home/FeaturesContainer/images/aws-logo-dark.svg";
@@ -21,7 +16,7 @@ const withIntersectionObserver = (WrappedComponent) => {
     const contentRefs = useRef([]);
     useEffect(() => {
       const options = {
-        threshold: 0.1,
+        threshold: 0.1
       };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -71,15 +66,30 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[0] = el)}>
           <h2>Visualize and Simplify Platform Engineering</h2>
-          <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
+          <p className="text">
+            Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive
+            and intuitive system mapping, documentation, and orchestration.
+          </p>
           <div className="small-card-container">
-            <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
+            <Link
+              aria-label="aws"
+              className="small-card"
+              to="/cloud-native-management/generate-aws-architecture-diagram"
+            >
               <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
             </Link>
-            <Link aria-label="gcp" className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
+            <Link
+              aria-label="gcp"
+              className="small-card"
+              to="/cloud-native-management/generate-gcp-architecture-diagram"
+            >
               <img alt="gcp" src={GCPLogo} width={40} />
             </Link>
-            <Link aria-label="kubernetes" className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
+            <Link
+              aria-label="kubernetes"
+              className="small-card"
+              to="/cloud-native-management/generate-kubernetes-architecture-diagram"
+            >
               <img alt="kubernetes" src={KubernetesLogo} width={40} />
             </Link>
           </div>
@@ -93,7 +103,11 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>
           <h2>Easing your Workflow Burden Collaboratively</h2>
-          <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
+          <p className="text">
+            Empower DevOps, platform, and site reliability engineers with our orchestration
+            management solution. Achieve seamless collaboration and operational harmony for enhanced
+            productivity.
+          </p>
           <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>
       </Container>

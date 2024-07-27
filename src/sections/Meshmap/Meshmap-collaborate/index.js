@@ -7,7 +7,6 @@ import CollaborationFeatureWork from "./collaboration-feature-work";
 import SignupForm from "./../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
-
 const MeshmapCollaborate = () => {
   return (
     <MeshmapCollaborateWrapper>

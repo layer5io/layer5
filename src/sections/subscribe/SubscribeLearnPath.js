@@ -17,8 +17,8 @@ const SubscribeLearnPath = () => {
               <h2>Join the Layer5 community</h2>
               <div className="subscriptionText">
                 <p>
-                  Subscribe to our newsletter to receive updates on new learning
-                  paths, courses, and more.
+                  Subscribe to our newsletter to receive updates on new learning paths, courses, and
+                  more.
                 </p>
               </div>
             </span>
@@ -30,8 +30,8 @@ const SubscribeLearnPath = () => {
                 name="EMAIL"
                 id="mce-EMAIL"
                 required
-                onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
-                onInput={e => e.target.setCustomValidity("")}
+                onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
+                onInput={(e) => e.target.setCustomValidity("")}
               />
               <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
             </div>

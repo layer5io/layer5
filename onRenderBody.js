@@ -43,6 +43,6 @@ const MagicScriptTag = (props) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ( { setPreBodyComponents }) => {
+export const onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
 };

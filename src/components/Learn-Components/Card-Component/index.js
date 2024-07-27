@@ -4,18 +4,15 @@ import Image from "../../image";
 import { Link } from "gatsby";
 
 const CardComponent = ({ tutorial, path, courseCount }) => {
-
   return (
     <CardWrapper>
-      {tutorial.frontmatter.disabled === "yes" ?  (
+      {tutorial.frontmatter.disabled === "yes" ? (
         <div
-          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, }}
+          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
           className="card-parent card-2"
         >
-
           <div>
             <div className="card-head">
-
               <h3>
                 {tutorial.frontmatter.title
                   ? tutorial.frontmatter.title
@@ -30,22 +27,17 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
             </div>
           </div>
           <div className="card-image">
-            <Image
-              {...tutorial.frontmatter.cardImage}
-              alt={tutorial.frontmatter.title}
-            />
+            <Image {...tutorial.frontmatter.cardImage} alt={tutorial.frontmatter.title} />
           </div>
         </div>
-      ) :
+      ) : (
         <Link to={path} className="card-link">
           <div
             style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
             className="card-parent card-active"
           >
-
             <div>
               <div className="card-head">
-
                 <h3>
                   {tutorial.frontmatter.title
                     ? tutorial.frontmatter.title
@@ -61,18 +53,17 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
                 <p className="summary">{tutorial.frontmatter.description}</p>
               </div>
               <div className="card-subdata">
-                <p>{courseCount} Course{courseCount === 1  ? "" : "s"}</p>
+                <p>
+                  {courseCount} Course{courseCount === 1 ? "" : "s"}
+                </p>
               </div>
             </div>
             <div className="card-image">
-              <Image
-                {...tutorial.frontmatter.cardImage}
-                alt={tutorial.frontmatter.title}
-              />
+              <Image {...tutorial.frontmatter.cardImage} alt={tutorial.frontmatter.title} />
             </div>
           </div>
         </Link>
-      }
+      )}
     </CardWrapper>
   );
 };

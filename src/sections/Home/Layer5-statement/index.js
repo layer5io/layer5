@@ -20,16 +20,13 @@ const BannerDefault = () => {
                 <div className="svg-background">
                   <img src={svgBackground} alt="background" />
                 </div>
-                <SectionTitle
-                  className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
-                >
+                <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
                   <h4 className="statement">We make cloud native manageable by </h4>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span>
-                      harnessing the unique position service meshes have in changing how developers write applications and how operators run modern infrastructure.
+                      harnessing the unique position service meshes have in changing how developers
+                      write applications and how operators run modern infrastructure.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
@@ -38,14 +35,24 @@ const BannerDefault = () => {
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="our projects" url="/projects" />
+                    <Button
+                      primary
+                      className="join-community-button"
+                      title="our projects"
+                      url="/projects"
+                    />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" loading="lazy" />
+            <StaticImage
+              className="hero"
+              src={imgHero}
+              alt="Layer5 MeshMap screenshot"
+              loading="lazy"
+            />
           </Col>
         </Row>
       </div>

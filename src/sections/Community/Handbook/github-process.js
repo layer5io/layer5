@@ -14,13 +14,29 @@ const SecurityVulnerabilitiesPage = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>Issue and PR Labels and Templates, Bots</h2><br/>
-            <h3><strong>Overview</strong></h3><br />
-            <p>The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across the growing repository collection.</p>
-            <p>The number of repositories under the “Layer5io” organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.</p>
+            <h2>Issue and PR Labels and Templates, Bots</h2>
+            <br />
+            <h3>
+              <strong>Overview</strong>
+            </h3>
+            <br />
+            <p>
+              The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to
+              streamline continuous integration and reduce overhead across the growing repository
+              collection.
+            </p>
+            <p>
+              The number of repositories under the “Layer5io” organization is growing. In order to
+              ensure consistency across the repositories and to decrease the time it takes for a
+              continuous integration (GitHub Actions) to execute, consistent use of pull request and
+              issue labels will aid in the reduction of overhead.
+            </p>
 
             <h3>Issue and Pull Request Templates</h3>
-            <p>Layer5 uses issue and pull request templates. See the `.github` folder in any repo for examples.</p>
+            <p>
+              Layer5 uses issue and pull request templates. See the `.github` folder in any repo for
+              examples.
+            </p>
 
             <h3>Template Repositories</h3>
             <p>Layer5 uses the following repository templates:</p>
@@ -30,7 +46,10 @@ const SecurityVulnerabilitiesPage = () => {
             </ul>
 
             <h3>Branch Protection</h3>
-            <p>Layer5 protects the <b>master</b> branch by requiring reviews from at least one approver.</p>
+            <p>
+              Layer5 protects the <b>master</b> branch by requiring reviews from at least one
+              approver.
+            </p>
 
             <h3>Organization Secrets</h3>
             <p>Layer5 has the following org-wide secrets available:</p>
@@ -38,8 +57,12 @@ const SecurityVulnerabilitiesPage = () => {
             <table>
               <thead>
                 <tr>
-                  <th><b>Secret Name</b></th>
-                  <th><b>Description</b></th>
+                  <th>
+                    <b>Secret Name</b>
+                  </th>
+                  <th>
+                    <b>Description</b>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -97,7 +120,10 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>INTEGRATION_SPREADSHEET_CRED</td>
-                  <td>Base64 encoded cred for accessing integration spreadsheet on behalf of user  <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a></td>
+                  <td>
+                    Base64 encoded cred for accessing integration spreadsheet on behalf of user{" "}
+                    <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a>
+                  </td>
                 </tr>
                 <tr>
                   <td>PLAYGROUND_CONFIG</td>
@@ -123,14 +149,23 @@ const SecurityVulnerabilitiesPage = () => {
             </table>
 
             <h3>Labels for Issues</h3>
-            <p>The following list of GitHub issue labels are applied organization-wide. New repositories created as of June 13th, 2020 will contain these labels by default.</p>
+            <p>
+              The following list of GitHub issue labels are applied organization-wide. New
+              repositories created as of June 13th, 2020 will contain these labels by default.
+            </p>
 
             <table>
               <thead>
                 <tr>
-                  <th><b>labels</b></th>
-                  <th><b>Description</b></th>
-                  <th><b>Color</b></th>
+                  <th>
+                    <b>labels</b>
+                  </th>
+                  <th>
+                    <b>Description</b>
+                  </th>
+                  <th>
+                    <b>Color</b>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -221,7 +256,11 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/invite</td>
-                  <td>When applied, this label triggers a to send an invitation to the issue author to join the respective GH org. Invitations are missing appropriate team assignments, however.</td>
+                  <td>
+                    When applied, this label triggers a to send an invitation to the issue author to
+                    join the respective GH org. Invitations are missing appropriate team
+                    assignments, however.
+                  </td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -231,7 +270,10 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/design required</td>
-                  <td>A labeler bot comments with a note stipulating the a design specification required prior to proceeding.</td>
+                  <td>
+                    A labeler bot comments with a note stipulating the a design specification
+                    required prior to proceeding.
+                  </td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -246,7 +288,10 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/stale</td>
-                  <td>Issue has not had any activity for an extended period of time. Label is most often applied by a stale bot, working under specific inactivity timeouts.</td>
+                  <td>
+                    Issue has not had any activity for an extended period of time. Label is most
+                    often applied by a stale bot, working under specific inactivity timeouts.
+                  </td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -256,12 +301,19 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>issue/remind</td>
-                  <td>A labeler bot comments on the issue with a helpful reminder to the current assignee that help is available, if needed, and a reminder that their issue remains outstanding (undone).</td>
+                  <td>
+                    A labeler bot comments on the issue with a helpful reminder to the current
+                    assignee that help is available, if needed, and a reminder that their issue
+                    remains outstanding (undone).
+                  </td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
                   <td>issue/willfix</td>
-                  <td>This issue will be worked on. The stale bot honors this label and skips staleness consideration of issues with this label.</td>
+                  <td>
+                    This issue will be worked on. The stale bot honors this label and skips
+                    staleness consideration of issues with this label.
+                  </td>
                   <td>#eeeeee</td>
                 </tr>
                 <tr>
@@ -408,26 +460,66 @@ const SecurityVulnerabilitiesPage = () => {
             </table>
 
             <h3>List for Pull Requests</h3>
-            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, and significantly, they will be used in conditional logic during workflow execution to determine the PR’s appropriate path through the CI flow.</p>
+            <p>
+              The following list of pull request labels will be used to both indicate purpose or
+              status of the PR to maintainers, and significantly, they will be used in conditional
+              logic during workflow execution to determine the PR’s appropriate path through the CI
+              flow.
+            </p>
             <ul>
-              <li><b>Refactor</b> - Chore related pull request</li>
-              <li><b>Fix</b> - Bug fixes PRs</li>
-              <li><b>On-hold</b> - PR needs review before merging or it needs to behold until a specific issue is fixed.</li>
-              <li><b>Dependabot</b> - All dependabot related automated PRs</li>
-              <li><b>release</b> - identifies that a release is / will be made</li>
-              <li><b>Draft</b> - PR is in draft state, GitHub provides a way for the draft state but having a label will help us in triage purposes.</li>
-              <li><b>Approved</b> - Indicates a PR has been approved by approver form all required OWNERS files. #51ed31</li>
-              <li><b>help wanted</b> - Extra attention is needed #008672</li>
-              <li><b>needs-ok-to-test</b> -  #d60c6a</li>
-              <li><b>awaiting review</b> - The PR is ready for the reviewer to review. #fbca04</li>
+              <li>
+                <b>Refactor</b> - Chore related pull request
+              </li>
+              <li>
+                <b>Fix</b> - Bug fixes PRs
+              </li>
+              <li>
+                <b>On-hold</b> - PR needs review before merging or it needs to behold until a
+                specific issue is fixed.
+              </li>
+              <li>
+                <b>Dependabot</b> - All dependabot related automated PRs
+              </li>
+              <li>
+                <b>release</b> - identifies that a release is / will be made
+              </li>
+              <li>
+                <b>Draft</b> - PR is in draft state, GitHub provides a way for the draft state but
+                having a label will help us in triage purposes.
+              </li>
+              <li>
+                <b>Approved</b> - Indicates a PR has been approved by approver form all required
+                OWNERS files. #51ed31
+              </li>
+              <li>
+                <b>help wanted</b> - Extra attention is needed #008672
+              </li>
+              <li>
+                <b>needs-ok-to-test</b> - #d60c6a
+              </li>
+              <li>
+                <b>awaiting review</b> - The PR is ready for the reviewer to review. #fbca04
+              </li>
             </ul>
 
-            <p>Improving the build times through conditional logic that will skip sections of the ci.yml, unless these labels are present:</p>
+            <p>
+              Improving the build times through conditional logic that will skip sections of the
+              ci.yml, unless these labels are present:
+            </p>
             <ul>
-              <li><b>docs</b> -  build the Jekyll site for Meshery documentation</li>
-              <li><b>component/mesheryctl</b> - build the Meshery CLI</li>
-              <li><b>area/ui</b> -  build the Meshery UI</li>
-              <li><b>component/meshery-server</b> - Assumed that Meshery Server should always be build, but this is not the case.</li>
+              <li>
+                <b>docs</b> - build the Jekyll site for Meshery documentation
+              </li>
+              <li>
+                <b>component/mesheryctl</b> - build the Meshery CLI
+              </li>
+              <li>
+                <b>area/ui</b> - build the Meshery UI
+              </li>
+              <li>
+                <b>component/meshery-server</b> - Assumed that Meshery Server should always be
+                build, but this is not the case.
+              </li>
             </ul>
 
             <h3>Bots</h3>
@@ -445,8 +537,12 @@ const SecurityVulnerabilitiesPage = () => {
               <li>label-commenter.yml</li>
             </ul>
 
-            <p>Good resource - <a href="https://github.com/sdras/awesome-actions#pull-requests">https://github.com/sdras/awesome-actions#pull-requests</a></p>
-
+            <p>
+              Good resource -{" "}
+              <a href="https://github.com/sdras/awesome-actions#pull-requests">
+                https://github.com/sdras/awesome-actions#pull-requests
+              </a>
+            </p>
           </div>
         </Container>
       </div>

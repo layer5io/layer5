@@ -17,10 +17,7 @@ const BookComponent = () => {
         rel="noreferrer noopener"
       >
         <div className="book">
-          <img
-            alt="Community HandBook"
-            src={handbookdark}
-          />
+          <img alt="Community HandBook" src={handbookdark} />
         </div>
       </Link>
     </BookComponentWrapper>

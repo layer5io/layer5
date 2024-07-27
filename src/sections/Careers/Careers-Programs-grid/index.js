@@ -7,41 +7,43 @@ import { ProgramsPageWrapper } from "./ProgramGrid.style";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
-  const data = useStaticQuery(
-    graphql`query allPrograms {
-  allMdx(
-    sort: {fields: [frontmatter___title], order: DESC}
-    filter: {fields: {collection: {eq: "programs"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        program
-        programSlug
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-          extension
-          publicURL
+  const data = useStaticQuery(graphql`
+    query allPrograms {
+      allMdx(
+        sort: { fields: [frontmatter___title], order: DESC }
+        filter: {
+          fields: { collection: { eq: "programs" } }
+          frontmatter: { published: { eq: true } }
         }
-        darkthumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            program
+            programSlug
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
             }
-            extension
-            publicURL
+            darkthumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
         }
-      }
-      fields {
-        slug
       }
     }
-  }
-}
-`
-  );
+  `);
 
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
@@ -58,7 +60,11 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
 
   return (
     <ProgramsPageWrapper>
-      <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
+      <PageHeader
+        title="Open Source Internship Programs"
+        subtitle="Build Your Career at Layer5"
+        path={path}
+      />
       <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
         <Container>
           <div className="program-grid-wrapper">
@@ -75,7 +81,11 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
-                          {...(frontmatter.darkthumbnail !== null && (isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                          {...(frontmatter.darkthumbnail !== null &&
+                          isDark &&
+                          frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+                            ? frontmatter.darkthumbnail
+                            : frontmatter.thumbnail)}
                           imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />
@@ -88,9 +98,10 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             </Row>
           </div>
           <p>
-          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
+            Layer5 is driven by its people, who are the stewards of our culture and principles. Join
+            us on the journey to enabling the world's most innovative companies make the transition
+            to cloud native and multi-cloud through engineering-empowered automation.
           </p>
-
         </Container>
       </div>
     </ProgramsPageWrapper>

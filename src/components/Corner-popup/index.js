@@ -14,25 +14,31 @@ const CornerPopup = () => {
       }, 8000);
       localStorage.setItem("showPopup", true);
     } else setShowPopup(false);
-  },[]);
+  }, []);
 
   return (
-    showPopup &&
-    <CornerPopupWrapper>
-      <div>
-        <div className="popup">
-          <div className="popup-inner">
-            <div className="close-btn" onClick={() => setShowPopup(false)}>
-              <CloseIcon />
+    showPopup && (
+      <CornerPopupWrapper>
+        <div>
+          <div className="popup">
+            <div className="popup-inner">
+              <div className="close-btn" onClick={() => setShowPopup(false)}>
+                <CloseIcon />
+              </div>
+              <a href="https://play.meshery.io/">
+                <img className="popup-image" src={popupImageSmall} />
+              </a>
+              <Button
+                primary
+                className="explore-playground-button"
+                title="Access Playground"
+                url="https://play.meshery.io/"
+              />
             </div>
-            <a href="https://play.meshery.io/">
-              <img className="popup-image" src={popupImageSmall} />
-            </a>
-            <Button primary className="explore-playground-button" title="Access Playground" url="https://play.meshery.io/" />
           </div>
         </div>
-      </div>
-    </CornerPopupWrapper>
+      </CornerPopupWrapper>
+    )
   );
 };
 

@@ -98,9 +98,7 @@ kubectl get destinationrules
 kubectl get destinationrules -o yaml
 ```
 
-<h2 class="chapter-sub-heading">
-  Configure the default route for all services to V1
-</h2>
+<h2 class="chapter-sub-heading">Configure the default route for all services to V1</h2>
 <br />
 
 As part of the bookinfo sample app, there are multiple versions of reviews service. When we load the `/productpage` in the browser multiple times we have seen the reviews service round robin between v1, v2 or v3. As the first exercise, let us first restrict traffic to just V1 of all the services.
@@ -140,7 +138,6 @@ spec:
             host: reviews
             subset: v1
 ---
-
 ```
 
 Now when we reload the `/productpage` several times, we will ONLY be viewing the data from v1 of all the services, which means we will not see any ratings (any stars).
@@ -148,8 +145,8 @@ Now when we reload the `/productpage` several times, we will ONLY be viewing the
 <h2 class="chapter-sub-heading"> Content-based routing</h2>
 
 <br />
-Let's replace our first rules with a new set. Enable the `ratings` service for a
-user `jason` by routing `productpage` traffic to `reviews` v2:
+Let's replace our first rules with a new set. Enable the `ratings` service for a user `jason` by
+routing `productpage` traffic to `reviews` v2:
 
 Using Meshery, navigate to the Istio management page:
 
@@ -188,7 +185,6 @@ spec:
             host: reviews
             subset: v1
 ---
-
 ```
 
 Now if we login as your `jason`, you will be able to see data from `reviews` v2. While if you NOT logged in or logged in as a different user, you will see data from `reviews` v1.
@@ -234,7 +230,6 @@ spec:
             subset: v3
           weight: 50
 ---
-
 ```
 
 Now, if we reload the `/productpage` in your browser several times, you should now see red-colored star ratings approximately 50% of the time.
@@ -272,7 +267,6 @@ spec:
             host: reviews
             subset: v3
 ---
-
 ```
 
 Now, if we reload the `/productpage` in your browser several times, you should now see red-colored star ratings 100% of the time.
@@ -291,37 +285,25 @@ Run the following command to create default destination rules for the Bookinfo s
 kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ```
 
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route all traffic to version V1 of all services
-</h4>
+<h4 class="chapter-alt-heading"> Route all traffic to version V1 of all services</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
 
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route all traffic to version V2 of reviews for user Jason
-</h4>
+<h4 class="chapter-alt-heading"> Route all traffic to version V2 of reviews for user Jason</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
 
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route 50% of traffic to version V3 of reviews service
-</h4>
+<h4 class="chapter-alt-heading"> Route 50% of traffic to version V3 of reviews service</h4>
 
 ```sh
 kubectl apply -f  samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
 ```
 
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route 100% of traffic to version V3 of reviews service
-</h4>
+<h4 class="chapter-alt-heading"> Route 100% of traffic to version V3 of reviews service</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml

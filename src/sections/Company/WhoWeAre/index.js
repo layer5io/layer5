@@ -4,18 +4,13 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import WhoWeAreSectionWrapper from "./whoweare.style.js";
 import checkCircle from "./images/check-circle_lightgreen.svg";
 
-
 const WhoWeAre = () => {
   return (
     <WhoWeAreSectionWrapper id="whoweare">
       <Container fullWidthSM>
         <Row Vcenter={true}>
           <Col xs={12} sm={12} lg={12}>
-            <SectionTitle
-              className="section-title-2"
-              leftAlign={false}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title-2" leftAlign={false} UniWidth="100%">
               <p className="demo-2">Who Are We?</p>
               <h1>Industry stewards</h1>
               {/* <h2>Open standards creators</h2> */}

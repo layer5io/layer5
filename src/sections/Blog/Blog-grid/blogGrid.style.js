@@ -19,8 +19,8 @@ export const BlogPageWrapper = styled.div`
       margin: 0 auto 1rem;
     }
     .tooltip-search {
-			display: block;
-		}
+      display: block;
+    }
   }
 
   @media only screen and (max-width: 992px) {

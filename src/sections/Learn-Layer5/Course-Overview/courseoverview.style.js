@@ -20,8 +20,7 @@ export const CourseOverviewWrapper = styled.div`
     svg {
       font-size: 1.15rem;
     }
-    @media(max-width: 745px)
-    {
+    @media (max-width: 745px) {
       margin: 4rem 0 0 1rem;
     }
   }
@@ -89,7 +88,7 @@ export const CourseOverviewWrapper = styled.div`
 
   .course-toc {
     margin-top: 1.75rem;
-    color: ${props => props.theme.whiteSixToBlackSix};
+    color: ${(props) => props.theme.whiteSixToBlackSix};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -115,9 +114,9 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
 
-  .start-again-button{
+  .start-again-button {
     margin-left: 1rem;
-    background: ${props => props.theme.highlightColor} !important;
+    background: ${(props) => props.theme.highlightColor} !important;
   }
 
   .course {

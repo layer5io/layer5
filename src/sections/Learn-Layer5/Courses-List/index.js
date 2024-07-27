@@ -8,7 +8,6 @@ import SetupPreReq from "../../../components/Learn-Components/Setup-Pre-Requisit
 import { Link } from "gatsby";
 // import TOC from "../../../components/Learn-Components/TOC-Learning-Path";
 
-
 const CoursesList = ({ coursesData, learnPath }) => {
   return (
     <CoursesListWrapper>
@@ -17,9 +16,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
           <HiOutlineChevronLeft /> <h3>Learning Paths</h3>
         </Link>
       </div>
-      <PageHeader
-        title={learnPath}
-      />
+      <PageHeader title={learnPath} />
       <Container sm={12} lg={9} xl={9}>
         {/* <Row className="course-list">
           <Col sm={0} lg={3} xl={3}>

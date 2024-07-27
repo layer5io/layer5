@@ -14,16 +14,16 @@ const img4 = "./feature-images/meshery-and-grafana.webp";
 const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.webp";
 
 const MesheryFeaturesWrapper = styled.div`
-    margin: auto;
+  margin: auto;
+  margin-top: 4rem;
+  @media (max-width: 32rem) {
     margin-top: 4rem;
-    @media (max-width: 32rem){
-        margin-top: 4rem;
-    }
+  }
 
-    .feature-expose {
+  .feature-expose {
     img {
       padding: 0 3rem 1rem;
-      height:20rem;
+      height: 20rem;
     }
   }
   .feature-expose-full {
@@ -31,10 +31,10 @@ const MesheryFeaturesWrapper = styled.div`
       padding: 0rem;
     }
   }
-  @media (max-width: 767px){ 
-    .feature-expose img { 
-      height: 15rem; 
-    } 
+  @media (max-width: 767px) {
+    .feature-expose img {
+      height: 15rem;
+    }
   }
 `;
 
@@ -45,25 +45,28 @@ const MesheryFeatures = () => {
         <Features
           features={[
             {
-              id: "first" ,
+              id: "first",
               title: "Operational Best Practices",
               description:
                 "Benefit from the operational expertise of the world’s foremost cloud native management software and the designs they use.",
               learnMoreLink: "/books/service-mesh-patterns",
-              content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
+              content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />
             },
             {
-              id: "second" ,
+              id: "second",
               title: "Adaptive WebAssembly Filters for Envoy",
-              description:
-                "Dynamically offload application infrastructure logic.",
+              description: "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
-                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" loading="lazy" />
-              ),
+                <StaticImage
+                  src={img2}
+                  alt="Adaptive WebAssembly Filters for Envoy"
+                  loading="lazy"
+                />
+              )
             },
             {
-              id: "third" ,
+              id: "third",
               title: "Integration with ArgoCD",
               description:
                 "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
@@ -73,89 +76,99 @@ const MesheryFeatures = () => {
                   lines={[
                     {
                       code: "$ mesheryctl pattern apply -f canary-v3.yaml",
-                      color: "white",
+                      color: "white"
                     },
                     { code: "» Deploying...", color: "navy" },
                     {
                       code: "✓ Deployment successfully rolled out!",
-                      color: "green",
+                      color: "green"
                     },
                     { code: " " },
                     { code: "» Traffic splitting...", color: "navy" },
                     {
                       code: "✓ 5% of user requests to v3.",
-                      color: "green",
+                      color: "green"
                     },
                     {
                       code: "✓ 30% of user requests to v3.",
-                      color: "green",
+                      color: "green"
                     },
                     {
                       code: "✓ 60% of user requests to v3.",
-                      color: "green",
+                      color: "green"
                     },
                     {
                       code: "✓ 90% of user requests to v3.",
-                      color: "green",
+                      color: "green"
                     },
                     {
                       code: "✓ 100% of user requests to v3.",
-                      color: "green",
+                      color: "green"
                     },
                     { code: " " },
                     {
                       code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
-                      color: "navy",
+                      color: "navy"
                     },
                     {
                       code: "» Prerelease URL: https://payments-v3.meshery.run",
-                      color: "green",
+                      color: "green"
                     },
                     {
                       code: "» Release URL: https://payments.meshery.run",
-                      color: "green",
-                    },
+                      color: "green"
+                    }
                   ]}
                 />
-              ),
+              )
             },
             {
-              id: "fourth" ,
+              id: "fourth",
               title: "Docker Extension for Meshery",
-              description:
-                "Wrangle cloud native apps using Docker Desktop and Meshery",
+              description: "Wrangle cloud native apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
+                  <StaticImage
+                    src={img7}
+                    alt="Meshery, Docker Extension for Meshery"
+                    loading="lazy"
+                  />
                   <p>
-                  From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
+                    From the convenience of your Docker Desktop interface, connect Meshery with your
+                    Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters.
+                    Visually design your Docker-based infrastructure. Choose from hundreds of
+                    ready-made design patterns using Meshery Catalog. Use our no-code designer,
+                    MeshMap, to collaboratively design and operate your infra.
                   </p>
                 </div>
               ),
-              learnMoreLink: "/docker-extension-meshery",
+              learnMoreLink: "/docker-extension-meshery"
             },
             {
-              id: "five" ,
+              id: "five",
               title: "Meshery Operator",
               description: "",
-              learnMoreLink:
-                "/cloud-native-management/meshery/meshery-operator",
+              learnMoreLink: "/cloud-native-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />
                   <p>
-                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
+                    Your infrastructure is dynamic. Changes to your infrastructure and your
+                    applications occur with great frequency. Whether you make a change directly or
+                    another system makes a change, Meshery Operator helps Meshery stay in lockstep
+                    with your ever-evolving infrastructure.{" "}
                   </p>
                   <p>
-                    Meshery is continually cognizant of such changes. The
-                    Kubernetes operator for Meshery, supports discovery and
-                    eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes... all of your Kubernetes-based infrastructure.
+                    Meshery is continually cognizant of such changes. The Kubernetes operator for
+                    Meshery, supports discovery and eventing of greenfield and brownfield of your
+                    workloads, services, deployments, replicasets, pods, containers, services,
+                    persistent volumes... all of your Kubernetes-based infrastructure.
                   </p>
                 </div>
-              ),
+              )
             },
             {
-              id: "six" ,
+              id: "six",
               title: "Integration with Prometheus and Grafana",
               description: "",
               content: (
@@ -166,19 +179,18 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    Key to the efficient operation of any service mesh is the
-                    measurement and management of it’s performance.
+                    Key to the efficient operation of any service mesh is the measurement and
+                    management of it’s performance.
                   </p>
                   <p>
-                    Meshery provides performance test results alongside
-                    environment metrics, including service mesh control and data
-                    plane metrics as well as cluster node resource metrics, so
-                    that operators may easily understand the overhead of their
-                    service mesh’s control plane and data plane in context of
-                    the overhead incurred on nodes within the cluster.
+                    Meshery provides performance test results alongside environment metrics,
+                    including service mesh control and data plane metrics as well as cluster node
+                    resource metrics, so that operators may easily understand the overhead of their
+                    service mesh’s control plane and data plane in context of the overhead incurred
+                    on nodes within the cluster.
                   </p>
                 </div>
-              ),
+              )
             },
             // {
             //   title: "CI/CD and Version Control Integration",
@@ -241,7 +253,7 @@ const MesheryFeatures = () => {
             //   ),
             // },
             {
-              id: "seven" ,
+              id: "seven",
               title: "MeshSync",
               description: "Strict control of service mesh behavior.",
               //learnMoreLink: "/",
@@ -253,24 +265,21 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    With MeshSync was designed from the ground up to perform
-                    tiered discovery of your Kubernetes enviroment by
-                    incorporating tiered discovery and a unique method of
-                    fingerprinting each running mesh and workload.
+                    With MeshSync was designed from the ground up to perform tiered discovery of
+                    your Kubernetes enviroment by incorporating tiered discovery and a unique method
+                    of fingerprinting each running mesh and workload.
                   </p>
                   <p>
-                    MeshSync's working snapshot of the state of each cluster and
-                    service mesh under management is stored in-memory and
-                    continuously refreshed.
+                    MeshSync's working snapshot of the state of each cluster and service mesh under
+                    management is stored in-memory and continuously refreshed.
                   </p>
                 </div>
-              ),
+              )
             },
             {
-              id: "eight" ,
+              id: "eight",
               title: "Extensible Management Plane",
-              description:
-                "Plug in different service meshes, load generators and providers.",
+              description: "Plug in different service meshes, load generators and providers.",
               content: (
                 <div className="feature-expose-full">
                   <img
@@ -279,19 +288,18 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    Meshery is not just an application. It is a set of
-                    microservices where the central component is itself called
-                    Meshery. Integrators may extend Meshery by taking advantage
-                    of designated Extension Points.
+                    Meshery is not just an application. It is a set of microservices where the
+                    central component is itself called Meshery. Integrators may extend Meshery by
+                    taking advantage of designated Extension Points.
                   </p>
                   <p>
-                    Extension points come in various forms and are available
-                    through Meshery’s architecture.
+                    Extension points come in various forms and are available through Meshery’s
+                    architecture.
                   </p>
                 </div>
               ),
-              learnMoreLink: "https://docs.meshery.io/extensibility",
-            },
+              learnMoreLink: "https://docs.meshery.io/extensibility"
+            }
           ]}
         />
       </Container>

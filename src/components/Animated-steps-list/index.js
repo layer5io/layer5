@@ -15,9 +15,9 @@ const animationBottomPadding = [0, 620, 575, -50];
 const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
   const percentage = Math.min(
     (scrollPosition - breakpoints[currentIndex]) /
-        (breakpoints[currentIndex + 1] -
-            breakpoints[currentIndex] -
-            animationBottomPadding[currentIndex]),
+      (breakpoints[currentIndex + 1] -
+        breakpoints[currentIndex] -
+        animationBottomPadding[currentIndex]),
     1
   );
   const currentLines = terminalSteps[currentIndex].lines;
@@ -36,11 +36,8 @@ const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
 const AnimatedStepsList = ({ terminalHeroState, steps }) => {
   const scrollPosition = useScrollPosition();
   const [indicatorIndex, setIndicatorIndex] = useState(0);
-  const activeTerminalStateIndex =
-        scrollPosition <= 350 ? 0 : indicatorIndex + 1;
-  const terminalSteps = [terminalHeroState].concat(
-    steps.map((step) => step.terminal)
-  );
+  const activeTerminalStateIndex = scrollPosition <= 350 ? 0 : indicatorIndex + 1;
+  const terminalSteps = [terminalHeroState].concat(steps.map((step) => step.terminal));
   const currentFrame = calculateCurrentFrame(
     terminalSteps,
     activeTerminalStateIndex,

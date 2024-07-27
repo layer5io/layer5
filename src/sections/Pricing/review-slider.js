@@ -32,20 +32,20 @@ const settings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 2.5
       }
     },
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 2
       }
     },
     {
       breakpoint: 800,
       settings: {
         slidesToShow: 1.5,
-        slidesToScroll: 0.5,
+        slidesToScroll: 0.5
       }
     },
     {
@@ -53,30 +53,28 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 2000
       }
     }
   ]
 };
 
 const ReviewsWrapper = styled.div`
-max-width: 100%;
-.slider{
-  overflow: hidden;
-  padding: 2rem 0 0.5rem;
-  background: ${props => props.theme.secondaryLightColor};
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  h2{
-    text-align: center;
-    padding: 0 0 2rem;
-  }
-    .type-one-wrapper{
+  max-width: 100%;
+  .slider {
+    overflow: hidden;
+    padding: 2rem 0 0.5rem;
+    background: ${(props) => props.theme.secondaryLightColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    h2 {
+      text-align: center;
+      padding: 0 0 2rem;
+    }
+    .type-one-wrapper {
       margin: 0 1rem;
     }
-}
-
+  }
 `;
-
 
 const Reviews = () => {
   return (

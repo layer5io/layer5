@@ -1,13 +1,11 @@
 import React from "react";
 import SEO from "../components/seo";
 
-
 import ContactSubscribeSection from "../components/ContactCard";
 const SubscribeSection = () => {
   return (
     <>
       <ContactSubscribeSection />
-
     </>
   );
 };

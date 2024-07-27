@@ -16,12 +16,11 @@ import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <GlobalStyle />
       <TopPromotionalBanner />
-      <Navigation/>
+      <Navigation />
       {children}
       <ScrollToTopBtn />
       <Footer location={children.props.location} />

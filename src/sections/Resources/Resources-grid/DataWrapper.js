@@ -5,50 +5,46 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
-    const data = useStaticQuery(
-      graphql`
-        query allResourcesAndAllResources {
-          allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: {
-              fields: {
-                collection: { in: ["blog", "resources", "news", "events"] }
+    const data = useStaticQuery(graphql`
+      query allResourcesAndAllResources {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: {
+            fields: { collection: { in: ["blog", "resources", "news", "events"] } }
+            frontmatter: { published: { eq: true }, resource: { eq: true } }
+          }
+        ) {
+          nodes {
+            id
+            body
+            frontmatter {
+              title
+              type
+              technology
+              product
+              mesh
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH)
+                }
+                extension
+                publicURL
               }
-              frontmatter: { published: { eq: true }, resource: { eq: true } }
+              darkthumbnail {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH)
+                }
+                extension
+                publicURL
+              }
             }
-          ) {
-            nodes {
-              id
-              body 
-              frontmatter {
-                title
-                type
-                technology
-                product
-                mesh
-                thumbnail {
-                  childImageSharp {
-                    gatsbyImageData(layout: FULL_WIDTH)
-                  }
-                  extension
-                  publicURL
-                }
-                darkthumbnail {
-                  childImageSharp {
-                    gatsbyImageData(layout: FULL_WIDTH)
-                  }
-                  extension
-                  publicURL
-                }
-              }
-              fields {
-                slug
-              }
+            fields {
+              slug
             }
           }
         }
-      `
-    );
+      }
+    `);
     return <WrappedComponent allResources={data} {...props} />;
   };
 };

@@ -44,7 +44,6 @@ const theme = {
 
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
-  saffronLightColor: "#EAD07D",
+  saffronLightColor: "#EAD07D"
 };
 export default theme;
-

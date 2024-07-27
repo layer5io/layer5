@@ -18,37 +18,25 @@ const About = () => {
       <Container fullWidthSM>
         <Row Vcenter={true}>
           <Col xs={12} sm={6}>
-            <img
-              className="about-thumb"
-              src={imgAbout}
-              alt="This is about UNI-Prime"
-            />
+            <img className="about-thumb" src={imgAbout} alt="This is about UNI-Prime" />
           </Col>
           <Col xs={12} sm={6} className="about-content-wrap">
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
               <h4> About us </h4>
               <h2>
                 <span>Starting with appion</span> is easier than anything.
               </h2>
             </SectionTitle>
             <p className="about-text text-one">
-              One differences leaders, management-science so, best treat. Still
-              problems upper and anger devoting out. With hiding their boss
-              phase drops. A strenuous in ticket get write it by proposal.
+              One differences leaders, management-science so, best treat. Still problems upper and
+              anger devoting out. With hiding their boss phase drops. A strenuous in ticket get
+              write it by proposal.
             </p>
             <p className="about-text text-two">
-              Thought. Road, clearly, and software the shreds sisters contract,
-              luxury and fully here
+              Thought. Road, clearly, and software the shreds sisters contract, luxury and fully
+              here
             </p>
-            <VintageBox
-              right={true}
-              vintageTwo={true}
-              position="relative"
-            >
+            <VintageBox right={true} vintageTwo={true} position="relative">
               <Button title="Learn More" />
             </VintageBox>
           </Col>

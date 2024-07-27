@@ -113,11 +113,7 @@ const MeshmapIntegrationsSection = () => {
 
   return (
     <IntegrationsSectionWrapper>
-      <div
-        className="hero-image"
-        ref={diagramRef}
-        style={{ alignSelf: "center", width: "100%" }}
-      >
+      <div className="hero-image" ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
         <IntegrationsImage
           alt="integrations-img"
           className={imageInView ? "diagram-visible" : "diagram-hidden"}
@@ -125,19 +121,13 @@ const MeshmapIntegrationsSection = () => {
       </div>
       <div className="hero-text">
         <div>
-          <h1>
-            {Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in
-            Integrations
-          </h1>
+          <h1>{Math.ceil(integrations.allMdx.totalCount / 10) * 10}+ Built-in Integrations</h1>
         </div>
         <div>
           <img className="underline-img" src={UnderlineImg} />
         </div>
         <div>
-          <h4>
-            Support for all of your Cloud Native Infrastructure and
-            Applications.
-          </h4>
+          <h4>Support for all of your Cloud Native Infrastructure and Applications.</h4>
         </div>
         <div>
           <Button

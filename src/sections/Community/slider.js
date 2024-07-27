@@ -7,22 +7,22 @@ import "slick-carousel/slick/slick-theme.css";
 import { useStaticQuery, graphql } from "gatsby";
 
 const PictureSliderWrapper = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
   .slick-slider {
     margin-top: 1rem;
-    height:100%;
+    height: 100%;
     width: 100%;
 
-    .slick-list{
-      width:100%;
+    .slick-list {
+      width: 100%;
     }
     @media (max-width: 36rem) {
-        margin: 5rem auto;
-        max-width: 18.75rem;
+      margin: 5rem auto;
+      max-width: 18.75rem;
     }
   }
 
@@ -39,28 +39,24 @@ const PictureSliderWrapper = styled.div`
 `;
 
 const PictureSlider = () => {
-
-  const data = useStaticQuery(
-    graphql`
-      query community {
-        allFile(
-          filter: {
-            extension: { regex: "/(jpg)|(jpeg)|(png)/" }
-            relativeDirectory: {eq: "Community-pictures"}
-            
-          }
-          sort: {fields: [base] }
-        ) {
-          edges {
-            node {
-              extension
-              publicURL
-            }
+  const data = useStaticQuery(graphql`
+    query community {
+      allFile(
+        filter: {
+          extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+          relativeDirectory: { eq: "Community-pictures" }
+        }
+        sort: { fields: [base] }
+      ) {
+        edges {
+          node {
+            extension
+            publicURL
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   const settings = {
     dots: false,

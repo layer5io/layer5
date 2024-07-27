@@ -18,10 +18,7 @@ const ContactPage = () => {
   return (
     <ContactPageWrapper>
       <Container>
-        <PageHeader
-          title={"Get In Touch"}
-          subtitle={"Let us know how we can help you."}
-        />
+        <PageHeader title={"Get In Touch"} subtitle={"Let us know how we can help you."} />
         <Row className="cards-container">
           <CardOutline
             link="/careers"

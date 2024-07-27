@@ -13,9 +13,7 @@ import { useLocation } from "@reach/router";
 const TOC = () => {
   const [expand, setExpand] = useState(false);
   const location = useLocation();
-  const [expandIdenity, setExpandIdentity] = useState(
-    location.pathname.includes("/identity")
-  );
+  const [expandIdenity, setExpandIdentity] = useState(location.pathname.includes("/identity"));
 
   return (
     <TOCWrapper>
@@ -68,9 +66,7 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/identity/color"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/color"
-                        )
+                        location.pathname.includes("/projects/sistent/identity/color")
                           ? "active"
                           : ""
                       }`}
@@ -83,9 +79,7 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/identity/spacing"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/spacing"
-                        )
+                        location.pathname.includes("/projects/sistent/identity/spacing")
                           ? "active"
                           : ""
                       }`}
@@ -98,9 +92,7 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/identity/typography"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/typography"
-                        )
+                        location.pathname.includes("/projects/sistent/identity/typography")
                           ? "active"
                           : ""
                       }`}

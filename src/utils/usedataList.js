@@ -1,12 +1,6 @@
 import * as JsSearch from "js-search";
 import { useState, useEffect } from "react";
-const useDataList = (
-  data,
-  setSearchQuery,
-  searchQuery,
-  paramsIndex,
-  paramSearch
-) => {
+const useDataList = (data, setSearchQuery, searchQuery, paramsIndex, paramSearch) => {
   const [dataList, setDataList] = useState(data);
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -38,7 +32,7 @@ const useDataList = (
     setSearchResults(queryResult);
   };
 
-  return { queryResults, searchData, setDataList,dataList };
+  return { queryResults, searchData, setDataList, dataList };
 };
 
 export default useDataList;

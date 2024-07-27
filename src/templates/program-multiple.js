@@ -3,24 +3,23 @@ import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
 
-
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 
 export const query = graphql`
-    query ProgramByName($program: String!) {
-        allMdx(
-          sort: {fields: [frontmatter___title], order: DESC}
-          filter:{frontmatter: { program: { eq: $program } }}
-        ) {
-          nodes{
-            body
-            frontmatter {
-                title
-                program
-            }
-          }
+  query ProgramByName($program: String!) {
+    allMdx(
+      sort: { fields: [frontmatter___title], order: DESC }
+      filter: { frontmatter: { program: { eq: $program } } }
+    ) {
+      nodes {
+        body
+        frontmatter {
+          title
+          program
         }
+      }
     }
+  }
 `;
 
 const ProgramsPage = ({ data }) => {
@@ -34,24 +33,18 @@ const ProgramsPage = ({ data }) => {
     return optionItem;
   });
   return (
-
     <>
-
-
       <ProgramsSingle
         data={programs[activeOption]}
         options={options}
         setActiveOption={setActiveOption}
         activeOption={activeOption}
       />
-
     </>
-
   );
 };
 
 export default ProgramsPage;
-
 
 export const Head = ({ data }) => {
   const programs = data.allMdx.nodes;

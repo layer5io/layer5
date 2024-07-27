@@ -97,5 +97,5 @@ export const data = [
         cover: smiLogo
       }
     ]
-  },
+  }
 ];

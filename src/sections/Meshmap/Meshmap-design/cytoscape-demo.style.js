@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const CytoscapeWrapper = styled.div`
-cursor: pointer;
-.simple-react-cytoscape {
+  cursor: pointer;
+  .simple-react-cytoscape {
     width: 40vw;
     height: 50vh;
 

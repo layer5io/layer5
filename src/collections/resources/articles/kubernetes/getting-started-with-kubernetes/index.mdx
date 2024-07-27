@@ -9,14 +9,15 @@ type: Article
 published: true
 category: Kubernetes
 tags:
- - Kubernetes
+  - Kubernetes
 resource: true
 ---
+
 import { ResourcesWrapper } from "../../../Resources.style.js";
 import picture1 from "./Picture1.webp";
 import ClusterImg from "./multi-cluster-kubernetes-management-with-meshery.webp";
-import MeshmapDesigner from "./MeshmapDesigner.webp"
-import MeshmapVisualizer from "./MeshmapVisualizer.webp"
+import MeshmapDesigner from "./MeshmapDesigner.webp";
+import MeshmapVisualizer from "./MeshmapVisualizer.webp";
 
 <ResourcesWrapper>
   
@@ -58,55 +59,109 @@ In this article, we'll talk about Kubernetes, its benefits, and the best ways fo
   
   <p> A cluster of virtual computing resources is only one option, and it has its drawbacks. What happens when you lose disk space (which can happen if you don't add new containers, users, or workloads to a cluster)? Do you have another cluster for redundancy, and how do you integrate the two together? </p>
 
-  <p> Hyperconverged infrastructures like Red Hat OpenShift are an alternative that combine several technologies into a single virtual machine or physical machine. </p> 
-  
-  <h3> Best Practices for Kubernetes </h3>
-  
-  <p> Kubernetes is a container orchestration platform created by Google in 2014. It provides a way for companies to build fully self-sufficient, scalable, multi-container applications every time they need to deploy and manage their own containers. It's aimed at pretty much the same audience as Docker and other container orchestration platforms—that is, organizations that run containerized applications and want to deploy scalable, repeatable deployments.
+{" "}
+
+<p>
+  {" "}
+  Hyperconverged infrastructures like Red Hat OpenShift are an alternative that combine several
+  technologies into a single virtual machine or physical machine.{" "}
 </p>
-  
-  <p> At the most basic and most simplistic level, a group of containers (usually 16) is cross-linked together in a cluster, based on Docker. Containers run inside a cluster of virtual machines (Kubernetes VM) as a single Linux file system. Kubernetes organizes the creation, deletion, and management of containers into container concepts that provide fault tolerance, availability, scaling, permission management, and secure containers that should be able to run together and share resources. Each host runs one or more containers, providing the abstraction of which containers can run on which hosts.
+<h3> Best Practices for Kubernetes </h3>
+<p>
+  {" "}
+  Kubernetes is a container orchestration platform created by Google in 2014. It provides a way for
+  companies to build fully self-sufficient, scalable, multi-container applications every time they
+  need to deploy and manage their own containers. It's aimed at pretty much the same audience as
+  Docker and other container orchestration platforms—that is, organizations that run containerized
+  applications and want to deploy scalable, repeatable deployments.
 </p>
-  
-  <p> Since Kubernetes services are usually very easy to use, the user experience is very similar to that of centralized solutions. </p>
-  
-  <p> With Kubernetes, businesses can make data repositories and containers, federate their resources in an efficient way, manage billing, certify capacity, quota, access rights, and more. </p>
-  
-  <p> It can scale to many nodes simultaneously, so when their machines scale up, then their containers could scale up too. </p>
-  
-  <h3> Kubernetes Concepts and Terminology </h3>
-  
-  <p> Kubernetes was developed in 2014 as a Google container orchestrator, a container scheduler and more. Kubernetes was created to manage distributed applications, including Docker containers. According to SUSE, Kubernetes is simple to learn, easy to manage, and supports an on-premise, private, public, or hybrid architecture. Kubernetes is flexible enough to be split up over many servers in your data center. </p>
-  
-  <p> This simplificator, one example of many, allows one to scale independent containers. </p>
-  
-  <p> Let's understand better what Kubernetes is: </p>
-  
-  <p> In an application ecosystem of operating system Docker containers, Kubernetes acts as a centralized management guided by distributed logic. Kubernetes can be used to deliver web traffic, graphics work, or IP traffic from IoT devices. The main benefit is that clusters can be easily expanded to a huge size with all functions. </p>
- 
-  <p> What are pods? Pods are Docker instances that you can use to deploy your containers in environments like Kubernetes, which can be private, public, or a mix of the two.
+<p>
+  {" "}
+  At the most basic and most simplistic level, a group of containers (usually 16) is cross-linked
+  together in a cluster, based on Docker. Containers run inside a cluster of virtual machines
+  (Kubernetes VM) as a single Linux file system. Kubernetes organizes the creation, deletion, and
+  management of containers into container concepts that provide fault tolerance, availability,
+  scaling, permission management, and secure containers that should be able to run together and
+  share resources. Each host runs one or more containers, providing the abstraction of which
+  containers can run on which hosts.
 </p>
-  
-  <p> Environments may be private services or public clouds. </p>
-  
-  <p> Kubernetes can be used to manage containers because they are easy to use and make it easy to scale your containers. </p>
-  
-  <p> Installation tutorials are sometimes yoinked without ever reading the help. </p>
-  
-  <h3> RBAC and Firewall Security </h3>
-  
-  <p> Today, everything is hackable, and so is your Kubernetes cluster. Hackers often try to find vulnerabilities in the system in order to exploit them and gain access. So, keeping your Kubernetes cluster secure should be a high priority. The first thing to do is make sure you are using RBAC in Kubernetes. RBAC is role-based access control. Assign roles to each user in your cluster and to each service account running in your cluster. Roles in RBAC contain several permissions that a user or service account can perform. You can assign the same role to multiple people, and each role can have multiple permissions.
+<p>
+  {" "}
+  Since Kubernetes services are usually very easy to use, the user experience is very similar to
+  that of centralized solutions.{" "}
 </p>
-  
-  <p> RBAC settings can also be applied to namespaces, so if you assign roles to a user allowed in one namespace, they will not have access to other namespaces in the cluster. Kubernetes provides RBAC properties such as role and cluster role to define security policies. </p>
-  
-  <p> You can create a firewall for your API server to prevent attackers from sending connection requests to your API server from the Internet. To do this, you can either use regular firewalling rules or port firewalling rules. If you are using something like GKE, you can use a master authorized network feature in order to limit the IP addresses that can access the API server. </p>
-  
-  <h3> Managing Kubernetes Clusters </h3>
-  
-  <p> Kubernetes is a project that lets you create and manage individual containers or a container cluster on a mainframe. Clusters may consist of physical, virtual, or cloud-based computing resources.
+<p>
+  {" "}
+  With Kubernetes, businesses can make data repositories and containers, federate their resources in
+  an efficient way, manage billing, certify capacity, quota, access rights, and more.{" "}
 </p>
-<CTA_FullWidth 
+<p>
+  {" "}
+  It can scale to many nodes simultaneously, so when their machines scale up, then their containers
+  could scale up too.{" "}
+</p>
+<h3> Kubernetes Concepts and Terminology </h3>
+<p>
+  {" "}
+  Kubernetes was developed in 2014 as a Google container orchestrator, a container scheduler and
+  more. Kubernetes was created to manage distributed applications, including Docker containers.
+  According to SUSE, Kubernetes is simple to learn, easy to manage, and supports an on-premise,
+  private, public, or hybrid architecture. Kubernetes is flexible enough to be split up over many
+  servers in your data center.{" "}
+</p>
+<p> This simplificator, one example of many, allows one to scale independent containers. </p>
+<p> Let's understand better what Kubernetes is: </p>
+<p>
+  {" "}
+  In an application ecosystem of operating system Docker containers, Kubernetes acts as a
+  centralized management guided by distributed logic. Kubernetes can be used to deliver web traffic,
+  graphics work, or IP traffic from IoT devices. The main benefit is that clusters can be easily
+  expanded to a huge size with all functions.{" "}
+</p>
+<p>
+  {" "}
+  What are pods? Pods are Docker instances that you can use to deploy your containers in
+  environments like Kubernetes, which can be private, public, or a mix of the two.
+</p>
+<p> Environments may be private services or public clouds. </p>
+<p>
+  {" "}
+  Kubernetes can be used to manage containers because they are easy to use and make it easy to scale
+  your containers.{" "}
+</p>
+<p> Installation tutorials are sometimes yoinked without ever reading the help. </p>
+<h3> RBAC and Firewall Security </h3>
+<p>
+  {" "}
+  Today, everything is hackable, and so is your Kubernetes cluster. Hackers often try to find
+  vulnerabilities in the system in order to exploit them and gain access. So, keeping your
+  Kubernetes cluster secure should be a high priority. The first thing to do is make sure you are
+  using RBAC in Kubernetes. RBAC is role-based access control. Assign roles to each user in your
+  cluster and to each service account running in your cluster. Roles in RBAC contain several
+  permissions that a user or service account can perform. You can assign the same role to multiple
+  people, and each role can have multiple permissions.
+</p>
+<p>
+  {" "}
+  RBAC settings can also be applied to namespaces, so if you assign roles to a user allowed in one
+  namespace, they will not have access to other namespaces in the cluster. Kubernetes provides RBAC
+  properties such as role and cluster role to define security policies.{" "}
+</p>
+<p>
+  {" "}
+  You can create a firewall for your API server to prevent attackers from sending connection
+  requests to your API server from the Internet. To do this, you can either use regular firewalling
+  rules or port firewalling rules. If you are using something like GKE, you can use a master
+  authorized network feature in order to limit the IP addresses that can access the API server.{" "}
+</p>
+<h3> Managing Kubernetes Clusters </h3>
+<p>
+  {" "}
+  Kubernetes is a project that lets you create and manage individual containers or a container
+  cluster on a mainframe. Clusters may consist of physical, virtual, or cloud-based computing
+  resources.
+</p>
+<CTA_FullWidth
   image={ClusterImg}
   alt="Multi-Cluster Kubernetes Management with Meshery"
   content="Multi-Cluster Kubernetes Management with Meshery"
@@ -115,10 +170,18 @@ In this article, we'll talk about Kubernetes, its benefits, and the best ways fo
   external_link={false}
   className="get-start-kubernetes-resource"
 />
-<p> The Kubernetes projects auto-deploy container clusters anywhere there is a pluggable environment and an open-source base that includes system-config service, service account manager, and kubelet. So, developers and system administrators can easily put containers on a single machine or on nodes of machines in any scalable cluster to save money and time.
+<p>
+  {" "}
+  The Kubernetes projects auto-deploy container clusters anywhere there is a pluggable environment
+  and an open-source base that includes system-config service, service account manager, and kubelet.
+  So, developers and system administrators can easily put containers on a single machine or on nodes
+  of machines in any scalable cluster to save money and time.
 </p>
-  
-<p> Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. Kubernetes was made by Google, and the Cloud Native Computing Foundation now takes care of it.
+<p>
+  {" "}
+  Kubernetes is an open-source system for automating the deployment, scaling, and management of
+  containerized applications. Kubernetes was made by Google, and the Cloud Native Computing
+  Foundation now takes care of it.
 </p>
 
   <h3>Kubernetes Cluster Visualization and Designing using MeshMap</h3>

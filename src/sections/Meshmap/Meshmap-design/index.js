@@ -9,15 +9,14 @@ import MeshmapDesignFeatureCarousel from "./meshmap-design-features-carousel";
 import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
-
 const MeshmapDesign = () => {
   return (
     <MeshmapDesignWrapper>
       <MeshmapDesignBanner />
       <MeshmapHeroSection />
       {/* <DesignDefault /> */}
-      <MeshmapIntegrationsSection/>
-      <MeshmapMobileSwiper/>
+      <MeshmapIntegrationsSection />
+      <MeshmapMobileSwiper />
       <MeshmapDesignFeatureCarousel />
       <SignupForm />
       <Reviews />

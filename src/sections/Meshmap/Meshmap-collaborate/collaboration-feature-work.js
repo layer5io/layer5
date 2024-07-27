@@ -6,71 +6,67 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 const CollaborationFeatureWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: ${(props) => props.theme.grey121212ToWhite};
+  max-width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 5% 8%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  @media only screen and (max-width: 767px) {
+    text-align: center;
+    flex-direction: column-reverse;
+  }
 
+  .hero-text {
     display: flex;
-    flex-direction: row;
-    background-color: ${props => props.theme.grey121212ToWhite};;
-    max-width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 5% 8%;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    flex-direction: column;
+    flex: 0 0 40%;
+    max-width: 40%;
+    position: relative;
     @media only screen and (max-width: 767px) {
-      text-align: center;
-      flex-direction: column-reverse;
+      max-width: 100%;
     }
+  }
 
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 40%;
-        max-width: 40%;
-        position: relative;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
+  .hero-text-visibe {
+    right: 0%;
+    scale: 1;
+    transition: 1s;
+  }
+
+  h2 {
+    span {
+      color: ${(props) => props.theme.text};
     }
+  }
 
-    .hero-text-visibe {
-      right: 0%;
-      scale: 1;
-      transition: 1s;
-    }
+  .world-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    /* position: relative; */
+  }
 
-    h2 {
-      span {
-        color: ${props => props.theme.text};
-      }
-    }
+  img {
+    opacity: 0;
+    /* position: absolute; */
+    /* top: 0%; */
+    /* left: 0%; */
+    transition: opacity ease-out 0.5s;
+  }
 
-    .world-image {
-      flex: 0 0 50%;
-      max-width: 50%;
-      /* position: relative; */
-    }
-
-    img {
-      opacity: 0;
-      /* position: absolute; */
-      /* top: 0%; */
-      /* left: 0%; */
-      transition: opacity ease-out 0.5s;
-    }
-
-    .visible {
-      opacity: 1;
-      transition: opacity ease-in 0.5s;
-    }
-
+  .visible {
+    opacity: 1;
+    transition: opacity ease-in 0.5s;
+  }
 `;
 
 const CollaborationFeatureWork = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   const [imageInView, setimageInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
+  if (inView && !imageInView) setimageInView(true);
+  else if (imageInView && !inView) setimageInView(false);
 
   return (
     <CollaborationFeatureWrapper>
@@ -85,11 +81,15 @@ const CollaborationFeatureWork = () => {
         <img className={imageInView ? "visible" : ""} src={World7} alt="" ref={locatorRef} /> */}
       </div>
       <div className="hero-text">
-        <h2><span>Work from Anywhere</span></h2>
-        <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.</p>
+        <h2>
+          <span>Work from Anywhere</span>
+        </h2>
+        <p>
+          Build an iterative design flow with live collaboration that keeps you in the loop whether
+          you’re working in the office or remotely.
+        </p>
       </div>
     </CollaborationFeatureWrapper>
-
   );
 };
 

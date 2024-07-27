@@ -7,7 +7,6 @@ const CommunityConduct = () => {
   return (
     <>
       <ConductPage />
-
     </>
   );
 };

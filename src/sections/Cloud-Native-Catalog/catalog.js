@@ -128,7 +128,6 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
-
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -143,17 +142,22 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Harness Well-Architected Kubernetes Patterns</h2>
             <p className="caption">
-                Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
+              Discover and use top-quality patterns and conventions as templates for your cloud
+              native infrastructure with Meshery Catalog. Publish your own best practices and share
+              with team members and the world.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">
-            Center of Excellence: Mutli-tentant Platform Engineering Patterns
+              Center of Excellence: Mutli-tentant Platform Engineering Patterns
             </h2>
             <p className="caption">
-              Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
+              Disseminate your organizational best practices by encapsulating them into your own
+              Meshery design patterns. Expose configurable templates for your developer teams for
+              reuse and environment reconfiguration, while retaining the imbued operational
+              practices within your shared designs.
             </p>
           </Col>
           <Col md={6} className="catalog-image">
@@ -171,7 +175,8 @@ const Catalog = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Unlock the Power of WebAssembly Filters</h2>
             <p className="caption">
-              Meshery's management of WASM filters for Envoy offers seamless integration into cloud native infrastructure running Envoy-based data planes.
+              Meshery's management of WASM filters for Envoy offers seamless integration into cloud
+              native infrastructure running Envoy-based data planes.
             </p>
           </Col>
         </Row>
@@ -193,11 +198,11 @@ const Catalog = () => {
         </Row> */}
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-              Policy-driven Orchestration and Control Where You Need It
-            </h2>
+            <h2 className="heading">Policy-driven Orchestration and Control Where You Need It</h2>
             <p className="caption">
-              Inherent standard policy for your organization or override it at your team or individual user-level. Reconfigure Meshery's and your infrastructure's behavior whether applying policy broadly or very specifically.
+              Inherent standard policy for your organization or override it at your team or
+              individual user-level. Reconfigure Meshery's and your infrastructure's behavior
+              whether applying policy broadly or very specifically.
             </p>
           </Col>
           <Col md={6} className="catalog-image">

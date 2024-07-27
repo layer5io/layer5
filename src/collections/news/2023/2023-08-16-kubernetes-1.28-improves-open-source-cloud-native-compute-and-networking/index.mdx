@@ -24,11 +24,16 @@ Kubernetes is an open-source project, originally started by Google and now devel
 As is the case with every Kubernetes release, there is a theme and a code name; for Kubernetes 1.28 the name is “Planternetes.” “So in the northern hemisphere, it’s summer right now and I think the symbolism of the garden and our community goes hand in hand,” Grace Nguyen, release lead for Kubernetes 1.28, told SDxCentral. “Each of us has a very important role in the ecosystem and together we built this big, open-source project that has a lot of impact.”
 
 <h3>Networking enhancements in Kubernetes 1.28</h3>
-Looking specifically at the networking capabilities of Kubernetes 1.28, there are a few enhancements that will also help to improve overall performance.
+Looking specifically at the networking capabilities of Kubernetes 1.28, there are a few enhancements
+that will also help to improve overall performance.
 <br></br>
 <br></br>
 
-<Link to="/community/members/lee-calcote/bio">Lee Calcote</Link>, founder of <Link to="/about">Layer5</Link> and a CNCF contributor, explained that one of the key networking updates is an enhancement to the kube-proxy feature that will enable better connection-draining capabilities for load balancers targeting terminating nodes.
+<Link to="/community/members/lee-calcote/bio">Lee Calcote</Link>, founder of <Link to="/about">
+  Layer5
+</Link> and a CNCF contributor, explained that one of the key networking updates is an enhancement
+to the kube-proxy feature that will enable better connection-draining capabilities for load
+balancers targeting terminating nodes.
 
 “This enhancement improves the reliability of load balancer health checks and connection draining for terminating nodes within Kubernetes, so that kube-proxy can independently report its health regardless of the terminating state of the node,” Calcote told SDxCentral. “In this way, cloud providers in particular can be more sophisticated in ascertaining if a load balancer should target a specific node for ingress traffic or not.”
 

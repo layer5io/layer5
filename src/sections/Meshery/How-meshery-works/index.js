@@ -7,9 +7,7 @@ import { useState } from "react";
 
 export default function HowItWorks({ title, description, features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
-  const [viewportStatus, setViewportStatus] = useState(
-    new Array(features.length).fill(false)
-  );
+  const [viewportStatus, setViewportStatus] = useState(new Array(features.length).fill(false));
 
   const onInViewStatusChanged = (state, index) => {
     const newStatusArray = [...viewportStatus];
@@ -19,7 +17,7 @@ export default function HowItWorks({ title, description, features }) {
     // our new activeExampleIndex. If it's been updated
     // notify the subscriber.
     const newExampleIndex = newStatusArray.lastIndexOf(true);
-    if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+    if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
       setActiveExampleIndex(newExampleIndex);
     }
   };

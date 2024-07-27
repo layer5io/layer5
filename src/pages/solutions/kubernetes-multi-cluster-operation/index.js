@@ -3,9 +3,7 @@ import SEO from "../../../components/seo";
 import KubernetesMultiCluster from "../../../sections/kubernetes-multi-cluster";
 
 const KubernetesMultiClusterPage = () => {
-  return (
-    <KubernetesMultiCluster/>
-  );
+  return <KubernetesMultiCluster />;
 };
 export default KubernetesMultiClusterPage;
 export const Head = () => {

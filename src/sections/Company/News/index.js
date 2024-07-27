@@ -41,9 +41,7 @@ const News = () => {
                 <span>15 Sep, 2020</span>
               </div>
               <h2 className="title">
-                <Link to="#">
-                  Rhetoric me avoid may lowest even quite first.
-                </Link>
+                <Link to="#">Rhetoric me avoid may lowest even quite first.</Link>
               </h2>
               <div className="post-reaction-block">
                 <Link to="#">05 Comment</Link>
@@ -67,9 +65,7 @@ const News = () => {
                 <span>15 Sep, 2020</span>
               </div>
               <h2 className="title">
-                <Link to="#">
-                  Rhetoric me avoid may lowest even quite first.
-                </Link>
+                <Link to="#">Rhetoric me avoid may lowest even quite first.</Link>
               </h2>
               <div className="post-reaction-block">
                 <Link to="#">
@@ -94,9 +90,7 @@ const News = () => {
                 <span>15 Sep, 2020</span>
               </div>
               <h2 className="title">
-                <Link to="#">
-                  Rhetoric me avoid may lowest even quite first.
-                </Link>
+                <Link to="#">Rhetoric me avoid may lowest even quite first.</Link>
               </h2>
               <div className="post-reaction-block">
                 <Link to="#">

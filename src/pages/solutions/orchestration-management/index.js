@@ -5,7 +5,7 @@ import ServiceMeshFocused from "../../../sections/Home/Service-mesh-focussed";
 const OrchestrationManagement = () => {
   return (
     <>
-      <Orchestration/>
+      <Orchestration />
       <ServiceMeshFocused bookName={"enterprise-path"} />
     </>
   );

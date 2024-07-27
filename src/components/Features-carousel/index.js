@@ -5,7 +5,6 @@ import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoun
 import { FeaturesWrapper } from "./FeaturesCarousel.style";
 import Slider from "react-slick";
 
-
 const Features = ({ features, heading }) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
@@ -13,7 +12,6 @@ const Features = ({ features, heading }) => (
     <FeaturesList features={features} />
   </>
 );
-
 
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -36,9 +34,7 @@ const FeaturesList = ({ features }) => {
         </ul>
         <div className="terminal-wrapper">
           <SimpleReactLightbox>
-            <SRLWrapper>
-              {features[activeFeature].content}
-            </SRLWrapper>
+            <SRLWrapper>{features[activeFeature].content}</SRLWrapper>
           </SimpleReactLightbox>
         </div>
       </div>
@@ -56,7 +52,7 @@ const FeaturesCarousel = ({ features, heading }) => {
           autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite= {true}
+          infinite={true}
           speed="500"
           slidesToShow={1}
           slidesToScroll={1}
@@ -66,9 +62,7 @@ const FeaturesCarousel = ({ features, heading }) => {
               <Feature Element="div" id={feature.id} title={feature.title} active>
                 {feature.description}
               </Feature>
-              <div className="terminal-wrapper">
-                {features[stableIdx].content}
-              </div>
+              <div className="terminal-wrapper">{features[stableIdx].content}</div>
             </div>
           ))}
         </Slider>
@@ -92,16 +86,17 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
       ) : (
         <span className="heading">{title}</span>
       )}
-      <div className="body" id={`feature-${id}`} >
+      <div className="body" id={`feature-${id}`}>
         <p>{children}</p>
-        {learnMoreLink && learnMoreLink.startsWith("/")
-          ? <Link className="learn-more-link" to={learnMoreLink}>
+        {learnMoreLink && learnMoreLink.startsWith("/") ? (
+          <Link className="learn-more-link" to={learnMoreLink}>
             Explore <IoIosArrowRoundForward />
           </Link>
-          : <a href={learnMoreLink} className="learn-more-link">
-           Explore <IoIosArrowRoundForward />
+        ) : (
+          <a href={learnMoreLink} className="learn-more-link">
+            Explore <IoIosArrowRoundForward />
           </a>
-        }
+        )}
       </div>
     </Element>
   );

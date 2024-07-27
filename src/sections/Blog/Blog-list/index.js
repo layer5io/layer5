@@ -20,7 +20,7 @@ const BlogList = ({
   setCurrentPage,
   queryResults,
   postsPerPage,
-  searchedPosts,
+  searchedPosts
 }) => {
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
@@ -28,9 +28,7 @@ const BlogList = ({
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
-      ? `${totalCount} post${
-        totalCount === 1 ? "" : "s"
-      } categorized as "${category}"`
+      ? `${totalCount} post${totalCount === 1 ? "" : "s"} categorized as "${category}"`
       : "Blog";
 
   // Change page
@@ -40,12 +38,7 @@ const BlogList = ({
 
   return (
     <BlogPageWrapper>
-      <PageHeader
-        title={header}
-        path="Blog"
-        img={RssFeedIcon}
-        feedlink="/blog/feed.xml"
-      />
+      <PageHeader title={header} path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml" />
       <div className="blog-page-wrapper">
         <Container>
           <Row>
@@ -60,19 +53,26 @@ const BlogList = ({
                   <SearchBox
                     searchQuery={searchQuery}
                     searchData={searchData}
-                    paginate={paginate} currentPage={currentPage}
+                    paginate={paginate}
+                    currentPage={currentPage}
                     focusSearch={true}
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                  focusSearch={true}
+                />
               )}
               <div className="blog-list-wrapper">
                 <Row className="blog-lists">
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }) => (
                       <Col xs={12} key={id}>
-                        <Card  frontmatter={frontmatter} fields={fields} />
+                        <Card frontmatter={frontmatter} fields={fields} />
                       </Col>
                     ))}
                   <Col>

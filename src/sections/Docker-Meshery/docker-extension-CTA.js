@@ -4,17 +4,16 @@ import Button from "../../reusecore/Button";
 import { Container } from "../../reusecore/Layout";
 import Dockerimage from "../../assets/images/docker-extension/Docker_animated.svg";
 
-
 const DockerExtensionCTAWrapper = styled.div`
-p {
-  color: ${props => props.theme.whiteToBlack};   
-}
-.card-right{
-  padding-top: 3rem;
-  padding-left: 1rem;
-}
+  p {
+    color: ${(props) => props.theme.whiteToBlack};
+  }
+  .card-right {
+    padding-top: 3rem;
+    padding-left: 1rem;
+  }
 
-.docker-callout {
+  .docker-callout {
     background: linear-gradient(90deg, hsla(186, 33%, 94%, 0.01) 35%, hsla(173, 54%, 61%, 1) 100%);
     border-radius: 4rem;
     display: flex;
@@ -32,15 +31,15 @@ p {
       margin-right: 2rem;
       padding-left: 1rem;
     }
-    h2{
-      color: ${props => props.theme.whiteToBlack};
+    h2 {
+      color: ${(props) => props.theme.whiteToBlack};
       padding: 0;
     }
     Button {
       margin: 1rem 0;
     }
-    @media screen and (max-width:1000px) {
-      .card-right{
+    @media screen and (max-width: 1000px) {
+      .card-right {
         padding-top: 1rem;
         padding-left: 0;
       }
@@ -52,7 +51,6 @@ p {
       .text-gray {
         margin-top: 2rem;
       }
-      
     }
   }
 `;
@@ -65,7 +63,9 @@ const DockerExtensionCTA = () => {
           <img src={Dockerimage} alt="Docker and Meshery" loading="lazy" />
           <div className="card-right">
             <div>
-              <h2>Docker Extension for Meshery<br></br> is now available!</h2>
+              <h2>
+                Docker Extension for Meshery<br></br> is now available!
+              </h2>
             </div>
             <p>Managing cloud native infrastructure has never been easier.</p>
             <Button primary url="/docker-extension-meshery" external={false}>

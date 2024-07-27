@@ -16,12 +16,11 @@ const slide3Path = "../images/meshery-configuration-management.webp";
 const slides_list = [Slide1, Slide2, Slide3];
 
 const FeaturesSection = () => {
-
   var settings = {
     customPaging: function (i) {
       return (
         <p>
-          <img src={slides_list[i]} loading="lazy" alt={"slide-img" + [i]}/>
+          <img src={slides_list[i]} loading="lazy" alt={"slide-img" + [i]} />
         </p>
       );
     },
@@ -48,13 +47,13 @@ const FeaturesSection = () => {
         </div> */}
         <div className="section-header">
           <h2>Distributed systems are hard.</h2>
-          <h1>Get the <span>most out</span> of yours</h1>
+          <h1>
+            Get the <span>most out</span> of yours
+          </h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
-          <p>
-            No matter where you run your workloads, Meshery just works.
-          </p>
+          <p>No matter where you run your workloads, Meshery just works.</p>
         </div>
         <div className="smp-section">
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
@@ -62,7 +61,9 @@ const FeaturesSection = () => {
             <Col xs={12} xl={4} className="smp-section-data">
               <h2>The Performance Yardstick: MeshMark</h2>
               <p>
-                Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your          application across different cloud native infrastructure. Compare and manage cloud native overhead.
+                Assess the value of your cloud native infrastructure in context of its cost.
+                Benchmark and manage the performance of your application across different cloud
+                native infrastructure. Compare and manage cloud native overhead.
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">
@@ -88,13 +89,28 @@ const FeaturesSection = () => {
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Install" url="/cloud-native-management/meshery/getting-started" />
+              <Button
+                secondary
+                className="mgmt_button"
+                title="Install"
+                url="/cloud-native-management/meshery/getting-started"
+              />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-cloud-native-infra" />
+              <Button
+                secondary
+                className="mgmt_button"
+                title="Manage"
+                url="/cloud-native-management/meshery/operating-cloud-native-infra"
+              />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />
+              <Button
+                secondary
+                className="mgmt_button"
+                title="Patterns"
+                url="/learn/service-mesh-books/service-mesh-patterns"
+              />
             </Col>
           </div>
         </div>

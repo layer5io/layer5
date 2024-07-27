@@ -7,11 +7,15 @@ const Mentorship = () => {
   return (
     <>
       <MentorshipPage />
-
     </>
   );
 };
 export default Mentorship;
 export const Head = () => {
-  return <SEO title="Mentorship Programs" description="As an open-source organization and a community, we participate in different mentorships programs." />;
+  return (
+    <SEO
+      title="Mentorship Programs"
+      description="As an open-source organization and a community, we participate in different mentorships programs."
+    />
+  );
 };

@@ -18,7 +18,6 @@ const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContai
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
-
 const IndexPage = () => {
   return (
     <>
@@ -26,10 +25,10 @@ const IndexPage = () => {
       <FeaturesContainer />
       <Integrations />
       <Partners />
-      <CornerPopup/>
+      <CornerPopup />
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
-      <MesheryIntegration  />
+      <MesheryIntegration />
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -40,11 +39,10 @@ const IndexPage = () => {
       {/*<ContactCard />*/}
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
-      <CaseStudyBanner/>
+      <CaseStudyBanner />
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
       {/* <EngineerEnabler /> */}
       <SubscribeSection />
-
     </>
   );
 };
@@ -52,10 +50,10 @@ export const Head = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Corporation",
-    "name": "Layer5",
-    "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-gradient.webp",
-    "sameAs": [
+    name: "Layer5",
+    url: "https://layer5.io/",
+    logo: "https://layer5.io/images/layer5-gradient.webp",
+    sameAs: [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
       "https://github.com/layer5io",
@@ -63,8 +61,11 @@ export const Head = () => {
     ]
   };
   return (
-    <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery, the cloud native manager."
-      schemaMarkup={schema} />
+    <SEO
+      title="Layer5"
+      description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery, the cloud native manager."
+      schemaMarkup={schema}
+    />
   );
 };
 export default IndexPage;

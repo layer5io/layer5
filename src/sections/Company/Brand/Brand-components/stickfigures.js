@@ -22,9 +22,8 @@ const StickFigures = () => {
         </Col>
         <Col>
           <p>
-            Introducing Five, a playful and dynamic visual language
-            that captures the essence of Layer5. These charming and
-            minimalist illustrations serve as the perfect embodiment of
+            Introducing Five, a playful and dynamic visual language that captures the essence of
+            Layer5. These charming and minimalist illustrations serve as the perfect embodiment of
             our brand's values and offerings.
           </p>
         </Col>

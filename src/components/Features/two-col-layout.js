@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    @media screen and (max-width: 968px) {
-        flex-direction: column;
-      }
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  @media screen and (max-width: 968px) {
+    flex-direction: column;
+  }
 `;
 
 export const Container = styled.div`
@@ -20,11 +20,13 @@ export const Container = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
   opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
   &.left-slide-in {
     transform: translateX(-100px); /* Initially positioned to the left */
   }
-  
+
   &.right-slide-in {
     transform: translateX(100px); /* Initially positioned to the right */
   }
@@ -82,12 +84,14 @@ export const Container = styled.div`
 export const ContentWrapper = styled.div`
   position: relative;
   padding: 2rem 2rem;
-  opacity: 0; 
-  transform: translateY(20px); 
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
   &.fade-in {
-    opacity: 1; 
-    transform: translateY(0); 
+    opacity: 1;
+    transform: translateY(0);
   }
   .text {
     color: ${(props) => props.theme.greyA0AAAAToGrey666666};

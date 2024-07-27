@@ -33,11 +33,7 @@ const Projects = () => {
     <PartnerItemWrapper>
       <Container>
         <Row>
-          <SectionTitle
-            className="section-title"
-            leftAlign={true}
-            UniWidth="75%"
-          >
+          <SectionTitle className="section-title" leftAlign={true} UniWidth="75%">
             <h4>ENGAGING AND COLLABORATING WITH</h4>
           </SectionTitle>
         </Row>
@@ -46,7 +42,15 @@ const Projects = () => {
         {partners.map((partner, index) => (
           <Link className="partner-card" to={partner.imageRoute} key={index}>
             <div className={partner.innerDivStyle}>
-              <img className="partner-image" id={partner.name} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
+              <img
+                className="partner-image"
+                id={partner.name}
+                loading="lazy"
+                src={partner.imageLink}
+                alt={partner.name}
+                width={partner.imageWidth}
+                height={partner.imageHeight}
+              />
             </div>
           </Link>
         ))}

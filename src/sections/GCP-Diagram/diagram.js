@@ -121,19 +121,16 @@ const DiagramWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Gcp = () => {
-
-
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
-
         {/* <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
@@ -169,16 +166,21 @@ const Gcp = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Visual drag & drop</h2>
             <p className="caption">
-              MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+              MeshMap allow you to drag, drop and connect all your cloud components together simply
+              and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/meshmap/design">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Extensive GCP Icon Library</h2>
             <p className="caption">
-              Utilize a vast and continually expanding collection of GCP icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
+              Utilize a vast and continually expanding collection of GCP icons designed for both
+              diagramming and orchestration scenarios. Craft globally comprehensible diagrams that
+              are not only authentic but also aligned with the latest industry standards.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
@@ -190,15 +192,24 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with MeshMap" className="GCP-image" />
+              <img
+                src={GCPCatalogDark}
+                alt="Designing GCP Diagrams with MeshMap"
+                className="GCP-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Kickstart with Ready-to-Use Templates</h2>
             <p className="caption">
-              Jumpstart your projects with our quick-start templates designed for both GCP diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
+              Jumpstart your projects with our quick-start templates designed for both GCP
+              diagramming and orchestration management. Access a range of professionally crafted
+              templates that are fully customizable, ensuring you can tailor them to your specific
+              needs.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/catalog">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
 

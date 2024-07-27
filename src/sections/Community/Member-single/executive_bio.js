@@ -23,7 +23,7 @@ const MemberBio = ({ frontmatter, body }) => {
     executive_image,
     profile,
     executive_position,
-    company,
+    company
   } = frontmatter;
   return (
     <MemberSingleWrapper>
@@ -33,17 +33,17 @@ const MemberBio = ({ frontmatter, body }) => {
             <Col xs={12} sm={12} lg={9}>
               <div className="header">
                 <div className="name">{name}</div>
-                {executive_position && <div className="position">{executive_position}, {company}</div>}
+                {executive_position && (
+                  <div className="position">
+                    {executive_position}, {company}
+                  </div>
+                )}
               </div>
             </Col>
             <Col xs={12} sm={12} lg={3}>
               <div className="exec-bio-image">
                 <Link to={executive_image.publicURL}>
-                  <Image
-                    className="profile-image"
-                    {...executive_image}
-                    alt={name}
-                  />
+                  <Image className="profile-image" {...executive_image} alt={name} />
                 </Link>
               </div>
             </Col>

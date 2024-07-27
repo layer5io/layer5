@@ -12,7 +12,11 @@ const Catalog = () => {
 };
 export default Catalog;
 export const Head = () => {
-  return <SEO title="Cloud Native Catalog"
-    description="The Kubernetes and Cloud Native Catalog. Build, share, innovate with CNCF project-curated best practices."
-    image="/images/meshery-logo-dark-text.webp" />;
+  return (
+    <SEO
+      title="Cloud Native Catalog"
+      description="The Kubernetes and Cloud Native Catalog. Build, share, innovate with CNCF project-curated best practices."
+      image="/images/meshery-logo-dark-text.webp"
+    />
+  );
 };

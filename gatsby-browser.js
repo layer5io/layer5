@@ -22,7 +22,11 @@ function initGTM() {
   // ensure PageViews is always tracked (on script load)
   script.onload = () => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "gtm.js", "gtm.start": new Date().getTime(), "gtm.uniqueEventId": 0 });
+    window.dataLayer.push({
+      event: "gtm.js",
+      "gtm.start": new Date().getTime(),
+      "gtm.uniqueEventId": 0
+    });
   };
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PS26QB9";
   document.head.appendChild(script);

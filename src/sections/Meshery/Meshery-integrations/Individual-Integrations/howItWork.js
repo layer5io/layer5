@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const HowIntegrationWorksWrapper = styled.section`
 
-  background-color: ${props => props.theme.grey101010ToGreyF7F7F7};
+  background-color: ${(props) => props.theme.grey101010ToGreyF7F7F7};
 	padding-bottom: 2rem;
 	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -26,7 +26,7 @@ const HowIntegrationWorksWrapper = styled.section`
 			margin: 1rem 0 0;
 
 			span {
-				color: ${props => props.theme.secondaryColor};
+				color: ${(props) => props.theme.secondaryColor};
 			}
 		}
 	}
@@ -43,7 +43,7 @@ const HowIntegrationWorksWrapper = styled.section`
 			}
 		.integration-section-data {
 			h1, h3, p {
-				text-align: start; color: ${props => props.theme.primaryColor};
+				text-align: start; color: ${(props) => props.theme.primaryColor};
 				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
@@ -196,9 +196,7 @@ const HowIntegrationWorksWrapper = styled.section`
 	}
 `;
 
-
 const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
-
   const settings = {
     customPaging: (i) => {
       return (
@@ -220,16 +218,20 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
     <HowIntegrationWorksWrapper>
       <div className="section-data">
         <div className="section-header">
-          <h4 >How it Works</h4>
+          <h4>How it Works</h4>
           <h1>See It in Action </h1>
-          <p>Better together - {name} with <span>Meshery</span></p>
+          <p>
+            Better together - {name} with <span>Meshery</span>
+          </p>
         </div>
         <div className="integration-section">
           <Row className="integration-section-row">
             <Col xs={12} xl={4} className="integration-section-data">
-              <h3>{howitworks != null ? howitworks : "Docker with Meshery" }</h3>
+              <h3>{howitworks != null ? howitworks : "Docker with Meshery"}</h3>
               <p>
-                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
+                {howitworksdetails != null
+                  ? howitworksdetails
+                  : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
             <Col xs={12} xl={8} className="integration-section-caraousel">

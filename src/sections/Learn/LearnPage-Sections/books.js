@@ -8,13 +8,13 @@ import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
+      box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
 
     }
     .book-heading {
         text-align: center;
         margin: 5rem 0
-        color: ${props => props.theme.text};
+        color: ${(props) => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .books-card {
@@ -43,7 +43,7 @@ const BooksListWrapper = styled.div`
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             p{
-              color: ${props => props.theme.text};
+              color: ${(props) => props.theme.text};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
@@ -62,7 +62,7 @@ const BooksListWrapper = styled.div`
             padding: 0 0.75rem;
         }
         &:hover{
-            box-shadow: 0px 0px 20px ${props => props.theme.whiteNineToBlackOne};
+            box-shadow: 0px 0px 20px ${(props) => props.theme.whiteNineToBlackOne};
             .arrow_icon{
                 left: 0.2rem;
                 color: white;
@@ -102,34 +102,34 @@ const BooksListWrapper = styled.div`
 `;
 
 const BooksSection = () => {
-  const data = useStaticQuery(
-    graphql`
-            query booksList {
-                allMdx(
-                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: ASC }
-                    limit: 2
-                ) 
-                {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            abstract
-                            thumbnail{
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
+  const data = useStaticQuery(graphql`
+    query booksList {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "service-mesh-books" } }
+          frontmatter: { published: { eq: true } }
+        }
+        sort: { fields: [frontmatter___date], order: ASC }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            author
+            abstract
+            thumbnail {
+              extension
+              publicURL
             }
-        `
-  );
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <BooksListWrapper>
@@ -138,7 +138,7 @@ const BooksSection = () => {
         <div className="books-list">
           {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
             <div className="books-card" key={id}>
-              <Link className="books-page_link" to={fields.slug} >
+              <Link className="books-page_link" to={fields.slug}>
                 <div className="books-image">
                   <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
                 </div>

@@ -60,11 +60,7 @@ const Projects = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} className="project-content-wrap">
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
               <h4>Projects</h4>
 
               <h2>
@@ -72,13 +68,11 @@ const Projects = () => {
               </h2>
             </SectionTitle>
             <p className="project-text">
-              Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
+              Layer5 projects establish industry standards and enable service developers, owners,
+              and operators with repeatable patterns and best practices for managing all aspects of
+              distributed services.
             </p>
-            <VintageBox
-              right={true}
-              vintageTwo={true}
-              position="relative"
-            >
+            <VintageBox right={true} vintageTwo={true} position="relative">
               <Button className="project-btn" title="Learn More" />
             </VintageBox>
           </Col>

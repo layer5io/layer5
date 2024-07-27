@@ -10,8 +10,16 @@ const VisualizerFeaturesDiagram = ({ activeExampleIndex }) => {
   return (
     <DiagramStyles>
       <div className="root" ref={ref} style={{ paddingLeft: "0rem", minHeight: "25rem" }}>
-        <Visualize1 id="visualize-image1"  className={inView && activeExampleIndex == 0 ? "show" : "render"} alt="visualize-image1" />
-        <Visualize2 id="visualize-image2" className={(activeExampleIndex >= 1) ? "show" : "render"} alt="visualize-image2" />
+        <Visualize1
+          id="visualize-image1"
+          className={inView && activeExampleIndex == 0 ? "show" : "render"}
+          alt="visualize-image1"
+        />
+        <Visualize2
+          id="visualize-image2"
+          className={activeExampleIndex >= 1 ? "show" : "render"}
+          alt="visualize-image2"
+        />
       </div>
     </DiagramStyles>
   );

@@ -15,5 +15,3 @@ const theme = {
   menuHoverColor: "#00B39F"
 };
 export default theme;
-
-

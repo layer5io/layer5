@@ -7,7 +7,6 @@ import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-
 const IntegrationsGrid = ({ category, count }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -61,7 +60,7 @@ const IntegrationsGrid = ({ category, count }) => {
           initialSlide: 0,
           infinite: false,
           arrows: true,
-          slidesToShow: 3,
+          slidesToShow: 3
         }
       },
       {
@@ -90,15 +89,12 @@ const IntegrationsGrid = ({ category, count }) => {
   const { isDark } = useStyledDarkMode();
 
   // fetch all the category names from activeIntegrationList and remove the duplicate category names
-  const categoryNames = allIntegrations.current.reduce(
-    (initCategory, integration) => {
-      if (!initCategory.includes(integration.frontmatter.category)) {
-        initCategory.push(integration.frontmatter.category);
-      }
-      return initCategory;
-    },
-    []
-  );
+  const categoryNames = allIntegrations.current.reduce((initCategory, integration) => {
+    if (!initCategory.includes(integration.frontmatter.category)) {
+      initCategory.push(integration.frontmatter.category);
+    }
+    return initCategory;
+  }, []);
 
   const categoryCount = (categoryName) => {
     return allIntegrations.current.reduce((count, integration) => {
@@ -114,16 +110,16 @@ const IntegrationsGrid = ({ category, count }) => {
       id: -1,
       name: "All",
       isSelected: false,
-      count: allIntegrations.current.length,
+      count: allIntegrations.current.length
     },
     ...categoryNames.map((categoryName) => {
       return {
         id: categoryName,
         name: categoryName,
         isSelected: false,
-        count: categoryCount(categoryName),
+        count: categoryCount(categoryName)
       };
-    }),
+    })
   ]);
 
   useEffect(() => setCategory(), []);
@@ -211,10 +207,7 @@ const IntegrationsGrid = ({ category, count }) => {
       if (item.isSelected) {
         data.allMdx.nodes.forEach((integration) => {
           if (integration.frontmatter.category == item.name) {
-            tempIntegrationCollection = [
-              ...tempIntegrationCollection,
-              integration,
-            ];
+            tempIntegrationCollection = [...tempIntegrationCollection, integration];
           }
         });
       }
@@ -225,9 +218,7 @@ const IntegrationsGrid = ({ category, count }) => {
   return (
     <HoneycombGrid>
       <section className="heading">
-        <h1>
-          {Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations
-        </h1>
+        <h1>{Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
       </section>
       <SearchBox
@@ -239,7 +230,7 @@ const IntegrationsGrid = ({ category, count }) => {
         focusSearch={false}
       />
 
-      <section style={{ "margin": "0 2.6rem" }}>
+      <section style={{ margin: "0 2.6rem" }}>
         <IntegrationSlider {...settings}>
           {!hideFilter &&
             categoryNameList.map((item) => {
@@ -263,23 +254,14 @@ const IntegrationsGrid = ({ category, count }) => {
         />
       ) : (
         <Honeycomb
-          items={
-            count == "All"
-              ? activeIntegrationList
-              : activeIntegrationList.slice(0, count)
-          }
+          items={count == "All" ? activeIntegrationList : activeIntegrationList.slice(0, count)}
           renderItem={(item) => {
-            const status =
-              item.frontmatter.status === "InProgress" ? true : false;
+            const status = item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon =
-              item.frontmatter.integrationIcon;
+            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
             if (status) {
               return (
-                <Hexagon
-                  className="container-inactive"
-                  style={{ background: "#A0AAAA" }}
-                >
+                <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
                   <span className="integration-container">
                     <img
                       className="integration-icon"
@@ -304,9 +286,7 @@ const IntegrationsGrid = ({ category, count }) => {
               );
             } else {
               return (
-                <Link
-                  to={`/cloud-native-management/meshery${item.fields.slug}`}
-                >
+                <Link to={`/cloud-native-management/meshery${item.fields.slug}`}>
                   <Hexagon className="container-active">
                     <span className="integration-container">
                       <img
@@ -323,7 +303,7 @@ const IntegrationsGrid = ({ category, count }) => {
                           filter:
                             isDark && darkModeIntegrationIcon == null
                               ? "brightness(0) invert(1)"
-                              : "none",
+                              : "none"
                         }}
                         loading="lazy"
                       />

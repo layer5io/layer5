@@ -2,7 +2,6 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
-
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
@@ -25,28 +24,43 @@ const MembersPage = () => {
   const clear = () => {
     setFilter([]);
     setCurrentPage(1);
-    document.querySelectorAll("input[type=\"checkbox\"]")
-      .forEach(el => el.checked = false);
+    document.querySelectorAll('input[type="checkbox"]').forEach((el) => (el.checked = false));
   };
   return (
     <>
-      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes" img={RssFeedIcon} feedlink="/resources/feed.xml" />
+      <PageHeader
+        title="Cloud Native Resources"
+        path="Resources"
+        subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes"
+        img={RssFeedIcon}
+        feedlink="/resources/feed.xml"
+      />
       <Container>
         <Row>
           <Col xs={12} lg={3}>
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
           <Col xs={12} lg={9}>
-            <ResourcesList  resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+            <ResourcesList
+              resource={filter}
+              currentPage={currentPage}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+            />
           </Col>
         </Row>
         <ServiceMeshFocused bookName={"service-mesh-patterns"} />
       </Container>
-
     </>
   );
 };
 export default MembersPage;
 export const Head = () => {
-  return <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks." canonical="https://layer5.io/resources" />;
+  return (
+    <SEO
+      title="Cloud Native Resources"
+      description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks."
+      canonical="https://layer5.io/resources"
+    />
+  );
 };

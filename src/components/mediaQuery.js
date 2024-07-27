@@ -4,7 +4,7 @@ const sizes = {
   papabear: 1000,
   brotherbear: 900,
   mamabear: 700,
-  babybear: 400,
+  babybear: 400
 };
 
 export default Object.keys(sizes).reduce((acc, label) => {

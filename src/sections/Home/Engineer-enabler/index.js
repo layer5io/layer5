@@ -3,7 +3,6 @@ import EngineerWrapper from "./engineer-section.style";
 import Button from "../../../reusecore/Button/index";
 
 const EngineerEnabler = () => {
-
   return (
     <EngineerWrapper>
       <h5>Learn more about how Layer5 is a service mesh leader</h5>

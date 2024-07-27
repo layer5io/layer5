@@ -3,9 +3,7 @@ import { StepsListWrapper } from "./StepsList.style";
 import Step from "./Step";
 
 const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
-  const [viewportStatus, setViewportStatus] = useState(
-    new Array(steps.length).fill(false)
-  );
+  const [viewportStatus, setViewportStatus] = useState(new Array(steps.length).fill(false));
   const [focusedStepIndex, setFocusedStepIndex] = useState(0);
   return (
     <StepsListWrapper>

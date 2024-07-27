@@ -16,7 +16,6 @@ const handbookHome = () => {
       </div>
 
       <div className="community-home-container">
-
         <AdventuresVol
           title="Meet Five"
           description="Join Five as he sets off in his trusty rocketship following the trail of stars to planet Meshery."

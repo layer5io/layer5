@@ -34,9 +34,7 @@ const FooterClassic = () => {
               </Link>
               <form className="subscribe-form">
                 <input type="text" placeholder="Search here..." />
-                <Button>
-                  {/* <FaEnvelope /> */}
-                </Button>
+                <Button>{/* <FaEnvelope /> */}</Button>
               </form>
             </div>
           </Col>
@@ -83,29 +81,19 @@ const FooterClassic = () => {
               <h3 className="widget-title">Follow US</h3>
               <ul className="social">
                 <li>
-                  <Link to="#">
-                    {/* <FaFacebookF /> */}
-                  </Link>
+                  <Link to="#">{/* <FaFacebookF /> */}</Link>
                 </li>
                 <li>
-                  <Link to="#">
-                    {/* <FaTwitter /> */}
-                  </Link>
+                  <Link to="#">{/* <FaTwitter /> */}</Link>
                 </li>
                 <li>
-                  <Link to="#">
-                    {/* <FaInstagram /> */}
-                  </Link>
+                  <Link to="#">{/* <FaInstagram /> */}</Link>
                 </li>
                 <li>
-                  <Link to="#">
-                    {/* <FaLinkedinIn /> */}
-                  </Link>
+                  <Link to="#">{/* <FaLinkedinIn /> */}</Link>
                 </li>
                 <li>
-                  <Link to="#">
-                    {/* <FaPinterestP /> */}
-                  </Link>
+                  <Link to="#">{/* <FaPinterestP /> */}</Link>
                 </li>
               </ul>
               <p className="copyright-text">

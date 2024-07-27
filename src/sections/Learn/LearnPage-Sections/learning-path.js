@@ -6,39 +6,37 @@ import Button from "../../../reusecore/Button";
 import styled from "styled-components";
 
 const LearningPathsWrapper = styled.div`
-    Button:hover {
-  box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
-    } 
-    margin: 3rem 0 4rem;
+  Button:hover {
+    box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
+  }
+  margin: 3rem 0 4rem;
 
-    .learn-path-heading {
-        text-align: center;
-        margin: 2rem 0
-    }
-    .learn-subtitle {
-        text-align: center;
-    }
-    .learning-path-cards{
-        margin: auto;
-        justify-content: center;
-        padding: 6rem 0;
+  .learn-path-heading {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .learn-subtitle {
+    text-align: center;
+  }
+  .learning-path-cards {
+    margin: auto;
+    justify-content: center;
+    padding: 6rem 0;
 
-        @media(max-width:500px){
-            padding: 6rem 2rem;
-        }
+    @media (max-width: 500px) {
+      padding: 6rem 2rem;
     }
-    .see-more-button {
-      text-align: center;
-    }
+  }
+  .see-more-button {
+    text-align: center;
+  }
 `;
 
 const LearningPaths = () => {
   const data = useStaticQuery(graphql`
     query learningPaths {
       learnPaths: allMdx(
-        filter: {
-          fields: { collection: { eq: "content-learn" }, pageType: { eq: "learnpath" } }
-        }
+        filter: { fields: { collection: { eq: "content-learn" }, pageType: { eq: "learnpath" } } }
       ) {
         nodes {
           id
@@ -64,12 +62,10 @@ const LearningPaths = () => {
         }
       }
       allCourses: allMdx(
-        filter: {
-          fields: { collection: { eq: "content-learn" },pageType: { eq: "course" } }
-        }
+        filter: { fields: { collection: { eq: "content-learn" }, pageType: { eq: "course" } } }
       ) {
-        nodes{
-          fields{
+        nodes {
+          fields {
             learnpath
           }
         }
@@ -77,8 +73,8 @@ const LearningPaths = () => {
     }
   `);
 
-
-  const getCoursesOfaLearningPath = (learnpath) => data.allCourses.nodes.filter(obj => obj.fields.learnpath === learnpath);
+  const getCoursesOfaLearningPath = (learnpath) =>
+    data.allCourses.nodes.filter((obj) => obj.fields.learnpath === learnpath);
 
   return (
     <LearningPathsWrapper>
@@ -90,7 +86,11 @@ const LearningPaths = () => {
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
             <Col sm={6} key={tutorial.id}>
-              <CardComponent tutorial={tutorial} path={`learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
+              <CardComponent
+                tutorial={tutorial}
+                path={`learning-paths/${tutorial.fields.learnpath}`}
+                courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length}
+              />
             </Col>
           ))}
         </Row>

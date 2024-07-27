@@ -6,46 +6,45 @@ import { FiMail } from "@react-icons/all-files/fi/FiMail";
 import { Link } from "gatsby";
 
 const NewsSidebarWrapper = styled.div`
-  
-Button{
-    margin: 0 0 1rem ;
+  Button {
+    margin: 0 0 1rem;
     @media screen and (max-width: 768px) {
-        display: block;
-        margin: 1rem auto;
-        }
-}
-.icon{
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+  .icon {
     display: block;
     margin: auto;
-}
+  }
 
-.media_block { 
-  background-color: ${props => props.theme.grey212121ToWhite};		
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  margin-bottom: 1rem;
-  border: 1px solid ${props => props.theme.shadowLightColor};
-    &:hover{
-        box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};;
+  .media_block {
+    background-color: ${(props) => props.theme.grey212121ToWhite};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    margin-bottom: 1rem;
+    border: 1px solid ${(props) => props.theme.shadowLightColor};
+    &:hover {
+      box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
     }
     padding: 12% 6% 12% 6%;
     border-radius: 4%;
     text-align: center;
-    h5{
-        font-weight: 700;
-        color: ${props => props.theme.secondaryColor}
+    h5 {
+      font-weight: 700;
+      color: ${(props) => props.theme.secondaryColor};
     }
-    p{
-        font-weight: 300;
-        color: ${props => props.theme.text};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    p {
+      font-weight: 300;
+      color: ${(props) => props.theme.text};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width: 768px) {
-        margin: 6% 15%;
-        padding: 6% 10%;
-        }
-}
+      margin: 6% 15%;
+      padding: 6% 10%;
+    }
+  }
 
-  .cta{
+  .cta {
     box-shadow: 0 5px 16px 1px rgba(0, 0, 0, 0.1);
     margin: 1rem auto 2rem;
     border-top: solid 3px #00b39f;
@@ -54,52 +53,55 @@ Button{
     @media screen and (max-width: 768px) {
       margin: 6% 15%;
       padding: 6% 10%;
-      }
+    }
 
     .cta_heading {
       font-weight: 600;
       text-align: center;
-  }
+    }
 
-  .cta_body {
+    .cta_body {
       display: flex;
       flex-direction: column;
 
       .cta_heading-heading {
-          filter: invert(0.5);
-          flex: 0 0 70%;
-          text-align: center;
-          font-size: 1.1rem;
+        filter: invert(0.5);
+        flex: 0 0 70%;
+        text-align: center;
+        font-size: 1.1rem;
       }
       .btn {
         min-width: 100%;
-    }
-  }
-
-  @media (min-width: 510px) {
-    .cta_heading {
-      text-align: left;
-    }
-      .cta_body {
-          .cta_heading-heading {
-              margin-bottom: 1rem;
-              margin-top: 1rem;
-              text-align: left;
-          }
       }
+    }
+
+    @media (min-width: 510px) {
+      .cta_heading {
+        text-align: left;
+      }
+      .cta_body {
+        .cta_heading-heading {
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+          text-align: left;
+        }
+      }
+    }
   }
-}
 `;
 
 const NewsSidebar = (props) => {
   return (
     <NewsSidebarWrapper>
-      {props.kit ?
+      {props.kit ? (
         <a href={props.kit}>
           <Button primary title="Press Kit" external={true}>
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
-        </a> : ""}
+        </a>
+      ) : (
+        ""
+      )}
       <Link to="/brand">
         <Button secondary title="Layer5 brand kit" external={true} />
       </Link>
@@ -113,18 +115,11 @@ const NewsSidebar = (props) => {
       </a>
       <Link to="/meshmap">
         <div className="cta">
-          <h4 className="cta_heading">
-        MeshMap
-          </h4>
+          <h4 className="cta_heading">MeshMap</h4>
           <div className="cta_body">
-            <h3 className="cta_heading-heading">
-            Your friendly cloud native visual editor.
-            </h3>
+            <h3 className="cta_heading-heading">Your friendly cloud native visual editor.</h3>
             <div className="chapter-link">
-              <Button primary title="Try Now!"
-                className="btn"
-                url="/meshmap"
-                external={false} />
+              <Button primary title="Try Now!" className="btn" url="/meshmap" external={false} />
             </div>
           </div>
         </div>
@@ -134,4 +129,3 @@ const NewsSidebar = (props) => {
 };
 
 export default NewsSidebar;
-

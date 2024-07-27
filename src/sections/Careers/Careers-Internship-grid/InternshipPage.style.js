@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 const InternshipSectionWrapper = styled.div`
-p{
-  color: ${props => props.theme.whiteEightToBlack};
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
-}
+  p {
+    color: ${(props) => props.theme.whiteEightToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
   h1 {
     margin-bottom: 1rem;
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -48,10 +47,12 @@ p{
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
-    background:  ${props => props.theme.grey212121ToGreyF5F5F5};
+    background: ${(props) => props.theme.grey212121ToGreyF5F5F5};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition:
+      0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     display: flex;
     align-items: center;
@@ -70,7 +71,7 @@ p{
     }
     p {
       margin: 0.5rem 0;
-      color: ${props => props.theme.whiteEightToBlackEight};
+      color: ${(props) => props.theme.whiteEightToBlackEight};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -82,8 +83,10 @@ p{
       right: 0;
       opacity: 0;
       visibility: hidden;
-      z-index:1030;
-      transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out,
+      z-index: 1030;
+      transition:
+        transform 0.7s ease-in-out,
+        opacity 0.7s ease-in-out,
         visibility 0.7s ease-in-out;
     }
     &:hover {
@@ -140,12 +143,12 @@ p{
   .partners-card {
     display: block;
     width: max-content;
-    background:  ${props => props.theme.grey050505ToGreyF1F2F1};
+    background: ${(props) => props.theme.grey050505ToGreyF1F2F1};
     border-radius: 1rem;
     text-align: center;
     justify-content: space-between;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    
+
     h5 {
       display: inline-flex;
       font-weight: 400;

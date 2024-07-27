@@ -14,30 +14,40 @@ const SeeYou = () => {
     <SeeYouWrapper>
       <Container className={"see-you"} id={"see-you-canvas"}>
         <div className={"headings"}>
-          <span className={"use-heading"}><h2>See you in <span className={"highlighted-text"}>Meshery</span></h2></span>
-        Take the work out of teamwork.
+          <span className={"use-heading"}>
+            <h2>
+              See you in <span className={"highlighted-text"}>Meshery</span>
+            </h2>
+          </span>
+          Take the work out of teamwork.
         </div>
-        <div >
-          <img className={"square"} src={square} alt={""}/>
+        <div>
+          <img className={"square"} src={square} alt={""} />
         </div>
-        <div >
-          <img className={"pentagon"} src={pentagon} alt={""}/>
+        <div>
+          <img className={"pentagon"} src={pentagon} alt={""} />
         </div>
-        <div >
-          <img className={"hexagon"} src={hexagon} alt={""}/>
+        <div>
+          <img className={"hexagon"} src={hexagon} alt={""} />
         </div>
-        <div >
-          <img className={"heptagon"} src={octagon} alt={""}/>
+        <div>
+          <img className={"heptagon"} src={octagon} alt={""} />
         </div>
-        <div >
-          <img className={"cursor_1"} src={cursor_1} alt={""}/>
+        <div>
+          <img className={"cursor_1"} src={cursor_1} alt={""} />
         </div>
-        <div >
-          <img className={"cursor_2"} src={cursor_2} alt={""}/>
+        <div>
+          <img className={"cursor_2"} src={cursor_2} alt={""} />
         </div>
 
         <div>
-          <Button primary className={"playground-button"} title={"Try Playground"} external={true} url={"https://playground.meshery.io"} />
+          <Button
+            primary
+            className={"playground-button"}
+            title={"Try Playground"}
+            external={true}
+            url={"https://playground.meshery.io"}
+          />
         </div>
         {/*</div>*/}
       </Container>

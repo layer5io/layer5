@@ -37,25 +37,11 @@ const SocialLinksColor = () => {
           >
             <TwitterIcon />
           </a>
-          <a
-            href="https://github.com/layer5io"
-            target="_blank"
-            rel="noreferrer"
-            className="github"
-          >
+          <a href="https://github.com/layer5io" target="_blank" rel="noreferrer" className="github">
             <img height="30px" src={github_icon} alt="github" />
           </a>
-          <a
-            href="https://www.linkedin.com/company/layer5"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="linkedin"
-              height="30px"
-              src={linkedin_icon}
-              alt="linkedin"
-            />
+          <a href="https://www.linkedin.com/company/layer5" target="_blank" rel="noreferrer">
+            <img className="linkedin" height="30px" src={linkedin_icon} alt="linkedin" />
           </a>
           <a
             className="youtube_icon"
@@ -63,12 +49,7 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="youtube"
-              height="30px"
-              src={youtube_icon}
-              alt="youtube"
-            />
+            <img className="youtube" height="30px" src={youtube_icon} alt="youtube" />
           </a>
           <a
             className="docker_icon"
@@ -76,12 +57,7 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="docker"
-              height="30px"
-              src={docker_icon}
-              alt="docker"
-            />
+            <img className="docker" height="30px" src={docker_icon} alt="docker" />
           </a>
         </Row>
       </Col>

@@ -9,7 +9,7 @@ module.exports = {
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
     image: "/images/layer5-gradient.webp",
-    twitterUsername: "@layer5",
+    twitterUsername: "@layer5"
   },
   flags: {
     FAST_DEV: true,
@@ -41,10 +41,8 @@ module.exports = {
           }
         }
       `,
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-        }) => {
-          return allPages.map(page => {
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map((page) => {
             return { ...page };
           });
         },
@@ -54,10 +52,10 @@ module.exports = {
           return {
             url: url,
             changefreq: "daily",
-            priority: 0.7,
+            priority: 0.7
           };
-        },
-      },
+        }
+      }
     },
     {
       resolve: "gatsby-plugin-svgr",
@@ -72,13 +70,13 @@ module.exports = {
                 overrides: {
                   // or disable plugins
                   inlineStyles: false,
-                  cleanupIds: false,
+                  cleanupIds: false
                 }
               }
-            },
-          ],
-        },
-      },
+            }
+          ]
+        }
+      }
     },
     {
       resolve: "gatsby-plugin-feed",
@@ -107,11 +105,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -143,7 +139,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5 Technical Posts",
+            title: "Layer5 Technical Posts"
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -156,11 +152,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -191,7 +185,7 @@ module.exports = {
               }
             `,
             output: "/news/feed.xml",
-            title: "Layer5 News",
+            title: "Layer5 News"
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -204,11 +198,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -242,7 +234,7 @@ module.exports = {
               }
             `,
             output: "/resources/feed.xml",
-            title: "Layer5 Resources",
+            title: "Layer5 Resources"
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -255,11 +247,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -291,11 +281,11 @@ module.exports = {
               }
             `,
             output: "/rss-contributors.xml",
-            title: "Layer5 Contributor Feed",
+            title: "Layer5 Contributor Feed"
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map(node => {
+              return allPosts.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -304,9 +294,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -342,7 +332,7 @@ module.exports = {
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map(node => {
+              return allPosts.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -351,9 +341,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }]
                 });
               });
             },
@@ -386,154 +376,154 @@ module.exports = {
             `,
             output: "/events/feed.xml",
             title: "Layer5 Events"
-          },
-        ],
-      },
+          }
+        ]
+      }
     },
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-        minify: false,
-      },
+        minify: false
+      }
     },
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -50,
-      },
+        offset: -50
+      }
     },
     {
       resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: [".mdx", ".md"],
-      },
+        extensions: [".mdx", ".md"]
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/assets/images`,
-      },
+        path: `${__dirname}/src/assets/images`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/blog`,
-        name: "blog",
-      },
+        name: "blog"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/news`,
-        name: "news",
-      },
+        name: "news"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/projects`,
-        name: "projects",
-      },
+        name: "projects"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/service-mesh-books`,
-        name: "service-mesh-books",
-      },
+        name: "service-mesh-books"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/programs`,
-        name: "programs",
-      },
+        name: "programs"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/careers`,
-        name: "careers",
-      },
+        name: "careers"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/members`,
-        name: "members",
-      },
+        name: "members"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/service-mesh-workshops`,
-        name: "service-mesh-workshops",
-      },
+        name: "service-mesh-workshops"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/service-mesh-labs`,
-        name: "service-mesh-labs",
-      },
+        name: "service-mesh-labs"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/resources`,
-        name: "resources",
-      },
+        name: "resources"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/events`,
-        name: "events",
-      },
+        name: "events"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content-learn`,
-        name: "content-learn",
-      },
+        name: "content-learn"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/integrations`,
-        name: "integrations",
-      },
+        name: "integrations"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/collections/use-cases`,
-        name: "use-cases",
-      },
+        name: "use-cases"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "integration-images",
-        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
-      },
+        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`
+      }
     },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          placeholder: "blurred",
+          placeholder: "blurred"
         }
       }
     },
     {
       resolve: "gatsby-transformer-sharp",
       options: {
-        checkSupportedExtensions: false, // suppress warning about childImageSharp being null
-      },
+        checkSupportedExtensions: false // suppress warning about childImageSharp being null
+      }
     },
     {
       resolve: "gatsby-plugin-manifest",
@@ -544,25 +534,24 @@ module.exports = {
         background_color: "#3c494f",
         theme_color: "#00b39f",
         display: "minimal-ui",
-        icon: "src/assets/images/favicon.webp", // This path is relative to the root of the site.
-      },
+        icon: "src/assets/images/favicon.webp" // This path is relative to the root of the site.
+      }
     },
     {
       resolve: "gatsby-redirect-from",
       options: {
-        query: "allMdx",
-      },
+        query: "allMdx"
+      }
     },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://layer5.io",
         sitemap: "https://layer5.io/sitemap/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [{ userAgent: "*", allow: "/" }]
       }
     },
-    "gatsby-plugin-meta-redirect",
+    "gatsby-plugin-meta-redirect"
     // make sure this is always the last one
-  ],
-
+  ]
 };

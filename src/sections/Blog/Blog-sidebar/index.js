@@ -9,38 +9,29 @@ import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevron
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
-const FiveandFriendsAdventures =
-  "../../../assets/images/blog/five-and-friends.png";
+const FiveandFriendsAdventures = "../../../assets/images/blog/five-and-friends.png";
 
 const Sidebar = ({ pageContext }) => {
-  const data = useStaticQuery(
-    graphql`
-      query allTagsAndCategories {
-        tags: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-          }
-        }
-        categories: allMdx(
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { published: { eq: true } }
-          }
-        ) {
-          group(field: frontmatter___category) {
-            fieldValue
-            totalCount
-          }
+  const data = useStaticQuery(graphql`
+    query allTagsAndCategories {
+      tags: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+      ) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
         }
       }
-    `
-  );
+      categories: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+      ) {
+        group(field: frontmatter___category) {
+          fieldValue
+          totalCount
+        }
+      }
+    }
+  `);
 
   const [showTag, setShowTag] = useState(true);
   const [showCategory, setShowCategory] = useState(true);
@@ -76,10 +67,7 @@ const Sidebar = ({ pageContext }) => {
       </div>
 
       <div className="sidebar-widgets catagorie">
-        <div
-          className="widgets-title"
-          onClick={() => setShowCategory((value) => !value)}
-        >
+        <div className="widgets-title" onClick={() => setShowCategory((value) => !value)}>
           <h3>Categories</h3>
           {!showCategory ? (
             <HiOutlineChevronDown className="menu-icon" />
@@ -103,10 +91,7 @@ const Sidebar = ({ pageContext }) => {
         </ul>
       </div>
       <div className="sidebar-widgets tags">
-        <div
-          className="widgets-title"
-          onClick={() => setShowTag((value) => !value)}
-        >
+        <div className="widgets-title" onClick={() => setShowTag((value) => !value)}>
           <h3>Tags</h3>
           {!showTag ? (
             <HiOutlineChevronDown className="menu-icon" />

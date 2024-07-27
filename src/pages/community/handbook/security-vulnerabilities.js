@@ -7,7 +7,6 @@ const SecurtyVulnerabilities = () => {
   return (
     <>
       <SecurityVulnerabilitiesPage />
-
     </>
   );
 };

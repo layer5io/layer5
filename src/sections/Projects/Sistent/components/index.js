@@ -13,22 +13,22 @@ const componentsData = [
     name: "Button",
     description:
       "A button is an interactive element that triggers a specific action and also lets users know what will happen next.",
-    url: "/projects/sistent/components/button",
+    url: "/projects/sistent/components/button"
   },
   {
     id: 2,
     name: "Text Input",
     description:
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/text-input",
+    url: "/projects/sistent/components/text-input"
   },
   {
     id: 3,
     name: "Modal",
     description:
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/modal",
-  },
+    url: "/projects/sistent/components/modal"
+  }
 ];
 
 const SistentComponents = () => {
@@ -54,10 +54,9 @@ const SistentComponents = () => {
               <h2>Components</h2>
             </a>
             <p>
-              Components are reusable elements that serve as the building blocks
-              of the design system. They are curated using the established
-              identity principles and can be combined to form various elements,
-              patterns, and templates that can be used to design user
+              Components are reusable elements that serve as the building blocks of the design
+              system. They are curated using the established identity principles and can be combined
+              to form various elements, patterns, and templates that can be used to design user
               interfaces.
             </p>
           </div>

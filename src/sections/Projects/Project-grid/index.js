@@ -25,11 +25,7 @@ const ProjectPage = () => {
   const { isDark } = useContext(ThemeManagerContext);
   return (
     <ProjectWrapper>
-      <PageHeader
-        className="title"
-        title="Cloud Native Management"
-        path="/projects"
-      />
+      <PageHeader className="title" title="Cloud Native Management" path="/projects" />
       <h3>
         for the <img src={L5gray} alt="Layer 5 icon" />
         th layer of distributed systems
@@ -49,10 +45,7 @@ const ProjectPage = () => {
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link
-              to="/cloud-native-management/meshery"
-              className="project__card two"
-            >
+            <Link to="/cloud-native-management/meshery" className="project__card two">
               <div className="project__card-container project__card-container_meshery">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
@@ -64,24 +57,15 @@ const ProjectPage = () => {
                 <h5>Image Hub</h5>
               </div>
             </Link>
-            <Link
-              to="/cloud-native-management/meshmap"
-              className="project__card four"
-            >
+            <Link to="/cloud-native-management/meshmap" className="project__card four">
               <div className="project__card-container">
                 <img src={meshmap} alt="MeshMap" />
                 <h5>MeshMap</h5>
               </div>
             </Link>
-            <Link
-              to="/projects/cloud-native-performance"
-              className="project__card five"
-            >
+            <Link to="/projects/cloud-native-performance" className="project__card five">
               <div className="project__card-container">
-                <img
-                  src={isDark ? smp_light : smp_dark}
-                  alt="Cloud Native Performance"
-                />
+                <img src={isDark ? smp_light : smp_dark} alt="Cloud Native Performance" />
                 <h5>Cloud Native Performance</h5>
               </div>
             </Link>
@@ -98,10 +82,7 @@ const ProjectPage = () => {
                 <h5>NightHawk</h5>
               </div>
             </Link>
-            <Link
-              to="/docker-extension-meshery"
-              className="project__card seven"
-            >
+            <Link to="/docker-extension-meshery" className="project__card seven">
               <div className="project__card-container-seven">
                 <Row>
                   <img src={extension} alt="Meshery Docker Extension" />
@@ -118,10 +99,7 @@ const ProjectPage = () => {
                 <h5> Cloud Native Patterns</h5>
               </div>
             </Link>
-            <Link
-              to="/cloud-native-management/catalog"
-              className="project__card ten"
-            >
+            <Link to="/cloud-native-management/catalog" className="project__card ten">
               <div className="project__card-container project__card-container_nighthawk">
                 <img src={catalog} alt="Catalog" />
                 <h5>Catalog</h5>

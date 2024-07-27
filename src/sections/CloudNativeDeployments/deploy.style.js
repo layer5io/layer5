@@ -21,7 +21,7 @@ const CloudDeploy = styled.div`
   
   
   .use-heading {
-    color: ${props => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.whiteToBlack};
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2.5rem;
@@ -29,7 +29,7 @@ const CloudDeploy = styled.div`
       color: white;
       padding: 0 0.5rem;
       border-radius: 0.5rem;
-      background: ${props => props.theme.green009A89ToGreen00B39F};
+      background: ${(props) => props.theme.green009A89ToGreen00B39F};
       font-weight: bold;
     }
 `;

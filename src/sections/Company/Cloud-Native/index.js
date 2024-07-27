@@ -14,12 +14,12 @@ const CloudNativeLeaders = () => {
         </div>
         <div className="col-2">
           <p>
-            From the beginning Layer5 actively engaged in leadership roles in CNCF initiatives and projects.
+            From the beginning Layer5 actively engaged in leadership roles in CNCF initiatives and
+            projects.
           </p>
           <img src={cncf} alt="Cloud Native-logo" loading="lazy" />
           <p>Commissioned by the CNCF.</p>
         </div>
-
       </div>
       <div className="btn-cont">
         <Button primary title="About Us" url="/company/about" />

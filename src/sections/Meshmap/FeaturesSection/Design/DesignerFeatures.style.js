@@ -1,30 +1,29 @@
 import styled from "styled-components";
 
 const DesignerFeaturesWrapper = styled.section`
-margin-top: 1rem;
+  margin-top: 1rem;
 
-.designer-container {
-  padding: 0;
+  .designer-container {
+    padding: 0;
 
-  @media (max-width: 767px) {
-    margin-top: 6vw;
+    @media (max-width: 767px) {
+      margin-top: 6vw;
+    }
   }
-  
-}
 
-.scroll{
+  .scroll {
     position: sticky;
     top: calc(50vh - 249px);
-}
+  }
 
   .contentContainer {
     display: flex;
     flex-direction: row-reverse;
     position: relative;
     overflow: hidden;
-    ::-webkit-scrollbar{
-    display: none;
-  }
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
     @media (max-width: 767px) {
       flex-direction: column;
@@ -56,9 +55,9 @@ margin-top: 1rem;
     position: sticky;
     top: 0;
     z-index: 0;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -66,7 +65,6 @@ margin-top: 1rem;
     @media (max-width: 992px) {
       min-width: 24rem;
     }
-
   }
 
   #featureHeading {
@@ -77,7 +75,7 @@ margin-top: 1rem;
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-  
+
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
@@ -95,8 +93,8 @@ margin-top: 1rem;
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -144,7 +142,7 @@ margin-top: 1rem;
       &:first-child {
         & > div {
           padding-top: 108px;
-          @media (max-width:  1120px) {
+          @media (max-width: 1120px) {
             padding-top: 64px;
           }
         }
@@ -164,32 +162,31 @@ margin-top: 1rem;
     @media (max-width: 912px) {
       top: 5rem;
     }
-    &:hover{
+    &:hover {
       background: #00d3a9;
     }
-}
+  }
 
-#add-border {
-  border-color: #00b39f;
-  border-style: solid;
-  border-width: 0px 2px 2px 2px;
-  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-  transition: .4s ease-in-out;
-}
-.hideInMobile{
+  #add-border {
+    border-color: #00b39f;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+    transition: 0.4s ease-in-out;
+  }
+  .hideInMobile {
     @media (max-width: 799px) {
-      display:none;
+      display: none;
     }
-}
+  }
 
-.arrow {
+  .arrow {
     transition: all 0.5s;
   }
   .arrow-enter {
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
-
 `;
 
 export default DesignerFeaturesWrapper;

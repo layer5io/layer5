@@ -20,13 +20,16 @@ const AboutTheAuthor = (props) => {
             <h3>About the Author</h3>
             <div className="authors-head-shot">
               <Link to={`/community/members/${authorInformation.slug}`}>
-                <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
+                <Image
+                  {...authorInformation?.frontmatter?.image_path}
+                  imgStyle={{ objectFit: "cover" }}
+                  alt={authorInformation.frontmatter?.name}
+                  className="authors-image"
+                />
               </Link>
             </div>
             <h4>{authorInformation.frontmatter?.name}</h4>
-            <p>
-              {authorInformation.frontmatter?.bio}
-            </p>
+            <p>{authorInformation.frontmatter?.bio}</p>
             <div className="authors-info-meshery">
               <h4>Meshery</h4>
               <p>Meshery is the world's only collaborative cloud manager.</p>
@@ -54,4 +57,3 @@ const AboutTheAuthor = (props) => {
 };
 
 export default AboutTheAuthor;
-

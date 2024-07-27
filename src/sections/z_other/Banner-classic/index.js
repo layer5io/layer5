@@ -20,11 +20,7 @@ const BannerClassic = () => {
       <Container>
         <Row Vcenter={true}>
           <Col sm={12} sm={7}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
               <h4>
                 {" "}
                 <span> 50% </span> off for new users for 1 month
@@ -34,9 +30,9 @@ const BannerClassic = () => {
               </h1>
             </SectionTitle>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
-              minim veniam quis nostrud exercitation.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
+              exercitation.
             </p>
 
             <VintageBox right={true} vintageOne={true}>

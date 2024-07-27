@@ -27,16 +27,13 @@ const MembersList = (props) => {
        */
       if (
         (badge === "active" || badge === "inactive") &&
-        member.frontmatter.status ==
-          `${badge.charAt(0).toUpperCase() + badge.slice(1)}`
+        member.frontmatter.status == `${badge.charAt(0).toUpperCase() + badge.slice(1)}`
       )
         isApplicable++;
 
-      if (badge === "maintainers" && member.frontmatter.maintainer === "yes")
-        isApplicable++;
+      if (badge === "maintainers" && member.frontmatter.maintainer === "yes") isApplicable++;
 
-      if (badge === "meshmates" && member.frontmatter.meshmate === "yes")
-        isApplicable++;
+      if (badge === "meshmates" && member.frontmatter.meshmate === "yes") isApplicable++;
 
       if (badge === "community_managers" && member.frontmatter.community_manager === "yes")
         isApplicable++;

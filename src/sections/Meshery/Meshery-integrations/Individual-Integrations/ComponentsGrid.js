@@ -11,9 +11,7 @@ const ComponentsGrid = ({ frontmatter }) => {
   useEffect(() => {
     const fetchData = async () => {
       const promises = components.map(async (item) => {
-        const isSvgPathValid = await checkImageUrlValidity(
-          item.colorIcon.publicURL
-        );
+        const isSvgPathValid = await checkImageUrlValidity(item.colorIcon.publicURL);
         if (isSvgPathValid) {
           return item;
         } else {
@@ -24,9 +22,7 @@ const ComponentsGrid = ({ frontmatter }) => {
 
       const validItems = await Promise.all(promises);
       // Filter out null values (items that are not valid)
-      const filteredValidComponents = validItems.filter(
-        (item) => item !== null
-      );
+      const filteredValidComponents = validItems.filter((item) => item !== null);
 
       setValidComponents(filteredValidComponents);
     };

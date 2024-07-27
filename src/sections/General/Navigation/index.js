@@ -21,155 +21,146 @@ import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import MeshMapIcon from "./utility/MeshMapIcon.js";
 const Navigation = () => {
-  let data = useStaticQuery(
-    graphql`
-      {
-        Learn: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { fields: { collection: { eq: "service-mesh-books" } } }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 1050
-                    height: 1360
-                    layout: CONSTRAINED
-                  )
-                }
-                publicURL
+  let data = useStaticQuery(graphql`
+    {
+      Learn: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fields: { collection: { eq: "service-mesh-books" } } }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
               }
-            }
-            fields {
-              slug
+              publicURL
             }
           }
-        }
-        Community: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "events" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Resources: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { featured: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Home: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "projects" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
+          fields {
+            slug
           }
         }
       }
-    `
-  );
+      Community: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: {
+          fields: { collection: { eq: "events" } }
+          frontmatter: { published: { eq: true } }
+        }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              publicURL
+              extension
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+      Resources: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { featured: { eq: true } } }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              publicURL
+              extension
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+      Home: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: {
+          fields: { collection: { eq: "projects" } }
+          frontmatter: { published: { eq: true } }
+        }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
   data["Products"] = {
     nodes: [
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
+            img: meshery
           },
-          title: "Meshery, the Cloud Native Manager",
+          title: "Meshery, the Cloud Native Manager"
         },
         fields: {
-          slug: "/cloud-native-management/meshery",
-        },
+          slug: "/cloud-native-management/meshery"
+        }
       },
       {
         frontmatter: {
           thumbnail: {
-            img: meshmap_dark,
+            img: meshmap_dark
           },
-          title: "MeshMap, collaborative infrastructure management",
+          title: "MeshMap, collaborative infrastructure management"
         },
         fields: {
-          slug: "/cloud-native-management/meshmap",
-        },
-      },
-    ],
+          slug: "/cloud-native-management/meshmap"
+        }
+      }
+    ]
   };
   data["Solutions"] = {
-    nodes: [],
+    nodes: []
   };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -191,19 +182,17 @@ const Navigation = () => {
     return null;
   }
   function removeCookie(cookieName) {
-    document.cookie =
-      cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
   useEffect(() => {
-    const CLOUD_USER_API =
-      "https://meshery.layer5.io/api/identity/users/profile";
+    const CLOUD_USER_API = "https://meshery.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
         const response = await axios.get(CLOUD_USER_API, {
           headers: {
-            Authorization: `Bearer ${token}`,
-          },
+            Authorization: `Bearer ${token}`
+          }
         });
 
         if (response.status !== 200) {
@@ -221,11 +210,7 @@ const Navigation = () => {
   }, []);
   useEffect(() => {
     const outsideClickHandler = (e) => {
-      if (
-        expand &&
-        navWrapRef.current &&
-        !navWrapRef.current.contains(e.target)
-      ) {
+      if (expand && navWrapRef.current && !navWrapRef.current.contains(e.target)) {
         setExpand(false);
         closeDropDown();
       }
@@ -257,10 +242,7 @@ const Navigation = () => {
   };
 
   return (
-    <NavigationWrap
-      className={`nav-block ${scroll ? "scrolled" : ""}`}
-      ref={navWrapRef}
-    >
+    <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`} ref={navWrapRef}>
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link aria-label="layer5" to="/" className="logo">
@@ -384,13 +366,11 @@ const Navigation = () => {
                 className="avatar-container"
                 style={{
                   backgroundImage: `url(${userData.avatar_url})`,
-                  backgroundSize: "cover",
+                  backgroundSize: "cover"
                 }}
                 onClick={() => setDropDown((prev) => !prev)}
               >
-                {!userData.avatar_url && (
-                  <DefaultAvatar className="default_avatar" />
-                )}
+                {!userData.avatar_url && <DefaultAvatar className="default_avatar" />}
               </button>
               <div
                 className={"dropDown-content"}

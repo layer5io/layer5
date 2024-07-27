@@ -40,7 +40,7 @@ const MemberSingle = ({ frontmatter }) => {
     badges,
     status,
     bio,
-    executive_bio,
+    executive_bio
   } = frontmatter;
   return (
     <MemberSingleWrapper>
@@ -62,11 +62,7 @@ const MemberSingle = ({ frontmatter }) => {
           <Row>
             <Col xs={12} sm={12} lg={6}>
               <Image
-                className={
-                  status.includes("Inactive")
-                    ? "profile-image-inactive"
-                    : "profile-image"
-                }
+                className={status.includes("Inactive") ? "profile-image-inactive" : "profile-image"}
                 {...image_path}
                 imgStyle={{ objectFit: "contain" }}
                 alt={name}
@@ -125,9 +121,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text image-hub">
-                            Image-hub
-                          </span>
+                          <span className="tooltip-text image-hub">Image-hub</span>
                         </div>
                       )}
                       {badges.includes("landscape") && (
@@ -141,9 +135,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text landscape">
-                            Landscape
-                          </span>
+                          <span className="tooltip-text landscape">Landscape</span>
                         </div>
                       )}
                       {badges.includes("community") && (
@@ -157,9 +149,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text community">
-                            Community
-                          </span>
+                          <span className="tooltip-text community">Community</span>
                         </div>
                       )}
                       {badges.includes("docs") && (
@@ -187,9 +177,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text meshery-catalog">
-                            Meshery-catalog
-                          </span>
+                          <span className="tooltip-text meshery-catalog">Meshery-catalog</span>
                         </div>
                       )}
                       {badges.includes("meshmap") && (
@@ -217,9 +205,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text docker-extension">
-                            Docker-extension
-                          </span>
+                          <span className="tooltip-text docker-extension">Docker-extension</span>
                         </div>
                       )}
                       {badges.includes("nighthawk") && (
@@ -233,9 +219,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text nighthawk">
-                            Nighthawk
-                          </span>
+                          <span className="tooltip-text nighthawk">Nighthawk</span>
                         </div>
                       )}
                       {badges.includes("meshery-operator") && (
@@ -249,9 +233,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text meshery-operator">
-                            Meshery-operator
-                          </span>
+                          <span className="tooltip-text meshery-operator">Meshery-operator</span>
                         </div>
                       )}
                       {badges.includes("patterns") && (
@@ -265,9 +247,7 @@ const MemberSingle = ({ frontmatter }) => {
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text patterns">
-                            Patterns
-                          </span>
+                          <span className="tooltip-text patterns">Patterns</span>
                         </div>
                       )}
                       {badges.includes("ui-ux") && (
@@ -384,11 +364,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {meshmate && (
                     <li className="tooltip">
                       <Link to="/community/meshmates">
-                        <img
-                          src={MeshMateIcon}
-                          className="meshmate-white"
-                          alt="meshmate-icon"
-                        />
+                        <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-icon" />
                         <span className="tooltiptext">Meshmate</span>
                       </Link>
                     </li>
@@ -400,11 +376,7 @@ const MemberSingle = ({ frontmatter }) => {
           <Row Hcenter>
             <Col className="start-contributing" sm={12} lg={12}>
               <p> Would you Like a Member Profile?</p>
-              <Button
-                primary
-                title="Start Contributing Today"
-                url="/community"
-              />
+              <Button primary title="Start Contributing Today" url="/community" />
             </Col>
           </Row>
         </div>

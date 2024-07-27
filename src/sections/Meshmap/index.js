@@ -36,12 +36,10 @@ import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
 
-
 const Meshmap = (props) => {
-
   return (
     <MeshmapWrapper>
-      <div >
+      <div>
         <Container>
           <MeshmapBanner />
           <div className="mobile-modes">
@@ -58,140 +56,154 @@ const Meshmap = (props) => {
                       alt="Designer Mode"
                       className="designer-img modes-image"
                     />
-                  ),
+                  )
                 },
                 {
                   title: "Visualizer Mode",
                   description:
                     "Visualizer offers an interactive topology of your Kubernetes clusters with live terminal sessions, log streaming and performance testing of your applications. Designs created in Designer mode can be deployed and viewed as running in your environment using Visualizer.",
                   content: (
-                    <img
-                      src={visualizerImage}
-                      alt="Visualizer Mode"
-                      className="modes-image"
-                    />
-                  ),
-                },
+                    <img src={visualizerImage} alt="Visualizer Mode" className="modes-image" />
+                  )
+                }
               ]}
             />
           </div>
           <MeshmapModes />
 
           <DesignerFeatures
-            features={
-              [
-                {
-                  title: "Design your deployments the way you want",
-                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
-                  imgContent: (
-                    <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
-                  )
-                },
-                {
-                  title: "Manage your applications visually and intuitively",
-                  description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
-                  imgContent: (
-                    <RoleBind2 id="design-image2" alt="design-image2" />
-                  )
-                },
-                {
-                  title: "Build the bridge",
-                  description: "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-                  imgContent: (
-                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
-                  )
-                },
-                {
-                  title: "Stop finger-pointing",
-                  description: "Make infrastructure and application management less about finger-pointing and more about collaborating.",
-                  imgContent: (
-                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
-                  )
-                },
-              ]}/>
+            features={[
+              {
+                title: "Design your deployments the way you want",
+                description:
+                  "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                imgContent: (
+                  <RoleBind1
+                    id="design-image1"
+                    style={{ transform: "translateX(-2rem)" }}
+                    alt="design-image1"
+                  />
+                )
+              },
+              {
+                title: "Manage your applications visually and intuitively",
+                description:
+                  "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
+                imgContent: <RoleBind2 id="design-image2" alt="design-image2" />
+              },
+              {
+                title: "Build the bridge",
+                description:
+                  "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
+                imgContent: (
+                  <RoleBind3
+                    id="design-image3"
+                    style={{ transform: "translateX(-2rem)" }}
+                    alt="design-image3"
+                  />
+                )
+              },
+              {
+                title: "Stop finger-pointing",
+                description:
+                  "Make infrastructure and application management less about finger-pointing and more about collaborating.",
+                imgContent: (
+                  <RoleBind4
+                    id="design-image4"
+                    style={{ transform: "translateX(-2rem)" }}
+                    alt="design-image4"
+                  />
+                )
+              }
+            ]}
+          />
 
           <InlineQuotes
             person="Kaur Kallas"
             title="Software Architect at Entigo"
             quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
-            image={Kaur}/>
+            image={Kaur}
+          />
           <VisualizerFeatures
-            features={
-              [
-                {
-                  title: "All your Kubernetes clusters under a common management",
-                  description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
-                  imgContent: (
-                    <Visualize1 id="visualize-image1" alt="visualize-image1" />
-                  )
-                },
-                {
-                  title: "Continuous visibility across all of your clusters and workloads.",
-                  description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
-                  imgContent: (
-                    <Visualize2 id="visualize-image2" alt="visualize-image2" />
-                  )
-                },
-              ]} />
+            features={[
+              {
+                title: "All your Kubernetes clusters under a common management",
+                description:
+                  "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
+                imgContent: <Visualize1 id="visualize-image1" alt="visualize-image1" />
+              },
+              {
+                title: "Continuous visibility across all of your clusters and workloads.",
+                description:
+                  "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
+                imgContent: <Visualize2 id="visualize-image2" alt="visualize-image2" />
+              }
+            ]}
+          />
           <InlineQuotes
             quote="Guys, I love MeshMap! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
             title="Networks & Systems Engineer at AYRADE"
-            image={Ala}/>
+            image={Ala}
+          />
 
           <CollaboratorFeatures
-            features={
-              [
-                {
-                  title: "Bring those ideas to life",
-                  description: "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
-                  imgContent: (
-                    <>
-                      <img id="avatar-1" src={Avatar1} alt="" />
-                      <Collab1 id="collaborate-image1" alt="collaborate-image1" />
-                    </>
-                  )
-                  // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
-                },
-                // {
-                //   title: "Nothing great is made alone.",
-                //   description: "MeshMap connects everyone in the DevOps process so teams can deliver better products, faster."
-                // },
-                {
-                  title: "Create. Iterate. Repeat.",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
-                  imgContent: (
-                    <>
-                      <img id="avatar-2" src={Avatar2} alt="avatar-2" />
-                      <Collab2 id="collaborate-image2" alt="collaborate-image2" />
-                    </>
-                  )
-                },
-                {
-                  title: "Where your teams share the same language",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
-                  imgContent: (
-                    <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
-                      <Collab3 id="collaborate-image3" alt="collaborate-image3" />
-                    </>
-                  )
-                },
-                // {
-                //   title: "Where your teams share the same language",
-                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
-                // },
-                {
-                  title: "Inclusive collaboration from start to finish",
-                  description: "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
-                  imgContent: (
-                    <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
-                      <Collab4 id="collaborate-image4" alt="collaborate-image4" />
-                    </>
-                  )
-                }
-              ]} />
+            features={[
+              {
+                title: "Bring those ideas to life",
+                description:
+                  "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
+                imgContent: (
+                  <>
+                    <img id="avatar-1" src={Avatar1} alt="" />
+                    <Collab1 id="collaborate-image1" alt="collaborate-image1" />
+                  </>
+                )
+                // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+              },
+              // {
+              //   title: "Nothing great is made alone.",
+              //   description: "MeshMap connects everyone in the DevOps process so teams can deliver better products, faster."
+              // },
+              {
+                title: "Create. Iterate. Repeat.",
+                description:
+                  "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                imgContent: (
+                  <>
+                    <img id="avatar-2" src={Avatar2} alt="avatar-2" />
+                    <Collab2 id="collaborate-image2" alt="collaborate-image2" />
+                  </>
+                )
+              },
+              {
+                title: "Where your teams share the same language",
+                description:
+                  "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                imgContent: (
+                  <>
+                    <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                    <Collab3 id="collaborate-image3" alt="collaborate-image3" />
+                  </>
+                )
+              },
+              // {
+              //   title: "Where your teams share the same language",
+              //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+              // },
+              {
+                title: "Inclusive collaboration from start to finish",
+                description:
+                  "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
+                imgContent: (
+                  <>
+                    <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                    <Collab4 id="collaborate-image4" alt="collaborate-image4" />
+                  </>
+                )
+              }
+            ]}
+          />
           {/* <CollaboratorFeatures
             features={
               [
@@ -236,13 +248,15 @@ const Meshmap = (props) => {
             quote="MeshMap is unreal. Support for air-gapped deployments is all the better, too."
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
-            image={Phillip} />
+            image={Phillip}
+          />
           <Catalog />
           <InlineQuotes
             quote="Do we like MeshMap? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
-            image={Alex} />
+            image={Alex}
+          />
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />

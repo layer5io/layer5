@@ -17,7 +17,7 @@ const MesheryOperatorWrapper = styled.section`
             }
             padding-top: 3.125rem;
             p{
-                color: ${props => props.theme.tertiaryColor};
+                color: ${(props) => props.theme.tertiaryColor};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
@@ -27,7 +27,7 @@ const MesheryOperatorWrapper = styled.section`
         .title-text{
             margin: 3.125rem 0 6.25rem 0;
             h1{
-                color: ${props => props.theme.black};
+                color: ${(props) => props.theme.black};
             }
             h4{
                 border: 1px solid gray;
@@ -35,7 +35,7 @@ const MesheryOperatorWrapper = styled.section`
                 font-size: 1.325rem;
                 width: 15rem;
                 font-weight: 600;
-                color: ${props => props.theme.black};
+                color: ${(props) => props.theme.black};
                 margin:0.5rem 0;
                 text-align:center;
             }
@@ -51,11 +51,11 @@ const MesheryOperatorWrapper = styled.section`
             width: 96%;
         }
         rect {
-            fill:  ${props => props.theme.grey313131ToGreenC9FCF6}; 
+            fill:  ${(props) => props.theme.grey313131ToGreenC9FCF6}; 
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
           }
           path {
-            stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+            stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
         .iframe-div{
@@ -75,13 +75,13 @@ const MesheryOperatorWrapper = styled.section`
                 margin: 0 -1.25rem 0 -3.125rem;
             }	
             .slick-arrow:before{	
-                color: ${props => props.theme.primaryColor};
+                color: ${(props) => props.theme.primaryColor};
                 font-size: 3rem;
                 display: inline-block;
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             .slick-arrow:hover:before{	
-                color: ${props => props.theme.secondaryColor};	
+                color: ${(props) => props.theme.secondaryColor};	
             }
         }
     }
@@ -150,7 +150,7 @@ const MesheryOperatorWrapper = styled.section`
         padding-top: 1rem;
         text-align: center;
         p {
-            color: ${props => props.theme.tertiaryColor};
+            color: ${(props) => props.theme.tertiaryColor};
             padding: 0px 3.125rem;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
@@ -161,7 +161,7 @@ const MesheryOperatorWrapper = styled.section`
             margin: 3.125rem 0;
             width: 100%;
             padding: 5rem 1.25rem;
-            background-color: ${props => props.theme.secondaryLightColorTwo};
+            background-color: ${(props) => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             .card {
@@ -175,7 +175,7 @@ const MesheryOperatorWrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background: ${props => props.theme.grey212121ToWhite};
+                background: ${(props) => props.theme.grey212121ToWhite};
                 border-radius: 25px;
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 p {
@@ -204,7 +204,7 @@ const MesheryOperatorWrapper = styled.section`
                 vertical-align: top;
             }
             .service{
-                color: ${props => props.theme.tertiaryColor};
+                color: ${(props) => props.theme.tertiaryColor};
                 font-size: 16px;
                 padding: 0 0 1.25rem 1.875rem;
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

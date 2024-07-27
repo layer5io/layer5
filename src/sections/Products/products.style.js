@@ -100,11 +100,7 @@ const ProductWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 211, 169, 0.1) 0%,
-      rgba(0, 179, 159, 0) 100%
-    );
+    background: linear-gradient(180deg, rgba(0, 211, 169, 0.1) 0%, rgba(0, 179, 159, 0) 100%);
   }
 
   .product_hero_text {

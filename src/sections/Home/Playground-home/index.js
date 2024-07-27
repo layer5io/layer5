@@ -194,11 +194,7 @@ const MeshmapVisualizerViews = () => {
             src={CommentingImageDark}
             alt=""
           /> */}
-          <div
-            className={
-              imageInView ? "visible container" : "not-visible container"
-            }
-          >
+          <div className={imageInView ? "visible container" : "not-visible container"}>
             <div className="line1">
               <div className="box">
                 <img className="boxImg" src={argocd} alt="" />
@@ -242,9 +238,8 @@ const MeshmapVisualizerViews = () => {
             <span>Manage your Cloud Native mess</span>
           </h2>
           <p>
-            Employ a set of learning paths that incorporate an application
-            networking centric curriculum featuring training on 200+
-            integrations.
+            Employ a set of learning paths that incorporate an application networking centric
+            curriculum featuring training on 200+ integrations.
           </p>
           <Button
             primary

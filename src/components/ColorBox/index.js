@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import { ColorBoxWrapper } from "./ColorBox.style";
 
-const ColorBox = props => {
+const ColorBox = (props) => {
   const bgcolor = props.colorCode;
   return (
     <ColorBoxWrapper bgcolor={bgcolor}>
@@ -13,7 +13,7 @@ const ColorBox = props => {
           </Row>
           <div className="color-data">
             <Row>
-                            RGB  {props.R},{props.G},{props.B}
+              RGB {props.R},{props.G},{props.B}
               <br />
               {props.CMY ? props.K : bgcolor}
               <br />

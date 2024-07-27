@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BannerSectionWrapper = styled.section`
-  z-index:0;
+  z-index: 0;
   .section {
     background-size: cover;
     height: 35rem;
@@ -10,9 +10,8 @@ const BannerSectionWrapper = styled.section`
     align-items: center;
     justify-content: center;
     background-color: black;
-  
   }
-  h2{
+  h2 {
     color: white;
     margin-bottom: 3rem;
     font-weight: 300;
@@ -25,7 +24,8 @@ const BannerSectionWrapper = styled.section`
     line-height: 3.125rem;
     color: white;
   }
-  h1,h2 {
+  h1,
+  h2 {
     margin-top: 0rem;
   }
   .section-content {
@@ -34,12 +34,12 @@ const BannerSectionWrapper = styled.section`
     padding: 0 20rem 1.5rem 20rem;
   }
   .section-button {
-    background: ${props => props.theme.highlightColor}; 
+    background: ${(props) => props.theme.highlightColor};
 
     &:hover {
-          background: ${props => props.theme.highlightLightColor}; 
-          box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
-      }
+      background: ${(props) => props.theme.highlightLightColor};
+      box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+    }
     margin-bottom: -15rem;
   }
   @media only screen and (max-width: 1224px) {
@@ -48,7 +48,7 @@ const BannerSectionWrapper = styled.section`
     }
     h2 {
       font-weight: 400;
-      margin-top: .5rem;
+      margin-top: 0.5rem;
       margin-bottom: 4rem;
     }
     .section-content {
@@ -102,7 +102,6 @@ const BannerSectionWrapper = styled.section`
       font-size: 2rem;
       line-height: 2.8rem;
       padding: 1rem 3rem;
-      
     }
     .section-content {
       font-size: 1rem;
@@ -112,7 +111,7 @@ const BannerSectionWrapper = styled.section`
     .section-button {
       font-size: 1rem;
       margin-bottom: 1rem;
-      
+
       color: white;
     }
   }

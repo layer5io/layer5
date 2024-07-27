@@ -78,9 +78,8 @@ const Header = () => {
             <Col className="col header__detail" md={6}>
               <h1 className="header__title">Meshery Catalog</h1>
               <p className="header__title_description">
-                The Ultimate Shopping Guide for Your Infrastructure.
-
-                Packed with Kubernetes and cloud native templates to get you deploying in the right way.
+                The Ultimate Shopping Guide for Your Infrastructure. Packed with Kubernetes and
+                cloud native templates to get you deploying in the right way.
               </p>
               <div className="header__button_section">
                 <Button

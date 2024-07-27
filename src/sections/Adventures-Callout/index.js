@@ -6,7 +6,6 @@ import AdventuresWrapper from "./discuss.style";
 
 const Adventure = "../../assets/images/adventure-five/layer_five.png";
 
-
 const AdventuresCallout = () => {
   return (
     <AdventuresWrapper>
@@ -20,8 +19,13 @@ const AdventuresCallout = () => {
                     <h2>Adventures of Five & Friends</h2>
                     {/*<p>Meet Five, our intergalatic Cloud Native Hero</p>*/}
 
-                    <button><StaticImage className="logo" alt="Adventures of Five & Friends" src={Adventure} /></button>
-
+                    <button>
+                      <StaticImage
+                        className="logo"
+                        alt="Adventures of Five & Friends"
+                        src={Adventure}
+                      />
+                    </button>
                   </SectionTitle>
                 </div>
               </div>

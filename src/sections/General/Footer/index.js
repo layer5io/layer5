@@ -26,7 +26,7 @@ const Footer = ({ location }) => {
       "/handbook",
       "projects",
       "/resources",
-      "/learn",
+      "/learn"
     ];
     const test = {
       mdx: function (path) {
@@ -45,7 +45,7 @@ const Footer = ({ location }) => {
             "/resources/",
             "/service-mesh-books/",
             "/service-mesh-labs/",
-            "/service-mesh-workshops/",
+            "/service-mesh-workshops/"
           ].some((check) => {
             returnPath = check;
             return path.startsWith(check);
@@ -57,18 +57,16 @@ const Footer = ({ location }) => {
           path.startsWith("/learn/learning-paths/") &&
           `content-learn${pathname.replace("learn/learning-paths/", "")}`
         );
-      },
+      }
     };
 
     return test.mdx(pathname)
       ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
       : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
-          pathname
-        )}`
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
         : `https://github.com/layer5io/layer5/blob/master/src/pages${
-          pathname == "/" ? "" : pathname
-        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+            pathname == "/" ? "" : pathname
+          }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
   return (
@@ -92,9 +90,9 @@ const Footer = ({ location }) => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value
-              from your infrastructure. Creator and maintainer of cloud native
-              standards. Maker of Meshery, the cloud native manager.
+              An empowerer of engineers, Layer5 helps you extract more value from your
+              infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery,
+              the cloud native manager.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -127,26 +125,17 @@ const Footer = ({ location }) => {
                     </Link>
                   </li> */}
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/service-mesh-books"
-                    >
+                    <Link className="category-link" to="/learn/service-mesh-books">
                       Service Mesh Books
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/service-mesh-workshops"
-                    >
+                    <Link className="category-link" to="/learn/service-mesh-workshops">
                       Cloud Native Workshops
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/service-mesh-landscape"
-                    >
+                    <Link className="category-link" to="/service-mesh-landscape">
                       Service Mesh Comparison
                     </Link>
                   </li>
@@ -173,10 +162,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <a
-                      className="category-link"
-                      href="https://discuss.layer5.io"
-                    >
+                    <a className="category-link" href="https://discuss.layer5.io">
                       Forum
                     </a>
                   </li>
@@ -191,16 +177,13 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/community/handbook"
-                    >
+                    <Link className="category-link" to="/community/handbook">
                       Handbook
                     </Link>
                   </li>
                   <li>
                     <a className="category-link" href="https://badges.layer5.io/">
-                    Recognition Program
+                      Recognition Program
                     </a>
                   </li>
                 </ul>
@@ -213,27 +196,18 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/cloud-native-management/meshmap"
-                    >
+                    <Link className="category-link" to="/cloud-native-management/meshmap">
                       MeshMap
                       <span className="new-label">NEW</span>
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/cloud-native-management/meshery"
-                    >
+                    <Link className="category-link" to="/cloud-native-management/meshery">
                       Meshery
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/cloud-native-management/gitops"
-                    >
+                    <Link className="category-link" to="/cloud-native-management/gitops">
                       GitOps
                     </Link>
                   </li>
@@ -243,10 +217,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/docker-extension-meshery"
-                    >
+                    <Link className="category-link" to="/docker-extension-meshery">
                       Docker Extension
                     </Link>
                   </li>
@@ -259,10 +230,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li> */}
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/projects/cloud-native-performance"
-                    >
+                    <Link className="category-link" to="/projects/cloud-native-performance">
                       Cloud Native Performance
                     </Link>
                   </li>
@@ -309,7 +277,6 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-
               <form
                 name="contactform"
                 method="post"
@@ -323,9 +290,7 @@ const Footer = ({ location }) => {
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL-2"
-                    onInvalid={(e) =>
-                      e.target.setCustomValidity("Please fill-in this field")
-                    }
+                    onInvalid={(e) => e.target.setCustomValidity("Please fill-in this field")}
                     onInput={(e) => e.target.setCustomValidity("")}
                     required
                   />
@@ -348,11 +313,7 @@ const Footer = ({ location }) => {
 
             <ul className="misc-links">
               <li className="edit-page">
-                <a
-                  href={getUrl(location.pathname)}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={getUrl(location.pathname)} target="_blank" rel="noreferrer">
                   Edit This Page
                 </a>
               </li>

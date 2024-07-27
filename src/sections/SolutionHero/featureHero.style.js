@@ -14,10 +14,10 @@ const FeatureHeroWrapper = styled.div`
       align-items: center;
     }
 
-    .whiteboard-image{
+    .whiteboard-image {
       perspective: 1000px;
       padding: 0 1rem;
-      &>img {
+      & > img {
         width: 100%;
         margin: 2rem auto;
       }
@@ -30,7 +30,7 @@ const FeatureHeroWrapper = styled.div`
     }
 
     .whiteboard-heading {
-      color: ${props => props.theme.whiteToBlack} !important;
+      color: ${(props) => props.theme.whiteToBlack} !important;
       text-align: center;
       font-size: 4rem;
       font-weight: 600;
@@ -42,15 +42,14 @@ const FeatureHeroWrapper = styled.div`
     .heading-image {
       margin: 0 auto;
     }
-
   }
 
   .heading-container::before {
-    content: '';
+    content: "";
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
-    background: #00B39F;
+    background: #00b39f;
     filter: blur(150px);
     position: absolute;
     left: 50%;
@@ -60,17 +59,17 @@ const FeatureHeroWrapper = styled.div`
   }
 
   .whiteboard-text {
-    color: ${props => props.theme.greyA0AAAAToGrey666666};
+    color: ${(props) => props.theme.greyA0AAAAToGrey666666};
     text-align: center;
     font-size: 1.75rem;
     line-height: 2.4rem;
     max-width: 965px;
     margin: 1rem auto;
-    padding: 0 1rem
+    padding: 0 1rem;
   }
 
   @media (max-width: 768px) {
-    .whiteboard-heading{
+    .whiteboard-heading {
       font-size: 2.75rem !important;
     }
     .whiteboard-text {
@@ -85,7 +84,7 @@ const FeatureHeroWrapper = styled.div`
       text-align: center !important;
     }
 
-    .whiteboard-heading{
+    .whiteboard-heading {
       font-size: 2.5rem !important;
     }
 
@@ -94,7 +93,6 @@ const FeatureHeroWrapper = styled.div`
       line-height: 1.2rem;
     }
   }
-  
 `;
 
 export default FeatureHeroWrapper;

@@ -7,7 +7,6 @@ import { Link } from "gatsby";
 import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
 
 const Card = ({ title, info, link, cover, content, subId, ID, toggleActive }) => {
-
   // const isScriptLoaded = (src) => {
   //   return document.querySelector("script[src=\"" + src + "\"]") ? true : false;
   // };
@@ -29,7 +28,9 @@ const Card = ({ title, info, link, cover, content, subId, ID, toggleActive }) =>
         <Row>
           <Col xs={12} sm={12}>
             <div className="full-screen">
-              <Link to={link} className="siteLink"><FaExternalLinkAlt style={{ height: "1.5rem", width: "auto" }} /></Link>
+              <Link to={link} className="siteLink">
+                <FaExternalLinkAlt style={{ height: "1.5rem", width: "auto" }} />
+              </Link>
             </div>
           </Col>
         </Row>
@@ -41,25 +42,34 @@ const Card = ({ title, info, link, cover, content, subId, ID, toggleActive }) =>
           </Col>
           <Col xs={12} sm={8}>
             <div className="scenario-description">
-
               <h4 className="title">{title}</h4>
               <p className="info">{info}</p>
 
               <div className="toggle-and-full-screen-wrapper">
-                {content && ID === subId ?
-                  <div className="open-close-scenario"> Close Scenario <BsArrowUp className="icon" size={30} /></div> :
-                  <div className="open-close-scenario"> Open Scenario <BsArrowDown className="icon" size={30} /></div>
-                }
+                {content && ID === subId ? (
+                  <div className="open-close-scenario">
+                    {" "}
+                    Close Scenario <BsArrowUp className="icon" size={30} />
+                  </div>
+                ) : (
+                  <div className="open-close-scenario">
+                    {" "}
+                    Open Scenario <BsArrowDown className="icon" size={30} />
+                  </div>
+                )}
               </div>
             </div>
           </Col>
         </Row>
         <Row>
           <Col xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
-
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
-              Sign into the&nbsp;<a className="ak" href="https://playground.meshery.io">Meshery Playground</a>&nbsp;(free account) to continue your lab.
+                Sign into the&nbsp;
+                <a className="ak" href="https://playground.meshery.io">
+                  Meshery Playground
+                </a>
+                &nbsp;(free account) to continue your lab.
                 {/*
                 <div id="katacoda-scenario"
                   data-katacoda-id={`${courseLink}/${embed}`}

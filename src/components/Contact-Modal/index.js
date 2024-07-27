@@ -5,15 +5,14 @@ import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 import styled from "styled-components";
 
 const ContactFormModalWrapper = styled.div`
-	.open-modal-btn {
-		display: flex;
+  .open-modal-btn {
+    display: flex;
     margin: auto;
-	}
+  }
 `;
 
 const ContactFormModal = (props) => {
-
-  const [modalIsOpen,setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
 
@@ -25,12 +24,15 @@ const ContactFormModal = (props) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="Modal"								//Styles for this have been applied to global CSS, app.style.js file.
-        overlayClassName="Overlay"			// Same as above
+        className="Modal" //Styles for this have been applied to global CSS, app.style.js file.
+        overlayClassName="Overlay" // Same as above
         ariaHideApp={false}
         contentLabel="Contact Form"
       >
-        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+        <Button secondary className="close-modal-btn" onClick={closeModal}>
+          {" "}
+          <GrFormClose />
+        </Button>
         <h2 className="modal-heading">{props.form_header}</h2>
         <div className="contact-form">
           <iframe

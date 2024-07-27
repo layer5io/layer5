@@ -41,7 +41,7 @@ const SoSpecialWrapper = styled.div`
         height: 3rem;
     }	
     .slick-arrow:before{	
-        color: ${props => props.theme.primaryColor};
+        color: ${(props) => props.theme.primaryColor};
         font-size: 4.5rem;
         display: inline-block;
         height: 2rem;
@@ -51,7 +51,7 @@ const SoSpecialWrapper = styled.div`
         pointer-events:none;
     }
     .slick-arrow:hover:before{	
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -76,11 +76,11 @@ const SoSpecialWrapper = styled.div`
     }
     .slick-dots li button:before {
         font-size: 0.6rem;
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     .slick-dots li.slick-active button:before {
         opacity: 1;
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor};
     }
     }
     .so-special-head{
@@ -98,7 +98,7 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        background-color: ${props => props.theme.grey212121ToWhite};
+        background-color: ${(props) => props.theme.grey212121ToWhite};
         box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.green00D3A9ToBlackFour};
         color:${(props) => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -153,7 +153,7 @@ const SoSpecialWrapper = styled.div`
             margin:2rem;
             :hover{
                 color: white;
-                box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+                box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
             }
         }
     }

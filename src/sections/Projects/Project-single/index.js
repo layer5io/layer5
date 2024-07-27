@@ -10,9 +10,7 @@ const ProjectSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
   return (
     <ProjectPageWrapper>
-      <PageHeader
-        title={frontmatter.title}
-      />
+      <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
           <div className="single-project-block">

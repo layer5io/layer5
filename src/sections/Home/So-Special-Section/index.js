@@ -10,42 +10,41 @@ import Image from "../../../components/image";
 // import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const SoSpecial = () => {
-  const data = useStaticQuery(
-    graphql`query newsList {
-  allMdx(
-    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
-    sort: {fields: [frontmatter___date], order: DESC}
-    limit: 8
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        author
-        eurl
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+  const data = useStaticQuery(graphql`
+    query newsList {
+      allMdx(
+        filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 8
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            author
+            eurl
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            darkthumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
-        }
-        darkthumbnail{
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+          fields {
+            slug
           }
-          extension
-          publicURL
         }
-      }
-      fields {
-        slug
       }
     }
-  }
-}
-`
-  );
+  `);
   const settings = {
     dots: false,
     infinite: false,
@@ -57,15 +56,13 @@ const SoSpecial = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 2.2,
-
+          slidesToShow: 2.2
         }
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-
+          slidesToShow: 2
         }
       },
       {
@@ -108,31 +105,29 @@ const SoSpecial = () => {
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
-          {
-            data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Button className="special-cont_btn" url={fields.slug} key={id}>
-                <div id="special-cont" >
-                  <div id="special-cont_img">
-                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
+          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+            <Button className="special-cont_btn" url={fields.slug} key={id}>
+              <div id="special-cont">
+                <div id="special-cont_img">
+                  {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
                     {console.log("Thumbnail:", frontmatter.thumbnail)} */}
-                    <Image
-                      {...(frontmatter.thumbnail)}
-                      imgStyle={{ objectFit: "contain" }}
-                      alt={frontmatter.title}
-                    />
-                    {/* <Image
+                  <Image
+                    {...frontmatter.thumbnail}
+                    imgStyle={{ objectFit: "contain" }}
+                    alt={frontmatter.title}
+                  />
+                  {/* <Image
                       {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL) || frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     /> */}
-                  </div>
-                  <div id="special-cont_content">
-                    <p className="special-cont_para">{frontmatter.title}</p>
-                  </div>
                 </div>
-              </Button>
-            ))}
-
+                <div id="special-cont_content">
+                  <p className="special-cont_para">{frontmatter.title}</p>
+                </div>
+              </div>
+            </Button>
+          ))}
         </Slider>
       </div>
       {/* <div className="so-special-foot">

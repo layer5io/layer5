@@ -48,11 +48,14 @@ const NewCatalog = () => {
   return (
     <NewCatalogWrapper className="new-catalog">
       <Container className="container">
-        <p className="new-catalog__title">
-          CREATE AND SHARE YOUR OWN BEST PRACTICES
-        </p>
+        <p className="new-catalog__title">CREATE AND SHARE YOUR OWN BEST PRACTICES</p>
         <div className="new-catalog__button_section">
-          <Button primary external={true} title="Publish Your Own Design" url="https://meshery.layer5.io/catalog" />
+          <Button
+            primary
+            external={true}
+            title="Publish Your Own Design"
+            url="https://meshery.layer5.io/catalog"
+          />
         </div>
       </Container>
     </NewCatalogWrapper>

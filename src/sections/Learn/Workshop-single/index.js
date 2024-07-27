@@ -14,7 +14,6 @@ import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 
 const WorkshopSinglePage = ({ frontmatter, body }) => {
-
   return (
     <WorkshopSinglePageWrapper>
       <div className="backBtn">
@@ -34,36 +33,56 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
         </div>
         <div className="btn-and-status">
           <div className="social-icons">
-            {frontmatter.slack && frontmatter.status === "delivered" ?
-              <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
-                <img src={Slack} alt="Slack"/>
-                                Slack
-              </a> : ""}
-            {frontmatter.slides && frontmatter.status === "delivered" ?
-              <a href={frontmatter.slides} target = "_blank" rel="noreferrer" className="links">
-                <img src={Slide} alt="Slide"/>
-                                Slides
-              </a> : ""}
-            {frontmatter.eurl && frontmatter.status === "delivered" ?
-              <a href={frontmatter.eurl} target = "_blank" rel="noreferrer" className="links">
-                <img src={LinkIcon} alt="Link"/>
-                                Link
-              </a> : ""}
-            {frontmatter.labs && frontmatter.status === "delivered" ?
-              <a href={frontmatter.labs} target = "_blank" rel="noreferrer" className="links">
-                <img src={Lab} alt="Lab"/>
-                                Labs
-              </a> : ""}
-            {frontmatter.video && frontmatter.status === "delivered" ?
-              <a href={frontmatter.video} target = "_blank" rel="noreferrer" className="links">
-                <img src={Youtube} alt="Youtube video"/>
-                                Video
-              </a> : ""}
+            {frontmatter.slack && frontmatter.status === "delivered" ? (
+              <a href={frontmatter.slack} target="_blank" rel="noreferrer" className="links">
+                <img src={Slack} alt="Slack" />
+                Slack
+              </a>
+            ) : (
+              ""
+            )}
+            {frontmatter.slides && frontmatter.status === "delivered" ? (
+              <a href={frontmatter.slides} target="_blank" rel="noreferrer" className="links">
+                <img src={Slide} alt="Slide" />
+                Slides
+              </a>
+            ) : (
+              ""
+            )}
+            {frontmatter.eurl && frontmatter.status === "delivered" ? (
+              <a href={frontmatter.eurl} target="_blank" rel="noreferrer" className="links">
+                <img src={LinkIcon} alt="Link" />
+                Link
+              </a>
+            ) : (
+              ""
+            )}
+            {frontmatter.labs && frontmatter.status === "delivered" ? (
+              <a href={frontmatter.labs} target="_blank" rel="noreferrer" className="links">
+                <img src={Lab} alt="Lab" />
+                Labs
+              </a>
+            ) : (
+              ""
+            )}
+            {frontmatter.video && frontmatter.status === "delivered" ? (
+              <a href={frontmatter.video} target="_blank" rel="noreferrer" className="links">
+                <img src={Youtube} alt="Youtube video" />
+                Video
+              </a>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="bottomBtn">
-          <Button secondary title="Request a Workshop" url="mailto:training@layer5.io" external={true}/>
-          <Button primary title="Join this Workshop" url={frontmatter.eurl}/>
+          <Button
+            secondary
+            title="Request a Workshop"
+            url="mailto:training@layer5.io"
+            external={true}
+          />
+          <Button primary title="Join this Workshop" url={frontmatter.eurl} />
         </div>
       </Container>
     </WorkshopSinglePageWrapper>

@@ -14,7 +14,7 @@ import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-
 
 const PressWrapper = styled.div`
 padding: 2rem 0;
-background: ${props => props.theme.secondaryLightColor};
+background: ${(props) => props.theme.secondaryLightColor};
 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 h2{
     text-align: center;
@@ -28,10 +28,10 @@ h4, h5{
 }
 
 .press_card { 
-    background: ${props => props.theme.grey212121ToWhite};
+    background: ${(props) => props.theme.grey212121ToWhite};
     transition: 450ms all;
     height: 15rem;
-    border: 1px solid ${props => props.theme.green00D3A9ToGreyE6E6E6};
+    border: 1px solid ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     &:hover{
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -42,11 +42,11 @@ h4, h5{
     text-align: center;
     h5{
         font-weight: 700;
-        color: ${props => props.theme.secondaryColor}
+        color: ${(props) => props.theme.secondaryColor}
     }
     p{
         font-weight: 300;
-        color: ${props => props.theme.text};
+        color: ${(props) => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media screen and (max-width: 768px) {
@@ -95,13 +95,25 @@ const Press = () => {
             <div className="press_card">
               <h5>Follow Us</h5>
               <p>On Social Media</p>
-              <a href="https://www.linkedin.com/company/layer5"><GrLinkedin size={40} className="icon" /></a>
-              <a href="https://twitter.com/layer5"><GrTwitter size={40} className="icon" /></a>
-              <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"><GrYoutube size={45} className="icon" /></a>
+              <a href="https://www.linkedin.com/company/layer5">
+                <GrLinkedin size={40} className="icon" />
+              </a>
+              <a href="https://twitter.com/layer5">
+                <GrTwitter size={40} className="icon" />
+              </a>
+              <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                <GrYoutube size={45} className="icon" />
+              </a>
               <br />
-              <a href="https://github.com/layer5io"><GrGithub size={45} className="icon" /></a>
-              <a href="https://discuss.layer5.io/"><FaDiscourse size={40} className="icon" /></a>
-              <a href="https://hub.docker.com/u/layer5/"><FaDocker size={45} className="icon" /></a>
+              <a href="https://github.com/layer5io">
+                <GrGithub size={45} className="icon" />
+              </a>
+              <a href="https://discuss.layer5.io/">
+                <FaDiscourse size={40} className="icon" />
+              </a>
+              <a href="https://hub.docker.com/u/layer5/">
+                <FaDocker size={45} className="icon" />
+              </a>
             </div>
           </Col>
         </Row>

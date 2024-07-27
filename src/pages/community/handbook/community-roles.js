@@ -7,11 +7,15 @@ const ContributorJourney = () => {
   return (
     <>
       <LeadershipPage />
-
     </>
   );
 };
 export default ContributorJourney;
 export const Head = () => {
-  return <SEO title="Community Roles" description="Description of the different roles in the Layer5 community" />;
+  return (
+    <SEO
+      title="Community Roles"
+      description="Description of the different roles in the Layer5 community"
+    />
+  );
 };

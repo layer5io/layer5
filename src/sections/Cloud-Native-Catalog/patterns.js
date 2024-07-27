@@ -30,11 +30,7 @@ const CatalogWrapper = styled.div`
     box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.25);
     padding: 4rem;
     background-color: ${(props) => props.theme.secondaryColor};
-    background: linear-gradient(
-      180deg,
-      hsla(173, 100%, 35%, 1) 7%,
-      hsla(0, 0%, 0%, 1) 90%
-    );
+    background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
   }
 
   h3.containerCaption {
@@ -309,9 +305,7 @@ const Catalog = () => {
                 </div>
               </div>
             </div>
-            <h3 className="containerCaption">
-              Discover best practices. Publish design patterns.
-            </h3>
+            <h3 className="containerCaption">Discover best practices. Publish design patterns.</h3>
           </Container>
         </div>
       </a>

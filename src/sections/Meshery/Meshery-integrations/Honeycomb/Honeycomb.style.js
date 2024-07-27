@@ -6,8 +6,7 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
-    height: ${(props) =>
-  props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
+    height: ${(props) => (props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`)};
     li {
       width: 150px;
       margin: 3px;
@@ -33,10 +32,9 @@ export const HoneycombGrid = styled.div`
   /* Media query for screens with maximum width of 320px */
   @media (max-width: 335px) {
     ul {
-      height: ${(props) =>
-    props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`};
+      height: ${(props) => (props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`)};
       li {
-        width: 100px; 
+        width: 100px;
         margin-top: 0px;
         margin-right: 1px;
         height: calc(100px * 1.1547);
@@ -52,9 +50,8 @@ export const HoneycombGrid = styled.div`
         shape-outside: repeating-linear-gradient(
           #0000 0 calc(sqrt(3) * 100px - 3px),
           #000 0 calc(sqrt(3) * 100px)
-        );        
+        );
       }
-      
     }
   }
 `;

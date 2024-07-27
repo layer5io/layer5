@@ -24,8 +24,8 @@ const SocialBackgrounds = loadable(() => import("./Brand-components/social-backg
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
-      dummyoffsetTop = 0,
-      dummyoffsetBottom = 0;
+    dummyoffsetTop = 0,
+    dummyoffsetBottom = 0;
   if (ele) {
     const { height } = ele.getBoundingClientRect();
     const offsetTop = ele.offsetTop;
@@ -34,14 +34,14 @@ const getDimensions = (ele) => {
     return {
       height,
       offsetTop,
-      offsetBottom,
+      offsetBottom
     };
   }
 
   return {
     dummyheight,
     dummyoffsetTop,
-    dummyoffsetBottom,
+    dummyoffsetBottom
   };
 };
 
@@ -159,10 +159,9 @@ const Brand = () => {
       <div className="brandHeader" ref={headerRef}>
         <h1>Layer5 Brand Kits</h1>
         <p>
-          We’ve created some guidelines to help you use our brand and assets,
-          including our logo, content and trademarks, without having to
-          negotiate legal agreements for each use. To make any use of our marks
-          in a way not covered by these guidelines, please contact us and
+          We’ve created some guidelines to help you use our brand and assets, including our logo,
+          content and trademarks, without having to negotiate legal agreements for each use. To make
+          any use of our marks in a way not covered by these guidelines, please contact us and
           include a visual mockup of intended use.
         </p>
         <a href="/brand/brand-kit.zip">
@@ -225,9 +224,7 @@ const Brand = () => {
         <Col md={3} className="brand-nav-col">
           <nav className={`brand-nav ${scroll ? "nav-fixed" : ""}`}>
             <p
-              className={`header_link ${
-                visibleSection === "Layer5" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "Layer5" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(layer5Ref.current);
               }}
@@ -235,9 +232,7 @@ const Brand = () => {
               <span>Layer5</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "SocialBackgrounds" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "SocialBackgrounds" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(SocialBackgroundsRef.current);
               }}
@@ -245,9 +240,7 @@ const Brand = () => {
               <span> Layer5 Social Backgrounds </span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "Meshery" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "Meshery" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(mesheryRef.current);
               }}
@@ -255,9 +248,7 @@ const Brand = () => {
               <span>Meshery</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MeshSync" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MeshSync" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(meshsyncRef.current);
               }}
@@ -265,9 +256,7 @@ const Brand = () => {
               <span>MeshSync</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MesheryOperator" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MesheryOperator" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(mesheryOperatorRef.current);
               }}
@@ -275,9 +264,7 @@ const Brand = () => {
               <span>Meshery Operator</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "ImageHub" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "ImageHub" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(imageHubRef.current);
               }}
@@ -285,9 +272,7 @@ const Brand = () => {
               <span>Image Hub</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "SMP" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "SMP" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(smpRef.current);
               }}
@@ -295,9 +280,7 @@ const Brand = () => {
               <span>Cloud Native Performance</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MeshMark" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MeshMark" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(meshmarkRef.current);
               }}
@@ -315,9 +298,7 @@ const Brand = () => {
               <span>Cloud Native Patterns</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "NightHawk" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "NightHawk" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(nightHawkRef.current);
               }}
@@ -325,9 +306,7 @@ const Brand = () => {
               <span> NightHawk </span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MeshMate" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MeshMate" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(meshmateRef.current);
               }}
@@ -335,9 +314,7 @@ const Brand = () => {
               <span>MeshMate</span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MeshMaster" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MeshMaster" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(meshMasterRef.current);
               }}
@@ -345,9 +322,7 @@ const Brand = () => {
               <span> MeshMaster </span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "MeshMap" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "MeshMap" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(meshmapRef.current);
               }}
@@ -355,9 +330,7 @@ const Brand = () => {
               <span> MeshMap </span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "Catalog" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "Catalog" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(CatalogRef.current);
               }}
@@ -365,9 +338,7 @@ const Brand = () => {
               <span> Catalog </span>
             </p>
             <p
-              className={`header_link ${
-                visibleSection === "Five" ? "selected" : ""
-              }`}
+              className={`header_link ${visibleSection === "Five" ? "selected" : ""}`}
               onClick={() => {
                 scrollTo(stickfiguresRef.current);
               }}

@@ -13,7 +13,7 @@ export const HeroWrapper = styled.div`
     padding: 2rem 0 10rem 0;
   }
 
-   .content {
+  .content {
     max-width: 34rem;
 
     @media (max-width: 1119px) {
@@ -31,9 +31,9 @@ export const HeroWrapper = styled.div`
       margin-top: 0;
     }
 
-    .subtitle{
+    .subtitle {
       font-weight: 600;
-      color: ${props => props.theme.primaryColor};
+      color: ${(props) => props.theme.primaryColor};
       margin-bottom: 1rem;
     }
 
@@ -48,8 +48,8 @@ export const HeroWrapper = styled.div`
       }
     }
 
-    .code{
-      pre{
+    .code {
+      pre {
         width: inherit;
         margin: auto;
 
@@ -68,12 +68,12 @@ export const HeroWrapper = styled.div`
           }
         }
       }
-      .token-line > span:first-of-type{
+      .token-line > span:first-of-type {
         display: none;
       }
     }
   }
-    p.enddescr {
-      margin-top: 1rem;
-    }
+  p.enddescr {
+    margin-top: 1rem;
+  }
 `;

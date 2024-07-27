@@ -7,7 +7,6 @@ const Faq = () => {
   return (
     <>
       <Faqs />
-
     </>
   );
 };

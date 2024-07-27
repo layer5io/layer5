@@ -80,12 +80,7 @@ const AppScreensClassic = () => {
       <Container>
         <Row>
           <Col xs={12} sm={6}>
-            <SectionTitle
-              className="section-title-block"
-              leftAlign={true}
-              UniWidth="100%"
-              mb={50}
-            >
+            <SectionTitle className="section-title-block" leftAlign={true} UniWidth="100%" mb={50}>
               <h4>app screens</h4>
               <h2>
                 <span>See screenshot </span> & engage in this app.

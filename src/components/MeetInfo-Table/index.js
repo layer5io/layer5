@@ -3,15 +3,9 @@ import { useTable } from "react-table";
 import { TableWrapper } from "./MeetInfoTable.style";
 
 const Table = ({ columns, data }) => {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
     columns,
-    data,
+    data
   });
 
   return (
@@ -19,9 +13,7 @@ const Table = ({ columns, data }) => {
       <h1 className="meetings-table-title">
         <a href="#meetings">Layer5 Meetings</a>
       </h1>
-      <h3 className="meetings-table-subtitle">
-        Everyone is welcome to join. Engage!
-      </h3>
+      <h3 className="meetings-table-subtitle">Everyone is welcome to join. Engage!</h3>
       <table name="meetings" id="meetings" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (

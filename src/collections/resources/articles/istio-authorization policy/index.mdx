@@ -8,14 +8,14 @@ category: Service Mesh
 mesh: Istio
 technology: Docker
 tags:
- - Istio
+  - Istio
 featured: false
 published: true
 resource: true
 ---
 
 import { Link } from "gatsby";
-import istiosecurityarch from './istio-securityarch.svg'
+import istiosecurityarch from "./istio-securityarch.svg";
 import { ResourcesWrapper } from "../../Resources.style.js";
 
 <ResourcesWrapper>
@@ -26,10 +26,17 @@ Istio is a massive project with a wide range of capabilities and deployment opti
 </div>
 
 <p>
-    <h2>Let’s see Istio’s Security Architecture </h2> 
-    </p>
+  <h2>Let’s see Istio’s Security Architecture </h2>
+</p>
 <p>
-    Before we directly jump into Istio's Authorization policies let's have a glance at Istio's Security architecture. The below diagram is directly referenced from Istio documentation. From the control plane, users can create things like authorization policies authentication policies, and policies will get translated into envoy config and streamed bent the varied proxies that form up the service mesh, on the information plane side there is east-west traffic from service b to c and also the actual communication takes place through sidecar proxies. If the traffic is entering it moves to the Ingress gateway and if it’s leaving it can attend the Egress gateway in between all this we will apply JWT enforcements.
+  Before we directly jump into Istio's Authorization policies let's have a glance at Istio's
+  Security architecture. The below diagram is directly referenced from Istio documentation. From the
+  control plane, users can create things like authorization policies authentication policies, and
+  policies will get translated into envoy config and streamed bent the varied proxies that form up
+  the service mesh, on the information plane side there is east-west traffic from service b to c and
+  also the actual communication takes place through sidecar proxies. If the traffic is entering it
+  moves to the Ingress gateway and if it’s leaving it can attend the Egress gateway in between all
+  this we will apply JWT enforcements.
 </p>
 <p>
   <img src={istiosecurityarch} align="center" alt="comparative spectrum" />
@@ -57,14 +64,13 @@ Istio is a massive project with a wide range of capabilities and deployment opti
 </ul>
 </p>
 
-<h2>
-    Example Authorization Policy
-</h2>
+<h2>Example Authorization Policy</h2>
 <p>
-In this example, we allow access to our service httpbin in namespace foo from any JWT (regardless of the principle) to use the GET method.
+  In this example, we allow access to our service httpbin in namespace foo from any JWT (regardless
+  of the principle) to use the GET method.
 </p>
 
-``` 
+```
 apiVersion: "security.istio.io/v1beta1"
 kind: "AuthorizationPolicy"
 metadata:
@@ -83,18 +89,22 @@ spec:
         methods: ["GET"]
 
 ```
+
 <h2>Access Flow with Auth Policies</h2>
 
 <p>
-    There is some logic behind how authorization is set given defined AuthorizationPolicies. Below is that the flow as taken directly from the Istio documentation.
-    </p>
+  There is some logic behind how authorization is set given defined AuthorizationPolicies. Below is
+  that the flow as taken directly from the Istio documentation.
+</p>
 <ul>
-    <li>If there are any CUSTOM policies that match the request, evaluate and deny the request if the evaluation result's is deny.</li>
-    <li>If there are any DENY policies that match with the request, deny the request.</li>
-    <li>If there are not any ALLOW policies for the workload, allow the request.</li>
-    <li>If any of the ALLOW policies gets match with the request, allow the request.</li>
-    <li>Deny the request.</li>
+  <li>
+    If there are any CUSTOM policies that match the request, evaluate and deny the request if the
+    evaluation result's is deny.
+  </li>
+  <li>If there are any DENY policies that match with the request, deny the request.</li>
+  <li>If there are not any ALLOW policies for the workload, allow the request.</li>
+  <li>If any of the ALLOW policies gets match with the request, allow the request.</li>
+  <li>Deny the request.</li>
 </ul>
-
 
 </ResourcesWrapper>

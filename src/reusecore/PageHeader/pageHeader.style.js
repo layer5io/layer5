@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const PageHeaderWrapper = styled.div`
         position: relative;
         overflow: hidden;

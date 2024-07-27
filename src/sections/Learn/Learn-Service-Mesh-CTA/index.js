@@ -7,10 +7,10 @@ import Button from "../../../reusecore/Button";
 const ServiceMeshImage = "./service-mesh.svg";
 
 const LearnServiceMeshCTAWrapper = styled.div`
-    background-color:${props => props.theme.grey141414ToGreyFAFAFA};
+    background-color:${(props) => props.theme.grey141414ToGreyFAFAFA};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
+      box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
     }
     padding: 5rem 0;
     margin-top: 2rem;
@@ -51,7 +51,11 @@ const LearnServiceMeshCTA = () => {
             <Button secondary title="Let's Learn" url="/learn/service-mesh-labs" />
           </Col>
           <Col className="image" sm={12} md={6} lg={6}>
-            <StaticImage src={ServiceMeshImage} alt="Learn how to configure Kubernetes" objectFit="contain" />
+            <StaticImage
+              src={ServiceMeshImage}
+              alt="Learn how to configure Kubernetes"
+              objectFit="contain"
+            />
           </Col>
         </Row>
       </Container>

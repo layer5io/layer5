@@ -1,74 +1,74 @@
 import styled from "styled-components";
 
 const ProgramsPageWrapper = styled.div`
-margin-bottom : 3.125rem;
+  margin-bottom: 3.125rem;
 
-.rowWrapper{
+  .rowWrapper {
     align-items: center;
     position: relative;
     top: 1.5rem;
     padding: 1rem;
-}
+  }
 
-.selectWrapper{
+  .selectWrapper {
     margin-left: auto;
     width: 400px;
-}
+  }
 
-.backBtn {
+  .backBtn {
     font-weight: 600;
     z-index: 2;
 
     @media screen and (max-width: 62rem) {
-        display: none;
+      display: none;
     }
-    a{
-        display: flex;
-        color: ${props => props.theme.primaryColor};
-        &:hover{
-            color: ${props => props.theme.linkColor};
-        }
-        
-        h4 {
-            line-height: 1.75rem;
-            margin-left: 0.5rem;
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        svg {
-            font-size: 1.75rem;
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-    }
-}
+    a {
+      display: flex;
+      color: ${(props) => props.theme.primaryColor};
+      &:hover {
+        color: ${(props) => props.theme.linkColor};
+      }
 
-.single-post-wrapper{
+      h4 {
+        line-height: 1.75rem;
+        margin-left: 0.5rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      svg {
+        font-size: 1.75rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+
+  .single-post-wrapper {
     padding: 50px 0 180px 0;
-}
-#programs {
+  }
+  #programs {
     padding: 50px 0 0 0;
-}
-.single-post-block{
-    color: ${props => props.theme.text };
+  }
+  .single-post-block {
+    color: ${(props) => props.theme.text};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    p{
-        line-height: 29px;
-        letter-spacing: 0.2px;
+    p {
+      line-height: 29px;
+      letter-spacing: 0.2px;
     }
-    p+p{
-        margin-top: 30px;  
+    p + p {
+      margin-top: 30px;
     }
-}
+  }
 
-@media only screen and (max-width: 912px) {
-     .single-post-block{
-         padding-bottom: 10px;
-     }
-}
+  @media only screen and (max-width: 912px) {
+    .single-post-block {
+      padding-bottom: 10px;
+    }
+  }
 `;
 
 export const selectStyles = {
-  menu: styles => ({ ...styles, zIndex: 999, }),
-  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
+  menu: (styles) => ({ ...styles, zIndex: 999 }),
+  control: (styles) => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
   option: (styles, { isFocused, isSelected }) => ({
     ...styles,
 
@@ -77,13 +77,13 @@ export const selectStyles = {
 
     ":before": {
       borderRadius: 10,
-      content: "\" \"",
+      content: '" "',
       display: "block",
       marginRight: 12,
       marginLeft: 5,
       height: 10,
       width: 10,
-      zIndex: 1000,
+      zIndex: 1000
     },
 
     backgroundColor: isSelected
@@ -98,25 +98,22 @@ export const selectStyles = {
 
     ":active": {
       ...styles[":active"],
-      backgroundColor: (isSelected
-        ? "rgba(11, 177, 158, 0.75)"
-        : "white"),
-    },
-  }
-  ),
-  input: styles => ({ ...styles, zIndex: 900 }),
-  placeholder: styles => ({ ...styles, zIndex: 900 }),
-  singleValue: (styles) => ({ ...styles, zIndex: 900 }),
+      backgroundColor: isSelected ? "rgba(11, 177, 158, 0.75)" : "white"
+    }
+  }),
+  input: (styles) => ({ ...styles, zIndex: 900 }),
+  placeholder: (styles) => ({ ...styles, zIndex: 900 }),
+  singleValue: (styles) => ({ ...styles, zIndex: 900 })
 };
 
-export const dropdownTheme = theme => ({
+export const dropdownTheme = (theme) => ({
   ...theme,
   borderRadius: 0,
   colors: {
     ...theme.colors,
     primary50: "#b0e8e2",
     primary25: "#b0e8e2",
-    primary: "#00b39f",
+    primary: "#00b39f"
   }
 });
 

@@ -14,7 +14,6 @@ Service routes and version subsets should be in place given the destination rule
 
 <br />
 
-
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -80,16 +79,11 @@ version: v2
 
 <br />
 
-<h2 class="chapter-sub-heading">
-  Start managing traffic routes
-</h2>
-
+<h2 class="chapter-sub-heading">Start managing traffic routes</h2>
 
 Some basics to get us started.
 
-<h3 class="chapter-sub-heading">
-   Send all requests to Productpage v1
-</h3>
+<h3 class="chapter-sub-heading">Send all requests to Productpage v1</h3>
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -104,16 +98,13 @@ spec:
         - destination:
             host: reviews
             subset: v1
-
-
 ```
+
 _Using Meshery, apply custom configuration._
 
 Refresh BookInfo productpage
 
-<h3 class="chapter-sub-heading">
-   Send all requests to Productpage v2
-</h3>
+<h3 class="chapter-sub-heading">Send all requests to Productpage v2</h3>
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -129,19 +120,16 @@ spec:
             host: reviews
             subset: v2
 ```
+
 _Using Meshery, apply custom configuration._
 
 Refresh BookInfo productpage.
 
-<h2 class="chapter-sub-heading">
-   Traffic routing based on user or user-agent type
-</h2>
+<h2 class="chapter-sub-heading">Traffic routing based on user or user-agent type</h2>
 
-<br/>
+<br />
 
-<h3 class="chapter-sub-heading">
-   Redirect requests from mobile devices
-</h3>
+<h3 class="chapter-sub-heading">Redirect requests from mobile devices</h3>
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -171,15 +159,11 @@ spec:
         - destination:
             host: product
             subset: random
-
-
 ```
 
 Set your browser to mimic a mobile device. Enable Developer tools, if need. Refresh BookInfo productpage.
 
-<h3 class="chapter-sub-heading">
-   Redirect requests based on HTTP header information
-</h3>
+<h3 class="chapter-sub-heading">Redirect requests based on HTTP header information</h3>
 
 Example of using user information from HTTP headers to redirect requests.
 
@@ -212,13 +196,9 @@ spec:
         - destination:
             host: reviews
             subset: v1
-
-
 ```
 
-<h2 class="chapter-sub-heading">
-   Traffic Mirroring with Istio
-</h2>
+<h2 class="chapter-sub-heading">Traffic Mirroring with Istio</h2>
 
 You will need to generate load on BookInfo's productpage service. See Lab 4 for instructions for running a performance test.
 
@@ -240,8 +220,8 @@ spec:
         host: reviews
         subset: v2
       mirror_percent: 100
-
 ```
+
 Incrementally increase the traffic split percentage to the higher version service #. Start at 20% traffic split
 
 ```yaml
@@ -262,8 +242,6 @@ spec:
             host: reviews
             subset: v3
           weight: 20
-
-
 ```
 
 Move to 50%. Observe in Meshery.
@@ -286,22 +264,17 @@ spec:
             host: reviews
             subset: v3
           weight: 50
-
 ```
-<h2 class="chapter-sub-heading">
-   Injecting Latency
-</h2>
+
+<h2 class="chapter-sub-heading">Injecting Latency</h2>
 
 Acknowledging the fallacy that the network is always reliable, you will intentionally cause a little chaos.
 
-<h3 class="chapter-sub-heading">
-   Exploring timeouts with Reviews service
-</h3>
+<h3 class="chapter-sub-heading">Exploring timeouts with Reviews service</h3>
 
 Note Istio Proxy's default timeout settings.
 
 ```yaml
-
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -328,15 +301,11 @@ spec:
         - destination:
             host: reviews
             subset: v2
-
 ```
 
-<h3 class="chapter-sub-heading">
-   Exploring timeouts with Ratings service
-</h3>
+<h3 class="chapter-sub-heading">Exploring timeouts with Ratings service</h3>
 
 ```yaml
-
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -363,18 +332,13 @@ spec:
         - destination:
             host: ratings
             subset: v1
-
 ```
 
-<h2 class="chapter-sub-heading">
-    Retries
-</h2>
+<h2 class="chapter-sub-heading">Retries</h2>
 
 Overcoming the latency issue.
 
-<h3 class="chapter-sub-heading">
-    Set 5 retry attempts and a 3 second timeout
-</h3>
+<h3 class="chapter-sub-heading">Set 5 retry attempts and a 3 second timeout</h3>
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -392,7 +356,6 @@ spec:
       retries:
         attempts: 5
         perTryTimeout: 3s
-
 ```
 
 <br />
@@ -409,29 +372,20 @@ If you haven't forked or cloned this repository, please do so now:
 git clone https://github.com/layer5io/advanced-istio-service-mesh-workshop
 
 ```
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route all traffic to version V1 
-  
-</h4>
+
+<h4 class="chapter-alt-heading"> Route all traffic to version V1</h4>
 
 ```sh
 kubectl apply -f route-v1-v2/v1.yaml
 ```
-<h4 class="chapter-alt-heading">
-  {" "}
-  Route all traffic to version V2 
-  
-</h4>
+
+<h4 class="chapter-alt-heading"> Route all traffic to version V2</h4>
 
 ```sh
 kubectl apply -f route-v1-v2/v2.yaml
 ```
 
-<h3 class="chapter-sub-heading">
- 
-  Traffic routing based on user or user-agent type
-</h3>
+<h3 class="chapter-sub-heading">Traffic routing based on user or user-agent type</h3>
 
 <h4 class="chapter-alt-heading"> Redirect requests from mobile devices</h4>
 

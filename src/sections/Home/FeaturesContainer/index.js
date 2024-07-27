@@ -32,7 +32,7 @@ const FeaturesContainer = () => {
       redirectLink: "/cloud-native-management/meshmap/collaborate/peer-reviews",
       desc: "Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
-      cursor: false,
+      cursor: false
     },
     {
       title: "Generate stunning diagrams",
@@ -41,7 +41,7 @@ const FeaturesContainer = () => {
       redirectLink: "/whiteboard",
       desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
       imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
-      cursor: true,
+      cursor: true
     },
     {
       title: "Multi-Cloud by Design",
@@ -50,9 +50,8 @@ const FeaturesContainer = () => {
       redirectLink: "",
       desc: (
         <span>
-          Incorporate AWS <i>and</i>{" "} GCP components into Meshery designs for
-          comprehensive <i>and</i>{" "} intuitive system mapping, documentation, <i>and</i>{" "}
-          orchestration.
+          Incorporate AWS <i>and</i> GCP components into Meshery designs for comprehensive{" "}
+          <i>and</i> intuitive system mapping, documentation, <i>and</i> orchestration.
         </span>
       ),
       imgLink: isDark ? AWSImage : AWSImageLight,
@@ -61,17 +60,15 @@ const FeaturesContainer = () => {
         {
           text: "Amazon Web Services",
           image: isDark ? AWSLogoDark : AWSLogoLight,
-          redirect:
-            "/cloud-native-management/generate-aws-architecture-diagram",
+          redirect: "/cloud-native-management/generate-aws-architecture-diagram"
         },
         {
           text: "Google Cloud Platform",
           image: GCPLogo,
-          redirect:
-            "/cloud-native-management/generate-gcp-architecture-diagram",
-        },
-      ],
-    },
+          redirect: "/cloud-native-management/generate-gcp-architecture-diagram"
+        }
+      ]
+    }
   ];
 
   useEffect(() => {
@@ -93,7 +90,7 @@ const FeaturesContainer = () => {
     };
 
     const options = {
-      threshold: 0.1,
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -151,8 +148,8 @@ const FeaturesContainer = () => {
           Deploy <i>faster </i>together with <span>Confidence</span>
         </h1>
         <p className="subtitle" ref={subtitleRef}>
-          Give your team full application visibility at every layer so the team
-          can ship, refactor and onboard faster.
+          Give your team full application visibility at every layer so the team can ship, refactor
+          and onboard faster.
         </p>
         {/* Tools to help you scale your cloud native infrastructure */}
         {/* Elevate teamwork with integrated communication channels, ensuring efficient and secure project success. */}

@@ -20,7 +20,7 @@ const BlogGrid = ({
   currentPage,
   searchedPosts,
   queryResults,
-  postsPerPage,
+  postsPerPage
 }) => {
   // Change page
   const paginate = (pageNumber) => {
@@ -28,17 +28,12 @@ const BlogGrid = ({
     window.scrollTo({
       top: 150,
       left: 100,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   return (
     <BlogPageWrapper>
-      <PageHeader
-        title="Blog"
-        path="Blog"
-        img={RssFeedIcon}
-        feedlink="/blog/feed.xml"
-      />
+      <PageHeader title="Blog" path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml" />
       <div className="blog-page-wrapper">
         <Container>
           <Row>
@@ -49,7 +44,13 @@ const BlogGrid = ({
                   setListView={setListView}
                   setGridView={setGridView}
                 />
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                  focusSearch={true}
+                />
               </div>
               <div className="blog-grid-wrapper">
                 <Row>
@@ -59,11 +60,12 @@ const BlogGrid = ({
                     </Col>
                   )}
 
-                  {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
-                    <Col key={id} xs={12} sm={6}>
-                      <Card frontmatter={frontmatter} fields={fields} />
-                    </Col>
-                  ))}
+                  {searchedPosts.length > 0 &&
+                    searchedPosts.map(({ id, frontmatter, fields }) => (
+                      <Col key={id} xs={12} sm={6}>
+                        <Card frontmatter={frontmatter} fields={fields} />
+                      </Col>
+                    ))}
                   <Col>
                     {searchedPosts.length > 0 && (
                       <Pagination

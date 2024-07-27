@@ -12,16 +12,35 @@ const ContactCard = () => {
   return (
     <ContactWrapper id="contact">
       <div className="parentcard">
-        <form name="contactform" method="post" action="https://hook.us1.make.com/vdgxvbnugbgiwrb8j9uiukrg1yto8rii">
+        <form
+          name="contactform"
+          method="post"
+          action="https://hook.us1.make.com/vdgxvbnugbgiwrb8j9uiukrg1yto8rii"
+        >
           <SectionTitle className="section-title" UniWidth="100%">
-            <h3><span>Unsubscribe from Layer5 Newsletters</span></h3>
+            <h3>
+              <span>Unsubscribe from Layer5 Newsletters</span>
+            </h3>
           </SectionTitle>
           <Row>
-            <Col md={3}><StaticImage src={service_mesh_img} alt="Service Mesh Icon" /></Col>
+            <Col md={3}>
+              <StaticImage src={service_mesh_img} alt="Service Mesh Icon" />
+            </Col>
             <Col md={9}>
               <Row>
-                <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
-                <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required /></Col>
+                <Col className="nopad" md={1} xs={1}>
+                  <MdEmail className="contact-icon" size={30}></MdEmail>
+                </Col>
+                <Col md={11} xs={11}>
+                  <input
+                    className="inputrow"
+                    type="email"
+                    placeholder="Email Address"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    required
+                  />
+                </Col>
               </Row>
               <Button title="Unsubscribe" id="mc-embedded-subscribe" />
             </Col>

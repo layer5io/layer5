@@ -9,7 +9,7 @@ import {
   FeatureBlockContainer,
   FeatureTitleInfoContainer,
   FeatureInfoContainer,
-  CountBlockContainer,
+  CountBlockContainer
 } from "./featuresColSection.style.js";
 
 function getServiceFeature(service, index) {
@@ -18,7 +18,22 @@ function getServiceFeature(service, index) {
       <tbody>
         <tr>
           <td className="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="none"
+              viewBox="0 0 40 40"
+            >
+              <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+              <path
+                stroke="#00B39F"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M28 14L17 25L12 20"
+              />
+            </svg>
           </td>
           <td className="service">{service.content}</td>
         </tr>
@@ -37,19 +52,20 @@ function getFeatureBlock(feature, index, performanceCount) {
         <p>{feature.description}</p>
       </FeatureTitleInfoContainer>
       <FeatureInfoContainer>
-        {feature.services.map((service, index) =>
-          getServiceFeature(service, index)
-        )}
+        {feature.services.map((service, index) => getServiceFeature(service, index))}
       </FeatureInfoContainer>
       <CountBlockContainer>
         <h1 className="count">
           <Counter
             duration={5}
             separator=","
-            end={
-              feature.count.value !== 0 ? feature.count.value : performanceCount
+            end={feature.count.value !== 0 ? feature.count.value : performanceCount}
+            suffix={
+              feature.count.description == "components" ||
+              feature.count.description == "cloud native integrations"
+                ? "+"
+                : " "
             }
-            suffix= {(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
@@ -79,13 +95,10 @@ const Features = () => {
         </h1>
       </TitleContainer>
       <FeaturesSectionContainer>
-        {data.map((feature, index) =>
-          getFeatureBlock(feature, index, performanceCount)
-        )}
+        {data.map((feature, index) => getFeatureBlock(feature, index, performanceCount))}
       </FeaturesSectionContainer>
     </FeaturesSectionWrapper>
   );
 };
-
 
 export default Features;

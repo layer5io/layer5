@@ -23,8 +23,8 @@ Before we can configure circuit breaking, please try to access the `product page
 <h2 class="chapter-sub-heading"> Configure circuit breaking</h2>
 
 <br />
-Now that we have the needed services in place, it is time to configure circuit breaking
-using a destination rule.
+Now that we have the needed services in place, it is time to configure circuit breaking using a
+destination rule.
 
 Using Meshery, navigate to the Istio management page:
 
@@ -75,10 +75,10 @@ spec:
 <h2 class="chapter-sub-heading"> Time to trip the circuit</h2>
 
 <br />
-In the circuit-breaker settings, we specified maxRequestsPerConnection: 1 and http1MaxPendingRequests:
-1. This should mean that if we exceed more than one request per connection and more
-than one pending request, we should see the istio-proxy sidecar open the circuit
-for further requests/connections.
+In the circuit-breaker settings, we specified maxRequestsPerConnection: 1 and
+http1MaxPendingRequests: 1. This should mean that if we exceed more than one request per connection
+and more than one pending request, we should see the istio-proxy sidecar open the circuit for
+further requests/connections.
 
 Let us now use Meshery to make several calls to `product page` app by changing the number of concurrent connections to 5 from within Meshery's Performance page.
 

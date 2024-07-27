@@ -6,8 +6,7 @@ import CommunityPage from "../../../sections/Community/Handbook/community";
 const Community = () => {
   return (
     <>
-      <CommunityPage  />
-
+      <CommunityPage />
     </>
   );
 };

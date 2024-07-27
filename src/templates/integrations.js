@@ -1,15 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-
 import SEO from "../components/seo";
 
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
 
-
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
-    mdx(fields:{slug:{eq: $slug}}) {
+    mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         title
@@ -54,7 +52,7 @@ export const query = graphql`
       }
     }
     allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+      filter: { relativeDirectory: { eq: $name }, sourceInstanceName: { eq: "integrations" } }
     ) {
       nodes {
         childImageSharp {
@@ -67,21 +65,20 @@ export const query = graphql`
   }
 `;
 const Integrations = ({ data }) => {
-
-
   return (
-
     <>
-
-
-      <IndividualIntegrations  data={data} />
-
+      <IndividualIntegrations data={data} />
     </>
-
   );
 };
 export default Integrations;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} description={data.mdx.frontmatter.subtitle}/>;
+  return (
+    <SEO
+      title={data.mdx.frontmatter.title}
+      image={data.mdx.frontmatter.integrationIcon.publicURL}
+      description={data.mdx.frontmatter.subtitle}
+    />
+  );
 };

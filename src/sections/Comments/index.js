@@ -19,20 +19,22 @@ let data = {
 let card_data = [
   {
     heading: "Dynamic collaboration",
-    subtitle: "Bring your ideas to life by adding visual annotations and comments directly onto your MeshMap canvas.",
+    subtitle:
+      "Bring your ideas to life by adding visual annotations and comments directly onto your MeshMap canvas.",
     image: use_case_1
   },
   {
     heading: "Seamless communication",
-    subtitle: "Keep the conversation flowing with instant updates and notifications, ensuring everyone stays in the loop.",
+    subtitle:
+      "Keep the conversation flowing with instant updates and notifications, ensuring everyone stays in the loop.",
     image: use_case_2
   },
   {
     heading: "Track discussion with comment history",
-    subtitle: "Revisit and relive your digital conversations effortlessly with Comment History. Explore the evolution of your discussions, track key moments, and gain valuable insights",
+    subtitle:
+      "Revisit and relive your digital conversations effortlessly with Comment History. Explore the evolution of your discussions, track key moments, and gain valuable insights",
     image: use_case_3
-  },
-
+  }
 ];
 
 const Comments = () => {
@@ -42,7 +44,10 @@ const Comments = () => {
       <Container>
         <div className={"feature-use-container"}>
           <div>
-            <h2 className={"use-heading"}> Use <span className={"highlighted-text"}>comments</span> to streamline design reviews </h2>
+            <h2 className={"use-heading"}>
+              {" "}
+              Use <span className={"highlighted-text"}>comments</span> to streamline design reviews{" "}
+            </h2>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
@@ -53,8 +58,6 @@ const Comments = () => {
       </Container>
       <Partners />
       <SeeYou />
-
-
     </CommentsWrapper>
   );
 };

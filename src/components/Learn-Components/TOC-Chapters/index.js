@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
@@ -7,8 +7,7 @@ import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
-
-const TOC = ({ TOCData,courseData, chapterData, location }) => {
+const TOC = ({ TOCData, courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
 
@@ -19,18 +18,16 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     return newData;
   };
 
-  const availableChapters = TOCData.filter(toc => toc.fields.section === getActiveServiceMesh(chapterData))
-    .map(toc => toc.fields.chapter);
+  const availableChapters = TOCData.filter(
+    (toc) => toc.fields.section === getActiveServiceMesh(chapterData)
+  ).map((toc) => toc.fields.chapter);
 
   useEffect(() => {
     const path = location.pathname.split("/");
-    if (path[2] === "learning-paths"){
+    if (path[2] === "learning-paths") {
       setPath(getCurrentPage(location));
-    } else
-      return;
-
+    } else return;
   }, [location.pathname]);
-
 
   return (
     <TOCWrapper>
@@ -58,11 +55,13 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
         </div>
       </div>
       <div className="toc-list">
-        <ul  className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
+        <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item" key={item}>
-                <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
+                <Link
+                  to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}
+                >
                   {reformatTOC(item)}
                 </Link>
               </p>

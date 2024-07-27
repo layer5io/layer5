@@ -10,9 +10,9 @@ import MeshMap from "../../../../assets/images/meshmap/meshmap-color-horizontal.
 import MeshMapTitle from "../../../../assets/images/meshmap/meshmap-color-text.webp";
 
 const MeshMapWrapper = styled.section`
-    .sub-project {
-        margin-top: -2rem;
-    }
+  .sub-project {
+    margin-top: -2rem;
+  }
 `;
 
 const MeshMapBrand = () => {
@@ -21,9 +21,7 @@ const MeshMapBrand = () => {
       <div className="post-content">
         <Row className="sub-project brand-section">
           <Col xs={12} sm={6}>
-            <h2 className="layerH3">
-                MeshMap
-            </h2>
+            <h2 className="layerH3">MeshMap</h2>
           </Col>
           <Col xs={12} sm={6} className="download-button">
             <a href="/brand/meshmap-brand-kit.zip">
@@ -34,46 +32,40 @@ const MeshMapBrand = () => {
           </Col>
           <Col>
             <p>
-            The MeshMap mark includes the MeshMap name & logo, and any word,
-            phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. Please don’t modify the marks or
-            use them in a confusing way, including suggesting sponsorship or
-            endorsement by Layer5, or in a way that confuses Layer5 with
-            another brand (including your own).
+              The MeshMap mark includes the MeshMap name & logo, and any word, phrase, image, or
+              other designation that identifies the source or origin of any Layer5 projects. Please
+              don’t modify the marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5, or in a way that confuses Layer5 with another
+              brand (including your own).
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
-            Logos
-            </h3>
+            <h3 className="layerH3 in">Logos</h3>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
               <Col xs={12} sm={4}>
-                <img src={MeshMap} alt="MeshMap Logo"/>
+                <img src={MeshMap} alt="MeshMap Logo" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapIcon} alt="MeshMapLight Icon"/>
+                <img src={MeshMapIcon} alt="MeshMapLight Icon" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapTitle} alt="MeshMapTitle Text"/>
+                <img src={MeshMapTitle} alt="MeshMapTitle Text" />
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
-                            Colors
-            </h3>
+            <h3 className="layerH3 in">Colors</h3>
           </Col>
           <Col>
             <p>
-                            The MeshMap color palette consists of the primary MeshMap color
-                            and additional shades. The MeshMap logo should be white or
-                            monochrome tonal when using a color background.
+              The MeshMap color palette consists of the primary MeshMap color and additional shades.
+              The MeshMap logo should be white or monochrome tonal when using a color background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

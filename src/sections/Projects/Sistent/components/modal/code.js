@@ -12,7 +12,7 @@ import {
   ModalFooter,
   SistentThemeProvider,
   TextField,
-  Typography,
+  Typography
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { useLocation } from "@reach/router";
@@ -77,7 +77,7 @@ const codes = [
                 Save
             </ModalButtonPrimary>
         </ModalFooter>
-    </Modal>`,
+    </Modal>`
 ];
 
 export const ModalCode = () => {
@@ -109,17 +109,12 @@ export const ModalCode = () => {
           <h2>Modal</h2>
         </a>
         <p>
-          A modal is a dialog box or popup, displayed over the current page.
-          Modals are used to grab the user's attention and provide important
-          information.
+          A modal is a dialog box or popup, displayed over the current page. Modals are used to grab
+          the user's attention and provide important information.
         </p>
         <div className="filterBtns">
           <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/modal"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/projects/sistent/components/modal" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/components/modal")}
             title="Overview"
           />
@@ -137,9 +132,7 @@ export const ModalCode = () => {
           /> */}
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/modal/code"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/components/modal/code" ? "active" : ""
             }
             onClick={() => navigate("/projects/sistent/identity/color/code")}
             title="Code"
@@ -148,8 +141,8 @@ export const ModalCode = () => {
         <div className="main-content">
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <p>
-              Buttons communicate actions to users and they can be placed at
-              several places throughout the user interface.
+              Buttons communicate actions to users and they can be placed at several places
+              throughout the user interface.
             </p>
             <a id="Basic Button">
               <h2>Confirmation Modal</h2>
@@ -162,18 +155,13 @@ export const ModalCode = () => {
                 <Modal open={open} closeModal={handleClose} title="Modal Title">
                   <ModalBody>
                     <div>
-                      This action is irreversible! Are you sure you want to
-                      delete this team?
+                      This action is irreversible! Are you sure you want to delete this team?
                     </div>
                   </ModalBody>
                   <ModalFooter variant="filled">
                     <ActionBox>
-                      <ModalButtonSecondary onClick={handleClose}>
-                        Cancel
-                      </ModalButtonSecondary>
-                      <ModalButtonDanger onClick={handleClose}>
-                        Delete
-                      </ModalButtonDanger>
+                      <ModalButtonSecondary onClick={handleClose}>Cancel</ModalButtonSecondary>
+                      <ModalButtonDanger onClick={handleClose}>Delete</ModalButtonDanger>
                     </ActionBox>
                   </ModalFooter>
                 </Modal>
@@ -182,39 +170,31 @@ export const ModalCode = () => {
             </div>
             <h3>Action Modal</h3>
             <p>
-              Action modals help users carry out specific tasks. These would
-              naturally involve more steps than just confirming or rejecting an
-              action. They may include forms, links, and feature specific
-              elements that ensure that users complete crucial tasks along their
-              given flow. They will usually have an icon at the top left corner
-              of the modal to signify what the purpose of this modal is in
-              relation to the given flow as well as help users familiarize with
-              said custom icons for easy identification across our solutions
-              however, this might not be applicable in all cases.
+              Action modals help users carry out specific tasks. These would naturally involve more
+              steps than just confirming or rejecting an action. They may include forms, links, and
+              feature specific elements that ensure that users complete crucial tasks along their
+              given flow. They will usually have an icon at the top left corner of the modal to
+              signify what the purpose of this modal is in relation to the given flow as well as
+              help users familiarize with said custom icons for easy identification across our
+              solutions however, this might not be applicable in all cases.
             </p>
             <div className="showcase">
               <div className="items">
-                <Button variant="contained" onClick={handleActionOpen}>Open Action Modal</Button>
-                <Modal
-                  open={actionOpen}
-                  closeModal={handleActionClose}
-                  title="Action Modal Title"
-                >
+                <Button variant="contained" onClick={handleActionOpen}>
+                  Open Action Modal
+                </Button>
+                <Modal open={actionOpen} closeModal={handleActionClose} title="Action Modal Title">
                   <ModalBody>
                     <CustomInput text="Name" />
                     <CustomInput text="Email" />
-                    <CustomInput
-                      text="Assign Organizations"
-                    />
+                    <CustomInput text="Assign Organizations" />
                   </ModalBody>
                   <ModalFooter variant="filled">
                     <ActionBox>
                       <ModalButtonSecondary onClick={handleActionClose}>
                         Cancel
                       </ModalButtonSecondary>
-                      <ModalButtonPrimary onClick={handleActionClose}>
-                        Save
-                      </ModalButtonPrimary>
+                      <ModalButtonPrimary onClick={handleActionClose}>Save</ModalButtonPrimary>
                     </ActionBox>
                   </ModalFooter>
                 </Modal>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const VisualizerFeaturesWrapper = styled.section`
   margin-top: 1rem;
 
-  .visualizer-trigger-container{
+  .visualizer-trigger-container {
     padding: 0;
   }
 
@@ -50,9 +50,9 @@ const VisualizerFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -75,7 +75,7 @@ const VisualizerFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-    
+
       @media (max-width: 767px) {
         font-size: 1.75rem;
       }
@@ -93,8 +93,8 @@ const VisualizerFeaturesWrapper = styled.section`
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -162,7 +162,7 @@ const VisualizerFeaturesWrapper = styled.section`
     @media (max-width: 912px) {
       top: 5rem;
     }
-    &:hover{
+    &:hover {
       background: #00d3a9;
     }
   }
@@ -173,11 +173,11 @@ const VisualizerFeaturesWrapper = styled.section`
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: ease-in-out;
   }
-  .hideInMobile{
+  .hideInMobile {
     @media (max-width: 799px) {
-      display:none;
+      display: none;
     }
-}
+  }
 
   .arrow {
     transition: all 0.5s;

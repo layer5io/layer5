@@ -15,44 +15,33 @@ export const TextInputCode = () => {
           <h2>Text Input</h2>
         </a>
         <p>
-          Text inputs are important elements that help users interact with an
-          experience by providing text commands that will in turn return
-          expected results. These commands can range from providing a free range
-          of personal information to entering a limited number of characters for
-          a use case.
+          Text inputs are important elements that help users interact with an experience by
+          providing text commands that will in turn return expected results. These commands can
+          range from providing a free range of personal information to entering a limited number of
+          characters for a use case.
         </p>
         <div className="filterBtns">
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/text-input"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/components/text-input" ? "active" : ""
             }
             onClick={() => navigate("/projects/sistent/components/text-input")}
             title="Overview"
           />
           <TabButton
             className={
-              location.pathname ===
-              "/projects/sistent/components/text-input/guidance"
+              location.pathname === "/projects/sistent/components/text-input/guidance"
                 ? "active"
                 : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/components/text-input/guidance")
-            }
+            onClick={() => navigate("/projects/sistent/components/text-input/guidance")}
             title="Guidance"
           />
           <TabButton
             className={
-              location.pathname ===
-              "/projects/sistent/components/text-input/code"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/components/text-input/code" ? "active" : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/components/text-input/code")
-            }
+            onClick={() => navigate("/projects/sistent/components/text-input/code")}
             title="Code"
           />
         </div>

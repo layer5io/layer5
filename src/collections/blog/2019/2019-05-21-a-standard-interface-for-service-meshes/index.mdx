@@ -7,13 +7,13 @@ thumbnail: ./smi-logo.webp
 darkthumbnail: ./smi-logo.webp
 category: Announcements
 tags:
- - "Service Mesh Interface"
+  - "Service Mesh Interface"
 type: Blog
 product: Service Mesh Landscape
 resource: true
 published: true
 redirect_from:
- - /blog/a-standard-interface-for-service-meshes/
+  - /blog/a-standard-interface-for-service-meshes/
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
@@ -21,7 +21,7 @@ import SmiLogo from "./smi-logo.webp";
 
 <BlogWrapper>
 
-<img className="image-left" src={SmiLogo} alt="SMI Logo"/>
+<img className="image-left" src={SmiLogo} alt="SMI Logo" />
 
 Most began their cloud native journey with their first step being use of containers, and taking a second step, moved into container orchestration as their workloads grew. Now, waves and waves of organizations are considering service meshes as their third significant step in their cloud native journey. As they invest into service meshes as their next layer of key infrastructure, users will continue to look for the same assurances sought from other commonly accepted (standard) interfaces for container runtimes (e.g. CRI), container storage (e.g. CSI), container networking (e.g. CNI) and they will look for a commonly accepted service mesh interface.
 
@@ -34,6 +34,5 @@ Meshery and SMI are aligned on common goals of getting users started quickly, un
 As a multi-mesh manager, Meshery, understands that each service mesh has it own strengths. SMI intends to allow for differentiation by service mesh providers, at the same time providing interoperability between service meshes and their surrounding tooling. As a management plane, Meshery enhances networking intelligence in a multi-mesh way, encouraging users to expect more from their infrastructure. Meshery exposes each service mesh’s differentiated capabilities.
 
 SMI’s aim for consistent APIs facilitates Meshery’s same goals, allowing for users and tools to flourish. As SMI unveils today, so does Meshery’s compatibility. Try out [Meshery and SMI](https://layer5.io/meshery) today!
-
 
 </BlogWrapper>

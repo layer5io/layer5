@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const dot = () => ({
   alignItems: "center",
-  display: "flex",
+  display: "flex"
 });
 
 const img = (icon) => ({
@@ -15,20 +15,20 @@ const img = (icon) => ({
   backgroundSize: 20,
   backgroundPosition: "8px center",
   paddingLeft: 8,
-  width: "auto",
+  width: "auto"
 });
 
 export const selectStyles = {
   menu: (styles) => ({
     ...styles,
     zIndex: 999,
-    minWidth: "200px",
+    minWidth: "200px"
   }),
   control: (styles) => ({
     ...styles,
     backgroundColor: "white",
     zIndex: 900,
-    minWidth: "200px",
+    minWidth: "200px"
   }),
   option: (styles, { data, isFocused, isSelected }) => ({
     ...styles,
@@ -46,35 +46,31 @@ export const selectStyles = {
 
     ":before": {
       borderRadius: 10,
-      content: "\" \"",
+      content: '" "',
       display: "block",
 
       marginRight: 12,
       marginLeft:
-        data.value === "all" ||
-        data.value === "active" ||
-        data.value === "inactive"
-          ? 1.5
-          : 5,
+        data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
 
       height: 10,
       width: 10,
-      zIndex: 1000,
+      zIndex: 1000
     },
 
     backgroundColor: isSelected
       ? data.value === "inactive"
         ? "rgba(171, 171, 171, 1)"
         : data.value === ""
-        ? "white"
-        : "rgba(11, 177, 158, 1)"
+          ? "white"
+          : "rgba(11, 177, 158, 1)"
       : isFocused
-      ? data.value === "inactive"
-        ? "rgba(171, 171, 171, 0.30)"
-        : data.value === ""
-        ? "white"
-        : "rgba(11, 177, 158, 0.30)"
-      : "white",
+        ? data.value === "inactive"
+          ? "rgba(171, 171, 171, 0.30)"
+          : data.value === ""
+            ? "white"
+            : "rgba(11, 177, 158, 0.30)"
+        : "white",
 
     color: isSelected ? "white" : "grey",
 
@@ -86,8 +82,8 @@ export const selectStyles = {
         ? data.value === "inactive"
           ? "rgba(171, 171, 171, 0.75)"
           : "rgba(11, 177, 158, 0.75)"
-        : "white",
-    },
+        : "white"
+    }
   }),
   input: (styles) => ({
     ...styles,
@@ -95,7 +91,7 @@ export const selectStyles = {
     zIndex: 900,
     // width: "auto",
     // minWidth: "200px",
-    width: "100px",
+    width: "100px"
   }),
   placeholder: (styles) => ({ ...styles, ...dot(), zIndex: 900 }),
   multiValueRemove: (styles) => ({
@@ -104,8 +100,8 @@ export const selectStyles = {
     color: "#00D3A8",
     ":hover": {
       backgroundColor: "transparent",
-      color: "#00D3A8",
-    },
+      color: "#00D3A8"
+    }
   }),
   multiValueLabel: (styles) => ({ ...styles, marginLeft: 20 }),
   multiValue: (styles, { data }) =>
@@ -133,7 +129,7 @@ export const selectStyles = {
           }
           : data.value === ""
             ? { display: "none", marginLeft: "5px", }
-            : { ...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px", },
+            : { ...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px", }
 };
 
 export const dropdownTheme = (theme) => ({
@@ -143,9 +139,9 @@ export const dropdownTheme = (theme) => ({
     ...theme.colors,
     primary50: "#b0e8e2",
     primary25: "#b0e8e2",
-    primary: "#00b39f",
+    primary: "#00b39f"
   },
-  width: "500px",
+  width: "500px"
 });
 
 export const MembersGridWrapper = styled.div`

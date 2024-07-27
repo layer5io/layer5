@@ -23,17 +23,14 @@ import FaqSectionWrapper from "./faqSection.style";
 import ContactFormModal from "../../../components/Contact-Modal";
 
 const Faq = (props) => {
-
   let faq_keys = [];
   let faqs_data = [];
-  if (props.category === undefined)
-    faqs_data = data.faqs;
+  if (props.category === undefined) faqs_data = data.faqs;
   else {
-    props.category.forEach(item => {
-      if (item === "all")
-        faqs_data = data.faqs;
+    props.category.forEach((item) => {
+      if (item === "all") faqs_data = data.faqs;
       else {
-        data.faqs.forEach(faq => {
+        data.faqs.forEach((faq) => {
           if (faq.category.toString() === item) {
             faqs_data.push(faq);
           }
@@ -43,7 +40,7 @@ const Faq = (props) => {
   }
 
   let faqs = faqs_data.reduce((faq, ind) => {
-    faq[ind.category] = [...faq[ind.category] || [], ind];
+    faq[ind.category] = [...(faq[ind.category] || []), ind];
     return faq;
   }, {});
 
@@ -52,11 +49,7 @@ const Faq = (props) => {
   return (
     <FaqSectionWrapper id="faq">
       <Container fullWidthSM>
-        <SectionTitle
-          className="section-title"
-          leftAlign={true}
-          UniWidth="100%"
-        >
+        <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
           <h1>
             <span>Frequently Asked Questions</span>
           </h1>
@@ -86,17 +79,38 @@ const Faq = (props) => {
                   </AccordionTitle>
                   <AccordionBody>
                     <div className="inner">
-                      {
-                        faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
-                      }
-                      {faq.link &&
-                       <div className="faqbutton">
-                         {faq.link.startsWith("/")
-                           ? <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />
-                           :  <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={true} />
-                         }
-                       </div>
-                      }
+                      {faq.answer.length >= 1 ? (
+                        <ul>
+                          {faq.answer.map((ans, id) => (
+                            <li key={id}>
+                              <p key={id}>{ans}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <br />
+                      )}
+                      {faq.link && (
+                        <div className="faqbutton">
+                          {faq.link.startsWith("/") ? (
+                            <Button
+                              primary
+                              className="faqbutton"
+                              url={faq.link}
+                              title={faq.linktext}
+                              external={false}
+                            />
+                          ) : (
+                            <Button
+                              primary
+                              className="faqbutton"
+                              url={faq.link}
+                              title={faq.linktext}
+                              external={true}
+                            />
+                          )}
+                        </div>
+                      )}
                     </div>
                   </AccordionBody>
                 </AccordionItem>

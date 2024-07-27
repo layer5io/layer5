@@ -110,14 +110,14 @@ export const EventWrapper = styled.div`
     width: 40%;
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};
+    box-shadow: 0px 5px 10px 1px ${(props) => props.theme.green00D3A9ToGreen00B39FFive};
   }
 
   .image-right {
     width: 40%;
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};
+    box-shadow: 0px 5px 10px 1px ${(props) => props.theme.green00D3A9ToGreen00B39FFive};
   }
   .image-right-no-shadow {
     width: 40%;
@@ -167,7 +167,7 @@ export const EventWrapper = styled.div`
     color: #3c494f;
     text-align: center;
   }
-  
+
   img.right {
     width: 25%;
     display: inline;
@@ -209,35 +209,35 @@ Example:
   figure.imgWithCaption {
     margin-bottom: 1rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
-    img{
+    img {
       width: 100%;
     }
   }
-  .fig-right{
+  .fig-right {
     float: right;
     width: 40%;
     margin-left: 1rem;
   }
-  .fig-left{
+  .fig-left {
     float: left;
     width: 40%;
     margin-right: 1rem;
   }
   @media screen and (max-width: 699px) {
-    .fig-right, .fig-left{
+    .fig-right,
+    .fig-left {
       width: 100%;
       display: block;
       margin: 1rem auto;
     }
   }
-  
+
   figcaption p {
     text-align: center;
     font-size: 0.8rem;
     margin: -0.1rem 0 0.12rem;
-    color: ${props => props.theme.menuColor};
+    color: ${(props) => props.theme.menuColor};
   }
-
 
   /* ==============
 styles for meshmate-of-the-year-2020 
@@ -267,7 +267,7 @@ styles for meshmate-of-the-year-2020
 
   .slides {
     width: 45%;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
+    box-shadow: 0px 5px 10px 1px ${(props) => props.theme.green00D3A9ToGreen00B39FFive};
     margin-bottom: 1rem;
   }
   .slides-right {
@@ -276,7 +276,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     margin: 1rem 0 1rem 2rem;
     float: right;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
+    box-shadow: 0px 5px 10px 1px ${(props) => props.theme.green00D3A9ToGreen00B39FFive};
   }
   .slides-left {
     width: 45%;
@@ -284,82 +284,83 @@ styles for meshmate-of-the-year-2020
     position: relative;
     float: left;
     margin: 1rem 2rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px ${props => props.theme.green00D3A9ToGreen00B39FFive};     
+    box-shadow: 0px 5px 10px 1px ${(props) => props.theme.green00D3A9ToGreen00B39FFive};
   }
   @media screen and (max-width: 768px) {
-    .slides-right, .slides-left, .slides{
+    .slides-right,
+    .slides-left,
+    .slides {
       width: 100%;
       display: block;
       margin: 1rem auto;
     }
   }
-  .slides-left:hover{
-    cursor:pointer;
+  .slides-left:hover {
+    cursor: pointer;
   }
-  .slides-right:hover{
-    cursor:pointer;
+  .slides-right:hover {
+    cursor: pointer;
   }
   div.note {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: ${props => props.theme.secondaryColor};
+    color: ${(props) => props.theme.secondaryColor};
     font-style: italic;
     font-size: 1.3rem;
     font-weight: 600;
     text-align: right;
-    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    border-right: 4px solid ${(props) => props.theme.secondaryColor};
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-.status {
-  text-align: center;
-  padding-left: 2rem;
-}
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; 
-  iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    display: block;
-    margin-right: auto;
-    margin-left:auto;
   }
-}
-code {
-      padding: 5px;
-      font-style: normal;
-      font-weight: normal;
-      white-space: pre-wrap;
-      border-radius: 3px;
-      background-color: ${props => props.theme.tertiaryColor};
-      color: ${props => props.theme.textRevert};
-      &.short {
-        line-height: 16px;
-      }
-      &.navy {
-        color: var(--vagrant-l1);
-      }
-      &.gray {
-        color: var(--gray-5);
-      }
-      &.white {
-        color: var(--white);
-      }
-      @media (min-width: 768px){
-        font-size: .85rem;
-        line-height: .85rem;
-      } 
+  .status {
+    text-align: center;
+    padding-left: 2rem;
   }
-    
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  code {
+    padding: 5px;
+    font-style: normal;
+    font-weight: normal;
+    white-space: pre-wrap;
+    border-radius: 3px;
+    background-color: ${(props) => props.theme.tertiaryColor};
+    color: ${(props) => props.theme.textRevert};
+    &.short {
+      line-height: 16px;
+    }
+    &.navy {
+      color: var(--vagrant-l1);
+    }
+    &.gray {
+      color: var(--gray-5);
+    }
+    &.white {
+      color: var(--white);
+    }
+    @media (min-width: 768px) {
+      font-size: 0.85rem;
+      line-height: 0.85rem;
+    }
+  }
 `;

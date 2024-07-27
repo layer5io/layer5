@@ -29,8 +29,8 @@ const AboutClassic = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor
-                incididunt. ut labore et dolore magna aliqua enim
+                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor incididunt. ut labore
+                et dolore magna aliqua enim
               </p>
             </div>
           </Col>
@@ -44,8 +44,8 @@ const AboutClassic = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor
-                incididunt. ut labore et dolore magna aliqua enim
+                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor incididunt. ut labore
+                et dolore magna aliqua enim
               </p>
             </div>
           </Col>
@@ -59,8 +59,8 @@ const AboutClassic = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor
-                incididunt. ut labore et dolore magna aliqua enim
+                Lorem ipsum dolor sit amet consectetur sed do eiusmod tempor incididunt. ut labore
+                et dolore magna aliqua enim
               </p>
             </div>
           </Col>

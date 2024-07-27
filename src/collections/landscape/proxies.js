@@ -18,7 +18,8 @@ export const proxies = [
     name: "HAProxy",
     link: "https://www.haproxy.org",
     desc: "HAProxy is the world's fastest and most widely used software load balancer, powering superior application delivery at any scale and in any environment."
-  }, {
+  },
+  {
     name: "nginMesh",
     link: "https://github.com/nginxinc/nginmesh",
     desc: "nginMesh - launched in September 2017, the nginMesh project deploys Nginx as a sidecar proxy in Istio."
@@ -26,7 +27,7 @@ export const proxies = [
   {
     name: "NGINX Plus",
     link: "https://www.nginx.com/products/nginx/",
-    desc: "NGINX Plus the enterprise reverse proxy within NGINX Service Mesh, managed as a sidecar for E/W and as an ingress controller for N/S traffic management and security.",
+    desc: "NGINX Plus the enterprise reverse proxy within NGINX Service Mesh, managed as a sidecar for E/W and as an ingress controller for N/S traffic management and security."
   },
   {
     name: "MOSN",
@@ -47,7 +48,8 @@ export const proxies = [
     name: "Vulcand",
     link: "https://github.com/vulcand/vulcand",
     desc: "Programmatic load balancer and service mesh backed by etcd"
-  }, {
+  },
+  {
     name: "Citrix ADC CPX",
     link: "https://www.citrix.com/en-in/networking/microservices.html",
     desc: "Citrix ADC CPX provides a DevOps-friendly, cloud-native and full of L4-7 capabilities ADC in a Docker container"

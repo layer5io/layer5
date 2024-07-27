@@ -26,9 +26,9 @@ const GetApp = () => {
             <div className="getapp-block">
               <h3>Get the app now!</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua enim
-                ad minim veniam quis nostrud exercitation.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
+                exercitation.
               </p>
               <div className="btn-block">
                 <Link to="#" className="getapp-btn apl-btn">

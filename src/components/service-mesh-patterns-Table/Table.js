@@ -9,48 +9,57 @@ import upicon from "./expand_more.svg";
 import downicon from "./expand_less.svg";
 
 const Table = () => {
-
   const columns = React.useMemo(() => Columns, []);
-  const data = React.useMemo(() => Data,[]);
+  const data = React.useMemo(() => Data, []);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  },
-  useFilters,
-  useSortBy
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
+    {
+      columns,
+      data
+    },
+    useFilters,
+    useSortBy
   );
   return (
     <TableWrapper>
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
-                <th key={index} {...column.getHeaderProps()}
-                  className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
-                  <div  >
+                <th
+                  key={index}
+                  {...column.getHeaderProps()}
+                  className={
+                    column.Header == "Service Mesh Pattern" || column.Header == "Category"
+                      ? "table-header"
+                      : ""
+                  }
+                >
+                  <div>
                     {column.render("Header")}
-                    {(column.Header == "Service Mesh Pattern") ?
+                    {column.Header == "Service Mesh Pattern" ? (
                       <span {...column.getSortByToggleProps()}>
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
-                            : <img className="service-mesh-icon" src={upicon} alt="up icon" />
-                          : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
+                        {column.isSorted ? (
+                          column.isSortedDesc ? (
+                            <img className="service-mesh-icon" src={downicon} alt="down icon" />
+                          ) : (
+                            <img className="service-mesh-icon" src={upicon} alt="up icon" />
+                          )
+                        ) : (
+                          <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />
+                        )}
                       </span>
-                      : <>
-                      </>}
-                    {(column.Header == "Category") ?
-                      <div id={"service-mesh-patterns-table-filter"}>{column.canFilter ? column.render("Filter") : null}</div>
-                      : <> </>
-                    }
+                    ) : (
+                      <></>
+                    )}
+                    {column.Header == "Category" ? (
+                      <div id={"service-mesh-patterns-table-filter"}>
+                        {column.canFilter ? column.render("Filter") : null}
+                      </div>
+                    ) : (
+                      <> </>
+                    )}
                   </div>
                 </th>
               ))}
@@ -58,12 +67,12 @@ const Table = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          { rows.map((row, i) => {
+          {rows.map((row, i) => {
             prepareRow(row);
             return (
               <tr key={i} {...row.getRowProps()}>
                 {row.cells.map((cell, index) => {
-                  if (row["original"]["subheading"] === "bold"){
+                  if (row["original"]["subheading"] === "bold") {
                     return (
                       <th key={index} {...cell.getCellProps()} className="bold area-header">
                         {cell.render("Cell")}

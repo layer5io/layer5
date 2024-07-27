@@ -7,7 +7,7 @@ import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDr
 
 const preReqSteps = [
   { name: "Set up", link: "/cloud-native-management/meshery" },
-  { name: "Run Meshery",link: "/cloud-native-management/meshery/getting-started" },
+  { name: "Run Meshery", link: "/cloud-native-management/meshery/getting-started" },
   { name: "Manage Meshery", link: "/cloud-native-management/meshery/operating-cloud-native-infra" }
 ];
 
@@ -48,36 +48,27 @@ const TOC = ({ coursesData }) => {
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <Link to="#pre-requisites">
-            <h5 className="toc-sub-heading">
-              Pre-requisites
-            </h5>
+            <h5 className="toc-sub-heading">Pre-requisites</h5>
           </Link>
-          {preReqSteps.map((item,index) =>
+          {preReqSteps.map((item, index) => (
             <li key={index}>
               <p className="toc-item">
-                <a href={`#${item.name}`}>
-                  {item.name}
-                </a>
-              </p>
-            </li>
-          )}
-
-          <Link to="#courses-list">
-            <h5 className="toc-sub-heading">
-              Courses
-            </h5>
-          </Link>
-
-          {coursesData.map((item,index) => (
-            <li key={index}>
-              <p className="toc-item">
-                <a href={`#${item.frontmatter.courseTitle}`}>
-                  {item.frontmatter.courseTitle}
-                </a>
+                <a href={`#${item.name}`}>{item.name}</a>
               </p>
             </li>
           ))}
 
+          <Link to="#courses-list">
+            <h5 className="toc-sub-heading">Courses</h5>
+          </Link>
+
+          {coursesData.map((item, index) => (
+            <li key={index}>
+              <p className="toc-item">
+                <a href={`#${item.frontmatter.courseTitle}`}>{item.frontmatter.courseTitle}</a>
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
     </TOCWrapper>

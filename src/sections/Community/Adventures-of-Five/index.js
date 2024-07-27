@@ -31,21 +31,21 @@ const AdventuresHome = () => {
           description="Sinking in the quicksands of planet Prometheus as he tries to write PromQL to retrieve a golden signal.
           ...coming soon..."
           image={vol2Img}
-        //   to="/community/handbook/faq"
+          //   to="/community/handbook/faq"
         />
 
         <AdventuresVol
           title="Planet Jaeger"
           description="Stumbling over a lunar rock on the third moon of planet Jaeger as his distributed traces stop propagating through incorrectly configured proxies.
           ...coming soon..."
-        //   to="/community/handbook/faq"
+          //   to="/community/handbook/faq"
         />
 
         <AdventuresVol
           title="Planet Meshery"
           description="Our hero parchutes into planet Meshery.
           ...coming soon..."
-        //   to="/community/handbook/faq"
+          //   to="/community/handbook/faq"
         />
       </div>
       <SubscribeSection msg="Follow Five's adventures" />

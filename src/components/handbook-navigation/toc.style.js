@@ -1,30 +1,28 @@
 import styled from "styled-components";
 
 const TOCWrapper = styled.div`
-
   position: sticky;
   top: 10rem;
   left: 0rem;
   margin-left: 3rem;
   margin-top: 3rem;
-  margin-bottom : 3rem;
-  width:15rem;
+  margin-bottom: 3rem;
+  width: 15rem;
   padding-bottom: 2rem;
 
-   @media screen and (min-width: 768px) and (max-height: 1145px) {
-        height : calc(100vh - 10rem);
-        overflow-y : auto 
-
+  @media screen and (min-width: 768px) and (max-height: 1145px) {
+    height: calc(100vh - 10rem);
+    overflow-y: auto;
   }
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
-        margin-left:0.2rem;
+    margin-left: 0.2rem;
   }
 
   .go-back {
     margin-left: 1rem;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     a {
       display: inline-flex;
       svg {
@@ -57,76 +55,76 @@ const TOCWrapper = styled.div`
     font-weight: 300;
     font-size: 1.15rem;
   }
-  
-  .toc-sub-inline{
+
+  .toc-sub-inline {
     display: inline-block;
   }
 
-  .active{
-    font-weight:500;
+  .active {
+    font-weight: 500;
     color: ${(props) => props.theme.secondaryColor};
   }
 
-  ul{
-    display:flex;
-    flex-direction:column;
+  ul {
+    display: flex;
+    flex-direction: column;
     white-space: nowrap;
   }
 
-  .toc-ul{
+  .toc-ul {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
     list-style: none;
   }
 
-  .toc-toggle-btn{
-    display:none;
+  .toc-toggle-btn {
+    display: none;
   }
- 
-   .toc-ul-open{
+
+  .toc-ul-open {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
     list-style: none;
-    height:auto !important;
-    opacity:1 !important;
+    height: auto !important;
+    opacity: 1 !important;
     margin-bottom: 2rem;
-    transition:all .4s !important;
-   }
+    transition: all 0.4s !important;
+  }
 
-  .toc-menu-icon{
-    width: 1.5rem; 
-    height: 1.5rem; 
+  .toc-menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
-    fill: ${props => props.theme.menuColor};
+    fill: ${(props) => props.theme.menuColor};
   }
 
   .toc-sub-heading:hover {
     color: ${(props) => props.theme.secondaryColor};
   }
 
-  @media only screen and (max-width: 750px){
-   position: initial;
-   margin-right: 3rem;
-   width: auto;
-   .toc-toggle-btn{
-    display:inline-block;
-   }
-   .go-back{
-      margin-left:0;
-   }
+  @media only screen and (max-width: 750px) {
+    position: initial;
+    margin-right: 3rem;
+    width: auto;
+    .toc-toggle-btn {
+      display: inline-block;
+    }
+    .go-back {
+      margin-left: 0;
+    }
 
-   .toc-ul{
-    opacity:0;
-    height:0;
-    transition:none;
-    visibility:hidden;
-   }
+    .toc-ul {
+      opacity: 0;
+      height: 0;
+      transition: none;
+      visibility: hidden;
+    }
 
-   .toc-ul-open{
-    visibility:visible;
-   }
+    .toc-ul-open {
+      visibility: visible;
+    }
   }
 `;
 

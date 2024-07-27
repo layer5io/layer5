@@ -4,7 +4,7 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import { Link } from "gatsby";
 
-import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTextOutline";
+import { IoDocumentTextOutline } from "@react-icons/all-files/io5/IoDocumentTextOutline";
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
@@ -53,7 +53,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
-    if (bookmarkPath){
+    if (bookmarkPath) {
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
     }
@@ -80,8 +80,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               <IoVideocam /> <span>{course.frontmatter.videos} videos</span>
             </div> */}
             <div className="info">
-              <IoDocumentTextOutline />{" "}
-              <span>{course.frontmatter.toc.length} Chapters</span>
+              <IoDocumentTextOutline /> <span>{course.frontmatter.toc.length} Chapters</span>
             </div>
           </div>
           <Button
@@ -89,19 +88,11 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             url={`istio/${course.frontmatter.toc[0]}`}
           />
           {hasBookmark && (
-            <Button
-              className="start-again-button"
-              primary
-              title="Resume"
-              url={bookmarkUrl}
-            />
+            <Button className="start-again-button" primary title="Resume" url={bookmarkUrl} />
           )}
         </div>
         <div className="course-hero-head-image">
-          <Image
-            {...course.frontmatter.cardImage}
-            alt={course.frontmatter.title}
-          />
+          <Image {...course.frontmatter.cardImage} alt={course.frontmatter.title} />
         </div>
       </div>
       <div className="content-section-container" id="toc">
@@ -114,19 +105,14 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
               <Link key={index} to={`istio/${item}`} className="chapter-link">
-                <ChapterCard
-                  chapterNum={index + 1}
-                  chapter={getChapterTitle(item, chapters)}
-                />
+                <ChapterCard chapterNum={index + 1} chapter={getChapterTitle(item, chapters)} />
               </Link>
             ))}
           </Col>
           <Col md={12} lg={4} xl={5}>
             <div className="service-meshes-you-can-learn">
               <h2>Service Meshes You can Learn</h2>
-              <ServiceMeshesAvailable
-                serviceMeshes={getAvailableServiceMeshes()}
-              />
+              <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()} />
             </div>
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
@@ -142,7 +128,10 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </Col>
         </Row>
       </div>
-      <BookmarkNotification showNotification={showNotification} closeNotification={() => setShowNotification(false)} />
+      <BookmarkNotification
+        showNotification={showNotification}
+        closeNotification={() => setShowNotification(false)}
+      />
     </CourseOverviewWrapper>
   );
 };

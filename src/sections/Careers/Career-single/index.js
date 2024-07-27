@@ -22,20 +22,42 @@ const CareerSingle = ({ data }) => {
             <Col xs={12} md={7} xl={8} className="job-details">
               <Row>
                 <Col xs={6} className="job-details-col">
-                  <h5> <FaPlay /> Start Date</h5>
+                  <h5>
+                    {" "}
+                    <FaPlay /> Start Date
+                  </h5>
                   <p>{frontmatter.start_date}</p>
                 </Col>
-                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar /> Duration</h5><p>{frontmatter.duration}</p></Col> : ""}
+                {frontmatter.type === "internship" ? (
+                  <Col xs={6} className="job-details-col">
+                    <h5>
+                      {" "}
+                      <FiCalendar /> Duration
+                    </h5>
+                    <p>{frontmatter.duration}</p>
+                  </Col>
+                ) : (
+                  ""
+                )}
                 <Col xs={6} className="job-details-col">
-                  <h5> <FaGlobeAmericas /> Location</h5>
+                  <h5>
+                    {" "}
+                    <FaGlobeAmericas /> Location
+                  </h5>
                   <p>{frontmatter.location}</p>
                 </Col>
                 <Col xs={6} className="job-details-col">
-                  <h5> <HiOutlineCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}</h5>
+                  <h5>
+                    {" "}
+                    <HiOutlineCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}
+                  </h5>
                   <p>{frontmatter.salary}</p>
                 </Col>
                 <Col xs={6} className="job-details-col">
-                  <h5> <FiClock /> Apply By</h5>
+                  <h5>
+                    {" "}
+                    <FiClock /> Apply By
+                  </h5>
                   <p>{frontmatter.apply_by}</p>
                 </Col>
               </Row>

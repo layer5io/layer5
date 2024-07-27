@@ -125,8 +125,6 @@ const FeatureWrapper = styled.div`
 `;
 
 const Feature = () => {
-
-
   return (
     <FeatureWrapper>
       <Container className="catalog-container">
@@ -134,26 +132,35 @@ const Feature = () => {
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
               {/* <img src={docker_ext} className="calalog-image" /> */}
-              <StaticImage src={docker_ext} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
+              <StaticImage
+                src={docker_ext}
+                alt="Meshery, Docker Extension for Meshery"
+                loading="lazy"
+              />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Docker Extension for Meshery</h2>
             <p className="caption">
-            From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters.
+              From the convenience of your Docker Desktop interface, connect Meshery with your
+              Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters.
             </p>
-            <Link className="link" href="/docker-extension-meshery">Learn more &rarr;</Link>
+            <Link className="link" href="/docker-extension-meshery">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-            Meshery Operator
-            </h2>
+            <h2 className="heading">Meshery Operator</h2>
             <p className="caption">
-            The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes and all of your Kubernetes-based infrastructure.
+              The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and
+              brownfield of your workloads, services, deployments, replicasets, pods, containers,
+              services, persistent volumes and all of your Kubernetes-based infrastructure.
             </p>
-            <Link className="link" href="/cloud-native-management/meshery/meshery-operator">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/meshery/meshery-operator">
+              Learn more &rarr;
+            </Link>
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
@@ -170,7 +177,9 @@ const Feature = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">MeshSync</h2>
             <p className="caption">
-             MeshSync was designed from the ground up to perform tiered discovery of your Kubernetes enviroment. MeshSync's working snapshot of the state of each cluster is stored in-memory and continuously refreshed.
+              MeshSync was designed from the ground up to perform tiered discovery of your
+              Kubernetes enviroment. MeshSync's working snapshot of the state of each cluster is
+              stored in-memory and continuously refreshed.
             </p>
           </Col>
         </Row>

@@ -20,12 +20,11 @@ const CytoscapeCtx = () => {
           { data: { id: "d" } },
           { data: { id: "e" } },
           { data: { id: "f", parent: "e" }, position: { x: 300, y: 175 } },
-          { data: { id: "g", parent: "b" }, position: { x: 215, y: 85 } },
+          { data: { id: "g", parent: "b" }, position: { x: 215, y: 85 } }
         ],
         edges: [
           { data: { id: "ad", source: "a", target: "d" } },
           { data: { id: "eb", source: "e", target: "b" } }
-
         ]
       },
 
@@ -45,87 +44,87 @@ const CytoscapeCtx = () => {
             color: "#000",
             "z-index": "2",
             "text-margin-y": "7px",
-            "text-max-width": "50px",
+            "text-max-width": "50px"
           }
         },
         {
-          selector: "node[id=\"a\"]",
+          selector: 'node[id="a"]',
           style: {
             "background-image": clusterRole().svg,
             width: clusterRole().width,
             shape: "round-rectangle",
-            "padding": "20px",
+            padding: "20px",
             "background-color": "#326CE5",
             height: clusterRole().height,
-            "label": "cluster-role",
-          },
+            label: "cluster-role"
+          }
         },
         {
-          selector: "node[id=\"c\"]",
+          selector: 'node[id="c"]',
           style: {
             "background-image": argoCD().svg,
             width: argoCD().width,
             "background-color": "#fe733e",
             height: argoCD().height,
-            "padding": "20px",
-            "label": "application-set",
-          },
+            padding: "20px",
+            label: "application-set"
+          }
         },
         {
-          selector: "node[id=\"d\"]",
+          selector: 'node[id="d"]',
           style: {
             "background-image": NGINX().svg,
             width: NGINX().width,
             "background-color": "#009639",
             height: NGINX().height,
-            "padding": "20px",
-            "label": "nginx",
-          },
+            padding: "20px",
+            label: "nginx"
+          }
         },
         {
-          selector: "node[id=\"f\"]",
+          selector: 'node[id="f"]',
           style: {
             "background-image": k8sService().svg,
             width: k8sService().width,
             shape: "round-triangle",
             "background-color": "#326CE5",
-            "padding": 8,
+            padding: 8,
             "background-fit": "none",
             "background-position-y": 18,
             height: k8sService().height,
-            "label": "service",
-          },
+            label: "service"
+          }
         },
         {
-          selector: "node[id=\"g\"]",
+          selector: 'node[id="g"]',
           style: {
             "background-image": kubePrometheus().svg,
             width: kubePrometheus().width,
             height: kubePrometheus().height,
             "background-color": "#e75225",
-            "padding": "20px",
-            "label": "prometheus",
-          },
+            padding: "20px",
+            label: "prometheus"
+          }
         },
         {
-          selector: "node[id=\"e\"]",
+          selector: 'node[id="e"]',
           style: {
             "border-width": "2px",
             "border-color": "#326CE5",
             "border-style": "dashed",
-            "backgroundColor": "#326CE5",
-            "label": "namespace",
+            backgroundColor: "#326CE5",
+            label: "namespace",
             "background-opacity": "0.5"
           }
         },
         {
-          selector: "node[id=\"b\"]",
+          selector: 'node[id="b"]',
           style: {
             "border-width": "2px",
             "border-color": "#326CE5",
             "border-style": "dashed",
-            "backgroundColor": "#326CE5",
-            "label": "namespace",
+            backgroundColor: "#326CE5",
+            label: "namespace",
             "background-opacity": "0.5"
           }
         },
@@ -145,9 +144,9 @@ const CytoscapeCtx = () => {
             "text-outline-width": "1px",
             "text-wrap": "wrap",
             width: "1.5px",
-            "length": "2px"
+            length: "2px"
           }
-        },
+        }
       ],
 
       layout: {
@@ -159,13 +158,13 @@ const CytoscapeCtx = () => {
         idealEdgeLength: 20,
         spacingFactor: 1,
         gravityRangeCompound: 1,
-        gravityCompound: 1,
+        gravityCompound: 1
       },
       zoom: 3,
       minZoom: 0.3,
       maxZoom: 2,
       // boundingBox: { x1: 0, y1: 0, w: "40vh", h: "50vh" },
-      boxSelectionEnabled: false,
+      boxSelectionEnabled: false
     });
 
     return () => {

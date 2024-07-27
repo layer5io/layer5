@@ -23,11 +23,7 @@ const BannerDefault = () => {
                 <div className="svg-background">
                   <img src={svgBackground} alt="background" loading="lazy" />
                 </div>
-                <SectionTitle
-                  className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
-                >
+                <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
                   <h4 className="statement">Meshery is</h4>
                   <div className="demo">
                     The <span>cloud native management platform</span>
@@ -43,14 +39,12 @@ const BannerDefault = () => {
                           <Link to="/cloud-native-management/meshery/integrations">
                             integrations
                           </Link>{" "}
-                          for Prometheus, Grafana, Jaeger, CloudEvents, support
-                          for WebAssembly filters for Envoy, and hundreds of
-                          other cloud native projects.
+                          for Prometheus, Grafana, Jaeger, CloudEvents, support for WebAssembly
+                          filters for Envoy, and hundreds of other cloud native projects.
                         </p>
                         <p>
-                          Meshery is your microservices manager. With extension
-                          points throughout, Meshery offers users and
-                          integrators the ability to extend and customize
+                          Meshery is your microservices manager. With extension points throughout,
+                          Meshery offers users and integrators the ability to extend and customize
                           platform functionality.
                         </p>
                       </div>

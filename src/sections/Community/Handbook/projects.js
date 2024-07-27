@@ -18,19 +18,19 @@ const contents = [
   {
     id: 0,
     link: "#Layer5",
-    text: "Layer5",
+    text: "Layer5"
   },
   { id: 1, link: "#Meshery", text: "Meshery" },
   {
     id: 2,
     link: "#Cloud Native Performance",
-    text: "Cloud Native Performance",
+    text: "Cloud Native Performance"
   },
   {
     id: 3,
     link: "#Cloud Native Patterns",
-    text: " Cloud Native Patterns",
-  },
+    text: " Cloud Native Patterns"
+  }
 ];
 
 const Maintainer = () => {
@@ -44,7 +44,6 @@ const Maintainer = () => {
         <Container>
           <div className="content">
             <p>
-
               <a id="Layer5">
                 {" "}
                 <h3 className="heading-top">
@@ -54,14 +53,17 @@ const Maintainer = () => {
                   </a>
                 </h3>{" "}
               </a>
-
             </p>
             <p>
-
-              Its cloud native community represents the largest collection of
-              cloud native projects. Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" /> MeshMates </Link>, catch-all org, “home base”.
+              Its cloud native community represents the largest collection of cloud native projects.
+              Emerging projects like Nighthawk{" "}
+              <img className="project-description-icon" src={hawkIcon} alt="Nighthawk Icon" /> ,
+              community with{" "}
+              <Link to="/community/meshmates">
+                <img className="project-description-icon" src={meshmateicon} alt="MeshMate icon" />{" "}
+                MeshMates{" "}
+              </Link>
+              , catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -70,44 +72,37 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  Layer5 is the official website of the Layer5 community showing
-                  an overview of the Layer5 projects. The different cloud native
-                  landscapes, resources to learn about cloud native, and
-                  communities. <br />
+                  Layer5 is the official website of the Layer5 community showing an overview of the
+                  Layer5 projects. The different cloud native landscapes, resources to learn about
+                  cloud native, and communities. <br />
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/projects/image-hub">
-                      Image-Hub :
-                    </a>
+                    <a href="https://layer5.io/projects/image-hub">Image-Hub :</a>
                   </h4>{" "}
                 </li>
                 <p>
-                  Image Hub is a sample application written to run on Consul for
-                  exploring WebAssembly modules used as Envoy filters are
-                  written in Rust. These modules can be used to implement
-                  multi-tenancy or to implement per-user rate-limiting in your
-                  application's endpoints. This application was first
-                  demonstrated at DockerCon 2020. <br />
+                  Image Hub is a sample application written to run on Consul for exploring
+                  WebAssembly modules used as Envoy filters are written in Rust. These modules can
+                  be used to implement multi-tenancy or to implement per-user rate-limiting in your
+                  application's endpoints. This application was first demonstrated at DockerCon
+                  2020. <br />
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/projects/nighthawk">
-                      Nighthawk :
-                    </a>
+                    <a href="https://layer5.io/projects/nighthawk">Nighthawk :</a>
                   </h4>{" "}
                 </li>
                 <p>
-                  This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance
-                  characterization tool. Nighthawk is Envoy’s load generator and
-                  is written in C++. Meshery integrates Nighthawk as one of
-                  (currently) three choices of load generators for
-                  characterizing and managing the performance of cloud native infrastructure (e.g. Kubernetes and Docker) and their services. <br />
+                  This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk
+                  is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as
+                  one of (currently) three choices of load generators for characterizing and
+                  managing the performance of cloud native infrastructure (e.g. Kubernetes and
+                  Docker) and their services. <br />
                 </p>
               </ul>
             </p>
             <p>
-
               <a id="Meshery">
                 {" "}
                 <h3>
@@ -117,25 +112,28 @@ const Maintainer = () => {
                   </a>
                 </h3>{" "}
               </a>
-
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
+              <img
+                className="project-description-icon"
+                src={mesheryoperatoricon}
+                alt="Meshery Operator Icon"
+              />{" "}
+              and MeshSync{" "}
               <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
               <ul>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/cloud-native-management/meshery">
-                      Meshery
-                    </a>
+                    <a href="https://layer5.io/cloud-native-management/meshery">Meshery</a>
                   </h4>{" "}
                 </li>
                 <p>
-                  It is a cloud native management plane offering lifecycle
-                  management of more types of cloud native infrastrcture than any other tool                  available today. Meshery facilitates adopting, configuring,
-                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics
-                  from applications running on top of any service mesh.
+                  It is a cloud native management plane offering lifecycle management of more types
+                  of cloud native infrastrcture than any other tool available today. Meshery
+                  facilitates adopting, configuring, operating, and managing the performance of
+                  Kuberenetes workloads and incorporates the collection and display of metrics from
+                  applications running on top of any service mesh.
                   <br />{" "}
                 </p>
                 <li>
@@ -154,8 +152,8 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  Meshery Operator is the multi-cloud native operator and
-                  implementation of MeshSync. <br />
+                  Meshery Operator is the multi-cloud native operator and implementation of
+                  MeshSync. <br />
                 </p>
                 <li>
                   <h4>
@@ -165,7 +163,9 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: cloud native infra. <br />
+                  The Docker Extension for Meshery extends Docker Desktop’s position as the cloud
+                  native developer’s go-to Kubernetes environment with easy access to the next layer
+                  of cloud native infrastructure: cloud native infra. <br />
                 </p>
                 <li>
                   <h4>
@@ -175,7 +175,10 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. <br />
+                  As a central hub for sharing cloud native infrastructure designs, Meshery Catalog
+                  enables the exchange of the best practices, reusable templates, and
+                  Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and
+                  distributed applications. <br />
                 </p>
               </ul>
             </p>
@@ -199,14 +202,13 @@ const Maintainer = () => {
               <a href="https://layer5.io/projects/cloud-native-performance">
                 The Cloud Native Performance (SMP)
               </a>{" "}
-              is a vendor-neutral specification for capturing details of
-              environment and infrastructure details, cloud native infrastrcture and it’s
-              configuration, service/application details, and bundling of
-              statistical analysis of the result. <br />
+              is a vendor-neutral specification for capturing details of environment and
+              infrastructure details, cloud native infrastrcture and it’s configuration,
+              service/application details, and bundling of statistical analysis of the result.{" "}
+              <br />
             </p>
 
             <p>
-
               <a id="Cloud Native Patterns">
                 {" "}
                 <h3>
@@ -222,8 +224,8 @@ const Maintainer = () => {
               </a>
             </p>
             <p>
-              A collection of curated patterns of cloud native use cases
-              compatible with Meshery. <br />
+              A collection of curated patterns of cloud native use cases compatible with Meshery.{" "}
+              <br />
             </p>
           </div>
           <TocPagination />

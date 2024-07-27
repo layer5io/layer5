@@ -26,11 +26,11 @@ const FaqSectionWrapper = styled.div`
   .accordion__item {
     .accordion__header {
       padding: 20px;
-      background: ${props => props.theme.primaryLightColorTwo};
+      background: ${(props) => props.theme.primaryLightColorTwo};
       h5 {
         font-weight: 300;
         font-size: 16px;
-        color: ${props => props.theme.black};
+        color: ${(props) => props.theme.black};
       }
       > div {
         &:focus {

@@ -6,39 +6,42 @@ import { useStaticQuery, graphql } from "gatsby";
 import { EmeritusWrapper } from "./emeritus.style";
 
 const Emeritus = () => {
-  const data = useStaticQuery(
-    graphql`query emeritus {
-  allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {emeritus: {eq: "yes"}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        name
-        emeritus
-        image_path {
-          childImageSharp {
-            gatsbyImageData(width: 200, layout: CONSTRAINED)
+  const data = useStaticQuery(graphql`
+    query emeritus {
+      allMdx(
+        sort: { fields: [frontmatter___name], order: ASC }
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { emeritus: { eq: "yes" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            name
+            emeritus
+            image_path {
+              childImageSharp {
+                gatsbyImageData(width: 200, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
     }
-  }
-}
-`
-  );
+  `);
   return (
     <EmeritusWrapper>
       <div className="emeritus-text">
         <h2>Layer5 MeshMate Emeritus</h2>
         <p>
-           Once a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
+          Once a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has
+          served the Layer5 community selflessly.
         </p>
       </div>
       <Row>

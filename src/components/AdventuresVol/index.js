@@ -10,11 +10,11 @@ const AdventuresVol = ({ title, description, to, image }) => {
           <h1 className="handbook__card--head">{title}</h1>
           <div className="handbook__card--line"></div>
           <img src={image} />
-          <p className="handbook__card--para">
-            {description}
-          </p>
+          <p className="handbook__card--para">{description}</p>
           <div className="handbook__card--lm__container">
-            <a href={to} className="handbook__card--lm">Read More <HiOutlineChevronRight /></a>
+            <a href={to} className="handbook__card--lm">
+              Read More <HiOutlineChevronRight />
+            </a>
           </div>
         </div>
       </a>

@@ -17,9 +17,9 @@ const messages = [
 
 const L404 = () => {
   const [message, setMessage] = useState(messages[0]);
-  useEffect( () => {
+  useEffect(() => {
     setMessage(messages[Math.floor(Math.random() * messages.length)]);
-  },[]);
+  }, []);
 
   return (
     <L404SectionWrapper>
@@ -28,7 +28,15 @@ const L404 = () => {
         <h2 className="subtitle">Page does not exist.</h2>
         <div className="button-row">
           <img src={serviceMesh} alt="service meshed" className="mesh" />
-          <Button id="return-layer5" aria-label="return-to-layer5-page" secondary url="/" external={false} >Return to Layer5</Button>
+          <Button
+            id="return-layer5"
+            aria-label="return-to-layer5-page"
+            secondary
+            url="/"
+            external={false}
+          >
+            Return to Layer5
+          </Button>
         </div>
       </Container>
     </L404SectionWrapper>

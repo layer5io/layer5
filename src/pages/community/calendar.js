@@ -1,7 +1,6 @@
 import React from "react";
 import SEO from "../../components/seo";
 
-
 import Loadable from "react-loadable";
 import Loader from "./Loader.style";
 import LoadingIcon from "../../assets/images/LoadingIcon";
@@ -35,7 +34,7 @@ const LoadableCalendar = Loadable({
                     headerToolbar={{
                       left: "prev,next today",
                       center: "title",
-                      right: "addToCalendar",
+                      right: "addToCalendar"
                     }}
                   />
                 </div>
@@ -45,20 +44,21 @@ const LoadableCalendar = Loadable({
         </div>
       </Loader>
     );
-  },
+  }
 });
 const CalendarPage = () => {
   return (
     <>
       <LoadableCalendar />
-
     </>
   );
 };
 export default CalendarPage;
 export const Head = () => {
-  return <SEO
-    title="Layer5 Events Calendar"
-    description="Join any or all of the Layer5 community meetings."
-  />;
+  return (
+    <SEO
+      title="Layer5 Events Calendar"
+      description="Join any or all of the Layer5 community meetings."
+    />
+  );
 };

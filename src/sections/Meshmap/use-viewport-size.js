@@ -8,7 +8,7 @@ export const useViewportSize = ({ callTreshhold } = { callTreshhold: CALL_THRESH
   const resizeTimeout = useRef(null);
   const [windowSize, setWindowSize] = useState({
     width: isClient ? window.innerWidth : 0,
-    height: isClient ? window.innerHeight : 0,
+    height: isClient ? window.innerHeight : 0
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const useViewportSize = ({ callTreshhold } = { callTreshhold: CALL_THRESH
       resizeTimeout.current = setTimeout(() => {
         setWindowSize({
           width: window.innerWidth,
-          height: window.innerHeight,
+          height: window.innerHeight
         });
       }, callTreshhold);
     };

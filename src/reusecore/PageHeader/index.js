@@ -9,47 +9,63 @@ import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-gray-n
 const authorField = (author, isSlugAvailable) => {
   return (
     <>
-      {
-        isSlugAvailable ?
-          <Link to={`/community/members/${slugify(author.name)}`}>
-            <span>{author.name}</span>
-          </Link>
-          : <span>{author.name}</span>
-      }
+      {isSlugAvailable ? (
+        <Link to={`/community/members/${slugify(author.name)}`}>
+          <span>{author.name}</span>
+        </Link>
+      ) : (
+        <span>{author.name}</span>
+      )}
     </>
   );
 };
 
-const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date }) => {
+const PageHeader = ({
+  category,
+  title,
+  img,
+  feedlink,
+  subtitle,
+  author,
+  thumbnail,
+  superscript,
+  date
+}) => {
   let isSlugAvailable = false;
-  if (author){
-    const validMembers = useStaticQuery(
-      graphql`
-                query validMemberss{
-                    allMdx(
-                        filter:{ 
-                            fields:{ collection:{eq:"members"} }
-                        }
-                    ) {
-                        nodes {
-                            frontmatter {
-                                name
-                            }
-                        }
-                    }
-                }
-            `
+  if (author) {
+    const validMembers = useStaticQuery(graphql`
+      query validMemberss {
+        allMdx(filter: { fields: { collection: { eq: "members" } } }) {
+          nodes {
+            frontmatter {
+              name
+            }
+          }
+        }
+      }
+    `);
+    isSlugAvailable = validMembers.allMdx.nodes.some(
+      (matter) => matter.frontmatter.name == author.name
     );
-    isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == author.name);
   }
   return (
     <PageHeaderWrapper>
       <div className="page-header">
-        { thumbnail && <div className="feature-image">
-          <Image {...thumbnail} imgStyle={{ objectFit: "contain" }} alt={title}/>
-        </div>}
-        <h1 className="page-title" >{title}  <sup className="supscript">{superscript}</sup>{ img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) } </h1>
-        {subtitle && (<h3>{subtitle}</h3>)}
+        {thumbnail && (
+          <div className="feature-image">
+            <Image {...thumbnail} imgStyle={{ objectFit: "contain" }} alt={title} />
+          </div>
+        )}
+        <h1 className="page-title">
+          {title} <sup className="supscript">{superscript}</sup>
+          {img && feedlink && (
+            <a href={feedlink} target="_blank" rel="noreferrer">
+              {" "}
+              <img src={img} alt="RSS Feed" />{" "}
+            </a>
+          )}{" "}
+        </h1>
+        {subtitle && <h3>{subtitle}</h3>}
         {category && (
           <div className="breadcrumbs">
             <span>
@@ -64,10 +80,13 @@ const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnai
               <>
                 <span>
                   <h5>By:</h5>
-                  {author.name === "Layer5 Team"
-                    ? <p><img src={layer5_img} alt="Layer5" width="85" /> Team</p>
-                    : <p>{authorField(author, isSlugAvailable)}</p>
-                  }
+                  {author.name === "Layer5 Team" ? (
+                    <p>
+                      <img src={layer5_img} alt="Layer5" width="85" /> Team
+                    </p>
+                  ) : (
+                    <p>{authorField(author, isSlugAvailable)}</p>
+                  )}
                 </span>
               </>
             )}

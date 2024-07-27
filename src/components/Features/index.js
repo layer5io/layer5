@@ -5,7 +5,7 @@ import {
   ContentWrapper,
   ImageWrapper,
   ImageWrapperTwo,
-  SvgRandomWrapper,
+  SvgRandomWrapper
 } from "./style.js";
 import cursor from "./images/cursor.svg";
 import person1 from "./images/cursor-1.svg";
@@ -80,76 +80,57 @@ const Features = (props) => {
     setWaveStart(false);
   }
   const style = {
-    cursor: props.show_custom_cursor ? `url(${cursor}), auto` : "",
+    cursor: props.show_custom_cursor ? `url(${cursor}), auto` : ""
   };
   return (
-    <Container
-      style={style}
-      onMouseEnter={mouseEnterEvent}
-      onMouseLeave={mouseLeaveEvent}
-    >
+    <Container style={style} onMouseEnter={mouseEnterEvent} onMouseLeave={mouseLeaveEvent}>
       <ContentWrapper>
         <h2>{props.title}</h2>
         <p className="text">{props.desc}</p>
-        {props.redirectLink ? <Link to={props.redirectLink}>Learn more &rarr;</Link>
-          : (<div className="small-card-container">
+        {props.redirectLink ? (
+          <Link to={props.redirectLink}>Learn more &rarr;</Link>
+        ) : (
+          <div className="small-card-container">
             {props.redirectLinkWithImage.map((item) => (
               <Link key={item.text} className="small-card" to={item.redirect}>
                 <img src={item.image} width={40} />
                 <span>{item.text}</span>
               </Link>
             ))}
-          </div>)}
+          </div>
+        )}
       </ContentWrapper>
       {props.animationOne ? (
         <ImageWrapper ref={containerRef}>
-          <SvgRandomWrapper
-            className="person1"
-            style={{ display: props.cursor ? "none" : "" }}
-          >
+          <SvgRandomWrapper className="person1" style={{ display: props.cursor ? "none" : "" }}>
             {waveStart && (
-              <img
-                src={wave}
-                alt=""
-                style={{ position: "absolute" }}
-                className="waveAnimation"
-              />
+              <img src={wave} alt="" style={{ position: "absolute" }} className="waveAnimation" />
             )}
             <img src={getPerson(props.cursor * 2)} alt="" />
           </SvgRandomWrapper>
-          <SvgRandomWrapper
-            className="person2"
-            style={{ display: props.cursor ? "none" : "" }}
-          >
+          <SvgRandomWrapper className="person2" style={{ display: props.cursor ? "none" : "" }}>
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
+          <Link
+            to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}
+          >
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapper>
       ) : (
         <ImageWrapperTwo ref={containerRef}>
-          <SvgRandomWrapper
-            className="person1"
-            style={{ display: props.cursor ? "none" : "" }}
-          >
+          <SvgRandomWrapper className="person1" style={{ display: props.cursor ? "none" : "" }}>
             {waveStart && (
-              <img
-                src={wave}
-                alt=""
-                style={{ position: "absolute" }}
-                className="waveAnimation"
-              />
+              <img src={wave} alt="" style={{ position: "absolute" }} className="waveAnimation" />
             )}
             <img src={getPerson(props.cursor * 2)} alt="" />
           </SvgRandomWrapper>
-          <SvgRandomWrapper
-            className="person2"
-            style={{ display: props.cursor ? "none" : "" }}
-          >
+          <SvgRandomWrapper className="person2" style={{ display: props.cursor ? "none" : "" }}>
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
+          <Link
+            to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}
+          >
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapperTwo>

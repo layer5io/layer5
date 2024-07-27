@@ -17,35 +17,38 @@ import RelatedPicks from "../../components/RelatedPicks";
 let card_data = [
   {
     heading: "Self-service & Integrations",
-    subtitle: "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
+    subtitle:
+      "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
     image: SelfServiceAndIntegrationsGIF
   },
   {
     heading: "Validate your infra before deployment",
-    subtitle: "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
+    subtitle:
+      "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
     image: Validate
   },
   {
     heading: "Infrastructure provisioning",
-    subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
+    subtitle:
+      "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
     image: DeployDesignsGIF
   },
   {
     heading: "Manage resources with Environment",
-    subtitle: "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
+    subtitle:
+      "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
     image: EnvironmentsGIF
-  },
-
+  }
 ];
 
 const Orchestration = () => {
   const { isDark } = useStyledDarkMode();
   const data = {
     heading: "Insights Visualized into Action",
-    sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
+    sub_heading:
+      "Optimize and streamline operations through strategic orchestration of your infrastructure.",
     image: isDark ? OrchestrationImgDark : OrchestrationImgLight
   };
-
 
   return (
     <OrchestrationWrapper>

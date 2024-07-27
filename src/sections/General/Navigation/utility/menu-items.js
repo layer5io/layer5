@@ -31,14 +31,14 @@ const Data = {
           name: "GitOps with Cloud Native Insights",
           path: "/solutions/gitops",
           sepLine: true
-        },
+        }
       ],
       actionItems: [
         {
           actionName: "Pricing",
-          actionLink: "/pricing",
-        },
-      ],
+          actionLink: "/pricing"
+        }
+      ]
 
       // subItems: [
       //     {
@@ -90,7 +90,7 @@ const Data = {
         },
         {
           name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
+          path: "/cloud-native-management/meshmap"
         },
         // {
         //   name: "---",
@@ -99,31 +99,31 @@ const Data = {
         // },
         {
           name: "Catalog",
-          path: "/cloud-native-management/catalog",
+          path: "/cloud-native-management/catalog"
         },
         {
           name: "Docker Extension",
-          path: "/docker-extension-meshery",
+          path: "/docker-extension-meshery"
         },
         {
           name: "Playground",
-          path: "/cloud-native-management/playground",
-        },
+          path: "/cloud-native-management/playground"
+        }
       ],
       actionItems: [
         {
           actionName: "Pricing",
-          actionLink: "/pricing",
+          actionLink: "/pricing"
         },
         {
           actionName: "Open source projects",
-          actionLink: "/projects",
-        },
+          actionLink: "/projects"
+        }
         // {
         //   actionName: "Pricing",
         //   actionLink: "/pricing",
         // },
-      ],
+      ]
       // div1: {
       //   src: meshery,
       //   descr: "How I schooled my seniors"
@@ -208,11 +208,11 @@ const Data = {
         },
         {
           name: "Newcomers",
-          path: "/community/newcomers",
+          path: "/community/newcomers"
         },
         {
           name: "MeshMates",
-          path: "/community/meshmates",
+          path: "/community/meshmates"
         },
         {
           name: "Events",
@@ -221,13 +221,13 @@ const Data = {
         },
         {
           name: "Calendar",
-          path: "/community/calendar",
+          path: "/community/calendar"
         },
         {
           name: "Recognition Program",
           path: "https://badges.layer5.io",
           sepLine: true
-        },
+        }
       ],
       actionItems: [
         // {
@@ -236,11 +236,11 @@ const Data = {
         // },
         {
           actionName: "Discussion forum",
-          actionLink: "https://discuss.layer5.io",
+          actionLink: "https://discuss.layer5.io"
         },
         {
           actionName: "Open source internships",
-          actionLink: "/careers/programs",
+          actionLink: "/careers/programs"
         }
       ],
       div1: {
@@ -280,8 +280,7 @@ const Data = {
         },
         {
           name: "Books",
-          path: "/learn/service-mesh-books",
-
+          path: "/learn/service-mesh-books"
         },
         // {
         //   name: "Forum",
@@ -291,16 +290,16 @@ const Data = {
         // },
         {
           name: "Workshops",
-          path: "/learn/service-mesh-workshops",
+          path: "/learn/service-mesh-workshops"
         },
         {
           name: "Learning Paths",
-          path: "/learn/learning-paths",
+          path: "/learn/learning-paths"
         },
         {
           name: "Interactive Labs",
-          path: "/learn/service-mesh-labs",
-        },
+          path: "/learn/service-mesh-labs"
+        }
       ],
       actionItems: [
         // {
@@ -309,13 +308,13 @@ const Data = {
         // },
         {
           actionName: "Layer5 in the news",
-          actionLink: "/news",
+          actionLink: "/news"
         },
         {
           actionName: "Recent announcements",
           actionLink: "/blog/category/announcements"
-        },
-      ],
+        }
+      ]
       // div1: {
       //     src: img1,
       //     descr: "How I schooled my seniors"

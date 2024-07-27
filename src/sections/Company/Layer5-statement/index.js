@@ -9,7 +9,6 @@ import { StaticImage } from "gatsby-plugin-image";
 const imgHero = "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.webp";
 // const imgHero = "./images/layer5-projects.webp";
 
-
 const BannerDefault = () => {
   return (
     <BannerSectionWrapper>
@@ -19,18 +18,16 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground} alt="background" loading="lazy"/>
+                  <img src={svgBackground} alt="background" loading="lazy" />
                 </div>
-                <SectionTitle
-                  className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
-                >
+                <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
                   <p className="statement">We make cloud native manageable by </p>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span className="span-text">
-                      harnessing the power of a developer-friendly applications management system that supports visualization of the modern infrastructure leading to effective operation with best practices.
+                      harnessing the power of a developer-friendly applications management system
+                      that supports visualization of the modern infrastructure leading to effective
+                      operation with best practices.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
@@ -39,7 +36,12 @@ const BannerDefault = () => {
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="our projects" url="/projects" />
+                    <Button
+                      primary
+                      className="join-community-button"
+                      title="our projects"
+                      url="/projects"
+                    />
                   </div>
                 </SectionTitle>
               </div>

@@ -7,11 +7,15 @@ const GitHubProcess = () => {
   return (
     <>
       <GitHubProcessPage />
-
     </>
   );
 };
 export default GitHubProcess;
 export const Head = () => {
-  return <SEO title="GitHub Process" description="Streamlining continuous integration to reduce overhead across the growing repository collection." />;
+  return (
+    <SEO
+      title="GitHub Process"
+      description="Streamlining continuous integration to reduce overhead across the growing repository collection."
+    />
+  );
 };

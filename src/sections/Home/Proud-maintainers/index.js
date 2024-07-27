@@ -18,9 +18,8 @@ import { ReactComponent as SMI } from "../../../assets/images/service-mesh-icons
 const ProudMaintainers = () => {
   return (
     <ProjectItemWrapper>
-      <Container >
+      <Container>
         <Row className="project-title">
-
           <SectionTitle UniWidth="100%">
             <h4>Proudly maintaining and contributing</h4>
             <h2>
@@ -29,10 +28,9 @@ const ProudMaintainers = () => {
           </SectionTitle>
 
           <p className="project-text">
-            We are the world’s largest collection of service mesh practitioners
-            and maintainers of leading open source projects.
+            We are the world’s largest collection of service mesh practitioners and maintainers of
+            leading open source projects.
           </p>
-
         </Row>
       </Container>
       <Row className="row">
@@ -82,7 +80,8 @@ const ProudMaintainers = () => {
         </Col>
         <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
-            <SMP alt="SMP" /></div>
+            <SMP alt="SMP" />
+          </div>
         </Col>
         <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">

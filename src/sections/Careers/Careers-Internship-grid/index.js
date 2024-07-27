@@ -7,75 +7,72 @@ import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
 import FAQ from "../../General/Faq";
 
-
 const UEM_Img = "../../../assets/images/partners/uem_partner.webp";
 const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.webp";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {
-  const opportunities = useStaticQuery(
-    graphql`
-      query allOppornuties {
-        internships: allMdx(
-          sort: { fields: [frontmatter___title], order: ASC }
-          filter: {
-            fields: { collection: { eq: "careers" } }
-            frontmatter: { published: { eq: true }, type: { eq: "internship" } }
-          }
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              abstract
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(width: 500, layout: CONSTRAINED)
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
-          }
+  const opportunities = useStaticQuery(graphql`
+    query allOppornuties {
+      internships: allMdx(
+        sort: { fields: [frontmatter___title], order: ASC }
+        filter: {
+          fields: { collection: { eq: "careers" } }
+          frontmatter: { published: { eq: true }, type: { eq: "internship" } }
         }
-        jobs: allMdx(
-          sort: { fields: [frontmatter___title], order: ASC }
-          filter: {
-            fields: { collection: { eq: "careers" } }
-            frontmatter: { published: { eq: true }, type: { eq: "job" } }
-          }
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              abstract
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(width: 500, layout: CONSTRAINED)
-                }
-                extension
-                publicURL
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            abstract
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
               }
+              extension
+              publicURL
             }
-            fields {
-              slug
-            }
+          }
+          fields {
+            slug
           }
         }
       }
-    `
-  );
+      jobs: allMdx(
+        sort: { fields: [frontmatter___title], order: ASC }
+        filter: {
+          fields: { collection: { eq: "careers" } }
+          frontmatter: { published: { eq: true }, type: { eq: "job" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            abstract
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
   let OpportunityCard = ({ frontmatter, fields }) => (
     <Col className="opportunity-col">
       <Link to={fields.slug}>
         <div className="opportunity-card">
           <div className="peek-card">
-            <StaticImage style={{ width: "5rem", }} src={Peek_Img} alt="Peek card effect" />
+            <StaticImage style={{ width: "5rem" }} src={Peek_Img} alt="Peek card effect" />
           </div>
           <div className="text">
             <h3>{frontmatter.title}</h3>
@@ -110,18 +107,16 @@ const InternshipPage = ({ hide_heading }) => {
             </div>
           </div>
           <p>
-            At Layer5, we take our internships seriously. Interns are expected
-            to work hard, learn much, and be recognized for doing so. Past
-            interns have presented their projects at KubeCon, DockerCon, and
-            similar technical conferences.
+            At Layer5, we take our internships seriously. Interns are expected to work hard, learn
+            much, and be recognized for doing so. Past interns have presented their projects at
+            KubeCon, DockerCon, and similar technical conferences.
           </p>
           <p>
-            Our community of contributors is the key ingredient to the success
-            of every one of our projects. Interns engage as part of the
-            community. Whether interning directly with Layer5 or through one of
-            Layer5's partner programs, your contributions will affect people
-            you've never met as the Layer5 projects are being broadly referenced
-            and used in organizations large and small.
+            Our community of contributors is the key ingredient to the success of every one of our
+            projects. Interns engage as part of the community. Whether interning directly with
+            Layer5 or through one of Layer5's partner programs, your contributions will affect
+            people you've never met as the Layer5 projects are being broadly referenced and used in
+            organizations large and small.
           </p>
           <div>
             <h2>
@@ -146,9 +141,7 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <StaticImage src={Univ_Texas_Img}
-                        alt="University of Texas, Austin"
-                      />
+                      <StaticImage src={Univ_Texas_Img} alt="University of Texas, Austin" />
                     </div>
                     <h5>UT Austin Coding Boot Camp</h5>
                   </div>
@@ -165,13 +158,11 @@ const InternshipPage = ({ hide_heading }) => {
               <Row>
                 <p>
                   <br />
-                  The Layer5 community includes software engineers, researchers,
-                  students, artists, system administrators, operators and web
-                  designers -- all of whom will be happy to help you get
-                  started. We believe that all contributors should be afforded a
-                  safe and friendly environment for constructive learning. Our
-                  projects are improved through diversity and empathic
-                  community.
+                  The Layer5 community includes software engineers, researchers, students, artists,
+                  system administrators, operators and web designers -- all of whom will be happy to
+                  help you get started. We believe that all contributors should be afforded a safe
+                  and friendly environment for constructive learning. Our projects are improved
+                  through diversity and empathic community.
                 </p>
               </Row>
             </div>

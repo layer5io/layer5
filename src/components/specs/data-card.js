@@ -4,45 +4,42 @@ import { Col, Row } from "../../reusecore/Layout";
 import List_Icon from "../../assets/images/app/tick.svg";
 
 const DataCardWrapper = styled.div`
-  background: ${props => props.theme.grey222222ToWhite};
+  background: ${(props) => props.theme.grey222222ToWhite};
   border-radius: 10px;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   padding: 2rem;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  
-  ul{
+
+  ul {
     list-style: none;
     padding: 0;
   }
-    .col-1 li{
-      display: flex;
-      align-items: center;
-      vertical-align: center;
-      margin-bottom: 1.5rem;
-      img{
-        margin-right: 1rem;
-      }
-      h5{
-        font-weight: 600;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-     }
-     
-    .col-2 li {
-      h3{
-        color: ${props => props.theme.secondaryColor};
-        font-weight: 700;
-      }
-      p {
-        font-size: 16px;
-      }
-    } 
-     
-    
+  .col-1 li {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    margin-bottom: 1.5rem;
+    img {
+      margin-right: 1rem;
+    }
+    h5 {
+      font-weight: 600;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  }
+
+  .col-2 li {
+    h3 {
+      color: ${(props) => props.theme.secondaryColor};
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 
 const DataCard = () => {
-
   return (
     <DataCardWrapper>
       <Row Vcenter>

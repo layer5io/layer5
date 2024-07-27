@@ -22,7 +22,8 @@ const SocialBackgrounds = () => {
         </Col>
         <Col>
           <p>
-            The Social Background mark includes the Layer5 branding backgrounds that can be used as cover images or background images on Zoom, Twitter, Youtube and Linkedin.
+            The Social Background mark includes the Layer5 branding backgrounds that can be used as
+            cover images or background images on Zoom, Twitter, Youtube and Linkedin.
           </p>
         </Col>
       </Row>

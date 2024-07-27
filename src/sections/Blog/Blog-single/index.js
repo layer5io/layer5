@@ -24,11 +24,11 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const BlogSingle = ({ data }) => {
   const location = useLocation();
   const { frontmatter, body, fields } = data.mdx;
-  const { relatedPosts: blogData, authors } = useStaticQuery(
-    graphql`query relatedPosts {
+  const { relatedPosts: blogData, authors } = useStaticQuery(graphql`
+    query relatedPosts {
       relatedPosts: allMdx(
-        sort: {fields: [frontmatter___date], order: DESC}
-        filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
       ) {
         nodes {
           frontmatter {
@@ -65,7 +65,7 @@ const BlogSingle = ({ data }) => {
         }
       ) {
         nodes {
-          frontmatter{
+          frontmatter {
             bio
             name
             image_path {
@@ -79,13 +79,12 @@ const BlogSingle = ({ data }) => {
           slug
         }
       }
-    }  `
-  );
+    }
+  `);
 
   const posts = blogData.nodes;
-  const relatedPosts = new RelatedPostsFactory(
-    posts, fields.slug
-  ).setMaxPosts(6)
+  const relatedPosts = new RelatedPostsFactory(posts, fields.slug)
+    .setMaxPosts(6)
     .setCategory(frontmatter.category)
     .setTags(frontmatter.tags)
     .getPosts();
@@ -101,7 +100,9 @@ const BlogSingle = ({ data }) => {
     }
   }, [copied]);
 
-  const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
+  const authorInformation = authors.nodes.filter(
+    (author) => author.frontmatter.name === frontmatter.author
+  )[0];
 
   const shareQuote = `Check out this post from layer5 "${frontmatter.title}"`;
 
@@ -115,7 +116,11 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            thumbnail={
+              isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+                ? frontmatter.darkthumbnail
+                : frontmatter.thumbnail
+            }
             darkthumbnail={frontmatter.thumbnail}
             date={frontmatter.date}
           />
@@ -123,9 +128,7 @@ const BlogSingle = ({ data }) => {
             <SRLWrapper>
               <MDXRenderer>{body}</MDXRenderer>
             </SRLWrapper>
-            <BlogPostSignOff
-              author={{ name: frontmatter.author }}
-            />
+            <BlogPostSignOff author={{ name: frontmatter.author }} />
             <div className="post-tag-container">
               <div className="post-share-mobile">
                 <div className="share-icons-container">
@@ -139,28 +142,29 @@ const BlogSingle = ({ data }) => {
                   <LinkedinShareButton url={location.href}>
                     <FaLinkedin />
                   </LinkedinShareButton>
-                  <CopyToClipboard text={location.href} title="Copy link" onCopy={() => setCopied(true)}>
+                  <CopyToClipboard
+                    text={location.href}
+                    title="Copy link"
+                    onCopy={() => setCopied(true)}
+                  >
                     <IoIosCopy />
                   </CopyToClipboard>
                 </div>
-                {copied ? <p className="link-copied-container">
-                  Copied
-                </p> : ""}
+                {copied ? <p className="link-copied-container">Copied</p> : ""}
               </div>
               <div className="post-info-block">
                 <div className="tags">
                   <span>Tags:</span>
                   <div>
-                    {frontmatter.tags && frontmatter.tags.map(tag => (
-                      <Link key={`${frontmatter.title}-${tag}`}
-                        to={`/blog/tag/${slugify(tag)}`}>{tag}
-                      </Link>
-                    ))}
+                    {frontmatter.tags &&
+                      frontmatter.tags.map((tag) => (
+                        <Link key={`${frontmatter.title}-${tag}`} to={`/blog/tag/${slugify(tag)}`}>
+                          {tag}
+                        </Link>
+                      ))}
                   </div>
                 </div>
-                <CTA_Bottom
-                  category={"MeshMap"}
-                />
+                <CTA_Bottom category={"MeshMap"} />
               </div>
             </div>
             <RelatedPosts

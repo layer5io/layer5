@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Banner1SectionWrapper = styled.section`
     display: none;
     padding: 7rem 0;
-    background-color: ${props => props.theme.body};
+    background-color: ${(props) => props.theme.body};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     .background-svg {
@@ -17,7 +17,7 @@ const Banner1SectionWrapper = styled.section`
     p {
         font-size: 21px;
         font-weight: 300;
-        color: ${props => props.theme.greyDEE3DEToGreen3C494F};
+        color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
         margin: 0 0 70px 0;
         text-align: center;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -33,16 +33,16 @@ const Banner1SectionWrapper = styled.section`
             line-height: 4.3rem;
             span {
                 font-weight: 700;
-                color: ${props => props.theme.secondaryColor};
+                color: ${(props) => props.theme.secondaryColor};
             }
         }
         h2 {
-            color: ${props => props.theme.greyDEE3DEToGreen3C494F};
+            color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
             margin: 0 0 20px 0;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             
             span {
-                color: ${props => props.theme.secondaryColor};
+                color: ${(props) => props.theme.secondaryColor};
             }
         }
     }
@@ -57,22 +57,22 @@ const Banner1SectionWrapper = styled.section`
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        background: ${props => props.theme.highlightColor}; 
+        background: ${(props) => props.theme.highlightColor}; 
 
         &:hover {
-             background: ${props => props.theme.highlightLightColor}; 
-             box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+             background: ${(props) => props.theme.highlightLightColor}; 
+             box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
         
     }
     .banner-btn.two{
         
-        background: ${props => props.theme.secondaryColor};
+        background: ${(props) => props.theme.secondaryColor};
         color: #fff;
         &:hover{
-            background: ${props => props.theme.caribbeanGreenColor};
+            background: ${(props) => props.theme.caribbeanGreenColor};
             //color: #326d62;
-            box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+            box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
         }
     }
     @media only screen and (max-width: 1200px) {

@@ -12,11 +12,11 @@ import BookmarksPDF from "../../../../assets/brand/bookmarks.pdf";
 import Layer5Icon from "../../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Layer5Wrapper = styled.section`
-    @media (max-width:575px){
-        .brandHeader{
-            padding: 3rem 0;
-        }
+  @media (max-width: 575px) {
+    .brandHeader {
+      padding: 3rem 0;
     }
+  }
 `;
 
 const Layer5Brand = () => {
@@ -25,9 +25,7 @@ const Layer5Brand = () => {
       <div className="post-content">
         <Row className="brand-section">
           <Col xs={12} sm={6}>
-            <h1 className="layerH3">
-              Layer5
-            </h1>
+            <h1 className="layerH3">Layer5</h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
             <a href="/brand/layer5-brand-kit.zip">
@@ -38,45 +36,39 @@ const Layer5Brand = () => {
           </Col>
           <Col>
             <p>
-              The Layer5 mark includes the Layer5 name & logo, and any word,
-              phrase, image, or other designation that identifies the source or
-              origin of any Layer5 projects. Please don’t modify the marks or
-              use them in a confusing way, including suggesting sponsorship or
-              endorsement by Layer5, or in a way that confuses Layer5 with
-              another brand (including your own).
+              The Layer5 mark includes the Layer5 name & logo, and any word, phrase, image, or other
+              designation that identifies the source or origin of any Layer5 projects. Please don’t
+              modify the marks or use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5, or in a way that confuses Layer5 with another brand (including
+              your own).
             </p>
           </Col>
         </Row>
         <Row>
           <Col xs={12}>
-            <h2 className="layerH3 in">
-              Logos
-            </h2>
+            <h2 className="layerH3 in">Logos</h2>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="Layer5Logos">
               <Col xs={12} sm={6}>
                 <img src={Layer5WhiteBg} alt="Layer5 Logo" />
-                  Primary Logo: broadly, and majorly applicable
+                Primary Logo: broadly, and majorly applicable
               </Col>
               <Col xs={12} sm={6}>
                 <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
-                  Layer5 Icon: suited for square-shaped display
+                Layer5 Icon: suited for square-shaped display
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
         <Row>
           <Col xs={12}>
-            <h2 className="layerH3 in">
-              Colors
-            </h2>
+            <h2 className="layerH3 in">Colors</h2>
           </Col>
           <Col xs={12}>
             <p>
-              Our community color palette consists of gray and green colors
-              representing each of our projects. The Layer5 logo should be white
-              when using project colors as the background.
+              Our community color palette consists of gray and green colors representing each of our
+              projects. The Layer5 logo should be white when using project colors as the background.
             </p>
           </Col>
           <Row className="color-code-wrapper">
@@ -97,14 +89,10 @@ const Layer5Brand = () => {
         </Row>
         <Row>
           <Col xs={12}>
-            <h2 className="layerH3 in">
-              Bookmarks
-            </h2>
+            <h2 className="layerH3 in">Bookmarks</h2>
           </Col>
           <Col xs={12}>
-            <p className="layerH3">
-              Media available for print.
-            </p>
+            <p className="layerH3">Media available for print.</p>
             <Row className="bookmarks">
               <Link to={BookmarksPDF}>
                 <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />

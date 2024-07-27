@@ -19,16 +19,21 @@ import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 import Button from "../../../../reusecore/Button";
 import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
-import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp"
+import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp";
 
 <BlogWrapper>
 <p>Containers provide a lightweight and portable solution to package applications, making them easy to deploy across different environments. With Docker as the most popular container engine and image format, but not the only runtime or format, the need for a standardized format to store and distribute container images became apparent and is why the <a href="https://opencontainers.org">Open Container Initiative</a> (OCI) image format comes into play.</p>
 
 The OCI was established as a community-driven initiative to create open standards for container formats and runtimes. Its goal is to promote interoperability and ensure that containers can be used across different platforms and runtime environments. One of the key components of the OCI initiative is the OCI image format, which has been widely adopted by container registries.
 
-<div class="intro"><p>
-Why have container registries have embraced the OCI format? How does Meshery, a popular internal developer platform, leverage this format for pushing and pulling design patterns? By understanding the benefits of OCI format for container registries and Meshery's support for it, we can gain valuable insights into the advantages of using this standardized format.
-</p></div>
+<div class="intro">
+  <p>
+    Why have container registries have embraced the OCI format? How does Meshery, a popular internal
+    developer platform, leverage this format for pushing and pulling design patterns? By
+    understanding the benefits of OCI format for container registries and Meshery's support for it,
+    we can gain valuable insights into the advantages of using this standardized format.
+  </p>
+</div>
 
 ## Why Container Registries Use OCI Format
 
@@ -61,16 +66,17 @@ Using the OCI format for design patterns offers several advantages for Meshery u
 Secondly, the OCI format enhances security and trustworthiness by providing a standardized and verifiable way to package and distribute design patterns. By utilizing cryptographic signing, developers can ensure the integrity and authenticity of the design patterns they push and pull from container registries. This prevents tampering and reduces the risk of running malicious or compromised design patterns, enhancing the overall security posture of applications deployed using Meshery.
 
 Another advantage of the OCI format is its ability to encapsulate not only the application code but also the underlying dependencies and runtime environment. This self-contained nature simplifies the process of distributing and maintaining design patterns, as all the necessary components are bundled together. It also allows for more consistent and reproducible deployments, ensuring that the design pattern behaves consistently regardless of the environment in which it is deployed.
+
 <>
-<CTA_FullWidth 
-  image={CTAImg}
-  heading="Where DevOps Collaborates"
-  alt="Meshery is a self-service engineering platform."
-  content="As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure."
-  button_text="See Meshery"
-  url="/cloud-native-management/meshery"
-  external_link={false}
-/>
+  <CTA_FullWidth
+    image={CTAImg}
+    heading="Where DevOps Collaborates"
+    alt="Meshery is a self-service engineering platform."
+    content="As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure."
+    button_text="See Meshery"
+    url="/cloud-native-management/meshery"
+    external_link={false}
+  />
 </>
 ## Meshery's Support for OCI Format
 
@@ -82,11 +88,6 @@ Furthermore, Meshery's support for OCI format extends beyond just deploying desi
 
 In conclusion, the adoption of OCI format by container registries and its integration within Meshery's design pattern management brings numerous benefits to the world of collaborative application infrastructure management. The use of OCI format ensures compatibility across different container runtimes, enhances security and trustworthiness, and simplifies the distribution and management of design patterns. With Meshery's support for OCI format, developers and operators can leverage these advantages to streamline and optimize their service mesh environments, ultimately improving the efficiency and reliability of their applications.
 
-
-
-ahead of the curve and leverage the latest advancements. Learn about <a href="https://docs.meshery.io/extensibility">Meshery's extensibility</a>. 
-
-
-
+ahead of the curve and leverage the latest advancements. Learn about <a href="https://docs.meshery.io/extensibility">Meshery's extensibility</a>.
 
 </BlogWrapper>

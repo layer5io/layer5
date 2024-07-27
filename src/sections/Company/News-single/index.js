@@ -11,42 +11,39 @@ import RelatedPosts from "../../../components/Related-Posts";
 
 const NewsSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
-  const newsData = useStaticQuery(
-    graphql`query relatedNewsPosts {
-  allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
-    limit: 6
-  ) {
-    nodes {
-      frontmatter {
-        title
-        date(formatString: "MMM Do YYYY")
-        author
-        category
-        tags
-        eurl
-        presskit
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+  const newsData = useStaticQuery(graphql`
+    query relatedNewsPosts {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
+        limit: 6
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date(formatString: "MMM Do YYYY")
+            author
+            category
+            tags
+            eurl
+            presskit
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
     }
-  }
-}
-`
-  );
+  `);
   const posts = newsData.allMdx.nodes;
-  const relatedPosts = posts.filter(
-    (post) => post.fields.slug !== fields.slug
-  );
+  const relatedPosts = posts.filter((post) => post.fields.slug !== fields.slug);
 
   return (
     <NewsPageWrapper>
@@ -72,15 +69,16 @@ const NewsSingle = ({ data }) => {
               </Col>
             </Row>
           </div>
-          {
-            body && !body.slug && frontmatter.eurl && (
-              <div style={{ display: "flex" }}>
-                <h5>
-                  Read the full article on <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>
-                </h5>
-              </div>
-            )
-          }
+          {body && !body.slug && frontmatter.eurl && (
+            <div style={{ display: "flex" }}>
+              <h5>
+                Read the full article on{" "}
+                <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
+                  {frontmatter.author}
+                </a>
+              </h5>
+            </div>
+          )}
           <RelatedPosts
             postType="news"
             relatedPosts={relatedPosts}

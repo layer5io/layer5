@@ -66,11 +66,7 @@ function IntraPage({ contents }) {
         <ul>
           {contents.map((x) => (
             <li key={x.id} className="list">
-              <Link
-                to={`${intapath}${x.link}`}
-                key={x.id}
-                activeClassName="active"
-              >
+              <Link to={`${intapath}${x.link}`} key={x.id} activeClassName="active">
                 {x.text}
               </Link>
             </li>

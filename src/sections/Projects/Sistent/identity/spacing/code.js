@@ -15,37 +15,25 @@ export const SpacingCode = () => {
           <h2>Spacing</h2>
         </a>
         <p>
-          Space is the unseen component in designed solutions that enables
-          clear, concise, and consistent arrangement of interface elements
-          across a screen.
+          Space is the unseen component in designed solutions that enables clear, concise, and
+          consistent arrangement of interface elements across a screen.
         </p>
         <div className="filterBtns">
           <Button
-            className={
-              location.pathname === "/projects/sistent/identity/spacing"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/projects/sistent/identity/spacing" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/identity/spacing")}
             title="Overview"
           />
           <Button
             className={
-              location.pathname ===
-              "/projects/sistent/identity/spacing/guidance"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/identity/spacing/guidance" ? "active" : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/identity/spacing/guidance")
-            }
+            onClick={() => navigate("/projects/sistent/identity/spacing/guidance")}
             title="Guidance"
           />
           <Button
             className={
-              location.pathname === "/projects/sistent/identity/spacing/code"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/identity/spacing/code" ? "active" : ""
             }
             onClick={() => navigate("/projects/sistent/identity/spacing/code")}
             title="Code"

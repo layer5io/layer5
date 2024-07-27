@@ -23,40 +23,40 @@ const LifecycleFeature = () => {
       {
         content:
           "Discover, configure, visualize, validate and troubleshoot your existing Kubernetes clusters",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Deploy and operate cloud native infrastructure",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Share and use known cloud native patterns",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Multi-player collaboration",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Real-Time Helm Chart Generation for CLI and UI",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Enhanced Multi-Cluster Support for Streamlined Environments",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Multiplayer5 designer for kubernetes and cloud",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Scheduled Workflow: Automated Helm Chart Generation",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Hierarchical Organization and Teams management",
-        className: "--on",
-      },
+        className: "--on"
+      }
       // {
       //   content:
       //     "Validate each service mesh's compliance with Service Mesh Interface (SMI)",
@@ -65,8 +65,8 @@ const LifecycleFeature = () => {
     ],
     count: {
       value: 0,
-      description: "cloud native integrations",
-    },
+      description: "cloud native integrations"
+    }
   };
 
   const configurationFeatureData = {
@@ -77,45 +77,45 @@ const LifecycleFeature = () => {
     services: [
       {
         content: "Built-in industry patterns and known best practices",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Apply custom configuration to your Kubernetes clusters",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Manage WebAssembly filters for Envoy",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Version your infrastructure configuration designs",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Visualize and dry-run your deployment with MeshMap",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Apply well-known cloud native designs",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Kubernetes Management with Design Deployment Dry-run",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Efficient WASM Envoy Filter Management in Meshery UI and CLI",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Configurable OAuth callbacks",
-        className: "--on",
-      },
+        className: "--on"
+      }
     ],
     count: {
       value: 1500,
-      description: "components",
-    },
+      description: "components"
+    }
   };
 
   const performanceFeatureData = {
@@ -125,45 +125,42 @@ const LifecycleFeature = () => {
     btnText: "Get Started",
     services: [
       {
-        content:
-          "Distributed performance analysis supporting 3 different types of load generators",
-        className: "--on",
+        content: "Distributed performance analysis supporting 3 different types of load generators",
+        className: "--on"
       },
       {
         content: "Built-in statistical analysis of service latency quartiles",
-        className: "--on",
+        className: "--on"
       },
       {
-        content:
-          "Import your existing Grafana dashboards. Ingest any metric from Prometheus",
-        className: "--on",
+        content: "Import your existing Grafana dashboards. Ingest any metric from Prometheus",
+        className: "--on"
       },
       {
-        content:
-          "Create and share performance profiles and test results with team members.",
-        className: "--on",
+        content: "Create and share performance profiles and test results with team members.",
+        className: "--on"
       },
       {
         content: "Identify the MeshMark of a specific network function",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Baseline and track deltas of your workload performance",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Validate and dry run your configurations before deploying",
-        className: "--on",
+        className: "--on"
       },
       {
         content: "Certificate support in performance profiles",
-        className: "--on",
-      },
+        className: "--on"
+      }
     ],
     count: {
       value: 0,
-      description: "performance tests run",
-    },
+      description: "performance tests run"
+    }
   };
 
   // const collaborationFeatureData = {
@@ -200,32 +197,27 @@ const LifecycleFeature = () => {
     features: [
       lifecycleFeatureData,
       configurationFeatureData,
-      performanceFeatureData,
+      performanceFeatureData
       // collaborationFeatureData,
-    ],
+    ]
   };
 
   // Count the total number of integrations
-  const totalIntegrations =
-    Math.ceil(integrations.allMdx.totalCount / 10) * 10;
+  const totalIntegrations = Math.ceil(integrations.allMdx.totalCount / 10) * 10;
 
   // Update the count value in lifecycleFeatureData
   const lifecycleFeatureDataUpdated = {
     ...lifecycleFeatureData,
     count: {
       value: totalIntegrations,
-      description: "cloud native integrations",
-    },
+      description: "cloud native integrations"
+    }
   };
 
   // Update the data object with the updated lifecycleFeatureData
   const dataUpdated = {
     ...data,
-    features: [
-      lifecycleFeatureDataUpdated,
-      configurationFeatureData,
-      performanceFeatureData,
-    ],
+    features: [lifecycleFeatureDataUpdated, configurationFeatureData, performanceFeatureData]
   };
   return dataUpdated;
 };

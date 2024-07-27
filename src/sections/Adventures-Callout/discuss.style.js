@@ -8,7 +8,7 @@ const AdventuresWrapper = styled.div`
         font-weight: 500;
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:${(props) => props.theme.secondaryColor};
     }
     .logo{
         width: 100%;
@@ -18,11 +18,11 @@ const AdventuresWrapper = styled.div`
         text-align: center;
         p { 
             text-align: center;
-            color: ${props => props.theme.white};
+            color: ${(props) => props.theme.white};
             padding: 0px 3.125rem;
         }
         h2 {
-            color: ${props => props.theme.white}; 
+            color: ${(props) => props.theme.white}; 
             line-height: 1.2;
         }
         h1 {

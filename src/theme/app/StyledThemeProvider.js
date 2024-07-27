@@ -10,7 +10,7 @@ export const StyledThemeProvider = (props) => {
   const { isDark, didLoad } = useContext(ThemeManagerContext);
   const currentTheme = isDark ? darkTheme : lightTheme;
   const theme = {
-    ...(didLoad ? currentTheme : transformTheme(currentTheme)),
+    ...(didLoad ? currentTheme : transformTheme(currentTheme))
   };
 
   return (
@@ -33,5 +33,3 @@ const transformTheme = (theme) => {
 
   return newTheme;
 };
-
-

@@ -7,16 +7,16 @@ const ProjectItemWrapper = styled.section`
             
             h4 {
                 font-weight: 500;
-                color: ${props => props.theme.grey737373ToGreyB3B3B3};
+                color: ${(props) => props.theme.grey737373ToGreyB3B3B3};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             h2{
-                color: ${props => props.theme.greyDEE3DEToGreen3C494F};
+                color: ${(props) => props.theme.greyDEE3DEToGreen3C494F};
                 margin-bottom: 40px;
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 
                 span{
-                    color: ${props => props.theme.text};
+                    color: ${(props) => props.theme.text};
                     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 }
             }
@@ -29,7 +29,7 @@ const ProjectItemWrapper = styled.section`
         margin: auto;
         p{
             font-size: 17.5px;
-            color: ${props => props.theme.black};
+            color: ${(props) => props.theme.black};
         }
     }
     .project__block__wrap{
@@ -42,11 +42,11 @@ const ProjectItemWrapper = styled.section`
         display: flex;
         margin-bottom: 2rem;
         flex-direction: column;
-        background: ${props => props.theme.grey212121ToLinear2};
-        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
+        background: ${(props) => props.theme.grey212121ToLinear2};
+        box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize} ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         &:hover {
-            box-shadow: 0px 0px 5px ${props => props.theme.whiteToGreen3C494F};
+            box-shadow: 0px 0px 5px ${(props) => props.theme.whiteToGreen3C494F};
         }
         padding: 12% 6% 12% 6%;
         height: auto;
@@ -57,11 +57,11 @@ const ProjectItemWrapper = styled.section`
             margin: auto;
             font-weight: 700;
             font-size: 1.3rem;
-            color: ${props => props.theme.secondaryColor}
+            color: ${(props) => props.theme.secondaryColor}
         }
         p {
             font-weight: 300;
-            color: ${props => props.theme.text};
+            color: ${(props) => props.theme.text};
             margin: auto;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
@@ -85,7 +85,7 @@ const ProjectItemWrapper = styled.section`
 
         justify-content: center;
         align-items: baseline;
-        background: ${props => props.theme.secondaryLightColor};
+        background: ${(props) => props.theme.secondaryLightColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         .button {
             margin: auto;
@@ -97,7 +97,7 @@ const ProjectItemWrapper = styled.section`
             font-size: 1rem;
             padding: 0 4rem;
             margin: 0rem;
-            color: ${props => props.theme.greyDCDCDCToGrey3B3B3B};
+            color: ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             span {
                 font-weight: 600;

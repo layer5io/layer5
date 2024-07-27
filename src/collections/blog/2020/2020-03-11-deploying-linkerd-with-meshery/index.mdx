@@ -7,27 +7,27 @@ thumbnail: ./Linkerd-with-Meshery.webp
 darkthumbnail: ./Linkerd-with-Meshery.webp
 category: Meshery
 tags:
- - Linkerd
- - Meshery
+  - Linkerd
+  - Meshery
 published: true
 type: Blog
 mesh: Linkerd
 product: Meshery
 resource: true
 redirect_from:
- - /blog/deploying-linkerd-with-meshery/
+  - /blog/deploying-linkerd-with-meshery/
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
-import awsappmesh from '../../../../assets/images/service-mesh-icons/aws-app-mesh.webp';
-import consul from '../../../../assets/images/service-mesh-icons/consul.svg';
-import istio from '../../../../assets/images/service-mesh-icons/istio.svg';
-import linkerd from '../../../../assets/images/service-mesh-icons/linkerd.svg';
-import maesh from '../../../../assets/images/service-mesh-icons/maesh.webp';
-import nsm from '../../../../assets/images/service-mesh-icons/nsm.svg';
-import octarine from '../../../../assets/images/service-mesh-icons/octarine.svg';
-import kuma from '../../../../assets/images/service-mesh-icons/kuma.svg';
-import {Link} from "gatsby"
+import awsappmesh from "../../../../assets/images/service-mesh-icons/aws-app-mesh.webp";
+import consul from "../../../../assets/images/service-mesh-icons/consul.svg";
+import istio from "../../../../assets/images/service-mesh-icons/istio.svg";
+import linkerd from "../../../../assets/images/service-mesh-icons/linkerd.svg";
+import maesh from "../../../../assets/images/service-mesh-icons/maesh.webp";
+import nsm from "../../../../assets/images/service-mesh-icons/nsm.svg";
+import octarine from "../../../../assets/images/service-mesh-icons/octarine.svg";
+import kuma from "../../../../assets/images/service-mesh-icons/kuma.svg";
+import { Link } from "gatsby";
 
 <BlogWrapper>
 
@@ -42,7 +42,8 @@ import {Link} from "gatsby"
 </div>
 But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created <Link to="/cloud-native-management/meshery">Meshery</Link>, the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
 
- Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
+Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
+
 </div>
 <div>
 <h5>Meshery Adapters</h5>
@@ -119,7 +120,10 @@ Some things that Linkerd is known for:
 <li>Zero-config option (works out-of-the-box)</li>
 <li>Network telemetry built-in (includes a pre-configured, optimised Prometheus instance)</li>
 <li>Low-overhead control-plane</li>
-<li>Operational simplicity (when compared to Istio, for example, even though Istio is getting better in this regard)</li>
+<li>
+  Operational simplicity (when compared to Istio, for example, even though Istio is getting better
+  in this regard)
+</li>
 
 So what is covered in the video? More or less the following:
 
@@ -146,7 +150,7 @@ This video is also the opening shot of Layer5's [Learn to Service Mesh](https://
 And let us know if there’s any specific content you want us to create. Or maybe anything you’ve created yourself and would like to share? Layer5 is all about knowledge sharing and we want to talk to you, so please [join the cloud native community](http://slack.layer5.io)!
 
 Happy meshing!
-<br />
 
+<br />
 
 </BlogWrapper>

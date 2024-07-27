@@ -8,11 +8,12 @@ const DoYouNeedService = ({ onClick }) => {
       <div id="content">
         <div id="text">
           <span className="heading">Do You Need A Service Mesh?</span>
-          <br/><br/>
+          <br />
+          <br />
           <span className="description">Let's find out.</span>
         </div>
         <button id="action" onClick={onClick}>
-                    Let's find out
+          Let's find out
         </button>
       </div>
     </DoYouNeedWrapper>

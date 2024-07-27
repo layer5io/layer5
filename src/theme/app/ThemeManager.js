@@ -7,7 +7,7 @@ import React, { createContext, useState, useEffect } from "react";
 export const ThemeSetting = {
   LIGHT: "light",
   DARK: "dark",
-  SYSTEM: "system",
+  SYSTEM: "system"
 };
 
 export const DarkThemeKey = "theme";
@@ -17,7 +17,7 @@ const defaultState = {
   didLoad: false,
   themeSetting: ThemeSetting.SYSTEM,
   toggleDark: () => undefined,
-  changeThemeSetting: () => undefined,
+  changeThemeSetting: () => undefined
 };
 
 export const ThemeManagerContext = createContext(defaultState);
@@ -29,7 +29,6 @@ const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
 };
 
-
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
@@ -37,9 +36,7 @@ export const ThemeManagerProvider = (props) => {
 
   useEffect(() => {
     const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(
-      "--initial-color-mode"
-    );
+    const initialColorValue = root.style.getPropertyValue("--initial-color-mode");
     setIsDark(initialColorValue === ThemeSetting.DARK);
     setDidLoad(true);
   }, []);
@@ -74,7 +71,7 @@ export const ThemeManagerProvider = (props) => {
         toggleDark,
         themeSetting,
         changeThemeSetting,
-        didLoad,
+        didLoad
       }}
     >
       {props.children}

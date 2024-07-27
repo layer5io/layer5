@@ -3,7 +3,6 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
-
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
@@ -38,7 +37,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
-    className: "category",
+    className: "category"
   },
   {
     label: "Community",
@@ -46,7 +45,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: communityIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Writer",
@@ -54,7 +53,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: writerIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Landscape",
@@ -62,7 +61,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: landscapeIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Docker Extension",
@@ -70,7 +69,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: dockerExtensionIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Image Hub",
@@ -78,7 +77,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: hubIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Docs",
@@ -86,7 +85,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: docsIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Meshery",
@@ -94,7 +93,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Meshery Catalog",
@@ -102,7 +101,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryCatalogIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Meshery Operator",
@@ -110,7 +109,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryOpIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "MeshMap",
@@ -118,7 +117,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: meshMapIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Cloud Native Performance",
@@ -126,7 +125,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: smpIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Nighthawk",
@@ -134,7 +133,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: hawkIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Cloud Native Patterns",
@@ -142,7 +141,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: patternsIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "UI/UX'er",
@@ -150,7 +149,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: uiuxrIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "STATUS",
@@ -158,7 +157,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
-    className: "category",
+    className: "category"
   },
   {
     label: "All Members",
@@ -166,7 +165,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Active",
@@ -174,7 +173,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: activeIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Inactive",
@@ -182,7 +181,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: inactiveIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "ROLE",
@@ -190,7 +189,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: null,
-    className: "category",
+    className: "category"
   },
   {
     label: "Maintainers",
@@ -198,7 +197,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: icon5,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Meshmates",
@@ -206,7 +205,7 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: meshmateIcon,
-    className: "allOptions",
+    className: "allOptions"
   },
   {
     label: "Community Managers",
@@ -214,8 +213,8 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: communityIcon,
-    className: "allOptions",
-  },
+    className: "allOptions"
+  }
 ].map((obj) => ({
   ...obj,
   label: (
@@ -224,7 +223,7 @@ const options = [
     </DropdownWrapper>
   ),
   color: `${obj.color}`,
-  icon: obj.icon && `url(${obj.icon})`,
+  icon: obj.icon && `url(${obj.icon})`
 }));
 const activeMember = {
   label: (
@@ -236,7 +235,7 @@ const activeMember = {
   color: lighttheme.linkColor,
   isFixed: true,
   icon: activeIcon && `url(${activeIcon})`,
-  className: "allOptions",
+  className: "allOptions"
 };
 const MembersPage = () => {
   /**
@@ -248,14 +247,15 @@ const MembersPage = () => {
     <>
       <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
       <MultipleMembers members={members} />
-
     </>
   );
 };
 export default MembersPage;
 export const Head = () => {
-  return <SEO
-    title="Members"
-    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
-  />;
+  return (
+    <SEO
+      title="Members"
+      description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+    />
+  );
 };

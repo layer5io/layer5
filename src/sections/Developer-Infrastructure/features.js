@@ -113,14 +113,13 @@ const FeatureWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Feature = () => {
-
   return (
     <FeatureWrapper>
       <Container className="catalog-container">
@@ -132,26 +131,34 @@ const Feature = () => {
           </Col> */}
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={whiteboard} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img
+                src={whiteboard}
+                alt="Kubernetes Diagrams for anything"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Design Architecture Diagram</h2>
             <p className="caption">
-            Effortlessly create software architectures, application architectures and system architectures in minutes.
+              Effortlessly create software architectures, application architectures and system
+              architectures in minutes.
             </p>
-            <Link className="link" href="/solutions/architecture-diagram">Learn more &rarr;</Link>
+            <Link className="link" href="/solutions/architecture-diagram">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-            Orchestration Management
-            </h2>
+            <h2 className="heading">Orchestration Management</h2>
             <p className="caption">
-            Optimize and streamline operations through strategic orchestration of your infrastructure.
+              Optimize and streamline operations through strategic orchestration of your
+              infrastructure.
             </p>
-            <Link className="link" href="/solutions/orchestration-management">Learn more &rarr;</Link>
+            <Link className="link" href="/solutions/orchestration-management">
+              Learn more &rarr;
+            </Link>
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">

@@ -17,11 +17,10 @@ To play with Istio and demonstrate some of it's capabilities, you will deploy th
 
 <h2 className="chapter-sub-heading">What is the Bookinfo Application </h2>
 <br />
-This application is a polyglot composition of microservices are written in
-different languages and sample BookInfo application displays information about a
-book, similar to a single catalog entry of an online book store. Displayed on
-the page is a description of the book, book details (ISBN, number of pages, and
-so on), and a few book reviews.
+This application is a polyglot composition of microservices are written in different languages and
+sample BookInfo application displays information about a book, similar to a single catalog entry of
+an online book store. Displayed on the page is a description of the book, book details (ISBN, number
+of pages, and so on), and a few book reviews.
 
 The end-to-end architecture of the application is shown in the figure.
 
@@ -33,9 +32,9 @@ The end-to-end architecture of the application is shown in the figure.
 _Figure: BookInfo deployed off the mesh_
 
 <br />
-It’s worth noting that these services have no dependencies on Istio, but make an
-interesting service mesh example, particularly because of the multitude of services,
-languages and versions for the reviews service.
+It’s worth noting that these services have no dependencies on Istio, but make an interesting service
+mesh example, particularly because of the multitude of services, languages and versions for the
+reviews service.
 
 As shown in the figure below, proxies are sidecarred to each of the application containers.
 
@@ -47,10 +46,10 @@ As shown in the figure below, proxies are sidecarred to each of the application 
 _Figure: BookInfo deployed on the mesh_
 
 <br />
-Sidecars proxy can be either manually or automatically injected into the pods. Automatic
-sidecar injection requires that your Kubernetes api-server supports `admissionregistration.k8s.io/v1`
-or `admissionregistration.k8s.io/v1beta1` or `admissionregistration.k8s.io/v1beta2`
-APIs. Verify whether your Kubernetes deployment supports these APIs by executing:
+Sidecars proxy can be either manually or automatically injected into the pods. Automatic sidecar
+injection requires that your Kubernetes api-server supports `admissionregistration.k8s.io/v1` or
+`admissionregistration.k8s.io/v1beta1` or `admissionregistration.k8s.io/v1beta2` APIs. Verify
+whether your Kubernetes deployment supports these APIs by executing:
 
 ```sh
 kubectl api-versions | grep admissionregistration
@@ -66,8 +65,8 @@ As part of Istio deployment in [Previous chapter](./getting-started), you have d
 </h2>
 
 <br />
-Istio, deployed as part of this workshop, will also deploy the sidecar injector.
-Let us now verify sidecar injector deployment.
+Istio, deployed as part of this workshop, will also deploy the sidecar injector. Let us now verify
+sidecar injector deployment.
 
 ```sh
 kubectl -n istio-system get configmaps istio-sidecar-injector
@@ -170,9 +169,7 @@ Applying this yaml file included in the Istio package you collected in [Getting 
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
-<h4 class="chapter-alt-heading">
-  Deploy Gateway and Virtual Service for BookInfo app
-</h4>
+<h4 class="chapter-alt-heading">Deploy Gateway and Virtual Service for BookInfo app</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml

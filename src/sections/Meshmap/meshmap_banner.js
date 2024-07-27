@@ -17,10 +17,10 @@ const BannerSectionWrapper = styled.div`
     min-height: 25rem;
 
     h1 {
-        /* background-color: ${props => props.theme.black}; */
+        /* background-color: ${(props) => props.theme.black}; */
         font-weight: 500;
         font-size: 60px;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         line-height: 4.3rem;
         margin-bottom: 1rem;
         min-width: 18rem;
@@ -29,9 +29,9 @@ const BannerSectionWrapper = styled.div`
             width: fit-content;
             border-radius: .25rem;
             /* padding: .5rem; */
-            /* background-color: ${props => props.theme.saffronLightColor};     */
+            /* background-color: ${(props) => props.theme.saffronLightColor};     */
             font-weight: 700;
-            color: ${props => props.theme.caribbeanGreenColor};
+            color: ${(props) => props.theme.caribbeanGreenColor};
         }
         @media screen and (max-width: 448px) {
             font-size: 38px;
@@ -48,7 +48,7 @@ const BannerSectionWrapper = styled.div`
         margin-bottom: 1rem;
         font-size: 1.95rem;
         font-weight: 400;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         font-style: italic;
         span {
             font-style: normal;
@@ -69,7 +69,7 @@ const BannerSectionWrapper = styled.div`
 
     }
     .banner-text p {
-        color: ${props => props.theme.saffronColor};
+        color: ${(props) => props.theme.saffronColor};
         margin-bottom: .5rem;
         font-weight: 400;
         font-size: 1.75rem;
@@ -77,7 +77,7 @@ const BannerSectionWrapper = styled.div`
         min-width: 18rem;
         font-family: "Qanelas Soft";
         span {
-            color: ${props => props.theme.saffronColor};
+            color: ${(props) => props.theme.saffronColor};
         }
     }
     h4 {
@@ -85,7 +85,7 @@ const BannerSectionWrapper = styled.div`
         padding-left: 1rem;
         font-style: italic;
         font-size: 1.25rem;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         span {
             padding-left: 1rem;
         }
@@ -180,14 +180,14 @@ const BannerSection = () => {
       <div className="banner-text">
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
         <h2>Step aside, YAML</h2>
-        <h1><span>Meshery</span> is here</h1>
+        <h1>
+          <span>Meshery</span> is here
+        </h1>
         {/* <h3>the world's only visual designer for cloud native infrastructure.</h3> */}
         {/* <h3>
                     Application reigns King. Context is his Queen.
                 </h3> */}
-        <p>
-                    Friends don't let friends GitOps alone.
-        </p>
+        <p>Friends don't let friends GitOps alone.</p>
         {/* <h4>Discover and Visualize</h4>
                 <h4><span>Collaborate and Design</span></h4>
                 any and all your cloud native infra and apps */}
@@ -198,7 +198,6 @@ const BannerSection = () => {
       </div>
       {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
-
   );
 };
 

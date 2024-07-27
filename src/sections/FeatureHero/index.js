@@ -33,12 +33,7 @@ const FeatureHero = (props) => {
         <div className={"section-title"}>
           <h1 className={"whiteboard-heading"}>{props.data.heading}</h1>
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
-          <Button
-            primary
-            title="Try Now!"
-            url="https://meshery.layer5.io"
-            external={true}
-          />
+          <Button primary title="Try Now!" url="https://meshery.layer5.io" external={true} />
         </div>
         <div className={"whiteboard-image"}>
           <img id={"whiteboard-svg"} src={props.data.image} alt={""} />

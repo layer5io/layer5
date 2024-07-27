@@ -88,14 +88,14 @@ const FramedTerminal = ({ frame, lines }) => {
             color: line.color,
             code: line.code,
             indent: line.indent,
-            short: line.short,
+            short: line.short
           };
         } else {
           let lineFrame = Math.floor(remainingFrames / line.frames);
           result = {
             color: line.color,
             code: line.code.slice(0, lineFrame + 1).splice(-1, 1),
-            indent: line.indent,
+            indent: line.indent
           };
         }
       }

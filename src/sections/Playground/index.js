@@ -6,9 +6,9 @@ import PlaygroundFeatures from "./playground-features";
 const Playground = () => {
   return (
     <>
-      <PlaygroundHero/>
-      <PlaygroundFeatures/>
-      <Reviews/>
+      <PlaygroundHero />
+      <PlaygroundFeatures />
+      <Reviews />
     </>
   );
 };

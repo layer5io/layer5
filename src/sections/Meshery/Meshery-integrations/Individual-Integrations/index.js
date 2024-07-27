@@ -52,7 +52,7 @@ const IndividualIntegrations = ({ data }) => {
     "AWS Target Group Binding",
     "AWS VPC CNI",
     "AWS App Mesh",
-    "Kubeform Provider AWS",
+    "Kubeform Provider AWS"
   ];
   const gcpIntegrations = ["Google Cloud Platform"];
 

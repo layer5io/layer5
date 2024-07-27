@@ -42,14 +42,8 @@ const AnimateSVG = (className, props) => {
         className="prefix__st2 prefix__svg-elem-4"
         d="M0 164.3C0 149.2 12.2 137 27.3 137c7.2 0 14.2 2.9 19.3 8 5.1 5.1 8 12.1 8 19.3 0 15.1-12.2 27.3-27.3 27.3-15.1 0-27.3-12.2-27.3-27.3z"
       />
-      <path
-        className="prefix__st0 prefix__svg-elem-5"
-        d="M83.9 88.5c-28.3 0-56.6 24.2-56.6 48.4"
-      />
-      <path
-        className="prefix__st3 prefix__svg-elem-6"
-        d="M83.9 88.5c-28.3 0-56.6 24.2-56.6 48.4"
-      />
+      <path className="prefix__st0 prefix__svg-elem-5" d="M83.9 88.5c-28.3 0-56.6 24.2-56.6 48.4" />
+      <path className="prefix__st3 prefix__svg-elem-6" d="M83.9 88.5c-28.3 0-56.6 24.2-56.6 48.4" />
       <path
         className="prefix__st2 prefix__svg-elem-7"
         d="M461.9 97.3c-13.6-6.5-19.3-22.8-12.8-36.4 3.1-6.5 8.7-11.5 15.5-14 6.8-2.4 14.3-2 20.9 1.1 13.6 6.5 19.3 22.8 12.8 36.4-6.6 13.6-22.9 19.4-36.4 12.9z"
@@ -86,14 +80,8 @@ const AnimateSVG = (className, props) => {
         className="prefix__st3 prefix__svg-elem-15"
         d="M110.9 247.7c0-14-20.9-21-41.8-28s-41.8-14-41.8-28"
       />
-      <path
-        className="prefix__st0 prefix__svg-elem-16"
-        d="M185.6 136.9c0-24.2-23.5-48.4-47-48.4"
-      />
-      <path
-        className="prefix__st3 prefix__svg-elem-17"
-        d="M185.6 136.9c0-24.2-23.5-48.4-47-48.4"
-      />
+      <path className="prefix__st0 prefix__svg-elem-16" d="M185.6 136.9c0-24.2-23.5-48.4-47-48.4" />
+      <path className="prefix__st3 prefix__svg-elem-17" d="M185.6 136.9c0-24.2-23.5-48.4-47-48.4" />
       <path
         className="prefix__st2 prefix__svg-elem-18"
         d="M382.8 191.6c-15.1 0-27.3-12.2-27.3-27.3 0-7.2 2.9-14.2 8-19.3 5.1-5.1 12.1-8 19.3-8 15.1 0 27.3 12.2 27.3 27.3 0 15-12.2 27.3-27.3 27.3z"

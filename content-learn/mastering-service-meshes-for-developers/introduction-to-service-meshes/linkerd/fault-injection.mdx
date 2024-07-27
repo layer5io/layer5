@@ -15,9 +15,7 @@ import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapte
 
 Application failure injection is a form of chaos engineering where we artificially increase the error rate of certain services in a microservice application to see what impact that has on the system as a whole. Traditionally, you would need to add some kind of failure injection library into your service code in order to do application failure injection. Thankfully, the service mesh gives us a way to inject application failures without needing to modify or rebuild our services at all.
 
-<h3 class="chapter-sub-heading">
-  Using SMI Traffic Split API to inject errors
-</h3>
+<h3 class="chapter-sub-heading">Using SMI Traffic Split API to inject errors</h3>
 
 We can easily inject application failures by using the Traffic Split API of the Service Mesh Interface. This allows us to do failure injection in a way that is implementation agnostic and works across service meshes.
 

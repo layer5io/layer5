@@ -12,8 +12,8 @@ const Counters = () => {
 
   useEffect(() => {
     fetch(URL)
-      .then(response => response.json())
-      .then(result => setPerformanceCount(result.total_runs));
+      .then((response) => response.json())
+      .then((result) => setPerformanceCount(result.total_runs));
   }, []);
 
   return (

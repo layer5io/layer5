@@ -3,9 +3,7 @@ import SEO from "../../../components/seo";
 import DeveloperInfrastructure from "../../../sections/Developer-Infrastructure";
 
 const DeveloperInfrastructurePage = () => {
-  return (
-    <DeveloperInfrastructure/>
-  );
+  return <DeveloperInfrastructure />;
 };
 export default DeveloperInfrastructurePage;
 export const Head = () => {

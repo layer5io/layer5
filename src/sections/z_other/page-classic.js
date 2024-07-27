@@ -15,8 +15,6 @@ import Client from "../Client";
 // import theme from "../../theme/classic/themeStyles";
 
 const ClassicPage = () => (
-
-
   <>
     <BannerClassic />
     <AboutClassic />
@@ -29,9 +27,7 @@ const ClassicPage = () => (
     <Getapp />
     <News />
     <Client />
-
   </>
-
 );
 export default ClassicPage;
 

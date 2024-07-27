@@ -7,12 +7,10 @@ import { options } from "./data";
 import PlanCard from "../../components/PlanCard";
 
 const Pricing = () => {
-
   // const [monthly, setMonthly] = useState(false);
 
   return (
     <PricingWrapper>
-
       <div className="headers">
         <h1 className="header-heading">Plans For Every Team Size</h1>
 
@@ -23,7 +21,7 @@ const Pricing = () => {
       </div>
 
       <div className="wrapper">
-        <PlanCard planData={options}/>
+        <PlanCard planData={options} />
       </div>
       <Comparison />
       <Reviews />
@@ -31,6 +29,5 @@ const Pricing = () => {
     </PricingWrapper>
   );
 };
-
 
 export default Pricing;

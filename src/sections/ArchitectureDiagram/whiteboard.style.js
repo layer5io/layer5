@@ -9,7 +9,6 @@ const WhiteboardWrapper = styled.div`
     justify-content: space-between;
   }
 
-
   .collaboration_display {
     display: flex;
     flex-direction: row;
@@ -19,26 +18,25 @@ const WhiteboardWrapper = styled.div`
     align-items: flex-start;
     justify-content: center;
   }
-  
-  
+
   .use-heading {
-    color: ${props => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.whiteToBlack};
     text-align: center;
     margin-bottom: 2rem;
 
-    &>h2 {
-      margin-bottom: 0.5rem
+    & > h2 {
+      margin-bottom: 0.5rem;
     }
 
-    &>p{
-      color: ${props => props.theme.greyA0AAAAToGrey666666};
+    & > p {
+      color: ${(props) => props.theme.greyA0AAAAToGrey666666};
     }
 
     .highlighted-text {
       color: white;
       padding: 0 0.5rem;
       border-radius: 0.5rem;
-      background: ${props => props.theme.green009A89ToGreen00B39F};
+      background: ${(props) => props.theme.green009A89ToGreen00B39F};
       font-weight: bold;
     }
   }
@@ -49,10 +47,10 @@ const WhiteboardWrapper = styled.div`
       padding: 2rem;
       margin: 0 2rem;
       border-radius: 0.25rem;
-      background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
+      background-color: ${(props) => props.theme.grey191919ToGreyFAFAFA};
       & > p {
         text-align: center;
-        color: ${props => props.theme.greyA0AAAAToGrey666666};
+        color: ${(props) => props.theme.greyA0AAAAToGrey666666};
       }
 
       @media only screen and (max-width: 500px) {

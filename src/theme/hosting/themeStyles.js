@@ -1,5 +1,3 @@
-
-
 const theme = {
   black: "#000000",
   white: "#ffffff",
@@ -17,4 +15,3 @@ const theme = {
 };
 
 export default theme;
-

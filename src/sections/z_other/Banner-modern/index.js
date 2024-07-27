@@ -17,20 +17,16 @@ const BannerModern = () => {
       <Container fullWidthSM>
         <Row Vcenter={true}>
           <Col sm={7} md={6}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
               <h4>30% off for new users for 1 month</h4>
               <h1>
                 Drive Customers Passing Your Appslife With <span>Appion</span>
               </h1>
             </SectionTitle>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
-              minim veniam quis nostrud exercitation.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
+              exercitation.
             </p>
             <VintageBox right={true} vintageOne={true}>
               <Button className="banner-btn one" title="Run Meshery">
@@ -42,11 +38,7 @@ const BannerModern = () => {
             </VintageBox>
           </Col>
           <Col sm={5} md={6}>
-            <img
-              src={imgHero}
-              className="hero-img"
-              alt="prime-app hero image"
-            />
+            <img src={imgHero} className="hero-img" alt="prime-app hero image" />
           </Col>
         </Row>
       </Container>

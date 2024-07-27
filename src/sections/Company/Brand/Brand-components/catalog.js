@@ -38,12 +38,11 @@ const Catalog = () => {
           </Col>
           <Col>
             <p>
-              The Catalog mark includes the Catalog name & logo, and any word,
-              phrase, image, or other designation that identifies the source or
-              origin of any Layer5 projects. Please don’t modify the marks or
-              use them in a confusing way, including suggesting sponsorship or
-              endorsement by Layer5, or in a way that confuses Layer5 with
-              another brand (including your own).
+              The Catalog mark includes the Catalog name & logo, and any word, phrase, image, or
+              other designation that identifies the source or origin of any Layer5 projects. Please
+              don’t modify the marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5, or in a way that confuses Layer5 with another
+              brand (including your own).
             </p>
           </Col>
         </Row>
@@ -57,47 +56,27 @@ const Catalog = () => {
             <div className="project__block__wrap">
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
-                  <StaticImage
-                    loading="lazy"
-                    src={CatalogIcon}
-                    alt="MeshMap Logo"
-                  />
+                  <StaticImage loading="lazy" src={CatalogIcon} alt="MeshMap Logo" />
                 </div>
               </Col>
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
-                  <StaticImage
-                    loading="lazy"
-                    src={CatalogIcon2}
-                    alt="Meshery Logo"
-                  />
+                  <StaticImage loading="lazy" src={CatalogIcon2} alt="Meshery Logo" />
                 </div>
               </Col>
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
-                  <StaticImage
-                    loading="lazy"
-                    src={CatalogIcon3}
-                    alt="SMP Logo"
-                  />
+                  <StaticImage loading="lazy" src={CatalogIcon3} alt="SMP Logo" />
                 </div>
               </Col>
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
-                  <StaticImage
-                    loading="lazy"
-                    src={CatalogIcon4}
-                    alt="Nighthawk Logo"
-                  />
+                  <StaticImage loading="lazy" src={CatalogIcon4} alt="Nighthawk Logo" />
                 </div>
               </Col>
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
-                  <StaticImage
-                    loading="lazy"
-                    src={CatalogIcon5}
-                    alt="Nighthawk Logo"
-                  />
+                  <StaticImage loading="lazy" src={CatalogIcon5} alt="Nighthawk Logo" />
                 </div>
               </Col>
             </div>
@@ -110,50 +89,20 @@ const Catalog = () => {
           </Col>
           <Col xs={12}>
             <p>
-              Our community color palette consists of gray and green colors
-              representing each of our projects. The Catalog logo should be
-              white when using project colors as the background.
+              Our community color palette consists of gray and green colors representing each of our
+              projects. The Catalog logo should be white when using project colors as the
+              background.
             </p>
           </Col>
           <Row className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox
-              name="Caribbean Green"
-              R="0"
-              G="211"
-              B="169"
-              colorCode="#00D3A9"
-            />
-            <ColorBox
-              name="Light Slate Gray"
-              R="122"
-              G="132"
-              B="142"
-              colorCode="#7A848E"
-            />
-            <ColorBox
-              name="Dark Green"
-              R="41"
-              G="73"
-              B="87"
-              colorCode="#294957"
-            />
+            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+            <ColorBox name="Light Slate Gray" R="122" G="132" B="142" colorCode="#7A848E" />
+            <ColorBox name="Dark Green" R="41" G="73" B="87" colorCode="#294957" />
             <div className="white-color-box">
-              <ColorBox
-                name="Light Grey"
-                R="240"
-                G="240"
-                B="240"
-                colorCode="#F0F0F0"
-              />
+              <ColorBox name="Light Grey" R="240" G="240" B="240" colorCode="#F0F0F0" />
             </div>
-            <ColorBox
-              name="Charcoal"
-              R="60"
-              G="73"
-              B="79"
-              colorCode="#3C494F"
-            />
+            <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
           </Row>
         </Row>
       </div>

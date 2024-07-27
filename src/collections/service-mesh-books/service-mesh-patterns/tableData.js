@@ -216,7 +216,8 @@ export const Data = [
     subsection: "Area IV"
   },
   {
-    service_mesh_pattern: "Pattern: Zero Trust: Securing in-cluster communication (mTLS) - Encryption",
+    service_mesh_pattern:
+      "Pattern: Zero Trust: Securing in-cluster communication (mTLS) - Encryption",
     category: "Security",
     subsection: "Area IV"
   },
@@ -299,8 +300,9 @@ export const Data = [
     subsection: "Area VI"
   },
   {
-    service_mesh_pattern: "Pattern: Common interface for integrating with service mesh functionality",
+    service_mesh_pattern:
+      "Pattern: Common interface for integrating with service mesh functionality",
     category: "Service Mesh Interface (SMI)",
     subsection: "Area VI"
-  },
+  }
 ];

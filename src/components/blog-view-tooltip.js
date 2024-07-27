@@ -6,39 +6,38 @@ import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
-    @media screen and (max-width: 576px) {
-        display: none;
-    }
-    float:left;
-    margin: auto 1rem;
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
+  float: left;
+  margin: auto 1rem;
 
-    .border {
-        line-height: 18px;
-    }
+  .border {
+    line-height: 18px;
+  }
 
-    a {
-        padding: 5px;
-        color: ${props => props.theme.keppletColor};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background-color: ${props => props.theme.grey212121ToWhite};
-        border: 1.5px solid ${props => props.theme.keppletColor};
-        &:hover{
-            background-color: ${props => props.theme.primaryColor};
-            color: ${props => props.theme.primaryLightColorTwo};
-            cursor: pointer;
-            border: 1.5px solid ${props => props.theme.primaryColor};
-        }             
+  a {
+    padding: 5px;
+    color: ${(props) => props.theme.keppletColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background-color: ${(props) => props.theme.grey212121ToWhite};
+    border: 1.5px solid ${(props) => props.theme.keppletColor};
+    &:hover {
+      background-color: ${(props) => props.theme.primaryColor};
+      color: ${(props) => props.theme.primaryLightColorTwo};
+      cursor: pointer;
+      border: 1.5px solid ${(props) => props.theme.primaryColor};
     }
-    .active {
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background-color: ${props => props.theme.primaryColor};
-        color: ${props => props.theme.primaryLightColorTwo};
-        border: 1.5px solid ${props => props.theme.primaryColor};
-    }
+  }
+  .active {
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background-color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.primaryLightColorTwo};
+    border: 1.5px solid ${(props) => props.theme.primaryColor};
+  }
 `;
 
 const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
-
   const NoSsr = ({ children }) => {
     const [isMounted, setMount] = useState(false);
 
@@ -90,7 +89,6 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
         </NoSsr>
       </Row>
     </ToolTipWrapper>
-
   );
 };
 

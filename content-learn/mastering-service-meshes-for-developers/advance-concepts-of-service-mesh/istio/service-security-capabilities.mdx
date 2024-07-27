@@ -24,9 +24,7 @@ metadata:
 spec: {}
 ```
 
-<h3 class="chapter-sub-heading">
-  And then begin poking holes in your service mesh "firewall".
-</h3>
+<h3 class="chapter-sub-heading">And then begin poking holes in your service mesh "firewall".</h3>
 
 ```yaml
 ---
@@ -45,9 +43,7 @@ spec:
             methods: ["GET"]
 ```
 
-<h3 class="chapter-sub-heading">
-  Create AuthorizationPolicy for each BookInfo service.
-</h3>
+<h3 class="chapter-sub-heading">Create AuthorizationPolicy for each BookInfo service.</h3>
 
 ```yaml
 ---
@@ -142,9 +138,7 @@ spec:
           values: ["naruto"]
 ```
 
-<h3 class="chapter-sub-heading">
-  Reset BookInfo Subsets (reset destination rules)
-</h3>
+<h3 class="chapter-sub-heading">Reset BookInfo Subsets (reset destination rules)</h3>
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -209,7 +203,6 @@ spec:
       labels:
         version: v2
 ---
-
 ```
 
 <h2 class="chapter-sub-heading">Identity Verification</h2>
@@ -234,8 +227,7 @@ spec:
   rules:
     - from:
         - source:
-            requestPrincipals:
-              ["testing@secure.istio.io/testing@secure.istio.io"]
+            requestPrincipals: ["testing@secure.istio.io/testing@secure.istio.io"]
       when:
         - key: request.auth.claims[groups]
           values: ["group1"]

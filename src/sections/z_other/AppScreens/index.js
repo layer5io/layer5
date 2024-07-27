@@ -17,7 +17,7 @@ import AppScreenSectionWrapper from "./appScreenSection.style";
 const AppScreens = () => {
   const thumbs = [image1, image2, image3, image4];
   const settings = {
-    customPaging: function(i) {
+    customPaging: function (i) {
       return (
         <a>
           <img src={thumbs[i]} alt="img" />
@@ -74,11 +74,7 @@ const AppScreens = () => {
           <Row>
             <Col className="app-screen-content-block" xs={12} lg={6}>
               <div className="app__screen__conent">
-                <SectionTitle
-                  className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
-                >
+                <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
                   <h4>App Screens</h4>
                   <h2>
                     <span>See screenshot </span> & engage in this app.
@@ -110,11 +106,7 @@ const AppScreens = () => {
         <Container>
           <Row>
             <Col className="app-screen-content-block" offsetMd={6} md={6}>
-              <SectionTitle
-                className="section-title"
-                leftAlign={true}
-                UniWidth="100%"
-              >
+              <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
                 {" "}
                 <h4>App Screens</h4>
                 <h2>

@@ -22,7 +22,7 @@ export default () => (
         particles: {
           number: {
             value: 3,
-            density: { enable: true, value_area: 800 },
+            density: { enable: true, value_area: 800 }
           },
 
           shape: {
@@ -32,20 +32,20 @@ export default () => (
                 src: `${meshery}`,
                 width: 20,
                 height: 15,
-                alt: "meshery-image",
+                alt: "meshery-image"
               },
               {
                 src: `${smp}`,
                 width: 30,
                 height: 15,
-                alt: "smp-image",
+                alt: "smp-image"
               },
               {
                 src: `${imagehub}`,
                 width: 20,
                 height: 15,
                 alt: "imageHub Image"
-              },
+              }
               // {
               //     src: `${smp}`,
               //     width: 30,
@@ -56,19 +56,19 @@ export default () => (
               //     width: 20,
               //     height: 15,
               // }
-            ],
+            ]
           },
           opacity: {
             value: 0, // Previously -> 0.17626369048095938
             random: true,
-            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
           },
           size: {
             value: 30,
-            random: false,
+            random: false
           },
           line_linked: {
-            enable: false,
+            enable: false
           },
           move: {
             enable: true,
@@ -77,10 +77,10 @@ export default () => (
             random: false,
             straight: false,
             bounce: true,
-            attract: { enable: true,  rotateY: 200 },
-          },
+            attract: { enable: true, rotateY: 200 }
+          }
         },
-        retina_detect: true,
+        retina_detect: true
       }}
     />
   </div>

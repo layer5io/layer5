@@ -15,11 +15,11 @@ export const FeaturesSectionContainer = styled.div`
   grid-row-gap: 20px;
   rect {
     transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    fill:  ${props => props.theme.grey313131ToGreenC9FCF6};  
+    fill: ${(props) => props.theme.grey313131ToGreenC9FCF6};
   }
   path {
     transition: stroke 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+    stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
   }
   @media (max-width: 1198px) {
     grid-template-columns: repeat(auto-fill, 17rem);
@@ -48,7 +48,7 @@ export const FeaturesSectionContainer = styled.div`
 
 export const FeatureBlockContainer = styled.div`
   box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.blackFiveToWhiteFive};
-  background-color:	${props => props.theme.grey212121ToWhite};
+  background-color: ${(props) => props.theme.grey212121ToWhite};
   border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -112,12 +112,12 @@ export const FeatureInfoContainer = styled.div`
 
 export const CountBlockContainer = styled.div`
   text-align: center;
-  
+
   .count,
   .count-desc {
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  
+
   .count {
     font-weight: 700;
     margin-bottom: 0.625rem;

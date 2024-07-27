@@ -32,19 +32,22 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>
-                    At Layer5, we champion <i>developer-defined</i> infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+                    At Layer5, we champion <i>developer-defined</i> infrastructure, giving engineers
+                    the power to reshape application delivery. We empower operators in reimagining
+                    how they manage modern infrastructure: collaboratively.
                   </p>
                   <div className="head-images-mobile">
                     <img src={FiveIcon} alt="About Layer5" />
                   </div>
                   <p className="section-title">We are enablers.</p>
                   <p>
-                    We believe innovation is furthered by collaboration and that collaboration is enabled by infrastructure. Layer5 encourages organizations to view their infrastructure through a fresh lens, constantly asking, "What
-                    have you done for me lately?" Our suite of multi-cluster, multi-cloud infrastructure management products, with open source projects at their core, form the bedrock of our offerings.
-
-                    Our cloud native application and infrastructure management
-                    software enables organizations to expect more from their
-                    infrastructure.
+                    We believe innovation is furthered by collaboration and that collaboration is
+                    enabled by infrastructure. Layer5 encourages organizations to view their
+                    infrastructure through a fresh lens, constantly asking, "What have you done for
+                    me lately?" Our suite of multi-cluster, multi-cloud infrastructure management
+                    products, with open source projects at their core, form the bedrock of our
+                    offerings. Our cloud native application and infrastructure management software
+                    enables organizations to expect more from their infrastructure.
                   </p>
                   {/* <p>As stewards of industry, we enable organizations of all sizes, from well-known brands to ambitious start-ups to rely on our solutions to provision, secure, connect, and run their business-critical applications.</p> */}
                 </div>
@@ -67,31 +70,26 @@ const About = () => {
                 <div className="about-text text-two">
                   <h1>Open Source First</h1>
                   <p className="indent">
-                    Our projects establish industry standards and enable
-                    developers, operators, and product owners with repeatable
-                    patterns and best practices for managing all aspects of
-                    distributed services.
+                    Our projects establish industry standards and enable developers, operators, and
+                    product owners with repeatable patterns and best practices for managing all
+                    aspects of distributed services.
                   </p>
                   <div className="head-images-2-mobile">
-                    <img
-                      src={communityStat}
-                      alt="Layer5 Community Stat"
-                      loading="lazy"
-                    />
+                    <img src={communityStat} alt="Layer5 Community Stat" loading="lazy" />
                   </div>
                   <p className="section-title">We are principled.</p>
                   <p>
-                    We are proud of the inclusive and kind community and work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and execute with integrity and in alignment with our core principles of paying it forward, challenging ourselves and those around to be and to do better.
+                    We are proud of the inclusive and kind community and work environment we have
+                    built. We support each other as we work to solve important problems. We take our
+                    work seriously, and execute with integrity and in alignment with our core
+                    principles of paying it forward, challenging ourselves and those around to be
+                    and to do better.
                   </p>
                 </div>
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images-2">
-                  <img
-                    src={communityStat}
-                    alt="Layer5 Community Stat"
-                    loading="lazy"
-                  />
+                  <img src={communityStat} alt="Layer5 Community Stat" loading="lazy" />
                 </div>
               </Col>
             </Row>
@@ -105,14 +103,9 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="head-images-meet">
-                  <StaticImage
-                    src={Community_meetup}
-                    alt="Community_meetup"
-                    loading="lazy"
-                  />
+                  <StaticImage src={Community_meetup} alt="Community_meetup" loading="lazy" />
                   <figcaption className="caption">
-                    Layer5 community members at Open Source Africa Community
-                    conference, March 2022.
+                    Layer5 community members at Open Source Africa Community conference, March 2022.
                   </figcaption>
                 </div>
               </Col>
@@ -120,16 +113,14 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    Layer5 is powered by a growing community of collaborators
-                    representing industry leading, cloud native, open source
-                    software.
+                    Layer5 is powered by a growing community of collaborators representing industry
+                    leading, cloud native, open source software.
                   </p>
                   <p className="section-title">We are remote oriented.</p>
                   <p>
-                    Our remote working model has been in our DNA since our
-                    genesis in 2020, which allows us to maintain a flexible
-                    working environment and gives us access to a global pool of
-                    diverse talent.
+                    Our remote working model has been in our DNA since our genesis in 2020, which
+                    allows us to maintain a flexible working environment and gives us access to a
+                    global pool of diverse talent.
                   </p>
                   <Link className="mute" to="/careers">
                     Learn how Layer5 works
@@ -144,15 +135,10 @@ const About = () => {
       <Container fullWidthSM>
         <Row Vcenter={true}>
           <Col xs={12} sm={12}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={false} UniWidth="100%">
               <h1>Collaborate</h1>
               <p className="colab">
-                Join the community and collaborate on our projects all around
-                the world.
+                Join the community and collaborate on our projects all around the world.
               </p>
 
               <img
@@ -226,11 +212,7 @@ const About = () => {
         </Row>
         <Row className="contactButton section-bottom ">
           <Col xs={12} sm={12}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={false}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={false} UniWidth="100%">
               {" "}
               <Button
                 primary

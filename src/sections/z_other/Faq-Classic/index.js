@@ -40,12 +40,8 @@ const FaqClassic = () => {
                   <AccordionTitle>
                     <h5>{faq.title}</h5>
                     <IconWrapper>
-                      <OpenIcon>
-                        {/* <IoIosArrowForward /> */}
-                      </OpenIcon>
-                      <CloseIcon>
-                        {/* <IoIosArrowDown /> */}
-                      </CloseIcon>
+                      <OpenIcon>{/* <IoIosArrowForward /> */}</OpenIcon>
+                      <CloseIcon>{/* <IoIosArrowDown /> */}</CloseIcon>
                     </IconWrapper>
                   </AccordionTitle>
                   <AccordionBody>

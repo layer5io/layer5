@@ -10,50 +10,50 @@ import RelatedResourcesFactory from "../../../components/Related-Resources/relat
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
-
 const ResourceSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
-  const resourceData = useStaticQuery(
-    graphql`query relatedResources {
-  allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "resources"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      frontmatter {
-        title
-        date(formatString: "MMM Do YYYY")
-        author
-        category
-        tags
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-          extension
-          publicURL
+  const resourceData = useStaticQuery(graphql`
+    query relatedResources {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: {
+          fields: { collection: { eq: "resources" } }
+          frontmatter: { published: { eq: true } }
         }
-        darkthumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date(formatString: "MMM Do YYYY")
+            author
+            category
+            tags
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            darkthumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
-      }
-      fields {
-        slug
       }
     }
-  }
-}
-`
-  );
+  `);
 
   const resources = resourceData.allMdx.nodes;
-  const relatedResources = new RelatedResourcesFactory(
-    resources, fields.slug
-  ).setMaxResources(6)
+  const relatedResources = new RelatedResourcesFactory(resources, fields.slug)
+    .setMaxResources(6)
     .setCategory(frontmatter.category)
     .setTags(frontmatter.tags)
     .getResources();
@@ -63,7 +63,6 @@ const ResourceSingle = ({ data }) => {
       <PageHeader
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
-
         thumbnail={frontmatter.thumbnail}
       />
       <div className="single-resource-wrapper">
@@ -72,9 +71,7 @@ const ResourceSingle = ({ data }) => {
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
 
-          <CTA_Bottom
-            category={"MeshMap"}
-          />
+          <CTA_Bottom category={"MeshMap"} />
 
           <div className="backBtn">
             <Link to="/resources">

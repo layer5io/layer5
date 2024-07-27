@@ -34,36 +34,26 @@ const ColorCode = () => {
         </a>
 
         <p>
-          Colors when accurately applied can be a potent tool that enables
-          designers and developers to implement solutions with speed and
-          efficiency. Here are a couple of things to keep in mind.
+          Colors when accurately applied can be a potent tool that enables designers and developers
+          to implement solutions with speed and efficiency. Here are a couple of things to keep in
+          mind.
         </p>
         <div className="filterBtns">
           <Button
-            className={
-              location.pathname === "/projects/sistent/identity/color"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/projects/sistent/identity/color" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/identity/color")}
             title="Overview"
           />
           <Button
             className={
-              location.pathname === "/projects/sistent/identity/color/guidance"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/identity/color/guidance" ? "active" : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/identity/color/guidance")
-            }
+            onClick={() => navigate("/projects/sistent/identity/color/guidance")}
             title="Guidance"
           />
           <Button
             className={
-              location.pathname === "/projects/sistent/identity/color/code"
-                ? "active"
-                : ""
+              location.pathname === "/projects/sistent/identity/color/code" ? "active" : ""
             }
             onClick={() => navigate("/projects/sistent/identity/color/code")}
             title="Code"
@@ -71,31 +61,25 @@ const ColorCode = () => {
         </div>
         <div className="main-content">
           <p>
-            These colors have been structured into tokens that represent
-            specific values. These tokens will be arranged in a package to
-            enable referencing and importing it into editor files for use. The
-            tokens are grouped into categories to represent the ones that are
-            directly usable in designs and those that are to be aliased by
-            tokens used in designs. This makes for proper structure and
-            consistent usage of color across all proposed and implemented
-            designs. The only exception for usage of primitive tokens might be
-            when applying color to illustrations.
+            These colors have been structured into tokens that represent specific values. These
+            tokens will be arranged in a package to enable referencing and importing it into editor
+            files for use. The tokens are grouped into categories to represent the ones that are
+            directly usable in designs and those that are to be aliased by tokens used in designs.
+            This makes for proper structure and consistent usage of color across all proposed and
+            implemented designs. The only exception for usage of primitive tokens might be when
+            applying color to illustrations.
           </p>
           <a id="Primitive Category">
             <h2>Primitive Category</h2>
           </a>
           <p>
-            Since this category will not be used directly in designs, it does
-            not have any role descriptions.
+            Since this category will not be used directly in designs, it does not have any role
+            descriptions.
           </p>
           <h3>Brand Colors</h3>
           <Row className="image-container" Hcenter>
             <Col md={8} lg={8} sm={12}>
-              <img
-                width="100%"
-                src={isDark ? BrandColorsDark : BrandColors}
-                alt="Brand colors"
-              />
+              <img width="100%" src={isDark ? BrandColorsDark : BrandColors} alt="Brand colors" />
             </Col>
           </Row>
           <h3>Greyscale Colors</h3>
@@ -122,28 +106,19 @@ const ColorCode = () => {
             <h2>Semantic Category</h2>
           </a>
           <p>
-            The semantic category has been sub-categorized into background,
-            text, brand, border, and functions. Possibility for a few more
-            categories exists as the need arises.
+            The semantic category has been sub-categorized into background, text, brand, border, and
+            functions. Possibility for a few more categories exists as the need arises.
           </p>
           <h3>Background Colors</h3>
           <Row className="image-container" Hcenter>
             <Col md={8} lg={8} sm={12}>
-              <img
-                width="100%"
-                src={isDark ? BgColorsDark : BgColors}
-                alt="Background colors"
-              />
+              <img width="100%" src={isDark ? BgColorsDark : BgColors} alt="Background colors" />
             </Col>
           </Row>
           <h3>Text Colors</h3>
           <Row className="image-container" Hcenter>
             <Col md={8} lg={8} sm={12}>
-              <img
-                width="100%"
-                src={isDark ? TextColorsDark : TextColors}
-                alt="Text colors"
-              />
+              <img width="100%" src={isDark ? TextColorsDark : TextColors} alt="Text colors" />
             </Col>
           </Row>
           <h3>Border Colors</h3>
@@ -158,8 +133,8 @@ const ColorCode = () => {
           </Row>
           <h3>Component Colors</h3>
           <p>
-            Tokens here are component specific and must be used only for the
-            component that they are referencing.
+            Tokens here are component specific and must be used only for the component that they are
+            referencing.
           </p>
           <Row className="image-container" Hcenter>
             <Col md={8} lg={8} sm={12}>

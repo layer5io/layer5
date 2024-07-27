@@ -7,11 +7,15 @@ const CommunityLearn = () => {
   return (
     <>
       <LearnPage />
-
     </>
   );
 };
 export default CommunityLearn;
 export const Head = () => {
-  return <SEO title="Learn Layer5" description="We have put together good learning materials and resources to guide you through learning about cloud native infrastucture." />;
+  return (
+    <SEO
+      title="Learn Layer5"
+      description="We have put together good learning materials and resources to guide you through learning about cloud native infrastucture."
+    />
+  );
 };

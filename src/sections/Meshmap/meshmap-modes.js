@@ -8,25 +8,25 @@ const MeshmapModesWrapper = styled.div`
 
   p.caption {
     margin: 0rem 0rem 2rem 0rem;
-    font-style: normal ;
+    font-style: normal;
   }
   .firstheading {
     text-align: center;
-    padding-top:0;
-    margin-top:0;
+    padding-top: 0;
+    margin-top: 0;
     background-color: black;
   }
-  .heading{
-      text-align: center;
-      padding: 1rem 0;
-      text-transform: uppercase;
+  .heading {
+    text-align: center;
+    padding: 1rem 0;
+    text-transform: uppercase;
   }
 
   .modes-wrapper {
-    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.25);
     display: flex;
 
-    background-color: ${props => props.theme.secondaryColor};
+    background-color: ${(props) => props.theme.secondaryColor};
     background: linear-gradient(360deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
 
     &:hover {
@@ -47,7 +47,9 @@ const MeshmapModesWrapper = styled.div`
     overflow: hidden;
     transition: width 0.5s ease;
 
-    &:first-of-type {border-left: 0px;}
+    &:first-of-type {
+      border-left: 0px;
+    }
     &:before,
     &:after {
       transform: translate3d(0, 0, 0);
@@ -66,15 +68,13 @@ const MeshmapModesWrapper = styled.div`
     }
 
     &:before {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        #00b39f 100%
-      );
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #00b39f 100%);
       z-index: 1;
       opacity: 0;
       transform: translate3d(0, 0, 0) translateY(50%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
     }
 
     &:hover {
@@ -88,12 +88,14 @@ const MeshmapModesWrapper = styled.div`
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 0.5s ease, transform 0.5s ease 0.5s;
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease 0.5s;
       }
 
-      .mode-name{
-          top: 15%;
-          transition: all 0.5s ease 0.5s;
+      .mode-name {
+        top: 15%;
+        transition: all 0.5s ease 0.5s;
       }
 
       .content {
@@ -115,7 +117,9 @@ const MeshmapModesWrapper = styled.div`
     overflow: hidden;
     transition: width 0.3s ease;
 
-    &:first-of-type {border-left: 0px;}
+    &:first-of-type {
+      border-left: 0px;
+    }
     &:before,
     &:after {
       transform: translate3d(0, 0, 0);
@@ -132,15 +136,13 @@ const MeshmapModesWrapper = styled.div`
     }
 
     &:before {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        #00b39f 100%
-      );
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #00b39f 100%);
       z-index: 1;
       opacity: 0;
       transform: translate3d(0, 0, 0) translateY(50%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
     }
 
     &:hover {
@@ -149,19 +151,22 @@ const MeshmapModesWrapper = styled.div`
 
       &:after {
         opacity: 0;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
       }
 
       &:before {
         opacity: 1;
         transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1s ease, transform 1s ease 0.5s;
+        transition:
+          opacity 1s ease,
+          transform 1s ease 0.5s;
       }
 
-      .mode-name{
-          top: 15%;
-          transition: all 1.1s ease 0.55s;
+      .mode-name {
+        top: 15%;
+        transition: all 1.1s ease 0.55s;
       }
 
       .content {
@@ -184,14 +189,14 @@ const MeshmapModesWrapper = styled.div`
     h1 {
       margin: 0.5rem;
       text-transform: uppercase;
-      color: ${props => props.theme.saffronColor};
+      color: ${(props) => props.theme.saffronColor};
       font-size: 1.44rem;
       font-weight: normal;
     }
-    img{
-        width: 30rem;
-        height: auto;
-        cursor: pointer;
+    img {
+      width: 30rem;
+      height: auto;
+      cursor: pointer;
     }
     .designer-img {
       box-shadow: 0px 0.25rem 0.5rem 0rem rgb(0, 0, 0, 0.75);
@@ -228,18 +233,17 @@ const MeshmapModesWrapper = styled.div`
     display: none;
   }
 
-  .big{
+  .big {
     transform: scale(1.9);
     transition: transform 0.25s ease;
     @media only screen and (max-width: 1198px) {
       transform: scale(1.1);
     }
   }
-  .small{
+  .small {
     transform: scale(1);
     transition: transform 0.25s ease;
   }
-
 `;
 
 const MeshmapModes = () => {
@@ -261,9 +265,16 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Discover and model your cloud native deployments</h1>
-            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
+            <img
+              src={designerImage}
+              alt="MeshMap Designer"
+              onClick={() => setDesignerEnlarged(!designerEnlarged)}
+              className={`designer-img ${designerEnlarged ? "big" : "small"}`}
+            />
             <p>
-              Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.
+              Drag-and-drop your cloud native infrastructure using a palette of thousands of
+              versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis
+              into your pipeline.
             </p>
           </div>
         </div>
@@ -274,9 +285,16 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Apply patterns and manage many Kubernetes clusters</h1>
-            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged ? "big" : "small"} />
+            <img
+              src={visualizerImage}
+              alt="MeshMap Visualizer"
+              onClick={() => setVizEnlarged(!vizEnlarged)}
+              className={vizEnlarged ? "big" : "small"}
+            />
             <p>
-              Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
+              Deploy designs, apply patterns, manage and operate your deployments in real-time.
+              Bring all your Kubernetes clusters under a common point of management. Interactively
+              connect to terminal sessions or initiate and search log streams from your containers.
             </p>
           </div>
         </div>
@@ -299,4 +317,3 @@ const MeshmapModes = () => {
 };
 
 export default MeshmapModes;
-

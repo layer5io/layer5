@@ -34,11 +34,10 @@ const Writers = () => {
           <div className="content writing_program">
             <h2 className="heading-top">What is Layer5 Writing Program?</h2>
             <p>
-              The Layer5 Writing Program is a way to demonstrate your expertise,
-              give back to the community, and help us produce great content. We
-              collaborate with authors and technologists from around the world
-              to produce high quality articles, blog posts, tutorials and other
-              cloud native resources on Meshery, Kubernetes, service meshes,
+              The Layer5 Writing Program is a way to demonstrate your expertise, give back to the
+              community, and help us produce great content. We collaborate with authors and
+              technologists from around the world to produce high quality articles, blog posts,
+              tutorials and other cloud native resources on Meshery, Kubernetes, service meshes,
               Docker and related technologies.
             </p>
             <h2>Why should you participate?</h2>
@@ -56,12 +55,7 @@ const Writers = () => {
                             fill="none"
                             viewBox="0 0 40 40"
                           >
-                            <rect
-                              width="40"
-                              height="40"
-                              fill="#C9FCF6"
-                              rx="5"
-                            />
+                            <rect width="40" height="40" fill="#C9FCF6" rx="5" />
                             <path
                               stroke="#00B39F"
                               strokeLinecap="round"
@@ -76,10 +70,9 @@ const Writers = () => {
                             Improve your writing and <br />
                             communication skills
                           </h4>
-                          Publishing is a feedback-driven process that can help
-                          you understand your audience better, explain complex
-                          topics clearly, and iterate to improve results. Become
-                          a better technical writer by collaborating with an
+                          Publishing is a feedback-driven process that can help you understand your
+                          audience better, explain complex topics clearly, and iterate to improve
+                          results. Become a better technical writer by collaborating with an
                           accomplished team of technical writers and editors.
                         </td>
                       </tr>
@@ -92,12 +85,7 @@ const Writers = () => {
                             fill="none"
                             viewBox="0 0 40 40"
                           >
-                            <rect
-                              width="40"
-                              height="40"
-                              fill="#C9FCF6"
-                              rx="5"
-                            />
+                            <rect width="40" height="40" fill="#C9FCF6" rx="5" />
                             <path
                               stroke="#00B39F"
                               strokeLinecap="round"
@@ -109,15 +97,12 @@ const Writers = () => {
                         </td>
                         <td className="skill">
                           <h4>Build your technical profile</h4>
-                          Share your knowledge with a worldwide developer
-                          community. Build your GitHub profile with assigned
-                          issues and merged pull requests. Articles, posts,
-                          project documentation written by you will be drafted,
-                          put into a pull request, reviewed and merged like any
-                          other code-centric contribution. Documenting the
-                          problems you solved or a new feature you implemented
-                          will serve as a perpetual guide to others in the
-                          community.
+                          Share your knowledge with a worldwide developer community. Build your
+                          GitHub profile with assigned issues and merged pull requests. Articles,
+                          posts, project documentation written by you will be drafted, put into a
+                          pull request, reviewed and merged like any other code-centric
+                          contribution. Documenting the problems you solved or a new feature you
+                          implemented will serve as a perpetual guide to others in the community.
                         </td>
                       </tr>
                     </table>
@@ -135,12 +120,7 @@ const Writers = () => {
                             fill="none"
                             viewBox="0 0 40 40"
                           >
-                            <rect
-                              width="40"
-                              height="40"
-                              fill="#C9FCF6"
-                              rx="5"
-                            />
+                            <rect width="40" height="40" fill="#C9FCF6" rx="5" />
                             <path
                               stroke="#00B39F"
                               strokeLinecap="round"
@@ -152,11 +132,10 @@ const Writers = () => {
                         </td>
                         <td className="skill">
                           <h4>Establish your voice and personal brand</h4>
-                          Sharing your knowledge not only demonstrates your
-                          technical expertise, it highlights your ability to
-                          teach others, and establishes you as an authority on
-                          the topic. Your technical write-ups are empirical
-                          evidence of your ability to learn and teach.
+                          Sharing your knowledge not only demonstrates your technical expertise, it
+                          highlights your ability to teach others, and establishes you as an
+                          authority on the topic. Your technical write-ups are empirical evidence of
+                          your ability to learn and teach.
                         </td>
                       </tr>
                       <tr>
@@ -168,12 +147,7 @@ const Writers = () => {
                             fill="none"
                             viewBox="0 0 40 40"
                           >
-                            <rect
-                              width="40"
-                              height="40"
-                              fill="#C9FCF6"
-                              rx="5"
-                            />
+                            <rect width="40" height="40" fill="#C9FCF6" rx="5" />
                             <path
                               stroke="#00B39F"
                               strokeLinecap="round"
@@ -185,13 +159,11 @@ const Writers = () => {
                         </td>
                         <td className="skill">
                           <h4>Educate</h4>
-                          Whether you're writing about a complex system or a a
-                          set of actions you took to address an error, the odds
-                          are high that someone else will someday struggle with
-                          the same things as you. By writing about the things
-                          that you learn or find interesting, you aren't just
-                          teaching yourself, you're also helping share your
-                          knowledge with every person who reads your post.
+                          Whether you're writing about a complex system or a a set of actions you
+                          took to address an error, the odds are high that someone else will someday
+                          struggle with the same things as you. By writing about the things that you
+                          learn or find interesting, you aren't just teaching yourself, you're also
+                          helping share your knowledge with every person who reads your post.
                         </td>
                       </tr>
                     </table>
@@ -203,15 +175,13 @@ const Writers = () => {
             <h2>Where can you contribute?</h2>
 
             <p>
-              We welcome the contribution of any type that shares knowledge
-              about our projects or related technologies.
+              We welcome the contribution of any type that shares knowledge about our projects or
+              related technologies.
               <br />
-              Do you want to document your recent effort in implementing a new
-              feature? Do you want to share a solution for a problem you were
-              struggling with? Do you want to share information about a recent
-              technology you find intriguing? Want to host an event with Layer5?
-              Want to deliver a talk, a workshop, or a tutorial? Just let us
-              know.
+              Do you want to document your recent effort in implementing a new feature? Do you want
+              to share a solution for a problem you were struggling with? Do you want to share
+              information about a recent technology you find intriguing? Want to host an event with
+              Layer5? Want to deliver a talk, a workshop, or a tutorial? Just let us know.
             </p>
 
             <Row>
@@ -235,10 +205,7 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  <Link
-                    className="project-card"
-                    to="/learn/service-mesh-workshops"
-                  >
+                  <Link className="project-card" to="/learn/service-mesh-workshops">
                     <div className="content_type">
                       <img src={workshop} alt="Workshop" />
                       <h5>Workshop</h5>
@@ -269,10 +236,7 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  <Link
-                    className="project-card"
-                    to="/cloud-native-management/meshery"
-                  >
+                  <Link className="project-card" to="/cloud-native-management/meshery">
                     <div className="content_type">
                       <img src={videos} alt="Videos" />
                       <h5>Recorded Videos</h5>
@@ -288,13 +252,9 @@ const Writers = () => {
             <div className="process">
               <div className="item">
                 <p>
-                  If you’re interested in the Layer5 Writing Program, please
-                  submit your information (and proposed topic, if you have one)
-                  to get started.{" "}
-                  <i>
-                    Don't have a topic? Don't worry, we have plenty of
-                    suggestions for you.
-                  </i>
+                  If you’re interested in the Layer5 Writing Program, please submit your information
+                  (and proposed topic, if you have one) to get started.{" "}
+                  <i>Don't have a topic? Don't worry, we have plenty of suggestions for you.</i>
                 </p>
 
                 <Button
@@ -311,17 +271,11 @@ const Writers = () => {
                   ariaHideApp={false}
                   contentLabel="Content Form"
                 >
-                  <Button
-                    secondary
-                    className="close-modal-btn"
-                    onClick={closeModal}
-                  >
+                  <Button secondary className="close-modal-btn" onClick={closeModal}>
                     {" "}
                     <GrFormClose />
                   </Button>
-                  <h2 className="modal-heading">
-                    Layer5 Content Registration Form
-                  </h2>
+                  <h2 className="modal-heading">Layer5 Content Registration Form</h2>
                   <div className="content-form">
                     <ContentForm />
                   </div>
@@ -329,9 +283,8 @@ const Writers = () => {
               </div>
               <div className="item">
                 <p>
-                  Upon being accepted, you'll work with a coordinator on the
-                  content team to decide on a topic, develop a project plan, and
-                  discuss submission details.
+                  Upon being accepted, you'll work with a coordinator on the content team to decide
+                  on a topic, develop a project plan, and discuss submission details.
                 </p>
               </div>
             </div>
@@ -339,9 +292,8 @@ const Writers = () => {
             <br></br>
             <h2>What are some suggested topics?</h2>
             <p>
-              Here are some suggested topics to get you started. If you have an
-              idea that isn't listed here or if you have any question, please
-              let us know on our{" "}
+              Here are some suggested topics to get you started. If you have an idea that isn't
+              listed here or if you have any question, please let us know on our{" "}
               <a href="https://discuss.layer5.io/">Discuss Forum</a> /{" "}
               <a href="https://layer5io.slack.com/">Slack Channel</a>.
             </p>
@@ -352,9 +304,7 @@ const Writers = () => {
                 </p>
                 <ul>
                   <li>
-                    <p>
-                      Distributed Tracing in Context of Meshery's Architecture.
-                    </p>
+                    <p>Distributed Tracing in Context of Meshery's Architecture.</p>
                   </li>
                   <li>
                     <p>One-stop Cloud Native Market Place - Meshery Catalog.</p>
@@ -363,10 +313,7 @@ const Writers = () => {
                     <p>Interpreting your Cloud Native Performance - SMP.</p>
                   </li>
                   <li>
-                    <p>
-                      Creating and Deploying your first application with
-                      MeshMap.
-                    </p>
+                    <p>Creating and Deploying your first application with MeshMap.</p>
                   </li>
                   <li>
                     <p>Load generation and Load balancing.</p>
@@ -378,10 +325,7 @@ const Writers = () => {
                     <p>Beginners guide to Meshmodel.</p>
                   </li>
                   <li>
-                    <p>
-                      Enhancing Microservices Observability with Meshery and
-                      Prometheus.
-                    </p>
+                    <p>Enhancing Microservices Observability with Meshery and Prometheus.</p>
                   </li>
                 </ul>
               </li>
@@ -391,43 +335,28 @@ const Writers = () => {
                 </p>
                 <ul>
                   <li>
-                    <p>
-                      Building Bridges, Not Walls: The Power of Open Source
-                      Collaboration.
-                    </p>
+                    <p>Building Bridges, Not Walls: The Power of Open Source Collaboration.</p>
                   </li>
                   <li>
-                    <p>
-                      A Deep Dive into Meshery's Contribution to Cloud Native
-                      Ecosystem.
-                    </p>
+                    <p>A Deep Dive into Meshery's Contribution to Cloud Native Ecosystem.</p>
                   </li>
                   <li>
-                    <p>
-                      Open Source Sustainability: Funding Models for Long-Term
-                      GitHub Projects.
-                    </p>
+                    <p>Open Source Sustainability: Funding Models for Long-Term GitHub Projects.</p>
                   </li>
                   <li>
                     <p>Importance to an open source community.</p>
                   </li>
                   <li>
                     <p>
-                      Beyond Code: The Unsung Heroes of Open Source -
-                      Documenters, Testers, and Designers.
+                      Beyond Code: The Unsung Heroes of Open Source - Documenters, Testers, and
+                      Designers.
                     </p>
                   </li>
                   <li>
-                    <p>
-                      Open Source Alchemy: Transforming Community Contributions
-                      into Gold.
-                    </p>
+                    <p>Open Source Alchemy: Transforming Community Contributions into Gold.</p>
                   </li>
                   <li>
-                    <p>
-                      Collaborative Open Source Development: Inside the
-                      Community of Layer5.
-                    </p>
+                    <p>Collaborative Open Source Development: Inside the Community of Layer5.</p>
                   </li>
                 </ul>
               </li>
@@ -436,12 +365,10 @@ const Writers = () => {
             <br></br>
             <h2>How to Submit and Review Your Writing?</h2>
             <p>
-              The Writing Program offers writers two convenient ways to get
-              their writings reviewed by Community. Whether you prefer working
-              with Google Docs or contributing directly to the website, we've
-              got you covered. This structured guide will walk you through both
-              options, ensuring that your valuable content is reviewed
-              effectively.{" "}
+              The Writing Program offers writers two convenient ways to get their writings reviewed
+              by Community. Whether you prefer working with Google Docs or contributing directly to
+              the website, we've got you covered. This structured guide will walk you through both
+              options, ensuring that your valuable content is reviewed effectively.{" "}
             </p>
             <ol>
               <li>
@@ -449,18 +376,15 @@ const Writers = () => {
                   <strong>Google Docs Review:</strong>
                 </p>
                 <p>
-                  If you prefer a straightforward approach, start by crafting
-                  your blog article within{" "}
-                  <a href="https://docs.google.com/">Google Docs</a>, ensuring
-                  it's well-structured and error-free. Share the document with
-                  us by adding it to the{" "}
+                  If you prefer a straightforward approach, start by crafting your blog article
+                  within <a href="https://docs.google.com/">Google Docs</a>, ensuring it's
+                  well-structured and error-free. Share the document with us by adding it to the{" "}
                   <a href="https://drive.google.com/drive/folders/1o6ZSqCq1QUJmLIjl_Y0VgT_azNbgg1W2">
                     Community Drive
                   </a>
-                  , we will provide feedback directly within the Google Doc.
-                  Engage in discussions to refine your content collaboratively.
-                  Once thoroughly reviewed, prepare your submission according to
-                  community guidelines.
+                  , we will provide feedback directly within the Google Doc. Engage in discussions
+                  to refine your content collaboratively. Once thoroughly reviewed, prepare your
+                  submission according to community guidelines.
                 </p>
               </li>
               <li>
@@ -468,14 +392,16 @@ const Writers = () => {
                   <strong>Website Contribution Review:</strong>
                 </p>
                 <p>
-                  For those comfortable with local website development,
-                  contribute directly to the community website. <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Set up your
-                  local environment</a>, create a blog post adhering to specified
-                  guidelines, and submit it via a Pull Request on <a href="https://github.com/layer5io/layer5/">GitHub</a>.
-                  Reviewers will provide feedback, and you'll refine your post
-                  collaboratively. Upon completion, maintainers will
-                  merge your blog post into the website repository, celebrating
-                  your contribution.
+                  For those comfortable with local website development, contribute directly to the
+                  community website.{" "}
+                  <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">
+                    Set up your local environment
+                  </a>
+                  , create a blog post adhering to specified guidelines, and submit it via a Pull
+                  Request on <a href="https://github.com/layer5io/layer5/">GitHub</a>. Reviewers
+                  will provide feedback, and you'll refine your post collaboratively. Upon
+                  completion, maintainers will merge your blog post into the website repository,
+                  celebrating your contribution.
                 </p>
               </li>
             </ol>
@@ -498,8 +424,7 @@ const Writers = () => {
                 </a>
               </li>
               <li>
-                Join the{" "}
-                <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a>
+                Join the <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a>
               </li>
               <li>
                 Explore our <Link to="/resources">Resource Library</Link>

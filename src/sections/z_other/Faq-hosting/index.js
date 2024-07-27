@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
-import SectionTitle  from "../../../reusecore/SectionTitle";
+import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import {
@@ -37,11 +37,7 @@ const Faq = () => {
             </div>
           </Col>
           <Col className="faq-content-block" xs={12} sm={6}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
+            <SectionTitle className="section-title" leftAlign={true} UniWidth="100%">
               <h4>Solution</h4>
               <h2>
                 <span>Easy and perfect solution </span> for this app
@@ -53,12 +49,8 @@ const Faq = () => {
                   <AccordionTitle>
                     <h5>{faq.title}</h5>
                     <IconWrapper>
-                      <OpenIcon>
-                        {/* <IoIosArrowForward /> */}
-                      </OpenIcon>
-                      <CloseIcon>
-                        {/* <IoIosArrowDown /> */}
-                      </CloseIcon>
+                      <OpenIcon>{/* <IoIosArrowForward /> */}</OpenIcon>
+                      <CloseIcon>{/* <IoIosArrowDown /> */}</CloseIcon>
                     </IconWrapper>
                   </AccordionTitle>
                   <AccordionBody>
@@ -67,11 +59,7 @@ const Faq = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-            <VintageBox
-              right={true}
-              vintageTwo={true}
-              position="relative"
-            >
+            <VintageBox right={true} vintageTwo={true} position="relative">
               <Button title="Learn More" />
             </VintageBox>
           </Col>

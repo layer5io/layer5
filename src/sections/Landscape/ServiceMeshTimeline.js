@@ -10,17 +10,11 @@ const meshes = [];
 const initialMeshes = [];
 const remainingMeshes = [];
 
-non_functional.reverse().map(mesh => (
-  mesh.timeline_order ?
-    meshes.push(mesh)
-    : ""
-));
+non_functional.reverse().map((mesh) => (mesh.timeline_order ? meshes.push(mesh) : ""));
 
 for (let i = 0; i < meshes.length; i++) {
-  if (i < 5)
-    initialMeshes.push(meshes[i]);
-  else
-    remainingMeshes.push(meshes[i]);
+  if (i < 5) initialMeshes.push(meshes[i]);
+  else remainingMeshes.push(meshes[i]);
 }
 
 const ServiceMeshTimeline = () => {
@@ -34,7 +28,7 @@ const ServiceMeshTimeline = () => {
   };
 
   const getElements = () =>
-    elements.map(mesh => (
+    elements.map((mesh) => (
       <VerticalTimelineElement
         key={mesh.timeline_order}
         contentStyle={{ color: "#3C494F" }}
@@ -43,35 +37,39 @@ const ServiceMeshTimeline = () => {
         iconClassName="meshBubble"
         iconStyle={{ width: "35px", height: "35px" }}
       >
-        {mesh.icon ?
+        {mesh.icon ? (
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
+            <img
+              src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon}
+              alt={mesh.name}
+              className={mesh.name === "Vulcand" ? "vulcan-img" : ""}
+            />
           </div>
-          : <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
+        ) : (
+          <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />
           </div>
-        }
-        <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order % 2}`}>{mesh.name}</h3>
-        <h4 className={`vertical-timeline-element-subtitle subtitle-${mesh.timeline_order % 2}`}>{mesh.announce_date}</h4>
+        )}
+        <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order % 2}`}>
+          {mesh.name}
+        </h3>
+        <h4 className={`vertical-timeline-element-subtitle subtitle-${mesh.timeline_order % 2}`}>
+          {mesh.announce_date}
+        </h4>
         <p className={`dashLine-${mesh.timeline_order % 2}`}></p>
       </VerticalTimelineElement>
     ));
 
   return (
-    <VerticalTimeline
-      className="timeline"
-    >
+    <VerticalTimeline className="timeline">
       {loadedAll && getElements()}
-      {!(loadedAll) && getElements()}
+      {!loadedAll && getElements()}
       <VerticalTimelineElement
         className={loadedAll ? "hideIcon" : ""}
         iconOnClick={loadMore}
         iconClassName="moreIcon"
         iconStyle={{ width: "60px", height: "60px" }}
-        icon={!(loadedAll) ?
-          <MdExpandMore className="showMoreIcon" />
-          : <></>
-        }
+        icon={!loadedAll ? <MdExpandMore className="showMoreIcon" /> : <></>}
       />
     </VerticalTimeline>
   );

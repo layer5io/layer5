@@ -4,18 +4,16 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMasterFull from   "../../../../assets/images/meshmaster/meshmaster-full.webp";
-import MeshMasterIcon from   "../../../../assets/images/meshmaster/meshmaster-icon.webp";
-import MeshMasterText from   "../../../../assets/images/meshmaster/meshmaster-text.webp";
+import MeshMasterFull from "../../../../assets/images/meshmaster/meshmaster-full.webp";
+import MeshMasterIcon from "../../../../assets/images/meshmaster/meshmaster-icon.webp";
+import MeshMasterText from "../../../../assets/images/meshmaster/meshmaster-text.webp";
 
 const MeshMasterBrand = () => {
   return (
     <div className="post-content">
       <Row className="brand-section">
         <Col xs={12} sm={6}>
-          <h1 className="layerH3">
-          MeshMaster
-          </h1>
+          <h1 className="layerH3">MeshMaster</h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
           <a href="/brand/meshmasters-brand-kit.zip">
@@ -26,47 +24,41 @@ const MeshMasterBrand = () => {
         </Col>
         <Col>
           <p>
-            The MeshMaster mark includes the Meshmaster name & logo, and any
-            word, phrase, image, or other designation that identifies the
-            source or origin of any Layer5 projects. Please don’t modify the
-            marks or use them in a confusing way, including suggesting
-            sponsorship or endorsement by Layer5, or in a way that confuses
-            Layer5 with another brand (including your own).
+            The MeshMaster mark includes the Meshmaster name & logo, and any word, phrase, image, or
+            other designation that identifies the source or origin of any Layer5 projects. Please
+            don’t modify the marks or use them in a confusing way, including suggesting sponsorship
+            or endorsement by Layer5, or in a way that confuses Layer5 with another brand (including
+            your own).
           </p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2 className="layerH3 in">
-            Logos
-          </h2>
+          <h2 className="layerH3 in">Logos</h2>
         </Col>
         <SRLWrapper>
           <Row Vcenter className="ImgDiv">
             <Col xs={12} sm={4}>
-              <img src={MeshMasterFull} alt="Meshmaster Full Logo"/>
+              <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshMasterIcon} alt="Meshmaster Icon"/>
+              <img src={MeshMasterIcon} alt="Meshmaster Icon" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshMasterText} alt="Meshmaster Text"/>
+              <img src={MeshMasterText} alt="Meshmaster Text" />
             </Col>
-
           </Row>
         </SRLWrapper>
       </Row>
       <Row>
         <Col xs={12}>
-          <h2 className="layerH3 in">
-            Colors
-          </h2>
+          <h2 className="layerH3 in">Colors</h2>
         </Col>
         <Col>
           <p>
-            The MeshMaster color palette consists of the primary Image Hub
-            color and additional shades. The Meshmaster logo should be white or
-            monochrome tonal when using a color background.
+            The MeshMaster color palette consists of the primary Image Hub color and additional
+            shades. The Meshmaster logo should be white or monochrome tonal when using a color
+            background.
           </p>
         </Col>
         <Row className="color-code-wrapper">

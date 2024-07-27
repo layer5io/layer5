@@ -134,17 +134,14 @@ Now lets come out of the container before we go to the next section:
 exit
 ```
 
-<h2 class="chapter-sub-heading">
-  Secure Production Identity Framework for Everyone (SPIFFE)
-</h2>
+<h2 class="chapter-sub-heading">Secure Production Identity Framework for Everyone (SPIFFE)</h2>
 <br />
-Istio uses [SPIFFE](https://spiffe.io/) to assert the identify of workloads on
-the cluster. SPIFFE consists of a notion of identity and a method of proving it.
-A SPIFFE identity consists of an authority part and a path. The meaning of the
-path in spiffe land is implementation defined. In k8s it takes the form
-`/ns/$namespace/sa/$service-account` with the expected meaning. A SPIFFE
-identify is embedded in a document. This document in principle can take many
-forms but currently the only defined format is x509.
+Istio uses [SPIFFE](https://spiffe.io/) to assert the identify of workloads on the cluster. SPIFFE
+consists of a notion of identity and a method of proving it. A SPIFFE identity consists of an
+authority part and a path. The meaning of the path in spiffe land is implementation defined. In k8s
+it takes the form `/ns/$namespace/sa/$service-account` with the expected meaning. A SPIFFE identify
+is embedded in a document. This document in principle can take many forms but currently the only
+defined format is x509.
 
 To start our investigation, let us check if the certs are in place in the productpage sidecar:
 

@@ -8,34 +8,36 @@ import "slick-carousel/slick/slick-theme.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksPage = ({ hide_path }) => {
-  const data = useStaticQuery(
-    graphql`query allBooks {
-  allMdx(
-    filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
-    sort: {fields: [frontmatter___date], order: ASC}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        author
-        abstract
-        cover {
-          childImageSharp {
-            gatsbyImageData(width: 480, height: 600, layout: CONSTRAINED)
+  const data = useStaticQuery(graphql`
+    query allBooks {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "service-mesh-books" } }
+          frontmatter: { published: { eq: true } }
+        }
+        sort: { fields: [frontmatter___date], order: ASC }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            author
+            abstract
+            cover {
+              childImageSharp {
+                gatsbyImageData(width: 480, height: 600, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
     }
-  }
-}
-`
-  );
+  `);
 
   let path = hide_path ? "" : "Books";
 
@@ -50,27 +52,27 @@ const BooksPage = ({ hide_path }) => {
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3
         }
       },
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 2.25,
+          slidesToShow: 2.25
         }
       },
       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1.5
         }
-      },
+      }
     ]
   };
 
   return (
     <BooksPageWrapper>
-      <PageHeader title="Service mesh with the best" path={path}/>
+      <PageHeader title="Service mesh with the best" path={path} />
       <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
       <div className="books_caraousel">
         <Slider {...settings}>
@@ -79,7 +81,7 @@ const BooksPage = ({ hide_path }) => {
               <div className="blog-slider_img">
                 <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />
               </div>
-              <Link className="book-page_link" to={fields.slug}/>
+              <Link className="book-page_link" to={fields.slug} />
             </div>
           ))}
         </Slider>

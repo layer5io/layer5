@@ -10,7 +10,7 @@ import { LearnLabsWrapper } from "./section.style";
 const LearnLabs = () => {
   return (
     <LearnLabsWrapper>
-      <PageHeader title="Learn Layer5 Section"/>
+      <PageHeader title="Learn Layer5 Section" />
     </LearnLabsWrapper>
   );
 };

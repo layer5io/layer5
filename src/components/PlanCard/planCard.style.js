@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 const PlanCardWrapper = styled.section`
-
-  
-   .pricing-table {
+  .pricing-table {
     background-color: ${(props) => props.theme.grey212121ToWhite};
     border-top: 3px solid #00b39f;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
@@ -151,7 +149,6 @@ const PlanCardWrapper = styled.section`
       color: ${(props) => props.theme.secondaryColor};
     }
   }
-
 `;
 
 export default PlanCardWrapper;

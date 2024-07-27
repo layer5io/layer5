@@ -10,47 +10,45 @@ import { useStaticQuery, graphql } from "gatsby";
  */
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
-    const data = useStaticQuery(
-      graphql`
-        query allMembers {
-          allMdx(
-            sort: { fields: [frontmatter___name], order: ASC }
-            filter: {
-              fields: { collection: { eq: "members" } }
-              frontmatter: { published: { eq: true } }
-            }
-          ) {
-            nodes {
-              id
-              frontmatter {
-                name
-                github
-                twitter
-                status
-                meshmate
-                maintainer
-                linkedin
-                location
-                badges
-                bio
-                emeritus
-                community_manager
-                image_path {
-                  childImageSharp {
-                    gatsbyImageData(width: 200, layout: CONSTRAINED)
-                  }
-                  extension
-                  publicURL
+    const data = useStaticQuery(graphql`
+      query allMembers {
+        allMdx(
+          sort: { fields: [frontmatter___name], order: ASC }
+          filter: {
+            fields: { collection: { eq: "members" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          nodes {
+            id
+            frontmatter {
+              name
+              github
+              twitter
+              status
+              meshmate
+              maintainer
+              linkedin
+              location
+              badges
+              bio
+              emeritus
+              community_manager
+              image_path {
+                childImageSharp {
+                  gatsbyImageData(width: 200, layout: CONSTRAINED)
                 }
+                extension
+                publicURL
               }
-              fields {
-                slug
-              }
+            }
+            fields {
+              slug
             }
           }
         }
-      `
-    );
+      }
+    `);
 
     return <WrappedComponent allMembers={data} {...props} />;
   };

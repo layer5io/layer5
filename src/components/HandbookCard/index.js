@@ -10,11 +10,11 @@ const HandbookCard = ({ title, description, to }) => {
         <div className="handbook__card">
           <h1 className="handbook__card--head">{title}</h1>
           <div className="handbook__card--line"></div>
-          <p className="handbook__card--para">
-            {description}
-          </p>
+          <p className="handbook__card--para">{description}</p>
           <div className="handbook__card--lm__container">
-            <Link to={to} class="handbook__card--lm">Read More <HiOutlineChevronRight /></Link>
+            <Link to={to} class="handbook__card--lm">
+              Read More <HiOutlineChevronRight />
+            </Link>
           </div>
         </div>
       </Link>

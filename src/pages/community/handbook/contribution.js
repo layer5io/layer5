@@ -7,7 +7,6 @@ const Contributing = () => {
   return (
     <>
       <ContributingPage />
-
     </>
   );
 };

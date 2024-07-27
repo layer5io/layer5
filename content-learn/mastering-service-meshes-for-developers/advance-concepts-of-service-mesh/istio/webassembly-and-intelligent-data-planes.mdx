@@ -25,7 +25,6 @@ In the Istio management page:
 1. Type default into the namespace field.
 2. Click the (+) icon on the Manage Sample Application Lifecycle card and select Image Hub Application to install the latest version of Image Hub
 
-
 <img src={installimagehub} align="center" width="100%" />
 
 <br />
@@ -90,8 +89,8 @@ spec:
     labels:
       app: api-v1
       version: v1
-
 ```
+
 Manually patch the Image Hub Deployment.
 
 ```yaml
@@ -143,6 +142,7 @@ Manually patch the Image Hub Deployment.
 // '
 
 ```
+
 A future version of Meshery will allow you to deploy any filter from the [wasm-filters](https://github.com/layer5io/wasm-filters) repo. PR the repo to upload your custom filter and have Meshery deploy it.
 
 </ChapterStyle>

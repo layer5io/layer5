@@ -49,18 +49,14 @@ The URL to run a load test against will be `http://<IP/hostname of any of the no
 
 Use the computed URL above in Meshery, in the browser, to run a load test and see the results.
 
-<h3 class="chapter-sub-heading">
-  Connect Grafana (optionally, Prometheus) to Meshery.
-</h3>
+<h3 class="chapter-sub-heading">Connect Grafana (optionally, Prometheus) to Meshery.</h3>
 
 On the Settings page:
 
 1. Navigate to the `Metrics` tab.
 1. Enter Grafana's URL:port number and submit.
 
-<h3 class="chapter-sub-heading">
-  Use Meshery to generate load and analyze performance.
-</h3>
+<h3 class="chapter-sub-heading">Use Meshery to generate load and analyze performance.</h3>
 
 On the Performance page:
 
@@ -105,7 +101,8 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/sampl
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/samples/addons/jaeger.yaml
 
 ```
-<br/>
+
+<br />
 <h4 class="chapter-alt-heading"> Exposing services</h4>
 
 Istio add-on services are deployed by default as `ClusterIP` type services. We can expose the services outside the cluster by either changing the Kubernetes service type to `NodePort` or `LoadBalancer` or by port-forwarding or by configuring Kubernetes Ingress.
@@ -221,9 +218,7 @@ To find the assigned ports for Jaeger:
 kubectl -n istio-system get svc tracing
 ```
 
-<h5 class="chapter-alt-heading">
-  Option 2: Expose services with port-forwarding
-</h5>
+<h5 class="chapter-alt-heading">Option 2: Expose services with port-forwarding</h5>
 
 To port-forward Jaeger:
 

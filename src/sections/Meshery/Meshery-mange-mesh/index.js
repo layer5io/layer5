@@ -5,31 +5,31 @@ import Button from "../../../reusecore/Button";
 import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 import { StaticImage } from "gatsby-plugin-image";
 
-const  MultiMesh = "./multi-mesh.svg";
+const MultiMesh = "./multi-mesh.svg";
 
 const ManageMeshWrapper = styled.div`
   margin: 4rem auto;
-  h2{
+  h2 {
     font-weight: 700;
   }
-  p{
+  p {
     margin-bottom: 2rem;
   }
   .banner-btn {
-      margin: 0rem 0.75rem 0 0;
-      color: white;
-      .button-icon{
-          margin-right: 0.625rem;
-      }    
+    margin: 0rem 0.75rem 0 0;
+    color: white;
+    .button-icon {
+      margin-right: 0.625rem;
+    }
   }
-  
-  .multi-mesh-img{
+
+  .multi-mesh-img {
     @media (max-width: 62rem) {
       margin-top: 2rem;
     }
   }
   @media (max-width: 62rem) {
-     text-align: center;
+    text-align: center;
   }
 `;
 
@@ -40,13 +40,21 @@ const MesheryManageMesh = () => {
         <Row Vcenter>
           <Col sm={12} lg={6}>
             <h2>Manage your Mesh</h2>
-            <p>Manage all aspects of running your service mesh no matter what service mesh you're running</p>
-            <Button primary className="banner-btn" title="How Meshery Works" url="/cloud-native-management/meshery/operating-cloud-native-infra">
+            <p>
+              Manage all aspects of running your service mesh no matter what service mesh you're
+              running
+            </p>
+            <Button
+              primary
+              className="banner-btn"
+              title="How Meshery Works"
+              url="/cloud-native-management/meshery/operating-cloud-native-infra"
+            >
               <GiClockwork size={21} className="button-icon" />
             </Button>
           </Col>
           <Col sm={12} lg={6}>
-            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" className="multi-mesh-img"/>
+            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" className="multi-mesh-img" />
           </Col>
         </Row>
       </Container>

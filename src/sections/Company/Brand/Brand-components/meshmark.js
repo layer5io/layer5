@@ -16,9 +16,9 @@ import MeshmarkTextDark from "../../../../assets/images/meshmark/text/meshmark-d
 import MeshmarkTextBlue from "../../../../assets/images/meshmark/text/meshmark-light-text-blue.webp";
 
 const SMPWrap = styled.section`
-    .smp-logo {
-        margin: 0.5rem;
-    }
+  .smp-logo {
+    margin: 0.5rem;
+  }
 `;
 
 const MeshMarkBrand = () => {
@@ -40,76 +40,70 @@ const MeshMarkBrand = () => {
           </Col>
           <Col>
             <p>
-              The MeshMark mark includes MeshMark name & logo and any
-              word, phrase, image, or other designation that identifies the
-              source or origin of any Layer5 projects. PLease don't modify the
-              marks or use them in a confusing way, including suggesting
-              sponsorship or endorsement by Layer5 with another brand (including
-              your own)
+              The MeshMark mark includes MeshMark name & logo and any word, phrase, image, or other
+              designation that identifies the source or origin of any Layer5 projects. PLease don't
+              modify the marks or use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5 with another brand (including your own)
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h2 className="layerH3 in">
-              Logos
-            </h2>
+            <h2 className="layerH3 in">Logos</h2>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkDark} alt="MeshmarkDark Logo"/>
+                <img src={MeshmarkDark} alt="MeshmarkDark Logo" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo"/>
+                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLight} alt="MeshmarkLightLogo"/>
+                  <img src={MeshmarkLight} alt="MeshmarkLightLogo" />
                 </div>
               </Col>
             </Row>
             <Row Vcenter className="ImgDiv MeshMark-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo"/>
+                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo"/>
+                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo"/>
+                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo" />
                 </div>
               </Col>
             </Row>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
+                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
+                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
+                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo" />
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
         <Row>
           <Col>
-            <h2 className="layerH3 in">
-                            Colors
-            </h2>
+            <h2 className="layerH3 in">Colors</h2>
           </Col>
           <Col>
             <p>
-                            The MeshMark color palette consists of gray, green and blue colors along with
-                            additional shades. The MeshMark logo should be white or monochrome when
-                            using project colors as the background.
+              The MeshMark color palette consists of gray, green and blue colors along with
+              additional shades. The MeshMark logo should be white or monochrome when using project
+              colors as the background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

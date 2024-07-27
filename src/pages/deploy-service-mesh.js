@@ -7,11 +7,15 @@ const DeployServiceMeshPage = () => {
   return (
     <>
       <DeployServiceMesh />
-
     </>
   );
 };
 export default DeployServiceMeshPage;
 export const Head = () => {
-  return <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />;
+  return (
+    <SEO
+      title="when should i deploy service mesh"
+      description="when should i deploy service mesh question form."
+    />
+  );
 };

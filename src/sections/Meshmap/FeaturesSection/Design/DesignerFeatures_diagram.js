@@ -12,10 +12,26 @@ const DesignerFeaturesDiagram = ({ activeExampleIndex }) => {
   return (
     <DiagramStyles>
       <div className="root" ref={ref} style={{ minHeight: "25rem" }}>
-        <RoleBind1  className={(inView && activeExampleIndex == 0) ? "show" : "render"} id="design-image1" alt="design-image1"/>
-        <RoleBind2 id="design-image2" className={(activeExampleIndex == 1) ? "show" : "render"} alt="design-image2" />
-        <RoleBind3 id="design-image3" className={(activeExampleIndex == 2) ? "show" : "render"} alt="design-image3" />
-        <RoleBind4 id="design-image4" className={(activeExampleIndex >= 3) ? "show" : "render"} alt="design-image4" />
+        <RoleBind1
+          className={inView && activeExampleIndex == 0 ? "show" : "render"}
+          id="design-image1"
+          alt="design-image1"
+        />
+        <RoleBind2
+          id="design-image2"
+          className={activeExampleIndex == 1 ? "show" : "render"}
+          alt="design-image2"
+        />
+        <RoleBind3
+          id="design-image3"
+          className={activeExampleIndex == 2 ? "show" : "render"}
+          alt="design-image3"
+        />
+        <RoleBind4
+          id="design-image4"
+          className={activeExampleIndex >= 3 ? "show" : "render"}
+          alt="design-image4"
+        />
       </div>
     </DiagramStyles>
   );

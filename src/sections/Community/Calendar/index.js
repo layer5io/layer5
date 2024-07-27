@@ -14,77 +14,52 @@ import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import { Link } from "gatsby";
 
 const Calendar = () => {
-
   const columns = React.useMemo(
     () => [
       {
         Header: "Meeting",
-        accessor: "meeting",
+        accessor: "meeting"
       },
       {
         Header: "Day",
-        accessor: "day",
+        accessor: "day"
       },
       {
         Header: "Slack Channel",
         id: "slack_channel",
-        accessor: meet_links_data => {
-          return (
-            <>
-              {
-                <a href={meet_links_data.slack_link}>
-                  {meet_links_data.slack_channel}
-                </a>
-              }
-            </>
-          );
+        accessor: (meet_links_data) => {
+          return <>{<a href={meet_links_data.slack_link}>{meet_links_data.slack_channel}</a>}</>;
         }
       },
       {
         Header: "Meeting Minutes",
         id: "meeting_minutes",
-        accessor: meet_links_data => {
-          return (
-            <>
-              {
-                <a href={meet_links_data.meeting_minutes}>
-                  Minutes
-                </a>
-              }
-            </>
-          );
+        accessor: (meet_links_data) => {
+          return <>{<a href={meet_links_data.meeting_minutes}>Minutes</a>}</>;
         }
       },
       {
         Header: "Meeting Link",
         id: "meeting_link",
-        accessor: meet_links_data => {
-          return (
-            <>
-              {
-                <a href={meet_links_data.meeting_link}>
-                  Zoom
-                </a>
-              }
-            </>
-          );
+        accessor: (meet_links_data) => {
+          return <>{<a href={meet_links_data.meeting_link}>Zoom</a>}</>;
         }
       },
       {
         Header: "Meeting Recordings",
         id: "meeting_recordings",
-        accessor: meet_links_data => {
+        accessor: (meet_links_data) => {
           return (
             <>
-              {meet_links_data.slack_channel !== "#smi" ?
-                <a href={meet_links_data.meeting_recordings}>
-                  YouTube
-                </a> : "N/A"
-              }
+              {meet_links_data.slack_channel !== "#smi" ? (
+                <a href={meet_links_data.meeting_recordings}>YouTube</a>
+              ) : (
+                "N/A"
+              )}
             </>
           );
         }
-      },
+      }
     ],
     []
   );
@@ -107,7 +82,7 @@ const Calendar = () => {
                 initialView="dayGridMonth"
                 googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
                 events={{
-                  googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
+                  googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com"
                 }}
                 buttonText={{
                   today: "Today"
@@ -144,7 +119,10 @@ const Calendar = () => {
               <h1>Newcomers Welcome!</h1>
               <h3>Are you new to the community?</h3>
               <p className="invitation">
-                Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                Begin your journey by{" "}
+                <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the
+                resources linked in our{" "}
+                <Link to="/community/newcomers">Contributor's Journey Map </Link>
                 and engage in the community and projects.
               </p>
               <Button primary title="See All Newcomers Resources" url="/community/newcomers">

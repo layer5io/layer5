@@ -20,10 +20,7 @@ const NewcomersMapWrapper = styled.div`
   }
   #newcomers-guide {
     path {
-      fill: ${(props) =>
-  props.handleHover
-    ? (props) => props.theme.secondaryColor
-    : "#3c494e"};
+      fill: ${(props) => (props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e")};
       transition: 0.5s;
     }
     &:hover {
@@ -147,7 +144,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
             fill: "none",
             stroke: "#1e2117",
             strokeMiterlimit: 10,
-            strokeDasharray: "5.999081134796143,5.999081134796143",
+            strokeDasharray: "5.999081134796143,5.999081134796143"
           }}
         />
         <path
@@ -205,39 +202,23 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               fontSize: 16,
               fill: "#f2f2f2",
               fontFamily: "Qanelas Soft, sans-serif",
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
             N
-            <tspan
-              x="10.24"
-              y={0}
-              style={{ letterSpacing: "-0.014996921231061461em" }}
-            >
+            <tspan x="10.24" y={0} style={{ letterSpacing: "-0.014996921231061461em" }}>
               e
             </tspan>
-            <tspan
-              x="19.18"
-              y={0}
-              style={{ letterSpacing: "-0.010999745832802596em" }}
-            >
+            <tspan x="19.18" y={0} style={{ letterSpacing: "-0.010999745832802596em" }}>
               w
             </tspan>
             <tspan x="30.37" y={0}>
               come
             </tspan>
-            <tspan
-              x="70.5"
-              y={0}
-              style={{ letterSpacing: "-0.010999745832802596em" }}
-            >
+            <tspan x="70.5" y={0} style={{ letterSpacing: "-0.010999745832802596em" }}>
               r
             </tspan>
-            <tspan
-              x="75.6"
-              y={0}
-              style={{ letterSpacing: "-0.029993842462122923em" }}
-            >
+            <tspan x="75.6" y={0} style={{ letterSpacing: "-0.029993842462122923em" }}>
               s
             </tspan>
             <tspan x="82.69" y={0}>
@@ -347,10 +328,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
             points="344.69 57.99 344.69 58.46 344.69 60.66 344.69 63.35 344.69 67.28 355.13 65.43 355.13 63.23 346.89 64.68 346.89 62.96 346.89 62.48 353.22 61.36 353.22 59.16 346.89 60.27 346.89 58.07 355.13 56.62 355.13 54.41 344.69 56.26 344.69 57.99"
             style={{ fill: "#f2f2f2" }}
           />
-          <path
-            d="M339.37,57.19l4.35-.76v2.33l-11,2V58.37l6.67-1.18"
-            style={{ fill: "#f2f2f2" }}
-          />
+          <path d="M339.37,57.19l4.35-.76v2.33l-11,2V58.37l6.67-1.18" style={{ fill: "#f2f2f2" }} />
           <polygon
             points="337.04 60.92 339.38 60.51 339.38 68.21 337.04 68.62 337.04 60.92"
             style={{ fill: "#f2f2f2" }}
@@ -372,57 +350,29 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               fontSize: 16,
               fill: "#f2f2f2",
               fontFamily: "Qanelas Soft, sans-serif",
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
             N
-            <tspan
-              x="10.24"
-              y={0}
-              style={{ letterSpacing: "-0.015029301054036307em" }}
-            >
+            <tspan x="10.24" y={0} style={{ letterSpacing: "-0.015029301054036307em" }}>
               e
             </tspan>
-            <tspan
-              x="19.18"
-              y={0}
-              style={{ letterSpacing: "-0.010985272256363888em" }}
-            >
+            <tspan x="19.18" y={0} style={{ letterSpacing: "-0.010985272256363888em" }}>
               w
             </tspan>
-            <tspan
-              x="30.37"
-              y={0}
-              style={{ letterSpacing: "0.000060358638771230145em" }}
-            >
+            <tspan x="30.37" y={0} style={{ letterSpacing: "0.000060358638771230145em" }}>
               come
             </tspan>
-            <tspan
-              x="70.5"
-              y={0}
-              style={{ letterSpacing: "-0.010985272256363888em" }}
-            >
+            <tspan x="70.5" y={0} style={{ letterSpacing: "-0.010985272256363888em" }}>
               r
             </tspan>
-            <tspan
-              x="75.6"
-              y={0}
-              style={{ letterSpacing: "-0.029937884830530156em" }}
-            >
+            <tspan x="75.6" y={0} style={{ letterSpacing: "-0.029937884830530156em" }}>
               s
             </tspan>
-            <tspan
-              x="82.69"
-              y={0}
-              style={{ letterSpacing: "-0.000060358638771230145em" }}
-            >
+            <tspan x="82.69" y={0} style={{ letterSpacing: "-0.000060358638771230145em" }}>
               ’ Me
             </tspan>
-            <tspan
-              x="112.91"
-              y={0}
-              style={{ letterSpacing: "-0.006035863877123015em" }}
-            >
+            <tspan x="112.91" y={0} style={{ letterSpacing: "-0.006035863877123015em" }}>
               e
             </tspan>
             <tspan x={122} y={0}>
@@ -430,11 +380,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
             </tspan>
           </text>
         </Link>
-        <a
-          href="https://layer5.io/community/handbook"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://layer5.io/community/handbook" target="_blank" rel="noreferrer">
           <path d="M183.17,275.14a4.8,4.8,0,0,1-.91-.08l-64.83-11.43-5.67,8.82-5.67-10.82L40.77,250.12a6.62,6.62,0,0,1-5.31-6.25V220.38a4.13,4.13,0,0,1,4.23-4.3,4.73,4.73,0,0,1,.91.08l141.49,25a6.6,6.6,0,0,1,5.31,6.24v23.49a4.37,4.37,0,0,1-1.21,3.11,4.21,4.21,0,0,1-3,1.19Z" />
           <path d="M39.69,216.58a4.54,4.54,0,0,1,.82.07L182,241.6a6.11,6.11,0,0,1,4.9,5.75v23.49a3.6,3.6,0,0,1-3.73,3.8,4.62,4.62,0,0,1-.82-.07L117.84,263.2l-.65-.12-.36.56-5,7.82-5.15-9.84-.23-.44-.48-.08L40.86,249.62a6.09,6.09,0,0,1-4.9-5.75V220.38a3.6,3.6,0,0,1,3.73-3.8m0-1a4.62,4.62,0,0,0-4.73,4.8v23.49a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,6-9.26,64.5,11.38a5.77,5.77,0,0,0,1,.08,4.62,4.62,0,0,0,4.73-4.8V247.35a7.13,7.13,0,0,0-5.73-6.74L40.69,215.67a5.81,5.81,0,0,0-1-.09Z" />
           <g style={{ mask: "url(#mask-4)" }}>
@@ -450,12 +396,10 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               fontSize: 16,
               fill: "#f2f2f2",
               fontFamily: "Qanelas Soft, sans-serif",
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
-            <tspan style={{ letterSpacing: "-0.0060107696086096766em" }}>
-              C
-            </tspan>
+            <tspan style={{ letterSpacing: "-0.0060107696086096766em" }}>C</tspan>
             <tspan x={12} y={0}>
               ommunity Guide
             </tspan>
@@ -465,10 +409,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           d="M25.24,137.83a4.62,4.62,0,0,0-5.64,4.64A6.93,6.93,0,0,0,25.24,149a4.56,4.56,0,0,0,5.66-4.55A7.09,7.09,0,0,0,25.24,137.83Z"
           style={{ fill: "#477e96" }}
         />
-        <a
-          href="https://layer5.io/community/handbook/repository-overview"
-          target="_self"
-        >
+        <a href="https://layer5.io/community/handbook/repository-overview" target="_self">
           <path d="M541.17,286.14a4.8,4.8,0,0,1-.91-.08l-64.83-11.43-5.67,8.82-5.67-10.82-65.32-11.51a6.62,6.62,0,0,1-5.31-6.25V231.38a4.13,4.13,0,0,1,4.23-4.3,4.73,4.73,0,0,1,.91.08l141.49,25a6.6,6.6,0,0,1,5.31,6.24v23.49a4.37,4.37,0,0,1-1.21,3.11,4.21,4.21,0,0,1-3,1.19Z" />
           <path d="M397.69,227.58a4.54,4.54,0,0,1,.82.07L540,252.6a6.11,6.11,0,0,1,4.9,5.75v23.49a3.6,3.6,0,0,1-3.73,3.8,4.62,4.62,0,0,1-.82-.07L475.84,274.2l-.65-.12-.36.56-5,7.82-5.15-9.84-.23-.44-.48-.08-65.08-11.48a6.09,6.09,0,0,1-4.9-5.75V231.38a3.6,3.6,0,0,1,3.73-3.8m0-1a4.62,4.62,0,0,0-4.73,4.8v23.49a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,5.95-9.26,64.5,11.38a5.77,5.77,0,0,0,1,.08,4.62,4.62,0,0,0,4.73-4.8V258.35a7.13,7.13,0,0,0-5.73-6.74L398.69,226.67a5.81,5.81,0,0,0-1-.09Z" />
           <g style={{ mask: "url(#mask-5)" }}>
@@ -481,65 +422,35 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               fontSize: 15,
               fill: "#f2f2f2",
               fontFamily: "Qanelas Soft, sans-serif",
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
-            <tspan style={{ letterSpacing: "-0.030005761886179504em" }}>
-              R
-            </tspan>
+            <tspan style={{ letterSpacing: "-0.030005761886179504em" }}>R</tspan>
             <tspan x={9} y={0}>
               ep
             </tspan>
-            <tspan
-              x="27.06"
-              y={0}
-              style={{ letterSpacing: "-0.005994740889653383em" }}
-            >
+            <tspan x="27.06" y={0} style={{ letterSpacing: "-0.005994740889653383em" }}>
               o
             </tspan>
             <tspan x="35.94" y={0}>
               si
             </tspan>
-            <tspan
-              x="46.53"
-              y={0}
-              style={{ letterSpacing: "-0.015002880943089752em" }}
-            >
+            <tspan x="46.53" y={0} style={{ letterSpacing: "-0.015002880943089752em" }}>
               t
             </tspan>
-            <tspan
-              x="51.22"
-              y={0}
-              style={{ letterSpacing: "0.00003205743791258494em" }}
-            >
+            <tspan x="51.22" y={0} style={{ letterSpacing: "0.00003205743791258494em" }}>
               ory{" "}
             </tspan>
-            <tspan
-              x="76.24"
-              y={0}
-              style={{ letterSpacing: "-0.00500096031436325em" }}
-            >
+            <tspan x="76.24" y={0} style={{ letterSpacing: "-0.00500096031436325em" }}>
               O
             </tspan>
-            <tspan
-              x="88.11"
-              y={0}
-              style={{ letterSpacing: "-0.010963643766104049em" }}
-            >
+            <tspan x="88.11" y={0} style={{ letterSpacing: "-0.010963643766104049em" }}>
               v
             </tspan>
-            <tspan
-              x="95.29"
-              y={0}
-              style={{ letterSpacing: "-0.00006411487582516988em" }}
-            >
+            <tspan x="95.29" y={0} style={{ letterSpacing: "-0.00006411487582516988em" }}>
               ervi
             </tspan>
-            <tspan
-              x="119.7"
-              y={0}
-              style={{ letterSpacing: "-0.015002880943089752em" }}
-            >
+            <tspan x="119.7" y={0} style={{ letterSpacing: "-0.015002880943089752em" }}>
               e
             </tspan>
             <tspan x="128.08" y={0}>

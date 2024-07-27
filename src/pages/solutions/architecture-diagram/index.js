@@ -5,7 +5,7 @@ import SEO from "../../../components/seo";
 const ArchitectureDiagramPage = () => {
   return (
     <>
-      <ArchitectureDiagram/>
+      <ArchitectureDiagram />
       <ServiceMeshFocused bookName={"enterprise-path"} />
     </>
   );
@@ -13,7 +13,11 @@ const ArchitectureDiagramPage = () => {
 
 export default ArchitectureDiagramPage;
 export const Head = () => {
-  return <SEO title="Design Architecture Diagram | Layer5"
-    description="Create architecture diagram for AWS, GCP or Kubernetes"
-    image="/images/meshery-logo-dark-text.webp" />;
+  return (
+    <SEO
+      title="Design Architecture Diagram | Layer5"
+      description="Create architecture diagram for AWS, GCP or Kubernetes"
+      image="/images/meshery-logo-dark-text.webp"
+    />
+  );
 };

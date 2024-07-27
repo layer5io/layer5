@@ -12,26 +12,26 @@ const CONTENT = [
     title: "Confidently make changes to your infrastructure",
     img: dragDrop,
     description:
-      "MeshMap automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
+      "MeshMap automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture."
   },
   {
     title: "Visualize and automate infrastructure understanding",
     img: mergeDesign,
     description:
-      "MeshMap helps automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
+      "MeshMap helps automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster."
   },
   {
     title: "Make working across services as easy as working across files",
     img: connectComponents,
     description:
-      "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices.",
+      "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices."
   },
   {
     title: "Stop finger-pointing",
     img: shareDesign,
     description:
-      "Share your designs publically or in private to collaborate with others in real-time.",
-  },
+      "Share your designs publically or in private to collaborate with others in real-time."
+  }
 ];
 
 const DivWrapper = styled.div`
@@ -117,9 +117,7 @@ const DivWrapper = styled.div`
 `;
 
 export default function MeshmapDesignFeatureCarousel() {
-  const [cardIndices, setCardIndices] = useState([
-    ...Array(CONTENT.length).keys(),
-  ]);
+  const [cardIndices, setCardIndices] = useState([...Array(CONTENT.length).keys()]);
   const handleclick = () => {
     const length = CONTENT.length;
     const newIndices = cardIndices.map((index) => {
@@ -134,8 +132,8 @@ export default function MeshmapDesignFeatureCarousel() {
       <div className="left">
         <h1>Multi-user real-time collaboration</h1>
         <p>
-          Designer and Visualizer live side-by-side, so all design work, from
-          ideation to operation, can be found in one place.
+          Designer and Visualizer live side-by-side, so all design work, from ideation to operation,
+          can be found in one place.
         </p>
       </div>
       <div className="right">

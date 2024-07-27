@@ -10,7 +10,6 @@ import { Link } from "gatsby";
 import BookSinglePageWrapper from "./BookSingle.style.js";
 
 const BookSingle = ({ data }) => {
-
   const { frontmatter, body } = data.mdx;
   return (
     <BookSinglePageWrapper>
@@ -20,9 +19,7 @@ const BookSingle = ({ data }) => {
           <h4>All Books</h4>
         </Link>
       </div>
-      <PageHeader
-        title={frontmatter.title}
-      />
+      <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
           <div className="single-post-block">

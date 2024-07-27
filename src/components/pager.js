@@ -20,7 +20,7 @@ export const PagerWrapper = styled.div`
             transition: all 0.2s linear;
         } 
         &:hover{
-            color: ${props => props.theme.secondaryColor};
+            color: ${(props) => props.theme.secondaryColor};
             svg{
             margin-left: 3px;
             transform: scale(1.2);
@@ -35,14 +35,20 @@ const Pager = ({ pageContext, text, isListView }) => {
       <div>
         {previousPagePath && (
           <Link to={previousPagePath} state={{ isListView }}>
-            <h4><IoIosArrowRoundBack />Newer {text}</h4>
+            <h4>
+              <IoIosArrowRoundBack />
+              Newer {text}
+            </h4>
           </Link>
         )}
       </div>
       <div className="old-post">
         {nextPagePath && (
           <Link to={nextPagePath} state={{ isListView }}>
-            <h4>Older {text}<IoIosArrowRoundForward/></h4>
+            <h4>
+              Older {text}
+              <IoIosArrowRoundForward />
+            </h4>
           </Link>
         )}
       </div>

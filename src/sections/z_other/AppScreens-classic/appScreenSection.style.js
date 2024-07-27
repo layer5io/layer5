@@ -31,7 +31,7 @@ const AppScreenSctionWrapper = styled.section`
         }
       }
       li.slick-active {
-        box-shadow: -1px 25px 17px #b8b7b7; 
+        box-shadow: -1px 25px 17px #b8b7b7;
       }
     }
   }
@@ -49,7 +49,7 @@ const AppScreenSctionWrapper = styled.section`
     margin-left: -50px;
     margin-right: -50px;
   }
-  .slick-slide[data-index~='-2'] {
+  .slick-slide[data-index~="-2"] {
     margin-left: 100px;
   }
 
@@ -73,7 +73,7 @@ const AppScreenSctionWrapper = styled.section`
 
     &:hover {
       opacity: 1;
-      color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"}
+      color: ${(props) => (props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81")};
     }
   }
 
@@ -82,53 +82,53 @@ const AppScreenSctionWrapper = styled.section`
   }
   @media only screen and (max-width: 912px) {
     padding: 130px 0 200px 0;
-    .slick-arrow{
+    .slick-arrow {
       top: auto;
       bottom: -100px;
       right: 42%;
     }
-    .slick-prev-icon{
+    .slick-prev-icon {
       right: 50%;
     }
   }
   @media only screen and (max-width: 568px) {
-    .section-title-block{
+    .section-title-block {
       text-align: center;
-      h4{
+      h4 {
         width: 100%;
       }
-      img{
+      img {
         display: none;
       }
     }
-    .view-more-button{
+    .view-more-button {
       display: none;
     }
   }
   @media only screen and (max-width: 480px) {
-    .slick-slide[data-index~='-2']{
+    .slick-slide[data-index~="-2"] {
       margin-left: 0;
     }
-    .slick-list{
+    .slick-list {
       padding: 0 !important;
     }
-    .slick-slide.slick-active{
+    .slick-slide.slick-active {
       margin-left: 0;
       margin-right: 0;
     }
-    .slick-slide{
-      &.slick-active{
+    .slick-slide {
+      &.slick-active {
         transform: scale(1);
       }
       transform: scale(1);
-      img{
+      img {
         margin: 0 auto;
       }
     }
     .slick-arrow {
-        right: 37%;
+      right: 37%;
     }
-    .slick-prev-icon{
+    .slick-prev-icon {
       right: 50%;
     }
   }

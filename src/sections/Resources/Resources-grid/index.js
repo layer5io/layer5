@@ -12,18 +12,15 @@ const ResourceGrid = (props) => {
   const indexOfLastPost = props.currentPage * props.postsPerPage;
   const indexOfFirstPost = indexOfLastPost - props.postsPerPage;
   const searchedResource =
-    props.postsPerPage > 0
-      ? props.data.slice(indexOfFirstPost, indexOfLastPost)
-      : props.data;
+    props.postsPerPage > 0 ? props.data.slice(indexOfFirstPost, indexOfLastPost) : props.data;
 
   const paginate = (pageNumber) => {
     props.setCurrentPage(pageNumber);
     window.scrollTo({
       top: 200,
       left: 100,
-      behavior: "smooth",
+      behavior: "smooth"
     });
-
   };
 
   return (
@@ -41,14 +38,16 @@ const ResourceGrid = (props) => {
           </div>
         </div>
         <Row>
-          {props.data.length < 1 && <EmptyResources errorMessage={"No matching resources"} errorSubtitle={"Try removing one or more filters to broaden your results."} />}
+          {props.data.length < 1 && (
+            <EmptyResources
+              errorMessage={"No matching resources"}
+              errorSubtitle={"Try removing one or more filters to broaden your results."}
+            />
+          )}
 
           {searchedResource.map(({ id, frontmatter, fields }) => (
             <Col key={id} xs={12} sm={6} xl={4}>
-              <Card
-                frontmatter={frontmatter}
-                fields={fields}
-              />
+              <Card frontmatter={frontmatter} fields={fields} />
             </Col>
           ))}
         </Row>

@@ -8,7 +8,7 @@ import {
   AccordionBodyWrapper,
   IconWrapper,
   OpenIcon,
-  CloseIcon,
+  CloseIcon
 } from "./accordion.style";
 
 const Accordion = ({ className, children, allowZeroExpanded, allowMultipleExpanded }) => {
@@ -41,9 +41,7 @@ const AccordionItem = ({ className, children }) => {
   }
 
   return (
-    <AccordionItemWrapper className={addAllClasses.join(" ")}>
-      {children}
-    </AccordionItemWrapper>
+    <AccordionItemWrapper className={addAllClasses.join(" ")}>{children}</AccordionItemWrapper>
   );
 };
 
@@ -73,9 +71,7 @@ const AccordionBody = ({ className, children }) => {
   }
 
   return (
-    <AccordionBodyWrapper className={addAllClasses.join(" ")}>
-      {children}
-    </AccordionBodyWrapper>
+    <AccordionBodyWrapper className={addAllClasses.join(" ")}>{children}</AccordionBodyWrapper>
   );
 };
 
@@ -86,5 +82,5 @@ export {
   AccordionBody,
   IconWrapper,
   OpenIcon,
-  CloseIcon,
+  CloseIcon
 };

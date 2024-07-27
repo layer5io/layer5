@@ -18,13 +18,13 @@ const FaqSectionWrapper = styled.section`
   }
   .accordion__item {
     .accordion__header {
-      padding:0;
-      background: ${props => props.theme.secondaryColor};
+      padding: 0;
+      background: ${(props) => props.theme.secondaryColor};
       h5 {
         font-weight: 700;
         font-size: 18px;
         position: relative;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
       }
       > div {
         &:focus {
@@ -44,8 +44,8 @@ const FaqSectionWrapper = styled.section`
     }
   }
   div.faqbutton {
-    text-align: center; 
-    
+    text-align: center;
+
     button.faqbutton {
       margin-bottom: 1.25rem;
     }
@@ -63,8 +63,8 @@ const FaqSectionWrapper = styled.section`
         font-size: 20px;
         width: 80%;
         padding: 1rem;
-        border: 1px solid #FFFFFF;
-        background-color: #F0F0F0;
+        border: 1px solid #ffffff;
+        background-color: #f0f0f0;
         border-radius: 1.25rem;
       }
     }

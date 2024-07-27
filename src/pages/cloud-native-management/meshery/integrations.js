@@ -7,13 +7,15 @@ const Integrations = () => {
   return (
     <>
       <MesheryIntegration />
-
     </>
   );
 };
 export default Integrations;
 export const Head = () => {
-  return <SEO title="Meshery Integrations"
-    description="A collection of supported Meshery Integrations."
-  />;
+  return (
+    <SEO
+      title="Meshery Integrations"
+      description="A collection of supported Meshery Integrations."
+    />
+  );
 };

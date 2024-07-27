@@ -7,7 +7,6 @@ import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const Card = ({ frontmatter, fields }) => {
-
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -15,16 +14,17 @@ const Card = ({ frontmatter, fields }) => {
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
-              ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            {...(isDark &&
+            frontmatter.darkthumbnail &&
+            frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+              ? frontmatter.darkthumbnail
+              : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}
           />
         </div>
         <div className="post-content-block">
-          <h2 className="post-title">
-            {frontmatter.title}
-          </h2>
+          <h2 className="post-title">{frontmatter.title}</h2>
           <div className="post-meta-block">
             {frontmatter.date && frontmatter.author && (
               <>
@@ -32,15 +32,11 @@ const Card = ({ frontmatter, fields }) => {
                 <p className="author">{frontmatter.author}</p>
               </>
             )}
-            {frontmatter.date && !frontmatter.author && (
-              <p>{frontmatter.date}</p>
-            )}
+            {frontmatter.date && !frontmatter.author && <p>{frontmatter.date}</p>}
             {!frontmatter.date && frontmatter.author && (
               <p className="author">{frontmatter.author}</p>
             )}
-            {!frontmatter.author && frontmatter.type && (
-              <p className="type">{frontmatter.type}</p>
-            )}
+            {!frontmatter.author && frontmatter.type && <p className="type">{frontmatter.type}</p>}
           </div>
           <div className="readmore-btn-wrapper">
             {fields && fields.slug && frontmatter.eurl && (
@@ -48,7 +44,12 @@ const Card = ({ frontmatter, fields }) => {
                 <Link className="readmore-btn" to={fields.slug}>
                   see more <IoIosArrowRoundForward />
                 </Link>
-                <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+                <a
+                  className="external-link-btn"
+                  href={frontmatter.eurl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <BiLinkExternal />
                 </a>
               </>
@@ -59,7 +60,12 @@ const Card = ({ frontmatter, fields }) => {
               </Link>
             )}
             {!fields && !fields.slug && frontmatter.eurl && (
-              <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+              <a
+                className="external-link-btn"
+                href={frontmatter.eurl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BiLinkExternal />
               </a>
             )}
