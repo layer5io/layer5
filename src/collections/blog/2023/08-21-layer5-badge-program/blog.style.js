@@ -4,7 +4,7 @@ export const Blog = styled.div`
     display: inline;
     float: right;
     margin: .5rem;
-    max-width: 95%;
+    max-width: 625px;
   }
   img.badge-modal::after {
     content: " ";
@@ -48,5 +48,8 @@ export const Blog = styled.div`
     div.badge-grid > div {
       max-width: 95%;
     }
+    img.badge-modal{
+      max-width: 95%;
+  }
   }
 `;
