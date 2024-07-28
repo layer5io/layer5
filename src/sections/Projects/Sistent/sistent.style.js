@@ -685,8 +685,18 @@ const SistentWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     color: ${(props) => props.theme.whiteToBlack};
+
   }
 
+  .card {
+    transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .card:hover {
+      box-shadow: 0px 0px 5px ${(props) => props.theme.primaryColor}; 
+      transform: scale(1.02);
+  }
+  
   .card_bottom {
     border-top: 2px solid #2c2c2c;
     display: flex;
