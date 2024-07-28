@@ -8,7 +8,7 @@ import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDr
 const preReqSteps = [
   { name: "Set up", link: "/cloud-native-management/meshery" },
   { name: "Run Meshery",link: "/cloud-native-management/meshery/getting-started" },
-  { name: "Manage Meshery", link: "/cloud-native-management/meshery/operating-service-meshes" }
+  { name: "Manage Meshery", link: "/cloud-native-management/meshery/operating-cloud-native-infra" }
 ];
 
 const TOC = ({ coursesData }) => {

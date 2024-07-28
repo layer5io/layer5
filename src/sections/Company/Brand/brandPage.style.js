@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
 	position: relative;
-	overflow: visible;
+	overflow-x: hidden;
 	margin-bottom: 2rem;
 
 	.brandHeader {
@@ -46,6 +46,19 @@ const BrandPageWrapper = styled.section`
 		position: sticky;
 		top: 6rem;
 		z-index: 1;
+	}
+
+      @media screen and (min-width: 768px) and (max-height: 725px) {
+	    .brand-nav-col {
+	        padding-right: 0px !important;
+	    }
+		.nav-fixed {
+		height:calc(100vh - 6rem);
+		overflow-y:auto;
+		padding-top:1rem;
+		padding-bottom:1rem
+	}
+
 	}
 
 	.header_link {
@@ -146,6 +159,7 @@ const BrandPageWrapper = styled.section`
 		width: 100%;
 		margin: auto;
 		justify-content: space-around;
+		gap: 1rem;
 	}
 	.Layer5Logos {
 		font-style: italic;
@@ -162,8 +176,18 @@ const BrandPageWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 575px) {
-		.ImgDiv, .color-code-wrapper {
+		.color-code-wrapper{
 			margin-left: 0px;
+		}
+		.ImgDiv img {
+			margin: auto;
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 200px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 		img.Layer5Icon {
 			width: auto;

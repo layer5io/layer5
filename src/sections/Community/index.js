@@ -122,8 +122,8 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <MeshmateIcon className="meshmate-img" />
-              <Link className="meshmate-link" to="/community/meshmates">
+              <MeshmateIcon className="meshmate-img meshmate-img-transparent" />
+              <Link className="meshmate-link meshmate-link-transparent" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
                 <button className="icon" aria-label="mentorship-program">
                   <FaArrowRight />

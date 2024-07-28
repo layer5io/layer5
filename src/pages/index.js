@@ -2,17 +2,17 @@ import React from "react";
 
 import SEO from "../components/seo";
 import Partners from "../sections/Home/Partners-home";
-import Integrations from "../sections/Home/Projects-home";
+import Integrations from "../sections/Home/Playground-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
 import CornerPopup from "../components/Corner-popup";
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
-const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
+// const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
 
-const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
-const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
+// const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
+// const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContainer"));
 

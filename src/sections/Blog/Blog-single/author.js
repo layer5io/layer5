@@ -28,8 +28,8 @@ const AboutTheAuthor = (props) => {
               {authorInformation.frontmatter?.bio}
             </p>
             <div className="authors-info-meshery">
-              <h4>MeshMap</h4>
-              <p>MeshMap is the world's only visual and collaborative designer for Kubernetes and all cloud native infrastructure.</p>
+              <h4>Meshery</h4>
+              <p>Meshery is the world's only collaborative cloud manager.</p>
               <Button secondary url="/meshmap" title="Get Started" className="cta-btn" />
             </div>
             <div className="share-section">

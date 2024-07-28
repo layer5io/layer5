@@ -48,6 +48,12 @@ export const HandbookWrapper = styled.div`
       margin-top: -36rem;
       margin-left: 20rem;
       display: flex;
+
+      @media screen and (min-width: 768px) and (max-height: 1145px) {
+       margin-top : -62vh ;
+
+
+  }
       @media screen and (min-width: 1280px) and (max-width: 1350px) {
         margin-left:16rem;
       }
@@ -56,6 +62,12 @@ export const HandbookWrapper = styled.div`
       @media screen and (min-width: 751px) {
         margin-top:-43rem;
       }
+            @media screen and (min-width: 768px) and (max-height: 1145px) {
+       margin-top : -66vh ! important;
+
+    }
+
+  }
 
     }
     .page-section .heading-top{

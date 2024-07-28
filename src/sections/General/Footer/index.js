@@ -107,9 +107,9 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" href="https://docs.layer5.io">
+                    <a className="category-link" href="https://docs.layer5.io">
                       Docs
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <Link className="category-link" to="/blog">
@@ -199,9 +199,9 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" href="https://badges.layer5.io/">
+                    <a className="category-link" href="https://badges.layer5.io/">
                     Recognition Program
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>

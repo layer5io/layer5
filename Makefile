@@ -37,4 +37,8 @@ build:
 clean: 
 	gatsby clean && make site
 
-.PHONY: setup build site clean site-fast
+## Run Eslint on your local machine.
+lint:
+	npm run lint
+
+.PHONY: setup build site clean site-fast lint

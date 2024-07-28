@@ -8,7 +8,7 @@ import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
 import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import JoinCommunity from "../Community/Join-community";
-import Button from "../../reusecore/Button";
+// import Button from "../../reusecore/Button";
 
 
 const LearnPathsPage = () => {
@@ -109,20 +109,13 @@ const LearnPathsPage = () => {
           ))}
         </Row>
       </Container>
-      <WhatAwaitsSection />
       <Container>
         <LearnInfo
           courses={data.coursesCount.edges}
           chapters={data.chaptersCount.edges}
           meshes={data.meshesCount.edges}
         />
-        <div className="service-mesh-patterns">
-          <div className="service-mesh-patterns_text-and_button">
-            <h1>Use Cloud Native Patterns</h1>
-            <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.</p>
-            <Button secondary title="Visit Cloud Native Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
-          </div>
-        </div>
+        <WhatAwaitsSection />
         <JoinCommunity
           image={Book_Giveaway}
           header={"Don't Learn Alone"}

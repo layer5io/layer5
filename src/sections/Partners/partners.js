@@ -8,7 +8,7 @@ import { ReactComponent as Partner6 } from "../../assets/images/partners/hashico
 import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
 import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
 import { ReactComponent as Partner9 } from "../../assets/images/partners/redhat-colorMode.svg";
-import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
+// import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
 import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-colorMode.svg";
 import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
 import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";

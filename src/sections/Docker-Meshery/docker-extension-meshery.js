@@ -80,11 +80,9 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
+                <div className="feature-title">Single-click deployment of all Kubernetes infrastructure and many AWS and GCP services.</div> {" "}
                 <i>
-                  Support of 10 different service meshes to the fingertips
-                  of developers in connection with Docker Desktop’s ability
-                  to deliver Kubernetes locally.
+                  Support of 250+ different Kubernetes operators, thousands of custom resources at the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.
                 </i>
               </Col>
             </Row>

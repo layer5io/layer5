@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container } from "../../../../reusecore/Layout";
 import SistentWrapper from "../sistent.style";
 import TOC from "../../../../components/SistentNavigation";
-import SistentPagination from "../../../../components/SistentNavigation/pagination";
+// import SistentPagination from "../../../../components/SistentNavigation/pagination";
 import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
@@ -21,6 +21,13 @@ const componentsData = [
     description:
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/text-input",
+  },
+  {
+    id: 3,
+    name: "Modal",
+    description:
+      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
+    url: "/projects/sistent/components/modal",
   },
 ];
 
