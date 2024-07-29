@@ -28,6 +28,12 @@ import NeedForSpeedLogo from "../../../assets/images/need-for-speed/need-for-spe
 import SharingIsCaringLogo from "../../../assets/images/sharing-is-caring/sharing-is-caring.svg";
 import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
 import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
+import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-cleanup-crew.svg";
+import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
+import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
+import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
+import MeshmapSnapshotLogo from "../../../assets/images/meshmap-snapshot/meshmap-snapshot.svg";
+import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
 
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
@@ -139,6 +145,30 @@ const RecognitionPage = () => {
               <li>
                 <img src={BringABuddyLogo} style={badgeStyle} />
                 <b>Bring a Buddy</b> - awarded to the users who invite someone to Layer5 cloud.
+              </li>
+              <li>
+                <img src={CodeCleanupCrewLogo} style={badgeStyle} />
+                <b>Code Cleanup Crew</b> - awarded to contributors who help maintain code quality and cleanliness.
+              </li>
+              <li>
+                <img src={SecuritySentinelLogo} style={badgeStyle} />
+                <b>Security Sentinel</b> - awarded to individuals who contribute to identifying and fixing security vulnerabilities.
+              </li>
+              <li>
+                <img src={LogevityLegendLogo} style={badgeStyle} />
+                <b>Longevity Legend</b> - awarded for long-term, sustained contributions to the project over the years.
+              </li>
+              <li>
+                <img src={ReviewRockstarLogo} style={badgeStyle} />
+                <b>Review Rockstar</b> - awarded to individuals who provide thorough and valuable code reviews.
+              </li>
+              <li>
+                <img src={MeshmapSnapshotLogo} style={badgeStyle} />
+                <b>MeshMap Snapshot</b> - awarded to users upon creation of their first infrastructure screenshot directly in their pull request.
+              </li>
+              <li>
+                <img src={ContinuousContributorLogo} style={badgeStyle} />
+                <b>Continuous Contributor</b> - awarded to the community members who make consistent and impactful contributions for a long period of time in Layer5 projects in recognition and appreciation of their efforts.
               </li>
               <p><b>Projects:</b></p>
               <li>
