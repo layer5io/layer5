@@ -265,7 +265,7 @@ const index = () => {
               <p className="paraInfo">
                 Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button button secondary className="banner-btn two" title="Open Playground" alt="Cloud Native Playground" url="https://play.meshery.io" />
+              <Button button secondary className="banner-btn two" title="Open in Demo System" alt="Cloud Native Playground" url="https://play.meshery.io" />
             </div>
           </div>
           <div className="headers bot_gap">
