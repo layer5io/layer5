@@ -689,12 +689,12 @@ const SistentWrapper = styled.div`
   }
 
   .card {
-    transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   }
 
   .card:hover {
-      box-shadow: 0px 0px 5px ${(props) => props.theme.primaryColor}; 
-      transform: scale(1.02);
+      transform: scale(1.045);
   }
   
   .card_bottom {
