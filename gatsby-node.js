@@ -272,7 +272,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
-  
+
   //****
   // External Resource Redirects
   //****
