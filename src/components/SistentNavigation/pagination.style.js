@@ -5,41 +5,64 @@ const TocPaginationWrapper = styled.div`
   gap: 1rem;
   justify-content: center;
   margin: 3rem 2rem 4rem 2rem;
-.btn-content{
-display: grid;
-padding: 6px 16px;
-gap: 5px;
-}
 
-.right-icon .fsCoJX path{
-color: black;
+  .prev-btn{
+  padding: 8px 22px;
+  }
+  .next-btn{
+  padding: 8px 22px;
+  }
+.btn-content{
+display: block;
+width:100%;
 }
-.left-icon .fsCoJX path {
- color: white
+.right-icon{
+margin-top:5px;
+font-size: 1rem;
+    font-weight: 500;
+    
 }
+    .left-icon{
+    margin-top:5px;
+font-size: 1rem;
+    font-weight: 500;
+    }
+
+
 .previous-text{
 display: flex;
 color: white;
+font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
 margin: auto;
-
+opacity:0.9;
 }
 .next-text{
 display: flex;
-margin: auto;
+color: black;
+font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+justify-content:end;
+opacity:0.9;
 }
 .where-to-go-prev{
 display: flex;
 font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     font-weight: 500;
+    line-height: 1.75rem;
 color: white;
 }
 .where-to-go{
 display: flex;
 font-family: "Open Sans", sans-serif;
-    color: #000000;
+   color: black;
     font-size: 1rem;
     font-weight: 500;
+    justify-content:end;
+        line-height: 1.75rem;
 }
 
 

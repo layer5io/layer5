@@ -18,18 +18,18 @@ const SistentPagination = () => {
   return (
     <PaginationWrapper>
       {currentPage > 0 ? (
-        <Button secondary url={content[currentPage - 1]?.link}>
+        <Button className='prev-btn' secondary url={content[currentPage - 1]?.link}>
           <div className="btn-content">
           <div className="previous-text">Previous</div>
-         <div className="where-to-go-prev"><HiOutlineChevronLeft className="left-icon"/>{content[currentPage - 1]?.text}</div></div>
+         <div className="where-to-go-prev"><HiOutlineChevronLeft className="left-icon" style={{color: "white"}}/>{content[currentPage - 1]?.text}</div></div>
         </Button>
       ) : null}
 
       {currentPage < content.length - 1 ? (
-        <Button primary url={content[currentPage + 1]?.link}>
+        <Button className='next-btn' primary url={content[currentPage + 1]?.link}>
           <div className="btn-content">
           <div className="next-text">Next</div>
-         <div className="where-to-go">{content[currentPage + 1]?.text} <HiOutlineChevronRight className="right-icon"/></div></div>
+         <div className="where-to-go">{content[currentPage + 1]?.text}<HiOutlineChevronRight className="right-icon" style={{color: "black"}}/></div></div>
         </Button>
       ) : null}
     </PaginationWrapper>
