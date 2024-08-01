@@ -107,7 +107,7 @@
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.9",
-    "swiper": "^9.2.0",
+    "swiper": "^11.1.9",
     "url": "^0.11.3"
   },
   "devDependencies": {
