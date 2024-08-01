@@ -53,7 +53,7 @@
     "gatsby": "^4.20.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-background-image": "^1.6.0",
-    "gatsby-cli": "^5.12.4",
+    "gatsby-cli": "^5.13.3",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-feed": "^4.25.0",
     "gatsby-plugin-image": "^2.22.0",
