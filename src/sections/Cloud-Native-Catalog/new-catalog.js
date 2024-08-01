@@ -51,6 +51,9 @@ const NewCatalog = () => {
         <p className="new-catalog__title">
           CREATE AND SHARE YOUR OWN BEST PRACTICES
         </p>
+        <p><strong>Showcase your designs in an interactive playground and link to it prominently.</strong>
+          <br/>
+        Let users experiment and get hands-on experience with your project right away.</p>
         <div className="new-catalog__button_section">
           <Button primary external={true} title="Publish Your Own Design" url="https://meshery.layer5.io/catalog" />
         </div>

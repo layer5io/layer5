@@ -188,6 +188,8 @@ const BannerSection = () => {
         <p>
                     Friends don't let friends GitOps alone.
         </p>
+        <h6><strong>Showcase your designs in an interactive playground and link to it prominently.</strong>
+          <br/> Let users experiment and get hands-on experience with your project right away.</h6>
         {/* <h4>Discover and Visualize</h4>
                 <h4><span>Collaborate and Design</span></h4>
                 any and all your cloud native infra and apps */}
