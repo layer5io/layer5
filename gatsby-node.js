@@ -266,6 +266,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/blog/announcements/meshery-5000-star-milestone",
+    toPath: "/blog/announcements/mesherys-5000-star-milestone",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   //****
   // External Resource Redirects
