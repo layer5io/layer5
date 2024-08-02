@@ -15,9 +15,6 @@ export const HandbookCardWrapper = styled.div`
 	  height: 19rem;
 	  position: relative;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-		@media (max-width: 420px) {
-        font-size: 1rem;
-        }
 	}
 
 	.handbook__card--head {
@@ -59,6 +56,9 @@ export const HandbookCardWrapper = styled.div`
 	  font-weight: 400;
 	  font-size: 1.1rem;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+		@media (max-width: 420px) {
+        font-size: 1rem;
+        }
 	}
 
 	.handbook__card--lm__container {
