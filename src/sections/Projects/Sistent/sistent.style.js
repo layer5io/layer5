@@ -676,6 +676,7 @@ const SistentWrapper = styled.div`
   .card_head .title {
     font-size: 32px;
     font-weight: 700;
+    color: ${props => props.theme.text};
   }
 
   .card .text {
@@ -692,7 +693,6 @@ const SistentWrapper = styled.div`
     box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   }
-
   .card:hover {
       transform: scale(1.045);
   }
