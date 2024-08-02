@@ -80,7 +80,7 @@ export const TextInputGuidance = () => {
           </p>
           <Row Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder goes here" />
+              <Input placeholder="PlaceHolder" />
             </SistentThemeProvider>
           </Row>
           <h3>Multiline</h3>
