@@ -81,7 +81,7 @@ const SistentTextInput = () => {
           </p>
           <Row Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder goes here" type="text" />
+              <Input placeholder="Placeholder" type="text" />
             </SistentThemeProvider>
           </Row>
           <a id="Sizes">
@@ -105,7 +105,7 @@ const SistentTextInput = () => {
           <Row Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
-                placeholder="Placeholder goes here"
+                placeholder="Placeholder"
                 type="text"
                 size="medium"
               />
@@ -120,7 +120,7 @@ const SistentTextInput = () => {
           <Row Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
-                placeholder="Placeholder goes here"
+                placeholder="Placeholder"
                 type="text"
                 size="small"
               />
