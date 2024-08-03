@@ -21,141 +21,87 @@
 
 <h5><p align="center"><i>If you’re using Layer5 products or if you like the project, please <a href="https://github.com/layer5io/layer5/stargazers">★</a> this repository to show your support! 🤩</i></p></h5>
 
-# About Layer5
-
-[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
-
 # Projects
 
-<p style="clear:both;">
-<h2><a href="https://layer5.io/meshery">Meshery</a></h2>
-<a href="https://meshery.io">
- <img src=".github/assets/images/meshery/meshery-logo.svg" style="margin:10px;" width="125px" alt="Meshery - Cloud Native Management Plane" align="left" />
-</a>
-<a href="https://meshery.io">Meshery</a> is the collaborative cloud native manager that enables the adoption, operation, and management of Kubernetes and its workloads.
-<br /><br /><br/>
-</p>
-<br />
+## [Meshery](https://layer5.io/meshery)
+
+[![Meshery](.github/assets/images/meshery/meshery-logo.svg)](https://meshery.io)
+
+[Meshery](https://meshery.io) is the collaborative cloud native manager that enables the adoption, operation, and management of Kubernetes and its workloads.
+
+---
+
+## [MeshMap](https://layer5.io/meshmap)
+
+[![MeshMap](src/assets/images/meshmap/meshmap-color-icon.svg)](https://layer5.io/meshmap)
+
+[MeshMap](https://layer5.io/meshmap) is an end-to-end management platform that helps teams understand problems, deploy designs, apply patterns, and manage and operate your deployments and services in real-time.
+
+---
+
+## [Cloud Native Patterns](https://github.com/service-mesh-patterns)
+
+[![Cloud Native Patterns](.github/assets/images/patterns/service-mesh-pattern.svg)](https://github.com/service-mesh-patterns)
+
+[Cloud Native Patterns](https://github.com/service-mesh-patterns) help you get the most out of Kubernetes and every CNCF project. Each pattern can be used as a template and is customizable.
+
+---
+
+## [Service Mesh Landscape](https://layer5.io/landscape)
+
+[![Service Mesh Landscape](.github/assets/images/buttons/landscape.webp)](https://layer5.io/landscape)
+
+The [Service Mesh Landscape](https://layer5.io/landscape) is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
+
+---
+
+## [Cloud Native Performance](https://layer5.io/projects/cloud-native-performance)
+
+![Cloud Native Performance](src/assets/images/service-mesh-performance/stacked/smp-light-text.svg)
+
+The [Cloud Native Performance](https://layer5.io/projects/cloud-native-performance) project provides a vendor-neutral specification for capturing details of environment and infrastructure, cloud native infrastructure and its configuration, service/application details, and statistical analysis of results.
+
+---
+
+## [Image Hub](https://layer5.io/projects/image-hub)
+
+[![Image Hub](.github/assets/images/image-hub/layer5-image-hub.webp)](https://layer5.io/projects/image-hub)
+
+[Image Hub](https://layer5.io/projects/image-hub) is a demo application that runs on [Consul](https://docs.meshery.io/service-meshes/adapters/consul) and facilitates exploring WebAssembly modules used as Envoy Filters. Image Hub supports Envoy-based data planes and can be deployed on Istio and Consul service meshes.
+
+---
+
+## [Meshery Operator](https://github.com/meshery/meshery-operator)
+
+[![Meshery Operator](.github/assets/images/meshery-operator/meshery-operator-dark.svg)](https://github.com/meshery/meshery-operator)
+
+The [Meshery Operator](https://github.com/meshery/meshery-operator) deploys and manages MeshSync.
+
+---
+
+## [Learn Layer5](https://github.com/layer5io/learn-layer5)
+
+[![Learn Layer5](.github/assets/images/layer5/5-light-small.svg)](https://github.com/layer5io/learn-layer5)
+
+[Learn Layer5](https://github.com/layer5io/learn-layer5) is a sample application for learning how cloud native infrastructure works.
+
+---
+
+## [Nighthawk](https://getnighthawk.dev/)
+
+[![Nighthawk](.github/assets/images/getnighthawk/layer5-getnighthawk.webp)](https://getnighthawk.dev/)
+
+[Nighthawk](https://getnighthawk.dev/) is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of infrastructure and services.
+
+---
+
+## [Meshery Catalog](https://meshery.layer5.io/catalog)
+
+[![Meshery Catalog](.github/assets/images/catalog/catalog.svg)](https://meshery.layer5.io/catalog)
+
+[Meshery Catalog](https://meshery.layer5.io/catalog) is a central hub for sharing cloud native infrastructure designs. It enables the exchange of best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. It serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns.
 
 
-<p style="clear:both;">
-<h2><a href="https://layer5.io/meshmap">MeshMap</a></h2>
-<a href="https://layer5.io/meshmap">
-  <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="margin:10px;" align="left" />
-</a>
-<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
-<br /><br /><br/>
-</p>
-<br />
-
-
-<p style="clear:both;">
-<h2><a href="https://github.com/service-mesh-patterns">Cloud Native Patterns</a></h2>
-<a href="https://github.com/service-mesh-patterns"><img src=".github/assets/images/patterns/service-mesh-pattern.svg" style="float:left;margin:10px;" width="125px" alt="Cloud Native Patterns" align="left"/>
-</a>
-<a href="https://github.com/service-mesh-patterns">Cloud Native Patterns</a> help you get the most out of Kubernetes and every CNCF project. Each pattern can be used as a template and is customizable.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
-<h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.webp"  
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Landscape Ecosystem" align="left"/></a>
-The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
-<h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
-<a href="https://layer5.io/projects/cloud-native-performance">
-<picture align="left">
-         <source media="(prefers-color-scheme: dark)" srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg">
-         <source media="(prefers-color-scheme: light)" srcset=".github/assets/images/smp-dark-text.svg">
-         <img align="left" src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg" alt="Shows a dark SMP logo in light mode and a white logo in dark mode" width="125px" style="float:left;margin:10px;" />
-</picture>
-</a>
-The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, cloud native infrastructure and its configuration, service/application details, and bundling of statistical analysis of results.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
-<h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
-<a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.webp"
-style="float:left;margin:10px;" width="125px"
-alt="Image Hub" align="left" /></a>
-<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
-Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
- <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
- <a href="https://meshery.io">
-   <img src=".github/assets/images/meshery-operator/meshery-operator-dark.svg"
- style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
-</a>
- <a href="https://github.com/layer5io/meshery-operator"> Meshery Operator</a> deploys and manages MeshSync.
- <br /><br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
-<h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
-<a href="https://github.com/layer5io/learn-layer5">
-  <img src=".github/assets/images/layer5/5-light-small.svg"
-style="float:left;margin:10px;" width="125px" height="100px"
-alt="Learn Layer5" align="left" />
-</a>
-<a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how cloud native infrastructure works.
-<br /><br /><br />
-</p>
-<br />
-
-
-<!-- <p style="clear:both;">
-<h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
-<a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Interface Conformance" align="left" /></a>
-<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
-<br /><br /><br />
-</p>
-<br />
- -->
-
-<p style="clear:both;">
-<h2><a href="https://layer5.io/projects/nighthawk">Nighthawk</a></h2>
-<a href="https://getnighthawk.dev/">
-  <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.webp"
-style="float:left;margin:10px;" width="125px"
-alt="Nighthawk" align="left" />
-</a>
-<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of infrastructure and services.
-<br /><br /><br />
-</p>
-
-
-
-<p style="clear:both;">
-<h2><a href="https://meshery.layer5.io/catalog">Meshery Catalog</a></h2>
-<a href="">
-  <img src=".github/assets/images/catalog/catalog.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Meshery Catalog" align="left" />
-</a>
-<a href="">Meshery Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns.
-<br /><br /><br />
-</p>
 
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
@@ -193,4 +139,3 @@ alt="Meshery Catalog" align="left" />
 ### License
 
 All of Layer5's projects are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
-
