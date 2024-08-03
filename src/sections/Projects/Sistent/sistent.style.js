@@ -626,10 +626,6 @@ const SistentWrapper = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  .components-container {
-    margin-left: 1rem;
-  }
-
   .search-container {
     display: flex;
     justify-content: center;
