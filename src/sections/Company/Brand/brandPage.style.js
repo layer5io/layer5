@@ -176,8 +176,18 @@ const BrandPageWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 575px) {
-		.ImgDiv, .color-code-wrapper {
+		.color-code-wrapper{
 			margin-left: 0px;
+		}
+		.ImgDiv img {
+			margin: auto;
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 200px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 		img.Layer5Icon {
 			width: auto;
