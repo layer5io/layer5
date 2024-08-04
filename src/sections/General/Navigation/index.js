@@ -256,6 +256,29 @@ const Navigation = () => {
     closeDropDown();
   };
 
+
+  useEffect(() => {
+    const plusButtons = document.querySelectorAll(".plus");
+
+    plusButtons.forEach((plus, index) => {
+      plus.addEventListener("click", () => {
+        const index = plus.getAttribute("data-index");
+        const mobileNavSubitemContainer = document.querySelector(`.mobile-nav-subitem-container[data-index='${index}']`);
+
+        if (mobileNavSubitemContainer.style.display === "block" && plus.style.transform == "rotate(135deg)") {
+          mobileNavSubitemContainer.style.display = "none";
+          plus.style.transform = "rotate(0deg)";
+        } else {
+          mobileNavSubitemContainer.style.display = "block";
+          plus.style.transform = "rotate(135deg)";
+        }
+      });
+    });
+  }, []);
+
+
+
+
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -296,49 +319,60 @@ const Navigation = () => {
                           : "mobile-nav-item"
                       }
                     >
-                      <Link
-                        to={menu.path}
-                        onClick={changeDropdownState}
-                        className="menu-item"
-                        activeClassName="nav-link-active"
-                      >
-                        {menu.name}
-                      </Link>
-                      <ul>
-                        {menu.subItems !== undefined &&
-                          menu.subItems.map((subItems, index) => {
-                            return (
-                              <li key={index} className="mobile-nav-subitem">
-                                {subItems.externalLink ? (
-                                  <a
-                                    href={subItems.path}
-                                    target="_blank"
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className="mobile-sub-menu-item"
-                                    rel="noreferrer"
-                                  >
-                                    {subItems.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={subItems.path}
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className="mobile-sub-menu-item"
-                                    activeClassName="nav-link-active"
-                                  >
-                                    {subItems.name}
-                                  </Link>
-                                )}
-                              </li>
-                            );
-                          })}
-                      </ul>
+                      <div className="wrapper">
+                        <Link
+                          to={menu.path}
+                          onClick={changeDropdownState}
+                          className="menu-item"
+                          activeClassName="nav-link-active"
+                        >
+                          {menu.name}
+                        </Link>
+                        {menu.subItems !== undefined && (
+                          <div className="plus" data-index={index}>
+                            <span></span>
+                          </div>
+                        )}
+                      </div>
+                      {menu.subItems !== undefined && (
+                        <div className="mobile-nav-subitem-container" data-index={index}>
+                          <ul>
+                            {menu.subItems !== undefined &&
+                              menu.subItems.map((subItems, index) => {
+                                return (
+                                  <li key={index} className="mobile-nav-subitem">
+                                    {subItems.externalLink ? (
+                                      <a
+                                        href={subItems.path}
+                                        target="_blank"
+                                        onClick={() => {
+                                          changeDropdownState();
+                                          closeDropDown();
+                                        }}
+                                        className="mobile-sub-menu-item"
+                                        rel="noreferrer"
+                                      >
+                                        {subItems.name}
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        to={subItems.path}
+                                        onClick={() => {
+                                          changeDropdownState();
+                                          closeDropDown();
+                                        }}
+                                        className="mobile-sub-menu-item"
+                                        activeClassName="nav-link-active"
+                                      >
+                                        {subItems.name}
+                                      </Link>
+                                    )}
+                                  </li>
+                                );
+                              })}
+                          </ul>
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>

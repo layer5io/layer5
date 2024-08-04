@@ -578,6 +578,7 @@ const NavigationWrap = styled.header`
     .mobile-collapsed {
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
     .mobile-menu-icon {
       display: inline-block;
@@ -622,7 +623,9 @@ const NavigationWrap = styled.header`
         font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        width: 100%;
+        padding: 10px 0;
       }
       a:before {
         content: none;
@@ -631,6 +634,64 @@ const NavigationWrap = styled.header`
         display: list-item;
       }
     }
+    .wrapper {
+
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+
+    }
+
+    .mobile-nav-subitem-container{
+      display:none;
+    }
+
+    .plus {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      transition: transform 0.35s;
+      transform-origin: centre;
+      margin-right: 13px;
+    }
+    .plus span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 9px;
+  }
+
+  .plus span::before,
+  .plus span::after {
+      content: '';
+      position: absolute;
+      background-color: white;
+  }
+
+  .plus span::before {
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 2.5px; /* Thickness of the horizontal line */
+      transform: translateY(-50%);
+  }
+
+  .plus span::after {
+      top: 18px;
+    left: 7px;
+    width: 2.5px; /* Thickness of the vertical line */
+    height: 14px;
+    transform: translateX(-50%);
+}
+
+    .plus:hover{
+    cursor: pointer;
+    }
+
+    .sub-items{
+    border: 1px solid pink;
+    }
+
     .mobile-nav-subitem {
       padding-left: 10px;
       padding-top: 0.4rem;
