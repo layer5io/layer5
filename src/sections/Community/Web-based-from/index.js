@@ -72,7 +72,31 @@ const WebBasedForm = () => {
   };
 
   const MemberFormStart = () => {
+    const [image, setImage] = useState(null);
 
+    const handleFileChange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImage(reader.result);
+          uploadFile(file);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+  
+    const uploadFile = async (file) => {
+      const formData = new FormData();
+      formData.append('picture', file);
+  
+      try {
+        const response = await axios.post('/upload', formData);
+        console.log('File uploaded successfully:', response.data);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    };
     return (
       <Container>
         <h2 className="title">New Community Member</h2>
@@ -148,8 +172,9 @@ const WebBasedForm = () => {
                 XXL
               </label>
             </div>
+
             <label htmlFor="picture" className="form-name">Picture</label>
-            <Field type="url" className="text-field" id="picture" name="picture" />
+            <Field type="file" className="text-field" id="picture" name="picture" onChange={(e) => handleFileChange(e)} />
             <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
             <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
           </Form>
