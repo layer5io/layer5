@@ -50,8 +50,8 @@ const contents = [
 const badgeStyle = {
   height: "25px",
   width: "25px",
-  marginRight: "5px",
   verticalAlign: "middle",
+  marginRight: "1rem",
 };
 
 const badgeListStyle = {
@@ -61,7 +61,6 @@ const badgeListStyle = {
 const recognitionsstyle = {
   marginBottom: "0.5rem",
 };
-
 const RecognitionPage = () => {
   return (
     <HandbookWrapper>
