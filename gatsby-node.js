@@ -933,6 +933,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        labs: String,
        slides: String,
        slack: String,
+       slug: String,
        video: String,
        community_manager: String,
        docURL: String, 
