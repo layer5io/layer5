@@ -180,7 +180,7 @@ const Brand = () => {
             <Layer5Brand />
           </div>
           <div className="section" ref={SocialBackgroundsRef}>
-              <SocialBackgrounds />
+            <SocialBackgrounds />
           </div>
           <div className="section" ref={mesheryRef}>
             <MesheryBrand />
@@ -216,7 +216,7 @@ const Brand = () => {
             <MeshMapBrand />
           </div>
           <div className="section" ref={CatalogRef}>
-              <Catalog />
+            <Catalog />
           </div>
           <div className="section" ref={stickfiguresRef}>
             <StickFigures />
