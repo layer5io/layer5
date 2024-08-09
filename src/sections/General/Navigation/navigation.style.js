@@ -672,7 +672,7 @@ const NavigationWrap = styled.header`
   .plus span::before {
       width: 10px;
       height: 2.5px; /* Thickness of the horizontal line */
-      transform: rotate(40deg);
+      transform: rotate(45deg);
       top: 10px;
       margin-top: 26%;
       margin-left: 16.124%;
@@ -681,7 +681,7 @@ const NavigationWrap = styled.header`
   .plus span::after {
     width: 2.5px; /* Thickness of the vertical line */
     height: 10px;
-    transform: rotate(40deg);
+    transform: rotate(45deg);
     margin-top: 42.125%;
     margin-left: -14%;
     
