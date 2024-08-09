@@ -1,12 +1,4 @@
-import { Box } from "@layer5/sistent";
 import styled from "styled-components";
-
-export const ActionBox = styled(Box)(() => ({
-  display: "flex",
-  justifyContent: "end",
-  width: "100%",
-  gap: "1rem"
-}));
 
 const SistentWrapper = styled.div`
   position: relative;
@@ -124,7 +116,7 @@ const SistentWrapper = styled.div`
     padding-bottom: 4rem;
   }
 
-  table {
+  .table-container table {
     border-collapse: collapse;
     width: 98%;
     margin: 1rem 0 2rem 0;
@@ -152,8 +144,8 @@ const SistentWrapper = styled.div`
     }
   }
 
-  td,
-  th {
+  .table-container td,
+  th .table-container-head {
     border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
     text-align: left;
     padding: 0.5rem;
@@ -165,7 +157,7 @@ const SistentWrapper = styled.div`
     width: 8%;
   }
 
-  tbody:nth-child(even) {
+  tbody:nth-child(even) .table-container-body {
     background-color: ${(props) => props.theme.secondaryLightColorTwo};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
@@ -830,6 +822,182 @@ const SistentWrapper = styled.div`
       font-size: 0.9rem;
       overflow: auto;
     }
+  }
+
+  .color-table {
+    width: 100%;
+  }
+
+  .color-col {
+    margin: auto;
+
+    font-family: Qanelas Soft;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+  }
+  .color-th {
+    width: 30%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .color-col {
+    width: 86.5%;
+    margin: auto;
+  }
+
+  .token-col2 {
+    font-size: 1.2rem;
+    height: 30%;
+  }
+  .plus-role {
+    table {
+      width: 80% !important;
+      tbody {
+        tr {
+          td {
+            .key {
+              .token-col {
+                width: 50%;
+              }
+            }
+            .role {
+              .role-description {
+                width: 100%;
+                font-size: 12px;
+                padding: 10px;
+                font-family: Arial, sans-serif;
+                font-weight: 300;
+                line-height: 1.5;
+                text-align: justify;
+                color: #333;
+                min-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-right: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    overflow: scroll;
+  }
+
+  .color-table {
+    table {
+      border: 1px solid #c9dbe3 !important;
+      border-radius: 16px !important;
+      margin: auto !important;
+      border-spacing: 0px;
+      width: 66.6%;
+      border: 1px solid red;
+
+      tbody {
+        tr {
+          td {
+            .key {
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+              margin-left: 2rem;
+              margin-right: 2rem;
+
+              .token-col {
+                width: 50%;
+                margin: auto;
+                height: 50%;
+                font-family: Consolas;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left;
+                color: #000d12;
+              }
+            }
+          }
+
+          .value {
+            display: flex;
+            width: 86.5%;
+            margin: auto;
+            .hex-color {
+              width: 100%;
+              .color1 {
+                font-family: Open Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 24px;
+              }
+              .color2 {
+                font-family: Open Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 24px;
+              }
+            }
+            .swatch {
+              margin: auto;
+              width: 32px;
+              height: 32px;
+              border-radius: 4px;
+              border: 1px solid #51636b;
+            }
+            .text-colors {
+              width: 45px;
+              height: 35px;
+              text-align: center;
+            }
+          }
+          .role {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .role-description {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: justify;
+    color: #333;
+    min-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+  }
+
+  .white-background {
+    background-color: #fafafa;
+  }
+  .container {
+    background-color: white;
+    padding: 11px;
+    border-radius: 5px;
+  }
+
+  .inner-box {
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+  }
+  tr.shades {
+    background-color: #e7eff3 !important;
+  }
+  tr.light {
+    background-color: none;
+  }
+
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 16px;
+  }
+
+  tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 16px;
   }
 `;
 
