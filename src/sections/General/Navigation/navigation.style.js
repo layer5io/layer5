@@ -650,41 +650,36 @@ const NavigationWrap = styled.header`
       position: relative;
       height: 50px;
       width: 50px;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      transform-origin: centre;
+      display: flex;
+      justify-content: center;
       margin-right: 13px;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .plus span {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 15px;
+    height: 10px;
     display: flex;
     justify-content: center;
+    margin-top: 18px;
   }
 
   .plus span::before,
   .plus span::after {
       content: '';
-      position: absolute;
-      background-color: ${(props) => props.theme.menuColor};
+    position: absolute;
+    width: 2.5px; /* Thickness of the arrow lines */
+    height: 100%; /* Ensure lines cover the full span */
+    transform-origin: bottom;
+    background-color: ${(props) => props.theme.menuColor};
   }
 
   .plus span::before {
-      width: 10px;
-      height: 2.5px; /* Thickness of the horizontal line */
       transform: rotate(45deg);
-      top: 10px;
-      margin-top: 26%;
-      margin-left: 16.124%;
   }
 
   .plus span::after {
-    width: 2.5px; /* Thickness of the vertical line */
-    height: 10px;
-    transform: rotate(45deg);
-    margin-top: 42.125%;
-    margin-left: -14%;
-    
+  transform: rotate(-45deg);
 }
 
     .plus:hover{
