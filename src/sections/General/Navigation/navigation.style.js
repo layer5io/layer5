@@ -650,7 +650,7 @@ const NavigationWrap = styled.header`
       position: relative;
       height: 50px;
       width: 50px;
-      transition: transform 0.35s;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       transform-origin: centre;
       margin-right: 13px;
     }
@@ -658,30 +658,33 @@ const NavigationWrap = styled.header`
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 9px;
+    display: flex;
+    justify-content: center;
   }
 
   .plus span::before,
   .plus span::after {
       content: '';
       position: absolute;
-      background-color: white;
+      background-color: ${(props) => props.theme.menuColor};
   }
 
   .plus span::before {
-      top: 50%;
-      left: 0;
-      width: 14px;
+      width: 10px;
       height: 2.5px; /* Thickness of the horizontal line */
-      transform: translateY(-50%);
+      transform: rotate(40deg);
+      top: 10px;
+      margin-top: 26%;
+      margin-left: 16.124%;
   }
 
   .plus span::after {
-      top: 18px;
-    left: 7px;
     width: 2.5px; /* Thickness of the vertical line */
-    height: 14px;
-    transform: translateX(-50%);
+    height: 10px;
+    transform: rotate(40deg);
+    margin-top: 42.125%;
+    margin-left: -14%;
+    
 }
 
     .plus:hover{

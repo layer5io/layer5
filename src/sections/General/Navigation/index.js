@@ -265,12 +265,13 @@ const Navigation = () => {
         const index = plus.getAttribute("data-index");
         const mobileNavSubitemContainer = document.querySelector(`.mobile-nav-subitem-container[data-index='${index}']`);
 
-        if (mobileNavSubitemContainer.style.display === "block" && plus.style.transform == "rotate(135deg)") {
+        if (mobileNavSubitemContainer.style.display === "block" && plus.style.transform == "rotate(180deg)") {
           mobileNavSubitemContainer.style.display = "none";
           plus.style.transform = "rotate(0deg)";
+
         } else {
           mobileNavSubitemContainer.style.display = "block";
-          plus.style.transform = "rotate(135deg)";
+          plus.style.transform = "rotate(180deg)";
         }
       });
     });
