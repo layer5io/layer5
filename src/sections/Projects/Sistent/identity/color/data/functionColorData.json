@@ -1,0 +1,114 @@
+[
+  {
+    "token": "blue-70",
+    "value": { "name": "Blue", "hex": "#F0FBFF", "swatchClass": "blue-70" }
+  },
+  {
+    "token": "blue-60",
+    "value": { "name": "Blue", "hex": "#9EDDFF", "swatchClass": "blue-60" }
+  },
+  {
+    "token": "blue-50",
+    "value": { "name": "Blue", "hex": "#75CAFF", "swatchClass": "blue-50" }
+  },
+  {
+    "token": "blue-40",
+    "value": { "name": "Blue", "hex": "#2196F3", "swatchClass": "blue-40" }
+  },
+  {
+    "token": "blue-30",
+    "value": { "name": "Blue", "hex": "#1272CC", "swatchClass": "blue-30" }
+  },
+  {
+    "token": "blue-20",
+    "value": { "name": "Blue", "hex": "#0754A6", "swatchClass": "blue-20" }
+  },
+  {
+    "token": "blue-10",
+    "value": { "name": "Blue", "hex": "#003980", "swatchClass": "blue-10" }
+  },
+  {
+    "token": "green-70",
+    "value": { "name": "Green", "hex": "#EFFCED", "swatchClass": "green-70" }
+  },
+  {
+    "token": "green-60",
+    "value": { "name": "Green", "hex": "#B2E3AF", "swatchClass": "green-60" }
+  },
+  {
+    "token": "green-50",
+    "value": { "name": "Green", "hex": "#5BC95B", "swatchClass": "green-50" }
+  },
+  {
+    "token": "green-40",
+    "value": { "name": "Green", "hex": "#36BC3B", "swatchClass": "green-40" }
+  },
+  {
+    "token": "green-30",
+    "value": { "name": "Green", "hex": "#15701E", "swatchClass": "green-30" }
+  },
+  {
+    "token": "green-20",
+    "value": { "name": "Green", "hex": "#0A4A13", "swatchClass": "green-20" }
+  },
+  {
+    "token": "green-10",
+    "value": { "name": "Green", "hex": "#05240A", "swatchClass": "green-10" }
+  },
+  {
+    "token": "yellow-70",
+    "value": { "name": "Yellow", "hex": "#FFFBE6", "swatchClass": "yellow-70" }
+  },
+  {
+    "token": "yellow-60",
+    "value": { "name": "Yellow", "hex": "#FFEFA6", "swatchClass": "yellow-60" }
+  },
+  {
+    "token": "yellow-50",
+    "value": { "name": "Yellow", "hex": "#FFE37D", "swatchClass": "yellow-50" }
+  },
+  {
+    "token": "yellow-40",
+    "value": { "name": "Yellow", "hex": "#F0D053", "swatchClass": "yellow-40" }
+  },
+  {
+    "token": "yellow-30",
+    "value": { "name": "Yellow", "hex": "#F0A303", "swatchClass": "yellow-30" }
+  },
+  {
+    "token": "yellow-20",
+    "value": { "name": "Yellow", "hex": "#C98300", "swatchClass": "yellow-20" }
+  },
+  {
+    "token": "yellow-10",
+    "value": { "name": "Yellow", "hex": "#A36500", "swatchClass": "yellow-10" }
+  },
+  {
+    "token": "red-70",
+    "value": { "name": "Red", "hex": "#F2E3DA", "swatchClass": "red-70" }
+  },
+  {
+    "token": "red-60",
+    "value": { "name": "Red", "hex": "#E6B093", "swatchClass": "red-60" }
+  },
+  {
+    "token": "red-50",
+    "value": { "name": "Red", "hex": "#BF471F", "swatchClass": "red-50" }
+  },
+  {
+    "token": "red-40",
+    "value": { "name": "Red", "hex": "#F91313", "swatchClass": "red-40" }
+  },
+  {
+    "token": "red-30",
+    "value": { "name": "Red", "hex": "#B32700", "swatchClass": "red-30" }
+  },
+  {
+    "token": "red-20",
+    "value": { "name": "Red", "hex": "#8C1A00", "swatchClass": "red-20" }
+  },
+  {
+    "token": "red-10",
+    "value": { "name": "Red", "hex": "#660F00", "swatchClass": "red-10" }
+  }
+]

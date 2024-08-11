@@ -1,0 +1,119 @@
+[
+  {
+    "token": "background-neutral-default",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "background-neutral-default"
+    },
+    "role": "Alternate brand token. Can be used as color for interface elements relating to the brand."
+  },
+  {
+    "token": "background-neutral-hover",
+    "value": {
+      "name": "Alias - charcoal-30",
+      "hex": "#28353a",
+      "swatchClass": "background-neutral-hover"
+    },
+    "role": "Alternate color for surface hover interactions relating to the brand."
+  },
+  {
+    "token": "background-neutral-pressed",
+    "value": {
+      "name": "Alias - charcoal-20",
+      "hex": "#142126",
+      "swatchClass": "background-neutral-pressed"
+    },
+    "role": "Alternate color for pressed surface interactions relating to the brand."
+  },
+  {
+    "token": "background-constant-white",
+    "value": {
+      "name": "Alias - accent_grey-100",
+      "hex": "#f6f8f8",
+      "swatchClass": "background-constant-white"
+    },
+    "role": "This background remains constant across themes and is used on exceptional cases as is determined by the context."
+  },
+  {
+    "token": "background-constant-disabled",
+    "value": {
+      "name": "Alias - charcoal-70",
+      "hex": "#b1b9bc",
+      "swatchClass": "background-constant-disabled"
+    },
+    "role": "This background remains constant across themes and is used to denote disabled states on cases as is determined by the context."
+  },
+  {
+    "token": "icon-neutral-default",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "icon-neutral-default"
+    },
+    "role": "Alternate color for any icon relating to the brand."
+  },
+  {
+    "token": "icon-neutral-alt",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "icon-neutral-alt"
+    },
+    "role": "Supplementary neutral color for any icon relating to the brand."
+  },
+  {
+    "token": "border-neutral-default",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "border-neutral-default"
+    },
+    "role": "Alternate border color for elements relating to the brand."
+  },
+  {
+    "token": "border-neutral-alt",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "border-neutral-alt"
+    },
+    "role": "Supplementary neutral color for border elements relating to the brand."
+  },
+  {
+    "token": "text-neutral-default",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "text-neutral-default"
+    },
+    "role": "Alternate color for text relating to the brand."
+  },
+  {
+    "token": "text-neutral-alt",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "text-neutral-alt"
+    },
+    "role": "Supplementary neutral color for text relating to the brand."
+  },
+  {
+    "token": "text-constant-disabled",
+    "value": {
+      "name": "Alias - charcoal-50",
+      "hex": "#647176",
+      "swatchClass": "text-constant-disabled"
+    },
+    "role": "This text color remains constant across both themes and is used to denote disabled states."
+  },
+  {
+    "token": "text-disabled-alternative",
+    "value": {
+      "name": "Alias - charcoal-70",
+      "hex": "#b1b9bc",
+      "swatchClass": "text-disabled-alternative"
+    },
+    "role": "This text color remains constant across both themes and is used to denote disabled states."
+  }
+]

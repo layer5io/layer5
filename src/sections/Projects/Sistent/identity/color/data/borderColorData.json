@@ -1,0 +1,38 @@
+[
+  {
+    "token": "border-default",
+    "value": {
+      "name": "Alias charcoal-90",
+      "hex": "#eaedee",
+      "swatchClass": "border-default"
+    },
+    "role": "Default border color for interface elements."
+  },
+  {
+    "token": "border-brand",
+    "value": {
+      "name": "Alias keppel-40",
+      "hex": "#00b39f",
+      "swatchClass": "border-brand"
+    },
+    "role": "Border color for elements relating to the brand."
+  },
+  {
+    "token": "border-normal",
+    "value": {
+      "name": "Alias - charcoal-60",
+      "hex": "#8c999e",
+      "swatchClass": "border-normal"
+    },
+    "role": "First level border color to establish prominence and visual hierarchy."
+  },
+  {
+    "token": "border-strong",
+    "value": {
+      "name": "Alias - charcoal-30",
+      "hex": "#28353a",
+      "swatchClass": "border-strong"
+    },
+    "role": "Second level border color to establish prominence and visual hierarchy."
+  }
+]

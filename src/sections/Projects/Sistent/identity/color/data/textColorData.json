@@ -1,0 +1,110 @@
+[
+  {
+    "token": "text-default",
+    "value": {
+      "name": "Alias - charcoal-10",
+      "hex": "#000d12",
+      "swatchClass": "text-default"
+    },
+    "role": "Default text color."
+  },
+  {
+    "token": "text-secondary",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "text-secondary"
+    },
+    "role": "First level text color to indicate lower prominence and establish visual hierarchy."
+  },
+  {
+    "token": "text-tertiary",
+    "value": {
+      "name": "Alias - charcoal-50",
+      "hex": "#647176",
+      "swatchClass": "text-tertiary"
+    },
+    "role": "Second level text color to indicate lower prominence and establish visual hierarchy."
+  },
+  {
+    "token": "text-inverse",
+    "value": {
+      "name": "Alias - charcoal-100",
+      "hex": "#fdfdfd",
+      "swatchClass": "text-inverse"
+    },
+    "role": "This text color is the polar opposite of the default text color in any theme."
+  },
+  {
+    "token": "text-disabled",
+    "value": {
+      "name": "Alias - charcoal-70",
+      "hex": "#b1b9bc",
+      "swatchClass": "text-disabled"
+    },
+    "role": "This text color is the polar opposite of the default text color in any theme."
+  },
+  {
+    "token": "text-constant-white",
+    "value": {
+      "name": "Alias - charcoal-100",
+      "hex": "#fdfdfd",
+      "swatchClass": "text-constant-white"
+    },
+    "role": "This text color remains constant across both themes and is used on surfaces that don’t change as themes change."
+  },
+  {
+    "token": "text-constant-black",
+    "value": {
+      "name": "Alias - charcoal-10",
+      "hex": "#000d12",
+      "swatchClass": "text-constant-black"
+    },
+    "role": "This text color remains constant across both themes and is used on surfaces that don’t change as themes change."
+  },
+  {
+    "token": "text-brand",
+    "value": {
+      "name": "Alias - keppel-40",
+      "hex": "#00b39f",
+      "swatchClass": "text-brand"
+    },
+    "role": "Color for text relating to the brand."
+  },
+  {
+    "token": "text-info",
+    "value": {
+      "name": "Alias - blue-40",
+      "hex": "#2196f3",
+      "swatchClass": "text-info"
+    },
+    "role": "Color for text relating to notifications and information."
+  },
+  {
+    "token": "text-success",
+    "value": {
+      "name": "Alias - green-30",
+      "hex": "#15701e",
+      "swatchClass": "text-success"
+    },
+    "role": "Color for text relating to success."
+  },
+  {
+    "token": "text-warning",
+    "value": {
+      "name": "Alias - yellow-30",
+      "hex": "#f0a303",
+      "swatchClass": "text-warning"
+    },
+    "role": "Color for text relating to warnings."
+  },
+  {
+    "token": "text-error",
+    "value": {
+      "name": "Alias - red-30",
+      "hex": "#b32700",
+      "swatchClass": "text-error"
+    },
+    "role": "Color for text relating to errors and destructive actions."
+  }
+]

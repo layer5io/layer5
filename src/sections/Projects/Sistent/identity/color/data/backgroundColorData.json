@@ -1,0 +1,380 @@
+[
+  {
+    "token": "background-default",
+    "value": {
+      "name": "Alias - charcoal - 100",
+      "hex": "#fdfdfd",
+      "swatchClass": "background-default"
+    },
+    "role": "This is the default background color for any designed page."
+  },
+  {
+    "token": "background-default",
+    "value": {
+      "name": "Alias - charcoal-100",
+      "hex": "#fdfdfd",
+      "swatchClass": "background-default"
+    },
+    "role": "This is the default background color for any designed page."
+  },
+  {
+    "token": "background-secondary",
+    "value": {
+      "name": "Alias - accent_grey-90",
+      "hex": "#e7eff3",
+      "swatchClass": "background-secondary"
+    },
+    "role": "First level surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-tertiary",
+    "value": {
+      "name": "Alias - accent grey-80",
+      "hex": "#c9dbe3",
+      "swatchClass": "background-tertiary"
+    },
+    "role": "Second level surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-hover",
+    "value": {
+      "name": "Alias - charcoal-90",
+      "hex": "#EAEDEE",
+      "swatchClass": "background-hover"
+    },
+    "role": "Color for surface hover interactions."
+  },
+  {
+    "token": "background-supplementary",
+    "value": {
+      "name": "Alias - accent grey-40",
+      "hex": "#51636b",
+      "swatchClass": "background-supplementary"
+    },
+    "role": "Alternative color that remains constant for both themes. Sample use case in tooltip component."
+  },
+  {
+    "token": "background-surfaces",
+    "value": {
+      "name": "Alias - accent grey-100",
+      "hex": "#f6f8f8",
+      "swatchClass": "background-surfaces"
+    },
+    "role": "For use on surfaces mostly in components across designs depending on the use case."
+  },
+  {
+    "token": "background-blur-heavy",
+    "value": {
+      "name": "Alias - accent grey-90, 80%",
+      "hex": "#e7eff3",
+      "swatchClass": "background-blur-heavy"
+    },
+    "role": "Low opacity color used to establish prominence and layer hierarchy. Use for modals and overlays and along with blur shadow."
+  },
+  {
+    "token": "background-blur-light",
+    "value": {
+      "name": "Alias - accent grey-09, 20%",
+      "hex": "Holoff",
+      "swatchClass": "background-blur-light"
+    },
+    "role": "A variation of the low opacity colors used for modals and overlays."
+  },
+  {
+    "token": "background-inverse",
+    "value": {
+      "name": "Alias - charcoal-118",
+      "hex": "#000d12",
+      "swatchClass": "background-inverse"
+    },
+    "role": "Background color for area that will include code snippets of consistent components."
+  },
+  {
+    "token": "background-brand-default",
+    "value": {
+      "name": "Alias - keppel-40",
+      "hex": "#006396",
+      "swatchClass": "background-brand-default"
+    },
+    "role": "Color for interface elements relating to the brand."
+  },
+  {
+    "token": "background-brand-hover",
+    "value": {
+      "name": "Alias - keppel-50",
+      "hex": "#41ccb3",
+      "swatchClass": "background-brand-hover"
+    },
+    "role": "Color for surface hover interactions relating to the brand."
+  },
+  {
+    "token": "background-brand-disabled",
+    "value": {
+      "name": "Alias - charcoal-90",
+      "hex": "#eaedee",
+      "swatchClass": "background-brand-disabled"
+    },
+    "role": "Color for disabled interface elements relating to the brand."
+  },
+  {
+    "token": "background-brand-pressed",
+    "value": {
+      "name": "Alias - keppel-60",
+      "hex": "#eaedee",
+      "swatchClass": "background-brand-pressed"
+    },
+    "role": "Color for pressed surface interactions."
+  },
+  {
+    "token": "background-brand-secondary",
+    "value": {
+      "name": "Alias - keppel-50",
+      "hex": "#41ccb3",
+      "swatchClass": "background-brand-secondary"
+    },
+    "role": "First level brand surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-brand-tertiary",
+    "value": {
+      "name": "Alias - keppel-70",
+      "hex": "#daf2eb",
+      "swatchClass": "background-brand-tertiary"
+    },
+    "role": "Second level brand surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-graphics-default",
+    "value": {
+      "name": "Alias - caribbean-30",
+      "hex": "#00ad90",
+      "swatchClass": "background-graphics-default"
+    },
+    "role": "Color for interface elements like visuals and graphics."
+  },
+  {
+    "token": "background-cta-default",
+    "value": {
+      "name": "Alias - saffron-40",
+      "hex": "#ebc017",
+      "swatchClass": "background-cta-default"
+    },
+    "role": "Color for interface elements relating to calls to action."
+  },
+  {
+    "token": "background-cta-hover",
+    "value": {
+      "name": "Alias - saffron-50",
+      "hex": "#ffeb6b",
+      "swatchClass": "background-cta-hover"
+    },
+    "role": "Color for surface hover interactions relating to calls to action."
+  },
+  {
+    "token": "background-cta-pressed",
+    "value": {
+      "name": "Alias - saffron-60",
+      "hex": "#fffbbd",
+      "swatchClass": "background-cta-pressed"
+    },
+    "role": "Color for pressed surface interactions relating to calls to action."
+  },
+  {
+    "token": "background-cta-secondary",
+    "value": {
+      "name": "Alias - saffron-60",
+      "hex": "#fffbbd",
+      "swatchClass": "background-cta-secondary"
+    },
+    "role": "First level CTA surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-cta-tertiary",
+    "value": {
+      "name": "Alias - saffron-70",
+      "hex": "#fffee6",
+      "swatchClass": "background-cta-tertiary"
+    },
+    "role": "Second level CTA surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-info-default",
+    "value": {
+      "name": "Alias - blue-40",
+      "hex": "#2196f3",
+      "swatchClass": "background-info-default"
+    },
+    "role": "Color for interface elements relating to notifications and information."
+  },
+  {
+    "token": "background-info-hover",
+    "value": {
+      "name": "Alias - blue-20",
+      "hex": "#0754A6",
+      "swatchClass": "background-info-hover"
+    },
+    "role": "Color for surface hover interactions relating to notifications and information."
+  },
+  {
+    "token": "background-info-pressed",
+    "value": {
+      "name": "Alias - blue-10",
+      "hex": "#003980",
+      "swatchClass": "background-info-pressed"
+    },
+    "role": "Color for pressed surface interactions relating to notifications and information."
+  },
+  {
+    "token": "background-info-secondary",
+    "value": {
+      "name": "Alias - blue-60",
+      "hex": "#9Edfff",
+      "swatchClass": "background-info-secondary"
+    },
+    "role": "First level information surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-info-tertiary",
+    "value": {
+      "name": "Alias - blue-70",
+      "hex": "#f0fbff",
+      "swatchClass": "background-info-tertiary"
+    },
+    "role": "Second level information surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-success-default",
+    "value": {
+      "name": "Alias - green-30",
+      "hex": "#15701e",
+      "swatchClass": "background-success-default"
+    },
+    "role": "Color for interface elements relating to success."
+  },
+  {
+    "token": "background-success-hover",
+    "value": {
+      "name": "Alias - green-20",
+      "hex": "#0a4a13",
+      "swatchClass": "background-success-hover"
+    },
+    "role": "Color for surface hover interactions relating to success."
+  },
+  {
+    "token": "background-success-pressed",
+    "value": {
+      "name": "Alias - green-10",
+      "hex": "#05240a",
+      "swatchClass": "background-success-pressed"
+    },
+    "role": "Color for pressed surface interactions relating to success."
+  },
+  {
+    "token": "background-success-secondary",
+    "value": {
+      "name": "Alias - green-60",
+      "hex": "#b2e3af",
+      "swatchClass": "background-success-secondary"
+    },
+    "role": "First level success surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-success-tertiary",
+    "value": {
+      "name": "Alias - green-70",
+      "hex": "#effced",
+      "swatchClass": "background-success-tertiary"
+    },
+    "role": "Second level success surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-warning-default",
+    "value": {
+      "name": "Alias - yellow-30",
+      "hex": "#f0a303",
+      "swatchClass": "background-warning-default"
+    },
+    "role": "Color for interface elements relating to warnings."
+  },
+  {
+    "token": "background-warning-hover",
+    "value": {
+      "name": "Alias - yellow-20",
+      "hex": "#c98300",
+      "swatchClass": "background-warning-hover"
+    },
+    "role": "Color for surface hover interactions relating to warnings."
+  },
+  {
+    "token": "background-warning-pressed",
+    "value": {
+      "name": "Alias - yellow-10",
+      "hex": "#a36500",
+      "swatchClass": "background-warning-pressed"
+    },
+    "role": "Color for pressed surface interactions relating to warnings."
+  },
+  {
+    "token": "background-warning-secondary",
+    "value": {
+      "name": "Alias - yellow-60",
+      "hex": "#ffefa6",
+      "swatchClass": "background-warning-secondary"
+    },
+    "role": "First level warning surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-warning-tertiary",
+    "value": {
+      "name": "Alias - yellow-70",
+      "hex": "#fffbe6",
+      "swatchClass": "background-warning-tertiary"
+    },
+    "role": "Second level warning surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-error-default",
+    "value": {
+      "name": "Alias - red-30",
+      "hex": "#b32700",
+      "swatchClass": "background-error-default"
+    },
+    "role": "Color for interface elements relating to errors and destructive actions."
+  },
+  {
+    "token": "background-error-hover",
+    "value": {
+      "name": "Alias - red-20",
+      "hex": "#8c1a00",
+      "swatchClass": "background-error-hover"
+    },
+    "role": "Color for surface hover interactions relating to errors."
+  },
+  {
+    "token": "background-error-pressed",
+    "value": {
+      "name": "Alias - red-10",
+      "hex": "#660f00",
+      "swatchClass": "background-error-pressed"
+    },
+    "role": "Color for pressed surface interactions relating to errors."
+  },
+  {
+    "token": "background-error-secondary",
+    "value": {
+      "name": "Alias - red-60",
+      "hex": "#e6b093",
+      "swatchClass": "background-error-secondary"
+    },
+    "role": "First level error surface color which is used to establish prominence and layer hierarchy."
+  },
+  {
+    "token": "background-error-tertiary",
+    "value": {
+      "name": "Alias - red-70",
+      "hex": "#f2e3da",
+      "swatchClass": "background-error-tertiary"
+    },
+    "role": "Second level error surface color which is used to establish prominence and layer hierarchy."
+  }
+]

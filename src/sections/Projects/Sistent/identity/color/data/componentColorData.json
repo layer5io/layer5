@@ -1,0 +1,56 @@
+[
+  {
+    "token": "icon-default",
+    "value": {
+      "name": "Alias - accent_grey-10",
+      "hex": "#15272f",
+      "swatchClass": "icon-default"
+    },
+    "role": "Default color for any icon component in a design."
+  },
+  {
+    "token": "icon-secondary",
+    "value": {
+      "name": "Alias - charcoal-40",
+      "hex": "#3c494e",
+      "swatchClass": "icon-secondary"
+    },
+    "role": "Default color for any icon component in a design."
+  },
+  {
+    "token": "icon-brand",
+    "value": {
+      "name": "Alias - keppel-40",
+      "hex": "#00b39f",
+      "swatchClass": "icon-brand"
+    },
+    "role": "Default color for any icon relating to the brand."
+  },
+  {
+    "token": "icon-inverse",
+    "value": {
+      "name": "Alias - charcoal-100",
+      "hex": "#fdfdfd",
+      "swatchClass": "icon-inverse"
+    },
+    "role": "This icon color is the polar opposite of the default icon color in any theme."
+  },
+  {
+    "token": "icon-weather",
+    "value": {
+      "name": "Alias - accent_grey-50",
+      "hex": "#6f8189",
+      "swatchClass": "icon-weather"
+    },
+    "role": "Default color for any icon representing theme switching."
+  },
+  {
+    "token": "icon-disabled",
+    "value": {
+      "name": "Alias - charcoal-70",
+      "hex": "#b1b9bc",
+      "swatchClass": "icon-disabled"
+    },
+    "role": "Color for disabled icon components."
+  }
+]

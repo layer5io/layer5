@@ -1,0 +1,154 @@
+[
+  {
+    "token": "charcoal-100",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#fdfdfd",
+      "swatchClass": "charcoal-100"
+    }
+  },
+  {
+    "token": "charcoal-90",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#EAEDEE",
+      "swatchClass": "charcoal-90"
+    }
+  },
+  {
+    "token": "charcoal-80",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#D2D8DA",
+      "swatchClass": "charcoal-80"
+    }
+  },
+  {
+    "token": "charcoal-70",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#B1B9BC",
+      "swatchClass": "charcoal-70"
+    }
+  },
+  {
+    "token": "charcoal-60",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#8C999E",
+      "swatchClass": "charcoal-60"
+    }
+  },
+  {
+    "token": "charcoal-50",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#647176",
+      "swatchClass": "charcoal-50"
+    }
+  },
+  {
+    "token": "charcoal-40",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#3C494E",
+      "swatchClass": "charcoal-40"
+    }
+  },
+  {
+    "token": "charcoal-30",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#28353A",
+      "swatchClass": "charcoal-30"
+    }
+  },
+  {
+    "token": "charcoal-20",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#142126",
+      "swatchClass": "charcoal-20"
+    }
+  },
+  {
+    "token": "charcoal-10",
+    "value": {
+      "name": "Charcoal",
+      "hex": "#000D12",
+      "swatchClass": "charcoal-10"
+    }
+  },
+  {
+    "token": "accent_grey-90",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#E7EFF3",
+      "swatchClass": "accent_grey-90"
+    }
+  },
+  {
+    "token": "accent_grey-80",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#ABBDC5",
+      "swatchClass": "accent_grey-80"
+    }
+  },
+  {
+    "token": "accent_grey-70",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#ABBDC5",
+      "swatchClass": "accent_grey-70"
+    }
+  },
+  {
+    "token": "accent_grey-60",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#8D9FA7",
+      "swatchClass": "accent_grey-60"
+    }
+  },
+  {
+    "token": "accent_grey-50",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#6F8189",
+      "swatchClass": "accent_grey-50"
+    }
+  },
+  {
+    "token": "accent_grey-40",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#51636B",
+      "swatchClass": "accent_grey-40"
+    }
+  },
+  {
+    "token": "accent_grey-30",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#3D4F57",
+      "swatchClass": "accent_grey-30"
+    }
+  },
+  {
+    "token": "accent_grey-20",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#293B43",
+      "swatchClass": "accent_grey-20"
+    }
+  },
+  {
+    "token": "accent_grey-10",
+    "value": {
+      "name": "Accent Grey",
+      "hex": "#15272F",
+      "swatchClass": "accent_grey-10"
+    }
+  }
+]

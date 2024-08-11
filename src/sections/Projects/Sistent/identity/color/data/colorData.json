@@ -1,0 +1,142 @@
+[
+  {
+    "token": "keppel-70",
+    "value": { "name": "Keppel", "hex": "#daf3eb", "swatchClass": "keppel-70" }
+  },
+  {
+    "token": "keppel-60",
+    "value": { "name": "Keppel", "hex": "#93E6D1", "swatchClass": "keppel-60" }
+  },
+  {
+    "token": "keppel-50",
+    "value": { "name": "Keppel", "hex": "#41CCB3", "swatchClass": "keppel-50" }
+  },
+  {
+    "token": "keppel-40",
+    "value": { "name": "Keppel", "hex": "#00B39F", "swatchClass": "keppel-40" }
+  },
+  {
+    "token": "keppel-30",
+    "value": { "name": "Keppel", "hex": "#007763", "swatchClass": "keppel-30" }
+  },
+  {
+    "token": "keppel-20",
+    "value": { "name": "Keppel", "hex": "#006661", "swatchClass": "keppel-20" }
+  },
+  {
+    "token": "keppel-10",
+    "value": { "name": "Keppel", "hex": "#00403F", "swatchClass": "keppel-10" }
+  },
+  {
+    "token": "caribbean-70",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#E6FFF6",
+      "swatchClass": "caribbean-70"
+    }
+  },
+  {
+    "token": "caribbean-60",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#A3FFE0",
+      "swatchClass": "caribbean-60"
+    }
+  },
+  {
+    "token": "caribbean-50",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#78FAD3",
+      "swatchClass": "caribbean-50"
+    }
+  },
+  {
+    "token": "caribbean-40",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#00D3A9",
+      "swatchClass": "caribbean-40"
+    }
+  },
+  {
+    "token": "caribbean-30",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#00AD90",
+      "swatchClass": "caribbean-30"
+    }
+  },
+  {
+    "token": "caribbean-20",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#006157",
+      "swatchClass": "caribbean-20"
+    }
+  },
+  {
+    "token": "caribbean-10",
+    "value": {
+      "name": "Caribbean",
+      "hex": "#003B37",
+      "swatchClass": "caribbean-10"
+    }
+  },
+  {
+    "token": "saffron-70",
+    "value": {
+      "name": "Saffron",
+      "hex": "#FFFEE6",
+      "swatchClass": "saffron-70"
+    }
+  },
+  {
+    "token": "saffron-60",
+    "value": {
+      "name": "Saffron",
+      "hex": "#FFFBBD",
+      "swatchClass": "saffron-60"
+    }
+  },
+  {
+    "token": "saffron-50",
+    "value": {
+      "name": "Saffron",
+      "hex": "#FFEB6B",
+      "swatchClass": "saffron-50"
+    }
+  },
+  {
+    "token": "saffron-40",
+    "value": {
+      "name": "Saffron",
+      "hex": "#EBC017",
+      "swatchClass": "saffron-40"
+    }
+  },
+  {
+    "token": "saffron-30",
+    "value": {
+      "name": "Saffron",
+      "hex": "#C4990A",
+      "swatchClass": "saffron-30"
+    }
+  },
+  {
+    "token": "saffron-20",
+    "value": {
+      "name": "Saffron",
+      "hex": "#785400",
+      "swatchClass": "saffron-20"
+    }
+  },
+  {
+    "token": "saffron-10",
+    "value": {
+      "name": "Saffron",
+      "hex": "#523600",
+      "swatchClass": "saffron-10"
+    }
+  }
+]
