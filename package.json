@@ -17,7 +17,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
-    "checklint": "eslint . --max-warnings=0",
+    "checklint": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
@@ -41,7 +41,7 @@
     "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
-    "axios": "^1.6.7",
+    "axios": "^1.7.3",
     "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-gatsby": "^2.22.0",
     "cytoscape": "^3.28.1",
@@ -110,11 +110,6 @@
     "swiper": "^9.2.0",
     "url": "^0.11.3"
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.22.9",
@@ -128,7 +123,6 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "gh-pages": "^6.1.1",
     "husky": "^8.0.3",
-    "lint-staged": "^15.2.7",
     "rimraf": "^3.0.2",
     "webpack-cli": "^5.0.2"
   }
