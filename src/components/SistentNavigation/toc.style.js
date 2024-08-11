@@ -71,6 +71,12 @@ const TOCWrapper = styled.div`
     font-weight: 500;
     color: ${(props) => props.theme.secondaryColor};
   }
+  .inactive{
+    color: ${(props) => props.theme.text};
+    &:hover {
+      color: ${(props) => props.theme.secondaryColor};
+    }
+  }
 
   ul {
     display: flex;

@@ -8,7 +8,7 @@ const FeatureWrapper = styled.section`
   flex-direction:column;
   
   & > .text {
-    font-family:'Qanelas Soft','Qanelas Soft', sans-serif;
+    font-family:'Qanelas Soft', sans-serif;
     opacity:0;
     margin-top: 2rem;
     margin-bottom: 5rem;

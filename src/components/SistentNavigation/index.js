@@ -3,22 +3,46 @@ import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevron
 import { Link } from "gatsby";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
-
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
-
 import { useLocation } from "@reach/router";
 
 const TOC = () => {
-  const [expand, setExpand] = useState(false);
   const location = useLocation();
-  const [expandIdenity, setExpandIdentity] = useState(
-    location.pathname.includes("/identity")
-  );
-  const [expandComponents, setExpandComponents] = useState(
-    location.pathname.includes("/components")
-  );
+  const [expand, setExpand] = useState(false);
+  const [expandedSections, setExpandedSections] = useState({
+    identity: location.pathname.includes("/identity"),
+    components: location.pathname.includes("/components"),
+  });
+
+  const tocData = [
+    { title: "About", path: "/projects/sistent/about" },
+    {
+      title: "Identity",
+      subItems: [
+        { title: "Color", path: "/projects/sistent/identity/color" },
+        { title: "Spacing", path: "/projects/sistent/identity/spacing" },
+        { title: "Typography", path: "/projects/sistent/identity/typography" },
+      ],
+    },
+    {
+      title: "Components",
+      path: "/projects/sistent/components",
+      subItems: [
+        { title: "Button", path: "/projects/sistent/components/button" },
+        { title: "Text Input", path: "/projects/sistent/components/text-input" },
+        { title: "Modal", path: "/projects/sistent/components/modal" },
+      ],
+    },
+  ];
+
+  const toggleSection = (section) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   return (
     <TOCWrapper>
@@ -29,159 +53,59 @@ const TOC = () => {
         </Link>
         <div className="toc-toggle-btn">
           {expand ? (
-            <IoMdClose
-              className="toc-menu-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            />
+            <IoMdClose className="toc-menu-icon" onClick={() => setExpand(!expand)} />
           ) : (
-            <IoIosArrowDropdownCircle
-              className="toc-menu-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            />
+            <IoIosArrowDropdownCircle className="toc-menu-icon" onClick={() => setExpand(!expand)} />
           )}
         </div>
       </div>
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
-          <li>
-            <Link
-              to="/projects/sistent/about"
-              className="toc-sub-heading toc-sub-inline"
-              activeClassName="active"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <div>
-              <li
-                className="toc-sub-heading element"
-                onClick={() => setExpandIdentity((prev) => !prev)}
-              >
-                Identity
-                {expandIdenity ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              </li>
-              {expandIdenity && (
-                <div className="element-sublinks">
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/color"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/color"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Color
-                    </Link>
+          {tocData.map((item, index) => (
+            <li key={index}>
+              {item.subItems ? (
+                <div>
+                  <li className="toc-sub-heading element" onClick={() => toggleSection(item.title.toLowerCase())}>
+                    {item.path ? (
+                      <Link to={item.path}
+                        className={`${location.pathname.endsWith(item.title.toLowerCase()) ? "active" : "inactive"}`}
+                      >
+                        {item.title}
+                      </Link>
+                    ) : (
+                      item.title
+                    )}
+                    {expandedSections[item.title.toLowerCase()] ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/spacing"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/spacing"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Spacing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/typography"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/typography"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Typography
-                    </Link>
-                  </li>
+                  {expandedSections[item.title.toLowerCase()] && (
+                    <div className="element-sublinks">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link
+                            to={subItem.path}
+                            className={`toc-sub-heading toc-sub-inline element-item ${
+                              location.pathname.includes(subItem.path) ? "active" : ""
+                            }`}
+                            activeClassName="active"
+                          >
+                            {subItem.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </li>
-          <li>
-            <div>
-              <li
-                className="components"
-                onClick={() => setExpandComponents((prev) => !prev)}
-              >
+              ) : (
                 <Link
-                  to="/projects/sistent/components"
-                  className= "components-heading"
+                  to={item.path}
+                  className={`toc-sub-heading toc-sub-inline ${location.pathname.includes(item.path) ? "active" : ""}`}
                   activeClassName="active"
                 >
-                  Components
+                  {item.title}
                 </Link>
-                {expandComponents ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              </li>
-              {expandComponents && (
-                <div className="element-sublinks">
-                  <li>
-                    <Link
-                      to="/projects/sistent/components/button"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/components/button"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Button
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/components/text-input"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/components/text-input"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Text Input
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/components/modal"
-                      className={`toc-sub-heading toc-sub-inline element-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/components/modal"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Modal
-                    </Link>
-                  </li>
-                </div>
               )}
-            </div>
-          </li>
+            </li>
+          ))}
         </ul>
       </div>
     </TOCWrapper>

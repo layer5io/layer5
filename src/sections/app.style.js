@@ -77,7 +77,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
+    font-family: 'Qanelas Soft', sans-serif;
     color: ${(props) => props.theme.tertiaryColor};
     margin: 0;
     line-height: normal;
@@ -144,7 +144,7 @@ h5.section-title {
     }
 }
 input {
-  font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
+  font-family: 'Qanelas Soft', sans-serif;
 }
 p { 
     margin: 0 0 1rem 0;
