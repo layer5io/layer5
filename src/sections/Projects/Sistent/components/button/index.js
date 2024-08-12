@@ -13,7 +13,7 @@ const SistentButton = () => {
   const { isDark } = useStyledDarkMode();
 
   return (
-    <SistentLayout title="Button">
+    <SistentLayout title="Button" >
       <div className="content">
         <a id="Identity">
           <h2>Button</h2>
