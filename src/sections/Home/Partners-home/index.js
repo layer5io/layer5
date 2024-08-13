@@ -10,7 +10,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 const settings = {
   initialSlide: 1,
-  lazyLoad: true,
   arrows: false,
   dots: false,
   infinite: true,
