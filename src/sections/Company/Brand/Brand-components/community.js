@@ -43,9 +43,9 @@ const CommunityBrand = () => {
       </Row>
       <Row>
         <Col>
-          <h3 className="layerH3 in">
+          <h2 className="layerH3 in">
             Logos
-          </h3>
+          </h2>
         </Col>
         <Row className="ImgDiv">
           <Col xs={12} sm={3}>
@@ -58,9 +58,9 @@ const CommunityBrand = () => {
       </Row>
       <Row>
         <Col>
-          <h3 className="layerH3 in">
+          <h2 className="layerH3 in">
             Colors
-          </h3>
+          </h2>
         </Col>
         <Col>
           <p>
