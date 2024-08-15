@@ -218,7 +218,8 @@ const lighttheme = {
   bannerDescriptionGradient: "linear-gradient(122.25deg, #00B39F 26.92%, #195E4A 46.51%, #1F787D 74.85%)",
   borderGradientTransitionBefore: "linear-gradient(to right bottom, #00b39f, #fff 110%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #fff 120%)",
-
+  borderColorWhiteToTransparent: "transparent",
+  
   //DarkTheme
   DarkTheme: false,
 
@@ -449,6 +450,9 @@ export const darktheme = {
   bannerDescriptionGradient: "#121212",
   borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
+
+  borderColorWhiteToTransparent: "white",
+
   //DarkTheme
   DarkTheme: true,
 
