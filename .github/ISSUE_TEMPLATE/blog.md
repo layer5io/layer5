@@ -7,12 +7,10 @@ assignees: ''
 ---
 Contributors and community members are encouraged to post on https://layer5.io/blog. A new blog post fitting the following description is requested to be written by a community member:
 
-**Desired Title:** Introducing Layer5 Learning Paths
-**Topic:** An introduction to the new Layer5 Learning Paths
+**Desired Title:** 
+**Topic:** 
 **Core points to convey in the post:** 
-1. Overview of the Layer5 Learning Paths initiative
-2. Benefits of the Learning Paths for users
-3. How to get started with the Learning Paths
+1.
 
 ---
 <img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="16px" align="left" /><h3>Contributor Resources</h3>
