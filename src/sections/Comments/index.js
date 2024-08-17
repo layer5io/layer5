@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../../reusecore/Layout";
 import comments_svg from "../../assets/images/comments/comment.svg";
+import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";

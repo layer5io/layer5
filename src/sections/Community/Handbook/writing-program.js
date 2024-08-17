@@ -235,8 +235,8 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col $sm={12} $md={6} $lg={4}>
-                  <Link 
-                    className="project-card" 
+                  <Link
+                    className="project-card"
                     to="/learn/service-mesh-workshops"
                   >
                     <div className="content_type">

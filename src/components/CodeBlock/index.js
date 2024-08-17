@@ -51,6 +51,7 @@ const Code = ({ codeString, language = "jsx" }) => {
   };
   return (
     <Highlight
+      {...defaultProps}
       code={codeString}
       language={language}
       theme={theme}

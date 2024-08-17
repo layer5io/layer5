@@ -341,7 +341,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {twitter && (
                     <li className="tooltip">
                       <a href={`https://twitter.com/${twitter}`}>
-                        <FaTwitter className="twitter" size={32} />
+                        <TwitterIcon className="twitter" size={32} />
                         <span
                           className={`tooltiptext ${
                             twitter.length > 20
