@@ -85,8 +85,6 @@ const FeaturesSection = () => {
             <h3>One step to managing your microservices</h3>
             <h1>Cloud Native Application Management</h1>
             <p>Confidently take full advantage of all that your infrastructure offers.</p>
-            <p><strong>Integrate design patterns directly into your project website and documentation. </strong>Make it easy for users to see how your project's design works in practice.
-            </p>
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>

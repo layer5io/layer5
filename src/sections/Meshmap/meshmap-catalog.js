@@ -423,7 +423,7 @@ const Catalog = () => {
       <Container className="catalog-container">
         <div className="patterns">
           <p className="caption descr">
-          MeshMap is a sophisticated and delightfully intuitive tool for designing and operating cloud native infrastructure for Kubernetes. Choose freestyle composition of your infrastructure by drawing shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters or quickstart by selecting a pattern the catalog of predefined templates.
+          MeshMap is a sophisticated and delightfully intuitive tool for designing and operating cloud native infrastructure for Kubernetes. Choose freestyle composition of your infrastructure by drawing shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters or quickstart by selecting a pattern the catalog of predefined templates. Integrate design patterns directly into your project website and documentation. Make it easy for users to see how your project's design works in practice.
           </p>
         </div>
       </Container>
