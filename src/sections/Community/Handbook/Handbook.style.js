@@ -154,6 +154,11 @@ export const HandbookWrapper = styled.div`
       }
     }
 
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
     td, th {
       border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
       text-align: left;

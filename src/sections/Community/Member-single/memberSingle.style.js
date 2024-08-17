@@ -30,7 +30,7 @@ export const MemberSingleWrapper = styled.div`
     font-size: 1.75rem;
     line-height: 1.75rem;
     color: ${(props) => props.theme.primaryColor};
-    text-align: right;
+    text-align: left;
     font-weight: 400;
   }
   ul {

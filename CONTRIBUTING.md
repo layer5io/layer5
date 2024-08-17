@@ -12,7 +12,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 
 ⚠️ Cloning this repository ⚠️
 
-Cloning the repo with all its history results in a ~6 GB download. If you don't need the whole history you can use the depth parameter to significantly reduce download size.
+Cloning the repo with all its history results in a ~6 GB download. To contribute to this site, you don't need its entire history. Use the `--depth=1` flag to significantly reduce the footprint this repo creates in your environment.
 
 ```bash
 git clone --depth=1 https://github.com/layer5io/layer5.git
