@@ -51,6 +51,10 @@ const lighttheme = {
   // charcoal
   menuColor: "#3c494f",
 
+  //light grey
+  //subItemColor: "#c1c1c1a6",
+  subItemColor: "linear-gradient(90deg, rgba(226,226,226,1) 0%, rgba(203,203,203,1) 83%, rgba(213,213,213,1) 98%)",
+
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
   linkColor: "#00b39f",
@@ -279,10 +283,16 @@ export const darktheme = {
 
   // charcoal
   menuColor: "#ffffff",
+
+
+  //dark grey
+  //subItemColor: "#565656",
+  subItemColor: "linear-gradient(90deg, rgba(159,159,159,1) 0%, rgba(147,147,147,1) 69%, rgba(143,143,143,1) 83%)",
   // 00D3A9
   // caribbean green (light green)
   menuHoverColor: "#00D3A9",
   linkColor: "#00D3A9",
+
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",

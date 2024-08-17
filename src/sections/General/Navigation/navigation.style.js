@@ -492,6 +492,42 @@ const NavigationWrap = styled.header`
       margin-top: -34px;
     }
   }
+
+  .get-started-list{
+    width: 100%;
+  }
+
+  #get-started{
+    width: 100%;  
+  }
+
+  .playground{
+    padding: 6px;
+    width: 94%;
+    margin: 10px auto auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid ${(props) => props.theme.menuHoverColor};
+    border-radius: 0.2rem;
+    ul{
+      width: 100%;
+      a{
+        display: flex;
+        justify-content: center;
+        color: ${(props) => props.theme.menuHoverColor}; 
+      }
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 580px){
+    .playground{
+      width: 92.5%;
+    }
+    
+  }
+  #playground-list{
+    width: 100%;
+  }
   @media only screen and (min-width: 912px) and (max-width: 992px) {
     .nav {
       margin-left: 1.375rem;
@@ -544,7 +580,7 @@ const NavigationWrap = styled.header`
     }
     .mobile-dropdown {
       position: relative;
-      padding: 10px 0 10px 15px;
+      padding: 10px 0 32px;
       display: block;
       background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
       border-radius: 10px;
@@ -625,7 +661,6 @@ const NavigationWrap = styled.header`
         line-height: 2rem;
         font-size: 1.125rem;
         width: 100%;
-        padding: 10px 0;
       }
       a:before {
         content: none;
@@ -644,6 +679,9 @@ const NavigationWrap = styled.header`
 
     .mobile-nav-subitem-container{
       display:none;
+      background: ${(props) => props.theme.subItemColor}; 
+      padding: -1px 0 13px;
+      border-radius: 0.2rem;
     }
 
     .plus {
@@ -690,17 +728,32 @@ const NavigationWrap = styled.header`
     border: 1px solid pink;
     }
 
+
+    .playground{
+    margin-top: 17px
+    }
+
     .mobile-nav-subitem {
       padding-left: 10px;
       padding-top: 0.4rem;
+      background-color: ${(props) => props.theme.subItemColor};
+      padding: 12px 0;
+      &:hover{
+        background-position: left bottom;
+      }
     }
     .mobile-sub-menu-item {
       font-size: 1.1rem;
+      &:hover {
+        color: ${(props) => props.theme.menuColor};
+      }
     }
   }
 
   .nav-link-active {
-    color: ${(props) => props.theme.menuHoverColor};
+  color: ${(props) => props.theme.menuHoverColor};
+  border: 1px solid;
+  
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 

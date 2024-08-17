@@ -380,7 +380,7 @@ const Navigation = () => {
                 {!userData && (
                   <div>
                     <ul>
-                      <li>
+                      <li className="get-started-list">
                         <Button
                           id="get-started"
                           secondary
@@ -393,9 +393,9 @@ const Navigation = () => {
                     </ul>
                   </div>
                 )}
-                <div>
+                <div className="playground">
                   <ul>
-                    <li className="mobile-nav-item">
+                    <li className="mobile-nav-item" id="playground-list">
                       {/* <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a> */}
                       <a href="https://play.meshery.io" className="menu-item">
                         Playground
