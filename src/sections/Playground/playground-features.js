@@ -83,6 +83,8 @@ const PlaygroundFeatures = () => {
     <PlaygroundFeaturesWrapper>
       <h1>In the Playground, you can...</h1>
       <hr style={{ width: "20%", backgroundColor: "#00b39f", height: "4px", border: "0" }} />
+      <h4><strong>Illustrate key concepts with visuals. </strong>
+        <br/>Use diagrams, charts, or images to help users grasp complex ideas quickly.</h4>
       <div className="feature">
         <div className="feature-text">
           <h2>Design architecture diagrams </h2>

@@ -62,7 +62,6 @@ const MesheryPage = () => {
           image={Nic} />
         <div className="callout">
           <h1> Manage your clusters with features you won't find anywhere else.</h1>
-          <h4><strong>Illustrate key concepts with visuals. </strong>Use diagrams, charts, or images to help users grasp complex ideas quickly.</h4>
         </div>
       </Container>
       <Features />
