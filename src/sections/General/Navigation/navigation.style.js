@@ -682,6 +682,9 @@ const NavigationWrap = styled.header`
       background: ${(props) => props.theme.subItemColor}; 
       padding: -1px 0 13px;
       border-radius: 0.2rem;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow:  gray -1px 1px 10px;
     }
 
     .plus {
@@ -738,12 +741,15 @@ const NavigationWrap = styled.header`
       padding-top: 0.4rem;
       background-color: ${(props) => props.theme.subItemColor};
       padding: 12px 0;
+      transition: background-color 0.8s ease;
+      border-top-left-radius: 5px;
       &:hover{
-        background-position: left bottom;
+        background-color: ${(props) => props.theme.subitemHover};
       }
     }
+
     .mobile-sub-menu-item {
-      font-size: 1.1rem;
+      font-size: 1rem;
       &:hover {
         color: ${(props) => props.theme.menuColor};
       }

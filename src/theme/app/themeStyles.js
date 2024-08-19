@@ -55,6 +55,9 @@ const lighttheme = {
   //subItemColor: "#c1c1c1a6",
   subItemColor: "linear-gradient(90deg, rgba(226,226,226,1) 0%, rgba(203,203,203,1) 83%, rgba(213,213,213,1) 98%)",
 
+
+  //light grey
+  subitemHover: "#c3c3c3",
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
   linkColor: "#00b39f",
@@ -293,6 +296,9 @@ export const darktheme = {
   menuHoverColor: "#00D3A9",
   linkColor: "#00D3A9",
 
+  //light grey
+  subitemHover: "grey",
+
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
@@ -301,6 +307,7 @@ export const darktheme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
+
 
   // Shadow Sizes
   projectPageShadowsize: "5px",
