@@ -659,7 +659,7 @@ const NavigationWrap = styled.header`
         font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
-        font-size: 1.125rem;
+        font-size: 1.1rem;
         width: 100%;
       }
       a:before {
@@ -684,7 +684,7 @@ const NavigationWrap = styled.header`
       border-radius: 0.2rem;
       margin-bottom: 10px;
       border-radius: 6px;
-      box-shadow:  gray -1px 1px 10px;
+      box-shadow:  ${(props) => props.theme.subItemBoxShadow} -1px 1px 10px;
     }
 
     .plus {
@@ -750,6 +750,7 @@ const NavigationWrap = styled.header`
 
     .mobile-sub-menu-item {
       font-size: 1rem;
+      font-weight: bold;
       &:hover {
         color: ${(props) => props.theme.menuColor};
       }
@@ -758,7 +759,6 @@ const NavigationWrap = styled.header`
 
   .nav-link-active {
   color: ${(props) => props.theme.menuHoverColor};
-  border: 1px solid;
   
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
