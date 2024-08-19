@@ -73,7 +73,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   };
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
+      axios.post("https://hook.us1.make.com/7c1op88rysnmeitovt35fxzcv2spspp0", {
         memberFormOne,
       });
     }
