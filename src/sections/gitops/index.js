@@ -81,7 +81,7 @@ const GitOpsPage = () => {
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div className="buttons-container">
               <Button $primary className="learn-more-btn" title="Install" $url="https://meshery.layer5.io/connect/github/new"/>
-              <Button $secondary className="learn-more-btn" title="Learn More" $url="/cloud-native-management/gitops/snapshot"/>
+              <Button $secondary className="learn-more-btn" title="Learn More" $url="/solutions/gitops/snapshot"/>
             </div>
           </Col>
           <Col className="hero-image" $lg={6} $md={6} $xs={12} $sm={10} >
@@ -97,7 +97,7 @@ const GitOpsPage = () => {
         <Row className="content-row">
           <Col className="desc-text-container" $lg={6} $md={6} $xs={12} $sm={10} >
             <h1 className="heading-1">Red light performance regressions</h1>
-            <SquarePoint>Baseline and analyze the performance of your services is key to efficient operation of any application</SquarePoint>
+            <SquarePoint>Baselin and track the performance of your services. Put your application service efficient to the test</SquarePoint>
             <SquarePoint>Meshery is the canonical implementation of the Cloud Native Performance specification</SquarePoint>
             <SquarePoint>Define your performance profiles upfront. See statistcal analysis with microservice latency and throughput quartiles</SquarePoint>
             <SquarePoint>Meshery includes your choice of load generator, so that you can meausure your way</SquarePoint>

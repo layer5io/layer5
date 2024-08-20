@@ -6,7 +6,6 @@ import GithubActionComment from "../../assets/images/gitops/GithubActionComment.
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
-import ServicePerformanceProfileTest from "../../assets/images/gitops/service-mesh-performance-profile.png";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
 
 
@@ -21,7 +20,7 @@ const SnapshotPage = () => {
           <TextColumn>
             <Heading>Visual insights in every pull request</Heading>
             <Description>
-               Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
+               Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
             </Description>
             <Button primary className="learn-more-btn" title="INSTALL" url="https://meshery.layer5.io/connect/github/new"/>
           </TextColumn>
@@ -60,16 +59,7 @@ const SnapshotPage = () => {
       </ContentContainerWrapper>
 
 
-      <ContentContainerWrapper>
-        <ContentRow>
-          <TextColumn>
-            <Heading>See this sample GitHub workflow (action.yml) for more configuration details.</Heading>
-          </TextColumn>
-          <ColumnContainer >
-            <img src={ServicePerformanceProfileTest} className="screenshot" alt="ServicePerformanceProfileTest" width={530} height={375} />
-          </ColumnContainer>
-        </ContentRow>
-      </ContentContainerWrapper>
+
 
 
       <div className="reviews-container" >

@@ -20,6 +20,7 @@ const MeshMapBrand = loadable(() => import("./Brand-components/meshmap"));
 const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 const Catalog = loadable(() => import("./Brand-components/catalog"));
+const SocialBackgrounds = loadable(() => import("./Brand-components/social-backgrounds"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -106,6 +107,7 @@ const Brand = () => {
   const meshmapRef = useRef(null);
   const stickfiguresRef = useRef(null);
   const CatalogRef = useRef(null);
+  const SocialBackgroundsRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -121,7 +123,8 @@ const Brand = () => {
     { section: "MeshMaster", ref: meshMasterRef },
     { section: "MeshMap", ref: meshmapRef },
     { section: "Five", ref: stickfiguresRef },
-    { section: "Catalog", ref: CatalogRef }
+    { section: "Catalog", ref: CatalogRef },
+    { section: "SocialBackgrounds", ref: SocialBackgroundsRef }
   ];
 
   useEffect(() => {
@@ -176,6 +179,9 @@ const Brand = () => {
           <div className="section" ref={layer5Ref}>
             <Layer5Brand />
           </div>
+          <div className="section" ref={SocialBackgroundsRef}>
+            <SocialBackgrounds />
+          </div>
           <div className="section" ref={mesheryRef}>
             <MesheryBrand />
           </div>
@@ -227,6 +233,16 @@ const Brand = () => {
               }}
             >
               <span>Layer5</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "SocialBackgrounds" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(SocialBackgroundsRef.current);
+              }}
+            >
+              <span> Layer5 Social Backgrounds </span>
             </p>
             <p
               className={`header_link ${

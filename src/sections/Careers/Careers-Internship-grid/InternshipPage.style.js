@@ -51,13 +51,17 @@ p{
     background:  ${props => props.theme.grey212121ToGreyF5F5F5};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
+    display: flex;
+    align-items: center;
 
     .text {
       height: inherit;
       width: 100%;
-      transition: all 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h3 {
@@ -88,7 +92,7 @@ p{
       .text {
         width: 75%;
         transform: translateX(2%);
-        transition: all 0.4s ease-in-out;
+        text-align: left;
       }
 
       h3 {
@@ -106,8 +110,6 @@ p{
         visibility: visible;
         transform: rotate(-2deg);
         opacity: 1;
-        transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out,
-          visibility 0.7s ease-in-out;
       }
     }
   }

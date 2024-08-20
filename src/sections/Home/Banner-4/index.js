@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -7,7 +7,8 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
 import ReactPlayer from "react-player/youtube";
-import mesheryPlayground from "./meshery-playground-meshmap.png";
+// import mesheryPlayground from "./meshery-playground-meshmap.png";
+import videoThumbnail from "./meshery-infrastructure-as-diagram.webp";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
@@ -15,7 +16,7 @@ import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
 import Banner1SectionWrapper from "./banner4.style";
 
-import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
+// import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import useHasMounted from "../../../utils/useHasMounted";
@@ -48,22 +49,26 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props}>
       <BGImg title="heroImage" image={pluginImage}>
-        <Row>
+        <Row style={{ marginRight: 0 }}>
           <Col $sm={4} $lg={6} className="section-title-wrapper text-col">
-            <Container >
+            <Container $fullWidthSM>
               <SectionTitle
                 className="section-title"
                 $leftAlign={true}
                 $UniWidth="100%"
               >
-                <h1>Take the blinders off</h1>
+                <h1>Kubernetes is better with friends</h1>
+                <h2>
+                  Collaborate to innovate
+                </h2>
+                {/* <h1>Take the blinders off</h1>
                 <h2>
                   cloud native management
-                </h2>
+                </h2> */}
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox $right={true} $vintageOne={true}>
-                  <Button $primary className="banner-btn one" title="Learn about MeshMap" $url="/cloud-native-management/meshmap">
+                  <Button $primary className="banner-btn one" title="Learn about Meshery" $url="/cloud-native-management/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button $secondary className="banner-btn two" title="Open in Playground" $url="https://play.meshery.io" $external={true}>
@@ -76,10 +81,10 @@ const Banner1 = (props) => {
           {hasMounted && window.innerWidth > 760 && (
             <Col $sm={4} $lg={6} className="section-title-wrapper video-col">
               <ReactPlayer
-                url="https://youtu.be/Do7htKrRzDA"
+                url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
                 playing
                 controls
-                light={mesheryPlayground}
+                light={videoThumbnail}
                 playIcon={
                   <img
                     src={playIcon}

@@ -11,7 +11,6 @@ import EKS from "./supported-icons/eks_white.svg";
 import GKE from "./supported-icons/gke.svg";
 import Helm from "./supported-icons/helm-icon-white.svg";
 import HomeBrew from "./supported-icons/homebrew.svg";
-import Kind from "./supported-icons/kind.svg";
 import Kubernetes from "./supported-icons/kubernetes_white.svg";
 import Linux from "./supported-icons/linux.svg";
 import Minikube from "./supported-icons/minikube.svg";
@@ -92,7 +91,6 @@ const supported_platforms = [
         <h3  style={{ marginTop: "20px" }}>Using kubectl</h3>
         <Code codeString={dedent`kubectl create ns meshery
         helm repo add meshery https://meshery.io/charts
-        helm install meshery-operator meshery/meshery-operator -n meshery
         helm install meshery meshery/meshery -n meshery`}
         />
       </>

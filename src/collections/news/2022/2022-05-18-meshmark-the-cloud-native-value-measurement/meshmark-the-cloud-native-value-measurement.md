@@ -47,7 +47,7 @@ By specifying a uniform way to analyze and report on the degree to which measure
 
 <h2>Service Mesh Performance, the project</h2>
 <p>
-<Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">Adopted by the Cloud Native Computing Foundation (CNCF)</Link> in October of 2021, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.
+<Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">Adopted by the Cloud Native Computing Foundation (CNCF)</Link> in October of 2021, <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.
 </p>
 
 <Blockquote 
@@ -119,7 +119,7 @@ Layer5 offers cloud native application management by harnessing the unique posit
 
 ##### About Service Mesh Performance 
 <p style="font-size:1rem">
-Hosted within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
+Hosted within the CNCF, <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
 
 
 </NewsWrapper>

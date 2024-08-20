@@ -47,6 +47,7 @@ const IntegrationsGrid = ({ category, count }) => {
 
   const settings = {
     initialSlide: 0,
+    variableWidth: true,
     infinite: false,
     slidesToShow: 5.25,
     swipeToSlide: true,
@@ -235,6 +236,7 @@ const IntegrationsGrid = ({ category, count }) => {
         hideFilter={hideFilter}
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
+        focusSearch={false}
       />
 
       <section style={{ "margin": "0 2.6rem" }}>

@@ -10,7 +10,14 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
-    margin-top: -36rem; 
+    margin-top: -46.5rem; 
+
+    @media screen and (min-width: 768px) and (max-height: 1145px) {
+       margin-top : -80vh
+
+  }
+
+
     .explain-2{
       padding: 25px 0px;
       .text{
@@ -93,9 +100,15 @@ const ConductWrapper = styled.div`
   }
 
   @media only screen and (max-width: 475px){
-        margin-top: -2rem;
-        margin-left: 0rem;
-      } 
+      margin-top: -2rem;
+      margin-left: 0rem;
+      
+      .explain-2 img, .explain-2 svg{
+        width: 15rem;
+      }
+      .explain-2 .text h2{
+        font-size: 30px;
+      }
   }
 
   @media only screen and (min-width: 765px){

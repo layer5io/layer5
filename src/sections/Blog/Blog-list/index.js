@@ -61,10 +61,11 @@ const BlogList = ({
                     searchQuery={searchQuery}
                     searchData={searchData}
                     paginate={paginate} currentPage={currentPage}
+                    focusSearch={true}
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
               )}
               <div className="blog-list-wrapper">
                 <Row className="blog-lists">

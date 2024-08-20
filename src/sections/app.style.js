@@ -221,6 +221,10 @@ section{
     margin: auto -1rem;
 }
 
+.teaser-modal {
+  margin: 1rem -2rem;
+}
+
 .form-frame {
     height: 36rem;
     width: 35rem;

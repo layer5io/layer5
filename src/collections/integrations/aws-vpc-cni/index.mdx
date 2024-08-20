@@ -1,24 +1,41 @@
 ---
-title: AWS VPC CNI  
+title: AWS VPC CNI
 subtitle: Collaborative and visual infrastructure as code for AWS VPC CNI
-integrationIcon: icon/color/aws-vpc-cni-color.svg
-darkModeIntegrationIcon: icon/white/aws-vpc-cni-white.svg
-docURL: https://docs.meshery.io
+integrationIcon: icons/color/aws-vpc-cni-color.svg
+darkModeIntegrationIcon: icons/white/aws-vpc-cni-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/aws-vpc-cni
+description: 
 category: Cloud Native Network
 subcategory: Cloud Native Network
-featureList: ["Keep revision history and audit trail of all configuration changes",
-"Use MeshMap&lsquo;s visual designer to explore your App Mesh configuration",
-"Deploy Meshery on your EKS clusters for App Mesh management"
+registrant: Artifact Hub
+components: [
+{
+"name": "eni-config",
+"colorIcon": "icons/components/eni-config/icons/color/eni-config-color.svg",
+"whiteIcon": "icons/components/eni-config/icons/white/eni-config-white.svg",
+"description": "",
+},
+{
+"name": "policy-endpoint",
+"colorIcon": "icons/components/policy-endpoint/icons/color/policy-endpoint-color.svg",
+"whiteIcon": "icons/components/policy-endpoint/icons/white/policy-endpoint-white.svg",
+"description": "",
+}]
+featureList: [
+  "Keep revision history and audit trail of all configuration changes",
+  "Use MeshMap&lsquo;s visual designer to explore your App Mesh configuration",
+  "Deploy Meshery on your EKS clusters for App Mesh management"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: "Collaborative Infrastructure as Design"
 howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+published: TRUE
 ---
 <p>
-    Networking plugin for pod networking in Kubernetes using Elastic Network Interfaces on AWS.
+Networking plugin for pod networking in Kubernetes using Elastic Network Interfaces on AWS.
 
 </p>
 <p>

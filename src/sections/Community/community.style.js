@@ -136,6 +136,11 @@ const CommunitySectionWrapper = styled.div`
             background-color: ${props => props.theme.secondaryLightColorTwo};
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
+        .meshmate-img-transparent {
+            background-color: transparent;
+        }
+
         svg {
             max-width: 25rem;
             .meshmate-stack-colorMode_svg__colorMode1 {
@@ -192,6 +197,10 @@ const CommunitySectionWrapper = styled.div`
                     cursor: pointer;
                 }
             }
+        }
+
+        .meshmate-link-transparent {
+            background-color: transparent;
         }
     }
 

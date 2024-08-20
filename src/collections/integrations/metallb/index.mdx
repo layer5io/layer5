@@ -1,24 +1,29 @@
 ---
-title: Metallb  
-subtitle: Collaborative and visual infrastructure as code for Metallb
-integrationIcon: icon/color/metallb-color.svg
-darkModeIntegrationIcon: icon/white/metallb-white.svg
-docURL: 
+title: Metallb
+subtitle: Collaborative and visual infrastructure as design for Metallb
+integrationIcon: icons/color/metallb-color.svg
+darkModeIntegrationIcon: icons/white/metallb-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/metallb
+description: 
 category: Cloud Native Network
 subcategory: Service Proxy
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: Artifact Hub
+components: []
+featureList: [
+  "Provides external IP addresses to Kubernetes services",
+  "Supports Layer 2 and Layer 3 load balancing",
+  "Integrates with various CNI plugins"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.png,
-    ../_images/meshmap-designer.png]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/meshmap-visualizer.png,
+  ../_images/meshmap-designer.png
+]
+howItWorks: "Configures MetalLB"
+howItWorksDetails: "Load balancing for bare-metal Kubernetes clusters"
+published: TRUE
 ---
 <p>
-    A network load-balancer implementation for Kubernetes using standard routing protocols
+A network load-balancer implementation for Kubernetes using standard routing protocols
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

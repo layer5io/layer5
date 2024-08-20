@@ -16,18 +16,24 @@ const PressWrapper = styled.div`
 padding: 2rem 0;
 background: ${props => props.theme.secondaryLightColor};
 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+.heading {
+    display: flex;
+    justify-content: center;
+}
+
 h2{
     text-align: center;
     border-top: 4px solid #00b39f;
     border-bottom: 4px solid #00b39f;
-    margin: 1rem 40% 2rem;
+    margin: 1rem 0 2rem 0;
     padding: 1rem 0;
+    max-width: 12rem;
 }
 h4, h5{
     text-align: center;
 }
 
-.press_card { 
+.press_card {
     background: ${props => props.theme.grey212121ToWhite};
     transition: 450ms all;
     height: 15rem;
@@ -66,7 +72,9 @@ const Press = () => {
   return (
     <PressWrapper>
       <Container>
-        <h2>Media Resources</h2>
+        <div className="heading">
+          <h2>Media Resources</h2>
+        </div>
         <h4>For any press or analyst inquiries, please reach out:</h4>
         <Row>
           <Col $xs={12} $md={4}>

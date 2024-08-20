@@ -13,7 +13,5 @@ const CodeOfConduct = () => {
 };
 export default CodeOfConduct;
 export const Head = () => {
-  return <SEO title="Code of Conduct" description="Contact Layer5 for help with operating a service mesh.
-  Layer5 is the makers of Meshery and service mesh standards.
-  We are the largest collection of service mesh projects and their maintainers in the world." />;
+  return <SEO title="Code of Conduct" description="Contact Layer5 for help with operating platform engineering. Layer5 is the makers of Meshery and cloud native application and infrastructure management software for engineers who expect more from their infrastructure." />;
 };

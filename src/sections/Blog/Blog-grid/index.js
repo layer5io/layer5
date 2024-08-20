@@ -49,7 +49,7 @@ const BlogGrid = ({
                   setListView={setListView}
                   setGridView={setGridView}
                 />
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
               </div>
               <div className="blog-grid-wrapper">
                 <Row>

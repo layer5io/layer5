@@ -34,9 +34,10 @@ import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
+import TeaserModal from "../../components/TeaserModal";
 
 
-const Meshmap = () => {
+const Meshmap = (props) => {
 
   return (
     <MeshmapWrapper>
@@ -50,7 +51,7 @@ const Meshmap = () => {
                 {
                   title: "Designer Mode",
                   description:
-                    "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
+                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
                     <img
                       src={designerImage}
@@ -81,7 +82,7 @@ const Meshmap = () => {
               [
                 {
                   title: "Design your deployments the way you want",
-                  description: "Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
                   imgContent: (
                     <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )
@@ -150,7 +151,7 @@ const Meshmap = () => {
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
-                  // Invite any Meshery Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+                  // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
                 },
                 // {
                 //   title: "Nothing great is made alone.",
@@ -245,9 +246,12 @@ const Meshmap = () => {
           {/* <MesheryAction /> */}
           <SignupForm />
           <Platform />
-        </Container >
-      </div >
-      <Reviews />
+        </Container>
+      </div>
+      <>
+        <Reviews />
+        <TeaserModal title="MeshMap Teaser" open={props?.teaser} />
+      </>
     </MeshmapWrapper>
   );
 };

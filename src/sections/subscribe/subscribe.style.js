@@ -14,7 +14,7 @@ const SubscribeWrapper = styled.div`
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:${props => props.theme.primaryColor};
         
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }

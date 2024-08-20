@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { ReactComponent as PlaygroundFeature1 } from "./images/playground-feature-1.svg";
 import { ReactComponent as PlaygroundFeature2 } from "./images/playground-feature-2.svg";
 import { ReactComponent as PlaygroundFeature3 } from "./images/playground-feature-3.svg";
+import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
+import comments_svg from "../../assets/images/comments/comment.svg";
+import Button from "../../reusecore/Button";
 
 const PlaygroundFeaturesWrapper = styled.div`
     display: flex;
@@ -27,6 +30,7 @@ const PlaygroundFeaturesWrapper = styled.div`
         display: flex;
         flex-direction: row;
         width: 70%;
+        max-width: 1440px;
         justify-content: flex-end;
         align-items: center;
         margin: 1% 0%;
@@ -50,6 +54,10 @@ const PlaygroundFeaturesWrapper = styled.div`
 
             h2 {
                 margin-bottom: 2%;
+            }
+
+            h5 {
+             color: ${props => props.theme.greyA0AAAAToGrey666666}
             }
         }
 
@@ -77,6 +85,32 @@ const PlaygroundFeatures = () => {
       <hr style={{ width: "20%", backgroundColor: "#00b39f", height: "4px", border: "0" }} />
       <div className="feature">
         <div className="feature-text">
+          <h2>Design architecture diagrams </h2>
+          <h5>The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Playground.</h5>
+          <Button url="/solutions/architecture-diagram" style={{ marginTop: "1.5rem" }}>
+            Learn more
+          </Button>
+        </div>
+        <div className="feature-image" style={{ scale: "1" }}>
+          <img src={whiteboard_svg} />
+        </div>
+      </div>
+
+      <div className="feature reverse">
+        <div className="feature-text">
+          <h2>Brainstorm with Comments </h2>
+          <h5>Playground’s Designer Mode offers a powerful collaboration feature through comments.</h5>
+          <Button url="/cloud-native-management/meshmap/collaborate/peer-reviews" style={{ marginTop: "1.5rem" }}>
+            Learn more
+          </Button>
+        </div>
+        <div className="feature-image" style={{ scale: "1" }}>
+          <img src={comments_svg} />
+        </div>
+      </div>
+
+      <div className="feature">
+        <div className="feature-text">
           <h2>Collaborate more effectively</h2>
           <h5>Collaborate with other engineers, share your knowledge, and exchange ideas.</h5>
         </div>
@@ -84,6 +118,7 @@ const PlaygroundFeatures = () => {
           <PlaygroundFeature1 />
         </div>
       </div>
+
       <div className="feature reverse">
         <div className="feature-text">
           <h2>Discover new cloud native tools</h2>

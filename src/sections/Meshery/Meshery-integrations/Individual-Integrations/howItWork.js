@@ -12,6 +12,7 @@ const HowIntegrationWorksWrapper = styled.section`
 	.section-data {
 		padding: 1rem 2rem 0;
 		text-align: center;
+		padding-top: 5rem;
 	}
 
 	.section-header {
@@ -83,6 +84,7 @@ const HowIntegrationWorksWrapper = styled.section`
 							img {
 								height: 5rem;
 								vertical-align: middle;
+								object-fit: contain;
 							}
 						}
 					}
@@ -108,6 +110,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 				li a img {
 					height: 4rem;
+					object-fit: contain;
 				}
 			}
 		}
@@ -164,6 +167,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 					li a img {
 						height: 2.5rem;
+						object-fit: contain;
 					}
 				}
 			}
