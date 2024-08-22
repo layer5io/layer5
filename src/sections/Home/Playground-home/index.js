@@ -281,7 +281,7 @@ const MeshmapVisualizerViews = () => {
           <Button
             primary
             title="Open in Demo System &rarr;"
-            external={true}
+            $external={true}
             url="https://playground.meshery.io/"
           />
         </div>

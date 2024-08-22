@@ -145,7 +145,7 @@ const MeshmapIntegrationsSection = () => {
             secondary
             style={{ margin: "1.5rem 0 1.5rem 0" }}
             url="https://layer5.io/cloud-native-management/meshery/integrations"
-            external={true}
+            $external={true}
           >
             All Integrations
           </Button>
