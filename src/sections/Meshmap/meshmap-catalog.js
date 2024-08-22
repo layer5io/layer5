@@ -120,7 +120,6 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     max-width:5.6rem;
     display:block;
     margin: 0 auto;
-    border: 2px solid ${props => props.theme.borderColorWhiteToTransparent};
     transition: border-color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   p{
