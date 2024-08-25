@@ -43,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
 html{
+    overflow-x: hidden;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
 }
