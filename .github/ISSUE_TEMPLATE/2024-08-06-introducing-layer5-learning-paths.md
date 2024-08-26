@@ -1,7 +1,7 @@
 ---
 title: "Introducing Layer5 Learning Paths"
 date: "2024-08-06"
-author: "Anita Ihuman"
+author: "Anita ihuman"
 tags: ["learning paths", "Layer5", "community"]
 ---
 
