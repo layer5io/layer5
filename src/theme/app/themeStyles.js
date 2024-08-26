@@ -54,13 +54,13 @@ const lighttheme = {
   //light grey
   //subItemColor: "#c1c1c1a6",
   //subItemColor: "linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(190, 190, 190) 83%, rgb(189, 189, 189) 98%);",
-  subItemColor: "#e5e5e5",
+  subItemColor: "#e7eff3",
 
   subItemBoxShadow: "#5F5F5F",
 
 
   //light grey
-  subitemHover: "#d2d2d2",
+  subitemHover: "#c4e5f9",
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
   linkColor: "#00b39f",
@@ -292,7 +292,7 @@ export const darktheme = {
 
 
   //medium grey(accent_grey-code 10)
-  subItemColor: "#909090",
+  subItemColor: "#15272f",
 
 
   subItemBoxShadow: "grey",
@@ -302,7 +302,7 @@ export const darktheme = {
   linkColor: "#00D3A9",
 
   //light grey
-  subitemHover: "grey",
+  subitemHover: "#2c4f5e",
 
 
   // saffron (dark yellow)
