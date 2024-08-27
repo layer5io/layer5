@@ -28,7 +28,7 @@ const TeaserModal = (props) => {
           content: {
             maxWidth: "105rem",
             maxHeight: "105rem",
-            width: "105%",
+            width: "90%",
             height: "auto",
           },
         }}
