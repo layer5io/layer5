@@ -29,7 +29,7 @@ const TeaserModal = (props) => {
             maxWidth: "105rem",
             maxHeight: "105rem",
             width: "90%",
-            height: "auto",
+            height: "max-content",
           },
         }}
         isOpen={modalIsOpen}
