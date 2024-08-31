@@ -208,7 +208,7 @@ const Repository = () => {
                       </tr>
                     </thead>
                     {backendProject.subdata.map((subdata) => {
-                      const { project,image,language,description,repository,link,maintainers_name } = subdata;
+                      const { project,image,language,description,repository,link,maintainers_name,accessRequired } = subdata;
                       const smpClass = project === "SMP Action";
                       const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
@@ -236,6 +236,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
+                              <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
                           </tr>
                         </tbody>
