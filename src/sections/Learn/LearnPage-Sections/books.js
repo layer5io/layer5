@@ -9,27 +9,25 @@ import styled from "styled-components";
 const BooksListWrapper = styled.div`
     Button:hover {
       box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
-
     }
     .book-heading {
         text-align: center;
-        margin: 5rem 0
+        margin: 2.5rem 5vw;
         color: ${props => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .books-card {
         display: flex;
-        margin: 1rem auto;
+        margin: 1rem auto 2rem auto;
+        padding: 1rem 0;
         min-height: 15.5rem;
         max-width: 50.5rem;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
         .books-image {
             height: 12rem;
             margin: auto;
             text-align: center;
             filter: brightness(0.9);
-
             img {
                 max-width: 18rem;
                 height: inherit;
@@ -69,12 +67,10 @@ const BooksListWrapper = styled.div`
             }
         }
     }
-
     .see-more-button {
         margin: 4rem 0 0;
         text-align: center;
       }
-
     @media screen and (max-width: 600px) {
         .books-card {
             display: block;
@@ -158,5 +154,4 @@ const BooksSection = () => {
     </BooksListWrapper>
   );
 };
-
 export default BooksSection;

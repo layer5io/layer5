@@ -17,7 +17,7 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
 import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
-import MesheryCatalogLogo from  "../../../assets/images/meshery/meshery-catalog.svg";
+import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
 import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
 import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
@@ -28,6 +28,12 @@ import NeedForSpeedLogo from "../../../assets/images/need-for-speed/need-for-spe
 import SharingIsCaringLogo from "../../../assets/images/sharing-is-caring/sharing-is-caring.svg";
 import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
 import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
+import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-cleanup-crew.svg";
+import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
+import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
+import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
+import MeshmapSnapshotLogo from "../../../assets/images/meshmap-snapshot/meshmap-snapshot.svg";
+import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
 
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
@@ -44,8 +50,8 @@ const contents = [
 const badgeStyle = {
   height: "25px",
   width: "25px",
-  marginRight: "5px",
   verticalAlign: "middle",
+  marginRight: "1rem",
 };
 
 const badgeListStyle = {
@@ -55,7 +61,6 @@ const badgeListStyle = {
 const recognitionsstyle = {
   marginBottom: "0.5rem",
 };
-
 const RecognitionPage = () => {
   return (
     <HandbookWrapper>
@@ -140,6 +145,30 @@ const RecognitionPage = () => {
                 <img src={BringABuddyLogo} style={badgeStyle} />
                 <b>Bring a Buddy</b> - awarded to the users who invite someone to Layer5 cloud.
               </li>
+              <li>
+                <img src={CodeCleanupCrewLogo} style={badgeStyle} />
+                <b>Code Cleanup Crew</b> - awarded to contributors who help maintain code quality and cleanliness.
+              </li>
+              <li>
+                <img src={SecuritySentinelLogo} style={badgeStyle} />
+                <b>Security Sentinel</b> - awarded to individuals who contribute to identifying and fixing security vulnerabilities.
+              </li>
+              <li>
+                <img src={LogevityLegendLogo} style={badgeStyle} />
+                <b>Longevity Legend</b> - awarded for long-term, sustained contributions to the project over the years.
+              </li>
+              <li>
+                <img src={ReviewRockstarLogo} style={badgeStyle} />
+                <b>Review Rockstar</b> - awarded to individuals who provide thorough and valuable code reviews.
+              </li>
+              <li>
+                <img src={MeshmapSnapshotLogo} style={badgeStyle} />
+                <b>MeshMap Snapshot</b> - awarded to users upon creation of their first infrastructure screenshot directly in their pull request.
+              </li>
+              <li>
+                <img src={ContinuousContributorLogo} style={badgeStyle} />
+                <b>Continuous Contributor</b> - awarded to the community members who make consistent and impactful contributions for a long period of time in Layer5 projects in recognition and appreciation of their efforts.
+              </li>
               <p><b>Projects:</b></p>
               <li>
                 <img src={ImageHubLogo} style={badgeStyle} />
@@ -198,11 +227,51 @@ const RecognitionPage = () => {
                 <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
               </li>
             </ul>
+            <a id="how-to-earn-badges">
+              <h3>How can I Earn Badges?</h3>
+            </a>
+            <p>
+              Earning Layer5 badges is both rewarding and straightforward.  As you continue to contribute to our projects, your accomplishments will be recognized with badges that reflect your dedication and expertise.
+              Each badge is tied to specific activities. Here are some ways you can earn Layer5 Badges:
+            </p>
+            <p>
+              For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, reviewing Pull Requests, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you'll begin to unlock badges that showcase your multifaceted involvement. These badges will be prominently displayed on your <a href="https://meshery.layer5.io">Layer5 Cloud</a> profile, visually representing your journey. Not only does this serve as a source of personal pride, but it also helps others in the community recognize your expertise and dedication.
+              <ul>
+                <li>
+                  Activity Badges are the badges that are assigned when a user completes a task like sharing a design, creating a design for the first time, etc.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Project Badges are assigned to the user when a user contributes to a particular project.
+                </li>
+              </ul>
+              <p>The description and criteria for all the badges are listed <a href="#Badges">above</a>.</p>
+            </p>
+            <a id="how-to-share-badges">
+              <h3>How can I Share My Badge On My Profile?</h3>
+            </a>
+            <p>
+              To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience:
+            </p>
+            <p>To display badge on your GitHub profile, follow below steps: </p>
+            <ul>
+              <li>
+                Visit your{" "}
+                <a href="https://meshery.layer5.io">Layer5 Cloud</a>{" "}
+                Profile to see the badges
+              </li>
+              <li>Click on the badge, which you wanted to display</li>
+              <li>
+                Copy the markdown code by clicking the Embed Code icon
+              </li>
+              <li>Paste the code in your GitHub profile README.</li>
+            </ul>
             <a id="SocialMedia">
               <h3>Recognition on Social Media Platforms</h3>
             </a>
             <p>
-            We highly encourage you to share your engagement and contributions to the Layer5 community on social media like LinkedIn and Twitter. We support every contribution by liking your posts and retweeting them. Your contributions and engagement in different ways are what make us a successful and collaborative open-source community. We love celebrating your every accomplishment with Layer5 publicly and encourage you in every way we can.
+              We highly encourage you to share your engagement and contributions to the Layer5 community on social media like LinkedIn and Twitter. We support every contribution by liking your posts and retweeting them. Your contributions and engagement in different ways are what make us a successful and collaborative open-source community. We love celebrating your every accomplishment with Layer5 publicly and encourage you in every way we can.
             </p>
           </div>
           <TocPagination />

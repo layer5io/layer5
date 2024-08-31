@@ -32,8 +32,8 @@ jobs:
         run: |
           export pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo "PULL_NO=$pull_number" >> $GITHUB_ENV
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           path: action
           repository: layer5labs/meshmap-snapshot
@@ -41,7 +41,7 @@ jobs:
         uses: ${GITHUB_REF/refs/tags//}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          providerToken: ${{ secrets.PROVIDER_TOKEN }}
+          mesheryToken: ${{ secrets.MESHERY_TOKEN }}
           prNumber: ${{ env.PULL_NO }}
           application_type: Kubernetes Manifest
-          filePath: ${{ inputs.fileName == '' && 'lkjh' || inputs.fileName }}
+          filePath: ${{ inputs.fileName == '' && '.gitpod.yml' || inputs.fileName }}

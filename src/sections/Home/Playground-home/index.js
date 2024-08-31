@@ -107,7 +107,7 @@ const ViewsSectionWrapper = styled.div`
 
     .overlay {
         width: 483px;
-        height: 680x;
+        height: 680px;
     }
 
     .container {
@@ -115,24 +115,50 @@ const ViewsSectionWrapper = styled.div`
       justify-content: center;
     }
     
-    .line1 {
+    .line {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-right: 2rem;
-      transform: translateY(50px);
       flex-wrap: wrap;
+    }
+    .position-line-down{
+        transform: translateY(-20em);
+    }
+    .position-line-up{
+        transform: translateY(20em);
     }
 
-    .line2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      transform: translateY(-50px);
-      flex-wrap: wrap;
+    .line-primary, .line-secondary {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
-    
+
+    .animation-up-scroll {
+        animation: scroll-up-animation 15s linear infinite;
+
+        @keyframes scroll-up-animation {
+            0% {
+                transform: translateY(0%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    }
+    .animation-down-scroll {
+
+        animation: scroll-down-animation 15s linear infinite;
+        @keyframes scroll-down-animation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+    }
     .box {
       display: flex;
       flex-direction: column;
@@ -179,7 +205,7 @@ const ViewsSectionWrapper = styled.div`
 `;
 
 const MeshmapVisualizerViews = () => {
-  const [imageRef, inView] = useInView({ threshold: 0.4 });
+  const [imageRef, inView] = useInView({ threshold: 0.3 });
   const [imageInView, setimageInView] = useState(false);
 
   if (inView && !imageInView) setimageInView(true);
@@ -195,44 +221,50 @@ const MeshmapVisualizerViews = () => {
             alt=""
           /> */}
           <div
-            className={
-              imageInView ? "visible container" : "not-visible container"
-            }
+            // className={
+            //   imageInView ? "visible container" : "not-visible container"
+            // }
+            className="visible container"
           >
-            <div className="line1">
-              <div className="box">
-                <img className="boxImg" src={argocd} alt="" />
-                <div className="boxText">Argo CD</div>
+            <div className="line position-line-down">
+              <div className="line-primary animation-down-scroll">
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt="" />
+                  <div>Prometheus</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={argocd} alt="" />
+                  <div className="boxText">Argo CD</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={cilium} alt="" />
+                  <div>Cilium</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={prometheus} alt="" />
+                  <div>Prometheus</div>
+                </div>
               </div>
-              <div className="box">
-                <img className="boxImg" src={cilium} alt="" />
-                <div>Cilium</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={prometheus} alt="" />
-                <div>Prometheus</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={prometheus} alt="" />
-                <div>Prometheus</div>
-              </div>
+
             </div>
-            <div className="line2">
-              <div className="box">
-                <img className="boxImg" src={kubernetes} alt="" />
-                <div>Kubernetes</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={keda} alt="" />
-                <div>Keda</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={linkerd} alt="" />
-                <div>Linkerd</div>
-              </div>
-              <div className="box">
-                <img className="boxImg" src={kubernetes} alt="" />
-                <div>Kubernetes</div>
+            <div className="line position-line-up">
+              <div className="line-primary animation-up-scroll">
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt="" />
+                  <div>Kubernetes</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={keda} alt="" />
+                  <div>Keda</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={linkerd} alt="" />
+                  <div>Linkerd</div>
+                </div>
+                <div className="box">
+                  <img className="boxImg" src={kubernetes} alt="" />
+                  <div>Kubernetes</div>
+                </div>
               </div>
             </div>
           </div>
@@ -248,7 +280,7 @@ const MeshmapVisualizerViews = () => {
           </p>
           <Button
             primary
-            title="Use Playground &rarr;"
+            title="Open in Demo System &rarr;"
             external={true}
             url="https://playground.meshery.io/"
           />

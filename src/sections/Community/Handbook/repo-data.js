@@ -138,7 +138,7 @@ export const repo_data = [
         site: "https://badges.layer5.io/",
         language: "Gatsby",
         maintainers_name: ["Vacant"],
-        link: ["https://badges.layer5.io"],
+        link: [""],
         repository:
           "https://github.com/layer5labs/meshery-extensions-packages/",
       },
@@ -164,8 +164,8 @@ export const repo_data = [
         image: five,
         site: "https://docs.layer5.io/",
         language: "Hugo",
-        maintainers_name: ["Archit Sharma"],
-        link: ["https://layer5.io/community/members/archit-sharma"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/layer5io/docs",
       },
 
@@ -264,6 +264,7 @@ export const repo_data = [
           "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Operator",

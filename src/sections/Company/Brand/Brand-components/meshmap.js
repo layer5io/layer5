@@ -45,9 +45,9 @@ const MeshMapBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
             Logos
-            </h3>
+            </h2>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
@@ -65,9 +65,9 @@ const MeshMapBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
                             Colors
-            </h3>
+            </h2>
           </Col>
           <Col>
             <p>

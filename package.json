@@ -41,7 +41,7 @@
     "@sideway/address": "^5.0.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
-    "axios": "^1.6.7",
+    "axios": "^1.7.3",
     "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-gatsby": "^2.22.0",
     "cytoscape": "^3.28.1",
