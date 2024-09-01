@@ -7,6 +7,38 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import { Link } from "gatsby";
 
+const validateEmail = (value) => {
+  let error;
+
+  if (!value) {
+    error = "Required";
+  } else if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value)) {
+    error = "Please enter a valid email address";
+  }
+  return error;
+};
+
+const validatePictureUrl = (value) => {
+  let error;
+  if (value) {
+
+    if (value.startsWith("data:")) {
+      error = "Data URIs are not allowed. Please provide a URL to an image file.";
+    } else {
+      try {
+        new URL(value);
+        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg"];
+        const extension = value.split(".").pop().toLowerCase();
+        if (!allowedImageExtensions.includes(extension)) {
+          error = "URL must point to an image file (jpg, jpeg, png, svg or webp).";
+        }
+      } catch (_) {
+        error = "Please enter a valid URL.";
+      }
+    }
+  }
+  return error;
+};
 
 const WebBasedForm = () => {
 
@@ -99,13 +131,14 @@ const WebBasedForm = () => {
             nextStep();
           }}
         >
+       {({ errors, touched }) => (
           <Form className="form" method="post">
             <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
             <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
             <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z\s]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+            <Field type="text" className="text-field" id="email" name="email" validate={validateEmail} />{errors.email && touched.email && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.email}</p>}
             <label htmlFor="occupation" className="form-name">Occupation / Title</label>
             <Field type="text" className="text-field" id="occupation" name="occupation" />
             <label htmlFor="org" className="form-name">Organization / Company / School</label>
@@ -149,10 +182,12 @@ const WebBasedForm = () => {
               </label>
             </div>
             <label htmlFor="picture" className="form-name">Picture</label>
-            <Field type="url" className="text-field" id="picture" name="picture" />
+            <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
+            {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
             <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
             <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
           </Form>
+          )}
         </Formik>
       </Container>
     );
