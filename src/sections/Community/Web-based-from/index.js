@@ -33,7 +33,7 @@ const validatePictureUrl = (value) => {
           error = "URL must point to an image file (jpg, jpeg, png, svg or webp).";
         }
       } catch (_) {
-        error = "Please enter a valid URL.";
+        error = "Please enter a URL to an image file.";
       }
     }
   }
