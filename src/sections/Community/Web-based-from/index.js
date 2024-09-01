@@ -23,7 +23,7 @@ const validatePictureUrl = (value) => {
   if (value) {
 
     if (value.startsWith("data:")) {
-      error = "Data URIs are not allowed. Please provide a URL to an image file.";
+      error = "Data URIs are not allowed. Please provide a URL, starting with http:// or https:// to an image file.";
     } else {
       try {
         new URL(value);
