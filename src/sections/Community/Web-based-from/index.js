@@ -30,7 +30,7 @@ const validatePictureUrl = (value) => {
         const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
         const extension = value.split(".").pop().toLowerCase();
         if (!allowedImageExtensions.includes(extension)) {
-          error = "URL must point to an image file (jpg, jpeg, png, svg or webp).";
+          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
         }
       } catch (_) {
         error = "Please enter a URL to an image file.";
