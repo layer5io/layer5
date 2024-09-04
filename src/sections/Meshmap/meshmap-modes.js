@@ -261,7 +261,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Discover and model your cloud native deployments</h1>
-            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
+            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} loading="lazy" />
             <p>
               Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.
             </p>
@@ -274,7 +274,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Apply patterns and manage many Kubernetes clusters</h1>
-            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged ? "big" : "small"} />
+            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged ? "big" : "small"} loading="lazy" />
             <p>
               Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
