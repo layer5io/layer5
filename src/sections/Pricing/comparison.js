@@ -182,7 +182,7 @@ const Comparison = () => {
                 <>
                   <tr key={x.id} >
                     <td className="categories" >
-                      <img src={x.icon} height={45} className="category-icon" alt={x.category} />
+                      <img src={x.icon} height={45} className="category-icon" alt={x.category} loading="lazy" />
                       <h3 className="category">{x.category}</h3></td>
                     <td></td>
                     <td></td>
