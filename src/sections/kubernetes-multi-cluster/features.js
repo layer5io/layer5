@@ -157,14 +157,14 @@ const Feature = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={meshery_operator} className="calalog-image" />
+              <img src={meshery_operator} className="calalog-image" loading="lazy" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={meshsync} className="calalog-image" />
+              <img src={meshsync} className="calalog-image" loading="lazy" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
