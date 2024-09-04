@@ -116,7 +116,7 @@ const options = [
     featured: false,
     monthlyprice: 15.99,
     yearlyprice: 180,
-    pricing_coming_soon: <img src={comingSoon}></img>,
+    pricing_coming_soon: <img src={comingSoon} loading="lazy"></img>,
     byline: "Everything in Team, plus:",
     button: ["Coming Soon", ""],
     summary: [
@@ -231,12 +231,12 @@ const index = () => {
                 <>
                   <div className="card" key={card.id}>
                     <div className="card_head">
-                      <img src={card.logo} alt="" className="logo" />
+                      <img src={card.logo} alt="" className="logo" loading="lazy" />
                       <div className="title">{card.title}</div>
                       <div className="iconss">
                         {/* <div> */}
                         {card.icon.map((curr_icon) => (
-                          <img src={curr_icon} alt="" key={curr_icon} />
+                          <img src={curr_icon} alt="" key={curr_icon} loading="lazy" />
                         ))}
                         {/* </div> */}
                       </div>
@@ -257,8 +257,8 @@ const index = () => {
             </div>
           </div>
           <div className="freeTry">
-            <img className="bgSvgLeft" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
-            <img className="bgSvgRight" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
+            <img className="bgSvgLeft" src={isDark ? darkbgSvg : lightbgSvg} alt="" loading="lazy" />
+            <img className="bgSvgRight" src={isDark ? darkbgSvg : lightbgSvg} alt="" loading="lazy" />
             <div className="headers rotate gap">
               <h1 className="header-heading">
                 Unlock Your <span>Potential </span> with Free Tier Account!
