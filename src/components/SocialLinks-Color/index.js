@@ -16,7 +16,7 @@ const SocialLinksColor = () => {
       <Col xs={12}>
         <Row className="social_icons">
           <a href="https://discuss.layer5.io" target="_blank" rel="noreferrer">
-            <img height="30px" src={forum_icon} alt="forum" />
+            <img height="30px" src={forum_icon} alt="forum" loading="lazy" />
           </a>
           <a
             className="mail_icon"
@@ -24,10 +24,10 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img height="30px" src={mail_icon} alt="mail" />
+            <img height="30px" src={mail_icon} alt="mail" loading="lazy" />
           </a>
           <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
-            <img className="slack" height="30px" src={slack_icon} alt="slack" />
+            <img className="slack" height="30px" src={slack_icon} alt="slack" loading="lazy" />
           </a>
           <a
             href="https://twitter.com/layer5"
@@ -43,7 +43,7 @@ const SocialLinksColor = () => {
             rel="noreferrer"
             className="github"
           >
-            <img height="30px" src={github_icon} alt="github" />
+            <img height="30px" src={github_icon} alt="github" loading="lazy" />
           </a>
           <a
             href="https://www.linkedin.com/company/layer5"
@@ -55,6 +55,7 @@ const SocialLinksColor = () => {
               height="30px"
               src={linkedin_icon}
               alt="linkedin"
+              loading="lazy"
             />
           </a>
           <a
@@ -68,6 +69,7 @@ const SocialLinksColor = () => {
               height="30px"
               src={youtube_icon}
               alt="youtube"
+              loading="lazy"
             />
           </a>
           <a
@@ -81,6 +83,7 @@ const SocialLinksColor = () => {
               height="30px"
               src={docker_icon}
               alt="docker"
+              loading="lazy"
             />
           </a>
         </Row>
