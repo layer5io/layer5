@@ -66,7 +66,7 @@ const GitOpsPage = () => {
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10}>
             <div className="image-container">
-              <img src={isDark ? Github_Dark : Github_Light} className="logo" />
+              <img src={isDark ? Github_Dark : Github_Light} className="logo" loading="lazy" />
             </div>
           </Col>
         </Row>
@@ -87,7 +87,7 @@ const GitOpsPage = () => {
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >
             <div className="image-container" >
               <MeshMapStack className="logo" />
-              <img src={Cone} className="cone-image" />
+              <img src={Cone} className="cone-image" loading="lazy" />
             </div>
           </Col>
         </Row>
@@ -107,8 +107,8 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-image" style={{ display: "flex", justifyContent: "flex-end" }} >
             <div className="image-container" >
-              <img src={isDark ? SmpLogo_light : SmpLogo_dark} className="logo" />
-              <img src={Cone} className="cone-image" />
+              <img src={isDark ? SmpLogo_light : SmpLogo_dark} className="logo" loading="lazy" />
+              <img src={Cone} className="cone-image" loading="lazy" />
             </div>
           </Col>
         </Row>
