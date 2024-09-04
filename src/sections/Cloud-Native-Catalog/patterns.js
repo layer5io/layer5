@@ -263,49 +263,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <img src={Mutual_tls} />
+                  <img src={Mutual_tls} loading="lazy" />
                 </div>
                 <div className="slide two">
-                  <img src={Retries} />
+                  <img src={Retries} loading="lazy" />
                 </div>
                 <div className="slide three">
-                  <img src={Traces} />
+                  <img src={Traces} loading="lazy" />
                 </div>
                 <div className="slide four">
-                  <img src={Denial} />
+                  <img src={Denial} loading="lazy" />
                 </div>
                 <div className="slide five">
-                  <img src={Correlate_event} />
+                  <img src={Correlate_event} loading="lazy" />
                 </div>
                 <div className="slide six">
-                  <img src={Only_wagent} />
+                  <img src={Only_wagent} loading="lazy" />
                 </div>
                 <div className="slide seven">
-                  <img src={Node_agent} />
+                  <img src={Node_agent} loading="lazy" />
                 </div>
                 <div className="slide eight">
-                  <img src={Single_tenant} />
+                  <img src={Single_tenant} loading="lazy" />
                 </div>
                 <div className="slide nine">
-                  <img src={Pre_provison} />
+                  <img src={Pre_provison} loading="lazy" />
                 </div>
                 <div className="slide ten">
-                  <img src={Circuit_breaker} />
+                  <img src={Circuit_breaker} loading="lazy" />
                 </div>
                 <div className="slide eleven">
-                  <img src={Retry_deadline} />
+                  <img src={Retry_deadline} loading="lazy" />
                 </div>
                 <div className="slide twelve">
-                  <img src={Singleton} />
+                  <img src={Singleton} loading="lazy" />
                 </div>
                 <div className="slide thirteen">
-                  <img src={Jwt_transformer} />
+                  <img src={Jwt_transformer} loading="lazy" />
                 </div>
                 <div className="slide fourteen">
-                  <img src={Multicluster} />
+                  <img src={Multicluster} loading="lazy" />
                 </div>
                 <div className="slide fifteen">
-                  <img src={Http_metrics} />
+                  <img src={Http_metrics} loading="lazy" />
                 </div>
               </div>
             </div>
