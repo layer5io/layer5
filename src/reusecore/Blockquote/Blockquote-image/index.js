@@ -10,7 +10,7 @@ const Customers = (props) => {
         <section className="bq-section">
           <div className="type-one-wrapper type-one-wrapper-boxed">
             <div className="bq-quote type-one-quote">
-              <div className="type-one-quote-userpic"><img src={props.image}></img></div>
+              <div className="type-one-quote-userpic"><img src={props.image} loading="lazy"></img></div>
               <div className="type-one-quote-qmark">
                 &#10077;
               </div>
@@ -41,7 +41,7 @@ const Customers = (props) => {
                   </div>
                 </div>
 
-                <div className="type-two-quote-userpic"><img src={props.image}></img></div>
+                <div className="type-two-quote-userpic"><img src={props.image} loading="lazy"></img></div>
 
                 <div className="type-two-quote-base">
                   <blockquote className="type-two-quote-text">
@@ -71,7 +71,7 @@ const Customers = (props) => {
                     {props.quote}
                   </blockquote>
                   <div className="type-three-quote-meta">
-                    <div className="type-three-quote-userpic"><img src={props.image}></img></div>
+                    <div className="type-three-quote-userpic"><img src={props.image} loading="lazy"></img></div>
                     <div className="type-three-quote-meta-info">
                       <div className="type-three-quote-author"><cite>{props.person ? props.person : ""}</cite></div>
                       <div className="type-three-quote-source"><span>{props.title ? props.title : ""}</span></div>
