@@ -7,7 +7,7 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
 import ReactPlayer from "react-player/youtube";
-// import mesheryPlayground from "./meshery-playground-meshmap.png";
+// import mesheryPlayground from "./meshery-playground-meshmap.webp";
 import videoThumbnail from "./meshery-infrastructure-as-diagram.webp";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";

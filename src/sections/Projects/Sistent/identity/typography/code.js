@@ -2,11 +2,11 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import TypeTable1 from "../../../../../assets/images/app/projects/sistent/type-table-1-light.png";
-import TypeTable1Dark from "../../../../../assets/images/app/projects/sistent/type-table-1-dark.png";
+import TypeTable1 from "../../../../../assets/images/app/projects/sistent/type-table-1-light.webp";
+import TypeTable1Dark from "../../../../../assets/images/app/projects/sistent/type-table-1-dark.webp";
 
-import TypeTable2 from "../../../../../assets/images/app/projects/sistent/type-table-2-light.png";
-import TypeTable2Dark from "../../../../../assets/images/app/projects/sistent/type-table-2-dark.png";
+import TypeTable2 from "../../../../../assets/images/app/projects/sistent/type-table-2-light.webp";
+import TypeTable2Dark from "../../../../../assets/images/app/projects/sistent/type-table-2-dark.webp";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { SistentLayout } from "../../sistent-layout";

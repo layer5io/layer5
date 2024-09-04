@@ -3,7 +3,7 @@ import FeatureHero from "../SolutionHero";
 import whiteboard_svg from "./images/whiteboarding.svg";
 import collaborate_svg from "./images/collaborate.svg";
 import cluster_svg from "./images/cluster.svg";
-import switcher_img from "./images/switcher.png";
+import switcher_img from "./images/switcher.webp";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./deploy.style";

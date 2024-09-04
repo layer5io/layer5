@@ -6,9 +6,9 @@ import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import CommentsWrapper from "./comments.style";
-import use_case_1 from "../../assets/images/comments/use-case-1.png";
-import use_case_2 from "../../assets/images/comments/use-case-2.png";
-import use_case_3 from "../../assets/images/comments/use-case-3.png";
+import use_case_1 from "../../assets/images/comments/use-case-1.webp";
+import use_case_2 from "../../assets/images/comments/use-case-2.webp";
+import use_case_3 from "../../assets/images/comments/use-case-3.webp";
 
 let data = {
   heading: "Brainstorm with Comments",

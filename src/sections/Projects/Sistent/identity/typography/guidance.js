@@ -4,10 +4,10 @@ import { useLocation } from "@reach/router";
 
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import TypeScale2 from "../../../../../assets/images/app/projects/sistent/type-scale-2-light.png";
-import TypeScale2Dark from "../../../../../assets/images/app/projects/sistent/type-scale-2-dark.png";
-import TypeScale3 from "../../../../../assets/images/app/projects/sistent/type-scale-3-light.png";
-import TypeScale3Dark from "../../../../../assets/images/app/projects/sistent/type-scale-3-dark.png";
+import TypeScale2 from "../../../../../assets/images/app/projects/sistent/type-scale-2-light.webp";
+import TypeScale2Dark from "../../../../../assets/images/app/projects/sistent/type-scale-2-dark.webp";
+import TypeScale3 from "../../../../../assets/images/app/projects/sistent/type-scale-3-light.webp";
+import TypeScale3Dark from "../../../../../assets/images/app/projects/sistent/type-scale-3-dark.webp";
 
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { SistentLayout } from "../../sistent-layout";

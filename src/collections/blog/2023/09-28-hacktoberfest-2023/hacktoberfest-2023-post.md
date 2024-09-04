@@ -3,8 +3,8 @@ title: "Navigating Hacktoberfest"
 subtitle: "A Guide to Meaningful Contributions and Maintainer Appreciation"
 date: 2023-09-28 10:30:05 -0530
 author: Lee Calcote
-thumbnail: "./layer5-hacktoberfest-2023.png"
-darkthumbnail: "./layer5-hacktoberfest-2023.png"
+thumbnail: "./layer5-hacktoberfest-2023.webp"
+darkthumbnail: "./layer5-hacktoberfest-2023.webp"
 category: "Open Source"
 description: "How to have a great Hacktoberfest experience and get the most out of participating"
 tags:
@@ -18,9 +18,9 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import mesheryLogo from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import hacktoberfestEvent from "./layer5-event-hacktoberfest2023.png";
-import cloudNativeHacktoberfest from "./hacktoberfest-2023-with-layer5.png";
-import hacktoberfestBadge from "./hacktoberfest-contributor.png";
+import hacktoberfestEvent from "./layer5-event-hacktoberfest2023.webp";
+import cloudNativeHacktoberfest from "./hacktoberfest-2023-with-layer5.webp";
+import hacktoberfestBadge from "./hacktoberfest-contributor.webp";
 import Blockquote from "../../../../reusecore/Blockquote";
 import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 import { Link } from "gatsby" ;

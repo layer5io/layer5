@@ -10,7 +10,7 @@ import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevron
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
 const FiveandFriendsAdventures =
-  "../../../assets/images/blog/five-and-friends.png";
+  "../../../assets/images/blog/five-and-friends.webp";
 
 const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(

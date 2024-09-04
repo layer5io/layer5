@@ -1,7 +1,7 @@
 import React from "react";
 import WhiteboardWrapper from "./whiteboard.style";
 import { Container } from "../../reusecore/Layout";
-import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.png";
+import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.webp";
 import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
