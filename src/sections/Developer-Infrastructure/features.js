@@ -132,7 +132,7 @@ const Feature = () => {
           </Col> */}
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={whiteboard} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img src={whiteboard} alt="Kubernetes Diagrams for anything" className="kubernetes-image" loading="lazy" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -155,7 +155,7 @@ const Feature = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={orchestration_svg} className="calalog-image" />
+              <img src={orchestration_svg} className="calalog-image" loading="lazy" />
             </div>
           </Col>
         </Row>
