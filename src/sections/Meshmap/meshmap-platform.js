@@ -131,6 +131,7 @@ const Platform = () => {
                   src={SelfHosted}
                   alt="MeshMap Self-hosted"
                   className="modes-image"
+                  loading="lazy"
                 />
               ),
             },
@@ -143,6 +144,7 @@ const Platform = () => {
                   src={CloudHosted}
                   alt="MeshMap Cloud"
                   className="modes-image"
+                  loading="lazy"
                 />
               ),
             },
@@ -153,14 +155,14 @@ const Platform = () => {
       <div className="blocks">
         <div className="block block--left">
           <h1>Self-Hosted</h1>
-          <img src={SelfHosted} alt="MeshMap Self-hosted" />
+          <img src={SelfHosted} alt="MeshMap Self-hosted" loading="lazy" />
           <p>
             Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
           </p>
         </div>
         <div className="block block--right">
           <h1>Cloud</h1>
-          <img src={CloudHosted} alt="MeshMap Cloud" />
+          <img src={CloudHosted} alt="MeshMap Cloud" loading="lazy" />
           <p>
             Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
           </p>
