@@ -152,7 +152,7 @@ const Feature = () => {
         <Row className="catalog">
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={meshery_designer} className="kubernetes-image" />
+              <img src={meshery_designer} className="kubernetes-image" loading="lazy" />
               {/* <StaticImage src={meshery_designer} alt="Meshery Designer" loading="lazy" /> */}
             </div>
           </Col>
@@ -176,14 +176,14 @@ const Feature = () => {
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={meshery_visualizer} className="kubernetes-image" />
+              <img src={meshery_visualizer} className="kubernetes-image" loading="lazy" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
+              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" loading="lazy" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
