@@ -35,13 +35,14 @@ const ViewsSectionWrapper = styled.div`
     align-items: center;
     padding: 0 5% 0 0;
     box-sizing: border-box;
-    //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     overflow: hidden;
 
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
+      height: auto;
+      padding: 10% 0;
     }
 }
     .hero-text {
@@ -58,7 +59,6 @@ const ViewsSectionWrapper = styled.div`
     }
 
     h2 {
-        /* max-width: 90%; */
         padding-bottom: 2%;
       }
     }
@@ -105,14 +105,15 @@ const ViewsSectionWrapper = styled.div`
 
     }
 
-    .overlay {
-        width: 483px;
-        height: 680px;
-    }
-
     .container {
       display: flex;
       justify-content: center;
+      width: 100%;
+      overflow: hidden;
+
+      @media only screen and (max-width: 767px) {
+        flex-direction: row;
+      }
     }
     
     .line {
@@ -121,18 +122,38 @@ const ViewsSectionWrapper = styled.div`
       align-items: center;
       margin-right: 2rem;
       flex-wrap: wrap;
+
+      @media only screen and (max-width: 767px) {
+        flex-direction: row;
+      }
     }
     .position-line-down{
-        transform: translateY(-20em);
+      transform: translateY(-20em);
+
+      @media only screen and (max-width: 767px) {
+        transform: translateX(-20em)
+      }
     }
     .position-line-up{
-        transform: translateY(20em);
+      transform: translateY(20em);
+
+      @media only screen and (max-width: 767px) {
+        transform: translateX(20em)
+      }
     }
 
     .line-primary, .line-secondary {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .line-primary {
+      @media only screen and (max-width: 767px) {
+        flex-direction: row;
+        width: auto;
+        margin: 0 5%;
+      }
     }
 
     .animation-up-scroll {
@@ -146,6 +167,9 @@ const ViewsSectionWrapper = styled.div`
                 transform: translateY(-100%);
             }
         }
+          @media only screen and (max-width: 767px) {
+            animation: none /*to disable vertical animation on mobile*/
+          }
     }
     .animation-down-scroll {
 
@@ -158,7 +182,29 @@ const ViewsSectionWrapper = styled.div`
                 transform: translateY(100%);
             }
         }
+        @media only screen and (max-width: 767px) {
+          animation: none /*to disable vertical animation on mobile*/
+        }
     }
+
+    .animation-left-right {
+      animation: scroll-left-right 15s linear infinite;
+
+      
+
+      @media only screen and (min-width: 768px) {
+        animation: none; /* Disable horizontal scroll animation on desktop */
+        @keyframes scroll-left-right {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      }
+  }
+    
     .box {
       display: flex;
       flex-direction: column;
@@ -171,11 +217,7 @@ const ViewsSectionWrapper = styled.div`
       background-color: ${(props) => props.theme.backgroundColor}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
     }
-    // .box:hover {
-    //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    // }
 
     .box .boxImg {
       width: auto;
@@ -189,9 +231,6 @@ const ViewsSectionWrapper = styled.div`
     }
 
     @media only screen and (max-width: 700px) {
-      .hero-image {
-        display: none; 
-      }
       .views-section {
         padding: 2rem 2rem 0 2rem;
         height: auto;
@@ -215,19 +254,10 @@ const MeshmapVisualizerViews = () => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
-            src={CommentingImageDark}
-            alt=""
-          /> */}
-          <div
-            // className={
-            //   imageInView ? "visible container" : "not-visible container"
-            // }
-            className="visible container"
-          >
-            <div className="line position-line-down">
-              <div className="line-primary animation-down-scroll">
+          <div className={
+            imageInView ? "visible container" : "not-visible container"}>
+            <div className="line animation-down-scroll">
+              <div className="line-primary position-line-down animation-left-right">
                 <div className="box">
                   <img className="boxImg" src={prometheus} alt="" />
                   <div>Prometheus</div>
@@ -247,8 +277,8 @@ const MeshmapVisualizerViews = () => {
               </div>
 
             </div>
-            <div className="line position-line-up">
-              <div className="line-primary animation-up-scroll">
+            <div className="line animation-up-scroll">
+              <div className="line-primary position-line-up animation-left-right">
                 <div className="box">
                   <img className="boxImg" src={kubernetes} alt="" />
                   <div>Kubernetes</div>
