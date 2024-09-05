@@ -140,7 +140,7 @@ const MentorshipPrograms = () => {
       <ConductWrapper>
         <Container>
 
-          {data.map((data) => {
+          {data.map((data, i) => {
             const { id, name, description, buttonLink, imageLink, imagePosition } = data;
             return (
               <div className={imagePosition} key={id}>
@@ -156,7 +156,7 @@ const MentorshipPrograms = () => {
                     <Col lg={6} md={6} sm={12} id="col2">
                       { isValidElement(imageLink)
                         ? imageLink
-                        :  <img src={imageLink} title="Click to know More about our partner" alt={name} />
+                        :  <img src={imageLink} title="Click to know More about our partner" alt={name} loading={i > 0 ? "lazy" : "eager"} />
                       }
                     </Col>
                   </Row>

@@ -219,7 +219,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/blog">
                     <div className="content_type">
-                      <img src={blog} alt="Blog" />
+                      <img src={blog} alt="Blog" loading="lazy" />
                       <h5>Blog</h5>
                       <p>Share Your Experience</p>
                     </div>
@@ -228,7 +228,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/resources">
                     <div className="content_type">
-                      <img src={resources} alt="Resource" />
+                      <img src={resources} alt="Resource" loading="lazy" />
                       <h5>Resource</h5>
                       <p>Articles, Tutorials, Podcasts and More</p>
                     </div>
@@ -240,7 +240,7 @@ const Writers = () => {
                     to="/learn/service-mesh-workshops"
                   >
                     <div className="content_type">
-                      <img src={workshop} alt="Workshop" />
+                      <img src={workshop} alt="Workshop" loading="lazy" />
                       <h5>Workshop</h5>
                       <p>Deliver a Hands-on Learning Experience</p>
                     </div>
@@ -253,7 +253,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
-                      <img src={event} alt="Event" />
+                      <img src={event} alt="Event" loading="lazy" />
                       <h5>Event</h5>
                       <p>Organize an Event</p>
                     </div>
@@ -262,7 +262,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
-                      <img src={talks} alt="Talks" />
+                      <img src={talks} alt="Talks" loading="lazy" />
                       <h5>Talks</h5>
                       <p>Talk About Anything Cloud Native</p>
                     </div>
@@ -274,7 +274,7 @@ const Writers = () => {
                     to="/cloud-native-management/meshery"
                   >
                     <div className="content_type">
-                      <img src={videos} alt="Videos" />
+                      <img src={videos} alt="Videos" loading="lazy" />
                       <h5>Recorded Videos</h5>
                       <p>Product Videos, Reviews or Demo</p>
                     </div>
