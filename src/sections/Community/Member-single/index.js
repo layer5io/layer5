@@ -94,6 +94,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={mesheryLogo}
                                 alt="Meshery logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -108,6 +109,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={smpLogo}
                                 alt="Service Mesh Peformance logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -122,6 +124,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={imageHubLogo}
                                 alt="Image Hublogo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -138,6 +141,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={landscapeLogo}
                                 alt="Service Mesh Landscape logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -154,6 +158,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={communityLogo}
                                 alt="Community logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -170,6 +175,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={docsLogo}
                                 alt="Docs logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -184,6 +190,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={mesheryCatalogLogo}
                                 alt="Meshery Catalog logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -200,6 +207,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={meshMapLogo}
                                 alt="MeshMap Logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -214,6 +222,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={dockerExtensionLogo}
                                 alt="Docker Extension logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -230,6 +239,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={NighthawkLogo}
                                 alt="Nighthawk logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -246,6 +256,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={mesheryOperatorLogo}
                                 alt="Meshery Operator logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -262,6 +273,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={patternsLogo}
                                 alt="Patterns Logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -278,6 +290,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={uiuxrLogo}
                                 alt="UI/UX'er Logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
@@ -292,6 +305,7 @@ const MemberSingle = ({ frontmatter }) => {
                                 className="profile-social-links"
                                 src={writerIcon}
                                 alt="Writer Program Logo"
+                                loading="lazy"
                               />
                             </Link>
                           </li>
