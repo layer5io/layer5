@@ -86,7 +86,7 @@ const Header = () => {
                 <Button
                   primary
                   title="Browse Catalog"
-                  external={true}
+                  $external={true}
                   url="https://meshery.io/catalog"
                 />
               </div>

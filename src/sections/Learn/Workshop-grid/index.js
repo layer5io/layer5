@@ -27,7 +27,7 @@ const WorkshopsPage = () => {
   ) {
     nodes {
       id
-      slug
+      
       body
       frontmatter {
         title

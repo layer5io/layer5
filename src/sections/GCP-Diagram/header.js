@@ -87,7 +87,7 @@ const Header = () => {
                 <Button
                   primary
                   title="Try MeshMap Now!"
-                  external={true}
+                  $external={true}
                   url="/meshmap"
                 />
               </div>

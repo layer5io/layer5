@@ -6,8 +6,19 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
-    height: ${(props) => props.$height === 0 ? "unset" : `calc(${props.$height}px + 46px)`};
-    &:before {
+    height: ${(props) =>
+  props.height === 0 ? "unset" : `calc(${props.height}px + 46px)`};
+    li {
+      width: 150px;
+      margin: 3px;
+      height: calc(150px * 1.1547);
+      display: inline-block;
+      font-size: initial;
+      margin-bottom: calc(3px - 150px * 0.2885);
+      filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 20px);
+    }
+
+    ::before {
       content: "";
       width: calc(150px / 2 + 3px);
       float: left;
@@ -23,7 +34,7 @@ export const HoneycombGrid = styled.div`
   @media (max-width: 335px) {
     ul {
       height: ${(props) =>
-  props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`};
+    props.height === 0 ? "unset" : `calc(${props.heightforSmall}px)`};
       li {
         width: 100px; 
         margin-top: 0px;

@@ -163,7 +163,7 @@ const MembersGrid = (props) => {
                     className="banner-btn memberProfileBtn"
                     title="Collect Badges"
                     url="https://badges.layer5.io/"
-                    external={true}
+                    $external={true}
                   >
                     <FaCertificate size={21} className="icon-left" />
                   </Button>

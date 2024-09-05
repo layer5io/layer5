@@ -935,8 +935,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        slack: String,
        video: String,
        community_manager: String,
-       docURL: String, 
-
+       docURL: String,
      }
    `;
   createTypes(typeDefs);

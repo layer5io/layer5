@@ -37,7 +37,7 @@ const FeatureHero = (props) => {
             primary
             title="Try Now!"
             url="https://meshery.layer5.io"
-            external={true}
+            $external={true}
           />
         </div>
         <div className={"whiteboard-image"}>
