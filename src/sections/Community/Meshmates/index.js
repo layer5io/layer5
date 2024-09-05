@@ -92,35 +92,35 @@ const Meshmates = () => {
               <p>After pairing up on the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>, the community Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
               <table>
                 <tr>
-                  <td className="icon"><img alt="icon" src={c_icon} /></td>
+                  <td className="icon"><img alt="icon" src={c_icon} loading="lazy" /></td>
                   <td className="feature">
                     <h4> Get familiar with all of the projects </h4>
                     <p> Spend time understanding each of the Layer5 initiatives through high level overviews available in the community drive and in discussion with your MeshMate. </p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="icon"><img alt="icon" src={c_icon} /></td>
+                  <td className="icon"><img alt="icon" src={c_icon} loading="lazy" /></td>
                   <td className="feature">
                     <h4> Identify your area of interest </h4>
                     <p> Use time with your MeshMate to familiarize with the architecture and technologies used in the projects. Inform your MeshMate of your current skills and what skills you would like to develop. </p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="icon"><img alt="icon" src={c_icon} /></td>
+                  <td className="icon"><img alt="icon" src={c_icon} loading="lazy" /></td>
                   <td className="feature">
                     <h4> Run Meshery </h4>
                     <p> Put on your user hat and walk-through all of Meshery’s features and functions as a user. </p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="icon"><img alt="icon" src={c_icon} /></td>
+                  <td className="icon"><img alt="icon" src={c_icon} loading="lazy" /></td>
                   <td className="feature">
                     <h4> Build Meshery </h4>
                     <p> Confirm that you have a usable development environment. </p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="icon"><img alt="icon" src={c_icon} /></td>
+                  <td className="icon"><img alt="icon" src={c_icon} loading="lazy" /></td>
                   <td className="feature">
                     <h4> Contribute </h4>
                     <p> Grab an open issue or suggest a new one. </p>
