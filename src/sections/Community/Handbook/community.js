@@ -75,14 +75,14 @@ const CommunityGuide = () => {
               ideas.
             </p>
             <p>
-              <img className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} alt="Point" loading="lazy" />
               <strong>Be honest -</strong> “A half-truth is a whole lie.” Being
               truthful allows you to reach a better agreement. As a result, be
               open and honest about who you are, what you do, and how you want
               to accomplish it.
             </p>
             <p>
-              <img className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} alt="Point" loading="lazy" />
               <strong>Be respectful and inclusive -</strong> We are a diverse
               group of people with diverse backgrounds and opinions. We expect
               everyone to be civil and professional in their activities.
@@ -91,7 +91,7 @@ const CommunityGuide = () => {
               reasonable person.
             </p>
             <p>
-              <img className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} alt="Point" loading="lazy" />
               <strong>Collaborate and Contribute -</strong> Members are expected
               to attend community and workgroup meetings, find ways to help,
               check up on our Github page regularly etc. Within the community
@@ -100,19 +100,19 @@ const CommunityGuide = () => {
             <p id="Resources">
               <h3> Resources </h3>
               <p>
-                <img className="logo" src={Point} alt="Point" />
+                <img className="logo" src={Point} alt="Point" loading="lazy" />
                 Be sure to access the resources{" "}
                 <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
                   community drive.
                 </a>{" "}
               </p>
               <p>
-                <img className="logo" src={Point} alt="Point" />
+                <img className="logo" src={Point} alt="Point" loading="lazy" />
                 Sign-up on the{" "}
                 <a href="https://layer5.io/subscribe">community mailer</a>.
               </p>
               <p>
-                <img className="logo" src={Point} alt="Point" />
+                <img className="logo" src={Point} alt="Point" loading="lazy" />
                 Ask for a copy of{" "}
                 <a href="https://layer5.io/books/the-enterprise-path-to-service-mesh-architectures">
                   The Enterprise Path to Service Mesh Architectures.

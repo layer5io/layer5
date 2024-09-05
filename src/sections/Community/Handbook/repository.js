@@ -157,7 +157,7 @@ const Repository = () => {
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} alt="site-icon" />
+                                <img className="site-icon" src={image} alt="site-icon" loading="lazy" />
                               </a>
                             </td>
                             <td>{project}</td>
@@ -177,7 +177,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} alt="github-icon" />
+                                <img className="github-icon" src={github} alt="github-icon" loading="lazy" />
                               </a>
                               <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
@@ -215,7 +215,7 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
+                              <img className={siteIconClasses} src={image} alt="project" loading="lazy" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -234,7 +234,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} alt="github-icon" />
+                                <img className="github-icon" src={github} alt="github-icon" loading="lazy" />
                               </a>
                               <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
