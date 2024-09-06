@@ -21,7 +21,7 @@ export default function Feature({
         <div className="icon">
           {React.isValidElement(icon)
             ? icon
-            : <img src={icon} alt="title"/>
+            : <img src={icon} alt="title" loading="lazy" />
           }
         </div>
         <div className="text">
