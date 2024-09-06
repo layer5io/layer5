@@ -132,6 +132,7 @@ const SistentTypography = () => {
               <img
                 src={isDark ? TypeScale1Dark : TypeScale1}
                 alt="Type Scale"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -160,7 +161,7 @@ const SistentTypography = () => {
           </p>
           <Row Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
-              <img src={isDark ? FontPairDark : FontPair} alt="Font Pair" />
+              <img src={isDark ? FontPairDark : FontPair} alt="Font Pair" loading="lazy" />
             </Col>
           </Row>
         </div>
