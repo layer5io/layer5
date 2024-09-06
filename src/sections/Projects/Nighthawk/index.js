@@ -119,7 +119,7 @@ const Projects = () => {
                 </div>
                 <div className="card">
                   <div className="circle">
-                    <img src={cloud} alt="cloud image" />
+                    <img src={cloud} alt="cloud image" loading="lazy" />
                   </div>
                   <h2>Nighthawk Distribution</h2>
                   <p>Stable builds available for:</p>
@@ -138,7 +138,7 @@ const Projects = () => {
                 </div>
                 <div className="card">
                   <div className="circle">
-                    <img src={cpu} alt="cpu image" />
+                    <img src={cpu} alt="cpu image" loading="lazy" />
                   </div>
                   <h2>SCHEDULING AND ANALYSIS</h2>
                   <p>Nighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
@@ -153,7 +153,7 @@ const Projects = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
-                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" />
+                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" loading="lazy" />
                 <h2>Standards-based, distributed performance management</h2>
                 <p>Nighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>
@@ -210,7 +210,7 @@ const Projects = () => {
         </div>
       </Container>
       <div className="callout">
-        <img src={cncf} alt="cncf logo" />
+        <img src={cncf} alt="cncf logo" loading="lazy" />
         <p> Participate in the state of the art. <br />
           Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
         <Button primary title="Join Us" url="/community/calendar#meetings" />
