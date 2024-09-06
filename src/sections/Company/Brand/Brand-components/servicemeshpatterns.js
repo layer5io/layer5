@@ -44,16 +44,16 @@ const ServiceMeshPatterns = () => {
         <SRLWrapper>
           <Row Vcenter className="ImgDiv smp-logo">
             <Col xs={12} sm={4}>
-              <img src={SmpLogo} alt="Smp Logo"/>
+              <img src={SmpLogo} alt="Smp Logo" loading="lazy" />
             </Col>
             <Col xs={12} sm={4}>
               <div className="logo">
-                <img src={SmpWhite} alt="SmpWhite Logo"/>
+                <img src={SmpWhite} alt="SmpWhite Logo" loading="lazy" />
               </div>
             </Col>
             <Col xs={12} sm={4}>
               <div className="logo">
-                <img src={SmpTxt} alt="SmpTxt Logo"/>
+                <img src={SmpTxt} alt="SmpTxt Logo" loading="lazy" />
               </div>
             </Col>
           </Row>

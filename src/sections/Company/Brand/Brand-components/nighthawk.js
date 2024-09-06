@@ -39,13 +39,13 @@ const Nighthawk = () => {
         </Col>
         <Row Vcenter className="ImgDiv">
           <Col xs={12} sm={4}>
-            <img src={GNHWithName} alt="Nighthawk-with-name Logo" />
+            <img src={GNHWithName} alt="Nighthawk-with-name Logo" loading="lazy" />
           </Col>
           <Col xs={12} sm={4}>
-            <img src={GNH} alt="Nighthawk Logo" />
+            <img src={GNH} alt="Nighthawk Logo" loading="lazy" />
           </Col>
           <Col xs={12} sm={4}>
-            <img src={GNHNameOnly} alt="Nighthawk-name-only Logo" />
+            <img src={GNHNameOnly} alt="Nighthawk-name-only Logo" loading="lazy" />
           </Col>
         </Row>
       </Row>
