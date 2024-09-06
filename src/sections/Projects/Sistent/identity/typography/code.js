@@ -86,6 +86,7 @@ const TypographyCode = () => {
               <img
                 src={isDark ? TypeTable1Dark : TypeTable1}
                 alt="Type Table"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -102,6 +103,7 @@ const TypographyCode = () => {
               <img
                 src={isDark ? TypeTable2Dark : TypeTable2}
                 alt="Type Table"
+                loading="lazy"
               />
             </Col>
           </Row>

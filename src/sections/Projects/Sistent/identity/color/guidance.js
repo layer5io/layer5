@@ -96,6 +96,7 @@ const ColorGuidance = () => {
               <img
                 src={isDark ? TonalPalettesDark : TonalPalettes}
                 alt="Tonal Palettes"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -163,7 +164,7 @@ const ColorGuidance = () => {
           </p>
           <Row className="image-container" Hcenter>
             <Col md={8} lg={8} sm={12}>
-              <img src={ContextVisuals5} alt="Context Visuals" />
+              <img src={ContextVisuals5} alt="Context Visuals" loading="lazy" />
             </Col>
           </Row>
           <h3>The Role of Color Tokens</h3>
@@ -211,6 +212,7 @@ const ColorGuidance = () => {
                 width="100%"
                 src={isDark ? ContextVisuals6Dark : ContextVisuals6}
                 alt="Context Visuals"
+                loading="lazy"
               />
             </Col>
           </Row>

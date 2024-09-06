@@ -91,6 +91,7 @@ const TypographyGuidance = () => {
               <img
                 src={isDark ? TypeScale2Dark : TypeScale2}
                 alt="Type Scale"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -105,6 +106,7 @@ const TypographyGuidance = () => {
               <img
                 src={isDark ? TypeScale3Dark : TypeScale3}
                 alt="Type Scale"
+                loading="lazy"
               />
             </Col>
           </Row>
