@@ -97,7 +97,7 @@ const WorkshopsPage = () => {
                       <div className="social-icons">
                         {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
                           <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
-                            <img src={Slack} alt="Slack"/>
+                            <img src={Slack} alt="Slack" loading="lazy" />
                                                         Slack
                           </a> : ""}
                       </div>
@@ -117,7 +117,7 @@ const WorkshopsPage = () => {
               ))}
             </Row>
             <Row className="rqst-workshop">
-              <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
+              <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" loading="lazy" />
               <Button primary url="mailto:support@layer5.io" external={true}>
                                 Request A Workshop
               </Button>
