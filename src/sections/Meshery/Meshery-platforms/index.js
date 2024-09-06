@@ -228,7 +228,7 @@ const MesheryPlatforms = () => {
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
                   ? "single-platform single-platform-selected " : "single-platform "}
                 onClick={() => changeCurrentPlatform(index)}>
-                <img src={platform.icon} alt={platform.name} />
+                <img src={platform.icon} alt={platform.name} loading="lazy" />
               </Button>
             </Col>
           ))}
@@ -241,7 +241,7 @@ const MesheryPlatforms = () => {
         <Row Hcenter className="step-2">
           <Col>
             <h2><span>Step 2:</span> Manage your mesh</h2>
-            <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
+            <img src={MesheryLogo} alt="Meshery" className="meshery-logo" loading="lazy" />
           </Col>
         </Row>
       </div>
