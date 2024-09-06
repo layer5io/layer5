@@ -45,10 +45,10 @@ const ServiceMeshTimeline = () => {
       >
         {mesh.icon ?
           <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} />
+            <img src={isDark ? mesh?.darkIcon || mesh.icon : mesh.icon} alt={mesh.name} className={mesh.name === "Vulcand" ? "vulcan-img" : ""} loading="lazy" />
           </div>
           : <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
-            <img src={ServiceMeshIcon} alt={mesh.name} />
+            <img src={ServiceMeshIcon} alt={mesh.name} loading="lazy" />
           </div>
         }
         <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order % 2}`}>{mesh.name}</h3>
