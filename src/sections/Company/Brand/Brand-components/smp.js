@@ -55,31 +55,31 @@ const SMPBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={SmpDark} alt="SmpDark Logo"/>
+                <img src={SmpDark} alt="SmpDark Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={SmpWhite} alt="SmpWhite Logo"/>
+                  <img src={SmpWhite} alt="SmpWhite Logo" loading="lazy" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={SmpLight} alt="SmpLight Logo"/>
+                  <img src={SmpLight} alt="SmpLight Logo" loading="lazy" />
                 </div>
               </Col>
             </Row>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
+                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
+                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo" loading="lazy" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
+                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo" loading="lazy" />
                 </div>
               </Col>
             </Row>

@@ -49,10 +49,10 @@ const CommunityBrand = () => {
         </Col>
         <Row className="ImgDiv">
           <Col xs={12} sm={3}>
-            <img src={MeshMateLogo} alt="MeshMate Logo"/>
+            <img src={MeshMateLogo} alt="MeshMate Logo" loading="lazy" />
           </Col>
           <Col xs={12} sm={3} className="logo">
-            <img src={MeshMateLogoLight} alt="MeshMate Logo Light"/>
+            <img src={MeshMateLogoLight} alt="MeshMate Logo Light" loading="lazy" />
           </Col>
         </Row>
       </Row>

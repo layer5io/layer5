@@ -51,10 +51,10 @@ const MesheryOperatorBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
               <Col xs={12} sm={4}>
-                <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
+                <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4} className="logo">
-                <img src={MesheryOperator} alt="MesheryOperator Logo"/>
+                <img src={MesheryOperator} alt="MesheryOperator Logo" loading="lazy" />
               </Col>
             </Row>
           </SRLWrapper>

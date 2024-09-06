@@ -56,11 +56,11 @@ const Layer5Brand = () => {
           <SRLWrapper>
             <Row Vcenter className="Layer5Logos">
               <Col xs={12} sm={6}>
-                <img src={Layer5WhiteBg} alt="Layer5 Logo" />
+                <img src={Layer5WhiteBg} alt="Layer5 Logo" loading="lazy" />
                   Primary Logo: broadly, and majorly applicable
               </Col>
               <Col xs={12} sm={6}>
-                <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
+                <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" loading="lazy" />
                   Layer5 Icon: suited for square-shaped display
               </Col>
             </Row>
@@ -107,7 +107,7 @@ const Layer5Brand = () => {
             </p>
             <Row className="bookmarks">
               <Link to={BookmarksPDF}>
-                <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
+                <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" loading="lazy" />
               </Link>
             </Row>
           </Col>

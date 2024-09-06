@@ -44,10 +44,10 @@ const ImageHubBrand = () => {
         <SRLWrapper>
           <Row Vcenter className="ImgDiv">
             <Col xs={12} sm={3}>
-              <img src={ImageHub} alt="ImageHub Logo"/>
+              <img src={ImageHub} alt="ImageHub Logo" loading="lazy" />
             </Col>
             <Col xs={12} sm={3} className="logo">
-              <img src={ImageHubWhite} alt="ImageHubWhite Logo"/>
+              <img src={ImageHubWhite} alt="ImageHubWhite Logo" loading="lazy" />
             </Col>
           </Row>
         </SRLWrapper>
