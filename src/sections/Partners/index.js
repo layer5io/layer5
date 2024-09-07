@@ -60,7 +60,7 @@ const Partner = () => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} loading="lazy" />
                     </a>
                   </div>
                 </Col>
@@ -111,7 +111,7 @@ const Partner = () => {
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                       { isValidElement(partner.imageLink)
                         ? partner.imageLink
-                        :  <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                        :  <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} loading="lazy" />
                       }
 
                     </a>
