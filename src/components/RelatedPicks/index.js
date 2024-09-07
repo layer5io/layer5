@@ -11,7 +11,7 @@ const Card = ({ title, imgSrc, redirectLink }) => {
       <Link to={redirectLink}>
         <CardWrapper>
           <CardImageContainer>
-            <Image src={imgSrc} alt="gcp architecture diagram" />
+            <Image src={imgSrc} alt="gcp architecture diagram" loading="lazy" />
           </CardImageContainer>
           <CardTitle>{title}</CardTitle>
         </CardWrapper>
