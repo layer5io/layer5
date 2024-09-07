@@ -61,6 +61,9 @@ export const BlogWrapper = styled.div`
       margin-right: 0rem;
     }
   }
+  h3 {
+      margin-bottom: .75rem;
+    }
   .to-uppercase {
     text-transform: uppercase;
   }
