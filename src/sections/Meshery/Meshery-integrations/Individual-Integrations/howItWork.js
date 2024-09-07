@@ -203,7 +203,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
     customPaging: (i) => {
       return (
         <a>
-          <img src={slides[i].publicURL} alt={`Slide ${i}`} />
+          <img src={slides[i].publicURL} alt={`Slide ${i}`} loading="lazy" />
         </a>
       );
     },
@@ -236,7 +236,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>
-                    <img src={slide.publicURL} alt={`Slide ${index + 1}`} />
+                    <img src={slide.publicURL} alt={`Slide ${index + 1}`} loading="lazy" />
                   </div>
                 ))}
               </Slider>

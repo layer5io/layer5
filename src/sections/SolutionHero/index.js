@@ -44,7 +44,7 @@ const FeatureHero = (props) => {
           </Button>
         </div>
         <div className={"whiteboard-image"}>
-          <img id={"whiteboard-svg"} src={props.data.image} alt={""} />
+          <img id={"whiteboard-svg"} src={props.data.image} alt={""} loading="lazy" />
         </div>
       </Container>
     </FeatureHeroWrapper>
