@@ -119,21 +119,22 @@ const LandscapeGrid = () => {
               <div className="Legend">
                 <span>Legend:</span>
                 <div className="Landscape">
-                  <img alt="Full" src={passingMark} />
+                  <img alt="Full" src={passingMark} loading="lazy" />
                   Fully Compatible
                 </div>
                 <div>
-                  <img alt="Half" src={halfMark} />
+                  <img alt="Half" src={halfMark} loading="lazy" />
                   Partially Compatible
                 </div>
                 <div>
-                  <img alt="None" src={failingMark} />
+                  <img alt="None" src={failingMark} loading="lazy" />
                   Incompatible
                 </div>
               </div>
               <div className="AboutLandscape">
                 <img src={landscape}
                   alt="Service Mesh Landscape"
+                  loading="lazy"
                 />
                 <div>
                   <p>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.
