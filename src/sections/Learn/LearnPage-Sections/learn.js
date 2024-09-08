@@ -180,7 +180,7 @@ const LearnSection = () => {
   return (
     <LearnSectionWrapper>
       <div className="learn-particle-img">
-        <img src={Meshery_Logo} alt="Meshery Logo"/>
+        <img src={Meshery_Logo} alt="Meshery Logo" loading="lazy" />
       </div>
       <div>
         <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage Kubernetes</h1>
@@ -196,7 +196,7 @@ const LearnSection = () => {
                 <Button secondary title="Managing the performance of your microservices"/>
               </Link>
             </Col>
-            <img src={OReillyLogo} alt="OReilly Logo"/>
+            <img src={OReillyLogo} alt="OReilly Logo" loading="lazy" />
           </Row>
         </Container>
         <div className="learn-cards-section">
