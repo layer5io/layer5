@@ -65,7 +65,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/meshmap"
+              to="/cloud-native-management/kanvas"
               className="project__card four"
             >
               <div className="project__card-container">

@@ -101,7 +101,7 @@ const Banner1 = (props) => {
                 style={{ margin: "auto" }}
                 className="embedVideo"
               />
-              {/* <Link to="/cloud-native-management/meshmap">
+              {/* <Link to="/cloud-native-management/kanvas">
                 <video autoPlay muted loop preload="metadata" className="meshmapVideo">
                   <source src={meshmapVideo} type="video/mp4"></source>
                 </video>

@@ -215,7 +215,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/meshmap"
+                      to="/cloud-native-management/kanvas"
                     >
                       MeshMap
                       <span className="new-label">NEW</span>

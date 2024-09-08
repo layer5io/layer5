@@ -109,7 +109,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
                 <>
-                  <Link to="/cloud-native-management/meshmap">
+                  <Link to="/cloud-native-management/kanvas">
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
