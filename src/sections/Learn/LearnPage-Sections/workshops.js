@@ -254,7 +254,7 @@ const WorkshopsSection = () => {
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
-                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} loading="lazy" />
                   </div>
                 </Link>
               </Col>
@@ -268,7 +268,7 @@ const WorkshopsSection = () => {
             feedbackData.map((data, index) => {
               return (
                 <Col key={index} className="feedbackCol">
-                  <img className="blockquoteImg" src={BlockQouteImage} alt="Quote-Image" />
+                  <img className="blockquoteImg" src={BlockQouteImage} alt="Quote-Image" loading="lazy" />
                   <p>{data.feedback}</p>
                   <h3>{data.workshop}</h3>
                   <h5>{data.studnt_name}</h5>
