@@ -264,6 +264,7 @@ export const repo_data = [
           "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Operator",

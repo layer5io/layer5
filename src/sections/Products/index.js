@@ -15,6 +15,7 @@ import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
 import { Row } from "../../reusecore/Layout";
+import Reviews from "../Pricing/review-slider";
 
 const options = [
   {
@@ -299,6 +300,7 @@ const index = () => {
           </div>
         </div>
       </ProductsWrapper>
+      <Reviews />
     </div>
   );
 };
