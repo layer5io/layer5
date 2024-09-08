@@ -9,7 +9,7 @@ const Card = () => {
   return (
     <IntegrationCard>
       <div className="container">
-        <img src={MissingIntegration} alt="missing integration icon" />
+        <img src={MissingIntegration} alt="missing integration icon" loading="lazy" />
         <h2>Missing an Integration?</h2>
         <p>Meshery is an extensible  platform with many purpose-built extension points. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app.</p>
         <Button
@@ -20,7 +20,7 @@ const Card = () => {
         />
       </div>
       <div className="container">
-        <img src={ListIntegration} alt="List your integration icon" />
+        <img src={ListIntegration} alt="List your integration icon" loading="lazy" />
         <h2>Want your app listed?</h2>
         <p>Learn more about submitting an integration and partnership opportunities.</p>
         <ContactFormModal callout_text="Contact Us" form_header="Send Us An Email" />
