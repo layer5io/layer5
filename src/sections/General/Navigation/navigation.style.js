@@ -521,9 +521,15 @@ const NavigationWrap = styled.header`
 
   @media only screen and (min-width: 300px) and (max-width: 580px){
     .playground{
-      width: 92.5%;
+      width: 91.5%;
     }
     
+  }
+
+  @media screen and (max-width: 420px) {
+    .playground{
+      width: 90.5%;
+    }
   }
   #playground-list{
     width: 100%;
@@ -659,7 +665,7 @@ const NavigationWrap = styled.header`
         font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
-        font-size: 1.1rem;
+        font-size: 1.0rem;
         width: 100%;
       }
       a:before {
@@ -727,13 +733,15 @@ const NavigationWrap = styled.header`
     cursor: pointer;
     }
 
-    .sub-items{
-    border: 1px solid pink;
-    }
-
-
     .playground{
     margin-top: 17px
+    }
+
+    #playground-list > .menu-item {
+        font-weight: 600;
+      line-height: 1.6rem;
+      font-size: 0.9rem;
+      width: 100%;
     }
 
     .mobile-nav-subitem {
