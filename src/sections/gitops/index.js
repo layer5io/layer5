@@ -9,7 +9,7 @@ import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp
 import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
 import Github_Light from "../../assets/images/socialIcons/github-light.svg";
-import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
+import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/kanvas-light-stacked.svg";
 import SquarePoint from "./SquarePoint";
 
 
@@ -29,7 +29,7 @@ const GitOpsPage = () => {
           </Col>
           <Col lg={6} md={6} className="hero-images">
             <div className="hero-image-container" >
-              <MeshMapStack className="meshmap-stack-hero" />
+              <KanvasStack className="kanvas-stack-hero" />
               <img src={Cone} />
             </div>
             <div className="hero-image-container">
@@ -75,9 +75,9 @@ const GitOpsPage = () => {
       <div className="content-container content-container-more-width">
         <Row className="content-row">
           <Col lg={6} md={6} className="desc-text-container">
-            <h1 className="heading-1">MeshMap GitHub Action</h1>
+            <h1 className="heading-1">Kanvas GitHub Action</h1>
             <SquarePoint>See your deployment before you merge</SquarePoint>
-            <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
+            <SquarePoint>Connect Kanvas to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div className="buttons-container">
               <Button primary className="learn-more-btn" title="Install" url="https://meshery.layer5.io/connect/github/new"/>
@@ -86,7 +86,7 @@ const GitOpsPage = () => {
           </Col>
           <Col className="hero-image" lg={6} md={6} xs={12} sm={10} >
             <div className="image-container" >
-              <MeshMapStack className="logo" />
+              <KanvasStack className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>
