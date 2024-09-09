@@ -3,8 +3,8 @@ title: "Load Generation and Load Balancing"
 subtitle: "Fueling Performance Testing and Ensuring Fair Distribution of Workload"
 date: 2024-03-29 10:30:05 -0530
 author: Chandravijay Rai
-thumbnail: "./MeshMap.svg"
-darkthumbnail: "./MeshMap.svg"
+thumbnail: "./Kanvas.svg"
+darkthumbnail: "./Kanvas.svg"
 category: "Kubernetes"
 description: "Load Generation simulates demand on software, identifying capacity and bottlenecks and Load Balancing distributes workloads across resources, preventing overload and enhancing performance."
 tags:

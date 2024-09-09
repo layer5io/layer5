@@ -41,7 +41,7 @@
 <p style="clear:both;">
 <h2><a href="https://layer5.io/kanvas">Kanvas</a></h2>
 <a href="https://layer5.io/kanvas">
-  <img src="src/assets/images/kanvas/meshmap-color-icon.svg" alt="Kanvas logo" width="125px" style="margin:10px;" align="left" />
+  <img src="src/assets/images/kanvas/kanvas-color-icon.svg" alt="Kanvas logo" width="125px" style="margin:10px;" align="left" />
 </a>
 <a href="https://layer5.io/kanvas">Kanvas</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
 <br /><br /><br/>

@@ -5,28 +5,28 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMapIcon from "../../../../assets/images/meshmap/meshmap-color-icon.svg";
-import MeshMap from "../../../../assets/images/meshmap/meshmap-color-horizontal.svg";
-import MeshMapTitle from "../../../../assets/images/meshmap/meshmap-color-text.webp";
+import KanvasIcon from "../../../../assets/images/kanvas/kanvas-color-icon.svg";
+import Kanvas from "../../../../assets/images/kanvas/kanvas-color-horizontal.svg";
+import KanvasTitle from "../../../../assets/images/kanvas/kanvas-color-text.webp";
 
-const MeshMapWrapper = styled.section`
+const KanvasWrapper = styled.section`
     .sub-project {
         margin-top: -2rem;
     }
 `;
 
-const MeshMapBrand = () => {
+const KanvasBrand = () => {
   return (
-    <MeshMapWrapper>
+    <KanvasWrapper>
       <div className="post-content">
         <Row className="sub-project brand-section">
           <Col xs={12} sm={6}>
             <h2 className="layerH3">
-                MeshMap
+                Kanvas
             </h2>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <a href="/brand/meshmap-brand-kit.zip">
+            <a href="/brand/kanvas-brand-kit.zip">
               <Button primary title="Download Logo Assets" external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
@@ -34,7 +34,7 @@ const MeshMapBrand = () => {
           </Col>
           <Col>
             <p>
-            The MeshMap mark includes the MeshMap name & logo, and any word,
+            The Kanvas mark includes the Kanvas name & logo, and any word,
             phrase, image, or other designation that identifies the source or
             origin of any Layer5 projects. Please don’t modify the marks or
             use them in a confusing way, including suggesting sponsorship or
@@ -52,13 +52,13 @@ const MeshMapBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
               <Col xs={12} sm={4}>
-                <img src={MeshMap} alt="MeshMap Logo"/>
+                <img src={Kanvas} alt="Kanvas Logo"/>
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapIcon} alt="MeshMapLight Icon"/>
+                <img src={KanvasIcon} alt="KanvasLight Icon"/>
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapTitle} alt="MeshMapTitle Text"/>
+                <img src={KanvasTitle} alt="KanvasTitle Text"/>
               </Col>
             </Row>
           </SRLWrapper>
@@ -71,8 +71,8 @@ const MeshMapBrand = () => {
           </Col>
           <Col>
             <p>
-                            The MeshMap color palette consists of the primary MeshMap color
-                            and additional shades. The MeshMap logo should be white or
+                            The Kanvas color palette consists of the primary Kanvas color
+                            and additional shades. The Kanvas logo should be white or
                             monochrome tonal when using a color background.
             </p>
           </Col>
@@ -83,8 +83,8 @@ const MeshMapBrand = () => {
           </Row>
         </Row>
       </div>
-    </MeshMapWrapper>
+    </KanvasWrapper>
   );
 };
 
-export default MeshMapBrand;
+export default KanvasBrand;
