@@ -33,6 +33,14 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
   padding: 0;
 }
 
+h1{
+  text-align: center;
+}
+
+h4{
+  padding-bottom: 1rem;
+  text-align: center;
+}
 
 .patterns {
   display: flex;
@@ -420,6 +428,10 @@ h3.containerCaption {
 const Catalog = () => {
   return (
     <CatalogWrapper>
+      <div>
+        <h1>Integrate design patterns directly into your project website and documentation.</h1>
+        <h4>Make it easy for users to see how your project's design works in practice.</h4>
+      </div>
       <Container className="catalog-container">
         <div className="patterns">
           <p className="caption descr">
