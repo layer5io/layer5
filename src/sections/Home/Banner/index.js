@@ -36,10 +36,10 @@ const RotationalBanner = () => {
   */
   return (
     <>
-      <Banner4 className="banner1" />
-      <Banner1 className="banner2" />
-      <Banner2 className="banner3" />
-      <Banner3 className="banner4" />
+      <Banner4 className="banner4" />
+      <Banner1 className="banner1" />
+      <Banner2 className="banner2" />
+      <Banner3 className="banner3" />
     </>
   );
 };

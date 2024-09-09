@@ -50,7 +50,7 @@ const JoinCommunityWrapper = styled.div`
       opacity: 0;
       height: 0;
       transition: none;
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -64,7 +64,6 @@ function IntraPage() {
 
   useEffect(() => {
     const anchors = document.querySelectorAll(".main-content > a");
-    console.log(anchors);
     if (anchors) {
       setContents(
         Array.from(anchors).map((a) => ({

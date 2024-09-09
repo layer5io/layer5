@@ -21,7 +21,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import useHasMounted from "../../../utils/useHasMounted";
 
-const Banner1 = (props) => {
+const Banner4 = (props) => {
 
   const { heroImage } = useStaticQuery(
     graphql`
@@ -114,4 +114,4 @@ const Banner1 = (props) => {
   );
 };
 
-export default Banner1;
+export default Banner4;
