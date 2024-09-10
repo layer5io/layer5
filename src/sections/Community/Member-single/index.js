@@ -22,7 +22,7 @@ import writerIcon from "../../../assets/images/writer-program/writer-program-bad
 import docsLogo from "../../../assets/images/docs/docs.svg";
 import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
-import meshMapLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import Button from "../../../reusecore/Button";
 import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
@@ -198,7 +198,7 @@ const MemberSingle = ({ frontmatter }) => {
                             <Link to="/kanvas">
                               <img
                                 className="profile-social-links"
-                                src={meshMapLogo}
+                                src={KanvasLogo}
                                 alt="Kanvas Logo"
                               />
                             </Link>
