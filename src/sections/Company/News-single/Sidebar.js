@@ -111,10 +111,10 @@ const NewsSidebar = (props) => {
           <p>press@layer5.io</p>
         </div>
       </a>
-      <Link to="/meshmap">
+      <Link to="/kanvas">
         <div className="cta">
           <h4 className="cta_heading">
-        MeshMap
+        Kanvas
           </h4>
           <div className="cta_body">
             <h3 className="cta_heading-heading">
@@ -123,7 +123,7 @@ const NewsSidebar = (props) => {
             <div className="chapter-link">
               <Button primary title="Try Now!"
                 className="btn"
-                url="/meshmap"
+                url="/kanvas"
                 external={false} />
             </div>
           </div>

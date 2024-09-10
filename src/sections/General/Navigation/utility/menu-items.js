@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/meshmap",
+      path: "/cloud-native-management/kanvas",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -24,7 +24,7 @@ const Data = {
         },
         {
           name: "Collaborative GitOps",
-          path: "/cloud-native-management/meshmap/collaborate",
+          path: "/cloud-native-management/kanvas/collaborate",
           sepLine: true
         },
         {
@@ -89,12 +89,12 @@ const Data = {
           sepLine: true
         },
         {
-          name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
+          name: "Kanvas",
+          path: "/cloud-native-management/kanvas",
         },
         // {
         //   name: "---",
-        //   // path: "/cloud-native-management/meshmap",
+        //   // path: "/cloud-native-management/kanvas",
 
         // },
         {

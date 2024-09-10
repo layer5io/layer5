@@ -365,7 +365,7 @@ const Writers = () => {
                   <li>
                     <p>
                       Creating and Deploying your first application with
-                      MeshMap.
+                      Kanvas.
                     </p>
                   </li>
                   <li>
