@@ -58,43 +58,43 @@ const MeshMarkBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkDark} alt="MeshmarkDark Logo"/>
+                <img src={MeshmarkDark} alt="MeshmarkDark Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo"/>
+                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo" loading="lazy" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLight} alt="MeshmarkLightLogo"/>
+                  <img src={MeshmarkLight} alt="MeshmarkLightLogo" loading="lazy" />
                 </div>
               </Col>
             </Row>
             <Row Vcenter className="ImgDiv MeshMark-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo"/>
+                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo"/>
+                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo" loading="lazy" />
                 </div>
               </Col>
               <Col xs={12} sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo"/>
+                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo" loading="lazy" />
                 </div>
               </Col>
             </Row>
             <Row Vcenter className="ImgDiv smp-logo">
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
+                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
+                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
+                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo" loading="lazy" />
               </Col>
             </Row>
           </SRLWrapper>

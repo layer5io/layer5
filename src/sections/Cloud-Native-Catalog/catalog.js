@@ -137,7 +137,7 @@ const Catalog = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
+              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" loading="lazy" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -158,14 +158,14 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Patterns} className="calalog-image" />
+              <img src={Patterns} className="calalog-image" loading="lazy" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Wasm} className="calalog-image" />
+              <img src={Wasm} className="calalog-image" loading="lazy" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -202,7 +202,7 @@ const Catalog = () => {
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Opa} className="calalog-image" />
+              <img src={Opa} className="calalog-image" loading="lazy" />
             </div>
           </Col>
         </Row>

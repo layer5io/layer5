@@ -41,7 +41,7 @@ const PositionApply = () => {
     <PositionApplyWrapper>
       <div className="apply-now">
         <div className="apply">
-          <img src={job_icon} alt="job-icon" className="pos-logo"/>
+          <img src={job_icon} alt="job-icon" className="pos-logo" loading="lazy" />
           <h5>How to Apply</h5>
         </div>
         <p>Submit your resume and a short cover letter to:

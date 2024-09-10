@@ -77,7 +77,7 @@ const PerformanceCTA = ({ category }) => {
       <Container>
         <div className="CTAbody">
           <div>
-            <img className="logo" src={SMPLogo} />
+            <img className="logo" src={SMPLogo} loading="lazy" />
           </div>
           <div className="text">
             <h2><span>Cloud Native Performance</span></h2>

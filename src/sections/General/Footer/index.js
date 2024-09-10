@@ -77,12 +77,13 @@ const Footer = ({ location }) => {
         className="section__particle"
         src={bubblesElement}
         alt="Layer5, the cloud native management company"
+        loading="lazy"
       />
       <Container>
         <Row className="footer-head">
           <Col className="footer_logo-icons" sm={3}>
             <Link to="/">
-              <img src={logo} className="footer-logo" alt="logo" />
+              <img src={logo} className="footer-logo" alt="logo" loading="lazy" />
             </Link>
           </Col>
           <Col className="footer_logo-icons" sm={9}>

@@ -74,12 +74,12 @@ const MesheryOperatorPage = () => {
               >
                 <div>
                   <a href={Deployment}>
-                    <img className="logo" src={Deployment} />
+                    <img className="logo" src={Deployment} loading="lazy" />
                   </a>
                 </div>
                 <div>
                   <a href={Initialization}>
-                    <img className="logo" src={Initialization} />
+                    <img className="logo" src={Initialization} loading="lazy" />
                   </a>
                 </div>
               </Slider>

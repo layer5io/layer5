@@ -68,7 +68,7 @@ const FeaturesSection = () => {
             <Col xs={12} xl={8} className="smp-section-caraousel">
               <Slider {...settings}>
                 <div>
-                  <img src={Slide1} alt="Slide 1" />
+                  <img src={Slide1} alt="Slide 1" loading="lazy" />
                 </div>
                 <div>
                   <StaticImage src={slide2Path} alt="Slide 2" loading="lazy" />

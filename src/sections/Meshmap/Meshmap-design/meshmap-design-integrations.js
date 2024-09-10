@@ -131,7 +131,7 @@ const MeshmapIntegrationsSection = () => {
           </h1>
         </div>
         <div>
-          <img className="underline-img" src={UnderlineImg} />
+          <img className="underline-img" src={UnderlineImg} loading="lazy" />
         </div>
         <div>
           <h4>

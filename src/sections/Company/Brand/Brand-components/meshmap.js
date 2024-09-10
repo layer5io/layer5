@@ -52,13 +52,13 @@ const MeshMapBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
               <Col xs={12} sm={4}>
-                <img src={MeshMap} alt="MeshMap Logo"/>
+                <img src={MeshMap} alt="MeshMap Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapIcon} alt="MeshMapLight Icon"/>
+                <img src={MeshMapIcon} alt="MeshMapLight Icon" loading="lazy" />
               </Col>
               <Col xs={12} sm={4}>
-                <img src={MeshMapTitle} alt="MeshMapTitle Text"/>
+                <img src={MeshMapTitle} alt="MeshMapTitle Text" loading="lazy" />
               </Col>
             </Row>
           </SRLWrapper>

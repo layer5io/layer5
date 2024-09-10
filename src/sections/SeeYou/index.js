@@ -18,22 +18,22 @@ const SeeYou = () => {
         Take the work out of teamwork.
         </div>
         <div >
-          <img className={"square"} src={square} alt={""}/>
+          <img className={"square"} src={square} alt={""} loading="lazy"/>
         </div>
         <div >
-          <img className={"pentagon"} src={pentagon} alt={""}/>
+          <img className={"pentagon"} src={pentagon} alt={""} loading="lazy"/>
         </div>
         <div >
-          <img className={"hexagon"} src={hexagon} alt={""}/>
+          <img className={"hexagon"} src={hexagon} alt={""} loading="lazy"/>
         </div>
         <div >
-          <img className={"heptagon"} src={octagon} alt={""}/>
+          <img className={"heptagon"} src={octagon} alt={""} loading="lazy"/>
         </div>
         <div >
-          <img className={"cursor_1"} src={cursor_1} alt={""}/>
+          <img className={"cursor_1"} src={cursor_1} alt={""} loading="lazy"/>
         </div>
         <div >
-          <img className={"cursor_2"} src={cursor_2} alt={""}/>
+          <img className={"cursor_2"} src={cursor_2} alt={""} loading="lazy"/>
         </div>
 
         <div>

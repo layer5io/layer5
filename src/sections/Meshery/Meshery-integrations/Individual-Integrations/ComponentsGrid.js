@@ -46,7 +46,7 @@ const ComponentsGrid = ({ frontmatter }) => {
         {validComponents.map((item) => (
           <div key={item.id} className="maincontainer">
             <div className="componentimg">
-              <img src={item.colorIcon.publicURL} alt={item.name} />
+              <img src={item.colorIcon.publicURL} alt={item.name} loading="lazy" />
             </div>
             <p className="items">{item.name.replaceAll("-", " ")}</p>
             {/* <div className="textcontent">

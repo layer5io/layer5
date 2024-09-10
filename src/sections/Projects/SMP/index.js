@@ -69,7 +69,7 @@ const SMPPage = () => {
             <h3>SMP is a collaborative effort of Layer5, UT Austin, Intel, Red Hat, HashiCorp, Google and The Linux Foundation.</h3>
             <Row>
               <Col lg={6}>
-                <img src={example} className="smp-example" alt="example: smp in action"></img>
+                <img src={example} className="smp-example" alt="example: smp in action" loading="lazy"></img>
               </Col>
               <Col className="features" lg={6}>
                 <h1> SMP accounts for details of:</h1>

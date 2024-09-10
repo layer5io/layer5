@@ -102,7 +102,7 @@ const CTA_FullWidth = ({ alt, button_text, category, content, external_link, ima
     <CTA_FullWidthWrapper {...props}>
       { category ? (
         <>
-          <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
+          <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} loading="lazy" />
           <div className="cta-content">
             <div>
               <h3>{Categories[category]["Heading"]}</h3>
@@ -113,7 +113,7 @@ const CTA_FullWidth = ({ alt, button_text, category, content, external_link, ima
         </>
       ) : (
         <>
-          <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
+          <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} loading="lazy" />
           <div className="cta-content">
             <div>
               <h3>{heading ? heading : defaultHeading}</h3>

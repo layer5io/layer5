@@ -92,7 +92,7 @@ const PlaygroundFeatures = () => {
           </Button>
         </div>
         <div className="feature-image" style={{ scale: "1" }}>
-          <img src={whiteboard_svg} />
+          <img src={whiteboard_svg} loading="lazy" />
         </div>
       </div>
 
@@ -105,7 +105,7 @@ const PlaygroundFeatures = () => {
           </Button>
         </div>
         <div className="feature-image" style={{ scale: "1" }}>
-          <img src={comments_svg} />
+          <img src={comments_svg} loading="lazy" />
         </div>
       </div>
 

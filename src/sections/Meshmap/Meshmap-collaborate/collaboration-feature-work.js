@@ -75,7 +75,7 @@ const CollaborationFeatureWork = () => {
   return (
     <CollaborationFeatureWrapper>
       <div className="world-image">
-        <img className={imageInView ? "visible" : ""} src={WorldImg} alt="" ref={locatorRef} />
+        <img className={imageInView ? "visible" : ""} src={WorldImg} alt="" ref={locatorRef} loading="lazy" />
         {/* <img className={imageInView ? "visible" : ""} src={World1} alt="" ref={locatorRef} />
         <img className={imageInView ? "visible" : ""} src={World2} alt="" ref={locatorRef} />
         <img className={imageInView ? "visible" : ""} src={World3} alt="" ref={locatorRef} />

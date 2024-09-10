@@ -54,12 +54,12 @@ const ImageHubPage = () => {
             >
               <div>
                 <a href={imagehubslider1}>
-                  <img src={imagehubslider1} alt="Consul Service Mesh Architecture" />
+                  <img src={imagehubslider1} alt="Consul Service Mesh Architecture" loading="lazy" />
                 </a>
               </div>
               <div>
                 <a href={imagehubslider2}>
-                  <img src={imagehubslider2} alt="Image Hub on Consul with WASM and Meshery" />
+                  <img src={imagehubslider2} alt="Image Hub on Consul with WASM and Meshery" loading="lazy" />
                 </a>
               </div>
             </Slider>

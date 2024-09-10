@@ -41,9 +41,9 @@ const Table = () => {
                       <span {...column.getSortByToggleProps()}>
                         {column.isSorted
                           ? column.isSortedDesc
-                            ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
-                            : <img className="service-mesh-icon" src={upicon} alt="up icon" />
-                          : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
+                            ? <img className="service-mesh-icon" src={downicon} alt="down icon" loading="lazy" />
+                            : <img className="service-mesh-icon" src={upicon} alt="up icon" loading="lazy" />
+                          : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" loading="lazy" />}
                       </span>
                       : <>
                       </>}

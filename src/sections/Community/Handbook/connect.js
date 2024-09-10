@@ -249,7 +249,7 @@ const Connect = () => {
                 <a href="https://twitter.com/smp_spec">@smp_spec</a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={mail_icon} alt="mail" />
+                <img className="channels-img" src={mail_icon} alt="mail" loading="lazy" />
                 &nbsp;&nbsp;
                 <a href="mailto:community-managers@layer5.io">
                   Connect with our community managers for any inquiries or
@@ -261,6 +261,7 @@ const Connect = () => {
                   className="channels-img"
                   src={youtube_icon}
                   alt="youtube"
+                  loading="lazy"
                 />
                 &nbsp;&nbsp;
                 <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">
@@ -268,7 +269,7 @@ const Connect = () => {
                 </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={github_icon} alt="github" />
+                <img className="channels-img" src={github_icon} alt="github" loading="lazy" />
                 &nbsp;&nbsp;
                 <a href="https://github.com/layer5io">
                   Discover our projects on GitHub
@@ -279,6 +280,7 @@ const Connect = () => {
                   className="channels-img"
                   src={linkedin_icon}
                   alt="linkedin"
+                  loading="lazy"
                 />
                 &nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/layer5">
@@ -286,14 +288,14 @@ const Connect = () => {
                 </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={docker_icon} alt="docker" />
+                <img className="channels-img" src={docker_icon} alt="docker" loading="lazy" />
                 &nbsp;&nbsp;
                 <a href="https://hub.docker.com/u/layer5/">
                   Take control with Docker deployment
                 </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={slack_icon} alt="slack" />
+                <img className="channels-img" src={slack_icon} alt="slack" loading="lazy" />
                 &nbsp;&nbsp;
                 <a href="https://slack.layer5.io/">
                   Communicate and collaborate with us on Slack

@@ -44,13 +44,13 @@ const MeshMasterBrand = () => {
         <SRLWrapper>
           <Row Vcenter className="ImgDiv">
             <Col xs={12} sm={4}>
-              <img src={MeshMasterFull} alt="Meshmaster Full Logo"/>
+              <img src={MeshMasterFull} alt="Meshmaster Full Logo" loading="lazy" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshMasterIcon} alt="Meshmaster Icon"/>
+              <img src={MeshMasterIcon} alt="Meshmaster Icon" loading="lazy" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshMasterText} alt="Meshmaster Text"/>
+              <img src={MeshMasterText} alt="Meshmaster Text" loading="lazy" />
             </Col>
 
           </Row>

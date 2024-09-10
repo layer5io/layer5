@@ -112,7 +112,7 @@ const Maintainer = () => {
                 {" "}
                 <h3>
                   <a href="https://layer5.io/cloud-native-management/meshery">
-                    <img className="project-title-icon" src={meshery} alt="Meshery" />
+                    <img className="project-title-icon" src={meshery} alt="Meshery" loading="lazy" />
                     &nbsp; Meshery
                   </a>
                 </h3>{" "}
@@ -121,8 +121,8 @@ const Maintainer = () => {
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" />
+              <img className="project-description-icon" src={mesheryoperatoricon} alt="Meshery Operator Icon" loading="lazy" /> and MeshSync{" "}
+              <img className="project-description-icon" src={mesherysyncicon} alt="MeshSync icon" loading="lazy" />
               <ul>
                 <li>
                   <h4>
@@ -188,6 +188,7 @@ const Maintainer = () => {
                       className="project-title-icon"
                       alt="cloud native performance"
                       src={servicemeshperformance}
+                      loading="lazy"
                     />
                     &nbsp; Cloud Native Performance{" "}
                   </a>
@@ -215,6 +216,7 @@ const Maintainer = () => {
                       className="project-title-icon"
                       alt="cloud native patterns"
                       src={PatternsLogo}
+                      loading="lazy"
                     />{" "}
                     &nbsp; Cloud Native Patterns{" "}
                   </a>

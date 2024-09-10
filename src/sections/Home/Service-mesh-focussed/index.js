@@ -28,7 +28,7 @@ const ServiceMeshFocused = ({ bookName }) => {
                 <StaticImage src={ServiceMeshFocusedImage} className="book" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
               </Col>
               <Col xs={12} sm={6} lg={6}>
-                <img src={BlockQuoteImage} className="quote-icon filter-mode" alt="Quote from book" />
+                <img src={BlockQuoteImage} className="quote-icon filter-mode" alt="Quote from book" loading="lazy" />
                 <p className="quote">
               "Diverse microservices patterns and technologies, together with the requirements of given microservice applications, provide myriad opportunities for service mesh differentiation and specialization - including meshes native to specific cloud platforms. This will lead to a world where many           enterprises use multiple service mesh products, whether separately or together."
                 </p>
@@ -44,7 +44,7 @@ const ServiceMeshFocused = ({ bookName }) => {
                 <StaticImage src={ServiceMeshPatternsImage} className="book" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
               </Col>
               <Col xs={12} sm={6} lg={6}>
-                <img src={BlockQuoteImage} className="quote-icon filter-mode" alt="Quote from book" />
+                <img src={BlockQuoteImage} className="quote-icon filter-mode" alt="Quote from book" loading="lazy" />
                 <p className="quote">
               "A service mesh is a layer in your infrastructure that facilitates communication between services… and so much more. Its value is enormous, and the value you derive from one is very much related to what role you play in the design, implementation, and operations of your cloud native applications and infrastructure."
                 </p>

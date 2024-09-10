@@ -36,7 +36,7 @@ const StickFigures = () => {
         </Col>
         <Row Vcenter className="ImgDiv">
           <Col xs={12} className="stick-figure">
-            <img src={SFL} alt="Layer5 Mascot, Five" />
+            <img src={SFL} alt="Layer5 Mascot, Five" loading="lazy" />
           </Col>
         </Row>
       </Row>

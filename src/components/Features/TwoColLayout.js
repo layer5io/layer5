@@ -66,7 +66,7 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
       <Container ref={(el) => (containerRefs.current[0] = el)}>
         <ImageWrapper>
           <Link to="/solutions/architecture-diagram">
-            <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
+            <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" loading="lazy" />
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[0] = el)}>
@@ -74,13 +74,13 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
           <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
             <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
-              <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
+              <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} loading="lazy" />
             </Link>
             <Link aria-label="gcp" className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
-              <img alt="gcp" src={GCPLogo} width={40} />
+              <img alt="gcp" src={GCPLogo} width={40} loading="lazy" />
             </Link>
             <Link aria-label="kubernetes" className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
-              <img alt="kubernetes" src={KubernetesLogo} width={40} />
+              <img alt="kubernetes" src={KubernetesLogo} width={40} loading="lazy" />
             </Link>
           </div>
         </ContentWrapper>
@@ -88,7 +88,7 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
       <Container ref={(el) => (containerRefs.current[1] = el)}>
         <ImageWrapper>
           <Link to="/orchestration-management">
-            <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" />
+            <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" loading="lazy" />
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>

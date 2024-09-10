@@ -46,18 +46,18 @@ const MesheryBrand = () => {
         <SRLWrapper>
           <Row Vcenter className="ImgDiv">
             <Col xs={12} sm={4}>
-              <img src={MeshDarkText} alt="MesheryDark Logo"/>
+              <img src={MeshDarkText} alt="MesheryDark Logo" loading="lazy" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
+              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo" loading="lazy" />
             </Col>
           </Row>
           <Row Vcenter className="ImgDiv">
             <Col xs={12} sm={4}>
-              <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
+              <img src={MeshLogoLightText} alt="MesheryLightText Logo" loading="lazy" />
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshLogoOnly} alt="Meshery Logo" />
+              <img src={MeshLogoOnly} alt="Meshery Logo" loading="lazy" />
             </Col>
           </Row>
         </SRLWrapper>

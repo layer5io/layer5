@@ -52,7 +52,7 @@ const ContactForm = () => {
         >
           <Form className="form" method="post">
             <div className="title">
-              <img className="layer5-logo" src={logo} alt="Layer5 Logo" />
+              <img className="layer5-logo" src={logo} alt="Layer5 Logo" loading="lazy" />
             </div>
             <label htmlFor="firstname" className="form-name">
               First Name <span className="required-sign">*</span>

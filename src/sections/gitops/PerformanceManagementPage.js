@@ -37,7 +37,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
-            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} loading="lazy" />
           </ColumnContainer>
           <ColumnContainer>
             <Heading>A sample configuration of the action</Heading>
@@ -49,7 +49,7 @@ const PerformanceManagementPage = () => {
         <ContentRow>
           <ColumnContainer>
             <GithubLogo className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="meshmap-stack-cone" loading="lazy" />
           </ColumnContainer>
 
           <TextColumn>
@@ -67,7 +67,7 @@ const PerformanceManagementPage = () => {
             <Heading>A sample configuration <br/> of the action</Heading>
           </TextColumn>
           <ColumnContainer >
-            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} loading="lazy" />
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>
@@ -75,7 +75,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
-            <img src={SMPTestconfig} className="code-screenshot" alt="SMPTestconfig" width={605} height={740} />
+            <img src={SMPTestconfig} className="code-screenshot" alt="SMPTestconfig" width={605} height={740} loading="lazy" />
           </ColumnContainer>
           <TextColumn>
             <Heading>Define your test <br /> configuration in an SMP compatible configuration file</Heading>

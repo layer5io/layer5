@@ -7,7 +7,7 @@ const LogoList = ({ logos, className }) => {
       <ul>
         {logos.map((logo) => (
           <li key={logo.url}>
-            <img src={logo.url} alt={logo.alt} />
+            <img src={logo.url} alt={logo.alt} loading="lazy" />
           </li>
         ))}
       </ul>

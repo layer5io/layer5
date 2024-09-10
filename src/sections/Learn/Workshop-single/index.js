@@ -36,27 +36,27 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
           <div className="social-icons">
             {frontmatter.slack && frontmatter.status === "delivered" ?
               <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
-                <img src={Slack} alt="Slack"/>
+                <img src={Slack} alt="Slack" loading="lazy" />
                                 Slack
               </a> : ""}
             {frontmatter.slides && frontmatter.status === "delivered" ?
               <a href={frontmatter.slides} target = "_blank" rel="noreferrer" className="links">
-                <img src={Slide} alt="Slide"/>
+                <img src={Slide} alt="Slide" loading="lazy" />
                                 Slides
               </a> : ""}
             {frontmatter.eurl && frontmatter.status === "delivered" ?
               <a href={frontmatter.eurl} target = "_blank" rel="noreferrer" className="links">
-                <img src={LinkIcon} alt="Link"/>
+                <img src={LinkIcon} alt="Link" loading="lazy" />
                                 Link
               </a> : ""}
             {frontmatter.labs && frontmatter.status === "delivered" ?
               <a href={frontmatter.labs} target = "_blank" rel="noreferrer" className="links">
-                <img src={Lab} alt="Lab"/>
+                <img src={Lab} alt="Lab" loading="lazy" />
                                 Labs
               </a> : ""}
             {frontmatter.video && frontmatter.status === "delivered" ?
               <a href={frontmatter.video} target = "_blank" rel="noreferrer" className="links">
-                <img src={Youtube} alt="Youtube video"/>
+                <img src={Youtube} alt="Youtube video" loading="lazy" />
                                 Video
               </a> : ""}
           </div>

@@ -46,8 +46,8 @@ const HowMesheryWorksSpecs = () => {
           </Col>
         </Row> */}
         <div className="find-kubernetes">
-          <img className="green-bubble" src={GreenBubble} alt="bubble" />
-          <img className="yellow-bubble" src={YellowBubble} alt="bubble" />
+          <img className="green-bubble" src={GreenBubble} alt="bubble" loading="lazy" />
+          <img className="yellow-bubble" src={YellowBubble} alt="bubble" loading="lazy" />
           <div className="content">
             <h3>Assess the Performance and Manage your cloud native infrastructure</h3>
             <p>Ensuring optimal functionality and seamless operations is crucial for all infrastructure.</p>

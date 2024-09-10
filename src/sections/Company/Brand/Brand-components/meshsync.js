@@ -51,10 +51,10 @@ const MeshSyncBrand = () => {
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
               <Col xs={12} sm={4} className="logo">
-                <img src={MeshSync} alt="MeshSync Logo"/>
+                <img src={MeshSync} alt="MeshSync Logo" loading="lazy" />
               </Col>
               <Col xs={12} sm={4} className="logo">
-                <img src={MeshSyncLight} alt="MeshSyncLight Logo"/>
+                <img src={MeshSyncLight} alt="MeshSyncLight Logo" loading="lazy" />
               </Col>
             </Row>
           </SRLWrapper>

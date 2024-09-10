@@ -105,7 +105,7 @@ const InlineQuotes = ({ person, title, quote,image }) => {
         {(image || person || title) && <hr />}
         {
           image &&
-          <img src={image}></img>
+          <img src={image} loading="lazy"></img>
         }
         <div className="quote-source">
           <h5>{person}</h5>

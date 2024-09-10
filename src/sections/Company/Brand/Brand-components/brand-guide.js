@@ -44,7 +44,7 @@ const BrandGuide = () => {
             <Col xs={12}>
               <Row className="bookmarks">
                 <Link to={BrandGuidePDF}>
-                  <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" />
+                  <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" loading="lazy" />
                 </Link>
               </Row>
             </Col>

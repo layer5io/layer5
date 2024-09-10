@@ -144,6 +144,7 @@ const SistentIdentityColor = () => {
               <img
                 src={isDark ? TonalPalleteDark : TonalPallete}
                 alt="Tonal Palette"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -177,7 +178,7 @@ const SistentIdentityColor = () => {
           </p>
           <Row Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
-              <img src={ContextVisuals1} alt="Context Visuals" />
+              <img src={ContextVisuals1} alt="Context Visuals" loading="lazy" />
             </Col>
           </Row>
           <p>
@@ -201,7 +202,7 @@ const SistentIdentityColor = () => {
           </ul>
           <Row Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
-              <img src={ContextVisuals2} alt="Context Visuals" />
+              <img src={ContextVisuals2} alt="Context Visuals" loading="lazy" />
             </Col>
           </Row>
           <a id="Green Color Accessbility">
@@ -229,7 +230,7 @@ const SistentIdentityColor = () => {
           </p>
           <Row Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
-              <img src={ContextVisuals3} alt="Context Visuals" />
+              <img src={ContextVisuals3} alt="Context Visuals" loading="lazy" />
             </Col>
           </Row>
           <h3>Dark Theme</h3>
@@ -240,7 +241,7 @@ const SistentIdentityColor = () => {
           </p>
           <Row Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
-              <img src={ContextVisuals4} alt="Context Visuals" />
+              <img src={ContextVisuals4} alt="Context Visuals" loading="lazy" />
             </Col>
           </Row>
           <p>

@@ -126,7 +126,7 @@ const MeshmapVisualizerViews = () => {
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
           <VisualizerViews className={imageInView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
-          <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
+          <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" loading="lazy" />
         </div>
         <div className="hero-text">
           <h1><span>Discover more with intuitive zoom levels</span></h1>

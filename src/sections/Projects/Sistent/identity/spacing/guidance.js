@@ -104,6 +104,7 @@ export const SpacingGuidance = () => {
               <img
                 src={isDark ? SpaceTokenTable2Dark : SpaceTokenTable2}
                 alt="Space Token Table"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -128,6 +129,7 @@ export const SpacingGuidance = () => {
               <img
                 src={isDark ? SpaceTokenTable3Dark : SpaceTokenTable3}
                 alt="Space Token Table"
+                loading="lazy"
               />
             </Col>
           </Row>

@@ -215,12 +215,12 @@ const CaseStudyBanner = () => {
               <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
             </div>
             <div className="meshery-and-spire">
-              <img src={MesheryAndSpire} alt="meshery-and-spire" />
+              <img src={MesheryAndSpire} alt="meshery-and-spire" loading="lazy" />
             </div>
           </div>
           <div className="large-screen">
             <div className={`left-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={MesheryLogo} alt="meshery-logo" />
+              <img src={MesheryLogo} alt="meshery-logo" loading="lazy" />
             </div>
             <div className={`desc ${hover ? "desc-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
               <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
@@ -229,7 +229,7 @@ const CaseStudyBanner = () => {
               </div>
             </div>
             <div className={`right-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={SpireLogo} alt="spire-logo" />
+              <img src={SpireLogo} alt="spire-logo" loading="lazy" />
             </div>
           </div>
         </BannerWrapper>

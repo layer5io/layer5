@@ -55,7 +55,7 @@ const SMIPage = () => {
                       {feature.services.map((service, index) => (
                         <table className="table" key={index}>
                           <tr>
-                            <td className="icon"><img src={c_icon} /></td>
+                            <td className="icon"><img src={c_icon} loading="lazy" /></td>
                             <td><p>{service.content}</p></td>
                           </tr>
                         </table>
@@ -99,6 +99,7 @@ const SMIPage = () => {
           <div className="smiResults">
             <img src={smiLogo}
               alt="Service Mesh Landscape"
+              loading="lazy"
             />
             <div>
               <p>

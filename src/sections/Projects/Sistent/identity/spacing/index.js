@@ -125,6 +125,7 @@ const SistentIdentitySpacing = () => {
               <img
                 src={isDark ? SpaceTokenTable1Dark : SpaceTokenTable1}
                 alt="Space Token Table"
+                loading="lazy"
               />
             </Col>
           </Row>

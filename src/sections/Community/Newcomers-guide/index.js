@@ -43,7 +43,7 @@ const NewcomersGuide = () => {
               <h2>Contributor's Journey</h2>
               <div className="heading-start">
                 <h4>Start Here</h4>
-                <img className="heading-start__arrow" src={longArrow} />
+                <img className="heading-start__arrow" src={longArrow} loading="lazy" />
               </div>
             </Col>
             <Col sm={12} lg={6}>

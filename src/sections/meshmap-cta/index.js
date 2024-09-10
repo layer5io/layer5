@@ -96,8 +96,8 @@ const MeshMapCTA = () => {
       <Container>
         <div className="CTAbody">
           <div>
-            <img className="rotate" src={Locator} />
-            <img className="surface" src={MesherySurface} />
+            <img className="rotate" src={Locator} loading="lazy" />
+            <img className="surface" src={MesherySurface} loading="lazy" />
           </div>
           <div className="text">
             <h2><span>MeshMap</span> is here!</h2>

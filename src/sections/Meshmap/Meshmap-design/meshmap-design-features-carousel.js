@@ -156,6 +156,7 @@ export default function MeshmapDesignFeatureCarousel() {
                 // // height="90%"
                 style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
                 src={content.img}
+                loading="lazy"
               />
             </div>
           </PopOutCard>

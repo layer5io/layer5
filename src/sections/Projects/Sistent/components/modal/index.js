@@ -92,6 +92,7 @@ export const SistentModal = () => {
                 width="100%"
                 src={isDark ? ConfirmationDarkBg : ConfirmationBg}
                 alt="confirmation"
+                loading="lazy"
               />
             </Col>
           </Row>

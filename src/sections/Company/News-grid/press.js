@@ -92,7 +92,7 @@ const Press = () => {
               <div className="press_card">
                 <h5>Brand Kit</h5>
                 <p>Get our brand, logo assets and more.</p>
-                <img src={FiveIcon} alt="Five Logo" height={30} /> <br />
+                <img src={FiveIcon} alt="Five Logo" height={30} loading="lazy" /> <br />
                 <Link to="/brand">
                   <Button secondary title="Layer5 brand kit" external={true} />
                 </Link>

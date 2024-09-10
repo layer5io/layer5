@@ -49,15 +49,15 @@ const DataCard = () => {
         <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>
-              <img src={List_Icon} alt="Performance Icon" />
+              <img src={List_Icon} alt="Performance Icon" loading="lazy"/>
               <h5>Extensive library of integrations</h5>
             </li>
             <li>
-              <img src={List_Icon} alt="Configuration Icon" />
+              <img src={List_Icon} alt="Configuration Icon" loading="lazy"/>
               <h5>Infrastructure orchestration</h5>
             </li>
             <li>
-              <img src={List_Icon} alt="Performance Icon" />
+              <img src={List_Icon} alt="Performance Icon" loading="lazy"/>
               <h5>Multi-player editing</h5>
             </li>
           </ul>
@@ -65,15 +65,15 @@ const DataCard = () => {
         <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>
-              <img src={List_Icon} alt="Performance Icon" />
+              <img src={List_Icon} alt="Performance Icon" loading="lazy"/>
               <h5>Ready-to-use templates</h5>
             </li>
             <li>
-              <img src={List_Icon} alt="Configuration Icon" />
+              <img src={List_Icon} alt="Configuration Icon" loading="lazy"/>
               <h5>Visual drag & drop</h5>
             </li>
             <li>
-              <img src={List_Icon} alt="Performance Icon" />
+              <img src={List_Icon} alt="Performance Icon" loading="lazy"/>
               <h5>Operate with No Code</h5>
             </li>
           </ul>

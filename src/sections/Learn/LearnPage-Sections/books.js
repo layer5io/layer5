@@ -136,7 +136,7 @@ const BooksSection = () => {
             <div className="books-card" key={id}>
               <Link className="books-page_link" to={fields.slug} >
                 <div className="books-image">
-                  <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                  <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} loading="lazy" />
                 </div>
                 <div className="books-details">
                   <h2>{frontmatter.title}</h2>

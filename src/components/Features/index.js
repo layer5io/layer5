@@ -95,7 +95,7 @@ const Features = (props) => {
           : (<div className="small-card-container">
             {props.redirectLinkWithImage.map((item) => (
               <Link key={item.text} className="small-card" to={item.redirect}>
-                <img src={item.image} width={40} />
+                <img src={item.image} width={40} loading="lazy" />
                 <span>{item.text}</span>
               </Link>
             ))}
@@ -113,18 +113,19 @@ const Features = (props) => {
                 alt=""
                 style={{ position: "absolute" }}
                 className="waveAnimation"
+                loading="lazy"
               />
             )}
-            <img src={getPerson(props.cursor * 2)} alt="" />
+            <img src={getPerson(props.cursor * 2)} alt="" loading="lazy" />
           </SvgRandomWrapper>
           <SvgRandomWrapper
             className="person2"
             style={{ display: props.cursor ? "none" : "" }}
           >
-            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" loading="lazy" />
           </SvgRandomWrapper>
           <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
-            <img src={props.imgLink} alt="image" />
+            <img src={props.imgLink} alt="image" loading="lazy" />
           </Link>
         </ImageWrapper>
       ) : (
@@ -139,18 +140,19 @@ const Features = (props) => {
                 alt=""
                 style={{ position: "absolute" }}
                 className="waveAnimation"
+                loading="lazy"
               />
             )}
-            <img src={getPerson(props.cursor * 2)} alt="" />
+            <img src={getPerson(props.cursor * 2)} alt="" loading="lazy" />
           </SvgRandomWrapper>
           <SvgRandomWrapper
             className="person2"
             style={{ display: props.cursor ? "none" : "" }}
           >
-            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" loading="lazy" />
           </SvgRandomWrapper>
           <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
-            <img src={props.imgLink} alt="image" />
+            <img src={props.imgLink} alt="image" loading="lazy" />
           </Link>
         </ImageWrapperTwo>
       )}

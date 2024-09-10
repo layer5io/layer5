@@ -34,7 +34,7 @@ const SnapshotPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer >
-            <img src={GithubActionComment} className="screenshot" alt="GithubActionComment" width={530} height={375} />
+            <img src={GithubActionComment} className="screenshot" alt="GithubActionComment" width={530} height={375} loading="lazy" />
           </ColumnContainer>
           <ColumnContainer>
             <Heading>See your deployment <br/> before you merge.</Heading>
@@ -53,7 +53,7 @@ const SnapshotPage = () => {
 
           <ColumnContainer>
             <MeshMapStack className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="meshmap-stack-cone" loading="lazy" />
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>

@@ -229,19 +229,19 @@ const MeshmapVisualizerViews = () => {
             <div className="line position-line-down">
               <div className="line-primary animation-down-scroll">
                 <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
+                  <img className="boxImg" src={prometheus} alt="" loading="lazy" />
                   <div>Prometheus</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={argocd} alt="" />
+                  <img className="boxImg" src={argocd} alt="" loading="lazy" />
                   <div className="boxText">Argo CD</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={cilium} alt="" />
+                  <img className="boxImg" src={cilium} alt="" loading="lazy" />
                   <div>Cilium</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
+                  <img className="boxImg" src={prometheus} alt="" loading="lazy" />
                   <div>Prometheus</div>
                 </div>
               </div>
@@ -250,19 +250,19 @@ const MeshmapVisualizerViews = () => {
             <div className="line position-line-up">
               <div className="line-primary animation-up-scroll">
                 <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
+                  <img className="boxImg" src={kubernetes} alt="" loading="lazy" />
                   <div>Kubernetes</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={keda} alt="" />
+                  <img className="boxImg" src={keda} alt="" loading="lazy" />
                   <div>Keda</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={linkerd} alt="" />
+                  <img className="boxImg" src={linkerd} alt="" loading="lazy" />
                   <div>Linkerd</div>
                 </div>
                 <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
+                  <img className="boxImg" src={kubernetes} alt="" loading="lazy" />
                   <div>Kubernetes</div>
                 </div>
               </div>

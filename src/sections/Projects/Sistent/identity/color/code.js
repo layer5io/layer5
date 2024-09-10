@@ -95,6 +95,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? BrandColorsDark : BrandColors}
                 alt="Brand colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -105,6 +106,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? GreyscaleColorsDark : GreyscaleColors}
                 alt="Greyscale colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -115,6 +117,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? FunctionColorsDark : FunctionColors}
                 alt="Function colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -133,6 +136,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? BgColorsDark : BgColors}
                 alt="Background colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -143,6 +147,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? TextColorsDark : TextColors}
                 alt="Text colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -153,6 +158,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? BorderColorsDark : BorderColors}
                 alt="Border colors"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -167,6 +173,7 @@ const ColorCode = () => {
                 width="100%"
                 src={isDark ? ComponentColorsDark : ComponentColors}
                 alt="Border colors"
+                loading="lazy"
               />
             </Col>
           </Row>
