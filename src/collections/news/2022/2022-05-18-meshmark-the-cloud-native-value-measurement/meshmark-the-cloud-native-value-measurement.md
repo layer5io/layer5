@@ -18,7 +18,7 @@ published: true
 ---
 import { Link } from "gatsby";
 import Formula from "./MeshMark-Formula.webp";
-import KanvasMeshmark from "./meshmark-score.webp";
+import MeshMapMeshmark from "./meshmark-score.webp";
 import { NewsWrapper } from "../../News.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
 import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
@@ -39,7 +39,7 @@ VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU - <a href="http
 A wall of performance metrics causes confusion, not clarity.
 </p>
 
-<img src={KanvasMeshmark} alt="MeshMark in Layer5 Kanvas" width="40%"/>
+<img src={MeshMapMeshmark} alt="MeshMark in Layer5 MeshMap" width="40%"/>
 
 <p>
 By specifying a uniform way to analyze and report on the degree to which measured performance provides business value, MeshMark converts these metrics into insights about the efficiency and value of the functions your cloud native infrastructure is providing to your applications and services.
