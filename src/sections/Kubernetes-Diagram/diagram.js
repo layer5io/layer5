@@ -160,7 +160,7 @@ const Kubernetes = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Deploy  with No Code Kubernetes</h2>
             <p className="caption">
-              Our visual Kubernetes interface enables anyone to deploy production-grade software with no code. Whether you're new to Kubernetes and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software using the industry-leading container orchestrator, all with no code.            </p>
+              Our visual Kubernetes interface enables anyone to deploy production-grade software with no code. Whether you're new to Kubernetes and are looking for the best way to learn or a seasoned pro, Kanvas has all the features you need to be successful in deploying and configuring your software using the industry-leading container orchestrator, all with no code.            </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
@@ -177,9 +177,9 @@ const Kubernetes = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Visual drag & drop</h2>
             <p className="caption">
-              Instantly search for and find any integration that CNCF supports and drop on the canvas to create your cloud native infrastructure. MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+              Instantly search for and find any integration that CNCF supports and drop on the canvas to create your cloud native infrastructure. Kanvas allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -198,7 +198,7 @@ const Kubernetes = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with MeshMap" className="kubernetes-image" />
+              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with Kanvas" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">

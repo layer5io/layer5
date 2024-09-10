@@ -21,7 +21,7 @@ const Footer = ({ location }) => {
       "/blog",
       "/careers",
       "/meshery",
-      "/meshmap",
+      "/kanvas",
       "/community",
       "/handbook",
       "projects",
@@ -215,9 +215,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/meshmap"
+                      to="/cloud-native-management/kanvas"
                     >
-                      MeshMap
+                      Kanvas
                       <span className="new-label">NEW</span>
                     </Link>
                   </li>

@@ -10,7 +10,7 @@ import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 
 const SecurityVulnerabilitiesPage = () => {
   return (
@@ -88,10 +88,10 @@ const SecurityVulnerabilitiesPage = () => {
                   &nbsp; Layer5 Labs
                 </a>
                   - emerging projects and Meshery extensions, like                 <img
-                  src={MeshMap}
-                  alt="MeshMap logo"
+                  src={Kanvas}
+                  alt="Kanvas logo"
                   style={{ marginLeft: ".3rem" }}
-                />MeshMap.
+                />Kanvas.
               </li>
             </ul>
             <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>

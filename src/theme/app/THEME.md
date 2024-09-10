@@ -87,7 +87,7 @@ OR
 
 - SVG or image uses transparent sections that change with the background color to work with either theme.
 
-[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg)
+[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg)
 
 [Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.webp)
 
@@ -191,7 +191,7 @@ If possibe we wish to avoid using images dependent on the theme because we are r
 
 1. To change images or SVG as the image source, according to the theme, you have to import the hook `useStyledDarkMode` from the following [folder](https://github.com/layer5io/layer5/blob/master/src/theme/app/useStyledDarkMode.js), and then use the `isDark` value from `useStyledDarkMode` hook for the conditional.
 
-For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Meshmap/Meshmap-collaborate/meshmap-collaborate-banner.js).
+For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Kanvas/Kanvas-collaborate/kanvas-collaborate-banner.js).
 
 Here are the relevant parts of the code:
 

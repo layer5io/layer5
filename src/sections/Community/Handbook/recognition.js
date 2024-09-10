@@ -16,7 +16,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
-import meshmapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
 import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
@@ -32,7 +32,7 @@ import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-c
 import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
 import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
 import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
-import MeshmapSnapshotLogo from "../../../assets/images/meshmap-snapshot/meshmap-snapshot.svg";
+import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
 import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
 
 const contents = [
@@ -162,8 +162,8 @@ const RecognitionPage = () => {
                 <b>Review Rockstar</b> - awarded to individuals who provide thorough and valuable code reviews.
               </li>
               <li>
-                <img src={MeshmapSnapshotLogo} style={badgeStyle} />
-                <b>MeshMap Snapshot</b> - awarded to users upon creation of their first infrastructure screenshot directly in their pull request.
+                <img src={KanvasSnapshotLogo} style={badgeStyle} />
+                <b>Kanvas Snapshot</b> - awarded to users upon creation of their first infrastructure screenshot directly in their pull request.
               </li>
               <li>
                 <img src={ContinuousContributorLogo} style={badgeStyle} />
@@ -175,8 +175,8 @@ const RecognitionPage = () => {
                 <b>Image Hub</b> - awarded to the community members who make consistent and impactful contributions to the Image Hub project in recognition and appreciation of their efforts.
               </li>
               <li>
-                <img src={meshmapLogo} style={badgeStyle} />
-                <b>MeshMap</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/meshmap">MeshMap</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
+                <img src={kanvasLogo} style={badgeStyle} />
+                <b>Kanvas</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/kanvas">Kanvas</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={ServiceMeshPerformance} style={badgeStyle} />

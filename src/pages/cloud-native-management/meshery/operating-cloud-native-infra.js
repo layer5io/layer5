@@ -58,12 +58,12 @@ const OperatingServiceMeshes = () => {
             ),
           },
           {
-            title: "MeshMap",
+            title: "Kanvas",
             icon: VisualTopology,
             description: (
               <div>
                 <p>
-                  MeshMap enables all cloud native management operations from
+                  Kanvas enables all cloud native management operations from
                   `mesheryctl` to Meshery's web-based user interface in visually
                   interactive topology.
                 </p>
@@ -73,8 +73,8 @@ const OperatingServiceMeshes = () => {
                 </p>
                 <p>
                   Learn more about{" "}
-                  <a href="https://layer5.io/cloud-native-management/meshmap">
-                    MeshMap
+                  <a href="https://layer5.io/cloud-native-management/kanvas">
+                    Kanvas
                   </a>
                 </p>
               </div>

@@ -13,6 +13,6 @@ const Gcp = () => {
 export default Gcp;
 export const Head = () => {
   return <SEO title="GCP Architecture Diagram"
-    description="Create your own Google Cloud Platform diagrams with Meshmap."
+    description="Create your own Google Cloud Platform diagrams with Kanvas."
     image="/images/meshery-logo-dark-text.webp" />;
 };

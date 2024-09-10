@@ -12,7 +12,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 
 import { Link } from "gatsby";
 
@@ -116,10 +116,10 @@ const Repository = () => {
                 </a>
                   - emerging projects and Meshery extensions, like
                 <img
-                  src={MeshMap}
-                  alt="MeshMap logo"
+                  src={Kanvas}
+                  alt="Kanvas logo"
                   style={{ height: "1.5rem" }}
-                /> MeshMap.
+                /> Kanvas.
               </li>
             </ul>
 
