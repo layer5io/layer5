@@ -14,7 +14,7 @@ const Projects = () => {
   const projectImage2_dark = "../../../assets/images/app/projects/smp.webp";
   const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
   const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
-  const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+  const kanvasLogo = "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
   if (!didLoad){
     return null;
   }
@@ -38,10 +38,10 @@ const Projects = () => {
         <Row>
           <div className="project__block__wrap">
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/cloud-native-management/meshmap">
+              <Link className="project-card" to="/cloud-native-management/kanvas">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
-                  <p>MeshMap</p>
+                  <StaticImage loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
+                  <p>Kanvas</p>
                   <h3>Collaborative GitOps</h3>
                   {/* <h3>Multiplayer Kubernetes by Design</h3> */}
                 </div>

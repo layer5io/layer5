@@ -204,7 +204,7 @@ const ViewsSectionWrapper = styled.div`
 
 `;
 
-const MeshmapVisualizerViews = () => {
+const KanvasVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.3 });
   const [imageInView, setimageInView] = useState(false);
 
@@ -290,4 +290,4 @@ const MeshmapVisualizerViews = () => {
   );
 };
 
-export default MeshmapVisualizerViews;
+export default KanvasVisualizerViews;
