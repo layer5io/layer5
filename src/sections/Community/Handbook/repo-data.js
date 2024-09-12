@@ -83,9 +83,9 @@ export const repo_data = [
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
-        project: "MeshMap",
+        project: "Kanvas",
         image: meshery,
-        site: "/cloud-native-management/meshmap",
+        site: "/cloud-native-management/kanvas",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],

@@ -108,8 +108,8 @@ export const ProjectWrapper = styled.div`
       margin-left: 2rem;
     }
   }
-  //MeshMap
-  .project__card-container_meshmap {
+  //Kanvas
+  .project__card-container_kanvas {
     justify-content: center;
     align-items: center;
     img {

@@ -21,7 +21,7 @@ const MesheryQuotesWrapper = styled.div`
 //   {
 //     name: "Jason S.",
 //     position: "Site Reliability Engineer",
-//     quote: "Huge fan of MeshMap. It doesn't get any more intuitive than this."
+//     quote: "Huge fan of Kanvas. It doesn't get any more intuitive than this."
 //   },
 //   {
 //     name: "Shane W.",

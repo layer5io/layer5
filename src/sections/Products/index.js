@@ -10,7 +10,7 @@ import codicon from "./images/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
@@ -146,7 +146,7 @@ const options = [
       {
         id: 4,
         category: "Traffic Replay",
-        description: "Visual event replay in MeshMap",
+        description: "Visual event replay in Kanvas",
       },
       {
         id: 5,
@@ -160,12 +160,12 @@ const options = [
 const CardsData = [
   {
     id: 1,
-    logo: meshmap,
-    title: "MeshMap",
+    logo: kanvas,
+    title: "Kanvas",
     icon: [codicon, desktop],
     text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native infrastucture.",
     //as there is no soluton page.
-    url: "/cloud-native-management/meshmap"
+    url: "/cloud-native-management/kanvas"
   },
   {
     id: 2,

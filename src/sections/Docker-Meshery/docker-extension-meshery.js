@@ -27,7 +27,7 @@ const DockerExtensionMeshery = () => {
             Wrangle cloud native apps using Docker Desktop and Meshery
           </h2>
           <p>
-          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
+          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, Kanvas, to collaboratively design and operate your infra.
           </p>
         </Row>
         <Row>
@@ -58,7 +58,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                Using <Link to="/cloud-native-management/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
+                Using <Link to="/cloud-native-management/kanvas">Kanvas</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
