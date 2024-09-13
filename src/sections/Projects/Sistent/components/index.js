@@ -30,6 +30,13 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Data Table",
+    description:
+      "A select input is a form element that allows users to select one option from a list of options.",
+    url: "/projects/sistent/components/table",
+  }
 ];
 
 const SistentComponents = () => {
