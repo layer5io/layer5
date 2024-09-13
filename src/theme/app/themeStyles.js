@@ -240,7 +240,7 @@ export const darktheme = {
   scrollbarColor: "#00d3a9",
 
   // white
-  primaryColor: "#FFFFFF",
+  primaryColor: "#00d3a9",
 
   // silver chalice (light gray)
   primaryLightColor: "#2C2C2C",
@@ -265,14 +265,14 @@ export const darktheme = {
   // Teal Blue
   tertiaryColorTwo: "#477E96",
 
-  headingColor: "#000000",
+  headingColor: "#111111",
 
   // light slate gray (medium gray)
-  textColor: "#000000",
+  textColor: "#ffffff",
   shadowColor: "rgba(255, 255, 255, 0.05)",
 
   // platinum (light gray)
-  shadowLightColor: "#E6E6E6",
+  shadowLightColor: "#333333",
 
   // dark gray
   shadowDarkColor: "#484848",
