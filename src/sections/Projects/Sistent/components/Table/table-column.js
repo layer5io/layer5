@@ -8,7 +8,7 @@ export const basicData = [
 ];
 
 export const basicOptions = {
-  filterType: "checkbox",
+  selectableRows: "none",
 };
 
 export const customColumns = [

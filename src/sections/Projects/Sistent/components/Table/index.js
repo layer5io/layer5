@@ -4,11 +4,16 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import { ResponsiveDataTable, SistentThemeProviderWithoutBaseLine } from "@layer5/sistent";
+import { ResponsiveDataTable, SistentThemeProvider } from "@layer5/sistent";
 import { basicColumns, basicData, basicOptions, customColumns, customData, options } from "./table-column";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { useState } from "react";
 
 export const DataTable = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
+  const [tableCols, updateCols] = useState(basicColumns);
+  const [customTableCols, updateCustomCols] = useState(customColumns);
   return (
     <SistentLayout title="Table">
       <div className="content">
@@ -63,25 +68,30 @@ export const DataTable = () => {
           <p>
             A simple example of a table with three columns: Name, Type, and Description.
           </p>
-          <SistentThemeProviderWithoutBaseLine>
+          <SistentThemeProvider  initialMode={isDark ? "dark" : "light"} >
             <ResponsiveDataTable
               columns={basicColumns}
               data={basicData}
               options={basicOptions}
+              tableCols={tableCols}
+              updateCols={updateCols}
             />
-          </SistentThemeProviderWithoutBaseLine>
+          </SistentThemeProvider>
 
-          <h3>With customized columns</h3>
+          <h3>Sorting and Columns Visibility</h3>
           <p>
             A table with customized columns. Here data can be sorted and filtered.
+            This example demonstrates the use of Checkbox and clickable rows for selection, with a custom Toolbar.
           </p>
-          <SistentThemeProviderWithoutBaseLine>
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <ResponsiveDataTable
               columns={customColumns}
               data={customData}
               options={options}
+              tableCols={customTableCols}
+              updateCols={updateCustomCols}
             />
-          </SistentThemeProviderWithoutBaseLine>
+          </SistentThemeProvider>
 
         </div>
       </div>
