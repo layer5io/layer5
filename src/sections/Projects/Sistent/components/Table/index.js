@@ -3,11 +3,12 @@ import React from "react";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
 import { ResponsiveDataTable, SistentThemeProviderWithoutBaseLine } from "@layer5/sistent";
 import { basicColumns, basicData, basicOptions, customColumns, customData, options } from "./table-column";
 
 export const DataTable = () => {
-
+  const location = useLocation();
   return (
     <SistentLayout title="Table">
       <div className="content">
