@@ -15,6 +15,10 @@ export const SearchWrapper = styled.div`
       border-radius: 5px;
       border: 1px solid ${(props) => props.theme.headingColor};
       background-color: ${(props) => props.theme.shadowLightColor};
+      
+      /*Changes color for the text*/
+      color: ${(props) => props.theme.textColor};
+
       &:focus {
         /* border-color: ${(props) => props.theme.primaryColor}; */
         border-color: #fff;
