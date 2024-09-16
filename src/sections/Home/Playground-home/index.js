@@ -270,21 +270,6 @@ const ViewsSectionWrapper = styled.div`
       margin-top: 1rem;
       text-align: center;
     }
-
-    // @media only screen and (max-width: 700px) {
-    //   .hero-image {
-    //     display: none; 
-    //   }
-    //   .views-section {
-    //     padding: 2rem 2rem 0 2rem;
-    //     height: auto;
-    //   }
-    //   .small-card-container {
-    //     display: flex;
-    //     justify-content: center;
-    //   }
-    // }
-
 `;
 
 const MeshmapVisualizerViews = () => {
