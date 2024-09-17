@@ -38,7 +38,6 @@ const ViewsSectionWrapper = styled.div`
     align-items: center;
     padding: 0 5% 0 0;
     box-sizing: border-box;
-    //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     overflow: hidden;
 
@@ -64,7 +63,6 @@ const ViewsSectionWrapper = styled.div`
     }
 
     h2 {
-        /* max-width: 90%; */
         padding-bottom: 2%;
       }
     }
@@ -110,11 +108,6 @@ const ViewsSectionWrapper = styled.div`
         }
 
     }
-
-    // .overlay {
-    //     width: 483px;
-    //     height: 680px;
-    // }
 
     .container {
       display: flex;
@@ -291,16 +284,10 @@ const MeshmapVisualizerViews = () => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
-            src={CommentingImageDark}
-            alt=""
-          /> */}
           <div
             className={
               imageInView ? "visible container" : "not-visible container"
             }
-            // className="visible container"
           >
             <div className="line position-line-down-left animation-left-scroll">
               <div className="line-primary animation-down-scroll">
