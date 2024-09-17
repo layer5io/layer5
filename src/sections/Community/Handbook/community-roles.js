@@ -224,16 +224,16 @@ const CommunityGuide = () => {
               Understands the workflow of the Issues and Pull Requests
             </label>
             <a id="ReleaseManager">
-              <h2 style="color: #2c3e50;">Release Manager Role</h2>
+              <h2>Release Manager Role</h2>
             </a>
 
             <p>
               The role of release manager for a release lasts a total of about 6 months. This is divided up among activities before the initial release comes out and activities after the initial release while the release is within active maintenance. The majority of the time is spent in the month before the first release. After that, there is 6 months of time during which point releases come out on approximately a 3 week cycle. During three of these months, the release manager is working on the latest release. This 6 month time period is divided into two sections. In the first three months, this is the primary release and all fixes get cherry-picked from master here. After 3 months, the next release of the Meshery project comes out and there are three more months of support before this release goes to the end of life.
             </p>
 
-            <h3 style="color: #3498db;">Responsibilities</h3>
+            <h3 >Responsibilities</h3>
 
-            <h4 style="color: #2980b9;">Before Release</h4>
+            <h4>Before Release</h4>
             <ul>
               <li>Cutting branches -- 8 to 16 hours divided between all release managers. Working on automating. Will still take a while with automation, probably around half a day. With automation, a lot of the time will be waiting for automated steps to complete as opposed to being directly involved.</li>
               <li>Testing days -- 8 to 16 hours divided between all release managers spread over two weeks in order to orchestrate the testing events. This does not include any time that the release managers additionally devote to picking up and testing individual tests.</li>
@@ -249,7 +249,7 @@ const CommunityGuide = () => {
               <li>Announcement of release on Twitter/Discuss/Slack -- 5 minutes for one release manager for Discuss/Slack. For Twitter, reach out to someone with access.</li>
             </ul>
 
-            <h4 style="color: #2980b9;">Ongoing for all releases</h4>
+            <h4>Ongoing for all releases</h4>
             <ul>
               <li>Watching for release blockers - part of the code review process. Wouldn't say it needs additional time</li>
               <li>Code reviews/deciding whether to accept cherry picks -- about an hour per day for each release manager. Ramps up just before the initial release. Ramps down to an hour per week towards the EOL for a release</li>
@@ -262,14 +262,14 @@ const CommunityGuide = () => {
               <li>End Of Life for release -- 8 hours</li>
             </ul>
 
-            <h3 style="color: #3498db;">Qualifications for Release Manager</h3>
+            <h3>Qualifications for Release Manager</h3>
             <ul>
               <li>A member of the Layer5 community and active for the last 3 months</li>
               <li>Approved by a majority vote of current maintainers.</li>
               <li>At least one release manager for each version needs to meet requirements for access info in case of vulnerabilities</li>
             </ul>
 
-            <h3 style="color: #3498db;">Process for volunteering for release management</h3>
+            <h3>Process for volunteering for release management</h3>
             <p>Contact a current maintainer to volunteer or nominate yourself.</p>
           </div>
           <TocPagination />
