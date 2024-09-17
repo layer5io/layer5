@@ -19,7 +19,7 @@ jobs:
             </p>
 
             Be sure to double-check that you have signed your commits. 
-            Here are instructions for [making signing an implicit activity while peforming a commit](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin).`;
+            Here are instructions for [making signing an implicit activity while performing a commit](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin).`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
