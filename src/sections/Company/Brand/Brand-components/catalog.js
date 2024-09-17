@@ -60,7 +60,7 @@ const Catalog = () => {
                   <StaticImage
                     loading="lazy"
                     src={CatalogIcon}
-                    alt="MeshMap Logo"
+                    alt="Kanvas Logo"
                   />
                 </div>
               </Col>

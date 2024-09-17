@@ -4,7 +4,7 @@ import { Row, Col } from "../../reusecore/Layout";
 import docker from "../../assets/images/socialIcons/docker_white.svg";
 import meshery from "../../assets/images/meshery/icon-only/meshery-logo-white.svg";
 import DockerExtensionMeshery from "./docker-extension-meshery";
-import MeshMapCTA from "../meshmap-cta";
+import KanvasCTA from "../kanvas-cta";
 
 const MesheryDockerPage = () => {
   return (
@@ -23,7 +23,7 @@ const MesheryDockerPage = () => {
         </Row>
       </div>
       <DockerExtensionMeshery />
-      <MeshMapCTA />
+      <KanvasCTA />
     </DockerMesheryWrapper>
   );
 };

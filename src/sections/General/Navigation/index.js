@@ -9,7 +9,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import axios from "axios";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-import meshmap_dark from "../../..//assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvas_dark from "../../..//assets/images/kanvas/icon-only/kanvas-icon.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -19,7 +19,7 @@ import DefaultAvatar from "./utility/DefaultAvatar.js";
 import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
-import MeshMapIcon from "./utility/MeshMapIcon.js";
+import KanvasIcon from "./utility/KanvasIcon.js";
 const Navigation = () => {
   let data = useStaticQuery(
     graphql`
@@ -158,12 +158,12 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshmap_dark,
+            img: kanvas_dark,
           },
-          title: "MeshMap, collaborative infrastructure management",
+          title: "Kanvas, collaborative infrastructure management",
         },
         fields: {
-          slug: "/cloud-native-management/meshmap",
+          slug: "/cloud-native-management/kanvas",
         },
       },
     ],
@@ -414,7 +414,7 @@ const Navigation = () => {
                   target="_blank"
                 >
                   <div className="drop-item-icon">
-                    <MeshMapIcon />
+                    <KanvasIcon />
                   </div>
                   Playground
                 </a>

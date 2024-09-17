@@ -141,7 +141,7 @@ export const ColumnWrapper = styled(Col)`
             fill: ${props => props.theme.primaryColor};
             animation: ${floatAnim} 3.5s ease-in-out infinite;
 
-            .meshmap-light-stacked_svg__cls-1, .smp-light-text_svg__cls-6 {
+            .kanvas-light-stacked_svg__cls-1, .smp-light-text_svg__cls-6 {
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
                 fill: ${props => props.theme.primaryColor};
             }
@@ -151,7 +151,7 @@ export const ColumnWrapper = styled(Col)`
             }
         }
 
-        .meshmap-stack-cone{
+        .kanvas-stack-cone{
             height: 300px;
 
              @media screen and (min-width: 768px) {

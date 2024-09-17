@@ -34,7 +34,7 @@ const KubernetesMultiCluster = () => {
     {
       heading: "Inclusive collaboration from start to finish",
       subtitle:
-        "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
+        "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
       image: collaborate_svg,
     },
   ];

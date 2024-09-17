@@ -157,22 +157,22 @@ const Feature = () => {
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">MeshMap Designer</h2>
+            <h2 className="heading">Kanvas Designer</h2>
             <p className="caption">
             Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">
-            MeshMap Visualizer
+            Kanvas Visualizer
             </h2>
             <p className="caption">
             Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management.
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/visualize">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/kanvas/visualize">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">

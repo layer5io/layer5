@@ -86,9 +86,9 @@ const Header = () => {
               <div className="header__button_section">
                 <Button
                   primary
-                  title="Try MeshMap Now!"
+                  title="Try Kanvasow!"
                   external={true}
-                  url="/meshmap"
+                  url="/kanvas"
                 />
               </div>
             </Col>

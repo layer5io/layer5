@@ -29,7 +29,7 @@ const PerformanceManagementPage = () => {
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
       </HeroContentContainerWrapper>
@@ -49,7 +49,7 @@ const PerformanceManagementPage = () => {
         <ContentRow>
           <ColumnContainer>
             <GithubLogo className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
 
           <TextColumn>
