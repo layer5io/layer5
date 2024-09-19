@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container } from "../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import Locator from "./locator.svg";
 import MesherySurface from "./meshery-surface.svg";
-import Button from "../../reusecore/Button";
+import Button from "../../../reusecore/Button";
 
 const KanvasCTAWrapper = styled.div`
 .CTAbody {

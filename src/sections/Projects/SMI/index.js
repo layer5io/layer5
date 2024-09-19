@@ -5,7 +5,7 @@ import React from "react";
 import SMIWrapper from "./smi.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import KanvasTA from "../../kanvas-cta";
+import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import data from "./data";
 import c_icon from "./c-icon.svg";
@@ -111,7 +111,7 @@ const SMIPage = () => {
           </div>
         </div>
       </SMIWrapper>
-      <KanvasTA />
+      <KanvasCTA />
     </>
   );
 };

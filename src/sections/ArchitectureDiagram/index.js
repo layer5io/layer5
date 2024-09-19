@@ -12,7 +12,7 @@ import customizationGIF from "./images/customization.gif";
 import shapesAndTemplatesGIF from "./images/shapes-and-templates.gif";
 import RelatedPicks from "../../components/RelatedPicks";
 let data = {
-  heading: "Design Architecture Diagram Online",
+  heading: "Design Architecture Diagrams Online",
   sub_heading: "Effortlessly create software architectures, application architectures and system architectures in minutes.",
   image: whiteboard_svg
 };
@@ -50,13 +50,13 @@ const ArchitectureDiagram = () => {
       <div className={"question-container"}>
         <div className="wrapper">
           <h2 className={"use-heading"}>Why use an architecture diagramming software?</h2>
-          <p>Following all the elements within your cloud environment can be challenging, but a visual diagram of your cloud architecture will help you stay up to date with its status, understand the relationship between components, identify and solve problems. This complexity adds up when multiple team members are working on the same project. A collaborative cloud diagramming sofware could help to pinpoint information and ensure that everybody is on the same page.</p>
+          <p>Cognitive overload is real. Trying to hold all elements of your  environment in your mind can be challenging, but a visual diagram of your cloud architecture will help you stay up to date with its status, understand the relationship between components, identify and solve problems. This complexity adds up when multiple team members are working on the same project. A collaborative cloud diagramming sofware could help to pinpoint information and ensure that everybody is on the same page.</p>
         </div>
       </div>
       <Container>
         <div className={"feature-use-container"}>
           <div className={"use-heading"}>
-            <h2>Visual Tool That Get Things Done</h2>
+            <h2>Visual Tool That Gets Things Done</h2>
             <p> Not just pretty pictures. Data-linked visual apps to streamline all your efforts.</p>
           </div>
           <div className={"collaboration_display"}>
