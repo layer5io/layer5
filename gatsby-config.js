@@ -24,6 +24,15 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-posthog",
+      options: {
+        apiKey: "phc_Yynjz2lAiQDJFqTWeGT0FJrt50hl53WBx8do3eKImgX",
+        appHost: "https://us.i.posthog.com",
+        head: true,
+        isEnabledDevMode: true
+      }
+    },
+    {
       resolve: "gatsby-plugin-sitemap",
       options: {
         query: `

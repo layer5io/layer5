@@ -1,5 +1,5 @@
 import "./fonts.css";
-import posthog from "posthog-js";
+// import posthog from "posthog-js";
 
 document.addEventListener("DOMContentLoaded", () => {
   /** init gtm after 3500 seconds - this could be adjusted */
@@ -29,12 +29,12 @@ function initGTM() {
   document.head.appendChild(script);
 }
 
-posthog.init("phc_Yynjz2lAiQDJFqTWeGT0FJrt50hl53WBx8do3eKImgX",
-  {
-    api_host: "https://us.i.posthog.com",
-    person_profiles: "always",
-  }
-);
+// posthog.init("phc_Yynjz2lAiQDJFqTWeGT0FJrt50hl53WBx8do3eKImgX",
+//   {
+//     api_host: "https://us.i.posthog.com",
+//     person_profiles: "always",
+//   }
+// );
 
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";
