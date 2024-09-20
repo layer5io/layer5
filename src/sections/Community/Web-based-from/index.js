@@ -7,6 +7,38 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import { Link } from "gatsby";
 
+const validateEmail = (value) => {
+  let error;
+
+  if (!value) {
+    error = "Required";
+  } else if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value)) {
+    error = "Please enter a valid email address";
+  }
+  return error;
+};
+
+const validatePictureUrl = (value) => {
+  let error;
+  if (value) {
+
+    if (value.startsWith("data:")) {
+      error = "Data URIs are not allowed. Please provide a URL, starting with http:// or https:// to an image file.";
+    } else {
+      try {
+        new URL(value);
+        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
+        const extension = value.split(".").pop().toLowerCase();
+        if (!allowedImageExtensions.includes(extension)) {
+          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+        }
+      } catch (_) {
+        error = "Please enter a URL to an image file.";
+      }
+    }
+  }
+  return error;
+};
 
 const WebBasedForm = () => {
 
@@ -34,7 +66,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/v66ana9yf3w11k4a1rf3epwquur1s9rd", {
+      axios.post("https://hook.us1.make.com/bmmi8btg3xb2fmx6kcavxmtf0a3uame2", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -99,60 +131,62 @@ const WebBasedForm = () => {
             nextStep();
           }}
         >
-          <Form className="form" method="post">
-            <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
-            <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
-            <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z\s]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
-            <label htmlFor="occupation" className="form-name">Occupation / Title</label>
-            <Field type="text" className="text-field" id="occupation" name="occupation" />
-            <label htmlFor="org" className="form-name">Organization / Company / School</label>
-            <Field type="text" className="text-field" id="org" name="org" />
-            <label htmlFor="github" className="form-name">GitHub</label>
-            <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
-            <label htmlFor="twitter" className="form-name">Twitter</label>
-            <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
-            <label htmlFor="linkedin" className="form-name">Linkedin</label>
-            <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
-            <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field type="radio" name="tshirtSize" value="XS" />
+          {({ errors, touched }) => (
+            <Form className="form" method="post">
+              <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
+              <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+              <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
+              <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z\s]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+              <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+              <Field type="text" className="text-field" id="email" name="email" validate={validateEmail} />{errors.email && touched.email && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.email}</p>}
+              <label htmlFor="occupation" className="form-name">Occupation / Title</label>
+              <Field type="text" className="text-field" id="occupation" name="occupation" />
+              <label htmlFor="org" className="form-name">Organization / Company / School</label>
+              <Field type="text" className="text-field" id="org" name="org" />
+              <label htmlFor="github" className="form-name">GitHub</label>
+              <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+              <label htmlFor="twitter" className="form-name">Twitter</label>
+              <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
+              <label htmlFor="linkedin" className="form-name">Linkedin</label>
+              <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
+              <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
+              <div role="group" aria-labelledby="my-radio-group">
+                <label>
+                  <Field type="radio" name="tshirtSize" value="XS" />
                 XS
-              </label>
-              <br></br>
-              <label>
-                <Field type="radio" name="tshirtSize" value="S" />
+                </label>
+                <br></br>
+                <label>
+                  <Field type="radio" name="tshirtSize" value="S" />
                 S
-              </label>
-              <br></br>
-              <label>
-                <Field type="radio" name="tshirtSize" value="M" />
+                </label>
+                <br></br>
+                <label>
+                  <Field type="radio" name="tshirtSize" value="M" />
                 M
-              </label>
-              <br></br>
-              <label>
-                <Field type="radio" name="tshirtSize" value="L" />
+                </label>
+                <br></br>
+                <label>
+                  <Field type="radio" name="tshirtSize" value="L" />
                 L
-              </label>
-              <br></br>
-              <label>
-                <Field type="radio" name="tshirtSize" value="XL" />
+                </label>
+                <br></br>
+                <label>
+                  <Field type="radio" name="tshirtSize" value="XL" />
                 XL
-              </label>
-              <br></br>
-              <label>
-                <Field type="radio" name="tshirtSize" value="XXL" />
-                XXL
-              </label>
-            </div>
-            <label htmlFor="picture" className="form-name">Picture</label>
-            <Field type="url" className="text-field" id="picture" name="picture" />
-            <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
-            <Button $secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
-          </Form>
+                </label>
+                <br></br>
+                <label>
+                  <Field type="radio" name="tshirtSize" value="XXL" />
+                </label>
+              </div>
+              <label htmlFor="picture" className="form-name">Picture</label>
+              <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
+              {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
+              <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
+              <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
+            </Form>
+          )}
         </Formik>
       </Container>
     );

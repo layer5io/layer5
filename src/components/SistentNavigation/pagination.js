@@ -22,7 +22,7 @@ const SistentPagination = () => {
       ) : null}
 
       {currentPage < content.length - 1 ? (
-        <Button primary url={content[currentPage + 1]?.link}>
+        <Button $primary $url={content[currentPage + 1]?.link}>
           Next &rarr;
         </Button>
       ) : null}

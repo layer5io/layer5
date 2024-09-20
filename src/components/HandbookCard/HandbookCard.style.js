@@ -8,7 +8,8 @@ export const HandbookCardWrapper = styled.div`
 
     .handbook__card {
 	  border-radius: 5px;
-	  width: 25rem;
+	  width: 100%;
+	  max-width: 25rem;
 	  box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
 	  overflow: hidden;
 	  height: 19rem;
@@ -55,6 +56,9 @@ export const HandbookCardWrapper = styled.div`
 	  font-weight: 400;
 	  font-size: 1.1rem;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+		@media (max-width: 420px) {
+        font-size: 1rem;
+        }
 	}
 
 	.handbook__card--lm__container {

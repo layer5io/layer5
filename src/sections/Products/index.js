@@ -15,6 +15,7 @@ import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
 import { Row } from "../../reusecore/Layout";
+import Reviews from "../Pricing/review-slider";
 
 const options = [
   {
@@ -280,7 +281,7 @@ const index = () => {
           <PlanCard planData={options}/>
 
           <Row Vcenter Hcenter className={"comparison-button"}>
-            <Button primary title="Feature Comparison" alt="Feature Comparison" url={"/pricing/#feature-comparison"}/>
+            <Button $primary title="Feature Comparison" alt="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
           </Row>
 
           <div className="headers gap">
@@ -295,10 +296,11 @@ const index = () => {
               Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button $external={true} primary title="Book a Demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+            <Button $external={true} $primary title="Book a Demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>
+      <Reviews />
     </div>
   );
 };

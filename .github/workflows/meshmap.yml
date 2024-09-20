@@ -38,7 +38,7 @@ jobs:
           path: action
           repository: layer5labs/meshmap-snapshot
       - id: test_result
-        uses: ${GITHUB_REF/refs/tags//}
+        uses: layer5labs/MeshMap-Snapshot@v0.2.8
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           mesheryToken: ${{ secrets.MESHERY_TOKEN }}
