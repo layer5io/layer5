@@ -86,7 +86,7 @@ const TypographyGuidance = () => {
             For Layer5, we utilized the major third ratio to generate a type
             scale that we could work with.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
               <img
                 src={isDark ? TypeScale2Dark : TypeScale2}
@@ -100,7 +100,7 @@ const TypographyGuidance = () => {
             modified with suitable font specifications that will provide
             accurate guidance for usage across implementations.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
               <img
                 src={isDark ? TypeScale3Dark : TypeScale3}

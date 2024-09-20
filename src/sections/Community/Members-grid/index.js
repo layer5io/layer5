@@ -162,7 +162,7 @@ const MembersGrid = (props) => {
                     primary
                     className="banner-btn memberProfileBtn"
                     title="Collect Badges"
-                    url="https://badges.layer5.io/"
+                    $url="https://badges.layer5.io/"
                     $external={true}
                   >
                     <FaCertificate size={21} className="icon-left" />
@@ -172,7 +172,7 @@ const MembersGrid = (props) => {
                     secondary
                     className="banner-btn two memberProfileBtn"
                     title="Join the Community"
-                    url="https://slack.layer5.io"
+                    $url="https://slack.layer5.io"
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>

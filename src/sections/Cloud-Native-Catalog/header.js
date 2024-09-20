@@ -84,10 +84,10 @@ const Header = () => {
               </p>
               <div className="header__button_section">
                 <Button
-                  primary
+                  $primary
                   title="Browse Catalog"
                   $external={true}
-                  url="https://meshery.io/catalog"
+                  $url="https://meshery.io/catalog"
                 />
               </div>
             </Col>

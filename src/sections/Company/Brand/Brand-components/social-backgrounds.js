@@ -28,7 +28,7 @@ const SocialBackgrounds = () => {
       </Row>
 
       <Row>
-        <Row Vcenter className="ImgDiv">
+        <Row $Vcenter className="ImgDiv">
           <Col xs={12} className="social-backgrounds">
             <img src={SocialBackgroundImg} alt="Layer5 Social backgrounds" />
           </Col>

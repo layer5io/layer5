@@ -45,7 +45,7 @@ const MesheryPage = () => {
               </video>
               {/* <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" /> */}
               <Button $primary className="banner-btn align-btn"
-                title="Star the Repository" url="https://github.com/meshery/meshery" $external={ true }>
+                title="Star the Repository" $url="https://github.com/meshery/meshery" $external={ true }>
                 <FaGithub size={21} className="button-icon" />
               </Button>
             </Col>

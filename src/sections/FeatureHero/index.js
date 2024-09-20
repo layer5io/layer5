@@ -34,7 +34,7 @@ const FeatureHero = (props) => {
           <h1 className={"whiteboard-heading"}>{props.data.heading}</h1>
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
           <Button
-            primary
+            $primary
             title="Try Now!"
             url="https://meshery.layer5.io"
             $external={true}

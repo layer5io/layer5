@@ -280,7 +280,7 @@ const index = () => {
 
           <PlanCard planData={options}/>
 
-          <Row Vcenter Hcenter className={"comparison-button"}>
+          <Row $Vcenter $Hcenter className={"comparison-button"}>
             <Button $primary title="Feature Comparison" alt="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
           </Row>
 

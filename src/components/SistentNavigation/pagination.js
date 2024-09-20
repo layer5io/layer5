@@ -16,7 +16,7 @@ const SistentPagination = () => {
   return (
     <PaginationWrapper>
       {currentPage > 0 ? (
-        <Button secondary url={content[currentPage - 1]?.link}>
+        <Button $secondary $url={content[currentPage - 1]?.link}>
           &larr; Previous
         </Button>
       ) : null}
