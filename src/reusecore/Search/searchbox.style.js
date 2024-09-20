@@ -17,7 +17,7 @@ export const SearchWrapper = styled.div`
       background-color: ${(props) => props.theme.shadowLightColor};
       
       /*Changes color for the text*/
-      color: ${(props) => props.theme.textColor};
+      color: ${(props) => props.theme.whiteToBlack};
 
       &:focus {
         /* border-color: ${(props) => props.theme.primaryColor}; */

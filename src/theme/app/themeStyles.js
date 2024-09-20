@@ -265,7 +265,7 @@ export const darktheme = {
   // Teal Blue
   tertiaryColorTwo: "#477E96",
 
-  headingColor: "#111111",
+  headingColor: "#000000",
 
   // light slate gray (medium gray)
   textColor: "#ffffff",
