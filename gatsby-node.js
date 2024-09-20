@@ -285,14 +285,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/kanvas",
+    toPath: "/cloud-native-management/kanvas",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/meshmap",
-    toPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
     redirectInBrowser: true,
     isPermanent: true,
   });
   createRedirect({
     fromPath: "/go/meshmap",
-    toPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
     redirectInBrowser: true,
     isPermanent: true,
   });

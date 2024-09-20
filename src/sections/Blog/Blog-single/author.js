@@ -30,7 +30,7 @@ const AboutTheAuthor = (props) => {
             <div className="authors-info-meshery">
               <h4>Meshery</h4>
               <p>Meshery is the world's only collaborative cloud manager.</p>
-              <Button $secondary $url="/meshmap" title="Get Started" className="cta-btn" />
+              <Button $secondary $url="/kanvas" title="Get Started" className="cta-btn" />
             </div>
             <div className="share-section">
               <h3>Share</h3>

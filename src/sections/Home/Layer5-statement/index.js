@@ -6,7 +6,7 @@ import svgBackground from "../../../assets/images/homePage-images/background.svg
 import BannerSectionWrapper from "./statement.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.webp";
+const imgHero = "../../../assets/images/kanvas/KanvasDesigner.webp";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
 
 const BannerDefault = () => {
@@ -45,7 +45,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" loading="lazy" />
+            <StaticImage className="hero" src={imgHero} alt="Layer5 Kanvascreenshot" loading="lazy" />
           </Col>
         </Row>
       </div>

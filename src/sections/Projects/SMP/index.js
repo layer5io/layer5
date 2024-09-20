@@ -8,7 +8,7 @@ import { BgImage } from "gbimage-bridge";
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import MeshMapCTA from "../../meshmap-cta";
+import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
@@ -160,7 +160,7 @@ const SMPPage = () => {
           <h4> Learn more about these initiatives</h4>
           <Button $primary title="Learn More" $url="https://smp-spec.io"></Button>
         </div>
-        <MeshMapCTA />
+        <KanvasCTA />
       </SMPWrapper>
     </>
   );

@@ -100,7 +100,7 @@ const Reviews = () => {
           />
           <Customers
             type="3"
-            quote="Guys, I love MeshMap! This tool is crazy!"
+            quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
             title="Networks & Systems Engineer at AYRADE"
             image={Ala}
@@ -136,7 +136,7 @@ const Reviews = () => {
 
           <Customers
             type="3"
-            quote="The fact that MeshMap automatically renders our Kubernetes configuration is a game-changer for our team."
+            quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team."
             person="Kaur Kallas"
             title="Software Architect at Entigo"
             image={Kaur}
@@ -146,7 +146,7 @@ const Reviews = () => {
             type="1"
             quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
             person="Deepak Dinesh"
-            title="MeshMap User"
+            title="Kanvas User"
             image={Deepak}
           />
           <Customers
@@ -179,7 +179,7 @@ const Reviews = () => {
           />
           <Customers
             type="2"
-            quote="Do we like MeshMap? ABSOLUTELY! It addresses our $primary concern of having a service mesh!"
+            quote="Do we like Kanvas? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex}
@@ -194,7 +194,7 @@ const Reviews = () => {
           <Customers
             quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
             person="Hein Htet Win"
-            title="MeshMap User"
+            title="Kanvas User"
             image={Hein}
           />
           <Customers

@@ -5,7 +5,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 // import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import { ProjectWrapper } from "./projectGrid.style";
-import MeshMapCTA from "../../meshmap-cta";
+import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
@@ -16,7 +16,7 @@ import smp_light from "../../../assets/images/service-mesh-performance/icon/smp-
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-import meshmap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import catalog from "../../../assets/images/catalog-icon/catalog.svg";
 import sistent from "../../../assets/images/sistent/sistent-logo.svg";
 import SoSpecial from "../../Home/So-Special-Section";
@@ -65,12 +65,12 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/meshmap"
+              to="/cloud-native-management/kanvas"
               className="project__card four"
             >
               <div className="project__card-container">
-                <img src={meshmap} alt="MeshMap" />
-                <h5>MeshMap</h5>
+                <img src={kanvas} alt="Kanvas" />
+                <h5>Kanvas</h5>
               </div>
             </Link>
             <Link
@@ -87,7 +87,7 @@ const ProjectPage = () => {
             </Link>
             {/* <Link to="/projects/service-mesh-interface-conformance"
               className="project__card nine">
-              <div className="project__card-container project__card-container_meshmap">
+              <div className="project__card-container project__card-container_kanvas">
                 <img src={smi} alt="Service Mesh Interface Conformance" />
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
@@ -142,7 +142,7 @@ const ProjectPage = () => {
               </div>
             </Link> */}
           </div>
-          <MeshMapCTA />
+          <KanvasCTA />
         </Container>
       </div>
       {/* <ProudMaintainers /> */}

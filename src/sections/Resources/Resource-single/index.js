@@ -72,7 +72,7 @@ const ResourceSingle = ({ data }) => {
           </SRLWrapper>
 
           <CTA_Bottom
-            category={"MeshMap"}
+            category={"Kanvas"}
           />
 
           <div className="backBtn">
