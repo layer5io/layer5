@@ -6,7 +6,7 @@ import Meetups from "../sections/Events/index";
 export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   allCategories: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}, feature: {ne: false}}}
     skip: $skip
     limit: $limit
   ) {
@@ -113,7 +113,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}) {
+  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}, feature: {ne: false}}}) {
     nodes {
       id
       fields {
@@ -144,7 +144,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
     }
   }
   allUpcoming: allMdx(
-    filter: {frontmatter: {upcoming: {eq: true}}, fields: {collection: {eq: "events"}}}
+    filter: {frontmatter: {upcoming: {eq: true}, feature: {ne: false}}, fields: {collection: {eq: "events"}}}
     sort: {fields: frontmatter___date, order: DESC}
   ) {
     nodes {

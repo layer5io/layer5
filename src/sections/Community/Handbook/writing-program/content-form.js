@@ -24,7 +24,7 @@ const ContentForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y", {
+      axios.post("https://hook.us1.make.com/7c1op88rysnmeitovt35fxzcv2spspp0", {
         memberFormOne,
       });
     }

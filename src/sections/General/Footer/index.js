@@ -21,7 +21,7 @@ const Footer = ({ location }) => {
       "/blog",
       "/careers",
       "/meshery",
-      "/meshmap",
+      "/kanvas",
       "/community",
       "/handbook",
       "projects",
@@ -107,15 +107,25 @@ const Footer = ({ location }) => {
                 </h3>
                 <ul className="section-categories">
                   <li>
+                    <a className="category-link" href="https://docs.layer5.io">
+                      Docs
+                    </a>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/blog">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/learn/learning-paths">
                       Learning Paths
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link className="category-link" to="/resources">
                       Resource Library
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       className="category-link"
@@ -140,14 +150,14 @@ const Footer = ({ location }) => {
                       Service Mesh Comparison
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       className="category-link"
                       to="/learn/service-mesh-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -157,11 +167,6 @@ const Footer = ({ location }) => {
                   </Link>
                 </h3>
                 <ul className="section-categories">
-                  <li>
-                    <Link className="category-link" to="/blog">
-                      Blog
-                    </Link>
-                  </li>
                   <li>
                     <Link className="category-link" to="/community/events">
                       Events
@@ -188,10 +193,15 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/community/handbook/writing-program"
+                      to="/community/handbook"
                     >
-                      Writing Program
+                      Handbook
                     </Link>
+                  </li>
+                  <li>
+                    <a className="category-link" href="https://badges.layer5.io/">
+                    Recognition Program
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -205,9 +215,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/meshmap"
+                      to="/cloud-native-management/kanvas"
                     >
-                      MeshMap
+                      Kanvas
                       <span className="new-label">NEW</span>
                     </Link>
                   </li>
@@ -251,7 +261,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/projects/service-mesh-performance"
+                      to="/projects/cloud-native-performance"
                     >
                       Cloud Native Performance
                     </Link>

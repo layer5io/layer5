@@ -17,10 +17,11 @@ const NightHawk = loadable(() => import("./Brand-components/nighthawk"));
 const ServiceMeshPatterns = loadable(() => import("./Brand-components/servicemeshpatterns"));
 const MeshMasterBrand = loadable(() => import("./Brand-components/meshmaster"));
 const MeshMarkBrand = loadable(() => import("./Brand-components/meshmark"));
-const MeshMapBrand = loadable(() => import("./Brand-components/meshmap"));
+const KanvasBrand = loadable(() => import("./Brand-components/kanvas"));
 const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 const Catalog = loadable(() => import("./Brand-components/catalog"));
+const SocialBackgrounds = loadable(() => import("./Brand-components/social-backgrounds"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -109,9 +110,10 @@ const Brand = () => {
   const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
   const meshmarkRef = useRef(null);
-  const meshmapRef = useRef(null);
+  const kanvasRef = useRef(null);
   const stickfiguresRef = useRef(null);
   const CatalogRef = useRef(null);
+  const SocialBackgroundsRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -125,9 +127,10 @@ const Brand = () => {
     { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
     { section: "MeshMaster", ref: meshMasterRef },
-    { section: "MeshMap", ref: meshmapRef },
+    { section: "Kanvas", ref: kanvasRef },
     { section: "Five", ref: stickfiguresRef },
-    { section: "Catalog", ref: CatalogRef }
+    { section: "Catalog", ref: CatalogRef },
+    { section: "SocialBackgrounds", ref: SocialBackgroundsRef }
   ];
 
   useEffect(() => {
@@ -182,6 +185,9 @@ const Brand = () => {
           <div className="section" ref={layer5Ref}>
             <Layer5Brand />
           </div>
+          <div className="section" ref={SocialBackgroundsRef}>
+            <SocialBackgrounds />
+          </div>
           <div className="section" ref={mesheryRef}>
             <MesheryBrand />
           </div>
@@ -212,8 +218,8 @@ const Brand = () => {
           <div className="section" ref={meshMasterRef}>
             <MeshMasterBrand />
           </div>
-          <div className="section" ref={meshmapRef}>
-            <MeshMapBrand />
+          <div className="section" ref={kanvasRef}>
+            <KanvasBrand />
           </div>
           <div className="section" ref={CatalogRef}>
             <Catalog />
@@ -233,6 +239,16 @@ const Brand = () => {
               }}
             >
               <span>Layer5</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "SocialBackgrounds" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(SocialBackgroundsRef.current);
+              }}
+            >
+              <span> Layer5 Social Backgrounds </span>
             </p>
             <p
               className={`header_link ${
@@ -336,13 +352,13 @@ const Brand = () => {
             </p>
             <p
               className={`header_link ${
-                visibleSection === "MeshMap" ? "selected" : ""
+                visibleSection === "Kanvas" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(meshmapRef.current);
+                scrollTo(kanvasRef.current);
               }}
             >
-              <span> MeshMap </span>
+              <span> Kanvas </span>
             </p>
             <p
               className={`header_link ${

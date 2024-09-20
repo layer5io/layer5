@@ -1,0 +1,338 @@
+---
+title: "Linux Foundation 2024"
+thumbnail: ./Linux_Foundation_logo.svg
+darkthumbnail: ./lfx-white.svg
+permalink: "lfx/2024"
+program: "Linux Foundation"
+programSlug: "lfx"
+published: true
+---
+
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import {ReactComponent as LfxLogo} from "./lfx-white.svg";
+import { Link } from "gatsby";
+
+<ProgramsWrapper>
+
+<LfxLogo alt="lfx_logo" class="lfx_logo"/>
+<h3>Linux Foundation 2024 Program Timeline</h3>
+
+<div>
+  <h4><strong>Full-Time Terms:</strong></h4>
+<ul>
+    <li className="lfx-timeline_terms"><strong>Spring Term: March 1st - May 31st</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: Jan 15th, 2024</li>
+    <li>applications open: Jan 29th - Feb 13th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: Feb 14th - Feb 27th</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Summer Term: June 1st - August  31st</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: April 15th, 2024</li>
+    <li>applications open: April 29th - May 14th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: May 15th - June 29th</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Fall Term: September 1st - Nov 30th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: July 27th, 2024</li>
+    <li>applications open: August 2nd - August 15th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: August 16th - August 29th</li>
+  </ul>
+</ul>
+Part-time terms will start on the same schedule and last six versus three months.
+</div>
+
+<h3>About Layer5 and its projects</h3>
+
+<p>The Layer5 community embraces developer-defined infrastructure. We empower developers to change how they write applications, support operators in rethinking how they run modern infrastructure, and enable product owners to regain full-control over their product portfolio. Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
+
+<p>Our inclusive and diverse community stewards projects to provide learning environments, create and implement cloud native industry standards, deployment and operational best practices, benchmarks and abstractions, and more. Our pay-it-forward mentality with every contributor (mentee or not) is a shared commitment by all maintainers (and MeshMates - contributor onboarding buddies) to the open source spirit that pushes Layer5 projects like Meshery forward. New members are always welcome.</p>
+
+<h3>About Meshery</h3>
+
+<p>Meshery is the open source, service mesh management plane for enabling the adoption, operation, and management of any service mesh and their workloads. There are many service meshes available. Software-defined networking is difficult to understand. Meshery’s aim is to make the power of the network available to the rest of us.</p>
+
+<h3>About our Community</h3>
+ 
+Layer5 is all about <Link to="/community">its community</Link> of contributors. We have designed an onboarding program customized to <Link to="/community/newcomers">meet newcomers</Link> where they’re at and developed an onboarding buddy program, <Link to="/community/meshmates">MeshMates</Link> with individuals dedicated to assisting contributors. The Layer5 community and its open source projects are thriving.
+
+Technical writers and other contributors are what comprise Layer5 - an open organization, built by the community for the community. Our vibrant community has seen many talented student contributors go on to secure exciting job opportunities with renowned technology companies such as Red Hat, Microsoft, and VMware, just to name a few. At Layer5, we have high expectations from our interns, and in return, we provide them with incredible opportunities to showcase their work on prestigious stages like DockerCon and KubeCon. We actively promote and uplift our interns, and many of them have gone on to become project maintainers. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites.
+
+
+## LFX Mentorship 2024 Spring Projects
+<br />
+
+### Meshery
+<br />
+
+#### UI Migration from MUI v4 to MUI v5 and NextjS 13
+
+**Description**: Meshery's UI is powerful and utilizes frameworks like Next.js and Material-UI. However, it relies on outdated technology stacks, resulting in performance inefficiencies and increased maintenance overhead.
+- Expected Outcome: Migrate from MUI v4 to MUI v5 and fully utilize features of Nextjs v13. Migrate all class based components to function based component. Reduced code complexity and improved maintainability for long-term sustainability. Responsive and accessible UI that adapts to diverse devices and user needs.
+- Recommended Skills: ReactJs, NextJs, familiarity with Material UI, Redux and Redux Toolkit
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/aabid-sofi">Aabid Sofi</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/6680
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/9dc784dd-dbfb-4d60-81ce-4da95e0b48a0
+
+#### Expand Meshery CLI capabilities for registry management
+
+**Description**: Meshery CLI is a powerful tool to manage all your cloud native resources, Meshery has internal capability called Registry to store and manage models, categories, component and relationship, presently Meshery’s v0.7 release allow users to view all this information from Mehery UI. We also need to expose Meshery’s registry capability through mesheryctl
+- Expected Outcome: Design mesheryctl subcommands and flags for registering, listing, retrieving, updating, and deleting models, components and relationships. Implement validation and error handling for user input and API responses. Integrate with relevant Meshery APIs to interact with the registry backend.
+- Recommended Skills: Golang, familiarity with Golang CLI framework Cobra
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/8176
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/441ebbbd-8084-4e4c-b072-bc78112502ef
+
+#### Expand integration of Meshery with Artifact Hub
+
+**Description**: While Meshery has made significant strides, its integration with Artifact Hub requires expansion and enhancement to maximize users experience. The goal is expand integration between Meshery and Artifact Hub which starts with making Meshery designs as a new Artifact Hub kind.
+- Expected Outcome: Definition and implementation of Meshery patterns as a distinct category within Artifact Hub. Design features to showcase Meshery's unique design patterns, enhancing visibility and accessibility. Collaborate with select publishers to integrate Meshery snapshots into Artifact Hub entries. Enhance user experience by providing visual representations of Meshery-related artifacts.
+- Recommended Skills: Familiarity with Helm charts and Artifact Hub, basic familiarity with Kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "/community/members/pranav-singh">Pranav Singh</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/9966
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/83c60c5f-3e79-4532-8ee6-1266e30d21e0
+  
+
+### Service Mesh Performance
+<br />
+
+#### Nighthawk Advanced Load Controller
+
+**Description**: The adaptive load controller operates by iteratively running optimization routines to ascertain the maximum load a system can sustain. Typically, this maximum load is determined by the system's capacity to handle requests per second (rps). The metrics, such as CPU usage and latency, collected from the system under test (SUT) serve as constraints to assess whether the SUT can sustain the imposed load. However, it lacks comprehensive lifecycle management functionalities. This hinders its adoption and limits its potential for continuous performance monitoring and optimization.
+
+- Expected outcome: Implement mechanisms to trigger alerts and notifications based on performance thresholds or significant changes in key metrics.
+Integrate Nighthawk testing with existing CI/CD pipelines for automated performance validation and optimization as part of the development and deployment process.
+- Recommended Skills: Golang, familiarity with Service Mesh, grpc, docker, kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: https://github.com/service-mesh-performance/service-mesh-performance/issues/350
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/98b9a7d7-4dd4-45aa-96f9-145e058efcee
+
+### Nighthawk Distributed Performance Tests
+
+**Description**: Many performance benchmarks are limited to single instance load generation (single pod load generator). This limits the amount of traffic that can be generated to the output of the single machine that the benchmark tool runs on in or out of a cluster. Overcoming this limitation would allow for more flexible and robust testing. Distributed load testing in parallel poses a challenge when merging results without losing the precision we need to gain insight into the high tail percentiles. Distributed load testing offers insight into system behaviors that arguably more accurately represent real-world behaviors of services under load as that load comes from any number of sources. 
+- Expected Outcome: Implementation of distributed load generation in Nighthawk. Integration of Nighthawk with relevant service mesh performance testing scenarios. Capability to invoke Nighthawk for distributed load testing through APIs and command-line interfaces. Implementation of reporting mechanisms for distributed load testing results.
+- Recommended Skills: Golang, familiarity with HTTP/HTTPS performance testing tools, Service Mesh, grpc, familiarity with containerization technologies, like Docker would be helpful.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: 
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/bad94872-bd61-4960-915a-ea1945ddd15c
+
+
+### CNCF TAG Network
+<br />
+
+#### Mapping Kubernetes Resources: Identifying relationships between all standard and custom resources
+
+**Description**: The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph.
+- Expected Outcome: YAML-formatted definition
+- Recommended Skills: DevOps, Kubernetes Administration, Light familiarity with all of the CNCF projects and a desire to study each project and their operators/resources.
+- Mentor(s):
+  - Mentor Name: <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue:
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/1e9ac76e-0434-45fc-8137-fc5698f29cd0
+
+## LFX Mentorship 2024 Summer Projects
+<br />
+
+### Meshery
+<br/>
+
+#### Meshery: Meshery: Project tutorials, design patterns, & publish reference architectures
+
+- Description: Meshery the CNCF’s 10th fastest growing project. As a cloud native manager, Meshery [integrates with 250+ projects](https://meshery.io/integrations) and technologies. For each CNCF project integrated with Meshery, tutorials, sample designs, and deployment patterns with reference architectures need to be created. For the earnest, DevOps-minded intern, this internship represents a vast opportunity to learn, document, and publish tutorials and best practices not only around Meshery, but for any number of the other CNCF projects, too. You will use the [Meshery Playground](https://play.meshery.io)
+
+- Expected Outcome: 
+  - 25+ new design patterns published in Meshery Catalog and Artifact Hub.
+  - 5 new Meshery tutorials published in Meshery Docs.
+  - Bonus: Extend one or more of Meshery’s Learning Paths.
+
+- Recommended Skills: written English, Kubernetes, DevOps, and familiarity with any number of other CNCF projects, like Jaeger, Helm, Harbor, Flux, Argo, Flux, Falco, etc., Jekyll, strong organizational skills
+- Mentor(s): <Link to="/community/members/yash-sharma">Yash Sharma</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/10888
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/7ec5139b-fca8-43db-bafc-bdb2faa58047
+
+#### Meshery: End-to-End Testing with Playwright
+
+- Description: Meshery integrates with many other CNCF projects and technologies. Sustaining those integrations is only possible through automation. End-to-end testing with Playwright, GitHub Workflows, and self-documenting test reports is the means to the end of maintaining a healthy state of each of these [Meshery integrations](https://meshery.io/integrations). 
+
+- Expected Outcome: 
+  - Successful migration of E2E tests from Cypress to the Playwright test library within the Meshery project.
+  - Implementation of robust and reliable test cases using Playwright to cover a wide range of Meshery's E2E scenarios.
+  - Documentation detailing the migration process, and guidelines for future contributions to maintain test quality.
+  - Integration of Playwright test suite into the Meshery CI/CD pipeline to ensure continuous testing and reliability of the platform.
+- Recommended Skills: JavaScript, Playwright, GitHub Workflows, Jekyll, Markdown, familiarity with React or Nextjs would be helpful, CI/CD
+ - Mentor Name: <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to = "/community/members/aabid-sofi">Aabid Sofi</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/10890
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/62f4866e-9461-490d-890d-9f221a3941b4
+
+#### Meshery: Support versioning for Meshery designs
+
+- Description: Meshery design is a common practice of both configuring and operating cloud native infrastructure functionality in a single, universal file. We are seeking to enhance Meshery's capabilities by supporting automatic versioning of Meshery designs based on user sessions. This functionality will enable users to track changes made to their designs by individuals, facilitating the ability to rollback changes at any time.
+
+- Expected Outcome: 
+  - Update Meshery server and pattern engine to support Meshery design versioning.
+  - Update UI to allow users to perform actions related to design versioning.
+  - Document changes made in pattern engine and server.
+
+- Recommended Skills: Golang, Kubernetes, Meshery, Familiarity with Helm charts and Artifact Hub, familiarity with React, Nextjs would be helpful
+- Mentor(s): <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/10889
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/8e1ab317-9043-4f29-8b83-9b9ffa2b8b40
+
+### Service Mesh Performance
+<br/>
+
+#### Service Mesh Performance: Convergence of Network and Graph topologies
+
+- Description: Opens the door to leveraging algorithms in the areas of Centrality, Community Detection, Pathfinding, Topological Link Prediction, etc. Bringing to bear advances made in Machine Learning / AI / recommendation systems, fraud detection could really help to derive meaning and comprehension for future tools. Another example is how ML + graph approaches are used to find and determine the optimal molecular structure of atoms such that desired physical properties are targeted. This approach could be applied to the problem of workload sizing and estimation for service mesh operators and would-be adopters.
+
+- Expected outcome:
+  - Use Neo4j's ability to create graph projections, which copy a subgraph to RAM so that algorithms can be efficiently run.
+- Recommended Skills: Golang, familiarity with Service Mesh, grpc, docker, kubernetes
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: https://github.com/service-mesh-performance/service-mesh-performance/issues/422
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/c605139b-8736-477a-835a-c6b45112bee4
+
+
+### CNCF TAG Network
+<br/>
+
+#### Mapping CNCF Landscape one Relationship-at-a-time
+
+- Description: While the OpenAPI specifications for Kubernetes offer a taxonomy, integrating a graph data model with formalized ontologies unlocks a multitude of capabilities. Among these, enabling inferencing necessary for natural language processing stands out as a straightforward application. This, in turn, facilitates the possibility of a human-centric query/response interaction. Importantly, advancing to a knowledge semantic graph from a connected systems' graph data model opens the door to building more sophisticated systems.
+
+- Expected Outcome: 
+  - Identifying new technologies from CNCF landscape and creating new YAML-formatted definitions of one or more relationships.
+  - Documentation of each relationship - per component.
+  - Development of new types of genealogies - new types of ways in which resources relate to one another and how these relationships might be visualized.
+
+- Recommended Skills: Familiarity with Helm charts and Artifact Hub, basic familiarity with Kubernetes, and familiarity with CNCF different projects would be helpful
+- Mentor(s): <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/cncf/tag-network/issues/39
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/bec63054-bc32-4444-b6c5-2b427f527e16
+
+#### Technical Content Creation CNCF Challenges 
+
+- Description: On a periodic basis, the CNCF would like to present a public challenge to those that are interested in participating (e.g. “Challenge: Distributed Tracing with Jaeger”). 
+
+Your mission in this internship is technical content creation of said challenges through use of markdown, Meshery, and any number of other CNCF projects. Challenges will be created using the Meshery Playground and potentially published in the proposed CNCF Hub. They will be similar too, but slightly different from these [example tutorials](https://docs.meshery.io/guides/tutorials/).
+
+Understand that your challenges will be promoted through CNCF channels, reviewed by various project maintainers, and that each challenger (participant) will receive a certain number of points, depending upon whether or not they successfully complete the challenges that you create and in what timeframe they complete those challenges (the faster, the more points). Your challenges will need to vary in level of difficulty. 
+
+- Expected Outcome: 
+  - 10+ new challenges published in CNCF Hub (and Meshery Catalog and Artifact Hub).
+  - Challenges can contain more than one objective. Points are earned for each objective completed.
+  - Bonus: Extend one or more of Meshery’s Learning Paths.
+
+- Recommended Skills: written English, Kubernetes, DevOps, and familiarity with any number of other CNCF projects, like Prometheus, CoreDNS, Istio, Jaeger, Helm, Harbor, OPA, Rook, SPIFEE, Flux, Argo, Flux, Falco, etc., Jekyll, strong organizational skills
+- Mentor(s): <Link to="/community/members/nic-jackson">Nic Jackson</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/cncf/tag-network/issues/40
+- LFX URL: https://mentorship.lfx.linuxfoundation.org/project/1a620529-f2be-4a6f-8b4d-0562731cb840
+
+
+## LFX Mentorship 2024 Fall Projects
+<br />
+
+### CNCF TAG Network
+<br/>
+
+#### Interrelating Kubernetes Resources: Identifying relationships between all standard and custom resources
+- Description: The OpenAPI specifications for Kubernetes provides taxonomy, but augmenting a graph data model with formalized ontologies enables any number of capabilities, one of the more straightforward is the inferencing requisite for natural language processing, and consequently, a human-centric query / response interaction becomes becomes possible. More importantly, more advanced systems can be built when a graph data model of connected systems is upgraded to be a knowledge semantic graph.
+- Expected Outcome: 
+  - YAML-formatted definition of one or more relationships per Kubernetes resource.
+  - Documentation of each relationship - per component.
+  - Development of new types of genealogies - new types of ways in which resources relate to one another and how these relationships might be visualized.
+  - Verification of functional relationships
+
+- Recommended Skills: DevOps, Kubernetes Administration, Light familiarity with all of the CNCF projects and a desire to study each project and their operators/resources.
+- Mentor(s): <Link to="/community/members/uzair-shaikh">Uzair Shaikh</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/cncf/tag-network/issues/43
+
+#### CNCF Challenges: Technical Content Creation
+- Description: On a periodic basis, the CNCF would like to present a public challenge to those that are interested in participating (e.g. “Challenge: Distributed Tracing with Jaeger”). 
+
+Your mission in this internship is technical content creation of said challenges through use of markdown, Meshery, and any number of other CNCF projects. Challenges will be created using the Meshery Playground and published (in what is potentially the CNCF Hub). They will be similar too, but slightly different from these [example tutorials](https://docs.meshery.io/guides/tutorials/).
+
+Understand that your challenges will be promoted through CNCF channels, reviewed by various project maintainers, and that each challenger (participant) will receive a certain number of points, depending upon whether or not they successfully complete the challenges that you create and in what timeframe they complete those challenges (the faster, the more points). Your challenges will need to vary in level of difficulty. 
+
+- Expected Outcome: 
+  - 5+ new challenges published 
+  - Challenges can contain more than one objective. Points are earned for each objective completed.
+  - Bonus: Extend one or more of Meshery’s Learning Paths.
+	
+- Recommended Skills: written English, Kubernetes, DevOps, and familiarity with any number of other CNCF projects, like Prometheus, CoreDNS, Istio, Jaeger, Helm, Harbor, OPA, Rook, SPIFEE, Flux, Argo, Flux, Falco, etc., Jekyll, strong organizational skills
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/nic-jackson">Nic Jackson</Link>
+- Upstream Issue: https://github.com/cncf/tag-network/issues/44
+
+### Meshery
+<br/>
+
+#### Meshery: End-to-End Testing with Playwright (Round 2)
+
+- Description: Meshery integrates with many other CNCF projects and technologies. Sustaining those integrations is only possible through automation. End-to-end testing with Playwright, GitHub Workflows, and self-documenting test reports is the means to the end of maintaining a healthy state of each of these [Meshery integrations](https://meshery.io/integrations).
+- Expected Outcome: 
+  - Successful migration of E2E tests from Cypress to the Playwright test library within the Meshery project.
+  - Implementation of robust and reliable test cases using Playwright to cover a wide range of Meshery's E2E scenarios.
+  - Documentation detailing the migration process, and guidelines for future contributions to maintain test quality.
+  - Integration of Playwright test suite into the Meshery CI/CD pipeline to ensure continuous testing and reliability of the platform.
+- Recommended Skills: JavaScript, Playwright, GitHub Workflows, Jekyll, Markdown, familiarity with React or Nextjs would be helpful, CI/CD
+
+- Mentor(s): <Link to = "/community/members/aabid-sofi">Aabid Sofi</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/11494
+
+#### Meshery: Migrate APIs to be schema-driven
+
+- Description: Enhance Meshery’s APIs capability by migrating to a schema-driven approach, which will ensure consistency, validation, and easier integration. It involves versioning and defining API schemas using OpenAPI/Swagger at https://github.com/meshery/schemas and auto generating structs. You will be ensuring all Meshery APIs aligns with defined schemas and are consistent.
+- Expected Outcome: Identifying APIs and updating them to conform these schemas. Enhance API documentation to reflect the schema-driven approach. Updating APIs to ensure they are consistent and doing validation against defined schemas.
+- Recommended Skills: Golang, Kubernetes, Swagger, JSON schemas, familiarity with React, Nextjs would be helpful
+
+- Mentor(s): <Link to="/community/members/yash-sharma">Yash Sharma</Link>, <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- Upstream Issue: https://github.com/meshery/meshery/issues/11495
+
+#### Meshery: UI Migration from MUI v4 to MUI v5 and Sistent
+
+- Description: Meshery's UI is powerful and utilizes frameworks like Next.js and Material-UI. However, it relies on outdated technology stacks, resulting in performance inefficiencies and increased maintenance overhead.
+- Expected Outcome: Migrate from MUI v4 to MUI v5 and fully utilize features of Nextjs v13 and Sistent. Migrate all class based components to function based components. Reduced code complexity and improved maintainability for long-term sustainability. Responsive and accessible UI that adapts to diverse devices and user needs.
+- Recommended Skills: ReactJs, NextJs, familiarity with Material UI, Redux and Redux Toolkit
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/antonette-caldwell">Antonette Caldwell</Link>
+
+- Upstream Issue: https://github.com/meshery/meshery/issues/11493
+
+### Service Mesh Performance
+<br/>
+
+#### CNCF Project Performance Test Dashboard
+- Description: In coordination with CNCF TAG Network, the current performance dashboard at https://smp-spec.io/dashboard is proposed to be incorporated into CNCF project level-moving criteria in that each CNCF project will be encouraged (mandated?) to incorporate ongoing performance tests into their build and release processes, resulting in ongoing performance analysis of each project.
+- Expected Outcome: 
+Dashboard Enhancement: Expand the existing performance dashboard to capture and visualize performance test results for non-service mesh projects. This will involve integrating with various data sources, designing user-friendly interfaces, and implementing robust data analysis pipelines.
+GitHub Workflow Integration: Collaborate with other CNCF projects to configure their GitHub workflows to automatically run load tests using the Meshery GitHub Action. This will streamline the performance testing process and ensure that results are consistently collected and published to the dashboard.	
+- Recommended Skills: Golang, familiarity with HTTP/HTTPS performance testing tools, Service Mesh, grpc, familiarity with containerization technologies, like Docker would be helpful.
+
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/xin-huang">Xin Huang</Link>
+- Upstream Issue: https://github.com/service-mesh-performance/service-mesh-performance/issues/432
+
+## Additional information
+<br />
+
+### Previous experience with technical writers or documentation
+
+<p>Our mentors have managed teams of technical writers working on documenting enterprise-grade software at large technology companies (Cisco, Seagate, SolarWinds). During the span of time, they have worked with technical writers in DITA and post-DITA environments (from Word to FrameMaker, structured writing, online help, various CMSes, git). Our mentors have worked with technical writers on documentation strategy, creating document sets, covering the full spectrum of reader personas.</p>
+
+We interact daily over Slack, and have an open source project [meeting everyday](https://layer5.io/community/calendar), which are posted to the community [YouTube channel](https://www.youtube.com/c/Layer5io?sub_confirmation=1).
+
+<div className="apply-button">
+  <h3>
+    <Button
+      primary
+      title="Participate"
+      url="https://slack.layer5.io"
+      external={ true }
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

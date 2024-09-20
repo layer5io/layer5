@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { details } from "./data";
 import { Container } from "../../reusecore/Layout";
-import FeatureDetails from "./collapsible-details";
+// import FeatureDetails from "./collapsible-details";
+import FeatureDetails from "../../components/PlanCard/collapsible-details";
 
 
 const ComparisonWrapper = styled.div`
@@ -40,7 +41,7 @@ h2, h5{
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     h5{
-      display: block;
+      display: flex;
       text-align: left;
       padding-top: 1rem;
       font-size: 1.2rem;
@@ -157,9 +158,9 @@ h2, h5{
 
 const Comparison = () => {
   return (
-    <ComparisonWrapper>
+    <ComparisonWrapper >
       <h2>Compare All Features</h2>
-      <h5>Choose a plan that’s right for you</h5>
+      <h5 id={"feature-comparison"}>Choose a plan that’s right for you</h5>
       <Container>
         <div className="main">
           <table className="price-table">

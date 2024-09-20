@@ -1,24 +1,59 @@
 ---
-title: Postgres Database (CrunchyData)  
-subtitle: Collaborative and visual infrastructure as code for Postgres Database (CrunchyData)
-integrationIcon: icon/color/pg-db-color.svg
-darkModeIntegrationIcon: icon/white/pg-db-white.svg
-docURL: 
-category: App Definition and Development
-subcategory: Database
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+title: Postgres Database (CrunchyData)
+subtitle: Collaborative and visual infrastructure as design for Postgres Database (CrunchyData)
+integrationIcon: icons/color/pg-db-color.svg
+darkModeIntegrationIcon: icons/white/pg-db-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/pg-db
+description: 
+category: Database
+subcategory: App Definition and Development
+registrant: Artifact Hub
+components: [
+\{
+"name": "pgcluster",
+"colorIcon": "icons/components/pgcluster/icons/color/pgcluster-color.svg",
+"whiteIcon": "icons/components/pgcluster/icons/white/pgcluster-white.svg",
+"description": "",
+\},
+\{
+"name": "percona-pg-cluster",
+"colorIcon": "icons/components/percona-pg-cluster/icons/color/percona-pg-cluster-color.svg",
+"whiteIcon": "icons/components/percona-pg-cluster/icons/white/percona-pg-cluster-white.svg",
+"description": "",
+\},
+\{
+"name": "pgtask",
+"colorIcon": "icons/components/pgtask/icons/color/pgtask-color.svg",
+"whiteIcon": "icons/components/pgtask/icons/white/pgtask-white.svg",
+"description": "",
+\},
+\{
+"name": "pgreplica",
+"colorIcon": "icons/components/pgreplica/icons/color/pgreplica-color.svg",
+"whiteIcon": "icons/components/pgreplica/icons/white/pgreplica-white.svg",
+"description": "",
+\},
+\{
+"name": "pgpolicy",
+"colorIcon": "icons/components/pgpolicy/icons/color/pgpolicy-color.svg",
+"whiteIcon": "icons/components/pgpolicy/icons/white/pgpolicy-white.svg",
+"description": "",
+\}]
+featureList: [
+  "Automates PostgreSQL deployment and management",
+  "High availability and disaster recovery",
+  "Advanced PostgreSQL features (e.g., backups)"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.webp,
-    ../_images/meshmap-designer.webp]
-howItWorks: "Collaborative Infrastructure as Code"
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
+]
+howItWorks: "Deploys and manages PostgreSQL"
 howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+published: TRUE
 ---
 <p>
-    Manage Postgres clusters via PGO, the open source Postgres Operator from Crunchy Data.
+Manage Postgres clusters via PGO, the open source Postgres Operator from Crunchy Data.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

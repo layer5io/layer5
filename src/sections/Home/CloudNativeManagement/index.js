@@ -10,7 +10,7 @@ import ReactPlayer from "react-player/youtube";
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 
-import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.webp";
+import imgHero from "../../../assets/images/kanvas/KanvasDesigner.webp";
 
 const BannerDefault = () => {
   return (
@@ -61,7 +61,7 @@ const BannerDefault = () => {
                       primary
                       className="join-community-button"
                       title="Extend your control"
-                      url="/projects"
+                      url="/cloud-native-management/meshery"
                     />
                   </div>
                 </SectionTitle>
@@ -78,7 +78,7 @@ const BannerDefault = () => {
                   className="imgHero"
                   src={imgHero}
                   loading="lazy"
-                  alt="meshmap designer"
+                  alt="kanvas designer"
                   width="100%"
                   height="100%"
                 />

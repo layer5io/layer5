@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
 
 export const query = graphql`
-  query IntegrationsBySlug($slug: String!) {
+  query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
       frontmatter {
         title
@@ -20,6 +20,24 @@ export const query = graphql`
         }
         docURL
         category
+        components {
+          name
+          colorIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          whiteIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+          description
+        }
         featureList
         workingSlides {
           childImageSharp {
@@ -28,6 +46,17 @@ export const query = graphql`
           extension
           publicURL
         }
+      }
+    }
+    allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    ) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+        extension
+        publicURL
       }
     }
   }
@@ -44,6 +73,6 @@ const Integrations = ({ data, children }) => {
 };
 export default Integrations;
 
-export const Head = ({ data: { mdx: { frontmatter: { title, integrationIcon: { publicURL } } } } }) => {
-  return <SEO title={title} image={publicURL} />;
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} description={data.mdx.frontmatter.subtitle}/>;
 };

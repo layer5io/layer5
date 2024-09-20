@@ -26,7 +26,7 @@ import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";
 import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
-import meshMapIcon from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvasIcon from "../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -113,15 +113,15 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "MeshMap",
-    value: "meshmap",
+    label: "Kanvas",
+    value: "kanvas",
     color: lighttheme.linkColor,
     isFixed: true,
-    icon: meshMapIcon,
+    icon: kanvasIcon,
     className: "allOptions",
   },
   {
-    label: "Service Mesh Performance",
+    label: "Cloud Native Performance",
     value: "smp",
     color: lighttheme.linkColor,
     isFixed: true,
@@ -137,7 +137,7 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "Service Mesh Patterns",
+    label: "Cloud Native Patterns",
     value: "patterns",
     color: lighttheme.linkColor,
     isFixed: true,

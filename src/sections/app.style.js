@@ -43,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
 html{
+    overflow-x: hidden;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
 }
@@ -219,6 +220,10 @@ section{
 
 .contact-form {
     margin: auto -1rem;
+}
+
+.teaser-modal {
+  margin: 1rem -2rem;
 }
 
 .form-frame {

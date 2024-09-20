@@ -14,7 +14,7 @@ const SubscribeLearnPath = () => {
         >
           <div>
             <span>
-              <h2>Stay meshy!</h2>
+              <h2>Join the Layer5 community</h2>
               <div className="subscriptionText">
                 <p>
                   Subscribe to our newsletter to receive updates on new learning

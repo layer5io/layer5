@@ -1,63 +1,99 @@
 area/docs:
-  - "readme.md"
-  - "contributing.md"
+- changed-files:
+  - any-glob-to-any-file:
+    - "readme.md"
+    - "contributing.md"
 area/ci:
-  - ".github/**/*"
-  - ".husky/**/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - ".github/**/*"
+    - ".husky/**/*"
 area/blog:
-  - "src/collections/blog/**/*"
-  - "src/pages/blog/**/*"
-  - "src/templates/blog-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/blog/**/*"
+    - "src/pages/blog/**/*"
+    - "src/templates/blog-*.js"
 area/careers:
-  - "src/collections/careers/**/*"
-  - "src/collections/programs/**/*"
-  - "src/templates/career-*.js"
-  - "src/pages/careers/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/careers/**/*"
+    - "src/collections/programs/**/*"
+    - "src/templates/career-*.js"
+    - "src/pages/careers/*"
 area/community:
-  - "src/collections/members/**/*"
-  - "src/pages/community/**/*"
-  - "src/templates/member-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/members/**/*"
+    - "src/pages/community/**/*"
+    - "src/templates/member-*.js"
 area/events:
-  - "src/collections/events/**/*"
-  - "src/templates/event*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/events/**/*"
+    - "src/templates/event*.js"
 area/handbook:
-  - "src/components/HandbookCard/**/*"
-  - "src/components/Handbook-navigation/**/*"
-  - "src/sections/Community/Handbook/**/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/components/HandbookCard/**/*"
+    - "src/components/Handbook-navigation/**/*"
+    - "src/sections/Community/Handbook/**/*"
 area/landscape:
-  - "src/sections/Landscape/**/*"
-  - "src/components/Landscape-Table/**/*"
-  - "src/collections/landscape/**/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/Landscape/**/*"
+    - "src/components/Landscape-Table/**/*"
+    - "src/collections/landscape/**/*"
 area/learn:
-  - "content-learn"
-  - "src/components/Learn-Components/**/*"
-  - "src/collections/service-mesh-books/**/*"
-  - "src/collections/service-mesh-learn/**/*"
-  - "src/collections/service-mesh-workshops/**/*"
-  - "src/templates/book-*.js"
-  - "src/templates/course-*.js"
-  - "src/templates/lab-*.js"
-  - "src/templates/learn-*.js"
-  - "src/templates/workshop-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "content-learn"
+    - "src/components/Learn-Components/**/*"
+    - "src/collections/service-mesh-books/**/*"
+    - "src/collections/service-mesh-learn/**/*"
+    - "src/collections/service-mesh-workshops/**/*"
+    - "src/templates/book-*.js"
+    - "src/templates/course-*.js"
+    - "src/templates/lab-*.js"
+    - "src/templates/learn-*.js"
+    - "src/templates/workshop-*.js"
 area/news:
-  - "src/collections/news/**/*"
-  - "src/templates/news-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/news/**/*"
+    - "src/templates/news-*.js"
 area/partners:
-  - "src/collections/partners/**/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/partners/**/*"
 area/resources:
-  - "src/collections/resources/**/*"
-  - "src/templates/resource-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/resources/**/*"
+    - "src/templates/resource-*.js"
 area/projects:
-  - "src/collections/projects/**/*"
-  - "src/pages/projects/**/*"
-type/core-styls:
-  - "src/sections/app.style.js"
-  - "src/theme/app/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/projects/**/*"
+    - "src/pages/projects/**/*"
+area/core-styles:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/app.style.js"
+    - "src/theme/app/*"
 area/site-config:
-  - "gatsby-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "gatsby-*.js"
 area/packages:
-  - "package-*.js"
+- changed-files:
+  - any-glob-to-any-file:
+    - "package-*.js"
 project/meshery:
-  - "src/collections/integrations/**/*"
-project/meshmap:
-  - "src/sections/Meshmap/**/*"
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/integrations/**/*"
+project/kanvas:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/Kanvas/**/*"

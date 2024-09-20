@@ -40,7 +40,7 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
         <Link to={path} className="card-link">
           <div
             style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
-            className="card-parent"
+            className="card-parent card-active"
           >
 
             <div>

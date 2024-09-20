@@ -9,13 +9,8 @@ const PopOutCardWrapper = styled.div`
   padding: 2.5rem 3rem;
   height: 360px;
   width: 350px;
-  box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px;
-  background: linear-gradient(
-    266.65deg,
-    #00b39f 40.19%,
-    #477e96 74.31%,
-    #3c494f 92.89%
-  );
+  background: linear-gradient(222deg, #077165 2.76%, #1D2827 117.91%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  
   transform: translate3d(0, 0, 0);
   border-radius: 20px;
   cursor: pointer;
@@ -31,7 +26,7 @@ const PopOutCardWrapper = styled.div`
   align-items: center ;
 
   h3 {
-    opacity: 0.5;
+    opacity: 0.8;
     color: white !important;
     font-weight: bold;
     padding-bottom: 0.6rem;
@@ -59,8 +54,9 @@ const PopOutCardWrapper = styled.div`
   //dynamic css
   ${(props) => css`
     z-index: ${100 - props.index};
-    ${props.index % 2 ? "" : "background: #00B39F;"}
-    // ${props.index % 2 ? "" : "background: #00B39F;"}
+    ${props.index === 1 ? "background: linear-gradient(134deg, #252E31 -16.51%, #0D997F 101%);" : ""};
+    ${props.index === 2 ? "background: linear-gradient(125deg, #137771 -16.81%, #252E31 104.15%);" : ""};
+    ${props.index === 3 ? "    background: linear-gradient(180deg, #202020 -32.18%, #18433F 52.35%, #0B7E71 106.65%, #00B39F 142.23%);" : ""};
     transform: rotateZ(${-4 - 6 * props.index}deg) translate(-${props.index *
     36}px, ${props.index * 5}px);
   `}

@@ -21,6 +21,7 @@ resource: true
 Learn more about how to wrangle <Link to= "/blog/meshery/multi-cluster-kubernetes-management-with-meshery">Multiple Kubernetes clusters with Meshery.</Link>
 
 <ResourcesWrapper>
+
 Developers who work in fast-paced environments face the risk of infrastructure sprawl in their VMs or servers. Even with the rise in containerized deployments on Kubernetes and other platforms, admins still must determine how to efficiently manage hundreds and thousands of clusters for various projects.
 
 Common concerns for an organization’s project deployments include how to run multiple workloads and whether a cluster is large enough to handle the work.
@@ -77,19 +78,23 @@ The following are some of the advantages of transitioning to a Kubernetes multi-
 
 <ul>
 <li>Tenant Isolation</li>
+
 You might want to establish order while accommodating your development teams. The multi-cluster architecture allows workload isolation. For example, you could spin up separate clusters for staging and production.
 
 With multiple clusters, any tenant configuration changes affect only that specific cluster. This way, cluster admins can easily identify issues, run new feature experiments, and carry out workload shifts without troubling other tenants and clusters.
 
 <li>No Single Point of Failure</li>
+
 Running a single cluster can expose your project to a single point of failure, in
 which one malfunctioning component can bring down an entire system. Using a multi-cluster
 environment enables you to shift your workloads between clusters so that your projects
 continue to function if one cluster is down or even disappears entirely.
 
 <li>No Vendor Lock-In</li>
+
 There are multiple third-party cloud vendors available with varying resource offerings. Because of evolving resource pricing and models, organizations change their usage models over time as well. A Kubernetes multi-cluster setup ensures your workloads are cloud-agnostic so that you can safely use multiple vendors or move workloads from one cloud to another.
 </ul>
+
 Kubernetes provisions clusters that run and manage our workloads. Depending on the needs of an organization, Kubernetes deployments can be replicated to have the same workloads accessible across multiple nodes and environments. This concept is called Kubernetes multi-cluster orchestration. It’s simply provisioning your workloads in several Kubernetes clusters (going beyond a single cluster).
 
 A Kubernetes multi-cluster defines deployment strategies to introduce scalability, availability, and isolation for your workloads and environments. A Kubernetes multi-cluster is fully embraced when an organization coordinates the planning, delivery, and management of several Kubernetes environments using appropriate tools and processes.
@@ -114,8 +119,8 @@ Upgrading a cluster and its toolset follows the approach of upgrading the contro
 
 The complexity of management tasks across multiple Kubernetes clusters greatly increases your the number of clusters increase. You need higher-level view and control as you manage workloads across clusters; need to be able to simply switch between clusters; you need a management plane.
 
-<Link className="blog" to="/meshery">  Meshery</Link> is the open source, cloud native management plane that enables the adoption,
-operation, and management of Kubernetes, any service mesh, and their workloads.
+<p><Link className="blog" to="/meshery">  Meshery </Link>is the open source, cloud native management plane that enables the adoption,
+operation, and management of Kubernetes, any service mesh, and their workloads.</p>
 
 MeshSync, a custom controller managed by Meshery Operator, uniquely contains cluster-wide details of all objects across any number of managed clusters separated by Kubernetes Cluster ID.
 

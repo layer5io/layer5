@@ -32,20 +32,18 @@ const LearnInfo = ({ courses, chapters, meshes }) => {
         <Col xs={12} sm={6} lg={4}>
           <h2>{coursesCount} {coursesCount === 1 ? "course" : "courses"}</h2>
           <p>
-            Learning the service mesh the right way. From the best learning paths
-            by the experts at Layer5 and learn how to mesh.
+          Cloud-native is about how, not where. These learning paths will teach you the principles, patterns, and technologies that help you build more scalable, changeable, resilient, and manageable software.
           </p>
         </Col>
         <Col xs={12} sm={6} lg={4}>
           <h2>{chaptersCount} {chaptersCount === 1 ? "chapter" : "chapters"}</h2>
           <p>
-            Learning the service mesh the right way. From the best learning paths
-            by the experts at Layer5 and learn how to mesh.
+            Start learning with step-by-step, hands-on, command-line tutorials, videos, and hosted terminal sessions. Actionable examples help you learn to provision, secure, connect, or run any application on any infrastructure.
           </p>
         </Col>
         <Col xs={12} sm={6} lg={4}>
-          <h2>{meshesCount} service {meshesCount === 1 ? "mesh" : "meshes"}</h2>
-          <p>Istio, Linkerd</p>
+          <h2>{meshesCount} {meshesCount === 1 ? "technology" : "technologies"}</h2>
+          <p>Learn the core principles behind cloud native infrastructure in context of popular CNCF projects and platforms like Kubernetes, AWS, Azure, and GCP.</p>
         </Col>
       </Row>
     </InfoWrapper>

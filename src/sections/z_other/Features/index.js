@@ -82,7 +82,7 @@ const Features = () => {
               </div>
               <h3>Visual Topology</h3>
               <p>
-                Use <Link to="/meshmap" alt="Cloud Native Visual Map">MeshMap</Link> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
+                Use <Link to="/kanvas" alt="Cloud Native Visual Map">Kanvas</Link> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
               </p>
             </div>
           </Col>

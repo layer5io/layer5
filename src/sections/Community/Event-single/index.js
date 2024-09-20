@@ -94,7 +94,7 @@ const EventSingle = ({ data, children }) => {
               </div>
             </div>
             <CTA_Bottom
-              category={"MeshMap"}
+              category={"Kanvas"}
             />
             {/* <RelatedPosts
             category={frontmatter.category}

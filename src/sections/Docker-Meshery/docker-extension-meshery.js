@@ -27,7 +27,7 @@ const DockerExtensionMeshery = () => {
             Wrangle cloud native apps using Docker Desktop and Meshery
           </h2>
           <p>
-          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
+          From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, Kanvas, to collaboratively design and operate your infra.
           </p>
         </Row>
         <Row>
@@ -58,7 +58,7 @@ const DockerExtensionMeshery = () => {
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                Using <Link to="/cloud-native-management/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
+                Using <Link to="/cloud-native-management/kanvas">Kanvas</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" lg={2}>
@@ -80,11 +80,9 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
+                <div className="feature-title">Single-click deployment of all Kubernetes infrastructure and many AWS and GCP services.</div> {" "}
                 <i>
-                  Support of 10 different service meshes to the fingertips
-                  of developers in connection with Docker Desktop’s ability
-                  to deliver Kubernetes locally.
+                  Support of 250+ different Kubernetes operators, thousands of custom resources at the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.
                 </i>
               </Col>
             </Row>
@@ -129,7 +127,7 @@ const DockerExtensionMeshery = () => {
             <CommonForm
               title="Learn All Meshery Docker Extension Features"
               form="docker-extension"
-              account_desc="Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account."
+              account_desc="Selected participants will receive a free Layer5 Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account."
               submit_title = "Thank you for your interest in Meshery Docker Extension!"
               submit_body = "You will soon receive detailed guidance on the all of the extension's features."
             />

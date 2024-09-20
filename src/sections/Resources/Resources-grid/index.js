@@ -36,6 +36,7 @@ const ResourceGrid = (props) => {
               searchData={props.searchData}
               paginate={paginate}
               currentPage={props.currentPage}
+              focusSearch={true}
             />
           </div>
         </div>

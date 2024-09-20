@@ -89,7 +89,7 @@ const NewsGrid = ({ data }) => {
               </div>
               <div className="search">
                 <div className="searchBox">
-                  <SearchBox searchQuery={searchQuery} searchData={searchData} />
+                  <SearchBox searchQuery={searchQuery} searchData={searchData} focusSearch={true}/>
                 </div>
               </div>
             </div>

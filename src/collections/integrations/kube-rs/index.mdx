@@ -1,24 +1,35 @@
 ---
-title: Kube Rs  
-subtitle: Collaborative and visual infrastructure as code for Kube Rs
-integrationIcon: icon/color/kube-rs-color.svg
-darkModeIntegrationIcon: icon/white/kube-rs-white.svg
-docURL: 
+title: kube-rs
+subtitle: Collaborative and visual infrastructure as design for kube-rs
+integrationIcon: icons/color/kube-rs-color.svg
+darkModeIntegrationIcon: icons/white/kube-rs-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/kube-rs
+description: 
 category: Runtime
 subcategory: Scheduling & Orchestration
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: Github
+components: [
+\{
+"name": "document",
+"colorIcon": "icons/components/document/icons/color/document-color.svg",
+"whiteIcon": "icons/components/document/icons/white/document-white.svg",
+"description": "",
+\}]
+featureList: [
+  "Provides a Rust interface for Kubernetes API",
+  "Enables building Kubernetes tools in Rust",
+  "Offers type-safe and idiomatic Rust APIs"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.webp,
-    ../_images/meshmap-designer.webp]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
+]
+howItWorks: "Integrates kube-rs client library"
+howItWorksDetails: "Streamlined development of Kubernetes tools in Rust"
+published: TRUE
 ---
 <p>
-    A Rust client for Kubernetes in the style of a more generic client-go, a runtime abstraction inspired by controller-runtime, and a derive macro for CRDs inspired by kubebuilder. Hosted by CNCF as a Sandbox Project
+A Rust client for Kubernetes in the style of a more generic client-go, a runtime abstraction inspired by controller-runtime, and a derive macro for CRDs inspired by kubebuilder. Hosted by CNCF as a Sandbox Project
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

@@ -7,7 +7,7 @@ import SoSpecialWrapper from "./so-special-style";
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "../../../components/image";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+// import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const SoSpecial = () => {
   const data = useStaticQuery(
@@ -98,7 +98,7 @@ const SoSpecial = () => {
     ]
   };
 
-  const { isDark } = useStyledDarkMode();
+  // const { isDark } = useStyledDarkMode();
 
   return (
     <SoSpecialWrapper>
@@ -113,11 +113,18 @@ const SoSpecial = () => {
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
+                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
+                    {console.log("Thumbnail:", frontmatter.thumbnail)} */}
                     <Image
-                      {...((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      {...(frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
+                    {/* <Image
+                      {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL) || frontmatter.thumbnail)}
+                      imgStyle={{ objectFit: "contain" }}
+                      alt={frontmatter.title}
+                    /> */}
                   </div>
                   <div id="special-cont_content">
                     <p className="special-cont_para">{frontmatter.title}</p>

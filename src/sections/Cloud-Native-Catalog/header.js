@@ -18,7 +18,7 @@ const CatalogHeaderWrapper = styled.div`
       flex-direction: column;
     }
     .header__title {
-      color: ${(props) => props.theme.secondaryColor};
+      color: ${(props) => props.theme.primaryColor};
       padding-right: 80px;
       margin-bottom: 20px;
     }
@@ -76,18 +76,18 @@ const Header = () => {
         <Container>
           <Row className="row">
             <Col className="col header__detail" md={6}>
-              <h1 className="header__title">Cloud Native Catalog</h1>
+              <h1 className="header__title">Meshery Catalog</h1>
               <p className="header__title_description">
-                Discover top-quality cloud native services for your
-                infrastructure with the Cloud Native Catalog. Discover best
-                practices and upgrade your Kubernetes management practices.
+                The Ultimate Shopping Guide for Your Infrastructure.
+
+                Packed with Kubernetes and cloud native templates to get you deploying in the right way.
               </p>
               <div className="header__button_section">
                 <Button
                   primary
                   title="Browse Catalog"
                   external={true}
-                  url="https://meshery.io/catalog"
+                  url="https://meshery.layer5.io/catalog"
                 />
               </div>
             </Col>

@@ -56,6 +56,13 @@ const LabSinglePageWrapper = styled.div`
 	}
 	.cardContent {
 		margin: 0 5rem;
+		color: white;
+		a {
+			display: flex;
+		    color: ${props => props.theme.linkColor};
+		    &:hover{
+		        color: white;
+			}
 	}
 	#katacoda-scenario {
 		min-height: 25rem;

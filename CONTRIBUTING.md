@@ -14,7 +14,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 
 ⚠️ Cloning this repository ⚠️
 
-Cloning the repo with all its history results in a ~6 GB download. If you don't need the whole history you can use the depth parameter to significantly reduce download size.
+Cloning the repo with all its history results in a ~6 GB download. To contribute to this site, you don't need its entire history. Use the `--depth=1` flag to significantly reduce the footprint this repo creates in your environment.
 
 ```bash
 git clone --depth=1 https://github.com/layer5io/layer5.git
@@ -34,9 +34,58 @@ The comfort and safety of Layer5 community members are our priority. Please do w
 
 To help you get started on contributing to Layer5 projects, refer to the [Layer5 Newcomers Guide](https://layer5.io/community/newcomers), which aims to make contributions easier for new folks like you! See the resources and tutorials to help you get started. Along with this we have an extensive handbook on how this community works , how folks inside the community wear different hats to run it and few of its guidelines, have a look inside the [Community Handbook](https://layer5.io/community/handbook).
 
+## Issues & Pull Requests
+
+### Creating an Issue
+
+Before **creating** an Issue i.e for `features`/`bugs`/`improvements` please follow these steps:
+
+
+1. Search existing Issues before creating a new Issue (look to see if the Issue has already been created).
+1. If it doesn't exist create a new Issue giving as much context as possible (please take note and select the correct Issue type, for example `bug`, `documentation` or `feature`.
+1. If you wish to work on the Issue once it has been triaged, please include this in your Issue description.
+
+### Working on an Issue
+
+Before working on an existing Issue please follow these steps:
+
+1. Comment asking for the Issue to be assigned to you.
+1. To best position yourself for Issues assignment, we recommend that you:
+    1. Confirm that you have read the CONTRIBUTING.md.
+    1. Have a functional development environment (have built and are able to run the project).
+    1. Convey your intended approach to solving the issue.
+    1. Put each of these items in writing in one or more comments.
+1. After the Issue is assigned to you, you can start working on it.
+1. In general, **only** start working on this Issue (and open a Pull Request) when it has been assigned to you. Doing so will prevent confusion, duplicate work (some of which may go unaccepted given its duplicity), incidental stepping on toes, and the headache involved for maintainers and contributors alike as Issue assignments collide and heads bump together. 
+1. Reference the Issue in your Pull Request (for example `This PR fixes #123`). so that the corresponding Issue is automatically closed upon merge of your Pull Request.
+
+> Notes:
+>
+> - Check the `Assignees` box at the top of the page to see if the Issue has been assigned to someone else before requesting this be assigned to you. If the issue has a current Assignee, but appears to be inactive, politely inquire with the current Assignee as to whether they are still working on a solution and/or if you might collaborate with them.
+> - Only request to be assigned an Issue if you know how to work on it.
+> - If an Issue is unclear, ask questions to get more clarity before asking to have the Issue assigned to you; avoid asking "what do I do next? how do I fix this?" (see the item above this line)
+> - An Issue can be assigned to multiple people, if you all agree to collaborate on the Issue (the Pull Request can contain commits from different collaborators)
+> - Any Issues that has no activity after 2 weeks will be unassigned and re-assigned to someone else.
+
+## Reviewing Pull Requests
+
+We welcome everyone to review Pull Requests. It is a great way to learn, network, and support each other.
+
+### DOs
+
+- Use inline comments to explain your suggestions
+- Use inline suggestions to propose changes
+- Exercise patience and empathy while offering critiques of the works of others.
+
+### DON'Ts
+
+- Do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
+- Do not blindly approve Pull Requests to improve your GitHub contributors graph
+
+
 ## Style Guide
 
-The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
+The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a Pull Request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a Pull Request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
 
 ## Discussion Forum
 
@@ -48,12 +97,12 @@ Please follow these steps and note these guidelines to begin contributing:
 
 1. First step is to set up the local development environment.
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
-1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
-1. We regularly discuss new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any issue or any idea that you may have.
+1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these Issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the Issue.
+1. We regularly discuss new Issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any Issue or any idea that you may have.
 
 # Contributing to Layer5's Blogs Section
 
-If you'd like to contribute a post to layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
+If you'd like to contribute a post to layer5.io/blog, please open an Issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
 
 ## Things to keep in mind
 
@@ -203,7 +252,7 @@ OR
 
 - SVG or image uses transparent sections that change with the background color to work with either theme.
 
-[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg)
+[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg)
 
 [Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.webp)
 
@@ -273,7 +322,7 @@ In the styled component, we find ".logo", add the `svg` element, and within that
 > svg file name (`layer5-colorMode`)
 
 - a separator (`_svg___`)
-- the class name being targetted inside the SVG (`colorMode1`)
+- the class name being targeted inside the SVG (`colorMode1`)
   > this results in the class `.layer5-colorMode_svg__colorMode1`
 
 ```
@@ -307,7 +356,7 @@ If possible we wish to avoid using images dependent on the theme because we are 
 
 1. To change images or SVG as the image source, according to the theme, you have to import the hook `useStyledDarkMode` from the following [folder](https://github.com/layer5io/layer5/blob/master/src/theme/app/useStyledDarkMode.js), and then use the `isDark` value from `useStyledDarkMode` hook for the conditional.
 
-For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Meshmap/Meshmap-collaborate/meshmap-collaborate-banner.js).
+For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Kanvas/Kanvas-collaborate/kanvas-collaborate-banner.js).
 
 Here are the relevant parts of the code:
 
@@ -351,7 +400,7 @@ Change image according to isDark value:
 
 ## How to Add Images and Icons
 
-1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
+1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The Issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
 2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site **except for SVG images**. This performs automatic image optimization, thereby improving site performance.
 3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder.
 
@@ -369,7 +418,7 @@ Badges are a great way of highlighting the area of contribution by any given com
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docker-extension/docker-extension-meshery-logo.svg" width="25px" height="25px"/> Docker Extension
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docs/docs.svg" width="25px" height="25px"/> Docs
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/meshery-catalog.svg" width="25px" height="25px"/> Meshery Catalog
-- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg" width="25px" height="25px"/> MeshMap
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg" width="25px" height="25px"/> Kanvas
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/icon-only/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
@@ -534,6 +583,18 @@ git push -u origin <your_branch_name>
 ```
 
 **15.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
+
+### Lint Rules
+
+Layer5 uses ESLint to maintain code quality and consistency in our UI code.  Use this command to trigger a lint check:
+
+```sh
+make lint
+```
+
+> Note:
+>     - Eslint in Gatsby requires generating config files from CLI. Run `gatsby build` or `gatsby develop` if you face this error during linting.
+
 
 ## Signing-off on Commits
 

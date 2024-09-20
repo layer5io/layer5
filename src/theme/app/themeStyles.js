@@ -128,6 +128,7 @@ const lighttheme = {
   grey141714ToGreenEBFCF8: "#EBFCF8",
   grey151515OneToWhiteOne: "rgb(255 255 255 / 0.1)",
   grey191919ToGreyFAFAFA: "#FAFAFA",
+  grey191919ToGreyF2F5F7: "#F2F5F7",
   grey1D1817ToGreyE6E6E6: "#E6E6E6",
   grey1D1D1DToGreyFAFAFA: "#FAFAFA",
   grey1D1D1DToLinear2: "linear-gradient(123deg, white 60%, white 100%)",
@@ -176,7 +177,7 @@ const lighttheme = {
   linearToLinear2: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
   linearToGreen: "linear-gradient(90.2deg,rgba(255, 255, 255, 0.38) 33.89%,rgba(0, 179, 159, 0.74) 99.81%)",
   linearToWhite: "#FFFFFF",
-  radialToWhite: "#FFFFFF",
+  radialToWhite: "radial-gradient( circle 100px at 50% 50%, rgba(215,205,220,0.15) 0%, rgba(203,210,218,0.25) 80%, rgba(167,173,180,.25) 100% )",
   linearDarkToLinearLight: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
   whiteEightToBlack: "#000000",
   whiteEightToBlackEight: "rgb(0 0 0 / 0.8)",
@@ -251,7 +252,7 @@ export const darktheme = {
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
-  secondaryLightColorTwo: "#121212",
+  secondaryLightColorTwo: "rgba(0,179,159, .4)",
 
   // lighter gray
   secondaryLightColor: "#000000",
@@ -302,7 +303,6 @@ export const darktheme = {
   invertColor: "invert(100%)",
   meshInterfaceLogoFilter: "90%",
   mapBackground: "93%",
-
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#212121",
 
@@ -359,6 +359,7 @@ export const darktheme = {
   grey141714ToGreenEBFCF8: "#141714",
   grey151515OneToWhiteOne: "rgb(21 21 21 / 0.1)",
   grey191919ToGreyFAFAFA: "#191919",
+  grey191919ToGreyF2F5F7: "#191919",
   grey1D1817ToGreyE6E6E6: "#1D1817",
   grey1D1D1DToGreyFAFAFA: "#1D1D1D",
   grey1D1D1DToLinear2: "#1D1D1D",
@@ -381,7 +382,7 @@ export const darktheme = {
   grey313131ToYellowFFF7D8: "#313131",
   grey323232ToGreenF3FFFD: "#323232",
   grey3C3C3CToGreyF1F1F1: "#3C3C3C",
-  grey404040ToGreen3C494F: "#404040",
+  grey404040ToGreen3C494F: "#ffffff66",
   grey404040ToGrey1E2117: "#404040",
   grey737373ToGrey222222: "#737373",
   grey737373ToGrey4C4A4A: "#737373",
@@ -407,7 +408,7 @@ export const darktheme = {
   linearToLinear2: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)",
   linearToGreen: "linear-gradient(90.2deg, rgba(0, 0, 0, 0.2) 0.16%, rgba(0, 179, 159, 0.74) 99.81%)",
   linearToWhite: "linear-gradient(to right, #666666, #444444)",
-  radialToWhite: "radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(28,28,28,1) 100%)",
+  radialToWhite: "radial-gradient( circle 100px at 50% 50%, rgba(167,173,180,0.78) 0%, rgba(103,110,118,0.79) 80%, rgba(103,110,118,1) 100% )",
   linearDarkToLinearLight: "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 179, 159, 0.58) 46.87%, rgba(0, 179, 159, 0.034) 100%), linear-gradient(179.39deg, rgba(0, 179, 159, 0) 0.58%, #000000 99.54%)",
   whiteEightToBlack: "rgb(255 255 255 / 0.8)",
   whiteEightToBlackEight: "rgb(255 255 255 / 0.8)",
@@ -448,7 +449,6 @@ export const darktheme = {
   bannerDescriptionGradient: "#121212",
   borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
   borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
-
   //DarkTheme
   DarkTheme: true,
 

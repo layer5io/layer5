@@ -10,6 +10,7 @@ export const query = graphql`
                 title,
                 type,
                 location,
+                abstract,
                 start_date,
                 duration,
                 salary,
@@ -32,6 +33,6 @@ const CareerSinglePage = ({ data, children }) => {
 
 export default CareerSinglePage;
 
-export const Head = ({ data: { mdx: { frontmatter: { title  } } } }) => {
-  return <SEO title={title} />;
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.abstract}/>;
 };

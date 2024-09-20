@@ -21,7 +21,7 @@
 //
 //
 //     <>
-//       <SEO title="Layer5 | The Service Mesh Company" />
+//       <SEO title="Layer5 | Expect More from Your Infrastructure" />
 //       <Navigation />
 //       <Banner />
 //       <About />

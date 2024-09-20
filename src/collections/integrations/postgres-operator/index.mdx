@@ -1,24 +1,47 @@
 ---
-title: Postgres Operator  
-subtitle: Collaborative and visual infrastructure as code for Postgres Operator
-integrationIcon: icon/color/postgres-operator-color.svg
-darkModeIntegrationIcon: icon/white/postgres-operator-white.svg
-docURL: 
-category: App Definition and Development
-subcategory: Database
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+title: Postgres Operator
+subtitle: Collaborative and visual infrastructure as design for Postgres Operator
+integrationIcon: icons/color/postgres-operator-color.svg
+darkModeIntegrationIcon: icons/white/postgres-operator-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/postgres-operator
+description: 
+category: Database
+subcategory: App Definition and Development
+registrant: Artifact Hub
+components: [
+\{
+"name": "operator-configuration",
+"colorIcon": "icons/components/operator-configuration/icons/color/operator-configuration-color.svg",
+"whiteIcon": "icons/components/operator-configuration/icons/white/operator-configuration-white.svg",
+"description": "",
+\},
+\{
+"name": "postgresql",
+"colorIcon": "icons/components/postgresql/icons/color/postgresql-color.svg",
+"whiteIcon": "icons/components/postgresql/icons/white/postgresql-white.svg",
+"description": "",
+\},
+\{
+"name": "postgres-team",
+"colorIcon": "icons/components/postgres-team/icons/color/postgres-team-color.svg",
+"whiteIcon": "icons/components/postgres-team/icons/white/postgres-team-white.svg",
+"description": "",
+\}]
+featureList: [
+  "Automates PostgreSQL deployment and scaling",
+  "Manages PostgreSQL configuration",
+  "Provides backup and restore functionality"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.webp,
-    ../_images/meshmap-designer.webp]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
+]
+howItWorks: "Deploys and manages PostgreSQL"
+howItWorksDetails: "Simplified PostgreSQL management within Kubernetes"
+published: TRUE
 ---
 <p>
-    Postgres Operator creates and manages PostgreSQL clusters running in Kubernetes
+Postgres Operator creates and manages PostgreSQL clusters running in Kubernetes
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

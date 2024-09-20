@@ -1,5 +1,5 @@
 import img_source from "../../../assets/images/callout/callout.webp";
-import meshmap_icon from "../../../assets/images/meshmap/icon-only/meshmap-icon.webp";
+import kanvas_icon from "../../../assets/images/kanvas/kanvas-collaborate.webp";
 import docker from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 
 export const Categories = {
@@ -12,13 +12,13 @@ export const Categories = {
     "Link": "https://slack.layer5.io",
     "Link_external": true
   },
-  "MeshMap": {
-    "Image": meshmap_icon,
-    "Image_Alt": "MeshMap",
-    "Heading": "MeshMap is here!",
-    "Content": "Design your deployments the way you want. Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Say goodbye to YAML configurations. Have your cloud native deployments automatically diagrammed. Deployments configured and modeled in Designer mode, can be deployed into your environment and managed using Visualizer. Discover a catalog of best practice cloud native patterns",
-    "Button_Text": "Try MeshMap now!",
-    "Link": "/cloud-native-management/meshmap",
+  "Kanvas": {
+    "Image": kanvas_icon,
+    "Image_Alt": "Kanvas",
+    "Heading": "Get started with Kanvas!",
+    "Content": "Explore and understand your infrastructure at a glance with our powerful visualizer tool. Gain insights, track dependencies, and optimize performance effortlessly.",
+    "Button_Text": "Try Kanvas now!",
+    "Link": "/cloud-native-management/kanvas",
     "Link_external": false
   },
   "Docker": {

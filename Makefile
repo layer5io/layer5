@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include .github/Makefile.show-help.mk
+include .github/build/Makefile.show-help.mk
 
 setup-libs: 
 	## "DEPRECATED: This target is deprecated. Use `make setup`.
@@ -37,4 +37,8 @@ build:
 clean: 
 	gatsby clean && make site
 
-.PHONY: setup build site clean site-fast
+## Run Eslint on your local machine.
+lint:
+	npm run lint
+
+.PHONY: setup build site clean site-fast lint

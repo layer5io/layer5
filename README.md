@@ -23,7 +23,7 @@
 
 # About Layer5
 
-[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
+[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
 # Projects
 
@@ -39,11 +39,11 @@
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/meshmap">MeshMap</a></h2>
-<a href="https://layer5.io/meshmap">
-  <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="margin:10px;" align="left" />
+<h2><a href="https://layer5.io/kanvas">Kanvas</a></h2>
+<a href="https://layer5.io/kanvas">
+  <img src="src/assets/images/kanvas/kanvas-color-icon.svg" alt="Kanvas logo" width="125px" style="margin:10px;" align="left" />
 </a>
-<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
+<a href="https://layer5.io/kanvas">Kanvas</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
 <br /><br /><br/>
 </p>
 <br />
@@ -71,15 +71,15 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/projects/service-mesh-performance">Cloud Native Performance</a></h2>
-<a href="https://layer5.io/projects/service-mesh-performance">
+<h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
+<a href="https://layer5.io/projects/cloud-native-performance">
 <picture align="left">
          <source media="(prefers-color-scheme: dark)" srcset="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg">
          <source media="(prefers-color-scheme: light)" srcset=".github/assets/images/smp-dark-text.svg">
          <img align="left" src="src/assets/images/service-mesh-performance/stacked/smp-light-text.svg" alt="Shows a dark SMP logo in light mode and a white logo in dark mode" width="125px" style="float:left;margin:10px;" />
 </picture>
 </a>
-The <a href="https://layer5.io/projects/service-mesh-performance">Cloud Native Performance</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, cloud native infrastructure and its configuration, service/application details, and bundling of statistical analysis of results.
+The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, cloud native infrastructure and its configuration, service/application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
 <br />
@@ -103,7 +103,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
    <img src=".github/assets/images/meshery-operator/meshery-operator-dark.svg"
  style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
 </a>
- <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
+ <a href="https://github.com/layer5io/meshery-operator"> Meshery Operator</a> deploys and manages MeshSync.
  <br /><br /><br /><br />
 </p>
 <br />
@@ -147,7 +147,7 @@ alt="Nighthawk" align="left" />
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/projects/catalog">Meshery Catalog</a></h2>
+<h2><a href="https://meshery.layer5.io/catalog">Meshery Catalog</a></h2>
 <a href="">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"
@@ -159,7 +159,7 @@ alt="Meshery Catalog" align="left" />
 
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
-<p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether your opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull requests</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
+<p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether you're opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull request</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
   Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.webp" height="16px" align="bottom" /> Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.

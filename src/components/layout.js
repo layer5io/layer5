@@ -11,10 +11,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import loadable from "@loadable/component";
 import Navigation from "../sections/General/Navigation";
-import { MDXProvider } from "@mdx-js/react";
+import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
 import { Link } from "gatsby";
-
+import { MDXProvider } from "@mdx-js/react";
 const Footer = loadable(() => import("../sections/General/Footer"));
 const ScrollToTopBtn = loadable(() => import("./Scrolltotop-button"));
 
@@ -91,6 +91,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
+      <TopPromotionalBanner />
       <Navigation/>
       <MDXProvider components={components}>
         {children}

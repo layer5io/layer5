@@ -69,7 +69,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
-        "Rank your deployment - results of performance tests are anonymously collected using the Service Mesh Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
+        "Rank your deployment - results of performance tests are anonymously collected using the Cloud Native  Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
       ],
       link: "",
       linktext: "",
@@ -81,8 +81,8 @@ const data = {
         "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
         "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
       ],
-      link: "/projects/service-mesh-performance",
-      linktext: "Service Mesh Performance",
+      link: "/projects/cloud-native-performance",
+      linktext: "Cloud Native Performance",
     },
     {
       question:
@@ -107,36 +107,36 @@ const data = {
       ],
     },
     {
-      question: "Can I deploy Meshery / MeshMap on-premises?",
+      question: "Can I deploy Meshery / Kanvas on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
     {
-      question: "Where is Meshery Cloud hosted; where is my data stored?",
+      question: "Where is Layer5 Cloud hosted; where is my data stored?",
       category: "Meshery",
       answer: [
-        "Meshery Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
     },
     {
-      question: "Is it possible to migrate from managed Meshery Cloud to self-hosted Meshery Cloud on-premises?",
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Meshery Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Meshery Cloud to self-hosted Meshery Cloud.",
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
 
       ],
     },
     {
-      question: `What is the difference between MeshMap and the Cloud Native Playground?`,
+      question: `What is the difference between Kanvas and the Cloud Native Playground?`,
       category: "Meshery",
       answer: [
-        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
-        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
     },    
     {
@@ -171,7 +171,7 @@ const data = {
       ],
     },
     {
-      question: "How does Meshery infused GitOps practices into cloud native managemement?",
+      question: "How does Meshery infuse GitOps practices into cloud native managemement?",
       category: "Meshery Integrations",
       link: "https://layer5.io/cloud-native-management/meshery",
       linktext: "Run Meshery",
@@ -181,13 +181,13 @@ const data = {
       ],
     },
     {
-      question: "Is MeshMap cloud or a self-hosted solution?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
+      question: "Is Kanvas cloud or a self-hosted solution?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
       linktext: "Learn More",
       answer: [
-        "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
-        "MeshMap can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have MeshMap hosted as SaaS solution offered by Layer5.",
+        "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
+        "Kanvas can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have Kanvas hosted as SaaS solution offered by Layer5.",
         "Whether self-hosted or hosted by Layer5, we are here to support you."
       ]
     },
@@ -201,23 +201,23 @@ const data = {
       ]
     },
     {
-      question: "How can I try out MeshMap?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
+      question: "How can I try out Kanvas?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
       answer: [
-       "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
+       "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
        "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
     {
-      question: "What is MeshMap early access program?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
+      question: "What is Kanvas early access program?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
       answer: [
-        "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
-       "MeshMap is in beta mode and you can ask for early access to try it out.",
+        "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
+       "Kanvas is in beta mode and you can ask for early access to try it out.",
       ]
     },
     
@@ -295,7 +295,7 @@ const data = {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
       answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
       ],
     },
     {
@@ -316,7 +316,7 @@ const data = {
       question: "How can I unlock my account after several failed transactions?",
       category: "Billing",
       answer: [
-        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
       ],
     },
 
@@ -404,19 +404,19 @@ const data = {
     //     link: "/service-mesh-landscape",
     //     linktext: "Service Mesh Landscape",
     // },
-    {
-      question: "What is a service mesh?",
-      category: "Service Mesh",
-      answer: [
-        "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
-        "A services-first network; A developer-driven network;",
-        "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
-        "A network that enables service owners to control application logic without engaging developers to change its code.",
-        "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
-      ],
-      link: "",
-      linktext: "",
-    },
+    // {
+    //   question: "What is a service mesh?",
+    //   category: "Service Mesh",
+    //   answer: [
+    //     "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
+    //     "A services-first network; A developer-driven network;",
+    //     "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
+    //     "A network that enables service owners to control application logic without engaging developers to change its code.",
+    //     "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
+    //   ],
+    //   link: "",
+    //   linktext: "",
+    // },
     {
       question: "When should I adopt a service mesh?",
       category: "Service Mesh",
@@ -469,6 +469,13 @@ const data = {
       answer: [
         "Many Layer5 interns speak at large, public technology conferences like KubeCon, DockerCon, and so on. They write blog posts and share about their experience and learnings on social media. They engage with their whole self.",
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
+      ],
+    },
+    {
+      question: "Are internships offered based on previous experiences or projects?",
+      category: "internships",
+      answer: [
+        "Internships are offered based on our commitment to supporting individuals who make a meaningful impact in the community and on our projects. While experience in other projects is wonderful and can be helpful as individuals strive to contribute meaningfully here, it is not a determining factor in whether or not an internship is appropriate to award. The metric we use is whether the individual demonstrates a sustained and positive impact on the projects we steward. We extend support to anyone who achieves this, often in the form of an internship if it proves beneficial to the individual.",
       ],
     },
     

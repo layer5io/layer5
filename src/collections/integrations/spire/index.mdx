@@ -1,24 +1,47 @@
 ---
-title: SPIRE  
-subtitle: Collaborative and visual infrastructure as code for SPIRE
-integrationIcon: icon/color/spire-color.svg
-darkModeIntegrationIcon: icon/white/spire-white.svg
-docURL: 
+title: SPIRE
+subtitle: Collaborative and visual infrastructure as design for SPIRE
+integrationIcon: icons/color/spire-color.svg
+darkModeIntegrationIcon: icons/white/spire-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/spire
+description: 
 category: Security & Compliance
 subcategory: Key Management
-featureList: ["SPIRE design and deployment best practices",
-"Configure SPIRE to securely issue and renew SVIDs.",
-"Design workloads to establish trust between each other by establishing an mTLS connection or by signing and verifying a JWT token."
+registrant: Artifact Hub
+components: [
+\{
+"name": "cluster-federated-trust-domain",
+"colorIcon": "icons/components/cluster-federated-trust-domain/icons/color/cluster-federated-trust-domain-color.svg",
+"whiteIcon": "icons/components/cluster-federated-trust-domain/icons/white/cluster-federated-trust-domain-white.svg",
+"description": "",
+\},
+\{
+"name": "cluster-spiffeid",
+"colorIcon": "icons/components/cluster-spiffeid/icons/color/cluster-spiffeid-color.svg",
+"whiteIcon": "icons/components/cluster-spiffeid/icons/white/cluster-spiffeid-white.svg",
+"description": "",
+\},
+\{
+"name": "controller-manager-config",
+"colorIcon": "icons/components/controller-manager-config/icons/color/controller-manager-config-color.svg",
+"whiteIcon": "icons/components/controller-manager-config/icons/white/controller-manager-config-white.svg",
+"description": "",
+\}]
+featureList: [
+  "SPIRE design and deployment best practices",
+  "Configure SPIRE to securely issue and renew SVIDs.",
+  "Design workloads to establish trust between each other by establishing an mTLS connection or by signing and verifying a JWT token."
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.webp,
-    ../_images/meshmap-designer.webp]
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
+]
 howItWorks: "Configure your signing framework"
 howItWorksDetails: "Simplify access from identified services to secret stores, databases, services meshes and cloud provider services."
-published: true
+published: TRUE
 ---
 <p>
-    The SPIFFE Runtime Environment
+The SPIFFE Runtime Environment
 </p>
 <p>
     Meshery deploys and manages SPIRE (the SPIFFE Runtime Environment). SPIRE is a toolchain of APIs for establishing trust between software systems across a wide variety of hosting platforms. SPIRE exposes the SPIFFE Workload API, which can attest running software systems and issue SPIFFE IDs and SVIDs to them. 

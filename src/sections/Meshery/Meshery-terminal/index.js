@@ -343,7 +343,7 @@ const MesheryTerminal = () => {
                     Meshery provides service mesh and application performance measurement and management.
                   </p>
                   <p>
-                    Meshery natively supports the <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) specification.
+                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> (SMP) specification.
                   </p>
                   <p>
                     Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.

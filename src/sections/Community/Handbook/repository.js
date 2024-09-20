@@ -12,7 +12,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 
 import { Link } from "gatsby";
 
@@ -116,10 +116,10 @@ const Repository = () => {
                 </a>
                   - emerging projects and Meshery extensions, like
                 <img
-                  src={MeshMap}
-                  alt="MeshMap logo"
+                  src={Kanvas}
+                  alt="Kanvas logo"
                   style={{ height: "1.5rem" }}
-                /> MeshMap.
+                /> Kanvas.
               </li>
             </ul>
 
@@ -179,7 +179,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
-                              <div className="accessRequired">{ accessRequired != "" ? accessRequired : ""}</div>
+                              <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
                           </tr>
                         </tbody>
@@ -203,11 +203,12 @@ const Repository = () => {
                         <th>{category}</th>
                         <th>Language</th>
                         <th>Description</th>
+                        <th>Maintainers</th>
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
                     {backendProject.subdata.map((subdata) => {
-                      const { project, image, language, description, repository } = subdata;
+                      const { project,image,language,description,repository,link,maintainers_name,accessRequired } = subdata;
                       const smpClass = project === "SMP Action";
                       const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
@@ -218,6 +219,16 @@ const Repository = () => {
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
+                              {maintainers_name?.map((mname, index) => {
+                                return (
+                                  <Link to={link[index]} key={index}>
+                                    <span>{index > 0 ? ", " : ""}</span>
+                                    {mname}
+                                  </Link>
+                                );
+                              })}
+                            </td>
+                            <td>
                               <a
                                 href={repository}
                                 target="_blank"
@@ -225,6 +236,7 @@ const Repository = () => {
                               >
                                 <img className="github-icon" src={github} alt="github-icon" />
                               </a>
+                              <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
                             </td>
                           </tr>
                         </tbody>

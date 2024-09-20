@@ -1,24 +1,35 @@
 ---
-title: Kubevirt  
-subtitle: Collaborative and visual infrastructure as code for Kubevirt
-integrationIcon: icon/color/kubevirt-color.svg
-darkModeIntegrationIcon: icon/white/kubevirt-white.svg
-docURL: 
+title: Kubevirt
+subtitle: Collaborative and visual infrastructure as design for Kubevirt
+integrationIcon: icons/color/kubevirt-color.svg
+darkModeIntegrationIcon: icons/white/kubevirt-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/kubevirt
+description: 
 category: App Definition and Development
 subcategory: Application Definition & Image Build
-featureList: ["Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
-"Invite anyone to review and make changes to your private designs.",
-"Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+registrant: Github
+components: [
+\{
+"name": "ssp",
+"colorIcon": "icons/components/ssp/icons/color/ssp-color.svg",
+"whiteIcon": "icons/components/ssp/icons/white/ssp-white.svg",
+"description": "",
+\}]
+featureList: [
+  "Runs VMs alongside containers in Kubernetes",
+  "Leverages Kubernetes for VM orchestration",
+  "Supports various guest OSs and VM images"
 ]
 workingSlides: [
-    ../_images/meshmap-visualizer.webp,
-    ../_images/meshmap-designer.webp]
-howItWorks: "Collaborative Infrastructure as Code"
-howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
-published: true
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
+]
+howItWorks: "Manages KubeVirt virtual machines"
+howItWorksDetails: "Unified management of VMs and containers in Kubernetes"
+published: TRUE
 ---
 <p>
-    Kubernetes Virtualization API and runtime in order to define and manage virtual machines.
+Kubernetes Virtualization API and runtime in order to define and manage virtual machines.
 </p>
 <p>
     Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.

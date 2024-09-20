@@ -91,7 +91,7 @@ const FeaturesSection = () => {
               <Button secondary className="mgmt_button" title="Install" url="/cloud-native-management/meshery/getting-started" />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-service-meshes" />
+              <Button secondary className="mgmt_button" title="Manage" url="/cloud-native-management/meshery/operating-cloud-native-infra" />
             </Col>
             <Col xs={12} sm={6} md={4}>
               <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />

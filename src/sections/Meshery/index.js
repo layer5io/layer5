@@ -31,7 +31,7 @@ const MesheryPage = () => {
                 Confidently design, deploy, and operate your infrastructure and workloads with Meshery.
               </p>
               <Button primary className="banner-btn" title="How Meshery Works"
-                url="/cloud-native-management/meshery/operating-service-meshes">
+                url="/cloud-native-management/meshery/operating-cloud-native-infra">
                 <GiClockwork size={21} className="button-icon" />
               </Button>
               <Button secondary className="banner-btn" title="Run Meshery"
@@ -56,7 +56,7 @@ const MesheryPage = () => {
       <FeaturesSection />
       <Container>
         <InlineQuotes
-          quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
+          quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
           person="Nic Jackson"
           title="Principal Developer Advocate at HashiCorp"
           image={Nic} />
