@@ -2,21 +2,21 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.png";
-import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.png";
-import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.png";
-import FunctionColors from "../../../../../assets/images/app/projects/sistent/function-colors-table.png";
-import TextColors from "../../../../../assets/images/app/projects/sistent/text-colors-table.png";
-import BorderColors from "../../../../../assets/images/app/projects/sistent/border-colors-table.png";
-import ComponentColors from "../../../../../assets/images/app/projects/sistent/components-table.png";
+import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.webp";
+import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.webp";
+import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.webp";
+import FunctionColors from "../../../../../assets/images/app/projects/sistent/function-colors-table.webp";
+import TextColors from "../../../../../assets/images/app/projects/sistent/text-colors-table.webp";
+import BorderColors from "../../../../../assets/images/app/projects/sistent/border-colors-table.webp";
+import ComponentColors from "../../../../../assets/images/app/projects/sistent/components-table.webp";
 
-import BrandColorsDark from "../../../../../assets/images/app/projects/sistent/brand-colors-table-dark.png";
-import GreyscaleColorsDark from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table-dark.png";
-import BgColorsDark from "../../../../../assets/images/app/projects/sistent/bg-colors-table-dark.png";
-import FunctionColorsDark from "../../../../../assets/images/app/projects/sistent/function-colors-table-dark.png";
-import TextColorsDark from "../../../../../assets/images/app/projects/sistent/text-colors-table-dark.png";
-import BorderColorsDark from "../../../../../assets/images/app/projects/sistent/border-colors-table-dark.png";
-import ComponentColorsDark from "../../../../../assets/images/app/projects/sistent/components-table-dark.png";
+import BrandColorsDark from "../../../../../assets/images/app/projects/sistent/brand-colors-table-dark.webp";
+import GreyscaleColorsDark from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table-dark.webp";
+import BgColorsDark from "../../../../../assets/images/app/projects/sistent/bg-colors-table-dark.webp";
+import FunctionColorsDark from "../../../../../assets/images/app/projects/sistent/function-colors-table-dark.webp";
+import TextColorsDark from "../../../../../assets/images/app/projects/sistent/text-colors-table-dark.webp";
+import BorderColorsDark from "../../../../../assets/images/app/projects/sistent/border-colors-table-dark.webp";
+import ComponentColorsDark from "../../../../../assets/images/app/projects/sistent/components-table-dark.webp";
 
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";

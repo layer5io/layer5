@@ -4,12 +4,12 @@ import { Row, Col } from "../../../../../reusecore/Layout";
 import { useLocation } from "@reach/router";
 import Button from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.png";
-import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.png";
-import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.png";
-import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
-import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
-import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
+import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.webp";
+import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.webp";
+import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.webp";
+import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.webp";
+import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.webp";
+import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.webp";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentIdentityColor = () => {

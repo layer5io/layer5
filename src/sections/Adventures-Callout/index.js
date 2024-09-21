@@ -4,7 +4,7 @@ import { Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import AdventuresWrapper from "./discuss.style";
 
-const Adventure = "../../assets/images/adventure-five/layer_five.png";
+const Adventure = "../../assets/images/adventure-five/layer_five.webp";
 
 
 const AdventuresCallout = () => {

@@ -4,8 +4,8 @@ import { useLocation } from "@reach/router";
 
 import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
-import SpaceTokenTable1 from "../../../../../assets/images/app/projects/sistent/space-token-table-1-light.png";
-import SpaceTokenTable1Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-1-dark.png";
+import SpaceTokenTable1 from "../../../../../assets/images/app/projects/sistent/space-token-table-1-light.webp";
+import SpaceTokenTable1Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-1-dark.webp";
 
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { SistentLayout } from "../../sistent-layout";

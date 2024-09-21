@@ -3,8 +3,8 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import ConfirmationBg from "../../../../../assets/images/app/projects/sistent/confirmation.png";
-import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sistent/confirmation-dark.png";
+import ConfirmationBg from "../../../../../assets/images/app/projects/sistent/confirmation.webp";
+import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sistent/confirmation-dark.webp";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 

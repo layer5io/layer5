@@ -4,16 +4,16 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import CommunityImage4 from "../Community-pictures/community.png";
+import CommunityImage4 from "../Community-pictures/community.webp";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage2 = "../Community-pictures/five-finding-issue.png";
+const CommunityImage2 = "../Community-pictures/five-finding-issue.webp";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
-const FiveWorking = "../Community-pictures/five-working.png";
+const FiveWorking = "../Community-pictures/five-working.webp";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);

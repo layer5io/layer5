@@ -2,7 +2,7 @@ import React from "react";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
-import SocialBackgroundImg from "../../../../assets/images/social-backgrounds/layer5-charcoal-background.png";
+import SocialBackgroundImg from "../../../../assets/images/social-backgrounds/layer5-charcoal-background.webp";
 
 const SocialBackgrounds = () => {
   return (

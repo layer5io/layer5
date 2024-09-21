@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../../reusecore/Button";
-import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.png";
+import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.webp";
 import BrandGuidePDF from "../../../../assets/brand/brand-guide.pdf";
 
 import { Row, Col } from "../../../../reusecore/Layout";

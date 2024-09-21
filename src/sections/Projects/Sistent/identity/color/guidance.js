@@ -3,11 +3,11 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import { Col, Row } from "../../../../../reusecore/Layout";
-import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.png";
-import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.png";
-import ContextVisuals5 from "../../../../../assets/images/app/projects/sistent/context-visuals-5.png";
-import ContextVisuals6 from "../../../../../assets/images/app/projects/sistent/context-visuals-6.png";
-import ContextVisuals6Dark from "../../../../../assets/images/app/projects/sistent/context-visuals-6-dark.png";
+import TonalPalettes from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full.webp";
+import TonalPalettesDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-full-dark.webp";
+import ContextVisuals5 from "../../../../../assets/images/app/projects/sistent/context-visuals-5.webp";
+import ContextVisuals6 from "../../../../../assets/images/app/projects/sistent/context-visuals-6.webp";
+import ContextVisuals6Dark from "../../../../../assets/images/app/projects/sistent/context-visuals-6-dark.webp";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { SistentLayout } from "../../sistent-layout";
 import Button from "../../../../../reusecore/Button";

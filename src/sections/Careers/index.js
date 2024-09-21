@@ -4,12 +4,12 @@ import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Five from "../../sections/Community/Community-pictures/community.png";
+import Five from "../../sections/Community/Community-pictures/community.webp";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Five_image = "./img/open-source.png";
-const Layer5_culture = "./img/layer5-culture.png";
+const Five_image = "./img/open-source.webp";
+const Layer5_culture = "./img/layer5-culture.webp";
 
 const CareersPage = () => {
   return (
