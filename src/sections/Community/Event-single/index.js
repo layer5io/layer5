@@ -52,8 +52,13 @@ const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
   const { frontmatter, body } = data.mdx;
-
-
+  const isEventPassed = () => {
+    const eventDate = new Date(frontmatter.date);
+    const currentDate = new Date();
+    return eventDate < currentDate;
+  };
+  const isEventUrlSpecified = !!frontmatter.eurl;
+  const showJoinUsButton = !isEventPassed() && isEventUrlSpecified;
   return (
     <EventPageWrapper>
       <PageHeader
@@ -86,13 +91,15 @@ const EventSingle = ({ data }) => {
                   </li>
                 ))}
               </ul>
-              <div className="event-title">
-                <Button primary url={frontmatter.eurl} external={true}>
-                  <h3>
-                    Join us at {frontmatter.title}
-                  </h3>
-                </Button>
-              </div>
+              {showJoinUsButton && (
+                <div className="event-title">
+                  <Button primary url={frontmatter.eurl} external={true}>
+                    <h3>
+                      Join us at {frontmatter.title}
+                    </h3>
+                  </Button>
+                </div>
+              )}
             </div>
             <CTA_Bottom
               category={"Kanvas"}
