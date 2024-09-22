@@ -9,6 +9,9 @@ const EventSinglePageWrapper = styled.div`
     div.event-title {
         text-align: center;
         margin-bottom: 4rem;
+        h3 {
+        color:black;
+        }
     }
     ul.speakers {
         margin-left:0px;
