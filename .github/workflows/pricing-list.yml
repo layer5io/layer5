@@ -1,4 +1,4 @@
-name: Pricing List
+name: Trigger Pricing List Workflow
 
 on:
   workflow_dispatch:
@@ -9,7 +9,16 @@ on:
         required: true
 
 jobs:
-  call-pricing-list:
-    uses: layer5labs/meshery-extensions-packages/.github/workflows/generate-pricing-list.yml@master
-    with:
-      spreadsheet_uri: ${{ inputs.spreadsheet_uri }}
+  trigger-pricing-list:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Make a curl request to trigger the workflow_dispatch in the target repo
+      - name: Trigger Pricing List workflow via GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure the token has `workflow` permissions
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/layer5labs/meshery-extensions-packages/actions/workflows/generate-pricing-list.yml/dispatches \
+            -d '{"ref":"master", "inputs":{"spreadsheet_uri":"${{ inputs.spreadsheet_uri }}"}}'
