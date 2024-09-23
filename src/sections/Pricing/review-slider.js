@@ -17,7 +17,7 @@ import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
 import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
-import Anusha from "./reviews/anusha.png";
+import Anusha from "./reviews/anusha.webp";
 
 const settings = {
   dots: false,

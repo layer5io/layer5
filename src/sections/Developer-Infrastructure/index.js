@@ -2,7 +2,7 @@ import React from "react";
 import FeatureHero from "../SolutionHero";
 import kubernetes_svg from "./images/kubernetes.svg";
 import config_svg from "./images/config.svg";
-import cluster_svg from "./images/cluster.png";
+import cluster_svg from "./images/cluster.webp";
 import collaborate_svg from "./images/collaborate.svg";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
