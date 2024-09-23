@@ -40,6 +40,17 @@ const EventSinglePageWrapper = styled.div`
             max-width: 100%;
         }           
     }
+  .register-form {
+    @media (max-width: 770px) {
+        display: none;
+     }
+   }
+  .register-form-sm {
+    display: none;
+    @media (max-width: 770px) {
+        display: block;
+     }
+   }
 
 `;
 
