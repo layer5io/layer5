@@ -1,0 +1,15 @@
+name: Pricing List
+
+on:
+  workflow_dispatch:
+    inputs:
+      spreadsheet_uri:
+        description: 'Link of the spreadsheet containing subscription details.'
+        type: string
+        required: true
+
+jobs:
+  call-pricing-list:
+    uses: layer5labs/meshery-extensions-packages/.github/workflows/generate-pricing-list.yml@master
+    with:
+      spreadsheet_uri: ${{ inputs.spreadsheet_uri }}
