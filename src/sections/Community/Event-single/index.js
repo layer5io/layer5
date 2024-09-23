@@ -101,12 +101,8 @@ const EventSingle = ({ data }) => {
                   </Button>
                 </div>
               )}
-            </div>
-            <CTA_Bottom
-              category={"Kanvas"}
-            />
-            <div className="register-form-sm">
-              { frontmatter.register &&
+              <div className="register-form-sm">
+                { frontmatter.register &&
                   <EventForm
                     title="Register Today!"
                     form="event"
@@ -114,8 +110,12 @@ const EventSingle = ({ data }) => {
                     submit_title = {`Thank you for registering to ${frontmatter.title}!`}
                     submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
                   />
-              }
+                }
+              </div>
             </div>
+            <CTA_Bottom
+              category={"Kanvas"}
+            />
             {/* <RelatedPosts
             category={frontmatter.category}
             tags={frontmatter.tags}
