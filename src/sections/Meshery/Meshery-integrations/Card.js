@@ -1,9 +1,9 @@
 import React from "react";
-import ListIntegration from "./list-integration.svg";
 import MissingIntegration from "./missing-integration.svg";
 import Button from "../../../reusecore/Button";
 import { IntegrationCard } from "./Integration.style";
 import ContactFormModal from "../../../components/Contact-Modal";
+import ListIntegration from "./list-integration.svg";
 
 const Card = () => {
   return (
