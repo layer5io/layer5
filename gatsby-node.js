@@ -767,83 +767,97 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === "Mdx") {
     const collection = getNode(node.parent).sourceInstanceName;
+    // Log the file name being processed
+    const fileAbsolutePath = getNode(node.parent).absolutePath;
+    console.log(`Processing file: ${fileAbsolutePath}`);
     createNodeField({
       name: "collection",
       node,
       value: collection,
     });
+
     if (collection !== "content-learn") {
       let slug = "";
-      if (node.frontmatter.permalink) {
-        slug = `/${collection}/${node.frontmatter.permalink}`;
-      } else {
-        switch (collection) {
-          case "blog":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "news":
-            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "service-mesh-books":
-          case "service-mesh-workshops":
-          case "service-mesh-labs":
-            slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "resources":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "members":
-            if (node.frontmatter.published)
-              slug = `/community/members/${slugify(node.frontmatter.name)}`;
-            break;
-          case "events":
-            if (node.frontmatter.title)
-              slug = `/community/events/${slugify(node.frontmatter.title)}`;
-            break;
-          default:
-            slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      try {
+        if (node.frontmatter.permalink) {
+          slug = `/${collection}/${node.frontmatter.permalink}`;
+        } else {
+          switch (collection) {
+            case "blog":
+              if (node.frontmatter.published) {
+                slug = `/${collection}/${slugify(
+                  node.frontmatter.category
+                )}/${slugify(node.frontmatter.title)}`;
+              }
+              break;
+            case "news":
+              slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+              break;
+            case "service-mesh-books":
+            case "service-mesh-workshops":
+            case "service-mesh-labs":
+              slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+              break;
+            case "resources":
+              if (node.frontmatter.published) {
+                slug = `/${collection}/${slugify(
+                  node.frontmatter.category
+                )}/${slugify(node.frontmatter.title)}`;
+              }
+              break;
+            case "members":
+              if (node.frontmatter.published) {
+                slug = `/community/members/${slugify(node.frontmatter.name)}`;
+              }
+              break;
+            case "events":
+              if (node.frontmatter.title) {
+                slug = `/community/events/${slugify(node.frontmatter.title)}`;
+              }
+              break;
+            default:
+              slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+          }
         }
+        createNodeField({
+          name: "slug",
+          node,
+          value: slug,
+        });
+      } catch (error) {
+        console.error(`Error processing file: ${fileAbsolutePath}`);
+        console.error(`Error details: ${error.message}`);
       }
-      createNodeField({
-        name: "slug",
-        node,
-        value: slug,
-      });
     } else {
-      const slug = createFilePath({
-        node,
-        getNode,
-        basePath: "content-learn",
-        trailingSlash: false,
-      });
+      try {
+        const slug = createFilePath({
+          node,
+          getNode,
+          basePath: "content-learn",
+          trailingSlash: false,
+        });
+        const parts = slug.split("/").filter((p) => !!p);
 
-      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
-      const parts = slug.split("/").filter((p) => !!p);
-
-      if (parts.length === 1) {
-        onCreatePathNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 2) {
-        onCreateCourseNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 3) {
-        onCreateSectionNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 4) {
-        onCreateChapterNode({ actions, node, slug });
-        return;
+        // Conditional rendering of functions/components
+        if (parts.length === 1 && typeof onCreatePathNode === "function") {
+          onCreatePathNode({ actions, node, slug });
+          return;
+        }
+        if (parts.length === 2 && typeof onCreateCourseNode === "function") {
+          onCreateCourseNode({ actions, node, slug });
+          return;
+        }
+        if (parts.length === 3 && typeof onCreateSectionNode === "function") {
+          onCreateSectionNode({ actions, node, slug });
+          return;
+        }
+        if (parts.length === 4 && typeof onCreateChapterNode === "function") {
+          onCreateChapterNode({ actions, node, slug });
+          return;
+        }
+      } catch (error) {
+        console.error(`Error processing 'content-learn' file: ${fileAbsolutePath}`);
+        console.error(`Error details: ${error.message}`);
       }
     }
   }
