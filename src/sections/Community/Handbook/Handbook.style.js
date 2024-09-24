@@ -568,8 +568,9 @@ div.accessRequired {
 details.invite-only {
   margin: 1rem;
   padding: 1rem;
-  background-color: ${(props) => props.theme.secondaryLightColor};
-  h4 {
+  background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
+  span {
+    font-weight: bold;
     display: inline;
   }
 }
