@@ -565,4 +565,12 @@ div.accessRequired {
   line-height: .9rem;
   font-style: italic;
 }
+details.invite-only {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: ${(props) => props.theme.secondaryLightColor};
+  h4 {
+    display: inline;
+  }
+}
 `;
