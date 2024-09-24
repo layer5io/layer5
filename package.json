@@ -70,7 +70,7 @@
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
-    "gatsby-redirect-from": "^1.0.4",
+    "gatsby-redirect-from": "1.0.4",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
     "gbimage-bridge": "^0.2.2",
