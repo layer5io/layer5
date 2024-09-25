@@ -5,7 +5,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 // import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import { ProjectWrapper } from "./projectGrid.style";
-import KanvasCTA from "../../kanvas-cta";
+import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";

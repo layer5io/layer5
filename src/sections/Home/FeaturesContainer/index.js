@@ -26,26 +26,17 @@ const FeaturesContainer = () => {
   const layoutRef = useRef(null);
   const featuresInfo = [
     {
-      title: "Collaborate with Precision",
+      title: "Build Systems Faster, Together",
       show_custom_cursor: true,
       animationOne: true,
       redirectLink: "/cloud-native-management/kanvas/collaborate/peer-reviews",
-      desc: "Real-time collaboration for cloud and cloud native designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
+      desc: "Real-time collaboration for cloud native and Kubernetes designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false,
     },
     {
-      title: "Generate stunning diagrams",
-      show_custom_cursor: false,
-      animationOne: false,
-      redirectLink: "/whiteboard",
-      desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
-      imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
-      cursor: true,
-    },
-    {
       title: "Multi-Cloud by Design",
-      show_custom_cursor: false,
+      show_custom_cursor: true,
       animationOne: true,
       redirectLink: "",
       desc: (
@@ -72,6 +63,15 @@ const FeaturesContainer = () => {
         },
       ],
     },
+    {
+      title: "Be on the same page, literally",
+      show_custom_cursor: true,
+      animationOne: false,
+      redirectLink: "/whiteboard",
+      desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
+      imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
+      cursor: true,
+    }
   ];
 
   useEffect(() => {
