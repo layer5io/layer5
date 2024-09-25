@@ -52,8 +52,13 @@ const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
   const { frontmatter, body } = data.mdx;
-
-
+  const isEventPassed = () => {
+    const eventDate = new Date(frontmatter.date);
+    const currentDate = new Date();
+    return eventDate < currentDate;
+  };
+  const isEventUrlSpecified = !!frontmatter.eurl;
+  const showJoinUsButton = !isEventPassed() && isEventUrlSpecified;
   return (
     <EventPageWrapper>
       <PageHeader
@@ -64,8 +69,8 @@ const EventSingle = ({ data }) => {
         <Container>
           <div className="event-info-block">
             <div className="tags">
-
-              { frontmatter.register &&
+              <div className="register-form">
+                { frontmatter.register &&
                   <EventForm
                     title="Register Today!"
                     form="event"
@@ -73,7 +78,8 @@ const EventSingle = ({ data }) => {
                     submit_title = {`Thank you for registering to ${frontmatter.title}!`}
                     submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
                   />
-              }
+                }
+              </div>
 
               <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
@@ -86,12 +92,25 @@ const EventSingle = ({ data }) => {
                   </li>
                 ))}
               </ul>
-              <div className="event-title">
-                <Button primary url={frontmatter.eurl} external={true}>
-                  <h3>
-                    Join us at {frontmatter.title}
-                  </h3>
-                </Button>
+              {showJoinUsButton && (
+                <div className="event-title">
+                  <Button primary url={frontmatter.eurl} external={true}>
+                    <h3>
+                      Join us at {frontmatter.title}
+                    </h3>
+                  </Button>
+                </div>
+              )}
+              <div className="register-form-sm">
+                { frontmatter.register &&
+                  <EventForm
+                    title="Register Today!"
+                    form="event"
+                    account_desc="Please provide at least one account."
+                    submit_title = {`Thank you for registering to ${frontmatter.title}!`}
+                    submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
+                  />
+                }
               </div>
             </div>
             <CTA_Bottom

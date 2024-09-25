@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const GitOpsWrapper = styled.section`
+    .mobile-margin {
+        margin-top: 50px;
+    }
     position: relative;
     z-index: 1;
     font-size: 16px;
