@@ -16,6 +16,15 @@ export const HoneycombGrid = styled.div`
     }
   }
 
+  // styling for the blog searchbox
+  .search-box {
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+        }
+  }
+
   .category {
     display: flex;
     flex-wrap: wrap;
