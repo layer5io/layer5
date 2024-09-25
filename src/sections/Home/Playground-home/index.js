@@ -135,19 +135,15 @@ const ViewsSectionWrapper = styled.div`
         }
     }
     .position-line-down-left {
-      //For tablet/desktop screens, icons will move down vertically
       transform: translateY(-20rem);
 
-      //For mobile screens, icons will move to the left horizontally
       @media only screen and (max-width: 767px) {
         transform: translateX(-20rem);
       }
     }
         .position-line-up-right {
-      //For tablet/desktop screens, icons will move up vertically
       transform: translateY(20rem);
 
-      //For mobile screens, icons will move to the right horizontally
       @media only screen and (max-width: 767px) {
         transform: translateX(20rem);
       }
@@ -164,9 +160,6 @@ const ViewsSectionWrapper = styled.div`
         }
     }
 
-     // Animation
-
-      // Vertical animation for tablet screen sizes and up.
     .animation-up-scroll {
       animation: scroll-up-animation 15s linear infinite;
 
@@ -180,7 +173,6 @@ const ViewsSectionWrapper = styled.div`
       }
 
       @media only screen and (max-width: 767px) {
-        //to disable vertical animation on mobile in favor of horizontal animation
         animation: none; 
       }
     }
@@ -198,7 +190,6 @@ const ViewsSectionWrapper = styled.div`
       }
 
       @media only screen and (max-width: 767px) {
-        //to disable vertical animation on mobile in favor of horizontal animation for smaller screens
         animation: none; 
       }
     }
@@ -216,12 +207,10 @@ const ViewsSectionWrapper = styled.div`
       }
 
      @media only screen and (min-width: 768px) {
-        //to disable horizontal animation on mobile in favor of vertical animation for larger screens
         animation: none; 
       }
     }
 
-    //horizontal animation- to the right
     .animation-right-scroll {
       animation: scroll-right-animation 10s linear infinite;
 
@@ -235,7 +224,6 @@ const ViewsSectionWrapper = styled.div`
       }
 
      @media only screen and (min-width: 768px) {
-        //to disable horizontal animation on mobile in favor of vertical animation for larger screens
         animation: none; 
       }
     }
