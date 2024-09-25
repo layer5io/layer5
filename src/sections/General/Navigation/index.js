@@ -410,6 +410,17 @@ const Navigation = () => {
                 <a
                   rel="noreferrer"
                   className="drop-item"
+                  href="https://playground.meshery.io/extension/meshmap?mode=visualize&view=default"
+                  target="_blank"
+                >
+                  <div className="drop-item-icon">
+                    <KanvasIcon />
+                  </div>
+                  Kanvas
+                </a>
+                <a
+                  rel="noreferrer"
+                  className="drop-item"
                   href="https://playground.meshery.io"
                   target="_blank"
                 >
