@@ -92,7 +92,7 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>
-          <h2>Easing your Workflow Burden Collaboratively</h2>
+          <h2>Cognitive overload is real</h2>
           <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
           <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>

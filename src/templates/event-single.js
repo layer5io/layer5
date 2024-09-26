@@ -23,7 +23,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
       type
       speakers
       register
-      date(formatString: "MMM Do, YYYY")
+      date
       thumbnail {
         publicURL
         relativePath
