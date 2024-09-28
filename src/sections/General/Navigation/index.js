@@ -16,6 +16,7 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 import NavigationWrap from "./navigation.style";
 import DefaultAvatar from "./utility/DefaultAvatar.js";
+import MesheryIcon from "./utility/MesheryIcon.js";
 import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
@@ -425,7 +426,7 @@ const Navigation = () => {
                   target="_blank"
                 >
                   <div className="drop-item-icon">
-                    <KanvasIcon />
+                    <MesheryIcon />
                   </div>
                   Playground
                 </a>
