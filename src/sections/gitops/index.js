@@ -43,7 +43,7 @@ const GitOpsPage = () => {
       <div className="content-container content-container-more-width">
         <Row className="content-row">
           <Col lg={6} md={6} className="desc-text-container">
-            <h1 className="heading-1">What is GitOps?</h1>
+            <h1 className="heading-1 mobile-margin">What is GitOps?</h1>
             <SquarePoint>
               GitOps uses Git for defining and tracking infrastructure and app
               changes.

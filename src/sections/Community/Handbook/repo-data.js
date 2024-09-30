@@ -118,7 +118,7 @@ export const repo_data = [
         image: meshery,
         site: "https://play.meshery.io",
         language: "React.js",
-        maintainers_name: ["vacant"],
+        maintainers_name: ["Sangram Rath"],
         link: ["#"],
         repository: "https://github.com/meshery/play",
       },
