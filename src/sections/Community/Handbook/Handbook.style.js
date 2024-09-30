@@ -166,6 +166,12 @@ export const HandbookWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
+    .archived-project {
+      opacity: 0.3;
+      background-color: #808080;
+      // pointer-events: none;
+    }
+
     .linkscol{
       text-align: center;
       width:8%;
