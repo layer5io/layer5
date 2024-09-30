@@ -4,29 +4,26 @@ import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 
-const PlanCard = (props) => {
-  return (
+const PlanCard = ({ planData }) => {
+  if (!planData || !Array.isArray(planData) || planData.length === 0) {
+    return <div>No plan data available</div>;
+  }
 
+  return (
     <PlanCardWrapper>
       <Container>
         <Row $Hcenter={true}>
           {props.planData.map((x) => (
             <Col lg={4} md={6} key={x.tier}>
-              <div
-                className={`${x.featured ? "featured" : ""} pricing-table`}
-              >
-                {x.featured ? (
-                  <div className="pricing-label">Free Forever</div>
-                ) : (
-                  ""
-                )}
+              <div className={`${x.featured ? "featured" : ""} pricing-table`}>
+                {x.featured && <div className="pricing-label">Free Forever</div>}
                 <div className="pricing_coming_soon">
                   {x.pricing_coming_soon}
                 </div>
                 <h2>{x.tier}</h2>
                 <h5 className="byline">{x.byline}</h5>
                 <div className="pricing-features">
-                  {x.summary.map((t) => (
+                  {x.summary && x.summary.map((t) => (
                     <div className="feature" key={t.id}>
                       <FeatureDetails
                         category={t.category}
@@ -49,7 +46,6 @@ const PlanCard = (props) => {
               </div>
             </Col>
           ))}
-
         </Row>
       </Container>
     </PlanCardWrapper>
