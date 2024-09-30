@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { details } from "./data";
+import details  from "./generateDetails";
 import { Container } from "../../reusecore/Layout";
 // import FeatureDetails from "./collapsible-details";
 import FeatureDetails from "../../components/PlanCard/collapsible-details";
