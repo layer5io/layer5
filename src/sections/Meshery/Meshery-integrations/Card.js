@@ -1,15 +1,16 @@
 import React from "react";
-import ListIntegration from "./list-integration.svg";
+import { Image } from "gatsby-image";
 import MissingIntegration from "./missing-integration.svg";
 import Button from "../../../reusecore/Button";
 import { IntegrationCard } from "./Integration.style";
 import ContactFormModal from "../../../components/Contact-Modal";
+import ListIntegration from "./list-integration.svg";
 
 const Card = () => {
   return (
     <IntegrationCard>
       <div className="container">
-        <img src={MissingIntegration} alt="missing integration icon" />
+        <Image src={MissingIntegration} alt="Image description" />
         <h2>Missing an Integration?</h2>
         <p>Meshery is an extensible  platform with many purpose-built extension points. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app.</p>
         <Button

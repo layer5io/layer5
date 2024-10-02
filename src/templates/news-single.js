@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import SEO from "../components/seo";
 
 import NewsSingle from "../sections/Company/News-single";

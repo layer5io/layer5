@@ -7,12 +7,12 @@ lectures: 12
 order: 7
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 import ControlPlane from "../../../../src/assets/images/learn-layer5/linkerd/control-plane-c.webp";
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">How Linkerd handles traffic splitting</h2>
+<h2 className="chapter-sub-heading">How Linkerd handles traffic splitting</h2>
 
 <a href={ControlPlane}>
   <img src={ControlPlane} width="100%" align="center" />
@@ -22,7 +22,7 @@ The destination component of the control plane looks for changes in configuratio
 
 proxies to follow. As opposed to presenting its own configuration format for traffic splitting, Linkerd follows the [SMI spec](https://smi-spec.io/), which plans to give a brought together, summed up setup model for service meshes (simply like ingress, CRI, and so on in Kubernetes).
 
-<h2 class="chapter-sub-heading"> Deploying sample application</h2>
+<h2 className="chapter-sub-heading"> Deploying sample application</h2>
 
 We will be deploying [istio's bookinfo application](https://istio.io/latest/docs/examples/bookinfo/) for this part of the demo
 
@@ -115,7 +115,7 @@ This tells Linkerd’s control plane that whenever there are requests to the rev
 
 If we now go back to our product page, we can only see the reviews with orange or no stars appear on each refresh.
 
-<h2 class="chapter-sub-heading"> Cleanup</h2>
+<h2 className="chapter-sub-heading"> Cleanup</h2>
 
 ```sh
 kubectl delete trafficsplit/reviews-split

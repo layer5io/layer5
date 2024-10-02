@@ -1,5 +1,4 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
@@ -10,8 +9,8 @@ import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
-const CareerSingle = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+const CareerSingle = ({ data, children }) => {
+  const { frontmatter } = data.mdx;
 
   return (
     <CareerPageWrapper>
@@ -47,7 +46,7 @@ const CareerSingle = ({ data }) => {
             </Col>
           </Row>
           <div>
-            <MDXRenderer>{body}</MDXRenderer>
+            { children }
           </div>
         </Container>
       </div>

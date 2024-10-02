@@ -7,23 +7,23 @@ lectures: 8
 order: 1
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 import LinkerdAdapter from "../../../../src/assets/images/learn-layer5/linkerd/linkerd-adapter.webp";
 import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/install-linkerd.webp";
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Setup Linkerd</h2>
+<h2 className="chapter-sub-heading">Setup Linkerd</h2>
 
 Now that we have a Kubernetes cluster and Meshery, we are ready to download and deploy Linkerd resources.
 
-<h2 class="chapter-sub-heading">Steps</h2>
+<h2 className="chapter-sub-heading">Steps</h2>
 
 1. [Install Linkerd](#1)
 1. [Verify install](#2)
 1. [Confirm add-ons](#3)
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="1">Install Linkerd</a>
 </h3>
 
@@ -40,13 +40,14 @@ In the Linkerd management page:
 
    <a href={InstallLinkerd}>
      <img src={InstallLinkerd} align="center" />
-   </a>{" "}
+   </a>
+{" "}
 
 <h3>Alternative: Manual Installation</h3>
 
 Perform the below steps if the above steps doesn't work for you.
 
-<h4 class="chapter-alt-heading">Download `linkerd` CLI</h4>
+<h4 className="chapter-alt-heading">Download `linkerd` CLI</h4>
 
 On a \*nix system, you can setup linkerd by doing the following:
 
@@ -77,7 +78,7 @@ We can use a new feature in linkerd to check if the cluster is ready for install
 linkerd check --pre
 ```
 
-<h4 class="chapter-alt-heading">Install Linkerd:</h4>
+<h4 className="chapter-alt-heading">Install Linkerd:</h4>
 
 Deploy Linkerd custom resources:
 
@@ -85,7 +86,7 @@ Deploy Linkerd custom resources:
 linkerd install | kubectl apply -f -
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="2">Verify install</a>
 </h3>
 
@@ -95,13 +96,13 @@ Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd a
 linkerd check
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a>Enforce mTLS strict mode</a>
 </h3>
 
 By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="3">Confirming Add-ons</a>
 </h3>
 

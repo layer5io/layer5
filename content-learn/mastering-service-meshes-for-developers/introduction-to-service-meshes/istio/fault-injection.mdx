@@ -7,7 +7,7 @@ lectures: 12
 order: 6
 ---
 
-import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
 
 <ChapterStyle>
 
@@ -36,7 +36,7 @@ spec:
             subset: v2
 ```
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
   Inject a route rule to create a fault using HTTP delay
 </h2>
 
@@ -92,7 +92,7 @@ Sorry, product reviews are currently unavailable for this book.
 
 If you logout or login as a different user, the page should load normally without any errors.
 
-<h2 class="chapter-sub-heading">
+<h2 className="chapter-sub-heading">
   Inject a route rule to create a fault using HTTP abort
 </h2>
 
@@ -145,7 +145,7 @@ Now we login to `/productpage` as user `jason` and observe that the page loads w
 
 `Ratings service is currently unavailable`.
 
-<h3 class="chapter-sub-heading"> Verify fault injection</h3>
+<h3 className="chapter-sub-heading"> Verify fault injection</h3>
 
 Verify the fault injection by logging out (or logging in as a different user), the page should load normally without any errors.
 
@@ -155,7 +155,7 @@ Follow these steps if the above steps did not work
 <br />
 <br />
 
-<h4 class="chapter-alt-heading">
+<h4 className="chapter-alt-heading">
   Route all traffic to version V1 of all services
 </h4>
 
@@ -163,7 +163,7 @@ Follow these steps if the above steps did not work
 kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
 
-<h4 class="chapter-alt-heading">
+<h4 className="chapter-alt-heading">
   Route all traffic to version V2 of reviews for user Jason
 </h4>
 
@@ -171,13 +171,13 @@ kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
 
-<h4 class="chapter-alt-heading"> Inject 7s delay for ratings service</h4>
+<h4 className="chapter-alt-heading"> Inject 7s delay for ratings service</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
 ```
 
-<h4 class="chapter-alt-heading"> Inject HTTP abort for ratings service</h4>
+<h4 className="chapter-alt-heading"> Inject HTTP abort for ratings service</h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml

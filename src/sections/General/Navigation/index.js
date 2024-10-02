@@ -172,6 +172,60 @@ const Navigation = () => {
   data["Solutions"] = {
     nodes: [],
   };
+
+  // Learn: allMdx(
+  //   sort: {fields: [frontmatter___date], order: DESC}
+  //   filter: {fields: {collection: {eq: "service-mesh-books"}}}
+  //   limit: 2
+  // ) {
+  //   nodes {
+  //     id
+  //     frontmatter {
+  //       title
+  //       thumbnail {
+  //         childImageSharp {
+  //           gatsbyImageData(
+  //             width: 1050
+  //             height:1360
+  //             layout: CONSTRAINED
+  //           )
+  //         }
+  //         publicURL
+  //       }
+  //     }
+  //     fields {
+  //       slug
+  //     }
+  //   }
+  // },
+  // Home: allMdx(
+  //   sort: {fields: [frontmatter___date], order: DESC}
+  //   filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+  //   limit: 2
+  // ) {
+  //   nodes {
+  //     id
+  //     frontmatter {
+  //       title
+  //       thumbnail {
+  //         childImageSharp {
+  //           gatsbyImageData(
+  //             width: 240
+  //             height: 160
+  //             transformOptions: {cropFocus: CENTER}
+  //             layout: FIXED
+  //           )
+  //         }
+  //         extension
+  //         publicURL
+  //       }
+  //     }
+  //     fields {
+  //       slug
+  //     }
+  //   }
+  // }
+
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [dropDown, setDropDown] = useState(false);
@@ -240,8 +294,13 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
+      window.scrollY > 50 ? setScroll(true) : setScroll(false)
     );
+    return () => {
+      window.removeEventListener("scroll", () =>
+        window.scrollY > 50 ? setScroll(true) : setScroll(false)
+      );
+    };
   }, []);
 
   const openDropDown = () => {

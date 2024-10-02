@@ -1,17 +1,14 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
 
 import BookSinglePageWrapper from "./BookSingle.style.js";
 
-const BookSingle = ({ data }) => {
+const BookSingle = ({ data, children }) => {
 
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter } = data.mdx;
   return (
     <BookSinglePageWrapper>
       <div className="backBtn">
@@ -26,7 +23,7 @@ const BookSingle = ({ data }) => {
       <div className="single-post-wrapper">
         <Container>
           <div className="single-post-block">
-            <MDXRenderer>{body}</MDXRenderer>
+            { children }
           </div>
         </Container>
       </div>

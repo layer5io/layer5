@@ -20,7 +20,7 @@ export const query = graphql`query BlogsByTags($tag: String!) {
         author
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
           extension
           publicURL
@@ -61,7 +61,6 @@ const BlogListPage = ({ pageContext, data }) => {
   return (
 
     <>
-
       <BlogList
         data={data}
         pageContext={pageContext}

@@ -8,21 +8,20 @@ description:
 category: Cloud Native Network
 subcategory: Service Proxy
 registrant: Artifact Hub
-components: [
-{
-"name": "target-group-binding",
-"colorIcon": "icons/components/target-group-binding/icons/color/target-group-binding-color.svg",
-"whiteIcon": "icons/components/target-group-binding/icons/white/target-group-binding-white.svg",
-"description": "",
-}]
+components:
+  - name: target-group-binding
+    colorIcon: icons/components/target-group-binding/icons/color/target-group-binding-color.svg
+    whiteIcon: icons/components/target-group-binding/icons/white/target-group-binding-white.svg
+    description: ""
+
 featureList: [
   "Expose your pods using an existing ALB TargetGroup or NLB TargetGroup.",
   "Allows you to provision the load balancer infrastructure completely outside of Kubernetes.",
   "Used by AWS LoadBalancer controller internally to  support the functionality for Ingress and Service resource as well."
 ]
 workingSlides: [
-  ../_images/kanvas-visualizer.png,
-  ../_images/kanvas-designer.png
+  ../_images/kanvas-visualizer.webp,
+  ../_images/kanvas-designer.webp
 ]
 howItWorks: "Collaborative Infrastructure as Design"
 howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."

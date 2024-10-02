@@ -1,15 +1,17 @@
 import React from "react";
 import Select from "react-select";
 import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProgramsPageWrapper, { dropdownTheme, selectStyles } from "./ProgramsSingle.style.js";
+import loadable from "@loadable/component";
+const SelectedProgram = loadable(() => import("../selected_program"));
 
-const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
+const ProgramsSingle = ({ data, options, setActiveOption, activeOption, children }) => {
 
-  const { frontmatter, body } = data;
+  const { frontmatter } = data;
+  const optionsAvailable = Boolean(options);
 
   return (
     <ProgramsPageWrapper>
@@ -21,7 +23,7 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
               <h4>Go Back</h4>
             </Link>
           </div>
-          {Boolean(options) &&
+          {optionsAvailable &&
             <div className="selectWrapper">
               {options.length > 1 && <Select
                 name="Select Year of Program"
@@ -42,10 +44,15 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
       />
       <div className="single-post-wrapper" id="programs">
         <Container>
-
-          <div className="single-post-block">
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
+          {
+            optionsAvailable && options.length > 1
+              ?  <SelectedProgram
+                selected={options[activeOption].label}
+              />
+              : <div className="single-post-block">
+                { children }
+              </div>
+          }
         </Container>
       </div>
     </ProgramsPageWrapper>
