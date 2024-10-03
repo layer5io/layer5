@@ -35,6 +35,9 @@ export const onClientEntry = () => {
       {
         api_host: "https://us.i.posthog.com",
         person_profiles: "always",
+        autocapture: {
+          url_ignorelist: ["community/newcomers", "/calendar", "/newcomers"]
+        }
       }
     );
   }
