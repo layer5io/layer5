@@ -52,7 +52,9 @@ const BlogGrid = ({
                 <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
               </div>
               <div className="blog-grid-wrapper">
-                <Row>
+                <Row style={{
+                  flexWrap: "wrap"
+                }}>
                   {queryResults.length < 1 && (
                     <Col $xs={12} $sm={6}>
                       No blog post that matches the title "{searchQuery}" found.

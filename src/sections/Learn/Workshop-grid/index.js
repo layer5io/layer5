@@ -82,7 +82,9 @@ const WorkshopsPage = () => {
       <div className="workshop-page-wrapper">
         <Container>
           <div className="workshop-grid-wrapper">
-            <Row>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
@@ -115,7 +117,9 @@ const WorkshopsPage = () => {
                 </Col>
               ))}
             </Row>
-            <Row className="rqst-workshop">
+            <Row style={{
+              flexDirection: "column"
+            }} className="rqst-workshop">
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
               <Button $primary $url="mailto:support@layer5.io" $external={true}>
                                 Request A Workshop

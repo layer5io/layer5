@@ -48,7 +48,9 @@ const BlogList = ({
       />
       <div className="blog-page-wrapper">
         <Container>
-          <Row>
+          <Row style={{
+            flexWrap: "wrap"
+          }}>
             <Col $xs={12} $lg={8}>
               {!pageContext.tag && !pageContext.category ? (
                 <div className="tooltip-search">
