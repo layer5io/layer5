@@ -13,7 +13,7 @@ import slugify from "../../utils/slugify";
 const UpcomingEvents = ({ data }) => {
   return (
     <UpcomingEventsWrapper>
-      <div className="blog-slider">
+      <div className="blog-slider swiper">
         <div className="blog-slider__wrp swiper-wrapper">
 
           <Swiper
