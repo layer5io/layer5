@@ -11,6 +11,7 @@ const UpcomingEventsWrapper = styled.div`
 		padding: 1rem;
 		border-radius: 0.5rem;
 		height: 39.5rem;
+		overflow: auto;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.blog-slider_img{

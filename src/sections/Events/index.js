@@ -27,7 +27,9 @@ const Meetups = ({ data, pageContext }) => {
           <Button className={active == "meetups" ? "active" : ""} onClick={() => setActive("meetups")} title="MeetUps" />
         </div>
         <div>
-          <Row>
+          <Row style={{
+            flexWrap: "wrap"
+          }}>
             {active == "all" ? sortEvents(data.allCategories.nodes).map(category => {
               return (
                 <Col $xs={12} $sm={6} $lg={4} key={category.id}>

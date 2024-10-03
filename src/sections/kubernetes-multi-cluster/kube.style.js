@@ -14,7 +14,6 @@ const CommentsWrapper = styled.div`
   .collaboration_display {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
     margin: 0 10px;
     align-items: flex-start;
