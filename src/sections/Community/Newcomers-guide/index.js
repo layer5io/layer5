@@ -72,7 +72,9 @@ const NewcomersGuide = () => {
           </Row>
         </div>
         <div className="instructions">
-          <Row className="step">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
             <Col $sm={12} $lg={6}>
               <h3>Fill in the Community Member Form</h3>
               <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>

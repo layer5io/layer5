@@ -28,8 +28,7 @@ const BlogList = ({
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
-      ? `${totalCount} post${
-        totalCount === 1 ? "" : "s"
+      ? `${totalCount} post${totalCount === 1 ? "" : "s"
       } categorized as "${category}"`
       : "Blog";
 
@@ -67,14 +66,17 @@ const BlogList = ({
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true} />
               )}
               <div className="blog-list-wrapper">
-                <Row className="blog-lists">
+                <Row style={{
+                  flexWrap: "wrap"
+                }}
+                className="blog-lists">
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }) => (
                       <Col $xs={12} key={id}>
-                        <Card  frontmatter={frontmatter} fields={fields} />
+                        <Card frontmatter={frontmatter} fields={fields} />
                       </Col>
                     ))}
                   <Col>

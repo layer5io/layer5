@@ -22,7 +22,9 @@ const DockerExtensionMeshery = () => {
   return (
     <DockerMesheryWrapper>
       <Container>
-        <Row className="dockerMesherySection">
+        <Row style={{
+          flexDirection: "column"
+        }} className="dockerMesherySection">
           <h2 className="sectionTitle">
             Wrangle cloud native apps using Docker Desktop and Meshery
           </h2>
