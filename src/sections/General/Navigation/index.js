@@ -21,6 +21,7 @@ import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
+import posthog from "posthog-js";
 const Navigation = () => {
   let data = useStaticQuery(
     graphql`
@@ -212,6 +213,14 @@ const Navigation = () => {
         }
 
         const data = response.data;
+        if (data){
+          posthog.identify(
+            data?.id,
+            {
+              email: data?.email
+            }
+          );
+        }
         setUserData(data);
       } catch (error) {
         console.error("There was a problem with your fetch operation:", error);
