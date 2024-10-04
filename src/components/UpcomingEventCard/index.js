@@ -19,7 +19,7 @@ const UpcomingEvents = ({ data }) => {
         }} className="blog-slider__wrp swiper-wrapper">
 
           <Swiper
-            spaceBetween={100}
+            spaceBetween={50}
             slidesPerView={1}
             modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
