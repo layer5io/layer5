@@ -4,17 +4,19 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMasterFull from   "../../../../assets/images/meshmaster/meshmaster-full.webp";
-import MeshMasterIcon from   "../../../../assets/images/meshmaster/meshmaster-icon.webp";
-import MeshMasterText from   "../../../../assets/images/meshmaster/meshmaster-text.webp";
+import MeshMasterFull from "../../../../assets/images/meshmaster/meshmaster-full.webp";
+import MeshMasterIcon from "../../../../assets/images/meshmaster/meshmaster-icon.webp";
+import MeshMasterText from "../../../../assets/images/meshmaster/meshmaster-text.webp";
 
 const MeshMasterBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
-          MeshMaster
+            MeshMaster
           </h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
@@ -44,13 +46,13 @@ const MeshMasterBrand = () => {
         <SRLWrapper>
           <Row $Vcenter className="ImgDiv">
             <Col $xs={12} $sm={4}>
-              <img src={MeshMasterFull} alt="Meshmaster Full Logo"/>
+              <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
             </Col>
             <Col $xs={12} $sm={4}>
-              <img src={MeshMasterIcon} alt="Meshmaster Icon"/>
+              <img src={MeshMasterIcon} alt="Meshmaster Icon" />
             </Col>
             <Col $xs={12} $sm={4}>
-              <img src={MeshMasterText} alt="Meshmaster Text"/>
+              <img src={MeshMasterText} alt="Meshmaster Text" />
             </Col>
 
           </Row>

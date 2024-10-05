@@ -11,7 +11,9 @@ import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-
 const ImageHubBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             Image Hub
@@ -44,10 +46,10 @@ const ImageHubBrand = () => {
         <SRLWrapper>
           <Row $Vcenter className="ImgDiv">
             <Col $xs={12} $sm={3}>
-              <img src={ImageHub} alt="ImageHub Logo"/>
+              <img src={ImageHub} alt="ImageHub Logo" />
             </Col>
             <Col $xs={12} $sm={3} className="logo">
-              <img src={ImageHubWhite} alt="ImageHubWhite Logo"/>
+              <img src={ImageHubWhite} alt="ImageHubWhite Logo" />
             </Col>
           </Row>
         </SRLWrapper>

@@ -7,7 +7,9 @@ import SFL from "../../../../assets/images/stick-figures/SVG/stick-figures.svg";
 const StickFigures = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Five, our mascot </strong>

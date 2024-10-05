@@ -25,7 +25,9 @@ const MeshMarkBrand = () => {
   return (
     <SMPWrap>
       <div className="post-content">
-        <Row className="brand-section">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               <strong>MeshMark</strong>
@@ -58,43 +60,43 @@ const MeshMarkBrand = () => {
           <SRLWrapper>
             <Row $Vcenter className="ImgDiv smp-logo">
               <Col $xs={12} $sm={4}>
-                <img src={MeshmarkDark} alt="MeshmarkDark Logo"/>
+                <img src={MeshmarkDark} alt="MeshmarkDark Logo" />
               </Col>
               <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo"/>
+                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo" />
                 </div>
               </Col>
               <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLight} alt="MeshmarkLightLogo"/>
+                  <img src={MeshmarkLight} alt="MeshmarkLightLogo" />
                 </div>
               </Col>
             </Row>
             <Row $Vcenter className="ImgDiv MeshMark-logo">
               <Col $xs={12} $sm={4}>
-                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo"/>
+                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo" />
               </Col>
               <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo"/>
+                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo" />
                 </div>
               </Col>
               <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo"/>
+                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo" />
                 </div>
               </Col>
             </Row>
             <Row $Vcenter className="ImgDiv smp-logo">
               <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
+                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo" />
               </Col>
               <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
+                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo" />
               </Col>
               <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
+                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo" />
               </Col>
             </Row>
           </SRLWrapper>
@@ -102,14 +104,14 @@ const MeshMarkBrand = () => {
         <Row>
           <Col>
             <h2 className="layerH3 in">
-                            Colors
+              Colors
             </h2>
           </Col>
           <Col>
             <p>
-                            The MeshMark color palette consists of gray, green and blue colors along with
-                            additional shades. The MeshMark logo should be white or monochrome when
-                            using project colors as the background.
+              The MeshMark color palette consists of gray, green and blue colors along with
+              additional shades. The MeshMark logo should be white or monochrome when
+              using project colors as the background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

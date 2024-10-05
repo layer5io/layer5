@@ -10,14 +10,18 @@ import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.webp"
 const CommunityBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             Community
           </h1>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col $xs={12} $sm={6}>
           <h2 className="layerH3">
             MeshMate
@@ -41,22 +45,28 @@ const CommunityBrand = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Logos
           </h2>
         </Col>
-        <Row className="ImgDiv">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="ImgDiv">
           <Col $xs={12} $sm={3}>
-            <img src={MeshMateLogo} alt="MeshMate Logo"/>
+            <img src={MeshMateLogo} alt="MeshMate Logo" />
           </Col>
           <Col $xs={12} $sm={3} className="logo">
-            <img src={MeshMateLogoLight} alt="MeshMate Logo Light"/>
+            <img src={MeshMateLogoLight} alt="MeshMate Logo Light" />
           </Col>
         </Row>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Colors

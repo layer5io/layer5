@@ -25,7 +25,9 @@ const Catalog = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row className="brand-section">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
           <Col xs={12} sm={6}>
             <h1 className="layerH3">Catalog</h1>
           </Col>
@@ -47,13 +49,17 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col xs={12}>
             <h2 className="layerH3 in">Logos</h2>
           </Col>
         </Row>
         <ProjectItemWrapper id="projects">
-          <Row>
+          <Row style={{
+            flexWrap: "wrap"
+          }}>
             <div className="project__block__wrap">
               <Col sm={12} md={6} lg={4}>
                 <div className="project__block__inner">
@@ -104,7 +110,9 @@ const Catalog = () => {
           </Row>
         </ProjectItemWrapper>
 
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col xs={12}>
             <h2 className="layerH3 in">Colors</h2>
           </Col>

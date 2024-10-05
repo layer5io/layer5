@@ -21,7 +21,9 @@ const BrandGuide = () => {
     <>
       <Layer5Wrapper>
         <div className="post-content">
-          <Row className="brand-section">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="brand-section">
             <Col $xs={12} $sm={6}>
               <h1 className="layerH3">
                 Brand Guide

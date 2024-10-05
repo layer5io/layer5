@@ -11,7 +11,9 @@ import SmpTxt from "../../../../assets/images/service-mesh-patterns/service-mesh
 const ServiceMeshPatterns = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong>Cloud Native Patterns</strong>
@@ -26,34 +28,34 @@ const ServiceMeshPatterns = () => {
         </Col>
         <Col>
           <p>
-              The Cloud Native Pattern mark includes Cloud Native Pattern name & logo and any
-              word, phrase, image, or other designation that identifies the
-              source or origin of any Layer5 projects. PLease don't modify the
-              marks or use them in a confusing way, including suggesting
-              sponsorship or endorsement by Layer5 with another brand (including
-              your own)
+            The Cloud Native Pattern mark includes Cloud Native Pattern name & logo and any
+            word, phrase, image, or other designation that identifies the
+            source or origin of any Layer5 projects. PLease don't modify the
+            marks or use them in a confusing way, including suggesting
+            sponsorship or endorsement by Layer5 with another brand (including
+            your own)
           </p>
         </Col>
       </Row>
       <Row>
         <Col>
           <h2 className="layerH3 in">
-              Logos
+            Logos
           </h2>
         </Col>
         <SRLWrapper>
           <Row $Vcenter className="ImgDiv smp-logo">
             <Col $xs={12} $sm={4}>
-              <img src={SmpLogo} alt="Smp Logo"/>
+              <img src={SmpLogo} alt="Smp Logo" />
             </Col>
             <Col $xs={12} $sm={4}>
               <div className="logo">
-                <img src={SmpWhite} alt="SmpWhite Logo"/>
+                <img src={SmpWhite} alt="SmpWhite Logo" />
               </div>
             </Col>
             <Col $xs={12} $sm={4}>
               <div className="logo">
-                <img src={SmpTxt} alt="SmpTxt Logo"/>
+                <img src={SmpTxt} alt="SmpTxt Logo" />
               </div>
             </Col>
           </Row>
@@ -62,14 +64,14 @@ const ServiceMeshPatterns = () => {
       <Row>
         <Col>
           <h2 className="layerH3 in">
-                            Colors
+            Colors
           </h2>
         </Col>
         <Col>
           <p>
-                            The Cloud Native Pattern color palette consists of gray and green colors along with
-                            additional shades. The SMP logo should be white or monochrome when
-                            using project colors as the background.
+            The Cloud Native Pattern color palette consists of gray and green colors along with
+            additional shades. The SMP logo should be white or monochrome when
+            using project colors as the background.
           </p>
         </Col>
         <Row className="color-code-wrapper">

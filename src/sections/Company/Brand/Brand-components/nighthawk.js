@@ -9,7 +9,9 @@ import GNHWithName from "../../../../assets/images/nighthawk/with-name/SVG/night
 const Nighthawk = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Nighthawk </strong>

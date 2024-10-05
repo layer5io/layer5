@@ -23,7 +23,9 @@ const Layer5Brand = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row className="brand-section">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               Layer5
@@ -57,11 +59,11 @@ const Layer5Brand = () => {
             <Row $Vcenter className="Layer5Logos">
               <Col $xs={12} $sm={6}>
                 <img src={Layer5WhiteBg} alt="Layer5 Logo" />
-                  Primary Logo: broadly, and majorly applicable
+                Primary Logo: broadly, and majorly applicable
               </Col>
               <Col $xs={12} $sm={6}>
                 <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
-                  Layer5 Icon: suited for square-shaped display
+                Layer5 Icon: suited for square-shaped display
               </Col>
             </Row>
           </SRLWrapper>

@@ -13,7 +13,9 @@ import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-lo
 const MesheryBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             Meshery
@@ -46,15 +48,15 @@ const MesheryBrand = () => {
         <SRLWrapper>
           <Row $Vcenter className="ImgDiv">
             <Col $xs={12} $sm={4}>
-              <img src={MeshDarkText} alt="MesheryDark Logo"/>
+              <img src={MeshDarkText} alt="MesheryDark Logo" />
             </Col>
             <Col $xs={12} $sm={4}>
-              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
+              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo" />
             </Col>
           </Row>
           <Row $Vcenter className="ImgDiv">
             <Col $xs={12} $sm={4}>
-              <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
+              <img src={MeshLogoLightText} alt="MesheryLightText Logo" />
             </Col>
             <Col $xs={12} $sm={4}>
               <img src={MeshLogoOnly} alt="Meshery Logo" />
