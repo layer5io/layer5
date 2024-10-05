@@ -34,7 +34,9 @@ const LandscapeGrid = () => {
       <div className="landscape-page-wrapper">
         <Container>
           <div>
-            <Row $Hcenter>
+            <Row style={{
+              flexWrap: "wrap"
+            }} $Hcenter>
               <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
                                 Comparison of Service Mesh Strengths
               </h2>
