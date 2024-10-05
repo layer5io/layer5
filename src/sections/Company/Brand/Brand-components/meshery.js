@@ -39,7 +39,9 @@ const MesheryBrand = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Logos
@@ -64,7 +66,9 @@ const MesheryBrand = () => {
           </Row>
         </SRLWrapper>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Colors

@@ -35,7 +35,9 @@ const Nighthawk = () => {
         </Col>
       </Row>
 
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in"> Logos </h2>
         </Col>

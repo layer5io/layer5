@@ -37,7 +37,9 @@ const MeshMasterBrand = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Logos
@@ -58,7 +60,9 @@ const MeshMasterBrand = () => {
           </Row>
         </SRLWrapper>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col $xs={12}>
           <h2 className="layerH3 in">
             Colors

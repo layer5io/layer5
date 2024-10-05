@@ -45,7 +45,9 @@ const KanvasBrand = () => {
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
               Logos
@@ -65,7 +67,9 @@ const KanvasBrand = () => {
             </Row>
           </SRLWrapper>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
               Colors
