@@ -34,7 +34,9 @@ const LandscapeGrid = () => {
       <div className="landscape-page-wrapper">
         <Container>
           <div>
-            <Row Hcenter>
+            <Row style={{
+              flexWrap: "wrap"
+            }} $Hcenter>
               <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
                                 Comparison of Service Mesh Strengths
               </h2>
@@ -141,7 +143,7 @@ const LandscapeGrid = () => {
                                     and non-functional details.
                   </p>
                   <p className="text-gray">Found a discrepancy, missing or out-dated information?</p>
-                  <Button primary url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" external={true}>
+                  <Button $primary $url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" $external={true}>
                                         Let Us Know
                   </Button>
                 </div>

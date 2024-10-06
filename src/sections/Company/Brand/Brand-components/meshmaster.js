@@ -4,22 +4,24 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MeshMasterFull from   "../../../../assets/images/meshmaster/meshmaster-full.webp";
-import MeshMasterIcon from   "../../../../assets/images/meshmaster/meshmaster-icon.webp";
-import MeshMasterText from   "../../../../assets/images/meshmaster/meshmaster-text.webp";
+import MeshMasterFull from "../../../../assets/images/meshmaster/meshmaster-full.webp";
+import MeshMasterIcon from "../../../../assets/images/meshmaster/meshmaster-icon.webp";
+import MeshMasterText from "../../../../assets/images/meshmaster/meshmaster-text.webp";
 
 const MeshMasterBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
-        <Col xs={12} sm={6}>
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
-          MeshMaster
+            MeshMaster
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshmasters-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -35,36 +37,40 @@ const MeshMasterBrand = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Logos
           </h2>
         </Col>
         <SRLWrapper>
-          <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
-              <img src={MeshMasterFull} alt="Meshmaster Full Logo"/>
+          <Row $Vcenter className="ImgDiv">
+            <Col $xs={12} $sm={4}>
+              <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
             </Col>
-            <Col xs={12} sm={4}>
-              <img src={MeshMasterIcon} alt="Meshmaster Icon"/>
+            <Col $xs={12} $sm={4}>
+              <img src={MeshMasterIcon} alt="Meshmaster Icon" />
             </Col>
-            <Col xs={12} sm={4}>
-              <img src={MeshMasterText} alt="Meshmaster Text"/>
+            <Col $xs={12} $sm={4}>
+              <img src={MeshMasterText} alt="Meshmaster Text" />
             </Col>
 
           </Row>
         </SRLWrapper>
       </Row>
-      <Row>
-        <Col xs={12}>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
+        <Col $xs={12}>
           <h2 className="layerH3 in">
             Colors
           </h2>
         </Col>
         <Col>
           <p>
-            The MeshMaster color palette consists of the primary Image Hub
+            The MeshMaster color palette consists of the $primary Image Hub
             color and additional shades. The Meshmaster logo should be white or
             monochrome tonal when using a color background.
           </p>
