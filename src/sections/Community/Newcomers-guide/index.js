@@ -32,7 +32,9 @@ const NewcomersGuide = () => {
               Slack workspace</a>{" "}
             to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
             quick-links below for jumping straight into things.</p>
-          <Row className="newcomers-journey">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="newcomers-journey">
             <Col
               className="heading"
               $sm={12}
@@ -137,7 +139,9 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
           </Row>
-          <Row className="step">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
             <Col $sm={12} $lg={6}>
               <h3>Working on Your Issue</h3>
               <ol type="i">
@@ -190,7 +194,9 @@ const NewcomersGuide = () => {
               <StaticImage src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
-          <Row className="step">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
             <Col $sm={12} $lg={6} className="community-collage">
               <StaticImage src={CommunityImage3} alt="Community Image" />
             </Col>
