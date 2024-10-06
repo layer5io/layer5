@@ -103,7 +103,9 @@ const MeshMarkBrand = () => {
             </Row>
           </SRLWrapper>
         </Row>
-        <Row >
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
               Colors
