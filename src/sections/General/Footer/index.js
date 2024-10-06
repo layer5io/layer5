@@ -66,8 +66,7 @@ const Footer = ({ location }) => {
         ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
           pathname
         )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${
-          pathname == "/" ? "" : pathname
+        : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
         }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
@@ -89,7 +88,9 @@ const Footer = ({ location }) => {
             <SocialLinksColor />
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
@@ -200,7 +201,7 @@ const Footer = ({ location }) => {
                   </li>
                   <li>
                     <a className="category-link" href="https://badges.layer5.io/">
-                    Recognition Program
+                      Recognition Program
                     </a>
                   </li>
                 </ul>
@@ -330,7 +331,7 @@ const Footer = ({ location }) => {
                     required
                   />
                   <Button
-                    $secondary                    title="Subscribe"
+                    $secondary title="Subscribe"
                     aria-label="subscribe-us"
                     id="mc-embedded-subscribe-2"
                   />
