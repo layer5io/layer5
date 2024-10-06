@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[5371],{48521:function(e,c,s){s(96540);c.A=s.p+"static/istio-architecture.838f742c.svg"}}]);
+//# sourceMappingURL=60b0e4cb-3a2aec39b9a631ac41fd.js.map

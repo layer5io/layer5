@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[7616],{12398:function(e,s,t){t(67294);s.Z=t.p+"static/meshery-extensibility.53a65d16.svg"}}]);
-//# sourceMappingURL=cb289787-bb099976449b0ac97980.js.map
