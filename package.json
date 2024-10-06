@@ -111,7 +111,7 @@
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.5",
-    "swiper": "^10.0.4",
+    "swiper": "^11.1.14",
     "url": "^0.11.3",
     "xstate": "^5.13.0"
   },
