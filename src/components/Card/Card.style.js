@@ -58,18 +58,18 @@ export const CardWrapper = styled.div`
     
 
     .post-content-block{
-        padding: 1rem 2rem;
-        height: 8rem;
+        padding: 0rem 1rem;
+        // height: 8rem;
     }
 
     @media screen and (max-width: 1200px) and (min-width: 992px){
         .post-thumb-block{
-            height: 12rem;
+            // height: 12rem;
             
         }
        
         .post-content-block{
-            height: 10rem;
+            // height: 10rem;
         }
            
 
@@ -78,14 +78,14 @@ export const CardWrapper = styled.div`
 
     @media screen and (max-width: 670px) and (min-width: 560px){
         .post-content-block{
-            height: 10rem;
+            // height: 10rem;
             
         }
     }
 
     @media screen and (max-width: 350px){
         .post-content-block{
-            height: 10rem;
+            // height: 10rem;
         }
     }
 
