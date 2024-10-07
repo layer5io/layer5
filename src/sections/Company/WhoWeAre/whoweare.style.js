@@ -45,7 +45,7 @@ const AboutSectionWrapper = styled.section`
       margin-inline-end: 0px;
   }
   }
-	.col {
+	.columnWrap {
 		display: flex;
 		flex-flow: column wrap;
     justify-content: center;
