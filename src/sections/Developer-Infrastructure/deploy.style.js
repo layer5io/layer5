@@ -16,6 +16,9 @@ const CloudDeploy = styled.div`
     margin: 0 10px;
     align-items: flex-start;
     justify-content: center;
+    @media (max-width: 600px){
+      flex-direction: column;
+    } 
   }
   
   
