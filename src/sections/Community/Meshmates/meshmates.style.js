@@ -27,6 +27,11 @@ const MeshMatesWrapper = styled.div`
                 }
           }
        }
+       .meshmate-logo{
+        max-width: 25rem;
+        display:block;
+        margin: auto;
+       }
     }
     .meshmates-grid{
         margin: 4.25rem auto;

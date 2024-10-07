@@ -63,7 +63,7 @@ const Meshmates = () => {
             </p>
           </Col>
           <Col className="meshmate-logo-wrapper" $sm={12} $lg={6}>
-            <MeshmateStackImage alt="meshmate logo" />
+            <MeshmateStackImage className="meshmate-logo" alt="meshmate logo" />
           </Col>
         </Row>
         <div className="meshmates-grid">
