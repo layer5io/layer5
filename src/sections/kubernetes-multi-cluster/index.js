@@ -51,7 +51,7 @@ const KubernetesMultiCluster = () => {
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
             ))}
           </div>
         </div>
