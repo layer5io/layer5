@@ -79,7 +79,7 @@ const SistentTextInput = () => {
             they generally perform is to ensure that users are able to send in
             data and receive corresponding information.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Placeholder goes here" type="text" />
             </SistentThemeProvider>
@@ -102,7 +102,7 @@ const SistentTextInput = () => {
             desktop resolutions, but it serves in different capacities across
             these different resolutions.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
                 placeholder="Placeholder goes here"
@@ -117,7 +117,7 @@ const SistentTextInput = () => {
             available from mobile to desktop resolutions, even though it serves
             in different capacities across these screen sizes.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input
                 placeholder="Placeholder goes here"

@@ -102,7 +102,7 @@ const KanvasCTA = () => {
           <div className="text">
             <h2><span>Kanvas</span> is here!</h2>
             <h3 className="subtext">Discover a catalog of best practice cloud native patterns.</h3>
-            <Button primary url="/kanvas" className="button" external={false}>
+            <Button $primary $url="/kanvas" className="button" $external={false}>
               Try Kanvas Now!
             </Button>
 

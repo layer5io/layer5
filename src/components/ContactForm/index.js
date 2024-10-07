@@ -206,8 +206,7 @@ const ContactForm = () => {
               </div>
               <div className="form-submit">
                 <Button
-                  secondary
-                  type="submit"
+                  $secondary                  type="submit"
                   className="btn-next"
                   title="Submit"
                 />

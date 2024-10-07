@@ -33,10 +33,10 @@ const Projects = () => {
       <Container>
         <div className="hero-section">
           <Row>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <Logo className="logo" alt="Nighthawk Logo"/>
             </Col>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <div className="hero-text">
                 {/* <StaticImage src={icon} alt="Nighthawk Text Logo" /> */}
                 <h1>Unlock distributed systems behavioral performance analysis</h1>
@@ -48,19 +48,19 @@ const Projects = () => {
 
         <div className="stats">
           <Row>
-            <Col lg={3} md={3} sm={6}>
+            <Col $lg={3} $md={3} $sm={6}>
               <h3><Counter duration={3} end={12} /></h3>
               <p>Histogram Statistics</p>
             </Col>
-            <Col lg={3} md={3} sm={6}>
+            <Col $lg={3} $md={3} $sm={6}>
               <h3><Counter duration={6} end={performanceCount} separator="," /></h3>
               <p>Meshery Tests</p>
             </Col>
-            <Col lg={3} md={3} sm={6}>
+            <Col $lg={3} $md={3} $sm={6}>
               <h3><Counter duration={3} end={2} suffix=" modes" /></h3>
               <p>Closed and Open-loop</p>
             </Col>
-            <Col lg={3} md={3} sm={6}>
+            <Col $lg={3} $md={3} $sm={6}>
               <h3><Counter duration={3} end={9} /></h3>
               <p>Percentiles calculated</p>
             </Col>
@@ -76,13 +76,13 @@ const Projects = () => {
 
         <div className="explain-2">
           <Row className="align">
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <div className="text">
                 <h2>Nighthawk and Meshery</h2>
                 <p>Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads. </p>
               </div>
             </Col>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <StaticImage src={explain2} alt="explanation" />
             </Col>
           </Row>
@@ -90,14 +90,14 @@ const Projects = () => {
 
         <div className="explain-2">
           <Row className="align">
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <StaticImage src={explain3} alt="explanation" />
             </Col>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <div className="text">
                 <h2>Easing Management of the Nighthawk Lifecycle</h2>
                 <p>As with a lot of open source projects, there is a lack of consistent tooling. This makes it difficult to have easily repeatable tests in that the building, deploying, and maintaining of Nighthawk instances (potentially a fleet of Nighthawk instances) is a burden without additional tooling. </p>
-                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" external={true}/>
+                <Button $primary id="learn" type="button" title="Learn More" $url="https://getnighthawk.dev" $external={true}/>
               </div>
             </Col>
           </Row>
@@ -151,7 +151,7 @@ const Projects = () => {
 
         <div className="list">
           <Row>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <div className="text">
                 <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" />
                 <h2>Standards-based, distributed performance management</h2>
@@ -159,7 +159,7 @@ const Projects = () => {
               </div>
 
             </Col>
-            <Col lg={6} md={6} sm={12}>
+            <Col $lg={6} $md={6} $sm={12}>
               <div className="listed">
                 <table className="table">
                   <tbody>
@@ -213,7 +213,7 @@ const Projects = () => {
         <img src={cncf} alt="cncf logo" />
         <p> Participate in the state of the art. <br />
           Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
-        <Button primary title="Join Us" url="/community/calendar#meetings" />
+        <Button $primary title="Join Us" $url="/community/calendar#meetings" />
       </div>
     </Gnhwrapper>
   );
