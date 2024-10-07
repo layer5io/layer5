@@ -1,4 +1,5 @@
 import "./fonts.css";
+import posthog from "posthog-js";
 
 document.addEventListener("DOMContentLoaded", () => {
   /** init gtm after 3500 seconds - this could be adjusted */
@@ -27,6 +28,17 @@ function initGTM() {
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PS26QB9";
   document.head.appendChild(script);
 }
+
+export const onClientEntry = () => {
+  if (process.env.NODE_ENV === "production") {
+    posthog.init("phc_Yynjz2lAiQDJFqTWeGT0FJrt50hl53WBx8do3eKImgX",
+      {
+        api_host: "https://us.i.posthog.com",
+        person_profiles: "always",
+      }
+    );
+  }
+};
 
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";

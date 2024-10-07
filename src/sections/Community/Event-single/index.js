@@ -59,6 +59,7 @@ const EventSingle = ({ data }) => {
   };
   const isEventUrlSpecified = !!frontmatter.eurl;
   const showJoinUsButton = !isEventPassed() && isEventUrlSpecified;
+  const showRegisterForm = frontmatter.register && !isEventPassed();
   return (
     <EventPageWrapper>
       <PageHeader
@@ -69,8 +70,8 @@ const EventSingle = ({ data }) => {
         <Container>
           <div className="event-info-block">
             <div className="tags">
-
-              { frontmatter.register &&
+              <div className="register-form">
+                { showRegisterForm &&
                   <EventForm
                     title="Register Today!"
                     form="event"
@@ -78,7 +79,8 @@ const EventSingle = ({ data }) => {
                     submit_title = {`Thank you for registering to ${frontmatter.title}!`}
                     submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
                   />
-              }
+                }
+              </div>
 
               <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
@@ -100,6 +102,17 @@ const EventSingle = ({ data }) => {
                   </Button>
                 </div>
               )}
+              <div className="register-form-sm">
+                { showRegisterForm &&
+                  <EventForm
+                    title="Register Today!"
+                    form="event"
+                    account_desc="Please provide at least one account."
+                    submit_title = {`Thank you for registering to ${frontmatter.title}!`}
+                    submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
+                  />
+                }
+              </div>
             </div>
             <CTA_Bottom
               category={"Kanvas"}
