@@ -49,7 +49,7 @@ const CommunityPage = () => {
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={ pluginImage} className="section">
+      <BgImage image={pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>
@@ -57,7 +57,9 @@ const CommunityPage = () => {
       </BgImage>
       <div className="community-section-wrapper">
         <Container>
-          <Row className="service-mesh-projects">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="service-mesh-projects">
             <Col $sm={12} $lg={6}>
               <h2>Warm, welcoming, and encouraging. Embrace developer-defined infrastructure and help empower every engineer with us.</h2>
               <p>
@@ -69,7 +71,9 @@ const CommunityPage = () => {
               <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
-          <Row className="open-source-projects">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="open-source-projects">
             <h2>Open Source and Cloud Native</h2>
             <p>
               Layer5 projects are open source software. Anyone can download,
@@ -154,7 +158,7 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
+          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"} />
         </Container>
       </div>
       <JoinCommunity image={Five} className="newcomers-join" />
