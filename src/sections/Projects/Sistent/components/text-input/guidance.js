@@ -78,7 +78,7 @@ export const TextInputGuidance = () => {
             input is mostly utilized. Icons are not seldom required in this text
             input, however, they can included when extremely necessary.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="PlaceHolder" />
             </SistentThemeProvider>
@@ -89,7 +89,7 @@ export const TextInputGuidance = () => {
             line of text. This text input adjusts vertically based on the amount
             of lines of text entered into the text field.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Placeholder" multiline />
             </SistentThemeProvider>

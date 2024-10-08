@@ -35,8 +35,8 @@ const Projects = () => {
         <Row>
           <SectionTitle
             className="section-title"
-            leftAlign={true}
-            UniWidth="75%"
+            $leftAlign={true}
+            $UniWidth="75%"
           >
             <h4>ENGAGING AND COLLABORATING WITH</h4>
           </SectionTitle>

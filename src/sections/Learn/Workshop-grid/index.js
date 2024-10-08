@@ -22,12 +22,12 @@ const WorkshopsPage = () => {
   const data = useStaticQuery(
     graphql`query allWorkshops {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
   ) {
     nodes {
       id
-      slug
+      
       body
       frontmatter {
         title
@@ -52,8 +52,7 @@ const WorkshopsPage = () => {
       }
     }
   }
-}
-`
+}`
   );
 
   const toggleActive = (id) => {
@@ -83,9 +82,11 @@ const WorkshopsPage = () => {
       <div className="workshop-page-wrapper">
         <Container>
           <div className="workshop-grid-wrapper">
-            <Row>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
-                <Col {...content && ID === id ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6, lg: 4 } } key={id} className="workshop-grid-col">
+                <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
@@ -116,9 +117,11 @@ const WorkshopsPage = () => {
                 </Col>
               ))}
             </Row>
-            <Row className="rqst-workshop">
+            <Row style={{
+              flexDirection: "column"
+            }} className="rqst-workshop">
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
-              <Button primary url="mailto:support@layer5.io" external={true}>
+              <Button $primary $url="mailto:support@layer5.io" $external={true}>
                                 Request A Workshop
               </Button>
             </Row>
