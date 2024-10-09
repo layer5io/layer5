@@ -81,7 +81,7 @@ const Projects = () => {
           ))}
         </Slider>
       ) : (
-        <div style={{ textAlign: 'center', padding: '20px' }}>Loading partners...</div>
+        <div style={{ textAlign: "center", padding: "20px" }}>Loading partners...</div>
       )}
     </PartnerItemWrapper>
   );
