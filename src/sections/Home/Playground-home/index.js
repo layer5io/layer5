@@ -342,10 +342,10 @@ const KanvasVisualizerViews = () => {
             integrations.
           </p>
           <Button
-            primary
+            $primary
             title="Open in Demo System &rarr;"
-            external={true}
-            url="https://playground.meshery.io/"
+            $external={true}
+            $url="https://playground.meshery.io/"
           />
         </div>
       </div>

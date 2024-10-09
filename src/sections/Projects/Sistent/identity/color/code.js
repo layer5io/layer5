@@ -89,7 +89,7 @@ const ColorCode = () => {
             not have any role descriptions.
           </p>
           <h3>Brand Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -99,7 +99,7 @@ const ColorCode = () => {
             </Col>
           </Row>
           <h3>Greyscale Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -109,7 +109,7 @@ const ColorCode = () => {
             </Col>
           </Row>
           <h3>Function Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -127,7 +127,7 @@ const ColorCode = () => {
             categories exists as the need arises.
           </p>
           <h3>Background Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -137,7 +137,7 @@ const ColorCode = () => {
             </Col>
           </Row>
           <h3>Text Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -147,7 +147,7 @@ const ColorCode = () => {
             </Col>
           </Row>
           <h3>Border Colors</h3>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"
@@ -161,7 +161,7 @@ const ColorCode = () => {
             Tokens here are component specific and must be used only for the
             component that they are referencing.
           </p>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"

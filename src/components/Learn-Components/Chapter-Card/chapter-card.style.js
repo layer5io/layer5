@@ -8,7 +8,7 @@ const ChapterCardWrapper = styled.div`
   display: flex;
   border: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroOne};
   justify-content: space-between;
-  :hover {
+  &:hover {
     border: 1px solid ${props => props.theme.secondaryColor};;
     transition: background 150ms ease-out 0s, border 150ms ease-out 0s,
       transform 150ms ease-out 0s;

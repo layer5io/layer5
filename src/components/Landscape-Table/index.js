@@ -1,15 +1,18 @@
 import React from "react";
 import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./LandscapeTable.style";
 import { AiOutlineCaretUp } from "@react-icons/all-files/ai/AiOutlineCaretUp";
 import { AiOutlineCaretDown } from "@react-icons/all-files/ai/AiOutlineCaretDown";
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
 
-const passingMark = "../../assets/images/landscape/passing.svg";
-const failingMark = "../../assets/images/landscape/failing.svg";
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
+
+// const passingMark = "../../assets/images/landscape/passing.svg";
+// const failingMark = "../../assets/images/landscape/failing.svg";
 
 function GlobalFilter({
   globalFilter,
@@ -114,16 +117,15 @@ const Table = ({ columns, data, placeHolder }) => {
                           <a
                             href={row["original"]["link"]}
                             rel="nofollow"
-                            data-tip={row["original"]["desc"]}
-                            data-for="mesh-name"
+                            data-tooltip-content={row["original"]["desc"]}
+                            data-tooltip-id="mesh-name"
                           >
                             {cell.render("Cell")}
                           </a>
-                          <ReactTooltip
+                          <Tooltip
                             id="mesh-name"
                             place="bottom"
-                            effect="solid"
-                            backgroundColor="rgb(60,73,79)"
+                            style={{ backgroundColor: "rgb(60,73,79)" }}
                             className="mesh-tooltip"
                           />
                         </td>
@@ -147,11 +149,11 @@ const Table = ({ columns, data, placeHolder }) => {
                     </td>;
                   } else if (cell["value"] === "Yes" || cell["value"] === "Full"){
                     return <td key={`cell${i}`} {...cell.getCellProps()}>
-                      <StaticImage className="Mark" src={passingMark} alt="Passing Mark" />
+                      <img className="Mark" src={passingMark} alt="Passing Mark" />
                     </td>;
                   } else if (cell["value"] === "No" || cell["value"] === "None"){
                     return <td key={`cell${i}`} {...cell.getCellProps()}>
-                      <StaticImage className="Mark" src={failingMark} alt="Failing Mark" />
+                      <img className="Mark" src={failingMark} alt="Failing Mark" />
                     </td>;
                   } else if (cell["value"] === "?"){
                     return <td key={`cell${i}`} {...cell.getCellProps()}>

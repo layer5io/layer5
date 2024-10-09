@@ -40,11 +40,13 @@ const ResourceGrid = (props) => {
             />
           </div>
         </div>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           {props.data.length < 1 && <EmptyResources errorMessage={"No matching resources"} errorSubtitle={"Try removing one or more filters to broaden your results."} />}
 
           {searchedResource.map(({ id, frontmatter, fields }) => (
-            <Col key={id} xs={12} sm={6} xl={4}>
+            <Col key={id} $xs={12} $sm={6} $xl={4}>
               <Card
                 frontmatter={frontmatter}
                 fields={fields}
