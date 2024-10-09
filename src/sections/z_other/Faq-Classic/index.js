@@ -32,7 +32,7 @@ const FaqClassic = () => {
             <span>Easy and perfect solution </span> for this app
           </h2>
         </SectionTitle>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col className="faq-content-block" md={8} sm={12} offsetMd={2}>
             <Accordion allowZeroExpanded={true} allowMultipleExpanded={false}>
               {data.faqs.map((faq, index) => (

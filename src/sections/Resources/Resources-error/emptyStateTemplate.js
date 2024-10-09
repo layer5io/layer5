@@ -10,10 +10,10 @@ const NoResources = ({ errorMessage,errorSubtitle }) => {
       <div className="no-resources-page">
         <Container>
           <Row>
-            <Col sm={12} lg={4}>
+            <Col $sm={12} $lg={4}>
               <img src={serviceMesh} alt="service meshes" className="mesh" />
             </Col>
-            <Col sm={12} lg={8}>
+            <Col $sm={12} $lg={8}>
               <div className="error-text">
                 <h1 className="errorMessage"> {errorMessage} </h1>
                 <h3 className="errorSubtitle">{errorSubtitle}</h3>

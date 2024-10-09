@@ -85,9 +85,9 @@ const Header = () => {
               </p>
               <div className="header__button_section">
                 <Button
-                  primary
+                  $primary
                   title="Try Kanvasow!"
-                  external={true}
+                  $external={true}
                   url="/kanvas"
                 />
               </div>

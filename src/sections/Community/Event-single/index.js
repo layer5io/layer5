@@ -59,6 +59,7 @@ const EventSingle = ({ data }) => {
   };
   const isEventUrlSpecified = !!frontmatter.eurl;
   const showJoinUsButton = !isEventPassed() && isEventUrlSpecified;
+  const showRegisterForm = frontmatter.register && !isEventPassed();
   return (
     <EventPageWrapper>
       <PageHeader
@@ -70,7 +71,7 @@ const EventSingle = ({ data }) => {
           <div className="event-info-block">
             <div className="tags">
               <div className="register-form">
-                { frontmatter.register &&
+                { showRegisterForm &&
                   <EventForm
                     title="Register Today!"
                     form="event"
@@ -94,7 +95,7 @@ const EventSingle = ({ data }) => {
               </ul>
               {showJoinUsButton && (
                 <div className="event-title">
-                  <Button primary url={frontmatter.eurl} external={true}>
+                  <Button $primary $url={frontmatter.eurl} $external={true}>
                     <h3>
                       Join us at {frontmatter.title}
                     </h3>
@@ -102,7 +103,7 @@ const EventSingle = ({ data }) => {
                 </div>
               )}
               <div className="register-form-sm">
-                { frontmatter.register &&
+                { showRegisterForm &&
                   <EventForm
                     title="Register Today!"
                     form="event"

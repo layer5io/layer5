@@ -99,32 +99,29 @@ const BooksListWrapper = styled.div`
 
 const BooksSection = () => {
   const data = useStaticQuery(
-    graphql`
-            query booksList {
-                allMdx(
-                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: ASC }
-                    limit: 2
-                ) 
-                {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            abstract
-                            thumbnail{
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query booksList {
+  allMdx(
+    filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
+    sort: {frontmatter: {date: ASC}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        abstract
+        thumbnail {
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}`
   );
 
   return (
@@ -142,13 +139,13 @@ const BooksSection = () => {
                   <h2>{frontmatter.title}</h2>
                   <p>{frontmatter.abstract}</p>
                 </div>
-                <Button secondary title={<FaArrowRight />} className="arrow_icon" />
+                <Button $secondary title={<FaArrowRight />} className="arrow_icon" />
               </Link>
             </div>
           ))}
         </div>
         <div className="see-more-button">
-          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books" />
+          <Button $primary title="Checkout all service mesh books" $url="/learn/service-mesh-books" />
         </div>
       </Container>
     </BooksListWrapper>
