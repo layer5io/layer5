@@ -14,6 +14,16 @@ export const BlogPageWrapper = styled.div`
       height: 100%;
     }
   }
+
+  // styling for the blog searchbox
+  .search-box {
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+        }
+  }
+
   @media only screen and (max-width: 576px) {
     .blog-grid-wrapper {
       margin: 0 auto 1rem;
