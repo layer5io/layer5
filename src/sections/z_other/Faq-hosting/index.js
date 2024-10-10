@@ -30,7 +30,7 @@ const Faq = () => {
       <img className="section__particle one" src={particle1} alt="img" />
       <img className="section__particle two" src={particle2} alt="img" />
       <Container fullWidthSM>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col className="faq-thumb-block" xs={12} sm={6}>
             <div className="faq-thumb">
               <img src={FaqImage} alt="appion faq" />

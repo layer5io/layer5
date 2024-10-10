@@ -21,7 +21,7 @@ const SMIPage = () => {
         <Container>
           <img className="logo" src={logo} />
           <Row className="description">
-            <Col lg={8} md={12} sm={12}>
+            <Col $lg={8} $md={12} $sm={12}>
               <h4> Conformance and Diagnostics</h4>
               <h1> Service Mesh Interface</h1>
               <p className="desc-p">
@@ -30,9 +30,9 @@ const SMIPage = () => {
               <p>
                 Meshery is <span>the official</span> SMI Conformance Validator. Use Meshery's diagnostic tool to verify that your service mesh's behavior in an accessible and non-destructive manner.
               </p>
-              <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery" />
+              <Button $primary title="Run SMI Conformance" $url="/blog/programs/starting-smi-conformance-testing-with-meshery" />
             </Col>
-            <Col lg={4} md={12} sm={12} className="hero_img_col">
+            <Col $lg={4} $md={12} $sm={12} className="hero_img_col">
               <div className="hero-img">
                 <img src={smi} alt="SMI Table"></img>
               </div>
@@ -46,7 +46,7 @@ const SMIPage = () => {
             <div className="bg"></div>
             <Row className="feature-table">
               {data.features.map((feature, index) => (
-                <Col xs={12} md={6} key={index}>
+                <Col $xs={12} $md={6} key={index}>
                   <div className="feature-block">
                     <div className="feature-title">
                       <h2>{feature.name}</h2>
@@ -71,7 +71,7 @@ const SMIPage = () => {
           <div className="card">
             <h2> Validating Conformance</h2>
             <Row>
-              <Col lg={8}>
+              <Col $lg={8}>
                 <p>
                   Conformance to SMI specifications will be done through
                   use of a service mesh’s workload. A sample application
@@ -82,8 +82,8 @@ const SMIPage = () => {
                   sample application being fitted to each service mesh.
                 </p>
               </Col>
-              <Col lg={4}>
-                <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery"></Button>
+              <Col $lg={4}>
+                <Button $primary title="Run SMI Conformance" $url="/blog/programs/starting-smi-conformance-testing-with-meshery"></Button>
               </Col>
             </Row>
           </div>
@@ -104,7 +104,7 @@ const SMIPage = () => {
               <p>
                     Checkout the current status of the support for SMI Conformance Tests of all service meshes in our landscape page.
               </p>
-              <Button primary url="/service-mesh-landscape#smi" external={false}>
+              <Button $primary $url="/service-mesh-landscape#smi" $external={false}>
                       Check it Out
               </Button>
             </div>

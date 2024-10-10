@@ -19,7 +19,7 @@ setup-libs:
 
 ## Install layer5.io dependencies your local machine.
 setup:
-	npm install
+	npm install --legacy-peer-deps
 
 ## Run layer5.io on your local machine.
 site:

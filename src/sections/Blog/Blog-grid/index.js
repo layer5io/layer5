@@ -42,7 +42,7 @@ const BlogGrid = ({
       <div className="blog-page-wrapper">
         <Container>
           <Row>
-            <Col xs={12} lg={8}>
+            <Col $xs={12} $lg={8}>
               <div className="tooltip-search">
                 <BlogViewToolTip
                   isListView={isListView}
@@ -52,15 +52,17 @@ const BlogGrid = ({
                 <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
               </div>
               <div className="blog-grid-wrapper">
-                <Row>
+                <Row style={{
+                  flexWrap: "wrap"
+                }}>
                   {queryResults.length < 1 && (
-                    <Col xs={12} sm={6}>
+                    <Col $xs={12} $sm={6}>
                       No blog post that matches the title "{searchQuery}" found.
                     </Col>
                   )}
 
                   {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
-                    <Col key={id} xs={12} sm={6}>
+                    <Col key={id} $xs={12} $sm={6}>
                       <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
@@ -77,7 +79,7 @@ const BlogGrid = ({
                 </Row>
               </div>
             </Col>
-            <Col xs={12} lg={4}>
+            <Col $xs={12} $lg={4}>
               <Sidebar pageContext={pageContext} />
             </Col>
           </Row>

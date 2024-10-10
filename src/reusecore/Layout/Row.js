@@ -3,16 +3,18 @@ import styled, { css } from "styled-components";
 
 const RowWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
+  @media (max-width: 760px) {
+    flex-wrap: wrap;
+  }
   ${(props) =>
-  props.Vcenter &&
+  props.$Vcenter &&
     css({
       "align-items": "center",
     })};
   ${(props) =>
-      props.Hcenter &&
+      props.$Hcenter &&
     css({
       "justify-content": "center",
     })};

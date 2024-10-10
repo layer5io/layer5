@@ -135,12 +135,12 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container className="catalog-container">
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">Harness Well-Architected Kubernetes Patterns</h2>
             <p className="caption">
                 Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
@@ -148,7 +148,7 @@ const Catalog = () => {
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
             Center of Excellence: Mutli-tentant Platform Engineering Patterns
             </h2>
@@ -156,14 +156,14 @@ const Catalog = () => {
               Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Patterns} className="calalog-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Wasm} className="calalog-image" />
             </div>
@@ -181,7 +181,7 @@ const Catalog = () => {
               <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
             </div>
           </Col>
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Maximize Your Performance with eBPF Programs
             </h2>
@@ -192,7 +192,7 @@ const Catalog = () => {
           </Col>
         </Row> */}
         <Row className="catalog">
-          <Col md={6} className="catalog-detail">
+          <Col $md={6} className="catalog-detail">
             <h2 className="heading">
               Policy-driven Orchestration and Control Where You Need It
             </h2>
@@ -200,7 +200,7 @@ const Catalog = () => {
               Inherent standard policy for your organization or override it at your team or individual user-level. Reconfigure Meshery's and your infrastructure's behavior whether applying policy broadly or very specifically.
             </p>
           </Col>
-          <Col md={6} className="catalog-image">
+          <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
               <img src={Opa} className="calalog-image" />
             </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row } from "../reusecore/Layout";
 import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
@@ -53,39 +53,37 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
     <ToolTipWrapper>
       <Row className="border">
         <a
-          data-tip="Grid View"
-          data-for="grid-view"
+          data-tooltip-content="Grid View"
+          data-tooltip-id="grid-view"
           onClick={setGridView}
           className={`${!isListView && "active"}`}
         >
           <BsGrid3X3GapFill size={22} />
         </a>
         <NoSsr>
-          <ReactTooltip
+          <Tooltip
             id="grid-view"
-            border
+            border="solid"
             className="grid-view"
-            backgroundColor="black"
             place="top"
-            effect="solid"
+            variant="dark"
           />
         </NoSsr>
         <a
-          data-tip="List View"
-          data-for="list-view"
+          data-tooltip-content="List View"
+          data-tooltip-id="list-view"
           onClick={setListView}
           className={`${isListView && "active"}`}
         >
           <TiThList size={22} />
         </a>
         <NoSsr>
-          <ReactTooltip
+          <Tooltip
             id="list-view"
             className="list-view"
-            backgroundColor="black"
+            border="solid"
             place="top"
-            type="dark"
-            effect="solid"
+            variant="dark"
           />
         </NoSsr>
       </Row>

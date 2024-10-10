@@ -147,7 +147,7 @@ const DockerExtensionCTA = () => {
               <h4>Connect to live clusters<br />Discover, validate, and visualize<br />Kubernetes infrastructure with ease.</h4>
             </div>
             <p></p>
-            <Button primary url="https://play.meshery.io/" external={true}>
+            <Button $primary $url="https://play.meshery.io/" $external={true}>
               Try Playground now!
             </Button>
           </div>
