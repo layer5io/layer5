@@ -24,6 +24,12 @@ export const MeetTheMaintainer = styled.div`
             font-style: normal;
         }
     }
+    div.interviewee p::before{
+        content:'“'
+    }
+    div.interviewee p::after{
+        content:'”'
+    }
     div.note {
         margin: 1rem;
         padding: 2rem;
