@@ -33,7 +33,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
     });
     return serviceMeshes;
   };
-
+  const availableServiceMeshes = getAvailableServiceMeshes();
   const findServiceMeshImage = (images, serviceMesh) => {
     return images.find((image) => image.name.toLowerCase() == serviceMesh);
   };
@@ -43,7 +43,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
       return (
         <div className="service-mesh-courses" key={index}>
           <Image
-            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+            {...findServiceMeshImage(serviceMeshImages, sm)?.imagepath}
             className="docker"
             alt={sm}
           />
@@ -122,10 +122,14 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              <h2>Service Meshes You can Learn</h2>
-              <ServiceMeshesAvailable
-                serviceMeshes={getAvailableServiceMeshes()}
-              />
+              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)   }
+              {              console.log("array: ",availableServiceMeshes)}
+              {availableServiceMeshes.length != 0 && (
+                <>
+                  <h2>Service Meshes You Can Learn</h2>
+                  <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
+                </>
+              )}
             </div>
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>

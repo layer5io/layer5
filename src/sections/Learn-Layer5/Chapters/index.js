@@ -52,27 +52,24 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
 
   const getAvailableServiceMeshes = () => {
     let serviceMeshes = [];
+    console.log("serviceMeshList", serviceMeshesList);
     serviceMeshesList.forEach(sm => {
       mapMeshWithFormattedSlug(sm, serviceMeshes);
     });
 
     return serviceMeshes;
   };
+  const availableServiceMeshesArray = getAvailableServiceMeshes();
 
   const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) => serviceMeshes.map((sm, index) => {
-
     return (
       <>
         <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
           <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
-            <Image
-              {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
-              className="docker"
-              alt={sm.section}
-            />
+            <h2>hi </h2>
           </Link>
         </div>
         <Tooltip
@@ -98,10 +95,15 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
-                <h4>Service Meshes Available</h4>
-                <div className="service-mesh-switcher">
-                  <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
-                </div>
+                {  console.log(availableServiceMeshesArray)}
+                {availableServiceMeshesArray.length != 0 && (
+                  <>
+                    <h4>Service Meshes Available</h4>
+                    <div className="service-mesh-switcher">
+                      <ServiceMeshesAvailable serviceMeshes={availableServiceMeshesArray} />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </Col>
