@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import SpireLogo from "../../collections/integrations/spire/icons/color/spire-color.svg";
 import MesheryAndSpire from "../../collections/resources/case-study/hpes-adoption-of-meshery-and-kanvas/meshery-and-hpe.svg";
+import { StaticImage } from "gatsby-plugin-image";
 
 
 const BannerWrapper = styled.div`
@@ -215,12 +215,12 @@ const CaseStudyBanner = () => {
               <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
             </div>
             <div className="meshery-and-spire">
-              <img src={MesheryAndSpire} alt="meshery-and-spire" />
+              <StaticImage src="../../collections/resources/case-study/hpes-adoption-of-meshery-and-kanvas/meshery-and-hpe.svg" />
             </div>
           </div>
           <div className="large-screen">
             <div className={`left-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={MesheryLogo} alt="meshery-logo" />
+              <StaticImage src="../../assets/images/meshery/icon-only/meshery-logo-light.svg" />
             </div>
             <div className={`desc ${hover ? "desc-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
               <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
@@ -229,7 +229,7 @@ const CaseStudyBanner = () => {
               </div>
             </div>
             <div className={`right-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={SpireLogo} alt="spire-logo" />
+              <StaticImage src="../../collections/integrations/spire/icons/color/spire-color.svg" />
             </div>
           </div>
         </BannerWrapper>
