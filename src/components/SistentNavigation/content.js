@@ -43,4 +43,19 @@ export const content = [
     link: "/projects/sistent/components/text-input/code",
     text: "Text Input",
   },
+  {
+    id: 15,
+    link: "/projects/sistent/components/popper",
+    text: "Popper",
+  },
+  {
+    id: 16,
+    link: "/projects/sistent/components/popper/guidance",
+    text: "Popper",
+  },
+  {
+    id: 17,
+    link: "/projects/sistent/components/popper/code",
+    text: "Popper",
+  },
 ];
