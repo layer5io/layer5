@@ -178,6 +178,7 @@ const WebBasedForm = () => {
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="XXL" />
+                XXL
                 </label>
               </div>
               <label htmlFor="picture" className="form-name">Picture</label>
