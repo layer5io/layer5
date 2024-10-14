@@ -60,7 +60,7 @@ const CTA_Book = () => {
   return (
     <CTAWrapper>
       <Row className="book_cover">
-        <Col xs={12} sm={6} className="book_col text">
+        <Col $xs={12} $sm={6} className="book_col text">
           <p className="cover">Services-first Network</p>
           <h1>
             What is a <br></br> Service Mesh?
@@ -71,13 +71,13 @@ const CTA_Book = () => {
             changing conditions and network topology.
           </p>
           <Button
-            primary
+            $primary
             className="learn"
             title="Learn More"
-            url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
+            $url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
           />
         </Col>
-        <Col xs={12} sm={6} className="book_col book_img">
+        <Col $xs={12} $sm={6} className="book_col book_img">
           <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"}
             className="bookLink"
           >

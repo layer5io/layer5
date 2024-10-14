@@ -98,8 +98,8 @@ const Intro = () => {
             <Row className="newcomers-journey">
               <Col
                 className="heading"
-                sm={12}
-                lg={6}
+                $sm={12}
+                $lg={6}
                 onMouseOver={() => setHover(true)}
                 onMouseOut={() => setHover(false)}
               >
@@ -109,7 +109,7 @@ const Intro = () => {
                   <img className="heading-start__arrow" src={longArrow} alt="longArrow" />
                 </div>
               </Col>
-              <Col sm={12} lg={6}>
+              <Col $sm={12} $lg={6}>
                 <NewcomersMap handleMouseHover={hover} />
               </Col>
             </Row>

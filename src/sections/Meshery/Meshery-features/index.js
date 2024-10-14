@@ -128,7 +128,7 @@ const MesheryFeatures = () => {
                 <div className="feature-expose-full">
                   <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
                   <p>
-                  From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, MeshMap, to collaboratively design and operate your infra.
+                  From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, Kanvas to collaboratively design and operate your infra.
                   </p>
                 </div>
               ),

@@ -22,7 +22,9 @@ const ContactPage = () => {
           title={"Get In Touch"}
           subtitle={"Let us know how we can help you."}
         />
-        <Row className="cards-container">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="cards-container">
           <CardOutline
             link="/careers"
             img={Jobs_Icon}
@@ -45,7 +47,9 @@ const ContactPage = () => {
             content="I would like to establish a partnership with Layer5"
           />
         </Row>
-        <Row className="contact-form-row">
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="contact-form-row">
           <Row
             onClick={function () {
               toggleForm();

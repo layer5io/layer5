@@ -1,7 +1,7 @@
 import React from "react";
 import { GiCheckMark } from "@react-icons/all-files/gi/GiCheckMark";
 import { MdClose } from "@react-icons/all-files/md/MdClose";
-import MeshMap from "./icons/meshmap-icon.svg";
+import Kanvas from "./icons/kanvas-icon.svg";
 import Support from "./icons/support.svg";
 import Collab from "./icons/collaboration.svg";
 import Lifecycle from "./icons/lifecycle.svg";
@@ -112,8 +112,8 @@ export const details = [
   },
   {
     id: 3,
-    category: "MeshMap",
-    icon: MeshMap,
+    category: "Kanvas",
+    icon: Kanvas,
     features: [
       {
         feature: "Service Performance",
@@ -264,7 +264,7 @@ export const details = [
       },
       {
         feature: "Add-ons",
-        description: "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Layer5 Cloud.",
+        description: "Access a variety of third-party applications, right from Kanvas. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Layer5 Cloud.",
         free: <MdClose className="no-icon" />,
         team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
@@ -369,7 +369,7 @@ export const details = [
       },
       {
         feature: "Traffic Replay",
-        description: "Visual event replay in MeshMap",
+        description: "Visual event replay in Kanvas",
         free: <MdClose className="no-icon" />,
         team: <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
@@ -472,7 +472,7 @@ export const options = [
       { id: 9, category: "Comparative Testing", description: "Detect real-time anomalies and Historical views: Infrastructure-centric." },
       { id: 10, category: "Calendaring", description: "Get integration with GSuite and integration with Microsoft Outlook." },
       { id: 11, category: "Standard Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web." },
-      { id: 12, category: "Add-ons", description: "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog." },
+      { id: 12, category: "Add-ons", description: "Access a variety of third-party applications, right from Kanvas. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog." },
     ]
   },
   {
@@ -488,7 +488,7 @@ export const options = [
       { id: 1, category: "Authentication: LDAP", description: "Access Meshery  using your existing accounts and centrally manage repository access." },
       { id: 2, category: "Authentication: SAML", description: "Use an identity provider to manage the identities of Meshery users and applications." },
       { id: 3, category: "Self-hosted Deployment", description: "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants." },
-      { id: 4, category: "Traffic Replay", description: "Visual event replay in MeshMap." },
+      { id: 4, category: "Traffic Replay", description: "Visual event replay in Kanvas." },
       { id: 5, category: "Certificate support in performance profiles", description: "Enable certificate support within performance profiles. Enhance security and performance by seamlessly integrating certificates into your profiles." },
       { id: 6, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone." },
       { id: 7, category: "Organization and Team Management", description: "Manage access to designs on a team-by-team, or individual user, basis." },

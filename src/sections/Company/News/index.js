@@ -21,14 +21,14 @@ const News = () => {
       <img className="section__particle one" src={particle1} alt="img" />
       <img className="section__particle two" src={particle2} alt="img" />
       <Container>
-        <SectionTitle className="section-title" UniWidth="52%">
+        <SectionTitle className="section-title" $UniWidth="52%">
           <h4>Blog post</h4>
           <h2>
             <span>Check our latest blog post </span> for more update.
           </h2>
         </SectionTitle>
         <Row>
-          <Col xs={12} sm={6} lg={4}>
+          <Col $xs={12} $sm={6} $lg={4}>
             <div className="news-wrap">
               <div className="thumb-block">
                 <Link to="#">
@@ -54,7 +54,7 @@ const News = () => {
             </div>
           </Col>
 
-          <Col xs={12} sm={6} lg={4}>
+          <Col $xs={12} $sm={6} $lg={4}>
             <div className="news-wrap">
               <div className="thumb-block">
                 <Link to="#">
@@ -81,7 +81,7 @@ const News = () => {
               </div>
             </div>
           </Col>
-          <Col xs={12} sm={6} lg={4}>
+          <Col $xs={12} $sm={6} $lg={4}>
             <div className="news-wrap">
               <div className="thumb-block">
                 <Link to="#">

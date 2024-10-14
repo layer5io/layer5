@@ -204,7 +204,7 @@ const ViewsSectionWrapper = styled.div`
 
 `;
 
-const MeshmapVisualizerViews = () => {
+const KanvasVisualizerViews = () => {
   const [imageRef, inView] = useInView({ threshold: 0.3 });
   const [imageInView, setimageInView] = useState(false);
 
@@ -279,10 +279,10 @@ const MeshmapVisualizerViews = () => {
             integrations.
           </p>
           <Button
-            primary
+            $primary
             title="Open in Demo System &rarr;"
-            external={true}
-            url="https://playground.meshery.io/"
+            $external={true}
+            $url="https://playground.meshery.io/"
           />
         </div>
       </div>
@@ -290,4 +290,4 @@ const MeshmapVisualizerViews = () => {
   );
 };
 
-export default MeshmapVisualizerViews;
+export default KanvasVisualizerViews;

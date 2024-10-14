@@ -160,7 +160,7 @@ const Aws = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Deploy  with No Code AWS</h2>
             <p className="caption">
-              Our visual AWS interface enables anyone to deploy production-grade software with no code. Whether you're new to AWS and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software, all with no code.
+              Our visual AWS interface enables anyone to deploy production-grade software with no code. Whether you're new to AWS and are looking for the best way to learn or a seasoned pro, Kanvas has all the features you need to be successful in deploying and configuring your software, all with no code.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
@@ -178,9 +178,9 @@ const Aws = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Visual drag & drop</h2>
             <p className="caption">
-              MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+              Kanvas allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -199,7 +199,7 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with MeshMap" className="AWS-image" />
+              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with Kanvas" className="AWS-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
