@@ -1,7 +1,7 @@
 name: Build and Deploy Site
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build-and-deploy:
@@ -12,9 +12,9 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Install and Build 🔧 
+      - name: Install and Build 🔧
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Deploy 🚀

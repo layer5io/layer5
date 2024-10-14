@@ -35,10 +35,10 @@ const FeatureHero = (props) => {
           <h1 className={"whiteboard-heading"}>{props.data.heading}</h1>
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
           <Button
-            primary
+            $primary
             className="banner-btn two"
             title="See Meshery"
-            url="/cloud-native-management/meshery"
+            $url="/cloud-native-management/meshery"
           >
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>

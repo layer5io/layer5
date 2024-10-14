@@ -1,4 +1,4 @@
-name: MeshMap Screenshot Service
+name: Kanvas Screenshot Service
 'on':
   pull_request_target:
     types:
@@ -14,7 +14,7 @@ name: MeshMap Screenshot Service
     outputs:
       resource_url:
         description: The URL of the generated resource.
-        value: ${{ jobs.MeshMapScreenshot.outputs.resource_url }}
+        value: ${{ jobs.KanvasScreenshot.outputs.resource_url }}
 permissions:
   actions: read
   contents: write
@@ -23,7 +23,7 @@ permissions:
   pull-requests: write
   id-token: write
 jobs:
-  MeshMapScreenshot:
+  KanvasScreenshot:
     runs-on: ubuntu-latest
     outputs:
       resource_url: ${{ steps.test_result.outputs.resource_url }}
@@ -32,15 +32,16 @@ jobs:
         run: |
           export pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo "PULL_NO=$pull_number" >> $GITHUB_ENV
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           path: action
-          repository: layer5labs/meshmap-snapshot
+          repository: layer5labs/kanvas-snapshot
       - id: test_result
-        uses: ${GITHUB_REF/refs/tags//}
+        uses: layer5labs/Kanvas-Snapshot@v0.2.13
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          providerToken: ${{ secrets.PROVIDER_TOKEN }}
+          mesheryToken: ${{ secrets.MESHERY_TOKEN }}
           prNumber: ${{ env.PULL_NO }}
           application_type: Kubernetes Manifest
-          filePath: ${{ inputs.fileName == '' && 'lkjh' || inputs.fileName }}
+          filePath: ${{ inputs.fileName == '' && '.gitpod.yml' || inputs.fileName }}

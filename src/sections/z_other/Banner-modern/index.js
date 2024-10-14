@@ -15,7 +15,7 @@ const BannerModern = () => {
     <BannerSectionWrapper>
       <ParticleComponent />
       <Container fullWidthSM>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col sm={7} md={6}>
             <SectionTitle
               className="section-title"

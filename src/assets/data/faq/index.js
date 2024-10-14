@@ -107,10 +107,10 @@ const data = {
       ],
     },
     {
-      question: "Can I deploy Meshery / MeshMap on-premises?",
+      question: "Can I deploy Meshery / Kanvas on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
@@ -125,18 +125,18 @@ const data = {
       question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
       category: "Meshery",
       answer: [
-        "Yes, Meshery, MeshMap, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
         "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
 
       ],
     },
     {
-      question: `What is the difference between MeshMap and the Cloud Native Playground?`,
+      question: `What is the difference between Kanvas and the Cloud Native Playground?`,
       category: "Meshery",
       answer: [
-        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of MeshMap<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of MeshMap<sup>BETA</sup> functionality is disabled (Visualizer mode).",
-        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within MeshMap Designer are also disabled. Meshery and MeshMap are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
     },    
     {
@@ -181,13 +181,13 @@ const data = {
       ],
     },
     {
-      question: "Is MeshMap cloud or a self-hosted solution?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
+      question: "Is Kanvas cloud or a self-hosted solution?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
       linktext: "Learn More",
       answer: [
-        "Yes, MeshMap is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
-        "MeshMap can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have MeshMap hosted as SaaS solution offered by Layer5.",
+        "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
+        "Kanvas can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have Kanvas hosted as SaaS solution offered by Layer5.",
         "Whether self-hosted or hosted by Layer5, we are here to support you."
       ]
     },
@@ -201,23 +201,23 @@ const data = {
       ]
     },
     {
-      question: "How can I try out MeshMap?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
+      question: "How can I try out Kanvas?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
       answer: [
-       "MeshMap is available in beta today. Signup for MeshMap beta access and use MeshMap for free.",
+       "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
        "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
     {
-      question: "What is MeshMap early access program?",
-      category: "MeshMap",
-      link: "https://layer5.io/cloud-native-management/meshmap",
-      linktext: "MeshMap Beta",
+      question: "What is Kanvas early access program?",
+      category: "Kanvas",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
       answer: [
-        "MeshMap is cloud native collaboration tool for managing your infrastructure and applications. MeshMap has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
-       "MeshMap is in beta mode and you can ask for early access to try it out.",
+        "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
+       "Kanvas is in beta mode and you can ask for early access to try it out.",
       ]
     },
     

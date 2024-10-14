@@ -10,14 +10,14 @@ import ReactPlayer from "react-player/youtube";
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 
-import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.webp";
+import imgHero from "../../../assets/images/kanvas/KanvasDesigner.webp";
 
 const BannerDefault = () => {
   return (
     <BannerSectionWrapper>
       <div className="section">
         <Row className="row">
-          <Col sm={12} md={6} lg={6} className="left-col">
+          <Col $sm={12} $md={6} $lg={6} className="left-col">
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
@@ -25,8 +25,8 @@ const BannerDefault = () => {
                 </div>
                 <SectionTitle
                   className="section-title"
-                  leftAlign={true}
-                  UniWidth="100%"
+                  $leftAlign={true}
+                  $UniWidth="100%"
                 >
                   <h4 className="statement">Meshery is</h4>
                   <div className="demo">
@@ -58,17 +58,16 @@ const BannerDefault = () => {
                   </h3>
                   <div className="join-community">
                     <Button
-                      primary
-                      className="join-community-button"
+                      $primary                      className="join-community-button"
                       title="Extend your control"
-                      url="/cloud-native-management/meshery"
+                      $url="/cloud-native-management/meshery"
                     />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
-          <Col sm={12} md={6} lg={6} className="right-col">
+          <Col $sm={12} $md={6} $lg={6} className="right-col">
             <ReactPlayer
               url="https://youtu.be/qaoYRP3oLok"
               playing
@@ -78,7 +77,7 @@ const BannerDefault = () => {
                   className="imgHero"
                   src={imgHero}
                   loading="lazy"
-                  alt="meshmap designer"
+                  alt="kanvas designer"
                   width="100%"
                   height="100%"
                 />

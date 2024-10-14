@@ -151,7 +151,7 @@ const Gcp = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Deploy with No Code GCP</h2>
             <p className="caption">
-              Our visual GCP interface enables anyone to deploy production-grade software with no code. Whether you're new to GCP and are looking for the best way to learn or a seasoned pro, MeshMap has all the features you need to be successful in deploying and configuring your software, all with no code.
+              Our visual GCP interface enables anyone to deploy production-grade software with no code. Whether you're new to GCP and are looking for the best way to learn or a seasoned pro, Kanvas has all the features you need to be successful in deploying and configuring your software, all with no code.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
@@ -169,9 +169,9 @@ const Gcp = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Visual drag & drop</h2>
             <p className="caption">
-              MeshMap allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+              Kanvas allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -190,7 +190,7 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with MeshMap" className="GCP-image" />
+              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -219,7 +219,7 @@ const Gcp = () => {
               Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
               <br />
               <br />
-              <a className="link" href="/cloud-native-management/meshmap/design">Learn more &rarr;</a>
+              <a className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</a>
             </p>
           </Col>
         </Row>
@@ -240,7 +240,7 @@ const Gcp = () => {
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with MeshMap" className="gcp-image" />
+              <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with KanvasclassName="gcp-image" />
             </div>
           </Col>
         </Row> */}

@@ -17,6 +17,11 @@ const CTA_BottomWrapper = styled.div`
     border-radius: 0.5rem;
     overflow: hidden; 
 
+    @media (max-width: 507px) {
+        flex-direction: column;
+        height: auto;
+    }
+
     .cta-content {
         padding: 0.5rem 1.5rem;
         text-align: center;
@@ -30,6 +35,11 @@ const CTA_BottomWrapper = styled.div`
         p {
             margin-top: 0.5rem;
         }
+
+        @media (max-width: 507px) {
+            max-width: 100%;
+            margin-right: 0;
+        }
     }
 
     img {
@@ -39,10 +49,20 @@ const CTA_BottomWrapper = styled.div`
       padding: 1rem;
       max-height: 100%; 
       border-radius: 0 0.5rem 0.5rem 0; 
+
+      @media (max-width: 507px) {
+          max-width: 100%;
+          padding: 0;
+          border-radius: 0;
+      }
     }
 
     button {
         width: fit-content; 
+
+        @media (max-width: 507px) {
+            margin-top: 1rem;
+        }
     }
 `;
 
@@ -53,6 +73,7 @@ const defaultURL = "https://slack.layer5.io";
 const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
     <CTA_BottomWrapper {...props}>
+      <img src={category ? Categories[category]["Image"] : (image ? image : image_src)} alt={category ? Categories[category]["Image_Alt"] : (alt ? alt : "Alt Text")} />
       <div className="cta-content">
         { category ? (
           <>
@@ -65,9 +86,9 @@ const CTA_Bottom = ({ alt, button_text, category, content, external_link, image,
             <p>{content ? content : defaultContent}</p>
           </>
         )}
-        <Button primary title={category ? Categories[category]["Button_Text"] : (button_text ? button_text : "Join Us")} url={category ? Categories[category]["Link"] : (url ? url : defaultURL)} external={category ? Categories[category]["Link_external"] : (external_link ? true : false)} />
+        <Button $primary title={category ? Categories[category]["Button_Text"] : (button_text ? button_text : "Join Us")} $url={category ? Categories[category]["Link"] : (url ? url : defaultURL)} external={category ? Categories[category]["Link_external"] : (external_link ? true : false)} />
       </div>
-      <img src={category ? Categories[category]["Image"] : (image ? image : image_src)} alt={category ? Categories[category]["Image_Alt"] : (alt ? alt : "Alt Text")} />
+
     </CTA_BottomWrapper>
   );
 };
