@@ -123,6 +123,16 @@ const Repository = () => {
               </li>
             </ul>
 
+            <details className="invite-only">
+              <summary><span>A note on *program participation / *invite-only projects</span></summary>
+              <p>Some of our projects, particularly those dealing with sensitive user data or playing a key role in our managed services, require a slightly more structured approach to development. This means that we invite trusted contributors, core team members and maintainers to participate directly in these projects. This ensures the highest standards of security and reliability. We're always on the lookout for talented individuals who can contribute to these efforts, so if you're interested in getting involved, keep an eye out for announcements and opportunities to showcase your skills!</p>
+              <p>Contributors are frequently invited to participation in the development of these projects extensions that contain either sensitive information (e.g. Meshery Remote Provider user accounts), contain privileged access to community environments (e.g. the hosted Meshery Playground) or grant administrative rights and control (e.g. assignment of recognition badges). Participation in these projects is by invitation only and requires a high level of trust and commitment to the Layer5 community.</p>
+              <p>Hundreds of  contributors have participated in these projects, and many have gone on to become maintainers and core team members. We want you to be one of them! If you are interested in participating in these projects, please reach out to the project maintainers or the Layer5 community team.</p>
+              <ul>Projects listed with *program participation required:
+                <li>Kanvas</li>
+                <li>Layer5 Cloud</li>
+              </ul>
+            </details>
             <a id="Frontend Projects">
               <h2>Frontend Projects</h2>
             </a>
