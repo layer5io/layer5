@@ -19,7 +19,7 @@ const AboutTheAuthor = (props) => {
           <div className="authors-info-container">
             <h3>About the Author</h3>
             <div className="authors-head-shot">
-              <Link to={`/community/members/${authorInformation.slug}`}>
+              <Link to={`${authorInformation?.fields?.slug}`}>
                 <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
               </Link>
             </div>
