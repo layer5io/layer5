@@ -8,7 +8,7 @@ import { BgImage } from "gbimage-bridge";
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import KanvasCTA from "../../kanvas-cta";
+import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
