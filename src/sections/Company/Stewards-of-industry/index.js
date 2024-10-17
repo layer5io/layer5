@@ -35,10 +35,9 @@ const StewardsOfIndustry = () => {
         <h1 className="section-header">Creators of cloud native standards</h1>
         <h2>Open source leaders</h2>
         <Button
-          primary
-          className="section-button"
+          $primary          className="section-button"
           title="See our Projects"
-          url="/projects"
+          $url="/projects"
         />
       </BgImage>
     </BannerSectionWrapper>

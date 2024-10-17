@@ -1,0 +1,134 @@
+---
+title: "Docker Build Fails with Warning: FromAsCasing"
+subtitle: "WARN: FromAsCasing: ‘as’ and ‘FROM’ keywords’ casing do not match"
+date: 2024-10-09
+author: Layer5 Team
+thumbnail: ../../../../assets/images/docker-extension/Docker_animated.svg
+darkthumbnail: ../../../../assets/images/docker-extension/Docker_animated.svg
+description: "Docker build fails with warning: FromAsCasing: ‘as’ and ‘FROM’ keywords’ casing do not match. Learn how to fix this issue."
+type: Blog
+category: Docker
+tags:
+  - Docker
+featured: false
+published: false
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import popularProject from "./number-one-most-popular-project.png";
+
+<BlogWrapper>
+
+## : Ensuring Best Practices and Avoiding Pitfalls
+
+Docker build checks are a valuable tool for validating your Dockerfile and build options against established best practices. They can help you identify potential issues early on, ensuring your images are efficient, secure, and maintainable. In this blog post, we'll delve into the importance of these checks and explore how to address some common warnings.
+
+**Why Use Docker Build Checks?**
+
+Think of build checks as a linter for your Dockerfile. They analyze your build configuration and provide feedback on potential problems, such as:
+
+* **Inefficiencies:**  Checks can identify unnecessary layers or overly large images, helping you optimize for size and performance.
+* **Security risks:**  They can flag potential security vulnerabilities, like using outdated base images or insecure commands.
+* **Maintainability issues:** Checks can highlight inconsistencies and deviations from best practices, improving the readability and maintainability of your Dockerfiles.
+
+**Enabling Build Checks**
+
+To enable build checks, simply use the `--check` flag with your `docker build` command:
+
+```bash
+docker build --check .
+```
+
+**Common Warnings and Remediation**
+
+Let's explore some frequently encountered warnings and how to address them:
+
+**1. FromAsCasing**
+
+**Warning:** `WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match`
+
+**Explanation:** This warning occurs when the `FROM` and `AS` keywords in a multi-stage build have different casing (e.g., `FROM` and `as`). While Docker allows both uppercase and lowercase, mixing casing can hinder readability.
+
+**Remediation:**  Ensure consistent casing for `FROM` and `AS` keywords throughout your Dockerfile.
+
+```dockerfile
+# Incorrect
+FROM ubuntu:latest as builder
+
+# Correct
+FROM ubuntu:latest AS builder
+```
+
+**2.  LatestType**
+
+**Warning:** `WARN: LatestType: 'latest' tag used for base image`
+
+**Explanation:** Using the `latest` tag can lead to unpredictable builds since the base image may change unexpectedly.
+
+**Remediation:**  Specify a specific tag for your base image to ensure consistency and reproducibility.
+
+```dockerfile
+# Incorrect
+FROM ubuntu:latest
+
+# Correct
+FROM ubuntu:22.04
+```
+
+**3.  AptGetNoInstallRecommends**
+
+**Warning:** `WARN: AptGetNoInstallRecommends: 'apt-get install' with no ' --no-install-recommends' flag`
+
+**Explanation:**  Installing recommended packages can increase image size and potentially introduce unnecessary dependencies.
+
+**Remediation:**  Use the `--no-install-recommends` flag with `apt-get install` to avoid installing recommended packages.
+
+```dockerfile
+# Incorrect
+RUN apt-get update && apt-get install -y package-name
+
+# Correct
+RUN apt-get update && apt-get install -y --no-install-recommends package-name
+```
+
+**4.  RunCommandWithNoExecForm**
+
+**Warning:** `WARN: RunCommandWithNoExecForm: 'RUN' command with no 'exec' form`
+
+**Explanation:** Using the exec form (`RUN ["executable", "param1", "param2"]`) for RUN commands is generally more efficient and avoids potential issues with shell interpretation.
+
+**Remediation:** Use the exec form for `RUN` commands whenever possible.
+
+```dockerfile
+# Incorrect
+RUN apt-get update && apt-get install -y package-name
+
+# Correct
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "--no-install-recommends", "package-name"]
+```
+
+**5.  RedunantAptUpdate**
+
+**Warning:** `WARN: RedundantAptUpdate: 'apt-get update' found in multiple RUN instructions`
+
+**Explanation:** Running `apt-get update` multiple times within a Dockerfile is inefficient.
+
+**Remediation:**  Combine `apt-get update` with the subsequent `apt-get install` command in a single `RUN` instruction.
+
+```dockerfile
+# Incorrect
+RUN apt-get update
+RUN apt-get install -y package-name
+
+# Correct
+RUN apt-get update && apt-get install -y package-name
+```
+
+**Conclusion**
+
+Docker build checks are a powerful tool for improving the quality of your Dockerfiles. By enabling checks and addressing the warnings, you can ensure your images are optimized, secure, and maintainable. Regularly review the Docker documentation for the latest best practices and updates to build checks.
+
+
+</BlogWrapper>

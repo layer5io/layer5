@@ -8,12 +8,12 @@ eurl: https://www.youtube.com/watch?v=iKe52yMWWK4
 type: Event
 speakers: ["Vivek Vishal", "Sudhanshu Dasgupta", "Shlok Mishra", "Alero Awani", "Eti Ijeoma", "Hargun Kaur"]
 published: true
-upcoming: true
+upcoming: false
 register: true
 ---
 
 import { Link } from "gatsby" ;
-
+import preptemberslides from "./hacktoberfest-prep-2024-extending-meshery-models.pdf"
 import hacktoberfestBadge from "./layer5-hacktoberfest11-badge-large.png";
 
 <p>
@@ -40,5 +40,6 @@ Prepare for Hacktoberfest and ready yourself for contributing to CNCF projects t
 <ul>
     <li><Link to="/blog/open-source/ways-to-contribute-at-layer5">Code and Non-Code Contributing at Layer5</Link></li>
     <li><a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22hacktoberfest%22+">Issues for Hacktoberfest</a></li>
-    {/* <li><a href="https://www.youtube.com/watch?v=T7xLUqrnxtI">Recorded Livestream</a></li> */}
+    <li><a href="https://www.youtube.com/watch?v=iKe52yMWWK4">Recorded Livestream</a></li>
+    <li><a href={preptemberslides}>Presentation Slides</a></li>
 </ul>

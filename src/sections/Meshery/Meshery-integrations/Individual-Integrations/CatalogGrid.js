@@ -65,7 +65,7 @@ const CatalogGrid = ({ frontmatter }) => {
       </section>
       {designSize <= designs?.total_count && (
         <Button
-          primary
+          $primary
           className="loadmore"
           title="Load More"
           onClick={() => {

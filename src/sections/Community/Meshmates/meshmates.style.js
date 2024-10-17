@@ -21,7 +21,7 @@ const MeshMatesWrapper = styled.div`
             max-height: 25rem;
           }
           svg {
-            max-height: 25rem;
+            height: 25rem;
             .meshmate-stack-colorMode_svg__colorMode1 {
                   fill: ${props => props.theme.whiteToGreen3C494F};
                 }
