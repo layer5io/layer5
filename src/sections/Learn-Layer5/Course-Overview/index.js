@@ -15,6 +15,8 @@ import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+
+  const extractedSection = (chapters.length > 0 ? chapters[0].fields.section : "");
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
@@ -112,7 +114,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
-              <Link key={index} to={`istio/${item}`} className="chapter-link">
+              <Link key={index} to={`${extractedSection}/${item}`} className="chapter-link">
                 <ChapterCard
                   chapterNum={index + 1}
                   chapter={getChapterTitle(item, chapters)}
@@ -126,7 +128,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               {              console.log("array: ",availableServiceMeshes)}
               {availableServiceMeshes.length != 0 && (
                 <>
-                  <h2>Service Meshes You Can Learn</h2>
+                  <h2>Technologies You Can Learn</h2>
                   <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
                 </>
               )}

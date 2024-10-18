@@ -863,13 +863,14 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink } = node.fields;
+  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
+      section,
       slug,
       course,
       pageType,

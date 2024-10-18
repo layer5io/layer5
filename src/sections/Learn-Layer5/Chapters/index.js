@@ -69,7 +69,11 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
       <>
         <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
           <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
-            <h2>hi </h2>
+            <Image
+              {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
+              className="docker"
+              alt={sm.section}
+            />
           </Link>
         </div>
         <Tooltip
@@ -95,10 +99,9 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
-                {  console.log(availableServiceMeshesArray)}
                 {availableServiceMeshesArray.length != 0 && (
                   <>
-                    <h4>Service Meshes Available</h4>
+                    <h4>Technologies Available</h4>
                     <div className="service-mesh-switcher">
                       <ServiceMeshesAvailable serviceMeshes={availableServiceMeshesArray} />
                     </div>
