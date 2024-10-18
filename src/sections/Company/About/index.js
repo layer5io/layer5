@@ -11,8 +11,8 @@ import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import { Link } from "gatsby";
-import Layer5Projects from "./images/layer5-projects.png";
-import communityStat from "./images/layer5-community-stats.png";
+import Layer5Projects from "./images/layer5-projects.webp";
+import communityStat from "./images/layer5-community-stats.webp";
 
 const About = () => {
   const Community_meetup = "./images/Community_meetup.webp";
