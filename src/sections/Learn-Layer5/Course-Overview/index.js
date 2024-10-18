@@ -20,7 +20,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
-  const serviceMeshImages = course.frontmatter.meshesYouLearn;
+  const serviceMeshImages = course.frontmatter.meshesYouLearn || [];
   const getChapterTitle = (chapter, chapterList) => {
     for (let i = 0; i < chapterList.length; i++) {
       if (chapterList[i].fields.chapter === chapter) return chapterList[i];
@@ -126,7 +126,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             <div className="service-meshes-you-can-learn">
               {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)   }
               {              console.log("array: ",availableServiceMeshes)}
-              {availableServiceMeshes.length != 0 && (
+              { serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
                 <>
                   <h2>Technologies You Can Learn</h2>
                   <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />

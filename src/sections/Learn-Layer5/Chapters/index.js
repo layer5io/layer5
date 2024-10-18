@@ -15,7 +15,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const { frontmatter, body } = chapterData;
   const [showQuizModal, setShowQuizModal] = useState(false);
 
-  const serviceMeshImages = courseData.frontmatter.meshesYouLearn;
+  const serviceMeshImages = courseData.frontmatter.meshesYouLearn || [];
   const tableOfContents = TOCData
     .filter(node => !!node.fields.section)
     .map( toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }) );
@@ -99,7 +99,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
-                {availableServiceMeshesArray.length != 0 && (
+                { serviceMeshImages.length !== 0 && availableServiceMeshesArray.length != 0 && (
                   <>
                     <h4>Technologies Available</h4>
                     <div className="service-mesh-switcher">
