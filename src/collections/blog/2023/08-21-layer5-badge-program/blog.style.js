@@ -48,5 +48,8 @@ export const Blog = styled.div`
     div.badge-grid > div {
       max-width: 95%;
     }
+    img.badge-modal{
+      max-width: 95%;
+  }
   }
 `;
