@@ -7,8 +7,11 @@ videos: 0
 lectures: 4
 order: 3
 ---
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
-
+import es8 from "../../../../src/assets/images/learning-path/edge-stack/es8.png";
+import es9 from "../../../../src/assets/images/learning-path/edge-stack/es9.png";
 
 <ChapterStyle>
 
@@ -25,6 +28,9 @@ The design below shows the traffic flow between some major components in the the
   align="center"
   width="100%"
 />
+<a href={es8}>
+  <img src={es8} width="100%" align="center" />
+</a>
 
 The components include ;
 
@@ -45,11 +51,10 @@ Let's take a look at the roles of each component and the ports used for communic
 
 <h3 class="chapter-sub-heading">Service Account Roles</h3>
 
-<CustomImage
-  src={"/assets/images/learning-path/edge-stack/es9.png"}
-  align="center"
-  width="100%"
-/>
+<a href={es9}>
+  <img src={es9} width="100%" align="center" />
+</a>
+
 The diagram above shows one of the role assignments and service account relationships within
 the Ambassador Edge Stack (AES) system. You can see that the Service Account (edge-stack) is
 linked to both the ClusterRole (edge-stack) and the Role (edge-stack-apiext) through ClusterRoleBinding
@@ -57,8 +62,11 @@ and RoleBinding.
 
 With the help of Kanvas, these connections become clear and easy to understand.
 
+<main>
 <MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
   embedId="embedded-design-7b01cebf-b0f9-4c11-87e7-612d8fad10c8"
-  embedScriptSrc="/assets/images/learning-path/embed-test/embedded-design-deployment-service.js"
+  embedScriptSrc="embed-test/embedded-design-deployment-service.js"
 />
+</main>
 </ChapterStyle>

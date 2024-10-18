@@ -7,6 +7,8 @@ videos: 0
 lectures: 4
 order: 1
 ---
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 
 <ChapterStyle>
@@ -28,6 +30,7 @@ This tutorial will guide you through exploring Edge Stack using Meshery Playgrou
 5. **Design Interpretation**: Explore some of the relationships between Edge Stack resources with a Kanvas design, explaining their functionalities and roles within the system.
 
 <h2 class="chapter-sub-heading">Meshery Playground and Kanvas</h2>
+
 **Meshery Playground** is an interactive and collaborative live cluster environment that simplifies
 the deployment process and enhances user experience by providing visual tools for managing
 Kubernetes resources.
@@ -53,8 +56,11 @@ The "stack" includes security functionalities such as automatic TLS, authenticat
 1. Log in to the [Meshery Playground](https://meshery.layer5.io/) using your credentials.
 2. Click **Explore** in the Cloud Native Playground tile to navigate to _Kanvas_.
 
+<main>
 <MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
   embedId="embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40"
-  embedScriptSrc="/assets/images/learning-path/embed-test/embedded-design-edge-stack.js"
+  embedScriptSrc="embed-test/embedded-design-edge-stack.js"
 />
+</main>
 </ChapterStyle>

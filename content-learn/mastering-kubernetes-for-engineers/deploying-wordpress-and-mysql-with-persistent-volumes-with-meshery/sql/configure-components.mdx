@@ -8,7 +8,12 @@ lectures: 12
 order: 3
 ---
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
-
+import wp8 from "../../../../src/assets/images/learning-path/sql/wp8.png";
+import wp9 from "../../../../src/assets/images/learning-path/sql/wp9.png";
+import wp10 from "../../../../src/assets/images/learning-path/sql/wp10.png";
+import wp11 from "../../../../src/assets/images/learning-path/sql/wp11.png";
+import wp12 from "../../../../src/assets/images/learning-path/sql/wp12.png";
+import wp13 from "../../../../src/assets/images/learning-path/sql/wp13.png";
 
 <ChapterStyle>
 
@@ -30,11 +35,9 @@ Before you proceed, choose a password and convert it into base64 format. You can
 1. Click on the Kubernetes icon on the dock, search for `secret`, and click on it or drag it to the canvas.
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp8.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp8}>
+  <img src={wp8} width="100%" align="center" />
+</a>
 
 _Figure: Create secret component_
 
@@ -45,11 +48,9 @@ _Figure: Create secret component_
    - Click **+** next to Data and add the secret as a key-value pair `password:cGFzc3dvcmQ=`
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp9.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp9}>
+  <img src={wp9} width="100%" align="center" />
+</a>
 
 _Figure: Configure secret_
 
@@ -66,11 +67,9 @@ Please note that using `hostPath` for Persistent Volumes is generally not recomm
 1. Click on the Kubernetes icon on the dock, search for `Persistent Volume`, and select it. Create two PVs.
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp10.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp10}>
+  <img src={wp10} width="100%" align="center" />
+</a>
 
 _Figure: Create persistent volume_
 
@@ -81,33 +80,27 @@ _Figure: Create persistent volume_
    - Click **+** next to "AccessMode" and enter `ReadWriteOnce`
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp11.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp11}>
+  <img src={wp11} width="100%" align="center" />
+</a>
 
 _Figure: Configure persistent volume_
 
     - Scroll down to "Capacity" and enter the key pair `storage:20Gi`
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp12.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp12}>
+  <img src={wp12} width="100%" align="center" />
+</a>
 
 _Figure: Persistent volume capacity_
 
     - Scroll down to "Hostpath" and input `mnt/data/wp-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
 
 <br />
-<CustomImage
-  src={"/assets/images/learning-path/sql/wp13.png"}
-  align="center"
-  width="100%"
-/>
+<a href={wp13}>
+  <img src={wp13} width="100%" align="center" />
+</a>
 
 _Figure: Persistent volume hostpath_
 
