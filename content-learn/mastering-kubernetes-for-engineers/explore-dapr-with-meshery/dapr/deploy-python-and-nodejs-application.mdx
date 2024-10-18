@@ -7,7 +7,11 @@ videos: 0
 lectures: 4
 order: 5
 ---
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import filterNodePythonImg from "../../../../src/assets/images/learning-path/dapr/filter-node-python.png";
+
 
 <ChapterStyle>
 
@@ -18,8 +22,9 @@ import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapte
 1. Import the Node.js application into Meshery.
 
 <MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
   embedId="embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672"
-  embedScriptSrc="/assets/images/learning-path/embed-test/embedded-design-node-application.js"
+  embedScriptSrc="embed-test/embedded-design-node-application.js"
 />
 
 The Dapr annotations in the manifest file will let the Dapr sidecar injector know that it is supposed to inject a sidecar container into this pod during creation.
@@ -38,8 +43,9 @@ annotations:
 Follow previous steps to import and Deploy the python application.
 
 <MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
   embedId="embedded-design-03016ef6-7124-4169-a5c0-f403711d480d"
-  embedScriptSrc="/assets/images/learning-path/embed-test/embedded-design-python-application.js"
+  embedScriptSrc="embed-test/embedded-design-python-application.js"
 />
 Switch to visualizer and filter according to these specifications:
 
@@ -49,10 +55,8 @@ Switch to visualizer and filter according to these specifications:
 
 You should see the daprd sidecar containers in both the python and node pods.
 
-<CustomImage
-  src={"/assets/images/learning-path/dapr/filter-node-python.png"}
-  align="center"
-  width="100%"
-/>
+<a href={filterNodePythonImg}>
+  <img src={filterNodePythonImg} width="100%" align="center" />
+</a>
 
 </ChapterStyle>

@@ -8,6 +8,8 @@ lectures: 4
 order: 6
 ---
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import daprStream from "../../../../src/assets/images/learning-path/dapr/stream.png";
+
 
 <ChapterStyle>
 In this chapter, we will explore how Dapr utilizes its [API constructs](https://docs.dapr.io/concepts/building-blocks-concept/) to facilitate communication and manage the state of application data within this architecture by observing the container logs.
@@ -50,11 +52,9 @@ The Python app does not need to know the exact address or port of the Node.js se
 1. Click on **Stream Container logs**.
 
 
-<CustomImage
-  src={"/assets/images/learning-path/dapr/stream.png"}
-  align="center"
-  width="100%"
-/>
+<a href={daprStream}>
+  <img src={daprStream} width="100%" align="center" />
+</a>
 
 The logs show the daprd container logs with a POST request made to **/neworder** endpoint.
 
