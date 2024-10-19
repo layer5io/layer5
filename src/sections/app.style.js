@@ -180,7 +180,11 @@ section{
             background-color: ${props => props.theme.shadowDarkColor}!important;
             color: ${props => props.theme.text};
             transition: all 450ms ease 0s;
-            border: ${(props) => props.theme.searchIconColor};
+        }
+
+        // for the Search Icon
+        svg {
+            color: ${(props) => props.theme.searchIconColor};
         }
   }
 
