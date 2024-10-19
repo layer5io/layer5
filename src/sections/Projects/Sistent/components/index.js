@@ -30,6 +30,13 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Text Field",
+    description:
+      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
+    url: "/projects/sistent/components/text-field",
+  }
 ];
 
 const SistentComponents = () => {

@@ -43,4 +43,19 @@ export const content = [
     link: "/projects/sistent/components/text-input/code",
     text: "Text Input",
   },
+  {
+    id: 15,
+    link: "/projects/sistent/components/text-field",
+    text: "Text Field",
+  },
+  {
+    id: 16,
+    link: "/projects/sistent/components/text-field/guidance",
+    text: "Text Field",
+  },
+  {
+    id: 17,
+    link: "/projects/sistent/components/text-field/code",
+    text: "Text Field",
+  },
 ];
