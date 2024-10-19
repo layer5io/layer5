@@ -38,7 +38,7 @@ p{
     }
   }
   @media only screen and (max-width: 700px) {
-    .col {
+    .opportunity-col {
       flex: 0 0 100%;
     }
   }
