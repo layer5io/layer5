@@ -1,35 +1,38 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
-import { SistentThemeProvider, Popper, Button } from "@layer5/sistent";
+import { useLocation } from "@reach/router";
+import { SistentThemeProvider, Popper, Button, Box } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `<Button
-    variant="contained"
-    label="Toggle Popper"
-    size="medium"
-    onClick={handleClick}
-    ref={anchorRef}
-  />
-  <Popper
-    open={open}
-    anchorEl={anchorRef.current}
-    placement="top"
-  >
-    <div
-      style={{
-        padding: "10px",
-        backgroundColor: "#fff",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-      }}
-    >
-      I'm positioned above!
-    </div>
-  </Popper>`,
+  ` <SistentThemeProvider>
+      <Button
+        variant="contained"
+        label="Toggle Popper"
+        size="medium"
+        onClick={handleClick}
+        ref={anchorRef}
+      />
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        placement="top"
+      >
+        <div
+          style={{
+            padding: "10px",
+            backgroundColor: "#fff",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+          }}
+        >
+          I'm positioned above!
+        </div>
+      </Popper>
+  </SistentThemeProvider>`,
   `<Button
     variant="contained"
     label="Toggle Popper"
@@ -57,11 +60,16 @@ const codes = [
 
 export const PooperCode = () => {
   const { isDark } = useStyledDarkMode();
-  const [open, setOpen] = useState(false);
-  const anchorRef = useRef(null);
+  const location = useLocation();
 
-  const handleClick = () => {
-    setOpen((prevOpen) => !prevOpen);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [placement, setPlacement] = useState("bottom");
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (newPlacement) => (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen((prev) => placement !== newPlacement || !prev);
+    setPlacement(newPlacement);
   };
 
   return (
@@ -89,7 +97,7 @@ export const PooperCode = () => {
           <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/popper/guidance"
+                "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -118,29 +126,23 @@ export const PooperCode = () => {
             <a id="Basic Popper">
               <h3>Basic Popper</h3>
             </a>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Popper open={open} anchorEl={anchorEl} placement={placement}>
+                <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                  The content of the Popper.
+                </Box>
+              </Popper>
+            </SistentThemeProvider>
             <div className="showcase">
               <div className="items">
                 <Button
                   variant="contained"
                   label="Toggle Popper"
                   size="medium"
-                  onClick={handleClick}
-                  ref={anchorRef}
+                  onClick={handleClick("bottom")}
                 />
-                <Popper open={open}>
-                  <div
-                    style={{
-                      padding: "10px",
-                      backgroundColor: "#fff",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    Hello, I'm a Popper!
-                  </div>
-                </Popper>
               </div>
-              <CodeBlock name="Basic Popper" code={codes[0]} />
+              <CodeBlock name="basic-popper" code={codes[0]} />
             </div>
             <a id="PositionedExample">
               <h3>Positioned Example</h3>
@@ -156,27 +158,10 @@ export const PooperCode = () => {
                   variant="contained"
                   label="Toggle Popper"
                   size="medium"
-                  onClick={handleClick}
-                  ref={anchorRef}
+                  onClick={handleClick("top")}
                 />
-                <Popper
-                  open={open}
-                  anchorEl={anchorRef.current}
-                  placement="top"
-                >
-                  <div
-                    style={{
-                      padding: "10px",
-                      backgroundColor: "#fff",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    I'm positioned above!
-                  </div>
-                </Popper>
               </div>
-              <CodeBlock name="PositionedExample" code={codes[1]} />
+              <CodeBlock name="positioned-example" code={codes[1]} />
             </div>
           </SistentThemeProvider>
         </div>

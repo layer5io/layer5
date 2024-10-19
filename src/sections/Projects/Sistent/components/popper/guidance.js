@@ -1,23 +1,29 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
-import { SistentThemeProvider, Popper, Button } from "@layer5/sistent";
+import { SistentThemeProvider, Popper, Button, Box } from "@layer5/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 export const PopperGuidance = () => {
   const { isDark } = useStyledDarkMode();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
-  const anchorRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
     setOpen((prevOpen) => !prevOpen);
   };
 
   return (
     <SistentLayout title="Popper">
-      <div>
+      <div className="content">
+        <a id="Identity">
+          <h2>Popper</h2>
+        </a>
         <p>
           The Popper component provides a mechanism for positioning content
           dynamically relative to a reference element. It is commonly used for
@@ -37,7 +43,7 @@ export const PopperGuidance = () => {
           <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/popper/guidance"
+                "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -105,19 +111,11 @@ export const PopperGuidance = () => {
                 label="Toggle Popper"
                 size="medium"
                 onClick={handleClick}
-                ref={anchorRef}
               />
-              <Popper open={open}>
-                <div
-                  style={{
-                    padding: "10px",
-                    backgroundColor: "#fff",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                >
-                  Styled Popper content!
-                </div>
+              <Popper open={open} anchorEl={anchorEl}>
+                <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                  The content of the Popper.
+                </Box>
               </Popper>
             </SistentThemeProvider>
           </Row>

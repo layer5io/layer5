@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-
-import { SistentThemeProvider, Popper } from "@layer5/sistent";
+import { SistentThemeProvider, Popper, Button, Box } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
@@ -11,6 +10,16 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 export const SistentPopper = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [placement, setPlacement] = useState("bottom");
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (newPlacement) => (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen((prev) => placement !== newPlacement || !prev);
+    setPlacement(newPlacement);
+  };
 
   return (
     <SistentLayout title="Popper">
@@ -37,7 +46,7 @@ export const SistentPopper = () => {
           <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/popper/guidance"
+                "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -75,23 +84,37 @@ export const SistentPopper = () => {
             <li>Dropdown menus for navigation or selections.</li>
             <li>Modals for confirmations or additional content.</li>
           </ul>
-          <h3>Basic Example</h3>
+          <a id="Basic Example">
+            <h3>Basic Example</h3>
+          </a>
           <p>
             Below is a simple example of how to use the Popper component to
             display content relative to a button.
           </p>
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <Popper open={open} anchorEl={anchorEl} placement={placement}>
+              <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                The content of the Popper.
+              </Box>
+            </Popper>
+          </SistentThemeProvider>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Popper open={true} anchorEl={document.querySelector("button")}>
-                <div>This is popper content!</div>
-              </Popper>
+              <Button
+                variant="contained"
+                label="Toggle Popper"
+                size="medium"
+                onClick={handleClick("bottom")}
+              />
             </SistentThemeProvider>
           </Row>
           <p>
             The `anchorEl` prop specifies the element to which the Popper will
             be anchored. The `open` prop controls its visibility.
           </p>
-          <h2>Styling and Positioning</h2>
+          <a id="Styling and Positioning">
+            <h3>Styling and Positioning</h3>
+          </a>
           <p>
             You can customize the positioning of the Popper using the
             `placement` prop to define where the Popper appears relative to the
@@ -99,25 +122,17 @@ export const SistentPopper = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Popper
-                open={true}
-                anchorEl={document.querySelector("button")}
-                placement="bottom"
-              >
-                <div>Popper positioned at the bottom!</div>
-              </Popper>
+              <Button
+                variant="contained"
+                label="Toggle Popper"
+                size="medium"
+                onClick={handleClick("right")}
+              />
             </SistentThemeProvider>
           </Row>
           <p>
-            The above example demonstrates a Popper positioned below the
+            The above example demonstrates a Popper positioned right the
             reference button, providing flexibility in its placement.
-          </p>
-          <h2>Conclusion</h2>
-          <p>
-            The Popper component is essential for creating dynamic, contextually
-            relevant interfaces that enhance user experience. By utilizing the
-            Popper component effectively, developers can create intuitive and
-            interactive web applications.
           </p>
         </div>
       </div>
