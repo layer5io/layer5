@@ -14,7 +14,6 @@ export const BlogPageWrapper = styled.div`
       height: 100%;
     }
   }
-
   @media only screen and (max-width: 576px) {
     .blog-grid-wrapper {
       margin: 0 auto 1rem;

@@ -268,7 +268,7 @@ export const darktheme = {
   // Teal Blue
   tertiaryColorTwo: "#477E96",
 
-  headingColor: "#FFFFFF",
+  headingColor: "#000000",
 
   // searchbox icon color
   searchIconColor: "#FFFFFF",

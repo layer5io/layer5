@@ -22,7 +22,6 @@ export const ResourcePageWrapper = styled.div`
         }
         
     }
-
     .post-content-block{
         height: 7rem;
     }
