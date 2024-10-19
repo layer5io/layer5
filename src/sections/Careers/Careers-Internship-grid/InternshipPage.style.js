@@ -38,11 +38,16 @@ p{
     }
   }
   @media only screen and (max-width: 700px) {
-    .opportunity-col {
+    .col {
       flex: 0 0 100%;
     }
   }
 
+  @media only screen and (max-width: 450px) {
+    .opportunity-card { 
+      width: 100% !important; 
+    }
+  }
   .opportunity-card {
     width: 21rem;
     height: 15rem;
