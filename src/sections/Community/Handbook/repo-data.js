@@ -169,15 +169,6 @@ export const repo_data = [
         link: [""],
         repository: "https://github.com/layer5io/docs",
       },
-      {
-        project: "Kanvas Snapshot",
-        image: kanvasLogo,
-        site: "https://layer5.io/solutions/gitops/snapshot",
-        language: "React.js",
-        maintainers_name: ["Vacant"],
-        link: [""],
-        repository: "https://github.com/layer5labs/kanvas-snapshot",
-      },
     ],
   },
 
@@ -320,6 +311,17 @@ export const repo_data = [
       //   language: "Golang",
       //   repository: "https://github.com/layer5io/meshmonkey",
       // },
+      {
+        project: "Kanvas Snapshot",
+        image: kanvasLogo,
+        site: "https://layer5.io/solutions/gitops/snapshot",
+        language: "GitHub Actions",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description:
+        "Generates visual snapshots of infrastructure as code (e.g., Kubernetes manifests, Helm charts) and delivers them to pull requests for automated review.",
+        repository: "https://github.com/layer5labs/kanvas-snapshot",
+      },
     ],
   },
 
