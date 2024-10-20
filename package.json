@@ -102,7 +102,7 @@
     "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.5.2",
     "react-visibility-sensor": "^5.1.1",
-    "sharp": "^0.33.2",
+    "sharp": "^0.33.5",
     "simple-react-cytoscape": "^1.0.4",
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
