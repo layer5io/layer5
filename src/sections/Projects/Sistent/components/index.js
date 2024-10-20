@@ -32,9 +32,16 @@ const componentsData = [
   },
   {
     id: 4,
+    name: "Paper",
+    description:
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+    url: "/projects/sistent/components/paper",
+  },
+  {
+    id: 5,
     name: "Link",
     description:
-      "A link component is a navigational element that directs users to another page or section within an application",
+      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
   },
 ];
