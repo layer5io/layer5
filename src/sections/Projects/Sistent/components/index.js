@@ -30,6 +30,13 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Link",
+    description:
+      "A link component is a navigational element that directs users to another page or section within an application",
+    url: "/projects/sistent/components/link",
+  },
 ];
 
 const SistentComponents = () => {
