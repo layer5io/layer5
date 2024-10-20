@@ -86,7 +86,7 @@ export const SistentModal = () => {
             confirm and cancel actions or make progress while carrying out a
             particular task.
           </p>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"

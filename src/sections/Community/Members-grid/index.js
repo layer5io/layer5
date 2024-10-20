@@ -42,9 +42,11 @@ const MembersGrid = (props) => {
       <div className="members-page-wrapper">
         <Container>
           <div className="members-profile-cards">
-            <Row>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
               {props?.data?.map(({ id, frontmatter, fields }) => (
-                <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
+                <Col $xs={12} $sm={6} $md={6} $lg={4} $xl={3} key={id}>
                   <ProfileCard
                     frontmatter={frontmatter}
                     cardlink={fields.slug}
@@ -106,22 +108,20 @@ const MembersGrid = (props) => {
 
               <p className="text-gray">Would you like to participate?</p>
               <div className="">
-                <VintageBox right={true} vintageOne={true}>
+                <VintageBox $right={true} $vintageOne={true}>
                   <Button
-                    primary
-                    className="banner-btn memberProfileBtn"
+                    $primary                    className="banner-btn memberProfileBtn"
                     title="Read the Community Handbook"
-                    url="/community/handbook"
-                    external={true}
+                    $url="/community/handbook"
+                    $external={true}
                   >
                     <FaBook size={21} className="icon-left" />
                   </Button>
 
                   <Button
-                    secondary
-                    className="banner-btn two memberProfileBtn"
+                    $secondary                    className="banner-btn two memberProfileBtn"
                     title="Join the Community"
-                    url="https://slack.layer5.io"
+                    $url="https://slack.layer5.io"
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>
@@ -164,8 +164,8 @@ const MembersGrid = (props) => {
                     primary
                     className="banner-btn memberProfileBtn"
                     title="Collect Badges"
-                    url="https://badges.layer5.io/"
-                    external={true}
+                    $url="https://badges.layer5.io/"
+                    $external={true}
                   >
                     <FaCertificate size={21} className="icon-left" />
                   </Button>
@@ -174,7 +174,7 @@ const MembersGrid = (props) => {
                     secondary
                     className="banner-btn two memberProfileBtn"
                     title="Join the Community"
-                    url="https://slack.layer5.io"
+                    $url="https://slack.layer5.io"
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>

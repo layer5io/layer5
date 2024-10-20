@@ -59,7 +59,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: <Partner5 alt="CNCF" />,
-    imageRoute: "https://landscape.cncf.io/card-mode?category=cncf-members&grouping=category&selected=layer5-member&embed=yes&style=logo",
+    imageRoute: "https://landscape.cncf.io/?item=provisioning--automation-configuration--meshery",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   }, {
     name: "HashiCorp",

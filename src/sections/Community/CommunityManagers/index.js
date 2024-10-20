@@ -11,8 +11,8 @@ const CommunityManagers = () => {
   const data = useStaticQuery(
     graphql`query managers {
   allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {badges: {in:["community"]},status: {eq: "Active"}}}
+    sort: {frontmatter: {name: ASC}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {badges: {in: ["community"]}, status: {eq: "Active"}}}
   ) {
     nodes {
       id
@@ -39,8 +39,7 @@ const CommunityManagers = () => {
       }
     }
   }
-}
-`
+}`
   );
   return (
     <CommunityManagersWrapper>
@@ -50,21 +49,23 @@ const CommunityManagers = () => {
           <p>A Community Manager is a person who has an innate drive to contribute to the community's prosperity.
             A community manager serves as a link between the organisation and its community,
             overcoming obstacles as they arise—or even before they arise!—by collaborating with other departments and the community to find solutions that benefit the entire community.</p>
-          <Row>
+          <Row style={{
+            flexWrap: "wrap"
+          }}>
             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Col xs={12} sm={6} lg={4} key={id}>
-                <ProfileCard frontmatter={frontmatter} cardlink = {fields.slug}/>
+              <Col $xs={12} $sm={6} $lg={4} key={id}>
+                <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
               </Col>
             ))}
           </Row>
         </div>
-        <InlineQuotes quote={"Thank you so much for your kind words. I absolutely love this community."} person={"Naureen Imran"}/>
-        <InlineQuotes quote={"Thanks for your well wishes on my new job. I would not have landed my job were it not for Layer5's support. The hiring managers at Citi were so impressed based on my experience at Layer5 that I was immediately selected for my new position. I'm and will forever be grateful to the Layer5 community for the positive impact on my life and relationships."} person={"Aadhitya Amarendiran"}/>
+        <InlineQuotes quote={"Thank you so much for your kind words. I absolutely love this community."} person={"Naureen Imran"} />
+        <InlineQuotes quote={"Thanks for your well wishes on my new job. I would not have landed my job were it not for Layer5's support. The hiring managers at Citi were so impressed based on my experience at Layer5 that I was immediately selected for my new position. I'm and will forever be grateful to the Layer5 community for the positive impact on my life and relationships."} person={"Aadhitya Amarendiran"} />
         <div className="expect">
           <h2> What Does a Community Manager Do? </h2>
           <p> Layer5 Community Managers generally oversee community activities and support ongoing initiatives. They are responsible for the health and growth of the community.
-             Community Managers cultivate an environment which attracts new community members by ensuring that timely and completed responses are provided to questions asked.
-             Aspects of marketing including member and project promotion as well as aspects of project management by organizing meetings and triaging issues are under the purview of Community Managers. </p>
+            Community Managers cultivate an environment which attracts new community members by ensuring that timely and completed responses are provided to questions asked.
+            Aspects of marketing including member and project promotion as well as aspects of project management by organizing meetings and triaging issues are under the purview of Community Managers. </p>
           <p>Community Managers work to ensure that existing community members are retained by helping those members stay engaged in projects on an ongoing basis.</p>
         </div>
         <div className="manager-meet">
@@ -73,9 +74,9 @@ const CommunityManagers = () => {
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>
-          <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
-                    To report any violations please fill out this incident form. </p>
-          <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
+          <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br />
+            To report any violations please fill out this incident form. </p>
+          <Button $primary title="Report Incident" $url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" $external={true} />
         </div>
       </Container>
     </CommunityManagersWrapper>

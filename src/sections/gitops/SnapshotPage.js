@@ -1,6 +1,6 @@
 import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
-import { ReactComponent as MeshMapStack } from "../../assets/images/meshmap/meshmap-light-stacked.svg";
+import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/kanvas-light-stacked.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
 import Button from "../../reusecore/Button";
@@ -22,11 +22,11 @@ const SnapshotPage = () => {
             <Description>
                Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
             </Description>
-            <Button primary className="learn-more-btn" title="INSTALL" url="https://meshery.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="INSTALL" $url="https://meshery.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
-            <MeshMapStack className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <KanvasStack className="stack-logo" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
       </HeroContentContainerWrapper>
@@ -46,14 +46,14 @@ const SnapshotPage = () => {
         <ContentRow>
           <TextColumn >
             <Heading>Using Meshery's Snapshot GitHub Action</Heading>
-            <SquarePoint>MeshMap Snapshot GitHub Action is available in the GitHub Marketplace.</SquarePoint>
-            <SquarePoint>Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.</SquarePoint>
+            <SquarePoint>Kanvas Snapshot GitHub Action is available in the GitHub Marketplace.</SquarePoint>
+            <SquarePoint>Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.</SquarePoint>
             <SquarePoint>You can configure this action to trigger with each of your releases, on every pull request.</SquarePoint>
           </TextColumn>
 
           <ColumnContainer>
-            <MeshMapStack className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <KanvasStack className="stack-logo" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>

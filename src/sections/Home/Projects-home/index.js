@@ -14,7 +14,7 @@ const Projects = () => {
   const projectImage2_dark = "../../../assets/images/app/projects/smp.webp";
   const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
   const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
-  const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+  const kanvasLogo = "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
   if (!didLoad){
     return null;
   }
@@ -26,8 +26,8 @@ const Projects = () => {
           <div className="project-title">
             <SectionTitle
               className="section-title"
-              leftAlign={true}
-              UniWidth="75%"
+              $leftAlign={true}
+              $UniWidth="75%"
             >
               <h2>
                 Operate cloud native infrastructure <span>with confidence</span>.
@@ -37,17 +37,17 @@ const Projects = () => {
         </Row>
         <Row>
           <div className="project__block__wrap">
-            <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/cloud-native-management/meshmap">
+            <Col $sm={12} $md={6} $lg={3}>
+              <Link className="project-card" to="/cloud-native-management/kanvas">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={meshmapLogo} alt="MeshMap Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
-                  <p>MeshMap</p>
+                  <StaticImage loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
+                  <p>Kanvas</p>
                   <h3>Collaborative GitOps</h3>
                   {/* <h3>Multiplayer Kubernetes by Design</h3> */}
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
@@ -56,7 +56,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/cloud-native-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
@@ -71,7 +71,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
                   <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
@@ -80,7 +80,7 @@ const Projects = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={12} md={6} lg={3}>
+            <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/catalog">
                 <div className="project__block__inner">
                   {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
@@ -93,13 +93,13 @@ const Projects = () => {
           </div>
         </Row>
         {/* <div className="button">
-          <Button secondary url="/projects" title="Learn More" />
+          <Button $secondary $url="/projects" title="Learn More" />
         </div> */}
         {/* <Row>
-          <Col xs={12}>
+          <Col $xs={12}>
             <div className="description">
               <div className="button">
-                <Button secondary className="banner-btn" title="All Projects" url="/projects">
+                <Button $secondary className="banner-btn" title="All Projects" $url="/projects">
                   <StaticImage loading="lazy" src={projectsIcon} alt="All Layer5 Projects" height={18} />&nbsp;
                 </Button>
               </div>

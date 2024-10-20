@@ -83,9 +83,9 @@ export const repo_data = [
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
-        project: "MeshMap",
+        project: "Kanvas",
         image: meshery,
-        site: "/cloud-native-management/meshmap",
+        site: "/cloud-native-management/kanvas",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],
@@ -118,7 +118,7 @@ export const repo_data = [
         image: meshery,
         site: "https://play.meshery.io",
         language: "React.js",
-        maintainers_name: ["vacant"],
+        maintainers_name: ["Sangram Rath"],
         link: ["#"],
         repository: "https://github.com/meshery/play",
       },
@@ -264,6 +264,7 @@ export const repo_data = [
           "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Operator",

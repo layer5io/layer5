@@ -22,7 +22,7 @@ import writerIcon from "../../../assets/images/writer-program/writer-program-bad
 import docsLogo from "../../../assets/images/docs/docs.svg";
 import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
-import meshMapLogo from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import Button from "../../../reusecore/Button";
 import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
@@ -60,7 +60,7 @@ const MemberSingle = ({ frontmatter }) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={12} lg={6}>
+            <Col $xs={12} $sm={12} $lg={6}>
               <Image
                 className={
                   status.includes("Inactive")
@@ -72,7 +72,7 @@ const MemberSingle = ({ frontmatter }) => {
                 alt={name}
               />
             </Col>
-            <Col xs={12} sm={12} lg={6}>
+            <Col $xs={12} $sm={12} $lg={6}>
               <div className="header">
                 <div className="name">{name}</div>
                 {position && <div className="position">{position}</div>}
@@ -192,18 +192,18 @@ const MemberSingle = ({ frontmatter }) => {
                           </span>
                         </div>
                       )}
-                      {badges.includes("meshmap") && (
+                      {badges.includes("kanvas") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="/meshmap">
+                            <Link to="/kanvas">
                               <img
                                 className="profile-social-links"
-                                src={meshMapLogo}
-                                alt="MeshMap Logo"
+                                src={KanvasLogo}
+                                alt="Kanvas Logo"
                               />
                             </Link>
                           </li>
-                          <span className="tooltip-text meshmap">Meshmap</span>
+                          <span className="tooltip-text kanvas">Kanvas</span>
                         </div>
                       )}
                       {badges.includes("docker-extension") && (
@@ -397,13 +397,12 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
             </Col>
           </Row>
-          <Row Hcenter>
-            <Col className="start-contributing" sm={12} lg={12}>
+          <Row $Hcenter>
+            <Col className="start-contributing" $sm={12} $lg={12}>
               <p> Would you Like a Member Profile?</p>
               <Button
-                primary
-                title="Start Contributing Today"
-                url="/community"
+                $primary                title="Start Contributing Today"
+                $url="/community"
               />
             </Col>
           </Row>

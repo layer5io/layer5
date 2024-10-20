@@ -20,25 +20,25 @@ const Counters = () => {
     <CounterSectionWrapper>
       <Container>
         <Row>
-          <Col xs={12} sm={6} lg={6}>
+          <Col $xs={12} $sm={6} $lg={6}>
             <div className="counter__item">
               <Counter end={16} suffix="k+" />
               <p>Global Customers</p>
             </div>
           </Col>
-          <Col xs={12} sm={6} lg={6}>
+          <Col $xs={12} $sm={6} $lg={6}>
             <div className="counter__item">
               <Counter end={performanceCount} duration={2.25} />
               <p>Performance Tests run</p>
             </div>
           </Col>
-          {/* <Col xs={12} sm={6} lg={3}>
+          {/* <Col $xs={12} $sm={6} $lg={3}>
                         <div className="counter__item">
                             <Counter end={1450} suffix="+" />
                             <p>Happy Clients</p>
                         </div>
                     </Col>
-                    <Col xs={12} sm={6} lg={3}>
+                    <Col $xs={12} $sm={6} $lg={3}>
                         <div className="counter__item">
                             <Counter end={120} suffix="+" />
                             <p>Expert Workers</p>
