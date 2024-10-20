@@ -9,15 +9,17 @@ import GNHWithName from "../../../../assets/images/nighthawk/with-name/SVG/night
 const Nighthawk = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
-        <Col xs={12} sm={6}>
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Nighthawk </strong>
           </h1>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/nighthawk-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -33,18 +35,20 @@ const Nighthawk = () => {
         </Col>
       </Row>
 
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in"> Logos </h2>
         </Col>
-        <Row Vcenter className="ImgDiv">
-          <Col xs={12} sm={4}>
+        <Row $Vcenter className="ImgDiv">
+          <Col $xs={12} $sm={4}>
             <img src={GNHWithName} alt="Nighthawk-with-name Logo" />
           </Col>
-          <Col xs={12} sm={4}>
+          <Col $xs={12} $sm={4}>
             <img src={GNH} alt="Nighthawk Logo" />
           </Col>
-          <Col xs={12} sm={4}>
+          <Col $xs={12} $sm={4}>
             <img src={GNHNameOnly} alt="Nighthawk-name-only Logo" />
           </Col>
         </Row>

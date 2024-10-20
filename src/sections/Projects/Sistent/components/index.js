@@ -6,6 +6,7 @@ import TOC from "../../../../components/SistentNavigation";
 import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { Link } from "gatsby";
 
 const componentsData = [
   {
@@ -41,6 +42,8 @@ const SistentComponents = () => {
     "id"
   );
 
+  const compArray = queryResults;
+
   return (
     <SistentWrapper>
       <div className="page-header-section">
@@ -67,26 +70,29 @@ const SistentComponents = () => {
             </div>
             <div className="product_cards">
               <div className="cards">
-                {queryResults.map((comp) => (
-                  <div className="card" key={comp.id}>
-                    <div className="card_head">
-                      <div className="title">{comp.name}</div>
-                      <div className="text">{comp.description}</div>
-                    </div>
-                    <div>
-                      <div className="card_bottom">
-                        <a className="learn" href={comp.url}>
-                          <div className="learn-more">
-                            <div>Learn more</div>
-                            <div className="icon">
-                              <FaArrowRight />
+                {compArray.map((comp) => (
+                  <Link key={comp.id} to={comp.url}>
+                    <div className="card">
+                      <div className="card_head">
+                        <div className="title">{comp.name}</div>
+                        <div className="text">{comp.description}</div>
+                      </div>
+                      <div>
+                        <div className="card_bottom">
+                          <a className="learn" href={comp.url}>
+                            <div className="learn-more">
+                              <div>Learn more</div>
+                              <div className="icon">
+                                <FaArrowRight />
+                              </div>
                             </div>
-                          </div>
-                        </a>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
+
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ const BannerHosting = () => {
       <img src={imgHero1} alt="img" className="section-particle one"/>
       <ParticleComponent />
       <Container fullWidthSM>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col lg={6}>
             <SectionTitle
               className="section-title"

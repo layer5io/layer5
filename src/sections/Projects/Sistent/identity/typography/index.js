@@ -127,7 +127,7 @@ const SistentTypography = () => {
             like the golden ratio, the major third, the perfect fifth, and so
             on.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
               <img
                 src={isDark ? TypeScale1Dark : TypeScale1}
@@ -158,7 +158,7 @@ const SistentTypography = () => {
             Qanelas Soft for all heading and subheading text and Open Sans for
             all body, paragraph, and content text needs.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <Col md={8} lg={8} sm={12}>
               <img src={isDark ? FontPairDark : FontPair} alt="Font Pair" />
             </Col>

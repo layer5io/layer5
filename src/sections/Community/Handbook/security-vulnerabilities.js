@@ -10,7 +10,7 @@ import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import MeshMap from "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 
 const SecurityVulnerabilitiesPage = () => {
   return (
@@ -88,10 +88,10 @@ const SecurityVulnerabilitiesPage = () => {
                   &nbsp; Layer5 Labs
                 </a>
                   - emerging projects and Meshery extensions, like                 <img
-                  src={MeshMap}
-                  alt="MeshMap logo"
+                  src={Kanvas}
+                  alt="Kanvas logo"
                   style={{ marginLeft: ".3rem" }}
-                />MeshMap.
+                />Kanvas.
               </li>
             </ul>
             <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
@@ -141,32 +141,36 @@ const SecurityVulnerabilitiesPage = () => {
             <p>As much as possible this announcement will be actionable, and include any mitigating steps customers can take prior to upgrading to a fixed version.</p>
 
             <h2>List of Announced Vulnerabilities:</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th><b>DATE ANNOUNCED</b></th>
-                  <th><b>CVE ID</b></th>
-                  <th><b>DESCRIPTION</b></th>
-                  <th><b>AFFECTED COMPONENT</b></th>
-                  <th><b>VULNERABLE VERSION</b></th>
-                  <th><b>PATCHED VERSION</b></th>
-                  <th><b>FIX DETAILS</b></th>
-                  <th><b>LINKS</b></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2021-04-28</td>
-                  <td>CVE-2021-31856</td>
-                  <td>A SQL Injection vulnerability in the REST API in Layer5 Meshery 0.5.2 allows an attacker to execute arbitrary SQL commands via the /experimental/patternfiles endpoint (order parameter in GetMesheryPatterns in models/meshery_pattern_persister.go).</td>
-                  <td>REST API</td>
-                  <td>v0.5.2</td>
-                  <td>v0.5.3</td>
-                  <td><a href="https://github.com/layer5io/meshery/pull/2745">fix pull</a></td>
-                  <td><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31856">mitre</a>, <a href="https://github.com/ssst0n3/CVE-2021-31856">details</a></td>
-                </tr>
-              </tbody>
-            </table>
+
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th><b>DATE ANNOUNCED</b></th>
+                    <th><b>CVE ID</b></th>
+                    <th><b>DESCRIPTION</b></th>
+                    <th><b>AFFECTED COMPONENT</b></th>
+                    <th><b>VULNERABLE VERSION</b></th>
+                    <th><b>PATCHED VERSION</b></th>
+                    <th><b>FIX DETAILS</b></th>
+                    <th><b>LINKS</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2021-04-28</td>
+                    <td>CVE-2021-31856</td>
+                    <td>A SQL Injection vulnerability in the REST API in Layer5 Meshery 0.5.2 allows an attacker to execute arbitrary SQL commands via the /experimental/patternfiles endpoint (order parameter in GetMesheryPatterns in models/meshery_pattern_persister.go).</td>
+                    <td>REST API</td>
+                    <td>v0.5.2</td>
+                    <td>v0.5.3</td>
+                    <td><a href="https://github.com/layer5io/meshery/pull/2745">fix pull</a></td>
+                    <td><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31856">mitre</a>, <a href="https://github.com/ssst0n3/CVE-2021-31856">details</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </Container>
       </div>

@@ -49,7 +49,7 @@ const CommunityPage = () => {
 
   return (
     <CommunitySectionWrapper>
-      <BgImage image={ pluginImage} className="section">
+      <BgImage image={pluginImage} className="section">
         <div className="community-header">
           <h1>The Layer5 Community</h1>
           <h2>New members are always welcome</h2>
@@ -57,19 +57,23 @@ const CommunityPage = () => {
       </BgImage>
       <div className="community-section-wrapper">
         <Container>
-          <Row className="service-mesh-projects">
-            <Col sm={12} lg={6}>
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="service-mesh-projects">
+            <Col $sm={12} $lg={6}>
               <h2>Warm, welcoming, and encouraging. Embrace developer-defined infrastructure and help empower every engineer with us.</h2>
               <p>
                 We build projects to provide learning environments and
                 cloud native infrastructure and application management tooling. Share in our collective accolades as you build lifelong relationships, and world-stage software. Our shared commitment to the open source spirit pushes Layer5 projects forward.
               </p>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
-          <Row className="open-source-projects">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="open-source-projects">
             <h2>Open Source and Cloud Native</h2>
             <p>
               Layer5 projects are open source software. Anyone can download,
@@ -81,7 +85,7 @@ const CommunityPage = () => {
         </Container>
         <div className="our-community-members">
           <Row className="our-community-members_row">
-            <Col className="community" sm={12} lg={6}>
+            <Col className="community" $sm={12} $lg={6}>
               <h3>Jump in. The community is warm!</h3>
               <h1>Our Community Members</h1>
               <p>
@@ -93,9 +97,9 @@ const CommunityPage = () => {
                 enabling them to effectively compare different ideas and find the best solutions
                 for advancement, while building the size, diversity, and strength of the community.
               </p>
-              <Button primary title="See our community member profiles" url="/community/members" />
+              <Button $primary title="See our community member profiles" $url="/community/members" />
             </Col>
-            <Col className="slider" sm={12} lg={6}>
+            <Col className="slider" $sm={12} $lg={6}>
               <StaticImage src={Picture} alt="Five_with_banner" />
               {/* <PictureSlider /> */}
             </Col>
@@ -103,7 +107,7 @@ const CommunityPage = () => {
         </div>
         <Container>
           <Row className="meshmate">
-            <Col className="content" sm={12} lg={6}>
+            <Col className="content" $sm={12} $lg={6}>
               <h1 className="onboarding">An onboarding and mentoring program</h1>
               <h1>Layer5 MeshMates</h1>
               <p>
@@ -121,7 +125,7 @@ const CommunityPage = () => {
                 and establishing a network of relationships.
               </p>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <MeshmateIcon className="meshmate-img meshmate-img-transparent" />
               <Link className="meshmate-link meshmate-link-transparent" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
@@ -135,10 +139,10 @@ const CommunityPage = () => {
         </Container>
         <Container>
           <Row className="newcomers-section">
-            <Col xs={12} lg={6} className="map">
+            <Col $xs={12} $lg={6} className="map">
               <NewcomersMap />
             </Col>
-            <Col xs={12} lg={6} className="text">
+            <Col $xs={12} $lg={6} className="text">
               <div>
                 <h1>Newcomers Welcome!</h1>
                 <h2>Are you new to the community?</h2>
@@ -146,7 +150,7 @@ const CommunityPage = () => {
                   Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
                   and engage in the community and projects.
                 </p>
-                <Button primary title="See All Newcomers Resources" url="/community/newcomers">
+                <Button $primary title="See All Newcomers Resources" $url="/community/newcomers">
                   <FaUsers size={21} className="icon-left" />
                 </Button>
               </div>
@@ -154,7 +158,7 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"}/>
+          <InlineQuotes title={"Community Member"} quote={"Wow, you all are incredibly helpful. I wish every open source community was as friendly as Layer5's."} person={"Priyanshu Sharma"} />
         </Container>
       </div>
       <JoinCommunity image={Five} className="newcomers-join" />

@@ -10,11 +10,12 @@ import codicon from "./images/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import meshmap from "../../assets/images/meshmap/icon-only/meshmap-icon.svg";
+import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
 import { Row } from "../../reusecore/Layout";
+import Reviews from "../Pricing/review-slider";
 
 const options = [
   {
@@ -145,7 +146,7 @@ const options = [
       {
         id: 4,
         category: "Traffic Replay",
-        description: "Visual event replay in MeshMap",
+        description: "Visual event replay in Kanvas",
       },
       {
         id: 5,
@@ -159,12 +160,12 @@ const options = [
 const CardsData = [
   {
     id: 1,
-    logo: meshmap,
-    title: "MeshMap",
+    logo: kanvas,
+    title: "Kanvas",
     icon: [codicon, desktop],
     text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native infrastucture.",
     //as there is no soluton page.
-    url: "/cloud-native-management/meshmap"
+    url: "/cloud-native-management/kanvas"
   },
   {
     id: 2,
@@ -211,8 +212,8 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button secondary className="banner-btn two" external={true} title="Explore Now" alt="" url="https://meshery.layer5.io/"/>
-                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+                <Button secondary className="banner-btn two" $external={true} title="Explore Now" alt="" $url="https://meshery.layer5.io/"/>
+                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
             <div className="product_hero_img">
@@ -265,7 +266,7 @@ const index = () => {
               <p className="paraInfo">
                 Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button button secondary className="banner-btn two" title="Open Playground" alt="Cloud Native Playground" url="https://play.meshery.io" />
+              <Button button secondary className="banner-btn two" title="Open Playground" alt="Cloud Native Playground" $url="https://play.meshery.io" />
             </div>
           </div>
           <div className="headers bot_gap">
@@ -279,8 +280,8 @@ const index = () => {
 
           <PlanCard planData={options}/>
 
-          <Row Vcenter Hcenter className={"comparison-button"}>
-            <Button primary title="Feature Comparison" alt="Feature Comparison" url={"/pricing/#feature-comparison"}/>
+          <Row $Vcenter $Hcenter className={"comparison-button"}>
+            <Button $primary title="Feature Comparison" alt="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
           </Row>
 
           <div className="headers gap">
@@ -295,10 +296,11 @@ const index = () => {
               Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button external={true} primary title="Book a Demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+            <Button $external={true} $primary title="Book a Demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>
+      <Reviews />
     </div>
   );
 };

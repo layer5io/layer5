@@ -39,7 +39,7 @@ const Designers = () => {
                 <p>If you’re interested in the Layer5 Design Program, please submit your information to get started. <i>Don't know where to start? Don't worry, we have plenty of suggestions for you.</i></p>
 
 
-                <Button primary title="Layer5 UX Contributor Application" url="https://docs.google.com/forms/d/e/1FAIpQLSdB2NDhXN_Sn-w5_7dDelvcQN9BvfddLOTEYfnrpikc_uUatA/viewform" external={true} />
+                <Button $primary title="Layer5 UX Contributor Application" $url="https://docs.google.com/forms/d/e/1FAIpQLSdB2NDhXN_Sn-w5_7dDelvcQN9BvfddLOTEYfnrpikc_uUatA/viewform" $external={true} />
 
               </div>
               <div className="item">

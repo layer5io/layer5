@@ -12,7 +12,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 
 ⚠️ Cloning this repository ⚠️
 
-Cloning the repo with all its history results in a ~6 GB download. If you don't need the whole history you can use the depth parameter to significantly reduce download size.
+Cloning the repo with all its history results in a ~6 GB download. To contribute to this site, you don't need its entire history. Use the `--depth=1` flag to significantly reduce the footprint this repo creates in your environment.
 
 ```bash
 git clone --depth=1 https://github.com/layer5io/layer5.git
@@ -227,7 +227,7 @@ OR
 
 - SVG or image uses transparent sections that change with the background color to work with either theme.
 
-[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg)
+[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg)
 
 [Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.webp)
 
@@ -331,7 +331,7 @@ If possible we wish to avoid using images dependent on the theme because we are 
 
 1. To change images or SVG as the image source, according to the theme, you have to import the hook `useStyledDarkMode` from the following [folder](https://github.com/layer5io/layer5/blob/master/src/theme/app/useStyledDarkMode.js), and then use the `isDark` value from `useStyledDarkMode` hook for the conditional.
 
-For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Meshmap/Meshmap-collaborate/meshmap-collaborate-banner.js).
+For example, you can view the code for [this file](https://github.com/layer5io/layer5/blob/master/src/sections/Kanvas/Kanvas-collaborate/kanvas-collaborate-banner.js).
 
 Here are the relevant parts of the code:
 
@@ -403,7 +403,7 @@ Badges are a great way of highlighting the area of contribution by any given com
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docker-extension/docker-extension-meshery-logo.svg" width="25px" height="25px"/> Docker Extension
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/docs/docs.svg" width="25px" height="25px"/> Docs
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/meshery-catalog.svg" width="25px" height="25px"/> Meshery Catalog
-- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshmap/icon-only/meshmap-icon.svg" width="25px" height="25px"/> MeshMap
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg" width="25px" height="25px"/> Kanvas
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/icon-only/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
@@ -557,6 +557,18 @@ git push -u origin <your_branch_name>
 ```
 
 **15.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
+
+### Lint Rules
+
+Layer5 uses ESLint to maintain code quality and consistency in our UI code.  Use this command to trigger a lint check:
+
+```sh
+make lint
+```
+
+> Note:
+>     - Eslint in Gatsby requires generating config files from CLI. Run `gatsby build` or `gatsby develop` if you face this error during linting.
+
 
 ## Signing-off on Commits
 

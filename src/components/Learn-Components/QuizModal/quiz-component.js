@@ -31,9 +31,9 @@ const ResultBox = ({ score, resetQuiz,correct, incorrect,total  }) => (
       <p>Incorrect Answers : <span>{incorrect}</span></p>
       <p>Total Question : <span>{total}</span></p>
       <div onClick={resetQuiz}>
-        <Button secondary title="Go to Learning Paths"
-          url={"/learn/learning-paths"}
-          external={false} />
+        <Button $secondary title="Go to Learning Paths"
+          $url={"/learn/learning-paths"}
+          $external={false} />
       </div>
     </div>
   </div>

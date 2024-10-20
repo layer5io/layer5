@@ -93,7 +93,7 @@ project/meshery:
 - changed-files:
   - any-glob-to-any-file:
     - "src/collections/integrations/**/*"
-project/meshmap:
+project/kanvas:
 - changed-files:
   - any-glob-to-any-file:
-    - "src/sections/Meshmap/**/*"
+    - "src/sections/Kanvas/**/*"

@@ -45,8 +45,10 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      margin-top: -36rem;
-      margin-left: 20rem;
+      @media (min-width: 750px) {
+        margin-top: -36rem;
+        margin-left: 20rem;
+      }
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
@@ -154,11 +156,22 @@ export const HandbookWrapper = styled.div`
       }
     }
 
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
     td, th {
       border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .archived-project {
+      opacity: 0.3;
+      background-color: #808080;
+      // pointer-events: none;
     }
 
     .linkscol{
@@ -559,5 +572,14 @@ div.accessRequired {
   font-size: small;
   line-height: .9rem;
   font-style: italic;
+}
+details.invite-only {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
+  span {
+    font-weight: bold;
+    display: inline;
+  }
 }
 `;
