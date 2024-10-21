@@ -13,7 +13,7 @@ const PlanCard = ({ planData }) => {
     <PlanCardWrapper>
       <Container>
         <Row $Hcenter={true}>
-          {props.planData.map((x) => (
+          {planData.map((x) => (
             <Col lg={4} md={6} key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                 {x.featured && <div className="pricing-label">Free Forever</div>}
