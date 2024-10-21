@@ -8,10 +8,10 @@ programSlug: "gsoc"
 redirect_from:
   - /gsoc/2022/
 ---
-
-
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
 import gsoc_logo from "./gsoc.svg";
-
+import {Link} from "gatsby";
 import playground from "./meshery-playground-alt-4.webp";
 
 <ProgramsWrapper>
@@ -46,7 +46,7 @@ import playground from "./meshery-playground-alt-4.webp";
 ### Cloud Native Playground
 
 <a href="https://play.meshery.io">
-<img src={playground} alt="the cncf playground mockup" style={{width: "40%"}} />
+<img src={playground} alt="the cncf playground mockup" style="width:40%;" />
 </a>
 
 
@@ -151,10 +151,10 @@ We interact daily over Slack, and have an open source project <Link to="/communi
 <div className="apply-button">
   <h3>
     <Button
-      primary
-      title="Participate"
-      url="https://discuss.layer5.io"
-      external={ true }
+      $primary
+title="Participate"
+      $url="https://discuss.layer5.io"
+      $external={ true }
     />
   </h3>
 </div>

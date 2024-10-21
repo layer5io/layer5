@@ -12,42 +12,40 @@ import ResourceNavigationWrapper from "./filters.style";
 const Navigation = (props) => {
 
   const counting = useStaticQuery(
-    graphql`
-            query allFilters {
-                type: allMdx(
-                    filter: { fields: { collection: { in: ["blog", "resources", "news", "events"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
-                ){
-                    group(field: frontmatter___type) {
-                        fieldValue
-                        totalCount
-                    }
-                }
-                product: allMdx(
-                  filter: { fields: { collection: { in: ["blog", "resources", "news", "events"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
-              ){
-                  group(field: frontmatter___product) {
-                      fieldValue
-                      totalCount
-                  }
-              }
-              technology: allMdx(
-                filter: { fields: { collection: { in: ["blog", "resources", "news", "events"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
-            ){
-                group(field: frontmatter___technology) {
-                    fieldValue
-                    totalCount
-                }
-            }
-            mesh: allMdx(
-              filter: { fields: { collection: { in: ["blog", "resources", "news", "events"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
-          ){
-              group(field: frontmatter___mesh) {
-                  fieldValue
-                  totalCount
-              }
-          }
-            }
-        `
+    graphql`query allFilters {
+  type: allMdx(
+    filter: {fields: {collection: {in: ["blog", "resources", "news", "events"]}}, frontmatter: {published: {eq: true}, resource: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {type: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+  product: allMdx(
+    filter: {fields: {collection: {in: ["blog", "resources", "news", "events"]}}, frontmatter: {published: {eq: true}, resource: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {product: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+  technology: allMdx(
+    filter: {fields: {collection: {in: ["blog", "resources", "news", "events"]}}, frontmatter: {published: {eq: true}, resource: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {technology: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+  mesh: allMdx(
+    filter: {fields: {collection: {in: ["blog", "resources", "news", "events"]}}, frontmatter: {published: {eq: true}, resource: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {mesh: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+}`
   );
 
   const [expandFilter, setExpandFilter] = useState(false);

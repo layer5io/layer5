@@ -11,9 +11,9 @@ abstract: Put your eye for design to the test as a Layer5 UI Visual Designer.
 published: true
 ---
 
-
-
-
+import { CareerWrapper } from "../Career.style.js";
+import PositionApply from "../how-to-apply.js";
+import { Col } from "../../../reusecore/Layout";
 
 
 <CareerWrapper>
@@ -54,7 +54,7 @@ published: true
         </p>
     </div>
     <div className="qualification-section body-sections">
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Desired Qualifications</h2>
             <ul>
                 <li>Bachelor's degree in related field or equivalent practical experience.</li>
@@ -71,7 +71,7 @@ published: true
                 <li>SVG animation and CSS animation experience.</li>
             </ul>
         </Col>
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Ideal Candidate</h2>
             <ul>
                 <li>The ability to embody Layer5’s cultural values among peers and across the community.</li>

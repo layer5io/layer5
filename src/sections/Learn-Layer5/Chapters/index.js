@@ -6,7 +6,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
+// import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
 
 const Pagination = loadable(() => import("../../../components/Learn-Components/Pagination"));
@@ -68,7 +69,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     return (
       <>
         <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
-          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={index}>
+          <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
             <Image
               {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
               className="docker"
@@ -76,11 +77,11 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             />
           </Link>
         </div>
-        <ReactTooltip
+        <Tooltip
           id="mesh-name"
           place="bottom"
-          effect="solid"
-          backgroundColor="rgb(60,73,79)"
+
+          style={{ backgroundColor: "rgb(60,73,79)" }}
           className="mesh-tooltip"
         />
       </>);
@@ -95,7 +96,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     <ChapterWrapper>
       <Container className="chapter-container">
         <Row>
-          <Col sm={12} md={3}>
+          <Col $sm={12} $md={3}>
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
@@ -106,7 +107,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
               </div>
             </div>
           </Col>
-          <Col sm={12} md={9}>
+          <Col $sm={12} $md={9}>
             <div className="chapter-data">
               <h1 className="chapter-heading">{frontmatter.chapterTitle}</h1>
               {/* <SRLWrapper> */}

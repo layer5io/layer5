@@ -11,7 +11,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import loadable from "@loadable/component";
 import Navigation from "../sections/General/Navigation";
-import TopPromotionalBanner from "./TopPromotionalBanner";
+// import Footer from "../sections/General/Footer";
+// import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
 import { Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
@@ -91,7 +92,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <TopPromotionalBanner />
+      {/* <TopPromotionalBanner /> */}
       <Navigation/>
       <MDXProvider components={components}>
         {children}

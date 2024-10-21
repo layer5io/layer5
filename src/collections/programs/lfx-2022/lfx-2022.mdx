@@ -8,8 +8,8 @@ programSlug: "lfx"
 published: true
 ---
 
-
-
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
 import lfx_logo from "./Linux_Foundation_logo.svg";
 
 <ProgramsWrapper>
@@ -144,10 +144,10 @@ We interact daily over Slack, and have an open source project [meeting everyday]
 <div className="apply-button">
   <h3>
     <Button
-      primary
-      title="Participate"
-      url="http://slack.layer5.io"
-      external={ true }
+      $primary
+title="Participate"
+      $url="http://slack.layer5.io"
+      $external={ true }
     />
   </h3>
 </div>

@@ -21,127 +21,112 @@ import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
+import posthog from "posthog-js";
 const Navigation = () => {
   let data = useStaticQuery(
-    graphql`
-      {
-        Learn: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { fields: { collection: { eq: "service-mesh-books" } } }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 1050
-                    height: 1360
-                    layout: CONSTRAINED
-                  )
-                }
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Community: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "events" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Resources: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "blog" } }
-            frontmatter: { featured: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                publicURL
-                extension
-              }
-            }
-            fields {
-              slug
-            }
-          }
-        }
-        Home: allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: {
-            fields: { collection: { eq: "projects" } }
-            frontmatter: { published: { eq: true } }
-          }
-          limit: 2
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 240
-                    height: 160
-                    transformOptions: { cropFocus: CENTER }
-                    layout: FIXED
-                  )
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
+    graphql`{
+  Learn: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "service-mesh-books"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
           }
         }
       }
-    `
+      fields {
+        slug
+      }
+    }
+  }
+  Community: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Resources: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {featured: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Home: allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}`
   );
   data["Products"] = {
     nodes: [
@@ -172,59 +157,6 @@ const Navigation = () => {
   data["Solutions"] = {
     nodes: [],
   };
-
-  // Learn: allMdx(
-  //   sort: {fields: [frontmatter___date], order: DESC}
-  //   filter: {fields: {collection: {eq: "service-mesh-books"}}}
-  //   limit: 2
-  // ) {
-  //   nodes {
-  //     id
-  //     frontmatter {
-  //       title
-  //       thumbnail {
-  //         childImageSharp {
-  //           gatsbyImageData(
-  //             width: 1050
-  //             height:1360
-  //             layout: CONSTRAINED
-  //           )
-  //         }
-  //         publicURL
-  //       }
-  //     }
-  //     fields {
-  //       slug
-  //     }
-  //   }
-  // },
-  // Home: allMdx(
-  //   sort: {fields: [frontmatter___date], order: DESC}
-  //   filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
-  //   limit: 2
-  // ) {
-  //   nodes {
-  //     id
-  //     frontmatter {
-  //       title
-  //       thumbnail {
-  //         childImageSharp {
-  //           gatsbyImageData(
-  //             width: 240
-  //             height: 160
-  //             transformOptions: {cropFocus: CENTER}
-  //             layout: FIXED
-  //           )
-  //         }
-  //         extension
-  //         publicURL
-  //       }
-  //     }
-  //     fields {
-  //       slug
-  //     }
-  //   }
-  // }
 
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -266,6 +198,14 @@ const Navigation = () => {
         }
 
         const data = response.data;
+        if (data){
+          posthog.identify(
+            data?.id,
+            {
+              email: data?.email
+            }
+          );
+        }
         setUserData(data);
       } catch (error) {
         console.error("There was a problem with your fetch operation:", error);
@@ -286,7 +226,8 @@ const Navigation = () => {
       }
     };
 
-    expand && document.addEventListener("click", outsideClickHandler);
+    expand && setTimeout(() => document.addEventListener("click", outsideClickHandler));
+
     return () => {
       document.removeEventListener("click", outsideClickHandler);
     };
@@ -408,11 +349,11 @@ const Navigation = () => {
                       <li>
                         <Button
                           id="get-started"
-                          secondary
+                          $secondary
                           className="banner-btn two"
                           title="Get Started"
-                          url="https://meshery.layer5.io/login"
-                          external={true}
+                          $url="https://meshery.layer5.io/login"
+                          $external={true}
                         />
                       </li>
                     </ul>
@@ -512,12 +453,12 @@ const Navigation = () => {
             <Button
               id="get-started-2"
               aria-label="Signup for Layer5 Cloud"
-              secondary
+              $secondary
               className="banner-btn two"
-              external={true}
+              $external={true}
               title="Get Started"
               alt="Signup for Layer5 Cloud"
-              url="https://meshery.layer5.io/registration"
+              $url="https://meshery.layer5.io/registration"
             />
           )}
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}
@@ -525,12 +466,12 @@ const Navigation = () => {
             <Button
               id="book-a-demo"
               aria-label="Meshery Playground"
-              secondary
+              $secondary
               className="banner-btn book-a-demo"
-              external={true}
+              $external={true}
               title="Playground"
               alt="Meshery Playground"
-              url="https://playground.meshery.io"
+              $url="https://playground.meshery.io"
             />
           )}
           <div className="dark-theme-toggle">

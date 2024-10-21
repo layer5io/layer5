@@ -28,13 +28,13 @@ const MemberBio = ({ frontmatter, children }) => {
       <Container>
         <div className="executive-bio">
           <Row>
-            <Col xs={12} sm={12} lg={9}>
+            <Col $xs={12} $sm={12} $lg={9}>
               <div className="header">
                 <div className="name">{name}</div>
                 {executive_position && <div className="position">{executive_position}, {company}</div>}
               </div>
             </Col>
-            <Col xs={12} sm={12} lg={3}>
+            <Col $xs={12} $sm={12} $lg={3}>
               <div className="exec-bio-image">
                 <Link to={executive_image.publicURL}>
                   <Image
@@ -47,11 +47,11 @@ const MemberBio = ({ frontmatter, children }) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={12} lg={9}>
+            <Col $xs={12} $sm={12} $lg={9}>
               <h3>Executive Bio</h3>
               { children }
             </Col>
-            <Col xs={12} sm={12} lg={3}>
+            <Col $xs={12} $sm={12} $lg={3}>
               <div className="exec-bio-image">
                 <div className="social-bg">
                   <ul className="profile-social-links">

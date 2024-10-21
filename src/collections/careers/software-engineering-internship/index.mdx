@@ -11,10 +11,10 @@ abstract: "Work with talented engineers in a challenging learning environment as
 published: true
 ---
 
-
-
+import { CareerWrapper } from "../Career.style.js";
+import PositionApply from "../how-to-apply.js"
 import software_engineering_logo from "./product-engineering-internship.svg"
-
+import { Col } from "../../../reusecore/Layout";
 
 
 <CareerWrapper>
@@ -59,7 +59,7 @@ import software_engineering_logo from "./product-engineering-internship.svg"
         </p>
     </div>
     <div className="qualification-section body-sections">
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Desired Qualifications</h2>
             <ul>
                 <li>Currently pursuing a bachelor's or master's degree: All majors welcome, rising final year (seniors) preferred but not mandatory.</li>
@@ -74,7 +74,7 @@ import software_engineering_logo from "./product-engineering-internship.svg"
                 <li>Competency with some or all of them like Reactjs, Cytoscapejs, Billboardjs, Gatsbyjs is ideal</li>
             </ul>
         </Col>
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Ideal Candidate</h2>
             <ul>
                 <li>Availability to work at least 20 hours a week (40 hours a week internships also available).</li>

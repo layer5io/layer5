@@ -2,7 +2,7 @@ import React from "react";
 import Image from "../image";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel } from "swiper";
+import { Pagination, Mousewheel } from "swiper/modules";
 import { Link } from "gatsby";
 import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
@@ -12,11 +12,13 @@ import slugify from "../../utils/slugify";
 const UpcomingEvents = ({ data }) => {
   return (
     <UpcomingEventsWrapper>
-      <div className="blog-slider">
-        <div className="blog-slider__wrp swiper-wrapper">
+      <div className="blog-slider swiper">
+        <div style={{
+          display: "block"
+        }} className="blog-slider__wrp swiper-wrapper">
 
           <Swiper
-            spaceBetween={100}
+            spaceBetween={50}
             slidesPerView={1}
             modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
@@ -37,7 +39,7 @@ const UpcomingEvents = ({ data }) => {
                       <div className="blog-slider_text">
                         {item.body}
                       </div>
-                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" external={true} />
+                      <Button $secondary className="blog-slider_button" $url={item.frontmatter.eurl} title="Join Now" $external={true} />
                     </div>
                   </div>
                 </SwiperSlide>

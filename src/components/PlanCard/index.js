@@ -9,7 +9,7 @@ const PlanCard = (props) => {
 
     <PlanCardWrapper>
       <Container>
-        <Row Hcenter={true}>
+        <Row $Hcenter={true}>
           {props.planData.map((x) => (
             <Col lg={4} md={6} key={x.tier}>
               <div
@@ -36,13 +36,13 @@ const PlanCard = (props) => {
                   ))}
                 </div>
                 <Button
-                  primary
+                  $primary
                   className={
                     x.button[0] === "Coming Soon"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  url={x.button[1]}
+                  $url={x.button[1]}
                 >
                   {x.button[0]}
                 </Button>

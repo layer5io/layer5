@@ -94,7 +94,7 @@ const EventSingle = ({ data, children }) => {
               </ul>
               {showJoinUsButton && (
                 <div className="event-title">
-                  <Button primary url={frontmatter.eurl} external={true}>
+                  <Button $primary $url={frontmatter.eurl} $external={true}>
                     <h3>
                       Join us at {frontmatter.title}
                     </h3>

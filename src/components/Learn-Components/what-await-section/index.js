@@ -9,18 +9,18 @@ const WhatAwaitsSection = () => {
   return (
     <WhatAwaitsWrapper>
       <Row className="what-await-section">
-        <Col sm={12} md={8} xl={4} className="what-await-section-info">
+        <Col $sm={12} $md={8} $xl={4} className="what-await-section-info">
           <div className="service-mesh-patterns_text-and_button">
             <h2>Use Cloud Native Patterns</h2>
             <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.
             </p>
             <p style={{ "justifyContent": "center", "textAlign": "center" }}>
-              <Button primary title="Visit Cloud Native Patterns catalog" url="https://meshery.layer5.io/catalog" external={true} style={{ "margin": "1rem" }}/>
-              <Button secondary title="Visit Service Mesh Patterns website" url="https://service-mesh-patterns.github.io/service-mesh-patterns/" external={true} />
+              <Button $primary title="Visit Cloud Native Patterns catalog" $url="https://meshery.layer5.io/catalog" $external={true} style={{ "margin": "1rem" }}/>
+              <Button $secondary title="Visit Service Mesh Patterns website" $url="https://service-mesh-patterns.github.io/service-mesh-patterns/" $external={true} />
             </p>
           </div>
         </Col>
-        <Col sm={12} md={8} xl={4} className="what-await-section-image">
+        <Col $sm={12} $md={8} $xl={4} className="what-await-section-image">
 
           <Terminal
             lines={[

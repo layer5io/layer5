@@ -22,15 +22,17 @@ const SMPBrand = () => {
   return (
     <SMPWrap>
       <div className="post-content">
-        <Row className="brand-section">
-          <Col xs={12} sm={6}>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
+          <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               <strong>Service Mesh Performance</strong>
             </h1>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/smp-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -46,56 +48,60 @@ const SMPBrand = () => {
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
               Logos
             </h2>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv smp-logo">
-              <Col xs={12} sm={4}>
-                <img src={SmpDark} alt="SmpDark Logo"/>
+            <Row $Vcenter className="ImgDiv smp-logo">
+              <Col $xs={12} $sm={4}>
+                <img src={SmpDark} alt="SmpDark Logo" />
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={SmpWhite} alt="SmpWhite Logo"/>
+                  <img src={SmpWhite} alt="SmpWhite Logo" />
                 </div>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={SmpLight} alt="SmpLight Logo"/>
+                  <img src={SmpLight} alt="SmpLight Logo" />
                 </div>
               </Col>
             </Row>
-            <Row Vcenter className="ImgDiv smp-logo">
-              <Col xs={12} sm={4}>
-                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
+            <Row $Vcenter className="ImgDiv smp-logo">
+              <Col $xs={12} $sm={4}>
+                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo" />
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
+                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo" />
                 </div>
               </Col>
-              <Col xs={12} sm={4}>
+              <Col $xs={12} $sm={4}>
                 <div className="logo">
-                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
+                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo" />
                 </div>
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
-                            Colors
+              Colors
             </h2>
           </Col>
           <Col>
             <p>
-                            The SMP color palette consists of gray, green and blue colors along with
-                            additional shades. The SMP logo should be white or monochrome when
-                            using project colors as the background.
+              The SMP color palette consists of gray, green and blue colors along with
+              additional shades. The SMP logo should be white or monochrome when
+              using project colors as the background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

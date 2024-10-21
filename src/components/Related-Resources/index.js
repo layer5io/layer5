@@ -33,19 +33,19 @@ const RelatedResources = props => {
                   {
                     resourceType === "resources" ? relatedResources.map(({ resource }) => {
                       return (
-                        <Col className="cardCol" xs={12} key={resource.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
                         </Col>
                       );
                     }) : relatedResources.map((resource) => {
                       return (
-                        <Col className="cardCol" xs={12} key={resource.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
                         </Col>
                       );
                     })
                   }
-                  <Col xs={12} lg={12} className="allResources">
+                  <Col $xs={12} $lg={12} className="allResources">
                     <div className="allResources_card">
                       <Link to={linkToAllItems}>
                         <h2>{lastCardHead}</h2>

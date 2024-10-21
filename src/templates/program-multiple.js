@@ -17,7 +17,8 @@ export const query = graphql`
           }
         }
     }
-`;
+  }
+}`;
 
 const ProgramsPage = ({ data, children }) => {
   const [activeOption, setActiveOption] = useState(0);

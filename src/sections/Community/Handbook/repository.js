@@ -223,7 +223,7 @@ const Repository = () => {
                       const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
                       return (
                         <tbody key={project}>
-                          <tr>
+                          <tr className={accessRequired === "*archived" ? "archived-project" : ""}>
                             <td>
                               <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>

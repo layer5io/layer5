@@ -11,9 +11,9 @@ abstract: "Intuitive design, flowing interaction, and delightfuling users are co
 published: true
 ---
 
-
-
-
+import { CareerWrapper } from "../Career.style.js";
+import PositionApply from "../how-to-apply.js";
+import { Col } from "../../../reusecore/Layout";
 
 
 <CareerWrapper>
@@ -56,7 +56,7 @@ published: true
         </p>
     </div>
     <div className="qualification-section body-sections">
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Desired Qualifications</h2>
             <ul>
                 <li>Bachelor's degree in Computer Science, HCI, Design, or equivalent practical experience.</li>
@@ -71,7 +71,7 @@ published: true
                 <li>Demonstrated sense of web design and attuned to the fundamentals of user experience, including accessibility.</li>
             </ul>
         </Col>
-        <Col xs={12} lg={6} className="qualification-col">
+        <Col $xs={12} $lg={6} className="qualification-col">
             <h2 className="body-headers">Ideal Candidate</h2>
             <ul>
                 <li>The ability to embody Layer5’s cultural values among peers and across the community.</li>

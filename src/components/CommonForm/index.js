@@ -32,8 +32,8 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   const confirmationMessageRef = useRef(null);  //set reference to confirmation message
   const navBarOffset = 120;
   const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - offset;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.scrollY - offset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -187,7 +187,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
           </Field>
         </div>
 
-        <Button secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title="Submit" />
       </Form>
     </Formik>
   </div>
