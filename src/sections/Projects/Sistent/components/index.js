@@ -32,6 +32,13 @@ const componentsData = [
   },
   {
     id: 4,
+    name: "Paper",
+    description:
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+    url: "/projects/sistent/components/paper",
+  },
+  {
+    id: 5,
     name: "Popper",
     description:
       "A popper is a tooltip that appears when a user interacts with an element.",

@@ -19,6 +19,7 @@ import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
 import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.png";
+import kanvasLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
 
 export const repo_data = [
   {
@@ -168,7 +169,6 @@ export const repo_data = [
         link: [""],
         repository: "https://github.com/layer5io/docs",
       },
-
     ],
   },
 
@@ -311,6 +311,17 @@ export const repo_data = [
       //   language: "Golang",
       //   repository: "https://github.com/layer5io/meshmonkey",
       // },
+      {
+        project: "Kanvas Snapshot",
+        image: kanvasLogo,
+        site: "https://layer5.io/solutions/gitops/snapshot",
+        language: "GitHub Actions",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description:
+        "Generates visual snapshots of infrastructure as code (e.g., Kubernetes manifests, Helm charts) and delivers them to pull requests for automated review.",
+        repository: "https://github.com/layer5labs/kanvas-snapshot",
+      },
     ],
   },
 

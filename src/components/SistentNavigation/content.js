@@ -45,16 +45,31 @@ export const content = [
   },
   {
     id: 15,
+    link: "/projects/sistent/components/paper",
+    text: "Paper",
+  },
+  {
+    id: 16,
+    link: "/projects/sistent/components/paper/guidance",
+    text: "Paper",
+  },
+  {
+    id: 17,
+    link: "/projects/sistent/components/paper/code",
+    text: "Paper",
+  },
+  {
+    id: 18,
     link: "/projects/sistent/components/popper",
     text: "Popper",
   },
   {
-    id: 16,
+    id: 19,
     link: "/projects/sistent/components/popper/guidance",
     text: "Popper",
   },
   {
-    id: 17,
+    id: 20,
     link: "/projects/sistent/components/popper/code",
     text: "Popper",
   },
