@@ -74,13 +74,11 @@ export const LinkGuidancePage = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "none",
-                  color: isDark ? "white" : "black", // Change color based on the theme
+                  color: "green", // Change color based on the theme
                   padding: "6px",
-                  border: "2px solid",
-                  borderColor: isDark ? "white" : "black",
                 }}
               >
-                Navigate to Layer5
+                Navigate to Layer 5
               </Link>
             </SistentThemeProvider>
           </Row>
@@ -96,13 +94,11 @@ export const LinkGuidancePage = () => {
                   display: "inline-block",
                   marginLeft: "10px",
                   textDecoration: "none",
-                  color: isDark ? "white" : "black",
-                  backgroundColor: isDark ? "#3f51b5" : "#2196f3", // Button background color
+                  color: "green",
                   padding: "10px 20px",
                   borderRadius: "4px",
                   fontWeight: "bold",
-                  border: "2px solid",
-                  borderColor: isDark ? "white" : "black",
+                  border: "2px solid black",
                 }}
               >
                 Get Started
@@ -132,16 +128,13 @@ export const LinkGuidancePage = () => {
           </Row>
           <h3>Download Links</h3>
           <p>
-          These links allow users to download files, documents, or resources. It’s essential to provide information about the file type and size to prepare users for what they’re downloading.
+          These links allow users to download files, documents, or resources. It’s essential to provide information about the file type and size to prepare users for what they’re downloading. You just have to pass Download as prop in link component. 
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button
-                component="a"
                 href="https://layer5.io/projects/sistent/components/link/guidance"
                 download
-                variant="contained"
-                color="secondary"
                 style={{
                   marginLeft: "10px",
                   padding: "10px 20px",

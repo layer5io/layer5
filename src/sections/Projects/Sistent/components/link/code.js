@@ -16,7 +16,7 @@ const codes = [
       href="Your Link"
       style={{
         textDecoration: "none",
-        border: "1px solid black",
+        color:"green",
         padding: "6px",
         marginLeft: "10px",
       }}
@@ -30,8 +30,7 @@ const codes = [
       href="Your Path"
       style={{
         textDecoration: "none",
-        border: "1px solid blue",
-        color: "blue",
+        color: "green",
         padding: "6px",
         marginLeft: "10px",
       }}
@@ -45,7 +44,7 @@ const codes = [
     href="Your Path"
     style={{
       textDecoration: "underline",
-      color: "blue",
+      color: "green",
       padding: "6px",
       marginLeft: "10px",
     }}
@@ -60,7 +59,7 @@ const codes = [
         href="Your Path"
         style={{
           textDecoration: "none",
-          color: "green",
+          color: "blue",
           fontWeight: "bold",
           fontSize: "16px",
           padding: "6px",
@@ -77,12 +76,12 @@ const codes = [
         href="/path-to-file.zip"
         download="file.zip"
         style={{
-          color: "blue",
+          color: "green",
           fontWeight: "bold",
           fontSize: "16px",
           padding: "6px",
           marginLeft: "10px",
-          borderBottom: "2px solid blue",
+  
         }}
       >
         Download File
@@ -96,7 +95,7 @@ const codes = [
         rel="noopener noreferrer"
         style={{
           textDecoration: "underline",
-          color: "blue",
+          color: "green",
           padding: "6px",
           marginLeft: "10px",
         }}
@@ -165,7 +164,7 @@ export const LinkCode = () => {
                   href="your path"
                   style={{
                     textDecoration: "none",
-                    border: "1px solid black",
+                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
@@ -193,8 +192,7 @@ export const LinkCode = () => {
                 <Link href="Your Path"
                   style={{
                     textDecoration: "none",
-                    border: "1px solid blue",
-                    color: "blue",
+                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
@@ -217,9 +215,8 @@ export const LinkCode = () => {
                   href="Your Path"
                   style={{
                     textDecoration: "underline",
-                    color: "blue",
+                    color: "green",
                     padding: "6px",
-                    border: "1px solid blue",
                     marginLeft: "10px",
                   }}
                 >
@@ -241,12 +238,12 @@ export const LinkCode = () => {
                   href="Your Path"
                   style={{
                     textDecoration: "none",
-                    color: "green",
+                    color: "blue",
                     fontWeight: "bold",
                     fontSize: "16px",
                     padding: "6px",
                     marginLeft: "10px",
-                    borderBottom: "2px dashed green",
+                    borderBottom: "2px dashed blue",
                   }}
                 >
                   Customized Link
@@ -268,12 +265,11 @@ export const LinkCode = () => {
                   download="file.zip"
                   style={{
                     textDecoration: "none",
-                    color: "blue",
+                    color: "green",
                     fontWeight: "bold",
                     fontSize: "16px",
                     padding: "6px",
                     marginLeft: "10px",
-                    borderBottom: "2px solid blue",
                   }}
                 >
                   Download File
@@ -298,7 +294,7 @@ export const LinkCode = () => {
                   rel="noopener noreferrer"
                   style={{
                     textDecoration: "underline",
-                    color: "blue",
+                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}

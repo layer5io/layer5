@@ -74,8 +74,7 @@ const SistentLink = () => {
                 href="https://layer5.io/"
                 style={{
                   marginLeft: "10px",
-                  textDecoration: "none",
-                  color: "black",
+                  color: "green",
                   padding: "6px",
                 }}
               >
@@ -89,8 +88,7 @@ const SistentLink = () => {
             The links can be customized in the below mentioned way
           </p>
           <h4>1. Color</h4>
-          <p>
-            You can customize link colors with predefined values such as primary, secondary, error, success, warning, info, or inherit existing text colors like Blue, Red.
+            <p>Nomally the color of Sistent Link is green , but on adding styling properties, You can customize link colors with predefined values such as primary, secondary, error, success, warning, info, or inherit existing text colors like Blue, Red.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -122,6 +120,7 @@ const SistentLink = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "underline",
+                  color:"green",
                   padding: "6px",
                 }}
               >
@@ -142,9 +141,9 @@ const SistentLink = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "underline",
-                  color: "blue",
+                  color: "green",
                   padding: "6px",
-                  border: "2px solid blue",
+                  border: "2px solid green",
                 }}
                 variant="body1"
               >
