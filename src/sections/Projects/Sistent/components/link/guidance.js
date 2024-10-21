@@ -89,7 +89,7 @@ export const LinkGuidancePage = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Link
-                href="https://layer5.io/projects/sistent/components/link/guidance" // Replace with the actual path for the CTA
+                href="https://layer5.io/projects/sistent/components/link/guidance"
                 style={{
                   display: "inline-block",
                   marginLeft: "10px",
@@ -128,7 +128,7 @@ export const LinkGuidancePage = () => {
           </Row>
           <h3>Download Links</h3>
           <p>
-          These links allow users to download files, documents, or resources. It’s essential to provide information about the file type and size to prepare users for what they’re downloading. You just have to pass Download as prop in link component. 
+          These links allow users to download files, documents, or resources. It’s essential to provide information about the file type and size to prepare users for what they’re downloading. You just have to pass Download as prop in link component.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
