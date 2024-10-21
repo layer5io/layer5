@@ -88,7 +88,7 @@ const SistentLink = () => {
             The links can be customized in the below mentioned way
           </p>
           <h4>1. Color</h4>
-            <p>Nomally the color of Sistent Link is green , but on adding styling properties, You can customize link colors with predefined values such as primary, secondary, error, success, warning, info, or inherit existing text colors like Blue, Red.
+          <p>Nomally the color of Sistent Link is green , but on adding styling properties, You can customize link colors with predefined values such as primary, secondary, error, success, warning, info, or inherit existing text colors like Blue, Red.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -120,7 +120,7 @@ const SistentLink = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "underline",
-                  color:"green",
+                  color: "green",
                   padding: "6px",
                 }}
               >
