@@ -73,6 +73,9 @@ const BlogSingle = ({ data }) => {
           publicURL
         }
       }
+      fields {
+        slug
+      }
       
     }
   }
