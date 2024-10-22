@@ -25,15 +25,15 @@ const codes = [
   </SistentThemeProvider>`,
 
   `<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-    <Link
-      href="Your Path"
+    <Link href="Your Path"
       style={{
         textDecoration: "none",
+        color: "blue",
         padding: "6px",
         marginLeft: "10px",
       }}
     >
-      Customized Link 1
+      Colored Link
     </Link>
   </SistentThemeProvider>`,
 

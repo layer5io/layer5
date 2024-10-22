@@ -74,7 +74,6 @@ const SistentLink = () => {
                 href="https://layer5.io/"
                 style={{
                   marginLeft: "10px",
-                  color: "green",
                   padding: "6px",
                 }}
               >
@@ -120,7 +119,6 @@ const SistentLink = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "underline",
-                  color: "green",
                   padding: "6px",
                 }}
               >
@@ -141,7 +139,7 @@ const SistentLink = () => {
                 style={{
                   marginLeft: "10px",
                   textDecoration: "underline",
-                  color: "green",
+                  color: "blue",
                   padding: "6px",
                   border: "2px solid green",
                 }}

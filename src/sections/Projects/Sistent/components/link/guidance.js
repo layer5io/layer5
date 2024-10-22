@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { Button, SistentThemeProvider, Link, ExternalLinkIcon} from "@layer5/sistent";
+import { Button, SistentThemeProvider, Link, ExternalLinkIcon } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
@@ -90,7 +90,16 @@ export const LinkGuidancePage = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <StyledButton  $primary $url="" className="button" $external={false}>
-                Get Started
+                <Link
+                  href="https://layer5.io/projects/sistent/components/link/guidance" // Specify the path you want to navigate to
+                  style={{
+                    marginLeft: "10px",
+                    textDecoration: "none",
+                    padding: "6px",
+                  }}
+                >
+                  Get Started
+                </Link>
               </StyledButton>
             </SistentThemeProvider>
           </Row>
@@ -109,14 +118,17 @@ export const LinkGuidancePage = () => {
                   textDecoration: "none",
                   padding: "6px",
                   cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
                 onMouseEnter={(e) => (e.target.style.textDecoration = "underline")}
                 onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
               >
-                Visit External Resource <ExternalLinkIcon/>
+                Visit External Resource <ExternalLinkIcon />
               </Link>
             </SistentThemeProvider>
           </Row>
+
           <a id="Labeling">
             <h2>Labeling</h2>
           </a>
