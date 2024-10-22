@@ -61,26 +61,10 @@ const codes = [
           fontSize: "16px",
           padding: "6px",
           marginLeft: "10px",
-          borderBottom: "2px dashed green",
+          borderBottom: "2px dashed blue",
         }}
       >
         Customized Link
-      </Link>
-    </SistentThemeProvider>`,
-
-    ` <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-      <Link
-        href="/path-to-file.zip"
-        download="file.zip"
-        style={{
-          fontWeight: "bold",
-          fontSize: "16px",
-          padding: "6px",
-          marginLeft: "10px",
-  
-        }}
-      >
-        Download File
       </Link>
     </SistentThemeProvider>`,
 
@@ -268,7 +252,7 @@ export const LinkCode = () => {
                 </Link>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="secure_links" code={codes[5]} />
+            <CodeBlock name="secure_links" code={codes[4]} />
           </div>
         </div>
       </div>
