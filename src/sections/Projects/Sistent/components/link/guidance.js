@@ -6,6 +6,7 @@ import { Button, SistentThemeProvider, Link, ExternalLinkIcon} from "@layer5/sis
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
+import StyledButton  from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 export const LinkGuidancePage = () => {
@@ -88,22 +89,9 @@ export const LinkGuidancePage = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Link
-                href="https://layer5.io/projects/sistent/components/link/guidance"
-                style={{
-                  display: "inline-block",
-                  marginLeft: "10px",
-                  textDecoration: "none",
-                  color: "black",
-                  backgroundColor: "yellow",
-                  padding: "10px 20px",
-                  borderRadius: "4px",
-                  fontWeight: "bold",
-                  border: "2px solid black",
-                }}
-              >
+              <StyledButton  $primary $url="" className="button" $external={false}>
                 Get Started
-              </Link>
+              </StyledButton>
             </SistentThemeProvider>
           </Row>
           <h3>External Links</h3>
@@ -127,25 +115,6 @@ export const LinkGuidancePage = () => {
               >
                 Visit External Resource <ExternalLinkIcon/>
               </Link>
-            </SistentThemeProvider>
-          </Row>
-          <h3>Download Links</h3>
-          <p>
-          These links allow users to download files, documents, or resources. It’s essential to provide information about the file type and size to prepare users for what they’re downloading. You just have to pass Download as prop in link component.
-          </p>
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button
-                href="https://layer5.io/projects/sistent/components/link/guidance"
-                download
-                style={{
-                  marginLeft: "10px",
-                  padding: "10px 20px",
-                  textDecoration: "none",
-                }}
-              >
-                Download File
-              </Button>
             </SistentThemeProvider>
           </Row>
           <a id="Labeling">
