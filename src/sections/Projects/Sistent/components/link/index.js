@@ -16,7 +16,7 @@ const SistentLink = () => {
     <SistentLayout title="Link" >
       <div className="content">
         <a id="Identity">
-          <h2>link</h2>
+          <h2>Link</h2>
         </a>
         <p>
         A link component is a navigational element that directs users to another page or section within an application.
