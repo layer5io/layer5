@@ -1,61 +1,141 @@
 import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import { SistentThemeProvider, Popper, Button, Box } from "@layer5/sistent";
+import {
+  SistentThemeProvider,
+  Popper,
+  Button,
+  Box,
+  Grid,
+} from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  ` <SistentThemeProvider>
-      <Button
-        variant="contained"
-        label="Toggle Popper"
-        size="medium"
-        onClick={handleClick}
-        ref={anchorRef}
-      />
-      <Popper
-        open={open}
-        anchorEl={anchorRef.current}
-        placement="top"
-      >
-        <div
-          style={{
-            padding: "10px",
-            backgroundColor: "#fff",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-          }}
-        >
-          I'm positioned above!
-        </div>
-      </Popper>
-  </SistentThemeProvider>`,
   `<Button
     variant="contained"
     label="Toggle Popper"
     size="medium"
-    onClick={handleClick}
-    ref={anchorRef}
+    onClick={handleClick()}
   />
-  <Popper
-    open={open}
-    anchorEl={anchorRef.current}
-    placement="top"
-  >
-    <div
-      style={{
-        padding: "10px",
-        backgroundColor: "#fff",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-      }}
-    >
-      I'm positioned above!
-    </div>
-  </Popper>`,
+  <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+    <Popper open={open} anchorEl={anchorEl}>
+      <Box sx={{ border: 1, p: 2, bgcolor: "background.paper" }}>
+        The content of the Popper.
+      </Box>
+    </Popper>
+  </SistentThemeProvider>`,
+  `<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+    <Popper open={open} anchorEl={anchorEl} placement={placement}>
+      <Box sx={{ border: 1, p: 2, bgcolor: "background.paper" }}>
+        The content of the Popper.
+      </Box>
+    </Popper>
+  </SistentThemeProvider>
+  <Box sx={{ width: 500 }}>
+    <Grid container sx={{ justifyContent: "center" }}>
+      <Grid item>
+        <Button
+          variant="text"
+          label="top-start"
+          size="medium"
+          onClick={handleClick("top-start")}
+        />
+        <Button
+          variant="text"
+          label="top"
+          size="medium"
+          onClick={handleClick("top")}
+        />
+        <Button
+          variant="text"
+          label="top-end"
+          size="medium"
+          onClick={handleClick("top-end")}
+        />
+      </Grid>
+    </Grid>
+    <Grid container sx={{ justifyContent: "center" }}>
+      <Grid item xs={6}>
+        <Button
+          variant="text"
+          label="left-start"
+          size="medium"
+          onClick={handleClick("left-start")}
+        />
+        <br />
+        <Button
+          variant="text"
+          label="left"
+          size="medium"
+          onClick={handleClick("left")}
+        />
+        <br />
+        <Button
+          variant="text"
+          label="left-end"
+          size="medium"
+          onClick={handleClick("left-end")}
+        />
+      </Grid>
+      <Grid
+        item
+        container
+        xs={6}
+        direction="column"
+        sx={{ alignItems: "flex-end" }}
+      >
+        <Grid item>
+          <Button
+            variant="text"
+            label="right-start"
+            size="medium"
+            onClick={handleClick("right-start")}
+          />
+        </Grid>
+        <Grid item>
+          <Button
+            variant="text"
+            label="right"
+            size="medium"
+            onClick={handleClick("right")}
+          />
+        </Grid>
+        <Grid item>
+          <Button
+            variant="text"
+            label="right-end"
+            size="medium"
+            onClick={handleClick("right-end")}
+          />
+        </Grid>
+      </Grid>
+    </Grid>
+    <Grid container sx={{ justifyContent: "center" }}>
+      <Grid item>
+        <Button
+          variant="text"
+          label="bottom-start"
+          size="medium"
+          onClick={handleClick("bottom-start")}
+        />
+        <Button
+          variant="text"
+          label="bottom"
+          size="medium"
+          onClick={handleClick("bottom")}
+        />
+        <Button
+          variant="text"
+          label="bottom-end"
+          size="medium"
+          onClick={handleClick("bottom-end")}
+        />
+      </Grid>
+    </Grid>
+  </Box>`,
 ];
 
 export const PooperCode = () => {
@@ -97,7 +177,7 @@ export const PooperCode = () => {
           <TabButton
             className={
               location.pathname ===
-                "/projects/sistent/components/popper/guidance"
+              "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -128,7 +208,7 @@ export const PooperCode = () => {
             </a>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Popper open={open} anchorEl={anchorEl} placement={placement}>
-                <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                <Box sx={{ border: 1, p: 2, bgcolor: "background.paper" }}>
                   The content of the Popper.
                 </Box>
               </Popper>
@@ -144,7 +224,7 @@ export const PooperCode = () => {
               </div>
               <CodeBlock name="basic-popper" code={codes[0]} />
             </div>
-            <a id="PositionedExample">
+            <a id="Positioned Example">
               <h3>Positioned Example</h3>
             </a>
             <p>
@@ -154,12 +234,108 @@ export const PooperCode = () => {
             </p>
             <div className="showcase">
               <div className="items">
-                <Button
-                  variant="contained"
-                  label="Toggle Popper"
-                  size="medium"
-                  onClick={handleClick("top")}
-                />
+                <Box sx={{ width: 500 }}>
+                  <Grid container sx={{ justifyContent: "center" }}>
+                    <Grid item>
+                      <Button
+                        variant="text"
+                        label="top-start"
+                        size="medium"
+                        onClick={handleClick("top-start")}
+                      />
+                      <Button
+                        variant="text"
+                        label="top"
+                        size="medium"
+                        onClick={handleClick("top")}
+                      />
+                      <Button
+                        variant="text"
+                        label="top-end"
+                        size="medium"
+                        onClick={handleClick("top-end")}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid container sx={{ justifyContent: "center" }}>
+                    <Grid item xs={6}>
+                      <Button
+                        variant="text"
+                        label="left-start"
+                        size="medium"
+                        onClick={handleClick("left-start")}
+                      />
+                      <br />
+                      <Button
+                        variant="text"
+                        label="left"
+                        size="medium"
+                        onClick={handleClick("left")}
+                      />
+                      <br />
+                      <Button
+                        variant="text"
+                        label="left-end"
+                        size="medium"
+                        onClick={handleClick("left-end")}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      container
+                      xs={6}
+                      direction="column"
+                      sx={{ alignItems: "flex-end" }}
+                    >
+                      <Grid item>
+                        <Button
+                          variant="text"
+                          label="right-start"
+                          size="medium"
+                          onClick={handleClick("right-start")}
+                        />
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          variant="text"
+                          label="right"
+                          size="medium"
+                          onClick={handleClick("right")}
+                        />
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          variant="text"
+                          label="right-end"
+                          size="medium"
+                          onClick={handleClick("right-end")}
+                        />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid container sx={{ justifyContent: "center" }}>
+                    <Grid item>
+                      <Button
+                        variant="text"
+                        label="bottom-start"
+                        size="medium"
+                        onClick={handleClick("bottom-start")}
+                      />
+                      <Button
+                        variant="text"
+                        label="bottom"
+                        size="medium"
+                        onClick={handleClick("bottom")}
+                      />
+                      <Button
+                        variant="text"
+                        label="bottom-end"
+                        size="medium"
+                        onClick={handleClick("bottom-end")}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
               </div>
               <CodeBlock name="positioned-example" code={codes[1]} />
             </div>
