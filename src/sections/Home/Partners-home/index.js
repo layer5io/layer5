@@ -1,4 +1,4 @@
-import React, { memo, Suspense, useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -8,8 +8,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PartnerImage = memo(({ partner }) => (
-  <div className="partner__block__inner">
+const PartnerImage = ({ partner }) => (
+  <div className={partner.innerDivStyle}>
     <img
       className="partner-image"
       id={partner.name}
@@ -17,42 +17,64 @@ const PartnerImage = memo(({ partner }) => (
       alt={partner.name}
       width={partner.imageWidth}
       height={partner.imageHeight}
-      loading="eager"
+      loading="lazy"
+      onLoad={(e) => {
+        e.target.classList.add("loaded");
+      }}
     />
   </div>
-));
-
-const PartnerSlider = memo(({ settings, isVisible }) => (
-  <div style={{
-    opacity: isVisible ? 1 : 0,
-    transition: "opacity 0.3s ease-in-out"
-  }}>
-    <Slider {...settings}>
-      {partners.map((partner, index) => (
-        <Link
-          to={partner.imageRoute}
-          className="partner-card"
-          key={partner.name || index}
-        >
-          <PartnerImage partner={partner} />
-        </Link>
-      ))}
-    </Slider>
-  </div>
-));
-
-const SliderFallback = () => (
-  <div style={{ height: "110px", visibility: "hidden" }} />
 );
 
-const Projects = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const SliderContent = ({ settings }) => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 300);
+      setIsVisible(true);
+    }, 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div style={{
+      opacity: isVisible ? 1 : 0,
+      visibility: isVisible ? 'visible' : 'hidden',
+      transition: 'opacity 0.3s ease-in-out',
+      position: 'relative',
+      height: isVisible ? 'auto' : '110px'
+    }}>
+      <Slider {...settings}>
+        {partners.map((partner, index) => (
+          <Link 
+            className="partner-card" 
+            to={partner.imageRoute} 
+            key={index}
+            style={{ 
+              display: 'inline-block',
+              verticalAlign: 'middle'
+            }}
+          >
+            <PartnerImage partner={partner} />
+          </Link>
+        ))}
+      </Slider>
+    </div>
+  );
+};
+
+const SliderFallback = () => (
+  <div style={{ 
+    height: "110px", 
+    visibility: "hidden",
+    position: "relative"
+  }} />
+);
+
+const Projects = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
   }, []);
 
   const settings = {
@@ -64,7 +86,7 @@ const Projects = () => {
     speed: 500,
     centerMode: true,
     variableWidth: true,
-    autoplay: isLoaded,
+    autoplay: isClient,
     autoplaySpeed: 1500,
     className: "partner-slider",
     responsive: [
@@ -88,12 +110,13 @@ const Projects = () => {
           </SectionTitle>
         </Row>
       </Container>
-      <Suspense fallback={<SliderFallback />}>
-        <PartnerSlider
-          settings={settings}
-          isVisible={isLoaded}
-        />
-      </Suspense>
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
+        {isClient && (
+          <Suspense fallback={<SliderFallback />}>
+            <SliderContent settings={settings} />
+          </Suspense>
+        )}
+      </div>
     </PartnerItemWrapper>
   );
 };
