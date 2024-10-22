@@ -37,6 +37,13 @@ const componentsData = [
       "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
     url: "/projects/sistent/components/paper",
   },
+  {
+    id: 5,
+    name: "Avatar",
+    description:
+      "A Avatar is an interactive element that triggers a specific action takes users where they need to go, and points out what happens next in a given flow.",
+    url: "/projects/sistent/components/avatar",
+  },
 ];
 
 const SistentComponents = () => {
