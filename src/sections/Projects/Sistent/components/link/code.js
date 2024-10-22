@@ -16,7 +16,6 @@ const codes = [
       href="Your Link"
       style={{
         textDecoration: "none",
-        color:"green",
         padding: "6px",
         marginLeft: "10px",
       }}
@@ -30,7 +29,6 @@ const codes = [
       href="Your Path"
       style={{
         textDecoration: "none",
-        color: "green",
         padding: "6px",
         marginLeft: "10px",
       }}
@@ -44,7 +42,6 @@ const codes = [
     href="Your Path"
     style={{
       textDecoration: "underline",
-      color: "green",
       padding: "6px",
       marginLeft: "10px",
     }}
@@ -76,7 +73,6 @@ const codes = [
         href="/path-to-file.zip"
         download="file.zip"
         style={{
-          color: "green",
           fontWeight: "bold",
           fontSize: "16px",
           padding: "6px",
@@ -95,7 +91,6 @@ const codes = [
         rel="noopener noreferrer"
         style={{
           textDecoration: "underline",
-          color: "green",
           padding: "6px",
           marginLeft: "10px",
         }}
@@ -164,7 +159,6 @@ export const LinkCode = () => {
                   href="your path"
                   style={{
                     textDecoration: "none",
-                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
@@ -192,7 +186,7 @@ export const LinkCode = () => {
                 <Link href="Your Path"
                   style={{
                     textDecoration: "none",
-                    color: "green",
+                    color: "blue",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
@@ -215,7 +209,6 @@ export const LinkCode = () => {
                   href="Your Path"
                   style={{
                     textDecoration: "underline",
-                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
@@ -252,33 +245,6 @@ export const LinkCode = () => {
             </div>
             <CodeBlock name="customized-link" code={codes[3]} />
           </div>
-
-          <h3>Download Link</h3>
-          <p>
-          Download Links are essential when you want to provide users with downloadable content such as files, PDFs, or documents. These links can be styled to clearly indicate a download action to the user.
-          </p>
-          <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Link
-                  href="/path-to-file.zip"
-                  download="file.zip"
-                  style={{
-                    textDecoration: "none",
-                    color: "green",
-                    fontWeight: "bold",
-                    fontSize: "16px",
-                    padding: "6px",
-                    marginLeft: "10px",
-                  }}
-                >
-                  Download File
-                </Link>
-              </SistentThemeProvider>
-            </div>
-            <CodeBlock name="download-link" code={codes[4]} />
-          </div>
-
           <a id="Security Considerations">
             <h2>Security Considerations</h2>
           </a>
@@ -294,7 +260,6 @@ export const LinkCode = () => {
                   rel="noopener noreferrer"
                   style={{
                     textDecoration: "underline",
-                    color: "green",
                     padding: "6px",
                     marginLeft: "10px",
                   }}
