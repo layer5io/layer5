@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { memo, Suspense, useState, useEffect } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -8,8 +8,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PartnerImage = ({ partner }) => (
-  <div className={partner.innerDivStyle}>
+const PartnerImage = memo(({ partner }) => (
+  <div className="partner__block__inner">
     <img
       className="partner-image"
       id={partner.name}
@@ -17,26 +17,42 @@ const PartnerImage = ({ partner }) => (
       alt={partner.name}
       width={partner.imageWidth}
       height={partner.imageHeight}
+      loading="eager"
     />
   </div>
+));
+
+const PartnerSlider = memo(({ settings, isVisible }) => (
+  <div style={{
+    opacity: isVisible ? 1 : 0,
+    transition: "opacity 0.3s ease-in-out"
+  }}>
+    <Slider {...settings}>
+      {partners.map((partner, index) => (
+        <Link
+          to={partner.imageRoute}
+          className="partner-card"
+          key={partner.name || index}
+        >
+          <PartnerImage partner={partner} />
+        </Link>
+      ))}
+    </Slider>
+  </div>
+));
+
+const SliderFallback = () => (
+  <div style={{ height: "110px", visibility: "hidden" }} />
 );
 
 const Projects = () => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const imagePromises = partners.map(partner => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = resolve;
-        img.onerror = reject;
-        img.src = partner.imageLink;
-      });
-    });
-
-    Promise.all(imagePromises)
-      .then(() => setImagesLoaded(true))
-      .catch(error => console.error("Error preloading images:", error));
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 300);
+    return () => clearTimeout(timer);
   }, []);
 
   const settings = {
@@ -48,7 +64,7 @@ const Projects = () => {
     speed: 500,
     centerMode: true,
     variableWidth: true,
-    autoplay: true,
+    autoplay: isLoaded,
     autoplaySpeed: 1500,
     className: "partner-slider",
     responsive: [
@@ -72,17 +88,12 @@ const Projects = () => {
           </SectionTitle>
         </Row>
       </Container>
-      {imagesLoaded ? (
-        <Slider {...settings}>
-          {partners.map((partner, index) => (
-            <Link className="partner-card" to={partner.imageRoute} key={index}>
-              <PartnerImage partner={partner} />
-            </Link>
-          ))}
-        </Slider>
-      ) : (
-        <div style={{ textAlign: "center", padding: "20px" }}>Loading partners...</div>
-      )}
+      <Suspense fallback={<SliderFallback />}>
+        <PartnerSlider
+          settings={settings}
+          isVisible={isLoaded}
+        />
+      </Suspense>
     </PartnerItemWrapper>
   );
 };
