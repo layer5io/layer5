@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
@@ -9,46 +8,56 @@ import prometheus from "../../../collections/integrations/prometheus/icons/color
 import kubernetes from "../../../collections/integrations/kubernetes/icons/color/kubernetes-color.svg";
 import keda from "../../../collections/integrations/keda/icons/color/keda-color.svg";
 import linkerd from "../../../collections/integrations/linkerd/icons/color/linkerd-color.svg";
+import istio from "../../../collections/integrations/istio-base/icons/color/istio-base-color.svg";
+import jaeger from "../../../collections/integrations/jaeger/icons/color/jaeger-color.svg";
+import envoy from "../../../collections/integrations/envoy/icons/color/envoy-color.svg";
+import kong from "../../../collections/integrations/kong/icons/color/kong-color.svg";
+import grafana from "../../../collections/integrations/grafana-agent-operator/icons/color/grafana-agent-operator-color.svg";
+import docker from "../../../collections/integrations/docker/icons/color/docker-color.svg";
+import opentelemetry from "../../../collections/integrations/opentelemetry-operator/icons/color/opentelemetry-operator-color.svg";
+import kiali from "../../../collections/integrations/kiali-operator/icons/color/kiali-operator-color.svg";
+import knative from "../../../collections/integrations/knative/icons/color/knative-color.svg";
+import dapr from "../../../collections/integrations/dapr/icons/color/dapr-color.svg";
+import fabedge from "../../../collections/integrations/fabedge/icons/color/fabedge-color.svg";
+import helm from "../../../collections/integrations/helm-controller/icons/color/helm-controller-color.svg";
+import karmada from "../../../collections/integrations/karmada/icons/color/karmada-color.svg";
+import kubeflow from "../../../collections/integrations/kubeflow/icons/color/kubeflow-color.svg";
+import terform from "../../../collections/integrations/terraform/icons/color/terraform-color.svg";
+import fluentd from "../../../collections/integrations/fluentd/icons/color/fluentd-color.svg";
+
 
 const ViewsSectionWrapper = styled.div`
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .small-card-container {
-      display: flex;
-      gap: 1rem;
-    }
-
     .views-section {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
-    margin: 3%;
-    border-radius: 1rem;
-    max-width: 1920px;
-    width: 90vw;
-    height: 500px;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 5% 0 0;
-    box-sizing: border-box;
-    //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    overflow: hidden;
-
-    @media only screen and (max-width: 767px) {
-      text-align: center;
-      flex-direction: column-reverse;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
+      margin: 3%;
+      border-radius: 1rem;
+      max-width: 1920px;
+      width: 90vw;
+      height: 500px; 
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0 5% 0 0;
+      box-sizing: border-box;
+      overflow: hidden;
+      
+      @media only screen and (max-width: 767px) {
+        text-align: center;
+        flex-direction: column-reverse;
+      }
     }
-}
+
     .hero-text {
         display: flex;
         flex-direction: column;
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: 0 0 50%; 
+        max-width: 50%; 
         padding-bottom: 3rem;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
@@ -57,132 +66,99 @@ const ViewsSectionWrapper = styled.div`
         }
     }
 
-    h2 {
-        /* max-width: 90%; */
-        padding-bottom: 2%;
-      }
-    }
-
-    h4 {
-        max-width: 90%;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          }
-    }
-
     .hero-image {
         position: relative;
         display: flex;
         justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
-
+        flex: 0 0 50%; 
+        max-width: 50%; 
+        overflow: hidden;
+        height: 100%; 
         
-
-        svg {
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          .visualizer-views-colorMode_svg__colorMode1 {
-            fill: ${(props) => props.theme.whiteToGrey737373};
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          }
-        }
-
-        .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
-        }
-
-        .not-visible {
-                opacity: 0;
-                transition: all 0.5s ease;
-        }
-
         @media only screen and (max-width: 767px) {
           max-width: 100%;
         }
-
     }
 
-    .overlay {
-        width: 483px;
-        height: 680px;
+    .small-card-container {
+        display: flex;
+        gap: 1rem; 
     }
 
     .container {
       display: flex;
       justify-content: center;
+      gap: 1rem; 
+      height: 100%; 
     }
-    
+
     .line {
+      position: relative;
+      height: 100%; 
+      overflow: hidden;
+      width: 200px; 
+    }
+
+    .scroll-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      flex-wrap: wrap;
-    }
-    .position-line-down{
-        transform: translateY(-20em);
-    }
-    .position-line-up{
-        transform: translateY(20em);
+      gap: 1rem;
     }
 
-    .line-primary, .line-secondary {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+    .scroll-down .scroll-track {
+      animation: scrollDown 25s linear infinite;
     }
 
-    .animation-up-scroll {
-        animation: scroll-up-animation 15s linear infinite;
-
-        @keyframes scroll-up-animation {
-            0% {
-                transform: translateY(0%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
-        }
+    .scroll-up .scroll-track {
+      animation: scrollUp 25s linear infinite;
     }
-    .animation-down-scroll {
 
-        animation: scroll-down-animation 15s linear infinite;
-        @keyframes scroll-down-animation {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100%);
-            }
-        }
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(-50%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
     }
+
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
     .box {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height:150px;
-      padding: 2rem;
+      width: 100%; 
+      height: 150px; 
+      padding: 2rem; 
       box-sizing: border-box;
       background-color: ${(props) => props.theme.backgroundColor}; 
-      margin-bottom: 1rem; 
       border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
-    // .box:hover {
-    //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    // }
 
     .box .boxImg {
       width: auto;
-      height: 60px;
+      height: 60px; 
       max-width: 100%;
     }
-    
+
     .box .boxText {
       margin-top: 1rem;
       text-align: center;
@@ -196,77 +172,78 @@ const ViewsSectionWrapper = styled.div`
         padding: 2rem 2rem 0 2rem;
         height: auto;
       }
-      .small-card-container {
-        display: flex;
-        justify-content: center;
-      }
     }
-
 `;
 
-const KanvasVisualizerViews = () => {
-  const [imageRef, inView] = useInView({ threshold: 0.3 });
-  const [imageInView, setimageInView] = useState(false);
 
-  if (inView && !imageInView) setimageInView(true);
-  else if (imageInView && !inView) setimageInView(false);
+const KanvasVisualizerViews = () => {
+  const [imageRef] = useInView({ threshold: 0.3 });
+
+  const leftColumnItems = [
+    { img: prometheus, name: "Prometheus" },
+    { img: argocd, name: "Argo CD" },
+    { img: cilium, name: "Cilium" },
+    { img: istio, name: "Istio" },
+    { img: grafana, name: "Grafana" },
+    { img: knative, name: "Knative" },
+    { img: docker, name: "Docker" },
+    { img: envoy, name: "Envoy" },
+    { img: karmada, name: "Karmada" },
+    { img: helm, name: "Helm" },
+    { img: fluentd, name: "Fluentd" }
+
+  ];
+
+  const rightColumnItems = [
+    { img: kubernetes, name: "Kubernetes" },
+    { img: keda, name: "Keda" },
+    { img: linkerd, name: "Linkerd" },
+    { img: jaeger, name: "Jaeger" },
+    { img: kong, name: "Kong" },
+    { img: opentelemetry, name: "Opentelemetry" },
+    { img: dapr, name: "Dapr" },
+    { img: kiali, name: "Kiali" },
+    { img: fabedge, name: "FabEdge" },
+    { img: kubeflow, name: "Kubeflow" },
+    { img: terform, name: "Terform" }
+
+  ];
+
+  const renderColumn = (items, direction) => (
+    <div className={`line scroll-${direction}`}>
+      <div className="scroll-track">
+        {/* Original set */}
+        {items.map((item, index) => (
+          <div className="box" key={`set1-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {/* First duplicate set */}
+        {items.map((item, index) => (
+          <div className="box" key={`set2-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {/* Second duplicate set for seamless loop */}
+        {items.map((item, index) => (
+          <div className="box" key={`set3-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
-            src={CommentingImageDark}
-            alt=""
-          /> */}
-          <div
-            // className={
-            //   imageInView ? "visible container" : "not-visible container"
-            // }
-            className="visible container"
-          >
-            <div className="line position-line-down">
-              <div className="line-primary animation-down-scroll">
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={argocd} alt="" />
-                  <div className="boxText">Argo CD</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={cilium} alt="" />
-                  <div>Cilium</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-              </div>
-
-            </div>
-            <div className="line position-line-up">
-              <div className="line-primary animation-up-scroll">
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={keda} alt="" />
-                  <div>Keda</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={linkerd} alt="" />
-                  <div>Linkerd</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-              </div>
-            </div>
+          <div className="container">
+            {renderColumn(leftColumnItems, "down")}
+            {renderColumn(rightColumnItems, "up")}
           </div>
         </div>
         <div className="hero-text">
