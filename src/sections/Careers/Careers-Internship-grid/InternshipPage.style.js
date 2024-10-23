@@ -43,6 +43,11 @@ p{
     }
   }
 
+  @media only screen and (max-width: 450px) {
+    .opportunity-card { 
+      width: 100% !important; 
+    }
+  }
   .opportunity-card {
     width: 21rem;
     height: 15rem;
