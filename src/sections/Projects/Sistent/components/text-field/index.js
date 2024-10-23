@@ -15,7 +15,7 @@ const SistentTextField = () => {
     <SistentLayout title="TextField" >
       <div className="content">
         <a id="Identity">
-          <h2>TextField</h2>
+          <h2>Text Field</h2>
         </a>
         <p>
           The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.
@@ -338,71 +338,75 @@ const SistentTextField = () => {
               </div>
             </Box>
           </SistentThemeProvider>
-          <a id="Sizes">
-            <h2>Sizes</h2>
-          </a>
-          <p>
-            TextField can have small or normal field sizes. According the requirement it can be adjusted.
-          </p>
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Box
-              component="form"
-              sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
-              noValidate
-              autoComplete="off"
-            >
-              <div>
-                <TextField
-                  label="Size"
-                  id="outlined-size-small"
-                  defaultValue="Small"
-                  size="small"
-                />
-                <TextField label="Size" id="outlined-size-normal" defaultValue="Normal" />
-              </div>
-              <div>
-                <TextField
-                  label="Size"
-                  id="filled-size-small"
-                  defaultValue="Small"
-                  variant="filled"
-                  size="small"
-                />
-                <TextField
-                  label="Size"
-                  id="filled-size-normal"
-                  defaultValue="Normal"
-                  variant="filled"
-                />
-              </div>
-              <div>
-                <TextField
-                  label="Size"
-                  id="standard-size-small"
-                  defaultValue="Small"
-                  size="small"
-                  variant="standard"
-                />
-                <TextField
-                  label="Size"
-                  id="standard-size-normal"
-                  defaultValue="Normal"
-                  variant="standard"
-                />
-              </div>
-            </Box>
-          </SistentThemeProvider>
-          <a id="Full Width">
-            <h2>Full Width</h2>
-          </a>
-          <p>
-            FullWidth attribute can be used to make the input take up the full width of its container.
-          </p>
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Box sx={{ width: 600, maxWidth: "100%" }}>
-              <TextField fullWidth label="fullWidth" id="fullWidth" />
-            </Box>
-          </SistentThemeProvider>
+          <div style={{ paddingTop: "10px" }}>
+            <a id="Sizes">
+              <h2>Sizes</h2>
+            </a>
+            <p>
+              TextField can have small or normal field sizes. According the requirement it can be adjusted.
+            </p>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Box
+                component="form"
+                sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                noValidate
+                autoComplete="off"
+              >
+                <div>
+                  <TextField
+                    label="Size"
+                    id="outlined-size-small"
+                    defaultValue="Small"
+                    size="small"
+                  />
+                  <TextField label="Size" id="outlined-size-normal" defaultValue="Normal" />
+                </div>
+                <div>
+                  <TextField
+                    label="Size"
+                    id="filled-size-small"
+                    defaultValue="Small"
+                    variant="filled"
+                    size="small"
+                  />
+                  <TextField
+                    label="Size"
+                    id="filled-size-normal"
+                    defaultValue="Normal"
+                    variant="filled"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    label="Size"
+                    id="standard-size-small"
+                    defaultValue="Small"
+                    size="small"
+                    variant="standard"
+                  />
+                  <TextField
+                    label="Size"
+                    id="standard-size-normal"
+                    defaultValue="Normal"
+                    variant="standard"
+                  />
+                </div>
+              </Box>
+            </SistentThemeProvider>
+          </div>
+          <div style={{ paddingTop: "10px" }}>
+            <a id="Full Width">
+              <h2>Full Width</h2>
+            </a>
+            <p>
+              FullWidth attribute can be used to make the input take up the full width of its container.
+            </p>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Box sx={{ width: 600, maxWidth: "100%" }}>
+                <TextField fullWidth label="fullWidth" id="fullWidth" />
+              </Box>
+            </SistentThemeProvider>
+          </div>
         </div>
       </div>
     </SistentLayout>

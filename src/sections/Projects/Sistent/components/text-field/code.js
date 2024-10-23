@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import { Box, SistentThemeProvider, TextField } from "@layer5/sistent";
-import { CodeBlock } from "./code-block";
+import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
@@ -324,7 +324,7 @@ export const TextFieldCode = () => {
     <SistentLayout title="TextField" >
       <div className="content">
         <a id="Identity">
-          <h2>TextField</h2>
+          <h2>Text Field</h2>
         </a>
         <p>
           The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.

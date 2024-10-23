@@ -15,7 +15,7 @@ export const TextFieldGuidance = () => {
     <SistentLayout title="TextField">
       <div className="content">
         <a id="Identity">
-          <h2>TextField</h2>
+          <h2>Text Field</h2>
         </a>
         <p>
           The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.

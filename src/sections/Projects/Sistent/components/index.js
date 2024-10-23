@@ -32,6 +32,13 @@ const componentsData = [
   },
   {
     id: 4,
+    name: "Paper",
+    description:
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+    url: "/projects/sistent/components/paper",
+  },
+  {
+    id: 5,
     name: "Text Field",
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
