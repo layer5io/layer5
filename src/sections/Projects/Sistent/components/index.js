@@ -39,6 +39,13 @@ const componentsData = [
   },
   {
     id: 5,
+    name: "Popper",
+    description:
+      "A popper is a tooltip that appears when a user interacts with an element.",
+    url: "/projects/sistent/components/popper",
+  },
+  {
+    id: 6,
     name: "Text Field",
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
