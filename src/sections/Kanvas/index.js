@@ -244,9 +244,7 @@ const Kanvas = (props) => {
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex} />
           {/* <MesheryAction /> */}
-          {/* <SignupForm /> */}
           <KanvasBtn style={{ marginBottom: "2rem" }} />
-          {/* <Button $secondary title="Explore Kanvas" $url="https://meshery.layer5.io" external={ true } /> */}
           <Platform />
         </Container>
       </div>

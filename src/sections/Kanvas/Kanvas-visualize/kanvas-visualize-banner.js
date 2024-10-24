@@ -93,8 +93,6 @@ const KanvasisualizeBanner = () => {
         <div className="banner-text">
           <h1>Visualize your infrastructure </h1>
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
-          {/* <Button $primary className="join-community-button" title="Explore Kanvasisualizer" $url="https://kanvas.new" />
-          <Button $primary className="join-community-button" title="Explore Kanvasisualizer" $url="" /> */}
           <KanvasBtn title="Explore Kanvasisualizer" />
         </div>
         {/* <div className="banner-image">
