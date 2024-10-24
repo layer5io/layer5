@@ -22,7 +22,7 @@ import fabedge from "../../../collections/integrations/fabedge/icons/color/fabed
 import helm from "../../../collections/integrations/helm-controller/icons/color/helm-controller-color.svg";
 import karmada from "../../../collections/integrations/karmada/icons/color/karmada-color.svg";
 import kubeflow from "../../../collections/integrations/kubeflow/icons/color/kubeflow-color.svg";
-import terform from "../../../collections/integrations/terraform/icons/color/terraform-color.svg";
+import terraform from "../../../collections/integrations/terraform/icons/color/terraform-color.svg";
 import fluentd from "../../../collections/integrations/fluentd/icons/color/fluentd-color.svg";
 
 
@@ -205,7 +205,7 @@ const KanvasVisualizerViews = () => {
     { img: kiali, name: "Kiali" },
     { img: fabedge, name: "FabEdge" },
     { img: kubeflow, name: "Kubeflow" },
-    { img: terform, name: "Terform" }
+    { img: terraform, name: "Terraform" }
 
   ];
 
