@@ -45,6 +45,7 @@ const componentsData = [
     url: "/projects/sistent/components/popper",
   },
   {
+    id: 6,
     name: "Link",
     description:
       "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
