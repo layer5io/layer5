@@ -322,6 +322,16 @@ export const repo_data = [
         "Generates visual snapshots of infrastructure as code (e.g., Kubernetes manifests, Helm charts) and delivers them to pull requests for automated review.",
         repository: "https://github.com/layer5labs/kanvas-snapshot",
       },
+      {
+        project: "Helm Kanvas Snapshot",
+        image: meshery,
+        language: "Golang",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description:
+        "The Kanvas Snapshot Helm Plugin allows users to generate a visual snapshot of their Helm charts directly from the command line.",
+        repository: "https://github.com/meshery/helm-kanvas-snapshot",
+      },
     ],
   },
 
