@@ -39,11 +39,18 @@ const componentsData = [
   },
   {
     id: 5,
+    name: "Popper",
+    description:
+      "A popper is a tooltip that appears when a user interacts with an element.",
+    url: "/projects/sistent/components/popper",
+  },
+  {
+    id: 6,
     name: "Avatar",
     description:
       "A Avatar is an interactive element that triggers a specific action takes users where they need to go, and points out what happens next in a given flow.",
     url: "/projects/sistent/components/avatar",
-  },
+  }
 ];
 
 const SistentComponents = () => {

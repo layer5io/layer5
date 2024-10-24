@@ -58,4 +58,19 @@ export const content = [
     link: "/projects/sistent/components/paper/code",
     text: "Paper",
   },
+  {
+    id: 18,
+    link: "/projects/sistent/components/popper",
+    text: "Popper",
+  },
+  {
+    id: 19,
+    link: "/projects/sistent/components/popper/guidance",
+    text: "Popper",
+  },
+  {
+    id: 20,
+    link: "/projects/sistent/components/popper/code",
+    text: "Popper",
+  },
 ];
