@@ -46,11 +46,19 @@ const componentsData = [
   },
   {
     id: 6,
+    name: "Text Field",
+    description:
+      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
+    url: "/projects/sistent/components/text-field",
+  },
+  {
+    id: 7,
     name: "Link",
     description:
       "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
   },
+  }
 ];
 
 const SistentComponents = () => {
