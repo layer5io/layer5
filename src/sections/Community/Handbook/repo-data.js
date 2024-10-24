@@ -329,7 +329,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: [""],
         description:
-        "A Helm chart for deploying Kanvas, a Meshery component for enhanced observability and management workflows.",
+        "The Kanvas Snapshot Helm Plugin allows users to generate a visual snapshot of their Helm charts directly from the command line.",
         repository: "https://github.com/meshery/helm-kanvas-snapshot",
       },
     ],
