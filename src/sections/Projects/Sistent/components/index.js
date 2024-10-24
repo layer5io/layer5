@@ -30,6 +30,27 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Paper",
+    description:
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+    url: "/projects/sistent/components/paper",
+  },
+  {
+    id: 5,
+    name: "Popper",
+    description:
+      "A popper is a tooltip that appears when a user interacts with an element.",
+    url: "/projects/sistent/components/popper",
+  },
+  {
+    id: 6,
+    name: "Text Field",
+    description:
+      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
+    url: "/projects/sistent/components/text-field",
+  }
 ];
 
 const SistentComponents = () => {
