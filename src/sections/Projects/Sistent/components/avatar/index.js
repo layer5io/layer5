@@ -7,8 +7,8 @@ import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import Image from "../../../../../assets/images/avatar-images/avatar.jpeg";
-import Image1 from "../../../../../assets/images/avatar-images/avatar1.jpeg";
+import Image from "../../../../../assets/images/avatar-images/avatar.png";
+import Image1 from "../../../../../assets/images/avatar-images/avatar1.png";
 import Image2 from "../../../../../assets/images/avatar-images/avatar2.png";
 
 const SmallAvatar = styled(Avatar)(({ theme }) => ({

@@ -1,12 +1,11 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-
 import { SistentThemeProvider, Avatar, AvatarGroup, styled, Badge } from "@layer5/sistent";
-import { CodeBlock } from "./code-block";
+import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
-import Image from "../../../../../assets/images/avatar-images/avatar.jpeg";
-import Image1 from "../../../../../assets/images/avatar-images/avatar1.jpeg";
+import Image from "../../../../../assets/images/avatar-images/avatar.png";
+import Image1 from "../../../../../assets/images/avatar-images/avatar1.png";
 import Image2 from "../../../../../assets/images/avatar-images/avatar2.png";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
@@ -276,8 +275,8 @@ export const AvatarCode = () => {
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <AvatarGroup>
                   <Avatar alt="User 1" src={Image} />
-                  <Avatar alt="User 2" src={Image1} />
-                  <Avatar alt="User 3" src={Image2} />
+                  <Avatar alt="User 2" src={Image} />
+                  <Avatar alt="User 3" src={Image} />
                 </AvatarGroup>
               </SistentThemeProvider>
             </div>
@@ -292,8 +291,8 @@ export const AvatarCode = () => {
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <AvatarGroup total={24}>
                   <Avatar alt="Remy Sharp" src={Image} />
-                  <Avatar alt="Travis Howard" src={Image1} />
-                  <Avatar alt="Agnes Walker" src={Image2} />
+                  <Avatar alt="Travis Howard" src={Image} />
+                  <Avatar alt="Agnes Walker" src={Image} />
                 </AvatarGroup>
               </SistentThemeProvider>
             </div>
