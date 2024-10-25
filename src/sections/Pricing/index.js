@@ -3,11 +3,10 @@ import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
-import { options } from "./data";
+import options from "./generateOptions";
 import PlanCard from "../../components/PlanCard";
 
 const Pricing = () => {
-
   // const [monthly, setMonthly] = useState(false);
 
   return (
