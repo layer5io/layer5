@@ -307,7 +307,7 @@ const KanvasVisualizerViews = () => {
           <p>
             Employ a set of learning paths that incorporate an application
             networking centric curriculum featuring training on 200+
-            integrations.           
+            integrations.
           </p>
           <Button
             $primary
