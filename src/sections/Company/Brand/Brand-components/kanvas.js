@@ -5,9 +5,9 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import KanvasIcon from "../../../../assets/images/kanvas/kanvas-color-icon.svg";
-import Kanvas from "../../../../assets/images/kanvas/kanvas-color-horizontal.svg";
-import KanvasTitle from "../../../../assets/images/kanvas/kanvas-color-text.webp";
+import KanvasIcon from "../../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import Kanvas from "../../../../assets/images/kanvas/horizontal/kanvas-horizontal-color.svg";
+import KanvasTitle from "../../../../assets/images/kanvas/text-only/kanvas-text-color.svg";
 
 const KanvasWrapper = styled.section`
     .sub-project {
