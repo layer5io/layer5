@@ -50,6 +50,13 @@ const componentsData = [
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
     url: "/projects/sistent/components/text-field",
+  },
+  {
+    id: 7,
+    name: "Avatar",
+    description:
+      "A Avatar is an interactive element that triggers a specific action takes users where they need to go, and points out what happens next in a given flow.",
+    url: "/projects/sistent/components/avatar",
   }
 ];
 
