@@ -1,0 +1,115 @@
+---
+title: Extend Meshery "Model"ing
+subtitle: Elevate your experience by effortlessly generating, importing, and exporting models
+date: 2024-09-19
+author: Shlok Mishra
+thumbnail: ../../../../assets/images/layer5/layer5-only/svg/layer5-black.svg
+darkthumbnail: ../../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg
+description: Learn how Meshery's new import/export feature simplifies model management by supporting multiple formats and offering flexible options.
+type: Blog
+category: Open Source
+tags:
+  - Open Source
+  - Meshery
+  - Model Management
+  - CRDs
+featured: true
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import image from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
+
+<BlogWrapper>
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Simplified Model Importing](#simplified-model-importing)
+3. [Generating Models from CRDs](#generating-models-from-crds)
+4. [Flexible Export Options](#flexible-export-options)
+---
+
+## Introduction
+
+Managing models has never been easier! Meshery’s new **model import/export** feature lets you generate, import, and export models with just a few commands. This feature supports multiple input formats, including **OCI**, **tar.gz**, **directories**, and **URLs**, giving you the flexibility to integrate models into Meshery from various sources.
+
+With a few simple commands or clicks in the UI, you can:
+
+- Generate models from CRDs.
+- Import pre-generated models from a URL or directory.
+- Seamlessly register models in the database.
+- Export models in **OCI** or **tar.gz** format.
+
+Let’s dive into how you can unlock the power of this feature.
+
+---
+
+## Simplified Model Importing
+
+With **Meshery’s new model import** functionality, importing models has never been easier. Whether you have a pre-generated model or a CRD-based model, you can use a simple CLI command or UI option to import and register your model.
+
+Here are the import command variations:
+
+```bash
+# Basic import from OCI, tar.gz, directory, or URL
+mesheryctl model import -f [path to oci|tar.gz|directory|URL]
+
+# Import from a URL and specify a template (only required for URL imports)
+mesheryctl model import -f [path to oci|tar.gz|directory|URL] -t [path to template file]
+
+# Skip model registration (optional, registration is true by default)
+mesheryctl model import -f [path to oci|tar.gz|directory|URL] -t [path to template file] -r
+```
+---
+
+## Generating Models from CRDs
+
+One of the coolest features is the ability to generate models directly from Custom Resource Definitions (CRDs). If you have a GitHub or Artifact Hub URL pointing to a directory with CRDs, Meshery will automatically generate and register the corresponding model and its components.
+
+```bash
+mesheryctl model import -f https://github.com/yourorg/yourcrd -t /path/to/template.json
+```
+Once imported, these models will be registered and stored in the `.meshery/Models` folder by default. This means they are available for use in Meshery instantly!
+
+Use the skip registration flag -r if you don’t want automatic registration:
+
+```bash
+mesheryctl model import -f https://github.com/yourorg/yourcrd -t /path/to/template.json -r
+```
+---
+
+## Flexible Export Options
+
+The export feature gives you flexibility when it comes to sharing or migrating models. You can choose to export your models in either OCI or tar.gz format and specify whether the files inside should be JSON or YAML.
+
+The CLI commands for export are as follows:
+
+```bash
+# Export a model in OCI or tar.gz format (default is OCI)
+mesheryctl model export [model-name] -o [oci/tar]
+
+# Choose JSON or YAML filetype (default is YAML)
+mesheryctl model export [model-name] -t [json/yaml]
+
+# Specify a custom location to export the model
+mesheryctl model export [model-name] -l /path/to/export/directory
+
+# Discard components and relationships during export
+mesheryctl model export [model-name] --discard-components --discard-relationships
+
+# Export a specific version of the model
+mesheryctl model export [model-name] --version [version-number]
+```
+
+This command exports `my-model` in tar.gz format with JSON files, saves it to /home/meshery/exports, discards components and relationships, and specifies version v0.7.3.
+
+---
+
+`Take control of your modeling process today! With Meshery’s new import/export capabilities, managing and extending your models has never been easier.`
+
+
+Embrace the future of model management with Meshery's new model import/export feature. Your journey to seamless mastery starts here.
+
+
+</BlogWrapper>
