@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Button from "../../reusecore/Button";
 import { Container } from "../../reusecore/Layout";
 import MesheryTitle from "./images/meshery-title.svg";
-import playgroundbgCTA from "./images/playground-bg-CTA.png";
-import smalldots from "./images/small-dots.png";
+import playgroundbgCTA from "./images/playground-bg-CTA.webp";
+import smalldots from "./images/small-dots.webp";
 import MesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo.webp";
 
 const DockerExtensionCTAWrapper = styled.div`
