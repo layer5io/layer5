@@ -112,7 +112,7 @@ export const CircularprogressCode = () => {
               <h3>Basic CircularProgress</h3>
             </a>
             <p>
-              This example shows a basic circular progress indicator using the default settings. No props are needed to render this simple loader, ideal for processes with unknown durations.
+              This example shows a basic circular progress indicator with the default settings. No props are needed to render this simple loader, ideal for processes with unknown durations.
             </p>
             <br></br>
             <Row $Hcenter className="image-container">
