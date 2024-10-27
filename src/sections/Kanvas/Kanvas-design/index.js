@@ -6,7 +6,6 @@ import KanvasIntegrationsSection from "./kanvas-design-integrations";
 import { KanvasMobileSwiper } from "./Kanvas_Mobile_swiper/KanvasMobileSwiper";
 import KanvasDesignFeatureCarousel from "./kanvas-design-features-carousel";
 
-import SignupForm from "../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 
@@ -19,7 +18,6 @@ const KanvasDesign = () => {
       <KanvasIntegrationsSection/>
       <KanvasMobileSwiper/>
       <KanvasDesignFeatureCarousel />
-      <SignupForm />
       <Reviews />
     </KanvasDesignWrapper>
   );
