@@ -6,7 +6,6 @@ import {
   Typography,
   IconButton,
   Button,
-
 } from "@layer5/sistent";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -15,6 +14,22 @@ import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode
 
 export default function SearchAppBar() {
   const { isDark } = useStyledDarkMode();
+
+  // State for window width (for client-side check only)
+  const [isLargeScreen, setIsLargeScreen] = React.useState(false);
+
+  React.useEffect(() => {
+    // Check if window is defined to handle SSR
+    if (typeof window !== "undefined") {
+      setIsLargeScreen(window.innerWidth >= 600);
+
+      // Optional: Update the width on resize
+      const handleResize = () => setIsLargeScreen(window.innerWidth >= 600);
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -38,17 +53,12 @@ export default function SearchAppBar() {
               position: "relative",
               borderRadius: "4px",
               backgroundColor: "rgba(255, 255, 255, 0.15)",
-              marginLeft: 0,
-              width: "100%",
+              marginLeft: isLargeScreen ? "8px" : 0,
+              width: isLargeScreen ? "auto" : "100%",
               display: "flex",
               alignItems: "center",
-              ...(window.innerWidth >= 600 && {
-                marginLeft: "8px",
-                width: "auto",
-              }),
             }}
           >
-
             <div
               style={{
                 padding: "0 16px",
@@ -63,7 +73,6 @@ export default function SearchAppBar() {
               <SearchIcon />
             </div>
 
-
             <InputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
@@ -72,7 +81,7 @@ export default function SearchAppBar() {
                 color: "black",
                 paddingLeft: "calc(1em + 32px)",
                 transition: "width 0.2s ease",
-                ...(window.innerWidth >= 600 && {
+                ...(isLargeScreen && {
                   width: "12ch",
                   "&:focus": {
                     width: "20ch",
@@ -81,7 +90,6 @@ export default function SearchAppBar() {
               }}
             />
           </div>
-
 
           <Button color="inherit" sx={{ marginLeft: 2 }}>
             Login
