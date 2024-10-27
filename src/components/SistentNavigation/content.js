@@ -87,5 +87,20 @@ export const content = [
     id: 23,
     link: "/projects/sistent/components/text-field/code",
     text: "Text Field",
-  }
+  },
+  {
+    id: 24,
+    link: "/projects/sistent/components/circularprogress",
+    text: "Circular Progress"
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/circularprogress/guidance",
+    text: "Circular Progress"
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/circularprogress/code",
+    text: "Circular Progress"
+  },
 ];
