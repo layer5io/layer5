@@ -49,14 +49,16 @@ const MeshMasterBrand = () => {
           <Row $Vcenter className="ImgDiv">
             <Col $xs={12} $sm={4}>
               <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <img src={MeshMasterIcon} alt="Meshmaster Icon" />
+              <h5>mark and text</h5>
             </Col>
             <Col $xs={12} $sm={4}>
               <img src={MeshMasterText} alt="Meshmaster Text" />
+              <h5>text only</h5>
             </Col>
-
+            <Col $xs={12} $sm={4}>
+              <img src={MeshMasterIcon} style={{ minWidth: "100px" }} alt="Meshmaster Icon" />
+              <h5>mark only</h5>
+            </Col>
           </Row>
         </SRLWrapper>
       </Row>
