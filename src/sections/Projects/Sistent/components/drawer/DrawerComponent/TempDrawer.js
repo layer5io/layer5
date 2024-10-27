@@ -96,7 +96,7 @@ export default function TemporaryDrawer() {
           position: "relative",
           flex: 1,
           overflow: "hidden",
-          display : "flex",
+          display: "flex",
           flexDirection: "row",
         }}>
           <Drawer

@@ -2,14 +2,13 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { Button, SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@layer5/sistent";
 import { CodeBlock } from "../button/code-block";
-import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import {codes} from './DrawerComponent/data'
+import { codes } from "./DrawerComponent/data";
 import TemporaryDrawer from "./DrawerComponent/TempDrawer";
 import MiniVariantDrawer from "./DrawerComponent/miniVariant";
 import PersistentDrawer from "./DrawerComponent/PersistentDrawer";
@@ -68,7 +67,7 @@ export const DrawerCode = () => {
             <h2>Drawers</h2>
           </a>
           <p>
-            The button comes in Various types: 
+            The button comes in Various types:
           </p>
           <h3>Temporary Drawers</h3>
           <p>
@@ -77,7 +76,7 @@ export const DrawerCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-               <TemporaryDrawer/>
+                <TemporaryDrawer/>
               </SistentThemeProvider>
             </div>
             <CodeBlock name="Temporary Drawers" code={codes[0]} />
@@ -101,7 +100,7 @@ export const DrawerCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <PersistentDrawer/>
+                <PersistentDrawer/>
               </SistentThemeProvider>
             </div>
             <CodeBlock name="Persistent Drawer" code={codes[2]} />
@@ -114,12 +113,12 @@ export const DrawerCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <PermanentDrawer/>
+                <PermanentDrawer/>
               </SistentThemeProvider>
             </div>
             <CodeBlock name="Permanent Drawer" code={codes[2]} />
           </div>
-         
+
 
           <h3>Modal Drawer</h3>
           <p>
@@ -128,12 +127,12 @@ export const DrawerCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  {/* <ModalDrawer/> */}
+                {/* <ModalDrawer/> */}
               </SistentThemeProvider>
             </div>
             <CodeBlock name="Permanent Drawer" code={codes[2]} />
           </div>
-         
+
         </div>
       </div>
     </SistentLayout>

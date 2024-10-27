@@ -568,5 +568,4 @@ export default function PermanentDrawer() {
           Next
         </Button>
     </SistentThemeProvider>`,
-  ];
-  
+];

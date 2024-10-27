@@ -1,26 +1,18 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-
-import { SistentThemeProvider, Button, Drawer } from "@layer5/sistent";
+import { SistentThemeProvider } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
+import { Table } from "@layer5/sistent";
 
 import TemporaryDrawer from "./DrawerComponent/TempDrawer";
 import PersistentDrawer from "./DrawerComponent/PersistentDrawer";
 import MiniDrawer from "./DrawerComponent/miniVariant";
 import PermanentDrawer from "./DrawerComponent/permanentDrawer";
+
 const SistentDrawer = () => {
   const props = [
     {
@@ -146,30 +138,30 @@ const SistentDrawer = () => {
               Here are the commonly used props for the Drawer component, including both standard and swipeable variants:
           </p>
           <Row $Hcenter className="image-container">
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-          <Table>
-          <div style={{ display: 'table', width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            {/* Table Header */}
-            <div style={{ display: 'table-row', fontWeight: 'bold' }}>
-              <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>Prop</div>
-              <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>Type</div>
-              <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>Default</div>
-              <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>Description</div>
-            </div>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Table>
+                <div style={{ display: "table", width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+                  {/* Table Header */}
+                  <div style={{ display: "table-row", fontWeight: "bold" }}>
+                    <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>Prop</div>
+                    <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>Type</div>
+                    <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>Default</div>
+                    <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>Description</div>
+                  </div>
 
-            {/* Table Body */}
-            {props.map((prop) => (
-              <div style={{ display: 'table-row' }} key={prop.name}>
-                <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>{prop.name}</div>
-                <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>{prop.type}</div>
-                <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>{prop.defaultValue}</div>
-                <div style={{ display: 'table-cell', padding: '8px', border: '1px solid #ddd' }}>{prop.description}</div>
-              </div>
-            ))}
-          </div>
+                  {/* Table Body */}
+                  {props.map((prop) => (
+                    <div style={{ display: "table-row" }} key={prop.name}>
+                      <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>{prop.name}</div>
+                      <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>{prop.type}</div>
+                      <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>{prop.defaultValue}</div>
+                      <div style={{ display: "table-cell", padding: "8px", border: "1px solid #ddd" }}>{prop.description}</div>
+                    </div>
+                  ))}
+                </div>
 
-          </Table>
-          </SistentThemeProvider>
+              </Table>
+            </SistentThemeProvider>
           </Row>
           <div style={{ marginBottom: "20px" }}>
 
