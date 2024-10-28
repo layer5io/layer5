@@ -5,9 +5,9 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import KanvasIcon from "../../../../assets/images/kanvas/kanvas-color-icon.svg";
-import Kanvas from "../../../../assets/images/kanvas/kanvas-color-horizontal.svg";
-import KanvasTitle from "../../../../assets/images/kanvas/kanvas-color-text.webp";
+import KanvasIcon from "../../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import Kanvas from "../../../../assets/images/kanvas/horizontal/kanvas-horizontal-color.svg";
+import KanvasTitle from "../../../../assets/images/kanvas/text-only/kanvas-text-color.svg";
 
 const KanvasWrapper = styled.section`
     .sub-project {
@@ -56,13 +56,16 @@ const KanvasBrand = () => {
           <SRLWrapper>
             <Row $Vcenter className="ImgDiv">
               <Col $xs={12} $sm={4}>
-                <img src={Kanvas} alt="Kanvas Logo" />
+                <img src={Kanvas} style={{ minWidth: "200px" }} alt="Kanvas Logo" />
+                <h5>mark and text</h5>
               </Col>
               <Col $xs={12} $sm={4}>
-                <img src={KanvasIcon} alt="KanvasLight Icon" />
+                <img src={KanvasTitle} style={{ minWidth: "200px" }} alt="KanvasTitle Text" />
+                <h5>text only</h5>
               </Col>
               <Col $xs={12} $sm={4}>
-                <img src={KanvasTitle} alt="KanvasTitle Text" />
+                <img src={KanvasIcon} style={{ minWidth: "100px" }} alt="KanvasLight Icon" />
+                <h5>mark only</h5>
               </Col>
             </Row>
           </SRLWrapper>

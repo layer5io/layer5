@@ -9,7 +9,7 @@ import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp
 import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
 import Github_Light from "../../assets/images/socialIcons/github-light.svg";
-import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/kanvas-light-stacked.svg";
+import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import SquarePoint from "./SquarePoint";
 
 
