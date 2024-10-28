@@ -7,13 +7,15 @@ import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
+
 export const CircularprogressGuidance = () => {
   const { isDark } = useStyledDarkMode();
   const location = useLocation();
 
   const [size, setSize] = useState(40); // default size
   const [thickness, setThickness] = useState(4); // default thickness
-
+  const maxSize = 80;
+  const maxThickness = 10;
   return (
     <SistentLayout title="Circular Progress">
       <div className="content">
@@ -90,7 +92,11 @@ export const CircularprogressGuidance = () => {
                 label="Increase Size"
                 size="medium"
                 style={{ marginLeft: "20px" }}
-                onClick={() => setSize(size + 10)} // Increase size on click
+                onClick={() => {
+                  if (size < maxSize) {
+                    setSize(size + 10);
+                  }
+                }}
               />
             </SistentThemeProvider>
           </Row>
@@ -111,7 +117,11 @@ export const CircularprogressGuidance = () => {
                 label="Increase Thickness"
                 size="medium"
                 style={{ marginLeft: "20px" }}
-                onClick={() => setThickness(thickness + 2)}
+                onClick={() => {
+                  if (thickness < maxThickness) {
+                    setThickness(thickness + 2);
+                  }
+                }}
               />
             </SistentThemeProvider>
           </Row>

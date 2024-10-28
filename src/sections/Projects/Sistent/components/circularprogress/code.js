@@ -4,13 +4,15 @@ import { useLocation } from "@reach/router";
 import {
   SistentThemeProvider,
   CircularProgress,
+  Box,
 } from "@layer5/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-
+import WarningIcon from "@mui/icons-material/Warning";
+import ReportIcon from "@mui/icons-material/Report";
 const codes = [
   `<SistentThemeProvider>
       <CircularProgress />
@@ -44,6 +46,18 @@ const codes = [
       <CircularProgress color="success" />
       <CircularProgress color="inherit" />
   </SistentThemeProvider>`,
+  `
+   import ReportIcon from "@mui/icons-material/Report";
+   import WarningIcon from "@mui/icons-material/Warning";
+
+  <Box sx={{ display: "flex", gap: 2, alignItems: "center", flexWrap: "wrap" }}>
+      <CircularProgress color="warning">
+        <WarningIcon color="warning" />
+      </CircularProgress>
+      <CircularProgress color="error" sx={{ "--CircularProgress-size": "80px" }}>
+        <ReportIcon color="error" />
+      </CircularProgress>
+  </Box>`
 
 ];
 
@@ -218,6 +232,59 @@ export const CircularprogressCode = () => {
             </Row>
             <div className="showcase">
               <CodeBlock name="color-variation-circular-progress" code={codes[4]} />
+            </div>
+
+
+            <a id="Circular image Examples">
+              <h3>Circular Progress with Centered Icon Overlay Examples</h3>
+            </a>
+            <p>
+            By default, any children nested inside the Circular Progress will be centered, allowing icons or text to overlay seamlessly.
+            </p>
+
+
+            <br></br>
+            <Row $Hcenter className="image-container">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Box sx={{ display: "flex", gap: 4, alignItems: "center", flexWrap: "wrap" }}>
+
+                  <Box position="relative" display="inline-flex">
+                    <CircularProgress color="warning" size={60} />
+                    <Box
+                      top={0}
+                      left={0}
+                      bottom={0}
+                      right={0}
+                      position="absolute"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <WarningIcon color="warning" />
+                    </Box>
+                  </Box>
+
+
+                  <Box position="relative" display="inline-flex">
+                    <CircularProgress color="error" size={60} />
+                    <Box
+                      top={0}
+                      left={0}
+                      bottom={0}
+                      right={0}
+                      position="absolute"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <ReportIcon color="error" />
+                    </Box>
+                  </Box>
+                </Box>
+              </SistentThemeProvider>
+            </Row>
+            <div className="showcase">
+              <CodeBlock name="image-circular-progress" code={codes[5]} />
             </div>
           </SistentThemeProvider>
         </div>
