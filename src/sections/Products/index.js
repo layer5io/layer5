@@ -10,7 +10,7 @@ import codicon from "./images/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
