@@ -13,6 +13,8 @@ import PersistentDrawer from "./DrawerComponent/PersistentDrawer";
 import MiniDrawer from "./DrawerComponent/miniVariant";
 import PermanentDrawer from "./DrawerComponent/permanentDrawer";
 
+// testing drawer
+
 const SistentDrawer = () => {
   const props = [
     {
