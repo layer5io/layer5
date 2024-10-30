@@ -53,12 +53,18 @@ const componentsData = [
   },
   {
     id: 7,
+    name: "Circular Progress",
+    description:
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
+    url: "/projects/sistent/components/circularprogress",
+  },
+  {
+    id: 8,
     name: "Link",
     description:
       "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
   },
-
 ];
 
 const SistentComponents = () => {
