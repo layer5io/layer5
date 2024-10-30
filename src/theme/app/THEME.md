@@ -87,7 +87,7 @@ OR
 
 - SVG or image uses transparent sections that change with the background color to work with either theme.
 
-[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon.svg)
+[Example of SVG file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/kanvas/icon-only/kanvas-icon-color.svg)
 
 [Example of image file with transparent sections](https://github.com/layer5io/layer5/blob/master/src/assets/images/app/projects/meshery-logo-light.webp)
 
