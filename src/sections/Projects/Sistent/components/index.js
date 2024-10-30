@@ -53,11 +53,18 @@ const componentsData = [
   },
   {
     id: 7,
+    name: "Link",
+    description:
+      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
+    url: "/projects/sistent/components/link",
+  },
+  {
+    id: 8,
     name: "Drawer",
     description:
       "A Drawer component provides a sliding panel that can be used to display navigation links, actions, or additional content",
     url: "/projects/sistent/components/drawer",
-  }
+  },
 ];
 
 const SistentComponents = () => {
