@@ -10,7 +10,7 @@ import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
 const SecurityVulnerabilitiesPage = () => {
   return (
