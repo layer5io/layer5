@@ -11,7 +11,7 @@ import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
-import SignupForm from "./signup-form";
+import KanvasBtn from "./kanvas-buttons.js";
 import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
 import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
@@ -244,7 +244,7 @@ const Kanvas = (props) => {
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex} />
           {/* <MesheryAction /> */}
-          <SignupForm />
+          <KanvasBtn style={{ marginBottom: "2rem" }} />
           <Platform />
         </Container>
       </div>

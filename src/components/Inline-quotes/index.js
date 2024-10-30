@@ -26,6 +26,7 @@ text-align: center;
     h4 {
         text-align: ${props => props.$onlyQuoteIsPresent ? "center" : "right"};
         flex: ${props => props.$onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%"};
+        color: ${props => props.theme.primaryColor};
         font-weight: 100;
         font-style: italic;
         @media screen and (max-width: 600px) {

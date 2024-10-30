@@ -58,4 +58,34 @@ export const content = [
     link: "/projects/sistent/components/paper/code",
     text: "Paper",
   },
+  {
+    id: 18,
+    link: "/projects/sistent/components/popper",
+    text: "Popper",
+  },
+  {
+    id: 19,
+    link: "/projects/sistent/components/popper/guidance",
+    text: "Popper",
+  },
+  {
+    id: 20,
+    link: "/projects/sistent/components/popper/code",
+    text: "Popper",
+  },
+  {
+    id: 21,
+    link: "/projects/sistent/components/text-field",
+    text: "Text Field",
+  },
+  {
+    id: 22,
+    link: "/projects/sistent/components/text-field/guidance",
+    text: "Text Field",
+  },
+  {
+    id: 23,
+    link: "/projects/sistent/components/text-field/code",
+    text: "Text Field",
+  }
 ];

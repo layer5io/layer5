@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
@@ -9,6 +8,22 @@ import prometheus from "../../../collections/integrations/prometheus/icons/color
 import kubernetes from "../../../collections/integrations/kubernetes/icons/color/kubernetes-color.svg";
 import keda from "../../../collections/integrations/keda/icons/color/keda-color.svg";
 import linkerd from "../../../collections/integrations/linkerd/icons/color/linkerd-color.svg";
+import istio from "../../../collections/integrations/istio-base/icons/color/istio-base-color.svg";
+import jaeger from "../../../collections/integrations/jaeger/icons/color/jaeger-color.svg";
+import envoy from "../../../collections/integrations/envoy/icons/color/envoy-color.svg";
+import kong from "../../../collections/integrations/kong/icons/color/kong-color.svg";
+import grafana from "../../../collections/integrations/grafana-agent-operator/icons/color/grafana-agent-operator-color.svg";
+import docker from "../../../collections/integrations/docker/icons/color/docker-color.svg";
+import opentelemetry from "../../../collections/integrations/opentelemetry-operator/icons/color/opentelemetry-operator-color.svg";
+import kiali from "../../../collections/integrations/kiali-operator/icons/color/kiali-operator-color.svg";
+import knative from "../../../collections/integrations/knative/icons/color/knative-color.svg";
+import dapr from "../../../collections/integrations/dapr/icons/color/dapr-color.svg";
+import fabedge from "../../../collections/integrations/fabedge/icons/color/fabedge-color.svg";
+import amdgpu from "../../../collections/integrations/amd-gpu/icons/color/amd-gpu-color.svg";
+import karmada from "../../../collections/integrations/karmada/icons/color/karmada-color.svg";
+import kubeflow from "../../../collections/integrations/kubeflow/icons/color/kubeflow-color.svg";
+import terraform from "../../../collections/integrations/terraform/icons/color/terraform-color.svg";
+import fluentd from "../../../collections/integrations/fluentd/icons/color/fluentd-color.svg";
 
 const ViewsSectionWrapper = styled.div`
 
@@ -57,20 +72,34 @@ const ViewsSectionWrapper = styled.div`
         }
     }
 
-    h2 {
-        /* max-width: 90%; */
-        padding-bottom: 2%;
-      }
-    }
+    .hero-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex: 0 0 50%;
+        max-width: 50%;
+        overflow: hidden;
+        height: 100%;
 
-    h4 {
-        max-width: 90%;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
-          }
+        }
     }
 
-    .hero-image {
+    h2 {
+      /* max-width: 90%; */
+      padding-bottom: 2%;
+    }
+  }
+
+  h4 {
+      max-width: 90%;
+      @media only screen and (max-width: 767px) {
+        max-width: 100%;
+        }
+  }
+
+   .hero-image {
         position: relative;
         display: flex;
         justify-content: center;
@@ -89,6 +118,7 @@ const ViewsSectionWrapper = styled.div`
           }
         }
 
+      
         .visible {
                 opacity: 1;
                 transition: all 0.2s ease-in;
@@ -110,55 +140,56 @@ const ViewsSectionWrapper = styled.div`
         height: 680px;
     }
 
+
     .container {
-      display: flex;
-      justify-content: center;
-    }
-    
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem; 
+        height: 100%; 
+      }
+
     .line {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      flex-wrap: wrap;
-    }
-    .position-line-down{
-        transform: translateY(-20em);
-    }
-    .position-line-up{
-        transform: translateY(20em);
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        width: 200px;
     }
 
-    .line-primary, .line-secondary {
+    .scroll-track {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
     }
 
-    .animation-up-scroll {
-        animation: scroll-up-animation 15s linear infinite;
+    .scroll-down .scroll-track {
+        animation: scrollDown 35s linear infinite;
+    }
 
-        @keyframes scroll-up-animation {
-            0% {
-                transform: translateY(0%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
+    .scroll-up .scroll-track {
+        animation: scrollUp 35s linear infinite;
+    }
+
+    @keyframes scrollDown {
+        0% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(0%);
         }
     }
-    .animation-down-scroll {
 
-        animation: scroll-down-animation 15s linear infinite;
-        @keyframes scroll-down-animation {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100%);
-            }
+    @keyframes scrollUp {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(-50%);
         }
     }
+
     .box {
       display: flex;
       flex-direction: column;
@@ -205,68 +236,68 @@ const ViewsSectionWrapper = styled.div`
 `;
 
 const KanvasVisualizerViews = () => {
-  const [imageRef, inView] = useInView({ threshold: 0.3 });
-  const [imageInView, setimageInView] = useState(false);
+  const [imageRef] = useInView({ threshold: 0.3 });
 
-  if (inView && !imageInView) setimageInView(true);
-  else if (imageInView && !inView) setimageInView(false);
+  const leftColumnItems = [
+    { img: prometheus, name: "Prometheus" },
+    { img: argocd, name: "Argo CD" },
+    { img: cilium, name: "Cilium" },
+    { img: istio, name: "Istio" },
+    { img: grafana, name: "Grafana" },
+    { img: knative, name: "Knative" },
+    { img: docker, name: "Docker" },
+    { img: envoy, name: "Envoy" },
+    { img: karmada, name: "Karmada" },
+    { img: amdgpu, name: "AMD GPU" },
+    { img: fluentd, name: "Fluentd" }
+  ];
+
+  const rightColumnItems = [
+    { img: kubernetes, name: "Kubernetes" },
+    { img: keda, name: "Keda" },
+    { img: linkerd, name: "Linkerd" },
+    { img: jaeger, name: "Jaeger" },
+    { img: kong, name: "Kong" },
+    { img: opentelemetry, name: "Opentelemetry" },
+    { img: dapr, name: "Dapr" },
+    { img: kiali, name: "Kiali" },
+    { img: fabedge, name: "FabEdge" },
+    { img: kubeflow, name: "Kubeflow" },
+    { img: terraform, name: "Terraform" }
+  ];
+
+  const renderColumn = (items, direction) => (
+    <div className={`line scroll-${direction}`}>
+      <div className="scroll-track">
+        {items.map((item, index) => (
+          <div className="box" key={`set1-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {items.map((item, index) => (
+          <div className="box" key={`set2-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {items.map((item, index) => (
+          <div className="box" key={`set3-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
-            src={CommentingImageDark}
-            alt=""
-          /> */}
-          <div
-            // className={
-            //   imageInView ? "visible container" : "not-visible container"
-            // }
-            className="visible container"
-          >
-            <div className="line position-line-down">
-              <div className="line-primary animation-down-scroll">
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={argocd} alt="" />
-                  <div className="boxText">Argo CD</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={cilium} alt="" />
-                  <div>Cilium</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-              </div>
-
-            </div>
-            <div className="line position-line-up">
-              <div className="line-primary animation-up-scroll">
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={keda} alt="" />
-                  <div>Keda</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={linkerd} alt="" />
-                  <div>Linkerd</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-              </div>
-            </div>
+          <div className="container">
+            {renderColumn(leftColumnItems, "down")}
+            {renderColumn(rightColumnItems, "up")}
           </div>
         </div>
         <div className="hero-text">

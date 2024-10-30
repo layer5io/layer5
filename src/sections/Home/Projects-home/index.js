@@ -14,7 +14,7 @@ const Projects = () => {
   const projectImage2_dark = "../../../assets/images/app/projects/smp.webp";
   const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
   const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
-  const kanvasLogo = "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+  const kanvasLogo = "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
   if (!didLoad){
     return null;
   }
