@@ -3,9 +3,8 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import { SistentThemeProvider } from "@layer5/sistent";
-import {CodeBlock} from '../button/code-block.js';
+import { CodeBlock } from "../button/code-block.js";
 import { SistentLayout } from "../../sistent-layout";
-
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { codes } from "./AppBars/data";
@@ -13,7 +12,6 @@ import BasicAppBar from "./AppBars/BasicAppBar";
 import ResponsiveAppBar from "./AppBars/BasicAppBarResponsive";
 import SearchAppBar from "./AppBars/AppBarSearch";
 import BottomAppBar from "./AppBars/BottomAppbar";
-
 
 export const AppBarCode = () => {
   const location = useLocation();
