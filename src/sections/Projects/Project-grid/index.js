@@ -16,7 +16,7 @@ import smp_light from "../../../assets/images/service-mesh-performance/icon/smp-
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-import kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import catalog from "../../../assets/images/catalog-icon/catalog.svg";
 import sistent from "../../../assets/images/sistent/sistent-logo.svg";
 import SoSpecial from "../../Home/So-Special-Section";

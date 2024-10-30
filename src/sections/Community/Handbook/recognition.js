@@ -16,7 +16,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
-import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
 import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
