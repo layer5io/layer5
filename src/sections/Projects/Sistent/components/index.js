@@ -64,7 +64,6 @@ const componentsData = [
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
     url: "/projects/sistent/components/appbar",
-  }
   },
 ];
 

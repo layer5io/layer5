@@ -12,6 +12,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
 
+// test
+
 export default function SearchAppBar() {
   const { isDark } = useStyledDarkMode();
 
