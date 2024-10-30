@@ -1,4 +1,4 @@
-import featureData from "./feature_data.json";
+import featureData from "../../../feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
