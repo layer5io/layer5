@@ -59,7 +59,7 @@ const componentsData = [
     url: "/projects/sistent/components/link",
   },
   {
-    id: 7,
+    id: 8,
     name: "Avatar",
     description:
       "A Avatar is an interactive element that triggers a specific action takes users where they need to go, and points out what happens next in a given flow.",

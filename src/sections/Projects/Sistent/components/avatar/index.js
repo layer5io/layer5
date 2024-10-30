@@ -11,6 +11,8 @@ import Image from "../../../../../assets/images/avatar-images/avatar.png";
 import Image1 from "../../../../../assets/images/avatar-images/avatar1.png";
 import Image2 from "../../../../../assets/images/avatar-images/avatar2.png";
 
+// removing merge conflicts
+
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
