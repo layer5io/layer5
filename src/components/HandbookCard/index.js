@@ -13,9 +13,13 @@ const HandbookCard = ({ title, description, to }) => {
           <p className="handbook__card--para">
             {description}
           </p>
-          <div className="handbook__card--lm__container">
-            <Link to={to} class="handbook__card--lm">Read More <HiOutlineChevronRight /></Link>
-          </div>
+          {to && (
+            <div className="handbook__card--lm__container">
+              <a href={to} className="handbook__card--lm">
+                Read More <HiOutlineChevronRight />
+              </a>
+            </div>
+          )}
         </div>
       </Link>
     </HandbookCardWrapper>
