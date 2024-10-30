@@ -1,4 +1,4 @@
-import pricingData from "./pricing_data.json";
+import featureData from "./feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
@@ -56,6 +56,6 @@ function generateOptions(data) {
   return options;
 }
 
-const options = generateOptions(pricingData);
+const options = generateOptions(featureData);
 
 export default options;
