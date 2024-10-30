@@ -55,7 +55,7 @@ const componentsData = [
     id: 7,
     name: "Circular Progress",
     description:
-      "This is a Circular Progress element",
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
     url: "/projects/sistent/components/circularprogress",
   },
   {
