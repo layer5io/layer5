@@ -4,7 +4,6 @@ import KanvasCollaborateBanner from "./kanvas-collaborate-banner";
 import CollaborationFeatureTeam from "./collaboration-feature-team";
 import CollaborationFeatureWork from "./collaboration-feature-work";
 
-import SignupForm from "./../signup-form";
 import Reviews from "../../Pricing/review-slider";
 
 
@@ -15,7 +14,6 @@ const KanvasCollaborate = () => {
       <CollaborationFeatureTeam />
       {/* <CollaborationFeatureCreate/> */}
       <CollaborationFeatureWork />
-      <SignupForm />
       <Reviews />
     </KanvasCollaborateWrapper>
   );
