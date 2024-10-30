@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import { SistentThemeProvider } from "@layer5/sistent";
-import { CodeBlock } from "../../../../../reusecore/CodeBlock/codeBlock.js";
+import {CodeBlock} from '../button/code-block.js';
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
