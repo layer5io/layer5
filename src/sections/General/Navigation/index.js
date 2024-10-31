@@ -9,7 +9,6 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import axios from "axios";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-// import kanvas_dark from "../../../assets/images/kanvas/icon-only/kanvas-icon-white.svg";
 import kanvas_color from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
