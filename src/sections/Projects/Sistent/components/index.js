@@ -58,7 +58,13 @@ const componentsData = [
       "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
   },
-
+  {
+    id: 8,
+    name: "Avatar",
+    description:
+      "A Avatar is an interactive element that triggers a specific action takes users where they need to go, and points out what happens next in a given flow.",
+    url: "/projects/sistent/components/avatar",
+  },
 ];
 
 const SistentComponents = () => {
