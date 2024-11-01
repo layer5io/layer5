@@ -65,6 +65,13 @@ const componentsData = [
       "Containers align and center content, providing responsive layout options for different screen sizes.",
     url: "/projects/sistent/components/container",
   },
+  {
+    id: 9,
+    name: "Divider",
+    description:
+      "The Divider component adds a thin line to separate sections, enhancing layout clarity.",
+    url: "/projects/sistent/components/divider",
+  },
 ];
 
 const SistentComponents = () => {
