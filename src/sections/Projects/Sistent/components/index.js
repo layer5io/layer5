@@ -60,10 +60,10 @@ const componentsData = [
   },
   {
     id: 8,
-    name: "App Bar",
+    name: "Container",
     description:
-      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
-    url: "/projects/sistent/components/appbar",
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
   },
 ];
 
@@ -127,7 +127,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>
