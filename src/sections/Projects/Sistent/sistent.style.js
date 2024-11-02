@@ -684,13 +684,12 @@ const SistentWrapper = styled.div`
   font-style: normal;
   font-weight: 400;
   color: ${(props) => props.theme.whiteToBlack};
-  
-  display: -webkit-box;               /* Enables the multi-line ellipsis effect */
-  -webkit-box-orient: vertical;       /* Sets the box layout orientation to vertical */
-  -webkit-line-clamp: 3;              /* Limits to 3 lines; ellipsis shows after 3 lines */
-  overflow: hidden;                   /* Hides any content beyond the specified lines */
-  text-overflow: ellipsis;            /* Ensures ellipsis (...) is applied */
-  max-height: calc(1.5rem * 4);        /* Adjusts the height based on line height */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.5rem * 4);
 }
 
   .card {
