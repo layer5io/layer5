@@ -2,9 +2,8 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Container, Box } from "@layer5/sistent";
+import { SistentThemeProvider, Box } from "@layer5/sistent";
 import { CodeBlock } from "../button/code-block";
-// import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";

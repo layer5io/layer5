@@ -66,7 +66,7 @@ const componentsData = [
     url: "/projects/sistent/components/container",
   },
   {
-    id: 11,
+    id: 10,
     name: "Box",
     description:
       "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
