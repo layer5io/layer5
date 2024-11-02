@@ -645,6 +645,7 @@ const SistentWrapper = styled.div`
 
   .product_cards .card {
     width: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -652,6 +653,7 @@ const SistentWrapper = styled.div`
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};
     padding: 2rem;
   }
+
   .logo {
     max-height: 3rem;
   }
@@ -675,14 +677,21 @@ const SistentWrapper = styled.div`
     color: ${props => props.theme.text};
   }
 
-  .card .text {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    color: ${(props) => props.theme.whiteToBlack};
-  }
+.card .text {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: ${(props) => props.theme.whiteToBlack};
+  
+  display: -webkit-box;               /* Enables the multi-line ellipsis effect */
+  -webkit-box-orient: vertical;       /* Sets the box layout orientation to vertical */
+  -webkit-line-clamp: 3;              /* Limits to 3 lines; ellipsis shows after 3 lines */
+  overflow: hidden;                   /* Hides any content beyond the specified lines */
+  text-overflow: ellipsis;            /* Ensures ellipsis (...) is applied */
+  max-height: calc(1.5rem * 4);        /* Adjusts the height based on line height */
+}
 
   .card {
     box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
