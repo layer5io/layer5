@@ -38,6 +38,9 @@ const lighttheme = {
 
   headingColor: "#111111",
 
+  // searchbox Icon Color
+  searchIconColor: "#333333",
+
   // light slate gray (medium gray)
   textColor: "#000000",
   shadowColor: "rgba(0, 0, 0, 0.05)",
@@ -266,6 +269,9 @@ export const darktheme = {
   tertiaryColorTwo: "#477E96",
 
   headingColor: "#000000",
+
+  // searchbox icon color
+  searchIconColor: "#FFFFFF",
 
   // light slate gray (medium gray)
   textColor: "#000000",

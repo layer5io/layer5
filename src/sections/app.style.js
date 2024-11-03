@@ -174,6 +174,25 @@ section{
     position: relative;
 }
 
+  // styling for the searchbox
+  .search-box {
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+
+            &:focus {
+            border-color: #fff !important;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+          }
+        }
+
+        // for the Search Icon
+        svg {
+            color: ${(props) => props.theme.searchIconColor};
+        }
+  }
+
 /* Modal styling needs to be applied to the global CSS */
 
 .Modal {
