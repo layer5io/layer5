@@ -645,7 +645,7 @@ const SistentWrapper = styled.div`
 
   .product_cards .card {
     width: 400px;
-    height: 300px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
