@@ -65,6 +65,13 @@ const componentsData = [
       "Containers align and center content, providing responsive layout options for different screen sizes.",
     url: "/projects/sistent/components/container",
   },
+  {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
 ];
 
 const SistentComponents = () => {
