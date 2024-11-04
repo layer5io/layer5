@@ -52,7 +52,21 @@ const componentsData = [
     url: "/projects/sistent/components/text-field",
   },
   {
+    id: 7,
+    name: "Link",
+    description:
+      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
+    url: "/projects/sistent/components/link",
+  },
+  {
     id: 8,
+    name: "Container",
+    description:
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
+  },
+  {
+    id: 9,
     name: "Custom Tooltip",
     description:
       "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
@@ -120,7 +134,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>
