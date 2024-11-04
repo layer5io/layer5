@@ -155,6 +155,11 @@ const BrandPageWrapper = styled.section`
 		text-align: end;
 		margin: 0 0 1rem 0;
 	}
+
+	.color-code-wrapper{
+		display:flex;
+		flex-wrap: wrap;
+	}
 	.ImgDiv, .color-code-wrapper {
 		width: 100%;
 		margin: auto;

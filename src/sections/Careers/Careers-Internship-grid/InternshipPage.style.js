@@ -23,6 +23,12 @@ p{
       font-weight: 400;
     }
   }
+
+  .oppurtunities_row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .oppurtunities > div {
     margin: 3rem 0;
   }
