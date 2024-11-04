@@ -50,7 +50,14 @@ const componentsData = [
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
     url: "/projects/sistent/components/text-field",
-  }
+  },
+  {
+    id: 8,
+    name: "Custom Tooltip",
+    description:
+      "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
+    url: "/projects/sistent/components/customTooltip",
+  },
 ];
 
 const SistentComponents = () => {

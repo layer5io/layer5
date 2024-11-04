@@ -87,5 +87,20 @@ export const content = [
     id: 23,
     link: "/projects/sistent/components/text-field/code",
     text: "Text Field",
-  }
+  },
+  {
+    id: 24,
+    link: "/projects/sistent/components/customTooltip",
+    text: "Custom Tooltip",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/customTooltip/guidance",
+    text: "Custom Tooltip",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/customTooltip/code",
+    text: "Custom Tooltip",
+  },
 ];
