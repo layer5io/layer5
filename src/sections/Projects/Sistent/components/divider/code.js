@@ -51,7 +51,7 @@ const content = (
 );
 
 const codes = [
-  `           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `           <SistentThemeProvider>
                 <List sx={style}>
                   <ListItem>
                     <ListItemText primary="Full width variant below" />
@@ -71,7 +71,7 @@ const codes = [
                 </List>
               </SistentThemeProvider>`,
 
-  ` <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  ` <SistentThemeProvider>
               <Box
                 sx={{
                   display: "inline-flex",
@@ -93,7 +93,7 @@ const codes = [
     </SistentThemeProvider>
 `,
   `
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <SistentThemeProvider>
               <Box
                 sx={{
                   display: "flex",
@@ -116,7 +116,7 @@ const codes = [
               </Box>
             </SistentThemeProvider>
 `,
-  `         <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `         <SistentThemeProvider>
               <Root>
                 {content}
                 <Divider>CENTER</Divider>
