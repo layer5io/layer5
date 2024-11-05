@@ -25,7 +25,7 @@ const codes = [
                     height: "50vh",
                   }}
                 >
-                  <p>
+                  <p style={{ color: "black" }}>
                     This Box is responsive, changing style based on screen size.
                   </p>
                 </Box>
@@ -38,7 +38,7 @@ const codes = [
                     height: "50vh",
                   }}
                 >
-                  <p>
+                  <p style={{ color: "black" }}>
                     This Box is responsive, changing style based on screen size.
                   </p>
                 </Box>
@@ -56,7 +56,7 @@ const codes = [
                     },
                   }}
                 >
-                  <p>Hover over this Box to see the interactive effect.</p>
+                  <p style={{ color: "black" }}>Hover over this Box to see the interactive effect.</p>
                 </Box>
               </SistentThemeProvider>`,
 ];
