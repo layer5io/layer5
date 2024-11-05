@@ -10,14 +10,14 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `           <SistentThemeProvider ini>
+  `           <SistentThemeProvider>
                 <Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
                   <p>
                     This is a Box component with custom background and padding.
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `           <SistentThemeProvider ini>
+  `           <SistentThemeProvider>
                 <Box
                   sx={{
                     bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
@@ -30,7 +30,7 @@ const codes = [
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `           <SistentThemeProvider ini>
+  `           <SistentThemeProvider>
                 <Box
                   sx={{
                     bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
@@ -43,7 +43,7 @@ const codes = [
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `          <SistentThemeProvider ini>
+  `          <SistentThemeProvider>
                 <Box
                   sx={{
                     bgcolor: "#cfe8fc",
