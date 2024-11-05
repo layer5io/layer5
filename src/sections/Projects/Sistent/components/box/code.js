@@ -10,14 +10,14 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `           <SistentThemeProvider ini>
                 <Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
                   <p>
                     This is a Box component with custom background and padding.
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `           <SistentThemeProvider ini>
                 <Box
                   sx={{
                     bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
@@ -30,7 +30,7 @@ const codes = [
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `           <SistentThemeProvider ini>
                 <Box
                   sx={{
                     bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
@@ -43,7 +43,7 @@ const codes = [
                   </p>
                 </Box>
               </SistentThemeProvider>`,
-  `          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  `          <SistentThemeProvider ini>
                 <Box
                   sx={{
                     bgcolor: "#cfe8fc",
@@ -144,7 +144,7 @@ export const BoxCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
-                  <p>
+                  <p style={{ color: "black" }}>
                     This is a Box component with custom background and padding.
                   </p>
                 </Box>
@@ -170,7 +170,7 @@ export const BoxCode = () => {
                     height: "50vh",
                   }}
                 >
-                  <p>
+                  <p style={{ color: "black" }}>
                     This Box is responsive, changing style based on screen size.
                   </p>
                 </Box>
@@ -201,7 +201,9 @@ export const BoxCode = () => {
                     },
                   }}
                 >
-                  <p>Hover over this Box to see the interactive effect.</p>
+                  <p style={{ color: "black" }}>
+                    Hover over this Box to see the interactive effect.
+                  </p>
                 </Box>
               </SistentThemeProvider>
             </div>

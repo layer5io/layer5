@@ -87,7 +87,7 @@ export const BoxGuidance = () => {
                   "&:hover": { bgcolor: "primary.light" },
                 }}
               >
-                <p style={{ color: "white" }}>
+                <p style={{ color: "black" }}>
                   This is a responsive Box component.
                 </p>
               </Box>
@@ -119,7 +119,7 @@ export const BoxGuidance = () => {
                   borderRadius: 4,
                 }}
               >
-                <p style={{ color: "white" }}>
+                <p style={{ color: "black" }}>
                   Customized Box with shadow and color.
                 </p>
               </Box>
@@ -146,7 +146,7 @@ export const BoxGuidance = () => {
                 }}
               >
                 <Box sx={{ bgcolor: "info.main", padding: 2 }}>
-                  <p style={{ color: "white" }}>Nested Box layout example.</p>
+                  <p style={{ color: "black" }}>Nested Box layout example.</p>
                 </Box>
               </Box>
             </SistentThemeProvider>
