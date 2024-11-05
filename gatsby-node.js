@@ -310,19 +310,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   createRedirect({
     fromPath: "/cloud-native-management/kanvas/visualize",
-    toPath: "/cloud-native-management/kanvas/operator",
+    toPath: "/cloud-native-management/kanvas/operate",
     redirectInBrowser: true,
     isPermanent: true,
   });
   createRedirect({
     fromPath: "/kanvas/visualize",
-    toPath: "/cloud-native-management/kanvas/operator",
+    toPath: "/cloud-native-management/kanvas/operate",
     redirectInBrowser: true,
     isPermanent: true,
   });
   createRedirect({
     fromPath: "/kanvas/operator",
-    toPath: "/cloud-native-management/kanvas/operator",
+    toPath: "/cloud-native-management/kanvas/operate",
     redirectInBrowser: true,
     isPermanent: true,
   });
