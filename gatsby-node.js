@@ -321,7 +321,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
-    fromPath: "/kanvas/operator",
+    fromPath: "/kanvas/operate",
     toPath: "/cloud-native-management/kanvas/operate",
     redirectInBrowser: true,
     isPermanent: true,
