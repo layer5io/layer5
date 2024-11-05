@@ -30,9 +30,9 @@ export default function VisualizerFeatures({ features }) {
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
-          <Link to="/cloud-native-management/kanvas/visualize">
+          <Link to="/cloud-native-management/kanvas/operator">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-              <h1>Visualize</h1>
+              <h1>Operate</h1>
               <div className="learn-more">
                 <h5 style={cursorOverArrow ? { color: "#ffffff" } : { color: "#ececec" }}>Learn more</h5>
                 <img src={cursorOverArrow ? LinkArrow : LinkArrowDark} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
@@ -40,7 +40,7 @@ export default function VisualizerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <Link to="/cloud-native-management/kanvas/visualize">
+            <Link to="/cloud-native-management/kanvas/operator">
               <div className="diagram scroll hideInMobile">
                 <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>
