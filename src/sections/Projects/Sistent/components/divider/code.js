@@ -250,12 +250,12 @@ export const DividerCode = () => {
           </div>
           <a id="Orientation">
             <h2>Orientation Example</h2>
-            <p>
-              The Divider component supports two orientations: horizontal and
-              vertical. Each orientation serves different layout needs and
-              enhances the visual structure of your content.
-            </p>
           </a>
+          <p>
+            The Divider component supports two orientations: horizontal and
+            vertical. Each orientation serves different layout needs and
+            enhances the visual structure of your content.
+          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -285,12 +285,12 @@ export const DividerCode = () => {
           </div>
           <a id="With children">
             <h2>With children Example</h2>
-            <p>
-              The Divider component supports two orientations: horizontal and
-              vertical. Each orientation serves different layout needs and
-              enhances the visual structure of your content.
-            </p>
           </a>
+          <p>
+            The Divider component supports two orientations: horizontal and
+            vertical. Each orientation serves different layout needs and
+            enhances the visual structure of your content.
+          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
