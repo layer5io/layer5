@@ -309,6 +309,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/cloud-native-management/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operator",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operator",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/operator",
+    toPath: "/cloud-native-management/kanvas/operator",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
     toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
     redirectInBrowser: true,
