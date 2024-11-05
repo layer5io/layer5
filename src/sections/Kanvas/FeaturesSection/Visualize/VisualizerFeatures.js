@@ -30,7 +30,7 @@ export default function VisualizerFeatures({ features }) {
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
-          <Link to="/cloud-native-management/kanvas/operator">
+          <Link to="/cloud-native-management/kanvas/operate">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Operate</h1>
               <div className="learn-more">
@@ -40,7 +40,7 @@ export default function VisualizerFeatures({ features }) {
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
-            <Link to="/cloud-native-management/kanvas/operator">
+            <Link to="/cloud-native-management/kanvas/operate">
               <div className="diagram scroll hideInMobile">
                 <VisualizerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>
