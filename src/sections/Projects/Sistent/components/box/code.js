@@ -16,7 +16,7 @@ const codes = [
           This is a Box component with custom background and padding.
         </p>
       </Box>
-    </SistentThemeProvider>`,
+</SistentThemeProvider>`,
   ` <SistentThemeProvider>
       <Box
         sx={{
@@ -29,7 +29,7 @@ const codes = [
           This Box is responsive, changing style based on screen size.
         </p>
       </Box>
-    </SistentThemeProvider>`,
+</SistentThemeProvider>`,
   `<SistentThemeProvider>
     <Box
       sx={{
@@ -42,7 +42,7 @@ const codes = [
         This Box is responsive, changing style based on screen size.
       </p>
     </Box>
-  </SistentThemeProvider>`,
+</SistentThemeProvider>`,
   `<SistentThemeProvider>
     <Box
       sx={{
@@ -58,7 +58,7 @@ const codes = [
     >
       <p style={{ color: "black" }}>Hover over this Box to see the interactive effect.</p>
     </Box>
-  </SistentThemeProvider>`,
+</SistentThemeProvider>`,
 ];
 
 export const BoxCode = () => {
