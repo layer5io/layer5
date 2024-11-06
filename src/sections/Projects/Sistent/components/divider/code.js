@@ -51,86 +51,84 @@ const content = (
 );
 
 const codes = [
-  `           <SistentThemeProvider>
-                <List sx={style}>
-                  <ListItem>
-                    <ListItemText primary="Full width variant below" />
-                  </ListItem>
-                  <Divider component="li" />
-                  <ListItem>
-                    <ListItemText primary="Inset variant below" />
-                  </ListItem>
-                  <Divider variant="inset" component="li" />
-                  <ListItem>
-                    <ListItemText primary="Middle variant below" />
-                  </ListItem>
-                  <Divider variant="middle" component="li" />
-                  <ListItem>
-                    <ListItemText primary="List item" />
-                  </ListItem>
-                </List>
-              </SistentThemeProvider>`,
-
+  `<SistentThemeProvider>
+    <List sx={style}>
+      <ListItem>
+        <ListItemText primary="Full width variant below" />
+      </ListItem>
+      <Divider component="li" />
+      <ListItem>
+        <ListItemText primary="Inset variant below" />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem>
+        <ListItemText primary="Middle variant below" />
+      </ListItem>
+      <Divider variant="middle" component="li" />
+      <ListItem>
+        <ListItemText primary="List item" />
+      </ListItem>
+    </List>
+  </SistentThemeProvider>`,
   ` <SistentThemeProvider>
-              <Box
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  border: "1px solid",
-                  borderColor: "divider",
-                  borderRadius: 2,
-                  bgcolor: "background.paper",
-                  color: "text.secondary",
-                  "& svg": {
-                    m: 1,
-                  },
-                }}
-              >
-                <FormatBoldIcon />
-                <Divider orientation="vertical" variant="middle" flexItem />
-                <FormatItalicIcon />
-              </Box>
-    </SistentThemeProvider>
+      <Box
+        sx={{
+          display: "inline-flex",
+          alignItems: "center",
+          border: "1px solid",
+          borderColor: "divider",
+          borderRadius: 2,
+          bgcolor: "background.paper",
+          color: "text.secondary",
+          "& svg": {
+            m: 1,
+          },
+        }}
+      >
+        <FormatBoldIcon />
+        <Divider orientation="vertical" variant="middle" flexItem />
+        <FormatItalicIcon />
+      </Box>
+  </SistentThemeProvider>
 `,
-  `
-            <SistentThemeProvider>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  border: "1px solid",
-                  borderColor: "divider",
-                  borderRadius: 1,
-                  bgcolor: "background.paper",
-                  color: "text.secondary",
-                  "& svg": {
-                    m: 1,
-                  },
-                }}
-              >
-                <FormatAlignLeftIcon />
-                <FormatAlignCenterIcon />
-                <FormatAlignRightIcon />
-                <Divider orientation="vertical" flexItem />
-                <FormatBoldIcon />
-              </Box>
-            </SistentThemeProvider>
+  `<SistentThemeProvider>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        border: "1px solid",
+        borderColor: "divider",
+        borderRadius: 1,
+        bgcolor: "background.paper",
+        color: "text.secondary",
+        "& svg": {
+          m: 1,
+        },
+      }}
+    >
+      <FormatAlignLeftIcon />
+      <FormatAlignCenterIcon />
+      <FormatAlignRightIcon />
+      <Divider orientation="vertical" flexItem />
+      <FormatBoldIcon />
+    </Box>
+  </SistentThemeProvider>
 `,
-  `         <SistentThemeProvider>
-              <Root>
-                {content}
-                <Divider>CENTER</Divider>
-                {content}
-                <Divider textAlign="left">LEFT</Divider>
-                {content}
-                <Divider textAlign="right">RIGHT</Divider>
-                {content}
-                <Divider>
-                  <Chip label="Chip" size="small" />
-                </Divider>
-                {content}
-              </Root>
-            </SistentThemeProvider>`,
+  `<SistentThemeProvider>
+    <Root>
+      {content}
+      <Divider>CENTER</Divider>
+      {content}
+      <Divider textAlign="left">LEFT</Divider>
+      {content}
+      <Divider textAlign="right">RIGHT</Divider>
+      {content}
+      <Divider>
+        <Chip label="Chip" size="small" />
+      </Divider>
+      {content}
+    </Root>
+  </SistentThemeProvider>`,
 ];
 
 export const DividerCode = () => {
