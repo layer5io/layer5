@@ -17,32 +17,114 @@ resource: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
+import MesheryModelsBreakdown from "./meshery-models-breakdown.png";
 
 <BlogWrapper>
 
 ### What is the Kanvas Catalog?
 
-<Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> is a hub for sharing and discovering best practices, reusable templates, and operational patterns for Kubernetes and cloud-native infrastructure. It's like a marketplace where you can find and contribute pre-built infrastructure configurations and operational views. The Catalog is a part of the Kanvas platform, which is a comprehensive suite of tools for managing cloud-native infrastructure.
+<Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> is a hub for sharing
+and discovering best practices, reusable templates, and operational patterns for
+Kubernetes and cloud-native infrastructure. It's like a marketplace where you can
+find and contribute pre-built infrastructure configurations and operational views.
+The Catalog is a part of the Kanvas platform, which is a comprehensive suite of tools
+for managing cloud-native infrastructure.
 
-<div className="note"> <a href="https://meshery.layer5.io/catalog">Explore the catalog</a></div>
+<div className="note">
+  {" "}
+  <a href="https://meshery.layer5.io/catalog">Explore the catalog</a>
+</div>
 
 ### What can you find in the Catalog?
 
-- Design Patterns: Ready-made blueprints for common infrastructure and application architectures. These patterns can save you significant time and effort in designing your deployments.  
+- Design Patterns: Ready-made blueprints for common infrastructure and application architectures. These patterns can save you significant time and effort in designing your deployments.
 - Filters and Applications: Pre-configured filters for Envoy proxies, WebAssembly filters, and complete application deployments.
-- Meshery Designs: Share and reuse your own Meshery configurations, making it easier to collaborate and standardize your deployments.  
+- Meshery Designs: Share and reuse your own Meshery configurations, making it easier to collaborate and standardize your deployments.
 - Meshery Models: Share and reuse your own Meshery models, making it easier to collaborate and standardize your component library.
 
 #### Why is the Catalog useful?
 
 - Accelerated Development: Leverage existing patterns to jumpstart your projects and avoid reinventing the wheel.
-- Community Knowledge: Benefit from the collective experience of the Layer5 community and industry best practices.  
+- Community Knowledge: Benefit from the collective experience of the Layer5 community and industry best practices.
 - Standardization: Promote consistency and reduce errors by using predefined configurations.
 - Collaboration: Share your own designs and contribute to the growing collection of patterns.
 
 ### How can you contribute to the Catalog?
- 
 
+Contributing to the Meshery Catalog is a great way to share your cloud-native configurations with the community. By submitting your models and patterns, you not only showcase your work but also help others benefit from your innovations. This guide outlines how to use `mesheryctl` for uploading your contributions efficiently.
 
+#### Understanding Components and Models
+
+Before contributing, it's essential to understand two key concepts:
+
+**Models in Meshery**:  
+Models are packages that organize resources (apps, services, infrastructure) for easy management. They are:
+
+- Portable, versioned units
+- OCI-compatible images for import/export
+- Containers for components, policies, and connections
+
+**Components in Meshery**:  
+Components are entities in the Meshery ecosystem that expose platform capabilities. They can be:
+
+- Registered, created, and used by users and operators
+- Defined through definitions, instances, and metadata
+- Identified by their kind, apiVersion, and model.name attributes (duplicates share these attributes)
+
+<img src={MesheryModelsBreakdown}></img>
+
+#### Contributing with mesheryctl
+
+1. **Generate a Model from Google Sheets**:  
+   Import configurations directly from Google Sheets:
+
+   ```bash
+   mesheryctl registry generate
+    --spreadsheet-id "1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw"
+    --spreadsheet-cred "[spreadsheet-credential-file]"
+   ```
+
+2. **Generate Models Using Connection and Credential Definitions**:  
+   Specify a connection and credential file for other sources:
+
+   ```bash
+   mesheryctl registry generate
+    --registrant-def [path-to-connection-definition]
+    --registrant-cred [path-to-credential-definition]
+   ```
+
+3. **Upload a Specific Model from Google Sheets**:  
+   To upload a single model:
+
+   ```bash
+   mesheryctl registry generate
+    --spreadsheet-id "1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw"
+    --spreadsheet-cred "[spreadsheet-credential-file]"
+    --model "[model-name]"
+   ```
+
+4. **Import Models from Local CSV Files**:  
+   Download CSV templates, place them in a local folder, and run:
+
+   ```bash
+   mesheryctl registry generate
+    --directory "[local-path-to-directory]"
+   ```
+
+   This generates the model as a `.tar` package.
+
+5. **Test Locally and Submit**:  
+   After testing your models, import them into your account using:
+   ```bash
+   mesheryctl model import
+    -f "[local-path-to-model-tar-file]"
+   ```
+   Then, submit a pull request by forking the `meshery/meshery.io` repository and adding the tar file to the `collections/_models/` folder.
+
+#### Model Generation Wizard Tool (Coming Soon)
+
+A new Model Generation Wizard Tool will simplify these steps, making it easier to contribute to the Meshery Catalog.
+
+By contributing, you help the community save time and standardize configurations. You can create and publish your designs using existing Meshery models, components, and relationships, earning a badge for recognition that you can share with others. Additionally, you can leverage existing templates to create new catalog entries.
 
 </BlogWrapper>
