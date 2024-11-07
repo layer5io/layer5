@@ -133,23 +133,23 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
-          },
-          title: "Meshery, the Cloud Native Manager",
-        },
-        fields: {
-          slug: "/cloud-native-management/meshery",
-        },
-      },
-      {
-        frontmatter: {
-          thumbnail: {
             img: kanvas_color,
           },
           title: "Kanvas, collaborative infrastructure management",
         },
         fields: {
           slug: "/cloud-native-management/kanvas",
+        },
+      },
+      {
+        frontmatter: {
+          thumbnail: {
+            img: meshery,
+          },
+          title: "Meshery, the Cloud Native Manager",
+        },
+        fields: {
+          slug: "/cloud-native-management/meshery",
         },
       },
     ],
