@@ -90,11 +90,11 @@ const Data = {
         },
         {
           name: "Designer",
-          path: "/cloud-native-management/design",
+          path: "/cloud-native-management/kanvas/design",
         },
         {
           name: "Operator",
-          path: "/cloud-native-management/operate",
+          path: "/cloud-native-management/kanvas/operate",
         },
         {
           name: "Cloud + Catalog",
