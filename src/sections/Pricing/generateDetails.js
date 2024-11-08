@@ -25,7 +25,7 @@ function generateDetails(data) {
 
   return categories.map(category => {
     const features = data
-      .filter(item => item.entire_row.Category === category.name)
+      .filter(item => item.entire_row["Theme (also: Keychain Name)"] === category.name)
       .map(item => ({
         feature: item.entire_row.Function,
         description: item.entire_row.Feature,
