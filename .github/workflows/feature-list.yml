@@ -15,7 +15,7 @@ permissions:
   actions: read
 
 jobs:
-  trigger-pricing-list:
+  trigger-feature-list:
     runs-on: ubuntu-latest
     env:
       FEATURES_FILE: 'feature_data.json'
