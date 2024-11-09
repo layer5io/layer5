@@ -60,6 +60,20 @@ const componentsData = [
   },
   {
     id: 8,
+    name: "Container",
+    description:
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
+  },
+  {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
     name: "Drawer",
     description:
       "A Drawer component provides a sliding panel that can be used to display navigation links, actions, or additional content",
@@ -127,7 +141,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>
