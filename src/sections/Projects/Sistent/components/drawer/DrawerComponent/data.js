@@ -1,21 +1,6 @@
 
 export const codes = [
-    `  import React from "react";
-import { SistentThemeProvider } from "@layer5/sistent";
-import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
-import {
-  Box,
-  Drawer,
-  Button,
-  Divider,
-  ListItemIcon,
-  ListItemText
-} from "@layer5/sistent";
-import { MoveToInbox as InboxIcon, Mail as MailIcon, Close as CloseIcon } from "@mui/icons-material";
-
-const drawerWidth = 240;
-
-export default function TemporaryDrawer() {
+`export default function TemporaryDrawer() {
   const { isDark } = useStyledDarkMode();
   const [open, setOpen] = React.useState(false);
 
@@ -24,57 +9,37 @@ export default function TemporaryDrawer() {
   };
 
   const DrawerContent = () => (
-    <Box sx={{ width: drawerWidth }} role="presentation">
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 16px" }}>
-        <span style={{ fontWeight: "bold" }}>Menu</span>
-        <Button onClick={toggleDrawer(false)} sx={{ minWidth: "unset" }}>
-          <CloseIcon />
-        </Button>
+      <Box sx={{ width: drawerWidth }} role="presentation">
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 1 }}>
+          <span style={{ fontWeight: "bold" }}>Menu</span>
+          <Button onClick={toggleDrawer(false)} sx={{ minWidth: "unset" }}>
+            <CloseIcon />
+          </Button>
+        </Box>
+        <Divider />
+        {["Inbox", "Starred", "Send email", "Drafts", "All mail", "Trash", "Spam"].map((text, index) => (
+          <Box key={text} sx={{ display: "flex", alignItems: "center", p: 1 }} onClick={toggleDrawer(false)}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </Box>
+        ))}
       </Box>
-      <Divider />
-      <div>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }} onClick={toggleDrawer(false)}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </div>
-        ))}
-      </div>
-      <Divider />
-      <div>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }} onClick={toggleDrawer(false)}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </div>
-        ))}
-      </div>
-    </Box>
-  );
+    );
 
   return (
-    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <Box
         sx={{
           width: 800,
           height: 500,
           margin: "20px auto",
           border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column"
         }}
       >
         <Box sx={{
-          bgcolor: "#00B39F",
-          color: "white",
           p: 2,
           display: "flex",
           alignItems: "center"
@@ -82,11 +47,8 @@ export default function TemporaryDrawer() {
           <Button
             onClick={toggleDrawer(true)}
             sx={{
-              color: "white",
               mr: 2,
-              "&:hover": {
-                bgcolor: "rgba(255, 255, 255, 0.1)"
-              }
+
             }}
           >
             Open drawer
@@ -98,24 +60,21 @@ export default function TemporaryDrawer() {
           position: "relative",
           flex: 1,
           overflow: "hidden",
-          display : "flex",
+          display: "flex",
           flexDirection: "row",
         }}>
           <Drawer
-            anchor="left"
             open={open}
             onClose={toggleDrawer(false)}
             variant="persistent"
             sx={{
               width: drawerWidth,
-              position: "relative", // Change to absolute to confine the drawer
+              position: "relative",
               "& .MuiDrawer-paper": {
                 position: "relative",
                 width: drawerWidth,
-                boxSizing: "border-box",
-                height: "100%", // Set height to 100% to fill the parent box
                 borderRight: "1px solid #ccc",
-                backgroundColor: isDark ? "background.default" : "#fff",
+                backgroundColor: "transparent",
                 overflowX: "hidden",
               },
             }}
@@ -137,27 +96,10 @@ export default function TemporaryDrawer() {
           </Box>
         </Box>
       </Box>
-    </SistentThemeProvider>
   );
 }
 `,
-    `  import React from "react";
-import { SistentThemeProvider } from "@layer5/sistent";
-import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
-
-import {
-  Box,
-  Drawer,
-  Button,
-  Divider,
-  ListItemIcon
-} from "@layer5/sistent";
-import { MoveToInbox as InboxIcon, Mail as MailIcon, Close as CloseIcon } from "@mui/icons-material";
-
-const drawerWidth = 10; // Mini drawer width
-const fullDrawerWidth = 60; // Full width when expanded
-
-export default function MiniVariantDrawer() {
+`export default function MiniVariantDrawer() {
   const { isDark } = useStyledDarkMode();
   const [open, setOpen] = React.useState(false);
 
@@ -166,37 +108,23 @@ export default function MiniVariantDrawer() {
   };
 
   const DrawerContent = () => (
-    <Box sx={{ width: open ? fullDrawerWidth : drawerWidth }} role="presentation">
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 16px" }}>
-        <Button onClick={toggleDrawer(false)} sx={{ minWidth: "unset" }}>
-          <CloseIcon />
-        </Button>
+      <Box sx={{ width: open ? fullDrawerWidth : drawerWidth }} role="presentation">
+        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", p: 1 }}>
+          <Button onClick={toggleDrawer(false)} sx={{ minWidth: "unset" }}>
+            <CloseIcon />
+          </Button>
+        </Box>
+        <Divider />
+        {["Inbox", "Starred", "Send email", "Drafts", "All mail", "Trash", "Spam"].map((text, index) => (
+          <Box key={text} sx={{ display: "flex", alignItems: "center", p: 1 }} onClick={toggleDrawer(false)}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+          </Box>
+        ))}
       </Box>
-      <Divider />
-      <div>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }} onClick={toggleDrawer(false)}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-          </div>
-        ))}
-      </div>
-      <Divider />
-      <div>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }} onClick={toggleDrawer(false)}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-          </div>
-        ))}
-      </div>
-    </Box>
-  );
+    );
 
   return (
-    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  
       <Box
         sx={{
           width: 800,
@@ -206,14 +134,11 @@ export default function MiniVariantDrawer() {
           borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column"
         }}
       >
         <Box sx={{
-          bgcolor: "#00B39F",
-          color: "white",
           p: 2,
           display: "flex",
           alignItems: "center"
@@ -221,11 +146,7 @@ export default function MiniVariantDrawer() {
           <Button
             onClick={toggleDrawer(true)}
             sx={{
-              color: "white",
               mr: 2,
-              "&:hover": {
-                bgcolor: "rgba(255, 255, 255, 0.1)"
-              }
             }}
           >
             Open drawer
@@ -236,7 +157,9 @@ export default function MiniVariantDrawer() {
         <Box sx={{
           position: "relative",
           flex: 1,
-          overflow: "hidden"
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "row",
         }}>
           <Drawer
             anchor="left"
@@ -249,10 +172,9 @@ export default function MiniVariantDrawer() {
               "& .MuiDrawer-paper": {
                 position: "relative",
                 width: open ? fullDrawerWidth : drawerWidth,
-                boxSizing: "border-box",
                 height: "80vh",
                 borderRight: "1px solid #ccc",
-                backgroundColor: isDark ? "background.default" : "#fff",
+                backgroundColor: "transparent",
                 overflowX: "hidden",
               },
             }}
@@ -275,37 +197,15 @@ export default function MiniVariantDrawer() {
           </Box>
         </Box>
       </Box>
-    </SistentThemeProvider>
   );
 }
 `,
-    ` import React, { useEffect, useRef } from "react";
-import { Drawer, Button, SistentThemeProvider } from "@layer5/sistent";
-import {
-  Inbox as InboxIcon,
-  Mail as MailIcon,
-  Menu as MenuIcon,
-  ChevronLeft as ChevronLeftIcon,
-} from "@mui/icons-material";
-import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
-
-const drawerWidth = 240;
-
-export default function PersistentDrawer() {
+`export default function PersistentDrawer() {
   const { isDark } = useStyledDarkMode();
   const [open, setOpen] = React.useState(false);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target) &&
-        !event.target.closest(".MuiButton-root")
-      ) {
-        setOpen(false);
-      }
-    }
 
     if (open) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -322,18 +222,13 @@ export default function PersistentDrawer() {
   };
 
   return (
-    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <div
         style={{
           width: "800px",
-          height: "600px", // Increased height for scrolling
+          height: "550px", 
           margin: "20px auto",
-          border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
-          borderBottom: "1px solid #ccc",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           marginBottom: "20px",
         }}
       >
@@ -349,17 +244,14 @@ export default function PersistentDrawer() {
             style={{
               width: "100%",
               height: "64px",
-              backgroundColor: "#00B39F",
               display: "flex",
               alignItems: "center",
               padding: "0 16px",
-              color: "white",
               zIndex: 1,
-              transition: "margin-left 0.3s ease",
               marginLeft: open ? drawerWidth : 0,
             }}
           >
-            <Button color="inherit" onClick={toggleDrawer} style={{ color: "white" }}>
+            <Button color="inherit" onClick={toggleDrawer} >
               {open ? <ChevronLeftIcon /> : <MenuIcon />}
             </Button>
             <span style={{ marginLeft: "16px", fontWeight: "bold", fontSize: "1.2rem" }}>
@@ -379,11 +271,10 @@ export default function PersistentDrawer() {
                 width: drawerWidth,
                 height: "140vh",
                 position: "relative",
-                boxSizing: "border-box",
                 borderRight: "1px solid #ccc",
                 overflowY: "auto",
                 overflowX: "hidden",
-                backgroundColor: "transparent", // Set the background to transparent
+                backgroundColor: "transparent", 
               },
             }}
           >
@@ -430,11 +321,10 @@ export default function PersistentDrawer() {
             style={{
               flexGrow: 1,
               padding: "24px",
-              transition: "margin-left 0.3s ease",
               marginLeft: open ? drawerWidth : 0,
               height: "calc(100% - 64px)",
               overflowY: "auto",
-              maxHeight: "calc(100% - 64px)", // Ensures scrolling within the content area
+              maxHeight: "calc(100% - 64px)", 
             }}
           >
             <h2 style={{ margin: "0 0 16px 0" }}>Main Content</h2>
@@ -447,69 +337,39 @@ export default function PersistentDrawer() {
           </main>
         </div>
       </div>
-    </SistentThemeProvider>
   );
 }
+
 `,
-    `  import React from "react";
-import { SistentThemeProvider } from "@layer5/sistent";
-import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
-import {
-  Box,
-  Drawer,
-  Divider,
-  ListItemIcon,
-  ListItemText
-} from "@layer5/sistent";
-import { MoveToInbox as InboxIcon, Mail as MailIcon } from "@mui/icons-material";
-
-const drawerWidth = 240;
-
-export default function PermanentDrawer() {
+`export default function PermanentDrawer() {
   const { isDark } = useStyledDarkMode();
 
-  const DrawerContent = () => (
-    <Box sx={{ width: drawerWidth }} role="presentation">
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 16px" }}>
-        <span style={{ fontWeight: "bold" }}>Menu</span>
+    const DrawerContent = () => (
+      <Box sx={{ width: drawerWidth }} role="presentation">
+        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "8px 16px" }}>
+          <span style={{ fontWeight: "bold" }}>Menu</span>
+        </Box>
+        <Divider />
+        {["Inbox", "Starred", "Send email", "Drafts", "All mail", "Trash", "Spam"].map((text, index) => (
+          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </div>
+        ))}
       </Box>
-      <Divider />
-      <div>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </div>
-        ))}
-      </div>
-      <Divider />
-      <div>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <div key={text} style={{ display: "flex", alignItems: "center", padding: "8px 16px" }}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </div>
-        ))}
-      </div>
-    </Box>
-  );
+    );
 
   return (
-    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <Box
         sx={{
           width: 800,
           height: 500,
           margin: "20px auto",
           border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "row"
         }}
@@ -526,7 +386,7 @@ export default function PermanentDrawer() {
               height: "100%",
               position: "relative",
               borderRight: "1px solid #ccc",
-              backgroundColor: isDark ? "background.default" : "#fff",
+              backgroundColor: "transparent",
               overflowX: "hidden",
             },
           }}
@@ -539,7 +399,7 @@ export default function PermanentDrawer() {
             flexGrow: 1,
             bgcolor: "background.default",
             p: 3,
-            height: "500px", // Set height to make it scrollable within the container
+            height: "500px",
             overflow: "auto"
           }}
         >
@@ -555,17 +415,7 @@ export default function PermanentDrawer() {
           ))}
         </Box>
       </Box>
-    </SistentThemeProvider>
   );
 }
 `,
-    `  <SistentThemeProvider>
-        <Button
-          variant="contained"
-          size="medium"
-          endIcon={<FaArrowRight size={12} />}
-        >
-          Next
-        </Button>
-    </SistentThemeProvider>`,
 ];

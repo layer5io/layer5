@@ -53,10 +53,8 @@ export default function PermanentDrawer() {
           height: 500,
           margin: "20px auto",
           border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "row"
         }}
@@ -73,7 +71,7 @@ export default function PermanentDrawer() {
               height: "100%",
               position: "relative",
               borderRight: "1px solid #ccc",
-              backgroundColor: isDark ? "background.default" : "#fff",
+              backgroundColor: "transparent",
               overflowX: "hidden",
             },
           }}
@@ -86,7 +84,7 @@ export default function PermanentDrawer() {
             flexGrow: 1,
             bgcolor: "background.default",
             p: 3,
-            height: "500px", // Set height to make it scrollable within the container
+            height: "500px",
             overflow: "auto"
           }}
         >

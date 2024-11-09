@@ -34,7 +34,7 @@ export default function PersistentDrawer() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
-
+ 
   const toggleDrawer = (event) => {
     event.stopPropagation();
     setOpen(!open);
@@ -45,14 +45,11 @@ export default function PersistentDrawer() {
       <div
         style={{
           width: "800px",
-          height: "600px", // Increased height for scrolling
+          height: "550px", 
           margin: "20px auto",
           border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
-          borderBottom: "1px solid #ccc",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           marginBottom: "20px",
         }}
       >
@@ -68,13 +65,10 @@ export default function PersistentDrawer() {
             style={{
               width: "100%",
               height: "64px",
-              backgroundColor: "#00B39F",
               display: "flex",
               alignItems: "center",
               padding: "0 16px",
-              color: "white",
               zIndex: 1,
-              transition: "margin-left 0.3s ease",
               marginLeft: open ? drawerWidth : 0,
             }}
           >
@@ -98,11 +92,10 @@ export default function PersistentDrawer() {
                 width: drawerWidth,
                 height: "140vh",
                 position: "relative",
-                boxSizing: "border-box",
                 borderRight: "1px solid #ccc",
                 overflowY: "auto",
                 overflowX: "hidden",
-                backgroundColor: "transparent", // Set the background to transparent
+                backgroundColor: "transparent", 
               },
             }}
           >

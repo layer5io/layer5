@@ -62,17 +62,13 @@ export default function TemporaryDrawer() {
           height: 500,
           margin: "20px auto",
           border: "1px solid #ccc",
-          borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column"
         }}
       >
         <Box sx={{
-          bgcolor: "#00B39F",
-          color: "white",
           p: 2,
           display: "flex",
           alignItems: "center"
@@ -80,11 +76,8 @@ export default function TemporaryDrawer() {
           <Button
             onClick={toggleDrawer(true)}
             sx={{
-              color: "white",
               mr: 2,
-              "&:hover": {
-                bgcolor: "rgba(255, 255, 255, 0.1)"
-              }
+
             }}
           >
             Open drawer
@@ -100,7 +93,6 @@ export default function TemporaryDrawer() {
           flexDirection: "row",
         }}>
           <Drawer
-            anchor="left"
             open={open}
             onClose={toggleDrawer(false)}
             variant="persistent"
@@ -110,10 +102,8 @@ export default function TemporaryDrawer() {
               "& .MuiDrawer-paper": {
                 position: "relative",
                 width: drawerWidth,
-                boxSizing: "border-box",
-                height: "100%", // Set height to 100% to fill the parent box
                 borderRight: "1px solid #ccc",
-                backgroundColor: isDark ? "background.default" : "#fff",
+                backgroundColor: "transparent",
                 overflowX: "hidden",
               },
             }}

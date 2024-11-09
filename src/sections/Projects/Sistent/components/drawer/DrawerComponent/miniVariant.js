@@ -63,14 +63,12 @@ export default function MiniVariantDrawer() {
           borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column"
         }}
       >
         <Box sx={{
-          bgcolor: "#00B39F",
-          color: "white",
+          // bgcolor: "#00B39F",
           p: 2,
           display: "flex",
           alignItems: "center"
@@ -78,11 +76,7 @@ export default function MiniVariantDrawer() {
           <Button
             onClick={toggleDrawer(true)}
             sx={{
-              color: "white",
               mr: 2,
-              "&:hover": {
-                bgcolor: "rgba(255, 255, 255, 0.1)"
-              }
             }}
           >
             Open drawer
@@ -108,10 +102,9 @@ export default function MiniVariantDrawer() {
               "& .MuiDrawer-paper": {
                 position: "relative",
                 width: open ? fullDrawerWidth : drawerWidth,
-                boxSizing: "border-box",
                 height: "80vh",
                 borderRight: "1px solid #ccc",
-                backgroundColor: isDark ? "background.default" : "#fff",
+                backgroundColor: "transparent",
                 overflowX: "hidden",
               },
             }}

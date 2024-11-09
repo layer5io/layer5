@@ -116,23 +116,8 @@ export const DrawerCode = () => {
                 <PermanentDrawer/>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="Permanent Drawer" code={codes[2]} />
+            <CodeBlock name="Permanent Drawer" code={codes[3]} />
           </div>
-
-
-          <h3>Modal Drawer</h3>
-          <p>
-              Permanent navigation drawers are always visible and pinned to the left edge, at the same elevation as the content or background. They cannot be closed.
-          </p>
-          <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                {/* <ModalDrawer/> */}
-              </SistentThemeProvider>
-            </div>
-            <CodeBlock name="Permanent Drawer" code={codes[2]} />
-          </div>
-
         </div>
       </div>
     </SistentLayout>
