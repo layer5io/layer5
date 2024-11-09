@@ -54,7 +54,6 @@ export default function SearchAppBar() {
             style={{
               position: "relative",
               borderRadius: "4px",
-              backgroundColor: "rgba(255, 255, 255, 0.15)",
               marginLeft: isLargeScreen ? "8px" : 0,
               width: isLargeScreen ? "auto" : "100%",
               display: "flex",

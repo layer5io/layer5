@@ -15,20 +15,18 @@ export default function BottomAppBar() {
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <Box
         sx={{
-          width: 850, // Confining width of the box
-          height: 400, // Increased height
+          width: 850,
+          height: 400,
           margin: "20px auto",
           border: "1px solid #ccc",
           borderRadius: "8px",
           overflow: "hidden",
           position: "relative",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between", // Aligns AppBar at the bottom
+          justifyContent: "space-between",
         }}
       >
-        {/* Additional Content */}
         <Box sx={{ p: 3 }}>
           <Typography variant="h6" sx={{ mb: 1 }}>
             Welcome to the App
@@ -39,7 +37,6 @@ export default function BottomAppBar() {
 
         </Box>
 
-        {/* Bottom AppBar */}
         <AppBar
           position="relative"
           sx={{
@@ -50,7 +47,6 @@ export default function BottomAppBar() {
         >
           <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
             <IconButton color="inherit" aria-label="home">
-              {/* <CalenderIcon/> */}
               <FavoriteIcon />
 
             </IconButton>
@@ -63,7 +59,6 @@ export default function BottomAppBar() {
 
             </IconButton>
             <IconButton color="inherit" aria-label="profile">
-              {/* <PersonIcon /> */}
               <BellIcon />
 
             </IconButton>

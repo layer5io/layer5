@@ -15,6 +15,7 @@ import {
 } from "@layer5/sistent";
 import MenuIcon from "@mui/icons-material/Menu"; // Import MenuIcon from MUI
 import { useStyledDarkMode } from "../../../../../../theme/app/useStyledDarkMode";
+import { Image } from "../../../../../../assets/images/favicon.webp";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -55,7 +56,7 @@ export default function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              LOGO
+              <img src="../../../../../../assets/images/favicon.webp" alt="" />
             </Typography>
 
             {/* Mobile Menu */}
@@ -84,7 +85,6 @@ export default function ResponsiveAppBar() {
               ))}
             </Box>
 
-            {/* User Settings */}
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
