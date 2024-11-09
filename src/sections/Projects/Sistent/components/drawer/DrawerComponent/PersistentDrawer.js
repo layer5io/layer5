@@ -34,7 +34,7 @@ export default function PersistentDrawer() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
- 
+
   const toggleDrawer = (event) => {
     event.stopPropagation();
     setOpen(!open);
@@ -45,7 +45,7 @@ export default function PersistentDrawer() {
       <div
         style={{
           width: "800px",
-          height: "550px", 
+          height: "550px",
           margin: "20px auto",
           border: "1px solid #ccc",
           overflow: "hidden",
@@ -95,7 +95,7 @@ export default function PersistentDrawer() {
                 borderRight: "1px solid #ccc",
                 overflowY: "auto",
                 overflowX: "hidden",
-                backgroundColor: "transparent", 
+                backgroundColor: "transparent",
               },
             }}
           >
