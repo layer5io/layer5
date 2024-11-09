@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
+import certmanager from "../../../collections/integrations/cert-manager/icons/color/cert-manager-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
 import prometheus from "../../../collections/integrations/prometheus/icons/color/prometheus-color.svg";
 import kubernetes from "../../../collections/integrations/kubernetes/icons/color/kubernetes-color.svg";
@@ -11,19 +12,25 @@ import linkerd from "../../../collections/integrations/linkerd/icons/color/linke
 import istio from "../../../collections/integrations/istio-base/icons/color/istio-base-color.svg";
 import jaeger from "../../../collections/integrations/jaeger/icons/color/jaeger-color.svg";
 import envoy from "../../../collections/integrations/envoy/icons/color/envoy-color.svg";
-import kong from "../../../collections/integrations/kong/icons/color/kong-color.svg";
-import grafana from "../../../collections/integrations/grafana-agent-operator/icons/color/grafana-agent-operator-color.svg";
-import docker from "../../../collections/integrations/docker/icons/color/docker-color.svg";
-import opentelemetry from "../../../collections/integrations/opentelemetry-operator/icons/color/opentelemetry-operator-color.svg";
-import kiali from "../../../collections/integrations/kiali-operator/icons/color/kiali-operator-color.svg";
-import knative from "../../../collections/integrations/knative/icons/color/knative-color.svg";
-import dapr from "../../../collections/integrations/dapr/icons/color/dapr-color.svg";
-import fabedge from "../../../collections/integrations/fabedge/icons/color/fabedge-color.svg";
-import amdgpu from "../../../collections/integrations/amd-gpu/icons/color/amd-gpu-color.svg";
-import karmada from "../../../collections/integrations/karmada/icons/color/karmada-color.svg";
-import kubeflow from "../../../collections/integrations/kubeflow/icons/color/kubeflow-color.svg";
-import terraform from "../../../collections/integrations/terraform/icons/color/terraform-color.svg";
 import fluentd from "../../../collections/integrations/fluentd/icons/color/fluentd-color.svg";
+import cloudevents from "../../../collections/integrations/cloudevents/icons/color/cloudevents-color.svg";
+import containerd from "../../../collections/integrations/containerd/icons/color/containerd-color.svg";
+import coredns from "../../../collections/integrations/coredns/icons/color/coredns-color.svg";
+import crio from "../../../collections/integrations/cri-o/icons/color/cri-o-color.svg";
+import etcd from "../../../collections/integrations/etcd-cluster-operator/icons/color/etcd-cluster-operator-color.svg";
+import falco from "../../../collections/integrations/falco/icons/color/falco-color.svg";
+import flux from "../../../collections/integrations/flux/icons/color/flux-color.svg";
+import harbor from "../../../collections/integrations/harbor-operator/icons/color/harbor-operator-color.svg";
+import helm from "../../../collections/integrations/helm-controller/icons/color/helm-controller-color.svg";
+import kubeedge from "../../../collections/integrations/kubegems-edge/icons/color/kubegems-edge-color.svg";
+import opa from "../../../collections/integrations/open-policy-agent-(opa)/icons/color/open-policy-agent-(opa)-color.svg";
+import rook from "../../../collections/integrations/rook/icons/color/rook-color.svg";
+import spiffe from "../../../collections/integrations/spiffe/icons/color/spiffe-color.svg";
+import spire from "../../../collections/integrations/spire/icons/color/spire-color.svg";
+import tuf from "../../../collections/integrations/tuf/icons/color/tuf-color.svg";
+import tikvoperator from "../../../collections/integrations/tikv-operator/icons/color/tikv-operator-color.svg";
+import vitess from "../../../collections/integrations/vitess/icons/color/vitess-color.svg";
+
 
 const ViewsSectionWrapper = styled.div`
 
@@ -239,31 +246,37 @@ const KanvasVisualizerViews = () => {
   const [imageRef] = useInView({ threshold: 0.3 });
 
   const leftColumnItems = [
-    { img: prometheus, name: "Prometheus" },
-    { img: argocd, name: "Argo CD" },
+    { img: argocd, name: "Argo" },
+    { img: certmanager, name: "Cert Manager" },
     { img: cilium, name: "Cilium" },
-    { img: istio, name: "Istio" },
-    { img: grafana, name: "Grafana" },
-    { img: knative, name: "Knative" },
-    { img: docker, name: "Docker" },
+    { img: cloudevents, name: "CloudEvents" },
+    { img: containerd, name: "containerd" },
+    { img: coredns, name: "CoreDNS" },
+    { img: crio, name: "cri-o" },
     { img: envoy, name: "Envoy" },
-    { img: karmada, name: "Karmada" },
-    { img: amdgpu, name: "AMD GPU" },
-    { img: fluentd, name: "Fluentd" }
+    { img: etcd, name: "etcd" },
+    { img: falco, name: "Falco" },
+    { img: fluentd, name: "Fluentd" },
+    { img: flux, name: "Flux" },
+    { img: harbor, name: "Harbor" },
+    { img: helm, name: "Helm" }
   ];
 
   const rightColumnItems = [
-    { img: kubernetes, name: "Kubernetes" },
-    { img: keda, name: "Keda" },
-    { img: linkerd, name: "Linkerd" },
+    { img: istio, name: "Istio" },
     { img: jaeger, name: "Jaeger" },
-    { img: kong, name: "Kong" },
-    { img: opentelemetry, name: "Opentelemetry" },
-    { img: dapr, name: "Dapr" },
-    { img: kiali, name: "Kiali" },
-    { img: fabedge, name: "FabEdge" },
-    { img: kubeflow, name: "Kubeflow" },
-    { img: terraform, name: "Terraform" }
+    { img: keda, name: "KEDA" },
+    { img: kubeedge, name: "KubeEdge" },
+    { img: kubernetes, name: "Kubernetes" },
+    { img: linkerd, name: "Linkerd" },
+    { img: opa, name: "Open Policy Agent" },
+    { img: prometheus, name: "Prometheus" },
+    { img: rook, name: "Rook" },
+    { img: spiffe, name: "SPIFFE" },
+    { img: spire, name: "SPIRE" },
+    { img: tuf, name: "TUF" },
+    { img: tikvoperator, name: "TiKV" },
+    { img: vitess, name: "Vitess" }
   ];
 
   const renderColumn = (items, direction) => (
@@ -301,6 +314,7 @@ const KanvasVisualizerViews = () => {
           </div>
         </div>
         <div className="hero-text">
+
           <h2>
             <span>Manage your Cloud Native mess</span>
           </h2>

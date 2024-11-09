@@ -167,7 +167,7 @@ const Feature = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
             <h2 className="heading">
-            Kanvas Visualizer
+            Kanvas Operator
             </h2>
             <p className="caption">
             Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management.

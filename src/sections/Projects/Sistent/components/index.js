@@ -60,6 +60,20 @@ const componentsData = [
   },
   {
     id: 8,
+    name: "Container",
+    description:
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
+  },
+  {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
     name: "App Bar",
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
@@ -127,7 +141,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>

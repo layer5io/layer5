@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { Container } from "../../../reusecore/Layout";
 import Locator from "./locator.svg";
-import MesherySurface from "./meshery-surface.svg";
 import Button from "../../../reusecore/Button";
 
 const KanvasCTAWrapper = styled.div`
@@ -17,10 +16,6 @@ const KanvasCTAWrapper = styled.div`
   margin: 2rem auto;
   align-items: center;
   
-  .surface {
-    width: 60%;
-    min-width: 160px;
-  }
   .rotate{
     animation: coin-rotate 4s ease-in-out infinite alternate;
     /* animation-fill-mode: both; */
@@ -59,9 +54,7 @@ const KanvasCTAWrapper = styled.div`
 
   @media screen and (max-width:767px) {
     display: block;
-    .surface {
-      width: 30%;
-    }
+  
     .rotate {
       margin: 0 auto 0.25rem;
       height: 12rem;
@@ -97,7 +90,6 @@ const KanvasCTA = () => {
         <div className="CTAbody">
           <div>
             <img className="rotate" src={Locator} />
-            <img className="surface" src={MesherySurface} />
           </div>
           <div className="text">
             <h2><span>Kanvas</span> is here!</h2>

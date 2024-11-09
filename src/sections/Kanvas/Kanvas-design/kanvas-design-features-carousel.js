@@ -134,7 +134,7 @@ export default function KanvasDesignFeatureCarousel() {
       <div className="left">
         <h1>Multi-user real-time collaboration</h1>
         <p>
-          Designer and Visualizer live side-by-side, so all design work, from
+          Designer and Operator live side-by-side, so all design work, from
           ideation to operation, can be found in one place.
         </p>
       </div>
