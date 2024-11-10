@@ -55,7 +55,7 @@ const ViewsSectionWrapper = styled.div`
     height: 500px;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 5% 0 0;
+    padding: 0 0 0 0;
     box-sizing: border-box;
     //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -65,6 +65,14 @@ const ViewsSectionWrapper = styled.div`
       text-align: center;
       flex-direction: column-reverse;
     }
+      
+    @media only screen and (max-width: 450px) {
+      height: 600px;
+    }
+
+    @media only screen and (max-width: 296px) {
+      height: 800px;
+    }
 }
     .hero-text {
         display: flex;
@@ -72,11 +80,17 @@ const ViewsSectionWrapper = styled.div`
         flex: 0 0 50%;
         max-width: 50%;
         padding-bottom: 3rem;
+        padding-left: 1rem;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
           justify-content: center;
           text-align: center;
         }
+
+        @media only screen and (max-width: 450px) {
+          margin-top: 200px;
+        }
+          
     }
 
     .hero-image {
