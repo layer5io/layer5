@@ -55,7 +55,7 @@ const ViewsSectionWrapper = styled.div`
     height: 500px;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 0 0 0;
+    padding: 0 5% 0 0;
     box-sizing: border-box;
     //box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
