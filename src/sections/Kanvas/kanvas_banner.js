@@ -96,11 +96,13 @@ const BannerSectionWrapper = styled.div`
         overflow: hidden;
         margin-top: -7rem;
         position: relative;
-        left: 30%;
+        left: 11%;
+        margin-top: -7rem;
         z-index: 0;
 
     }
-    div.accent-bubble {
+    div.a
+    ccent-bubble {
         width: 50%;
         height: 100%;
         background-position: right 20%;
@@ -117,9 +119,9 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 1700px) {
         .kanvas-logo {
-            width: 12rem;
-            /* right: 12rem; */
-            /* margin-top: -5rem; */
+        width: 20rem;
+        left: 5rem;
+        margin-top: -7rem;
         }
         .para {
             margin-top: -3rem;
@@ -127,12 +129,10 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 1200px) {
         .kanvas-logo {
-            left: 20%;
-            width: 10rem;
-            /* right: 8rem; */
-            margin-top: -5rem;
+            width: 18rem;
+            left: 5rem;
+            margin-top: -6rem;
         }
-        /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
     @media screen and (max-width: 992px) {
         .kanvas-logo {
