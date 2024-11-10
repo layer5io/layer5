@@ -64,6 +64,8 @@ const ViewsSectionWrapper = styled.div`
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
+      height: 600px;
+      padding: 0 2%;
     }
       
     @media only screen and (max-width: 450px) {
