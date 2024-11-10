@@ -82,7 +82,6 @@ const ViewsSectionWrapper = styled.div`
         flex: 0 0 50%;
         max-width: 50%;
         padding-bottom: 3rem;
-        padding-left: 1rem;
         @media only screen and (max-width: 767px) {
           max-width: 100%;
           justify-content: center;
