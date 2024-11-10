@@ -96,7 +96,8 @@ const BannerSectionWrapper = styled.div`
         overflow: hidden;
         margin-top: -7rem;
         position: relative;
-        left: 30%;
+        left: 10%;
+        margin-top: -8rem;
         z-index: 0;
 
     }
@@ -117,9 +118,9 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 1700px) {
         .kanvas-logo {
-            width: 12rem;
-            /* right: 12rem; */
-            /* margin-top: -5rem; */
+            width: 20rem;
+            left: 21%;
+            margin-top: -7rem;
         }
         .para {
             margin-top: -3rem;
@@ -127,10 +128,9 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 1200px) {
         .kanvas-logo {
-            left: 20%;
-            width: 10rem;
-            /* right: 8rem; */
-            margin-top: -5rem;
+            width: 18rem;
+            left: 18%;
+            margin-top: -6rem;
         }
         /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
