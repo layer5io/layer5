@@ -97,7 +97,6 @@ const BannerSectionWrapper = styled.div`
         margin-top: -7rem;
         position: relative;
         left: 11%;
-        margin-top: -7rem;
         z-index: 0;
 
     }
