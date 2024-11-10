@@ -120,7 +120,6 @@ const BannerSectionWrapper = styled.div`
         .kanvas-logo {
         width: 20rem;
         left: 5rem;
-        margin-top: -7rem;
         }
         .para {
             margin-top: -3rem;
