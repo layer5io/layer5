@@ -82,8 +82,6 @@ const ViewsSectionWrapper = styled.div`
           margin-top: 4rem;
         }
 
-        @media only screen and (max-width: 450px) {
-          margin-top: 200px;
         }
           
     }
