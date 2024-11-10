@@ -68,13 +68,6 @@ const ViewsSectionWrapper = styled.div`
       padding: 0 2%;
     }
       
-    @media only screen and (max-width: 450px) {
-      height: 600px;
-    }
-
-    @media only screen and (max-width: 296px) {
-      height: 800px;
-    }
 }
     .hero-text {
         display: flex;
@@ -86,6 +79,7 @@ const ViewsSectionWrapper = styled.div`
           max-width: 100%;
           justify-content: center;
           text-align: center;
+          margin-top: 4rem;
         }
 
         @media only screen and (max-width: 450px) {
