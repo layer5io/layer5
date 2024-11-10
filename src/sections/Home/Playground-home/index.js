@@ -80,7 +80,7 @@ const ViewsSectionWrapper = styled.div`
           justify-content: center;
           text-align: center;
           margin-top: 4rem;
-        }
+ 
 
         }
           
