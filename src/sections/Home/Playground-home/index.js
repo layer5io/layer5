@@ -81,6 +81,10 @@ const ViewsSectionWrapper = styled.div`
           text-align: center;
           margin-top: 4rem;
         }
+        @media only screen and (min-width: 768px) and (max-width: 1100px) {
+          padding-left: 1rem;
+        }
+
           
     }
 
