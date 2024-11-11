@@ -72,6 +72,13 @@ const componentsData = [
       "ButtonGroup is a component that groups multiple buttons together.",
     url: "/projects/sistent/components/button-group",
   },
+  {
+    id: 10,
+    name: "Backdrop",
+    description:
+      "Backdrop component overlays a dimmed screen to focus attention on foreground content.",
+    url: "/projects/sistent/components/backdrop",
+  },
 ];
 
 const SistentComponents = () => {
