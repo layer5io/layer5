@@ -10,55 +10,47 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  ` <SistentThemeProvider>
-      <Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
-        <p>
-          This is a Box component with custom background and padding.
-        </p>
-      </Box>
-</SistentThemeProvider>`,
-  ` <SistentThemeProvider>
-      <Box
-        sx={{
-          bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
-          padding: { xs: 2, md: 4 },
-          height: "50vh",
-        }}
-      >
-        <p style={{ color: "black" }}>
-          This Box is responsive, changing style based on screen size.
-        </p>
-      </Box>
-</SistentThemeProvider>`,
-  `<SistentThemeProvider>
-    <Box
-      sx={{
-        bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
-        padding: { xs: 2, md: 4 },
-        height: "50vh",
-      }}
+  `<Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
+    <p>
+      This is a Box component with custom background and padding.
+    </p>
+</Box>`,
+  `<Box
+    sx={{
+      bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
+      padding: { xs: 2, md: 4 },
+      height: "50vh",
+    }}
+  >
+    <p style={{ color: "black" }}>
+      This Box is responsive, changing style based on screen size.
+    </p>
+</Box>`,
+  `<Box
+    sx={{
+      bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
+      padding: { xs: 2, md: 4 },
+      height: "50vh",
+    }}
     >
-      <p style={{ color: "black" }}>
-        This Box is responsive, changing style based on screen size.
-      </p>
-    </Box>
-</SistentThemeProvider>`,
-  `<SistentThemeProvider>
-    <Box
-      sx={{
-        bgcolor: "#cfe8fc",
-        height: "50vh",
-        padding: 4,
-        transition: "0.3s",
-        "&:hover": {
-          bgcolor: "#ffeb3b",
-          cursor: "pointer",
-        },
-      }}
+    <p style={{ color: "black" }}>
+      This Box is responsive, changing style based on screen size.
+    </p>
+</Box>`,
+  `<Box
+    sx={{
+      bgcolor: "#cfe8fc",
+      height: "50vh",
+      padding: 4,
+      transition: "0.3s",
+      "&:hover": {
+        bgcolor: "#ffeb3b",
+        cursor: "pointer",
+      },
+    }}
     >
       <p style={{ color: "black" }}>Hover over this Box to see the interactive effect.</p>
-    </Box>
-</SistentThemeProvider>`,
+</Box>`,
 ];
 
 export const BoxCode = () => {
