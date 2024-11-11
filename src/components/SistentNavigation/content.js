@@ -90,17 +90,17 @@ export const content = [
   },
   {
     id: 24,
-    link: "/projects/sistent/components/customTooltip",
-    text: "Custom Tooltip",
+    link: "/projects/sistent/components/tooltip",
+    text: "Tooltip",
   },
   {
     id: 25,
-    link: "/projects/sistent/components/customTooltip/guidance",
-    text: "Custom Tooltip",
+    link: "/projects/sistent/components/tooltip/guidance",
+    text: "Tooltip",
   },
   {
     id: 26,
-    link: "/projects/sistent/components/customTooltip/code",
-    text: "Custom Tooltip",
+    link: "/projects/sistent/components/tooltip/code",
+    text: "Tooltip",
   },
 ];

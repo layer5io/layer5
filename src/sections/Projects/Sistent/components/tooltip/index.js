@@ -12,63 +12,60 @@ import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-const SistentCustomTooltip = () => {
+const SistentTooltip = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
   return (
-    <SistentLayout title="Custom Tooltip">
+    <SistentLayout title="Tooltip">
       <div className="content">
         <a id="Identity">
-          <h2>Custom Tooltip</h2>
+          <h2>Tooltip</h2>
         </a>
         <p>
-          The CustomTooltip component displays informative text when users hover
-          over, focus on, or tap an element. Tooltips are designed to enhance
+          The Tooltip component displays informative text when users hover over,
+          focus on, or tap an element. Tooltips are designed to enhance
           accessibility and user understanding of interface elements.
         </p>
         <div className="filterBtns">
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/customTooltip"
+              location.pathname === "/projects/sistent/components/tooltip"
                 ? "active"
                 : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/components/customTooltip")
-            }
+            onClick={() => navigate("/projects/sistent/components/tooltip")}
             title="Overview"
           />
           <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/customTooltip/guidance"
+              "/projects/sistent/components/tooltip/guidance"
                 ? "active"
                 : ""
             }
             onClick={() =>
-              navigate("/projects/sistent/components/customTooltip/guidance")
+              navigate("/projects/sistent/components/tooltip/guidance")
             }
             title="Guidance"
           />
           <TabButton
             className={
-              location.pathname ===
-              "/projects/sistent/components/customTooltip/code"
+              location.pathname === "/projects/sistent/components/tooltip/code"
                 ? "active"
                 : ""
             }
             onClick={() =>
-              navigate("/projects/sistent/components/customTooltip/code")
+              navigate("/projects/sistent/components/tooltip/code")
             }
             title="Code"
           />
         </div>
         <div className="main-content">
           <p>
-            The CustomTooltip component displays informative text when users
-            hover over, focus on, or tap an element. Tooltips are designed to
-            enhance accessibility and user understanding of interface elements.
+            The Tooltip component displays informative text when users hover
+            over, focus on, or tap an element. Tooltips are designed to enhance
+            accessibility and user understanding of interface elements.
           </p>
           <a id="Basic Tooltip">
             <h2>Basic Tooltip</h2>
@@ -80,7 +77,9 @@ const SistentCustomTooltip = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <CustomTooltip title="Submit">
-                <Button variant="contained" label="Submit" size="medium" />
+                <span>
+                  <Button variant="contained" label="Submit" size="medium" />
+                </span>
               </CustomTooltip>
             </SistentThemeProvider>
           </Row>
@@ -92,9 +91,11 @@ const SistentCustomTooltip = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <CustomTooltip title="Top Tooltip" placement="top">
-                <Button variant="contained" size="medium">
-                  Delete
-                </Button>
+                <span>
+                  <Button variant="contained" size="medium">
+                    Delete
+                  </Button>
+                </span>
               </CustomTooltip>
             </SistentThemeProvider>
           </Row>
@@ -118,14 +119,47 @@ const SistentCustomTooltip = () => {
             </SistentThemeProvider>
           </Row>
 
+          <a id="Distance from anchor">
+            <h2>Distance from anchor</h2>
+          </a>
+          <p>
+            To adjust the distance between the tooltip and its anchor, you can
+            use the slotProps prop to modify the offset of the popper.
+          </p>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <CustomTooltip
+                title="Add"
+                slotProps={{
+                  popper: {
+                    modifiers: [
+                      {
+                        name: "offset",
+                        options: {
+                          offset: [0, -14],
+                        },
+                      },
+                    ],
+                  },
+                }}
+              >
+                <span>
+                  <Button variant="contained" size="medium">
+                    Offset
+                  </Button>
+                </span>
+              </CustomTooltip>
+            </SistentThemeProvider>
+          </Row>
+
           <a id="Variable width">
             <h2>Variable width</h2>
           </a>
           <p>
-            The variant prop in CustomTooltip allows you to control the tooltips
-            size with predefined styles (standard or small). This makes it
-            easier to adjust the tooltip to fit various UI requirements quickly
-            and consistently.
+            The variant prop in Tooltip allows you to control the tooltips size
+            with predefined styles (standard or small). This makes it easier to
+            adjust the tooltip to fit various UI requirements quickly and
+            consistently.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -138,14 +172,18 @@ const SistentCustomTooltip = () => {
                 }}
               >
                 <CustomTooltip title="Add" variant="standard">
-                  <Button variant="contained" size="medium">
-                    standard
-                  </Button>
+                  <span>
+                    <Button variant="contained" size="medium">
+                      standard
+                    </Button>
+                  </span>
                 </CustomTooltip>
                 <CustomTooltip title="Add" variant="small">
-                  <Button variant="contained" size="medium">
-                    small
-                  </Button>
+                  <span>
+                    <Button variant="contained" size="medium">
+                      small
+                    </Button>
+                  </span>
                 </CustomTooltip>
               </Box>
             </SistentThemeProvider>
@@ -161,9 +199,11 @@ const SistentCustomTooltip = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <CustomTooltip title="Follow Cursor" followCursor>
-                <Button variant="contained" size="medium">
-                  Button
-                </Button>
+                <span>
+                  <Button variant="contained" size="medium">
+                    Button
+                  </Button>
+                </span>
               </CustomTooltip>
             </SistentThemeProvider>
           </Row>
@@ -172,18 +212,20 @@ const SistentCustomTooltip = () => {
             <h2>Showing and Hiding</h2>
           </a>
           <p>
-            The CustomTooltip is normally shown immediately when the user's
-            mouse hovers over the element, and hides immediately when the user's
-            mouse leaves. A delay in showing or hiding the tooltip can be added
+            The Tooltip is normally shown immediately when the user's mouse
+            hovers over the element, and hides immediately when the user's mouse
+            leaves. A delay in showing or hiding the tooltip can be added
             through the <code>enterDelay</code> and <code>leaveDelay</code>{" "}
             props.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <CustomTooltip title="Add" enterDelay={500} leaveDelay={200}>
-                <Button variant="text" size="medium">
-                  [500MS, 200MS]
-                </Button>
+                <span>
+                  <Button variant="text" size="medium">
+                    [500MS, 200MS]
+                  </Button>
+                </span>
               </CustomTooltip>
             </SistentThemeProvider>
           </Row>
@@ -193,4 +235,4 @@ const SistentCustomTooltip = () => {
   );
 };
 
-export default SistentCustomTooltip;
+export default SistentTooltip;

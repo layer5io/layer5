@@ -67,10 +67,10 @@ const componentsData = [
   },
   {
     id: 9,
-    name: "Custom Tooltip",
+    name: "Tooltip",
     description:
       "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
-    url: "/projects/sistent/components/customTooltip",
+    url: "/projects/sistent/components/tooltip",
   },
 ];
 
