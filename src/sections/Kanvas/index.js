@@ -61,13 +61,13 @@ const Kanvas = (props) => {
                   ),
                 },
                 {
-                  title: "Visualizer Mode",
+                  title: "Operator Mode",
                   description:
-                    "Visualizer offers an interactive topology of your Kubernetes clusters with live terminal sessions, log streaming and performance testing of your applications. Designs created in Designer mode can be deployed and viewed as running in your environment using Visualizer.",
+                    "Operator offers an interactive topology of your Kubernetes clusters with live terminal sessions, log streaming and performance testing of your applications. Designs created in Designer mode can be deployed and viewed as running in your environment using Operator.",
                   content: (
                     <img
                       src={visualizerImage}
-                      alt="Visualizer Mode"
+                      alt="Operator Mode"
                       className="modes-image"
                     />
                   ),
@@ -144,7 +144,7 @@ const Kanvas = (props) => {
               [
                 {
                   title: "Bring those ideas to life",
-                  description: "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
+                  description: "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
                   imgContent: (
                     <>
                       <img id="avatar-1" src={Avatar1} alt="" />
