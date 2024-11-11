@@ -90,6 +90,21 @@ export const content = [
   },
   {
     id: 24,
+    link: "/projects/sistent/components/button-group",
+    text: "Button Group",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/button-group/guidance",
+    text: "Button Group",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/button-group/code",
+    text: "Button Group",
+  },
+  {
+    id: 27,
     link: "/projects/sistent/components/tooltip",
     text: "Tooltip",
   },

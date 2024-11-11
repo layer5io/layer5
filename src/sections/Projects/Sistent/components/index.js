@@ -67,6 +67,13 @@ const componentsData = [
   },
   {
     id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
     name: "Tooltip",
     description:
       "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
