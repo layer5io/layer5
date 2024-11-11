@@ -66,6 +66,13 @@ const componentsData = [
     url: "/projects/sistent/components/container",
   },
   {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
     id: 10,
     name: "Box",
     description:
