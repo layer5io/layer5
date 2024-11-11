@@ -51,8 +51,7 @@ const content = (
 );
 
 const codes = [
-  `<SistentThemeProvider>
-    <List sx={style}>
+  `<List sx={style}>
       <ListItem>
         <ListItemText primary="Full width variant below" />
       </ListItem>
@@ -68,10 +67,8 @@ const codes = [
       <ListItem>
         <ListItemText primary="List item" />
       </ListItem>
-    </List>
-  </SistentThemeProvider>`,
-  ` <SistentThemeProvider>
-      <Box
+    </List>`,
+  `<Box
         sx={{
           display: "inline-flex",
           alignItems: "center",
@@ -88,11 +85,8 @@ const codes = [
         <FormatBoldIcon />
         <Divider orientation="vertical" variant="middle" flexItem />
         <FormatItalicIcon />
-      </Box>
-  </SistentThemeProvider>
-`,
-  `<SistentThemeProvider>
-    <Box
+      </Box>`,
+  `<Box
       sx={{
         display: "flex",
         alignItems: "center",
@@ -111,11 +105,8 @@ const codes = [
       <FormatAlignRightIcon />
       <Divider orientation="vertical" flexItem />
       <FormatBoldIcon />
-    </Box>
-  </SistentThemeProvider>
-`,
-  `<SistentThemeProvider>
-    <Root>
+    </Box>`,
+  `<Root>
       {content}
       <Divider>CENTER</Divider>
       {content}
@@ -127,8 +118,7 @@ const codes = [
         <Chip label="Chip" size="small" />
       </Divider>
       {content}
-    </Root>
-  </SistentThemeProvider>`,
+    </Root>`,
 ];
 
 export const DividerCode = () => {
