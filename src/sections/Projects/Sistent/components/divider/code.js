@@ -52,73 +52,73 @@ const content = (
 
 const codes = [
   `<List sx={style}>
-      <ListItem>
-        <ListItemText primary="Full width variant below" />
-      </ListItem>
-      <Divider component="li" />
-      <ListItem>
-        <ListItemText primary="Inset variant below" />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem>
-        <ListItemText primary="Middle variant below" />
-      </ListItem>
-      <Divider variant="middle" component="li" />
-      <ListItem>
-        <ListItemText primary="List item" />
-      </ListItem>
-    </List>`,
+    <ListItem>
+      <ListItemText primary="Full width variant below" />
+    </ListItem>
+    <Divider component="li" />
+    <ListItem>
+      <ListItemText primary="Inset variant below" />
+    </ListItem>
+    <Divider variant="inset" component="li" />
+    <ListItem>
+      <ListItemText primary="Middle variant below" />
+    </ListItem>
+    <Divider variant="middle" component="li" />
+    <ListItem>
+      <ListItemText primary="List item" />
+    </ListItem>
+</List>`,
   `<Box
-        sx={{
-          display: "inline-flex",
-          alignItems: "center",
-          border: "1px solid",
-          borderColor: "divider",
-          borderRadius: 2,
-          bgcolor: "background.paper",
-          color: "text.secondary",
-          "& svg": {
-            m: 1,
-          },
-        }}
-      >
-        <FormatBoldIcon />
-        <Divider orientation="vertical" variant="middle" flexItem />
-        <FormatItalicIcon />
-      </Box>`,
+    sx={{
+      display: "inline-flex",
+      alignItems: "center",
+      border: "1px solid",
+      borderColor: "divider",
+      borderRadius: 2,
+      bgcolor: "background.paper",
+      color: "text.secondary",
+      "& svg": {
+        m: 1,
+      },
+    }}
+  >
+    <FormatBoldIcon />
+    <Divider orientation="vertical" variant="middle" flexItem />
+    <FormatItalicIcon />
+</Box>`,
   `<Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        border: "1px solid",
-        borderColor: "divider",
-        borderRadius: 1,
-        bgcolor: "background.paper",
-        color: "text.secondary",
-        "& svg": {
-          m: 1,
-        },
-      }}
-    >
-      <FormatAlignLeftIcon />
-      <FormatAlignCenterIcon />
-      <FormatAlignRightIcon />
-      <Divider orientation="vertical" flexItem />
-      <FormatBoldIcon />
-    </Box>`,
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      border: "1px solid",
+      borderColor: "divider",
+      borderRadius: 1,
+      bgcolor: "background.paper",
+      color: "text.secondary",
+      "& svg": {
+        m: 1,
+      },
+    }}
+  >
+    <FormatAlignLeftIcon />
+    <FormatAlignCenterIcon />
+    <FormatAlignRightIcon />
+    <Divider orientation="vertical" flexItem />
+    <FormatBoldIcon />
+</Box>`,
   `<Root>
-      {content}
-      <Divider>CENTER</Divider>
-      {content}
-      <Divider textAlign="left">LEFT</Divider>
-      {content}
-      <Divider textAlign="right">RIGHT</Divider>
-      {content}
-      <Divider>
-        <Chip label="Chip" size="small" />
-      </Divider>
-      {content}
-    </Root>`,
+    {content}
+    <Divider>CENTER</Divider>
+    {content}
+    <Divider textAlign="left">LEFT</Divider>
+    {content}
+    <Divider textAlign="right">RIGHT</Divider>
+    {content}
+    <Divider>
+      <Chip label="Chip" size="small" />
+    </Divider>
+    {content}
+</Root>`,
 ];
 
 export const DividerCode = () => {

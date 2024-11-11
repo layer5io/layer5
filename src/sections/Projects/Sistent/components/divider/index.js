@@ -108,6 +108,80 @@ const SistentDivider = () => {
             in lists, cards, or flex containers, the Divider is accessible and
             can be styled to fit various design needs.
           </p>
+          <a id="Props">
+            <h2>Props</h2>
+            <p></p>
+            <div style={{ background: "inherit", color: "white" }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Prop</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ background: "#121212" }}>
+                    <td>variant</td>
+                    <td>string</td>
+                    <td>"fullWidth"</td>
+                    <td>
+                      Defines the style of the divider. Can be "fullWidth",
+                      "inset", or "middle". "fullWidth" is the default and takes
+                      the full width of its container.
+                    </td>
+                  </tr>
+                  <tr style={{ background: "#121212" }}>
+                    <td>orientation</td>
+                    <td>string</td>
+                    <td>"horizontal"</td>
+                    <td>
+                      Specifies the divider's orientation. It can be
+                      "horizontal" or "vertical". Default is "horizontal".
+                    </td>
+                  </tr>
+                  <tr style={{ background: "#121212" }}>
+                    <td>component</td>
+                    <td>elementType</td>
+                    <td>"div"</td>
+                    <td>
+                      Specifies the component type for the divider. It can be
+                      set to any valid HTML element, such as "li" to use the
+                      divider within lists. Default is "div".
+                    </td>
+                  </tr>
+                  <tr style={{ background: "#121212" }}>
+                    <td>sx</td>
+                    <td>object</td>
+                    <td>{}</td>
+                    <td>
+                      A custom style prop to modify the divider's appearance,
+                      such as color, height, or margin. Accepts a style object.
+                    </td>
+                  </tr>
+                  <tr style={{ background: "#121212" }}>
+                    <td>role</td>
+                    <td>string</td>
+                    <td>"separator"</td>
+                    <td>
+                      Sets the ARIA role for accessibility purposes, generally
+                      set as "separator" to indicate the divider's role.
+                    </td>
+                  </tr>
+                  <tr style={{ background: "#121212" }}>
+                    <td>flexItem</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>
+                      If true, applies the divider as a flex item, adjusting it
+                      within a flexbox layout. Default is false.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </a>
           <a id="Different Ways to Use Divider">
             <h2>Ways to use Divider Component</h2>
           </a>
@@ -191,7 +265,6 @@ const SistentDivider = () => {
             properly within a flex container, ensuring it aligns with other flex
             items seamlessly.
           </p>
-
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Box
@@ -245,7 +318,6 @@ const SistentDivider = () => {
               compact layout.
             </p>
           </div>
-
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Box
@@ -277,7 +349,6 @@ const SistentDivider = () => {
             Use the <code>textAlign</code> prop to align elements that are
             wrapped by the Divider.
           </p>
-
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Root>
@@ -295,7 +366,6 @@ const SistentDivider = () => {
               </Root>
             </SistentThemeProvider>
           </Row>
-
           <a id="Accessibility">
             <h3>Accessibility</h3>
           </a>
