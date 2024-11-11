@@ -144,7 +144,7 @@ const SistentDivider = () => {
                   <tr style={{ background: "#121212" }}>
                     <td>component</td>
                     <td>elementType</td>
-                    <td>"div"</td>
+                    <td></td>
                     <td>
                       Specifies the component type for the divider. It can be
                       set to any valid HTML element, such as "li" to use the
