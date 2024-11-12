@@ -133,23 +133,23 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
-          },
-          title: "Meshery, the Cloud Native Manager",
-        },
-        fields: {
-          slug: "/cloud-native-management/meshery",
-        },
-      },
-      {
-        frontmatter: {
-          thumbnail: {
             img: kanvas_color,
           },
           title: "Kanvas, collaborative infrastructure management",
         },
         fields: {
           slug: "/cloud-native-management/kanvas",
+        },
+      },
+      {
+        frontmatter: {
+          thumbnail: {
+            img: meshery,
+          },
+          title: "Meshery, the Cloud Native Manager",
+        },
+        fields: {
+          slug: "/cloud-native-management/meshery",
         },
       },
     ],
@@ -183,7 +183,7 @@ const Navigation = () => {
   }
   useEffect(() => {
     const CLOUD_USER_API =
-      "https://meshery.layer5.io/api/identity/users/profile";
+      "https://cloud.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
@@ -347,7 +347,7 @@ const Navigation = () => {
                           $secondary
                           className="banner-btn two"
                           title="Get Started"
-                          $url="https://meshery.layer5.io/login"
+                          $url="https://cloud.layer5.io/login"
                           $external={true}
                         />
                       </li>
@@ -396,7 +396,7 @@ const Navigation = () => {
                   rel="noreferrer"
                   target="_blank"
                   className="drop-item"
-                  href={`https://meshery.layer5.io/user/${userData.id}`}
+                  href={`https://cloud.layer5.io/user/${userData.id}`}
                 >
                   <div className="drop-item-icon">
                     <CloudIcon />
@@ -429,7 +429,7 @@ const Navigation = () => {
                   onClick={() => {
                     removeCookie("provider_token");
                     // Open logout API link in a new tab
-                    window.open("https://meshery.layer5.io/logout", "_blank");
+                    window.open("https://cloud.layer5.io/logout", "_blank");
 
                     // Refresh the current page
                     window.location.reload();
@@ -453,7 +453,7 @@ const Navigation = () => {
               $external={true}
               title="Get Started"
               alt="Signup for Layer5 Cloud"
-              $url="https://meshery.layer5.io/registration"
+              $url="https://cloud.layer5.io/registration"
             />
           )}
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" alt="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}

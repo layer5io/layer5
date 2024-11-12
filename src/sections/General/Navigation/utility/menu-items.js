@@ -84,40 +84,45 @@ const Data = {
       path: "/products",
       subItems: [
         {
-          name: "Meshery",
-          path: "/cloud-native-management/meshery",
+          name: "Kanvas",
+          path: "/cloud-native-management/kanvas",
           sepLine: true
         },
         {
-          name: "Kanvas",
-          path: "/cloud-native-management/kanvas",
+          name: "Designer",
+          path: "/cloud-native-management/kanvas/design",
+        },
+        {
+          name: "Operator",
+          path: "/cloud-native-management/kanvas/operate",
+        },
+        {
+          name: "Cloud + Catalog",
+          path: "/cloud-native-management/catalog",
+        },
+        {
+          name: "Open source projects",
+          path: "/projects",
+          sepLine: true
+        },
+        {
+          name: "Meshery",
+          path: "/cloud-native-management/meshery",
+        },
+        {
+          name: "NightHawk",
+          path: "/projects/nighthawk",
         },
         // {
         //   name: "---",
         //   // path: "/cloud-native-management/kanvas",
 
         // },
-        {
-          name: "Catalog",
-          path: "/cloud-native-management/catalog",
-        },
-        {
-          name: "Docker Extension",
-          path: "/docker-extension-meshery",
-        },
-        {
-          name: "Playground",
-          path: "/cloud-native-management/playground",
-        },
       ],
       actionItems: [
         {
           actionName: "Pricing",
           actionLink: "/pricing",
-        },
-        {
-          actionName: "Open source projects",
-          actionLink: "/projects",
         },
         // {
         //   actionName: "Pricing",
