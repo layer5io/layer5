@@ -132,9 +132,30 @@ const TooltipGuidance = () => {
                       Tooltip with Markdown
                     </Typography>
                     <em>{"And here's"}</em> <b>{"some"}</b>{" "}
-                    <u>{"amazing content"}</u>. {"It's very engaging. Right?"}
+                    <a href="#">{"amazing content"}</a>. {"It's very engaging. Right?"}
                   </React.Fragment>
                 }
+              >
+                <span>
+                  <Button variant="text" label="Customize" size="medium" />
+                </span>
+              </CustomTooltip>
+            </SistentThemeProvider>
+          </Row>
+
+          <h3>Markdown Support</h3>
+          <p>
+            The Tooltip component supports Markdown content, allowing you to
+            include rich text, links, and other elements inside the tooltip. By
+            passing Markdown content as the title prop, you can create more
+            engaging and informative tooltips.
+          </p>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <CustomTooltip
+                title={`### Tooltip with Markdown 
+*And here's* **some** [amazing content](#) 
+It's very engaging. Right?`}
               >
                 <span>
                   <Button variant="text" label="Customize" size="medium" />
