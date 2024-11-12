@@ -129,7 +129,7 @@ const TooltipGuidance = () => {
                 title={
                   <React.Fragment>
                     <Typography color="inherit">
-                      Tooltip with Markdown
+                      Tooltip with HTML Support
                     </Typography>
                     <em>{"And here's"}</em> <b>{"some"}</b>{" "}
                     <a href="#">{"amazing content"}</a>. {"It's very engaging. Right?"}
