@@ -67,7 +67,6 @@ const BannerSectionWrapper = styled.div`
         text-align: center;
     }
 
-    }
     .banner-text p {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
@@ -120,7 +119,8 @@ const BannerSectionWrapper = styled.div`
         .kanvas-logo {
             width: 20rem;
             left: 21%;
-            margin-top: -7rem;
+            /* right: 12rem; */
+            /* margin-top: -5rem; */
         }
         .para {
             margin-top: -3rem;
@@ -128,19 +128,20 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 1200px) {
         .kanvas-logo {
+            left: 20%;
             width: 18rem;
-            left: 18%;
-            margin-top: -6rem;
+            /* right: 8rem; */
+            margin-top: -5rem;
         }
         /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
     }
     @media screen and (max-width: 992px) {
         .kanvas-logo {
-            width: 8rem;
+            width: 16rem;
             margin-top: -2rem;
             left: 15%;
         }
-        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
+        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0%;
     }
 
     @media screen and (max-width: 768px) {
@@ -148,8 +149,8 @@ const BannerSectionWrapper = styled.div`
         .kanvas-logo {
             margin-top: -5rem;
             margin-right: 2rem;
-            left: 7%;
-            min-width: 5rem;
+            left: 10%;
+            min-width: 8rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
@@ -158,7 +159,7 @@ const BannerSectionWrapper = styled.div`
             margin-top: -5rem;
             margin-right: 2rem;
             left: 0%;
-            min-width: 3rem;
+            min-width: 6rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
@@ -166,8 +167,8 @@ const BannerSectionWrapper = styled.div`
         .kanvas-logo {
             margin-top: -5rem;
             margin-right: 0;
-            left: -20%;
-            min-width: 3rem;
+            left: -10%;
+            min-width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
