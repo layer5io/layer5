@@ -15,7 +15,7 @@ const WhatAwaitsSection = () => {
             <p>Cloud Native patterns help you get the most out of any cloud native. Each pattern can be used as a template and is customizable.
             </p>
             <p style={{ "justifyContent": "center", "textAlign": "center" }}>
-              <Button $primary title="Visit Cloud Native Patterns catalog" $url="https://meshery.layer5.io/catalog" $external={true} style={{ "margin": "1rem" }}/>
+              <Button $primary title="Visit Cloud Native Patterns catalog" $url="https://cloud.layer5.io/catalog" $external={true} style={{ "margin": "1rem" }}/>
               <Button $secondary title="Visit Service Mesh Patterns website" $url="https://service-mesh-patterns.github.io/service-mesh-patterns/" $external={true} />
             </p>
           </div>

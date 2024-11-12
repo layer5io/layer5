@@ -126,7 +126,7 @@ export const repo_data = [
       {
         project: "Layer5 Cloud",
         image: meshery,
-        site: "https://meshery.layer5.io/",
+        site: "https://cloud.layer5.io/",
         language: "React.js",
         maintainers_name: ["Yash Sharma"],
         link: ["https://layer5.io/community/members/yash-sharma"],
