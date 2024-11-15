@@ -115,7 +115,8 @@ p{
   }
 
   .full_time {
-    .opportunity-card {
+  flex-wrap: wrap;
+      .opportunity-card {
       height: 12rem;
     }
   }
