@@ -84,4 +84,4 @@ jobs:
           commit_options: "--signoff"
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
-          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit_author: 'l5io <l5io@users.noreply.github.com>'
