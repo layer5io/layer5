@@ -28,6 +28,7 @@ const PlanCard = ({ planData }) => {
                       <FeatureDetails
                         category={t.category}
                         description={t.description}
+                        tier={t.tier}
                       />
                     </div>
                   ))}

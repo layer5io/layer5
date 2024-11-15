@@ -36,15 +36,16 @@ function generateOptions(data) {
 
   const options = Object.entries(tiers).map(([tierName, tierInfo]) => {
     const summary = data
-      .filter(
-        (item) =>
-          item.entire_row["Subscription Tier"] === tierName &&
-          item.pricing_page === "true"
+      .filter((item) =>
+        (tierName === "Team" &&
+          (item.entire_row["Subscription Tier"] === "Team" || item.entire_row["Subscription Tier"] === "Team-Beta")) ||
+        (item.entire_row["Subscription Tier"] === tierName && item.pricing_page === "true")
       )
       .map((item, index) => ({
         id: index,
         category: item.entire_row.Function,
-        description: item.entire_row.Feature
+        description: item.entire_row.Feature,
+        tier: item.entire_row["Subscription Tier"]
       }));
 
     return {
