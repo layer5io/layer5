@@ -737,7 +737,7 @@
       "Feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
       "Function": "Distributed Load Generator",
       "Pricing page?": "X",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "Team-Beta",
       "Tech": "GetNighthawk",
       "Theme (also: Keychain Name)": "Performance Management"
     }
