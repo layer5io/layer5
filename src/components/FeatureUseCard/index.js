@@ -4,7 +4,7 @@ import { Col } from "../../reusecore/Layout";
 
 const FeatureUseCard = (props) => {
   return (
-    <Col sm={props.sm} md={props.md} lg={props.lg} className={"display-container"}>
+    <Col $sm={props.sm} $md={props.md} $lg={props.lg} className={"display-container"}>
       <FeatureUseCardWrapper >
         <div className={"image-container"}>
           <img src={props.data.image} alt={""}/>

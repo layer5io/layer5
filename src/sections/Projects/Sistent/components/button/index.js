@@ -80,7 +80,7 @@ const SistentButton = () => {
             fill can range from a primary brand color to any other applicable
             color in a brand’s color palette.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="Filled" size="medium" />
             </SistentThemeProvider>
@@ -93,7 +93,7 @@ const SistentButton = () => {
             be used to style these buttons in order to fit into the theme align
             with brand guidelines.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="outlined" label="Outlined" size="medium" />
             </SistentThemeProvider>
@@ -105,7 +105,7 @@ const SistentButton = () => {
             just have a specific text styling and color to denote different
             states for easier identification.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="text" label="Text" size="medium" />
             </SistentThemeProvider>
@@ -130,7 +130,7 @@ const SistentButton = () => {
             and desktop resolutions, but it serves in different capacities
             across these different resolutions.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="56px / 3.5rem" size="large" />
             </SistentThemeProvider>
@@ -141,7 +141,7 @@ const SistentButton = () => {
             available from mobile to desktop resolutions, even though it serves
             in different capacities across these screen sizes.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="contained" label="48px / 3rem" size="medium" />
             </SistentThemeProvider>
@@ -153,7 +153,7 @@ const SistentButton = () => {
             devices - the fingers, are a lot larger than the cursor on a desktop
             or larger screen.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <Col sm={12}>
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button variant="contained" label="Full width" fullWidth />

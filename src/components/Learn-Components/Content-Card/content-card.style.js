@@ -8,7 +8,7 @@ const ContentCardWrapper = styled.div`
   border: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroOne};
   justify-content: space-between;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  :hover {
+  &:hover {
     transition: background 150ms ease-out 0s, border 150ms ease-out 0s,
       transform 150ms ease-out 0s;
     transform: translate3d(0px, -1px, 0px);

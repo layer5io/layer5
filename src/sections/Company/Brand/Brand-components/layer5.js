@@ -23,15 +23,17 @@ const Layer5Brand = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row className="brand-section">
-          <Col xs={12} sm={6}>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
+          <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               Layer5
             </h1>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/layer5-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={false}>
+              <Button $primary title="Download Logo Assets" $external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -47,32 +49,36 @@ const Layer5Brand = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12}>
             <h2 className="layerH3 in">
               Logos
             </h2>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="Layer5Logos">
-              <Col xs={12} sm={6}>
+            <Row $Vcenter className="Layer5Logos">
+              <Col $xs={12} $sm={6}>
                 <img src={Layer5WhiteBg} alt="Layer5 Logo" />
-                  Primary Logo: broadly, and majorly applicable
+                Primary Logo: broadly, and majorly applicable
               </Col>
-              <Col xs={12} sm={6}>
+              <Col $xs={12} $sm={6}>
                 <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
-                  Layer5 Icon: suited for square-shaped display
+                Layer5 Icon: suited for square-shaped display
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row>
-          <Col xs={12}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12}>
             <h2 className="layerH3 in">
               Colors
             </h2>
           </Col>
-          <Col xs={12}>
+          <Col $xs={12}>
             <p>
               Our community color palette consists of gray and green colors
               representing each of our projects. The Layer5 logo should be white
@@ -95,13 +101,15 @@ const Layer5Brand = () => {
             </div>
           </Row>
         </Row>
-        <Row>
-          <Col xs={12}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12}>
             <h2 className="layerH3 in">
               Bookmarks
             </h2>
           </Col>
-          <Col xs={12}>
+          <Col $xs={12}>
             <p className="layerH3">
               Media available for print.
             </p>

@@ -79,7 +79,7 @@ export const ButtonGuidance = () => {
             page, or complete an action. The filled button serves as the primary
             button.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button
                 variant="contained"
@@ -100,7 +100,7 @@ export const ButtonGuidance = () => {
             option which the primary button highlights. The outlined button
             serves as the secondary button
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button
                 variant="outlined"
@@ -119,7 +119,7 @@ export const ButtonGuidance = () => {
             to be taken by the user. The text button serves as the tertiary
             button.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button variant="text" label="Tertiary" size="medium" />
             </SistentThemeProvider>
@@ -134,7 +134,7 @@ export const ButtonGuidance = () => {
             categories so for easy identification and additional styling can be
             added to them to achieve this necessary distinction.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button color="warning" label="Call to Action" size="medium" />
             </SistentThemeProvider>
@@ -146,7 +146,7 @@ export const ButtonGuidance = () => {
             irreversible action is about to take place and as such confirmation
             is required in order to proceed.
           </p>
-          <Row Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Button color="error" label="Danger" size="medium" />
             </SistentThemeProvider>

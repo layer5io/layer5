@@ -6,44 +6,39 @@ import { graphql } from "gatsby";
 import loadable from "@loadable/component";
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
-export const query = graphql`
-  query allBlogs {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        fields: { collection: { eq: "blog" } }
-        frontmatter: { published: { eq: true } }
+export const query = graphql`query allBlogs {
+  allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      body
+      frontmatter {
+        title
+        date(formatString: "MMM Do, YYYY")
+        author
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
       }
-    ) {
-      nodes {
-        id
-        body
-        frontmatter {
-          title
-          date(formatString: "MMM Do, YYYY")
-          author
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            extension
-            publicURL
-          }
-          darkthumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            extension
-            publicURL
-          }
-        }
-        fields {
-          slug
-        }
+      fields {
+        slug
       }
     }
   }
-`;
+}`;
 
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);

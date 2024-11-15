@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 1
 
       - name: NPM Install
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build

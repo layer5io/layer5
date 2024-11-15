@@ -52,9 +52,9 @@ export const DockerMesheryWrapper = styled.div`
         text-align: center;
         text-transform: uppercase; 
       }
-    h2 {
-        padding: 2rem 0rem;
-    }
+    // h2 {
+    //     padding: 2rem 0rem;
+    // }
 
     .installButton {
       text-align: center;

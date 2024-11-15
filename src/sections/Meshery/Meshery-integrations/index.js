@@ -26,9 +26,8 @@ const Integrations = () => {
                 <IntegrationsGrid  count={13} />
                 <div style={{ marginTop: "20px" }}>
                   <Button className="seeAllBtn"
-                    primary
-                    title={"See All"}
-                    url="/cloud-native-management/meshery/integrations/"
+                    $primary                    title={"See All"}
+                    $url="/cloud-native-management/meshery/integrations/"
                   />
                 </div>
               </>

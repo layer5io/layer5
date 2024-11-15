@@ -16,7 +16,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
-import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
 import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
@@ -235,7 +235,7 @@ const RecognitionPage = () => {
               Each badge is tied to specific activities. Here are some ways you can earn Layer5 Badges:
             </p>
             <p>
-              For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, reviewing Pull Requests, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you'll begin to unlock badges that showcase your multifaceted involvement. These badges will be prominently displayed on your <a href="https://meshery.layer5.io">Layer5 Cloud</a> profile, visually representing your journey. Not only does this serve as a source of personal pride, but it also helps others in the community recognize your expertise and dedication.
+              For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, reviewing Pull Requests, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you'll begin to unlock badges that showcase your multifaceted involvement. These badges will be prominently displayed on your <a href="https://cloud.layer5.io">Layer5 Cloud</a> profile, visually representing your journey. Not only does this serve as a source of personal pride, but it also helps others in the community recognize your expertise and dedication.
               <ul>
                 <li>
                   Activity Badges are the badges that are assigned when a user completes a task like sharing a design, creating a design for the first time, etc.
@@ -258,7 +258,7 @@ const RecognitionPage = () => {
             <ul>
               <li>
                 Visit your{" "}
-                <a href="https://meshery.layer5.io">Layer5 Cloud</a>{" "}
+                <a href="https://cloud.layer5.io">Layer5 Cloud</a>{" "}
                 Profile to see the badges
               </li>
               <li>Click on the badge, which you wanted to display</li>

@@ -66,8 +66,7 @@ const Footer = ({ location }) => {
         ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
           pathname
         )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${
-          pathname == "/" ? "" : pathname
+        : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
         }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
@@ -80,24 +79,26 @@ const Footer = ({ location }) => {
       />
       <Container>
         <Row className="footer-head">
-          <Col className="footer_logo-icons" sm={3}>
+          <Col className="footer_logo-icons" $sm={3}>
             <Link to="/">
               <img src={logo} className="footer-logo" alt="logo" />
             </Link>
           </Col>
-          <Col className="footer_logo-icons" sm={9}>
+          <Col className="footer_logo-icons" $sm={9}>
             <SocialLinksColor />
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} lg={3}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
               from your infrastructure. Creator and maintainer of cloud native
               standards. Maker of Meshery, the cloud native manager.
             </p>
           </Col>
-          <Col className="sections_col" xs={12} lg={9}>
+          <Col className="sections_col" $xs={12} $lg={9}>
             <Row>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
@@ -200,7 +201,7 @@ const Footer = ({ location }) => {
                   </li>
                   <li>
                     <a className="category-link" href="https://badges.layer5.io/">
-                    Recognition Program
+                      Recognition Program
                     </a>
                   </li>
                 </ul>
@@ -330,8 +331,7 @@ const Footer = ({ location }) => {
                     required
                   />
                   <Button
-                    secondary
-                    title="Subscribe"
+                    $secondary title="Subscribe"
                     aria-label="subscribe-us"
                     id="mc-embedded-subscribe-2"
                   />

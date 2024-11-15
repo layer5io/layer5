@@ -16,7 +16,7 @@ export const Categories = {
     "Image": kanvas_icon,
     "Image_Alt": "Kanvas",
     "Heading": "Get started with Kanvas!",
-    "Content": "Explore and understand your infrastructure at a glance with our powerful visualizer tool. Gain insights, track dependencies, and optimize performance effortlessly.",
+    "Content": "Explore and understand your infrastructure at a glance with our powerful Operator tool. Gain insights, track dependencies, and optimize performance effortlessly.",
     "Button_Text": "Try Kanvas now!",
     "Link": "/cloud-native-management/kanvas",
     "Link_external": false

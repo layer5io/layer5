@@ -309,6 +309,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/cloud-native-management/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/operate",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
     toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
     redirectInBrowser: true,
@@ -371,99 +389,84 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
 
-  const res = await graphql(`
-    {
-      allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
-        nodes {
-          frontmatter {
-            program
-            programSlug
-          }
-          fields {
-            collection
-            slug
-          }
-        }
+  const res = await graphql(`{
+  allPosts: allMdx(filter: {frontmatter: {published: {eq: true}}}) {
+    nodes {
+      frontmatter {
+        program
+        programSlug
       }
-      blogTags: allMdx(
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        group(field: frontmatter___tags) {
-          nodes {
-            id
-          }
-          fieldValue
-        }
-      }
-      blogCategory: allMdx(
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        group(field: frontmatter___category) {
-          nodes {
-            id
-          }
-          fieldValue
-        }
-      }
-      memberBio: allMdx(
-        filter: {
-          fields: { collection: { eq: "members" } }
-          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
-        }
-      ) {
-        nodes {
-          frontmatter {
-            name
-          }
-          fields {
-            slug
-            collection
-          }
-        }
-      }
-      singleWorkshop: allMdx(
-        filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-      ) {
-        nodes {
-          fields {
-            slug
-            collection
-          }
-        }
-      }
-      labs: allMdx(
-        filter: { fields: { collection: { eq: "service-mesh-labs" } } }
-      ) {
-        nodes {
-          fields {
-            slug
-            collection
-          }
-        }
-      }
-      learncontent: allMdx(
-        filter: { fields: { collection: { eq: "content-learn" } } }
-      ) {
-        nodes {
-          fields {
-            learnpath
-            slug
-            course
-            section
-            chapter
-            pageType
-            collection
-          }
-        }
+      fields {
+        collection
+        slug
       }
     }
-  `);
+  }
+  blogTags: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      nodes {
+        id
+      }
+      fieldValue
+    }
+  }
+  blogCategory: allMdx(
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    group(field: {frontmatter: {category: SELECT}}) {
+      nodes {
+        id
+      }
+      fieldValue
+    }
+  }
+  memberBio: allMdx(
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}, executive_bio: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        name
+      }
+      fields {
+        slug
+        collection
+      }
+    }
+  }
+  singleWorkshop: allMdx(
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      fields {
+        slug
+        collection
+      }
+    }
+  }
+  labs: allMdx(filter: {fields: {collection: {eq: "service-mesh-labs"}}}) {
+    nodes {
+      fields {
+        slug
+        collection
+      }
+    }
+  }
+  learncontent: allMdx(filter: {fields: {collection: {eq: "content-learn"}}}) {
+    nodes {
+      fields {
+        learnpath
+        slug
+        course
+        section
+        chapter
+        pageType
+        collection
+      }
+    }
+  }
+}`);
 
   // handle errors
   if (res.errors) {
@@ -962,8 +965,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        slack: String,
        video: String,
        community_manager: String,
-       docURL: String, 
-
+       docURL: String,
      }
    `;
   createTypes(typeDefs);

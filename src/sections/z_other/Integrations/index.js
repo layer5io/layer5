@@ -18,7 +18,7 @@ const Integrations = () => {
   return (
     <IntegrationItemWrapper>
       <Container>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col xs={12} sm={6}>
             <div className="integration__block__wrap">
               <div className="integration__block">

@@ -43,4 +43,64 @@ export const content = [
     link: "/projects/sistent/components/text-input/code",
     text: "Text Input",
   },
+  {
+    id: 15,
+    link: "/projects/sistent/components/paper",
+    text: "Paper",
+  },
+  {
+    id: 16,
+    link: "/projects/sistent/components/paper/guidance",
+    text: "Paper",
+  },
+  {
+    id: 17,
+    link: "/projects/sistent/components/paper/code",
+    text: "Paper",
+  },
+  {
+    id: 18,
+    link: "/projects/sistent/components/popper",
+    text: "Popper",
+  },
+  {
+    id: 19,
+    link: "/projects/sistent/components/popper/guidance",
+    text: "Popper",
+  },
+  {
+    id: 20,
+    link: "/projects/sistent/components/popper/code",
+    text: "Popper",
+  },
+  {
+    id: 21,
+    link: "/projects/sistent/components/text-field",
+    text: "Text Field",
+  },
+  {
+    id: 22,
+    link: "/projects/sistent/components/text-field/guidance",
+    text: "Text Field",
+  },
+  {
+    id: 23,
+    link: "/projects/sistent/components/text-field/code",
+    text: "Text Field",
+  },
+  {
+    id: 24,
+    link: "/projects/sistent/components/button-group",
+    text: "Button Group",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/button-group/guidance",
+    text: "Button Group",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/button-group/code",
+    text: "Button Group",
+  },
 ];

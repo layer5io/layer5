@@ -13,9 +13,13 @@ const AdventuresVol = ({ title, description, to, image }) => {
           <p className="handbook__card--para">
             {description}
           </p>
-          <div className="handbook__card--lm__container">
-            <a href={to} className="handbook__card--lm">Read More <HiOutlineChevronRight /></a>
-          </div>
+          {to && (
+            <div className="handbook__card--lm__container">
+              <a href={to} className="handbook__card--lm">
+                Read More <HiOutlineChevronRight />
+              </a>
+            </div>
+          )}
         </div>
       </a>
     </AdventuresVolWrapper>

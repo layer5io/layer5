@@ -97,3 +97,9 @@ project/kanvas:
 - changed-files:
   - any-glob-to-any-file:
     - "src/sections/Kanvas/**/*"
+project/sistent:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/components/SistentNavigation/**/*"
+    - "src/pages/projects/sistent/**/*"
+    - "src/sections/Projects/Sistent/**/*"

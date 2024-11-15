@@ -25,13 +25,15 @@ const Catalog = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row className="brand-section">
-          <Col xs={12} sm={6}>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="brand-section">
+          <Col $xs={12} $sm={6}>
             <h1 className="layerH3">Catalog</h1>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/catalog-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={false}>
+              <Button $primary title="Download Logo Assets" $external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
@@ -47,15 +49,19 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12}>
             <h2 className="layerH3 in">Logos</h2>
           </Col>
         </Row>
         <ProjectItemWrapper id="projects">
-          <Row>
+          <Row style={{
+            flexWrap: "wrap"
+          }}>
             <div className="project__block__wrap">
-              <Col sm={12} md={6} lg={4}>
+              <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
                   <StaticImage
                     loading="lazy"
@@ -64,7 +70,7 @@ const Catalog = () => {
                   />
                 </div>
               </Col>
-              <Col sm={12} md={6} lg={4}>
+              <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
                   <StaticImage
                     loading="lazy"
@@ -73,7 +79,7 @@ const Catalog = () => {
                   />
                 </div>
               </Col>
-              <Col sm={12} md={6} lg={4}>
+              <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
                   <StaticImage
                     loading="lazy"
@@ -82,7 +88,7 @@ const Catalog = () => {
                   />
                 </div>
               </Col>
-              <Col sm={12} md={6} lg={4}>
+              <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
                   <StaticImage
                     loading="lazy"
@@ -91,7 +97,7 @@ const Catalog = () => {
                   />
                 </div>
               </Col>
-              <Col sm={12} md={6} lg={4}>
+              <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
                   <StaticImage
                     loading="lazy"
@@ -104,11 +110,13 @@ const Catalog = () => {
           </Row>
         </ProjectItemWrapper>
 
-        <Row>
-          <Col xs={12}>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
+          <Col $xs={12}>
             <h2 className="layerH3 in">Colors</h2>
           </Col>
-          <Col xs={12}>
+          <Col $xs={12}>
             <p>
               Our community color palette consists of gray and green colors
               representing each of our projects. The Catalog logo should be

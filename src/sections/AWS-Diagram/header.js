@@ -122,10 +122,10 @@ const Header = () => {
               </p>
               <div className="header__button_section">
                 <Button
-                  primary
+                  $primary
                   title="Try Kanvas Now!"
-                  external={true}
-                  url="/kanvas"
+                  $external={true}
+                  $url="/kanvas"
                 />
               </div>
             </Col>

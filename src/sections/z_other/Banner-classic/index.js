@@ -18,7 +18,7 @@ const BannerClassic = () => {
   return (
     <BannerSectionWrapper>
       <Container>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col sm={12} sm={7}>
             <SectionTitle
               className="section-title"

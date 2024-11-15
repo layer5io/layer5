@@ -94,14 +94,16 @@ const NewsGrid = ({ data }) => {
               </div>
             </div>
 
-            <Row>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
               {news.length < 1 && (
-                <Col xs={12} sm={6}>
+                <Col $xs={12} $sm={6}>
                       No News post that matches the title "{searchQuery}" found.
                 </Col>
               )}
               {news.map(({ id, frontmatter, fields }) => (
-                <Col xs={12} sm={6} lg={4} key={id}>
+                <Col $xs={12} $sm={6} $lg={4} key={id}>
                   <Card  frontmatter={frontmatter} fields={fields}/>
                 </Col>
               ))}

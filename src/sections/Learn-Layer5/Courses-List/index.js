@@ -20,9 +20,9 @@ const CoursesList = ({ coursesData, learnPath }) => {
       <PageHeader
         title={learnPath}
       />
-      <Container sm={12} lg={9} xl={9}>
+      <Container $sm={12} $lg={9} $xl={9}>
         {/* <Row className="course-list">
-          <Col sm={0} lg={3} xl={3}>
+          <Col $sm={0} $lg={3} $xl={3}>
             <TOC coursesData={coursesData} />
           </Col> */}
         <div className="content">
@@ -32,7 +32,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
             <div className="learning-path-cards">
               {coursesData.map((tutorial, index) => {
                 return (
-                  <Col sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
+                  <Col $sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
                     <Link to={tutorial.fields.course}>
                       <ContentCard chapterNum={index + 1} chapter={tutorial} />
                     </Link>
