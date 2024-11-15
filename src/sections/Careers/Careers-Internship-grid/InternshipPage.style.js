@@ -123,6 +123,13 @@ p{
   @media screen and (max-width: 991px) {
     .opportunity-card {
       height: 12.5rem;
+      width: 16rem;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .opportunity-card {
+      width: 23rem;
     }
   }
 
