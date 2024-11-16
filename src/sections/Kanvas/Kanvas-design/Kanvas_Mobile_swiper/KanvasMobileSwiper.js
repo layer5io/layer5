@@ -60,7 +60,7 @@ export const KanvasMobileSwiper = () => {
     <SwiperContainer>
       <h2>Multi user real time collaboration</h2>
       <h6>
-        Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one
+        Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one
         place.
       </h6>
       <Swiper
