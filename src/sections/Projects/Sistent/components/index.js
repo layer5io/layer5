@@ -74,11 +74,18 @@ const componentsData = [
   },
   {
     id: 10,
+    name: "Box",
+    description:
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+    url: "/projects/sistent/components/box",
+  },
+  {
+    id: 11,
     name: "Drawer",
     description:
       "A Drawer component provides a sliding panel that can be used to display navigation links, actions, or additional content",
     url: "/projects/sistent/components/drawer",
-  },
+  }
 ];
 
 const SistentComponents = () => {
