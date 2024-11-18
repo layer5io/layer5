@@ -1,10 +1,10 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import MesheryLogo from "../../../../../assets/images/meshery/meshery-logo-light-text-side.webp"
-import KanvasLogo from "../../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png"
+import MesheryLogo from "../../../../../assets/images/meshery/meshery-logo-light-text-side.webp";
+import KanvasLogo from "../../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png";
 
-import { SistentThemeProvider, Card, CardActions, CardContent, CardHeader, CardMedia , Typography, Box, Button} from "@layer5/sistent";
+import { SistentThemeProvider, Card, CardActions, CardContent, CardHeader, CardMedia , Typography, Box, Button } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
@@ -57,7 +57,7 @@ const SistentCard = () => {
             Meshery
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          Meshery is an open-source cloud-native management platform designed to help users manage, monitor, and optimize the performance of service meshes and their workloads. 
+          Meshery is an open-source cloud-native management platform designed to help users manage, monitor, and optimize the performance of service meshes and their workloads.
           </Typography>
         </CardContent>
       </CardActions>
@@ -69,7 +69,7 @@ const SistentCard = () => {
       <CardActions>
         <CardMedia
           component="img"
-          height="90" 
+          height="90"
           image={KanvasLogo}
           alt="Kanvas"
         />
@@ -89,17 +89,14 @@ const SistentCard = () => {
       </CardActions>
     </Card>
   );
-  
-
   return (
     <SistentLayout title="Card">
       <div className="content">
         <a id="Identity">
           <h2>Card</h2>
         </a>
-        <p>The Card component is a UI element used to encapsulate information or actions related to a single topic,
-           typically in a visually separated, easily digestible format. It often includes elements like images, text,
-            and buttons to present content and enable quick interactions without navigating away from the card.
+        <p>The Card component is a UI element used to encapsulate information or actions related to a single topic, typically in a visually separated, easily digestible format. It often includes elements like images, text, and buttons to present content and enable quick interactions without navigating away from the card.
+
         </p>
         <div className="filterBtns">
           <TabButton
@@ -138,11 +135,7 @@ const SistentCard = () => {
         </div>
         <div className="main-content">
           <p>
-            The card component is a versatile UI element commonly used in web and mobile applications.
-             It's designed to showcase content in a clean, concise, and visually organized manner.
-              Typically, a card groups related information, making it easy for users to digest and interact with.
-               It often includes an image or icon, title, description, and actionable buttons or links, all contained 
-               within a defined boundary that makes it visually distinct.
+            The card component is a versatile UI element commonly used in web and mobile applications. It's designed to showcase content in a clean, concise, and visually organized manner. Typically, a card groups related information, making it easy for users to digest and interact with. It often includes an image or icon, title, description, and actionable buttons or links, all contained within a defined boundary that makes it visually distinct.
           </p>
           <a id="Types of Cards">
             <h2>Types of Cards</h2>
@@ -151,8 +144,7 @@ const SistentCard = () => {
           </p>
           <h3>Outlined</h3>
           <p>
-          An outlined card is a variation of the standard card component, often used to provide a lighter, more minimalist design. 
-          Instead of a solid background or shadow, an outlined card uses a border to define its boundaries, giving it a cleaner and more refined appearance. 
+          An outlined card is a variation of the standard card component, often used to provide a lighter, more minimalist design. Instead of a solid background or shadow, an outlined card uses a border to define its boundaries, giving it a cleaner and more refined appearance.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -161,10 +153,7 @@ const SistentCard = () => {
           </Row>
 
           <h3>Main Action</h3>
-          <p>
-          1. A card often lets users interact with its entire surface to trigger its main function, 
-          whether it’s expanding, navigating to another screen, or activating some other behavior.
-          </p>
+          <p>1. A card often lets users interact with its entire surface to trigger its main function, whether it’s expanding, navigating to another screen, or activating some other behavior.</p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Card variant="outlined">{cardMainAction1}</Card>
@@ -172,8 +161,7 @@ const SistentCard = () => {
           </Row>
 
           <p>
-          2. Cards can also include secondary actions, which should be positioned away 
-          from the primary action area to avoid unintentional interaction conflicts.
+          2. Cards can also include secondary actions, which should be positioned away from the primary action area to avoid unintentional interaction conflicts.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -181,10 +169,9 @@ const SistentCard = () => {
             </SistentThemeProvider>
           </Row>
 
-          <p> NOTE:
-            Cards may offer multiple actions, UI elements, and an overflow menu,
-             but it’s important to exercise restraint, as they are primarily designed to serve
-              as entry points to deeper and more comprehensive content.</p>
+          <p>
+          NOTE: Cards may offer multiple actions, UI elements, and an overflow menu, but it’s important to exercise restraint, as they are primarily designed to serve as entry points to deeper and more comprehensive content.
+          </p>
         </div>
       </div>
     </SistentLayout>

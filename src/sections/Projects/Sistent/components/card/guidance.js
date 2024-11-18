@@ -48,7 +48,7 @@ export const CardGuidance = () => {
             Meshery
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          Meshery is an open-source cloud-native management platform designed to help users manage, monitor, and optimize the performance of service meshes and their workloads. 
+          Meshery is an open-source cloud-native management platform designed to help users manage, monitor, and optimize the performance of service meshes and their workloads.
           </Typography>
         </CardContent>
       </CardActions>
@@ -140,10 +140,7 @@ export const CardGuidance = () => {
 
           <h3>Oultined Card</h3>
           <p>
-          Outlined cards are ideal for use in layouts that benefit from a subtle, modern look, such as in settings with light backgrounds where visual clarity is important.
-           They’re perfect for showcasing items like product listings, profiles, or dashboard summaries, as the minimal border keeps the focus on the content without adding
-            visual weight. 
-          </p>
+          Outlined cards are ideal for use in layouts that benefit from a subtle, modern look, such as in settings with light backgrounds where visual clarity is important. They’re perfect for showcasing items like product listings, profiles, or dashboard summaries, as the minimal border keeps the focus on the content without adding visual weight.</p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Card variant="outlined">{cardOutlined}</Card>
@@ -152,9 +149,7 @@ export const CardGuidance = () => {
 
           <h3>Main Action Cards</h3>
           <p>
-          This type of interactive card is well-suited for use in applications where quick access to more information 
-          or actions is important, such as dashboards, or product catalogs. 
-          For example, ont the website, users can tap anywhere on the card to open the full product page.
+          This type of interactive card is well-suited for use in applications where quick access to more information or actions is important, such as dashboards, or product catalogs. For example, ont the website, users can tap anywhere on the card to open the full product page.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -163,9 +158,7 @@ export const CardGuidance = () => {
           </Row>
 
           <p>
-          In usage, cards can incorporate secondary actions, like sharing, bookmarking, or viewing additional details, 
-          which are typically placed separately from the main action area. This separation prevents accidental taps or clicks,
-           allowing users to clearly distinguish between the primary function of the card (like opening a detailed view) and other supporting actions.
+          In usage, cards can incorporate secondary actions, like sharing, bookmarking, or viewing additional details, which are typically placed separately from the main action area. This separation prevents accidental taps or clicks, allowing users to clearly distinguish between the primary function of the card (like opening a detailed view) and other supporting actions.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -177,32 +170,22 @@ export const CardGuidance = () => {
             <h2>Labeling</h2>
           </a>
           <p>
-          For card components, clear labeling helps define the purpose and hierarchy of each card, 
-          making it easier for users to understand the content at a glance. 
-          Labels, like titles or category tags, can indicate the main topic or action associated with each card, 
-          improving navigation and usability within a grid of multiple cards.
+          For card components, clear labeling helps define the purpose and hierarchy of each card, making it easier for users to understand the content at a glance. Labels, like titles or category tags, can indicate the main topic or action associated with each card, improving navigation and usability within a grid of multiple cards.
           </p>
 
           <h3>Hierarchy and Visual Cues</h3>
           <p>
-          Cards benefit from a clear hierarchy, using typography, spacing, and color to guide users through the content. 
-          For instance, a card title in bold or larger text immediately draws attention, while secondary information is displayed 
-          with subdued colors.
+          Cards benefit from a clear hierarchy, using typography, spacing, and color to guide users through the content. For instance, a card title in bold or larger text immediately draws attention, while secondary information is displayed with subdued colors.
           </p>
 
           <h3>Interactivity and Feedback</h3>
           <p>
-          Cards often use hover effects, shadow adjustments, or subtle animations to indicate interactivity.
-           This feedback helps users identify clickable areas or interactive elements within the card, providing
-            a more engaging experience. 
+          Cards often use hover effects, shadow adjustments, or subtle animations to indicate interactivity. This feedback helps users identify clickable areas or interactive elements within the card, providing a more engaging experience.
           </p>
 
           <h3>Consistency in Style and Layout</h3>
           <p>
-          Cards should maintain a consistent style throughout an interface to ensure a unified look and feel. 
-          Consistency in aspects like font sizes, padding, border radii, and color schemes helps cards blend naturally 
-          into the overall UI design, improving readability and making interactions feel intuitive across 
-          different screens or sections.
+          Cards should maintain a consistent style throughout an interface to ensure a unified look and feel. Consistency in aspects like font sizes, padding, border radii, and color schemes helps cards blend naturally into the overall UI design, improving readability and making interactions feel intuitive across different screens or sections.
           </p>
 
         </div>
