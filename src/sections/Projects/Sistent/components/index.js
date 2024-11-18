@@ -74,11 +74,18 @@ const componentsData = [
   },
   {
     id: 10,
+    name: "Box",
+    description:
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+    url: "/projects/sistent/components/box",
+  },
+  {
+    id: 11,
     name: "App Bar",
     description:
       "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
     url: "/projects/sistent/components/appbar",
-  },
+  }
 ];
 
 const SistentComponents = () => {
