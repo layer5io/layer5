@@ -7,7 +7,7 @@ import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const SistentPopper = () => {
+const SistentPopper = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -46,7 +46,7 @@ export const SistentPopper = () => {
           <TabButton
             className={
               location.pathname ===
-                "/projects/sistent/components/popper/guidance"
+              "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -139,3 +139,5 @@ export const SistentPopper = () => {
     </SistentLayout>
   );
 };
+
+export default SistentPopper;

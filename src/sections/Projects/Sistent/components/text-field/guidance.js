@@ -7,7 +7,7 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const TextFieldGuidance = () => {
+const TextFieldGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -18,7 +18,10 @@ export const TextFieldGuidance = () => {
           <h2>Text Field</h2>
         </a>
         <p>
-          The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.
+          The TextField component is a versatile input field used to capture
+          user input in forms and user interfaces. It can handle a variety of
+          input types, such as text, numbers, emails, and passwords, and offers
+          built-in styling and validation features.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -33,7 +36,7 @@ export const TextFieldGuidance = () => {
           <TabButton
             className={
               location.pathname ===
-                "/projects/sistent/components/text-field/guidance"
+              "/projects/sistent/components/text-field/guidance"
                 ? "active"
                 : ""
             }
@@ -44,25 +47,31 @@ export const TextFieldGuidance = () => {
           />
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/text-field/code"
+              location.pathname ===
+              "/projects/sistent/components/text-field/code"
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/components/text-field/code")}
+            onClick={() =>
+              navigate("/projects/sistent/components/text-field/code")
+            }
             title="Code"
           />
         </div>
         <div className="main-content">
           <p>
             For proper application, these TextField can be used for different
-            purposes. It can be effectively used in any project to increase User Interaction.
-            Lets see how can we use TextField effectively in our project.
+            purposes. It can be effectively used in any project to increase User
+            Interaction. Lets see how can we use TextField effectively in our
+            project.
           </p>
           <a id="Basic TextField">
             <h2>Basic TextField</h2>
           </a>
           <p>
-            The TextField wrapper component is a complete form control including a label, variant, helper text etc. TextField comes with three variants: outlined (default), filled, and standard.
+            The TextField wrapper component is a complete form control including
+            a label, variant, helper text etc. TextField comes with three
+            variants: outlined (default), filled, and standard.
           </p>
           <h3>Outlined (default)</h3>
           <p>
@@ -79,15 +88,19 @@ export const TextFieldGuidance = () => {
               noValidate
               autoComplete="off"
             >
-              <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
             </Box>
           </SistentThemeProvider>
           <h3>Filled</h3>
           <p>
-            Filled TextField are TextField that consist a background color fill and
-            a text in it. Depending on the theme or intended action, the color
-            fill can range from a primary brand color to any other applicable
-            color in a brand’s color palette.
+            Filled TextField are TextField that consist a background color fill
+            and a text in it. Depending on the theme or intended action, the
+            color fill can range from a primary brand color to any other
+            applicable color in a brand’s color palette.
           </p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Box
@@ -101,9 +114,9 @@ export const TextFieldGuidance = () => {
           </SistentThemeProvider>
           <h3>Standard</h3>
           <p>
-            Standard TextField are TextField that do not have background color fill and
-            a text in it. Colors can also be used to style these buttons in order to fit
-            into the theme align with brand guidelines.
+            Standard TextField are TextField that do not have background color
+            fill and a text in it. Colors can also be used to style these
+            buttons in order to fit into the theme align with brand guidelines.
           </p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Box
@@ -112,19 +125,23 @@ export const TextFieldGuidance = () => {
               noValidate
               autoComplete="off"
             >
-              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField
+                id="standard-basic"
+                label="Standard"
+                variant="standard"
+              />
             </Box>
           </SistentThemeProvider>
           <a id="When to use different properties?">
             <h2>When to use different properties?</h2>
           </a>
           <p>
-            You might come across in a situation you needed some helper text, field with number, disabled field etc. Let's see different properties availble for TextField.
+            You might come across in a situation you needed some helper text,
+            field with number, disabled field etc. Let's see different
+            properties availble for TextField.
           </p>
           <h3>Type prop</h3>
-          <p>
-            Type prop can have a value such as password, number or text.
-          </p>
+          <p>Type prop can have a value such as password, number or text.</p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Box
               component="form"
@@ -139,22 +156,15 @@ export const TextFieldGuidance = () => {
                   type="password"
                   autoComplete="current-password"
                 />
-                <TextField
-                  id="outlined-number"
-                  label="Number"
-                  type="number"
-                />
-                <TextField
-                  id="outlined-text"
-                  label="Text"
-                  type="text"
-                />
+                <TextField id="outlined-number" label="Number" type="number" />
+                <TextField id="outlined-text" label="Text" type="text" />
               </div>
             </Box>
           </SistentThemeProvider>
           <h3>Helper Text</h3>
           <p>
-            Helper text also very effective for your form or for better understanding.
+            Helper text also very effective for your form or for better
+            understanding.
           </p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Box
@@ -175,7 +185,10 @@ export const TextFieldGuidance = () => {
           </SistentThemeProvider>
           <h3>Error</h3>
           <p>
-            Error handling is very important for UI. User might come in sitatution where they enter invalid value or forget to enter any data in TextField. Here come error prop helps to indicate partucular field are required or user have entered invalid value.
+            Error handling is very important for UI. User might come in
+            sitatution where they enter invalid value or forget to enter any
+            data in TextField. Here come error prop helps to indicate partucular
+            field are required or user have entered invalid value.
           </p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Box
@@ -199,3 +212,5 @@ export const TextFieldGuidance = () => {
     </SistentLayout>
   );
 };
+
+export default TextFieldGuidance;
