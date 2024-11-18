@@ -128,6 +128,12 @@ p{
     }
   }
 
+  @media only screen and (max-width: 489px) {
+    .opportunity-card { 
+      width: 100% !important; 
+    }
+  }
+
   @media screen and (max-width: 700px) {
     .opportunity-card {
       width: 23rem;

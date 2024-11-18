@@ -5,6 +5,7 @@ const RowWrapper = styled.div`
   display: flex;
   margin-left: -15px;
   margin-right: -15px;
+  flex-wrap: wrap;  
   
   @media (max-width: 1440px) {
     flex-wrap: wrap;  
