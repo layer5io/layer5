@@ -65,6 +65,13 @@ const componentsData = [
       "Containers align and center content, providing responsive layout options for different screen sizes.",
     url: "/projects/sistent/components/container",
   },
+  {
+    id: 9,
+    name: "Card",
+    description:
+      "Cards are surfaces that showcase content and actions centered around a specific topic.",
+    url: "/projects/sistent/components/card",
+  },
 ];
 
 const SistentComponents = () => {

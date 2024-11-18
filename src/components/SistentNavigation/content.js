@@ -87,5 +87,20 @@ export const content = [
     id: 23,
     link: "/projects/sistent/components/text-field/code",
     text: "Text Field",
-  }
+  },
+  {
+    id: 24,
+    link: "/projects/sistent/components/card",
+    text: "Card",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/card/guidance",
+    text: "Card",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/card/code",
+    text: "Card",
+  },
 ];
