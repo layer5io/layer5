@@ -726,7 +726,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const components = [
     "button",
     "text-input",
-    "model",
+    "modal",
     "paper",
     "popper",
     "text-field",
