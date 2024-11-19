@@ -90,17 +90,33 @@ export const content = [
   },
   {
     id: 24,
+
+    link: "/projects/sistent/components/button-group",
+    text: "Button Group",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/button-group/guidance",
+    text: "Button Group",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/button-group/code",
+    text: "Button Group",
+  },
+  {
+    id: 27,
     link: "/projects/sistent/components/card",
     text: "Card",
   },
   {
-    id: 25,
+    id: 28,
     link: "/projects/sistent/components/card/guidance",
     text: "Card",
   },
   {
-    id: 26,
+    id: 29,
     link: "/projects/sistent/components/card/code",
     text: "Card",
-  },
+  }  
 ];

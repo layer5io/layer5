@@ -67,11 +67,25 @@ const componentsData = [
   },
   {
     id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
+    name: "Box",
+    description:
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+    url: "/projects/sistent/components/box",
+  },
+  {
+    id: 11,
     name: "Card",
     description:
       "Cards are surfaces that showcase content and actions centered around a specific topic.",
     url: "/projects/sistent/components/card",
-  },
+  }
 ];
 
 const SistentComponents = () => {
