@@ -118,5 +118,5 @@ export const content = [
     id: 29,
     link: "/projects/sistent/components/card/code",
     text: "Card",
-  }  
+  }
 ];
