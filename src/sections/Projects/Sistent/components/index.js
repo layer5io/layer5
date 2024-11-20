@@ -72,6 +72,13 @@ const componentsData = [
       "ButtonGroup is a component that groups multiple buttons together.",
     url: "/projects/sistent/components/button-group",
   },
+  {
+    id: 10,
+    name: "List",
+    description:
+      "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    url: "/projects/sistent/components/list",
+  },
 ];
 
 const SistentComponents = () => {
