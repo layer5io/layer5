@@ -375,7 +375,7 @@ const MemberSingle = ({ frontmatter }) => {
                   )}
                   {layer5 && (
                     <li className="tooltip">
-                      <a href={`https://meshery.layer5.io/user/${layer5}`}>
+                      <a href={`https://cloud.layer5.io/user/${layer5}`}>
                         <img src={mesheryLogo} alt="meshery-icon"></img>
                         <span className="tooltiptext">Meshery</span>
                       </a>

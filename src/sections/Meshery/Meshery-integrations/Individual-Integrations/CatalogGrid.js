@@ -13,7 +13,7 @@ const CatalogGrid = ({ frontmatter }) => {
   const { isDark } = useStyledDarkMode();
 
   useEffect(() => {
-    const CLOUD_FETCH_DESIGN = `https://meshery.layer5.io/api/catalog/content/pattern?technology=${
+    const CLOUD_FETCH_DESIGN = `https://cloud.layer5.io/api/catalog/content/pattern?technology=${
       technology[technology.length - 1]
     }&page=0&pagesize=${designSize}&search=&order=&metrics=true`;
     const fetchData = async () => {
@@ -52,7 +52,7 @@ const CatalogGrid = ({ frontmatter }) => {
             return (
               <CatalogCard
                 key={index}
-                cardLink={`https://meshery.layer5.io/catalog/content/catalog/${item?.id}`}
+                cardLink={`https://cloud.layer5.io/catalog/content/catalog/${item?.id}`}
                 cardHeight="20rem"
                 cardWidth="16rem"
                 pattern={item}

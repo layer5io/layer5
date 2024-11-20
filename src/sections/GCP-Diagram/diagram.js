@@ -176,7 +176,7 @@ const Gcp = () => {
         </Row>
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
-            <h2 className="heading">Extensive GCP Icon Library</h2>
+            <h2 className="heading">Extensive GCP component library</h2>
             <p className="caption">
               Utilize a vast and continually expanding collection of GCP icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
             </p>

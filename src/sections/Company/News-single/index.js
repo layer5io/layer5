@@ -8,8 +8,10 @@ import NewsSidebar from "./Sidebar";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const NewsSingle = ({ data }) => {
+  const { isDark } = useStyledDarkMode();
   const { frontmatter, body, fields } = data.mdx;
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
@@ -54,7 +56,8 @@ const NewsSingle = ({ data }) => {
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
         author={{ name: frontmatter.author }}
-        thumbnail={frontmatter.thumbnail}
+        thumbnail={ isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+          ? frontmatter.darkthumbnail : frontmatter.thumbnail}
         date={frontmatter.date}
       />
       <div className="single-post-wrapper">

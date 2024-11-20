@@ -114,7 +114,7 @@ const IndividualIntegrations = ({ data }) => {
         ) : isGcpItem ? (
           <HowMesheryWorksSpecs
             title="GCP Orchestration and Diagramming Softwarel"
-            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates and symbols designed for professionals."
+            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals."
             btnUrl="/cloud-native-management/generate-gcp-architecture-diagram"
           />
         ) : (
