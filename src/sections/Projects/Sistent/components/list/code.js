@@ -114,9 +114,6 @@ export const ListCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <List>
-                  {/* <ListItem icon={<FaFile />} primaryText="Document" />
-                  <ListItem icon={<FaFolder />} primaryText="Folder" />
-                  <ListItem icon={<FaUser />} primaryText="Profile" /> */}
                   <ListItem>
                     <ListItemIcon>🌟</ListItemIcon>
                     <ListItemText primary="Layer5 Sistent Starred" />
@@ -142,9 +139,6 @@ export const ListCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <List>
-                  {/* <ListItem avatar="👤" primaryText="User 1" />
-                  <ListItem avatar="👤" primaryText="User 2" />
-                  <ListItem avatar="👤" primaryText="User 3" /> */}
                   <ListItem><ListItemAvatar>👤</ListItemAvatar><ListItemText primary="Layer5 Sistent User 1" /></ListItem>
                   <ListItem><ListItemAvatar>👩‍💻</ListItemAvatar><ListItemText primary="Layer5 Sistent User 2" /></ListItem>
                   <ListItem><ListItemAvatar>👩‍💻</ListItemAvatar><ListItemText primary="Layer5 Sistent User 3" /></ListItem>
