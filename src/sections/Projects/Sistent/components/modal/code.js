@@ -80,7 +80,7 @@ const codes = [
     </Modal>`,
 ];
 
-export const ModalCode = () => {
+const ModalCode = () => {
   const [open, setOpen] = useState(false);
   const [actionOpen, setActionOpen] = useState(false);
   const location = useLocation();
