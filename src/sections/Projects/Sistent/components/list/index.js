@@ -39,7 +39,7 @@ const SistentList = () => {
           />
         </div>
         <div className="main-content">
-          <a id=" List Components">
+          <a id="List Components">
           </a>
           <p>The List component is a flexible and structured container for organizing content in vertical layouts. It supports various child components, such as List Items, Icons, Avatars, Buttons, and Subheaders, making it ideal for creating navigational menus, data displays, or interactive content groups.</p>
           <p>
@@ -51,6 +51,8 @@ const SistentList = () => {
             <li><strong>Customizable Design:</strong> Offers size variations, dense modes, and alignment options.</li>
             <li><strong>Accessibility:</strong> Ensures keyboard navigation and visual feedback for enhanced usability.</li>
           </ul>
+          <a id="Components Overview">
+          </a>
           <p>
             Components Overview:
           </p>
@@ -64,7 +66,10 @@ const SistentList = () => {
             <li>List Subheader: Provides a labeled header for grouping related list items.</li>
 
           </ul>
+          <a id="Types of List component">
+          </a>
           <p><h3> Types of List component </h3></p>
+          <a id="List"></a>
           <h4>1. List</h4>
           <p>The base container for organizing related content in vertical layouts.</p>
           <p><strong>Basic Usage:</strong></p>
@@ -86,6 +91,7 @@ const SistentList = () => {
             </SistentThemeProvider>
           </Row>
 
+          <a id="List Item"></a>
           <h4>2. List Item</h4>
           <p>
             Represents an individual entry in a list. Includes primary and optional secondary text.
@@ -102,7 +108,7 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-
+          <a id="List Item Button"></a>
           <h4>3. List Item Button</h4>
           <p>
             Adds interactivity to list items, making them actionable.
@@ -120,7 +126,7 @@ const SistentList = () => {
             </SistentThemeProvider>
           </Row>
 
-
+          <a id="List with Icons"></a>
           <h4>4. List with Icons</h4>
           <p>
             Icons can be added to list items to enhance visual interest and provide additional meaning for each item. Enhances list items with visual elements for better context.
@@ -151,7 +157,7 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-
+          <a id="List with Avatars"></a>
           <h4>List with Avatars</h4>
           <p>
             Avatars can be added to list items, which is particularly useful for representing people or items visually. Visually represents items with avatars for a user-friendly interface.
@@ -170,7 +176,7 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-
+          <a id="List Subheader"></a>
           <h4>6. List Subheader</h4>
           <p>
             Subheaders provide a way to label groups within a list, adding clarity and helping users navigate content. Groups and labels items within a list for better navigation and organization.
