@@ -434,7 +434,7 @@ export const options = [
     monthlyprice: 0,
     yearlyprice: 0,
     byline: "Open Source features, plus:",
-    button: ["Join for Free", "https://meshery.layer5.io"],
+    button: ["Join for Free", "https://cloud.layer5.io"],
     summary: [
       { id: 0, category: "Cloud Native Design Patterns", description: "Import and export your designs using your local filesystem or remote URL." },
       { id: 1, category: "Multiple Kubernetes Clusters", description: "Ongoing synchronization of Kubernetes configuration, workloads and cloud native infrastructure changes across any number of Kubernetes clusters." },

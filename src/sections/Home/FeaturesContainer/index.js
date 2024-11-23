@@ -41,7 +41,7 @@ const FeaturesContainer = () => {
       redirectLink: "",
       desc: (
         <span>
-          Incorporate AWS <i>and</i>{" "} GCP components into Meshery designs for
+          Incorporate AWS <i>and</i>{" "} GCP components into Kanvas designs for
           comprehensive <i>and</i>{" "} intuitive system mapping, documentation, <i>and</i>{" "}
           orchestration.
         </span>

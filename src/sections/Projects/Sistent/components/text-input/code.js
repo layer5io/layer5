@@ -5,7 +5,7 @@ import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 
-export const TextInputCode = () => {
+const TextInputCode = () => {
   const location = useLocation();
 
   return (
@@ -61,3 +61,5 @@ export const TextInputCode = () => {
     </SistentLayout>
   );
 };
+
+export default TextInputCode;

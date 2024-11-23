@@ -316,18 +316,21 @@ const codes = [
   </Box>`,
 ];
 
-export const TextFieldCode = () => {
+const TextFieldCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
   return (
-    <SistentLayout title="TextField" >
+    <SistentLayout title="TextField">
       <div className="content">
         <a id="Identity">
           <h2>Text Field</h2>
         </a>
         <p>
-          The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.
+          The TextField component is a versatile input field used to capture
+          user input in forms and user interfaces. It can handle a variety of
+          input types, such as text, numbers, emails, and passwords, and offers
+          built-in styling and validation features.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -342,7 +345,7 @@ export const TextFieldCode = () => {
           <TabButton
             className={
               location.pathname ===
-                "/projects/sistent/components/text-field/guidance"
+              "/projects/sistent/components/text-field/guidance"
                 ? "active"
                 : ""
             }
@@ -353,7 +356,8 @@ export const TextFieldCode = () => {
           />
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/text-field/code"
+              location.pathname ===
+              "/projects/sistent/components/text-field/code"
                 ? "active"
                 : ""
             }
@@ -363,16 +367,17 @@ export const TextFieldCode = () => {
         </div>
         <div className="main-content">
           <p>
-            A TextField allow user to enter and edit any text. It mostly present in Forms or dialogue box in UI.
-            TextField are crucial and integral elements in an interface. It allows to get data from enetered user.
+            A TextField allow user to enter and edit any text. It mostly present
+            in Forms or dialogue box in UI. TextField are crucial and integral
+            elements in an interface. It allows to get data from enetered user.
           </p>
           <a id="Form Props">
             <h2>Form Props</h2>
           </a>
           <p>
-            Standard form attributes are supported, for example required, disabled, type, etc.
-            HelperText attributes is used to give context about a field's input,
-            such as how the input will be used.
+            Standard form attributes are supported, for example required,
+            disabled, type, etc. HelperText attributes is used to give context
+            about a field's input, such as how the input will be used.
           </p>
           <div className="showcase">
             <div className="tf-items">
@@ -407,7 +412,11 @@ export const TextFieldCode = () => {
                       label="Number"
                       type="number"
                     />
-                    <TextField id="outlined-search" label="Search field" type="search" />
+                    <TextField
+                      id="outlined-search"
+                      label="Search field"
+                      type="search"
+                    />
                     <TextField
                       id="outlined-helperText"
                       label="Helper text"
@@ -508,7 +517,10 @@ export const TextFieldCode = () => {
             <h2>Validation</h2>
           </a>
           <p>
-            The error property toggles the error state. The helperText prop can then be used to provide feedback to the user about the error. As shown below it can be used with variant such as outlined (default), filled, and standard.
+            The error property toggles the error state. The helperText prop can
+            then be used to provide feedback to the user about the error. As
+            shown below it can be used with variant such as outlined (default),
+            filled, and standard.
           </p>
           <div className="showcase">
             <div className="tf-items">
@@ -577,7 +589,10 @@ export const TextFieldCode = () => {
             <h2>Multiline</h2>
           </a>
           <p>
-            The multiline prop transforms the text field into a TextareaAutosize element. Unless the rows prop is set, the height of the text field dynamically matches its content (using TextareaAutosize). You can use the minRows and maxRows props to bound it.
+            The multiline prop transforms the text field into a TextareaAutosize
+            element. Unless the rows prop is set, the height of the text field
+            dynamically matches its content (using TextareaAutosize). You can
+            use the minRows and maxRows props to bound it.
           </p>
           <div className="showcase">
             <div className="tf-items">
@@ -666,7 +681,8 @@ export const TextFieldCode = () => {
             <h2>Sizes</h2>
           </a>
           <p>
-            TextField can have small or normal field sizes. According the requirement it can be adjusted.
+            TextField can have small or normal field sizes. According the
+            requirement it can be adjusted.
           </p>
           <div className="showcase">
             <div className="tf-items">
@@ -684,7 +700,11 @@ export const TextFieldCode = () => {
                       defaultValue="Small"
                       size="small"
                     />
-                    <TextField label="Size" id="outlined-size-normal" defaultValue="Normal" />
+                    <TextField
+                      label="Size"
+                      id="outlined-size-normal"
+                      defaultValue="Normal"
+                    />
                   </div>
                   <div>
                     <TextField
@@ -725,7 +745,8 @@ export const TextFieldCode = () => {
             <h2>Full Width</h2>
           </a>
           <p>
-            FullWidth attribute can be used to make the input take up the full width of its container.
+            FullWidth attribute can be used to make the input take up the full
+            width of its container.
           </p>
           <div className="showcase">
             <div className="tf-items">
@@ -744,4 +765,4 @@ export const TextFieldCode = () => {
   );
 };
 
-
+export default TextFieldCode;

@@ -8,7 +8,7 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const ButtonGuidance = () => {
+const ButtonGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -195,3 +195,5 @@ export const ButtonGuidance = () => {
     </SistentLayout>
   );
 };
+
+export default ButtonGuidance;

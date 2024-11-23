@@ -80,7 +80,7 @@ const GitOpsPage = () => {
             <SquarePoint>Connect Kanvas to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div className="buttons-container">
-              <Button $primary className="learn-more-btn" title="Install" $url="https://meshery.layer5.io/connect/github/new"/>
+              <Button $primary className="learn-more-btn" title="Install" $url="https://cloud.layer5.io/connect/github/new"/>
               <Button $secondary className="learn-more-btn" title="Learn More" $url="/solutions/gitops/snapshot"/>
             </div>
           </Col>
