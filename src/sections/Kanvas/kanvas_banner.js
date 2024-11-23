@@ -159,15 +159,60 @@ const BannerSectionWrapper = styled.div`
             margin-top: -5rem;
             margin-right: 2rem;
             left: 0%;
+            min-width: 8rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 450px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 1rem;
+            left: -10%;
+            min-width: 7rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }    
+    @media screen and (max-width: 400px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -28%;
             min-width: 6rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 350px) {
         .kanvas-logo {
             margin-top: -5rem;
-            margin-right: 0;
-            left: -10%;
+            margin-right: 0rem;
+            left: -48%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 305px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -90%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 260px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -170%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 210px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -280%;
             min-width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
