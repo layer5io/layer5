@@ -19,7 +19,7 @@ let data = {
 let card_data = [
   {
     heading: "Dynamic collaboration",
-    subtitle: "Bring your ideas to life by adding visual annotations and comments directly onto your MeshMap canvas.",
+    subtitle: "Bring your ideas to life by adding visual annotations and comments directly onto your Kanvas canvas.",
     image: use_case_1
   },
   {
@@ -46,7 +46,7 @@ const Comments = () => {
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
             ))}
           </div>
         </div>

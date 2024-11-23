@@ -92,7 +92,7 @@ const LifecycleFeature = () => {
         className: "--on",
       },
       {
-        content: "Visualize and dry-run your deployment with MeshMap",
+        content: "Visualize and dry-run your deployment with Kanvas",
         className: "--on",
       },
       {

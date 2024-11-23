@@ -6,6 +6,7 @@ import TOC from "../../../../components/SistentNavigation";
 import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { Link } from "gatsby";
 
 const componentsData = [
   {
@@ -29,6 +30,55 @@ const componentsData = [
       "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
   },
+  {
+    id: 4,
+    name: "Paper",
+    description:
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+    url: "/projects/sistent/components/paper",
+  },
+  {
+    id: 5,
+    name: "Popper",
+    description:
+      "A popper is a tooltip that appears when a user interacts with an element.",
+    url: "/projects/sistent/components/popper",
+  },
+  {
+    id: 6,
+    name: "Text Field",
+    description:
+      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
+    url: "/projects/sistent/components/text-field",
+  },
+  {
+    id: 7,
+    name: "Link",
+    description:
+      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
+    url: "/projects/sistent/components/link",
+  },
+  {
+    id: 8,
+    name: "Container",
+    description:
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
+  },
+  {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
+    name: "Box",
+    description:
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+    url: "/projects/sistent/components/box",
+  },
 ];
 
 const SistentComponents = () => {
@@ -40,6 +90,8 @@ const SistentComponents = () => {
     ["name"],
     "id"
   );
+
+  const compArray = queryResults;
 
   return (
     <SistentWrapper>
@@ -67,25 +119,27 @@ const SistentComponents = () => {
             </div>
             <div className="product_cards">
               <div className="cards">
-                {queryResults.map((comp) => (
-                  <div className="card" key={comp.id}>
-                    <div className="card_head">
-                      <div className="title">{comp.name}</div>
-                      <div className="text">{comp.description}</div>
-                    </div>
-                    <div>
-                      <div className="card_bottom">
-                        <a className="learn" href={comp.url}>
-                          <div className="learn-more">
-                            <div>Learn more</div>
-                            <div className="icon">
-                              <FaArrowRight />
+                {compArray.map((comp) => (
+                  <Link key={comp.id} to={comp.url}>
+                    <div className="card">
+                      <div className="card_head">
+                        <div className="title">{comp.name}</div>
+                        <div className="text">{comp.description}</div>
+                      </div>
+                      <div>
+                        <div className="card_bottom">
+                          <a className="learn" href={comp.url}>
+                            <div className="learn-more">
+                              <div>Learn more</div>
+                              <div className="icon">
+                                <FaArrowRight />
+                              </div>
                             </div>
-                          </div>
-                        </a>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

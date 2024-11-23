@@ -25,11 +25,11 @@ const PerformanceManagementPage = () => {
             <Description>
                Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://meshery.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
       </HeroContentContainerWrapper>
@@ -49,7 +49,7 @@ const PerformanceManagementPage = () => {
         <ContentRow>
           <ColumnContainer>
             <GithubLogo className="stack-logo" />
-            <img src={Cone} className="meshmap-stack-cone" />
+            <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
 
           <TextColumn>

@@ -8,7 +8,8 @@ export const AdventuresVolWrapper = styled.div`
 
     .handbook__card {
 	  border-radius: 5px;
-	  width: 25rem;
+	  width: 100%;
+	  max-width: 25rem;
 	  box-shadow: 0 5px 10px ${props => props.theme.green00D3A9ToGreyE6E6E6};
 	  overflow: hidden;
 	  height: 19rem;

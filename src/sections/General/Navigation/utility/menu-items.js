@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/meshmap",
+      path: "/cloud-native-management/kanvas",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -24,7 +24,7 @@ const Data = {
         },
         {
           name: "Collaborative GitOps",
-          path: "/cloud-native-management/meshmap/collaborate",
+          path: "/cloud-native-management/kanvas/collaborate",
           sepLine: true
         },
         {
@@ -84,40 +84,45 @@ const Data = {
       path: "/products",
       subItems: [
         {
-          name: "Meshery",
-          path: "/cloud-native-management/meshery",
+          name: "Kanvas",
+          path: "/cloud-native-management/kanvas",
           sepLine: true
         },
         {
-          name: "MeshMap",
-          path: "/cloud-native-management/meshmap",
+          name: "Designer",
+          path: "/cloud-native-management/kanvas/design",
         },
-        // {
-        //   name: "---",
-        //   // path: "/cloud-native-management/meshmap",
-
-        // },
         {
-          name: "Catalog",
+          name: "Operator",
+          path: "/cloud-native-management/kanvas/operate",
+        },
+        {
+          name: "Cloud + Catalog",
           path: "/cloud-native-management/catalog",
         },
         {
-          name: "Docker Extension",
-          path: "/docker-extension-meshery",
+          name: "Open source projects",
+          path: "/projects",
+          sepLine: true
         },
         {
-          name: "Playground",
-          path: "/cloud-native-management/playground",
+          name: "Meshery",
+          path: "/cloud-native-management/meshery",
         },
+        {
+          name: "NightHawk",
+          path: "/projects/nighthawk",
+        },
+        // {
+        //   name: "---",
+        //   // path: "/cloud-native-management/kanvas",
+
+        // },
       ],
       actionItems: [
         {
           actionName: "Pricing",
           actionLink: "/pricing",
-        },
-        {
-          actionName: "Open source projects",
-          actionLink: "/projects",
         },
         // {
         //   actionName: "Pricing",

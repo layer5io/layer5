@@ -21,7 +21,7 @@ const GetApp = () => {
       <img className="section__particle three" src={particle3} alt="img" />
       <img className="section__particle four" src={particle4} alt="img" />
       <Container>
-        <Row Vcenter={true}>
+        <Row $Vcenter={true}>
           <Col xs={12} sm={6}>
             <div className="getapp-block">
               <h3>Get the app now!</h3>

@@ -8,7 +8,7 @@ import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sisten
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const SistentModal = () => {
+const SistentModal = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
   return (
@@ -86,7 +86,7 @@ export const SistentModal = () => {
             confirm and cancel actions or make progress while carrying out a
             particular task.
           </p>
-          <Row className="image-container" Hcenter>
+          <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
                 width="100%"

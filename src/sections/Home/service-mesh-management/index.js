@@ -6,17 +6,17 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-const MeshMap = "../../../assets/images/homePage-images/meshmap.webp";
+const Kanvas = "../../../assets/images/homePage-images/kanvas.webp";
 
 const ServiceMeshManagement = () => {
   return (
     <MeshSectionWrapper>
-      <Container fullWidthSM>
+      <Container >
         <Row>
           <SectionTitle
             className="section-title"
-            leftAlign={false}
-            UniWidth="75%"
+            $leftAlign={false}
+            $UniWidth="75%"
           >
             <h4 className="title">Meshery is</h4>
             <h2 className="big-title">
@@ -25,12 +25,12 @@ const ServiceMeshManagement = () => {
             </h2>
           </SectionTitle>
 
-          <Col xs={12} sm={12} md={6}>
+          <Col $xs={12} $sm={12} $md={6}>
             <Link to="/cloud-native-management/meshery">
-              <StaticImage className="mesh-image" alt="Meshery - the cloud native management plane" src={MeshMap} />
+              <StaticImage className="mesh-image" alt="Meshery - the cloud native management plane" src={Kanvas} />
             </Link>
           </Col>
-          <Col xs={12} sm={12} md={6}>
+          <Col $xs={12} $sm={12} $md={6}>
             <div className="side">
               <div className="side-text">
                 The <span>extensible</span> cloud native manager.

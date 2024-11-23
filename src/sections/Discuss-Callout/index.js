@@ -11,7 +11,7 @@ const DiscussCallout = () => {
     <DiscussWrapper>
       <div className="explain">
         <div className="cards">
-          <Col lg={12} md={12} sm={12}>
+          <Col $lg={12} $md={12} $sm={12}>
             <a
               target="_blank"
               href="https://discuss.layer5.io/"
@@ -19,7 +19,7 @@ const DiscussCallout = () => {
             >
               <div className="card">
                 <div className="parentcard">
-                  <SectionTitle className="section-title" UniWidth="100%">
+                  <SectionTitle className="section-title" $UniWidth="100%">
                     <div className="card-align">
                       <h2>Join the Conversation</h2>
                       <p>

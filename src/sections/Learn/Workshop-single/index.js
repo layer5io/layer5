@@ -62,8 +62,8 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
           </div>
         </div>
         <div className="bottomBtn">
-          <Button secondary title="Request a Workshop" url="mailto:training@layer5.io" external={true}/>
-          <Button primary title="Join this Workshop" url={frontmatter.eurl}/>
+          <Button $secondary title="Request a Workshop" $url="mailto:training@layer5.io" $external={true}/>
+          <Button $primary title="Join this Workshop" $url={frontmatter.eurl}/>
         </div>
       </Container>
     </WorkshopSinglePageWrapper>

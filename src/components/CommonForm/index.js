@@ -33,7 +33,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   const navBarOffset = 120;
   const scrollElementIntoView = (element, offset) => {   //function to bring the confirmation message into view after submittion of form
     var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - offset;
+    var offsetPosition = elementPosition + window.scrollY - offset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -73,7 +73,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
   };
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
+      axios.post("https://hook.us1.make.com/7c1op88rysnmeitovt35fxzcv2spspp0", {
         memberFormOne,
       });
     }
@@ -187,7 +187,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
           </Field>
         </div>
 
-        <Button secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title="Submit" />
       </Form>
     </Formik>
   </div>

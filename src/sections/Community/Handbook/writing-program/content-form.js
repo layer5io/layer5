@@ -24,7 +24,7 @@ const ContentForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
+      axios.post("https://hook.us1.make.com/7c1op88rysnmeitovt35fxzcv2spspp0", {
         memberFormOne,
       });
     }
@@ -139,7 +139,7 @@ const ContentForm = () => {
             <Field type="text" className="text-field" id="comments" name="comment" />
 
             <div className="form-submit">
-              <Button secondary className="btn" title="Submit" />
+              <Button $secondary className="btn" title="Submit" />
             </div>
           </Form>
         </Formik>

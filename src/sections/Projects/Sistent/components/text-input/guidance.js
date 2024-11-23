@@ -8,7 +8,7 @@ import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-export const TextInputGuidance = () => {
+const TextInputGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -78,9 +78,9 @@ export const TextInputGuidance = () => {
             input is mostly utilized. Icons are not seldom required in this text
             input, however, they can included when extremely necessary.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder goes here" />
+              <Input placeholder="PlaceHolder" />
             </SistentThemeProvider>
           </Row>
           <h3>Multiline</h3>
@@ -89,9 +89,9 @@ export const TextInputGuidance = () => {
             line of text. This text input adjusts vertically based on the amount
             of lines of text entered into the text field.
           </p>
-          <Row Hcenter>
+          <Row $Hcenter>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder goes here" multiline />
+              <Input placeholder="Placeholder" multiline />
             </SistentThemeProvider>
           </Row>
           <a id="Labelling">
@@ -126,3 +126,5 @@ export const TextInputGuidance = () => {
     </SistentLayout>
   );
 };
+
+export default TextInputGuidance;

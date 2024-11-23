@@ -42,7 +42,7 @@ const Partner = () => {
             Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.
           </div>
           <div className="partner-button">
-            <Button primary className="partner-btn" url="mailto:partners@layer5.io?subject=Partner Program" external={true} icon={Partner_Icon} title="Become A Partner" />
+            <Button $primary className="partner-btn" $url="mailto:partners@layer5.io?subject=Partner Program" $external={true} icon={Partner_Icon} title="Become A Partner" />
           </div>
         </div>
       </div>
@@ -57,14 +57,14 @@ const Partner = () => {
           academic_partners.map((partner, index) => (
             <div key={index} className="acc-cont">
               <Row className={(index) % 2 === 1 ? "cont-row-reverse" : "cont-row"} >
-                <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
+                <Col $xs={5} $sm={3} $lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                       <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>
-                <Col xs={12} sm={9} lg={9}>
+                <Col $xs={12} $sm={9} $lg={9}>
                   <div className="container">
                     <a id={partner.partnerId} className="anchor">
                       <h2>{partner.name}</h2>
@@ -106,7 +106,7 @@ const Partner = () => {
           technology_partners.map((partner, index) => (
             <div key={index + len_acad_part} className="acc-cont">
               <Row className={((len_acad_part + index) % 2 == 1) ? "cont-row-reverse" : "cont-row"}>
-                <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
+                <Col $xs={5} $sm={3} $lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                       { isValidElement(partner.imageLink)
@@ -117,7 +117,7 @@ const Partner = () => {
                     </a>
                   </div>
                 </Col>
-                <Col xs={12} sm={9} lg={9}>
+                <Col $xs={12} $sm={9} $lg={9}>
                   <div className="container">
                     <a id={partner.partnerId} className="anchor">
                       <h2>{partner.name}</h2>
@@ -160,7 +160,7 @@ const Partner = () => {
             <h1>Become a Layer5 Partner</h1>
           </div>
           <div className="partner-btn-cont-body">
-            <Button primary title="BECOME A PARTNER" url="mailto:partners@layer5.io" external={true} />
+            <Button $primary title="BECOME A PARTNER" $url="mailto:partners@layer5.io" $external={true} />
           </div>
         </div>
       </Container>

@@ -11,7 +11,12 @@ const UpcomingEventsWrapper = styled.div`
 		padding: 1rem;
 		border-radius: 0.5rem;
 		height: 39.5rem;
+		overflow: auto;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.swiper-wrapper{
+		height: 38rem
 	}
 	.blog-slider_img{
 		max-height: 25rem; 

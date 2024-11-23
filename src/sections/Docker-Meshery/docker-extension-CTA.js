@@ -68,7 +68,7 @@ const DockerExtensionCTA = () => {
               <h2>Docker Extension for Meshery<br></br> is now available!</h2>
             </div>
             <p>Managing cloud native infrastructure has never been easier.</p>
-            <Button primary url="/docker-extension-meshery" external={false}>
+            <Button $primary $url="/docker-extension-meshery" $external={false}>
               Use the Meshery Docker Extension
             </Button>
           </div>

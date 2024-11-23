@@ -23,7 +23,7 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/x4crqi16j8wfhctosk8y47fj6gknyvvh", {
+      axios.post("https://hook.us1.make.com/7c1op88rysnmeitovt35fxzcv2spspp0", {
         memberFormOne,
       });
     }
@@ -68,7 +68,7 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="org" name="org" />
 
-        <Button secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title="Submit" />
       </Form>
     </Formik>
   </div>

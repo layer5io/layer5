@@ -35,7 +35,7 @@ const codes = [
   </SistentThemeProvider>`,
 ];
 
-export const ButtonCode = () => {
+const ButtonCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -177,3 +177,5 @@ export const ButtonCode = () => {
     </SistentLayout>
   );
 };
+
+export default ButtonCode;

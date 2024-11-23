@@ -21,7 +21,7 @@ const ProudMaintainers = () => {
       <Container >
         <Row className="project-title">
 
-          <SectionTitle UniWidth="100%">
+          <SectionTitle $UniWidth="100%">
             <h4>Proudly maintaining and contributing</h4>
             <h2>
               <span>Open Source and Community First</span>.
@@ -36,66 +36,66 @@ const ProudMaintainers = () => {
         </Row>
       </Container>
       <Row className="row">
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <CNCF alt="CNCF" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1 ">
             <Envoy alt="Envoy" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <Linkerd alt="Linkerd" />
           </div>
         </Col>
-        {/* <Col xs={3} sm={3} md={3} lg={2}>
+        {/* <Col $xs={3} $sm={3} $md={3} $lg={2}>
           <div className="proj_icon_2">
             <img src={ServiceMesh} alt="Service Mesh" />
             <h4>Service Mesh</h4>
           </div>
         </Col> */}
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <Meshery alt="Meshery" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <OAM alt="OAM" />
           </div>
         </Col>
       </Row>
       <Row className="row row_2">
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={Istio} alt="Istio" />
             <h4>Istio</h4>
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <OSM alt="OSM" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <SMP alt="SMP" /></div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={ImageHub} alt="ImageHub" />
             <h4>Image Hub</h4>
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <SMI alt="SMI" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
+        <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={Traefik} alt="Traefik" />
             <h4>Traefik Mesh</h4>

@@ -19,7 +19,7 @@ export const meet_links_data = [
   },
   {
     day: "Tuesdays",
-    meeting: "Meshery MeshSync/MeshMap Meeting",
+    meeting: "Meshery MeshSync/Kanvas Meeting",
     slack_channel: "#meshery-ci",
     slack_link: "https://layer5io.slack.com/archives/C010LFFGFFA",
     meeting_minutes: "https://bit.ly/3aXOaAs",

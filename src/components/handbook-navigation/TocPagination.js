@@ -16,13 +16,13 @@ const TocPagination = () => {
   return (
     <TocPaginationWrapper>
       {currentPage > 0 ? (
-        <Button secondary url={content[currentPage - 1]?.link}>
+        <Button $secondary $url={content[currentPage - 1]?.link}>
           &larr; Previous
         </Button>
       ) : null}
 
       {currentPage < content.length - 1 ? (
-        <Button primary url={content[currentPage + 1]?.link}>
+        <Button $primary $url={content[currentPage + 1]?.link}>
           Next &rarr;
         </Button>
       ) : null}

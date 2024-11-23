@@ -45,7 +45,7 @@ const DataCard = () => {
 
   return (
     <DataCardWrapper>
-      <Row Vcenter>
+      <Row $Vcenter>
         <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>

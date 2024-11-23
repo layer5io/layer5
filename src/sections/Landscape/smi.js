@@ -37,7 +37,7 @@ function SMI_Compatibility() {
   const [smiData, setSmiData] = useState(0);
 
   useEffect(() => {
-    fetch("https://meshery.layer5.io/api/smi/results/public")
+    fetch("https://cloud.layer5.io/api/smi/results/public")
       .then(response => response.json())
       // Group by SMI-spec version
       .then(results => {
@@ -101,7 +101,10 @@ function SMI_Compatibility() {
       {
         Object.keys(smiData).map(ver =>
           <TabPanel key={ver}>
-            <Table columns={columns} data={smiData[ver]} spec={{ "traffic-access": Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split": Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec": Object.values(smiData[ver])[0].more_details[2].smi_version }} />
+            <Table columns={columns} data={smiData[ver]} spec={{
+              "traffic-access": Object.values(smiData[ver])[0].more_details[0].smi_version,
+              "traffic-split": Object.values(smiData[ver])[0].more_details[1].smi_version,
+              "traffic-spec": Object.values(smiData[ver])[0].more_details[2].smi_version }} />
           </TabPanel>
         )}
     </Tabs>

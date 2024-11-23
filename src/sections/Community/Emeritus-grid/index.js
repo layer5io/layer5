@@ -9,7 +9,7 @@ const Emeritus = () => {
   const data = useStaticQuery(
     graphql`query emeritus {
   allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
+    sort: {frontmatter: {name: ASC}}
     filter: {fields: {collection: {eq: "members"}}, frontmatter: {emeritus: {eq: "yes"}}}
   ) {
     nodes {
@@ -30,8 +30,7 @@ const Emeritus = () => {
       }
     }
   }
-}
-`
+}`
   );
   return (
     <EmeritusWrapper>
@@ -43,7 +42,7 @@ const Emeritus = () => {
       </div>
       <Row>
         {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-          <Col xs={12} sm={6} lg={3} key={id}>
+          <Col $xs={12} $sm={6} $lg={3} key={id}>
             <Link to={fields.slug}>
               <ProfileCard frontmatter={frontmatter} />
             </Link>

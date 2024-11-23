@@ -34,7 +34,7 @@ const KubernetesMultiCluster = () => {
     {
       heading: "Inclusive collaboration from start to finish",
       subtitle:
-        "MeshMap is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
+        "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
       image: collaborate_svg,
     },
   ];
@@ -52,7 +52,7 @@ const KubernetesMultiCluster = () => {
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} sm={12} md={6} lg={4} />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
             ))}
           </div>
         </div>

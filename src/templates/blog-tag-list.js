@@ -7,7 +7,7 @@ import { graphql } from "gatsby";
 
 export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: [$tag]}, published: {eq: true}}}
   ) {
     nodes {
@@ -38,8 +38,7 @@ export const query = graphql`query BlogsByTags($tag: String!) {
       }
     }
   }
-}
-`;
+}`;
 
 const BlogListPage = ({ pageContext, data }) => {
 

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const GitOpsWrapper = styled.section`
+    .mobile-margin {
+        margin-top: 50px;
+    }
     position: relative;
     z-index: 1;
     font-size: 16px;
@@ -21,7 +24,7 @@ export const GitOpsWrapper = styled.section`
     }
 
     svg {
-      .meshmap-light-stacked_svg__cls-1 {
+      .kanvas-light-stacked_svg__cls-1 {
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         fill: ${props => props.theme.primaryColor};
       }
@@ -104,7 +107,7 @@ export const GitOpsWrapper = styled.section`
                    align-items: center;
                    justify-content: center;
 
-                   .meshmap-stack-hero {
+                   .kanvas-stack-hero {
                       position: absolute;
                       height: 80px;
                       animation: "floating 3s ease-in-out infinite";
@@ -114,13 +117,13 @@ export const GitOpsWrapper = styled.section`
                     height: 542px;
                     width: 465px;
 
-                    .meshmap-stack-hero {
+                    .kanvas-stack-hero {
                       height: 100px;
                     }
                   }
 
                   @media only screen and (min-width: 1280px) {
-                    .meshmap-stack-hero {
+                    .kanvas-stack-hero {
                       height: 150px;
                     }
                   }

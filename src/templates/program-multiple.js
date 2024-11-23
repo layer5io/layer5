@@ -6,22 +6,20 @@ import SEO from "../components/seo";
 
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 
-export const query = graphql`
-    query ProgramByName($program: String!) {
-        allMdx(
-          sort: {fields: [frontmatter___title], order: DESC}
-          filter:{frontmatter: { program: { eq: $program } }}
-        ) {
-          nodes{
-            body
-            frontmatter {
-                title
-                program
-            }
-          }
-        }
+export const query = graphql`query ProgramByName($program: String!) {
+  allMdx(
+    sort: {frontmatter: {title: DESC}}
+    filter: {frontmatter: {program: {eq: $program}}}
+  ) {
+    nodes {
+      body
+      frontmatter {
+        title
+        program
+      }
     }
-`;
+  }
+}`;
 
 const ProgramsPage = ({ data }) => {
   const [activeOption, setActiveOption] = useState(0);

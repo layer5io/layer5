@@ -67,7 +67,7 @@ const Banner1SectionWrapper = styled.section`
         }
         }
     }
-    .meshmapVideo {
+    .kanvasVideo {
         position: relative;
         min-width:25%;
         max-width:100%;
@@ -211,7 +211,7 @@ const Banner1SectionWrapper = styled.section`
                 content: none;
             }
         }
-        .meshmapVideo {
+        .kanvasVideo {
             top: 1rem;
     }
     }

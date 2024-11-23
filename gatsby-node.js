@@ -266,6 +266,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/blog/announcements/meshery-5000-star-milestone",
+    toPath: "/blog/announcements/mesherys-5000-star-milestone",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   //****
   // External Resource Redirects
@@ -279,14 +285,44 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/kanvas",
+    toPath: "/cloud-native-management/kanvas",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/meshmap",
-    toPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
     redirectInBrowser: true,
     isPermanent: true,
   });
   createRedirect({
     fromPath: "/go/meshmap",
-    toPath: "/cloud-native-management/meshmap",
+    toPath: "/cloud-native-management/kanvas",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/operate",
+    toPath: "/cloud-native-management/kanvas/operate",
     redirectInBrowser: true,
     isPermanent: true,
   });
@@ -373,7 +409,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           frontmatter: { published: { eq: true } }
         }
       ) {
-        group(field: frontmatter___tags) {
+        group(field: { frontmatter: { tags: SELECT } }) {
           nodes {
             id
           }
@@ -386,7 +422,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           frontmatter: { published: { eq: true } }
         }
       ) {
-        group(field: frontmatter___category) {
+        group(field: { frontmatter: { category: SELECT } }) {
           nodes {
             id
           }
@@ -686,6 +722,43 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   });
+
+  const components = [
+    "button",
+    "text-input",
+    "modal",
+    "paper",
+    "popper",
+    "text-field",
+    "link",
+    "container",
+    "button-group",
+  ];
+
+  const createComponentPages = (createPage, components) => {
+    const pageTypes = [
+      { suffix: "", file: "index.js" },
+      { suffix: "/guidance", file: "guidance.js" },
+      { suffix: "/code", file: "code.js" },
+    ];
+
+    components.forEach((name) => {
+      pageTypes.forEach(({ suffix, file }) => {
+        const path = `/projects/sistent/components/${name}${suffix}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+        try {
+          createPage({
+            path,
+            component: require.resolve(componentPath),
+          });
+        } catch (error) {
+          console.error(`Error creating page for ${path}:`, error);
+        }
+      });
+    });
+  };
+
+  createComponentPages(createPage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -944,8 +1017,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        slack: String,
        video: String,
        community_manager: String,
-       docURL: String, 
-
+       docURL: String,
      }
    `;
   createTypes(typeDefs);

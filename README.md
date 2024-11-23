@@ -39,11 +39,11 @@
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/meshmap">MeshMap</a></h2>
-<a href="https://layer5.io/meshmap">
-  <img src="src/assets/images/meshmap/meshmap-color-icon.svg" alt="MeshMap logo" width="125px" style="margin:10px;" align="left" />
+<h2><a href="https://layer5.io/kanvas">Kanvas</a></h2>
+<a href="https://layer5.io/kanvas">
+  <img src="src/assets/images/kanvas/icon-only/kanvas-icon-color.svg" alt="Kanvas logo" width="125px" style="margin:10px;" align="left" />
 </a>
-<a href="https://layer5.io/meshmap">MeshMap</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
+<a href="https://layer5.io/kanvas">Kanvas</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
 <br /><br /><br/>
 </p>
 <br />
@@ -147,7 +147,7 @@ alt="Nighthawk" align="left" />
 
 
 <p style="clear:both;">
-<h2><a href="https://meshery.layer5.io/catalog">Meshery Catalog</a></h2>
+<h2><a href="https://cloud.layer5.io/catalog">Meshery Catalog</a></h2>
 <a href="">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"

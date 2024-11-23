@@ -626,10 +626,6 @@ const SistentWrapper = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  .components-container {
-    margin-left: 1rem;
-  }
-
   .search-container {
     display: flex;
     justify-content: center;
@@ -649,6 +645,7 @@ const SistentWrapper = styled.div`
 
   .product_cards .card {
     width: 400px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -656,6 +653,7 @@ const SistentWrapper = styled.div`
     background-color: ${(props) => props.theme.grey212121ToGreyF0F0F0};
     padding: 2rem;
   }
+
   .logo {
     max-height: 3rem;
   }
@@ -676,17 +674,35 @@ const SistentWrapper = styled.div`
   .card_head .title {
     font-size: 32px;
     font-weight: 700;
+    color: ${props => props.theme.text};
   }
 
-  .card .text {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    color: ${(props) => props.theme.whiteToBlack};
+.card .text {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: ${(props) => props.theme.whiteToBlack};
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.5rem * 4);
+}
+
+  .card {
+    box-shadow: 0px 2px 6px 0px ${props => props.theme.green00D3A9ToBlackTwo};
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+
+      &:hover {
+        box-shadow: 0px 2px 15px 4px ${props => props.theme.whiteNineToBlackOne};
+        transform: scale(1.045);
+      }
   }
 
+  
   .card_bottom {
     border-top: 2px solid #2c2c2c;
     display: flex;

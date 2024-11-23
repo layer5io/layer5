@@ -37,7 +37,7 @@ const SeeYou = () => {
         </div>
 
         <div>
-          <Button primary className={"playground-button"} title={"Try Playground"} external={true} url={"https://playground.meshery.io"} />
+          <Button $primary className={"playground-button"} title={"Try Playground"} $external={true} $url={"https://playground.meshery.io"} />
         </div>
         {/*</div>*/}
       </Container>

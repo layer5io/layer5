@@ -13,6 +13,6 @@ const Aws = () => {
 export default Aws;
 export const Head = () => {
   return <SEO title="AWS Architecture Diagram"
-    description="Create your own AWS architecture diagrams with Meshmap."
+    description="Create your own AWS architecture diagrams with Kanvas."
     image="/images/meshery-logo-dark-text.webp" />;
 };

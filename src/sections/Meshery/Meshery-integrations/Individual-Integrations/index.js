@@ -82,10 +82,10 @@ const IndividualIntegrations = ({ data }) => {
           <MDXRenderer>{body}</MDXRenderer>
           <section className="external-btns">
             <Button
-              primary
+              $primary
               className="get-started"
               title="Get Started"
-              url="../../getting-started"
+              $url="../../getting-started"
             />
             {frontmatter.docURL != null && (
               <span className="doc-link">
@@ -114,7 +114,7 @@ const IndividualIntegrations = ({ data }) => {
         ) : isGcpItem ? (
           <HowMesheryWorksSpecs
             title="GCP Orchestration and Diagramming Softwarel"
-            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates and symbols designed for professionals."
+            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals."
             btnUrl="/cloud-native-management/generate-gcp-architecture-diagram"
           />
         ) : (

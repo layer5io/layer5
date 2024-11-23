@@ -7,16 +7,22 @@ docURL: https://docs.meshery.io/extensibility/integrations/operator framework
 description: 
 category: App Definition and Development
 subcategory: Application Definition & Image Build
-registrant: Artifact Hub
-components: []
+registrant: Github
+components: [
+{
+"name": "cluster-extension",
+"colorIcon": "icons/components/cluster-extension/icons/color/cluster-extension-color.svg",
+"whiteIcon": "icons/components/cluster-extension/icons/white/cluster-extension-white.svg",
+"description": "",
+}]
 featureList: [
   "Defines custom resources for operators",
   "Enables declarative configuration",
   "Extends Kubernetes API"
 ]
 workingSlides: [
-  ../_images/meshmap-visualizer.png,
-  ../_images/meshmap-designer.png
+  ../_images/kanvas-visualizer.png,
+  ../_images/kanvas-designer.png
 ]
 howItWorks: "Integrates with operator CRDs"
 howItWorksDetails: "Facilitates the use of custom resources within Meshery"

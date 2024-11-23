@@ -11,7 +11,7 @@ import SocialIconWrapper from "./socialicon.style";
 const SocialLinks = () => {
   return (
     <SocialIconWrapper>
-      <Col xs={12}>
+      <Col $xs={12}>
         <Row className="social_icons">
           <a
             className="mail_icon"

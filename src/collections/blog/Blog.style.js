@@ -41,8 +41,9 @@ export const BlogWrapper = styled.div`
     span {
       font-style: normal;
     }
-    h3 {
+    h2,h3,h4 {
       margin-bottom: .5rem;
+      margin-top: .5rem;
     }
     table, td {
       text-align: center;
@@ -61,6 +62,9 @@ export const BlogWrapper = styled.div`
       margin-right: 0rem;
     }
   }
+  h3 {
+      margin-bottom: .75rem;
+    }
   .to-uppercase {
     text-transform: uppercase;
   }
