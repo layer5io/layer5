@@ -44,7 +44,7 @@ const codes = [
 `,
 ];
 
-export const ContainerCode = () => {
+const ContainerCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -217,3 +217,5 @@ export const ContainerCode = () => {
     </SistentLayout>
   );
 };
+
+export default ContainerCode;
