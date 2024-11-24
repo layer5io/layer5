@@ -79,6 +79,13 @@ const componentsData = [
       "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
     url: "/projects/sistent/components/box",
   },
+  {
+    id: 11,
+    name: "List",
+    description:
+      "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    url: "/projects/sistent/components/list",
+  },
 ];
 
 const SistentComponents = () => {
