@@ -733,6 +733,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "link",
     "container",
     "button-group",
+    "tooltip",
   ];
 
   const createComponentPages = (createPage, components) => {
