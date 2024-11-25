@@ -8,7 +8,7 @@ import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
 
-const componentsData = [
+export const componentsData = [
   {
     id: 1,
     name: "Button",
