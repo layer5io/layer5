@@ -954,6 +954,214 @@
   {
     "pricing_page": "true",
     "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "VirtualService",
+      "Function": "VirtualService",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "DestinationRule",
+      "Function": "DestinationRule",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "mTLS (PeerAuthentication)",
+      "Function": "mTLS (PeerAuthentication)",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "AuthorizationPolicy",
+      "Function": "AuthorizationPolicy",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "EnvoyFilters",
+      "Function": "EnvoyFilters",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Istio Operator",
+      "Function": "Istio Operator",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Ingress Gateway (Gateways)",
+      "Function": "Ingress Gateway (Gateways)",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Egress Gateway (Gateways)",
+      "Function": "Egress Gateway (Gateways)",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Add-on: Prometheus",
+      "Function": "Add-on: Prometheus",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Add-on: Kiali",
+      "Function": "Add-on: Kiali",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Add-on: Grafana",
+      "Function": "Add-on: Grafana",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Add-on: Zipkin",
+      "Function": "Add-on: Zipkin",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Add-on: Jaeger",
+      "Function": "Add-on: Jaeger",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Istio",
+      "Documented?": "",
+      "Feature": "Custom Configuration",
+      "Function": "Custom Configuration",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Pattern Support: Kubernetes",
+      "Documented?": "",
+      "Feature": "Ingress",
+      "Function": "Ingress",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Multi-Mesh",
+      "Documented?": "",
+      "Feature": "Canary Rollout",
+      "Function": "Canary Rollout",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter",
+      "Theme (also: Keychain Name)": "Configuration Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
       "Category": "Serverless Pricing",
       "Documented?": "",
       "Feature": "Subscription plan management. Transformation of workflow pricing model.",
