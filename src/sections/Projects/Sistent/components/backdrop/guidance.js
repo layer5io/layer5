@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 
-export const BackdropGuidance = () => {
+const BackdropGuidance = () => {
   const location = useLocation();
 
   return (
@@ -309,3 +309,5 @@ export const BackdropGuidance = () => {
     </SistentLayout>
   );
 };
+
+export default BackdropGuidance;

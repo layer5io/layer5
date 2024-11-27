@@ -37,7 +37,7 @@ const codes = [
 </div>`,
 ];
 
-export const BackdropCode = () => {
+const BackdropCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -122,3 +122,5 @@ export const BackdropCode = () => {
     </SistentLayout>
   );
 };
+
+export default BackdropCode;
