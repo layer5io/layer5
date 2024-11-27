@@ -3,6 +3,7 @@ import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevron
 import { Link } from "gatsby";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
+import { componentsData } from "../../sections/Projects/Sistent/components";
 
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
@@ -15,6 +16,9 @@ const TOC = () => {
   const location = useLocation();
   const [expandIdenity, setExpandIdentity] = useState(
     location.pathname.includes("/identity")
+  );
+  const [expandComponent, setExpandComponent] = useState(
+    location.pathname.includes("/components")
   );
 
   return (
@@ -114,13 +118,36 @@ const TOC = () => {
             </div>
           </li>
           <li>
-            <Link
-              to="/projects/sistent/components"
-              activeClassName="active"
-              className="toc-sub-heading toc-sub-inline"
-            >
-              Components
-            </Link>
+            <div>
+              <li
+                className="toc-sub-heading components"
+                onClick={() => setExpandComponent((prev) => !prev)}
+              >
+                Components
+                {expandComponent ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              </li>
+              {expandComponent && (
+                <div className="components-sublinks">
+                  <li>
+                    {componentsData.map((component) => (
+                      <li key={component.id}>
+                        <Link
+                          to={component.url}
+                          className={`toc-sub-heading toc-sub-inline components-item ${
+                            location.pathname.includes(component.url)
+                              ? "active"
+                              : ""
+                          }`}
+                          activeClassName="active"
+                        >
+                          {component.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </li>
+                </div>
+              )}
+            </div>
           </li>
         </ul>
       </div>
