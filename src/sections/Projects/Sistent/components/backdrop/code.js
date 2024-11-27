@@ -13,6 +13,8 @@ import { Backdrop, Button, CircularProgress } from "@layer5/sistent";
 
 const codes = [
   `
+  import { Backdrop, Button, CircularProgress } from "@layer5/sistent";
+
   // declare states and functions to handle open and close operation
 
   /*
