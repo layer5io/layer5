@@ -67,7 +67,7 @@ const FeaturesContainer = () => {
       title: "Be on the same page, literally",
       show_custom_cursor: true,
       animationOne: false,
-      redirectLink: "/whiteboard",
+      redirectLink: "/solutions/cloud-native-deployments-by-diagram",
       desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
       imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
       cursor: true,

@@ -14,7 +14,7 @@ const SoSpecial = () => {
     graphql`query newsList {
   allMdx(
     filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
-    sort: {fields: [frontmatter___date], order: DESC}
+    sort: {frontmatter: {date: DESC}}
     limit: 8
   ) {
     nodes {
@@ -30,7 +30,7 @@ const SoSpecial = () => {
           extension
           publicURL
         }
-        darkthumbnail{
+        darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
@@ -43,8 +43,7 @@ const SoSpecial = () => {
       }
     }
   }
-}
-`
+}`
   );
   const settings = {
     dots: false,
@@ -110,7 +109,7 @@ const SoSpecial = () => {
         <Slider {...settings}>
           {
             data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-              <Button className="special-cont_btn" url={fields.slug} key={id}>
+              <Button className="special-cont_btn" $url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
@@ -138,7 +137,7 @@ const SoSpecial = () => {
       {/* <div className="so-special-foot">
         <p>Layer5 provides cloud native management for monoliths and <br></br>
                    microservices alike.</p>
-        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects" />
+        <Button className="so-special-foot-btn" $primary $url="/projects" title="Our Projects" />
       </div> */}
     </SoSpecialWrapper>
   );

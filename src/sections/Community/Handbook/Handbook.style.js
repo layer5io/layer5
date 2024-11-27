@@ -45,8 +45,10 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      margin-top: -36rem;
-      margin-left: 20rem;
+      @media (min-width: 750px) {
+        margin-top: -36rem;
+        margin-left: 20rem;
+      }
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
@@ -164,6 +166,12 @@ export const HandbookWrapper = styled.div`
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .archived-project {
+      opacity: 0.3;
+      background-color: #808080;
+      // pointer-events: none;
     }
 
     .linkscol{

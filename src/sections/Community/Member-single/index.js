@@ -60,7 +60,7 @@ const MemberSingle = ({ frontmatter }) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={12} lg={6}>
+            <Col $xs={12} $sm={12} $lg={6}>
               <Image
                 className={
                   status.includes("Inactive")
@@ -72,7 +72,7 @@ const MemberSingle = ({ frontmatter }) => {
                 alt={name}
               />
             </Col>
-            <Col xs={12} sm={12} lg={6}>
+            <Col $xs={12} $sm={12} $lg={6}>
               <div className="header">
                 <div className="name">{name}</div>
                 {position && <div className="position">{position}</div>}
@@ -397,13 +397,12 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
             </Col>
           </Row>
-          <Row Hcenter>
-            <Col className="start-contributing" sm={12} lg={12}>
+          <Row $Hcenter>
+            <Col className="start-contributing" $sm={12} $lg={12}>
               <p> Would you Like a Member Profile?</p>
               <Button
-                primary
-                title="Start Contributing Today"
-                url="/community"
+                $primary                title="Start Contributing Today"
+                $url="/community"
               />
             </Col>
           </Row>

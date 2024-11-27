@@ -44,18 +44,18 @@ const Pagination = ({ TOCData, chapterData, location }) => {
             {nextChapterTitle}
           </h3>
           <div className="chapter-link">
-            <Button secondary title="Next Chapter"
+            <Button $secondary title="Next Chapter"
               className="next-chapter-btn"
-              url={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
-              external={false} />
+              $url={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
+              $external={false} />
           </div>
         </div>
       </PaginationWrapper>)
       : null
       // : (
       //   <QuizWrapper onClick={showQuizModal}>
-      //     <Button secondary title="Take Quiz"
-      //       external={false}
+      //     <Button $secondary title="Take Quiz"
+      //       $external={false}
       //     />
       //   </QuizWrapper>
       // )

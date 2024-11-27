@@ -82,10 +82,10 @@ const IndividualIntegrations = ({ data }) => {
           <MDXRenderer>{body}</MDXRenderer>
           <section className="external-btns">
             <Button
-              primary
+              $primary
               className="get-started"
               title="Get Started"
-              url="../../getting-started"
+              $url="../../getting-started"
             />
             {frontmatter.docURL != null && (
               <span className="doc-link">

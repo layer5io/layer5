@@ -18,58 +18,64 @@ const MeshSyncBrand = () => {
   return (
     <MeshSyncWrapper>
       <div className="post-content">
-        <Row className="sub-project brand-section">
-          <Col xs={12} sm={6}>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="sub-project brand-section">
+          <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
-                MeshSync
+              MeshSync
             </h2>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshsync-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
           </Col>
           <Col>
             <p>
-            The MeshSync mark includes the MeshSync name & logo, and any word,
-            phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. Please don’t modify the marks or
-            use them in a confusing way, including suggesting sponsorship or
-            endorsement by Layer5, or in a way that confuses Layer5 with
-            another brand (including your own).
+              The MeshSync mark includes the MeshSync name & logo, and any word,
+              phrase, image, or other designation that identifies the source or
+              origin of any Layer5 projects. Please don’t modify the marks or
+              use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5, or in a way that confuses Layer5 with
+              another brand (including your own).
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
-            Logos
+              Logos
             </h2>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv">
-              <Col xs={12} sm={4} className="logo">
-                <img src={MeshSync} alt="MeshSync Logo"/>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4} className="logo">
+                <img src={MeshSync} alt="MeshSync Logo" />
               </Col>
-              <Col xs={12} sm={4} className="logo">
-                <img src={MeshSyncLight} alt="MeshSyncLight Logo"/>
+              <Col $xs={12} $sm={4} className="logo">
+                <img src={MeshSyncLight} alt="MeshSyncLight Logo" />
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
-                            Colors
+              Colors
             </h2>
           </Col>
           <Col>
             <p>
-                            The MeshSync color palette consists of the primary MeshSync color
-                            and additional shades. The MeshSync logo should be white or
-                            monochrome tonal when using a color background.
+              The MeshSync color palette consists of the $primary MeshSync color
+              and additional shades. The MeshSync logo should be white or
+              monochrome tonal when using a color background.
             </p>
           </Col>
           <Row className="color-code-wrapper">

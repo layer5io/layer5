@@ -18,48 +18,54 @@ const MesheryOperatorBrand = () => {
   return (
     <MesheryOperatorWrapper>
       <div className="post-content">
-        <Row className="sub-project brand-section">
-          <Col xs={12} sm={6}>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="sub-project brand-section">
+          <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
-            Meshery Operator
+              Meshery Operator
             </h2>
           </Col>
-          <Col xs={12} sm={6} className="download-button">
+          <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshery-operator-brand-kit.zip">
-              <Button primary title="Download Logo Assets" external={true}>
+              <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </a>
           </Col>
           <Col>
             <p>
-            The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
-            phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. Please don’t modify the marks or
-            use them in a confusing way, including suggesting sponsorship or
-            endorsement by Layer5, or in a way that confuses Layer5 with
-            another brand (including your own).
+              The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
+              phrase, image, or other designation that identifies the source or
+              origin of any Layer5 projects. Please don’t modify the marks or
+              use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5, or in a way that confuses Layer5 with
+              another brand (including your own).
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
-            Logos
+              Logos
             </h2>
           </Col>
           <SRLWrapper>
-            <Row Vcenter className="ImgDiv">
-              <Col xs={12} sm={4}>
-                <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
+                <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo" />
               </Col>
-              <Col xs={12} sm={4} className="logo">
-                <img src={MesheryOperator} alt="MesheryOperator Logo"/>
+              <Col $xs={12} $sm={4} className="logo">
+                <img src={MesheryOperator} alt="MesheryOperator Logo" />
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row>
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col>
             <h2 className="layerH3 in">
               Colors
@@ -67,7 +73,7 @@ const MesheryOperatorBrand = () => {
           </Col>
           <Col>
             <p>
-              The Meshery Operator color palette consists of the primary Meshery Operator color
+              The Meshery Operator color palette consists of the $primary Meshery Operator color
               and additional shades. The Meshery Operator logo should be white or
               monochrome tonal when using a color background.
             </p>

@@ -10,7 +10,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
     graphql`query allPrograms {
   allMdx(
-    sort: {fields: [frontmatter___title], order: DESC}
+    sort: {frontmatter: {title: DESC}}
     filter: {fields: {collection: {eq: "programs"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
@@ -27,11 +27,11 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           publicURL
         }
         darkthumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            extension
-            publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
       }
       fields {
@@ -39,8 +39,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
       }
     }
   }
-}
-`
+}`
   );
 
   let path = hide_path ? "" : "Programs";
@@ -62,7 +61,9 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
       <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
         <Container>
           <div className="program-grid-wrapper">
-            <Row Hcenter>
+            <Row style={{
+              flexWrap: "wrap"
+            }} $Hcenter>
               {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
                   <Link

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/nightOwl";
+import { Highlight, themes } from "prism-react-renderer";
 import styled from "styled-components";
 import { copyToClipboard } from "./copy-to-clipboard";
 
@@ -42,7 +41,7 @@ const CopyCode = styled.button`
   }
 `;
 
-const Code = ({ codeString, language }) => {
+const Code = ({ codeString, language = "jsx" }) => {
   const [copyText, setCopyText] = useState("Copy");
   const handleClick = () => {
     copyToClipboard(codeString);
@@ -51,10 +50,9 @@ const Code = ({ codeString, language }) => {
   };
   return (
     <Highlight
-      {...defaultProps}
       code={codeString}
       language={language}
-      theme={theme}
+      theme={themes.nightOwl}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Pre>

@@ -32,11 +32,13 @@ const NewcomersGuide = () => {
               Slack workspace</a>{" "}
             to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
             quick-links below for jumping straight into things.</p>
-          <Row className="newcomers-journey">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="newcomers-journey">
             <Col
               className="heading"
-              sm={12}
-              lg={6}
+              $sm={12}
+              $lg={6}
               onMouseOver={() => setHover(true)}
               onMouseOut={() => setHover(false)}
             >
@@ -46,7 +48,7 @@ const NewcomersGuide = () => {
                 <img className="heading-start__arrow" src={longArrow} />
               </div>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <NewcomersMap handleMouseHover={hover} />
             </Col>
           </Row>
@@ -72,20 +74,22 @@ const NewcomersGuide = () => {
           </Row>
         </div>
         <div className="instructions">
-          <Row className="step">
-            <Col sm={12} lg={6}>
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
+            <Col $sm={12} $lg={6}>
               <h3>Fill in the Community Member Form</h3>
               <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
             </Col>
-            <Col sm={12} lg={6}>
-              <Button primary className="newcomers-form" title="Submit a Member Form" url="/newcomer" external={false} />
+            <Col $sm={12} $lg={6}>
+              <Button $primary className="newcomers-form" title="Submit a Member Form" $url="/newcomer" $external={false} />
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <div className="finding-an-issue">
                 <StaticImage src={CommunityImage2} alt="Five Working Image" />
               </div>
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <h3>Finding an Issue to Work On</h3>
               <p>Note that the Layer5 community spans five GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
               <ol type="i">
@@ -135,8 +139,10 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
           </Row>
-          <Row className="step">
-            <Col sm={12} lg={6}>
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
+            <Col $sm={12} $lg={6}>
               <h3>Working on Your Issue</h3>
               <ol type="i">
                 <li>
@@ -184,15 +190,17 @@ const NewcomersGuide = () => {
                 </li>
               </ol>
             </Col>
-            <Col sm={12} lg={6} className="community-img">
+            <Col $sm={12} $lg={6} className="community-img">
               <StaticImage src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
-          <Row className="step">
-            <Col sm={12} lg={6} className="community-collage">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="step">
+            <Col $sm={12} $lg={6} className="community-collage">
               <StaticImage src={CommunityImage3} alt="Community Image" />
             </Col>
-            <Col sm={12} lg={6}>
+            <Col $sm={12} $lg={6}>
               <h3>While Your Issue is Under Review</h3>
               <p>
                 Be patient. There are a large number of contributors and only a

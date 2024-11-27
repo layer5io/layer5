@@ -44,7 +44,7 @@ const Writers = () => {
             <h2>Why should you participate?</h2>
             <div className="list">
               <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="listed">
                     <table className="table">
                       <tr>
@@ -123,7 +123,7 @@ const Writers = () => {
                     </table>
                   </div>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="listed">
                     <table className="table">
                       <tr>
@@ -216,7 +216,7 @@ const Writers = () => {
 
             <Row>
               <div className="content_list">
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/blog">
                     <div className="content_type">
                       <img src={blog} alt="Blog" />
@@ -225,7 +225,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/resources">
                     <div className="content_type">
                       <img src={resources} alt="Resource" />
@@ -234,7 +234,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link
                     className="project-card"
                     to="/learn/service-mesh-workshops"
@@ -250,7 +250,7 @@ const Writers = () => {
             </Row>
             <Row>
               <div className="content_list">
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
                       <img src={event} alt="Event" />
@@ -259,7 +259,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
                       <img src={talks} alt="Talks" />
@@ -268,7 +268,7 @@ const Writers = () => {
                     </div>
                   </Link>
                 </Col>
-                <Col sm={12} md={6} lg={4}>
+                <Col $sm={12} $md={6} $lg={4}>
                   <Link
                     className="project-card"
                     to="/cloud-native-management/meshery"
@@ -298,7 +298,7 @@ const Writers = () => {
                 </p>
 
                 <Button
-                  primary
+                  $primary
                   className="open-modal-btn"
                   onClick={openModal}
                   title="Layer5 Content Form"
@@ -312,7 +312,7 @@ const Writers = () => {
                   contentLabel="Content Form"
                 >
                   <Button
-                    secondary
+                    $secondary
                     className="close-modal-btn"
                     onClick={closeModal}
                   >

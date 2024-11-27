@@ -13,10 +13,9 @@ const Card = () => {
         <h2>Missing an Integration?</h2>
         <p>Meshery is an extensible  platform with many purpose-built extension points. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app.</p>
         <Button
-          secondary
-          title="Learn about Extension Points"
-          url="https://docs.meshery.io/extensibility"
-          external={true}
+          $secondary          title="Learn about Extension Points"
+          $url="https://docs.meshery.io/extensibility"
+          $external={true}
         />
       </div>
       <div className="container">

@@ -22,10 +22,10 @@ const MesheryOperatorPage = () => {
           <Container>
             <div className="hero-section">
               <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <StaticImage src={OperatorLogo} className="logo" />
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="hero-text">
                     <h1>Meshery Operator</h1>
                     <br />
@@ -43,7 +43,7 @@ const MesheryOperatorPage = () => {
               <h1>Controllers managed by Meshery Operator</h1>
               <div className="cards">
                 <Row>
-                  <Col lg={6} md={6} sm={12}>
+                  <Col $lg={6} $md={6} $sm={12}>
                     <div className="card">
                       <h2>BROKER CONTROLLER</h2>
                       <br />
@@ -51,7 +51,7 @@ const MesheryOperatorPage = () => {
                     </div>
                   </Col>
 
-                  <Col lg={6} md={6} sm={12}>
+                  <Col $lg={6} $md={6} $sm={12}>
                     <div className="card">
                       <h2>MESHSYNC CONTROLLER</h2>
                       <br />
@@ -87,7 +87,7 @@ const MesheryOperatorPage = () => {
 
             <div className="lists">
               <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="text">
                     <h2>When is Meshery Operator deployed and when is it deleted?</h2>
                     <br />
@@ -96,7 +96,7 @@ const MesheryOperatorPage = () => {
                     </p>
                   </div>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col $lg={6} $md={6} $sm={12}>
                   <div className="listed">
                     <table className="table">
                       <tr>

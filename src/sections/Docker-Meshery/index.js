@@ -11,13 +11,13 @@ const MesheryDockerPage = () => {
     <DockerMesheryWrapper>
       <div className="page-header-section">
         <Row>
-          <Col md={6} sm={12}>
+          <Col $md={6} $sm={12}>
             <h1>Docker Extension for Meshery</h1>
           </Col>
-          <Col md={3} sm={12}>
+          <Col $md={3} $sm={12}>
             <img src={meshery} alt="Meshery" className="mesheryIcon"/>
           </Col>
-          <Col md={3} sm={12}>
+          <Col $md={3} $sm={12}>
             <img src={docker} alt="Docker" className="dockerIcon"/>
           </Col>
         </Row>

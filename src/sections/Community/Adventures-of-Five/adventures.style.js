@@ -45,8 +45,10 @@ export const AdventuresWrapper = styled.div`
         padding-top: 7rem;
         margin-top: -7rem;
       }
-      margin-top: -36rem;
-      margin-left: 20rem;
+      @media (min-width: 750px) {
+        margin-top: -36rem;
+        margin-left: 20rem;
+      }
       display: flex;
     }
 

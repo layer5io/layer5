@@ -10,22 +10,26 @@ import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.webp"
 const CommunityBrand = () => {
   return (
     <div className="post-content">
-      <Row className="brand-section">
-        <Col xs={12} sm={6}>
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section">
+        <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             Community
           </h1>
         </Col>
       </Row>
-      <Row>
-        <Col xs={12} sm={6}>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
+        <Col $xs={12} $sm={6}>
           <h2 className="layerH3">
             MeshMate
           </h2>
         </Col>
-        <Col xs={12} sm={6} className="download-button">
+        <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshmate-brand-kit.zip">
-            <Button primary title="Download Logo Assets" external={true}>
+            <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>
@@ -41,22 +45,28 @@ const CommunityBrand = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Logos
           </h2>
         </Col>
-        <Row className="ImgDiv">
-          <Col xs={12} sm={3}>
-            <img src={MeshMateLogo} alt="MeshMate Logo"/>
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="ImgDiv">
+          <Col $xs={12} $sm={3}>
+            <img src={MeshMateLogo} alt="MeshMate Logo" />
           </Col>
-          <Col xs={12} sm={3} className="logo">
-            <img src={MeshMateLogoLight} alt="MeshMate Logo Light"/>
+          <Col $xs={12} $sm={3} className="logo">
+            <img src={MeshMateLogoLight} alt="MeshMate Logo Light" />
           </Col>
         </Row>
       </Row>
-      <Row>
+      <Row style={{
+        flexWrap: "wrap"
+      }}>
         <Col>
           <h2 className="layerH3 in">
             Colors
@@ -64,7 +74,7 @@ const CommunityBrand = () => {
         </Col>
         <Col>
           <p>
-            The MeshMate color palette consists of the primary MeshMate color
+            The MeshMate color palette consists of the $primary MeshMate color
             and additional shades. The MeshMate logo should be white or
             monochrome tonal when using a color background.
           </p>
