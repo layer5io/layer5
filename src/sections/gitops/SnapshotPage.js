@@ -1,6 +1,6 @@
 import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
-import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/kanvas-light-stacked.svg";
+import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
 import Button from "../../reusecore/Button";
@@ -22,7 +22,7 @@ const SnapshotPage = () => {
             <Description>
                Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
             </Description>
-            <Button primary className="learn-more-btn" title="INSTALL" $url="https://meshery.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="INSTALL" $url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
             <KanvasStack className="stack-logo" />

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-
+import KanvasBtn from "../kanvas-buttons";
 
 const VisualizeBannerWrapper = styled.div`
 
@@ -83,13 +83,7 @@ const VisualizeBannerWrapper = styled.div`
     }
 `;
 
-const KanvasisualizeBanner = ({ targetRef }) => {
-  const handleClick = () => {
-    const offset = 100;
-    const targetPos = targetRef.current.getBoundingClientRect().top + window.scrollY;
-    const finalpos = targetPos - offset;
-    window.scrollTo({ top: finalpos, behavior: "smooth" });
-  };
+const KanvasisualizeBanner = () => {
   return (
     <VisualizeBannerWrapper>
       {/* <div className="banner-image">
@@ -97,9 +91,9 @@ const KanvasisualizeBanner = ({ targetRef }) => {
         </div> */}
       <div className="banner">
         <div className="banner-text">
-          <h1>Visualize your infrastructure </h1>
+          <h1>Operate your infrastructure </h1>
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
-          <Button $primary className="join-community-button" title="Explore Kanvasisualizer" $url="" onClick={handleClick} />
+          <KanvasBtn title="Explore Kanvasoperator" />
         </div>
         {/* <div className="banner-image">
           <img src={BannerImage} alt="" />

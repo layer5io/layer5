@@ -10,7 +10,7 @@ import codicon from "./images/codicon_extensions.svg";
 import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import comingSoon from "./icons/coming-soon.webp";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
@@ -24,7 +24,7 @@ const options = [
     monthlyprice: 0,
     yearlyprice: 0,
     byline: "Open Source features, plus:",
-    button: ["Join for Free", "https://meshery.layer5.io"],
+    button: ["Join for Free", "https://cloud.layer5.io"],
     summary: [
       {
         id: 0,
@@ -212,7 +212,7 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button secondary className="banner-btn two" $external={true} title="Explore Now" alt="" $url="https://meshery.layer5.io/"/>
+                <Button secondary className="banner-btn two" $external={true} title="Explore Now" alt="" $url="https://cloud.layer5.io/"/>
                 <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
