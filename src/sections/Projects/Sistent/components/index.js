@@ -86,6 +86,13 @@ export const componentsData = [
       "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
     url: "/projects/sistent/components/tooltip",
   },
+  {
+    id: 12,
+    name: "Backdrop",
+    description:
+      "Backdrop component overlays a dimmed screen to focus attention on foreground content.",
+    url: "/projects/sistent/components/backdrop",
+  },
 ];
 
 const SistentComponents = () => {
