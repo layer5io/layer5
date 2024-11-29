@@ -67,6 +67,13 @@ export const componentsData = [
   },
   {
     id: 9,
+    name: "Divider",
+    description:
+      "The Divider component adds a thin line to separate sections, enhancing layout clarity.",
+    url: "/projects/sistent/components/divider",
+  },
+  {
+    id: 10,
     name: "ButtonGroup",
     description:
       "ButtonGroup is a component that groups multiple buttons together.",
