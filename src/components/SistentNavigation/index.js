@@ -3,7 +3,7 @@ import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevron
 import { Link } from "gatsby";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
-import { componentsData } from "../../sections/Projects/Sistent/components";
+import { componentsData } from "../../sections/Projects/Sistent/components/content";
 
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
