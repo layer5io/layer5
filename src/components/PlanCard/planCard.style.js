@@ -16,6 +16,79 @@ const PlanCardWrapper = styled.section`
     }
   }
 
+.pricing-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pricing-card {
+  text-align: left; /* Align all content to the left */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #f9f9f9;
+}
+
+.tier-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.byline {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.price-container {
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px; /* Adjust space between elements */
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap; /* Prevent line breaks in price text */
+}
+
+.currency-symbol {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #fff;
+}
+
+.price-value {
+  font-size: 2.5em; /* Make the price value stand out */
+  color: rgb(235, 192, 23);
+}
+
+.price-text {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #666; /* Subtle color for text */
+}
+
+.pricing-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.pricing-button:hover {
+  background-color: #0056b3;
+}
+
+
+
   .featured {
     transform: scale(1.05);
     background-color: ${(props) => props.theme.grey212121ToWhite};

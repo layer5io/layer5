@@ -22,17 +22,36 @@ const PlanCard = ({ planData }) => {
                 </div>
                 <h2>{x.tier}</h2>
                 <h5 className="byline">{x.byline}</h5>
-                <div className="pricing-features">
-                  {x.summary && x.summary.map((t) => (
-                    <div className="feature" key={t.id}>
-                      <FeatureDetails
-                        category={t.category}
-                        description={t.description}
-                        tier={t.tier}
-                      />
+
+                <div className="price-container">
+                  {x.monthlyprice !== undefined ? (
+                    <div className="price">
+                      <span className="currency-symbol">$</span>
+                      <span className="price-value">
+                        {x.monthlyprice === 0
+                          ? "0"
+                          : x.monthlyprice.toFixed(2)}
+                      </span>
+                      <span className="price-text">USD per user/month</span>
                     </div>
-                  ))}
+                  ) : (
+                    x.pricing_coming_soon
+                  )}
                 </div>
+
+                <div className="pricing-features">
+                  {x.summary &&
+                    x.summary.map((t) => (
+                      <div className="feature" key={t.id}>
+                        <FeatureDetails
+                          category={t.category}
+                          description={t.description}
+                          tier={t.tier}
+                        />
+                      </div>
+                    ))}
+                </div>
+
                 <Button
                   $primary
                   className={
