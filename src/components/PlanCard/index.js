@@ -34,7 +34,7 @@ const PlanCard = ({ planData }) => {
                       <span className="price-value">
                         {x.monthlyprice === 0
                           ? "0"
-                          : x.monthlyprice.toFixed(2)}
+                          : x.monthlyprice.toFixed(0)}
                       </span>
                       <span className="price-text">
                         USD <sup className="usd-sup">per user/month</sup>
