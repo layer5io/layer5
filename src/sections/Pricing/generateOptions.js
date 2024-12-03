@@ -15,7 +15,7 @@ function generateOptions(data) {
     "Team": {
       tier: "Team",
       featured: false,
-      monthlyprice: 9.99,
+      monthlyprice: 9,
       yearlyprice: 100,
       byline: "Everything in Free, plus:",
       button: [
@@ -26,7 +26,7 @@ function generateOptions(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 15.99,
+      monthlyprice: 15,
       yearlyprice: 180,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Everything in Team, plus:",

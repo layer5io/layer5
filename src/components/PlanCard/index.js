@@ -12,14 +12,18 @@ const PlanCard = ({ planData }) => {
   return (
     <PlanCardWrapper>
       <Container>
-        <Row $Hcenter={true}>
+        <Row $Hcenter>
           {planData.map((x) => (
             <Col lg={4} md={6} key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                 {x.featured && <div className="pricing-label">Free Forever</div>}
-                <div className="pricing_coming_soon">
-                  {x.pricing_coming_soon}
-                </div>
+
+                {x.pricing_coming_soon && (
+                  <div className="pricing_coming_soon">
+                    {x.pricing_coming_soon}
+                  </div>
+                )}
+
                 <h2>{x.tier}</h2>
                 <h5 className="byline">{x.byline}</h5>
 
@@ -32,10 +36,14 @@ const PlanCard = ({ planData }) => {
                           ? "0"
                           : x.monthlyprice.toFixed(2)}
                       </span>
-                      <span className="price-text">USD per user/month</span>
+                      <span className="price-text">
+                        USD <sup className="usd-sup">per user/month</sup>
+                      </span>
                     </div>
                   ) : (
-                    x.pricing_coming_soon
+                    <div className="pricing_coming_soon">
+                      {x.pricing_coming_soon}
+                    </div>
                   )}
                 </div>
 

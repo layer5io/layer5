@@ -87,6 +87,11 @@ const PlanCardWrapper = styled.section`
   background-color: #0056b3;
 }
 
+.price-container .price-text .usd-sup {
+  font-size: 0.6em; /* Adjust size to make it smaller */
+  vertical-align: super; /* Move it to the superscript position */
+}
+
 
 
   .featured {
