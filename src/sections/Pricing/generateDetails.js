@@ -1,7 +1,7 @@
 import React from "react";
 import { GiCheckMark } from "@react-icons/all-files/gi/GiCheckMark";
 import { MdClose } from "@react-icons/all-files/md/MdClose";
-import featureData from "./feature_data.json";
+import featureData from "../../../feature_data.json";
 import Configuration from "./icons/configuration.svg";
 import Lifecycle from "./icons/lifecycle.svg";
 import Kanvas from "./icons/kanvas-icon.svg";
@@ -42,6 +42,8 @@ function generateDetails(data) {
     };
   });
 }
+
+
 
 const details = generateDetails(featureData);
 
