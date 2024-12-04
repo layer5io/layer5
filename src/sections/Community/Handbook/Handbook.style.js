@@ -37,8 +37,6 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
-      margin-top: -48rem;
-      margin-left: 20rem;
       h2{
         padding-top: 7rem;
         margin-top: -7rem;

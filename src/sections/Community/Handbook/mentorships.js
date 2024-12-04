@@ -145,7 +145,7 @@ const MentorshipPrograms = () => {
               <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
                   <Row>
-                    <Col $lg={6} $md={12} $sm={12} id="col1">
+                    <Col $lg={6} $md={6} $sm={12} id="col1">
                       <div className="text">
                         <h2>{name}</h2>
                         <p>{description}</p>
