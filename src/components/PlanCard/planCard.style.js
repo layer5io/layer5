@@ -20,8 +20,18 @@ margin: 0 auto;
 .pricing-container {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center; 
+    }
+
+     @media (min-width: 1020px) {
+      flex-direction: row;
+      justify-content: center;
+    }
 }
 
 .pricing-card {
@@ -31,6 +41,15 @@ margin: 0 auto;
   border-radius: 10px;
   width: 560px;
   background-color: #f9f9f9;
+
+   @media (max-width: 768px) {
+      width: 100%; 
+      max-width: 90%; 
+    }
+
+      @media (min-width: 1020px) {
+       width: calc(50% - 10px);
+    }
 }
 
 
@@ -46,11 +65,10 @@ margin: 0 auto;
 
 .currency-symbol {
   font-size: 1.2em;
-  /* vertical-align: super;
-  font-size: smaller; */
   align-self: flex-start;
   font-weight: 400;
-  color: #aaa; /* Light color for currency symbol */
+  // color: #aaa; 
+  color: ${(props) => props.theme.primaryColor}; 
 }
 
 .price-value {
@@ -62,7 +80,7 @@ margin: 0 auto;
 .price-text {
   font-size: 1em;
   font-weight: 400;
-  color: ${(props) => props.theme.primaryColor}; /* Subtle color for text */
+  color: ${(props) => props.theme.primaryColor}; 
 }
 
 .pricing-button {
@@ -80,17 +98,18 @@ margin: 0 auto;
 }
 
 .price-container .price-text .usd-sup {
-  font-size: 0.6em; /* Adjust size to make it smaller */
-  vertical-align: super; /* Move it to the superscript position */
+  font-size: 0.6em; 
+  vertical-align: super; 
   margin-bottom: .5rem;
 }
 
+
   .featured {
-    transform: scale(1.05);
-    background-color: ${(props) => props.theme.grey212121ToWhite};
-    box-shadow: 0px 2px 12px 0px rgb(0, 179, 159, 0.7);
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
+  transform: scale(1.05);
+  background-color: ${(props) => props.theme.grey212121ToWhite};
+  box-shadow: 0px 2px 12px 0px rgb(0, 179, 159, 0.7);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
   .pricing-table:hover {
     box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, 0.15);
@@ -101,10 +120,11 @@ margin: 0 auto;
   }
 
   .pricing-table {
+  width:320px;
     .pricing-label {
       border-radius: 0px 4px;
       background: ${(props) => props.theme.saffronColor};
-      padding: 0.25rem 0.5rem;
+      padding: 0.125rem 0.5rem;
       display: block;
       position: absolute;
       float: right;
@@ -115,10 +135,21 @@ margin: 0 auto;
       font-size: 0.75rem;
       font-weight: 500;
       top: 0rem;
-      right: .9rem;
+      right: 0.9rem;
       color: #000;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
+      @media (max-width: 1020px) {
+     top:1.45rem;
+     right:1.9rem;
+    }
+
+    }
+
+    h6{
+    font-size: 12px;
+    margin-top:1rem;
+  color: ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
     }
 
     h2 {
@@ -149,12 +180,12 @@ margin: 0 auto;
         line-height: 1rem;
         .details {
           display: flex;
-          margin: 0.25rem 0;
+          height:20px;
           p {
             color: ${(props) => props.theme.greyD3D7DBToGreen1E2117};
             background-color: ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
             padding: 0.5rem;
-            line-height: 1.05rem;
+            line-height: 1rem;
             font-size: .85rem;
             border-radius: 0.15rem;
           }
