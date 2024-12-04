@@ -6,31 +6,37 @@ function generateOptions(data) {
   const tiers = {
     "Free": {
       tier: "Personal",
-      featured: true,
+      featured: false,
       monthlyprice: 0,
       yearlyprice: 0,
-      byline: "Open Source features, plus:",
-      button: ["Join for Free", "https://meshery.layer5.io"]
+      byline: "The basics for individuals and organizations",
+      button: ["Join for Free", "https://cloud.layer5.io"]
     },
-    "Team": {
-      tier: "Team",
-      featured: false,
-      monthlyprice: 9,
+    "TeamDesigner": {
+      tier: "Team Designer",
+      featured: true,
+      monthlyprice: 5,
       yearlyprice: 100,
-      byline: "Everything in Free, plus:",
-      button: [
-        "Contact Sales",
-        "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"
-      ]
+      byline: "Advanced collaboration for individuals and organizations",
+      button: ["Start Free Trial", "https://cloud.layer5.io"],
+    },
+    "TeamOperator": {
+      tier: "Team Operator",
+      featured: true,
+      monthlyprice: 5,
+      yearlyprice: 100,
+      byline: "Advanced collaboration for individuals and organizations",
+      button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 15,
+      monthlyprice: 21,
       yearlyprice: 180,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
-      byline: "Everything in Team, plus:",
-      button: ["Coming Soon", ""]
+      byline: "Flexible deployment, and MSP multi-tenancy.",
+      button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
+      // button: ["Coming Soon", ""]
     }
   };
 
