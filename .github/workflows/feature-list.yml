@@ -28,6 +28,14 @@ jobs:
           key: feature-data-sha
           restore-keys: |
             feature-data-sha
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+    
+      - name: Install dependencies
+        run: |
+          npm install csvtojson
 
       - name: Fetch spreadsheet and check for updates
         id: check-updates
