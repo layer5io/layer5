@@ -48,6 +48,8 @@ const PlanCard = ({ planData }) => {
                   )}
                 </div>
 
+                <h6>{x.byline2}</h6>
+
                 <div className="pricing-features">
                   {x.summary &&
                     x.summary.map((t) => (
