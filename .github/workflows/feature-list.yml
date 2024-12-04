@@ -1,14 +1,9 @@
 name: Feature List
 
 on:
-  workflow_dispatch:
-    inputs:
-      spreadsheet_uri:
-        description: 'Link of the spreadsheet containing subscription details.'
-        type: string
-        required: true
+  workflow_dispatch: # Allows manual triggering of the workflow
   schedule:
-    - cron: '0 0 * * *' 
+    - cron: '30 0 * * *' # Scheduled to run daily at 00:30 (12:30 AM)
 
 permissions:
   contents: write
@@ -18,7 +13,8 @@ jobs:
   trigger-feature-list:
     runs-on: ubuntu-latest
     env:
-      FEATURES_FILE: 'feature_data.json'
+      FEATURES_FILE: '/src/sections/Pricing/feature_data.json'
+      SPREADSHEET_URL: 'http://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/export?format=csv&gid=829069645&single=true&output=csv'
 
     steps:
       - name: Checkout current repository
@@ -32,53 +28,49 @@ jobs:
           key: feature-data-sha
           restore-keys: |
             feature-data-sha
-
-      - name: Check for updates in source repository
-        id: check-updates
-        uses: actions/github-script@v7
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-              script: |
-                const { data: sourceFile } = await github.rest.repos.getContent({
-                  owner: 'layer5labs',
-                  repo: 'meshery-extensions-packages',
-                  path: 'feature_data.json',
-                  ref: 'master'
-                });
-                
-                // Store the latest commit SHA
-                const latestSHA = sourceFile.sha;
-                
-                const fs = require('fs');
-                
-                // Check if we have a previous SHA
-                let hasUpdates = true;
-                const shaCachePath = '.sha-cache/latest-sha';
-                if (fs.existsSync(shaCachePath)) {
-                  const lastSHA = fs.readFileSync(shaCachePath, 'utf8');
-                  hasUpdates = lastSHA !== latestSHA;
-                }
-                
-                if (hasUpdates) {
-                  // Save the new SHA
-                  fs.mkdirSync('.sha-cache', { recursive: true });
-                  fs.writeFileSync(shaCachePath, latestSHA);
-                  
-                  // Decode and save the content
-                  const content = Buffer.from(sourceFile.content, 'base64').toString('utf8');
-                  
-                  // Write the new content
-                  fs.writeFileSync(process.env.FEATURES_FILE, content);
-                  
-                  core.setOutput('has-updates', 'true');
-                } else {
-                  core.setOutput('has-updates', 'false');
-                }    
+          node-version: 18
+    
+      - name: Install dependencies
+        run: |
+          npm install csvtojson --legacy-peer-deps
+        
+
+      - name: Fetch spreadsheet and check for updates
+        id: check-updates
+        run: |
+          # Download the spreadsheet
+          curl -L $SPREADSHEET_URL -o spreadsheet.csv
+          
+          # Generate a SHA hash of the file
+          sha256sum spreadsheet.csv > .sha-cache/latest-sha
+
+          # Compare the hash with the previously stored hash
+          if [ -f ".sha-cache/last-sha" ] && cmp --silent .sha-cache/latest-sha .sha-cache/last-sha; then
+            echo "No updates detected."
+            echo "has-updates=false" >> $GITHUB_OUTPUT
+          else
+            echo "Updates detected. Processing..."
+            cp .sha-cache/latest-sha .sha-cache/last-sha
+
+            # Convert CSV to JSON (Assume a script or tool to do this is present)
+            node -e "
+              const fs = require('fs');
+              const csv = require('csvtojson');
+              csv()
+                .fromFile('spreadsheet.csv')
+                .then(json => fs.writeFileSync(process.env.FEATURES_FILE, JSON.stringify(json, null, 2)));
+            "
+            echo "has-updates=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit changes
         if: steps.check-updates.outputs.has-updates == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Updated feature data from source repository"
+          commit_message: "Updated feature data from spreadsheet"
           file_pattern: ${{ env.FEATURES_FILE }}
           branch: master
           commit_options: "--signoff"
