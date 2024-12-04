@@ -49,7 +49,6 @@ export const HandbookWrapper = styled.div`
         margin-top: -36rem;
         margin-left: 20rem;
       }
-
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
