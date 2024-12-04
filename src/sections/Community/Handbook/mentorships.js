@@ -11,13 +11,6 @@ const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
     margin-top: -46.5rem; 
-
-    @media screen and (max-width: 1400px) {
-      margin-top: -7.5rem;
-      padding-left: 0rem;
-      padding-right: 0rem;
-    }
-
     @media screen and (min-width: 768px) and (max-height: 1145px) {
        margin-top : -80vh
 
@@ -152,7 +145,7 @@ const MentorshipPrograms = () => {
               <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
                   <Row>
-                    <Col $lg={6} $md={6} $sm={12} id="col1">
+                    <Col $lg={6} $md={12} $sm={12} id="col1">
                       <div className="text">
                         <h2>{name}</h2>
                         <p>{description}</p>
