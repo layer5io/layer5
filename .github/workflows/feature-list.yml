@@ -13,7 +13,7 @@ jobs:
   trigger-feature-list:
     runs-on: ubuntu-latest
     env:
-      FEATURES_FILE: '/src/sections/Pricing/feature_data.json'
+      FEATURES_FILE: 'src/sections/Pricing/feature_data.json'
       SPREADSHEET_URL: 'http://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/export?format=csv&gid=829069645&single=true&output=csv'
 
     steps:
