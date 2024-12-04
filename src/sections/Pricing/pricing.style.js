@@ -84,7 +84,7 @@ const PricingWrapper = styled.section`
 }
 
 .wrapper{
-  max-width: 1090px;
+  max-width: 1600px;
   position: relative;
   width: 100%;
   padding: 0 2rem;
@@ -92,11 +92,14 @@ const PricingWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 1200px) {
+        margin: -6rem -1rem;
+    }
   @media (min-width: 1400px) {
-    margin: -8rem auto 0;
+    margin: -6rem auto;
   }
   @media (min-width: 2048px) {
-    margin: -10rem auto;
+    margin: -6rem auto;
   }
 }
 
@@ -106,13 +109,13 @@ const PricingWrapper = styled.section`
   }
 }
 
-.pricing_coming_soon{
-  width : 150px;
-  position : relative ;
-  float : right;
+.pricing_coming_soon {
+  width: 80px;
+  position: relative ;
+  float: right;
   z-index:2;
-  margin-top:-2rem;
-  margin-right:-5.4rem;
+  margin-top: -1.4rem;
+  margin-right: -3.4rem;
   -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
 }
 
