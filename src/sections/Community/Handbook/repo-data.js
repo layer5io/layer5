@@ -19,7 +19,7 @@ import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
 import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.png";
-import kanvasLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
+import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
 export const repo_data = [
   {
@@ -85,7 +85,7 @@ export const repo_data = [
       },
       {
         project: "Kanvas",
-        image: meshery,
+        image: kanvasLogo,
         site: "/cloud-native-management/kanvas",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
@@ -126,7 +126,7 @@ export const repo_data = [
       {
         project: "Layer5 Cloud",
         image: meshery,
-        site: "https://meshery.layer5.io/",
+        site: "https://cloud.layer5.io/",
         language: "React.js",
         maintainers_name: ["Yash Sharma"],
         link: ["https://layer5.io/community/members/yash-sharma"],
@@ -324,7 +324,7 @@ export const repo_data = [
       },
       {
         project: "Helm Kanvas Snapshot",
-        image: meshery,
+        image: kanvasLogo,
         language: "Golang",
         maintainers_name: ["Vacant"],
         link: [""],

@@ -8,7 +8,7 @@ import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
 
-const componentsData = [
+export const componentsData = [
   {
     id: 1,
     name: "Button",
@@ -58,7 +58,41 @@ const componentsData = [
       "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
   },
-
+  {
+    id: 8,
+    name: "Container",
+    description:
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
+    url: "/projects/sistent/components/container",
+  },
+  {
+    id: 9,
+    name: "ButtonGroup",
+    description:
+      "ButtonGroup is a component that groups multiple buttons together.",
+    url: "/projects/sistent/components/button-group",
+  },
+  {
+    id: 10,
+    name: "Box",
+    description:
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+    url: "/projects/sistent/components/box",
+  },
+  {
+    id: 11,
+    name: "Tooltip",
+    description:
+      "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
+    url: "/projects/sistent/components/tooltip",
+  },
+  {
+    id: 12,
+    name: "Backdrop",
+    description:
+      "Backdrop component overlays a dimmed screen to focus attention on foreground content.",
+    url: "/projects/sistent/components/backdrop",
+  },
 ];
 
 const SistentComponents = () => {
@@ -121,7 +155,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>

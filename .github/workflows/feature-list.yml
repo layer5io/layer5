@@ -1,0 +1,87 @@
+name: Feature List
+
+on:
+  workflow_dispatch:
+    inputs:
+      spreadsheet_uri:
+        description: 'Link of the spreadsheet containing subscription details.'
+        type: string
+        required: true
+  schedule:
+    - cron: '0 0 * * *' 
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  trigger-feature-list:
+    runs-on: ubuntu-latest
+    env:
+      FEATURES_FILE: 'feature_data.json'
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+
+      - name: Restore cache
+        id: cache-sha
+        uses: actions/cache@v3
+        with:
+          path: .sha-cache
+          key: feature-data-sha
+          restore-keys: |
+            feature-data-sha
+
+      - name: Check for updates in source repository
+        id: check-updates
+        uses: actions/github-script@v7
+        with:
+              script: |
+                const { data: sourceFile } = await github.rest.repos.getContent({
+                  owner: 'layer5labs',
+                  repo: 'meshery-extensions-packages',
+                  path: 'feature_data.json',
+                  ref: 'master'
+                });
+                
+                // Store the latest commit SHA
+                const latestSHA = sourceFile.sha;
+                
+                const fs = require('fs');
+                
+                // Check if we have a previous SHA
+                let hasUpdates = true;
+                const shaCachePath = '.sha-cache/latest-sha';
+                if (fs.existsSync(shaCachePath)) {
+                  const lastSHA = fs.readFileSync(shaCachePath, 'utf8');
+                  hasUpdates = lastSHA !== latestSHA;
+                }
+                
+                if (hasUpdates) {
+                  // Save the new SHA
+                  fs.mkdirSync('.sha-cache', { recursive: true });
+                  fs.writeFileSync(shaCachePath, latestSHA);
+                  
+                  // Decode and save the content
+                  const content = Buffer.from(sourceFile.content, 'base64').toString('utf8');
+                  
+                  // Write the new content
+                  fs.writeFileSync(process.env.FEATURES_FILE, content);
+                  
+                  core.setOutput('has-updates', 'true');
+                } else {
+                  core.setOutput('has-updates', 'false');
+                }    
+
+      - name: Commit changes
+        if: steps.check-updates.outputs.has-updates == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Updated feature data from source repository"
+          file_pattern: ${{ env.FEATURES_FILE }}
+          branch: master
+          commit_options: "--signoff"
+          commit_user_name: l5io
+          commit_user_email: ci@layer5.io
+          commit_author: 'l5io <l5io@users.noreply.github.com>'

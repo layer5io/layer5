@@ -309,6 +309,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/cloud-native-management/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/operate",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
     toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
     redirectInBrowser: true,
@@ -371,84 +389,99 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
 
-  const res = await graphql(`{
-  allPosts: allMdx(filter: {frontmatter: {published: {eq: true}}}) {
-    nodes {
-      frontmatter {
-        program
-        programSlug
+  const res = await graphql(`
+    {
+      allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
+        nodes {
+          frontmatter {
+            program
+            programSlug
+          }
+          fields {
+            collection
+            slug
+          }
+        }
       }
-      fields {
-        collection
-        slug
+      blogTags: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          nodes {
+            id
+          }
+          fieldValue
+        }
+      }
+      blogCategory: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { category: SELECT } }) {
+          nodes {
+            id
+          }
+          fieldValue
+        }
+      }
+      memberBio: allMdx(
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+          }
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      singleWorkshop: allMdx(
+        filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      labs: allMdx(
+        filter: { fields: { collection: { eq: "service-mesh-labs" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      learncontent: allMdx(
+        filter: { fields: { collection: { eq: "content-learn" } } }
+      ) {
+        nodes {
+          fields {
+            learnpath
+            slug
+            course
+            section
+            chapter
+            pageType
+            collection
+          }
+        }
       }
     }
-  }
-  blogTags: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {tags: SELECT}}) {
-      nodes {
-        id
-      }
-      fieldValue
-    }
-  }
-  blogCategory: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {category: SELECT}}) {
-      nodes {
-        id
-      }
-      fieldValue
-    }
-  }
-  memberBio: allMdx(
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}, executive_bio: {eq: true}}}
-  ) {
-    nodes {
-      frontmatter {
-        name
-      }
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  singleWorkshop: allMdx(
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-  ) {
-    nodes {
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  labs: allMdx(filter: {fields: {collection: {eq: "service-mesh-labs"}}}) {
-    nodes {
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  learncontent: allMdx(filter: {fields: {collection: {eq: "content-learn"}}}) {
-    nodes {
-      fields {
-        learnpath
-        slug
-        course
-        section
-        chapter
-        pageType
-        collection
-      }
-    }
-  }
-}`);
+  `);
 
   // handle errors
   if (res.errors) {
@@ -689,6 +722,44 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   });
+
+  const components = [
+    "button",
+    "text-input",
+    "modal",
+    "paper",
+    "popper",
+    "text-field",
+    "link",
+    "container",
+    "button-group",
+    "tooltip",
+  ];
+
+  const createComponentPages = (createPage, components) => {
+    const pageTypes = [
+      { suffix: "", file: "index.js" },
+      { suffix: "/guidance", file: "guidance.js" },
+      { suffix: "/code", file: "code.js" },
+    ];
+
+    components.forEach((name) => {
+      pageTypes.forEach(({ suffix, file }) => {
+        const path = `/projects/sistent/components/${name}${suffix}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+        try {
+          createPage({
+            path,
+            component: require.resolve(componentPath),
+          });
+        } catch (error) {
+          console.error(`Error creating page for ${path}:`, error);
+        }
+      });
+    });
+  };
+
+  createComponentPages(createPage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty

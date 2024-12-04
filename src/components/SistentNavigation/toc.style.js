@@ -125,7 +125,7 @@ const TOCWrapper = styled.div`
     background-color: transparent;
   }
 
-  .identity {
+  .identity, .components {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -138,10 +138,10 @@ const TOCWrapper = styled.div`
     }
   }
 
-  .identity-sublinks {
+  .identity-sublinks, .components-sublinks {
     padding-left: 0.56rem;
 
-    .identity-item {
+    .identity-item, .components-item {
       font-size: 1.05rem;
       margin-top: 0.45rem;
     }
