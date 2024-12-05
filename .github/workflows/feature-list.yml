@@ -82,24 +82,21 @@ jobs:
           })
             .fromFile('spreadsheet.csv')
             .then(rows => {
-              console.log('Spreadsheet Rows:', rows);
+              console.log('Total Rows Parsed:', rows.length); // Total rows parsed from CSV
 
+              // Filter data
               const filteredData = rows
                 .map(row => {
                   const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
                   const documented = row['Documented?']?.trim() || '';
-                  
 
                   const includeRow =
                     (pricingPage && ['x', 'X', 'true'].includes(pricingPage)) ||
                     (documented.startsWith('https://docs.meshery.io/') ||
                       documented.startsWith('https://docs.layer5.io/'));
 
-                  console.log('Row:', row);
-                  console.log('Include Row:', includeRow);
-
-                  console.log(`Total Rows Parsed: ${rows.length}`);
-
+                  console.log('Row:', row); // Log the row data
+                  console.log('Include Row:', includeRow ? 'Yes' : 'No'); // Log inclusion decision
 
                   if (!includeRow) return null;
 
@@ -121,30 +118,47 @@ jobs:
                 })
                 .filter(Boolean);
 
-              console.log('Filtered Data:', filteredData);
+              console.log('Filtered Data:', filteredData); // Log filtered data
 
               // Read existing JSON data
               const featuresFile = process.env.FEATURES_FILE;
               let existingData = [];
               if (fs.existsSync(featuresFile)) {
                 existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
+                console.log('Existing Data:', existingData); // Log existing data
               }
 
-              // Deduplicate and merge data
-              const updatedData = [
-                ...existingData,
-                ...filteredData.filter(
-                  newRow =>
-                    !existingData.some(
-                      existingRow =>
-                        existingRow.function === newRow.function &&
-                        existingRow.feature === newRow.feature
-                    )
-                ),
-              ];
+              // Identify new updates
+              const newUpdates = filteredData.filter(
+                newRow =>
+                  !existingData.some(
+                    existingRow =>
+                      existingRow.function === newRow.function &&
+                      existingRow.feature === newRow.feature
+                  )
+              );
 
-              // Write updated JSON back to file
-              fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
+              console.log('New Updates:', newUpdates); // Log new updates
+
+              // Set output for has-updates
+              if (newUpdates.length > 0) {
+                console.log('Setting has-updates to true');
+                console.log('::set-output name=has-updates::true');
+              } else {
+                console.log('No new updates. Setting has-updates to false');
+                console.log('::set-output name=has-updates::false');
+              }
+
+              // Merge new updates into existing data
+              const updatedData = [...existingData, ...newUpdates];
+
+              // Write updated data to file
+              try {
+                fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
+                console.log('Updated feature_data.json successfully.'); // Confirm file update
+              } catch (error) {
+                console.error('Error writing to feature_data.json:', error);
+              }
             })
             .catch(error => {
               console.error('Error processing spreadsheet:', error);
