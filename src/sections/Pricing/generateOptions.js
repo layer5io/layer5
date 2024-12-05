@@ -19,7 +19,7 @@ function generateOptions(data) {
       monthlyprice: 5,
       yearlyprice: 100,
       byline: "Advanced collaboration for individuals and organizations",
-      byline2:"Everything included in Free, plus...",
+      byline2: "Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "TeamOperator": {
@@ -28,7 +28,7 @@ function generateOptions(data) {
       monthlyprice: 5,
       yearlyprice: 100,
       byline: "Advanced collaboration for individuals and organizations",
-      byline2:"Everything included in Free, plus...",
+      byline2: "Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "Enterprise": {
@@ -38,7 +38,7 @@ function generateOptions(data) {
       yearlyprice: 180,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
-      byline2:"Everything included in Team, plus...",
+      byline2: "Everything included in Team, plus...",
       button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     },
   };

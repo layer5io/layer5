@@ -30,7 +30,8 @@ function generateDetails(data) {
         feature: item.entire_row.Function,
         description: item.entire_row.Feature,
         free: item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-        team: item.entire_row["Subscription Tier"] === "Team" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+        teamDesigner: item.entire_row["Subscription Tier"] === "TeamDesigner" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+        teamOperator: item.entire_row["Subscription Tier"] === "TeamOperator" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
         enterprise: <GiCheckMark className="yes-icon" />,
       }));
 
