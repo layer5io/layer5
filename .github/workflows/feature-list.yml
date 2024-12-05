@@ -41,7 +41,6 @@ jobs:
 
           csv({
             noheader: true, 
-            headers: headers, 
             output: 'json', 
           })
             .fromFile('spreadsheet.csv')
