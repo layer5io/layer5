@@ -3,7 +3,6 @@ import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
 function generateOptions(data) {
-  console.log("Initial feature data:", data);
 
   const tiers = {
     "Free": {
@@ -50,6 +49,7 @@ function generateOptions(data) {
     const summary = data
       .filter((item) => {
         const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "X" ) ;
+        console.log(`Checking item: ${JSON.stringify(item)}, Matches: ${matches}`);
         return matches;
       })
       .map((item, index) => {
@@ -72,7 +72,5 @@ function generateOptions(data) {
 }
 
 const options = generateOptions(featureData);
-
-console.log("Exporting options:", options);
 
 export default options;
