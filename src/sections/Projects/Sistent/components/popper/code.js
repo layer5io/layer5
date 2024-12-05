@@ -138,7 +138,7 @@ const codes = [
   </Box>`,
 ];
 
-export const PooperCode = () => {
+const PooperCode = () => {
   const { isDark } = useStyledDarkMode();
   const location = useLocation();
 
@@ -345,3 +345,5 @@ export const PooperCode = () => {
     </SistentLayout>
   );
 };
+
+export default PooperCode;

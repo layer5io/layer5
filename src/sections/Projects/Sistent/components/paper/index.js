@@ -6,7 +6,7 @@ import { useLocation } from "@reach/router";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { Paper, SistentThemeProvider } from "@layer5/sistent";
 
-export const SistentPaper = () => {
+const SistentPaper = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
   return (

@@ -665,53 +665,92 @@
     }
   },
   {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Design Review",
+      "Documented?": "",
+      "Feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+      "Function": "Collaborative Design Review",
+      "Pricing page?": "x",
+      "Subscription Tier": "TeamDesigner",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
+    }
+  },
+  {
     "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
     "entire_row": {
-      "Category": "Visualizer",
+      "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
       "Feature": "See all views withing a workspace",
       "Function": "View Views",
       "Pricing page?": "",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
-      "Theme (also: Keychain Name)": "MeshMap"
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
     "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
     "entire_row": {
-      "Category": "Visualizer",
+      "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
       "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
       "Function": "Delete View",
       "Pricing page?": "",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
-      "Theme (also: Keychain Name)": "MeshMap"
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
     "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
     "entire_row": {
-      "Category": "Visualizer",
+      "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
       "Feature": "Export views to JSON format",
       "Function": "Export views",
       "Pricing page?": "",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
-      "Theme (also: Keychain Name)": "MeshMap"
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
     "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
     "entire_row": {
-      "Category": "Visualizer",
+      "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
       "Feature": "Share Views",
       "Function": "Share Views",
       "Pricing page?": "",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamOperator",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Operator",
+      "Documented?": "",
+      "Feature": "View Interactive Terminal",
+      "Function": "View Interactive Terminal",
+      "Pricing page?": "X",
+      "Subscription Tier": "TeamOperator",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Operator",
+      "Documented?": "",
+      "Feature": "View real-time resource metrics in Kanvas Operator",
+      "Function": "View Observability Metrics",
+      "Pricing page?": "X",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Kanvas",
       "Theme (also: Keychain Name)": "Kanvas"
     }
@@ -954,14 +993,14 @@
   {
     "pricing_page": "true",
     "entire_row": {
-      "Category": "Serverless Pricing",
+      "Category": "Invoice Billing",
       "Documented?": "",
-      "Feature": "Subscription plan management. Transformation of workflow pricing model.",
-      "Function": "Serverless Pricing",
+      "Feature": "",
+      "Function": "Pay bills via invoice, rather than using your credit card.",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "WASM",
-      "Theme (also: Keychain Name)": "Business Performance"
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
     }
   },
   {
@@ -1047,7 +1086,7 @@
     "entire_row": {
       "Category": "Traffic Replay",
       "Documented?": "",
-      "Feature": "Visual event replay in MeshMap",
+      "Feature": "Visual event replay in Kanvas",
       "Function": "Traffic Replay",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -1060,7 +1099,7 @@
     "entire_row": {
       "Category": "Notification Integrations",
       "Documented?": "",
-      "Feature": "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+      "Feature": "Access a variety of third-party applications, right from Kanvas. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
       "Function": "Notification Integrations",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
