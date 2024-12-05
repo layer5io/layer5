@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FEATURES_FILE: 'src/sections/Pricing/feature_data.json'
-      SPREADSHEET_URL: 'http://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/export?format=csv&gid=829069645&single=true&output=csv'
+      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=829069645&single=true&output=csv'
 
     steps:
       - name: Checkout current repository
