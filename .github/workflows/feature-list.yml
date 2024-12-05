@@ -65,14 +65,11 @@ jobs:
               // Filter data
               const filteredData = rows
                 .map(row => {
-                  const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
-
-                  const includeRow =
-                    (pricingPage && ['x', 'X', 'true'].includes(pricingPage))
-
-                  if (!includeRow) return null;
-
-                  return {
+                 const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
+                 const hasXTier = ['Free Tier', 'TeamDesigner Tier', 'TeamOperator Tier', 'Enterprise Tier'].some(tier => row[tier]?.trim().toLowerCase() === 'x');
+                 const includRow = hasXTier || (pricingPage && ['x', 'X'].includes(pricingPage));
+                 if (!includeRow) return null;
+                 return {
                     theme: row['Theme'],
                     category: row['Category'],
                     function: row['Function'],
@@ -84,7 +81,7 @@ jobs:
                       teamOperator: row['TeamOperator Tier'],
                       enterprise: row['Enterprise Tier'],
                     },
-                  };
+                  };    
                 })
                 .filter(Boolean);
 
