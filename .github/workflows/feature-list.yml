@@ -67,7 +67,7 @@ jobs:
                 .map(row => {
                  const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
                  const hasXTier = ['Free Tier', 'TeamDesigner Tier', 'TeamOperator Tier', 'Enterprise Tier'].some(tier => row[tier]?.trim().toLowerCase() === 'x');
-                 const includRow = hasXTier || (pricingPage && ['x', 'X'].includes(pricingPage));
+                 const includeRow = hasXTier || (pricingPage && ['x', 'X'].includes(pricingPage));
                  if (!includeRow) return null;
                  return {
                     theme: row['Theme'],
