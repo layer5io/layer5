@@ -43,12 +43,17 @@ jobs:
           csv()
             .fromFile('spreadsheet.csv')
             .then(rows => {
+             console.log('Spreadsheet Rows:', rows);
               const filteredData = rows.map(row => {
                 const includeRow = 
                   (row['pricing page?'] && ['x', 'X', 'true'].includes(row['pricing page?'].toLowerCase())) || 
                   (row['documented?'] && (row['documented?'].startsWith('https://docs.meshery.io/') || row['documented?'].startsWith('https://docs.layer5.io/')));
 
+                  console.log('Row:', row);
+                  console.log('Pricing Page:', pricingPage, 'Documented:', documented, 'Include:', includeRow);
+
                 if (!includeRow) return null;
+                
 
                 return {
                   category: row['category'],
