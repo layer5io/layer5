@@ -1106,5 +1106,1295 @@
       "Tech": "Cloud",
       "Theme (also: Keychain Name)": "Incident Management"
     }
+  },
+  {
+    "theme": "Account Management",
+    "category": "Profile",
+    "function": "View Profile",
+    "feature": "View your profile.",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Catalog",
+    "function": "",
+    "feature": "Export a copy of a design to your local system.",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/catalog/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Catalog",
+    "function": "Share Design",
+    "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/designer/share-resource/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Catalog",
+    "function": "Clone Design",
+    "feature": "Clone any published design to customise it according to your use cases",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Create new design",
+    "feature": "Create new Meshery design",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/extensions/importing-a-design",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design from Kubernetes Manifest",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design from Meshery Design (YAML)",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design from Helm Chart",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design from Docker Compose",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Standard Import IaC",
+    "feature": "Import a design from Kubernetes Manifest, Helm Chart, or Docker Compose",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Import Design",
+    "feature": "Import a design from GitHub",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Premium Import IaC",
+    "feature": "Bulk import designs from GitHub",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Export Design",
+    "feature": "Export a latest version of design in Meshery Design (YAML format)",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Export Design",
+    "feature": "Export a latest version of design in Meshery Design (OCI format)",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Standard Design Export",
+    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Premium Design Export",
+    "feature": "Export a design as a snapshot",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Cloud Native Design Patterns",
+    "feature": "Import and export your designs using your local filesystem or remote URL.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Publish Design",
+    "feature": "Publish a design",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/extensions/publishing-a-design",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Validate Design",
+    "feature": "Validate a design",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Deploy Design",
+    "feature": "Deploy a design",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Undeploy Design",
+    "feature": "Retract all resources used in a Meshery design from the cluster",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Import Filter",
+    "feature": "Import a filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Publish WASM Filter",
+    "feature": "Publish WASM Filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Unpublish WASM Filter",
+    "feature": "Unpublish WASM Filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Download a WASM filter",
+    "feature": "Download a WASM filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Details of WASM Filter",
+    "feature": "Check information or details of a WASM filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Edit WASM filter",
+    "feature": "Edit WASM filter",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Clone WASM Filter",
+    "feature": "Clone WASM filter from catalog, which allows customizing filter and use it in design",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "Delete WASM Filter",
+    "feature": "Delete WASM filter permanently from catalog.",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Filters",
+    "function": "WASM Filter and filter",
+    "feature": "Import, Unpublish, Publish, Download, Edit, Clone, Delete, Details of WASM Filter",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Collaboration",
+    "category": "Team Chat",
+    "function": "Message in real-time",
+    "feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Collaboration",
+    "category": "Design Reviews",
+    "function": "Discuss any design by leaving review comments",
+    "feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "https://docs.layer5.io/kanvas/designer/comments/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Collaboration",
+    "category": "Organization and Team Management",
+    "function": "Manage access to designs",
+    "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "",
+    "category": "",
+    "function": "Manage access to views",
+    "feature": "Create and collaborate in online operational topologies in real-time.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Built-in Roles",
+    "function": "Built-in Roles",
+    "feature": "Static - out of the box",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "User-defined Roles",
+    "function": "User-defined Roles",
+    "feature": "Customizable roles for specific permission assignments",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Authentication: LDAP",
+    "function": "Authentication: LDAP",
+    "feature": "Access Meshery Server using your existing accounts and centrally manage repository access.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Authentication: SAML",
+    "function": "Authentication: SAML",
+    "feature": "Use an identity provider to manage the identities of GitHub users and applications.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Users",
+    "function": "Delete User",
+    "feature": "Delete a user account",
+    "subscription_tier": "Team",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Users",
+    "function": "Create User",
+    "feature": "Create a new user",
+    "subscription_tier": "",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Teams",
+    "function": "Add User to Team",
+    "feature": "Directly create a new user account within a team.",
+    "subscription_tier": "Team",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/identity/teams/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Organizations",
+    "function": "Create Organization",
+    "feature": "Establish new organization for organizing teams, users, and resource access.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/identity/organizations/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "Dry-run",
+    "function": "Dry-run",
+    "feature": "Test and verify configuration changes in a separate environment.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "Multiple Kubernetes Clusters",
+    "function": "Multiple Kubernetes Clusters",
+    "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Meshery System",
+    "category": "mesheryctl",
+    "function": "CLI",
+    "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "https://docs.meshery.io/reference/mesheryctl",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Meshery System",
+    "category": "Settings",
+    "function": "View Metrics",
+    "feature": "View already configured metrics",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/catalog/metrics/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Service Performance",
+    "function": "Service Performance",
+    "feature": "Continuous visibility across all of your clusters and workloads.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Design Patterns",
+    "function": "Use heirarchical relationships",
+    "feature": "",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/concepts/relationships/#2-hierarchical-relationships",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Design Patterns",
+    "function": "Undo or Redo",
+    "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Design Patterns",
+    "function": "Whiteboarding",
+    "feature": "Ability to freeform draw any shapes, draw edges",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "https://docs.layer5.io/kanvas/designer/whiteboarding/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Visual Design",
+    "function": "Visual Design",
+    "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Design Review",
+    "function": "Collaborative Design Review",
+    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "x",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "View Views",
+    "feature": "See all views withing a workspace",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Delete View",
+    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Export views",
+    "feature": "Export views to JSON format",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Share Views",
+    "feature": "Share Views",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Web-based Terminal",
+    "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Standard Events and Metrics",
+    "feature": "Real-time resource metrics.",
+    "subscription_tier": "TeamOperator",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Load Generation",
+    "function": "Load Generation",
+    "feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Load Generation",
+    "function": "Distributed Load Generator",
+    "feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance Profiles",
+    "function": "Performance Profiles",
+    "feature": "Share performance profiles and test results with individual users or teams.",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Comparative Testing",
+    "function": "Comparative Testing",
+    "feature": "Historical views: Infrastructure-centric",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Comparative Testing",
+    "function": "Comparative Testing",
+    "feature": "Detect real-time anomalies.",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Continuous Quality of Service Monitoring",
+    "function": "Continuous Quality of Service Monitoring",
+    "feature": "Experience uninterrupted oversight of your service quality with our Continuous Quality of Service Monitoring.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "MeshMark",
+    "function": "MeshMark",
+    "feature": "Identify the cost of a specific network function.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Sessions",
+    "function": "View Sessions",
+    "feature": "",
+    "subscription_tier": "",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/security/sessions/#what-sessions-are",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Tokens",
+    "function": "Create Token",
+    "feature": "",
+    "subscription_tier": "",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/security/tokens/#creating-tokens",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Keys",
+    "function": "View Keys",
+    "feature": "",
+    "subscription_tier": "",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/security/keys/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "View Workspace",
+    "feature": "See all workspaces within an organisation",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/spaces/workspaces/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "Delete Environment",
+    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/spaces/environments/#deleting-an-environment",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Catalog",
+    "function": "Clone Catalog Item",
+    "feature": "Clone any item from catalog",
+    "subscription_tier": "",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Community Support",
+    "function": "Community Support",
+    "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Standard Support",
+    "function": "Standard Support",
+    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Premium and Premium Plus Support",
+    "function": "Premium and Premium Plus Support",
+    "feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Self-hosted Deployment",
+    "function": "Self-hosted Deployment",
+    "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Phone Support",
+    "function": "Phone Support",
+    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+    "subscription_tier": "TeamDesigner",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Support and Deployment",
+    "category": "Invoice Billing",
+    "function": "Pay bills via invoice, rather than using your credit card.",
+    "feature": "",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Digital Experience Management",
+    "category": "Screenshots",
+    "function": "Screenshots",
+    "feature": "Capture and share visual snapshots of your work with ease using our Screenshots feature.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Notification Center",
+    "function": "Events: Reporting of asynchronous events.",
+    "feature": "",
+    "subscription_tier": "Free",
+    "pricing_page": "",
+    "documented": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Notification Center",
+    "function": "Notification Center",
+    "feature": "Consolidate all important updates, alerts, and messages in one centralized hub, ensuring you never miss a critical communication or task.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Audit Trail",
+    "function": "Audit Trail",
+    "feature": "Detailed accounting of user activity. Historical record or each action taken.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Alert Generation",
+    "function": "Alert Generation",
+    "feature": "Dismiss individual; Dismiss bulk.",
+    "subscription_tier": "Free",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Calendaring",
+    "function": "Calendaring",
+    "feature": "Get integration with GSuite and integration with Microsoft Outlook.",
+    "subscription_tier": "Team",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Traffic Replay",
+    "function": "Traffic Replay",
+    "feature": "Visual event replay in Kanvas",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Incident Management",
+    "category": "Notification Integrations",
+    "function": "Notification Integrations",
+    "feature": "Access a variety of third-party applications, right from Kanvas. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+    "subscription_tier": "Enterprise",
+    "pricing_page": "X",
+    "documented": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
   }
 ]
