@@ -47,9 +47,10 @@ const PlanCard = ({ planData }) => {
                 </div>
 
                 <Button
+                  disabled={x.tier === "Team Operator"}
                   $primary
                   className={
-                    x.button[0] === "Coming Soon"
+                    x.button[0] === "Coming Soon" || x.tier === "Team Operator"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }

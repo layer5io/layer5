@@ -115,7 +115,7 @@ const PricingWrapper = styled.section`
   float: right;
   z-index:2;
   margin-top: -1.4rem;
-  margin-right: -3.4rem;
+  margin-right: -2.4rem;
   -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
 }
 
