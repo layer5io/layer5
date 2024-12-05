@@ -3,7 +3,7 @@ name: Feature List
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' 
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-    
+
       - name: Install dependencies
         run: |
           npm install csvtojson --legacy-peer-deps
@@ -39,51 +39,105 @@ jobs:
           const fs = require('fs');
           const csv = require('csvtojson');
 
-          // Read and parse CSV
-          csv()
+          const headers = [
+            'Theme (also: Keychain Name)',
+            'Category',
+            'Function',
+            'Feature',
+            'Primary Persona',
+            'Entitlement',
+            'Subscription Tier',
+            'Free Comparison Tier',
+            'TeamDesigner Comparison Tier',
+            'TeamOperator Comparison Tier',
+            'Enterprise Comparison Tier',
+            'Tech',
+            'Version',
+            'Engineer',
+            'Pricing Page?',
+            'Video?',
+            'Documented?',
+            'Anonymous',
+            'Authorization',
+            'Team Admin',
+            'Workspace Admin',
+            'Org Billing Manager',
+            'Org Admin',
+            'Provider Admin',
+            'Curator',
+            'MeshMap',
+            'Keychain ID',
+            'SQL',
+            'Key ID',
+            'Inserted',
+            'Local Provider',
+            'Update SQL',
+            'E2E Test',
+          ];
+
+          csv({
+            noheader: true, // Ignore the first row as headers
+            headers: headers, // Use our custom headers
+            output: 'json', // Output as JSON
+          })
             .fromFile('spreadsheet.csv')
             .then(rows => {
-             console.log('Spreadsheet Rows:', rows);
-              const filteredData = rows.map(row => {
-                const includeRow = 
-                  (row['pricing page?'] && ['x', 'X', 'true'].includes(row['pricing page?'].toLowerCase())) || 
-                  (row['documented?'] && (row['documented?'].startsWith('https://docs.meshery.io/') || row['documented?'].startsWith('https://docs.layer5.io/')));
+              console.log('Spreadsheet Rows:', rows);
+
+              const filteredData = rows
+                .map(row => {
+                  const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
+                  const documented = row['Documented?']?.trim() || '';
+
+                  const includeRow =
+                    (pricingPage && ['x', 'true'].includes(pricingPage)) ||
+                    (documented.startsWith('https://docs.meshery.io/') ||
+                      documented.startsWith('https://docs.layer5.io/'));
 
                   console.log('Row:', row);
-                  console.log('Pricing Page:', pricingPage, 'Documented:', documented, 'Include:', includeRow);
+                  console.log('Include Row:', includeRow);
 
-                if (!includeRow) return null;
-                
+                  if (!includeRow) return null;
 
-                return {
-                  category: row['category'],
-                  theme: row['theme (also: keychain name)'],
-                  function: row['function'],
-                  feature: row['feature'],
-                  subscription_tier: row['subscription tier'],
-                  pricing_page: row['pricing page?'],
-                  documented: row['documented?'],
-                  comparison_tiers: {
-                    free: row['free comparison tier'],
-                    teamDesigner: row['teamDesigner comparison tier'],
-                    teamOperator: row['teamOperator comparison tier'],
-                    enterprise: row['enterprise comparison tier'],
-                  }
-                };
-              }).filter(Boolean);
-                  console.log('Filtered Data:', filteredData);
+                  return {
+                    theme: row['Theme (also: Keychain Name)'],
+                    category: row['Category'],
+                    function: row['Function'],
+                    feature: row['Feature'],
+                    subscription_tier: row['Subscription Tier'],
+                    pricing_page: row['Pricing Page?'],
+                    documented: row['Documented?'],
+                    comparison_tiers: {
+                      free: row['Free Comparison Tier'],
+                      teamDesigner: row['TeamDesigner Comparison Tier'],
+                      teamOperator: row['TeamOperator Comparison Tier'],
+                      enterprise: row['Enterprise Comparison Tier'],
+                    },
+                  };
+                })
+                .filter(Boolean);
 
-              const featuresFile = process.env.FEATURES_FILE;
+              console.log('Filtered Data:', filteredData);
 
               // Read existing JSON data
+              const featuresFile = process.env.FEATURES_FILE;
               let existingData = [];
               if (fs.existsSync(featuresFile)) {
                 existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
               }
 
-              // Merge new data with existing data
-              const updatedData = [...existingData, ...filteredData];
-               console.log('New Updates:', updatedData);
+              // Deduplicate and merge data
+              const updatedData = [
+                ...existingData,
+                ...filteredData.filter(
+                  newRow =>
+                    !existingData.some(
+                      existingRow =>
+                        existingRow.function === newRow.function &&
+                        existingRow.feature === newRow.feature
+                    )
+                ),
+              ];
 
               // Write updated JSON back to file
               fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
@@ -106,6 +160,7 @@ jobs:
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
           commit_author: 'l5io <l5io@users.noreply.github.com>'
+
   call-build-and-deploy--workflow:
     needs:
       - trigger-feature-list
