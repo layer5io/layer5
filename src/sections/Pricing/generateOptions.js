@@ -3,6 +3,8 @@ import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
 function generateOptions(data) {
+  console.log("Initial feature data:", data);
+
   const tiers = {
     "Free": {
       tier: "Personal",
@@ -43,29 +45,42 @@ function generateOptions(data) {
     },
   };
 
+  console.log("Tiers configuration:", tiers);
+
   const options = Object.entries(tiers).map(([tierName, tierInfo]) => {
+    console.log(`Processing tier: ${tierName}`, tierInfo);
+
     const summary = data
-      .filter((item) =>
-        (tierName === "Team" &&
-          (item.entire_row["Subscription Tier"] === "Team" || item.entire_row["Subscription Tier"] === "Team-Beta")) ||
-        (item.entire_row["Subscription Tier"] === tierName && item.pricing_page === "true")
-      )
-      .map((item, index) => ({
-        id: index,
-        category: item.entire_row.Function,
-        description: item.entire_row.Feature,
-        tier: item.entire_row["Subscription Tier"]
-      }));
+      .filter((item) => {
+        const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "X" ) ;
+        return matches;
+      })
+      .map((item, index) => {
+        const mappedItem = {
+          id: index,
+          category: item.function,
+          description: item.feature,
+          tier: item.subscription_tier,
+        };
+
+        console.log("Mapped item:", mappedItem);
+        return mappedItem;
+      });
+
+    console.log(`Summary for tier ${tierName}:`, summary);
 
     return {
       ...tierInfo,
-      summary: summary.length > 0 ? summary : []
+      summary: summary.length > 0 ? summary : [],
     };
   });
 
+  console.log("Final generated options:", options);
   return options;
 }
 
 const options = generateOptions(featureData);
+
+console.log("Exporting options:", options);
 
 export default options;
