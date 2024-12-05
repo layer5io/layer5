@@ -14,7 +14,7 @@ const PlanCard = ({ planData }) => {
       <Container>
         <Row $Hcenter>
           {planData.map((x) => (
-            <Col lg={4} md={6} key={x.tier}>
+            <Col lg={4} md={2} sm={1} key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
