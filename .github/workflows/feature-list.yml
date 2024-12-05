@@ -168,7 +168,6 @@ jobs:
 
       - name: Commit changes
         id: commit-changes
-        if: steps.check-updates.outputs.has-updates == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Updated feature data from spreadsheet"
