@@ -63,6 +63,7 @@ jobs:
           fi
 
       - name: Commit changes
+        id: commit-changes
         if: steps.check-updates.outputs.has-updates == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -73,3 +74,9 @@ jobs:
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
           commit_author: 'l5io <l5io@users.noreply.github.com>'
+  call-build-and-deploy--workflow:
+    needs:
+      - trigger-feature-list
+    name: Build and Deploy Site
+    uses: layer5io/layer5/.github/workflows/build-and-deploy-site.yml@master
+    secrets: inherit
