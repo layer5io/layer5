@@ -18,7 +18,7 @@ function generateOptions(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 5,
+      monthlyprice: 6,
       yearlyprice: 100,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "Everything included in Free, plus...",
@@ -27,7 +27,7 @@ function generateOptions(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: true,
-      monthlyprice: 5,
+      monthlyprice: 6,
       yearlyprice: 100,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
@@ -37,7 +37,7 @@ function generateOptions(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 21,
+      monthlyprice: 22,
       yearlyprice: 180,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
