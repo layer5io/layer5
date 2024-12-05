@@ -57,16 +57,16 @@ jobs:
                   if (!includeRow) return null;
 
                   return {
-                    theme: row['Theme (also: Keychain Name)'],
+                    theme: row['Theme'],
                     category: row['Category'],
                     function: row['Function'],
                     feature: row['Feature'],
                     subscription_tier: row['Subscription Tier'],
                     comparison_tiers: {
-                      free: row['Free Comparison Tier'],
-                      teamDesigner: row['TeamDesigner Comparison Tier'],
-                      teamOperator: row['TeamOperator Comparison Tier'],
-                      enterprise: row['Enterprise Comparison Tier'],
+                      free: row['Free Tier'],
+                      teamDesigner: row['TeamDesigner Tier'],
+                      teamOperator: row['TeamOperator Tier'],
+                      enterprise: row['Enterprise Tier'],
                     },
                   };
                 })
@@ -78,8 +78,6 @@ jobs:
               if (fs.existsSync(featuresFile)) {
                 existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
               }
-
-              console.log('filteredData',filteredData)
 
               // Identify new updates
               const newUpdates = filteredData.filter(
@@ -100,8 +98,6 @@ jobs:
 
               // Merge new updates into existing data
               const updatedData = [...existingData, ...newUpdates];
-
-                console.log('updatedData',updatedData)
 
               // Write updated data to file
               try {
