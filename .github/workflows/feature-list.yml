@@ -39,8 +39,24 @@ jobs:
           const fs = require('fs');
           const csv = require('csvtojson');
 
+          const headers = [
+            'Theme',
+            'Category',
+            'Function',
+            'Feature',
+            'Subscription Tier',
+            'Free Tier',
+            'TeamDesigner Tier',
+            'TeamOperator Tier',
+            'Enterprise Tier',
+            'Pricing Page?',
+            'Video?',
+            'Documented?',
+          ];
+
           csv({
             noheader: true, 
+            headers: headers
             output: 'json', 
           })
             .fromFile('spreadsheet.csv')
