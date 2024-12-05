@@ -174,8 +174,8 @@ const Comparison = () => {
               <tr className="price-table-head">
                 <td></td>
                 <td>Free</td>
-                <td>TeamDesigner</td>
-                <td>TeamOperator</td>
+                <td>Team Designer</td>
+                <td>Team Operator</td>
                 <td>Enterprise</td>
               </tr>
 

@@ -56,8 +56,7 @@ jobs:
                   function: row['function'],
                   feature: row['feature'],
                   subscription_tier: row['subscription tier'],
-                  tech: row['tech'],
-                  pricing_page: row['pricing page?'] ? 'true' : undefined,
+                  pricing_page: row['pricing page?'],
                   documented: row['documented?'],
                   comparison_tiers: {
                     free: row['free comparison tier'],

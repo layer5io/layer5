@@ -26,14 +26,27 @@ function generateDetails(data) {
   return categories.map(category => {
     const features = data
       .filter(item => item.entire_row["Theme (also: Keychain Name)"] === category.name)
-      .map(item => ({
-        feature: item.entire_row.Function,
-        description: item.entire_row.Feature,
-        free: item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-        teamDesigner: item.entire_row["Subscription Tier"] === "TeamDesigner" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-        teamOperator: item.entire_row["Subscription Tier"] === "TeamOperator" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-        enterprise: <GiCheckMark className="yes-icon" />,
-      }));
+      .map(item => {
+        const featureName = item.entire_row.Function;
+        const description = item.entire_row.Feature;
+        const documentedLink = item.entire_row["Documented?"];
+        const featureWithLink = documentedLink ? (
+          <a href={documentedLink} target="_blank" rel="noopener noreferrer" className="feature-link">
+            {featureName}
+          </a>
+        ) : (
+          featureName
+        );
+
+        return {
+          feature: featureWithLink,
+          description,
+          free: item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          teamDesigner: item.entire_row["Subscription Tier"] === "TeamDesigner" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          teamOperator: item.entire_row["Subscription Tier"] === "TeamOperator" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          enterprise: <GiCheckMark className="yes-icon" />,
+        };
+      });
 
     return {
       id: category.id,
@@ -43,8 +56,6 @@ function generateDetails(data) {
     };
   });
 }
-
-
 
 const details = generateDetails(featureData);
 
