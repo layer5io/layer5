@@ -2396,5 +2396,18 @@
       "teamOperator": "",
       "enterprise": ""
     }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "View Workspace",
+    "feature": "See all workspaces within an organization",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
   }
 ]
