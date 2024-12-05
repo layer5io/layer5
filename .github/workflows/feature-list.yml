@@ -79,6 +79,8 @@ jobs:
                 existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
               }
 
+              console.log('filteredData',filteredData)
+
               // Identify new updates
               const newUpdates = filteredData.filter(
                 newRow =>
@@ -98,6 +100,8 @@ jobs:
 
               // Merge new updates into existing data
               const updatedData = [...existingData, ...newUpdates];
+
+                console.log('updatedData',updatedData)
 
               // Write updated data to file
               try {
