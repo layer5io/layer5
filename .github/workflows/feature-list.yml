@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FEATURES_FILE: 'src/sections/Pricing/feature_data.json'
-      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=829069645&single=true&output=csv'
+      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=1153419764&single=true&output=csv'
 
     steps:
       - name: Checkout current repository
@@ -39,46 +39,10 @@ jobs:
           const fs = require('fs');
           const csv = require('csvtojson');
 
-          const headers = [
-            'Theme (also: Keychain Name)',
-            'Category',
-            'Function',
-            'Feature',
-            'Primary Persona',
-            'Entitlement',
-            'Subscription Tier',
-            'Free Comparison Tier',
-            'TeamDesigner Comparison Tier',
-            'TeamOperator Comparison Tier',
-            'Enterprise Comparison Tier',
-            'Tech',
-            'Version',
-            'Engineer',
-            'Pricing Page?',
-            'Video?',
-            'Documented?',
-            'Anonymous',
-            'Authorization',
-            'Team Admin',
-            'Workspace Admin',
-            'Org Billing Manager',
-            'Org Admin',
-            'Provider Admin',
-            'Curator',
-            'MeshMap',
-            'Keychain ID',
-            'SQL',
-            'Key ID',
-            'Inserted',
-            'Local Provider',
-            'Update SQL',
-            'E2E Test',
-          ];
-
           csv({
-            noheader: true, // Ignore the first row as headers
-            headers: headers, // Use our custom headers
-            output: 'json', // Output as JSON
+            noheader: true, 
+            headers: headers, 
+            output: 'json', 
           })
             .fromFile('spreadsheet.csv')
             .then(rows => {
@@ -87,12 +51,10 @@ jobs:
               const filteredData = rows
                 .map(row => {
                   const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
-                  const documented = row['Documented?']?.trim() || '';
 
                   const includeRow =
-                    (pricingPage && ['x', 'X', 'true'].includes(pricingPage)) ||
-                    (documented.startsWith('https://docs.meshery.io/') ||
-                      documented.startsWith('https://docs.layer5.io/'));
+                    (pricingPage && ['x', 'X', 'true'].includes(pricingPage))
+
                   if (!includeRow) return null;
 
                   return {

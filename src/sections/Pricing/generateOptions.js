@@ -45,10 +45,7 @@ function generateOptions(data) {
     },
   };
 
-  console.log("Tiers configuration:", tiers);
-
   const options = Object.entries(tiers).map(([tierName, tierInfo]) => {
-    console.log(`Processing tier: ${tierName}`, tierInfo);
 
     const summary = data
       .filter((item) => {
@@ -63,19 +60,14 @@ function generateOptions(data) {
           tier: item.subscription_tier,
         };
 
-        console.log("Mapped item:", mappedItem);
         return mappedItem;
       });
-
-    console.log(`Summary for tier ${tierName}:`, summary);
 
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
     };
   });
-
-  console.log("Final generated options:", options);
   return options;
 }
 
