@@ -3,7 +3,7 @@ name: Feature List
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 0 * * *' 
+    - cron: '0 0 * * *' 
 
 permissions:
   contents: write
@@ -20,14 +20,6 @@ jobs:
       - name: Checkout current repository
         uses: actions/checkout@v4
 
-      - name: Restore cache
-        id: cache-sha
-        uses: actions/cache@v3
-        with:
-          path: .sha-cache
-          key: feature-data-sha
-          restore-keys: |
-            feature-data-sha
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -37,37 +29,70 @@ jobs:
         run: |
           npm install csvtojson --legacy-peer-deps
 
-      - name: Fetch spreadsheet and check for updates
+      - name: Fetch spreadsheet and process updates
         run: |
           # Download the spreadsheet
           curl -L $SPREADSHEET_URL -o spreadsheet.csv
-          
-          # Generate a SHA hash of the file
-          sha256sum spreadsheet.csv > .sha-cache/latest-sha
-          # Compare the hash with the previously stored hash
-          if [ -f ".sha-cache/last-sha" ] && cmp --silent .sha-cache/latest-sha .sha-cache/last-sha; then
-            echo "No updates detected."
-            echo "has-updates=false" >> $GITHUB_OUTPUT
-          else
-            echo "Updates detected. Processing..."
-            cp .sha-cache/latest-sha .sha-cache/last-sha
-            # Convert CSV to JSON (Assume a script or tool to do this is present)
-            node -e "
-              const fs = require('fs');
-              const csv = require('csvtojson');
-              csv()
-                .fromFile('spreadsheet.csv')
-                .then(json => fs.writeFileSync(process.env.FEATURES_FILE, JSON.stringify(json, null, 2)));
-            "
-            echo "has-updates=true" >> $GITHUB_OUTPUT
-          fi
+
+          # Process the CSV, filter data, and append to feature_data.json
+          node -e "
+          const fs = require('fs');
+          const csv = require('csvtojson');
+
+          // Read and parse CSV
+          csv()
+            .fromFile('spreadsheet.csv')
+            .then(rows => {
+              const filteredData = rows.map(row => {
+                const includeRow = 
+                  (row['pricing page?'] && ['x', 'X', 'true'].includes(row['pricing page?'].toLowerCase())) || 
+                  (row['documented?'] && (row['documented?'].startsWith('https://docs.meshery.io/') || row['documented?'].startsWith('https://docs.layer5.io/')));
+
+                if (!includeRow) return null;
+
+                return {
+                  category: row['category'],
+                  theme: row['theme (also: keychain name)'],
+                  function: row['function'],
+                  feature: row['feature'],
+                  subscription_tier: row['subscription tier'],
+                  pricing_page: row['pricing page?'],
+                  documented: row['documented?'],
+                  comparison_tiers: {
+                    free: row['free comparison tier'],
+                    teamDesigner: row['teamDesigner comparison tier'],
+                    teamOperator: row['teamOperator comparison tier'],
+                    enterprise: row['enterprise comparison tier'],
+                  }
+                };
+              }).filter(Boolean);
+
+              const featuresFile = process.env.FEATURES_FILE;
+
+              // Read existing JSON data
+              let existingData = [];
+              if (fs.existsSync(featuresFile)) {
+                existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
+              }
+
+              // Merge new data with existing data
+              const updatedData = [...existingData, ...filteredData];
+
+              // Write updated JSON back to file
+              fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
+            })
+            .catch(error => {
+              console.error('Error processing spreadsheet:', error);
+              process.exit(1);
+            });
+          "
 
       - name: Commit changes
         id: commit-changes
         if: steps.check-updates.outputs.has-updates == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Updated feature data from source repository"
+          commit_message: "Updated feature data from spreadsheet"
           file_pattern: ${{ env.FEATURES_FILE }}
           branch: master
           commit_options: "--signoff"

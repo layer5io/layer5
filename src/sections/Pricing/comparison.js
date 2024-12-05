@@ -174,7 +174,8 @@ const Comparison = () => {
               <tr className="price-table-head">
                 <td></td>
                 <td>Free</td>
-                <td>Team</td>
+                <td>Team Designer</td>
+                <td>Team Operator</td>
                 <td>Enterprise</td>
               </tr>
 
@@ -192,7 +193,8 @@ const Comparison = () => {
                     <tr key={f.feature}>
                       <td><FeatureDetails category={f.feature} description={f.description} /></td>
                       <td>{f.free}</td>
-                      <td>{f.team}</td>
+                      <td>{f.teamDesigner}</td>
+                      <td>{f.teamOperator}</td>
                       <td>{f.enterprise}</td>
                     </tr>
                   ))}
