@@ -101,8 +101,6 @@ jobs:
                     function: row['Function'],
                     feature: row['Feature'],
                     subscription_tier: row['Subscription Tier'],
-                    pricing_page: row['Pricing Page?'],
-                    documented: row['Documented?'],
                     comparison_tiers: {
                       free: row['Free Comparison Tier'],
                       teamDesigner: row['TeamDesigner Comparison Tier'],
