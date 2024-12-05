@@ -2409,5 +2409,837 @@
       "teamOperator": "x",
       "enterprise": "x"
     }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Export Design",
+    "feature": "To your local filesystem",
+    "subscription_tier": "All",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Designs",
+    "function": "Details of design",
+    "feature": "Set design information or details of a design",
+    "subscription_tier": "ALL",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Identity & Access Management",
+    "category": "Authentication",
+    "function": "Authentication: OAuth",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "Cluster discovery",
+    "function": "Cluster discovery",
+    "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "Mesh Federation",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Create View",
+    "feature": "Create a new view",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Edit View",
+    "feature": "Edit environment and it connection membership",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Assign Views to Workspace",
+    "feature": "Add new views to workspace",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Unassign Views from Workspace",
+    "feature": "Remove views from workspace",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "View view component details",
+    "feature": "View detailed information about a view and it's comopnent",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Open view",
+    "feature": "Open a pre-existing view",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Save Views",
+    "feature": "Saved view",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Clone Views",
+    "feature": "Clone Views",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Stream container logs",
+    "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "View Interactive Terminal",
+    "feature": "View Interactive Terminal",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "View Component Details",
+    "feature": "View managed infrastructure resources details in Kanvas Operator",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "View Observability Metrics",
+    "feature": "View real-time resource metrics in Kanvas Operator",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Perform conformance test",
+    "feature": "Perform a conformance test in Kanvas Operator",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Stream container logs",
+    "feature": "Stream container logs in Kanvas Operator",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Perform performance test in visualizer",
+    "feature": "Perform performance test in Kanvas Operator",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Kanvas",
+    "category": "Operator",
+    "function": "Select performance profile in visualizer",
+    "feature": "Select a performance profile to run tests using",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance Profiles",
+    "function": "Persistence of test results",
+    "feature": "Baseline and track your service mesh performance from release to release.",
+    "subscription_tier": "All",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Load Generation",
+    "function": "Load Generator Interface: Common interface used as an extension point for supporting different types of load generators",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "Add performace profile",
+    "feature": "Add a new performace profile",
+    "subscription_tier": "Platfrom Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "Run test",
+    "feature": "Run a test on performance profile",
+    "subscription_tier": "Platfrom Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "View Results",
+    "feature": "View results of performance tests",
+    "subscription_tier": "ALL",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "Edit performance test",
+    "feature": "Edit performance test",
+    "subscription_tier": "ALL",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "Delete performance test",
+    "feature": "Delete performance test",
+    "subscription_tier": "ALL",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Performance Management",
+    "category": "Performance",
+    "function": "View performance profiles",
+    "feature": "View all performance profiles",
+    "subscription_tier": "ALL",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Alert Management",
+    "function": "Notification Suppression",
+    "feature": "",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Alert Management",
+    "function": "Notification Correlation",
+    "feature": "",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Policies",
+    "function": "Versioned",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Audit Trail",
+    "function": "Log of all actions invoked by users",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "RBAC Violations",
+    "function": "Notification of attempts to invoke unauthorized actions",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Open Policy Agent integration",
+    "function": "Admission control for specific workloads on the mesh",
+    "feature": "",
+    "subscription_tier": "Platform Engineer",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Open Policy Agent integration",
+    "function": "Service request authorization with JWT",
+    "feature": "",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Policy",
+    "category": "Open Policy Agent integration",
+    "function": "Performance Budget support in Patterns",
+    "feature": "",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Open",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Overview",
+    "function": "View Overview",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Credentials",
+    "function": "View Credentials",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Credentials",
+    "function": "Create Credential",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Credentials",
+    "function": "Edit Credential",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Credentials",
+    "function": "Delete Credential",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Security Management",
+    "category": "Sessions",
+    "function": "Logout from a Session",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "Cloud native infrastructure lifecycle",
+    "function": "Manage cloud native infrastructure life cycle",
+    "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
+    "subscription_tier": "Operator",
+    "comparison_tiers": {
+      "free": "Closed",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "Cloud native infrastructure lifecycle",
+    "function": "Apply custom cloud native configuration",
+    "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "Cloud native infrastructure lifecycle",
+    "function": "Deploy cloud native infrastructure",
+    "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "Cloud native infrastructure lifecycle",
+    "function": "Undeploy cloud native infrastructure",
+    "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "Cloud native infrastructure lifecycle",
+    "function": "View cloud native infrastructure",
+    "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Delete Workspace",
+    "feature": "Dissolve workspace and all team and environment memberships. Leave associated resources intact",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Edit Workspace",
+    "feature": "Edit workspace and it's team and environment membership",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Create Workspace",
+    "feature": "Create new workspace",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Assign team to workspace",
+    "feature": "Add new team to workspace",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Remove team from workspace",
+    "feature": "Remove team from workspace",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Assign environment to workspace",
+    "feature": "Add new environment to workspace",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Remove environment from workspace",
+    "feature": "Remove environment from workspace",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Assign Designs to Workspaces",
+    "feature": "Assign designs to workspaces",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Remove Designs from Workspaces",
+    "feature": "Remove designs from workspaces",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Workspace",
+    "function": "Connect Google Account to Workspace",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "View Environment",
+    "feature": "See all environments within an workspace.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "Create Environment",
+    "feature": "Create a new environment",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "Edit Environment",
+    "feature": "Edit environment and it connection membership",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "Assign connections to environment",
+    "feature": "Add new connections to environments",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "Environments",
+    "function": "Remove connections from environments",
+    "feature": "Remove connections from environment,",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    }
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "Catalog",
+    "function": "View Catalog",
+    "feature": "View all items in catalog",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    }
   }
 ]
