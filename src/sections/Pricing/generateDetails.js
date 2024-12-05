@@ -25,11 +25,11 @@ function generateDetails(data) {
 
   return categories.map(category => {
     const features = data
-      .filter(item => item.entire_row["Theme (also: Keychain Name)"] === category.name)
+      .filter(item => item.theme === category.name)
       .map(item => {
-        const featureName = item.entire_row.Function;
-        const description = item.entire_row.Feature;
-        const documentedLink = item.entire_row["Documented?"];
+        const featureName = item.function;
+        const description = item.feature;
+        const documentedLink = item.documented;
         const featureWithLink = documentedLink ? (
           <a href={documentedLink} target="_blank" rel="noopener noreferrer" className="feature-link">
             {featureName}
@@ -41,9 +41,9 @@ function generateDetails(data) {
         return {
           feature: featureWithLink,
           description,
-          free: item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-          teamDesigner: item.entire_row["Subscription Tier"] === "TeamDesigner" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-          teamOperator: item.entire_row["Subscription Tier"] === "TeamOperator" || item.entire_row["Subscription Tier"] === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          free: item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          teamDesigner: item.subscription_tier === "TeamDesigner" || item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          teamOperator: item.subscription_tier === "TeamOperator" || item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
           enterprise: <GiCheckMark className="yes-icon" />,
         };
       });
