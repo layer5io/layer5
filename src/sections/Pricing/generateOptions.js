@@ -48,7 +48,7 @@ function generateOptions(data) {
 
     const summary = data
       .filter((item) => {
-        const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "X" ) ;
+        const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "x" ) ;
         console.log(`Checking item: ${JSON.stringify(item)}, Matches: ${matches}`);
         return matches;
       })
