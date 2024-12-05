@@ -2,13 +2,7 @@ import styled from "styled-components";
 
 const PlanCardWrapper = styled.section`
   margin: 0 auto;
-  .pricing-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22rem;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+
   .pricing-card {
     display: flex;
     text-align: left; /* Align all content to the left */
@@ -71,10 +65,10 @@ const PlanCardWrapper = styled.section`
   }
   .pricing-table {
     width: 100%;
-    min-width: 250px;
+    min-width: 300px;
     background-color: ${(props) => props.theme.grey212121ToWhite};
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    padding: 2rem 1rem;
     border-radius: 4px;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     margin-bottom: 2rem;
@@ -183,9 +177,13 @@ const PlanCardWrapper = styled.section`
     }
   }
 .price-button-disabled {
+    width: 100%;
     background: rgb(0, 179, 158, 0.6);
+    display: block;
+    margin: 2rem auto 0;
+    transition: 0.3s;
     &:hover {
-      cursor: default;
+      cursor: not-allowed;
       box-shadow: none;
     }
   }
