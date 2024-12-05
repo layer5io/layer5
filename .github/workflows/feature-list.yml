@@ -86,11 +86,14 @@ jobs:
 
               const filteredData = rows
                 .map(row => {
-                  const pricingPage = row['Pricing Page?']?.trim() || ''; 
-                   const documented = row['Documented?']?.trim() || ''; 
+                  const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
+                  const documented = row['Documented?']?.trim() || '';
+                  
 
-                   // Include row if either field is not empty
-                   const includeRow = pricingPage || documented;
+                  const includeRow =
+                    (pricingPage && ['x', 'X', 'true'].includes(pricingPage)) ||
+                    (documented.startsWith('https://docs.meshery.io/') ||
+                      documented.startsWith('https://docs.layer5.io/'));
 
                   console.log('Row:', row);
                   console.log('Include Row:', includeRow);
