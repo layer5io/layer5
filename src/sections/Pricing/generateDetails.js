@@ -29,11 +29,10 @@ function generateDetails(data) {
       .map(item => {
         const featureName = item.function;
         const description = item.feature;
-        const documentedLink = item.documented;
+        const documentedLink = item.docs;
         const featureWithLink = documentedLink ? (
-          <a href={documentedLink} target="_blank" rel="noopener noreferrer" className="feature-link">
-            {featureName}
-          </a>
+          <>{featureName} <a href={documentedLink} target="_blank" rel="noopener noreferrer" className="feature-link"><small> docs</small></a>
+          </>
         ) : (
           featureName
         );

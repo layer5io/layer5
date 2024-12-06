@@ -2,7 +2,7 @@ import featureData from "./feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
-function generateOptions(data) {
+function generatePlans(data) {
 
   const tiers = {
     "Free": {
@@ -17,8 +17,8 @@ function generateOptions(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 5,
-      yearlyprice: 100,
+      monthlyprice: 6,
+      yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -26,8 +26,8 @@ function generateOptions(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: true,
-      monthlyprice: 5,
-      yearlyprice: 100,
+      monthlyprice: 6,
+      yearlyprice: 68,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "Everything included in Free, plus...",
@@ -36,8 +36,8 @@ function generateOptions(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 21,
-      yearlyprice: 180,
+      monthlyprice: 22,
+      yearlyprice: 248,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "Everything included in Team, plus...",
@@ -45,12 +45,13 @@ function generateOptions(data) {
     },
   };
 
-  const options = Object.entries(tiers).map(([tierName, tierInfo]) => {
+  const plans = Object.entries(tiers).map(([tierName, tierInfo]) => {
 
     const summary = data
       .filter((item) => {
-        const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "x" ) ;
-        console.log(`Checking item: ${JSON.stringify(item)}, Matches: ${matches}`);
+        const matches =
+          item.subscription_tier === tierName &&
+          item.pricing_page === "x";
         return matches;
       })
       .map((item, index) => {
@@ -69,9 +70,9 @@ function generateOptions(data) {
       summary: summary.length > 0 ? summary : [],
     };
   });
-  return options;
+  return plans;
 }
 
-const options = generateOptions(featureData);
+const plans = generatePlans(featureData);
 
-export default options;
+export default plans;
