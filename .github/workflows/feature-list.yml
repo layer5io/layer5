@@ -33,7 +33,9 @@ jobs:
         run: |
           # Download the spreadsheet
           curl -L $SPREADSHEET_URL -o spreadsheet.csv
-
+          pwd
+          ls -al
+          echo $GITHUB_WORKSPACE
           # Process the CSV, filter data, and append to feature_data.json
           node build/features-to-json.js
           "
