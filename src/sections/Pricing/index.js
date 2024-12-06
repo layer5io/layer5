@@ -16,7 +16,6 @@ const Pricing = () => {
 
   return (
     <PricingWrapper>
-
       <div className="headers">
         <h1 className="header-heading">Plans For Every Team Size</h1>
 

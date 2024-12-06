@@ -1,3 +1,4 @@
+import { FunctionsOutlined } from "@mui/icons-material";
 import featureData from "./feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
@@ -20,7 +21,7 @@ function generatePlans(data) {
       monthlyprice: 6,
       yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
-      byline2: "Everything included in Free, plus...",
+      byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "TeamOperator": {
@@ -30,7 +31,7 @@ function generatePlans(data) {
       yearlyprice: 68,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
-      byline2: "Everything included in Free, plus...",
+      byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "Enterprise": {
@@ -40,7 +41,7 @@ function generatePlans(data) {
       yearlyprice: 248,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
-      byline2: "Everything included in Team, plus...",
+      byline2: "← Everything included in Team, plus...",
       button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     },
   };
@@ -57,14 +58,16 @@ function generatePlans(data) {
       .map((item, index) => {
         const mappedItem = {
           id: index,
+          categoryOrder: item.categoryOrder,
           category: item.function,
+          functionOrder: item.functionOrder,
           description: item.feature,
           tier: item.subscription_tier,
         };
 
         return mappedItem;
-      });
-
+      })
+      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder)
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],

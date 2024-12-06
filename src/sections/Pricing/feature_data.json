@@ -1,7 +1,9 @@
 [
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "9",
     "category": "Extensibility",
+    "functionOrder": "1",
     "function": "Extensible Webhooks",
     "feature": "Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.",
     "subscription_tier": "Enterprise",
@@ -16,7 +18,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "9",
     "category": "Extensibility",
+    "functionOrder": "2",
     "function": "Enterprise API",
     "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
     "subscription_tier": "Enterprise",
@@ -31,9 +35,11 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "9",
     "category": "Extensibility",
-    "function": "White Label",
-    "feature": "Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.",
+    "functionOrder": "3",
+    "function": "Managed Service Provider",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -46,7 +52,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Support",
+    "functionOrder": "4",
     "function": "Community Support",
     "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
     "subscription_tier": "Free",
@@ -61,7 +69,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Support",
+    "functionOrder": "5",
     "function": "Standard Support",
     "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
     "subscription_tier": "TeamDesigner",
@@ -76,7 +86,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Support",
+    "functionOrder": "6",
     "function": "Premium and Premium Plus Support",
     "feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
     "subscription_tier": "Enterprise",
@@ -91,7 +103,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Support",
+    "functionOrder": "7",
     "function": "Phone Support",
     "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
     "subscription_tier": "TeamDesigner",
@@ -106,7 +120,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Billing",
+    "functionOrder": "8",
     "function": "Invoice Billing",
     "feature": "Pay bills via invoice, rather than using your credit card.",
     "subscription_tier": "Enterprise",
@@ -121,7 +137,9 @@
   },
   {
     "theme": "Support and Deployment",
+    "categoryOrder": "10",
     "category": "Deployment",
+    "functionOrder": "9",
     "function": "Self-hosted Deployment",
     "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
     "subscription_tier": "Enterprise",
@@ -136,10 +154,12 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Designs",
+    "functionOrder": "1",
     "function": "Import your IaC",
     "feature": "Import a design from Kubernetes Manifest, Helm Chart, or Docker Compose",
-    "subscription_tier": "Free",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
@@ -151,10 +171,12 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Designs",
+    "functionOrder": "1",
     "function": "Premium Import IaC",
     "feature": "Bulk import designs from GitHub",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -166,10 +188,12 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Designs",
+    "functionOrder": "1",
     "function": "Standard Design Export",
     "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
-    "subscription_tier": "TeamDesigner",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "x",
@@ -181,10 +205,12 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Designs",
+    "functionOrder": "1",
     "function": "Premium Design Export",
     "feature": "Export a design as a snapshot",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "x",
@@ -196,9 +222,11 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Designs",
-    "function": "Catalog of Cloud Native Design Patterns",
-    "feature": "A library of pre-built patterns and templates for common deployment scenarios, simplifying the configuration process and ensuring best practices",
+    "functionOrder": "1",
+    "function": "Public Catalog",
+    "feature": "A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
@@ -211,9 +239,11 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "1",
     "category": "Filters",
+    "functionOrder": "1",
     "function": "Private Catalog",
-    "feature": "Privately publish and share reusable design and operational templates within your organization.",
+    "feature": "Privately publish and share reusable design patterns and operational templates within your organization.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -226,8 +256,10 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "5",
     "category": "Organization and Team Management",
-    "function": "Manage access to designs",
+    "functionOrder": "1",
+    "function": "Resource Access Management",
     "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
@@ -241,7 +273,9 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "5",
     "category": "Built-in Roles",
+    "functionOrder": "2",
     "function": "Built-in Roles",
     "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
     "subscription_tier": "Free",
@@ -256,7 +290,9 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "5",
     "category": "User-defined Roles",
+    "functionOrder": "2",
     "function": "User-defined Roles",
     "feature": "Customizable roles for specific permission assignments",
     "subscription_tier": "Enterprise",
@@ -271,10 +307,12 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "5",
     "category": "IdP Integration",
+    "functionOrder": "5",
     "function": "Authentication: LDAP",
     "feature": "Access Meshery Server using your existing accounts and centrally manage repository access.",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -286,10 +324,12 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "5",
     "category": "IdP Integration",
+    "functionOrder": "5",
     "function": "Authentication: SAML",
     "feature": "Use an identity provider to manage the identities of GitHub users and applications.",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -301,7 +341,9 @@
   },
   {
     "theme": "Lifecycle Management",
-    "category": "",
+    "categoryOrder": "",
+    "category": "Lifecycle Management",
+    "functionOrder": "",
     "function": "Topology visualization",
     "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
     "subscription_tier": "Free",
@@ -316,7 +358,9 @@
   },
   {
     "theme": "Lifecycle Management",
+    "categoryOrder": "",
     "category": "Dry-run",
+    "functionOrder": "",
     "function": "Design dry-run",
     "feature": "Test and verify configuration changes in a separate environment.",
     "subscription_tier": "TeamOperator",
@@ -331,8 +375,10 @@
   },
   {
     "theme": "Lifecycle Management",
+    "categoryOrder": "",
     "category": "Multiple Kubernetes Clusters",
-    "function": "Multiple Kubernetes Clusters",
+    "functionOrder": "",
+    "function": "Kubernetes Clusters",
     "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
@@ -345,9 +391,28 @@
     "docs": ""
   },
   {
+    "theme": "Lifecycle Management",
+    "categoryOrder": "",
+    "category": "Multiple Kubernetes Clusters",
+    "functionOrder": "",
+    "function": "AWS and GCP",
+    "feature": "Ongoing synchronization of AWS and GCP services configuration, workloads and changes across any number of accounts.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "mesheryctl",
-    "function": "CLI",
+    "functionOrder": "",
+    "function": "Robust CLI",
     "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
     "subscription_tier": "Free",
     "comparison_tiers": {
@@ -361,7 +426,9 @@
   },
   {
     "theme": "Performance Management",
-    "category": "Service Performance",
+    "categoryOrder": "4",
+    "category": "Performance Management",
+    "functionOrder": "1",
     "function": "Service Performance",
     "feature": "Continuous visibility across all of your clusters and workloads.",
     "subscription_tier": "Free",
@@ -376,7 +443,9 @@
   },
   {
     "theme": "Configuration Management",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Undo or Redo",
     "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
     "subscription_tier": "Free",
@@ -391,7 +460,9 @@
   },
   {
     "theme": "Configuration Management",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Whiteboarding",
     "feature": "Ability to freeform draw any shapes, draw edges",
     "subscription_tier": "Free",
@@ -406,7 +477,9 @@
   },
   {
     "theme": "Configuration Management",
+    "categoryOrder": "",
     "category": "Visual Design",
+    "functionOrder": "",
     "function": "Visual Design",
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
     "subscription_tier": "Free",
@@ -420,8 +493,10 @@
     "docs": ""
   },
   {
-    "theme": "Configuration Management",
-    "category": "Design Review",
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Configuration Management",
+    "functionOrder": "",
     "function": "Collaborative Design Review",
     "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "TeamDesigner",
@@ -436,7 +511,9 @@
   },
   {
     "theme": "GitOps",
-    "category": "Design Review",
+    "categoryOrder": "",
+    "category": "Configuration Management",
+    "functionOrder": "",
     "function": "Snapshots",
     "feature": "Visual insights in your pull requests in GitHub",
     "subscription_tier": "TeamDesigner",
@@ -451,7 +528,9 @@
   },
   {
     "theme": "Lifecycle Management",
-    "category": "Operator",
+    "categoryOrder": "",
+    "category": "Lifecycle Management",
+    "functionOrder": "",
     "function": "Web-based Terminal",
     "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
     "subscription_tier": "TeamOperator",
@@ -466,7 +545,9 @@
   },
   {
     "theme": "Lifecycle Management",
-    "category": "Operator",
+    "categoryOrder": "",
+    "category": "Lifecycle Management",
+    "functionOrder": "",
     "function": "Standard Events and Metrics",
     "feature": "Real-time resource metrics.",
     "subscription_tier": "TeamOperator",
@@ -480,8 +561,10 @@
     "docs": ""
   },
   {
-    "theme": "Collaboration",
+    "theme": "",
+    "categoryOrder": "",
     "category": "Collaboration",
+    "functionOrder": "",
     "function": "Team Chat",
     "feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
     "subscription_tier": "Enterprise",
@@ -495,8 +578,10 @@
     "docs": ""
   },
   {
-    "theme": "Collaboration",
+    "theme": "",
+    "categoryOrder": "",
     "category": "Collaboration",
+    "functionOrder": "",
     "function": "Design Reviews",
     "feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
     "subscription_tier": "TeamDesigner",
@@ -510,8 +595,10 @@
     "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
-    "theme": "Collaboration",
-    "category": "",
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Collaboration",
+    "functionOrder": "",
     "function": "Collaborators for public designs",
     "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
     "subscription_tier": "TeamDesigner",
@@ -525,8 +612,10 @@
     "docs": ""
   },
   {
-    "theme": "Collaboration",
-    "category": "",
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Collaboration",
+    "functionOrder": "",
     "function": "Collaborators for public views",
     "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
     "subscription_tier": "TeamOperator",
@@ -540,8 +629,10 @@
     "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
   },
   {
-    "theme": "Collaboration",
-    "category": "",
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Collaboration",
+    "functionOrder": "",
     "function": "Collaborators for private designs and views",
     "feature": "Multi-player collaboration on infrastructure design and management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your private or public designs and views.",
     "subscription_tier": "Enterprise",
@@ -556,7 +647,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "View Profile",
     "feature": "View your profile.",
     "subscription_tier": "Free",
@@ -571,7 +664,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "Edit Account",
     "feature": "Update details of your user account.",
     "subscription_tier": "Free",
@@ -586,7 +681,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "Reset Pasword",
     "feature": "Perform a password reset for your user account.",
     "subscription_tier": "Free",
@@ -601,7 +698,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "Delete Account",
     "feature": "Delete your user account.",
     "subscription_tier": "Free",
@@ -616,7 +715,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "Connect your Github Account",
     "feature": "Link your social sign-in with GitHub to your existing user account.",
     "subscription_tier": "Team",
@@ -631,7 +732,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Profile",
+    "functionOrder": "",
     "function": "Connect your Google Account",
     "feature": "Link your social sign-in with Google to your existing user account.",
     "subscription_tier": "Team",
@@ -646,8 +749,10 @@
   },
   {
     "theme": "Account Management",
-    "category": "Subscription",
-    "function": "View Subcription",
+    "categoryOrder": "",
+    "category": "Entitlement",
+    "functionOrder": "",
+    "function": "Entitlement",
     "feature": "List and see details of active and inactive subscriptions.",
     "subscription_tier": "Team",
     "comparison_tiers": {
@@ -661,7 +766,9 @@
   },
   {
     "theme": "Account Management",
+    "categoryOrder": "",
     "category": "Plans",
+    "functionOrder": "",
     "function": "View Plans",
     "feature": "Explore subscription plans and compare their features.",
     "subscription_tier": "Team",
@@ -676,7 +783,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog",
+    "functionOrder": "",
     "function": "",
     "feature": "Export a copy of a design to your local system.",
     "subscription_tier": "Free",
@@ -691,7 +800,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog",
+    "functionOrder": "",
     "function": "Share Design",
     "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
     "subscription_tier": "Free",
@@ -706,7 +817,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog",
+    "functionOrder": "",
     "function": "Clone Design",
     "feature": "Clone any published design to customise it according to your use cases",
     "subscription_tier": "Free",
@@ -721,7 +834,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "View Designs",
     "feature": "View all public and published designs of other team members and private of signed-in user",
     "subscription_tier": "Free",
@@ -736,7 +851,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Filters",
+    "functionOrder": "",
     "function": "View Filters",
     "feature": "View all public and published filters of other team members and private of signed-in user",
     "subscription_tier": "Free",
@@ -751,7 +868,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog Requests",
+    "functionOrder": "",
     "function": "View Catalog Requests",
     "feature": "View the catalog publication request queue",
     "subscription_tier": "Enterprise",
@@ -766,7 +885,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog Requests",
+    "functionOrder": "",
     "function": "Approve Catalog Request",
     "feature": "Approve catalog publication requests",
     "subscription_tier": "Enterprise",
@@ -781,7 +902,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog Requests",
+    "functionOrder": "",
     "function": "Deny Catalog Request",
     "feature": "Deny catalog publication requests",
     "subscription_tier": "Enterprise",
@@ -796,7 +919,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Create new design",
     "feature": "Create new Meshery design",
     "subscription_tier": "Free",
@@ -811,7 +936,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design",
     "subscription_tier": "Free",
@@ -826,7 +953,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from Kubernetes Manifest",
     "subscription_tier": "Free",
@@ -841,7 +970,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from Meshery Design (YAML)",
     "subscription_tier": "Free",
@@ -856,7 +987,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from Helm Chart",
     "subscription_tier": "Free",
@@ -871,7 +1004,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from Docker Compose",
     "subscription_tier": "Free",
@@ -886,7 +1021,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from Meshery Design (OCI Image)",
     "subscription_tier": "Free",
@@ -901,7 +1038,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from GitHub",
     "subscription_tier": "Enterprise",
@@ -916,7 +1055,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from GitLab",
     "subscription_tier": "Enterprise",
@@ -931,7 +1072,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Import Design",
     "feature": "Import a design from BitBucket",
     "subscription_tier": "Enterprise",
@@ -946,7 +1089,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Export Design",
     "feature": "To your local filesystem",
     "subscription_tier": "Free",
@@ -961,7 +1106,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a latest version of design in Meshery Design (YAML format)",
     "subscription_tier": "Free",
@@ -976,7 +1123,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a latest version of design in Meshery Design (OCI format)",
     "subscription_tier": "TeamDesigner",
@@ -991,7 +1140,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a design at a specific version",
     "subscription_tier": "TeamDesigner",
@@ -1006,7 +1157,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Publish Design",
     "feature": "Publish a design",
     "subscription_tier": "TeamDesigner",
@@ -1021,7 +1174,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Unpublish Design",
     "feature": "Unpublish a design",
     "subscription_tier": "TeamDesigner",
@@ -1036,7 +1191,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Validate Design",
     "feature": "Validate a design",
     "subscription_tier": "TeamDesigner",
@@ -1051,7 +1208,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Deploy Design",
     "feature": "Deploy a design",
     "subscription_tier": "TeamOperator",
@@ -1066,7 +1225,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Undeploy Design",
     "feature": "Retract all resources used in a Meshery design from the cluster",
     "subscription_tier": "Free",
@@ -1081,7 +1242,9 @@
   },
   {
     "theme": "",
+    "categoryOrder": "",
     "category": "",
+    "functionOrder": "",
     "function": "Manage access to views",
     "feature": "Create and collaborate in online operational topologies in real-time.",
     "subscription_tier": "TeamOperator",
@@ -1096,7 +1259,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Designs",
+    "functionOrder": "",
     "function": "Details of design",
     "feature": "Set design information or details of a design",
     "subscription_tier": "Free",
@@ -1111,7 +1276,9 @@
   },
   {
     "theme": "Identity & Access Management",
+    "categoryOrder": "",
     "category": "Authentication",
+    "functionOrder": "",
     "function": "Authentication: OAuth",
     "feature": "",
     "subscription_tier": "Free",
@@ -1126,7 +1293,9 @@
   },
   {
     "theme": "Lifecycle Management",
+    "categoryOrder": "",
     "category": "Cluster discovery",
+    "functionOrder": "",
     "function": "Cluster discovery",
     "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
     "subscription_tier": "TeamOperator",
@@ -1141,7 +1310,9 @@
   },
   {
     "theme": "Lifecycle Management",
+    "categoryOrder": "",
     "category": "Mesh Federation",
+    "functionOrder": "",
     "function": "Environments",
     "feature": "",
     "subscription_tier": "TeamOperator",
@@ -1156,7 +1327,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "View Settings",
     "feature": "View settings in Meshery",
     "subscription_tier": "Free",
@@ -1171,7 +1344,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "Connect adapter",
     "feature": "Configure and connect to Meshery adapters",
     "subscription_tier": "Free",
@@ -1186,7 +1361,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "Connect Metrics",
     "feature": "Configure and connect to metrics like Grafana and Promethues",
     "subscription_tier": "Free",
@@ -1201,7 +1378,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "View Metrics",
     "feature": "View already configured metrics",
     "subscription_tier": "Free",
@@ -1216,7 +1395,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "View Registry",
     "feature": "Explore entities within capabilities registry",
     "subscription_tier": "Free",
@@ -1231,7 +1412,9 @@
   },
   {
     "theme": "Meshery System",
+    "categoryOrder": "",
     "category": "Settings",
+    "functionOrder": "",
     "function": "Reset Database",
     "feature": "Reset Meshery database",
     "subscription_tier": "Free",
@@ -1246,7 +1429,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Drag-n-drop pattern (merge with existing nodes on canvas)",
     "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to merge with exisitng nodes on canvas.",
     "subscription_tier": "Free",
@@ -1261,7 +1446,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Load design pattern (displace current nodes on canvas)",
     "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to displace the exisitng nodes on canvas.",
     "subscription_tier": "Free",
@@ -1276,7 +1463,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Edit Component confuguration (RJSF Tooltips)",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure a component currently present on canvas.",
     "subscription_tier": "Free",
@@ -1291,7 +1480,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Configure fieldrefs",
     "feature": "",
     "subscription_tier": "Free",
@@ -1306,7 +1497,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Delete components",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to delete a component from canvas.",
     "subscription_tier": "Free",
@@ -1321,7 +1514,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Clone components",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
     "subscription_tier": "Free",
@@ -1336,7 +1531,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Copy components",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
     "subscription_tier": "Free",
@@ -1351,7 +1548,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Lock components",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to lock a component's state present on canvas.",
     "subscription_tier": "",
@@ -1366,7 +1565,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Add components",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to copy a component present on canvas. The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to cofigure/edit/update a design by adding new components to the canvas.",
     "subscription_tier": "",
@@ -1381,7 +1582,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Configure component styles",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure the style of a component.",
     "subscription_tier": "",
@@ -1396,7 +1599,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Components",
+    "functionOrder": "",
     "function": "Reset component styles",
     "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to reset a component to it's initial style.",
     "subscription_tier": "",
@@ -1411,7 +1616,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Delete shapes",
     "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
     "subscription_tier": "",
@@ -1426,7 +1633,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Delete shapes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
     "subscription_tier": "Free",
@@ -1441,7 +1650,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Clone shapes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape  on canvas.",
     "subscription_tier": "Free",
@@ -1456,7 +1667,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Copy shapes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape on canvas.",
     "subscription_tier": "Free",
@@ -1471,7 +1684,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Lock shapes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a shape on canvas.",
     "subscription_tier": "",
@@ -1486,7 +1701,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Add shapes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new shapes on canvas.",
     "subscription_tier": "",
@@ -1501,7 +1718,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Configure shape styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of shapes present on canvas.",
     "subscription_tier": "",
@@ -1516,7 +1735,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Shapes",
+    "functionOrder": "",
     "function": "Reset shape styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of shapes present on canvas.",
     "subscription_tier": "",
@@ -1531,7 +1752,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Delete textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a textbox from canvas.",
     "subscription_tier": "Free",
@@ -1546,7 +1769,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Clone textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
     "subscription_tier": "Free",
@@ -1561,7 +1786,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Copy textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
     "subscription_tier": "Free",
@@ -1576,7 +1803,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Lock textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a textbox on canvas.",
     "subscription_tier": "",
@@ -1591,7 +1820,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Add textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new textboxes on canvas.",
     "subscription_tier": "",
@@ -1606,7 +1837,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Configure textbox styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of textboxes present on canvas.",
     "subscription_tier": "",
@@ -1621,7 +1854,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Textboxes",
+    "functionOrder": "",
     "function": "Reset textbox styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of textboxes present on canvas.",
     "subscription_tier": "",
@@ -1636,7 +1871,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Delete sections",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a section from canvas.",
     "subscription_tier": "Free",
@@ -1651,7 +1888,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Clone sections",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
     "subscription_tier": "Free",
@@ -1666,7 +1905,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Copy sections",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
     "subscription_tier": "Free",
@@ -1681,7 +1922,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Lock sections",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a section on canvas.",
     "subscription_tier": "",
@@ -1696,7 +1939,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Add sections",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new sections on canvas.",
     "subscription_tier": "",
@@ -1711,7 +1956,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Configure section styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of sections present on canvas.",
     "subscription_tier": "",
@@ -1726,7 +1973,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Sections",
+    "functionOrder": "",
     "function": "Reset section styles",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of sections present on canvas.",
     "subscription_tier": "",
@@ -1741,7 +1990,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Add text to textboxes",
     "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add text to the textboxes currently on canvas.",
     "subscription_tier": "Free",
@@ -1756,7 +2007,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Create dynamic fieldrefs",
     "feature": "",
     "subscription_tier": "Free",
@@ -1771,7 +2024,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Configure edge handles",
     "feature": "",
     "subscription_tier": "Free",
@@ -1786,7 +2041,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Delete edge handles",
     "feature": "",
     "subscription_tier": "Free",
@@ -1801,7 +2058,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Use heirarchical relationships",
     "feature": "",
     "subscription_tier": "Free",
@@ -1816,7 +2075,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Use inventory relationships",
     "feature": "",
     "subscription_tier": "Free",
@@ -1831,7 +2092,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Change design layout",
     "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to change the layout of the components in the design.",
     "subscription_tier": "Free",
@@ -1846,7 +2109,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Use Pencil",
     "feature": "Pencil is mouse/tool mode available in Kanvas that allows users to draw freehand shapes. This permission grants user the ability to use the pencil mode in Kanvas.",
     "subscription_tier": "Free",
@@ -1861,7 +2126,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Use Pen",
     "feature": "Pen is a mouse/tool mode available in Kanvas that allows users to draw edges from one component to another. This permission grants user the ability to use the pencil mode in Kanvas.",
     "subscription_tier": "Free",
@@ -1876,7 +2143,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Meshery Model",
+    "functionOrder": "",
     "function": "Models",
     "feature": "Generator for GCP via K8s CRDs",
     "subscription_tier": "Free",
@@ -1891,7 +2160,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Meshery Model",
+    "functionOrder": "",
     "function": "Models",
     "feature": "Generator for AWS via K8s CRDs",
     "subscription_tier": "Free",
@@ -1906,7 +2177,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Create blank design in Kanvas",
     "feature": "The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to remove all current entities from the canvas and create a new one to start from scratch",
     "subscription_tier": "TeamDesigner",
@@ -1921,7 +2194,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Patterns",
+    "functionOrder": "",
     "function": "Save design in Kanvas",
     "feature": "Like a Google Doc, Designs are your primary tool for collaborative authorship of your infrastructure and services. A Design describes all the resources and their properties that you want for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to save a design (while logged in)",
     "subscription_tier": "TeamDesigner",
@@ -1936,7 +2211,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "View comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to view comments in a design on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -1951,7 +2228,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Resolve a comment",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to resolve a comment thread in a design on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -1966,7 +2245,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Delete comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to delete a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -1981,7 +2262,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Clone comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to clone a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -1996,7 +2279,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Copy comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to copy a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -2011,7 +2296,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Lock comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to lock a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -2026,7 +2313,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Add comments",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to add a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -2041,7 +2330,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Configure comment styles",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to configure the styles of a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -2056,7 +2347,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Design Review",
+    "functionOrder": "",
     "function": "Reset comment styles",
     "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to reset the styles of a comment on canvas.",
     "subscription_tier": "TeamDesigner",
@@ -2071,7 +2364,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "View Views",
     "feature": "See all views withing a workspace",
     "subscription_tier": "TeamOperator",
@@ -2086,7 +2381,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Create View",
     "feature": "Create a new view",
     "subscription_tier": "TeamOperator",
@@ -2101,7 +2398,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Delete View",
     "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
     "subscription_tier": "TeamOperator",
@@ -2116,7 +2415,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Edit View",
     "feature": "Edit environment and it connection membership",
     "subscription_tier": "TeamOperator",
@@ -2131,7 +2432,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Assign Views to Workspace",
     "feature": "Add new views to workspace",
     "subscription_tier": "TeamOperator",
@@ -2146,7 +2449,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Unassign Views from Workspace",
     "feature": "Remove views from workspace",
     "subscription_tier": "TeamOperator",
@@ -2161,7 +2466,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Export views",
     "feature": "Export views to JSON format",
     "subscription_tier": "TeamOperator",
@@ -2176,7 +2483,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "View view component details",
     "feature": "View detailed information about a view and it's comopnent",
     "subscription_tier": "TeamOperator",
@@ -2191,7 +2500,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Open view",
     "feature": "Open a pre-existing view",
     "subscription_tier": "TeamOperator",
@@ -2206,7 +2517,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Save Views",
     "feature": "Saved view",
     "subscription_tier": "TeamOperator",
@@ -2221,7 +2534,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Share Views",
     "feature": "Share Views",
     "subscription_tier": "TeamOperator",
@@ -2236,7 +2551,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Clone Views",
     "feature": "Clone Views",
     "subscription_tier": "TeamOperator",
@@ -2251,7 +2568,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Stream container logs",
     "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
     "subscription_tier": "TeamOperator",
@@ -2266,7 +2585,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "View Interactive Terminal",
     "feature": "View Interactive Terminal",
     "subscription_tier": "TeamOperator",
@@ -2281,7 +2602,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "View Component Details",
     "feature": "View managed infrastructure resources details in Kanvas Operator",
     "subscription_tier": "TeamOperator",
@@ -2296,7 +2619,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "View Observability Metrics",
     "feature": "View real-time resource metrics in Kanvas Operator",
     "subscription_tier": "TeamOperator",
@@ -2311,7 +2636,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Perform conformance test",
     "feature": "Perform a conformance test in Kanvas Operator",
     "subscription_tier": "TeamOperator",
@@ -2326,7 +2653,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Stream container logs",
     "feature": "Stream container logs in Kanvas Operator",
     "subscription_tier": "TeamOperator",
@@ -2341,7 +2670,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Perform performance test in visualizer",
     "feature": "Perform performance test in Kanvas Operator",
     "subscription_tier": "TeamOperator",
@@ -2356,7 +2687,9 @@
   },
   {
     "theme": "Kanvas",
+    "categoryOrder": "",
     "category": "Operator",
+    "functionOrder": "",
     "function": "Select performance profile in visualizer",
     "feature": "Select a performance profile to run tests using",
     "subscription_tier": "TeamOperator",
@@ -2371,7 +2704,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance Profiles",
+    "functionOrder": "",
     "function": "Persistence of test results",
     "feature": "Baseline and track your service mesh performance from release to release.",
     "subscription_tier": "Free",
@@ -2386,7 +2721,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Load Generation",
+    "functionOrder": "",
     "function": "Load Generator Interface: Common interface used as an extension point for supporting different types of load generators",
     "feature": "",
     "subscription_tier": "Free",
@@ -2401,7 +2738,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Load Generation",
+    "functionOrder": "",
     "function": "Load Generation",
     "feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
     "subscription_tier": "Free",
@@ -2416,7 +2755,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Load Generation",
+    "functionOrder": "",
     "function": "Distributed Load Generator",
     "feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
     "subscription_tier": "Team",
@@ -2431,7 +2772,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Auto Tuning",
+    "functionOrder": "",
     "function": "Adaptive load control: optimize RPS",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2446,7 +2789,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Auto Tuning",
+    "functionOrder": "",
     "function": "Adaptive load control: optimize Retries",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2461,7 +2806,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Scheduling",
+    "functionOrder": "",
     "function": "Calendar Integration",
     "feature": "Schedule tests from your calendar",
     "subscription_tier": "Enterprise",
@@ -2476,7 +2823,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "MeshMark",
+    "functionOrder": "",
     "function": "Listen and learn average request response time.",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2491,7 +2840,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "Add performace profile",
     "feature": "Add a new performace profile",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2506,7 +2857,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "Run test",
     "feature": "Run a test on performance profile",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2521,7 +2874,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "View Results",
     "feature": "View results of performance tests",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2536,7 +2891,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "Edit performance test",
     "feature": "Edit performance test",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2551,7 +2908,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "Delete performance test",
     "feature": "Delete performance test",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2566,7 +2925,9 @@
   },
   {
     "theme": "Performance Management",
+    "categoryOrder": "",
     "category": "Performance",
+    "functionOrder": "",
     "function": "View performance profiles",
     "feature": "View all performance profiles",
     "subscription_tier": "TeamOperator, Enterprise",
@@ -2581,7 +2942,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Alert Management",
+    "functionOrder": "",
     "function": "Notification Suppression",
     "feature": "",
     "subscription_tier": "Free",
@@ -2596,7 +2959,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Alert Management",
+    "functionOrder": "",
     "function": "Notification Correlation",
     "feature": "",
     "subscription_tier": "Team",
@@ -2611,7 +2976,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Policies",
+    "functionOrder": "",
     "function": "Versioned",
     "feature": "",
     "subscription_tier": "Team",
@@ -2626,7 +2993,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Audit Trail",
+    "functionOrder": "",
     "function": "Log of all actions invoked by users",
     "feature": "",
     "subscription_tier": "Free",
@@ -2641,7 +3010,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "RBAC Violations",
+    "functionOrder": "",
     "function": "Notification of attempts to invoke unauthorized actions",
     "feature": "",
     "subscription_tier": "",
@@ -2656,7 +3027,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Open Policy Agent integration",
+    "functionOrder": "",
     "function": "Admission control for specific workloads on the mesh",
     "feature": "",
     "subscription_tier": "Free",
@@ -2671,7 +3044,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Open Policy Agent integration",
+    "functionOrder": "",
     "function": "Service request authorization with JWT",
     "feature": "",
     "subscription_tier": "Free",
@@ -2686,7 +3061,9 @@
   },
   {
     "theme": "Policy",
+    "categoryOrder": "",
     "category": "Open Policy Agent integration",
+    "functionOrder": "",
     "function": "Performance Budget support in Patterns",
     "feature": "",
     "subscription_tier": "Free",
@@ -2701,7 +3078,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Overview",
+    "functionOrder": "",
     "function": "View Overview",
     "feature": "",
     "subscription_tier": "Free",
@@ -2716,7 +3095,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Credentials",
+    "functionOrder": "",
     "function": "View Credentials",
     "feature": "",
     "subscription_tier": "TeamOperator",
@@ -2731,7 +3112,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Credentials",
+    "functionOrder": "",
     "function": "Create Credential",
     "feature": "",
     "subscription_tier": "TeamOperator",
@@ -2746,7 +3129,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Credentials",
+    "functionOrder": "",
     "function": "Edit Credential",
     "feature": "",
     "subscription_tier": "TeamOperator",
@@ -2761,7 +3146,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Credentials",
+    "functionOrder": "",
     "function": "Delete Credential",
     "feature": "",
     "subscription_tier": "TeamOperator",
@@ -2776,7 +3163,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Sessions",
+    "functionOrder": "",
     "function": "View Sessions",
     "feature": "",
     "subscription_tier": "Free",
@@ -2791,7 +3180,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Sessions",
+    "functionOrder": "",
     "function": "Logout from a Session",
     "feature": "",
     "subscription_tier": "Free",
@@ -2806,7 +3197,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Tokens",
+    "functionOrder": "",
     "function": "View Tokens",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2821,7 +3214,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Tokens",
+    "functionOrder": "",
     "function": "Download Token",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2836,7 +3231,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Tokens",
+    "functionOrder": "",
     "function": "Delete Token",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2851,7 +3248,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Tokens",
+    "functionOrder": "",
     "function": "Create Token",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2866,7 +3265,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keys",
+    "functionOrder": "",
     "function": "View Keys",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2881,7 +3282,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keys",
+    "functionOrder": "",
     "function": "Edit Key",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2896,7 +3299,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keys",
+    "functionOrder": "",
     "function": "Delete Key",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2911,7 +3316,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keychains",
+    "functionOrder": "",
     "function": "View Keychains",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2926,7 +3333,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keychains",
+    "functionOrder": "",
     "function": "Create Keychain",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2941,7 +3350,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keychains",
+    "functionOrder": "",
     "function": "Edit Keychain",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2956,7 +3367,9 @@
   },
   {
     "theme": "Security Management",
+    "categoryOrder": "",
     "category": "Keychains",
+    "functionOrder": "",
     "function": "Delete Keychain",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -2971,7 +3384,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Manage cloud native infrastructure life cycle",
     "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
@@ -2986,7 +3401,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Manage cloud native infrastructure configuration",
     "feature": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
     "subscription_tier": "TeamDesigner",
@@ -3001,7 +3418,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Apply cloud native infrastructure configuration",
     "feature": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
     "subscription_tier": "TeamDesigner",
@@ -3016,7 +3435,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Validate cloud native infrastructure configuration",
     "feature": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
     "subscription_tier": "TeamDesigner",
@@ -3031,7 +3452,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Apply custom cloud native configuration",
     "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
     "subscription_tier": "TeamOperator",
@@ -3046,7 +3469,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Deploy cloud native infrastructure",
     "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
@@ -3061,7 +3486,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "Undeploy cloud native infrastructure",
     "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
@@ -3076,7 +3503,9 @@
   },
   {
     "theme": "Infrastructure Management",
+    "categoryOrder": "",
     "category": "Cloud native infrastructure lifecycle",
+    "functionOrder": "",
     "function": "View cloud native infrastructure",
     "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
@@ -3091,7 +3520,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "View Workspace",
     "feature": "See all workspaces within an organization",
     "subscription_tier": "Free",
@@ -3106,7 +3537,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Delete Workspace",
     "feature": "Dissolve workspace and all team and environment memberships. Leave associated resources intact",
     "subscription_tier": "Free",
@@ -3121,7 +3554,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Edit Workspace",
     "feature": "Edit workspace and it's team and environment membership",
     "subscription_tier": "Free",
@@ -3136,7 +3571,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Create Workspace",
     "feature": "Create new workspace",
     "subscription_tier": "Free",
@@ -3151,7 +3588,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Assign team to workspace",
     "feature": "Add new team to workspace",
     "subscription_tier": "Free",
@@ -3166,7 +3605,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Remove team from workspace",
     "feature": "Remove team from workspace",
     "subscription_tier": "Free",
@@ -3181,7 +3622,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Assign environment to workspace",
     "feature": "Add new environment to workspace",
     "subscription_tier": "Free",
@@ -3196,7 +3639,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Remove environment from workspace",
     "feature": "Remove environment from workspace",
     "subscription_tier": "Free",
@@ -3211,7 +3656,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Assign Designs to Workspaces",
     "feature": "Assign designs to workspaces",
     "subscription_tier": "Free",
@@ -3226,7 +3673,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Remove Designs from Workspaces",
     "feature": "Remove designs from workspaces",
     "subscription_tier": "Free",
@@ -3241,7 +3690,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Connect Google Account to Workspace",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -3256,7 +3707,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
+    "functionOrder": "",
     "function": "Connect Github Account to Workspace",
     "feature": "",
     "subscription_tier": "Enterprise",
@@ -3271,7 +3724,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Connections",
+    "functionOrder": "",
     "function": "View Connections",
     "feature": "View all connections within an environment",
     "subscription_tier": "Free",
@@ -3286,7 +3741,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "View Environment",
     "feature": "See all environments within an workspace.",
     "subscription_tier": "Enterprise",
@@ -3301,7 +3758,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "Create Environment",
     "feature": "Create a new environment",
     "subscription_tier": "Enterprise",
@@ -3316,7 +3775,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "Delete Environment",
     "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
     "subscription_tier": "Enterprise",
@@ -3331,7 +3792,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "Edit Environment",
     "feature": "Edit environment and it connection membership",
     "subscription_tier": "Enterprise",
@@ -3346,7 +3809,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "Assign connections to environment",
     "feature": "Add new connections to environments",
     "subscription_tier": "Enterprise",
@@ -3361,7 +3826,9 @@
   },
   {
     "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Environments",
+    "functionOrder": "",
     "function": "Remove connections from environments",
     "feature": "Remove connections from environment,",
     "subscription_tier": "Enterprise",
@@ -3376,7 +3843,9 @@
   },
   {
     "theme": "Catalog Management",
+    "categoryOrder": "",
     "category": "Catalog",
+    "functionOrder": "",
     "function": "View Catalog",
     "feature": "View all items in catalog",
     "subscription_tier": "Free",
@@ -3391,7 +3860,9 @@
   },
   {
     "theme": "Incident Management",
+    "categoryOrder": "",
     "category": "Audit Trail",
+    "functionOrder": "",
     "function": "Audit Trail",
     "feature": "Detailed accounting of user activity. Historical record or each action taken.",
     "subscription_tier": "Enterprise",

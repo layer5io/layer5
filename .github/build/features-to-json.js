@@ -7,7 +7,9 @@ console.log(`Node.js version: ${major}.${minor}.${patch}`);
 
 const headers = [
   "Theme",
+  "Category Order",
   "Category",
+  "Function Order",
   "Function",
   "Feature",
   "Subscription Tier",
@@ -43,7 +45,9 @@ async function processCSV() {
 
         return {
           theme: row["Theme"],
+          categoryOrder: row["Category Order"],
           category: row["Category"],
+          functionOrder: row["Function Order"],
           function: row["Function"],
           feature: row["Feature"],
           subscription_tier: row["Subscription Tier"],

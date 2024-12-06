@@ -90,9 +90,9 @@ const PlanCardWrapper = styled.section`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h6 {
-      font-size: 12px;
+      font-size: .9rem;
       margin-top: 1rem;
-      color: ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
+      color: ${(props) => props.theme.tealBlue};
     }
     h2 {
       margin-bottom: 1rem;
