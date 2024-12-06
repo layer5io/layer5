@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FEATURES_FILE: 'src/sections/Pricing/feature_data.json'
-      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=829069645&single=true&output=csv'
+      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=1153419764&single=true&output=csv'
 
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -32,123 +32,11 @@ jobs:
       - name: Fetch spreadsheet and process updates
         run: |
           # Download the spreadsheet
-          curl -L $SPREADSHEET_URL -o spreadsheet.csv
+          curl -L $SPREADSHEET_URL -o .github/build/spreadsheet.csv
+          ls -al
 
           # Process the CSV, filter data, and append to feature_data.json
-          node -e "
-          const fs = require('fs');
-          const csv = require('csvtojson');
-
-          const headers = [
-            'Theme (also: Keychain Name)',
-            'Category',
-            'Function',
-            'Feature',
-            'Primary Persona',
-            'Entitlement',
-            'Subscription Tier',
-            'Free Comparison Tier',
-            'TeamDesigner Comparison Tier',
-            'TeamOperator Comparison Tier',
-            'Enterprise Comparison Tier',
-            'Tech',
-            'Version',
-            'Engineer',
-            'Pricing Page?',
-            'Video?',
-            'Documented?',
-            'Anonymous',
-            'Authorization',
-            'Team Admin',
-            'Workspace Admin',
-            'Org Billing Manager',
-            'Org Admin',
-            'Provider Admin',
-            'Curator',
-            'MeshMap',
-            'Keychain ID',
-            'SQL',
-            'Key ID',
-            'Inserted',
-            'Local Provider',
-            'Update SQL',
-            'E2E Test',
-          ];
-
-          csv({
-            noheader: true, // Ignore the first row as headers
-            headers: headers, // Use our custom headers
-            output: 'json', // Output as JSON
-          })
-            .fromFile('spreadsheet.csv')
-            .then(rows => {
-
-              // Filter data
-              const filteredData = rows
-                .map(row => {
-                  const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
-                  const documented = row['Documented?']?.trim() || '';
-
-                  const includeRow =
-                    (pricingPage && ['x', 'X', 'true'].includes(pricingPage)) ||
-                    (documented.startsWith('https://docs.meshery.io/') ||
-                      documented.startsWith('https://docs.layer5.io/'));
-                  if (!includeRow) return null;
-
-                  return {
-                    theme: row['Theme (also: Keychain Name)'],
-                    category: row['Category'],
-                    function: row['Function'],
-                    feature: row['Feature'],
-                    subscription_tier: row['Subscription Tier'],
-                    comparison_tiers: {
-                      free: row['Free Comparison Tier'],
-                      teamDesigner: row['TeamDesigner Comparison Tier'],
-                      teamOperator: row['TeamOperator Comparison Tier'],
-                      enterprise: row['Enterprise Comparison Tier'],
-                    },
-                  };
-                })
-                .filter(Boolean);
-
-              // Read existing JSON data
-              const featuresFile = process.env.FEATURES_FILE;
-              let existingData = [];
-              if (fs.existsSync(featuresFile)) {
-                existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
-              }
-
-              // Identify new updates
-              const newUpdates = filteredData.filter(
-                newRow =>
-                  !existingData.some(
-                    existingRow =>
-                      existingRow.function === newRow.function &&
-                      existingRow.feature === newRow.feature
-                  )
-              );
-
-              // Set output for has-updates
-              if (newUpdates.length > 0) {
-              fs.appendFileSync(process.env.GITHUB_ENV, 'has-updates=true\n');
-              } else {
-               fs.appendFileSync(process.env.GITHUB_ENV, 'has-updates=false\n');
-               }
-
-              // Merge new updates into existing data
-              const updatedData = [...existingData, ...newUpdates];
-
-              // Write updated data to file
-              try {
-                fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
-              } catch (error) {
-                console.error('Error writing to feature_data.json:', error);
-              }
-            })
-            .catch(error => {
-              console.error('Error processing spreadsheet:', error);
-              process.exit(1);
-            });
+          node .github/build/features-to-json.js
           "
 
       - name: Commit changes

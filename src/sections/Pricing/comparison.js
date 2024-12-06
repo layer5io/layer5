@@ -153,7 +153,30 @@ h2, h5{
   align-items: center;
   margin: 1rem 0;
 }
+  .docs{
+  width:1rem;
+  height:1rem;
+  }
 
+  .feature-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature-name {
+  margin-right: 0.5rem; 
+}
+
+.feature-link {
+  color: #00b39f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.feature-link:hover {
+  text-decoration: underline;
+}
 `;
 
 const Comparison = () => {
