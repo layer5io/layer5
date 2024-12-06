@@ -27,12 +27,10 @@ async function processCSV() {
       headers: headers,
       output: "json",
     }).fromFile(".github/build/spreadsheet.csv");
-    console.log(`rows`,rows);
 
     const filteredData = rows.map(row => {
       try {
         const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
-        console.log(`Processing row: ${JSON.stringify(row)}`);
         const hasXTier = [
           "Free Tier",
           "TeamDesigner Tier",
@@ -71,7 +69,7 @@ async function processCSV() {
     if (await fs.access(featuresFile).then(() => true, () => false)) {
       existingData = JSON.parse(await fs.readFile(featuresFile, "utf8"));
     }
-    
+
     // Identify new updates
     const newUpdates = filteredData.filter(
       newRow =>
@@ -82,7 +80,6 @@ async function processCSV() {
         )
     );
 
-    console.log('newUpdates',newUpdates)
     // Set output for has-updates
     // if (newUpdates.length > 0) {
     //   fs.appendFileSync(process.env.GITHUB_ENV, "has-updates=true\n");
