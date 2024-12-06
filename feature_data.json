@@ -4,7 +4,9 @@
     "entire_row": {
       "Category": "Profile",
       "Documented?": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile",
+      "Enterprise Comparison Tier": "",
       "Feature": "View your profile.",
+      "Free Comparison Tier": "",
       "Function": "View Profile",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -17,7 +19,9 @@
     "entire_row": {
       "Category": "Catalog",
       "Documented?": "https://docs.layer5.io/cloud/catalog/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Export a copy of a design to your local system.",
+      "Free Comparison Tier": "",
       "Function": "",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -30,7 +34,9 @@
     "entire_row": {
       "Category": "Catalog",
       "Documented?": "https://docs.layer5.io/kanvas/designer/share-resource/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
+      "Free Comparison Tier": "",
       "Function": "Share Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -43,7 +49,9 @@
     "entire_row": {
       "Category": "Catalog",
       "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Clone any published design to customise it according to your use cases",
+      "Free Comparison Tier": "",
       "Function": "Clone Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -56,7 +64,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design",
+      "Enterprise Comparison Tier": "",
       "Feature": "Create new Meshery design",
+      "Free Comparison Tier": "",
       "Function": "Create new design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -69,7 +79,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/extensions/importing-a-design",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -82,7 +94,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design from Kubernetes Manifest",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -95,7 +109,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design from Meshery Design (YAML)",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -108,7 +124,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design from Helm Chart",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -121,7 +139,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design from Docker Compose",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -134,8 +154,10 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "",
-      "Feature": "Import a design from Kubernetes Manifest, Meshery Design (YAML), Helm Chart, Docker Compose or Meshery Design (OCI Image)",
-      "Function": "Standard Import Design",
+      "Enterprise Comparison Tier": "",
+      "Feature": "Import a design from Kubernetes Manifest, Helm Chart, or Docker Compose",
+      "Free Comparison Tier": "",
+      "Function": "Standard Import IaC",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
       "Tech": "Server",
@@ -147,7 +169,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a design from GitHub",
+      "Free Comparison Tier": "",
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
@@ -160,8 +184,10 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "",
-      "Feature": "Import a design from GitHub, GitLab, BitBucket",
-      "Function": "Premium Design Import Features",
+      "Enterprise Comparison Tier": "",
+      "Feature": "Bulk import designs from GitHub",
+      "Free Comparison Tier": "",
+      "Function": "Premium Import IaC",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
       "Tech": "Server",
@@ -173,7 +199,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file",
+      "Enterprise Comparison Tier": "",
       "Feature": "Export a latest version of design in Meshery Design (YAML format)",
+      "Free Comparison Tier": "",
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -186,7 +214,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+      "Enterprise Comparison Tier": "",
       "Feature": "Export a latest version of design in Meshery Design (OCI format)",
+      "Free Comparison Tier": "",
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -199,8 +229,10 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
-      "Function": "Standard Export Design",
+      "Free Comparison Tier": "",
+      "Function": "Standard Design Export",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
       "Tech": "Server",
@@ -212,8 +244,10 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "",
-      "Feature": "Export a design to GitHub, GitLab, BitBucket",
-      "Function": "Premium Export Design Features",
+      "Enterprise Comparison Tier": "",
+      "Feature": "Export a design as a snapshot",
+      "Free Comparison Tier": "",
+      "Function": "Premium Design Export",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
       "Tech": "Server",
@@ -225,7 +259,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import and export your designs using your local filesystem or remote URL.",
+      "Free Comparison Tier": "",
       "Function": "Cloud Native Design Patterns",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -238,10 +274,12 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.meshery.io/extensions/publishing-a-design",
+      "Enterprise Comparison Tier": "",
       "Feature": "Publish a design",
+      "Free Comparison Tier": "",
       "Function": "Publish Design",
       "Pricing page?": "",
-      "Subscription Tier": "Free",
+      "Subscription Tier": "TeamDesigner",
       "Tech": "Server",
       "Theme (also: Keychain Name)": "Catalog Management"
     }
@@ -251,10 +289,12 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Validate a design",
+      "Free Comparison Tier": "",
       "Function": "Validate Design",
       "Pricing page?": "",
-      "Subscription Tier": "Free",
+      "Subscription Tier": "TeamDesigner",
       "Tech": "Server",
       "Theme (also: Keychain Name)": "Catalog Management"
     }
@@ -264,10 +304,12 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Deploy a design",
+      "Free Comparison Tier": "",
       "Function": "Deploy Design",
       "Pricing page?": "",
-      "Subscription Tier": "Free",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
       "Theme (also: Keychain Name)": "Catalog Management"
     }
@@ -277,7 +319,9 @@
     "entire_row": {
       "Category": "Designs",
       "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Retract all resources used in a Meshery design from the cluster",
+      "Free Comparison Tier": "",
       "Function": "Undeploy Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -290,7 +334,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import a filter",
+      "Free Comparison Tier": "",
       "Function": "Import Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -303,7 +349,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Publish WASM Filter",
+      "Free Comparison Tier": "",
       "Function": "Publish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -316,7 +364,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Unpublish WASM Filter",
+      "Free Comparison Tier": "",
       "Function": "Unpublish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -329,7 +379,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Download a WASM filter",
+      "Free Comparison Tier": "",
       "Function": "Download a WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -342,7 +394,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Check information or details of a WASM filter",
+      "Free Comparison Tier": "",
       "Function": "Details of WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -355,7 +409,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Edit WASM filter",
+      "Free Comparison Tier": "",
       "Function": "Edit WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -368,7 +424,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Clone WASM filter from catalog, which allows customizing filter and use it in design",
+      "Free Comparison Tier": "",
       "Function": "Clone WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -381,7 +439,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Enterprise Comparison Tier": "",
       "Feature": "Delete WASM filter permanently from catalog.",
+      "Free Comparison Tier": "",
       "Function": "Delete WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -394,7 +454,9 @@
     "entire_row": {
       "Category": "Filters",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Import, Unpublish, Publish, Download, Edit, Clone, Delete, Details of WASM Filter",
+      "Free Comparison Tier": "",
       "Function": "WASM Filter and filter",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -407,7 +469,9 @@
     "entire_row": {
       "Category": "Team Chat",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
+      "Free Comparison Tier": "",
       "Function": "Message in real-time",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -421,7 +485,9 @@
     "entire_row": {
       "Category": "Design Reviews",
       "Documented?": "https://docs.layer5.io/kanvas/designer/comments/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
+      "Free Comparison Tier": "",
       "Function": "Discuss any design by leaving review comments",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -434,10 +500,12 @@
     "entire_row": {
       "Category": "Organization and Team Management",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Manage access to designs on a team-by-team, or individual user, basis.",
+      "Free Comparison Tier": "",
       "Function": "Manage access to designs",
       "Pricing page?": "X",
-      "Subscription Tier": "Enterprise",
+      "Subscription Tier": "TeamDesigner",
       "Tech": "Kanvas",
       "Theme (also: Keychain Name)": "Collaboration"
     }
@@ -445,12 +513,29 @@
   {
     "pricing_page": "true",
     "entire_row": {
+      "Category": "",
+      "Documented?": "",
+      "Enterprise Comparison Tier": "x",
+      "Feature": "Create and collaborate in online operational topologies in real-time.",
+      "Free Comparison Tier": "",
+      "Function": "Manage access to views",
+      "Pricing page?": "X",
+      "Subscription Tier": "TeamOperator",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
       "Category": "Built-in Roles",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Static - out of the box",
+      "Free Comparison Tier": "x",
       "Function": "Built-in Roles",
       "Pricing page?": "X",
-      "Subscription Tier": "Enterprise",
+      "Subscription Tier": "Free",
       "Tech": "Cloud",
       "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
     }
@@ -460,7 +545,9 @@
     "entire_row": {
       "Category": "User-defined Roles",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Customizable roles for specific permission assignments",
+      "Free Comparison Tier": "x",
       "Function": "User-defined Roles",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -473,7 +560,9 @@
     "entire_row": {
       "Category": "Authentication: LDAP",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Access Meshery Server using your existing accounts and centrally manage repository access.",
+      "Free Comparison Tier": "",
       "Function": "Authentication: LDAP",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -486,7 +575,9 @@
     "entire_row": {
       "Category": "Authentication: SAML",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Use an identity provider to manage the identities of GitHub users and applications.",
+      "Free Comparison Tier": "",
       "Function": "Authentication: SAML",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -499,7 +590,9 @@
     "entire_row": {
       "Category": "Users",
       "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+      "Enterprise Comparison Tier": "",
       "Feature": "Delete a user account",
+      "Free Comparison Tier": "",
       "Function": "Delete User",
       "Pricing page?": "",
       "Subscription Tier": "Team",
@@ -512,7 +605,9 @@
     "entire_row": {
       "Category": "Users",
       "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+      "Enterprise Comparison Tier": "",
       "Feature": "Create a new user",
+      "Free Comparison Tier": "",
       "Function": "Create User",
       "Pricing page?": "",
       "Subscription Tier": "",
@@ -525,7 +620,9 @@
     "entire_row": {
       "Category": "Teams",
       "Documented?": "https://docs.layer5.io/cloud/identity/teams/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Directly create a new user account within a team.",
+      "Free Comparison Tier": "",
       "Function": "Add User to Team",
       "Pricing page?": "",
       "Subscription Tier": "Team",
@@ -538,7 +635,9 @@
     "entire_row": {
       "Category": "Organizations",
       "Documented?": "https://docs.layer5.io/cloud/identity/organizations/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Establish new organization for organizing teams, users, and resource access.",
+      "Free Comparison Tier": "",
       "Function": "Create Organization",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
@@ -551,10 +650,12 @@
     "entire_row": {
       "Category": "Dry-run",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Test and verify configuration changes in a separate environment.",
+      "Free Comparison Tier": "",
       "Function": "Dry-run",
       "Pricing page?": "X",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
       "Theme (also: Keychain Name)": "Lifecycle Management"
     }
@@ -564,21 +665,26 @@
     "entire_row": {
       "Category": "Multiple Kubernetes Clusters",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+      "Free Comparison Tier": "",
       "Function": "Multiple Kubernetes Clusters",
       "Pricing page?": "X",
-      "Subscription Tier": "Free",
+      "Subscription Tier": "TeamOperator",
       "Tech": "Server",
       "Theme (also: Keychain Name)": "Lifecycle Management"
     }
   },
   {
     "pricing_page": "true",
+    "documentation": "https://docs.meshery.io/reference/mesheryctl",
     "entire_row": {
       "Category": "mesheryctl",
-      "Documented?": "",
-      "Feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface",
-      "Function": "all mesheryctl commands",
+      "Documented?": "https://docs.meshery.io/reference/mesheryctl",
+      "Enterprise Comparison Tier": "x",
+      "Feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
+      "Free Comparison Tier": "x",
+      "Function": "CLI",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
       "Tech": "Golang",
@@ -590,7 +696,9 @@
     "entire_row": {
       "Category": "Settings",
       "Documented?": "https://docs.layer5.io/cloud/catalog/metrics/",
+      "Enterprise Comparison Tier": "",
       "Feature": "View already configured metrics",
+      "Free Comparison Tier": "",
       "Function": "View Metrics",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -603,7 +711,9 @@
     "entire_row": {
       "Category": "Service Performance",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Continuous visibility across all of your clusters and workloads.",
+      "Free Comparison Tier": "",
       "Function": "Service Performance",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -616,7 +726,9 @@
     "entire_row": {
       "Category": "Design Patterns",
       "Documented?": "https://docs.layer5.io/kanvas/concepts/relationships/#2-hierarchical-relationships",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "Use heirarchical relationships",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -629,7 +741,9 @@
     "entire_row": {
       "Category": "Design Patterns",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
+      "Free Comparison Tier": "",
       "Function": "Undo or Redo",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -643,7 +757,9 @@
     "entire_row": {
       "Category": "Design Patterns",
       "Documented?": "https://docs.layer5.io/kanvas/designer/whiteboarding/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Ability to freeform draw any shapes, draw edges",
+      "Free Comparison Tier": "",
       "Function": "Whiteboarding",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -656,7 +772,9 @@
     "entire_row": {
       "Category": "Visual Design",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+      "Free Comparison Tier": "",
       "Function": "Visual Design",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -669,7 +787,9 @@
     "entire_row": {
       "Category": "Design Review",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+      "Free Comparison Tier": "",
       "Function": "Collaborative Design Review",
       "Pricing page?": "x",
       "Subscription Tier": "TeamDesigner",
@@ -682,7 +802,9 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
+      "Enterprise Comparison Tier": "",
       "Feature": "See all views withing a workspace",
+      "Free Comparison Tier": "",
       "Function": "View Views",
       "Pricing page?": "",
       "Subscription Tier": "TeamOperator",
@@ -695,7 +817,9 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
+      "Enterprise Comparison Tier": "",
       "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "Free Comparison Tier": "",
       "Function": "Delete View",
       "Pricing page?": "",
       "Subscription Tier": "TeamOperator",
@@ -708,7 +832,9 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
+      "Enterprise Comparison Tier": "",
       "Feature": "Export views to JSON format",
+      "Free Comparison Tier": "",
       "Function": "Export views",
       "Pricing page?": "",
       "Subscription Tier": "TeamOperator",
@@ -721,7 +847,9 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
+      "Enterprise Comparison Tier": "",
       "Feature": "Share Views",
+      "Free Comparison Tier": "",
       "Function": "Share Views",
       "Pricing page?": "",
       "Subscription Tier": "TeamOperator",
@@ -734,8 +862,10 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "",
-      "Feature": "View Interactive Terminal",
-      "Function": "View Interactive Terminal",
+      "Enterprise Comparison Tier": "x",
+      "Feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
+      "Free Comparison Tier": "",
+      "Function": "Web-based Terminal",
       "Pricing page?": "X",
       "Subscription Tier": "TeamOperator",
       "Tech": "Kanvas",
@@ -747,11 +877,13 @@
     "entire_row": {
       "Category": "Operator",
       "Documented?": "",
-      "Feature": "View real-time resource metrics in Kanvas Operator",
-      "Function": "View Observability Metrics",
+      "Enterprise Comparison Tier": "x",
+      "Feature": "Real-time resource metrics.",
+      "Free Comparison Tier": "",
+      "Function": "Standard Events and Metrics",
       "Pricing page?": "X",
       "Subscription Tier": "TeamOperator",
-      "Tech": "Kanvas",
+      "Tech": "",
       "Theme (also: Keychain Name)": "Kanvas"
     }
   },
@@ -760,7 +892,9 @@
     "entire_row": {
       "Category": "Load Generation",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
+      "Free Comparison Tier": "",
       "Function": "Load Generation",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -773,7 +907,9 @@
     "entire_row": {
       "Category": "Load Generation",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
+      "Free Comparison Tier": "",
       "Function": "Distributed Load Generator",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -786,7 +922,9 @@
     "entire_row": {
       "Category": "Performance Profiles",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Share performance profiles and test results with individual users or teams.",
+      "Free Comparison Tier": "",
       "Function": "Performance Profiles",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -799,7 +937,9 @@
     "entire_row": {
       "Category": "Comparative Testing",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Historical views: Infrastructure-centric",
+      "Free Comparison Tier": "",
       "Function": "Comparative Testing",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -812,7 +952,9 @@
     "entire_row": {
       "Category": "Comparative Testing",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Detect real-time anomalies.",
+      "Free Comparison Tier": "",
       "Function": "Comparative Testing",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -825,7 +967,9 @@
     "entire_row": {
       "Category": "Continuous Quality of Service Monitoring",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Experience uninterrupted oversight of your service quality with our Continuous Quality of Service Monitoring.",
+      "Free Comparison Tier": "",
       "Function": "Continuous Quality of Service Monitoring",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -838,7 +982,9 @@
     "entire_row": {
       "Category": "MeshMark",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Identify the cost of a specific network function.",
+      "Free Comparison Tier": "",
       "Function": "MeshMark",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -851,7 +997,9 @@
     "entire_row": {
       "Category": "Sessions",
       "Documented?": "https://docs.layer5.io/cloud/security/sessions/#what-sessions-are",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "View Sessions",
       "Pricing page?": "",
       "Subscription Tier": "",
@@ -864,7 +1012,9 @@
     "entire_row": {
       "Category": "Tokens",
       "Documented?": "https://docs.layer5.io/cloud/security/tokens/#creating-tokens",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "Create Token",
       "Pricing page?": "",
       "Subscription Tier": "",
@@ -877,7 +1027,9 @@
     "entire_row": {
       "Category": "Keys",
       "Documented?": "https://docs.layer5.io/cloud/security/keys/",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "View Keys",
       "Pricing page?": "",
       "Subscription Tier": "",
@@ -890,7 +1042,9 @@
     "entire_row": {
       "Category": "Workspace",
       "Documented?": "https://docs.layer5.io/cloud/spaces/workspaces/",
+      "Enterprise Comparison Tier": "",
       "Feature": "See all workspaces within an organisation",
+      "Free Comparison Tier": "",
       "Function": "View Workspace",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
@@ -903,7 +1057,9 @@
     "entire_row": {
       "Category": "Environments",
       "Documented?": "https://docs.layer5.io/cloud/spaces/environments/#deleting-an-environment",
+      "Enterprise Comparison Tier": "",
       "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "Free Comparison Tier": "",
       "Function": "Delete Environment",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
@@ -916,7 +1072,9 @@
     "entire_row": {
       "Category": "Catalog",
       "Documented?": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+      "Enterprise Comparison Tier": "",
       "Feature": "Clone any item from catalog",
+      "Free Comparison Tier": "",
       "Function": "Clone Catalog Item",
       "Pricing page?": "",
       "Subscription Tier": "",
@@ -930,7 +1088,9 @@
     "entire_row": {
       "Category": "Community Support",
       "Documented?": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+      "Enterprise Comparison Tier": "",
       "Feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
+      "Free Comparison Tier": "",
       "Function": "Community Support",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -943,10 +1103,12 @@
     "entire_row": {
       "Category": "Standard Support",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+      "Free Comparison Tier": "",
       "Function": "Standard Support",
       "Pricing page?": "X",
-      "Subscription Tier": "Team",
+      "Subscription Tier": "TeamDesigner",
       "Tech": "",
       "Theme (also: Keychain Name)": "Support and Deployment"
     }
@@ -956,7 +1118,9 @@
     "entire_row": {
       "Category": "Premium and Premium Plus Support",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
+      "Free Comparison Tier": "",
       "Function": "Premium and Premium Plus Support",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -969,7 +1133,9 @@
     "entire_row": {
       "Category": "Self-hosted Deployment",
       "Documented?": "",
-      "Feature": "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants.",
+      "Enterprise Comparison Tier": "",
+      "Feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
+      "Free Comparison Tier": "",
       "Function": "Self-hosted Deployment",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -982,10 +1148,12 @@
     "entire_row": {
       "Category": "Phone Support",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+      "Free Comparison Tier": "",
       "Function": "Phone Support",
       "Pricing page?": "X",
-      "Subscription Tier": "Enterprise",
+      "Subscription Tier": "TeamDesigner",
       "Tech": "",
       "Theme (also: Keychain Name)": "Support and Deployment"
     }
@@ -995,7 +1163,9 @@
     "entire_row": {
       "Category": "Invoice Billing",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "Pay bills via invoice, rather than using your credit card.",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -1008,7 +1178,9 @@
     "entire_row": {
       "Category": "Screenshots",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Capture and share visual snapshots of your work with ease using our Screenshots feature.",
+      "Free Comparison Tier": "",
       "Function": "Screenshots",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -1021,7 +1193,9 @@
     "entire_row": {
       "Category": "Notification Center",
       "Documented?": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+      "Enterprise Comparison Tier": "",
       "Feature": "",
+      "Free Comparison Tier": "",
       "Function": "Events: Reporting of asynchronous events.",
       "Pricing page?": "",
       "Subscription Tier": "Free",
@@ -1034,7 +1208,9 @@
     "entire_row": {
       "Category": "Notification Center",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Consolidate all important updates, alerts, and messages in one centralized hub, ensuring you never miss a critical communication or task.",
+      "Free Comparison Tier": "",
       "Function": "Notification Center",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -1047,10 +1223,12 @@
     "entire_row": {
       "Category": "Audit Trail",
       "Documented?": "",
+      "Enterprise Comparison Tier": "x",
       "Feature": "Detailed accounting of user activity. Historical record or each action taken.",
+      "Free Comparison Tier": "",
       "Function": "Audit Trail",
       "Pricing page?": "X",
-      "Subscription Tier": "Free",
+      "Subscription Tier": "Enterprise",
       "Tech": "",
       "Theme (also: Keychain Name)": "Incident Management"
     }
@@ -1060,7 +1238,9 @@
     "entire_row": {
       "Category": "Alert Generation",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Dismiss individual; Dismiss bulk.",
+      "Free Comparison Tier": "",
       "Function": "Alert Generation",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
@@ -1073,7 +1253,9 @@
     "entire_row": {
       "Category": "Calendaring",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Get integration with GSuite and integration with Microsoft Outlook.",
+      "Free Comparison Tier": "",
       "Function": "Calendaring",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
@@ -1086,7 +1268,9 @@
     "entire_row": {
       "Category": "Traffic Replay",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Visual event replay in Kanvas",
+      "Free Comparison Tier": "",
       "Function": "Traffic Replay",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
@@ -1099,7 +1283,9 @@
     "entire_row": {
       "Category": "Notification Integrations",
       "Documented?": "",
+      "Enterprise Comparison Tier": "",
       "Feature": "Access a variety of third-party applications, right from Kanvas. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+      "Free Comparison Tier": "",
       "Function": "Notification Integrations",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
