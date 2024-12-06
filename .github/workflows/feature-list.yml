@@ -32,10 +32,9 @@ jobs:
       - name: Fetch spreadsheet and process updates
         run: |
           # Download the spreadsheet
-          curl -L $SPREADSHEET_URL -o spreadsheet.csv
-          pwd
+          curl -L $SPREADSHEET_URL -o .github/build/spreadsheet.csv
           ls -al
-          echo $GITHUB_WORKSPACE
+
           # Process the CSV, filter data, and append to feature_data.json
           node .github/build/features-to-json.js
           "
