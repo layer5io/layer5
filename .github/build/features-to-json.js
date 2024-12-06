@@ -28,8 +28,6 @@ async function processCSV() {
       output: "json",
     }).fromFile(".github/build/spreadsheet.csv");
 
-    console.log("Rows from CSV:", rows);
-
     const filteredData = rows.map(row => {
       try {
         const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
@@ -83,6 +81,7 @@ async function processCSV() {
         )
     );
 
+    console.log('newUpdates',newUpdates)
     // Set output for has-updates
     // if (newUpdates.length > 0) {
     //   fs.appendFileSync(process.env.GITHUB_ENV, "has-updates=true\n");
