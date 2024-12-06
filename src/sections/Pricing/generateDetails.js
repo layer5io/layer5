@@ -10,6 +10,7 @@ import Collab from "./icons/collaboration.svg";
 import Identity from "./icons/identity.svg";
 import Notification from "./icons/notification.svg";
 import Support from "./icons/support.svg";
+import { ReactComponent as Docs } from "../../assets/images/pricing/docs.svg";
 
 function generateDetails(data) {
   const categories = [
@@ -25,14 +26,25 @@ function generateDetails(data) {
 
   return categories.map(category => {
     const features = data
-      .filter(item => item.theme === category.name)
+      .filter(
+        item =>
+          item.theme === category.name && item.pricing_page === "x")
       .map(item => {
         const featureName = item.function;
         const description = item.feature;
         const documentedLink = item.docs;
         const featureWithLink = documentedLink ? (
-          <>{featureName} <a href={documentedLink} target="_blank" rel="noopener noreferrer" className="feature-link"><small> docs</small></a>
-          </>
+          <div className="feature-link-container">
+            <span className="feature-name">{featureName}{" "}</span>
+            <a
+              href={documentedLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="feature-link"
+            >
+              <Docs className="docs"/>
+            </a>
+          </div>
         ) : (
           featureName
         );
@@ -40,9 +52,26 @@ function generateDetails(data) {
         return {
           feature: featureWithLink,
           description,
-          free: item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-          teamDesigner: item.subscription_tier === "TeamDesigner" || item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
-          teamOperator: item.subscription_tier === "TeamOperator" || item.subscription_tier === "Free" ? <GiCheckMark className="yes-icon" /> : <MdClose className="no-icon" />,
+          free:
+            item.subscription_tier === "Free" ? (
+              <GiCheckMark className="yes-icon" />
+            ) : (
+              <MdClose className="no-icon" />
+            ),
+          teamDesigner:
+            item.subscription_tier === "TeamDesigner" ||
+            item.subscription_tier === "Free" ? (
+                <GiCheckMark className = "yes-icon" />
+              ) : (
+                <MdClose className="no-icon" />
+              ),
+          teamOperator:
+            item.subscription_tier === "TeamOperator" ||
+            item.subscription_tier === "Free" ? (
+                <GiCheckMark className="yes-icon" />
+              ) : (
+                <MdClose className="no-icon" />
+              ),
           enterprise: <GiCheckMark className="yes-icon" />,
         };
       });
