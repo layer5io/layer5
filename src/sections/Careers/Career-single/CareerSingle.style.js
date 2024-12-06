@@ -13,9 +13,10 @@ const CareerPageWrapper = styled.div`
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1200px) {
         .job-header-row {
             flex-direction: column-reverse;
+            align-items: center;
         }
     }
 
@@ -70,7 +71,7 @@ const CareerPageWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1200px) {
         .layer5-logo {
                 margin: 0 auto 1.5rem;
         }
