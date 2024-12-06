@@ -37,7 +37,6 @@ jobs:
 
           # Process the CSV, filter data, and append to feature_data.json
           node .github/build/features-to-json.js
-          "
 
       - name: Commit changes
         id: commit-changes

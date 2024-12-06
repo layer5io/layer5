@@ -59,19 +59,17 @@ function generateDetails(data) {
               <MdClose className="no-icon" />
             ),
           teamDesigner:
-            item.subscription_tier === "TeamDesigner" ||
-            item.subscription_tier === "Free" ? (
-                <GiCheckMark className = "yes-icon" />
-              ) : (
-                <MdClose className="no-icon" />
-              ),
+            item.subscription_tier === "TeamDesigner" ? (
+              <GiCheckMark className = "yes-icon" />
+            ) : (
+              <MdClose className="no-icon" />
+            ),
           teamOperator:
-            item.subscription_tier === "TeamOperator" ||
-            item.subscription_tier === "Free" ? (
-                <GiCheckMark className="yes-icon" />
-              ) : (
-                <MdClose className="no-icon" />
-              ),
+            item.subscription_tier === "TeamOperator" ? (
+              <GiCheckMark className="yes-icon" />
+            ) : (
+              <MdClose className="no-icon" />
+            ),
           enterprise: <GiCheckMark className="yes-icon" />,
         };
       });
