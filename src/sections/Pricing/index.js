@@ -3,7 +3,7 @@ import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
-import options from "./generateOptions";
+import options from "./generatePlans";
 import PlanCard from "../../components/PlanCard";
 
 const Pricing = () => {

@@ -2,8 +2,7 @@ import featureData from "./feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
-function generateOptions(data) {
-  console.log("Initial feature data:", data);
+function generatePlans(data) {
 
   const tiers = {
     "Free": {
@@ -18,8 +17,8 @@ function generateOptions(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 5,
-      yearlyprice: 100,
+      monthlyprice: 6,
+      yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -27,8 +26,8 @@ function generateOptions(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: true,
-      monthlyprice: 5,
-      yearlyprice: 100,
+      monthlyprice: 6,
+      yearlyprice: 68,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "Everything included in Free, plus...",
@@ -37,8 +36,8 @@ function generateOptions(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 21,
-      yearlyprice: 180,
+      monthlyprice: 22,
+      yearlyprice: 248,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "Everything included in Team, plus...",
@@ -46,14 +45,13 @@ function generateOptions(data) {
     },
   };
 
-  console.log("Tiers configuration:", tiers);
-
-  const options = Object.entries(tiers).map(([tierName, tierInfo]) => {
-    console.log(`Processing tier: ${tierName}`, tierInfo);
+  const plans = Object.entries(tiers).map(([tierName, tierInfo]) => {
 
     const summary = data
       .filter((item) => {
-        const matches = item.subscription_tier === tierName && (item.pricing_page === "true" || item.pricing_page === "X" ) ;
+        const matches =
+          item.subscription_tier === tierName &&
+          item.pricing_page === "x";
         return matches;
       })
       .map((item, index) => {
@@ -64,24 +62,17 @@ function generateOptions(data) {
           tier: item.subscription_tier,
         };
 
-        console.log("Mapped item:", mappedItem);
         return mappedItem;
       });
-
-    console.log(`Summary for tier ${tierName}:`, summary);
 
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
     };
   });
-
-  console.log("Final generated options:", options);
-  return options;
+  return plans;
 }
 
-const options = generateOptions(featureData);
+const plans = generatePlans(featureData);
 
-console.log("Exporting options:", options);
-
-export default options;
+export default plans;

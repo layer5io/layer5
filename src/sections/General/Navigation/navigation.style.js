@@ -618,6 +618,14 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-item {
       padding: 1px;
+      ul:after {
+          content: "";
+          display: block;
+          height: 1px;
+          width: 40%;
+          margin: 10px;
+          background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
+      }
       .menu-item {
         font-size: 16px;
         font-weight: 600;
