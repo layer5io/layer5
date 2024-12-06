@@ -27,61 +27,23 @@ async function processCSV() {
       headers: headers,
       output: "json",
     }).fromFile(".github/build/spreadsheet.csv");
+    console.log(`rows`,rows);
 
-    // const filteredData = rows.map(row => {
-    //   try {
-    //     const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
-    //     const hasXTier = [
-    //       "Free Tier",
-    //       "TeamDesigner Tier",
-    //       "TeamOperator Tier",
-    //       "Enterprise Tier"]
-    //       .some(tier => row[tier]?.trim().toLowerCase() === "x");
-    //     const includeRow = hasXTier || (pricingPage && ["x", "X"].includes(pricingPage.toLowerCase()));
-
-    //     if (!includeRow) return null;
-
-    //     return {
-    //       theme: row["Theme"],
-    //       category: row["Category"],
-    //       function: row["Function"],
-    //       feature: row["Feature"],
-    //       subscription_tier: row["Subscription Tier"],
-    //       comparison_tiers: {
-    //         free: row["Free Tier"],
-    //         teamDesigner: row["TeamDesigner Tier"],
-    //         teamOperator: row["TeamOperator Tier"],
-    //         enterprise: row["Enterprise Tier"],
-    //       },
-    //       pricing_page: row["Pricing Page?"],
-    //       docs: row["Docs"]
-    //     };
-    //   } catch (error) {
-    //     console.error("Error processing row:", row, error);
-    //     return null;
-    //   }
-    // }).filter(Boolean);
-    
     const filteredData = rows.map(row => {
       try {
         const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
         console.log(`Processing row: ${JSON.stringify(row)}`);
-        console.log(`Pricing Page: ${pricingPage}`);
-    
-        const hasXTier = ["Free Tier", "TeamDesigner Tier", "TeamOperator Tier", "Enterprise Tier"]
-          .some(tier => {
-            const value = row[tier]?.trim().toLowerCase() || "";
-            console.log(`Checking ${tier}: ${value}`);
-            return value === "x";
-          });
-    
-        console.log(`Has X Tier: ${hasXTier}`);
+        const hasXTier = [
+          "Free Tier",
+          "TeamDesigner Tier",
+          "TeamOperator Tier",
+          "Enterprise Tier"]
+          .some(tier => row[tier]?.trim().toLowerCase() === "x");
         const includeRow = hasXTier || (pricingPage && ["x", "X"].includes(pricingPage.toLowerCase()));
-        console.log(`Include Row: ${includeRow}`);
-    
+
         if (!includeRow) return null;
-    
-        const result = {
+
+        return {
           theme: row["Theme"],
           category: row["Category"],
           function: row["Function"],
@@ -96,15 +58,11 @@ async function processCSV() {
           pricing_page: row["Pricing Page?"],
           docs: row["Docs"]
         };
-        console.log(`Row included: ${JSON.stringify(result)}`);
-        return result;
       } catch (error) {
         console.error("Error processing row:", row, error);
         return null;
       }
     }).filter(Boolean);
-    
-    console.log("Filtered Data:", filteredData);
     
     // Read existing JSON data
     // const featuresFile = process.env.FEATURES_FILE;
@@ -113,7 +71,7 @@ async function processCSV() {
     if (await fs.access(featuresFile).then(() => true, () => false)) {
       existingData = JSON.parse(await fs.readFile(featuresFile, "utf8"));
     }
-
+    
     // Identify new updates
     const newUpdates = filteredData.filter(
       newRow =>
