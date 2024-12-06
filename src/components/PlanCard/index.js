@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 
-const PlanCard = ({ planData }) => {
+const PlanCard = ({ planData , isYearly }) => {
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
   }
@@ -29,22 +29,41 @@ const PlanCard = ({ planData }) => {
                 <h5 className="byline">{x.byline}</h5>
 
                 <div className="price-container">
-                  {x.monthlyprice !== undefined ? (
-                    <div className="price">
-                      <span className="price-amount"><sup>$</sup>
-                        {x.monthlyprice === 0
-                          ? "0"
-                          : x.monthlyprice.toFixed(0)}
-                      </span>
-                      <span className="currency">USD</span>
-                      <span className="price-per">per user/month</span>
-                    </div>
+                  {isYearly ? (
+                    x.yearlyprice !== undefined ? (
+                      <div className="price">
+                        <span className="price-amount"><sup>$</sup>
+                          {x.yearlyprice === 0
+                            ? "0"
+                            : x.yearlyprice.toFixed(0)}
+                        </span>
+                        <span className="currency">USD</span>
+                        <span className="price-per">per user/year</span>
+                      </div>
+                    ) : (
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
+                    )
                   ) : (
-                    <div className="pricing_coming_soon">
-                      {x.pricing_coming_soon}
-                    </div>
+                    x.monthlyprice !== undefined ? (
+                      <div className="price">
+                        <span className="price-amount"><sup>$</sup>
+                          {x.monthlyprice === 0
+                            ? "0"
+                            : x.monthlyprice.toFixed(0)}
+                        </span>
+                        <span className="currency">USD</span>
+                        <span className="price-per">per user/month</span>
+                      </div>
+                    ) : (
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
+                    )
                   )}
                 </div>
+
 
                 <Button
                   disabled={x.tier === "Team Operator"}

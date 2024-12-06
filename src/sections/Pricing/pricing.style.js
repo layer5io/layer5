@@ -36,6 +36,37 @@ const PricingWrapper = styled.section`
   }
 }
 
+.toggle-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 16px;
+  gap: 10px;
+  width: 85%;
+}
+
+.toggle{
+border: 2px solid white;
+padding:10px;
+ border-radius: 15px;
+}
+
+.toggle-container span {
+  cursor: pointer;
+  padding: 8px 16px;
+  color:white;
+  border-radius: 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-container .active {
+  background-color: #00d3a9;
+  color: white;
+  border-color: #007bff;
+}
+
+
 .subscription-duration {
     margin-top: 2rem;
     margin-bottom: 4rem;
