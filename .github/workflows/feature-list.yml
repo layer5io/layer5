@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -35,94 +35,7 @@ jobs:
           curl -L $SPREADSHEET_URL -o spreadsheet.csv
 
           # Process the CSV, filter data, and append to feature_data.json
-          node -e "
-          const fs = require('fs');
-          const csv = require('csvtojson');
-
-          const headers = [
-            'Theme',
-            'Category',
-            'Function',
-            'Feature',
-            'Subscription Tier',
-            'Free Tier',
-            'TeamDesigner Tier',
-            'TeamOperator Tier',
-            'Enterprise Tier',
-            'Pricing Page?',
-            'Video?',
-            'Documented?',
-          ];
-
-          csv({
-            noheader: true, 
-            headers: headers,
-            output: 'json', 
-          })
-            .fromFile('spreadsheet.csv')
-            .then(rows => {
-
-              // Filter data
-              const filteredData = rows
-                .map(row => {
-                 const pricingPage = row['Pricing Page?']?.toLowerCase() || '';
-                 const hasXTier = ['Free Tier', 'TeamDesigner Tier', 'TeamOperator Tier', 'Enterprise Tier'].some(tier => row[tier]?.trim().toLowerCase() === 'x');
-                 const includeRow = hasXTier || (pricingPage && ['x', 'X'].includes(pricingPage));
-                 if (!includeRow) return "Could not include row";
-                 return {
-                    theme: row['Theme'],
-                    category: row['Category'],
-                    function: row['Function'],
-                    feature: row['Feature'],
-                    subscription_tier: row['Subscription Tier'],
-                    comparison_tiers: {
-                      free: row['Free Tier'],
-                      teamDesigner: row['TeamDesigner Tier'],
-                      teamOperator: row['TeamOperator Tier'],
-                      enterprise: row['Enterprise Tier'],
-                    },
-                  };    
-                })
-                .filter(Boolean);
-
-              # // Read existing JSON data
-              # const featuresFile = process.env.FEATURES_FILE;
-              # let existingData = [];
-              # if (fs.existsSync(featuresFile)) {
-              #   existingData = JSON.parse(fs.readFileSync(featuresFile, 'utf8'));
-              # }
-
-              // Identify new updates
-              const newUpdates = filteredData.filter(
-                newRow =>
-                  !existingData.some(
-                    existingRow =>
-                      existingRow.function === newRow.function &&
-                      existingRow.feature === newRow.feature
-                  )
-              );
-
-              # // Set output for has-updates
-              # if (newUpdates.length > 0) {
-              # fs.appendFileSync(process.env.GITHUB_ENV, 'has-updates=true\n');
-              # } else {
-              #  fs.appendFileSync(process.env.GITHUB_ENV, 'has-updates=false\n');
-              #  }
-
-              # // Merge new updates into existing data
-              # const updatedData = [...existingData, ...newUpdates];
-
-              // Write updated data to file
-              try {
-                fs.writeFileSync(featuresFile, JSON.stringify(updatedData, null, 2));
-              } catch (error) {
-                console.error('Error writing to feature_data.json:', error);
-              }
-            })
-            .catch(error => {
-              console.error('Error processing spreadsheet:', error);
-              process.exit(1);
-            });
+          node build/features-to-json.js
           "
 
       - name: Commit changes

@@ -61,10 +61,10 @@ async function processCSV() {
         return null;
       }
     }).filter(Boolean);
-    // console.log("");
+    
     // Read existing JSON data
-    // const featuresFile = process.env.FEATURES_FILE;
-    const featuresFile = "sections/Pricing/feature_data.json";
+    const featuresFile = process.env.FEATURES_FILE;
+    //const featuresFile = "src/sections/Pricing/feature_data.json";
     let existingData = [];
     if (await fs.access(featuresFile).then(() => true, () => false)) {
       existingData = JSON.parse(await fs.readFile(featuresFile, "utf8"));
