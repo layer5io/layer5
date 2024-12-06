@@ -618,7 +618,7 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-item {
       padding: 1px;
-      UL:after {
+      ul:after {
           content: "";
           display: block;
           height: 1px;
