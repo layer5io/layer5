@@ -67,7 +67,7 @@ function generatePlans(data) {
 
         return mappedItem;
       })
-      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder)
+      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder);
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
