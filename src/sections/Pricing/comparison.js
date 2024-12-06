@@ -180,6 +180,7 @@ h2, h5{
 `;
 
 const Comparison = () => {
+  console.log("details",details);
   return (
     <ComparisonWrapper >
       <h2>Compare All Features</h2>

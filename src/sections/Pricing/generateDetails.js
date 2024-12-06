@@ -28,7 +28,7 @@ function generateDetails(data) {
     const features = data
       .filter(
         item =>
-          item.theme === category.name && item.pricing_page === "x")
+          item.theme === category.name)
       .map(item => {
         const featureName = item.function;
         const description = item.feature;
