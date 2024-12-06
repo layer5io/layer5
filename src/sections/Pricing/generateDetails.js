@@ -53,24 +53,29 @@ function generateDetails(data) {
           feature: featureWithLink,
           description,
           free:
-            item.subscription_tier === "Free" ? (
+            item.comparison_tiers.free === "X" || item.comparison_tiers.free === "x" ? (
               <GiCheckMark className="yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
           teamDesigner:
-            item.subscription_tier === "TeamDesigner" ? (
+            item.comparison_tiers.teamDesigner === "X" || item.comparison_tiers.teamDesigner === "x" ? (
               <GiCheckMark className = "yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
           teamOperator:
-            item.subscription_tier === "TeamOperator" ? (
+            item.comparison_tiers.teamOperator === "X" || item.comparison_tiers.teamOperator === "x" ? (
               <GiCheckMark className="yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
-          enterprise: <GiCheckMark className="yes-icon" />,
+          enterprise:
+          item.comparison_tiers.enterprise === "X" || item.comparison_tiers.enterprise === "x" ? (
+            <GiCheckMark className="yes-icon" />
+          ) : (
+            <MdClose className="no-icon" />
+          ),
         };
       });
 
