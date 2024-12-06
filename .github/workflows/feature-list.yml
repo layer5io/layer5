@@ -31,30 +31,12 @@ jobs:
 
       - name: Fetch spreadsheet and process updates
         run: |
-          echo "Starting to fetch the spreadsheet..."
-          
           # Download the spreadsheet
-          echo "Downloading spreadsheet from $SPREADSHEET_URL"
           curl -L $SPREADSHEET_URL -o .github/build/spreadsheet.csv
-          
-          # Check if the file was downloaded successfully
-          if [ -f ".github/build/spreadsheet.csv" ]; then
-            echo "Spreadsheet downloaded successfully. Listing the files in .github/build:"
-            ls -al .github/build
-          else
-            echo "Error: Failed to download the spreadsheet. Exiting."
-            exit 1
-          fi
+          ls -al
 
-          # Process the CSV file
-          echo "Processing the spreadsheet into JSON..."
-          if node .github/build/features-to-json.js; then
-            echo "Spreadsheet processed successfully and appended to feature_data.json."
-          else
-            echo "Error: Processing the spreadsheet failed. Check the script for issues."
-            exit 1
-          fi
-
+          # Process the CSV, filter data, and append to feature_data.json
+          node .github/build/features-to-json.js
 
       - name: Commit changes
         id: commit-changes

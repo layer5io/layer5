@@ -28,6 +28,8 @@ async function processCSV() {
       output: "json",
     }).fromFile(".github/build/spreadsheet.csv");
 
+    console.log("Rows from CSV:", rows);
+
     const filteredData = rows.map(row => {
       try {
         const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
