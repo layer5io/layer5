@@ -69,7 +69,7 @@ async function processCSV() {
     if (await fs.access(featuresFile).then(() => true, () => false)) {
       existingData = JSON.parse(await fs.readFile(featuresFile, "utf8"));
     }
-
+console.log('filteredData',filteredData)
 
     // Identify new updates
     const newUpdates = filteredData.filter(
