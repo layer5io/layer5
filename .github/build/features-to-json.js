@@ -26,7 +26,7 @@ async function processCSV() {
       noheader: true,
       headers: headers,
       output: "json",
-    }).fromFile("../spreadsheet.csv");
+    }).fromFile(".github/build/spreadsheet.csv");
 
     const filteredData = rows.map(row => {
       try {
