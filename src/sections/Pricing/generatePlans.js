@@ -1,4 +1,3 @@
-import { FunctionsOutlined } from "@mui/icons-material";
 import featureData from "./feature_data.json";
 import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
@@ -49,6 +48,13 @@ function generatePlans(data) {
   const plans = Object.entries(tiers).map(([tierName, tierInfo]) => {
 
     const summary = data
+      .flatMap((item) => {
+        const tiers = item.subscription_tier.split("|");
+        return tiers.map((tier) => ({
+          ...item,
+          subscription_tier: tier.trim()
+        }));
+      })
       .filter((item) => {
         const matches =
           item.subscription_tier === tierName &&

@@ -73,8 +73,8 @@
     "category": "Support",
     "functionOrder": "5",
     "function": "Standard Support",
-    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
-    "subscription_tier": "TeamDesigner",
+    "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
+    "subscription_tier": "TeamDesigner|TeamOperator",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "x",
@@ -89,31 +89,14 @@
     "categoryOrder": "10",
     "category": "Support",
     "functionOrder": "6",
-    "function": "Premium and Premium Plus Support",
-    "feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
+    "function": "Premium Support",
+    "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Support and Deployment",
-    "categoryOrder": "10",
-    "category": "Support",
-    "functionOrder": "7",
-    "function": "Phone Support",
-    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": ""
     },
     "pricing_page": "x",
     "docs": ""
@@ -192,7 +175,7 @@
     "category": "Designs",
     "functionOrder": "1",
     "function": "Standard Design Export",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
+    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub)",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
@@ -253,6 +236,74 @@
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/cloud/catalog/"
+  },
+  {
+    "theme": "Catalog Management",
+    "categoryOrder": "",
+    "category": "Catalog",
+    "functionOrder": "",
+    "function": "Share Design",
+    "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/kanvas/designer/share-resource/"
+  },
+  {
+    "theme": "Catalog Management",
+    "categoryOrder": "",
+    "category": "Catalog",
+    "functionOrder": "",
+    "function": "Clone Design",
+    "feature": "Clone any published design to customise it according to your use cases",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/"
+  },
+  {
+    "theme": "Kanvas",
+    "categoryOrder": "",
+    "category": "Shapes",
+    "functionOrder": "",
+    "function": "500 Built-in Shapes",
+    "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "categoryOrder": "",
+    "category": "Shapes",
+    "functionOrder": "",
+    "function": "Non-semantic Annotations",
+    "feature": "Kanvas Designer allows you to draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
   },
   {
     "theme": "Identity & Access Management",
@@ -328,7 +379,7 @@
     "category": "IdP Integration",
     "functionOrder": "5",
     "function": "Authentication: SAML",
-    "feature": "Use an identity provider to manage the identities of GitHub users and applications.",
+    "feature": "Use an identity provider to manage the identities of users and applications.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
@@ -338,6 +389,57 @@
     },
     "pricing_page": "x",
     "docs": ""
+  },
+  {
+    "theme": "Identity & Access Management",
+    "categoryOrder": "",
+    "category": "IdP Integration",
+    "functionOrder": "5",
+    "function": "Authentication: OAuth",
+    "feature": "Use a third-party identity provider to manage the identities of users and applications.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Identity & Access Management",
+    "categoryOrder": "",
+    "category": "Users",
+    "functionOrder": "6",
+    "function": "Public Profiles for Users",
+    "feature": "See public user profile details, public activities and public resources.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Identity & Access Management",
+    "categoryOrder": "",
+    "category": "Users",
+    "functionOrder": "6",
+    "function": "Self-service user accounts",
+    "feature": "New user sign-up verification. Self-service password recovery.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile"
   },
   {
     "theme": "Lifecycle Management",
@@ -515,7 +617,7 @@
     "category": "Configuration Management",
     "functionOrder": "",
     "function": "Snapshots",
-    "feature": "Visual insights in your pull requests in GitHub",
+    "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
       "free": "",
@@ -650,74 +752,6 @@
     "categoryOrder": "",
     "category": "Profile",
     "functionOrder": "",
-    "function": "View Profile",
-    "feature": "View your profile.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile"
-  },
-  {
-    "theme": "Account Management",
-    "categoryOrder": "",
-    "category": "Profile",
-    "functionOrder": "",
-    "function": "Edit Account",
-    "feature": "Update details of your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "categoryOrder": "",
-    "category": "Profile",
-    "functionOrder": "",
-    "function": "Reset Pasword",
-    "feature": "Perform a password reset for your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "categoryOrder": "",
-    "category": "Profile",
-    "functionOrder": "",
-    "function": "Delete Account",
-    "feature": "Delete your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "categoryOrder": "",
-    "category": "Profile",
-    "functionOrder": "",
     "function": "Connect your Github Account",
     "feature": "Link your social sign-in with GitHub to your existing user account.",
     "subscription_tier": "Team",
@@ -767,7 +801,7 @@
   {
     "theme": "Account Management",
     "categoryOrder": "",
-    "category": "Plans",
+    "category": "Entitlement",
     "functionOrder": "",
     "function": "View Plans",
     "feature": "Explore subscription plans and compare their features.",
@@ -780,57 +814,6 @@
     },
     "pricing_page": "",
     "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog",
-    "functionOrder": "",
-    "function": "",
-    "feature": "Export a copy of a design to your local system.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/catalog/"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog",
-    "functionOrder": "",
-    "function": "Share Design",
-    "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/designer/share-resource/"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog",
-    "functionOrder": "",
-    "function": "Clone Design",
-    "feature": "Clone any published design to customise it according to your use cases",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/"
   },
   {
     "theme": "Catalog Management",
@@ -1041,57 +1024,6 @@
     "categoryOrder": "",
     "category": "Designs",
     "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from GitHub",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from GitLab",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from BitBucket",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
     "function": "Export Design",
     "feature": "To your local filesystem",
     "subscription_tier": "Free",
@@ -1177,30 +1109,13 @@
     "categoryOrder": "",
     "category": "Designs",
     "functionOrder": "",
-    "function": "Unpublish Design",
-    "feature": "Unpublish a design",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Validate Design",
+    "function": "Orchestration: Pre-provisioning",
     "feature": "Validate a design",
-    "subscription_tier": "TeamDesigner",
+    "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
       "enterprise": ""
     },
     "pricing_page": "",
@@ -1211,13 +1126,13 @@
     "categoryOrder": "",
     "category": "Designs",
     "functionOrder": "",
-    "function": "Deploy Design",
-    "feature": "Deploy a design",
+    "function": "Orchestration: Provisioning",
+    "feature": "Provision and deprovision cloud native infrastructure using your designs.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
       "enterprise": ""
     },
     "pricing_page": "",
@@ -1228,9 +1143,9 @@
     "categoryOrder": "",
     "category": "Designs",
     "functionOrder": "",
-    "function": "Undeploy Design",
+    "function": "Orchestration: Deprovisioning",
     "feature": "Retract all resources used in a Meshery design from the cluster",
-    "subscription_tier": "Free",
+    "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -1255,40 +1170,6 @@
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Details of design",
-    "feature": "Set design information or details of a design",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Identity & Access Management",
-    "categoryOrder": "",
-    "category": "Authentication",
-    "functionOrder": "",
-    "function": "Authentication: OAuth",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
     "docs": ""
   },
   {
@@ -1617,146 +1498,10 @@
   {
     "theme": "Kanvas",
     "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Delete shapes",
-    "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Delete shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Clone shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape  on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Copy shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Lock shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a shape on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Add shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new shapes on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Configure shape styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of shapes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Shapes",
-    "functionOrder": "",
-    "function": "Reset shape styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of shapes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
     "category": "Textboxes",
     "functionOrder": "",
     "function": "Delete textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a textbox from canvas.",
+    "feature": "Kanvas Designer allows you to draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "",
