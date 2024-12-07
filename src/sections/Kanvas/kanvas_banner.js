@@ -67,7 +67,6 @@ const BannerSectionWrapper = styled.div`
         text-align: center;
     }
 
-    }
     .banner-text p {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
@@ -96,7 +95,8 @@ const BannerSectionWrapper = styled.div`
         overflow: hidden;
         margin-top: -7rem;
         position: relative;
-        left: 30%;
+        left: 10%;
+        margin-top: -8rem;
         z-index: 0;
 
     }
@@ -117,7 +117,8 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 1700px) {
         .kanvas-logo {
-            width: 12rem;
+            width: 20rem;
+            left: 21%;
             /* right: 12rem; */
             /* margin-top: -5rem; */
         }
@@ -128,7 +129,7 @@ const BannerSectionWrapper = styled.div`
     @media screen and (max-width: 1200px) {
         .kanvas-logo {
             left: 20%;
-            width: 10rem;
+            width: 18rem;
             /* right: 8rem; */
             margin-top: -5rem;
         }
@@ -136,11 +137,11 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 992px) {
         .kanvas-logo {
-            width: 8rem;
+            width: 16rem;
             margin-top: -2rem;
             left: 15%;
         }
-        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
+        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0%;
     }
 
     @media screen and (max-width: 768px) {
@@ -148,8 +149,8 @@ const BannerSectionWrapper = styled.div`
         .kanvas-logo {
             margin-top: -5rem;
             margin-right: 2rem;
-            left: 7%;
-            min-width: 5rem;
+            left: 10%;
+            min-width: 8rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
@@ -158,16 +159,61 @@ const BannerSectionWrapper = styled.div`
             margin-top: -5rem;
             margin-right: 2rem;
             left: 0%;
-            min-width: 3rem;
+            min-width: 8rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
+    @media screen and (max-width: 450px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 1rem;
+            left: -10%;
+            min-width: 7rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }    
     @media screen and (max-width: 400px) {
         .kanvas-logo {
             margin-top: -5rem;
-            margin-right: 0;
-            left: -20%;
-            min-width: 3rem;
+            margin-right: 0rem;
+            left: -28%;
+            min-width: 6rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 350px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -48%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 305px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -90%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 260px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -170%;
+            min-width: 5rem;
+            }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
+        }
+    @media screen and (max-width: 210px) {
+        .kanvas-logo {
+            margin-top: -5rem;
+            margin-right: 0rem;
+            left: -280%;
+            min-width: 5rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
