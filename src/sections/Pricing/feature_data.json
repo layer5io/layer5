@@ -370,7 +370,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "pricing_page": "",
+    "pricing_page": "x",
     "docs": ""
   },
   {
@@ -378,7 +378,7 @@
     "categoryOrder": "2",
     "category": "Shapes",
     "functionOrder": "1",
-    "function": "500 Built-in Shapes",
+    "function": "500 Built-in Shapes, Pen and Pencil",
     "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
     "subscription_tier": "",
     "comparison_tiers": {
@@ -444,10 +444,10 @@
   {
     "theme": "",
     "categoryOrder": "4",
-    "category": "",
+    "category": "Configuration Management",
     "functionOrder": "2",
     "function": "350 Built-in Models",
-    "feature": "",
+    "feature": "Thousands of standardized components to represent complex systems, providing logical architecture of your infrastructure.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
@@ -462,7 +462,7 @@
     "theme": "Identity & Access Management",
     "categoryOrder": "5",
     "category": "Organization and Team Management",
-    "functionOrder": "1",
+    "functionOrder": "3",
     "function": "Resource Access Management",
     "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
     "subscription_tier": "TeamDesigner",
@@ -479,7 +479,7 @@
     "theme": "Identity & Access Management",
     "categoryOrder": "5",
     "category": "Built-in Roles",
-    "functionOrder": "2",
+    "functionOrder": "1",
     "function": "Built-in Roles",
     "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
     "subscription_tier": "Free",
@@ -495,15 +495,32 @@
   {
     "theme": "Identity & Access Management",
     "categoryOrder": "5",
-    "category": "User-defined Roles",
+    "category": "IdP Integration",
     "functionOrder": "2",
-    "function": "User-defined Roles",
-    "feature": "Customizable roles for specific permission assignments",
-    "subscription_tier": "Enterprise",
+    "function": "Identity through OAuth",
+    "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
+    "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "Identity & Access Management",
+    "categoryOrder": "5",
+    "category": "User-defined Roles",
+    "functionOrder": "4",
+    "function": "User-defined Roles",
+    "feature": "Customizable roles for specific permission assignments",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "x",
@@ -513,7 +530,7 @@
     "theme": "Identity & Access Management",
     "categoryOrder": "5",
     "category": "IdP Integration",
-    "functionOrder": "5",
+    "functionOrder": "6",
     "function": "User Provisioning through SCIM",
     "feature": "Use your existing accounts and centrally manage access.",
     "subscription_tier": "",
@@ -541,23 +558,6 @@
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Identity & Access Management",
-    "categoryOrder": "5",
-    "category": "IdP Integration",
-    "functionOrder": "5",
-    "function": "Identity through OAuth",
-    "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
     "docs": ""
   },
   {
@@ -701,9 +701,9 @@
     "categoryOrder": "",
     "category": "Design Patterns",
     "functionOrder": "",
-    "function": "Undo or Redo",
+    "function": "Undo/Redo",
     "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
-    "subscription_tier": "Free",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
