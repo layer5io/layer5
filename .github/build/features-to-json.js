@@ -7,7 +7,9 @@ console.log(`Node.js version: ${major}.${minor}.${patch}`);
 
 const headers = [
   "Theme",
+  "Category Order",
   "Category",
+  "Function Order",
   "Function",
   "Feature",
   "Subscription Tier",
@@ -22,11 +24,12 @@ const headers = [
 
 async function processCSV() {
   try {
+    const csvFilePath = process.argv[2] || ".github/build/spreadsheet.csv";
     const rows = await csv({
       noheader: true,
       headers: headers,
       output: "json",
-    }).fromFile(".github/build/spreadsheet.csv");
+    }).fromFile(csvFilePath);
 
     const filteredData = rows.map(row => {
       try {
@@ -43,7 +46,9 @@ async function processCSV() {
 
         return {
           theme: row["Theme"],
+          categoryOrder: row["Category Order"],
           category: row["Category"],
+          functionOrder: row["Function Order"],
           function: row["Function"],
           feature: row["Feature"],
           subscription_tier: row["Subscription Tier"],
@@ -64,8 +69,11 @@ async function processCSV() {
     
     // Read existing JSON data
     // const featuresFile = process.env.FEATURES_FILE;
-    const featuresFile = "src/sections/Pricing/feature_data.json";
-    let existingData = [];
+    console.log("process.argv[3]: " + process.argv[3]);
+    const featuresFile = process.argv[3] || "src/sections/Pricing/feature_data.json";
+    // const featuresFile = "src/sections/Pricing/feature_data.json";
+
+
     if (await fs.access(featuresFile).then(() => true, () => false)) {
       existingData = JSON.parse(await fs.readFile(featuresFile, "utf8"));
     }

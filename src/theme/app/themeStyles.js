@@ -34,7 +34,7 @@ const lighttheme = {
   darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
 
   // Teal Blue
-  tertiaryColorTwo: "#477E96",
+  tealBlue: "#477E96",
 
   headingColor: "#111111",
 
@@ -267,7 +267,7 @@ export const darktheme = {
   darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
 
   // Teal Blue
-  tertiaryColorTwo: "#477E96",
+  tealBlue: "#477E96",
 
   headingColor: "#000000",
 
