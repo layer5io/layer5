@@ -158,7 +158,7 @@
     "category": "Designs",
     "functionOrder": "1",
     "function": "Import your IaC",
-    "feature": "Import a design from Kubernetes Manifest, Helm Chart, Docker Compose or Artifact Hub",
+    "feature": "Import a design from Kubernetes Manifest, Helm Chart, Docker Compose or Artifact Hub.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "x",
@@ -167,7 +167,7 @@
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": ""
+    "docs": "https://docs.meshery.io/extensions/importing-a-design"
   },
   {
     "theme": "Catalog Management",
@@ -192,7 +192,7 @@
     "category": "Designs",
     "functionOrder": "1",
     "function": "Standard Design Export",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub)",
+    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub)",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
@@ -310,108 +310,6 @@
     "categoryOrder": "",
     "category": "Designs",
     "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/extensions/importing-a-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from Kubernetes Manifest",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from Meshery Design (YAML)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from Helm Chart",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from Docker Compose",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
-    "function": "Import Design",
-    "feature": "Import a design from Meshery Design (OCI Image)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
-    "functionOrder": "",
     "function": "View Designs",
     "feature": "View all public and published designs of other team members and private of signed-in user",
     "subscription_tier": "Free",
@@ -446,25 +344,8 @@
     "categoryOrder": "",
     "category": "Catalog Requests",
     "functionOrder": "",
-    "function": "View Catalog Requests",
-    "feature": "View the catalog publication request queue",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog Requests",
-    "functionOrder": "",
     "function": "Approve Catalog Request",
-    "feature": "Approve catalog publication requests",
+    "feature": "Change management through a process of curation of content to be published in the catalog.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -476,16 +357,16 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog Requests",
-    "functionOrder": "",
-    "function": "Deny Catalog Request",
-    "feature": "Deny catalog publication requests",
+    "theme": "Workflow Management",
+    "categoryOrder": "7",
+    "category": "Audit Trail",
+    "functionOrder": "7",
+    "function": "Audit Trail",
+    "feature": "Detailed accounting of user activity. Historical record or each action taken.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
-      "teamDesigner": "x",
+      "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
@@ -954,6 +835,23 @@
   {
     "theme": "",
     "categoryOrder": "",
+    "category": "",
+    "functionOrder": "",
+    "function": "Manage access to views",
+    "feature": "Create and collaborate in online operational topologies in real-time.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
     "category": "Collaboration",
     "functionOrder": "",
     "function": "Team Chat",
@@ -1241,20 +1139,20 @@
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/"
   },
   {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
+    "theme": "Identity & Access Management",
+    "categoryOrder": "5",
+    "category": "Roles",
     "functionOrder": "",
-    "function": "Manage access to views",
-    "feature": "Create and collaborate in online operational topologies in real-time.",
-    "subscription_tier": "TeamOperator",
+    "function": "Create Custom Roles",
+    "feature": "Assign User Roles, Assign Keychains to Roles",
+    "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "pricing_page": "x",
+    "pricing_page": "",
     "docs": ""
   },
   {
@@ -1292,114 +1190,12 @@
     "docs": ""
   },
   {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "View Settings",
-    "feature": "View settings in Meshery",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "Connect adapter",
-    "feature": "Configure and connect to Meshery adapters",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "Connect Metrics",
-    "feature": "Configure and connect to metrics like Grafana and Promethues",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "View Metrics",
-    "feature": "View already configured metrics",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/catalog/metrics/"
-  },
-  {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "View Registry",
-    "feature": "Explore entities within capabilities registry",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "Settings",
-    "functionOrder": "",
-    "function": "Reset Database",
-    "feature": "Reset Meshery database",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "View Views",
-    "feature": "See all views withing a workspace",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
+    "function": "Views",
+    "feature": "See the status of your deployments, monitor performance, and troubleshoot issues. Views provide tools for interacting with your cluster, such as terminal access and log streaming.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1411,61 +1207,10 @@
     "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "Create View",
-    "feature": "Create a new view",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "Delete View",
-    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view"
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "Edit View",
-    "feature": "Edit environment and it connection membership",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
     "function": "Assign Views to Workspace",
     "feature": "Add new views to workspace",
     "subscription_tier": "TeamOperator",
@@ -1479,27 +1224,10 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "Unassign Views from Workspace",
-    "feature": "Remove views from workspace",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
     "function": "Export views",
     "feature": "Export views to JSON format",
     "subscription_tier": "TeamOperator",
@@ -1513,27 +1241,10 @@
     "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view"
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "View view component details",
-    "feature": "View detailed information about a view and it's comopnent",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
     "function": "Share Views",
     "feature": "Share Views",
     "subscription_tier": "TeamOperator",
@@ -1547,10 +1258,27 @@
     "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view"
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
+    "function": "Clone Views",
+    "feature": "Clone Views",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
     "function": "Stream container logs",
     "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
     "subscription_tier": "TeamOperator",
@@ -1560,33 +1288,16 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
-    "functionOrder": "",
-    "function": "View Interactive Terminal",
-    "feature": "View Interactive Terminal",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": ""
-    },
     "pricing_page": "",
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
     "functionOrder": "",
-    "function": "View Component Details",
-    "feature": "View managed infrastructure resources details in Kanvas Operator",
+    "function": "Performance Profiles",
+    "feature": "Define, name, and save performance profiles. Share performance profiles and test results with individual users or teams.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1598,12 +1309,12 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
     "functionOrder": "",
-    "function": "View Observability Metrics",
-    "feature": "View real-time resource metrics in Kanvas Operator",
+    "function": "Export test results",
+    "feature": "Single or multiple results in standardized format.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1615,12 +1326,12 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
     "functionOrder": "",
-    "function": "Perform conformance test",
-    "feature": "Perform a conformance test in Kanvas Operator",
+    "function": "Comparative Testing",
+    "feature": "Visual comparison of performance test results.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1632,12 +1343,12 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
     "functionOrder": "",
-    "function": "Perform performance test in visualizer",
-    "feature": "Perform performance test in Kanvas Operator",
+    "function": "Capacity, soak, and burst testing",
+    "feature": "Protocols: HTTP, HTTPS, TCP, gRPC with configuration duration, concurrency",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1649,420 +1360,12 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
-    "categoryOrder": "",
-    "category": "Operator",
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
     "functionOrder": "",
-    "function": "Select performance profile in visualizer",
-    "feature": "Select a performance profile to run tests using",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance Profiles",
-    "functionOrder": "",
-    "function": "Persistence of test results",
-    "feature": "Baseline and track your service mesh performance from release to release.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Load Generation",
-    "functionOrder": "",
-    "function": "Load Generator Interface: Common interface used as an extension point for supporting different types of load generators",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Load Generation",
-    "functionOrder": "",
-    "function": "Load Generation",
-    "feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Load Generation",
-    "functionOrder": "",
-    "function": "Distributed Load Generator",
-    "feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Auto Tuning",
-    "functionOrder": "",
-    "function": "Adaptive load control: optimize RPS",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Auto Tuning",
-    "functionOrder": "",
-    "function": "Adaptive load control: optimize Retries",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Scheduling",
-    "functionOrder": "",
-    "function": "Calendar Integration",
-    "feature": "Schedule tests from your calendar",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "MeshMark",
-    "functionOrder": "",
-    "function": "Listen and learn average request response time.",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "Add performace profile",
-    "feature": "Add a new performace profile",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "Run test",
-    "feature": "Run a test on performance profile",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "View Results",
-    "feature": "View results of performance tests",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "Edit performance test",
-    "feature": "Edit performance test",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "Delete performance test",
-    "feature": "Delete performance test",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "categoryOrder": "",
-    "category": "Performance",
-    "functionOrder": "",
-    "function": "View performance profiles",
-    "feature": "View all performance profiles",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Alert Management",
-    "functionOrder": "",
-    "function": "Notification Suppression",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Alert Management",
-    "functionOrder": "",
-    "function": "Notification Correlation",
-    "feature": "",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Policies",
-    "functionOrder": "",
-    "function": "Versioned",
-    "feature": "",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Audit Trail",
-    "functionOrder": "",
-    "function": "Log of all actions invoked by users",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "RBAC Violations",
-    "functionOrder": "",
-    "function": "Notification of attempts to invoke unauthorized actions",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Open Policy Agent integration",
-    "functionOrder": "",
-    "function": "Admission control for specific workloads on the mesh",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Open Policy Agent integration",
-    "functionOrder": "",
-    "function": "Service request authorization with JWT",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "categoryOrder": "",
-    "category": "Open Policy Agent integration",
-    "functionOrder": "",
-    "function": "Performance Budget support in Patterns",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Overview",
-    "functionOrder": "",
-    "function": "View Overview",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Credentials",
-    "functionOrder": "",
-    "function": "View Credentials",
-    "feature": "",
+    "function": "Performance Profiles",
+    "feature": "Storage of 500 result sets in Provider for a given Performance Profile.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -2078,8 +1381,8 @@
     "categoryOrder": "",
     "category": "Credentials",
     "functionOrder": "",
-    "function": "Create Credential",
-    "feature": "",
+    "function": "Credentials and Connections",
+    "feature": "Assign connections to environment",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -2093,180 +1396,10 @@
   {
     "theme": "Security Management",
     "categoryOrder": "",
-    "category": "Credentials",
-    "functionOrder": "",
-    "function": "Edit Credential",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Credentials",
-    "functionOrder": "",
-    "function": "Delete Credential",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Sessions",
-    "functionOrder": "",
-    "function": "View Sessions",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Sessions",
-    "functionOrder": "",
-    "function": "Logout from a Session",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
     "category": "Tokens",
     "functionOrder": "",
-    "function": "View Tokens",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Tokens",
-    "functionOrder": "",
-    "function": "Download Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Tokens",
-    "functionOrder": "",
-    "function": "Delete Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Tokens",
-    "functionOrder": "",
-    "function": "Create Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keys",
-    "functionOrder": "",
-    "function": "View Keys",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keys",
-    "functionOrder": "",
-    "function": "Edit Key",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keys",
-    "functionOrder": "",
-    "function": "Delete Key",
-    "feature": "",
+    "function": "API Tokens, Sessions",
+    "feature": "Expiring and non-expiring API tokens. Visibility into active and expired user sessions.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -2282,58 +1415,7 @@
     "categoryOrder": "",
     "category": "Keychains",
     "functionOrder": "",
-    "function": "View Keychains",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keychains",
-    "functionOrder": "",
-    "function": "Create Keychain",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keychains",
-    "functionOrder": "",
-    "function": "Edit Keychain",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keychains",
-    "functionOrder": "",
-    "function": "Delete Keychain",
+    "function": "Keys, Keychain, and Roles",
     "feature": "",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
@@ -2484,6 +1566,23 @@
   {
     "theme": "Workspace Management",
     "categoryOrder": "",
+    "category": "Environments",
+    "functionOrder": "",
+    "function": "Environments",
+    "feature": "Group related resources together, making it easier to navigate and manage complex deployments.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Workspace Management",
+    "categoryOrder": "",
     "category": "Workspace",
     "functionOrder": "",
     "function": "Assign environments to workspaces",
@@ -2527,210 +1626,6 @@
       "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspace",
-    "functionOrder": "",
-    "function": "Remove Designs from Workspaces",
-    "feature": "Remove designs from workspaces",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspace",
-    "functionOrder": "",
-    "function": "Connect Google Account to Workspace",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspace",
-    "functionOrder": "",
-    "function": "Connect Github Account to Workspace",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Connections",
-    "functionOrder": "",
-    "function": "View Connections",
-    "feature": "View all connections within an environment",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "View Environment",
-    "feature": "See all environments within an workspace.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Create Environment",
-    "feature": "Create a new environment",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Delete Environment",
-    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Edit Environment",
-    "feature": "Edit environment and it connection membership",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Assign connections to environment",
-    "feature": "Add new connections to environments",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Remove connections from environments",
-    "feature": "Remove connections from environment,",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog",
-    "functionOrder": "",
-    "function": "View Catalog",
-    "feature": "View all items in catalog",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Incident Management",
-    "categoryOrder": "",
-    "category": "Audit Trail",
-    "functionOrder": "",
-    "function": "Audit Trail",
-    "feature": "Detailed accounting of user activity. Historical record or each action taken.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "",
