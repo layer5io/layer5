@@ -106,6 +106,7 @@ h3 {
     font-weight: 500;
     @media (max-width: 62rem) {
       font-size: 1.5rem;
+      text-align: center;
     }
 }
 
