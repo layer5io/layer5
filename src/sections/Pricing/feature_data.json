@@ -1,13 +1,13 @@
 [
   {
     "theme": "Support and Deployment",
-    "category": "Extensibility",
-    "function": "Extensible Webhooks",
-    "feature": "Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.",
-    "subscription_tier": "Enterprise",
+    "category": "10",
+    "function": "Support",
+    "feature": "5",
+    "subscription_tier": "Standard Support",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
+      "free": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+      "teamDesigner": "TeamDesigner",
       "teamOperator": "",
       "enterprise": "x"
     },
@@ -16,13 +16,13 @@
   },
   {
     "theme": "Support and Deployment",
-    "category": "Extensibility",
-    "function": "Enterprise API",
-    "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
-    "subscription_tier": "Enterprise",
+    "category": "10",
+    "function": "Support",
+    "feature": "7",
+    "subscription_tier": "Phone Support",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
+      "free": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+      "teamDesigner": "TeamDesigner",
       "teamOperator": "",
       "enterprise": "x"
     },
@@ -30,1094 +30,1514 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
-    "category": "Extensibility",
-    "function": "White Label",
-    "feature": "Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.",
-    "subscription_tier": "Enterprise",
+    "theme": "Catalog Management",
+    "category": "1",
+    "function": "Designs",
+    "feature": "1",
+    "subscription_tier": "Import your IaC",
     "comparison_tiers": {
-      "free": "",
+      "free": "Import a design from Kubernetes Manifest, Helm Chart, or Docker Compose",
       "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Support and Deployment",
-    "category": "Support",
-    "function": "Community Support",
-    "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Support and Deployment",
-    "category": "Support",
-    "function": "Standard Support",
-    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
       "teamOperator": "x",
-      "enterprise": ""
+      "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": ""
+    "pricing_page": "",
+    "docs": "x"
   },
   {
-    "theme": "Support and Deployment",
-    "category": "Support",
-    "function": "Premium and Premium Plus Support",
-    "feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
-    "subscription_tier": "Enterprise",
+    "theme": "Catalog Management",
+    "category": "1",
+    "function": "Designs",
+    "feature": "1",
+    "subscription_tier": "Standard Design Export",
     "comparison_tiers": {
-      "free": "",
+      "free": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": ""
+    "pricing_page": "",
+    "docs": "x"
   },
   {
-    "theme": "Support and Deployment",
-    "category": "Support",
-    "function": "Phone Support",
-    "feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
-    "subscription_tier": "TeamDesigner",
+    "theme": "Catalog Management",
+    "category": "1",
+    "function": "Designs",
+    "feature": "1",
+    "subscription_tier": "Premium Design Export",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Support and Deployment",
-    "category": "Billing",
-    "function": "Invoice Billing",
-    "feature": "Pay bills via invoice, rather than using your credit card.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
+      "free": "Export a design as a snapshot",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Support and Deployment",
-    "category": "Deployment",
-    "function": "Self-hosted Deployment",
-    "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/self-hosted/"
+    "pricing_page": "",
+    "docs": "x"
   },
   {
     "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import your IaC",
-    "feature": "Import a design from Kubernetes Manifest, Helm Chart, or Docker Compose",
-    "subscription_tier": "Free",
+    "category": "1",
+    "function": "Designs",
+    "feature": "1",
+    "subscription_tier": "Public Catalog",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Premium Import IaC",
-    "feature": "Bulk import designs from GitHub",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/getting-started/github-integration/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Standard Design Export",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Premium Design Export",
-    "feature": "Export a design as a snapshot",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Catalog of Cloud Native Design Patterns",
-    "feature": "A library of pre-built patterns and templates for common deployment scenarios, simplifying the configuration process and ensuring best practices",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": "https://cloud.layer5.io/catalog"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Filters",
-    "function": "Private Catalog",
-    "feature": "Privately publish and share reusable design and operational templates within your organization.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/catalog/"
+    "docs": "x"
   },
   {
     "theme": "Identity & Access Management",
-    "category": "Organization and Team Management",
-    "function": "Manage access to designs",
-    "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
-    "subscription_tier": "TeamDesigner",
+    "category": "5",
+    "function": "Organization and Team Management",
+    "feature": "1",
+    "subscription_tier": "Resource Access Management",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
+      "free": "Manage access to designs on a team-by-team, or individual user, basis.",
+      "teamDesigner": "TeamDesigner",
       "teamOperator": "",
       "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": ""
+    "pricing_page": "",
+    "docs": "x"
   },
   {
     "theme": "Identity & Access Management",
-    "category": "Built-in Roles",
+    "category": "5",
     "function": "Built-in Roles",
-    "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
-    "subscription_tier": "Free",
+    "feature": "2",
+    "subscription_tier": "Built-in Roles",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/security/roles/"
+    "docs": "x"
   },
   {
     "theme": "Identity & Access Management",
-    "category": "User-defined Roles",
+    "category": "5",
     "function": "User-defined Roles",
-    "feature": "Customizable roles for specific permission assignments",
-    "subscription_tier": "Enterprise",
+    "feature": "2",
+    "subscription_tier": "User-defined Roles",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "Customizable roles for specific permission assignments",
+      "teamDesigner": "Enterprise",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/security/roles/"
+    "docs": "x"
   },
   {
-    "theme": "Identity & Access Management",
-    "category": "IdP Integration",
-    "function": "Authentication: LDAP",
-    "feature": "Access Meshery Server using your existing accounts and centrally manage repository access.",
-    "subscription_tier": "Enterprise",
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Lifecycle Management",
+    "feature": "",
+    "subscription_tier": "Topology visualization",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
+      "free": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
     },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Identity & Access Management",
-    "category": "IdP Integration",
-    "function": "Authentication: SAML",
-    "feature": "Use an identity provider to manage the identities of GitHub users and applications.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
+    "pricing_page": "",
     "docs": ""
   },
   {
     "theme": "Lifecycle Management",
     "category": "",
-    "function": "Topology visualization",
-    "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
-    "subscription_tier": "Free",
+    "function": "Dry-run",
+    "feature": "",
+    "subscription_tier": "Design dry-run",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Test and verify configuration changes in a separate environment.",
+      "teamDesigner": "TeamOperator",
       "teamOperator": "",
       "enterprise": ""
     },
     "pricing_page": "x",
-    "docs": ""
+    "docs": "x"
   },
   {
     "theme": "Lifecycle Management",
-    "category": "Dry-run",
-    "function": "Design dry-run",
-    "feature": "Test and verify configuration changes in a separate environment.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Lifecycle Management",
-    "category": "Multiple Kubernetes Clusters",
+    "category": "",
     "function": "Multiple Kubernetes Clusters",
-    "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
-    "subscription_tier": "TeamOperator",
+    "feature": "",
+    "subscription_tier": "Kubernetes Clusters",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
+      "free": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
     },
     "pricing_page": "x",
-    "docs": ""
+    "docs": "x"
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Multiple Kubernetes Clusters",
+    "feature": "",
+    "subscription_tier": "AWS and GCP",
+    "comparison_tiers": {
+      "free": "Ongoing synchronization of AWS and GCP services configuration, workloads and changes across any number of accounts.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
     "theme": "Meshery System",
-    "category": "mesheryctl",
-    "function": "CLI",
-    "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
-    "subscription_tier": "Free",
+    "category": "",
+    "function": "mesheryctl",
+    "feature": "",
+    "subscription_tier": "Robust CLI",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": "https://docs.meshery.io/reference/mesheryctl"
+    "docs": "x"
   },
   {
     "theme": "Performance Management",
-    "category": "Service Performance",
-    "function": "Service Performance",
-    "feature": "Continuous visibility across all of your clusters and workloads.",
-    "subscription_tier": "Free",
+    "category": "4",
+    "function": "Performance Management",
+    "feature": "1",
+    "subscription_tier": "Service Performance",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "free": "Continuous visibility across all of your clusters and workloads.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
     },
-    "pricing_page": "x",
+    "pricing_page": "",
     "docs": ""
   },
   {
     "theme": "Configuration Management",
-    "category": "Design Patterns",
-    "function": "Undo or Redo",
-    "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
-    "subscription_tier": "Free",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Undo or Redo",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "free": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
     },
-    "pricing_page": "x",
+    "pricing_page": "",
     "docs": ""
   },
   {
     "theme": "Configuration Management",
-    "category": "Design Patterns",
-    "function": "Whiteboarding",
-    "feature": "Ability to freeform draw any shapes, draw edges",
-    "subscription_tier": "Free",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Whiteboarding",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "free": "Ability to freeform draw any shapes, draw edges",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
     },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/"
+    "pricing_page": "",
+    "docs": ""
   },
   {
     "theme": "Configuration Management",
-    "category": "Visual Design",
+    "category": "",
     "function": "Visual Design",
-    "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
-    "subscription_tier": "Free",
+    "feature": "",
+    "subscription_tier": "Visual Design",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Configuration Management",
-    "category": "Design Review",
-    "function": "Collaborative Design Review",
-    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
-  },
-  {
-    "theme": "GitOps",
-    "category": "Design Review",
-    "function": "Snapshots",
-    "feature": "Visual insights in your pull requests in GitHub",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/tutorials/gitops-snapshots/"
-  },
-  {
-    "theme": "Lifecycle Management",
-    "category": "Operator",
-    "function": "Web-based Terminal",
-    "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/operator/"
-  },
-  {
-    "theme": "Lifecycle Management",
-    "category": "Operator",
-    "function": "Standard Events and Metrics",
-    "feature": "Real-time resource metrics.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Collaboration",
-    "category": "Collaboration",
-    "function": "Team Chat",
-    "feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Collaboration",
-    "category": "Collaboration",
-    "function": "Design Reviews",
-    "feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
-  },
-  {
-    "theme": "Collaboration",
-    "category": "",
-    "function": "Collaborators for public designs",
-    "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Collaboration",
-    "category": "",
-    "function": "Collaborators for public views",
-    "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
-  },
-  {
-    "theme": "Collaboration",
-    "category": "",
-    "function": "Collaborators for private designs and views",
-    "feature": "Multi-player collaboration on infrastructure design and management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your private or public designs and views.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "View Profile",
-    "feature": "View your profile.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile"
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "Edit Account",
-    "feature": "Update details of your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "Reset Pasword",
-    "feature": "Perform a password reset for your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "Delete Account",
-    "feature": "Delete your user account.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "Connect your Github Account",
-    "feature": "Link your social sign-in with GitHub to your existing user account.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Profile",
-    "function": "Connect your Google Account",
-    "feature": "Link your social sign-in with Google to your existing user account.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Subscription",
-    "function": "View Subcription",
-    "feature": "List and see details of active and inactive subscriptions.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Account Management",
-    "category": "Plans",
-    "function": "View Plans",
-    "feature": "Explore subscription plans and compare their features.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog",
-    "function": "",
-    "feature": "Export a copy of a design to your local system.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/catalog/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog",
-    "function": "Share Design",
-    "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/designer/share-resource/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog",
-    "function": "Clone Design",
-    "feature": "Clone any published design to customise it according to your use cases",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "View Designs",
-    "feature": "View all public and published designs of other team members and private of signed-in user",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Filters",
-    "function": "View Filters",
-    "feature": "View all public and published filters of other team members and private of signed-in user",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog Requests",
-    "function": "View Catalog Requests",
-    "feature": "View the catalog publication request queue",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog Requests",
-    "function": "Approve Catalog Request",
-    "feature": "Approve catalog publication requests",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Catalog Requests",
-    "function": "Deny Catalog Request",
-    "feature": "Deny catalog publication requests",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Create new design",
-    "feature": "Create new Meshery design",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/extensions/importing-a-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from Kubernetes Manifest",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from Meshery Design (YAML)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from Helm Chart",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from Docker Compose",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from Meshery Design (OCI Image)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from GitHub",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from GitLab",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Import Design",
-    "feature": "Import a design from BitBucket",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Export Design",
-    "feature": "To your local filesystem",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "",
     "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Export Design",
-    "feature": "Export a latest version of design in Meshery Design (YAML format)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Export Design",
-    "feature": "Export a latest version of design in Meshery Design (OCI format)",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Export Design",
-    "feature": "Export a design at a specific version",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Publish Design",
-    "feature": "Publish a design",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/extensions/publishing-a-design"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Unpublish Design",
-    "feature": "Unpublish a design",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Validate Design",
-    "feature": "Validate a design",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Deploy Design",
-    "feature": "Deploy a design",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/"
-  },
-  {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Undeploy Design",
-    "feature": "Retract all resources used in a Meshery design from the cluster",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/"
   },
   {
     "theme": "",
     "category": "",
-    "function": "Manage access to views",
-    "feature": "Create and collaborate in online operational topologies in real-time.",
-    "subscription_tier": "TeamOperator",
+    "function": "Configuration Management",
+    "feature": "",
+    "subscription_tier": "Collaborative Design Review",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
+      "free": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "GitOps",
+    "category": "",
+    "function": "Configuration Management",
+    "feature": "",
+    "subscription_tier": "Snapshots",
+    "comparison_tiers": {
+      "free": "Visual insights in your pull requests in GitHub",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Lifecycle Management",
+    "feature": "",
+    "subscription_tier": "Web-based Terminal",
+    "comparison_tiers": {
+      "free": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Lifecycle Management",
+    "feature": "",
+    "subscription_tier": "Standard Events and Metrics",
+    "comparison_tiers": {
+      "free": "Real-time resource metrics.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "",
+    "category": "",
+    "function": "Collaboration",
+    "feature": "",
+    "subscription_tier": "Team Chat",
+    "comparison_tiers": {
+      "free": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "",
+    "category": "",
+    "function": "Collaboration",
+    "feature": "",
+    "subscription_tier": "Design Reviews",
+    "comparison_tiers": {
+      "free": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "category": "",
+    "function": "Collaboration",
+    "feature": "",
+    "subscription_tier": "Collaborators for public designs",
+    "comparison_tiers": {
+      "free": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "",
+    "category": "",
+    "function": "Collaboration",
+    "feature": "",
+    "subscription_tier": "Collaborators for public views",
+    "comparison_tiers": {
+      "free": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "View Profile",
+    "comparison_tiers": {
+      "free": "View your profile.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "Edit Account",
+    "comparison_tiers": {
+      "free": "Update details of your user account.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "Reset Pasword",
+    "comparison_tiers": {
+      "free": "Perform a password reset for your user account.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "Delete Account",
+    "comparison_tiers": {
+      "free": "Delete your user account.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "Connect your Github Account",
+    "comparison_tiers": {
+      "free": "Link your social sign-in with GitHub to your existing user account.",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Profile",
+    "feature": "",
+    "subscription_tier": "Connect your Google Account",
+    "comparison_tiers": {
+      "free": "Link your social sign-in with Google to your existing user account.",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Entitlement",
+    "feature": "",
+    "subscription_tier": "Entitlement",
+    "comparison_tiers": {
+      "free": "List and see details of active and inactive subscriptions.",
+      "teamDesigner": "Team",
       "teamOperator": "x",
       "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Account Management",
+    "category": "",
+    "function": "Plans",
+    "feature": "",
+    "subscription_tier": "View Plans",
+    "comparison_tiers": {
+      "free": "Explore subscription plans and compare their features.",
+      "teamDesigner": "Team",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "Export a copy of a design to your local system.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog",
+    "feature": "",
+    "subscription_tier": "Share Design",
+    "comparison_tiers": {
+      "free": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog",
+    "feature": "",
+    "subscription_tier": "Clone Design",
+    "comparison_tiers": {
+      "free": "Clone any published design to customise it according to your use cases",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "View Designs",
+    "comparison_tiers": {
+      "free": "View all public and published designs of other team members and private of signed-in user",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Filters",
+    "feature": "",
+    "subscription_tier": "View Filters",
+    "comparison_tiers": {
+      "free": "View all public and published filters of other team members and private of signed-in user",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog Requests",
+    "feature": "",
+    "subscription_tier": "View Catalog Requests",
+    "comparison_tiers": {
+      "free": "View the catalog publication request queue",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog Requests",
+    "feature": "",
+    "subscription_tier": "Approve Catalog Request",
+    "comparison_tiers": {
+      "free": "Approve catalog publication requests",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Catalog Requests",
+    "feature": "",
+    "subscription_tier": "Deny Catalog Request",
+    "comparison_tiers": {
+      "free": "Deny catalog publication requests",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Create new design",
+    "comparison_tiers": {
+      "free": "Create new Meshery design",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design from Kubernetes Manifest",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design from Meshery Design (YAML)",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design from Helm Chart",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design from Docker Compose",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Import Design",
+    "comparison_tiers": {
+      "free": "Import a design from Meshery Design (OCI Image)",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Export Design",
+    "comparison_tiers": {
+      "free": "To your local filesystem",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Export Design",
+    "comparison_tiers": {
+      "free": "Export a latest version of design in Meshery Design (YAML format)",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Export Design",
+    "comparison_tiers": {
+      "free": "Export a latest version of design in Meshery Design (OCI format)",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Export Design",
+    "comparison_tiers": {
+      "free": "Export a design at a specific version",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Publish Design",
+    "comparison_tiers": {
+      "free": "Publish a design",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Unpublish Design",
+    "comparison_tiers": {
+      "free": "Unpublish a design",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Validate Design",
+    "comparison_tiers": {
+      "free": "Validate a design",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Deploy Design",
+    "comparison_tiers": {
+      "free": "Deploy a design",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Undeploy Design",
+    "comparison_tiers": {
+      "free": "Retract all resources used in a Meshery design from the cluster",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
     },
     "pricing_page": "x",
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
-    "category": "Designs",
-    "function": "Details of design",
-    "feature": "Set design information or details of a design",
-    "subscription_tier": "Free",
+    "theme": "",
+    "category": "",
+    "function": "",
+    "feature": "",
+    "subscription_tier": "Manage access to views",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
+      "free": "Create and collaborate in online operational topologies in real-time.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Catalog Management",
+    "category": "",
+    "function": "Designs",
+    "feature": "",
+    "subscription_tier": "Details of design",
+    "comparison_tiers": {
+      "free": "Set design information or details of a design",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
     "docs": ""
   },
   {
     "theme": "Identity & Access Management",
-    "category": "Authentication",
-    "function": "Authentication: OAuth",
+    "category": "",
+    "function": "Authentication",
     "feature": "",
-    "subscription_tier": "Free",
+    "subscription_tier": "Authentication: OAuth",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Cluster discovery",
+    "feature": "",
+    "subscription_tier": "Cluster discovery",
+    "comparison_tiers": {
+      "free": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Lifecycle Management",
+    "category": "",
+    "function": "Mesh Federation",
+    "feature": "",
+    "subscription_tier": "Environments",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "View Settings",
+    "comparison_tiers": {
+      "free": "View settings in Meshery",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "Connect adapter",
+    "comparison_tiers": {
+      "free": "Configure and connect to Meshery adapters",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "Connect Metrics",
+    "comparison_tiers": {
+      "free": "Configure and connect to metrics like Grafana and Promethues",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "View Metrics",
+    "comparison_tiers": {
+      "free": "View already configured metrics",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "View Registry",
+    "comparison_tiers": {
+      "free": "Explore entities within capabilities registry",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Meshery System",
+    "category": "",
+    "function": "Settings",
+    "feature": "",
+    "subscription_tier": "Reset Database",
+    "comparison_tiers": {
+      "free": "Reset Meshery database",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": ""
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Drag-n-drop pattern (merge with existing nodes on canvas)",
+    "comparison_tiers": {
+      "free": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to merge with exisitng nodes on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Load design pattern (displace current nodes on canvas)",
+    "comparison_tiers": {
+      "free": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to displace the exisitng nodes on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Edit Component confuguration (RJSF Tooltips)",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure a component currently present on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Configure fieldrefs",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Delete components",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to delete a component from canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Clone components",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Copy components",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Lock components",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to lock a component's state present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Add components",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to copy a component present on canvas. The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to cofigure/edit/update a design by adding new components to the canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Configure component styles",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure the style of a component.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Components",
+    "feature": "",
+    "subscription_tier": "Reset component styles",
+    "comparison_tiers": {
+      "free": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to reset a component to it's initial style.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Delete shapes",
+    "comparison_tiers": {
+      "free": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Delete shapes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Clone shapes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape  on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Copy shapes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Lock shapes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a shape on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Add shapes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new shapes on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Configure shape styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of shapes present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Shapes",
+    "feature": "",
+    "subscription_tier": "Reset shape styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of shapes present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Delete textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a textbox from canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Clone textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Copy textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Lock textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a textbox on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Add textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new textboxes on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Configure textbox styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of textboxes present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Textboxes",
+    "feature": "",
+    "subscription_tier": "Reset textbox styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of textboxes present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Delete sections",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a section from canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Clone sections",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Copy sections",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Lock sections",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a section on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Add sections",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new sections on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Configure section styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of sections present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Sections",
+    "feature": "",
+    "subscription_tier": "Reset section styles",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of sections present on canvas.",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Add text to textboxes",
+    "comparison_tiers": {
+      "free": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add text to the textboxes currently on canvas.",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
@@ -1125,2283 +1545,1383 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
-    "category": "Cluster discovery",
-    "function": "Cluster discovery",
-    "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
-    "subscription_tier": "TeamOperator",
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Create dynamic fieldrefs",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Configure edge handles",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Delete edge handles",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Use heirarchical relationships",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Use inventory relationships",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Change design layout",
+    "comparison_tiers": {
+      "free": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to change the layout of the components in the design.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Use Pencil",
+    "comparison_tiers": {
+      "free": "Pencil is mouse/tool mode available in Kanvas that allows users to draw freehand shapes. This permission grants user the ability to use the pencil mode in Kanvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Use Pen",
+    "comparison_tiers": {
+      "free": "Pen is a mouse/tool mode available in Kanvas that allows users to draw edges from one component to another. This permission grants user the ability to use the pencil mode in Kanvas.",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Meshery Model",
+    "feature": "",
+    "subscription_tier": "Models",
+    "comparison_tiers": {
+      "free": "Generator for GCP via K8s CRDs",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Meshery Model",
+    "feature": "",
+    "subscription_tier": "Models",
+    "comparison_tiers": {
+      "free": "Generator for AWS via K8s CRDs",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Create blank design in Kanvas",
+    "comparison_tiers": {
+      "free": "The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to remove all current entities from the canvas and create a new one to start from scratch",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Patterns",
+    "feature": "",
+    "subscription_tier": "Save design in Kanvas",
+    "comparison_tiers": {
+      "free": "Like a Google Doc, Designs are your primary tool for collaborative authorship of your infrastructure and services. A Design describes all the resources and their properties that you want for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to save a design (while logged in)",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "View comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to view comments in a design on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Resolve a comment",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to resolve a comment thread in a design on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Delete comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to delete a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Clone comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to clone a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Copy comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to copy a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Lock comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to lock a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Add comments",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to add a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Configure comment styles",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to configure the styles of a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Design Review",
+    "feature": "",
+    "subscription_tier": "Reset comment styles",
+    "comparison_tiers": {
+      "free": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to reset the styles of a comment on canvas.",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "View Views",
+    "comparison_tiers": {
+      "free": "See all views withing a workspace",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Create View",
+    "comparison_tiers": {
+      "free": "Create a new view",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Delete View",
+    "comparison_tiers": {
+      "free": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Edit View",
+    "comparison_tiers": {
+      "free": "Edit environment and it connection membership",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Assign Views to Workspace",
+    "comparison_tiers": {
+      "free": "Add new views to workspace",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Unassign Views from Workspace",
+    "comparison_tiers": {
+      "free": "Remove views from workspace",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Export views",
+    "comparison_tiers": {
+      "free": "Export views to JSON format",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "View view component details",
+    "comparison_tiers": {
+      "free": "View detailed information about a view and it's comopnent",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Open view",
+    "comparison_tiers": {
+      "free": "Open a pre-existing view",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Save Views",
+    "comparison_tiers": {
+      "free": "Saved view",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Share Views",
+    "comparison_tiers": {
+      "free": "Share Views",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Clone Views",
+    "comparison_tiers": {
+      "free": "Clone Views",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Stream container logs",
+    "comparison_tiers": {
+      "free": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "View Interactive Terminal",
+    "comparison_tiers": {
+      "free": "View Interactive Terminal",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "View Component Details",
+    "comparison_tiers": {
+      "free": "View managed infrastructure resources details in Kanvas Operator",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "View Observability Metrics",
+    "comparison_tiers": {
+      "free": "View real-time resource metrics in Kanvas Operator",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Perform conformance test",
+    "comparison_tiers": {
+      "free": "Perform a conformance test in Kanvas Operator",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Stream container logs",
+    "comparison_tiers": {
+      "free": "Stream container logs in Kanvas Operator",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Perform performance test in visualizer",
+    "comparison_tiers": {
+      "free": "Perform performance test in Kanvas Operator",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Kanvas",
+    "category": "",
+    "function": "Operator",
+    "feature": "",
+    "subscription_tier": "Select performance profile in visualizer",
+    "comparison_tiers": {
+      "free": "Select a performance profile to run tests using",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance Profiles",
+    "feature": "",
+    "subscription_tier": "Persistence of test results",
+    "comparison_tiers": {
+      "free": "Baseline and track your service mesh performance from release to release.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Load Generation",
+    "feature": "",
+    "subscription_tier": "Load Generator Interface: Common interface used as an extension point for supporting different types of load generators",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Load Generation",
+    "feature": "",
+    "subscription_tier": "Load Generation",
+    "comparison_tiers": {
+      "free": "Single Load Generator: Support testing multiple endpoints simultaneously.",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Load Generation",
+    "feature": "",
+    "subscription_tier": "Distributed Load Generator",
+    "comparison_tiers": {
+      "free": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "Add performace profile",
+    "comparison_tiers": {
+      "free": "Add a new performace profile",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "Run test",
+    "comparison_tiers": {
+      "free": "Run a test on performance profile",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "View Results",
+    "comparison_tiers": {
+      "free": "View results of performance tests",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "Edit performance test",
+    "comparison_tiers": {
+      "free": "Edit performance test",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "Delete performance test",
+    "comparison_tiers": {
+      "free": "Delete performance test",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Performance Management",
+    "category": "",
+    "function": "Performance",
+    "feature": "",
+    "subscription_tier": "View performance profiles",
+    "comparison_tiers": {
+      "free": "View all performance profiles",
+      "teamDesigner": "TeamOperator, Enterprise",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Alert Management",
+    "feature": "",
+    "subscription_tier": "Notification Suppression",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Alert Management",
+    "feature": "",
+    "subscription_tier": "Notification Correlation",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Policies",
+    "feature": "",
+    "subscription_tier": "Versioned",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Team",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Audit Trail",
+    "feature": "",
+    "subscription_tier": "Log of all actions invoked by users",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "RBAC Violations",
+    "feature": "",
+    "subscription_tier": "Notification of attempts to invoke unauthorized actions",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Open Policy Agent integration",
+    "feature": "",
+    "subscription_tier": "Admission control for specific workloads on the mesh",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Open Policy Agent integration",
+    "feature": "",
+    "subscription_tier": "Service request authorization with JWT",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Policy",
+    "category": "",
+    "function": "Open Policy Agent integration",
+    "feature": "",
+    "subscription_tier": "Performance Budget support in Patterns",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Overview",
+    "feature": "",
+    "subscription_tier": "View Overview",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Lifecycle Management",
-    "category": "Mesh Federation",
+    "theme": "Security Management",
+    "category": "",
+    "function": "Credentials",
+    "feature": "",
+    "subscription_tier": "View Credentials",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Credentials",
+    "feature": "",
+    "subscription_tier": "Create Credential",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Credentials",
+    "feature": "",
+    "subscription_tier": "Edit Credential",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Credentials",
+    "feature": "",
+    "subscription_tier": "Delete Credential",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Sessions",
+    "feature": "",
+    "subscription_tier": "View Sessions",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Security Management",
+    "category": "",
+    "function": "Sessions",
+    "feature": "",
+    "subscription_tier": "Logout from a Session",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Manage cloud native infrastructure life cycle",
+    "comparison_tiers": {
+      "free": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Manage cloud native infrastructure configuration",
+    "comparison_tiers": {
+      "free": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Apply cloud native infrastructure configuration",
+    "comparison_tiers": {
+      "free": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Validate cloud native infrastructure configuration",
+    "comparison_tiers": {
+      "free": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
+      "teamDesigner": "TeamDesigner",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Apply custom cloud native configuration",
+    "comparison_tiers": {
+      "free": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Deploy cloud native infrastructure",
+    "comparison_tiers": {
+      "free": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "Undeploy cloud native infrastructure",
+    "comparison_tiers": {
+      "free": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Infrastructure Management",
+    "category": "",
+    "function": "Cloud native infrastructure lifecycle",
+    "feature": "",
+    "subscription_tier": "View cloud native infrastructure",
+    "comparison_tiers": {
+      "free": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
+      "teamDesigner": "TeamOperator",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "View Workspace",
+    "comparison_tiers": {
+      "free": "See all workspaces within an organization",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Delete Workspace",
+    "comparison_tiers": {
+      "free": "Dissolve workspace and all team and environment memberships. Leave associated resources intact",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Edit Workspace",
+    "comparison_tiers": {
+      "free": "Edit workspace and it's team and environment membership",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Create Workspace",
+    "comparison_tiers": {
+      "free": "Create new workspace",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Assign team to workspace",
+    "comparison_tiers": {
+      "free": "Add new team to workspace",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Remove team from workspace",
+    "comparison_tiers": {
+      "free": "Remove team from workspace",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Assign environment to workspace",
+    "comparison_tiers": {
+      "free": "Add new environment to workspace",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Remove environment from workspace",
+    "comparison_tiers": {
+      "free": "Remove environment from workspace",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Assign Designs to Workspaces",
+    "comparison_tiers": {
+      "free": "Assign designs to workspaces",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Remove Designs from Workspaces",
+    "comparison_tiers": {
+      "free": "Remove designs from workspaces",
+      "teamDesigner": "Free",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Workspace",
+    "feature": "",
+    "subscription_tier": "Connect Google Account to Workspace",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "Enterprise",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "x"
+  },
+  {
+    "theme": "Workspace Management",
+    "category": "",
     "function": "Environments",
     "feature": "",
-    "subscription_tier": "TeamOperator",
+    "subscription_tier": "View Environment",
     "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "View Settings",
-    "feature": "View settings in Meshery",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "See all environments within an workspace.",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "Connect adapter",
-    "feature": "Configure and connect to Meshery adapters",
-    "subscription_tier": "Free",
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Create Environment",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Create a new environment",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "Connect Metrics",
-    "feature": "Configure and connect to metrics like Grafana and Promethues",
-    "subscription_tier": "Free",
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Delete Environment",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "View Metrics",
-    "feature": "View already configured metrics",
-    "subscription_tier": "Free",
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Edit Environment",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Edit environment and it connection membership",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/cloud/catalog/metrics/"
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "View Registry",
-    "feature": "Explore entities within capabilities registry",
-    "subscription_tier": "Free",
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Assign connections to environment",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Add new connections to environments",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
-    "theme": "Meshery System",
-    "category": "Settings",
-    "function": "Reset Database",
-    "feature": "Reset Meshery database",
-    "subscription_tier": "Free",
+    "theme": "Workspace Management",
+    "category": "",
+    "function": "Environments",
+    "feature": "",
+    "subscription_tier": "Remove connections from environments",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "",
+      "free": "Remove connections from environment,",
+      "teamDesigner": "Enterprise",
       "teamOperator": "",
       "enterprise": ""
     },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Drag-n-drop pattern (merge with existing nodes on canvas)",
-    "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to merge with exisitng nodes on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Load design pattern (displace current nodes on canvas)",
-    "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to drag and drop a design onto the canvas to displace the exisitng nodes on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Edit Component confuguration (RJSF Tooltips)",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure a component currently present on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Configure fieldrefs",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Delete components",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to delete a component from canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Clone components",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Copy components",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to clone a component, along with it's configuration, on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Lock components",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to lock a component's state present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Add components",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to copy a component present on canvas. The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to cofigure/edit/update a design by adding new components to the canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Configure component styles",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to configure the style of a component.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Components",
-    "function": "Reset component styles",
-    "feature": "In Meshery, a Component is a fundamental building block used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. This permission grants the user the ability to reset a component to it's initial style.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Delete shapes",
-    "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Delete shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Clone shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape  on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Copy shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a shape on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Lock shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a shape on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Add shapes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new shapes on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Configure shape styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of shapes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Shapes",
-    "function": "Reset shape styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of shapes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Delete textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a textbox from canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Clone textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Copy textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a textbox on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Lock textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a textbox on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Add textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new textboxes on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Configure textbox styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of textboxes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Textboxes",
-    "function": "Reset textbox styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of textboxes present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Delete sections",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a section from canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Clone sections",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Copy sections",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to clone a section on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Lock sections",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to lock a section on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Add sections",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add new sections on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Configure section styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to configure the styles of sections present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Sections",
-    "function": "Reset section styles",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to reset the styles of sections present on canvas.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Add text to textboxes",
-    "feature": "Kanvas Designer allows users to draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to add text to the textboxes currently on canvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Create dynamic fieldrefs",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Configure edge handles",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Delete edge handles",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Use heirarchical relationships",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/concepts/relationships/#2-hierarchical-relationships"
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Use inventory relationships",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Change design layout",
-    "feature": "Like a Google Doc, Designs are a user's primary tool for collaborative authorship of their infrastructure and services. A Design describes all the resources and their properties that users wants for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to change the layout of the components in the design.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Use Pencil",
-    "feature": "Pencil is mouse/tool mode available in Kanvas that allows users to draw freehand shapes. This permission grants user the ability to use the pencil mode in Kanvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Use Pen",
-    "feature": "Pen is a mouse/tool mode available in Kanvas that allows users to draw edges from one component to another. This permission grants user the ability to use the pencil mode in Kanvas.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Meshery Model",
-    "function": "Models",
-    "feature": "Generator for GCP via K8s CRDs",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Meshery Model",
-    "function": "Models",
-    "feature": "Generator for AWS via K8s CRDs",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Create blank design in Kanvas",
-    "feature": "The canvas is where the design and all it's components are displayed and configured. This permission grants the user the ability to remove all current entities from the canvas and create a new one to start from scratch",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Patterns",
-    "function": "Save design in Kanvas",
-    "feature": "Like a Google Doc, Designs are your primary tool for collaborative authorship of your infrastructure and services. A Design describes all the resources and their properties that you want for a single deployment based on Meshery’s declarative syntax. This permission grants the user the ability to save a design (while logged in)",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "View comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to view comments in a design on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Resolve a comment",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to resolve a comment thread in a design on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Delete comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to delete a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Clone comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to clone a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Copy comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to copy a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Lock comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to lock a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Add comments",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to add a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Configure comment styles",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to configure the styles of a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Design Review",
-    "function": "Reset comment styles",
-    "feature": "Kanvas’s Designer enables users to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. This permission grants the user the ability to reset the styles of a comment on canvas.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "View Views",
-    "feature": "See all views withing a workspace",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Create View",
-    "feature": "Create a new view",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Delete View",
-    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view"
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Edit View",
-    "feature": "Edit environment and it connection membership",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Assign Views to Workspace",
-    "feature": "Add new views to workspace",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Unassign Views from Workspace",
-    "feature": "Remove views from workspace",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Export views",
-    "feature": "Export views to JSON format",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view"
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "View view component details",
-    "feature": "View detailed information about a view and it's comopnent",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Open view",
-    "feature": "Open a pre-existing view",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Save Views",
-    "feature": "Saved view",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Share Views",
-    "feature": "Share Views",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view"
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Clone Views",
-    "feature": "Clone Views",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Stream container logs",
-    "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "View Interactive Terminal",
-    "feature": "View Interactive Terminal",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "View Component Details",
-    "feature": "View managed infrastructure resources details in Kanvas Operator",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "View Observability Metrics",
-    "feature": "View real-time resource metrics in Kanvas Operator",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Perform conformance test",
-    "feature": "Perform a conformance test in Kanvas Operator",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Stream container logs",
-    "feature": "Stream container logs in Kanvas Operator",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Perform performance test in visualizer",
-    "feature": "Perform performance test in Kanvas Operator",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Kanvas",
-    "category": "Operator",
-    "function": "Select performance profile in visualizer",
-    "feature": "Select a performance profile to run tests using",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance Profiles",
-    "function": "Persistence of test results",
-    "feature": "Baseline and track your service mesh performance from release to release.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Load Generation",
-    "function": "Load Generator Interface: Common interface used as an extension point for supporting different types of load generators",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Load Generation",
-    "function": "Load Generation",
-    "feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Load Generation",
-    "function": "Distributed Load Generator",
-    "feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Auto Tuning",
-    "function": "Adaptive load control: optimize RPS",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Auto Tuning",
-    "function": "Adaptive load control: optimize Retries",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Scheduling",
-    "function": "Calendar Integration",
-    "feature": "Schedule tests from your calendar",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "MeshMark",
-    "function": "Listen and learn average request response time.",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "Add performace profile",
-    "feature": "Add a new performace profile",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "Run test",
-    "feature": "Run a test on performance profile",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "View Results",
-    "feature": "View results of performance tests",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "Edit performance test",
-    "feature": "Edit performance test",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "Delete performance test",
-    "feature": "Delete performance test",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Performance Management",
-    "category": "Performance",
-    "function": "View performance profiles",
-    "feature": "View all performance profiles",
-    "subscription_tier": "TeamOperator, Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Alert Management",
-    "function": "Notification Suppression",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Alert Management",
-    "function": "Notification Correlation",
-    "feature": "",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Policies",
-    "function": "Versioned",
-    "feature": "",
-    "subscription_tier": "Team",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Audit Trail",
-    "function": "Log of all actions invoked by users",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "RBAC Violations",
-    "function": "Notification of attempts to invoke unauthorized actions",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Open Policy Agent integration",
-    "function": "Admission control for specific workloads on the mesh",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Open Policy Agent integration",
-    "function": "Service request authorization with JWT",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Policy",
-    "category": "Open Policy Agent integration",
-    "function": "Performance Budget support in Patterns",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Overview",
-    "function": "View Overview",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Credentials",
-    "function": "View Credentials",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Credentials",
-    "function": "Create Credential",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Credentials",
-    "function": "Edit Credential",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Credentials",
-    "function": "Delete Credential",
-    "feature": "",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Sessions",
-    "function": "View Sessions",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Sessions",
-    "function": "Logout from a Session",
-    "feature": "",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Tokens",
-    "function": "View Tokens",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Tokens",
-    "function": "Download Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Tokens",
-    "function": "Delete Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Tokens",
-    "function": "Create Token",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keys",
-    "function": "View Keys",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keys",
-    "function": "Edit Key",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keys",
-    "function": "Delete Key",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keychains",
-    "function": "View Keychains",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keychains",
-    "function": "Create Keychain",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keychains",
-    "function": "Edit Keychain",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Security Management",
-    "category": "Keychains",
-    "function": "Delete Keychain",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Manage cloud native infrastructure life cycle",
-    "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Manage cloud native infrastructure configuration",
-    "feature": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Apply cloud native infrastructure configuration",
-    "feature": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Validate cloud native infrastructure configuration",
-    "feature": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Apply custom cloud native configuration",
-    "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Deploy cloud native infrastructure",
-    "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "Undeploy cloud native infrastructure",
-    "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Infrastructure Management",
-    "category": "Cloud native infrastructure lifecycle",
-    "function": "View cloud native infrastructure",
-    "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "View Workspace",
-    "feature": "See all workspaces within an organization",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Delete Workspace",
-    "feature": "Dissolve workspace and all team and environment memberships. Leave associated resources intact",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Edit Workspace",
-    "feature": "Edit workspace and it's team and environment membership",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Create Workspace",
-    "feature": "Create new workspace",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Assign team to workspace",
-    "feature": "Add new team to workspace",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Remove team from workspace",
-    "feature": "Remove team from workspace",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Assign environment to workspace",
-    "feature": "Add new environment to workspace",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Remove environment from workspace",
-    "feature": "Remove environment from workspace",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Assign Designs to Workspaces",
-    "feature": "Assign designs to workspaces",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Remove Designs from Workspaces",
-    "feature": "Remove designs from workspaces",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Connect Google Account to Workspace",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Workspace",
-    "function": "Connect Github Account to Workspace",
-    "feature": "",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Connections",
-    "function": "View Connections",
-    "feature": "View all connections within an environment",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "View Environment",
-    "feature": "See all environments within an workspace.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "Create Environment",
-    "feature": "Create a new environment",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "Delete Environment",
-    "feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "Edit Environment",
-    "feature": "Edit environment and it connection membership",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "Assign connections to environment",
-    "feature": "Add new connections to environments",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "category": "Environments",
-    "function": "Remove connections from environments",
-    "feature": "Remove connections from environment,",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   },
   {
     "theme": "Catalog Management",
-    "category": "Catalog",
-    "function": "View Catalog",
-    "feature": "View all items in catalog",
-    "subscription_tier": "Free",
+    "category": "",
+    "function": "Catalog",
+    "feature": "",
+    "subscription_tier": "View Catalog",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
+      "free": "View all items in catalog",
+      "teamDesigner": "Free",
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Incident Management",
-    "category": "Audit Trail",
-    "function": "Audit Trail",
-    "feature": "Detailed accounting of user activity. Historical record or each action taken.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
+    "pricing_page": "x",
+    "docs": "x"
   }
 ]
