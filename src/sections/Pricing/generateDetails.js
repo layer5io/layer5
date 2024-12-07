@@ -7,9 +7,12 @@ import Lifecycle from "./icons/lifecycle.svg";
 import Kanvas from "./icons/kanvas-icon.svg";
 import Perforamance from "./icons/perf.svg";
 import Collab from "./icons/collaboration.svg";
+import Spaces from "./icons/spaces.svg";
 import Identity from "./icons/identity.svg";
 import Notification from "./icons/notification.svg";
 import Support from "./icons/support.svg";
+import Catalog from "./icons/catalog.svg";
+import Security from "./icons/security.svg";
 import { ReactComponent as Docs } from "../../assets/images/pricing/docs.svg";
 
 function generateDetails(data) {
@@ -20,8 +23,11 @@ function generateDetails(data) {
     { id: 3, name: "Performance Management", icon: Perforamance },
     { id: 4, name: "Collaboration", icon: Collab },
     { id: 5, name: "Identity & Access Management", icon: Identity },
-    { id: 6, name: "Incident Management", icon: Notification },
-    { id: 7, name: "Support and Deployment", icon: Support },
+    { id: 6, name: "Spaces", icon: Spaces },
+    // { id: 6, name: "Incident Management", icon: Notification },
+    { id: 7, name: "Catalog", icon: Catalog },
+    { id: 8, name: "Security", icon: Security },
+    { id: 9, name: "Support and Deployment", icon: Support },
   ];
 
   return categories.map(category => {
