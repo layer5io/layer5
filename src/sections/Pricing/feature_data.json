@@ -154,7 +154,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "7",
+    "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "1",
     "function": "Import your IaC",
@@ -392,6 +392,23 @@
   },
   {
     "theme": "",
+    "categoryOrder": "8",
+    "category": "Security",
+    "functionOrder": "",
+    "function": "Keys",
+    "feature": "Audit history of when a key is used and who used the key.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
     "categoryOrder": "2",
     "category": "Kanvas",
     "functionOrder": "1",
@@ -578,9 +595,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "6",
-    "category": "Users",
+    "category": "Identity & Access Management",
     "functionOrder": "6",
     "function": "Public Profiles for Users",
     "feature": "See public user profile details, public activities and public resources.",
@@ -595,9 +612,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "6",
-    "category": "Users",
+    "category": "Identity & Access Management",
     "functionOrder": "6",
     "function": "Self-service user accounts",
     "feature": "New user sign-up verification. Self-service password recovery.",
@@ -615,15 +632,15 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Topology visualization",
     "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": ""
@@ -632,7 +649,7 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "Design dry-run",
     "feature": "Test and verify configuration changes in a separate environment.",
     "subscription_tier": "TeamOperator",
@@ -649,7 +666,7 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "Kubernetes Clusters",
     "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
     "subscription_tier": "TeamOperator",
@@ -666,7 +683,7 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "AWS and GCP",
     "feature": "Ongoing synchronization of AWS and GCP services configuration, workloads and changes across any number of accounts.",
     "subscription_tier": "TeamOperator",
@@ -683,7 +700,7 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Robust CLI",
     "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
     "subscription_tier": "Free",
@@ -697,7 +714,7 @@
     "docs": "https://docs.meshery.io/reference/mesheryctl"
   },
   {
-    "theme": "Performance Management",
+    "theme": "",
     "categoryOrder": "3",
     "category": "Performance Management",
     "functionOrder": "1",
@@ -707,8 +724,8 @@
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "teamOperator": "x",
+      "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": ""
@@ -717,32 +734,15 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "",
-    "function": "Undo/Redo",
-    "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Whiteboarding",
     "feature": "Ability to freeform draw any shapes, draw edges",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "teamOperator": "x",
+      "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/"
@@ -751,15 +751,15 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Visual Design",
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
+      "teamOperator": "x",
+      "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": ""
@@ -768,9 +768,9 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "Collaborative Design Review",
-    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "feature": "Kanvas’s Designer enables you to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
       "free": "",
@@ -785,7 +785,7 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "GitOps",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "GitOps Snapshots",
     "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
     "subscription_tier": "TeamDesigner",
@@ -802,14 +802,14 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "GitOps",
-    "functionOrder": "",
+    "functionOrder": "4",
     "function": "GitOps Integrations",
     "feature": "Initiate deployment with creation of pull request, ArgoEvents, Flux sync, or webhook.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "x",
@@ -817,9 +817,9 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Web-based Terminal",
     "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
     "subscription_tier": "TeamOperator",
@@ -834,9 +834,9 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Standard Events and Metrics",
     "feature": "Real-time resource metrics.",
     "subscription_tier": "TeamOperator",
@@ -969,9 +969,26 @@
     "docs": ""
   },
   {
-    "theme": "Account Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Profile",
+    "category": "Lifecycle Management",
+    "functionOrder": "",
+    "function": "Greenfield support of existing infrastructure",
+    "feature": "Discover and register existing infrastructure with the Meshery Operator and MeshSync.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Account Management",
     "functionOrder": "",
     "function": "Connect your Github Account",
     "feature": "Link your social sign-in with GitHub to your existing user account.",
@@ -986,9 +1003,9 @@
     "docs": ""
   },
   {
-    "theme": "Account Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Profile",
+    "category": "Account Management",
     "functionOrder": "",
     "function": "Connect your Google Account",
     "feature": "Link your social sign-in with Google to your existing user account.",
@@ -1003,9 +1020,9 @@
     "docs": ""
   },
   {
-    "theme": "Account Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Entitlement",
+    "category": "Account Management",
     "functionOrder": "",
     "function": "Entitlement",
     "feature": "List and see details of active and inactive subscriptions.",
@@ -1020,9 +1037,9 @@
     "docs": ""
   },
   {
-    "theme": "Account Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Entitlement",
+    "category": "Account Management",
     "functionOrder": "",
     "function": "View Plans",
     "feature": "Explore subscription plans and compare their features.",
@@ -1209,23 +1226,6 @@
   {
     "theme": "",
     "categoryOrder": "",
-    "category": "Security",
-    "functionOrder": "",
-    "function": "Keys",
-    "feature": "Audit history of when a key is used and who used the key.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
     "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Connections: Cluster discovery",
@@ -1238,6 +1238,108 @@
       "enterprise": "x"
     },
     "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Environments",
+    "functionOrder": "",
+    "function": "Environments",
+    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Environments",
+    "functionOrder": "2",
+    "function": "Environments",
+    "feature": "Group related resources together, making it easier to navigate and manage complex deployments.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "2",
+    "function": "Assign environments to workspaces",
+    "feature": "Grant workspaces access to environments and their resources.",
+    "subscription_tier": "TeamOperator|Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "4",
+    "function": "Transfer files between workspaces",
+    "feature": "Move designs, views, and models between Shared Workspaces.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "1",
+    "function": "Assign Designs to Workspaces",
+    "feature": "Assign designs to workspaces",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Configuration Management",
+    "functionOrder": "",
+    "function": "Thousands of Components",
+    "feature": "Thousands of fundamental building blocks used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. Clone and lock components as needed.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
     "docs": ""
   },
   {
@@ -1608,74 +1710,6 @@
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "",
-    "function": "Environments",
-    "feature": "Group related resources together, making it easier to navigate and manage complex deployments.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspaces",
-    "functionOrder": "",
-    "function": "Assign environments to workspaces",
-    "feature": "Grant workspaces access to environments and their resources.",
-    "subscription_tier": "TeamOperator|Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspaces",
-    "functionOrder": "",
-    "function": "Transfer files between workspaces",
-    "feature": "Move designs, views, and models between Shared Workspaces.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "Workspace Management",
-    "categoryOrder": "",
-    "category": "Workspaces",
-    "functionOrder": "",
-    "function": "Assign Designs to Workspaces",
-    "feature": "Assign designs to workspaces",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
     },
