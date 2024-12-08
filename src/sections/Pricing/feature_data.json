@@ -1,8 +1,8 @@
 [
   {
-    "theme": "Support and Deployment",
+    "theme": "",
     "categoryOrder": "9",
-    "category": "Extensibility",
+    "category": "Support and Deployment",
     "functionOrder": "1",
     "function": "Extensible Webhooks",
     "feature": "Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.",
@@ -17,9 +17,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
+    "theme": "",
     "categoryOrder": "9",
-    "category": "Extensibility",
+    "category": "Support and Deployment",
     "functionOrder": "2",
     "function": "Enterprise API",
     "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
@@ -34,9 +34,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
+    "theme": "",
     "categoryOrder": "9",
-    "category": "Extensibility",
+    "category": "Support and Deployment",
     "functionOrder": "3",
     "function": "Managed Service Provider",
     "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.",
@@ -51,9 +51,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
-    "categoryOrder": "10",
-    "category": "Support",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "10",
     "function": "Community Support",
     "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
@@ -68,9 +68,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
-    "categoryOrder": "10",
-    "category": "Support",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "10",
     "function": "Standard Support",
     "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
@@ -85,9 +85,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
-    "categoryOrder": "10",
-    "category": "Support",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "10",
     "function": "Premium Support",
     "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
@@ -102,9 +102,9 @@
     "docs": ""
   },
   {
-    "theme": "The weekly Newcomers meeting held every Thursday offers an overview of the community and projects. It’s an ideal place to start: https://layer5.io/community/calendar. Here’s a very quick perspective on the tech involved in the projects - https://layer5.io/community/handbook/repository-overview",
-    "categoryOrder": "10",
-    "category": "Billing",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "8",
     "function": "Invoice Billing",
     "feature": "Pay bills via invoice, rather than using your credit card.",
@@ -119,9 +119,9 @@
     "docs": ""
   },
   {
-    "theme": "Support and Deployment",
-    "categoryOrder": "10",
-    "category": "Deployment",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "9",
     "function": "Self-hosted Deployment",
     "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
@@ -136,9 +136,9 @@
     "docs": "https://docs.layer5.io/cloud/self-hosted/"
   },
   {
-    "theme": "Meshery System",
-    "categoryOrder": "10",
-    "category": "Deployment",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Support and Deployment",
     "functionOrder": "9",
     "function": "Bring your own Database",
     "feature": "Support for Postgresql",
@@ -153,9 +153,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "1",
-    "category": "Designs",
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Import your IaC",
     "feature": "Import a design from Kubernetes Manifest, Helm Chart, Docker Compose or Artifact Hub.",
@@ -170,9 +170,9 @@
     "docs": "https://docs.meshery.io/extensions/importing-a-design"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Premium Import IaC",
     "feature": "Bulk import designs from GitHub",
@@ -187,9 +187,9 @@
     "docs": "https://docs.layer5.io/cloud/getting-started/github-integration/"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Standard Design Export",
     "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub)",
@@ -204,9 +204,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Premium Design Export",
     "feature": "Export a design as a snapshot",
@@ -221,9 +221,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Public Catalog",
     "feature": "A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.",
@@ -238,9 +238,9 @@
     "docs": "https://cloud.layer5.io/catalog"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Filters",
+    "category": "Catalog",
     "functionOrder": "1",
     "function": "Private Catalog",
     "feature": "Privately publish and share reusable design patterns and operational templates within your organization.",
@@ -255,8 +255,8 @@
     "docs": "https://docs.layer5.io/cloud/catalog/"
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
+    "theme": "",
+    "categoryOrder": "7",
     "category": "Catalog",
     "functionOrder": "1",
     "function": "Share Design",
@@ -272,8 +272,8 @@
     "docs": "https://docs.layer5.io/kanvas/designer/share-resource/"
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
+    "theme": "",
+    "categoryOrder": "7",
     "category": "Catalog",
     "functionOrder": "1",
     "function": "Clone Design",
@@ -289,9 +289,9 @@
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/"
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Create new design",
     "feature": "Create new Meshery design",
@@ -306,9 +306,9 @@
     "docs": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design"
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Designs",
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "View Designs",
     "feature": "View all public and published designs of other team members and private of signed-in user",
@@ -323,9 +323,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Filters",
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "View Filters",
     "feature": "View all public and published filters of other team members and private of signed-in user",
@@ -340,9 +340,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
-    "categoryOrder": "",
-    "category": "Catalog Requests",
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Approve Catalog Request",
     "feature": "Change management through a process of curation of content to be published in the catalog.",
@@ -357,9 +357,9 @@
     "docs": ""
   },
   {
-    "theme": "Workflow Management",
-    "categoryOrder": "7",
-    "category": "Audit Trail",
+    "theme": "",
+    "categoryOrder": "8",
+    "category": "Security",
     "functionOrder": "7",
     "function": "Audit Trail",
     "feature": "Detailed accounting of user activity. Historical record or each action taken.",
@@ -374,9 +374,26 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
+    "theme": "",
+    "categoryOrder": "8",
+    "category": "Security",
+    "functionOrder": "",
+    "function": "Permissions: Keychains and Keys",
+    "feature": "15 built-in keychains.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/cloud/security/keychains"
+  },
+  {
+    "theme": "",
     "categoryOrder": "2",
-    "category": "Shapes",
+    "category": "Kanvas",
     "functionOrder": "1",
     "function": "500 Built-in Shapes, Pen and Pencil",
     "feature": "Draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of Kubernetes clusters as they see fit. This permission grants the user the ability to delete a shape from canvas.",
@@ -391,9 +408,9 @@
     "docs": ""
   },
   {
-    "theme": "Kanvas",
+    "theme": "",
     "categoryOrder": "2",
-    "category": "Shapes",
+    "category": "Kanvas",
     "functionOrder": "1",
     "function": "Non-semantic Annotations",
     "feature": "Kanvas Designer allows you to draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
@@ -408,9 +425,9 @@
     "docs": ""
   },
   {
-    "theme": "Workspace Management",
+    "theme": "",
     "categoryOrder": "3",
-    "category": "Workspace",
+    "category": "Workspaces",
     "functionOrder": "3",
     "function": "My Workspace",
     "feature": "My Workspace is your always available, primary space for storing designs, views, and models that you own.",
@@ -425,7 +442,7 @@
     "docs": ""
   },
   {
-    "theme": "Workspace Management",
+    "theme": "",
     "categoryOrder": "3",
     "category": "Workspaces",
     "functionOrder": "3",
@@ -459,9 +476,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "Organization and Team Management",
+    "category": "Identity & Access Management",
     "functionOrder": "3",
     "function": "Resource Access Management",
     "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
@@ -476,9 +493,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "Built-in Roles",
+    "category": "Identity & Access Management",
     "functionOrder": "1",
     "function": "Built-in Roles",
     "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
@@ -493,9 +510,9 @@
     "docs": "https://docs.layer5.io/cloud/security/roles/"
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "IdP Integration",
+    "category": "Identity & Access Management",
     "functionOrder": "2",
     "function": "Identity through OAuth",
     "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
@@ -510,9 +527,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "User-defined Roles",
+    "category": "Identity & Access Management",
     "functionOrder": "4",
     "function": "User-defined Roles",
     "feature": "Customizable roles for specific permission assignments",
@@ -527,9 +544,9 @@
     "docs": "https://docs.layer5.io/cloud/security/roles/"
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "IdP Integration",
+    "category": "Identity & Access Management",
     "functionOrder": "6",
     "function": "User Provisioning through SCIM",
     "feature": "Use your existing accounts and centrally manage access.",
@@ -544,9 +561,9 @@
     "docs": ""
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
     "categoryOrder": "5",
-    "category": "IdP Integration",
+    "category": "Identity & Access Management",
     "functionOrder": "5",
     "function": "Identity through OIDC",
     "feature": "Own and control the user accounts of your organization members through your identity provider (IdP).",
@@ -595,8 +612,8 @@
     "docs": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile"
   },
   {
-    "theme": "Lifecycle Management",
-    "categoryOrder": "",
+    "theme": "",
+    "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Topology visualization",
@@ -612,9 +629,9 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
-    "categoryOrder": "",
-    "category": "Dry-run",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Design dry-run",
     "feature": "Test and verify configuration changes in a separate environment.",
@@ -629,9 +646,9 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
-    "categoryOrder": "",
-    "category": "Multiple Kubernetes Clusters",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Kubernetes Clusters",
     "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
@@ -646,9 +663,9 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
-    "categoryOrder": "",
-    "category": "Multiple Kubernetes Clusters",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "AWS and GCP",
     "feature": "Ongoing synchronization of AWS and GCP services configuration, workloads and changes across any number of accounts.",
@@ -663,9 +680,9 @@
     "docs": ""
   },
   {
-    "theme": "Meshery System",
-    "categoryOrder": "",
-    "category": "mesheryctl",
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Robust CLI",
     "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
@@ -681,7 +698,7 @@
   },
   {
     "theme": "Performance Management",
-    "categoryOrder": "4",
+    "categoryOrder": "3",
     "category": "Performance Management",
     "functionOrder": "1",
     "function": "Service Performance",
@@ -697,9 +714,9 @@
     "docs": ""
   },
   {
-    "theme": "Configuration Management",
-    "categoryOrder": "",
-    "category": "Design Patterns",
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
     "functionOrder": "",
     "function": "Undo/Redo",
     "feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
@@ -714,9 +731,9 @@
     "docs": ""
   },
   {
-    "theme": "Configuration Management",
-    "categoryOrder": "",
-    "category": "Design Patterns",
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
     "functionOrder": "",
     "function": "Whiteboarding",
     "feature": "Ability to freeform draw any shapes, draw edges",
@@ -731,9 +748,9 @@
     "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/"
   },
   {
-    "theme": "Configuration Management",
-    "categoryOrder": "",
-    "category": "Visual Design",
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
     "functionOrder": "",
     "function": "Visual Design",
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
@@ -749,7 +766,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "",
     "function": "Collaborative Design Review",
@@ -765,9 +782,9 @@
     "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
-    "theme": "GitOps",
-    "categoryOrder": "",
-    "category": "Review",
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "GitOps",
     "functionOrder": "",
     "function": "GitOps Snapshots",
     "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
@@ -782,9 +799,9 @@
     "docs": "https://docs.layer5.io/cloud/tutorials/gitops-snapshots/"
   },
   {
-    "theme": "GitOps",
-    "categoryOrder": "",
-    "category": "Pipeline",
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "GitOps",
     "functionOrder": "",
     "function": "GitOps Integrations",
     "feature": "Initiate deployment with creation of pull request, ArgoEvents, Flux sync, or webhook.",
@@ -799,7 +816,7 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
+    "theme": "",
     "categoryOrder": "",
     "category": "Lifecycle Management",
     "functionOrder": "",
@@ -816,7 +833,7 @@
     "docs": "https://docs.layer5.io/kanvas/operator/"
   },
   {
-    "theme": "Lifecycle Management",
+    "theme": "",
     "categoryOrder": "",
     "category": "Lifecycle Management",
     "functionOrder": "",
@@ -834,9 +851,9 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "3",
     "function": "Manage access to views",
     "feature": "Create and collaborate in online operational topologies in real-time.",
     "subscription_tier": "TeamOperator",
@@ -851,9 +868,26 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "4",
     "category": "Collaboration",
-    "functionOrder": "",
+    "functionOrder": "1",
+    "function": "Create and collaborate in online designs in real-time.",
+    "feature": "Create and collaborate in online designs in real-time.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "2",
     "function": "Team Chat",
     "feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
     "subscription_tier": "Enterprise",
@@ -868,7 +902,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
     "function": "Design Reviews",
@@ -885,7 +919,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
     "function": "Collaborators for public designs",
@@ -902,7 +936,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
     "function": "Collaborators for public views",
@@ -919,7 +953,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
     "function": "Collaborators for private designs and views",
@@ -1003,9 +1037,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
     "feature": "To your local filesystem",
@@ -1020,9 +1054,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a latest version of design in Meshery Design (YAML format)",
@@ -1037,9 +1071,9 @@
     "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a latest version of design in Meshery Design (OCI format)",
@@ -1054,9 +1088,9 @@
     "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
     "feature": "Export a design at a specific version",
@@ -1071,9 +1105,9 @@
     "docs": ""
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "3",
     "function": "Publish Design",
     "feature": "Publish a design",
@@ -1088,9 +1122,9 @@
     "docs": "https://docs.meshery.io/extensions/publishing-a-design"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "4",
     "function": "Orchestration: Pre-provisioning",
     "feature": "Validate a design",
@@ -1105,9 +1139,9 @@
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "4",
     "function": "Orchestration: Provisioning",
     "feature": "Provision and deprovision cloud native infrastructure using your designs.",
@@ -1122,9 +1156,9 @@
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/"
   },
   {
-    "theme": "Catalog Management",
+    "theme": "",
     "categoryOrder": "1",
-    "category": "Designs",
+    "category": "Catalog",
     "functionOrder": "4",
     "function": "Orchestration: Deprovisioning",
     "feature": "Retract all resources used in a Meshery design from the cluster",
@@ -1139,7 +1173,24 @@
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/"
   },
   {
-    "theme": "Identity & Access Management",
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Identity & Access Management",
+    "functionOrder": "",
+    "function": "Organizations",
+    "feature": "Establish new organization for organizing teams, users, and resource access.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/cloud/identity/organizations/"
+  },
+  {
+    "theme": "",
     "categoryOrder": "5",
     "category": "Roles",
     "functionOrder": "",
@@ -1156,29 +1207,29 @@
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cluster discovery",
+    "category": "Security",
     "functionOrder": "",
-    "function": "Cluster discovery",
-    "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
-    "subscription_tier": "TeamOperator",
+    "function": "Keys",
+    "feature": "Audit history of when a key is used and who used the key.",
+    "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
-      "teamOperator": "x",
+      "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "",
     "docs": ""
   },
   {
-    "theme": "Lifecycle Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Mesh Federation",
+    "category": "Lifecycle Management",
     "functionOrder": "",
-    "function": "Environments",
-    "feature": "",
+    "function": "Connections: Cluster discovery",
+    "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -1377,9 +1428,9 @@
     "docs": ""
   },
   {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Credentials",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Security",
     "functionOrder": "",
     "function": "Credentials and Connections",
     "feature": "Assign connections to environment",
@@ -1394,9 +1445,9 @@
     "docs": ""
   },
   {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Tokens",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Security",
     "functionOrder": "",
     "function": "API Tokens, Sessions",
     "feature": "Expiring and non-expiring API tokens. Visibility into active and expired user sessions.",
@@ -1411,9 +1462,9 @@
     "docs": ""
   },
   {
-    "theme": "Security Management",
-    "categoryOrder": "",
-    "category": "Keychains",
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Security",
     "functionOrder": "",
     "function": "Keys, Keychain, and Roles",
     "feature": "",
@@ -1428,9 +1479,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Manage cloud native infrastructure life cycle",
     "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
@@ -1445,9 +1496,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Manage cloud native infrastructure configuration",
     "feature": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
@@ -1462,9 +1513,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Apply cloud native infrastructure configuration",
     "feature": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
@@ -1479,9 +1530,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Validate cloud native infrastructure configuration",
     "feature": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
@@ -1496,9 +1547,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Apply custom cloud native configuration",
     "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
@@ -1513,9 +1564,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Deploy cloud native infrastructure",
     "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
@@ -1530,9 +1581,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "Undeploy cloud native infrastructure",
     "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
@@ -1547,9 +1598,9 @@
     "docs": ""
   },
   {
-    "theme": "Infrastructure Management",
+    "theme": "",
     "categoryOrder": "",
-    "category": "Cloud native infrastructure lifecycle",
+    "category": "Infrastructure Management",
     "functionOrder": "",
     "function": "View cloud native infrastructure",
     "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
@@ -1583,7 +1634,7 @@
   {
     "theme": "Workspace Management",
     "categoryOrder": "",
-    "category": "Workspace",
+    "category": "Workspaces",
     "functionOrder": "",
     "function": "Assign environments to workspaces",
     "feature": "Grant workspaces access to environments and their resources.",
@@ -1600,7 +1651,7 @@
   {
     "theme": "Workspace Management",
     "categoryOrder": "",
-    "category": "Workspace",
+    "category": "Workspaces",
     "functionOrder": "",
     "function": "Transfer files between workspaces",
     "feature": "Move designs, views, and models between Shared Workspaces.",
@@ -1617,7 +1668,7 @@
   {
     "theme": "Workspace Management",
     "categoryOrder": "",
-    "category": "Workspace",
+    "category": "Workspaces",
     "functionOrder": "",
     "function": "Assign Designs to Workspaces",
     "feature": "Assign designs to workspaces",
