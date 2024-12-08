@@ -34,7 +34,7 @@ function generateDetails(data) {
     const features = data
       .filter(
         item =>
-          item.theme === category.name)
+          item.category === category.name)
       .map(item => {
         const featureName = item.function;
         const description = item.feature;
