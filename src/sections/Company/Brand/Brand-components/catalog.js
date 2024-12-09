@@ -123,7 +123,9 @@ const Catalog = () => {
               white when using project colors as the background.
             </p>
           </Col>
-          <Row className="color-code-wrapper">
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox
               name="Caribbean Green"
