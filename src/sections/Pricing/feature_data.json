@@ -477,7 +477,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "4",
+    "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "2",
     "function": "350 Built-in Models",
@@ -491,6 +491,74 @@
     },
     "pricing_page": "x",
     "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "3",
+    "function": "400 Cloud Native Patterns",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://cloud.layer5.io/catalog"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "1",
+    "function": "Whiteboarding",
+    "feature": "Ability to freeform draw any shapes, draw edges",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "1",
+    "function": "Visual Design",
+    "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "2",
+    "function": "Collaborative Design Review",
+    "feature": "Kanvas’s Designer enables you to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
     "theme": "",
@@ -729,57 +797,6 @@
     },
     "pricing_page": "x",
     "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "1",
-    "function": "Whiteboarding",
-    "feature": "Ability to freeform draw any shapes, draw edges",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "1",
-    "function": "Visual Design",
-    "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "2",
-    "function": "Collaborative Design Review",
-    "feature": "Kanvas’s Designer enables you to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
     "theme": "",
@@ -1055,7 +1072,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
@@ -1072,7 +1089,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
@@ -1089,7 +1106,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",
@@ -1106,7 +1123,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "",
     "function": "Export Design",

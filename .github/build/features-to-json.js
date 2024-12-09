@@ -3,7 +3,7 @@
 const fs = require("fs").promises; // Use fs.promises
 const csv = require("csvtojson");
 const [major, minor, patch] = process.versions.node.split(".").map(Number);
-console.log(`Node.js version: ${major}.${minor}.${patch}`);
+console.log(`Using Node.js version: ${major}.${minor}.${patch}`);
 
 const headers = [
   "Theme",
@@ -25,6 +25,9 @@ const headers = [
 async function processCSV() {
   try {
     const csvFilePath = process.argv[2] || ".github/build/spreadsheet.csv";
+      if (process.argv[2]) {
+        console.log("Downloading features to: " + process.argv[2]);
+      }
     const rows = await csv({
       noheader: true,
       headers: headers,
@@ -69,8 +72,11 @@ async function processCSV() {
     
     // Read existing JSON data
     // const featuresFile = process.env.FEATURES_FILE;
-    console.log("process.argv[3]: " + process.argv[3]);
+  
     const featuresFile = process.argv[3] || "src/sections/Pricing/feature_data.json";
+    if (process.argv[3]) {
+      console.log("Converting CSV to JSON in: " + process.argv[3]);
+    }
     // const featuresFile = "src/sections/Pricing/feature_data.json";
 
 
