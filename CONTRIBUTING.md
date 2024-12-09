@@ -5,6 +5,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 - [Before You Get Started](#before-you-get-started)
 - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
 - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
+- [Contributing to Layer5's Sistent documentation](#contributing-to-layer5s-sistent-documentation)
 - [How to Contribute](#how-to-contribute)
   - [Prerequisites](#prerequisites)
   - [Set up your Local Development Environment](#set-up-your-local-development-environment)
@@ -128,6 +129,21 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/news-template/0000-00-00-news-title).
 3. Follow the instructions included in the news template and name the new file after the title of the news article.
 4. Entries will be listed in chronological order automatically.
+
+## Contributing to Layer5's Sistent documentation
+
+If you'd like to contribute a post to layer5.io/projects/sistent/components. start by selecting the area/sistent label in the [#GitHub issue tracker](https://github.com/layer5io/layer5/labels/project%2Fsistent). We've streamlined the process by introducing a dynamic page creation workflow, simplifying the addition of new pages and ensuring a consistent structure for all contributions.
+
+### Adding Sistent Component
+1. All content is managed in a centralized file:
+   ```
+   src/sections/Projects/Sistent/components/content.js
+   ```
+2. To add a new page, simply update this `content.js` file with the necessary details.
+3. The system will dynamically generate pages based on this content and handle routing automatically.
+
+### Example
+Refer to the **Button component** in the Sistent Library for an example of how to structure the content.
 
 # Common Types of Site Contributions
 
