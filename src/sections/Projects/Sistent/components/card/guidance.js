@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { SistentThemeProvider, Card, CardActions, CardContent, CardHeader, CardMedia , Typography, Box, Button } from "@layer5/sistent";
+import { SistentThemeProvider, Card, CardActions, CardContent, CardMedia , Typography, Button } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import MesheryLogo from "../../../../../assets/images/meshery/meshery-logo-light-text-side.webp";
 import KanvasLogo from "../../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png";
