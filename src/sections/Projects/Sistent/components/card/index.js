@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router";
 import MesheryLogo from "../../../../../assets/images/meshery/meshery-logo-light-text-side.webp";
 import KanvasLogo from "../../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png";
 
-import { SistentThemeProvider, Card, CardActions, CardContent, CardMedia , Typography, Box, Button } from "@layer5/sistent";
+import { SistentThemeProvider, Card, CardActions, CardContent, CardMedia , Typography, Button } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
