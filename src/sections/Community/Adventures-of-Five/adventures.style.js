@@ -49,6 +49,7 @@ export const AdventuresWrapper = styled.div`
         margin-top: -36rem;
         margin-left: 20rem;
       }
+        
       display: flex;
     }
 
