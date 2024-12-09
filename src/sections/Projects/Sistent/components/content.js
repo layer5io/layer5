@@ -95,6 +95,14 @@ const componentsData = [
     url: "/projects/sistent/components/backdrop",
     src: "/backdrop",
   },
+  {
+    id: 13,
+    name: "Card",
+    description:
+        "Cards are surfaces that showcase content and actions centered around a specific topic.",
+    url: "/projects/sistent/components/card",
+    src: "/card",
+  },
 ];
 
 module.exports = { componentsData };
