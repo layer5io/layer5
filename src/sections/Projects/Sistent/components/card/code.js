@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Card, CardActions, CardContent, CardHeader, CardMedia , Typography, Box, Button } from "@layer5/sistent";
+import { SistentThemeProvider, Card, CardActions, CardContent, CardMedia , Typography, Button } from "@layer5/sistent";
 import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 

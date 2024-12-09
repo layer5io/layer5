@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router";
 import MesheryLogo from "../../../../../assets/images/meshery/meshery-logo-light-text-side.webp";
 import KanvasLogo from "../../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png";
 
-import { SistentThemeProvider, Card, CardActions, CardContent, CardHeader, CardMedia , Typography, Box, Button } from "@layer5/sistent";
+import { SistentThemeProvider, Card, CardActions, CardContent, CardMedia , Typography, Box, Button } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
@@ -13,15 +13,6 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 const SistentCard = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
-
-  const bull = (
-    <Box
-      component="span"
-      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-    >
-      •
-    </Box>
-  );
 
   const cardOutlined = (
     <React.Fragment>
