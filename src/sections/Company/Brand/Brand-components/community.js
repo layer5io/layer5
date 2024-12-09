@@ -80,7 +80,7 @@ const CommunityBrand = () => {
           </p>
         </Col>
         <Row style={{
-            flexWrap: "wrap"
+          flexWrap: "wrap"
           }} className="color-code-wrapper">
           <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
           <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
