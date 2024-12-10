@@ -23,7 +23,7 @@ function generateDetails(data) {
     { id: 3, name: "Performance Management", icon: Perforamance },
     { id: 4, name: "Collaboration", icon: Collab },
     { id: 5, name: "Identity & Access Management", icon: Identity },
-    { id: 6, name: "Spaces", icon: Spaces },
+    { id: 6, name: "Workspaces", icon: Spaces },
     // { id: 6, name: "Incident Management", icon: Notification },
     { id: 7, name: "Catalog", icon: Catalog },
     { id: 8, name: "Security", icon: Security },
