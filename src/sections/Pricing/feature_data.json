@@ -225,6 +225,23 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "1",
+    "function": "Brownfield discovery of existing infrastructure",
+    "feature": "Discover and register existing infrastructure with the Meshery Operator and MeshSync.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
     "function": "Topology visualization",
     "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
     "subscription_tier": "Free",
@@ -640,7 +657,7 @@
       "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/kanvas/designer/comments/"
@@ -1188,23 +1205,6 @@
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/cloud/self-hosted/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Lifecycle Management",
-    "functionOrder": "",
-    "function": "Greenfield support of existing infrastructure",
-    "feature": "Discover and register existing infrastructure with the Meshery Operator and MeshSync.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
   },
   {
     "theme": "",
