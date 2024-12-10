@@ -46,6 +46,10 @@ const CareerPageWrapper = styled.div`
         }
     }
 
+    .job-details-row {
+        flex-wrap: wrap;
+    }
+
     .layer5-logo {
         width: 15rem;
         margin: auto;
