@@ -260,6 +260,115 @@ const CommunitySectionWrapper = styled.div`
         }
     }
 
+    .recognition-program {
+    margin-top: 5rem;
+
+    .recognition-content {
+      display: grid;
+      grid-template-columns: minmax(300px, 40%) 1fr;
+      min-height: 500px;
+      position: relative;
+      gap: 2rem;
+
+      .badges-section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .badge-stack {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          max-width: 400px;
+
+          .badge-item {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+            img {
+              width: 140%;
+              height: 140%;
+              object-fit: contain;
+              filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            }
+
+            &:nth-child(1) {
+              top: 0;
+              left: 0;
+              z-index: 3;
+            }
+            &:nth-child(2) {
+              top: 90px;
+              left: 90px;
+              z-index: 2;
+            }
+            &:nth-child(3) {
+              top: 180px;
+              left: 180px;
+              z-index: 1;
+            }
+          }
+        }
+      }
+
+      .content {
+        h1.subtitle {
+          margin: 0.5rem auto 0.5rem auto;
+          font-size: 1.75rem;
+          font-weight: 500;
+          color: ${(props) => props.theme.primaryColor};
+        }
+      }
+
+      @media (max-width: 62rem) {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        .content {
+          padding: 1.875rem 1.25rem;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        .badges-section {
+          min-height: 300px;
+          padding: 1.25rem;
+
+          .badge-stack {
+            height: 260px;
+
+            .badge-item {
+              width: 150px;
+              height: 150px;
+
+              img {
+                width: 120%;
+                height: 120%;
+                object-fit: contain;
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+              }
+
+              &:nth-child(1) {
+                top: 0;
+                left: calc(50% - 60px);
+              }
+              &:nth-child(2) {
+                top: 140px;
+                left: calc(50% - 120px);
+              }
+              &:nth-child(3) {
+                top: 140px;
+                left: calc(50% + 0px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default CommunitySectionWrapper;
