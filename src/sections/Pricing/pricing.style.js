@@ -47,8 +47,8 @@ const PricingWrapper = styled.section`
   width: 85%;
 }
 
-.toggle{
-  border: 2px solid ${props => props.theme.darkJungleGreenHalfColor};
+.toggle {
+  border: 2px solid ${props => props.theme.shadowLightColor};
   padding: .4rem;
  border-radius: .5rem;
 }
@@ -62,9 +62,9 @@ const PricingWrapper = styled.section`
 }
 
 .toggle-container .active {
-  background-color: ${props => props.theme.darkJungleGreenColor};
+  background-color: ${props => props.theme.secondaryColor};
   color: #ccc;
-  border-color: ${props => props.theme.darkJungleGreenHalfColor};
+  border-color: ${props => props.theme.secondaryColor};
 }
 
 
