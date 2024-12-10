@@ -635,7 +635,7 @@
     "functionOrder": "3",
     "function": "Manage access to views",
     "feature": "Create and collaborate in online operational topologies in real-time.",
-    "subscription_tier": "TeamOperator",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -788,7 +788,7 @@
     "functionOrder": "2",
     "function": "Identity through OAuth",
     "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
-    "subscription_tier": "Free",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "x",
       "teamDesigner": "x",
@@ -907,7 +907,7 @@
     "functionOrder": "2",
     "function": "Assign environments to workspaces",
     "feature": "Grant workspaces access to environments and their resources.",
-    "subscription_tier": "TeamOperator|Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -924,7 +924,7 @@
     "functionOrder": "4",
     "function": "Transfer files between workspaces",
     "feature": "Move designs, views, and models between Shared Workspaces.",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -1281,7 +1281,7 @@
     "functionOrder": "8",
     "function": "Invoice Billing",
     "feature": "Pay bills via invoice, rather than using your credit card.",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
