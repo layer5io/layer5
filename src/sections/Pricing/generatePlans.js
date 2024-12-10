@@ -17,7 +17,7 @@ function generatePlans(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 6,
+      monthlyprice: 8,
       yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "← Everything included in Free, plus...",
@@ -26,7 +26,7 @@ function generatePlans(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: true,
-      monthlyprice: 6,
+      monthlyprice: 8,
       yearlyprice: 68,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
