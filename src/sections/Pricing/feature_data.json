@@ -39,7 +39,7 @@
     "category": "Configuration Management",
     "functionOrder": "1",
     "function": "Whiteboarding",
-    "feature": "Ability to freeform draw any shapes, draw edges",
+    "feature": "Pencil for freeform drawing of any shapes",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
@@ -54,8 +54,25 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
+    "functionOrder": "2",
+    "function": "Layers",
+    "feature": "Use layers to show, hide, and group objects on the same board—perfect for building detailed diagrams or revealing project phases.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
     "functionOrder": "1",
-    "function": "Visual Design",
+    "function": "Infrastructure as Design",
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
     "subscription_tier": "Free",
     "comparison_tiers": {
@@ -157,34 +174,17 @@
     "categoryOrder": "1",
     "category": "Catalog",
     "functionOrder": "1",
-    "function": "Standard Design Export",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub)",
-    "subscription_tier": "",
+    "function": "Export Designs",
+    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub).",
+    "subscription_tier": "Free",
     "comparison_tiers": {
-      "free": "",
+      "free": "x",
       "teamDesigner": "x",
-      "teamOperator": "",
+      "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "1",
-    "category": "Catalog",
-    "functionOrder": "1",
-    "function": "Premium Design Export",
-    "feature": "Export a design as a snapshot",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
   },
   {
     "theme": "",
@@ -259,8 +259,8 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "2",
-    "function": "Kubernetes Clusters",
-    "feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+    "function": "Multiple Kubernetes Clusters",
+    "feature": "Management and ongoing synchronization of cloud native infrastructure across any number of Clouds and Kubernetes clusters.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -277,7 +277,7 @@
     "category": "Lifecycle Management",
     "functionOrder": "2",
     "function": "AWS and GCP",
-    "feature": "Ongoing synchronization of AWS and GCP services configuration, workloads and changes across any number of accounts.",
+    "feature": "Management and ongoing synchronization of AWS and GCP services, workloads and changes across any number of accounts.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -429,7 +429,7 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "1",
-    "function": "Stream container logs",
+    "function": "Stream Container Logs",
     "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
@@ -438,7 +438,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "pricing_page": "",
+    "pricing_page": "x",
     "docs": ""
   },
   {
@@ -514,8 +514,8 @@
     "categoryOrder": "3",
     "category": "Performance Management",
     "functionOrder": "1",
-    "function": "Service Performance",
-    "feature": "Continuous visibility across all of your clusters and workloads.",
+    "function": "Load Generation and Performance Testing",
+    "feature": "Continuous visibility across all of your clusters and workloads. Single or multiple results in standardized format.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
@@ -524,40 +524,6 @@
       "enterprise": "x"
     },
     "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "Performance Management",
-    "functionOrder": "2",
-    "function": "Performance Profiles",
-    "feature": "Define, name, and save performance profiles. Share performance profiles and test results with individual users or teams.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "Performance Management",
-    "functionOrder": "3",
-    "function": "Export test results",
-    "feature": "Single or multiple results in standardized format.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
     "docs": ""
   },
   {
@@ -598,9 +564,9 @@
     "theme": "",
     "categoryOrder": "3",
     "category": "Performance Management",
-    "functionOrder": "",
+    "functionOrder": "2",
     "function": "Performance Profiles",
-    "feature": "Storage of 500 result sets in Provider for a given Performance Profile.",
+    "feature": "Storage of 500 result sets in Provider for a given Performance Profile. Capacity, soak, and burst testing supporting HTTP, HTTPS, TCP, gRPC load generation with configurable test duration, RPS, and request concurrency.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -684,7 +650,7 @@
     "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
-    "function": "Collaborators for public designs",
+    "function": "Collaborators for public/private designs",
     "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
@@ -701,7 +667,7 @@
     "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "",
-    "function": "Collaborators for public views",
+    "function": "Collaborators for public/private views",
     "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
@@ -712,23 +678,6 @@
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "",
-    "function": "Collaborators for private designs and views",
-    "feature": "Multi-player collaboration on infrastructure design and management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your private or public designs and views.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
   },
   {
     "theme": "",
@@ -768,7 +717,7 @@
     "theme": "",
     "categoryOrder": "5",
     "category": "Identity & Access Management",
-    "functionOrder": "2",
+    "functionOrder": "1",
     "function": "Identity through OAuth",
     "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
     "subscription_tier": "",
@@ -836,7 +785,7 @@
     "theme": "",
     "categoryOrder": "5",
     "category": "Identity & Access Management",
-    "functionOrder": "5",
+    "functionOrder": "2",
     "function": "Custom Roles",
     "feature": "Assign User Roles, Assign Keychains to Roles",
     "subscription_tier": "Enterprise",
@@ -888,7 +837,7 @@
     "categoryOrder": "6",
     "category": "Workspaces",
     "functionOrder": "2",
-    "function": "Assign environments to workspaces",
+    "function": "Assign Environments to Workspaces",
     "feature": "Grant workspaces access to environments and their resources.",
     "subscription_tier": "",
     "comparison_tiers": {
@@ -922,7 +871,7 @@
     "categoryOrder": "6",
     "category": "Workspaces",
     "functionOrder": "1",
-    "function": "Assign Designs to Workspaces",
+    "function": "Manage Workspace Team and User Access",
     "feature": "Assign designs to workspaces",
     "subscription_tier": "Free",
     "comparison_tiers": {
@@ -933,40 +882,6 @@
     },
     "pricing_page": "",
     "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "7",
-    "category": "Catalog",
-    "functionOrder": "1",
-    "function": "Export Design",
-    "feature": "Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Meshery Design, OCI image)",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "7",
-    "category": "Catalog",
-    "functionOrder": "3",
-    "function": "Publish Design",
-    "feature": "Publish a design",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "",
-    "docs": "https://docs.meshery.io/extensions/publishing-a-design"
   },
   {
     "theme": "",
@@ -1159,25 +1074,8 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "1",
-    "function": "Extensible Webhooks",
-    "feature": "Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "9",
-    "category": "Support and Deployment",
-    "functionOrder": "2",
-    "function": "Enterprise API",
+    "functionOrder": "4",
+    "function": "Enterprise API & Extensible Webhooks",
     "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
@@ -1210,7 +1108,7 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "25",
+    "functionOrder": "1",
     "function": "Community Support",
     "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
     "subscription_tier": "Free",
@@ -1227,7 +1125,7 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "25",
+    "functionOrder": "2",
     "function": "Standard Support",
     "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
     "subscription_tier": "TeamDesigner|TeamOperator",
@@ -1244,7 +1142,7 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "25",
+    "functionOrder": "3",
     "function": "Premium Support",
     "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
     "subscription_tier": "Enterprise",
@@ -1261,7 +1159,7 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "8",
+    "functionOrder": "6",
     "function": "Invoice Billing",
     "feature": "Pay bills via invoice, rather than using your credit card.",
     "subscription_tier": "",
@@ -1278,7 +1176,7 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Support and Deployment",
-    "functionOrder": "9",
+    "functionOrder": "7",
     "function": "Self-hosted Deployment",
     "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
     "subscription_tier": "Enterprise",
