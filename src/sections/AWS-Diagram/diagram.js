@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
@@ -146,7 +145,7 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={ConfigGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={ConfigGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -165,14 +164,14 @@ const Aws = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DeployGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={DeployGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDropGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={DragDropGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -192,14 +191,14 @@ const Aws = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with Kanvas" className="AWS-image" />
+              <img src="../../assets/images/AWS-Diagram/templates-dark.svg" alt="Designing AWS Diagrams with Kanvas" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
