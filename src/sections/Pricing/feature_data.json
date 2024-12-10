@@ -86,7 +86,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "0",
+    "categoryOrder": "3",
     "category": "GitOps",
     "functionOrder": "2",
     "function": "GitOps Snapshots",
@@ -103,7 +103,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "0",
+    "categoryOrder": "3",
     "category": "GitOps",
     "functionOrder": "4",
     "function": "GitOps Integrations",
@@ -113,23 +113,6 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "",
-    "function": "Thousands of Components",
-    "feature": "Thousands of fundamental building blocks used to represent and define the infrastructure under management. Each component provides granular and specific support for your infrastructure and applications. Clone and lock components as needed.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "x",
@@ -1431,27 +1414,10 @@
     "theme": "",
     "categoryOrder": "",
     "category": "Environments",
-    "functionOrder": "",
+    "functionOrder": "1",
     "function": "Environments",
     "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "free": "x",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "2",
-    "function": "Environments",
-    "feature": "Group related resources together, making it easier to navigate and manage complex deployments.",
-    "subscription_tier": "Enterprise",
+    "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
