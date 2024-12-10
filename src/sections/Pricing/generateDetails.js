@@ -9,7 +9,7 @@ import Perforamance from "./icons/perf.svg";
 import Collab from "./icons/collaboration.svg";
 import Spaces from "./icons/spaces.svg";
 import Identity from "./icons/identity.svg";
-import Notification from "./icons/notification.svg";
+// import Notification from "./icons/notification.svg";
 import Support from "./icons/support.svg";
 import Catalog from "./icons/catalog.svg";
 import Security from "./icons/security.svg";
