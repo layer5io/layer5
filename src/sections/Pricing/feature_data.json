@@ -499,9 +499,9 @@
     "functionOrder": "3",
     "function": "My Workspace",
     "feature": "My Workspace is your always available, primary space for storing designs, views, and models that you own.",
-    "subscription_tier": "TeamDesigner|TeamOperator",
+    "subscription_tier": "Free",
     "comparison_tiers": {
-      "free": "",
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
