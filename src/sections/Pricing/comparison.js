@@ -148,10 +148,11 @@ h2, h5{
 .category-icon{
   margin: 0rem auto;
 }
-.categories{
+.categories {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+  width: 100%
 }
   .docs{
   width:1rem;
