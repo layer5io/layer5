@@ -13,11 +13,11 @@ const headers = [
   "Function",
   "Feature",
   "Subscription Tier",
-  "Free Tier",
-  "TeamDesigner Tier",
-  "TeamOperator Tier",
-  "Enterprise Tier",
-  "Pricing Page?",
+  "Free",
+  "Team Designer",
+  "Team Operator",
+  "Enterprise",
+  "Pricing Page",
   "Docs",
 ];
 
@@ -36,12 +36,12 @@ async function processCSV() {
 
     const filteredData = rows.map(row => {
       try {
-        const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
+        const pricingPage = row["Pricing Page"]?.toLowerCase() || "";
         const hasXTier = [
-          "Free Tier",
-          "TeamDesigner Tier",
-          "TeamOperator Tier",
-          "Enterprise Tier"]
+          "Free",
+          "Team Designer",
+          "Team Operator",
+          "Enterprise"]
           .some(tier => row[tier]?.trim().toLowerCase() === "x");
         const includeRow = hasXTier || (pricingPage && ["x", "X"].includes(pricingPage.toLowerCase()));
 
@@ -57,11 +57,11 @@ async function processCSV() {
           subscription_tier: row["Subscription Tier"],
           comparison_tiers: {
             free: row["Free Tier"],
-            teamDesigner: row["TeamDesigner Tier"],
-            teamOperator: row["TeamOperator Tier"],
-            enterprise: row["Enterprise Tier"],
+            teamDesigner: row["Team Designer"],
+            teamOperator: row["Team Operator"],
+            enterprise: row["Enterprise"],
           },
-          pricing_page: row["Pricing Page?"],
+          pricing_page: row["Pricing Page"],
           docs: row["Docs"]
         };
       } catch (error) {

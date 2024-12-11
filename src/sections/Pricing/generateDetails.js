@@ -27,7 +27,9 @@ function generateDetails(data) {
     // { id: 6, name: "Incident Management", icon: Notification },
     { id: 7, name: "Catalog", icon: Catalog },
     { id: 8, name: "Security", icon: Security },
-    { id: 9, name: "Support and Deployment", icon: Support },
+    { id: 9, name: "Managed Service Provider", icon: Support },
+    { id: 10, name: "Support and Deployment", icon: Support },
+    // { id: 11, name: "Support and Deployment", icon: Support },
   ];
 
   return categories.map(category => {
