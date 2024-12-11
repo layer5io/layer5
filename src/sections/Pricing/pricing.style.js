@@ -56,7 +56,7 @@ const PricingWrapper = styled.section`
 .toggle-container span {
   cursor: pointer;
   padding: .5rem 1rem;
-  color: #222;
+  color: solid ${props => props.theme.shadowLightColor};
   border-radius: .5rem;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -110,7 +110,7 @@ const PricingWrapper = styled.section`
 
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
-  padding: 0.2rem;
+  padding: 0.rem;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }
