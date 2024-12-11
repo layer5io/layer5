@@ -8,6 +8,7 @@
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -24,6 +25,7 @@
     "feature": "Import a design from Kubernetes Manifest, Helm Chart, Docker Compose or Artifact Hub.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -40,6 +42,7 @@
     "feature": "Bulk import designs from GitHub",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -56,6 +59,7 @@
     "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub).",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -72,6 +76,7 @@
     "feature": "Thousands of standardized components to represent complex systems, providing logical architecture of your infrastructure.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -88,6 +93,7 @@
     "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -104,6 +110,7 @@
     "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -120,6 +127,7 @@
     "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -136,6 +144,7 @@
     "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -152,6 +161,7 @@
     "feature": "Real-time resource metrics.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -168,6 +178,7 @@
     "feature": "See the status of your deployments, monitor performance, and troubleshoot issues. Views provide tools for interacting with your cluster, such as terminal access and log streaming.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -184,6 +195,7 @@
     "feature": "Add new views to workspace",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -200,6 +212,7 @@
     "feature": "Export views to JSON format",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -216,6 +229,7 @@
     "feature": "Share Views",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -232,6 +246,7 @@
     "feature": "Clone Views",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -248,6 +263,7 @@
     "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -264,6 +280,7 @@
     "feature": "Test and verify configuration changes in a separate environment.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -280,6 +297,7 @@
     "feature": "Management and ongoing synchronization of cloud native infrastructure across any number of Clouds and Kubernetes clusters.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -296,6 +314,7 @@
     "feature": "Management and ongoing synchronization of AWS and GCP services, workloads and changes across any number of accounts.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -312,6 +331,7 @@
     "feature": "Validate infrastructure configuration. Dry-run infrastructure deployment.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -328,6 +348,7 @@
     "feature": "Provision and deprovision cloud native infrastructure using your designs.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -344,6 +365,7 @@
     "feature": "Retract all resources used in a Meshery design from the cluster",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -360,6 +382,7 @@
     "feature": "Pencil for freeform drawing of any shapes",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -376,6 +399,7 @@
     "feature": "Draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -392,6 +416,7 @@
     "feature": "Use layers to show, hide, and group objects on the same board—perfect for building detailed diagrams or revealing project phases.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -408,6 +433,7 @@
     "feature": "Continuous visibility across all of your clusters and workloads. Single or multiple results in standardized format.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -424,6 +450,7 @@
     "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -440,6 +467,7 @@
     "feature": "Storage of 500 result sets in Provider for a given Performance Profile. Capacity, soak, and burst testing supporting HTTP, HTTPS, TCP, gRPC load generation with configurable test duration, RPS, and request concurrency.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -456,6 +484,7 @@
     "feature": "My Workspace is your always available, primary space for storing designs, views, and models that you own.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -472,6 +501,7 @@
     "feature": "Shared Workspaces are collaborative spaces that you can use to store and collaborate on files within and between teams. Easily share files with customizable permissions (edit, comment, view). Create up to 10 shared workspaces per organization.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -488,6 +518,7 @@
     "feature": "Initiate deployment with creation of pull request, ArgoEvents, Flux sync, or webhook.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -504,6 +535,7 @@
     "feature": "Visual comparison of performance test results.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -520,6 +552,7 @@
     "feature": "Protocols: HTTP, HTTPS, TCP, gRPC with configuration duration, concurrency",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -536,6 +569,7 @@
     "feature": "Create and collaborate in online designs in real-time.",
     "subscription_tier": "TeamDesigner|TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -552,6 +586,7 @@
     "feature": "Simultaneously manage your infrastructure using shared views in real-time.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -568,6 +603,7 @@
     "feature": "Create and collaborate in online operational topologies in real-time.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -584,6 +620,7 @@
     "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -600,6 +637,7 @@
     "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -616,6 +654,7 @@
     "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -632,6 +671,7 @@
     "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -648,6 +688,7 @@
     "feature": "Assign User Roles, Assign Keychains to Roles",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -664,6 +705,7 @@
     "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -680,6 +722,7 @@
     "feature": "Customizable roles for specific permission assignments",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -696,6 +739,7 @@
     "feature": "Own and control the user accounts of your organization members through your identity provider (IdP).",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -712,6 +756,7 @@
     "feature": "Assign designs to workspaces",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -728,6 +773,7 @@
     "feature": "Grant workspaces access to environments and their resources.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -744,6 +790,7 @@
     "feature": "Move designs, views, and models between Shared Workspaces.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -760,6 +807,7 @@
     "feature": "A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -776,6 +824,7 @@
     "feature": "Privately publish and share reusable design patterns and operational templates within your organization.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -792,6 +841,7 @@
     "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -808,6 +858,7 @@
     "feature": "Clone any published design to customise it according to your use cases",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -824,6 +875,7 @@
     "feature": "Change management through a process of curation of content to be published in the catalog.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -840,6 +892,7 @@
     "feature": "Detailed accounting of user activity. Historical record or each action taken.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -856,6 +909,7 @@
     "feature": "15 built-in keychains.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -872,6 +926,7 @@
     "feature": "Audit history of when a key is used and who used the key.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -888,6 +943,7 @@
     "feature": "Assign connections to environment",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -904,6 +960,7 @@
     "feature": "Expiring and non-expiring API tokens. Visibility into active and expired user sessions.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -920,6 +977,7 @@
     "feature": "Use your existing accounts and centrally manage access.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -936,6 +994,7 @@
     "feature": "See public user profile details, public activities and public resources.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -952,6 +1011,7 @@
     "feature": "Badges are visual indicators of achievements or milestones that users can earn in order to recognizing activity milestones, encouraging positive behavior, mark progress, and gamifying platform experience.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -968,6 +1028,7 @@
     "feature": "New user sign-up verification. Self-service password recovery.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -984,6 +1045,7 @@
     "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1000,6 +1062,7 @@
     "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
     "subscription_tier": "TeamDesigner|TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": ""
@@ -1016,6 +1079,7 @@
     "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. Hierarchical user organizations and permissioning. Enforcement of tenancy.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1032,6 +1096,7 @@
     "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1048,6 +1113,7 @@
     "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1064,6 +1130,7 @@
     "feature": "Pay bills via invoice, rather than using your credit card.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1080,12 +1147,30 @@
     "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/cloud/self-hosted/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "1",
+    "function": "Environments",
+    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
   },
   {
     "theme": "",
@@ -1096,6 +1181,7 @@
     "feature": "Link your social sign-in with GitHub to your existing user account.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1112,6 +1198,7 @@
     "feature": "Link your social sign-in with Google to your existing user account.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1128,6 +1215,7 @@
     "feature": "List and see details of active and inactive subscriptions.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1144,6 +1232,7 @@
     "feature": "Explore subscription plans and compare their features.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1160,6 +1249,7 @@
     "feature": "Establish new organization for organizing teams, users, and resource access.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1176,22 +1266,7 @@
     "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Environments",
-    "functionOrder": "1",
-    "function": "Environments",
-    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1208,6 +1283,7 @@
     "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1224,6 +1300,7 @@
     "feature": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1240,6 +1317,7 @@
     "feature": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1256,6 +1334,7 @@
     "feature": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1272,6 +1351,7 @@
     "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1288,6 +1368,7 @@
     "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1304,6 +1385,7 @@
     "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1320,6 +1402,7 @@
     "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
