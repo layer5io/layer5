@@ -11,7 +11,7 @@ function generatePlans(data) {
       monthlyprice: 0,
       yearlyprice: 0,
       byline: "The basics for individuals and organizations",
-      byline2: "",
+      byline2: " Everything included in Open Source, plus...",
       button: ["Join for Free", "https://cloud.layer5.io"]
     },
     "TeamDesigner": {
