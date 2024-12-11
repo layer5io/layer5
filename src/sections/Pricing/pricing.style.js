@@ -63,7 +63,8 @@ const PricingWrapper = styled.section`
 
 .toggle-container .active {
   background-color: ${props => props.theme.secondaryColor};
-  color: #ccc;
+  color: #fff;
+  font-weight: 600;
   border-color: ${props => props.theme.secondaryColor};
 }
 
