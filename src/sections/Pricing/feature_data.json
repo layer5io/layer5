@@ -90,7 +90,7 @@
     "category": "Configuration Management",
     "functionOrder": "2",
     "function": "Collaborative Design Review",
-    "feature": "Kanvas’s Designer enables you to place comments “inline” within designs. Comments can be used to offer feedback to team members, take detailed design notes, capture helpful tips for team members, and include justification as to infrastructure and application configuration decisions. In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
       "free": "",
