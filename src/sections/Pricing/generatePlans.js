@@ -57,8 +57,7 @@ function generatePlans(data) {
       })
       .filter((item) => {
         const matches =
-          item.subscription_tier === tierName &&
-          item.pricing_page === "x";
+          item.subscription_tier === tierName; //&& !item.exclude === "x";
         return matches;
       })
       .map((item, index) => {
