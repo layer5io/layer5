@@ -37,7 +37,7 @@
     "category": "Configuration Management",
     "functionOrder": "2",
     "function": "Export Designs",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub).",
+    "feature": "Export a latest version of design in any supported format: Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub and as any OCI, YAML, or JSON.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "x",
@@ -61,15 +61,15 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/concepts/logical/models"
   },
   {
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "4",
-    "function": "Custom Model Import/Export",
-    "feature": "Import of Model package as OCI image",
+    "function": "Custom Models",
+    "feature": "Define new components, relationships, and policies as needed. Import/export your custom models as OCI images.",
     "subscription_tier": "Free",
     "comparison_tiers": {
       "free": "x",
@@ -77,7 +77,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/configuration-management/importing-models"
   },
   {
     "theme": "",
@@ -100,8 +100,8 @@
     "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "6",
-    "function": "Collaborative Design Review",
-    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "function": "Team Design Review",
+    "feature": "Multiple users to simultaneously edit a document, leave comments directly on specific text sections, and track changes made by others, enabling efficient collaboration and feedback loops during the review process.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
       "free": "",
@@ -116,8 +116,24 @@
     "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "7",
+    "function": "Design Review Notifications",
+    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "8",
     "function": "Bulk Import IaC",
-    "feature": "Bulk import designs from GitHub",
+    "feature": "Bulk import of your existing infrastructure as code from GitHub repositories.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
@@ -129,9 +145,9 @@
   },
   {
     "theme": "",
-    "categoryOrder": "1",
+    "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "8",
+    "functionOrder": "9",
     "function": "Validate Infrastructure Configuration",
     "feature": "Static validation of configured parameters for design completeness and accuracy.",
     "subscription_tier": "TeamDesigner",
@@ -212,8 +228,8 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "103",
-    "function": "Environments",
-    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
+    "function": "Environments, Deployments, & Dry-runs",
+    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments. Test and verify configuration changes prior to deployment.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -244,9 +260,9 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "105",
-    "function": "Standard Events and Metrics",
-    "feature": "Real-time resource metrics.",
-    "subscription_tier": "TeamOperator",
+    "function": "Standard Metrics",
+    "feature": "Real-time resource metrics for managed workloads.",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -323,22 +339,6 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "111",
-    "function": "Deployments and Deployment dry-runs",
-    "feature": "Test and verify configuration changes in a separate environment.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "docs": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "1",
-    "category": "Lifecycle Management",
     "functionOrder": "112",
     "function": "Multiple Kubernetes Clusters",
     "feature": "Management and ongoing synchronization of cloud native infrastructure across any number of Clouds and Kubernetes clusters.",
@@ -388,30 +388,14 @@
     "categoryOrder": "1",
     "category": "Lifecycle Management",
     "functionOrder": "115",
-    "function": "Orchestration: Provisioning",
+    "function": "Orchestration: Provisioning / Deprovisioning",
     "feature": "Provision and deprovision cloud native infrastructure using your designs.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
-      "enterprise": ""
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "1",
-    "category": "Lifecycle Management",
-    "functionOrder": "116",
-    "function": "Orchestration: Deprovisioning",
-    "feature": "Retract all resources used in a Meshery design from the cluster",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/"
   },
@@ -534,7 +518,7 @@
     "functionOrder": "303",
     "function": "Comparative Testing",
     "feature": "Visual comparison of performance test results.",
-    "subscription_tier": "TeamOperator",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -597,7 +581,7 @@
     "category": "Collaboration",
     "functionOrder": "402",
     "function": "Public and Private Designs",
-    "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
+    "feature": "Invite any user to collaborate on your public or private designs.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
       "free": "",
@@ -629,7 +613,7 @@
     "category": "Collaboration",
     "functionOrder": "404",
     "function": "Public and Private Views",
-    "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
+    "feature": "Invite any user to collaborate on your public or private views.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
       "free": "",
@@ -788,11 +772,11 @@
     "categoryOrder": "6",
     "category": "Workspaces",
     "functionOrder": "605",
-    "function": "Manage Workspace Team and User Access",
-    "feature": "Assign designs to workspaces",
-    "subscription_tier": "Free",
+    "function": "Manage Workspace Team and Environment Access",
+    "feature": "Assign designs, views, users, and environments to shared workspaces.",
+    "subscription_tier": "",
     "comparison_tiers": {
-      "free": "x",
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
