@@ -140,7 +140,7 @@ h2, h5{
   margin-top: 1rem;
 }
 .details{
-  p{
+  p {
     color: #7A848E;
     margin-left: 1.1rem;
   }
@@ -154,9 +154,12 @@ h2, h5{
   margin: 1rem 0;
   width: 100%
 }
-  .docs{
+  .docs {
   width:1rem;
   height:1rem;
+    & > svg {
+      background-color:{props => props.theme.whiteZeroFiveToBlackZeroFive};
+    }
   }
 
   .feature-link-container {
