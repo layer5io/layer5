@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import TemplateWhite from "../../assets/images/AWS-Diagram/templates.svg";
+import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
@@ -198,7 +200,7 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src="../../assets/images/AWS-Diagram/templates-dark.svg" alt="Designing AWS Diagrams with Kanvas" className="aws-image" />
+              <img src={isDark ? TemplateDark : TemplateWhite} alt="Designing AWS Diagrams with Kanvas" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">

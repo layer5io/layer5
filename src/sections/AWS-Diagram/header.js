@@ -130,7 +130,7 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" md={6}>
-              <img src={isDark ? AWSCardLight : AWSCardDark} alt="catalog" />
+              <img src={isDark ? AWSCardDark : AWSCardLight} alt="catalog" />
             </Col>
           </Row>
         </Container>
