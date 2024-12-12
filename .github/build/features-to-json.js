@@ -56,7 +56,7 @@ async function processCSV() {
           feature: row["Feature"],
           subscription_tier: row["Subscription Tier"],
           comparison_tiers: {
-            free: row["Free Tier"],
+            free: row["Free"],
             teamDesigner: row["Team Designer"],
             teamOperator: row["Team Operator"],
             enterprise: row["Enterprise"],
