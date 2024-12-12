@@ -8,6 +8,7 @@
     "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -19,11 +20,63 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "1",
+    "functionOrder": "2",
+    "function": "Export Designs",
+    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub).",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "3",
+    "function": "350 Built-in Models",
+    "feature": "Thousands of standardized components to represent complex systems, providing logical architecture of your infrastructure.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "4",
+    "function": "Custom Model Import/Export",
+    "feature": "Import of Model package as OCI image",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "5",
     "function": "Import your IaC",
     "feature": "Import a design from Kubernetes Manifest, Helm Chart, Docker Compose or Artifact Hub.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -35,11 +88,12 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "1",
+    "functionOrder": "6",
     "function": "Bulk Import IaC",
     "feature": "Bulk import designs from GitHub",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -51,43 +105,12 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "1",
-    "function": "Export Designs",
-    "feature": "Export a latest version of design in Meshery Design (OCI format, YAML, or JSON). Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub).",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "2",
-    "function": "350 Built-in Models",
-    "feature": "Thousands of standardized components to represent complex systems, providing logical architecture of your infrastructure.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "2",
+    "functionOrder": "7",
     "function": "Collaborative Design Review",
     "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -99,11 +122,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "101",
     "function": "Discovery of existing infrastructure",
     "feature": "Discover clusters and/or import existing Kubernetes applications. Visualize their architecture, and gain a clear understanding of how different components interact.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -115,11 +139,29 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "102",
+    "function": "Environments",
+    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "1",
+    "category": "Lifecycle Management",
+    "functionOrder": "103",
     "function": "Robust CLI",
     "feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface: mesheryctl",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -131,11 +173,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "104",
     "function": "Web-based Terminal",
     "feature": "Direct terminal access to one ore more pods/containers simultaneously. Integrated experience.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -147,11 +190,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "105",
     "function": "Standard Events and Metrics",
     "feature": "Real-time resource metrics.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -163,27 +207,29 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "106",
     "function": "Views",
     "feature": "See the status of your deployments, monitor performance, and troubleshoot issues. Views provide tools for interacting with your cluster, such as terminal access and log streaming.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
+    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
   },
   {
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "107",
     "function": "Assign Views to Workspace",
     "feature": "Add new views to workspace",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -195,59 +241,46 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "108",
     "function": "Export views",
     "feature": "Export views to JSON format",
-    "subscription_tier": "TeamOperator",
+    "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view"
   },
   {
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "109",
     "function": "Share Views",
-    "feature": "Share Views",
+    "feature": "Share views with anyone within your organization, and make your design easily accessible to all relevant team members.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
     },
     "pricing_page": "",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view"
   },
   {
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "1",
-    "function": "Clone Views",
-    "feature": "Clone Views",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "1",
-    "category": "Lifecycle Management",
-    "functionOrder": "1",
+    "functionOrder": "110",
     "function": "Stream Container Logs",
     "feature": "Stream and search logs from one or more pod/container simultaneously to observe application behavior and identify issues in real time.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -259,11 +292,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "2",
+    "functionOrder": "111",
     "function": "Deployment dry-run",
     "feature": "Test and verify configuration changes in a separate environment.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -275,11 +309,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "2",
+    "functionOrder": "112",
     "function": "Multiple Kubernetes Clusters",
     "feature": "Management and ongoing synchronization of cloud native infrastructure across any number of Clouds and Kubernetes clusters.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -291,11 +326,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "2",
+    "functionOrder": "113",
     "function": "AWS and GCP",
     "feature": "Management and ongoing synchronization of AWS and GCP services, workloads and changes across any number of accounts.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -307,11 +343,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "4",
+    "functionOrder": "114",
     "function": "Orchestration: Pre-provisioning",
     "feature": "Validate infrastructure configuration. Dry-run infrastructure deployment.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -323,11 +360,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "4",
+    "functionOrder": "115",
     "function": "Orchestration: Provisioning",
     "feature": "Provision and deprovision cloud native infrastructure using your designs.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -339,11 +377,12 @@
     "theme": "",
     "categoryOrder": "1",
     "category": "Lifecycle Management",
-    "functionOrder": "4",
+    "functionOrder": "116",
     "function": "Orchestration: Deprovisioning",
     "feature": "Retract all resources used in a Meshery design from the cluster",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": ""
@@ -355,11 +394,12 @@
     "theme": "",
     "categoryOrder": "2",
     "category": "Kanvas",
-    "functionOrder": "1",
+    "functionOrder": "201",
     "function": "Whiteboarding",
     "feature": "Pencil for freeform drawing of any shapes",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -371,11 +411,12 @@
     "theme": "",
     "categoryOrder": "2",
     "category": "Kanvas",
-    "functionOrder": "2",
+    "functionOrder": "202",
     "function": "500 Built-in Shapes, Pen and Pencil",
     "feature": "Draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -387,11 +428,12 @@
     "theme": "",
     "categoryOrder": "2",
     "category": "Kanvas",
-    "functionOrder": "3",
+    "functionOrder": "203",
     "function": "Layers",
     "feature": "Use layers to show, hide, and group objects on the same board—perfect for building detailed diagrams or revealing project phases.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -403,11 +445,12 @@
     "theme": "",
     "categoryOrder": "3",
     "category": "Performance Management",
-    "functionOrder": "1",
+    "functionOrder": "301",
     "function": "Load Generation and Performance Testing",
     "feature": "Continuous visibility across all of your clusters and workloads. Single or multiple results in standardized format.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -418,12 +461,353 @@
   {
     "theme": "",
     "categoryOrder": "3",
-    "category": "GitOps",
-    "functionOrder": "2",
+    "category": "Performance Management",
+    "functionOrder": "302",
+    "function": "Performance Profiles",
+    "feature": "Define, name, and save performance profiles. Share performance profiles and test results with individual users or teams.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
+    "functionOrder": "303",
+    "function": "Comparative Testing",
+    "feature": "Visual comparison of performance test results.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
+    "functionOrder": "304",
+    "function": "Capacity, soak, and burst testing",
+    "feature": "Protocols: HTTP, HTTPS, TCP, gRPC with configuration duration, concurrency",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "401",
+    "function": "Collaborative Infrastructure Design",
+    "feature": "Create and collaborate in online designs in real-time.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "402",
+    "function": "Collaborative Infrastructure Views",
+    "feature": "Simultaneously manage your infrastructure using shared views in real-time.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "403",
+    "function": "Manage access to views",
+    "feature": "Create and collaborate in online operational topologies in real-time.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "404",
+    "function": "Collaborators for public/private designs",
+    "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "405",
+    "function": "Collaborators for public/private views",
+    "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "501",
+    "function": "Built-in Roles",
+    "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://docs.layer5.io/cloud/security/roles/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "502",
+    "function": "Identity through OAuth",
+    "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "503",
+    "function": "Custom Roles",
+    "feature": "Assign User Roles, Assign Keychains to Roles",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "504",
+    "function": "Resource Access Management",
+    "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "505",
+    "function": "User-defined Roles",
+    "feature": "Customizable roles for specific permission assignments",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": "https://docs.layer5.io/cloud/security/roles/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "506",
+    "function": "Identity through OIDC",
+    "feature": "Own and control the user accounts of your organization members through your identity provider (IdP).",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "507",
+    "function": "Cloud as an IDP",
+    "feature": "Own and control the user accounts of your enterprise members with Layer5 Cloud your identity provider (IdP).",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "508",
+    "function": "Teams",
+    "feature": "Establish new team for organizing groups of users and resource access. Single organization, multiple teams.",
+    "subscription_tier": "TeamDesigner|TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/cloud/identity/teams/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "509",
+    "function": "Organizations",
+    "feature": "Particpate as a member of multiple organizations each with their own accounting and billing structure. Multiple organizations, multiple teams.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": "https://docs.layer5.io/cloud/identity/organizations/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "601",
+    "function": "My Workspace",
+    "feature": "My Workspace is your always available, primary space for storing designs, views, and models that you own.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "605",
+    "function": "Manage Workspace Team and User Access",
+    "feature": "Assign designs to workspaces",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "602",
+    "function": "Shared Workspaces",
+    "feature": "Shared Workspaces are collaborative spaces that you can use to store and collaborate on files within and between teams. Easily share files with customizable permissions (edit, comment, view). Create up to 10 shared workspaces per organization.",
+    "subscription_tier": "TeamDesigner|TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "x",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "603",
     "function": "GitOps Snapshots",
     "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -433,269 +817,14 @@
   },
   {
     "theme": "",
-    "categoryOrder": "3",
-    "category": "Performance Management",
-    "functionOrder": "2",
-    "function": "Performance Profiles",
-    "feature": "Storage of 500 result sets in Provider for a given Performance Profile. Capacity, soak, and burst testing supporting HTTP, HTTPS, TCP, gRPC load generation with configurable test duration, RPS, and request concurrency.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
+    "categoryOrder": "6",
     "category": "Workspaces",
-    "functionOrder": "3",
-    "function": "My Workspace",
-    "feature": "My Workspace is your always available, primary space for storing designs, views, and models that you own.",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "Workspaces",
-    "functionOrder": "3",
-    "function": "Shared Workspaces",
-    "feature": "Shared Workspaces are collaborative spaces that you can use to store and collaborate on files within and between teams. Easily share files with customizable permissions (edit, comment, view). Create up to 10 shared workspaces per organization.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "GitOps",
-    "functionOrder": "4",
+    "functionOrder": "604",
     "function": "GitOps Integrations",
     "feature": "Initiate deployment with creation of pull request, ArgoEvents, Flux sync, or webhook.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "Performance Management",
-    "functionOrder": "4",
-    "function": "Comparative Testing",
-    "feature": "Visual comparison of performance test results.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "3",
-    "category": "Performance Management",
-    "functionOrder": "5",
-    "function": "Capacity, soak, and burst testing",
-    "feature": "Protocols: HTTP, HTTPS, TCP, gRPC with configuration duration, concurrency",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "1",
-    "function": "Collaborative Infrastructure Design",
-    "feature": "Create and collaborate in online designs in real-time.",
-    "subscription_tier": "TeamDesigner|TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "1",
-    "function": "Collaborative Infrastructure Views",
-    "feature": "Simultaneously manage your infrastructure using shared views in real-time.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "3",
-    "function": "Manage access to views",
-    "feature": "Create and collaborate in online operational topologies in real-time.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "",
-    "function": "Collaborators for public/private designs",
-    "feature": "Multi-player collaboration on infrastructure design in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public designs.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "4",
-    "category": "Collaboration",
-    "functionOrder": "",
-    "function": "Collaborators for public/private views",
-    "feature": "Multi-player collaboration on infrastructure management in real-time, fostering teamwork and knowledge sharing. Invite any user to collaborate on your public views.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "1",
-    "function": "Built-in Roles",
-    "feature": "Predefined user roles: Organization Admin, Team Admin, Workspace Admin",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/security/roles/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "1",
-    "function": "Identity through OAuth",
-    "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "2",
-    "function": "Custom Roles",
-    "feature": "Assign User Roles, Assign Keychains to Roles",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "3",
-    "function": "Resource Access Management",
-    "feature": "Manage access to designs on a team-by-team, or individual user, basis.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "4",
-    "function": "User-defined Roles",
-    "feature": "Customizable roles for specific permission assignments",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "pricing_page": "x",
-    "docs": "https://docs.layer5.io/cloud/security/roles/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "5",
-    "category": "Identity & Access Management",
-    "functionOrder": "5",
-    "function": "Identity through OIDC",
-    "feature": "Own and control the user accounts of your organization members through your identity provider (IdP).",
-    "subscription_tier": "",
-    "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -707,27 +836,12 @@
     "theme": "",
     "categoryOrder": "6",
     "category": "Workspaces",
-    "functionOrder": "1",
-    "function": "Manage Workspace Team and User Access",
-    "feature": "Assign designs to workspaces",
-    "subscription_tier": "Free",
-    "comparison_tiers": {
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "6",
-    "category": "Workspaces",
-    "functionOrder": "2",
+    "functionOrder": "606",
     "function": "Assign Environments to Workspaces",
     "feature": "Grant workspaces access to environments and their resources.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -739,11 +853,12 @@
     "theme": "",
     "categoryOrder": "6",
     "category": "Workspaces",
-    "functionOrder": "4",
+    "functionOrder": "607",
     "function": "Transfer files between workspaces",
     "feature": "Move designs, views, and models between Shared Workspaces.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -755,11 +870,12 @@
     "theme": "",
     "categoryOrder": "7",
     "category": "Catalog",
-    "functionOrder": "1",
+    "functionOrder": "701",
     "function": "Public Catalog: 400 Cloud Native Patterns",
     "feature": "A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -771,11 +887,12 @@
     "theme": "",
     "categoryOrder": "7",
     "category": "Catalog",
-    "functionOrder": "1",
+    "functionOrder": "702",
     "function": "Private Catalog",
     "feature": "Privately publish and share reusable design patterns and operational templates within your organization.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -787,11 +904,12 @@
     "theme": "",
     "categoryOrder": "7",
     "category": "Catalog",
-    "functionOrder": "1",
+    "functionOrder": "703",
     "function": "Share Design",
     "feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -803,11 +921,12 @@
     "theme": "",
     "categoryOrder": "7",
     "category": "Catalog",
-    "functionOrder": "1",
+    "functionOrder": "704",
     "function": "Clone Design",
     "feature": "Clone any published design to customise it according to your use cases",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -819,11 +938,12 @@
     "theme": "",
     "categoryOrder": "7",
     "category": "Catalog",
-    "functionOrder": "",
+    "functionOrder": "708",
     "function": "Approve Catalog Request",
     "feature": "Change management through a process of curation of content to be published in the catalog.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -835,11 +955,29 @@
     "theme": "",
     "categoryOrder": "8",
     "category": "Security",
-    "functionOrder": "1",
+    "functionOrder": "801",
+    "function": "Credentials and Connections",
+    "feature": "Assign connections to environment",
+    "subscription_tier": "TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "pricing_page": "",
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "8",
+    "category": "Security",
+    "functionOrder": "802",
     "function": "Audit Trail",
     "feature": "Detailed accounting of user activity. Historical record or each action taken.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -851,11 +989,12 @@
     "theme": "",
     "categoryOrder": "8",
     "category": "Security",
-    "functionOrder": "2",
+    "functionOrder": "803",
     "function": "Permissions: Keychains and Keys",
     "feature": "15 built-in keychains.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -867,11 +1006,12 @@
     "theme": "",
     "categoryOrder": "8",
     "category": "Security",
-    "functionOrder": "",
+    "functionOrder": "804",
     "function": "Keys",
     "feature": "Audit history of when a key is used and who used the key.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -883,27 +1023,12 @@
     "theme": "",
     "categoryOrder": "8",
     "category": "Security",
-    "functionOrder": "",
-    "function": "Credentials and Connections",
-    "feature": "Assign connections to environment",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "8",
-    "category": "Security",
-    "functionOrder": "",
+    "functionOrder": "805",
     "function": "API Tokens, Sessions",
     "feature": "Expiring and non-expiring API tokens. Visibility into active and expired user sessions.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -915,11 +1040,12 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Managed Service Provider",
-    "functionOrder": "6",
+    "functionOrder": "901",
     "function": "User Provisioning through SCIM",
     "feature": "Use your existing accounts and centrally manage access.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -931,11 +1057,12 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Managed Service Provider",
-    "functionOrder": "6",
+    "functionOrder": "902",
     "function": "Public Profiles for Users",
     "feature": "See public user profile details, public activities and public resources.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -947,11 +1074,12 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Managed Service Provider",
-    "functionOrder": "6",
+    "functionOrder": "903",
     "function": "Recognition Program Badges",
     "feature": "Badges are visual indicators of achievements or milestones that users can earn in order to recognizing activity milestones, encouraging positive behavior, mark progress, and gamifying platform experience.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -963,11 +1091,12 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Managed Service Provider",
-    "functionOrder": "6",
+    "functionOrder": "904",
     "function": "Self-service User Accounts",
     "feature": "New user sign-up verification. Self-service password recovery.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -979,11 +1108,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "1",
+    "functionOrder": "1001",
     "function": "Community Support",
     "feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
     "subscription_tier": "Free",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -995,11 +1125,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "2",
+    "functionOrder": "1002",
     "function": "Standard Support",
     "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
     "subscription_tier": "TeamDesigner|TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": ""
@@ -1011,11 +1142,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "3",
+    "functionOrder": "1003",
     "function": "Managed Service Provider",
-    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. Hierarchical user organizations and permissioning. Enforcement of tenancy.",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. \n\nHierarchical user organizations and permissioning. Enforcement of tenancy.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1027,11 +1159,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "3",
+    "functionOrder": "1004",
     "function": "Premium Support",
     "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1043,11 +1176,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "4",
+    "functionOrder": "1005",
     "function": "Enterprise API & Extensible Webhooks",
     "feature": "Provides a powerful and flexible way to interact with the platform, enabling automation, integration, and customization to optimize your cloud native development and management processes.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1059,11 +1193,12 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "6",
+    "functionOrder": "1007",
     "function": "Invoice Billing",
     "feature": "Pay bills via invoice, rather than using your credit card.",
     "subscription_tier": "",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1075,33 +1210,18 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
-    "functionOrder": "7",
+    "functionOrder": "1008",
     "function": "Self-hosted Deployment",
     "feature": "Self-hosted Layer5 Cloud for on-prem appliances or self-managed cloud tenants. Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
     "pricing_page": "x",
     "docs": "https://docs.layer5.io/cloud/self-hosted/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "1",
-    "category": "Lifecycle Management",
-    "functionOrder": "1",
-    "function": "Environments",
-    "feature": "Operational control of infrastructure and applications by group. Deploy to multiple Environments.",
-    "subscription_tier": "TeamOperator",
-    "comparison_tiers": {
-      "teamDesigner": "",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "pricing_page": "",
-    "docs": ""
   },
   {
     "theme": "",
@@ -1112,6 +1232,7 @@
     "feature": "Link your social sign-in with GitHub to your existing user account.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1128,6 +1249,7 @@
     "feature": "Link your social sign-in with Google to your existing user account.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1144,6 +1266,7 @@
     "feature": "List and see details of active and inactive subscriptions.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1160,6 +1283,7 @@
     "feature": "Explore subscription plans and compare their features.",
     "subscription_tier": "Team",
     "comparison_tiers": {
+      "free": "x",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1176,6 +1300,7 @@
     "feature": "Establish new organization for organizing teams, users, and resource access.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
@@ -1192,6 +1317,7 @@
     "feature": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1208,6 +1334,7 @@
     "feature": "This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1224,6 +1351,7 @@
     "feature": "Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1240,6 +1368,7 @@
     "feature": "Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1256,6 +1385,7 @@
     "feature": "Validate cloud native infrastructure  configuration against best practices like Analyze Running Configuration, SMI conformance",
     "subscription_tier": "TeamDesigner",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
@@ -1272,6 +1402,7 @@
     "feature": "This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1288,6 +1419,7 @@
     "feature": "This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1304,6 +1436,7 @@
     "feature": "This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1320,6 +1453,7 @@
     "feature": "This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",
     "subscription_tier": "TeamOperator",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
@@ -1336,6 +1470,7 @@
     "feature": "Playback service transactions. Scrub over the history of changes to your deployments.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
+      "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
