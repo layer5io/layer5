@@ -40,7 +40,7 @@ h2, h5{
     vertical-align: middle;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-    h5{
+    h5 {
       display: flex;
       text-align: left;
       padding-top: 1rem;
@@ -49,7 +49,9 @@ h2, h5{
 }
 .price-table tr td:first-child {
     border-left: 0 none;
-    width: 45%;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
 }
 .price-table tr td:not(:first-child) {
     text-align: center;
@@ -101,7 +103,7 @@ h2, h5{
     display: inline-block;
     border-radius: 64px;
 }
-.price-table td.price-table-popular {
+.price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
     color: #00b39f;
     text-transform: uppercase;
@@ -115,54 +117,59 @@ h2, h5{
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.category{
+.category {
   display: inline-block;
   margin: 0 1rem;
 }
 
-.icon{
+.icon {
     height: 4rem;
     width: auto;
     fill: #00b39f;
     display: inline-block;
 }
-.no-icon{
+.no-icon {
   height: 1.5rem;
   width: auto;
   fill: red;
 }
-.yes-icon{
+.yes-icon {
   height: 1.5rem;
   width: auto;
   fill: #00b39f;
 }
-.toggle-btn{
+.toggle-btn {
   margin-top: 1rem;
 }
-.details{
+.details {
   p {
     color: #7A848E;
     margin-left: 1.1rem;
   }
 }
-.category-icon{
-  margin: 0rem auto;
+.category-icon {
+  
 }
 .categories {
   display: flex;
+  width: 100%;
+  text-align: left;
   align-items: center;
-  margin: 1rem 0;
-  width: 100%
+  margin: 1rem auto;
 }
-  .docs {
+.docs {
   width:1rem;
   height:1rem;
-    & > svg {
-      background-color:{props => props.theme.whiteZeroFiveToBlackZeroFive};
+  /* > svg { */
+    fill: "red";
+    /* fill:${props => props.theme.whiteZeroFiveToBlackZeroFive};*/
+    &:hover { 
+      opacity:.5;
     }
-  }
+  
+}
 
-  .feature-link-container {
+.feature-link-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,7 +184,13 @@ h2, h5{
   text-decoration: none;
   font-size: 0.9rem;
 }
-
+.feature-link > svg {
+    fill: "red";
+    /* fill:${props => props.theme.whiteZeroFiveToBlackZeroFive};*/
+    &:hover { 
+      opacity:.5;
+    }
+  }
 .feature-link:hover {
   text-decoration: underline;
 }
@@ -193,10 +206,11 @@ const Comparison = () => {
           <table className="price-table">
             <tbody>
               <tr>
-                <td className="price-blank"></td>
-                <td className="price-table-popular">Most popular</td>
-                <td className="price-blank"></td>
-                <td className="price-blank"></td>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
+                <th className="price-table-popular">Most popular</th>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
               </tr>
               <tr className="price-table-head">
                 <td></td>
@@ -209,7 +223,7 @@ const Comparison = () => {
               {details.map((x) => (
                 <>
                   <tr key={x.id} >
-                    <td className="categories" >
+                    <td className="categories">
                       <img src={x.icon} height={45} className="category-icon" alt={x.category} />
                       <h3 className="category">{x.category}</h3></td>
                     <td></td>

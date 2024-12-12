@@ -1155,6 +1155,22 @@
     "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
+    "functionOrder": "1003",
+    "function": "Managed Service Provider",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. \n\nHierarchical user organizations and permissioning. Enforcement of tenancy.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "10",
+    "category": "Support and Deployment",
     "functionOrder": "1004",
     "function": "Premium Support",
     "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",

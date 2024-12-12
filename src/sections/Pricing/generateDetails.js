@@ -13,7 +13,7 @@ import Identity from "./icons/identity.svg";
 import Support from "./icons/support.svg";
 import Catalog from "./icons/catalog.svg";
 import Security from "./icons/security.svg";
-import { ReactComponent as Docs } from "../../assets/images/pricing/docs.svg";
+import Docs from "./icons/docs.js";
 
 function generateDetails(data) {
   const categories = [
