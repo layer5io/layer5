@@ -1,14 +1,14 @@
 [
   {
-    "theme": "",
+    "theme": "This sheet is for purposes of classifying and itemizing the features and their subscription tiers for publishing on layer5.io/pricing and cloud.layer5.io.",
     "categoryOrder": "",
     "category": "",
     "functionOrder": "",
     "function": "",
     "feature": "",
-    "subscription_tier": "Subscription Tier\n(1st website section)",
+    "subscription_tier": "1st section of webpage",
     "comparison_tiers": {
-      "free": "Comparison Tiers\n(2nd website section)",
+      "free": "2nd section of webpage",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": ""
@@ -253,7 +253,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/"
+    "docs": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/"
   },
   {
     "theme": "",
