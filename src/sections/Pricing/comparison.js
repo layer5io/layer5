@@ -80,6 +80,11 @@ h2, h5{
     font-weight: 600;
     text-transform: uppercase;
 }
+tr.price-table-head {
+   position : sticky;
+   z-index : 1;
+   top : 0;
+}
 .price-table tr.price-table-head {
     background-color: #00b39f;
     color: #FFFFFF;
