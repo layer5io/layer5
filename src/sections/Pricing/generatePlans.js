@@ -25,10 +25,10 @@ function generatePlans(data) {
     },
     "TeamOperator": {
       tier: "Team Operator",
-      featured: true,
+      featured: false,
       monthlyprice: 8,
       yearlyprice: 68,
-      pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
+      // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
