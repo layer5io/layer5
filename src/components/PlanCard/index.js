@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 
-const PlanCard = ({ planData }) => {
+const PlanCard = ({ planData , isYearly }) => {
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
   }
@@ -14,7 +14,7 @@ const PlanCard = ({ planData }) => {
       <Container>
         <Row $Hcenter>
           {planData.map((x) => (
-            <Col lg={4} md={6} key={x.tier}>
+            <Col xl={4} lg={3} md={2} sm={1} key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
@@ -29,24 +29,56 @@ const PlanCard = ({ planData }) => {
                 <h5 className="byline">{x.byline}</h5>
 
                 <div className="price-container">
-                  {x.monthlyprice !== undefined ? (
-                    <div className="price">
-                      <span className="currency-symbol">$</span>
-                      <span className="price-value">
-                        {x.monthlyprice === 0
-                          ? "0"
-                          : x.monthlyprice.toFixed(0)}
-                      </span>
-                      <span className="price-text">
-                        USD <sup className="usd-sup">per user/month</sup>
-                      </span>
-                    </div>
+                  {isYearly ? (
+                    x.yearlyprice !== undefined ? (
+                      <div className="price">
+                        <span className="price-amount"><sup>$</sup>
+                          {x.yearlyprice === 0
+                            ? "0"
+                            : x.yearlyprice.toFixed(0)}
+                        </span>
+                        <span className="currency">USD</span>
+                        <span className="price-per">per user/year</span>
+                      </div>
+                    ) : (
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
+                    )
                   ) : (
-                    <div className="pricing_coming_soon">
-                      {x.pricing_coming_soon}
-                    </div>
+                    x.monthlyprice !== undefined ? (
+                      <div className="price">
+                        <span className="price-amount"><sup>$</sup>
+                          {x.monthlyprice === 0
+                            ? "0"
+                            : x.monthlyprice.toFixed(0)}
+                        </span>
+                        <span className="currency">USD</span>
+                        <span className="price-per">per user/month</span>
+                      </div>
+                    ) : (
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
+                    )
                   )}
                 </div>
+
+
+                <Button
+                  disabled={x.tier === "Team Operator"}
+                  $primary
+                  className={
+                    x.button[0] === "Coming Soon" || x.tier === "Team Operator"
+                      ? "price-button-disabled"
+                      : "price-button-link"
+                  }
+                  $url={x.button[1]}
+                >
+                  {x.button[0]}
+                </Button>
+
+                <h6>{x.byline2}</h6>
 
                 <div className="pricing-features">
                   {x.summary &&
@@ -61,17 +93,6 @@ const PlanCard = ({ planData }) => {
                     ))}
                 </div>
 
-                <Button
-                  $primary
-                  className={
-                    x.button[0] === "Coming Soon"
-                      ? "price-button-disabled"
-                      : "price-button-link"
-                  }
-                  $url={x.button[1]}
-                >
-                  {x.button[0]}
-                </Button>
               </div>
             </Col>
           ))}

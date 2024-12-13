@@ -12,7 +12,7 @@ const FeatureDetailsWrapper = styled.div`
     list-style: none;
     height: auto !important;
     opacity: 1 !important;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     transition: all 0.4s !important;
   }
 
@@ -25,8 +25,9 @@ const FeatureDetailsWrapper = styled.div`
 
   p {
     font-size: 0.9rem;
+    margin: 0.5rem;
     color: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .toggle-btn {

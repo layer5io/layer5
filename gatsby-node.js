@@ -10,6 +10,9 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const {
+  componentsData,
+} = require("./src/sections/Projects/Sistent/components/content");
 
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
@@ -723,18 +726,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = [
-    "button",
-    "text-input",
-    "modal",
-    "paper",
-    "popper",
-    "text-field",
-    "link",
-    "container",
-    "button-group",
-    "tooltip",
-  ];
+  const components = componentsData.map((component) => component.src.replace("/", ""));
 
   const createComponentPages = (createPage, components) => {
     const pageTypes = [

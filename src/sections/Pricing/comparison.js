@@ -40,7 +40,7 @@ h2, h5{
     vertical-align: middle;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-    h5{
+    h5 {
       display: flex;
       text-align: left;
       padding-top: 1rem;
@@ -49,7 +49,9 @@ h2, h5{
 }
 .price-table tr td:first-child {
     border-left: 0 none;
-    width: 45%;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
 }
 .price-table tr td:not(:first-child) {
     text-align: center;
@@ -70,22 +72,21 @@ h2, h5{
 
 /* Highlighted column */
 
-.price-table tr td:nth-child(2) {
+.price-table tr td:nth-child(3) {
     background: rgba(0,179,159,0.1);
     padding: 8px 48px;
 }
 
 .price-table tr.price-table-head td {
-    font-size: 16px;
+    font-size: 1.15rem;
+    line-height: 1.5rem;
     font-weight: 600;
+    padding: .5rem;
     text-transform: uppercase;
 }
 .price-table tr.price-table-head {
-    background-color: #00b39f;
+    background-color:${props => props.theme.secondaryColor};
     color: #FFFFFF;
-    td{
-    padding: 1rem 0;
-    }
 }
 .price-table td.price {
     padding: 16px 24px;
@@ -101,59 +102,92 @@ h2, h5{
     display: inline-block;
     border-radius: 64px;
 }
-.price-table td.price-table-popular {
+.price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
-    color: #00b39f;
+    color:${props => props.theme.whiteEightToBlack};
     text-transform: uppercase;
     font-size: 12px;
     padding: 12px 48px;
     font-weight: 700;
 }
 .price-table .price-blank {
-    background-color: ${props => props.theme.grey191919ToGreyFAFAFA};
+    background-color: ${props => props.theme.secondaryDarkColor};
     border: 0 none;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.category{
+.category {
   display: inline-block;
   margin: 0 1rem;
 }
 
-.icon{
+.icon {
     height: 4rem;
     width: auto;
     fill: #00b39f;
     display: inline-block;
 }
-.no-icon{
+.no-icon {
   height: 1.5rem;
   width: auto;
   fill: red;
 }
-.yes-icon{
+.yes-icon {
   height: 1.5rem;
   width: auto;
   fill: #00b39f;
 }
-.toggle-btn{
+.toggle-btn {
   margin-top: 1rem;
 }
-.details{
-  p{
+.details {
+  p {
     color: #7A848E;
     margin-left: 1.1rem;
   }
 }
-.category-icon{
-  margin: 0rem auto;
+.category-icon {
+  
 }
-.categories{
+.categories {
   display: flex;
+  width: 100%;
+  text-align: left;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem auto;
+}
+.docs {
+  width:1rem;
+  height:1rem;
 }
 
+td.feature {
+  padding: auto;
+  margin: 0px;
+}
+.feature-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature-name {
+  margin-right: 0.5rem; 
+}
+
+.feature-link {
+  color: #00b39f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.feature-link > svg {
+    &:hover { 
+      opacity:.5;
+    }
+  }
+.feature-link:hover {
+  text-decoration: underline;
+}
 `;
 
 const Comparison = () => {
@@ -166,24 +200,27 @@ const Comparison = () => {
           <table className="price-table">
             <tbody>
               <tr>
-                <td className="price-blank"></td>
-                <td className="price-table-popular">Most popular</td>
-                <td className="price-blank"></td>
-                <td className="price-blank"></td>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
+                <th className="price-table-popular">Most popular</th>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
               </tr>
               <tr className="price-table-head">
                 <td></td>
                 <td>Free</td>
-                <td>Team</td>
+                <td>Team Designer</td>
+                <td>Team Operator</td>
                 <td>Enterprise</td>
               </tr>
 
               {details.map((x) => (
                 <>
                   <tr key={x.id} >
-                    <td className="categories" >
-                      <img src={x.icon} height={45} className="category-icon" alt={x.category} />
+                    <td className="categories" colSpan="4">
+                      <img src={x.icon} height={32} className="category-icon" alt={x.category} />
                       <h3 className="category">{x.category}</h3></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -191,9 +228,10 @@ const Comparison = () => {
                   {x.features.map((f) => (
                     <tr key={f.feature}>
                       <td><FeatureDetails category={f.feature} description={f.description} /></td>
-                      <td>{f.free}</td>
-                      <td>{f.team}</td>
-                      <td>{f.enterprise}</td>
+                      <td className="feature">{f.free}</td>
+                      <td className="feature">{f.teamDesigner}</td>
+                      <td className="feature">{f.teamOperator}</td>
+                      <td className="feature">{f.enterprise}</td>
                     </tr>
                   ))}
                 </>

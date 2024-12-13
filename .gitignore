@@ -92,3 +92,6 @@ default.profraw
 # Lighthouse CI
 .lighthouseci/
 .gitpod.yml
+
+# Temporary files
+spreadsheet.csv

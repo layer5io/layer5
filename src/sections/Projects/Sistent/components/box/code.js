@@ -53,7 +53,7 @@ const codes = [
 </Box>`,
 ];
 
-export const BoxCode = () => {
+const BoxCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
@@ -206,3 +206,5 @@ export const BoxCode = () => {
     </SistentLayout>
   );
 };
+
+export default BoxCode;

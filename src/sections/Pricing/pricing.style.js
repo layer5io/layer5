@@ -31,10 +31,43 @@ const PricingWrapper = styled.section`
     height: 12vw;
   }
   .header-heading {
+    margin-top: 2rem;
     color: white;
     text-align: center;
   }
 }
+
+.toggle-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: .9rem;
+  gap: 10px;
+  width: 85%;
+}
+
+.toggle {
+  border: 2px solid ${props => props.theme.shadowLightColor};
+  padding: .4rem;
+ border-radius: .5rem;
+}
+
+.toggle-container span {
+  cursor: pointer;
+  padding: .5rem 1rem;
+  color: solid ${props => props.theme.shadowLightColor};
+  border-radius: .5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-container .active {
+  background-color: ${props => props.theme.secondaryColor};
+  color: #fff;
+  font-weight: 600;
+  border-color: ${props => props.theme.secondaryColor};
+}
+
 
 .subscription-duration {
     margin-top: 2rem;
@@ -78,7 +111,7 @@ const PricingWrapper = styled.section`
 
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
-  padding: 0.2rem;
+  padding: 0.rem;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }
@@ -88,19 +121,19 @@ const PricingWrapper = styled.section`
   position: relative;
   width: 100%;
   padding: 0 2rem;
-  margin: -2rem auto;
+  margin: -6rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media (max-width: 1200px) {
-        margin: -6rem -1rem;
+  /* @media (max-width: 1200px) {
+        margin: -6rem auto;
     }
   @media (min-width: 1400px) {
     margin: -6rem auto;
   }
   @media (min-width: 2048px) {
     margin: -6rem auto;
-  }
+  } */
 }
 
 .accordion__item {
@@ -115,7 +148,7 @@ const PricingWrapper = styled.section`
   float: right;
   z-index:2;
   margin-top: -1.4rem;
-  margin-right: -3.4rem;
+  margin-right: -2.4rem;
   -webkit-transform: translateY(0%) translateX(0%) rotate(14deg);
 }
 
