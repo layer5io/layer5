@@ -100,22 +100,6 @@
     "categoryOrder": "0",
     "category": "Configuration Management",
     "functionOrder": "6",
-    "function": "Team Design Review",
-    "feature": "Multiple users to simultaneously edit a document, leave comments directly on specific text sections, and track changes made by others, enabling efficient collaboration and feedback loops during the review process.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "0",
-    "category": "Configuration Management",
-    "functionOrder": "7",
     "function": "Design Review Notifications",
     "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
     "subscription_tier": "",
@@ -131,7 +115,7 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "8",
+    "functionOrder": "7",
     "function": "Bulk Import IaC",
     "feature": "Bulk import of your existing infrastructure as code from GitHub repositories.",
     "subscription_tier": "",
@@ -147,7 +131,7 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
-    "functionOrder": "9",
+    "functionOrder": "8",
     "function": "Validate Infrastructure Configuration",
     "feature": "Static validation of configured parameters for design completeness and accuracy.",
     "subscription_tier": "TeamDesigner",
@@ -564,6 +548,22 @@
     "categoryOrder": "4",
     "category": "Collaboration",
     "functionOrder": "401",
+    "function": "Team Design Review",
+    "feature": "Multiple users to simultaneously edit a document, leave comments directly on specific text sections, and track changes made by others, enabling efficient collaboration and feedback loops during the review process.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "402",
     "function": "Collaborative Infrastructure Design",
     "feature": "Create and collaborate in online designs in real-time.",
     "subscription_tier": "TeamDesigner",
@@ -579,7 +579,7 @@
     "theme": "",
     "categoryOrder": "4",
     "category": "Collaboration",
-    "functionOrder": "402",
+    "functionOrder": "403",
     "function": "Public and Private Designs",
     "feature": "Invite any user to collaborate on your public or private designs.",
     "subscription_tier": "TeamDesigner",
@@ -595,7 +595,7 @@
     "theme": "",
     "categoryOrder": "4",
     "category": "Collaboration",
-    "functionOrder": "403",
+    "functionOrder": "404",
     "function": "Collaborative Infrastructure Views",
     "feature": "Simultaneously manage your infrastructure using shared views in real-time. See the status of your deployments, monitor performance, and troubleshoot issues. Views provide tools for interacting with your cluster, such as terminal access and log streaming.",
     "subscription_tier": "TeamOperator",
@@ -611,7 +611,7 @@
     "theme": "",
     "categoryOrder": "4",
     "category": "Collaboration",
-    "functionOrder": "404",
+    "functionOrder": "405",
     "function": "Public and Private Views",
     "feature": "Invite any user to collaborate on your public or private views.",
     "subscription_tier": "TeamOperator",
@@ -622,6 +622,22 @@
       "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "",
+    "functionOrder": "",
+    "function": "",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "docs": ""
   },
   {
     "theme": "",
@@ -1157,7 +1173,7 @@
     "category": "Support and Deployment",
     "functionOrder": "1003",
     "function": "Managed Service Provider",
-    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. \n\nHierarchical user organizations and permissioning. Enforcement of tenancy.",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.<br /><br />Multi-tenancy: Hierarchical organizations, teams, users and customizable permissioning.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
