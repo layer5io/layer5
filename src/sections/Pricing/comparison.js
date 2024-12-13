@@ -104,7 +104,8 @@ h2, h5{
 }
 .price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
-    color:${props => props.theme.whiteEightToBlack};
+    color:${props => props.theme.saffronColor};
+    background-color:rgba(0,179,159,0.1);
     text-transform: uppercase;
     font-size: 12px;
     padding: 12px 48px;
@@ -217,13 +218,9 @@ const Comparison = () => {
               {details.map((x) => (
                 <>
                   <tr key={x.id} >
-                    <td className="categories" colSpan="4">
+                    <td className="categories" colSpan="5">
                       <img src={x.icon} height={32} className="category-icon" alt={x.category} />
                       <h3 className="category">{x.category}</h3></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                   </tr>
                   {x.features.map((f) => (
                     <tr key={f.feature}>

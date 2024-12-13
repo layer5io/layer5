@@ -56,7 +56,7 @@ const PricingWrapper = styled.section`
 .toggle-container span {
   cursor: pointer;
   padding: .5rem 1rem;
-  color: solid ${props => props.theme.shadowLightColor};
+  color: #fff;
   border-radius: .5rem;
   transition: background-color 0.3s, color 0.3s;
 }
