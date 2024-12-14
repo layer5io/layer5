@@ -1173,7 +1173,7 @@
     "category": "Support and Deployment",
     "functionOrder": "1003",
     "function": "Managed Service Provider",
-    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud.<br /><br />Multi-tenancy: Hierarchical organizations, teams, users and customizable permissioning.",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. \n<br /><br />Multi-tenancy: Hierarchical organizations, teams, users and customizable permissioning.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
