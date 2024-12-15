@@ -24,7 +24,7 @@ h2, h5{
     overflow-y:auto;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
-    height: 500px;
+    height: 1000px;
 }
 .price-table {
     width: 100%;
