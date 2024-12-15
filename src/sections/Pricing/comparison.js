@@ -21,8 +21,9 @@ h2, h5{
     margin: 2rem auto;
     display: block;
     overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-y:auto;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
 }
 .price-table {
     width: 100%;
@@ -80,17 +81,17 @@ h2, h5{
     font-weight: 600;
     text-transform: uppercase;
 }
-tr.price-table-head th {
-   position : sticky;
-   z-index : 10;
-   top : 0;
-}
 .price-table tr.price-table-head {
     background-color: #00b39f;
     color: #FFFFFF;
     td{
     padding: 1rem 0;
     }
+}
+.price-table-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .price-table td.price {
     padding: 16px 24px;
