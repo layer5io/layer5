@@ -47,8 +47,8 @@ const PricingWrapper = styled.section`
   width: 85%;
 }
 
-.toggle{
-  border: 2px solid ${props => props.theme.darkJungleGreenHalfColor};
+.toggle {
+  border: 2px solid ${props => props.theme.shadowLightColor};
   padding: .4rem;
  border-radius: .5rem;
 }
@@ -56,15 +56,16 @@ const PricingWrapper = styled.section`
 .toggle-container span {
   cursor: pointer;
   padding: .5rem 1rem;
-  color: #222;
+  color: #fff;
   border-radius: .5rem;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .toggle-container .active {
-  background-color: ${props => props.theme.darkJungleGreenColor};
-  color: #ccc;
-  border-color: ${props => props.theme.darkJungleGreenHalfColor};
+  background-color: ${props => props.theme.secondaryColor};
+  color: #fff;
+  font-weight: 600;
+  border-color: ${props => props.theme.secondaryColor};
 }
 
 
@@ -110,7 +111,7 @@ const PricingWrapper = styled.section`
 
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
-  padding: 0.2rem;
+  padding: 0.rem;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }

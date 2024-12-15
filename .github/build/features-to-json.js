@@ -13,11 +13,11 @@ const headers = [
   "Function",
   "Feature",
   "Subscription Tier",
-  "Free Tier",
-  "TeamDesigner Tier",
-  "TeamOperator Tier",
-  "Enterprise Tier",
-  "Pricing Page?",
+  "Free",
+  "Team Designer",
+  "Team Operator",
+  "Enterprise",
+  "Exclude",
   "Docs",
 ];
 
@@ -36,34 +36,34 @@ async function processCSV() {
 
     const filteredData = rows.map(row => {
       try {
-        const pricingPage = row["Pricing Page?"]?.toLowerCase() || "";
+        const exclude = row["Exclude"]?.toLowerCase();
         const hasXTier = [
-          "Free Tier",
-          "TeamDesigner Tier",
-          "TeamOperator Tier",
-          "Enterprise Tier"]
+          "Free",
+          "Team Designer",
+          "Team Operator",
+          "Enterprise"]
           .some(tier => row[tier]?.trim().toLowerCase() === "x");
-        const includeRow = hasXTier || (pricingPage && ["x", "X"].includes(pricingPage.toLowerCase()));
+        // const includeRow = hasXTier && !(exclude && ["x", "X"].includes(exclude.toLowerCase()));
 
-        if (!includeRow) return null;
-
-        return {
-          theme: row["Theme"],
-          categoryOrder: row["Category Order"],
-          category: row["Category"],
-          functionOrder: row["Function Order"],
-          function: row["Function"],
-          feature: row["Feature"],
-          subscription_tier: row["Subscription Tier"],
-          comparison_tiers: {
-            free: row["Free Tier"],
-            teamDesigner: row["TeamDesigner Tier"],
-            teamOperator: row["TeamOperator Tier"],
-            enterprise: row["Enterprise Tier"],
-          },
-          pricing_page: row["Pricing Page?"],
-          docs: row["Docs"]
-        };
+        // if (!includeRow) return null;
+        if (!exclude) {
+          return {
+            theme: row["Theme"],
+            categoryOrder: row["Category Order"],
+            category: row["Category"],
+            functionOrder: row["Function Order"],
+            function: row["Function"],
+            feature: row["Feature"],
+            subscription_tier: row["Subscription Tier"],
+            comparison_tiers: {
+              free: row["Free"],
+              teamDesigner: row["Team Designer"],
+              teamOperator: row["Team Operator"],
+              enterprise: row["Enterprise"],
+            },
+            docs: row["Docs"]
+          };
+        }
       } catch (error) {
         console.error("Error processing row:", row, error);
         return null;
