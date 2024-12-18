@@ -95,6 +95,9 @@ h2, h5{
     top: 0;
     z-index: 1;
 }
+.price-table-head td {
+     border: none;
+}
 .price-table td.price {
     padding: 16px 24px;
     font-size: 20px;
