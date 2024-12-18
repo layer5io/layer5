@@ -98,6 +98,7 @@ h2, h5{
 .price-table-head td {
      border: none;
      margin: 0;
+     padding: 0;
 }
 .price-table td.price {
     padding: 16px 24px;
