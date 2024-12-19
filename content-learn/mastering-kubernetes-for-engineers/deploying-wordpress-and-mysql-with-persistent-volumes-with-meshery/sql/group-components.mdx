@@ -1,0 +1,49 @@
+---
+docType: "Chapter"
+id: "group-components"
+chapterTitle: "Add labels and Group Components"
+description: "In this section you will add labels to components and learn how to group them."
+videos: 4
+lectures: 12
+order: 4
+---
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import wp14 from "../../../../src/assets/images/learning-path/sql/wp14.png";
+import wp21 from "../../../../src/assets/images/learning-path/sql/wp21.png";
+
+<ChapterStyle>
+
+<h2 class="chapter-sub-heading">Add Labels</h2>
+
+To make it easier to filter and manage your resources during visualization, add labels to all of them.
+
+You can also choose to use the existing label, `app:wordpress`, but a new one, `dev:tutorial`, is recommended for this tutorial to prevent your resources from getting mixed up with others in the public playground cluster.
+
+1. Click on the label icon.
+2. Click the **+** sign next to Labels.
+3. Add the label `dev:tutorial`.
+4. Do this for **all** the resources on the canvas.
+
+<br />
+<a href={wp14}>
+  <img src={wp14} width="100%" align="center" />
+</a>
+
+_Figure: Add label_
+
+5. Now click on `Save As` and save the design.
+
+<h2 class="chapter-sub-heading">Group Components</h2>
+
+The _**Group Components**_ icon on the dock below allows you to group resources based on shared labels or annotations.
+
+This functionality aids in visualizing the relationships between various resources, making it easier to manage them, troubleshoot issues, and understand the overall cluster architecture.
+
+<br />
+<a href={wp21}>
+  <img src={wp21} width="100%" align="center" />
+</a>
+
+_Figure: Group Components_
+
+</ChapterStyle>
