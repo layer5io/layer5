@@ -728,6 +728,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
 
+
+  console.log("Adilllllllllll",components);
+
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
@@ -739,6 +742,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       pageTypes.forEach(({ suffix, file }) => {
         const path = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+
+        console.log(`Creating page for: ${path}`); // Add this log
         try {
           createPage({
             path,
