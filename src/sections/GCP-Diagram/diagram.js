@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 // import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
+//import GCPCatalogLight from "./images/gcp-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 // import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
 import IconsLibraryGIF from "./images/gcp-icon-library.gif";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
@@ -129,37 +131,10 @@ const DiagramWrapper = styled.div`
 
 const Gcp = () => {
 
-
+  const { isDark } = useStyledDarkMode();
   return (
     <DiagramWrapper>
       <Container className="diagram-container">
-
-        {/* <Row className="catalog">
-          <Col md={8} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={GCPIconsDark} alt="GCP Diagrams for anything" className="GCP-image" />
-            </div>
-          </Col>
-          <Col md={4} className="diagram-detail">
-            <h2 className="heading">Diagram + Config = Awesome!</h2>
-            <p className="caption">
-              Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
-            </p>
-          </Col>
-        </Row> */}
-        {/* <Row className="catalog">
-          <Col md={4} className="diagram-detail">
-            <h2 className="heading">Deploy with No Code GCP</h2>
-            <p className="caption">
-              Our visual GCP interface enables anyone to deploy production-grade software with no code. Whether you're new to GCP and are looking for the best way to learn or a seasoned pro, Kanvas has all the features you need to be successful in deploying and configuring your software, all with no code.
-            </p>
-          </Col>
-          <Col md={8} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={DeployGIF} alt="GCP Diagrams for anything" className="GCP-image" />
-            </div>
-          </Col>
-        </Row> */}
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
@@ -190,7 +165,7 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
+              <img src={isDark ? GCPCatalogDark : GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -202,48 +177,6 @@ const Gcp = () => {
           </Col>
         </Row>
 
-        {/* <Row className="catalog">
-          <Col lg={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={isDark ? GCPIconsDark : GCPIconsLight} alt="GCP Diagrams for anything" className="gcp-image" />
-            </div>
-          </Col>
-          <Col lg={6} className="diagram-detail">
-            <h2 className="heading">GCP architectural diagrams tailored to meet any requirement</h2>
-            <b className="sub-heading">Extensive GCP Icon Library </b>
-            <p className="caption">
-              Utilize a vast and continually expanding collection of Kubernetes icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
-            </p>
-            <b className="sub-heading">Manage and analyze data </b>
-            <p className="caption">
-              Leverage Google Cloud Platform diagrams to utilize various services in facilitating storage and analysis of large datasets. These services encompass BigQuery, Dataflow, Dataproc, and Data Fusion, contributing to cloud-based data management.
-              <br />
-              <br />
-              <a className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</a>
-            </p>
-          </Col>
-        </Row>
-        <Row className="catalog">
-          <Col md={6} className="diagram-detail">
-            <h2 className="heading">Designing GCP diagrams is effortless</h2>
-            <b className="sub-heading">Swift Kickstart with Ready-to-Use Templates</b>
-            <p className="caption">
-              Get started quickly with our ready-to-use templates. Effortlessly create your GCP architecture diagrams using these professional templates. They are fully customizable and available for free download.
-            </p>
-            <b className="sub-heading">Intuitively Designed User-Friendly Editor</b>
-            <p className="caption">
-              Create GCP diagrams effortlessly with an intuitive layout and interface. Benefit from intelligent auto-adjustment, drag-and-drop functionality, and a comprehensive toolkit for quick diagram creation in minutes.
-              <br />
-              <br />
-              <a className="link" href="/cloud-native-management/catalog">Learn more &rarr;</a>
-            </p>
-          </Col>
-          <Col md={6} className="diagram-image">
-            <div className="image-wrapper">
-              <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with KanvasclassName="gcp-image" />
-            </div>
-          </Col>
-        </Row> */}
         <RelatedPicks heading="gcp" />
       </Container>
     </DiagramWrapper>

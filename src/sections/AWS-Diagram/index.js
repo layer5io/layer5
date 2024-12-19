@@ -4,7 +4,7 @@ import FeatureHero from "../FeatureHero";
 import Reviews from "../Pricing/review-slider";
 import Diagram from "./diagram";
 import AWSDark from "../../assets/images/AWS-Diagram/aws.svg";
-// import AWSLight from "../../assets/images/AWS-Diagram/aws-light.svg";
+//import AWSLight from "../../assets/images/AWS-Diagram/aws-light.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const AwsDiagramPage = () => {

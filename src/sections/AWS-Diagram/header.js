@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import AWSCardDark from "../../assets/images/AWS-Diagram/aws-light.svg";
-import AWSCardLight from "../../assets/images/AWS-Diagram/aws.svg";
+//import AWSCardLight from "../../assets/images/AWS-Diagram/aws-light.svg";
+import AWSCardDark from "../../assets/images/AWS-Diagram/aws.svg";
 import Button from "../../reusecore/Button";
 
 const CatalogHeaderWrapper = styled.div`
@@ -130,7 +130,7 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" md={6}>
-              <img src={isDark ? AWSCardDark : AWSCardLight} alt="catalog" />
+              <img src={isDark ? AWSCardDark : AWSCardDark} alt="catalog" />
             </Col>
           </Row>
         </Container>

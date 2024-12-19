@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
+//import KubernetesCatalogLight from "./images/kubernetes-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";

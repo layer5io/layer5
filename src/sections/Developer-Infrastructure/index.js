@@ -15,7 +15,7 @@ const KubernetesMultiCluster = () => {
     heading: "Developer-defined Infrastructure",
     sub_heading:
       "Cloud Native application and infrastructure management software that empowers organizations to expect more from their infrastructure.",
-    image: kubernetes_svg,
+    image: kubernetes_svg
   };
 
   let card_data = [
