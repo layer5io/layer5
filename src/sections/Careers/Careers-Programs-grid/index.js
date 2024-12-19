@@ -57,8 +57,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
 
   return (
     <ProgramsPageWrapper>
-      <PageHeader className="title" title="Open Source Internship Programs" path={path} />
-      <h3>Build Your Career at Layer5</h3>
+      <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
       <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
         <Container>
           <div className="program-grid-wrapper">

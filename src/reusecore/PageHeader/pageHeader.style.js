@@ -24,6 +24,15 @@ const PageHeaderWrapper = styled.div`
 
                 }
             }
+            h3 {
+                color: ${(props) => props.theme.whiteSixToGreen3C494F};
+                margin-top: 2rem;
+                padding: 0;
+                font-weight: 500;
+                text-align: center;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+
         }
         
         .feature-image{
