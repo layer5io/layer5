@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
+import KubernetesCatalogLight from "./images/kubernetes-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
@@ -198,7 +199,7 @@ const Kubernetes = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with Kanvas" className="kubernetes-image" />
+              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogLight} alt="Designing Kubernetes Diagrams with Kanvas" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
