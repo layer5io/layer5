@@ -79,10 +79,12 @@ const ToggleButtonCode = () => {
           <h2>ToggleButton</h2>
         </a>
         <p>
-          The `ToggleButton` component provides a way to toggle between states
-          or select options within a group. Whether used individually or in
-          conjunction with a `ToggleButtonGroup`, it offers a consistent and
-          user-friendly way to control selections in a UI.
+        The `ToggleButton` and `ToggleButtonGroup` are versatile components
+            that can be used for a wide range of applications. Their intuitive
+            design ensures users can make selections easily and confidently.
+            Whether it's enabling a setting, selecting a mode, or choosing
+            multiple options, these components are built to enhance user
+            experience across different scenarios.
         </p>
         <div className="filterBtns">
           <TabButton

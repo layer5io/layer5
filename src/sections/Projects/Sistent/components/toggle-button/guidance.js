@@ -19,11 +19,12 @@ const ToggleButtonGuidance = () => {
           <h2>ToggleButton</h2>
         </a>
         <p>
-          The `ToggleButton` component is designed to allow users to quickly
-          toggle between two or more states, such as enabling or disabling a
-          feature, choosing between views, or setting preferences. It provides
-          visual feedback that helps users understand the current state of an
-          option at a glance.
+        The `ToggleButton` and `ToggleButtonGroup` are versatile components
+            that can be used for a wide range of applications. Their intuitive
+            design ensures users can make selections easily and confidently.
+            Whether it's enabling a setting, selecting a mode, or choosing
+            multiple options, these components are built to enhance user
+            experience across different scenarios.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -57,14 +58,6 @@ const ToggleButtonGuidance = () => {
           />
         </div>
         <div className="main-content">
-          <p>
-            The `ToggleButton` and `ToggleButtonGroup` are versatile components
-            that can be used for a wide range of applications. Their intuitive
-            design ensures users can make selections easily and confidently.
-            Whether it's enabling a setting, selecting a mode, or choosing
-            multiple options, these components are built to enhance user
-            experience across different scenarios.
-          </p>
           <a id="Function">
             <h2>Functionality</h2>
           </a>
