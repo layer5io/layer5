@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 // import GCPIconsDark from "./images/gcp-icons-dark.svg";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
-//import GCPCatalogLight from "./images/gcp-catalog-light.svg";
+import GCPCatalogLight from "./images/gcp-catalog-light.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 // import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
@@ -165,7 +165,7 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? GCPCatalogDark : GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
+              <img src={isDark ? GCPCatalogDark : GCPCatalogLight} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
