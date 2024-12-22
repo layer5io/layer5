@@ -95,6 +95,14 @@ const componentsData = [
     url: "/projects/sistent/components/backdrop",
     src: "/backdrop",
   },
+  {
+    id: 13,
+    name: "List",
+    description:
+      "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    url: "/projects/sistent/components/list",
+    src: "/list",
+  },
 ];
 
 module.exports = { componentsData };
