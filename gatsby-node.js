@@ -728,6 +728,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
 
+
+
+
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
