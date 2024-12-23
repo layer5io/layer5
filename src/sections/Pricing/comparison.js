@@ -21,8 +21,10 @@ h2, h5{
     margin: 2rem auto;
     display: block;
     overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-y:auto;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    height: 700px;
 }
 .price-table {
     width: 100%;
@@ -87,6 +89,16 @@ h2, h5{
 .price-table tr.price-table-head {
     background-color:${props => props.theme.secondaryColor};
     color: #FFFFFF;
+}
+.price-table-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.price-table-head td {
+     border: none;
+     margin: 0;
+     padding: 0;
 }
 .price-table td.price {
     padding: 16px 24px;
