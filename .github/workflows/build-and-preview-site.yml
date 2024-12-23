@@ -28,5 +28,5 @@ jobs:
           name: public-dir
           path: ./public-dir.zip
           retention-days: 1
-      - name: Triger Inner workflow
-        run: echo "trigering inner workflow"
+      - name: Trigger Inner workflow
+        run: echo "triggering inner workflow"
