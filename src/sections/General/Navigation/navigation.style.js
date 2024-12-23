@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  position: sticky;
+  // position: sticky;
   width: 100vw;
   z-index: 9999;
   top: 0;
