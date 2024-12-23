@@ -4,7 +4,6 @@ import { Formik, Form, Field } from "formik";
 import PricingFormWrapper from "./pricingForm.style";
 
 const PricingForm = () => {
-  // Use the same naming convention as your other forms
   const [memberFormOne, setMemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
 
@@ -29,9 +28,7 @@ const PricingForm = () => {
           email: "",
         }}
         onSubmit={(values) => {
-          // Store the form values in the memberFormOne state
           setMemberFormOne(values);
-          // Trigger the effect to POST the data
           setSubmit(true);
         }}
       >
