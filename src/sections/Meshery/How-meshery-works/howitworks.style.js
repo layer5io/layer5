@@ -71,6 +71,7 @@ h2 {
   }
   
   .diagram {
+    margin-bottom:150px;
     width: 591px;
     max-width: 100%;
     position: sticky;
