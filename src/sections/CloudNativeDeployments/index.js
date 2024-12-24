@@ -1,6 +1,7 @@
 import React from "react";
 import FeatureHero from "../SolutionHero";
 import whiteboard_svg from "./images/whiteboarding.svg";
+import whiteboard_light_svg from "./images/whiteboarding-light.svg";
 import collaborate_svg from "./images/collaborate.svg";
 import cluster_svg from "./images/cluster.svg";
 import switcher_img from "./images/switcher.png";
@@ -9,13 +10,15 @@ import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./deploy.style";
 import Feature from "./features";
 import Reviews from "../Pricing/review-slider";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 const KubernetesMultiCluster = () => {
+  const { isDark } = useStyledDarkMode();
   let data = {
     heading: "Cloud Native Deployments by Diagram",
     sub_heading:
       "Design and Deploy your Kubernetes-based, cloud native deployments",
-    image: whiteboard_svg,
+    image: isDark ? whiteboard_svg : whiteboard_light_svg,
   };
 
   let card_data = [

@@ -4,7 +4,7 @@ import { Row, Col, Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import GCPDiagramDark from "./images/gcp-diagram-dark.svg";
-import GCPDiagramLight from "./images/gcp-diagram-light.svg";
+//import GCPDiagramLight from "./images/gcp-diagram-light.svg";
 
 const CatalogHeaderWrapper = styled.div`
   .cloud-native-catalog.header {
@@ -93,7 +93,7 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" lg={6}>
-              <img src={isDark ? GCPDiagramDark : GCPDiagramLight} alt="catalog" />
+              <img src={isDark ? GCPDiagramDark : GCPDiagramDark} alt="catalog" />
             </Col>
           </Row>
         </Container>

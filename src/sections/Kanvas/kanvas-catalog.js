@@ -1,26 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import Mutual_tls from "../../assets/images/kanvas/catalog-card-images/mutual-tls.svg";
+import Mutual_tls_dark from "../../assets/images/kanvas/catalog-card-images/mutual-tls-dark.svg";
 import Retries from "../../assets/images/kanvas/catalog-card-images/retries.svg";
+import Retries_dark from "../../assets/images/kanvas/catalog-card-images/retries-dark.svg";
 import Traces from "../../assets/images/kanvas/catalog-card-images/traces.svg";
+import Traces_dark from "../../assets/images/kanvas/catalog-card-images/traces-dark.svg";
 import Denial from "../../assets/images/kanvas/catalog-card-images/denial.svg";
+import Denial_dark from "../../assets/images/kanvas/catalog-card-images/denial-dark.svg";
 import Correlate_event from "../../assets/images/kanvas/catalog-card-images/correlate-event.svg";
+import Correlate_event_dark from "../../assets/images/kanvas/catalog-card-images/correlate-event-dark.svg";
 import Only_wagent from "../../assets/images/kanvas/catalog-card-images/only-wagent.svg";
+import Only_wagent_dark from "../../assets/images/kanvas/catalog-card-images/only-wagent-dark.svg";
 import Node_agent from "../../assets/images/kanvas/catalog-card-images/node-agent.svg";
+import Node_agent_dark from "../../assets/images/kanvas/catalog-card-images/node-agent-dark.svg";
 import Single_tenant from "../../assets/images/kanvas/catalog-card-images/single-tenant.svg";
+import Single_tenant_dark from "../../assets/images/kanvas/catalog-card-images/single-tenant-dark.svg";
 import Pre_provison from "../../assets/images/kanvas/catalog-card-images/pre-provision.svg";
+import Pre_provison_dark from "../../assets/images/kanvas/catalog-card-images/pre-provision-dark.svg";
 import Circuit_breaker from "../../assets/images/kanvas/catalog-card-images/circuit-breaker.svg";
+import Circuit_breaker_dark from "../../assets/images/kanvas/catalog-card-images/circuit-breaker-dark.svg";
 import Retry_deadline from "../../assets/images/kanvas/catalog-card-images/retry-deadline.svg";
+import Retry_deadline_dark from "../../assets/images/kanvas/catalog-card-images/retry-deadline-dark.svg";
 import Singleton from "../../assets/images/kanvas/catalog-card-images/singleton.svg";
+import Singleton_dark from "../../assets/images/kanvas/catalog-card-images/singleton-dark.svg";
 import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.svg";
+import Jwt_transformer_dark from "../../assets/images/kanvas/catalog-card-images/jwt-dark.svg";
 import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
+import Multicluster_dark from "../../assets/images/kanvas/catalog-card-images/multicluster-dark.svg";
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
+import Http_metrics_dark from "../../assets/images/kanvas/catalog-card-images/http-dark.svg";
 
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Ebpf from "../../assets/images/kanvas/ebpf.svg";
 import Opa from "../../assets/images/kanvas/opa.svg";
 import { Container } from "../../reusecore/Layout";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+
 
 const CatalogWrapper = styled.div`
 
@@ -418,6 +435,7 @@ h3.containerCaption {
 `;
 
 const Catalog = () => {
+  const { isDark } = useStyledDarkMode();
   return (
     <CatalogWrapper>
       <Container className="catalog-container">
@@ -467,49 +485,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <img src={Mutual_tls} />
+                  <img src={isDark ? Mutual_tls_dark : Mutual_tls} />
                 </div>
                 <div className="slide two">
-                  <img src={Retries} />
+                  <img src={isDark ? Retries_dark : Retries} />
                 </div>
                 <div className="slide three">
-                  <img src={Traces} />
+                  <img src={isDark ? Traces_dark : Traces} />
                 </div>
                 <div className="slide four">
-                  <img src={Denial} />
+                  <img src={isDark ? Denial_dark : Denial} />
                 </div>
                 <div className="slide five">
-                  <img src={Correlate_event} />
+                  <img src={isDark ? Correlate_event_dark : Correlate_event} />
                 </div>
                 <div className="slide six">
-                  <img src={Only_wagent} />
+                  <img src={isDark ? Only_wagent_dark : Only_wagent} />
                 </div>
                 <div className="slide seven">
-                  <img src={Node_agent} />
+                  <img src={isDark  ? Node_agent_dark : Node_agent} />
                 </div>
                 <div className="slide eight">
-                  <img src={Single_tenant} />
+                  <img src={isDark ? Single_tenant_dark : Single_tenant} />
                 </div>
                 <div className="slide nine">
-                  <img src={Pre_provison} />
+                  <img src={isDark ? Pre_provison_dark : Pre_provison} />
                 </div>
                 <div className="slide ten">
-                  <img src={Circuit_breaker} />
+                  <img src={isDark ? Circuit_breaker_dark : Circuit_breaker} />
                 </div>
                 <div className="slide eleven">
-                  <img src={Retry_deadline} />
+                  <img src={isDark ? Retry_deadline_dark : Retry_deadline} />
                 </div>
                 <div className="slide twelve">
-                  <img src={Singleton} />
+                  <img src={isDark ? Singleton_dark : Singleton} />
                 </div>
                 <div className="slide thirteen">
-                  <img src={Jwt_transformer} />
+                  <img src={isDark ? Jwt_transformer_dark : Jwt_transformer} />
                 </div>
                 <div className="slide fourteen">
-                  <img src={Multicluster} />
+                  <img src={isDark ? Multicluster_dark : Multicluster} />
                 </div>
                 <div className="slide fifteen">
-                  <img src={Http_metrics} />
+                  <img src={isDark ? Http_metrics_dark : Http_metrics} />
                 </div>
               </div>
             </div>
