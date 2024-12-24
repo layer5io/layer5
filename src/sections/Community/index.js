@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
@@ -106,7 +107,7 @@ const CommunityPage = () => {
           </Row>
         </div>
         <Container>
-          <Row className="recognition-program">
+          <Row className="recognition-program meshmate">
             <div className="recognition-content">
               <div className="badges-section">
                 <div className="badge-stack">
