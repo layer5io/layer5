@@ -1,6 +1,6 @@
 ---
 title: "Introducing Meshkit and the Meshery Adapter Library"
-subtitle: "Making the DX of service mesh management easy."
+subtitle: "Making the DX of cloud native infrastructure management easy."
 date: 2021-02-07 12:12:12 +0002
 author: Michael Gfeller
 thumbnail: ./meshery-adapter-library-overview.webp
@@ -28,18 +28,18 @@ import malOverview from "./meshery-adapter-library-overview.webp";
 
 <div class="intro"><p>The Meshery v0.5.0 release includes two new libraries: <span>MeshKit</span> and <span>Meshery Adapter Library</span>.
 
-These two libraries improve contributor experience and development speed by reducing the burden of sustaining the plethora of Meshery adapters, allowing contributors to focus on exposing a service mesh's differentiated value,
-instead of having to redundantly implement plumbing for managing service meshes.
+These two libraries improve contributor experience and development speed by reducing the burden of sustaining the plethora of Meshery adapters, allowing contributors to focus on exposing any given infrastructure component's differentiated value,
+instead of having to redundantly implement plumbing for managing cloud native infrastructure.
 
 </p></div>
 
 ## MeshKit
 
-MeshKit was formerly named `gokit` and was renamed recently to align with the other Meshery components' names (and avoid confusion with the `go-kit` project). MeshKit can be considered a derivative of `go-kit` with specific focus on service mesh management.
+MeshKit was formerly named `gokit` and was renamed recently to align with the other Meshery components' names (and avoid confusion with the `go-kit` project). MeshKit can be considered a derivative of `go-kit` with specific focus on cloud native management.
 
 In the Meshery v0.5.0 release, MeshKit has been enhanced and expanded substantially. Considering that the MeshKit library provides broadly useful functionality, it is used in a growing number of Meshery components. It is intended to be one of the top level libraries in the Meshery ecosystem. <div class="fact">Meshkit provides functionality useful across all Meshery components.</div>
 
-MeshKit is a toolkit for Layer5’s microservices, and is positioned to become Layer5’s middleware component for Layer5’s microservices, leveraging other libraries like `go-kit/kit`. In complement to functionality provided by a service mesh, its purpose is to provide implementations for common cross-cutting concerns like error handling, logging, and tracing. Uniform error handling and logging across all Meshery components helps to implement efficient tooling for observability, monitoring and troubleshooting. The library provides some common data models for Meshery, notably for <Link to="/smi">Service Mesh Interface conformance testing</Link>, and Kubernetes' `kubeconfig`.
+MeshKit is a toolkit for Layer5’s microservices, and is positioned to become Layer5’s middleware component for Layer5’s microservices, leveraging other libraries like `go-kit/kit`. In complement to functionality provided by any given cloud native infrastructure component, its purpose is to provide implementations for common cross-cutting concerns like error handling, logging, and tracing. Uniform error handling and logging across all Meshery components helps to implement efficient tooling for observability, monitoring and troubleshooting. The library provides some common data models for Meshery and Meshery's <a href="https://meshery.io/extensions">ecosystem of extensions</a>.
 
 Another central component in Meshkit is the `utils` package.
 
@@ -130,7 +130,7 @@ spec:
 
 ## Meshery Adapters
 
-Meshery adapters are management plane components and manage the lifecycle of service meshes. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. In addition, Meshery adapters can assess to what extent a service mesh complies to the <Link to="/blog/announcements/a-standard-interface-for-service-meshes">Service Mesh Interface standard</Link>. Meshery adapters support management of multiple versions of their respective service mesh and also come bundled with sample applications that can be deployed for easy and quick exploration of service mesh capabilities. <div class="fact">Meshery adapters manage the lifecycle of service meshes.</div>
+Meshery adapters are management plane components and manage the lifecycle of cloud native infra. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. As example use of Meshery adapters is for purposes of compliance verification, actively attesting whether whether infrastructure complies to an open standard, like that of <Link to="/blog/announcements/a-standard-interface-for-service-meshes">Service Mesh Interface</Link>. Meshery adapters support management of multiple versions of their respective capabilites and also come bundled with sample applications that can be deployed for easy and quick exploration of infrastructure (or other) capabilities. <div class="fact">Meshery adapters extend Meshery's core functionality housed within Meshery Server, often deepening Meshery's ability to manage the lifecycle infratructure, but not limited to those use cases. Adapters have been known to act as engineering workflow facilititors, providing gate reviews, sending emails, and so on.</div>
 
 A Meshery adapter is a gRPC server that exposes the `MeshServiceServer` interface:
 
@@ -145,15 +145,15 @@ type MeshServiceServer interface {
 }
 ```
 
-- `CreateMeshInstance` sets up the Kubernetes client. It does not, as the name might imply, create an instance of a service mesh.
-- `MeshName` returns the name of the mesh, configured in the adapter.
-- `SupportedOperations` returns all supported operations, configured in the adapter. An operation is e.g. the installation of a service mesh.
+- `CreateInstance` sets up the Kubernetes client. It does not, as the name might imply, create an instance of an infrastructure component.
+- `Name` returns the name of the infrastructure component, configured in the adapter.
+- `SupportedOperations` returns all supported operations, configured in the adapter. An operation is e.g. the installation of any given cloud native infrastructure component or service.
 - `ApplyOperation` executes the operation specified in the request. It is one of the supported operations.
 - `StreamEvents` allows sending events from the server to the client.
 
-This API is one of the extension points of Meshery, making it easy to add support for new service meshes to Meshery. Meshery adapters abstract away differences in installation and configuration of the various service meshes.<div class="fact">Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.</div>
+This API is one of the extension points of Meshery, making it easy to add support for new cloud native technologies to Meshery. Meshery adapters abstract away differences in installation and configuration of the various technologies. Various cloud native technologies are installed and configured in their own way. For instance, some projects have their own installer, like `istioctl` for Istio, while others use Helm charts, like Consul. One of the purposes of Meshery adapters is to abstract these differences away. <div class="fact">It's important to note, however, that Meshery Adapters allow Meshery to interface with each managed system uniquely, and not treat those systems uniformly by only offering the lowest common denominator of functionality, but instead by exposing that system's differentiated value to users.</div>
 
-In general, the various service mesh implementations are installed and configured in their own way. For instance, some service meshes have their own installer, like `istioctl` for Istio, while others use Helm charts, like Consul. One of the purposes of Meshery adapters is to abstract these differences away.
+
 
 ## Meshery Adapter Library
 
@@ -168,7 +168,7 @@ Also, it means new adapters can be implemented quickly, as only configuration an
 <div class="fact">
   The Meshery Adapter Library provides a common and consistent set of
   functionality that Meshery adapters use for managing the lifecycle of
-  service meshes and their workloads.
+  cloud infrastructure and their workloads.
 </div>
 
 The initial commit was submitted on October 6th, 2020 based on a refactoring effort in the adapter for the Kuma service mesh. Within a few months, several adapters have been refactored or implemented from scratch based on the Meshery Adapter Library.
@@ -224,7 +224,7 @@ The `service` is a struct that holds all the parameters that specify an adapter 
 Extracting common code from adapters to the two new libraries has proven to be a worthwhile investment. It led to cleaner code as well as cleaner application architecture, shortened implementation time for new adapters considerably, and upleveled the quality of Meshery's adapters through consistency of implementation.
 
 
-<div class="intro"><p>P.S. If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+<div class="intro"><p>P.S. If these topics excite you and you want to explore the beautiful realm of cloud native infrastructure, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
 
 </MeshkitMesheryAdapterLib>
 </BlogWrapper>

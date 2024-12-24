@@ -11,13 +11,13 @@ function generatePlans(data) {
       monthlyprice: 0,
       yearlyprice: 0,
       byline: "The basics for individuals and organizations",
-      byline2: "",
+      byline2: " Everything from Open Source, plus...",
       button: ["Join for Free", "https://cloud.layer5.io"]
     },
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 6,
+      monthlyprice: 8,
       yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "← Everything included in Free, plus...",
@@ -25,10 +25,10 @@ function generatePlans(data) {
     },
     "TeamOperator": {
       tier: "Team Operator",
-      featured: true,
-      monthlyprice: 6,
+      featured: false,
+      monthlyprice: 8,
       yearlyprice: 68,
-      pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
+      // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -57,8 +57,7 @@ function generatePlans(data) {
       })
       .filter((item) => {
         const matches =
-          item.subscription_tier === tierName &&
-          item.pricing_page === "x";
+          item.subscription_tier === tierName; //&& !item.exclude === "x";
         return matches;
       })
       .map((item, index) => {

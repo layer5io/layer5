@@ -14,10 +14,13 @@ const PlanCard = ({ planData , isYearly }) => {
       <Container>
         <Row $Hcenter>
           {planData.map((x) => (
-            <Col xl={4} lg={3} md={2} sm={1} key={x.tier}>
+            // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
+            <Col key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
+
+                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
 
                 {x.pricing_coming_soon && (
                   <div className="pricing_coming_soon">
@@ -66,10 +69,10 @@ const PlanCard = ({ planData , isYearly }) => {
 
 
                 <Button
-                  disabled={x.tier === "Team Operator"}
+                  // disabled={x.tier === "Team Operator"}
                   $primary
                   className={
-                    x.button[0] === "Coming Soon" || x.tier === "Team Operator"
+                    x.button[0] === "Coming Soon"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }

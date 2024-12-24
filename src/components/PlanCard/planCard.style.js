@@ -78,7 +78,7 @@ const PlanCardWrapper = styled.section`
     }
     .pricing-label {
       border-radius: 0px 4px;
-      background: ${(props) => props.theme.grey050505ToGreyF1F2F1};
+      background: ${(props) => props.theme.grey0E0E0EToGreen3C494F};
       padding: 0.125rem 0.5rem;
       position: absolute;
       width: fit-content;
@@ -86,7 +86,20 @@ const PlanCardWrapper = styled.section`
       font-weight: 500;
       top: 0rem;
       right: .9rem;
-      color: ${(props) => props.theme.greyDEE3DEToGrey363636};
+      color: #eee;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .featured-label {
+      border-radius: 0px 4px;
+      background: ${(props) => props.theme.saffronColor};
+      padding: 0.125rem 0.5rem;
+      position: absolute;
+      width: fit-content;
+      font-size: 0.75rem;
+      font-weight: 500;
+      top: 0rem;
+      right: .9rem;
+      color: #111;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h6 {

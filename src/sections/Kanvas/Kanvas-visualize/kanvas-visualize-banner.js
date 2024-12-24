@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../../reusecore/Button";
+// import Button from "../../../reusecore/Button";
 import KanvasBtn from "../kanvas-buttons";
 
 const VisualizeBannerWrapper = styled.div`

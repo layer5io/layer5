@@ -93,8 +93,8 @@ const FeatureDetails = ({ category, description, tier }) => {
           {tier === "Team-Beta" && <BetaTag />}
         </h5>
         <div className="details">
-          <p className={`closed ${expand ? "open" : ""}`}>
-            {description}
+          <p className={`closed ${expand ? "open" : ""}`}
+            dangerouslySetInnerHTML={{ __html: description }}>
           </p>
         </div>
       </div>

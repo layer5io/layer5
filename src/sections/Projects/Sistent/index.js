@@ -1,12 +1,13 @@
 import React from "react";
 import SistentWrapper from "./sistent.style";
 import HandbookCard from "../../../components/HandbookCard";
+import SistentLogo from "../../../assets/images/sistent/horizontal/sistent-horizontal-white.svg";
 
 const SistentHome = () => {
   return (
     <SistentWrapper>
       <div className="page-header-section">
-        <h1>Sistent</h1>
+        <img src={SistentLogo} alt="Sistent Logo" />
       </div>
       <div className="community-home-subtitle">
         <h3>Design system for Layer5 projects</h3>
