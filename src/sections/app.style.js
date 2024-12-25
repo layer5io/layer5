@@ -64,7 +64,6 @@ body {
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   font-family: "Qanelas Soft", "Open Sans", sans-serif;
-  // overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
   padding: 0;
