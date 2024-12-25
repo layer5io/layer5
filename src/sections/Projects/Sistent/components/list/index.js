@@ -38,8 +38,6 @@ const SistentList = () => {
           />
         </div>
         <div className="main-content">
-          <a id="List Components">
-          </a>
           <p>The List component is a flexible and structured container for organizing content in vertical layouts. It supports various child components, such as List Items, Icons, Avatars, Buttons, and Subheaders, making it ideal for creating navigational menus, data displays, or interactive content groups.</p>
           <p>
             The List component is designed to:
@@ -50,12 +48,9 @@ const SistentList = () => {
             <li><strong>Customizable Design:</strong> Offers size variations, dense modes, and alignment options.</li>
             <li><strong>Accessibility:</strong> Ensures keyboard navigation and visual feedback for enhanced usability.</li>
           </ul>
-          <a id="Components Overview">
-          </a>
           <p>
             Components Overview:
           </p>
-
           <ul>
             <li>List Item: Represents an individual item within the list.</li>
             <li>List Item Button: A clickable button within a list item.</li>
@@ -63,13 +58,14 @@ const SistentList = () => {
             <li>List Item Avatar: Adds an avatar for visual representation within the list item.</li>
             <li>List Item Text: Contains the primary and secondary text within a list item.</li>
             <li>List Subheader: Provides a labeled header for grouping related list items.</li>
-
           </ul>
+
           <a id="Types of List component">
+            <p><h3> Types of List component </h3></p>
           </a>
-          <p><h3> Types of List component </h3></p>
-          <a id="List"></a>
-          <h4>1. List</h4>
+          <a id="List">
+            <h4>1. List</h4>
+          </a>
           <p>The base container for organizing related content in vertical layouts.</p>
           <p><strong>Basic Usage:</strong></p>
           <Row $Hcenter className="image-container">
@@ -90,8 +86,9 @@ const SistentList = () => {
             </SistentThemeProvider>
           </Row>
 
-          <a id="List Item"></a>
-          <h4>2. List Item</h4>
+          <a id="List Item">
+            <h4>2. List Item</h4>
+          </a>
           <p>
             Represents an individual entry in a list. Includes primary and optional secondary text.
           </p>
@@ -107,8 +104,9 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-          <a id="List Item Button"></a>
-          <h4>3. List Item Button</h4>
+          <a id="List Item Button">
+            <h4>3. List Item Button</h4>
+          </a>
           <p>
             Adds interactivity to list items, making them actionable.
           </p>
@@ -125,8 +123,9 @@ const SistentList = () => {
             </SistentThemeProvider>
           </Row>
 
-          <a id="List with Icons"></a>
-          <h4>4. List with Icons</h4>
+          <a id="List with Icons">
+            <h4>4. List with Icons</h4>
+          </a>
           <p>
             Icons can be added to list items to enhance visual interest and provide additional meaning for each item. Enhances list items with visual elements for better context.
           </p>
@@ -156,8 +155,9 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-          <a id="List with Avatars"></a>
-          <h4>5. List with Avatars</h4>
+          <a id="List with Avatars">
+            <h4>5. List with Avatars</h4>
+          </a>
           <p>
             Avatars can be added to list items, which is particularly useful for representing people or items visually. Visually represents items with avatars for a user-friendly interface.
           </p>
@@ -175,8 +175,9 @@ const SistentList = () => {
               </List>
             </SistentThemeProvider>
           </Row>
-          <a id="List Subheader"></a>
-          <h4>6. List Subheader</h4>
+          <a id="List Subheader">
+            <h4>6. List Subheader</h4>
+          </a>
           <p>
             Subheaders provide a way to label groups within a list, adding clarity and helping users navigate content. Groups and labels items within a list for better navigation and organization.
           </p>

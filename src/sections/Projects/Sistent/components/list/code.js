@@ -9,51 +9,37 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
   // Basic List with List Items
-  `  <SistentThemeProvider>
-       <List>
+  `  <List>
          <ListItem><ListItemText primary="Layer5 Sistent 1" /></ListItem> 
          <ListItem><ListItemText primary="Layer5 Sistent 2" /></ListItem> 
          <ListItem><ListItemText primary="Layer5 Sistent 3" /></ListItem> 
-       </List>
-  </SistentThemeProvider>`,
-
+  </List> `,
   // List with Icons in List Items
-  `  <SistentThemeProvider>
-       <List>
+  `  <List>
         <ListItem><ListItemIcon>🌟</ListItemIcon><ListItemText primary="Layer5 Sistent Starred" /></ListItem>
         <ListItem><ListItemIcon>📅</ListItemIcon><ListItemText primary="Layer5 Sistent Calender" /></ListItem>
         <ListItem><ListItemIcon>🔔</ListItemIcon><ListItemText primary="Layer5 Sistent Notification" /></ListItem>
-       </List>
-  </SistentThemeProvider>`,
-
+  </List> `,
   // List with Avatars
-  `  <SistentThemeProvider>
-       <List>
+  `  <List>
         <ListItem><ListItemAvatar>👤</ListItemAvatar><ListItemText primary="Layer5 Sistent User 1" /></ListItem>
         <ListItem><ListItemAvatar>👩‍💻</ListItemAvatar><ListItemText primary="Layer5 Sistent User 2" /></ListItem>
         <ListItem><ListItemAvatar>👤</ListItemAvatar><ListItemText primary="Layer5 Sistent User 3" /></ListItem>
-       </List>
-  </SistentThemeProvider>`,
-
+  </List> `,
   // List with Subheader
-  `  <SistentThemeProvider>
-       <List>
+  `  <List>
         <ListSubheader>Section 1</ListSubheader>
         <ListItem><ListItemText primary="Layer5 Sistent A" /></ListItem>
         <ListItem><ListItemText primary="Layer5 Sistent B" /></ListItem>      
         <ListSubheader>Section 2</ListSubheader>
         <ListItem><ListItemText primary="Layer5 Sistent C" /></ListItem>
         <ListItem><ListItemText primary="Layer5 Sistent D" /></ListItem>
-       </List>
-  </SistentThemeProvider>`,
-
+  </List> `,
   // List with Action Buttons
-  `  <SistentThemeProvider>
-       <List>
+  `  <List>
         <ListItemButton onClick={() => alert("Clicked!")}> Layer5 Sistent Action 1</ListItemButton>
         <ListItemButton onClick={() => alert("Clicked!")}>Layer5 Sistent Action 2</ListItemButton>
-       </List>
-  </SistentThemeProvider>`,
+  </List> `,
 ];
 
 const ListCode = () => {
@@ -63,7 +49,7 @@ const ListCode = () => {
   return (
     <SistentLayout title="List">
       <div className="content">
-        <a id="Identity"><h2>List</h2></a>a
+        <a id="Identity"><h2>List</h2></a>
         <p>
           The List component displays a list of items in a structured and
           accessible manner. Variants include simple lists, lists with icons,
