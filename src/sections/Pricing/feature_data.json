@@ -949,15 +949,47 @@
     "category": "Catalog",
     "functionOrder": "708",
     "function": "Approve Catalog Request",
-    "feature": "Change management for the curation of content published in the catalog.",
+    "feature": "Change management through a process of curation of content to be published in the catalog.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
-      "teamDesigner": "",
+      "teamDesigner": "x",
       "teamOperator": "",
       "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/cloud/catalog/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
+    "functionOrder": "709",
+    "function": "Single and multiple approvers",
+    "feature": "",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "docs": "https://docs.layer5.io/cloud/catalog/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "7",
+    "category": "Catalog",
+    "functionOrder": "710",
+    "function": "Import Filter",
+    "feature": "Import a publish WASM filter",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "docs": "https://docs.meshery.io/guides/configuration-management/filter-management"
   },
   {
     "theme": "",
@@ -1089,6 +1121,22 @@
   },
   {
     "theme": "",
+    "categoryOrder": "9",
+    "category": "Managed Service Provider",
+    "functionOrder": "905",
+    "function": "Multi-tenancy",
+    "feature": "Hierarchical permissioning. Enforcement of tenancy.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
     "categoryOrder": "10",
     "category": "Support and Deployment",
     "functionOrder": "1001",
@@ -1115,7 +1163,7 @@
       "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": ""
   },
