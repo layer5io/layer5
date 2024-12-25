@@ -434,7 +434,7 @@ h3.containerCaption {
 `;
 
 const Catalog = () => {
-  const { isDark } = useStyledDarkMode();
+const { isDark } = useStyledDarkMode();
   return (
     <CatalogWrapper>
       <Container className="catalog-container">
