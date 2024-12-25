@@ -15,7 +15,7 @@ const SignupForm = () => {
       <div>
         <Container style={{ marginBottom: "4rem", padding: "0" }}>
           <Row className="description">
-            <Col $lg={7} $md={6} $sm={12} className="desc-text">
+            <Col $lg={7} $md={6} $sm={12} >
               <h4>Who can Apply?</h4>
               <p style={{ fontWeight: "700" }}>Layer5-Sponsored Open Source program is ideal for developers working on projects without a path to commercialization.</p>
               <h4 style={{ marginBottom: "1.5rem" }}>Why join the Layer5-Sponsored Open Source program?</h4>
