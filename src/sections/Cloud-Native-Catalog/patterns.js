@@ -271,7 +271,7 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
-  const { isDark } = useStyledDarkMode(); //Hook for changing the image according to theme 
+  const { isDark } = useStyledDarkMode(); 
   return (
     <CatalogWrapper>
       <a href="https://meshery.io/catalog">
