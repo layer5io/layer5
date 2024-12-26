@@ -100,9 +100,9 @@ const ToggleButtonGuidance = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <ToggleButtonGroup value={["bold", "italic"]}>
-                <ToggleButton value="bold">Bold</ToggleButton>
-                <ToggleButton value="italic">Italic</ToggleButton>
-                <ToggleButton value="underline">Underline</ToggleButton>
+                <ToggleButton value="bold">Toggle Button 1</ToggleButton>
+                <ToggleButton value="italic">Toggle Button 2</ToggleButton>
+                <ToggleButton value="underline">Toggle Button 3</ToggleButton>
               </ToggleButtonGroup>
             </SistentThemeProvider>
           </Row>
