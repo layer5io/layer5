@@ -19,7 +19,7 @@ const componentsData = [
     id: 3,
     name: "Modal",
     description:
-        "A modal is a dialog box/popup that is displayed over the main content to present information or collect input.",
+        "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
     src: "/modal",
   },

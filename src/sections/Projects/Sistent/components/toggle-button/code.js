@@ -13,63 +13,86 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `<SistentThemeProvider>
-    <ToggleButton value="toggle1" selected={true}>
-      Toggle On
-    </ToggleButton>
-  </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  // For exclusive selection
+  `
     <ToggleButtonGroup
-      value="option1"
+      value="left"
       exclusive
-      onChange={(event, value) => console.log(value)}
     >
-      <ToggleButton value="option1">Option 1</ToggleButton>
-      <ToggleButton value="option2">Option 2</ToggleButton>
+      <ToggleButton value="left">Left</ToggleButton>
+      <ToggleButton value="center">Center</ToggleButton>
+      <ToggleButton value="right">Right</ToggleButton>
     </ToggleButtonGroup>
-  </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `,
+  // For multiple selection
+  `
     <ToggleButtonGroup
-      value={["option1", "option3"]}
-      onChange={(event, value) => console.log(value)}
+      value={["bold", "italic"]}
     >
-      <ToggleButton value="option1">Option 1</ToggleButton>
-      <ToggleButton value="option2">Option 2</ToggleButton>
-      <ToggleButton value="option3">Option 3</ToggleButton>
+      <ToggleButton value="bold">Bold</ToggleButton>
+      <ToggleButton value="italic">Italic</ToggleButton>
+      <ToggleButton value="underline">Underline</ToggleButton>
     </ToggleButtonGroup>
-  </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `,
+  // For size
+  `
     <ToggleButtonGroup value="option1" exclusive size="small">
       <ToggleButton value="option1">Small</ToggleButton>
       <ToggleButton value="option2">Small</ToggleButton>
     </ToggleButtonGroup>
-  </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+    <ToggleButtonGroup value="option1" exclusive size="medium">
+      <ToggleButton value="option1">Medium</ToggleButton>
+      <ToggleButton value="option2">Medium</ToggleButton>
+    </ToggleButtonGroup>
     <ToggleButtonGroup value="option1" exclusive size="large">
       <ToggleButton value="option1">Large</ToggleButton>
       <ToggleButton value="option2">Large</ToggleButton>
     </ToggleButtonGroup>
-  </SistentThemeProvider>`,
-  `<SistentThemeProvider>
-    <ToggleButtonGroup value="option1" exclusive color="primary">
-      <ToggleButton value="option1">Primary</ToggleButton>
-      <ToggleButton value="option2">Secondary</ToggleButton>
+  `,
+  // For color
+  `
+    <ToggleButtonGroup value="primary" exclusive color="primary">
+      <ToggleButton value="primary">Primary</ToggleButton>
+      <ToggleButton value="secondary">Secondary</ToggleButton>
     </ToggleButtonGroup>
-  </SistentThemeProvider>`,
+  `,
+  // For vertical
+  `
+    <ToggleButtonGroup
+      orientation="vertical"
+      value="option1"
+      exclusive
+    >
+      <ToggleButton value="option1">Vertical 1</ToggleButton>
+      <ToggleButton value="option2">Vertical 2</ToggleButton>
+      <ToggleButton value="option3">Vertical 3</ToggleButton>
+    </ToggleButtonGroup>
+  `,
 ];
 
 const ToggleButtonCode = () => {
   const { isDark } = useStyledDarkMode();
   const location = useLocation();
-  const [selected, setSelected] = useState("option1");
-  const [multiSelected, setMultiSelected] = useState(["option1"]);
-
-  const handleSingleToggle = (event, value) => {
-    setSelected(value);
+  const [exclusiveSelected, setExclusiveSelected] = useState("left");
+  const [multiSelected, setMultiSelected] = useState(["bold"]);
+  const [sizeSelected, setSizeSelected] = useState("small");
+  const [colorSelected, setColorSelected] = useState("primary");
+  const [verticalSelected, setVerticalSelected] = useState("left");
+  const handleExclusiveToggle = (event, value) => {
+    setExclusiveSelected(value);
   };
 
   const handleMultiToggle = (event, value) => {
     setMultiSelected(value);
+  };
+  const handleSizeToggle = (event, value) => {
+    setSizeSelected(value);
+  };
+  const handleColorToggle = (event, value) => {
+    setColorSelected(value);
+  };
+  const handleVerticalToggle = (event, value) => {
+    setVerticalSelected(value);
   };
 
   return (
@@ -124,56 +147,29 @@ const ToggleButtonCode = () => {
           />
         </div>
         <div className="main-content">
-          <a id="Single ToggleButton">
-            <h3>Single ToggleButton</h3>
+          <a id="Exclusive Selection">
+            <h3>Exclusive Selection</h3>
           </a>
-          <p>
-            A single `ToggleButton` is used to toggle between two states. Here
-            is an example:
-          </p>
-          <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButton value="toggle1" selected={true}>
-                  Toggle On
-                </ToggleButton>
-              </SistentThemeProvider>
-            </div>
-            <CodeBlock name="single-toggle" code={codes[0]} />
-          </div>
-
-          <a id="Grouped ToggleButtons (Single Selection)">
-            <h3>Grouped ToggleButtons (Single Selection)</h3>
-          </a>
-          <p>
-            Use a `ToggleButtonGroup` to group related buttons for single
-            selection. The `exclusive` prop ensures that only one button can be
-            selected at a time.
-          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <ToggleButtonGroup
-                  value={selected}
+                  value={exclusiveSelected}
                   exclusive
-                  onChange={handleSingleToggle}
+                  onChange={handleExclusiveToggle}
                 >
-                  <ToggleButton value="option1">Option 1</ToggleButton>
-                  <ToggleButton value="option2">Option 2</ToggleButton>
+                  <ToggleButton value="left">Left</ToggleButton>
+                  <ToggleButton value="center">Center</ToggleButton>
+                  <ToggleButton value="right">Right</ToggleButton>
                 </ToggleButtonGroup>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="grouped-single-selection" code={codes[1]} />
+            <CodeBlock name="exclusive-selection" code={codes[0]} />
           </div>
 
-          <a id="Grouped ToggleButtons (Multiple Selection)">
-            <h3>Grouped ToggleButtons (Multiple Selection)</h3>
+          <a id="Multiple Selection">
+            <h3>Multiple Selection</h3>
           </a>
-          <p>
-            Use `ToggleButtonGroup` without the `exclusive` prop to allow users
-            to select multiple options within a group. This approach is useful
-            when enabling combinations of settings.
-          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -181,55 +177,76 @@ const ToggleButtonCode = () => {
                   value={multiSelected}
                   onChange={handleMultiToggle}
                 >
-                  <ToggleButton value="option1">Option 1</ToggleButton>
-                  <ToggleButton value="option2">Option 2</ToggleButton>
-                  <ToggleButton value="option3">Option 3</ToggleButton>
+                  <ToggleButton value="bold">Bold</ToggleButton>
+                  <ToggleButton value="italic">Italic</ToggleButton>
+                  <ToggleButton value="underline">Underline</ToggleButton>
                 </ToggleButtonGroup>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="grouped-multiple-selection" code={codes[2]} />
+            <CodeBlock name="multiple-selection" code={codes[1]} />
           </div>
 
-          <a id="ToggleButton Sizes">
+          <a id="Sizes">
             <h3>ToggleButton Sizes</h3>
           </a>
           <p>
-            Adjust the size of the `ToggleButton` using the `size` prop. Supported values include
-            `small`, `medium`, and `large`.
+            Adjust the size of the `ToggleButton` using the `size` prop.
+            Supported values include `small`, `medium`, and `large`.
           </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButtonGroup value="option1" exclusive size="small">
+                <ToggleButtonGroup value={sizeSelected} onChange={handleSizeToggle} exclusive size="small">
                   <ToggleButton value="option1">Small</ToggleButton>
                   <ToggleButton value="option2">Small</ToggleButton>
                 </ToggleButtonGroup>
-                <ToggleButtonGroup value="option1" exclusive size="large">
+                <ToggleButtonGroup value={sizeSelected}  onChange={handleSizeToggle} exclusive size="medium">
+                  <ToggleButton value="option1">Medium</ToggleButton>
+                  <ToggleButton value="option2">Medium</ToggleButton>
+                </ToggleButtonGroup>
+                <ToggleButtonGroup value={sizeSelected} onChange={handleSizeToggle} exclusive size="large">
                   <ToggleButton value="option1">Large</ToggleButton>
                   <ToggleButton value="option2">Large</ToggleButton>
                 </ToggleButtonGroup>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="toggle-button-sizes" code={codes[3]} />
+            <CodeBlock name="toggle-button-sizes" code={codes[2]} />
           </div>
 
-          <a id="ToggleButton Colors">
+          <a id="Colors">
             <h3>ToggleButton Colors</h3>
           </a>
-          <p>
-            Use the `color` prop to set the color scheme for the `ToggleButton`. Common values include
-            `primary`, `secondary`, and `default`.
-          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButtonGroup value="option1" exclusive color="primary">
-                  <ToggleButton value="option1">Primary</ToggleButton>
-                  <ToggleButton value="option2">Secondary</ToggleButton>
+                <ToggleButtonGroup  value={colorSelected} onChange={handleColorToggle} exclusive color="primary">
+                  <ToggleButton value="primary">Primary</ToggleButton>
+                  <ToggleButton value="secondary">Secondary</ToggleButton>
                 </ToggleButtonGroup>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="toggle-button-colors" code={codes[5]} />
+            <CodeBlock name="toggle-button-colors" code={codes[3]} />
+          </div>
+
+          <a id="Vertical Buttons">
+            <h3>Vertical Buttons</h3>
+          </a>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <ToggleButtonGroup
+                  orientation="vertical"
+                  value={verticalSelected}
+                  onChange={handleVerticalToggle}
+                  exclusive
+                >
+                  <ToggleButton value="option1">Vertical 1</ToggleButton>
+                  <ToggleButton value="option2">Vertical 2</ToggleButton>
+                  <ToggleButton value="option3">Vertical 3</ToggleButton>
+                </ToggleButtonGroup>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="vertical-toggle-buttons" code={codes[4]} />
           </div>
         </div>
       </div>

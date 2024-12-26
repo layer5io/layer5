@@ -29,10 +29,10 @@ const SistentToggleButton = () => {
   };
 
   return (
-    <SistentLayout title="Toggle Button">
+    <SistentLayout title="ToggleButton">
       <div className="content">
         <a id="Identity">
-          <h2>Toggle Button</h2>
+          <h2>ToggleButton</h2>
         </a>
         <p>
         The `ToggleButton` and `ToggleButtonGroup` are versatile components

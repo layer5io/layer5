@@ -2,9 +2,12 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { ToggleButton, ToggleButtonGroup, SistentThemeProvider } from "@layer5/sistent";
+import {
+  ToggleButton,
+  ToggleButtonGroup,
+  SistentThemeProvider,
+} from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
-
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
@@ -33,12 +36,15 @@ const ToggleButtonGuidance = () => {
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/components/toggle-button")}
+            onClick={() =>
+              navigate("/projects/sistent/components/toggle-button")
+            }
             title="Overview"
           />
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/toggle-button/guidance"
+              location.pathname ===
+              "/projects/sistent/components/toggle-button/guidance"
                 ? "active"
                 : ""
             }
@@ -49,106 +55,115 @@ const ToggleButtonGuidance = () => {
           />
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/toggle-button/code"
+              location.pathname ===
+              "/projects/sistent/components/toggle-button/code"
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/components/toggle-button/code")}
+            onClick={() =>
+              navigate("/projects/sistent/components/toggle-button/code")
+            }
             title="Code"
           />
         </div>
         <div className="main-content">
-          <a id="Function">
+          <a id="Functionality">
             <h2>Functionality</h2>
           </a>
           <p>
-            The purpose of `ToggleButton` and `ToggleButtonGroup` components is
-            to streamline user interactions where toggling between states or
-            selecting options is necessary. Below are some of their most common
-            applications:
+            The `ToggleButton` and `ToggleButtonGroup` components provide an
+            efficient way to handle user interactions for toggling states or
+            selecting one or multiple options. Below are some common use cases.
           </p>
-          <h3>Single Toggle</h3>
+          <h3>Exclusive Selection</h3>
           <p>
-            A single `ToggleButton` is used to represent a binary choice, such
-            as enabling or disabling a feature. For example, a toggle button can
-            be used to switch between "Dark Mode" and "Light Mode" or enable/disable notifications.
+            Use an exclusive `ToggleButtonGroup` when only one selection is
+            allowed at a time. This is useful for scenarios like aligning text
+            to the left, center, or right.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <ToggleButton value="darkMode" selected>
-                Dark Mode
-              </ToggleButton>
-            </SistentThemeProvider>
-          </Row>
-          <h3>Grouped Toggle Buttons (Single Selection)</h3>
-          <p>
-            Use a `ToggleButtonGroup` to group multiple related options when only one
-            selection is allowed at a time. For instance, allowing a user to select a view type,
-            such as "Grid View" or "List View."
-          </p>
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <ToggleButtonGroup value={["listView"]}>
-                <ToggleButton value="gridView">Grid View</ToggleButton>
-                <ToggleButton value="listView">List View</ToggleButton>
-              </ToggleButtonGroup>
-            </SistentThemeProvider>
-          </Row>
-          <h3>Grouped Toggle Buttons (Multiple Selection)</h3>
-          <p>
-            Enable multi-selection by using the `allowMultiple` prop in a `ToggleButtonGroup`.
-            This is particularly useful for scenarios where users need to select multiple
-            options simultaneously, such as filtering categories or choosing multiple features to enable.
-          </p>
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <ToggleButtonGroup value={["feature1", "feature3"]} allowMultiple>
-                <ToggleButton value="feature1">Feature 1</ToggleButton>
-                <ToggleButton value="feature2">Feature 2</ToggleButton>
-                <ToggleButton value="feature3">Feature 3</ToggleButton>
+              <ToggleButtonGroup value="left" exclusive>
+                <ToggleButton value="left">Left</ToggleButton>
+                <ToggleButton value="center">Center</ToggleButton>
+                <ToggleButton value="right">Right</ToggleButton>
               </ToggleButtonGroup>
             </SistentThemeProvider>
           </Row>
 
-          <a id="Styling">
-            <h2>Styling Guidelines</h2>
-          </a>
-          <h3>Colors</h3>
+          <h3>Multiple Selection</h3>
           <p>
-            Always use the pre-defined theme styles for colors, such as `primary` or `secondary`.
-            This ensures consistency across the application and makes it easy to switch between
-            light and dark themes without additional effort.
-          </p>
-          <h3>Size</h3>
-          <p>
-            The size of the `ToggleButton` can be adjusted using the `size` prop to fit
-            different screen sizes and contexts. Use `small`, `medium`, or `large` as
-            values for this property.
+            Enable multiple selections within a `ToggleButtonGroup` for cases
+            where users need to toggle multiple options, such as enabling bold,
+            italic, and underline text styling simultaneously.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <ToggleButton value="smallSize" size="small">
-                Small
-              </ToggleButton>
-              <ToggleButton value="mediumSize" size="medium">
-                Medium
-              </ToggleButton>
-              <ToggleButton value="largeSize" size="large">
-                Large
-              </ToggleButton>
+              <ToggleButtonGroup value={["bold", "italic"]}>
+                <ToggleButton value="bold">Bold</ToggleButton>
+                <ToggleButton value="italic">Italic</ToggleButton>
+                <ToggleButton value="underline">Underline</ToggleButton>
+              </ToggleButtonGroup>
             </SistentThemeProvider>
           </Row>
-          <h3>Icon Integration</h3>
+
+          <h3>Sizes</h3>
           <p>
-            Toggle buttons can include icons to make their purpose clearer. Icons
-            should complement the label text and not replace it entirely. For example,
-            a grid icon can visually reinforce the "Grid View" label in a toggle button.
+            Adjust the size of the `ToggleButton` using the `size` prop. This
+            property supports `small`, `medium`, and `large` values to suit
+            various design requirements.
+          </p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <ToggleButtonGroup value="option1" exclusive size="small">
+                  <ToggleButton value="option1">Small</ToggleButton>
+                  <ToggleButton value="option2">Small</ToggleButton>
+                </ToggleButtonGroup>
+                <ToggleButtonGroup value="option1" exclusive size="medium">
+                  <ToggleButton value="option1">Medium</ToggleButton>
+                  <ToggleButton value="option2">Medium</ToggleButton>
+                </ToggleButtonGroup>
+                <ToggleButtonGroup value="option1" exclusive size="large">
+                  <ToggleButton value="option1">Large</ToggleButton>
+                  <ToggleButton value="option2">Large</ToggleButton>
+                </ToggleButtonGroup>
+              </SistentThemeProvider>
+            </div>
+          </div>
+
+          <h3>Colors</h3>
+          <p>
+            Use the `color` prop to style the `ToggleButtonGroup` with
+            pre-defined theme colors, such as `primary` or `secondary`. This
+            ensures consistency across the application.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <ToggleButton value="gridView" startIcon={<i className="icon-grid" />}>
-                Grid View
-              </ToggleButton>
+              <ToggleButtonGroup value="primary" exclusive color="primary">
+                <ToggleButton value="primary">Primary</ToggleButton>
+                <ToggleButton value="secondary">Secondary</ToggleButton>
+              </ToggleButtonGroup>
+            </SistentThemeProvider>
+          </Row>
+
+          <h3>Vertical Orientation</h3>
+          <p>
+            The `orientation` prop allows you to arrange toggle buttons
+            vertically instead of horizontally. This is ideal for menus or
+            options requiring more vertical space.
+          </p>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <ToggleButtonGroup
+                orientation="vertical"
+                value="option1"
+                exclusive
+              >
+                <ToggleButton value="option1">Vertical 1</ToggleButton>
+                <ToggleButton value="option2">Vertical 2</ToggleButton>
+                <ToggleButton value="option3">Vertical 3</ToggleButton>
+              </ToggleButtonGroup>
             </SistentThemeProvider>
           </Row>
         </div>
