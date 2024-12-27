@@ -55,7 +55,7 @@ const SignupForm = () => {
                 form="open-source-pricing"
                 account_desc="Selected program participants will receive a free access to tools offered by Layer5. Layer5 team may reach out to selected participants."
                 submit_title="Thank you for your interest in Layer5-Sponsored Open Source Program"
-                submit_body="You are now signed up for the Layer5-Sponsored Open Source Program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the program. We are working through a growing waitlist"
+                submit_body="Your spot on the waiting list is now confirmed. We appreciate your patience as we process a growing number of applicants. Please await further communication regarding your acceptance and the start of the program."
               />
             </Col>
           </Row>
