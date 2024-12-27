@@ -2,10 +2,10 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Button } from "@layer5/sistent";
+import { SistentThemeProvider } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import {
   Container,
@@ -196,25 +196,19 @@ const SistentSelect = () => {
             <h2>Sizes</h2>
           </a>
           <p>
-            For buttons to be fully effective, they can be adjusted in size to
-            accommodate multiple use cases where they may apply. These size
-            changes are usually done to the height of the buttons and not the
-            width since buttons usually grow to contain their content. The
-            height that makes up the different sizes of our buttons are gotten
-            from our spacing system to retain space consistency. We have chosen
-            two different sizes of buttons to provide options and more sizes can
-            be added to fill the growing needs.
+            The select component can be adjusted in size to accommodate various
+            use cases. These size adjustments typically affect the height of the
+            component, while the width adjusts to fit the content. The height of
+            the select component is derived from our spacing system to maintain
+            consistency. We offer multiple sizes to meet different needs.
           </p>
-          <h3>56px / 3.5rem</h3>
-          <p>
-            The 56px button is the first button size. It is currently the
-            largest button available for use and it is available for both mobile
-            and desktop resolutions, but it serves in different capacities
-            across these different resolutions.
-          </p>
+          <h3>Auto width</h3>
+          {/* <p>
+            The width of the component can scale
+          </p> */}
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControl fullWidth>
+              <FormControl sx={{ minWidth: "120px", m: 1 }}>
                 <InputLabel id="demo-select-label">Age</InputLabel>
                 <Select
                   labelId="demo-select-label-standard"
@@ -229,32 +223,54 @@ const SistentSelect = () => {
               </FormControl>
             </SistentThemeProvider>
           </Row>
-          <h3>48px / 3rem</h3>
-          <p>
+          <h3>Small</h3>
+          {/* <p>
             The 48px button is the second button size currently in use and it is
             available from mobile to desktop resolutions, even though it serves
             in different capacities across these screen sizes.
-          </p>
+          </p> */}
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button variant="contained" label="48px / 3rem" size="medium" />
+              <FormControl sx={{ minWidth: "80px", m: 1 }} size="small">
+                <InputLabel id="demo-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-select-label-standard"
+                  id="demo-select-standard"
+                  label="Age"
+                  variant="standard"
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
             </SistentThemeProvider>
           </Row>
           <h3>Full width</h3>
-          <p>
+          {/* <p>
             Full width buttons are more efficient in mobile designs and rightly
             so in order to offer users with a wider touch area since the input
             devices - the fingers, are a lot larger than the cursor on a desktop
             or larger screen.
-          </p>
+          </p> */}
           <Row $Hcenter className="image-container">
-            <Col sm={12}>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button variant="contained" label="Full width" fullWidth />
-              </SistentThemeProvider>
-            </Col>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <InputLabel id="demo-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-select-label-standard"
+                  id="demo-select-standard"
+                  label="Age"
+                  variant="standard"
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </SistentThemeProvider>
           </Row>
-          <p>
+          {/* <p>
             <strong>NOTE:</strong>
           </p>
           <p>
@@ -265,20 +281,28 @@ const SistentSelect = () => {
             48px is the default size. Preferred button sizes (height) are
             usually arrived at through exploration and proper consideration of
             industry standards and best practices.
-          </p>
-          <a id="Adding Icons">
-            <h2>Adding Icons</h2>
+          </p> */}
+          <a id="Multiple select">
+            <h2>Multiple select</h2>
           </a>
-          <p>
-            Sometimes, icons are used alongside labels in buttons to pass across
-            specific information or relay added information for a higher level
-            of understanding and better comprehension. Depending on the
-            information being conveyed, the icons can be placed on the left side
-            of the label text or on the right side of the label text. No
-            specific rules apply apart from spacing tips which may be considered
-            here. For full width buttons, if icons must be added, they should be
-            centered in the button alongside the label text.
-          </p>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <InputLabel id="demo-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-select-label-standard"
+                  id="demo-select-standard"
+                  label="Age"
+                  variant="standard"
+                  multiple
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </SistentThemeProvider>
+          </Row>
         </div>
       </div>
     </SistentLayout>
