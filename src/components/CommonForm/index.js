@@ -188,10 +188,10 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         </div>
         {form == "open-source-pricing" && (
           <>
-            <label htmlFor="projectName" className="form-name">
+            <label htmlFor="projectname" className="form-name">
              What is the name of your project? <span className="required-sign">*</span>
             </label>
-            <Field type="text" className="text-field" id="projectName" name="projectName" />
+            <Field type="text" className="text-field" id="projectname" name="projectname" />
             <label htmlFor="repository" className="form-name">
             Please link the public repository of your OSS organization (github, gitlab, etc.) <span className="required-sign">*</span>
             </label>
