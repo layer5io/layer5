@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
 import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
+import Modal from "react-modal";
+import PricingForm from "../PricingForm";
 
-const PlanCard = ({ planData , isYearly }) => {
+const PlanCard = ({ planData, isYearly }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
   }
@@ -14,18 +21,13 @@ const PlanCard = ({ planData , isYearly }) => {
       <Container>
         <Row $Hcenter>
           {planData.map((x) => (
-            // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
             <Col key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
-
-                {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
-
-                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
+                {x.tier === "Personal" && <div className="pricing-label">Free Forever</div>}
+                {x.tier === "Team Designer" && <div className="featured-label">Most Popular</div>}
 
                 {x.pricing_coming_soon && (
-                  <div className="pricing_coming_soon">
-                    {x.pricing_coming_soon}
-                  </div>
+                  <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
                 )}
 
                 <h2>{x.tier}</h2>
@@ -35,50 +37,42 @@ const PlanCard = ({ planData , isYearly }) => {
                   {isYearly ? (
                     x.yearlyprice !== undefined ? (
                       <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.yearlyprice === 0
-                            ? "0"
-                            : x.yearlyprice.toFixed(0)}
+                        <span className="price-amount">
+                          <sup>$</sup>
+                          {x.yearlyprice === 0 ? "0" : x.yearlyprice.toFixed(0)}
                         </span>
                         <span className="currency">USD</span>
                         <span className="price-per">per user/year</span>
                       </div>
                     ) : (
-                      <div className="pricing_coming_soon">
-                        {x.pricing_coming_soon}
-                      </div>
+                      <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
                     )
                   ) : (
                     x.monthlyprice !== undefined ? (
                       <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.monthlyprice === 0
-                            ? "0"
-                            : x.monthlyprice.toFixed(0)}
+                        <span className="price-amount">
+                          <sup>$</sup>
+                          {x.monthlyprice === 0 ? "0" : x.monthlyprice.toFixed(0)}
                         </span>
                         <span className="currency">USD</span>
                         <span className="price-per">per user/month</span>
                       </div>
                     ) : (
-                      <div className="pricing_coming_soon">
-                        {x.pricing_coming_soon}
-                      </div>
+                      <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
                     )
                   )}
                 </div>
 
-
                 <Button
-                  // disabled={x.tier === "Team Operator"}
                   $primary
                   className={
                     x.button[0] === "Coming Soon"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  $url={x.button[1]}
+                  onClick={x.tier === "Enterprise" ? openModal : undefined}
                 >
-                  {x.button[0]}
+                  {x.tier === "Enterprise" ? "Contact Sales" : x.button[0]}
                 </Button>
 
                 <h6>{x.byline2}</h6>
@@ -95,12 +89,56 @@ const PlanCard = ({ planData , isYearly }) => {
                       </div>
                     ))}
                 </div>
-
               </div>
             </Col>
           ))}
         </Row>
       </Container>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="Modal"
+        overlayClassName="Overlay"
+        ariaHideApp={false}
+        contentLabel="Enterprise Inquiry Form"
+        style={{
+          content: {
+            maxHeight: "90vh",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            "&::-webkit-scrollbar": {
+              display: "none"
+            },
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          },
+          overlay: {
+            overflow: "auto",
+            "&::-webkit-scrollbar": {
+              display: "none"
+            },
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          }
+        }}
+      >
+        <Button $secondary className="close-modal-btn" onClick={closeModal}>
+    X
+        </Button>
+        <h2 className="modal-heading">Contact Sales</h2>
+        <div style={{
+          flex: 1,
+          overflow: "auto",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          "&::-webkit-scrollbar": {
+            display: "none"
+          }
+        }}>
+          <PricingForm />
+        </div>
+      </Modal>
     </PlanCardWrapper>
   );
 };

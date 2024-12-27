@@ -5,7 +5,6 @@ import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import options from "./generatePlans";
 import PlanCard from "../../components/PlanCard";
-import PricingForm from "../../components/PricingForm";
 
 const Pricing = () => {
   // const [monthly, setMonthly] = useState(false);
@@ -47,7 +46,6 @@ const Pricing = () => {
         <PlanCard planData={options} isYearly={isYearly}/>
       </div>
       <Comparison />
-      <PricingForm/>
       <Reviews />
       <FAQ category={["Pricing", "Billing"]} />
     </PricingWrapper>

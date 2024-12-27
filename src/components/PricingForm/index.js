@@ -21,11 +21,14 @@ const PricingForm = () => {
 
   return (
     <PricingFormWrapper>
-      <h2>Sign Up for More Pricing Info</h2>
       <Formik
         initialValues={{
-          name: "",
-          email: "",
+          firstName: "",
+          lastName: "",
+          workEmail: "",
+          companyName: "",
+          companySize: "",
+          summary: "",
         }}
         onSubmit={(values) => {
           setMemberFormOne(values);
@@ -34,30 +37,80 @@ const PricingForm = () => {
       >
         {() => (
           <Form className="pricing-form">
-            <div className="form-field">
-              <label htmlFor="name">Name</label>
-              <Field
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your Name"
-                required
-              />
+            {/* Scrollable Form Fields */}
+            <div className="form-content">
+              {/* All form fields here */}
+              <div className="form-field">
+                <label htmlFor="firstName">First Name</label>
+                <Field
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  placeholder="Your First Name"
+                  required
+                />
+              </div>
+              <div className="form-field">
+                <label htmlFor="lastName">Last Name</label>
+                <Field
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  placeholder="Your Last Name"
+                  required
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="workEmail">Work Email</label>
+                <Field
+                  id="workEmail"
+                  name="workEmail"
+                  type="email"
+                  placeholder="Your Work Email"
+                  required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="companyName">Company Name</label>
+                <Field
+                  id="companyName"
+                  name="companyName"
+                  type="text"
+                  placeholder="Your Company Name"
+                  required
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="companySize">Company Size / Number of Employees</label>
+                <Field
+                  id="companySize"
+                  name="companySize"
+                  type="number"
+                  placeholder="Number of Employees"
+                  required
+                  min="1"
+                />
+              </div>
+              <div className="form-field">
+                <label htmlFor="summary">Summary</label>
+                <Field
+                  id="summary"
+                  name="summary"
+                  as="textarea"
+                  placeholder="Briefly describe your inquiry or needs"
+                  required
+                />
+              </div>
             </div>
 
-            <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Your Email"
-                required
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              />
+            {/* Submit Button */}
+            <div className="form-footer">
+              <button type="submit" className="submit-button">Submit</button>
             </div>
-
-            <button type="submit">Submit</button>
           </Form>
         )}
       </Formik>
@@ -66,3 +119,4 @@ const PricingForm = () => {
 };
 
 export default PricingForm;
+
