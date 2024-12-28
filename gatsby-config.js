@@ -13,7 +13,10 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true
+    PARALLEL_SOURCING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    DETECT_NODE_MUTATIONS: true,
+    PARTIAL_HYDRATION: true
   },
   trailingSlash: "never",
   plugins: [
