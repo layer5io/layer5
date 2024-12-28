@@ -905,6 +905,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         onCreateChapterNode({ actions, node, slug });
         return;
       }
+
+      if (node.internal.type === "Mdx") {
+        if (!node.frontmatter.thumbnail) {
+          node.frontmatter.thumbnail = null;
+        }
+        if (!node.frontmatter.darkthumbnail) {
+          node.frontmatter.darkthumbnail = null;
+        }
+      }
     }
   }
 };
