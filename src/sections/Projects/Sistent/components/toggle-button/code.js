@@ -29,9 +29,9 @@ const codes = [
     <ToggleButtonGroup
       value={["bold", "italic"]}
     >
-      <ToggleButton value="bold">Bold</ToggleButton>
-      <ToggleButton value="italic">Italic</ToggleButton>
-      <ToggleButton value="underline">Underline</ToggleButton>
+      <ToggleButton value="bold">Toggle Button 1</ToggleButton>
+      <ToggleButton value="italic">Toggle Button 1</ToggleButton>
+      <ToggleButton value="underline">Toggle Button 1</ToggleButton>
     </ToggleButtonGroup>
   `,
   // For size
