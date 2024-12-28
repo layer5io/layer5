@@ -176,6 +176,7 @@ const ToggleButtonCode = () => {
                 <ToggleButtonGroup
                   value={multiSelected}
                   onChange={handleMultiToggle}
+                  orientation="vertical"
                 >
                   <ToggleButton value="bold">Toggle Button 1</ToggleButton>
                   <ToggleButton value="italic">Toggle Button 2</ToggleButton>
