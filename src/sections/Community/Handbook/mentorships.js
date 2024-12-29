@@ -11,7 +11,6 @@ const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
     margin-top: -46.5rem; 
-
     @media screen and (min-width: 768px) and (max-height: 1145px) {
        margin-top : -80vh
 

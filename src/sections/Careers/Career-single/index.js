@@ -19,8 +19,8 @@ const CareerSingle = ({ data }) => {
       <div className="single-post-wrapper">
         <Container>
           <Row className="job-header-row">
-            <Col $xs={12} $md={7} $xl={8} className="job-details">
-              <Row className="job-details-row">
+            <Col $xs={12} $md={12} $xl={8} className="job-details">
+              <Row>
                 <Col $xs={6} className="job-details-col">
                   <h5> <FaPlay /> Start Date</h5>
                   <p>{frontmatter.start_date}</p>
