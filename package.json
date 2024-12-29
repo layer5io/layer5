@@ -38,6 +38,7 @@
     "@loadable/component": "^5.16.4",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
+    "@mediacurrent/gatsby-plugin-silence-css-order-warning": "^1.0.0",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.15.11",
     "@react-icons/all-files": "^4.1.0",
