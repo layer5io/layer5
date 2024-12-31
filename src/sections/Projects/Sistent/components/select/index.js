@@ -15,11 +15,17 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  OutlinedInput,
 } from "@mui/material";
 
 const SistentSelect = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  const [multipleAges, setMultipleAges] = React.useState([]);
+  const handleMultiplSelect = (event) => {
+    let agesList = event.target.value;
+    setMultipleAges(agesList);
+  };
 
   return (
     <SistentLayout title="Select">
@@ -203,9 +209,12 @@ const SistentSelect = () => {
             consistency. We offer multiple sizes to meet different needs.
           </p>
           <h3>Auto width</h3>
-          {/* <p>
-            The width of the component can scale
-          </p> */}
+          <p>
+            The width of the component can scale automatically to fit the
+            content it contains. This ensures that the select component is
+            appropriately sized based on the options available, providing a
+            better user experience.
+          </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <FormControl sx={{ minWidth: "120px", m: 1 }}>
@@ -214,7 +223,7 @@ const SistentSelect = () => {
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
-                  variant="standard"
+                  autoWidth
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -224,11 +233,13 @@ const SistentSelect = () => {
             </SistentThemeProvider>
           </Row>
           <h3>Small</h3>
-          {/* <p>
-            The 48px button is the second button size currently in use and it is
-            available from mobile to desktop resolutions, even though it serves
-            in different capacities across these screen sizes.
-          </p> */}
+          <p>
+            The small size select component is designed to fit into more compact
+            spaces within a user interface. It is particularly useful when you
+            need to conserve space or when the select component is part of a
+            form with other small-sized elements. This ensures a consistent and
+            visually appealing layout.
+          </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <FormControl sx={{ minWidth: "80px", m: 1 }} size="small">
@@ -237,7 +248,6 @@ const SistentSelect = () => {
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
-                  variant="standard"
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -247,12 +257,12 @@ const SistentSelect = () => {
             </SistentThemeProvider>
           </Row>
           <h3>Full width</h3>
-          {/* <p>
-            Full width buttons are more efficient in mobile designs and rightly
+          <p>
+            Full width select are more efficient in mobile designs and rightly
             so in order to offer users with a wider touch area since the input
             devices - the fingers, are a lot larger than the cursor on a desktop
             or larger screen.
-          </p> */}
+          </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <FormControl fullWidth sx={{ m: 1 }}>
@@ -261,7 +271,6 @@ const SistentSelect = () => {
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
-                  variant="standard"
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -270,31 +279,27 @@ const SistentSelect = () => {
               </FormControl>
             </SistentThemeProvider>
           </Row>
-          {/* <p>
-            <strong>NOTE:</strong>
-          </p>
-          <p>
-            These sizes are being specified with numerical values because though
-            the same size is used across screen resolutions, they have different
-            roles. On desktop for instance, the 56px button is a the default
-            size, and 48px the small size, while on mobile, 56px is large and
-            48px is the default size. Preferred button sizes (height) are
-            usually arrived at through exploration and proper consideration of
-            industry standards and best practices.
-          </p> */}
           <a id="Multiple select">
             <h2>Multiple select</h2>
           </a>
+          <p>
+            The multiple select component allows users to select more than one
+            option from the dropdown list. This is useful in scenarios where
+            multiple selections are required, such as selecting multiple tags,
+            categories, or items.
+          </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControl fullWidth sx={{ m: 1 }}>
+              <FormControl sx={{ minWidth: "80px", m: 1 }}>
                 <InputLabel id="demo-select-label">Age</InputLabel>
                 <Select
+                  multiple
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
-                  variant="standard"
-                  multiple
+                  input={<OutlinedInput label="Name" />}
+                  value={multipleAges}
+                  onChange={handleMultiplSelect}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
