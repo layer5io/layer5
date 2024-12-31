@@ -17,6 +17,8 @@ import {
   Select,
   OutlinedInput,
 } from "@mui/material";
+import Header from "./header";
+import SectionNav from "./section-nav";
 
 const SistentSelect = () => {
   const location = useLocation();
@@ -30,45 +32,8 @@ const SistentSelect = () => {
   return (
     <SistentLayout title="Select">
       <div className="content">
-        <a id="Identity">
-          <h2>Select</h2>
-        </a>
-        <p>
-          Select component is a dropdown menu for selecting an option from a
-          list.
-        </p>
-        <div className="filterBtns">
-          <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/select"
-                ? "active"
-                : ""
-            }
-            onClick={() => navigate("/projects/sistent/components/select")}
-            title="Overview"
-          />
-          <TabButton
-            className={
-              location.pathname ===
-              "/projects/sistent/components/select/guidance"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              navigate("/projects/sistent/components/select/guidance")
-            }
-            title="Guidance"
-          />
-          <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/select/code"
-                ? "active"
-                : ""
-            }
-            onClick={() => navigate("/projects/sistent/components/select/code")}
-            title="Code"
-          />
-        </div>
+        <Header />
+        <SectionNav />
         <div className="main-content">
           <p>
             The Select component is a versatile and customizable element
