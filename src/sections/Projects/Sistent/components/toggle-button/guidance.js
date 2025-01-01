@@ -22,12 +22,12 @@ const ToggleButtonGuidance = () => {
           <h2>ToggleButton</h2>
         </a>
         <p>
-        The `ToggleButton` and `ToggleButtonGroup` are versatile components
-            that can be used for a wide range of applications. Their intuitive
-            design ensures users can make selections easily and confidently.
-            Whether it's enabling a setting, selecting a mode, or choosing
-            multiple options, these components are built to enhance user
-            experience across different scenarios.
+          The `ToggleButton` and `ToggleButtonGroup` are versatile components
+          that can be used for a wide range of applications. Their intuitive
+          design ensures users can make selections easily and confidently.
+          Whether it's enabling a setting, selecting a mode, or choosing
+          multiple options, these components are built to enhance user
+          experience across different scenarios.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -116,18 +116,47 @@ const ToggleButtonGuidance = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButtonGroup value="option1" exclusive size="small">
-                  <ToggleButton value="option1">Small</ToggleButton>
-                  <ToggleButton value="option2">Small</ToggleButton>
-                </ToggleButtonGroup>
-                <ToggleButtonGroup value="option1" exclusive size="medium">
-                  <ToggleButton value="option1">Medium</ToggleButton>
-                  <ToggleButton value="option2">Medium</ToggleButton>
-                </ToggleButtonGroup>
-                <ToggleButtonGroup value="option1" exclusive size="large">
-                  <ToggleButton value="option1">Large</ToggleButton>
-                  <ToggleButton value="option2">Large</ToggleButton>
-                </ToggleButtonGroup>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <ToggleButtonGroup
+                    value="option1"
+                    exclusive
+                    size="small"
+                    style={{ width: "70%" }}
+                  >
+                    <ToggleButton value="option1">Small</ToggleButton>
+                    <ToggleButton value="option2">Small</ToggleButton>
+                  </ToggleButtonGroup>
+
+                  <ToggleButtonGroup
+                    value="option1"
+                    exclusive
+                    size="medium"
+                  >
+                    <ToggleButton value="option1">Medium</ToggleButton>
+                    <ToggleButton value="option2">Medium</ToggleButton>
+                  </ToggleButtonGroup>
+
+                  <ToggleButtonGroup
+                    value="option1"
+                    exclusive
+                    size="large"
+                    style={{ width: "120%" }}
+                  >
+                    <ToggleButton style={{ width: "50%" }} value="option1">
+                      Large
+                    </ToggleButton>
+                    <ToggleButton style={{ width: "50%" }} value="option2">
+                      Large
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
               </SistentThemeProvider>
             </div>
           </div>

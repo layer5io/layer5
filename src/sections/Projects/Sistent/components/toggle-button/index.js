@@ -14,9 +14,9 @@ import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const formatButtons = [
-  <ToggleButton key="bold" value="bold">Bold</ToggleButton>,
-  <ToggleButton key="italic" value="italic">Italic</ToggleButton>,
-  <ToggleButton key="underline" value="underline">Underline</ToggleButton>,
+  <ToggleButton key="bold" value="bold">ToggleButton 1</ToggleButton>,
+  <ToggleButton key="italic" value="italic">ToggleButton 2</ToggleButton>,
+  <ToggleButton key="underline" value="underline">ToggleButton 3</ToggleButton>,
 ];
 
 const SistentToggleButton = () => {

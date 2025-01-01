@@ -22,7 +22,7 @@ const TocPagination = () => {
       ) : null}
 
       {currentPage < content.length - 1 ? (
-        <Button $primary $url={content[currentPage + 1]?.link} onClick={() => console.log("button is clicked")}>
+        <Button $primary $url={content[currentPage + 1]?.link}>
           Next &rarr;
         </Button>
       ) : null}

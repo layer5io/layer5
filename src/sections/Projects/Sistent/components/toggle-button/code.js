@@ -102,12 +102,12 @@ const ToggleButtonCode = () => {
           <h2>ToggleButton</h2>
         </a>
         <p>
-        The `ToggleButton` and `ToggleButtonGroup` are versatile components
-            that can be used for a wide range of applications. Their intuitive
-            design ensures users can make selections easily and confidently.
-            Whether it's enabling a setting, selecting a mode, or choosing
-            multiple options, these components are built to enhance user
-            experience across different scenarios.
+          The `ToggleButton` and `ToggleButtonGroup` are versatile components
+          that can be used for a wide range of applications. Their intuitive
+          design ensures users can make selections easily and confidently.
+          Whether it's enabling a setting, selecting a mode, or choosing
+          multiple options, these components are built to enhance user
+          experience across different scenarios.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -176,7 +176,6 @@ const ToggleButtonCode = () => {
                 <ToggleButtonGroup
                   value={multiSelected}
                   onChange={handleMultiToggle}
-                  orientation="vertical"
                 >
                   <ToggleButton value="bold">Toggle Button 1</ToggleButton>
                   <ToggleButton value="italic">Toggle Button 2</ToggleButton>
@@ -197,18 +196,46 @@ const ToggleButtonCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButtonGroup value={sizeSelected} onChange={handleSizeToggle} exclusive size="small">
-                  <ToggleButton value="option1">Small</ToggleButton>
-                  <ToggleButton value="option2">Small</ToggleButton>
-                </ToggleButtonGroup>
-                <ToggleButtonGroup value={sizeSelected}  onChange={handleSizeToggle} exclusive size="medium">
-                  <ToggleButton value="option1">Medium</ToggleButton>
-                  <ToggleButton value="option2">Medium</ToggleButton>
-                </ToggleButtonGroup>
-                <ToggleButtonGroup value={sizeSelected} onChange={handleSizeToggle} exclusive size="large">
-                  <ToggleButton value="option1">Large</ToggleButton>
-                  <ToggleButton value="option2">Large</ToggleButton>
-                </ToggleButtonGroup>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <ToggleButtonGroup
+                    value={sizeSelected}
+                    onChange={handleSizeToggle}
+                    exclusive
+                    size="small"
+                    style={{ width: "70%" }}
+                  >
+                    <ToggleButton value="option1">Small</ToggleButton>
+                    <ToggleButton value="option2">Small</ToggleButton>
+                  </ToggleButtonGroup>
+
+                  <ToggleButtonGroup
+                    value={sizeSelected}
+                    onChange={handleSizeToggle}
+                    exclusive
+                    size="medium"
+                  >
+                    <ToggleButton value="option1">Medium</ToggleButton>
+                    <ToggleButton value="option2">Medium</ToggleButton>
+                  </ToggleButtonGroup>
+
+                  <ToggleButtonGroup
+                    value={sizeSelected}
+                    onChange={handleSizeToggle}
+                    exclusive
+                    size="large"
+                    style={{ width: "120%" }}
+                  >
+                    <ToggleButton style={ { width: "50%" }} value="option1">Large</ToggleButton>
+                    <ToggleButton style={ { width: "50%" }} value="option2">Large</ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
               </SistentThemeProvider>
             </div>
             <CodeBlock name="toggle-button-sizes" code={codes[2]} />
@@ -220,7 +247,12 @@ const ToggleButtonCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ToggleButtonGroup  value={colorSelected} onChange={handleColorToggle} exclusive color="primary">
+                <ToggleButtonGroup
+                  value={colorSelected}
+                  onChange={handleColorToggle}
+                  exclusive
+                  color="primary"
+                >
                   <ToggleButton value="primary">Primary</ToggleButton>
                   <ToggleButton value="secondary">Secondary</ToggleButton>
                 </ToggleButtonGroup>
