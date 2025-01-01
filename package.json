@@ -100,7 +100,7 @@
     "react-scroll": "^1.9.0",
     "react-select": "^5.7.4",
     "react-share": "^4.4.1",
-    "react-slick": "^0.29.0",
+    "react-slick": "^0.30.3",
     "react-table": "^7.8.0",
     "react-tabs": "^6.0.2",
     "react-tooltip": "^5.19.0",
