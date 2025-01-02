@@ -23,6 +23,12 @@ p{
       font-weight: 400;
     }
   }
+
+  .oppurtunities_row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .oppurtunities > div {
     margin: 3rem 0;
   }
@@ -43,6 +49,11 @@ p{
     }
   }
 
+  @media only screen and (max-width: 450px) {
+    .opportunity-card { 
+      width: 100% !important; 
+    }
+  }
   .opportunity-card {
     width: 21rem;
     height: 15rem;

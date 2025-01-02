@@ -79,4 +79,10 @@ export const ProgramsPageWrapper = styled.div`
             flex: 0 0 100%;
         }
     }
+
+    @media only screen and (max-width: 450px) {
+        .sub-section_program {
+            width: 15rem;
+        }
+    }
 `;
