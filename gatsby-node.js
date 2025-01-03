@@ -9,6 +9,7 @@ const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
+const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
 const config = require("./gatsby-config");
 const {
   componentsData,
@@ -977,7 +978,7 @@ const createSectionPage = ({ envCreatePage, node }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
@@ -987,7 +988,29 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
   });
+  actions.setWebpackConfig({
+    plugins: [
+      new FilterWarningsPlugin({
+        exclude:
+          /mini-css-extract-plugin[^]*Conflicting order. Following module has been added:/,
+      }),
+    ],
+  });
+
+  if (stage === "build-javascript") {
+    const config = getConfig();
+    const miniCssExtractPlugin = config.plugins.find(
+      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+    );
+
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
