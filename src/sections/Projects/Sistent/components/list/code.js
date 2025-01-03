@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { List, ListItemIcon, ListItemAvatar, ListItemText,ListItem,ListSubheader, ListItemButton, SistentThemeProvider, Divider } from "@layer5/sistent";
@@ -6,6 +6,9 @@ import { CodeBlock } from "./code-block";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Collapse from "@mui/material/Collapse";
 
 const codes = [
   // Basic List with List Items
@@ -40,11 +43,41 @@ const codes = [
         <ListItemButton onClick={() => alert("Clicked!")}> Layer5 Sistent Action 1</ListItemButton>
         <ListItemButton onClick={() => alert("Clicked!")}>Layer5 Sistent Action 2</ListItemButton>
   </List> `,
+  // Nested List Example
+  `   <List sx={{ width: "100%", maxWidth: 360, padding: 2, bgcolor: "background.paper",}} component="nav" >
+            <ListSubheader component="div" id="nested-list-subheader"> Layer5 Main Section </ListSubheader>
+            <ListItemButton onClick={toggleOpen1}> 
+                <ListItemText primary="Layer5 Main Item 1" />
+                {open1 ? <ExpandLess /> : <ExpandMore />} 
+            </ListItemButton>
+            <Collapse in={open1} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding sx={{ pl: 4 }}>
+                <ListItem> <ListItemText primary="Layer5 Sub Item 1.1" /></ListItem>
+                <ListItem> <ListItemText primary="Layer5 Sub Item 1.2" /></ListItem>
+              </List>
+            </Collapse>
+
+            <ListItemButton onClick={toggleOpen2}> 
+              <ListItemText primary="Layer5 Main Item 2" />
+              {open2 ? <ExpandLess /> : <ExpandMore />}  
+            </ListItemButton>
+            <Collapse in={open2} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding sx={{ pl: 4 }}>
+                <ListItem><ListItemText primary="Layer5 Sub Item 2.1" /></ListItem>
+                <ListItem><ListItemText primary="Layer5 Sub Item 2.2" /></ListItem>
+              </List>
+            </Collapse>
+     </List> `,
 ];
 
 const ListCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+
+  const toggleOpen1 = () => setOpen1((prev) => !prev);
+  const toggleOpen2 = () => setOpen2((prev) => !prev);
 
   return (
     <SistentLayout title="List">
@@ -176,6 +209,62 @@ const ListCode = () => {
               </SistentThemeProvider>
             </div>
             <CodeBlock name="button-list" code={codes[4]} />
+          </div>
+
+          {/* List with Nested Items */}
+          <a id="Nested List"><h3>List with Nested Items</h3></a>
+          <p>Lists can also be nested to represent hierarchical structures.</p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <List
+                  sx={{
+                    width: "100%",
+                    maxWidth: 360,
+                    padding: 2,
+                    bgcolor: "background.paper",
+                  }}
+                  component="nav"
+                >
+                  <ListSubheader component="div" id="nested-list-subheader">
+                    Layer5 Main Section
+                  </ListSubheader>
+
+                  {/* Main Item 1 with Nested Items */}
+                  <ListItemButton onClick={toggleOpen1}>
+                    <ListItemText primary="Layer5 Main Item 1" />
+                    {open1 ? <ExpandLess /> : <ExpandMore />}
+                  </ListItemButton>
+                  <Collapse in={open1} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ pl: 4 }}>
+                      <ListItem>
+                        <ListItemText primary="Layer5 Sub Item 1.1" />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemText primary="Layer5 Sub Item 1.2" />
+                      </ListItem>
+                    </List>
+                  </Collapse>
+
+                  {/* Main Item 2 with Nested Items */}
+                  <ListItemButton onClick={toggleOpen2}>
+                    <ListItemText primary="Layer5 Main Item 2" />
+                    {open2 ? <ExpandLess /> : <ExpandMore />}
+                  </ListItemButton>
+                  <Collapse in={open2} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ pl: 4 }}>
+                      <ListItem>
+                        <ListItemText primary="Layer5 Sub Item 2.1" />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemText primary="Layer5 Sub Item 2.2" />
+                      </ListItem>
+                    </List>
+                  </Collapse>
+                </List>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="nested-list" code={codes[5]} />
           </div>
         </div>
       </div>
