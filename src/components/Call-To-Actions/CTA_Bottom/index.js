@@ -64,6 +64,19 @@ const CTA_BottomWrapper = styled.div`
             margin-top: 1rem;
         }
     }
+
+  @media(max-width: 600px){
+    flex-direction: column-reverse;
+    height: auto;
+
+    img{
+      max-width: 95%;
+    }
+
+    .cta-content{
+      max-width: none;
+    }
+  }
 `;
 
 const defaultHeading = "Layer5 Community";
