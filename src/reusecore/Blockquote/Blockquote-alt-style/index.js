@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import BlockquoteStyle from "./blockquote.style";
 
-export { BlockquoteAlt };
 const BlockquoteAlt = ({ className, ...props }) => {
   const AllClasses = ["blockquote"];
   if (className) {
@@ -33,3 +32,4 @@ BlockquoteAlt.propTypes = {
 };
 
 export default BlockquoteAlt;
+export { BlockquoteAlt };
