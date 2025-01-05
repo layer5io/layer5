@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        output: '/', // This ensures output in root directory
-        filename: 'sitemap.xml',
+        output: "/", // This ensures output in root directory
+        filename: "sitemap.xml",
         query: `
           {
             site {
@@ -43,8 +43,8 @@ module.exports = {
             }
           }
         `,
-        resolveSiteUrl: ({site}) => site.siteMetadata.siteUrl,
-        serialize: ({path}) => {
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        serialize: ({ path }) => {
           return {
             url: path,
             changefreq: "daily",
