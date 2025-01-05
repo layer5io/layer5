@@ -1038,3 +1038,35 @@ exports.createSchemaCustomization = ({ actions }) => {
    `;
   createTypes(typeDefs);
 };
+
+const fs = require("fs");
+
+exports.onPostBuild = async ({ graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allSitePage {
+        nodes {
+          path
+          matchPath
+        }
+      }
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild("Error while running GraphQL query.");
+    return;
+  }
+
+  // Log the result to the console
+  console.log("GraphQL query result:", JSON.stringify(result, null, 2));
+
+  // Optionally, write the result to a file for easier inspection
+  const outputPath = path.resolve(__dirname, "public", "query-result.json");
+  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
+};
