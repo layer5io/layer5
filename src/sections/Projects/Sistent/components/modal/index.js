@@ -8,7 +8,7 @@ import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sisten
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const SistentModal = () => {
+const SistentModal = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
   return (

@@ -34,7 +34,7 @@ const lighttheme = {
   darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
 
   // Teal Blue
-  tertiaryColorTwo: "#477E96",
+  tealBlue: "#477E96",
 
   headingColor: "#111111",
 
@@ -99,6 +99,7 @@ const lighttheme = {
   blackToWhite: "#FFFFFF",
   blue477E96ToGreen00B39F: "#00B39F",
   blueE0FFFCToBlue477E96: "#477E96",
+  blue6eb0ccToBlue477E96: "#477E96",
   boxShadowBlue477E96: "-0.25rem 0.25rem 1.25rem #477e96",
   boxShadowGreen00D3A9: "-0.25rem 0.25rem 3rem #00D3A9",
   boxShadowGreen00D3A9ToBlackTwoFive: "rgb(0 0 0 / 0.25) 0px 0px 10px",
@@ -266,7 +267,7 @@ export const darktheme = {
   darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
 
   // Teal Blue
-  tertiaryColorTwo: "#477E96",
+  tealBlue: "#477E96",
 
   headingColor: "#000000",
 
@@ -333,6 +334,7 @@ export const darktheme = {
   blackToWhite: "#000000",
   blue477E96ToGreen00B39F: "#477E96",
   blueE0FFFCToBlue477E96: "#E0FFFC",
+  blue6eb0ccToBlue477E96: "#6eb0cc",
   boxShadowBlue477E96: "0rem 0.25rem 1.25rem #477e96",
   boxShadowGreen00D3A9: "0rem 0.25rem 3rem #00D3A9",
   boxShadowGreen00D3A9ToBlackTwoFive: "#00D3A9 0px 0px 10px",

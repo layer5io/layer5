@@ -7,7 +7,7 @@ import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-export const PopperGuidance = () => {
+const PopperGuidance = () => {
   const { isDark } = useStyledDarkMode();
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -43,7 +43,7 @@ export const PopperGuidance = () => {
           <TabButton
             className={
               location.pathname ===
-                "/projects/sistent/components/popper/guidance"
+              "/projects/sistent/components/popper/guidance"
                 ? "active"
                 : ""
             }
@@ -170,3 +170,5 @@ export const PopperGuidance = () => {
     </SistentLayout>
   );
 };
+
+export default PopperGuidance;

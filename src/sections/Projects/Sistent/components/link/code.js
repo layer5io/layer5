@@ -68,7 +68,7 @@ const codes = [
       </Link>
     </SistentThemeProvider>`,
 
-    ` <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  ` <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <Link
         href="https://your-link.com" 
         target="_blank"
@@ -81,21 +81,20 @@ const codes = [
       >
         Visit Secure Link
       </Link>
-    </SistentThemeProvider>`
+    </SistentThemeProvider>`,
 ];
 
-export const LinkCode = () => {
+const LinkCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
   return (
-    <SistentLayout title="Link" >
+    <SistentLayout title="Link">
       <div className="content">
         <a id="Identity">
           <h2>Link</h2>
         </a>
-        <p>
-        </p>
+        <p></p>
         <div className="filterBtns">
           <TabButton
             className={
@@ -108,8 +107,7 @@ export const LinkCode = () => {
           />
           <TabButton
             className={
-              location.pathname ===
-              "/projects/sistent/components/link/guidance"
+              location.pathname === "/projects/sistent/components/link/guidance"
                 ? "active"
                 : ""
             }
@@ -130,12 +128,20 @@ export const LinkCode = () => {
         </div>
         <div className="main-content">
           <p>
-          Links are fundamental components in web navigation, allowing users to move between different pages or resources. Their design and implementation are crucial for creating a seamless browsing experience.
+            Links are fundamental components in web navigation, allowing users
+            to move between different pages or resources. Their design and
+            implementation are crucial for creating a seamless browsing
+            experience.
           </p>
           <a id="Simple Link">
             <h2>Simple Link</h2>
           </a>
-          <p>The link can be presented in a simple format, primarily as underlined text that serves as a gateway to navigate users to other pages or resources, without any prominent styling or buttons attached to it.</p>
+          <p>
+            The link can be presented in a simple format, primarily as
+            underlined text that serves as a gateway to navigate users to other
+            pages or resources, without any prominent styling or buttons
+            attached to it.
+          </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -157,17 +163,23 @@ export const LinkCode = () => {
             <h2>Customized Links</h2>
           </a>
           <p>
-          Customized Links enhance user experience by adapting their design and behavior to match the app’s theme. They can include personalized styles, hover effects, or icons, ensuring both visual consistency and improved usability across the website.
+            Customized Links enhance user experience by adapting their design
+            and behavior to match the app’s theme. They can include personalized
+            styles, hover effects, or icons, ensuring both visual consistency
+            and improved usability across the website.
           </p>
 
           <h3>Colored Link</h3>
           <p>
-          Colored Links can help draw attention to key areas of a page. They are styled with custom colors to stand out and indicate their importance, enhancing navigation and usability.
+            Colored Links can help draw attention to key areas of a page. They
+            are styled with custom colors to stand out and indicate their
+            importance, enhancing navigation and usability.
           </p>
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Link href="Your Path"
+                <Link
+                  href="Your Path"
                   style={{
                     textDecoration: "none",
                     color: "blue",
@@ -184,7 +196,10 @@ export const LinkCode = () => {
 
           <h3>Underlined Link</h3>
           <p>
-            Underlined Links, often referred to as ghost buttons, are styled primarily with text without any fills or borders. They utilize specific text styling and color to signify different states, making them easily identifiable and enhancing user navigation.
+            Underlined Links, often referred to as ghost buttons, are styled
+            primarily with text without any fills or borders. They utilize
+            specific text styling and color to signify different states, making
+            them easily identifiable and enhancing user navigation.
           </p>
           <div className="showcase">
             <div className="items">
@@ -197,7 +212,7 @@ export const LinkCode = () => {
                     marginLeft: "10px",
                   }}
                 >
-                 Underlined Link
+                  Underlined Link
                 </Link>
               </SistentThemeProvider>
             </div>
@@ -206,7 +221,10 @@ export const LinkCode = () => {
 
           <h3>Customized Link </h3>
           <p>
-            Customized Links allow for distinct text styles and presentations that can enhance the user experience. By leveraging different styling properties, these links can be tailored to fit the design aesthetics of your application while maintaining functionality.
+            Customized Links allow for distinct text styles and presentations
+            that can enhance the user experience. By leveraging different
+            styling properties, these links can be tailored to fit the design
+            aesthetics of your application while maintaining functionality.
           </p>
           <div className="showcase">
             <div className="items">
@@ -233,7 +251,9 @@ export const LinkCode = () => {
             <h2>Security Considerations</h2>
           </a>
           <p>
-          When utilizing links we should use them with the target="_blank" attribute, it's essential to implement rel="noopener" or rel="noreferrer" to enhance security and user privacy
+            When utilizing links we should use them with the target="_blank"
+            attribute, it's essential to implement rel="noopener" or
+            rel="noreferrer" to enhance security and user privacy
           </p>
           <div className="showcase">
             <div className="items">
@@ -259,3 +279,4 @@ export const LinkCode = () => {
     </SistentLayout>
   );
 };
+export default LinkCode;

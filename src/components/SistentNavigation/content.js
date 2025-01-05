@@ -103,4 +103,19 @@ export const content = [
     link: "/projects/sistent/components/button-group/code",
     text: "Button Group",
   },
+  {
+    id: 27,
+    link: "/projects/sistent/components/tooltip",
+    text: "Tooltip",
+  },
+  {
+    id: 25,
+    link: "/projects/sistent/components/tooltip/guidance",
+    text: "Tooltip",
+  },
+  {
+    id: 26,
+    link: "/projects/sistent/components/tooltip/code",
+    text: "Tooltip",
+  },
 ];

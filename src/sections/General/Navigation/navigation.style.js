@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  position: sticky;
   width: 100vw;
   z-index: 9999;
   top: 0;
@@ -17,6 +16,7 @@ const NavigationWrap = styled.header`
     }
   }
   .meshery-cta {
+    z-index: 999;
     position: relative;
     display: flex;
     align-items: center;
@@ -618,6 +618,14 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-item {
       padding: 1px;
+      ul:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 40%;
+        margin: 10px;
+        background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
+      }
       .menu-item {
         font-size: 16px;
         font-weight: 600;
@@ -750,7 +758,8 @@ const NavigationWrap = styled.header`
   }
   .dark-theme-toggle {
     /* margin-left: 2rem; */
-    visibility: ${(props) => typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+    visibility: ${(props) =>
+  typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {

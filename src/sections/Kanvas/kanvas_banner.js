@@ -4,18 +4,21 @@ import KanvasIcon from "./kanvas-icon.svg";
 
 const BannerSectionWrapper = styled.div`
 
-    display: flex;
-    background: #000000;
-    border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
-    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33);
-    box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
+  display: flex;
+  flex-wrap: nowrap;
+  background: #000000;
+  border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
+  -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33);
+  box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
+  gap: 5rem;
+  padding: 6rem 6rem 6rem 6rem;
+  max-width: 1140px;
+  width: 100%;
+  margin: auto;
+  min-height: 25rem;
+  align-content: end;
 
-    padding: 8rem 6rem 3rem 6rem;
-    max-width: 1140px;
-    width: 100%;
-    margin: auto;
-    min-height: 25rem;
-
+  div.banner-text {
     h1 {
         /* background-color: ${props => props.theme.black}; */
         font-weight: 500;
@@ -35,7 +38,7 @@ const BannerSectionWrapper = styled.div`
         }
         @media screen and (max-width: 448px) {
             font-size: 38px;
-            span{
+            span {
                 font-size: 48px;
             }
         }
@@ -44,63 +47,58 @@ const BannerSectionWrapper = styled.div`
             margin: 1.5rem 0;
         }
     }
-    h2 {
-        margin-bottom: 1rem;
-        font-size: 1.95rem;
-        font-weight: 400;
-        color: ${props => props.theme.white};
-        font-style: italic;
-        span {
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 1.95rem;
+            font-weight: 400;
+            color: ${props => props.theme.white};
+            font-style: italic;
+            span {
+                font-style: normal;
+            }
+        }
+        h2.readyPlayer {
+            margin: 2rem 0rem 0rem 0rem;
+            background-color: black;
+            position: absolute;
+            z-index: 1;
+            padding: 1.5rem;
+            color: white;
             font-style: normal;
+            text-transform: uppercase ;
+            font-size: 2.5rem;
+            text-align: center;
         }
-    }
-    h2.readyPlayer {
-        margin: 2rem 0rem 0rem 0rem;
-        background-color: black;
-        position: absolute;
-        z-index: 1;
-        padding: 1.5rem;
-        color: white;
-        font-style: normal;
-        text-transform: uppercase ;
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    }
-    .banner-text p {
-        color: ${props => props.theme.saffronColor};
-        margin-bottom: .5rem;
-        font-weight: 400;
-        font-size: 1.75rem;
-        font-style: italic;
-        min-width: 18rem;
-        font-family: "Qanelas Soft";
-        span {
+        p {
             color: ${props => props.theme.saffronColor};
+            margin-bottom: .5rem;
+            font-weight: 400;
+            font-size: 1.75rem;
+            font-style: italic;
+            min-width: 18rem;
+            font-family: "Qanelas Soft";
+            span {
+                color: ${props => props.theme.saffronColor};
+            }
         }
-    }
-    h4 {
-        text-transform: uppercase;
-        padding-left: 1rem;
-        font-style: italic;
-        font-size: 1.25rem;
-        color: ${props => props.theme.white};
-        span {
+        h4 {
+            text-transform: uppercase;
             padding-left: 1rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: ${props => props.theme.white};
+            span {
+                padding-left: 1rem;
+            }
         }
     }
-
     .kanvas-logo {
         width: 14rem;
         overflow: hidden;
-        margin-top: -7rem;
-        position: relative;
-        left: 10%;
-        margin-top: -8rem;
-        z-index: 0;
-
-    }
+        display: flex;
+        align-self: center;
+        flex-wrap: nowrap;
+      }
     div.accent-bubble {
         width: 50%;
         height: 100%;
@@ -118,9 +116,7 @@ const BannerSectionWrapper = styled.div`
 
     @media screen and (max-width: 1700px) {
         .kanvas-logo {
-            width: 20rem;
-            left: 21%;
-            margin-top: -7rem;
+            width: 12rem;
         }
         .para {
             margin-top: -3rem;
@@ -128,37 +124,39 @@ const BannerSectionWrapper = styled.div`
     }
     @media screen and (max-width: 1200px) {
         .kanvas-logo {
-            width: 18rem;
-            left: 18%;
-            margin-top: -6rem;
+            width: 10rem;
         }
-        /* border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ; */
+        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
     @media screen and (max-width: 992px) {
         .kanvas-logo {
             width: 8rem;
-            margin-top: -2rem;
-            left: 15%;
         }
+        .banner-text {
+          margin-left: 0rem;
+          margin-bottom: 0rem;
+          h1 { font-size: 50px; } 
+          h2 { font-size: 1.25rem; }
+          h4 { font-size: 1rem; }
+          p { font-size: 1.25rem; }
+        }
+        gap: 2.5rem;
+        min-height: 12rem;
+        padding: 6rem 2rem 2rem 2rem;
         border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
 
     @media screen and (max-width: 768px) {
         padding: 8rem 2rem 3rem;
         .kanvas-logo {
-            margin-top: -5rem;
-            margin-right: 2rem;
-            left: 7%;
-            min-width: 5rem;
+            min-width: 6rem;
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
     @media screen and (max-width: 500px) {
         .kanvas-logo {
-            margin-top: -5rem;
-            margin-right: 2rem;
-            left: 0%;
-            min-width: 3rem;
+            
+            /* min-width: 3rem; */
             }
         border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }

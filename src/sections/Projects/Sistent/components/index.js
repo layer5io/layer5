@@ -7,72 +7,8 @@ import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
+import { componentsData } from "./content";
 
-const componentsData = [
-  {
-    id: 1,
-    name: "Button",
-    description:
-      "A button is an interactive element that triggers a specific action and also lets users know what will happen next.",
-    url: "/projects/sistent/components/button",
-  },
-  {
-    id: 2,
-    name: "Text Input",
-    description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/text-input",
-  },
-  {
-    id: 3,
-    name: "Modal",
-    description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/modal",
-  },
-  {
-    id: 4,
-    name: "Paper",
-    description:
-      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
-    url: "/projects/sistent/components/paper",
-  },
-  {
-    id: 5,
-    name: "Popper",
-    description:
-      "A popper is a tooltip that appears when a user interacts with an element.",
-    url: "/projects/sistent/components/popper",
-  },
-  {
-    id: 6,
-    name: "Text Field",
-    description:
-      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
-    url: "/projects/sistent/components/text-field",
-  },
-  {
-    id: 7,
-    name: "Link",
-    description:
-      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
-    url: "/projects/sistent/components/link",
-  },
-  {
-    id: 8,
-    name: "Container",
-    description:
-      "Containers align and center content, providing responsive layout options for different screen sizes.",
-    url: "/projects/sistent/components/container",
-  },
-  {
-    id: 9,
-    name: "ButtonGroup",
-    description:
-      "ButtonGroup is a component that groups multiple buttons together.",
-    url: "/projects/sistent/components/button-group",
-  },
-];
 
 const SistentComponents = () => {
   const [searchQuery, setSearchQuery] = useState("");
