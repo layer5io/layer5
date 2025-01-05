@@ -27,33 +27,26 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
+        output: '/', // This ensures output in root directory
+        filename: 'sitemap.xml',
         query: `
-        {
-          allSitePage {
-            nodes {
-              path
-              matchPath
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
             }
           }
-          site {
-            siteMetadata {
-              siteUrl
-              }
-          }
-        }
-      `,
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-        }) => {
-          return allPages.map(page => {
-            return { ...page };
-          });
-        },
-        serialize: ({ path, matchPath }) => {
-          let url = matchPath ? matchPath : path;
-          url = url.startsWith("/") ? url : `/${url}`;
+        `,
+        resolveSiteUrl: ({site}) => site.siteMetadata.siteUrl,
+        serialize: ({path}) => {
           return {
-            url: url,
+            url: path,
             changefreq: "daily",
             priority: 0.7,
           };
