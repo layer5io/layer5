@@ -18,6 +18,8 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run noIndex
+          node -v
+          npm run version
 
       - name: Zip Site
         run: bash ./script.sh
