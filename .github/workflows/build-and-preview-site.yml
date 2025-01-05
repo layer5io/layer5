@@ -17,6 +17,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install --legacy-peer-deps
+          node -v
+          npm run version
           npm run noIndex
 
       - name: Zip Site
