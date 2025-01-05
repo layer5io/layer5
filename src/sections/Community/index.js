@@ -21,7 +21,7 @@ import AdventuresCallout from "../Adventures-Callout";
 import PictureSlider from "./slider";
 
 const CommunityMember = "./Community-pictures/five.svg";
-const Picture = "./Community-pictures/join-the-community.png";
+// const Picture = "./Community-pictures/join-the-community.png";
 
 const CommunityPage = () => {
 
@@ -100,7 +100,7 @@ const CommunityPage = () => {
               <Button $primary title="See our community member profiles" $url="/community/members" />
             </Col>
             <Col className="slider" $sm={12} $lg={6}>
-              <StaticImage src={Picture} alt="Five_with_banner" />
+              {/* <StaticImage src={Picture} alt="Five_with_banner" /> */}
               <PictureSlider />
             </Col>
           </Row>
