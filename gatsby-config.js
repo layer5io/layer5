@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        output: "", // This ensures output in root directory
+        output: "sitemap.xml", // This ensures output in root directory
         query: `
           {
             site {
