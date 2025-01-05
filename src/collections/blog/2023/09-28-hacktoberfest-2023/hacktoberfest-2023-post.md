@@ -22,7 +22,7 @@ import hacktoberfestEvent from "./layer5-event-hacktoberfest2023.png";
 import cloudNativeHacktoberfest from "./hacktoberfest-2023-with-layer5.png";
 import hacktoberfestBadge from "./hacktoberfest-contributor.png";
 import Blockquote from "../../../../reusecore/Blockquote";
-import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import Blockquote from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 import { Link } from "gatsby" ;
 
 
@@ -40,7 +40,7 @@ Before you embark on your Hacktoberfest journey, take a moment to reflect on you
 
 While a flurry of pull requests may be impressive, maintainers value contributions that add genuine value. Think beyond code and consider how your unique skills—whether in design, organization, or other areas can enrich the project. Open Source thrives on meaningful contributions, so let's aim to make a tangible difference, rather than settling for mediocrity. You will grow in the process and so will the project.
 
-<BlockquoteAlt
+<Blockquote
   quote="When you are clear about what motivates you, each contribution you make will help you achieve your goals, because you will be working on projects that are aligned with your values." person=" Lee Calcote"
 />
 

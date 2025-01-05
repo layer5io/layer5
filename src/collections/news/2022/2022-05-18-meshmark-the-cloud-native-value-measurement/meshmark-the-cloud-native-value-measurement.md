@@ -21,14 +21,14 @@ import Formula from "./MeshMark-Formula.webp";
 import MeshMapMeshmark from "./meshmark-score.webp";
 import { NewsWrapper } from "../../News.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
-import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import Blockquote from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 
 <NewsWrapper>
 <p>
 VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU - <a href="https://smp-spec.io/meshmark">MeshMark</a> is a performance index that measures the <i>value</i> and <i>overhead</i> of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension.
 </p>
 
-<BlockquoteAlt 
+<Blockquote 
   className="pull-right"
   quote="Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need"
   person="Ken Owens"
@@ -60,7 +60,7 @@ By specifying a uniform way to analyze and report on the degree to which measure
 With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collaborators from Isovalent, Buoyant, and FiServ, Service Mesh Performance is a vendor neutral cloud native performance measurement standard.
 </p>
 
-<BlockquoteAlt
+<Blockquote
   quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
   person="William Morgan"
   title="CEO of Buoyant and one of the creators of Linkerd" 
@@ -90,7 +90,7 @@ MeshMark functions as a value performance index (a scale) to provide organizatio
 A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific infrastructure resource utilizations to assigned resources to cloud native infrastructure.
 </p>
 
-<BlockquoteAlt 
+<Blockquote 
   quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
   person="Lee Calcote"
   title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
