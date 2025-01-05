@@ -336,7 +336,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
-
+  createRedirect({
+    fromPath: "/sitemap.xml",
+    toPath: "/sitemap-index.xml",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   // Create Pages
   const { createPage } = actions;
 
