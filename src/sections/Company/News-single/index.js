@@ -7,20 +7,12 @@ import NewsSidebar from "./Sidebar";
 import loadable from "@loadable/component";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
-<<<<<<< HEAD
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode.js";
 const RelatedPosts = loadable(() => import("../../../components/Related-Posts"));
 
 
 const NewsSingle = ({ data, children }) => {
   const { frontmatter, fields } = data.mdx;
-=======
-import RelatedPosts from "../../../components/Related-Posts";
-import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
-
-const NewsSingle = ({ data }) => {
-  const { isDark } = useStyledDarkMode();
-  const { frontmatter, body, fields } = data.mdx;
->>>>>>> 0127ccc917b935fb2260e1c7dd2fa7f4d19e8ed9
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
@@ -56,6 +48,7 @@ const NewsSingle = ({ data }) => {
   const relatedPosts = posts.filter(
     (post) => post.fields.slug !== fields.slug
   );
+  const { isDark } = useStyledDarkMode();
 
   return (
     <NewsPageWrapper>
