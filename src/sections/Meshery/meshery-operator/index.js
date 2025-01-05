@@ -1,12 +1,12 @@
-import React from "react";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 
 import MesheryOperatorWrapper from "./mesheryoperator.style";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import SubscribeSection from "../../../sections/subscribe/subscribe";
 import Deployment from "./deployment.svg";

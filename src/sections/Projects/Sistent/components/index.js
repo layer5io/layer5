@@ -7,30 +7,8 @@ import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
+import { componentsData } from "./content";
 
-const componentsData = [
-  {
-    id: 1,
-    name: "Button",
-    description:
-      "A button is an interactive element that triggers a specific action and also lets users know what will happen next.",
-    url: "/projects/sistent/components/button",
-  },
-  {
-    id: 2,
-    name: "Text Input",
-    description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/text-input",
-  },
-  {
-    id: 3,
-    name: "Modal",
-    description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
-    url: "/projects/sistent/components/modal",
-  },
-];
 
 const SistentComponents = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -92,7 +70,6 @@ const SistentComponents = () => {
                     </div>
                   </Link>
                 ))}
-
               </div>
             </div>
           </div>

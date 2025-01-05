@@ -2,7 +2,9 @@ name: Build and Deploy Site
 on:
   push:
     branches: [master]
-
+  workflow_dispatch:
+  workflow_call:
+    
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

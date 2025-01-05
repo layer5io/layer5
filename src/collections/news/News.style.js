@@ -19,6 +19,9 @@ const NewsWrapper = styled.div`
     .block-display {
         display: block;
     }
+    .align-center {
+        text-align: center;
+    }
 
 
 @media screen and (max-width: 768px) {

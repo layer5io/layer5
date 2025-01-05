@@ -7,11 +7,20 @@ import NewsSidebar from "./Sidebar";
 import loadable from "@loadable/component";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
+<<<<<<< HEAD
 const RelatedPosts = loadable(() => import("../../../components/Related-Posts"));
 
 
 const NewsSingle = ({ data, children }) => {
   const { frontmatter, fields } = data.mdx;
+=======
+import RelatedPosts from "../../../components/Related-Posts";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+const NewsSingle = ({ data }) => {
+  const { isDark } = useStyledDarkMode();
+  const { frontmatter, body, fields } = data.mdx;
+>>>>>>> 0127ccc917b935fb2260e1c7dd2fa7f4d19e8ed9
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
@@ -55,7 +64,8 @@ const NewsSingle = ({ data, children }) => {
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
         author={{ name: frontmatter.author }}
-        thumbnail={frontmatter.thumbnail}
+        thumbnail={ isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+          ? frontmatter.darkthumbnail : frontmatter.thumbnail}
         date={frontmatter.date}
       />
       <div className="single-post-wrapper">

@@ -23,6 +23,13 @@ export const query = graphql`
           extension
           publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug
