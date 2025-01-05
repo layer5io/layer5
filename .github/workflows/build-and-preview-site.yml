@@ -16,6 +16,8 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          node -v
+          gatsby --version
           npm install --legacy-peer-deps
           npm run noIndex
 
