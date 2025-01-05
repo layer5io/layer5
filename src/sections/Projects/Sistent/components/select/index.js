@@ -1,17 +1,10 @@
 import React from "react";
-import { navigate } from "gatsby";
-import { useLocation } from "@reach/router";
-
 import { SistentThemeProvider } from "@layer5/sistent";
-import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import {
-  Container,
   FormControl,
-  FormHelperText,
-  Grid,
   InputLabel,
   MenuItem,
   Select,
@@ -21,7 +14,6 @@ import Header from "./header";
 import SectionNav from "./section-nav";
 
 const SistentSelect = () => {
-  const location = useLocation();
   const { isDark } = useStyledDarkMode();
   const [multipleAges, setMultipleAges] = React.useState([]);
   const handleMultiplSelect = (event) => {
@@ -58,9 +50,9 @@ const SistentSelect = () => {
             selection area. The label appears above the selection, and the
             dropdown menu is displayed below it.
           </p>
-          <Container sx={{ width: "200px" }}>
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControl fullWidth>
+              <FormControl sx={{ width: "200px" }}>
                 <InputLabel id="demo-select-label-outlined">Age</InputLabel>
                 <Select
                   labelId="demo-select-label-outlined"
@@ -73,7 +65,7 @@ const SistentSelect = () => {
                 </Select>
               </FormControl>
             </SistentThemeProvider>
-          </Container>
+          </Row>
           <h3>Filled</h3>
           <p>
             Filled select feature a background color fill. Depending on the
@@ -81,9 +73,8 @@ const SistentSelect = () => {
             brand color to any other applicable color in a brand's color
             palette.
           </p>
-
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Row $Hcenter className="image-container">
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <FormControl sx={{ width: "200px" }}>
                 <InputLabel id="demo-select-label-filled">Age</InputLabel>
                 <Select
@@ -97,8 +88,8 @@ const SistentSelect = () => {
                   <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
               </FormControl>
-            </Row>
-          </SistentThemeProvider>
+            </SistentThemeProvider>
+          </Row>
           <h3>Standard</h3>
           <p>
             The standard style features a simple underline below the selection
@@ -121,48 +112,6 @@ const SistentSelect = () => {
               </FormControl>
             </SistentThemeProvider>
           </Row>
-          <a id="Label">
-            <h2>Label and helper text</h2>
-          </a>
-          <p>
-            The label is optional. If provided, helper text is displayed below
-            the component to give the user more context about the component.
-          </p>
-
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Grid
-              gap={2}
-              container
-              sx={{
-                width: "100%",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <FormControl sx={{ width: "200px" }}>
-                <InputLabel id="demo-select-label">Age</InputLabel>
-                <Select
-                  labelId="demo-select-label"
-                  id="demo-select"
-                  label="Age"
-                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-                <FormHelperText>With label + Helper text</FormHelperText>
-              </FormControl>
-              <FormControl sx={{ width: "200px" }}>
-                <Select id="demo-select-without-label" defaultValue={"None"}>
-                  <MenuItem value={"None"}>None</MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-                <FormHelperText>Without label</FormHelperText>
-              </FormControl>
-            </Grid>
-          </SistentThemeProvider>
           <a id="Sizes">
             <h2>Sizes</h2>
           </a>
@@ -247,15 +196,10 @@ const SistentSelect = () => {
           <a id="Multiple select">
             <h2>Multiple select</h2>
           </a>
-          <p>
-            The multiple select component allows users to select more than one
-            option from the dropdown list. This is useful in scenarios where
-            multiple selections are required, such as selecting multiple tags,
-            categories, or items.
-          </p>
+          <p>Multiple select component allows users to select more than one.</p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControl sx={{ minWidth: "80px", m: 1 }}>
+              <FormControl sx={{ width: "200px" }}>
                 <InputLabel id="demo-select-label">Age</InputLabel>
                 <Select
                   multiple
