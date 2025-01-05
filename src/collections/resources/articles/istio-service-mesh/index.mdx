@@ -14,7 +14,7 @@ tags:
  - Istio
 resource: true
 ---
-import { ResourcesWrapper } from "../../Resources.style.js";
+
 import serviceMesh from "./service-mesh.svg";
 import arch from "./arch.svg";
 
@@ -34,18 +34,19 @@ import arch from "./arch.svg";
   
   <p> The communication between services, on the other hand, is handled by the data plane. Because many service mesh solutions use a sidecar proxy to manage data plane connections, the amount of knowledge that the services must have about the network environment is constrained. </p>
  
-  <img src = {serviceMesh} class="image-center" alt="Service Mesh" />
+  <img src = {serviceMesh} className="image-center" alt="Service Mesh" />
   
   <h3> Inside the Istio service mesh </h3>
   
-  <p> A data plane and a control plane are logically separate parts of an Istio service mesh.
+  <p> 
+  A data plane and a control plane are logically separate parts of an Istio service mesh.
   <ul>
     <li> A group of intelligent proxies (Envoy) that are deployed as sidecars make up the data plane. All network connection among the microservices is mediated and managed by these proxies. Additionally, they gather and compile data on all mesh communications. </li>
     <li> The proxies are controlled and set up by the control plane to route traffic. </li>
   </ul>
   </p>
   
-   <img src = {arch} class="image-center" alt="Istio Service Mesh Architecture" />
+   <img src = {arch} className="image-center" alt="Istio Service Mesh Architecture" />
   
   <h4> Envoy </h4>
   

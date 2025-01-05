@@ -1,18 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-
-
 import BookSingle from "../sections/Learn/Book-single";
 import DockerExtensionCTA from "../sections/Docker-Meshery/docker-extension-CTA";
 // import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 
-
-
 import SEO from "../components/seo";
 export const query = graphql`query BookBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       abstract
@@ -28,19 +22,15 @@ export const query = graphql`query BookBySlug($slug: String!) {
 }
 `;
 
-const BookSinglePage = ({ data }) => {
-
+const BookSinglePage = ({ data, children }) => {
 
   return (
-
     <>
-
-
-      <BookSingle data={data} />
+      <BookSingle data={data} >
+        { children }
+      </BookSingle>
       <DockerExtensionCTA />
-
     </>
-
   );
 };
 

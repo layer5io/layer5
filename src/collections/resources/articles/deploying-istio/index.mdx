@@ -14,8 +14,8 @@ published: true
 resource: true
 ---
 
-import { Link } from "gatsby";
-import { ResourcesWrapper } from "../../Resources.style.js";
+
+
 
 <ResourcesWrapper>
 <div className="intro">
@@ -225,7 +225,8 @@ Install with permissive mutual TLS authentication between sidecars.
 <li>Recommended if you have existing clusters and services.</li>
 <li>Recommended if you have applications where services with an Istio sidecar need to be able to communicate with other non-Istio Kubernetes services</li>
 </ul></li>
-<li>Custom deployments that include or exclude certain default Istio components.
+<li>
+Custom deployments that include or exclude certain default Istio components.
 <ul>
 <li>Recommended if a function of one of Istio’s components isn’t necessary or desired in your environment (e.g. removal of Citadel if mTLS is not to be used).</li>
 </ul></li>
@@ -233,14 +234,13 @@ Install with permissive mutual TLS authentication between sidecars.
 
 <h5>Choice of Deployment Utility</h5>
 <ul>
-<li>Render Kubernetes manifests directly with kubectl.
-<ul> 
-<li>Recommended for understanding Istio’s underpinnings more explicitly.</li>
-</ul></li>
-<li>Render Kubernetes manifests with a package / configuration management system like Helm or Ansible.
+<li>
+
+Render Kubernetes manifests with a package / configuration management system like Helm or Ansible.
 <ul> 
 <li>Recommended for production deployments with templated configuration.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 <h4>Registering Istio’s Custom Resources</h4>
@@ -443,8 +443,7 @@ After the Bookinfo services are up and running, you'll need to make the applicat
 $ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
 
-<p>Confirm the gateway has been created:
-</p>
+<p>Confirm the gateway has been created:</p>
 
 ```
 $ kubectl get gateway

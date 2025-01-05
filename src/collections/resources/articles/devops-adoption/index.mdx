@@ -12,9 +12,9 @@ published: true
 resource: true
 ---
 
-import { Link } from "gatsby";
-import { ResourcesWrapper } from "../../Resources.style.js";
-import DevOps from "./devops-adoption-choosing-the-right-metrics.pdf";
+
+
+import DevOps from "./devops-adoption-choosing-the-right-metrics_compressed.pdf";
 import DevOpsAdoption from "./devops-adoption.webp";
 
 <ResourcesWrapper>
@@ -32,7 +32,7 @@ However, DevOps teams from many industries frequently struggle to identify the r
 <li>Analyze the speed at which products are reaching the market in comparison to competitors.</li>
 </ul>
 
-<h3 style="margin-top: 1rem;">Monitor these 5 metrics to understand how to speed up your DevOps toolchain:</h3>
+<h3 style={{marginTop: "1rem"}}>Monitor these 5 metrics to understand how to speed up your DevOps toolchain:</h3>
 <ul>
 <li>Deployment Time</li>
 <li>Change Failure Rate</li>
@@ -41,7 +41,5 @@ However, DevOps teams from many industries frequently struggle to identify the r
 <li>Lead Time</li>
 </ul>
 
-<Link to={DevOps}>
-<img src={DevOpsAdoption} alt="Right metrics for adopting DevOps" />
-</Link>
+<Link to={DevOps}><img src={DevOpsAdoption} alt="Right metrics for adopting DevOps" /></Link>
 </ResourcesWrapper>

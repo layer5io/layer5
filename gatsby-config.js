@@ -1,4 +1,9 @@
 /* eslint-env node */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const devIgnoreArray = require("./gatsby-dev-filesystem-ignore");
 
 module.exports = {
   siteMetadata: {
@@ -17,7 +22,7 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
-    "@mediacurrent/gatsby-plugin-silence-css-order-warning",
+    "gatsby-plugin-no-sourcemaps",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
@@ -112,35 +117,36 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "resources", "news"]}}, frontmatter: {published: {eq: true}, category: {nin: ["Programs", "Community", "Events", "FAQ"]}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: ["blog", "resources", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events", "FAQ"] } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
           },
@@ -150,7 +156,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.body,
+                  description: node.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -159,34 +165,35 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: [ "news"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/news/feed.xml",
             title: "Layer5 News",
           },
@@ -196,7 +203,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.body,
+                  description: node.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -205,37 +212,38 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["resources"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-        darkthumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: [ "resources"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                      darkthumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
           },
@@ -254,35 +262,36 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
           },
@@ -299,35 +308,36 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: ["blog"] } }, frontmatter: { published: { eq: true }, } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/blog/feed.xml",
             title: "Layer5 Blog"
           },
@@ -344,35 +354,36 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt }],
                 });
               });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["events"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      html
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: ["events"] } }, frontmatter: { published: { eq: true }, } }
+                  limit: 20
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
             output: "/events/feed.xml",
             title: "Layer5 Events"
           },
@@ -394,7 +405,21 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: [".mdx"],
+        mdxOptions: {
+          remarkPlugins: [
+            // Add GitHub Flavored Markdown (GFM) support
+            require("remark-gfm"),
+          ]
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1000,
+            },
+          }
+        ],
       },
     },
     {
@@ -409,6 +434,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("blog")
+        //   : []
       },
     },
     {
@@ -416,6 +444,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/news`,
         name: "news",
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("news")
+        //   : []
       },
     },
     {
@@ -451,6 +482,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/members`,
         name: "members",
+        ignore: process.env.GATSBY_DEV_AMENDED === "true"
+          ? devIgnoreArray("members")
+          : []
       },
     },
     {
@@ -479,6 +513,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/events`,
         name: "events",
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("events")
+        //   : []
       },
     },
     {
@@ -493,6 +530,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/integrations`,
         name: "integrations",
+        // ignore: process.env.GATSBY_DEV_AMENDED === "true"
+        //   ? devIgnoreArray("integrations")
+        //   : []
       },
     },
     {

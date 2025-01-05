@@ -5,6 +5,7 @@ import Layer5Brand from "./Brand-components/layer5";
 import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
+import useTimeout from "../../../utils/useTimeout";
 
 const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
 const MesheryOperatorBrand = loadable(() => import("./Brand-components/meshery-operator"));
@@ -72,7 +73,7 @@ const scrollToX = (element, xFrom, xTo, t01, speed, step, motion) => {
   element.scrollTop = xFrom - (xFrom - xTo) * motion(t01);
   t01 += speed * step;
 
-  setTimeout(function () {
+  useTimeout(function () {
     scrollToX(element, xFrom, xTo, t01, speed, step, motion);
   }, step);
 };
@@ -88,6 +89,11 @@ const Brand = () => {
     window.addEventListener("scroll", () =>
       window.scrollY > 510 ? setScroll(true) : setScroll(false)
     );
+    return () => {
+      window.removeEventListener("scroll", () =>
+        window.scrollY > 510 ? setScroll(true) : setScroll(false)
+      );
+    };
   }, []);
 
   const [visibleSection, setVisibleSection] = useState();

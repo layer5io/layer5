@@ -135,3 +135,5 @@ export const ProgramsWrapper = styled.div`
         }
     }
 `;
+
+export default ProgramsWrapper;
