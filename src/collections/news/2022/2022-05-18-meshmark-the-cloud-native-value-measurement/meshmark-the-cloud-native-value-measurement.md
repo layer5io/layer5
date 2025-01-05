@@ -21,7 +21,6 @@ import Formula from "./MeshMark-Formula.webp";
 import MeshMapMeshmark from "./meshmark-score.webp";
 import { NewsWrapper } from "../../News.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
-import Blockquote from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 
 <NewsWrapper>
 <p>

@@ -22,7 +22,6 @@ import hacktoberfestEvent from "./layer5-event-hacktoberfest2023.png";
 import cloudNativeHacktoberfest from "./hacktoberfest-2023-with-layer5.png";
 import hacktoberfestBadge from "./hacktoberfest-contributor.png";
 import Blockquote from "../../../../reusecore/Blockquote";
-import Blockquote from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 import { Link } from "gatsby" ;
 
 
