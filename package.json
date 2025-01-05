@@ -22,6 +22,7 @@
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
+    "version": "gatsby --version",
     "prepare": "husky install"
   },
   "dependencies": {
