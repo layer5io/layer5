@@ -5,15 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require("path");
-const slugify = require("./src/utils/slugify");
-const { paginate } = require("gatsby-awesome-pagination");
-const { createFilePath } = require("gatsby-source-filesystem");
-const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
-const config = require("./gatsby-config");
-const {
-  componentsData,
-} = require("./src/sections/Projects/Sistent/components/content");
+import path from "path";
+import slugify from "./src/utils/slugify.js";
+import { paginate } from "gatsby-awesome-pagination";
+import { createFilePath } from "gatsby-source-filesystem";
+import FilterWarningsPlugin from "webpack-filter-warnings-plugin";
+import config from "./gatsby-config.js";
+import { componentsData } from "./src/sections/Projects/Sistent/components/content.js";
 
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
