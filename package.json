@@ -27,7 +27,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/styled": "^11.14.0",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/google-calendar": "^6.0.2",
@@ -112,7 +112,7 @@
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.5",
-    "swiper": "^10.0.4",
+    "swiper": "^11.1.15",
     "url": "^0.11.3",
     "webpack-filter-warnings-plugin": "^1.2.1",
     "xstate": "^5.13.0"
@@ -125,7 +125,7 @@
     "cpx": "^1.5.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.46.0",
-    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react": "^7.37.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "gh-pages": "^6.0.0",
     "husky": "^8.0.3",
