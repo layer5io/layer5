@@ -16,10 +16,10 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          node -v
-          gatsby --version
           npm install --legacy-peer-deps
           npm run noIndex
+          node -v
+          npm run version
 
       - name: Zip Site
         run: bash ./script.sh
