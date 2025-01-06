@@ -36,7 +36,7 @@ jobs:
           ls -al
 
           # Process the CSV, filter data, and append to feature_data.json
-          node .github/build/features-to-json.js
+          node .github/build/features-to-json.mjs
 
       - name: Commit changes
         id: commit-changes
