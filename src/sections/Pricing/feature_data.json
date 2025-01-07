@@ -150,7 +150,7 @@
     "functionOrder": "",
     "function": "",
     "feature": "",
-    "subscription_tier": "no",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
@@ -280,7 +280,7 @@
     "feature": "Export views to JSON format",
     "subscription_tier": "",
     "comparison_tiers": {
-      "free": "",
+      "free": "x",
       "teamDesigner": "",
       "teamOperator": "x",
       "enterprise": "x"
