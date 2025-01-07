@@ -1,14 +1,21 @@
 import React from "react";
 
-import { Button, SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@layer5/sistent";
 import { CodeBlock } from "./code-block";
-import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { SistentLayout } from "../../sistent-layout";
 
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import SectionNav from "./section-nav";
 import Header from "./header";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  ListSubheader,
+  MenuItem,
+  OutlinedInput,
+  Select,
+} from "@mui/material";
 
 const codes = {
   "variant-outlined": `<SistentThemeProvider>
@@ -85,11 +92,88 @@ const codes = {
     </Select>
   </FormControl>
 </SistentThemeProvider>`,
+
+  "customize-label": `<SistentThemeProvider>
+  <FormControl sx={{ width: "200px" }}>
+    <InputLabel id="demo-select-label">Age</InputLabel>
+    <Select
+      labelId="demo-select-label"
+      label="Age"
+    >
+      <MenuItem value={10}>Ten</MenuItem>
+      <MenuItem value={20}>Twenty</MenuItem>
+      <MenuItem value={30}>Thirty</MenuItem>
+    </Select>
+  </FormControl>
+</SistentThemeProvider>`,
+  "customize-helper-text": `<SistentThemeProvider>
+  <FormControl sx={{ width: "200px" }}>
+    <Select>
+      <MenuItem value={10}>Ten</MenuItem>
+      <MenuItem value={20}>Twenty</MenuItem>
+      <MenuItem value={30}>Thirty</MenuItem>
+    </Select>
+    <FormHelperText>This is a helper text</FormHelperText>
+  </FormControl>
+</SistentThemeProvider>`,
+
+  "customize-placeholder": `const [selectedAge, setSelectedAge] = React.useState("");
+
+<SistentThemeProvider>
+  <Select
+    onChange={(e) => setSelectedAge(e.target.value)}
+    renderValue={() => {
+      if (selectedAge == "") return <em>Select an age</em>;
+      return selectedAge;
+    }}
+    value={selectedAge}
+    displayEmpty
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</SistentThemeProvider>`,
+
+  "customize-grouping": `<Select>
+  <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+  <MenuItem value={30}>Thirty</MenuItem>
+  <MenuItem value={40}>Fourty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+  <MenuItem value={50}>Fifty</MenuItem>
+  <MenuItem value={60}>Sixty</MenuItem>
+</Select>`,
+
+  multiselect: `const [multipleAges, setMultipleAges] = React.useState([]);
+const handleMultiplSelect = (event) => {
+  let agesList = event.target.value;
+  setMultipleAges(agesList);
+};
+<SistentThemeProvider>
+  <Select
+    multiple
+    input={<OutlinedInput label="Name" />}
+    value={multipleAges}
+    onChange={handleMultiplSelect}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</SistentThemeProvider>`,
 };
 
-const ButtonCode = () => {
+const SelectCode = () => {
   const { isDark } = useStyledDarkMode();
-
+  const [selectedAge, setSelectedAge] = React.useState("");
+  const [multipleAges, setMultipleAges] = React.useState([10]);
+  const handleMultiplSelect = (event) => {
+    let agesList = event.target.value;
+    setMultipleAges(agesList);
+  };
   return (
     <SistentLayout title="Button">
       <div className="content">
@@ -210,9 +294,108 @@ const ButtonCode = () => {
             </div>
             <CodeBlock name="size-fullwidth" code={codes["size-fullwidth"]} />
           </div>
-          <a id="Customize behaviors">
-            <h2>Customize behaviors</h2>
+          <a id="Customization">
+            <h2>Customization</h2>
           </a>
+          <h3>Label</h3>
+          <p>
+            To add a label to the select component, wrap it inside a FormControl
+            component. Add an InputLabel component and link it to the select
+            component using the labelId prop. Ensure the label prop in the
+            Select component matches the InputLabel text.
+          </p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <FormControl sx={{ width: "200px" }}>
+                  <InputLabel id="demo-select-label">Age</InputLabel>
+                  <Select
+                    labelId="demo-select-label"
+                    id="demo-select"
+                    label="Age"
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="customize-label" code={codes["customize-label"]} />
+          </div>
+          <h3>Helper text</h3>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <FormControl sx={{ width: "200px" }}>
+                  <Select defaultValue={10}>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                  <FormHelperText>This is a helper text</FormHelperText>
+                </FormControl>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock
+              name="customize-helper-text"
+              code={codes["customize-helper-text"]}
+            />
+          </div>
+          <h3>Placeholder</h3>
+          <p>
+            To add a placeholder, use the renderValue prop to display a
+            placeholder text when no value is selected.
+          </p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Select
+                  id="demo-select-outlined"
+                  onChange={(e) => setSelectedAge(e.target.value)}
+                  renderValue={() => {
+                    if (selectedAge == "") return <em>Select an age</em>;
+                    return selectedAge;
+                  }}
+                  value={selectedAge}
+                  displayEmpty
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock
+              name="customize-placeholder"
+              code={codes["customize-placeholder"]}
+            />
+          </div>
+          <h3>Grouping</h3>
+          To group selection options, use the ListSubheader component to create
+          headers for each group within the dropdown menu. This helps users to
+          easily navigate and find the options they need.
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Select defaultValue={10}>
+                  <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                  <MenuItem value={40}>Fourty</MenuItem>
+                  <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+                  <MenuItem value={50}>Fifty</MenuItem>
+                  <MenuItem value={60}>Sixty</MenuItem>
+                </Select>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock
+              name="customize-grouping"
+              code={codes["customize-grouping"]}
+            />
+          </div>
           <p>
             Additional props such as error, required, and disabled can be passed
             to the select component to customize its behavior.
@@ -265,13 +448,30 @@ const ButtonCode = () => {
               clarity.
             </p>
           </div>
-          <a id="Customize select area">
-            <h2>Customize select area</h2>
+          <a id="Multi-select">
+            <h2>Multi-select</h2>
           </a>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Select
+                  multiple
+                  input={<OutlinedInput label="Name" />}
+                  value={multipleAges}
+                  onChange={handleMultiplSelect}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="multiselect" code={codes["multiselect"]} />
+          </div>
         </div>
       </div>
     </SistentLayout>
   );
 };
 
-export default ButtonCode;
+export default SelectCode;
