@@ -153,7 +153,11 @@ const SelectGuidance = () => {
           </SistentThemeProvider>
           <h3>Placeholder</h3>
           <p>
-            Placeholder can be used to give more context about the selection.
+            A placeholder is a short hint or description that is displayed
+            inside an input field or select component before the user enters a
+            value. It provides a clue to the user about what kind of information
+            is expected in the field. The placeholder text disappears when the
+            user starts typing or selects an option.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
