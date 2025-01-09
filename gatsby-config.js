@@ -17,7 +17,6 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
-    "@mediacurrent/gatsby-plugin-silence-css-order-warning",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
