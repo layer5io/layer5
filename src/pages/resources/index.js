@@ -50,5 +50,5 @@ const MembersPage = () => {
 };
 export default MembersPage;
 export const Head = () => {
-  return <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks." canonical="https://layer5.io/resources" />;
+  return <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running in Kubernetes or Cloud. Site Reliability Engineering and Platform Engineering tips and tricks." canonical="https://layer5.io/resources" />;
 };
