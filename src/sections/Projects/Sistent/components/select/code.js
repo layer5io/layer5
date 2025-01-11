@@ -175,7 +175,7 @@ const SelectCode = () => {
     setMultipleAges(agesList);
   };
   return (
-    <SistentLayout title="Button">
+    <SistentLayout title="Select">
       <div className="content">
         <Header />
         <SectionNav />

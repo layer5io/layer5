@@ -29,13 +29,13 @@ const SelectGuidance = () => {
         <Header />
         <SectionNav />
         <div className="main-content">
-          <a id="Behavior">
-            <h2>Behavior</h2>
+          <a id="Functions">
+            <h2>Functions</h2>
           </a>
           <p>
-            The select component can exhibit different behaviors based on the
+            The select component can exhibit different state based on the
             context and user input. Since it is usually used within a form
-            component, these behaviors can act in response to the user input for
+            component, these states can act in response to the user input for
             other components in the form.
           </p>
           <h3>Disabled</h3>
