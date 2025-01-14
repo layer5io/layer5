@@ -134,12 +134,13 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
         {validateEmail && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorEmail}</p>}
         <Field type="email" className="text-field" id="email" name="email" pattern="([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$)" required />
-        <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="occupation" name="occupation" required />
-        <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
-        <Field type="text" className="text-field" id="org" name="org" />
-
-        {/* <div className="accounts">
+        { form != "contact" && (
+          <>
+            <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
+            <Field type="text" className="text-field" id="occupation" name="occupation" required />
+            <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
+            <Field type="text" className="text-field" id="org" name="org" />
+            {/* <div className="accounts">
            <label className="form-name">Account(s) to Connect</label>
            <p>
              {account_desc}
@@ -157,35 +158,49 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
             </div>
          </div> */}
 
-        <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
-        {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
-        <div role="group" className="formRight" aria-labelledby="select">
-          <Field as="select" name="role">
-            <option defaultValue hidden className="custom-arrow">Select your role</option>
-            <option className="options" value="Architect">Architect</option>
-            <option className="options" value="Backend Engineer">Backend Engineer</option>
-            <option className="options" value="Business Operations">Business Operations</option>
-            <option className="options" value="Data Analyst">Data Analyst</option>
-            <option className="options" value="Designer">Designer</option>
-            <option className="options" value="Developer">Developer</option>
-            <option className="options" value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
-            <option className="options" value="Executive">Executive</option>
-            <option className="options" value="Frontend Engineer">Frontend Engineer</option>
-            <option className="options" value="Fullstack Engineer">Fullstack Engineer</option>
-            <option className="options" value="IT Operations">IT Operations</option>
-            <option className="options" value="Manager">Manager</option>
-            <option className="options" value="Marketing">Marketing</option>
-            <option className="options" value="Media/Analyst">Media/Analyst</option>
-            <option className="options" value="Platform Engineer">Platform Engineer</option>
-            <option className="options" value="Professor/Academic">Professor/Academic</option>
-            <option className="options" value="Product Manager">Product Manager</option>
-            <option className="options" value="Sales">Sales</option>
-            <option className="options" value="Sales Engineer">Sales Engineer</option>
-            <option className="options" value="Site Reliability Engineer">Site Reliability Engineer</option>
-            <option className="options" value="Student">Student</option>
-            <option className="options" value="Other">Other</option>
-          </Field>
-        </div>
+            <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
+            {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errorRole}</p>}
+            <div role="group" className="formRight" aria-labelledby="select">
+              <Field as="select" name="role">
+                <option defaultValue hidden className="custom-arrow">Select your role</option>
+                <option className="options" value="Architect">Architect</option>
+                <option className="options" value="Backend Engineer">Backend Engineer</option>
+                <option className="options" value="Business Operations">Business Operations</option>
+                <option className="options" value="Data Analyst">Data Analyst</option>
+                <option className="options" value="Designer">Designer</option>
+                <option className="options" value="Developer">Developer</option>
+                <option className="options" value="DevOps Engineer">DevOps Engineer / SysAdmin</option>
+                <option className="options" value="Executive">Executive</option>
+                <option className="options" value="Frontend Engineer">Frontend Engineer</option>
+                <option className="options" value="Fullstack Engineer">Fullstack Engineer</option>
+                <option className="options" value="IT Operations">IT Operations</option>
+                <option className="options" value="Manager">Manager</option>
+                <option className="options" value="Marketing">Marketing</option>
+                <option className="options" value="Media/Analyst">Media/Analyst</option>
+                <option className="options" value="Platform Engineer">Platform Engineer</option>
+                <option className="options" value="Professor/Academic">Professor/Academic</option>
+                <option className="options" value="Product Manager">Product Manager</option>
+                <option className="options" value="Sales">Sales</option>
+                <option className="options" value="Sales Engineer">Sales Engineer</option>
+                <option className="options" value="Site Reliability Engineer">Site Reliability Engineer</option>
+                <option className="options" value="Student">Student</option>
+                <option className="options" value="Other">Other</option>
+              </Field>
+            </div>
+          </>
+        )}
+        {form == "contact" && (
+          <>
+            <label htmlFor="subject" className="form-name">
+              Subject <span className="required-sign">*</span>
+            </label>
+            <Field type="text" required className="text-field" id="subject" name="subject" />
+            <label htmlFor="message" className="form-name">
+            Message <span className="required-sign">*</span>
+            </label>
+            <Field as="textarea" required  rows="8" type="text" className="text-field" id="message" name="message" />
+          </>
+        )}
         {form == "open-source-pricing" && (
           <>
             <label htmlFor="projectname" className="form-name">
