@@ -18,13 +18,24 @@ resource: true
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 
+import quickActionsPNG from "./quick-actions-designs.png";
+import importDesignButtonPNG from "./import-button.png";
+import importDesignPanelPNG from "./import-designs-panel.png";
+import renderedDesignPNG from "./rendered-design.png";
+import designPannelOpener from "./designs-panel-opener.png";
+import designerDockPNG from "./designer-dock.png";
+import catalogGIF from "./catalog.gif";
+import publishToCatalogGIF from "./publish-to-catalog.gif";
+import importGIF from "./import-design-gif.gif";
+import getStartedWithDesignerGIF from "./start-from-scratch.gif";
+
 <BlogWrapper>
 
 ### What is the Kanvas Catalog?
 
 <Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> is a hub for sharing and discovering best practices, reusable templates, and operational patterns for Kubernetes and cloud-native infrastructure. It's like a marketplace where you can find and contribute pre-built infrastructure configurations and operational views. The Catalog is a part of the Kanvas platform, which is a comprehensive suite of tools for managing cloud-native infrastructure.
 
-<div className="note"> <a href="https://meshery.layer5.io/catalog">Explore the catalog</a></div>
+<div className="note"> <a href="https://cloud.layer5.io/catalog">Explore the catalog</a></div>
 
 ### What can you find in the Catalog?
 
@@ -41,21 +52,49 @@ import { Link } from "gatsby";
 - Collaboration: Share your own designs and contribute to the growing collection of patterns.
 
 ### How can you contribute to the Catalog?
- 
+
+You can contribute to the Catalog by creating high quality starter Templates, publishing high quality designs
+making it available to the community for varied usage. You can also be part of a leaderboard with most clones, downloaded,
+viewed designs.
+Below are the necessary instructions on getting started with designs.
+
 #### Create or Import a Design
-Begin by creating a new design from scratch or using a template:
+Begin by creating a new design from scratch, using existing design patterns and templates from catalog:
 
-- **From Scratch**: Open the “Design” tab, select and arrange components on the Kanvas, and customize with connections, labels, and properties. When satisfied, save your design.
-- **From a Template**: Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
+**From Scratch**:
 
-Alternatively, import your own designs directly into the Catalog:
+- Open the Designs panel, Select and arrange components from the Designer Dock on the Kanvas, and customize with connections, labels, and properties.
+  <img src={getStartedWithDesignerGIF} />
 
-- **Import a Design**: Access the Kanvas Designer and select the “Import Design” button in the left navigation panel. Upload a file or provide a URL for Docker Compose, Helm Charts, or Kubernetes Manifests. Kanvas will convert these into a usable design based on their configurations.
+**From a Template**:
+
+- Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
+  <img src={catalogGIF} />
+
+
+**Import a Design**: 
+
+- Access the Kanvas Designer and select the "Import" button in the left Designs panel.  Alternatively, import your own designs from local filesystem or from a remote URL directly into the Catalog.
+  Upload a file or provide a URL for Docker Compose, Helm Charts, Meshery Designs or Kubernetes Manifests.\
+  Choose to either import as new or merge into current design that you may have opened.
+  <div style="display:flex;justify-content:center;gap:2.5rem;max-width:100%">
+    <img src={importDesignButtonPNG} style="object-fit:contain;"/>
+    <img src={importDesignPanelPNG}  style="object-fit:contain;"/>
+  </div>
+  <img src={importGIF} />
+
+  Kanvas will convert these into a usable design based on their configurations.
+   
+   <img src={renderedDesignPNG} />
+
+  
+  
 
 #### Publish a Design
 Make your designs accessible to others by publishing them in the Catalog:
 
-- In Kanvas , locate the design you want to share and select “Publish.” Add any necessary details for the review process, such as relevant technologies, descriptions, and considerations. Once reviewed, your design becomes available to the broader Kanvas community.
+- In design panel, locate your design and hover over to find quick actions. Select info button with an "i", add any necessary details for the review process, such as relevant technologies, descriptions, and considerations and click Publish button. Once approved, your design becomes available to the broader Kanvas community.
+<img src={publishToCatalogGIF} />
 
 
 
