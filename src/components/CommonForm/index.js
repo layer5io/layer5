@@ -196,7 +196,7 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
             Message <span className="required-sign">*</span>
             </label>
             <Field as="textarea" required rows="8" type="text" className="text-field" id="message" name="message" />
-            <div>By providing my contact information, I authorize Layer5 to contact me with communications about 's products and services.</div>
+            <div>By providing my contact information, I authorize Layer5 to contact me with communications about Layer5's products and services.</div>
           </>
         )}
         {form == "open-source-pricing" && (
