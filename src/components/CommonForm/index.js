@@ -7,7 +7,7 @@ import { Container } from "../../reusecore/Layout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
 
-const CommonForm = ({ form, title, submit_title, submit_body }) => {
+const CommonForm = ({ form, title, submit_title, submit_body, submit_button_title }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
@@ -196,6 +196,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
             Message <span className="required-sign">*</span>
             </label>
             <Field as="textarea" required rows="8" type="text" className="text-field" id="message" name="message" />
+            <div>By providing my contact information, I authorize Layer5 to contact me with communications about 's products and services.</div>
           </>
         )}
         {form == "open-source-pricing" && (
@@ -276,7 +277,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         )}
 
 
-        <Button $secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title={submit_button_title || "Submit"} />
       </Form>
     </Formik>
   </div>

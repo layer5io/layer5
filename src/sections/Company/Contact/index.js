@@ -73,6 +73,7 @@ const ContactPage = () => {
                   account_desc=""
                   submit_title="Thanks for contacting us!"
                   submit_body="We'll get back to you as soon as we can."
+                  submit_button_title="Contact us"
                 />
               </Col>
             </Container>
