@@ -33,7 +33,7 @@ const CommonFormWrapper = styled.section`
 }
 
 .form-body{
-box-shadow: 0px 5px 5px 2px ${props => props.theme.primaryLightColor};
+box-shadow: 0px -2px 5px 2px ${props => props.theme.primaryLightColor};
 margin: 1rem;
 
 .form-title {

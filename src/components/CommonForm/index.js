@@ -84,7 +84,11 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
       {
         stepNumber === 0 &&
   <div className="form-body">
-    <h2 className="form-title">{title}</h2>
+    { form !== "contact" && (
+      <>
+        <h2 className="form-title">{title}</h2>
+      </>
+    )}
     <Formik
       initialValues={{
         firstname: firstname,
@@ -196,14 +200,14 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
             Message <span className="required-sign">*</span>
             </label>
             <Field as="textarea" required rows="8" type="text" className="text-field" id="message" name="message" />
-            <label>
+            {/* <label>
               <Field
                 type="checkbox"
                 name="subscribed"
                 className="form-check"
               />
               <span>Subscribe to our newsletter</span>
-            </label>
+            </label> */}
             <div>By providing my contact information, I authorize Layer5 to contact me with communications about Layer5's products and services.</div>
           </>
         )}
