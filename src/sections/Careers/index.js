@@ -8,7 +8,6 @@ import Five from "../../sections/Community/Community-pictures/community.png";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
-const Five_image = "./img/open-source.png";
 const Layer5_culture = "./img/layer5-culture.png";
 
 const CareersPage = () => {
@@ -19,20 +18,6 @@ const CareersPage = () => {
         <Container>
           <p className="centerTexts">If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
         </Container>
-        <div className="opensource-section">
-          <div className="opensource-section-text">
-            <h1>Open Source is in our DNA</h1>
-            <p>
-              Layer5 projects are open source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.
-            </p>
-            <p>
-              We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
-            </p>
-          </div>
-          <div className="opensource-section-img">
-            <StaticImage src={Five_image} alt="Five" />
-          </div>
-        </div>
         <Container>
           <Row className="videoText">
             <div className="introText">

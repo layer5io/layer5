@@ -79,4 +79,46 @@ export const ProgramsPageWrapper = styled.div`
             flex: 0 0 100%;
         }
     }
+
+    .opensource-section{
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        text-align: center;
+        background: #00B39F;
+        color: white;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    .opensource-section-text{
+        padding-top: 4rem;
+    }
+    .opensource-section-text > h1{
+        margin-bottom: 1rem;
+        color: white;
+    }
+    .opensource-section-text > p{
+        max-width: 60rem;
+        margin: auto;
+        color: white;
+
+    }
+    .opensource-section-img{
+        margin-top: -8rem;
+        position: relative;
+        top: 10rem;
+    }
+    .opensource-section-img img{
+        height: 30rem;
+        box-shadow: 0px 8px 20px -10px black;
+    }
+    @media only screen and (max-width:600px){
+        .opensource-section-img img{
+            height: 18rem;
+        }
+    }
+
 `;
