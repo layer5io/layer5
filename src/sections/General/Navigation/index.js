@@ -292,41 +292,40 @@ const Navigation = () => {
                       >
                         {menu.name}
                       </Link>
-                      <ul>
-                        {menu.subItems !== undefined &&
-                          menu.subItems.map((subItems, index) => {
-                            return (
-                              <li key={index} className="mobile-nav-subitem">
-                                {subItems.externalLink ? (
-                                  <a
-                                    href={subItems.path}
-                                    target="_blank"
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className="mobile-sub-menu-item"
-                                    rel="noreferrer"
-                                  >
-                                    {subItems.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={subItems.path}
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className="mobile-sub-menu-item"
-                                    activeClassName="nav-link-active"
-                                  >
-                                    {subItems.name}
-                                  </Link>
-                                )}
-                              </li>
-                            );
-                          })}
-                      </ul>
+                      {menu.subItems !== undefined && (
+                        <ul>
+                          {menu.subItems.map((subItem, subIndex) => (
+                            <li key={subIndex} className="mobile-nav-subitem">
+                              {subItem.externalLink ? (
+                                <a
+                                  href={subItem.path}
+                                  target="_blank"
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                  className="mobile-sub-menu-item"
+                                  rel="noreferrer"
+                                >
+                                  {subItem.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={subItem.path}
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                  className="mobile-sub-menu-item"
+                                  activeClassName="nav-link-active"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ul>

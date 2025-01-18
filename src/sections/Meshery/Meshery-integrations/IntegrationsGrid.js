@@ -288,7 +288,8 @@ const IntegrationsGrid = ({ category, count }) => {
                           ? darkModeIntegrationIcon.publicURL
                           : integrationIcon
                       }
-                      alt={item.frontmatter.title}
+                      alt={`${item.frontmatter.title} image`}
+                      aria-label={`${item.frontmatter.title} image`}
                       height={70}
                       width={70}
                       style={{ filter: "brightness(0) invert(1)" }}
