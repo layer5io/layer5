@@ -103,6 +103,14 @@ const componentsData = [
     url: "/projects/sistent/components/toggle-button",
     src: "/toggle-button",
   },
+  {
+    id: 14,
+    name: "Pagination",
+    description:
+        "Pagination enables users to navigate through multiple pages of content, providing an intuitive interface for browsing large datasets or segmented information.",
+    url: "/projects/sistent/components/pagination",
+    src: "/pagination",
+  },
 ];
 
 module.exports = { componentsData };
