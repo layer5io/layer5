@@ -21,6 +21,11 @@ const TOC = () => {
     location.pathname.includes("/components")
   );
 
+  // Sorting the array of components by name
+  const sortedComponentArray = [...componentsData].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
   return (
     <TOCWrapper>
       <div className="go-back">
@@ -129,7 +134,7 @@ const TOC = () => {
               {expandComponent && (
                 <div className="components-sublinks">
                   <li>
-                    {componentsData.map((component) => (
+                    {sortedComponentArray.map((component) => (
                       <li key={component.id}>
                         <Link
                           to={component.url}
