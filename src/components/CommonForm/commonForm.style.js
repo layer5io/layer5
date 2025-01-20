@@ -36,6 +36,7 @@ const CommonFormWrapper = styled.section`
 box-shadow: 0px -2px 5px 2px ${props => props.theme.primaryLightColor};
 margin: 1rem;
 
+
 .form-title {
     padding: 1rem;
     text-align: center;
@@ -45,6 +46,7 @@ margin: 1rem;
 
 .form{
     font-size: .9rem;
+    width: fit-content;
     margin: 0 1rem 1rem;
     padding: 1rem;
     
