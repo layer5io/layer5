@@ -106,8 +106,7 @@ const Faq = (props) => {
         </Accordion>
         <div className="askus_section">
           <h2>Didn't find an answer to your question?</h2>
-       
-             <Button $secondary title="Just Ask" $url="https://layer5.io/company/contact" $external={ true } />
+          <Button $secondary title="Just Ask" $url="https://layer5.io/company/contact" $external={ true } />
         </div>
       </Container>
     </FaqSectionWrapper>
