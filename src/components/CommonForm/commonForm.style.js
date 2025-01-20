@@ -46,7 +46,7 @@ margin: 1rem;
 
 .form{
     font-size: .9rem;
-    width: fit-content;
+    width: fit-content !important;
     margin: 0 1rem 1rem;
     padding: 1rem;
     
