@@ -18,122 +18,101 @@ import {
 } from "@mui/material";
 
 const codes = {
-  "variant-outlined": `<SistentThemeProvider>
-  <Select>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "variant-outlined": `<Select>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "variant-filled": `<SistentThemeProvider>
-  <Select variant="filled">
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "variant-filled": `<Select variant="filled">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "variant-standard": `<SistentThemeProvider>
-  <Select variant="standard">
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "variant-standard": `<Select variant="standard">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "size-auto": `<SistentThemeProvider>
-  <Select autoWidth>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "size-auto": `<Select autoWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "size-small": `<SistentThemeProvider>
-  <Select size="small">
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "size-small": `<Select size="small">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "size-fullwidth": `<SistentThemeProvider>
-  <Select fullWidth>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "size-fullwidth": `<Select fullWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "behavior-error-disabled": `<SistentThemeProvider>
-  <Select disabled>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-  <Select error>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+  "behavior-error-disabled": `<Select disabled>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>
+<Select error>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
-  "behavior-required": `<SistentThemeProvider>
-  <FormControl required>
-    <InputLabel id="demo-select-label-outlined">Age</InputLabel>
-    <Select
-      labelId="demo-select-label-outlined"
-      label="Age"
-    >
-      <MenuItem value={10}>Ten</MenuItem>
-      <MenuItem value={20}>Twenty</MenuItem>
-      <MenuItem value={30}>Thirty</MenuItem>
-    </Select>
-  </FormControl>
-</SistentThemeProvider>`,
-
-  "customize-label": `<SistentThemeProvider>
-  <FormControl sx={{ width: "200px" }}>
-    <InputLabel id="demo-select-label">Age</InputLabel>
-    <Select
-      labelId="demo-select-label"
-      label="Age"
-    >
-      <MenuItem value={10}>Ten</MenuItem>
-      <MenuItem value={20}>Twenty</MenuItem>
-      <MenuItem value={30}>Thirty</MenuItem>
-    </Select>
-  </FormControl>
-</SistentThemeProvider>`,
-  "customize-helper-text": `<SistentThemeProvider>
-  <FormControl sx={{ width: "200px" }}>
-    <Select>
-      <MenuItem value={10}>Ten</MenuItem>
-      <MenuItem value={20}>Twenty</MenuItem>
-      <MenuItem value={30}>Thirty</MenuItem>
-    </Select>
-    <FormHelperText>This is a helper text</FormHelperText>
-  </FormControl>
-</SistentThemeProvider>`,
-
-  "customize-placeholder": `const [selectedAge, setSelectedAge] = React.useState("");
-
-<SistentThemeProvider>
+  "behavior-required": `<FormControl required>
+  <InputLabel id="demo-select-label-outlined">Age</InputLabel>
   <Select
-    onChange={(e) => setSelectedAge(e.target.value)}
-    renderValue={() => {
-      if (selectedAge == "") return <em>Select an age</em>;
-      return selectedAge;
-    }}
-    value={selectedAge}
-    displayEmpty
+    labelId="demo-select-label-outlined"
+    label="Age"
   >
     <MenuItem value={10}>Ten</MenuItem>
     <MenuItem value={20}>Twenty</MenuItem>
     <MenuItem value={30}>Thirty</MenuItem>
   </Select>
-</SistentThemeProvider>`,
+</FormControl>`,
+
+  "customize-label": `<FormControl sx={{ width: "200px" }}>
+  <InputLabel id="demo-select-label">Age</InputLabel>
+  <Select
+    labelId="demo-select-label"
+    label="Age"
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</FormControl>`,
+
+  "customize-helper-text": `<FormControl sx={{ width: "200px" }}>
+  <Select>
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+  <FormHelperText>This is a helper text</FormHelperText>
+</FormControl>`,
+
+  "customize-placeholder": `const [selectedAge, setSelectedAge] = React.useState("");
+
+<Select
+  onChange={(e) => setSelectedAge(e.target.value)}
+  renderValue={() => {
+    if (selectedAge == "") return <em>Select an age</em>;
+    return selectedAge;
+  }}
+  value={selectedAge}
+  displayEmpty
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 
   "customize-grouping": `<Select>
   <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
@@ -152,18 +131,17 @@ const handleMultiplSelect = (event) => {
   let agesList = event.target.value;
   setMultipleAges(agesList);
 };
-<SistentThemeProvider>
-  <Select
-    multiple
-    input={<OutlinedInput label="Name" />}
-    value={multipleAges}
-    onChange={handleMultiplSelect}
-  >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</SistentThemeProvider>`,
+
+<Select
+  multiple
+  input={<OutlinedInput label="Name" />}
+  value={multipleAges}
+  onChange={handleMultiplSelect}
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`,
 };
 
 const SelectCode = () => {
