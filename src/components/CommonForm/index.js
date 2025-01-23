@@ -7,7 +7,7 @@ import { Container } from "../../reusecore/Layout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
 
-const CommonForm = ({ form, title, submit_title, submit_body }) => {
+const CommonForm = ({ form, title, submit_title, submit_body, submit_button_title }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
@@ -84,7 +84,11 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
       {
         stepNumber === 0 &&
   <div className="form-body">
-    <h2 className="form-title">{title}</h2>
+    { form !== "contact" && (
+      <>
+        <h2 className="form-title">{title}</h2>
+      </>
+    )}
     <Formik
       initialValues={{
         firstname: firstname,
@@ -186,6 +190,27 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
             <option className="options" value="Other">Other</option>
           </Field>
         </div>
+        {form === "contact" && (
+          <>
+            <label htmlFor="subject" className="form-name">
+              Subject <span className="required-sign">*</span>
+            </label>
+            <Field type="text" required className="text-field" id="subject" name="subject" />
+            <label htmlFor="message" className="form-name">
+            Message <span className="required-sign">*</span>
+            </label>
+            <Field as="textarea" required rows="8" type="text" className="text-field" id="message" name="message" />
+            {/* <label>
+              <Field
+                type="checkbox"
+                name="subscribed"
+                className="form-check"
+              />
+              <span>Subscribe to our newsletter</span>
+            </label> */}
+            <div>By providing my contact information, I authorize Layer5 to contact me with communications about Layer5's products and services.</div>
+          </>
+        )}
         {form == "open-source-pricing" && (
           <>
             <label htmlFor="projectname" className="form-name">
@@ -264,7 +289,7 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
         )}
 
 
-        <Button $secondary className="btn" title="Submit" />
+        <Button $secondary className="btn" title={submit_button_title || "Submit"} />
       </Form>
     </Formik>
   </div>

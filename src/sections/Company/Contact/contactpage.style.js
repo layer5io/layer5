@@ -44,7 +44,7 @@ const ContactPageWrapper = styled.section`
   .showForm {
     display: flex;
     flex-wrap: wrap;
-    height: 70rem;
+    height: auto;
     margin: auto -15px;
   }
 
