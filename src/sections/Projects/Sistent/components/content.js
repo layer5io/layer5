@@ -105,6 +105,14 @@ const componentsData = [
   },
   {
     id: 14,
+    name: "Pagination",
+    description:
+        "Pagination enables users to navigate through multiple pages of content, providing an intuitive interface for browsing large datasets or segmented information.",
+    url: "/projects/sistent/components/pagination",
+    src: "/pagination",
+  },
+  {
+    id: 15,
     name: "Card",
     description:
       "The Card component is a UI element used to encapsulate information or actions related to a single topic, typically in a visually separated.",
