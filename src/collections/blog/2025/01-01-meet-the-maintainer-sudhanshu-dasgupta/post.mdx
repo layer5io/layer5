@@ -1,0 +1,229 @@
+---
+title: "Meet the Maintainer: Sudhanshu Dasgupta"
+subtitle: "An interview series with open source maintainers"
+date: 2025-01-01 10:30:05 -0530
+author: Vivek Vishal
+thumbnail: ./sudhanshu-dasgupta-meshery-maintainer.png
+darkthumbnail: ./sudhanshu-dasgupta-meshery-maintainer.png
+description: Meet the Maintainer series with open source maintainer, Sudhanshu Dasgupta
+type: Blog
+category: Open Source
+tags:
+  - Open Source
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import img from "./sudhanshu-dasgupta-meshery-maintainer.png";
+import { MeetTheMaintainer } from "../../MeetTheMaintainer.style.js";
+import { Link } from "gatsby";
+import ForkLift from "../../../../assets/images/app/hero/forklift.svg";
+
+<BlogWrapper>
+<MeetTheMaintainer>
+
+<div class="intro">
+  <p>
+    Continuing in our Meet the Maintainer series, we have{" "}
+    <Link to="/community/members/sudhanshu-dasgupta">Sudhanshu Dasgupta</Link>. Sudhanshu is a
+    maintainer of <Link to="/cloud-native-management/meshery">Meshery UI</Link>.
+    In this interview, we get to know Sudhanshu a little better and learn about his
+    journey as an open source project maintainer and with Layer5 community.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    Sudhanshu, thank you for joining me today. Many people inside and outside of the
+    Layer5 Community have seen the effects of your contributions, but may not
+    know the backstory as to who Sudhanshu is and how you arrived at your maintainer
+    role. Indulge us. How did you discover the Layer5 community? What made you
+    stay?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+     Hey Vivek, thank you for having me first of all. So I was in my junior year when I was also very eager to start and know about open source.
+     I started with a few other projects but eventually I heard about Layer5 from my friend.
+     So as a normal contributor 2 years from now, I tried to fix some issues like fixing some UI problems and all and then understand what's the goal of layer5 and about Meshery later on. When I learnt about Meshery then my hands couldn't wait to work on it since it was one of the great project in CNCF. So this continued and then I became an intern and followed by LFX(one of program run by Linux foundation) and eventually I became a maintainer.
+     Also all credits to the team like how they supported and provided feedback at every step that helped me a lot to gain this achivement.
+     So Meshery is a very interesting project and how it solves the issue of cloud native infrastructure. It just amazes me and just makes me feel that there is a lot to learn and indulge in this area and one of interesting fields so this all made me stay.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    You’re a <Link to="/cloud-native-management/meshery">Meshery</Link> maintainer and have been for some long time now. What does being a Meshery maintainer mean to you?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+    Yes this is a great question. As a maintainer the first most important thing is the responsibility and success of the project. You are responsible for quality work that should be applied to the project. As a maintainer I try to provide quality reviews to the contributors and seek that they get their PRs merged. Being a maintainer is about building not just a tool or feature but taking ownership of the project's vision, leading development efforts, and mentoring new contributors to help them find their footing in open source.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    Have you worked with any other open source project? How does Layer5 compare?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+     I have worked with a few other projects but they were not so large scale projects.
+     In comparison with Layer5, it is the community. Open source projects don't only mean how big the project is or how much you code. It is how engaged you are and about collaboration. This is the speciality of Layer5.
+     You will see meshmate and community managers helping though your way and getting success.  In other projects I don't know if you will get such one to one interactions often.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    <Link to="/projects">Layer5 projects</Link> have a number of active, open
+    source projects. You’ve been consistently contributing to a few of them.
+    Which one(s) are you currently focusing on?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+    Ok so there are many I am focusing on. One of them is of course Meshery itself. We are building the feature of multi-tenancy of environments and workspaces. The second is Sistent which is Layer5's own design system to migrate all components to this sistent.
+    And the one is Layer5's own site which is running on gatsby so helping in getting prs reviewed there and merged and some dependency migration is also going on which i am focusing on.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>What’s the coolest Meshery demo you have done/seen?</p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+    I think it could be one of the sessions hosted by Whitney Lee in her program on Infrastructure by Design with Meshery. So it was a very creative demo we saw there like she was noting stuff what Lee was sharing. So that was cool and one that actually happened recently was an event hosted by chatloopbackoff . One of the cncf ambassador came and just started using and explaining things from scratch. So that was also very informative. 
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>What is your favorite feature in Meshery UI?</p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+     Ok yeah, my favorite feature is how you can import various existing designs like k8s manifest, helm, or docker compose though meshery's import modal. And boom when it gets imported and you can visualize that in kanvas which is one of the meshery's extensions and can do multiple things. So that is one of the core features and my favorite.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>What is your hot tip for working with Meshery that others may not know?</p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+    Ok so if you are asking for a basis of contribution then it should be leverage the help of the community and its support.
+    It provides a variety of platforms where you can get support and be vocal about your work because if you are heard then you can get success. Don't do some work and sit in a corner.
+  </p>
+  <p>
+    And if you are asking as a platform, then I would say users should use and leverage the importing of your cloud native infra using github. So we have a wizard where you can directly connect your github repo and import design and a snapshot flow will be added to your repo to visualize your designs.
+    So go everything is free and use and give the community your feedback.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    Where do you see opportunities for contributors to get involved within
+    Meshery and Layer5 community?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+     Actually there are a lot, so frequently we make release plans and at this moment a release plan is going for v0.9 of meshery. So there are a lot of areas that need help with and this is the best time to jump and take ownership of the field you feel comfortable with to complete.
+     One important area I would say is which could be a hot topic to work on is metrics.
+     We have two kinds of metrics: prometheus and grafana setup. So this area would need help because in the coming days we will be working to enhance this area so that users can easily connect their grafana or prometheus url and see metrics.
+     I'll also mention about core team program.
+    <br/>
+    Out of a 100+ repos that the Layer5 community stewards, two are currently closed: Kanvas and Cloud. Both of these projects were created and are actively being developed by open source contributors, though. There are ~15 open source contributors who working on it now, who meet daily. New contributors in the community routinely express interest and are invited to participate, and are extremely well supported as they do. In other words, the source is currently closed (subject to change), but any community member here that shows interest, demonstrates competence and consistency of participation is readily invited to join in.
+    <br/>
+    The core team working on these two projects meets Mon, Tue, Wed, Fri at 10:00am Central / 8:30pm IST on <Link to = "https://meet.layer5.io/team">meet.layer5.io/team</Link>. You are most encouraged and welcome to partake.
+    <br/>
+    Between the two projects, ~100 different contributors have helped create these two project to date. 
+    <Link to ="https://layer5.io/community/handbook/repository-overview"> This</Link> list of repositories and the expandable note on the page offers some additional context as well.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    Your most often used emoji? Your preference: movie or book? Morning person
+    or night owl? What have you worked on in the past six months that you’re
+    particularly proud of?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+    Hh! My most used emoji is that tick mark which is on a green background. I mostly use it when some ask me to complete a task or if any task is already completed.
+    And my movie preference is anything except movies that are based on true stories. This sounds strange but yeah I avoid those.
+    Mostly I like science fiction movies. Books, so I often don't get time to read a lot but i would say books on self development i prefer and one of them is Rework.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    Do you have any advice for individuals hopeful to become Layer5 contributors
+    or potentially maintainers?
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>
+     Yeah of-course, see there are few things that a contributor or a potential maintainer should know and other than that let them learn in their own way by making mistakes because then only they will learn in the best way.
+     Few things that I always say is be vocal, when working on an issue, present them in meetings, engage and review others' PR's and help them. Don't just join and listen. As a beginner, take small issues and get it done and try to learn the project, not just jump directly to solve an issue.
+     For potential maintainers, if you want to be a maintainer then act like a maintainer. Review PR's and give valuable feedback to contributors. Take ownership of the work you are doing. And for all contributors and maintainers don't fear to make mistakes then only you will learn and in that way only I have learnt.
+  </p>
+</div>
+
+<div class="interviewer">
+  <span>Vivek:</span>
+  <p>
+    In other words, whether your contribution is big or small, it sounds like
+    aiming for high-quality contributions that add value to the projects is key.
+  </p>
+</div>
+
+<div class="interviewee">
+  <span>Sudhanshu:</span>
+  <p>Yes absolutely. A small bug or fix also has the same value as a big feature or change. So try to be proud of what you are doing but make sure you do it with high quality.</p>
+</div>
+
+<div class="note">
+  <img src={ForkLift} height="100px" />
+  <p>
+    The Meshery project moves at an impressive pace thanks to maintainers like
+    Sudhanshu. Be like Sudhanshu. Join the{" "}
+    <a href="https://slack.layer5.io">Layer5 Slack</a> and say “hi".
+  </p>
+</div>
+
+</MeetTheMaintainer>
+</BlogWrapper>
