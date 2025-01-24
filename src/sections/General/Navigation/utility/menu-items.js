@@ -10,27 +10,27 @@ const Data = {
         {
           name: "Developer-defined Infrastructure",
           path: "/solutions/developer-defined-infrastructure",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Cloud Native Deployments by Diagram",
           path: "/solutions/cloud-native-deployments-by-diagram",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Kubernetes Multi-cluster Operation",
           path: "/solutions/kubernetes-multi-cluster-operation",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Collaborative GitOps",
           path: "/cloud-native-management/kanvas/collaborate",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "GitOps with Cloud Native Insights",
           path: "/solutions/gitops",
-          sepLine: true
+          sepLine: true,
         },
       ],
       actionItems: [
@@ -86,7 +86,7 @@ const Data = {
         {
           name: "Kanvas",
           path: "/cloud-native-management/kanvas",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Designer",
@@ -103,7 +103,7 @@ const Data = {
         {
           name: "Open source projects",
           path: "/projects",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Meshery",
@@ -140,7 +140,7 @@ const Data = {
     },
     {
       name: "Integrations",
-      path: "/cloud-native-management/meshery/integrations"
+      path: "/cloud-native-management/meshery/integrations",
     },
     // {
     //   name: "Learn",
@@ -199,17 +199,17 @@ const Data = {
         {
           name: "Open Source Projects",
           path: "/projects",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Handbook",
           path: "/community/handbook",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Members",
           path: "/community/members",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Newcomers",
@@ -222,7 +222,7 @@ const Data = {
         {
           name: "Events",
           path: "/community/events",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Calendar",
@@ -231,7 +231,8 @@ const Data = {
         {
           name: "Recognition Program",
           path: "https://badges.layer5.io",
-          sepLine: true
+          sepLine: true,
+          externalLink: true,
         },
       ],
       actionItems: [
@@ -246,18 +247,18 @@ const Data = {
         {
           actionName: "Open source internships",
           actionLink: "/careers/programs",
-        }
+        },
       ],
       div1: {
         src: meshmateLogo,
         descr: "Meet our MeshMates",
-        path: "/community/meshmates"
+        path: "/community/meshmates",
       },
       div2: {
         src: communityGreen,
         descr: "Join the cloud native community",
-        path: "/community"
-      }
+        path: "/community",
+      },
     },
     {
       name: "Resources",
@@ -266,12 +267,13 @@ const Data = {
         {
           name: "Blog",
           path: "/blog",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Docs",
           path: "https://docs.layer5.io",
-          sepLine: true
+          sepLine: true,
+          externalLink: true,
         },
         // {
         //   name: "News",
@@ -281,12 +283,11 @@ const Data = {
         {
           name: "Learn",
           path: "/learn",
-          sepLine: true
+          sepLine: true,
         },
         {
           name: "Books",
           path: "/learn/service-mesh-books",
-
         },
         // {
         //   name: "Forum",
@@ -318,7 +319,7 @@ const Data = {
         },
         {
           actionName: "Recent announcements",
-          actionLink: "/blog/category/announcements"
+          actionLink: "/blog/category/announcements",
         },
       ],
       // div1: {
@@ -329,7 +330,7 @@ const Data = {
       //     src: img2,
       //     descr: "Service Mesh Istio patterns for multilatency"
       // }
-    }
+    },
     // {
     //     name: "About",
     //     path: "/company/about",
@@ -340,6 +341,6 @@ const Data = {
     //     path: "/#contact",
     //     offset: "-50"
     // }
-  ]
+  ],
 };
 export default Data;

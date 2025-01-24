@@ -9,7 +9,6 @@ const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
-const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
 const config = require("./gatsby-config");
 const {
   componentsData,
@@ -336,7 +335,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
-
+  createRedirect({
+    fromPath: "/sitemap.xml",
+    toPath: "/sitemap-index.xml",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   // Create Pages
   const { createPage } = actions;
 
@@ -728,7 +732,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
@@ -988,14 +991,6 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       },
     },
   });
-  actions.setWebpackConfig({
-    plugins: [
-      new FilterWarningsPlugin({
-        exclude:
-          /mini-css-extract-plugin[^]*Conflicting order. Following module has been added:/,
-      }),
-    ],
-  });
 
   if (stage === "build-javascript") {
     const config = getConfig();
@@ -1037,4 +1032,36 @@ exports.createSchemaCustomization = ({ actions }) => {
      }
    `;
   createTypes(typeDefs);
+};
+
+const fs = require("fs");
+
+exports.onPostBuild = async ({ graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allSitePage {
+        nodes {
+          path
+          matchPath
+        }
+      }
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild("Error while running GraphQL query.");
+    return;
+  }
+
+  // Log the result to the console
+  console.log("GraphQL query result:", JSON.stringify(result, null, 2));
+
+  // Optionally, write the result to a file for easier inspection
+  const outputPath = path.resolve(__dirname, "public", "query-result.json");
+  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 };

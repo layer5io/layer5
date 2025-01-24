@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
 import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
+import Modal from "react-modal";
+import CommonForm from "../CommonForm";
 
 const PlanCard = ({ planData , isYearly }) => {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
   }
@@ -76,9 +84,9 @@ const PlanCard = ({ planData , isYearly }) => {
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  $url={x.button[1]}
+                  onClick={x.tier === "Enterprise" ? openModal : undefined}
                 >
-                  {x.button[0]}
+                  {x.tier === "Enterprise" ? "Contact Sales" : x.button[0]}
                 </Button>
 
                 <h6>{x.byline2}</h6>
@@ -101,6 +109,58 @@ const PlanCard = ({ planData , isYearly }) => {
           ))}
         </Row>
       </Container>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="Modal"
+        overlayClassName="Overlay"
+        ariaHideApp={false}
+        contentLabel="Enterprise Inquiry Form"
+        style={{
+          content: {
+            maxHeight: "90vh",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            "&::-webkit-scrollbar": {
+              display: "none"
+            },
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          },
+          overlay: {
+            overflow: "auto",
+            "&::-webkit-scrollbar": {
+              display: "none"
+            },
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          }
+        }}
+      >
+        <Button $secondary className="close-modal-btn" onClick={closeModal}>
+    X
+        </Button>
+        <h2 className="modal-heading">Contact sales</h2>
+        <div style={{
+          flex: 1,
+          overflow: "auto",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          "&::-webkit-scrollbar": {
+            display: "none"
+          }
+        }}>
+          <CommonForm
+            title="Contact sales"
+            form="contact"
+            account_desc=""
+            submit_title="Thanks for contacting us!"
+            submit_body="We'll get back to you as soon as we can."
+            submit_button_title="Contact sales"
+          />
+        </div>
+      </Modal>
     </PlanCardWrapper>
   );
 };

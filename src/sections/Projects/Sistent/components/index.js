@@ -9,7 +9,6 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
 import { componentsData } from "./content";
 
-
 const SistentComponents = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
@@ -20,7 +19,9 @@ const SistentComponents = () => {
     "id"
   );
 
-  const compArray = queryResults;
+  const compArray = [...queryResults].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   return (
     <SistentWrapper>

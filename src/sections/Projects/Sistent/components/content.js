@@ -95,6 +95,22 @@ const componentsData = [
     url: "/projects/sistent/components/backdrop",
     src: "/backdrop",
   },
+  {
+    id: 13,
+    name: "ToggleButton",
+    description:
+        "ToggleButton allows users to switch between two or more states, commonly used in forms or settings for quick toggles.",
+    url: "/projects/sistent/components/toggle-button",
+    src: "/toggle-button",
+  },
+  {
+    id: 14,
+    name: "Pagination",
+    description:
+        "Pagination enables users to navigate through multiple pages of content, providing an intuitive interface for browsing large datasets or segmented information.",
+    url: "/projects/sistent/components/pagination",
+    src: "/pagination",
+  },
 ];
 
 module.exports = { componentsData };

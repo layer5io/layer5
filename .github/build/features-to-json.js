@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require("fs").promises; // Use fs.promises
+const fs = require("fs").promises;
 const csv = require("csvtojson");
 const [major, minor, patch] = process.versions.node.split(".").map(Number);
 console.log(`Using Node.js version: ${major}.${minor}.${patch}`);

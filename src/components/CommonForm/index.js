@@ -7,7 +7,7 @@ import { Container } from "../../reusecore/Layout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
 
-const CommonForm = ({ form, title, submit_title, submit_body }) => {
+const CommonForm = ({ form, title, submit_title, submit_body, submit_button_title }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
@@ -84,7 +84,11 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
       {
         stepNumber === 0 &&
   <div className="form-body">
-    <h2 className="form-title">{title}</h2>
+    { form !== "contact" && (
+      <>
+        <h2 className="form-title">{title}</h2>
+      </>
+    )}
     <Formik
       initialValues={{
         firstname: firstname,
@@ -186,8 +190,106 @@ const CommonForm = ({ form, title, submit_title, submit_body }) => {
             <option className="options" value="Other">Other</option>
           </Field>
         </div>
+        {form === "contact" && (
+          <>
+            <label htmlFor="subject" className="form-name">
+              Subject <span className="required-sign">*</span>
+            </label>
+            <Field type="text" required className="text-field" id="subject" name="subject" />
+            <label htmlFor="message" className="form-name">
+            Message <span className="required-sign">*</span>
+            </label>
+            <Field as="textarea" required rows="8" type="text" className="text-field" id="message" name="message" />
+            {/* <label>
+              <Field
+                type="checkbox"
+                name="subscribed"
+                className="form-check"
+              />
+              <span>Subscribe to our newsletter</span>
+            </label> */}
+            <div>By providing my contact information, I authorize Layer5 to contact me with communications about Layer5's products and services.</div>
+          </>
+        )}
+        {form == "open-source-pricing" && (
+          <>
+            <label htmlFor="projectname" className="form-name">
+             What is the name of your project? <span className="required-sign">*</span>
+            </label>
+            <Field type="text" className="text-field" id="projectname" name="projectname" />
+            <label htmlFor="repository" className="form-name">
+            Please link the public repository of your OSS organization (github, gitlab, etc.) <span className="required-sign">*</span>
+            </label>
+            <Field type="url" className="text-field" id="repository" name="repository" />
+            <label htmlFor="website" className="form-name">
+            Please provide a link to your project website. <span className="required-sign">*</span>
+            </label>
+            <Field type="url" className="text-field" id="website" name="website" />
+            <label htmlFor="goal" className="form-name">
+            What is the goal of this project? <span className="required-sign">*</span>
+            </label>
+            <Field type="text" className="text-field" id="goal" name="goal" />
+            <label htmlFor="users" className="form-name">
+            What types of user(s) benefit from this project? <span className="required-sign">*</span>
+            </label>
+            <Field type="text" className="text-field" id="users" name="users" />
+            <label htmlFor="sponsors" className="form-name">
+            Please list all sponsors for this project. <span className="required-sign">*</span>
+            </label>
+            <Field as="textarea" type="text" className="text-field" id="sponsors" name="sponsors" />
+            <label htmlFor="commercialization" className="form-name">
+            Path to Commercialization <span className="required-sign">*</span>
+            </label>
+            <div role="group" className="formRight" aria-labelledby="select">
+              <Field as="select" id="commercialization" name="commercialization" aria-describedby="commercialization-description"
+              >
+                <option defaultValue hidden className="custom-arrow">Select an option</option>
+                <option className="options" value="Yes">Yes</option>
+                <option className="options" value="No">No</option>
+                <option className="options" value="Maybe">Maybe</option>
+              </Field>
+            </div>
+            <div role="group" className="formRight" aria-labelledby="select">
+              <label htmlFor="license" className="form-name">
+              What is the code distribution license for your OSS project? <span className="required-sign">*</span>
+              </label>
+              <Field as="select" id="license" name="license" className="large gfield_select">
+                <option defaultValue hidden className="custom-arrow">Select a license</option>
+                <option value="GNU Affero General Public License v3.0">GNU Affero General Public License v3.0</option>
+                <option value="Apache 2.0">Apache 2.0</option>
+                <option value="BSD 2-Clause license">BSD 2-Clause license</option>
+                <option value="BSD-3-Clause license">BSD-3-Clause license</option>
+                <option value="BSD 4-Clause">BSD 4-Clause</option>
+                <option value="GNU General Public License v3.0">GNU General Public License v3.0</option>
+                <option value="GNU Lesser General Public License v3.0">GNU Lesser General Public License v3.0</option>
+                <option value="MIT License">MIT License</option>
+                <option value="Mozilla Public License 2.0">Mozilla Public License 2.0</option>
+                <option value="Boost Software License 1.0">Boost Software License 1.0</option>
+                <option value="The Unlicense">The Unlicense</option>
+                <option value="BSD Zero Clause">BSD Zero Clause</option>
+                <option value="Academic Free License v3.0">Academic Free License v3.0</option>
+                <option value="Creative Commons Attribution 4.0 International">Creative Commons Attribution 4.0 International</option>
+                <option value="Creative Commons Attribution Share Alike 4.0 International">Creative Commons Attribution Share Alike 4.0 International</option>
+                <option value="Creative Commons Zero v1.0 Universal">Creative Commons Zero v1.0 Universal</option>
+                <option value="Eclipse Public License 2.0">Eclipse Public License 2.0</option>
+                <option value="CeCILL Free Software License Agreement v2.1">CeCILL Free Software License Agreement v2.1</option>
+                <option value="Educational Community License v2.0">Educational Community License v2.0</option>
+                <option value="European Union Public License 1.2">European Union Public License 1.2</option>
+                <option value="ISC License">ISC License</option>
+                <option value="Microsoft Public License">Microsoft Public License</option>
+                <option value="Open Data Commons Open Database License v1.0">Open Data Commons Open Database License v1.0</option>
+                <option value="Common Development and Distribution License">Common Development and Distribution License</option>
+                <option value="Eiffel Forum License 2.0">Eiffel Forum License 2.0</option>
+                <option value="Adaptive Public License 1.0">Adaptive Public License 1.0</option>
+                <option value="Mulan Permissive Software License, Version 2">Mulan Permissive Software License, Version 2</option>
+              </Field>
+            </div>
+            <div>Does this project have a pathway to commercialization? Your organization can accept donations to sustain its work, but it can't seek to make a profit by selling services, by charging for enhancements or add-ons, or by other means specifically for this project. If you don't meet this criteria, Please reach out to Layer5 sales team who will assist you find a partner program that may better fit your needs.</div>
+          </>
+        )}
 
-        <Button $secondary className="btn" title="Submit" />
+
+        <Button $secondary className="btn" title={submit_button_title || "Submit"} />
       </Form>
     </Formik>
   </div>
