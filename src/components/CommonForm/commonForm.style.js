@@ -97,7 +97,7 @@ margin: 1rem;
         display: block;
       }
       .formRight select {
-        background: linear-gradient(90deg, rgba(0,179,159,0.15) 0%, rgba(208,228,228,.7) 40%);
+        background: #FAF9F6;
         border: 1px solid black;
         border-radius: 10px;
         height: 50px;
@@ -146,6 +146,7 @@ margin: 1rem;
         border-radius: 10px;
         padding: .5rem .5rem;
         font-size: .85rem;
+	background: #FAF9F6;
         color: ${props => props.theme.primaryColor};
       }
 
