@@ -11,7 +11,7 @@ import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
 import ModelComponents from "./ComponentsGrid";
 import CatalogGrid from "./CatalogGrid";
-import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo.svg";
+import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
