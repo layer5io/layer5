@@ -26,10 +26,7 @@ Git is an incredibly powerful tool, but its command-line interface can sometimes
 
   <div>
 
-<iframe width="100%" src="https://www.youtube.com/watch?v=vkk2jHUgbNQ" loading="lazy" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    style="min-height: 315px; min-width: 280px;
-    "></iframe>
+<iframe width="800" height="490" src="https://www.youtube.com/embed/vkk2jHUgbNQ?si=ohL-fnpZJDkwHO6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <p>Video: `git lg` alias for a more visually appealing log</p>
 </div>
 
@@ -45,75 +42,75 @@ Here are some essential Git aliases that can revolutionize your workflow:
 
 **Navigation and Branching:**
 
-* **`git co`:**  Quickly switch branches.
+* **git co:**  Quickly switch branches.
     ```bash
     git config --global alias.co checkout
     ```
-* **`git br`:** List all branches.
+* **git br:** List all branches.
     ```bash
     git config --global alias.br branch
     ```
-* **`git new`:** Create a new branch and switch to it.
+* **git new:** Create a new branch and switch to it.
     ```bash
     git config --global alias.new '!git checkout -b'
     ```
 
 **Staging and Committing:**
 
-* **`git a`:** Stage all changes.
+* **git a:** Stage all changes.
     ```bash
     git config --global alias.a add
     ```
-* **`git cm`:** Commit with a message.
+* **git cm:** Commit with a message.
     ```bash
     git config --global alias.cm commit -m
     ```
-* **`git cam`:** Amend the last commit.
+* **git cam:** Amend the last commit.
     ```bash
     git config --global alias.cam commit --amend -m
     ```
-* **`git ca`:** Stage all and commit with a message.
+* **git ca:** Stage all and commit with a message.
     ```bash
     git config --global alias.ca '!git add -A && git commit -m' 
     ```
 
 **Viewing and Comparing:**
 
-* **`git st`:** Check the state of your repository.
+* **git st:** Check the state of your repository.
     ```bash
     git config --global alias.st status
     ```
-* **`git lg`:** View a more visually appealing log.
+* **git lg:** View a more visually appealing log.
     ```bash
     git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     ```
-* **`git df`:** Show the diff of unstaged changes.
+* **git df:** Show the diff of unstaged changes.
     ```bash
     git config --global alias.df diff
     ```
-* **`git dc`:** Show the diff of staged changes.
+* **git dc:** Show the diff of staged changes.
     ```bash
     git config --global alias.dc diff --cached
     ```
 
 **Undoing Changes:**
 
-* **`git undo`:** Reset the last commit, keeping your changes.
+* **git undo:** Reset the last commit, keeping your changes.
     ```bash
     git config --global alias.undo 'reset HEAD^' 
     ```
 
 **Remote Interactions:**
 
-* **`git fch`:** Fetch all changes from remotes.
+* **git fch:** Fetch all changes from remotes.
     ```bash
     git config --global alias.fch fetch
     ```
-* **`git pl`:** Pull the latest changes from the current branch's remote.
+* **git pl:** Pull the latest changes from the current branch's remote.
     ```bash
     git config --global alias.pl pull
     ```
-* **`git ps`:** Push your local changes to the remote branch.
+* **git ps:** Push your local changes to the remote branch.
     ```bash
     git config --global alias.ps push
     ```
