@@ -139,7 +139,7 @@
       "free": "",
       "teamDesigner": "x",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/"
   },
@@ -938,8 +938,8 @@
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
+      "teamOperator": "x",
+      "enterprise": "x"
     },
     "docs": ""
   },
