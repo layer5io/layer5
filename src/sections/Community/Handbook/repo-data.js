@@ -332,6 +332,15 @@ export const repo_data = [
         "The Kanvas Snapshot Helm Plugin allows users to generate a visual snapshot of their Helm charts directly from the command line.",
         repository: "https://github.com/meshery/helm-kanvas-snapshot",
       },
+      {
+        project: "Kubectl kanvas snapshot",
+        image: kanvasLogo,
+        language: "Golang",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description: "A Kubectl Kanvas Snapshot is a native kubectl plugin designed to conveniently create a visual snapshot of the combination of multiple Kubernetes manifest files.",
+        repository: "https://github.com/meshery/kubectl-kanvas-snapshot",
+      },
     ],
   },
 
