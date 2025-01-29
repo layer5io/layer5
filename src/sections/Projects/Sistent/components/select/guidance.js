@@ -13,8 +13,7 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import SectionNav from "./section-nav";
-import Header from "./header";
+import { Header, SectionNav } from ".";
 const SelectGuidance = () => {
   const { isDark } = useStyledDarkMode();
   const [selectedAge, setSelectedAge] = React.useState("");
