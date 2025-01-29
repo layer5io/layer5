@@ -3,10 +3,9 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
-// Added the Sistent and kanvas icon
-import sistentContributorIcon from "../../static/assets/badges/sistent-contributor/sistent-contributor.svg";
+// Added the Sistent and Kanvas icon
+import sistentContributorIcon from "../../../static/assets/badges/sistent-contributor/sistent-contributor.svg";
 import kanvasIcon from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-
 
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
@@ -36,7 +35,6 @@ import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg"
  * The map function in the end wraps the label property with a component.
  */
 const options = [
-
   {
     label: "Sistent Contributor",
     value: "sistent-contributor",
@@ -53,7 +51,6 @@ const options = [
     icon: kanvasIcon,
     className: "allOptions",
   },
-  
   {
     label: "BADGES",
     value: "",
@@ -132,14 +129,6 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: mesheryOpIcon,
-    className: "allOptions",
-  },
-  {
-    label: "Kanvas",
-    value: "kanvas",
-    color: lighttheme.linkColor,
-    isFixed: true,
-    icon: kanvasIcon,
     className: "allOptions",
   },
   {
@@ -270,14 +259,15 @@ const MembersPage = () => {
     <>
       <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
       <MultipleMembers members={members} />
-
     </>
   );
 };
 export default MembersPage;
 export const Head = () => {
-  return <SEO
-    title="Members"
-    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
-  />;
+  return (
+    <SEO
+      title="Members"
+      description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+    />
+  );
 };
