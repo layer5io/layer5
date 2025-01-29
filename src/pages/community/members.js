@@ -3,6 +3,10 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
+// Added the Sistent and kanvas icon
+import sistentContributorIcon from "../../static/assets/badges/sistent-contributor/sistent-contributor.svg";
+import kanvasIcon from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+
 
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
@@ -26,12 +30,30 @@ import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";
 import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
-import kanvasIcon from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
  */
 const options = [
+
+  {
+    label: "Sistent Contributor",
+    value: "sistent-contributor",
+    color: lighttheme.linkColor,
+    isFixed: true,
+    icon: sistentContributorIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Kanvas",
+    value: "kanvas",
+    color: lighttheme.linkColor,
+    isFixed: true,
+    icon: kanvasIcon,
+    className: "allOptions",
+  },
+  
   {
     label: "BADGES",
     value: "",
