@@ -250,7 +250,7 @@ const Kanvas = (props) => {
       </div>
       <>
         <Reviews />
-        <TeaserModal title="Kanvaseaser" open={props?.teaser} />
+        <TeaserModal title="Kanvas Teaser" open={props?.teaser} />
       </>
     </KanvasWrapper>
   );
