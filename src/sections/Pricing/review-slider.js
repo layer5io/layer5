@@ -17,6 +17,7 @@ import Alex from "./reviews/alex-hokanson.jpeg";
 import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.png";
+import Louie from "./reviews/louie-corbo.jpeg";
 
 const settings = {
   dots: false,
@@ -140,7 +141,13 @@ const Reviews = () => {
             title="Software Architect at Entigo"
             image={Kaur}
           />
-
+          <Customers
+            type="2"
+            quote="Kanvas is what the next-generation Operations tooling will look like."
+            person="Louie Corbo"
+            title="Staff Cloud Infratructure Engineer at SADA"
+            image={Louie}
+          />
           <Customers
             type="1"
             quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
