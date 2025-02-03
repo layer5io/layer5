@@ -7,7 +7,7 @@ import Partner_Icon from "../../../assets/images/contact/partner.svg";
 import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
-import ContactForm from "../../../components/ContactForm";
+// import ContactForm from "../../../components/ContactForm";
 import CommonForm from "../../../components/CommonForm";
 
 const ContactPage = () => {

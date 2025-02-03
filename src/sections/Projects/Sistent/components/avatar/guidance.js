@@ -11,7 +11,6 @@ const AvatarGuidance = () => {
         <p>
           The Avatar component is used to represent a user with an image, initials, or an icon. It is commonly used in user profiles, chat applications, and dashboards.
         </p>
-        
         <h3>Best Practices</h3>
         <ul>
           <li>Ensure the avatar is visually distinguishable and represents the user clearly.</li>
@@ -19,14 +18,12 @@ const AvatarGuidance = () => {
           <li>Fallback to initials or a placeholder image when the user image is unavailable.</li>
           <li>Keep the size appropriate to the UI layout (e.g., small for chat bubbles, large for profile pages).</li>
         </ul>
-        
         <h3>Accessibility Considerations</h3>
         <ul>
           <li>Provide an <code>alt</code> attribute describing the avatar for screen readers.</li>
           <li>Ensure sufficient contrast between the avatar and background.</li>
           <li>Use tooltips or labels to provide additional context when necessary.</li>
         </ul>
-        
         <h3>Examples of Usage</h3>
         <p>
           Avatars can be used in multiple scenarios, including:
