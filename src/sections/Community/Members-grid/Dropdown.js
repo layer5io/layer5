@@ -20,9 +20,11 @@ const Dropdown = (props) => {
         <div
           style={{
             display: "flex",
+            position: "relative",
             alignItems: "center",
             justifyContent: "flex-end",
             width: "100%",
+            zIndex: 100
           }}
         >
           <Select
