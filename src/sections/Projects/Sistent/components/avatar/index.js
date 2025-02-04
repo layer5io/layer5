@@ -152,10 +152,10 @@ const SistentAvatar = () => {
           <h2>Avatar</h2>
         </a>
         <p>
-          Avatars are versatile visual representations that provide instant 
-          visual identification for users, teams, or entities within digital 
-          interfaces. They serve as a quick and intuitive way to personalize 
-          and humanize digital experiences across various applications and 
+          Avatars are versatile visual representations that provide instant
+          visual identification for users, teams, or entities within digital
+          interfaces. They serve as a quick and intuitive way to personalize
+          and humanize digital experiences across various applications and
           platforms.
         </p>
         <div className="filterBtns">
@@ -193,28 +193,28 @@ const SistentAvatar = () => {
         <div className="main-content">
           <h3>Core Functionality</h3>
           <p>
-            Avatars are designed to be flexible and adaptable, supporting 
+            Avatars are designed to be flexible and adaptable, supporting
             multiple representation methods:
           </p>
           <ul>
             <li>
-              <strong>Profile Images:</strong> Display actual user or entity 
+              <strong>Profile Images:</strong> Display actual user or entity
               photographs for precise identification.
             </li>
             <li>
-              <strong>Initials:</strong> Generate text-based avatars using 
+              <strong>Initials:</strong> Generate text-based avatars using
               user's name initials when images are unavailable.
             </li>
             <li>
-              <strong>Icons:</strong> Use symbolic representations when specific 
+              <strong>Icons:</strong> Use symbolic representations when specific
               images aren't applicable.
             </li>
           </ul>
 
           <h3>Image Avatar</h3>
           <p>
-            Image avatars provide the most personalized representation by 
-            displaying actual profile pictures, organizational logos, or 
+            Image avatars provide the most personalized representation by
+            displaying actual profile pictures, organizational logos, or
             specific user imagery.
           </p>
           <Row $Hcenter className="image-container">
@@ -225,7 +225,7 @@ const SistentAvatar = () => {
 
           <h3>Initials Avatar</h3>
           <p>
-            When a profile image is unavailable, initials provide a 
+            When a profile image is unavailable, initials provide a
             professional and clean alternative for user identification.
           </p>
           <Row $Hcenter className="image-container">
@@ -238,7 +238,7 @@ const SistentAvatar = () => {
 
           <h3>Icon Avatar</h3>
           <p>
-            Icon avatars offer a universal visual representation when 
+            Icon avatars offer a universal visual representation when
             specific imagery isn't available or appropriate.
           </p>
           <Row $Hcenter className="image-container">
@@ -257,25 +257,25 @@ const SistentAvatar = () => {
 
           <h3>Flexible Sizing</h3>
           <p>
-            Avatars can be dynamically sized to fit various design 
+            Avatars can be dynamically sized to fit various design
             requirements and interface contexts.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Avatar 
-                src="https://via.placeholder.com/150" 
-                alt="Small" 
-                sx={{ width: 32, height: 32, mr: 2 }} 
+              <Avatar
+                src="https://via.placeholder.com/150"
+                alt="Small"
+                sx={{ width: 32, height: 32, mr: 2 }}
               />
-              <Avatar 
-                src="https://via.placeholder.com/150" 
-                alt="Medium" 
-                sx={{ width: 48, height: 48, mr: 2 }} 
+              <Avatar
+                src="https://via.placeholder.com/150"
+                alt="Medium"
+                sx={{ width: 48, height: 48, mr: 2 }}
               />
-              <Avatar 
-                src="https://via.placeholder.com/150" 
-                alt="Large" 
-                sx={{ width: 64, height: 64 }} 
+              <Avatar
+                src="https://via.placeholder.com/150"
+                alt="Large"
+                sx={{ width: 64, height: 64 }}
               />
             </SistentThemeProvider>
           </Row>

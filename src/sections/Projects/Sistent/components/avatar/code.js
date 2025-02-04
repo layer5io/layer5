@@ -140,7 +140,7 @@
 //           {activeTab === "Guidance" && <Guidance />}
 //           {activeTab === "Code" && <Code />}
 //         </div>
-        
+
 //         {/* Avatar Showcase */}
 //         <div className="avatar-showcase">
 //           <h3>Small Avatar</h3>
@@ -262,7 +262,7 @@ const AvatarComponent = () => {
         <a id="Identity">
           <h2>Avatar Component</h2>
         </a>
-        
+
         {/* Tabs Navigation */}
         <div className="filterBtns">
           {"Overview Guidance Code".split(" ").map((tab) => (
@@ -277,7 +277,7 @@ const AvatarComponent = () => {
 
         {/* Component Description */}
         <p>
-          The Avatar component provides a flexible visual representation of users 
+          The Avatar component provides a flexible visual representation of users
           or entities across digital interfaces, supporting images, initials, and icons.
         </p>
 
@@ -289,9 +289,9 @@ const AvatarComponent = () => {
               <div key={index} className="code-example">
                 <h4>{example.title}</h4>
                 <p>{example.description}</p>
-                <CodeBlock 
-                  name={`avatar-example-${index}`} 
-                  code={example.code} 
+                <CodeBlock
+                  name={`avatar-example-${index}`}
+                  code={example.code}
                 />
                 <div className="live-preview">
                   <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -307,17 +307,17 @@ const AvatarComponent = () => {
                     {example.title === "Sized Avatars" && (
                       <>
                         <Avatar size="small" src="https://via.placeholder.com/50" />
-                        <Avatar size="medium" src="https://via.placeholder.com/75" sx={{mx: 2}} />
+                        <Avatar size="medium" src="https://via.placeholder.com/75" sx={{ mx: 2 }} />
                         <Avatar size="large" src="https://via.placeholder.com/100" />
                       </>
                     )}
                     {example.title === "Custom Styling" && (
-                      <Avatar 
-                        src="https://via.placeholder.com/150" 
+                      <Avatar
+                        src="https://via.placeholder.com/150"
                         sx={{
-                          border: '2px solid primary.main',
+                          border: "2px solid primary.main",
                           boxShadow: 2
-                        }} 
+                        }}
                       />
                     )}
                   </SistentThemeProvider>

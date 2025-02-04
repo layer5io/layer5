@@ -153,7 +153,7 @@ const Guidance = () => {
 
         <h3>Code Snippet: Flexible Avatar Usage</h3>
         <pre><code>
-{`// Image Avatar
+          {`// Image Avatar
 <Avatar src="/user-profile.jpg" alt="John Doe" />
 
 // Initials Avatar
