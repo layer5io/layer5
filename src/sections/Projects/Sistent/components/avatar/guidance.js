@@ -44,7 +44,7 @@ const Guidance = () => {
             <li>
               <strong>Fallback Mechanisms:</strong> Implement robust fallback strategies:
               <code>
-                {`<Avatar src={userImage} alt={userName} fallback={<Avatar>{userInitials}</Avatar>}/>`}
+                {"<Avatar src={userImage} alt={userName} fallback={<Avatar>{userInitials}</Avatar>}/>"}
               </code>
             </li>
             <li>Maintain consistent avatar sizing and style across the application.</li>
@@ -70,7 +70,7 @@ const Guidance = () => {
             <li>
               Example lazy loading implementation:
               <code>
-                {`<Avatar loading="lazy" src="/path/to/optimized/image.jpg"/>`}
+                {"<Avatar loading=\"lazy\" src=\"/path/to/optimized/image.jpg\"/>"}
               </code>
             </li>
           </ul>
@@ -84,7 +84,7 @@ const Guidance = () => {
             <li>
               Example status badge:
               <code>
-                {`<Avatar src={userImage} status="online" statusProps={{ color: 'green', position: 'bottom-right' }}/>`}
+                {"<Avatar src={userImage} status=\"online\" statusProps={{ color: 'green', position: 'bottom-right' }}/>"}
               </code>
             </li>
           </ul>
