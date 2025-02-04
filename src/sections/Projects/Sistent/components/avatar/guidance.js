@@ -21,6 +21,11 @@ const Guidance = () => {
         {/* Tab Navigation */}
         <div className="filterBtns">
           <TabButton
+            className={location.pathname === "/projects/sistent/components/avatar/overview" ? "active" : ""}
+            onClick={() => navigate("/projects/sistent/components/avatar/overview")}
+            title="Overview"
+          />
+          <TabButton
             className={location.pathname === "/projects/sistent/components/avatar/guidance" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/components/avatar/guidance")}
             title="Guidance"
