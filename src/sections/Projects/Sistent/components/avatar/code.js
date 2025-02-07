@@ -58,8 +58,6 @@ const AvatarComponent = () => {
         <a id="Identity">
           <h2>Avatar Component</h2>
         </a>
-
-        {/* Tabs Navigation */}
         <div className="filterBtns">
           {"Overview Guidance Code".split(" ").map((tab) => (
             <TabButton
@@ -70,14 +68,10 @@ const AvatarComponent = () => {
             />
           ))}
         </div>
-
-        {/* Component Description */}
         <p>
           The Avatar component provides a flexible visual representation of users
           or entities across digital interfaces, supporting images, initials, and icons.
         </p>
-
-        {/* Code Tab Content */}
         {activeTab === "Code" && (
           <div className="code-examples">
             <h3>Avatar Implementation Variants</h3>

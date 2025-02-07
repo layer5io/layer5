@@ -18,7 +18,6 @@ const Guidance = () => {
           It is a crucial UI element for providing visual identity across digital platforms.
         </p>
 
-        {/* Tab Navigation */}
         <div className="filterBtns">
           <TabButton
             className={location.pathname === "/projects/sistent/components/avatar/overview" ? "active" : ""}
@@ -37,7 +36,6 @@ const Guidance = () => {
           />
         </div>
 
-        {/* Tab Content */}
         <div className="main-content">
           <a id="BestPractices">
             <h3>Best Practices</h3>
