@@ -146,7 +146,7 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={ConfigGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={ConfigGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -165,14 +165,14 @@ const Aws = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DeployGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={DeployGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDropGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={DragDropGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -192,14 +192,14 @@ const Aws = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="aws-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with Kanvas" className="AWS-image" />
+              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with Kanvas" className="aws-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
