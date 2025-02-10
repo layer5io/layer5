@@ -106,6 +106,57 @@ const CommunityPage = () => {
           </Row>
         </div>
         <Container>
+          <Row className="recognition-program meshmate">
+            <div className="recognition-content">
+              <div className="badges-section">
+                <div className="badge-stack">
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/docker-captain/docker-captain.png"
+                      alt="Docker Captain Badge"
+                    />
+                  </div>
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/cncf-ambassador/cncf-ambassador.png"
+                      alt="CNCF Ambassador Badge"
+                    />
+                  </div>
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
+                      alt="Meshery Badge"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <Col className="content">
+                <h1 className="subtitle">Your Achievements, Recognized</h1>
+                <h1>Layer5 Recognition Program</h1>
+                <p>
+                  The <strong>Layer5 Recognition Program</strong> is more than a
+                  badge. It's a testament to your skills, dedication, and impact
+                  in the cloud-native ecosystem. Every contribution – big or
+                  small – is a step toward earning a badge that tells your
+                  unique story.
+                </p>
+                <p>
+                  Showcase your journey, connect with peers, and let the world
+                  see the milestones you've achieved. Whether you're solving
+                  challenges, sharing knowledge, or coding solutions, there's a
+                  badge waiting for you.
+                </p>
+                <Button
+                  $primary
+                  title="Explore Badges Now"
+                  $url="https://badges.layer5.io"
+                />
+              </Col>
+            </div>
+          </Row>
+        </Container>
+        <Container>
           <Row className="meshmate">
             <Col className="content" $sm={12} $lg={6}>
               <h1 className="onboarding">An onboarding and mentoring program</h1>
