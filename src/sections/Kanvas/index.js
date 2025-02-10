@@ -239,7 +239,7 @@ const Kanvas = (props) => {
             image={Phillip} />
           <Catalog />
           <InlineQuotes
-            quote="Do we like Kanvas? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex} />
@@ -250,7 +250,7 @@ const Kanvas = (props) => {
       </div>
       <>
         <Reviews />
-        <TeaserModal title="Kanvaseaser" open={props?.teaser} />
+        <TeaserModal title="Kanvas Teaser" open={props?.teaser} />
       </>
     </KanvasWrapper>
   );
