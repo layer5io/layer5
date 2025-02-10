@@ -33,6 +33,7 @@ import SecuritySentinelLogo from "../../../assets/images/security-sentinel/secur
 import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
 import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
 import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
+import SistentContributorLogo from "../../../assets/images/sistent/badges/sistent-contributor.svg";
 import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
 
 const contents = [
@@ -168,6 +169,10 @@ const RecognitionPage = () => {
               <li>
                 <img src={ContinuousContributorLogo} style={badgeStyle} />
                 <b>Continuous Contributor</b> - awarded to the community members who make consistent and impactful contributions for a long period of time in Layer5 projects in recognition and appreciation of their efforts.
+              </li>
+              <li>
+                <img src={SistentContributorLogo} style={badgeStyle} />
+                <b>Sistent Contributor</b> - awarded to the community members who make consistent and impactful contributions to the Sistent project as a recognition and appreciation of their efforts.
               </li>
               <p><b>Projects:</b></p>
               <li>
