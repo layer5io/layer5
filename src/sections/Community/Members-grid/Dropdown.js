@@ -7,6 +7,7 @@ import Select from "react-select";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { selectStyles, dropdownTheme } from "./membersGrid.style";
+import { FilterWrapper } from "./membersGrid.style";
 
 const Dropdown = (props) => {
   return (
@@ -17,14 +18,7 @@ const Dropdown = (props) => {
         subtitle="A warm and welcoming collection of open sourcers"
       />
       <Container>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            width: "100%",
-          }}
-        >
+        <FilterWrapper>
           <Select
             name="Filter Members"
             defaultValue={[props.defaultOption]}
@@ -36,8 +30,7 @@ const Dropdown = (props) => {
             theme={dropdownTheme}
             isMulti
           />
-        </div>
-
+        </FilterWrapper>
         <br />
       </Container>
     </>
