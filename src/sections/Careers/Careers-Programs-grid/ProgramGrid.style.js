@@ -108,7 +108,7 @@ export const ProgramsPageWrapper = styled.div`
     }
     .opensource-section-img{
         margin-top: -8rem;
-        margin-bottom: 8rem;
+        margin-bottom: 10rem;
         position: relative;
         top: 10rem;
     }
