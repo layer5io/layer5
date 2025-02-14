@@ -94,7 +94,7 @@ export const ProgramsPageWrapper = styled.div`
         margin-right: -50vw;
     }
     .opensource-section-text{
-        padding-top: 4rem;
+        padding: 4rem 2.5rem 0;
     }
     .opensource-section-text > h1{
         margin-bottom: 1rem;
@@ -108,6 +108,7 @@ export const ProgramsPageWrapper = styled.div`
     }
     .opensource-section-img{
         margin-top: -8rem;
+        margin-bottom: 10rem;
         position: relative;
         top: 10rem;
     }
