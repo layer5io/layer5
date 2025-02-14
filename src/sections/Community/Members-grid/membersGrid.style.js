@@ -240,3 +240,12 @@ export const MembersGridWrapper = styled.div`
     }
   }
 `;
+
+export const FilterWrapper = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 100
+`;
