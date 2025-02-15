@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { List, ListItemIcon, ListItemAvatar, ListItemText,ListItem,ListSubheader, ListItemButton, SistentThemeProvider, Divider } from "@layer5/sistent";
-import { CodeBlock } from "./code-block";
+import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
+import Checkbox from "@mui/material/Checkbox";
 
 const codes = [
   // Basic List with List Items
@@ -68,17 +69,48 @@ const codes = [
               </List>
             </Collapse>
      </List> `,
+    // List Control with Checkboxes
+    ` <List sx={{ width: "100%", maxWidth: 360 }}>
+            {[0, 1, 2, 3].map((value) => {
+              const labelId = "checkbox-list-label-'$'{value}";
+              return (
+                <ListItem key={value} disablePadding>
+                  <ListItemButton onClick={() => handleToggle(value)} dense>
+                    <ListItemIcon>
+                      <Checkbox
+                        edge="start"
+                        checked={checked.includes(value)}
+                        tabIndex={-1}
+                        disableRipple
+                        inputProps={{ "aria-labelledby": labelId }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText id={labelId} primary={"Layer5 Sistent Item '$'{value + 1}"} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+   </List> `,
 ];
 
 const ListCode = () => {
   const location = useLocation();
+  /* List with Nested Items */
   const { isDark } = useStyledDarkMode();
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
-
   const toggleOpen1 = () => setOpen1((prev) => !prev);
   const toggleOpen2 = () => setOpen2((prev) => !prev);
 
+  /* ListControl with Checkboxes */
+  const [checked, setChecked] = React.useState([]);
+  const handleToggle = (value) => {
+    setChecked((prevChecked) =>
+      prevChecked.includes(value)
+        ? prevChecked.filter((item) => item !== value) // Remove if already checked
+        : [...prevChecked, value] // Add if not checked
+    );
+  };
   return (
     <SistentLayout title="List">
       <div className="content">
@@ -112,7 +144,6 @@ const ListCode = () => {
           <p>This is a basic list with plain text items.</p>
           <div className="showcase">
             <div className="items">
-
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <List>
                   <ListItem><ListItemText primary="Layer5 Sistent Item 1" /></ListItem>
@@ -120,7 +151,6 @@ const ListCode = () => {
                   <ListItem><ListItemText primary="Layer5 Sistent Item 3" /></ListItem>
                 </List>
               </SistentThemeProvider>
-
             </div>
             <CodeBlock name="simple-list" code={codes[0]} />
           </div>
@@ -201,8 +231,6 @@ const ListCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <List>
-                  {/* <ListItem text="Action Item 1" secondaryAction={<button>Action</button>} />
-                  <ListItem text="Action Item 2" secondaryAction={<button>More</button>} /> */}
                   <ListItemButton onClick={() => alert("Layer5 List Item 1 Button Clicked!")}> Layer5 Sistent Action Item 1</ListItemButton>
                   <ListItemButton onClick={() => alert("Layer5 List Item 2 Button Clicked!")}>Layer5 Sistent Action Item 2</ListItemButton>
                 </List>
@@ -265,6 +293,37 @@ const ListCode = () => {
               </SistentThemeProvider>
             </div>
             <CodeBlock name="nested-list" code={codes[5]} />
+          </div>
+
+          {/* ListControl with Checkboxes */}
+          <a id="List Control With Checkboxes"><h3>List Control with Checkboxes</h3></a>
+          <p>Add checkboxes to list items for selection. A checkbox can either be a primary action or a secondary action.</p>
+          <div className="showcase">
+            <div className="items">
+              <List sx={{ width: "100%", maxWidth: 360 }}>
+                {[0, 1, 2, 3].map((value) => {
+                  const labelId = `checkbox-list-label-${value}`;
+
+                  return (
+                    <ListItem key={value} disablePadding>
+                      <ListItemButton onClick={() => handleToggle(value)} dense>
+                        <ListItemIcon>
+                          <Checkbox
+                            edge="start"
+                            checked={checked.includes(value)}
+                            tabIndex={-1}
+                            disableRipple
+                            inputProps={{ "aria-labelledby": labelId }}
+                          />
+                        </ListItemIcon>
+                        <ListItemText id={labelId} primary={`Layer5 Sistent Item ${value + 1}`} />
+                      </ListItemButton>
+                    </ListItem>
+                  );
+                })}
+              </List>
+            </div>
+            <CodeBlock name="checkbox-list" code={codes[6]} />
           </div>
         </div>
       </div>
