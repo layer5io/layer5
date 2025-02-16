@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[7811],{48450:function(e,s,t){t(96540);s.A=t.p+"static/sistent-contributor.6ef58876.svg"}}]);
+//# sourceMappingURL=bf86faca2ee97b49ec012ed76c48330e151b6a38-412fe2c70c326855289f.js.map
