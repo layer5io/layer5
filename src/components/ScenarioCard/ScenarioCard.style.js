@@ -9,7 +9,7 @@ export const ScenarioCardWrapper = styled.div`
         cursor: pointer;
         margin: 1rem;
         &:hover {
-            background-color: #222;
+            background-color: ${props => props.theme.backgroundColor};
             transition: 0.2s ease-in all;
         }
         &:hover .open-close-scenario {
@@ -25,6 +25,8 @@ export const ScenarioCardWrapper = styled.div`
         margin: auto;
         height: 100%;
         width: 100%;
+        filter: ${props => props.theme.filter};
+        transition: 0.2s ease-in all;
     }
     .scenario-description {
         display: flex;
@@ -37,12 +39,12 @@ export const ScenarioCardWrapper = styled.div`
     }
     h4.title {
         line-height: 1.4rem;
-        color: rgb(255, 255, 255);
+        color: ${props => props.theme.whiteToBlack};
         margin-bottom: 0.35rem;
     }
     p.info {
         line-height: 1rem;
-        color: lightgray;
+        color: ${props => props.theme.greyEEEEEEToBlack};
         margin-bottom: auto;
         font-weight: 300;
     }
@@ -51,9 +53,9 @@ export const ScenarioCardWrapper = styled.div`
 		display: flex;
 		justify-content: space-between;
         color: ${props => props.theme.primaryLightColorTwo};
-        
+
         margin-top: 1rem;
-        
+
         justify-content: flex-end;
 		align-self: flex-end;
 	}
@@ -61,9 +63,9 @@ export const ScenarioCardWrapper = styled.div`
 	.open-close-scenario {
 		display: flex;
 		background: transparent;
-        color: white;
+        color: ${props => props.theme.whiteToBlack};
 		border: none;
-		
+
 		font-size: 1rem;
 		cursor: pointer;
 		transition: 0.2s ease-in all;
@@ -75,21 +77,21 @@ export const ScenarioCardWrapper = styled.div`
 
     .sub-content {
         display:flex;
-        color: white;
+        color: ${props => props.theme.whiteToBlack};
         .ak {
             color: ${props => props.theme.linkColor};
             &:hover {
                 color: white;
             }
-        } 
-        justify-content:center; 
+        }
+        justify-content:center;
         margin-top:4rem;
         width:100%;
     }
-    
+
 
 	.active {
-		display: blwock;
+		display: block;
 		width: 100%;
 		height: 100%;
 		padding: 1.5rem;
@@ -100,7 +102,7 @@ export const ScenarioCardWrapper = styled.div`
         /* text-align:right; */
         position: relative;
         float: right;
-        
+
         /* display: flex; */
         /* align-self: flex-end; */
         /* right: 1rem; */
