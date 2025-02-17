@@ -26,7 +26,8 @@ import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
 import docsIcon from "../../assets/images/docs/docs.svg";
 import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
-import kanvasIcon from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import kanvasIcon from "../../assets/images/kanvas/badges/kanvas.svg";
+import sistentIcon from "../../assets/images/sistent/badges/sistent-contributor.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -118,6 +119,14 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: kanvasIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Sistent",
+    value: "sistent",
+    color: lighttheme.linkColor,
+    isFixed: true,
+    icon: sistentIcon,
     className: "allOptions",
   },
   {
