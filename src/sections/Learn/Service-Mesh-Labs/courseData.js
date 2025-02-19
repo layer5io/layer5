@@ -1,13 +1,13 @@
-import istioLogo from "../../../assets/images/service-mesh-icons/istio-white.svg";
-import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd-white.svg";
-import consulLogo from "../../../assets/images/service-mesh-icons/consul-white.svg";
-import kumaLogo from "../../../assets/images/service-mesh-icons/kuma-white.svg";
-import nsmLogo from "../../../assets/images/service-mesh-icons/nsm-white.svg";
-import traefikLogo from "../../../assets/images/service-mesh-icons/traefik-white.svg";
+import istioLogo from "../../../assets/images/service-mesh-icons/istio.svg";
+import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";
+import consulLogo from "../../../assets/images/service-mesh-icons/consul.svg";
+import kumaLogo from "../../../assets/images/service-mesh-icons/kuma.svg";
+import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
+import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
 import smpLogo from "./assets/smp-light-text.svg";
-import smiLogo from "./assets/servicemeshinterface-stackedsmi-white.svg";
-import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/white/openservicemesh-icon-white.svg";
+import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.webp";
+import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/color/openservicemesh-icon-color.svg";
 
 export const data = [
   {

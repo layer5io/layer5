@@ -4,6 +4,7 @@ export const ScenarioCardWrapper = styled.div`
     margin: 0px;
     .scenario-card-block {
         margin-bottom: 2rem;
+        background-color: ${props => props.theme.blackToWhite};
         border: 1px solid ${props => props.theme.primaryLightColorTwo};
         padding: 1rem;
         cursor: pointer;

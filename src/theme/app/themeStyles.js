@@ -77,7 +77,7 @@ const lighttheme = {
   invertColor: "0%",
   meshInterfaceLogoFilter: "0%",
   mapBackground: "0%",
-  filter: "invert(1)",
+  filter: "none",
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#FFFFFF",
 
@@ -311,6 +311,7 @@ export const darktheme = {
   invertColor: "invert(100%)",
   meshInterfaceLogoFilter: "90%",
   mapBackground: "93%",
+  filter: "brightness(0) invert(1)",
   //Elevation Color(Used in Cards Mostly)
   elevationColor: "#212121",
 
