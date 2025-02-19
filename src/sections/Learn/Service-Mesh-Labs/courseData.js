@@ -5,8 +5,8 @@ import kumaLogo from "../../../assets/images/service-mesh-icons/kuma.svg";
 import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
 import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
-import smpLogo from "./assets/smp-light-text.svg";
-import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.webp";
+import smpLogo from "./assets/smp-light-text-inverted.svg";
+import smiLogo from "./assets/servicemeshinterface-stackedsmi-black.svg";
 import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/color/openservicemesh-icon-color.svg";
 
 export const data = [
