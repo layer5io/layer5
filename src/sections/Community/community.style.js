@@ -259,7 +259,114 @@ const CommunitySectionWrapper = styled.div`
             gap: 2rem; 
         }
     }
-
+    .recognition-program {
+    margin-top: 5rem;
+    .recognition-content {
+      display: grid;
+      grid-template-columns: minmax(18.75rem, 40%) 1fr;
+      min-height: 31.25rem;
+      position: relative;
+      gap: 2rem;
+      .badges-section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .badge-stack {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          max-width: 25rem;
+          .badge-item {
+            position: absolute;
+            width: 11.25rem;
+            height: 11.25rem;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            img {
+              width: 140%;
+              height: 140%;
+              object-fit: contain;
+              filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.2));
+            }
+            &:nth-child(1) {
+              top: 0;
+              left: 0;
+              z-index: 3;
+            }
+            &:nth-child(2) {
+              top: 5.625rem;
+              left: 5.625rem;
+              z-index: 2;
+            }
+            &:nth-child(3) {
+              top: 11.25rem;
+              left: 11.25rem;
+              z-index: 1;
+            }
+          }
+        }
+      }
+      .content {
+        h1.subtitle {
+          margin: 0.5rem auto;
+          font-size: 1.75rem;
+          font-weight: 500;
+          color: ${(props) => props.theme.primaryColor};
+        }
+      }
+    }
+    @media (max-width: 62rem) {
+      .recognition-content {
+        grid-template-columns: 1fr;
+        .badges-section {
+          min-height: 18.75rem;
+          padding: 1.25rem;
+          .badge-stack {
+            height: 16.25rem;
+            .badge-item {
+              width: 9.375rem;
+              height: 9.375rem;
+              img {
+                width: 120%;
+                height: 120%;
+              }
+              &:nth-child(1) {
+                top: 0;
+                left: calc(50% - 3.75rem);
+              }
+              &:nth-child(2) {
+                top: 8.75rem;
+                left: calc(50% - 7.5rem);
+              }
+              &:nth-child(3) {
+                top: 8.75rem;
+                left: calc(50% + 0rem);
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 30rem) {
+      .recognition-content {
+        .badges-section .badge-stack .badge-item {
+          width: 7.5rem;
+          height: 7.5rem;
+          &:nth-child(1) {
+            left: calc(50% - 3.125rem);
+          }
+          &:nth-child(2) {
+            top: 6.875rem;
+            left: calc(50% - 6.25rem);
+          }
+          &:nth-child(3) {
+            top: 6.875rem;
+            left: calc(50% + 0rem);
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default CommunitySectionWrapper;
