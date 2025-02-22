@@ -44,6 +44,9 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 
 const BlogSinglePage = ({ data }) => {
 
+  if (!data?.mdx) {
+    return null;
+  }
 
   return (
 
@@ -63,5 +66,5 @@ export default BlogSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description} />;
+  return <SEO title={data?.mdx?.frontmatter?.title} image={data?.mdx?.frontmatter?.thumbnail?.publicURL} description={data.mdx.frontmatter.description} />;
 };
