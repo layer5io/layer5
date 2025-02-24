@@ -3,7 +3,7 @@ const componentsData = [
     id: 1,
     name: "Button",
     description:
-        "A button is an interactive element that triggers a specific action and also lets users know what will happen next.",
+      "A button is an interactive element that triggers a specific action and also lets users know what will happen next.",
     url: "/projects/sistent/components/button",
     src: "/button",
   },
@@ -11,7 +11,7 @@ const componentsData = [
     id: 2,
     name: "Text Input",
     description:
-        "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
+      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/text-input",
     src: "/text-input",
   },
@@ -19,7 +19,7 @@ const componentsData = [
     id: 3,
     name: "Modal",
     description:
-        "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
+      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
     url: "/projects/sistent/components/modal",
     src: "/modal",
   },
@@ -27,7 +27,7 @@ const componentsData = [
     id: 4,
     name: "Paper",
     description:
-        "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
+      "The Paper component offers an elevated surface with shadow effects, following Material Design’s elevation system.",
     url: "/projects/sistent/components/paper",
     src: "/paper",
   },
@@ -35,7 +35,7 @@ const componentsData = [
     id: 5,
     name: "Popper",
     description:
-        "A popper is a tooltip that appears when a user interacts with an element.",
+      "A popper is a tooltip that appears when a user interacts with an element.",
     url: "/projects/sistent/components/popper",
     src: "/popper",
   },
@@ -43,7 +43,7 @@ const componentsData = [
     id: 6,
     name: "Text Field",
     description:
-        "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
+      "The TextField component is a versatile input field used to capture user input in forms and user interfaces.",
     url: "/projects/sistent/components/text-field",
     src: "/text-field",
   },
@@ -51,7 +51,7 @@ const componentsData = [
     id: 7,
     name: "Link",
     description:
-        "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
+      "Links are essential and integral components of an interface. They are primarily used for navigation, guiding users to the next step in a journey or redirecting them to relevant sections or pages.",
     url: "/projects/sistent/components/link",
     src: "/link",
   },
@@ -59,7 +59,7 @@ const componentsData = [
     id: 8,
     name: "Container",
     description:
-        "Containers align and center content, providing responsive layout options for different screen sizes.",
+      "Containers align and center content, providing responsive layout options for different screen sizes.",
     url: "/projects/sistent/components/container",
     src: "/container",
   },
@@ -67,7 +67,7 @@ const componentsData = [
     id: 9,
     name: "ButtonGroup",
     description:
-        "ButtonGroup is a component that groups multiple buttons together.",
+      "ButtonGroup is a component that groups multiple buttons together.",
     url: "/projects/sistent/components/button-group",
     src: "/button-group",
   },
@@ -75,7 +75,7 @@ const componentsData = [
     id: 10,
     name: "Box",
     description:
-        "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
+      "Box is used as a flexible container for layout and styling, allowing quick customization and responsive design adjustments.",
     url: "/projects/sistent/components/box",
     src: "/box",
   },
@@ -83,7 +83,7 @@ const componentsData = [
     id: 11,
     name: "Tooltip",
     description:
-        "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
+      "The Tooltip component is a small pop-up box that appears when a user hovers over an element.",
     url: "/projects/sistent/components/tooltip",
     src: "/tooltip",
   },
@@ -91,9 +91,33 @@ const componentsData = [
     id: 12,
     name: "Backdrop",
     description:
-        "Backdrop component overlays a dimmed screen to focus attention on foreground content.",
+      "Backdrop component overlays a dimmed screen to focus attention on foreground content.",
     url: "/projects/sistent/components/backdrop",
     src: "/backdrop",
+  },
+  {
+    id: 13,
+    name: "ToggleButton",
+    description:
+      "ToggleButton allows users to switch between two or more states, commonly used in forms or settings for quick toggles.",
+    url: "/projects/sistent/components/toggle-button",
+    src: "/toggle-button",
+  },
+  {
+    id: 14,
+    name: "Pagination",
+    description:
+      "Pagination enables users to navigate through multiple pages of content, providing an intuitive interface for browsing large datasets or segmented information.",
+    url: "/projects/sistent/components/pagination",
+    src: "/pagination",
+  },
+  {
+    id: 15,
+    name: "Select",
+    description:
+      "Select component is a dropdown menu for selecting an option from a list.",
+    url: "/projects/sistent/components/select",
+    src: "/select",
   },
 ];
 

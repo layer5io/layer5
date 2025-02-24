@@ -28,9 +28,10 @@ p{
   }
 
   .opportunity-col {
-    flex: 0 0 25%;
+    flex: 0 0 33.333333%;
     max-width: 100%;
     margin: 1rem 0;
+    padding: 0 1rem;
   }
   @media only screen and (max-width: 1200px) {
     .opportunity-col {
@@ -116,7 +117,7 @@ p{
 
   .full_time {
     .opportunity-card {
-      height: 12rem;
+      height: 15rem;
     }
   }
 
@@ -179,7 +180,10 @@ p{
   }
 
   .oppurtunities_row {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0 -1rem;
   }
 `;
 

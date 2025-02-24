@@ -18,6 +18,17 @@ resource: true
 import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 
+import quickActionsPNG from "./quick-actions-designs.png";
+import importDesignButtonPNG from "./import-button.png";
+import importDesignPanelPNG from "./import-designs-panel.png";
+import renderedDesignPNG from "./rendered-design.png";
+import designPannelOpener from "./designs-panel-opener.png";
+import designerDockPNG from "./designer-dock.png";
+import catalogGIF from "./catalog.gif";
+import publishToCatalogGIF from "./publish-to-catalog.gif";
+import importGIF from "./import-design-gif.gif";
+import getStartedWithDesignerGIF from "./start-from-scratch.gif";
+
 <BlogWrapper>
 
 ### What is the Kanvas Catalog?
@@ -41,8 +52,42 @@ import { Link } from "gatsby";
 - Collaboration: Share your own designs and contribute to the growing collection of patterns.
 
 ### How can you contribute to the Catalog?
- 
+
+You can contribute to the Catalog by creating high-quality starter templates and publishing designs for the community to use in various ways. You can also climb the leaderboard by having your designs cloned, downloaded, or viewed the most. Follow the instructions below to get started with your designs.
+
+#### Create or Import a Design
+Begin by creating a new design from scratch, using existing design patterns and templates from catalog:
+
+**From Scratch**:
+
+- Open the Designs panel, Select and arrange components from the Designer Dock on the Kanvas, and customize with connections, labels, and properties.
+  <img src={getStartedWithDesignerGIF} />
+
+**From a Template**:
+
+- Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
+  <img src={catalogGIF} />
+
+**Import a Design**: 
 
 
+-   Access the Kanvas Designer and select the "Import" button in the left Designs panel. Import your own designs from local filesystem or from a remote URL directly into the Catalog. Upload a file or provide a URL for Docker Compose, Helm Charts, Meshery Designs or Kubernetes Manifests. Choose to either import as new or merge into current design that you have open in Kanvas.
+    <img src={importGIF} />
+
+Kanvas will convert these into a usable design based on their configurations.
+   
+<img src={renderedDesignPNG} />
+
+
+#### Publish a Design
+Make your designs accessible to others by publishing them in the Catalog:
+
+- In the designs panel, locate your design and hover over it to access quick actions. Select the info button (marked with an "i") and add any necessary details for the review process, such as relevant technologies, descriptions, and considerations and click Publish button. Once approved by the Maintainers, your design becomes available to the broader community in Kanvas catalog.
+<img src={publishToCatalogGIF} />
+
+
+#### Share your designs
+Share your designs with your team members and effortlessly collaborate on designing and operating multi-cloud and Kubernetes native infrastrcutre with a seamless, built-in review mechanism.
 
 </BlogWrapper>
+
