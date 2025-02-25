@@ -111,6 +111,14 @@ const componentsData = [
     url: "/projects/sistent/components/pagination",
     src: "/pagination",
   },
+  {
+    id: 15,
+    name: "Avatar",
+    description:
+        "Avatar component represents a user profile with an image or initials, commonly used in user interfaces for identification.",
+    url: "/projects/sistent/components/avatar",
+    src: "/avatar",
+  },
 ];
 
 module.exports = { componentsData };
