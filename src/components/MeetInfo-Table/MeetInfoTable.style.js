@@ -7,7 +7,7 @@ export const TableWrapper = styled.div`
         margin-bottom: 1rem;
     }
 	table {
-		border-spacing: 0;
+		border-spacing: 0.2;
 		width: 100%;
 		margin-bottom: 2rem;
 	
@@ -51,10 +51,6 @@ export const TableWrapper = styled.div`
 				td:first-child {
 					font-style: italic;
 				}
-			}
-			/* Highlight Community Calendar */
-			:nth-child(4) {
-				background: ${props => props.theme.greyFiveToBlueFive};
 			}
 			&:hover {
 				background-color: ${props => props.theme.grey323232ToGreenF3FFFD};
