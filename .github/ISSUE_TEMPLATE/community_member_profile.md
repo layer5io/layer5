@@ -17,7 +17,7 @@ Let's recognize this individual as a contributor and community member by creatin
 - Twitter:          <!-- username only -->
 - LinkedIn:         <!-- <profilename> only https://www.linkedin.com/in/<profilename> -->
 - Layer5 Cloud:     <!-- <user ID> only UUID https://cloud.layer5.io/user/<uuid> -->
-- Profil Picture:   <!-- hyperlink to their picture -->
+- Profile Picture:   <!-- hyperlink to their picture -->
 
 A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 
