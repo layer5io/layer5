@@ -1,123 +1,123 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
+import { SistentThemeProvider, Tabs, Tab } from "@layer5/sistent";
+import { SistentLayout } from "../../sistent-layout";
+import { CodeBlock } from "../button/code-block";
+import TabButton from "../../../../../reusecore/Button";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-const TabContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
+const codes = [
+  `
+    <Tabs value={0} onChange={(event, newValue) => handleChange(newValue)}>
+      <Tab label="Tab One" />
+      <Tab label="Tab Two" />
+      <Tab label="Tab Three" />
+    </Tabs>
+  `,
+  `
+    <Tabs variant="fullWidth" value={0}>
+      <Tab label="Full Width Tab" />
+    </Tabs>
+    <Tabs variant="scrollable" scrollButtons value={0}>
+      <Tab label="Scrollable Tab" />
+    </Tabs>
+  `,
+  `
+    <Tabs value={0}>
+      <Tab icon={<Icon name="home" />} label="Home" />
+      <Tab icon={<Icon name="settings" />} label="Settings" />
+    </Tabs>
+  `
+];
 
-const TabHeader = styled.div`
-  display: flex;
-  flex-wrap: ${props => props.$scrollable ? "nowrap" : "wrap"};
-  overflow-x: ${props => props.$scrollable ? "auto" : "visible"};
-  border-bottom: 1px solid ${props => props.theme.tabBorderColor || "#e0e0e0"};
-`;
+const TabCode = () => {
+  const { isDark } = useStyledDarkMode();
+  const location = useLocation();
+  const [tabIndex, setTabIndex] = useState(0);
 
-const TabButton = styled.button`
-  padding: 10px 16px;
-  background: transparent;
-  border: none;
-  cursor: ${props => props.$disabled ? "not-allowed" : "pointer"};
-  opacity: ${props => props.$disabled ? 0.5 : 1};
-  color: ${props => props.$active ? props.theme.tabActiveColor || "#0097A7" : props.theme.tabColor || "#757575"};
-  font-weight: ${props => props.$active ? "600" : "400"};
-  border-bottom: 2px solid ${props => props.$active ? (props.theme.tabActiveColor || "#0097A7") : "transparent"};
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  &:hover {
-    color: ${props => !props.$disabled && (props.theme.tabHoverColor || "#00838F")};
-    background-color: ${props => !props.$disabled && (props.theme.tabHoverBg || "#f5f5f5")};
-  }
-  
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px ${props => props.theme.tabFocusColor || "rgba(0, 151, 167, 0.4)"};
-  }
-`;
-
-const TabContent = styled.div`
-  padding: 16px;
-  display: ${props => props.$active ? "block" : "none"};
-`;
-
-export const Tabs = ({ 
-  children, 
-  defaultIndex = 0, 
-  onChange,
-  scrollable = false
-}) => {
-  const [activeIndex, setActiveIndex] = useState(defaultIndex);
-  
-  const handleTabClick = (index) => {
-    if (children[index].props.disabled) return;
-    
-    setActiveIndex(index);
-    if (onChange) onChange(index);
+  const handleTabChange = (event, newValue) => {
+    setTabIndex(newValue);
   };
 
-  useEffect(() => {
-    setActiveIndex(defaultIndex);
-  }, [defaultIndex]);
-
   return (
-    <TabContainer>
-      <TabHeader $scrollable={scrollable}>
-        {React.Children.map(children, (child, index) => {
-          if (!React.isValidElement(child)) return null;
+    <SistentLayout title="Tabs">
+      <div className="content">
+        <a id="Identity">
+          <h2>Tabs</h2>
+        </a>
+        <p>
+          The Tabs component allows users to navigate between different views in the same context.
+        </p>
+        <div className="filterBtns">
+          <TabButton
+            className={location.pathname === "/projects/sistent/components/tabs" ? "active" : ""}
+            onClick={() => navigate("/projects/sistent/components/tabs")}
+            title="Overview"
+          />
+          <TabButton
+            className={location.pathname === "/projects/sistent/components/tabs/guidance" ? "active" : ""}
+            onClick={() => navigate("/projects/sistent/components/tabs/guidance")}
+            title="Guidance"
+          />
+          <TabButton
+            className={location.pathname === "/projects/sistent/components/tabs/code" ? "active" : ""}
+            onClick={() => navigate("/projects/sistent/components/tabs/code")}
+            title="Code"
+          />
+        </div>
+        <div className="main-content">
+          <a id="Basic Tabs">
+            <h3>Basic Tabs</h3>
+          </a>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Tabs value={tabIndex} onChange={handleTabChange}>
+                  <Tab label="Tab One" />
+                  <Tab label="Tab Two" />
+                  <Tab label="Tab Three" />
+                </Tabs>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="basic-tabs" code={codes[0]} />
+          </div>
+
+          <a id="Variant Tabs">
+            <h3>Tabs Variants</h3>
+          </a>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Tabs variant="fullWidth" value={0}>
+                  <Tab label="Full Width Tab" />
+                </Tabs>
+                <Tabs variant="scrollable" scrollButtons value={0}>
+                  <Tab label="Scrollable Tab" />
+                </Tabs>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="variant-tabs" code={codes[1]} />
+          </div>
           
-          const { label, disabled } = child.props;
-          
-          return (
-            <TabButton
-              type="button"
-              onClick={() => handleTabClick(index)}
-              $active={index === activeIndex}
-              $disabled={disabled}
-              disabled={disabled}
-              aria-selected={index === activeIndex}
-              role="tab"
-              tabIndex={index === activeIndex ? 0 : -1}
-            >
-              {label}
-            </TabButton>
-          );
-        })}
-      </TabHeader>
-      
-      {React.Children.map(children, (child, index) => {
-        if (!React.isValidElement(child)) return null;
-        
-        return (
-          <TabContent $active={index === activeIndex} role="tabpanel">
-            {child.props.children}
-          </TabContent>
-        );
-      })}
-    </TabContainer>
+          <a id="Tabs with Icons">
+            <h3>Tabs with Icons</h3>
+          </a>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Tabs value={0}>
+                  <Tab icon={<Icon name="home" />} label="Home" />
+                  <Tab icon={<Icon name="settings" />} label="Settings" />
+                </Tabs>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="tabs-with-icons" code={codes[2]} />
+          </div>
+        </div>
+      </div>
+    </SistentLayout>
   );
 };
 
-Tabs.propTypes = {
-  children: PropTypes.node.isRequired,
-  defaultIndex: PropTypes.number,
-  onChange: PropTypes.func,
-  scrollable: PropTypes.bool
-};
-
-export const Tab = ({ label, children, disabled }) => {
-  return null; 
-};
-
-Tab.propTypes = {
-  label: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool
-};
-
-export default { Tabs, Tab };
+export default TabCode;
