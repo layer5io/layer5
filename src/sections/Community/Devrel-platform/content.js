@@ -246,9 +246,9 @@ const DevrelContent = () => {
           <Col $md={6} className="devrel-detail">
             <h2 className="heading">Visual, Collaborative Teaching Environment</h2>
             <ul className="caption">
-              <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground</li>
-              <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively</li>
-              <li><b>Multi-Player Teaching:</b> Conduct live demonstrations and workshops where participants can follow along in real-time</li>
+              <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground.</li>
+              <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively.</li>
+              <li><b>Multi-Player Teaching:</b> Conduct live demonstrations and workshops where participants can follow along in real-time.</li>
             </ul>
           </Col>
         </Row>
@@ -258,10 +258,10 @@ const DevrelContent = () => {
             Content Creation and Publishing
             </h2>
             <ul className="caption">
-              <li><b>Design Cloud Native Patterns:</b> Create and publish custom cloud native design patterns featuring any CNCF project</li>
-              <li><b>Curate Reference Architectures:</b> Showcase your expertise by publishing best practices and verified configurations</li>
-              <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice</li>
-              <li><b>Design Challenges:</b>Create hands-on labs using Meshery Playground that engage your audience through gamification</li>
+              <li><b>Design Cloud Native Patterns:</b> Create and publish cloud native designs featuring any CNCF project.</li>
+              <li><b>Curate Reference Architectures:</b> Showcase your cloud native expertise by publishing best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
+              <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice.</li>
+              <li><b>Design Challenges/Tutorials:</b> Create interactive labs using Meshery Playground with step-by-step guides and live demonstrations on diverse cloud native concepts.</li>
             </ul>
           </Col>
           <Col $md={6} className="devrel-image">
@@ -277,9 +277,9 @@ const DevrelContent = () => {
           <Col $md={6} className="devrel-detail">
             <h2 className="heading">Build Your Professional Brand</h2>
             <ul className="caption">
-              <li><b>Public User Profile:</b>Showcase your cloud native design patterns, contributions, and expertise</li>
-              <li><b>Content Attribution:</b> All your published designs, learning paths, and challenges are linked to your profile</li>
-              <li><b>Content Metrics:</b> Track popularity and usage of your published content</li>
+              <li><b>Public User Profile:</b>  All your published designs and reference architectures are linked to your profile, with real-time stats to track their reach and impact.</li>
+              <li><b>Themed Organization:</b> Create a personalized dashboard with your organization's colors and logo, and invite members.</li>
+              <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
             </ul>
           </Col>
         </Row>
@@ -289,9 +289,9 @@ const DevrelContent = () => {
             Recognition Program
             </h2>
             <ul className="caption">
-              <li><b>Achievement Badges:</b>Earn badges for milestones achieved within the platform</li>
-              <li><b>Leaderboard Visibility:</b> Stand out in the community by ranking on challenge leaderboards</li>
-              <li><b>Content Popularity:</b>Gain recognition when your designs become most used and referenced</li>
+              <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+              <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
+              <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
             </ul>
             {/* <Button
               $primary
