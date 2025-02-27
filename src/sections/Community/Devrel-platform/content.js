@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../../reusecore/Layout";
-// import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-import CatalogImage from "./images/catalog_mac.png";
+// import CatalogImage from "./images/catalog_mac.png";
 import DashboardImg from "./images/cncf_hub_dashboard_mac.png";
 import PictureSlider from "./picture-slider";
-import Button from "../../../reusecore/Button";
+// import Button from "../../../reusecore/Button";
 
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
@@ -57,10 +56,6 @@ const DevrelContentWrapper = styled.div`
     padding-bottom: 3rem;
     align-items: center;
     justify-content: space-around;
-    // @media (min-width: 769px) {
-    // .devrel-image {
-    //     max-width: 40% !important;
-    //   }
     }
     @media (max-width: 768px) {
       padding: 2rem 0;
@@ -71,7 +66,6 @@ const DevrelContentWrapper = styled.div`
     .devrel-detail {
       display: flex;
       flex-direction: column;
-      // justify-content: space-around;
       .heading {
         font-size: 3.125rem;
         line-height: 3.813rem;
@@ -98,7 +92,7 @@ const DevrelContentWrapper = styled.div`
         font-weight: 400;
         margin-top: 0;
         padding-left: 15px;
-        // font-size: 1.563rem;
+        font-size: 1.28rem;
         line-height: 2rem;
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -139,8 +133,6 @@ const DevrelContentWrapper = styled.div`
 
     .recognition-content {
       width: 100%;
-      // display: grid;
-      // grid-template-columns: minmax(18.75rem, 40%) 1fr;
       min-height: 28.25rem;
       @media (max-width: 767px) {
           width: 100%;
@@ -189,9 +181,7 @@ const DevrelContentWrapper = styled.div`
     }
     @media (max-width: 62rem) {
       .recognition-content {
-        // grid-template-columns: 1fr;
         .badges-section {
-          // min-height: 18.75rem;
           padding: 1.25rem;
           .badge-stack {
             height: 16.25rem;
