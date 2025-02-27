@@ -119,6 +119,14 @@ const componentsData = [
     url: "/projects/sistent/components/avatar",
     src: "/avatar",
   },
+  {
+    id: 16,
+    name: "Tabs",
+    description:
+        "Tabs component allows users to switch between multiple views or sections within the same page, improving content organization and navigation.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  },
 ];
 
 module.exports = { componentsData };
