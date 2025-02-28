@@ -72,7 +72,6 @@ const JourneySectionWrapper = styled.div`
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, ${(props) => props.theme.secondaryColor} 0%, ${(props) => props.theme.primaryColor} 100%);
-        //   transform: translateY(-50%);
         transform: translateY(60%);
       z-index: 1;
       
@@ -215,7 +214,7 @@ const JourneySection = () => {
             $external={true}
             title="Explore Layer5 Cloud"
             alt="Explore cloud"
-            $url="https://kanvas.new/"
+            $url="https://cloud.layer5.io/"
           />
           <Button
             $primary
@@ -228,7 +227,7 @@ const JourneySection = () => {
             aria-label="Book a demo"
             $primary
             $external={true}
-            title="Book a demo"
+            title="Talk to team"
             alt="Book a demo"
             $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
           />
