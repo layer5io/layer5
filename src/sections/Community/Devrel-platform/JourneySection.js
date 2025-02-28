@@ -116,12 +116,6 @@ const JourneySectionWrapper = styled.div`
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  //  box-shadow: 0 10px 20px ${props => props.theme.projectShadowsize} ${props => props.theme.whiteToGreyE6E6E6};
-    
-    &:hover {
-    //  transform: translateY(-10px);
-     // box-shadow: 0 15px 30px ${props => props.theme.projectShadowsize} ${props => props.theme.whiteToGreyE6E6E6};
-    }
     
     .step-number {
       background-color: ${(props) => props.theme.tertiaryColor};
