@@ -6,7 +6,7 @@ import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
 import DashboardImg from "./images/cncf_hub_dashboard_mac.png";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
-
+import JourneySection from "./JourneySection";
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -235,98 +235,96 @@ const DevrelContent = () => {
 
 
   return (
-    <DevrelContentWrapper>
-      <Container className="devrel-container">
-        <Row className="devrel">
-          <Col $md={6} className="devrel-image">
-            <div className="image-wrapper">
-              <img src={IntegrationDesigner} />
-            </div>
-          </Col>
-          <Col $md={6} className="devrel-detail">
-            <h2 className="heading">Visual, Collaborative Teaching Environment</h2>
-            <ul className="caption">
-              <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground.</li>
-              <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively.</li>
-              <li><b>Multi-Player Teaching:</b> Conduct live demonstrations and workshops where participants can follow along in real-time.</li>
-            </ul>
-          </Col>
-        </Row>
-        <Row className="devrel">
-          <Col $md={6} className="devrel-detail">
-            <h2 className="heading">
-            Content Creation and Publishing
-            </h2>
-            <ul className="caption">
-              <li><b>Design Cloud Native Patterns:</b> Create and publish cloud native designs featuring any CNCF project.</li>
-              <li><b>Curate Reference Architectures:</b> Showcase your cloud native expertise by publishing best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
-              <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice.</li>
-              <li><b>Design Challenges/Tutorials:</b> Create interactive labs using Meshery Playground with step-by-step guides and live demonstrations on diverse cloud native concepts.</li>
-            </ul>
-          </Col>
-          <Col $md={6} className="devrel-image">
-            <PictureSlider />
-          </Col>
-        </Row>
-        <Row className="devrel">
-          <Col $md={6} className="devrel-image">
-            <div className="image-wrapper">
-              <img src={DashboardImg} />
-            </div>
-          </Col>
-          <Col $md={6} className="devrel-detail">
-            <h2 className="heading">Build Your Professional Brand</h2>
-            <ul className="caption">
-              <li><b>Public User Profile:</b>  All your published designs and reference architectures are linked to your profile, with real-time stats to track their reach and impact.</li>
-              <li><b>Themed Organization:</b> Create a personalized dashboard with your organization's colors and logo, and invite members.</li>
-              <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
-            </ul>
-          </Col>
-        </Row>
-        <Row className="devrel">
-          <Col $md={6} className="devrel-detail recognition-section">
-            <h2 className="heading">
-            Recognition Program
-            </h2>
-            <ul className="caption">
-              <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
-              <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
-              <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
-            </ul>
-            {/* <Button
-              $primary
-              title="Explore Badges Now"
-              $url="https://badges.layer5.io"
-            /> */}
-          </Col>
+    <>
+      <DevrelContentWrapper>
+        <Container className="devrel-container">
+          <Row className="devrel">
+            <Col $md={6} className="devrel-image">
+              <div className="image-wrapper">
+                <img src={IntegrationDesigner} />
+              </div>
+            </Col>
+            <Col $md={6} className="devrel-detail">
+              <h2 className="heading">Visual, Collaborative Teaching Environment</h2>
+              <ul className="caption">
+                <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground.</li>
+                <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively.</li>
+                <li><b>Multi-Player Teaching:</b> Conduct live demonstrations and workshops where participants can follow along in real-time.</li>
+              </ul>
+            </Col>
+          </Row>
+          <Row className="devrel">
+            <Col $md={6} className="devrel-detail">
+              <h2 className="heading">
+              Content Creation and Publishing
+              </h2>
+              <ul className="caption">
+                <li><b>Design Cloud Native Patterns:</b> Create and publish cloud native designs featuring any CNCF project.</li>
+                <li><b>Curate Reference Architectures:</b> Showcase your cloud native expertise by publishing best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
+                <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice.</li>
+                <li><b>Design Challenges/Tutorials:</b> Create interactive labs using Meshery Playground with step-by-step guides and live demonstrations on diverse cloud native concepts.</li>
+              </ul>
+            </Col>
+            <Col $md={6} className="devrel-image">
+              <PictureSlider />
+            </Col>
+          </Row>
+          <Row className="devrel">
+            <Col $md={6} className="devrel-image">
+              <div className="image-wrapper">
+                <img src={DashboardImg} />
+              </div>
+            </Col>
+            <Col $md={6} className="devrel-detail">
+              <h2 className="heading">Build Your Professional Brand</h2>
+              <ul className="caption">
+                <li><b>Public User Profile:</b>  All your published designs and reference architectures are linked to your profile, with real-time stats to track their reach and impact.</li>
+                <li><b>Themed Organization:</b> Create a personalized dashboard with your organization's colors and logo, and invite members.</li>
+                <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
+              </ul>
+            </Col>
+          </Row>
+          <Row className="devrel">
+            <Col $md={6} className="devrel-detail recognition-section">
+              <h2 className="heading">
+              Recognition Program
+              </h2>
+              <ul className="caption">
+                <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+                <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
+                <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
+              </ul>
+            </Col>
 
-          <div className="recognition-content">
-            <div className="badges-section">
-              <div className="badge-stack">
-                <div className="badge-item">
-                  <img
-                    src="https://badges.layer5.io/assets/badges/docker-captain/docker-captain.png"
-                    alt="Docker Captain Badge"
-                  />
-                </div>
-                <div className="badge-item">
-                  <img
-                    src="https://badges.layer5.io/assets/badges/cncf-ambassador/cncf-ambassador.png"
-                    alt="CNCF Ambassador Badge"
-                  />
-                </div>
-                <div className="badge-item">
-                  <img
-                    src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                    alt="Meshery Badge"
-                  />
+            <div className="recognition-content">
+              <div className="badges-section">
+                <div className="badge-stack">
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/docker-captain/docker-captain.png"
+                      alt="Docker Captain Badge"
+                    />
+                  </div>
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/cncf-ambassador/cncf-ambassador.png"
+                      alt="CNCF Ambassador Badge"
+                    />
+                  </div>
+                  <div className="badge-item">
+                    <img
+                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
+                      alt="Meshery Badge"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Row>
-      </Container>
-    </DevrelContentWrapper>
+          </Row>
+        </Container>
+      </DevrelContentWrapper>
+      <JourneySection />
+    </>
   );
 };
 
