@@ -19,6 +19,11 @@ const SistentHome = () => {
           to="/projects/sistent/about"
         />
         <HandbookCard
+          title="Icons"
+          description="A comprehensive collection of icons for Layer5 projects. Designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience."
+          to="/projects/sistent/icons"
+        />
+        <HandbookCard
           title="Identity"
           description="Harmonizing Layer5's visual language. Precision in colors, balanced spacing, and refined typography create a unified, appealing design, enhancing user experience across projects."
           to="/projects/sistent/identity/color"

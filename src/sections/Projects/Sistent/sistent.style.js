@@ -854,6 +854,159 @@ const SistentWrapper = styled.div`
       overflow: auto;
     }
   }
+
+  /* Icon Card Styling */
+  .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px; /* Slightly larger border radius for a modern look */
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%; /* Full width for better responsiveness */
+    text-align: center;
+    overflow: hidden;
+    box-shadow: var(--card-shadow); /* Use a variable for shadow */
+  }
+
+  .icon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover); /* Use a variable for hover shadow */
+  }
+
+  .icon-container {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem; /* Spacing between icon and text */
+  }
+
+  .icon-name {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-wrap: break-word; /* Ensure text wraps within the container */
+    text-align: center; /* Center-align the text */
+    line-height: 1.4; /* Better spacing for readability */
+    max-width: 100%; /* Ensure text does not overflow its container */
+    display: block; /* Ensure proper block-level text behavior */
+    padding: 0 0.5rem; /* Add slight padding for better aesthetics */
+  }
+
+  /* Icon Grid Layout */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Adjusted for wider cards */
+    gap: 1.5rem; /* Increased gap for better spacing */
+    margin-top: 1.5rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .icon-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller cards for tablets */
+      gap: 1rem; /* Reduced gap for smaller screens */
+    }
+
+    .icon-card {
+      padding: 0.75rem; /* Slightly smaller padding */
+    }
+
+  .icon-container {
+    width: 48px; /* Smaller icons */
+    height: 48px;
+  }
+
+  .icon-name {
+    font-size: 0.75rem; /* Smaller font size */
+  }
+}
+
+  @media (max-width: 480px) {
+    .icon-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller cards for mobile */
+      gap: 0.75rem; /* Further reduced gap */
+    }
+
+    .icon-card {
+      padding: 0.5rem; /* Minimal padding */
+    }
+
+    .icon-container {
+      width: 40px; /* Even smaller icons */
+      height: 40px;
+    }
+
+    .icon-name {
+      font-size: 0.7rem; /* Smallest font size */
+    }
+  }
+
+  /* Search Input Styling */
+  .icon-search-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--input-border-color); /* Use a variable for border color */
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    box-shadow: var(--input-shadow); /* Use a variable for input shadow */
+  }
+
+  .icon-search-input:focus {
+    border-color: var(--input-focus-border-color); /* Use a variable for focus border color */
+    box-shadow: var(--input-shadow-focus); /* Use a variable for focus shadow */
+  }
+
+  /* No Icons Found Message */
+  .no-icons-found {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 2rem;
+    font-size: 1rem;
+    opacity: 0.8; /* Slightly faded for a softer look */
+  }
+
+  /* Theme Variables */
+  :root {
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --text-color: #000000;
+    --input-bg: #ffffff;
+    --input-border-color: #e0e0e0; /* Light mode input border color */
+    --input-focus-border-color: #007bff; /* Light mode input focus border color */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light mode card shadow */
+    --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15); /* Light mode hover shadow */
+    --input-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light mode input shadow */
+    --input-shadow-focus: 0 2px 8px rgba(0, 123, 255, 0.2); /* Light mode input focus shadow */
+  }
+
+  [data-theme="dark"] {
+    --card-bg: #2c2c2c;
+    --border-color: #444444;
+    --text-color: #ffffff;
+    --input-bg: #333333;
+    --input-border-color: #555555; /* Dark mode input border color */
+    --input-focus-border-color: #007bff; /* Dark mode input focus border color */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Dark mode card shadow (bluer) */
+    --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4); /* Dark mode hover shadow */
+    --input-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Dark mode input shadow */
+    --input-shadow-focus: 0 2px 8px rgba(0, 123, 255, 0.4); /* Dark mode input focus shadow */
+  }
 `;
 
 export default SistentWrapper;

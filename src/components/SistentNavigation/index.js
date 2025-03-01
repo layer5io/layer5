@@ -21,6 +21,7 @@ const TOC = () => {
     location.pathname.includes("/components")
   );
 
+
   // Sorting the array of components by name
   const sortedComponentArray = [...componentsData].sort((a, b) =>
     a.name.localeCompare(b.name)
@@ -60,6 +61,15 @@ const TOC = () => {
               activeClassName="active"
             >
               About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/projects/sistent/icons"
+              className="toc-sub-heading toc-sub-inline"
+              activeClassName="active"
+            >
+              Icons
             </Link>
           </li>
           <li>
