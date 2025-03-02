@@ -1,7 +1,7 @@
 import React from "react";
 
-import SEO from "../../components/seo";
-import DevrelSolutionsPage from "../../sections/Community/Devrel-platform";
+import SEO from "../../../components/seo";
+import DevrelSolutionsPage from "../../../sections/Community/Devrel-platform";
 
 const DevrelSolutions = () => {
   return (

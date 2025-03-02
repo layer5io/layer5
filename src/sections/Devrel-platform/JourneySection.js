@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container, Row, Col } from "../../reusecore/Layout";
 import { FaPencilRuler } from "@react-icons/all-files/fa/FaPencilRuler";
 import { FaChartLine } from "@react-icons/all-files/fa/FaChartLine";
 import { FaTrophy } from "@react-icons/all-files/fa/FaTrophy";
-import Button from "../../../reusecore/Button";
+import Button from "../../reusecore/Button";
 
 const JourneySectionWrapper = styled.div`
     .action-buttons{

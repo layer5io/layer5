@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col, Container } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
+import { Row, Col, Container } from "../../reusecore/Layout";
+import Button from "../../reusecore/Button";
 import IntegrationsImage from "./images/integration-image-colorMode.svg";
 const DevrelHeaderWrapper = styled.div`
   .devrel-platform.header {
