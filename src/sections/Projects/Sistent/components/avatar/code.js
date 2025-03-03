@@ -73,7 +73,7 @@ const AvatarComponent = () => {
                     {title === "Sized Avatars" && (
                       <>
                         <Avatar size="small" src="https://via.placeholder.com/50" />
-                        <Avatar size="medium" src="https://via.placeholder.com/75" sx={{ mx: 2 }} />
+                        <Avatar size="medium" src="https://via.placeholder.com/75" />
                         <Avatar size="large" src="https://via.placeholder.com/100" />
                       </>
                     )}
