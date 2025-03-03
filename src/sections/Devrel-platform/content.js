@@ -97,6 +97,9 @@ const DevrelContentWrapper = styled.div`
         color: ${(props) => props.theme.tertiaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         opacity: 0.8;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         li {
           list-style-image: url(https://docs.meshery.io/assets/img/meshery/meshery-logo-light.svg);
         }
