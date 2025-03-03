@@ -689,7 +689,7 @@ const WebBasedForm = () => {
             <Button $primary className="btn-one" type="button" title="Community Handbook" $url="https://layer5.io/community/handbook" />
             <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="https://layer5.io/community/newcomers" />
           </div>
-          <p>We are pleased to have you as a new member! You have been added to community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
+          <p>We are pleased to have you as a new member! You have been added to the community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
         </div>
       </Container>
     );
