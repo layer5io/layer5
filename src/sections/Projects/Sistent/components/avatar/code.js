@@ -9,27 +9,27 @@ const avatarExamples = [
   {
     title: "Image Avatar",
     description: "Display user profile images",
-    code: `<Avatar src="/path/to/user-image.jpg" alt="User Name" />`
+    code: "<Avatar src=\"/path/to/user-image.jpg\" alt=\"User Name\" />"
   },
   {
     title: "Initials Avatar",
     description: "Use initials when image is unavailable",
-    code: `<Avatar>JD</Avatar>`
+    code: "<Avatar>JD</Avatar>"
   },
   {
     title: "Icon Avatar",
     description: "Use icons for generic representation",
-    code: `<Avatar><UserIcon /></Avatar>`
+    code: "<Avatar><UserIcon /></Avatar>"
   },
   {
     title: "Sized Avatars",
     description: "Adjust avatar sizes for different contexts",
-    code: `<Avatar size="small" />\n<Avatar size="medium" />\n<Avatar size="large" />`
+    code: "<Avatar size=\"small\" />\n<Avatar size=\"medium\" />\n<Avatar size=\"large\" />"
   },
   {
     title: "Custom Styling",
     description: "Apply custom styles and themes",
-    code: `<Avatar src="/image.jpg" sx={{ border: '2px solid primary.main', boxShadow: 2 }} />`
+    code: "<Avatar src=\"/image.jpg\" sx={{ border: '2px solid primary.main', boxShadow: 2 }} />"
   }
 ];
 
