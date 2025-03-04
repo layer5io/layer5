@@ -254,7 +254,7 @@ const DevrelContent = () => {
               <ul className="caption">
                 <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground.</li>
                 <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively.</li>
-                <li><b>Multi-Player Teaching:</b> Conduct live demonstrations and workshops where participants can follow along in real-time.</li>
+                <li><b>Multi-Player Teaching:</b> Conduct live demos and training sessions where participants can follow along in real-time, whether you're presenting at a conference, or leading a workshop.</li>
               </ul>
             </Col>
           </Row>
@@ -265,7 +265,7 @@ const DevrelContent = () => {
               </h2>
               <ul className="caption">
                 <li><b>Design Cloud Native Patterns:</b> Create and publish cloud native designs featuring any CNCF project.</li>
-                <li><b>Curate Reference Architectures:</b> Showcase your cloud native expertise by publishing best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
+                <li><b>Curate Reference Architectures:</b> As a Solutions Engineer or Developer Relations professional, publish best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
                 <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice.</li>
                 <li><b>Design Challenges/Tutorials:</b> Create interactive labs using Meshery Playground with step-by-step guides and live demonstrations on diverse cloud native concepts.</li>
               </ul>
