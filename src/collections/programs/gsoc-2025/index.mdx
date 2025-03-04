@@ -42,7 +42,6 @@ import playground from "./meshery-playground-alt-4.webp";
 <br />
 
 #### Multi-player Collaboration: Resilient Websockets and GraphQL Subscriptions
-
 - **Description:** Meshery's current implementation of websockets and GraphQL subscriptions is in need of refactoring for increased reliability and resiliency. This client and server-side refactoring includes use of webworkers and separation of concerns for the client-side, and the use of a message broker for the server-side. The project has implications on Meshery's implementation of multi-player collaboration functionality.
 - **Expected outcome:** 
   - Resilient websockets and GraphQL subscriptions for Meshery, enabling multi-player collaboration functionality.
@@ -55,11 +54,7 @@ import playground from "./meshery-playground-alt-4.webp";
 #### Support for Azure in Meshery
 
 - **Description:** Enhance Meshery's existing orchestration capabilities to include support for Azure. The <a href="https://azure.github.io/azure-service-operator">Azure Service Operator</a>(ASO) provides a wide variety of Azure Resources via Kubernetes custom resources as first-class <a href="https://docs.meshery.io/concepts/logical/models">Meshery Models</a>. This involves enabling Meshery to manage and orchestrate Azure services and their resources, similar to how it handles other Kubernetes resources. The project will also include generating support for Azure services and their resources in Meshery's Model generator.
-- **Expected outcome:** 
-  - Meshery will be able to orchestrate and manage all Azure services supported by ASO. This includes the ability to discover, configure, deploy, and operate the lifecycle of Azure services through Meshery. The Meshery Model generator will be updated to automatically generate models for Azure services, simplifying their integration and management within Meshery. This will be an officially supported feature of Meshery.
-- **Recommended Skills:** Golang, Kubernetes, Azure, well-written and well-spoken English
-- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:mia.grenell2337@gmail.com">Mia Grenell</Link>
-- **Expected project size:** large (175 hours)
+- **Expected outcome:**
 - **Difficulty:** Hard
 - **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/11244
 
@@ -73,6 +68,20 @@ import playground from "./meshery-playground-alt-4.webp";
 - **Expected project size:** large (175 hours)
 - **Difficulty:** Hard
 - **Upstream Issue (URL):**  https://github.com/meshery/meshery/issues/13555
+
+#### Kubectl Plugin for MeshSync Snapshot
+
+- **Description:** Develop a kubectl plugin via krew that allows users to temporarily deploy <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>, capture the state of their cluster, and then import the snapshot into Meshery for offline infrastructure management. The plugin will serve as a lightweight alternative to a full Meshery deployment while still enabling Meshery Server to understand the state and configuration of Kubernetes cluster, simplyfying common networking challenges between the cluster and Meshery Server.
+- **Expected outcome:** 
+  - A functional kubectl plugin that facilitates capturing a MeshSync snapshot of Kubernetes cluster resources.
+  - Improved networking efficiency, reducing the complexity of connecting Kubernetes clusters with Meshery Server.
+  - Support for selective snapshot capture, including single resources, namespaces, or entire cluster visualizations.
+  - Read-only access mode to generate snapshots without requiring full Meshery deployment.
+- **Recommended Skills:** Golang, Krew, Kubernetes, well-written and well-spoken English.
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** medium (175 hours)
+- **Difficulty:** Intermediate
+- **Upstream Issue (URL):**  https://github.com/meshery/meshery/issues/11869
 
 ### Cloud Native Playground
 
