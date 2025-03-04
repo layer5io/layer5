@@ -32,6 +32,11 @@ const Data = {
           path: "/solutions/gitops",
           sepLine: true,
         },
+        {
+          name: "Kubernetes & Cloud Native DevRel",
+          path: "/solutions/devrel-platform-for-kubernetes-and-cloudnative-content",
+          sepLine: true,
+        },
       ],
       actionItems: [
         {
