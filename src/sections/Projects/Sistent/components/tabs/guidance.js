@@ -2,213 +2,101 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { Tabs, Tab, SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-const TabsGuidance = () => {
+const TabGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
   return (
-    <SistentLayout title="Tabs">
+    <SistentLayout title="Tab">
       <div className="content">
         <a id="Identity">
-          <h2>Tabs</h2>
+          <h2>Tab</h2>
         </a>
         <p>
-          Tabs are UI components that organize content into separate views which
-          users can navigate between without changing pages, making complex
-          interfaces more manageable and focused.
+          Tabs allow users to switch between different views or sections within the same page without navigating away.
         </p>
         <div className="filterBtns">
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/tabs"
+              location.pathname === "/projects/sistent/components/tab"
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/components/tabs")}
+            onClick={() => navigate("/projects/sistent/components/tab")}
             title="Overview"
           />
           <TabButton
             className={
-              location.pathname ===
-              "/projects/sistent/components/tabs/guidance"
+              location.pathname === "/projects/sistent/components/tab/guidance"
                 ? "active"
                 : ""
             }
-            onClick={() =>
-              navigate("/projects/sistent/components/tabs/guidance")
-            }
+            onClick={() => navigate("/projects/sistent/components/tab/guidance")}
             title="Guidance"
           />
           <TabButton
             className={
-              location.pathname === "/projects/sistent/components/tabs/code"
+              location.pathname === "/projects/sistent/components/tab/code"
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/components/tabs/code")}
+            onClick={() => navigate("/projects/sistent/components/tab/code")}
             title="Code"
           />
         </div>
         <div className="main-content">
-          <p>
-            To implement tabs effectively in Layer5 projects, consider the following
-            guidance on when and how to use them, as well as best practices for
-            creating a cohesive user experience.
-          </p>
-          <a id="When to Use">
-            <h2>When to Use</h2>
+          <a id="Function">
+            <h2>Function</h2>
           </a>
           <p>
-            Understanding when tabs are appropriate helps create interfaces that
-            align with user expectations and optimize information architecture.
+            Tabs provide a way to organize and structure content efficiently, making it easier for users to navigate without reloading the page.
           </p>
-          <h3>Content Organization</h3>
+          <h3>Primary Tab</h3>
           <p>
-            Use tabs when you need to organize related but distinct content into
-            separate views. Tabs are ideal when users need to switch between different
-            aspects of the same topic or feature without losing context.
+            The primary tab is the default selected tab that provides immediate access to the main content of a section.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Tabs defaultIndex={0}>
-                <Tab label="Connection Details">
-                  <p>Shows details of the selected connection</p>
-                </Tab>
-                <Tab label="Performance Metrics">
-                  <p>Displays performance data for the connection</p>
-                </Tab>
-                <Tab label="Configuration">
-                  <p>Provides configuration options</p>
-                </Tab>
-              </Tabs>
+              <TabButton title="Primary Tab" className="active" />
             </SistentThemeProvider>
           </Row>
-          <h3>Space Efficiency</h3>
+          <h3>Secondary Tab</h3>
           <p>
-            Use tabs when screen real estate is limited and you need to present
-            multiple sections of content without scrolling or navigating to new pages.
-            This is particularly important in dashboard interfaces and control panels.
-          </p>
-          <h3>Section-Level Navigation</h3>
-          <p>
-            Tabs are appropriate for secondary navigation within a page or feature.
-            They help users understand they're viewing different aspects of the same
-            overall section or functionality.
-          </p>
-          <a id="When Not to Use">
-            <h2>When Not to Use</h2>
-          </a>
-          <p>
-            Tabs aren't suitable for all scenarios. Understanding their limitations
-            helps ensure appropriate implementation.
-          </p>
-          <h3>Sequential Processes</h3>
-          <p>
-            Don't use tabs for steps in a sequential process or wizard. For these cases,
-            use a stepper component instead, which better communicates progress and
-            sequence.
-          </p>
-          <h3>Unrelated Content</h3>
-          <p>
-            Avoid using tabs for content that isn't clearly related. Users expect tab
-            content to be connected by a common theme or purpose. For truly distinct
-            content, consider separate pages or sections.
-          </p>
-          <h3>Critical Information</h3>
-          <p>
-            Don't hide critical information behind tabs if users need to see multiple
-            pieces of information simultaneously for comparison or context.
-          </p>
-          <a id="Best Practices">
-            <h2>Best Practices</h2>
-          </a>
-          <p>
-            Following these best practices ensures tabs are implemented effectively
-            and consistently across Layer5 projects.
-          </p>
-          <h3>Clear Labeling</h3>
-          <p>
-            Tab labels should be concise, descriptive, and clearly communicate the
-            content they contain. Use consistent terminology and avoid ambiguity
-            between tab options.
+            Secondary tabs help users explore additional options while maintaining a connection with the primary tab content.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Tabs defaultIndex={0}>
-                <Tab label="Overview">
-                  <p>High-level information</p>
-                </Tab>
-                <Tab label="Mesh Management">
-                  <p>Specific tools for managing the mesh</p>
-                </Tab>
-                <Tab label="Analytics">
-                  <p>Data analysis and reporting</p>
-                </Tab>
-              </Tabs>
+              <TabButton title="Secondary Tab" />
             </SistentThemeProvider>
           </Row>
-          <h3>Logical Organization</h3>
+          <h3>Disabled Tab</h3>
           <p>
-            Organize tabs in a logical order, typically by frequency of use,
-            importance, or in a natural sequence. Place the most commonly used
-            tab first, and make it the default selected tab.
+            A disabled tab indicates that the content is not accessible at the moment, preventing users from interacting with it.
           </p>
-          <h3>Limit Tab Count</h3>
-          <p>
-            Limit the number of tabs to avoid overwhelming users. Aim for 2-7 tabs
-            in most cases. If you need more, consider reorganizing your content or
-            implementing a different navigation pattern, such as vertical tabs or
-            nested navigation.
-          </p>
-          <h3>Visual Distinction</h3>
-          <p>
-            Ensure active tabs are clearly distinguished from inactive ones through
-            visual styling. Use multiple visual cues (not just color) to indicate
-            the active state, such as underlines, borders, and font weight.
-          </p>
-          <h3>Consistent Content Structure</h3>
-          <p>
-            Maintain consistent padding, layout, and hierarchy within each tab's content
-            area. This provides a cohesive experience as users switch between tabs.
-          </p>
-          <a id="Accessibility">
-            <h2>Accessibility</h2>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <TabButton title="Disabled Tab" disabled />
+            </SistentThemeProvider>
+          </Row>
+          <a id="Labeling">
+            <h2>Labeling</h2>
           </a>
           <p>
-            Accessible tabs ensure all users can navigate and understand the interface,
-            regardless of abilities or assistive technologies.
+            Clear and concise labels should be used for tabs to provide users with an intuitive understanding of their purpose.
           </p>
-          <h3>Keyboard Navigation</h3>
+          <h3>Font Weight</h3>
           <p>
-            Ensure tabs can be navigated using a keyboard. Users should be able to:
+            Text inside tabs should be legible and consistent in style, with emphasis where necessary to indicate active selection.
           </p>
-          <ul>
-            <li>Move between tabs using arrow keys</li>
-            <li>Activate a tab using Enter or Space</li>
-            <li>Navigate to and from the tab content using Tab key</li>
-          </ul>
-          <h3>ARIA Implementation</h3>
+          <h3>Content</h3>
           <p>
-            Implement proper ARIA roles and attributes to ensure screen readers can
-            interpret the tab interface correctly:
-          </p>
-          <ul>
-            <li>Use role="tablist" for the container of tabs</li>
-            <li>Use role="tab" for individual tab triggers</li>
-            <li>Use role="tabpanel" for tab content containers</li>
-            <li>Include aria-selected for the active state</li>
-            <li>Use aria-controls to associate tabs with their panels</li>
-          </ul>
-          <h3>Focus Indicators</h3>
-          <p>
-            Ensure focus states are clearly visible, especially for keyboard users.
-            Never remove focus indicators, as they're essential for accessibility.
+            Keep tab labels short and descriptive, ensuring that users can quickly understand the content within each section.
           </p>
         </div>
       </div>
@@ -216,4 +104,4 @@ const TabsGuidance = () => {
   );
 };
 
-export default TabsGuidance;
+export default TabGuidance;
