@@ -34,7 +34,7 @@ const Data = {
         },
         {
           name: "Kubernetes & Cloud Native DevRel",
-          path: "/solutions/devrel-platform-for-kubernetes-and-cloudnative-content",
+          path: "/solutions/devrel-platform-for-kubernetes-and-cloud-native-content",
           sepLine: true,
         },
       ],
