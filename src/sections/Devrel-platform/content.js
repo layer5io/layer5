@@ -266,7 +266,7 @@ const DevrelContent = () => {
               <ul className="caption">
                 <li><b>Design Cloud Native Patterns:</b> Create and publish cloud native designs featuring any CNCF project.</li>
                 <li><b>Curate Reference Architectures:</b> As a Solutions Engineer or Developer Relations professional, publish best practices and operational patterns for Kubernetes and cloud-native infrastructure.</li>
-                <li><b>Develop Learning Paths:</b>Create structured educational journeys that combine theory with hands-on practice.</li>
+                <li><b>Develop Learning Paths:</b> Create structured educational journeys that combine theory with hands-on practice.</li>
                 <li><b>Design Challenges/Tutorials:</b> Create interactive labs using Meshery Playground with step-by-step guides and live demonstrations on diverse cloud native concepts.</li>
               </ul>
             </Col>
