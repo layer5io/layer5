@@ -331,7 +331,7 @@ const DevrelContent = () => {
             <InlineQuotes
               person="Yash Sharma"
               title="Layer5 MeshMate & Developer Advocate at DigitalOcean"
-              quote="One of my published designs is a top performer in the catalog, opening up new opportunities for me."
+              quote="The platform helped me gain recognition in Developer Relations by showcasing my popular designs to the community."
               image={YashSharmaIMg}/>
           </Row>
         </Container>
