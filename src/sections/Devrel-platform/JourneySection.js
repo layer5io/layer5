@@ -11,6 +11,7 @@ const JourneySectionWrapper = styled.div`
       margin-top: 2rem;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
       @media (max-width: 418px) {
         flex-direction: column;
