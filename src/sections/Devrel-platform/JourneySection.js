@@ -165,7 +165,7 @@ const JourneySection = () => {
     {
       number: "1",
       icon: <FaPencilRuler />,
-      title: "Design & Publish",
+      title: "Design and Publish",
       description: "Create your profile on Layer5 Cloud, share and discover best practices, reusable templates, and operational patterns for kubernetes."
     },
     {
