@@ -254,7 +254,7 @@ const DevrelContent = () => {
               <ul className="caption">
                 <li><b>Live Kubernetes Clusters:</b> Give your audience hands-on experience with a collaborative live Kubernetes environment through Meshery Playground.</li>
                 <li><b>Demonstrate Complex Concepts:</b> Explain cloud native architectures visually and interactively.</li>
-                <li><b>Multi-Player Teaching:</b> Conduct live demos and training sessions where participants can follow along in real-time, whether you're presenting at a conference, or leading a workshop.</li>
+                <li><b>Multi-Player Teaching & Presentations:</b> Conduct live demos and training sessions where participants can follow along in real-time, whether you're presenting at a conference, or leading a workshop.</li>
               </ul>
             </Col>
           </Row>
