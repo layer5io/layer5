@@ -226,6 +226,14 @@ const JourneySection = () => {
             alt="Book a demo"
             $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
           />
+          <Button
+            aria-label="Recognition program"
+            $primary
+            $external={true}
+            title="Recogntion Program"
+            alt="recogntion program"
+            $url="https://badges.layer5.io"
+          />
         </div>
       </Container>
     </JourneySectionWrapper>
