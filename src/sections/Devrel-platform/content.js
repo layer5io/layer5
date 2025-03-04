@@ -284,7 +284,7 @@ const DevrelContent = () => {
               <h2 className="heading">Build Your Professional Brand</h2>
               <ul className="caption">
                 <li><b>Public User Profile:</b>  All your published designs and reference architectures are linked to your profile, with real-time stats to track their reach and impact.</li>
-                <li><b>Showcase Your Metrics and Leaderboard Position: </b>Track your content's performance with analytics, leaderboard rankings, and engagement metrics. assess what's resonating with your audience and refine your advocacy strategy accordingly.</li>
+                <li><b>Showcase Your Metrics and Leaderboard Position: </b>Track your content's performance with analytics, leaderboard rankings, and engagement metrics. Assess what's resonating with your audience and refine your advocacy strategy accordingly.</li>
                 <li><b>Themed Organization:</b> Create a personalized dashboard with your organization's colors and logo, and invite members.</li>
                 <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
               </ul>
