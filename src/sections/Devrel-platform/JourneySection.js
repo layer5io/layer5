@@ -18,7 +18,7 @@ const JourneySectionWrapper = styled.div`
         gap: 1.5rem;
        }
     }
-  padding: 80px 0;
+  padding: 10px 0 80px 0;
   background-color: ${(props) => props.theme.body};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   
