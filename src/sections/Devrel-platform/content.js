@@ -2,18 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-// import CatalogImage from "./images/catalog_mac.png";
+import CatalogImage from "./images/catalog_mac.png";
 import DashboardImg from "./images/cncf_hub_dashboard_mac.png";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
 import JourneySection from "./JourneySection";
+import InlineQuotes from "../../components/Inline-quotes";
+import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
   background-color: ${(props) => props.theme.body};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
   @media (max-width: 468px) {
     margin: 3rem 0;
   }
@@ -282,6 +284,7 @@ const DevrelContent = () => {
               <h2 className="heading">Build Your Professional Brand</h2>
               <ul className="caption">
                 <li><b>Public User Profile:</b>  All your published designs and reference architectures are linked to your profile, with real-time stats to track their reach and impact.</li>
+                <li><b>Showcase Your Metrics and Leaderboard Position: </b>Track your content's performance with analytics, leaderboard rankings, and engagement metrics. assess what's resonating with your audience and refine your advocacy strategy accordingly.</li>
                 <li><b>Themed Organization:</b> Create a personalized dashboard with your organization's colors and logo, and invite members.</li>
                 <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
               </ul>
@@ -323,6 +326,13 @@ const DevrelContent = () => {
                 </div>
               </div>
             </div>
+          </Row>
+          <Row className="devrel">
+            <InlineQuotes
+              person="Yash Sharma"
+              title="Engineering at DigitalOcean"
+              quote="One of my published designs is a top performer in the catalog, opening up new opportunities for me."
+              image={YashSharmaIMg}/>
           </Row>
         </Container>
       </DevrelContentWrapper>
