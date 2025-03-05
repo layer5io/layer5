@@ -35,7 +35,7 @@ import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
-import GuyM from "";
+import GuyM from "./images/guym.jpg";
 
 
 const Kanvas = (props) => {
