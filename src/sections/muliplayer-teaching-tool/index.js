@@ -55,7 +55,7 @@ const MultiplayerTeachingPage = () => {
       <Container className={"heading-container"}>
         <div className={"section-title"}>
           <h1 className={"multiplayer-heading"}>Multi-Player Cloud Native Teaching and Collaboration Platform</h1>
-          <p className={"multiplayer-text"}>Empowering content creators, instructors, and trainers with a real-time, interactive environment for cloud-native education.</p>
+          <p className={"multiplayer-text"}>Empowering content creators, instructors, and trainers with a real-time, interactive environment for cloud native education.</p>
         </div>
       </Container>
       <Container>
@@ -65,7 +65,7 @@ const MultiplayerTeachingPage = () => {
             <IconWrapper><FaCloud style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Live Lab Environment</h2>
-              <p>Instantly deploy and interact with cloud-native infrastructure in real time.</p>
+              <p>Instantly deploy and interact with cloud native infrastructure in real time.</p>
             </CardContent>
           </Card>
           <Card>
@@ -92,7 +92,7 @@ const MultiplayerTeachingPage = () => {
           <Card>
             <IconWrapper><FaBookOpen style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
-              <h2>Cloud-Native Design Patterns</h2>
+              <h2>Cloud Native Design Patterns</h2>
               <p>Access a growing catalog of ready-made blueprints for Kubernetes and multi-cloud environments.</p>
             </CardContent>
           </Card>
