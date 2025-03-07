@@ -62,21 +62,21 @@ const MultiplayerTeachingPage = () => {
         <h2 style={{ margin: "2rem 0", textAlign: "center" }} >For learners:</h2>
         <Grid>
           <Card>
-            <IconWrapper><FaCloud style={{ color: "blue" }} /></IconWrapper>
+            <IconWrapper><FaCloud style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Live Lab Environment</h2>
               <p>Instantly deploy and interact with cloud-native infrastructure in real time.</p>
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaUsers style={{ color: "green" }} /></IconWrapper>
+            <IconWrapper><FaUsers style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Multi-Player Collaboration</h2>
               <p>Work together with students, trainees, or team members on a shared Kanvas, just like Figma for DevOps engineers.</p>
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaLaptopCode style={{ color: "purple" }} /></IconWrapper>
+            <IconWrapper><FaLaptopCode style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Self-Service Learning</h2>
               <p>Create, modify, and explore cloud architectures hands-on with intuitive tools.</p>
@@ -90,7 +90,7 @@ const MultiplayerTeachingPage = () => {
           </CardContent>
         </Card> */}
           <Card>
-            <IconWrapper><FaBookOpen style={{ color: "orange" }} /></IconWrapper>
+            <IconWrapper><FaBookOpen style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Cloud-Native Design Patterns</h2>
               <p>Access a growing catalog of ready-made blueprints for Kubernetes and multi-cloud environments.</p>
@@ -100,7 +100,7 @@ const MultiplayerTeachingPage = () => {
         <h2 style={{ marginBottom: "2rem", textAlign: "center" }} >For educators: </h2>
         <Grid>
           <Card>
-            <IconWrapper><FaChalkboardTeacher style={{ color: "purple" }} /></IconWrapper>
+            <IconWrapper><FaChalkboardTeacher style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Interactive Teaching</h2>
               <p>Conduct live training sessions and provide step-by-step guided tutorials.</p>
@@ -114,14 +114,14 @@ const MultiplayerTeachingPage = () => {
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaCodeBranch style={{ color: "green" }} /></IconWrapper>
+            <IconWrapper><FaCodeBranch style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Collaborative Design Reviews</h2>
               <p>Facilitate infrastructure design reviews and best practice sharing.</p>
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaCogs style={{ color: "red" }} /></IconWrapper>
+            <IconWrapper><FaCogs style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>DevOps and Architecture Training</h2>
               <p>Demonstrate multi-cloud and Kubernetes architecture patterns.</p>
