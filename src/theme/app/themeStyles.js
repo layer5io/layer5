@@ -54,6 +54,16 @@ const lighttheme = {
   // charcoal
   menuColor: "#3c494f",
 
+  //light grey
+  //subItemColor: "#c1c1c1a6",
+  //subItemColor: "linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(190, 190, 190) 83%, rgb(189, 189, 189) 98%);",
+  subItemColor: "#e7eff3",
+
+  subItemBoxShadow: "#5F5F5F",
+
+
+  //light grey
+  subitemHover: "#c4e5f9",
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
   linkColor: "#00b39f",
@@ -286,10 +296,21 @@ export const darktheme = {
 
   // charcoal
   menuColor: "#ffffff",
+
+
+  //medium grey(accent_grey-code 10)
+  subItemColor: "#15272f",
+
+
+  subItemBoxShadow: "grey",
   // 00D3A9
   // caribbean green (light green)
   menuHoverColor: "#00D3A9",
   linkColor: "#00D3A9",
+
+  //light grey
+  subitemHover: "#2c4f5e",
+
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
@@ -298,6 +319,7 @@ export const darktheme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
+
 
   // Shadow Sizes
   projectPageShadowsize: "5px",
