@@ -78,7 +78,7 @@ const MultiplayerTeachingPage = () => {
           <Card>
             <IconWrapper><FaLaptopCode style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
-              <h2>Self-Service Learning</h2>
+              <h2>Self Paced Learning</h2>
               <p>Create, modify, and explore cloud architectures hands-on with intuitive tools.</p>
             </CardContent>
           </Card>
@@ -107,7 +107,7 @@ const MultiplayerTeachingPage = () => {
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaUniversity style={{ color: "blue" }} /></IconWrapper>
+            <IconWrapper><FaUniversity style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
             <CardContent>
               <h2>Structured Learning Paths</h2>
               <p>Build interactive educational journeys for students and professionals.</p>
