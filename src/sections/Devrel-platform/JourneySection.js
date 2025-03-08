@@ -187,7 +187,7 @@ const JourneySection = () => {
       <Container>
         <div className="journey-header">
           <h2>Expand Your Network and Visibility in the Cloud Native Community</h2>
-          <p>Connect with ambassadors, maintainers, and experts while collaborating on CNCF projects.</p>
+          <p>Connect with ambassadors, developer evangelists, maintainers, and experts while collaborating on CNCF projects.</p>
         </div>
         <div className="timeline-container">
           <Row className="timeline-row">
@@ -225,6 +225,14 @@ const JourneySection = () => {
             title="Talk to team"
             alt="Book a demo"
             $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
+          />
+          <Button
+            aria-label="Recognition program"
+            $primary
+            $external={true}
+            title="Recogntion Program"
+            alt="recogntion program"
+            $url="https://badges.layer5.io"
           />
         </div>
       </Container>
