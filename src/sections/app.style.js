@@ -1,0 +1,320 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+
+::selection {
+    background: ${(props) => props.theme.secondaryColor};
+    color: #FFFFFF;
+}
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  *:focus {
+    outline: none;
+  }
+  ::-webkit-scrollbar {
+    width: 0.5rem; 
+}
+
+::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.body}; 
+}
+
+::-webkit-scrollbar-thumb {
+    background:${(props) => props.theme.scrollbarColor}; 
+    border-radius: 0.3rem; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+  #___gatsby {
+    background: ${(props) => props.theme.body};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+html{
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+}
+
+body,html {
+    margin: 0;
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  transition-property: color, background-color;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
+  font-weight: 400 !important;
+  margin: 0;
+  padding: 0;
+  @media (max-width: 62rem) {
+      font-size: 1rem;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
+    color: ${(props) => props.theme.tertiaryColor};
+    margin: 0;
+    line-height: normal;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+h1 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    @media (max-width: 62rem) {
+      font-size: 2.125rem;
+    }
+}
+
+h2 {
+    font-size: 2.125rem;
+    font-weight: 600;
+    @media (max-width: 62rem) {
+      font-size: 1.75rem;
+    }
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    @media (max-width: 62rem) {
+      font-size: 1.5rem;
+    }
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    @media (max-width: 62rem) {
+      font-size: 1.25rem;
+    }
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    @media (max-width: 62rem) {
+      font-size: 1.1rem;
+    }
+}
+
+h6 {
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+h2.sub-heading, h3.sub-heading {
+    color: gray;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+}
+
+h5.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    @media (max-width: 62rem) {
+      font-size: 1.1rem;
+    }
+}
+input {
+  font-family: 'Qanelas Soft', 'Qanelas Soft', sans-serif;
+}
+p { 
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    @media (max-width: 62rem) {
+      font-size: 1rem;
+    }
+}
+Button:hover {
+  box-shadow: 0 2px 10px  ${(props) => props.theme.whiteFourToBlackFour};
+}
+a {
+    text-decoration: none;
+    color: ${(props) => props.theme.linkColor};
+    &:hover{
+        color: ${(props) => props.theme.primaryColor};
+    }
+  }
+  img{
+    max-width: 100%;
+  }
+
+
+section{
+    position: relative;
+}
+
+  // styling for the searchbox
+  .search-box {
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+
+            &:focus {
+            border-color: #fff !important;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+          }
+        }
+
+        // for the Search Icon
+        svg {
+            color: ${(props) => props.theme.searchIconColor};
+        }
+  }
+
+/* Modal styling needs to be applied to the global CSS */
+
+.Modal {
+    position: absolute;
+    inset: 50% auto -45% 50%;
+    border: 1px solid rgb(204, 204, 204);
+    background: ${(props) => props.theme.body};
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 20px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    max-width: 50rem;
+    max-height: 40rem;
+    overflow-y: hidden;
+
+    .close-modal-btn {
+        min-width: 2rem;
+        height: 2rem;
+        padding: 0.25rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.75rem;
+
+        svg {
+            font-size: 2rem;
+            width: 1.75rem;
+        }
+    }
+
+    .modal-heading {
+        text-align: center;
+
+    }
+}
+
+.Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    overflowY: auto;
+}
+
+.contact-form {
+    margin: auto -1rem;
+}
+
+.teaser-modal {
+  margin: 1rem -2rem;
+}
+
+.form-frame {
+    height: 36rem;
+    width: 35rem;
+    border: none;
+    overflow: hidden;
+}
+
+/* Modal CSS Ends */
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
+@media screen and (max-width: 765px) {
+    .form-frame {
+        width: 25rem;
+        height: 30rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-frame {
+        width: 22rem;
+        height: 26rem;
+    }
+}
+
+// Banner Display
+.banner1 {
+  .banner1 {
+    display: block !important;
+  }
+}
+
+.banner2 {
+  .banner2 {
+    display: block !important;
+  }
+}
+
+.banner3 {
+  .banner3 {
+    display: block !important;
+  }
+}
+
+.banner4 {
+  .banner4 {
+    display: block !important;
+  }
+}
+
+/* Modal CSS Ends */
+`;
+
+export { GlobalStyle };

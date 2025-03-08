@@ -1,0 +1,45 @@
+name: "Tweet issue/pr when labeled"
+
+on:
+  issues:
+    types: labeled
+  pull_request:
+    types: labeled 
+
+    
+permissions:
+  contents: read
+  issues: write
+  
+jobs:
+  tweet:
+    if: ${{ github.event.label.name == 'issue/tweet' }}
+    runs-on: ubuntu-latest
+    steps:
+        - name: Check if the workflow initiater is an organization member
+          uses: tspascoal/get-user-teams-membership@v2
+          id: checkUserMember
+          with:
+            username: ${{ github.actor }}
+            organization: "layer5io"
+            team: "maintainers"
+            GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        # - if: github.ref == 'refs/heads/master'
+        - name: Check if it is issue
+          uses: ethomson/send-tweet-action@v1
+          with:
+            status: 'Help wanted: "${{ github.event.issue.title }}" - ${{ github.event.issue.html_url }} \#opensource'
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET_LAYER5 }}
+            
+        # - if: github.ref == 'refs/heads/master'
+        - name: Check if it is PR
+          uses: ethomson/send-tweet-action@v1
+          with:
+            status: 'Help wanted: "${{ github.event.pull_request.title }}" - ${{ github.event.pull_request.html_url }} \#opensource'
+            consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY_LAYER5 }}
+            consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET_LAYER5 }}
+            access-token: ${{ secrets.TWITTER_ACCESS_TOKEN_LAYER5 }}
+            access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET_LAYER5 }}

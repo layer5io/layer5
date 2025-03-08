@@ -1,0 +1,103 @@
+---
+title: Demystifying Open Source
+subtitle: A Personal Journey and Insights into Getting Started
+date: 2024-03-10 08:00:00 -0530
+author: Sandra Ashipala
+thumbnail: ./banner.png
+darkthumbnail: ./banner.png
+description: "Demystifying Open Source"
+type: Blog
+category: Open Source
+tags:
+  - Open Source
+featured: true
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import FIVE from './meshery-skateboard.png';
+import MESHERY from './meshery-issues.png';
+import STAR from './star-meshery.png';
+import STACK from './tech-stack.png';
+import GITHUB from './github-issues.png';
+import SEARCH from './search-layer5.png';
+
+<BlogWrapper>
+
+<p>
+Picture this: You're honing your tech skills in silos (⌒_⌒;) and building projects for your GitHub and resume to impress the ever-inquisitive technical hiring manager who seeks the unique aspects in projects provided by potential candidates. Along your learning journey, you've encountered mentions of open source here and there, but never delved deeply into its realm. Additionally, you find yourself uncertain about where to begin. Does this sound familiar? Not long ago, I found myself in precisely this situation.
+
+However, with the right community and a sprinkle of courage (and chipping away at my own imposter syndrome), I found my footing and embarked on an exhilarating journey of growth and  contribution.
+
+In this blog post, I'll not only share my personal experiences and insights but also provide guidance based on my initial experience for those eager to dip their toes into the vast world of open-source contributions. So, grab a cup of your favourite beverage (latte macchiato☕ or bubble tea 🧋 for me), settle in, and let's embark on an adventure filled with learning, growth, and community.
+</p>
+
+### Getting Started: Choosing a project to contribute toes
+
+<p>
+  Are you feeling overwhelmed (⋟﹏⋞) by the multitude of open-source projects available? Don't fret; here are some tips to guide you in finding a project that aligns with your interests for your contributions (⌒‿⌒) :
+</p>
+<ol type="1">
+<li><strong>Search GitHub for "good-first-issues":</strong> GitHub is a treasure chest of open-source projects, and many of them tag beginner-friendly issues with labels like "good-first-issue" or "help-wanted." Simply head to GitHub, use the search bar to look for these labels, and you'll find a list of tasks waiting for eager contributors like yourself. </li>
+<li><strong>Explore Projects Related to Your Tech Stack:</strong> Leverage your expertise by searching GitHub for projects using keywords related to your tech stack. Utilizing the sort functionality you can filter through projects by <i>Most stars</i>, <i>Recently updated</i>, <i>Best match</i> etc. Whether it's i.e Python, C, or React.js, there's a project out there waiting for your unique skill set.</li>
+
+<img src={GITHUB} alt="Search GitHub for Projects" width="65%" height="65%" />
+
+<li><strong>Websites with a list of open source projects:</strong> Websites like Good First Issue curate easy pickings from popular open-source projects, making it easier than ever to find your first contribution opportunity. Browse through their listings, pick a project that piques your interest, and dive in!</li>
+</ol>
+<p>Another valuable approach involved searching LinkedIn for profiles of individuals possessing similar skills or expertise to mine. By examining the projects they were involved in and conducting further research. This method provided insights into relevant projects and served as a catalyst in discovering the Meshery project, which I will delve into further later on.</p>
+
+<img src={SEARCH} alt="Search Layer5 Five at PC" width="55%" height="55%" />
+
+### What skills do I need to get started?
+
+<p>The short answer? Whatever you bring to the table! Open source thrives on diversity, and contributions come in a variety of ways based on the contributors skill sets and their level. If you're eager to learn and collaborate, you're already halfway there. Start by exploring the repository, familiarise yourself with the tools used to build it, and don't hesitate to ask for guidance along the way.</p>
+
+<img src={STACK} alt="TECH STACK ILLUSTRATION" width="45%" height="45%" />
+
+<p>For example, Layer5 is host to a vast variety of projects built and designed using different technologies and skill sets from people located all over the world (yay version control ┌(˘⌣˘)ʃ ), keep in mind that contribution goes beyond code. Whether you're a UX/UI designer, a technical writer, an SEO specialist, or a passionate blogger, there's a place for you in the community. Explore the repositories, find where your skills align, and dive in.</p>
+
+### My Open Source Journey: From Curiosity to Contribution
+
+<p>
+  Let me rewind to the genesis of it all — during a <a href="https://womenwhocode.com/network/berlin">Women Who Code Berlin</a> webinar in April 2023, where a fellow attendee posed a question that the invited speaker graciously answered in detail during the Q&A session. As the speaker delved into the advantages of contributing to open-source projects, she highlighted the <a href="https://www.eddiehub.org/">EddieHub</a> Open Source community as an inclusive and welcoming environment. And Eddie, the founder, standing out as one of the most enthusiastic and supportive open-source leaders (a big shout out to <a href="https://www.linkedin.com/in/elliekingequal-it/">Ellie King! </a>), igniting my interest.
+</p>
+
+<p>Intrigued, I delved into the community (even before the webinar ended), joined their Discord, and found the <a href="https://github.com/EddieHubCommunity/BioDrop">BioDrop</a> (formerly LinkFree) project, a shining example of a community-driven project, characterized by its meticulous organization and comprehensive documentation. I was pleasantly surprised by Eddie's active involvement and encouragement to get started no matter the level of contribution (yes I read the conversation history -- "reading the room").</p>
+<p>As my understanding of the open-source community deepened and my proficiency in Python programming and understanding of DevOps grew, I felt compelled to explore opportunities where my newly acquired skills could be put to meaningful use and provide avenues for continuous improvement. This pursuit ultimately led me to encounter Meshery, nestled within the CNCF ecosystem.</p>
+<p>With Meshery, I didn't just find another open source project; I found a community, a platform for learning and growth, and the perfect avenue for channelling my newfound skills and passions into meaningful contributions. And so, my journey with Meshery under the Layer5 organization began, marking the dawn of an exciting chapter in my open-source journey.</p>
+
+### How to Get Started with Meshery - Making your first contributions:
+<p>Before we dive deeper, allow me to introduce Meshery. It serves as an open-source, cloud-native management platform, providing multi-cluster Kubernetes management functionalities. Notably, Meshery has been acknowledged as the <a href="https://meshery.io/blog/meshery-v07-release-announcement">10th fastest-growing project</a> out of over 200+ Cloud Native Computing Foundation (CNCF) projects. <a href="https://meshery.io/">It seamlessly integrates with all CNCF projects</a>, alongside existing tools and Kubernetes clusters, enabling users to optimize their preferred monitoring, CI/CD, and security solutions with ease.</p>
+<p>Now that you've been introduced to Meshery, you might be wondering how you can get involved. Here are some steps to kickstart your journey with Meshery:</p>
+<ul>
+<li><strong>Explore the website:</strong> Start by visiting the <a href="https://meshery.io/">Meshery website</a> to gain a better understanding of its features and capabilities. You'll find comprehensive documentation, tutorials, and resources to help you get started.</li>
+<li><strong>Join the community:</strong> Connect with fellow Meshery enthusiasts by joining the community forums, mailing lists, and social media channels. Engage in discussions in the <a href="https://slack.layer5.io/">#meshery</a> Slack channel, ask clarifying questions, and share your experiences with the community.</li>
+<li><strong>Contribute to the repository:</strong> Regardless of your experience level, there are numerous opportunities to make valuable contributions to the repository. Begin by familiarizing yourself with the <a href="https://github.com/meshery/meshery/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> guidelines. Don't hesitate to ask questions for clarification and seek assistance from the community when needed (the <a href="https://discuss.layer5.io/">discussion forum</a> is a good place to do this too).
+Start small by identifying issues labeled "good-first-issues" or bugs marked as "beginner-friendly," and tailor your involvement within the project to align with your interests. As you explore the project and associated resources, and notice areas for improvement such as grammar adjustments, refining code segments, fixing a logo/banner or enhancing installation steps based on your initial experience, don't hesitate to raise an issue. Remember, every contribution, no matter how minor, has the potential to make a meaningful impact.
+</li>
+
+<img src={MESHERY} alt="Seach Meshery good-first-issues"  width="65%"  height="65%"/>
+
+<li><strong>Attend events:</strong> Keep an eye out for <a href="https://layer5.io/community/calendar">development meetings</a> that happen online every week. These meets are a great way to learn from community members, network with like-minded individuals, and stay updated on the latest developments with projects in Layer5. If you're new to the community the Layer5 Newcomers' meet (as of now happens every Thursday - sync the <a href="https://layer5.io/community/calendar">community calendar</a> to get a reminder in your local time) is a great place to get your first introductions to the community, meet other folks and get introduced to the community/projects flow!</li>
+</ul>
+
+<img src={FIVE} alt="Five mascot on skateboard" width="45%"  height="45%" />
+
+<p>The steps described above were simply how I approached my first few weeks in the community. Initially, I spent the first few days quietly observing conversations in Slack, akin to "reading the room," to understand the community's communication style, how to start engaging in the conversations and determine if it was a place where I could engage and thrive (if you haven't guessed by now - it is and beyond).</p>
+
+<div class="intro"><p>
+💡In Layer5, I discovered more than just a collection of projects; it's a supportive network of like-minded individuals with a shared mission to innovate and empower. The Layer5 community fosters an environment where contribution isn't merely encouraged; it's celebrated. If you find the <a href="https://github.com/meshery/meshery/">Meshery</a> project interesting, consider starring 🌟 the <a href="https://github.com/meshery/meshery/">repository</a> to show your support!
+</p></div>
+
+<img src={STAR} alt="Consider starring the repo" />
+
+### Reflections on Personal and Professional Growth
+<p>My journey into open source has been nothing short of transformative. From honing technical skills to cultivating soft skills like communication and collaboration, every contribution has been a stepping stone toward personal and professional growth. But the real challenge? It was transitioning from solitary learning and development to learning/building in public. Being part of welcoming and supportive open-source communities has been instrumental in overcoming that hurdle and taking those crucial first steps into learning and building in public and ultimately contributing to my growth as an engineer/developer.</p>
+<p>In a healthy open-source community, you're not just a contributor; you're part of something bigger. You collaborate with like-minded individuals, tackle real-world problems, and make a tangible impact on projects that transcend individual efforts. We get to forge new meaningful connections and share knowledge. So, whether you're just starting out or looking to expand your horizons, remember this: the journey is yours to chart, so just get started. “jiāyóu” 加油 !!</p>
+<p>Thank you for reading. Happy contributing!</p>
+<p><i>Useful links:</i></p>
+<p><a href="https://www.eddiehub.org/">EddieHub Community</a></p>
+<p><a href="https://slack.layer5.io/">Layer5 Slack Community</a></p>
+<p><a href="https://github.com/meshery/meshery">Meshery repo</a></p>
+</BlogWrapper> 

@@ -1,0 +1,105 @@
+area/docs:
+- changed-files:
+  - any-glob-to-any-file:
+    - "readme.md"
+    - "contributing.md"
+area/ci:
+- changed-files:
+  - any-glob-to-any-file:
+    - ".github/**/*"
+    - ".husky/**/*"
+area/blog:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/blog/**/*"
+    - "src/pages/blog/**/*"
+    - "src/templates/blog-*.js"
+area/careers:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/careers/**/*"
+    - "src/collections/programs/**/*"
+    - "src/templates/career-*.js"
+    - "src/pages/careers/*"
+area/community:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/members/**/*"
+    - "src/pages/community/**/*"
+    - "src/templates/member-*.js"
+area/events:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/events/**/*"
+    - "src/templates/event*.js"
+area/handbook:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/components/HandbookCard/**/*"
+    - "src/components/Handbook-navigation/**/*"
+    - "src/sections/Community/Handbook/**/*"
+area/landscape:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/Landscape/**/*"
+    - "src/components/Landscape-Table/**/*"
+    - "src/collections/landscape/**/*"
+area/learn:
+- changed-files:
+  - any-glob-to-any-file:
+    - "content-learn"
+    - "src/components/Learn-Components/**/*"
+    - "src/collections/service-mesh-books/**/*"
+    - "src/collections/service-mesh-learn/**/*"
+    - "src/collections/service-mesh-workshops/**/*"
+    - "src/templates/book-*.js"
+    - "src/templates/course-*.js"
+    - "src/templates/lab-*.js"
+    - "src/templates/learn-*.js"
+    - "src/templates/workshop-*.js"
+area/news:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/news/**/*"
+    - "src/templates/news-*.js"
+area/partners:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/partners/**/*"
+area/resources:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/resources/**/*"
+    - "src/templates/resource-*.js"
+area/projects:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/projects/**/*"
+    - "src/pages/projects/**/*"
+area/core-styles:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/app.style.js"
+    - "src/theme/app/*"
+area/site-config:
+- changed-files:
+  - any-glob-to-any-file:
+    - "gatsby-*.js"
+area/packages:
+- changed-files:
+  - any-glob-to-any-file:
+    - "package-*.js"
+project/meshery:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/collections/integrations/**/*"
+project/kanvas:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/sections/Kanvas/**/*"
+project/sistent:
+- changed-files:
+  - any-glob-to-any-file:
+    - "src/components/SistentNavigation/**/*"
+    - "src/pages/projects/sistent/**/*"
+    - "src/sections/Projects/Sistent/**/*"

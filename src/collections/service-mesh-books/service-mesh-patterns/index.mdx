@@ -1,0 +1,64 @@
+---
+title: "Service Mesh Patterns"
+date: 2020-04-08 21:15:05 +0000
+cover: ./service-mesh-patterns.webp
+thumbnail: ./service-mesh-patterns.webp
+author: Lee Calcote and Nic Jackson
+abstract: "Patterns, recipes and best practices for deploying and operating service meshes."
+description: "Discover essential service mesh patterns and best practices for optimizing Istio, Linkerd, Consul, App Mesh, and other service mesh technologies, including those leveraging Envoy and WebAssembly. Dive into the 'Service Mesh Patterns' book, designed for anyone delivering cloud-native workloads enabled by a service mesh, and ensure your infrastructure and applications derive maximum value from this powerful layer of communication and control."
+published: true
+redirect_from:
+  - /books/service-mesh-patterns
+---
+
+import { BookWrapper } from "../Book.style.js";
+import Table from "../../../components/service-mesh-patterns-Table/Table.js";
+import { Link } from "gatsby";
+import service_mesh_pattern_book from "./service-mesh-patterns.webp";
+
+<BookWrapper>
+
+<div className="book">
+    <img
+      className="card"
+      width="300px"
+      src={service_mesh_pattern_book}
+      align="center"
+    />
+</div>
+
+<p></p>
+<p>
+  Patterns and best practices for getting most out of Istio, Linkerd, Consul,
+  App Mesh or <Link to="/service-mesh-landscape">any service mesh</Link>,
+  including those using Envoy and use of WebAssembly.
+</p>
+
+<p>
+  <strong>About the Service Mesh Patterns book</strong>
+</p>
+
+A service mesh is a layer in your infrastructure that facilitates communication between services… and so much more. Its value is enormous, and the value you derive from one is very much related to what role you play in the design, implementation, and operations of your cloud native applications and infrastructure.
+
+<div className="center">
+  <Button
+    $secondary
+    className="banner-btn"
+    title="Visit Service Mesh Patterns website"
+    $url="https://service-mesh-patterns.github.io/service-mesh-patterns/"
+    $external={true}
+  />
+</div>
+
+<p>
+  <strong>This book is being written for</strong>
+</p>
+
+Identifying who this book is for has been one of the hardest challenges in writing it. The power of a service mesh is vast, and therefore, empowers individuals of many different roles. In short, this book is for anyone delivering workloads enabled by a service mesh and who wants to ensure their use of a service mesh provides the most possible value to the workloads and teams that rely on it.
+
+<br />
+
+<Table />
+<br />
+
+</BookWrapper>

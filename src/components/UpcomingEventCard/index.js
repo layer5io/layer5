@@ -1,0 +1,59 @@
+import React from "react";
+import Image from "../image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import UpcomingEventsWrapper from "./EventCard.style";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Mousewheel } from "swiper/modules";
+import { Link } from "gatsby";
+import "swiper/css/bundle";
+import Button from "../../reusecore/Button";
+import slugify from "../../utils/slugify";
+
+
+const UpcomingEvents = ({ data }) => {
+  return (
+    <UpcomingEventsWrapper>
+      <div className="blog-slider swiper">
+        <div style={{
+          display: "block"
+        }} className="blog-slider__wrp swiper-wrapper">
+
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            modules={[Mousewheel, Pagination]}
+            pagination={{ clickable: true }}
+          >
+            {data.nodes.map(item => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <div className="blog-slider_item swiper-slide">
+                    <div className="blog-slider_img">
+                      <Link to={`/community/events/${slugify(item.frontmatter.title)}`}>
+                        <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
+                      </Link>
+                    </div>
+                    <div className="blog-slider_content">
+                      <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
+                      <p className="blog-slider_date">{item.frontmatter.date}</p>
+                      <p className="blog-slider_description">{item.frontmatter.abstract}</p>
+                      <div className="blog-slider_text">
+                        <MDXRenderer>
+                          {item.body}
+                        </MDXRenderer>
+                      </div>
+                      <Button $secondary className="blog-slider_button" $url={item.frontmatter.eurl} title="Join Now" $external={true} />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+        </div>
+      </div>
+    </UpcomingEventsWrapper>
+  );
+};
+
+export default UpcomingEvents;

@@ -1,0 +1,268 @@
+---
+title: "Service Proxy"
+thumbnail: ../../../../assets/images/service-mesh-icons/envoy/icon/color/envoy-icon-color.svg
+darkthumbnail: ../../../../assets/images/service-mesh-icons/envoy/icon/color/envoy-icon-color.svg
+date: 2021-09-11 10:30:05 -0530
+type: Article
+category: Service Mesh
+mesh: Istio
+technology: Kubernetes
+tags:
+ - Istio
+ - Envoy
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+<h3>What Is a Service Proxy?</h3>
+<p>
+A service proxy is a client-side mediator that handles requests for a service. The service proxy allows applications to send and receive messages as method calls via a channel. Service proxy connections can be created as needed or persist open connections to facilitate pooling. Applications are oblivious to the data plane's existence. As applications conduct service-to-service calls, service proxies are transparently inserted. Inbound (ingress) and outbound (egress) cluster network traffic are handled by data planes. Whether traffic is entering the mesh (ingressing) or leaving the mesh (egressing), application service traffic is directed first to the service proxy for handling. In Istio, traffic is transparently intercepted using iptables rules and redirected to the service proxy.
+</p>
+<p>
+Remember that Pilot configures traffic policy and service proxies implement it. The data plane is a collection of service proxies. Service proxies are responsible for health checks, routing, load balancing, authentication, authorization, and the production of observable signals by intercepting every packet in the request. As the service may change from location to location, proxies provide indirection so that clients may point to the same location (e.g., proxy.example.com), representing a permanent reference. They add resilience to distributed systems.
+</p>
+
+<h3>Envoy Proxy Overview</h3>
+<p>The versatile and performant Envoy has evolved as an open source, application-level service proxy, living up to its tagline as the universal data plane API. Lyft developed Envoy in order to solve major distributed systems problems. Envoy has had broad reuse and has been integrated into the cloud native ecosystem.</p>
+<h4>Why Envoy?</h4>
+<p>
+Envoy was originally intended to be used as an edge proxy rather than a sidecar. Envoy transitioned to the sidecar pattern over time.
+The concept of hot reloads vs. hot restarts was at the center of the decision for the Istio project to leverage Envoy. Envoy's runtime configuration has always been API-driven, allowing it to drain and hot reload its own process with an old configuration with a new process and new configuration (displacing itself). Envoy achieves hot reloading of its processes by shared memory and communication through a Unix Domain Socket (UDS), in a manner that resembles GitHub's tool for zero-downtime HAProxy reloads.
+Additionally, and uniquely, Envoy offers an Aggregated Discovery Service (ADS) for delivering the data for each xDS API.
+</p>
+
+<h4>HTTP/2 and gRPC</h4>
+<p>
+Envoy stood apart from other proxies at the time because of its early support for HTTP/2 and gRPC. HTTP/2 significantly improves on HTTP/1.1 in that HTTP/2 enables request multiplexing over a single TCP connection. Proxies that support HTTP/2 benefit from the reduced overhead of combining several connections into a single one. HTTP/2 allows clients to send numerous parallel requests and load resources preemptively using server-push.
+</p>
+<p>
+Envoy is HTTP/1.1 and HTTP/2 compatible, including proxying compatibility for both downstream and upstream protocols. This means Envoy can accept incoming HTTP/2 connections and proxy them to upstream HTTP/2 clusters, but it can also take HTTP/1.1 connections and proxy them to HTTP/2 clusters (and vice-versa).
+</p>
+<p>
+gRPC is an RPC protocol that uses protocol buffers on top of HTTP/2. Envoy supports gRPC natively (over HTTP/2) and can also bridge an HTTP/1.1 client to gRPC. Envoy has the ability to operate as a gRPC-JSON transcoder. The gRPC-JSON transcoder functionality allows a client to send HTTP/1.1 requests with a JSON payload to Envoy, which translates the request into the corresponding gRPC call and subsequently translates the response message back into JSON. These are powerful capabilities (and challenging to execute correctly), which set Envoy apart from other service proxies.
+</p>
+
+<h3>Envoy in Istio</h3>
+<p>
+As an out of process proxy, Envoy transparently forms the base unit of the mesh. Akin to proxies in other service meshes, it is the workhorse of Istio. Istio deploys Envoy sidecarred to application services.
+Identified as <code>istio-proxy</code> in deployment files, Envoy does not require root privileges to run, but runs as user 1337 (non root). 
+</p>
+
+<h3>Sidecar Injection (or Sidecarring)</h3>
+<p>
+There are two steps to adding a service proxy: sidecar injection and network capture. Sidecar injection is the method of adding a proxy to a given application. Network capture is the method of directing inbound traffic to the proxy (instead of the application) and outbound traffic to the proxy (instead of directly back to the client or directly to subsequent upstream application services).
+</p>
+
+<h4>Manual Sidecar Injection</h4>
+<p>
+<code>Istioctl</code> can be used to manually inject the Envoy sidecar definition into Kubernetes manifests manually. Use <code>istioctl</code>’s <code>kube-inject</code> capability to manually inject the sidecar into deployment manifests by manipulating yaml.
+</p>
+
+```
+$ istioctl kube-inject -f samples/sleep/sleep.yaml | kubectl apply -f -
+```
+<p>
+You can update Kubernetes specifications on-the-fly at the time of applying them to Kubernetes for scheduling. Alternatively, you might use the <code>istioctl kube-inject</code> utility like so:
+</p>
+
+```
+$ kubectl apply -f <(istioctl kube-inject -f <resource.yaml>)
+```
+<p>
+If you don’t have the source manifests available, you can update an existing Kubernetes deployment to bring its services onto the mesh:
+</p>
+
+```
+$ kubectl get deployment -o yaml | istioctl kube-inject -f - | kubectl apply -f -
+```
+<p>
+Let's look at an example of an existing application being onboarded onto the mesh. Let's use a freshly installed copy of BookInfo as an example of a Kubernetes application that isn't deployed on the service mesh yet. We'll start with exploring BookInfo's pods.
+</p>
+
+```
+$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+details-v1-69658dcf78-nghss       1/1     Running   0          43m
+productpage-v1-6b6798cb84-nzfhd   1/1     Running   0          43m
+ratings-v1-6f97d68b6-v6wj6        1/1     Running   0          43m
+reviews-v1-7c98dcd6dc-b974c       1/1     Running   0          43m
+reviews-v2-6677766d47-2qz2g       1/1     Running   0          43m
+reviews-v3-79f9bcc54c-sjndp       1/1     Running   0          43m
+```
+<p>
+The atomic unit of deployment in Kubernetes is a Pod.  Since a Pod is a collection of containers, it can be one or more containers deployed atomically together. In our example, we can see that each of BookInfo's pods is only executing one container. When <code>istioctl kube-inject</code> is run against  on BookInfo's manifests, it adds another container to the Pod specification but does not deploy anything yet.
+</p>
+<p>
+<code>istioctl kube-inject</code> supports modification of Pod-based Kubernetes objects (Job, DaemonSet, ReplicaSet, Pod and Deployment) that may be embedded into long yaml files containing other Kubernetes objects. <code>Istioctl kube-inject</code> will parse the other Kubernetes objects without modification. Unsupported resources are left unmodified so it is safe to run kube-inject over a single file that contains multiple Service, ConfigMap, Deployment, etc. definitions for a complex application. It is best to do this when the resource is initially created.
+</p>
+<p>
+In order to onboard this existing application, we can execute <code>istioctl kube-inject</code> against each Deployment and have a rolling update of that Deployment initiated by Kubernetes as shown below. Let’s start with the <code>productpage</code> service.
+</p>
+
+```
+$ kubectl get deployment productpage-v1 -o yaml | istioctl kube-inject -f - | kubectl apply -f -
+deployment.extensions/productpage-v1 configured
+```
+<p>
+We now notice that the productpage pod has grown to two containers when we look at the BookInfo pods again. Istio’s sidecar has been successfully injected. The rest of BookInfo’s application services need to be onboarded in order for BookInfo as an application to work.
+</p>
+
+```
+$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+details-v1-69658dcf78-nghss       1/1     Running   0          45m
+productpage-v1-64647d4c5f-z95dl   2/2     Running   0          64s
+ratings-v1-6f97d68b6-v6wj6        1/1     Running   0          45m
+reviews-v1-7c98dcd6dc-b974c       1/1     Running   0          45m
+reviews-v2-6677766d47-2qz2g       1/1     Running   0          45m
+reviews-v3-79f9bcc54c-sjndp       1/1     Running   0          45m
+```
+<p>
+You may choose to do this manual injection operation once and persist the new manifest file with istio-proxy (Envoy) inserted instead of ad-hoc onboarding of a running application. You can create a persistent version of the sidecar injected deployment outputting the results of <code>istioctl kube-inject</code> to a file. As Istio evolves the default sidecar configuration is subject to change.
+</p>
+
+```
+$ istioctl kube-inject -f deployment.yaml -o deployment-injected.yaml
+```
+Or like so:
+
+```
+$ istioctl kube-inject -f deployment.yaml > deployment-injected.yaml
+```
+<h4>Ad-hoc Sidecarring</h4>
+<p>
+Sidecar injection is responsible for configuring network capture. Injection and network capture can be selectively applied to enable incremental adoption of Istio. Using the BookInfo sample application as an example, let’s take the <code>productpage</code> service as the external-facing service and selectively remove this service (and just this service out of the set of four) from the service mesh. Let's start by checking for the presence of its sidecarred service proxy.
+</p>
+
+```
+$ kubectl get pods productpage-8459b4f9cf-tfblj -o jsonpath="{.spec.containers[*].image}"
+layer5/istio-bookinfo-productpage:v1 docker.io/istio/proxyv2:1.0.5
+```
+<p>
+As you can see, productpage container is our application container, while the istio/proxy is the service proxy (Envoy) that Istio injected into the pod. To manually onboard and offboard a deployment onto and off of the service mesh, you can manipulate annotation within its Kubernetes Deployment specification.
+</p>
+
+```
+$ kubectl patch deployment nginx --type=json --patch='[{"op": "add", "path": "/spec/template/metadata/annotations", "value": {"sidecar.istio.io/inject": "false"}}]'
+deployment.extensions/productpage-v1 patched
+```
+<p>
+On opening your browser to the <code>productpage</code> application, and you’ll find that it is still being served through Istio’s Ingress Gateway, but that its pods no longer have sidecars. Hence, the productpage app has been removed from the mesh.
+</p>
+
+```
+UNAVAILABLE:upstream connect error or disconnect/reset before headers
+```
+<h4>Automatic Sidecar Injection</h4>
+<p>
+No code change to receive much more visibility into how your services are behaving and how they are being interacted gives Istio a magical feeling once your services are on the mesh. Automatic sidecar injection is the magical feeling you get as you go to onramp your services.Not only does automatic sidecar injection eliminate the need to alter your code, but it also eliminates the need to change your Kubernetes manifests. Automatic sidecar injection in Kubernetes relies on mutating admission webhooks. The <code>istio-sidecar-injector</code> is added as a mutating webhook configuration resource when Istio is installed on Kubernetes.
+</p>
+
+```
+$ kubectl get mutatingwebhookconfigurations
+NAME                                    CREATED AT
+istio-sidecar-injector                  2019-04-18T16:35:03Z
+linkerd-proxy-injector-webhook-config   2019-04-18T16:48:49Z
+```
+
+```
+$ kubectl get mutatingwebhookconfigurations istio-sidecar-injector -o yaml
+
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: MutatingWebhookConfiguration
+metadata:
+  creationTimestamp: "2019-04-18T16:35:03Z"
+  generation: 2
+  labels:
+    app: sidecarInjectorWebhook
+    chart: sidecarInjectorWebhook
+    heritage: Tiller
+    release: istio
+  name: istio-sidecar-injector
+  resourceVersion: "192908"
+  selfLink: /apis/admissionregistration.k8s.io/v1beta1/mutatingwebhookconfigurations/istio-sidecar-injector
+  uid: eaa85688-61f7-11e9-a968-00505698ee31
+webhooks:
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: <redacted>
+    service:
+      name: istio-sidecar-injector
+      namespace: istio-system
+      path: /inject
+  failurePolicy: Fail
+  name: sidecar-injector.istio.io
+  namespaceSelector:
+    matchLabels:
+      istio-injection: enabled
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    resources:
+    - pods
+    scope: '*'
+  sideEffects: Unknown
+  timeoutSeconds: 30
+```
+
+<p>
+If the namespace contains the <code>istio-injection=enabled</code> label, Kubernetes will transmit all Pod creation events to the <code>istio-sidecar-injector</code> service (in the istio-system namespace) if this mutating webhook is registered. The injector service will then modify the PodSpec to include two more containers, one for the init-container to configure traffic rules and the other for istio-proxy (Envoy) to perform proxying.  The sidecar injector service uses a template to add these two additional containers; the template may be found in the <code>istio-sidecar-injector configmap</code>.
+</p>
+<p>
+Kubernetes lifecycle allows customization of resources before they are committed to the etcd store, the ‘source of truth’ for Kubernetes configuration. When an individual Pod is created (either via kubectl or a Deployment resource), it goes through this same lifecycle, hitting mutating admission webhooks which modify the pod before it actually gets applied.
+</p>
+
+<h4>Kubernetes Labels</h4>
+<p>
+Automatic sidecar injection relies on labels to identify which pods to inject Istio’s service proxy and initialize as pod on the data plane. Kubernetes objects, like pods and namespaces, can have user-defined labels attached to them. Labels are essentially <code>key:value</code> pairs like you finding in other systems that support the concept of tags. Webhook Admission controller relies on labels to select the namespaces they apply to. Istio-injection is the specific label that Istio uses. Familiarize by labeling the default namespace with <code>istio-injection=enabled</code>:
+</p>
+
+```
+$ kubectl label namespace default istio-injection=enabled
+````
+
+<p>Confirm which namespaces have the istio-injection label associated:</p>
+
+```
+$ kubectl get namespace -L istio-injection
+NAME           STATUS    AGE       ISTIO-INJECTION
+default        Active    1h        enabled
+Docker         Active    1h        enabled
+istio-system   Active    1h        disabled
+kube-public    Active    1h        
+kube-system    Active    1h
+```
+<p>
+Notice that only the <code>istio-system</code> namespace has the <code>istio-injection</code> label assigned. By virtue of having the <code>istio-injection</code> label and its value set to disabled, the <code>istio-system</code> namespace will not have service proxies automatically injected into their pods upon deployment. This does not mean that pods in this namespace cannot have service proxies. It just means that service proxies won’t be automatically injected. 
+</p>
+<p>
+One caveat to watch out for, when using the <code>namespaceSelector</code>, make sure that the namespace(s) you are selecting really has the label you are using. Keep in mind that the built-in namespaces like default and <code>kube-system</code> don’t have labels out of the box.
+</p>
+
+<p>Conversely, the namespace in the metadata section is the actual name of the namespace, not a label:</p>
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: test-network-policy
+  namespace: default
+spec:
+...
+```
+
+<h4>Kubernetes Init Containers</h4>
+<p>
+Very similar to cloud-init for those familiar with VM provisioning, init containers in Kubernetes allows you to run temporary containers to perform a task before engaging your primary container(s). Init containers are Init containers in Kubernetes allow you to run temporary containers to execute a task before activating your principal container, comparable to cloud-init for people acquainted with VM provisioning (s). Init containers are frequently used for provisioning operations such as asset bundling, database migration, and cloning a git repository onto a volume. In the instance of Istio, init containers are used to set up network filters - iptables - that control traffic flow. used to perform provisioning tasks like bundling assets, performing database migration, or clone a git repository into a volume. In Istio’s case, init containers are used to setup network filters - iptables to control the flow of traffic.
+</p>
+
+</ResourcesWrapper>

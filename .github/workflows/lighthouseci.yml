@@ -1,0 +1,22 @@
+name: lighthouseci
+on:
+  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - "*.md"
+      - "*.github/**"
+
+jobs:
+  lighthouseci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 19
+      - run: npm install --legacy-peer-deps && npm install -g @lhci/cli@0.11.x
+      - run: CI=false npm run build
+      - run: lhci collect --config=.desktop-lighthouserc.js
+      - run: lhci assert --config=.desktop-lighthouserc.js
+      - run: lhci upload
+      - run: lhci autorun

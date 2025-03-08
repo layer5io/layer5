@@ -1,0 +1,93 @@
+---
+title: "What is the Kanvas Catalog?"
+subtitle: "Ready-to-go templates for cloud and cloud native infrastructure"
+date: 2024-11-05
+author: Layer5 Team
+thumbnail: ../../../../assets/images/catalog-icon/catalog2.svg
+darkthumbnail: ../../../../assets/images/catalog-icon/catalog.svg
+description: "A comprehensive guide to the Kanvas Catalog, a collection of curated, pre-built, and ready-to-use cloud and cloud native infrastructure configurations."
+type: Blog
+category: Kanvas
+tags:
+  - Catalog
+featured: false
+published: true
+resource: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+
+import quickActionsPNG from "./quick-actions-designs.png";
+import importDesignButtonPNG from "./import-button.png";
+import importDesignPanelPNG from "./import-designs-panel.png";
+import renderedDesignPNG from "./rendered-design.png";
+import designPannelOpener from "./designs-panel-opener.png";
+import designerDockPNG from "./designer-dock.png";
+import catalogGIF from "./catalog.gif";
+import publishToCatalogGIF from "./publish-to-catalog.gif";
+import importGIF from "./import-design-gif.gif";
+import getStartedWithDesignerGIF from "./start-from-scratch.gif";
+
+<BlogWrapper>
+
+### What is the Kanvas Catalog?
+
+<Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> is a hub for sharing and discovering best practices, reusable templates, and operational patterns for Kubernetes and cloud-native infrastructure. It's like a marketplace where you can find and contribute pre-built infrastructure configurations and operational views. The Catalog is a part of the Kanvas platform, which is a comprehensive suite of tools for managing cloud-native infrastructure.
+
+<div className="note"> <a href="https://cloud.layer5.io/catalog">Explore the catalog</a></div>
+
+### What can you find in the Catalog?
+
+- Design Patterns: Ready-made blueprints for common infrastructure and application architectures. These patterns can save you significant time and effort in designing your deployments.  
+- Filters and Applications: Pre-configured filters for Envoy proxies, WebAssembly filters, and complete application deployments.
+- Meshery Designs: Share and reuse your own Meshery configurations, making it easier to collaborate and standardize your deployments.  
+- Meshery Models: Share and reuse your own Meshery models, making it easier to collaborate and standardize your component library.
+
+#### Why is the Catalog useful?
+
+- Accelerated Development: Leverage existing patterns to jumpstart your projects and avoid reinventing the wheel.
+- Community Knowledge: Benefit from the collective experience of the Layer5 community and industry best practices.  
+- Standardization: Promote consistency and reduce errors by using predefined configurations.
+- Collaboration: Share your own designs and contribute to the growing collection of patterns.
+
+### How can you contribute to the Catalog?
+
+You can contribute to the Catalog by creating high-quality starter templates and publishing designs for the community to use in various ways. You can also climb the leaderboard by having your designs cloned, downloaded, or viewed the most. Follow the instructions below to get started with your designs.
+
+#### Create or Import a Design
+Begin by creating a new design from scratch, using existing design patterns and templates from catalog:
+
+**From Scratch**:
+
+- Open the Designs panel, Select and arrange components from the Designer Dock on the Kanvas, and customize with connections, labels, and properties.
+  <img src={getStartedWithDesignerGIF} />
+
+**From a Template**:
+
+- Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
+  <img src={catalogGIF} />
+
+**Import a Design**: 
+
+
+-   Access the Kanvas Designer and select the "Import" button in the left Designs panel. Import your own designs from local filesystem or from a remote URL directly into the Catalog. Upload a file or provide a URL for Docker Compose, Helm Charts, Meshery Designs or Kubernetes Manifests. Choose to either import as new or merge into current design that you have open in Kanvas.
+    <img src={importGIF} />
+
+Kanvas will convert these into a usable design based on their configurations.
+   
+<img src={renderedDesignPNG} />
+
+
+#### Publish a Design
+Make your designs accessible to others by publishing them in the Catalog:
+
+- In the designs panel, locate your design and hover over it to access quick actions. Select the info button (marked with an "i") and add any necessary details for the review process, such as relevant technologies, descriptions, and considerations and click Publish button. Once approved by the Maintainers, your design becomes available to the broader community in Kanvas catalog.
+<img src={publishToCatalogGIF} />
+
+
+#### Share your designs
+Share your designs with your team members and effortlessly collaborate on designing and operating multi-cloud and Kubernetes native infrastrcutre with a seamless, built-in review mechanism.
+
+</BlogWrapper>
+

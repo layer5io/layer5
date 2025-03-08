@@ -1,0 +1,68 @@
+---
+title: Comparing Meshery Models and Meshery Designs
+subtitle: Lego Bricks and Lego Instructions
+date: 2024-03-27
+author: Lee Calcote
+thumbnail: ./five-legos.png
+darkthumbnail: ./five-legos.png
+description: "Understanding the difference between Meshery Models and Meshery Designs"
+type: Blog
+category: Meshery
+tags:
+  - Meshery
+featured: true
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Button from "../../../../reusecore/Button";
+import FiveInstructions from "./five-instructions.png";
+import FiveLegos from "./five-legos.png";
+
+<BlogWrapper>
+
+<div class="intro"><p>
+In Meshery, two key concepts play a pivotal role in managing infrastructure and deployments: Meshery Models and Meshery Designs. Understanding their difference and their similarities will greatly increase your benefit from these two powerful, systems management paradigms.
+</p></div>
+
+<h3 style="margin-top:1.2rem;">Meshery Models</h3>
+
+ 
+<h3 style="margin-top:1.2rem;"> Meshery Designs</h3>
+
+On the other hand, <a href="https://docs.meshery.io/concepts/logical/designs" target="_blank">Meshery Designs</a> are the practical implementations based on Meshery Models. They represent declarations of your infrastructure deployments, customized according to specific use cases, environments, and requirements. Meshery Designs allow you to create, manage, and deploy complex architectures seamlessly, leveraging the power and flexibility of Meshery Models as their foundation.
+<img src={FiveLegos}  width="50%"></img>
+<h3 style="margin-top:1.2rem;"><strong>Meshery Models (similar to Lego bricks)</strong></h3>
+
+<p>Meshery <a href="https://docs.meshery.io/concepts/logical/models" target="_blank">Models</a> are standardized packages that bundle components and characterize their relationships. <a href="https://docs.meshery.io/concepts/logical/components" target="_blank">Components</a> are often representative of infrastructure, but can, in fact, represent anything (see semantically meaningful vs non-semantically meaingful components). Models uniformly wrap each component with a layer of metadata therein standardizing all entities (infrasturcture or otherwise) under a common interface much in the same way that the Industrial Revolution offered consistency of parts and interchangability of machinery, Meshery Components become fundamental building blocks. Components are like standard Lego bricks, window pieces, wheels that all snap together - or don't - depending upon way in which they relate to one another.</p>
+
+<p>As versioned and portable pacakges, Models provide a structured, reusable, and extensible way to represent infrastructure components and their relationships, going beyond just code. This enables a more flexible and adaptable approach to modeling complex systems. are powerful Relationships and policies. contain Components cannot be directly used to build something complete on their own, but are standardized and reused across different Lego sets (instructions).</p>
+
+<ul>
+	<li><strong>Definition:</strong>&nbsp;Building blocks for infrastructure definition.</li>
+	<li><strong>Focus:</strong>&nbsp;Describe how to manage specific infrastructure types and their interactions.<img data-file-id="2445161" height="223" src={FiveLegos} style="border: 0px; width: 300px; height: 223px; margin: 0px;" width="300; box-shadow: none;" class="image-right-no-shadow" /></li>
+	<li><strong>Content:</strong>&nbsp;Define properties, capabilities, and relationships for infrastructure components.</li>
+	<li><strong>Usability:</strong>&nbsp;Not directly deployable, but used as building blocks within Designs.</li>
+	<li><strong>Sharing:</strong>&nbsp;Can be packaged and shared for others to use in their Designs.</li>
+</ul>
+
+<p>Meshery Models are like the individual Lego bricks - they define the building blocks for infrastructure with specific characteristics.</p>
+
+<h3 style="margin-top:1.2rem;"><strong>Meshery Designs (similar to Lego instructions)</strong></h3>
+
+<p>Meshery Designs provide a collaborative blueprint for building a specific model using Lego bricks (Meshery Models). Designs define the structure and placement of the bricks to achieve the desired outcome. Desan be shared, versioned, and used as reference for building the same model.</p>
+In essence:<img data-file-id="2445165" height="300" src={FiveInstructions} style="border: 0px; width: 179px; height: 300px; margin: 0px;" width="179;" class="image-right-no-shadow" />
+<ul>
+	<li><strong>Definition:</strong>&nbsp;Collaborative documents for infrastructure and application deployment.</li>
+	<li><strong>Focus:</strong>&nbsp;Describe the desired state of infrastructure for a specific deployment.</li>
+	<li><strong>Content:</strong>&nbsp;Use components (based on Models) and relationships to define your infrastructure.</li>
+	<li><strong>Usability:</strong>&nbsp;Designs are the deployable unit in Meshery.</li>
+	<li><strong>Sharing:</strong>&nbsp;Can be exported, versioned, shared, and published for reuse by others.</li>
+</ul>
+{/* <img src={FiveInstructions} class="img-right"></img> */}
+<p>Meshery Designs are like the Lego instructions - they use Models (like bricks) to lay out the specific infrastructure deployment plan.</p>
+
+<p><strong>Analogy:</strong> Think of Models as Lego bricks (defining types of pieces) and Designs as Lego instructions (defining how to build something specific).</p> In summary, Meshery Models serve as the theoretical frameworks, while Meshery Designs translate these frameworks into tangible deployments, enabling you to design, deploy, and manage your infrastructure efficiently within the cloud and cloud native ecosystem.
+
+</BlogWrapper>
