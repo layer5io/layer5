@@ -6,8 +6,7 @@ import FeatureDetails from "./collapsible-details";
 import Modal from "react-modal";
 import CommonForm from "../CommonForm";
 
-const PlanCard = ({ planData , isYearly }) => {
-
+const PlanCard = ({ planData, isYearly }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => setModalIsOpen(true);
@@ -23,12 +22,16 @@ const PlanCard = ({ planData , isYearly }) => {
         <Row $Hcenter>
           {planData.map((x) => (
             // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
+
             <Col key={x.tier}>
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
+                {x.tier === "Personal" ? (
+                  <div className="pricing-label">Free Forever</div>
+                ) : null}
 
-                {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
-
-                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
+                {x.tier === "Team Designer" ? (
+                  <div className="featured-label">Most Popular</div>
+                ) : null}
 
                 {x.pricing_coming_soon && (
                   <div className="pricing_coming_soon">
@@ -43,10 +46,9 @@ const PlanCard = ({ planData , isYearly }) => {
                   {isYearly ? (
                     x.yearlyprice !== undefined ? (
                       <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.yearlyprice === 0
-                            ? "0"
-                            : x.yearlyprice.toFixed(0)}
+                        <span className="price-amount">
+                          <sup>$</sup>
+                          {x.yearlyprice === 0 ? "0" : x.yearlyprice.toFixed(0)}
                         </span>
                         <span className="currency">USD</span>
                         <span className="price-per">per user/year</span>
@@ -56,35 +58,38 @@ const PlanCard = ({ planData , isYearly }) => {
                         {x.pricing_coming_soon}
                       </div>
                     )
+                  ) : x.monthlyprice !== undefined ? (
+                    <div className="price">
+                      <span className="price-amount">
+                        <sup>$</sup>
+                        {x.monthlyprice === 0 ? "0" : x.monthlyprice.toFixed(0)}
+                      </span>
+                      <span className="currency">USD</span>
+                      <span className="price-per">per user/month</span>
+                    </div>
                   ) : (
-                    x.monthlyprice !== undefined ? (
-                      <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.monthlyprice === 0
-                            ? "0"
-                            : x.monthlyprice.toFixed(0)}
-                        </span>
-                        <span className="currency">USD</span>
-                        <span className="price-per">per user/month</span>
-                      </div>
-                    ) : (
-                      <div className="pricing_coming_soon">
-                        {x.pricing_coming_soon}
-                      </div>
-                    )
+                    <div className="pricing_coming_soon">
+                      {x.pricing_coming_soon}
+                    </div>
                   )}
                 </div>
 
-
                 <Button
                   // disabled={x.tier === "Team Operator"}
-                  $primary
+                  $primary={true}
                   className={
                     x.button[0] === "Coming Soon"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  onClick={x.tier === "Enterprise" ? openModal : undefined}
+                  $url={
+                    x.button[0] === "Join for Free"
+                      ? "https://cloud.layer5.io/login"
+                      : undefined
+                  }
+                  onClick={
+                    x.button[0] === "Contact Sales" ? openModal : undefined
+                  }
                 >
                   {x.tier === "Enterprise" ? "Contact Sales" : x.button[0]}
                 </Button>
@@ -103,7 +108,6 @@ const PlanCard = ({ planData , isYearly }) => {
                       </div>
                     ))}
                 </div>
-
               </div>
             </Col>
           ))}
@@ -123,34 +127,36 @@ const PlanCard = ({ planData , isYearly }) => {
             display: "flex",
             flexDirection: "column",
             "&::-webkit-scrollbar": {
-              display: "none"
+              display: "none",
             },
             scrollbarWidth: "none",
-            msOverflowStyle: "none"
+            msOverflowStyle: "none",
           },
           overlay: {
             overflow: "auto",
             "&::-webkit-scrollbar": {
-              display: "none"
+              display: "none",
             },
             scrollbarWidth: "none",
-            msOverflowStyle: "none"
-          }
+            msOverflowStyle: "none",
+          },
         }}
       >
         <Button $secondary className="close-modal-btn" onClick={closeModal}>
-    X
+          X
         </Button>
         <h2 className="modal-heading">Contact sales</h2>
-        <div style={{
-          flex: 1,
-          overflow: "auto",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          "&::-webkit-scrollbar": {
-            display: "none"
-          }
-        }}>
+        <div
+          style={{
+            flex: 1,
+            overflow: "auto",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+        >
           <CommonForm
             title="Contact sales"
             form="contact"
