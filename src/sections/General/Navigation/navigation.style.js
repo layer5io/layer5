@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
   width: 100vw;
-  position: sticky;
+  position: fixed;
   z-index: 9999;
   top: 0;
   background-color: ${(props) => props.theme.body};
   transition-property: color, background-color;
   transition-duration: 0.8s;
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
 
   .nav-container {
     display: flex;
