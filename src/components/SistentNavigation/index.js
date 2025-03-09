@@ -64,76 +64,78 @@ const TOC = () => {
           </li>
           <li>
             <div>
-              <li
+              <div
                 className="toc-sub-heading identity"
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Identity
                 {expandIdenity ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              </li>
+              </div>
               {expandIdenity && (
                 <div className="identity-sublinks">
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/color"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/color"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Color
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/spacing"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/spacing"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Spacing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/projects/sistent/identity/typography"
-                      className={`toc-sub-heading toc-sub-inline identity-item ${
-                        location.pathname.includes(
-                          "/projects/sistent/identity/typography"
-                        )
-                          ? "active"
-                          : ""
-                      }`}
-                      activeClassName="active"
-                    >
-                      Typography
-                    </Link>
-                  </li>
+                  <ul className="toc-ul">
+                    <li>
+                      <Link
+                        to="/projects/sistent/identity/color"
+                        className={`toc-sub-heading toc-sub-inline identity-item ${
+                          location.pathname.includes(
+                            "/projects/sistent/identity/color"
+                          )
+                            ? "active"
+                            : ""
+                        }`}
+                        activeClassName="active"
+                      >
+                        Color
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/projects/sistent/identity/spacing"
+                        className={`toc-sub-heading toc-sub-inline identity-item ${
+                          location.pathname.includes(
+                            "/projects/sistent/identity/spacing"
+                          )
+                            ? "active"
+                            : ""
+                        }`}
+                        activeClassName="active"
+                      >
+                        Spacing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/projects/sistent/identity/typography"
+                        className={`toc-sub-heading toc-sub-inline identity-item ${
+                          location.pathname.includes(
+                            "/projects/sistent/identity/typography"
+                          )
+                            ? "active"
+                            : ""
+                        }`}
+                        activeClassName="active"
+                      >
+                        Typography
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               )}
             </div>
           </li>
           <li>
             <div>
-              <li
+              <div
                 className="toc-sub-heading components"
                 onClick={() => setExpandComponent((prev) => !prev)}
               >
                 Components
                 {expandComponent ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              </li>
+              </div>
               {expandComponent && (
                 <div className="components-sublinks">
-                  <li>
+                  <ul className="toc-ul">
                     {sortedComponentArray.map((component) => (
                       <li key={component.id}>
                         <Link
@@ -149,7 +151,7 @@ const TOC = () => {
                         </Link>
                       </li>
                     ))}
-                  </li>
+                  </ul>
                 </div>
               )}
             </div>
