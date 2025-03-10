@@ -84,9 +84,15 @@ const PlanCard = ({ planData , isYearly }) => {
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  onClick={x.tier === "Enterprise" ? openModal : undefined}
+                  onClick={() => {
+                    if (x.tier === "Enterprise") {
+                      openModal();
+                    } else {
+                      window.location.href = x.button[1];
+                    }
+                  }}
                 >
-                  {x.tier === "Enterprise" ? "Contact Sales" : x.button[0]}
+                  {x.tier === "Enterprise" ? "Contact Sales" : x.button[0] || "Join"}
                 </Button>
 
                 <h6>{x.byline2}</h6>
