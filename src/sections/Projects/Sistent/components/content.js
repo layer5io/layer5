@@ -119,6 +119,14 @@ const componentsData = [
     url: "/projects/sistent/components/select",
     src: "/select",
   },
+  {
+    id: 16,
+    name: "Stack",
+    description:
+      "Stack arranges elements in a row or column with consistent spacing and alignment, simplifying layout creation.",
+    url: "/projects/sistent/components/stack",
+    src: "/stack",
+  },
 ];
 
 module.exports = { componentsData };
