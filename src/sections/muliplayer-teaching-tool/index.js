@@ -13,26 +13,33 @@ import { FaUniversity } from "@react-icons/all-files/fa/FaUniversity";
 import { FaTrophy } from "@react-icons/all-files/fa/FaTrophy";
 
 import Button from "../../reusecore/Button";
-import Reviews from "../Pricing/review-slider";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
 
 
 const Grid = styled.div`
   display: grid;
   margin: 3rem 0;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+
+    @media (max-width: 900px) {
+       grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 500px) {
+       grid-template-columns: repeat(1, 1fr);
+    }
 `;
 
 const Card = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: ${props => props.theme.grey212121ToWhite};
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   background: ${props => props.theme.grey212121ToWhite};
 `;
 
 const IconWrapper = styled.div`
@@ -41,6 +48,11 @@ const IconWrapper = styled.div`
 
 const CardContent = styled.div`
   flex: 1;
+  text-align: center;
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
 `;
 const Section = styled.div`
   text-align: center;
@@ -55,31 +67,45 @@ const MultiplayerTeachingPage = () => {
       <Container className={"heading-container"}>
         <div className={"section-title"}>
           <h1 className={"multiplayer-heading"}>Multi-Player Cloud Native Teaching and Collaboration Platform</h1>
-          <p className={"multiplayer-text"}>Empowering content creators, instructors, and trainers with a real-time, interactive environment for cloud native education.</p>
+          <p className={"multiplayer-text"}>Empowering content creators, instructors, and trainers with a real-time, interactive environment right in the browser for cloud native education.</p>
         </div>
       </Container>
       <Container>
-        <h2 style={{ margin: "2rem 0", textAlign: "center" }} >For learners:</h2>
+        {/* <h2 style={{ margin: "2rem 0", textAlign: "center" }} >gf</h2> */}
         <Grid>
           <Card>
-            <IconWrapper><FaCloud style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
+            <IconWrapper><FaCloud style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
             <CardContent>
               <h2>Live Lab Environment</h2>
               <p>Instantly deploy and interact with cloud native infrastructure in real time.</p>
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaUsers style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
+            <IconWrapper><FaUsers style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
             <CardContent>
               <h2>Multi-Player Collaboration</h2>
               <p>Work together with students, trainees, or team members on a shared Kanvas, just like Figma for DevOps engineers.</p>
             </CardContent>
           </Card>
           <Card>
-            <IconWrapper><FaLaptopCode style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
+            <IconWrapper><FaLaptopCode style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
             <CardContent>
               <h2>Self Paced Learning</h2>
               <p>Create, modify, and explore cloud architectures hands-on with intuitive tools.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <IconWrapper><FaChalkboardTeacher style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
+            <CardContent>
+              <h2>Interactive Teaching</h2>
+              <p>Conduct live training sessions and provide step-by-step guided tutorials.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <IconWrapper><FaUniversity style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
+            <CardContent>
+              <h2>Structured Learning Paths</h2>
+              <p>Build interactive educational journeys for students and professionals.</p>
             </CardContent>
           </Card>
           {/* <Card>
@@ -90,44 +116,14 @@ const MultiplayerTeachingPage = () => {
           </CardContent>
         </Card> */}
           <Card>
-            <IconWrapper><FaBookOpen style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
+            <IconWrapper><FaBookOpen style={{ color: "rgb(0, 179, 159)", height: "100px", width: "100px" }} /></IconWrapper>
             <CardContent>
               <h2>Cloud Native Design Patterns</h2>
               <p>Access a growing catalog of ready-made blueprints for Kubernetes and multi-cloud environments.</p>
             </CardContent>
           </Card>
         </Grid>
-        <h2 style={{ marginBottom: "2rem", textAlign: "center" }} >For educators: </h2>
-        <Grid>
-          <Card>
-            <IconWrapper><FaChalkboardTeacher style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
-            <CardContent>
-              <h2>Interactive Teaching</h2>
-              <p>Conduct live training sessions and provide step-by-step guided tutorials.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <IconWrapper><FaUniversity style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
-            <CardContent>
-              <h2>Structured Learning Paths</h2>
-              <p>Build interactive educational journeys for students and professionals.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <IconWrapper><FaCodeBranch style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
-            <CardContent>
-              <h2>Collaborative Design Reviews</h2>
-              <p>Facilitate infrastructure design reviews and best practice sharing.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <IconWrapper><FaCogs style={{ color: "rgb(0, 179, 159)" }} /></IconWrapper>
-            <CardContent>
-              <h2>DevOps and Architecture Training</h2>
-              <p>Demonstrate multi-cloud and Kubernetes architecture patterns.</p>
-            </CardContent>
-          </Card>
-        </Grid>
+
         <Section>
           <h2>Enhance Your Reach and Influence</h2>
           <p>Track engagement, showcase your expertise, and gain recognition.</p>
@@ -148,7 +144,6 @@ const MultiplayerTeachingPage = () => {
           </Button>
         </Section>
       </Container>
-      <Reviews />
     </MultiplayerTeachingWrapper>
   );
 };
