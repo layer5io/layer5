@@ -19,6 +19,7 @@ import writersLogo from "../../../assets/images/writer-program/writer-program-ba
 import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
+import EmployeeLogo from "../../../assets/images/employee/employee.svg";
 import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
 import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
 import DesignPioneerLogo from "../../../assets/images/design-pioneer/design-pioneer.svg";
@@ -231,6 +232,10 @@ const RecognitionPage = () => {
                 <img src={DocsLogo} style={badgeStyle} />
                 <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
               </li>
+              <li>
+                <img src={EmployeeLogo} style={badgeStyle} />
+                <b>Employee</b> - awarded to the dedicated employees of layer5 who set the standards for excellence in all we do. interested in joining the team? <a href="https://layer5.io/careers">Apply here</a>.
+                </li>
             </ul>
             <a id="how-to-earn-badges">
               <h3>How can I Earn Badges?</h3>

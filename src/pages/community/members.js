@@ -28,6 +28,7 @@ import dockerExtensionIcon from "../../assets/images/docker-extension/docker-ext
 import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
 import kanvasIcon from "../../assets/images/kanvas/badges/kanvas.svg";
 import sistentIcon from "../../assets/images/sistent/badges/sistent-contributor.svg";
+import employeeIcon from "../../assets/images/employee/employee.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.
@@ -223,6 +224,14 @@ const options = [
     color: lighttheme.linkColor,
     isFixed: true,
     icon: communityIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Employee",
+    value: "employee",
+    color: lighttheme.linkColor,
+    isFixed: true,
+    icon: employeeIcon,
     className: "allOptions",
   },
 ].map((obj) => ({
