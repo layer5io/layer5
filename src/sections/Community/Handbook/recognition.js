@@ -235,7 +235,7 @@ const RecognitionPage = () => {
               <li>
                 <img src={EmployeeLogo} style={badgeStyle} />
                 <b>Employee</b> - awarded to the dedicated employees of layer5 who set the standards for excellence in all we do. interested in joining the team? <a href="https://layer5.io/careers">Apply here</a>.
-                </li>
+              </li>
             </ul>
             <a id="how-to-earn-badges">
               <h3>How can I Earn Badges?</h3>
