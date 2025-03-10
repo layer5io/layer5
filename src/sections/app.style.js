@@ -278,13 +278,13 @@ section{
 }
 @media screen and (max-width: 765px) {
     .form-frame {
-        width: 25rem;
+        max-width: 100%;
         height: 30rem;
     }
 }
 @media screen and (max-width: 500px) {
     .form-frame {
-        width: 22rem;
+        max-width: 100%;
         height: 26rem;
     }
 }
