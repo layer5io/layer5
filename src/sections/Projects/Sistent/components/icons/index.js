@@ -129,7 +129,7 @@ const SistentIcons = () => {
   );
 
   return (
-    <SistentLayout title="Sistent Icons">
+    <SistentLayout title="Icons">
       <div className="content">
         <a id="Identity">
           <h2>Icons</h2>
