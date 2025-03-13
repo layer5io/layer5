@@ -683,8 +683,7 @@ const SistentWrapper = styled.div`
     font-weight: 700;
     color: ${props => props.theme.text};
   }
-
-.card .text {
+    .card .text {
   padding-top: 1rem;
   padding-bottom: 2rem;
   font-size: 16px;
@@ -854,6 +853,174 @@ const SistentWrapper = styled.div`
       overflow: auto;
     }
   }
+
+  /* Icon grid and cards */
+  .icon-list {
+    margin-top: 24px;
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .icon-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure full width */
+  }
+
+  .icon-card-container.dark {
+    background-color: #2d2d2d;
+  }
+
+  .icon-card-container.light {
+    background-color: #f5f5f5;
+  }
+
+  .icon-card-container:hover {
+    background-color: #3d3d3d;
+  }
+
+  .icon-card-container.light:hover {
+    background-color: #e0e0e0;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .icon-name {
+    font-size: 14px;
+    text-align: center;
+    color: inherit;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-width: 100%; /* Ensure the text container doesn't exceed its parent's width */
+    width: 100%; /* Take full width */
+  }
+
+  /* Search input */
+  .icon-search-container {
+    margin-bottom: 24px;
+  }
+
+  .icon-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .icon-search-input.dark {
+    background-color: #2d2d2d;
+    color: #fff;
+    border-color: #444;
+  }
+
+  .icon-search-input.light {
+    background-color: #fff;
+    color: #000;
+    border-color: #ccc;
+  }
+
+  .icon-search-input:focus {
+    border-color: #007bff;
+  }
+
+  /* IconCard container */
+.icon-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon-card-container.dark {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.icon-card-container.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.icon-card-container:hover {
+  background-color: #444;
+}
+
+.icon-card-container.light:hover {
+  background-color: #f5f5f5;
+}
+
+/* Icon container */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Icon name */
+.icon-name {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.icon-name.dark {
+  color: #fff;
+}
+
+.icon-name.light {
+  color: #000;
+}
+
+/* No icons found message */
+.no-icons-found {
+  text-align: center;
+  font-size: 16px;
+  color: inherit;
+}
+
+/* Code block styles */
+.code-block {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .icon-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .icon-name {
+      font-size: 12px;
+    }
+  }
 `;
 
 export default SistentWrapper;
+
+
+
