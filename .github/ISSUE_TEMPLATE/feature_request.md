@@ -2,7 +2,7 @@
 name: 💡 Feature request
 about: Suggest an enhancement to the Layer5 website
 title: ''
-labels: 'kind/enhancement'
+labels: 'kind/enhancement, help wanted'
 assignees: ''
 ---
 ### Current Behavior
