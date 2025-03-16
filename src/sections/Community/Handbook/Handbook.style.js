@@ -38,21 +38,21 @@ export const HandbookWrapper = styled.div`
 
     .page-section{
       h2{
-        padding-top: 7rem;
-        margin-top: -7rem;
+        padding-top: 0rem;
+        margin-top: 0rem;
       }
       h3{
         padding-top: 7rem;
         margin-top: -7rem;
       }
       @media (min-width: 750px) {
-        margin-top: -36rem;
+        margin-top: -53rem;
         margin-left: 20rem;
       }
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
-       margin-top : -62vh ;
+       margin-top : -90vh ;
 
 
   }
@@ -62,10 +62,10 @@ export const HandbookWrapper = styled.div`
     }
     .conduct-section{
       @media screen and (min-width: 751px) {
-        margin-top:-43rem;
+        margin-top: -90vh;
       }
             @media screen and (min-width: 768px) and (max-height: 1145px) {
-       margin-top : -66vh ! important;
+       margin-top : -90vh ! important;
 
     }
 
