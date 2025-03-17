@@ -2,7 +2,7 @@
 name: 🚀 Enhancement in Sistent Project
 about: Propose a new feature, suggest a component, or report an issue for Sistent.
 title: '[Sistent]'
-labels: 'project/sistent, kind/enhancement'
+labels: 'project/sistent, kind/enhancement, help wanted, language/javascript, framework/react'
 assignees: ''
 ---
 ### Current Behavior

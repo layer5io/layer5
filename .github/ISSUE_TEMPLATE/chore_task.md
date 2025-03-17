@@ -2,7 +2,7 @@
 name: 🧹Chore or task
 about: Identify a necessary task to be addressed.
 title: ''
-labels: 'kind/chore'
+labels: 'kind/chore, help wanted'
 assignees: ''
 ---
 ### Current Behavior
