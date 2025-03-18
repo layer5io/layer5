@@ -90,7 +90,9 @@ const Layer5Brand = () => {
           }} className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
-            <ColorBox name="Saffron" R="235" G="192" B="23" colorCode="#EBC017" />
+            <div className="saffron-color-box">
+              <ColorBox name="Saffron" R="235" G="192" B="23" dark colorCode="#EBC017" />
+            </div>
             <div className="blond-color-box">
               <ColorBox name="Blond" R="255" G="243" B="197" dark colorCode="#FFF3C5" />
             </div>
