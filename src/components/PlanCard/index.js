@@ -77,22 +77,17 @@ const PlanCard = ({ planData , isYearly }) => {
 
 
                 <Button
-                  // disabled={x.tier === "Team Operator"}
                   $primary
-                  className={
-                    x.button[0] === "Coming Soon"
-                      ? "price-button-disabled"
-                      : "price-button-link"
-                  }
+                  className="price-button-link"
                   onClick={() => {
-                    if (x.tier === "Enterprise") {
+                    if (x.tier === "Enterprise" || x.tier === "Team") {
                       openModal();
                     } else {
                       window.location.href = x.button[1];
                     }
                   }}
                 >
-                  {x.tier === "Enterprise" ? "Contact Sales" : x.button[0] || "Join"}
+                  {x.tier === "Enterprise" || x.tier === "Team" ? "Contact Sales" : x.button[0] || "Join"}
                 </Button>
 
                 <h6>{x.byline2}</h6>
