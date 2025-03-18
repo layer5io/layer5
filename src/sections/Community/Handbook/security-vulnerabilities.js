@@ -9,6 +9,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import mesheryextension from "../../../assets/images/meshery/icon-only/meshery-extension-color.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
@@ -92,6 +93,16 @@ const SecurityVulnerabilitiesPage = () => {
                   alt="Kanvas logo"
                   style={{ marginLeft: ".3rem" }}
                 />Kanvas.
+              </li>
+              <li>
+                <a href="https://github.com/meshery-extensions">
+                  <img
+                    src={mesheryextension}
+                    alt="meshery icon"
+                  />
+                  &nbsp; Meshery Extensions
+                </a>
+                  - Platform extension for seamless collaboration in cloud native infrastructure.
               </li>
             </ul>
             <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
