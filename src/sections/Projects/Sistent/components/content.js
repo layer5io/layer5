@@ -126,6 +126,14 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 17,
+    name: "Checkbox",
+    description:
+      "A Checkbox allows users to select one or multiple options from a list, commonly used in forms and settings.",
+    url: "/projects/sistent/components/checkbox",
+    src: "/checkbox",
+  },
 ];
 
 module.exports = { componentsData };
