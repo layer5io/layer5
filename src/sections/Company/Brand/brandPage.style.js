@@ -218,7 +218,7 @@ const BrandPageWrapper = styled.section`
 		margin-top: 2rem;
 	}
 
-	.blond-color-box, .white-color-box {
+	.blond-color-box, .white-color-box, .saffron-color-box {
 		.PalletBox {
 			color: rgb(30, 33, 23);
 			.color-name {
