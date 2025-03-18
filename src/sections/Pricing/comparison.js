@@ -20,8 +20,9 @@ h2, h5{
     box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
-    overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-x: auto;
+    overflow-y: auto; 
+    max-height: 80vh;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .price-table {
@@ -87,6 +88,9 @@ h2, h5{
 .price-table tr.price-table-head {
     background-color:${props => props.theme.secondaryColor};
     color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 .price-table td.price {
     padding: 16px 24px;
