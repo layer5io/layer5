@@ -141,7 +141,7 @@ const TOC = () => {
                         <Link
                           to={component.url}
                           className={`toc-sub-heading toc-sub-inline components-item ${
-                            location.pathname.includes(component.url)
+                            location.pathname === component.url
                               ? "active"
                               : ""
                           }`}
