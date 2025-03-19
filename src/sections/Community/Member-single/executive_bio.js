@@ -87,7 +87,7 @@ const MemberBio = ({ frontmatter, body }) => {
                     )}
                     {email && (
                       <li>
-                        <a href={`mailto:=${email}`}>
+                        <a href={`mailto:${email}`}>
                           <MdMail className="github" size={32} />
                         </a>
                       </li>
