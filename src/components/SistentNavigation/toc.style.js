@@ -66,8 +66,9 @@ const TOCWrapper = styled.div`
   }
 
   .toc-ul {
-    display: flex;
-    flex-direction: column;
+     max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    padding-right: 0.5rem;
     margin-top: 0rem;
     list-style: none;
   }
