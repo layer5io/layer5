@@ -80,7 +80,7 @@ const Kanvas = (props) => {
           <InlineQuotes
             person="Guy Menahem"
             title="Software Engineer at AWS"
-            quote="I love visuals creating IaC. I think it can be amazingly impactful for self serve platforms."
+            quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
             image={GuyM}/>
           <DesignerFeatures
             features={
