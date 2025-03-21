@@ -5,6 +5,7 @@ import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import options from "./generatePlans";
 import PlanCard from "../../components/PlanCard";
+import OpenSourceBanner from "./openSourcePricing";
 
 const Pricing = () => {
   // const [monthly, setMonthly] = useState(false);
@@ -45,6 +46,7 @@ const Pricing = () => {
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly}/>
       </div>
+      <OpenSourceBanner />
       <Comparison />
       <Reviews />
       <FAQ category={["Pricing", "Billing"]} />
