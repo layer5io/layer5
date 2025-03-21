@@ -239,7 +239,7 @@ export function SectionNav() {
       />
       <TabButton
         className={
-          location.pathname === "/projects/sistent/components/selet/guidance"
+          location.pathname === "/projects/sistent/components/select/guidance"
             ? "active"
             : ""
         }
