@@ -9,6 +9,10 @@ export const ActionBox = styled(Box)(() => ({
 }));
 
 const SistentWrapper = styled.div`
+  body {
+    font-family: sans-serif;
+  }
+    
   position: relative;
   .content > a:first-of-type > h2:first-of-type {
     padding-top: 1rem;
