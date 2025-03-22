@@ -121,6 +121,16 @@ const Repository = () => {
                   style={{ height: "1.5rem" }}
                 /> Kanvas.
               </li>
+                 <li>
+                <a href="https://github.com/meshery-extensions">
+                  <img
+                    src={meshery}
+                    alt="meshery icon"
+                  />
+                  &nbsp; Meshery Extensions
+                </a>
+                  - a collection of extensions and plugins that enhance Meshery's functionality.
+              </li>
             </ul>
 
             <details className="invite-only">
