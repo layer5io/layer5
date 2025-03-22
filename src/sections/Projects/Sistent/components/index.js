@@ -57,14 +57,14 @@ const SistentComponents = () => {
                       </div>
                       <div>
                         <div className="card_bottom">
-                          <a className="learn" href={comp.url}>
+                          <span className="learn">
                             <div className="learn-more">
                               <div>Learn more</div>
                               <div className="icon">
                                 <FaArrowRight />
                               </div>
                             </div>
-                          </a>
+                          </span>
                         </div>
                       </div>
                     </div>
