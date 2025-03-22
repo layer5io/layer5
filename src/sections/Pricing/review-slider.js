@@ -156,6 +156,13 @@ const Reviews = () => {
             image={Deepak}
           />
           <Customers
+            type="3"
+            quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
+            person="Guy Menahem"
+            title="Software Engineer at AWS"
+            image={Ala}
+          />
+          <Customers
             type="1"
             quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
             person="Mrittika Ganguli"
