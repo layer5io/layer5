@@ -1,11 +1,11 @@
-import React from 'react';
-import Button from '../../reusecore/Button';
-import styled from 'styled-components';
+import React from "react";
+import Button from "../../reusecore/Button";
+import styled from "styled-components";
 import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
 const OpenSourceBanner = () => {
   return (
     <OpenSourceBannerWrapper>
-      <div class="banner-content">
+      <div className="banner-content">
         <div>
           <h2>Layer5-Sponsored Open Source Program</h2>
           <p>
