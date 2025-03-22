@@ -18,6 +18,7 @@ import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.png";
 import Louie from "./reviews/louie-corbo.jpeg";
+import GuyM from "./reviews/guym.jpg";
 
 const settings = {
   dots: false,
@@ -160,7 +161,7 @@ const Reviews = () => {
             quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
             person="Guy Menahem"
             title="Software Engineer at AWS"
-            image={Ala}
+            image={GuyM}
           />
           <Customers
             type="1"
