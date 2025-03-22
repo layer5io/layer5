@@ -84,7 +84,12 @@ const PlanCard = ({ planData , isYearly }) => {
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  onClick={x.tier === "Enterprise" ? openModal : undefined}
+                  $url={
+                    x.button[0] === "Join for Free"
+                      ? "https://cloud.layer5.io/login"
+                      : undefined
+                  }
+                  onClick={x.button[0] === "Contact Sales" ? openModal : undefined}
                 >
                   {x.tier === "Enterprise" ? "Contact Sales" : x.button[0]}
                 </Button>
