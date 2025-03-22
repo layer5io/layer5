@@ -10,20 +10,21 @@ const OpenSourcePricingWrapper = styled.div`
             left: 0;
         }
     }
-    .hero{
-      p{
+    .hero {
+      flex-wrap: wrap;
+      p {
           margin: 1.875rem auto 1rem auto;
-       }
-       .products-logo-wrapper{
+      }
+     .products-logo-wrapper{
           display: flex;
           justify-content: center;
-          img{
+          img {
             max-height: 25rem;
           }
           svg {
             height: 25rem;
           }
-       }
+      }
     }
     
     .signup-form{
