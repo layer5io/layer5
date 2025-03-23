@@ -9,6 +9,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import mesheryextension from "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
@@ -25,7 +26,7 @@ const SecurityVulnerabilitiesPage = () => {
             <h2 className="heading-top">Reporting a vulnerability</h2><br />
             <p>We are very grateful to the security researchers and users that report security vulnerabilities. We investigate each report thoroughly.</p>
             <p>To make a report, send an email to the private <a href="mailto: security@layer5.io">security@layer5.io</a>  mailing list with the vulnerability details. For normal product bugs unrelated to latent security vulnerabilities, please head to the appropriate repository and submit a <a href="https://github.com/layer5io/layer5/issues/new/choose">new issue</a> .</p>
-            <p>Note that the Layer5 community spans five GitHub organizations:</p>
+            <p>Note that the Layer5 community spans six GitHub organizations:</p>
             <ul className="project-org-list">
               <li>
                 <a href="https://github.com/layer5io">
@@ -92,6 +93,16 @@ const SecurityVulnerabilitiesPage = () => {
                   alt="Kanvas logo"
                   style={{ marginLeft: ".3rem" }}
                 />Kanvas.
+              </li>
+              <li>
+                <a href="https://github.com/meshery-extensions">
+                  <img
+                    src={mesheryextension}
+                    alt="meshery extension icon"
+                  />
+                  &nbsp; Meshery Extensions
+                </a>
+                  - plugins or add-ons providing extra functionalities that can be used to customize, extend and integrate with other tools and services.
               </li>
             </ul>
             <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
