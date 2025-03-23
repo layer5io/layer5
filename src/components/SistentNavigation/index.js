@@ -139,7 +139,7 @@ const TOC = () => {
                         <Link
                           to={component.url}
                           className={`toc-sub-heading toc-sub-inline components-item ${
-                            location.pathname === component.url
+                            location.pathname.split("/")[4] === component.url.split("/")[4]
                               ? "active"
                               : ""
                           }`}
