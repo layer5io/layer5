@@ -102,7 +102,7 @@ const SecurityVulnerabilitiesPage = () => {
                   />
                   &nbsp; Meshery Extensions
                 </a>
-                  - Platform extension for seamless collaboration in cloud native infrastructure.
+                  - plugins or add-ons that provide extra functionalities beyond the core features of the platform. These extensions can be used to customize, extend and integrate with other tools and services.
               </li>
             </ul>
             <p>You can find the list of all the Layer5 project repositories <a href="https://layer5.io/community/handbook/repository-overview">here</a></p>
