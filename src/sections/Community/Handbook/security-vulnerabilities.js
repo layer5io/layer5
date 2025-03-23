@@ -9,7 +9,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import mesheryextension from "../../../assets/images/meshery/icon-only/meshery-extensions-color.svg";
+import mesheryextension from "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
