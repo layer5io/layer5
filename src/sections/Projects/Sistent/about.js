@@ -100,6 +100,23 @@ const SistentAbout = () => {
               </div>
               <CodeBlock name="checkbox" code={codes[1]} />
             </div>
+
+            <p>
+              To contribute to Layer5 projects like Meshery and others, You can
+              refer to this{" "}
+              <a href="https://github.com/layer5io/sistent?tab=readme-ov-file#installation">
+                document
+              </a>, {" "}
+              <a href="https://www.youtube.com/live/lsw9KA__iu4?si=o8gpZdSHcqO2OKxE">
+                "Training: contributing to Sistent"
+              </a>{" "}
+              and{" "}
+              <a href="https://www.youtube.com/live/yiXkxbibLUU?si=Dybj5qr0VLhLWEpl">
+                Websites call
+              </a>{" "}
+              where experienced contributors have taught how to use sistent in
+              various Layer5 projects.
+            </p>
           </div>
           <SistentPagination />
         </Container>
