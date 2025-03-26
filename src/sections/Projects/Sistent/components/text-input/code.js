@@ -9,7 +9,7 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import styled from "styled-components";
 
 const CodeBlock = styled.pre`
-  background: ${props => props.isDark ? '#1B1B1B' : '#F5F5F5'};
+  background: ${props => props.isDark ? "#1B1B1B" : "#F5F5F5"};
   padding: 1rem;
   border-radius: 4px;
   margin: 1rem 0;
@@ -28,14 +28,14 @@ const ScrollableWrapper = styled.div`
       border-radius: 3px;
     }
     &::-webkit-scrollbar-track {
-      background: ${props => props.isDark ? '#2B2B2B' : '#E5E5E5'};
+      background: ${props => props.isDark ? "#2B2B2B" : "#E5E5E5"};
     }
   }
 
   section {
     margin: 2rem 0;
     padding-bottom: 2rem;
-    border-bottom: 1px solid ${props => props.isDark ? '#2B2B2B' : '#E5E5E5'};
+    border-bottom: 1px solid ${props => props.isDark ? "#2B2B2B" : "#E5E5E5"};
     &:last-child {
       border-bottom: none;
     }
@@ -127,8 +127,8 @@ const TextInputCode = () => {
               <h3>Input with Helper Text</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
-                    label="Password" 
+                  <Input
+                    label="Password"
                     helperText="Must be at least 8 characters"
                     placeholder="Enter password"
                   />
@@ -147,7 +147,7 @@ const TextInputCode = () => {
               <h3>Error State</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     error
                     label="Username"
                     helperText="Username already taken"
@@ -169,7 +169,7 @@ const TextInputCode = () => {
               <h3>Disabled Input</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     disabled
                     label="Username"
                     placeholder="Enter username"
@@ -189,7 +189,7 @@ const TextInputCode = () => {
               <h3>Multiline Input</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     multiline
                     rows={4}
                     label="Description"
@@ -211,7 +211,7 @@ const TextInputCode = () => {
               <h3>Input Sizes</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     size="medium"
                     label="Medium Input (56px)"
                     placeholder="56px / 3.5rem"
@@ -220,7 +220,7 @@ const TextInputCode = () => {
               </Row>
               <Row $Hcenter style={{ marginTop: "1rem" }}>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     size="small"
                     label="Small Input (48px)"
                     placeholder="48px / 3rem"
@@ -248,7 +248,7 @@ const TextInputCode = () => {
               <h3>Input Types</h3>
               <Row $Hcenter>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     type="email"
                     label="Email Input"
                     placeholder="Enter email"
@@ -257,7 +257,7 @@ const TextInputCode = () => {
               </Row>
               <Row $Hcenter style={{ marginTop: "1rem" }}>
                 <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <Input 
+                  <Input
                     type="password"
                     label="Password Input"
                     placeholder="Enter password"
