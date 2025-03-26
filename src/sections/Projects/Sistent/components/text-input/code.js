@@ -76,30 +76,30 @@ const TextInputCode = () => {
           </div>
           <div className="main-content">
             {[
-              { title: "Basic Text Input", code: `<Input placeholder="Enter text" />` },
+              { title: "Basic Text Input", code: "<Input placeholder=\"Enter text\" />" },
               {
                 title: "Input with Label",
-                code: `<Input label="Username" placeholder="Enter username" />`,
+                code: "<Input label=\"Username\" placeholder=\"Enter username\" />",
               },
               {
                 title: "Required Input",
-                code: `<Input label="Email" required placeholder="Enter email" />`,
+                code: "<Input label=\"Email\" required placeholder=\"Enter email\" />",
               },
               {
                 title: "Input with Helper Text",
-                code: `<Input label="Password" helperText="Must be at least 8 characters" placeholder="Enter password" />`,
+                code: "<Input label=\"Password\" helperText=\"Must be at least 8 characters\" placeholder=\"Enter password\" />",
               },
               {
                 title: "Error State",
-                code: `<Input error label="Username" helperText="Username already taken" placeholder="Enter username" />`,
+                code: "<Input error label=\"Username\" helperText=\"Username already taken\" placeholder=\"Enter username\" />",
               },
               {
                 title: "Disabled Input",
-                code: `<Input disabled label="Username" placeholder="Enter username" />`,
+                code: "<Input disabled label=\"Username\" placeholder=\"Enter username\" />",
               },
               {
                 title: "Multiline Input",
-                code: `<Input multiline rows={4} label="Description" placeholder="Enter description" />`,
+                code: "<Input multiline rows={4} label=\"Description\" placeholder=\"Enter description\" />",
               },
               {
                 title: "Input Sizes",
