@@ -20,7 +20,6 @@ import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 import data from "../../../assets/data/faq";
 
 import FaqSectionWrapper from "./faqSection.style";
-import ContactFormModal from "../../../components/Contact-Modal";
 
 const Faq = (props) => {
 
