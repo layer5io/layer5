@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-import CatalogImage from "./images/catalog_mac.png";
 import DashboardImg from "./images/cncf_hub_dashboard_mac.png";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
