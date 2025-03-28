@@ -12,7 +12,7 @@ const ContactCard = () => {
   return (
     <ContactWrapper id="contact">
       <div className="parentcard">
-        <form name="contactform" method="post" action="https://hook.us1.make.com/vdgxvbnugbgiwrb8j9uiukrg1yto8rii">
+        <form name="contactform" method="post" action="https://hook.us2.make.com/go8dd3ud3uacebgb73te0ghp6qyh1q0j">
           <SectionTitle className="section-title" $UniWidth="100%">
             <h3><span>Unsubscribe from Layer5 Newsletters</span></h3>
           </SectionTitle>

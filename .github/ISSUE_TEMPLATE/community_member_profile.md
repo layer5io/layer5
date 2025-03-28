@@ -6,24 +6,24 @@ labels: 'area/community, help wanted, framework/gatsby, language/markdown, good 
 assignees: ''
 ---
 
-**Current Behavior**
+### Current Behavior
 
-<@github-username> has been a consistent contributor and community member.
+The following individual has been a consistent contributor and community member. Their demonstrated willingness to help others and desire to help improve projects here align with the community's culture.
 
-**Desired Situation**
-Let's recognize <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
+### Desired Situation
+Let's recognize this individual as a contributor and community member by creating a profile on https://layer5.io/community/members.
 
-- GitHub: <!-- username only -->
-- Twitter: <!-- handle only -->
-- LinkedIn: <!-- <profilename> only https://www.linkedin.com/in/<profilename> -->
-- Layer5 Cloud: <!-- <user ID> only UUID https://cloud.layer5.io/user/<uuid> -->
-- Link to profile picture:
+- GitHub:           <!-- username only -->
+- Twitter:          <!-- username only -->
+- LinkedIn:         <!-- <profilename> only https://www.linkedin.com/in/<profilename> -->
+- Layer5 Cloud:     <!-- <user ID> only UUID https://cloud.layer5.io/user/<uuid> -->
+- Profile Picture:   <!-- hyperlink to their picture -->
 
 A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 
 ---
 
-**Contributor Resources**
+### Contributor Resources
 
 The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
 - See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
