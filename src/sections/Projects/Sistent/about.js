@@ -102,11 +102,12 @@ const SistentAbout = () => {
             </div>
 
             <p>
-              To contribute to Layer5 projects like Meshery and others, You can
-              refer to this{" "}
+              To contribute to Layer5 projects' UI using Sistent e.g. <a href="https://github.com/meshery/meshery/issues?q=is%3Aissue%20state%3Aopen%20label%3Acomponent%2Fui">meshery-ui</a> and others, You can
+              refer to {" "}
               <a href="https://github.com/layer5io/sistent?tab=readme-ov-file#installation">
-                document
+                sistent set-up guide
               </a>, {" "}
+              <a href="https://discuss.layer5.io/t/hands-on-training-session-migrating-components-to-mui-v5-and-sistent/6589">Hands-on Training Session: Migrating Components to MUI v5 and Sistent</a>, {" "}
               <a href="https://www.youtube.com/live/lsw9KA__iu4?si=o8gpZdSHcqO2OKxE">
                 "Training: contributing to Sistent"
               </a>{" "}
