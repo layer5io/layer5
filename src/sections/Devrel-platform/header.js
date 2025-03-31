@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import IntegrationsImage from "./images/integration-image-colorMode.svg";
 const DevrelHeaderWrapper = styled.div`
   .devrel-platform.header {
@@ -62,10 +61,6 @@ const DevrelHeaderWrapper = styled.div`
         text-align: center;
         margin-bottom: 20px;
       }
-      .header__button_section {
-        display: flex;
-        justify-content: center;
-      }
     }
   }
 `;
@@ -84,14 +79,6 @@ const Header = () => {
                 {/* Meshery provides a comprehensive platform that transforms how you create and share technical content: */}
 
               </p>
-              {/* <div className="header__button_section">
-                <Button
-                  $primary
-                  title="Browse"
-                  $external={true}
-                  $url=""
-                />
-              </div> */}
             </Col>
             <Col className="col devrel" $lg={5} $md={4} $xs={10}>
               <img src={IntegrationsImage} alt="devrel" />
