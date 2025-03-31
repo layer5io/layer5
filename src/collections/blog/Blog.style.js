@@ -63,8 +63,12 @@ export const BlogWrapper = styled.div`
     }
   }
   h3 {
+      margin-top: .75rem;
       margin-bottom: .75rem;
     }
+  ul {
+      margin-bottom: .75rem;
+  }
   .to-uppercase {
     text-transform: uppercase;
   }
