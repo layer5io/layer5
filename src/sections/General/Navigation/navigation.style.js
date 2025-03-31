@@ -3,7 +3,6 @@ import styled from "styled-components";
 const NavigationWrap = styled.header`
   width: 100vw;
   position: sticky;
-  z-index: 9999;
   top: 0;
   background-color: ${(props) => props.theme.body};
   transition-property: color, background-color;
