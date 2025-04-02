@@ -19,7 +19,7 @@ import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "../button/code-block";
-import { ActionBox } from "../../sistent.style";
+import { ActionBox, DocsTable, TableHead, TableBody } from "../../sistent.style";
 
 const CustomInput = ({ label, text, style }) => (
   <Box style={{ marginBottom: "16px", ...style }}>
@@ -206,48 +206,48 @@ const ModalCode = () => {
             </a>
             <div className="showcase">
               <div className="table-responsive">
-                <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "20px" }}>
-                  <thead>
+                <DocsTable>
+                  <TableHead>
                     <tr>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Prop</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Type</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Default</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Description</th>
+                      <th>Prop</th>
+                      <th>Type</th>
+                      <th>Default</th>
+                      <th>Description</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                  </TableHead>
+                  <TableBody>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>open</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>boolean</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>false</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Controls the visibility of the modal</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>closeModal</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>function</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>required</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Callback function triggered when the modal is closed</td>
+                      <td><code>open</code></td>
+                      <td>boolean</td>
+                      <td>false</td>
+                      <td>Controls the visibility of the modal</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>title</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>string</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>&quot;&quot;</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Text displayed in the modal header</td>
+                      <td><code>closeModal</code></td>
+                      <td>function</td>
+                      <td>required</td>
+                      <td>Callback function triggered when the modal is closed</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>children</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>node</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>required</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Content to be rendered inside the modal</td>
+                      <td><code>title</code></td>
+                      <td>string</td>
+                      <td>&quot;&quot;</td>
+                      <td>Text displayed in the modal header</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>disableBackdropClick</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>boolean</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>false</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>If true, clicking the backdrop will not close the modal</td>
+                      <td><code>children</code></td>
+                      <td>node</td>
+                      <td>required</td>
+                      <td>Content to be rendered inside the modal</td>
                     </tr>
-                  </tbody>
-                </table>
+                    <tr>
+                      <td><code>disableBackdropClick</code></td>
+                      <td>boolean</td>
+                      <td>false</td>
+                      <td>If true, clicking the backdrop will not close the modal</td>
+                    </tr>
+                  </TableBody>
+                </DocsTable>
               </div>
             </div>
 
@@ -256,30 +256,30 @@ const ModalCode = () => {
             </a>
             <div className="showcase">
               <div className="table-responsive">
-                <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "20px" }}>
-                  <thead>
+                <DocsTable>
+                  <TableHead>
                     <tr>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Prop</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Type</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Default</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Description</th>
+                      <th>Prop</th>
+                      <th>Type</th>
+                      <th>Default</th>
+                      <th>Description</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                  </TableHead>
+                  <TableBody>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>children</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>node</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>required</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Content to display in the modal body</td>
+                      <td><code>children</code></td>
+                      <td>node</td>
+                      <td>required</td>
+                      <td>Content to display in the modal body</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>sx</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>object</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>{ }</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Custom styles to apply to the modal body</td>
+                      <td><code>sx</code></td>
+                      <td>object</td>
+                      <td>{ }</td>
+                      <td>Custom styles to apply to the modal body</td>
                     </tr>
-                  </tbody>
-                </table>
+                  </TableBody>
+                </DocsTable>
               </div>
             </div>
 
@@ -288,36 +288,36 @@ const ModalCode = () => {
             </a>
             <div className="showcase">
               <div className="table-responsive">
-                <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "20px" }}>
-                  <thead>
+                <DocsTable>
+                  <TableHead>
                     <tr>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Prop</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Type</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Default</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Description</th>
+                      <th>Prop</th>
+                      <th>Type</th>
+                      <th>Default</th>
+                      <th>Description</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                  </TableHead>
+                  <TableBody>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>variant</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>string</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>&quot;outlined&quot;</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Footer style variant. Options: &quot;outlined&quot;, &quot;filled&quot;</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>children</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>node</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>required</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Content to display in the footer, typically action buttons</td>
+                      <td><code>variant</code></td>
+                      <td>string</td>
+                      <td>&quot;outlined&quot;</td>
+                      <td>Footer style variant. Options: &quot;outlined&quot;, &quot;filled&quot;</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>sx</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>object</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>{ }</td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Custom styles to apply to the footer</td>
+                      <td><code>children</code></td>
+                      <td>node</td>
+                      <td>required</td>
+                      <td>Content to display in the footer, typically action buttons</td>
                     </tr>
-                  </tbody>
-                </table>
+                    <tr>
+                      <td><code>sx</code></td>
+                      <td>object</td>
+                      <td>{ }</td>
+                      <td>Custom styles to apply to the footer</td>
+                    </tr>
+                  </TableBody>
+                </DocsTable>
               </div>
             </div>
 
@@ -326,28 +326,28 @@ const ModalCode = () => {
             </a>
             <div className="showcase">
               <div className="table-responsive">
-                <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "20px" }}>
-                  <thead>
+                <DocsTable>
+                  <TableHead>
                     <tr>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Component</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid #ddd" }}>Description</th>
+                      <th>Component</th>
+                      <th>Description</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                  </TableHead>
+                  <TableBody>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>ModalButtonPrimary</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Primary action button, typically used for confirming actions</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>ModalButtonSecondary</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Secondary action button, typically used for cancellation</td>
+                      <td><code>ModalButtonPrimary</code></td>
+                      <td>Primary action button, typically used for confirming actions</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}><code>ModalButtonDanger</code></td>
-                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #ddd" }}>Danger action button, used for destructive actions like delete</td>
+                      <td><code>ModalButtonSecondary</code></td>
+                      <td>Secondary action button, typically used for cancellation</td>
                     </tr>
-                  </tbody>
-                </table>
+                    <tr>
+                      <td><code>ModalButtonDanger</code></td>
+                      <td>Danger action button, used for destructive actions like delete</td>
+                    </tr>
+                  </TableBody>
+                </DocsTable>
               </div>
             </div>
 
