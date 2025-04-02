@@ -33,10 +33,10 @@ const SistentModal = () => {
             onClick={() => navigate("/projects/sistent/components/modal")}
             title="Overview"
           />
-          {/* <TabButton
+          <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/modal/guidance"
+                "/projects/sistent/components/modal/guidance"
                 ? "active"
                 : ""
             }
@@ -44,7 +44,7 @@ const SistentModal = () => {
               navigate("/projects/sistent/components/modal/guidance")
             }
             title="Guidance"
-          /> */}
+          />
           <TabButton
             className={
               location.pathname === "/projects/sistent/components/modal/code"
