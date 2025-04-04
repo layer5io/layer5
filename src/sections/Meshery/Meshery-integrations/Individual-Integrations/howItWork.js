@@ -232,7 +232,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
                 {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
-            <Col $xl={8} className="integration-section-caraousel">
+            <Col $xl={8} className="integration-section-carousel">
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>
