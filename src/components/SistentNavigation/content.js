@@ -70,4 +70,8 @@ export const content = [
   { id: 49, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
   { id: 50, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
   { id: 51, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+
+  { id: 52, link: "/projects/sistent/components/badge", text: "Badge" },
+  { id: 53, link: "/projects/sistent/components/badge/guidance", text: "Badge" },
+  { id: 54, link: "/projects/sistent/components/badge/code", text: "Badge" },
 ];
