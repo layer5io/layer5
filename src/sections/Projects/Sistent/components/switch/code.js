@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { CodeBlock } from "../button/code-block";
 import { Switch, FormControlLabel, SistentThemeProvider } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
-import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
   `  <SistentThemeProvider>
@@ -35,7 +34,6 @@ const codes = [
 ];
 
 const SwitchCode = () => {
-  const { isDark } = useStyledDarkMode();
   const [checked, setChecked] = useState(true);
   const handleChange = (event) => setChecked(event.target.checked);
 
@@ -118,7 +116,7 @@ const SwitchCode = () => {
                   size="small"
                   checked={checked}
                   onChange={handleChange}
-                  inputProps={{ 'aria-label': 'toggle something' }}
+                  inputProps={{ "aria-label": "toggle something" }}
                 />
               </SistentThemeProvider>
             </div>

@@ -103,7 +103,7 @@ const SwitchGuidance = () => {
                 control={
                   <Switch
                     checked={true}
-                    inputProps={{ 'aria-label': 'Enable dark mode' }}
+                    inputProps={{ "aria-label": "Enable dark mode" }}
                   />
                 }
                 label="Enable Dark Mode"

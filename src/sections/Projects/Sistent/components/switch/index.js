@@ -9,7 +9,7 @@ import {
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentSwitch = () => {
