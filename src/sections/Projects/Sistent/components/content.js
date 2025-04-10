@@ -121,10 +121,19 @@ const componentsData = [
   },
   {
     id: 16,
+    name: "Stack",
+    description:
+      "Stack arranges elements in a row or column with consistent spacing and alignment, simplifying layout creation.",
+    url: "/projects/sistent/components/stack",
+    src: "/stack",
+  },
+  {
+    id: 17,
     name: "Icons",
-    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    description:
+      "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
     url: "/projects/sistent/components/icons",
-    src: "/icons"
+    src: "/icons",
   },
 ];
 
