@@ -113,11 +113,11 @@ const componentsData = [
   },
   {
     id: 15,
-    name: "Select",
+    name: "Avatar",
     description:
-      "Select component is a dropdown menu for selecting an option from a list.",
-    url: "/projects/sistent/components/select",
-    src: "/select",
+        "Avatar component represents a user profile with an image or initials, commonly used in user interfaces for identification.",
+    url: "/projects/sistent/components/avatar",
+    src: "/avatar",
   },
   {
     id: 16,
