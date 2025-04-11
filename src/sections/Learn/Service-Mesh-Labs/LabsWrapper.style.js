@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const LabsWrapper = styled.div`
-    
+
 	.page-header {
 		margin: 5rem auto;
 	}
 	.course-tabs {
 		display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
 	}
 	.course-tab-list {
 		padding: 0rem;
@@ -28,13 +31,13 @@ export const LabsWrapper = styled.div`
 		list-style-type: none;
 		background: ${props => props.theme.secondaryColor};
 		cursor: pointer;
-		
+
 		&:hover {
             background-color: ${props => props.theme.highlightLightColor};
             transition: 0.05s ease-in all;
         }
 	}
-	
+
 	.title {
 		color: #fff;
 		font-weight: 600;
@@ -44,7 +47,9 @@ export const LabsWrapper = styled.div`
 		}
 	}
 	.content.react-tabs__tab-panel--selected {
-		background-color: black;
+		background-color: ${props => props.theme.blackToWhite};
+        marign-left: 5.05rem;
+        width: calc(100% - 5.05rem);
 	}
 	.react-tabs__tab--selected {
 		background: rgb(240, 192, 55);
@@ -53,13 +58,13 @@ export const LabsWrapper = styled.div`
 		box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.25);
 	}
 	.row-wrapper {
-		margin-left: 0px;
+		margin: 0 auto;
 	}
 	.join-community {
         margin: 5rem 0rem;
     }
     .join-community_text-and_button {
-		margin: 0 4rem; 
+		margin: 0 4rem;
         text-align: center;
         h1{
             margin-top: 1rem;
