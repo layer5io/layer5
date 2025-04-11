@@ -169,7 +169,7 @@ export const HoneycombGrid = styled.div`
 `;
 
 export const IntegrationsWrapper = styled.div`
-  max-width: 75rem;
+  max-width: 1170px;
   margin: 5.1875rem auto;
   text-align: center;
   .seeAllBtn {

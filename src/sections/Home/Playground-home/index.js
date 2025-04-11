@@ -37,7 +37,8 @@ const ViewsSectionWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
+    max-width: 1170px;
+    margin: 3% auto;
     .small-card-container {
       display: flex;
       gap: 1rem;
@@ -48,9 +49,7 @@ const ViewsSectionWrapper = styled.div`
     display: flex;
     flex-direction: row;
     background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
-    margin: 3%;
     border-radius: 1rem;
-    max-width: 1920px;
     width: 90vw;
     height: 500px;
     justify-content: space-evenly;

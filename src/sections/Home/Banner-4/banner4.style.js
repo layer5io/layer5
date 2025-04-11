@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
     display: none;
+    max-width: 1170px;
+    margin: 0 auto;
     p {
         font-size: 21px;
         font-weight: 300;

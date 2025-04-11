@@ -6,6 +6,7 @@ export const HoneycombGrid = styled.div`
   ul {
     font-size: 0;
     line-height: 0;
+    padding-right:0;
     height: ${(props) => props.$height === 0 ? "unset" : `calc(${props.$height}px + 46px)`};
     &:before {
       content: "";
@@ -16,6 +17,9 @@ export const HoneycombGrid = styled.div`
         #0000 0 calc(calc(1.732 * 150px + 4 * 3px - 1px) - 3px),
         #000 0 calc(1.732 * 150px + 4 * 3px - 1px)
       );
+    }
+    @media (max-width: 768px) {
+      padding-right:50px;
     }
   }
     
