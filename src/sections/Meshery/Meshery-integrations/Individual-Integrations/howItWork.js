@@ -50,67 +50,66 @@ const HowIntegrationWorksWrapper = styled.section`
 
 		.integration-section-caraousel {
 			.slick-slider {
+				position: relative;
+				
 				.slick-list {
-					max-width: 50rem;
+					max-width: 100%;
+					margin: 0 auto;
 
 					.slick-slide {
 						img {
 							max-height: 20rem;
 							margin: auto;
+							width: auto;
 						}
 					}
 				}
 
-				.slick-arrow{
-					display: none !important;
+				.slick-arrow {
+					display: block !important;
+					z-index: 1;
+					&:before {
+						color: ${props => props.theme.secondaryColor};
+						font-size: 2rem;
+					}
+					&.slick-prev {
+						left: 1rem;
+					}
+					&.slick-next {
+						right: 1rem;
+					}
 				}
 
 				.slick-dots {
-					bottom: 0;
-					top: 0;
-					left: 52rem;
-					width: 8rem;
-
+					bottom: -2rem;
+					width: 100%;
+					display: flex !important;
+					justify-content: center;
+					
 					li {
-						display: block;
-						width: 100%;
-						height: auto;
-						margin: 1rem auto;
-						opacity: 0.6;
-
-						a {
-							display: block;
-
-							img {
-								height: 5rem;
-								vertical-align: middle;
-								object-fit: contain;
+						display: inline-block;
+						width: 10px;
+						height: 10px;
+						margin: 0 5px;
+						
+						button {
+							width: 10px;
+							height: 10px;
+							padding: 0;
+							border-radius: 50%;
+							background: ${props => props.theme.primaryColor};
+							opacity: 0.5;
+							border: none;
+							
+							&:before {
+								display: none;
 							}
 						}
+						
+						&.slick-active button {
+							opacity: 1;
+						}
 					}
-				}
-				.slick-dots 
-					li.slick-active {
-						opacity: 1;
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (max-width: 1600px) {
-		.integration-section .integration-section-caraousel .slick-slider {
-			.slick-list {
-				max-width: 38rem;
-			}
-
-			.slick-dots {
-				left: 40rem;
-				width: 6rem;
-
-				li a img {
-					height: 4rem;
-					object-fit: contain;
 				}
 			}
 		}
@@ -131,12 +130,8 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
-					max-width: 80%;
+					max-width: 90%;
 					margin: 2rem auto;
-				}
-
-				.slick-dots {
-					left: 92%;
 				}
 			}
 		}
@@ -159,16 +154,7 @@ const HowIntegrationWorksWrapper = styled.section`
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
 					max-width: 85%;
-					margin: 2rem 0;
-				}
-				.slick-dots {
-					left: 90%;
-					width: 4rem;
-
-					li a img {
-						height: 2.5rem;
-						object-fit: contain;
-					}
+					margin: 2rem auto;
 				}
 			}
 		}
@@ -187,10 +173,6 @@ const HowIntegrationWorksWrapper = styled.section`
 						}
 					}
 				}
-				.slick-dots {
-					left: 85%;
-					top: -1rem;
-				}
 			}
 		}
 	}
@@ -200,20 +182,16 @@ const HowIntegrationWorksWrapper = styled.section`
 const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
 
   const settings = {
-    customPaging: (i) => {
-      return (
-        <a>
-          <img src={slides[i].publicURL} alt={`Slide ${i}`} />
-        </a>
-      );
-    },
-    infinite: false,
-    speed: 400,
+    dots: true,
+    infinite: true,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
-    vertical: true,
-    verticalSwiping: true
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    adaptiveHeight: true
   };
 
   return (
