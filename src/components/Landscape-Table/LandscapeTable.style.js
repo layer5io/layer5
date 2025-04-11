@@ -4,6 +4,17 @@ export const TableWrapper = styled.div`
 
 overflow-x: auto;
 
+th input {
+	color: ${props => props.theme.text};
+	background: ${props => props.theme.body};
+	border: 1px solid ${props => props.theme.text} !important;
+	padding: 5px;
+	&::placeholder {
+		color: ${props => props.theme.text};
+		opacity: 0.7;
+	}
+}
+
 .gatsby-image-wrapper {
 	img {
 		width: 1.5rem;
