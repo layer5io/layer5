@@ -116,7 +116,7 @@ const data = [
     },
     {
         date: "Apr. 10, 2025",
-        topic: "Working with Docs",
+        topic: "Working with Meshery Docs",
         resources: {
             slides: "https://docs.google.com/presentation/d/1kQIzSa4f-pOH8cM4SwEdbFZGI_SXVyyhc9zUZPB7bsI/edit?usp=sharing",
             recording: "https://www.youtube.com/watch?v=7wRbbOSwrtI"
