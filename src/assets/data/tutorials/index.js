@@ -115,16 +115,16 @@ const data = [
         ] 
     },
     {
-        date: "Oct. 7 2021",
-        topic: "Working with Meshery Docs and Jekyll",
+        date: "Apr. 10, 2025",
+        topic: "Working with Docs",
         resources: {
-            slides: "https://docs.google.com/presentation/d/1GhJH3YF5mBeYX7I7ItEd-EbUmk1cnn3BdK1X230kwII/edit?usp=sharing",
-            recording: "https://www.youtube.com/watch?v=PBq7mIPnPhM"
+            slides: "https://docs.google.com/presentation/d/1kQIzSa4f-pOH8cM4SwEdbFZGI_SXVyyhc9zUZPB7bsI/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=7wRbbOSwrtI"
         },
         presenters: [
             {
-                link: "/community/members/aadhitya-amarendiran",
-                name: "Aadhitya Amarendiran",
+                link: "/community/members/zihan-kuang",
+                name: "Zihan Kuang"
             }
         ]
     },     
