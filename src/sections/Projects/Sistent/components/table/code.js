@@ -3,12 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import {
   SistentThemeProvider,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
+  ResponsiveDataTable
 } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
@@ -16,24 +11,21 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-    // Basic Table
-    `
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Column 1</TableCell>
-              <TableCell>Column 2</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>Row 1</TableCell>
-              <TableCell>Data 1</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+  // Basic Table
+  `
+      <ResponsiveDataTable
+        columns={[
+          { name: "column1", label: "Column 1" },
+          { name: "column2", label: "Column 2" }
+        ]}
+        data={[
+          ["Row 1", "Data 1"]
+        ]}
+        columnVisibility={{
+          column1: true,
+          column2: true
+        }}
+      />
     `
 ];
 
@@ -48,7 +40,7 @@ const TableCode = () => {
           <h2>Table</h2>
         </a>
         <p>
-        To use the Table component from Layer5's Sistent design system, you begin by wrapping your table inside the TableContainer, which provides scrollability and styling. Inside it, the Table acts as the root element that holds the structure. The TableHead defines the table headers using a TableRow filled with TableCell elements for each column title. The TableBody follows, containing the actual data rows. Each data row is created using a TableRow, with individual data values placed inside corresponding TableCell elements. This modular structure allows for clean, accessible, and themable table layouts that integrate seamlessly into your UI.
+          To use the ResponsiveDataTable component from Layer5's Sistent design system, you need to provide columns configuration, data, and column visibility settings. The columns configuration defines each column's display properties, while the data array contains the actual table content. The responsive table provides advanced features like sorting, pagination, and customizable cell rendering, creating a powerful and accessible data display solution that adapts to different screen sizes.
         </p>
 
         {/* Navigation Tabs */}
@@ -74,22 +66,19 @@ const TableCode = () => {
         <h3>Basic Table</h3>
         <div className="showcase">
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <TableContainer>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Column 1</TableCell>
-                    <TableCell>Column 2</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>Row 1</TableCell>
-                    <TableCell>Data 1</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <ResponsiveDataTable
+              columns={[
+                { name: "column1", label: "Column 1" },
+                { name: "column2", label: "Column 2" }
+              ]}
+              data={[
+                ["Row 1", "Data 1"]
+              ]}
+              columnVisibility={{
+                column1: true,
+                column2: true
+              }}
+            />
           </SistentThemeProvider>
           <CodeBlock name="basic-table" code={codes[0]} />
         </div>

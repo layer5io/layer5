@@ -3,12 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import {
   SistentThemeProvider,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableContainer,
+  ResponsiveDataTable
 } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
@@ -18,6 +13,24 @@ const TableGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
+  // Sample columns and data for the example
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "age", label: "Age" },
+    { name: "city", label: "City" }
+  ];
+
+  const data = [
+    ["John Doe", "28", "New York"],
+    ["Jane Smith", "34", "London"]
+  ];
+
+  const columnVisibility = {
+    name: true,
+    age: true,
+    city: true
+  };
+
   return (
     <SistentLayout title="Table">
       <div className="content">
@@ -25,7 +38,7 @@ const TableGuidance = () => {
           <h2>Table</h2>
         </a>
         <p>
-          The <code>Table</code> component from the Sistent design system helps structure and display tabular data with accessibility and consistent styling in mind. It wraps MUI’s native table components to provide an enhanced and theme-friendly experience.
+          The <code>ResponsiveDataTable</code> component from the Sistent design system provides a powerful solution for displaying tabular data with built-in responsiveness, sorting, filtering, and pagination capabilities. It's designed to display data in a way that adapts to different screen sizes while maintaining accessibility and consistent styling.
         </p>
 
         {/* Navigation Tabs */}
@@ -52,60 +65,43 @@ const TableGuidance = () => {
             <h2>How to Use</h2>
           </a>
 
-          <p>Here’s a breakdown of each component used to construct a table:</p>
+          <p>Here's a breakdown of the key properties of the ResponsiveDataTable component:</p>
 
           <ul>
             <li>
-              <strong>TableContainer</strong>: Acts as a wrapper around the entire table. Useful for scrollability and border rounding.
+              <strong>columns</strong>: An array of column configurations. Each column object requires a name and label property, and can have additional options for customization.
             </li>
             <li>
-              <strong>Table</strong>: The root element that holds all rows and columns.
+              <strong>data</strong>: A 2D array containing the table data. Each inner array represents a row of data.
             </li>
             <li>
-              <strong>TableHead</strong>: Defines the header section of the table. Usually contains one <code>TableRow</code> with multiple <code>TableCell</code> elements as headers.
+              <strong>columnVisibility</strong>: An object mapping column names to boolean values to control which columns are displayed.
             </li>
             <li>
-              <strong>TableBody</strong>: Wraps all the dynamic content (rows of data). It follows the <code>TableHead</code>.
+              <strong>options</strong>: Additional configuration options for the table, such as pagination settings, row selection, and display options.
             </li>
             <li>
-              <strong>TableRow</strong>: Represents a single row inside either the head or body. It holds <code>TableCell</code> components.
-            </li>
-            <li>
-              <strong>TableCell</strong>: The actual data cell. Used inside both <code>TableRow</code> in the head and body.
+              <strong>rowsPerPageOptions</strong>: An array of numbers to set the options for rows per page in the pagination.
             </li>
           </ul>
 
-          <p>Below is a simple example of how these components come together:</p>
+          <p>Below is a simple example of how to use the ResponsiveDataTable component:</p>
 
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <TableContainer className="overflow-x-auto shadow rounded border border-gray-200 my-6">
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Name</TableCell>
-                    <TableCell>Age</TableCell>
-                    <TableCell>City</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>John Doe</TableCell>
-                    <TableCell>28</TableCell>
-                    <TableCell>New York</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Jane Smith</TableCell>
-                    <TableCell>34</TableCell>
-                    <TableCell>London</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <ResponsiveDataTable
+              columns={columns}
+              data={data}
+              columnVisibility={columnVisibility}
+              options={{
+                elevation: 0,
+                responsive: "standard"
+              }}
+            />
           </SistentThemeProvider>
 
           <p>
-            You can customize the layout by applying conditional styles, using responsive wrappers,
-            or enhancing interactivity with row click handlers, sort functionality, etc.
+            You can customize your table by setting additional options, creating custom cell renderers,
+            adding action columns, implementing custom filtering, and more, based on your specific requirements.
           </p>
         </div>
       </div>

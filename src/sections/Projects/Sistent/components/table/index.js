@@ -2,12 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableContainer,
+  ResponsiveDataTable,
   SistentThemeProvider,
 } from "@layer5/sistent";
 import TabButton from "../../../../../reusecore/Button";
@@ -15,12 +10,26 @@ import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-// Sample table data
-const tableData = [
-  { id: 1, name: "John Doe", age: 25, role: "Developer" },
-  { id: 2, name: "Jane Smith", age: 28, role: "Designer" },
-  { id: 3, name: "Sam Wilson", age: 30, role: "Manager" },
+// Sample table data and columns configuration
+const columns = [
+  { name: "id", label: "ID" },
+  { name: "name", label: "Name" },
+  { name: "age", label: "Age" },
+  { name: "role", label: "Role" }
 ];
+
+const data = [
+  ["1", "John Doe", "25", "Developer"],
+  ["2", "Jane Smith", "28", "Designer"],
+  ["3", "Sam Wilson", "30", "Manager"]
+];
+
+const columnVisibility = {
+  id: true,
+  name: true,
+  age: true,
+  role: true
+};
 
 const SistentTable = () => {
   const location = useLocation();
@@ -35,10 +44,10 @@ const SistentTable = () => {
 
         {/* 🔰 Introduction to Sistent Table */}
         <p>
-          The <code>Table</code> component in the Sistent design system is a wrapper
-          around MUI’s Table components, offering consistent styling and structure
-          aligned with Layer5’s UI philosophy. It helps developers display structured
-          data in a clean, responsive, and accessible way with minimal effort.
+          The <code>ResponsiveDataTable</code> component in the Sistent design system provides
+          a powerful solution for displaying tabular data with built-in responsiveness,
+          sorting, filtering, and pagination capabilities. It's designed to display structured
+          data in a clean, accessible way that adapts to different screen sizes.
         </p>
 
         {/* Navigation Tabs */}
@@ -71,32 +80,19 @@ const SistentTable = () => {
           <a id="Basic Usage">
             <h2>Basic Usage</h2>
           </a>
-          <p>A simple table displaying structured data with column headers and rows.</p>
+          <p>A responsive data table displaying structured data with built-in features.</p>
 
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <TableContainer className="border border-gray-200 rounded shadow-md overflow-auto">
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>ID</TableCell>
-                      <TableCell>Name</TableCell>
-                      <TableCell>Age</TableCell>
-                      <TableCell>Role</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {tableData.map((row) => (
-                      <TableRow key={row.id}>
-                        <TableCell>{row.id}</TableCell>
-                        <TableCell>{row.name}</TableCell>
-                        <TableCell>{row.age}</TableCell>
-                        <TableCell>{row.role}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <ResponsiveDataTable
+                columns={columns}
+                data={data}
+                columnVisibility={columnVisibility}
+                options={{
+                  elevation: 0,
+                  responsive: "standard"
+                }}
+              />
             </SistentThemeProvider>
           </Row>
         </div>
