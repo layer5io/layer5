@@ -219,7 +219,7 @@ const Footer = ({ location }) => {
                       to="/solutions/developer-defined-infrastructure"
                     >
                       Developer-defined Infrastructure
-                      <span className="new-label">NEW</span>
+                      { /* <span className="new-label">NEW</span> */}
                     </Link>
                   </li>
                   <li>
