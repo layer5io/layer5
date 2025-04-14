@@ -5,6 +5,7 @@ import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+import mesheryExtensionsIcon from "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
@@ -12,7 +13,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon.svg";
+import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 
 import { Link } from "gatsby";
 
@@ -120,6 +121,16 @@ const Repository = () => {
                   alt="Kanvas logo"
                   style={{ height: "1.5rem" }}
                 /> Kanvas.
+              </li>
+              <li>
+                <a href="https://github.com/meshery-extensions">
+                  <img
+                    src={mesheryExtensionsIcon}
+                    alt="meshery extension icon"
+                  />
+                  &nbsp; Meshery Extensions
+                </a>
+                  - a collection of extensions and plugins that enhance Meshery's functionality.
               </li>
             </ul>
 

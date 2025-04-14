@@ -189,6 +189,17 @@ const BrandPageWrapper = styled.section`
 			justify-content: center;
 			flex-wrap: wrap;
 		}
+		.fiveDiv {
+			width: 100%;
+			margin: auto;
+			justify-content: space-around;
+			gap: 1rem;
+		}
+		.fiveDiv > img {
+			max-width: 150px;
+			background-color: "#fff";
+			align-self: center;
+		}
 		img.Layer5Icon {
 			width: auto;
 			height: 80px;
@@ -207,7 +218,7 @@ const BrandPageWrapper = styled.section`
 		margin-top: 2rem;
 	}
 
-	.blond-color-box, .white-color-box {
+	.blond-color-box, .white-color-box, .saffron-color-box {
 		.PalletBox {
 			color: rgb(30, 33, 23);
 			.color-name {

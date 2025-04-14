@@ -1,10 +1,9 @@
+
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
 import { Link } from "gatsby";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksPage = ({ hide_path }) => {

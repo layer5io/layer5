@@ -1,9 +1,8 @@
+
 import React from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
 import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.webp";
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.webp";
@@ -18,6 +17,7 @@ import Alex from "./reviews/alex-hokanson.jpeg";
 import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.png";
+import Louie from "./reviews/louie-corbo.jpeg";
 
 const settings = {
   dots: false,
@@ -141,7 +141,13 @@ const Reviews = () => {
             title="Software Architect at Entigo"
             image={Kaur}
           />
-
+          <Customers
+            type="2"
+            quote="Kanvas is what the next-generation Operations tooling will look like."
+            person="Louie Corbo"
+            title="Staff Cloud Infratructure Engineer at SADA"
+            image={Louie}
+          />
           <Customers
             type="1"
             quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
@@ -179,7 +185,7 @@ const Reviews = () => {
           />
           <Customers
             type="2"
-            quote="Do we like Kanvas? ABSOLUTELY! It addresses our primary concern of having a service mesh!"
+            quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex}

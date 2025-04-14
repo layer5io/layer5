@@ -17,6 +17,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install --legacy-peer-deps
+          node -v
+          npm run version
           npm run noIndex
 
       - name: Zip Site
@@ -28,5 +30,5 @@ jobs:
           name: public-dir
           path: ./public-dir.zip
           retention-days: 1
-      - name: Triger Inner workflow
-        run: echo "trigering inner workflow"
+      - name: Trigger Inner workflow
+        run: echo "triggering inner workflow"

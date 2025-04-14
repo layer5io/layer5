@@ -1,14 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import Button from "../../../reusecore/Button";
 import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-cd-color.svg";
+import certmanager from "../../../collections/integrations/cert-manager/icons/color/cert-manager-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
 import prometheus from "../../../collections/integrations/prometheus/icons/color/prometheus-color.svg";
 import kubernetes from "../../../collections/integrations/kubernetes/icons/color/kubernetes-color.svg";
 import keda from "../../../collections/integrations/keda/icons/color/keda-color.svg";
 import linkerd from "../../../collections/integrations/linkerd/icons/color/linkerd-color.svg";
+import istio from "../../../collections/integrations/istio-base/icons/color/istio-base-color.svg";
+import jaeger from "../../../collections/integrations/jaeger/icons/color/jaeger-color.svg";
+import envoy from "../../../collections/integrations/envoy/icons/color/envoy-color.svg";
+import fluentd from "../../../collections/integrations/fluentd/icons/color/fluentd-color.svg";
+import cloudevents from "../../../collections/integrations/cloudevents/icons/color/cloudevents-color.svg";
+import containerd from "../../../collections/integrations/containerd/icons/color/containerd-color.svg";
+import coredns from "../../../collections/integrations/coredns/icons/color/coredns-color.svg";
+import crio from "../../../collections/integrations/cri-o/icons/color/cri-o-color.svg";
+import etcd from "../../../collections/integrations/etcd-cluster-operator/icons/color/etcd-cluster-operator-color.svg";
+import falco from "../../../collections/integrations/falco/icons/color/falco-color.svg";
+import flux from "../../../collections/integrations/flux/icons/color/flux-color.svg";
+import harbor from "../../../collections/integrations/harbor-operator/icons/color/harbor-operator-color.svg";
+import helm from "../../../collections/integrations/helm-controller/icons/color/helm-controller-color.svg";
+import kubeedge from "../../../collections/integrations/kubegems-edge/icons/color/kubegems-edge-color.svg";
+import opa from "../../../collections/integrations/open-policy-agent-(opa)/icons/color/open-policy-agent-(opa)-color.svg";
+import rook from "../../../collections/integrations/rook/icons/color/rook-color.svg";
+import spiffe from "../../../collections/integrations/spiffe/icons/color/spiffe-color.svg";
+import spire from "../../../collections/integrations/spire/icons/color/spire-color.svg";
+import tuf from "../../../collections/integrations/tuf/icons/color/tuf-color.svg";
+import tikvoperator from "../../../collections/integrations/tikv-operator/icons/color/tikv-operator-color.svg";
+import vitess from "../../../collections/integrations/vitess/icons/color/vitess-color.svg";
+
 
 const ViewsSectionWrapper = styled.div`
 
@@ -42,7 +64,10 @@ const ViewsSectionWrapper = styled.div`
     @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
+      height: 600px;
+      padding: 0 2%;
     }
+      
 }
     .hero-text {
         display: flex;
@@ -54,23 +79,43 @@ const ViewsSectionWrapper = styled.div`
           max-width: 100%;
           justify-content: center;
           text-align: center;
+          margin-top: 4rem;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1100px) {
+          padding-left: 1rem;
+        }
+
+          
+    }
+
+    .hero-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex: 0 0 50%;
+        max-width: 50%;
+        overflow: hidden;
+        height: 100%;
+
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
         }
     }
 
     h2 {
-        /* max-width: 90%; */
-        padding-bottom: 2%;
-      }
+      /* max-width: 90%; */
+      padding-bottom: 2%;
     }
+  }
 
-    h4 {
-        max-width: 90%;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          }
-    }
+  h4 {
+      max-width: 90%;
+      @media only screen and (max-width: 767px) {
+        max-width: 100%;
+        }
+  }
 
-    .hero-image {
+   .hero-image {
         position: relative;
         display: flex;
         justify-content: center;
@@ -89,6 +134,7 @@ const ViewsSectionWrapper = styled.div`
           }
         }
 
+      
         .visible {
                 opacity: 1;
                 transition: all 0.2s ease-in;
@@ -110,55 +156,56 @@ const ViewsSectionWrapper = styled.div`
         height: 680px;
     }
 
+
     .container {
-      display: flex;
-      justify-content: center;
-    }
-    
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem; 
+        height: 100%; 
+      }
+
     .line {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 2rem;
-      flex-wrap: wrap;
-    }
-    .position-line-down{
-        transform: translateY(-20em);
-    }
-    .position-line-up{
-        transform: translateY(20em);
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        width: 200px;
     }
 
-    .line-primary, .line-secondary {
+    .scroll-track {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
     }
 
-    .animation-up-scroll {
-        animation: scroll-up-animation 15s linear infinite;
+    .scroll-down .scroll-track {
+        animation: scrollDown 35s linear infinite;
+    }
 
-        @keyframes scroll-up-animation {
-            0% {
-                transform: translateY(0%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
+    .scroll-up .scroll-track {
+        animation: scrollUp 35s linear infinite;
+    }
+
+    @keyframes scrollDown {
+        0% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(0%);
         }
     }
-    .animation-down-scroll {
 
-        animation: scroll-down-animation 15s linear infinite;
-        @keyframes scroll-down-animation {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100%);
-            }
+    @keyframes scrollUp {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(-50%);
         }
     }
+
     .box {
       display: flex;
       flex-direction: column;
@@ -205,71 +252,78 @@ const ViewsSectionWrapper = styled.div`
 `;
 
 const KanvasVisualizerViews = () => {
-  const [imageRef, inView] = useInView({ threshold: 0.3 });
-  const [imageInView, setimageInView] = useState(false);
+  const [imageRef] = useInView({ threshold: 0.3 });
 
-  if (inView && !imageInView) setimageInView(true);
-  else if (imageInView && !inView) setimageInView(false);
+  const leftColumnItems = [
+    { img: argocd, name: "Argo" },
+    { img: certmanager, name: "Cert Manager" },
+    { img: cilium, name: "Cilium" },
+    { img: cloudevents, name: "CloudEvents" },
+    { img: containerd, name: "containerd" },
+    { img: coredns, name: "CoreDNS" },
+    { img: crio, name: "cri-o" },
+    { img: envoy, name: "Envoy" },
+    { img: etcd, name: "etcd" },
+    { img: falco, name: "Falco" },
+    { img: fluentd, name: "Fluentd" },
+    { img: flux, name: "Flux" },
+    { img: harbor, name: "Harbor" },
+    { img: helm, name: "Helm" }
+  ];
+
+  const rightColumnItems = [
+    { img: istio, name: "Istio" },
+    { img: jaeger, name: "Jaeger" },
+    { img: keda, name: "KEDA" },
+    { img: kubeedge, name: "KubeEdge" },
+    { img: kubernetes, name: "Kubernetes" },
+    { img: linkerd, name: "Linkerd" },
+    { img: opa, name: "Open Policy Agent" },
+    { img: prometheus, name: "Prometheus" },
+    { img: rook, name: "Rook" },
+    { img: spiffe, name: "SPIFFE" },
+    { img: spire, name: "SPIRE" },
+    { img: tuf, name: "TUF" },
+    { img: tikvoperator, name: "TiKV" },
+    { img: vitess, name: "Vitess" }
+  ];
+
+  const renderColumn = (items, direction) => (
+    <div className={`line scroll-${direction}`}>
+      <div className="scroll-track">
+        {items.map((item, index) => (
+          <div className="box" key={`set1-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {items.map((item, index) => (
+          <div className="box" key={`set2-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+        {items.map((item, index) => (
+          <div className="box" key={`set3-${index}`}>
+            <img className="boxImg" src={item.img} alt={item.name} />
+            <div className="boxText">{item.name}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          {/* <img
-            className={imageInView ? "lines-visible" : "not-visible"}
-            src={CommentingImageDark}
-            alt=""
-          /> */}
-          <div
-            // className={
-            //   imageInView ? "visible container" : "not-visible container"
-            // }
-            className="visible container"
-          >
-            <div className="line position-line-down">
-              <div className="line-primary animation-down-scroll">
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={argocd} alt="" />
-                  <div className="boxText">Argo CD</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={cilium} alt="" />
-                  <div>Cilium</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={prometheus} alt="" />
-                  <div>Prometheus</div>
-                </div>
-              </div>
-
-            </div>
-            <div className="line position-line-up">
-              <div className="line-primary animation-up-scroll">
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={keda} alt="" />
-                  <div>Keda</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={linkerd} alt="" />
-                  <div>Linkerd</div>
-                </div>
-                <div className="box">
-                  <img className="boxImg" src={kubernetes} alt="" />
-                  <div>Kubernetes</div>
-                </div>
-              </div>
-            </div>
+          <div className="container">
+            {renderColumn(leftColumnItems, "down")}
+            {renderColumn(rightColumnItems, "up")}
           </div>
         </div>
         <div className="hero-text">
+
           <h2>
             <span>Manage your Cloud Native mess</span>
           </h2>

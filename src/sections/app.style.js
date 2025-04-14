@@ -6,8 +6,11 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.secondaryColor};
     color: #FFFFFF;
 }
+    * {
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  *,
   *::before,
   *::after {
     box-sizing: inherit;
@@ -50,10 +53,13 @@ html{
 
 body,html {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
   font-size: 1.125rem;
+  overflow: clip;
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,7 +70,6 @@ body {
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   font-family: "Qanelas Soft", "Open Sans", sans-serif;
-  overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
   padding: 0;
@@ -173,6 +178,25 @@ a {
 section{
     position: relative;
 }
+
+  // styling for the searchbox
+  .search-box {
+        input {
+            background-color: ${props => props.theme.shadowDarkColor}!important;
+            color: ${props => props.theme.text};
+            transition: all 450ms ease 0s;
+
+            &:focus {
+            border-color: #fff !important;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+          }
+        }
+
+        // for the Search Icon
+        svg {
+            color: ${(props) => props.theme.searchIconColor};
+        }
+  }
 
 /* Modal styling needs to be applied to the global CSS */
 

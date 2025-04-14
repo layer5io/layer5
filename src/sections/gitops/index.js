@@ -9,7 +9,7 @@ import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp
 import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
 import Github_Light from "../../assets/images/socialIcons/github-light.svg";
-import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/kanvas-light-stacked.svg";
+import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import SquarePoint from "./SquarePoint";
 
 
@@ -80,7 +80,7 @@ const GitOpsPage = () => {
             <SquarePoint>Connect Kanvas to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div className="buttons-container">
-              <Button $primary className="learn-more-btn" title="Install" $url="https://meshery.layer5.io/connect/github/new"/>
+              <Button $primary className="learn-more-btn" title="Install" $url="https://cloud.layer5.io/connect/github/new"/>
               <Button $secondary className="learn-more-btn" title="Learn More" $url="/solutions/gitops/snapshot"/>
             </div>
           </Col>

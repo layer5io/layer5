@@ -19,6 +19,8 @@ import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
 import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.png";
+import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import sistent from "../../../assets/images/sistent/icon-only/sistent-icon-color.svg";
 
 export const repo_data = [
   {
@@ -84,7 +86,7 @@ export const repo_data = [
       },
       {
         project: "Kanvas",
-        image: meshery,
+        image: kanvasLogo,
         site: "/cloud-native-management/kanvas",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
@@ -125,10 +127,10 @@ export const repo_data = [
       {
         project: "Layer5 Cloud",
         image: meshery,
-        site: "https://meshery.layer5.io/",
+        site: "https://cloud.layer5.io/",
         language: "React.js",
-        maintainers_name: ["Yash Sharma"],
-        link: ["https://layer5.io/community/members/yash-sharma"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/layer5io/meshery-cloud",
         accessRequired: "*program participation required",
       },
@@ -144,17 +146,15 @@ export const repo_data = [
       },
       {
         project: "Sistent Design System",
-        image: five,
+        image: sistent,
         site: "https://github.com/layer5io/sistent",
-        language: "React.js",
+        language: "React.js, Typescript",
         maintainers_name: [
           "Antonette Caldwell",
-          "Rex Joshua Ibegbu",
           "Aabid Sofi",
         ],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
-          "https://layer5.io/community/members/rex-joshua-ibegbu",
           "https://layer5.io/community/members/aabid-sofi",
         ],
         repository: "https://github.com/layer5io/sistent",
@@ -168,7 +168,6 @@ export const repo_data = [
         link: [""],
         repository: "https://github.com/layer5io/docs",
       },
-
     ],
   },
 
@@ -301,16 +300,47 @@ export const repo_data = [
         project: "Layer5 Cloud",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Yash Sharma"],
-        link: ["https://layer5.io/community/members/yash-sharma"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         description: "A Meshery Remote Provider.",
         repository: "https://github.com/layer5io/meshery-cloud",
+        accessRequired: "*program participation required",
       },
       // {
       //   project: "MeshMonkey",
       //   language: "Golang",
       //   repository: "https://github.com/layer5io/meshmonkey",
       // },
+      {
+        project: "Kanvas Snapshot",
+        image: kanvasLogo,
+        site: "https://layer5.io/solutions/gitops/snapshot",
+        language: "GitHub Actions",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description:
+          "Generates visual snapshots of infrastructure as code (e.g., Kubernetes manifests, Helm charts) and delivers them to pull requests for automated review.",
+        repository: "https://github.com/layer5labs/kanvas-snapshot",
+      },
+      {
+        project: "Helm Kanvas Snapshot",
+        image: kanvasLogo,
+        language: "Golang",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description:
+          "The Kanvas Snapshot Helm Plugin allows users to generate a visual snapshot of their Helm charts directly from the command line.",
+        repository: "https://github.com/meshery/helm-kanvas-snapshot",
+      },
+      {
+        project: "Kubectl kanvas snapshot",
+        image: kanvasLogo,
+        language: "Golang",
+        maintainers_name: ["Vacant"],
+        link: [""],
+        description: "A Kubectl Kanvas Snapshot is a native kubectl plugin designed to conveniently create a visual snapshot of the combination of multiple Kubernetes manifest files.",
+        repository: "https://github.com/meshery/kubectl-kanvas-snapshot",
+      },
     ],
   },
 

@@ -545,7 +545,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://layer5.io",
-        sitemap: "https://layer5.io/sitemap/sitemap-index.xml",
+        sitemap: "https://layer5.io/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },

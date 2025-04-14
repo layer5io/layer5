@@ -1,0 +1,58 @@
+name: Feature List
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  trigger-feature-list:
+    runs-on: ubuntu-latest
+    env:
+      FEATURES_FILE: 'src/sections/Pricing/feature_data.json'
+      SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=1153419764&single=true&output=csv'
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install csvtojson --legacy-peer-deps
+
+      - name: Fetch spreadsheet and process updates
+        run: |
+          # Download the spreadsheet
+          curl -L $SPREADSHEET_URL -o .github/build/spreadsheet.csv
+          ls -al
+
+          # Process the CSV, filter data, and append to feature_data.json
+          node .github/build/features-to-json.js
+
+      - name: Commit changes
+        id: commit-changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Updated feature data from spreadsheet"
+          file_pattern: ${{ env.FEATURES_FILE }}
+          branch: master
+          commit_options: "--signoff"
+          commit_user_name: l5io
+          commit_user_email: ci@layer5.io
+          commit_author: 'l5io <l5io@users.noreply.github.com>'
+
+  call-build-and-deploy--workflow:
+    needs:
+      - trigger-feature-list
+    name: Build and Deploy Site
+    uses: layer5io/layer5/.github/workflows/build-and-deploy-site.yml@master
+    secrets: inherit

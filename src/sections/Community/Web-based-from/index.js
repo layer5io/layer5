@@ -66,7 +66,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/bmmi8btg3xb2fmx6kcavxmtf0a3uame2", {
+      axios.post("https://hook.us1.make.com/v66ana9yf3w11k4a1rf3epwquur1s9rd", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -178,6 +178,7 @@ const WebBasedForm = () => {
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="XXL" />
+                XXL
                 </label>
               </div>
               <label htmlFor="picture" className="form-name">Picture</label>
@@ -688,7 +689,7 @@ const WebBasedForm = () => {
             <Button $primary className="btn-one" type="button" title="Community Handbook" $url="https://layer5.io/community/handbook" />
             <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="https://layer5.io/community/newcomers" />
           </div>
-          <p>We are pleased to have you as a new member!</p>
+          <p>We are pleased to have you as a new member! You have been added to the community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
         </div>
       </Container>
     );

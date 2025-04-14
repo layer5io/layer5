@@ -33,8 +33,9 @@ const CommonFormWrapper = styled.section`
 }
 
 .form-body{
-box-shadow: 0px 5px 5px 2px ${props => props.theme.primaryLightColor};
+box-shadow: 0px -2px 5px 2px ${props => props.theme.primaryLightColor};
 margin: 1rem;
+
 
 .form-title {
     padding: 1rem;
@@ -45,7 +46,8 @@ margin: 1rem;
 
 .form{
     font-size: .9rem;
-    margin: 0 1rem 1rem;
+    width: 100%;
+    margin: 0 0 1rem;
     padding: 1rem;
     
     .supscript{
@@ -56,7 +58,7 @@ margin: 1rem;
 
       label {
         display: block;
-        font-size: 1rem;
+        font-size: .98rem;
       }
 
       .required-sign {
@@ -95,7 +97,7 @@ margin: 1rem;
         display: block;
       }
       .formRight select {
-        background: linear-gradient(90deg, rgba(0,179,159,0.15) 0%, rgba(208,228,228,.7) 40%);
+        background: ${props => props.theme.grey212121ToWhite};
         border: 1px solid black;
         border-radius: 10px;
         height: 50px;
@@ -104,14 +106,6 @@ margin: 1rem;
         font-size: 0.85rem;
         margin: 0.5rem 0;
         color: ${props => props.theme.primaryColor};
-      }
-
-      .options {
-        color: ${props => props.theme.textColor};
-      }
-
-      .formRight option {
-        color: black;
       }
 
       .custom-arrow {
@@ -144,8 +138,9 @@ margin: 1rem;
         border-radius: 10px;
         padding: .5rem .5rem;
         font-size: .85rem;
-        background: linear-gradient(90deg, rgba(0,179,159,0.15) 0%, rgba(208,228,228,.7) 40%);
+        background: ${props => props.theme.grey212121ToWhite};
         color: ${props => props.theme.primaryColor};
+        resize: none;
       }
 
       .text-field:focus {

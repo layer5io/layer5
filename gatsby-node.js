@@ -10,6 +10,9 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const {
+  componentsData,
+} = require("./src/sections/Projects/Sistent/components/content");
 
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
@@ -309,12 +312,35 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/cloud-native-management/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/visualize",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/kanvas/operate",
+    toPath: "/cloud-native-management/kanvas/operate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
     toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
     redirectInBrowser: true,
     isPermanent: true,
   });
-
+  createRedirect({
+    fromPath: "/sitemap.xml",
+    toPath: "/sitemap-index.xml",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   // Create Pages
   const { createPage } = actions;
 
@@ -371,84 +397,99 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
 
-  const res = await graphql(`{
-  allPosts: allMdx(filter: {frontmatter: {published: {eq: true}}}) {
-    nodes {
-      frontmatter {
-        program
-        programSlug
+  const res = await graphql(`
+    {
+      allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
+        nodes {
+          frontmatter {
+            program
+            programSlug
+          }
+          fields {
+            collection
+            slug
+          }
+        }
       }
-      fields {
-        collection
-        slug
+      blogTags: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          nodes {
+            id
+          }
+          fieldValue
+        }
+      }
+      blogCategory: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { category: SELECT } }) {
+          nodes {
+            id
+          }
+          fieldValue
+        }
+      }
+      memberBio: allMdx(
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+          }
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      singleWorkshop: allMdx(
+        filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      labs: allMdx(
+        filter: { fields: { collection: { eq: "service-mesh-labs" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
+          }
+        }
+      }
+      learncontent: allMdx(
+        filter: { fields: { collection: { eq: "content-learn" } } }
+      ) {
+        nodes {
+          fields {
+            learnpath
+            slug
+            course
+            section
+            chapter
+            pageType
+            collection
+          }
+        }
       }
     }
-  }
-  blogTags: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {tags: SELECT}}) {
-      nodes {
-        id
-      }
-      fieldValue
-    }
-  }
-  blogCategory: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {category: SELECT}}) {
-      nodes {
-        id
-      }
-      fieldValue
-    }
-  }
-  memberBio: allMdx(
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}, executive_bio: {eq: true}}}
-  ) {
-    nodes {
-      frontmatter {
-        name
-      }
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  singleWorkshop: allMdx(
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-  ) {
-    nodes {
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  labs: allMdx(filter: {fields: {collection: {eq: "service-mesh-labs"}}}) {
-    nodes {
-      fields {
-        slug
-        collection
-      }
-    }
-  }
-  learncontent: allMdx(filter: {fields: {collection: {eq: "content-learn"}}}) {
-    nodes {
-      fields {
-        learnpath
-        slug
-        course
-        section
-        chapter
-        pageType
-        collection
-      }
-    }
-  }
-}`);
+  `);
 
   // handle errors
   if (res.errors) {
@@ -689,6 +730,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   });
+
+  const components = componentsData.map((component) => component.src.replace("/", ""));
+  const createComponentPages = (createPage, components) => {
+    const pageTypes = [
+      { suffix: "", file: "index.js" },
+      { suffix: "/guidance", file: "guidance.js" },
+      { suffix: "/code", file: "code.js" },
+    ];
+
+    components.forEach((name) => {
+      pageTypes.forEach(({ suffix, file }) => {
+        const path = `/projects/sistent/components/${name}${suffix}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+        try {
+          createPage({
+            path,
+            component: require.resolve(componentPath),
+          });
+        } catch (error) {
+          console.error(`Error creating page for ${path}:`, error);
+        }
+      });
+    });
+  };
+
+  createComponentPages(createPage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -915,7 +982,7 @@ const createSectionPage = ({ envCreatePage, node }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
@@ -925,7 +992,21 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
   });
+
+  if (stage === "build-javascript") {
+    const config = getConfig();
+    const miniCssExtractPlugin = config.plugins.find(
+      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+    );
+
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
@@ -952,4 +1033,36 @@ exports.createSchemaCustomization = ({ actions }) => {
      }
    `;
   createTypes(typeDefs);
+};
+
+const fs = require("fs");
+
+exports.onPostBuild = async ({ graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allSitePage {
+        nodes {
+          path
+          matchPath
+        }
+      }
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild("Error while running GraphQL query.");
+    return;
+  }
+
+  // Log the result to the console
+  console.log("GraphQL query result:", JSON.stringify(result, null, 2));
+
+  // Optionally, write the result to a file for easier inspection
+  const outputPath = path.resolve(__dirname, "public", "query-result.json");
+  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 };

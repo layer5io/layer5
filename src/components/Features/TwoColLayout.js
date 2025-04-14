@@ -70,8 +70,8 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[0] = el)}>
-          <h2>Visualize and Simplify Platform Engineering</h2>
-          <p className="text">Incorporate AWS, GCP and Kubernetes components into Meshery designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
+          <h2>Simplify platform engineering</h2>
+          <p className="text">Incorporate AWS, GCP and Kubernetes components into Kanvas designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
             <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
               <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
@@ -92,8 +92,8 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>
-          <h2>Cognitive overload is real</h2>
-          <p className="text">Empower DevOps, platform, and site reliability engineers with our orchestration management solution. Achieve seamless collaboration and operational harmony for enhanced productivity.</p>
+          <h2>Conquer cognitive overload</h2>
+          <p className="text">Unlock the power of visual orchestration. DevOps, platform engineers, and SRE teams collaborate seamlessly, reduce cognitive overload, and boost productivity. Experience operational harmony and achieve more.</p>
           <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>
       </Container>

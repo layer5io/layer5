@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -5,8 +6,6 @@ import PartnerItemWrapper from "./partnerSection.style";
 import { Link } from "gatsby";
 import { partners } from "./partners-home-data";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const settings = {
   initialSlide: 1,

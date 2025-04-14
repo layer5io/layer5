@@ -1,7 +1,6 @@
+
 import styled from "styled-components";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -16,6 +15,17 @@ export const HoneycombGrid = styled.div`
     }
   }
 
+  .search-box {
+        input {
+        border: 1px solid ${props => props.theme.headingColor} !important;
+        
+        &:focus {
+            border-color: #fff !important;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+        }
+    }
+  }
+  
   .category {
     display: flex;
     flex-wrap: wrap;

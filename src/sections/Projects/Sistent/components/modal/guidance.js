@@ -4,7 +4,7 @@ import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-export const ModalGuidance = () => {
+const ModalGuidance = () => {
   const location = useLocation();
   return (
     <SistentLayout title="Modal">

@@ -1,0 +1,215 @@
+---
+title: "Google Summer of Code 2025"
+thumbnail: ./gsoc.svg
+permalink: "gsoc/2025"
+published: true
+program: "Google Summer of Code"
+programSlug: "gsoc"
+redirect_from:
+  - /gsoc/2025/
+---
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import gsoc_logo from "./gsoc.svg";
+import {Link} from "gatsby";
+import playground from "./meshery-playground-alt-4.webp";
+
+<ProgramsWrapper>
+
+<img src={gsoc_logo} alt="gsoc_logo" />
+<b>GSoC 2025 Program Timeline</b>
+<div>
+  <ul>
+    <li>January 27 - Organization applications open</li>
+    <li>February 27 - Accepted GSoC Organizations announced</li>
+    <li>March 24 - Students submit their proposals</li>
+    <li>May 7 - Accepted students are announced</li>
+    <li>November 19th - Successful student projects are announced</li>
+  </ul>
+</div>
+<b>Statistics</b>
+<div>
+  <ul>
+    <li>
+      Since year 2005, 16,000+ students and 13000 mentors from over 118
+      countries has came together to participate in GSoC
+    </li>
+    <li>Approximately 38+ million lines of code have been produced</li>
+  </ul>
+</div>
+
+## GSoC 2025 Project Ideas
+<br />
+
+#### Multi-player Collaboration: Resilient Websockets and GraphQL Subscriptions
+
+- **Description:** Meshery's current implementation of websockets and GraphQL subscriptions is in need of refactoring for increased reliability and resiliency. This client and server-side refactoring includes use of webworkers and separation of concerns for the client-side, and the use of a message broker for the server-side. The project has implications on Meshery's implementation of multi-player collaboration functionality.
+- **Expected outcome:** 
+  - Resilient websockets and GraphQL subscriptions for Meshery, enabling multi-player collaboration functionality.
+- **Recommended Skills:** Golang, Kubernetes, Azure, well-written and well-spoken English
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/13554
+
+#### Support for Azure in Meshery
+
+- **Description:** Enhance Meshery's existing orchestration capabilities to include support for Azure. The <a href="https://azure.github.io/azure-service-operator">Azure Service Operator</a>(ASO) provides a wide variety of Azure Resources via Kubernetes custom resources as first-class <a href="https://docs.meshery.io/concepts/logical/models">Meshery Models</a>. This involves enabling Meshery to manage and orchestrate Azure services and their resources, similar to how it handles other Kubernetes resources. The project will also include generating support for Azure services and their resources in Meshery's Model generator.
+- **Expected outcome:** 
+  - Meshery will be able to orchestrate and manage all Azure services supported by ASO. This includes the ability to discover, configure, deploy, and operate the lifecycle of Azure services through Meshery. The Meshery Model generator will be updated to automatically generate models for Azure services, simplifying their integration and management within Meshery. This will be an officially supported feature of Meshery.
+- **Recommended Skills:** Golang, Kubernetes, Azure, well-written and well-spoken English
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:mia.grenell2337@gmail.com">Mia Grenell</Link>
+- **Expected project size:** large (175 hours)
+- **Difficulty:** Hard
+- **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/11244
+
+#### Distributed client-side inference (policy evaluation) with WebAssembly (WASM) and OPA in Meshery
+
+- **Description:** Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the <a href="https://github.com/open-policy-agent/golang-opa-wasm">https://github.com/open-policy-agent/golang-opa-wasm</a> project into Meshery UI, so that a powerful, real-time user experience is possible.
+- **Expected outcome:** 
+  - The goal of this project is to enhance Meshery's infrastructure configuration capabilities by incorporating real-time policy evaluation using the golang-opa-wasm project. This project will integrate the capabilities of golang-opa-wasm into the Meshery UI, enabling users to experience the existing, powerful, server-side policy evaluation client-side.
+- **Recommended Skills:** WebAssembly, Golang, Open Policy Agent, well-written and well-spoken English
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** large (175 hours)
+- **Difficulty:** Hard
+- **Upstream Issue (URL):**  https://github.com/meshery/meshery/issues/13555
+
+#### Kanvas Snapshot Kubectl Plugin
+
+- **Description:**   Kubernetes manifests, especially collections of them, can be complex. This plugin will bridge the gap between Kubernetes cluster and workflow configurations and their visual representation in Kanvas Snapshots. The plugin will allow users to generate a visual snapshot of the combination of multiple Kubernetes manifest files, each containing one or more Kubernetes resources. Users will be able to receive these snapshots either via email or as a URL displayed directly in the terminal.
+- **Expected outcome:** 
+  - A functional kubectl plugin that integrates with Meshery to generate Kanvas Snapshots from Kubernetes manifests.
+  - Support for both synchronous and asynchronous delivery, allowing users to receive snapshots via email or directly in the terminal.
+- **Recommended Skills:** Golang, Krew, Kubernetes, well-written and well-spoken English.
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** large (~ 175 hours)
+- **Difficulty:** Intermediate
+- **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/12036
+
+#### Meshery Model Support for kro ResourceGraphDefinitions (RGDs)
+
+- **Description:** Enhance Meshery's existing orchestration capabilities to include support for kro ResourceGraphDefinitions (RGDs) as first-class <a href="https://docs.meshery.io/concepts/logical/models">Meshery Models</a>. This involves enabling Meshery to manage and orchestrate RGDs, similar to how it handles other Kubernetes resources. The project will also include generating support for ResourceGraphDefinition in Meshery's Model generator.
+- **Expected outcome:** 
+  - Meshery will be able to orchestrate and manage kro RGDs. This includes the ability to deploy, configure, and manage the lifecycle of RGDs through Meshery.
+  - The Meshery Model generator will be updated to automatically generate models for kro RGDs, simplifying their integration and management within Meshery. This will be an officially supported feature of Meshery.
+- **Recommended Skills:** Golang, Cuelang, Well-written and well-spoken English, Kubernetes, DevOps
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:mia.grenell2337@gmail.com">Mia Grenell</Link>
+- **Expected project size:** 350 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/13520
+
+#### Hands-on tutorials using Meshery Playground
+
+- **Description:** Learning paths with hands-on labs are a crucial resource for DevOps engineers and cloud-native practitioners. The Meshery Playground provides a live cluster environment, making it an ideal platform for learning every kind of cloud and cloud native technology. Meshery Docs is in need of comprehensive tutorials and scenarios covering common infrastructure management use cases. Mission is to create and publish a series of hands-on tutorials using Meshery Playground. Each tutorial will include step-by-step guides, live demonstrations, and interactive labs using the Playground allowing learners to apply their knowledge directly without the hassle of any configuration.These tutorials will be reviewed by various project maintainers and then published in <a href="https://docs.meshery.io/guides/tutorials">guides/tutorials</a>.
+- **Expected outcome:** 
+  - 10+ new tutorials published in Meshery Docs.
+  - Each tutorial should be interactive, guiding users through infrastructure.
+  - Tutorials should vary in complexity, catering to beginners and advanced learners.
+- **Recommended Skills:** written English, Markdown, Kubernetes, DevOps, and hands-on experience with cloud-native tools
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** large (350 hours)
+- **Difficulty:** Hard
+- **Upstream Issue (URL):** https://github.com/meshery/meshery/issues/13521
+
+#### Expanding end-to-end test coverage in Meshery using Playwright
+
+- **Description:** Meshery integrates with many other CNCF projects and technologies. Sustaining those integrations is only possible through automation. To automate functional integration and end-to-end testing, Meshery now uses Playwright as one of the tools for browser testing. End-to-end tests run with each pull request to ensure that changes do not break existing functionality. Expanding the coverage of E2E tests is crucial to improving the reliability of Meshery’s UI and workflows. This project focuses on writing Playwright-based tests for more Meshery components, ensuring robust test coverage across the platform.
+- **Expected outcome:** 
+  - Development of comprehensive E2E test cases for additional Meshery components using Playwright.
+- **Recommended Skills:** JavaScript, Playwright, GitHub Workflows, familiarity with React or Nextjs would be helpful, CI/CD
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/ian-whitney">Ian Whitney</Link>
+- **Expected project size:** medium (175 hours)
+- **Difficulty:** Hard
+- **Upstream Issue (URL):**  https://github.com/meshery/meshery/issues/13514
+
+#### Kubectl Plugin for MeshSync Snapshot
+
+- **Description:** Develop a kubectl plugin via krew that allows users to temporarily deploy <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>, capture the state of their cluster, and then import the snapshot into Meshery for offline infrastructure management. The plugin will serve as a lightweight alternative to a full Meshery deployment while still enabling Meshery Server to understand the state and configuration of Kubernetes cluster, simplyfying common networking challenges between the cluster and Meshery Server.
+- **Expected outcome:** 
+  - A functional kubectl plugin that facilitates capturing a MeshSync snapshot of Kubernetes cluster resources.
+  - Improved networking efficiency, reducing the complexity of connecting Kubernetes clusters with Meshery Server.
+  - Support for selective snapshot capture, including single resources, namespaces, or entire cluster visualizations.
+  - Read-only access mode to generate snapshots without requiring full Meshery deployment.
+- **Recommended Skills:** Golang, Krew, Kubernetes, well-written and well-spoken English.
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** medium (175 hours)
+- **Difficulty:** Intermediate
+- **Upstream Issue (URL):**  https://github.com/meshery/meshery/issues/11869
+
+### Cloud Native Playground
+
+<a href="https://play.meshery.io">
+<img src={playground} alt="the cncf playground mockup" style="width:40%;" />
+</a>
+
+
+
+<br />
+<hr />
+<br />
+<h2>Additional Information</h2>
+<div className="flex-div">&nbsp;</div>
+<div id="layer5-intro" className="iframe-container">
+  <iframe
+    width="392"
+    height="220.5"
+    src="https://www.youtube.com/embed/0yN5T5LB9ps"
+    loading="lazy"
+    frameBorder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+<p>
+  Layer5 projects are open source software. Anyone can download, use, work on,
+  and share it with others. It's built on principles like collaboration,
+  globalism, and innovation. Layer5 projects are distributed under the terms of
+  Apache v2.
+</p>
+
+<h3>About Layer5</h3>
+
+<p>
+We want to participate to help first-time open source contributors get started and what will hopefully be a lifelong journey of open source participation. We want to have them have a great first experience, understand what it means to be embraced by empathy and, in turn, to have empathy for others. We are all learning and growing each day. Our organization and community culture has a pay-it-forward mentality. We spend a lot of time with both students and adults alike, tutoring them, supporting them, and watching them grow. We believe that the world has too few truly diverse and perpetually encouraging open source communities. We take our internships very seriously and grow and support interns to dramatically increase their career velocity. We love helping others learn and grow. </p>
+
+<p>
+Mentoring and seeing others learn and grow is what Layer5 is all about - they grow, we grow. Layer5 is a platform for mentees to hoist themselves up on and leapfrog from. We’re a platform for shared success. Direct participation in GSoC will be most meaningful to the community. </p>
+
+<p>
+We interact daily over Slack, and have an open source project <Link to="/community/calendar">meeting everyday</Link>, which are posted to the community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1" rel="nofollow">YouTube channel</a>.</p>
+<p>
+  Layer5 projects are open source software. Anyone can download, use, work on,
+  and share it with others. It's built on principles like collaboration,
+  globalism, and innovation. Layer5 projects are distributed under the terms of
+  Apache v2.
+</p>
+
+<h3>Google Summer of Code Participation</h3>
+
+<p>
+  The key component of these projects is our Community. This community, which
+  you will join as a participant in Google Summer of Code, is improving the
+  world of diverse cloud native systems. Your contributions will affect people
+  you've never met. The Layer5 community includes software engineers,
+  researchers, students, artists, system administrators, operators and web
+  designers -- all of whom will be happy to help you get started.
+</p>
+<p>
+  We believe that all contributors should expect and be part of a safe and
+  friendly environment for constructive contribution. We can more effectively
+  and successfully compare and challenge different ideas to find the best
+  solutions for advancement, while building the size, diversity, and strength of
+  our community.
+</p>
+<div className="apply-button">
+  <h3>
+    <Button
+      $primary
+      title="Participate"
+      $url="https://discuss.layer5.io"
+      $external={ true }
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

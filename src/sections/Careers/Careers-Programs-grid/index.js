@@ -1,10 +1,13 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Image from "../../../components/image";
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+const Five_image = "../img/open-source.png";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
@@ -57,6 +60,20 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
 
   return (
     <ProgramsPageWrapper>
+      <div className="opensource-section">
+        <div className="opensource-section-text">
+          <h1>Open Source is in our DNA</h1>
+          <p>
+            Layer5 projects are open source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.
+          </p>
+          <p>
+            We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
+          </p>
+        </div>
+        <div className="opensource-section-img">
+          <StaticImage src={Five_image} alt="Five" />
+        </div>
+      </div>
       <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
       <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
         <Container>

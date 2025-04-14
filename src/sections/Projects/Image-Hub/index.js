@@ -1,3 +1,4 @@
+
 import React from "react";
 
 
@@ -6,8 +7,6 @@ import ImageHubWrapper from "./imageHub.style";
 import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import VintageBox from "../../../reusecore/VintageBox";
 
 

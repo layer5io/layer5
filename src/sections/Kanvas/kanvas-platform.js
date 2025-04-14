@@ -127,11 +127,13 @@ const Platform = () => {
               description:
                 "Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.",
               content: (
-                <img
-                  src={SelfHosted}
-                  alt="Kanvas Self-hosted"
-                  className="modes-image"
-                />
+                <a href="https://docs.layer5.io/cloud/self-hosted">
+                  <img
+                    src={SelfHosted}
+                    alt="Kanvas Self-hosted"
+                    className="modes-image"
+                  />
+                </a>
               ),
             },
             {
@@ -139,11 +141,13 @@ const Platform = () => {
               description:
                 "Connect to Layer5 Cloud and have your Kanvas designs versioned and available for team sharing and real-time collaboration.",
               content: (
-                <img
-                  src={CloudHosted}
-                  alt="Kanvas Cloud"
-                  className="modes-image"
-                />
+                <a href="https://docs.layer5.io/cloud/">
+                  <img
+                    src={CloudHosted}
+                    alt="Kanvas Cloud"
+                    className="modes-image"
+                  />
+                </a>
               ),
             },
           ]}

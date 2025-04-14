@@ -22,7 +22,7 @@ const KubernetesMultiCluster = () => {
     {
       heading: "Bring those ideas to life",
       subtitle:
-        "Designer and Visualizer live side-by-side, so all design work, from ideation to operation, can be found in one place.",
+        "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
       image: switcher_img,
     },
     {

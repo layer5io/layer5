@@ -1,9 +1,8 @@
+
 import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slide1 from "../images/service mesh performance example.gif";
 import Slide2 from "../images/meshery_benchmark_screen.webp";
 import Slide3 from "../images/meshery-configuration-management.webp";

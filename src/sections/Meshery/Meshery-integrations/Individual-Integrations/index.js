@@ -11,6 +11,7 @@ import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
 import ModelComponents from "./ComponentsGrid";
 import CatalogGrid from "./CatalogGrid";
+import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
@@ -73,7 +74,17 @@ const IndividualIntegrations = ({ data }) => {
           <h2>Features</h2>
           <ul>
             {frontmatter.featureList.map((feature, indx) => (
-              <li key={indx}>{feature}</li>
+              <li key={indx}>
+                <MesheryLogoBullet
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    minWidth: "10px",
+                    marginRight: "16px",
+                  }}
+                />
+                {feature}
+              </li>
             ))}
           </ul>
         </div>
@@ -114,7 +125,7 @@ const IndividualIntegrations = ({ data }) => {
         ) : isGcpItem ? (
           <HowMesheryWorksSpecs
             title="GCP Orchestration and Diagramming Softwarel"
-            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates and symbols designed for professionals."
+            desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals."
             btnUrl="/cloud-native-management/generate-gcp-architecture-diagram"
           />
         ) : (
