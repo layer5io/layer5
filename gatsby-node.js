@@ -866,7 +866,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           case "members":
             if (node.frontmatter.published)
               slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
-              console.log(slug);            
             break;
           case "events":
             if (node.frontmatter.title)
