@@ -4,6 +4,7 @@ import { useLocation } from "@reach/router";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { ActionBox, DocsTable, TableHead, TableBody } from "../../sistent.style";
 
 const ModalGuidance = () => {
   const location = useLocation();
@@ -73,6 +74,175 @@ const ModalGuidance = () => {
             <li className="guidance-list-item"><strong>Avoid using for</strong> complex multi-step processes</li>
             <li className="guidance-list-item"><strong>Avoid</strong> multiple or nested modals</li>
           </ul>
+
+          <a id="API Reference">
+            <h2>API Reference</h2>
+          </a>
+          <p>
+            Below you'll find detailed information about the props and components of the Modal system.
+          </p>
+
+          <a id="Modal Props">
+            <h3>Modal Props</h3>
+          </a>
+          <div className="table-responsive">
+            <DocsTable>
+              <TableHead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                <tr>
+                  <td><code>open</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Controls the visibility of the modal</td>
+                </tr>
+                <tr>
+                  <td><code>closeModal</code></td>
+                  <td>function</td>
+                  <td>required</td>
+                  <td>Callback function triggered when the modal is closed</td>
+                </tr>
+                <tr>
+                  <td><code>title</code></td>
+                  <td>string</td>
+                  <td>&quot;&quot;</td>
+                  <td>Text displayed in the modal header</td>
+                </tr>
+                <tr>
+                  <td><code>headerIcon</code></td>
+                  <td>React.ReactNode</td>
+                  <td>undefined</td>
+                  <td>Icon to display in the modal header</td>
+                </tr>
+                <tr>
+                  <td><code>reactNode</code></td>
+                  <td>React.ReactNode</td>
+                  <td>undefined</td>
+                  <td>Content to be rendered inside the modal (alternative to children)</td>
+                </tr>
+                <tr>
+                  <td><code>children</code></td>
+                  <td>node</td>
+                  <td>required</td>
+                  <td>Content to be rendered inside the modal</td>
+                </tr>
+                <tr>
+                  <td><code>maxWidth</code></td>
+                  <td>string</td>
+                  <td>'xs'</td>
+                  <td>Controls the maximum width of the modal</td>
+                </tr>
+              </TableBody>
+            </DocsTable>
+          </div>
+
+          <a id="Modal Body Props">
+            <h3>ModalBody Props</h3>
+          </a>
+          <div className="table-responsive">
+            <DocsTable>
+              <TableHead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                <tr>
+                  <td><code>children</code></td>
+                  <td>node</td>
+                  <td>required</td>
+                  <td>Content to display in the modal body</td>
+                </tr>
+                <tr>
+                  <td><code>sx</code></td>
+                  <td>object</td>
+                  <td>{ }</td>
+                  <td>Custom styles to apply to the modal body</td>
+                </tr>
+              </TableBody>
+            </DocsTable>
+          </div>
+
+          <a id="Modal Footer Props">
+            <h3>ModalFooter Props</h3>
+          </a>
+          <div className="table-responsive">
+            <DocsTable>
+              <TableHead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                <tr>
+                  <td><code>variant</code></td>
+                  <td>string</td>
+                  <td>&quot;transparent&quot;</td>
+                  <td>Footer style variant. Options: &quot;filled&quot;, &quot;transparent&quot;</td>
+                </tr>
+                <tr>
+                  <td><code>helpText</code></td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Help text to display with an info icon</td>
+                </tr>
+                <tr>
+                  <td><code>children</code></td>
+                  <td>node</td>
+                  <td>required</td>
+                  <td>Content to display in the footer, typically action buttons</td>
+                </tr>
+              </TableBody>
+            </DocsTable>
+          </div>
+
+          <a id="Modal Button Components">
+            <h3>Modal Button Components</h3>
+          </a>
+          <div className="table-responsive">
+            <DocsTable>
+              <TableHead>
+                <tr>
+                  <th>Component</th>
+                  <th>Description</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                <tr>
+                  <td><code>ModalButtonPrimary</code></td>
+                  <td>Primary action button, typically used for confirming actions. Styled with the brand's primary color.</td>
+                </tr>
+                <tr>
+                  <td><code>ModalButtonSecondary</code></td>
+                  <td>Secondary action button, typically used for cancellation. Styled as an outlined button with white text.</td>
+                </tr>
+                <tr>
+                  <td><code>ModalButtonTertiary</code></td>
+                  <td>Tertiary action button, used for less important actions. Styled as a text button with inverse text color.</td>
+                </tr>
+                <tr>
+                  <td><code>ModalButtonDanger</code></td>
+                  <td>Danger action button, used for destructive actions like delete. Styled with error color.</td>
+                </tr>
+                <tr>
+                  <td><code>PrimaryActionButtons</code></td>
+                  <td>A convenience component that renders a primary and secondary button side by side.</td>
+                </tr>
+              </TableBody>
+            </DocsTable>
+          </div>
 
           <a id="Content Guidelines">
             <h2>Content Guidelines</h2>
