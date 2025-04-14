@@ -45,7 +45,7 @@ table {
     th {
 			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       background: ${props => props.theme.grey404040ToGrey1E2117} ;
-      color: #ffffff;
+      color: ${props => props.theme.text};
       height: 4rem;
 			font-weight: 600;
 			font-size: 1rem;
