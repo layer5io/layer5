@@ -208,7 +208,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/projects">
+                  <Link className="title-link" to="/kanvas">
                     SOLUTIONS
                   </Link>
                 </h3>
@@ -216,39 +216,39 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/kanvas"
+                      to="/solutions/developer-defined-infrastructure"
                     >
-                      Kanvas
+                      Developer-defined Infrastructure
                       <span className="new-label">NEW</span>
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/meshery"
+                      to="/solutions/cloud-native-deployments-by-diagram"
                     >
-                      Meshery
+                      Cloud Native Deployments by Diagram
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="category-link"
-                      to="/cloud-native-management/gitops"
+                      to="/solutions/kubernetes-multi-cluster-operation"
                     >
-                      GitOps
+                      Kubernetes Multi-cluster Operation
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/nighthawk">
-                      Nighthawk
+                    <Link className="category-link" to="/cloud-native-management/kanvas/collaborate">
+                      Collaborative GitOps
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="category-link"
-                      to="/docker-extension-meshery"
+                      to="/solutions/gitops"
                     >
-                      Docker Extension
+                      GitOps with Cloud Native Insights
                     </Link>
                   </li>
                   {/* <li>
@@ -262,9 +262,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/projects/cloud-native-performance"
+                      to="/solutions/devrel-platform-for-kubernetes-and-cloud-native-content"
                     >
-                      Cloud Native Performance
+                      Kubernetes & Cloud Native DevRel
                     </Link>
                   </li>
                 </ul>
