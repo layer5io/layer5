@@ -51,7 +51,7 @@ const HowIntegrationWorksWrapper = styled.section`
 		.integration-section-caraousel {
 			.slick-slider {
 				.slick-list {
-					max-width: 50rem;
+					max-width: 80%;
 
 					.slick-slide {
 						img {
@@ -68,7 +68,7 @@ const HowIntegrationWorksWrapper = styled.section`
 				.slick-dots {
 					bottom: 0;
 					top: 0;
-					left: 52rem;
+					left: 90%;
 					width: 8rem;
 
 					li {
@@ -106,10 +106,10 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.slick-dots {
 				left: 40rem;
-				width: 6rem;
+				width: 6rem !important;
 
 				li a img {
-					height: 4rem;
+					height: 4rem !important;
 					object-fit: contain;
 				}
 			}
@@ -162,11 +162,11 @@ const HowIntegrationWorksWrapper = styled.section`
 					margin: 2rem 0;
 				}
 				.slick-dots {
-					left: 90%;
-					width: 4rem;
+					left: 80% !important;
+					width: 4rem !important;
 
 					li a img {
-						height: 2.5rem;
+						height: 2.5rem !important;
 						object-fit: contain;
 					}
 				}
@@ -189,7 +189,7 @@ const HowIntegrationWorksWrapper = styled.section`
 				}
 				.slick-dots {
 					left: 85%;
-					top: -1rem;
+					top: -1rem !important;
 				}
 			}
 		}
