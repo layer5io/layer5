@@ -37,95 +37,80 @@ const HowIntegrationWorksWrapper = styled.section`
 		.integration-section-row {
 			margin: 4rem 0;
 			align-items: center;
-			flex-direction: column;
 		}
 		h2, h4 {
 				color: black;
 			}
 		.integration-section-data {
-			width: 100%;
-			margin-bottom: 2rem;
 			h1, h3, p {
-				text-align: center; 
-				color: ${props => props.theme.primaryColor};
+				text-align: start; color: ${props => props.theme.primaryColor};
 				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 
 		.integration-section-caraousel {
-			width: 100%;
 			.slick-slider {
-				position: relative;
-				width: 100%;
-				
 				.slick-list {
-					width: 100%;
-					margin: 0 auto;
-					overflow: hidden;
+					max-width: 50rem;
 
 					.slick-slide {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						
 						img {
-							max-width: 100%;
-							height: auto;
 							max-height: 20rem;
-							object-fit: contain;
 							margin: auto;
 						}
 					}
 				}
 
-				.slick-arrow {
-					display: block !important;
-					z-index: 1;
-					width: 40px;
-					height: 40px;
-					&:before {
-						color: ${props => props.theme.secondaryColor};
-						font-size: 2rem;
-						opacity: 1;
-					}
-					&.slick-prev {
-						left: -50px;
-					}
-					&.slick-next {
-						right: -50px;
-					}
+				.slick-arrow{
+					display: none !important;
 				}
 
 				.slick-dots {
-					bottom: -2rem;
-					width: 100%;
-					display: flex !important;
-					justify-content: center;
-					
+					bottom: 0;
+					top: 0;
+					left: 52rem;
+					width: 8rem;
+
 					li {
-						display: inline-block;
-						width: 10px;
-						height: 10px;
-						margin: 0 5px;
-						
-						button {
-							width: 10px;
-							height: 10px;
-							padding: 0;
-							border-radius: 50%;
-							background: ${props => props.theme.primaryColor};
-							opacity: 0.5;
-							border: none;
-							
-							&:before {
-								display: none;
+						display: block;
+						width: 100%;
+						height: auto;
+						margin: 1rem auto;
+						opacity: 0.6;
+
+						a {
+							display: block;
+
+							img {
+								height: 5rem;
+								vertical-align: middle;
+								object-fit: contain;
 							}
 						}
-						
-						&.slick-active button {
-							opacity: 1;
-						}
 					}
+				}
+				.slick-dots 
+					li.slick-active {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1600px) {
+		.integration-section .integration-section-caraousel .slick-slider {
+			.slick-list {
+				max-width: 38rem;
+			}
+
+			.slick-dots {
+				left: 40rem;
+				width: 6rem;
+
+				li a img {
+					height: 4rem;
+					object-fit: contain;
 				}
 			}
 		}
@@ -146,16 +131,12 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
-					width: 100%;
+					max-width: 80%;
 					margin: 2rem auto;
 				}
-				.slick-arrow {
-					&.slick-prev {
-						left: -30px;
-					}
-					&.slick-next {
-						right: -30px;
-					}
+
+				.slick-dots {
+					left: 92%;
 				}
 			}
 		}
@@ -177,15 +158,16 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
-					width: 100%;
-					margin: 2rem auto;
+					max-width: 85%;
+					margin: 2rem 0;
 				}
-				.slick-arrow {
-					&.slick-prev {
-						left: -20px;
-					}
-					&.slick-next {
-						right: -20px;
+				.slick-dots {
+					left: 90%;
+					width: 4rem;
+
+					li a img {
+						height: 2.5rem;
+						object-fit: contain;
 					}
 				}
 			}
@@ -205,6 +187,10 @@ const HowIntegrationWorksWrapper = styled.section`
 						}
 					}
 				}
+				.slick-dots {
+					left: 85%;
+					top: -1rem;
+				}
 			}
 		}
 	}
@@ -214,16 +200,20 @@ const HowIntegrationWorksWrapper = styled.section`
 const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) => {
 
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
+    customPaging: (i) => {
+      return (
+        <a>
+          <img src={slides[i].publicURL} alt={`Slide ${i}`} />
+        </a>
+      );
+    },
+    infinite: false,
+    speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    adaptiveHeight: true
+    dots: true,
+    vertical: true,
+    verticalSwiping: true
   };
 
   return (
@@ -239,7 +229,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
             <Col $xs={12} $xl={4} className="integration-section-data">
               <h3>{howitworks != null ? howitworks : "Docker with Meshery" }</h3>
               <p>
-                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop's position as the cloud native developer's go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
+                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
             <Col $xs={12} $xl={8} className="integration-section-caraousel">
