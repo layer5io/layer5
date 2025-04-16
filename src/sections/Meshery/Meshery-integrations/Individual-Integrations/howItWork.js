@@ -37,30 +37,43 @@ const HowIntegrationWorksWrapper = styled.section`
 		.integration-section-row {
 			margin: 4rem 0;
 			align-items: center;
+			flex-direction: column;
 		}
 		h2, h4 {
 				color: black;
 			}
 		.integration-section-data {
+			width: 100%;
+			margin-bottom: 2rem;
 			h1, h3, p {
-				text-align: start; color: ${props => props.theme.primaryColor};
+				text-align: center; 
+				color: ${props => props.theme.primaryColor};
 				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 
 		.integration-section-caraousel {
+			width: 100%;
 			.slick-slider {
 				position: relative;
+				width: 100%;
 				
 				.slick-list {
-					max-width: 100%;
+					width: 100%;
 					margin: 0 auto;
+					overflow: hidden;
 
 					.slick-slide {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						
 						img {
+							max-width: 100%;
+							height: auto;
 							max-height: 20rem;
+							object-fit: contain;
 							margin: auto;
-							width: auto;
 						}
 					}
 				}
@@ -68,15 +81,18 @@ const HowIntegrationWorksWrapper = styled.section`
 				.slick-arrow {
 					display: block !important;
 					z-index: 1;
+					width: 40px;
+					height: 40px;
 					&:before {
 						color: ${props => props.theme.secondaryColor};
 						font-size: 2rem;
+						opacity: 1;
 					}
 					&.slick-prev {
-						left: 1rem;
+						left: -50px;
 					}
 					&.slick-next {
-						right: 1rem;
+						right: -50px;
 					}
 				}
 
@@ -130,8 +146,16 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
-					max-width: 90%;
+					width: 100%;
 					margin: 2rem auto;
+				}
+				.slick-arrow {
+					&.slick-prev {
+						left: -30px;
+					}
+					&.slick-next {
+						right: -30px;
+					}
 				}
 			}
 		}
@@ -153,8 +177,16 @@ const HowIntegrationWorksWrapper = styled.section`
 
 			.integration-section-caraousel .slick-slider {
 				.slick-list {
-					max-width: 85%;
+					width: 100%;
 					margin: 2rem auto;
+				}
+				.slick-arrow {
+					&.slick-prev {
+						left: -20px;
+					}
+					&.slick-next {
+						right: -20px;
+					}
 				}
 			}
 		}
@@ -207,7 +239,7 @@ const HowIntegrationWorks = ({ name, howitworks, howitworksdetails, slides }) =>
             <Col $xs={12} $xl={4} className="integration-section-data">
               <h3>{howitworks != null ? howitworks : "Docker with Meshery" }</h3>
               <p>
-                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
+                {howitworksdetails != null ? howitworksdetails : "The Docker Extension for Meshery extends Docker Desktop's position as the cloud native developer's go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."}
               </p>
             </Col>
             <Col $xs={12} $xl={8} className="integration-section-caraousel">
