@@ -83,6 +83,9 @@ const HowIntegrationWorksWrapper = styled.section`
 					z-index: 1;
 					width: 40px;
 					height: 40px;
+					background: transparent !important;
+					border: none !important;
+					box-shadow: none !important;
 					&:before {
 						color: ${props => props.theme.secondaryColor};
 						font-size: 2rem;
