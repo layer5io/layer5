@@ -111,7 +111,7 @@ const SistentModal = () => {
           <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
-                width="100%"
+                width="50%"
                 src={isDark ? ConfirmationDarkBg : ConfirmationBg}
                 alt="confirmation"
               />
