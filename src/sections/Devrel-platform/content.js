@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-import DashboardImg from "./images/cncf_hub_dashboard_mac.png";
+import ProfileImg from "./images/build-your-profile.png";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
 import JourneySection from "./JourneySection";
@@ -276,7 +276,7 @@ const DevrelContent = () => {
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
-                <img src={DashboardImg} />
+                <img src={ProfileImg} />
               </div>
             </Col>
             <Col $md={6} className="devrel-detail">
