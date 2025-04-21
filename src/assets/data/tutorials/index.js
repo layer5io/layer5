@@ -127,7 +127,21 @@ const data = [
                 name: "Zihan Kuang"
             }
         ]
-    },     
+    },    
+    {
+        date: "Apr. 17, 2025",
+        topic: "End-to-end Testing in Meshery CLI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1OhUhqIZVPdnjD7eO1ppeXVvTa-P2lIcdCXHncTOX_XE/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=mRQAvR9-P1o"
+        },
+        presenters: [
+            {
+                link: "/community/members/riya-garg",
+                name: "Riya Garg"
+            }
+        ]
+    }, 
 ];
 
 export default data;
