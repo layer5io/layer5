@@ -87,7 +87,7 @@ const Header = () => {
                   $primary
                   title="Browse Catalog"
                   $external={true}
-                  $url="https://meshery.io/catalog"
+                  $url="https://cloud.layer5.io/catalog"
                 />
               </div>
             </Col>
