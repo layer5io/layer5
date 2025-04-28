@@ -81,20 +81,7 @@ const GitHubOrgMembership = () => {
               the individual and other maintainers/appropriate members:
             </p>
             <div className="message-template">
-              <p>"Hi [name]</p>
-              <p>
-                A number of community members have noticed your recent efforts, which don't go unappreciated. 
-                You've been consistent with your engagement: both contributing yourself and providing helpful 
-                feedback to others here.
-              </p>
-              <p>
-                As a token of recognition and to enable you to be even more impactful, we would also like to 
-                invite you to be a part of the Meshery GitHub organization. With your GitHub user as a member 
-                of the org, you may not only proudly display the Meshery badge on your user profile, but your 
-                user will also be empowered with issue triage/edit permissions org-wide. As you consider this, 
-                please know that accepting this invitation bears the responsibility of being a faithful steward 
-                of the community and representative of Layer5's values."
-              </p>
+ <code>"Hi [name], a number of community members have noticed your recent efforts, which don't go unappreciated. You've been consistent with your engagement: both contributing yourself and providing helpful feedback to others here. As a token of recognition and to enable you to be even more impactful, we would also like to invite you to be a part of the Meshery GitHub organization. With your GitHub user as a member of the org, you may not only proudly display the Meshery badge on your user profile, but your user will also be empowered with issue triage/edit permissions org-wide. As you consider this, please know that accepting this invitation bears the responsibility of being a faithful steward of the community and representative of Layer5's values."</code>
             </div>
 
             <a id="SendingInvitation">
