@@ -343,7 +343,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   createRedirect({
   fromPath: "/cloud-native-management/meshmap/*",
-  toPath: "/cloud-native-management/kanvas/*",
+  toPath: "/cloud-native-management/kanvas/:splat",
   redirectInBrowser: true,
   isPermanent: true,
 });
