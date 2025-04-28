@@ -341,6 +341,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+  fromPath: "/cloud-native-management/meshmap/*",
+  toPath: "/cloud-native-management/kanvas/*",
+  redirectInBrowser: true,
+  isPermanent: true,
+});
   // Create Pages
   const { createPage } = actions;
 
