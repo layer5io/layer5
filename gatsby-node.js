@@ -446,6 +446,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             name
+            permalink
           }
           fields {
             slug
@@ -864,7 +865,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             break;
           case "members":
             if (node.frontmatter.published)
-              slug = `/community/members/${slugify(node.frontmatter.name)}`;
+              slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
             break;
           case "events":
             if (node.frontmatter.title)
@@ -1030,6 +1031,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        video: String,
        community_manager: String,
        docURL: String,
+       permalink: String,
      }
    `;
   createTypes(typeDefs);

@@ -72,7 +72,7 @@
     "feature": "Define new components, relationships, and policies as needed. Import/export your custom models as OCI images.",
     "subscription_tier": "Free",
     "comparison_tiers": {
-      "free": "x",
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -787,6 +787,22 @@
     "theme": "",
     "categoryOrder": "6",
     "category": "Workspaces",
+    "functionOrder": "603",
+    "function": "GitOps Snapshots",
+    "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
+    "subscription_tier": "TeamDesigner",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/tutorials/gitops-snapshots/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
     "functionOrder": "605",
     "function": "Manage Workspace Team and Environment Access",
     "feature": "Assign designs, views, users, and environments to shared workspaces.",
@@ -814,22 +830,6 @@
       "enterprise": "x"
     },
     "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "6",
-    "category": "Workspaces",
-    "functionOrder": "603",
-    "function": "GitOps Snapshots",
-    "feature": "Visual insights in your pull requests in GitHub. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.",
-    "subscription_tier": "TeamDesigner",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "",
-      "enterprise": "x"
-    },
-    "docs": "https://docs.layer5.io/cloud/tutorials/gitops-snapshots/"
   },
   {
     "theme": "",
