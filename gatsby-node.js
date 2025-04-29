@@ -275,6 +275,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/learn/service-mesh-labs",
+    toPath: "/learn/cloud-native-labs",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   //****
   // External Resource Redirects
@@ -732,7 +738,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = componentsData.map((component) => component.src.replace("/", ""));
+  const components = componentsData.map((component) =>
+    component.src.replace("/", "")
+  );
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
@@ -865,7 +873,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             break;
           case "members":
             if (node.frontmatter.published)
-              slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+              slug = `/community/members/${
+                node.frontmatter.permalink ?? slugify(node.frontmatter.name)
+              }`;
             break;
           case "events":
             if (node.frontmatter.title)
