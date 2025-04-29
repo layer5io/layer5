@@ -14,6 +14,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import NavigationWrap from "./navigation.style";
 import DefaultAvatar from "./utility/DefaultAvatar.js";
 import MesheryIcon from "./utility/MesheryIcon.js";
@@ -327,6 +328,32 @@ const Navigation = () => {
                             );
                           })}
                       </ul>
+                      {menu.actionItems?.map((actionItem, i) =>
+                        actionItem.actionName === "Join the discussion" ? (
+                          <a
+                            key={i}
+                            href={actionItem.actionLink}
+                            target="_blank"
+                            className="action-link"
+                            rel="noreferrer"
+                          >
+                            <span className="readmore-btn">
+                              {actionItem.actionName} <IoIosArrowRoundForward />
+                            </span>
+                          </a>
+                        ) : (
+                          <Link
+                            key={i}
+                            to={actionItem.actionLink}
+                            partiallyActive={true}
+                            className="action-link"
+                          >
+                            <span className="readmore-btn">
+                              {actionItem.actionName} <IoIosArrowRoundForward />
+                            </span>
+                          </Link>
+                        )
+                      )}
                     </li>
                   ))}
                 </ul>
