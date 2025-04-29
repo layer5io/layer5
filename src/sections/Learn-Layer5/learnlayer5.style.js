@@ -15,6 +15,7 @@ export const LearnLayer5GridWrapper = styled.div`
         margin: auto;
         justify-content: center;
         padding: 6rem 0;
+        flex-wrap: wrap;
     }
     .service-mesh-patterns{
          display: flex;
