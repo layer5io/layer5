@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "../../../components/image";
-import { useLocation } from "@reach/router";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
@@ -10,7 +9,17 @@ import AboutTheAuthorWrapper from "./author.style";
 
 const AboutTheAuthor = (props) => {
   const { authorInformation } = props;
-  useLocation();
+
+  const getShareUrls = () => {
+    const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+    return {
+      twitter: `https://twitter.com/share?url=${encodeURIComponent(currentUrl)}&via=mesheryio`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`
+    };
+  };
+
+  const shareUrls = getShareUrls();
 
   return (
     <AboutTheAuthorWrapper>
@@ -40,13 +49,13 @@ const AboutTheAuthor = (props) => {
             <div className="share-section">
               <h3>Share</h3>
               <div className="share-icons-container">
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="icon">
+                <a href={shareUrls.twitter} target="_blank" rel="noopener noreferrer" className="icon" aria-label="Share on Twitter">
                   <AiOutlineTwitter />
                 </a>
-                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="icon">
+                <a href={shareUrls.facebook} target="_blank" rel="noopener noreferrer" className="icon" aria-label="Share on Facebook">
                   <FaFacebookF />
                 </a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="icon">
+                <a href={shareUrls.linkedin} target="_blank" rel="noopener noreferrer" className="icon" aria-label="Share on LinkedIn">
                   <FaLinkedin />
                 </a>
               </div>
