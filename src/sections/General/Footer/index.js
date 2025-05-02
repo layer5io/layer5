@@ -43,8 +43,6 @@ const Footer = ({ location }) => {
             "/programs",
             "/projects/",
             "/resources/",
-            "/service-mesh-books/",
-            "/service-mesh-labs/",
             "/service-mesh-workshops/",
           ].some((check) => {
             returnPath = check;
@@ -140,25 +138,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-books"
-                    >
-                      Service Mesh Books
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="category-link"
                       to="/learn/service-mesh-workshops"
                     >
                       Cloud Native Workshops
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="category-link"
-                      to="/service-mesh-landscape"
-                    >
-                      Service Mesh Comparison
                     </Link>
                   </li>
                   {/* <li>
