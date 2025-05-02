@@ -281,13 +281,13 @@ const Data = {
           externalLink: true,
         },
         {
-          name: "Academy"
+          name: "Academy",
           path: "https://cloud.layer5.io/academy/overview",
           sepLine: true,
           externalLink: true,
         },
         {
-          name: "Videos"
+          name: "Videos",
           path: "https://docs.layer5.io/videos",
           sepLine: true,
           externalLink: true,
