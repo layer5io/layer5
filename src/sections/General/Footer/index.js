@@ -113,9 +113,19 @@ const Footer = ({ location }) => {
                     </a>
                   </li>
                   <li>
+                    <a className="category-link" href="https://cloud.layer5.io/academy/overview">
+                      Academy
+                    </a>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/blog">
                       Blog
                     </Link>
+                  </li>
+                  <li>
+                    <a className="category-link" href="https://docs.layer5.io/videos">
+                      Videos
+                    </a>
                   </li>
                   <li>
                     <Link className="category-link" to="/learn/learning-paths">
