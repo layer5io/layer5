@@ -156,6 +156,24 @@ const data = [
             }
         ]
     },
+    {
+        date: "Apr. 30, 2025",
+        topic: "Meshery CLI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1lRop7DAAMUBmuFdzZK25LdQrkLG08eVsXEaDrauP3S8/edit?usp=sharing",
+            recording: "https://youtu.be/aNR_1h1Pisg"
+        },
+        presenters: [
+            {
+                link: "/community/members/aadhitya-amarendiran",
+                name: "Aadhitya Amarendiran"
+            },
+            {
+                link: "/community/members/matthieu-evrin",
+                name: "Matthieu Evrin"
+            },
+        ],
+    },
 ];
 
 export default data;
