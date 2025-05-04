@@ -43,7 +43,7 @@ const Footer = ({ location }) => {
             "/programs",
             "/projects/",
             "/resources/",
-            "/service-mesh-workshops/",
+            "/cloud-native-workshops/",
           ].some((check) => {
             returnPath = check;
             return path.startsWith(check);
@@ -128,7 +128,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-workshops"
+                      to="/learn/cloud-native-workshops"
                     >
                       Cloud Native Workshops
                     </Link>
