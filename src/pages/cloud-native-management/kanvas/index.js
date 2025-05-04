@@ -14,5 +14,5 @@ const KanvasPage = ({ location }) => {
 };
 export default KanvasPage;
 export const Head = () => {
-  return <SEO title="Kanvas" description="Collaboratively design and manage your Kubernetes clusters, infrastructure components, and cloud native apps. Confidently configure your systems with Kanvas's visual topology and built-in design patterns." />;
+  return <SEO title="Kanvas" description="Collaboratively design and manage your Kubernetes workloads and Cloud services, infrastructure, and cloud native apps. Confidently configure your systems with Kanvas's visual topology and built-in design patterns." />;
 };
