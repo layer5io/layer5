@@ -52,7 +52,7 @@ const Kanvas = (props) => {
                 {
                   title: "Designer Mode",
                   description:
-                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
+                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Collaborate wtih teammates using this self-service engineering platform. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
                     <img
                       src={designerImage}
@@ -87,7 +87,7 @@ const Kanvas = (props) => {
               [
                 {
                   title: "Design your deployments the way you want",
-                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Say goodbye to YAML configurations.",
                   imgContent: (
                     <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )
@@ -124,7 +124,7 @@ const Kanvas = (props) => {
             features={
               [
                 {
-                  title: "All your Kubernetes clusters under a common management",
+                  title: "All your Kubernetes and Cloud infrastructure under a common management",
                   description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
                   imgContent: (
                     <Visualize1 id="visualize-image1" alt="visualize-image1" />
@@ -132,7 +132,7 @@ const Kanvas = (props) => {
                 },
                 {
                   title: "Continuous visibility across all of your clusters and workloads.",
-                  description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
+                  description: "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
                     <Visualize2 id="visualize-image2" alt="visualize-image2" />
                   )

@@ -1,0 +1,316 @@
+---
+docType: "Chapter"
+id: "interpreting-meshery-designs"
+chapterTitle: "Interpreting Meshery Designs"
+description: "This chapter delves into the process of understanding the visually expressive language of Meshery designs."
+videos: 0
+lectures: 4
+order: 5
+---
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import CreateAnnotationGif from "../../../../src/assets/images/learning-path/interpreting-designs/create-annotation.gif";
+import AnnotationExampleGif from "../../../../src/assets/images/learning-path/interpreting-designs/annotations-examples.png";
+import EdgeNetworkGif from "../../../../src/assets/images/learning-path/interpreting-designs/edge-network-relationship.gif"
+import CustomizeKubernetesGif from "../../../../src/assets/images/learning-path/interpreting-designs/customize-kubernetes.gif";
+import basicDesign from "../../../../src/assets/images/learning-path/interpreting-designs/basic-meshery-design.png";
+import edgePermissionGif from "../../../../src/assets/images/learning-path/interpreting-designs/edge-permission.gif";
+import Triangles from "../../../../src/assets/images/learning-path/interpreting-designs/triangles.svg";
+import Rectangles from "../../../../src/assets/images/learning-path/interpreting-designs/rectangles.svg";
+import Users from "../../../../src/assets/images/learning-path/interpreting-designs/users.svg";
+import Cylinders from "../../../../src/assets/images/learning-path/interpreting-designs/cylinders.svg";
+import DashedArrows from "../../../../src/assets/images/learning-path/interpreting-designs/dashed_arrow.svg";
+import AnnotationArrow from "../../../../src/assets/images/learning-path/interpreting-designs/annotation-arrow.svg";
+import NetworkEdgeRelationship from "../../../../src/assets/images/learning-path/interpreting-designs/network_edge_relationship.svg";
+import EdgePermissions from "../../../../src/assets/images/learning-path/interpreting-designs/edge_permission.svg";
+import Integrations from "../../../../src/assets/images/learning-path/interpreting-designs/integrations.svg";
+
+<ChapterStyle>
+
+<h2 class="chapter-sub-heading">Introduction</h2>
+
+Meshery [Designs](https://docs.meshery.io/concepts/logical/designs) provide a visual blueprint for your infrastructure, showcasing the various components and their relationships. These designs can encompass Kubernetes resources and their relationships, annotations, and the numerous cloud-native and application integrations that Meshery supports.
+
+In this guide, you will learn how to identify these components and gain a clear understanding of their significance within the design.
+
+<h2 class="chapter-sub-heading">Meshery Designs and Models</h2>
+
+Meshery Designs leverage the power and flexibility of Meshery Models as their foundation.
+
+Meshery [Models](https://docs.meshery.io/concepts/logical/models) are standardized packages that bundle **components** and characterize their **relationships**. Models provide a structured, reusable, and extensible way to represent infrastructure components and their relationships, going beyond just code. This enables a more flexible and adaptable approach to modeling complex systems.
+
+<h2 class="chapter-sub-heading">Understanding Meshery Components</h2>
+
+A Meshery component is a unit within a Meshery model, essentially representing and defining specific infrastructure elements or resources. They represent and configure specific resources, like network setups, service configurations, and deployment details.
+
+For example:
+
+- A `Kubernetes` model will have components that represent resources such as `Deployments`, `Services`, `ConfigMaps` etc
+- Similarly, an `AWS EC2` model includes components such as  `NAT Gateway`, `Route Table` and `Subnet`.
+
+These components encapsulate the resources and include their detailed configurations and interaction rules within the larger infrastructure. Not only do they serve as blueprints, but they can also be integrated and deployed to your cluster using Meshery, transforming your designs into reality!
+
+
+<h2 class="chapter-sub-heading">Meshery Design at a Glance</h2>
+
+<a href={basicDesign}>
+  <img src={basicDesign} width="100%" align="center" />
+</a>
+
+
+The design above shows a simple Meshery Design that consists of Kubernetes components. It specifically illustrates some kubernetes resources that are required to deploy an application to a Kubernetes cluster.
+
+In the Meshery Design, you can see various Kubernetes components that make up this infrastructure, including `services`, `deployments`, and `custom resources`. The relationships between these components are also clearly depicted through arrows.
+
+<h2 class="chapter-sub-heading">Meshery Component Representation</h2>
+
+Components are represented by various shapes and icons that effectively illustrate their roles in the infrastructure. These icons are designed to intuitively convey their functions, making them easy to identify. Users also have the flexibility to customize these icons to suit their preferences, enabling a more personalized design experience.
+
+Major Meshery components that can be found in a design include:
+
+1. **Kubernetes Components**: Resources like `Deployments`, `Services`, and `ConfigMaps`. 
+1. **Meshery Integration Components**: Configurable components that can be deployed to a cluster, representing integrations with various applications and cloud native infrastructure. 
+For example, resources such as `Subnet`, `VPC`, and `NAT Gateway` are specific to the AWS integration with Meshery.
+
+First let's take a look at the Kubernetes Components.
+
+<h2 class="chapter-sub-heading">Kubernetes Components</h2>
+
+Kubernetes components are represented by `blue icons`, distinguishing them from other component types. These icons and shapes visually signify the roles and functions of each Kubernetes component within your infrastructure.
+
+As you familiarize yourself with Meshery Designs, you'll quickly recognize the unique icons and shapes representing these Kubernetes components.
+
+
+<h3 class="chapter-sub-heading">Basic Concepts of Kubernetes Components in Meshery</h3>
+
+Some Kubernetes components can be categorized by their distinct shapes and icons, which help distinguish them based on their roles within the system. 
+
+This makes it intuitive to identify each component’s function, enhancing the user experience when designing and interpreting infrastructure blueprints.
+
+Let's explore a few of these categories.
+
+1. **Triangles**:
+
+    <img
+      src={Triangles}
+      align="center"
+      width="25%"
+    />
+
+    - **Category**: **Networking and Service Management**.
+
+    - **Description**: Triangular shapes are used for components that manage or interact with networking and service-related functions. This includes defining how services are exposed and connected within the cluster.
+
+    - **Examples**: API Service, Service.
+
+
+1. **Rectangles**:
+
+    <img
+      src={Rectangles}
+      align="center"
+      width="25%"
+    />
+
+    - **Category**: **Hierarchical and Parent Components**
+
+    - **Description**: In Meshery, hierarchical or parent components are represented as transparent squares, which signify their capacity to contain or organize other resources within the cluster.
+
+      As elements are added, these squares expand into rectangles, visually reinforcing their role in managing and structuring resources. The transparency of these shapes highlights their function as parent components, differentiating them from other types of Kubernetes resources.
+
+    - **Examples**: Namespace, Node, Pod, ReplicaSet, DaemonSet, Horizontal Pod Autoscaler.
+
+1. **User Icons**:
+
+    <img
+      src={Users}
+      align="center"
+      width="25%"
+    />
+
+    - **Category**: **Role-based access control (RBAC) components**
+
+    - **Description**: These components are related to user permissions and access management in Kubernetes.
+
+    - **Examples**: ClusterRole, Role, Service Account etc.
+
+1. **Cylinders**:
+
+    <img
+      src={Cylinders}
+      align="center"
+      width="25%"
+    />
+
+    - **Category**: **Storage and Stateful Components**
+
+    - **Description**:  In Meshery, cylindrical shapes are used to represent components associated with storage and state management in Kubernetes. These shapes symbolize persistent storage and resources that manage or interact with storage systems.
+
+    - **Examples**: CSI Node, CSI Driver, CSI Storage Capacity, Persistent Volume, Persistent Volume Claim (PVC), StatefulSet, Volume Attachment, Storage Class.
+
+**_Component Shape Guide:_** To learn more about the usage of shapes and why specific shapes were chosen for Kubernetes resources, see the [Component Shape Guide](https://docs.meshery.io/extensions/component-shape-guide).
+
+**_Kubernetes Components Categories:_** These categories also serve as a guide for users customizing Kubernetes components. By using these established shapes and icons as a reference, you can ensure that your customizations maintain semantic meaning and align with the existing representations, helping to preserve clarity and consistency in your designs.
+
+
+<h2 class="chapter-sub-heading">Arrows in Meshery Designs</h2>
+
+Arrows in Meshery designs visually represent relationships between components. Meshery uses two primary arrow styles: one for **edge relationships** and another for **annotations**. These styles come with default meanings assigned by Meshery, providing a clear visual language for understanding component interactions.
+
+Note that users have the flexibility to **customize** these arrow styles to suit their design preferences.
+
+**Edge Relationships**
+
+<img
+  src={DashedArrows}
+  align="center"
+  width="25%"
+/>
+
+These are used to indicate traffic flow and relationships between components. The dashed lines represent dynamic interactions and data movement, while the arrowheads show the direction of the flow or relationship.
+
+**Annotations**
+
+<img
+  src={AnnotationArrow}
+  align="center"
+  width="25%"
+/>
+
+These are used to denote annotations or static connections between components. They serve to illustrate fixed relationships or highlight specific details without implying a flow of data or interaction.
+
+<h2 class="chapter-sub-heading">Examples of Edge Relationships</h2>
+
+1. **Edge-Network Relationship**: Represented by a dashed arrow with **port/network protocol**.
+
+<img
+  src={NetworkEdgeRelationship}
+  align="center"
+  width="50%"
+/>
+
+- **Dashed arrow**: Indicates that the service is linked to the pod, exposing network access to it through a specified port.
+- **Port/Network Protocol**: Indicates the Port exposed by the service and its corresponding network protocol.
+
+**Creating Edge-Network Relationships Between Kubernetes Components**
+
+<a href={EdgeNetworkGif}>
+  <img src={EdgeNetworkGif} width="100%" align="center" />
+</a>
+
+
+1. **Edge-Permission Relationships**: Represented by a dashed arrow with an intermediary component, this type of edge indicates a binding relationship between two components. 
+
+The intermediary component (such as a RoleBinding) connects the two, defining how permissions are assigned. For example, a dashed arrow from a `Role` to a `ServiceAccount` with a `RoleBinding` in the middle shows the connection established by the RoleBinding, which links the specific role to the service account and grants the appropriate permissions.
+
+<img
+  src={EdgePermissions}
+  align="center"
+  width="50%"
+/>
+
+**Creating Edge-Permission Relationships Between Components**
+
+<a href={edgePermissionGif}>
+  <img src={edgePermissionGif} width="100%" align="center" />
+</a>
+
+
+To see more examples on Edge relationships, See [Relationships](https://docs.meshery.io/concepts/logical/relationships).
+
+
+<h2 class="chapter-sub-heading">Meshery Integration Components</h2>
+
+Meshery extends and offers support for numerous [integrations](https://docs.meshery.io/extensibility/integrations) with Cloud native infrastructure and applications.
+
+In Meshery, these integrated components are distinctly represented by their specific logos as icons and various shapes. These components can be found in `Components` in the dock.
+
+<img
+  src={Integrations}
+  align="center"
+  width="50%"
+  style={{ 
+    marginTop: '20px', 
+    marginBottom: '20px', 
+  }} 
+/>
+<h5 class="chapter-sub-heading">_Example of integration components in Meshery_</h5>
+
+Below is a Meshery Design with AWS Components.
+
+<MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
+  embedId="embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e"
+  embedScriptSrc="/embed-test/embedded-design-awscomplex.js"
+/>
+
+<h2 class="chapter-sub-heading">Methods to Identify Components on the Playground Design Canvas</h2>
+
+1. **Search on the Dock**:  Start by navigating to the Dock at the bottom of the design canvas. To locate Kubernetes components, click on the Kubernetes icon. You can then either search directly for the resource name you are interested in or scroll through to find it.
+
+1. **Configuration Tab**: Click on a component within the design, and a configuration tab will open. The name of the component will appear at the top of this tab.
+
+<h2 class="chapter-sub-heading">Annotations</h2>
+
+In a Meshery design, annotations can take various forms, such as labels, arrows, sections used to group components, or non-configurable components like plain shapes, AWS icons, GCP icons, and flowchart shapes.
+
+These annotations are used solely for design purposes within Meshery. While these annotations are not deployable or functional components, they serve to enhance the design by providing additional context and illustrating connections between components.
+
+Annotations can be created using Meshery's Diagramming tools found in the dock at the bottom of the design canvas.
+
+<h2 class="chapter-sub-heading">Annotation Examples</h2>
+
+1. **Descriptions/labels**: This gives details on components. Can be created using the `Textbox` in the dock.
+1. **Arrows**: These are used to show relationships between components.
+
+1. **Sections**: This can be used to visually group components into sections to have a better understanding of your infrastructure. This is created using `Sections` in the dock.
+
+1. **Shapes**: These include the plain shapes, AWS icons, GCP icons, and flowchart shapes. They can be founf in `Shapes` in the dock. These are non-configurable and are used solely for design purposes.
+
+1. **Images**:  Images can be added to the design to represent components, logos, or any visual aid that supports understanding the architecture.
+
+<a href={AnnotationExampleGif}>
+  <img src={AnnotationExampleGif} width="100%" align="center" />
+</a>
+
+
+The design below includes annotations such as sections, images, arrows, and various shapes.
+
+<MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
+  embedId="embedded-design-a83f0098-2f91-4275-b075-c8676e842804"
+  embedScriptSrc="/embed-test/embedded-design-annotations-example.js"
+/>
+
+
+
+<h2 class="chapter-sub-heading">Customizing Components and Annotation</h2>
+
+While default shapes, colors, and icons are provided for components and annotations, you have the flexibility to customize these components to better suit your design needs.
+
+**Customizing Kubernetes Components**
+
+<a href={CustomizeKubernetesGif}>
+  <img src={CustomizeKubernetesGif} width="100%" align="center" />
+</a>
+
+
+**Creating and Customizing Arrow Annotations**
+
+<a href={CreateAnnotationGif}>
+  <img src={CreateAnnotationGif} width="100%" align="center" />
+</a>
+
+
+**_Edge Style Guide:_** To learn more about the available arrow edge styles, See Edge Sytle Guide(https://docs.meshery.io/extensions/edges-shape-guide).
+
+Every other Component and Annotation that has been discussed can be customized using the method shown above.
+
+<h2 class="chapter-sub-heading">Conclusion</h2>
+
+In this guide, you’ve explored the diverse components within Meshery designs and learned to interpret their various meanings. You’ve gained insights into identifying Kubernetes components and other integrations supported by Meshery, understanding their unique roles and functions.
+
+We’ve also covered how to differentiate between functional components, their relationships, and annotations within your designs. By recognizing these elements and their visual representations, you can better understand and manage your Meshery designs. This knowledge will enable you to create more effective and insightful designs, enhancing your ability to visualize and manage complex systems.
+
+</ChapterStyle>
