@@ -11,7 +11,7 @@ const SetupPreReq = () => (
   <SetupPreReqWrapper>
     <div className="get-started-desc" id="pre-requisites">
       <h2>Prerequisites</h2>
-      <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery, collaborative Kubernetes manager</p>
+      <p>Learning Paths are designed to be accessible to a wide range of learners, from beginners to experienced professionals. However, certain paths may assume a basic understanding of specific technologies or concepts.</p>
     </div>
     <div className="container-card" id="Set up">
       <a href="/cloud-native-management/meshery"
@@ -19,32 +19,50 @@ const SetupPreReq = () => (
       >
         <div className="card">
           <div className="card-header">
-            <h2>Install Meshery</h2>
+            <h2>Prerequisites</h2>
             <BsTerminalFill />
           </div>
-          <p>Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: 'mesheryctl'.</p>
+          <ul>
+            <li>Familiarity with Linux command line</li>
+            <li>Optional: Prior experience with cloud platforms (AWS, Azure, GCP)</li>
+            <li>Familiarity with GitHub and Helm</li>
+            <li>Understanding of infrastructure as code (IaC) principles</li>
+            <li>Familiarity with containerization (e.g., Docker)</li>
+            <li>Knowledge of Kubernetes architecture and components</li>
+          </ul>
         </div>
       </a>
-      <a href="/cloud-native-management/meshery/getting-started" id="Run Meshery"
-        target="_blank"
+      <a href="https://playground.meshery.io/" id="Run Meshery"
+        target="_blank" rel="noreferrer"
       >
         <div className="card">
           <div className="card-header">
-            <h2>Run Meshery</h2>
+            <h2>Acess to Meshery</h2>
             <StaticImage src={meshery} alt="Meshery" className="setup-imgs" />
           </div>
-          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, measure their performance, verify conformance to service mesh standards.</p>
+          <b>Recommended:</b>
+          <p>
+            Use Meshery Playground, a
+            free-to-use, hosted Meshery deployment with live Kubernetes cluster. Click this
+            card to open the playground.
+          </p>
+          <b>Alternative:</b>
+          <p>
+            Install Meshery locally to
+            see how easy it is to start managing cloud native infrastructure and complete
+            the labs in this Learning Path.
+          </p>
         </div>
       </a>
-      <a href="/cloud-native-management/meshery/operating-cloud-native-infra" id="Manage Meshery"
-        target="_blank"
+      <a href="https://meshery.io/#getting-started" id="Manage Meshery"
+        target="_blank" rel="noreferrer"
       >
         <div className="card">
           <div className="card-header">
-            <h2>Manage Meshery</h2>
+            <h2>Or Run Meshery</h2>
             <StaticImage src={mesheryOperator} alt="Meshery Operator" className="setup-imgs" />
           </div>
-          <p>Wrangle your mesh with Meshery Operator and MeshSync.</p>
+          <p>Optionally, install Meshery locally to see how easy it is to start managing cloud native infrastructure and complete the labs in this Learning Path. Optionally, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment. See all supported platforms to deploy your own Meshery Server.</p>
         </div>
       </a>
     </div>
