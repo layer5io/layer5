@@ -72,17 +72,15 @@ const GitHubOrgMembership = () => {
             <a id="TemplateMessage">
               {" "}
               <h4>
-                <strong>Template Message for Invitations</strong>
+                <strong>Group Message for Invitations</strong>
               </h4>{" "}
             </a>
 
             <p>
-              When you identify a worthy contributor, send the following message in a group DM that includes
-              the individual and other maintainers/appropriate members:
+              When you identify a worthy contributor, send a message in a group DM that includes
+              the individual and other maintainers/appropriate members: look in Community Managers'
+              docs to see some examples.
             </p>
-            <div className="message-template" style={{ marginBottom: "2rem" }}>
-              <code>"Hi [name], a number of community members have noticed your recent efforts, which don't go unappreciated. You've been consistent with your engagement: both contributing yourself and providing helpful feedback to others here. As a token of recognition and to enable you to be even more impactful, we would also like to invite you to be a part of the Meshery GitHub organization. With your GitHub user as a member of the org, you may not only proudly display the Meshery badge on your user profile, but your user will also be empowered with issue triage/edit permissions org-wide. As you consider this, please know that accepting this invitation bears the responsibility of being a faithful steward of the community and representative of Layer5's values."</code>
-            </div>
 
             <a id="SendingInvitation">
               {" "}
