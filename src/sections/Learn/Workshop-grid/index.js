@@ -84,22 +84,26 @@ const WorkshopsPage = () => {
               behavior: "smooth"
             });
           }
-        }, 50);
+        }, 100);
       } else {
+        const targetId = id;
         setOpen(false);
         setContent(false);
+        setID("");
         setTimeout(() => {
-          setID(id);
+          setID(targetId);
           setContent(true);
           setOpen(true);
-          scrollToWorkshop(id);
-        }, 50);
+          setTimeout(() => {
+            scrollToWorkshop(targetId);
+          }, 100);
+        }, 100);
       }
     } else {
       setID(id);
       setContent(true);
       setOpen(true);
-      setTimeout(() => scrollToWorkshop(id), 50);
+      setTimeout(() => scrollToWorkshop(id), 100);
     }
   };
 
@@ -125,9 +129,9 @@ const WorkshopsPage = () => {
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                       <div className="social-icons">
                         {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
-                          <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
+                          <a href={frontmatter.slack} target="_blank" rel="noreferrer" className="links">
                             <img src={Slack} alt="Slack"/>
-                                                        Slack
+                            Slack
                           </a> : ""}
                       </div>
                       <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
@@ -150,7 +154,7 @@ const WorkshopsPage = () => {
             }} className="rqst-workshop">
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
               <Button $primary $url="mailto:support@layer5.io" $external={true}>
-                                Request A Workshop
+                Request A Workshop
               </Button>
             </Row>
           </div>
