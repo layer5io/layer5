@@ -126,6 +126,13 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    "id": 17,
+    "name": "RadioGroup",
+    "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
+    "url": "/projects/sistent/components/radiogroup",
+    "src": "/radiogroup"
+  },
 ];
 
 module.exports = { componentsData };
