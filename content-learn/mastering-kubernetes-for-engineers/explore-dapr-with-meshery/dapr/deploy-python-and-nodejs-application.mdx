@@ -1,0 +1,63 @@
+---
+docType: "Chapter"
+id: "deploy-python-and-nodejs-application.mdx"
+chapterTitle: "Deploy Python and NodeJS application"
+description: 
+videos: 0
+lectures: 4
+order: 5
+---
+
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import filterNodePythonImg from "../../../../src/assets/images/learning-path/dapr/filter-node-python.png";
+
+
+<ChapterStyle>
+
+<h3 class="chapter-sub-heading">Deploy Node.js Application</h3>
+
+1. Clone [this](https://github.com/dapr/quickstarts.git) repo and cd into **quickstarts/tutorials/hello-kubernetes/deploy** directory to get the Node.js and Python YAML files.
+
+1. Import the Node.js application into Meshery.
+
+<MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
+  embedId="embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672"
+  embedScriptSrc="/embed-test/embedded-design-node-application.js"
+/>
+
+The Dapr annotations in the manifest file will let the Dapr sidecar injector know that it is supposed to inject a sidecar container into this pod during creation.
+
+```yaml
+annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "nodeapp"
+        dapr.io/app-port: "3000"
+        dapr.io/enable-api-logging: "true"
+```
+1. Click the **Actions** button and deploy.
+
+<h3 class="chapter-sub-heading">Deploy Python Application</h3>
+
+Follow previous steps to import and Deploy the python application.
+
+<MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
+  embedId="embedded-design-03016ef6-7124-4169-a5c0-f403711d480d"
+  embedScriptSrc="/embed-test/embedded-design-python-application.js"
+/>
+Switch to visualizer and filter according to these specifications:
+
+- For **View Selector** select **Single Namespace**.
+- For **Kinds** select the resources you want to see including _Deployments, Pods, Services, Replicaset_.
+- For **Labels** select _app=node_ and _app=python_.
+
+You should see the daprd sidecar containers in both the python and node pods.
+
+<a href={filterNodePythonImg}>
+  <img src={filterNodePythonImg} width="100%" align="center" />
+</a>
+
+</ChapterStyle>

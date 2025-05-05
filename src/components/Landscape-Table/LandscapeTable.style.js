@@ -4,6 +4,17 @@ export const TableWrapper = styled.div`
 
 overflow-x: auto;
 
+th input {
+	color: ${props => props.theme.text};
+	background: ${props => props.theme.body};
+	border: 1px solid ${props => props.theme.text} !important;
+	padding: 5px;
+	&::placeholder {
+		color: ${props => props.theme.text};
+		opacity: 0.7;
+	}
+}
+
 .gatsby-image-wrapper {
 	img {
 		width: 1.5rem;
@@ -34,7 +45,7 @@ table {
     th {
 			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       background: ${props => props.theme.grey404040ToGrey1E2117} ;
-      color: #ffffff;
+      color: ${props => props.theme.text};
       height: 4rem;
 			font-weight: 600;
 			font-size: 1rem;
