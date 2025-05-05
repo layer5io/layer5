@@ -51,28 +51,28 @@
           "matchPath": "/blog/internship-programs/layer5-landscape-spectrums-revisited"
         },
         {
-          "path": "/blog/community/meet-the-maintainer-michael-gfeller.html",
-          "matchPath": "/blog/community/meet-the-maintainer-michael-gfeller"
-        },
-        {
           "path": "/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library.html",
           "matchPath": "/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library"
+        },
+        {
+          "path": "/blog/community/meet-the-maintainer-michael-gfeller.html",
+          "matchPath": "/blog/community/meet-the-maintainer-michael-gfeller"
         },
         {
           "path": "/blog/community/meshmate-of-the-year-2020-nikhil-ladha.html",
           "matchPath": "/blog/community/meshmate-of-the-year-2020-nikhil-ladha"
         },
         {
-          "path": "/blog/community/meet-the-maintainer-jash-patel.html",
-          "matchPath": "/blog/community/meet-the-maintainer-jash-patel"
-        },
-        {
           "path": "/blog/announcements/announcing-meshery-v050.html",
           "matchPath": "/blog/announcements/announcing-meshery-v050"
         },
         {
-          "path": "/blog/cloud-native/rethinking-protocol-buffers-with-buf.html",
-          "matchPath": "/blog/cloud-native/rethinking-protocol-buffers-with-buf"
+          "path": "/blog/community/meet-the-maintainer-jash-patel.html",
+          "matchPath": "/blog/community/meet-the-maintainer-jash-patel"
+        },
+        {
+          "path": "/blog/community/meet-the-summer-interns-of-2021.html",
+          "matchPath": "/blog/community/meet-the-summer-interns-of-2021"
         },
         {
           "path": "/blog/community/she-code-africa-contributhon-boot-camp-report.html",
@@ -83,28 +83,32 @@
           "matchPath": "/blog/programs/gsoc-experience-layer5-piyush-singariya"
         },
         {
+          "path": "/blog/cloud-native/rethinking-protocol-buffers-with-buf.html",
+          "matchPath": "/blog/cloud-native/rethinking-protocol-buffers-with-buf"
+        },
+        {
           "path": "/blog/community/meet-the-fall-interns-of-2021.html",
           "matchPath": "/blog/community/meet-the-fall-interns-of-2021"
-        },
-        {
-          "path": "/blog/community/meet-the-summer-interns-of-2021.html",
-          "matchPath": "/blog/community/meet-the-summer-interns-of-2021"
-        },
-        {
-          "path": "/blog/service-mesh/pipelining-service-mesh-specifications.html",
-          "matchPath": "/blog/service-mesh/pipelining-service-mesh-specifications"
         },
         {
           "path": "/blog/service-mesh/service-mesh-specifications-and-why-they-matter.html",
           "matchPath": "/blog/service-mesh/service-mesh-specifications-and-why-they-matter"
         },
         {
-          "path": "/blog/meshery/deploying-linkerd-with-meshery.html",
-          "matchPath": "/blog/meshery/deploying-linkerd-with-meshery"
+          "path": "/blog/service-mesh/pipelining-service-mesh-specifications.html",
+          "matchPath": "/blog/service-mesh/pipelining-service-mesh-specifications"
+        },
+        {
+          "path": "/blog/events/meshery-workshop-at-ccoss-2021.html",
+          "matchPath": "/blog/events/meshery-workshop-at-ccoss-2021"
         },
         {
           "path": "/blog/meshery/an-introduction-to-meshery-webinar-on-demand.html",
           "matchPath": "/blog/meshery/an-introduction-to-meshery-webinar-on-demand"
+        },
+        {
+          "path": "/blog/meshery/deploying-linkerd-with-meshery.html",
+          "matchPath": "/blog/meshery/deploying-linkerd-with-meshery"
         },
         {
           "path": "/blog/meshery/getting-started-with-mesheryctl.html",
@@ -123,10 +127,6 @@
           "matchPath": "/blog/programs/starting-smi-conformance-testing-with-meshery"
         },
         {
-          "path": "/blog/internship-programs/my-meshy-journey.html",
-          "matchPath": "/blog/internship-programs/my-meshy-journey"
-        },
-        {
           "path": "/blog/internship-programs/communitybridge-2020-teaching-service-meshes-to-be-compliant.html",
           "matchPath": "/blog/internship-programs/communitybridge-2020-teaching-service-meshes-to-be-compliant"
         },
@@ -139,12 +139,12 @@
           "matchPath": "/blog/service-mesh/service-mesh-istio-patterns-for-multitenancy"
         },
         {
-          "path": "/blog/announcements/announcing-meshery-v040.html",
-          "matchPath": "/blog/announcements/announcing-meshery-v040"
-        },
-        {
           "path": "/blog/community/how-i-schooled-my-seniors.html",
           "matchPath": "/blog/community/how-i-schooled-my-seniors"
+        },
+        {
+          "path": "/blog/internship-programs/my-meshy-journey.html",
+          "matchPath": "/blog/internship-programs/my-meshy-journey"
         },
         {
           "path": "/blog/community/my-journey-from-a-contributor-to-a-maintainer.html",
@@ -159,6 +159,10 @@
           "matchPath": "/blog/performance/performance-benchmarking-using-meshery-and-nighthawk"
         },
         {
+          "path": "/blog/announcements/announcing-meshery-v040.html",
+          "matchPath": "/blog/announcements/announcing-meshery-v040"
+        },
+        {
           "path": "/blog/announcements/announcing-a-new-line-of-meshmates.html",
           "matchPath": "/blog/announcements/announcing-a-new-line-of-meshmates"
         },
@@ -171,40 +175,40 @@
           "matchPath": "/blog/meshery/functional-testing-with-cypress-in-meshery-ui"
         },
         {
-          "path": "/blog/meshery/how-to-write-unit-and-integration-tests-for-mesheryctl.html",
-          "matchPath": "/blog/meshery/how-to-write-unit-and-integration-tests-for-mesheryctl"
-        },
-        {
           "path": "/blog/events/recap-kubecon-china-2021-tag-network-deep-dive.html",
           "matchPath": "/blog/events/recap-kubecon-china-2021-tag-network-deep-dive"
+        },
+        {
+          "path": "/blog/meshery/how-to-write-unit-and-integration-tests-for-mesheryctl.html",
+          "matchPath": "/blog/meshery/how-to-write-unit-and-integration-tests-for-mesheryctl"
         },
         {
           "path": "/blog/community/my-open-source-journey-layer5.html",
           "matchPath": "/blog/community/my-open-source-journey-layer5"
         },
         {
-          "path": "/blog/announcements/the-story-of-mesherys-1000-stars.html",
-          "matchPath": "/blog/announcements/the-story-of-mesherys-1000-stars"
-        },
-        {
           "path": "/blog/community/layer5-collaboration-with-openforce-2022.html",
           "matchPath": "/blog/community/layer5-collaboration-with-openforce-2022"
         },
         {
-          "path": "/blog/docker/extending-the-docker-compose-experience-to-service-mesh.html",
-          "matchPath": "/blog/docker/extending-the-docker-compose-experience-to-service-mesh"
-        },
-        {
-          "path": "/blog/community/layer5-participates-in-she-code-africas-contributhon-program-2022.html",
-          "matchPath": "/blog/community/layer5-participates-in-she-code-africas-contributhon-program-2022"
+          "path": "/blog/announcements/the-story-of-mesherys-1000-stars.html",
+          "matchPath": "/blog/announcements/the-story-of-mesherys-1000-stars"
         },
         {
           "path": "/blog/docker/extending-docker-with-meshery-spire-and-istio.html",
           "matchPath": "/blog/docker/extending-docker-with-meshery-spire-and-istio"
         },
         {
+          "path": "/blog/community/layer5-participates-in-she-code-africas-contributhon-program-2022.html",
+          "matchPath": "/blog/community/layer5-participates-in-she-code-africas-contributhon-program-2022"
+        },
+        {
           "path": "/blog/service-mesh/meshmark-cloud-native-value-measurement.html",
           "matchPath": "/blog/service-mesh/meshmark-cloud-native-value-measurement"
+        },
+        {
+          "path": "/blog/docker/extending-the-docker-compose-experience-to-service-mesh.html",
+          "matchPath": "/blog/docker/extending-the-docker-compose-experience-to-service-mesh"
         },
         {
           "path": "/blog/community/meshmate-of-the-year-2021-aditya-chatterjee.html",
@@ -215,20 +219,16 @@
           "matchPath": "/blog/events/perfbytes-podcast"
         },
         {
-          "path": "/blog/community/8-weeks-of-open-source-contribution-with-layer5.html",
-          "matchPath": "/blog/community/8-weeks-of-open-source-contribution-with-layer5"
-        },
-        {
           "path": "/blog/service-mesh/debug-envoy-proxy.html",
           "matchPath": "/blog/service-mesh/debug-envoy-proxy"
         },
         {
-          "path": "/blog/internship-programs/lfx-experience-at-layer5-pranav-singh.html",
-          "matchPath": "/blog/internship-programs/lfx-experience-at-layer5-pranav-singh"
+          "path": "/blog/community/8-weeks-of-open-source-contribution-with-layer5.html",
+          "matchPath": "/blog/community/8-weeks-of-open-source-contribution-with-layer5"
         },
         {
-          "path": "/blog/meshery/evolution-of-the-meshery-cli-command-reference.html",
-          "matchPath": "/blog/meshery/evolution-of-the-meshery-cli-command-reference"
+          "path": "/blog/internship-programs/lfx-experience-at-layer5-pranav-singh.html",
+          "matchPath": "/blog/internship-programs/lfx-experience-at-layer5-pranav-singh"
         },
         {
           "path": "/blog/meshery/validating-meshery-cli-functionality.html",
@@ -239,44 +239,40 @@
           "matchPath": "/blog/programs/my-journey-as-a-contributor-to-gsoc-intern-at-layer5"
         },
         {
+          "path": "/blog/meshery/evolution-of-the-meshery-cli-command-reference.html",
+          "matchPath": "/blog/meshery/evolution-of-the-meshery-cli-command-reference"
+        },
+        {
           "path": "/blog/meshery/how-to-deploy-meshery-on-aks.html",
           "matchPath": "/blog/meshery/how-to-deploy-meshery-on-aks"
-        },
-        {
-          "path": "/blog/kubernetes/structured-logging-in-kubernetes-with-klog.html",
-          "matchPath": "/blog/kubernetes/structured-logging-in-kubernetes-with-klog"
-        },
-        {
-          "path": "/blog/events/meshery-workshop-at-ccoss-2021.html",
-          "matchPath": "/blog/events/meshery-workshop-at-ccoss-2021"
-        },
-        {
-          "path": "/blog/events/layer5-at-kubecon-cloudnativecon-north-america.html",
-          "matchPath": "/blog/events/layer5-at-kubecon-cloudnativecon-north-america"
         },
         {
           "path": "/blog/meshery/multi-cluster-kubernetes-management-with-meshery.html",
           "matchPath": "/blog/meshery/multi-cluster-kubernetes-management-with-meshery"
         },
         {
-          "path": "/blog/kubernetes/kubernetes-126-highlights-features-and-deprecations.html",
-          "matchPath": "/blog/kubernetes/kubernetes-126-highlights-features-and-deprecations"
+          "path": "/blog/events/layer5-at-kubecon-cloudnativecon-north-america.html",
+          "matchPath": "/blog/events/layer5-at-kubecon-cloudnativecon-north-america"
         },
         {
-          "path": "/blog/community/meshery-surpasses-1000-contributors.html",
-          "matchPath": "/blog/community/meshery-surpasses-1000-contributors"
+          "path": "/blog/kubernetes/structured-logging-in-kubernetes-with-klog.html",
+          "matchPath": "/blog/kubernetes/structured-logging-in-kubernetes-with-klog"
+        },
+        {
+          "path": "/blog/kubernetes/kubernetes-126-highlights-features-and-deprecations.html",
+          "matchPath": "/blog/kubernetes/kubernetes-126-highlights-features-and-deprecations"
         },
         {
           "path": "/blog/kubernetes/what-are-kubernetes-validating-admission-controllers.html",
           "matchPath": "/blog/kubernetes/what-are-kubernetes-validating-admission-controllers"
         },
         {
-          "path": "/blog/community/building-amazing-open-source-tools-one-contributor-at-a-time.html",
-          "matchPath": "/blog/community/building-amazing-open-source-tools-one-contributor-at-a-time"
+          "path": "/blog/community/meshery-surpasses-1000-contributors.html",
+          "matchPath": "/blog/community/meshery-surpasses-1000-contributors"
         },
         {
-          "path": "/blog/kubernetes/kubernetes-nodeports-static-and-dynamic-assignments.html",
-          "matchPath": "/blog/kubernetes/kubernetes-nodeports-static-and-dynamic-assignments"
+          "path": "/blog/community/building-amazing-open-source-tools-one-contributor-at-a-time.html",
+          "matchPath": "/blog/community/building-amazing-open-source-tools-one-contributor-at-a-time"
         },
         {
           "path": "/blog/meshery/changing-meshery-release-channels.html",
@@ -287,60 +283,64 @@
           "matchPath": "/blog/community/meet-the-meshmate-yash-sharma"
         },
         {
-          "path": "/blog/community/internship-experience-with-layer5-sudhanshu-dasgupta.html",
-          "matchPath": "/blog/community/internship-experience-with-layer5-sudhanshu-dasgupta"
-        },
-        {
-          "path": "/blog/announcements/layer5-s-open-source.html",
-          "matchPath": "/blog/announcements/layer5-s-open-source"
-        },
-        {
-          "path": "/blog/community/layer5-recognition-program.html",
-          "matchPath": "/blog/community/layer5-recognition-program"
+          "path": "/blog/kubernetes/kubernetes-nodeports-static-and-dynamic-assignments.html",
+          "matchPath": "/blog/kubernetes/kubernetes-nodeports-static-and-dynamic-assignments"
         },
         {
           "path": "/blog/meshery/how-to-bind-kubernetes-service-account-with-clusterrole.html",
           "matchPath": "/blog/meshery/how-to-bind-kubernetes-service-account-with-clusterrole"
         },
         {
-          "path": "/blog/open-source/navigating-hacktoberfest.html",
-          "matchPath": "/blog/open-source/navigating-hacktoberfest"
+          "path": "/blog/announcements/layer5-s-open-source.html",
+          "matchPath": "/blog/announcements/layer5-s-open-source"
+        },
+        {
+          "path": "/blog/community/internship-experience-with-layer5-sudhanshu-dasgupta.html",
+          "matchPath": "/blog/community/internship-experience-with-layer5-sudhanshu-dasgupta"
         },
         {
           "path": "/blog/community/on-the-importance-of-github-stars.html",
           "matchPath": "/blog/community/on-the-importance-of-github-stars"
         },
         {
+          "path": "/blog/open-source/navigating-hacktoberfest.html",
+          "matchPath": "/blog/open-source/navigating-hacktoberfest"
+        },
+        {
           "path": "/blog/kubernetes/kubernetes-129-highlights-features-and-deprecations.html",
           "matchPath": "/blog/kubernetes/kubernetes-129-highlights-features-and-deprecations"
         },
         {
-          "path": "/blog/kubernetes/load-generation-and-load-balancing.html",
-          "matchPath": "/blog/kubernetes/load-generation-and-load-balancing"
+          "path": "/blog/community/layer5-recognition-program.html",
+          "matchPath": "/blog/community/layer5-recognition-program"
         },
         {
           "path": "/blog/partners/unlocking-the-power-of-webassembly-in-service-mesh-management.html",
           "matchPath": "/blog/partners/unlocking-the-power-of-webassembly-in-service-mesh-management"
         },
         {
-          "path": "/blog/community/contributing-to-layer5-a-designers-journey.html",
-          "matchPath": "/blog/community/contributing-to-layer5-a-designers-journey"
+          "path": "/blog/kubernetes/load-generation-and-load-balancing.html",
+          "matchPath": "/blog/kubernetes/load-generation-and-load-balancing"
         },
         {
           "path": "/blog/platform-engineering/what-is-platform-engineering.html",
           "matchPath": "/blog/platform-engineering/what-is-platform-engineering"
         },
         {
+          "path": "/blog/community/contributing-to-layer5-a-designers-journey.html",
+          "matchPath": "/blog/community/contributing-to-layer5-a-designers-journey"
+        },
+        {
           "path": "/blog/meshery/making-container-registries-a-home-for-meshery-designs.html",
           "matchPath": "/blog/meshery/making-container-registries-a-home-for-meshery-designs"
         },
         {
-          "path": "/blog/open-source/demystifying-open-source.html",
-          "matchPath": "/blog/open-source/demystifying-open-source"
-        },
-        {
           "path": "/blog/meshery/layer5-at-kubecon-eu-2024.html",
           "matchPath": "/blog/meshery/layer5-at-kubecon-eu-2024"
+        },
+        {
+          "path": "/blog/open-source/demystifying-open-source.html",
+          "matchPath": "/blog/open-source/demystifying-open-source"
         },
         {
           "path": "/blog/docker/simplify-multi-container-application-management-with-the-docker-meshery-extension.html",
@@ -375,24 +375,24 @@
           "matchPath": "/blog/open-source/meet-the-maintainer-hussaina-begum"
         },
         {
-          "path": "/blog/docker/docker-build-check-failures.html",
-          "matchPath": "/blog/docker/docker-build-check-failures"
-        },
-        {
           "path": "/blog/open-source/meet-the-maintainer-aisuko-li.html",
           "matchPath": "/blog/open-source/meet-the-maintainer-aisuko-li"
+        },
+        {
+          "path": "/blog/docker/docker-build-check-failures.html",
+          "matchPath": "/blog/docker/docker-build-check-failures"
         },
         {
           "path": "/blog/open-source/meet-the-maintainer-aadhitya-amarendiran.html",
           "matchPath": "/blog/open-source/meet-the-maintainer-aadhitya-amarendiran"
         },
         {
-          "path": "/blog/kanvas/what-is-the-kanvas-catalog.html",
-          "matchPath": "/blog/kanvas/what-is-the-kanvas-catalog"
-        },
-        {
           "path": "/blog/open-source/meet-the-maintainer-yash-sharma.html",
           "matchPath": "/blog/open-source/meet-the-maintainer-yash-sharma"
+        },
+        {
+          "path": "/blog/kanvas/what-is-the-kanvas-catalog.html",
+          "matchPath": "/blog/kanvas/what-is-the-kanvas-catalog"
         },
         {
           "path": "/blog/events/meshery-at-kubecon-cloudnativecon-na-2024.html",
@@ -659,12 +659,12 @@
           "matchPath": "/resources/faq/service-mesh-faqs"
         },
         {
-          "path": "/resources/meshery/an-introduction-to-meshery-webinar-on-demand.html",
-          "matchPath": "/resources/meshery/an-introduction-to-meshery-webinar-on-demand"
-        },
-        {
           "path": "/resources/interview/techstrong-tv-interview.html",
           "matchPath": "/resources/interview/techstrong-tv-interview"
+        },
+        {
+          "path": "/resources/meshery/an-introduction-to-meshery-webinar-on-demand.html",
+          "matchPath": "/resources/meshery/an-introduction-to-meshery-webinar-on-demand"
         },
         {
           "path": "/resources/service-mesh/beginners-guide-to-contributing-to-meshery-and-mesheryctl.html",
@@ -703,6 +703,10 @@
           "matchPath": "/resources/service-mesh-performance/analyzing-service-mesh-performance"
         },
         {
+          "path": "/resources/case-study/hpes-adoption-of-meshery-and-kanvas.html",
+          "matchPath": "/resources/case-study/hpes-adoption-of-meshery-and-kanvas"
+        },
+        {
           "path": "/resources/service-mesh/considerations-of-adopting-a-service-mesh.html",
           "matchPath": "/resources/service-mesh/considerations-of-adopting-a-service-mesh"
         },
@@ -727,6 +731,10 @@
           "matchPath": "/resources/kubernetes/managing-containers"
         },
         {
+          "path": "/resources/cloud-native/what-is-gitops.html",
+          "matchPath": "/resources/cloud-native/what-is-gitops"
+        },
+        {
           "path": "/resources/service-mesh/deploying-istio.html",
           "matchPath": "/resources/service-mesh/deploying-istio"
         },
@@ -735,24 +743,12 @@
           "matchPath": "/resources/devops/devops-adoption-identifying-the-right-metrics"
         },
         {
-          "path": "/resources/cloud-native/what-is-gitops.html",
-          "matchPath": "/resources/cloud-native/what-is-gitops"
-        },
-        {
           "path": "/resources/service-mesh/istio-authorization-policy.html",
           "matchPath": "/resources/service-mesh/istio-authorization-policy"
         },
         {
-          "path": "/resources/service-mesh/istio-v15-at-a-glance.html",
-          "matchPath": "/resources/service-mesh/istio-v15-at-a-glance"
-        },
-        {
           "path": "/resources/service-mesh/istio-ingress-gateway-in-kubernetes.html",
           "matchPath": "/resources/service-mesh/istio-ingress-gateway-in-kubernetes"
-        },
-        {
-          "path": "/resources/service-mesh/istio-pilot.html",
-          "matchPath": "/resources/service-mesh/istio-pilot"
         },
         {
           "path": "/resources/service-mesh/service-mesh-istio.html",
@@ -763,28 +759,36 @@
           "matchPath": "/resources/service-mesh/service-proxy"
         },
         {
+          "path": "/resources/service-mesh/istio-pilot.html",
+          "matchPath": "/resources/service-mesh/istio-pilot"
+        },
+        {
           "path": "/resources/service-mesh/istio-virtual-service.html",
           "matchPath": "/resources/service-mesh/istio-virtual-service"
         },
         {
-          "path": "/resources/network-planes/network-planes.html",
-          "matchPath": "/resources/network-planes/network-planes"
+          "path": "/resources/service-mesh/istio-v15-at-a-glance.html",
+          "matchPath": "/resources/service-mesh/istio-v15-at-a-glance"
         },
         {
           "path": "/resources/service-mesh/7-key-considerations-for-microservices-based-application-delivery.html",
           "matchPath": "/resources/service-mesh/7-key-considerations-for-microservices-based-application-delivery"
         },
         {
-          "path": "/resources/service-mesh/service-mesh-architecture-and-components.html",
-          "matchPath": "/resources/service-mesh/service-mesh-architecture-and-components"
+          "path": "/resources/network-planes/network-planes.html",
+          "matchPath": "/resources/network-planes/network-planes"
+        },
+        {
+          "path": "/resources/service-mesh/swappable-sidecars.html",
+          "matchPath": "/resources/service-mesh/swappable-sidecars"
         },
         {
           "path": "/resources/service-mesh/service-mesh-fundamentals.html",
           "matchPath": "/resources/service-mesh/service-mesh-fundamentals"
         },
         {
-          "path": "/resources/service-mesh/swappable-sidecars.html",
-          "matchPath": "/resources/service-mesh/swappable-sidecars"
+          "path": "/resources/service-mesh/service-mesh-architecture-and-components.html",
+          "matchPath": "/resources/service-mesh/service-mesh-architecture-and-components"
         },
         {
           "path": "/resources/cloud-native/terraform-with-meshery.html",
@@ -795,20 +799,16 @@
           "matchPath": "/resources/service-mesh/value-of-a-service-mesh"
         },
         {
+          "path": "/resources/docker/configuring-highly-available-docker-swarm.html",
+          "matchPath": "/resources/docker/configuring-highly-available-docker-swarm"
+        },
+        {
           "path": "/resources/webassembly-filters/lua-vs-webassembly.html",
           "matchPath": "/resources/webassembly-filters/lua-vs-webassembly"
         },
         {
           "path": "/resources/webassembly-filters/envoy-and-webassembly.html",
           "matchPath": "/resources/webassembly-filters/envoy-and-webassembly"
-        },
-        {
-          "path": "/resources/docker/configuring-highly-available-docker-swarm.html",
-          "matchPath": "/resources/docker/configuring-highly-available-docker-swarm"
-        },
-        {
-          "path": "/resources/case-study/hpes-adoption-of-meshery-and-kanvas.html",
-          "matchPath": "/resources/case-study/hpes-adoption-of-meshery-and-kanvas"
         },
         {
           "path": "/resources/kubernetes/kubernetes-architecture-101.html",
@@ -819,12 +819,12 @@
           "matchPath": "/resources/kubernetes/getting-started-with-kubernetes"
         },
         {
-          "path": "/resources/kubernetes/management-of-kubernetes.html",
-          "matchPath": "/resources/kubernetes/management-of-kubernetes"
-        },
-        {
           "path": "/resources/kubernetes/what-is-multi-cluster-kubernetes.html",
           "matchPath": "/resources/kubernetes/what-is-multi-cluster-kubernetes"
+        },
+        {
+          "path": "/resources/kubernetes/management-of-kubernetes.html",
+          "matchPath": "/resources/kubernetes/management-of-kubernetes"
         },
         {
           "path": "/company/news/forrester-layer5-and-meshery-help-developers-focus-on-the-business.html",
@@ -843,10 +843,6 @@
           "matchPath": "/company/news/cncf-sig-network-set-to-push-cloud-native-networking-forward"
         },
         {
-          "path": "/company/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush.html",
-          "matchPath": "/company/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush"
-        },
-        {
           "path": "/company/news/meshery-in-top-3-service-mesh-developments-in-2020.html",
           "matchPath": "/company/news/meshery-in-top-3-service-mesh-developments-in-2020"
         },
@@ -855,12 +851,16 @@
           "matchPath": "/company/news/learn-cloud-native-managing-service-meshes-with-meshery"
         },
         {
-          "path": "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership.html",
-          "matchPath": "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership"
+          "path": "/company/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush.html",
+          "matchPath": "/company/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush"
         },
         {
           "path": "/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today.html",
           "matchPath": "/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today"
+        },
+        {
+          "path": "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership.html",
+          "matchPath": "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership"
         },
         {
           "path": "/company/news/meshery-accepted-into-the-cncf-landscape.html",
@@ -871,32 +871,12 @@
           "matchPath": "/company/news/meshery-provides-the-service-mesh-management-plane-and-kubernetes-evolves-into-an-enterprise-platform"
         },
         {
-          "path": "/company/news/kubeconcloudnativecon.html",
-          "matchPath": "/company/news/kubeconcloudnativecon"
-        },
-        {
           "path": "/company/news/service-mesh-offers-promising-solution-for-cloud-native-networking.html",
           "matchPath": "/company/news/service-mesh-offers-promising-solution-for-cloud-native-networking"
         },
         {
-          "path": "/company/news/google-petitions-to-donate-istio-service-mesh-to-cncf.html",
-          "matchPath": "/company/news/google-petitions-to-donate-istio-service-mesh-to-cncf"
-        },
-        {
-          "path": "/company/news/layer5-joins-docker-extension-program-bringing-kubernetes-and-service-mesh-management-to-docker-with-meshery.html",
-          "matchPath": "/company/news/layer5-joins-docker-extension-program-bringing-kubernetes-and-service-mesh-management-to-docker-with-meshery"
-        },
-        {
-          "path": "/company/news/meshmark-the-cloud-native-value-measurement.html",
-          "matchPath": "/company/news/meshmark-the-cloud-native-value-measurement"
-        },
-        {
-          "path": "/company/news/intel-layer5-announce-meshmark-to-quantify-cloud-native-performance.html",
-          "matchPath": "/company/news/intel-layer5-announce-meshmark-to-quantify-cloud-native-performance"
-        },
-        {
-          "path": "/company/news/the-ultimate-list-of-open-source-cloud-native-tools.html",
-          "matchPath": "/company/news/the-ultimate-list-of-open-source-cloud-native-tools"
+          "path": "/company/news/kubeconcloudnativecon.html",
+          "matchPath": "/company/news/kubeconcloudnativecon"
         },
         {
           "path": "/company/news/5-lesser-known-but-extremely-powerful-kubernetes-service-mesh-tools.html",
@@ -919,12 +899,36 @@
           "matchPath": "/company/news/cncf-adopts-meshery-to-advance-service-mesh-management"
         },
         {
+          "path": "/company/news/analyzing-service-mesh-performance.html",
+          "matchPath": "/company/news/analyzing-service-mesh-performance"
+        },
+        {
           "path": "/company/news/6-cncf-service-mesh-tools.html",
           "matchPath": "/company/news/6-cncf-service-mesh-tools"
         },
         {
-          "path": "/company/news/analyzing-service-mesh-performance.html",
-          "matchPath": "/company/news/analyzing-service-mesh-performance"
+          "path": "/company/news/the-top-12-cncf-sandbox-projects-of-2021.html",
+          "matchPath": "/company/news/the-top-12-cncf-sandbox-projects-of-2021"
+        },
+        {
+          "path": "/company/news/google-petitions-to-donate-istio-service-mesh-to-cncf.html",
+          "matchPath": "/company/news/google-petitions-to-donate-istio-service-mesh-to-cncf"
+        },
+        {
+          "path": "/company/news/layer5-joins-docker-extension-program-bringing-kubernetes-and-service-mesh-management-to-docker-with-meshery.html",
+          "matchPath": "/company/news/layer5-joins-docker-extension-program-bringing-kubernetes-and-service-mesh-management-to-docker-with-meshery"
+        },
+        {
+          "path": "/company/news/intel-layer5-announce-meshmark-to-quantify-cloud-native-performance.html",
+          "matchPath": "/company/news/intel-layer5-announce-meshmark-to-quantify-cloud-native-performance"
+        },
+        {
+          "path": "/company/news/meshmark-the-cloud-native-value-measurement.html",
+          "matchPath": "/company/news/meshmark-the-cloud-native-value-measurement"
+        },
+        {
+          "path": "/company/news/the-ultimate-list-of-open-source-cloud-native-tools.html",
+          "matchPath": "/company/news/the-ultimate-list-of-open-source-cloud-native-tools"
         },
         {
           "path": "/company/news/the-most-innovative-cloud-management-companies.html",
@@ -935,116 +939,28 @@
           "matchPath": "/company/news/kubernetes-128-improves-open-source-cloud-native-compute-and-networking"
         },
         {
-          "path": "/company/news/how-kubernetes-129-improves-open-source-cloud-native-production-readiness.html",
-          "matchPath": "/company/news/how-kubernetes-129-improves-open-source-cloud-native-production-readiness"
-        },
-        {
           "path": "/company/news/layer5-launches-kanvas-a-collaborative-platform-for-cloud-native-infrastructure.html",
           "matchPath": "/company/news/layer5-launches-kanvas-a-collaborative-platform-for-cloud-native-infrastructure"
         },
         {
-          "path": "/company/news/the-top-12-cncf-sandbox-projects-of-2021.html",
-          "matchPath": "/company/news/the-top-12-cncf-sandbox-projects-of-2021"
+          "path": "/company/news/how-kubernetes-129-improves-open-source-cloud-native-production-readiness.html",
+          "matchPath": "/company/news/how-kubernetes-129-improves-open-source-cloud-native-production-readiness"
         },
         {
           "path": "/learn/service-mesh-books/istio-up-and-running.html",
           "matchPath": "/learn/service-mesh-books/istio-up-and-running"
         },
         {
-          "path": "/learn/service-mesh-books/service-mesh-patterns.html",
-          "matchPath": "/learn/service-mesh-books/service-mesh-patterns"
-        },
-        {
           "path": "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures.html",
           "matchPath": "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures"
         },
         {
+          "path": "/learn/service-mesh-books/service-mesh-patterns.html",
+          "matchPath": "/learn/service-mesh-books/service-mesh-patterns"
+        },
+        {
           "path": "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition.html",
           "matchPath": "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
-        },
-        {
-          "path": "/community/events/2020-all-day-devops.html",
-          "matchPath": "/community/events/2020-all-day-devops"
-        },
-        {
-          "path": "/community/events/advanced-istio.html",
-          "matchPath": "/community/events/advanced-istio"
-        },
-        {
-          "path": "/community/events/virtual-cloud-native-ambassador-day.html",
-          "matchPath": "/community/events/virtual-cloud-native-ambassador-day"
-        },
-        {
-          "path": "/community/events/ccoss-2020.html",
-          "matchPath": "/community/events/ccoss-2020"
-        },
-        {
-          "path": "/community/events/dockercon-live.html",
-          "matchPath": "/community/events/dockercon-live"
-        },
-        {
-          "path": "/community/events/establishing-an-open-source-program-office.html",
-          "matchPath": "/community/events/establishing-an-open-source-program-office"
-        },
-        {
-          "path": "/community/events/hands-on-workshop-introduction-to-istio.html",
-          "matchPath": "/community/events/hands-on-workshop-introduction-to-istio"
-        },
-        {
-          "path": "/community/events/innotech-dallas.html",
-          "matchPath": "/community/events/innotech-dallas"
-        },
-        {
-          "path": "/community/events/introduction-to-istio.html",
-          "matchPath": "/community/events/introduction-to-istio"
-        },
-        {
-          "path": "/community/events/istiocon-2021.html",
-          "matchPath": "/community/events/istiocon-2021"
-        },
-        {
-          "path": "/community/events/introduction-to-network-service-mesh.html",
-          "matchPath": "/community/events/introduction-to-network-service-mesh"
-        },
-        {
-          "path": "/community/events/kubecon-na-2020.html",
-          "matchPath": "/community/events/kubecon-na-2020"
-        },
-        {
-          "path": "/community/events/kubecon-eu-2020.html",
-          "matchPath": "/community/events/kubecon-eu-2020"
-        },
-        {
-          "path": "/community/events/meshery-the-multi-mesh-manager-kudo-kubernetes-operators-the-easy-way.html",
-          "matchPath": "/community/events/meshery-the-multi-mesh-manager-kudo-kubernetes-operators-the-easy-way"
-        },
-        {
-          "path": "/community/events/oreilly-infrastructure-ops.html",
-          "matchPath": "/community/events/oreilly-infrastructure-ops"
-        },
-        {
-          "path": "/community/events/meshery-the-cloud-native-management-plane-kudo-kubernetes-operators-the-ea.html",
-          "matchPath": "/community/events/meshery-the-cloud-native-management-plane-kudo-kubernetes-operators-the-ea"
-        },
-        {
-          "path": "/community/events/open-infrastructure-summit-2020.html",
-          "matchPath": "/community/events/open-infrastructure-summit-2020"
-        },
-        {
-          "path": "/community/events/oreilly-oscon-2020.html",
-          "matchPath": "/community/events/oreilly-oscon-2020"
-        },
-        {
-          "path": "/community/events/service-meshes-but-at-what-cost.html",
-          "matchPath": "/community/events/service-meshes-but-at-what-cost"
-        },
-        {
-          "path": "/community/events/securing-the-mesh.html",
-          "matchPath": "/community/events/securing-the-mesh"
-        },
-        {
-          "path": "/community/events/servicemeshcon-na-2020.html",
-          "matchPath": "/community/events/servicemeshcon-na-2020"
         },
         {
           "path": "/community/events/ccoss-meshery-workshop-2021.html",
@@ -1091,20 +1007,96 @@
           "matchPath": "/community/events/kubecon-cloudnative-north-america-2022"
         },
         {
+          "path": "/community/events/open-source-summit-north-america-2022.html",
+          "matchPath": "/community/events/open-source-summit-north-america-2022"
+        },
+        {
+          "path": "/community/events/2020-all-day-devops.html",
+          "matchPath": "/community/events/2020-all-day-devops"
+        },
+        {
           "path": "/community/events/servicemeshcon-eu-2022.html",
           "matchPath": "/community/events/servicemeshcon-eu-2022"
         },
         {
-          "path": "/community/events/istiocon-virtual-2023.html",
-          "matchPath": "/community/events/istiocon-virtual-2023"
+          "path": "/community/events/advanced-istio.html",
+          "matchPath": "/community/events/advanced-istio"
         },
         {
-          "path": "/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects.html",
-          "matchPath": "/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects"
+          "path": "/community/events/virtual-cloud-native-ambassador-day.html",
+          "matchPath": "/community/events/virtual-cloud-native-ambassador-day"
         },
         {
-          "path": "/community/events/open-source-summit-north-america-2022.html",
-          "matchPath": "/community/events/open-source-summit-north-america-2022"
+          "path": "/community/events/dockercon-live.html",
+          "matchPath": "/community/events/dockercon-live"
+        },
+        {
+          "path": "/community/events/ccoss-2020.html",
+          "matchPath": "/community/events/ccoss-2020"
+        },
+        {
+          "path": "/community/events/establishing-an-open-source-program-office.html",
+          "matchPath": "/community/events/establishing-an-open-source-program-office"
+        },
+        {
+          "path": "/community/events/hands-on-workshop-introduction-to-istio.html",
+          "matchPath": "/community/events/hands-on-workshop-introduction-to-istio"
+        },
+        {
+          "path": "/community/events/innotech-dallas.html",
+          "matchPath": "/community/events/innotech-dallas"
+        },
+        {
+          "path": "/community/events/introduction-to-istio.html",
+          "matchPath": "/community/events/introduction-to-istio"
+        },
+        {
+          "path": "/community/events/introduction-to-network-service-mesh.html",
+          "matchPath": "/community/events/introduction-to-network-service-mesh"
+        },
+        {
+          "path": "/community/events/kubecon-na-2020.html",
+          "matchPath": "/community/events/kubecon-na-2020"
+        },
+        {
+          "path": "/community/events/kubecon-eu-2020.html",
+          "matchPath": "/community/events/kubecon-eu-2020"
+        },
+        {
+          "path": "/community/events/meshery-the-multi-mesh-manager-kudo-kubernetes-operators-the-easy-way.html",
+          "matchPath": "/community/events/meshery-the-multi-mesh-manager-kudo-kubernetes-operators-the-easy-way"
+        },
+        {
+          "path": "/community/events/meshery-the-cloud-native-management-plane-kudo-kubernetes-operators-the-ea.html",
+          "matchPath": "/community/events/meshery-the-cloud-native-management-plane-kudo-kubernetes-operators-the-ea"
+        },
+        {
+          "path": "/community/events/oreilly-infrastructure-ops.html",
+          "matchPath": "/community/events/oreilly-infrastructure-ops"
+        },
+        {
+          "path": "/community/events/open-infrastructure-summit-2020.html",
+          "matchPath": "/community/events/open-infrastructure-summit-2020"
+        },
+        {
+          "path": "/community/events/istiocon-2021.html",
+          "matchPath": "/community/events/istiocon-2021"
+        },
+        {
+          "path": "/community/events/oreilly-oscon-2020.html",
+          "matchPath": "/community/events/oreilly-oscon-2020"
+        },
+        {
+          "path": "/community/events/service-meshes-but-at-what-cost.html",
+          "matchPath": "/community/events/service-meshes-but-at-what-cost"
+        },
+        {
+          "path": "/community/events/servicemeshcon-na-2020.html",
+          "matchPath": "/community/events/servicemeshcon-na-2020"
+        },
+        {
+          "path": "/community/events/securing-the-mesh.html",
+          "matchPath": "/community/events/securing-the-mesh"
         },
         {
           "path": "/community/events/hacktoberfest-prep-2023-extending-docker-desktop.html",
@@ -1115,12 +1107,20 @@
           "matchPath": "/community/events/kcd-chennai-2023"
         },
         {
-          "path": "/community/events/kubecon-cloudnativecon-eu-amsterdam-2023.html",
-          "matchPath": "/community/events/kubecon-cloudnativecon-eu-amsterdam-2023"
+          "path": "/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects.html",
+          "matchPath": "/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects"
         },
         {
           "path": "/community/events/kickstarting-open-source-with-layer5.html",
           "matchPath": "/community/events/kickstarting-open-source-with-layer5"
+        },
+        {
+          "path": "/community/events/kubecon-cloudnativecon-eu-amsterdam-2023.html",
+          "matchPath": "/community/events/kubecon-cloudnativecon-eu-amsterdam-2023"
+        },
+        {
+          "path": "/community/events/istiocon-virtual-2023.html",
+          "matchPath": "/community/events/istiocon-virtual-2023"
         },
         {
           "path": "/community/events/kubecon-cloudnativecon-north-america-chicago-2023.html",
@@ -1135,12 +1135,12 @@
           "matchPath": "/community/events/infrastructure-as-design-by-meshery"
         },
         {
-          "path": "/community/events/hacktoberfest-prep-2024-extending-meshery-models.html",
-          "matchPath": "/community/events/hacktoberfest-prep-2024-extending-meshery-models"
-        },
-        {
           "path": "/community/events/kubecon-cloudnativecon-eu-paris-france-2024.html",
           "matchPath": "/community/events/kubecon-cloudnativecon-eu-paris-france-2024"
+        },
+        {
+          "path": "/community/events/hacktoberfest-prep-2024-extending-meshery-models.html",
+          "matchPath": "/community/events/hacktoberfest-prep-2024-extending-meshery-models"
         },
         {
           "path": "/community/events/kubecon-cloudnativecon-open-source-summit-ai_dev-hong-kong-china.html",
@@ -1167,24 +1167,24 @@
           "matchPath": "/programs/gsoc/2019"
         },
         {
-          "path": "/programs/communitybridge/2020.html",
-          "matchPath": "/programs/communitybridge/2020"
-        },
-        {
           "path": "/programs/gsoc/2020.html",
           "matchPath": "/programs/gsoc/2020"
+        },
+        {
+          "path": "/programs/communitybridge/2020.html",
+          "matchPath": "/programs/communitybridge/2020"
         },
         {
           "path": "/programs/gsoc/2021.html",
           "matchPath": "/programs/gsoc/2021"
         },
         {
-          "path": "/programs/gsoc/2022.html",
-          "matchPath": "/programs/gsoc/2022"
-        },
-        {
           "path": "/programs/gsoc/2023.html",
           "matchPath": "/programs/gsoc/2023"
+        },
+        {
+          "path": "/programs/gsoc/2022.html",
+          "matchPath": "/programs/gsoc/2022"
         },
         {
           "path": "/programs/gsoc/2024.html",
@@ -1199,8 +1199,8 @@
           "matchPath": "/programs/gsod/2020"
         },
         {
-          "path": "/programs/hacktoberfest/2020.html",
-          "matchPath": "/programs/hacktoberfest/2020"
+          "path": "/programs/gsod/2024.html",
+          "matchPath": "/programs/gsod/2024"
         },
         {
           "path": "/programs/hacktoberfest/2021.html",
@@ -1211,20 +1211,20 @@
           "matchPath": "/programs/hacktoberfest/2022"
         },
         {
-          "path": "/programs/gsod/2024.html",
-          "matchPath": "/programs/gsod/2024"
+          "path": "/programs/hacktoberfest/2020.html",
+          "matchPath": "/programs/hacktoberfest/2020"
         },
         {
           "path": "/programs/hacktoberfest/2024.html",
           "matchPath": "/programs/hacktoberfest/2024"
         },
         {
-          "path": "/programs/../careers/internships/.html",
-          "matchPath": "/programs/../careers/internships/"
-        },
-        {
           "path": "/programs/lfx/2021.html",
           "matchPath": "/programs/lfx/2021"
+        },
+        {
+          "path": "/programs/../careers/internships/.html",
+          "matchPath": "/programs/../careers/internships/"
         },
         {
           "path": "/programs/lfx/2022.html",
@@ -1251,88 +1251,88 @@
           "matchPath": "/programs/sca-contributhon/2021"
         },
         {
-          "path": "/careers/software-engineer.html",
-          "matchPath": "/careers/software-engineer"
-        },
-        {
           "path": "/careers/digital-marketing-internship.html",
           "matchPath": "/careers/digital-marketing-internship"
         },
         {
-          "path": "/careers/ui-engineer.html",
-          "matchPath": "/careers/ui-engineer"
+          "path": "/careers/software-engineer.html",
+          "matchPath": "/careers/software-engineer"
         },
         {
           "path": "/careers/software-engineer-internship.html",
           "matchPath": "/careers/software-engineer-internship"
         },
         {
-          "path": "/careers/ui-visual-designer-internship.html",
-          "matchPath": "/careers/ui-visual-designer-internship"
-        },
-        {
           "path": "/careers/ui-visual-designer.html",
           "matchPath": "/careers/ui-visual-designer"
+        },
+        {
+          "path": "/careers/ui-engineer.html",
+          "matchPath": "/careers/ui-engineer"
+        },
+        {
+          "path": "/careers/ui-visual-designer-internship.html",
+          "matchPath": "/careers/ui-visual-designer-internship"
         },
         {
           "path": "/careers/ux-engineer.html",
           "matchPath": "/careers/ux-engineer"
         },
         {
-          "path": "/community/members/hargun-kaur.html",
-          "matchPath": "/community/members/hargun-kaur"
-        },
-        {
           "path": "/community/members/ibrahim-mbaziira.html",
           "matchPath": "/community/members/ibrahim-mbaziira"
+        },
+        {
+          "path": "/community/members/hargun-kaur.html",
+          "matchPath": "/community/members/hargun-kaur"
         },
         {
           "path": "/community/members/muhammad-moinuddin.html",
           "matchPath": "/community/members/muhammad-moinuddin"
         },
         {
-          "path": "/community/members/aabid-sofi.html",
-          "matchPath": "/community/members/aabid-sofi"
-        },
-        {
           "path": "/community/members/aadhitya-amarendiran.html",
           "matchPath": "/community/members/aadhitya-amarendiran"
         },
         {
-          "path": "/community/members/aaditya-narayan-subedy.html",
-          "matchPath": "/community/members/aaditya-narayan-subedy"
+          "path": "/community/members/aabid-sofi.html",
+          "matchPath": "/community/members/aabid-sofi"
         },
         {
           "path": "/community/members/abdullah-rafi.html",
           "matchPath": "/community/members/abdullah-rafi"
         },
         {
-          "path": "/community/members/abhijeet-gaurav.html",
-          "matchPath": "/community/members/abhijeet-gaurav"
+          "path": "/community/members/aaditya-narayan-subedy.html",
+          "matchPath": "/community/members/aaditya-narayan-subedy"
         },
         {
           "path": "/community/members/abhijay-jain.html",
           "matchPath": "/community/members/abhijay-jain"
         },
         {
-          "path": "/community/members/abhishek-kumar.html",
-          "matchPath": "/community/members/abhishek-kumar"
+          "path": "/community/members/abhijeet-gaurav.html",
+          "matchPath": "/community/members/abhijeet-gaurav"
         },
         {
-          "path": "/community/members/abishek-kumar.html",
-          "matchPath": "/community/members/abishek-kumar"
+          "path": "/community/members/abhishek-kumar.html",
+          "matchPath": "/community/members/abhishek-kumar"
         },
         {
           "path": "/community/members/abiola-farounbi.html",
           "matchPath": "/community/members/abiola-farounbi"
         },
         {
-          "path": "/community/members/aboobaker-siddiq-r.html",
-          "matchPath": "/community/members/aboobaker-siddiq-r"
+          "path": "/community/members/abishek-kumar.html",
+          "matchPath": "/community/members/abishek-kumar"
         },
         {
           "path": "/community/members/adheip-singh.html",
           "matchPath": "/community/members/adheip-singh"
+        },
+        {
+          "path": "/community/members/aboobaker-siddiq-r.html",
+          "matchPath": "/community/members/aboobaker-siddiq-r"
         },
         {
           "path": "/community/members/adina-rav.html",
@@ -1347,12 +1347,12 @@
           "matchPath": "/community/members/aditya-mohan"
         },
         {
-          "path": "/community/members/aditya-chatterjee.html",
-          "matchPath": "/community/members/aditya-chatterjee"
-        },
-        {
           "path": "/community/members/aditi-ahuja.html",
           "matchPath": "/community/members/aditi-ahuja"
+        },
+        {
+          "path": "/community/members/aditya-chatterjee.html",
+          "matchPath": "/community/members/aditya-chatterjee"
         },
         {
           "path": "/community/members/ahmed-hendawy.html",
@@ -1391,16 +1391,16 @@
           "matchPath": "/community/members/ambareen-azam"
         },
         {
-          "path": "/community/members/ameya-agashe.html",
-          "matchPath": "/community/members/ameya-agashe"
-        },
-        {
           "path": "/community/members/amit-amrutiya.html",
           "matchPath": "/community/members/amit-amrutiya"
         },
         {
           "path": "/community/members/anand-kumar-singh.html",
           "matchPath": "/community/members/anand-kumar-singh"
+        },
+        {
+          "path": "/community/members/ameya-agashe.html",
+          "matchPath": "/community/members/ameya-agashe"
         },
         {
           "path": "/community/members/ananya-gautam.html",
@@ -1419,32 +1419,32 @@
           "matchPath": "/community/members/anita-ihuman"
         },
         {
-          "path": "/community/members/anton-weiss.html",
-          "matchPath": "/community/members/anton-weiss"
-        },
-        {
           "path": "/community/members/ankita-sahu.html",
           "matchPath": "/community/members/ankita-sahu"
+        },
+        {
+          "path": "/community/members/anton-weiss.html",
+          "matchPath": "/community/members/anton-weiss"
         },
         {
           "path": "/community/members/antonette-caldwell.html",
           "matchPath": "/community/members/antonette-caldwell"
         },
         {
-          "path": "/community/members/aritra-majumder.html",
-          "matchPath": "/community/members/aritra-majumder"
-        },
-        {
           "path": "/community/members/archit-sharma.html",
           "matchPath": "/community/members/archit-sharma"
+        },
+        {
+          "path": "/community/members/ashis-kumar-singh.html",
+          "matchPath": "/community/members/ashis-kumar-singh"
         },
         {
           "path": "/community/members/arunima-chaudhuri.html",
           "matchPath": "/community/members/arunima-chaudhuri"
         },
         {
-          "path": "/community/members/ashis-kumar-singh.html",
-          "matchPath": "/community/members/ashis-kumar-singh"
+          "path": "/community/members/aritra-majumder.html",
+          "matchPath": "/community/members/aritra-majumder"
         },
         {
           "path": "/community/members/ashish-tiwari.html",
@@ -1459,12 +1459,12 @@
           "matchPath": "/community/members/atinuke-oluwabamikemi-kayode"
         },
         {
-          "path": "/community/members/avantika-jain.html",
-          "matchPath": "/community/members/avantika-jain"
-        },
-        {
           "path": "/community/members/augustine-ogiza.html",
           "matchPath": "/community/members/augustine-ogiza"
+        },
+        {
+          "path": "/community/members/avantika-jain.html",
+          "matchPath": "/community/members/avantika-jain"
         },
         {
           "path": "/community/members/aviral-asthana.html",
@@ -1519,16 +1519,16 @@
           "matchPath": "/community/members/cyrine-gamoudi"
         },
         {
-          "path": "/community/members/daniel-kiptoon.html",
-          "matchPath": "/community/members/daniel-kiptoon"
+          "path": "/community/members/dahyeon-kang.html",
+          "matchPath": "/community/members/dahyeon-kang"
         },
         {
           "path": "/community/members/colby-stoker.html",
           "matchPath": "/community/members/colby-stoker"
         },
         {
-          "path": "/community/members/dahyeon-kang.html",
-          "matchPath": "/community/members/dahyeon-kang"
+          "path": "/community/members/daniel-kiptoon.html",
+          "matchPath": "/community/members/daniel-kiptoon"
         },
         {
           "path": "/community/members/darren-dsouza.html",
@@ -1539,28 +1539,28 @@
           "matchPath": "/community/members/debjani-dey"
         },
         {
-          "path": "/community/members/debopriya-bhattacharjee.html",
-          "matchPath": "/community/members/debopriya-bhattacharjee"
-        },
-        {
           "path": "/community/members/deepak-dinesh.html",
           "matchPath": "/community/members/deepak-dinesh"
         },
         {
-          "path": "/community/members/deepak-reddy.html",
-          "matchPath": "/community/members/deepak-reddy"
+          "path": "/community/members/debopriya-bhattacharjee.html",
+          "matchPath": "/community/members/debopriya-bhattacharjee"
         },
         {
           "path": "/community/members/deepak-gupta.html",
           "matchPath": "/community/members/deepak-gupta"
         },
         {
-          "path": "/community/members/deepesha-burse.html",
-          "matchPath": "/community/members/deepesha-burse"
+          "path": "/community/members/deepak-reddy.html",
+          "matchPath": "/community/members/deepak-reddy"
         },
         {
           "path": "/community/members/dev-kalra.html",
           "matchPath": "/community/members/dev-kalra"
+        },
+        {
+          "path": "/community/members/deepesha-burse.html",
+          "matchPath": "/community/members/deepesha-burse"
         },
         {
           "path": "/community/members/dhruv-patel.html",
@@ -1587,20 +1587,20 @@
           "matchPath": "/community/members/eeshaan-sawant"
         },
         {
-          "path": "/community/members/efereyan-karen.html",
-          "matchPath": "/community/members/efereyan-karen"
-        },
-        {
           "path": "/community/members/ekene-leonard-nwobodo.html",
           "matchPath": "/community/members/ekene-leonard-nwobodo"
         },
         {
-          "path": "/community/members/eti-ijeoma.html",
-          "matchPath": "/community/members/eti-ijeoma"
-        },
-        {
           "path": "/community/members/elizabeth-lola.html",
           "matchPath": "/community/members/elizabeth-lola"
+        },
+        {
+          "path": "/community/members/efereyan-karen.html",
+          "matchPath": "/community/members/efereyan-karen"
+        },
+        {
+          "path": "/community/members/eti-ijeoma.html",
+          "matchPath": "/community/members/eti-ijeoma"
         },
         {
           "path": "/community/members/freedisch-thibaut-batale.html",
@@ -1639,16 +1639,16 @@
           "matchPath": "/community/members/harkirat-singh"
         },
         {
-          "path": "/community/members/harsh-dobariya.html",
-          "matchPath": "/community/members/harsh-dobariya"
-        },
-        {
           "path": "/community/members/harshini-mohandass.html",
           "matchPath": "/community/members/harshini-mohandass"
         },
         {
           "path": "/community/members/harshit-dandriyal.html",
           "matchPath": "/community/members/harshit-dandriyal"
+        },
+        {
+          "path": "/community/members/harsh-dobariya.html",
+          "matchPath": "/community/members/harsh-dobariya"
         },
         {
           "path": "/community/members/harshita-kanal.html",
@@ -1659,12 +1659,12 @@
           "matchPath": "/community/members/hauwa-ismail-ahmad"
         },
         {
-          "path": "/community/members/hetvi-soni.html",
-          "matchPath": "/community/members/hetvi-soni"
-        },
-        {
           "path": "/community/members/hersh-dhillon.html",
           "matchPath": "/community/members/hersh-dhillon"
+        },
+        {
+          "path": "/community/members/hetvi-soni.html",
+          "matchPath": "/community/members/hetvi-soni"
         },
         {
           "path": "/community/members/hiren-timbadiya.html",
@@ -1675,12 +1675,12 @@
           "matchPath": "/community/members/hussaina-begum"
         },
         {
-          "path": "/community/members/ian-whitney.html",
-          "matchPath": "/community/members/ian-whitney"
-        },
-        {
           "path": "/community/members/ishita-kumar.html",
           "matchPath": "/community/members/ishita-kumar"
+        },
+        {
+          "path": "/community/members/ian-whitney.html",
+          "matchPath": "/community/members/ian-whitney"
         },
         {
           "path": "/community/members/ivana-atanasova.html",
@@ -1691,16 +1691,16 @@
           "matchPath": "/community/members/jared-byers"
         },
         {
-          "path": "/community/members/jash-patel.html",
-          "matchPath": "/community/members/jash-patel"
-        },
-        {
           "path": "/community/members/jerens-lensun.html",
           "matchPath": "/community/members/jerens-lensun"
         },
         {
           "path": "/community/members/jerod-culpepper.html",
           "matchPath": "/community/members/jerod-culpepper"
+        },
+        {
+          "path": "/community/members/jash-patel.html",
+          "matchPath": "/community/members/jash-patel"
         },
         {
           "path": "/community/members/jerrid-schilling.html",
@@ -1715,12 +1715,16 @@
           "matchPath": "/community/members/jome-favourite"
         },
         {
+          "path": "/community/members/joseph-midura.html",
+          "matchPath": "/community/members/joseph-midura"
+        },
+        {
           "path": "/community/members/joy-nwaiwu.html",
           "matchPath": "/community/members/joy-nwaiwu"
         },
         {
-          "path": "/community/members/joseph-midura.html",
-          "matchPath": "/community/members/joseph-midura"
+          "path": "/community/members/kanishkar-j.html",
+          "matchPath": "/community/members/kanishkar-j"
         },
         {
           "path": "/community/members/jubayer-abdullah-joy.html",
@@ -1729,10 +1733,6 @@
         {
           "path": "/community/members/kamal-nayan-singh.html",
           "matchPath": "/community/members/kamal-nayan-singh"
-        },
-        {
-          "path": "/community/members/kanishkar-j.html",
-          "matchPath": "/community/members/kanishkar-j"
         },
         {
           "path": "/community/members/karen-hippitaku.html",
@@ -1759,12 +1759,12 @@
           "matchPath": "/community/members/lawrence-li"
         },
         {
-          "path": "/community/members/lee-calcote.html",
-          "matchPath": "/community/members/lee-calcote"
-        },
-        {
           "path": "/community/members/lidor-ettinger.html",
           "matchPath": "/community/members/lidor-ettinger"
+        },
+        {
+          "path": "/community/members/lee-calcote.html",
+          "matchPath": "/community/members/lee-calcote"
         },
         {
           "path": "/community/members/madhab-paul.html",
@@ -1775,6 +1775,10 @@
           "matchPath": "/community/members/mahadevan-ks"
         },
         {
+          "path": "/community/members/manish-dangi.html",
+          "matchPath": "/community/members/manish-dangi"
+        },
+        {
           "path": "/community/members/manav-kapoor.html",
           "matchPath": "/community/members/manav-kapoor"
         },
@@ -1783,20 +1787,12 @@
           "matchPath": "/community/members/manish-tyagi"
         },
         {
-          "path": "/community/members/manish-dangi.html",
-          "matchPath": "/community/members/manish-dangi"
+          "path": "/community/members/mario-arriaga.html",
+          "matchPath": "/community/members/mario-arriaga"
         },
         {
           "path": "/community/members/martn-castre.html",
           "matchPath": "/community/members/martn-castre"
-        },
-        {
-          "path": "/community/members/mary-beth-alexander.html",
-          "matchPath": "/community/members/mary-beth-alexander"
-        },
-        {
-          "path": "/community/members/mario-arriaga.html",
-          "matchPath": "/community/members/mario-arriaga"
         },
         {
           "path": "/community/members/matthieu-evrin.html",
@@ -1831,12 +1827,16 @@
           "matchPath": "/community/members/mohammed-zaki"
         },
         {
+          "path": "/community/members/mohith-gadireddy.html",
+          "matchPath": "/community/members/mohith-gadireddy"
+        },
+        {
           "path": "/community/members/muskan-bansal.html",
           "matchPath": "/community/members/muskan-bansal"
         },
         {
-          "path": "/community/members/mohith-gadireddy.html",
-          "matchPath": "/community/members/mohith-gadireddy"
+          "path": "/community/members/mary-beth-alexander.html",
+          "matchPath": "/community/members/mary-beth-alexander"
         },
         {
           "path": "/community/members/naureen-imran.html",
@@ -1851,12 +1851,12 @@
           "matchPath": "/community/members/naveen-jain"
         },
         {
-          "path": "/community/members/nic-jackson.html",
-          "matchPath": "/community/members/nic-jackson"
-        },
-        {
           "path": "/community/members/neil-alvares.html",
           "matchPath": "/community/members/neil-alvares"
+        },
+        {
+          "path": "/community/members/nic-jackson.html",
+          "matchPath": "/community/members/nic-jackson"
         },
         {
           "path": "/community/members/nikhil-ladha.html",
@@ -1871,60 +1871,60 @@
           "matchPath": "/community/members/nikita-b"
         },
         {
-          "path": "/community/members/nishant-mittal.html",
-          "matchPath": "/community/members/nishant-mittal"
-        },
-        {
           "path": "/community/members/nithish-karthik.html",
           "matchPath": "/community/members/nithish-karthik"
+        },
+        {
+          "path": "/community/members/nishant-mittal.html",
+          "matchPath": "/community/members/nishant-mittal"
         },
         {
           "path": "/community/members/nitish-malhotra.html",
           "matchPath": "/community/members/nitish-malhotra"
         },
         {
-          "path": "/community/members/nuno-do-carmo.html",
-          "matchPath": "/community/members/nuno-do-carmo"
-        },
-        {
           "path": "/community/members/nitish-vulli.html",
           "matchPath": "/community/members/nitish-vulli"
+        },
+        {
+          "path": "/community/members/nuno-do-carmo.html",
+          "matchPath": "/community/members/nuno-do-carmo"
         },
         {
           "path": "/community/members/nupur-thakur.html",
           "matchPath": "/community/members/nupur-thakur"
         },
         {
-          "path": "/community/members/olayiwola-ololade.html",
-          "matchPath": "/community/members/olayiwola-ololade"
-        },
-        {
           "path": "/community/members/olushesi-toheeb.html",
           "matchPath": "/community/members/olushesi-toheeb"
+        },
+        {
+          "path": "/community/members/olayiwola-ololade.html",
+          "matchPath": "/community/members/olayiwola-ololade"
         },
         {
           "path": "/community/members/oluwatomiyin-adekanye.html",
           "matchPath": "/community/members/oluwatomiyin-adekanye"
         },
         {
-          "path": "/community/members/otto-van-der-schaaf.html",
-          "matchPath": "/community/members/otto-van-der-schaaf"
-        },
-        {
           "path": "/community/members/omkar-phansopkar.html",
           "matchPath": "/community/members/omkar-phansopkar"
+        },
+        {
+          "path": "/community/members/otto-van-der-schaaf.html",
+          "matchPath": "/community/members/otto-van-der-schaaf"
         },
         {
           "path": "/community/members/oscar-hernandez.html",
           "matchPath": "/community/members/oscar-hernandez"
         },
         {
-          "path": "/community/members/oyin-dawodu.html",
-          "matchPath": "/community/members/oyin-dawodu"
-        },
-        {
           "path": "/community/members/pang-meng-cheng.html",
           "matchPath": "/community/members/pang-meng-cheng"
+        },
+        {
+          "path": "/community/members/oyin-dawodu.html",
+          "matchPath": "/community/members/oyin-dawodu"
         },
         {
           "path": "/community/members/partik-singh-bumrah.html",
@@ -1943,24 +1943,24 @@
           "matchPath": "/community/members/piyush-singariya"
         },
         {
-          "path": "/community/members/prateek-tripathy.html",
-          "matchPath": "/community/members/prateek-tripathy"
+          "path": "/community/members/pranav-bhatt.html",
+          "matchPath": "/community/members/pranav-bhatt"
         },
         {
           "path": "/community/members/pranav-singh.html",
           "matchPath": "/community/members/pranav-singh"
         },
         {
-          "path": "/community/members/pranav-bhatt.html",
-          "matchPath": "/community/members/pranav-bhatt"
-        },
-        {
-          "path": "/community/members/prem-kumar.html",
-          "matchPath": "/community/members/prem-kumar"
+          "path": "/community/members/prateek-tripathy.html",
+          "matchPath": "/community/members/prateek-tripathy"
         },
         {
           "path": "/community/members/pratyay-banerjee.html",
           "matchPath": "/community/members/pratyay-banerjee"
+        },
+        {
+          "path": "/community/members/prem-kumar.html",
+          "matchPath": "/community/members/prem-kumar"
         },
         {
           "path": "/community/members/prem-sankar.html",
@@ -1971,56 +1971,56 @@
           "matchPath": "/community/members/rafi-ungar"
         },
         {
-          "path": "/community/members/raghav-aggarwal.html",
-          "matchPath": "/community/members/raghav-aggarwal"
-        },
-        {
           "path": "/community/members/randy-lau.html",
           "matchPath": "/community/members/randy-lau"
+        },
+        {
+          "path": "/community/members/raghav-aggarwal.html",
+          "matchPath": "/community/members/raghav-aggarwal"
         },
         {
           "path": "/community/members/raul-esquivel.html",
           "matchPath": "/community/members/raul-esquivel"
         },
         {
-          "path": "/community/members/rex-joshua-ibegbu.html",
-          "matchPath": "/community/members/rex-joshua-ibegbu"
-        },
-        {
           "path": "/community/members/rhoda-michael.html",
           "matchPath": "/community/members/rhoda-michael"
         },
         {
-          "path": "/community/members/ritik-saxena.html",
-          "matchPath": "/community/members/ritik-saxena"
+          "path": "/community/members/rex-joshua-ibegbu.html",
+          "matchPath": "/community/members/rex-joshua-ibegbu"
         },
         {
           "path": "/community/members/riya-garg.html",
           "matchPath": "/community/members/riya-garg"
         },
         {
-          "path": "/community/members/rodolfo-martinez-vega.html",
-          "matchPath": "/community/members/rodolfo-martinez-vega"
+          "path": "/community/members/ritik-saxena.html",
+          "matchPath": "/community/members/ritik-saxena"
         },
         {
-          "path": "/community/members/ruben-lorenzo.html",
-          "matchPath": "/community/members/ruben-lorenzo"
+          "path": "/community/members/rodolfo-martinez-vega.html",
+          "matchPath": "/community/members/rodolfo-martinez-vega"
         },
         {
           "path": "/community/members/rohit-agarwal.html",
           "matchPath": "/community/members/rohit-agarwal"
         },
         {
+          "path": "/community/members/ruben-lorenzo.html",
+          "matchPath": "/community/members/ruben-lorenzo"
+        },
+        {
           "path": "/community/members/ruth-ikegah.html",
           "matchPath": "/community/members/ruth-ikegah"
         },
         {
-          "path": "/community/members/ruturaj-mohite.html",
-          "matchPath": "/community/members/ruturaj-mohite"
-        },
-        {
           "path": "/community/members/samyak-shah.html",
           "matchPath": "/community/members/samyak-shah"
+        },
+        {
+          "path": "/community/members/ruturaj-mohite.html",
+          "matchPath": "/community/members/ruturaj-mohite"
         },
         {
           "path": "/community/members/sako-mammadov.html",
@@ -2031,24 +2031,24 @@
           "matchPath": "/community/members/sandra-ashipala"
         },
         {
-          "path": "/community/members/saurabh-soni.html",
-          "matchPath": "/community/members/saurabh-soni"
-        },
-        {
           "path": "/community/members/sangram-rath.html",
           "matchPath": "/community/members/sangram-rath"
+        },
+        {
+          "path": "/community/members/saurabh-soni.html",
+          "matchPath": "/community/members/saurabh-soni"
         },
         {
           "path": "/community/members/saurabh-kumar-singh.html",
           "matchPath": "/community/members/saurabh-kumar-singh"
         },
         {
-          "path": "/community/members/saurabh-thakur.html",
-          "matchPath": "/community/members/saurabh-thakur"
-        },
-        {
           "path": "/community/members/savio-dias.html",
           "matchPath": "/community/members/savio-dias"
+        },
+        {
+          "path": "/community/members/saurabh-thakur.html",
+          "matchPath": "/community/members/saurabh-thakur"
         },
         {
           "path": "/community/members/sayantan-bose.html",
@@ -2075,32 +2075,36 @@
           "matchPath": "/community/members/shlok-mishra"
         },
         {
-          "path": "/community/members/shravani-kaware.html",
-          "matchPath": "/community/members/shravani-kaware"
-        },
-        {
           "path": "/community/members/shreyas-mishra.html",
           "matchPath": "/community/members/shreyas-mishra"
         },
         {
-          "path": "/community/members/shriti-chandra.html",
-          "matchPath": "/community/members/shriti-chandra"
+          "path": "/community/members/shravani-kaware.html",
+          "matchPath": "/community/members/shravani-kaware"
         },
         {
           "path": "/community/members/shubham-tyagi.html",
           "matchPath": "/community/members/shubham-tyagi"
         },
         {
-          "path": "/community/members/shubhank-saxena.html",
-          "matchPath": "/community/members/shubhank-saxena"
+          "path": "/community/members/shriti-chandra.html",
+          "matchPath": "/community/members/shriti-chandra"
         },
         {
           "path": "/community/members/soham-sonawane.html",
           "matchPath": "/community/members/soham-sonawane"
         },
         {
+          "path": "/community/members/shubhank-saxena.html",
+          "matchPath": "/community/members/shubhank-saxena"
+        },
+        {
           "path": "/community/members/stephen-miller.html",
           "matchPath": "/community/members/stephen-miller"
+        },
+        {
+          "path": "/community/members/sudhanshu-dasgupta.html",
+          "matchPath": "/community/members/sudhanshu-dasgupta"
         },
         {
           "path": "/community/members/subham-rai.html",
@@ -2111,16 +2115,12 @@
           "matchPath": "/community/members/suhani-agarwal"
         },
         {
-          "path": "/community/members/sudhanshu-dasgupta.html",
-          "matchPath": "/community/members/sudhanshu-dasgupta"
+          "path": "/community/members/supratik-das.html",
+          "matchPath": "/community/members/supratik-das"
         },
         {
           "path": "/community/members/sunku-ranganath.html",
           "matchPath": "/community/members/sunku-ranganath"
-        },
-        {
-          "path": "/community/members/supratik-das.html",
-          "matchPath": "/community/members/supratik-das"
         },
         {
           "path": "/community/members/suraj-jadhav.html",
@@ -2139,20 +2139,20 @@
           "matchPath": "/community/members/tajinder-singh"
         },
         {
-          "path": "/community/members/tanuj-agarwal.html",
-          "matchPath": "/community/members/tanuj-agarwal"
-        },
-        {
           "path": "/community/members/tharun-t.html",
           "matchPath": "/community/members/tharun-t"
         },
         {
-          "path": "/community/members/udit-takkar.html",
-          "matchPath": "/community/members/udit-takkar"
+          "path": "/community/members/tanuj-agarwal.html",
+          "matchPath": "/community/members/tanuj-agarwal"
         },
         {
           "path": "/community/members/tolulope-ola-david.html",
           "matchPath": "/community/members/tolulope-ola-david"
+        },
+        {
+          "path": "/community/members/udit-takkar.html",
+          "matchPath": "/community/members/udit-takkar"
         },
         {
           "path": "/community/members/usman-siddique.html",
@@ -2167,12 +2167,12 @@
           "matchPath": "/community/members/utkarsh-srivastava"
         },
         {
-          "path": "/community/members/vaibhav-bisht.html",
-          "matchPath": "/community/members/vaibhav-bisht"
-        },
-        {
           "path": "/community/members/vaibhav-malik.html",
           "matchPath": "/community/members/vaibhav-malik"
+        },
+        {
+          "path": "/community/members/vaibhav-bisht.html",
+          "matchPath": "/community/members/vaibhav-bisht"
         },
         {
           "path": "/community/members/varad-gupta.html",
@@ -2191,12 +2191,12 @@
           "matchPath": "/community/members/vihas-makwana"
         },
         {
-          "path": "/community/members/vijay-cherukuri.html",
-          "matchPath": "/community/members/vijay-cherukuri"
-        },
-        {
           "path": "/community/members/vikramaditya-singh.html",
           "matchPath": "/community/members/vikramaditya-singh"
+        },
+        {
+          "path": "/community/members/vijay-cherukuri.html",
+          "matchPath": "/community/members/vijay-cherukuri"
         },
         {
           "path": "/community/members/vinayak-sharma.html",
@@ -2207,16 +2207,12 @@
           "matchPath": "/community/members/vineet-sharma"
         },
         {
-          "path": "/community/members/vineeth-reddy.html",
-          "matchPath": "/community/members/vineeth-reddy"
-        },
-        {
           "path": "/community/members/vivek-jha.html",
           "matchPath": "/community/members/vivek-jha"
         },
         {
-          "path": "/community/members/vivek-vishal.html",
-          "matchPath": "/community/members/vivek-vishal"
+          "path": "/community/members/vineeth-reddy.html",
+          "matchPath": "/community/members/vineeth-reddy"
         },
         {
           "path": "/community/members/will-calcote.html",
@@ -2227,24 +2223,24 @@
           "matchPath": "/community/members/will-tamagi"
         },
         {
-          "path": "/community/members/xin-huang.html",
-          "matchPath": "/community/members/xin-huang"
+          "path": "/community/members/vivek-vishal.html",
+          "matchPath": "/community/members/vivek-vishal"
         },
         {
-          "path": "/community/members/yash-kamboj.html",
-          "matchPath": "/community/members/yash-kamboj"
+          "path": "/community/members/xin-huang.html",
+          "matchPath": "/community/members/xin-huang"
         },
         {
           "path": "/community/members/yash-pandey.html",
           "matchPath": "/community/members/yash-pandey"
         },
         {
-          "path": "/community/members/yash-sharma.html",
-          "matchPath": "/community/members/yash-sharma"
+          "path": "/community/members/yash-kamboj.html",
+          "matchPath": "/community/members/yash-kamboj"
         },
         {
-          "path": "/community/members/yash-vardhan.html",
-          "matchPath": "/community/members/yash-vardhan"
+          "path": "/community/members/yash-sharma.html",
+          "matchPath": "/community/members/yash-sharma"
         },
         {
           "path": "/members/yash-sharma-2.html",
@@ -2255,16 +2251,16 @@
           "matchPath": "/community/members/zainuddeen-abdul-muiz"
         },
         {
+          "path": "/community/members/yash-vardhan.html",
+          "matchPath": "/community/members/yash-vardhan"
+        },
+        {
           "path": "/community/members/zihan-kuang.html",
           "matchPath": "/community/members/zihan-kuang"
         },
         {
           "path": "/community/members/lee-calcote/bio.html",
           "matchPath": "/community/members/lee-calcote/bio"
-        },
-        {
-          "path": "/learn/service-mesh-workshops/dockercon-na-2018.html",
-          "matchPath": "/learn/service-mesh-workshops/dockercon-na-2018"
         },
         {
           "path": "/learn/service-mesh-workshops/dockercon-eu-2018.html",
@@ -2275,6 +2271,10 @@
           "matchPath": "/learn/service-mesh-workshops/kubecon-na-2018"
         },
         {
+          "path": "/learn/service-mesh-workshops/dockercon-na-2018.html",
+          "matchPath": "/learn/service-mesh-workshops/dockercon-na-2018"
+        },
+        {
           "path": "/learn/service-mesh-workshops/velocity-london-2018.html",
           "matchPath": "/learn/service-mesh-workshops/velocity-london-2018"
         },
@@ -2283,36 +2283,36 @@
           "matchPath": "/learn/service-mesh-workshops/oreilly-live-online-training"
         },
         {
-          "path": "/learn/service-mesh-workshops/devfest-montreal-2019.html",
-          "matchPath": "/learn/service-mesh-workshops/devfest-montreal-2019"
-        },
-        {
           "path": "/learn/service-mesh-workshops/all-things-open-2019.html",
           "matchPath": "/learn/service-mesh-workshops/all-things-open-2019"
+        },
+        {
+          "path": "/learn/service-mesh-workshops/devfest-montreal-2019.html",
+          "matchPath": "/learn/service-mesh-workshops/devfest-montreal-2019"
         },
         {
           "path": "/learn/service-mesh-workshops/cloud-native-austin-2020.html",
           "matchPath": "/learn/service-mesh-workshops/cloud-native-austin-2020"
         },
         {
+          "path": "/learn/service-mesh-workshops/oscon-2020.html",
+          "matchPath": "/learn/service-mesh-workshops/oscon-2020"
+        },
+        {
           "path": "/learn/service-mesh-workshops/open-source-101-at-home.html",
           "matchPath": "/learn/service-mesh-workshops/open-source-101-at-home"
+        },
+        {
+          "path": "/learn/service-mesh-workshops/advanced-istio.html",
+          "matchPath": "/learn/service-mesh-workshops/advanced-istio"
         },
         {
           "path": "/learn/service-mesh-workshops/infrastructure-ops-2020.html",
           "matchPath": "/learn/service-mesh-workshops/infrastructure-ops-2020"
         },
         {
-          "path": "/learn/service-mesh-workshops/oscon-2020.html",
-          "matchPath": "/learn/service-mesh-workshops/oscon-2020"
-        },
-        {
           "path": "/learn/service-mesh-workshops/service-mesh-fundamentals-with-linkerd.html",
           "matchPath": "/learn/service-mesh-workshops/service-mesh-fundamentals-with-linkerd"
-        },
-        {
-          "path": "/learn/service-mesh-workshops/advanced-istio.html",
-          "matchPath": "/learn/service-mesh-workshops/advanced-istio"
         },
         {
           "path": "/learn/service-mesh-workshops/istiocon-using-istio.html",
@@ -2327,32 +2327,36 @@
           "matchPath": "/learn/service-mesh-labs/traffic-splitting-with-meshery"
         },
         {
-          "path": "/learn/service-mesh-labs/working-with-meshery-and-consul.html",
-          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-consul"
-        },
-        {
           "path": "/learn/service-mesh-labs/working-with-meshery-and-istio.html",
           "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-istio"
-        },
-        {
-          "path": "/learn/service-mesh-labs/working-with-meshery-and-kuma.html",
-          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-kuma"
         },
         {
           "path": "/learn/service-mesh-labs/working-with-meshery-and-linkerd.html",
           "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-linkerd"
         },
         {
+          "path": "/learn/service-mesh-labs/working-with-meshery-and-consul.html",
+          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-consul"
+        },
+        {
+          "path": "/learn/service-mesh-labs/working-with-meshery-and-kuma.html",
+          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-kuma"
+        },
+        {
           "path": "/learn/service-mesh-labs/working-with-meshery-and-nsm.html",
           "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-nsm"
+        },
+        {
+          "path": "/learn/service-mesh-labs/working-with-meshery-and-traefik.html",
+          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-traefik"
         },
         {
           "path": "/learn/service-mesh-labs/working-with-meshery-and-open-service-mesh.html",
           "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-open-service-mesh"
         },
         {
-          "path": "/learn/service-mesh-labs/working-with-meshery-and-traefik.html",
-          "matchPath": "/learn/service-mesh-labs/working-with-meshery-and-traefik"
+          "path": "/cloud-native-management/meshery/integrations/azure-active-directory-aad.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/azure-active-directory-aad"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/accurate.html",
@@ -2363,40 +2367,36 @@
           "matchPath": "/cloud-native-management/meshery/integrations/appscode-container-engine"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/azure-active-directory-aad.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/azure-active-directory-aad"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/actions-runner-controller-arc.html",
           "matchPath": "/cloud-native-management/meshery/integrations/actions-runner-controller-arc"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aerokube.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aerokube"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/epam-delivery-platform.html",
           "matchPath": "/cloud-native-management/meshery/integrations/epam-delivery-platform"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aerospike-kubernetes-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aerospike-kubernetes-operator"
+          "path": "/cloud-native-management/meshery/integrations/aerokube.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aerokube"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aigis-uk.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aigis-uk"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/azure-application-gateway.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/azure-application-gateway"
+          "path": "/cloud-native-management/meshery/integrations/aerospike-kubernetes-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aerospike-kubernetes-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/akri.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/akri"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/altinity-clickhouse.html",
           "matchPath": "/cloud-native-management/meshery/integrations/altinity-clickhouse"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/ambassador.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/ambassador"
+          "path": "/cloud-native-management/meshery/integrations/azure-application-gateway.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/azure-application-gateway"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/amd-gpu.html",
@@ -2407,100 +2407,104 @@
           "matchPath": "/cloud-native-management/meshery/integrations/antrea"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aperture-agent.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aperture-agent"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/apache-shardingsphere.html",
           "matchPath": "/cloud-native-management/meshery/integrations/apache-shardingsphere"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aperture-controller.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aperture-controller"
+          "path": "/cloud-native-management/meshery/integrations/ambassador.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/ambassador"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/akri.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/akri"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/apisix.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/apisix"
+          "path": "/cloud-native-management/meshery/integrations/aperture-agent.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aperture-agent"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/apisix-ingress-controller.html",
           "matchPath": "/cloud-native-management/meshery/integrations/apisix-ingress-controller"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/appscode-application.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/appscode-application"
+          "path": "/cloud-native-management/meshery/integrations/apisix.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/apisix"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/argo-cd-applications.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/argo-cd-applications"
+          "path": "/cloud-native-management/meshery/integrations/aperture-controller.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aperture-controller"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/appscode-application.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/appscode-application"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-app-mesh.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-app-mesh"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/argo-workflows.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/argo-workflows"
+          "path": "/cloud-native-management/meshery/integrations/argo-cd-applications.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/argo-cd-applications"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/argo-cd-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/argo-cd-operator"
+          "path": "/cloud-native-management/meshery/integrations/argo-workflows.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/argo-workflows"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/armory-spinnaker-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/armory-spinnaker-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/athenz.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/athenz"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/artifact-hub.html",
           "matchPath": "/cloud-native-management/meshery/integrations/artifact-hub"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/amazon-web-services.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/amazon-web-services"
+          "path": "/cloud-native-management/meshery/integrations/argo-cd-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/argo-cd-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-api-gateway-v2.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-api-gateway-v2"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-api-gateway.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-api-gateway"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-cloudtrail.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudtrail"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-cloudfront.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudfront"
+          "path": "/cloud-native-management/meshery/integrations/athenz.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/athenz"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-applilcation-autoscaling.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-applilcation-autoscaling"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/amazon-web-services.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/amazon-web-services"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-api-gateway.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-api-gateway"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-api-gateway-v2.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-api-gateway-v2"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-cloudfront.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudfront"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/aws-cloudwatch.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudwatch"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-cloudwatch-logs.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudwatch-logs"
+          "path": "/cloud-native-management/meshery/integrations/aws-cloudtrail.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudtrail"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-documentdb.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-documentdb"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/aws-cloudwatch-logs.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-cloudwatch-logs"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/aws-dynamodb.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-dynamodb"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-ec2.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-ec2"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-elastic-container-registry.html",
@@ -2511,16 +2515,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/aws-elastic-container-service"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-ec2.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-ec2"
+          "path": "/cloud-native-management/meshery/integrations/aws-elastic-kubernetes-service.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-elastic-kubernetes-service"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-elastic-file-system.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-elastic-file-system"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-elastic-kubernetes-service.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-elastic-kubernetes-service"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-elasticache.html",
@@ -2535,28 +2535,28 @@
           "matchPath": "/cloud-native-management/meshery/integrations/aws-emr-containers"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-identity-and-access-management.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-identity-and-access-management"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/aws-eventbridge.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-eventbridge"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-kinesis.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-kinesis"
+          "path": "/cloud-native-management/meshery/integrations/aws-identity-and-access-management.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-identity-and-access-management"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-kms.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-kms"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-lambda.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-lambda"
+          "path": "/cloud-native-management/meshery/integrations/aws-kinesis.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-kinesis"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-load-balancer.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-load-balancer"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-lambda.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-lambda"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-memorydb-for-redis.html",
@@ -2567,16 +2567,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/aws-mq"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/aws-managed-service-for-prometheus.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-managed-service-for-prometheus"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/aws-node-termination-handler.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-node-termination-handler"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-opensearch-service.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-opensearch-service"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-managed-service-for-prometheus.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-managed-service-for-prometheus"
+          "path": "/cloud-native-management/meshery/integrations/aws-route-53.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-route-53"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-relational-database-service.html",
@@ -2587,20 +2587,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/aws-route-53-resolver"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-route-53.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-route-53"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/aws-sagemaker.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-sagemaker"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/aws-simple-storage-service-s3.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-simple-storage-service-s3"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-secrets-manager.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-secrets-manager"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-sagemaker.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-sagemaker"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-step-functions.html",
@@ -2611,20 +2607,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/aws-simple-notification-service"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-simple-queuing-service.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-simple-queuing-service"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/aws-systems-manager.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-systems-manager"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/aws-vpc-cni.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/aws-vpc-cni"
+          "path": "/cloud-native-management/meshery/integrations/aws-simple-queuing-service.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-simple-queuing-service"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/aws-target-group-binding.html",
           "matchPath": "/cloud-native-management/meshery/integrations/aws-target-group-binding"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-vpc-cni.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-vpc-cni"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/awx-operator.html",
@@ -2639,6 +2635,10 @@
           "matchPath": "/cloud-native-management/meshery/integrations/azure-orkestra"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/backend.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/backend"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/backstage.html",
           "matchPath": "/cloud-native-management/meshery/integrations/backstage"
         },
@@ -2647,12 +2647,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/bfe"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/backend.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/backend"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/bitwarden-by-lerentis.html",
           "matchPath": "/cloud-native-management/meshery/integrations/bitwarden-by-lerentis"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/camel-k.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/camel-k"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/brigade.html",
@@ -2663,16 +2663,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/buildpacks"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/camel-k.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/camel-k"
+          "path": "/cloud-native-management/meshery/integrations/capsule-proxy.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/capsule-proxy"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/apache-cassandra.html",
           "matchPath": "/cloud-native-management/meshery/integrations/apache-cassandra"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/capsule-proxy.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/capsule-proxy"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/cd-pipeline-operator.html",
@@ -2703,16 +2699,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/chaos-mesh"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/cilium.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/cilium"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/chaosblade.html",
           "matchPath": "/cloud-native-management/meshery/integrations/chaosblade"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/clickhouse.html",
           "matchPath": "/cloud-native-management/meshery/integrations/clickhouse"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/cilium.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/cilium"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/aws-opensearch-service.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/aws-opensearch-service"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/cloud-custodian.html",
@@ -2739,20 +2739,24 @@
           "matchPath": "/cloud-native-management/meshery/integrations/openstack-cluster-api-provider"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/cni-host-nic.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/cni-host-nic"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/clusterpedia.html",
           "matchPath": "/cloud-native-management/meshery/integrations/clusterpedia"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/cni-host-nic.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/cni-host-nic"
+          "path": "/cloud-native-management/meshery/integrations/cockroachdb-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/cockroachdb-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/confidential-containers.html",
           "matchPath": "/cloud-native-management/meshery/integrations/confidential-containers"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/cockroachdb-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/cockroachdb-operator"
+          "path": "/cloud-native-management/meshery/integrations/containerd.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/containerd"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/consul.html",
@@ -2763,20 +2767,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/containerssh"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/containerd.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/containerd"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/contour.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/contour"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/contrail-analytics.html",
           "matchPath": "/cloud-native-management/meshery/integrations/contrail-analytics"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/coredns.html",
           "matchPath": "/cloud-native-management/meshery/integrations/coredns"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/contour.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/contour"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/cortex.html",
@@ -2811,36 +2811,36 @@
           "matchPath": "/cloud-native-management/meshery/integrations/cubefs"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/curiefense.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/curiefense"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/dapr.html",
           "matchPath": "/cloud-native-management/meshery/integrations/dapr"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/curiefense.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/curiefense"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/datadog-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/datadog-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/devstream.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/devstream"
+          "path": "/cloud-native-management/meshery/integrations/dex.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/dex"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/devfile.html",
           "matchPath": "/cloud-native-management/meshery/integrations/devfile"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/dex.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/dex"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/jfrog-distribution.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/jfrog-distribution"
+          "path": "/cloud-native-management/meshery/integrations/devstream.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/devstream"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/dragonfly.html",
           "matchPath": "/cloud-native-management/meshery/integrations/dragonfly"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/jfrog-distribution.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/jfrog-distribution"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/docker.html",
@@ -2851,24 +2851,24 @@
           "matchPath": "/cloud-native-management/meshery/integrations/edp-argocd-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/edp-component-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/edp-component-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/edp-install.html",
           "matchPath": "/cloud-native-management/meshery/integrations/edp-install"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/edp-component-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/edp-component-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/elastic-search.html",
           "matchPath": "/cloud-native-management/meshery/integrations/elastic-search"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/envoy.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/envoy"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/emissary-ingress.html",
           "matchPath": "/cloud-native-management/meshery/integrations/emissary-ingress"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/envoy.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/envoy"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/etcd-cluster-operator.html",
@@ -2883,10 +2883,6 @@
           "matchPath": "/cloud-native-management/meshery/integrations/fabedge"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/falco.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/falco"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/flagger.html",
           "matchPath": "/cloud-native-management/meshery/integrations/flagger"
         },
@@ -2895,16 +2891,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/fluent-operator"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/falco.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/falco"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/fluentbit-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/fluentbit-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/fluentbit-skt.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/fluentbit-skt"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/fluentd-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/fluentd-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/fluentbit-skt.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/fluentbit-skt"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/fluid.html",
@@ -2931,16 +2931,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/google-cloud-platform"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/gerrit-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/gerrit-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/github.html",
           "matchPath": "/cloud-native-management/meshery/integrations/github"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/github-actions-runner-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/github-actions-runner-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/gerrit-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/gerrit-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/gitlab.html",
@@ -2955,16 +2955,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/gitlab-controller"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/gitlab-runner-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/gitlab-runner-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/grafana-agent.html",
           "matchPath": "/cloud-native-management/meshery/integrations/grafana-agent"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/grafana-agent-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/grafana-agent-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/gitlab-runner-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/gitlab-runner-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/grafana-operator.html",
@@ -3019,10 +3019,6 @@
           "matchPath": "/cloud-native-management/meshery/integrations/istio"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/istio-rate-limit-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/istio-rate-limit-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/istio-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/istio-operator"
         },
@@ -3031,12 +3027,16 @@
           "matchPath": "/cloud-native-management/meshery/integrations/jaeger"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/jaeger-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/jaeger-operator"
+          "path": "/cloud-native-management/meshery/integrations/istio-rate-limit-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/istio-rate-limit-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/jenkins-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/jenkins-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/jaeger-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/jaeger-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/jira-service-desk-operator.html",
@@ -3051,28 +3051,28 @@
           "matchPath": "/cloud-native-management/meshery/integrations/k3s"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/k6.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/k6"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/k8gb.html",
           "matchPath": "/cloud-native-management/meshery/integrations/k8gb"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/k6.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/k6"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/k8s-vault-controller.html",
           "matchPath": "/cloud-native-management/meshery/integrations/k8s-vault-controller"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/karmada.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/karmada"
+          "path": "/cloud-native-management/meshery/integrations/kanister-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kanister-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/karpenter.html",
           "matchPath": "/cloud-native-management/meshery/integrations/karpenter"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kanister-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kanister-operator"
+          "path": "/cloud-native-management/meshery/integrations/karmada.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/karmada"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubeflow-katib.html",
@@ -3091,20 +3091,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/keycloak-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kiali-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kiali-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/keylime.html",
           "matchPath": "/cloud-native-management/meshery/integrations/keylime"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/knative.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/knative"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/knative-serving.html",
           "matchPath": "/cloud-native-management/meshery/integrations/knative-serving"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/kiali-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kiali-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/knative.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/knative"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kommander.html",
@@ -3115,24 +3115,28 @@
           "matchPath": "/cloud-native-management/meshery/integrations/kong-api-gateway"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kong-mesh.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kong-mesh"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/arangodb-kubernetes-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/arangodb-kubernetes-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/kong-mesh.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kong-mesh"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kube-prometheus.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kube-prometheus"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kube-rs.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kube-rs"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/kube-prometheus-stack.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kube-prometheus-stack"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/kubernetes-ui-server.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes-ui-server"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/kube-rs.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kube-rs"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubedb.html",
@@ -3143,20 +3147,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/kubedb-catalog"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubernetes-ui-server.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes-ui-server"
+          "path": "/cloud-native-management/meshery/integrations/kubedb-metrics.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubedb-metrics"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubedb-grafana-dashboards.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubedb-grafana-dashboards"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/kubedb-crds.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubedb-crds"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/kubedb-metrics.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubedb-metrics"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubedb-ops-manager.html",
@@ -3165,6 +3161,10 @@
         {
           "path": "/cloud-native-management/meshery/integrations/kubedb-opscenter.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubedb-opscenter"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/kubedb-crds.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubedb-crds"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubedb-ui-server.html",
@@ -3183,72 +3183,68 @@
           "matchPath": "/cloud-native-management/meshery/integrations/kubeform-provider-aws"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubegems-edge.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-edge"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/kubegems.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubegems"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubegems-installer.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-installer"
+          "path": "/cloud-native-management/meshery/integrations/kubegems-edge.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-edge"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubegems-local.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubegems-local"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubegems-models.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-models"
+          "path": "/cloud-native-management/meshery/integrations/kubegems-installer.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-installer"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubernetes.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes"
+          "path": "/cloud-native-management/meshery/integrations/kubegems-models.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubegems-models"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kuberhealthy.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kuberhealthy"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubernetes-secret-generator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes-secret-generator"
+          "path": "/cloud-native-management/meshery/integrations/kubernetes.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/haproxy-kubernetes-ingress.html",
           "matchPath": "/cloud-native-management/meshery/integrations/haproxy-kubernetes-ingress"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubeslice-worker.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubeslice-worker"
+          "path": "/cloud-native-management/meshery/integrations/kubernetes-secret-generator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubernetes-secret-generator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubesphere.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubesphere"
+          "path": "/cloud-native-management/meshery/integrations/kubeslice-worker.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubeslice-worker"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubevault.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubevault"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubevault-catalog.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubevault-catalog"
+          "path": "/cloud-native-management/meshery/integrations/kubesphere.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubesphere"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubevault-crds.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubevault-crds"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubevault-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubevault-operator"
+          "path": "/cloud-native-management/meshery/integrations/kubevault-catalog.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubevault-catalog"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubevault-metrics.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kubevault-metrics"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kubevela.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kubevela"
+          "path": "/cloud-native-management/meshery/integrations/kubevault-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubevault-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubevirt.html",
@@ -3259,20 +3255,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/kuma"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kured.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kured"
+          "path": "/cloud-native-management/meshery/integrations/kubevela.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kubevela"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kusk-gateway.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kusk-gateway"
+          "path": "/cloud-native-management/meshery/integrations/kured.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kured"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kyverno.html",
           "matchPath": "/cloud-native-management/meshery/integrations/kyverno"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/kyverno-monitor.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/kyverno-monitor"
+          "path": "/cloud-native-management/meshery/integrations/kusk-gateway.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kusk-gateway"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kyverno-operator.html",
@@ -3283,6 +3279,10 @@
           "matchPath": "/cloud-native-management/meshery/integrations/linkerd"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/kyverno-monitor.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/kyverno-monitor"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/linux.html",
           "matchPath": "/cloud-native-management/meshery/integrations/linux"
         },
@@ -3291,24 +3291,24 @@
           "matchPath": "/cloud-native-management/meshery/integrations/litmus-chaos"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/longhorn.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/longhorn"
+          "path": "/cloud-native-management/meshery/integrations/loki.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/loki"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/loki-simple-scalable.html",
           "matchPath": "/cloud-native-management/meshery/integrations/loki-simple-scalable"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/loki.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/loki"
+          "path": "/cloud-native-management/meshery/integrations/loxilb.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/loxilb"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/mattermost-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/mattermost-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/loxilb.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/loxilb"
+          "path": "/cloud-native-management/meshery/integrations/longhorn.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/longhorn"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/meshery-core.html",
@@ -3323,12 +3323,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/kubernetes-metrics-server"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/minio-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/minio-operator"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/mimir.html",
           "matchPath": "/cloud-native-management/meshery/integrations/mimir"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/minio-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/minio-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/kubeflow-mpi-operator.html",
@@ -3347,32 +3347,32 @@
           "matchPath": "/cloud-native-management/meshery/integrations/new-relic-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/nginx.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/nginx"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/nginx-ingress-controller.html",
           "matchPath": "/cloud-native-management/meshery/integrations/nginx-ingress-controller"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/nginx-service-mesh.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/nginx-service-mesh"
+          "path": "/cloud-native-management/meshery/integrations/nginx.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/nginx"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/nirmata-aws-adapter.html",
           "matchPath": "/cloud-native-management/meshery/integrations/nirmata-aws-adapter"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/nginx-service-mesh.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/nginx-service-mesh"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/nirmata-venafi-adapter.html",
           "matchPath": "/cloud-native-management/meshery/integrations/nirmata-venafi-adapter"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/notary.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/notary"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/nocalhost.html",
           "matchPath": "/cloud-native-management/meshery/integrations/nocalhost"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/notary.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/notary"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/ondat-operator.html",
@@ -3391,36 +3391,32 @@
           "matchPath": "/cloud-native-management/meshery/integrations/open-service-mesh"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/openelb.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/openelb"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/openebs.html",
           "matchPath": "/cloud-native-management/meshery/integrations/openebs"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/openelb.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/openelb"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/openfeature.html",
           "matchPath": "/cloud-native-management/meshery/integrations/openfeature"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/openkruise.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/openkruise"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/opengitops.html",
           "matchPath": "/cloud-native-management/meshery/integrations/opengitops"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/opentelemetry-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/opentelemetry-operator"
+          "path": "/cloud-native-management/meshery/integrations/openkruise.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/openkruise"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/openmetrics.html",
           "matchPath": "/cloud-native-management/meshery/integrations/openmetrics"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/oras.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/oras"
+          "path": "/cloud-native-management/meshery/integrations/opentelemetry-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/opentelemetry-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/parsec.html",
@@ -3435,6 +3431,14 @@
           "matchPath": "/cloud-native-management/meshery/integrations/postgres-database-crunchydata"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/oras.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/oras"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/percona-postgres-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/percona-postgres-operator"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/pgo-crunchydata.html",
           "matchPath": "/cloud-native-management/meshery/integrations/pgo-crunchydata"
         },
@@ -3443,8 +3447,8 @@
           "matchPath": "/cloud-native-management/meshery/integrations/piraeus-datastore"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/percona-postgres-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/percona-postgres-operator"
+          "path": "/cloud-native-management/meshery/integrations/porter.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/porter"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/pixie.html",
@@ -3455,6 +3459,10 @@
           "matchPath": "/cloud-native-management/meshery/integrations/postgres-controller"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/postgres-with-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/postgres-with-operator"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/postgres-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/postgres-operator"
         },
@@ -3463,48 +3471,40 @@
           "matchPath": "/cloud-native-management/meshery/integrations/posthog"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/porter.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/porter"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/postgres-with-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/postgres-with-operator"
+          "path": "/cloud-native-management/meshery/integrations/prometheus.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/prometheus"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/pravega.html",
           "matchPath": "/cloud-native-management/meshery/integrations/pravega"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/prometheus-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/prometheus-operator"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/prometheus.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/prometheus"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/percona-server-for-mysql.html",
           "matchPath": "/cloud-native-management/meshery/integrations/percona-server-for-mysql"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/prometheus-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/prometheus-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/percona-operator-for-mysql.html",
           "matchPath": "/cloud-native-management/meshery/integrations/percona-operator-for-mysql"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/percona-server-for-mongodb.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/percona-server-for-mongodb"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/percona-operator-for-mongodb.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/percona-operator-for-mongodb"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/pulsar-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/pulsar-operator"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/percona-server-for-mongodb.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/percona-server-for-mongodb"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/pulsar-resources-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/pulsar-resources-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/percona-operator-for-mongodb.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/percona-operator-for-mongodb"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/rabbitmq-cluster-operator.html",
@@ -3519,12 +3519,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/redis-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/rook.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/rook"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/rook-ceph-cluster.html",
           "matchPath": "/cloud-native-management/meshery/integrations/rook-ceph-cluster"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/rook.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/rook"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/saferwall.html",
@@ -3539,16 +3539,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/schemahero"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/serverless-workflow.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/serverless-workflow"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/security-role-perm-operator-svc.html",
           "matchPath": "/cloud-native-management/meshery/integrations/security-role-perm-operator-svc"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/skooner.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/skooner"
+          "path": "/cloud-native-management/meshery/integrations/serverless-workflow.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/serverless-workflow"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/sidekick.html",
@@ -3563,12 +3559,8 @@
           "matchPath": "/cloud-native-management/meshery/integrations/bitwarden"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/spire.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/spire"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/stackgres-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/stackgres-operator"
+          "path": "/cloud-native-management/meshery/integrations/skooner.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/skooner"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/solr-operator.html",
@@ -3579,12 +3571,20 @@
           "matchPath": "/cloud-native-management/meshery/integrations/spiffe"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/spire.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/spire"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/strimzi-kafka-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/strimzi-kafka-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/strimzi-registry-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/strimzi-registry-operator"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/stackgres-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/stackgres-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/supabase.html",
@@ -3603,6 +3603,10 @@
           "matchPath": "/cloud-native-management/meshery/integrations/telepresence"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/terraform.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/terraform"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/teller.html",
           "matchPath": "/cloud-native-management/meshery/integrations/teller"
         },
@@ -3611,40 +3615,36 @@
           "matchPath": "/cloud-native-management/meshery/integrations/tenant-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/terraform.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/terraform"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/thanos.html",
           "matchPath": "/cloud-native-management/meshery/integrations/thanos"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/tikv-operator.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/tikv-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/thanos-operator.html",
           "matchPath": "/cloud-native-management/meshery/integrations/thanos-operator"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/tinkerbell.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/tinkerbell"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/tremor.html",
           "matchPath": "/cloud-native-management/meshery/integrations/tremor"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/tikv-operator.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/tikv-operator"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/trickster.html",
           "matchPath": "/cloud-native-management/meshery/integrations/trickster"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/vald.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/vald"
+          "path": "/cloud-native-management/meshery/integrations/tinkerbell.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/tinkerbell"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/tuf.html",
           "matchPath": "/cloud-native-management/meshery/integrations/tuf"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/vald.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/vald"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/vald-helm-operator.html",
@@ -3667,24 +3667,24 @@
           "matchPath": "/cloud-native-management/meshery/integrations/velero"
         },
         {
+          "path": "/cloud-native-management/meshery/integrations/velero-s3-deployment.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/velero-s3-deployment"
+        },
+        {
           "path": "/cloud-native-management/meshery/integrations/vela-workflow.html",
           "matchPath": "/cloud-native-management/meshery/integrations/vela-workflow"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/vineyard.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/vineyard"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/victoria-metrics-k8s-stack.html",
           "matchPath": "/cloud-native-management/meshery/integrations/victoria-metrics-k8s-stack"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/velero-s3-deployment.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/velero-s3-deployment"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/virtual-kubelet.html",
           "matchPath": "/cloud-native-management/meshery/integrations/virtual-kubelet"
-        },
-        {
-          "path": "/cloud-native-management/meshery/integrations/vineyard.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/vineyard"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/vitess.html",
@@ -3699,12 +3699,12 @@
           "matchPath": "/cloud-native-management/meshery/integrations/wasmedge-runtime"
         },
         {
-          "path": "/cloud-native-management/meshery/integrations/whereabouts.html",
-          "matchPath": "/cloud-native-management/meshery/integrations/whereabouts"
-        },
-        {
           "path": "/cloud-native-management/meshery/integrations/wasmcloud.html",
           "matchPath": "/cloud-native-management/meshery/integrations/wasmcloud"
+        },
+        {
+          "path": "/cloud-native-management/meshery/integrations/whereabouts.html",
+          "matchPath": "/cloud-native-management/meshery/integrations/whereabouts"
         },
         {
           "path": "/cloud-native-management/meshery/integrations/windows.html",
@@ -3731,12 +3731,12 @@
           "matchPath": "/programs/hacktoberfest"
         },
         {
-          "path": "/programs/null.html",
-          "matchPath": "/programs/null"
-        },
-        {
           "path": "/programs/lfx.html",
           "matchPath": "/programs/lfx"
+        },
+        {
+          "path": "/programs/null.html",
+          "matchPath": "/programs/null"
         },
         {
           "path": "/programs/mlh.html",
@@ -3767,12 +3767,12 @@
           "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery"
         },
         {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery"
-        },
-        {
           "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg.html",
           "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery"
         },
         {
           "path": "/learn/learning-paths/mastering-meshery/introduction-to-meshery.html",
@@ -3787,36 +3787,16 @@
           "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes"
         },
         {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/conclusion.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/conclusion"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/design-interpretation.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/design-interpretation"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/edge-stack-configuration.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/edge-stack-configuration"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/introduction.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/introduction"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg/postgres/introduction.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg/postgres/introduction"
-        },
-        {
           "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/conclusion.html",
           "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/conclusion"
         },
         {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/deploy.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/deploy"
-        },
-        {
           "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/configure-components.html",
           "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/configure-components"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/deploy.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/deploy"
         },
         {
           "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/group-components.html",
@@ -3833,6 +3813,26 @@
         {
           "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/visualize.html",
           "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery/sql/visualize"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg/postgres/introduction.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/scalable-postgres-with-cloudnativepg/postgres/introduction"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/conclusion.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/conclusion"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/design-interpretation.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/design-interpretation"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/edge-stack-configuration.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/edge-stack-configuration"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/introduction.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/ambassador-edge-stack-api-gateway-with-meshery/edge/introduction"
         },
         {
           "path": "/learn/learning-paths/mastering-meshery/introduction-to-meshery/meshery/configuring-meshery.html",
@@ -3857,34 +3857,6 @@
         {
           "path": "/learn/learning-paths/mastering-meshery/introduction-to-meshery/meshery/reviewing-designs.html",
           "matchPath": "learn/learning-paths/mastering-meshery/introduction-to-meshery/meshery/reviewing-designs"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/conclusion.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/conclusion"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-control-plane.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-control-plane"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-statestore-component.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-statestore-component"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-python-and-nodejs-application.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-python-and-nodejs-application"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-redis.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-redis"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/introduction.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/introduction"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/view-application-logs.html",
-          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/view-application-logs"
         },
         {
           "path": "/learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh/istio/conclusion.html",
@@ -3917,6 +3889,42 @@
         {
           "path": "/learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh/istio/webassembly-and-intelligent-data-planes.html",
           "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh/istio/webassembly-and-intelligent-data-planes"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/circuit-breaking.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/circuit-breaking"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/deploy-an-application.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/deploy-an-application"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/expose-services.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/expose-services"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/fault-injection.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/fault-injection"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/getting-started.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/getting-started"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/mutual-tls.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/mutual-tls"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/observability.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/observability"
+        },
+        {
+          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/routing-and-canary.html",
+          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/routing-and-canary"
         },
         {
           "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/linkerd/conclusion.html",
@@ -3955,40 +3963,32 @@
           "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/linkerd/traffic-splitting"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/circuit-breaking.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/circuit-breaking"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/conclusion.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/conclusion"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-control-plane.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-control-plane"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/deploy-an-application.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/deploy-an-application"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-statestore-component.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-dapr-statestore-component"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/expose-services.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/expose-services"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-python-and-nodejs-application.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-python-and-nodejs-application"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/fault-injection.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/fault-injection"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-redis.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/deploy-redis"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/getting-started.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/getting-started"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/introduction.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/introduction"
         },
         {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/mutual-tls.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/mutual-tls"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/observability.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/observability"
-        },
-        {
-          "path": "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/routing-and-canary.html",
-          "matchPath": "learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/routing-and-canary"
+          "path": "/learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/view-application-logs.html",
+          "matchPath": "learn/learning-paths/mastering-kubernetes-for-engineers/explore-dapr-with-meshery/dapr/view-application-logs"
         },
         {
           "path": "/projects/sistent/components/button",
@@ -4543,18 +4543,6 @@
           "matchPath": "/cloud-native-management/kanvas/collaborate/peer-reviews"
         },
         {
-          "path": "/projects/sistent/identity/color/code.html",
-          "matchPath": "/projects/sistent/identity/color/code"
-        },
-        {
-          "path": "/projects/sistent/identity/color/guidance.html",
-          "matchPath": "/projects/sistent/identity/color/guidance"
-        },
-        {
-          "path": "/projects/sistent/identity/color.html",
-          "matchPath": "/projects/sistent/identity/color"
-        },
-        {
           "path": "/projects/sistent/identity/spacing/code.html",
           "matchPath": "/projects/sistent/identity/spacing/code"
         },
@@ -4565,6 +4553,18 @@
         {
           "path": "/projects/sistent/identity/spacing.html",
           "matchPath": "/projects/sistent/identity/spacing"
+        },
+        {
+          "path": "/projects/sistent/identity/color/code.html",
+          "matchPath": "/projects/sistent/identity/color/code"
+        },
+        {
+          "path": "/projects/sistent/identity/color/guidance.html",
+          "matchPath": "/projects/sistent/identity/color/guidance"
+        },
+        {
+          "path": "/projects/sistent/identity/color.html",
+          "matchPath": "/projects/sistent/identity/color"
         },
         {
           "path": "/projects/sistent/identity/typography/code.html",
