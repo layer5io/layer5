@@ -8,6 +8,28 @@ export const ActionBox = styled(Box)(() => ({
   gap: "1rem"
 }));
 
+// New styled components for documentation tables
+export const DocsTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+`;
+
+export const TableHead = styled.thead`
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 2px solid #ddd;
+  }
+`;
+
+export const TableBody = styled.tbody`
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+  }
+`;
+
 const SistentWrapper = styled.div`
   position: relative;
   .content > a:first-of-type > h2:first-of-type {
@@ -626,6 +648,16 @@ const SistentWrapper = styled.div`
 
   .main-content {
     padding-top: 1rem;
+  }
+
+  /* Guidance list styling */
+  .guidance-list {
+    padding-left: 30px;
+  }
+
+  .guidance-list-item {
+    margin-bottom: 8px;
+    color: ${(props) => props.theme.text};
   }
 
   .image-container {
