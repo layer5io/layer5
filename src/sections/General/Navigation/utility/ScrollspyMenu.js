@@ -66,7 +66,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
       ))}
       {activeState?.subItems && (
         <React.Fragment>
-          <ul className="dropdown" style={{ zIndex: "101" }}>
+          <ul className="dropdown" style={{ zIndex: "1000" }}>
             <div className="nav-grid">
               <div className="hr">
                 <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
