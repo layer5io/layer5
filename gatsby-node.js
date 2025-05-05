@@ -347,39 +347,59 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
-    fromPath: "/products/service-mesh-performance ",
-    toPath: "/projects/cloud-native-performance ",
+    fromPath: "/products/service-mesh-performance",
+    toPath: "/projects/cloud-native-performance",
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
-    fromPath: "/products/service-mesh-performance-specification ",
-    toPath: "/projects/cloud-native-performance ",
+    fromPath: "/products/service-mesh-performance-specification",
+    toPath: "/projects/cloud-native-performance",
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
     fromPath: "/cloud-native-management/meshmap/collaborate",
     toPath: "/cloud-native-management/kanvas/collaborate",
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
     fromPath: "/cloud-native-management/meshery/integrations/kubevault-metrics.html.html",
     toPath: "/cloud-native-management/meshery/integrations/kubevault-metrics",
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
     fromPath: "/blog/tag/meshery-open-source",
     toPath: "/blog/tag/open-source",
     redirectInBrowser: true,
     isPermanent: true,
   });
+
   createRedirect({
     fromPath: "/blog/category/opensource",
     toPath: "/blog/category/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/design",
+    toPath: "/cloud-native-management/kanvas/design",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/collaborate/peer-reviews",
+    toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews",
     redirectInBrowser: true,
     isPermanent: true,
   });
