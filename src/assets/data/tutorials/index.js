@@ -87,7 +87,7 @@ const data = [
             }
         ]
     },
-    
+   
     {
         date: "Jan. 28 2021",
         topic: "Beginner's guide to contributing to Meshery and mesheryctl",
@@ -112,7 +112,7 @@ const data = [
                 link: "/community/members/piyush-singariya",
                 name: "Piyush Singariya",
             }
-        ] 
+        ]
     },
     {
         date: "Apr. 10, 2025",
@@ -127,7 +127,53 @@ const data = [
                 name: "Zihan Kuang"
             }
         ]
-    },     
+    },    
+    {
+        date: "Apr. 17, 2025",
+        topic: "End-to-end Testing in Meshery CLI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1OhUhqIZVPdnjD7eO1ppeXVvTa-P2lIcdCXHncTOX_XE/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=mRQAvR9-P1o"
+        },
+        presenters: [
+            {
+                link: "/community/members/riya-garg",
+                name: "Riya Garg"
+            }
+        ]
+    },
+    {
+        date: "Apr. 24, 2025",
+        topic: "Meshery CI and CD",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1hUDhFeYP7dtCQhOEw2U_wQ-G718Y2e5iU3drMDOdIws/edit?usp=sharing",
+            recording: "https://youtu.be/dlr_nzJV16Q"
+        },
+        presenters: [
+            {
+                link: "/community/members/sangram-rath",
+                name: "Sangram Rath"
+            }
+        ]
+    },
+    {
+        date: "Apr. 30, 2025",
+        topic: "Meshery CLI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1lRop7DAAMUBmuFdzZK25LdQrkLG08eVsXEaDrauP3S8/edit?usp=sharing",
+            recording: "https://youtu.be/aNR_1h1Pisg"
+        },
+        presenters: [
+            {
+                link: "/community/members/aadhitya-amarendiran",
+                name: "Aadhitya Amarendiran"
+            },
+            {
+                link: "/community/members/matthieu-evrin",
+                name: "Matthieu Evrin"
+            },
+        ],
+    },
 ];
 
 export default data;

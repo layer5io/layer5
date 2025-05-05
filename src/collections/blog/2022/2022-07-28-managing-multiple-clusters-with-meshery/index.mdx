@@ -45,11 +45,11 @@ While designing Meshery for the world of many clouds, and many Kubernetes cluste
 
 ## Using multi cluster with Meshery
 
-From a client's perspective, there are two uses of the multi context feature in general. While deploying a <Link to="/meshmap">MeshMap</Link> design or performing any other operation on their cluster(s), selecting any number of Kubernetes contexts will allow them to uniformly and parallely perform the operation across the clusters. And while visualizing the state of their cluster(s), the same context switcher will allow them to filter across the clusters whose view they want to see.
+From a client's perspective, there are two uses of the multi context feature in general. While deploying a <Link to="/kanvas">Kanvas</Link> design or performing any other operation on their cluster(s), selecting any number of Kubernetes contexts will allow them to uniformly and parallely perform the operation across the clusters. And while visualizing the state of their cluster(s), the same context switcher will allow them to filter across the clusters whose view they want to see.
 
 All cluster specific operations are now applied over a number of clusters uniformly. So if you have 10 clusters to manage and 8 of those start with the exact same set of pods, deployments, services, etc then <Link to="/meshery">Meshery</Link> can help you to apply these operations quickly and easily.
 
-It is as simple as selecting the specific cluster(s) from the Kubernetes context switcher in the navbar, and then applying whatever operation you wanted to, whether that be deploying a sample app, a Prometheus daemonset, or a <Link to="/meshmap">MeshMap</Link> design.
+It is as simple as selecting the specific cluster(s) from the Kubernetes context switcher in the navbar, and then applying whatever operation you wanted to, whether that be deploying a sample app, a Prometheus daemonset, or a <Link to="/kanvas">Kanvas</Link> design.
 
 <p align="center">
   <img src={Switcher} alt="context switcher" class="image-center-shadow" />
@@ -63,9 +63,9 @@ Just before applying the operation, you will be prompted with a confirmation mod
 
 <br />
 
-### Using MeshMap visualizer
+### Using Kanvas Operator Mode
 
-You can switch between views of your cluster in visualizer mode while using <Link to="/meshmap">MeshMap</Link>.
+You can switch between views of your cluster in visualizer mode while using <a href="https://kanvas.new">Kanvas</a>.
 
 <p align="center">
   <img

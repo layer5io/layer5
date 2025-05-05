@@ -36,10 +36,10 @@ const Conduct = () => {
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
             <div className="conduct_heading">
-              <h2>Children Under Thirteen</h2>
+              <h2>Children Under Eighteen</h2>
             </div>
             <h5 className="black-text"></h5>
-Layer5 does not knowingly collect, either online or offline, personal information from persons under the age of thirteen. If you are under 18, you may use cloud.layer5.io only with permission of a parent or guardian.
+Layer5 does not knowingly collect, either online or offline, personal information from persons under the age of eighteen. If you are under 18, you may use cloud.layer5.io only with permission of a parent or guardian.
           </Col>
         </Row>
         <Row>
@@ -145,7 +145,7 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
               Email Address: legal@layer5.io<br />
               Telephone number: 512-810-8200
             </p>
-            <p><i>Last Updated: January 4th, 2019</i></p>
+            <p><i>Last Updated: April 15th, 2025</i></p>
           </Col>
         </Row>
       </Container>
