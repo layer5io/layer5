@@ -8,6 +8,8 @@ import PictureSlider from "./picture-slider";
 import JourneySection from "./JourneySection";
 import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
+import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
+import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -257,6 +259,13 @@ const DevrelContent = () => {
               </ul>
             </Col>
           </Row>
+          <Row className="devel">
+            <InlineQuotes
+              person="Nic Jackson"
+              title="Principal Developer Advocate at HashiCorp"
+              quote="As someone who often presents complex cloud native architectures, Meshery's collaborative environment has become my go-to platform for interactive demonstrations and workshops."
+              image={NicJacksonImg}/>
+          </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail">
               <h2 className="heading">
@@ -288,6 +297,13 @@ const DevrelContent = () => {
                 <li><b>Dedicated Workspace:</b> Maintain a centralized environment for all your content and resources.</li>
               </ul>
             </Col>
+          </Row>
+          <Row className="devel">
+            <InlineQuotes
+              person="Ruth Ikegah"
+              title="Open Source Program Manager and GitHub Star"
+              quote="Layer5's platform helps me create engaging content for developers while building my professional brand. The analytics guide my content strategy and the public profile showcases my expertise to the cloud native community."
+              image={RutkIkegahImg}/>
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail recognition-section">
