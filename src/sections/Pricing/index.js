@@ -46,7 +46,6 @@ const Pricing = () => {
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly}/>
       </div>
-      <OpenSourceBanner />
       <Comparison />
       <Reviews />
       <FAQ category={["Pricing", "Billing"]} />
