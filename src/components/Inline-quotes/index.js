@@ -46,8 +46,9 @@ text-align: center;
 }
 img{
     border-radius: 50%;
-    width: 6vw;
-    height: 6vw;
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
 }
 
 .quote-source {
