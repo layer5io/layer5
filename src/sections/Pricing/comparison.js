@@ -7,7 +7,7 @@ import FeatureDetails from "../../components/PlanCard/collapsible-details";
 
 
 const ComparisonWrapper = styled.div`
-margin: 4rem auto;
+margin: 6rem auto;
 @media (min-width: 2048px) {
   margin: 15rem auto;
 }
