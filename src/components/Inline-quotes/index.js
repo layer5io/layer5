@@ -61,7 +61,7 @@ img{
     padding: 0 1rem;
     flex-direction: column;
     @media screen and (max-width: 500px) {
-      text-align: center;
+        text-align: center;
     }
    
     h5 {
