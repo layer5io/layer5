@@ -259,7 +259,7 @@ const DevrelContent = () => {
               </ul>
             </Col>
           </Row>
-          <Row className="devel">
+          <Row>
             <InlineQuotes
               person="Nic Jackson"
               title="Principal Developer Advocate at HashiCorp"
@@ -298,7 +298,7 @@ const DevrelContent = () => {
               </ul>
             </Col>
           </Row>
-          <Row className="devel">
+          <Row>
             <InlineQuotes
               person="Ruth Ikegah"
               title="Open Source Program Manager and GitHub Star"
