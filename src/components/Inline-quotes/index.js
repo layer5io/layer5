@@ -46,9 +46,13 @@ text-align: center;
 }
 img{
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6vw;
+    height: 6vw;
     object-fit: contain;
+    @media screen and (max-width: 1300px) {
+        height: 5rem;
+        width: 5rem;
+    }
 }
 
 .quote-source {
