@@ -5,6 +5,9 @@ const Banner1SectionWrapper = styled.section`
     padding: 7rem 0;
     background-color: ${props => props.theme.body};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    min-height: 600px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
 
     .background-svg {
         overflow: visible;
@@ -13,6 +16,7 @@ const Banner1SectionWrapper = styled.section`
         top: -10%;
         width: 25%;
         min-height: 150%;
+        height: auto; /* Ensure proper scaling */
     }
     p {
         font-size: 21px;
