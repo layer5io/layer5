@@ -22,8 +22,11 @@ const defaultState = {
 
 export const ThemeManagerContext = createContext(defaultState);
 
+// Safe check for browser environment
+const isBrowser = typeof window !== "undefined";
+
 const systemDarkModeSetting = () =>
-  window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  isBrowser && window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 const isDarkModeActive = () => {
   // Assume that dark mode is not active if there's no system dark mode setting available
   return !!systemDarkModeSetting()?.matches;
@@ -36,15 +39,29 @@ export const ThemeManagerProvider = (props) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    if (!isBrowser) return;
+
     const root = window.document.documentElement;
     const initialColorValue = root.style.getPropertyValue(
       "--initial-color-mode"
     );
     setIsDark(initialColorValue === ThemeSetting.DARK);
     setDidLoad(true);
-  }, []);
+
+    // Add listener for system color scheme changes
+    const darkModeMediaQuery = systemDarkModeSetting();
+    if (darkModeMediaQuery && themeSetting === ThemeSetting.SYSTEM) {
+      const handleChange = (e) => {
+        setIsDark(e.matches);
+      };
+      darkModeMediaQuery.addEventListener('change', handleChange);
+      return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+    }
+  }, [themeSetting]);
 
   const toggleDark = (value) => {
+    if (!isBrowser) return;
+
     const newIsDark = value ?? !isDark;
     const theme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
     setIsDark(newIsDark);
@@ -53,6 +70,8 @@ export const ThemeManagerProvider = (props) => {
   };
 
   const changeThemeSetting = (setting) => {
+    if (!isBrowser) return;
+
     switch (setting) {
       case ThemeSetting.SYSTEM: {
         setIsDark(isDarkModeActive());
