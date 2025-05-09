@@ -17,7 +17,7 @@ const Meshmates = () => {
     graphql`query meshmates {
   allMdx(
     sort: {frontmatter: {name: ASC}}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, emeritus: {ne: "yes"}, status: { ne: "Inactive" }}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, status: { ne: "Inactive" }}}
   ) {
     nodes {
       id
@@ -48,6 +48,15 @@ const Meshmates = () => {
 }`
   );
 
+  // Separate active and emeritus MeshMates
+  const activeMeshMates = data.allMdx.nodes.filter(
+    ({ frontmatter }) => frontmatter.emeritus !== "yes"
+  );
+
+  const emeritusMeshMates = data.allMdx.nodes.filter(
+    ({ frontmatter }) => frontmatter.emeritus === "yes"
+  );
+
   return (
     <MeshMatesWrapper>
       <Container>
@@ -72,13 +81,30 @@ const Meshmates = () => {
           <Row style={{
             flexWrap: "wrap"
           }}>
-            {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+            {activeMeshMates.map(({ id, frontmatter, fields }) => (
               <Col $xs={12} $sm={6} $lg={4} key={id}>
                 <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
               </Col>
             ))}
           </Row>
         </div>
+
+        {emeritusMeshMates.length > 0 && (
+          <div className="meshmates-grid emeritus-section">
+            <h1> Emeritus MeshMates </h1>
+            <p> These MeshMates have previously served the Layer5 community with distinction. While they are no longer active in the MeshMate program, their contributions and impact continue to influence our community. </p>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
+              {emeritusMeshMates.map(({ id, frontmatter, fields }) => (
+                <Col $xs={12} $sm={6} $lg={4} key={id}>
+                  <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        )}
+
         <div className="expect">
           <h5> What to Expect </h5>
           <h2> Engaging with a MeshMate</h2>

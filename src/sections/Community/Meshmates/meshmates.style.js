@@ -105,6 +105,20 @@ const MeshMatesWrapper = styled.div`
             }
         }
     }
+
+    .emeritus-section {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid ${props => props.theme.grey212121Toblack};
+        
+        h1 {
+            color: ${props => props.theme.primaryColor};
+        }
+        
+        p {
+            margin-bottom: 2rem;
+        }
+    }
 `;
 
 export default MeshMatesWrapper;
