@@ -17,7 +17,7 @@ const Meshmates = () => {
     graphql`query meshmates {
   allMdx(
     sort: {frontmatter: {name: ASC}}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, status: { ne: "Inactive" }}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
   ) {
     nodes {
       id
