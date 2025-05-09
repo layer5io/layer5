@@ -11,7 +11,7 @@ const isBrowser = typeof window !== "undefined";
 export const StyledThemeProvider = (props) => {
   const { children, darkTheme, lightTheme } = props;
   const { isDark, didLoad } = useContext(ThemeManagerContext);
-  
+
   // For SSR, we need to provide a consistent theme initially
   // This ensures the server and client render the same thing initially
   const currentTheme = isDark ? darkTheme : lightTheme;

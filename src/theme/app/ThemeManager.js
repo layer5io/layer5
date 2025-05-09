@@ -54,8 +54,8 @@ export const ThemeManagerProvider = (props) => {
       const handleChange = (e) => {
         setIsDark(e.matches);
       };
-      darkModeMediaQuery.addEventListener('change', handleChange);
-      return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+      darkModeMediaQuery.addEventListener("change", handleChange);
+      return () => darkModeMediaQuery.removeEventListener("change", handleChange);
     }
   }, [themeSetting]);
 
