@@ -370,13 +370,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   createRedirect({
-    fromPath: "/cloud-native-management/meshery/integrations/kubevault-metrics.html.html",
-    toPath: "/cloud-native-management/meshery/integrations/kubevault-metrics",
-    redirectInBrowser: true,
-    isPermanent: true,
-  });
-
-  createRedirect({
     fromPath: "/blog/tag/meshery-open-source",
     toPath: "/blog/tag/open-source",
     redirectInBrowser: true,
