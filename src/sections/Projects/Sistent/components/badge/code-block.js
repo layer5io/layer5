@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React, { useState } from "react";
 import Code from "../../../../../components/CodeBlock";
 
