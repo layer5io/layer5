@@ -341,6 +341,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/design",
+    toPath: "/cloud-native-management/kanvas/design",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/collaborate/peer-reviews",
+    toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   // Create Pages
   const { createPage } = actions;
 
@@ -931,13 +944,14 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink } = node.fields;
+  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
+      section,
       slug,
       course,
       pageType,

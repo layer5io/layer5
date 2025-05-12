@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
     display: none;
+    min-height: 600px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
+    padding: 7rem 0; /* Add explicit padding to maintain consistent spacing */
+    
     p {
         font-size: 21px;
         font-weight: 300;
