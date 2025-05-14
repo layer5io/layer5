@@ -191,7 +191,13 @@ const BannerSection = () => {
                 any and all your cloud native infra and apps */}
       </div>
       <div className="kanvas-logo">
-        <img src={KanvasIcon} alt="Meshery Logo" />
+        <img
+          src={KanvasIcon}
+          alt="Kanvas Logo"
+          width="224"
+          height="224"
+          style={{ aspectRatio: "1/1", objectFit: "contain" }}
+        />
         {/* <div className="accent-bubble">asdf</div> */}
       </div>
       {/* <h2 className="readyPlayer">Ready, Players?</h2> */}

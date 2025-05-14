@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
@@ -32,13 +31,13 @@ const RelatedPosts = props => {
                   {
                     postType === "blogs" ? relatedPosts.map(({ post }) => {
                       return (
-                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug} style={{ minHeight: "320px" }}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
                     }) : relatedPosts.map((post) => {
                       return (
-                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug} style={{ minHeight: "320px" }}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
