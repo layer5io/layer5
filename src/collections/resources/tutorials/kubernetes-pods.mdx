@@ -1,0 +1,195 @@
+---
+title: Exploring Kubernetes Pods with Meshery
+thumbnail: ../../../assets/images/tutorials/golang-meshery-ctl.webp
+darkthumbnail: ../../../assets/images/tutorials/golang-meshery-ctl.webp
+date: 2021-05-09 10:30:05 -0530
+category: Service Mesh
+tags:
+  - Meshery
+  - Tutorial
+type: Tutorial
+featured: false
+published: true
+resource: true
+---
+
+import image1 from "./kubernetes-pods/2024-02-22_18-20.png";
+import image2 from "./kubernetes-pods/2024-02-22_18-32.png";
+import image3 from "./kubernetes-pods/2024-02-22_18-35.png";
+import image4 from "./kubernetes-pods/2024-02-23_11-54.png";
+import image5 from "./kubernetes-pods/2024-02-23_11-54_1.png";
+import image6 from "./kubernetes-pods/2024-02-23_11-57.png";
+import image7 from "./kubernetes-pods/2024-02-25_18-18.png";
+import image8 from "./kubernetes-pods/2024-02-23_19-52.png";
+import image9 from "./kubernetes-pods/2024-02-23_19-54.png";
+import image10 from "./kubernetes-pods/2024-02-23_19-56.png";
+import image11 from "./kubernetes-pods/2024-02-25_18-22.png";
+import image12 from "./kubernetes-pods/2024-02-25_18-25.png";
+import image13 from "./kubernetes-pods/2024-02-25_17-38.png";
+import image14 from "./kubernetes-pods/2024-02-28_11-05.png";
+import image15 from "./kubernetes-pods/2024-02-28_11-10.png";
+import image16 from "./kubernetes-pods/2024-02-28_11-11.png";
+import image17 from "./kubernetes-pods/2024-02-28_11-33.png";
+import image18 from "./kubernetes-pods/2024-02-28_11-35.png";
+import image19 from "./kubernetes-pods/2024-02-28_11-37.png";
+import image20 from "./kubernetes-pods/2024-02-28_11-45.png";
+import image21 from "./kubernetes-pods/2024-02-28_11-48.png";
+import image22 from "./kubernetes-pods/2024-02-28_11-53.png";
+import image23 from "./kubernetes-pods/2024-02-29_20-37.png";
+
+### Introduction
+
+In this tutorial, we'll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to gain practical experience in deploying, managing, and understanding some of the concepts related to Pods.
+
+> **_NOTE:_** This tutorial demonstrates stand alone pods, i.e. pods not managed through deployments.
+
+### Prerequisites
+
+- Basic understanding of containerization and Kubernetes concepts.
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+
+### Lab Scenario
+
+Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.
+
+### Objective
+
+Learn how to create, manage, and explore _Kubernetes Pods and Services_ within the context of a microservices architecture.
+
+### Steps
+
+#### Access Meshery Playground
+
+- Log in to the [Meshery Playground](https://play.meshery.io) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
+- Click **Explore** in the Cloud Native Playground tile to navigate to _Kanvas_.
+
+> **_NOTE:_** Kanvas is still in beta.
+
+#### Create a simple stand-alone Pod
+
+1. In the Kanvas screen, rename the design from _Untitled Design_ to a name of choice. This helps in identifying the design later easily.
+2. Click **Components** tab.
+3. Search for **Pod** in the list of components.
+   <img src={image1} alt="" />
+4. Scroll down, _select and drag_ the **Pod** component from the search results to the design canvas on the right.
+   <img src={image2} alt="" />
+5. You should now have a pod in the design canvas for further configuration. It has a default name assigned to it.
+   Click the pod component to load the configuration modal.
+6. Rename the pod, if necessary.
+   <img src={image3} alt="" />
+
+#### Add a container to the Pod
+
+The pod at this stage does not have a container, so we will add one. This is similar to defining the containers in the _spec:_ section of a YAML file. For this hands-on we will make some basic and necessary configurations only.
+
+7. Scroll down within the Pod configuration modal to the Containers section. Click **+** to add a container.
+   <img src={image4} alt="" />
+8. Expand **Containers-0**.
+   <img src={image5} alt="" />
+9. Next, fill out some of the required container specifications. Start by entering the container image, we will use _nginx:latest_ for this exercise.
+10. Give the container a name.
+    <img src={image6} alt="" />
+11. Additionally, we will also give it a label. This will server many advantages later in this exercise. To do so, click the label icon on the modal.
+12. Click **+** next to _Labels_.
+13. Set any label of choice. Preferably, give a unique label since the playground is a shared environment.
+    <img src={image7} alt="" />
+14. Click outside to close the modal.
+
+#### Validating and Deploying the Pod
+
+The next step in this process is to validate the design, after which we can deploy it.
+
+To do this, click **Validate** on the top.
+
+<img src={image8} alt="" />
+
+This should show a pop-up with details such as the number of components, annotations and errors (if any).
+
+<img src={image9} alt="" />
+
+Ensure there are no errors before deploying. To deploy, click the **Deploy** (1) tab in the pop-up modal and then click **Deploy** (2) again.
+
+<img src={image10} alt="" />
+
+You should see a few alerts on the bottom right about the deployment.
+
+#### Visualizing the Pod
+
+To view the resources deployed we will use the **Visualize** section of the _Kanvas_. A view is created with necessary filters to show the relevant resources.
+
+1.  Click **Visualize** to begin.
+2.  Give the view a name (rename).
+3.  Click the filter icon.
+4.  Choose appropriate filters, for this hands-on choose the label that was set earlier during the pod creation. This helps in showing limited resources in the view.
+    <img src={image11} alt="" />
+
+Click the filter icon again to close. This should show a filtered view with only your resources something similar to the screenshot below:
+
+<img src={image12} alt="" />
+
+#### Pod state and information
+
+Select the **Details** tab and select the pod from the view to view details about the pod.
+The details tab shows the following:
+
+- Pod state, a green check means **running**.
+- The namespace where the pod is running.
+- Image details of the container in the pod like image tag and name.
+- It also shows the number of restarts and uptime.
+
+<img src={image13} alt="" />
+
+#### Connecting to the Pods / containers
+
+Meshery Playground provides terminal capabilities to connect to the container(s) and stream logs. The following steps demonstrate this.
+
+1.  Select the **Pod** (or container). If you have multiple containers in a pod, select a container.
+2.  Select the **Actions** tab to the right.
+3.  Click **Open Interactive Terminal**.
+    <img src={image14} alt="" />
+    This displays the terminal on the screen.
+    <img src={image15} alt="" />
+4.  To view streaming logs, click **Stream Container Logs** to the right and an additional logs view is added to the terminal window.
+    <img src={image16} alt="" />
+
+#### Exposing a Pod with a Service
+
+> **_NOTE:_** As of this writing, Meshery Playground supports only NodePort at the moment.
+
+1.  Go back to the _Design_ view.
+2.  From **Components** search for _service_ and the drag the service component to the design canvas.
+3.  Click the _service_ component to load the configuration modal.
+    <img src={image17} alt="" />
+4.  Rename it if required.
+5.  Change _Type_ to **NodePort** for this tutorial.
+    <img src={image18} alt="" />
+6.  Click **+** to add a Port.
+7.  Expand the **Ports-0** service port to make changes.
+    <img src={image19} alt="" />
+8.  For this tutorial we set the **Target Port** value to 80.
+9.  We also set the **Port** value to 80.
+    <img src={image20} alt="" />
+10. Click **+** next to Selector and add the key value pair **app:9870**. This is the same pair that is used as label in the Pod.
+    <img src={image21} alt="" />
+11. Finally label this service too, with the same key value pair. This also helps in filtering resources specific to us in the Visualize screen.
+    <img src={image22} alt="" />
+12. Move your mouse over the service component until you see the green dots on all four sides. Move your mouse over one of the green dots to reveal an arrow, then click the arrow. Select **Network** option, and then move your mouse to the pod to create the _relationship_. It should look similar to the screenshot below:
+    <img src={image23} alt="" />
+13. Validate the design. Click **Validate** from the top menu to do so.
+
+#### Updating the deployment
+
+In order to apply the updated design (which contains a service now), we must undeploy and deploy the design.
+
+- Select **Undeploy** and click **Undeploy** again.
+- To deploy the updated components, select **Deploy** and click **Deploy**.
+
+#### Deleting and Recreating Pods
+
+To delete the resources such as Pods, use the **Undeploy** option from the _Design_ view.
+
+To recreate, use the **Deploy** option.
+
+### Conclusion
+
+Congratulations! You've successfully completed the lab on exploring Kubernetes Pods using Meshery Playground. This hands-on experience should have provided valuable insights into the deployment, management, and interaction with Pods in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills.
