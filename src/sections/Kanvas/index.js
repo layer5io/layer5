@@ -58,6 +58,9 @@ const Kanvas = (props) => {
                       src={designerImage}
                       alt="Designer Mode"
                       className="designer-img modes-image"
+                      width="100%"
+                      height="auto"
+                      style={{ aspectRatio: "16/9" }}
                     />
                   ),
                 },
@@ -70,6 +73,9 @@ const Kanvas = (props) => {
                       src={visualizerImage}
                       alt="Operator Mode"
                       className="modes-image"
+                      width="100%"
+                      height="auto"
+                      style={{ aspectRatio: "16/9" }}
                     />
                   ),
                 },
@@ -152,7 +158,14 @@ const Kanvas = (props) => {
                   description: "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
                   imgContent: (
                     <>
-                      <img id="avatar-1" src={Avatar1} alt="" />
+                      <img
+                        id="avatar-1"
+                        src={Avatar1}
+                        alt=""
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
@@ -164,34 +177,55 @@ const Kanvas = (props) => {
                 // },
                 {
                   title: "Create. Iterate. Repeat.",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-2" src={Avatar2} alt="avatar-2" />
+                      <img
+                        id="avatar-2"
+                        src={Avatar2}
+                        alt="avatar-2"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab2 id="collaborate-image2" alt="collaborate-image2" />
                     </>
                   )
                 },
                 {
                   title: "Where your teams share the same language",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab3 id="collaborate-image3" alt="collaborate-image3" />
                     </>
                   )
                 },
                 // {
                 //   title: "Where your teams share the same language",
-                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely."
                 // },
                 {
                   title: "Inclusive collaboration from start to finish",
                   description: "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
                   imgContent: (
                     <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab4 id="collaborate-image4" alt="collaborate-image4" />
                     </>
                   )
