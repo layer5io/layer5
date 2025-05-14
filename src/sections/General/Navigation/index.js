@@ -328,7 +328,7 @@ const Navigation = () => {
                             );
                           })}
                       </ul>
-                      {menu.actionItems?.map((actionItem, i) =>
+                      {menu.name != "Solutions" && menu.actionItems?.map((actionItem, i) =>
                         actionItem.actionName === "Join the discussion" ? (
                           <a
                             key={i}
