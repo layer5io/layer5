@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 
 const BannerSectionWrapper = styled.section`
+    position: relative; /* Add position for better layout control */
+    min-height: 600px; /* Add explicit min-height */
+    width: 100%; /* Add explicit width */
+    
     .row {
         margin: 0px;
     }
@@ -10,6 +14,7 @@ const BannerSectionWrapper = styled.section`
         padding-right: 0px;
         flex: 0 0 51%;
         max-width: 51%;
+        min-height: 500px; /* Add min-height to prevent shift */
     }
     .left {
         display: flex;
