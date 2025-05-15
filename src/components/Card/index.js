@@ -13,11 +13,11 @@ const Card = ({ frontmatter, fields }) => {
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
-        <div className="post-thumb-block" style={{ aspectRatio: "16/9", minHeight: "200px" }}>
+        <div className="post-thumb-block">
           <Image
             {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
               ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}
           />
         </div>
