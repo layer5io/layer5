@@ -13,7 +13,7 @@ const LearnGridPage = () => {
 };
 export default LearnGridPage;
 export const Head = () => {
-  return  <SEO title="Learn Service Mesh"
+  return  <SEO title="Learn Cloud Native"
     description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Open Service Mesh, Traefik Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
     image="/images/workshops.webp" />;
 };

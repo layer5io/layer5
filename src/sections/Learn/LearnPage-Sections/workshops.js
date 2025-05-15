@@ -193,7 +193,7 @@ const WorkshopsSection = () => {
     graphql`query workshopsList {
   allMdx(
     sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+    filter: {fields: {collection: {eq: "cloud-native-workshops"}}}
   ) {
     nodes {
       frontmatter {
@@ -241,9 +241,9 @@ const WorkshopsSection = () => {
       <div className="workshop-section-wrapper">
         <Col $xs={12} $md={3} className="workshops-col">
           <h1>Workshops</h1>
-          <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
+          <p>Register for the cloud native workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button $primary title="Checkout all workshops" $url="/learn/service-mesh-workshops" />
+            <Button $primary title="Checkout all workshops" $url="/learn/cloud-native-workshops" />
           </div>
         </Col>
         <Col $xs={12} $md={9} className="workshops-col">

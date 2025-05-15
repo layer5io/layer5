@@ -314,7 +314,7 @@ const Data = {
         // },
         {
           name: "Workshops",
-          path: "/learn/service-mesh-workshops",
+          path: "/learn/cloud-native-workshops",
         },
         {
           name: "Learning Paths",
