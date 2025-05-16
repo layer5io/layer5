@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import KanvasIcon from "./kanvas-icon.svg";
+import KanvasBtn from "./kanvas-buttons";
 
 const BannerSectionWrapper = styled.div`
 
@@ -172,6 +173,22 @@ const BannerSectionWrapper = styled.div`
 
 `;
 
+const KanvasButtonsWrapper = styled.div`
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        align-items: stretch;
+    }
+`;
+
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
@@ -184,25 +201,14 @@ const BannerSection = () => {
                     Application reigns King. Context is his Queen.
                 </h3> */}
         <p>
-                    Friends don't let friends GitOps alone.
+          Friends don't let friends GitOps alone.
         </p>
-        {/* <h4>Discover and Visualize</h4>
-                <h4><span>Collaborate and Design</span></h4>
-                any and all your cloud native infra and apps */}
-      </div>
-      <div className="kanvas-logo">
-        <img
-          src={KanvasIcon}
-          alt="Kanvas Logo"
-          width="224"
-          height="224"
-          style={{ aspectRatio: "1/1", objectFit: "contain" }}
-        />
-        {/* <div className="accent-bubble">asdf</div> */}
+        <KanvasButtonsWrapper>
+          <KanvasBtn />
+        </KanvasButtonsWrapper>
       </div>
       {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
-
   );
 };
 
