@@ -188,6 +188,20 @@ const data = [
             },
         ],
     },
+    {
+        date: "May 15th, 2025",
+        topic: "Meshery UI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1MRDs28YmzrO1t5QNz7WTp50ukCz6fB2p3awZz63HJmA/edit?slide=id.g34811bf5022_0_3#slide=id.g34811bf5022_0_3",
+            recording: "https://www.youtube.com/watch?v=ia7kvnHCurs"
+        },
+        presenters: [
+            {
+                link: "/community/members/amit-amrutiya",
+                name: "Amit Amrutiya"
+            },
+        ],
+    },
 ];
 
 export default data;
