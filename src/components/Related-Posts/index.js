@@ -31,13 +31,13 @@ const RelatedPosts = props => {
                   {
                     postType === "blogs" ? relatedPosts.map(({ post }) => {
                       return (
-                        <Col className="cardCol" $xs={12} key={post.fields.slug} style={{ minHeight: "320px" }}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
                     }) : relatedPosts.map((post) => {
                       return (
-                        <Col className="cardCol" $xs={12} key={post.fields.slug} style={{ minHeight: "320px" }}>
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );

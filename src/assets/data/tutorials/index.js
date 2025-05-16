@@ -174,6 +174,34 @@ const data = [
             },
         ],
     },
+    {
+        date: "May 8th, 2025",
+        topic: "End-to-end Testing in Meshery UI using Playwright",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1Vcq48Y0nLZsrKKFNYBJ5fm9bIcb2m6ZnYxq2azn6nlM/edit?slide=id.g35936fe4c88_0_0#slide=id.g35936fe4c88_0_0",
+            recording: "https://www.youtube.com/watch?v=9d0n37eTSkI"
+        },
+        presenters: [
+            {
+                link: "/community/members/ian-whitney",
+                name: "Ian Whitney"
+            },
+        ],
+    },
+    {
+        date: "May 15th, 2025",
+        topic: "Meshery UI",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1MRDs28YmzrO1t5QNz7WTp50ukCz6fB2p3awZz63HJmA/edit?slide=id.g34811bf5022_0_3#slide=id.g34811bf5022_0_3",
+            recording: "https://www.youtube.com/watch?v=ia7kvnHCurs"
+        },
+        presenters: [
+            {
+                link: "/community/members/amit-amrutiya",
+                name: "Amit Amrutiya"
+            },
+        ],
+    },
 ];
 
 export default data;
