@@ -174,6 +174,20 @@ const data = [
             },
         ],
     },
+    {
+        date: "May 8th, 2025",
+        topic: "End-to-end Testing in Meshery UI using Playwright",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1Vcq48Y0nLZsrKKFNYBJ5fm9bIcb2m6ZnYxq2azn6nlM/edit?slide=id.g35936fe4c88_0_0#slide=id.g35936fe4c88_0_0",
+            recording: "https://www.youtube.com/watch?v=9d0n37eTSkI"
+        },
+        presenters: [
+            {
+                link: "/community/members/ian-whitney",
+                name: "Ian Whitney"
+            },
+        ],
+    },
 ];
 
 export default data;
