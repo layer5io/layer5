@@ -32,4 +32,5 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"C019426UBNY\",\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\":new: Good first issue up for grabs: <${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>\"}}'
+          args: '{\"channel\":\"C019426UBNY\",\"type\":\"section\",\"text\":\":new: Good first issue up for grabs: ${{ github.event.issue.title }} - ${{ github.event.issue.html_url }} \"}'
+                                                                            
