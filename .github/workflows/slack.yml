@@ -29,4 +29,8 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"C019426UBNY\",\"text\":\"A good first issue label was just added to ${{github.event.issue.html_url}}.\"}'
+          args: |
+            {
+            "channel": "C019426UBNY",
+            "text": "A new, good first issue is up for grabs: [${{github.event.issue.title}}](${{github.event.issue.html_url}})"
+            }
