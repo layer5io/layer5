@@ -6,7 +6,7 @@ import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/images/socialIcons/twitter.svg";
 import github_icon from "../../assets/images/socialIcons/github.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
-import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg"
+import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import linkedin_icon from "../../assets/images/socialIcons/linkedin-light.svg";
 import SocialLinksWrapper from "./sociallinkscolor.style";
