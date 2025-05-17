@@ -5,7 +5,7 @@ import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
 import github_icon from "../../assets/images/socialIcons/github_white_trim.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
-import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg"
+import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import SocialIconWrapper from "./socialicon.style";
 
