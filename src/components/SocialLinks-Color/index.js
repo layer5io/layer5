@@ -6,6 +6,7 @@ import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/images/socialIcons/twitter.svg";
 import github_icon from "../../assets/images/socialIcons/github.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
+import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg"
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import linkedin_icon from "../../assets/images/socialIcons/linkedin-light.svg";
 import SocialLinksWrapper from "./sociallinkscolor.style";
@@ -68,6 +69,19 @@ const SocialLinksColor = () => {
               height="30px"
               src={youtube_icon}
               alt="youtube"
+            />
+          </a>
+          <a
+            className="bluesky_icon"
+            href="https://bsky.app/profile/layer5.bsky.social"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="bluesky"
+              height="30px"
+              src={bluesky_icon}
+              alt="bluesky"
             />
           </a>
           <a

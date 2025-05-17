@@ -5,6 +5,7 @@ import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
 import github_icon from "../../assets/images/socialIcons/github_white_trim.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
+import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg"
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import SocialIconWrapper from "./socialicon.style";
 
@@ -48,6 +49,14 @@ const SocialLinks = () => {
             rel="noreferrer"
           >
             <img className="youtube" height="40 px" src={youtube_icon} alt="youtube" />
+          </a>
+          <a
+            className="bluesky_icon"
+            href="https://bsky.app/profile/layer5.bsky.social"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="bluesky" height="40px" src={bluesky_icon} alt="bluesky" />
           </a>
           <a
             className="docker_icon"
