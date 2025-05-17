@@ -11,65 +11,25 @@ jobs:
     if: github.event_name == 'watch'
     name: Notify Slack on star
     runs-on: ubuntu-latest
-    env:
-      SLACK_CHANNEL_STARS: "CSK7N9TGX" # Define your star notification channel ID here
     steps:
       - name: Get current star count
         run: |
-          # Fetches the current number of stars for the repository
-          # GITHUB_TOKEN is implicitly available to access public repo data;
-          # for private repos, you might need to explicitly pass a token with read access.
-          REPO_INFO_URL="https://api.github.com/repos/${{ github.repository }}"
-          STARS_COUNT=$(curl --silent -H "Accept: application/vnd.github.v3+json" "${REPO_INFO_URL}" | jq '.stargazers_count')
-          echo "STARS=${STARS_COUNT}" >> $GITHUB_ENV
-        shell: bash
-
+          echo "STARS=$(curl --silent 'https://api.github.com/repos/${{ github.repository }}' -H 'Accept: application/vnd.github.preview' | jq '.stargazers_count')" >> $GITHUB_ENV
       - name: Notify Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: |
-            {
-              "channel": "${{ env.SLACK_CHANNEL_STARS }}",
-              "text": "${{ github.actor }} just starred ${{ github.repository }}! (<https://github.com/${{ github.repository }}/stargazers|See stargazers>) Total ⭐️: ${{ env.STARS }}"
-            }
+          args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"${{ github.actor }} just starred ${{ github.repository }}! (https://github.com/${{ github.repository }}/stargazers) Total ⭐️: ${{ env.STARS }}\"}'
 
   good-first-issue-notify:
-    # Condition: Runs if the event is 'issues' AND the label added is 'good first issue' OR 'first-timers-only'
     if: github.event_name == 'issues' && (github.event.label.name == 'good first issue' || github.event.label.name == 'first-timers-only')
     name: Notify Slack for new good-first-issue
     runs-on: ubuntu-latest
-    env:
-      SLACK_CHANNEL_ISSUES: "C019426UBNY" # Define your 'good first issue' channel ID here
     steps:
       - name: Notify Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          # This uses Slack's Block Kit for a richer message.
-          # 'pullreminders/slack-action' passes these args directly to Slack's chat.postMessage API.
-          args: |
-            {
-              "channel": "${{ env.SLACK_CHANNEL_ISSUES }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": ":new: New `good first issue` in *${{ github.repository }}*:\n<${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>"
-                  }
-                },
-                {
-                  "type": "context",
-                  "elements": [
-                    {
-                        "type": "mrkdwn",
-                        "text": "Labels: `${{ join(github.event.issue.labels.*.name, '`, `') }}`"
-                    }
-                  ]
-                }
-              ],
-              "text": ":new: New good first issue in ${{ github.repository }}: ${{ github.event.issue.title }} - ${{ github.event.issue.html_url }}"
-            }
+          args: '{\"channel\":\"C019426UBNY\",\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\":new: Good first issue up for grabs: <${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>\"}}'
