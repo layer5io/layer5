@@ -51,7 +51,7 @@ export const ResourcePageWrapper = styled.div`
         }
       }
       .page-btn {
-        background: ${props => props.theme.white};
+        background: ${props => props.theme.grey212121ToWhite};
         border: solid 2px;
         border-color: ${props => props.theme.secondaryColor};
       }
