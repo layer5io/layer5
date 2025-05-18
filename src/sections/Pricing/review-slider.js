@@ -18,6 +18,7 @@ import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.png";
 import Louie from "./reviews/louie-corbo.jpeg";
+import Abdechakour from "./reviews/abdechakour-h.jpg"
 
 const settings = {
   dots: false,
@@ -210,6 +211,12 @@ const Reviews = () => {
             title="Lead Software Engineer at Fidelity Investments"
             image={Anusha}
           />
+          <Customers
+            type="2"
+            quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
+            person="Abdechakour Hrouchan"
+            title="Software Engineer at Atlas Cloud Services"
+            image={Abdechakour}
         </Slider>
       </div>
     </ReviewsWrapper>
