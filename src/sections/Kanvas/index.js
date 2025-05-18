@@ -36,6 +36,7 @@ import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
+import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpg";
 
 
 const Kanvas = (props) => {
@@ -285,6 +286,11 @@ const Kanvas = (props) => {
           {/* <MesheryAction /> */}
           <KanvasBtn style={{ marginBottom: "2rem" }} />
           <Platform />
+          <InlineQuotes
+            quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
+            person="Abdechakour Hrouchan"
+            title="Software Engineer at Atlas Cloud Services"
+            image={Abdechakour} /> 
         </Container>
       </div>
       <>
