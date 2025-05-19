@@ -207,7 +207,7 @@ const Navigation = () => {
           // unauthorized token
         } else {
           // only for debugging purposes, no need to log
-         //  console.error("There was a problem with your fetch operation:", error);
+          //  console.error("There was a problem with your fetch operation:", error);
         }
       }
     };
