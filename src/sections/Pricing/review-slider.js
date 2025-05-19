@@ -217,6 +217,7 @@ const Reviews = () => {
             person="Abdechakour Hrouchan"
             title="Software Engineer at Atlas Cloud Services"
             image={Abdechakour}
+          />
         </Slider>
       </div>
     </ReviewsWrapper>
