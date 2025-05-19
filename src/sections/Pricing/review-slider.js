@@ -18,7 +18,7 @@ import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.png";
 import Louie from "./reviews/louie-corbo.jpeg";
-import Abdechakour from "./reviews/abdechakour-h.jpg"
+import Abdechakour from "./reviews/abdechakour-h.jpeg";
 
 const settings = {
   dots: false,
