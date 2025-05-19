@@ -2,10 +2,8 @@ import React from "react";
 import { SistentThemeProvider } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
-import { useLocation } from "@reach/router";
+
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { navigate } from "gatsby";
-import TabButton from "../../../../../reusecore/Button";
 import {
   FormControl,
   InputLabel,
@@ -13,6 +11,8 @@ import {
   Select,
   OutlinedInput,
 } from "@mui/material";
+import SectionNav from "./section-nav";
+import Header from "./header";
 
 const SistentSelect = () => {
   const { isDark } = useStyledDarkMode();
@@ -21,46 +21,12 @@ const SistentSelect = () => {
     let agesList = event.target.value;
     setMultipleAges(agesList);
   };
-  const location = useLocation();
 
   return (
     <SistentLayout title="Select">
       <div className="content">
-        <a id="Identity">
-          <h2>Select</h2>
-        </a>
-        <p>
-        Select component is a dropdown menu for selecting an option from a list.
-        </p>
-        <div className="filterBtns">
-          <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/select"
-                ? "active"
-                : ""
-            }
-            onClick={() => navigate("/projects/sistent/components/select")}
-            title="Overview"
-          />
-          <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/select/guidance"
-                ? "active"
-                : ""
-            }
-            onClick={() => navigate("/projects/sistent/components/select/guidance")}
-            title="Guidance"
-          />
-          <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/select/code"
-                ? "active"
-                : ""
-            }
-            onClick={() => navigate("/projects/sistent/components/select/code")}
-            title="Code"
-          />
-        </div>
+        <Header />
+        <SectionNav />
         <div className="main-content">
           <p>
             The Select component is a versatile and customizable element
