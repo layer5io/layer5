@@ -153,7 +153,7 @@ npm install /home/five/code/sistent`}
             </p>
 
             <p>
-              To contribute to Layer5 projects' UI using Sistent e.g.{" "}
+              To contribute to projects using Sistent e.g.{" "}
               <a href="https://github.com/meshery/meshery/issues?q=is%3Aissue%20state%3Aopen%20label%3Acomponent%2Fui">
                 meshery-ui
               </a>{" "}
