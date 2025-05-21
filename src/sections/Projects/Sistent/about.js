@@ -149,8 +149,9 @@ npm install /home/five/code/sistent`}
             <p>
               This will remove the local Sistent package from your project. You
               will have to install the standard package again after running this
-              command.
+              command:
             </p>
+            <Code codeString="npm install @layer5/sistent" />
 
             <p>
               To contribute to projects using Sistent e.g.{" "}
