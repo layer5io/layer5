@@ -277,7 +277,7 @@ const ProductWrapper = styled.section`
     }
 
     .card_head {
-      align-items: flex-start;
+      align-items: center;
     }
     .product_cards {
       display: flex;
