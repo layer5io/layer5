@@ -103,75 +103,113 @@ const SistentAbout = () => {
             </div>
 
             <a id="Using local Sistent">
-              <h2>Using your local Sistent Fork in a Project</h2>
+              <h2>Using your Local Sistent Fork in a Project</h2>
             </a>
+            <br />
             <ol>
               <li>
-                <b>Install your local Sistent package in the project</b>
-                <Code codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
-                <p>Example:</p>
-                <Code
-                  codeString={`# relative path
-npm install ../../sistent
+                <h3>Method 1: File Installation</h3>
+              </li>
+              <ol>
+                <li>
+                  <b>Install your local Sistent package in the project</b>
+                  <Code codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
+                  <p>Example:</p>
+                  <Code
+                    codeString={`# relative path\nnpm install ../../sistent\n\n# absolute path\nnpm install /home/five/code/sistent`}
+                  />
+                  <p>This will update your Sistent dependency to:</p>
+                  <Code codeString={"\"@layer5/sistent\" : \"file:../../sistent\""} />
+                </li>
+                <li>
+                  <b>Build your local Sistent fork</b>
+                  <p>
+                    After making changes to your fork, run this command in your local Sistent package.
+                  </p>
+                  <Code codeString="make build" />
+                </li>
+                <li>
+                  <b>
+                    Run the build command in the project where your local Sistent fork is installed
+                  </b>
+                  <p>Example for Meshery UI:</p>
+                  <Code codeString="make ui-build" />
+                </li>
+              </ol>
+              <p>
+                Now your project should reflect changes from your local Sistent fork.
+              </p>
+              <p>
+                If you want to remove the local Sistent fork from your project, run:
+              </p>
+              <Code codeString="npm uninstall @layer5/sistent" />
+              <p>
+                This will remove the local Sistent package from your project. You will have to install the standard package again after running this command using <b>npm install @layer5/sistent</b>.
+              </p>
 
-# absolute path
-npm install /home/five/code/sistent`}
-                />
-                <p>This will update your Sistent dependency to:</p>
-                <Code codeString={"\"@layer5/sistent\" : \"file:../../sistent\""} />
-              </li>
+
               <li>
-                <b>Build your local Sistent fork</b>
+                <h3>Method 2: Using npm link</h3>
                 <p>
-                  After making changes to your fork, run this command in your
-                  local Sistent package.
+                  This method allows you to link your local Sistent fork globally for easier development. Follow these steps:
                 </p>
-                <Code codeString="make build" />
-              </li>
-              <li>
-                <b>
-                  Run the build command in the project where your local Sistent
-                  fork is installed
-                </b>
-                <p>Example for Meshery UI:</p>
-                <Code codeString="make ui-build" />
+                <ol>
+                  <li>
+                    <b>Link your local Sistent package globally</b>
+                    <p>In your local Sistent repo, run the following command:</p>
+                    <Code codeString={`cd <path-to-sistent-on-local-machine>\nnpm link`} />
+                    <p>This creates a global symlink for your local Sistent package.</p>
+                  </li>
+                  <li>
+                    <b>Link Sistent in your project</b>
+                    <p>In the project where you want to use your local Sistent fork (e.g., Meshery UI), run:</p>
+                    <Code codeString="npm link @layer5/sistent" />
+                    <p>This will create a symlink in your project's node_modules, pointing to your local Sistent package.</p>
+                  </li>
+                  <li>
+                    <b>Build your local Sistent fork</b>
+                    <p>After making changes to your fork, run this command in your local Sistent package.</p>
+                    <Code codeString="make build" />
+                  </li>
+                  <li>
+                    <b>Run the build command in the project where your local Sistent fork is installed</b>
+                    <p>Example for Meshery-UI:</p>
+                    <Code codeString="make ui-build" />
+                  </li>
+                  <li>
+                    <p>
+                      To revert back to the official version of Sistent, run:
+                    </p>
+                    <Code codeString="npm unlink @layer5/sistent" />
+                    <p>
+                      Then reinstall the official version, using:
+                    </p>
+                    <Code codeString="npm install @layer5/sistent" />
+                  </li>
+                </ol>
               </li>
             </ol>
-            <p>
-              Now, your project should reflect changes from your local Sistent
-              fork.
-            </p>
-            <p>
-              If you want to remove the local Sistent fork from your project,
-              run:
-            </p>
-            <Code codeString="npm uninstall @layer5/sistent" />
-            <p>
-              This will remove the local Sistent package from your project. You
-              will have to install the standard package again after running this
-              command:
-            </p>
-            <Code codeString="npm install @layer5/sistent" />
+
+
 
             <p>
               To contribute to projects using Sistent e.g.{" "}
               <a href="https://github.com/meshery/meshery/issues?q=is%3Aissue%20state%3Aopen%20label%3Acomponent%2Fui">
                 meshery-ui
               </a>{" "}
-              and others, You can refer to{" "}
+              and others, you can refer to the {" "}
               <a href="https://github.com/layer5io/sistent?tab=readme-ov-file#installation">
-                sistent set-up guide
+                Sistent set-up guide
               </a>, {" "}
               <a href="https://discuss.layer5.io/t/hands-on-training-session-migrating-components-to-mui-v5-and-sistent/6589">Hands-on Training Session: Migrating Components to MUI v5 and Sistent</a>, {" "}
               <a href="https://www.youtube.com/live/lsw9KA__iu4?si=o8gpZdSHcqO2OKxE">
-                Training: contributing to Sistent
+                Training: contributing to Sistent,
               </a>{" "}
               and{" "}
               <a href="https://www.youtube.com/live/yiXkxbibLUU?si=Dybj5qr0VLhLWEpl">
                 Websites call
               </a>{" "}
-              where experienced contributors have taught how to use Sistent in
-              various Layer5 projects.
+              , where experienced contributors demonstrate how to use Sistent in various projects.
             </p>
           </div>
           <SistentPagination />
