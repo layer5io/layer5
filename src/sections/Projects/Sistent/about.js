@@ -138,7 +138,7 @@ npm install /home/five/code/sistent`}
               </li>
             </ol>
             <p>
-              Now your project should reflect changes from your local Sistent
+              Now, your project should reflect changes from your local Sistent
               fork.
             </p>
             <p>
