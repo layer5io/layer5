@@ -137,15 +137,16 @@ const SistentAbout = () => {
                 </li>
               </ol>
               <p>
-                Now your project should reflect changes from your local Sistent fork.
+                Now, your project should reflect changes from your local Sistent fork.
               </p>
               <p>
                 If you want to remove the local Sistent fork from your project, run:
               </p>
               <Code codeString="npm uninstall @layer5/sistent" />
               <p>
-                This will remove the local Sistent package from your project. You will have to install the standard package again after running this command using <b>npm install @layer5/sistent</b>.
+                This will remove the local Sistent package from your project. You will have to install the standard package again after running this command:
               </p>
+              <Code codeString="npm install @layer5/sistent" />
 
 
               <li>
@@ -158,11 +159,10 @@ const SistentAbout = () => {
                     <b>Link your local Sistent package globally</b>
                     <p>In your local Sistent repo, run the following command:</p>
                     <Code codeString={`cd <path-to-sistent-on-local-machine>\nnpm link`} />
-                    <p>This creates a global symlink for your local Sistent package.</p>
                   </li>
                   <li>
                     <b>Link Sistent in your project</b>
-                    <p>In the project where you want to use your local Sistent fork (e.g., Meshery UI), run:</p>
+                    <p>In the project where you want to use your local Sistent fork, run:</p>
                     <Code codeString="npm link @layer5/sistent" />
                     <p>This will create a symlink in your project's node_modules, pointing to your local Sistent package.</p>
                   </li>
@@ -178,19 +178,27 @@ const SistentAbout = () => {
                   </li>
                   <li>
                     <p>
+                      Verify that your local fork is correctly linked by running:
+                    </p>
+                    <Code codeString={`npm ls -g\n\n# expected output:\n├── @layer5/sistent@0.14.11 -> ./../../../../<path-to-local-sistent-fork>`}/>
+                    <p>
+                      You can also try this command to verify that your fork is correctly linked:
+                    </p>
+                    <Code codeString={`ls -l node_modules/@layer5/sistent\n\n# expected output:\nnode_modules/@layer5/sistent -> ../../../../../sistent`} />
+                  </li>
+                  <li>
+                    <p>
                       To revert back to the official version of Sistent, run:
                     </p>
                     <Code codeString="npm unlink @layer5/sistent" />
                     <p>
-                      Then reinstall the official version, using:
+                      Then reinstall the official version, using this command:
                     </p>
                     <Code codeString="npm install @layer5/sistent" />
                   </li>
                 </ol>
               </li>
             </ol>
-
-
 
             <p>
               To contribute to projects using Sistent e.g.{" "}
