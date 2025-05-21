@@ -51,7 +51,7 @@ const Banner1SectionWrapper = styled.section`
         
         /* Loading placeholder */
         &::before {
-            content: "Loading video...";
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;

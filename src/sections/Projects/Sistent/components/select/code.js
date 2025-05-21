@@ -15,7 +15,8 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material";
-import { Header, SectionNav } from ".";
+import SectionNav from "./section-nav";
+import Header from "./header";
 
 const codes = {
   "variant-outlined": `<Select>
