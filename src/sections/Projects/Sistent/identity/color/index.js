@@ -236,7 +236,7 @@ const SistentIdentityColor = () => {
                           aria-label={`Copy HEX color code of ${name}`}
                           sx={{
                             color: theme.palette.icon?.default,
-                            '&:hover': {
+                            "&:hover": {
                               color: theme.palette.icon?.brand,
                             },
                           }}
@@ -253,7 +253,7 @@ const SistentIdentityColor = () => {
                           aria-label={`Copy Sistent token of ${name}`}
                           sx={{
                             color: theme.palette.icon?.default,
-                            '&:hover': {
+                            "&:hover": {
                               color: theme.palette.icon?.brand,
                             },
                           }}
@@ -267,8 +267,8 @@ const SistentIdentityColor = () => {
               ))}
             </ColorCards>
           </NoSsr>
-          <a id="Layer Hirarchy">
-            <h2>Layer Hirarchy</h2>
+          <a id="Layer Hierarchy">
+            <h2>Layer Hierarchy</h2>
           </a>
           <p>
             For backgrounds and surfaces, colors in the neutral palettes are
