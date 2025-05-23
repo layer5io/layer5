@@ -4,8 +4,22 @@ import { useTable } from "react-table";
 import data from "../../../../assets/data/tutorials";
 import { TutorialsTableWrapper } from "./TutorialsTable.style";
 
+const toDate = (str) => {
+  const cleaned = str
+    .replace(/(\d+)(st|nd|rd|th)/, '$1')  
+    .replace(/\./g, '')                  
+    .trim();
+
+  return new Date(cleaned);            
+};
+
+
 const TutorialsTable = () => {
 
+  const sortedData = React.useMemo(() => {
+    return [...data].sort((a, b) => toDate(b.date) - toDate(a.date));
+  }, []);
+  
   const columns = React.useMemo(
     () => [
       {
@@ -48,7 +62,7 @@ const TutorialsTable = () => {
     prepareRow,
   } = useTable({
     columns,
-    data,
+    data: sortedData,
   });
 
   return (
