@@ -126,6 +126,13 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 17,
+    name: "Table",
+    description: "The Table component provides structured data representation.",
+    url: "/projects/sistent/components/table",
+    src: "/table"
+  }
 ];
 
 module.exports = { componentsData };
