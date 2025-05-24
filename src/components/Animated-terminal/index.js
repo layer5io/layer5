@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import FramedTerminal from "./Framed-terminal";
+import AnimatedTerminalThreeJS from "./AnimatedTerminalThreeJS";
 
-const AnimatedTerminal = ({ lines, frameLength, loop, paused }) => {
+/**
+ * Original AnimatedTerminal implementation
+ * Uses FramedTerminal for rendering each animation frame
+ */
+const AnimatedTerminal = ({ lines, frameLength = 100, loop = false, paused = false }) => {
   // Determine the total number of frames
   let totalFrames = 0;
   lines.forEach((line) => {
@@ -28,7 +33,7 @@ const AnimatedTerminal = ({ lines, frameLength, loop, paused }) => {
       }
     }, frameLength);
     return () => clearInterval(interval);
-  }, [frame]);
+  }, [frame, loop, paused, totalFrames, frameLength]);
 
   // Reset Frames if our lines change
   useEffect(() => {
@@ -38,4 +43,6 @@ const AnimatedTerminal = ({ lines, frameLength, loop, paused }) => {
   return <FramedTerminal frame={frame} lines={lines} />;
 };
 
+// Export both implementations
+export { AnimatedTerminalThreeJS };
 export default AnimatedTerminal;

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 const KanvasWrapper = styled.div`
-
   display: flex;
   flex-direction: column;
 
-  :div:first-child {
+  & > div:first-child {
     align-items: center;
   }
 
@@ -35,7 +34,6 @@ const KanvasWrapper = styled.div`
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .desc-p {
-
             margin: 1.875rem 0 2.5rem 0;
         }
       }
@@ -83,7 +81,6 @@ const KanvasWrapper = styled.div`
         display: block;
       }
     }
-
 `;
 
 export default KanvasWrapper;

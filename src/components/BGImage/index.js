@@ -1,4 +1,4 @@
-import React from "react";
+
 import { BGWrapper, FakeBGImg, Content } from "./BGImage.styles";
 
 

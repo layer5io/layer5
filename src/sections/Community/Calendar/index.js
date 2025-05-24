@@ -1,9 +1,5 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import CalendarStyleWrapper from "./calendar.style";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import googleCalendarPlugin from "@fullcalendar/google-calendar";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Table from "../../../components/MeetInfo-Table";
@@ -12,6 +8,20 @@ import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import Button from "../../../reusecore/Button";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import { Link } from "gatsby";
+
+// Dynamically import heavy calendar components
+const FullCalendar = lazy(() =>
+  import("@fullcalendar/react").then(module => ({
+    default: module.default
+  })).catch(() => ({
+    default: () => <div>Calendar failed to load</div>
+  }))
+);
+
+// Lazy load plugins
+const dayGridPlugin = lazy(() => import("@fullcalendar/daygrid"));
+const interactionPlugin = lazy(() => import("@fullcalendar/interaction"));
+const googleCalendarPlugin = lazy(() => import("@fullcalendar/google-calendar"));
 
 const Calendar = () => {
 
@@ -102,32 +112,34 @@ const Calendar = () => {
         <Container>
           <div className="calendar-wrapper">
             <div className="calendar-grid">
-              <FullCalendar
-                plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
-                initialView="dayGridMonth"
-                googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
-                events={{
-                  googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
-                }}
-                buttonText={{
-                  today: "Today"
-                }}
-                customButtons={{
-                  addToCalendar: {
-                    text: "Add To Your Calendar",
-                    click: function () {
-                      window.open("https://bit.ly/3fz1Vfs", "_blank");
+              <Suspense fallback={<div>Loading calendar...</div>}>
+                <FullCalendar
+                  plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
+                  initialView="dayGridMonth"
+                  googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
+                  events={{
+                    googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
+                  }}
+                  buttonText={{
+                    today: "Today"
+                  }}
+                  customButtons={{
+                    addToCalendar: {
+                      text: "Add To Your Calendar",
+                      click: function () {
+                        window.open("https://bit.ly/3fz1Vfs", "_blank");
+                      }
                     }
-                  }
-                }}
-                headerToolbar={{
-                  left: "prev,next today",
-                  center: "title",
-                  right: "addToCalendar"
-                }}
-                showNonCurrentDates={false}
-                contentHeight={700}
-              />
+                  }}
+                  headerToolbar={{
+                    left: "prev,next today",
+                    center: "title",
+                    right: "addToCalendar"
+                  }}
+                  showNonCurrentDates={false}
+                  contentHeight={700}
+                />
+              </Suspense>
             </div>
           </div>
         </Container>

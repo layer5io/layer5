@@ -21,20 +21,29 @@ export const useSiteMetadata = () => {
     }
   `);
 
-  return data.site.siteMetadata;
+  return data?.site?.siteMetadata;
 };
 
 
-const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
+const SEO = ({ canonical, description, image, schemaMarkup, title, children }) => {
   const { pathname } = useLocation();
-  const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || siteMetadataImage}`,
-    url: `${siteUrl}${pathname.replace(".html", "")  || ""}`.replace(/\/$/, ""),
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image: siteMetadataImage,
+    siteUrl = "",
     twitterUsername
+  } = useSiteMetadata() || {};
+
+  // Ensure we have valid defaults
+  const seo = {
+    title: title || defaultTitle || "Layer5",
+    description: description || defaultDescription || "",
+    image: `${siteUrl}${image || siteMetadataImage || ""}`,
+    url: `${siteUrl}${(pathname || "").replace(".html", "")}`.replace(/\/$/, ""),
+    twitterUsername: twitterUsername || "@layer5"
   };
+
   if (!canonical) {
     canonical = seo.url;
   }
@@ -50,7 +59,7 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
       <meta name="og:url" content={seo.url} />
       <meta name="url" property="og:url" content={seo.url} />
       <meta name="og:type" content="website" />
-      <meta name="author" content="Layer5, Inc."></meta>
+      <meta name="author" content="Layer5, Inc." />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
@@ -69,7 +78,7 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
 };
 
 SEO.defaultProps = {
-  title: null,
+  title: "Layer5",
   lang: "en",
   meta: [],
   description: "",
@@ -82,7 +91,8 @@ SEO.propTypes = {
   image: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default SEO;

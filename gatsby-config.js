@@ -13,14 +13,48 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true
+    PARALLEL_SOURCING: true,
+    DEV_SSR: false,
+    LAZY_IMAGES: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   trailingSlash: "never",
   plugins: [
+    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        disable: true
+        analyzerMode: "server",
+        defaultSizes: "gzip",
+        openAnalyzer: true,
+        generateStatsFile: true,
+        analyzerOptions: {
+          maxModules: 150,
+          excludeAssets: [/\.map$/]
+        },
+        optimizeOptions: {
+          splitChunks: {
+            chunks: "all",
+            minSize: 30000,
+            maxSize: 250000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: "~",
+            cacheGroups: {
+              vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                priority: -10
+              },
+              default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true
+              }
+            }
+          }
+        }
       }
     },
     {
@@ -379,12 +413,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-styled-components",
-      options: {
-        minify: false,
-      },
-    },
-    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -50,
@@ -394,6 +422,32 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
+          commonmark: true,
+          footnotes: true,
+          gfm: true,
+          // Configure loading behavior
+          jsxImportSource: "@jsxImportSource",
+          jsx: true,
+          // Optimize loading
+          development: process.env.NODE_ENV === "development"
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1200,
+              showCaptions: true,
+              quality: 90,
+              loading: "lazy",
+              disableBgImageOnAlpha: true,
+              withWebp: true,
+              withAvif: true,
+            },
+          },
+        ],
       },
     },
     {

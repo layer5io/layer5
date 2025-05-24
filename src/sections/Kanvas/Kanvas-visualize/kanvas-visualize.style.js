@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const KanvasVisualizeWrapper = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +14,7 @@ const KanvasVisualizeWrapper = styled.div`
     opacity: 0.8;
   }
 
-  :div:first-child {
+  & > div:first-child {
     align-items: center;
   }
 
@@ -38,13 +37,11 @@ const KanvasVisualizeWrapper = styled.div`
               color: ${props => props.theme.secondaryColor};
           }
           .desc-p {
-
               margin: 1.875rem 0 2.5rem 0;
           }
         }
     }
   }
-
 `;
 
 export default KanvasVisualizeWrapper;

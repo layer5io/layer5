@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-
 export const BGWrapper = styled.div`
   position: relative;
   width: 100%;
