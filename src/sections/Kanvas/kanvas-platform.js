@@ -34,6 +34,10 @@ const PlatformWrapper = styled.div`
   }
 }
 
+  .kanvas-item {
+    cursor: pointer;
+  }
+
 .block--right {
   background-color: #00b39f;
   margin-left: -8rem;
@@ -156,7 +160,7 @@ const Platform = () => {
 
       <div className="blocks">
         <div className="block block--left">
-          <a href="https://docs.layer5.io/cloud/self-hosted" target="_blank" rel="noopener noreferrer">
+          <a className="kanvas-item" href="https://docs.layer5.io/cloud/self-hosted" target="_blank" rel="noopener noreferrer">
             <h1>Self-Hosted</h1>
             <img src={SelfHosted} alt="Kanvas Self-hosted" />
             <p>
@@ -165,7 +169,7 @@ const Platform = () => {
           </a>
         </div>
         <div className="block block--right">
-          <a href="https://docs.layer5.io/cloud" target="_blank" rel="noopener noreferrer">
+          <a className="kanvas-item" href="https://docs.layer5.io/cloud" target="_blank" rel="noopener noreferrer">
             <h1>Cloud</h1>
             <img src={CloudHosted} alt="Kanvas Cloud" />
             <p>
