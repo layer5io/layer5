@@ -25,9 +25,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        analyzerMode: "static",
+        analyzerMode: "server",
         defaultSizes: "gzip",
-        openAnalyzer: false,
+        openAnalyzer: true,
         generateStatsFile: true,
         analyzerOptions: {
           maxModules: 150,
