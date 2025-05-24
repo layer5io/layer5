@@ -34,9 +34,9 @@ const PlatformWrapper = styled.div`
   }
 }
 
-  .kanvas-item {
-    cursor: pointer;
-  }
+.kanvas-item {
+  cursor: pointer;
+}
 
 .block--right {
   background-color: #00b39f;
