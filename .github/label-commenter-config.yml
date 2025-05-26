@@ -47,6 +47,16 @@ labels:
       pr:
         body: This PR has been labeled with 'component/mesheryctl'. Note that after making changes you need to update it in the [mesheryctl command tracker](https://docs.google.com/spreadsheets/d/1q63sIGAuCnIeDs8PeM-0BAkNj8BBgPUXhLbe1Y-318o/edit#gid=0) spreadsheet.
         action: open
+  - name: issue/welcome
+    labeled:
+      issue:
+        body: Thanks for opening this issue. A contributor will be by to give feedback soon. In the meantime, please review the [Layer5 Contributors' Welcome Guide](https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit?usp=sharing) and sure to join the [community Slack](https://slack.layer5.io/).
+        action: open
+      pr:
+        body: >
+          <p align="center">Thank you for contributing to the Layer5 community! :tada: </p> 
+          <p align="center"><img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/welcome/Layer5-celebration.png" width="80%" /></p><br />
+        action: open
       # pr:
       #   body: Hi, please note that this issue will need an approved design specification before implementation proceeds. See [Creating a Functional Specification](https://docs.google.com/document/d/1RP3IWLc-MiQS-QYasqCoVuCH7--G87p5ezE5f_nOzB8/edit?usp=sharing) to create a design spec.
       #   action: open
