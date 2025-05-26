@@ -13,6 +13,6 @@ export const Head = () => {
     <SEO
       title="Developer-defined Infrastructure"
       description="Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure."
-    />
+      image="/images/solutions-infrastructure.png" />
   );
 };

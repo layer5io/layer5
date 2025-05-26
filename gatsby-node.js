@@ -354,6 +354,48 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/products/nighthawk",
+    toPath: "/projects/nighthawk",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/products/service-mesh-performance",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/products/service-mesh-performance-specification",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/collaborate",
+    toPath: "/cloud-native-management/kanvas/collaborate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/blog/tag/meshery-open-source",
+    toPath: "/blog/tag/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/blog/category/opensource",
+    toPath: "/blog/category/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
     fromPath: "/cloud-native-management/meshmap/design",
     toPath: "/cloud-native-management/kanvas/design",
     redirectInBrowser: true,
@@ -853,14 +895,74 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "pageType", value: "chapter" });
 };
 
+// Add this helper function to determine if we should process a node
+const shouldOnCreateNode = ({ node }) => {
+  return node.internal.type === "Mdx";
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
+  // Check if we should process this node
+  if (!shouldOnCreateNode({ node })) {
+    return;
+  }
+
   const { createNodeField } = actions;
-  if (node.internal.type === "Mdx") {
-    const collection = getNode(node.parent).sourceInstanceName;
+  const collection = getNode(node.parent).sourceInstanceName;
+  createNodeField({
+    name: "collection",
+    node,
+    value: collection,
+  });
+
+  if (collection !== "content-learn") {
+    let slug = "";
+    if (node.frontmatter.permalink) {
+      slug = `/${collection}/${node.frontmatter.permalink}`;
+    } else {
+      switch (collection) {
+        case "blog":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category
+            )}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "news":
+          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "service-mesh-books":
+        case "service-mesh-workshops":
+        case "service-mesh-labs":
+          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "resources":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category
+            )}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "members":
+          if (node.frontmatter.published)
+            slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+          break;
+        case "events":
+          if (node.frontmatter.title)
+            slug = `/community/events/${slugify(node.frontmatter.title)}`;
+          break;
+        default:
+          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      }
+    }
     createNodeField({
-      name: "collection",
+      name: "slug",
       node,
-      value: collection,
+      value: slug,
+    });
+  } else {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: "content-learn",
+      trailingSlash: false,
     });
     if (collection !== "content-learn") {
       let slug = "";
@@ -913,28 +1015,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         trailingSlash: false,
       });
 
-      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
-      const parts = slug.split("/").filter((p) => !!p);
+    // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+    const parts = slug.split("/").filter((p) => !!p);
 
-      if (parts.length === 1) {
-        onCreatePathNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 1) {
+      onCreatePathNode({ actions, node, slug });
+      return;
+    }
 
-      if (parts.length === 2) {
-        onCreateCourseNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 2) {
+      onCreateCourseNode({ actions, node, slug });
+      return;
+    }
 
-      if (parts.length === 3) {
-        onCreateSectionNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 3) {
+      onCreateSectionNode({ actions, node, slug });
+      return;
+    }
 
-      if (parts.length === 4) {
-        onCreateChapterNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 4) {
+      onCreateChapterNode({ actions, node, slug });
+      return;
     }
   }
 };

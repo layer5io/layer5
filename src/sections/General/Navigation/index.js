@@ -187,6 +187,9 @@ const Navigation = () => {
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
+        if (!token) { // no token: don't proceed
+          return;
+        }
         const response = await axios.get(CLOUD_USER_API, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -200,7 +203,12 @@ const Navigation = () => {
         const data = response.data;
         setUserData(data);
       } catch (error) {
-        console.error("There was a problem with your fetch operation:", error);
+        if (error?.response?.status === 401) {
+          // unauthorized token
+        } else {
+          // only for debugging purposes, no need to log
+          //  console.error("There was a problem with your fetch operation:", error);
+        }
       }
     };
 
