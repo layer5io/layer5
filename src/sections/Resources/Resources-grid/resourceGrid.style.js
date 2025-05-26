@@ -54,7 +54,7 @@ export const ResourcePageWrapper = styled.div`
         background: ${props => props.theme.grey212121ToWhite};
         border: solid 2px;
         border-color: ${props => props.theme.secondaryColor};
-        color: #fff;
+        color: ${props => props.theme.whiteEightToBlack};
       }
       .active-btn {
         background: ${props => props.theme.secondaryColor};
