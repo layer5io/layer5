@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { useTable } from "react-table";
 import data from "../../../../assets/data/tutorials";
-import { TutorialsTableWrapper } from "./TutorialsTable.style";
+import { TutorialsTableWrapper, NewChip } from "./TutorialsTable.style";
 
 const toDate = (str) => {
   const cleaned = str
@@ -12,6 +12,8 @@ const toDate = (str) => {
 
   return new Date(cleaned);            
 };
+
+const THIRTY_DAYS = 1000 * 60 * 60 * 24 * 30;
 
 
 const TutorialsTable = () => {
@@ -25,6 +27,15 @@ const TutorialsTable = () => {
       {
         Header: "Topic",
         accessor: "topic",
+        Cell: ({ row, value }) => {
+          const isNew = Date.now() - toDate(row.original.date).getTime() < THIRTY_DAYS;
+          return (
+            <div className="topic-cell">
+              <span>{value}</span>
+              {isNew && <NewChip>New</NewChip>}
+            </div>
+          );
+        },
       },
       {
         Header: "Resources",

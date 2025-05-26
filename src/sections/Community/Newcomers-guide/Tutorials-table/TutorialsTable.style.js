@@ -33,5 +33,20 @@ export const TutorialsTableWrapper = styled.div`
         display: block;
       }
     }
+    .topic-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    }
+`;
+
+export const NewChip = styled.span`
+  background-color: ${props => props.theme.secondaryColor};
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
 `;
