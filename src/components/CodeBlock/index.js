@@ -10,6 +10,8 @@ export const Pre = styled.pre`
   margin: auto;
   margin-top: 1em;
   padding: 0.5em;
+  white-space: pre-wrap;
+  word-break: break-word;
   overflow-x: auto;
   border-radius: 3px;
   & .token-line {
