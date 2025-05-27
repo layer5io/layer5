@@ -6,11 +6,11 @@ import { TutorialsTableWrapper, NewChip } from "./TutorialsTable.style";
 
 const toDate = (str) => {
   const cleaned = str
-    .replace(/(\d+)(st|nd|rd|th)/, '$1')  
-    .replace(/\./g, '')                  
+    .replace(/(\d+)(st|nd|rd|th)/, "$1")
+    .replace(/\./g, "")
     .trim();
 
-  return new Date(cleaned);            
+  return new Date(cleaned);
 };
 
 const THIRTY_DAYS = 1000 * 60 * 60 * 24 * 30;
@@ -21,7 +21,7 @@ const TutorialsTable = () => {
   const sortedData = React.useMemo(() => {
     return [...data].sort((a, b) => toDate(b.date) - toDate(a.date));
   }, []);
-  
+
   const columns = React.useMemo(
     () => [
       {
