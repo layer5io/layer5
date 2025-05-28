@@ -74,34 +74,6 @@ const data = [
         ],
     },
     {
-        date: "2020-11-04",
-        topic: "Functional Testing with Cypress in Meshery UI",
-        resources: {
-            slides: "https://layer5.io/blog/meshery/functional-testing-with-cypress-in-meshery-ui",
-            recording: "https://youtu.be/pIFSI7xtwFs",
-        },
-        presenters: [
-            {
-                link: "/community/members/rodolfo-martinez-vega",
-                name: "Rodolfo Martinez Vega",
-            }
-        ]
-    },
-   
-    {
-        date: "2021-01-28",
-        topic: "Beginner's guide to contributing to Meshery and mesheryctl",
-        resources: {
-            slides: "https://docs.google.com/presentation/d/1oUzWQpFeFbpIs_sejtOPbF9J4nigj9ziEAzoWxmm6ig/edit",
-            recording: "https://youtu.be/hh_kFLZx3G4",
-        },
-        presenters: [
-            {
-                name: "Navendu Pottekkat",
-            }
-        ]
-    },
-    {
         date: "2021-07-27",
         topic: "Contributing to Meshery API Swagger Documentation" ,
         resources: {
