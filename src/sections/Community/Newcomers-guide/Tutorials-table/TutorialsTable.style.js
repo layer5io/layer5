@@ -44,9 +44,10 @@ export const TutorialsTableWrapper = styled.div`
 export const NewChip = styled.span`
   background-color: ${props => props.theme.secondaryColor};
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: bold;
-  padding: 0.2rem 0.5rem;
+  padding: .25rem .5rem;
   border-radius: 0.25rem;
   text-transform: uppercase;
+  line-height: 1;
 `;
