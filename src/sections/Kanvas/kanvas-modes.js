@@ -271,7 +271,7 @@ const KanvasModes = () => {
               $external={true}
               title="Read More →"
               alt="Read More"
-              $url="https://docs.layer5.io/kanvas/designer/"
+              $url="/cloud-native-management/kanvas/design"
             />
           </div>
         </div>
@@ -291,7 +291,7 @@ const KanvasModes = () => {
               $external={true}
               title="Read More →"
               alt="Read More"
-              $url="https://docs.layer5.io/kanvas/operator/"
+              $url="/cloud-native-management/kanvas/operate"
             />
           </div>
         </div>
