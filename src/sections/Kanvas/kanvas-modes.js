@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import designerImage from "../../assets/images/kanvas/KanvasDesigner.webp";
 import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
+import Button from "../../reusecore/Button";
 
 const KanvasModesWrapper = styled.div`
   margin-top: 0.1rem;
@@ -41,8 +42,8 @@ const KanvasModesWrapper = styled.div`
     position: relative;
     border-left: 1.5px solid #fff;
     width: 50%;
-    height: 40rem;
-    min-height: 600px;
+    height: 45rem;
+    min-height: 650px;
     color: #fff;
     overflow: hidden;
     transition: width 0.5s ease;
@@ -265,6 +266,13 @@ const KanvasModes = () => {
             <p>
               Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.
             </p>
+            <Button
+              $primary
+              $external={true}
+              title="Read More →"
+              alt="Read More"
+              $url="https://docs.layer5.io/kanvas/designer/"
+            />
           </div>
         </div>
 
@@ -278,6 +286,13 @@ const KanvasModes = () => {
             <p>
               Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
+            <Button
+              $primary
+              $external={true}
+              title="Read More →"
+              alt="Read More"
+              $url="https://docs.layer5.io/kanvas/operator/"
+            />
           </div>
         </div>
       </section>
