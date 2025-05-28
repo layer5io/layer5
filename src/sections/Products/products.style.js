@@ -169,9 +169,12 @@ const ProductWrapper = styled.section`
     padding: 2rem;
     margin: 2rem;
   }
-  .logo {
-    max-height: 3rem;
+  .card_head .logo {
+    flex-shrink: 0;    
+    height: 3rem;
+    width: auto;
   }
+    
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -186,13 +189,16 @@ const ProductWrapper = styled.section`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;       
+    margin-bottom: 20px;
   }
 
   .card_head .title {
-    padding-left: 1rem;
     font-size: 32px;
     font-weight: 700;
+    margin: 0;     
   }
   .card .text {
     padding-bottom: 2rem;
@@ -227,9 +233,8 @@ const ProductWrapper = styled.section`
   }
   .iconss {
     display: flex;
-    gap: 16px;
-    position: absolute;
-    right: 0;
+    gap: 1rem;
+    margin-left: auto; 
   }
   @media (max-width: 1141px) {
     .product_hero_img {
@@ -272,7 +277,7 @@ const ProductWrapper = styled.section`
     }
 
     .card_head {
-      align-items: flex-start;
+      align-items: center;
     }
     .product_cards {
       display: flex;
