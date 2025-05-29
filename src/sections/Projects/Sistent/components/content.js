@@ -126,6 +126,14 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 17,
+    name: "Toolbar",
+    description:
+    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+    url: "/projects/sistent/components/toolbar",
+    src: "/toolbar",
+  },
 ];
 
 module.exports = { componentsData };
