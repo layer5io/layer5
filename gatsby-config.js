@@ -20,7 +20,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        disable: true
+        disable: false,
+        openAnalyzer: false,
+        analyzerMode: "static",
+        reportFilename: "bundle-analyzer-report.html"
       }
     },
     {
@@ -514,7 +517,13 @@ module.exports = {
       options: {
         defaults: {
           placeholder: "blurred",
-        }
+          quality: 75,
+          breakpoints: [750, 1080, 1366, 1920]
+        },
+        failOn: "none",
+        base64Width: 20,
+        stripMetadata: true,
+        defaultQuality: 75
       }
     },
     {

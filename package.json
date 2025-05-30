@@ -10,7 +10,8 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build",
+    "build:analyze": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
     "develop": "env-cmd -f .env.development gatsby develop",
     "dev": "npm run develop",
@@ -20,8 +21,8 @@
     "checklint": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
-    "deploy": "gatsby build && gh-pages -d public -b master",
-    "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
+    "deploy": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build && gh-pages -d public -b master",
+    "noIndex": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
     "prepare": "husky install"
   },
@@ -64,7 +65,7 @@
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-loadable-components-ssr": "^4.3.2",
     "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-mdx": "3.20.0",
+    "gatsby-plugin-mdx": "^5.14.1",
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-preload-fonts": "^4.11.0",
     "gatsby-plugin-robots-txt": "^1.8.0",

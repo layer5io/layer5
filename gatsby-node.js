@@ -789,6 +789,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
   const createComponentPages = (createPage, components) => {
+    const fs = require("fs");
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -799,13 +800,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       pageTypes.forEach(({ suffix, file }) => {
         const path = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        try {
-          createPage({
-            path,
-            component: require.resolve(componentPath),
-          });
-        } catch (error) {
-          console.error(`Error creating page for ${path}:`, error);
+        const absoluteComponentPath = `${__dirname}/src/sections/Projects/Sistent/components/${name}/${file}`;
+
+        // Check if the file exists before trying to create the page
+        if (fs.existsSync(absoluteComponentPath)) {
+          try {
+            createPage({
+              path,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for ${path}:`, error);
+          }
+        } else {
+          console.log(`Skipping page creation for ${path} - file does not exist: ${file}`);
         }
       });
     });
