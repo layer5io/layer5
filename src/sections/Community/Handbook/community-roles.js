@@ -11,8 +11,8 @@ const contents = [
   { id: 1, link: "#Community Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
   { id: 3, link: "#Maintainer", text: "Maintainer", },
-  { id: 4, link: "#ReleaseManager", text: "Release Manager"},
-  { id: 5, link: "#GitHubCzar", text: "GitHub Czar"},
+  { id: 4, link: "#ReleaseManager", text: "Release Manager" },
+  { id: 5, link: "#GitHubCzar", text: "GitHub Czar" },
 ];
 
 const CommunityGuide = () => {
