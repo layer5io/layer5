@@ -7,29 +7,51 @@ import ChallangePNG from "./images/challange_mac.png";
 import DesignPNG from "./images/design_mac.png";
 import TutorialPNG from "./images/tutorial_mac.png";
 
-
 const PictureSliderWrapper = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 
   .slick-slider {
     margin-top: 1rem;
-    height:100%;
+    height: 100%;
     width: 100%;
 
-    .slick-list{
-      width:100%;
+    .slick-list {
+      width: 100%;
     }
-    @media (max-width: 36rem) {
-        margin: .5rem auto;
-        max-width: 100%;
-    }
+
     .slick-prev,
     .slick-next {
       &:before {
         color: ${(props) => props.theme.tertiaryColor};
+      }
+    }
+
+    @media (max-width: 36rem) {
+      overflow: hidden;
+      position: relative;
+
+      .slick-prev,
+      .slick-next {
+        z-index: 2;
+        width: 24px;
+        height: 24px;
+
+        &:before {
+          font-size: 20px;
+          color: black;
+        }
+      }
+
+      .slick-prev {
+        left: 10px !important;
+      }
+
+      .slick-next {
+        right: 10px !important;
       }
     }
   }
@@ -42,9 +64,16 @@ const PictureSliderWrapper = styled.div`
       height: auto;
       align-items: center;
       justify-content: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
   }
 `;
+
 
 const PictureSlider = () => {
   const data = [ChallangePNG, TutorialPNG, DesignPNG];
@@ -70,3 +99,5 @@ const PictureSlider = () => {
 };
 
 export default PictureSlider;
+
+
