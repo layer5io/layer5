@@ -116,7 +116,7 @@ const SistentAbout = () => {
                   <Code codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
                   <p>Example:</p>
                   <Code
-                    codeString={`# relative path\nnpm install ../../sistent\n\n# absolute path\nnpm install /home/five/code/sistent`}
+                    codeString={"# relative path\nnpm install ../../sistent\n\n# absolute path\nnpm install /home/five/code/sistent"}
                   />
                   <p>This will update your Sistent dependency to:</p>
                   <Code codeString={"\"@layer5/sistent\" : \"file:../../sistent\""} />
@@ -158,7 +158,7 @@ const SistentAbout = () => {
                   <li>
                     <b>Link your local Sistent package globally</b>
                     <p>In your local Sistent repo, run the following command:</p>
-                    <Code codeString={`cd <path-to-sistent-on-local-machine>\nnpm link`} />
+                    <Code codeString={"cd <path-to-sistent-on-local-machine>\nnpm link"} />
                   </li>
                   <li>
                     <b>Link Sistent in your project</b>
@@ -180,11 +180,11 @@ const SistentAbout = () => {
                     <p>
                       Verify that your local fork is correctly linked by running:
                     </p>
-                    <Code codeString={`npm ls -g\n\n# expected output:\n├── @layer5/sistent@0.14.11 -> ./../../../../<path-to-local-sistent-fork>`}/>
+                    <Code codeString={"npm ls -g\n\n# expected output:\n├── @layer5/sistent@0.14.11 -> ./../../../../<path-to-local-sistent-fork>"}/>
                     <p>
                       You can also try this command to verify that your fork is correctly linked:
                     </p>
-                    <Code codeString={`ls -l node_modules/@layer5/sistent\n\n# expected output:\nnode_modules/@layer5/sistent -> ../../../../../sistent`} />
+                    <Code codeString={"ls -l node_modules/@layer5/sistent\n\n# expected output:\nnode_modules/@layer5/sistent -> ../../../../../sistent"} />
                   </li>
                   <li>
                     <p>
