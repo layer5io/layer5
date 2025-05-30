@@ -794,8 +794,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
       { suffix: "/code", file: "code.js" },
-
-    
     ];
 
     components.forEach((name) => {
