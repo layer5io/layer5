@@ -6,6 +6,7 @@
  */
 
 const path = require("path");
+const fs = require("fs");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
@@ -793,20 +794,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
       { suffix: "/code", file: "code.js" },
+
+    
     ];
 
     components.forEach((name) => {
       pageTypes.forEach(({ suffix, file }) => {
-        const path = `/projects/sistent/components/${name}${suffix}`;
+        const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+        if (fs.existsSync(path.resolve(componentPath))) {
         try {
           createPage({
-            path,
+            path: pagePath,
             component: require.resolve(componentPath),
           });
         } catch (error) {
-          console.error(`Error creating page for ${path}:`, error);
-        }
+          console.error(`Error creating page for "${pagePath}":`, error);
+        } 
+      } else {
+        console.warn(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+      }
       });
     });
   };
@@ -1101,7 +1108,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-const fs = require("fs");
+
 
 exports.onPostBuild = async ({ graphql, reporter }) => {
   const result = await graphql(`
