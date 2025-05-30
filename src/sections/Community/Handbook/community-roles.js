@@ -11,6 +11,8 @@ const contents = [
   { id: 1, link: "#Community Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
   { id: 3, link: "#Maintainer", text: "Maintainer", },
+  { id: 4, link: "#ReleaseManager", text: "Release Manager"},
+  { id: 5, link: "#GitHubCzar", text: "GitHub Czar"},
 ];
 
 const CommunityGuide = () => {
@@ -32,7 +34,7 @@ const CommunityGuide = () => {
                 growth by faithfully upholding one of the responsibilities outlined in the roles below.
               </p>
               <h3>
-                <a id="Community Manager"><strong>Community Manager</strong></a>
+                <a id="Community Manager"><strong><Link to="/community/community-managers">Community Manager</Link></strong></a>
               </h3>
               <p>
                 Layer5 Community Managers generally oversee community activities and support ongoing initiatives. They are responsible for the health and growth of the community. Community Managers cultivate an environment which attracts new community members by ensuring that timely and completed responses are provided to questions asked. Community Managers work to ensure that existing community members are retained by helping those members stay engaged in projects on an ongoing basis. Aspects of marketing including member and project promotion as well as aspects of project management by organizing meetings and triaging issues are under the purview of Community Managers.
@@ -216,12 +218,12 @@ const CommunityGuide = () => {
                 <label htmlFor="maintainer-checklist-7">Understands the workflow of the Issues and Pull Requests</label>
               </div>
               <a id="ReleaseManager">
-                <h2>Release Manager Role</h2>
+                <h4>Release Manager Role</h4>
               </a>
               <p>
+                Roles/Responsibilities:<br />
                 The role of release manager for a release lasts a total of about 6 months. This is divided up among activities before the initial release comes out and activities after the initial release while the release is within active maintenance. The majority of the time is spent in the month before the first release. After that, there is 6 months of time during which point releases come out on approximately a 3 week cycle. During three of these months, the release manager is working on the latest release. This 6 month time period is divided into two sections. In the first three months, this is the primary release and all fixes get cherry-picked from master here. After 3 months, the next release of the Meshery project comes out and there are three more months of support before this release goes to the end of life.
               </p>
-              <h3>Responsibilities</h3>
               <h4>Before Release</h4>
               <ul>
                 <li>Cutting branches -- 8 to 16 hours divided between all release managers. Working on automating. Will still take a while with automation, probably around half a day. With automation, a lot of the time will be waiting for automated steps to complete as opposed to being directly involved.</li>
@@ -257,6 +259,79 @@ const CommunityGuide = () => {
               </ul>
               <h3>Process for volunteering for release management</h3>
               <p>Contact a current maintainer to volunteer or nominate yourself.</p>
+              <a id="GitHubCzar">
+                <h4><strong>GitHub Czar</strong></h4>
+              </a>
+
+              <p><strong>Role:</strong><br />
+                The <strong>GitHub Czar</strong> is a GitHub-focused role within the Layer5 community responsible for keeping the organization’s GitHub repositories well-maintained, active, and contributor-friendly. This role exists as a specialized extension of the Community Manager role and works closely with maintainers and community leaders to support the technical and collaborative health of Layer5's GitHub ecosystem.
+              </p>
+              <p>
+                GitHub Czars ensure that issues and pull requests are actively triaged, contributors are appropriately engaged, and the repositories reflect up-to-date, community-driven activity.
+              </p>
+
+              <p><strong>Responsibilities:</strong></p>
+
+              <p>Daily / Ongoing:
+                <ul>
+                  <li>Triage GitHub Issues: Apply labels such as <code>issue/remind</code>, <code>issue/dco</code>, <code>good-first-issue</code>; close outdated or duplicate issues.</li>
+                  <li>Monitor Issue Assignees: Gently remind inactive assignees and reclaim issues after ~7–10 days.</li>
+                  <li>Review Pull Requests: Perform initial checks and tag reviewers/maintainers.</li>
+                  <li>Enforce Contribution Standards: Ensure compliance with DCO, PR templates, and commit guidelines.</li>
+                  <li>Bump Off Squatters: Use labels/comments to reclaim blocked or inactive issues.</li>
+                </ul>
+              </p>
+              <p>Weekly:
+                <ul>
+                  <li>Contributor Engagement: Highlight contributors, recommend org invitations, and thank new contributors.</li>
+                  <li>Support Issue Curation: Maintain <code>help-wanted</code>, <code>good-first-issue</code>, and project boards.</li>
+                  <li>Identify Gaps: Escalate repo health concerns like outdated PRs, untested code, etc.</li>
+                </ul>
+              </p>
+
+              <p>
+                <strong>Checklist before becoming a GitHub Czar</strong>
+              </p>
+              <input
+                type="checkbox"
+                name="github-czar-checklist-1"
+                id="github-czar-checklist-1"
+              />
+              <label htmlFor="github-czar-checklist-1">
+                Makes consistent contributions within the Layer5 community
+              </label>
+              <input
+                type="checkbox"
+                name="github-czar-checklist-2"
+                id="github-czar-checklist-2"
+              />
+              <label htmlFor="github-czar-checklist-2">
+                Has strong technical proficiency in software development and code review
+              </label>
+              <input
+                type="checkbox"
+                name="github-czar-checklist-3"
+                id="github-czar-checklist-3"
+              />
+              <label htmlFor="github-czar-checklist-3">
+                Understands GitHub workflows, issue triage, and pull request management
+              </label>
+              <input
+                type="checkbox"
+                name="github-czar-checklist-4"
+                id="github-czar-checklist-4"
+              />
+              <label htmlFor="github-czar-checklist-4">
+                Demonstrates good communication skills with technical and non-technical contributors
+              </label>
+              <input
+                type="checkbox"
+                name="github-czar-checklist-5"
+                id="github-czar-checklist-5"
+              />
+              <label htmlFor="github-czar-checklist-5">
+                Familiar with Layer5 contribution guidelines and community standards
+              </label>
             </div>
             <TocPagination />
           </Container>
