@@ -38,7 +38,8 @@ Spring AI supports various AI model providers, including commercial cloud servic
 When Docker Model Runner is active and serving a model (e.g., Llama 3, Gemma) with its API endpoint accessible (typically http://localhost:12434 or http://model-runner.docker.internal if accessed from another container), Spring AI can be configured to point to it.  
 Here's how a Java engineer benefits:
 
-1. Simplified Configuration in Spring Boot:  
+1. **Simplified Configuration in Spring Boot**
+  
    Spring AI's autoconfiguration can often detect and set up the necessary beans to interact with an OpenAI-compatible endpoint. For Docker Model Runner, this typically involves setting a few properties in your application.properties or application.yml file:  
    
    ```java
@@ -52,9 +53,12 @@ Here's how a Java engineer benefits:
    \# Potentially disable API key if DMR doesn't require it strictly for local 
    ```
 
-   (Note: The exact property names and structure might vary slightly based on the Spring AI version and whether you're configuring a generic OpenAI client or a more specific Ollama-like client type if Spring AI introduces more direct DMR support.)  
-2. Leveraging Spring AI's ChatClient and EmbeddingClient:  
+   _(Note: The exact property names and structure might vary slightly based on the Spring AI version and whether you're configuring a generic OpenAI client or a more specific Ollama-like client type if Spring AI introduces more direct DMR support.)_  
+
+2. **Leveraging Spring AI's ChatClient and EmbeddingClient**
+
    Once configured, developers can inject and use Spring AI's standard clients without needing to know that the underlying provider is Docker Model Runner. 
+
 ```java 
    import org.springframework.ai.chat.ChatClient;  
    import org.springframework.ai.chat.prompt.Prompt;  
@@ -77,10 +81,13 @@ Here's how a Java engineer benefits:
        }  
    }
 ```
+
    This code remains the same whether Spring AI is talking to OpenAI's cloud API, a self-hosted Ollama instance, or Docker Model Runner serving a local model. This portability is a huge win.  
-3. Seamless Local Development and Testing:  
+
+3. **Seamless Local Development and Testing**
    Engineers can develop and test AI-driven features entirely locally using their preferred Java tools and the Spring framework. Docker Model Runner handles the model serving, and Spring AI provides the clean Java interface. This speeds up iteration cycles and reduces reliance on potentially costly cloud APIs during development.  
-4. Consistency with Production (Potentially):  
+
+4. **Consistency with Production (Potentially)**  
    While Docker Model Runner is primarily for local development, the abstraction provided by Spring AI means that switching to a production-grade, potentially cloud-hosted model provider for deployment can be achieved mainly through configuration changes, without altering the core application logic.
 
 ## **The Bigger Picture: Local AI in Enterprise Java**
