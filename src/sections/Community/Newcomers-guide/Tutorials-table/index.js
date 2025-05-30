@@ -9,8 +9,41 @@ const TutorialsTable = () => {
   const columns = React.useMemo(
     () => [
       {
+        Header: "Date",
+        accessor: "date",
+        Cell: ({ value }) => {
+          const parsedDate = new Date(value);
+          return (
+            <span>
+              {parsedDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </span>
+          );
+        }
+      },
+      {
         Header: "Topic",
         accessor: "topic",
+        Cell: ({ row, value }) => {
+          const parsedDate = new Date(row.original.date);
+          const thisYear = new Date().getFullYear();
+          const isNew = parsedDate.getFullYear() === thisYear;
+
+          return (
+            <span className="newBadge">
+              {value}
+              {isNew && (
+                <img
+                  src="/images/new-badge.png"
+                  alt="New"
+                />
+              )}
+            </span>
+          );
+        },
       },
       {
         Header: "Resources",
@@ -39,17 +72,19 @@ const TutorialsTable = () => {
     ],
     []
   );
+  const sortedData = React.useMemo(() => {
+    return [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+  }, []);
 
+  const tableInstance = useTable({ columns, data: sortedData });
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  } = tableInstance;
+
 
   return (
     <TutorialsTableWrapper>
@@ -88,3 +123,4 @@ const TutorialsTable = () => {
 };
 
 export default TutorialsTable;
+
