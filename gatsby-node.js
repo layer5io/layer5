@@ -801,17 +801,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
-        try {
-          createPage({
-            path: pagePath,
-            component: require.resolve(componentPath),
-          });
-        } catch (error) {
-          console.error(`Error creating page for "${pagePath}":`, error);
-        } 
-      } else {
-        console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
-      }
+          try {
+            createPage({
+              path: pagePath,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for "${pagePath}":`, error);
+          }
+        } else {
+          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+        }
       });
     });
   };
