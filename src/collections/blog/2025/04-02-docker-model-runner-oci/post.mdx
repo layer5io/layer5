@@ -19,13 +19,14 @@ import { BlogWrapper } from "../../Blog.style.js";
 import { Link } from "gatsby";
 
 <BlogWrapper>
-In our previous post, we introduced Docker Model Runner as a promising new toolkit for simplifying local AI development. Now, let's delve into one of its foundational—and perhaps most strategically significant—aspects: its deep reliance on the Open Container Initiative (OCI) standard for managing AI models.  
+In our [previous post](https://layer5.io/blog/docker/docker-model-runner), we introduced Docker Model Runner as a promising new toolkit for simplifying local AI development. Now, let's delve into one of its foundational—and perhaps most strategically significant—aspects: its deep reliance on the Open Container Initiative (OCI) standard for managing AI models.
 
 If you've wrestled with AI models, you know the "messy landscape" of model distribution. Models often arrive as loose files, tucked behind proprietary download tools, or lacking clear versioning. This fragmentation makes standardization, reproducibility, and integration into automated workflows a real headache for engineers. Docker Model Runner aims to bring order to this chaos by treating AI models as OCI artifacts, and this decision has profound implications for how you, as an engineer, can manage the entire lifecycle of your AI models.
 
 ## **OCI: More Than Just docker model pull**
 
-You might see docker model pull ai/llama3.2:1B-Q8\_0 and think it's just a convenient way to download models. But packaging models as OCI artifacts is a strategic move by Docker that goes far deeper. It aligns AI model management with the mature, robust ecosystem already built around OCI for container images.  
+You might see docker model pull `ai/llama3.2:1B-Q8_0` and think it's just a convenient way to download models. But packaging models as OCI artifacts is a strategic move by Docker that goes far deeper. It aligns AI model management with the mature, robust ecosystem already built around OCI for container images.  
+
 Essentially, Docker is working to make AI models **first-class citizens within the Docker ecosystem**. This means the same trusted registries and workflows you use for your application containers can now, in principle, be applied to your AI models. Imagine the possibilities:
 
 * **Unified Workflows:** Manage, version, and distribute your AI models using the same tools and processes you already use for your containerized applications. No more separate, bespoke systems for model management.  
