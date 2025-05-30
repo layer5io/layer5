@@ -174,6 +174,20 @@ const data = [
             },
         ],
     },
+    {
+        date: "2025-05-29",
+        topic: "Meshery Server",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1X0kAAAwHaZ6VHfE8VifWSW5nOdid7GC9L0zcZFP9dac/edit?slide=id.g34811bf5022_0_3#slide=id.g34811bf5022_0_3",
+            recording: "https://www.youtube.com/watch?v=9iRRd4RJOXE"
+        },
+        presenters: [
+            {
+                link: "/community/members/shlok-mishra",
+                name: "Shlok Mishra"
+            },
+        ],
+    },
 ];
 
 export default data;
