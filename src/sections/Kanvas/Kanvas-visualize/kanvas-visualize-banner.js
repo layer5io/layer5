@@ -93,7 +93,7 @@ const KanvasisualizeBanner = () => {
         <div className="banner-text">
           <h1>Operate your infrastructure </h1>
           <h4>See your designs <span>in action.</span> Operate with <span>best practices.</span></h4>
-          <KanvasBtn title="Explore Kanvasoperator" />
+          <KanvasBtn title="Explore Kanvas Operator" />
         </div>
         {/* <div className="banner-image">
           <img src={BannerImage} alt="" />

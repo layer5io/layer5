@@ -13,6 +13,7 @@ export const Head = () => {
     <SEO
       title="Kubernetes Multi-cluster Operation"
       description="Manage all of your Kubernetes clusters with the cloud native management plane, Meshery. Learn how Meshery makes connecting, discovering, and configuring multiple clusters a breeze."
+      image="/images/solutions-operation.png"
     />
   );
 };
