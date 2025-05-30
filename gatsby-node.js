@@ -810,7 +810,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           console.error(`Error creating page for "${pagePath}":`, error);
         } 
       } else {
-        console.warn(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+        console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
       }
       });
     });
