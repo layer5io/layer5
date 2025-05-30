@@ -10,7 +10,7 @@ import ReactPlayer from "react-player/youtube";
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";
 
-import imgHero from "../../../assets/images/kanvas/KanvasDesigner.webp";
+import imgHero from "../../../assets/images/kanvas/KanvasDesigner.png";
 
 const BannerDefault = () => {
   return (
@@ -30,7 +30,7 @@ const BannerDefault = () => {
                 >
                   <h4 className="statement">Meshery is</h4>
                   <div className="demo">
-                    The <span>cloud native management platform</span>
+                    <span>a self-service engineering platform</span>
                   </div>
                   <h3 className="statement">
                     <div className="side">
@@ -39,19 +39,10 @@ const BannerDefault = () => {
                       </div> */}
                       <div className="description">
                         <p>
-                          An extensible platform, Meshery comes packed with{" "}
-                          <Link to="/cloud-native-management/meshery/integrations">
-                            integrations
-                          </Link>{" "}
-                          for Prometheus, Grafana, Jaeger, CloudEvents, support
-                          for WebAssembly filters for Envoy, and hundreds of
-                          other cloud native projects.
+                          A cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud).
                         </p>
                         <p>
-                          Meshery is your microservices manager. With extension
-                          points throughout, Meshery offers users and
-                          integrators the ability to extend and customize
-                          platform functionality.
+                          Among other features, As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
                         </p>
                       </div>
                     </div>
