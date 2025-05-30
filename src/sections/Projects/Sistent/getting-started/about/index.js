@@ -162,7 +162,7 @@ const SistentAbout = () => {
                   <li>
                     <b>Link your local Sistent package globally</b>
                     <p>In your local Sistent repo, run the following command:</p>
-                    <Code codeString={"cd <path-to-sistent-on-local-machine>\npm link"} />
+                    <Code codeString={"cd <path-to-sistent-on-local-machine>\nnpm link"} />
                   </li>
                   <li>
                     <b>Link Sistent in your project</b>
