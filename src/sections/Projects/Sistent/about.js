@@ -106,7 +106,7 @@ const SistentAbout = () => {
               <h2>Using your Local Sistent Fork in a Project</h2>
             </a>
             <br />
-            <ol>
+            <ul>
               <li>
                 <h3>Method 1: File Installation</h3>
               </li>
@@ -198,7 +198,7 @@ const SistentAbout = () => {
                   </li>
                 </ol>
               </li>
-            </ol>
+            </ul>
 
             <p>
               To contribute to projects using Sistent e.g.{" "}
