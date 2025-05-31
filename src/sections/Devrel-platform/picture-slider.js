@@ -1,4 +1,3 @@
-
 import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
@@ -16,7 +15,6 @@ const PictureSliderWrapper = styled.div`
 
   .slick-slider {
     margin-top: 1rem;
-    height: 100%;
     width: 100%;
 
     .slick-list {
@@ -29,30 +27,15 @@ const PictureSliderWrapper = styled.div`
         color: ${(props) => props.theme.tertiaryColor};
       }
     }
+  }
 
-    @media (max-width: 36rem) {
-      overflow: hidden;
-      position: relative;
+  @media (max-width: 36rem) {
+    overflow: hidden;
+    position: relative;
 
-      .slick-prev,
-      .slick-next {
-        z-index: 2;
-        width: 24px;
-        height: 24px;
-
-        &:before {
-          font-size: 20px;
-          color: black;
-        }
-      }
-
-      .slick-prev {
-        left: 10px !important;
-      }
-
-      .slick-next {
-        right: 10px !important;
-      }
+    .slick-prev,
+    .slick-next {
+      display: none !important;
     }
   }
 
@@ -61,7 +44,6 @@ const PictureSliderWrapper = styled.div`
 
     .slick-slide {
       display: flex;
-      height: auto;
       align-items: center;
       justify-content: center;
 
@@ -73,7 +55,6 @@ const PictureSliderWrapper = styled.div`
     }
   }
 `;
-
 
 const PictureSlider = () => {
   const data = [ChallangePNG, TutorialPNG, DesignPNG];
@@ -99,5 +80,3 @@ const PictureSlider = () => {
 };
 
 export default PictureSlider;
-
-
