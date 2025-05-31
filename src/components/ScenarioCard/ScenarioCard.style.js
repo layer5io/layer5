@@ -74,17 +74,25 @@ export const ScenarioCardWrapper = styled.div`
 	}
 
     .sub-content {
-        display:flex;
+        display: flex;
+        flex-wrap: wrap;
         color: white;
+        padding: 10px;
+        border-radius: 5px;
+        justify-content: center; 
+        margin-top: 4rem;
+        width: 100%;
+        text-align: center;
+        
         .ak {
             color: ${props => props.theme.linkColor};
+            font-weight: 600;
             &:hover {
                 color: white;
             }
         } 
-        justify-content:center; 
-        margin-top:4rem;
-        width:100%;
+        
+    
     }
     
 
