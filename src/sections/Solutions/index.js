@@ -1,17 +1,14 @@
 import React from "react";
-import SolutionsWrapper from "./solutions.style";
 import { Container } from "../../reusecore/Layout";
-
-
+import BannerSection from "./solutions-banner";
+import SolutionsWrapper from "./solutions.style";
 
 const Solutions = (props) => {
-
   return (
     <SolutionsWrapper>
-      <div >
-      </div>
-      <>
-      </>
+      <Container>
+        <BannerSection />
+      </Container>
     </SolutionsWrapper>
   );
 };
