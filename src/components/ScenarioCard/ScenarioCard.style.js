@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const ScenarioCardWrapper = styled.div`
     margin: 0px;
     .scenario-card-block {
