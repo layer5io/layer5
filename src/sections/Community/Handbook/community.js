@@ -21,16 +21,13 @@ const CommunityGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
+          <h2 id="communityGuidelines">Community Guidelines</h2>
+          <p>
+            Welcome to the Layer5 community! We’re happy to have you here and
+            handhold you for your first contribution. Here are some tips to
+            help you get started:
+          </p>
           <div className="content">
-            {" "}
-            <a id="Community Guidelines">
-              <h2 id="communityGuidelines">Community Guidelines</h2>
-            </a>
-            <p>
-              Welcome to the Layer5 community! We’re happy to have you here and
-              handhold you for your first contribution. Here are some tips to
-              help you get started:
-            </p>
             <p>
               <img className="logo" src={Point} alt="Point" />
               <strong>For Easy Identification -</strong> When setting up your

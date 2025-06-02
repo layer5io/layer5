@@ -27,26 +27,24 @@ const Intro = () => {
       <TOC />
       <div className="page-section">
         <Container>
+          <h2>About Layer5</h2>
+          <p>
+            Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
+            maintainer of
+            <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
+              {" "}
+              service mesh standards{" "}
+            </Link>
+            and also the maker of <Link to="/meshery">Meshery </Link>,
+            the
+            <Link to="/cloud-native-management/meshery">
+              {" "}
+              Cloud Native Management Plane{" "}
+            </Link>
+            .<br />
+            Layer5 is not just a company, we are also:
+          </p>
           <div className="content">
-            <a id="About Layer5">
-              <h2>About Layer5</h2>
-            </a>
-            <p>
-              Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
-              maintainer of
-              <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
-                {" "}
-                service mesh standards{" "}
-              </Link>
-              and also the maker of <Link to="/meshery">Meshery </Link>,
-              the
-              <Link to="/cloud-native-management/meshery">
-                {" "}
-                Cloud Native Management Plane{" "}
-              </Link>
-              .<br />
-              Layer5 is not just a company, we are also:
-            </p>
             <h4>Community First</h4>
             <p>
               The Layer5 community builds projects to provide

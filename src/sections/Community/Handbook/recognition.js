@@ -71,13 +71,11 @@ const RecognitionPage = () => {
       <TOC />
       <div className="page-section">
         <Container>
+          <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
+          <p>
+            As an open source-first community, we very much appreciate the engagement of individuals within the Layer5 community. We wouldn't be here without you. Our success is a collective one.Consequently, we are quite intentional about defining and encouraging the journey for each individual community member. No small part of their journey is that of recognizing their accomplishments and publicly celebrating their accolades. We do so in a number of ways.
+          </p>
           <div className="content">
-            <a id="Community Guidelines">
-              <h2 id="communityGuidelines">Your Efforts Do Not Go Unnoticed or Unappreciated</h2>
-            </a>
-            <p>
-              As an open source-first community, we very much appreciate the engagement of individuals within the Layer5 community. We wouldn't be here without you. Our success is a collective one.Consequently, we are quite intentional about defining and encouraging the journey for each individual community member. No small part of their journey is that of recognizing their accomplishments and publicly celebrating their accolades. We do so in a number of ways.
-            </p>
             <a id="Membership">
               <h3>Membership to the Github organizations</h3>
             </a>
