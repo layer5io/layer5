@@ -12,7 +12,7 @@ export const Pre = styled.pre`
   margin-top: 1em;
   padding: 0.5em;
   overflow-x: visible;
-  @media (max-width: 1024px) {
+  @media (max-width: 1119px) {
     display: block;
     overflow-x: auto;
   }
