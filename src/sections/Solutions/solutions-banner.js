@@ -4,7 +4,7 @@ import DemoBtn from "./solutions-buttons";
 
 import { ReactComponent as HeroGraphicSVG } from "./images/solutions-cost.svg";
 import { ReactComponent as SpiralBg } from "./images/spiral-bg.svg";
- 
+
 const BannerSectionWrapper = styled.section`
   width: 100vw;
   position: relative;
@@ -29,7 +29,7 @@ const BannerSectionWrapper = styled.section`
     padding: 3rem 1rem;
     min-height: 25rem;
   }
-`; 
+`;
 
 const BackgroundContainer = styled.div`
   position: absolute;
@@ -38,7 +38,7 @@ const BackgroundContainer = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
-`; 
+`;
 
 const SpiralLayer = styled(SpiralBg)`
   position: absolute;
@@ -52,26 +52,35 @@ const SpiralLayer = styled(SpiralBg)`
   filter: blur(5px);
   will-change: filter;
 `;
- 
+
 const GradientLayer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; 
+  z-index: 1;
+
+  background: 
  
-  background: linear-gradient(
-    to right,
-    rgba(0, 13, 18, 0)  0%,   
-    rgba(0, 13, 18, 0) 40%,   
-    rgba(81, 99, 107, 0) 100%  
-  );
+    linear-gradient(
+      180deg,
+      rgba(0, 13, 18, 0.5)   0%,
+      rgba(0, 13, 18, 0  ) 100%
+    ),
+ 
+    linear-gradient(
+      99.08deg,
+      rgba(0,  13, 18, 0.12) 6.95%,
+      rgba(81, 99,107, 0.4 ) 57.85%
+    );
+
  
   filter: blur(20px);
-  will-change: backdrop-filter;
+  will-change: filter;
 `;
- 
+
+
 const Inner = styled.div`
   position: relative;
   z-index: 2; /* on top of spiral (0) and gradient (1) */
@@ -89,7 +98,7 @@ const Inner = styled.div`
     gap: 3rem;
   }
 `;
- 
+
 const BannerText = styled.div`
   flex: 1 1 50%;
   max-width: 736px;
@@ -146,7 +155,7 @@ const SubHeading = styled.h2`
   }
 `;
 
- 
+
 const BannerGraphic = styled.div`
   flex: 1 1 50%;
   z-index: 2;
@@ -174,7 +183,7 @@ const BannerGraphic = styled.div`
     }
   }
 `;
- 
+
 const DemoButtonsWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -193,15 +202,15 @@ const DemoButtonsWrapper = styled.div`
     align-items: stretch;
   }
 `;
- 
+
 const BannerSection = () => {
   return (
-    <BannerSectionWrapper> 
+    <BannerSectionWrapper>
       <BackgroundContainer>
         <SpiralLayer />
         <GradientLayer />
       </BackgroundContainer>
- 
+
       <Inner>
         <BannerText>
           <MainHeading>
@@ -228,4 +237,4 @@ const BannerSection = () => {
   );
 };
 
-export default BannerSection; 
+export default BannerSection;
