@@ -199,7 +199,7 @@ const ViewsSectionWrapper = styled.div`
       height:150px;
       padding: 2rem;
       box-sizing: border-box;
-      background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
+      background-color: ${(props) => props.theme.backgroundColor};
       color: ${(props) => props.theme.whiteEightToBlack}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
