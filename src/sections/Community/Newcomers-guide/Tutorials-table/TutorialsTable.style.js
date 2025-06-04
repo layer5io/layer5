@@ -34,4 +34,14 @@ export const TutorialsTableWrapper = styled.div`
       }
     }
     }
+    .newBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    img {
+      height: 26px;
+      width: auto;
+    }
+  }
 `;
