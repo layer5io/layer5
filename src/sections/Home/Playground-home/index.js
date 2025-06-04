@@ -67,89 +67,73 @@ const ViewsSectionWrapper = styled.div`
       height: 600px;
       padding: 0 2%;
     }
-      
-}
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 50%;
-        max-width: 50%;
-        padding-bottom: 3rem;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          justify-content: center;
-          text-align: center;
-          margin-top: 4rem;
-        }
-        @media only screen and (min-width: 768px) and (max-width: 1100px) {
-          padding-left: 1rem;
-        }
+  }
 
-          
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-bottom: 3rem;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-top: 4rem;
     }
 
-    .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
-        overflow: hidden;
-        height: 100%;
+    @media only screen and (min-width: 768px) and (max-width: 1100px) {
+      padding-left: 1rem;
+    }
+  }
 
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    overflow: hidden;
+    height: 100%;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
     }
 
-    h2 {
-      /* max-width: 90%; */
-      padding-bottom: 2%;
+    svg {
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+
+      .visualizer-views-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToGrey737373};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
     }
+
+    .visible {
+      opacity: 1;
+      transition: all 0.2s ease-in;
+    }
+
+    .not-visible {
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+  }
+
+  h2 {
+    padding-bottom: 2%;
   }
 
   h4 {
-      max-width: 90%;
-      @media only screen and (max-width: 767px) {
-        max-width: 100%;
-        }
-  }
+    max-width: 90%;
 
-   .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
-
-        
-
-        svg {
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          .visualizer-views-colorMode_svg__colorMode1 {
-            fill: ${(props) => props.theme.whiteToGrey737373};
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          }
-        }
-
-      
-        .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
-        }
-
-        .not-visible {
-                opacity: 0;
-                transition: all 0.5s ease;
-        }
-
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
-
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
     }
+  }
 
     .overlay {
         width: 483px;
@@ -215,7 +199,8 @@ const ViewsSectionWrapper = styled.div`
       height:150px;
       padding: 2rem;
       box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor}; 
+      background-color: ${(props) => props.theme.grey191919ToGreyF2F5F7};
+      color: ${(props) => props.theme.whiteEightToBlack}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
       //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
@@ -233,6 +218,7 @@ const ViewsSectionWrapper = styled.div`
     .box .boxText {
       margin-top: 1rem;
       text-align: center;
+      color: ${(props) => props.theme.whiteEightToBlack};
     }
 
     @media only screen and (max-width: 700px) {
