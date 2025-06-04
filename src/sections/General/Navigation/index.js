@@ -146,10 +146,10 @@ const Navigation = () => {
           thumbnail: {
             img: meshery,
           },
-          title: "Meshery, the Cloud Native Manager",
+          title: "Layer5 Cloud & Catalog",
         },
         fields: {
-          slug: "/cloud-native-management/meshery",
+          slug: "/cloud-native-management/catalog",
         },
       },
     ],
