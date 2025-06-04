@@ -42,14 +42,15 @@ const BackgroundContainer = styled.div`
 
 const SpiralLayer = styled(SpiralBg)`
   position: absolute;
-  bottom: 0;                   /* pin to bottom */
+  bottom: 0;                  
   left: 50%;
-  transform: translateX(-35%); /* center horizontally */
-  width: 100vw;                /* full viewport width */
-  height: auto;                /* maintain aspect ratio */
+  transform: translateX(-35%); 
+  width: 100vw;             
+  height: auto;               
   z-index: 0;
-
-  /* NO filter: blur here */
+  
+  filter: blur(5px);
+  will-change: filter;
 `;
  
 const GradientLayer = styled.div`
@@ -58,19 +59,17 @@ const GradientLayer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* above spiral (z-index: 0), below content (z-index: 2) */
-
-  /* Semi-transparent gradient so the crisp spiral still shows through */
+  z-index: 1; 
+ 
   background: linear-gradient(
     to right,
-    rgba(0, 13, 18, 0.8)  0%,   /* 80% opaque black-teal */
-    rgba(0, 13, 18, 0.0) 40%,   /* fully transparent by 40% */
-    rgba(81, 99, 107, 0.8) 100% /* 80% opaque mid-blue */
+    rgba(0, 13, 18, 0)  0%,   
+    rgba(0, 13, 18, 0) 40%,   
+    rgba(81, 99, 107, 0) 100%  
   );
-
-  /* Only the gradient is blurred */
+ 
   filter: blur(20px);
-  will-change: filter;
+  will-change: backdrop-filter;
 `;
  
 const Inner = styled.div`
@@ -111,8 +110,9 @@ const BannerText = styled.div`
 `;
 
 const MainHeading = styled.h1`
+  font-family: "Qanelas Soft";
   font-weight: 600;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 64px;
   line-height: 1.1;
   color: ${({ theme }) => theme.white || "#ffffff"};
   margin: 0;
@@ -125,10 +125,12 @@ const MainHeading = styled.h1`
 `;
 
 const SubHeading = styled.h2`
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans‐serif;
   font-weight: 600;
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  line-height: 1.5;
+  font-size: 24px;
+  line-height: 36px;       
+  letter-spacing: 0;       
+  vertical-align: middle;   
   color: ${({ theme }) => theme.white || "#ffffff"};
   margin: 0;
   max-width: 500px;
@@ -143,6 +145,7 @@ const SubHeading = styled.h2`
     }
   }
 `;
+
  
 const BannerGraphic = styled.div`
   flex: 1 1 50%;
@@ -203,7 +206,6 @@ const BannerSection = () => {
         <BannerText>
           <MainHeading>
             Cost, incident and chaos
-            <br />
             oversight
           </MainHeading>
 
