@@ -21,6 +21,8 @@ import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
+import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
+import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -128,6 +130,7 @@ const Navigation = () => {
   }
 }`
   );
+  const { isDark, toggleDark } = useStyledDarkMode();
   data["Products"] = {
     nodes: [
       {
@@ -144,7 +147,7 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
+            img: isDark ? Layer5CloudLightIcon : Layer5CloudDarkIcon,
           },
           title: "Layer5 Cloud & Catalog",
         },
@@ -161,7 +164,6 @@ const Navigation = () => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
