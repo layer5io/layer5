@@ -2,6 +2,7 @@ import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
     .content > a:first-of-type > h2:first-of-type {
+      margin-top: 1rem;
       padding-top: 1rem;
     }
 
@@ -53,7 +54,7 @@ export const HandbookWrapper = styled.div`
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
-        margin-top : -77vh ;
+        margin-top : -79vh ;
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1350px) {

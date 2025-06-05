@@ -34,12 +34,14 @@ const Connect = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <h2>Subscribe to Newsletter</h2>
-          <p>
-            Don’t miss out on anything, sign up to receive updates on our
-            newest releases, latest blog posts and any relevant information.
-          </p>
           <div className="content">
+            <a id="Newsletter">
+              <h2>Subscribe to Newsletter</h2>{" "}
+            </a>
+            <p>
+              Don’t miss out on anything, sign up to receive updates on our
+              newest releases, latest blog posts and any relevant information.
+            </p>
             <ul>
               <li>
                 <a href="https://meshery.io/subscribe">Meshery mailing list</a>

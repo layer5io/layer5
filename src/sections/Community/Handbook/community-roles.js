@@ -25,12 +25,14 @@ const CommunityGuide = () => {
         <TOC />
         <div className="page-section">
           <Container>
-            <h2>Layer5 community leader undertake different roles</h2>
-            <p>
-              A leader is someone who can contribute to the Layer5 Community's
-              growth by faithfully upholding one of the responsibilities outlined in the roles below.
-            </p>
             <div className="content">
+              <a id="top">
+                <h2>Layer5 community leader undertake different roles</h2>
+              </a>
+              <p>
+                A leader is someone who can contribute to the Layer5 Community's
+                growth by faithfully upholding one of the responsibilities outlined in the roles below.
+              </p>
               <h3>
                 <a id="Community Manager"><strong><Link to="/community/community-managers">Community Manager</Link></strong></a>
               </h3>
