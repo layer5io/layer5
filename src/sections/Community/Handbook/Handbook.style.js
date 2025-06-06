@@ -6,6 +6,10 @@ export const HandbookWrapper = styled.div`
       padding-top: 1rem;
     }
 
+    .conduct-first-paragraph {
+      padding-top: -6rem;
+    }
+
     .highlight{
       font-weight: 600;
     }
@@ -54,7 +58,7 @@ export const HandbookWrapper = styled.div`
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
-        margin-top : -83vh ;
+        margin-top : -90vh ;
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1350px) {
@@ -303,7 +307,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
       }
       .page-section{
-        margin-top: -2rem;
+        margin-top: -4rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
       
