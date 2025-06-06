@@ -29,12 +29,14 @@ const contributingGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <h2 className="heading-top">General contribution flow</h2>
-          <p>
-            Pull requests (PRs) are the best ways to propose changes to a
-            project repository. At Layer5 org, we use the Github Flow:
-          </p>
           <div className="content">
+            <a>
+              <h2 id="top">General contribution flow</h2>
+            </a>
+            <p>
+              Pull requests (PRs) are the best ways to propose changes to a
+              project repository. At Layer5 org, we use the Github Flow:
+            </p>
             <a id="Clone your fork">  <h3>Clone your fork to your local machine</h3> </a>
             <ul>
               <li>Fork the repository you are working on.</li>

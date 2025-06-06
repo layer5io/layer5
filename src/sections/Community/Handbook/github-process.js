@@ -14,7 +14,9 @@ const SecurityVulnerabilitiesPage = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>Issue and PR Labels and Templates, Bots</h2><br/>
+            <a id="top">
+              <h2>Issue and PR Labels and Templates, Bots</h2><br/>
+            </a>
             <h3><strong>Overview</strong></h3><br />
             <p>The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across the growing repository collection.</p>
             <p>The number of repositories under the “Layer5io” organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.</p>
