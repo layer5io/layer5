@@ -6,8 +6,19 @@ export const HandbookWrapper = styled.div`
       padding-top: 1rem;
     }
 
-    .conduct-first-paragraph {
-      padding-top: -6rem;
+    .content > a:first-of-type > h3:first-of-type {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+
+    .container .conduct-first-paragraph {
+      @media (min-width: 750px) {
+        margin-top: -9rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: -6rem;
+      }
     }
 
     .highlight{
