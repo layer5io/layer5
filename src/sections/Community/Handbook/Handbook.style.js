@@ -11,7 +11,7 @@ export const HandbookWrapper = styled.div`
       padding-top: 1rem;
     }
 
-    .container .conduct-first-paragraph {
+    .content .conduct-first-paragraph {
       @media (min-width: 750px) {
         margin-top: -9rem;
       }
