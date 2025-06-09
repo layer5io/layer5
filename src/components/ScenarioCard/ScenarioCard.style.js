@@ -89,9 +89,7 @@ export const ScenarioCardWrapper = styled.div`
 
 
 	.active {
-		display: block;
 		width: 100%;
-		height: auto;
 		padding: 1.5rem;
         overflow: hidden;
 	}
@@ -113,7 +111,7 @@ export const ScenarioCardWrapper = styled.div`
         }
     }
     .open-animate {
-        height: auto;
+        display: flex;
         transition: height 0.2s ease-in;
     }
     .close-animate {
