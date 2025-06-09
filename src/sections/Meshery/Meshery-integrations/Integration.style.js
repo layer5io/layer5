@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import Slider from "react-slick";
 
@@ -172,6 +171,10 @@ export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
   margin: 5.1875rem auto;
   text-align: center;
+  min-height: 300px; /* Add explicit min-height */
+  position: relative; /* Add position for better layout control */
+  width: 100%; /* Add explicit width */
+  
   .seeAllBtn {
     &:hover {
       color: white;
