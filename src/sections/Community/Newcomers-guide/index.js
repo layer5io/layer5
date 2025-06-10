@@ -160,7 +160,7 @@ const NewcomersGuide = () => {
                 <li>
                   Be sure to{" "}
                   <a
-                    href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin"
+                    href="https://docs.meshery.io/project/contributing#general-contribution-flow"
                     target="_blank"
                     rel="noreferrer"
                   >
