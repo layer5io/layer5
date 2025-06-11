@@ -10,6 +10,9 @@ const Banner3SectionWrapper = styled.section`
     background-color: ${props => props.theme.secondaryLightColorTwo};
     background-position: bottom -85px right;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    min-height: 600px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
 
     p {
         font-size: 21px;
