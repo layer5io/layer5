@@ -81,7 +81,7 @@ export const repo_data = [
         site: "https://getnighthawk.dev",
         language: "Jekyll",
         maintainers_name: ["Vacant"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        link: [""],
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
@@ -410,7 +410,7 @@ export const repo_data = [
         image: meshery,
         language: "Golang",
         maintainers_name: ["Vacant"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        link: [""],
         description:
           "Augmentation of wrk2 to produce output compatible with Meshery’s visualization of performance test results.",
         repository: "https://github.com/layer5io/gowrk2",
@@ -420,7 +420,7 @@ export const repo_data = [
         image: gnh,
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        link: [""],
         description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
@@ -586,7 +586,7 @@ export const repo_data = [
         image: ciliumLogo,
         language: "Golang, gRPC",
         maintainers_name: ["Vacant"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        link: [""],
         description: "Meshery adapter for management of Cilium Service Mesh.",
         repository: "https://github.com/meshery/meshery-cilium",
       },
