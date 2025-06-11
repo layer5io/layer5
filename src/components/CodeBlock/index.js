@@ -6,24 +6,17 @@ import { copyToClipboard } from "./copy-to-clipboard";
 export const Pre = styled.pre`
   position: relative;
   text-align: left;
-  display: inline-block;
   width: 100%;
   margin: auto;
   margin-top: 1em;
   padding: 0.5em;
-  overflow-x: visible;
-  @media (max-width: 1119px) {
-    display: block;
-    overflow-x: auto;
-  }
+  overflow-x: auto;
   border-radius: 3px;
   & .token-line {
     line-height: 1.3em;
     height: 1.3em;
   }
   font-family: "Courier New", Courier, monospace;
-  font-size: 0.9em;
-  z-index: 1;
 `;
 
 export const LineNo = styled.span`
@@ -37,11 +30,11 @@ const CopyCode = styled.button`
   position: absolute;
   opacity: 0.5;
   right: 0;
-  z-index: 2;
+  z-index: 1;
   border: 0;
   border-radius: 3px;
-  margin-right: 1em;
-  top: 2em;
+  margin-right: 1.5em;
+  top: 2rem;
   &:hover {
     opacity: 1;
     cursor: pointer;
