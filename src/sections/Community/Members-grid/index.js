@@ -3,7 +3,7 @@ import React, { useState , useEffect } from "react";
 import { Link } from "gatsby";
 
 // Components
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import ProfileCard from "../../../components/Profile-card";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
@@ -42,18 +42,15 @@ const MembersGrid = (props) => {
       <div className="members-page-wrapper">
         <Container>
           <div className="members-profile-cards">
-            <Row style={{
-              flexWrap: "wrap"
-            }}>
+            <div className="members-grid">
               {props?.data?.map(({ id, frontmatter, fields }) => (
-                <Col $xs={12} $sm={6} $md={6} $lg={4} $xl={3} key={id}>
-                  <ProfileCard
-                    frontmatter={frontmatter}
-                    cardlink={fields.slug}
-                  />
-                </Col>
+                <ProfileCard
+                  frontmatter={frontmatter}
+                  cardlink={fields.slug}
+                  key={id}
+                />
               ))}
-            </Row>
+            </div>
           </div>
           <div className="AboutCommunity">
             <div>

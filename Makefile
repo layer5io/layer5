@@ -27,15 +27,15 @@ site:
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	gatsby develop
+	npx gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
-	gatsby build && gatsby serve
+	npx gatsby build && npx gatsby serve
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
-	gatsby clean && make site
+	npx gatsby clean && make site
 
 ## Run Eslint on your local machine.
 lint:

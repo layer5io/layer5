@@ -1,6 +1,5 @@
 import styled from "styled-components";
 export const ProfileCardWrapper = styled.div`
-    margin-bottom: 25px;
     img{
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
@@ -9,17 +8,11 @@ export const ProfileCardWrapper = styled.div`
     }
 
     .profile-card{
-        width: 260px;
+        height: 100%;
         border-radius: 2px;
-        overflow: hidden;
         box-shadow: 0 2px 2px 0 ${props => props.theme.whiteOneToBlackOne};
-        position: relative;
-        margin: auto;
-        margin-bottom: 2.5rem;
         background: ${props => props.status === "Active" ? props.theme.grey212121ToGreen3C494F : "gray"};       
-        top: 50%;
         transition: 0.3s;
-        height: 235px;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
        
         &::before{            
