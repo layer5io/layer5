@@ -295,7 +295,7 @@ export const HandbookWrapper = styled.div`
 
     @media only screen and (max-width: 750px){
       .content > a:first-of-type > h2:first-of-type {
-        padding-top: 7rem;
+        padding-top: 7rem !important;
       }
       .page-section{
         margin-top: -2rem;
