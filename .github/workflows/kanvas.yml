@@ -38,7 +38,7 @@ jobs:
           path: action
           repository: layer5labs/kanvas-snapshot
       - id: test_result
-        uses: layer5labs/kanvas-snapshot@master
+        uses: layer5labs/kanvas-snapshot@v0.2.34
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           mesheryToken: ${{ secrets.MESHERY_TOKEN }}
