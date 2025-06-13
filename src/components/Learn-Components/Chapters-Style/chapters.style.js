@@ -17,4 +17,9 @@ export const ChapterStyle = styled.div`
     }
   }
   }
+
+  div[style*="width:100%"][style*="height:auto"] {
+    aspect-ratio: unset !important;
+    margin: 20px;
+  }
 `;
