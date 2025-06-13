@@ -1,5 +1,5 @@
 /* eslint-env node */
-
+const isDev = process.env.NODE_ENV === "development";
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -13,7 +13,8 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true
+    PARALLEL_SOURCING: true,
+    PARALLEL_QUERY_RUNNING: true
   },
   trailingSlash: "never",
   plugins: [
@@ -513,7 +514,7 @@ module.exports = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          placeholder: "blurred",
+          placeholder: isDev ? "none" : "blurred",
         }
       }
     },
