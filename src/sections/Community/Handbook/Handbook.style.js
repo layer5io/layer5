@@ -38,12 +38,24 @@ export const HandbookWrapper = styled.div`
 
     .page-section{
       h2{
-        padding-top: 7rem;
-        margin-top: -7rem;
+        @media screen and (min-width: 768px) {
+          padding-top: 7rem;
+          margin-top: -7rem;
+        }
+        @media screen and (max-width: 767px) {
+          padding-top: 2rem;
+          margin-top: 0rem;
+        }
       }
       h3{
-        padding-top: 7rem;
-        margin-top: -7rem;
+        @media screen and (min-width: 768px) {
+          padding-top: 7rem;
+          margin-top: -7rem;
+        }
+        @media screen and (max-width: 767px) {
+          padding-top: 2rem;
+          margin-top: 0rem;
+        }
       }
       @media (min-width: 750px) {
         margin-top: -36rem;
