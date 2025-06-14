@@ -46,9 +46,9 @@ jobs:
           file_pattern: ${{ env.FEATURES_FILE }}
           branch: master
           commit_options: "--signoff"
-          commit_user_name: l5io
-          commit_user_email: ci@layer5.io
-          commit_author: 'l5io <l5io@users.noreply.github.com>'
+          commit_user_name: meshery-ci
+          commit_user_email: ci@meshery.io
+          commit_author: 'meshery-ci <meshery-ci@users.noreply.github.com>'
 
   call-build-and-deploy--workflow:
     needs:
