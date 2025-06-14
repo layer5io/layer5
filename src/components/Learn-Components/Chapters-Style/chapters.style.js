@@ -22,4 +22,8 @@ export const ChapterStyle = styled.div`
     aspect-ratio: unset !important;
     margin: 20px;
   }
+
+  .image-design {
+    object-fit: contain !important; 
+  }
 `;
