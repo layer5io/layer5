@@ -38,28 +38,21 @@ export const HandbookWrapper = styled.div`
 
     .page-section{
       h2{
-        @media screen and (min-width: 768px) {
-          padding-top: 7rem;
-          margin-top: -7rem;
-        }
-        @media screen and (max-width: 767px) {
-          padding-top: 2rem;
-          margin-top: 0rem;
-        }
+        padding-top: 7rem;
+        margin-top: -7rem;
       }
       h3{
-        @media screen and (min-width: 768px) {
-          padding-top: 7rem;
-          margin-top: -7rem;
-        }
-        @media screen and (max-width: 767px) {
-          padding-top: 2rem;
-          margin-top: 0rem;
-        }
+        padding-top: 7rem;
+        margin-top: -7rem;
       }
       @media (min-width: 750px) {
         margin-top: -36rem;
         margin-left: 20rem;
+      }
+      @media (max-width: 749px) {
+        margin-top: 0;
+        margin-left: 0;
+        padding-top: 2rem;
       }
       display: flex;
 
@@ -310,8 +303,8 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
       }
       .page-section{
-        margin-top: -2rem;
-        margin-left: 0;
+        margin-top: 0; !important
+        margin-left: 0; !important
         padding: 1rem 2.5rem;
       
         .table-container {
