@@ -60,17 +60,6 @@
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.webp"  
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Landscape Ecosystem" align="left"/></a>
-The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
 <h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
 <a href="https://layer5.io/projects/cloud-native-performance">
 <picture align="left">
@@ -120,18 +109,6 @@ alt="Learn Layer5" align="left" />
 <br /><br /><br />
 </p>
 <br />
-
-
-<!-- <p style="clear:both;">
-<h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
-<a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Interface Conformance" align="left" /></a>
-<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
-<br /><br /><br />
-</p>
-<br />
- -->
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/nighthawk">Nighthawk</a></h2>
