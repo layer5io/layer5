@@ -15,6 +15,7 @@ import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware
 
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
 import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
+import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
 
 export const partners = [
   {
@@ -140,5 +141,15 @@ export const partners = [
     partnerId: "docker",
     desc: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in service mesh technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively.",
     moreInfo: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in cloud native technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively."
+  },{
+    name: "DigitalOcean",
+    desc: "DigitalOcean is a cloud infrastructure provider that simplifies cloud computing for developers by offering scalable and easy-to-use cloud services.",
+    //link: null,
+    type: "technology",
+    imageLink: <Partner16 alt="DigitalOcean" />,
+    partnerId: "digitalocean",
+    //imageRoute: "https://www.digitalocean.com/",
+    moreInfo:
+    "DigitalOcean provides cloud computing solutions designed for developers, startups, and businesses. Their platform includes virtual machines, databases, scalable storage, and networking features with a focus on simplicity, performance, and predictable pricing.",
   }
 ];

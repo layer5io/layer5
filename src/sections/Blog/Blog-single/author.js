@@ -18,9 +18,9 @@ const AboutTheAuthor = (props) => {
         <div className="author-info-section">
           <div className="authors-info-container">
             <h3>About the Author</h3>
-            <div className="authors-head-shot">
+            <div className="authors-head-shot" style={{ aspectRatio: "1/1", width: "150px", height: "150px", overflow: "hidden" }}>
               <Link to={`${authorInformation?.fields?.slug}`}>
-                <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
+                <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover", width: "100%", height: "100%" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
               </Link>
             </div>
             <h4>{authorInformation.frontmatter?.name}</h4>
