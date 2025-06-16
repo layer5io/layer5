@@ -104,6 +104,7 @@ const Data = {
         {
           name: "Cloud + Catalog",
           path: "/cloud-native-management/catalog",
+          sepLine: true,
         },
         {
           name: "Open source projects",
