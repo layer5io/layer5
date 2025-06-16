@@ -91,7 +91,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col $sm={12} $lg={6}>
               <h3>Finding an Issue to Work On</h3>
-              <p>Note that the Layer5 community spans five GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
+              <p>Note that the Layer5 community spans six GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
               <ol type="i">
                 <li>
                   Browse the list of{" "}
@@ -160,7 +160,7 @@ const NewcomersGuide = () => {
                 <li>
                   Be sure to{" "}
                   <a
-                    href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin"
+                    href="https://docs.meshery.io/project/contributing#general-contribution-flow"
                     target="_blank"
                     rel="noreferrer"
                   >
