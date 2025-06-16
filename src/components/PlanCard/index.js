@@ -12,7 +12,7 @@ const PlanCard = ({ planData , isYearly }) => {
     return <div>No plan data available</div>;
   }
   const planLink = {
-    "Personal": "https://kanvas.new",
+    "Personal": "https://cloud.layer5.io/account/plans",
     "Team Designer": "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
     "Team Operator": "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
     "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
