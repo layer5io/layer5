@@ -28,7 +28,7 @@ const LearnLayer = () => {
             <a id="Learning">
               <h2>Learning together</h2>
             </a>
-            <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture and service meshes.</p>
+            <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture.</p>
             <p>You can review the <Link to="/learn">complete list of learning resources</Link> or jump straight to the type of training you prefer:</p>
             <ul>
               <li>Interactive <Link to="/learn/service-mesh-labs">cloud native labs</Link></li>

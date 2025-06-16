@@ -352,7 +352,7 @@ const WebBasedForm = () => {
                 value="How gRPC is used in Meshery and Cloud Native Performance (CMP)"
                 className="form-check"
               />
-              <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
+              <span className="checkbox-label">How CRDTs are used in Meshery to facilitate distributed data synchronization</span>
             </label>
             <br />
             <label>

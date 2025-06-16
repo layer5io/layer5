@@ -73,7 +73,7 @@ const Intro = () => {
             </a>
             <ul>
               <li>
-                <span>To build a large collection of service meshes.</span>
+                <span>To build a large collection of cloud native technologies.</span>
               </li>
               <li>
                 <span>

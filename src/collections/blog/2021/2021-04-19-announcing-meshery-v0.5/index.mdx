@@ -104,16 +104,16 @@ There are two types of Providers in Meshery: Local - built into Meshery and Remo
 Learn more about the platform Meshery provides to extend its funcionality by exploring its <Link to="https://docs.meshery.io/extensibility">extension points</Link>. If you have or are building your own <Link to="https://docs.meshery.io/extensibility/providers">Remote Provider</Link>, let us know!
 <h2>MeshKit and Meshery Adapter Library</h2>
 
-As a service mesh toolkit, MeshKit aims to specifically focus on service mesh management and provides broadly useful functionality, it provides a standard policy for error handling and logging across all Meshery components, and implementations for error handling, logging, and tracing.
+As an extensible platform, MeshKit aims to specifically focus on collaborative infrastructure management and provides broadly useful functionality, it provides a standard policy for error handling and logging across all Meshery components, and implementations for error handling, logging, and tracing.
 
 <ul>
-  <li>MeshKit provides common data models of Service Mesh Interface conformance testing for Meshery.</li>
+  <li>MeshKit provides common data models of conformance testing for Meshery.</li>
   <li>The low-level API abstract by MeshKit to the high-level functions provides out-of-the-box functions.</li>
 </ul>
 
 <h3>Meshery Adapter Library</h3>
 
-<p>The Meshery Adapter Library provides a common and consistent set of functionality for managing the lifecycle of service meshes and their workloads.</p>
+<p>The Meshery Adapter Library provides a common and consistent set of functionality for managing the lifecycle of infrastructure and their workloads.</p>
 <div class="img-center">
   <a href={MesheryAdapterLibrary}><img src={MesheryAdapterLibrary} /></a>
 </div>
@@ -128,28 +128,29 @@ With the increasing the number and diversity of service meshes supported by Mesh
 <h2>Meshery Operator</h2>
 <img style="float: left;max-width:300px; width:20%;padding: 1.25rem;" src={MesheryOperator} />
 <p style="display:block;width:100%;">
-As a Kubernetes custom controller, Meshery Operator provides a Kubernetes-native approach to interfacing with Meshery. Kubernetes is where service meshes have gotten their initial foothold, and therefore, important that Meshery interface to Kubernetes natively.</p><p>Some service meshes support non-containerized workloads outside of the cluster and will grow in this focus over time. While Meshery Operator is Kubernetes only in the v0.5.0 release, Meshery's arichitecture makes considerations for different workload and platform types.</p>
+As a Kubernetes custom controller, Meshery Operator provides a Kubernetes-native approach to interfacing with Meshery. Kubernetes is where some infrastructure has gotten their initial foothold, and therefore, important that Meshery interface to Kubernetes natively.</p>
+<p>Some infrastructure supports non-containerized workloads outside of the cluster and will grow in this focus over time. While Meshery Operator is Kubernetes only in the v0.5.0 release, Meshery's architecture makes considerations for different workload and platform types.</p>
 
 <div style="display:flex;width:100%;">
   <div style="text-align:center;flex:50%;">
     <a href={MesheryOperatorShot} style="background-color:rgba(255,255,255,0)"><img style="width:100%;" src={MesheryOperatorShot} /></a>
   </div>
   <ul style="flex:50%;">
-    <li>Meshery Operator is the multi-service mesh operator that runs as a Kubernetes Operator and defines two custom resources: MeshSync and Meshery Broker (NATS)</li>
-    <li>Meshery Operator is provides abilities includes cluster discovery, service mesh discovery, and data streaming via NATS.</li>
+    <li>Meshery Operator is an infrastructure operator that runs as a Kubernetes Operator and defines two custom resources: MeshSync and Meshery Broker (NATS)</li>
+    <li>Meshery Operator is provides abilities includes cluster discovery, infrastructure and service catalog discovery, and data streaming via NATS.</li>
   </ul>
 </div>
 
 <h3>MeshSync</h3>
-<p>MeshSync is available as a Kubernetes custom resource that provides tiered discovery and continual synchronization with Meshery Server as to the state of the Kubernetes cluster, service meshes, and their workloads.</p>
+<p>MeshSync is available as a Kubernetes custom resource that provides tiered discovery and continual synchronization with Meshery Server as to the state of the Kubernetes cluster, cloud services, and their workloads.</p>
 
 <div style="display:flex;">
 <img style="max-width:300px; width:20%;padding: 1.25rem;" src={MeshSync} />
 <ul>
 
-  <li>MeshSync is one of a family of custom controllers within Meshery Operator and is the <Link to="https://docs.meshery.io/concepts/architecture/meshsync">heartbeat of Meshery</Link>, pumping information about service meshes and their workloads throughout Meshery's components.</li>
-  <li>MeshSync helps Meshery mesh with meshes by helping define a service mesh agnostic object model.</li>
-  <li>It provides ability to detect service meshes and services deployed on the cluster, and snapshot stored in-memory and refreshed periodically; 
+  <li>MeshSync is one of a family of custom controllers within Meshery Operator and is the <Link to="https://docs.meshery.io/concepts/architecture/meshsync">heartbeat of Meshery</Link>, pumping information about infrastructure and their workloads throughout Meshery's components.</li>
+  <li>MeshSync helps Meshery mesh with meshes by helping define a cloud agnostic object model.</li>
+  <li>It provides ability to detect existing infrastructure and services deployed on the cluster, and snapshot stored in-memory and refreshed periodically; 
 maintain the local snapshot of the cluster and refreshed periodically.</li>
   <li>MeshSync These abilities above help Meshery operations more resilient.</li>
 </ul>
@@ -157,7 +158,7 @@ maintain the local snapshot of the cluster and refreshed periodically.</li>
 </div>
 <h4>Relational Database</h4>
 
-Meshery's <a href="https://docs.meshery.io/concepts/architecture/database">relational database</a> serves as a repository for MeshSync data, user preferences, and system settings. This database should be considered ephemeral and given that it operates as a cache. Meshery relational database offers federated datasets for managing multiple Kubernetes cluster and multiple service meshes.
+Meshery's <a href="https://docs.meshery.io/concepts/architecture/database">relational database</a> serves as a repository for MeshSync data, user preferences, and system settings. This database should be considered ephemeral and given that it operates as a cache. Meshery relational database offers federated datasets for managing multiple Kubernetes cluster and multiple cloud platforms.
 
 <div class="img-center">
   <a href={MesheryDB}><img src={MesheryDB} /></a>
@@ -186,6 +187,6 @@ Review the <Link to="https://docs.meshery.io/reference/mesheryctl">mesheryctl Co
 
 To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.5.0 release, see the [Meshery Documentation](https://docs.meshery.io/). With v0.6.0 planning complete these signal of the Layer5 community's innovation cycle trending upward sharply. See Meshery's <Link to="https://github.com/layer5io/meshery/blob/master/ROADMAP.md">roadmap</Link> for a prelude of what's yet to come.
 
-<div class="intro"><p>If these topics excite you and you want to explore the wonderful world of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+<div class="intro"><p>If these topics excite you, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
 
 </BlogWrapper>
