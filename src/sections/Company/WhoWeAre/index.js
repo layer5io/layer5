@@ -52,14 +52,6 @@ const WhoWeAre = () => {
         </Col>
       </Row>
       <Row className="second-row">
-        {/* <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
-          <div className="item">
-            <img src={checkCircle} alt="Service Mesh Interface Maintainers" />
-            <p>Service Mesh Interface Maintainers</p>
-          </div>
-        </Col> */}
-        {/* </Row>
-      <Row className="row"> */}
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
             <img src={checkCircle} alt="Cloud Native Performance Maintainers" />

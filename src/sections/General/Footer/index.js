@@ -243,14 +243,6 @@ const Footer = ({ location }) => {
                       GitOps with Cloud Native Insights
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link
-                      className="category-link"
-                      to="/projects/service-mesh-interface-conformance"
-                    >
-                      Service Mesh Interface
-                    </Link>
-                  </li> */}
                   <li>
                     <Link
                       className="category-link"
