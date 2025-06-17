@@ -11,6 +11,8 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const ESLintWebpackPlugin = require("eslint-webpack-plugin");
+
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -1072,7 +1074,18 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     if (miniCssExtractPlugin) {
       miniCssExtractPlugin.options.ignoreOrder = true;
     }
+    config.plugins = config.plugins.filter(
+      (plugin) => plugin.constructor.name !== "ESLintWebpackPlugin"
+    );
 
+    config.plugins.push(
+      new ESLintWebpackPlugin({
+        extensions: ["js", "jsx", "mjs", "cjs"],
+        exclude: ["node_modules", ".cache", "public"],
+        emitWarning: true,
+        failOnError: false,
+      })
+    );
     actions.replaceWebpackConfig(config);
   }
 };
