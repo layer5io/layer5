@@ -259,8 +259,10 @@ const data = {
       question: "Do you have special pricing for open source / non-profit projects?",
       category: "Pricing",
       answer: [
-        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+        "Yes, we offer significant discounts for open source projects. Visit open source pricing page and sign up with details of your open source project to apply for discount.",
       ],
+      linktext: "Open source pricing",
+      link: "/pricing/open-source-program"
     },
 
     //
