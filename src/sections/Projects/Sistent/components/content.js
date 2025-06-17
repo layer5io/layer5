@@ -1,5 +1,13 @@
 const componentsData = [
   {
+    id: 0,
+    name: "Badge",
+    description:
+      "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
+    url: "/projects/sistent/components/badge",
+    src: "/badge",
+  },
+  {
     id: 1,
     name: "Button",
     description:
@@ -122,9 +130,10 @@ const componentsData = [
   {
     id: 16,
     name: "Icons",
-    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    description:
+      "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
     url: "/projects/sistent/components/icons",
-    src: "/icons"
+    src: "/icons",
   },
 ];
 
