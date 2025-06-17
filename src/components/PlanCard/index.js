@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../reusecore/Button";
 import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
