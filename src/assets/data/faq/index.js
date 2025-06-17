@@ -55,15 +55,6 @@ const data = {
     //
 
     {
-      question: "Is Meshery a service mesh?",
-      category: "Meshery",
-      answer: [
-        "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
-      ],
-      link: "/cloud-native-management/meshery",
-      linktext: "Run Meshery",
-    },
-    {
       question:
         "Why do I need to authenticate my social account to use Meshery?",
       category: "Meshery",
@@ -86,14 +77,10 @@ const data = {
     },
     {
       question:
-        "I have already selected and am operating a service mesh. Should I use Meshery?",
+        "I have already operating Kubernetes Clusters. Should I use Meshery?",
       category: "Meshery",
       answer: [
-        "As a management plane, Meshery provides value in a number of ways post-adoption of a service mesh. For example, Meshery analyzes your deployments in evaluation of service mesh best practices and patterns, highlighting where you might be deviating. Meshery's Other ways can be articulated in its set of features spanning:",
-        "Lifecycle Management",
-        "Configuration Management",
-        "Performance Management",
-        "Workload Management",
+        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
       ],
       link: "/cloud-native-management/meshery",
       linktext: "Meshery",
@@ -152,14 +139,13 @@ const data = {
     //
 
     {
-      question: "How do Meshery Extension Points work?",
+      question: "Is Meshery extensible?",
       category: "Meshery Integrations",
-      link: "https://docs.meshery.io/extensibility",
-      linktext: "Meshery Extensibility",
       answer: [
-        "Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
-        "Take advantage of these extension points for working with different service meshes via adapters, different load generators and different providers. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app."
+        "Yes, Meshery is not just an application. Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.", "It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Meshery’s architecture.",
       ],
+      link: "https://docs.meshery.io/extensibility",
+      linktext: "Learn about Meshery's extensibility",
     },
     {
       question: "How can I request a new integration?",
