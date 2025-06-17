@@ -9,7 +9,7 @@ import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
 import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
-import { ContentCopyIcon } from "@mui/icons-material";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 const ColorCards = styled("div")(() => ({
   display: "flex",
