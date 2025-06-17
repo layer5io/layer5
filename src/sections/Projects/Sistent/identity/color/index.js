@@ -7,9 +7,9 @@ import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
-import { useTheme, Tooltip, Snackbar, IconButton, styled } from "@layer5/sistent";
+import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
-import { ContentCopyIcon } from "@mui/icons-material"
+import { ContentCopyIcon } from "@mui/icons-material";
 
 const ColorCards = styled("div")(() => ({
   display: "flex",
@@ -224,67 +224,69 @@ const SistentIdentityColor = () => {
             to complement these greens and create harmonious implementations.
             These five colors combine to form a foundation for the color system.
           </p>
-          <ColorCards>
-            {colors.map(({ name, color, hex, token, rgb }, idx) => (
-              <ColorCard key={idx}>
-                <Swatch color={color} />
-                <ColorInfo>
-                  <h4>{name}</h4>
-                  <CodeRow>
-                    <span>HEX: {hex}</span>
-                    <Tooltip title="Copy HEX">
-                      <IconButton
-                        onClick={() => handleCopy(hex)}
-                        aria-label={`Copy HEX color code of ${name}`}
-                        sx={{
-                          color: theme.palette.icon?.default,
-                          "&:hover": {
-                            color: theme.palette.icon?.brand,
-                          },
-                        }}
-                      >
-                        <ContentCopyIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </CodeRow>
-                  <CodeRow>
-                    <span>Sistent Token</span>
-                    <Tooltip title={`Copy Token: ${token}`}>
-                      <IconButton
-                        onClick={() => handleCopy(token)}
-                        aria-label={`Copy Sistent token of ${name}`}
-                        sx={{
-                          color: theme.palette.icon?.default,
-                          "&:hover": {
-                            color: theme.palette.icon?.brand,
-                          },
-                        }}
-                      >
-                        <ContentCopyIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </CodeRow>
-                  <CodeRow>
-                    <span>RGB</span>
-                    <Tooltip title={`Copy RBG: ${rgb}`}>
-                      <IconButton
-                        onClick={() => handleCopy(rgb)}
-                        aria-label={`Copy RGB of ${name}`}
-                        sx={{
-                          color: theme.palette.icon?.default,
-                          "&:hover": {
-                            color: theme.palette.icon?.brand,
-                          },
-                        }}
-                      >
-                        <ContentCopyIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </CodeRow>
-                </ColorInfo>
-              </ColorCard>
-            ))}
-          </ColorCards>
+          <NoSsr>
+            <ColorCards>
+              {colors.map(({ name, color, hex, token, rgb }, idx) => (
+                <ColorCard key={idx}>
+                  <Swatch color={color} />
+                  <ColorInfo>
+                    <h4>{name}</h4>
+                    <CodeRow>
+                      <span>HEX: {hex}</span>
+                      <Tooltip title="Copy HEX">
+                        <IconButton
+                          onClick={() => handleCopy(hex)}
+                          aria-label={`Copy HEX color code of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                    <CodeRow>
+                      <span>Sistent Token</span>
+                      <Tooltip title={`Copy Token: ${token}`}>
+                        <IconButton
+                          onClick={() => handleCopy(token)}
+                          aria-label={`Copy Sistent token of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                    <CodeRow>
+                      <span>RGB</span>
+                      <Tooltip title={`Copy RBG: ${rgb}`}>
+                        <IconButton
+                          onClick={() => handleCopy(rgb)}
+                          aria-label={`Copy RGB of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                  </ColorInfo>
+                </ColorCard>
+              ))}
+            </ColorCards>
+          </NoSsr>
           <a id="Layer Hierarchy">
             <h2>Layer Hierarchy</h2>
           </a>
