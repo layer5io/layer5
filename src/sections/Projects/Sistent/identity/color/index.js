@@ -7,9 +7,8 @@ import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
-import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr, SistentThemeProvider } from "@layer5/sistent";
+import { useTheme, Tooltip, Snackbar, IconButton, styled, CopyIcon} from "@layer5/sistent";
 import { SistentLayout } from "../../sistent-layout";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 const ColorCards = styled("div")(() => ({
   display: "flex",
@@ -30,7 +29,7 @@ const ColorCard = styled("div")(() => ({
 const Swatch = styled("div")(({ color }) => ({
   height: "100px",
   borderRadius: "8px 8px 0 0",
-  color: color,
+  backgroundColor: color,
 }));
 
 const ColorInfo = styled("div")(() => ({
@@ -56,37 +55,37 @@ const SistentIdentityColor = () => {
   const colors = [
     {
       name: "Keppel Green",
-      color: theme.palette.background.brand?.default,
+      color: "#00B39F",
       hex: "#00B39F",
-      rgb: "0, 179, 159",
+      rgb: "rgb(0, 179, 159)",
       token: "theme.palette.background.brand.default",
     },
     {
       name: "Caribbean Green",
       color: "#00D3A9",
       hex: "#00D3A9",
-      rgb: "0, 211, 169",
+      rgb: "rgb(0, 211, 169)",
       token: "theme.palette.background.graphics.default",
     },
     {
       name: "Saffron Yellow",
       color: "#EBC017",
       hex: "#EBC017",
-      rgb: "235, 192, 23",
+      rgb: "rgb(235, 192, 23)",
       token: "theme.palette.background.cta.default",
     },
     {
       name: "Charcoal",
-      color: theme.palette.background.default,
+      color: "#3C494F",
       hex: "#3C494F",
-      rgb: "60, 73, 79",
+      rgb: "rgb(60, 73, 79)",
       token: "theme.palette.background.default",
     },
     {
       name: "Accent Grey",
-      color: theme.palette.background.secondary,
+      color: "#647881",
       hex: "#647881",
-      rgb: "100, 120, 129",
+      rgb: "rgb(100, 120, 129)",
       token: "theme.palette.background.secondary",
     },
   ];
@@ -224,71 +223,67 @@ const SistentIdentityColor = () => {
             to complement these greens and create harmonious implementations.
             These five colors combine to form a foundation for the color system.
           </p>
-          <NoSsr>
-            <SistentThemeProvider>
-              <ColorCards>
-                {colors.map(({ name, color, hex, token, rgb }, idx) => (
-                  <ColorCard key={idx}>
-                    <Swatch color={color} />
-                    <ColorInfo>
-                      <h4>{name}</h4>
-                      <CodeRow>
-                        <span>HEX: {hex}</span>
-                        <Tooltip title="Copy HEX">
-                          <IconButton
-                            onClick={() => handleCopy(hex)}
-                            aria-label={`Copy HEX color code of ${name}`}
-                            sx={{
-                              color: theme.palette.icon?.default,
-                              "&:hover": {
-                                color: theme.palette.icon?.brand,
-                              },
-                            }}
-                          >
-                            <ContentCopyIcon />
-                          </IconButton>
-                        </Tooltip>
-                      </CodeRow>
-                      <CodeRow>
-                        <span>Sistent Token</span>
-                        <Tooltip title={`Copy Token: ${token}`}>
-                          <IconButton
-                            onClick={() => handleCopy(token)}
-                            aria-label={`Copy Sistent token of ${name}`}
-                            sx={{
-                              color: theme.palette.icon?.default,
-                              "&:hover": {
-                                color: theme.palette.icon?.brand,
-                              },
-                            }}
-                          >
-                            <ContentCopyIcon />
-                          </IconButton>
-                        </Tooltip>
-                      </CodeRow>
-                      <CodeRow>
-                        <span>RGB</span>
-                        <Tooltip title={`Copy RBG: ${rgb}`}>
-                          <IconButton
-                            onClick={() => handleCopy(rgb)}
-                            aria-label={`Copy RGB of ${name}`}
-                            sx={{
-                              color: theme.palette.icon?.default,
-                              "&:hover": {
-                                color: theme.palette.icon?.brand,
-                              },
-                            }}
-                          >
-                            <ContentCopyIcon />
-                          </IconButton>
-                        </Tooltip>
-                      </CodeRow>
-                    </ColorInfo>
-                  </ColorCard>
-                ))}
-              </ColorCards>
-            </SistentThemeProvider>
-          </NoSsr>
+          <ColorCards>
+            {colors.map(({ name, color, hex, token, rgb }, idx) => (
+              <ColorCard key={idx}>
+                <Swatch color={color} />
+                <ColorInfo>
+                  <h4>{name}</h4>
+                  <CodeRow>
+                    <span>HEX: {hex}</span>
+                    <Tooltip title="Copy HEX">
+                      <IconButton
+                        onClick={() => handleCopy(hex)}
+                        aria-label={`Copy HEX color code of ${name}`}
+                        sx={{
+                          color: theme.palette.icon?.default,
+                          "&:hover": {
+                            color: theme.palette.icon?.brand,
+                          },
+                        }}
+                      >
+                        <CopyIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </CodeRow>
+                  <CodeRow>
+                    <span>Sistent Token</span>
+                    <Tooltip title={`Copy Token: ${token}`}>
+                      <IconButton
+                        onClick={() => handleCopy(token)}
+                        aria-label={`Copy Sistent token of ${name}`}
+                        sx={{
+                          color: theme.palette.icon?.default,
+                          "&:hover": {
+                            color: theme.palette.icon?.brand,
+                          },
+                        }}
+                      >
+                        <CopyIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </CodeRow>
+                  <CodeRow>
+                    <span>RGB</span>
+                    <Tooltip title={`Copy RBG: ${rgb}`}>
+                      <IconButton
+                        onClick={() => handleCopy(rgb)}
+                        aria-label={`Copy RGB of ${name}`}
+                        sx={{
+                          color: theme.palette.icon?.default,
+                          "&:hover": {
+                            color: theme.palette.icon?.brand,
+                          },
+                        }}
+                      >
+                        <CopyIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </CodeRow>
+                </ColorInfo>
+              </ColorCard>
+            ))}
+          </ColorCards>
           <a id="Layer Hierarchy">
             <h2>Layer Hierarchy</h2>
           </a>
