@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
-import { Link } from "gatsby";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import TOC from "../../../components/handbook-navigation/index";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
