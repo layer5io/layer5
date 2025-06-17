@@ -133,9 +133,9 @@ const Maintainer = () => {
                 </li>
                 <p>
                   It is a cloud native management plane offering lifecycle
-                  management of more types of cloud native infrastrcture than any other tool                  available today. Meshery facilitates adopting, configuring,
-                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics
-                  from applications running on top of any service mesh.
+                  management of more types of cloud native infrastructure than any other tool
+                  available today. Meshery facilitates adopting, configuring,
+                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics.
                   <br />{" "}
                 </p>
                 <li>
