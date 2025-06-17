@@ -126,7 +126,7 @@ const Data = {
     //     },
     //     {
     //       name: "Workshops",
-    //       path: "/learn/service-mesh-workshops",
+    //       path: "/learn/workshops",
     //       sepLine: true
     //     },
     //     {
@@ -276,7 +276,7 @@ const Data = {
         // },
         {
           name: "Workshops",
-          path: "/learn/service-mesh-workshops",
+          path: "/learn/workshops",
         },
         {
           name: "Learning Paths",
