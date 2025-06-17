@@ -191,7 +191,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Istio.",
+          "A workshop that teaches about modern infrastructure through the lens of Istio.",
         repository: "https://github.com/layer5io/istio-service-mesh-workshop",
       },
       {
@@ -201,7 +201,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "An advanced workshop that teaches about service meshes through the lens of Istio.",
+          "An advanced workshop that teaches about modern infrastructure   through the lens of Istio.",
         repository:
           "https://github.com/layer5io/advanced-istio-service-mesh-workshop",
       },
@@ -212,7 +212,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Linkerd.",
+          "A workshop that teaches about modern infrastructure through the lens of Linkerd.",
         repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
       {
@@ -281,7 +281,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
+          "MeshSync is a multi-cluster resource discovery application which is also a custom Kubernetes controller.",
         repository: "https://github.com/meshery/meshsync",
       },
       {
@@ -332,7 +332,7 @@ export const repo_data = [
         repository: "https://github.com/meshery/helm-kanvas-snapshot",
       },
       {
-        project: "Kubectl kanvas snapshot",
+        project: "Kubectl Kanvas Snapshot",
         image: kanvasLogo,
         language: "Golang",
         maintainers_name: ["Vacant"],

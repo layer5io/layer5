@@ -50,10 +50,10 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
+                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your cloud native infrastructure.
                   </p>
                   <p>
-                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
+                    With <code>mesheryctl</code>, not only you can manage your infrastructure, but you can also manage their workloads, characterize performance, and apply well-architectued patterns.
                   </p>
                   <p>
                     <code>mesheryctl</code> provides support for all of Meshery's features and many platforms.
@@ -225,13 +225,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
+                    Meshery supports cloud native application patterns using a cloud-agnostic and application-holistic approach: designs.
                   </p>
                   <p>
-                    Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
+                    Meshery designs enable the practice of both configuring and operating functionality in a single, universal file.
                   </p>
                   <p>
-                    With a patternfile, you can capture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                    With a design, you can capture behavior in a single file. You can access infrastructure-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
