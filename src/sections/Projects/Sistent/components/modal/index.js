@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
@@ -7,10 +7,32 @@ import ConfirmationBg from "../../../../../assets/images/app/projects/sistent/co
 import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sistent/confirmation-dark.png";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import {
+  Button,
+  Box,
+  SistentThemeProvider,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalButtonPrimary,
+  ModalButtonSecondary,
+  ModalButtonDanger,
+  Typography
+} from "@layer5/sistent";
+import { ActionBox } from "../../sistent.style";
 
 const SistentModal = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  const [basicOpen, setBasicOpen] = useState(false);
+  const [actionOpen, setActionOpen] = useState(false);
+
+  const handleBasicOpen = () => setBasicOpen(true);
+  const handleBasicClose = () => setBasicOpen(false);
+
+  const handleActionOpen = () => setActionOpen(true);
+  const handleActionClose = () => setActionOpen(false);
+
   return (
     <SistentLayout title="Modal">
       <div className="content">
@@ -33,10 +55,10 @@ const SistentModal = () => {
             onClick={() => navigate("/projects/sistent/components/modal")}
             title="Overview"
           />
-          {/* <TabButton
+          <TabButton
             className={
               location.pathname ===
-              "/projects/sistent/components/modal/guidance"
+                "/projects/sistent/components/modal/guidance"
                 ? "active"
                 : ""
             }
@@ -44,7 +66,7 @@ const SistentModal = () => {
               navigate("/projects/sistent/components/modal/guidance")
             }
             title="Guidance"
-          /> */}
+          />
           <TabButton
             className={
               location.pathname === "/projects/sistent/components/modal/code"
@@ -89,12 +111,38 @@ const SistentModal = () => {
           <Row className="image-container" $Hcenter>
             <Col md={8} lg={8} sm={12}>
               <img
-                width="100%"
+                width="50%"
                 src={isDark ? ConfirmationDarkBg : ConfirmationBg}
                 alt="confirmation"
               />
             </Col>
           </Row>
+
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <Row $Hcenter className="image-container">
+              <Button onClick={handleBasicOpen} variant="contained">
+                Open Basic Modal
+              </Button>
+              <Modal open={basicOpen} closeModal={handleBasicClose} title="Confirmation Required">
+                <ModalBody>
+                  <Typography variant="body1">
+                    Are you sure you want to proceed with this action?
+                  </Typography>
+                </ModalBody>
+                <ModalFooter variant="filled">
+                  <ActionBox>
+                    <ModalButtonSecondary onClick={handleBasicClose}>
+                      Cancel
+                    </ModalButtonSecondary>
+                    <ModalButtonPrimary onClick={handleBasicClose}>
+                      Confirm
+                    </ModalButtonPrimary>
+                  </ActionBox>
+                </ModalFooter>
+              </Modal>
+            </Row>
+          </SistentThemeProvider>
+
           <h3>Action</h3>
           <p>
             Action modals help users carry out specific tasks. These would
@@ -107,9 +155,58 @@ const SistentModal = () => {
             icons for easy identification across our solutions however, this
             might not be applicable in all cases.
           </p>
+
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <Row $Hcenter className="image-container">
+              <Button onClick={handleActionOpen} variant="contained" color="secondary">
+                Open Action Modal
+              </Button>
+              <Modal
+                open={actionOpen}
+                closeModal={handleActionClose}
+                title="Delete Confirmation"
+                maxWidth="sm"
+              >
+                <ModalBody>
+                  <Typography variant="body1" sx={{ mb: 2 }}>
+                    This action will permanently delete the selected item and cannot be undone.
+                  </Typography>
+                  <Typography variant="body2" color="error">
+                    Please type "DELETE" to confirm this irreversible action.
+                  </Typography>
+                </ModalBody>
+                <ModalFooter variant="filled">
+                  <ActionBox>
+                    <ModalButtonSecondary onClick={handleActionClose}>
+                      Cancel
+                    </ModalButtonSecondary>
+                    <ModalButtonDanger onClick={handleActionClose}>
+                      Delete Permanently
+                    </ModalButtonDanger>
+                  </ActionBox>
+                </ModalFooter>
+              </Modal>
+            </Row>
+          </SistentThemeProvider>
+
+          <a id="Usage">
+            <h2>Usage Guidelines</h2>
+          </a>
+          <p>
+            When implementing modals, consider the following best practices:
+          </p>
+          <ul>
+            <li>Use modals sparingly to avoid disrupting the user flow</li>
+            <li>Keep content concise and focused on a single task or decision</li>
+            <li>Provide clear action buttons with descriptive labels</li>
+            <li>Ensure modals are accessible via keyboard navigation</li>
+            <li>Allow users to dismiss modals via multiple methods (close button, escape key, clicking outside)</li>
+            <li>Use appropriate variants based on the importance and nature of the action</li>
+          </ul>
         </div>
       </div>
     </SistentLayout>
   );
 };
+
 export default SistentModal;
