@@ -40,7 +40,7 @@ const SistentAbout = () => {
               <h2>About Sistent</h2>
             </a>
             <p>
-              Sistent is the Layer5 Design System - an open source design system
+              Sistent an open source design system
               that offers building blocks to create consistent, accessible, and
               user-friendly interfaces. It's aimed at developers who want to
               design applications aligned with the same brand and ensure a
@@ -52,13 +52,12 @@ const SistentAbout = () => {
               components, icons, and design tokens that developers can readily
               integrate into their applications. By using Sistent, developers
               can save time and effort while maintaining a high-quality user
-              experience throughout Layer5 products.
+              experience.
             </p>
             <p>
               <b>
-                Sistent provides a consistent user experience across Layer5
-                projects and any frontend software projects that choose to use
-                Sistent, too.
+                Sistent provides a consistent user experience across any frontend 
+                software projects that choose to use it.
               </b>
             </p>
             <p>
@@ -77,6 +76,11 @@ const SistentAbout = () => {
               (please do!), let us know, and we will help you get started on
               contributing.
             </p>
+            <h3>Layer5 Brand Resources</h3>
+            <ul>
+              <li><a href="https://layer5.io/brand/brand-guide.pdf">Brand Guide</a></li>
+              <li><a href="https://layer5.io/company/brand">Logos and Brand Kits</a></li>
+            </ul>
             <a id="Installation">
               <h2>Installation and Quickstart</h2>
             </a>
