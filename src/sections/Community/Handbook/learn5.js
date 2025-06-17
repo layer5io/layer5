@@ -33,7 +33,7 @@ const LearnLayer = () => {
             <ul>
               <li>Interactive <Link to="/learn/service-mesh-labs">cloud native labs</Link></li>
               <li>Free <Link to="/learn/service-mesh-books">cloud native books</Link></li>
-              <li>Self-paced <Link to="/learn/service-mesh-workshops">scloud nativeh workshops</Link></li>
+              <li>Self-paced <Link to="/learn/workshops">scloud nativeh workshops</Link></li>
               <li>Recorded training and talks on the <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1/playlists">Layer5 YouTube Channel</a></li>
               <li>Multi-course, multi-mesh <Link to="/learn/learning-paths">cloud native learning paths</Link></li>
             </ul>
