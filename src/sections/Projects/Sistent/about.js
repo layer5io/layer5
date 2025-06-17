@@ -56,7 +56,7 @@ const SistentAbout = () => {
             </p>
             <p>
               <b>
-                Sistent provides a consistent user experience across any frontend 
+                Sistent provides a consistent user experience across any frontend
                 software projects that choose to use it.
               </b>
             </p>

@@ -21,7 +21,7 @@ const OpenSourceBanner = () => {
 const OpenSourceBannerWrapper = styled.div`
   width: 100%;
   background: #00b39f; 
-  margin-top: 6rem;
+  margin-bottom: 2rem;
   padding: 2rem 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   .banner-content {
