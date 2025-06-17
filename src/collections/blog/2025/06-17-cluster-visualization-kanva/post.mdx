@@ -25,6 +25,8 @@ Understanding the Structure of Kubernetes clusters is important for DevOps engin
 But working with YAML files can be a challenging task specially when they get hard to visualize and make relations.
 Meshery Playground along with its Kanvas extension offers a simple way to visualize cluster states by transforming YAML snapshots into clear, interactive diagrams
 
+
+
 ## **The Challenge of Traditional Kubernetes Analysis**
 
 Traditionally To check a cluster’s state, engineers often rely on kubectl, the Kubernetes command-line tool, to query resources and inspect configurations. Using Commands like (get, describe, logs) to piece together a cluster’s state, each providing only a fragment of the picture each with a dense output.
@@ -38,11 +40,13 @@ The Meshery Playground is a hosted environment that provides pre-configured Kube
 Kanvas, a Meshery extension, allows users to drag and drop YAML files to create visual representations of cluster resources, such as pods and services. Together, they help you:
 
 1. **See Cluster State Clearly:**
-   *Turn YAML files into easy-to-read diagrams.
+   Turn YAML files into easy-to-read diagrams.
 2. **Save Time:** 
-   *Identify issues like failed pods without parsing text.
+   Identify issues like failed pods without parsing text.
 3. **Work as a Team:**
-   *Share visuals with your team and work together to align on cluster management.
+   Share visuals with your team and work together to align on cluster management.
+
+
 
 ## **Understanding the Workflow: From YAML to Diagram**
 
@@ -72,6 +76,8 @@ kubectl meshery snapshot -f cluster-dump.yaml
 ```
 
 This process takes under 5 minutes, compared to 15–20 minutes with traditional methods. Kanvas’s snapshot highlights essentiald visually, guides fixes, reusability and collaboration.
+
+
 
 ## **What else can Kanvas do?**
 
