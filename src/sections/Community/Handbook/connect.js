@@ -36,7 +36,6 @@ const Connect = () => {
         <Container>
           <div className="content">
             <a id="Newsletter">
-              {" "}
               <h2>Subscribe to Newsletter</h2>{" "}
             </a>
             <p>

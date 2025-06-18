@@ -24,7 +24,6 @@ const LearnLayer = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-
             <a id="Learning">
               <h2>Learning together</h2>
             </a>
