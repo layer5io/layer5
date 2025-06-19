@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
   }
 
    .content {
-    max-width: 34rem;
+    max-width: 37rem;
 
     @media (max-width: 1119px) {
       max-width: 22rem;
@@ -52,6 +52,7 @@ export const HeroWrapper = styled.div`
       pre{
         width: inherit;
         margin: auto;
+        font-size: 0.9em;
 
         button {
           top: 1rem;
